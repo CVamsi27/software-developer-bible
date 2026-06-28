@@ -17,7 +17,7 @@
 
 ### Middleware Execution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    MIDDLEWARE EXECUTION FLOW                     │
 ├─────────────────────────────────────────────────────────────────┤
@@ -52,7 +52,7 @@
 
 ### Middleware vs API Routes vs Server Components
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                   WHEN TO USE EACH                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -677,7 +677,7 @@ export async function POST(request: Request) {
 
 ## Performance Considerations
 
-```
+```text
 Middleware Performance:
 - Executes on Edge Runtime (fast cold starts)
 - Adds latency to every matched request
@@ -833,7 +833,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```text
 File: middleware.ts (root)
 Runtime: Edge
 Matcher: export const config = { matcher: [...] }

@@ -14,7 +14,7 @@ Test patterns are established, reusable solutions to common problems encountered
 
 **Pattern Hierarchy:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Test Pattern Hierarchy                    │
 ├─────────────────────────────────────────────────────────────┤
@@ -59,7 +59,7 @@ Test patterns are established, reusable solutions to common problems encountered
 
 ### AAA (Arrange-Act-Assert) Pattern
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                   AAA Pattern Structure                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -94,7 +94,7 @@ Test patterns are established, reusable solutions to common problems encountered
 
 ### Given-When-Then (BDD) Pattern
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  BDD Pattern Structure                      │
 ├─────────────────────────────────────────────────────────────┤

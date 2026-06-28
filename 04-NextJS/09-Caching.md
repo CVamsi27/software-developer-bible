@@ -16,7 +16,7 @@ Next.js implements a multi-layered caching system that improves performance by s
 
 ### Caching Layers Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    NEXT.JS CACHING LAYERS                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -57,7 +57,7 @@ Next.js implements a multi-layered caching system that improves performance by s
 
 ### Cache Invalidation Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                 CACHE INVALIDATION METHODS                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -538,7 +538,7 @@ export default async function Page() {
 
 ## Performance Considerations
 
-```
+```text
 Cache Performance Impact:
 - First request: Normal performance (cache miss)
 - Subsequent requests: Fast performance (cache hit)
@@ -689,7 +689,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```text
 Data Cache options:
 fetch(url)                              → Default caching
 fetch(url, { cache: 'force-cache' })    → Cache indefinitely

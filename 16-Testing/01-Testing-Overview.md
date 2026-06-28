@@ -25,7 +25,7 @@ Testing is the systematic process of evaluating a software application to identi
 
 ### The Testing Pyramid
 
-```
+```text
                     /\
                    /  \
                   / E2E \          Few in number, slow, expensive
@@ -58,7 +58,7 @@ Testing is the systematic process of evaluating a software application to identi
 
 ### Testing Types Comparison
 
-```
+```text
 +------------------+------------+----------+---------+----------------+
 | Type             | Speed      | Cost     | Scope   | Confidence     |
 +------------------+------------+----------+---------+----------------+
@@ -74,7 +74,7 @@ Testing is the systematic process of evaluating a software application to identi
 
 ### TDD Cycle (Red-Green-Refactor)
 
-```
+```text
     ┌─────────────────┐
     │   Write a       │
     │   Failing Test  │◄──────────────────────────────┐
@@ -100,7 +100,7 @@ Testing is the systematic process of evaluating a software application to identi
 
 ### BDD Workflow
 
-```
+```text
 Feature: User Login
   As a registered user
   I want to log into the application
@@ -116,7 +116,7 @@ Feature: User Login
 
 ### When to Write Tests
 
-```
+```text
 +-----------------------------+--------------------------------+
 | Situation                   | When to Write Tests            |
 +-----------------------------+--------------------------------+
@@ -133,7 +133,7 @@ Feature: User Login
 
 ### Testing Philosophy Spectrum
 
-```
+```text
   Pragmatic                                      Dogmatic
     │                                               │
     │  ┌─────────────────────────────────────────┐  │
@@ -656,7 +656,7 @@ it("should update user", () => {
 
 ### Test Execution Time
 
-```
+```text
 +------------------+----------------+------------------+
 | Test Type        | Typical Time   | Target Time      |
 +------------------+----------------+------------------+
@@ -669,7 +669,7 @@ it("should update user", () => {
 
 ### Parallelization Strategy
 
-```
+```text
 Test Suite Distribution:
 ┌─────────────────────────────────────────┐
 │ CI Pipeline                            │

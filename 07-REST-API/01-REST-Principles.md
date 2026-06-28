@@ -34,7 +34,7 @@ REST is defined by six architectural constraints that must be applied together.
 
 The client and server are separate concerns that communicate over a network, allowing independent development, different technology stacks, and scalability of each tier independently.
 
-```
+```text
 Client-Server Architecture
 ══════════════════════════
 
@@ -79,7 +79,7 @@ async function getUser(userId: string): Promise<User> {
 
 Each request from client to server must contain all information needed to understand and process the request. The server does not store client context between requests.
 
-```
+```text
 Stateless Communication
 ═══════════════════════
 
@@ -121,7 +121,7 @@ app.post('/api/orders', authenticate, async (req, res) => {
 
 Responses must explicitly state whether they can be cached. If cacheable, the client may reuse the response data for equivalent future requests.
 
-```
+```text
 Cacheable Response Flow
 ═══════════════════════
 
@@ -168,7 +168,7 @@ REST defines a uniform interface with four sub-constraints:
 
 **a) Identification of Resources** - Each resource identified by unique URI
 
-```
+```text
 Resource Identification via URIs
 ═══════════════════════════════
 
@@ -234,7 +234,7 @@ app.get('/api/orders/:id', authenticate, async (req, res) => {
 
 A client cannot tell whether it is connected directly to the end server or to an intermediary (load balancer, proxy, cache).
 
-```
+```text
 Layered System Architecture
 ═══════════════════════════
 
@@ -250,7 +250,7 @@ REST allows servers to extend client functionality by transferring executable co
 
 ### HTTP Methods
 
-```
+```text
 HTTP Methods and Their Purposes
 ═══════════════════════════════
 

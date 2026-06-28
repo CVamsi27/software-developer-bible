@@ -28,7 +28,7 @@ They receive the exception and the `ArgumentsHost` which provides access to the 
 
 ### Exception Flow
 
-```
+```text
 Request
    |
    v

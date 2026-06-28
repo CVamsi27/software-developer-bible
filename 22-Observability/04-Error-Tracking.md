@@ -17,7 +17,7 @@ An **error tracking system** ingests error reports, deduplicates them via finger
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ERROR TRACKING PIPELINE                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -55,7 +55,7 @@ An **error tracking system** ingests error reports, deduplicates them via finger
 
 ### Error Severity Levels
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │  ERROR SEVERITY                                                  │
 ├─────────────────────────────────────────────────────────────────┤

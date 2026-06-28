@@ -16,7 +16,7 @@ A **Promise** is an object representing the eventual completion or failure of an
 
 ### Promise States
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PROMISE STATES                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ A **Promise** is an object representing the eventual completion or failure of an
 
 ### Promise Execution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 PROMISE EXECUTION FLOW                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -893,7 +893,7 @@ Understanding Promises is crucial for writing clean, maintainable asynchronous J
 
 ## Cheat Sheet
 
-```
+```text
 PROMISES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

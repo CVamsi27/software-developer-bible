@@ -84,7 +84,7 @@ function topologicalSortDFS(numCourses: number, prerequisites: number[][]): numb
 
 ## How It Works
 
-```
+```text
 DAG with dependencies:
     0 → 1 → 3
     ↓   ↓
@@ -107,7 +107,7 @@ Result: [0, 1, 2, 3]
 
 ### ASCII Diagram
 
-```
+```text
 KAHN'S ALGORITHM (BFS):
 
 Initial Graph:
@@ -441,7 +441,7 @@ Topological sort provides a linear ordering of vertices in a DAG. It's essential
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Topological Sort
 Use when: Dependencies, ordering, DAG processing
 Time: O(V + E) | Space: O(V + E)

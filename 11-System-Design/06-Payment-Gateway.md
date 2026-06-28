@@ -24,7 +24,7 @@
 - Global payment support
 
 ## Capacity Estimation
-```
+```text
 Transaction Estimates:
 - 100K transactions per second (peak)
 - 10M transactions per day
@@ -268,7 +268,7 @@ CREATE TABLE fraud_signals (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  merchants  │     │   customers     │     │ payment_methods │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -320,7 +320,7 @@ CREATE TABLE fraud_signals (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │              (E-commerce, SaaS, Marketplaces)                    │
@@ -765,7 +765,7 @@ class PaymentRateLimiter:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── payment.initiated        (payment starts)
 ├── payment.succeeded        (payment completed)
@@ -822,7 +822,7 @@ class PaymentEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │
@@ -857,7 +857,7 @@ class PaymentDatabaseScaler:
 ```
 
 ### Global Deployment
-```
+```text
 Global Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Global Router                         │

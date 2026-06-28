@@ -12,7 +12,7 @@ A monorepo (monolithic repository) is a software development strategy where code
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    MONOREPO STRUCTURE                                │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -54,7 +54,7 @@ A monorepo (monolithic repository) is a software development strategy where code
 
 ## Monorepo vs Polyrepo
 
-```
+```text
 Comparison:
 ┌─────────────────────────────────────────────────────────────────┐
 │                    │ Monorepo              │ Polyrepo            │
@@ -313,7 +313,7 @@ module.exports = {
 ## Real-World Use Cases
 
 ### Large Enterprise Applications
-```
+```text
 Use Case: Multiple products sharing core libraries
 ┌─────────────────────────────────────────────────────────────────┐
 │  Products:                                                      │
@@ -337,7 +337,7 @@ Use Case: Multiple products sharing core libraries
 ```
 
 ### Design System Development
-```
+```text
 Use Case: Shared component library
 ┌─────────────────────────────────────────────────────────────────┐
 │  Packages:                                                      │
@@ -374,7 +374,7 @@ Use Case: Shared component library
 
 ## Performance Considerations
 
-```
+```text
 Build Optimization Strategies:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Caching:                                                       │

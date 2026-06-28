@@ -15,7 +15,7 @@ Context consists of three parts:
 
 Without Context, data must be passed through props from parent to child, even if intermediate components don't need it:
 
-```
+```text
 Prop Drilling Problem:
 ═══════════════════════════════════════════════════════════════
 
@@ -33,7 +33,7 @@ props even though they don't use them!
 
 ### The Solution: Context
 
-```
+```text
 Context Solution:
 ═══════════════════════════════════════════════════════════════
 
@@ -52,7 +52,7 @@ Benefit: Only ThemeToggle and Article need to know about theme
 
 ### Context Creation and Usage
 
-```
+```text
 Context API Flow:
 ═══════════════════════════════════════════════════════════════
 
@@ -93,7 +93,7 @@ Context API Flow:
 
 ### Context Propagation
 
-```
+```text
 Context Propagation:
 ═══════════════════════════════════════════════════════════════
 
@@ -126,7 +126,7 @@ Context Propagation:
 
 ### Consumer Component
 
-```
+```text
 Consumer Component:
 ═══════════════════════════════════════════════════════════════
 
@@ -1163,7 +1163,7 @@ Context API is React's built-in solution for sharing data across the component t
 
 ## Cheat Sheet
 
-```
+```text
 Context API Key Points:
 ├── What: Share data across component tree without prop drilling
 ├── Parts: Context Object, Provider, Consumer

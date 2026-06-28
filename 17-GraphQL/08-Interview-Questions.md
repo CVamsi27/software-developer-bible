@@ -10,7 +10,7 @@ This comprehensive guide covers the **30 most frequently asked GraphQL interview
 
 ### Interview Preparation Strategy
 
-```
+```text
 GraphQL Interview Focus Areas:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Core Concepts    → Schema, types, queries, mutations        │
@@ -506,7 +506,7 @@ const createContext = ({ req }) => {
 
 **Answer:**
 
-```
+```text
 1. Schema Review Process
    - PR-based schema changes
    - Breaking change detection (GraphQL Inspector)
@@ -560,7 +560,7 @@ Conflict resolution using OT or CRDTs in resolvers.
 
 **Answer:**
 
-```
+```text
 Phase 1: Gateway
 - GraphQL gateway over existing REST
 - No changes to backend services
@@ -734,7 +734,7 @@ const metrics = {
 
 **Answer:**
 
-```
+```text
 1. Authentication
    - JWT/OAuth verification in context
    - Session management
@@ -816,7 +816,7 @@ Considerations:
 
 **Answer:**
 
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────────┐
 │                      Load Balancer                           │
@@ -1471,7 +1471,7 @@ const resolvers = {
 
 **Answer:**
 
-```
+```text
 packages/
 ├── shared/           # Shared types, fragments
 │   ├── fragments/
@@ -1596,7 +1596,7 @@ Key metrics:
 
 **Answer:**
 
-```
+```text
 1. Federation 2.0 - Better schema composition
 2. Edge Computing - GraphQL at the edge
 3. AI Integration - Schema generation, query optimization

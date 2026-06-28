@@ -38,7 +38,7 @@ function binarySearch(nums: number[], target: number): number {
 
 ## How It Works
 
-```
+```text
 Sorted Array: [2, 5, 8, 12, 16, 23, 38, 56, 72, 91], Target = 23
 
 Step 1: left=0, right=9, mid=4
@@ -59,7 +59,7 @@ Step 3: left=5, right=6, mid=5
 
 ### ASCII Diagram
 
-```
+```text
 STANDARD BINARY SEARCH
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
 │ 2 │ 5 │ 8 │12 │16 │23 │38 │56 │72 │91 │
@@ -320,7 +320,7 @@ Binary search is a fundamental algorithm for searching in sorted data. The key i
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Binary Search
 Use when: Sorted arrays, monotonic functions, search space
 Time: O(log n) | Space: O(1)

@@ -17,7 +17,7 @@ In microservices:
 
 ### Circuit Breaker States
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    CIRCUIT BREAKER STATES                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -42,7 +42,7 @@ In microservices:
 
 ### State Transitions
 
-```
+```text
 CLOSED → OPEN: When failure count exceeds threshold
 OPEN → HALF-OPEN: After timeout period expires
 HALF-OPEN → CLOSED: If probe request succeeds
@@ -51,7 +51,7 @@ HALF-OPEN → OPEN: If probe request fails
 
 ### Request Flow
 
-```
+```text
                     ┌─────────────────┐
                     │  Client Request │
                     └────────┬────────┘
@@ -717,7 +717,7 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                CIRCUIT BREAKER                          │
 ├─────────────────────────────────────────────────────────┤

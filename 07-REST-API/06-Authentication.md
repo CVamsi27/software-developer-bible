@@ -18,7 +18,7 @@ Without authentication:
 
 ### Authentication Methods Overview
 
-```
+```text
 Authentication Methods
 ══════════════════════
 
@@ -50,7 +50,7 @@ Authentication Methods
 
 ### API Key Authentication
 
-```
+```text
 API Key Flow
 ════════════
 
@@ -104,7 +104,7 @@ app.get('/api/data', apiKeyAuth, rateLimiter({
 
 ### JWT Authentication
 
-```
+```text
 JWT Token Structure
 ═══════════════════
 
@@ -226,7 +226,7 @@ app.get('/api/admin/users', authenticate, authorize('admin'), async (req, res) =
 
 ### Token Refresh Flow
 
-```
+```text
 Token Refresh Flow
 ══════════════════
 
@@ -307,7 +307,7 @@ app.post('/api/auth/refresh', async (req, res) => {
 
 ### OAuth 2.0 Flow
 
-```
+```text
 OAuth 2.0 Authorization Code Flow
 ══════════════════════════════════
 

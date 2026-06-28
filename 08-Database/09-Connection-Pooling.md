@@ -16,7 +16,7 @@ Connection pooling is a technique that maintains a cache of database connections
 
 ### Connection Pool Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Connection Pool Architecture              │
 │                                                             │
@@ -56,7 +56,7 @@ Connection pooling is a technique that maintains a cache of database connections
 
 ### Pool States
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Connection Pool States                     │
 │                                                             │
@@ -415,7 +415,7 @@ process.on('SIGTERM', async () => {
 
 ## Performance Considerations
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Pool Size Guidelines                      │
 │                                                             │

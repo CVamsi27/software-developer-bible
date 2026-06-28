@@ -15,7 +15,7 @@ Unoptimized builds lead to:
 Build optimization involves multiple stages:
 
 ### Optimization Pipeline
-```
+```text
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  Source     │───▶│  Analysis   │───▶│  Transform  │───▶│  Optimize   │
 │  Code       │    │  Bundle     │    │  Modules    │    │  Output     │
@@ -29,7 +29,7 @@ Build optimization involves multiple stages:
 ```
 
 ### Code Splitting Strategy
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Code Splitting Flow                           │
 ├─────────────────────────────────────────────────────────────────┤

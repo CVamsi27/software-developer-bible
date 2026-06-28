@@ -17,7 +17,7 @@ A **Closure** is a function that remembers and can access variables from its out
 
 ### Closure Mechanism
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    CLOSURE MECHANISM                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -61,7 +61,7 @@ A **Closure** is a function that remembers and can access variables from its out
 
 ### How Closures Capture Variables
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │               HOW CLOSURES CAPTURE VARIABLES                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -107,7 +107,7 @@ A **Closure** is a function that remembers and can access variables from its out
 
 ### Closure Scope Chain
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 CLOSURE SCOPE CHAIN                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -978,7 +978,7 @@ Understanding closures is essential for writing efficient, maintainable JavaScri
 
 ## Cheat Sheet
 
-```
+```text
 CLOSURES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

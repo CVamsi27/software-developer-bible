@@ -18,7 +18,7 @@ Keyboard navigation involves:
 - **Focus indicators**: Visual feedback for focus position
 
 ### Keyboard Navigation Flow
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Keyboard Navigation Flow                      │
 ├─────────────────────────────────────────────────────────────────┤

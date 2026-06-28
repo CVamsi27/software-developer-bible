@@ -4,7 +4,7 @@
 
 GraphQL is a **query language for APIs** and a **runtime for executing those queries** against your data. Developed by Facebook in 2012 and open-sourced in 2015, it provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need—nothing more, nothing less.
 
-```
+```text
 GraphQL = Query Language + Type System + Execution Engine + Introspection
 ```
 
@@ -16,7 +16,7 @@ Unlike REST, which exposes data through multiple endpoints with fixed response s
 
 ### Problems with REST
 
-```
+```text
 REST Pain Points:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Over-fetching    → Getting more data than needed            │
@@ -75,7 +75,7 @@ const result = await fetch('/graphql', {
 
 ### The GraphQL Ecosystem
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                        CLIENT LAYER                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
@@ -113,7 +113,7 @@ const result = await fetch('/graphql', {
 
 ### Request Lifecycle
 
-```
+```text
 1. Client sends query
         │
         ▼
@@ -200,7 +200,7 @@ union SearchResult = User | Post | Comment
 
 ### Type Relationships Diagram
 
-```
+```text
 ┌─────────────┐       ┌─────────────┐       ┌─────────────┐
 │    User     │       │    Post     │       │   Comment   │
 ├─────────────┤       ├─────────────┤       ├─────────────┤
@@ -720,7 +720,7 @@ const resolvers = {
 ## Best Practices
 
 ### Schema Design
-```
+```text
 1. Design schema-first, implementation-second
 2. Use descriptive names (getUser, not fetchUserData)
 3. Return type-safe errors with extensions
@@ -731,7 +731,7 @@ const resolvers = {
 ```
 
 ### Resolver Implementation
-```
+```text
 1. Keep resolvers thin - delegate to service layer
 2. Use DataLoader for N+1 prevention
 3. Implement proper authorization
@@ -741,7 +741,7 @@ const resolvers = {
 ```
 
 ### Client Best Practices
-```
+```text
 1. Use fragments for reusable selections
 2. Implement query polling for non-critical data
 3. Use optimistic updates for mutations

@@ -12,7 +12,7 @@ Serverless computing is a cloud execution model where the cloud provider dynamic
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    SERVERLESS ARCHITECTURE                          │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -49,7 +49,7 @@ Serverless computing is a cloud execution model where the cloud provider dynamic
 ## AWS Lambda
 
 ### Lambda Execution Model
-```
+```text
 Lambda Function Lifecycle:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -302,7 +302,7 @@ async function processFile(key: string, content: string) {
 ## Real-World Use Cases
 
 ### API Backend
-```
+```text
 Use Case: RESTful API for mobile app
 ┌─────────────────────────────────────────────────────────────────┐
 │  Client → API Gateway → Lambda → DynamoDB                       │
@@ -316,7 +316,7 @@ Use Case: RESTful API for mobile app
 ```
 
 ### Data Processing Pipeline
-```
+```text
 Use Case: Real-time data transformation
 ┌─────────────────────────────────────────────────────────────────┐
 │  S3 Upload → Lambda → Transform → Write to Redshift             │
@@ -346,7 +346,7 @@ Use Case: Real-time data transformation
 
 ## Performance Considerations
 
-```
+```text
 Cold Start Optimization:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Impact on Cold Start:                                          │

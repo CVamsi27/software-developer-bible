@@ -27,7 +27,7 @@ Key concepts:
 
 ### Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                    GitHub Actions                         |
 |                                                           |
@@ -67,7 +67,7 @@ Key concepts:
 
 ### Workflow File Structure
 
-```
+```text
 .github/
 +-- workflows/
 |   +-- ci.yml

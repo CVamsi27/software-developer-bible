@@ -14,7 +14,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 
 **E2E Testing Position:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Testing Pyramid                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 
 ### E2E Testing Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                E2E Testing Architecture                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -96,7 +96,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 
 ### Cypress vs Playwright
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              Cypress vs Playwright Comparison               │
 ├─────────────────────────────────────────────────────────────┤
@@ -122,7 +122,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 
 ### Page Object Pattern
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  Page Object Model                          │
 ├─────────────────────────────────────────────────────────────┤

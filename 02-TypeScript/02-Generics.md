@@ -4,7 +4,7 @@
 
 **Generics** are type parameters that allow you to write reusable, type-safe code that works with multiple types while preserving type information. They act as placeholders for types that are specified when the code is used.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                        GENERICS FLOW                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -417,7 +417,7 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
 2. **How do you define a generic function?**
    ```typescript
    function identity<T>(value: T): T { return value; }
-   ```
+```
 
 3. **What is the purpose of generic constraints?**
    - To limit what types a generic parameter can accept
@@ -444,7 +444,7 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
    function call<T extends (...args: any[]) => any>(fn: T): ReturnType<T> {
      return fn();
    }
-   ```
+```
 
 10. **What is type inference in generics?**
     - TypeScript automatically determining the type parameter from usage
@@ -463,7 +463,7 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
     ): Curry<Args, Return> {
       // Implementation
     }
-    ```
+```
 
 12. **Implement a type-safe event emitter**
     - Map event names to payload types using generics

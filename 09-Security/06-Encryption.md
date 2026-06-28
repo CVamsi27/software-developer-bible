@@ -19,7 +19,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
 
 ### Symmetric vs Asymmetric Encryption
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              Symmetric vs Asymmetric Encryption                  │
 ├─────────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
 
 ### TLS/HTTPS Handshake
 
-```
+```text
 ┌──────────┐                                    ┌──────────┐
 │  Client  │                                    │  Server  │
 └────┬─────┘                                    └────┬─────┘
@@ -77,7 +77,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
 
 ### Hashing Process
 
-```
+```text
 ┌──────────┐      ┌──────────┐      ┌──────────┐
 │ Password │─────>│  Hash    │─────>│  Hash    │
 │          │      │ Function │      │ (Stored) │

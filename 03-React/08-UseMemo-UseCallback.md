@@ -74,7 +74,7 @@ const Parent = () => {
 
 ### useMemo
 
-```
+```text
 useMemo:
 ═══════════════════════════════════════════════════════════════
 
@@ -114,7 +114,7 @@ Memory Model:
 
 ### useCallback
 
-```
+```text
 useCallback:
 ═══════════════════════════════════════════════════════════════
 
@@ -150,7 +150,7 @@ Behavior:
 
 ### When to Use Each
 
-```
+```text
 useMemo vs useCallback:
 ═══════════════════════════════════════════════════════════════
 
@@ -949,7 +949,7 @@ const Chart = ({ data, options }: ChartProps) => {
 
 ## Cheat Sheet
 
-```
+```text
 useMemo/useCallback Key Points:
 ├── useMemo: Memoizes computed values
 ├── useCallback: Memoizes functions

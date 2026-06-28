@@ -17,7 +17,7 @@ Understanding these questions is crucial for:
 
 ### Question Categories
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                 INTERVIEW QUESTION STRUCTURE                  │
 ├───────────────────────────────────────────────────────────────┤
@@ -2717,7 +2717,7 @@ These 40 questions cover the most important Node.js concepts for technical inter
 
 ## Cheat Sheet
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │              NODE.JS INTERVIEW CHEAT SHEET                   │
 ├───────────────────────────────────────────────────────────────┤

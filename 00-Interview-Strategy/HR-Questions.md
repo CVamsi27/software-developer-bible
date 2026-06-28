@@ -41,7 +41,7 @@ Most engineers treat HR rounds as obstacles to "real" interviews. This is a mist
 
 ### Preparation Framework
 
-```
+```text
 1. Research the company (30 minutes minimum)
    ├── Mission, values, recent news
    ├── Products and market position
@@ -78,7 +78,7 @@ Use STAR for behavioral questions (covered in detail in STAR-Method.md):
 
 ### Essential Research Checklist
 
-```
+```text
 □ What does the company do? (One sentence)
 □ Who are their customers/users?
 □ What's their business model?
@@ -122,7 +122,7 @@ Use STAR for behavioral questions (covered in detail in STAR-Method.md):
 **The 2-Minute Career Narrative**
 
 Structure:
-```
+```text
 1. Current Role & Impact (30 seconds)
    "I'm a senior full stack engineer at [Company] where I lead the
    frontend platform team, serving 2M+ users across 3 products."
@@ -150,7 +150,7 @@ Structure:
 
 **Framework: Specific + Personal + Forward-looking**
 
-```
+```text
 ✅ Good Answer Structure:
 "I'm excited about [Company] for three reasons:
 
@@ -180,7 +180,7 @@ Structure:
 
 **Framework: Move Toward, Not Away From**
 
-```
+```text
 ✅ "I'm looking for [positive thing] that [Current Company] doesn't offer"
 
 Examples:
@@ -200,7 +200,7 @@ Examples:
 ```
 
 **If you were laid off:**
-```
+```text
 "My previous company went through a restructuring that affected the
 entire engineering team. While it was unexpected, it's given me the
 opportunity to be more intentional about my next role, which is why
@@ -213,7 +213,7 @@ I'm specifically targeting companies like [theirs]."
 
 **Framework: Genuine + Growth-Oriented + Action Taken**
 
-```
+```text
 "The area I've been actively working on is [genuine weakness].
 
 For example, [specific situation]. I recognized this was limiting my
@@ -236,7 +236,7 @@ better at distinguishing between 'good enough' and 'needs more work'."
 ### 5. "Describe a time you had a conflict with a colleague"
 
 **Framework (STAR-based):**
-```
+```text
 S: "I was working on the API redesign with a senior backend engineer
     who had a different architectural approach."
 
@@ -269,7 +269,7 @@ R: "The solution was better than either individual proposal. We shipped
 
 ### 7. "Where do you see yourself in 5 years?"
 
-```
+```text
 ✅ "I see myself as a technical leader driving architecture decisions
     for complex systems. Specifically, I want to be the person teams
     look to for solving their hardest technical challenges while also
@@ -304,7 +304,7 @@ R: "The solution was better than either individual proposal. We shipped
 | Recruiter conversations | High | ±10% |
 
 **Key Data Points to Gather:**
-```
+```text
 1. Base salary range for the role at this company
 2. Total compensation (base + bonus + equity)
 3. Equity structure (RSUs, options, vesting schedule)
@@ -316,7 +316,7 @@ R: "The solution was better than either individual proposal. We shipped
 ### Negotiation Framework
 
 **Step 1: Let them go first**
-```
+```text
 HR: "What are your salary expectations?"
 
 You: "I'd love to learn more about the total compensation structure
@@ -326,7 +326,7 @@ for this role. Could you share the salary band and equity details?"
 ```
 
 **Step 2: When they give a number**
-```
+```text
 If it's in your range:
 "That's within my expectations. Could we discuss the total comp
 breakdown — base, bonus, equity, and signing bonus?"
@@ -345,7 +345,7 @@ working with. What does the typical package look like for this level?"
 
 ### Total Compensation Breakdown
 
-```
+```text
 Total Comp = Base Salary
            + Annual Bonus (target %)
            + Equity (annual vest value)
@@ -377,7 +377,7 @@ Total:        $297,750/year
 
 ### Non-Salary Negotiables
 
-```
+```text
 □ Remote work flexibility
 □ Additional PTO days
 □ Professional development budget ($X/year)
@@ -409,7 +409,7 @@ Total:        $297,750/year
 ### Demonstrating Cultural Fit
 
 **Show you value collaboration:**
-```
+```text
 "At my current company, I started a weekly architecture review where
 anyone could present design proposals. It became one of the most
 popular rituals — we'd get 20+ people attending voluntarily. I believe
@@ -417,7 +417,7 @@ engineering culture is built through practices like these."
 ```
 
 **Show you care about craft:**
-```
+```text
 "I'm passionate about code quality, not for its own sake, but because
 I've seen how technical debt compounds. I championed our team's
 adoption of automated testing, which went from 40% to 85% coverage
@@ -425,7 +425,7 @@ and reduced regressions by 70%."
 ```
 
 **Show you think beyond code:**
-```
+```text
 "I always start by understanding the business problem before writing
 code. At [Company], I worked with product to redefine a feature
 requirement that saved 3 weeks of development and better served users."
@@ -438,7 +438,7 @@ requirement that saved 3 weeks of development and better served users."
 ### Things That Signal "Don't Hire"
 
 **1. Badmouthing Previous Employers**
-```
+```text
 ❌ "My manager was incompetent"
 ❌ "The company had no direction"
 ✅ "I outgrew the available challenges and I'm seeking a company
@@ -446,20 +446,20 @@ requirement that saved 3 weeks of development and better served users."
 ```
 
 **2. Lack of Questions About the Role**
-```
+```text
 ❌ (No questions when asked)
 ✅ "How does the engineering team handle architecture decisions?
     What's the typical career growth path for this role?"
 ```
 
 **3. Inconsistent Narrative**
-```
+```text
 ❌ Your career story changes between interviewers
 ✅ Same core narrative with appropriate emphasis for each audience
 ```
 
 **4. Red Flags in How You Describe Work**
-```
+```text
 ❌ "I did everything myself"
 ❌ "My team wasn't technical enough"
 ❌ "I just implemented what PM told me"
@@ -467,14 +467,14 @@ requirement that saved 3 weeks of development and better served users."
 ```
 
 **5. Compensation Fixation**
-```
+```text
 ❌ Asking about salary in every conversation
 ❌ Turning every question back to compensation
 ✅ Show genuine interest in the work, team, and company
 ```
 
 **6. Signs of Dishonesty**
-```
+```text
 ❌ Can't explain technologies on your resume in detail
 ❌ Vague about specific contributions to projects
 ❌ Contradicts information from other interviewers
@@ -488,38 +488,38 @@ requirement that saved 3 weeks of development and better served users."
 ### Behaviors That Signal "Strong Hire"
 
 **1. Growth Mindset**
-```
+```text
 "That was a humbling experience. Here's what I learned and how it
 changed my approach going forward..."
 ```
 
 **2. Ownership Mentality**
-```
+```text
 "When I saw the production incident, I didn't wait for someone else.
 I [specific action] and [specific outcome]."
 ```
 
 **3. Collaboration First**
-```
+```text
 "I worked with the design team to understand user pain points before
 proposing technical solutions. The result was [outcome]."
 ```
 
 **4. Business Awareness**
-```
+```text
 "I pushed back on a feature because my analysis showed it would
 increase infrastructure costs by 40% with minimal user benefit.
 We redirected resources to [alternative] which drove [metric]."
 ```
 
 **5. Mentorship Investment**
-```
+```text
 "I've mentored 5 engineers, 3 of whom have been promoted. I believe
 growing others is a key part of senior engineering."
 ```
 
 **6. Honest Self-Assessment**
-```
+```text
 "I'm strong in system design but still developing my skills in
 [Kubernetes/ML/etc.]. I'm actively working on this through [specific action]."
 ```
@@ -530,7 +530,7 @@ growing others is a key part of senior engineering."
 
 ### Tier 1: Must-Ask Questions
 
-```
+```text
 1. "What does the interview process look like for this role?"
    → Shows you're organized and serious
 
@@ -546,7 +546,7 @@ growing others is a key part of senior engineering."
 
 ### Tier 2: High-Value Questions
 
-```
+```text
 5. "What's the typical career path for someone in this role?"
    → Shows you think long-term
 
@@ -562,7 +562,7 @@ growing others is a key part of senior engineering."
 
 ### Tier 3: Differentiating Questions
 
-```
+```text
 9. "What's something about working here that surprises people?"
    → Gets honest insight
 
@@ -578,7 +578,7 @@ growing others is a key part of senior engineering."
 
 ### Questions That Make You Stand Out
 
-```
+```text
 • "I noticed from your engineering blog that you recently migrated
    to [technology]. What prompted that change and how is it going?"
 
@@ -595,7 +595,7 @@ growing others is a key part of senior engineering."
 
 ### Within 24 Hours
 
-```
+```text
 1. Send a thank-you email
    Subject: Thank you for the [Role] conversation
 
@@ -613,7 +613,7 @@ growing others is a key part of senior engineering."
 
 ### Reflection Questions
 
-```
+```text
 □ How did the conversation feel?
 □ Did I answer all questions clearly?
 □ Did I learn enough about the role?
@@ -625,7 +625,7 @@ growing others is a key part of senior engineering."
 
 ### Track Your Progress
 
-```
+```text
 | Company | Role | HR Round | Date | Follow-up Sent | Status |
 |---------|------|----------|------|----------------|--------|
 | Acme    | Sr.  | ✓        | 6/1  | ✓              | Moving |

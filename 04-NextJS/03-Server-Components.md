@@ -16,7 +16,7 @@
 
 ### Server vs Client Component Rendering
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SERVER COMPONENT                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -65,7 +65,7 @@
 
 ### Component Composition Pattern
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Page (Server Component)                    │
 │  ┌─────────────────────────────────────────────────────────┐    │
@@ -620,7 +620,7 @@ export default async function Page() {
 
 ### Bundle Size Comparison
 
-```
+```text
 Server Component:
 - Component code: 0 bytes to client
 - Data fetching: 0 bytes to client
@@ -636,7 +636,7 @@ Client Component:
 
 ### Rendering Performance
 
-```
+```text
 Server Component Rendering:
 1. Server executes (fast, no network latency)
 2. Data fetching (parallelized)
@@ -798,7 +798,7 @@ Client Component Rendering:
 
 ## Cheat Sheet
 
-```
+```text
 Server Component (default):
 - async function
 - Direct data access

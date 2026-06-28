@@ -66,7 +66,7 @@ class Trie {
 
 ## How It Works
 
-```
+```text
 Inserting: "apple", "app", "application"
 
         root
@@ -101,7 +101,7 @@ Words: "apple" (root→a→p→p→l→e*)
 
 ### ASCII Diagram
 
-```
+```text
 TRIE STRUCTURE:
 ┌─────────────────────────────────────────┐
 │              (root)                     │
@@ -505,7 +505,7 @@ Trie is a powerful data structure for prefix-based operations. It's essential fo
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Trie (Prefix Tree)
 Use when: Prefix matching, autocomplete, word search
 Time: O(m) per operation | Space: O(N × m)

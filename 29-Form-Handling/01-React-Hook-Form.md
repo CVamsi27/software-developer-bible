@@ -12,7 +12,7 @@ React Hook Form is a performance-first form library for React that provides perf
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    REACT HOOK FORM ARCHITECTURE                     │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -492,7 +492,7 @@ function MultiStepForm() {
 
 ## Performance Considerations
 
-```
+```text
 React Hook Form Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Uncontrolled Components:                                        │

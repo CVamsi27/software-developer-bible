@@ -5,7 +5,7 @@
 - **`keyof`**: A type operator that extracts the keys of an object type as a union of string literal types
 - **`typeof`**: A type operator that extracts the type of a value/expression
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                   KEYOF vs TYPEOF                               │
 ├─────────────────────────────────────────────────────────────────┤
@@ -399,7 +399,7 @@ type Optional<T> = {
    function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
      return obj[key];
    }
-   ```
+```
 
 7. **How do you filter keys in a mapped type?**
    - Use key remapping with `as`: `[K in keyof T as Condition ? K : never]`

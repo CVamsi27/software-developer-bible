@@ -69,7 +69,7 @@ class UnionFind {
 
 ## How It Works
 
-```
+```text
 Initial: [0, 1, 2, 3, 4] (5 separate sets)
 
 Union(0, 1):
@@ -93,7 +93,7 @@ connected(0, 4) = false
 
 ### ASCII Diagram
 
-```
+```text
 UNION-FIND WITH PATH COMPRESSION:
 
 Before path compression:
@@ -411,7 +411,7 @@ Union-Find is a powerful data structure for dynamic connectivity problems. With 
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Union-Find (DSU)
 Use when: Connected components, cycle detection, merging sets
 Time: O(α(n)) amortized | Space: O(n)

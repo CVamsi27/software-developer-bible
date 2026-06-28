@@ -16,7 +16,7 @@ A database index is a data structure that improves the speed of data retrieval o
 
 ### Index Types Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PostgreSQL Index Types                     │
 │                                                             │
@@ -51,7 +51,7 @@ A database index is a data structure that improves the speed of data retrieval o
 
 ### B-tree Structure
 
-```
+```text
                     ┌─────────────┐
                     │   [50]      │
                     └──────┬──────┘

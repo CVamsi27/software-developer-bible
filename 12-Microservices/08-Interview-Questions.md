@@ -12,7 +12,7 @@ Microservices architecture is widely adopted in modern software development. Und
 
 ### Question Categories
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              MICROSERVICES INTERVIEW QUESTIONS                  │
 ├─────────────────────────────────────────────────────────────────┤
@@ -44,7 +44,7 @@ Microservices architecture is widely adopted in modern software development. Und
 **Answer:**
 Microservices architecture is an architectural style that structures an application as a collection of loosely coupled, independently deployable services. Each service is self-contained, implements a specific business capability, and communicates with other services through well-defined APIs.
 
-```
+```text
 MONOLITHIC ARCHITECTURE:
 ┌─────────────────────────────────────────┐
 │              APPLICATION                │
@@ -362,7 +362,7 @@ class OrderService {
 #### Q11: How would you design a microservices system for an e-commerce platform?
 
 **Answer:**
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                  E-COMMERCE MICROSERVICES                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -578,7 +578,7 @@ class OrderQueryService {
 #### Q16: Design a URL shortener like bit.ly
 
 **Answer:**
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    URL SHORTENER DESIGN                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -1734,7 +1734,7 @@ Microservices architecture requires understanding of distributed systems, commun
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │           MICROSERVICES INTERVIEW CHEAT SHEET                   │
 ├─────────────────────────────────────────────────────────────────┤

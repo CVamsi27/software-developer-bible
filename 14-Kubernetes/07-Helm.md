@@ -26,7 +26,7 @@ Key concepts:
 
 ### Helm Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                      Helm CLI                             |
 |  helm install, upgrade, rollback, list, etc.             |
@@ -59,7 +59,7 @@ Key concepts:
 
 ### Chart Structure
 
-```
+```text
 mychart/
 +-- Chart.yaml          # Chart metadata
 +-- Chart.lock          # Dependency lock file

@@ -16,7 +16,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 
 ### Deadlock Conditions
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Deadlock Conditions (Coffman)             │
 │                                                             │
@@ -40,7 +40,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 
 ### Deadlock Example
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Deadlock Scenario                         │
 │                                                             │
@@ -69,7 +69,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 
 ### Lock Modes
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PostgreSQL Lock Modes                     │
 │                                                             │

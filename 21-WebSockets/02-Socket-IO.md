@@ -20,7 +20,7 @@ Socket.io abstracts the complexity of WebSockets, offering features like **rooms
 
 ### Transport Fallback
 
-```
+```text
 Socket.io Transport Selection:
 
 1. Try WebSocket (fastest)
@@ -38,7 +38,7 @@ Result: Best available transport selected automatically
 
 ### Architecture
 
-```
+```text
 +-------------------+        +-------------------+        +-------------------+
 |     Client        |        |      Server       |        |     Database      |
 |   (Browser)       |        |   (Node.js)       |        |   (MongoDB)       |
@@ -68,7 +68,7 @@ Result: Best available transport selected automatically
 
 ### Connection Lifecycle
 
-```
+```text
 +-----------+     +-----------+     +-----------+     +-----------+
 | CONNECTING| --> | CONNECTED | --> | RECONNECT | --> | DISCONNECT|
 +-----------+     +-----------+     +-----------+     +-----------+

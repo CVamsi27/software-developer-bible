@@ -18,7 +18,7 @@ CSRF attacks target state-changing operations (not data retrieval) and rely on t
 
 ### Attack Flow
 
-```
+```text
 ┌──────────┐                    ┌──────────┐                    ┌──────────┐
 │ Attacker │                    │  Victim  │                    │  Server  │
 └────┬─────┘                    └────┬─────┘                    └────┬─────┘
@@ -54,7 +54,7 @@ CSRF attacks target state-changing operations (not data retrieval) and rely on t
 
 ### Same-Origin Policy and CSRF
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              Same-Origin Policy & CSRF                           │
 ├─────────────────────────────────────────────────────────────────┤

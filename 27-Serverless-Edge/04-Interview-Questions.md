@@ -11,7 +11,7 @@ This comprehensive guide covers 25+ interview questions on serverless and edge c
 
 ## How It Works
 
-```
+```text
 Interview Question Categories:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -189,7 +189,7 @@ function architecturePattern(problem: string): string {
 ## Best Practices for Interview Answers
 
 ### Structure Your Answer
-```
+```text
 1. Definition (1-2 sentences)
 2. How it works (2-3 sentences)
 3. Use cases (when to use)

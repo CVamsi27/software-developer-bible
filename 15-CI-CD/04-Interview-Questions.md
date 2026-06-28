@@ -38,7 +38,7 @@
 
 **Answer:**
 
-```
+```text
 1. Source     --> Code commit triggers pipeline
 2. Build      --> Compile code, build artifacts
 3. Test       --> Unit tests, integration tests

@@ -26,7 +26,7 @@ Together they answer: *What happened? How is the system performing? Where is the
 **Answer:**
 Structured logging outputs logs in a machine-parseable format (typically JSON) with consistent field names, instead of free-form text.
 
-```
+```text
 // Plain text (hard to query)
 "2024-01-15 10:30:45 ERROR User 12345 failed login from 192.168.1.1"
 
@@ -323,7 +323,7 @@ Tools: Prometheus + RabbitMQ exporter, SQS metrics via CloudWatch, Kafka metrics
 - Prometheus for metrics (proven, scalable with Thanos/Mimir)
 
 **Layout:**
-```
+```text
 App → OTel SDK → OTel Collector → ┬─ Tempo (traces)
                                    ├─ Prometheus (metrics)
                                    └─ Loki (logs)
@@ -520,7 +520,7 @@ providers:
 
 **Answer:**
 **Architecture:**
-```
+```text
 Apps → Fluent Bit (agent) → Kafka (buffer) → Logstash (process) → Elasticsearch (store) → Kibana (UI)
 ```
 
@@ -883,7 +883,7 @@ Monitoring tells you something is wrong. Observability helps you figure out why.
 - **Edge-specific backends**: InfluxDB, Prometheus (at regional aggregation points)
 
 **Architecture:**
-```
+```text
 Edge Node → Local OTel Collector → Regional Prometheus → Central Grafana
 ```
 

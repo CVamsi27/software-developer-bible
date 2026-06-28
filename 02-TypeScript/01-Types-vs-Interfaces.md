@@ -7,7 +7,7 @@
 - **`type`**: A type alias that can represent any TypeScript type — primitives, unions, intersections, tuples, functions, and more.
 - **`interface`**: A named contract for object shapes that supports declaration merging, extension via `extends`, and is specifically designed for object-oriented patterns.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                     TYPE vs INTERFACE                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -404,7 +404,7 @@ type InternalState = {
 6. **How do you extend multiple interfaces?**
    ```typescript
    interface C extends A, B { }
-   ```
+```
 
 7. **What's the difference between `extends` and `&`?**
    - `extends` is for interface inheritance, can override properties

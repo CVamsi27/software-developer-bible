@@ -36,7 +36,7 @@ function merge(intervals: number[][]): number[][] {
 
 ## How It Works
 
-```
+```text
 Intervals: [[1,3], [2,6], [8,10], [15,18]]
 
 Sort by start: [[1,3], [2,6], [8,10], [15,18]]
@@ -57,7 +57,7 @@ Result: [[1,6], [8,10], [15,18]]
 
 ### ASCII Diagram
 
-```
+```text
 MERGE INTERVALS:
 Original:     [1,3]  [2,6]      [8,10]         [15,18]
               |-----|  |--------|
@@ -328,7 +328,7 @@ Interval problems are common in scheduling and range-based scenarios. The key is
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Intervals
 Use when: Merging, inserting, checking overlaps
 Time: O(n log n) | Space: O(n)

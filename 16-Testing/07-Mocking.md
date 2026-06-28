@@ -13,7 +13,7 @@ Mocking is a testing technique where you replace real objects, functions, or mod
 
 **Mocking Hierarchy:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Test Doubles                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -55,7 +55,7 @@ Mocking is a testing technique where you replace real objects, functions, or mod
 
 ### Jest Mocking System
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  Jest Mocking System                         │
 ├─────────────────────────────────────────────────────────────┤

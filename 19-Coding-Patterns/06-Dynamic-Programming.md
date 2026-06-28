@@ -43,7 +43,7 @@ function dpTab(n: number): number {
 
 ## How It Works
 
-```
+```text
 Fibonacci Sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21...
 
 Naive Recursion:          Memoization:
@@ -74,7 +74,7 @@ dp[5] = dp[4] + dp[3] = 5
 
 ### ASCII Diagram
 
-```
+```text
 0/1 KNAPSACK PROBLEM:
 
 Items: [(w=2, v=3), (w=3, v=4), (w=4, v=5)]
@@ -326,7 +326,7 @@ Dynamic Programming is a powerful technique for solving optimization problems wi
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Dynamic Programming
 Use when: Optimization, counting, overlapping subproblems
 Time: O(n) to O(n²) | Space: O(n) to O(n²)

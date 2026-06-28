@@ -17,7 +17,7 @@ As applications grow, state becomes complex:
 
 ### State Categories
 
-```
+```text
 State Categories:
 ═══════════════════════════════════════════════════════════════
 
@@ -53,7 +53,7 @@ State Categories:
 
 ### Local State vs Global State
 
-```
+```text
 Local State vs Global State:
 ═══════════════════════════════════════════════════════════════
 
@@ -82,7 +82,7 @@ Global State (Context/Redux):
 
 ### Context vs Redux vs Zustand
 
-```
+```text
 Comparison:
 ═══════════════════════════════════════════════════════════════
 
@@ -117,7 +117,7 @@ Jotai:
 
 ### Server State vs Client State
 
-```
+```text
 Server State vs Client State:
 ═══════════════════════════════════════════════════════════════
 
@@ -464,7 +464,7 @@ State management ranges from local useState to global Redux/Zustand and server s
 
 ## Cheat Sheet
 
-```
+```text
 State Management Options:
 ├── useState: Simple local state
 ├── useReducer: Complex local state

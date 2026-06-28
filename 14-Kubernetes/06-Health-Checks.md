@@ -25,7 +25,7 @@ Key concepts:
 
 ### Probe Architecture
 
-```
+```text
                     kubelet
                       |
          +------------+------------+
@@ -52,7 +52,7 @@ Key concepts:
 
 ### Probe Timeline
 
-```
+```text
 Container Start
       |
       v

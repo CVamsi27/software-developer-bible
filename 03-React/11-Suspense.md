@@ -69,7 +69,7 @@ const App = () => (
 
 ### Suspense Mechanism
 
-```
+```text
 Suspense Mechanism:
 ═══════════════════════════════════════════════════════════════
 
@@ -95,7 +95,7 @@ Suspense Rendering:
 
 ### Code Splitting with React.lazy
 
-```
+```text
 Code Splitting:
 ═══════════════════════════════════════════════════════════════
 
@@ -132,7 +132,7 @@ With Code Splitting:
 
 ### Suspense Boundaries
 
-```
+```text
 Suspense Boundaries:
 ═══════════════════════════════════════════════════════════════
 
@@ -159,7 +159,7 @@ Multiple Boundaries:
 
 ### Error Handling with Error Boundaries
 
-```
+```text
 Error Handling:
 ═══════════════════════════════════════════════════════════════
 
@@ -908,7 +908,7 @@ React Suspense is a powerful feature for handling loading states declaratively. 
 
 ## Cheat Sheet
 
-```
+```text
 Suspense Key Points:
 ├── What: Declarative loading states
 ├── Mechanism: Catches thrown promises, shows fallback

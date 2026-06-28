@@ -16,7 +16,7 @@
 
 ### Async/Await Basics
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  ASYNC/AWAIT BASICS                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -65,7 +65,7 @@
 
 ### Async/Await vs Promises
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              ASYNC/AWAIT vs PROMISES                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -964,7 +964,7 @@ Understanding async/await is essential for modern JavaScript development.
 
 ## Cheat Sheet
 
-```
+```text
 ASYNC/AWAIT CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

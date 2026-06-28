@@ -20,7 +20,7 @@ CQRS separates the application into two sides:
 - **Command Side**: Handles state mutations (write operations)
 - **Query Side**: Handles data retrieval (read operations)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    CQRS Architecture                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -59,7 +59,7 @@ CQRS separates the application into two sides:
 
 ### CQRS Flow
 
-```
+```text
 Command Flow:
 Client -> Command -> CommandBus -> CommandHandler -> WriteModel -> Event -> ReadModel
 

@@ -19,7 +19,7 @@ Without streams, processing a 1GB file would require 1GB+ of memory. With stream
 
 ### The Four Stream Types
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                      STREAM TYPES                             │
 ├───────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ Without streams, processing a 1GB file would require 1GB+ of memory. With stream
 
 ### Stream Flow Diagram
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    STREAM PIPE FLOW                          │
 ├───────────────────────────────────────────────────────────────┤
@@ -81,7 +81,7 @@ Without streams, processing a 1GB file would require 1GB+ of memory. With stream
 
 ### Backpressure Mechanism
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    BACKPRESSURE FLOW                         │
 ├───────────────────────────────────────────────────────────────┤
@@ -108,7 +108,7 @@ Without streams, processing a 1GB file would require 1GB+ of memory. With stream
 
 ### highWaterMark and Buffer Management
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │              highWaterMark Buffer States                     │
 ├───────────────────────────────────────────────────────────────┤
@@ -1325,7 +1325,7 @@ Streams are essential for processing large data efficiently in Node.js. Key take
 
 ## Cheat Sheet
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    STREAMS CHEAT SHEET                       │
 ├───────────────────────────────────────────────────────────────┤

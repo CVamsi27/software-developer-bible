@@ -17,7 +17,7 @@ Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to 
 
 ### Types of XSS
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                        XSS Attack Types                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -48,7 +48,7 @@ Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to 
 
 ### Attack Flow
 
-```
+```text
 ┌──────────┐                    ┌──────────┐                    ┌──────────┐
 │ Attacker │                    │  Server  │                    │  Victim  │
 └────┬─────┘                    └────┬─────┘                    └────┬─────┘

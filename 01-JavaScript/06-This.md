@@ -16,7 +16,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 
 ### Binding Rules
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    THIS BINDING RULES                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -84,7 +84,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 
 ### this in Different Contexts
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  THIS IN DIFFERENT CONTEXTS                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -153,7 +153,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 
 ### call, apply, bind
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                   CALL, APPLY, BIND                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -1012,7 +1012,7 @@ Understanding `this` is essential for writing clean, maintainable JavaScript and
 
 ## Cheat Sheet
 
-```
+```text
 THIS CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

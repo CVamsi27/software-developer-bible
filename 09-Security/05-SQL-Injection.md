@@ -17,7 +17,7 @@ SQL Injection (SQLi) is a code injection technique that exploits security vulner
 
 ### Attack Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                     SQL Injection Types                          │
 ├─────────────────────────────────────────────────────────────────┤
@@ -55,7 +55,7 @@ SQL Injection (SQLi) is a code injection technique that exploits security vulner
 
 ### Attack Flow
 
-```
+```text
 ┌──────────┐                    ┌──────────┐                    ┌──────────┐
 │ Attacker │                    │  Server  │                    │ Database │
 └────┬─────┘                    └────┬─────┘                    └────┬─────┘

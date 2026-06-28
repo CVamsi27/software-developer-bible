@@ -16,7 +16,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 
 ### LIFO Structure
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    CALL STACK (LIFO)                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -50,7 +50,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 
 ### Push/Pop Operations
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  PUSH AND POP OPERATIONS                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -97,7 +97,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 
 ### Code Execution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │               STEP-BY-STEP EXECUTION                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -1098,7 +1098,7 @@ Understanding the call stack is essential for writing efficient, bug-free JavaSc
 
 ## Cheat Sheet
 
-```
+```text
 CALL STACK CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

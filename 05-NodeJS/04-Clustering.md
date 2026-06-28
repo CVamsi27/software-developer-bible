@@ -23,7 +23,7 @@ Clustering solves these problems by:
 
 ### Clustering Architecture
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    CLUSTERING ARCHITECTURE                    │
 ├───────────────────────────────────────────────────────────────┤
@@ -65,7 +65,7 @@ Clustering solves these problems by:
 
 ### Connection Distribution
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │              CONNECTION DISTRIBUTION METHODS                  │
 ├───────────────────────────────────────────────────────────────┤
@@ -100,7 +100,7 @@ Clustering solves these problems by:
 
 ### IPC Communication
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │               INTER-PROCESS COMMUNICATION                    │
 ├───────────────────────────────────────────────────────────────┤
@@ -133,7 +133,7 @@ Clustering solves these problems by:
 
 ### Worker Lifecycle
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                   WORKER LIFECYCLE                            │
 ├───────────────────────────────────────────────────────────────┤
@@ -1126,7 +1126,7 @@ Clustering is essential for scaling Node.js applications across multiple CPU cor
 
 ## Cheat Sheet
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                   CLUSTERING CHEAT SHEET                     │
 ├───────────────────────────────────────────────────────────────┤

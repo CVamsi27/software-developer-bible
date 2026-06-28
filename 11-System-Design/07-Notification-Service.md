@@ -24,7 +24,7 @@
 - GDPR compliance
 
 ## Capacity Estimation
-```
+```text
 Notification Estimates:
 - 100M users × 10 notifications/day = 1B notifications/day
 - Peak: 1B / 86400 = ~11.6K notifications/second
@@ -237,7 +237,7 @@ CREATE TABLE notification_analytics (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────────────┐     ┌─────────────────┐
 │  user_preferences   │     │    templates     │
 ├─────────────────────┤     ├─────────────────┤
@@ -296,7 +296,7 @@ CREATE TABLE notification_analytics (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │           (Mobile, Web, Backend Services)                        │
@@ -700,7 +700,7 @@ class PreferencesCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── notification.created    (new notifications)
 ├── notification.sent       (sent to providers)
@@ -757,7 +757,7 @@ class NotificationEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │

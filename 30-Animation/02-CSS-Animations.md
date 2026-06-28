@@ -12,7 +12,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    CSS ANIMATION TYPES                               │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -526,7 +526,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 
 ## Performance Considerations
 
-```
+```text
 CSS Animation Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  GPU Accelerated (Good):                                         │

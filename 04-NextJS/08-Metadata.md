@@ -16,7 +16,7 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 
 ### Metadata Resolution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    METADATA RESOLUTION                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -49,7 +49,7 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 
 ### Metadata Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    METADATA TYPES                                │
 ├─────────────────────────────────────────────────────────────────┤
@@ -667,7 +667,7 @@ export const metadata: Metadata = {
 
 ## Performance Considerations
 
-```
+```text
 Metadata Performance:
 - Static metadata: No runtime cost
 - Dynamic metadata: Async data fetching
@@ -822,7 +822,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```yaml
 Static metadata:
 export const metadata: Metadata = {
   title: 'Page Title',

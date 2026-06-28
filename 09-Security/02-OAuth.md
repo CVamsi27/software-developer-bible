@@ -19,7 +19,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 
 ### OAuth 2.0 Roles
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    OAuth 2.0 Roles                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -36,7 +36,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 
 ### Authorization Code Flow
 
-```
+```text
 ┌──────────┐          ┌──────────┐          ┌──────────────────┐
 │  User    │          │  Client  │          │ Authorization    │
 │  (RO)    │          │  (App)   │          │ Server           │
@@ -79,7 +79,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 
 ### PKCE Flow (for Public Clients)
 
-```
+```text
 ┌──────────┐          ┌──────────┐          ┌──────────────────┐
 │  User    │          │  Client  │          │ Authorization    │
 │          │          │  (SPA)   │          │ Server           │

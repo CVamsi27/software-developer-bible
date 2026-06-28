@@ -18,7 +18,7 @@ Without CORS:
 
 ### Same-Origin Policy
 
-```
+```text
 Same-Origin Policy
 ══════════════════
 
@@ -37,7 +37,7 @@ Different Origins:
 
 ### CORS Request Flow
 
-```
+```text
 CORS Preflight Request
 ══════════════════════
 
@@ -68,7 +68,7 @@ Browser                          Server
 
 ### CORS Headers
 
-```
+```text
 CORS Response Headers
 ═════════════════════
 
@@ -138,7 +138,7 @@ app.get('/api/private', cors({ origin: 'https://app.com' }), (req, res) => {
 
 ### Preflight Requests
 
-```
+```text
 Preflight Request Requirements
 ══════════════════════════════
 

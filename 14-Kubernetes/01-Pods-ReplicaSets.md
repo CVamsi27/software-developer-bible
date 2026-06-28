@@ -26,7 +26,7 @@ Key concepts:
 
 ### Pod Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                        Pod                                 |
 |  +-------------------+  +-------------------+            |
@@ -53,7 +53,7 @@ Key concepts:
 
 ### ReplicaSet Architecture
 
-```
+```text
                     +------------------+
                     |   ReplicaSet     |
                     |  replicas: 3     |

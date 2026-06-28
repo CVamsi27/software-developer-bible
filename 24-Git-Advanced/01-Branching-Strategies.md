@@ -20,7 +20,7 @@ Branching strategies define:
 - How to manage hotfixes
 
 ### Branching Strategy Overview
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Branching Strategy Flow                       │
 ├─────────────────────────────────────────────────────────────────┤

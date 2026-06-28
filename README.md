@@ -44,24 +44,34 @@ A comprehensive, interview-focused reference for senior full-stack engineering r
 
 Every chapter follows this structure:
 
-```
+```text
 # Topic
 
 ## Definition
+
 ## Why Do We Need It?
+
 ## How It Works (with diagrams)
+
 ## Code Examples (TypeScript)
+
 ## Real-World Use Cases
+
 ## Common Mistakes
+
 ## Best Practices
+
 ## Performance Considerations
+
 ## Interview Questions
   ### Beginner (10)
   ### Intermediate (10)
   ### Senior (20)
   ### FAANG-style (10)
   ### Follow-ups (10)
+
 ## Summary
+
 ## References & Learn More
 ```
 

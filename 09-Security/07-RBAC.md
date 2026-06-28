@@ -19,7 +19,7 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
 
 ### RBAC Components
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    RBAC Components                               │
 ├─────────────────────────────────────────────────────────────────┤
@@ -42,7 +42,7 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
 
 ### RBAC Flow
 
-```
+```text
 ┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐
 │  User    │─────>│  Check   │─────>│  Check   │─────>│  Grant/  │
 │  Request │      │  Role    │      │  Perm    │      │  Deny    │

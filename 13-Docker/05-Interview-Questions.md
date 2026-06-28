@@ -23,7 +23,7 @@ Docker is a containerization platform that packages applications with their depe
 
 **Architecture:**
 
-```
+```text
 VM Architecture:
 +------------------+  +------------------+
 |     App B        |  |     App A        |
@@ -60,7 +60,7 @@ A Docker image is a read-only template with instructions for creating a containe
 
 **Layer Structure:**
 
-```
+```text
 +-------------------------------+
 | Layer N: CMD ["app"]          |  <-- ~0 bytes (metadata)
 +-------------------------------+
@@ -365,7 +365,7 @@ docker stats <container>
 
 `.dockerignore` excludes files from the build context, reducing build time and preventing sensitive files from entering the image.
 
-```
+```text
 node_modules
 npm-debug.log
 .git

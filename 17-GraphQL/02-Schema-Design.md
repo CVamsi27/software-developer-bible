@@ -4,7 +4,7 @@
 
 GraphQL Schema Design is the process of defining the **type system**, **operations**, and **relationships** that form your API contract. A well-designed schema serves as documentation, enables tooling, and ensures type safety across your entire stack.
 
-```
+```text
 Schema = Type Definitions + Type Relationships + Operations + Directives
 ```
 
@@ -16,7 +16,7 @@ The schema is written in the **Schema Definition Language (SDL)**, a declarative
 
 ### The Schema-First Advantage
 
-```
+```text
 Without Schema-First:
 ┌──────────────────────────────────────────────────────┐
 │  1. Implementation varies across teams               │
@@ -52,7 +52,7 @@ With Schema-First:
 
 ### Core Type System
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                     GRAPHQL TYPE SYSTEM                          │
 ├──────────────────────────────────────────────────────────────────┤
@@ -86,7 +86,7 @@ With Schema-First:
 
 ### Type Relationships Diagram
 
-```
+```text
                     ┌─────────────────┐
                     │     Node        │  (Interface)
                     │─────────────────│
@@ -1067,7 +1067,7 @@ type Comment {
 
 ### Naming Conventions
 
-```
+```text
 Types:       PascalCase  → User, PostConnection, CreatePostInput
 Fields:      camelCase   → firstName, createdAt, totalCount
 Enums:       SCREAMING   → POST_STATUS, USER_ROLE
@@ -1077,7 +1077,7 @@ Input types: PascalCase + Input suffix → CreateUserInput
 
 ### Schema Evolution
 
-```
+```text
 DO:
   ✓ Add new fields
   ✓ Add new types
@@ -1095,7 +1095,7 @@ DON'T:
 
 ### Pagination Pattern (Relay Connection)
 
-```
+```text
 Connection Pattern:
 ┌─────────────────────────────────────────────────────┐
 │                    Connection                        │

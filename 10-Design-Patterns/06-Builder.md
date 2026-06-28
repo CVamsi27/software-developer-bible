@@ -24,7 +24,7 @@ The Builder pattern works by:
 3. Allowing the same construction process to create different representations
 4. Providing a final build method that returns the constructed object
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Builder Pattern                    │
 ├─────────────────────────────────────────────────┤
@@ -1069,7 +1069,7 @@ The Builder pattern is essential for creating complex objects with many optional
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           BUILDER PATTERN                   │
 ├─────────────────────────────────────────────┤

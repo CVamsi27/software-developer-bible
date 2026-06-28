@@ -23,7 +23,7 @@ The WebSocket Gateway acts as a bridge between clients and the NestJS applicatio
 
 ### NestJS WebSocket Architecture
 
-```
+```text
 +------------------+     +------------------+     +------------------+
 |     Client       |     |   WebSocket      |     |    NestJS        |
 |    (Browser)     | --> |   Gateway        | --> |   Application    |
@@ -37,7 +37,7 @@ The WebSocket Gateway acts as a bridge between clients and the NestJS applicatio
 
 ### Gateway Lifecycle
 
-```
+```text
 +-----------+     +-----------+     +-----------+     +-----------+
 |  Module   | --> |  Gateway  | --> |  Handle   | --> |  Cleanup  |
 |  Init     |     |  Listen   |     |  Events   |     |  OnModule |

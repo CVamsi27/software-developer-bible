@@ -52,7 +52,7 @@ const Counter = () => {
 
 ### useState Internals
 
-```
+```text
 useState Internals:
 ═══════════════════════════════════════════════════════════════
 
@@ -92,7 +92,7 @@ Hook Call Order:
 
 ### State Batching
 
-```
+```text
 State Batching:
 ═══════════════════════════════════════════════════════════════
 
@@ -137,7 +137,7 @@ flushSync: Escape Hatch
 
 ### Functional Updates
 
-```
+```text
 Functional Updates:
 ═══════════════════════════════════════════════════════════════
 
@@ -168,7 +168,7 @@ When to Use Functional Updates:
 
 ### Lazy Initialization
 
-```
+```text
 Lazy Initialization:
 ═══════════════════════════════════════════════════════════════
 
@@ -1026,7 +1026,7 @@ A: Concurrent features affect state:
 
 ## Cheat Sheet
 
-```
+```text
 useState Key Points:
 ├── What: Hook for adding state to function components
 ├── Syntax: const [state, setState] = useState(initialValue)

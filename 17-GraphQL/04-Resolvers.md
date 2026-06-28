@@ -4,7 +4,7 @@
 
 **Resolvers** are functions that populate the data for each field in your GraphQL schema. They are the execution layer that connects your schema to your data sources (databases, APIs, microservices, etc.). Each field in the schema can have a corresponding resolver that determines how that field's value is computed.
 
-```
+```text
 Resolver = Function(Schema Field) → Data Source
 ```
 
@@ -14,7 +14,7 @@ Resolver = Function(Schema Field) → Data Source
 
 ### The Data Fetching Problem
 
-```
+```text
 Without Resolvers:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Schema defines WHAT data is available                          │
@@ -60,7 +60,7 @@ With Resolvers:
 
 ### Resolver Chain Execution
 
-```
+```text
 Query: { user(id: 1) { name posts { title author { name } } } }
 
 Execution Chain:
@@ -107,7 +107,7 @@ Execution Chain:
 
 ### Resolver Field Mapping
 
-```
+```text
 Schema Field                          Resolver Function
 ─────────────────────────────────────────────────────────────────
 type Query {
@@ -764,7 +764,7 @@ const resolvers = {
 
 ### Resolver Organization
 
-```
+```text
 1. Keep resolvers thin
    - Delegate business logic to services
    - Resolvers only handle data fetching and transformation
@@ -829,7 +829,7 @@ loaders.user.clear(id);
 
 ### Resolver Execution Timing
 
-```
+```text
 Query Execution Timeline:
 ┌─────────────────────────────────────────────────────────────────┐
 │ T=0ms    Query.user(id: 1) starts                              │

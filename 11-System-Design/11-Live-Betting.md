@@ -24,7 +24,7 @@
 - Global deployment
 
 ## Capacity Estimation
-```
+```text
 User Estimates:
 - 1M registered users
 - 100K daily active users
@@ -296,7 +296,7 @@ CREATE TABLE live_feeds (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    events       │     │    sports       │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -355,7 +355,7 @@ CREATE TABLE live_feeds (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │         (Web App, Mobile App, Live Streaming)                    │
@@ -788,7 +788,7 @@ class BettingSessionCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── odds.updated           (odds changes)
 ├── bet.placed             (new bet)
@@ -847,7 +847,7 @@ class BettingEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │

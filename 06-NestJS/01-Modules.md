@@ -27,7 +27,7 @@ NestJS modules work through a decorator-based system. The `@Module()` decorator 
 
 ### Module Resolution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                  Root Module                     │
 │              (AppModule)                         │
@@ -56,7 +56,7 @@ NestJS modules work through a decorator-based system. The `@Module()` decorator 
 
 ### Module Dependency Graph
 
-```
+```text
                     ┌──────────────┐
                     │  AppModule   │
                     │  (Root)      │
@@ -318,7 +318,7 @@ export class AppModule {}
 
 ### 1. E-Commerce Application Module Structure
 
-```
+```text
 src/
 ├── app.module.ts
 ├── auth/

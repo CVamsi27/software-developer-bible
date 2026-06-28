@@ -18,7 +18,7 @@ As APIs evolve, changes can break existing client integrations:
 
 ### Versioning Strategies
 
-```
+```text
 API Versioning Strategies
 ═════════════════════════
 
@@ -41,7 +41,7 @@ API Versioning Strategies
 
 ### Strategy 1: URL Path Versioning
 
-```
+```text
 URL Path Versioning
 ═══════════════════
 
@@ -222,7 +222,7 @@ app.use('/api/v1', deprecationMiddleware, v1Router);
 
 ### Version Migration Strategy
 
-```
+```text
 Version Migration Flow
 ══════════════════════
 

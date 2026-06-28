@@ -24,7 +24,7 @@ The Strategy pattern works by:
 3. Keeping a reference to the current strategy in the context
 4. Allowing the strategy to be changed at runtime
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Strategy Pattern                   │
 ├─────────────────────────────────────────────────┤
@@ -1038,7 +1038,7 @@ The Strategy pattern is powerful for encapsulating algorithms and making them in
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           STRATEGY PATTERN                  │
 ├─────────────────────────────────────────────┤

@@ -38,7 +38,7 @@ function twoPointers(arr: number[]): number {
 
 ## How It Works
 
-```
+```text
 Opposite Direction:
 Sorted Array: [2, 7, 11, 15, 20], Target = 22
 
@@ -59,7 +59,7 @@ Step 3: S=2, F=4  (fast reaches end first)
 
 ### ASCII Diagram
 
-```
+```text
 OPPOSITE DIRECTION (Two Sum II)
 ┌───┬───┬───┬───┬───┬───┐
 │ 2 │ 7 │ 11│ 15│ 20│ 25│  sorted array
@@ -321,7 +321,7 @@ Two pointers is a fundamental pattern that reduces time complexity by avoiding n
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Two Pointers
 Use when: Sorted arrays, pairs, cycles, comparisons
 Time: O(n) | Space: O(1)

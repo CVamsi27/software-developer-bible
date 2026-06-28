@@ -18,7 +18,7 @@ Without pagination, APIs would face:
 
 ### Pagination Strategies
 
-```
+```text
 Pagination Strategies
 ═════════════════════
 
@@ -41,7 +41,7 @@ Pagination Strategies
 
 ### Offset-Based Pagination
 
-```
+```text
 Offset Pagination
 ═════════════════
 
@@ -107,7 +107,7 @@ app.get('/api/users', async (req, res) => {
 
 ### Cursor-Based Pagination
 
-```
+```text
 Cursor Pagination
 ═════════════════
 
@@ -175,7 +175,7 @@ app.get('/api/users', async (req, res) => {
 
 ### Keyset-Based Pagination
 
-```
+```text
 Keyset Pagination
 ═════════════════
 

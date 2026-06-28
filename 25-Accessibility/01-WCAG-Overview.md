@@ -15,7 +15,7 @@ WCAG (Web Content Accessibility Guidelines) is a set of guidelines developed by 
 WCAG is organized around four principles (POUR) and three levels (A, AA, AAA):
 
 ### WCAG Structure
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    WCAG Structure                                │
 ├─────────────────────────────────────────────────────────────────┤
@@ -35,7 +35,7 @@ WCAG is organized around four principles (POUR) and three levels (A, AA, AAA):
 ```
 
 ### Four Principles (POUR)
-```
+```text
 Perceivable - Information must be presentable to users
 ├── Text alternatives for non-text content
 ├── Captions for multimedia

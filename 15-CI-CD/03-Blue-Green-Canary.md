@@ -26,7 +26,7 @@ Key concepts:
 
 ### Blue-Green Architecture
 
-```
+```text
                     Load Balancer
                          |
                          v
@@ -58,7 +58,7 @@ Step 5: Blue becomes standby (or rollback target)
 
 ### Canary Architecture
 
-```
+```text
                     Load Balancer
                          |
                          v
@@ -84,7 +84,7 @@ Step 4: If unhealthy, rollback immediately
 
 ### Rolling Update Architecture
 
-```
+```text
 Initial:     [v1] [v1] [v1] [v1] [v1]
 
 Step 1:      [v1] [v1] [v1] [v1] [v2]

@@ -26,7 +26,7 @@ Key concepts:
 
 ### Build Process
 
-```
+```text
 +-----------------------------------------------------+
 |                Multi-Stage Build                      |
 |                                                       |
@@ -59,7 +59,7 @@ Key concepts:
 
 ### Image Size Comparison
 
-```
+```text
 Single-stage:                          Multi-stage:
 +------------------+                  +------------------+
 | node:18-alpine   | 130 MB           |                  |

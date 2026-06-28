@@ -19,7 +19,7 @@ Real-time systems prioritize **low latency, high availability, and horizontal sc
 
 ### Real-Time Use Cases
 
-```
+```text
 Chat Applications         -> WebSocket + Pub/Sub
 Live Notifications        -> SSE + Message Queue
 Multiplayer Games         -> WebSocket + State Sync
@@ -34,7 +34,7 @@ Social Media Feeds        -> SSE + Fan-out
 
 ### Architecture Patterns
 
-```
+```text
 Pattern 1: Direct Connection
 +--------+     +--------+     +--------+
 | Client | --> | Server | --> | Client |
@@ -69,7 +69,7 @@ Optimized read/write models
 
 ### Scaling WebSockets
 
-```
+```text
 Single Server:
 Client ---
 Client ---|--- WebSocket Server --- Database
@@ -855,7 +855,7 @@ class ConsistentHash<T> {
 
 ### Throughput Comparison
 
-```
+```text
 Message Broker Throughput (messages/sec):
 - Redis Pub/Sub: 100,000-500,000
 - Kafka: 100,000-2,000,000
@@ -865,7 +865,7 @@ Message Broker Throughput (messages/sec):
 
 ### Latency Comparison
 
-```
+```text
 End-to-End Latency:
 - Redis Pub/Sub: 1-5ms
 - Kafka: 5-15ms
@@ -875,7 +875,7 @@ End-to-End Latency:
 
 ### Memory Usage
 
-```
+```text
 Per Connection Memory:
 - WebSocket: 0.5-2 KB
 - SSE: 1-2 KB

@@ -17,7 +17,7 @@ Web security encompasses the practices, technologies, and policies designed to p
 
 ### Security Layers
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Web Security Layers                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -47,7 +47,7 @@ Web security encompasses the practices, technologies, and policies designed to p
 
 ### Security Headers Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Security Headers                              │
 ├─────────────────────────────────────────────────────────────────┤

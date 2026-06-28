@@ -16,7 +16,7 @@
 
 ### Server Actions Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SERVER ACTIONS FLOW                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -62,7 +62,7 @@
 
 ### Server Actions vs API Routes
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                  SERVER ACTIONS vs API ROUTES                    │
 ├─────────────────────────────────────────────────────────────────┤
@@ -698,7 +698,7 @@ export default async function Page() {
 
 ## Performance Considerations
 
-```
+```text
 Server Actions Performance:
 - Execute on server (no client JS overhead)
 - Automatic revalidation avoids full page reload
@@ -853,7 +853,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```text
 'use server' directive:
 - At top of file or function
 - Marks as Server Action

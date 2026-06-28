@@ -24,7 +24,7 @@ The Singleton pattern works by:
 3. Maintaining a single static instance within the class
 4. Providing lazy initialization or eager initialization based on requirements
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │              Singleton Class                 │
 ├─────────────────────────────────────────────┤
@@ -745,7 +745,7 @@ The Singleton pattern is a powerful tool for ensuring a single instance and glob
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           SINGLETON PATTERN                 │
 ├─────────────────────────────────────────────┤

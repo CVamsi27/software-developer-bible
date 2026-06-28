@@ -18,7 +18,7 @@ A WebSocket connection starts as an HTTP request and then **upgrades** to a pers
 
 ### HTTP Long Polling vs WebSockets
 
-```
+```text
 HTTP Long Polling:                    WebSockets:
 Client     Server                     Client     Server
   |----req---->|                        |          |
@@ -38,7 +38,7 @@ Client     Server                     Client     Server
 
 The WebSocket protocol begins with an HTTP/1.1 upgrade request:
 
-```
+```text
 1. Client sends HTTP Upgrade request:
    GET /chat HTTP/1.1
    Host: server.example.com
@@ -58,7 +58,7 @@ The WebSocket protocol begins with an HTTP/1.1 upgrade request:
 
 ### Frame Structure
 
-```
+```text
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-------+-+-------------+-------------------------------+
@@ -81,7 +81,7 @@ The WebSocket protocol begins with an HTTP/1.1 upgrade request:
 
 ### Connection Lifecycle
 
-```
+```text
 +----------+     +----------+     +----------+     +----------+
 | CONNECTING| --> |   OPEN   | --> | CLOSING  | --> |  CLOSED  |
 +----------+     +----------+     +----------+     +----------+
@@ -757,7 +757,7 @@ class ConnectionPool {
 
 ### Memory Usage
 
-```
+```text
 Per Connection Memory Usage:
 - HTTP Request: ~2-8 KB (headers)
 - WebSocket: ~0.5-2 KB (connection state)
@@ -769,7 +769,7 @@ Per Connection Memory Usage:
 
 ### Throughput Benchmarks
 
-```
+```text
 Message Rate (messages/second):
 - HTTP REST: 1,000-5,000
 - HTTP Long Polling: 5,000-20,000

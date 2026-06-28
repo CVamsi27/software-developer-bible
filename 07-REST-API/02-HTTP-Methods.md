@@ -18,7 +18,7 @@ HTTP methods provide a standardized way to interact with resources:
 
 ### Method Properties
 
-```
+```text
 HTTP Method Properties
 ══════════════════════
 
@@ -39,7 +39,7 @@ DELETE    No      Yes           Optional    No
 
 #### GET - Retrieve Resource
 
-```
+```text
 GET Request Flow
 ════════════════
 
@@ -81,7 +81,7 @@ app.get('/api/users/:id', async (req, res) => {
 
 #### POST - Create Resource
 
-```
+```text
 POST Request Flow
 ═════════════════
 
@@ -130,7 +130,7 @@ app.post('/api/orders', async (req, res) => {
 
 #### PUT - Replace Resource
 
-```
+```text
 PUT Request Flow
 ════════════════
 
@@ -173,7 +173,7 @@ app.put('/api/users/:id', async (req, res) => {
 
 #### PATCH - Partial Update
 
-```
+```text
 PATCH Request Flow
 ══════════════════
 
@@ -229,7 +229,7 @@ app.patch('/api/users/:id', async (req, res) => {
 
 #### DELETE - Remove Resource
 
-```
+```sql
 DELETE Request Flow
 ═══════════════════
 
@@ -308,7 +308,7 @@ app.options('/api/users/:id', (req, res) => {
 
 ### Idempotency Deep Dive
 
-```
+```text
 Idempotency Examples
 ════════════════════
 

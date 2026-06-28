@@ -26,7 +26,7 @@ Key concepts:
 
 ### HPA Architecture
 
-```
+```text
                     +------------------+
                     |  Metrics Server  |
                     |  (CPU, Memory)   |
@@ -52,7 +52,7 @@ If CPU < 30%:  Scale DOWN (remove Pods)
 
 ### Scaling Flow
 
-```
+```text
 +----------------------------------------------------------+
 |                    Scaling Decision                        |
 |                                                           |

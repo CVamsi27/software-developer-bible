@@ -15,7 +15,7 @@ A **Shallow Copy** creates a new object with the same property values, but neste
 
 ### Copy Methods Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     COPY METHODS                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -526,7 +526,7 @@ Understanding shallow vs deep copy is essential:
 
 ## Cheat Sheet
 
-```
+```dockerfile
 SHALLOW vs DEEP COPY CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

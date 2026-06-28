@@ -12,7 +12,7 @@
 ## How It Works
 
 ### Rebase Flow
-```
+```text
 Before Rebase:
 main:      A---B---C---D
                   \
@@ -25,7 +25,7 @@ feature:                 E'---F'---G'
 ```
 
 ### Cherry-Pick Flow
-```
+```text
 Before Cherry-Pick:
 main:      A---B---C---D
                   \

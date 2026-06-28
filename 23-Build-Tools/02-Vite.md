@@ -14,7 +14,7 @@ Traditional bundlers like Webpack process the entire application before serving,
 Vite uses a fundamentally different approach than traditional bundlers:
 
 ### Development Mode
-```
+```text
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │  Browser        │───▶│  Vite Dev       │───▶│  Native ES      │
 │  Request        │    │  Server         │    │  Modules        │
@@ -28,7 +28,7 @@ Vite uses a fundamentally different approach than traditional bundlers:
 ```
 
 ### Production Mode
-```
+```text
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │  Source Code    │───▶│  Rollup         │───▶│  Optimized      │
 │  (ES Modules)   │    │  Bundler        │    │  Bundles        │
@@ -90,7 +90,7 @@ export default defineConfig({
 ```
 
 ### Project Structure
-```
+```text
 my-vite-app/
 ├── index.html           # Entry point
 ├── vite.config.js       # Configuration

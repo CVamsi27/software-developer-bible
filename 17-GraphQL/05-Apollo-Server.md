@@ -4,7 +4,7 @@
 
 **Apollo Server** is the reference implementation of a GraphQL server in JavaScript/TypeScript. It's a production-ready, spec-compliant GraphQL server that integrates with any Node.js HTTP framework (Express, Fastify, Koa, etc.) or runs standalone. It provides built-in features for query validation, execution, error handling, caching, and monitoring.
 
-```
+```text
 Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio
 ```
 
@@ -14,7 +14,7 @@ Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio
 
 ### Building GraphQL Servers Without Apollo
 
-```
+```text
 Without Apollo Server:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Implement HTTP server from scratch                          │
@@ -52,7 +52,7 @@ With Apollo Server:
 
 ### Architecture Overview
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                       APOLLO SERVER ARCHITECTURE                 │
 ├──────────────────────────────────────────────────────────────────┤
@@ -87,7 +87,7 @@ With Apollo Server:
 
 ### Request Lifecycle
 
-```
+```text
 1. HTTP Request arrives
         │
         ▼
@@ -734,7 +734,7 @@ const server = new ApolloServer({
 
 ### Configuration
 
-```
+```text
 1. Use environment variables for configuration
    - API keys
    - Database connections
@@ -758,7 +758,7 @@ const server = new ApolloServer({
 
 ### Context Creation
 
-```
+```text
 1. Keep context lightweight
    - Don't create heavy objects
    - Use DataLoader for batching
@@ -775,7 +775,7 @@ const server = new ApolloServer({
 
 ### Development vs Production
 
-```
+```text
 Development:
   - Enable introspection
   - Enable Playground/Sandbox

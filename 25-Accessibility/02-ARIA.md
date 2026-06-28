@@ -14,7 +14,7 @@ ARIA (Accessible Rich Internet Applications) is a set of attributes that define 
 ARIA has three main categories: Roles, States, and Properties:
 
 ### ARIA Categories
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ARIA Categories                               │
 ├─────────────────────────────────────────────────────────────────┤

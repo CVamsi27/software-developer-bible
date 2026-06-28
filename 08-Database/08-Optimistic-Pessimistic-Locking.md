@@ -16,7 +16,7 @@
 
 ### Comparison Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Locking Strategies                         │
 │                                                             │
@@ -43,7 +43,7 @@
 
 ### Optimistic Locking Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Optimistic Locking                         │
 │                                                             │
@@ -62,7 +62,7 @@
 
 ### Pessimistic Locking Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Pessimistic Locking                       │
 │                                                             │

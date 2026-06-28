@@ -18,7 +18,7 @@ REST API design is a critical skill for full-stack developers. Interviewers test
 
 ### Interview Format
 
-```
+```text
 REST API Interview Structure
 ════════════════════════════
 
@@ -112,7 +112,7 @@ app.patch('/api/users/:id', async (req, res) => {
 
 **Answer:**
 
-```
+```text
 URL Shortener API Design
 ════════════════════════
 
@@ -223,7 +223,7 @@ app.get('/:shortCode', async (req, res) => {
 
 **Answer:**
 
-```
+```text
 Pagination Strategies
 ═════════════════════
 
@@ -280,7 +280,7 @@ app.get('/api/users', async (req, res) => {
 
 CORS (Cross-Origin Resource Sharing) is a security mechanism that restricts web pages from making requests to a different origin.
 
-```
+```text
 CORS Flow
 ═════════
 
@@ -372,7 +372,7 @@ function rateLimiter(maxRequests: number, windowMs: number) {
 
 **Answer:**
 
-```
+```text
 JWT Authentication Flow
 ═══════════════════════
 
@@ -467,7 +467,7 @@ Benefits:
 
 **Answer:**
 
-```
+```text
 Versioning Strategies
 ═════════════════════
 
@@ -514,7 +514,7 @@ app.use('/api/v2', v2Router);
 
 **Answer:**
 
-```
+```text
 Social Media Feed API
 ═════════════════════
 

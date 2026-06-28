@@ -72,7 +72,7 @@ Services provide stable networking for Pods.
 
 Kubernetes uses DNS for service discovery:
 
-```
+```text
 Service Name: myservice
 Namespace: production
 FQDN: myservice.production.svc.cluster.local
@@ -228,7 +228,7 @@ kubectl apply -f pod.yaml
 
 **Answer:**
 
-```
+```text
 +----------------------------------------------------------+
 |                    Control Plane                           |
 |  +----------------+  +----------------+  +----------+    |

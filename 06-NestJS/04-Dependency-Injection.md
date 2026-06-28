@@ -27,7 +27,7 @@ NestJS's DI container works in several phases:
 
 ### DI Resolution Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    DI Resolution Flow                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -59,7 +59,7 @@ NestJS's DI container works in several phases:
 
 ### Constructor Injection
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │                 Constructor Injection                 │
 ├──────────────────────────────────────────────────────┤

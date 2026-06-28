@@ -17,7 +17,7 @@ The real DOM is slow for several reasons:
 3. **Batch-unfriendly**: The browser cannot batch DOM reads and writes optimally when done manually.
 4. **Imperative complexity**: Direct DOM manipulation leads to complex, error-prone imperative code.
 
-```
+```text
 Without Virtual DOM (Direct Manipulation):
 Developer → Directly mutates DOM → Browser triggers reflow/repaint
                                    → Layout recalculation
@@ -28,7 +28,7 @@ Developer → Directly mutates DOM → Browser triggers reflow/repaint
 
 ### The Virtual DOM Solution
 
-```
+```text
 With Virtual DOM:
 Developer → Describes desired state (JS object)
          → React creates Virtual DOM tree
@@ -49,7 +49,7 @@ Developer → Describes desired state (JS object)
 
 ### ASCII Diagram: Virtual DOM Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    STATE CHANGE                         │
 │              (setState, props change)                   │
@@ -666,7 +666,7 @@ A:
 
 **Q38: How would you implement a virtual DOM diff algorithm from scratch?**
 A:
-```
+```typescript
 function diff(oldNode, newNode) {
   if (!oldNode) return { type: 'CREATE', node: newNode };
   if (!newNode) return { type: 'REMOVE' };
@@ -769,7 +769,7 @@ The Virtual DOM is React's core innovation that enables declarative UI developme
 
 ## Cheat Sheet
 
-```
+```text
 Virtual DOM Key Points:
 ├── What: In-memory JS representation of real DOM
 ├── Why: Batch & minimize expensive DOM updates

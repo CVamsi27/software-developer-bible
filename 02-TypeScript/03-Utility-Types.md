@@ -4,7 +4,7 @@
 
 **Utility types** are built-in TypeScript types that provide common type transformations. They allow you to manipulate and transform types without writing complex type logic from scratch.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    UTILITY TYPES CHEAT SHEET                    │
 ├─────────────────────────────────────────────────────────────────┤

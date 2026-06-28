@@ -4,7 +4,7 @@
 
 **Mapped types** are types that transform existing types by iterating over their keys using `[K in keyof T]` syntax. They allow you to create new types by mapping over every property in a type.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    MAPPED TYPE SYNTAX                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -455,7 +455,7 @@ type NullableKeys<T> = {
 2. **How do you make all properties optional?**
    ```typescript
    type Optional<T> = { [K in keyof T]?: T[K] };
-   ```
+```
 
 3. **What does `[K in keyof T]` mean?**
    - Iterate over all keys K in type T
@@ -471,7 +471,7 @@ type NullableKeys<T> = {
 6. **Write a type that makes all properties required**
    ```typescript
    type Required<T> = { [K in keyof T]-?: T[K] };
-   ```
+```
 
 7. **How do you filter properties in a mapped type?**
    - Use key remapping with conditional: `[K in keyof T as Condition ? K : never]`
@@ -482,7 +482,7 @@ type NullableKeys<T> = {
 9. **How do you make all properties readonly?**
    ```typescript
    type Readonly<T> = { readonly [K in keyof T]: T[K] };
-   ```
+```
 
 10. **Can you nest mapped types?**
     - Yes: Use recursion for deep transformations

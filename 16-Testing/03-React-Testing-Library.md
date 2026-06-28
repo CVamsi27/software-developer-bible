@@ -27,7 +27,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 
 ### RTL Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    React Testing Library                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -63,7 +63,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 
 ### Query Priority Hierarchy
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  Query Priority (Best to Worst)              │
 ├─────────────────────────────────────────────────────────────┤
@@ -89,7 +89,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 
 ### Testing User Flow
 
-```
+```text
 User Interaction Flow:
 ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
 │  Render  │────▶│  Find    │────▶│  Interact│────▶│  Assert  │

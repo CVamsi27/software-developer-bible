@@ -16,7 +16,7 @@
 
 ### Client Component Lifecycle
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                  CLIENT COMPONENT LIFECYCLE                     │
 ├─────────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@
 
 ### Bundle Impact Comparison
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │               BUNDLE SIZE COMPARISON                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -78,7 +78,7 @@
 
 ### Hydration Process
 
-```
+```text
 Server Output:                    Client After Hydration:
 ┌──────────────────────┐         ┌──────────────────────┐
 │ <div>                 │         │ <div>                 │
@@ -793,7 +793,7 @@ export function DataFetcher() {
 
 ### Hydration Cost
 
-```
+```text
 Hydration time = Component tree size × Complexity
 
 Fast hydration:
@@ -810,7 +810,7 @@ Slow hydration:
 
 ### Optimization Strategies
 
-```
+```text
 1. Code splitting:
    dynamic(() => import('./heavy-component'))
 
@@ -973,7 +973,7 @@ Slow hydration:
 
 ## Cheat Sheet
 
-```
+```text
 'use client' directive:
 - Marks component as Client Component
 - Must be at top of file

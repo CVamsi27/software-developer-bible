@@ -18,7 +18,7 @@
 
 Interceptors implement `intercept(context, next)` receiving an `ExecutionContext` and `CallHandler`. The `CallHandler.handle()` returns an Observable that can be piped through RxJS operators.
 
-```
+```text
 Request
    |
    v

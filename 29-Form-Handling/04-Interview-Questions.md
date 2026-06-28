@@ -11,7 +11,7 @@ This comprehensive guide covers 25 interview questions on form handling in React
 
 ## How It Works
 
-```
+```text
 Interview Question Categories:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -210,7 +210,7 @@ function solutionPattern(problem: string): string {
 ## Best Practices for Interview Answers
 
 ### Structure Your Answer
-```
+```text
 1. Definition (1-2 sentences)
 2. How it works (2-3 sentences)
 3. Libraries/Tools (if applicable)

@@ -14,7 +14,7 @@ This guide contains 40 of the most commonly asked database/PostgreSQL interview 
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Question Categories                       │
 │                                                             │
@@ -766,7 +766,7 @@ Master these questions to ace your database interview. Focus on understanding co
 
 ## Cheat Sheet
 
-```
+```text
 Key Concepts:
 • ACID: Atomicity, Consistency, Isolation, Durability
 • MVCC: Multi-Version Concurrency Control

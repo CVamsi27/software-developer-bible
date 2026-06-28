@@ -18,7 +18,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 
 ### Types of Execution Contexts
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  EXECUTION CONTEXT TYPES                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -43,7 +43,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 
 ### Creation Phase vs Execution Phase
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              EXECUTION CONTEXT LIFECYCLE                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -73,7 +73,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 
 ### Execution Context Stack (Call Stack)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  EXECUTION CONTEXT STACK                      │
 │                    (LIFO - Last In, First Out)                │
@@ -124,7 +124,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 
 ### Execution Context Components
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │            EXECUTION CONTEXT STRUCTURE                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -718,7 +718,7 @@ Understanding execution contexts is crucial for writing efficient, bug-free Java
 
 ## Cheat Sheet
 
-```
+```text
 EXECUTION CONTEXT CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

@@ -26,7 +26,7 @@ Key concepts:
 
 ### Deployment Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                      Deployment                           |
 |  name: myapp                                             |
@@ -60,7 +60,7 @@ Key concepts:
 
 ### Rolling Update Process
 
-```
+```text
 Step 1: Initial State
 +--------+  +--------+  +--------+
 | v1 Pod |  | v1 Pod |  | v1 Pod |

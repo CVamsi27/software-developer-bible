@@ -12,7 +12,7 @@ Profiling tools are browser and external utilities that help developers analyze,
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                     PROFILING TOOLS ECOSYSTEM                       │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -41,7 +41,7 @@ Profiling tools are browser and external utilities that help developers analyze,
 ## Chrome DevTools Performance Tab
 
 ### Recording a Performance Profile
-```
+```text
 Recording Workflow:
 1. Open Chrome DevTools (F12)
 2. Go to Performance tab
@@ -64,7 +64,7 @@ Output:
 ```
 
 ### Flame Chart Analysis
-```
+```text
 Flame Chart Example:
 ┌─────────────────────────────────────────────────────────────────┐
 │ Main Thread                                                      │
@@ -473,7 +473,7 @@ function App() {
 
 ## Performance Considerations
 
-```
+```text
 Tool Selection Guide:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Quick Check:                                                   │

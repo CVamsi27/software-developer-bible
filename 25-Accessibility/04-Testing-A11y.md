@@ -14,7 +14,7 @@ Accessibility testing is the practice of verifying that web content is usable by
 Accessibility testing combines multiple approaches:
 
 ### Testing Strategy
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Accessibility Testing Strategy                 │
 ├─────────────────────────────────────────────────────────────────┤

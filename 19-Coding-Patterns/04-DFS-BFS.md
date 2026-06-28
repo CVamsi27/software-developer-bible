@@ -70,7 +70,7 @@ function bfs(root: TreeNode | null): void {
 
 ## How It Works
 
-```
+```text
 Binary Tree:
         1
        / \
@@ -87,7 +87,7 @@ BFS Traversal (Level-order): 1 → 2 → 3 → 4 → 5 → 6
 
 ### ASCII Diagram
 
-```
+```text
 DFS (Depth-First):
         1
        / \
@@ -432,7 +432,7 @@ DFS and BFS are fundamental graph/tree traversal algorithms. DFS goes deep befor
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: DFS / BFS
 Use when: Graphs, trees, mazes, connected components
 Time: O(V + E) | Space: O(V)

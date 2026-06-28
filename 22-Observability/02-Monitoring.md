@@ -17,7 +17,7 @@ A **monitoring system** scrapes or receives metrics at regular intervals, stores
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    MONITORING ARCHITECTURE                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -49,7 +49,7 @@ A **monitoring system** scrapes or receives metrics at regular intervals, stores
 
 ### Metric Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │  METRIC TYPES                                                   │
 ├─────────────────────────────────────────────────────────────────┤

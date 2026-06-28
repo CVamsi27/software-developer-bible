@@ -503,7 +503,7 @@ Expected impact:
 5. **Fallback Mechanism**: If remote fails, fallback or error handling
 
 Runtime flow:
-```
+```text
 Host → Request remote module → Remote container loaded →
 Module scope negotiated → Module exported →
 Shared dependencies resolved → Module returned to host

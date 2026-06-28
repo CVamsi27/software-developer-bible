@@ -20,7 +20,7 @@ PostgreSQL is a powerful, open-source, object-relational database management sys
 
 PostgreSQL uses a client-server model with multiple processes:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                      Client Applications                    │
 │              (Node.js, Python, Go, etc.)                    │
@@ -65,7 +65,7 @@ PostgreSQL uses a client-server model with multiple processes:
 
 ### Memory Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     Process Memory                          │
 │                                                             │
@@ -103,7 +103,7 @@ PostgreSQL uses a client-server model with multiple processes:
 
 ### Write-Ahead Logging (WAL)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    WAL Process Flow                          │
 │                                                             │

@@ -16,7 +16,7 @@ A JOIN is a SQL operation that combines rows from two or more tables based on a 
 
 ### Join Types Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    SQL Join Types                            │
 │                                                             │
@@ -58,7 +58,7 @@ A JOIN is a SQL operation that combines rows from two or more tables based on a 
 
 ### Join Algorithms
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Join Algorithms                            │
 │                                                             │

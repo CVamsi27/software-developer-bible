@@ -14,7 +14,7 @@ In modern web development, applications are composed of many modules, assets (im
 Webpack uses a configuration file (`webpack.config.js`) that defines entry points, output, loaders, plugins, and other settings. It reads the entry point, follows all `import`/`require` statements, builds a dependency graph, and outputs bundles.
 
 ### Webpack Compilation Flow
-```
+```text
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  Entry      │───▶│  Resolve    │───▶│  Loaders    │───▶│  Plugins    │
 │  Points     │    │  Modules    │    │  Transform  │    │  Optimize   │

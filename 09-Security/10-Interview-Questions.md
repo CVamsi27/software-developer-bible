@@ -16,7 +16,7 @@ This comprehensive guide covers the 40 most frequently asked security interview 
 
 ### Question Categories
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                Interview Question Categories                     │
 ├─────────────────────────────────────────────────────────────────┤
@@ -50,7 +50,7 @@ This comprehensive guide covers the 40 most frequently asked security interview 
 
 When answering security interview questions, use this structure:
 
-```
+```text
 1. Definition: What is it?
 2. Why: Why is it important?
 3. How: How does it work?

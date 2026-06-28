@@ -28,7 +28,7 @@ Dependency Injection is a design pattern where an object receives its dependenci
 
 ### CQRS Architecture:
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              CQRS Pattern                       │
 ├─────────────────────────────────────────────────┤
@@ -55,7 +55,7 @@ Dependency Injection is a design pattern where an object receives its dependenci
 
 ### DI Container:
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │           Dependency Injection                  │
 ├─────────────────────────────────────────────────┤
@@ -1361,7 +1361,7 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │        CQRS & DI PATTERNS                   │
 ├─────────────────────────────────────────────┤

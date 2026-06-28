@@ -4,7 +4,7 @@
 
 **`infer`** is a keyword used in conditional types to extract and name a type within a type position. It allows you to "infer" or "capture" a type from another type for reuse.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                      INFER KEYWORD                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -318,7 +318,7 @@ type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H
 2. **How do you extract a function's return type?**
    ```typescript
    type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
-   ```
+```
 
 3. **Can you have multiple `infer` in one conditional?**
    - Yes, but only one per position
@@ -329,19 +329,19 @@ type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H
 5. **How do you extract Promise inner type?**
    ```typescript
    type Unwrap<T> = T extends Promise<infer U> ? U : T;
-   ```
+```
 
 ### Intermediate
 
 6. **Write a type that extracts first array element**
    ```typescript
    type First<T extends any[]> = T extends [infer F, ...any[]] ? F : never;
-   ```
+```
 
 7. **How do you extract all function parameters?**
    ```typescript
    type Params<T> = T extends (...args: infer P) => any ? P : never;
-   ```
+```
 
 8. **Can infer be used outside conditional types?**
    - No, it's only valid in the `extends` clause

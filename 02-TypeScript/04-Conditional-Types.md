@@ -4,7 +4,7 @@
 
 **Conditional types** are TypeScript types that select types based on conditions, similar to the ternary operator (`? :`) in JavaScript. They enable creating types that depend on type relationships.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                   CONDITIONAL TYPE SYNTAX                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -287,7 +287,7 @@ type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
 2. **How do you check if a type is a string?**
    ```typescript
    type IsString<T> = T extends string ? true : false;
-   ```
+```
 
 3. **What is the `infer` keyword?**
    - Used in conditional types to extract/infer types
@@ -303,7 +303,7 @@ type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
 6. **Write a type that extracts array element type**
    ```typescript
    type ElementOf<T> = T extends (infer E)[] ? E : never;
-   ```
+```
 
 7. **How do you create a deep readonly type?**
    - Use recursive conditional types with mapped types

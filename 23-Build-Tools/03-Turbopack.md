@@ -14,7 +14,7 @@ Traditional bundlers rebuild entire dependency graphs on changes, causing slow d
 Turbopack uses an incremental computation engine that tracks dependencies at a granular level:
 
 ### Turbopack Architecture
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Turbopack Architecture                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -33,7 +33,7 @@ Turbopack uses an incremental computation engine that tracks dependencies at a g
 ```
 
 ### Incremental Computation
-```
+```text
 Initial Build:
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  All Files  │───▶│  Full Build │───▶│  Output     │

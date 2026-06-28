@@ -4,7 +4,7 @@
 
 **Queries** and **Mutations** are the two primary read and write operations in GraphQL. Queries retrieve data without side effects, while mutations modify data and return the updated state. Both follow the same syntax rules but differ in execution guarantees.
 
-```
+```text
 Query   → Read operations (idempotent, side-effect free)
 Mutation → Write operations (sequential execution, side effects allowed)
 ```
@@ -15,7 +15,7 @@ Mutation → Write operations (sequential execution, side effects allowed)
 
 ### The Problem with REST Operations
 
-```
+```text
 REST Approach:
 ┌─────────────────────────────────────────────────────────────────┐
 │  GET    /api/users/1          → Fetch user                      │
@@ -60,7 +60,7 @@ GraphQL Approach:
 
 ### Query Execution Flow
 
-```
+```text
 Query: { user(id: 1) { name posts { title } } }
 
 1. Parse query into AST
@@ -90,7 +90,7 @@ Query: { user(id: 1) { name posts { title } } }
 
 ### Mutation Execution Flow
 
-```
+```text
 Mutation: { createUser(input: { name: "John" }) { id name } }
 
 1. Parse mutation into AST
@@ -1049,7 +1049,7 @@ const GET_USER_POSTS = gql`
 
 ### Query Best Practices
 
-```
+```text
 1. Always name operations
    query GetUser { ... }
 
@@ -1071,7 +1071,7 @@ const GET_USER_POSTS = gql`
 
 ### Mutation Best Practices
 
-```
+```text
 1. Use Input types for mutation arguments
    mutation CreateUser(input: CreateUserInput!) { ... }
 
@@ -1093,7 +1093,7 @@ const GET_USER_POSTS = gql`
 
 ### Error Handling Best Practices
 
-```
+```text
 1. Use error codes for programmatic handling
    code: NOT_FOUND, UNAUTHORIZED, VALIDATION_ERROR
 
@@ -1245,7 +1245,7 @@ const resolvers = {
         });
       },
     });
-    ```
+```
 
 12. **How do you handle mutations that affect multiple parts of the cache?**
     Use `cache.modify` or `cache.writeQuery` to update multiple entries. Consider refetching queries if cache updates are complex.

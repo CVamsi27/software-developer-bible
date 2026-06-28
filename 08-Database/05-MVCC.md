@@ -16,7 +16,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 
 ### MVCC Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    MVCC Overview                             │
 │                                                             │
@@ -40,7 +40,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 
 ### Tuple Visibility Rules
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Tuple Visibility Rules                     │
 │                                                             │
@@ -68,7 +68,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 
 ### Transaction ID Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Transaction ID Lifecycle                   │
 │                                                             │

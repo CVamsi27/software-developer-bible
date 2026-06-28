@@ -26,7 +26,7 @@ Key concepts:
 
 ### Pipeline Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                  Docker Build Pipeline                     |
 |                                                           |
@@ -65,7 +65,7 @@ Key concepts:
 
 ### Image Tagging Strategy
 
-```
+```text
 Git Tags:              Docker Tags:              Registry:
 v1.0.0        --->     myapp:1.0.0       --->  myapp:1.0.0
 v1.0.1        --->     myapp:1.0.1       --->  myapp:1.0.1

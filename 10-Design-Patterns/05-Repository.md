@@ -24,7 +24,7 @@ The Repository pattern works by:
 3. Business logic depends only on the interface, not implementations
 4. Dependency injection provides the concrete implementation
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │             Repository Pattern                  │
 ├─────────────────────────────────────────────────┤
@@ -1053,7 +1053,7 @@ The Repository pattern is essential for clean architecture and domain-driven des
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           REPOSITORY PATTERN                │
 ├─────────────────────────────────────────────┤

@@ -18,7 +18,7 @@ Status codes provide standardized communication between client and server:
 
 ### Status Code Classes
 
-```
+```text
 HTTP Status Code Classes
 ════════════════════════
 
@@ -33,7 +33,7 @@ Class   Meaning           Examples
 
 ### 1xx Informational
 
-```
+```text
 1xx Status Codes
 ════════════════
 
@@ -62,7 +62,7 @@ app.get('/ws', (req, res) => {
 
 ### 2xx Success
 
-```
+```text
 2xx Status Codes
 ════════════════
 
@@ -139,7 +139,7 @@ app.get('/api/files/:id', async (req, res) => {
 
 ### 3xx Redirection
 
-```
+```text
 3xx Status Codes
 ════════════════
 
@@ -199,7 +199,7 @@ app.post('/api/users', (req, res) => {
 
 ### 4xx Client Errors
 
-```
+```text
 4xx Status Codes
 ════════════════
 
@@ -336,7 +336,7 @@ app.use('/api', rateLimiter({
 
 ### 5xx Server Errors
 
-```
+```text
 5xx Status Codes
 ════════════════
 

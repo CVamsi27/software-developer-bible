@@ -12,7 +12,7 @@ React applications can become slow due to unnecessary re-renders, large bundle s
 
 ### Performance Optimization Hierarchy
 
-```
+```text
 Level 1: Component Optimization
 ├── React.memo: Prevent unnecessary re-renders
 ├── useMemo: Memoize expensive computations
@@ -339,7 +339,7 @@ React performance optimization involves memoization, virtualization, code splitt
 
 ## Cheat Sheet
 
-```
+```text
 Performance Optimization:
 ├── React.memo: Prevent unnecessary re-renders
 ├── useMemo: Memoize expensive computations

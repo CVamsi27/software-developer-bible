@@ -16,7 +16,7 @@ A transaction is a logical unit of work that contains one or more SQL statements
 
 ### Transaction Lifecycle
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Transaction Lifecycle                      │
 │                                                             │
@@ -52,7 +52,7 @@ A transaction is a logical unit of work that contains one or more SQL statements
 
 ### Isolation Levels
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Isolation Levels                          │
 │                                                             │

@@ -25,7 +25,7 @@
 - Global shipping support
 
 ## Capacity Estimation
-```
+```text
 User Estimates:
 - 10M registered users
 - 1M daily active users
@@ -338,7 +338,7 @@ CREATE TABLE promotions (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    products     │     │   categories    │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -403,7 +403,7 @@ CREATE TABLE promotions (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │              (Web, Mobile, Admin Panel)                          │
@@ -870,7 +870,7 @@ class CartCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── order.created          (new order)
 ├── order.confirmed        (payment successful)
@@ -927,7 +927,7 @@ class OrderEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │

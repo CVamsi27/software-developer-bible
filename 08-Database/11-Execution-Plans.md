@@ -16,7 +16,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 
 ### EXPLAIN Output
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    EXPLAIN Output Structure                   │
 │                                                             │
@@ -37,7 +37,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 
 ### Scan Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PostgreSQL Scan Types                      │
 │                                                             │
@@ -73,7 +73,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 
 ### Join Algorithms
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Join Algorithms                            │
 │                                                             │

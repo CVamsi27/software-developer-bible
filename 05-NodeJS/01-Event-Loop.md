@@ -19,7 +19,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 
 ### Event Loop Phases (in order)
 
-```
+```text
    ┌───────────────────────────┐
 ┌─>│         TIMERS            │  ← setTimeout(), setInterval()
 │  └─────────────┬─────────────┘
@@ -40,7 +40,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 
 ### Detailed Phase Breakdown
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                        PHASE 1: TIMERS                       │
 ├───────────────────────────────────────────────────────────────┤
@@ -86,7 +86,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 
 ### Microtasks: process.nextTick and Promise
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    MICROTASK QUEUES                          │
 ├───────────────────────────────────────────────────────────────┤
@@ -110,7 +110,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 
 ### setImmediate vs setTimeout(0)
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │              setImmediate vs setTimeout(0)                   │
 ├───────────────────────────────────────────────────────────────┤
@@ -143,7 +143,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 
 ### Concurrency Handling Flow
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                  HOW NODE HANDLES CONCURRENCY                 │
 ├───────────────────────────────────────────────────────────────┤
@@ -987,7 +987,7 @@ The Node.js event loop is the foundation of its non-blocking I/O architecture. U
 
 ## Cheat Sheet
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    EVENT LOOP CHEAT SHEET                    │
 ├───────────────────────────────────────────────────────────────┤

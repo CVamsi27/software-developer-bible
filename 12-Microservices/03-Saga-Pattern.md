@@ -17,7 +17,7 @@ In microservices:
 
 ### Choreography-Based Saga
 
-```
+```text
 ┌─────────────┐    OrderCreated    ┌─────────────┐
 │   Order     │───────────────────>│  Inventory  │
 │   Service   │                    │  Service    │
@@ -45,7 +45,7 @@ Failure Flow:
 
 ### Orchestration-Based Saga
 
-```
+```text
                     ┌─────────────────┐
                     │   Saga          │
                     │   Orchestrator  │
@@ -730,7 +730,7 @@ Saga Pattern enables distributed transactions in microservices using local trans
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                   SAGA PATTERN                          │
 ├─────────────────────────────────────────────────────────┤

@@ -17,7 +17,7 @@ The previous reconciler (React 15 and earlier) was synchronous and unblockable:
 3. **Janky animations**: Long renders caused frame drops, making animations janky.
 4. **No pause/resume**: React couldn't pause rendering to handle urgent events.
 
-```
+```text
 Stack Reconciler (React 15):
 ┌──────────────────────────────────────────────┐
 │ Render Start                                 │
@@ -96,7 +96,7 @@ interface FiberNode {
 
 ### Fiber Tree Structure
 
-```
+```text
 Fiber Tree (Linked List):
 ═══════════════════════════════════════════════════════════════
 
@@ -134,7 +134,7 @@ Traversal Order:
 
 The Fiber work loop processes fibers in a depth-first traversal:
 
-```
+```text
 Work Loop Algorithm:
 ═══════════════════════════════════════════════════════════════
 
@@ -179,7 +179,7 @@ performUnitOfWork(fiber) {
 
 ### Two-Phase Rendering
 
-```
+```text
 Fiber Rendering Phases:
 ═══════════════════════════════════════════════════════════════
 
@@ -222,7 +222,7 @@ Commit Phase (不可中断):
 
 React 18 uses a **lanes model** for priority scheduling:
 
-```
+```text
 Priority Lanes (React 18):
 ═══════════════════════════════════════════════════════════════
 
@@ -730,7 +730,7 @@ A: `NoMode` is a fiber mode flag. In React 18, the default mode enables concurre
 
 **Q21: Explain the complete Fiber work loop algorithm.**
 A:
-```
+```typescript
 function workLoop(deadline) {
   while (nextUnitOfWork && !shouldYield()) {
     nextUnitOfWork = performUnitOfWork(nextUnitOfWork);
@@ -985,7 +985,7 @@ React Fiber is the internal architecture that powers React's reconciliation and 
 
 ## Cheat Sheet
 
-```
+```text
 Fiber Architecture:
 ├── What: React's reconciliation engine (React 16+)
 ├── Why: Enable incremental rendering & prioritization

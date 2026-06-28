@@ -22,7 +22,7 @@ SSE uses the `EventSource` API on the client and standard HTTP on the server, pr
 
 ### When to Choose SSE
 
-```
+```text
 Use SSE when:                    Use WebSockets when:
 - Server pushes updates          - Bidirectional communication needed
 - No client → server messages    - Client sends frequent messages
@@ -36,7 +36,7 @@ Use SSE when:                    Use WebSockets when:
 
 ### SSE Protocol
 
-```
+```text
 Client                              Server
   |                                    |
   |  GET /events HTTP/1.1              |
@@ -65,7 +65,7 @@ Client                              Server
 
 ### Message Format
 
-```
+```text
 Single-line message:
 data: Hello World\n\n
 
@@ -93,7 +93,7 @@ Comments (ignored by client):
 
 ### Connection Lifecycle
 
-```
+```text
 +-----------+     +-----------+     +-----------+     +-----------+
 | CONNECTING| --> |   OPEN    | --> | CONNECTING| --> |   OPEN    |
 +-----------+     +-----------+     +-----------+     +-----------+
@@ -908,7 +908,7 @@ app.get('/events', async (req, res) => {
 
 ### Memory Usage
 
-```
+```text
 SSE vs WebSockets Memory:
 - SSE: ~1-2 KB per connection (HTTP overhead)
 - WebSockets: ~0.5-1 KB per connection
@@ -920,7 +920,7 @@ SSE vs WebSockets Memory:
 
 ### Throughput
 
-```
+```text
 Message Rate:
 - SSE: 10,000-50,000 messages/second
 - WebSockets: 50,000-500,000 messages/second
@@ -930,7 +930,7 @@ SSE is sufficient for most server-push scenarios
 
 ### Latency
 
-```
+```text
 Latency Comparison:
 - HTTP Polling: 100-500ms
 - SSE: 10-50ms

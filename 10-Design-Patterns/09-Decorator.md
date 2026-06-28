@@ -24,7 +24,7 @@ The Decorator pattern works by:
 3. Creating decorators that wrap components and add behavior
 4. Decorators delegate to the wrapped component and add their behavior
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Decorator Pattern                  │
 ├─────────────────────────────────────────────────┤
@@ -1061,7 +1061,7 @@ The Decorator pattern is essential for adding behavior to objects dynamically. I
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           DECORATOR PATTERN                 │
 ├─────────────────────────────────────────────┤

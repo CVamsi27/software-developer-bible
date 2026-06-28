@@ -25,7 +25,7 @@ Key concepts:
 
 ### Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                  docker-compose up                    │
 │                        │                              │
@@ -53,7 +53,7 @@ Key concepts:
 
 ### Project Structure
 
-```
+```text
 myproject/
 ├── docker-compose.yml
 ├── docker-compose.override.yml

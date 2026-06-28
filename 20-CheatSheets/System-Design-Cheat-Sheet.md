@@ -82,7 +82,7 @@
 ## Common Patterns
 
 ### Cache-Aside (Lazy Loading)
-```
+```text
 1. Check cache for key
 2. Cache HIT → return cached value
 3. Cache MISS → query database

@@ -24,7 +24,7 @@ The Proxy pattern works by:
 3. The proxy controls access to the real object
 4. The proxy can add behavior before/after delegating to the real object
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Proxy Pattern                      │
 ├─────────────────────────────────────────────────┤
@@ -1002,7 +1002,7 @@ The Proxy pattern is essential for controlling access to objects. It enables laz
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           PROXY PATTERN                     │
 ├─────────────────────────────────────────────┤

@@ -18,7 +18,7 @@ In microservices:
 
 ### Traditional vs Event Sourcing
 
-```
+```text
 TRADITIONAL STATE STORAGE:
 ┌─────────────────────────────────────────────────────────┐
 │                    DATABASE                              │
@@ -55,7 +55,7 @@ EVENT SOURCING:
 
 ### Event Store Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                  EVENT SOURCING ARCHITECTURE             │
 ├─────────────────────────────────────────────────────────┤
@@ -880,7 +880,7 @@ Event Sourcing provides complete audit trails and temporal queries by storing im
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                 EVENT SOURCING                          │
 ├─────────────────────────────────────────────────────────┤

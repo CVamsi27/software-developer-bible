@@ -18,7 +18,7 @@ Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mappin
 
 ### Prisma Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Prisma Architecture                        │
 │                                                             │
@@ -55,7 +55,7 @@ Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mappin
 
 ### Schema → Client Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Prisma Workflow                            │
 │                                                             │

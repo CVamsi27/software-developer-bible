@@ -1389,7 +1389,7 @@ export function middleware(request) {
 
 ## Quick Reference
 
-```
+```text
 Key Concepts:
 - App Router: app/ directory, Server Components, nested layouts
 - Data Fetching: fetch() in Server Components, ISR, SSR

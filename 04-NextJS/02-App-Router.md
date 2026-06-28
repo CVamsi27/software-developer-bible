@@ -18,7 +18,7 @@ The App Router solves these with a more powerful, flexible routing system.
 
 ### App Router vs Pages Router Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PAGES ROUTER (Legacy)                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -66,7 +66,7 @@ The App Router solves these with a more powerful, flexible routing system.
 
 ### File-Based Routing Structure
 
-```
+```text
 app/
 ├── page.tsx                    → /
 ├── layout.tsx                  → Root layout
@@ -266,7 +266,7 @@ export default function PhotoModal({ params }) {
 
 ### Intercepting Routes
 
-```
+```text
 URL: /photos/123
 
 Normal route:        app/photos/[id]/page.tsx
@@ -419,7 +419,7 @@ export const maxDuration = 30
 
 ### E-Commerce Platform
 
-```
+```text
 app/
 ├── layout.tsx                    → Root layout with providers
 ├── (shop)/
@@ -449,7 +449,7 @@ app/
 
 ### Blog Platform
 
-```
+```text
 app/
 ├── layout.tsx
 ├── (marketing)/
@@ -595,7 +595,7 @@ export function AddToCartButton({ productId }: { productId: string }) {
 
 ## Performance Considerations
 
-```
+```text
 App Router Performance Benefits:
 - Server Components reduce client bundle size
 - Nested layouts avoid re-rendering shared UI
@@ -752,7 +752,7 @@ Performance Costs:
 
 ## Cheat Sheet
 
-```
+```text
 File Structure:
 ├── page.tsx          → Route page
 ├── layout.tsx        → Persistent layout

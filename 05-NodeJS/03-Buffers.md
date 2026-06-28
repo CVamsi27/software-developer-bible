@@ -21,7 +21,7 @@ Without Buffers, Node.js couldn't efficiently handle binary data or perform many
 
 ### Buffer Architecture
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    BUFFER MEMORY MODEL                       │
 ├───────────────────────────────────────────────────────────────┤
@@ -46,7 +46,7 @@ Without Buffers, Node.js couldn't efficiently handle binary data or perform many
 
 ### Buffer Allocation Strategies
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                  BUFFER ALLOCATION METHODS                   │
 ├───────────────────────────────────────────────────────────────┤
@@ -84,7 +84,7 @@ Without Buffers, Node.js couldn't efficiently handle binary data or perform many
 
 ### Encoding Schemes
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    ENCODING FORMATS                          │
 ├───────────────────────────────────────────────────────────────┤
@@ -128,7 +128,7 @@ Without Buffers, Node.js couldn't efficiently handle binary data or perform many
 
 ### Buffer Pool System
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    BUFFER POOL SYSTEM                        │
 ├───────────────────────────────────────────────────────────────┤
@@ -1073,7 +1073,7 @@ Buffers are essential for binary data handling in Node.js. Key takeaways:
 
 ## Cheat Sheet
 
-```
+```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    BUFFERS CHEAT SHEET                       │
 ├───────────────────────────────────────────────────────────────┤

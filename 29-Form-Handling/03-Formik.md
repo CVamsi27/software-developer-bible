@@ -12,7 +12,7 @@ Formik is a popular React form library that helps with form state management, va
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        FORMIK ARCHITECTURE                           │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -542,7 +542,7 @@ function MultiStepForm() {
 
 ## Performance Considerations
 
-```
+```text
 Formik Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Optimizations:                                                  │

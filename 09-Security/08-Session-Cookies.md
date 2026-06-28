@@ -21,7 +21,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 
 ### Session Flow
 
-```
+```text
 ┌──────────┐                    ┌──────────┐
 │  Client  │                    │  Server  │
 └────┬─────┘                    └────┬─────┘
@@ -54,7 +54,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 
 ### Cookie Attributes
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Cookie Attributes                             │
 ├─────────────────────────────────────────────────────────────────┤
@@ -81,7 +81,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 
 ### Session vs JWT
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              Session vs JWT Comparison                           │
 ├─────────────────────────────────────────────────────────────────┤

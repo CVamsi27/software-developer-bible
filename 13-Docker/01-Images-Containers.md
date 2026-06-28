@@ -40,7 +40,7 @@ CMD ["node", "server.js"]    # Layer 6: default command
 
 ### Container Lifecycle
 
-```
+```text
   docker build
        |
        v
@@ -55,7 +55,7 @@ CMD ["node", "server.js"]    # Layer 6: default command
 
 ### Image Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │              Docker Image                   │
 ├─────────────────────────────────────────────┤
@@ -180,7 +180,7 @@ docker rmi myapp:1.0.0
 
 ### .dockerignore
 
-```
+```text
 node_modules
 npm-debug.log
 .git

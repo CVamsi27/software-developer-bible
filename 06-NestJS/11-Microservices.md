@@ -20,7 +20,7 @@ Each microservice is a complete NestJS application with its own controllers, ser
 
 NestJS microservices communicate using transport layers. The client sends messages to a message broker, which routes them to the appropriate service handler.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  NestJS Microservices Architecture           │
 ├─────────────────────────────────────────────────────────────┤
@@ -451,7 +451,7 @@ export class AppModule {}
 
 ### 1. E-Commerce Microservices
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 E-Commerce Architecture                      │
 ├─────────────────────────────────────────────────────────────┤

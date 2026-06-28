@@ -32,7 +32,7 @@ A senior engineer's resume is fundamentally different from a mid-level one. Recr
 
 ### Recommended Layout
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │  Name                                        │
 │  Location | Email | Phone | LinkedIn | GitHub│
@@ -82,7 +82,7 @@ This is the most important 3-4 lines on your resume. It must answer: **Why shoul
 
 ### Bad Summary
 
-```
+```text
 Experienced software engineer with 8+ years of experience in full stack
 development. Proficient in JavaScript, React, Node.js. Passionate about
 building great software. Team player with strong communication skills.
@@ -92,7 +92,7 @@ building great software. Team player with strong communication skills.
 
 ### Good Summary
 
-```
+```text
 Senior Full Stack Engineer with 8 years building scalable fintech platforms
 serving 2M+ users. Led migration from monolith to microservices, reducing
 deployment time by 75%. Architected real-time payment processing system
@@ -104,7 +104,7 @@ driving engineering practices across 3 product teams.
 
 ### Summary Template
 
-```
+```typescript
 [Title] with [X] years building [domain/type of products] serving [scale].
 [Key achievement #1 with metric]. [Key achievement #2 with metric].
 [Leadership/culture contribution].
@@ -118,14 +118,14 @@ This is the single most impactful thing you can do. Numbers create credibility.
 
 ### The Formula
 
-```
+```text
 Action Verb + What You Built/Did + Measurable Outcome
 ```
 
 ### Transformation Examples
 
 **Before:**
-```
+```text
 • Worked on improving application performance
 • Helped reduce bugs in the application
 • Built new features for the dashboard
@@ -133,7 +133,7 @@ Action Verb + What You Built/Did + Measurable Outcome
 ```
 
 **After:**
-```
+```text
 • Optimized React rendering pipeline, reducing FCP from 3.2s to 0.8s (75% improvement)
   and improving Lighthouse score from 52 to 94 across 15 core pages
 • Established code review process and QA automation, reducing production incidents
@@ -159,7 +159,7 @@ Action Verb + What You Built/Did + Measurable Outcome
 
 ### Power Verbs for Senior Engineers
 
-```
+```text
 Architected | Spearheaded | Championed | Drove | Pioneered
 Optimized | Streamlined | Automated | Consolidated | Migrated
 Mentored | Guided | Influenced | Established | Standardized
@@ -175,7 +175,7 @@ Reduced | Increased | Improved | Eliminated | Transformed
 
 Don't dump 30 technologies into one list. Organize them:
 
-```
+```text
 Languages:      TypeScript, JavaScript (ES6+), Python, SQL, GraphQL
 Frontend:       React 18, Next.js 14, Tailwind CSS, Redux Toolkit, Zustand
 Backend:        Node.js, NestJS, Express, Fastify
@@ -189,7 +189,7 @@ Tools:          Git, GitHub Actions, Datadog, Sentry, Figma
 
 If you want to show depth, use a subtle system:
 
-```
+```text
 TypeScript ████████████████████ Expert
 Python     ████████████████░░░░ Advanced
 Go         ████████████░░░░░░░░ Intermediate
@@ -210,7 +210,7 @@ Rust       ████████░░░░░░░░░░░░ Learning
 
 ### Structure for Each Role
 
-```
+```text
 ### Senior Full Stack Engineer — Company Name
 #### Jan 2022 - Present | Remote
 
@@ -227,13 +227,13 @@ Rust       ████████░░░░░░░░░░░░ Learning
 ### Writing Achievement Bullets
 
 **Framework:**
-```
+```text
 [Action] [specific system/feature] using [technology], resulting in [metric/outcome]
 ```
 
 **Examples:**
 
-```
+```text
 • Architected event-driven order processing system using Node.js, Kafka, and
   PostgreSQL, handling 10K orders/day with 99.99% reliability
 
@@ -253,7 +253,7 @@ Rust       ████████░░░░░░░░░░░░ Learning
 
 ### Project Section (For Side Projects / Open Source)
 
-```
+```text
 ### Notable Projects
 
 **DevFlow** — Open source developer workflow tool
@@ -298,14 +298,14 @@ Applicant Tracking Systems (Greenhouse, Lever, Workday, iCIMS) parse and filter 
 ### Example: Keyword Integration
 
 **Job Description Extract:**
-```
+```text
 Looking for experience with React, Node.js, PostgreSQL, AWS, microservices,
 CI/CD pipelines, and agile methodologies. Experience with performance
 optimization and monitoring is a plus.
 ```
 
 **Resume Integration:**
-```
+```text
 • Architected microservices platform on AWS (ECS, Lambda, RDS PostgreSQL)
   using Node.js and TypeScript, serving 2M+ API requests/day
 
@@ -323,21 +323,21 @@ optimization and monitoring is a plus.
 ### Top 10 Senior Resume Mistakes
 
 **1. Describing responsibilities instead of achievements**
-```
+```text
 ❌ "Responsible for developing frontend applications"
 ✅ "Built React component library adopted by 4 teams, reducing UI
     development time by 35%"
 ```
 
 **2. Being too vague**
-```
+```text
 ❌ "Improved application performance"
 ✅ "Reduced API response time from 800ms to 120ms by implementing
     Redis caching layer and optimizing 12 PostgreSQL queries"
 ```
 
 **3. Listing every technology ever touched**
-```
+```text
 ❌ "HTML, CSS, JavaScript, React, Angular, Vue, Node.js, Python, Java,
     C++, Ruby, PHP, Go, Rust, Swift, Kotlin..."
 ✅ Curated list of 12-15 most relevant technologies grouped by category

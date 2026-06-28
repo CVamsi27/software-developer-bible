@@ -21,7 +21,7 @@ A JWT is essentially a digitally signed token that proves identity and carries a
 
 A JWT consists of three Base64URL-encoded parts separated by dots:
 
-```
+```text
 xxxxx.yyyyy.zzzzz
 |       |       |
 Header  Payload Signature
@@ -33,7 +33,7 @@ Header  Payload Signature
 
 ### Authentication Flow
 
-```
+```text
 ┌─────────────┐                                    ┌─────────────┐
 │   Client    │                                    │   Server    │
 └──────┬──────┘                                    └──────┬──────┘
@@ -63,7 +63,7 @@ Header  Payload Signature
 
 ### Token Expiration and Refresh Flow
 
-```
+```text
 ┌─────────────┐                              ┌─────────────┐
 │   Client    │                              │   Server    │
 └──────┬──────┘                              └──────┬──────┘

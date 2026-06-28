@@ -12,7 +12,7 @@ Edge functions are serverless functions that run at the edge of a network, close
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    EDGE FUNCTION ARCHITECTURE                       │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -42,7 +42,7 @@ Edge functions are serverless functions that run at the edge of a network, close
 ## Cloudflare Workers
 
 ### Worker Execution Model
-```
+```text
 Cloudflare Worker Lifecycle:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -294,7 +294,7 @@ export default {
 ## Real-World Use Cases
 
 ### A/B Testing at the Edge
-```
+```text
 Use Case: Personalized content delivery
 ┌─────────────────────────────────────────────────────────────────┐
 │  User Request → Edge Function → Check User Segment → Serve     │
@@ -312,7 +312,7 @@ Use Case: Personalized content delivery
 ```
 
 ### API Gateway with Edge Authentication
-```
+```text
 Use Case: Centralized auth at the edge
 ┌─────────────────────────────────────────────────────────────────┐
 │  Client → Edge Function (Auth) → Origin API → Response         │
@@ -347,7 +347,7 @@ Use Case: Centralized auth at the edge
 
 ## Performance Considerations
 
-```
+```text
 Edge vs Serverless Comparison:
 ┌─────────────────────────────────────────────────────────────────┐
 │                      │ Edge Functions    │ Serverless (Lambda)  │

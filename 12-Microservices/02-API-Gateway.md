@@ -15,7 +15,7 @@ In microservices:
 
 ## How It Works
 
-```
+```text
 ┌─────────────┐
 │   Mobile    │────┐
 │   Client    │    │
@@ -603,7 +603,7 @@ API Gateway is essential for microservices architecture, providing a unified ent
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    API GATEWAY                          │
 ├─────────────────────────────────────────────────────────┤

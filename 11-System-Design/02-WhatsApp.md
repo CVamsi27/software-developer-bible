@@ -24,7 +24,7 @@
 - End-to-end encryption for privacy
 
 ## Capacity Estimation
-```
+```text
 Storage Estimates:
 - 500M DAU × 40 messages/day = 20B messages/day
 - Average message: 100 bytes
@@ -161,7 +161,7 @@ CREATE INDEX idx_conversation_participants_user ON conversation_participants(use
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌────────────────────────┐     ┌─────────────────┐
 │    users    │     │    conversations       │     │    messages     │
 ├─────────────┤     ├────────────────────────┤     ├─────────────────┤
@@ -198,7 +198,7 @@ CREATE INDEX idx_conversation_participants_user ON conversation_participants(use
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                        Mobile Clients                            │
 │                    (iOS, Android, Web)                           │
@@ -481,7 +481,7 @@ class MessageCache:
 ## Message Queue (Kafka)
 
 ### Topic Architecture
-```
+```text
 Topics:
 ├── messages.new           (incoming messages)
 ├── messages.delivered     (delivery confirmations)
@@ -534,7 +534,7 @@ class MessageConsumer:
 ## Scaling Strategy
 
 ### Connection Scaling
-```
+```text
 WebSocket Server Cluster:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer (L4)                    │
@@ -573,7 +573,7 @@ class ShardRouter:
 ```
 
 ### Geographic Distribution
-```
+```text
 Global Deployment:
 ┌─────────────────────────────────────────────────────────┐
 │                    Global CDN                           │

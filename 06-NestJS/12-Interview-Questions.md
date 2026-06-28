@@ -175,7 +175,7 @@ bootstrap();
 - **Middleware**: Executes before routing, handles cross-cutting concerns (logging, CORS)
 - **Guard**: Executes after routing, handles authorization
 
-```
+```text
 Request → Middleware → Guard → Interceptor → Pipe → Controller
 ```
 
@@ -403,7 +403,7 @@ export class UserController {
 ### Q22: Explain the NestJS request lifecycle
 
 **Answer:**
-```
+```text
 Request
   → Global Middleware
     → Route Matching

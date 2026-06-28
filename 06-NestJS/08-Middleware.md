@@ -18,7 +18,7 @@ NestJS middleware is similar to Express middleware and can be implemented as a f
 
 Middleware runs in the order they are registered, before guards, interceptors, pipes, and controllers. Each middleware calls `next()` to pass control to the next middleware.
 
-```
+```text
 Request
    |
    v

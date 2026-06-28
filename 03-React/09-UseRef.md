@@ -44,7 +44,7 @@ const Input = () => {
 
 ### useRef Internals
 
-```
+```text
 useRef Internals:
 ═══════════════════════════════════════════════════════════════
 
@@ -80,7 +80,7 @@ DOM Ref Assignment:
 
 ### DOM Ref vs State Ref
 
-```
+```text
 DOM Ref vs State Ref:
 ═══════════════════════════════════════════════════════════════
 
@@ -112,7 +112,7 @@ State Ref:
 
 ### forwardRef
 
-```
+```text
 forwardRef:
 ═══════════════════════════════════════════════════════════════
 
@@ -147,7 +147,7 @@ Solution: forwardRef
 
 ### useImperativeHandle
 
-```
+```text
 useImperativeHandle:
 ═══════════════════════════════════════════════════════════════
 
@@ -1158,7 +1158,7 @@ const useKeyboardShortcut = (key: string, callback: () => void) => {
 
 ## Cheat Sheet
 
-```
+```text
 useRef Key Points:
 ├── What: Mutable reference object with .current property
 ├── Purpose: DOM access and persistent values

@@ -16,7 +16,7 @@ Normalization is the process of organizing a relational database to reduce data 
 
 ### Normal Forms Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Normalization Levels                      │
 │                                                             │
@@ -55,7 +55,7 @@ Normalization is the process of organizing a relational database to reduce data 
 
 ### Functional Dependencies
 
-```
+```text
 A → B means "A determines B"
 (A functionally determines B)
 

@@ -14,7 +14,7 @@ Unit testing is a software testing technique where individual units or component
 
 **Unit Testing Triangle:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     Unit Testing                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -42,7 +42,7 @@ Unit testing is a software testing technique where individual units or component
 
 ### Unit Test Structure
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                   Unit Test Components                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -75,7 +75,7 @@ Unit testing is a software testing technique where individual units or component
 
 ### Test Doubles Hierarchy
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     Test Doubles                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -1212,7 +1212,7 @@ it("should start fresh", () => {
 
 ### Test Execution Time
 
-```
+```text
 Unit Test Performance:
 ┌─────────────────────────────────────────────────────────────┐
 │ Target: < 10ms per test                                    │

@@ -20,7 +20,7 @@
 - Analytics data retained for 1 year minimum
 
 ## Capacity Estimation
-```
+```text
 Storage Estimates:
 - 100M new URLs/day = ~1.16K URLs/second
 - 1B redirects/day = ~11.6K requests/second
@@ -122,7 +122,7 @@ CREATE TABLE users (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users     │     │      urls       │     │ click_analytics │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -140,7 +140,7 @@ CREATE TABLE users (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
                           ┌──────────────┐
                           │   Clients    │
                           │  (Browser,   │
@@ -286,7 +286,7 @@ class CacheService:
 ## Message Queue (Kafka)
 
 ### Topics and Consumers
-```
+```text
 Topics:
 ├── url.created       (new URL creation events)
 ├── url.clicked       (click events for analytics)
@@ -327,7 +327,7 @@ class ClickEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │
 │  (Round-robin with health checks, sticky sessions off)  │

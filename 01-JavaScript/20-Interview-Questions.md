@@ -370,7 +370,7 @@ Understanding these topics thoroughly will help you ace any JavaScript interview
 
 ## Quick Reference
 
-```
+```text
 JAVASCRIPT INTERVIEW QUICK REFERENCE
 ═══════════════════════════════════════════════════════════════
 

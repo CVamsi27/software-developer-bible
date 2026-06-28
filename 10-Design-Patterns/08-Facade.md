@@ -24,7 +24,7 @@ The Facade pattern works by:
 3. Clients interact only with the facade
 4. The facade handles subsystem coordination
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Facade Pattern                     │
 ├─────────────────────────────────────────────────┤
@@ -1044,7 +1044,7 @@ The Facade pattern is essential for simplifying complex systems and providing un
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           FACADE PATTERN                    │
 ├─────────────────────────────────────────────┤

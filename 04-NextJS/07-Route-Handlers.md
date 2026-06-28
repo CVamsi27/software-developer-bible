@@ -16,7 +16,7 @@
 
 ### Route Handler Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ROUTE HANDLER FLOW                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@
 
 ### Route Handler vs API Route (Pages Router)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              ROUTE HANDLER vs API ROUTE                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -663,7 +663,7 @@ export async function GET() {
 
 ## Performance Considerations
 
-```
+```text
 Route Handler Performance:
 - Edge Runtime: Fast cold starts, limited APIs
 - Node.js Runtime: Full API access, slower starts
@@ -818,7 +818,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```text
 File: app/api/[...]/route.ts
 
 Methods:

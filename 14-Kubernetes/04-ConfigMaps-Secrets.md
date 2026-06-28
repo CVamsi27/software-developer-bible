@@ -25,7 +25,7 @@ Key concepts:
 
 ### Architecture
 
-```
+```text
 +----------------------------------------------------------+
 |                    Kubernetes Cluster                      |
 |                                                           |

@@ -12,7 +12,7 @@ Serverless patterns are reusable architectural designs for building serverless a
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    SERVERLESS PATTERNS ECOSYSTEM                     │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -469,7 +469,7 @@ class OrderSaga {
 ## Real-World Use Cases
 
 ### E-Commerce Order Processing
-```
+```text
 Order Flow:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Order Placed → SQS → Lambda (Validate) → Lambda (Payment)    │
@@ -483,7 +483,7 @@ Order Flow:
 ```
 
 ### Real-time Data Processing
-```
+```text
 Data Pipeline:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Kinesis → Lambda (Transform) → DynamoDB → Lambda (Aggregate)  │
@@ -511,7 +511,7 @@ Data Pipeline:
 
 ## Performance Considerations
 
-```
+```text
 Pattern Selection Guide:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Simple API:              API Gateway + Lambda                   │

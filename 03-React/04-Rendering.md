@@ -20,7 +20,7 @@ Many React performance issues stem from misunderstanding when and why re-renders
 
 ### Common Misconceptions
 
-```
+```text
 Common Rendering Misconceptions:
 ═══════════════════════════════════════════════════════════════
 
@@ -44,7 +44,7 @@ Common Rendering Misconceptions:
 
 ### The Rendering Pipeline
 
-```
+```text
 Rendering Pipeline:
 ═══════════════════════════════════════════════════════════════
 
@@ -109,7 +109,7 @@ State Change / Prop Change / Parent Re-render
 
 ### Triggers for Re-render
 
-```
+```text
 Re-render Triggers:
 ═══════════════════════════════════════════════════════════════
 
@@ -132,7 +132,7 @@ Re-render Triggers:
 
 ### Batch Updates
 
-```
+```text
 Batch Updates (React 18):
 ═══════════════════════════════════════════════════════════════
 
@@ -184,7 +184,7 @@ escape hatch: flushSync
 
 ### Concurrent Rendering
 
-```
+```text
 Concurrent Rendering (React 18):
 ═══════════════════════════════════════════════════════════════
 
@@ -761,7 +761,7 @@ A: `useTransition` marks updates as non-urgent. React keeps the old UI visible w
 
 **Q17: What is the difference between `useEffect` and `useLayoutEffect` timing?**
 A:
-```
+```text
 useLayoutEffect: DOM mutation → useLayoutEffect → browser paint
 useEffect: DOM mutation → browser paint → useEffect
 ```
@@ -943,7 +943,7 @@ Rendering in React is the process of calling component functions to produce a Vi
 
 ## Cheat Sheet
 
-```
+```text
 Rendering Key Points:
 ├── What: Calling component functions to produce Virtual DOM
 ├── Two Phases: Render (interruptible) → Commit (synchronous)

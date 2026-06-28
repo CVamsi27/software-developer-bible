@@ -23,7 +23,7 @@
 - Secure payment processing (PCI compliant)
 
 ## Capacity Estimation
-```
+```text
 Storage Estimates:
 - 20M DAU × 2 rides/day = 40M rides/day
 - Average ride data: 5 KB
@@ -192,7 +192,7 @@ CREATE TABLE payments (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   riders    │     │     rides       │     │    drivers      │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -229,7 +229,7 @@ CREATE TABLE payments (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Mobile Apps (Rider/Driver)                     │
 └──────────────────────────────────────────────────────────────────┘
@@ -621,7 +621,7 @@ class SurgeCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── ride.requested        (new ride requests)
 ├── ride.accepted         (driver accepted ride)
@@ -694,7 +694,7 @@ class RideEventProcessor:
 ## Scaling Strategy
 
 ### Geographic Sharding
-```
+```text
 Global Deployment:
 ┌─────────────────────────────────────────────────────────┐
 │                    Global Router                         │
@@ -735,7 +735,7 @@ class LocationServiceScaler:
 ```
 
 ### Database Scaling
-```
+```text
 Database Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Primary (Write)                       │

@@ -16,7 +16,7 @@ This chapter contains the 40 most commonly asked testing interview questions wit
 
 ### Question Categories
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              Interview Question Categories                   │
 ├─────────────────────────────────────────────────────────────┤
@@ -64,7 +64,7 @@ This chapter contains the 40 most commonly asked testing interview questions wit
 - **Fewer integration tests** in the middle (20%): Tests for component interactions
 - **Few E2E tests** at the top (10%): Complete user workflow tests
 
-```
+```text
         /\
        /  \        E2E Tests (10%)
       /    \       • Complete workflows
@@ -1175,7 +1175,7 @@ function analyzeTestEffectiveness() {
 
 **Answer:** Consider multiple dimensions:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              Testing Strategy Framework                     │
 ├─────────────────────────────────────────────────────────────┤

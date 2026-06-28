@@ -24,7 +24,7 @@ The Factory pattern works by:
 3. Moving creation logic from client code to the factory
 4. Allowing the factory to decide which concrete class to instantiate
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                  Factory Pattern                 │
 ├─────────────────────────────────────────────────┤
@@ -884,7 +884,7 @@ The Factory pattern is essential for creating objects without specifying concret
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           FACTORY PATTERN                   │
 ├─────────────────────────────────────────────┤

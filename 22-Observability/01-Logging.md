@@ -21,7 +21,7 @@ Without logging, diagnosing production issues is like driving blindfolded. Loggi
 
 Logs flow from application code through a pipeline of collection, transport, aggregation, storage, and analysis.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                     LOGGING PIPELINE                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -52,7 +52,7 @@ Logs flow from application code through a pipeline of collection, transport, agg
 
 ## Structured vs Unstructured Logging
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  UNSTRUCTURED (hard to query)                               │
 ├─────────────────────────────────────────────────────────────┤

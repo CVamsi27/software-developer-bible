@@ -12,7 +12,7 @@ Performance APIs are browser APIs that provide detailed timing and performance d
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                     PERFORMANCE APIs HIERARCHY                      │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -49,7 +49,7 @@ Performance APIs are browser APIs that provide detailed timing and performance d
 ## Navigation Timing API
 
 ### Complete Navigation Timeline
-```
+```text
 Navigation Timing Model:
 ├── 0ms: start
 ├── ────: navigationStart
@@ -446,7 +446,7 @@ function trackABTestPerformance(
 
 ## Performance Considerations
 
-```
+```text
 API Performance Impact:
 ┌─────────────────────────────────────────────────────────────┐
 │  Low Impact:                                               │

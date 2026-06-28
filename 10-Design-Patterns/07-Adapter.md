@@ -24,7 +24,7 @@ The Adapter pattern works by:
 3. The adapter wraps the adaptee (existing class with incompatible interface)
 4. Translating calls between the two interfaces
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Adapter Pattern                    │
 ├─────────────────────────────────────────────────┤
@@ -1156,7 +1156,7 @@ The Adapter pattern is essential for integrating incompatible interfaces. It all
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           ADAPTER PATTERN                   │
 ├─────────────────────────────────────────────┤

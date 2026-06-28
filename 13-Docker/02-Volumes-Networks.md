@@ -27,7 +27,7 @@ Key concepts:
 
 ### Volume Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │                   Docker Host                    │
 │                                                  │
@@ -49,7 +49,7 @@ Key concepts:
 
 ### Network Architecture
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │                     Docker Host                       │
 │                                                       │

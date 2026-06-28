@@ -28,7 +28,7 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
 
 ### Jest Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                      Jest Test Runner                       │
 ├─────────────────────────────────────────────────────────────┤
@@ -70,7 +70,7 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
 
 ### Test Execution Flow
 
-```
+```text
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
 │  npm test    │────▶│ Jest CLI     │────▶│  Config      │
 │              │     │              │     │  Loading     │

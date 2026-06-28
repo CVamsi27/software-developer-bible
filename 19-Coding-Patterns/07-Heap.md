@@ -76,7 +76,7 @@ class MinHeap {
 
 ## How It Works
 
-```
+```text
 Min-Heap:
         1
        / \
@@ -101,7 +101,7 @@ Parent is always larger than children.
 
 ### ASCII Diagram
 
-```
+```text
 MIN-HEAP (Priority Queue)
 ┌─────────────────────────────────────────┐
 │              1 (min)                    │
@@ -461,7 +461,7 @@ Heaps are essential for problems requiring efficient access to minimum or maximu
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Heap / Priority Queue
 Use when: Top K, median, merge sorted, scheduling
 Time: O(log n) insert/delete | O(1) peek

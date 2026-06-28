@@ -55,7 +55,7 @@ function greedySort(items: number[][]): number {
 
 ## How It Works
 
-```
+```text
 Prefix Sum:
 Array:      [2, 4, 6, 8, 10]
 Prefix: [0, 2, 6, 12, 20, 30]
@@ -83,7 +83,7 @@ Result: 4 activities
 
 ### ASCII Diagram
 
-```
+```text
 PREFIX SUM:
 Array:      [2, 4, 6, 8, 10]
              ├──┼──┼──┼──┤
@@ -346,7 +346,7 @@ Greedy algorithms make locally optimal choices at each step. Prefix sum enables 
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Greedy + Prefix Sum
 Use when: Optimization, range queries, local optimal → global optimal
 Time: O(n) | Space: O(n) for prefix, O(1) for greedy

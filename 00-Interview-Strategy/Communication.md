@@ -29,7 +29,7 @@ At the senior level, technical skill is assumed. What differentiates candidates 
 
 ### What Interviewers Evaluate
 
-```
+```text
 □ Can you explain complex concepts clearly?
 □ Do you think out loud effectively?
 □ Can you tailor your explanation to the audience?
@@ -56,7 +56,7 @@ At the senior level, technical skill is assumed. What differentiates candidates 
 
 For any technical question, structure your response:
 
-```
+```text
 1. High-Level Answer (30 seconds)
    "The short answer is [X]. Here's why..."
 
@@ -69,7 +69,7 @@ For any technical question, structure your response:
 
 **Example:**
 
-```
+```text
 Question: "How does React's virtual DOM work?"
 
 1. HIGH-LEVEL:
@@ -112,7 +112,7 @@ Question: "How does React's virtual DOM work?"
 
 When asked to explain something, calibrate to the interviewer:
 
-```
+```text
 Interviewer (EM): "Explain microservices to me."
 
 WRONG (too technical):
@@ -139,7 +139,7 @@ to microservices when the team size justifies the complexity."
 
 ### Jargon Navigation
 
-```
+```text
 RULE: Use jargon when it adds precision. Explain it when it might confuse.
 
 Example:
@@ -154,7 +154,7 @@ from hanging."
 
 When explaining architecture, use verbal diagrams:
 
-```
+```text
 "The system looks like this conceptually:
 
 Client App → API Gateway → Authentication Service
@@ -173,7 +173,7 @@ loose coupling and independent scalability."
 
 ### Before You Start Drawing
 
-```
+```text
 1. CLARIFY the problem
    "Before I start, let me make sure I understand the requirements..."
 
@@ -190,7 +190,7 @@ loose coupling and independent scalability."
 
 **Rules for whiteboard clarity:**
 
-```
+```text
 1. Label EVERYTHING
    ❌ Drawing boxes without labels
    ✅ "This is the API Gateway, here we have the User Service..."
@@ -216,7 +216,7 @@ loose coupling and independent scalability."
 ### Common Whiteboard Scenarios
 
 **System Design Whiteboard:**
-```
+```text
 1. Clarify requirements (2 min)
 2. Draw high-level architecture (5 min)
 3. Identify key components (3 min)
@@ -226,7 +226,7 @@ loose coupling and independent scalability."
 ```
 
 **Coding Whiteboard:**
-```
+```text
 1. Restate the problem (1 min)
 2. Clarify edge cases (2 min)
 3. Discuss approach and complexity (3 min)
@@ -237,7 +237,7 @@ loose coupling and independent scalability."
 
 ### Handling Mistakes on the Whiteboard
 
-```
+```typescript
 "Actually, let me reconsider this part. I initially thought [X], but
 now I realize [Y] would be better because [reason]. Let me adjust..."
 
@@ -253,7 +253,7 @@ Do: Acknowledge the correction calmly, explain your reasoning
 
 **Phase 1: Requirements Clarification (10-15% of time)**
 
-```
+```text
 DON'T: Jump straight into designing
 DO: Spend 5-10 minutes asking questions
 
@@ -267,7 +267,7 @@ Questions to ask:
 
 **Phase 2: High-Level Design (25-30% of time)**
 
-```
+```text
 DON'T: Start with details
 DO: Draw the big picture first
 
@@ -281,7 +281,7 @@ Does this high-level design make sense before I go deeper?"
 
 **Phase 3: Deep Dive (40-50% of time)**
 
-```
+```text
 DON'T: Describe everything equally
 DO: Focus on the most interesting/challenging parts
 
@@ -299,7 +299,7 @@ Would you like me to go deeper on this component or move to another area?"
 
 **Phase 4: Tradeoffs & Wrap-up (10-15% of time)**
 
-```
+```text
 DON'T: Present your design as perfect
 DO: Acknowledge tradeoffs and alternatives
 
@@ -314,7 +314,7 @@ If I had more time, I'd also consider [alternative approach]."
 
 ### Design Communication Checklist
 
-```
+```text
 □ Did I clarify requirements before designing?
 □ Did I draw the high-level architecture first?
 □ Did I explain each component as I added it?
@@ -339,7 +339,7 @@ Clarifying questions show:
 ### Categories of Clarifying Questions
 
 **1. Requirements Clarification**
-```
+```text
 "What's the expected input size?"
 "Are there constraints on time or space complexity?"
 "Should this handle edge cases like [X]?"
@@ -347,7 +347,7 @@ Clarifying questions show:
 ```
 
 **2. Technical Constraints**
-```
+```text
 "What language/framework should I use?"
 "Are there existing libraries I should leverage?"
 "What's the deployment environment?"
@@ -355,7 +355,7 @@ Clarifying questions show:
 ```
 
 **3. Business Context**
-```
+```text
 "Who are the users of this system?"
 "What's the expected traffic pattern?"
 "What happens if this system goes down?"
@@ -363,7 +363,7 @@ Clarifying questions show:
 ```
 
 **4. Scope Clarification**
-```
+```text
 "Should I implement the full system or focus on a specific part?"
 "Are we designing the API or the implementation?"
 "Should I handle error cases or focus on the happy path first?"
@@ -371,7 +371,7 @@ Clarifying questions show:
 
 ### The Clarification Framework
 
-```
+```text
 1. START with what you understand
    "So we're building a URL shortener that takes long URLs and
     returns short ones..."
@@ -391,7 +391,7 @@ Clarifying questions show:
 
 ### Example: Real Interview Scenario
 
-```
+```text
 INTERVIEWER: "Design a rate limiter."
 
 JUNIOR RESPONSE:
@@ -426,7 +426,7 @@ token buckets."
 
 When an interviewer challenges your approach:
 
-```
+```text
 1. ACKNOWLEDGE their point
    "That's a valid concern. You're right that [their point]."
 
@@ -444,7 +444,7 @@ When an interviewer challenges your approach:
 
 ### Example: Handling Technical Pushback
 
-```
+```text
 YOU: "I'd use a relational database for this because we need ACID
       transactions for the payment data."
 
@@ -473,7 +473,7 @@ INTERVIEWER: "Good thinking. Let's go with Option B."
 
 ### What NOT to Do When Pushed Back
 
-```
+```text
 ❌ "You're wrong, my approach is better"
 ❌ "I've always done it this way"
 ❌ Immediately abandon your position without defending it
@@ -483,7 +483,7 @@ INTERVIEWER: "Good thinking. Let's go with Option B."
 
 ### What TO Do
 
-```
+```text
 ✅ "That's a fair point. Let me reconsider..."
 ✅ "I see what you mean. The tradeoff would be..."
 ✅ "I haven't considered that angle. Here's how I'd adjust..."
@@ -497,7 +497,7 @@ INTERVIEWER: "Good thinking. Let's go with Option B."
 
 ### Technical Setup
 
-```
+```text
 CHECKLIST:
 □ Test audio/video 30 minutes before
 □ Stable internet (use ethernet if possible)
@@ -513,7 +513,7 @@ CHECKLIST:
 
 ### Screen Sharing Communication
 
-```
+```text
 WHEN SHARING YOUR SCREEN:
 1. Announce what you're sharing
    "I'm going to share my screen now to walk through the code."
@@ -537,7 +537,7 @@ WHEN SHARING YOUR SCREEN:
 
 ### Virtual Presence Tips
 
-```
+```text
 MAINTAIN PRESENCE:
 • Look at the camera (not the screen) when speaking
 • Nod and react visibly when the interviewer speaks
@@ -553,7 +553,7 @@ MAINTAIN PRESENCE:
 
 ### In-Person Interview
 
-```
+```text
 DO:
 • Firm handshake (not crushing, not limp)
 • Good posture — sit up straight but relaxed
@@ -574,7 +574,7 @@ DON'T:
 
 ### Power Positioning
 
-```
+```text
 CONFIDENCE SIGNALS:
 • Taking up appropriate space (don't shrink)
 • Speaking at a measured pace (not rushing)
@@ -593,7 +593,7 @@ CONFIDENCE SIGNALS:
 
 **Solution:** The 2-Minute Rule — answers should be under 2 minutes unless the question explicitly asks for detail.
 
-```
+```text
 Practice:
 • Time yourself answering common questions
 • If over 2 minutes, identify what can be cut
@@ -606,7 +606,7 @@ Practice:
 
 **Solution:** Always include specifics.
 
-```
+```text
 Vague: "I improved performance"
 Specific: "I reduced API response time from 1.2s to 180ms by
           implementing Redis caching for the top 200 most
@@ -619,7 +619,7 @@ Specific: "I reduced API response time from 1.2s to 180ms by
 
 **Solution:** Read the room. Adjust depth based on who's asking.
 
-```
+```text
 HR: "What do you do?"
 ✅ "I build web applications that help people manage their finances.
     Think of it like building the technology behind online banking."
@@ -640,7 +640,7 @@ Staff Engineer: "What do you do?"
 
 **Solution:** Narrate your thought process continuously.
 
-```
+```text
 SILENT:
 [Stares at whiteboard for 2 minutes, then writes code]
 
@@ -657,7 +657,7 @@ structure or maintain a separate index. Let me consider the tradeoffs..."
 
 **Solution:** Be open to learning during the interview.
 
-```
+```text
 INTERVIEWER: "Have you considered using a message queue here?"
 
 ❌ "No, because REST is simpler and we don't need async processing."
@@ -674,7 +674,7 @@ INTERVIEWER: "Have you considered using a message queue here?"
 
 **Solution:** Replace apologies with confident alternatives.
 
-```
+```text
 ❌ "Sorry, I don't know the exact time complexity."
 ✅ "I'd need to analyze this more carefully, but my initial
     estimate is O(n log n) because of the sorting step."
@@ -689,7 +689,7 @@ INTERVIEWER: "Have you considered using a message queue here?"
 
 **Solution:** Vary your pace and emphasis.
 
-```
+```text
 TECHNICAL DEPTH:
 "I used a REDIS CACHE here [slower, emphasis] to avoid hitting
  the DATABASE on every REQUEST [slower, emphasis]..."
@@ -711,7 +711,7 @@ SERIOUS:
 
 Pick any technical concept. Explain it in exactly 60 seconds.
 
-```
+```text
 Topics to practice:
 • How does a load balancer work?
 • What is a database index?
@@ -724,7 +724,7 @@ Topics to practice:
 
 Draw a simple system architecture and narrate your drawing for 3 minutes.
 
-```
+```text
 Steps:
 1. Draw a basic 3-tier architecture
 2. Explain each component as you draw it
@@ -737,7 +737,7 @@ Steps:
 
 Explain a complex technical concept to someone who isn't a developer.
 
-```
+```text
 Concepts to practice:
 • React hooks
 • Microservices architecture
@@ -749,7 +749,7 @@ Concepts to practice:
 
 Have a friend challenge your technical decisions. Practice responding calmly.
 
-```
+```text
 Scenarios:
 • "Why not use [alternative technology]?"
 • "That won't scale, what about [limitation]?"
@@ -760,7 +760,7 @@ Scenarios:
 
 ## Quick Reference
 
-```
+```text
 COMMUNICATION CHECKLIST FOR INTERVIEWS:
 
 BEFORE:
@@ -787,7 +787,7 @@ AFTER:
 
 ## The Senior Engineer Communication Standard
 
-```
+```text
 JUNIOR communicates: "I did X"
 MID communicates:     "I did X because Y, resulting in Z"
 SENIOR communicates:  "I analyzed the problem, considered alternatives A

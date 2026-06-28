@@ -14,7 +14,7 @@ Integration testing is a level of software testing where individual units or com
 
 **Integration Testing Position:**
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Testing Levels                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -47,7 +47,7 @@ Integration testing is a level of software testing where individual units or com
 
 ### Integration Test Strategy
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │               Integration Testing Strategy                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -80,7 +80,7 @@ Integration testing is a level of software testing where individual units or com
 
 ### Common Integration Points
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                Integration Test Categories                  │
 ├─────────────────────────────────────────────────────────────┤

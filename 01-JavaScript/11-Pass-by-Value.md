@@ -16,7 +16,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 
 ### Pass by Value vs Pass by Reference
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │              PASS BY VALUE vs PASS BY REFERENCE               │
 ├─────────────────────────────────────────────────────────────┤
@@ -85,7 +85,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 
 ### Primitive Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     PRIMITIVE TYPES                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -124,7 +124,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 
 ### Reference Types
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     REFERENCE TYPES                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -811,7 +811,7 @@ Understanding this prevents bugs and enables better code design.
 
 ## Cheat Sheet
 
-```
+```text
 PASS BY VALUE VS REFERENCE CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

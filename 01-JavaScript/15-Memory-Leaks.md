@@ -15,7 +15,7 @@ A **Memory Leak** occurs when a program allocates memory but fails to release it
 
 ### Common Causes
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 COMMON MEMORY LEAK CAUSES                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -71,7 +71,7 @@ A **Memory Leak** occurs when a program allocates memory but fails to release it
 
 ### Detection Methods
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  DETECTION METHODS                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -691,7 +691,7 @@ Memory leaks are critical to prevent:
 
 ## Cheat Sheet
 
-```
+```text
 MEMORY LEAKS CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

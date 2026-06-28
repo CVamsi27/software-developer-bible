@@ -12,7 +12,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    TURBOREPO ARCHITECTURE                            │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -347,7 +347,7 @@ pnpm changeset publish
 ## Real-World Use Cases
 
 ### Large-Scale Application
-```
+```text
 Monorepo Structure:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Apps:                                                          │
@@ -382,7 +382,7 @@ Monorepo Structure:
 
 ## Performance Considerations
 
-```
+```text
 Cache Hit Rate Optimization:
 ┌─────────────────────────────────────────────────────────────────┐
 │  High Cache Hit Rate (>80%):                                    │

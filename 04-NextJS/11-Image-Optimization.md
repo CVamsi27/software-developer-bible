@@ -16,7 +16,7 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 
 ### Image Optimization Pipeline
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                NEXT.JS IMAGE OPTIMIZATION                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -55,7 +55,7 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 
 ### Before vs After Optimization
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │              WITHOUT NEXT.JS IMAGE                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -612,7 +612,7 @@ module.exports = {
 
 ## Performance Considerations
 
-```
+```text
 Image Optimization Benefits:
 - File size: 30-50% reduction with WebP/AVIF
 - Lazy loading: Saves bandwidth for below-fold images
@@ -766,7 +766,7 @@ Core Web Vitals Impact:
 
 ## Cheat Sheet
 
-```
+```text
 Basic usage:
 import Image from 'next/image'
 <Image src="/photo.jpg" alt="Photo" width={800} height={600} />

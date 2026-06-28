@@ -11,7 +11,7 @@ This comprehensive guide covers 25+ interview questions on performance monitorin
 
 ## How It Works
 
-```
+```text
 Interview Question Categories:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -204,7 +204,7 @@ Use `sendBeacon` for non-blocking metric submission.
 ## Best Practices for Interview Answers
 
 ### Structure Your Answer
-```
+```text
 1. Direct Answer (1-2 sentences)
 2. Explanation (2-3 sentences)
 3. Code Example (if applicable)

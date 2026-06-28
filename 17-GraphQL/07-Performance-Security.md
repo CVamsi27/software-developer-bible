@@ -4,7 +4,7 @@
 
 **GraphQL Performance & Security** encompasses strategies and techniques to optimize query execution, prevent abuse, protect against attacks, and ensure reliable operation of GraphQL APIs in production environments.
 
-```
+```text
 Performance = Query Optimization + Caching + Rate Limiting + Monitoring
 Security    = Authentication + Authorization + Input Validation + Attack Prevention
 ```
@@ -15,7 +15,7 @@ Security    = Authentication + Authorization + Input Validation + Attack Prevent
 
 ### The Production Challenge
 
-```
+```text
 Without Performance & Security:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Denial of Service via complex queries                       │
@@ -53,7 +53,7 @@ With Performance & Security:
 
 ### Security Architecture
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    SECURITY LAYERS                                │
 ├──────────────────────────────────────────────────────────────────┤
@@ -101,7 +101,7 @@ With Performance & Security:
 
 ### Performance Architecture
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    PERFORMANCE OPTIMIZATION                      │
 ├──────────────────────────────────────────────────────────────────┤
@@ -763,7 +763,7 @@ app.use('/graphql', rateLimit({
 
 ### Security Checklist
 
-```
+```text
 □ Disable introspection in production
 □ Enable CORS with specific origins
 □ Use HTTPS only
@@ -780,7 +780,7 @@ app.use('/graphql', rateLimit({
 
 ### Performance Checklist
 
-```
+```text
 □ Implement DataLoader
 □ Add query complexity limits
 □ Enable response caching
@@ -828,7 +828,7 @@ const server = new ApolloServer({
 
 ### Monitoring Metrics
 
-```
+```text
 Key Metrics to Track:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Query Complexity    - Average and max complexity            │
@@ -844,7 +844,7 @@ Key Metrics to Track:
 
 ### Caching Strategy
 
-```
+```text
 Cache Layers:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Client Cache (Apollo Client)                                   │

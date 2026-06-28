@@ -35,7 +35,7 @@ The STAR method ensures your answers are:
 
 ### Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    STAR Framework                        │
 ├──────────┬──────────┬──────────┬────────────────────────┤
@@ -424,7 +424,7 @@ For each story, prepare:
 
 ## Quick Reference: STAR Cheat Sheet
 
-```
+```text
 STAR Answer Template:
 
 SITUATION (15 sec):

@@ -18,7 +18,7 @@ Without rate limiting:
 
 ### Rate Limiting Algorithms
 
-```
+```text
 Rate Limiting Algorithms
 ════════════════════════
 
@@ -45,7 +45,7 @@ Rate Limiting Algorithms
 
 ### Fixed Window Algorithm
 
-```
+```text
 Fixed Window
 ════════════
 
@@ -124,7 +124,7 @@ app.use('/api', fixedWindowLimiter(100, 60 * 60 * 1000)); // 100 requests per ho
 
 ### Sliding Window Algorithm
 
-```
+```text
 Sliding Window
 ══════════════
 
@@ -219,7 +219,7 @@ function slidingWindowLimiter(maxRequests: number, windowMs: number) {
 
 ### Token Bucket Algorithm
 
-```
+```text
 Token Bucket
 ═════════════
 

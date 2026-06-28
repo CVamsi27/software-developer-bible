@@ -12,7 +12,7 @@ Zod is a TypeScript-first schema declaration and validation library. It provides
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         ZOD ARCHITECTURE                             │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -378,7 +378,7 @@ function validateCreateUserRequest(body: unknown) {
 ## Real-World Use Cases
 
 ### Form Validation
-```
+```text
 Form Schema:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Registration Form                                              │
@@ -395,7 +395,7 @@ Form Schema:
 ```
 
 ### API Contract Validation
-```
+```text
 API Schema:
 ┌─────────────────────────────────────────────────────────────────┐
 │  POST /api/users                                                │
@@ -431,7 +431,7 @@ API Schema:
 
 ## Performance Considerations
 
-```
+```text
 Zod Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Fast Validation:                                                │

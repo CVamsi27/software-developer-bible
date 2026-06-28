@@ -12,7 +12,7 @@ Core Web Vitals are a set of standardized metrics from Google that measure real-
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      CORE WEB VITALS                                │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ Core Web Vitals are a set of standardized metrics from Google that measure real-
 - Background images via `background-image`
 - Block-level elements with text content
 
-```
+```text
 Timeline: LCP Measurement
 ├── 0ms: Navigation starts
 ├── TTFB: First byte received
@@ -69,7 +69,7 @@ Timeline: LCP Measurement
 - Taps
 - Keyboard input
 
-```
+```text
 User Interaction Flow:
 ┌──────────┐     ┌──────────────┐     ┌─────────────┐     ┌────────────┐
 │  Input   │ ──▶ │   Processing │ ──▶ │   Main      │ ──▶ │  Paint     │
@@ -83,7 +83,7 @@ User Interaction Flow:
 
 **Formula**: CLS = Impact Fraction × Distance Fraction
 
-```
+```text
 Layout Shift Example:
 ┌─────────────────────────────────────────────────┐
 │ BEFORE:                    AFTER:               │
@@ -345,7 +345,7 @@ function trackArticleMetrics(articleId: string): void {
 
 ## Performance Considerations
 
-```
+```text
 Optimization Priority Matrix:
 ┌─────────────────────────────────────────────────────────────┐
 │  High Impact, Low Effort:                                   │

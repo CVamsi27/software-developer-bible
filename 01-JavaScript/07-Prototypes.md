@@ -16,7 +16,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 
 ### Prototype Chain
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PROTOTYPE CHAIN                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -63,7 +63,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 
 ### __proto__ vs prototype
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 __proto__ vs prototype                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -128,7 +128,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 
 ### Constructor Functions
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  CONSTRUCTOR FUNCTIONS                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -171,7 +171,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 
 ### Class-Based Inheritance
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                 CLASS-BASED INHERITANCE                       │
 ├─────────────────────────────────────────────────────────────┤
@@ -1058,7 +1058,7 @@ Understanding prototypes is essential for mastering JavaScript and answering int
 
 ## Cheat Sheet
 
-```
+```text
 PROTOTYPES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

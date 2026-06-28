@@ -24,7 +24,7 @@
 - Mobile-first design
 
 ## Capacity Estimation
-```
+```text
 Booking Estimates:
 - 100K concurrent users during flash sales
 - 10K bookings per minute at peak
@@ -261,7 +261,7 @@ CREATE TABLE refunds (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   venues    │     │     events      │     │seating_sections │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -314,7 +314,7 @@ CREATE TABLE refunds (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │              (Mobile App, Web App, Box Office)                   │
@@ -676,7 +676,7 @@ class EventCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── booking.created        (new booking)
 ├── booking.confirmed     (payment successful)
@@ -737,7 +737,7 @@ class BookingEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │

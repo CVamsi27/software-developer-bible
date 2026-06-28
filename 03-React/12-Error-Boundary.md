@@ -21,7 +21,7 @@ They do **not** catch errors in:
 
 Without Error Boundaries, a single error in any component crashes the entire app:
 
-```
+```text
 Without Error Boundaries:
 ═══════════════════════════════════════════════════════════════
 
@@ -41,7 +41,7 @@ White screen of death for the user
 
 Error Boundaries catch errors and show fallback UI:
 
-```
+```text
 With Error Boundaries:
 ═══════════════════════════════════════════════════════════════
 
@@ -62,7 +62,7 @@ Rest of the app continues working!
 
 ### Error Boundary Lifecycle
 
-```
+```text
 Error Boundary Lifecycle:
 ═══════════════════════════════════════════════════════════════
 
@@ -97,7 +97,7 @@ Error Reporting:
 
 ### Error Boundary Methods
 
-```
+```text
 Error Boundary Methods:
 ═══════════════════════════════════════════════════════════════
 
@@ -128,7 +128,7 @@ componentDidCatch (Instance):
 
 ### Error Boundary Diagram
 
-```
+```text
 Error Boundary Flow:
 ═══════════════════════════════════════════════════════════════
 
@@ -962,7 +962,7 @@ Error Boundaries are React class components that catch errors in their child com
 
 ## Cheat Sheet
 
-```
+```text
 Error Boundary Key Points:
 ├── What: Catch errors in child component tree
 ├── Type: Class components (must be)

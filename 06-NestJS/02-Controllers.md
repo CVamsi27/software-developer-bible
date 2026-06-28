@@ -33,7 +33,7 @@ When an HTTP request arrives at NestJS:
 
 ### Request Lifecycle
 
-```
+```text
 ┌─────────┐    ┌────────────┐    ┌────────────┐    ┌────────────┐
 │  Client  │───▶│ Middleware │───▶│   Guard    │───▶│ Interceptor│
 │ Request  │    │            │    │            │    │ (Before)   │
@@ -48,7 +48,7 @@ When an HTTP request arrives at NestJS:
 
 ### Route Resolution
 
-```
+```text
 HTTP Request
     │
     ▼

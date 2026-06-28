@@ -16,7 +16,7 @@ This file contains 30 most asked system design interview questions with detailed
 - Analytics tracking
 
 **High-Level Architecture:**
-```
+```text
 Client → Load Balancer → App Server → Cache (Redis) → Database (PostgreSQL)
                                 ↓
                         Analytics Service (Kafka)
@@ -123,7 +123,7 @@ def is_rate_limited(user_id, limit, window):
 - Rate limiting
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Notification Service → Message Queue (Kafka)
                                                     ↓
                                     ┌───────────────┼───────────────┐
@@ -167,7 +167,7 @@ CREATE TABLE notifications (
 - Online/offline status
 
 **Architecture:**
-```
+```text
 Client ←→ WebSocket Server ←→ Message Queue ←→ Message Service
                     ↓
             Connection Manager (Redis)
@@ -204,7 +204,7 @@ Client ←→ WebSocket Server ←→ Message Queue ←→ Message Service
 - Distributed and scalable
 
 **Architecture:**
-```
+```text
 Client → Coordinator Node → Hash Ring → Storage Nodes
                     ↓
             Consistent Hashing
@@ -256,7 +256,7 @@ class ConsistentHash:
 - Distributed crawling
 
 **Architecture:**
-```
+```text
 Seed URLs → URL Frontier → Fetcher → Parser → Content Storage
                 ↓
         Priority Queue
@@ -291,7 +291,7 @@ Seed URLs → URL Frontier → Fetcher → Parser → Content Storage
 - Personalization
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Trie Service → Cache (Redis)
                     ↓
             Analytics Service
@@ -345,7 +345,7 @@ class AutocompleteTrie:
 - Handle billions of events
 
 **Architecture:**
-```
+```text
 Client → Collector → Kafka → Stream Processing → OLAP Database
                 ↓
         Batch Processing → Data Warehouse
@@ -385,7 +385,7 @@ Client → Collector → Kafka → Stream Processing → OLAP Database
 - Handle static and dynamic content
 
 **Architecture:**
-```
+```text
 Client → DNS → Edge Server → Origin Server
             ↓
     Geographic Routing
@@ -400,7 +400,7 @@ Client → DNS → Edge Server → Origin Server
 4. **DNS**: Geographic routing
 
 **Cache Strategy:**
-```
+```text
 Request → Edge Cache → Regional Cache → Origin
           (10ms)        (50ms)          (100ms)
 ```
@@ -429,7 +429,7 @@ id = uuid.uuid4()  # 128-bit random
 ```
 
 2. **Snowflake (Twitter):**
-```
+```text
 | 1 bit | 41 bits | 10 bits | 12 bits |
 | sign  | timestamp| datacenter| sequence|
 ```
@@ -463,7 +463,7 @@ SELECT nextval('id_sequence');
 - Surge pricing
 
 **Architecture:**
-```
+```text
 Rider App → API Gateway → Ride Service → Matching Service
 Driver App →               Location Service → Redis GEO
                          Payment Service → Payment Gateway
@@ -503,7 +503,7 @@ CREATE INDEX idx_drivers_location ON drivers USING GIST(location);
 - Real-time updates
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Tweet Service → Fan-out Service
                               ↓
                     Timeline Service → Cache (Redis)
@@ -551,7 +551,7 @@ def get_timeline(user_id):
 - Comments and likes
 
 **Architecture:**
-```
+```text
 Upload → Transcoding Service → CDN → Client
                 ↓
         Metadata Service → Database
@@ -566,7 +566,7 @@ Upload → Transcoding Service → CDN → Client
 4. **Recommendation Engine**: ML-based suggestions
 
 **Transcoding Pipeline:**
-```
+```text
 Upload → Message Queue → Transcoding Workers → CDN
                 ↓
         Multiple Qualities (1080p, 720p, 480p, 360p)
@@ -588,7 +588,7 @@ Upload → Message Queue → Transcoding Workers → CDN
 - Webhooks
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Payment Service → Payment Processor
                 ↓
         Idempotency Service (Redis)
@@ -639,7 +639,7 @@ def process_payment(idempotency_key, payment_data):
 - Process payment
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Booking Service → Seat Service
                 ↓
         Reservation Service (Redis)
@@ -683,7 +683,7 @@ def reserve_seat(event_id, seat_id, user_id):
 - Fast response time
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Query Parser → Index Service
                               ↓
                     Ranking Service → Results
@@ -725,7 +725,7 @@ inverted_index = {
 - Consistency
 
 **Architecture:**
-```
+```text
 Client → Cache Client → Hash Ring → Cache Nodes
                     ↓
             Replication
@@ -775,7 +775,7 @@ class DistributedCache:
 - Monitoring
 
 **Architecture:**
-```
+```text
 Client → API Gateway → Scheduler Service → Task Queue
                                     ↓
                     Worker Pool → Task Execution
@@ -817,7 +817,7 @@ Client → API Gateway → Scheduler Service → Task Queue
 - Sharing
 
 **Architecture:**
-```
+```text
 Client → API Gateway → File Service → Object Storage (S3)
                 ↓
         Sync Service → WebSocket
@@ -858,7 +858,7 @@ def chunk_file(file_data, chunk_size=4*1024*1024):
 - Alerting
 
 **Architecture:**
-```
+```text
 Agents → Collector → Time-Series DB → Query Engine → Dashboard
                 ↓
         Alert Manager → Notifications
@@ -900,13 +900,13 @@ Agents → Collector → Time-Series DB → Query Engine → Dashboard
 **Patterns:**
 
 1. **Two-Phase Commit (2PC):**
-```
+```text
 Coordinator → Prepare (Phase 1) → Participants
             → Commit (Phase 2) → Participants
 ```
 
 2. **Saga Pattern:**
-```
+```text
 Order Service → Payment Service → Inventory Service
      ↓              ↓                  ↓
    Compensate   Compensate         Compensate
@@ -944,7 +944,7 @@ class EventStore:
 - Historical analysis
 
 **Architecture:**
-```
+```text
 Producers → Kafka → Stream Processing → OLAP Database
                         ↓
                 Window Aggregations
@@ -986,7 +986,7 @@ GROUP BY window_start;
 - High availability
 
 **Architecture:**
-```
+```text
 Region 1 ←→ Global Load Balancer ←→ Region 2
     ↓                                   ↓
 Primary DB ←→ Replication ←→ Read Replicas
@@ -1034,7 +1034,7 @@ def write(data):
 - A/B testing
 
 **Architecture:**
-```
+```text
 User Activity → Event Stream → Feature Store → ML Model
                                         ↓
                     Recommendation Service → API
@@ -1086,7 +1086,7 @@ def content_based(user_profile, items):
 - Community detection
 
 **Architecture:**
-```
+```text
 Client → Query Parser → Graph Engine → Storage Engine
                     ↓
             Traversal Engine
@@ -1143,7 +1143,7 @@ def shortest_path(graph, start, end):
 - Observability
 
 **Architecture:**
-```
+```text
 Service A ←→ Sidecar Proxy ←→ Sidecar Proxy ←→ Service B
                     ↓
             Control Plane
@@ -1197,19 +1197,19 @@ class CircuitBreaker:
 **Isolation Models:**
 
 1. **Separate Database:**
-```
+```text
 Tenant A → Database A
 Tenant B → Database B
 ```
 
 2. **Shared Database, Separate Schema:**
-```
+```text
 Tenant A → Schema A
 Tenant B → Schema B
 ```
 
 3. **Shared Database, Shared Schema:**
-```
+```text
 Tenant A ─┐
           ├→ Table with tenant_id
 Tenant B ─┘
@@ -1237,7 +1237,7 @@ CREATE POLICY tenant_isolation ON users
 - Saga pattern
 
 **Architecture:**
-```
+```text
 Command → Command Handler → Event Store → Event Bus
                                               ↓
 Query ← Read Model ← Projection ← Event Handler
@@ -1287,7 +1287,7 @@ def handle_query(query):
 - Safety controls
 
 **Architecture:**
-```
+```text
 Control Plane → Experiment Runner → Target System
                     ↓
             Monitoring → Analysis → Reports
@@ -1344,7 +1344,7 @@ def cpu_stress(target, duration):
 - High availability
 
 **Architecture:**
-```
+```text
 Payer → Payer Bank → Payment Network → Payee Bank → Payee
                     ↓
             Currency Conversion
@@ -1361,7 +1361,7 @@ Payer → Payer Bank → Payment Network → Payee Bank → Payee
 4. **Fraud Detection**: ML-based scoring
 
 **Payment Flow:**
-```
+```text
 1. Initiate payment
 2. Validate payer
 3. Check compliance

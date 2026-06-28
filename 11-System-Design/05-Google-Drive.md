@@ -24,7 +24,7 @@
 - Cross-platform compatibility
 
 ## Capacity Estimation
-```
+```text
 Storage Estimates:
 - 1B files × 1 MB average = 1 PB
 - With versions: 1 PB × 10 versions = 10 PB
@@ -221,7 +221,7 @@ CREATE TABLE users (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │     files       │     │ file_versions   │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -277,7 +277,7 @@ CREATE TABLE users (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │         (Desktop, Mobile, Web, API)                              │
@@ -639,7 +639,7 @@ class SyncStatusCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── file.created          (new file uploads)
 ├── file.modified         (file updates)
@@ -708,7 +708,7 @@ class FileEventProcessor:
 ## Scaling Strategy
 
 ### File Storage Scaling
-```
+```text
 Storage Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Application Layer                     │

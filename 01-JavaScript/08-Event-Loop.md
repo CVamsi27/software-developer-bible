@@ -16,7 +16,7 @@ The **Event Loop** is the mechanism that allows JavaScript to perform non-blocki
 
 ### Browser Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                   BROWSER ARCHITECTURE                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -60,7 +60,7 @@ The **Event Loop** is the mechanism that allows JavaScript to perform non-blocki
 
 ### Event Loop Flow
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    EVENT LOOP FLOW                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -109,7 +109,7 @@ The **Event Loop** is the mechanism that allows JavaScript to perform non-blocki
 
 ### Microtasks vs Macrotasks
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                MICROTASKS vs MACROTASKS                       │
 ├─────────────────────────────────────────────────────────────┤
@@ -1056,7 +1056,7 @@ Understanding the event loop is essential for writing responsive, efficient Java
 
 ## Cheat Sheet
 
-```
+```text
 EVENT LOOP CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 

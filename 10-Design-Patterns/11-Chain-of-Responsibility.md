@@ -24,7 +24,7 @@ The Chain of Responsibility pattern works by:
 3. When a handler receives a request, it either handles it or passes it along
 4. The chain continues until a handler processes the request or the end is reached
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │         Chain of Responsibility Pattern         │
 ├─────────────────────────────────────────────────┤
@@ -1119,7 +1119,7 @@ The Chain of Responsibility pattern is essential for processing pipelines and mi
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │       CHAIN OF RESPONSIBILITY PATTERN       │
 ├─────────────────────────────────────────────┤

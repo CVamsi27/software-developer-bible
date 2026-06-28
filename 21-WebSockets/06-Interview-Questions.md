@@ -16,7 +16,7 @@ Interview questions test your understanding of:
 
 ### Question Categories
 
-```
+```text
 Beginner (1-10):     Fundamentals, basic concepts
 Intermediate (11-20): Architecture, implementation details
 Senior (21-30):      System design, scaling, trade-offs
@@ -69,7 +69,7 @@ The WebSocket connection starts with an HTTP upgrade request:
 3. **TCP connection established**, full-duplex communication begins
 
 **Code Example:**
-```
+```text
 Client Request:
 GET /chat HTTP/1.1
 Host: server.example.com
@@ -363,7 +363,7 @@ io.use((socket, next) => {
 
 WebSocket frames have a specific binary format:
 
-```
+```text
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-------+-+-------------+-------------------------------+
@@ -417,7 +417,7 @@ io.to('room-1').emit('message', 'Hello'); // Delivered across all servers
 ```
 
 Architecture:
-```
+```text
 Server 1 <---> Redis Pub/Sub <---> Server 2
    |                                   |
    v                                   v
@@ -867,7 +867,7 @@ Common subprotocols:
 **Answer:**
 
 **Architecture:**
-```
+```text
                     +-- Load Balancer --+
                     |                  |
               +-----+-----+      +-----+-----+

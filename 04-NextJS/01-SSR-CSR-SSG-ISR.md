@@ -25,7 +25,7 @@ Choosing the wrong strategy leads to stale data, slow loads, or unnecessary serv
 
 ### Rendering Pipeline Comparison
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         CSR (Client-Side)                          │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -644,7 +644,7 @@ export default function Loading() {
 
 ### Bundle Size Impact
 
-```
+```text
 CSR:  Large JS bundle (full React + page logic)
 SSR:  Large JS bundle + server rendering overhead
 SSG:  Large JS bundle, but pre-rendered HTML (fast paint)
@@ -790,7 +790,7 @@ ISR:  Same as SSG, with periodic regeneration
 
 ## Cheat Sheet
 
-```
+```text
 CSR  → 'use client' + useEffect (App Router)
 SSR  → fetch() in Server Component, cache: 'no-store' (App Router)
        getServerSideProps (Pages Router)

@@ -37,7 +37,7 @@ function slidingWindow(nums: number[], k: number): number {
 
 ## How It Works
 
-```
+```text
 Array: [2, 1, 5, 1, 3, 2], k = 3
 
 Fixed Window (k=3):
@@ -55,7 +55,7 @@ Target sum = 7
 
 ### ASCII Diagram
 
-```
+```text
 FIXED WINDOW                    VARIABLE WINDOW
 ┌─────────┐                    ┌─────────┐
 │ Window  │                    │ Window  │
@@ -263,7 +263,7 @@ The sliding window pattern is essential for problems involving contiguous subarr
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Sliding Window
 Use when: Contiguous subarray/substring problems
 Time: O(n) | Space: O(1) to O(n)

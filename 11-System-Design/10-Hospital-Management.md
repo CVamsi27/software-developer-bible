@@ -25,7 +25,7 @@
 - Multi-tenant architecture
 
 ## Capacity Estimation
-```
+```text
 Hospital Estimates:
 - 100 hospitals
 - 10K doctors
@@ -309,7 +309,7 @@ CREATE TABLE audit_log (
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  hospitals  │     │     users       │     │    patients     │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -377,7 +377,7 @@ CREATE TABLE audit_log (
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │         (Web Portal, Mobile App, Staff Dashboard)                │
@@ -760,7 +760,7 @@ class PatientCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── appointment.created     (new appointment)
 ├── appointment.cancelled   (appointment cancelled)
@@ -819,7 +819,7 @@ class HospitalEventProcessor:
 ## Scaling Strategy
 
 ### Horizontal Scaling
-```
+```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │

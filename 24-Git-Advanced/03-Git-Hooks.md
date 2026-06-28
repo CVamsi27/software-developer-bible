@@ -14,7 +14,7 @@ Git hooks are scripts that run automatically when specific Git events occur (com
 Git hooks are stored in `.git/hooks/` and are executed by Git during specific events:
 
 ### Git Hooks Flow
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Git Hooks Execution Flow                      │
 ├─────────────────────────────────────────────────────────────────┤

@@ -27,7 +27,7 @@ Key concepts:
 
 ### Service Architecture
 
-```
+```text
                         Internet
                             |
                             v
@@ -58,7 +58,7 @@ Key concepts:
 
 ### Service Types
 
-```
+```text
 ClusterIP (default):
 +------------------+
 | Service          |
@@ -83,7 +83,7 @@ LoadBalancer:
 
 ### Ingress Architecture
 
-```
+```text
                       External Traffic
                             |
                             v

@@ -13,7 +13,7 @@ Git advanced commands are powerful tools for debugging, history manipulation, an
 ## How It Works
 
 ### Command Categories
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Git Advanced Commands                         │
 ├─────────────────────────────────────────────────────────────────┤

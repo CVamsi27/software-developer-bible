@@ -4,7 +4,7 @@
 
 **Apollo Client** is a comprehensive state management library for JavaScript that integrates with GraphQL. It manages the interaction between client and server by parsing, caching, and error handling GraphQL operations. It provides React hooks, Vue integration, and vanilla JS support for building data-driven applications.
 
-```
+```text
 Apollo Client = GraphQL Client + Normalized Cache + React Hooks + DevTools
 ```
 
@@ -14,7 +14,7 @@ Apollo Client = GraphQL Client + Normalized Cache + React Hooks + DevTools
 
 ### The Data Fetching Problem
 
-```
+```text
 Without Apollo Client:
 ┌─────────────────────────────────────────────────────────────────┐
 │  1. Manual fetch calls for every query                          │
@@ -52,7 +52,7 @@ With Apollo Client:
 
 ### Architecture Overview
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    APOLLO CLIENT ARCHITECTURE                    │
 ├──────────────────────────────────────────────────────────────────┤
@@ -100,7 +100,7 @@ With Apollo Client:
 
 ### Normalized Cache
 
-```
+```text
 Query Response:
 {
   user: {
@@ -909,7 +909,7 @@ if (data?.user) {
 
 ### Query Optimization
 
-```
+```text
 1. Use fragments for reusable selections
    fragment UserFields on User { id name email }
 
@@ -930,7 +930,7 @@ if (data?.user) {
 
 ### Cache Management
 
-```
+```text
 1. Define keyFields for normalization
    typePolicies: { User: { keyFields: ['id'] } }
 
@@ -949,7 +949,7 @@ if (data?.user) {
 
 ### Performance
 
-```
+```text
 1. Use skip option for conditional queries
    skip: !userId
 

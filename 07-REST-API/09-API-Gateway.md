@@ -18,7 +18,7 @@ Without an API Gateway:
 
 ### API Gateway Architecture
 
-```
+```text
 API Gateway Architecture
 ════════════════════════
 
@@ -46,7 +46,7 @@ Client          API Gateway              Microservices
 
 ### Gateway Components
 
-```
+```text
 API Gateway Components
 ══════════════════════
 

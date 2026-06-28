@@ -24,7 +24,7 @@
 - Cross-device synchronization
 
 ## Capacity Estimation
-```
+```text
 Storage Estimates:
 - 15M concurrent streams × 5 Mbps = 75 Tbps bandwidth
 - 200M users × 2 hours/day × 100 MB/hour = 40 PB/month viewing
@@ -219,7 +219,7 @@ CREATE INDEX idx_content_search ON content_metadata USING GIN(search_vector);
 ```
 
 ### ER Diagram (ASCII)
-```
+```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    profiles     │     │  watch_history  │
 ├─────────────┤     ├─────────────────┤     ├─────────────────┤
@@ -269,7 +269,7 @@ CREATE INDEX idx_content_search ON content_metadata USING GIN(search_vector);
 
 ## Architecture
 ### ASCII Architecture Diagram
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
 │         (Smart TV, Mobile, Web, Gaming Console)                  │
@@ -571,7 +571,7 @@ class SessionCache:
 ## Message Queue (Kafka)
 
 ### Topics and Events
-```
+```text
 Topics:
 ├── content.viewed          (playback events)
 ├── content.completed       (watch completion)
@@ -633,7 +633,7 @@ class ViewingEventProcessor:
 ## Scaling Strategy
 
 ### Global CDN Architecture
-```
+```text
 CDN Topology:
 ┌─────────────────────────────────────────────────────────┐
 │                    Origin Servers                        │
@@ -657,7 +657,7 @@ CDN Topology:
 ```
 
 ### Database Scaling
-```
+```text
 Database Architecture:
 ┌─────────────────────────────────────────────────────────┐
 │                    Write Primary                          │

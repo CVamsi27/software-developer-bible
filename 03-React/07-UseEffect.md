@@ -46,7 +46,7 @@ useEffect(() => {
 
 ### useEffect Execution Flow
 
-```
+```text
 useEffect Execution Flow:
 ═══════════════════════════════════════════════════════════════
 
@@ -88,7 +88,7 @@ Unmount:
 
 ### Dependency Array
 
-```
+```text
 Dependency Array Behavior:
 ═══════════════════════════════════════════════════════════════
 
@@ -125,7 +125,7 @@ Multiple Dependencies:
 
 ### Cleanup Function
 
-```
+```text
 Cleanup Function:
 ═══════════════════════════════════════════════════════════════
 
@@ -155,7 +155,7 @@ Example: Subscription with Cleanup
 
 ### Common Patterns
 
-```
+```text
 Common useEffect Patterns:
 ═══════════════════════════════════════════════════════════════
 
@@ -1147,7 +1147,7 @@ const useRealtimeSync = <T>(url: string) => {
 
 ## Cheat Sheet
 
-```
+```text
 useEffect Key Points:
 ├── What: Hook for side effects after render
 ├── Timing: After browser paint (async)

@@ -40,7 +40,7 @@ function backtrack(path: number[], choices: number[]): void {
 
 ## How It Works
 
-```
+```text
 Permutations of [1, 2, 3]:
 
                         []
@@ -56,7 +56,7 @@ Backtracking prunes invalid branches early.
 
 ### ASCII Diagram
 
-```
+```text
 SUBSETS OF [1, 2, 3]:
 
 Level 0:         []
@@ -369,7 +369,7 @@ Backtracking systematically explores all possible solutions by building candidat
 
 ## Cheat Sheet
 
-```
+```text
 Pattern: Backtracking
 Use when: All solutions, permutations, combinations, constraint satisfaction
 Time: O(2^n) to O(n!) | Space: O(n)

@@ -19,7 +19,7 @@ Without lifecycle hooks, developers would need manual tracking systems, leading 
 
 ### Evolution of Lifecycle
 
-```
+```text
 Lifecycle Evolution:
 ═══════════════════════════════════════════════════════════════
 
@@ -49,7 +49,7 @@ Function Components (React 16.8+):
 
 ### Class Component Lifecycle
 
-```
+```text
 Class Component Lifecycle Phases:
 ═══════════════════════════════════════════════════════════════
 
@@ -122,7 +122,7 @@ ERROR HANDLING:
 
 ### Function Component Lifecycle with useEffect
 
-```
+```text
 Function Component Lifecycle:
 ═══════════════════════════════════════════════════════════════
 
@@ -171,7 +171,7 @@ CLEANUP FUNCTION:
 
 ### Lifecycle Method Mapping
 
-```
+```text
 Class → Function Component Mapping:
 ═══════════════════════════════════════════════════════════════
 
@@ -1127,7 +1127,7 @@ The component lifecycle in React manages the series of events from mounting to u
 
 ## Cheat Sheet
 
-```
+```text
 Lifecycle Key Points:
 ├── What: Series of events from mount to unmount
 ├── Three Phases: Mount → Update → Unmount

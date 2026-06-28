@@ -11,7 +11,7 @@ This comprehensive guide covers 20 interview questions on monorepo architecture,
 
 ## How It Works
 
-```
+```text
 Interview Question Categories:
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
@@ -214,7 +214,7 @@ function solutionPattern(problem: string): string {
 ## Best Practices for Interview Answers
 
 ### Structure Your Answer
-```
+```text
 1. Definition (1-2 sentences)
 2. Benefits (2-3 bullet points)
 3. Challenges (2-3 bullet points)

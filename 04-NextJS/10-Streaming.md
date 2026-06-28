@@ -16,7 +16,7 @@
 
 ### Traditional vs Streaming Rendering
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │               TRADITIONAL RENDERING (Non-Streaming)              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -82,7 +82,7 @@
 
 ### Streaming Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    STREAMING ARCHITECTURE                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -693,7 +693,7 @@ export default function Loading() {
 
 ## Performance Considerations
 
-```
+```text
 Streaming Performance Benefits:
 - TTFB: Immediate (shell sent first)
 - FCP: Fast (essential content renders)
@@ -847,7 +847,7 @@ Optimization:
 
 ## Cheat Sheet
 
-```
+```text
 Route-level streaming:
 app/loading.tsx → Automatic Suspense boundary
 

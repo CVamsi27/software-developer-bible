@@ -29,7 +29,7 @@ React makes two key assumptions that reduce complexity to O(n):
 1. **Different node types produce different trees**: If a `<div>` changes to a `<span>`, React destroys the old subtree and creates a new one.
 2. **Keys identify stable elements**: The `key` prop tells React which elements have moved, been added, or removed.
 
-```
+```text
 Reconciliation Complexity Comparison:
 ═══════════════════════════════════════════════════════════════
 
@@ -56,7 +56,7 @@ React's Algorithm:
 
 React's reconciliation operates at three levels:
 
-```
+```text
 Reconciliation Levels:
 ═══════════════════════════════════════════════════════════════
 
@@ -164,7 +164,7 @@ function reconcileChildren(
 
 The `key` prop is the most critical part of reconciliation for list rendering:
 
-```
+```text
 Key Prop Behavior:
 ═══════════════════════════════════════════════════════════════
 
@@ -195,7 +195,7 @@ Result: Only D is created, A/B/C are reused!
 
 ### ASCII Diagram: Full Reconciliation Flow
 
-```
+```text
 Full Reconciliation Flow:
 ═══════════════════════════════════════════════════════════════
 
@@ -929,7 +929,7 @@ Reconciliation is React's core algorithm that determines how to efficiently upda
 
 ## Cheat Sheet
 
-```
+```text
 Reconciliation Key Points:
 ├── What: Process of diffing old and new Virtual DOM trees
 ├── Why: Minimize expensive DOM operations

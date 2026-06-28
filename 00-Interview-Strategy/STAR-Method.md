@@ -36,7 +36,7 @@ STAR is a structured approach to answering behavioral interview questions — th
 
 ### The Problem with Unstructured Answers
 
-```
+```text
 Without STAR:
 "I, uh, worked on a project where we had performance issues. I think I
 optimized some queries or something, and it got better. Yeah, it was
@@ -47,7 +47,7 @@ a big improvement... I think."
 
 ### The STAR Advantage
 
-```
+```text
 With STAR:
 "S: Our payment processing API was experiencing 5-second p99 latency
 during peak hours, causing 12% cart abandonment.
@@ -88,7 +88,7 @@ R: Reduced p99 latency from 5.2s to 340ms, cart abandonment dropped to 3%,
 - Other people's contributions (unless critical context)
 
 **Template:**
-```
+```text
 "At [Company], I was [role] on a team of [size] engineers. We were
 [building/maintaining/migrating] [system/product] that [served X users /
 handled X transactions / processed X data]. The challenge was [specific
@@ -96,7 +96,7 @@ problem with measurable impact]."
 ```
 
 **Example:**
-```
+```text
 "At FinTech Corp, I was the senior full stack engineer on the payments
 team (6 engineers). We processed $20M in daily transactions through a
 monolithic Node.js application. Response times had degraded to 4+ seconds
@@ -120,13 +120,13 @@ during peak hours, directly impacting conversion rates."
 - Tasks you weren't responsible for
 
 **Template:**
-```
+```text
 "My responsibility was [specific ownership]. The goal was to [specific
 outcome] within [constraint]. I was accountable for [specific deliverable]."
 ```
 
 **Example:**
-```
+```text
 "I was specifically responsible for the API performance optimization
 initiative. The goal was to reduce p99 latency below 500ms before the
 Black Friday sales event (6 weeks away). I owned the full investigation
@@ -147,7 +147,7 @@ through to production deployment."
 - Mention **tradeoffs** you considered
 
 **Template:**
-```
+```text
 "First, I [investigation/diagnosis step]. I discovered [finding].
 I considered [alternative approaches] but chose [chosen approach]
 because [reasoning]. I implemented this by [specific technical steps].
@@ -155,7 +155,7 @@ This required [collaboration/communication] with [stakeholders]."
 ```
 
 **Example:**
-```
+```text
 "First, I set up comprehensive APM monitoring using Datadog to identify
 the specific bottlenecks. The tracing revealed three issues:
 
@@ -192,14 +192,14 @@ regressions. The entire optimization took 2 weeks of focused work."
 | **Technical** | Architecture improvements, tech debt reduced |
 
 **Template:**
-```
+```text
 "The result was [specific metric improvement]. This impacted [business
 outcome]. Additionally, [secondary benefit]. This [system/approach]
 is still in use [timeframe later]."
 ```
 
 **Example:**
-```
+```text
 "The results were:
 • API p99 latency: 4.2s → 310ms (93% reduction)
 • Throughput: 200 req/s → 1,800 req/s (9x improvement)
@@ -219,7 +219,7 @@ and was adopted by 3 other engineering teams."
 
 Create a "story bank" of 8-12 versatile stories that cover multiple behavioral categories:
 
-```
+```text
 Story Bank Template:
 ┌─────────────────────────────────────────────────────┐
 │ Story Name: [Short identifier]                       │
@@ -241,7 +241,7 @@ Story Bank Template:
 
 Every senior engineer should have stories for these scenarios:
 
-```
+```text
 1. Technical Leadership
    "Tell me about a time you made a critical technical decision"
 
@@ -277,7 +277,7 @@ Every senior engineer should have stories for these scenarios:
 
 One story can answer multiple questions by emphasizing different aspects:
 
-```
+```text
 Original Story: Led migration from monolith to microservices
 
 Adaptation 1 (Leadership Question):
@@ -300,7 +300,7 @@ Emphasize: Working with incomplete requirements, making assumptions,
 
 ### Template 1: Performance Optimization
 
-```
+```text
 SITUATION:
 "Our [system/API] was experiencing [specific problem] with [metric]
 degrading to [bad number] during [peak time], causing [business impact].
@@ -331,7 +331,7 @@ improvement). This [business impact]. [Secondary benefit].
 
 ### Template 2: System Design Decision
 
-```
+```text
 SITUATION:
 "We needed to [build/redesign] [system] to [business need] with
 [constraints: scale, timeline, budget].
@@ -364,7 +364,7 @@ RESULT:
 
 ### Template 3: Conflict Resolution
 
-```
+```text
 SITUATION:
 "I was working on [project] with [person/team] who [had different
 perspective/approach].
@@ -391,7 +391,7 @@ This experience taught me [lesson about communication/collaboration].
 
 ### Template 4: Failure & Recovery
 
-```
+```text
 SITUATION:
 "While working on [project/task], I [specific mistake or poor judgment].
 
@@ -421,7 +421,7 @@ I also [shared the lesson with team/process improvement]."
 
 ### Template 5: Mentoring & Team Growth
 
-```
+```text
 SITUATION:
 "Our team had [growth challenge: new hires, skill gaps, transition].
 
@@ -449,7 +449,7 @@ RESULT:
 
 **Question:** "Tell me about a time you led a major technical initiative."
 
-```
+```text
 SITUATION:
 "At E-Commerce Corp, our checkout pipeline was a monolithic Node.js
 application handling 5,000 orders per hour. During peak sales events,
@@ -500,7 +500,7 @@ standard for new features company-wide."
 
 **Question:** "Tell me about a time you had a technical disagreement."
 
-```
+```text
 SITUATION:
 "I was designing a real-time notification system with a senior backend
 engineer. He strongly advocated for a polling architecture using cron
@@ -552,7 +552,7 @@ solution than either original proposal."
 
 **Question:** "Tell me about a time you made a significant mistake."
 
-```
+```text
 SITUATION:
 "I was leading the migration of our user authentication system from
 session-based to JWT tokens. I was confident in the approach and
@@ -615,7 +615,7 @@ team still uses."
 
 ### Question Mapping
 
-```
+```text
 "How do you handle ambiguity?"
 → Use: Ambiguity story, emphasize your process for making progress
 
@@ -643,7 +643,7 @@ team still uses."
 
 For simpler questions or when the situation is obvious:
 
-```
+```text
 P: "We had [problem]"
 A: "I [action]"
 R: "The result was [outcome]"
@@ -653,7 +653,7 @@ R: "The result was [outcome]"
 
 Emphasizes the difficulty:
 
-```
+```text
 C: "The challenge was [difficulty]"
 A: "I [action]"
 R: "Despite the challenge, [outcome]"
@@ -663,7 +663,7 @@ R: "Despite the challenge, [outcome]"
 
 For questions about growth or when reflecting on past decisions:
 
-```
+```text
 S + T + A + R + L: "Looking back, I would [what you'd do differently]
 because [lesson learned]. Since then, I [changed behavior]."
 ```
@@ -672,7 +672,7 @@ because [lesson learned]. Since then, I [changed behavior]."
 
 Weave STAR into conversational responses rather than rigid structure:
 
-```
+```text
 "I remember when we had this payment processing issue (S). I was
 responsible for fixing it before Black Friday (T). After profiling,
 I discovered N+1 queries and added a caching layer (A). We went
@@ -684,7 +684,7 @@ smoothly (R)."
 
 Always have numbers ready:
 
-```
+```text
 Before interview, prepare:
 - Team size you led/worked with
 - Users/transactions affected
@@ -700,7 +700,7 @@ Before interview, prepare:
 
 ### Week 1: Story Development
 
-```
+```text
 Day 1-2: Brainstorm 12 stories from your career
 Day 3-4: Write each story using STAR structure
 Day 5-7: Review and refine, adding specific metrics
@@ -708,7 +708,7 @@ Day 5-7: Review and refine, adding specific metrics
 
 ### Week 2: Delivery Practice
 
-```
+```text
 Day 1-2: Practice telling stories out loud (2 min each)
 Day 3-4: Record yourself, review for filler words and pacing
 Day 5-7: Practice with a friend or mentor, get feedback
@@ -716,7 +716,7 @@ Day 5-7: Practice with a friend or mentor, get feedback
 
 ### Week 3: Adaptation
 
-```
+```text
 Day 1-3: Practice adapting stories to different questions
 Day 4-5: Do mock interviews (3-4 rounds)
 Day 6-7: Refine based on feedback
@@ -724,7 +724,7 @@ Day 6-7: Refine based on feedback
 
 ### Self-Assessment Checklist
 
-```
+```text
 After each practice session, evaluate:
 
 □ Was each answer under 2 minutes?
@@ -744,25 +744,25 @@ After each practice session, evaluate:
 ### Top 10 STAR Mistakes
 
 **1. Too much Situation, not enough Action**
-```
+```text
 ❌ Spending 80% of the time on context
 ✅ Context in 2-3 sentences, then get to the action
 ```
 
 **2. Using "we" instead of "I"**
-```
+```text
 ❌ "We optimized the database queries"
 ✅ "I identified the N+1 query problem and rewrote them using DataLoader"
 ```
 
 **3. Vague results**
-```
+```text
 ❌ "It improved performance significantly"
 ✅ "p99 latency dropped from 3.2s to 280ms (91% improvement)"
 ```
 
 **4. No technical depth**
-```
+```text
 ❌ "I fixed the performance issue"
 ✅ "I profiled with Datadog, found 12 synchronous queries, implemented
     connection pooling and a Redis cache layer, reducing DB round trips
@@ -770,37 +770,37 @@ After each practice session, evaluate:
 ```
 
 **5. Taking too long**
-```
+```text
 ❌ 5-minute stories
 ✅ Keep each story under 2 minutes, aim for 90 seconds
 ```
 
 **6. Rehearsed-sounding delivery**
-```
+```text
 ❌ Robotic recitation of memorized script
 ✅ Natural conversation with structured content
 ```
 
 **7. No connection to the question**
-```
+```text
 ❌ Generic story regardless of what was asked
 ✅ Adapt your story to directly address the specific question
 ```
 
 **8. Forgetting the result**
-```
+```text
 ❌ Ending after the action
 ✅ Always close with measurable outcomes
 ```
 
 **9. Badmouthing others**
-```
+```text
 ❌ "My teammate was wrong and I had to fix it"
 ✅ "We had different perspectives, and I worked to find common ground"
 ```
 
 **10. Not preparing enough stories**
-```
+```text
 ❌ Only 2-3 stories to draw from
 ✅ 8-12 versatile stories covering multiple categories
 ```
@@ -809,7 +809,7 @@ After each practice session, evaluate:
 
 ## Quick Reference Card
 
-```
+```text
 STAR STRUCTURE AT A GLANCE:
 
 SITUATION (15-20%)     "At [Company], we had [problem]"

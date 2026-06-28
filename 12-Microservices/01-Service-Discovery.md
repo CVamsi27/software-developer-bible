@@ -17,7 +17,7 @@ In microservices:
 
 ### Client-Side Discovery
 
-```
+```text
 ┌─────────────┐     1. Query      ┌─────────────────┐
 │   Client    │ ─────────────────>│  Discovery      │
 │  Service A  │<─────────────────│  Server         │
@@ -39,7 +39,7 @@ In microservices:
 
 ### Server-Side Discovery
 
-```
+```text
 ┌─────────────┐     1. Request    ┌─────────────────┐     3. Forward     ┌─────────────┐
 │   Client    │ ─────────────────>│  Load Balancer  │ ─────────────────>│  Service B  │
 │  Service A  │<─────────────────│  / Router       │<─────────────────│  (Instance) │
@@ -448,7 +448,7 @@ Service Discovery is fundamental to microservices architecture, enabling dynamic
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                 SERVICE DISCOVERY                       │
 ├─────────────────────────────────────────────────────────┤

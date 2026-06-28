@@ -17,7 +17,7 @@ In microservices:
 
 ### Kafka Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                      KAFKA CLUSTER                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -43,7 +43,7 @@ In microservices:
 
 ### Producer-Consumer Flow
 
-```
+```text
 ┌─────────────┐    ┌─────────────────────────────────────────────┐
 │  Producer   │───>│                   KAFKA                     │
 │  (Order     │    │  ┌─────────────┐  ┌─────────────┐          │
@@ -61,7 +61,7 @@ In microservices:
 
 ### Consumer Groups
 
-```
+```text
 Topic: orders (3 partitions)
 
 Consumer Group A (Inventory Service):
@@ -687,7 +687,7 @@ Apache Kafka is essential for building event-driven microservices. It provides h
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                   APACHE KAFKA                          │
 ├─────────────────────────────────────────────────────────┤

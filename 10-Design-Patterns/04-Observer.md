@@ -24,7 +24,7 @@ The Observer pattern works by:
 3. Defining an observer interface with an update method
 4. When the subject's state changes, it notifies all observers
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │              Observer Pattern                   │
 ├─────────────────────────────────────────────────┤
@@ -951,7 +951,7 @@ The Observer pattern is essential for event-driven programming and reactive syst
 
 ## Cheat Sheet
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │           OBSERVER PATTERN                  │
 ├─────────────────────────────────────────────┤

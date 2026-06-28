@@ -12,7 +12,7 @@ Framer Motion is a production-ready React animation library that provides a simp
 
 ## How It Works
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    FRAMER MOTION ARCHITECTURE                        │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -466,7 +466,7 @@ function LoadingSpinner() {
 
 ## Performance Considerations
 
-```
+```text
 Animation Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  GPU Accelerated (Good):                                         │

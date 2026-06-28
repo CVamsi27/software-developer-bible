@@ -22,9 +22,23 @@ A comprehensive, interview-focused reference for senior full-stack engineering r
 | 13 | [Docker](13-Docker/) | 5 | Images, Containers, Compose |
 | 14 | [Kubernetes](14-Kubernetes/) | 8 | Pods, Deployments, HPA, Helm |
 | 15 | [CI/CD](15-CI-CD/) | 4 | GitHub Actions, Deploy, Rollback |
+| 16 | [Testing](16-Testing/) | 9 | Jest, RTL, Unit, Integration, E2E, Mocking |
+| 17 | [GraphQL](17-GraphQL/) | 8 | Schema, Resolvers, Apollo, Performance |
 | 18 | [Behavioral](18-Behavioral/) | 3 | STAR Method, 40+ Questions |
 | 19 | [Coding Patterns](19-Coding-Patterns/) | 12 | Sliding Window, DP, Graphs, Trie |
 | 20 | [Cheat Sheets](20-CheatSheets/) | 5 | Quick Reference Cards |
+| 21 | [WebSockets](21-WebSockets/) | 6 | Socket.io, SSE, Real-time Architecture |
+| 22 | [Observability](22-Observability/) | 6 | Logging, Monitoring, Tracing, Sentry |
+| 23 | [Build Tools](23-Build-Tools/) | 5 | Webpack, Vite, Turbopack, Optimization |
+| 24 | [Git Advanced](24-Git-Advanced/) | 5 | Branching, Rebase, Hooks, Commands |
+| 25 | [Accessibility](25-Accessibility/) | 5 | WCAG, ARIA, Keyboard Navigation, Testing |
+| 26 | [Performance Monitoring](26-Performance-Monitoring/) | 4 | Core Web Vitals, APIs, Profiling |
+| 27 | [Serverless & Edge](27-Serverless-Edge/) | 4 | Lambda, Edge Functions, Patterns |
+| 28 | [Monorepo](28-Monorepo/) | 4 | Turborepo, Nx, Workspaces |
+| 29 | [Form Handling](29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
+| 30 | [Animation](30-Animation/) | 3 | Framer Motion, CSS Animations |
+
+**Total: 219 files**
 
 ## Chapter Template
 
@@ -48,7 +62,7 @@ Every chapter follows this structure:
   ### FAANG-style (10)
   ### Follow-ups (10)
 ## Summary
-## Cheat Sheet
+## References & Learn More
 ```
 
 ## How to Use
@@ -57,16 +71,31 @@ Every chapter follows this structure:
 2. **Preparing for interview?** Focus on Interview Questions at the end
 3. **Quick review?** Use the Cheat Sheet at the bottom of each chapter
 4. **Deep dive?** Read through internal working and code examples
+5. **Explore further?** Check the References & Learn More section at the end
 
 ## Priority Order for Interview Prep
 
 1. JavaScript (core fundamentals)
 2. TypeScript (type system mastery)
 3. React (hooks, rendering, performance)
-4. REST APIs (design principles)
-5. Security (JWT, OAuth, XSS, CSRF)
-6. Database (PostgreSQL, indexing, transactions)
-7. NestJS (DI, guards, pipes)
-8. System Design (architecture, scaling)
-9. Design Patterns (SOLID, GoF patterns)
-10. Docker, Kubernetes & CI/CD
+4. Next.js (App Router, RSC, streaming)
+5. REST APIs (design principles)
+6. Security (JWT, OAuth, XSS, CSRF)
+7. Database (PostgreSQL, indexing, transactions)
+8. NestJS (DI, guards, pipes)
+9. System Design (architecture, scaling)
+10. Design Patterns (SOLID, GoF patterns)
+11. Testing (Jest, RTL, E2E)
+12. Microservices (Kafka, RabbitMQ, CQRS)
+13. Docker, Kubernetes & CI/CD
+14. GraphQL (schema, resolvers, Apollo)
+15. WebSockets & Real-time
+16. Observability (logging, monitoring, tracing)
+17. Build Tools (Webpack, Vite, Turbopack)
+18. Git Advanced (branching, rebase, hooks)
+19. Accessibility (WCAG, ARIA)
+20. Performance Monitoring (Core Web Vitals)
+21. Serverless & Edge
+22. Monorepo (Turborepo, Nx)
+23. Form Handling (React Hook Form, Zod)
+24. Animation (Framer Motion, CSS)

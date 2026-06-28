@@ -66,16 +66,16 @@ interface DataSource {
 class FileDataSource implements DataSource {
   private filename: string;
   private data: string = '';
-  
+
   constructor(filename: string) {
     this.filename = filename;
   }
-  
+
   writeData(data: string): void {
     console.log(`Writing data to file: ${this.filename}`);
     this.data = data;
   }
-  
+
   readData(): string {
     console.log(`Reading data from file: ${this.filename}`);
     return this.data;
@@ -85,15 +85,15 @@ class FileDataSource implements DataSource {
 // Base decorator
 abstract class DataSourceDecorator implements DataSource {
   protected wrapped: DataSource;
-  
+
   constructor(source: DataSource) {
     this.wrapped = source;
   }
-  
+
   writeData(data: string): void {
     this.wrapped.writeData(data);
   }
-  
+
   readData(): string {
     return this.wrapped.readData();
   }
@@ -106,18 +106,18 @@ class EncryptionDecorator extends DataSourceDecorator {
     console.log('Encrypting data...');
     super.writeData(encrypted);
   }
-  
+
   readData(): string {
     const data = super.readData();
     console.log('Decrypting data...');
     return this.decrypt(data);
   }
-  
+
   private encrypt(data: string): string {
     // Simple encryption simulation
     return Buffer.from(data).toString('base64');
   }
-  
+
   private decrypt(data: string): string {
     // Simple decryption simulation
     return Buffer.from(data, 'base64').toString();
@@ -130,18 +130,18 @@ class CompressionDecorator extends DataSourceDecorator {
     console.log('Compressing data...');
     super.writeData(compressed);
   }
-  
+
   readData(): string {
     const data = super.readData();
     console.log('Decompressing data...');
     return this.decompress(data);
   }
-  
+
   private compress(data: string): string {
     // Simple compression simulation
     return `[compressed]${data}[/compressed]`;
   }
-  
+
   private decompress(data: string): string {
     // Simple decompression simulation
     return data.replace(/\[compressed\]|\[\/compressed\]/g, '');
@@ -208,11 +208,11 @@ class BasicHandler implements RequestHandler {
 // Base decorator
 abstract class HandlerDecorator implements RequestHandler {
   protected wrapped: RequestHandler;
-  
+
   constructor(handler: RequestHandler) {
     this.wrapped = handler;
   }
-  
+
   async handle(request: Request): Promise<Response> {
     return this.wrapped.handle(request);
   }
@@ -223,12 +223,12 @@ class LoggingHandler extends HandlerDecorator {
   async handle(request: Request): Promise<Response> {
     console.log(`[${new Date().toISOString()}] ${request.method} ${request.url}`);
     const start = Date.now();
-    
+
     const response = await super.handle(request);
-    
+
     const duration = Date.now() - start;
     console.log(`Response: ${response.status} (${duration}ms)`);
-    
+
     return response;
   }
 }
@@ -236,14 +236,14 @@ class LoggingHandler extends HandlerDecorator {
 class AuthenticationHandler extends HandlerDecorator {
   async handle(request: Request): Promise<Response> {
     const token = request.headers['Authorization'];
-    
+
     if (!token) {
       return { status: 401, body: { error: 'Unauthorized' }, headers: {} };
     }
-    
+
     // Simulate token validation
     request.user = { id: '1', name: 'John' };
-    
+
     return super.handle(request);
   }
 }
@@ -252,27 +252,27 @@ class RateLimitHandler extends HandlerDecorator {
   private requests: Map<string, number[]> = new Map();
   private limit: number;
   private windowMs: number;
-  
+
   constructor(handler: RequestHandler, limit: number = 100, windowMs: number = 60000) {
     super(handler);
     this.limit = limit;
     this.windowMs = windowMs;
   }
-  
+
   async handle(request: Request): Promise<Response> {
     const ip = request.headers['X-Forwarded-For'] || 'unknown';
     const now = Date.now();
-    
+
     const requests = this.requests.get(ip) || [];
     const recentRequests = requests.filter(time => now - time < this.windowMs);
-    
+
     if (recentRequests.length >= this.limit) {
       return { status: 429, body: { error: 'Too Many Requests' }, headers: {} };
     }
-    
+
     recentRequests.push(now);
     this.requests.set(ip, recentRequests);
-    
+
     return super.handle(request);
   }
 }
@@ -280,11 +280,11 @@ class RateLimitHandler extends HandlerDecorator {
 class CORSHandler extends HandlerDecorator {
   async handle(request: Request): Promise<Response> {
     const response = await super.handle(request);
-    
+
     response.headers['Access-Control-Allow-Origin'] = '*';
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE';
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization';
-    
+
     return response;
   }
 }
@@ -292,7 +292,7 @@ class CORSHandler extends HandlerDecorator {
 // Client code
 class Server {
   private handler: RequestHandler;
-  
+
   constructor() {
     // Build middleware chain
     this.handler = new CORSHandler(
@@ -305,7 +305,7 @@ class Server {
       )
     );
   }
-  
+
   async handleRequest(request: Request): Promise<Response> {
     return this.handler.handle(request);
   }
@@ -338,7 +338,7 @@ class BasicNotification implements Notification {
     console.log(`Sending notification: ${message}`);
     return true;
   }
-  
+
   getChannel(): string {
     return 'basic';
   }
@@ -347,15 +347,15 @@ class BasicNotification implements Notification {
 // Base decorator
 abstract class NotificationDecorator implements Notification {
   protected wrapped: Notification;
-  
+
   constructor(notification: Notification) {
     this.wrapped = notification;
   }
-  
+
   async send(message: string): Promise<boolean> {
     return this.wrapped.send(message);
   }
-  
+
   getChannel(): string {
     return this.wrapped.getChannel();
   }
@@ -368,7 +368,7 @@ class FormattedNotification extends NotificationDecorator {
     console.log('Formatting message...');
     return super.send(formatted);
   }
-  
+
   private formatMessage(message: string): string {
     return `[${new Date().toISOString()}] ${message.toUpperCase()}`;
   }
@@ -377,13 +377,13 @@ class FormattedNotification extends NotificationDecorator {
 class RetryNotification extends NotificationDecorator {
   private maxRetries: number;
   private delay: number;
-  
+
   constructor(notification: Notification, maxRetries: number = 3, delay: number = 1000) {
     super(notification);
     this.maxRetries = maxRetries;
     this.delay = delay;
   }
-  
+
   async send(message: string): Promise<boolean> {
     for (let attempt = 1; attempt <= this.maxRetries; attempt++) {
       try {
@@ -393,15 +393,15 @@ class RetryNotification extends NotificationDecorator {
       } catch (error) {
         console.log(`Attempt ${attempt} failed: ${error}`);
       }
-      
+
       if (attempt < this.maxRetries) {
         await this.sleep(this.delay);
       }
     }
-    
+
     return false;
   }
-  
+
   private sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -409,18 +409,18 @@ class RetryNotification extends NotificationDecorator {
 
 class FilteredNotification extends NotificationDecorator {
   private filter: (message: string) => boolean;
-  
+
   constructor(notification: Notification, filter: (message: string) => boolean) {
     super(notification);
     this.filter = filter;
   }
-  
+
   async send(message: string): Promise<boolean> {
     if (!this.filter(message)) {
       console.log('Message filtered out');
       return false;
     }
-    
+
     return super.send(message);
   }
 }
@@ -428,26 +428,26 @@ class FilteredNotification extends NotificationDecorator {
 class QueuedNotification extends NotificationDecorator {
   private queue: string[] = [];
   private processing: boolean = false;
-  
+
   async send(message: string): Promise<boolean> {
     this.queue.push(message);
     console.log(`Message queued: ${message}`);
-    
+
     if (!this.processing) {
       this.processQueue();
     }
-    
+
     return true;
   }
-  
+
   private async processQueue(): Promise<void> {
     this.processing = true;
-    
+
     while (this.queue.length > 0) {
       const message = this.queue.shift()!;
       await super.send(message);
     }
-    
+
     this.processing = false;
   }
 }
@@ -455,7 +455,7 @@ class QueuedNotification extends NotificationDecorator {
 // Client code
 class NotificationService {
   private notification: Notification;
-  
+
   constructor() {
     // Build decorator chain
     this.notification = new QueuedNotification(
@@ -466,7 +466,7 @@ class NotificationService {
       )
     );
   }
-  
+
   async notify(message: string): Promise<boolean> {
     return this.notification.send(message);
   }
@@ -483,14 +483,14 @@ await service.notify('Hello World!');
 // Method decorator
 function Log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
   const originalMethod = descriptor.value;
-  
+
   descriptor.value = function (...args: any[]) {
     console.log(`Calling ${propertyKey} with args:`, args);
     const result = originalMethod.apply(this, args);
     console.log(`${propertyKey} returned:`, result);
     return result;
   };
-  
+
   return descriptor;
 }
 
@@ -520,12 +520,12 @@ function ReadOnly(target: any, propertyKey: string) {
 class UserService {
   @ReadOnly
   private version: string = '1.0';
-  
+
   @Log
   getUser(@Validate id: string): any {
     return { id, name: 'John' };
   }
-  
+
   @Log
   createUser(data: any): any {
     return { id: '1', ...data };
@@ -547,15 +547,15 @@ interface ReadableStream {
 // Concrete component
 class StringStream implements ReadableStream {
   private data: string;
-  
+
   constructor(data: string) {
     this.data = data;
   }
-  
+
   read(): string {
     return this.data;
   }
-  
+
   getLength(): number {
     return this.data.length;
   }
@@ -564,15 +564,15 @@ class StringStream implements ReadableStream {
 // Base decorator
 abstract class StreamDecorator implements ReadableStream {
   protected wrapped: ReadableStream;
-  
+
   constructor(stream: ReadableStream) {
     this.wrapped = stream;
   }
-  
+
   read(): string {
     return this.wrapped.read();
   }
-  
+
   getLength(): number {
     return this.wrapped.getLength();
   }
@@ -587,17 +587,17 @@ class UpperCaseStream extends StreamDecorator {
 
 class TruncatedStream extends StreamDecorator {
   private maxLength: number;
-  
+
   constructor(stream: ReadableStream, maxLength: number) {
     super(stream);
     this.maxLength = maxLength;
   }
-  
+
   read(): string {
     const data = super.read();
     return data.substring(0, this.maxLength);
   }
-  
+
   getLength(): number {
     return Math.min(super.getLength(), this.maxLength);
   }
@@ -649,11 +649,11 @@ class JSONProcessor implements DataProcessor {
 // Base decorator
 abstract class ProcessorDecorator implements DataProcessor {
   protected wrapped: DataProcessor;
-  
+
   constructor(processor: DataProcessor) {
     this.wrapped = processor;
   }
-  
+
   process(data: any): any {
     return this.wrapped.process(data);
   }
@@ -662,23 +662,23 @@ abstract class ProcessorDecorator implements DataProcessor {
 // Concrete decorators
 class ValidationProcessor extends ProcessorDecorator {
   private schema: any;
-  
+
   constructor(processor: DataProcessor, schema: any) {
     super(processor);
     this.schema = schema;
   }
-  
+
   process(data: any): any {
     const result = super.process(data);
-    
+
     // Validate against schema
     if (!this.validate(result)) {
       throw new Error('Validation failed');
     }
-    
+
     return result;
   }
-  
+
   private validate(data: any): boolean {
     // Simple validation
     return true;
@@ -687,12 +687,12 @@ class ValidationProcessor extends ProcessorDecorator {
 
 class TransformationProcessor extends ProcessorDecorator {
   private transform: (data: any) => any;
-  
+
   constructor(processor: DataProcessor, transform: (data: any) => any) {
     super(processor);
     this.transform = transform;
   }
-  
+
   process(data: any): any {
     const result = super.process(data);
     return this.transform(result);
@@ -701,18 +701,18 @@ class TransformationProcessor extends ProcessorDecorator {
 
 class CachingProcessor extends ProcessorDecorator {
   private cache: Map<string, any> = new Map();
-  
+
   process(data: any): any {
     const key = JSON.stringify(data);
-    
+
     if (this.cache.has(key)) {
       console.log('Cache hit');
       return this.cache.get(key);
     }
-    
+
     const result = super.process(data);
     this.cache.set(key, result);
-    
+
     return result;
   }
 }
@@ -747,11 +747,11 @@ class ConsoleLogger implements Logger {
   log(message: string): void {
     console.log(`[LOG] ${message}`);
   }
-  
+
   error(message: string): void {
     console.error(`[ERROR] ${message}`);
   }
-  
+
   warn(message: string): void {
     console.warn(`[WARN] ${message}`);
   }
@@ -760,19 +760,19 @@ class ConsoleLogger implements Logger {
 // Base decorator
 abstract class LoggerDecorator implements Logger {
   protected wrapped: Logger;
-  
+
   constructor(logger: Logger) {
     this.wrapped = logger;
   }
-  
+
   log(message: string): void {
     this.wrapped.log(message);
   }
-  
+
   error(message: string): void {
     this.wrapped.error(message);
   }
-  
+
   warn(message: string): void {
     this.wrapped.warn(message);
   }
@@ -783,11 +783,11 @@ class TimestampLogger extends LoggerDecorator {
   log(message: string): void {
     super.log(`${new Date().toISOString()} ${message}`);
   }
-  
+
   error(message: string): void {
     super.error(`${new Date().toISOString()} ${message}`);
   }
-  
+
   warn(message: string): void {
     super.warn(`${new Date().toISOString()} ${message}`);
   }
@@ -795,22 +795,22 @@ class TimestampLogger extends LoggerDecorator {
 
 class FileLogger extends LoggerDecorator {
   private logs: string[] = [];
-  
+
   log(message: string): void {
     this.logs.push(`[LOG] ${message}`);
     super.log(message);
   }
-  
+
   error(message: string): void {
     this.logs.push(`[ERROR] ${message}`);
     super.error(message);
   }
-  
+
   warn(message: string): void {
     this.logs.push(`[WARN] ${message}`);
     super.warn(message);
   }
-  
+
   getLogs(): string[] {
     return [...this.logs];
   }
@@ -818,24 +818,24 @@ class FileLogger extends LoggerDecorator {
 
 class FilteredLogger extends LoggerDecorator {
   private filter: (message: string) => boolean;
-  
+
   constructor(logger: Logger, filter: (message: string) => boolean) {
     super(logger);
     this.filter = filter;
   }
-  
+
   log(message: string): void {
     if (this.filter(message)) {
       super.log(message);
     }
   }
-  
+
   error(message: string): void {
     if (this.filter(message)) {
       super.error(message);
     }
   }
-  
+
   warn(message: string): void {
     if (this.filter(message)) {
       super.warn(message);
@@ -884,7 +884,7 @@ const decorated = new DecoratorA(
 class BadDecorator extends BaseDecorator {
   private state: any;
   private dependencies: any[];
-  
+
   // Hard to reason about
 }
 ```
@@ -895,7 +895,7 @@ class BadDecorator extends BaseDecorator {
 // ❌ BAD - Decorator doesn't implement interface
 class BadDecorator {
   private wrapped: Component;
-  
+
   // Missing interface methods
 }
 ```
@@ -920,7 +920,7 @@ class BadDecorator extends BaseDecorator {
 // ✅ GOOD - Implements interface
 class GoodDecorator implements Component {
   private wrapped: Component;
-  
+
   process(data: any): any {
     return this.wrapped.process(data);
   }

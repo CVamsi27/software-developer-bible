@@ -165,57 +165,57 @@ import { Counter } from "./Counter";
 describe("Counter", () => {
   it("should render with initial count of 0", () => {
     render(<Counter />);
-    
+
     expect(screen.getByRole("heading", { name: /count: 0/i })).toBeInTheDocument();
   });
 
   it("should render with custom initial count", () => {
     render(<Counter initialCount={10} />);
-    
+
     expect(screen.getByRole("heading", { name: /count: 10/i })).toBeInTheDocument();
   });
 
   it("should increment count when + button clicked", async () => {
     const user = userEvent.setup();
     render(<Counter />);
-    
+
     const incrementButton = screen.getByRole("button", { name: /increase count/i });
     await user.click(incrementButton);
-    
+
     expect(screen.getByRole("heading", { name: /count: 1/i })).toBeInTheDocument();
   });
 
   it("should decrement count when - button clicked", async () => {
     const user = userEvent.setup();
     render(<Counter initialCount={5} />);
-    
+
     const decrementButton = screen.getByRole("button", { name: /decrease count/i });
     await user.click(decrementButton);
-    
+
     expect(screen.getByRole("heading", { name: /count: 4/i })).toBeInTheDocument();
   });
 
   it("should reset to initial count", async () => {
     const user = userEvent.setup();
     render(<Counter initialCount={10} />);
-    
+
     const incrementButton = screen.getByRole("button", { name: /increase count/i });
     await user.click(incrementButton); // 11
     await user.click(incrementButton); // 12
-    
+
     const resetButton = screen.getByRole("button", { name: /reset count/i });
     await user.click(resetButton);
-    
+
     expect(screen.getByRole("heading", { name: /count: 10/i })).toBeInTheDocument();
   });
 
   it("should use custom step value", async () => {
     const user = userEvent.setup();
     render(<Counter step={5} />);
-    
+
     const incrementButton = screen.getByRole("button", { name: /increase count/i });
     await user.click(incrementButton);
-    
+
     expect(screen.getByRole("heading", { name: /count: 5/i })).toBeInTheDocument();
   });
 
@@ -223,10 +223,10 @@ describe("Counter", () => {
     const onChange = jest.fn();
     const user = userEvent.setup();
     render(<Counter onChange={onChange} />);
-    
+
     const incrementButton = screen.getByRole("button", { name: /increase count/i });
     await user.click(incrementButton);
-    
+
     expect(onChange).toHaveBeenCalledWith(1);
   });
 });
@@ -250,19 +250,19 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
 
   const validate = () => {
     const newErrors: { email?: string; password?: string } = {};
-    
+
     if (!email) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Invalid email format";
     }
-    
+
     if (!password) {
       newErrors.password = "Password is required";
     } else if (password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -277,7 +277,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
   return (
     <form onSubmit={handleSubmit} aria-label="Login form">
       {error && <div role="alert">{error}</div>}
-      
+
       <div>
         <label htmlFor="email">Email</label>
         <input
@@ -294,7 +294,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
           </span>
         )}
       </div>
-      
+
       <div>
         <label htmlFor="password">Password</label>
         <input
@@ -311,7 +311,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, error }) => {
           </span>
         )}
       </div>
-      
+
       <button type="submit">Login</button>
     </form>
   );
@@ -325,7 +325,7 @@ import { LoginForm } from "./LoginForm";
 describe("LoginForm", () => {
   it("should render all form elements", () => {
     render(<LoginForm onSubmit={jest.fn()} />);
-    
+
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /login/i })).toBeInTheDocument();
@@ -334,9 +334,9 @@ describe("LoginForm", () => {
   it("should show validation errors for empty fields", async () => {
     const user = userEvent.setup();
     render(<LoginForm onSubmit={jest.fn()} />);
-    
+
     await user.click(screen.getByRole("button", { name: /login/i }));
-    
+
     await waitFor(() => {
       expect(screen.getByText("Email is required")).toBeInTheDocument();
       expect(screen.getByText("Password is required")).toBeInTheDocument();
@@ -346,11 +346,11 @@ describe("LoginForm", () => {
   it("should show error for invalid email format", async () => {
     const user = userEvent.setup();
     render(<LoginForm onSubmit={jest.fn()} />);
-    
+
     await user.type(screen.getByLabelText(/email/i), "invalidemail");
     await user.type(screen.getByLabelText(/password/i), "password123");
     await user.click(screen.getByRole("button", { name: /login/i }));
-    
+
     await waitFor(() => {
       expect(screen.getByText("Invalid email format")).toBeInTheDocument();
     });
@@ -359,11 +359,11 @@ describe("LoginForm", () => {
   it("should show error for short password", async () => {
     const user = userEvent.setup();
     render(<LoginForm onSubmit={jest.fn()} />);
-    
+
     await user.type(screen.getByLabelText(/email/i), "user@example.com");
     await user.type(screen.getByLabelText(/password/i), "123");
     await user.click(screen.getByRole("button", { name: /login/i }));
-    
+
     await waitFor(() => {
       expect(screen.getByText("Password must be at least 6 characters")).toBeInTheDocument();
     });
@@ -373,11 +373,11 @@ describe("LoginForm", () => {
     const onSubmit = jest.fn();
     const user = userEvent.setup();
     render(<LoginForm onSubmit={onSubmit} />);
-    
+
     await user.type(screen.getByLabelText(/email/i), "user@example.com");
     await user.type(screen.getByLabelText(/password/i), "password123");
     await user.click(screen.getByRole("button", { name: /login/i }));
-    
+
     await waitFor(() => {
       expect(onSubmit).toHaveBeenCalledWith({
         email: "user@example.com",
@@ -388,7 +388,7 @@ describe("LoginForm", () => {
 
   it("should display server error when provided", () => {
     render(<LoginForm onSubmit={jest.fn()} error="Invalid credentials" />);
-    
+
     expect(screen.getByRole("alert")).toHaveTextContent("Invalid credentials");
   });
 });
@@ -488,17 +488,17 @@ afterAll(() => server.close());
 describe("UserProfile", () => {
   it("should show loading state initially", () => {
     render(<UserProfile userId="123" />);
-    
+
     expect(screen.getByRole("status")).toHaveTextContent("Loading...");
   });
 
   it("should display user profile after loading", async () => {
     render(<UserProfile userId="123" />);
-    
+
     await waitFor(() => {
       expect(screen.getByRole("heading", { name: /john doe/i })).toBeInTheDocument();
     });
-    
+
     expect(screen.getByText("john@example.com")).toBeInTheDocument();
     expect(screen.getByRole("img", { name: /john doe's avatar/i })).toBeInTheDocument();
   });
@@ -509,9 +509,9 @@ describe("UserProfile", () => {
         return res(ctx.status(500));
       })
     );
-    
+
     render(<UserProfile userId="123" />);
-    
+
     await waitFor(() => {
       expect(screen.getByRole("alert")).toHaveTextContent("Failed to fetch user");
     });
@@ -520,25 +520,25 @@ describe("UserProfile", () => {
   it("should call onEdit when edit button clicked", async () => {
     const onEdit = jest.fn();
     const user = userEvent.setup();
-    
+
     render(<UserProfile userId="123" onEdit={onEdit} />);
-    
+
     await waitFor(() => {
       expect(screen.getByRole("heading", { name: /john doe/i })).toBeInTheDocument();
     });
-    
+
     await user.click(screen.getByRole("button", { name: /edit profile/i }));
-    
+
     expect(onEdit).toHaveBeenCalledWith("123");
   });
 
   it("should not render edit button when onEdit not provided", async () => {
     render(<UserProfile userId="123" />);
-    
+
     await waitFor(() => {
       expect(screen.getByRole("heading", { name: /john doe/i })).toBeInTheDocument();
     });
-    
+
     expect(screen.queryByRole("button", { name: /edit profile/i })).not.toBeInTheDocument();
   });
 });
@@ -625,7 +625,7 @@ describe("ThemedCard", () => {
     renderWithTheme(
       <ThemedCard title="Test Card">Content</ThemedCard>
     );
-    
+
     const card = screen.getByRole("article");
     expect(card).toHaveClass("card", "light");
     expect(screen.getByRole("heading", { name: /test card/i })).toBeInTheDocument();
@@ -636,10 +636,10 @@ describe("ThemedCard", () => {
     renderWithTheme(
       <ThemedCard title="Test Card">Content</ThemedCard>
     );
-    
+
     const toggleButton = screen.getByRole("button", { name: /switch to dark mode/i });
     await user.click(toggleButton);
-    
+
     const card = screen.getByRole("article");
     expect(card).toHaveClass("card", "dark");
     expect(screen.getByRole("button", { name: /switch to light mode/i })).toBeInTheDocument();
@@ -888,38 +888,38 @@ describe("useCounter", () => {
 
   it("should increment count", () => {
     const { result } = renderHook(() => useCounter());
-    
+
     act(() => {
       result.current.increment();
     });
-    
+
     expect(result.current.count).toBe(1);
   });
 
   it("should decrement count", () => {
     const { result } = renderHook(() => useCounter({ initialValue: 5 }));
-    
+
     act(() => {
       result.current.decrement();
     });
-    
+
     expect(result.current.count).toBe(4);
   });
 
   it("should reset count", () => {
     const { result } = renderHook(() => useCounter({ initialValue: 10 }));
-    
+
     act(() => {
       result.current.increment();
       result.current.increment();
     });
-    
+
     expect(result.current.count).toBe(12);
-    
+
     act(() => {
       result.current.reset();
     });
-    
+
     expect(result.current.count).toBe(10);
   });
 
@@ -927,10 +927,10 @@ describe("useCounter", () => {
     const { result } = renderHook(() =>
       useCounter({ initialValue: 5, min: 0, max: 10 })
     );
-    
+
     expect(result.current.isAtMin).toBe(false);
     expect(result.current.isAtMax).toBe(false);
-    
+
     // Decrement to min
     act(() => {
       result.current.decrement();
@@ -939,17 +939,17 @@ describe("useCounter", () => {
       result.current.decrement();
       result.current.decrement();
     });
-    
+
     expect(result.current.count).toBe(0);
     expect(result.current.isAtMin).toBe(true);
-    
+
     // Try to go below min
     act(() => {
       result.current.decrement();
     });
-    
+
     expect(result.current.count).toBe(0);
-    
+
     // Increment to max
     act(() => {
       result.current.increment();
@@ -963,15 +963,15 @@ describe("useCounter", () => {
       result.current.increment();
       result.current.increment();
     });
-    
+
     expect(result.current.count).toBe(10);
     expect(result.current.isAtMax).toBe(true);
-    
+
     // Try to go above max
     act(() => {
       result.current.increment();
     });
-    
+
     expect(result.current.count).toBe(10);
   });
 });
@@ -1022,7 +1022,7 @@ export const handlers = [
   rest.get("/api/products", (req, res, ctx) => {
     return res(ctx.json(mockProducts));
   }),
-  
+
   rest.post("/api/products", async (req, res, ctx) => {
     const newProduct = await req.json();
     return res(

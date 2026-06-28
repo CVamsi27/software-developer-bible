@@ -74,7 +74,7 @@ CSS animations provide a way to create smooth, performant animations using only 
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: 
+  transition:
     box-shadow 0.3s ease,
     transform 0.3s ease,
     border-color 0.3s ease;
@@ -619,7 +619,7 @@ CSS Animation Performance:
 
 ### FAANG-style (5)
 21. **Design an animation system for a design system**
-- **Answer**: 
+- **Answer**:
   - Animation tokens (duration, easing)
   - Transition utilities
   - Keyframe library
@@ -627,27 +627,27 @@ CSS Animation Performance:
   - Accessibility compliance
 
 22. **How would you optimize animations for low-end devices?**
-- **Answer**: 
+- **Answer**:
   - Simplify animations
   - Reduce DOM changes
   - Use will-change sparingly
   - Provide fallbacks
 
 23. **Explain animation performance monitoring**
-- **Answer**: 
+- **Answer**:
   - Frame rate measurement
   - Layout thrashing detection
   - GPU usage monitoring
   - User experience metrics
 
 24. **How do you handle animations in micro-frontends?**
-- **Answer**: 
+- **Answer**:
   - Consistent animation tokens
   - Performance budgets
   - Shared animation library
 
 25. **Design a page transition system**
-- **Answer**: 
+- **Answer**:
   - Route-based transitions
   - Loading states
   - Error states

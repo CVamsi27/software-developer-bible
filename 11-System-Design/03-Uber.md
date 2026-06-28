@@ -282,8 +282,8 @@ class GeospatialService:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
-    async def find_nearby_drivers(self, lat: float, lng: float, 
+
+    async def find_nearby_drivers(self, lat: float, lng: float,
                                   radius_km: int = 5) -> list:
         # Redis GEORADIUS for fast lookup
         nearby = self.redis.georadius(
@@ -295,7 +295,7 @@ class GeospatialService:
             withcoord=True,
             sort='ASC'  # nearest first
         )
-        
+
         # Filter for available drivers
         available_drivers = []
         for driver_id, distance, location in nearby:
@@ -305,24 +305,24 @@ class GeospatialService:
                     'distance': distance,
                     'location': location
                 })
-        
+
         return available_drivers
-    
-    async def update_driver_location(self, driver_id: str, 
+
+    async def update_driver_location(self, driver_id: str,
                                      lat: float, lng: float):
         # Update in Redis for real-time queries
         self.redis.geoadd(
             'driver_locations',
             (lng, lat, driver_id)
         )
-        
+
         # Store in database for historical analysis
         await self.db.execute(
             "INSERT INTO driver_locations (driver_id, location, recorded_at) "
             "VALUES (%s, ST_SetSRID(ST_MakePoint(%s, %s), 4326), NOW())",
             (driver_id, lng, lat)
         )
-    
+
     async def calculate_eta(self, pickup_lat: float, pickup_lng: float,
                            destination_lat: float, destination_lng: float) -> dict:
         # Use routing service (Google Maps API or OSRM)
@@ -330,7 +330,7 @@ class GeospatialService:
             (pickup_lng, pickup_lat),
             (destination_lng, destination_lat)
         )
-        
+
         return {
             'eta_seconds': route['duration'],
             'distance_km': route['distance'] / 1000
@@ -349,26 +349,26 @@ class RideMatchingService:
         self.notifications = notification_service
         self.max_search_radius = 10  # km
         self.search_expansion_rate = 2  # km per attempt
-    
+
     async def match_ride(self, ride_request: dict) -> Optional[dict]:
         pickup_lat = ride_request['pickup_location']['lat']
         pickup_lng = ride_request['pickup_location']['lng']
-        
+
         # Progressive search - start small, expand
         radius = 2  # Start with 2km
-        
+
         while radius <= self.max_search_radius:
             # Find nearby available drivers
             drivers = await self.geo.find_nearby_drivers(
                 pickup_lat, pickup_lng, radius
             )
-            
+
             if drivers:
                 # Score drivers based on multiple factors
                 scored_drivers = await self.score_drivers(
                     drivers, ride_request
                 )
-                
+
                 # Try to match with best driver
                 for driver in scored_drivers:
                     success = await self.offer_ride_to_driver(
@@ -376,15 +376,15 @@ class RideMatchingService:
                     )
                     if success:
                         return driver
-            
+
             # Expand search radius
             radius += self.search_expansion_rate
             await asyncio.sleep(0.5)  # Brief wait before expanding
-        
+
         # No driver found
         return None
-    
-    async def score_drivers(self, drivers: list, 
+
+    async def score_drivers(self, drivers: list,
                            ride_request: dict) -> list:
         scored = []
         for driver in drivers:
@@ -393,24 +393,24 @@ class RideMatchingService:
             # 2. Driver rating (30%)
             # 3. Acceptance rate (20%)
             # 4. Vehicle type match (10%)
-            
+
             distance_score = 1 - (driver['distance'] / self.max_search_radius)
             rating_score = driver['rating'] / 5.0
             acceptance_score = driver['acceptance_rate']
             vehicle_match = 1.0 if driver['vehicle_type'] == ride_request['ride_type'] else 0.5
-            
+
             total_score = (
                 distance_score * 0.4 +
                 rating_score * 0.3 +
                 acceptance_score * 0.2 +
                 vehicle_match * 0.1
             )
-            
+
             scored.append({**driver, 'score': total_score})
-        
+
         return sorted(scored, key=lambda x: x['score'], reverse=True)
-    
-    async def offer_ride_to_driver(self, ride_request: dict, 
+
+    async def offer_ride_to_driver(self, ride_request: dict,
                                    driver: dict) -> bool:
         # Send offer to driver
         offer = {
@@ -420,11 +420,11 @@ class RideMatchingService:
             'estimated_fare': ride_request['fare_estimate'],
             'expires_in': 15  # seconds to accept
         }
-        
+
         accepted = await self.notifications.send_ride_offer(
             driver['driver_id'], offer
         )
-        
+
         if accepted:
             # Update ride status
             await self.db.update_ride(
@@ -432,12 +432,12 @@ class RideMatchingService:
                 driver_id=driver['driver_id'],
                 status='accepted'
             )
-            
+
             # Mark driver as unavailable
             await self.geo.set_driver_unavailable(driver['driver_id'])
-            
+
             return True
-        
+
         return False
 ```
 
@@ -450,18 +450,18 @@ class SurgePricingService:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
+
     async def calculate_surge(self, lat: float, lng: float) -> float:
         # Get demand and supply in the area
         demand = await self.get_demand_score(lat, lng)
         supply = await self.get_supply_score(lat, lng)
-        
+
         # Calculate surge multiplier
         if supply == 0:
             return 3.0  # Max surge when no drivers
-        
+
         ratio = demand / supply
-        
+
         # Surge pricing algorithm
         if ratio < 0.8:
             return 1.0  # No surge
@@ -473,14 +473,14 @@ class SurgePricingService:
             return 2.0
         else:
             return min(3.0, 1.0 + (ratio - 1.0) * 0.5)
-    
+
     async def get_demand_score(self, lat: float, lng: float) -> int:
         # Count ride requests in last 15 minutes
         key = f"demand:{lat:.3f}:{lng:.3f}"
         count = self.redis.get(key)
         if count:
             return int(count)
-        
+
         # Query database
         result = await self.db.execute(
             "SELECT COUNT(*) FROM rides "
@@ -489,9 +489,9 @@ class SurgePricingService:
             "AND created_at > NOW() - INTERVAL '15 minutes'",
             (lng, lat)
         )
-        
+
         return result[0][0]
-    
+
     async def get_supply_score(self, lat: float, lng: float) -> int:
         # Count available drivers in area
         nearby_drivers = await self.geo.find_nearby_drivers(lat, lng, 5)
@@ -504,43 +504,43 @@ class ETACalculationService:
     def __init__(self, traffic_service, routing_service):
         self.traffic = traffic_service
         self.routing = routing_service
-    
+
     async def calculate_eta(self, origin: tuple, destination: tuple,
                            departure_time: datetime = None) -> dict:
         if departure_time is None:
             departure_time = datetime.now()
-        
+
         # Get route options
         routes = await self.routing.get_routes(
             origin, destination, alternatives=3
         )
-        
+
         results = []
         for route in routes:
             # Adjust for current traffic conditions
             traffic_factor = await self.traffic.get_traffic_factor(
                 route, departure_time
             )
-            
+
             adjusted_duration = route['duration'] * traffic_factor
-            
+
             results.append({
                 'route_id': route['id'],
                 'distance_km': route['distance'] / 1000,
                 'duration_seconds': int(adjusted_duration),
                 'traffic_level': self.get_traffic_level(traffic_factor)
             })
-        
+
         # Return best route (shortest time)
         best = min(results, key=lambda x: x['duration_seconds'])
-        
+
         return {
             'eta_seconds': best['duration_seconds'],
             'distance_km': best['distance_km'],
             'traffic_level': best['traffic_level'],
             'all_routes': results
         }
-    
+
     def get_traffic_level(self, factor: float) -> str:
         if factor < 1.2:
             return 'light'
@@ -559,7 +559,7 @@ class ETACalculationService:
 class LocationCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
+
     async def update_driver_location(self, driver_id: str,
                                      lat: float, lng: float,
                                      heading: int, speed: int):
@@ -568,7 +568,7 @@ class LocationCache:
             'driver_locations',
             (lng, lat, driver_id)
         )
-        
+
         # Update driver details
         self.redis.hset(f"driver:{driver_id}", mapping={
             'lat': lat,
@@ -578,7 +578,7 @@ class LocationCache:
             'updated_at': datetime.now().isoformat()
         })
         self.redis.expire(f"driver:{driver_id}", 30)  # 30 sec TTL
-    
+
     async def get_nearby_drivers(self, lat: float, lng: float,
                                  radius_km: float = 5) -> list:
         return self.redis.georadius(
@@ -589,7 +589,7 @@ class LocationCache:
             withdist=True,
             withcoord=True
         )
-    
+
     async def remove_driver(self, driver_id: str):
         self.redis.zrem('driver_locations', driver_id)
         self.redis.delete(f"driver:{driver_id}")
@@ -600,19 +600,19 @@ class LocationCache:
 class SurgeCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
+
     async def update_surge(self, region_id: str, multiplier: float):
         self.redis.hset(f"surge:{region_id}", mapping={
             'multiplier': multiplier,
             'updated_at': datetime.now().isoformat()
         })
         self.redis.expire(f"surge:{region_id}", 300)  # 5 min TTL
-    
+
     async def get_surge(self, lat: float, lng: float) -> float:
         region_id = self.get_region_id(lat, lng)
         result = self.redis.hget(f"surge:{region_id}", 'multiplier')
         return float(result) if result else 1.0
-    
+
     def get_region_id(self, lat: float, lng: float) -> str:
         # Round to 0.01 degree grid (~1km)
         return f"{lat:.2f}:{lng:.2f}"
@@ -653,18 +653,18 @@ class RideEventProcessor:
         self.consumer = kafka_consumer
         self.db = db
         self.cache = cache
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'ride.requested':
                 await self.handle_ride_requested(event['data'])
             elif event['event_type'] == 'ride.completed':
                 await self.handle_ride_completed(event['data'])
             elif event['event_type'] == 'driver.location':
                 await self.handle_driver_location(event['data'])
-    
+
     async def handle_ride_requested(self, data: dict):
         # Update demand metrics
         region_id = self.get_region_id(
@@ -672,21 +672,21 @@ class RideEventProcessor:
             data['pickup']['lng']
         )
         await self.cache.increment_demand(region_id)
-        
+
         # Trigger surge pricing recalculation
         await self.calculate_surge_for_region(region_id)
-    
+
     async def handle_ride_completed(self, data: dict):
         # Update driver availability
         await self.cache.set_driver_available(data['driver_id'])
-        
+
         # Update supply metrics
         region_id = self.get_region_id(
             data['dropoff']['lat'],
             data['dropoff']['lng']
         )
         await self.cache.increment_supply(region_id)
-        
+
         # Process payment
         await self.process_payment(data)
 ```
@@ -718,12 +718,12 @@ class LocationServiceScaler:
     def __init__(self):
         self.grid_size = 0.01  # ~1km grid cells
         self.shards_per_region = 16
-    
+
     def get_shard(self, lat: float, lng: float) -> int:
         # Consistent hashing based on grid cell
         grid_id = f"{lat:.2f}:{lng:.2f}"
         return hash(grid_id) % self.shards_per_region
-    
+
     def get_region(self, lat: float, lng: float) -> str:
         # Map to region based on geography
         if -180 <= lng <= -30:
@@ -761,30 +761,30 @@ class DriverOfflineDetector:
         self.redis = redis_client
         self.notifications = notification_service
         self.timeout = 30  # seconds
-    
+
     async def start_monitoring(self):
         while True:
             # Check for drivers that haven't updated location
             drivers = await self.redis.smembers('active_drivers')
-            
+
             for driver_id in drivers:
                 last_update = await self.redis.hget(
                     f"driver:{driver_id}", 'updated_at'
                 )
-                
+
                 if last_update:
-                    elapsed = (datetime.now() - 
+                    elapsed = (datetime.now() -
                               datetime.fromisoformat(last_update)).seconds
-                    
+
                     if elapsed > self.timeout:
                         await self.handle_driver_offline(driver_id)
-            
+
             await asyncio.sleep(10)  # Check every 10 seconds
-    
+
     async def handle_driver_offline(self, driver_id: str):
         # Check if driver has active ride
         active_ride = await self.db.get_active_ride(driver_id)
-        
+
         if active_ride:
             # Notify rider and find replacement driver
             await self.notifications.notify_rider(
@@ -792,7 +792,7 @@ class DriverOfflineDetector:
                 'Driver went offline, finding replacement...'
             )
             await self.find_replacement_driver(active_ride)
-        
+
         # Mark driver as offline
         await self.redis.srem('active_drivers', driver_id)
         await self.geo.remove_driver(driver_id)
@@ -814,21 +814,21 @@ class CancellationHandler:
         self.db = db
         self.notifications = notification_service
         self.refunds = refund_service
-    
-    async def handle_cancellation(self, ride_id: str, 
+
+    async def handle_cancellation(self, ride_id: str,
                                   cancelled_by: str, reason: str):
         ride = await self.db.get_ride(ride_id)
-        
+
         # Update ride status
         await self.db.update_ride(ride_id, status='cancelled')
-        
+
         # Handle based on when cancellation occurred
         if ride['status'] == 'requested':
             # No driver assigned, just notify
             await self.notifications.notify_rider(
                 ride['rider_id'], 'Ride cancelled'
             )
-        
+
         elif ride['status'] == 'accepted':
             # Driver assigned, handle cancellation fee
             if cancelled_by == ride['rider_id']:
@@ -837,15 +837,15 @@ class CancellationHandler:
                 await self.refunds.charge_cancellation_fee(
                     ride['rider_id'], cancellation_fee
                 )
-            
+
             # Notify driver
             await self.notifications.notify_driver(
                 ride['driver_id'], 'Ride cancelled by rider'
             )
-            
+
             # Make driver available again
             await self.geo.set_driver_available(ride['driver_id'])
-        
+
         # Log cancellation for analytics
         await self.db.log_cancellation(ride_id, cancelled_by, reason)
 ```
@@ -882,15 +882,15 @@ alerts:
   - name: High Matching Latency
     condition: p95_matching_latency > 30s
     severity: critical
-    
+
   - name: Driver Supply Low
     condition: available_drivers < 10% of demand
     severity: warning
-    
+
   - name: Surge Pricing Anomaly
     condition: surge_multiplier > 3.0 for > 30 minutes
     severity: warning
-    
+
   - name: Payment Processing Failures
     condition: payment_failure_rate > 5%
     severity: critical

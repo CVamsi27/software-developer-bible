@@ -88,7 +88,7 @@ async function runLighthouse(url) {
     onlyCategories: ['accessibility'],
     output: 'json'
   });
-  
+
   const score = result.report.categories.accessibility.score * 100;
   console.log(`Accessibility score: ${score}`);
 }
@@ -133,16 +133,16 @@ async function testKeyboardNavigation() {
   const focusable = document.querySelectorAll(
     'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
   );
-  
+
   // Test tab order
   for (const element of focusable) {
     element.focus();
-    
+
     // Check if element is focused
     if (document.activeElement !== element) {
       console.error('Focus not moving correctly:', element);
     }
-    
+
     // Check for visible focus indicator
     const styles = window.getComputedStyle(element);
     if (styles.outline === 'none' && styles.boxShadow === 'none') {
@@ -154,13 +154,13 @@ async function testKeyboardNavigation() {
 // Test keyboard interactions
 async function testKeyboardInteractions() {
   const buttons = document.querySelectorAll('button');
-  
+
   for (const button of buttons) {
     // Test Enter key
     button.focus();
     const enterEvent = new KeyboardEvent('keydown', { key: 'Enter' });
     button.dispatchEvent(enterEvent);
-    
+
     // Test Space key
     const spaceEvent = new KeyboardEvent('keydown', { key: ' ' });
     button.dispatchEvent(spaceEvent);
@@ -191,11 +191,11 @@ describe('Accessibility', () => {
         <button type="submit">Submit</button>
       </form>
     );
-    
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-  
+
   test('navigation has no accessibility violations', async () => {
     const { container } = render(
       <nav aria-label="Main">
@@ -203,7 +203,7 @@ describe('Accessibility', () => {
         <a href="/about">About</a>
       </nav>
     );
-    
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
@@ -219,20 +219,20 @@ describe('Accessibility', () => {
     cy.injectAxe();
     cy.checkA11y();
   });
-  
+
   it('has no axe violations on form page', () => {
     cy.visit('/form');
     cy.injectAxe();
     cy.checkA11y('#form-container');
   });
-  
+
   it('tests keyboard navigation', () => {
     cy.visit('/');
-    
+
     // Tab through elements
     cy.get('body').tab();
     cy.focused().should('have.attr', 'href', '#main-content');
-    
+
     cy.focused().tab();
     cy.focused().should('have.attr', 'href', '/');
   });

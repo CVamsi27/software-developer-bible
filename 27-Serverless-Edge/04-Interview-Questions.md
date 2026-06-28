@@ -123,7 +123,7 @@ function architecturePattern(problem: string): string {
 ### FAANG-style (5)
 
 **Q21: Design a serverless architecture for a real-time chat application**
-- **Answer**: 
+- **Answer**:
   - API Gateway + Lambda for API
   - WebSocket API for real-time
   - DynamoDB for storage
@@ -132,7 +132,7 @@ function architecturePattern(problem: string): string {
   - Consider: Connection management, message ordering, offline support
 
 **Q22: How would you implement CI/CD for serverless?**
-- **Answer**: 
+- **Answer**:
   - Use GitHub Actions/GitLab CI
   - SAM/Serverless Framework for deployment
   - Automated testing with SAM Local
@@ -140,7 +140,7 @@ function architecturePattern(problem: string): string {
   - Use CloudFormation for infrastructure as code
 
 **Q23: Explain serverless at scale**
-- **Answer**: 
+- **Answer**:
   - Handle cold starts with provisioned concurrency
   - Implement circuit breakers
   - Use multiple regions for availability
@@ -148,7 +148,7 @@ function architecturePattern(problem: string): string {
   - Monitor with CloudWatch and X-Ray
 
 **Q24: How do you debug serverless in production?**
-- **Answer**: 
+- **Answer**:
   - Use X-Ray for distributed tracing
   - CloudWatch Logs Insights for log analysis
   - Implement structured logging
@@ -156,7 +156,7 @@ function architecturePattern(problem: string): string {
   - Enable Lambda Insights
 
 **Q25: Design a serverless data pipeline for analytics**
-- **Answer**: 
+- **Answer**:
   - Kinesis for streaming ingestion
   - Lambda for ETL processing
   - S3 for data lake storage
@@ -179,7 +179,7 @@ function architecturePattern(problem: string): string {
 - **Answer**: Pay per request and duration, consider provisioned concurrency costs, monitor for cost optimization opportunities, compare with container alternatives.
 
 **Q30: How do you migrate from server to serverless?**
-- **Answer**: 
+- **Answer**:
   - Start with new features
   - Refactor stateless components first
   - Use strangler fig pattern

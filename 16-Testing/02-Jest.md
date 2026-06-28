@@ -107,20 +107,20 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
 module.exports = {
   // Test environment
   testEnvironment: "node", // or 'jsdom' for browser-like environment
-  
+
   // File patterns
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
-  
+
   // Coverage settings
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts",
     "!src/index.tsx",
   ],
-  
+
   // Coverage thresholds
   coverageThreshold: {
     global: {
@@ -130,20 +130,20 @@ module.exports = {
       statements: 80,
     },
   },
-  
+
   // Setup files
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  
+
   // Module name mapping
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  
+
   // Transform configuration
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  
+
   // Test timeout
   testTimeout: 10000,
 };
@@ -1041,10 +1041,10 @@ it("should fetch data", () => {
 module.exports = {
   // Jest runs tests in parallel by default
   maxWorkers: "50%", // Use 50% of available CPU cores
-  
+
   // Or set specific number
   // maxWorkers: 4,
-  
+
   // Run tests sequentially if they have shared state
   // runInBand: true,
 };
@@ -1060,7 +1060,7 @@ describe("Database", () => {
     await db.connect();
     // ...
   });
-  
+
   it("test 2", async () => {
     const db = new Database();
     await db.connect();
@@ -1071,16 +1071,16 @@ describe("Database", () => {
 // ✅ GOOD: Share DB connection
 describe("Database", () => {
   let db: Database;
-  
+
   beforeAll(async () => {
     db = new Database();
     await db.connect();
   });
-  
+
   afterAll(async () => {
     await db.disconnect();
   });
-  
+
   it("test 1", async () => {
     // Use shared db connection
   });

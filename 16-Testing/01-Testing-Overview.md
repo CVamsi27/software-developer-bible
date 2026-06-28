@@ -562,11 +562,11 @@ it("should call setUserState with new name", () => {
 it("should display updated name after save", async () => {
   const user = userEvent.setup();
   render(<UserForm />);
-  
+
   await user.clear(screen.getByLabelText(/name/i));
   await user.type(screen.getByLabelText(/name/i), "New Name");
   await user.click(screen.getByRole("button", { name: /save/i }));
-  
+
   expect(screen.getByText("New Name")).toBeInTheDocument();
 });
 ```
@@ -604,11 +604,11 @@ it("should expire session after 30 minutes", async () => {
 it("should expire session after inactivity", async () => {
   const sessionTimeout = 30 * 60 * 1000;
   jest.useFakeTimers();
-  
+
   login();
   jest.advanceTimersByTime(sessionTimeout - 1);
   expect(isLoggedIn()).toBe(true);
-  
+
   jest.advanceTimersByTime(1);
   expect(isLoggedIn()).toBe(false);
 });

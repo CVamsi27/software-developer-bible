@@ -38,14 +38,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   // Entry point(s)
   entry: './src/index.js',
-  
+
   // Output configuration
   output: {
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  
+
   // Module rules (loaders)
   module: {
     rules: [
@@ -69,17 +69,17 @@ module.exports = {
       }
     ]
   },
-  
+
   // Plugins
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
   ],
-  
+
   // Development/Production modes
   mode: 'development',  // or 'production'
-  
+
   // Dev server
   devServer: {
     static: './dist',
@@ -143,12 +143,12 @@ plugins: [
   new MiniCssExtractPlugin({
     filename: '[name].[contenthash].css'
   }),
-  
+
   // Define environment variables
   new DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
-  
+
   // Bundle analysis
   new BundleAnalyzerPlugin()
 ]

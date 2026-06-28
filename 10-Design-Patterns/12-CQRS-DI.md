@@ -114,15 +114,15 @@ interface DomainEvent {
 // Event Store
 class EventStore {
   private events: DomainEvent[] = [];
-  
+
   append(event: DomainEvent): void {
     this.events.push(event);
   }
-  
+
   getEvents(aggregateId: string): DomainEvent[] {
     return this.events.filter(e => e.payload.aggregateId === aggregateId);
   }
-  
+
   getAllEvents(): DomainEvent[] {
     return [...this.events];
   }
@@ -137,16 +137,16 @@ class User {
     public isActive: boolean = true,
     public version: number = 0
   ) {}
-  
+
   static create(id: string, name: string, email: string): User {
     return new User(id, name, email);
   }
-  
+
   deactivate(): void {
     this.isActive = false;
     this.version++;
   }
-  
+
   updateProfile(name: string, email: string): void {
     this.name = name;
     this.email = email;
@@ -157,11 +157,11 @@ class User {
 // Write Repository
 class UserWriteRepository {
   private users: Map<string, User> = new Map();
-  
+
   save(user: User): void {
     this.users.set(user.id, user);
   }
-  
+
   findById(id: string): User | undefined {
     return this.users.get(id);
   }
@@ -179,23 +179,23 @@ interface UserReadModel {
 // Read Repository
 class UserReadRepository {
   private users: Map<string, UserReadModel> = new Map();
-  
+
   findById(id: string): UserReadModel | undefined {
     return this.users.get(id);
   }
-  
+
   findAll(): UserReadModel[] {
     return Array.from(this.users.values());
   }
-  
+
   findByEmail(email: string): UserReadModel | undefined {
     return Array.from(this.users.values()).find(u => u.email === email);
   }
-  
+
   update(user: UserReadModel): void {
     this.users.set(user.id, user);
   }
-  
+
   delete(id: string): void {
     this.users.delete(id);
   }
@@ -208,7 +208,7 @@ class CreateUserCommand implements Command {
     public name: string,
     public email: string
   ) {}
-  
+
   execute(): Promise<void> {
     return Promise.resolve();
   }
@@ -220,12 +220,12 @@ class CreateUserCommandHandler implements CommandHandler<CreateUserCommand> {
     private readRepository: UserReadRepository,
     private eventStore: EventStore
   ) {}
-  
+
   async handle(command: CreateUserCommand): Promise<void> {
     // Create user in write model
     const user = User.create(command.id, command.name, command.email);
     this.writeRepository.save(user);
-    
+
     // Update read model
     this.readRepository.update({
       id: user.id,
@@ -234,7 +234,7 @@ class CreateUserCommandHandler implements CommandHandler<CreateUserCommand> {
       isActive: user.isActive,
       lastUpdated: new Date()
     });
-    
+
     // Store event
     this.eventStore.append({
       type: 'UserCreated',
@@ -245,14 +245,14 @@ class CreateUserCommandHandler implements CommandHandler<CreateUserCommand> {
         email: user.email
       }
     });
-    
+
     console.log(`User created: ${user.id}`);
   }
 }
 
 class DeactivateUserCommand implements Command {
   constructor(public userId: string) {}
-  
+
   execute(): Promise<void> {
     return Promise.resolve();
   }
@@ -264,17 +264,17 @@ class DeactivateUserCommandHandler implements CommandHandler<DeactivateUserComma
     private readRepository: UserReadRepository,
     private eventStore: EventStore
   ) {}
-  
+
   async handle(command: DeactivateUserCommand): Promise<void> {
     const user = this.writeRepository.findById(command.userId);
-    
+
     if (!user) {
       throw new Error(`User ${command.userId} not found`);
     }
-    
+
     user.deactivate();
     this.writeRepository.save(user);
-    
+
     // Update read model
     const readModel = this.readRepository.findById(command.userId);
     if (readModel) {
@@ -284,7 +284,7 @@ class DeactivateUserCommandHandler implements CommandHandler<DeactivateUserComma
         lastUpdated: new Date()
       });
     }
-    
+
     // Store event
     this.eventStore.append({
       type: 'UserDeactivated',
@@ -293,7 +293,7 @@ class DeactivateUserCommandHandler implements CommandHandler<DeactivateUserComma
         aggregateId: user.id
       }
     });
-    
+
     console.log(`User deactivated: ${user.id}`);
   }
 }
@@ -301,7 +301,7 @@ class DeactivateUserCommandHandler implements CommandHandler<DeactivateUserComma
 // Query Handlers
 class GetUserQuery implements Query<UserReadModel | undefined> {
   constructor(public userId: string) {}
-  
+
   execute(): Promise<UserReadModel | undefined> {
     return Promise.resolve(undefined);
   }
@@ -309,7 +309,7 @@ class GetUserQuery implements Query<UserReadModel | undefined> {
 
 class GetUserQueryHandler implements QueryHandler<GetUserQuery, UserReadModel | undefined> {
   constructor(private readRepository: UserReadRepository) {}
-  
+
   async handle(query: GetUserQuery): Promise<UserReadModel | undefined> {
     return this.readRepository.findById(query.userId);
   }
@@ -323,7 +323,7 @@ class GetAllUsersQuery implements Query<UserReadModel[]> {
 
 class GetAllUsersQueryHandler implements QueryHandler<GetAllUsersQuery, UserReadModel[]> {
   constructor(private readRepository: UserReadRepository) {}
-  
+
   async handle(query: GetAllUsersQuery): Promise<UserReadModel[]> {
     return this.readRepository.findAll();
   }
@@ -332,42 +332,42 @@ class GetAllUsersQueryHandler implements QueryHandler<GetAllUsersQuery, UserRead
 // CQRS Bus
 class CommandBus {
   private handlers: Map<string, CommandHandler<any>> = new Map();
-  
+
   registerHandler<T extends Command>(
     commandType: string,
     handler: CommandHandler<T>
   ): void {
     this.handlers.set(commandType, handler);
   }
-  
+
   async dispatch<T extends Command>(command: T): Promise<void> {
     const handler = this.handlers.get(command.constructor.name);
-    
+
     if (!handler) {
       throw new Error(`No handler for command: ${command.constructor.name}`);
     }
-    
+
     await handler.handle(command);
   }
 }
 
 class QueryBus {
   private handlers: Map<string, QueryHandler<any, any>> = new Map();
-  
+
   registerHandler<T extends Query<TResult>, TResult>(
     queryType: string,
     handler: QueryHandler<T, TResult>
   ): void {
     this.handlers.set(queryType, handler);
   }
-  
+
   async dispatch<T extends Query<TResult>, TResult>(query: T): Promise<TResult> {
     const handler = this.handlers.get(query.constructor.name);
-    
+
     if (!handler) {
       throw new Error(`No handler for query: ${query.constructor.name}`);
     }
-    
+
     return handler.handle(query);
   }
 }
@@ -378,45 +378,45 @@ async function main() {
   const eventStore = new EventStore();
   const writeRepository = new UserWriteRepository();
   const readRepository = new UserReadRepository();
-  
+
   const commandBus = new CommandBus();
   const queryBus = new QueryBus();
-  
+
   // Register handlers
   commandBus.registerHandler(
     'CreateUserCommand',
     new CreateUserCommandHandler(writeRepository, readRepository, eventStore)
   );
-  
+
   commandBus.registerHandler(
     'DeactivateUserCommand',
     new DeactivateUserCommandHandler(writeRepository, readRepository, eventStore)
   );
-  
+
   queryBus.registerHandler(
     'GetUserQuery',
     new GetUserQueryHandler(readRepository)
   );
-  
+
   queryBus.registerHandler(
     'GetAllUsersQuery',
     new GetAllUsersQueryHandler(readRepository)
   );
-  
+
   // Execute commands
   await commandBus.dispatch(new CreateUserCommand('1', 'John', 'john@example.com'));
   await commandBus.dispatch(new CreateUserCommand('2', 'Jane', 'jane@example.com'));
-  
+
   // Execute queries
   const user = await queryBus.dispatch(new GetUserQuery('1'));
   console.log('User:', user);
-  
+
   const allUsers = await queryBus.dispatch(new GetAllUsersQuery());
   console.log('All users:', allUsers);
-  
+
   // Deactivate user
   await commandBus.dispatch(new DeactivateUserCommand('1'));
-  
+
   const deactivatedUser = await queryBus.dispatch(new GetUserQuery('1'));
   console.log('Deactivated user:', deactivatedUser);
 }
@@ -434,35 +434,35 @@ type Token = string | symbol | Function;
 class DIContainer {
   private factories: Map<Token, Factory<any>> = new Map();
   private singletons: Map<Token, any> = new Map();
-  
+
   register<T>(token: Token, factory: Factory<T>, singleton: boolean = false): void {
     this.factories.set(token, factory);
-    
+
     if (singleton) {
       const instance = factory();
       this.singletons.set(token, instance);
     }
   }
-  
+
   resolve<T>(token: Token): T {
     // Check for singleton first
     if (this.singletons.has(token)) {
       return this.singletons.get(token) as T;
     }
-    
+
     const factory = this.factories.get(token);
-    
+
     if (!factory) {
       throw new Error(`No registration for token: ${String(token)}`);
     }
-    
+
     return factory() as T;
   }
-  
+
   has(token: Token): boolean {
     return this.factories.has(token) || this.singletons.has(token);
   }
-  
+
   clear(): void {
     this.factories.clear();
     this.singletons.clear();
@@ -496,11 +496,11 @@ class ConsoleLogger implements ILogger {
   log(message: string): void {
     console.log(`[LOG] ${message}`);
   }
-  
+
   error(message: string): void {
     console.error(`[ERROR] ${message}`);
   }
-  
+
   warn(message: string): void {
     console.warn(`[WARN] ${message}`);
   }
@@ -508,7 +508,7 @@ class ConsoleLogger implements ILogger {
 
 class EnvironmentConfig implements IConfig {
   private config: Record<string, string>;
-  
+
   constructor() {
     this.config = {
       DATABASE_URL: process.env.DATABASE_URL || 'localhost',
@@ -516,11 +516,11 @@ class EnvironmentConfig implements IConfig {
       NODE_ENV: process.env.NODE_ENV || 'development'
     };
   }
-  
+
   get(key: string): string {
     return this.config[key] || '';
   }
-  
+
   getAll(): Record<string, string> {
     return { ...this.config };
   }
@@ -528,12 +528,12 @@ class EnvironmentConfig implements IConfig {
 
 class PostgreSQLDatabase implements IDatabase {
   constructor(private config: IConfig) {}
-  
+
   async query<T>(sql: string): Promise<T[]> {
     console.log(`Executing query: ${sql}`);
     return [] as T[];
   }
-  
+
   async execute(sql: string): Promise<void> {
     console.log(`Executing: ${sql}`);
   }
@@ -544,13 +544,13 @@ class UserService implements IUserService {
     private database: IDatabase,
     private logger: ILogger
   ) {}
-  
+
   async getUser(id: string): Promise<any> {
     this.logger.log(`Getting user ${id}`);
     const results = await this.database.query('SELECT * FROM users WHERE id = $1');
     return results[0];
   }
-  
+
   async createUser(data: any): Promise<any> {
     this.logger.log('Creating user');
     await this.database.execute('INSERT INTO users ...');
@@ -561,31 +561,31 @@ class UserService implements IUserService {
 // Setup DI Container
 function setupDI(): DIContainer {
   const container = new DIContainer();
-  
+
   // Register services
   container.register<ILogger>('Logger', () => new ConsoleLogger(), true);
   container.register<IConfig>('Config', () => new EnvironmentConfig(), true);
-  
+
   container.register<IDatabase>('Database', () => {
     const config = container.resolve<IConfig>('Config');
     return new PostgreSQLDatabase(config);
   }, true);
-  
+
   container.register<IUserService>('UserService', () => {
     const database = container.resolve<IDatabase>('Database');
     const logger = container.resolve<ILogger>('Logger');
     return new UserService(database, logger);
   }, true);
-  
+
   return container;
 }
 
 // Client code
 async function main() {
   const container = setupDI();
-  
+
   const userService = container.resolve<IUserService>('UserService');
-  
+
   await userService.getUser('1');
   await userService.createUser({ name: 'John' });
 }
@@ -619,22 +619,22 @@ function Inject(token: symbol) {
 // DI Container with decorators
 class Container {
   private static bindings: Map<symbol, any> = new Map();
-  
+
   static bind<T>(token: symbol, implementation: new (...args: any[]) => T): void {
     this.bindings.set(token, implementation);
   }
-  
+
   static resolve<T>(token: symbol): T {
     const implementation = this.bindings.get(token);
-    
+
     if (!implementation) {
       throw new Error(`No binding for token: ${token.toString()}`);
     }
-    
+
     // Get constructor parameter types
     const paramTypes = Reflect.getMetadata('design:paramtypes', implementation) || [];
     const injectTokens = Reflect.getMetadata(INJECT_TOKEN, implementation) || [];
-    
+
     // Resolve dependencies
     const dependencies = paramTypes.map((type: any, index: number) => {
       const token = injectTokens[index];
@@ -643,7 +643,7 @@ class Container {
       }
       return this.resolve(type);
     });
-    
+
     return new implementation(...dependencies);
   }
 }
@@ -671,7 +671,7 @@ class Database {
     @Inject(CONFIG_TOKEN) private config: Config,
     @Inject(LOGGER_TOKEN) private logger: Logger
   ) {}
-  
+
   query<T>(sql: string): Promise<T[]> {
     this.logger.log(`Executing: ${sql}`);
     return Promise.resolve([] as T[]);
@@ -683,7 +683,7 @@ class UserService {
     @Inject(DATABASE_TOKEN) private database: Database,
     @Inject(LOGGER_TOKEN) private logger: Logger
   ) {}
-  
+
   async getUser(id: string): Promise<any> {
     this.logger.log(`Getting user ${id}`);
     return this.database.query('SELECT * FROM users WHERE id = $1');
@@ -723,11 +723,11 @@ const AuthContext = createContext<IAuthContext | undefined>(undefined);
 // Providers
 function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
-  
+
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
-  
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
@@ -737,16 +737,16 @@ function ThemeProvider({ children }: { children: ReactNode }) {
 
 function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = React.useState<any | null>(null);
-  
+
   const login = async (credentials: any) => {
     // Simulate API call
     setUser({ id: '1', name: 'John' });
   };
-  
+
   const logout = () => {
     setUser(null);
   };
-  
+
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       {children}
@@ -757,21 +757,21 @@ function AuthProvider({ children }: { children: ReactNode }) {
 // Custom hooks for DI
 function useTheme(): IThemeContext {
   const context = useContext(ThemeContext);
-  
+
   if (!context) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
-  
+
   return context;
 }
 
 function useAuth(): IAuthContext {
   const context = useContext(AuthContext);
-  
+
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
-  
+
   return context;
 }
 
@@ -779,7 +779,7 @@ function useAuth(): IAuthContext {
 function UserProfile() {
   const { theme, toggleTheme } = useTheme();
   const { user, logout } = useAuth();
-  
+
   return (
     <div className={`profile ${theme}`}>
       <h1>{user?.name}</h1>
@@ -847,22 +847,22 @@ class OrderAggregate {
   private items: Array<{ productId: string; quantity: number; price: number }> = [];
   private status: string = 'pending';
   private total: number = 0;
-  
+
   constructor(
     public id: string,
     public userId: string,
     public shippingAddress: any
   ) {}
-  
+
   addItem(productId: string, quantity: number, price: number): void {
     this.items.push({ productId, quantity, price });
     this.total += quantity * price;
   }
-  
+
   updateStatus(status: string): void {
     this.status = status;
   }
-  
+
   getOrder(): any {
     return {
       id: this.id,
@@ -877,11 +877,11 @@ class OrderAggregate {
 
 class OrderWriteRepository {
   private orders: Map<string, OrderAggregate> = new Map();
-  
+
   save(order: OrderAggregate): void {
     this.orders.set(order.id, order);
   }
-  
+
   findById(id: string): OrderAggregate | undefined {
     return this.orders.get(id);
   }
@@ -889,34 +889,34 @@ class OrderWriteRepository {
 
 class OrderReadRepository {
   private orders: Map<string, any> = new Map();
-  
+
   save(order: any): void {
     this.orders.set(order.id, order);
   }
-  
+
   findById(id: string): any {
     return this.orders.get(id);
   }
-  
+
   findByUserId(userId: string, page: number, limit: number): any[] {
     const userOrders = Array.from(this.orders.values())
       .filter(o => o.userId === userId);
-    
+
     return userOrders.slice((page - 1) * limit, page * limit);
   }
-  
+
   getStatistics(startDate: Date, endDate: Date): any {
     const orders = Array.from(this.orders.values())
       .filter(o => {
         const orderDate = new Date(o.createdAt);
         return orderDate >= startDate && orderDate <= endDate;
       });
-    
+
     return {
       totalOrders: orders.length,
       totalRevenue: orders.reduce((sum, o) => sum + o.total, 0),
-      averageOrderValue: orders.length > 0 
-        ? orders.reduce((sum, o) => sum + o.total, 0) / orders.length 
+      averageOrderValue: orders.length > 0
+        ? orders.reduce((sum, o) => sum + o.total, 0) / orders.length
         : 0
     };
   }
@@ -928,19 +928,19 @@ class PlaceOrderCommandHandler {
     private writeRepo: OrderWriteRepository,
     private readRepo: OrderReadRepository
   ) {}
-  
+
   async handle(command: PlaceOrderCommand): Promise<string> {
     const orderId = 'order_' + Date.now();
     const order = new OrderAggregate(orderId, command.userId, command.shippingAddress);
-    
+
     // Add items (would fetch prices from product service)
     for (const item of command.items) {
       order.addItem(item.productId, item.quantity, 10); // Simplified price
     }
-    
+
     this.writeRepo.save(order);
     this.readRepo.save(order.getOrder());
-    
+
     return orderId;
   }
 }
@@ -950,14 +950,14 @@ class UpdateOrderStatusCommandHandler {
     private writeRepo: OrderWriteRepository,
     private readRepo: OrderReadRepository
   ) {}
-  
+
   async handle(command: UpdateOrderStatusCommand): Promise<void> {
     const order = this.writeRepo.findById(command.orderId);
-    
+
     if (!order) {
       throw new Error(`Order ${command.orderId} not found`);
     }
-    
+
     order.updateStatus(command.status);
     this.writeRepo.save(order);
     this.readRepo.save(order.getOrder());
@@ -967,7 +967,7 @@ class UpdateOrderStatusCommandHandler {
 // Query Handlers
 class GetOrderQueryHandler {
   constructor(private readRepo: OrderReadRepository) {}
-  
+
   async handle(query: GetOrderQuery): Promise<any> {
     return this.readRepo.findById(query.orderId);
   }
@@ -975,7 +975,7 @@ class GetOrderQueryHandler {
 
 class GetUserOrdersQueryHandler {
   constructor(private readRepo: OrderReadRepository) {}
-  
+
   async handle(query: GetUserOrdersQuery): Promise<any[]> {
     return this.readRepo.findByUserId(query.userId, query.page, query.limit);
   }
@@ -983,7 +983,7 @@ class GetUserOrdersQueryHandler {
 
 class GetOrderStatisticsQueryHandler {
   constructor(private readRepo: OrderReadRepository) {}
-  
+
   async handle(query: GetOrderStatisticsQuery): Promise<any> {
     return this.readRepo.getStatistics(query.startDate, query.endDate);
   }
@@ -993,11 +993,11 @@ class GetOrderStatisticsQueryHandler {
 async function main() {
   const writeRepo = new OrderWriteRepository();
   const readRepo = new OrderReadRepository();
-  
+
   const placeOrderHandler = new PlaceOrderCommandHandler(writeRepo, readRepo);
   const updateStatusHandler = new UpdateOrderStatusCommandHandler(writeRepo, readRepo);
   const getOrderHandler = new GetOrderQueryHandler(readRepo);
-  
+
   // Place order
   const orderId = await placeOrderHandler.handle(
     new PlaceOrderCommand(
@@ -1006,18 +1006,18 @@ async function main() {
       { city: 'New York', street: '123 Main St' }
     )
   );
-  
+
   console.log('Order placed:', orderId);
-  
+
   // Get order
   const order = await getOrderHandler.handle(new GetOrderQuery(orderId));
   console.log('Order:', order);
-  
+
   // Update status
   await updateStatusHandler.handle(
     new UpdateOrderStatusCommand(orderId, 'shipped')
   );
-  
+
   // Get updated order
   const updatedOrder = await getOrderHandler.handle(new GetOrderQuery(orderId));
   console.log('Updated order:', updatedOrder);
@@ -1058,12 +1058,12 @@ class PostgresUserRepository implements UserRepository {
     console.log(`PostgreSQL: Finding user ${id}`);
     return { id, name: 'John' };
   }
-  
+
   async findByEmail(email: string): Promise<any> {
     console.log(`PostgreSQL: Finding user by email ${email}`);
     return { id: '1', email };
   }
-  
+
   async save(user: any): Promise<any> {
     console.log(`PostgreSQL: Saving user`);
     return user;
@@ -1082,11 +1082,11 @@ class RedisCacheService implements CacheService {
     console.log(`Redis: Getting ${key}`);
     return null;
   }
-  
+
   async set(key: string, value: any, ttl?: number): Promise<void> {
     console.log(`Redis: Setting ${key}`);
   }
-  
+
   async delete(key: string): Promise<void> {
     console.log(`Redis: Deleting ${key}`);
   }
@@ -1095,18 +1095,18 @@ class RedisCacheService implements CacheService {
 // DI Container
 class Container {
   private static providers = new Map<string, any>();
-  
+
   static provide(token: string, implementation: any): void {
     this.providers.set(token, implementation);
   }
-  
+
   static get<T>(token: string): T {
     const provider = this.providers.get(token);
-    
+
     if (!provider) {
       throw new Error(`No provider for ${token}`);
     }
-    
+
     return provider as T;
   }
 }
@@ -1118,29 +1118,29 @@ class UserService {
     private emailService: EmailService,
     private cacheService: CacheService
   ) {}
-  
+
   async getUser(id: string): Promise<any> {
     // Check cache first
     const cached = await this.cacheService.get(`user:${id}`);
     if (cached) {
       return cached;
     }
-    
+
     // Fetch from database
     const user = await this.userRepository.findById(id);
-    
+
     // Cache result
     await this.cacheService.set(`user:${id}`, user, 3600);
-    
+
     return user;
   }
-  
+
   async createUser(data: any): Promise<any> {
     const user = await this.userRepository.save(data);
-    
+
     // Send welcome email
     await this.emailService.send(user.email, 'Welcome!', 'Hello!');
-    
+
     return user;
   }
 }

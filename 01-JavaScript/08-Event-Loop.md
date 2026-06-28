@@ -222,11 +222,11 @@ console.log('5');
 ```typescript
 Promise.resolve().then(() => {
   console.log('Promise 1');
-  
+
   setTimeout(() => {
     console.log('Timeout 1');
   }, 0);
-  
+
   Promise.resolve().then(() => {
     console.log('Promise 2');
   });
@@ -320,9 +320,9 @@ console.log('End');
 ```typescript
 async function example() {
   console.log('Async Start');
-  
+
   await Promise.resolve();
-  
+
   console.log('After Await');
 }
 
@@ -404,7 +404,7 @@ function processLargeArray(items: any[]) {
 async function processLargeArrayAsync(items: any[]) {
   for (let i = 0; i < items.length; i++) {
     processItem(items[i]);
-    
+
     // Yield every 100 items
     if (i % 100 === 0) {
       await new Promise(resolve => setTimeout(resolve, 0));
@@ -421,7 +421,7 @@ function debounceMicrotask<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
-  
+
   return function(...args: Parameters<T>) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
@@ -433,7 +433,7 @@ function debounceMicro<T extends (...args: any[]) => any>(
   func: T
 ): (...args: Parameters<T>) => void {
   let pending = false;
-  
+
   return function(...args: Parameters<T>) {
     if (!pending) {
       pending = true;
@@ -451,26 +451,26 @@ function debounceMicro<T extends (...args: any[]) => any>(
 ```typescript
 class Animation {
   private running = false;
-  
+
   start() {
     this.running = true;
     this.animate();
   }
-  
+
   animate() {
     if (!this.running) return;
-    
+
     // Update animation state
     this.update();
-    
+
     // Schedule next frame
     requestAnimationFrame(() => this.animate());
   }
-  
+
   update() {
     // Animation logic here
   }
-  
+
   stop() {
     this.running = false;
   }
@@ -483,16 +483,16 @@ class Animation {
 class DataLoader {
   private cache = new Map<string, any>();
   private pending = new Map<string, Promise<any>>();
-  
+
   async load(url: string, priority: 'high' | 'low' = 'low') {
     if (this.cache.has(url)) {
       return this.cache.get(url);
     }
-    
+
     if (this.pending.has(url)) {
       return this.pending.get(url);
     }
-    
+
     const promise = fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -500,14 +500,14 @@ class DataLoader {
         this.pending.delete(url);
         return data;
       });
-    
+
     this.pending.set(url, promise);
-    
+
     // High priority: use microtask
     if (priority === 'high') {
       await new Promise(resolve => queueMicrotask(resolve));
     }
-    
+
     return promise;
   }
 }
@@ -520,7 +520,7 @@ function setupEventDelegation(container: HTMLElement) {
   // Single event listener for all child elements
   container.addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
-    
+
     // Check if clicked element matches a selector
     if (target.matches('.delete-btn')) {
       handleDelete(target.dataset.id);
@@ -568,22 +568,22 @@ function heavyComputation() {
 function heavyComputationChunked() {
   let sum = 0;
   let i = 0;
-  
+
   function processChunk() {
     const chunkSize = 1000000;
     const end = Math.min(i + chunkSize, 1000000000);
-    
+
     for (; i < end; i++) {
       sum += i;
     }
-    
+
     if (i < 1000000000) {
       setTimeout(processChunk, 0);
     } else {
       return sum;
     }
   }
-  
+
   processChunk();
 }
 ```
@@ -669,7 +669,7 @@ async function processItemsAsync(items: any[]) {
   const results = [];
   for (const item of items) {
     results.push(heavyComputation(item));
-    
+
     // Yield periodically
     if (results.length % 100 === 0) {
       await new Promise(resolve => setTimeout(resolve, 0));
@@ -743,13 +743,13 @@ let frameCount = 0;
 function checkFrameRate() {
   frameCount++;
   const currentTime = performance.now();
-  
+
   if (currentTime - lastTime >= 1000) {
     console.log(`FPS: ${frameCount}`);
     frameCount = 0;
     lastTime = currentTime;
   }
-  
+
   requestAnimationFrame(checkFrameRate);
 }
 
@@ -762,17 +762,17 @@ requestAnimationFrame(checkFrameRate);
 class TaskScheduler {
   private highPriority: (() => void)[] = [];
   private lowPriority: (() => void)[] = [];
-  
+
   schedule(task: () => void, priority: 'high' | 'low' = 'low') {
     if (priority === 'high') {
       this.highPriority.push(task);
     } else {
       this.lowPriority.push(task);
     }
-    
+
     this.process();
   }
-  
+
   private process() {
     queueMicrotask(() => {
       // Process all high priority first
@@ -780,13 +780,13 @@ class TaskScheduler {
         const task = this.highPriority.shift()!;
         task();
       }
-      
+
       // Then process one low priority
       if (this.lowPriority.length > 0) {
         const task = this.lowPriority.shift()!;
         task();
       }
-      
+
       // Continue if there are more tasks
       if (this.highPriority.length > 0 || this.lowPriority.length > 0) {
         this.process();
@@ -810,7 +810,7 @@ A: JavaScript is single-threaded to simplify programming and avoid concurrency i
 
 **Q3: What is the difference between synchronous and asynchronous code?**
 
-A: 
+A:
 - **Synchronous**: Executes immediately, blocks further execution
 - **Asynchronous**: Scheduled to run later, allows other code to run
 
@@ -826,7 +826,7 @@ A: The call stack is a LIFO data structure that tracks function execution. When 
 
 **Q6: What is the difference between microtasks and macrotasks?**
 
-A: 
+A:
 - **Microtasks**: Promise callbacks, queueMicrotask - run after current task, before next macrotask
 - **Macrotasks**: setTimeout, I/O - one per event loop iteration
 
@@ -853,7 +853,7 @@ A: Microtask starvation occurs when microtasks keep being added faster than they
 
 **Q11: Explain the complete event loop flow in the browser.**
 
-A: 
+A:
 1. Execute synchronous code (call stack)
 2. When call stack empty:
    a. Process ALL microtasks
@@ -864,7 +864,7 @@ A:
 
 **Q12: How does the event loop differ between browser and Node.js?**
 
-A: 
+A:
 - **Browser**: Single event loop, microtasks then macrotasks, rendering
 - **Node.js**: Multiple phases (timers, I/O, poll, check, close callbacks), process.nextTick before microtasks
 
@@ -874,7 +874,7 @@ A: `process.nextTick` schedules a callback to run after the current operation co
 
 **Q14: How do you prevent UI blocking in the browser?**
 
-A: 
+A:
 1. Break up heavy computations into chunks
 2. Use `setTimeout` or `requestAnimationFrame` to yield
 3. Use Web Workers for CPU-intensive tasks
@@ -888,7 +888,7 @@ A: The rendering pipeline: JavaScript → Style → Layout → Paint → Composi
 
 **Q16: Design a task scheduler with priority queues.**
 
-A: 
+A:
 ```typescript
 class TaskScheduler {
   private queues = {
@@ -897,12 +897,12 @@ class TaskScheduler {
     medium: [] as (() => void)[],
     low: [] as (() => void)[]
   };
-  
+
   schedule(task: () => void, priority: keyof typeof this.queues) {
     this.queues[priority].push(task);
     this.process();
   }
-  
+
   private process() {
     queueMicrotask(() => {
       // Process in priority order
@@ -913,7 +913,7 @@ class TaskScheduler {
           break;
         }
       }
-      
+
       // Continue if tasks remain
       if (Object.values(this.queues).some(q => q.length > 0)) {
         this.process();
@@ -925,18 +925,18 @@ class TaskScheduler {
 
 **Q17: How would you implement a non-blocking deep clone?**
 
-A: 
+A:
 ```typescript
 async function deepCloneAsync<T>(obj: T): Promise<T> {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   if (Array.isArray(obj)) {
     const clone = [];
     for (let i = 0; i < obj.length; i++) {
       clone[i] = await deepCloneAsync(obj[i]);
-      
+
       // Yield every 100 items
       if (i % 100 === 0) {
         await new Promise(resolve => setTimeout(resolve, 0));
@@ -944,26 +944,26 @@ async function deepCloneAsync<T>(obj: T): Promise<T> {
     }
     return clone as T;
   }
-  
+
   const clone = {} as T;
   const keys = Object.keys(obj);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
     (clone as any)[key] = await deepCloneAsync((obj as any)[key]);
-    
+
     // Yield periodically
     if (i % 100 === 0) {
       await new Promise(resolve => setTimeout(resolve, 0));
     }
   }
-  
+
   return clone;
 }
 ```
 
 **Q18: Analyze the performance implications of microtasks vs macrotasks.**
 
-A: 
+A:
 - **Microtasks**: Run immediately after current task, block rendering
 - **Macrotasks**: Run in separate iterations, allow rendering between
 
@@ -972,7 +972,7 @@ Use macrotasks for: Low-priority work, animations, UI updates
 
 **Q19: How do you debug event loop issues?**
 
-A: 
+A:
 1. **Chrome DevTools**: Performance tab, flame chart
 2. **console.trace()**: See call stack
 3. **Performance API**: measureTask, performance.now()
@@ -981,7 +981,7 @@ A:
 
 **Q20: What are the security implications of the event loop?**
 
-A: 
+A:
 1. **Timing attacks**: Measure task execution time
 2. **DoS**: Starve microtask queue
 3. **Information leakage**: Task scheduling reveals code structure
@@ -1009,7 +1009,7 @@ function processData(data: any[]) {
 
 **Q22: How do you handle event loop delays in production?**
 
-A: 
+A:
 1. Monitor task execution time
 2. Use performance APIs to measure delays
 3. Break up long-running tasks
@@ -1022,7 +1022,7 @@ A: Web Workers have their own event loops and call stacks. They communicate via 
 
 **Q24: How do different frameworks handle the event loop?**
 
-A: 
+A:
 - **React**: Uses microtasks for state updates, batch processing
 - **Vue**: NextTick for DOM updates, microtask-based
 - **Angular**: Zone.js patches async operations
@@ -1030,7 +1030,7 @@ A:
 
 **Q25: What are best practices for working with the event loop?**
 
-A: 
+A:
 1. Use async/await for readability
 2. Avoid blocking the event loop
 3. Use Web Workers for heavy tasks

@@ -216,13 +216,13 @@ console.log(globalConst);  // Accessible everywhere
 ```typescript
 function outerFunction() {
   const outerVar = 'I am outer';
-  
+
   function innerFunction() {
     const innerVar = 'I am inner';
     console.log(outerVar);  // Accessible (parent scope)
     console.log(innerVar);  // Accessible (own scope)
   }
-  
+
   innerFunction();
   console.log(innerVar);  // ReferenceError! Not accessible
 }
@@ -239,12 +239,12 @@ function blockScopeExample() {
     let blockLet = 'I am block-scoped';
     const BLOCK_CONST = 'Also block-scoped';
     var notBlockScoped = 'I am function-scoped';
-    
+
     console.log(blockLet);       // Accessible
     console.log(BLOCK_CONST);    // Accessible
     console.log(notBlockScoped); // Accessible
   }
-  
+
   console.log(blockLet);       // ReferenceError!
   console.log(BLOCK_CONST);    // ReferenceError!
   console.log(notBlockScoped); // Accessible (var is function-scoped)
@@ -276,21 +276,21 @@ for (let j = 0; j < 3; j++) {
 ```typescript
 function level1() {
   const a = 1;
-  
+
   function level2() {
     const b = 2;
-    
+
     function level3() {
       const c = 3;
-      
+
       console.log(a);  // Access level1's scope
       console.log(b);  // Access level2's scope
       console.log(c);  // Access own scope
     }
-    
+
     level3();
   }
-  
+
   level2();
 }
 
@@ -302,7 +302,7 @@ level1();
 ```typescript
 function createCounter() {
   let count = 0;  // Encapsulated variable
-  
+
   return {
     increment: () => ++count,
     decrement: () => --count,
@@ -333,7 +333,7 @@ function switchExample(value: string) {
       break;
     }
   }
-  
+
   // result is not accessible here
 }
 ```
@@ -364,12 +364,12 @@ console.log(privateVar);  // ReferenceError!
 const Calculator = (function() {
   // Private variables
   let result = 0;
-  
+
   // Private function
   function validateNumber(num: number): boolean {
     return !isNaN(num) && isFinite(num);
   }
-  
+
   // Public API
   return {
     add(num: number) {
@@ -400,10 +400,10 @@ Calculator.add(5).subtract(2).getResult();  // 3
 function setupForm() {
   const form = document.getElementById('myForm');
   const errors: string[] = [];
-  
+
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Closure captures 'errors' array
     if (validateForm()) {
       submitForm();
@@ -411,14 +411,14 @@ function setupForm() {
       showError(errors);
     }
   });
-  
+
   function validateForm(): boolean {
     // Can access 'errors' from outer scope
     errors.length = 0;
     // ... validation logic
     return errors.length === 0;
   }
-  
+
   function submitForm() {
     // Can access 'errors' from outer scope
     console.log('Submitting...');
@@ -435,7 +435,7 @@ function UserProfile({ userId }: { userId: string }) {
   // Component scope
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     // Closure captures 'userId', 'setUser', 'setLoading'
     async function fetchUser() {
@@ -449,10 +449,10 @@ function UserProfile({ userId }: { userId: string }) {
         setLoading(false);
       }
     }
-    
+
     fetchUser();
   }, [userId]);  // Re-run when userId changes
-  
+
   if (loading) return <div>Loading...</div>;
   return <div>{user?.name}</div>;
 }
@@ -468,9 +468,9 @@ function createConfig(environment: string) {
     production: { apiUrl: 'https://api.example.com', debug: false },
     test: { apiUrl: 'http://test-api:3000', debug: true }
   };
-  
+
   const config = configs[environment as keyof typeof configs];
-  
+
   return {
     getApiUrl: () => config.apiUrl,
     isDebug: () => config.debug,
@@ -505,7 +505,7 @@ for (let i = 0; i < 5; i++) {
 function accidentalGlobal() {
   // Without var/let/const, creates global variable
   accidentalGlobalVar = 'I am global!';
-  
+
   // With strict mode, throws ReferenceError
 }
 
@@ -525,12 +525,12 @@ const x = 10;
 function example() {
   const x = 20;  // Shadows outer x
   console.log(x);  // 20, not 10
-  
+
   if (true) {
     const x = 30;  // Shadows both outer x's
     console.log(x);  // 30
   }
-  
+
   console.log(x);  // 20 (back to function scope)
 }
 
@@ -583,7 +583,7 @@ function processData(data: any[]) {
   let result: any[] = [];
   let index: number;
   let item: any;
-  
+
   // Then use them
   for (index = 0; index < data.length; index++) {
     item = data[index];
@@ -591,7 +591,7 @@ function processData(data: any[]) {
       result.push(item);
     }
   }
-  
+
   return result;
 }
 ```
@@ -621,7 +621,7 @@ globalCounter = 0;
 // Good: Module pattern
 const Counter = (function() {
   let count = 0;
-  
+
   return {
     increment: () => ++count,
     getCount: () => count
@@ -638,14 +638,14 @@ const Counter = (function() {
 function example() {
   // These variables live for the entire function
   const largeArray = new Array(1000000).fill(0);
-  
+
   if (condition) {
     // This variable only lives in this block
     const smallValue = 42;
     console.log(smallValue);
   }
   // smallValue is destroyed here
-  
+
   // largeArray is destroyed when function returns
 }
 ```
@@ -656,26 +656,26 @@ function example() {
 // Deeply nested scopes can impact performance
 function level1() {
   const a = 1;
-  
+
   function level2() {
     const b = 2;
-    
+
     function level3() {
       const c = 3;
-      
+
       function level4() {
         const d = 4;
-        
+
         // Each lookup traverses the scope chain
         console.log(a + b + c + d);
       }
-      
+
       level4();
     }
-    
+
     level3();
   }
-  
+
   level2();
 }
 
@@ -718,7 +718,7 @@ A: There are three main types:
 
 **Q3: What is the difference between var, let, and const?**
 
-A: 
+A:
 - `var`: Function-scoped, can be reassigned, hoisted
 - `let`: Block-scoped, can be reassigned, TDZ
 - `const`: Block-scoped, cannot be reassigned, TDZ
@@ -751,7 +751,7 @@ A: You can access global variables directly from any scope. However, it's better
 
 **Q10: What is the difference between scope and context?**
 
-A: 
+A:
 - **Scope**: Where variables are accessible (determined by code structure)
 - **Context**: What `this` refers to (determined by how functions are called)
 
@@ -785,34 +785,34 @@ A: Hoisting moves declarations to the top of their scope. `var` is hoisted to fu
 
 **Q16: Design a scope-aware variable resolver.**
 
-A: 
+A:
 ```typescript
 class ScopeResolver {
   private scopes: Map<string, Map<string, any>> = new Map();
   private parentScope: ScopeResolver | null = null;
-  
+
   constructor(parent?: ScopeResolver) {
     this.parentScope = parent || null;
   }
-  
+
   declare(name: string, value: any): void {
     const currentScope = this.getCurrentScope();
     currentScope.set(name, value);
   }
-  
+
   resolve(name: string): any {
     const currentScope = this.getCurrentScope();
     if (currentScope.has(name)) {
       return currentScope.get(name);
     }
-    
+
     if (this.parentScope) {
       return this.parentScope.resolve(name);
     }
-    
+
     throw new Error(`Variable '${name}' not defined`);
   }
-  
+
   private getCurrentScope(): Map<string, any> {
     // Implementation depends on use case
     return new Map();
@@ -822,7 +822,7 @@ class ScopeResolver {
 
 **Q17: How would you implement block scoping for `var` in transpilers?**
 
-A: 
+A:
 ```typescript
 // Original code
 function example() {
@@ -844,7 +844,7 @@ function example() {
 
 **Q18: Analyze the memory implications of different scoping strategies.**
 
-A: 
+A:
 - **Global scope**: Longest lifetime, highest memory impact
 - **Function scope**: Medium lifetime, moderate memory impact
 - **Block scope**: Shortest lifetime, lowest memory impact
@@ -853,19 +853,19 @@ Optimization: Use block scoping to minimize variable lifetimes.
 
 **Q19: How do you handle scope in a REPL environment?**
 
-A: 
+A:
 ```typescript
 class REPL {
   private globalScope = new Map<string, any>();
   private currentScope = this.globalScope;
-  
+
   execute(code: string): any {
     // Parse code
     // Create new scope for execution
     // Evaluate in current scope
     // Return result
   }
-  
+
   getScope(): Map<string, any> {
     return new Map(this.currentScope);
   }
@@ -874,7 +874,7 @@ class REPL {
 
 **Q20: What are the security implications of scope in JavaScript?**
 
-A: 
+A:
 1. **Global scope pollution**: Can be exploited for attacks
 2. **eval()**: Can inject code into current scope
 3. **with statement**: Deprecated due to scope ambiguity
@@ -907,7 +907,7 @@ function processItemsFixed(items: any[]) {
 
 **Q22: How do you debug scope-related issues?**
 
-A: 
+A:
 1. **Chrome DevTools**: Use Scope panel in debugger
 2. **console.log**: Log variable values at different points
 3. **Breakpoints**: Set breakpoints to inspect scope
@@ -920,7 +920,7 @@ A: `this` is not part of the scope chain. It depends on how functions are called
 
 **Q24: How do you handle scope in a single-page application?**
 
-A: 
+A:
 1. Use module pattern for encapsulation
 2. Avoid global variables
 3. Use React/Vue component scope
@@ -929,7 +929,7 @@ A:
 
 **Q25: What are best practices for managing scope in large codebases?**
 
-A: 
+A:
 1. Use `const` by default, `let` when needed
 2. Avoid `var` entirely
 3. Declare variables at top of scope

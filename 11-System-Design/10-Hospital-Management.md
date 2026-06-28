@@ -427,7 +427,7 @@ class HIPAAComplianceService:
     def __init__(self, db, encryption_service):
         self.db = db
         self.encryption = encryption_service
-    
+
     async def log_access(self, user_id: int, action: str,
                         entity_type: str, entity_id: int,
                         old_values: dict = None,
@@ -436,63 +436,63 @@ class HIPAAComplianceService:
                         user_agent: str = None):
         # Log all access to PHI
         await self.db.execute("""
-            INSERT INTO audit_log 
-            (user_id, action, entity_type, entity_id, 
+            INSERT INTO audit_log
+            (user_id, action, entity_type, entity_id,
              old_values, new_values, ip_address, user_agent)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         """, (user_id, action, entity_type, entity_id,
               old_values, new_values, ip_address, user_agent))
-    
+
     async def check_access_permission(self, user_id: int,
                                      entity_type: str,
                                      entity_id: int) -> bool:
         # Check if user has permission to access entity
         user = await self.db.get_user(user_id)
         entity = await self.db.get_entity(entity_type, entity_id)
-        
+
         # Check hospital match
         if user['hospital_id'] != entity['hospital_id']:
             return False
-        
+
         # Check role-based access
         if user['role'] == 'doctor':
             # Doctors can only access their patients
             return await self.db.is_doctor_patient(
                 user_id, entity['patient_id']
             )
-        
+
         return True
-    
+
     def encrypt_phi(self, data: dict) -> dict:
         # Encrypt Protected Health Information
         sensitive_fields = [
-            'ssn', 'medical_record_number', 
+            'ssn', 'medical_record_number',
             'diagnosis', 'treatment'
         ]
-        
+
         encrypted = {}
         for key, value in data.items():
             if key in sensitive_fields:
                 encrypted[key] = self.encryption.encrypt(str(value))
             else:
                 encrypted[key] = value
-        
+
         return encrypted
-    
+
     def decrypt_phi(self, data: dict) -> dict:
         # Decrypt Protected Health Information
         sensitive_fields = [
             'ssn', 'medical_record_number',
             'diagnosis', 'treatment'
         ]
-        
+
         decrypted = {}
         for key, value in data.items():
             if key in sensitive_fields and value:
                 decrypted[key] = self.encryption.decrypt(value)
             else:
                 decrypted[key] = value
-        
+
         return decrypted
 ```
 
@@ -503,39 +503,39 @@ class AppointmentSchedulingService:
         self.db = db
         self.redis = redis_client
         self.notifications = notification_service
-    
+
     async def get_available_slots(self, doctor_id: int,
                                  date: str) -> list:
         # Check cache first
         cache_key = f"availability:{doctor_id}:{date}"
         cached = await self.redis.get(cache_key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         # Get doctor's schedule
         doctor = await self.db.get_user(doctor_id)
-        
+
         # Get existing appointments
         existing = await self.db.get_appointments(
             doctor_id=doctor_id,
             date=date
         )
-        
+
         # Calculate available slots
         available = self.calculate_available_slots(
             doctor['work_hours'],
             existing,
             date
         )
-        
+
         # Cache for 5 minutes
         await self.redis.setex(
             cache_key, 300, json.dumps(available)
         )
-        
+
         return available
-    
+
     async def book_appointment(self, patient_id: int,
                               doctor_id: int,
                               date: str,
@@ -546,10 +546,10 @@ class AppointmentSchedulingService:
         available = await self.get_available_slots(
             doctor_id, date
         )
-        
+
         if not any(slot['time'] == time for slot in available):
             raise SlotUnavailableError("Slot not available")
-        
+
         # Create appointment
         appointment = await self.db.create_appointment(
             patient_id=patient_id,
@@ -559,43 +559,43 @@ class AppointmentSchedulingService:
             type=appointment_type,
             reason=reason
         )
-        
+
         # Invalidate cache
         await self.redis.delete(f"availability:{doctor_id}:{date}")
-        
+
         # Send confirmation
         await self.notifications.send_appointment_confirmation(
             patient_id, appointment
         )
-        
+
         return appointment
-    
+
     async def cancel_appointment(self, appointment_id: int,
                                 user_id: int) -> bool:
         appointment = await self.db.get_appointment(appointment_id)
-        
+
         # Check permission
         if appointment['patient_id'] != user_id:
             # Check if user is staff
             user = await self.db.get_user(user_id)
             if user['role'] not in ['admin', 'nurse']:
                 raise PermissionError("No permission to cancel")
-        
+
         # Cancel appointment
         await self.db.update_appointment_status(
             appointment_id, 'cancelled'
         )
-        
+
         # Invalidate cache
         await self.redis.delete(
             f"availability:{appointment['doctor_id']}:{appointment['date']}"
         )
-        
+
         # Notify doctor
         await self.notifications.send_cancellation_notice(
             appointment['doctor_id'], appointment
         )
-        
+
         return True
 ```
 
@@ -606,36 +606,36 @@ class MedicalRecordsService:
         self.db = db
         self.encryption = encryption_service
         self.audit = audit_service
-    
+
     async def get_patient_records(self, patient_id: int,
                                  user_id: int) -> dict:
         # Check access permission
         has_access = await self.audit.check_access_permission(
             user_id, 'patient', patient_id
         )
-        
+
         if not has_access:
             raise PermissionError("Access denied")
-        
+
         # Log access
         await self.audit.log_access(
             user_id, 'read', 'patient', patient_id
         )
-        
+
         # Get records
         records = await self.db.get_patient_records(patient_id)
-        
+
         # Decrypt PHI
         decrypted_records = []
         for record in records:
             decrypted = self.encryption.decrypt_phi(record)
             decrypted_records.append(decrypted)
-        
+
         return {
             'patient_id': patient_id,
             'records': decrypted_records
         }
-    
+
     async def create_medical_record(self, patient_id: int,
                                    doctor_id: int,
                                    appointment_id: int,
@@ -645,13 +645,13 @@ class MedicalRecordsService:
         has_access = await self.audit.check_access_permission(
             user_id, 'patient', patient_id
         )
-        
+
         if not has_access:
             raise PermissionError("Access denied")
-        
+
         # Encrypt PHI
         encrypted_data = self.encryption.encrypt_phi(record_data)
-        
+
         # Create record
         record = await self.db.create_medical_record(
             patient_id=patient_id,
@@ -659,13 +659,13 @@ class MedicalRecordsService:
             appointment_id=appointment_id,
             **encrypted_data
         )
-        
+
         # Log access
         await self.audit.log_access(
             user_id, 'create', 'medical_record', record['id'],
             new_values=record_data
         )
-        
+
         return record
 ```
 
@@ -674,33 +674,33 @@ class MedicalRecordsService:
 class MultiTenantService:
     def __init__(self, db):
         self.db = db
-    
+
     async def get_hospital_context(self, hospital_code: str) -> dict:
         # Get hospital details
         hospital = await self.db.get_hospital_by_code(hospital_code)
-        
+
         return {
             'hospital_id': hospital['id'],
             'name': hospital['name'],
             'settings': hospital.get('settings', {}),
             'features': hospital.get('features', [])
         }
-    
+
     async def filter_by_hospital(self, query: str,
                                 hospital_id: int) -> str:
         # Add hospital filter to query
         return f"{query} AND hospital_id = {hospital_id}"
-    
+
     async def get_hospital_stats(self, hospital_id: int) -> dict:
         # Get hospital statistics
         stats = await self.db.execute("""
-            SELECT 
+            SELECT
                 (SELECT COUNT(*) FROM patients WHERE hospital_id = %s) as total_patients,
                 (SELECT COUNT(*) FROM users WHERE hospital_id = %s AND role = 'doctor') as total_doctors,
-                (SELECT COUNT(*) FROM appointments 
+                (SELECT COUNT(*) FROM appointments
                  WHERE hospital_id = %s AND appointment_date = CURRENT_DATE) as today_appointments
         """, (hospital_id, hospital_id, hospital_id))
-        
+
         return stats[0] if stats else {}
 ```
 
@@ -712,22 +712,22 @@ class AppointmentCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 300  # 5 minutes
-    
+
     async def get_availability(self, doctor_id: int,
                               date: str) -> list:
         key = f"availability:{doctor_id}:{date}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_availability(self, doctor_id: int,
                               date: str, slots: list):
         key = f"availability:{doctor_id}:{date}"
         await self.redis.setex(key, self.ttl, json.dumps(slots))
-    
+
     async def invalidate_availability(self, doctor_id: int,
                                      date: str):
         await self.redis.delete(f"availability:{doctor_id}:{date}")
@@ -739,20 +739,20 @@ class PatientCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 600  # 10 minutes
-    
+
     async def get_patient(self, patient_id: int) -> dict:
         key = f"patient:{patient_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_patient(self, patient_id: int, patient: dict):
         key = f"patient:{patient_id}"
         await self.redis.setex(key, self.ttl, json.dumps(patient))
-    
+
     async def invalidate_patient(self, patient_id: int):
         await self.redis.delete(f"patient:{patient_id}")
 ```
@@ -792,23 +792,23 @@ class HospitalEventProcessor:
     def __init__(self, kafka_consumer, notification_service):
         self.consumer = kafka_consumer
         self.notifications = notification_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'appointment.created':
                 await self.handle_appointment_created(event)
             elif event['event_type'] == 'lab_result.created':
                 await self.handle_lab_result_created(event)
-    
+
     async def handle_appointment_created(self, event: dict):
         # Send confirmation to patient
         await self.notifications.send_appointment_confirmation(
             event['data']['patient_id'],
             event['data']
         )
-        
+
         # Notify doctor
         await self.notifications.send_doctor_notification(
             event['data']['doctor_id'],
@@ -840,15 +840,15 @@ Architecture:
 class HospitalDatabaseScaler:
     def __init__(self):
         self.shards = 16
-    
+
     def get_shard(self, hospital_id: int) -> int:
         return hospital_id % self.shards
-    
+
     async def get_patient(self, patient_id: int) -> dict:
         # Get hospital_id from patient
         hospital_id = await self.db.get_patient_hospital(patient_id)
         shard = self.get_shard(hospital_id)
-        
+
         return await self.shards[shard].execute(
             "SELECT * FROM patients WHERE id = %s",
             (patient_id,)
@@ -863,22 +863,22 @@ class AppointmentConflictResolver:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
+
     async def resolve_conflict(self, doctor_id: int,
                               date: str, time: str) -> dict:
         # Check for conflicts
         conflicts = await self.db.get_conflicting_appointments(
             doctor_id, date, time
         )
-        
+
         if not conflicts:
             return {'status': 'no_conflict'}
-        
+
         # Try to reschedule
         alternative_slots = await self.get_alternative_slots(
             doctor_id, date
         )
-        
+
         return {
             'status': 'conflict',
             'conflicts': conflicts,
@@ -901,19 +901,19 @@ class DataRecoveryService:
     def __init__(self, db, backup_service):
         self.db = db
         self.backup = backup_service
-    
+
     async def recover_deleted_record(self, record_type: str,
                                     record_id: int) -> dict:
         # Get from backup
         backup = await self.backup.get_backup(
             record_type, record_id
         )
-        
+
         if backup:
             # Restore record
             await self.db.restore_record(backup)
             return {'status': 'recovered', 'record': backup}
-        
+
         return {'status': 'not_found'}
 ```
 
@@ -951,15 +951,15 @@ alerts:
   - name: High No-Show Rate
     condition: no_show_rate > 20%
     severity: warning
-    
+
   - name: HIPAA Violation Attempt
     condition: access_denied_count > 100
     severity: critical
-    
+
   - name: Appointment Booking Slow
     condition: p95_booking_latency > 5s
     severity: warning
-    
+
   - name: Database Connection Pool Exhausted
     condition: active_connections > 90%
     severity: critical

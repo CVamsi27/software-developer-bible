@@ -922,7 +922,7 @@ const [createUser, { loading, error }] = useMutation(CREATE_USER);
 const handleSubmit = async (input) => {
   try {
     const { data } = await createUser({ variables: { input } });
-    
+
     if (data.createUser.errors.length > 0) {
       // Handle business logic errors
       data.createUser.errors.forEach(err => {
@@ -930,7 +930,7 @@ const handleSubmit = async (input) => {
       });
       return;
     }
-    
+
     showToast('User created successfully', 'success');
     router.push(`/users/${data.createUser.user.id}`);
   } catch (error) {
@@ -975,7 +975,7 @@ function UserProfile({ userId }) {
   const { data } = useQuery(GET_USER, {
     variables: { id: userId }
   });
-  
+
   return <h1>{data.user.name}</h1>;  // Crashes during loading
 }
 
@@ -984,10 +984,10 @@ function UserProfile({ userId }) {
   const { loading, error, data } = useQuery(GET_USER, {
     variables: { id: userId }
   });
-  
+
   if (loading) return <Spinner />;
   if (error) return <ErrorMessage error={error} />;
-  
+
   return <h1>{data.user.name}</h1>;
 }
 ```
@@ -1052,19 +1052,19 @@ const GET_USER_POSTS = gql`
 ```
 1. Always name operations
    query GetUser { ... }
-   
+
 2. Use variables for dynamic values
    query GetUser($id: ID!) { user(id: $id) { ... } }
-   
+
 3. Request only needed fields
    { user { name } }  // Not { user { name email ... } }
-   
+
 4. Use fragments for reusable selections
    fragment UserFields on User { id name }
-   
+
 5. Implement pagination
    posts(first: 10, after: $cursor) { ... }
-   
+
 6. Use operation-level directives
    query GetUser @skip(if: $skipUser) { ... }
 ```
@@ -1074,19 +1074,19 @@ const GET_USER_POSTS = gql`
 ```
 1. Use Input types for mutation arguments
    mutation CreateUser(input: CreateUserInput!) { ... }
-   
+
 2. Return payload types with errors
    type CreateUserPayload { user: User, errors: [Error!]! }
-   
+
 3. Include success status in response
    { success: true, user: {...}, errors: [] }
-   
+
 4. Use optimistic updates for better UX
    optimisticResponse: { ... }
-   
+
 5. Handle partial failures
    { data: null, errors: [{ field: "email", message: "..." }] }
-   
+
 6. Validate input in resolvers, not client
    if (!input.email) return error;
 ```
@@ -1096,17 +1096,17 @@ const GET_USER_POSTS = gql`
 ```
 1. Use error codes for programmatic handling
    code: NOT_FOUND, UNAUTHORIZED, VALIDATION_ERROR
-   
+
 2. Include field information for form errors
    { field: "email", message: "Invalid email" }
-   
+
 3. Distinguish between user and system errors
    - User errors: validation, not found, unauthorized
    - System errors: database, network, internal
-   
+
 4. Never expose internal errors to clients
    catch (error) { throw new GraphQLError("Internal error") }
-   
+
 5. Log errors for monitoring
    logger.error("Query failed", { query, error });
 ```

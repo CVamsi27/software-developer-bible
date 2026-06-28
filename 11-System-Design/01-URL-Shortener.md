@@ -190,20 +190,20 @@ class HashGenerator:
     def __init__(self):
         self.alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         self.base = len(self.alphabet)
-    
+
     def generate_hash(self, long_url: str) -> str:
         # Use MD5 for speed, take first 7 characters
         hash_hex = hashlib.md5(long_url.encode()).hexdigest()
         hash_int = int(hash_hex[:12], 16)
-        
+
         # Convert to base62
         short_code = []
         while hash_int > 0 and len(short_code) < 7:
             hash_int, remainder = divmod(hash_int, self.base)
             short_code.append(self.alphabet[remainder])
-        
+
         return ''.join(reversed(short_code))
-    
+
     def generate_with_collision_check(self, long_url: str, db) -> str:
         max_attempts = 10
         for _ in range(max_attempts):
@@ -212,7 +212,7 @@ class HashGenerator:
                 return short_code
             # Add random salt for collision
             long_url += str(uuid.uuid4())
-        
+
         raise Exception("Could not generate unique short code")
 ```
 
@@ -224,20 +224,20 @@ from datetime import datetime, timedelta
 class RateLimiter:
     def __init__(self, redis_client: Redis):
         self.redis = redis_client
-    
-    def is_allowed(self, user_id: str, limit: int = 100, 
+
+    def is_allowed(self, user_id: str, limit: int = 100,
                    window: int = 3600) -> bool:
         key = f"rate_limit:{user_id}"
-        
+
         current = self.redis.get(key)
         if current and int(current) >= limit:
             return False
-        
+
         pipe = self.redis.pipeline()
         pipe.incr(key)
         pipe.expire(key, window)
         pipe.execute()
-        
+
         return True
 ```
 
@@ -249,19 +249,19 @@ class CacheService:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.default_ttl = 86400  # 24 hours
-    
+
     async def get_url(self, short_code: str) -> Optional[str]:
         # L1: In-memory LRU cache (per instance)
         cached = self.local_cache.get(short_code)
         if cached:
             return cached
-        
+
         # L2: Redis distributed cache
         long_url = await self.redis.get(f"url:{short_code}")
         if long_url:
             self.local_cache.set(short_code, long_url, ttl=300)
             return long_url
-        
+
         # L3: Database
         long_url = await self.db.get_url(short_code)
         if long_url:
@@ -272,7 +272,7 @@ class CacheService:
             )
             self.local_cache.set(short_code, long_url, ttl=300)
             return long_url
-        
+
         return None
 ```
 
@@ -306,7 +306,7 @@ class ClickEventProcessor:
         self.consumer = kafka_consumer
         self.db = db
         self.cache = cache
-    
+
     async def process_click(self, event: dict):
         # Store in analytics table (async, non-blocking)
         await self.db.insert_click_analytics(
@@ -315,10 +315,10 @@ class ClickEventProcessor:
             user_agent=event['user_agent'],
             country=event['country']
         )
-        
+
         # Update click count in cache
         await self.cache.incr(f"clicks:{event['short_code']}")
-        
+
         # Batch write to analytics database every 1000 events
         if self.batch_counter >= 1000:
             await self.flush_analytics_batch()
@@ -347,13 +347,13 @@ class ClickEventProcessor:
 class ShardRouter:
     def __init__(self, shards: List[str]):
         self.shards = shards
-    
+
     def get_shard(self, short_code: str) -> str:
         # Consistent hashing for shard routing
         hash_val = mmh3.hash(short_code)
         shard_index = hash_val % len(self.shards)
         return self.shards[shard_index]
-    
+
     def get_db(self, short_code: str):
         shard = self.get_shard(short_code)
         return self.connections[shard]
@@ -376,14 +376,14 @@ class CircuitBreaker:
         self.reset_timeout = reset_timeout
         self.state = 'CLOSED'
         self.last_failure_time = None
-    
+
     def call(self, func, *args, **kwargs):
         if self.state == 'OPEN':
             if self.should_reset():
                 self.state = 'HALF_OPEN'
             else:
                 raise CircuitBreakerOpenError()
-        
+
         try:
             result = func(*args, **kwargs)
             if self.state == 'HALF_OPEN':
@@ -442,15 +442,15 @@ alerts:
   - name: High Latency
     condition: p99_latency > 50ms for 5 minutes
     severity: warning
-    
+
   - name: Cache Hit Ratio Low
     condition: cache_hit_ratio < 80% for 10 minutes
     severity: warning
-    
+
   - name: Database Connection Pool Exhausted
     condition: active_connections > 90% of max
     severity: critical
-    
+
   - name: High Error Rate
     condition: error_5xx_rate > 1% for 5 minutes
     severity: critical

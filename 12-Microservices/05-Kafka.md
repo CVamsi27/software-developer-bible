@@ -298,7 +298,7 @@ const consumer = new KafkaConsumer('inventory-service', ['localhost:9092']);
 consumer.onMessage('order-events', async (message) => {
   const order = JSON.parse(message.value!.toString());
   console.log('Received order:', order);
-  
+
   // Process order - reserve inventory
   await reserveInventory(order);
 });

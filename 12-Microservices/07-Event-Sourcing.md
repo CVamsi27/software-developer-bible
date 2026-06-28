@@ -126,7 +126,7 @@ class EventStore {
 
     this.events.push(fullEvent);
     console.log(`Event appended: ${fullEvent.type} for ${fullEvent.aggregateId}`);
-    
+
     return fullEvent;
   }
 

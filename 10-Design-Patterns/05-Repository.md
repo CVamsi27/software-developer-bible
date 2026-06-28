@@ -99,7 +99,7 @@ class User extends Entity {
   ) {
     super();
   }
-  
+
   getId(): string {
     return this.id;
   }
@@ -108,14 +108,14 @@ class User extends Entity {
 // In-memory repository implementation
 class InMemoryUserRepository implements Repository<User> {
   private users: Map<string, User> = new Map();
-  
+
   async findById(id: string): Promise<User | null> {
     return this.users.get(id) || null;
   }
-  
+
   async findAll(options?: FindOptions): Promise<User[]> {
     let users = Array.from(this.users.values());
-    
+
     if (options?.orderBy) {
       users.sort((a, b) => {
         const aVal = (a as any)[options.orderBy!];
@@ -124,50 +124,50 @@ class InMemoryUserRepository implements Repository<User> {
         return aVal > bVal ? order : -order;
       });
     }
-    
+
     if (options?.offset) {
       users = users.slice(options.offset);
     }
-    
+
     if (options?.limit) {
       users = users.slice(0, options.limit);
     }
-    
+
     return users;
   }
-  
+
   async save(user: User): Promise<User> {
     user.updatedAt = new Date();
     this.users.set(user.id, user);
     return user;
   }
-  
+
   async update(id: string, data: Partial<User>): Promise<User | null> {
     const user = this.users.get(id);
     if (!user) return null;
-    
+
     const updatedUser = { ...user, ...data, updatedAt: new Date() };
     this.users.set(id, updatedUser);
     return updatedUser;
   }
-  
+
   async delete(id: string): Promise<boolean> {
     return this.users.delete(id);
   }
-  
+
   async count(): Promise<number> {
     return this.users.size;
   }
-  
+
   // Custom repository methods
   async findByEmail(email: string): Promise<User | null> {
     return Array.from(this.users.values()).find(u => u.email === email) || null;
   }
-  
+
   async findByRole(role: User['role']): Promise<User[]> {
     return Array.from(this.users.values()).filter(u => u.role === role);
   }
-  
+
   async findActiveUsers(): Promise<User[]> {
     return Array.from(this.users.values()).filter(u => u.isActive);
   }
@@ -182,11 +182,11 @@ import { PrismaClient, User as PrismaUser } from '@prisma/client';
 // Prisma repository implementation
 class PrismaUserRepository implements Repository<User> {
   private prisma: PrismaClient;
-  
+
   constructor() {
     this.prisma = new PrismaClient();
   }
-  
+
   private toDomain(prismaUser: PrismaUser): User {
     return new User(
       prismaUser.id,
@@ -199,7 +199,7 @@ class PrismaUserRepository implements Repository<User> {
       prismaUser.updatedAt
     );
   }
-  
+
   private toPrisma(user: User): Omit<PrismaUser, 'id' | 'createdAt' | 'updatedAt'> {
     return {
       name: user.name,
@@ -209,15 +209,15 @@ class PrismaUserRepository implements Repository<User> {
       isActive: user.isActive
     };
   }
-  
+
   async findById(id: string): Promise<User | null> {
     const prismaUser = await this.prisma.user.findUnique({
       where: { id }
     });
-    
+
     return prismaUser ? this.toDomain(prismaUser) : null;
   }
-  
+
   async findAll(options?: FindOptions): Promise<User[]> {
     const prismaUsers = await this.prisma.user.findMany({
       take: options?.limit,
@@ -226,13 +226,13 @@ class PrismaUserRepository implements Repository<User> {
         [options.orderBy]: options.order || 'asc'
       } : undefined
     });
-    
+
     return prismaUsers.map(u => this.toDomain(u));
   }
-  
+
   async save(user: User): Promise<User> {
     const prismaData = this.toPrisma(user);
-    
+
     const prismaUser = await this.prisma.user.upsert({
       where: { id: user.id },
       update: prismaData,
@@ -241,23 +241,23 @@ class PrismaUserRepository implements Repository<User> {
         ...prismaData
       }
     });
-    
+
     return this.toDomain(prismaUser);
   }
-  
+
   async update(id: string, data: Partial<User>): Promise<User | null> {
     try {
       const prismaUser = await this.prisma.user.update({
         where: { id },
         data: this.toPrisma(data as User)
       });
-      
+
       return this.toDomain(prismaUser);
     } catch {
       return null;
     }
   }
-  
+
   async delete(id: string): Promise<boolean> {
     try {
       await this.prisma.user.delete({
@@ -268,25 +268,25 @@ class PrismaUserRepository implements Repository<User> {
       return false;
     }
   }
-  
+
   async count(): Promise<number> {
     return this.prisma.user.count();
   }
-  
+
   // Custom methods
   async findByEmail(email: string): Promise<User | null> {
     const prismaUser = await this.prisma.user.findUnique({
       where: { email }
     });
-    
+
     return prismaUser ? this.toDomain(prismaUser) : null;
   }
-  
+
   async findByRole(role: User['role']): Promise<User[]> {
     const prismaUsers = await this.prisma.user.findMany({
       where: { role }
     });
-    
+
     return prismaUsers.map(u => this.toDomain(u));
   }
 }
@@ -307,11 +307,11 @@ class AndSpecification<T> implements Specification<T> {
     private left: Specification<T>,
     private right: Specification<T>
   ) {}
-  
+
   isSatisfiedBy(entity: T): boolean {
     return this.left.isSatisfiedBy(entity) && this.right.isSatisfiedBy(entity);
   }
-  
+
   toQuery() {
     return {
       AND: [this.left.toQuery(), this.right.toQuery()]
@@ -324,11 +324,11 @@ class OrSpecification<T> implements Specification<T> {
     private left: Specification<T>,
     private right: Specification<T>
   ) {}
-  
+
   isSatisfiedBy(entity: T): boolean {
     return this.left.isSatisfiedBy(entity) || this.right.isSatisfiedBy(entity);
   }
-  
+
   toQuery() {
     return {
       OR: [this.left.toQuery(), this.right.toQuery()]
@@ -341,7 +341,7 @@ class IsActiveUserSpecification implements Specification<User> {
   isSatisfiedBy(user: User): boolean {
     return user.isActive;
   }
-  
+
   toQuery() {
     return { isActive: true };
   }
@@ -349,11 +349,11 @@ class IsActiveUserSpecification implements Specification<User> {
 
 class HasRoleSpecification implements Specification<User> {
   constructor(private role: User['role']) {}
-  
+
   isSatisfiedBy(user: User): boolean {
     return user.role === this.role;
   }
-  
+
   toQuery() {
     return { role: this.role };
   }
@@ -361,11 +361,11 @@ class HasRoleSpecification implements Specification<User> {
 
 class EmailContainsSpecification implements Specification<User> {
   constructor(private domain: string) {}
-  
+
   isSatisfiedBy(user: User): boolean {
     return user.email.includes(this.domain);
   }
-  
+
   toQuery() {
     return { email: { contains: this.domain } };
   }
@@ -385,46 +385,46 @@ interface GenericRepository<T extends Entity> {
 // Implementation
 class SpecificationRepository<T extends Entity> implements GenericRepository<T> {
   private items: Map<string, T> = new Map();
-  
+
   async findById(id: string): Promise<T | null> {
     return this.items.get(id) || null;
   }
-  
+
   async find(specification: Specification<T>): Promise<T[]> {
-    return Array.from(this.items.values()).filter(item => 
+    return Array.from(this.items.values()).filter(item =>
       specification.isSatisfiedBy(item)
     );
   }
-  
+
   async findOne(specification: Specification<T>): Promise<T | null> {
     const results = await this.find(specification);
     return results[0] || null;
   }
-  
+
   async save(entity: T): Promise<T> {
     this.items.set(entity.getId(), entity);
     return entity;
   }
-  
+
   async update(id: string, data: Partial<T>): Promise<T | null> {
     const entity = this.items.get(id);
     if (!entity) return null;
-    
+
     const updated = { ...entity, ...data };
     this.items.set(id, updated as T);
     return updated as T;
   }
-  
+
   async delete(id: string): Promise<boolean> {
     return this.items.delete(id);
   }
-  
+
   async count(specification?: Specification<T>): Promise<number> {
     if (!specification) {
       return this.items.size;
     }
-    
-    return Array.from(this.items.values()).filter(item => 
+
+    return Array.from(this.items.values()).filter(item =>
       specification.isSatisfiedBy(item)
     ).length;
   }
@@ -462,27 +462,27 @@ class InMemoryUnitOfWork implements UnitOfWork {
   private repositories: Map<string, Repository<any>> = new Map();
   private transactionActive = false;
   private transactionData: Map<string, any[]> = new Map();
-  
+
   getRepository<T extends Entity>(entityClass: new (...args: any[]) => T): Repository<T> {
     const entityName = entityClass.name;
-    
+
     if (!this.repositories.has(entityName)) {
       this.repositories.set(entityName, new InMemoryRepository<any>());
     }
-    
+
     return this.repositories.get(entityName) as Repository<T>;
   }
-  
+
   async beginTransaction(): Promise<void> {
     this.transactionActive = true;
     this.transactionData.clear();
   }
-  
+
   async commit(): Promise<void> {
     this.transactionActive = false;
     this.transactionData.clear();
   }
-  
+
   async rollback(): Promise<void> {
     this.transactionActive = false;
     this.transactionData.clear();
@@ -492,16 +492,16 @@ class InMemoryUnitOfWork implements UnitOfWork {
 // Service using Unit of Work
 class UserService {
   constructor(private unitOfWork: UnitOfWork) {}
-  
+
   async createUser(data: { name: string; email: string }): Promise<User> {
     const userRepo = this.unitOfWork.getRepository(User);
-    
+
     // Check if user exists
     const existingUser = await userRepo.findByEmail(data.email);
     if (existingUser) {
       throw new Error('User already exists');
     }
-    
+
     const user = new User(
       Math.random().toString(36).substr(2, 9),
       data.name,
@@ -509,30 +509,30 @@ class UserService {
       'hashed_password',
       'user'
     );
-    
+
     return userRepo.save(user);
   }
-  
+
   async transferAdminRole(fromId: string, toId: string): Promise<void> {
     await this.unitOfWork.beginTransaction();
-    
+
     try {
       const userRepo = this.unitOfWork.getRepository(User);
-      
+
       const fromUser = await userRepo.findById(fromId);
       const toUser = await userRepo.findById(toId);
-      
+
       if (!fromUser || !toUser) {
         throw new Error('User not found');
       }
-      
+
       if (fromUser.role !== 'admin') {
         throw new Error('Only admin can transfer role');
       }
-      
+
       await userRepo.update(fromId, { role: 'user' });
       await userRepo.update(toId, { role: 'admin' });
-      
+
       await this.unitOfWork.commit();
     } catch (error) {
       await this.unitOfWork.rollback();
@@ -558,68 +558,68 @@ interface Product {
 class ProductRepository {
   private cache: Map<string, { product: Product; expiry: number }> = new Map();
   private cacheTTL = 5 * 60 * 1000; // 5 minutes
-  
+
   constructor(private db: Database) {}
-  
+
   async findById(id: string): Promise<Product | null> {
     // Check cache first
     const cached = this.cache.get(id);
     if (cached && Date.now() < cached.expiry) {
       return cached.product;
     }
-    
+
     // Fetch from database
     const product = await this.db.product.findUnique({ where: { id } });
-    
+
     if (product) {
       this.cache.set(id, {
         product,
         expiry: Date.now() + this.cacheTTL
       });
     }
-    
+
     return product;
   }
-  
+
   async save(product: Product): Promise<Product> {
     const saved = await this.db.product.upsert({
       where: { id: product.id },
       update: product,
       create: product
     });
-    
+
     // Invalidate cache
     this.cache.delete(product.id);
-    
+
     return saved;
   }
-  
+
   async findByCategory(category: string): Promise<Product[]> {
     const cacheKey = `category:${category}`;
     const cached = this.cache.get(cacheKey);
-    
+
     if (cached && Date.now() < cached.expiry) {
       return cached.product as any;
     }
-    
+
     const products = await this.db.product.findMany({
       where: { category }
     });
-    
+
     this.cache.set(cacheKey, {
       product: products as any,
       expiry: Date.now() + this.cacheTTL
     });
-    
+
     return products;
   }
-  
+
   async updateStock(id: string, quantity: number): Promise<Product> {
     const product = await this.findById(id);
     if (!product) {
       throw new Error('Product not found');
     }
-    
+
     return this.save({
       ...product,
       stock: product.stock + quantity
@@ -648,7 +648,7 @@ interface OrderItem {
 
 class OrderRepository {
   constructor(private prisma: PrismaClient) {}
-  
+
   async findById(id: string): Promise<Order | null> {
     const order = await this.prisma.order.findUnique({
       where: { id },
@@ -657,33 +657,33 @@ class OrderRepository {
         user: true
       }
     });
-    
+
     return order ? this.toDomain(order) : null;
   }
-  
+
   async findByUserId(userId: string): Promise<Order[]> {
     const orders = await this.prisma.order.findMany({
       where: { userId },
       include: { items: true },
       orderBy: { createdAt: 'desc' }
     });
-    
+
     return orders.map(o => this.toDomain(o));
   }
-  
+
   async findPendingOrders(): Promise<Order[]> {
     const orders = await this.prisma.order.findMany({
       where: { status: 'pending' },
       include: { items: true },
       orderBy: { createdAt: 'asc' }
     });
-    
+
     return orders.map(o => this.toDomain(o));
   }
-  
+
   async save(order: Order): Promise<Order> {
     const { items, ...orderData } = order;
-    
+
     const savedOrder = await this.prisma.order.upsert({
       where: { id: order.id },
       update: {
@@ -701,20 +701,20 @@ class OrderRepository {
       },
       include: { items: true }
     });
-    
+
     return this.toDomain(savedOrder);
   }
-  
+
   async updateStatus(id: string, status: Order['status']): Promise<Order | null> {
     const order = await this.prisma.order.update({
       where: { id },
       data: { status },
       include: { items: true }
     });
-    
+
     return this.toDomain(order);
   }
-  
+
   private toDomain(prismaOrder: any): Order {
     return {
       id: prismaOrder.id,
@@ -748,10 +748,10 @@ interface SearchResult<T> {
 
 class SearchableRepository<T extends Entity> {
   constructor(private items: T[] = []) {}
-  
+
   async search(criteria: SearchCriteria): Promise<SearchResult<T>> {
     let results = [...this.items];
-    
+
     // Apply text search
     if (criteria.query) {
       const query = criteria.query.toLowerCase();
@@ -760,7 +760,7 @@ class SearchableRepository<T extends Entity> {
         return searchableText.includes(query);
       });
     }
-    
+
     // Apply filters
     if (criteria.filters) {
       Object.entries(criteria.filters).forEach(([key, value]) => {
@@ -770,7 +770,7 @@ class SearchableRepository<T extends Entity> {
         });
       });
     }
-    
+
     // Apply sorting
     if (criteria.sort) {
       results.sort((a, b) => {
@@ -780,15 +780,15 @@ class SearchableRepository<T extends Entity> {
         return aVal > bVal ? order : -order;
       });
     }
-    
+
     const total = results.length;
-    
+
     // Apply pagination
     if (criteria.pagination) {
       const { page, limit } = criteria.pagination;
       const offset = (page - 1) * limit;
       results = results.slice(offset, offset + limit);
-      
+
       return {
         items: results,
         total,
@@ -797,7 +797,7 @@ class SearchableRepository<T extends Entity> {
         totalPages: Math.ceil(total / limit)
       };
     }
-    
+
     return {
       items: results,
       total,
@@ -806,16 +806,16 @@ class SearchableRepository<T extends Entity> {
       totalPages: 1
     };
   }
-  
+
   protected getSearchableText(item: T): string {
     // Override in subclasses to define searchable fields
     return JSON.stringify(item);
   }
-  
+
   async add(item: T): Promise<void> {
     this.items.push(item);
   }
-  
+
   async remove(id: string): Promise<boolean> {
     const index = this.items.findIndex(item => item.getId() === id);
     if (index !== -1) {
@@ -844,11 +844,11 @@ class BadRepository {
   async findById(id: string): Promise<any> {
     return this.db.find(id);
   }
-  
+
   async save(data: any): Promise<any> {
     return this.db.save(data);
   }
-  
+
   // No business logic, no query methods
 }
 ```
@@ -932,17 +932,17 @@ const adminUsers = await userRepo.find(new HasRoleSpecification('admin'));
 // ✅ GOOD - Transparent caching
 class CachedUserRepository implements UserRepository {
   private cache: Map<string, User> = new Map();
-  
+
   async findById(id: string): Promise<User | null> {
     if (this.cache.has(id)) {
       return this.cache.get(id)!;
     }
-    
+
     const user = await this.db.user.findUnique({ where: { id } });
     if (user) {
       this.cache.set(id, user);
     }
-    
+
     return user;
   }
 }

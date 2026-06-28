@@ -58,7 +58,7 @@ A: I profiled the system using Datadog APM and identified 3 bottlenecks:
    1. Synchronous database queries in the payment flow (12 queries per request)
    2. Missing Redis cache layer for repeated lookups
    3. Unoptimized JSON serialization
-   
+
    I implemented connection pooling, added a write-through Redis cache,
    and switched to class-transformer for serialization.
 
@@ -244,31 +244,31 @@ Every senior engineer should have stories for these scenarios:
 ```
 1. Technical Leadership
    "Tell me about a time you made a critical technical decision"
-   
+
 2. Conflict Resolution
    "Tell me about a time you disagreed with a teammate"
-   
+
 3. Failure & Recovery
    "Tell me about a time you made a mistake"
-   
+
 4. Mentoring
    "Tell me about a time you helped someone grow"
-   
+
 5. Cross-Team Collaboration
    "Tell me about a time you influenced without authority"
-   
+
 6. Ambiguity
    "Tell me about a time you had to work with unclear requirements"
-   
+
 7. Performance Optimization
    "Tell me about a time you significantly improved performance"
-   
+
 8. System Design Decision
    "Tell me about an architectural decision you made"
-   
+
 9. Process Improvement
    "Tell me about a time you improved how the team works"
-   
+
 10. Under Pressure
     "Tell me about a time you delivered under a tight deadline"
 ```

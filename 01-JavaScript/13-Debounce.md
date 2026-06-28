@@ -92,12 +92,12 @@ function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
-  
+
   return function(this: any, ...args: Parameters<T>) {
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
-    
+
     timeoutId = setTimeout(() => {
       func.apply(this, args);
       timeoutId = null;
@@ -129,9 +129,9 @@ function debounce<T extends (...args: any[]) => any>(
   let lastArgs: Parameters<T> | null = null;
   let lastThis: any = null;
   let lastCallTime: number = 0;
-  
+
   const { leading = false, trailing = true } = options;
-  
+
   function invokeFunc(time: number) {
     if (lastArgs && lastThis) {
       func.apply(lastThis, lastArgs);
@@ -139,23 +139,23 @@ function debounce<T extends (...args: any[]) => any>(
     lastArgs = lastThis = null;
     lastCallTime = time;
   }
-  
+
   return function(this: any, ...args: Parameters<T>) {
     const now = Date.now();
     const timeSinceLastCall = now - lastCallTime;
-    
+
     lastArgs = args;
     lastThis = this;
     lastCallTime = now;
-    
+
     if (timeSinceLastCall >= wait && leading) {
       invokeFunc(now);
     }
-    
+
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
-    
+
     if (trailing) {
       timeoutId = setTimeout(() => {
         invokeFunc(Date.now());
@@ -182,28 +182,28 @@ function debounce<T extends (...args: any[]) => any>(
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
   let lastArgs: Parameters<T> | null = null;
   let lastThis: any = null;
-  
+
   function invokeFunc() {
     if (lastArgs && lastThis) {
       func.apply(lastThis, lastArgs);
       lastArgs = lastThis = null;
     }
   }
-  
+
   const debounced = function(this: any, ...args: Parameters<T>) {
     lastArgs = args;
     lastThis = this;
-    
+
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
-    
+
     timeoutId = setTimeout(() => {
       invokeFunc();
       timeoutId = null;
     }, wait);
   };
-  
+
   debounced.cancel = function() {
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -211,7 +211,7 @@ function debounce<T extends (...args: any[]) => any>(
     }
     lastArgs = lastThis = null;
   };
-  
+
   debounced.flush = function() {
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -219,7 +219,7 @@ function debounce<T extends (...args: any[]) => any>(
       invokeFunc();
     }
   };
-  
+
   return debounced;
 }
 
@@ -243,13 +243,13 @@ function useDebounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
+
   return useCallback(
     (...args: Parameters<T>) => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-      
+
       timeoutRef.current = setTimeout(() => {
         func(...args);
       }, wait);
@@ -263,7 +263,7 @@ function SearchComponent() {
   const debouncedSearch = useDebounce((query: string) => {
     fetchSearchResults(query);
   }, 300);
-  
+
   return (
     <input
       type="text"
@@ -281,24 +281,24 @@ function SearchComponent() {
 function SearchInput() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-  
+
   const debouncedSearch = useDebounce(async (searchQuery: string) => {
     if (searchQuery.length < 2) {
       setResults([]);
       return;
     }
-    
+
     const response = await fetch(`/api/search?q=${searchQuery}`);
     const data = await response.json();
     setResults(data.results);
   }, 300);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
     debouncedSearch(value);
   };
-  
+
   return (
     <div>
       <input value={query} onChange={handleChange} />
@@ -320,7 +320,7 @@ function useWindowSize() {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  
+
   useEffect(() => {
     const handleResize = debounce(() => {
       setSize({
@@ -328,14 +328,14 @@ function useWindowSize() {
         height: window.innerHeight
       });
     }, 250);
-    
+
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
       handleResize.cancel();
     };
   }, []);
-  
+
   return size;
 }
 ```
@@ -346,27 +346,27 @@ function useWindowSize() {
 function Form() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  
+
   const validateEmail = useDebounce(async (value: string) => {
     if (!value) {
       setError('');
       return;
     }
-    
+
     const response = await fetch(`/api/validate-email?email=${value}`);
     const data = await response.json();
-    
+
     if (!data.valid) {
       setError('Invalid email address');
     }
   }, 500);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
     validateEmail(value);
   };
-  
+
   return (
     <div>
       <input value={email} onChange={handleChange} />
@@ -381,19 +381,19 @@ function Form() {
 ```typescript
 function useScrollPosition() {
   const [scrollY, setScrollY] = useState(0);
-  
+
   useEffect(() => {
     const handleScroll = debounce(() => {
       setScrollY(window.scrollY);
     }, 100);
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       handleScroll.cancel();
     };
   }, []);
-  
+
   return scrollY;
 }
 ```
@@ -403,7 +403,7 @@ function useScrollPosition() {
 ```typescript
 function SubmitButton() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleSubmit = useDebounce(async () => {
     setIsSubmitting(true);
     try {
@@ -412,7 +412,7 @@ function SubmitButton() {
       setIsSubmitting(false);
     }
   }, 1000);
-  
+
   return (
     <button onClick={handleSubmit} disabled={isSubmitting}>
       {isSubmitting ? 'Submitting...' : 'Submit'}
@@ -431,7 +431,7 @@ useEffect(() => {
   const handleResize = debounce(() => {
     setWidth(window.innerWidth);
   }, 250);
-  
+
   window.addEventListener('resize', handleResize);
   // Missing cleanup!
 }, []);
@@ -441,7 +441,7 @@ useEffect(() => {
   const handleResize = debounce(() => {
     setWidth(window.innerWidth);
   }, 250);
-  
+
   window.addEventListener('resize', handleResize);
   return () => {
     handleResize.cancel();
@@ -510,10 +510,10 @@ const resize = debounce(handleResize, 100);
 ```typescript
 useEffect(() => {
   const debouncedFn = debounce(fn, wait);
-  
+
   // Store reference for cleanup
   debouncedFnRef.current = debouncedFn;
-  
+
   return () => {
     debouncedFn.cancel();
   };

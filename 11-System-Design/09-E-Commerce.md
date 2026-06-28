@@ -454,23 +454,23 @@ class ProductCatalogService:
         self.db = db
         self.cache = cache
         self.search = search_engine
-    
+
     async def get_product(self, product_id: int) -> dict:
         # Check cache first
         cached = await self.cache.get_product(product_id)
         if cached:
             return cached
-        
+
         # Fetch from database
         product = await self.db.get_product(product_id)
-        
+
         if product:
             # Cache for future requests
             await self.cache.set_product(product_id, product)
-        
+
         return product
-    
-    async def search_products(self, query: str, 
+
+    async def search_products(self, query: str,
                              filters: dict = None,
                              sort: str = 'relevance',
                              page: int = 1,
@@ -484,34 +484,34 @@ class ProductCatalogService:
             from_=(page - 1) * limit,
             size=limit
         )
-        
+
         return {
             'products': results['hits'],
             'total': results['total'],
             'facets': results.get('facets', {})
         }
-    
-    async def update_stock(self, product_id: int, 
+
+    async def update_stock(self, product_id: int,
                           quantity_change: int) -> bool:
         # Atomic stock update
         result = await self.db.execute("""
-            UPDATE products 
+            UPDATE products
             SET stock_quantity = stock_quantity + %s,
                 updated_at = NOW()
             WHERE id = %s AND stock_quantity + %s >= 0
             RETURNING stock_quantity
         """, (quantity_change, product_id, quantity_change))
-        
+
         if result:
             # Invalidate cache
             await self.cache.invalidate_product(product_id)
-            
+
             # Check for low stock
             if result[0]['stock_quantity'] < 10:
                 await self.send_low_stock_alert(product_id)
-            
+
             return True
-        
+
         return False
 ```
 
@@ -522,19 +522,19 @@ class CartService:
         self.db = db
         self.redis = redis_client
         self.products = product_service
-    
+
     async def get_cart(self, user_id: int = None,
                        session_id: str = None) -> dict:
         # Get cart from Redis
         cart_key = self.get_cart_key(user_id, session_id)
         cart_data = await self.redis.get(cart_key)
-        
+
         if cart_data:
             return json.loads(cart_data)
-        
+
         # Initialize empty cart
         return {'items': [], 'total': 0}
-    
+
     async def add_to_cart(self, user_id: int = None,
                          session_id: str = None,
                          product_id: int = None,
@@ -543,21 +543,21 @@ class CartService:
         product = await self.products.get_product(product_id)
         if not product:
             raise ProductNotFoundError("Product not found")
-        
+
         # Check stock
         if product['stock_quantity'] < quantity:
             raise InsufficientStockError("Insufficient stock")
-        
+
         # Get current cart
         cart = await self.get_cart(user_id, session_id)
-        
+
         # Check if product already in cart
         existing_item = next(
-            (item for item in cart['items'] 
+            (item for item in cart['items']
              if item['product_id'] == product_id),
             None
         )
-        
+
         if existing_item:
             existing_item['quantity'] += quantity
         else:
@@ -567,45 +567,45 @@ class CartService:
                 'price': product['price'],
                 'quantity': quantity
             })
-        
+
         # Calculate total
         cart['total'] = sum(
-            item['price'] * item['quantity'] 
+            item['price'] * item['quantity']
             for item in cart['items']
         )
-        
+
         # Save to Redis
         cart_key = self.get_cart_key(user_id, session_id)
         await self.redis.setex(
             cart_key, 86400, json.dumps(cart)  # 24 hours TTL
         )
-        
+
         return cart
-    
+
     async def remove_from_cart(self, user_id: int = None,
                               session_id: str = None,
                               product_id: int = None) -> dict:
         cart = await self.get_cart(user_id, session_id)
-        
+
         cart['items'] = [
-            item for item in cart['items'] 
+            item for item in cart['items']
             if item['product_id'] != product_id
         ]
-        
+
         # Recalculate total
         cart['total'] = sum(
-            item['price'] * item['quantity'] 
+            item['price'] * item['quantity']
             for item in cart['items']
         )
-        
+
         # Save to Redis
         cart_key = self.get_cart_key(user_id, session_id)
         await self.redis.setex(
             cart_key, 86400, json.dumps(cart)
         )
-        
+
         return cart
-    
+
     def get_cart_key(self, user_id: int = None,
                     session_id: str = None) -> str:
         if user_id:
@@ -624,17 +624,17 @@ class CheckoutService:
         self.payments = payment_service
         self.orders = order_service
         self.notifications = notification_service
-    
-    async def checkout(self, user_id: int, 
+
+    async def checkout(self, user_id: int,
                       shipping_address: dict,
                       payment_method: dict,
                       promotion_code: str = None) -> dict:
         # Get cart
         cart = await self.cart.get_cart(user_id=user_id)
-        
+
         if not cart['items']:
             raise EmptyCartError("Cart is empty")
-        
+
         # Validate inventory
         for item in cart['items']:
             available = await self.inventory.check_availability(
@@ -644,33 +644,33 @@ class CheckoutService:
                 raise InsufficientStockError(
                     f"Insufficient stock for {item['name']}"
                 )
-        
+
         # Apply promotion if provided
         discount = 0
         if promotion_code:
             discount = await self.apply_promotion(
                 promotion_code, cart['total']
             )
-        
+
         # Calculate totals
         subtotal = cart['total']
         tax = self.calculate_tax(subtotal, shipping_address['country'])
         shipping_cost = self.calculate_shipping(shipping_address)
         total = subtotal + tax + shipping_cost - discount
-        
+
         # Reserve inventory
         for item in cart['items']:
             await self.inventory.reserve(
                 item['product_id'], item['quantity']
             )
-        
+
         # Process payment
         payment = await self.payments.process_payment(
             amount=total,
             method=payment_method,
             reference=f"checkout_{user_id}"
         )
-        
+
         if payment['status'] != 'success':
             # Release reserved inventory
             for item in cart['items']:
@@ -678,7 +678,7 @@ class CheckoutService:
                     item['product_id'], item['quantity']
                 )
             raise PaymentFailedError("Payment failed")
-        
+
         # Create order
         order = await self.orders.create_order(
             user_id=user_id,
@@ -691,23 +691,23 @@ class CheckoutService:
             shipping_address=shipping_address,
             payment_id=payment['id']
         )
-        
+
         # Update inventory (confirm reservation)
         for item in cart['items']:
             await self.inventory.confirm_reservation(
                 item['product_id'], item['quantity']
             )
-        
+
         # Clear cart
         await self.cart.clear_cart(user_id=user_id)
-        
+
         # Send confirmation
         await self.notifications.send_order_confirmation(
             user_id, order
         )
-        
+
         return order
-    
+
     def calculate_tax(self, subtotal: float, country: str) -> float:
         tax_rates = {
             'US': 0.08,
@@ -717,7 +717,7 @@ class CheckoutService:
         }
         rate = tax_rates.get(country, 0.10)
         return round(subtotal * rate, 2)
-    
+
     def calculate_shipping(self, address: dict) -> float:
         # Simple shipping calculation
         if address['country'] == 'US':
@@ -732,21 +732,21 @@ class InventoryService:
         self.db = db
         self.redis = redis_client
         self.notifications = notification_service
-    
+
     async def check_availability(self, product_id: int,
                                 quantity: int) -> bool:
         # Check Redis cache first
         stock = await self.redis.get(f"stock:{product_id}")
-        
+
         if stock is not None:
             return int(stock) >= quantity
-        
+
         # Check database
         result = await self.db.execute("""
             SELECT stock_quantity FROM products
             WHERE id = %s
         """, (product_id,))
-        
+
         if result:
             available = result[0]['stock_quantity']
             # Cache for 5 minutes
@@ -754,56 +754,56 @@ class InventoryService:
                 f"stock:{product_id}", 300, available
             )
             return available >= quantity
-        
+
         return False
-    
+
     async def reserve(self, product_id: int, quantity: int) -> bool:
         # Atomic reservation
         result = await self.db.execute("""
-            UPDATE products 
+            UPDATE products
             SET stock_quantity = stock_quantity - %s
             WHERE id = %s AND stock_quantity >= %s
             RETURNING stock_quantity
         """, (quantity, product_id, quantity))
-        
+
         if result:
             # Update cache
             await self.redis.set(
-                f"stock:{product_id}", 
+                f"stock:{product_id}",
                 result[0]['stock_quantity']
             )
-            
+
             # Log transaction
             await self.db.execute("""
-                INSERT INTO inventory_transactions 
+                INSERT INTO inventory_transactions
                 (product_id, transaction_type, quantity)
                 VALUES (%s, 'reservation', %s)
             """, (product_id, quantity))
-            
+
             return True
-        
+
         return False
-    
+
     async def release(self, product_id: int, quantity: int):
         await self.db.execute("""
-            UPDATE products 
+            UPDATE products
             SET stock_quantity = stock_quantity + %s
             WHERE id = %s
         """, (quantity, product_id))
-        
+
         # Update cache
         stock = await self.db.get_stock(product_id)
         await self.redis.set(f"stock:{product_id}", stock)
-    
-    async def confirm_reservation(self, product_id: int, 
+
+    async def confirm_reservation(self, product_id: int,
                                  quantity: int):
         # Log sale
         await self.db.execute("""
-            INSERT INTO inventory_transactions 
+            INSERT INTO inventory_transactions
             (product_id, transaction_type, quantity)
             VALUES (%s, 'sale', %s)
         """, (product_id, quantity))
-        
+
         # Check for low stock
         stock = await self.db.get_stock(product_id)
         if stock < 10:
@@ -818,31 +818,31 @@ class ProductCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 300  # 5 minutes
-    
+
     async def get_product(self, product_id: int) -> dict:
         key = f"product:{product_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_product(self, product_id: int, product: dict):
         key = f"product:{product_id}"
         await self.redis.setex(key, self.ttl, json.dumps(product))
-    
+
     async def invalidate_product(self, product_id: int):
         await self.redis.delete(f"product:{product_id}")
-    
+
     async def cache_popular_products(self, category_id: int,
                                     products: list):
         key = f"popular:{category_id}"
         await self.redis.delete(key)
-        
+
         for i, product in enumerate(products):
             await self.redis.zadd(key, {json.dumps(product): -i})
-        
+
         await self.redis.expire(key, 3600)  # 1 hour
 ```
 
@@ -852,16 +852,16 @@ class CartCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 86400  # 24 hours
-    
+
     async def get_cart(self, user_id: int) -> dict:
         key = f"cart:{user_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_cart(self, user_id: int, cart: dict):
         key = f"cart:{user_id}"
         await self.redis.setex(key, self.ttl, json.dumps(cart))
@@ -903,23 +903,23 @@ class OrderEventProcessor:
         self.consumer = kafka_consumer
         self.notifications = notification_service
         self.inventory = inventory_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'order.created':
                 await self.handle_order_created(event)
             elif event['event_type'] == 'order.shipped':
                 await self.handle_order_shipped(event)
-    
+
     async def handle_order_created(self, event: dict):
         # Send confirmation email
         await self.notifications.send_order_confirmation(
             event['data']['user_id'],
             event['data']
         )
-        
+
         # Update analytics
         await self.update_analytics(event)
 ```
@@ -948,13 +948,13 @@ Architecture:
 class EcommerceDatabaseScaler:
     def __init__(self):
         self.shards = 16
-    
+
     def get_product_shard(self, product_id: int) -> int:
         return product_id % self.shards
-    
+
     def get_user_shard(self, user_id: int) -> int:
         return (user_id * 7) % self.shards
-    
+
     def get_order_shard(self, order_id: int) -> int:
         return order_id % self.shards
 ```
@@ -966,11 +966,11 @@ class SearchServiceScaler:
         self.elasticsearch_cluster = [
             'es1:9200', 'es2:9200', 'es3:9200'
         ]
-    
+
     async def search(self, query: str, index: str):
         # Use Elasticsearch with replicas
         client = self.get_client()
-        
+
         results = await client.search(
             index=index,
             body={
@@ -982,7 +982,7 @@ class SearchServiceScaler:
                 }
             }
         )
-        
+
         return results
 ```
 
@@ -994,33 +994,33 @@ class InventoryProtection:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
-    async def safe_reserve(self, product_id: int, 
+
+    async def safe_reserve(self, product_id: int,
                           quantity: int) -> bool:
         # Use distributed lock
         lock_key = f"inventory_lock:{product_id}"
-        
+
         # Try to acquire lock
         lock_acquired = await self.redis.set(
             lock_key, "1", nx=True, ex=10
         )
-        
+
         if not lock_acquired:
             # Wait and retry
             await asyncio.sleep(0.1)
             return await self.safe_reserve(product_id, quantity)
-        
+
         try:
             # Check and reserve atomically
             result = await self.db.execute("""
-                UPDATE products 
+                UPDATE products
                 SET stock_quantity = stock_quantity - %s
                 WHERE id = %s AND stock_quantity >= %s
                 RETURNING stock_quantity
             """, (quantity, product_id, quantity))
-            
+
             return result is not None
-            
+
         finally:
             await self.redis.delete(lock_key)
 ```
@@ -1040,22 +1040,22 @@ class OrderRecovery:
     def __init__(self, db, kafka_client):
         self.db = db
         self.kafka = kafka_client
-    
+
     async def recover_stuck_orders(self):
         # Find orders stuck in 'pending' state
         stuck_orders = await self.db.execute("""
-            SELECT * FROM orders 
-            WHERE status = 'pending' 
+            SELECT * FROM orders
+            WHERE status = 'pending'
             AND created_at < NOW() - INTERVAL '5 minutes'
         """)
-        
+
         for order in stuck_orders:
             await self.process_stuck_order(order)
-    
+
     async def process_stuck_order(self, order: dict):
         # Check payment status
         payment = await self.db.get_payment(order['payment_id'])
-        
+
         if payment['status'] == 'failed':
             # Cancel order
             await self.cancel_order(order['id'])
@@ -1093,15 +1093,15 @@ alerts:
   - name: High Cart Abandonment
     condition: cart_abandonment_rate > 70%
     severity: warning
-    
+
   - name: Inventory Overselling
     condition: negative_stock_count > 0
     severity: critical
-    
+
   - name: Checkout Failures High
     condition: checkout_failure_rate > 5%
     severity: critical
-    
+
   - name: Search Latency High
     condition: p95_search_latency > 500ms
     severity: warning

@@ -330,25 +330,25 @@ class AdaptiveBitrateService:
             '480p': {'bitrate': 2500, 'resolution': '854x480'},
             '360p': {'bitrate': 1000, 'resolution': '640x360'}
         }
-    
-    def select_bitrate(self, bandwidth_bps: float, 
+
+    def select_bitrate(self, bandwidth_bps: float,
                        device_capability: dict) -> str:
         # Select highest quality that fits bandwidth
         for quality, profile in self.bitrate_profiles.items():
             if (profile['bitrate'] * 1000 <= bandwidth_bps and
                 self.meets_device_capability(profile, device_capability)):
                 return quality
-        
+
         return '360p'  # Fallback to lowest quality
-    
-    def generate_manifest(self, content_id: str, 
+
+    def generate_manifest(self, content_id: str,
                          qualities: list) -> dict:
         # Generate DASH/HLS manifest with multiple quality levels
         manifest = {
             'versions': ['DASH', 'HLS'],
             'qualities': []
         }
-        
+
         for quality in qualities:
             profile = self.bitrate_profiles[quality]
             manifest['qualities'].append({
@@ -357,7 +357,7 @@ class AdaptiveBitrateService:
                 'resolution': profile['resolution'],
                 'url': f'https://manifests.example.com/{content_id}/{quality}/manifest.mpd'
             })
-        
+
         return manifest
 ```
 
@@ -367,26 +367,26 @@ class CDNService:
     def __init__(self):
         self.edge_servers = {}  # region -> edge_server
         self.origin_servers = {}  # region -> origin_server
-    
-    async def get_content_url(self, content_id: str, 
+
+    async def get_content_url(self, content_id: str,
                               user_region: str) -> str:
         # Check if content is cached at edge
         edge_server = self.get_nearest_edge(user_region)
-        
+
         if await self.is_cached(edge_server, content_id):
             return f"https://{edge_server}/content/{content_id}"
-        
+
         # Cache miss - fetch from origin and cache
         origin_url = await self.fetch_from_origin(content_id)
         await self.cache_at_edge(edge_server, content_id, origin_url)
-        
+
         return origin_url
-    
+
     def get_nearest_edge(self, region: str) -> str:
         # Use GeoDNS to route to nearest edge
         return self.edge_servers.get(region, 'us-east.edge')
-    
-    async def prefetch_content(self, content_ids: list, 
+
+    async def prefetch_content(self, content_ids: list,
                                region: str):
         # Predictive prefetching based on popularity
         for content_id in content_ids:
@@ -407,8 +407,8 @@ class TranscodingPipeline:
             {'codec': 'h264', 'quality': '480p', 'bitrate': 2500},
             {'codec': 'h264', 'quality': '360p', 'bitrate': 1000},
         ]
-    
-    async def transcode_content(self, source_url: str, 
+
+    async def transcode_content(self, source_url: str,
                                 content_id: str) -> dict:
         tasks = []
         for fmt in self.formats:
@@ -416,15 +416,15 @@ class TranscodingPipeline:
                 self.transcode_single(source_url, content_id, fmt)
             )
             tasks.append(task)
-        
+
         results = await asyncio.gather(*tasks)
         return {r['quality']: r['url'] for r in results}
-    
+
     async def transcode_single(self, source_url: str,
                                content_id: str, format: dict) -> dict:
         # Use FFmpeg or cloud transcoding service
         output_url = f"s3://content/{content_id}/{format['quality']}/"
-        
+
         await self.ffmpeg.transcode(
             input=source_url,
             output=output_url,
@@ -432,7 +432,7 @@ class TranscodingPipeline:
             bitrate=f"{format['bitrate']}k",
             preset='medium'
         )
-        
+
         return {
             'quality': format['quality'],
             'url': output_url,
@@ -447,26 +447,26 @@ class RecommendationEngine:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
-    async def get_recommendations(self, profile_id: str, 
+
+    async def get_recommendations(self, profile_id: str,
                                   limit: int = 20) -> list:
         # Get user preferences
         preferences = await self.get_user_preferences(profile_id)
-        
+
         # Get collaborative filtering results
         cf_results = await self.collaborative_filtering(profile_id)
-        
+
         # Get content-based results
         cb_results = await self.content_based_filtering(preferences)
-        
+
         # Combine and rank
         combined = self.merge_results(cf_results, cb_results)
-        
+
         # Apply business rules (diversity, freshness)
         final = self.apply_business_rules(combined, profile_id)
-        
+
         return final[:limit]
-    
+
     async def collaborative_filtering(self, profile_id: str) -> list:
         # Find users with similar viewing patterns
         similar_users = await self.db.execute("""
@@ -476,7 +476,7 @@ class RecommendationEngine:
             ORDER BY similarity DESC
             LIMIT 100
         """, (profile_id,))
-        
+
         # Get content watched by similar users
         recommendations = await self.db.execute("""
             SELECT content_id, COUNT(*) as watch_count
@@ -493,13 +493,13 @@ class RecommendationEngine:
             ORDER BY watch_count DESC
             LIMIT 50
         """, (profile_id, profile_id))
-        
+
         return recommendations
-    
+
     async def content_based_filtering(self, preferences: dict) -> list:
         # Recommend content similar to what user likes
         genres = preferences.get('favorite_genres', [])
-        
+
         recommendations = await self.db.execute("""
             SELECT id, title, genres
             FROM content
@@ -511,7 +511,7 @@ class RecommendationEngine:
             ORDER BY release_year DESC, imdb_rating DESC
             LIMIT 50
         """, (genres, preferences['profile_id']))
-        
+
         return recommendations
 ```
 
@@ -522,24 +522,24 @@ class RecommendationEngine:
 class ContentCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def cache_content_metadata(self, content_id: str, 
+
+    async def cache_content_metadata(self, content_id: str,
                                      metadata: dict):
         key = f"content:{content_id}"
         await self.redis.hset(key, mapping=metadata)
         await self.redis.expire(key, 86400)  # 24 hours
-    
+
     async def get_content_metadata(self, content_id: str) -> dict:
         key = f"content:{content_id}"
         return await self.redis.hgetall(key)
-    
+
     async def cache_trending(self, region: str, content_ids: list):
         key = f"trending:{region}"
         await self.redis.delete(key)
         for i, content_id in enumerate(content_ids):
             await self.redis.zadd(key, {content_id: -i})  # Score by rank
         await self.redis.expire(key, 3600)  # 1 hour
-    
+
     async def get_trending(self, region: str, limit: int = 20) -> list:
         key = f"trending:{region}"
         return await self.redis.zrange(key, 0, limit - 1)
@@ -550,19 +550,19 @@ class ContentCache:
 class SessionCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def create_session(self, session_id: str, 
+
+    async def create_session(self, session_id: str,
                              user_data: dict):
         key = f"session:{session_id}"
         await self.redis.hset(key, mapping=user_data)
         await self.redis.expire(key, 1800)  # 30 minutes
-    
+
     async def get_session(self, session_id: str) -> dict:
         key = f"session:{session_id}"
         return await self.redis.hgetall(key)
-    
+
     async def update_watch_progress(self, session_id: str,
-                                    content_id: str, 
+                                    content_id: str,
                                     progress: int):
         key = f"watch_progress:{session_id}:{content_id}"
         await self.redis.setex(key, 86400, progress)  # 24 hours
@@ -604,16 +604,16 @@ class ViewingEventProcessor:
         self.consumer = kafka_consumer
         self.db = db
         self.recommendations = recommendation_engine
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'content.viewed':
                 await self.handle_viewing_event(event)
             elif event['event_type'] == 'content.completed':
                 await self.handle_completion_event(event)
-    
+
     async def handle_viewing_event(self, event: dict):
         # Update watch history
         await self.db.update_watch_progress(
@@ -621,7 +621,7 @@ class ViewingEventProcessor:
             event['content_id'],
             event['data']['progress_seconds']
         )
-        
+
         # Update recommendation model
         await self.recommendations.update_user_profile(
             event['profile_id'],
@@ -683,26 +683,26 @@ Search: Elasticsearch cluster
 class StreamingServiceScaler:
     def __init__(self):
         self.sessions = {}  # session_id -> server_id
-    
+
     async def handle_playback_request(self, request: dict):
         # Route to least loaded server
         server = await self.get_least_loaded_server()
-        
+
         # Create streaming session
         session = await self.create_session(server, request)
-        
+
         # Return CDN URL for content
         cdn_url = await self.cdn.get_content_url(
             request['content_id'],
             request['user_region']
         )
-        
+
         return {
             'session_id': session['id'],
             'stream_url': cdn_url,
             'server': server
         }
-    
+
     async def get_least_loaded_server(self) -> str:
         # Use load balancer with health checks
         servers = await self.get_healthy_servers()
@@ -717,25 +717,25 @@ class PlaybackRecovery:
     def __init__(self):
         self.max_retries = 3
         self.retry_delays = [1, 3, 5]
-    
+
     async def handle_playback_error(self, session_id: str,
                                     error: Exception):
         # Log error
         logger.error(f"Playback error: {error}")
-        
+
         # Determine error type
         if isinstance(error, CDNError):
             # Switch to backup CDN
             return await self.switch_to_backup_cdn(session_id)
-        
+
         elif isinstance(error, DRMError):
             # Refresh DRM token
             return await self.refresh_drm_token(session_id)
-        
+
         elif isinstance(error, BandwidthError):
             # Reduce quality
             return await self.reduce_quality(session_id)
-        
+
         # Generic retry
         for attempt in range(self.max_retries):
             try:
@@ -743,7 +743,7 @@ class PlaybackRecovery:
                 return await self.retry_playback(session_id)
             except Exception:
                 continue
-        
+
         # All retries failed
         return await self.graceful_degradation(session_id)
 ```
@@ -762,7 +762,7 @@ class PlaybackRecovery:
 class GracefulDegradation:
     def __init__(self):
         self.fallback_content = {}  # region -> popular content
-    
+
     async def get_content_with_fallback(self, content_id: str,
                                        region: str) -> dict:
         try:
@@ -773,7 +773,7 @@ class GracefulDegradation:
             cached = await self.cache.get_content(content_id)
             if cached:
                 return cached
-            
+
             # Last resort: serve popular content
             return await self.get_popular_content(region)
 ```
@@ -810,15 +810,15 @@ alerts:
   - name: High Rebuffer Rate
     condition: rebuffer_rate > 1%
     severity: critical
-    
+
   - name: CDN Cache Hit Low
     condition: cache_hit_ratio < 95%
     severity: warning
-    
+
   - name: Encoding Queue Backlog
     condition: encoding_queue > 1000
     severity: warning
-    
+
   - name: Playback Start Slow
     condition: p95_start_time > 5s
     severity: critical

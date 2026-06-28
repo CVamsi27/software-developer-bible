@@ -412,36 +412,36 @@ class OddsService:
         self.redis = redis_client
         self.websocket = websocket_manager
         self.odds_update_interval = 1  # seconds
-    
+
     async def start_odds_updates(self):
         # Background task to update odds
         while True:
             try:
                 # Get all live events
                 live_events = await self.db.get_live_events()
-                
+
                 for event in live_events:
                     # Calculate new odds
                     new_odds = await self.calculate_odds(event)
-                    
+
                     # Update in database
                     await self.update_odds(event['id'], new_odds)
-                    
+
                     # Broadcast to connected clients
                     await self.broadcast_odds(event['id'], new_odds)
-                
+
                 await asyncio.sleep(self.odds_update_interval)
-                
+
             except Exception as e:
                 logger.error(f"Odds update error: {e}")
-    
+
     async def calculate_odds(self, event: dict) -> dict:
         # Get current market data
         markets = await self.db.get_event_markets(event['id'])
-        
+
         # Apply margin (bookmaker's edge)
         margin = 0.05  # 5% margin
-        
+
         for market in markets:
             for outcome in market['outcomes']:
                 # Adjust odds based on:
@@ -449,25 +449,25 @@ class OddsService:
                 # 2. Time remaining
                 # 3. Team form
                 # 4. Market liquidity
-                
+
                 base_odds = await self.get_base_odds(outcome)
                 adjusted = base_odds * (1 - margin)
-                
+
                 outcome['odds'] = round(adjusted, 2)
-        
+
         return markets
-    
+
     async def broadcast_odds(self, event_id: int, markets: dict):
         # Get all connected clients watching this event
         clients = await self.websocket.get_event_clients(event_id)
-        
+
         message = {
             'type': 'odds_update',
             'event_id': event_id,
             'markets': markets,
             'timestamp': datetime.now().isoformat()
         }
-        
+
         for client in clients:
             await client.send(json.dumps(message))
 ```
@@ -482,36 +482,36 @@ class BettingService:
         self.odds = odds_service
         self.wallet = wallet_service
         self.fraud = fraud_service
-    
+
     async def place_bet(self, user_id: int, bet_data: dict) -> dict:
         # Validate bet
         await self.validate_bet(user_id, bet_data)
-        
+
         # Check responsible gambling limits
         await self.check_gambling_limits(user_id, bet_data['amount'])
-        
+
         # Fraud check
         fraud_result = await self.fraud.check_bet(user_id, bet_data)
         if fraud_result['action'] == 'block':
             raise FraudDetectedError("Bet blocked")
-        
+
         # Get current odds
         current_odds = await self.odds.get_odds(
             bet_data['outcome_id']
         )
-        
+
         # Lock odds for this bet
         locked_odds = await self.lock_odds(
             bet_data['outcome_id'], bet_data['amount']
         )
-        
+
         # Debit wallet
         await self.wallet.debit(
-            user_id, 
+            user_id,
             bet_data['amount'],
             reference_type='bet'
         )
-        
+
         # Create bet
         bet = await self.db.create_bet(
             user_id=user_id,
@@ -523,80 +523,80 @@ class BettingService:
             potential_payout=bet_data['amount'] * locked_odds,
             bet_type=bet_data.get('bet_type', 'single')
         )
-        
+
         return {
             'bet_id': bet['id'],
             'status': 'accepted',
             'odds': locked_odds,
             'potential_payout': bet['potential_payout']
         }
-    
+
     async def validate_bet(self, user_id: int, bet_data: dict):
         # Check event is live
         event = await self.db.get_event(bet_data['event_id'])
         if not event['is_live']:
             raise InvalidBetError("Event is not live")
-        
+
         # Check market is open
         market = await self.db.get_market(bet_data['market_id'])
         if market['status'] != 'open':
             raise InvalidBetError("Market is closed")
-        
+
         # Check outcome is active
         outcome = await self.db.get_outcome(bet_data['outcome_id'])
         if outcome['status'] != 'active':
             raise InvalidBetError("Outcome is not active")
-        
+
         # Check minimum/maximum bet
         min_bet = 1.00
         max_bet = 10000.00
-        
+
         if bet_data['amount'] < min_bet:
             raise InvalidBetError(f"Minimum bet is {min_bet}")
-        
+
         if bet_data['amount'] > max_bet:
             raise InvalidBetError(f"Maximum bet is {max_bet}")
-    
+
     async def cash_out(self, bet_id: int, user_id: int) -> dict:
         bet = await self.db.get_bet(bet_id)
-        
+
         if bet['user_id'] != user_id:
             raise PermissionError("Not your bet")
-        
+
         if bet['status'] != 'open':
             raise InvalidBetError("Bet is not open")
-        
+
         # Calculate cash out value
         cashout_value = await self.calculate_cashout(bet)
-        
+
         # Credit wallet
         await self.wallet.credit(
             user_id,
             cashout_value,
             reference_type='cashout'
         )
-        
+
         # Update bet status
         await self.db.update_bet_status(
             bet_id, 'cashed_out', cashout_value
         )
-        
+
         return {
             'bet_id': bet_id,
             'cashout_amount': cashout_value,
             'status': 'cashed_out'
         }
-    
+
     async def calculate_cashout(self, bet: dict) -> float:
         # Get current odds
         current_odds = await self.odds.get_odds(bet['outcome_id'])
-        
+
         # Calculate implied probability
         implied_prob = 1 / current_odds
-        
+
         # Cash out value = original stake × (current odds / original odds)
         cashout = bet['amount'] * (current_odds / bet['odds'])
-        
+
         # Apply cash out margin
         cashout_margin = 0.90  # 10% margin
         return round(cashout * cashout_margin, 2)
@@ -609,40 +609,40 @@ class SettlementService:
         self.db = db
         self.wallet = wallet_service
         self.notifications = notification_service
-    
+
     async def settle_event(self, event_id: int):
         # Get all open bets for this event
         bets = await self.db.get_open_bets(event_id)
-        
+
         # Get event results
         event = await self.db.get_event(event_id)
-        
+
         for bet in bets:
             try:
                 await self.settle_bet(bet, event)
             except Exception as e:
                 logger.error(f"Settlement failed for bet {bet['id']}: {e}")
-    
+
     async def settle_bet(self, bet: dict, event: dict):
         # Determine if bet won
         outcome = await self.db.get_outcome(bet['outcome_id'])
-        
+
         if outcome['is_winner']:
             # Calculate payout
             payout = bet['potential_payout']
-            
+
             # Credit wallet
             await self.wallet.credit(
                 bet['user_id'],
                 payout,
                 reference_type='payout'
             )
-            
+
             # Update bet status
             await self.db.settle_bet(
                 bet['id'], 'win', payout
             )
-            
+
             # Notify user
             await self.notifications.send_win_notification(
                 bet['user_id'], bet, payout
@@ -652,17 +652,17 @@ class SettlementService:
             await self.db.settle_bet(
                 bet['id'], 'loss', 0
             )
-    
+
     async def void_bet(self, bet_id: int, reason: str):
         bet = await self.db.get_bet(bet_id)
-        
+
         # Refund stake
         await self.wallet.credit(
             bet['user_id'],
             bet['amount'],
             reference_type='refund'
         )
-        
+
         # Update bet status
         await self.db.settle_bet(bet_id, 'void', bet['amount'])
 ```
@@ -677,47 +677,47 @@ class WebSocketManager:
     def __init__(self):
         # event_id -> set of websockets
         self.connections: Dict[int, Set] = {}
-    
+
     async def connect(self, websocket, event_id: int):
         if event_id not in self.connections:
             self.connections[event_id] = set()
-        
+
         self.connections[event_id].add(websocket)
-    
+
     async def disconnect(self, websocket, event_id: int):
         if event_id in self.connections:
             self.connections[event_id].discard(websocket)
-            
+
             if not self.connections[event_id]:
                 del self.connections[event_id]
-    
+
     async def broadcast_odds(self, event_id: int, odds_data: dict):
         if event_id not in self.connections:
             return
-        
+
         message = json.dumps({
             'type': 'odds_update',
             'event_id': event_id,
             'data': odds_data
         })
-        
+
         for websocket in self.connections[event_id]:
             try:
                 await websocket.send(message)
             except websockets.ConnectionClosed:
                 await self.disconnect(websocket, event_id)
-    
-    async def broadcast_event_update(self, event_id: int, 
+
+    async def broadcast_event_update(self, event_id: int,
                                      event_data: dict):
         if event_id not in self.connections:
             return
-        
+
         message = json.dumps({
             'type': 'event_update',
             'event_id': event_id,
             'data': event_data
         })
-        
+
         for websocket in self.connections[event_id]:
             try:
                 await websocket.send(message)
@@ -733,29 +733,29 @@ class OddsCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 5  # 5 seconds for live odds
-    
+
     async def get_odds(self, outcome_id: int) -> float:
         key = f"odds:{outcome_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return float(cached)
-        
+
         return None
-    
+
     async def set_odds(self, outcome_id: int, odds: float):
         key = f"odds:{outcome_id}"
         await self.redis.setex(key, self.ttl, odds)
-    
+
     async def get_all_odds(self, event_id: int) -> dict:
         key = f"event_odds:{event_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_all_odds(self, event_id: int, odds: dict):
         key = f"event_odds:{event_id}"
         await self.redis.setex(key, self.ttl, json.dumps(odds))
@@ -766,22 +766,22 @@ class OddsCache:
 class BettingSessionCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def track_user_session(self, user_id: int, 
+
+    async def track_user_session(self, user_id: int,
                                  event_id: int):
         key = f"session:{user_id}:{event_id}"
         await self.redis.setex(key, 3600, "1")  # 1 hour
-    
+
     async def get_user_events(self, user_id: int) -> list:
         pattern = f"session:{user_id}:*"
         keys = await self.redis.keys(pattern)
-        
+
         event_ids = []
         for key in keys:
             parts = key.split(':')
             if len(parts) == 3:
                 event_ids.append(int(parts[2]))
-        
+
         return event_ids
 ```
 
@@ -822,20 +822,20 @@ class BettingEventProcessor:
         self.consumer = kafka_consumer
         self.settlement = settlement_service
         self.notifications = notification_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'event.ended':
                 await self.handle_event_ended(event)
             elif event['event_type'] == 'bet.placed':
                 await self.handle_bet_placed(event)
-    
+
     async def handle_event_ended(self, event: dict):
         # Settle all bets for this event
         await self.settlement.settle_event(event['data']['event_id'])
-    
+
     async def handle_bet_placed(self, event: dict):
         # Notify user of bet confirmation
         await self.notifications.send_bet_confirmation(
@@ -868,10 +868,10 @@ Architecture:
 class BettingDatabaseScaler:
     def __init__(self):
         self.shards = 16
-    
+
     def get_user_shard(self, user_id: int) -> int:
         return user_id % self.shards
-    
+
     def get_event_shard(self, event_id: int) -> int:
         return event_id % self.shards
 ```
@@ -881,11 +881,11 @@ class BettingDatabaseScaler:
 class WebSocketScaler:
     def __init__(self):
         self.servers = []  # Multiple WebSocket servers
-    
+
     async def handle_connection(self, websocket, event_id):
         # Route to least loaded server
         server = self.get_least_loaded_server()
-        
+
         # Register connection
         await server.register(websocket, event_id)
 ```
@@ -897,28 +897,28 @@ class WebSocketScaler:
 class OddsLockManager:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def lock_odds(self, outcome_id: int, 
+
+    async def lock_odds(self, outcome_id: int,
                        amount: float) -> float:
         lock_key = f"odds_lock:{outcome_id}"
-        
+
         # Get current odds
         odds = await self.redis.get(f"odds:{outcome_id}")
-        
+
         if not odds:
             raise OddsUnavailableError("Odds not available")
-        
+
         # Lock odds for this bet
         locked = await self.redis.set(
             lock_key, amount, nx=True, ex=30
         )
-        
+
         if not locked:
             # Someone else is betting on same outcome
             # Wait and retry
             await asyncio.sleep(0.1)
             return await self.lock_odds(outcome_id, amount)
-        
+
         return float(odds)
 ```
 
@@ -937,18 +937,18 @@ class BetConflictResolver:
     def __init__(self, redis_client, db):
         self.redis = redis_client
         self.db = db
-    
+
     async def resolve_conflict(self, bet_data: dict) -> dict:
         # Check for duplicate bet
         key = f"bet_dedup:{bet_data['user_id']}:{bet_data['outcome_id']}"
-        
+
         exists = await self.redis.exists(key)
         if exists:
             raise DuplicateBetError("Duplicate bet detected")
-        
+
         # Mark as processing
         await self.redis.setex(key, 10, "1")  # 10 second window
-        
+
         # Process bet
         return await self.process_bet(bet_data)
 ```
@@ -984,15 +984,15 @@ alerts:
   - name: High Odds Update Latency
     condition: p99_odds_latency > 100ms
     severity: critical
-    
+
   - name: Bet Processing Slow
     condition: p95_bet_latency > 500ms
     severity: warning
-    
+
   - name: Settlement Backlog
     condition: settlement_queue > 1000
     severity: warning
-    
+
   - name: Fraud Detection Spike
     condition: fraud_alerts > 100
     severity: critical

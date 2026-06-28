@@ -374,7 +374,7 @@ class IdempotencyService:
     def __init__(self, redis_client: Redis):
         self.redis = redis_client
         self.ttl = 86400  # 24 hours
-    
+
     def generate_idempotency_key(self, request: dict) -> str:
         # Create deterministic key from request
         key_data = {
@@ -384,18 +384,18 @@ class IdempotencyService:
             'customer_id': request.get('customer_id'),
             'idempotency_key': request.get('idempotency_key')
         }
-        
+
         return hashlib.sha256(
             json.dumps(key_data, sort_keys=True).encode()
         ).hexdigest()
-    
+
     async def check_idempotency(self, key: str) -> dict:
         # Check if request was already processed
         result = await self.redis.get(f"idempotency:{key}")
-        
+
         if result:
             return json.loads(result)
-        
+
         # Lock to prevent concurrent processing
         locked = await self.redis.set(
             f"idempotency_lock:{key}",
@@ -403,12 +403,12 @@ class IdempotencyService:
             nx=True,
             ex=30  # 30 second lock
         )
-        
+
         if not locked:
             raise ConcurrentModificationError("Request in progress")
-        
+
         return None
-    
+
     async def store_result(self, key: str, result: dict):
         await self.redis.setex(
             f"idempotency:{key}",
@@ -430,30 +430,30 @@ class PaymentProcessor:
             'adyen': AdyenProcessor(),
             'paypal': PayPalProcessor()
         }
-    
+
     async def process_payment(self, payment_intent: dict) -> dict:
         # Check idempotency
         idempotency_key = self.idempotency.generate_idempotency_key(
             payment_intent
         )
-        
+
         existing = await self.idempotency.check_idempotency(
             idempotency_key
         )
         if existing:
             return existing
-        
+
         # Fraud check
         fraud_result = await self.fraud.check_transaction(
             payment_intent
         )
-        
+
         if fraud_result['action'] == 'block':
             return await self.handle_fraud_block(payment_intent)
-        
+
         # Route to appropriate processor
         processor = self.select_processor(payment_intent)
-        
+
         try:
             result = await processor.charge(
                 amount=payment_intent['amount'],
@@ -461,32 +461,32 @@ class PaymentProcessor:
                 payment_method=payment_intent['payment_method'],
                 idempotency_key=idempotency_key
             )
-            
+
             # Store successful result
             await self.store_payment_result(
                 payment_intent, result, 'succeeded'
             )
-            
+
             # Store idempotency result
             await self.idempotency.store_result(
                 idempotency_key, result
             )
-            
+
             return result
-            
+
         except PaymentProcessorError as e:
             # Store failed result
             await self.store_payment_result(
-                payment_intent, 
-                {'error': str(e)}, 
+                payment_intent,
+                {'error': str(e)},
                 'failed'
             )
             raise
-    
+
     def select_processor(self, payment_intent: dict) -> str:
         # Route based on currency, region, or card type
         currency = payment_intent['currency']
-        
+
         if currency == 'eur':
             return self.processors['adyen']
         elif payment_intent.get('payment_method', {}).get('type') == 'paypal':
@@ -507,19 +507,19 @@ class FraudDetectionService:
             self.check地理位置,
             self.check_fingerprint
         ]
-    
+
     async def check_transaction(self, transaction: dict) -> dict:
         signals = []
-        
+
         # Run all fraud rules
         for rule in self.rules:
             signal = await rule(transaction)
             if signal:
                 signals.append(signal)
-        
+
         # Calculate overall score
         score = self.calculate_fraud_score(signals)
-        
+
         # Determine action
         if score > 0.8:
             action = 'block'
@@ -527,45 +527,45 @@ class FraudDetectionService:
             action = 'review'
         else:
             action = 'approve'
-        
+
         return {
             'score': score,
             'action': action,
             'signals': signals
         }
-    
+
     async def check_velocity(self, transaction: dict) -> dict:
         # Check transaction velocity
         customer_id = transaction.get('customer_id')
-        
+
         # Count transactions in last hour
         key = f"velocity:{customer_id}"
         count = await self.redis.incr(key)
         await self.redis.expire(key, 3600)
-        
+
         if count > 10:  # More than 10 transactions per hour
             return {
                 'type': 'velocity',
                 'score': 0.3,
                 'details': f'{count} transactions in last hour'
             }
-        
+
         return None
-    
+
     async def check_amount_limits(self, transaction: dict) -> dict:
         amount = transaction['amount']
         customer_id = transaction.get('customer_id')
-        
+
         # Get customer's average transaction amount
         avg_amount = await self.db.get_customer_avg_amount(customer_id)
-        
+
         if amount > avg_amount * 3:  # 3x average
             return {
                 'type': 'amount_anomaly',
                 'score': 0.2,
                 'details': f'Amount {amount} > 3x average {avg_amount}'
             }
-        
+
         return None
 ```
 
@@ -582,27 +582,27 @@ class WebhookService:
         self.http = http_client
         self.max_retries = 5
         self.retry_delays = [1, 5, 30, 300, 3600]  # seconds
-    
+
     async def send_webhook(self, merchant_id: int, event_type: str,
                           payload: dict):
         # Get merchant webhook config
         merchant = await self.db.get_merchant(merchant_id)
-        
+
         if not merchant['webhook_url']:
             return
-        
+
         # Create webhook event
         event = await self.db.create_webhook_event(
             merchant_id=merchant_id,
             event_type=event_type,
             payload=payload
         )
-        
+
         # Sign payload
         signature = self.sign_payload(
             payload, merchant['webhook_secret']
         )
-        
+
         # Send with retry
         await self.send_with_retry(
             event['id'],
@@ -610,7 +610,7 @@ class WebhookService:
             payload,
             signature
         )
-    
+
     async def send_with_retry(self, event_id: int, url: str,
                              payload: dict, signature: str):
         for attempt in range(self.max_retries):
@@ -625,25 +625,25 @@ class WebhookService:
                     },
                     timeout=10
                 )
-                
+
                 if response.status_code == 200:
                     await self.db.update_webhook_event(
                         event_id, status='sent'
                     )
                     return
-                
+
             except Exception as e:
                 pass
-            
+
             # Wait before retry
             if attempt < self.max_retries - 1:
                 await asyncio.sleep(self.retry_delays[attempt])
-        
+
         # All retries failed
         await self.db.update_webhook_event(
             event_id, status='failed'
         )
-    
+
     def sign_payload(self, payload: dict, secret: str) -> str:
         # HMAC-SHA256 signature
         payload_str = json.dumps(payload, sort_keys=True)
@@ -660,22 +660,22 @@ class ReconciliationService:
     def __init__(self, db, processor_client):
         self.db = db
         self.processor = processor_client
-    
+
     async def reconcile_daily(self, date: date):
         # Get all transactions for the day
         transactions = await self.db.get_transactions_by_date(date)
-        
+
         # Get processor settlement report
         processor_report = await self.processor.get_settlement_report(
             date
         )
-        
+
         # Compare
         discrepancies = []
-        
+
         for txn in transactions:
             processor_txn = processor_report.get(txn['processor_id'])
-            
+
             if not processor_txn:
                 discrepancies.append({
                     'type': 'missing_in_processor',
@@ -689,20 +689,20 @@ class ReconciliationService:
                     'our_amount': txn['amount'],
                     'processor_amount': processor_txn['amount']
                 })
-        
+
         # Handle discrepancies
         for discrepancy in discrepancies:
             await self.handle_discrepancy(discrepancy)
-        
+
         return discrepancies
-    
+
     async def handle_discrepancy(self, discrepancy: dict):
         # Log for manual review
         await self.db.log_discrepancy(discrepancy)
-        
+
         # Auto-resolve small discrepancies
         if discrepancy['type'] == 'amount_mismatch':
-            diff = abs(discrepancy['our_amount'] - 
+            diff = abs(discrepancy['our_amount'] -
                       discrepancy['processor_amount'])
             if diff < 100:  # Less than $1
                 await self.auto_resolve(discrepancy)
@@ -716,7 +716,7 @@ class IdempotencyCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 86400  # 24 hours
-    
+
     async def check_and_lock(self, key: str) -> bool:
         # Atomic check and lock
         result = await self.redis.set(
@@ -726,14 +726,14 @@ class IdempotencyCache:
             ex=30
         )
         return result is not None
-    
+
     async def store_result(self, key: str, result: dict):
         await self.redis.setex(
             f"idempotency:{key}",
             self.ttl,
             json.dumps(result)
         )
-    
+
     async def get_result(self, key: str) -> dict:
         result = await self.redis.get(f"idempotency:{key}")
         return json.loads(result) if result else None
@@ -744,21 +744,21 @@ class IdempotencyCache:
 class PaymentRateLimiter:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
+
     async def check_rate_limit(self, merchant_id: int,
                                limit: int = 1000,
                                window: int = 60) -> bool:
         key = f"rate_limit:{merchant_id}"
-        
+
         current = await self.redis.get(key)
         if current and int(current) >= limit:
             return False
-        
+
         pipe = self.redis.pipeline()
         pipe.incr(key)
         pipe.expire(key, window)
         pipe.execute()
-        
+
         return True
 ```
 
@@ -797,16 +797,16 @@ class PaymentEventProcessor:
     def __init__(self, kafka_consumer, webhook_service):
         self.consumer = kafka_consumer
         self.webhooks = webhook_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'payment.succeeded':
                 await self.handle_payment_succeeded(event)
             elif event['event_type'] == 'payment.failed':
                 await self.handle_payment_failed(event)
-    
+
     async def handle_payment_succeeded(self, event: dict):
         # Send webhook to merchant
         await self.webhooks.send_webhook(
@@ -814,7 +814,7 @@ class PaymentEventProcessor:
             'payment.succeeded',
             event['data']
         )
-        
+
         # Update analytics
         await self.update_analytics(event)
 ```
@@ -845,7 +845,7 @@ class PaymentDatabaseScaler:
     def __init__(self):
         self.master = None
         self.read_replicas = []
-    
+
     async def route_query(self, query: str, params: dict):
         if query.startswith('SELECT'):
             # Route to read replica
@@ -893,14 +893,14 @@ class CircuitBreaker:
         self.reset_timeout = 60
         self.state = 'CLOSED'
         self.last_failure_time = None
-    
+
     async def call(self, func, *args, **kwargs):
         if self.state == 'OPEN':
             if self.should_reset():
                 self.state = 'HALF_OPEN'
             else:
                 raise CircuitBreakerOpenError()
-        
+
         try:
             result = await func(*args, **kwargs)
             if self.state == 'HALF_OPEN':
@@ -930,10 +930,10 @@ class RetryLogic:
     def __init__(self):
         self.max_retries = 3
         self.retry_delays = [0.1, 0.5, 1.0]  # seconds
-    
+
     async def execute_with_retry(self, func, *args, **kwargs):
         last_exception = None
-        
+
         for attempt in range(self.max_retries):
             try:
                 return await func(*args, **kwargs)
@@ -945,7 +945,7 @@ class RetryLogic:
                     )
             except NonRetryableError:
                 raise
-        
+
         raise last_exception
 ```
 
@@ -978,15 +978,15 @@ alerts:
   - name: High Failure Rate
     condition: failure_rate > 5%
     severity: critical
-    
+
   - name: Processing Latency High
     condition: p95_latency > 2s
     severity: warning
-    
+
   - name: Webhook Delivery Failed
     condition: webhook_delivery_rate < 95%
     severity: warning
-    
+
   - name: Reconciliation Discrepancies
     condition: discrepancy_count > 10
     severity: critical

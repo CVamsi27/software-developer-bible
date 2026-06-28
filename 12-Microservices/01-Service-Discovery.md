@@ -144,7 +144,7 @@ class ServiceClient {
 
   async callService<T>(serviceName: string, path: string): Promise<T> {
     const instances = this.registry.discover(serviceName);
-    
+
     if (instances.length === 0) {
       throw new Error(`No instances available for service: ${serviceName}`);
     }
@@ -259,7 +259,7 @@ class DnsServiceDiscovery {
     try {
       // SRV record lookup: _serviceName._tcp.domain.com
       const records = await resolveSrv(`_${serviceName}._tcp.example.com`);
-      
+
       return records.map((record, index) => ({
         id: `dns-${serviceName}-${index}`,
         name: serviceName,

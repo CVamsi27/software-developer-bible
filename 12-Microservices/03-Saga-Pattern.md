@@ -133,9 +133,9 @@ class SagaOrchestrator<T> {
 
         // Compensate completed steps in reverse order
         await this.compensate(completedSteps.reverse(), context);
-        return { 
-          success: false, 
-          error: `Failed at step ${step.name}: ${error}` 
+        return {
+          success: false,
+          error: `Failed at step ${step.name}: ${error}`
         };
       }
     }
@@ -158,7 +158,7 @@ class SagaOrchestrator<T> {
         console.warn(
           `Step ${step.name} attempt ${attempt} failed, retrying...`
         );
-        
+
         if (attempt < this.config.maxRetries) {
           await this.delay(this.config.retryDelay * attempt);
         }
@@ -292,11 +292,11 @@ class OrderSaga {
 
   async placeOrder(context: OrderContext): Promise<{ success: boolean; orderId?: string; error?: string }> {
     const result = await this.saga.execute(context);
-    
+
     if (result.success) {
       return { success: true, orderId: context.orderId };
     }
-    
+
     return { success: false, error: result.error };
   }
 }
@@ -374,7 +374,7 @@ class OrderEventHandler {
 
   async handleOrderCreated(event: DomainEvent): Promise<void> {
     const { orderId, items } = event.payload;
-    
+
     // Validate order
     if (!items || items.length === 0) {
       this.eventStore.publish({
@@ -400,7 +400,7 @@ class OrderEventHandler {
   async handlePaymentProcessed(event: DomainEvent): Promise<void> {
     const { orderId } = event.payload;
     console.log(`Order ${orderId}: Payment processed, completing order`);
-    
+
     this.eventStore.publish({
       type: EventType.ORDER_COMPLETED,
       payload: { orderId },
@@ -412,10 +412,10 @@ class OrderEventHandler {
   async handlePaymentFailed(event: DomainEvent): Promise<void> {
     const { orderId, reason } = event.payload;
     console.log(`Order ${orderId}: Payment failed, compensating`);
-    
+
     // Release inventory (compensation)
     console.log(`Order ${orderId}: Releasing inventory`);
-    
+
     this.eventStore.publish({
       type: EventType.ORDER_CANCELLED,
       payload: { orderId, reason },
@@ -491,7 +491,7 @@ export class OrderSagaService {
 
     } catch (error) {
       this.logger.error(`Order saga failed: ${correlationId}`, error);
-      
+
       // Execute compensating transactions
       await this.compensate(correlationId, {
         orderId,

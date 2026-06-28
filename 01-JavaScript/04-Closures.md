@@ -168,7 +168,7 @@ console.log(goodbye("Alice"));  // "Goodbye, Alice!"
 ```typescript
 function createBankAccount(initialBalance: number) {
   let balance = initialBalance;  // Private variable
-  
+
   return {
     deposit(amount: number) {
       if (amount > 0) {
@@ -177,7 +177,7 @@ function createBankAccount(initialBalance: number) {
       }
       return "Invalid amount";
     },
-    
+
     withdraw(amount: number) {
       if (amount > 0 && amount <= balance) {
         balance -= amount;
@@ -185,7 +185,7 @@ function createBankAccount(initialBalance: number) {
       }
       return "Insufficient funds";
     },
-    
+
     getBalance() {
       return balance;
     }
@@ -204,7 +204,7 @@ console.log(account.getBalance());    // 1300
 ```typescript
 function setupButton(buttonId: string, message: string) {
   const button = document.getElementById(buttonId);
-  
+
   // Closure captures 'message'
   button?.addEventListener('click', () => {
     alert(message);  // message is accessible
@@ -264,14 +264,14 @@ console.log(tenTimes(5));  // 50
 ```typescript
 function memoize<T extends (...args: any[]) => any>(fn: T): T {
   const cache = new Map<string, ReturnType<T>>();
-  
+
   return function(...args: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify(args);
-    
+
     if (cache.has(key)) {
       return cache.get(key)!;
     }
-    
+
     const result = fn(...args);
     cache.set(key, result);
     return result;
@@ -294,19 +294,19 @@ import { useState, useEffect } from 'react';
 
 function useCounter(initialValue: number = 0) {
   const [count, setCount] = useState(initialValue);
-  
+
   // Closure captures 'count' and 'setCount'
   const increment = () => setCount(c => c + 1);
   const decrement = () => setCount(c => c - 1);
   const reset = () => setCount(initialValue);
-  
+
   return { count, increment, decrement, reset };
 }
 
 // Usage
 function Counter() {
   const { count, increment, decrement, reset } = useCounter(0);
-  
+
   return (
     <div>
       <p>Count: {count}</p>
@@ -325,7 +325,7 @@ function createPerson(name: string, age: number) {
   // Private variables
   let _name = name;
   let _age = age;
-  
+
   return {
     get name() { return _name; },
     set name(value: string) {
@@ -357,20 +357,20 @@ import { useState, useCallback } from 'react';
 
 function useTodoList() {
   const [todos, setTodos] = useState<string[]>([]);
-  
+
   // Closures capture 'todos' and 'setTodos'
   const addTodo = useCallback((todo: string) => {
     setTodos(prev => [...prev, todo]);
   }, []);
-  
+
   const removeTodo = useCallback((index: number) => {
     setTodos(prev => prev.filter((_, i) => i !== index));
   }, []);
-  
+
   const clearTodos = useCallback(() => {
     setTodos([]);
   }, []);
-  
+
   return { todos, addTodo, removeTodo, clearTodos };
 }
 ```
@@ -383,7 +383,7 @@ function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
-  
+
   return function(...args: Parameters<T>) {
     // Closure captures 'timeout' and 'func'
     clearTimeout(timeout);
@@ -401,14 +401,14 @@ const handleSearch = debounce((query: string) => {
 ```typescript
 function createEventManager() {
   const listeners = new Map<string, Function[]>();
-  
+
   return {
     on(event: string, callback: Function) {
       if (!listeners.has(event)) {
         listeners.set(event, []);
       }
       listeners.get(event)!.push(callback);
-      
+
       // Return unsubscribe function (closure)
       return () => {
         const callbacks = listeners.get(event);
@@ -420,7 +420,7 @@ function createEventManager() {
         }
       };
     },
-    
+
     emit(event: string, ...args: any[]) {
       const callbacks = listeners.get(event);
       if (callbacks) {
@@ -445,10 +445,10 @@ function createApiConfig(baseUrl: string) {
     timeout: 5000,
     retries: 3
   };
-  
+
   return {
     get: (endpoint: string) => fetch(`${config.baseUrl}${endpoint}`),
-    post: (endpoint: string, data: any) => 
+    post: (endpoint: string, data: any) =>
       fetch(`${config.baseUrl}${endpoint}`, {
         method: 'POST',
         body: JSON.stringify(data)
@@ -469,7 +469,7 @@ api.get('/users');  // Uses captured baseUrl
 ```typescript
 function createRangeIterator(start: number, end: number) {
   let current = start;
-  
+
   return {
     next() {
       if (current <= end) {
@@ -511,7 +511,7 @@ for (let i = 0; i < 3; i++) {
 // BAD: Captures entire large object
 function processData() {
   const largeData = new Array(1000000).fill(0);
-  
+
   return function() {
     // Closure captures 'largeData' even if not used
     return "Done";
@@ -522,7 +522,7 @@ function processData() {
 function processDataOptimized() {
   const largeData = new Array(1000000).fill(0);
   const summary = { length: largeData.length };
-  
+
   return function() {
     return summary.length;  // Only captures summary
   };
@@ -535,7 +535,7 @@ function processDataOptimized() {
 // BAD: Memory leak - closure keeps reference
 function createHandler() {
   const hugeData = new Array(1000000).fill(0);
-  
+
   return function handler() {
     console.log(hugeData.length);
     // hugeData is kept alive even after handler is done
@@ -545,7 +545,7 @@ function createHandler() {
 // GOOD: Release reference when done
 function createHandlerOptimized() {
   let hugeData: number[] | null = new Array(1000000).fill(0);
-  
+
   return function handler() {
     console.log(hugeData!.length);
     hugeData = null;  // Release reference
@@ -606,7 +606,7 @@ class Person {
   constructor(name: string) {
     privateData.set(this, { name });
   }
-  
+
   getName() {
     return privateData.get(this)?.name;
   }
@@ -619,7 +619,7 @@ class Person {
 function setupEventListener() {
   const handler = () => console.log('clicked');
   document.addEventListener('click', handler);
-  
+
   // Return cleanup function
   return () => {
     document.removeEventListener('click', handler);
@@ -639,9 +639,9 @@ function createConfig(defaults: Record<string, any>) {
   };
 }
 
-const createAppConfig = createConfig({ 
-  theme: 'light', 
-  language: 'en' 
+const createAppConfig = createConfig({
+  theme: 'light',
+  language: 'en'
 });
 
 const config = createAppConfig({ theme: 'dark' });
@@ -656,7 +656,7 @@ const config = createAppConfig({ theme: 'dark' });
 // Each closure retains a reference to its lexical environment
 function createClosures() {
   const largeArray = new Array(1000000).fill(0);
-  
+
   // Bad: Creates 1000 closures, each holding reference
   const closures = [];
   for (let i = 0; i < 1000; i++) {
@@ -664,14 +664,14 @@ function createClosures() {
       console.log(i);  // Each closure captures 'i'
     });
   }
-  
+
   return closures;
 }
 
 // Better: Minimize what each closure captures
 function createClosuresOptimized() {
   const largeArray = new Array(1000000).fill(0);
-  
+
   // Only capture what's needed
   const closures = [];
   for (let i = 0; i < 1000; i++) {
@@ -680,7 +680,7 @@ function createClosuresOptimized() {
       console.log(value);
     });
   }
-  
+
   return closures;
 }
 ```
@@ -691,7 +691,7 @@ function createClosuresOptimized() {
 // Closures prevent garbage collection of their lexical environment
 function createClosure() {
   let data = new Array(1000000).fill(0);
-  
+
   return function() {
     // Even if we don't use 'data', it's kept alive
     return "Done";
@@ -701,7 +701,7 @@ function createClosure() {
 // To allow GC, explicitly release reference
 function createClosureWithCleanup() {
   let data: number[] | null = new Array(1000000).fill(0);
-  
+
   return function() {
     const result = data?.length;
     data = null;  // Allow GC
@@ -755,7 +755,7 @@ A: Closures retain references to their lexical environment, preventing garbage c
 
 **Q8: What is the difference between closure and scope?**
 
-A: 
+A:
 - **Scope**: Defines variable accessibility (where variables are visible)
 - **Closure**: The combination of a function and its lexical environment that it remembers
 
@@ -789,7 +789,7 @@ A: Each closure retains a reference to its entire lexical environment chain. The
 
 **Q14: How do you optimize closure memory usage?**
 
-A: 
+A:
 1. Only capture variables you actually use
 2. Destructure objects to capture only needed properties
 3. Set references to null when done
@@ -809,16 +809,16 @@ A: Closures enable functional programming concepts:
 
 **Q16: Design a state management system using closures.**
 
-A: 
+A:
 ```typescript
 function createStore<T>(initialState: T) {
   let state = initialState;
   const listeners = new Set<() => void>();
-  
+
   return {
     getState: () => state,
     setState: (newState: T | ((prev: T) => T)) => {
-      state = typeof newState === 'function' 
+      state = typeof newState === 'function'
         ? (newState as (prev: T) => T)(state)
         : newState;
       listeners.forEach(listener => listener());
@@ -840,27 +840,27 @@ unsubscribe();
 
 **Q17: How would you implement a pub/sub system with closures?**
 
-A: 
+A:
 ```typescript
 function createPubSub() {
   const subscribers = new Map<string, Set<Function>>();
-  
+
   return {
     subscribe(event: string, callback: Function) {
       if (!subscribers.has(event)) {
         subscribers.set(event, new Set());
       }
       subscribers.get(event)!.add(callback);
-      
+
       return () => subscribers.get(event)?.delete(callback);
     },
-    
+
     publish(event: string, ...args: any[]) {
       subscribers.get(event)?.forEach(callback => {
         callback(...args);
       });
     },
-    
+
     unsubscribe(event: string, callback?: Function) {
       if (callback) {
         subscribers.get(event)?.delete(callback);
@@ -874,7 +874,7 @@ function createPubSub() {
 
 **Q18: Analyze the performance implications of closures in a React application.**
 
-A: 
+A:
 1. **Memory**: Closures in hooks can prevent garbage collection
 2. **Re-renders**: New closures on each render cause unnecessary re-renders
 3. **Solution**: Use `useCallback` and `useMemo` to memoize closures
@@ -883,7 +883,7 @@ A:
 
 **Q19: How do closures affect testability?**
 
-A: 
+A:
 1. **Isolation**: Closures provide natural isolation for unit testing
 2. **Dependency injection**: Can mock dependencies through closure parameters
 3. **State management**: Easy to test state changes
@@ -892,7 +892,7 @@ A:
 
 **Q20: What are the security implications of closures?**
 
-A: 
+A:
 1. **Data leakage**: Closures can expose private data if not careful
 2. **Prototype pollution**: Can affect all instances
 3. **XSS**: Closures in event handlers can be exploited
@@ -902,17 +902,17 @@ A:
 
 **Q21: Can you give an example of a closure-related memory leak?**
 
-A: 
+A:
 ```typescript
 // Memory leak: Closure keeps reference to DOM element
 function createLeakyHandler() {
   const element = document.getElementById('button');
-  
+
   element?.addEventListener('click', () => {
     // Closure keeps 'element' alive even after removal
     console.log('clicked');
   });
-  
+
   // Element is never garbage collected
 }
 
@@ -920,9 +920,9 @@ function createLeakyHandler() {
 function createCleanHandler() {
   const element = document.getElementById('button');
   const handler = () => console.log('clicked');
-  
+
   element?.addEventListener('click', handler);
-  
+
   return () => {
     element?.removeEventListener('click', handler);
   };
@@ -931,7 +931,7 @@ function createCleanHandler() {
 
 **Q22: How do you debug closure-related issues?**
 
-A: 
+A:
 1. **Chrome DevTools**: Inspect closure scopes in debugger
 2. **Console.log**: Log captured variables
 3. **WeakRef**: Track closure references
@@ -944,7 +944,7 @@ A: Modules use closures to encapsulate private state. The module pattern returns
 
 **Q24: How do closures work in different JavaScript environments?**
 
-A: 
+A:
 - **Browser**: Standard closure behavior
 - **Node.js**: Same behavior, but with module system
 - **Web Workers**: Separate global scope, but closures work the same
@@ -952,7 +952,7 @@ A:
 
 **Q25: What are best practices for using closures in large applications?**
 
-A: 
+A:
 1. Document closure behavior in complex functions
 2. Use TypeScript to track variable types
 3. Limit closure scope to what's needed

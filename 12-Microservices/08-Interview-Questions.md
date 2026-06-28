@@ -105,7 +105,7 @@ class OrderService {
   async createOrder(order: Order): Promise<void> {
     // Save order
     await this.orderRepository.save(order);
-    
+
     // Publish event (async, non-blocking)
     await this.eventBus.publish('order.created', {
       orderId: order.id,
@@ -128,7 +128,7 @@ class ServiceDiscoveryClient {
 
   async getService(serviceName: string): Promise<ServiceInstance> {
     const instances = await this.registry.getInstances(serviceName);
-    
+
     // Load balancing (round-robin, random, weighted)
     return this.selectInstance(instances);
   }
@@ -194,16 +194,16 @@ class OrderSaga {
     try {
       // Step 1: Create order
       await this.orderService.create(order);
-      
+
       // Step 2: Reserve inventory
       await this.inventoryService.reserve(order.items);
-      
+
       // Step 3: Process payment
       await this.paymentService.charge(order.userId, order.total);
-      
+
       // Step 4: Confirm order
       await this.orderService.confirm(order.id);
-      
+
     } catch (error) {
       // Compensate: Undo previous steps
       await this.compensate(order);
@@ -311,7 +311,7 @@ class OrderCommandHandler {
     // Validate, apply business rules
     const order = Order.create(command);
     await this.orderRepository.save(order);
-    
+
     // Publish event for read model
     await this.eventBus.publish('OrderCreated', order);
   }
@@ -343,7 +343,7 @@ class OrderService {
     await this.database.transaction(async (trx) => {
       // Save order
       await trx('orders').insert(order);
-      
+
       // Save event to outbox (same transaction)
       await trx('outbox').insert({
         aggregateId: order.id,
@@ -351,7 +351,7 @@ class OrderService {
         payload: JSON.stringify(order),
       });
     });
-    
+
     // Separate process publishes events from outbox
   }
 }
@@ -417,7 +417,7 @@ const retry = new Retry({
 // 3. Fallback
 async function getUserWithFallback(userId: string): Promise<User> {
   try {
-    return await circuitBreaker.execute(() => 
+    return await circuitBreaker.execute(() =>
       retry.execute(() => userService.getUser(userId))
     );
   } catch (error) {
@@ -460,11 +460,11 @@ async function processOrder(orderId: string): Promise<void> {
   const span = tracer.startSpan('processOrder');
   try {
     span.setAttribute('order.id', orderId);
-    
+
     // Your business logic
     await validateOrder(orderId);
     await processPayment(orderId);
-    
+
     span.setStatus({ code: SpanStatusCode.OK });
   } catch (error) {
     span.setStatus({ code: SpanStatusCode.ERROR, message: error.message });
@@ -486,7 +486,7 @@ class OrderService {
   async createOrder(order: Order): Promise<void> {
     // Save locally
     await this.orderRepository.save(order);
-    
+
     // Publish event (async)
     await this.eventBus.publish('OrderCreated', {
       orderId: order.id,
@@ -502,7 +502,7 @@ class OrderSaga {
     await this.inventoryService.reserve(order.items);
     await this.paymentService.charge(order.userId, order.total);
   }
-  
+
   async compensate(order: Order): Promise<void> {
     await this.paymentService.refund(order.userId, order.total);
     await this.inventoryService.release(order.items);
@@ -536,7 +536,7 @@ class OrderService {
 // User Service
 class UserService {
   constructor(private userDatabase: Database) {}
-  
+
   async getUser(userId: string): Promise<User> {
     return this.userDatabase.query('SELECT * FROM users WHERE id = ?', [userId]);
   }
@@ -548,11 +548,11 @@ class OrderService {
     private orderDatabase: Database,
     private userClient: UserServiceClient  // HTTP/gRPC client
   ) {}
-  
+
   async createOrder(order: Order): Promise<void> {
     // Must call User Service to get user data
     const user = await this.userClient.getUser(order.userId);
-    
+
     // Save order with user reference (not user data)
     await this.orderDatabase.query(
       'INSERT INTO orders (id, user_id, total) VALUES (?, ?, ?)',
@@ -567,7 +567,7 @@ class OrderQueryService {
     const order = await this.orderClient.getOrder(orderId);
     const user = await this.userClient.getUser(order.userId);
     const products = await this.productClient.getProducts(order.itemIds);
-    
+
     return { ...order, user, products };
   }
 }
@@ -603,16 +603,16 @@ class UrlService {
   async createShortUrl(longUrl: string): Promise<string> {
     // Generate unique short code
     const shortCode = this.generateShortCode();
-    
+
     // Store in database
     await this.database.query(
       'INSERT INTO urls (short_code, long_url, created_at) VALUES (?, ?, ?)',
       [shortCode, longUrl, new Date()]
     );
-    
+
     // Cache for fast lookup
     await this.cache.set(`url:${shortCode}`, longUrl, 'EX', 86400);
-    
+
     return `https://short.ly/${shortCode}`;
   }
 
@@ -620,20 +620,20 @@ class UrlService {
     // Check cache first
     const cached = await this.cache.get(`url:${shortCode}`);
     if (cached) return cached;
-    
+
     // Fallback to database
     const result = await this.database.query(
       'SELECT long_url FROM urls WHERE short_code = ?',
       [shortCode]
     );
-    
+
     if (result.length === 0) {
       throw new NotFoundError('URL not found');
     }
-    
+
     const longUrl = result[0].long_url;
     await this.cache.set(`url:${shortCode}`, longUrl, 'EX', 86400);
-    
+
     return longUrl;
   }
 
@@ -655,26 +655,26 @@ class UrlService {
 // WebSocket Gateway
 class ChatGateway {
   private clients: Map<string, WebSocket> = new Map();
-  
+
   handleConnection(socket: WebSocket, userId: string): void {
     this.clients.set(userId, socket);
-    
+
     socket.on('message', async (data) => {
       const message = JSON.parse(data);
-      
+
       // Save message to database
       await this.messageService.save(message);
-      
+
       // Broadcast to room
       this.broadcastToRoom(message.roomId, {
         type: 'MESSAGE',
         data: message,
       });
-      
+
       // Publish to message broker for other services
       await this.eventBus.publish('chat.message', message);
     });
-    
+
     socket.on('close', () => {
       this.clients.delete(userId);
     });
@@ -683,7 +683,7 @@ class ChatGateway {
   broadcastToRoom(roomId: string, message: any): void {
     // Get room members
     const members = this.roomService.getMembers(roomId);
-    
+
     members.forEach(memberId => {
       const client = this.clients.get(memberId);
       if (client) {
@@ -720,7 +720,7 @@ class NotificationService {
   async send(notification: Notification): Promise<void> {
     // Save notification
     await this.notificationRepository.save(notification);
-    
+
     // Route to appropriate channel
     switch (notification.channel) {
       case 'email':
@@ -736,7 +736,7 @@ class NotificationService {
         await this.inAppService.send(notification);
         break;
     }
-    
+
     // Track delivery
     await this.trackingService.track(notification);
   }
@@ -747,7 +747,7 @@ class EmailService {
   async send(notification: Notification): Promise<void> {
     const template = await this.templateService.getTemplate(notification.type);
     const html = template.render(notification.data);
-    
+
     await this.emailProvider.send({
       to: notification.recipient,
       subject: template.subject,
@@ -760,7 +760,7 @@ class EmailService {
 class PushService {
   async send(notification: Notification): Promise<void> {
     const deviceTokens = await this.deviceService.getTokens(notification.recipient);
-    
+
     await Promise.all(deviceTokens.map(token =>
       this.pushProvider.send({
         token,
@@ -780,7 +780,7 @@ class PushService {
 // Rate Limiter using Token Bucket algorithm
 class RateLimiter {
   private buckets: Map<string, { tokens: number; lastRefill: number }> = new Map();
-  
+
   constructor(
     private maxTokens: number,
     private refillRate: number, // tokens per second
@@ -789,23 +789,23 @@ class RateLimiter {
   async isAllowed(key: string): Promise<boolean> {
     const now = Date.now();
     let bucket = this.buckets.get(key);
-    
+
     if (!bucket) {
       bucket = { tokens: this.maxTokens, lastRefill: now };
       this.buckets.set(key, bucket);
     }
-    
+
     // Refill tokens
     const timePassed = (now - bucket.lastRefill) / 1000;
     bucket.tokens = Math.min(this.maxTokens, bucket.tokens + timePassed * this.refillRate);
     bucket.lastRefill = now;
-    
+
     // Check if request is allowed
     if (bucket.tokens >= 1) {
       bucket.tokens--;
       return true;
     }
-    
+
     return false;
   }
 }
@@ -815,16 +815,16 @@ class DistributedRateLimiter {
   async isAllowed(key: string, limit: number, windowMs: number): Promise<boolean> {
     const now = Date.now();
     const windowStart = now - windowMs;
-    
+
     const pipeline = this.redis.pipeline();
     pipeline.zremrangebyscore(key, 0, windowStart); // Remove old entries
     pipeline.zadd(key, now, `${now}-${Math.random()}`); // Add current request
     pipeline.zcard(key); // Count requests in window
     pipeline.expire(key, windowMs / 1000); // Set TTL
-    
+
     const results = await pipeline.exec();
     const requestCount = results[2][1] as number;
-    
+
     return requestCount <= limit;
   }
 }
@@ -841,7 +841,7 @@ class DistributedCache {
 
   constructor(nodeAddresses: string[]) {
     this.ring = new ConsistentHashRing();
-    
+
     nodeAddresses.forEach(address => {
       const node = new CacheNode(address);
       this.nodes.push(node);
@@ -857,7 +857,7 @@ class DistributedCache {
   async set(key: string, value: any, ttl?: number): Promise<void> {
     const node = this.ring.getNode(key);
     await node.set(key, value, ttl);
-    
+
     // Replicate to nearby nodes
     const replicaNodes = this.ring.getReplicaNodes(key, 2);
     await Promise.all(replicaNodes.map(n => n.set(key, value, ttl)));
@@ -866,7 +866,7 @@ class DistributedCache {
   async delete(key: string): Promise<void> {
     const node = this.ring.getNode(key);
     await node.delete(key);
-    
+
     const replicaNodes = this.ring.getReplicaNodes(key, 2);
     await Promise.all(replicaNodes.map(n => n.delete(key)));
   }
@@ -883,16 +883,16 @@ class ProductService {
     // Check cache first
     const cached = await this.cache.get(`product:${productId}`);
     if (cached) return cached;
-    
+
     // Fetch from database
     const product = await this.database.query(
       'SELECT * FROM products WHERE id = ?',
       [productId]
     );
-    
+
     // Cache for future requests
     await this.cache.set(`product:${productId}`, product, 3600);
-    
+
     return product;
   }
 
@@ -902,7 +902,7 @@ class ProductService {
       'UPDATE products SET ? WHERE id = ?',
       [updates, productId]
     );
-    
+
     // Invalidate cache
     await this.cache.delete(`product:${productId}`);
   }
@@ -919,13 +919,13 @@ class ProductService {
 class MigrationService {
   async migrate(serviceName: string): Promise<void> {
     const database = this.databaseFactory.create(serviceName);
-    
+
     // Run migrations in order
     const migrations = await this.getMigrations(serviceName);
-    
+
     for (const migration of migrations) {
       console.log(`Running migration: ${migration.name}`);
-      
+
       await database.transaction(async (trx) => {
         await trx.raw(migration.up);
         await trx('migrations').insert({
@@ -938,15 +938,15 @@ class MigrationService {
 
   async rollback(serviceName: string, steps: number = 1): Promise<void> {
     const database = this.databaseFactory.create(serviceName);
-    
+
     const executed = await database.query(
       'SELECT * FROM migrations ORDER BY executed_at DESC LIMIT ?',
       [steps]
     );
-    
+
     for (const migration of executed.reverse()) {
       const migrationFile = await this.getMigration(migration.name);
-      
+
       await database.transaction(async (trx) => {
         await trx.raw(migrationFile.down);
         await trx('migrations').where('name', migration.name).delete();
@@ -985,7 +985,7 @@ app.use('/api/users', (req, res, next) => {
 class UserServiceV2 extends UserServiceV1 {
   async getUser(userId: string): Promise<UserV2> {
     const user = await super.getUser(userId);
-    
+
     // Transform to new format
     return {
       id: user.id,
@@ -1009,14 +1009,14 @@ class MetricsCollector {
 
   constructor() {
     this.prometheus = new PrometheusClient();
-    
+
     // Custom metrics
     this.requestDuration = this.prometheus.histogram({
       name: 'http_request_duration_seconds',
       help: 'Duration of HTTP requests',
       labelNames: ['method', 'route', 'status_code'],
     });
-    
+
     this.activeConnections = this.prometheus.gauge({
       name: 'active_connections',
       help: 'Number of active connections',
@@ -1025,10 +1025,10 @@ class MetricsCollector {
 
   async trackRequest(req: Request, res: Response, next: NextFunction): Promise<void> {
     const start = Date.now();
-    
+
     res.on('finish', () => {
       const duration = (Date.now() - start) / 1000;
-      
+
       this.requestDuration.observe(
         {
           method: req.method,
@@ -1038,7 +1038,7 @@ class MetricsCollector {
         duration
       );
     });
-    
+
     next();
   }
 }
@@ -1054,7 +1054,7 @@ app.get('/health', (req, res) => {
     },
     uptime: process.uptime(),
   };
-  
+
   const isHealthy = Object.values(health.checks).every(v => v === true);
   res.status(isHealthy ? 200 : 503).json(health);
 });
@@ -1080,18 +1080,18 @@ class SecretsManager {
     if (cached && Date.now() < cached.expires) {
       return cached.value;
     }
-    
+
     // Fetch from Secrets Manager
     const secret = await this.awsSecretsManager.getSecretValue({
       SecretId: secretName,
     }).promise();
-    
+
     // Cache for 1 hour
     this.secretsCache.set(secretName, {
       value: secret.SecretString,
       expires: Date.now() + 3600000,
     });
-    
+
     return secret.SecretString;
   }
 
@@ -1179,10 +1179,10 @@ async function rollback(): Promise<void> {
   await kubernetes.updateService('user-service', {
     selector: { version: 'blue' },
   });
-  
+
   // Scale down green
   await kubernetes.scaleDeployment('user-service-green', 0);
-  
+
   // Scale up blue
   await kubernetes.scaleDeployment('user-service-blue', 3);
 }
@@ -1222,7 +1222,7 @@ class AsyncCircuitBreaker {
       this.onSuccess();
     } catch (error) {
       this.onFailure();
-      
+
       if (fallback) {
         await fallback(message);
       } else {
@@ -1258,21 +1258,21 @@ class AsyncCircuitBreaker {
 // Idempotency Key pattern
 class IdempotentService {
   async processPayment(payment: Payment): Promise<PaymentResult> {
-    const idempotencyKey = payment.idempotencyKey || 
+    const idempotencyKey = payment.idempotencyKey ||
       `${payment.userId}-${payment.amount}-${Date.now()}`;
-    
+
     // Check if already processed
     const existing = await this.idempotencyStore.get(idempotencyKey);
     if (existing) {
       return existing;
     }
-    
+
     // Process payment
     const result = await this.paymentGateway.charge(payment);
-    
+
     // Store result with TTL
     await this.idempotencyStore.set(idempotencyKey, result, 86400);
-    
+
     return result;
   }
 }
@@ -1285,17 +1285,17 @@ class IdempotentOrderService {
       const existing = await trx('orders')
         .where('idempotency_key', order.idempotencyKey)
         .first();
-      
+
       if (existing) {
         return existing;
       }
-      
+
       // Create order
       const [id] = await trx('orders').insert({
         ...order,
         idempotency_key: order.idempotencyKey,
       });
-      
+
       return { ...order, id };
     });
   }
@@ -1304,19 +1304,19 @@ class IdempotentOrderService {
 // HTTP Idempotency Headers
 app.post('/api/payments', async (req, res) => {
   const idempotencyKey = req.headers['idempotency-key'];
-  
+
   // Check cache
   const cached = await redis.get(`idempotent:${idempotencyKey}`);
   if (cached) {
     return res.json(JSON.parse(cached));
   }
-  
+
   // Process
   const result = await paymentService.process(req.body);
-  
+
   // Cache result
   await redis.set(`idempotent:${idempotencyKey}`, JSON.stringify(result), 'EX', 86400);
-  
+
   res.json(result);
 });
 ```
@@ -1331,7 +1331,7 @@ class DistributedLock {
 
   async acquire(lockName: string, ttl: number = 10000): Promise<string | null> {
     const lockValue = `${Date.now()}-${Math.random()}`;
-    
+
     const acquired = await this.redis.set(
       `lock:${lockName}`,
       lockValue,
@@ -1339,7 +1339,7 @@ class DistributedLock {
       'PX',
       ttl
     );
-    
+
     return acquired ? lockValue : null;
   }
 
@@ -1352,14 +1352,14 @@ class DistributedLock {
         return 0
       end
     `;
-    
+
     const result = await this.redis.eval(
       script,
       1,
       `lock:${lockName}`,
       lockValue
     );
-    
+
     return result === 1;
   }
 
@@ -1369,11 +1369,11 @@ class DistributedLock {
     ttl: number = 10000
   ): Promise<T> {
     const lockValue = await this.acquire(lockName, ttl);
-    
+
     if (!lockValue) {
       throw new Error(`Failed to acquire lock: ${lockName}`);
     }
-    
+
     try {
       return await fn();
     } finally {
@@ -1392,7 +1392,7 @@ async function transferFunds(from: string, to: string, amount: number) {
     if (balance < amount) {
       throw new Error('Insufficient funds');
     }
-    
+
     await accountService.debit(from, amount);
     await accountService.credit(to, amount);
   });
@@ -1466,7 +1466,7 @@ class UserService {
     // - Retries on failure
     // - Distributed tracing headers
     // - mTLS encryption
-    
+
     return this.userRepository.findById(userId);
   }
 }
@@ -1534,10 +1534,10 @@ class EventSourcedOrderService {
   async createOrder(command: CreateOrderCommand): Promise<void> {
     // Create aggregate
     const order = OrderAggregate.create(command);
-    
+
     // Save events
     await this.eventStore.saveEvents(order.id, order.getUncommittedEvents());
-    
+
     // Update read model (async)
     await this.eventBus.publish('OrderCreated', {
       orderId: order.id,

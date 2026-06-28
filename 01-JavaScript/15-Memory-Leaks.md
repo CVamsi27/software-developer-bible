@@ -131,7 +131,7 @@ function noLeak() {
 // Bad: Timer not cleared
 function startTimer() {
   const data = new Array(1000000).fill(0);
-  
+
   setInterval(() => {
     console.log(data.length);  // data kept alive
   }, 1000);
@@ -140,11 +140,11 @@ function startTimer() {
 // Good: Clear timer
 function startTimerFixed() {
   const data = new Array(1000000).fill(0);
-  
+
   const intervalId = setInterval(() => {
     console.log(data.length);
   }, 1000);
-  
+
   // Clear when done
   clearInterval(intervalId);
 }
@@ -160,7 +160,7 @@ function createAndRemove() {
     console.log('clicked');
   });
   document.body.appendChild(button);
-  
+
   // Later remove
   document.body.removeChild(button);
   // button and listener still in memory!
@@ -170,10 +170,10 @@ function createAndRemove() {
 function createAndRemoveFixed() {
   const button = document.createElement('button');
   const handler = () => console.log('clicked');
-  
+
   button.addEventListener('click', handler);
   document.body.appendChild(button);
-  
+
   // Remove listener first
   button.removeEventListener('click', handler);
   document.body.removeChild(button);
@@ -186,7 +186,7 @@ function createAndRemoveFixed() {
 // Bad: Closure captures large object
 function createHandler() {
   const hugeData = new Array(1000000).fill(0);
-  
+
   return function handler() {
     console.log('clicked');  // hugeData kept alive
   };
@@ -196,7 +196,7 @@ function createHandler() {
 function createHandlerFixed() {
   const hugeData = new Array(1000000).fill(0);
   const length = hugeData.length;  // Capture only needed value
-  
+
   return function handler() {
     console.log(length);  // Only number kept alive
   };
@@ -211,7 +211,7 @@ class Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
   }
-  
+
   // componentWillUnmount() missing!
 }
 
@@ -220,7 +220,7 @@ class Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
@@ -243,7 +243,7 @@ useEffect(() => {
   const subscription = api.subscribe(data => {
     setData(data);
   });
-  
+
   return () => {
     subscription.unsubscribe();
   };
@@ -282,7 +282,7 @@ function processObject(obj: object) {
   if (cache.has(obj)) {
     return cache.get(obj);
   }
-  
+
   const result = expensiveComputation(obj);
   cache.set(obj, result);
   return result;
@@ -297,10 +297,10 @@ function processObject(obj: object) {
 ```typescript
 function DataComponent() {
   const [data, setData] = useState(null);
-  
+
   useEffect(() => {
     const controller = new AbortController();
-    
+
     async function fetchData() {
       try {
         const response = await fetch('/api/data', {
@@ -314,14 +314,14 @@ function DataComponent() {
         }
       }
     }
-    
+
     fetchData();
-    
+
     return () => {
       controller.abort();
     };
   }, []);
-  
+
   return <div>{JSON.stringify(data)}</div>;
 }
 ```
@@ -353,18 +353,18 @@ function setupItemsFixed(container: HTMLElement) {
 class ObjectPool<T> {
   private pool: T[] = [];
   private factory: () => T;
-  
+
   constructor(factory: () => T) {
     this.factory = factory;
   }
-  
+
   acquire(): T {
     if (this.pool.length > 0) {
       return this.pool.pop()!;
     }
     return this.factory();
   }
-  
+
   release(obj: T) {
     this.pool.push(obj);
   }
@@ -377,27 +377,27 @@ class ObjectPool<T> {
 class Cache<K, V> {
   private cache = new Map<K, { value: V; timestamp: number }>();
   private ttl: number;
-  
+
   constructor(ttl: number = 60000) {
     this.ttl = ttl;
   }
-  
+
   set(key: K, value: V) {
     this.cache.set(key, { value, timestamp: Date.now() });
   }
-  
+
   get(key: K): V | undefined {
     const entry = this.cache.get(key);
     if (!entry) return undefined;
-    
+
     if (Date.now() - entry.timestamp > this.ttl) {
       this.cache.delete(key);
       return undefined;
     }
-    
+
     return entry.value;
   }
-  
+
   cleanup() {
     const now = Date.now();
     for (const [key, entry] of this.cache) {
@@ -501,11 +501,11 @@ const listeners = new WeakMap<object, Function>();
 class LimitedCache<T> {
   private cache = new Map<string, T>();
   private maxSize: number;
-  
+
   constructor(maxSize: number = 1000) {
     this.maxSize = maxSize;
   }
-  
+
   set(key: string, value: T) {
     if (this.cache.size >= this.maxSize) {
       const firstKey = this.cache.keys().next().value;

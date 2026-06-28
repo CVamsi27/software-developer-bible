@@ -257,41 +257,41 @@ class ConnectionManager:
         # user_id -> set of (websocket, device_type) tuples
         self.connections: Dict[str, Set] = {}
         self.redis = None
-    
+
     async def connect(self, websocket, user_id: str, device_type: str):
         if user_id not in self.connections:
             self.connections[user_id] = set()
-        
+
         self.connections[user_id].add((websocket, device_type))
-        
+
         # Update presence in Redis
         await self.redis.hset(f"presence:{user_id}", device_type, "online")
         await self.redis.expire(f"presence:{user_id}", 300)  # 5 min TTL
-        
+
         # Notify contacts about online status
         await self.broadcast_presence(user_id, "online")
-    
+
     async def disconnect(self, websocket, user_id: str, device_type: str):
         if user_id in self.connections:
             self.connections[user_id].discard((websocket, device_type))
-            
+
             if not self.connections[user_id]:
                 del self.connections[user_id]
                 await self.redis.hdel(f"presence:{user_id}", device_type)
                 await self.broadcast_presence(user_id, "offline")
-    
+
     async def send_to_user(self, user_id: str, message: dict):
         if user_id not in self.connections:
             return False
-        
+
         for ws, device_type in self.connections[user_id]:
             try:
                 await ws.send(json.dumps(message))
             except websockets.ConnectionClosed:
                 await self.disconnect(ws, user_id, device_type)
-        
+
         return True
-    
+
     async def broadcast_presence(self, user_id: str, status: str):
         contacts = await self.get_contacts(user_id)
         for contact_id in contacts:
@@ -316,24 +316,24 @@ class MessageProducer:
             acks='all',  # Ensure message durability
             retries=3
         )
-    
+
     async def send_message(self, message: dict):
         # Generate unique message ID for exactly-once semantics
         message_id = str(uuid.uuid4())
         message['id'] = message_id
-        
+
         # Determine partition based on conversation_id for ordering
         partition_key = str(message['conversation_id']).encode()
-        
+
         self.producer.send(
             topic='messages',
             key=partition_key,
             value=message,
             callback=self.on_send_success
         )
-        
+
         return message_id
-    
+
     def on_send_success(self, record_metadata):
         print(f"Message sent to {record_metadata.topic} "
               f"partition {record_metadata.partition} "
@@ -350,7 +350,7 @@ import base64
 class EncryptionService:
     def __init__(self):
         self.key_registry = {}  # In production, use secure key management
-    
+
     def generate_conversation_key(self, conversation_id: str) -> bytes:
         # Generate unique key for each conversation
         kdf = PBKDF2HMAC(
@@ -364,22 +364,22 @@ class EncryptionService:
         )
         self.key_registry[conversation_id] = key
         return key
-    
+
     def encrypt_message(self, message: str, conversation_id: str) -> str:
         key = self.key_registry.get(conversation_id)
         if not key:
             key = self.generate_conversation_key(conversation_id)
-        
+
         f = Fernet(key)
         encrypted = f.encrypt(message.encode())
         return encrypted.decode()
-    
-    def decrypt_message(self, encrypted_message: str, 
+
+    def decrypt_message(self, encrypted_message: str,
                        conversation_id: str) -> str:
         key = self.key_registry.get(conversation_id)
         if not key:
             raise ValueError("Encryption key not found")
-        
+
         f = Fernet(key)
         decrypted = f.decrypt(encrypted_message.encode())
         return decrypted.decode()
@@ -392,18 +392,18 @@ class MessageDeliveryService:
         self.connections = connection_manager
         self.db = db
         self.notifications = notification_service
-    
+
     async def deliver_message(self, message: dict):
         conversation_id = message['conversation_id']
         sender_id = message['sender_id']
-        
+
         # Get all participants in conversation
         participants = await self.db.get_participants(conversation_id)
-        
+
         for participant_id in participants:
             if participant_id == sender_id:
                 continue
-            
+
             # Try online delivery first
             delivered = await self.connections.send_to_user(
                 participant_id,
@@ -412,7 +412,7 @@ class MessageDeliveryService:
                     "message": message
                 }
             )
-            
+
             if delivered:
                 # Update status to delivered
                 await self.db.update_message_status(
@@ -437,19 +437,19 @@ class MessageDeliveryService:
 class PresenceCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
+
     async def set_online(self, user_id: str, device_type: str):
         await self.redis.hset(f"presence:{user_id}", device_type, "1")
         await self.redis.expire(f"presence:{user_id}", 300)
-    
+
     async def set_offline(self, user_id: str, device_type: str):
         await self.redis.hdel(f"presence:{user_id}", device_type)
         if await self.redis.hlen(f"presence:{user_id}") == 0:
             await self.redis.delete(f"presence:{user_id}")
-    
+
     async def is_online(self, user_id: str) -> bool:
         return await self.redis.exists(f"presence:{user_id}")
-    
+
     async def get_last_seen(self, user_id: str) -> str:
         return await self.redis.get(f"last_seen:{user_id}")
 ```
@@ -460,17 +460,17 @@ class MessageCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.max_cached_messages = 100
-    
-    async def cache_conversation(self, conversation_id: str, 
+
+    async def cache_conversation(self, conversation_id: str,
                                  messages: list):
         key = f"conversation:{conversation_id}"
         await self.redis.delete(key)
-        
+
         for msg in messages[:self.max_cached_messages]:
             await self.redis.rpush(key, json.dumps(msg))
-        
+
         await self.redis.expire(key, 3600)  # 1 hour
-    
+
     async def get_cached_messages(self, conversation_id: str,
                                   limit: int = 50) -> list:
         key = f"conversation:{conversation_id}"
@@ -507,7 +507,7 @@ class MessageConsumer:
             auto_offset_reset='earliest',
             enable_auto_commit=False
         )
-    
+
     async def consume_messages(self):
         for message in self.consumer:
             try:
@@ -516,14 +516,14 @@ class MessageConsumer:
             except Exception as e:
                 # Log error, don't commit (will retry)
                 logger.error(f"Failed to process message: {e}")
-    
+
     async def process_message(self, message: dict):
         # 1. Store in database
         await self.db.store_message(message)
-        
+
         # 2. Deliver to online users
         await self.delivery_service.deliver_message(message)
-        
+
         # 3. Update conversation metadata
         await self.db.update_conversation(
             message['conversation_id'],
@@ -563,10 +563,10 @@ WebSocket Server Cluster:
 class ShardRouter:
     def __init__(self, num_shards: int = 16):
         self.num_shards = num_shards
-    
+
     def get_shard(self, conversation_id: int) -> int:
         return conversation_id % self.num_shards
-    
+
     def get_user_shard(self, user_id: int) -> int:
         # Different sharding for user data
         return (user_id * 7) % self.num_shards
@@ -604,8 +604,8 @@ class ReliableDelivery:
     def __init__(self):
         self.max_retries = 3
         self.retry_delays = [1, 5, 15]  # seconds
-    
-    async def deliver_with_retry(self, message: dict, 
+
+    async def deliver_with_retry(self, message: dict,
                                  recipient_id: str):
         for attempt in range(self.max_retries):
             try:
@@ -614,7 +614,7 @@ class ReliableDelivery:
                 )
                 if success:
                     return True
-                
+
                 # Exponential backoff
                 await asyncio.sleep(
                     self.retry_delays[attempt]
@@ -623,7 +623,7 @@ class ReliableDelivery:
                 logger.error(
                     f"Delivery attempt {attempt} failed: {e}"
                 )
-        
+
         # All attempts failed, queue for later delivery
         await self.queue_for_later(message, recipient_id)
         return False
@@ -644,12 +644,12 @@ class OfflineMessageHandler:
     def __init__(self, db, notification_service):
         self.db = db
         self.notifications = notification_service
-    
-    async def handle_offline_user(self, user_id: str, 
+
+    async def handle_offline_user(self, user_id: str,
                                   message: dict):
         # Store in offline queue
         await self.db.store_offline_message(user_id, message)
-        
+
         # Send push notification (one per conversation)
         await self.notifications.send_push_notification(
             user_id,
@@ -662,7 +662,7 @@ class OfflineMessageHandler:
                 }
             }
         )
-    
+
     async def sync_offline_messages(self, user_id: str):
         messages = await self.db.get_offline_messages(user_id)
         for message in messages:
@@ -700,15 +700,15 @@ alerts:
   - name: High Delivery Latency
     condition: p99_latency > 500ms
     severity: critical
-    
+
   - name: Message Queue Backlog
     condition: kafka_lag > 100000
     severity: warning
-    
+
   - name: Connection Drop Rate
     condition: connection_drops > 5% per minute
     severity: warning
-    
+
   - name: Database Replication Lag
     condition: replication_lag > 1s
     severity: critical

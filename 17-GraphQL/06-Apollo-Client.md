@@ -253,16 +253,16 @@ function UserPosts({ userId }: { userId: string }) {
     },
     // Polling for real-time updates
     pollInterval: 30000,  // 30 seconds
-    
+
     // Fetch policy
     fetchPolicy: 'cache-and-network',  // Return cache, also fetch
-    
+
     // Error policy
     errorPolicy: 'all',  // Return partial data with errors
-    
+
     // Skip query if no userId
     skip: !userId,
-    
+
     // Notify on network status change
     notifyOnNetworkStatusChange: true,
   });
@@ -281,11 +281,11 @@ function UserPosts({ userId }: { userId: string }) {
   return (
     <div>
       <h2>{data.user.name}'s Posts ({data.user.posts.totalCount})</h2>
-      
+
       {data.user.posts.edges.map(({ node, cursor }) => (
         <PostCard key={node.id} post={node} />
       ))}
-      
+
       {data.user.posts.pageInfo.hasNextPage && (
         <button onClick={loadMore} disabled={loading}>
           {loading ? 'Loading...' : 'Load More'}
@@ -326,7 +326,7 @@ function CreatePostForm() {
       if (data.createPost.post) {
         // Option 1: Refetch queries
         // refetchQueries: [{ query: GET_POSTS }]
-        
+
         // Option 2: Update cache manually
         cache.modify({
           fields: {
@@ -348,7 +348,7 @@ function CreatePostForm() {
         });
       }
     },
-    
+
     // Optimistic response
     optimisticResponse: {
       createPost: {
@@ -363,7 +363,7 @@ function CreatePostForm() {
         errors: [],
       },
     },
-    
+
     // On completed
     onCompleted: (data) => {
       if (data.createPost.post) {
@@ -371,7 +371,7 @@ function CreatePostForm() {
         router.push(`/posts/${data.createPost.post.id}`);
       }
     },
-    
+
     // On error
     onError: (error) => {
       showToast('Failed to create post', 'error');
@@ -435,9 +435,9 @@ function UserSearch() {
         placeholder="Search users..."
         onChange={handleSearch}
       />
-      
+
       {loading && <Spinner />}
-      
+
       {data?.users.map(user => (
         <UserCard key={user.id} user={user} />
       ))}
@@ -815,7 +815,7 @@ function UserProfile({ userId }) {
 
   if (loading) return <Spinner />;
   if (error) return <ErrorMessage error={error} />;
-  
+
   return <h1>{data.user.name}</h1>;
 }
 ```
@@ -912,18 +912,18 @@ if (data?.user) {
 ```
 1. Use fragments for reusable selections
    fragment UserFields on User { id name email }
-   
+
 2. Request only needed fields
    { user { name } }  // Not { user { name email ... } }
-   
+
 3. Use pagination
    posts(first: 10, after: $cursor) { ... }
-   
+
 4. Set appropriate fetch policies
    - cache-first (default): Use cache, fetch if missing
    - network-only: Always fetch, update cache
    - cache-and-network: Return cache, also fetch
-   
+
 5. Use polling for real-time data
    pollInterval: 30000
 ```
@@ -933,16 +933,16 @@ if (data?.user) {
 ```
 1. Define keyFields for normalization
    typePolicies: { User: { keyFields: ['id'] } }
-   
+
 2. Update cache after mutations
    Use update function or refetchQueries
-   
+
 3. Use optimistic responses
    optimisticResponse: { ... }
-   
+
 4. Handle cache eviction
    cache.evict({ id: 'User:1' })
-   
+
 5. Monitor cache size
    cache.gc()  // Garbage collect
 ```
@@ -952,15 +952,15 @@ if (data?.user) {
 ```
 1. Use skip option for conditional queries
    skip: !userId
-   
+
 2. Debounce search queries
    useLazyQuery with debounce
-   
+
 3. Use pagination for large lists
-   
+
 4. Avoid unnecessary re-renders
    Use React.memo for components
-   
+
 5. Use polling sparingly
    Prefer subscriptions for real-time
 ```

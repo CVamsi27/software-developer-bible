@@ -74,7 +74,7 @@ function solutionPattern(problem: string): string {
 ### Intermediate (5)
 
 **Q6: How do you structure a monorepo?**
-- **Answer**: 
+- **Answer**:
   - `packages/` - Shared libraries
   - `apps/` - Deployable applications
   - `tools/` - Build tools and configurations
@@ -87,7 +87,7 @@ function solutionPattern(problem: string): string {
 - **Answer**: Use Changesets for coordinated versioning, or independent versioning per package. Consider semantic versioning and release strategies.
 
 **Q9: What is the difference between Turborepo and Nx?**
-- **Answer**: 
+- **Answer**:
   - Turborepo: Lightweight, focuses on caching and parallelization
   - Nx: Full-featured with generators, affected analysis, and plugins
 
@@ -97,7 +97,7 @@ function solutionPattern(problem: string): string {
 ### Senior (10)
 
 **Q11: How do you optimize build performance in a monorepo?**
-- **Answer**: 
+- **Answer**:
   - Use caching (Turborepo/Nx)
   - Parallelize independent tasks
   - Incremental builds
@@ -105,7 +105,7 @@ function solutionPattern(problem: string): string {
   - Remote caching
 
 **Q12: How do you handle circular dependencies?**
-- **Answer**: 
+- **Answer**:
   - Restructure packages
   - Extract shared code to new package
   - Use dependency injection
@@ -115,7 +115,7 @@ function solutionPattern(problem: string): string {
 - **Answer**: Gradually migrating from polyrepo to monorepo by moving packages incrementally while maintaining both systems during transition.
 
 **Q14: How do you enforce architectural boundaries?**
-- **Answer**: 
+- **Answer**:
   - Use tags (Nx) or directory structure
   - Configure linting rules
   - Use dependency constraints
@@ -128,7 +128,7 @@ function solutionPattern(problem: string): string {
 - **Answer**: Shared migration directory, version-controlled schemas, coordinated migrations, and migration tooling.
 
 **Q17: How do you test in a monorepo?**
-- **Answer**: 
+- **Answer**:
   - Unit tests per package
   - Integration tests across packages
   - End-to-end tests for apps
@@ -138,14 +138,14 @@ function solutionPattern(problem: string): string {
 - **Answer**: Use a shared TypeScript version, or isolate packages with their own TypeScript configurations and tooling.
 
 **Q19: How do you handle monorepo in distributed teams?**
-- **Answer**: 
+- **Answer**:
   - Clear ownership with CODEOWNERS
   - Documentation and onboarding
   - Automated tooling
   - Communication guidelines
 
 **Q20: How do you migrate from Lerna to Turborepo/Nx?**
-- **Answer**: 
+- **Answer**:
   - Keep package structure
   - Replace Lerna commands
   - Configure new tooling
@@ -155,7 +155,7 @@ function solutionPattern(problem: string): string {
 ### FAANG-style (5)
 
 **Q21: Design a monorepo architecture for a large organization**
-- **Answer**: 
+- **Answer**:
   - Package structure with clear boundaries
   - Tooling (Turborepo/Nx) with remote caching
   - CI/CD with affected-based builds
@@ -163,7 +163,7 @@ function solutionPattern(problem: string): string {
   - Developer documentation
 
 **Q22: How would you migrate from polyrepo to monorepo?**
-- **Answer**: 
+- **Answer**:
   - Phase 1: Set up monorepo structure
   - Phase 2: Move shared packages
   - Phase 3: Migrate applications
@@ -171,7 +171,7 @@ function solutionPattern(problem: string): string {
   - Phase 5: Deprecate old repositories
 
 **Q23: Explain monorepo at scale**
-- **Answer**: 
+- **Answer**:
   - Thousands of packages
   - Hundreds of developers
   - Multiple programming languages
@@ -179,7 +179,7 @@ function solutionPattern(problem: string): string {
   - Advanced caching strategies
 
 **Q24: How do you handle monorepo security?**
-- **Answer**: 
+- **Answer**:
   - Dependency scanning
   - Secret management
   - Access control per package
@@ -187,7 +187,7 @@ function solutionPattern(problem: string): string {
   - Vulnerability detection
 
 **Q25: Design a CI/CD pipeline for a monorepo**
-- **Answer**: 
+- **Answer**:
   - Detect changes (affected packages)
   - Run tests for affected packages
   - Build with caching

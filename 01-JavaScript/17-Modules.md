@@ -126,12 +126,12 @@ export function multiply(a: number, b: number): number {
 
 export default class Calculator {
   result = 0;
-  
+
   add(n: number) {
     this.result += n;
     return this;
   }
-  
+
   getResult() {
     return this.result;
   }
@@ -298,7 +298,7 @@ export function parseDate(str: string): Date {
 // api/client.ts
 export class ApiClient {
   constructor(private baseUrl: string) {}
-  
+
   async get<T>(endpoint: string): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`);
     return response.json();

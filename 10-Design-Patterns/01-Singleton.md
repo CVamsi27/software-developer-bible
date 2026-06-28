@@ -55,18 +55,18 @@ The Singleton pattern works by:
 ```typescript
 class Singleton {
   private static instance: Singleton;
-  
+
   private constructor() {
     // Private constructor prevents direct instantiation
   }
-  
+
   public static getInstance(): Singleton {
     if (!Singleton.instance) {
       Singleton.instance = new Singleton();
     }
     return Singleton.instance;
   }
-  
+
   public doSomething(): void {
     console.log('Singleton is working');
   }
@@ -85,16 +85,16 @@ console.log(singleton1 === singleton2); // true - same instance
 class ThreadSafeSingleton {
   private static instance: ThreadSafeSingleton;
   private static isInitializing = false;
-  
+
   private constructor() {
     // Simulate expensive initialization
     this.initializeDatabase();
   }
-  
+
   private initializeDatabase(): void {
     console.log('Initializing database connection...');
   }
-  
+
   public static getInstance(): ThreadSafeSingleton {
     if (!ThreadSafeSingleton.instance) {
       if (!ThreadSafeSingleton.isInitializing) {
@@ -104,7 +104,7 @@ class ThreadSafeSingleton {
     }
     return ThreadSafeSingleton.instance;
   }
-  
+
   public query(sql: string): any {
     console.log(`Executing query: ${sql}`);
     return { results: [] };
@@ -120,22 +120,22 @@ class Database {
   private host: string;
   private port: number;
   private isConnected: boolean = false;
-  
+
   constructor() {
     this.host = 'localhost';
     this.port = 5432;
   }
-  
+
   async connect(): Promise<void> {
     if (this.isConnected) {
       console.log('Already connected to database');
       return;
     }
-    
+
     console.log(`Connecting to database at ${this.host}:${this.port}`);
     this.isConnected = true;
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     if (!this.isConnected) {
       throw new Error('Database not connected');
@@ -143,7 +143,7 @@ class Database {
     console.log(`Executing: ${sql}`);
     return [] as T[];
   }
-  
+
   async disconnect(): Promise<void> {
     this.isConnected = false;
     console.log('Disconnected from database');
@@ -168,11 +168,11 @@ interface AppConfig {
 class ConfigurationManager {
   private static instance: ConfigurationManager;
   private config: AppConfig;
-  
+
   private constructor() {
     this.config = this.loadConfig();
   }
-  
+
   private loadConfig(): AppConfig {
     // In real app, this would read from environment variables or config files
     return {
@@ -183,22 +183,22 @@ class ConfigurationManager {
       environment: (process.env.NODE_ENV as AppConfig['environment']) || 'development'
     };
   }
-  
+
   public static getInstance(): ConfigurationManager {
     if (!ConfigurationManager.instance) {
       ConfigurationManager.instance = new ConfigurationManager();
     }
     return ConfigurationManager.instance;
   }
-  
+
   public get<K extends keyof AppConfig>(key: K): AppConfig[K] {
     return this.config[key];
   }
-  
+
   public set<K extends keyof AppConfig>(key: K, value: AppConfig[K]): void {
     this.config[key] = value;
   }
-  
+
   public getAll(): Readonly<AppConfig> {
     return { ...this.config };
   }
@@ -224,57 +224,57 @@ class Logger {
   private static instance: Logger;
   private logLevel: LogLevel;
   private logs: Array<{ timestamp: Date; level: LogLevel; message: string }> = [];
-  
+
   private constructor() {
     this.logLevel = LogLevel.INFO;
   }
-  
+
   public static getInstance(): Logger {
     if (!Logger.instance) {
       Logger.instance = new Logger();
     }
     return Logger.instance;
   }
-  
+
   public setLevel(level: LogLevel): void {
     this.logLevel = level;
   }
-  
+
   public debug(message: string): void {
     if (this.logLevel <= LogLevel.DEBUG) {
       this.log(LogLevel.DEBUG, message);
     }
   }
-  
+
   public info(message: string): void {
     if (this.logLevel <= LogLevel.INFO) {
       this.log(LogLevel.INFO, message);
     }
   }
-  
+
   public warn(message: string): void {
     if (this.logLevel <= LogLevel.WARN) {
       this.log(LogLevel.WARN, message);
     }
   }
-  
+
   public error(message: string): void {
     if (this.logLevel <= LogLevel.ERROR) {
       this.log(LogLevel.ERROR, message);
     }
   }
-  
+
   private log(level: LogLevel, message: string): void {
     const entry = {
       timestamp: new Date(),
       level,
       message
     };
-    
+
     this.logs.push(entry);
     console.log(`[${LogLevel[level]}] ${message}`);
   }
-  
+
   public getLogs(): Array<{ timestamp: Date; level: LogLevel; message: string }> {
     return [...this.logs];
   }
@@ -290,25 +290,25 @@ class DatabasePool {
   private static instance: DatabasePool;
   private connections: Array<{ id: number; inUse: boolean }> = [];
   private maxConnections: number;
-  
+
   private constructor(maxConnections: number = 10) {
     this.maxConnections = maxConnections;
     this.initializePool();
   }
-  
+
   private initializePool(): void {
     for (let i = 0; i < this.maxConnections; i++) {
       this.connections.push({ id: i, inUse: false });
     }
   }
-  
+
   public static getInstance(maxConnections?: number): DatabasePool {
     if (!DatabasePool.instance) {
       DatabasePool.instance = new DatabasePool(maxConnections);
     }
     return DatabasePool.instance;
   }
-  
+
   public acquireConnection(): { id: number } | null {
     const available = this.connections.find(conn => !conn.inUse);
     if (available) {
@@ -317,7 +317,7 @@ class DatabasePool {
     }
     return null;
   }
-  
+
   public releaseConnection(id: number): void {
     const conn = this.connections.find(c => c.id === id);
     if (conn) {
@@ -334,50 +334,50 @@ class CacheManager {
   private static instance: CacheManager;
   private cache: Map<string, { value: any; expiry: number }> = new Map();
   private defaultTTL: number = 3600000; // 1 hour
-  
+
   private constructor() {}
-  
+
   public static getInstance(): CacheManager {
     if (!CacheManager.instance) {
       CacheManager.instance = new CacheManager();
     }
     return CacheManager.instance;
   }
-  
+
   public set(key: string, value: any, ttl?: number): void {
     const expiry = Date.now() + (ttl || this.defaultTTL);
     this.cache.set(key, { value, expiry });
   }
-  
+
   public get<T>(key: string): T | null {
     const item = this.cache.get(key);
     if (!item) return null;
-    
+
     if (Date.now() > item.expiry) {
       this.cache.delete(key);
       return null;
     }
-    
+
     return item.value as T;
   }
-  
+
   public delete(key: string): boolean {
     return this.cache.delete(key);
   }
-  
+
   public clear(): void {
     this.cache.clear();
   }
-  
+
   public has(key: string): boolean {
     const item = this.cache.get(key);
     if (!item) return false;
-    
+
     if (Date.now() > item.expiry) {
       this.cache.delete(key);
       return false;
     }
-    
+
     return true;
   }
 }
@@ -391,30 +391,30 @@ type EventHandler = (...args: any[]) => void;
 class EventBus {
   private static instance: EventBus;
   private listeners: Map<string, EventHandler[]> = new Map();
-  
+
   private constructor() {}
-  
+
   public static getInstance(): EventBus {
     if (!EventBus.instance) {
       EventBus.instance = new EventBus();
     }
     return EventBus.instance;
   }
-  
+
   public on(event: string, handler: EventHandler): void {
     if (!this.listeners.has(event)) {
       this.listeners.set(event, []);
     }
     this.listeners.get(event)!.push(handler);
   }
-  
+
   public emit(event: string, ...args: any[]): void {
     const handlers = this.listeners.get(event);
     if (handlers) {
       handlers.forEach(handler => handler(...args));
     }
   }
-  
+
   public off(event: string, handler: EventHandler): void {
     const handlers = this.listeners.get(event);
     if (handlers) {
@@ -435,9 +435,9 @@ class EventBus {
 // ❌ BAD - Not thread-safe
 class BadSingleton {
   private static instance: BadSingleton;
-  
+
   private constructor() {}
-  
+
   public static getInstance(): BadSingleton {
     // Race condition in multi-threaded environments
     if (!BadSingleton.instance) {
@@ -454,16 +454,16 @@ class BadSingleton {
 // ❌ BAD - Using Singleton for everything
 class UserService {
   private static instance: UserService;
-  
+
   private constructor() {}
-  
+
   public static getInstance(): UserService {
     if (!UserService.instance) {
       UserService.instance = new UserService();
     }
     return UserService.instance;
   }
-  
+
   // User service doesn't need to be a singleton
   // It could have multiple instances with different configurations
   public async createUser(data: any): Promise<any> {
@@ -480,9 +480,9 @@ class GlobalState {
   private static instance: GlobalState;
   public currentUser: any = null;
   public theme: string = 'light';
-  
+
   private constructor() {}
-  
+
   public static getInstance(): GlobalState {
     if (!GlobalState.instance) {
       GlobalState.instance = new GlobalState();
@@ -500,11 +500,11 @@ class GlobalState {
 // ❌ BAD - Using static methods instead of Singleton
 class StaticService {
   private static data: any[] = [];
-  
+
   public static addItem(item: any): void {
     StaticService.data.push(item);
   }
-  
+
   public static getItems(): any[] {
     return StaticService.data;
   }
@@ -533,7 +533,7 @@ export const database = new Database();
 // ✅ GOOD - Use DI container instead of Singleton
 class Database {
   constructor(private config: DatabaseConfig) {}
-  
+
   async connect(): Promise<void> {
     // Use this.config
   }
@@ -542,11 +542,11 @@ class Database {
 // DI Container
 class Container {
   private static services: Map<string, any> = new Map();
-  
+
   public static register<T>(name: string, service: T): void {
     Container.services.set(name, service);
   }
-  
+
   public static resolve<T>(name: string): T {
     return Container.services.get(name) as T;
   }
@@ -565,18 +565,18 @@ const database = Container.resolve<Database>('database');
 /**
  * Singleton class for managing application configuration.
  * Use ConfigurationManager.getInstance() to access the instance.
- * 
+ *
  * @example
  * const config = ConfigurationManager.getInstance();
  * const port = config.get('port');
  */
 class ConfigurationManager {
   private static instance: ConfigurationManager;
-  
+
   private constructor() {
     // Private constructor - use getInstance() instead
   }
-  
+
   public static getInstance(): ConfigurationManager {
     if (!ConfigurationManager.instance) {
       ConfigurationManager.instance = new ConfigurationManager();
@@ -592,19 +592,19 @@ class ConfigurationManager {
 // ✅ GOOD - Make Singleton testable
 class Database {
   private static instance: Database;
-  
+
   // Allow resetting for testing
   public static resetInstance(): void {
     Database.instance = undefined as any;
   }
-  
+
   // Allow setting mock for testing
   public static setInstance(instance: Database): void {
     Database.instance = instance;
   }
-  
+
   private constructor() {}
-  
+
   public static getInstance(): Database {
     if (!Database.instance) {
       Database.instance = new Database();
@@ -621,15 +621,15 @@ class Database {
 class ExpensiveService {
   private static instance: ExpensiveService;
   private static isInitialized = false;
-  
+
   private constructor() {
     this.initialize();
   }
-  
+
   private initialize(): void {
     console.log('Expensive initialization...');
   }
-  
+
   public static getInstance(): ExpensiveService {
     if (!ExpensiveService.instance) {
       ExpensiveService.instance = new ExpensiveService();

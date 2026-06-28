@@ -504,8 +504,8 @@ Expected impact:
 
 Runtime flow:
 ```
-Host → Request remote module → Remote container loaded → 
-Module scope negotiated → Module exported → 
+Host → Request remote module → Remote container loaded →
+Module scope negotiated → Module exported →
 Shared dependencies resolved → Module returned to host
 ```
 

@@ -91,12 +91,12 @@ function solutionPattern(problem: string): string {
 ### Senior (10)
 
 **Q11: What is the difference between React Hook Form and Formik?**
-- **Answer**: 
+- **Answer**:
   - RHF: Uncontrolled components, better performance, smaller bundle
   - Formik: Controlled components, simpler API, more features
 
 **Q12: How do you optimize form performance?**
-- **Answer**: 
+- **Answer**:
   - Use uncontrolled components
   - Minimize re-renders
   - Debounce validation
@@ -106,7 +106,7 @@ function solutionPattern(problem: string): string {
 - **Answer**: Use `setError` to set errors from server response, or display form-level errors.
 
 **Q14: How do you handle form accessibility?**
-- **Answer**: 
+- **Answer**:
   - Proper labels
   - ARIA attributes
   - Error announcements
@@ -114,39 +114,39 @@ function solutionPattern(problem: string): string {
   - Focus management
 
 **Q15: How do you handle multi-step forms?**
-- **Answer**: 
+- **Answer**:
   - Use FormProvider (RHF) for context
   - Maintain separate forms per step
   - Share form state across steps
 
 **Q16: How do you handle form persistence?**
-- **Answer**: 
+- **Answer**:
   - localStorage/sessionStorage
   - IndexedDB for large data
   - Server-side persistence
 
 **Q17: How do you test form components?**
-- **Answer**: 
+- **Answer**:
   - @testing-library/react
   - Simulate user interactions
   - Test validation errors
   - Test form submission
 
 **Q18: How do you handle file uploads?**
-- **Answer**: 
+- **Answer**:
   - Use input type="file"
   - Handle in onChange
   - Preview before upload
   - Progress indication
 
 **Q19: How do you handle form internationalization?**
-- **Answer**: 
+- **Answer**:
   - i18n for labels and errors
   - RTL support
   - Date/number formatting
 
 **Q20: How do you handle form in server-side rendering?**
-- **Answer**: 
+- **Answer**:
   - Pass initial values from server
   - Hydrate form state on client
   - Validate on server
@@ -154,7 +154,7 @@ function solutionPattern(problem: string): string {
 ### FAANG-style (5)
 
 **Q21: Design a form system for a large application**
-- **Answer**: 
+- **Answer**:
   - React Hook Form for performance
   - Zod for validation
   - Form templates
@@ -162,28 +162,28 @@ function solutionPattern(problem: string): string {
   - Accessibility compliance
 
 **Q22: How would you handle forms in a micro-frontend architecture?**
-- **Answer**: 
+- **Answer**:
   - Independent form libraries
   - Shared validation schemas
   - Event-based communication
   - Consistent UX patterns
 
 **Q23: Explain form validation architecture**
-- **Answer**: 
+- **Answer**:
   - Client-side: Zod schemas
   - Server-side: Same schemas
   - Real-time validation
   - Accessibility
 
 **Q24: How do you optimize form performance at scale?**
-- **Answer**: 
+- **Answer**:
   - Memoization
   - Debounced validation
   - Lazy loading
   - Virtualization
 
 **Q25: Design a form builder system**
-- **Answer**: 
+- **Answer**:
   - JSON schema definition
   - Dynamic rendering
   - Validation rules

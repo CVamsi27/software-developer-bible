@@ -64,20 +64,20 @@ interface Image {
 // Real subject
 class RealImage implements Image {
   private filename: string;
-  
+
   constructor(filename: string) {
     this.filename = filename;
     this.loadFromDisk();
   }
-  
+
   private loadFromDisk(): void {
     console.log(`Loading image from disk: ${this.filename}`);
   }
-  
+
   display(): void {
     console.log(`Displaying image: ${this.filename}`);
   }
-  
+
   getInfo(): string {
     return `Image: ${this.filename}`;
   }
@@ -87,18 +87,18 @@ class RealImage implements Image {
 class ImageProxy implements Image {
   private realImage: RealImage | null = null;
   private filename: string;
-  
+
   constructor(filename: string) {
     this.filename = filename;
   }
-  
+
   display(): void {
     if (!this.realImage) {
       this.realImage = new RealImage(this.filename);
     }
     this.realImage.display();
   }
-  
+
   getInfo(): string {
     return `Proxy for: ${this.filename}`;
   }
@@ -134,11 +134,11 @@ interface DatabaseConnection {
 // Real subject
 class RealDatabaseConnection implements DatabaseConnection {
   private connected: boolean = false;
-  
+
   constructor(private config: any) {
     this.connect();
   }
-  
+
   private async connect(): Promise<void> {
     console.log('Connecting to database...');
     // Simulate connection delay
@@ -146,7 +146,7 @@ class RealDatabaseConnection implements DatabaseConnection {
     this.connected = true;
     console.log('Connected to database');
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     if (!this.connected) {
       throw new Error('Not connected');
@@ -154,12 +154,12 @@ class RealDatabaseConnection implements DatabaseConnection {
     console.log(`Executing query: ${sql}`);
     return [] as T[];
   }
-  
+
   async close(): Promise<void> {
     this.connected = false;
     console.log('Database connection closed');
   }
-  
+
   isConnected(): boolean {
     return this.connected;
   }
@@ -169,9 +169,9 @@ class RealDatabaseConnection implements DatabaseConnection {
 class DatabaseProxy implements DatabaseConnection {
   private realConnection: RealDatabaseConnection | null = null;
   private connectionPromise: Promise<RealDatabaseConnection> | null = null;
-  
+
   constructor(private config: any) {}
-  
+
   private async getConnection(): Promise<RealDatabaseConnection> {
     if (!this.realConnection) {
       if (!this.connectionPromise) {
@@ -181,16 +181,16 @@ class DatabaseProxy implements DatabaseConnection {
     }
     return this.realConnection;
   }
-  
+
   private async createConnection(): Promise<RealDatabaseConnection> {
     return new RealDatabaseConnection(this.config);
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     const connection = await this.getConnection();
     return connection.query<T>(sql);
   }
-  
+
   async close(): Promise<void> {
     if (this.realConnection) {
       await this.realConnection.close();
@@ -198,7 +198,7 @@ class DatabaseProxy implements DatabaseConnection {
       this.connectionPromise = null;
     }
   }
-  
+
   isConnected(): boolean {
     return this.realConnection?.isConnected() || false;
   }
@@ -242,7 +242,7 @@ interface DocumentInfo {
 class RealDocument implements Document {
   private content: string = '';
   private lastModified: Date = new Date();
-  
+
   constructor(
     public id: string,
     public owner: string,
@@ -250,20 +250,20 @@ class RealDocument implements Document {
   ) {
     this.content = initialContent;
   }
-  
+
   read(): string {
     return this.content;
   }
-  
+
   write(content: string): void {
     this.content = content;
     this.lastModified = new Date();
   }
-  
+
   delete(): void {
     console.log(`Document ${this.id} deleted`);
   }
-  
+
   getInfo(): DocumentInfo {
     return {
       id: this.id,
@@ -277,7 +277,7 @@ class RealDocument implements Document {
 // Protection proxy
 class DocumentProxy implements Document {
   private realDocument: RealDocument;
-  
+
   constructor(
     realDocument: RealDocument,
     private currentUser: string,
@@ -285,38 +285,38 @@ class DocumentProxy implements Document {
   ) {
     this.realDocument = realDocument;
   }
-  
+
   read(): string {
     console.log(`User ${this.currentUser} reading document`);
     return this.realDocument.read();
   }
-  
+
   write(content: string): void {
     if (!this.canWrite()) {
       throw new Error('Permission denied: Cannot write to document');
     }
-    
+
     console.log(`User ${this.currentUser} writing to document`);
     this.realDocument.write(content);
   }
-  
+
   delete(): void {
     if (!this.canDelete()) {
       throw new Error('Permission denied: Cannot delete document');
     }
-    
+
     console.log(`User ${this.currentUser} deleting document`);
     this.realDocument.delete();
   }
-  
+
   getInfo(): DocumentInfo {
     return this.realDocument.getInfo();
   }
-  
+
   private canWrite(): boolean {
     return this.userRole === 'admin' || this.userRole === 'editor';
   }
-  
+
   private canDelete(): boolean {
     return this.userRole === 'admin';
   }
@@ -363,7 +363,7 @@ class RealDataFetcher implements DataFetcher {
     await new Promise(resolve => setTimeout(resolve, 1000));
     return { data: `Data from ${url}`, timestamp: Date.now() };
   }
-  
+
   async postData(url: string, data: any): Promise<any> {
     console.log(`Posting data to: ${url}`);
     return { success: true };
@@ -374,44 +374,44 @@ class RealDataFetcher implements DataFetcher {
 class CachingProxy implements DataFetcher {
   private cache: Map<string, { data: any; expiry: number }> = new Map();
   private defaultTTL: number;
-  
+
   constructor(
     private realFetcher: DataFetcher,
     defaultTTL: number = 5 * 60 * 1000 // 5 minutes
   ) {
     this.defaultTTL = defaultTTL;
   }
-  
+
   async fetch(url: string): Promise<any> {
     const cached = this.cache.get(url);
-    
+
     if (cached && Date.now() < cached.expiry) {
       console.log(`Cache hit for: ${url}`);
       return cached.data;
     }
-    
+
     console.log(`Cache miss for: ${url}`);
     const data = await this.realFetcher.fetch(url);
-    
+
     this.cache.set(url, {
       data,
       expiry: Date.now() + this.defaultTTL
     });
-    
+
     return data;
   }
-  
+
   async postData(url: string, data: any): Promise<any> {
     // Invalidate cache for this URL
     this.cache.delete(url);
-    
+
     return this.realFetcher.postData(url, data);
   }
-  
+
   clearCache(): void {
     this.cache.clear();
   }
-  
+
   getCacheSize(): number {
     return this.cache.size;
   }
@@ -445,15 +445,15 @@ class RealUserService implements UserService {
   async getUser(id: string): Promise<any> {
     return { id, name: 'John' };
   }
-  
+
   async createUser(data: any): Promise<any> {
     return { id: '1', ...data };
   }
-  
+
   async updateUser(id: string, data: any): Promise<any> {
     return { id, ...data };
   }
-  
+
   async deleteUser(id: string): Promise<boolean> {
     return true;
   }
@@ -462,45 +462,45 @@ class RealUserService implements UserService {
 // Logging proxy
 class LoggingProxy implements UserService {
   private logs: Array<{ timestamp: Date; method: string; args: any[]; result: any }> = [];
-  
+
   constructor(private realService: UserService) {}
-  
+
   async getUser(id: string): Promise<any> {
     const start = Date.now();
     const result = await this.realService.getUser(id);
     const duration = Date.now() - start;
-    
+
     this.log('getUser', [id], result, duration);
     return result;
   }
-  
+
   async createUser(data: any): Promise<any> {
     const start = Date.now();
     const result = await this.realService.createUser(data);
     const duration = Date.now() - start;
-    
+
     this.log('createUser', [data], result, duration);
     return result;
   }
-  
+
   async updateUser(id: string, data: any): Promise<any> {
     const start = Date.now();
     const result = await this.realService.updateUser(id, data);
     const duration = Date.now() - start;
-    
+
     this.log('updateUser', [id, data], result, duration);
     return result;
   }
-  
+
   async deleteUser(id: string): Promise<boolean> {
     const start = Date.now();
     const result = await this.realService.deleteUser(id);
     const duration = Date.now() - start;
-    
+
     this.log('deleteUser', [id], result, duration);
     return result;
   }
-  
+
   private log(method: string, args: any[], result: any, duration: number): void {
     const entry = {
       timestamp: new Date(),
@@ -509,11 +509,11 @@ class LoggingProxy implements UserService {
       result,
       duration
     };
-    
+
     this.logs.push(entry);
     console.log(`[${method}] Duration: ${duration}ms`, { args, result });
   }
-  
+
   getLogs(): Array<{ timestamp: Date; method: string; args: any[]; result: any }> {
     return [...this.logs];
   }
@@ -540,49 +540,49 @@ type Watcher = (newValue: any, oldValue: any) => void;
 class ReactiveObject {
   private data: any;
   private watchers: Map<string, Watcher[]> = new Map();
-  
+
   constructor(data: any) {
     this.data = this.createProxy(data);
   }
-  
+
   private createProxy(obj: any): any {
     if (typeof obj !== 'object' || obj === null) {
       return obj;
     }
-    
+
     const self = this;
-    
+
     return new Proxy(obj, {
       get(target, prop) {
         const value = target[prop];
-        
+
         // Recursively proxy nested objects
         if (typeof value === 'object' && value !== null) {
           return self.createProxy(value);
         }
-        
+
         return value;
       },
-      
+
       set(target, prop, value) {
         const oldValue = target[prop];
         target[prop] = value;
-        
+
         // Notify watchers
         self.notifyWatchers(prop as string, value, oldValue);
-        
+
         return true;
       }
     });
   }
-  
+
   watch(key: string, watcher: Watcher): () => void {
     if (!this.watchers.has(key)) {
       this.watchers.set(key, []);
     }
-    
+
     this.watchers.get(key)!.push(watcher);
-    
+
     // Return unwatch function
     return () => {
       const watchers = this.watchers.get(key);
@@ -594,14 +594,14 @@ class ReactiveObject {
       }
     };
   }
-  
+
   private notifyWatchers(key: string, newValue: any, oldValue: any): void {
     const watchers = this.watchers.get(key);
     if (watchers) {
       watchers.forEach(watcher => watcher(newValue, oldValue));
     }
   }
-  
+
   getData(): any {
     return this.data;
   }
@@ -643,7 +643,7 @@ class RateLimitProxy implements APIClient {
   private requests: Map<string, number[]> = new Map();
   private limit: number;
   private windowMs: number;
-  
+
   constructor(
     private realClient: APIClient,
     limit: number = 100,
@@ -652,31 +652,31 @@ class RateLimitProxy implements APIClient {
     this.limit = limit;
     this.windowMs = windowMs;
   }
-  
+
   async request(url: string, options?: any): Promise<any> {
     const endpoint = this.getEndpoint(url);
     const now = Date.now();
-    
+
     const requests = this.requests.get(endpoint) || [];
     const recentRequests = requests.filter(time => now - time < this.windowMs);
-    
+
     if (recentRequests.length >= this.limit) {
       console.log(`Rate limit exceeded for ${endpoint}`);
       throw new Error('Rate limit exceeded');
     }
-    
+
     recentRequests.push(now);
     this.requests.set(endpoint, recentRequests);
-    
+
     return this.realClient.request(url, options);
   }
-  
+
   private getEndpoint(url: string): string {
     // Extract endpoint from URL
     const urlObj = new URL(url);
     return urlObj.pathname;
   }
-  
+
   getRemainingRequests(endpoint: string): number {
     const now = Date.now();
     const requests = this.requests.get(endpoint) || [];
@@ -713,11 +713,11 @@ class RealSecureResource implements SecureResource {
   async getData(): Promise<any> {
     return { sensitive: 'data' };
   }
-  
+
   async updateData(data: any): Promise<any> {
     return { updated: true, ...data };
   }
-  
+
   async deleteData(): Promise<boolean> {
     return true;
   }
@@ -726,9 +726,9 @@ class RealSecureResource implements SecureResource {
 // Authentication proxy
 class AuthProxy implements SecureResource {
   private token: string | null = null;
-  
+
   constructor(private realResource: SecureResource) {}
-  
+
   async authenticate(username: string, password: string): Promise<boolean> {
     // Simulate authentication
     if (username === 'admin' && password === 'password') {
@@ -736,42 +736,42 @@ class AuthProxy implements SecureResource {
       console.log('Authentication successful');
       return true;
     }
-    
+
     console.log('Authentication failed');
     return false;
   }
-  
+
   private isAuthenticated(): boolean {
     return this.token !== null;
   }
-  
+
   async getData(): Promise<any> {
     if (!this.isAuthenticated()) {
       throw new Error('Not authenticated');
     }
-    
+
     console.log('Accessing data with token:', this.token);
     return this.realResource.getData();
   }
-  
+
   async updateData(data: any): Promise<any> {
     if (!this.isAuthenticated()) {
       throw new Error('Not authenticated');
     }
-    
+
     console.log('Updating data with token:', this.token);
     return this.realResource.updateData(data);
   }
-  
+
   async deleteData(): Promise<boolean> {
     if (!this.isAuthenticated()) {
       throw new Error('Not authenticated');
     }
-    
+
     console.log('Deleting data with token:', this.token);
     return this.realResource.deleteData();
   }
-  
+
   logout(): void {
     this.token = null;
     console.log('Logged out');
@@ -822,7 +822,7 @@ class BadProxy {
 // ❌ BAD - Proxy doesn't implement interface
 class BadProxy {
   private real: RealSubject;
-  
+
   // Missing interface methods
 }
 ```
@@ -833,7 +833,7 @@ class BadProxy {
 // ❌ BAD - Proxy references itself
 class CircularProxy {
   private proxy: CircularProxy;
-  
+
   constructor() {
     this.proxy = this;
   }
@@ -847,7 +847,7 @@ class CircularProxy {
 class StatefulProxy {
   private state: any;
   private dependencies: any[];
-  
+
   // Hard to reason about
 }
 ```
@@ -860,7 +860,7 @@ class StatefulProxy {
 // ✅ GOOD - Implements interface
 class GoodProxy implements Subject {
   private real: RealSubject;
-  
+
   request(): void {
     this.real.request();
   }

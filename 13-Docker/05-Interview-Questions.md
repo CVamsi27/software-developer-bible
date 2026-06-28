@@ -578,7 +578,7 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 services:
   app:
     profiles: ["dev", "prod"]
-  
+
   debug:
     profiles: ["dev"]
 ```

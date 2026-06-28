@@ -72,16 +72,16 @@ Response:
 // Offset-based pagination implementation
 app.get('/api/users', async (req, res) => {
   const { page = '1', limit = '10' } = req.query;
-  
+
   const pageNum = Math.max(1, parseInt(page as string));
   const limitNum = Math.min(100, Math.max(1, parseInt(limit as string)));
   const offset = (pageNum - 1) * limitNum;
-  
+
   const [users, total] = await Promise.all([
     UserService.findAll({ offset, limit: limitNum }),
     UserService.count()
   ]);
-  
+
   res.json({
     data: users,
     pagination: {
@@ -142,27 +142,27 @@ Response:
 // Cursor-based pagination implementation
 app.get('/api/users', async (req, res) => {
   const { cursor, limit = '10' } = req.query;
-  
+
   const limitNum = Math.min(100, Math.max(1, parseInt(limit as string)));
-  
+
   let whereClause = {};
   if (cursor) {
     const decodedCursor = JSON.parse(Buffer.from(cursor as string, 'base64').toString());
     whereClause = { id: { $gt: decodedCursor.id } };
   }
-  
+
   const users = await UserService.findAll({
     where: whereClause,
     limit: limitNum + 1, // Fetch one extra to check if there are more
     order: [['id', 'ASC']]
   });
-  
+
   const hasMore = users.length > limitNum;
   const data = hasMore ? users.slice(0, limitNum) : users;
   const nextCursor = hasMore
     ? Buffer.from(JSON.stringify({ id: data[data.length - 1].id })).toString('base64')
     : null;
-  
+
   res.json({
     data,
     pagination: {
@@ -206,28 +206,28 @@ Response:
 // Keyset pagination implementation
 app.get('/api/users', async (req, res) => {
   const { createdAfter, createdBefore, limit = '10', sort = 'created_at' } = req.query;
-  
+
   const limitNum = Math.min(100, Math.max(1, parseInt(limit as string)));
-  
+
   const whereClause: any = {};
-  
+
   if (createdAfter) {
     whereClause.created_at = { $gt: new Date(createdAfter as string) };
   }
   if (createdBefore) {
     whereClause.created_at = { ...whereClause.created_at, $lt: new Date(createdBefore as string) };
   }
-  
+
   const users = await UserService.findAll({
     where: whereClause,
     limit: limitNum + 1,
     order: [[sort, 'ASC']]
   });
-  
+
   const hasMore = users.length > limitNum;
   const data = hasMore ? users.slice(0, limitNum) : users;
   const lastItem = data[data.length - 1];
-  
+
   res.json({
     data,
     pagination: {
@@ -247,19 +247,19 @@ app.get('/api/users', async (req, res) => {
 app.get('/api/feed', authenticate, async (req, res) => {
   const { cursor, limit = '20' } = req.query;
   const limitNum = parseInt(limit as string);
-  
+
   const feed = await FeedService.getForUser(req.user.id, {
     cursor,
     limit: limitNum + 1
   });
-  
+
   const hasMore = feed.length > limitNum;
   const posts = hasMore ? feed.slice(0, limitNum) : feed;
   const nextCursor = hasMore ? posts[posts.length - 1].id : null;
-  
+
   // Prefetch indicator
   const shouldPrefetch = posts.length <= limitNum * 0.7;
-  
+
   res.json({
     data: posts,
     pagination: {
@@ -322,13 +322,13 @@ import express, { Request, Response } from 'express';
 function paginate(schema: any) {
   return async (req: Request, res: Response, next: Function) => {
     const { page, limit, cursor, sort, order } = req.query;
-    
+
     const paginationType = cursor ? 'cursor' : 'offset';
-    
+
     if (paginationType === 'offset') {
       const pageNum = Math.max(1, parseInt(page as string) || 1);
       const limitNum = Math.min(100, Math.max(1, parseInt(limit as string) || 10));
-      
+
       req.pagination = {
         type: 'offset',
         page: pageNum,
@@ -337,19 +337,19 @@ function paginate(schema: any) {
       };
     } else {
       const limitNum = Math.min(100, Math.max(1, parseInt(limit as string) || 10));
-      
+
       req.pagination = {
         type: 'cursor',
         cursor: cursor as string,
         limit: limitNum
       };
     }
-    
+
     req.sort = {
       field: (sort as string) || 'createdAt',
       order: (order as string) || 'desc'
     };
-    
+
     next();
   };
 }
@@ -357,10 +357,10 @@ function paginate(schema: any) {
 // User routes with pagination
 app.get('/api/users', paginate(UserSchema), async (req: Request, res: Response) => {
   const { pagination, sort } = req;
-  
+
   let users;
   let paginationResponse;
-  
+
   if (pagination.type === 'offset') {
     const [data, total] = await Promise.all([
       UserService.findAll({
@@ -371,7 +371,7 @@ app.get('/api/users', paginate(UserSchema), async (req: Request, res: Response) 
       }),
       UserService.count()
     ]);
-    
+
     users = data;
     paginationResponse = {
       page: pagination.page,
@@ -386,7 +386,7 @@ app.get('/api/users', paginate(UserSchema), async (req: Request, res: Response) 
       sort: sort.field,
       order: sort.order
     });
-    
+
     users = data;
     paginationResponse = {
       hasMore: data.length === pagination.limit,
@@ -395,7 +395,7 @@ app.get('/api/users', paginate(UserSchema), async (req: Request, res: Response) 
         : null
     };
   }
-  
+
   res.json({
     data: users,
     pagination: paginationResponse
@@ -417,20 +417,20 @@ function decodeCursor(cursor: string): any {
 ```typescript
 app.get('/api/search', async (req, res) => {
   const { q, page = '1', limit = '10' } = req.query;
-  
+
   if (!q) {
     return res.status(400).json({ error: 'Query parameter required' });
   }
-  
+
   const pageNum = parseInt(page as string);
   const limitNum = parseInt(limit as string);
   const offset = (pageNum - 1) * limitNum;
-  
+
   const [results, total] = await Promise.all([
     SearchService.search(q as string, { offset, limit: limitNum }),
     SearchService.count(q as string)
   ]);
-  
+
   res.json({
     data: results,
     pagination: {
@@ -449,15 +449,15 @@ app.get('/api/search', async (req, res) => {
 ```typescript
 app.get('/api/products', async (req, res) => {
   const { page = '1', limit = '10', sort = 'createdAt', order = 'desc' } = req.query;
-  
+
   const pageNum = parseInt(page as string);
   const limitNum = parseInt(limit as string);
-  
+
   // Validate sort field
   const allowedSortFields = ['createdAt', 'price', 'name', 'rating'];
   const sortField = allowedSortFields.includes(sort as string) ? sort : 'createdAt';
   const sortOrder = order === 'asc' ? 'ASC' : 'DESC';
-  
+
   const [products, total] = await Promise.all([
     ProductService.findAll({
       offset: (pageNum - 1) * limitNum,
@@ -467,7 +467,7 @@ app.get('/api/products', async (req, res) => {
     }),
     ProductService.count()
   ]);
-  
+
   res.json({
     data: products,
     pagination: {
@@ -492,12 +492,12 @@ app.get('/api/products', async (req, res) => {
 // Infinite scroll feed
 app.get('/api/feed', authenticate, async (req, res) => {
   const { cursor, limit = '20' } = req.query;
-  
+
   const feed = await FeedService.getPersonalized(req.user.id, {
     cursor,
     limit: parseInt(limit as string)
   });
-  
+
   res.json({
     data: feed,
     pagination: {
@@ -516,15 +516,15 @@ app.get('/api/feed', authenticate, async (req, res) => {
 // Product listing with filters
 app.get('/api/products', async (req, res) => {
   const { page = '1', limit = '24', category, minPrice, maxPrice, sort } = req.query;
-  
+
   const filters: ProductFilters = {};
   if (category) filters.category = category as string;
   if (minPrice) filters.minPrice = parseFloat(minPrice as string);
   if (maxPrice) filters.maxPrice = parseFloat(maxPrice as string);
-  
+
   const pageNum = parseInt(page as string);
   const limitNum = parseInt(limit as string);
-  
+
   const [products, total] = await Promise.all([
     ProductService.findAll({
       filters,
@@ -534,7 +534,7 @@ app.get('/api/products', async (req, res) => {
     }),
     ProductService.count(filters)
   ]);
-  
+
   res.json({
     data: products,
     pagination: {
@@ -554,12 +554,12 @@ app.get('/api/products', async (req, res) => {
 // Load older messages
 app.get('/api/conversations/:id/messages', authenticate, async (req, res) => {
   const { cursor, limit = '50' } = req.query;
-  
+
   const messages = await MessageService.getForConversation(req.params.id, {
     cursor,
     limit: parseInt(limit as string)
   });
-  
+
   res.json({
     data: messages,
     pagination: {
@@ -578,15 +578,15 @@ app.get('/api/conversations/:id/messages', authenticate, async (req, res) => {
 // Admin user management with pagination
 app.get('/api/admin/users', adminOnly, async (req, res) => {
   const { page = '1', limit = '50', status, role, search } = req.query;
-  
+
   const filters: AdminUserFilters = {};
   if (status) filters.status = status as string;
   if (role) filters.role = role as string;
   if (search) filters.search = search as string;
-  
+
   const pageNum = parseInt(page as string);
   const limitNum = parseInt(limit as string);
-  
+
   const [users, total] = await Promise.all([
     UserService.adminFindAll({
       filters,
@@ -595,7 +595,7 @@ app.get('/api/admin/users', adminOnly, async (req, res) => {
     }),
     UserService.adminCount(filters)
   ]);
-  
+
   res.json({
     data: users,
     pagination: {

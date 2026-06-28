@@ -236,7 +236,7 @@ console.log(characterReplacement("AABABBA", 1)); // 4 ("AABA")
 
 1. **Maximum Average Subarray I** (LeetCode 643)
    - Find max average of subarray of size k
-   
+
 2. **Best Time to Buy and Sell Stock** (LeetCode 121)
    - Find max profit with one transaction
 

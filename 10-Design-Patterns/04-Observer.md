@@ -75,7 +75,7 @@ interface Subject {
 class NewsAgency implements Subject {
   private observers: Observer[] = [];
   private latestNews: string = '';
-  
+
   attach(observer: Observer): void {
     const exists = this.observers.find(o => o.getId() === observer.getId());
     if (!exists) {
@@ -83,7 +83,7 @@ class NewsAgency implements Subject {
       console.log(`Observer ${observer.getId()} attached`);
     }
   }
-  
+
   detach(observer: Observer): void {
     const index = this.observers.findIndex(o => o.getId() === observer.getId());
     if (index !== -1) {
@@ -91,14 +91,14 @@ class NewsAgency implements Subject {
       console.log(`Observer ${observer.getId()} detached`);
     }
   }
-  
+
   notify(): void {
     console.log(`Notifying ${this.observers.length} observers...`);
     this.observers.forEach(observer => {
       observer.update(this.latestNews);
     });
   }
-  
+
   addNews(news: string): void {
     this.latestNews = news;
     console.log(`News added: ${news}`);
@@ -110,16 +110,16 @@ class NewsAgency implements Subject {
 class NewsChannel implements Observer {
   private id: string;
   private name: string;
-  
+
   constructor(id: string, name: string) {
     this.id = id;
     this.name = name;
   }
-  
+
   update(data: string): void {
     console.log(`${this.name} received news: ${data}`);
   }
-  
+
   getId(): string {
     return this.id;
   }
@@ -128,20 +128,20 @@ class NewsChannel implements Observer {
 class NewsApp implements Observer {
   private id: string;
   private notifications: string[] = [];
-  
+
   constructor(id: string) {
     this.id = id;
   }
-  
+
   update(data: string): void {
     this.notifications.push(data);
     console.log(`App ${this.id} received: ${data}`);
   }
-  
+
   getId(): string {
     return this.id;
   }
-  
+
   getNotifications(): string[] {
     return [...this.notifications];
   }
@@ -172,7 +172,7 @@ type EventCallback = (...args: any[]) => void;
 class EventEmitter {
   private listeners: Map<string, EventCallback[]> = new Map();
   private onceListeners: Map<string, EventCallback[]> = new Map();
-  
+
   on(event: string, callback: EventCallback): this {
     if (!this.listeners.has(event)) {
       this.listeners.set(event, []);
@@ -180,7 +180,7 @@ class EventEmitter {
     this.listeners.get(event)!.push(callback);
     return this;
   }
-  
+
   once(event: string, callback: EventCallback): this {
     if (!this.onceListeners.has(event)) {
       this.onceListeners.set(event, []);
@@ -188,7 +188,7 @@ class EventEmitter {
     this.onceListeners.get(event)!.push(callback);
     return this;
   }
-  
+
   off(event: string, callback: EventCallback): this {
     const listeners = this.listeners.get(event);
     if (listeners) {
@@ -197,7 +197,7 @@ class EventEmitter {
         listeners.splice(index, 1);
       }
     }
-    
+
     const onceListeners = this.onceListeners.get(event);
     if (onceListeners) {
       const index = onceListeners.indexOf(callback);
@@ -205,30 +205,30 @@ class EventEmitter {
         onceListeners.splice(index, 1);
       }
     }
-    
+
     return this;
   }
-  
+
   emit(event: string, ...args: any[]): boolean {
     const listeners = this.listeners.get(event) || [];
     const onceListeners = this.onceListeners.get(event) || [];
-    
+
     const allListeners = [...listeners, ...onceListeners];
-    
+
     if (allListeners.length === 0) {
       return false;
     }
-    
+
     allListeners.forEach(listener => {
       listener(...args);
     });
-    
+
     // Clear once listeners
     this.onceListeners.delete(event);
-    
+
     return true;
   }
-  
+
   removeAllListeners(event?: string): this {
     if (event) {
       this.listeners.delete(event);
@@ -239,13 +239,13 @@ class EventEmitter {
     }
     return this;
   }
-  
+
   listenerCount(event: string): number {
     const listeners = this.listeners.get(event) || [];
     const onceListeners = this.onceListeners.get(event) || [];
     return listeners.length + onceListeners.length;
   }
-  
+
   eventNames(): string[] {
     const eventSet = new Set([
       ...this.listeners.keys(),
@@ -298,32 +298,32 @@ class Store {
     count: 0,
     user: null
   };
-  
+
   private listeners: Map<string, Set<StateListener<any>>> = new Map();
-  
+
   get<K extends keyof State>(key: K): State[K] {
     return this.state[key];
   }
-  
+
   set<K extends keyof State>(key: K, value: State[K]): void {
     const oldValue = this.state[key];
     this.state[key] = value;
     this.notify(key, value, oldValue);
   }
-  
+
   subscribe<K extends keyof State>(key: K, listener: StateListener<K>): () => void {
     if (!this.listeners.has(key)) {
       this.listeners.set(key, new Set());
     }
-    
+
     this.listeners.get(key)!.add(listener);
-    
+
     // Return unsubscribe function
     return () => {
       this.listeners.get(key)?.delete(listener);
     };
   }
-  
+
   private notify<K extends keyof State>(key: K, newValue: State[K], oldValue: State[K]): void {
     const listeners = this.listeners.get(key);
     if (listeners) {
@@ -369,21 +369,21 @@ class ReactiveProperty<T> {
   private listeners: Set<(value: T) => void> = new Set();
   private options: BindingOptions;
   private debounceTimer: NodeJS.Timeout | null = null;
-  
+
   constructor(initialValue: T, options: BindingOptions = {}) {
     this.value = initialValue;
     this.options = options;
   }
-  
+
   get(): T {
     return this.value;
   }
-  
+
   set(newValue: T): void {
-    const transformedValue = this.options.transform 
-      ? this.options.transform(newValue) 
+    const transformedValue = this.options.transform
+      ? this.options.transform(newValue)
       : newValue;
-    
+
     if (this.options.debounce) {
       if (this.debounceTimer) {
         clearTimeout(this.debounceTimer);
@@ -397,15 +397,15 @@ class ReactiveProperty<T> {
       this.notify();
     }
   }
-  
+
   subscribe(listener: (value: T) => void): () => void {
     this.listeners.add(listener);
-    
+
     return () => {
       this.listeners.delete(listener);
     };
   }
-  
+
   private notify(): void {
     this.listeners.forEach(listener => {
       listener(this.value);
@@ -444,34 +444,34 @@ interface ActivityListener {
 class UserActivityTracker {
   private listeners: ActivityListener[] = [];
   private activities: Activity[] = [];
-  
+
   addListener(listener: ActivityListener): void {
     this.listeners.push(listener);
   }
-  
+
   removeListener(listener: ActivityListener): void {
     const index = this.listeners.indexOf(listener);
     if (index !== -1) {
       this.listeners.splice(index, 1);
     }
   }
-  
+
   track(activity: Omit<Activity, 'timestamp'>): void {
     const fullActivity: Activity = {
       ...activity,
       timestamp: new Date()
     };
-    
+
     this.activities.push(fullActivity);
     this.notifyListeners(fullActivity);
   }
-  
+
   private notifyListeners(activity: Activity): void {
     this.listeners.forEach(listener => {
       listener.onActivity(activity);
     });
   }
-  
+
   getActivities(): Activity[] {
     return [...this.activities];
   }
@@ -533,42 +533,42 @@ class PriceMonitor {
   private alerts: PriceAlert[] = [];
   private listeners: PriceAlertListener[] = [];
   private prices: Map<string, number> = new Map();
-  
+
   addAlert(alert: PriceAlert): void {
     this.alerts.push(alert);
   }
-  
+
   removeAlert(productId: string): void {
     this.alerts = this.alerts.filter(a => a.productId !== productId);
   }
-  
+
   addListener(listener: PriceAlertListener): void {
     this.listeners.push(listener);
   }
-  
+
   updatePrice(productId: string, newPrice: number): void {
     const oldPrice = this.prices.get(productId);
     this.prices.set(productId, newPrice);
-    
+
     if (oldPrice !== undefined) {
       this.checkAlerts(productId, oldPrice, newPrice);
     }
   }
-  
+
   private checkAlerts(productId: string, oldPrice: number, newPrice: number): void {
     const relevantAlerts = this.alerts.filter(a => a.productId === productId);
-    
+
     relevantAlerts.forEach(alert => {
-      const shouldTrigger = 
+      const shouldTrigger =
         (alert.condition === 'below' && newPrice <= alert.targetPrice) ||
         (alert.condition === 'above' && newPrice >= alert.targetPrice);
-      
+
       if (shouldTrigger) {
         this.notifyListeners(alert, newPrice);
       }
     });
   }
-  
+
   private notifyListeners(alert: PriceAlert, currentPrice: number): void {
     this.listeners.forEach(listener => {
       listener.onPriceAlert(alert, currentPrice);
@@ -607,31 +607,31 @@ class FormValidator {
   private fields: Map<string, (value: any) => string | null> = new Map();
   private values: Map<string, any> = new Map();
   private observers: FormObserver[] = [];
-  
+
   addField(name: string, validator: (value: any) => string | null): void {
     this.fields.set(name, validator);
   }
-  
+
   addObserver(observer: FormObserver): void {
     this.observers.push(observer);
   }
-  
+
   removeObserver(observer: FormObserver): void {
     const index = this.observers.indexOf(observer);
     if (index !== -1) {
       this.observers.splice(index, 1);
     }
   }
-  
+
   setValue(field: string, value: any): void {
     this.values.set(field, value);
     this.validateField(field);
   }
-  
+
   private validateField(field: string): void {
     const validator = this.fields.get(field);
     const value = this.values.get(field);
-    
+
     if (validator) {
       const error = validator(value);
       const state: ValidationState = {
@@ -639,18 +639,18 @@ class FormValidator {
         isValid: error === null,
         error: error || undefined
       };
-      
+
       this.notifyValidation(state);
     }
   }
-  
+
   validateAll(): boolean {
     let isValid = true;
-    
+
     this.fields.forEach((validator, field) => {
       const value = this.values.get(field);
       const error = validator(value);
-      
+
       if (error) {
         isValid = false;
         this.notifyValidation({
@@ -660,21 +660,21 @@ class FormValidator {
         });
       }
     });
-    
+
     return isValid;
   }
-  
+
   submit(): void {
     const isValid = this.validateAll();
     this.notifySubmit(isValid);
   }
-  
+
   private notifyValidation(state: ValidationState): void {
     this.observers.forEach(observer => {
       observer.onValidationChange(state);
     });
   }
-  
+
   private notifySubmit(isValid: boolean): void {
     this.observers.forEach(observer => {
       observer.onFormSubmit(isValid);
@@ -719,11 +719,11 @@ form.submit(); // Form submitted: Failed
 // ❌ BAD - Not cleaning up observers
 class BadSubject {
   private observers: Observer[] = [];
-  
+
   attach(observer: Observer): void {
     this.observers.push(observer);
   }
-  
+
   // No detach method!
   // Observers can't be removed, causing memory leaks
 }
@@ -735,7 +735,7 @@ class BadSubject {
 // ❌ BAD - Subject knows about concrete observers
 class BadSubject {
   private observers: ConcreteObserver[] = [];
-  
+
   notify(): void {
     this.observers.forEach(observer => {
       observer.specificMethod(); // Tight coupling
@@ -776,11 +776,11 @@ class BadObserver implements Observer {
 // ✅ GOOD - Clean up observers
 class Subject {
   private observers: Observer[] = [];
-  
+
   attach(observer: Observer): void {
     this.observers.push(observer);
   }
-  
+
   detach(observer: Observer): void {
     const index = this.observers.indexOf(observer);
     if (index !== -1) {
@@ -796,11 +796,11 @@ class Subject {
 // ✅ GOOD - Weak references for automatic cleanup
 class Subject {
   private observers: WeakRef<Observer>[] = [];
-  
+
   attach(observer: Observer): void {
     this.observers.push(new WeakRef(observer));
   }
-  
+
   notify(): void {
     this.observers = this.observers.filter(ref => {
       const observer = ref.deref();

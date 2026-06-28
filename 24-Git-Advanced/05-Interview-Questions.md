@@ -365,7 +365,7 @@ steps:
   - uses: actions/checkout@v3
     with:
       fetch-depth: 0  # Full history for analysis
-  
+
   - name: Setup Git
     run: |
       git config user.name "CI Bot"
@@ -529,7 +529,7 @@ services:
     repo: github.com/org/auth
   payment:
     repo: github.com/org/payment
-  
+
 # Or monorepo with sparse checkout
 monorepo:
   sparse_checkout: true

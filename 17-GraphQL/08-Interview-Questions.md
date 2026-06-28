@@ -387,7 +387,7 @@ type User { id: ID!, name: String! }
 class User {
   @Field(() => ID)
   id: string;
-  
+
   @Field()
   name: string;
 }
@@ -712,16 +712,16 @@ const metrics = {
   'graphql.query.duration': Histogram,
   'graphql.resolver.duration': Histogram,
   'graphql.complexity.score': Gauge,
-  
+
   // Errors
   'graphql.errors.count': Counter,
   'graphql.errors.type': Counter,
-  
+
   // Usage
   'graphql.queries.count': Counter,
   'graphql.mutations.count': Counter,
   'graphql.subscriptions.active': Gauge,
-  
+
   // Cache
   'graphql.cache.hit': Counter,
   'graphql.cache.miss': Counter,
@@ -980,12 +980,12 @@ Considerations:
 
 ```graphql
 # Polymorphic content types
-union ContentBlock = 
-  | Paragraph 
-  | Heading 
-  | Image 
-  | Video 
-  | CodeBlock 
+union ContentBlock =
+  | Paragraph
+  | Heading
+  | Image
+  | Video
+  | CodeBlock
   | Quote
 
 type Paragraph {
@@ -1455,7 +1455,7 @@ const resolvers = {
       // info.fieldNodes - AST nodes
       // info.path - { prev: ..., key: "user" }
       // info.schema - GraphQL schema
-      
+
       // Useful for:
       // - Query analysis
       // - Field-level logging

@@ -343,7 +343,7 @@ console.log(rex.bark());   // "Rex barks" (own method)
 // Pattern 2: Class syntax (syntactic sugar)
 class Animal2 {
   constructor(public name: string) {}
-  
+
   speak() {
     return `${this.name} makes a sound`;
   }
@@ -353,7 +353,7 @@ class Dog2 extends Animal2 {
   constructor(name: string, public breed: string) {
     super(name);
   }
-  
+
   bark() {
     return `${this.name} barks`;
   }
@@ -365,11 +365,11 @@ class Dog2 extends Animal2 {
 ```typescript
 class Rectangle {
   constructor(public width: number, public height: number) {}
-  
+
   area() {
     return this.width * this.height;
   }
-  
+
   toString() {
     return `Rectangle(${this.width}x${this.height})`;
   }
@@ -379,7 +379,7 @@ class Square extends Rectangle {
   constructor(size: number) {
     super(size, size);
   }
-  
+
   // Override toString
   toString() {
     return `Square(${this.width})`;
@@ -412,13 +412,13 @@ console.log(obj.__proto__ === Object.prototype);  // true
 function getPrototypeMethods(obj: any): string[] {
   const methods: string[] = [];
   let current = obj;
-  
+
   while (current !== null) {
     methods.push(...Object.getOwnPropertyNames(current)
       .filter(name => typeof current[name] === 'function'));
     current = Object.getPrototypeOf(current);
   }
-  
+
   return methods;
 }
 
@@ -434,13 +434,13 @@ console.log(getPrototypeMethods(obj));
 // Custom array-like object with prototype methods
 function createArrayList() {
   const list: any[] = [];
-  
+
   // Add array methods via prototype
   list.push = Array.prototype.push;
   list.pop = Array.prototype.pop;
   list.forEach = Array.prototype.forEach;
   list.map = Array.prototype.map;
-  
+
   return list;
 }
 
@@ -460,11 +460,11 @@ const Loggable = {
   log(message: string) {
     console.log(`[${this.constructor.name}] ${message}`);
   },
-  
+
   warn(message: string) {
     console.warn(`[${this.constructor.name}] ${message}`);
   },
-  
+
   error(message: string) {
     console.error(`[${this.constructor.name}] ${message}`);
   }
@@ -475,7 +475,7 @@ const Serializable = {
   serialize() {
     return JSON.stringify(this);
   },
-  
+
   deserialize(json: string) {
     return Object.assign(this, JSON.parse(json));
   }
@@ -484,11 +484,11 @@ const Serializable = {
 // Apply mixins to class
 class UserService {
   users: any[] = [];
-  
+
   constructor() {
     Object.assign(this, Loggable, Serializable);
   }
-  
+
   addUser(user: any) {
     this.users.push(user);
     this.log(`Added user: ${user.name}`);
@@ -506,15 +506,15 @@ console.log(service.serialize());
 // Base plugin class
 class Plugin {
   name: string;
-  
+
   constructor(name: string) {
     this.name = name;
   }
-  
+
   init() {
     console.log(`Initializing ${this.name}`);
   }
-  
+
   destroy() {
     console.log(`Destroying ${this.name}`);
   }
@@ -523,12 +523,12 @@ class Plugin {
 // Plugin manager uses prototype chain
 class PluginManager {
   private plugins: Plugin[] = [];
-  
+
   register(plugin: Plugin) {
     this.plugins.push(plugin);
     plugin.init();
   }
-  
+
   unregister(name: string) {
     const index = this.plugins.findIndex(p => p.name === name);
     if (index > -1) {
@@ -544,7 +544,7 @@ class PluginManager {
 ```typescript
 class EventEmitter {
   private listeners: Map<string, Function[]> = new Map();
-  
+
   on(event: string, callback: Function) {
     if (!this.listeners.has(event)) {
       this.listeners.set(event, []);
@@ -552,7 +552,7 @@ class EventEmitter {
     this.listeners.get(event)!.push(callback);
     return this;
   }
-  
+
   off(event: string, callback: Function) {
     const callbacks = this.listeners.get(event);
     if (callbacks) {
@@ -563,7 +563,7 @@ class EventEmitter {
     }
     return this;
   }
-  
+
   emit(event: string, ...args: any[]) {
     const callbacks = this.listeners.get(event);
     if (callbacks) {
@@ -665,7 +665,7 @@ class Dog extends Animal {
   constructor(name: string, public breed: string) {
     // Bad: Forgetting super()
     // this.breed = breed;  // ReferenceError!
-    
+
     // Good: Call super first
     super(name);
     this.breed = breed;
@@ -681,7 +681,7 @@ class Dog extends Animal {
 // Modern: Class syntax
 class Person {
   constructor(public name: string) {}
-  
+
   greet() {
     return `Hello, ${this.name}`;
   }
@@ -745,7 +745,7 @@ interface Nammable {
 
 class Dog implements Speakable, Nammable {
   constructor(public name: string) {}
-  
+
   speak() {
     return `${this.name} barks`;
   }
@@ -807,7 +807,7 @@ A: The prototype chain is a series of objects linked by their prototype referenc
 
 **Q3: What is the difference between `__proto__` and `prototype`?**
 
-A: 
+A:
 - `__proto__`: Property on every object that points to its prototype (deprecated, use `Object.getPrototypeOf()`)
 - `prototype`: Property on functions that becomes the prototype of objects created with `new`
 
@@ -835,7 +835,7 @@ A: The `constructor` property is a reference to the function that created the ob
 
 **Q8: How do you properly set up prototype inheritance?**
 
-A: 
+A:
 ```typescript
 function Child() {
   Parent.call(this);  // Call parent constructor
@@ -873,7 +873,7 @@ A: Engines use hidden classes, inline caching, and JIT compilation to speed up p
 
 **Q14: What is the difference between prototypal and classical inheritance?**
 
-A: 
+A:
 - **Prototypal**: Objects inherit directly from other objects via prototype chain
 - **Classical**: Classes are blueprints, instances are created from classes
 
@@ -898,28 +898,28 @@ class MyClass extends BaseClass {
 
 **Q16: Design a prototype-based object system.**
 
-A: 
+A:
 ```typescript
 class PrototypeSystem {
   private prototypes = new Map<string, any>();
-  
+
   create(name: string, properties: any) {
     this.prototypes.set(name, properties);
   }
-  
+
   clone(name: string) {
     const proto = this.prototypes.get(name);
     if (!proto) throw new Error(`Prototype ${name} not found`);
-    
+
     const clone = Object.create(proto);
     Object.assign(clone, { _proto: name });
     return clone;
   }
-  
+
   extend(name: string, parentName: string, extraProperties: any) {
     const parent = this.prototypes.get(parentName);
     if (!parent) throw new Error(`Parent ${parentName} not found`);
-    
+
     const child = Object.create(parent);
     Object.assign(child, extraProperties);
     this.prototypes.set(name, child);
@@ -929,17 +929,17 @@ class PrototypeSystem {
 
 **Q17: How would you implement a class system without using classes?**
 
-A: 
+A:
 ```typescript
 function createClass(constructor: Function, methods: any) {
   const proto = Object.create(null);
-  
+
   Object.keys(methods).forEach(key => {
     proto[key] = methods[key];
   });
-  
+
   proto.constructor = constructor;
-  
+
   return function(...args: any[]) {
     const instance = Object.create(proto);
     constructor.apply(instance, args);
@@ -964,7 +964,7 @@ console.log(alice.greet());  // "Hello, Alice"
 
 **Q18: Analyze the memory usage of prototype-based inheritance.**
 
-A: 
+A:
 - **Shared methods**: One copy per prototype, not per instance
 - **Instance properties**: One copy per instance
 - **Prototype chain**: Each level adds a reference
@@ -974,7 +974,7 @@ Memory efficient: Methods are shared. Each instance only stores unique propertie
 
 **Q19: How do you handle prototype pollution attacks?**
 
-A: 
+A:
 1. Use `Object.freeze` to prevent modifications
 2. Use `Object.create(null)` for objects without prototype
 3. Validate input before adding to prototypes
@@ -983,7 +983,7 @@ A:
 
 **Q20: What are the security implications of prototype pollution?**
 
-A: 
+A:
 1. **Prototype pollution**: Malicious code can modify Object.prototype
 2. **Property injection**: Attackers can inject properties
 3. **Privilege escalation**: Can modify security-related properties
@@ -1011,7 +1011,7 @@ console.log({ a: 1 }.isEmpty());  // false
 
 **Q22: How do you debug prototype-related issues?**
 
-A: 
+A:
 1. **Chrome DevTools**: Inspect prototype chain in debugger
 2. **console.log**: Log `Object.getPrototypeOf(obj)`
 3. **instanceof**: Check prototype chain membership
@@ -1024,7 +1024,7 @@ A: TypeScript compiles to JavaScript, using prototypes under the hood. Classes i
 
 **Q24: How do frameworks use prototypes?**
 
-A: 
+A:
 - **React**: Class components use prototype methods
 - **Vue**: Options API uses prototype for methods
 - **Angular**: Dependency injection via prototypes
@@ -1032,7 +1032,7 @@ A:
 
 **Q25: What are best practices for working with prototypes?**
 
-A: 
+A:
 1. Use class syntax for clarity
 2. Prefer composition over inheritance
 3. Keep prototype chains shallow

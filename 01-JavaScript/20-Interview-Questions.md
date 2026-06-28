@@ -14,7 +14,7 @@ A: Primitive types: Number, String, Boolean, null, undefined, Symbol, BigInt. Re
 
 **Q3: What is the difference between `let`, `const`, and `var`?**
 
-A: 
+A:
 - `var`: Function-scoped, hoisted, reassignable
 - `let`: Block-scoped, not hoisted (TDZ), reassignable
 - `const`: Block-scoped, not hoisted (TDZ), not reassignable
@@ -59,7 +59,7 @@ A: JavaScript uses prototypal inheritance where objects inherit from other objec
 
 **Q13: What is the difference between `map`, `filter`, and `reduce`?**
 
-A: 
+A:
 - `map`: Transforms each element, returns new array
 - `filter`: Selects elements based on condition, returns new array
 - `reduce`: Accumulates elements into a single value
@@ -100,7 +100,7 @@ A: Execution context is the environment where code runs. It contains the lexical
 
 **Q22: What is the difference between call, apply, and bind?**
 
-A: 
+A:
 - `call`: Invokes function with specific `this` and individual arguments
 - `apply`: Invokes function with specific `this` and arguments array
 - `bind`: Returns new function with `this` permanently bound
@@ -169,7 +169,7 @@ function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
-  
+
   return function(this: any, ...args: Parameters<T>) {
     if (timeoutId) clearTimeout(timeoutId);
     timeoutId = setTimeout(() => func.apply(this, args), wait);
@@ -184,16 +184,16 @@ A: Use Map for cache, track access order, evict least recently used when full.
 ```typescript
 function memoize<T extends (...args: any[]) => any>(fn: T, maxSize = 100) {
   const cache = new Map<string, ReturnType<T>>();
-  
+
   return function(...args: Parameters<T>) {
     const key = JSON.stringify(args);
     if (cache.has(key)) return cache.get(key)!;
-    
+
     if (cache.size >= maxSize) {
       const firstKey = cache.keys().next().value;
       cache.delete(firstKey);
     }
-    
+
     const result = fn(...args);
     cache.set(key, result);
     return result;
@@ -208,7 +208,7 @@ A: Implement `on`, `off`, `emit` methods using a Map to store listeners by event
 ```typescript
 class EventEmitter {
   private listeners = new Map<string, Set<Function>>();
-  
+
   on(event: string, callback: Function) {
     if (!this.listeners.has(event)) {
       this.listeners.set(event, new Set());
@@ -216,11 +216,11 @@ class EventEmitter {
     this.listeners.get(event)!.add(callback);
     return () => this.off(event, callback);
   }
-  
+
   off(event: string, callback: Function) {
     this.listeners.get(event)?.delete(callback);
   }
-  
+
   emit(event: string, ...args: any[]) {
     this.listeners.get(event)?.forEach(cb => cb(...args));
   }
@@ -235,17 +235,17 @@ A: Handle objects, arrays, Dates, RegExps, Maps, Sets, and circular references u
 function deepClone<T>(obj: T, seen = new WeakMap()): T {
   if (obj === null || typeof obj !== 'object') return obj;
   if (seen.has(obj as object)) return seen.get(obj as object);
-  
+
   if (obj instanceof Date) return new Date(obj) as T;
   if (obj instanceof RegExp) return new RegExp(obj) as T;
-  
+
   const clone = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
   seen.set(obj as object, clone);
-  
+
   for (const key of Reflect.ownKeys(obj)) {
     clone[key] = deepClone((obj as any)[key], seen);
   }
-  
+
   return clone;
 }
 ```
@@ -258,9 +258,9 @@ A: Use a queue, track running tasks, process queue when slots available.
 class TaskScheduler {
   private queue: (() => Promise<any>)[] = [];
   private running = 0;
-  
+
   constructor(private maxConcurrent: number = 5) {}
-  
+
   async add<T>(task: () => Promise<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       this.queue.push(async () => {
@@ -277,7 +277,7 @@ class TaskScheduler {
       this.processQueue();
     });
   }
-  
+
   private processQueue() {
     while (this.running < this.maxConcurrent && this.queue.length) {
       this.queue.shift()!();
@@ -310,7 +310,7 @@ A: Use Map for registrations, resolve dependencies recursively, handle circular 
 
 **Q46: How would you optimize a React application that's re-rendering too much?**
 
-A: 
+A:
 1. Use React.memo for pure components
 2. Memoize expensive computations with useMemo
 3. Memoize callbacks with useCallback
@@ -321,7 +321,7 @@ A:
 
 **Q47: Explain how you would debug a memory leak in a production application.**
 
-A: 
+A:
 1. Monitor memory usage over time
 2. Take heap snapshots in Chrome DevTools
 3. Compare snapshots to find growing objects
@@ -337,7 +337,7 @@ A: Update UI immediately, make API call, rollback on failure. Use local state fo
 
 **Q49: Design a caching strategy for a web application.**
 
-A: 
+A:
 1. Browser cache with appropriate headers
 2. Service worker for offline support
 3. Client-side cache with TTL
@@ -347,7 +347,7 @@ A:
 
 **Q50: How would you handle authentication in a single-page application?**
 
-A: 
+A:
 1. JWT tokens stored in httpOnly cookies
 2. Refresh token rotation
 3. Secure token storage

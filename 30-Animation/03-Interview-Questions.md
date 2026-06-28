@@ -99,7 +99,7 @@ function solutionPattern(problem: string): string {
 - `both`: Applies both
 
 **Q8: How do you optimize CSS animations for performance?**
-- **Answer**: 
+- **Answer**:
   - Use transform/opacity properties
   - Add will-change for complex animations
   - Avoid animating layout properties (width, height, margin)
@@ -138,14 +138,14 @@ function solutionPattern(problem: string): string {
 ```
 
 **Q15: How do you handle animation accessibility?**
-- **Answer**: 
+- **Answer**:
   - Check prefers-reduced-motion
   - Provide alternatives for vestibular disorders
   - Avoid flashing content
   - Allow users to disable animations
 
 **Q16: What causes animation jank and how do you fix it?**
-- **Answer**: 
+- **Answer**:
   - Animating layout properties → Use transform/opacity
   - Heavy JavaScript → Offload to Web Workers
   - Excessive DOM manipulation → Batch updates
@@ -155,7 +155,7 @@ function solutionPattern(problem: string): string {
 - **Answer**: Use Intersection Observer API, or animation libraries like Framer Motion with whileInView prop.
 
 **Q18: How do you test animations?**
-- **Answer**: 
+- **Answer**:
   - Visual regression testing
   - Manual testing with real devices
   - Automation with Playwright/Cypress
@@ -170,7 +170,7 @@ function solutionPattern(problem: string): string {
 ### FAANG-style (5)
 
 **Q21: Design an animation system for a design system**
-- **Answer**: 
+- **Answer**:
   - Animation tokens (duration, easing)
   - Transition utilities
   - Keyframe library
@@ -179,7 +179,7 @@ function solutionPattern(problem: string): string {
   - Documentation
 
 **Q22: How would you optimize animations for low-end devices?**
-- **Answer**: 
+- **Answer**:
   - Simplify animations
   - Reduce DOM changes
   - Use will-change sparingly
@@ -187,21 +187,21 @@ function solutionPattern(problem: string): string {
   - Test on real devices
 
 **Q23: Explain animation performance monitoring**
-- **Answer**: 
+- **Answer**:
   - Frame rate measurement (requestAnimationFrame)
   - Layout thrashing detection
   - GPU usage monitoring
   - User experience metrics (First Paint, First Contentful Paint)
 
 **Q24: How do you handle animations in micro-frontends?**
-- **Answer**: 
+- **Answer**:
   - Consistent animation tokens
   - Performance budgets
   - Shared animation library
   - Independent animation systems
 
 **Q25: Design a page transition system**
-- **Answer**: 
+- **Answer**:
   - Route-based transitions
   - Loading states
   - Error states

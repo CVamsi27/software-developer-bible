@@ -297,7 +297,7 @@ import { ApolloServerPlugin } from '@apollo/server';
 const loggingPlugin: ApolloServerPlugin = {
   async requestDidStart(requestContext) {
     const start = Date.now();
-    
+
     console.log(`Request started: ${requestContext.request.query}`);
 
     return {
@@ -396,10 +396,10 @@ const resolvers = {
   Mutation: {
     uploadFile: async (_, { file }) => {
       const { createReadStream, filename, mimetype, encoding } = await file;
-      
+
       const stream = createReadStream();
       const path = `./uploads/${filename}`;
-      
+
       await new Promise((resolve, reject) => {
         stream
           .pipe(createWriteStream(path))
@@ -490,10 +490,10 @@ app.get('/ready', async (req, res) => {
   try {
     // Check database connection
     await db.raw('SELECT 1');
-    
+
     // Check Redis connection
     await redis.ping();
-    
+
     res.status(200).json({ status: 'ready' });
   } catch (error) {
     res.status(503).json({ status: 'not ready', error: error.message });
@@ -505,7 +505,7 @@ app.get('/graphql/introspection', async (req, res) => {
   const result = await server.executeOperation({
     query: '{ __schema { queryType { name } } }',
   });
-  
+
   res.status(200).json(result);
 });
 ```
@@ -557,7 +557,7 @@ const server = new ApolloServer({
 const createContext = async ({ req }) => {
   const tenantId = req.headers['x-tenant-id'] || 'default';
   const token = req.headers.authorization?.replace('Bearer ', '');
-  
+
   let currentUser = null;
   if (token) {
     currentUser = await verifyToken(token, tenantId);
@@ -815,7 +815,7 @@ const typeDefs = `
   type Query {
     # Cache for 1 minute
     popularPosts: [Post!]! @cacheControl(maxAge: 60)
-    
+
     # No caching
     currentUser: User @cacheControl(maxAge: 0, scope: PRIVATE)
   }

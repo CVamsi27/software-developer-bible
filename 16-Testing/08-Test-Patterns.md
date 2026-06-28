@@ -1134,7 +1134,7 @@ describe("Calculator", () => {
 // ❌ BAD: Testing too many things
 it("should process order correctly", () => {
   const result = service.processOrder(order);
-  
+
   expect(result.status).toBe("success");
   expect(result.total).toBe(100);
   expect(result.items).toHaveLength(3);

@@ -84,7 +84,7 @@ v2Router.get('/users', async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
   const users = await UserService.findAll({ page, limit });
   const total = await UserService.count();
-  
+
   // V2 includes pagination metadata
   res.json({
     data: users,
@@ -120,7 +120,7 @@ app.use('/api/v2', v2Router);
 // Query parameter approach
 app.get('/api/users', (req, res) => {
   const version = parseInt(req.query.version as string) || 1;
-  
+
   if (version === 1) {
     // V1 response format
     const users = await UserService.findAll();
@@ -145,7 +145,7 @@ app.get('/api/users', (req, res) => {
 // Custom header approach
 app.get('/api/users', (req, res) => {
   const version = req.headers['api-version'] || '1';
-  
+
   // Route based on header
   switch (version) {
     case '1':
@@ -160,18 +160,18 @@ app.get('/api/users', (req, res) => {
 // Content negotiation approach
 app.get('/api/users', (req, res) => {
   const accept = req.headers.accept || 'application/json';
-  
+
   // Parse version from Accept header
   // Accept: application/vnd.myapi.v2+json
   const match = accept.match(/vnd\.myapi\.v(\d+)\+json/);
   const version = match ? parseInt(match[1]) : 1;
-  
+
   if (version === 1) {
     return handleV1Users(req, res);
   } else if (version === 2) {
     return handleV2Users(req, res);
   }
-  
+
   res.status(406).json({ error: 'Not Acceptable' });
 });
 ```
@@ -182,14 +182,14 @@ app.get('/api/users', (req, res) => {
 // Media type with version parameter
 app.get('/api/users', (req, res) => {
   const accept = req.headers.accept || 'application/json';
-  
+
   // Parse: application/json; version=2
   const match = accept.match(/version=(\d+)/);
   const version = match ? parseInt(match[1]) : 1;
-  
+
   // Set response Content-Type with version
   res.set('Content-Type', `application/json; version=${version}`);
-  
+
   if (version === 1) {
     return handleV1Users(req, res);
   } else if (version === 2) {
@@ -204,7 +204,7 @@ app.get('/api/users', (req, res) => {
 // Deprecation middleware
 const deprecationMiddleware = (req, res, next) => {
   const version = getVersionFromRequest(req);
-  
+
   if (version === '1') {
     res.set({
       'Deprecation': 'true',
@@ -212,7 +212,7 @@ const deprecationMiddleware = (req, res, next) => {
       'Link': '</api/v2/docs>; rel="successor-version"'
     });
   }
-  
+
   next();
 };
 
@@ -252,47 +252,47 @@ import express, { Request, Response, NextFunction } from 'express';
 // Version detection middleware
 function detectVersion(req: Request): string {
   // Priority: URL path > Query param > Header > Media type
-  
+
   // 1. Check URL path (/api/v1/ or /api/v2/)
   const pathMatch = req.path.match(/^\/api\/v(\d+)\//);
   if (pathMatch) return pathMatch[1];
-  
+
   // 2. Check query parameter
   if (req.query.version) return req.query.version as string;
-  
+
   // 3. Check custom header
   if (req.headers['api-version']) return req.headers['api-version'] as string;
-  
+
   // 4. Check Accept header media type
   const accept = req.headers.accept || '';
   const mediaMatch = accept.match(/vnd\.api\.v(\d+)\+json/);
   if (mediaMatch) return mediaMatch[1];
-  
+
   return '1'; // Default version
 }
 
 // Version-aware router
 class VersionedRouter {
   private versions: Map<string, express.Router> = new Map();
-  
+
   addVersion(version: string, router: express.Router) {
     this.versions.set(version, router);
   }
-  
+
   handle(req: Request, res: Response, next: NextFunction) {
     const version = detectVersion(req);
     const router = this.versions.get(version);
-    
+
     if (!router) {
       return res.status(400).json({
         error: 'Unsupported API version',
         supportedVersions: Array.from(this.versions.keys())
       });
     }
-    
+
     // Add version to request for handlers
     req.apiVersion = version;
-    
+
     return router(req, res, next);
   }
 }
@@ -323,7 +323,7 @@ v2Router.get('/users', async (req, res) => {
   const { page = 1, limit = 10, sort = 'createdAt' } = req.query;
   const users = await UserService.findAll({ page, limit, sort });
   const total = await UserService.count();
-  
+
   res.json({
     data: users,
     pagination: {
@@ -344,7 +344,7 @@ v2Router.get('/users', async (req, res) => {
 v2Router.get('/users/:id', async (req, res) => {
   const user = await UserService.findById(req.params.id);
   if (!user) return res.status(404).json({ error: 'Not found' });
-  
+
   res.json({
     data: user,
     _links: {
@@ -356,7 +356,7 @@ v2Router.get('/users/:id', async (req, res) => {
 
 v2Router.post('/users', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     return res.status(422).json({
       error: 'Validation failed',
@@ -366,7 +366,7 @@ v2Router.post('/users', async (req, res) => {
       }
     });
   }
-  
+
   const user = await UserService.create({ name, email });
   res.status(201)
     .header('Location', `/api/v2/users/${user.id}`)
@@ -397,7 +397,7 @@ const deprecationConfig = {
 app.use('/api', (req: Request, res: Response, next: NextFunction) => {
   const version = detectVersion(req);
   const config = deprecationConfig[version];
-  
+
   if (config?.deprecated) {
     res.set({
       'Deprecation': 'true',
@@ -406,7 +406,7 @@ app.use('/api', (req: Request, res: Response, next: NextFunction) => {
       'Warning': `299 - "API version ${version} is deprecated. Use version ${config.successor} instead."`
     });
   }
-  
+
   next();
 });
 ```
@@ -460,18 +460,18 @@ v2Router.get('/products', async (req, res) => {
 v3Router.get('/products', async (req, res) => {
   const { q, ...filters } = req.query;
   let products;
-  
+
   if (q) {
     products = await ProductService.search(q as string, filters);
   } else {
     products = await ProductService.findAll(filters);
   }
-  
+
   // Add recommendations
   const recommendations = await RecommendationService.getForProducts(
     products.map(p => p.id)
   );
-  
+
   res.json({
     data: products,
     recommendations,
@@ -497,7 +497,7 @@ v2Router.post('/auth/login', async (req, res) => {
   const user = await UserService.authenticate(email, password);
   const accessToken = generateAccessToken(user, scope);
   const refreshToken = await generateRefreshToken(user);
-  
+
   res.json({
     access_token: accessToken,
     refresh_token: refreshToken,
@@ -509,7 +509,7 @@ v2Router.post('/auth/login', async (req, res) => {
 // V3: Added OAuth2 support
 v3Router.post('/auth/token', async (req, res) => {
   const { grant_type, ...params } = req.body;
-  
+
   switch (grant_type) {
     case 'authorization_code':
       return handleAuthorizationCode(req, res);
@@ -551,10 +551,10 @@ v3Router.post('/webhooks', async (req, res) => {
     status: 'active',
     metadata: { createdBy: req.user.id }
   });
-  
+
   // Send test event
   await WebhookService.sendTestEvent(webhook.id);
-  
+
   res.status(201).json({ data: webhook });
 });
 

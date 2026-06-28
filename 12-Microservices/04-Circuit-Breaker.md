@@ -391,11 +391,11 @@ class ResilientServiceClient {
       return this.retry.execute(
         async () => {
           const response = await fetch(`${this.baseUrl}${path}`);
-          
+
           if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
           }
-          
+
           return response.json();
         },
         (error) => {
@@ -451,16 +451,16 @@ class MonitoredCircuitBreaker extends EventEmitter {
     try {
       const result = await this.breaker.execute(operation);
       const duration = Date.now() - startTime;
-      
+
       this.metrics.successfulRequests++;
       this.recordResponseTime(duration);
       this.emit('success', { serviceName: this.serviceName, duration });
-      
+
       return result;
     } catch (error) {
       const duration = Date.now() - startTime;
       const err = error as Error;
-      
+
       if (err.message === 'Circuit breaker is OPEN') {
         this.metrics.rejectedRequests++;
         this.emit('rejected', { serviceName: this.serviceName, duration });
@@ -469,7 +469,7 @@ class MonitoredCircuitBreaker extends EventEmitter {
         this.recordResponseTime(duration);
         this.emit('failure', { serviceName: this.serviceName, duration, error: err });
       }
-      
+
       throw error;
     }
   }
@@ -479,7 +479,7 @@ class MonitoredCircuitBreaker extends EventEmitter {
     if (this.responseTimes.length > 100) {
       this.responseTimes.shift();
     }
-    this.metrics.averageResponseTime = 
+    this.metrics.averageResponseTime =
       this.responseTimes.reduce((a, b) => a + b, 0) / this.responseTimes.length;
   }
 

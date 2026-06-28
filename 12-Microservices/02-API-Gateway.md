@@ -68,7 +68,7 @@ app.use(limiter);
 // Authentication middleware
 const authenticate = (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers.authorization?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(401).json({ error: 'No token provided' });
   }
@@ -180,7 +180,7 @@ class AdvancedAPIGateway {
         return res.status(429).json({ error: 'Rate limit exceeded' });
       }
 
-      res.setHeader('X-RateLimit-Remaining', 
+      res.setHeader('X-RateLimit-Remaining',
         this.config.rateLimit.max - record.count);
       next();
     };
@@ -210,7 +210,7 @@ class AdvancedAPIGateway {
   private loggingMiddleware() {
     return (req: Request, res: Response, next: NextFunction) => {
       const start = Date.now();
-      
+
       res.on('finish', () => {
         const duration = Date.now() - start;
         console.log({
@@ -292,8 +292,8 @@ class AdvancedAPIGateway {
         return next();
       }
 
-      const cacheKey = config.key 
-        ? `${req.path}-${config.key}` 
+      const cacheKey = config.key
+        ? `${req.path}-${config.key}`
         : `${req.path}-${JSON.stringify(req.query)}`;
 
       const cached = this.cache.get(cacheKey);
@@ -401,7 +401,7 @@ class GatewayWithCircuitBreaker {
     req: express.Request,
     res: express.Response
   ): Promise<void> {
-    const route = Object.keys(this.routes).find(path => 
+    const route = Object.keys(this.routes).find(path =>
       req.path.startsWith(path)
     );
 
@@ -421,7 +421,7 @@ class GatewayWithCircuitBreaker {
       res.json(result);
     } catch (error) {
       if (breaker.open) {
-        res.status(503).json({ 
+        res.status(503).json({
           error: 'Service temporarily unavailable',
           retryAfter: 30,
         });

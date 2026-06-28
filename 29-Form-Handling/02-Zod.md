@@ -300,12 +300,12 @@ try {
 // Format errors for display
 function formatErrors(error: z.ZodError): Record<string, string> {
   const formatted: Record<string, string> = {};
-  
+
   for (const issue of error.errors) {
     const path = issue.path.join('.');
     formatted[path] = issue.message;
   }
-  
+
   return formatted;
 }
 ```
@@ -346,28 +346,28 @@ const ErrorResponseSchema = z.object({
 async function fetchUser(id: string) {
   const response = await fetch(`/api/users/${id}`);
   const data = await response.json();
-  
+
   // Validate response
   const result = UserResponseSchema.safeParse(data);
-  
+
   if (!result.success) {
     throw new Error('Invalid API response');
   }
-  
+
   return result.data;
 }
 
 // Validate API requests
 function validateCreateUserRequest(body: unknown) {
   const result = CreateUserRequestSchema.safeParse(body);
-  
+
   if (!result.success) {
     return {
       success: false,
       error: result.error.format(),
     };
   }
-  
+
   return {
     success: true,
     data: result.data,
@@ -518,7 +518,7 @@ Zod Performance:
 
 ### FAANG-style (5)
 21. **Design a type-safe API layer with Zod**
-- **Answer**: 
+- **Answer**:
   - Define request/response schemas
   - Share schemas between client/server
   - Validate at API boundaries
@@ -526,7 +526,7 @@ Zod Performance:
   - Document with schemas
 
 22. **How would you handle form validation at scale?**
-- **Answer**: 
+- **Answer**:
   - Shared validation schemas
   - Custom validation rules
   - Performance optimization
@@ -534,21 +534,21 @@ Zod Performance:
   - Analytics integration
 
 23. **Explain Zod's type inference system**
-- **Answer**: 
+- **Answer**:
   - Maps Zod types to TypeScript types
   - Handles complex types (unions, intersections)
   - Preserves literal types
   - Infers optional/nullable correctly
 
 24. **How do you optimize Zod for large schemas?**
-- **Answer**: 
+- **Answer**:
   - Schema composition
   - Lazy evaluation
   - Caching
   - Selective validation
 
 25. **Design a validation system for a microservices architecture**
-- **Answer**: 
+- **Answer**:
   - Shared schemas in a package
   - Service-specific validation
   - Contract testing

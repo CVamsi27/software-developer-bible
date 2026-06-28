@@ -330,12 +330,12 @@ class FileSyncService:
         self.db = db
         self.storage = storage
         self.cache = cache
-    
+
     async def upload_file(self, user_id: int, file_data: bytes,
                          parent_id: int, filename: str) -> dict:
         # Calculate checksum for deduplication
         checksum = hashlib.sha256(file_data).hexdigest()
-        
+
         # Check for duplicate
         existing = await self.db.find_by_checksum(checksum)
         if existing:
@@ -343,11 +343,11 @@ class FileSyncService:
             return await self.create_file_reference(
                 user_id, existing['id'], parent_id, filename
             )
-        
+
         # Upload to object storage
         storage_path = f"users/{user_id}/{checksum}/{filename}"
         await self.storage.upload(storage_path, file_data)
-        
+
         # Create file record
         file_record = await self.db.create_file(
             name=filename,
@@ -357,7 +357,7 @@ class FileSyncService:
             checksum=checksum,
             storage_path=storage_path
         )
-        
+
         # Create initial version
         await self.db.create_version(
             file_id=file_record['id'],
@@ -367,27 +367,27 @@ class FileSyncService:
             storage_path=storage_path,
             created_by=user_id
         )
-        
+
         # Update storage quota
         await self.db.update_storage_usage(user_id, len(file_data))
-        
+
         return file_record
-    
+
     async def sync_device(self, user_id: int, device_id: str,
                          last_sync_timestamp: str) -> dict:
         # Get files modified since last sync
         modified_files = await self.db.get_modified_files(
             user_id, last_sync_timestamp
         )
-        
+
         # Get sync status for this device
         sync_status = await self.db.get_device_sync_status(
             user_id, device_id
         )
-        
+
         # Calculate delta
         delta = self.calculate_delta(modified_files, sync_status)
-        
+
         return {
             'files_to_download': delta['new'],
             'files_to_upload': delta['pending'],
@@ -401,19 +401,19 @@ class FileSyncService:
 class DeltaSyncEngine:
     def __init__(self):
         self.chunk_size = 1024 * 1024  # 1MB chunks
-    
+
     async def calculate_file_delta(self, old_version: bytes,
                                    new_version: bytes) -> List[dict]:
         # Use rsync-like algorithm for efficient delta calculation
         operations = []
-        
+
         # Split into chunks and compute rolling checksums
         old_chunks = self.compute_chunks(old_version)
         new_chunks = self.compute_chunks(new_version)
-        
+
         # Find matching blocks
         matching_blocks = self.find_matching_blocks(old_chunks, new_chunks)
-        
+
         # Generate delta operations
         for i, chunk in enumerate(new_chunks):
             if i not in matching_blocks:
@@ -422,24 +422,24 @@ class DeltaSyncEngine:
                     'position': i * self.chunk_size,
                     'data': chunk
                 })
-        
+
         return operations
-    
+
     async def apply_delta(self, base_version: bytes,
                           operations: List[dict]) -> bytes:
         result = bytearray(base_version)
-        
+
         # Sort operations by position in reverse
-        sorted_ops = sorted(operations, 
-                           key=lambda x: x['position'], 
+        sorted_ops = sorted(operations,
+                           key=lambda x: x['position'],
                            reverse=True)
-        
+
         for op in sorted_ops:
             if op['type'] == 'insert':
                 result[op['position']:op['position']] = op['data']
             elif op['type'] == 'delete':
                 result[op['position']:op['position'] + op['length']] = b''
-        
+
         return bytes(result)
 ```
 
@@ -453,7 +453,7 @@ class ConflictResolver:
             'image': 'manual',
             'default': 'manual'
         }
-    
+
     async def resolve_conflict(self, file_id: int,
                               local_version: dict,
                               remote_version: dict) -> dict:
@@ -461,7 +461,7 @@ class ConflictResolver:
         strategy = self.conflict_strategies.get(
             file_type, self.conflict_strategies['default']
         )
-        
+
         if strategy == 'operational_transform':
             return await self.operational_transform(
                 local_version, remote_version
@@ -472,21 +472,21 @@ class ConflictResolver:
             return await self.create_conflict_copy(
                 file_id, local_version, remote_version
             )
-    
-    async def operational_transform(self, local: dict, 
+
+    async def operational_transform(self, local: dict,
                                    remote: dict) -> dict:
         # Transform concurrent operations
         local_ops = local['operations']
         remote_ops = remote['operations']
-        
+
         transformed_ops = []
         for op in local_ops:
             transformed = self.transform_operation(op, remote_ops)
             transformed_ops.append(transformed)
-        
+
         # Merge operations
         merged_ops = transformed_ops + remote_ops
-        
+
         return {
             'merged_content': self.apply_operations(
                 local['base_content'], merged_ops
@@ -494,24 +494,24 @@ class ConflictResolver:
             'operations': merged_ops,
             'version': max(local['version'], remote['version']) + 1
         }
-    
+
     def last_writer_wins(self, local: dict, remote: dict) -> dict:
         if local['modified_at'] > remote['modified_at']:
             return local
         return remote
-    
+
     async def create_conflict_copy(self, file_id: int,
                                    local: dict, remote: dict) -> dict:
         # Create a copy with "(conflict)" suffix
         conflict_name = f"{local['name']} (conflict {local['device_id']})"
-        
+
         await self.db.create_file(
             name=conflict_name,
             owner_id=local['owner_id'],
             parent_id=local['parent_id'],
             content=local['content']
         )
-        
+
         return {
             'resolution': 'conflict_copy_created',
             'conflict_file_name': conflict_name
@@ -524,20 +524,20 @@ class VersionControlService:
     def __init__(self, db, storage):
         self.db = db
         self.storage = storage
-    
+
     async def create_version(self, file_id: int, user_id: int,
                             content: bytes) -> dict:
         # Get current version
         current = await self.db.get_latest_version(file_id)
         new_version = (current['version'] + 1) if current else 1
-        
+
         # Calculate checksum
         checksum = hashlib.sha256(content).hexdigest()
-        
+
         # Store in object storage
         storage_path = f"versions/{file_id}/v{new_version}"
         await self.storage.upload(storage_path, content)
-        
+
         # Create version record
         version = await self.db.create_version(
             file_id=file_id,
@@ -547,7 +547,7 @@ class VersionControlService:
             storage_path=storage_path,
             created_by=user_id
         )
-        
+
         # Update file metadata
         await self.db.update_file(
             file_id,
@@ -555,26 +555,26 @@ class VersionControlService:
             size=len(content),
             checksum=checksum
         )
-        
+
         return version
-    
-    async def rollback_version(self, file_id: int, 
+
+    async def rollback_version(self, file_id: int,
                               target_version: int) -> dict:
         # Get target version
         version = await self.db.get_version(file_id, target_version)
-        
+
         # Download content
         content = await self.storage.download(version['storage_path'])
-        
+
         # Create new version with rolled back content
         new_version = await self.create_version(
-            file_id, 
-            system_user_id, 
+            file_id,
+            system_user_id,
             content
         )
-        
+
         return new_version
-    
+
     async def get_version_history(self, file_id: int,
                                   limit: int = 50) -> list:
         return await self.db.get_versions(file_id, limit)
@@ -587,20 +587,20 @@ class VersionControlService:
 class FileMetadataCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def cache_file_metadata(self, file_id: str, 
+
+    async def cache_file_metadata(self, file_id: str,
                                   metadata: dict):
         key = f"file:{file_id}"
         await self.redis.hset(key, mapping=metadata)
         await self.redis.expire(key, 3600)  # 1 hour
-    
+
     async def get_file_metadata(self, file_id: str) -> dict:
         key = f"file:{file_id}"
         return await self.redis.hgetall(key)
-    
+
     async def invalidate_file(self, file_id: str):
         await self.redis.delete(f"file:{file_id}")
-    
+
     async def cache_folder_contents(self, folder_id: str,
                                     files: list):
         key = f"folder:{folder_id}:contents"
@@ -615,24 +615,24 @@ class FileMetadataCache:
 class SyncStatusCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def update_sync_status(self, user_id: int, 
+
+    async def update_sync_status(self, user_id: int,
                                  device_id: str, file_id: int,
                                  status: str):
         key = f"sync:{user_id}:{device_id}"
         await self.redis.hset(key, file_id, status)
         await self.redis.expire(key, 86400)  # 24 hours
-    
-    async def get_sync_status(self, user_id: int, 
+
+    async def get_sync_status(self, user_id: int,
                               device_id: str) -> dict:
         key = f"sync:{user_id}:{device_id}"
         return await self.redis.hgetall(key)
-    
-    async def get_pending_syncs(self, user_id: int, 
+
+    async def get_pending_syncs(self, user_id: int,
                                 device_id: str) -> list:
         key = f"sync:{user_id}:{device_id}"
         all_status = await self.redis.hgetall(key)
-        return [fid for fid, status in all_status.items() 
+        return [fid for fid, status in all_status.items()
                 if status == 'pending']
 ```
 
@@ -672,24 +672,24 @@ class FileEventProcessor:
         self.consumer = kafka_consumer
         self.db = db
         self.notifications = notification_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'file.modified':
                 await self.handle_file_modified(event)
             elif event['event_type'] == 'file.shared':
                 await self.handle_file_shared(event)
             elif event['event_type'] == 'conflict.detected':
                 await self.handle_conflict(event)
-    
+
     async def handle_file_modified(self, event: dict):
         # Notify collaborators
         collaborators = await self.db.get_file_collaborators(
             event['file_id']
         )
-        
+
         for collab in collaborators:
             if collab['user_id'] != event['user_id']:
                 await self.notifications.notify(
@@ -700,7 +700,7 @@ class FileEventProcessor:
                         'modified_by': event['user_id']
                     }
                 )
-        
+
         # Update search index
         await self.update_search_index(event['file_id'])
 ```
@@ -743,10 +743,10 @@ Storage Architecture:
 class ShardRouter:
     def __init__(self, num_shards: int = 64):
         self.num_shards = num_shards
-    
+
     def get_shard(self, user_id: int) -> int:
         return user_id % self.num_shards
-    
+
     def get_file_shard(self, file_id: int) -> int:
         # Different sharding for file metadata
         return (file_id * 7) % self.num_shards
@@ -757,20 +757,20 @@ class ShardRouter:
 class SyncServiceScaler:
     def __init__(self):
         self.sync_workers = []  # Worker pool
-    
+
     async def handle_sync_request(self, request: dict):
         # Partition sync requests by user
         partition = request['user_id'] % self.num_partitions
-        
+
         # Route to appropriate worker
         worker = self.get_worker(partition)
-        
+
         return await worker.process_sync(request)
-    
+
     async def process_sync_batch(self, requests: list):
         # Batch sync operations for efficiency
         grouped = self.group_by_user(requests)
-        
+
         for user_id, user_requests in grouped.items():
             # Process all requests for a user together
             await self.process_user_sync(user_id, user_requests)
@@ -784,11 +784,11 @@ class SyncConflictRecovery:
     def __init__(self, db, notification_service):
         self.db = db
         self.notifications = notification_service
-    
+
     async def handle_sync_conflict(self, conflict: dict):
         # Detect conflict type
         conflict_type = self.detect_conflict_type(conflict)
-        
+
         if conflict_type == 'concurrent_edit':
             # Use operational transform
             resolved = await self.resolve_concurrent_edit(conflict)
@@ -799,10 +799,10 @@ class SyncConflictRecovery:
             # Notify user of conflict
             await self.notify_conflict(conflict)
             return
-        
+
         # Apply resolution
         await self.apply_resolution(resolved)
-        
+
         # Notify affected users
         await self.notify_resolution(conflict, resolved)
 ```
@@ -822,17 +822,17 @@ class OfflineSupport:
     def __init__(self, local_storage, sync_service):
         self.local = local_storage
         self.sync = sync_service
-    
+
     async def go_offline(self):
         # Mark all files as available offline
         files = await self.local.get_all_files()
         for file in files:
             await self.local.mark_available_offline(file['id'])
-    
+
     async def go_online(self):
         # Sync pending changes
         pending = await self.local.get_pending_changes()
-        
+
         for change in pending:
             try:
                 await self.sync.apply_change(change)
@@ -872,15 +872,15 @@ alerts:
   - name: High Sync Latency
     condition: p95_sync_latency > 5s
     severity: warning
-    
+
   - name: Conflict Rate High
     condition: conflict_rate > 1%
     severity: warning
-    
+
   - name: Storage Utilization High
     condition: storage_used > 80%
     severity: critical
-    
+
   - name: Sync Queue Backlog
     condition: sync_queue_size > 10000
     severity: warning

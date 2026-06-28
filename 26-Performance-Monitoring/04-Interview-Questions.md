@@ -73,7 +73,7 @@ function problemSolutionPattern(problem: string): string {
 ### Intermediate (5)
 
 **Q6: How do you track Core Web Vitals in production?**
-- **Answer**: 
+- **Answer**:
 ```typescript
 import { onLCP, onINP, onCLS } from 'web-vitals';
 
@@ -118,7 +118,7 @@ Use `sendBeacon` for non-blocking metric submission.
 - **Answer**: TTFB is the foundation - LCP cannot be faster than TTFB. TTFB = DNS + TCP + TLS + Server Processing. Optimize server response time first, then focus on content rendering for LCP.
 
 **Q14: How do you optimize LCP for a content-heavy website?**
-- **Answer**: 
+- **Answer**:
 1. Preload critical resources (`<link rel="preload">`)
 2. Optimize images (modern formats, responsive images)
 3. Server-side rendering or static generation
@@ -126,7 +126,7 @@ Use `sendBeacon` for non-blocking metric submission.
 5. Use CDN for edge caching
 
 **Q15: Explain how you would design a Real User Monitoring (RUM) system.**
-- **Answer**: 
+- **Answer**:
 1. Collect: web-vitals library + custom metrics
 2. Buffer: localStorage with batched sends
 3. Transport: sendBeacon API
@@ -153,7 +153,7 @@ Use `sendBeacon` for non-blocking metric submission.
 ### FAANG-style (5)
 
 **Q21: Design a performance monitoring system that handles 1 billion events per day.**
-- **Answer**: 
+- **Answer**:
 1. Collection: Client-side SDK with sampling
 2. Ingestion: Kafka/Kinesis for streaming
 3. Processing: Flink/Spark for real-time aggregation
@@ -163,7 +163,7 @@ Use `sendBeacon` for non-blocking metric submission.
 7. Visualization: Grafana with custom dashboards
 
 **Q22: How would you detect performance regressions automatically?**
-- **Answer**: 
+- **Answer**:
 1. Statistical comparison of metric distributions (p50, p95, p99)
 2. Anomaly detection using ML models
 3. A/B testing with CWV as guardrail metric
@@ -177,7 +177,7 @@ Use `sendBeacon` for non-blocking metric submission.
 - **Answer**: Combine server-side timing (TTFB, render time) with client-side metrics (hydration time, interactivity). Use `PerformanceObserver` for client metrics, server logs for backend timing, and trace IDs to correlate.
 
 **Q25: Design a system to track performance across micro-frontends.**
-- **Answer**: 
+- **Answer**:
 1. Each micro-frontend reports to parent via postMessage
 2. Shell aggregates metrics with micro-frontend identifiers
 3. Use distributed tracing (OpenTelemetry) for cross-service metrics

@@ -393,7 +393,7 @@ function UsernameForm() {
     // Simulate API call to check username availability
     const response = await fetch(`/api/check-username?username=${username}`);
     const data = await response.json();
-    
+
     if (data.exists) {
       return 'Username is already taken';
     }
@@ -457,7 +457,7 @@ function MultiStepForm() {
         {step === 1 && <Step1 />}
         {step === 2 && <Step2 />}
         {step === 3 && <Step3 />}
-        
+
         <div>
           {step > 1 && (
             <button type="button" onClick={() => setStep(step - 1)}>
@@ -579,7 +579,7 @@ React Hook Form Performance:
 
 ### FAANG-style (5)
 21. **Design a form system for a large application**
-- **Answer**: 
+- **Answer**:
   - React Hook Form for performance
   - Zod for schema validation
   - FormProvider for context
@@ -587,28 +587,28 @@ React Hook Form Performance:
   - Storybook for documentation
 
 22. **How would you handle forms in a micro-frontend architecture?**
-- **Answer**: 
+- **Answer**:
   - Independent form libraries per micro-frontend
   - Shared validation schemas
   - Event-based communication
   - Consistent UX patterns
 
 23. **Explain form validation architecture**
-- **Answer**: 
+- **Answer**:
   - Client-side: Zod schemas
   - Server-side: Same schemas with additional rules
   - Real-time validation with debouncing
   - Accessibility considerations
 
 24. **How do you optimize form performance at scale?**
-- **Answer**: 
+- **Answer**:
   - Memoization of validation functions
   - Debounced validation
   - Lazy loading of complex fields
   - Virtualization for long lists
 
 25. **Design a form builder system**
-- **Answer**: 
+- **Answer**:
   - JSON schema for form definition
   - Dynamic component rendering
   - Validation rule engine

@@ -466,7 +466,7 @@ Build Optimization Strategies:
 
 ### FAANG-style (5)
 21. **Design a monorepo architecture for a large organization**
-    - Answer: 
+    - Answer:
       - Package structure: core, shared, domain-specific packages
       - Tooling: Nx/Turborepo with remote caching
       - CI/CD: Affected-based pipelines, canary deployments
@@ -474,7 +474,7 @@ Build Optimization Strategies:
       - Documentation: Architecture decision records
 
 22. **How would you migrate from polyrepo to monorepo?**
-    - Answer: 
+    - Answer:
       - Phase 1: Set up monorepo structure
       - Phase 2: Move shared packages
       - Phase 3: Migrate applications
@@ -482,7 +482,7 @@ Build Optimization Strategies:
       - Phase 5: Deprecate old repositories
 
 23. **Explain monorepo at scale**
-    - Answer: 
+    - Answer:
       - Thousands of packages
       - Hundreds of developers
       - Multiple programming languages
@@ -490,7 +490,7 @@ Build Optimization Strategies:
       - Advanced caching strategies
 
 24. **How do you handle monorepo security?**
-    - Answer: 
+    - Answer:
       - Dependency scanning
       - Secret management
       - Access control per package
@@ -498,7 +498,7 @@ Build Optimization Strategies:
       - Vulnerability detection
 
 25. **Design a CI/CD pipeline for a monorepo**
-    - Answer: 
+    - Answer:
       - Detect changes (affected packages)
       - Run tests for affected packages
       - Build with caching

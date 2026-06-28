@@ -227,11 +227,11 @@ person.greet();  // "Hello, Alice"
 ```typescript
 class Person {
   name: string;
-  
+
   constructor(name: string) {
     this.name = name;  // 'this' = new object
   }
-  
+
   greet() {
     console.log(`Hello, ${this.name}`);
   }
@@ -246,12 +246,12 @@ alice.greet();  // "Hello, Alice"
 ```typescript
 const obj = {
   name: 'Alice',
-  
+
   // Regular function: 'this' = obj
   greetRegular() {
     console.log(this.name);  // 'Alice'
   },
-  
+
   // Arrow function: 'this' = parent scope
   greetArrow: () => {
     console.log(this.name);  // undefined (window)
@@ -314,21 +314,21 @@ console.log(greetAliceHey('!'));  // "Hey, Alice!"
 const obj = {
   name: 'Alice',
   items: [1, 2, 3],
-  
+
   // Problem: 'this' lost in callback
   processItemsBad() {
     this.items.forEach(function(item) {
       console.log(this.name);  // undefined (window)
     });
   },
-  
+
   // Solution 1: Arrow function
   processItemsGood1() {
     this.items.forEach((item) => {
       console.log(this.name);  // 'Alice'
     });
   },
-  
+
   // Solution 2: bind
   processItemsGood2() {
     this.items.forEach(function(item) {
@@ -343,17 +343,17 @@ const obj = {
 ```typescript
 class Counter {
   private count = 0;
-  
+
   increment() {
     this.count++;
     return this;  // Enable chaining
   }
-  
+
   decrement() {
     this.count--;
     return this;
   }
-  
+
   getCount() {
     return this.count;
   }
@@ -371,22 +371,22 @@ import React, { Component } from 'react';
 
 class MyComponent extends Component {
   state = { count: 0 };
-  
+
   // Arrow function: 'this' = component instance
   handleClick = () => {
     this.setState({ count: this.state.count + 1 });
   };
-  
+
   // Regular function: need to bind in constructor
   handleClickBound() {
     this.setState({ count: this.state.count + 1 });
   }
-  
+
   constructor(props: any) {
     super(props);
     this.handleClickBound = this.handleClickBound.bind(this);
   }
-  
+
   render() {
     return (
       <button onClick={this.handleClick}>
@@ -406,22 +406,22 @@ class QueryBuilder {
   private table: string = '';
   private conditions: string[] = [];
   private limitCount: number = 0;
-  
+
   from(table: string) {
     this.table = table;
     return this;  // Return 'this' for chaining
   }
-  
+
   where(condition: string) {
     this.conditions.push(condition);
     return this;
   }
-  
+
   limit(count: number) {
     this.limitCount = count;
     return this;
   }
-  
+
   build() {
     let query = `SELECT * FROM ${this.table}`;
     if (this.conditions.length) {
@@ -450,7 +450,7 @@ console.log(query);  // "SELECT * FROM users WHERE age > 18 AND active = true LI
 function setupEventDelegation(container: HTMLElement) {
   container.addEventListener('click', function(event) {
     const target = event.target as HTMLElement;
-    
+
     // 'this' = container element
     if (target.matches('.delete-btn')) {
       const id = target.dataset.id;
@@ -469,21 +469,21 @@ function setupEventDelegation(container: HTMLElement) {
 class ObjectPool<T> {
   private pool: T[] = [];
   private factory: () => T;
-  
+
   constructor(factory: () => T, initialSize: number = 10) {
     this.factory = factory;
     for (let i = 0; i < initialSize; i++) {
       this.pool.push(factory());
     }
   }
-  
+
   acquire(): T {
     if (this.pool.length > 0) {
       return this.pool.pop()!;
     }
     return this.factory();
   }
-  
+
   release(obj: T) {
     this.pool.push(obj);
   }
@@ -503,7 +503,7 @@ function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout>;
-  
+
   return function(this: any, ...args: Parameters<T>) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
@@ -524,21 +524,21 @@ const debouncedSearch = debounce(handleSearch, 300);
 ```typescript
 class Timer {
   seconds = 0;
-  
+
   // Bad: 'this' lost in callback
   startBad() {
     setInterval(function() {
       this.seconds++;  // this = window, not Timer
     }, 1000);
   }
-  
+
   // Good: Arrow function
   startGood() {
     setInterval(() => {
       this.seconds++;  // this = Timer instance
     }, 1000);
   }
-  
+
   // Good: bind
   startBound() {
     setInterval(function() {
@@ -553,12 +553,12 @@ class Timer {
 ```typescript
 const obj = {
   name: 'Alice',
-  
+
   // Bad: Arrow function doesn't have own 'this'
   greet: () => {
     console.log(this.name);  // undefined
   },
-  
+
   // Good: Regular function
   greetGood() {
     console.log(this.name);  // 'Alice'
@@ -577,7 +577,7 @@ class Component {
     // Bad: 'this' not bound
     // this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick() {
     console.log(this);
   }
@@ -624,7 +624,7 @@ const obj2 = {
 ```typescript
 class Component {
   items = [1, 2, 3];
-  
+
   processItems() {
     // Arrow function inherits 'this'
     this.items.forEach(item => {
@@ -641,7 +641,7 @@ class Component {
   constructor() {
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick() {
     console.log(this);
   }
@@ -696,7 +696,7 @@ class Component extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
   render() {
     return (
       <button onClick={this.handleClick}>
@@ -717,7 +717,7 @@ class Component extends React.Component {
 const obj = {
   // Regular function: faster
   method() { return this; },
-  
+
   // Arrow function: slower, but useful for callbacks
   callback: () => this
 };
@@ -754,7 +754,7 @@ A: In a regular function event handler, `this` refers to the element that trigge
 
 **Q6: What is the difference between `call`, `apply`, and `bind`?**
 
-A: 
+A:
 - **call**: Invokes the function with a specific `this` value and individual arguments
 - **apply**: Invokes the function with a specific `this` value and arguments as an array
 - **bind**: Returns a new function with `this` permanently bound to the specified value
@@ -794,7 +794,7 @@ A: The rules apply in this order:
 
 **Q12: What are the limitations of `call` and `apply`?**
 
-A: 
+A:
 - They immediately invoke the function
 - They don't create a permanent binding
 - They can't be used with constructors after instantiation
@@ -806,7 +806,7 @@ A: TypeScript adds `this` typing:
 ```typescript
 class Counter {
   count = 0;
-  
+
   // TypeScript ensures 'this' is correct
   increment(this: Counter) {
     this.count++;
@@ -820,7 +820,7 @@ A: Closures capture the lexical scope, including `this`. Arrow functions inherit
 
 **Q15: How do you handle `this` in a React class component?**
 
-A: 
+A:
 1. Bind methods in constructor
 2. Use class fields with arrow functions
 3. Use `bind` in JSX: `onClick={this.handleClick.bind(this)}`
@@ -830,29 +830,29 @@ A:
 
 **Q16: Design a context management system using `this`.**
 
-A: 
+A:
 ```typescript
 class ContextManager {
   private contexts = new Map<string, any>();
-  
+
   create(name: string): Context {
     const context = new Context(name);
     this.contexts.set(name, context);
     return context;
   }
-  
+
   get(name: string): Context | undefined {
     return this.contexts.get(name);
   }
-  
+
   run<T>(name: string, fn: () => T): T {
     const context = this.contexts.get(name);
     if (!context) throw new Error(`Context ${name} not found`);
-    
+
     // Temporarily set 'this' context
     const previousContext = currentContext;
     currentContext = context;
-    
+
     try {
       return fn();
     } finally {
@@ -864,7 +864,7 @@ class ContextManager {
 
 **Q17: How would you implement a custom `this` binding function?**
 
-A: 
+A:
 ```typescript
 function myBind(fn: Function, thisArg: any, ...args: any[]) {
   return function(...newArgs: any[]) {
@@ -884,7 +884,7 @@ console.log(greetAlice('Hello'));  // "Hello, Alice!"
 
 **Q18: Analyze the performance implications of `this` binding.**
 
-A: 
+A:
 - **call/apply**: Fast, immediate invocation
 - **bind**: Creates new function, slight overhead
 - **Arrow functions**: No own `this`, slight overhead
@@ -894,17 +894,17 @@ Optimization: Bind once, reuse the bound function.
 
 **Q19: How do you handle `this` in async/await?**
 
-A: 
+A:
 ```typescript
 class ApiClient {
   private baseUrl: string;
-  
+
   constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
     // Arrow function preserves 'this'
     this.fetch = this.fetch.bind(this);
   }
-  
+
   async fetch(endpoint: string) {
     const response = await fetch(`${this.baseUrl}${endpoint}`);
     return response.json();
@@ -914,7 +914,7 @@ class ApiClient {
 // Arrow function alternative
 class ApiClient2 {
   constructor(private baseUrl: string) {}
-  
+
   fetch = async (endpoint: string) => {
     const response = await fetch(`${this.baseUrl}${endpoint}`);
     return response.json();
@@ -924,7 +924,7 @@ class ApiClient2 {
 
 **Q20: What are the security implications of `this`?**
 
-A: 
+A:
 1. **Prototype pollution**: `this` can be exploited to modify prototypes
 2. **Context manipulation**: Malicious code can change `this` binding
 3. **Privileged access**: `this` can expose internal state
@@ -940,7 +940,7 @@ class Button extends React.Component {
   handleClick() {
     console.log(this.props);  // undefined!
   }
-  
+
   render() {
     return <button onClick={this.handleClick}>Click</button>;
   }
@@ -952,11 +952,11 @@ class Button extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
   handleClick() {
     console.log(this.props);  // Works!
   }
-  
+
   render() {
     return <button onClick={this.handleClick}>Click</button>;
   }
@@ -965,7 +965,7 @@ class Button extends React.Component {
 
 **Q22: How do you debug `this` binding issues?**
 
-A: 
+A:
 1. **console.log(this)**: Log `this` value at different points
 2. **Chrome DevTools**: Inspect `this` in debugger
 3. **Breakpoints**: Set breakpoints to check `this`
@@ -978,7 +978,7 @@ A: When a method is called on an object, `this` refers to the object. If the met
 
 **Q24: How do different frameworks handle `this`?**
 
-A: 
+A:
 - **React**: Class components need binding, hooks don't use `this`
 - **Vue**: Options API uses `this`, Composition API doesn't
 - **Angular**: Dependency injection, `this` less important
@@ -986,7 +986,7 @@ A:
 
 **Q25: What are best practices for managing `this`?**
 
-A: 
+A:
 1. Use arrow functions for callbacks
 2. Bind methods in constructor
 3. Use TypeScript `this` parameter

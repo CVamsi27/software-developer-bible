@@ -83,10 +83,10 @@ export const handler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
   const { httpMethod, path, body } = event;
-  
+
   // Parse request
   const requestBody = body ? JSON.parse(body) : null;
-  
+
   // Route handling
   if (httpMethod === 'GET' && path === '/users') {
     const users = await getUsers();
@@ -99,7 +99,7 @@ export const handler = async (
       body: JSON.stringify(users),
     };
   }
-  
+
   if (httpMethod === 'POST' && path === '/users') {
     const newUser = await createUser(requestBody);
     return {
@@ -107,7 +107,7 @@ export const handler = async (
       body: JSON.stringify(newUser),
     };
   }
-  
+
   return {
     statusCode: 404,
     body: JSON.stringify({ error: 'Not found' }),
@@ -142,24 +142,24 @@ export default async function handler(
   res: VercelResponse
 ) {
   const { method, query, body } = req;
-  
+
   switch (method) {
     case 'GET':
       const users = await fetchUsers(query);
       return res.status(200).json(users);
-    
+
     case 'POST':
       const newUser = await createUser(body);
       return res.status(201).json(newUser);
-    
+
     case 'PUT':
       const updated = await updateUser(query.id as string, body);
       return res.status(200).json(updated);
-    
+
     case 'DELETE':
       await deleteUser(query.id as string);
       return res.status(204).end();
-    
+
     default:
       return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -198,7 +198,7 @@ const docClient = DynamoDBDocumentClient.from(client);
 
 export const handler = async (event: APIGatewayProxyEvent) => {
   const { id } = event.pathParameters || {};
-  
+
   // Use initialized client
   const result = await docClient.send(
     new GetCommand({
@@ -206,7 +206,7 @@ export const handler = async (event: APIGatewayProxyEvent) => {
       Key: { id },
     })
   );
-  
+
   return {
     statusCode: 200,
     body: JSON.stringify(result.Item),
@@ -232,7 +232,7 @@ export const handler: DynamoDBStreamHandler = async (
         await processNewItem(item);
       }
     }
-    
+
     if (record.eventName === 'MODIFY') {
       const oldImage = record.dynamodb?.OldImage;
       const newImage = record.dynamodb?.NewImage;
@@ -272,14 +272,14 @@ export const handler: S3Handler = async (event: S3Event) => {
   for (const record of event.Records) {
     const bucket = record.s3.bucket.name;
     const key = decodeURIComponent(record.s3.object.key.replace(/\+/g, ' '));
-    
+
     // Get the uploaded file
     const response = await s3Client.send(
       new GetObjectCommand({ Bucket: bucket, Key: key })
     );
-    
+
     const content = await streamToString(response.Body);
-    
+
     // Process the file
     await processFile(key, content);
   }

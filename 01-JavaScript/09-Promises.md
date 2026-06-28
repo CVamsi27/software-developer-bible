@@ -241,13 +241,13 @@ Promise.allSettled([promise1, promise2, promise3])
 ### Promise.any
 
 ```typescript
-const promise1 = new Promise((_, reject) => 
+const promise1 = new Promise((_, reject) =>
   setTimeout(() => reject('Error 1'), 1000)
 );
-const promise2 = new Promise(resolve => 
+const promise2 = new Promise(resolve =>
   setTimeout(() => resolve('Success 2'), 2000)
 );
-const promise3 = new Promise(resolve => 
+const promise3 = new Promise(resolve =>
   setTimeout(() => resolve('Success 3'), 1500)
 );
 
@@ -265,10 +265,10 @@ Promise.any([promise1, promise2, promise3])
 ### Promise.race
 
 ```typescript
-const promise1 = new Promise(resolve => 
+const promise1 = new Promise(resolve =>
   setTimeout(() => resolve('First'), 1000)
 );
-const promise2 = new Promise(resolve => 
+const promise2 = new Promise(resolve =>
   setTimeout(() => resolve('Second'), 2000)
 );
 
@@ -290,7 +290,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   const timeout = new Promise<never>((_, reject) => {
     setTimeout(() => reject(new Error('Timeout')), ms);
   });
-  
+
   return Promise.race([promise, timeout]);
 }
 
@@ -348,7 +348,7 @@ async function loadDashboard() {
     fetchPosts(),
     fetchNotifications()
   ]);
-  
+
   return { user, posts, notifications };
 }
 ```
@@ -386,10 +386,10 @@ async function cachedFetch(url: string) {
   if (cache.has(url)) {
     return cache.get(url);
   }
-  
+
   const promise = fetch(url).then(r => r.json());
   cache.set(url, promise);
-  
+
   return promise;
 }
 ```
@@ -578,7 +578,7 @@ async function processBatched() {
     }
     const batchResults = await Promise.all(batch);
     results.push(...batchResults);
-    
+
     // Yield between batches
     await new Promise(resolve => setTimeout(resolve, 0));
   }
@@ -596,14 +596,14 @@ A: A Promise is an object representing the eventual completion or failure of an 
 
 **Q2: What are the three states of a Promise?**
 
-A: 
+A:
 - **Pending**: Initial state, neither fulfilled nor rejected
 - **Fulfilled**: Operation completed successfully
 - **Rejected**: Operation failed
 
 **Q3: What is the difference between `.then()` and `.catch()`?**
 
-A: 
+A:
 - `.then()`: Handles fulfilled state, receives the resolved value
 - `.catch()`: Handles rejected state, receives the error/reason
 
@@ -629,7 +629,7 @@ const promise = new Promise((resolve, reject) => {
 
 **Q6: What is the difference between `Promise.all`, `Promise.allSettled`, `Promise.race`, and `Promise.any`?**
 
-A: 
+A:
 - `Promise.all`: Resolves when all resolve, rejects if any rejects
 - `Promise.allSettled`: Resolves when all settle (fulfilled or rejected)
 - `Promise.race`: Resolves/rejects with first settled promise
@@ -679,19 +679,19 @@ A: Promise unwrapping is when a `.then()` handler returns a promise, and the nex
 
 **Q13: What is the difference between returning a value and returning a Promise in `.then()`?**
 
-A: 
+A:
 - Returning a value: Wraps it in a resolved promise
 - Returning a promise: The next `.then()` waits for it to settle
 
 **Q14: How do you implement a custom Promise.all?**
 
-A: 
+A:
 ```typescript
 function customPromiseAll(promises) {
   return new Promise((resolve, reject) => {
     const results = [];
     let completed = 0;
-    
+
     promises.forEach((promise, index) => {
       Promise.resolve(promise)
         .then(value => {
@@ -709,7 +709,7 @@ function customPromiseAll(promises) {
 
 **Q15: What are the performance implications of Promise.all vs sequential awaits?**
 
-A: 
+A:
 - `Promise.all`: Runs in parallel, faster for independent operations
 - Sequential awaits: Runs one after another, slower but simpler
 - Use `Promise.all` when operations don't depend on each other
@@ -718,22 +718,22 @@ A:
 
 **Q16: Design a Promise-based task scheduler.**
 
-A: 
+A:
 ```typescript
 class TaskScheduler {
   private queue: (() => Promise<any>)[] = [];
   private running = 0;
   private maxConcurrent: number;
-  
+
   constructor(maxConcurrent: number = 5) {
     this.maxConcurrent = maxConcurrent;
   }
-  
+
   async add(task: () => Promise<any>): Promise<any> {
     while (this.running >= this.maxConcurrent) {
       await new Promise(resolve => setTimeout(resolve, 10));
     }
-    
+
     this.running++;
     try {
       return await task();
@@ -742,7 +742,7 @@ class TaskScheduler {
       this.processQueue();
     }
   }
-  
+
   private processQueue() {
     if (this.queue.length > 0 && this.running < this.maxConcurrent) {
       const task = this.queue.shift()!;
@@ -754,7 +754,7 @@ class TaskScheduler {
 
 **Q17: How would you implement Promise.retry with exponential backoff?**
 
-A: 
+A:
 ```typescript
 async function retryWithBackoff<T>(
   fn: () => Promise<T>,
@@ -768,23 +768,23 @@ async function retryWithBackoff<T>(
       if (attempt === maxAttempts) {
         throw error;
       }
-      
+
       const delay = baseDelay * Math.pow(2, attempt - 1);
       const jitter = delay * 0.1 * Math.random();
-      
-      await new Promise(resolve => 
+
+      await new Promise(resolve =>
         setTimeout(resolve, delay + jitter)
       );
     }
   }
-  
+
   throw new Error('Max attempts reached');
 }
 ```
 
 **Q18: Analyze the memory implications of Promise chains.**
 
-A: 
+A:
 - Each `.then()` creates a new promise
 - Old promises are garbage collected when no longer referenced
 - Long chains can use significant memory
@@ -792,7 +792,7 @@ A:
 
 **Q19: How do you debug Promise chains?**
 
-A: 
+A:
 1. Add `.then()` with logging
 2. Use `console.trace()` in `.catch()`
 3. Chrome DevTools: Async stack traces
@@ -801,7 +801,7 @@ A:
 
 **Q20: What are the security implications of Promises?**
 
-A: 
+A:
 1. **Timing attacks**: Measure promise resolution time
 2. **Resource exhaustion**: Create too many promises
 3. **Information leakage**: Promise values can be intercepted
@@ -828,18 +828,18 @@ fetchUser()
 
 **Q22: How do you handle Promise cancellation?**
 
-A: 
+A:
 ```typescript
 function cancellablePromise<T>(promise: Promise<T>): [Promise<T>, () => void] {
   let cancelled = false;
   let cancel: () => void;
-  
+
   const wrappedPromise = new Promise<T>((resolve, reject) => {
     cancel = () => {
       cancelled = true;
       reject(new Error('Cancelled'));
     };
-    
+
     promise
       .then(value => {
         if (!cancelled) resolve(value);
@@ -848,7 +848,7 @@ function cancellablePromise<T>(promise: Promise<T>): [Promise<T>, () => void] {
         if (!cancelled) reject(error);
       });
   });
-  
+
   return [wrappedPromise, cancel];
 }
 ```
@@ -859,7 +859,7 @@ A: async/await is syntactic sugar over Promises. `async` functions always return
 
 **Q24: How do different frameworks handle Promises?**
 
-A: 
+A:
 - **React**: useEffect with async functions, state management
 - **Vue**: Composition API with async setup
 - **Angular**: HttpClient returns Observables (can convert to Promises)
@@ -867,7 +867,7 @@ A:
 
 **Q25: What are best practices for working with Promises?**
 
-A: 
+A:
 1. Always handle errors with `.catch()` or try/catch
 2. Return values in `.then()` handlers
 3. Use `Promise.all` for parallel operations

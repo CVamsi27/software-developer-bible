@@ -269,7 +269,7 @@ function fibBad(n: number): number {
 function fibMemoized(n: number, memo: Map<number, number> = new Map()): number {
   if (n <= 1) return n;
   if (memo.has(n)) return memo.get(n)!;
-  
+
   const result = fibMemoized(n - 1, memo) + fibMemoized(n - 2, memo);
   memo.set(n, result);
   return result;
@@ -383,8 +383,8 @@ const tree: TreeNode = {
   value: 1,
   children: [
     { value: 2, children: [] },
-    { 
-      value: 3, 
+    {
+      value: 3,
       children: [
         { value: 4, children: [] },
         { value: 5, children: [] }
@@ -432,10 +432,10 @@ try {
 ```typescript
 async function fetchData(): Promise<void> {
   console.log("Fetching...");
-  
+
   const response = await fetch("https://api.example.com/data");
   const data = await response.json();
-  
+
   console.log("Data:", data);
 }
 
@@ -453,9 +453,9 @@ async function fetchData(): Promise<void> {
 // Binary search - O(log n) stack depth
 function binarySearch(arr: number[], target: number, low = 0, high = arr.length - 1): number {
   if (low > high) return -1;
-  
+
   const mid = Math.floor((low + high) / 2);
-  
+
   if (arr[mid] === target) return mid;
   if (arr[mid] < target) {
     return binarySearch(arr, target, mid + 1, high);
@@ -467,11 +467,11 @@ function binarySearch(arr: number[], target: number, low = 0, high = arr.length 
 // Quick sort - O(log n) average stack depth
 function quickSort(arr: number[]): number[] {
   if (arr.length <= 1) return arr;
-  
+
   const pivot = arr[0];
   const left = arr.slice(1).filter(x => x < pivot);
   const right = arr.slice(1).filter(x => x >= pivot);
-  
+
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 ```
@@ -499,7 +499,7 @@ function processOrder(orderId: number): Promise<string> {
 // BAD: Deep recursion without optimization
 function processArray(arr: number[], index = 0): void {
   if (index >= arr.length) return;
-  
+
   processArray(arr, index + 1);  // Tail call, but no TCO
   console.log(arr[index]);  // Not tail position
 }
@@ -534,22 +534,22 @@ function heavyComputation(): void {
 function heavyComputationChunked(): void {
   let sum = 0;
   let i = 0;
-  
+
   function processChunk(): void {
     const chunkSize = 1000000;
     const end = Math.min(i + chunkSize, 1000000000);
-    
+
     for (; i < end; i++) {
       sum += i;
     }
-    
+
     if (i < 1000000000) {
       setTimeout(processChunk, 0);  // Yield to event loop
     } else {
       console.log(sum);
     }
   }
-  
+
   processChunk();
 }
 ```
@@ -560,10 +560,10 @@ function heavyComputationChunked(): void {
 // BAD: Missing return statement
 function findMax(arr: number[], index = 0): number {
   if (index >= arr.length) return -Infinity;
-  
+
   const current = arr[index];
   const maxFromRest = findMax(arr, index + 1);  // Recursive call
-  
+
   // BUG: Missing return!
   current > maxFromRest ? current : maxFromRest;
 }
@@ -571,10 +571,10 @@ function findMax(arr: number[], index = 0): number {
 // GOOD: Always return
 function findMaxFixed(arr: number[], index = 0): number {
   if (index >= arr.length) return -Infinity;
-  
+
   const current = arr[index];
   const maxFromRest = findMaxFixed(arr, index + 1);
-  
+
   return current > maxFromRest ? current : maxFromRest;
 }
 ```
@@ -588,7 +588,7 @@ function findMaxFixed(arr: number[], index = 0): number {
 function flattenArray(arr: any[]): any[] {
   const result: any[] = [];
   const stack = [...arr];
-  
+
   while (stack.length) {
     const item = stack.pop();
     if (Array.isArray(item)) {
@@ -597,7 +597,7 @@ function flattenArray(arr: any[]): any[] {
       result.unshift(item);
     }
   }
-  
+
   return result;
 }
 ```
@@ -616,7 +616,7 @@ function safeRecursion(
     }
     fn(depth);
   }
-  
+
   wrapper();
 }
 ```
@@ -629,14 +629,14 @@ const MAX_STACK_DEPTH = 10000;
 
 function monitoredRecursion(): void {
   stackDepth++;
-  
+
   if (stackDepth > MAX_STACK_DEPTH) {
     stackDepth--;
     throw new Error("Stack overflow prevention");
   }
-  
+
   // Recursive logic here
-  
+
   stackDepth--;
 }
 ```
@@ -727,12 +727,12 @@ function getMemoryUsage(): { used: number; total: number } {
 // Deep recursion increases memory usage
 function measureRecursion(): void {
   console.log("Before:", getMemoryUsage());
-  
+
   function recurse(n: number): void {
     if (n === 0) return;
     recurse(n - 1);
   }
-  
+
   recurse(10000);
   console.log("After:", getMemoryUsage());
 }
@@ -771,7 +771,7 @@ A: Each nested call adds a new frame to the top of the stack. The innermost func
 
 **Q6: What is the difference between synchronous and asynchronous code in relation to the call stack?**
 
-A: 
+A:
 - **Synchronous code**: Runs immediately on the call stack, blocking further execution until complete
 - **Asynchronous code**: Scheduled to run later (via Web APIs, callbacks, promises), allowing the call stack to continue processing other code
 
@@ -799,7 +799,7 @@ A: Because:
 
 **Q8: How do you prevent stack overflow in recursive functions?**
 
-A: 
+A:
 1. Add a base case to stop recursion
 2. Use iteration instead of recursion
 3. Use tail recursion (if engine supports TCO)
@@ -852,7 +852,7 @@ The exact size depends on:
 
 **Q13: How do you monitor and debug call stack issues in production?**
 
-A: 
+A:
 1. **Error tracking services**: Sentry, LogRocket capture stack traces
 2. **Performance monitoring**: Track long-running tasks
 3. **Heap snapshots**: Analyze memory usage
@@ -876,35 +876,35 @@ A: Web Workers have their own separate call stacks. They communicate via message
 
 **Q16: Design a call stack simulator.**
 
-A: 
+A:
 ```typescript
 class CallStackSimulator {
   private stack: { name: string; context: any }[] = [];
   private maxSize: number;
-  
+
   constructor(maxSize: number = 10000) {
     this.maxSize = maxSize;
   }
-  
+
   push(name: string, context: any = {}): void {
     if (this.stack.length >= this.maxSize) {
       throw new Error("Stack overflow");
     }
     this.stack.push({ name, context });
   }
-  
+
   pop(): { name: string; context: any } | undefined {
     return this.stack.pop();
   }
-  
+
   peek(): { name: string; context: any } | undefined {
     return this.stack[this.stack.length - 1];
   }
-  
+
   getTrace(): string[] {
     return this.stack.map(frame => frame.name);
   }
-  
+
   getSize(): number {
     return this.stack.length;
   }
@@ -913,7 +913,7 @@ class CallStackSimulator {
 
 **Q17: How would you optimize a recursive algorithm to prevent stack overflow?**
 
-A: 
+A:
 1. **Convert to iteration**: Use loops instead of recursion
 2. **Tail recursion**: If engine supports TCO
 3. **Trampoline pattern**: Return thunks instead of recursive calls
@@ -943,9 +943,9 @@ factorial(100000);  // Works without stack overflow
 
 **Q18: Analyze the time and space complexity of recursive vs iterative solutions.**
 
-A: 
+A:
 - **Time Complexity**: Often the same (e.g., O(n) for factorial)
-- **Space Complexity**: 
+- **Space Complexity**:
   - Recursion: O(n) stack space (plus any heap allocations)
   - Iteration: O(1) stack space (plus any heap allocations)
 
@@ -956,7 +956,7 @@ Example - Fibonacci:
 
 **Q19: How do you handle errors in recursive functions without losing stack context?**
 
-A: 
+A:
 ```typescript
 function recursiveWithErrorHandling<T>(
   items: T[],
@@ -965,10 +965,10 @@ function recursiveWithErrorHandling<T>(
 ): any[] {
   try {
     if (index >= items.length) return results;
-    
+
     const result = processItem(items[index]);
     results.push(result);
-    
+
     return recursiveWithErrorHandling(items, index + 1, results);
   } catch (error) {
     // Preserve error context
@@ -980,7 +980,7 @@ function recursiveWithErrorHandling<T>(
 
 **Q20: Explain how the call stack affects performance in a high-traffic web application.**
 
-A: 
+A:
 1. **Synchronous operations**: Block the stack, causing UI lag
 2. **Deep recursion**: Can cause stack overflow in edge cases
 3. **Memory pressure**: Many stack frames consume memory
@@ -999,7 +999,7 @@ Optimizations:
 
 **Q21: What are the security implications of call stack manipulation?**
 
-A: 
+A:
 1. **Stack smashing**: Overwriting return addresses (mitigated by modern engines)
 2. **Information leakage**: Stack traces expose code structure
 3. **DoS attacks**: Intentional stack overflow
@@ -1013,7 +1013,7 @@ Prevention:
 
 **Q22: How do different JavaScript engines optimize the call stack?**
 
-A: 
+A:
 - **V8 (Chrome/Node.js)**: Uses register-based calling convention, inlining, lazy compilation
 - **SpiderMonkey (Firefox)**: Uses IonMonkey compiler, baseline compiler
 - **JavaScriptCore (Safari)**: Uses FTL (Faster Than Light) JIT compiler
@@ -1026,7 +1026,7 @@ Optimizations:
 
 **Q23: What is the relationship between the call stack and memory management?**
 
-A: 
+A:
 1. **Stack memory**: Automatically managed (LIFO)
 2. **Heap memory**: Managed by garbage collector
 3. **References**: Stack holds references to heap objects
@@ -1035,11 +1035,11 @@ A:
 
 **Q24: How do you test for stack overflow vulnerabilities?**
 
-A: 
+A:
 ```typescript
 function testStackOverflow(): void {
   let depth = 0;
-  
+
   function recurse(): void {
     depth++;
     try {
@@ -1049,7 +1049,7 @@ function testStackOverflow(): void {
       return;
     }
   }
-  
+
   recurse();
 }
 
@@ -1058,7 +1058,7 @@ function testStackOverflow(): void {
 
 **Q25: What are alternatives to recursion for tree traversal?**
 
-A: 
+A:
 1. **Iterative with explicit stack**: Use array as stack
 2. **Breadth-first search**: Use queue instead of stack
 3. **Morris traversal**: O(1) space, modifies tree temporarily
@@ -1069,11 +1069,11 @@ A:
 // Iterative DFS with explicit stack
 function iterativeDFS(root: TreeNode): void {
   const stack: TreeNode[] = [root];
-  
+
   while (stack.length > 0) {
     const node = stack.pop();
     console.log(node.value);
-    
+
     // Push children in reverse order for correct traversal
     for (let i = node.children.length - 1; i >= 0; i--) {
       stack.push(node.children[i]);

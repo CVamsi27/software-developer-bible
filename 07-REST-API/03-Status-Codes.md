@@ -182,11 +182,11 @@ app.get('/temp-path', (req, res) => {
 app.get('/api/products', async (req, res) => {
   const products = await ProductService.findAll();
   const etag = generateETag(products);
-  
+
   if (req.headers['if-none-match'] === etag) {
     return res.status(304).end();
   }
-  
+
   res.set({ 'ETag': etag, 'Cache-Control': 'public, max-age=3600' });
   res.json({ data: products });
 });
@@ -466,7 +466,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
       ...(err.details && { details: err.details })
     });
   }
-  
+
   console.error('Unhandled error:', err);
   res.status(500).json({
     error: 'Internal Server Error',
@@ -488,14 +488,14 @@ app.get('/api/users/:id', async (req, res) => {
 
 app.post('/api/users', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     throw new ValidationError({ name: !name ? 'Required' : undefined, email: !email ? 'Required' : undefined });
   }
-  
+
   const existing = await UserService.findByEmail(email);
   if (existing) throw new ConflictError('Email already exists');
-  
+
   const user = await UserService.create({ name, email });
   res.status(201).header('Location', `/api/users/${user.id}`).json({ data: user });
 });
@@ -503,7 +503,7 @@ app.post('/api/users', async (req, res) => {
 app.put('/api/users/:id', authenticate, async (req, res) => {
   const user = await UserService.findById(req.params.id);
   if (!user) throw new NotFoundError('User', req.params.id);
-  
+
   const updated = await UserService.replace(req.params.id, req.body);
   res.json({ data: updated });
 });
@@ -511,7 +511,7 @@ app.put('/api/users/:id', authenticate, async (req, res) => {
 app.delete('/api/users/:id', authenticate, async (req, res) => {
   const user = await UserService.findById(req.params.id);
   if (!user) throw new NotFoundError('User', req.params.id);
-  
+
   await UserService.delete(req.params.id);
   res.status(204).end();
 });
@@ -525,16 +525,16 @@ app.delete('/api/users/:id', authenticate, async (req, res) => {
 // Login
 app.post('/api/auth/login', async (req, res) => {
   const { email, password } = req.body;
-  
+
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password required' });
   }
-  
+
   const user = await UserService.findByEmail(email);
   if (!user || !await bcrypt.compare(password, user.password)) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  
+
   const token = generateJWT(user);
   res.json({ data: { token, user: { id: user.id, email: user.email } } });
 });
@@ -557,16 +557,16 @@ app.post('/api/files', upload.single('file'), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file provided' });
   }
-  
+
   if (req.file.size > 10 * 1024 * 1024) {
     return res.status(413).json({ error: 'File too large (max 10MB)' });
   }
-  
+
   const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
   if (!allowedTypes.includes(req.file.mimetype)) {
     return res.status(415).json({ error: 'Unsupported file type' });
   }
-  
+
   const file = await FileService.create(req.file);
   res.status(201).json({ data: file });
 });
@@ -577,11 +577,11 @@ app.get('/api/files/:id', async (req, res) => {
   if (!file) {
     return res.status(404).json({ error: 'File not found' });
   }
-  
+
   if (req.headers.range) {
     const range = parseRange(req.headers.range, file.size);
     const stream = await FileService.getStream(file.id, range);
-    
+
     res.status(206)
       .set({
         'Content-Range': `bytes ${range.start}-${range.end}/${file.size}`,
@@ -607,16 +607,16 @@ app.get('/api/files/:id', async (req, res) => {
 ```typescript
 app.post('/api/payments', authenticate, async (req, res) => {
   const idempotencyKey = req.headers['idempotency-key'];
-  
+
   if (!idempotencyKey) {
     return res.status(400).json({ error: 'Idempotency-Key header required' });
   }
-  
+
   const existing = await PaymentService.findByIdempotencyKey(idempotencyKey);
   if (existing) {
     return res.json({ data: existing });
   }
-  
+
   try {
     const payment = await PaymentService.create({
       userId: req.user.id,

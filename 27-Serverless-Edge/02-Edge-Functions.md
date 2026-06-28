@@ -78,7 +78,7 @@ export default {
     ctx: ExecutionContext
   ): Promise<Response> {
     const url = new URL(request.url);
-    
+
     // Handle different routes
     if (url.pathname === '/api/hello') {
       return new Response(
@@ -91,21 +91,21 @@ export default {
         }
       );
     }
-    
+
     if (url.pathname === '/api/echo') {
       const body = await request.text();
       return new Response(body, {
         headers: { 'Content-Type': 'text/plain' },
       });
     }
-    
+
     // Proxy to origin with edge caching
     const response = await fetch(request);
     const newResponse = new Response(response.body, response);
-    
+
     // Add custom headers
     newResponse.headers.set('X-Edge-Location', request.cf?.colo || 'unknown');
-    
+
     return newResponse;
   },
 };
@@ -124,14 +124,14 @@ export const config = {
 export default async function handler(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name') || 'World';
-  
+
   // Edge-compatible operations
   const response = {
     message: `Hello, ${name}!`,
     timestamp: Date.now(),
     region: request.geo?.country || 'unknown',
   };
-  
+
   return NextResponse.json(response);
 }
 ```
@@ -145,29 +145,29 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   // Run at the edge before page rendering
-  
+
   // 1. Authentication check
   const token = request.cookies.get('auth-token');
-  
+
   if (!token && request.nextUrl.pathname.startsWith('/dashboard')) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
-  
+
   // 2. A/B Testing
   const bucket = Math.random() < 0.5 ? 'control' : 'variant';
   const response = NextResponse.next();
   response.cookies.set('ab-test', bucket);
-  
+
   // 3. Geolocation-based routing
   const country = request.geo?.country;
   if (country === 'DE') {
     response.headers.set('X-Language', 'de');
   }
-  
+
   // 4. Rate limiting (basic)
   const ip = request.ip;
   // In production, use KV store for rate limiting
-  
+
   return response;
 }
 
@@ -192,7 +192,7 @@ export default {
     ctx: ExecutionContext
   ): Promise<Response> {
     const cacheKey = new URL(request.url).pathname;
-    
+
     // Check cache first
     const cached = await env.CACHE_KV.get(cacheKey, 'json');
     if (cached) {
@@ -200,21 +200,21 @@ export default {
         headers: { 'Content-Type': 'application/json' },
       });
     }
-    
+
     // Fetch from origin
     const response = await fetch(`https://api.origin.com${cacheKey}`, {
       headers: { Authorization: `Bearer ${env.API_SECRET}` },
     });
-    
+
     const data = await response.json();
-    
+
     // Cache in KV (with TTL)
     ctx.waitUntil(
       env.CACHE_KV.put(cacheKey, JSON.stringify(data), {
         expirationTtl: 3600, // 1 hour
       })
     );
-    
+
     return new Response(JSON.stringify(data), {
       headers: { 'Content-Type': 'application/json' },
     });
@@ -239,20 +239,20 @@ export default {
     ctx: ExecutionContext
   ): Promise<Response> {
     const authHeader = request.headers.get('Authorization');
-    
+
     if (!authHeader?.startsWith('Bearer ')) {
       return new Response('Unauthorized', { status: 401 });
     }
-    
+
     const token = authHeader.substring(7);
-    
+
     try {
       const isValid = await verify(token, env.JWT_SECRET);
-      
+
       if (!isValid) {
         return new Response('Invalid token', { status: 401 });
       }
-      
+
       // Token is valid, proceed
       return fetch(request);
     } catch (error) {
@@ -269,15 +269,15 @@ export default {
 export default {
   async fetch(request: Request): Promise<Response> {
     const url = new URL(request.url);
-    
+
     // Parse image parameters
     const width = parseInt(url.searchParams.get('w') || '800');
     const quality = parseInt(url.searchParams.get('q') || '80');
     const format = url.searchParams.get('f') || 'auto';
-    
+
     // Fetch original image
     const response = await fetch(request);
-    
+
     // Use Cloudflare Image Resizing
     const resizedResponse = new Response(response.body, {
       headers: {
@@ -285,7 +285,7 @@ export default {
         'cf-resized-json': JSON.stringify({ width, quality, format }),
       },
     });
-    
+
     return resizedResponse;
   },
 };

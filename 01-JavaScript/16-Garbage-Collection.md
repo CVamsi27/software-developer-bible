@@ -166,7 +166,7 @@ function createCircular() {
   let b: any = { name: 'b' };
   a.ref = b;
   b.ref = a;
-  
+
   a = null;
   b = null;
   // Both objects are eligible for GC
@@ -179,7 +179,7 @@ function createCircular() {
 // Closure prevents GC of captured variables
 function createClosure() {
   const largeData = new Array(1000000).fill(0);
-  
+
   return function() {
     // largeData kept alive by closure
     return largeData.length;
@@ -192,7 +192,7 @@ const closure = createClosure();
 // To allow GC, release reference
 function createClosureFixed() {
   let largeData: number[] | null = new Array(1000000).fill(0);
-  
+
   return function() {
     const length = largeData?.length ?? 0;
     largeData = null;  // Allow GC
@@ -211,7 +211,7 @@ function processObject(obj: object) {
   if (cache.has(obj)) {
     return cache.get(obj);
   }
-  
+
   const result = expensiveComputation(obj);
   cache.set(obj, result);
   return result;
@@ -231,17 +231,17 @@ obj = null;
 class ObjectPool<T> {
   private pool: T[] = [];
   private factory: () => T;
-  
+
   constructor(factory: () => T) {
     this.factory = factory;
   }
-  
+
   acquire(): T {
-    return this.pool.length > 0 
-      ? this.pool.pop()! 
+    return this.pool.length > 0
+      ? this.pool.pop()!
       : this.factory();
   }
-  
+
   release(obj: T) {
     this.pool.push(obj);
   }
@@ -277,7 +277,7 @@ function Component({ items }: { items: Item[] }) {
     ...item,
     processed: true
   }));
-  
+
   return <List items={processed} />;
 }
 
@@ -287,7 +287,7 @@ function Component({ items }: { items: Item[] }) {
     () => items.map(item => ({ ...item, processed: true })),
     [items]
   );
-  
+
   return <List items={processed} />;
 }
 ```
@@ -297,14 +297,14 @@ function Component({ items }: { items: Item[] }) {
 ```typescript
 class EventEmitter {
   private listeners = new WeakMap<object, Function[]>();
-  
+
   on(target: object, event: string, callback: Function) {
     if (!this.listeners.has(target)) {
       this.listeners.set(target, []);
     }
     this.listeners.get(target)!.push(callback);
   }
-  
+
   // When target is GC'd, listeners are also GC'd
 }
 ```
@@ -315,24 +315,24 @@ class EventEmitter {
 class GC-friendlyCache<K extends object, V> {
   private cache = new WeakMap<K, { value: V; timestamp: number }>();
   private ttl: number;
-  
+
   constructor(ttl: number = 60000) {
     this.ttl = ttl;
   }
-  
+
   set(key: K, value: V) {
     this.cache.set(key, { value, timestamp: Date.now() });
   }
-  
+
   get(key: K): V | undefined {
     const entry = this.cache.get(key);
     if (!entry) return undefined;
-    
+
     if (Date.now() - entry.timestamp > this.ttl) {
       this.cache.delete(key);
       return undefined;
     }
-    
+
     return entry.value;
   }
 }
@@ -346,9 +346,9 @@ function monitorMemory() {
     const used = performance.memory.usedJSHeapSize;
     const total = performance.memory.jsHeapSizeLimit;
     const percentage = (used / total) * 100;
-    
+
     console.log(`Memory: ${percentage.toFixed(2)}%`);
-    
+
     if (percentage > 80) {
       console.warn('High memory usage!');
     }
@@ -436,7 +436,7 @@ function start() {
   const id = setInterval(() => {
     updateUI();
   }, 1000);
-  
+
   return () => clearInterval(id);
 }
 ```
@@ -486,11 +486,11 @@ function destroyParticle(particle: Particle) {
 class BoundedCache<K, V> {
   private cache = new Map<K, V>();
   private maxSize: number;
-  
+
   constructor(maxSize: number) {
     this.maxSize = maxSize;
   }
-  
+
   set(key: K, value: V) {
     if (this.cache.size >= this.maxSize) {
       const firstKey = this.cache.keys().next().value;
@@ -507,11 +507,11 @@ class BoundedCache<K, V> {
 // Allow GC while maintaining access
 class DataStore {
   private data = new WeakRef<LargeObject>({});
-  
+
   getData(): LargeObject | undefined {
     return this.data.deref();
   }
-  
+
   setData(data: LargeObject) {
     this.data = new WeakRef(data);
   }
@@ -550,7 +550,7 @@ function process() {
 // Monitor and respond to memory pressure
 if ('memory' in performance) {
   const memory = (performance as any).memory;
-  
+
   if (memory.usedJSHeapSize > memory.jsHeapSizeLimit * 0.8) {
     // Reduce cache size, clear unnecessary data
     cache.clear();

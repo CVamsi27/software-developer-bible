@@ -16,9 +16,9 @@ The Singleton pattern ensures a class has only one instance and provides a globa
 ```typescript
 class Singleton {
   private static instance: Singleton;
-  
+
   private constructor() {}
-  
+
   public static getInstance(): Singleton {
     if (!Singleton.instance) {
       Singleton.instance = new Singleton();
@@ -87,15 +87,15 @@ interface Observer {
 
 class Subject {
   private observers: Observer[] = [];
-  
+
   attach(observer: Observer): void {
     this.observers.push(observer);
   }
-  
+
   detach(observer: Observer): void {
     this.observers = this.observers.filter(o => o !== observer);
   }
-  
+
   notify(): void {
     this.observers.forEach(o => o.update(this));
   }
@@ -128,7 +128,7 @@ class OldPrinter {
 
 class PrinterAdapter implements ModernPrinter {
   constructor(private oldPrinter: OldPrinter) {}
-  
+
   print(document: string): void {
     this.oldPrinter.printOld(document);
   }
@@ -145,22 +145,22 @@ The Builder pattern separates the construction of a complex object from its repr
 ```typescript
 class QueryBuilder {
   private query: string = '';
-  
+
   select(fields: string[]): this {
     this.query = `SELECT ${fields.join(', ')}`;
     return this;
   }
-  
+
   from(table: string): this {
     this.query += ` FROM ${table}`;
     return this;
   }
-  
+
   where(condition: string): this {
     this.query += ` WHERE ${condition}`;
     return this;
   }
-  
+
   build(): string {
     return this.query;
   }
@@ -194,7 +194,7 @@ class Memory {
 class ComputerFacade {
   private cpu = new CPU();
   private memory = new Memory();
-  
+
   startComputer(): void {
     this.cpu.freeze();
     this.memory.load(0, 'boot');
@@ -233,7 +233,7 @@ class SimpleCoffee implements Coffee {
 
 class MilkDecorator implements Coffee {
   constructor(private coffee: Coffee) {}
-  
+
   getCost(): number { return this.coffee.getCost() + 2; }
   getDescription(): string { return `${this.coffee.getDescription()}, milk`; }
 }
@@ -257,7 +257,7 @@ class RealImage implements Image {
 
 class ProxyImage implements Image {
   private realImage: RealImage | null = null;
-  
+
   display(): void {
     if (!this.realImage) {
       this.realImage = new RealImage();
@@ -289,7 +289,7 @@ class QuickSort implements SortStrategy {
 
 class Sorter {
   constructor(private strategy: SortStrategy) {}
-  
+
   sort(data: number[]): number[] {
     return this.strategy.sort(data);
   }
@@ -329,7 +329,7 @@ const sorter = new Sorter(new QuickSort());
 // State - Object changes internally
 class TrafficLight {
   private state: State;
-  
+
   change(): void {
     this.state = this.state.next();
   }
@@ -364,11 +364,11 @@ class PostgresUserRepository implements UserRepository {
   async findById(id: string): Promise<User | null> {
     // Database query
   }
-  
+
   async save(user: User): Promise<User> {
     // Database insert/update
   }
-  
+
   async delete(id: string): Promise<boolean> {
     // Database delete
   }
@@ -391,12 +391,12 @@ Chain of Responsibility passes requests along a chain of handlers, each deciding
 ```typescript
 abstract class Handler {
   private next: Handler | null = null;
-  
+
   setNext(handler: Handler): Handler {
     this.next = handler;
     return handler;
   }
-  
+
   handle(request: any): any {
     if (this.next) {
       return this.next.handle(request);
@@ -429,7 +429,7 @@ abstract class DataProcessor {
     this.processData();
     this.writeData();
   }
-  
+
   protected abstract readData(): void;
   protected abstract processData(): void;
   protected abstract writeData(): void;
@@ -462,11 +462,11 @@ class CopyCommand implements Command {
 
 class History {
   private commands: Command[] = [];
-  
+
   push(command: Command): void {
     this.commands.push(command);
   }
-  
+
   pop(): Command | undefined {
     return this.commands.pop();
   }
@@ -487,11 +487,11 @@ interface Mediator {
 
 class ChatRoom implements Mediator {
   private users: User[] = [];
-  
+
   addUser(user: User): void {
     this.users.push(user);
   }
-  
+
   notify(sender: User, message: string): void {
     this.users.forEach(user => {
       if (user !== sender) {
@@ -516,17 +516,17 @@ interface Component {
 
 class Leaf implements Component {
   constructor(private value: number) {}
-  
+
   operation(): number { return this.value; }
 }
 
 class Composite implements Component {
   private children: Component[] = [];
-  
+
   add(child: Component): void {
     this.children.push(child);
   }
-  
+
   operation(): number {
     return this.children.reduce((sum, child) => sum + child.operation(), 0);
   }
@@ -548,13 +548,13 @@ interface Iterator<T> {
 
 class ArrayIterator<T> implements Iterator<T> {
   private position = 0;
-  
+
   constructor(private array: T[]) {}
-  
+
   hasNext(): boolean {
     return this.position < this.array.length;
   }
-  
+
   next(): T {
     return this.array[this.position++];
   }
@@ -610,7 +610,7 @@ Cross-cutting concerns (logging, security, transactions) can be handled with:
 // Decorator for logging
 class LoggingDecorator implements Service {
   constructor(private service: Service) {}
-  
+
   async execute(): Promise<any> {
     console.log('Before');
     const result = await this.service.execute();
@@ -875,21 +875,21 @@ class URLShortener {
   private factory: URLFactory;
   private cache: CacheProxy;
   private strategy: EncodingStrategy;
-  
+
   constructor() {
     this.factory = new URLFactory();
     this.cache = new CacheProxy(new DatabaseURLRepository());
     this.strategy = new Base62Encoding();
   }
-  
+
   async shorten(longUrl: string): Promise<string> {
     const existing = await this.cache.findByLongUrl(longUrl);
     if (existing) return existing.shortUrl;
-    
+
     const shortUrl = this.strategy.encode(longUrl);
     const url = this.factory.create(longUrl, shortUrl);
     await this.cache.save(url);
-    
+
     return shortUrl;
   }
 }
@@ -911,10 +911,10 @@ Patterns to use:
 class NotificationSystem {
   private channels: Map<string, NotificationChannel>;
   private pipeline: ProcessingPipeline;
-  
+
   async send(notification: Notification): Promise<void> {
     const processed = await this.pipeline.process(notification);
-    
+
     for (const channel of processed.channels) {
       await this.channels.get(channel)?.send(processed);
     }
@@ -939,17 +939,17 @@ class PluginManager {
   private plugins: Map<string, Plugin>;
   private loader: PluginLoader;
   private sandbox: PluginSandbox;
-  
+
   async loadPlugin(config: PluginConfig): Promise<void> {
     const plugin = await this.loader.load(config);
     const proxied = this.sandbox.wrap(plugin);
     this.plugins.set(config.name, proxied);
   }
-  
+
   async executePlugin(name: string, command: string): Promise<any> {
     const plugin = this.plugins.get(name);
     if (!plugin) throw new Error('Plugin not found');
-    
+
     return plugin.execute(command);
   }
 }
@@ -972,11 +972,11 @@ class PaymentService {
   private processors: Map<string, PaymentProcessor>;
   private adapter: PaymentAdapter;
   private decorator: PaymentDecorator;
-  
+
   async processPayment(payment: Payment): Promise<Result> {
     const processor = this.processors.get(payment.provider);
     if (!processor) throw new Error('Unknown provider');
-    
+
     const adapted = this.adapter.adapt(payment, processor);
     return this.decorator.process(adapted);
   }
@@ -1000,16 +1000,16 @@ class CacheLayer {
   private cache: CacheProxy;
   private strategy: EvictionStrategy;
   private invalidator: CacheInvalidator;
-  
+
   async get<T>(key: string): Promise<T | null> {
     return this.cache.get(key);
   }
-  
+
   async set(key: string, value: any, ttl?: number): Promise<void> {
     await this.cache.set(key, value, ttl);
     await this.invalidator.notify(key, 'set');
   }
-  
+
   async invalidate(pattern: string): Promise<void> {
     await this.cache.invalidate(pattern);
     await this.invalidator.notify(pattern, 'invalidate');

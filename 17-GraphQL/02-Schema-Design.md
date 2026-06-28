@@ -847,14 +847,14 @@ input ProductFilterInput {
 ### 2. CMS Content Model
 
 ```graphql
-union ContentBlock = 
-  | Paragraph 
-  | Heading 
-  | Image 
-  | Video 
-  | CodeBlock 
-  | Quote 
-  | List 
+union ContentBlock =
+  | Paragraph
+  | Heading
+  | Image
+  | Video
+  | CodeBlock
+  | Quote
+  | List
   | Table
 
 type Paragraph {
@@ -911,10 +911,10 @@ type Dashboard implements Node {
   updatedAt: DateTime!
 }
 
-union Widget = 
-  | ChartWidget 
-  | MetricWidget 
-  | TableWidget 
+union Widget =
+  | ChartWidget
+  | MetricWidget
+  | TableWidget
   | FilterWidget
 
 type ChartWidget {
@@ -1173,10 +1173,10 @@ if (complexity > 1000) {
 type Query {
   # Cache for 5 minutes
   popularPosts: [Post!]! @cacheControl(maxAge: 300, scope: PUBLIC)
-  
+
   # Cache for 1 hour
   staticData: StaticData! @cacheControl(maxAge: 3600, scope: PUBLIC)
-  
+
   # No caching
   currentUser: User @cacheControl(maxAge: 0, scope: PRIVATE)
 }

@@ -69,17 +69,17 @@ Client                          Server
 // API Key middleware
 function apiKeyAuth(req, res, next) {
   const apiKey = req.headers['x-api-key'];
-  
+
   if (!apiKey) {
     return res.status(401).json({ error: 'API key required' });
   }
-  
+
   const validKey = await ApiKeyService.validate(apiKey);
-  
+
   if (!validKey) {
     return res.status(401).json({ error: 'Invalid API key' });
   }
-  
+
   req.apiKey = validKey;
   next();
 }
@@ -147,35 +147,35 @@ const REFRESH_TOKEN_EXPIRY = '7d';
 // Login endpoint
 app.post('/api/auth/login', async (req, res) => {
   const { email, password } = req.body;
-  
+
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password required' });
   }
-  
+
   const user = await UserService.findByEmail(email);
   if (!user) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  
+
   const isValid = await bcrypt.compare(password, user.password);
   if (!isValid) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  
+
   const token = jwt.sign(
     { sub: user.id, email: user.email, role: user.role },
     JWT_SECRET,
     { expiresIn: JWT_EXPIRY }
   );
-  
+
   const refreshToken = jwt.sign(
     { sub: user.id, type: 'refresh' },
     JWT_SECRET,
     { expiresIn: REFRESH_TOKEN_EXPIRY }
   );
-  
+
   await RefreshTokenService.create({ userId: user.id, token: refreshToken });
-  
+
   res.json({
     data: {
       token,
@@ -188,13 +188,13 @@ app.post('/api/auth/login', async (req, res) => {
 // JWT middleware
 function authenticate(req, res, next) {
   const authHeader = req.headers.authorization;
-  
+
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   const token = authHeader.split(' ')[1];
-  
+
   try {
     const payload = jwt.verify(token, JWT_SECRET);
     req.user = payload;
@@ -256,26 +256,26 @@ Client                          Server
 // Refresh token endpoint
 app.post('/api/auth/refresh', async (req, res) => {
   const { refreshToken } = req.body;
-  
+
   if (!refreshToken) {
     return res.status(400).json({ error: 'Refresh token required' });
   }
-  
+
   try {
     const payload = jwt.verify(refreshToken, JWT_SECRET);
-    
+
     if (payload.type !== 'refresh') {
       return res.status(401).json({ error: 'Invalid token type' });
     }
-    
+
     const storedToken = await RefreshTokenService.findByToken(refreshToken);
     if (!storedToken || storedToken.used) {
       return res.status(401).json({ error: 'Invalid refresh token' });
     }
-    
+
     // Mark old token as used
     await RefreshTokenService.markAsUsed(refreshToken);
-    
+
     // Generate new tokens
     const user = await UserService.findById(payload.sub);
     const newToken = jwt.sign(
@@ -283,15 +283,15 @@ app.post('/api/auth/refresh', async (req, res) => {
       JWT_SECRET,
       { expiresIn: JWT_EXPIRY }
     );
-    
+
     const newRefreshToken = jwt.sign(
       { sub: user.id, type: 'refresh' },
       JWT_SECRET,
       { expiresIn: REFRESH_TOKEN_EXPIRY }
     );
-    
+
     await RefreshTokenService.create({ userId: user.id, token: newRefreshToken });
-    
+
     res.json({
       data: {
         token: newToken,
@@ -348,13 +348,13 @@ app.get('/api/auth/google', (req, res) => {
     `redirect_uri=${GOOGLE_REDIRECT_URI}&` +
     `response_type=code&` +
     `scope=openid email profile`;
-  
+
   res.redirect(url);
 });
 
 app.get('/api/auth/google/callback', async (req, res) => {
   const { code } = req.query;
-  
+
   // Exchange code for tokens
   const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
@@ -367,16 +367,16 @@ app.get('/api/auth/google/callback', async (req, res) => {
       grant_type: 'authorization_code'
     })
   });
-  
+
   const { access_token, id_token } = await tokenResponse.json();
-  
+
   // Get user info
   const userInfoResponse = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
     headers: { Authorization: `Bearer ${access_token}` }
   });
-  
+
   const userInfo = await userInfoResponse.json();
-  
+
   // Find or create user
   let user = await UserService.findByEmail(userInfo.email);
   if (!user) {
@@ -387,14 +387,14 @@ app.get('/api/auth/google/callback', async (req, res) => {
       providerId: userInfo.id
     });
   }
-  
+
   // Generate JWT
   const token = jwt.sign(
     { sub: user.id, email: user.email, role: user.role },
     JWT_SECRET,
     { expiresIn: JWT_EXPIRY }
   );
-  
+
   res.json({ data: { token, user } });
 });
 ```
@@ -432,11 +432,11 @@ const passwordResetTokens = new Map<string, { userId: string; expires: Date }>()
 // Auth middleware
 const authenticate = async (req, res, next) => {
   const token = extractToken(req);
-  
+
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   try {
     const payload = jwt.verify(token, JWT_SECRET) as JWTPayload;
     req.user = payload;
@@ -452,11 +452,11 @@ const authorize = (...roles: string[]) => {
     if (!req.user) {
       return res.status(401).json({ error: 'Authentication required' });
     }
-    
+
     if (!roles.includes(req.user.role)) {
       return res.status(403).json({ error: 'Insufficient permissions' });
     }
-    
+
     next();
   };
 };
@@ -465,13 +465,13 @@ const authorize = (...roles: string[]) => {
 const requirePermission = (...permissions: string[]) => {
   return async (req, res, next) => {
     const userPermissions = await PermissionService.getUserPermissions(req.user.sub);
-    
+
     const hasPermission = permissions.every(p => userPermissions.includes(p));
-    
+
     if (!hasPermission) {
       return res.status(403).json({ error: 'Insufficient permissions' });
     }
-    
+
     next();
   };
 };
@@ -479,22 +479,22 @@ const requirePermission = (...permissions: string[]) => {
 // Routes
 app.post('/api/auth/register', async (req, res) => {
   const { email, password, name } = req.body;
-  
+
   if (!email || !password || !name) {
     return res.status(400).json({ error: 'All fields required' });
   }
-  
+
   const existing = await UserService.findByEmail(email);
   if (existing) {
     return res.status(409).json({ error: 'Email already exists' });
   }
-  
+
   const hashedPassword = await bcrypt.hash(password, 12);
   const user = await UserService.create({ email, password: hashedPassword, name });
-  
+
   const token = generateToken(user);
   const refreshToken = await generateRefreshToken(user.id);
-  
+
   res.status(201).json({
     data: {
       user: { id: user.id, email: user.email, name: user.name },
@@ -506,19 +506,19 @@ app.post('/api/auth/register', async (req, res) => {
 
 app.post('/api/auth/login', async (req, res) => {
   const { email, password } = req.body;
-  
+
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password required' });
   }
-  
+
   const user = await UserService.findByEmail(email);
   if (!user || !(await bcrypt.compare(password, user.password))) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  
+
   const token = generateToken(user);
   const refreshToken = await generateRefreshToken(user.id);
-  
+
   res.json({
     data: {
       user: { id: user.id, email: user.email },
@@ -530,23 +530,23 @@ app.post('/api/auth/login', async (req, res) => {
 
 app.post('/api/auth/refresh', async (req, res) => {
   const { refreshToken } = req.body;
-  
+
   if (!refreshToken) {
     return res.status(400).json({ error: 'Refresh token required' });
   }
-  
+
   const stored = refreshTokens.get(refreshToken);
   if (!stored || stored.used) {
     return res.status(401).json({ error: 'Invalid refresh token' });
   }
-  
+
   // Mark as used (rotation)
   stored.used = true;
-  
+
   const user = await UserService.findById(stored.userId);
   const newToken = generateToken(user);
   const newRefreshToken = await generateRefreshToken(user.id);
-  
+
   res.json({
     data: {
       token: newToken,
@@ -557,11 +557,11 @@ app.post('/api/auth/refresh', async (req, res) => {
 
 app.post('/api/auth/logout', authenticate, async (req, res) => {
   const { refreshToken } = req.body;
-  
+
   if (refreshToken) {
     refreshTokens.delete(refreshToken);
   }
-  
+
   res.json({ message: 'Logged out' });
 });
 
@@ -596,14 +596,14 @@ async function generateRefreshToken(userId: string): Promise<string> {
     JWT_SECRET,
     { expiresIn: '7d' }
   );
-  
+
   refreshTokens.set(token, { userId, used: false });
-  
+
   // Cleanup old tokens
   setTimeout(() => {
     refreshTokens.delete(token);
   }, 7 * 24 * 60 * 60 * 1000);
-  
+
   return token;
 }
 
@@ -625,18 +625,18 @@ function extractToken(req): string | null {
 const authenticateTenant = async (req, res, next) => {
   const token = extractToken(req);
   const payload = jwt.verify(token, JWT_SECRET);
-  
+
   const tenant = await TenantService.findById(payload.tenantId);
   if (!tenant) {
     return res.status(401).json({ error: 'Invalid tenant' });
   }
-  
+
   req.user = payload;
   req.tenant = tenant;
-  
+
   // Set tenant context for database queries
   await db.query(`SET app.tenant_id = '${tenant.id}'`);
-  
+
   next();
 };
 
@@ -654,7 +654,7 @@ app.get('/api/data', authenticateTenant, async (req, res) => {
 const gatewayAuth = async (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
   const token = extractToken(req);
-  
+
   if (apiKey) {
     // API key authentication
     const key = await ApiKeyService.validate(apiKey);
@@ -673,7 +673,7 @@ const gatewayAuth = async (req, res, next) => {
   } else {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   next();
 };
 ```
@@ -684,22 +684,22 @@ const gatewayAuth = async (req, res, next) => {
 // Client credentials flow
 app.post('/api/auth/token', async (req, res) => {
   const { grant_type, client_id, client_secret } = req.body;
-  
+
   if (grant_type !== 'client_credentials') {
     return res.status(400).json({ error: 'Unsupported grant type' });
   }
-  
+
   const client = await ClientService.validate(client_id, client_secret);
   if (!client) {
     return res.status(401).json({ error: 'Invalid client credentials' });
   }
-  
+
   const token = jwt.sign(
     { sub: client.id, type: 'machine' },
     JWT_SECRET,
     { expiresIn: '1h' }
   );
-  
+
   res.json({
     access_token: token,
     token_type: 'Bearer',
@@ -746,15 +746,15 @@ app.post('/api/auth/refresh', async (req, res) => {
 app.post('/api/auth/refresh', async (req, res) => {
   const { refreshToken } = req.body;
   const stored = await getRefreshToken(refreshToken);
-  
+
   if (stored.used) {
     return res.status(401).json({ error: 'Token reuse detected' });
   }
-  
+
   await markAsUsed(refreshToken);
   const newToken = generateToken(stored.userId);
   const newRefreshToken = await createRefreshToken(stored.userId);
-  
+
   res.json({ token: newToken, refreshToken: newRefreshToken });
 });
 ```

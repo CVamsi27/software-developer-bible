@@ -268,12 +268,12 @@ const createPostsByAuthorLoader = (postAPI: PostAPI) => {
   return new DataLoader<string, Post[]>(async (authorIds) => {
     const posts = await postAPI.getPostsByAuthorIds(authorIds as string[]);
     const postsByAuthor = new Map<string, Post[]>();
-    
+
     for (const post of posts) {
       const existing = postsByAuthor.get(post.authorId) || [];
       postsByAuthor.set(post.authorId, [...existing, post]);
     }
-    
+
     return authorIds.map(id => postsByAuthor.get(id as string) || []);
   });
 };
@@ -334,30 +334,30 @@ const resolvers = {
   Query: {
     posts: async (parent, args, context) => {
       const { first, after, filter, sort } = args;
-      
+
       // Build query based on arguments
       let query = context.db.post;
-      
+
       if (filter?.status) {
         query = query.where({ status: filter.status });
       }
-      
+
       if (filter?.authorId) {
         query = query.where({ authorId: filter.authorId });
       }
-      
+
       if (sort) {
         query = query.orderBy(sort.field, sort.order);
       }
-      
+
       // Cursor-based pagination
       if (after) {
         const cursor = decodeCursor(after);
         query = query.where('createdAt', '<', cursor);
       }
-      
+
       const posts = await query.take(first + 1).many();
-      
+
       return {
         edges: posts.slice(0, first).map(post => ({
           node: post,
@@ -365,8 +365,8 @@ const resolvers = {
         })),
         pageInfo: {
           hasNextPage: posts.length > first,
-          endCursor: posts.length > first 
-            ? encodeCursor(posts[first - 1].createdAt) 
+          endCursor: posts.length > first
+            ? encodeCursor(posts[first - 1].createdAt)
             : null,
         },
       };
@@ -495,17 +495,17 @@ const resolvers = {
   Query: {
     feed: async (_, { first, after }, context) => {
       const userId = context.currentUser.id;
-      
+
       // Get followed users
       const following = await context.loaders.following.load(userId);
-      
+
       // Get posts from followed users
       const posts = await context.dataSources.postAPI.getFeed(
         userId,
         following.map(f => f.followingId),
         { first: first + 1, after }
       );
-      
+
       return {
         edges: posts.slice(0, first).map(post => ({
           node: post,
@@ -650,7 +650,7 @@ const resolvers = {
   User: {
     email: (parent, _, context) => {
       // Only show email to self or admins
-      if (context.currentUser?.id === parent.id || 
+      if (context.currentUser?.id === parent.id ||
           context.currentUser?.role === 'ADMIN') {
         return parent.email;
       }
@@ -730,9 +730,9 @@ const resolvers = {
   Query: {
     user: async (_, { id }, context) => {
       // Don't modify data in query resolvers!
-      await context.db.user.update({ 
-        where: { id }, 
-        data: { lastAccessedAt: new Date() } 
+      await context.db.user.update({
+        where: { id },
+        data: { lastAccessedAt: new Date() }
       });
       return context.db.user.findById(id);
     },
@@ -805,7 +805,7 @@ const createContext = ({ req }) => ({
 const batchFn = async (ids) => {
   const items = await db.findMany({ where: { id: { in: ids } } });
   const itemMap = new Map(items.map(item => [item.id, item]));
-  
+
   return ids.map(id => {
     const item = itemMap.get(id);
     if (!item) {

@@ -1142,7 +1142,7 @@ class UserService {
   private hashPassword(password: string): string {
     return `hashed_${password}`;
   }
-  
+
   async createUser(data: UserData) {
     const hashedPassword = this.hashPassword(data.password);
     // ...

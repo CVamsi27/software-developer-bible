@@ -138,7 +138,7 @@ console.log(counter.next());  // { value: undefined, done: true }
 ```typescript
 function* fibonacci(): Generator<number> {
   let a = 0, b = 1;
-  
+
   while (true) {
     yield a;
     [a, b] = [b, a + b];
@@ -185,7 +185,7 @@ console.log(gen.next("30"));       // { value: "Alice is 30 years old", done: tr
 ```typescript
 class Range {
   constructor(private start: number, private end: number) {}
-  
+
   *[Symbol.iterator](): Generator<number> {
     for (let i = this.start; i <= this.end; i++) {
       yield i;
@@ -208,13 +208,13 @@ console.log(numbers);  // [1, 2, 3, 4, 5]
 ```typescript
 async function* fetchPages(url: string): AsyncGenerator<any> {
   let page = 1;
-  
+
   while (true) {
     const response = await fetch(`${url}?page=${page}`);
     const data = await response.json();
-    
+
     if (data.length === 0) break;
-    
+
     yield data;
     page++;
   }
@@ -223,11 +223,11 @@ async function* fetchPages(url: string): AsyncGenerator<any> {
 // Usage
 async function getAllData() {
   const allData = [];
-  
+
   for await (const page of fetchPages('https://api.example.com/data')) {
     allData.push(...page);
   }
-  
+
   return allData;
 }
 ```
@@ -259,10 +259,10 @@ console.log([...gen]);  // [1, 2, 3, 4]
 ```typescript
 function* stateMachine() {
   let state = 'idle';
-  
+
   while (true) {
     const action = yield state;
-    
+
     switch (state) {
       case 'idle':
         if (action === 'START') state = 'running';
@@ -295,13 +295,13 @@ machine.next('STOP');     // { value: 'idle', done: false }
 function* loadLargeDataset(): Generator<DataChunk> {
   let offset = 0;
   const batchSize = 1000;
-  
+
   while (true) {
     const response = await fetch(`/api/data?offset=${offset}&limit=${batchSize}`);
     const data = await response.json();
-    
+
     if (data.length === 0) break;
-    
+
     yield data;
     offset += batchSize;
   }
@@ -352,17 +352,17 @@ function runGenerator(gen: Generator) {
       } catch (error) {
         return reject(error);
       }
-      
+
       if (result.done) {
         return resolve(result.value);
       }
-      
+
       Promise.resolve(result.value).then(
         (value) => step(value),
         (error) => gen.throw(error)
       );
     }
-    
+
     step();
   });
 }
@@ -374,11 +374,11 @@ function runGenerator(gen: Generator) {
 class FileSystem {
   *walk(dir: string): Generator<string> {
     const entries = readdirSync(dir);
-    
+
     for (const entry of entries) {
       const fullPath = join(dir, entry);
       const stat = statSync(fullPath);
-      
+
       if (stat.isDirectory()) {
         yield* this.walk(fullPath);
       } else {
@@ -601,7 +601,7 @@ const gen = range(1, 1000000);  // Stores nothing until iterated
 // Fibonacci with memoization: O(n) time, O(n) space
 function* fibonacciMemo(): Generator<number> {
   const memo = new Map<number, number>();
-  
+
   function fib(n: number): number {
     if (n <= 1) return n;
     if (memo.has(n)) return memo.get(n)!;
@@ -609,7 +609,7 @@ function* fibonacciMemo(): Generator<number> {
     memo.set(n, result);
     return result;
   }
-  
+
   for (let i = 0; ; i++) {
     yield fib(i);
   }

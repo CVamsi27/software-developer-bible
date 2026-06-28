@@ -194,7 +194,7 @@ Robust - Content must be robust for assistive technologies
 ### Keyboard Navigation
 ```html
 <!-- Custom interactive elements -->
-<button 
+<button
   aria-label="Close dialog"
   aria-expanded="false"
   onclick="closeDialog()">
@@ -205,9 +205,9 @@ Robust - Content must be robust for assistive technologies
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Focus management -->
-<div 
-  role="dialog" 
-  aria-modal="true" 
+<div
+  role="dialog"
+  aria-modal="true"
   aria-labelledby="dialog-title"
   tabindex="-1">
   <h2 id="dialog-title">Dialog Title</h2>

@@ -103,10 +103,10 @@ Keyboard navigation involves:
 <form>
   <label for="name">Name</label>
   <input type="text" id="name" tabindex="0">
-  
+
   <label for="email">Email</label>
   <input type="email" id="email" tabindex="0">
-  
+
   <button type="submit" tabindex="0">Submit</button>
 </form>
 
@@ -126,24 +126,24 @@ Keyboard navigation involves:
 ```html
 <!-- Tab list with roving tabindex -->
 <div role="tablist" aria-label="Tabs">
-  <button 
-    role="tab" 
+  <button
+    role="tab"
     id="tab1"
     aria-selected="true"
     aria-controls="panel1"
     tabindex="0">
     Tab 1
   </button>
-  <button 
-    role="tab" 
+  <button
+    role="tab"
     id="tab2"
     aria-selected="false"
     aria-controls="panel2"
     tabindex="-1">
     Tab 2
   </button>
-  <button 
-    role="tab" 
+  <button
+    role="tab"
     id="tab3"
     aria-selected="false"
     aria-controls="panel3"
@@ -160,7 +160,7 @@ const tabs = tablist.querySelectorAll('[role="tab"]');
 tablist.addEventListener('keydown', (e) => {
   const currentIndex = Array.from(tabs).indexOf(document.activeElement);
   let newIndex;
-  
+
   switch (e.key) {
     case 'ArrowRight':
       newIndex = (currentIndex + 1) % tabs.length;
@@ -177,7 +177,7 @@ tablist.addEventListener('keydown', (e) => {
     default:
       return;
   }
-  
+
   // Update tabindex
   tabs[currentIndex].setAttribute('tabindex', '-1');
   tabs[newIndex].setAttribute('tabindex', '0');
@@ -190,7 +190,7 @@ tablist.addEventListener('keydown', (e) => {
 ### Keyboard Shortcuts
 ```html
 <!-- Keyboard shortcut handler -->
-<div 
+<div
   role="button"
   tabindex="0"
   aria-keyshortcuts="Ctrl+S"
@@ -206,12 +206,12 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
     save();
   }
-  
+
   // Escape to close modal
   if (e.key === 'Escape') {
     closeModal();
   }
-  
+
   // / to focus search
   if (e.key === '/' && !isInputFocused()) {
     e.preventDefault();
@@ -224,13 +224,13 @@ document.addEventListener('keydown', (e) => {
 ### Focus Trapping (Modals)
 ```html
 <!-- Modal with focus trap -->
-<div 
+<div
   role="dialog"
   aria-modal="true"
   aria-labelledby="dialog-title"
   id="modal">
   <h2 id="dialog-title">Dialog Title</h2>
-  
+
   <button autofocus id="close-btn">Close</button>
   <input type="text" placeholder="Input">
   <button>Cancel</button>
@@ -242,13 +242,13 @@ function trapFocus(modal) {
   const focusableElements = modal.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
   );
-  
+
   const firstElement = focusableElements[0];
   const lastElement = focusableElements[focusableElements.length - 1];
-  
+
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab') return;
-    
+
     if (e.shiftKey) {
       if (document.activeElement === firstElement) {
         lastElement.focus();
@@ -284,7 +284,7 @@ function closeModal() {
 ### Arrow Key Navigation
 ```html
 <!-- Listbox with arrow key navigation -->
-<div 
+<div
   role="listbox"
   aria-label="Choose an option"
   tabindex="0"
@@ -301,7 +301,7 @@ let currentIndex = 0;
 
 listbox.addEventListener('keydown', (e) => {
   let newIndex = currentIndex;
-  
+
   switch (e.key) {
     case 'ArrowDown':
       newIndex = Math.min(currentIndex + 1, options.length - 1);
@@ -322,7 +322,7 @@ listbox.addEventListener('keydown', (e) => {
     default:
       return;
   }
-  
+
   // Update selection
   options[currentIndex].setAttribute('aria-selected', 'false');
   options[newIndex].setAttribute('aria-selected', 'true');
@@ -337,15 +337,15 @@ listbox.addEventListener('keydown', (e) => {
 ```html
 <!-- Dropdown menu -->
 <div class="dropdown">
-  <button 
+  <button
     aria-haspopup="true"
     aria-expanded="false"
     aria-controls="menu1"
     id="menu-button">
     Options
   </button>
-  
-  <div 
+
+  <div
     role="menu"
     id="menu1"
     aria-labelledby="menu-button"
@@ -366,7 +366,7 @@ button.addEventListener('click', () => {
   const expanded = button.getAttribute('aria-expanded') === 'true';
   button.setAttribute('aria-expanded', !expanded);
   menu.hidden = expanded;
-  
+
   if (!expanded) {
     items[0].focus();
   }
@@ -375,7 +375,7 @@ button.addEventListener('click', () => {
 menu.addEventListener('keydown', (e) => {
   const currentIndex = Array.from(items).indexOf(document.activeElement);
   let newIndex;
-  
+
   switch (e.key) {
     case 'ArrowDown':
       newIndex = (currentIndex + 1) % items.length;
@@ -397,7 +397,7 @@ menu.addEventListener('keydown', (e) => {
     default:
       return;
   }
-  
+
   items[newIndex].focus();
 });
 </script>

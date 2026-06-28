@@ -53,7 +53,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   // Plugins
   plugins: [react()],
-  
+
   // Development server
   server: {
     port: 3000,
@@ -65,7 +65,7 @@ export default defineConfig({
       }
     }
   },
-  
+
   // Build options
   build: {
     outDir: 'dist',
@@ -79,7 +79,7 @@ export default defineConfig({
       }
     }
   },
-  
+
   // Resolve aliases
   resolve: {
     alias: {

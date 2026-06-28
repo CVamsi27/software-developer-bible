@@ -117,7 +117,7 @@ app.use(cors(corsOptions));
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = ['https://app.com', 'https://admin.com'];
-    
+
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -199,10 +199,10 @@ const corsConfig = {
       'https://admin.example.com',
       'http://localhost:3000' // Development
     ];
-    
+
     // Allow requests with no origin (mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
-    
+
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -236,12 +236,12 @@ app.get('/api/private', cors(corsConfig), (req, res) => {
 // Custom CORS headers
 app.use('/api', (req, res, next) => {
   const origin = req.headers.origin;
-  
+
   if (isAllowedOrigin(origin)) {
     res.set('Access-Control-Allow-Origin', origin);
     res.set('Access-Control-Allow-Credentials', 'true');
   }
-  
+
   next();
 });
 
@@ -328,7 +328,7 @@ axios.get('https://api.example.com/data', {
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   const path = req.path;
-  
+
   // Different CORS for different endpoints
   if (path.startsWith('/api/public')) {
     res.set('Access-Control-Allow-Origin', '*');
@@ -343,7 +343,7 @@ app.use((req, res, next) => {
       res.set('Access-Control-Allow-Credentials', 'true');
     }
   }
-  
+
   next();
 });
 ```
@@ -392,7 +392,7 @@ app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
-    
+
     // Allow web app origins
     if (isWebAppOrigin(origin)) {
       callback(null, true);

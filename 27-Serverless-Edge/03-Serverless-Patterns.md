@@ -70,14 +70,14 @@ functions:
       - httpApi:
           path: /users
           method: POST
-  
+
   getUser:
     handler: src/handlers/users.get
     events:
       - httpApi:
           path: /users/{id}
           method: GET
-  
+
   updateUser:
     handler: src/handlers/users.update
     events:
@@ -119,14 +119,14 @@ export const create = async (
     ...body,
     createdAt: new Date().toISOString(),
   };
-  
+
   await docClient.send(
     new PutCommand({
       TableName: TABLE_NAME,
       Item: item,
     })
   );
-  
+
   return {
     statusCode: 201,
     body: JSON.stringify(item),
@@ -137,21 +137,21 @@ export const get = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
   const { id } = event.pathParameters || {};
-  
+
   const result = await docClient.send(
     new GetCommand({
       TableName: TABLE_NAME,
       Key: { id },
     })
   );
-  
+
   if (!result.Item) {
     return {
       statusCode: 404,
       body: JSON.stringify({ error: 'Not found' }),
     };
   }
-  
+
   return {
     statusCode: 200,
     body: JSON.stringify(result.Item),
@@ -171,7 +171,7 @@ const QUEUE_URL = process.env.QUEUE_URL!;
 export async function processOrder(order: Order) {
   // Validate order
   await validateOrder(order);
-  
+
   // Send to SQS for async processing
   await sqsClient.send(
     new SendMessageCommand({
@@ -185,7 +185,7 @@ export async function processOrder(order: Order) {
       },
     })
   );
-  
+
   return { orderId: order.id, status: 'queued' };
 }
 
@@ -194,7 +194,7 @@ import { SQSEvent, SQSBatchResponse } from 'aws-lambda';
 
 export const handler = async (event: SQSEvent): Promise<SQSBatchResponse> => {
   const batchItemFailures: { itemIdentifier: string }[] = [];
-  
+
   for (const record of event.Records) {
     try {
       const order = JSON.parse(record.body);
@@ -204,7 +204,7 @@ export const handler = async (event: SQSEvent): Promise<SQSBatchResponse> => {
       batchItemFailures.push({ itemIdentifier: record.messageId });
     }
   }
-  
+
   return { batchItemFailures };
 };
 
@@ -244,7 +244,7 @@ export const handler = async (
   event: EventBridgeEvent<'OrderCreated', Order>
 ) => {
   const order = event.detail;
-  
+
   // Handle different event types
   switch (event['detail-type']) {
     case 'OrderCreated':
@@ -326,34 +326,34 @@ async function handleOrderCreated(order: Order) {
 // Lambda handlers for Step Functions
 export const validateOrder = async (event: any) => {
   const { order } = event;
-  
+
   if (!order.items || order.items.length === 0) {
     throw new Error('Order has no items');
   }
-  
+
   return { order, validated: true };
 };
 
 export const processPayment = async (event: any) => {
   const { order } = event;
-  
+
   // Process payment logic
   const paymentResult = {
     transactionId: 'txn_' + crypto.randomUUID(),
     status: 'success',
   };
-  
+
   return { order, payment: paymentResult };
 };
 
 export const updateInventory = async (event: any) => {
   const { order } = event;
-  
+
   // Update inventory logic
   for (const item of order.items) {
     await decreaseInventory(item.productId, item.quantity);
   }
-  
+
   return { order, inventoryUpdated: true };
 };
 ```
@@ -369,16 +369,16 @@ export async function createOrder(command: CreateOrderCommand) {
     status: 'created',
     createdAt: new Date().toISOString(),
   };
-  
+
   // Save to write database
   await saveOrder(order);
-  
+
   // Publish event
   await publishEvent({
     type: 'OrderCreated',
     payload: order,
   });
-  
+
   return order;
 }
 
@@ -386,11 +386,11 @@ export async function createOrder(command: CreateOrderCommand) {
 export async function getOrder(orderId: string): Promise<OrderView> {
   // Read from read-optimized database
   const order = await getOrderFromReadStore(orderId);
-  
+
   if (!order) {
     throw new Error('Order not found');
   }
-  
+
   return order;
 }
 
@@ -440,16 +440,16 @@ class OrderSaga {
       },
     },
   ];
-  
+
   async execute(order: Order): Promise<SagaResult> {
     const context: SagaContext = { order, completedSteps: [] };
-    
+
     try {
       for (const step of this.steps) {
         await step.execute(context);
         context.completedSteps.push(step.name);
       }
-      
+
       return { success: true, context };
     } catch (error) {
       // Compensate in reverse order
@@ -459,7 +459,7 @@ class OrderSaga {
           await step.compensate(context);
         }
       }
-      
+
       return { success: false, error: error as Error };
     }
   }

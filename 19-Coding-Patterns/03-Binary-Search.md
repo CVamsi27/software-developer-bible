@@ -68,7 +68,7 @@ STANDARD BINARY SEARCH
                     (16 < 23, move L)
                           L           M   R
                          (23 found!)
-  
+
 LEFT BOUND SEARCH (first occurrence)
 ┌───┬───┬───┬───┬───┬───┐
 │ 1 │ 2 │ 2 │ 2 │ 3 │ 3 │  target = 2
@@ -190,7 +190,7 @@ function searchRotated(nums: number[], target: number): number {
       } else {
         left = mid + 1;
       }
-    } 
+    }
     // Right half is sorted
     else {
       if (target > nums[mid] && target <= nums[right]) {

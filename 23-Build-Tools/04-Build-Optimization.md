@@ -125,7 +125,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   mode: 'production',
-  
+
   optimization: {
     minimize: true,
     minimizer: [
@@ -138,7 +138,7 @@ module.exports = {
       }),
       new CssMinimizerPlugin()
     ],
-    
+
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: 25,
@@ -155,10 +155,10 @@ module.exports = {
         }
       }
     },
-    
+
     runtimeChunk: 'single'
   },
-  
+
   plugins: [
     new CompressionPlugin({
       algorithm: 'gzip',

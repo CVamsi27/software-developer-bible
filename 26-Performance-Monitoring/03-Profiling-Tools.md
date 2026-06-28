@@ -93,22 +93,22 @@ Width = Duration, Height = Call Stack Depth
 async function startProfiling(duration: number = 5000): Promise<void> {
   // Use PerformanceObserver to collect data
   const entries: PerformanceEntry[] = [];
-  
+
   const observer = new PerformanceObserver((list) => {
     entries.push(...list.getEntries());
   });
-  
-  observer.observe({ 
+
+  observer.observe({
     entryTypes: ['longtask', 'measure', 'mark', 'resource'],
-    buffered: true 
+    buffered: true
   });
-  
+
   // Wait for duration
   await new Promise(resolve => setTimeout(resolve, duration));
-  
+
   // Stop observing
   observer.disconnect();
-  
+
   // Analyze collected data
   console.log('Long tasks:', entries.filter(e => e.entryType === 'longtask'));
   console.log('Resources:', entries.filter(e => e.entryType === 'resource'));
@@ -125,7 +125,7 @@ async function startProfiling(duration: number = 5000): Promise<void> {
 // Programmatic profiling with React DevTools
 function ProfileComponent({ children }: { children: React.ReactNode }) {
   const [isProfiling, setIsProfiling] = useState(false);
-  
+
   return (
     <Profiler id="ProfileWrapper" onRender={handleRender}>
       <button onClick={() => setIsProfiling(!isProfiling)}>
@@ -140,20 +140,20 @@ function ProfileComponent({ children }: { children: React.ReactNode }) {
 function useProfiler(componentName: string) {
   const renderCount = useRef(0);
   const lastRenderTime = useRef(performance.now());
-  
+
   return {
     onRender: (id: string, phase: string, actualDuration: number) => {
       renderCount.current++;
       const now = performance.now();
       const timeSinceLastRender = now - lastRenderTime.current;
-      
+
       console.log(`${componentName}:`, {
         renderCount: renderCount.current,
         phase,
         actualDuration,
         timeSinceLastRender,
       });
-      
+
       lastRenderTime.current = now;
     },
   };
@@ -194,22 +194,22 @@ import * as chromeLauncher from 'chrome-launcher';
 
 async function runLighthouse(url: string): Promise<LighthouseResult> {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
-  
+
   const result = await lighthouse(url, {
     port: chrome.port,
     output: 'json',
     logLevel: 'info',
   });
-  
+
   await chrome.kill();
-  
+
   return result.lhr;
 }
 
 // Analyze results
 function analyzeLighthouseResult(result: LighthouseResult): void {
   const { categories, audits } = result;
-  
+
   console.log('Performance Score:', categories.performance.score * 100);
   console.log('FCP:', audits['first-contentful-paint'].displayValue);
   console.log('LCP:', audits['largest-contentful-paint'].displayValue);
@@ -237,11 +237,11 @@ async function runWebPageTest(config: WebPageTestConfig): Promise<string> {
     runs: config.runs.toString(),
     f: 'json',
   });
-  
+
   const response = await fetch(
     `https://www.webtest.org/runtest.php?${params}`
   );
-  
+
   const data = await response.json();
   return data.dataUrl;
 }
@@ -261,7 +261,7 @@ function takeHeapSnapshot(): void {
 class MemoryMonitor {
   private samples: { timestamp: number; usedJSHeapSize: number }[] = [];
   private interval: NodeJS.Timeout | null = null;
-  
+
   start(intervalMs: number = 1000): void {
     this.interval = setInterval(() => {
       const memory = (performance as any).memory;
@@ -273,13 +273,13 @@ class MemoryMonitor {
       }
     }, intervalMs);
   }
-  
+
   stop(): void {
     if (this.interval) {
       clearInterval(this.interval);
     }
   }
-  
+
   analyze(): {
     min: number;
     max: number;
@@ -289,21 +289,21 @@ class MemoryMonitor {
     if (this.samples.length < 2) {
       return { min: 0, max: 0, average: 0, trend: 'stable' };
     }
-    
+
     const heapSizes = this.samples.map(s => s.usedJSHeapSize);
     const min = Math.min(...heapSizes);
     const max = Math.max(...heapSizes);
     const average = heapSizes.reduce((a, b) => a + b, 0) / heapSizes.length;
-    
+
     // Simple trend analysis
     const firstHalf = heapSizes.slice(0, Math.floor(heapSizes.length / 2));
     const secondHalf = heapSizes.slice(Math.floor(heapSizes.length / 2));
     const firstAvg = firstHalf.reduce((a, b) => a + b, 0) / firstHalf.length;
     const secondAvg = secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length;
-    
+
     const trend = secondAvg > firstAvg * 1.1 ? 'increasing' :
                   secondAvg < firstAvg * 0.9 ? 'decreasing' : 'stable';
-    
+
     return { min, max, average, trend };
   }
 }
@@ -315,29 +315,29 @@ class MemoryMonitor {
 class PerformanceProfiler {
   private marks: Map<string, number> = new Map();
   private measures: { name: string; duration: number; timestamp: number }[] = [];
-  
+
   mark(name: string): void {
     this.marks.set(name, performance.now());
   }
-  
+
   measure(name: string, startMark: string, endMark: string): number {
     const start = this.marks.get(startMark);
     const end = this.marks.get(endMark);
-    
+
     if (start === undefined || end === undefined) {
       throw new Error(`Mark not found: ${start === undefined ? startMark : endMark}`);
     }
-    
+
     const duration = end - start;
     this.measures.push({
       name,
       duration,
       timestamp: Date.now(),
     });
-    
+
     return duration;
   }
-  
+
   getReport(): {
     measures: typeof this.measures;
     summary: {
@@ -349,21 +349,21 @@ class PerformanceProfiler {
     };
   } {
     const durations = this.measures.map(m => m.duration);
-    
+
     return {
       measures: this.measures,
       summary: {
         total: durations.reduce((a, b) => a + b, 0),
         count: durations.length,
-        average: durations.length > 0 
-          ? durations.reduce((a, b) => a + b, 0) / durations.length 
+        average: durations.length > 0
+          ? durations.reduce((a, b) => a + b, 0) / durations.length
           : 0,
         min: durations.length > 0 ? Math.min(...durations) : 0,
         max: durations.length > 0 ? Math.max(...durations) : 0,
       },
     };
   }
-  
+
   clear(): void {
     this.marks.clear();
     this.measures = [];
@@ -378,10 +378,10 @@ class PerformanceProfiler {
 ```typescript
 async function diagnoseSlowPageLoad(): Promise<void> {
   const profiler = new PerformanceProfiler();
-  
+
   // Mark key milestones
   profiler.mark('navigation-start');
-  
+
   // Wait for DOM ready
   await new Promise(resolve => {
     if (document.readyState === 'loading') {
@@ -390,10 +390,10 @@ async function diagnoseSlowPageLoad(): Promise<void> {
       resolve(null);
     }
   });
-  
+
   profiler.mark('dom-ready');
   profiler.measure('dom-loading', 'navigation-start', 'dom-ready');
-  
+
   // Wait for page load
   await new Promise(resolve => {
     if (document.readyState === 'complete') {
@@ -402,14 +402,14 @@ async function diagnoseSlowPageLoad(): Promise<void> {
       window.addEventListener('load', resolve);
     }
   });
-  
+
   profiler.mark('page-load');
   profiler.measure('dom-to-load', 'dom-ready', 'page-load');
-  
+
   // Analyze
   const report = profiler.getReport();
   console.log('Performance Report:', report);
-  
+
   // Identify slow phases
   if (report.summary.average > 100) {
     console.warn('Slow page load detected');

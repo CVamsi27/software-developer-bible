@@ -107,7 +107,7 @@ emailNotifier.send('Hello World!');
 // Abstract creator
 abstract class VehicleFactory {
   abstract createVehicle(): Vehicle;
-  
+
   // Template method that uses the factory method
   describeVehicle(): void {
     const vehicle = this.createVehicle();
@@ -127,11 +127,11 @@ class Car implements Vehicle {
   getType(): string {
     return 'Car';
   }
-  
+
   getWheels(): number {
     return 4;
   }
-  
+
   accelerate(): void {
     console.log('Car is accelerating');
   }
@@ -141,11 +141,11 @@ class Motorcycle implements Vehicle {
   getType(): string {
     return 'Motorcycle';
   }
-  
+
   getWheels(): number {
     return 2;
   }
-  
+
   accelerate(): void {
     console.log('Motorcycle is accelerating');
   }
@@ -155,11 +155,11 @@ class Truck implements Vehicle {
   getType(): string {
     return 'Truck';
   }
-  
+
   getWheels(): number {
     return 6;
   }
-  
+
   accelerate(): void {
     console.log('Truck is accelerating');
   }
@@ -216,7 +216,7 @@ class LightButton implements Button {
   render(): string {
     return '<button class="light-button">Click me</button>';
   }
-  
+
   onClick(handler: () => void): void {
     console.log('Light button clicked');
     handler();
@@ -227,7 +227,7 @@ class LightInput implements Input {
   render(): string {
     return '<input class="light-input" />';
   }
-  
+
   getValue(): string {
     return 'light input value';
   }
@@ -238,7 +238,7 @@ class DarkButton implements Button {
   render(): string {
     return '<button class="dark-button">Click me</button>';
   }
-  
+
   onClick(handler: () => void): void {
     console.log('Dark button clicked');
     handler();
@@ -249,7 +249,7 @@ class DarkInput implements Input {
   render(): string {
     return '<input class="dark-input" />';
   }
-  
+
   getValue(): string {
     return 'dark input value';
   }
@@ -266,7 +266,7 @@ class LightThemeFactory implements UIFactory {
   createButton(): Button {
     return new LightButton();
   }
-  
+
   createInput(): Input {
     return new LightInput();
   }
@@ -276,7 +276,7 @@ class DarkThemeFactory implements UIFactory {
   createButton(): Button {
     return new DarkButton();
   }
-  
+
   createInput(): Input {
     return new DarkInput();
   }
@@ -286,7 +286,7 @@ class DarkThemeFactory implements UIFactory {
 function createUI(factory: UIFactory): void {
   const button = factory.createButton();
   const input = factory.createInput();
-  
+
   console.log(button.render());
   console.log(input.render());
 }
@@ -311,12 +311,12 @@ class PostgreSQLDatabase implements Database {
   async connect(): Promise<void> {
     console.log('Connecting to PostgreSQL...');
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     console.log(`PostgreSQL query: ${sql}`);
     return [];
   }
-  
+
   async disconnect(): Promise<void> {
     console.log('Disconnecting from PostgreSQL...');
   }
@@ -326,12 +326,12 @@ class MySQLDatabase implements Database {
   async connect(): Promise<void> {
     console.log('Connecting to MySQL...');
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     console.log(`MySQL query: ${sql}`);
     return [];
   }
-  
+
   async disconnect(): Promise<void> {
     console.log('Disconnecting from MySQL...');
   }
@@ -341,12 +341,12 @@ class MongoDatabase implements Database {
   async connect(): Promise<void> {
     console.log('Connecting to MongoDB...');
   }
-  
+
   async query<T>(sql: string): Promise<T[]> {
     console.log(`MongoDB query: ${sql}`);
     return [];
   }
-  
+
   async disconnect(): Promise<void> {
     console.log('Disconnecting from MongoDB...');
   }
@@ -355,14 +355,14 @@ class MongoDatabase implements Database {
 // Factory with configuration
 class DatabaseFactory {
   private static databases: Map<string, Database> = new Map();
-  
+
   static create(type: 'postgresql' | 'mysql' | 'mongodb'): Database {
     if (this.databases.has(type)) {
       return this.databases.get(type)!;
     }
-    
+
     let database: Database;
-    
+
     switch (type) {
       case 'postgresql':
         database = new PostgreSQLDatabase();
@@ -376,11 +376,11 @@ class DatabaseFactory {
       default:
         throw new Error(`Unknown database type: ${type}`);
     }
-    
+
     this.databases.set(type, database);
     return database;
   }
-  
+
   static reset(): void {
     this.databases.clear();
   }
@@ -441,7 +441,7 @@ class NotificationServiceFactory {
         throw new Error(`Unknown email provider: ${provider}`);
     }
   }
-  
+
   static createSMSService(provider: 'twilio' | 'nexmo'): SMSService {
     switch (provider) {
       case 'twilio':
@@ -453,7 +453,7 @@ class NotificationServiceFactory {
         throw new Error(`Unknown SMS provider: ${provider}`);
     }
   }
-  
+
   static createPushService(provider: 'firebase' | 'onesignal'): PushService {
     switch (provider) {
       case 'firebase':
@@ -492,7 +492,7 @@ class APIResponseFactory {
       timestamp: new Date()
     };
   }
-  
+
   static error<T>(error: string): ApiResponse<T> {
     return {
       success: false,
@@ -500,7 +500,7 @@ class APIResponseFactory {
       timestamp: new Date()
     };
   }
-  
+
   static paginated<T>(data: T[], total: number, page: number, limit: number): ApiResponse<{
     items: T[];
     total: number;
@@ -541,7 +541,7 @@ class StripeProcessor implements PaymentProcessor {
     console.log(`Stripe: Charging ${amount} ${currency}`);
     return { success: true, transactionId: 'stripe_' + Date.now() };
   }
-  
+
   async refund(transactionId: string, amount: number) {
     console.log(`Stripe: Refunding ${amount} for ${transactionId}`);
     return { success: true };
@@ -553,7 +553,7 @@ class PayPalProcessor implements PaymentProcessor {
     console.log(`PayPal: Charging ${amount} ${currency}`);
     return { success: true, transactionId: 'paypal_' + Date.now() };
   }
-  
+
   async refund(transactionId: string, amount: number) {
     console.log(`PayPal: Refunding ${amount} for ${transactionId}`);
     return { success: true };
@@ -592,11 +592,11 @@ class PDFGenerator implements DocumentGenerator {
     console.log('Generating PDF...');
     return Buffer.from('PDF content');
   }
-  
+
   getExtension(): string {
     return 'pdf';
   }
-  
+
   getMimeType(): string {
     return 'application/pdf';
   }
@@ -607,11 +607,11 @@ class ExcelGenerator implements DocumentGenerator {
     console.log('Generating Excel...');
     return Buffer.from('Excel content');
   }
-  
+
   getExtension(): string {
     return 'xlsx';
   }
-  
+
   getMimeType(): string {
     return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
   }
@@ -741,7 +741,7 @@ class ProductFactory {
 // ✅ GOOD - Injectable factory
 class ServiceFactory {
   constructor(private config: AppConfig) {}
-  
+
   create(type: string): Service {
     // Use this.config to configure the service
     switch (type) {
@@ -760,11 +760,11 @@ class ServiceFactory {
 // ✅ GOOD - Flexible registration
 class Factory {
   private static creators: Map<string, () => any> = new Map();
-  
+
   static register(name: string, creator: () => any): void {
     Factory.creators.set(name, creator);
   }
-  
+
   static create(name: string): any {
     const creator = Factory.creators.get(name);
     if (!creator) {

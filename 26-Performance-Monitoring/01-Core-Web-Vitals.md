@@ -106,7 +106,7 @@ import { onLCP, onINP, onCLS, Metric } from 'web-vitals';
 
 function sendToAnalytics(metric: Metric): void {
   const { name, delta, id, navigationType } = metric;
-  
+
   // Send to your analytics endpoint
   const body = JSON.stringify({
     name,
@@ -139,7 +139,7 @@ function observeLCP(): void {
   const observer = new PerformanceObserver((entryList) => {
     const entries = entryList.getEntries();
     const lastEntry = entries[entries.length - 1] as LargestContentfulPaint;
-    
+
     console.log('LCP:', lastEntry.startTime);
     console.log('LCP Element:', lastEntry.element);
     console.log('LCP URL:', lastEntry.url);
@@ -153,7 +153,7 @@ function observeLCP(): void {
 function observeCLS(): void {
   let clsValue = 0;
   let clsEntries: LayoutShift[] = [];
-  
+
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
       if (!(entry as LayoutShift).hadRecentInput) {
@@ -164,7 +164,7 @@ function observeCLS(): void {
   });
 
   observer.observe({ type: 'layout-shift', buffered: true });
-  
+
   // Report on page visibility change
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
@@ -202,12 +202,12 @@ function checkBudget(metric: string, value: number): {
 } {
   const budget = budgets[metric as keyof PerformanceBudget];
   const ratio = value / budget;
-  
+
   let status: 'good' | 'needs-improvement' | 'poor';
   if (ratio <= 1) status = 'good';
   else if (ratio <= 1.6) status = 'needs-improvement';
   else status = 'poor';
-  
+
   return {
     passed: ratio <= 1,
     budget,

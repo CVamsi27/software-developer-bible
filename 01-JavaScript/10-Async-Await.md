@@ -154,14 +154,14 @@ async function loadDashboard() {
   // const user = await fetchUser();
   // const posts = await fetchPosts();
   // const notifications = await fetchNotifications();
-  
+
   // Parallel (faster)
   const [user, posts, notifications] = await Promise.all([
     fetchUser(),
     fetchPosts(),
     fetchNotifications()
   ]);
-  
+
   return { user, posts, notifications };
 }
 ```
@@ -247,14 +247,14 @@ async function withTimeout<T>(
   const timeout = new Promise<never>((_, reject) => {
     setTimeout(() => reject(new Error('Timeout')), ms);
   });
-  
+
   return Promise.race([promise, timeout]);
 }
 
 // Cancellation pattern
 function createCancellable<T>(promise: Promise<T>) {
   let cancelled = false;
-  
+
   const wrappedPromise = new Promise<T>((resolve, reject) => {
     promise
       .then(value => {
@@ -264,7 +264,7 @@ function createCancellable<T>(promise: Promise<T>) {
         if (!cancelled) reject(error);
       });
   });
-  
+
   return {
     promise: wrappedPromise,
     cancel: () => { cancelled = true; }
@@ -279,11 +279,11 @@ function createCancellable<T>(promise: Promise<T>) {
 ```typescript
 async function fetchUserData(userId: string) {
   const response = await fetch(`/api/users/${userId}`);
-  
+
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  
+
   return await response.json();
 }
 
@@ -293,11 +293,11 @@ async function updateUserProfile(userId: string, data: Partial<User>) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
-  
+
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  
+
   return await response.json();
 }
 ```
@@ -326,20 +326,20 @@ async function readMultipleFiles(paths: string[]) {
 ```typescript
 async function createOrder(userId: string, items: OrderItem[]) {
   const user = await db.users.findById(userId);
-  
+
   if (!user) {
     throw new Error('User not found');
   }
-  
+
   const order = await db.orders.create({
     userId,
     items,
     total: calculateTotal(items)
   });
-  
+
   await db.inventory.decrementStock(items);
   await sendConfirmationEmail(user.email, order);
-  
+
   return order;
 }
 ```
@@ -353,7 +353,7 @@ function UserProfile({ userId }: { userId: string }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   useEffect(() => {
     async function fetchUser() {
       try {
@@ -365,10 +365,10 @@ function UserProfile({ userId }: { userId: string }) {
         setLoading(false);
       }
     }
-    
+
     fetchUser();
   }, [userId]);
-  
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return <div>{user?.name}</div>;
@@ -383,22 +383,22 @@ type Middleware = (ctx: Context, next: () => Promise<void>) => Promise<void>;
 async function compose(middlewares: Middleware[], ctx: Context) {
   async function dispatch(index: number): Promise<void> {
     if (index >= middlewares.length) return;
-    
+
     const middleware = middlewares[index];
     await middleware(ctx, () => dispatch(index + 1));
   }
-  
+
   await dispatch(0);
 }
 
 // Usage
 const authMiddleware: Middleware = async (ctx, next) => {
   const token = ctx.request.headers.authorization;
-  
+
   if (!token) {
     throw new Error('Unauthorized');
   }
-  
+
   ctx.user = verifyToken(token);
   await next();
 };
@@ -533,7 +533,7 @@ async function loadMultipleResources() {
     fetchPosts(),
     fetchComments()
   ]);
-  
+
   return { users, posts, comments };
 }
 ```
@@ -544,11 +544,11 @@ async function loadMultipleResources() {
 // Good: Batch processing
 async function processLargeArray(items: any[]) {
   const batchSize = 100;
-  
+
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize);
     await Promise.all(batch.map(processItem));
-    
+
     // Yield between batches
     await new Promise(resolve => setTimeout(resolve, 0));
   }
@@ -592,7 +592,7 @@ async function processAll(items: any[]) {
 async function processBatched(items: any[]) {
   const batchSize = 100;
   const results = [];
-  
+
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize);
     const batchResults = await Promise.all(
@@ -600,7 +600,7 @@ async function processBatched(items: any[]) {
     );
     results.push(...batchResults);
   }
-  
+
   return results;
 }
 ```
@@ -669,7 +669,7 @@ A: No, `await` can only be used inside `async` functions or at the top level of 
 
 **Q6: What is the difference between sequential and parallel async operations?**
 
-A: 
+A:
 - **Sequential**: Each operation waits for the previous one to complete
 - **Parallel**: Operations run simultaneously
 
@@ -727,7 +727,7 @@ A: Async/await is syntactic sugar over Promises. `async` functions always return
 
 **Q11: Explain the execution model of async/await.**
 
-A: 
+A:
 1. `async` function runs synchronously until first `await`
 2. At `await`, function is suspended and returns a Promise
 3. Execution returns to the caller
@@ -740,18 +740,18 @@ A: `await` yields control back to the event loop. Microtasks (Promise callbacks)
 
 **Q13: What are the performance implications of async/await?**
 
-A: 
+A:
 - Sequential awaits can be slower than parallel Promises
 - Each `await` creates a new Promise (memory overhead)
 - Async functions have slightly more overhead than regular functions
 
 **Q14: How do you implement cancellation with async/await?**
 
-A: 
+A:
 ```typescript
 function createCancellable<T>(promise: Promise<T>) {
   let cancelled = false;
-  
+
   const wrappedPromise = new Promise<T>((resolve, reject) => {
     promise
       .then(value => {
@@ -761,7 +761,7 @@ function createCancellable<T>(promise: Promise<T>) {
         if (!cancelled) reject(error);
       });
   });
-  
+
   return {
     promise: wrappedPromise,
     cancel: () => { cancelled = true; }
@@ -771,7 +771,7 @@ function createCancellable<T>(promise: Promise<T>) {
 
 **Q15: How do you handle async operations in React?**
 
-A: 
+A:
 1. `useEffect` with async functions
 2. State variables for loading/error
 3. Cleanup functions for cancellation
@@ -781,17 +781,17 @@ A:
 
 **Q16: Design an async task scheduler with concurrency control.**
 
-A: 
+A:
 ```typescript
 class AsyncTaskScheduler {
   private queue: (() => Promise<any>)[] = [];
   private running = 0;
   private maxConcurrent: number;
-  
+
   constructor(maxConcurrent: number = 5) {
     this.maxConcurrent = maxConcurrent;
   }
-  
+
   async add<T>(task: () => Promise<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       this.queue.push(async () => {
@@ -805,11 +805,11 @@ class AsyncTaskScheduler {
           this.processQueue();
         }
       });
-      
+
       this.processQueue();
     });
   }
-  
+
   private processQueue() {
     while (this.running < this.maxConcurrent && this.queue.length > 0) {
       const task = this.queue.shift()!;
@@ -821,13 +821,13 @@ class AsyncTaskScheduler {
 
 **Q17: How would you implement async/await without using async/await?**
 
-A: 
+A:
 ```typescript
 function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
   return function(...args: any[]) {
     return new Promise((resolve, reject) => {
       const gen = fn.apply(this, args);
-      
+
       function step(key: string, arg?: any) {
         let result: any;
         try {
@@ -835,19 +835,19 @@ function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
         } catch (error) {
           return reject(error);
         }
-        
+
         const { value, done } = result;
-        
+
         if (done) {
           return resolve(value);
         }
-        
+
         Promise.resolve(value).then(
           (val) => step('next', val),
           (err) => step('throw', err)
         );
       }
-      
+
       step('next');
     });
   };
@@ -856,7 +856,7 @@ function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
 
 **Q18: Analyze the memory implications of async/await.**
 
-A: 
+A:
 - Each `await` creates a new Promise
 - Suspended functions retain local variables
 - Long chains can accumulate memory
@@ -864,7 +864,7 @@ A:
 
 **Q19: How do you debug async/await code?**
 
-A: 
+A:
 1. Chrome DevTools: Async stack traces
 2. Add logging at key points
 3. Use `console.trace()` to see call stack
@@ -873,7 +873,7 @@ A:
 
 **Q20: What are the security implications of async/await?**
 
-A: 
+A:
 1. **Timing attacks**: Measure async operation time
 2. **Resource exhaustion**: Create too many concurrent operations
 3. **Information leakage**: Async errors can expose internals
@@ -909,12 +909,12 @@ async function fetchData() {
 
 **Q22: How do you handle async operations in Redux?**
 
-A: 
+A:
 ```typescript
 // Redux thunk
 const fetchUser = (id: string) => async (dispatch: Dispatch) => {
   dispatch({ type: 'FETCH_USER_START' });
-  
+
   try {
     const user = await fetchUserApi(id);
     dispatch({ type: 'FETCH_USER_SUCCESS', payload: user });
@@ -930,7 +930,7 @@ A: Async/await is syntactic sugar over generators. Generators yield values, whil
 
 **Q24: How do different frameworks handle async operations?**
 
-A: 
+A:
 - **React**: useEffect, useState, custom hooks
 - **Vue**: Composition API with async setup
 - **Angular**: HttpClient, async pipe
@@ -938,7 +938,7 @@ A:
 
 **Q25: What are best practices for working with async/await?**
 
-A: 
+A:
 1. Always handle errors with try/catch
 2. Use Promise.all for parallel operations
 3. Avoid unnecessary sequential awaits

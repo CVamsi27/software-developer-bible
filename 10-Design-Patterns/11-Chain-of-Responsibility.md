@@ -58,17 +58,17 @@ The Chain of Responsibility pattern works by:
 // Handler interface
 abstract class Handler {
   private nextHandler: Handler | null = null;
-  
+
   setNext(handler: Handler): Handler {
     this.nextHandler = handler;
     return handler;
   }
-  
+
   handle(request: any): any {
     if (this.nextHandler) {
       return this.nextHandler.handle(request);
     }
-    
+
     return null;
   }
 }
@@ -77,12 +77,12 @@ abstract class Handler {
 class AuthHandler extends Handler {
   handle(request: any): any {
     console.log('AuthHandler: Checking authentication...');
-    
+
     if (!request.token) {
       console.log('AuthHandler: No token provided');
       return { error: 'Unauthorized', status: 401 };
     }
-    
+
     console.log('AuthHandler: Token validated');
     return super.handle(request);
   }
@@ -91,12 +91,12 @@ class AuthHandler extends Handler {
 class ValidationHandler extends Handler {
   handle(request: any): any {
     console.log('ValidationHandler: Validating request...');
-    
+
     if (!request.body || Object.keys(request.body).length === 0) {
       console.log('ValidationHandler: Invalid request body');
       return { error: 'Bad Request', status: 400 };
     }
-    
+
     console.log('ValidationHandler: Request valid');
     return super.handle(request);
   }
@@ -106,30 +106,30 @@ class RateLimitHandler extends Handler {
   private requests: Map<string, number[]> = new Map();
   private limit: number;
   private windowMs: number;
-  
+
   constructor(limit: number = 100, windowMs: number = 60000) {
     super();
     this.limit = limit;
     this.windowMs = windowMs;
   }
-  
+
   handle(request: any): any {
     console.log('RateLimitHandler: Checking rate limit...');
-    
+
     const ip = request.ip || 'unknown';
     const now = Date.now();
-    
+
     const requests = this.requests.get(ip) || [];
     const recentRequests = requests.filter(time => now - time < this.windowMs);
-    
+
     if (recentRequests.length >= this.limit) {
       console.log('RateLimitHandler: Rate limit exceeded');
       return { error: 'Too Many Requests', status: 429 };
     }
-    
+
     recentRequests.push(now);
     this.requests.set(ip, recentRequests);
-    
+
     console.log('RateLimitHandler: Rate limit OK');
     return super.handle(request);
   }
@@ -148,9 +148,9 @@ function processRequest(request: any): any {
   const validation = new ValidationHandler();
   const rateLimit = new RateLimitHandler();
   const final = new FinalHandler();
-  
+
   auth.setNext(validation).setNext(rateLimit).setNext(final);
-  
+
   return auth.handle(request);
 }
 
@@ -197,19 +197,19 @@ type Middleware = (req: Request, res: Response, next: NextFunction) => Promise<v
 class MiddlewareChain {
   private middlewares: Middleware[] = [];
   private finalHandler: (req: Request, res: Response) => Promise<Response>;
-  
+
   constructor(finalHandler: (req: Request, res: Response) => Promise<Response>) {
     this.finalHandler = finalHandler;
   }
-  
+
   use(middleware: Middleware): this {
     this.middlewares.push(middleware);
     return this;
   }
-  
+
   async execute(req: Request, res: Response): Promise<Response> {
     let index = 0;
-    
+
     const next = async (): Promise<void> => {
       if (index < this.middlewares.length) {
         const middleware = this.middlewares[index++];
@@ -218,7 +218,7 @@ class MiddlewareChain {
         await this.finalHandler(req, res);
       }
     };
-    
+
     await next();
     return res;
   }
@@ -235,13 +235,13 @@ const loggingMiddleware: Middleware = async (req, res, next) => {
 
 const authMiddleware: Middleware = async (req, res, next) => {
   const token = req.headers['Authorization'];
-  
+
   if (!token) {
     res.status = 401;
     res.body = { error: 'Unauthorized' };
     return;
   }
-  
+
   // Simulate token validation
   req.user = { id: '1', name: 'John' };
   await next();
@@ -299,23 +299,23 @@ interface DiscountHandler {
 // Base handler
 abstract class BaseDiscountHandler implements DiscountHandler {
   private nextHandler: DiscountHandler | null = null;
-  
+
   setNext(handler: DiscountHandler): DiscountHandler {
     this.nextHandler = handler;
     return handler;
   }
-  
+
   calculate(amount: number, context: any): number {
     let discount = this.applyDiscount(amount, context);
-    
+
     if (this.nextHandler) {
       const remainingDiscount = this.nextHandler.calculate(amount - discount, context);
       discount += remainingDiscount;
     }
-    
+
     return discount;
   }
-  
+
   protected abstract applyDiscount(amount: number, context: any): number;
 }
 
@@ -348,7 +348,7 @@ class CouponDiscount extends BaseDiscountHandler {
         'SAVE20': 0.2,
         'FLAT50': 50
       };
-      
+
       const discountRate = discounts[context.couponCode] || 0;
       console.log(`Coupon Discount: ${discountRate * 100}%`);
       return amount * discountRate;
@@ -373,9 +373,9 @@ function calculateDiscount(amount: number, context: any): number {
   const seasonal = new SeasonalDiscount();
   const coupon = new CouponDiscount();
   const firstTime = new FirstTimeBuyerDiscount();
-  
+
   vip.setNext(seasonal).setNext(coupon).setNext(firstTime);
-  
+
   return vip.calculate(amount, context);
 }
 
@@ -405,15 +405,15 @@ interface ValidationHandler {
 // Base handler
 abstract class BaseValidationHandler implements ValidationHandler {
   private nextHandler: ValidationHandler | null = null;
-  
+
   setNext(handler: ValidationHandler): ValidationHandler {
     this.nextHandler = handler;
     return handler;
   }
-  
+
   validate(data: any): { isValid: boolean; errors: string[] } {
     const result = this.validateData(data);
-    
+
     if (this.nextHandler) {
       const nextResult = this.nextHandler.validate(data);
       return {
@@ -421,31 +421,31 @@ abstract class BaseValidationHandler implements ValidationHandler {
         errors: [...result.errors, ...nextResult.errors]
       };
     }
-    
+
     return result;
   }
-  
+
   protected abstract validateData(data: any): { isValid: boolean; errors: string[] };
 }
 
 // Concrete handlers
 class RequiredFieldsValidation extends BaseValidationHandler {
   private requiredFields: string[];
-  
+
   constructor(requiredFields: string[]) {
     super();
     this.requiredFields = requiredFields;
   }
-  
+
   protected validateData(data: any): { isValid: boolean; errors: string[] } {
     const errors: string[] = [];
-    
+
     for (const field of this.requiredFields) {
       if (!data[field]) {
         errors.push(`${field} is required`);
       }
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
 }
@@ -454,40 +454,40 @@ class EmailValidation extends BaseValidationHandler {
   protected validateData(data: any): { isValid: boolean; errors: string[] } {
     const errors: string[] = [];
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (data.email && !emailRegex.test(data.email)) {
       errors.push('Invalid email format');
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
 }
 
 class PasswordValidation extends BaseValidationHandler {
   private minLength: number;
-  
+
   constructor(minLength: number = 8) {
     super();
     this.minLength = minLength;
   }
-  
+
   protected validateData(data: any): { isValid: boolean; errors: string[] } {
     const errors: string[] = [];
-    
+
     if (data.password) {
       if (data.password.length < this.minLength) {
         errors.push(`Password must be at least ${this.minLength} characters`);
       }
-      
+
       if (!/[A-Z]/.test(data.password)) {
         errors.push('Password must contain at least one uppercase letter');
       }
-      
+
       if (!/[0-9]/.test(data.password)) {
         errors.push('Password must contain at least one number');
       }
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
 }
@@ -495,22 +495,22 @@ class PasswordValidation extends BaseValidationHandler {
 class AgeValidation extends BaseValidationHandler {
   private minAge: number;
   private maxAge: number;
-  
+
   constructor(minAge: number = 18, maxAge: number = 120) {
     super();
     this.minAge = minAge;
     this.maxAge = maxAge;
   }
-  
+
   protected validateData(data: any): { isValid: boolean; errors: string[] } {
     const errors: string[] = [];
-    
+
     if (data.age !== undefined) {
       if (data.age < this.minAge || data.age > this.maxAge) {
         errors.push(`Age must be between ${this.minAge} and ${this.maxAge}`);
       }
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
 }
@@ -521,9 +521,9 @@ function validateUser(data: any): { isValid: boolean; errors: string[] } {
   const email = new EmailValidation();
   const password = new PasswordValidation();
   const age = new AgeValidation();
-  
+
   required.setNext(email).setNext(password).setNext(age);
-  
+
   return required.validate(data);
 }
 
@@ -577,50 +577,50 @@ type AppMiddleware = (req: AppRequest, res: AppResponse, next: AppNext) => Promi
 class App {
   private middlewares: AppMiddleware[] = [];
   private routes: Map<string, Map<string, AppMiddleware[]>> = new Map();
-  
+
   use(middleware: AppMiddleware): this {
     this.middlewares.push(middleware);
     return this;
   }
-  
+
   get(path: string, ...middlewares: AppMiddleware[]): this {
     this.addRoute('GET', path, middlewares);
     return this;
   }
-  
+
   post(path: string, ...middlewares: AppMiddleware[]): this {
     this.addRoute('POST', path, middlewares);
     return this;
   }
-  
+
   private addRoute(method: string, path: string, middlewares: AppMiddleware[]): void {
     if (!this.routes.has(method)) {
       this.routes.set(method, new Map());
     }
     this.routes.get(method)!.set(path, middlewares);
   }
-  
+
   async handleRequest(req: AppRequest, res: AppResponse): Promise<AppResponse> {
     // Apply global middlewares
     for (const middleware of this.middlewares) {
       await this.executeMiddleware(middleware, req, res);
     }
-    
+
     // Apply route-specific middlewares
     const routeMiddlewares = this.routes.get(req.method)?.get(req.url) || [];
     for (const middleware of routeMiddlewares) {
       await this.executeMiddleware(middleware, req, res);
     }
-    
+
     return res;
   }
-  
+
   private async executeMiddleware(middleware: AppMiddleware, req: AppRequest, res: AppResponse): Promise<void> {
     let nextCalled = false;
     const next = async () => { nextCalled = true; };
-    
+
     await middleware(req, res, next);
-    
+
     if (!nextCalled) {
       throw new Error('Next not called in middleware');
     }
@@ -693,24 +693,24 @@ interface ErrorHandler {
 // Base error handler
 abstract class BaseErrorHandler implements ErrorHandler {
   private nextHandler: ErrorHandler | null = null;
-  
+
   setNext(handler: ErrorHandler): ErrorHandler {
     this.nextHandler = handler;
     return handler;
   }
-  
+
   handle(error: Error): { status: number; body: any } | null {
     if (this.canHandle(error)) {
       return this.processError(error);
     }
-    
+
     if (this.nextHandler) {
       return this.nextHandler.handle(error);
     }
-    
+
     return null;
   }
-  
+
   protected abstract canHandle(error: Error): boolean;
   protected abstract processError(error: Error): { status: number; body: any };
 }
@@ -720,7 +720,7 @@ class ValidationErrorHandler extends BaseErrorHandler {
   protected canHandle(error: Error): boolean {
     return error instanceof ValidationError;
   }
-  
+
   protected processError(error: Error): { status: number; body: any } {
     const validationError = error as ValidationError;
     return {
@@ -738,7 +738,7 @@ class NotFoundErrorHandler extends BaseErrorHandler {
   protected canHandle(error: Error): boolean {
     return error instanceof NotFoundError;
   }
-  
+
   protected processError(error: Error): { status: number; body: any } {
     return {
       status: 404,
@@ -754,7 +754,7 @@ class UnauthorizedErrorHandler extends BaseErrorHandler {
   protected canHandle(error: Error): boolean {
     return error instanceof UnauthorizedError;
   }
-  
+
   protected processError(error: Error): { status: number; body: any } {
     return {
       status: 401,
@@ -770,7 +770,7 @@ class GenericErrorHandler extends BaseErrorHandler {
   protected canHandle(error: Error): boolean {
     return true; // Catches all remaining errors
   }
-  
+
   protected processError(error: Error): { status: number; body: any } {
     console.error('Unhandled error:', error);
     return {
@@ -789,9 +789,9 @@ function handleError(error: Error): { status: number; body: any } {
   const notFound = new NotFoundErrorHandler();
   const unauthorized = new UnauthorizedErrorHandler();
   const generic = new GenericErrorHandler();
-  
+
   validation.setNext(notFound).setNext(unauthorized).setNext(generic);
-  
+
   return validation.handle(error)!;
 }
 
@@ -818,22 +818,22 @@ interface PipelineStage {
 // Base stage
 abstract class BasePipelineStage implements PipelineStage {
   private nextStage: PipelineStage | null = null;
-  
+
   setNext(stage: PipelineStage): PipelineStage {
     this.nextStage = stage;
     return stage;
   }
-  
+
   async process(data: any): Promise<any> {
     const processedData = await this.processData(data);
-    
+
     if (this.nextStage) {
       return this.nextStage.process(processedData);
     }
-    
+
     return processedData;
   }
-  
+
   protected abstract processData(data: any): Promise<any>;
 }
 
@@ -841,14 +841,14 @@ abstract class BasePipelineStage implements PipelineStage {
 class SanitizeStage extends BasePipelineStage {
   protected async processData(data: any): Promise<any> {
     console.log('SanitizeStage: Sanitizing data...');
-    
+
     // Remove HTML tags, trim strings, etc.
     const sanitized = { ...data };
-    
+
     if (typeof sanitized.name === 'string') {
       sanitized.name = sanitized.name.replace(/<[^>]*>/g, '').trim();
     }
-    
+
     return sanitized;
   }
 }
@@ -856,11 +856,11 @@ class SanitizeStage extends BasePipelineStage {
 class ValidateStage extends BasePipelineStage {
   protected async processData(data: any): Promise<any> {
     console.log('ValidateStage: Validating data...');
-    
+
     if (!data.name || data.name.length < 2) {
       throw new Error('Name must be at least 2 characters');
     }
-    
+
     return data;
   }
 }
@@ -868,7 +868,7 @@ class ValidateStage extends BasePipelineStage {
 class TransformStage extends BasePipelineStage {
   protected async processData(data: any): Promise<any> {
     console.log('TransformStage: Transforming data...');
-    
+
     return {
       ...data,
       name: data.name.toUpperCase(),
@@ -880,7 +880,7 @@ class TransformStage extends BasePipelineStage {
 class PersistStage extends BasePipelineStage {
   protected async processData(data: any): Promise<any> {
     console.log('PersistStage: Persisting data...');
-    
+
     // Simulate database save
     return {
       ...data,
@@ -896,9 +896,9 @@ async function processData(data: any): Promise<any> {
   const validate = new ValidateStage();
   const transform = new TransformStage();
   const persist = new PersistStage();
-  
+
   sanitize.setNext(validate).setNext(transform).setNext(persist);
-  
+
   return sanitize.process(data);
 }
 

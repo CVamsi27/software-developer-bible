@@ -60,12 +60,12 @@ function throttle<T extends (...args: any[]) => any>(
   let inThrottle = false;
   let lastArgs: Parameters<T> | null = null;
   let lastThis: any = null;
-  
+
   return function(this: any, ...args: Parameters<T>) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
-      
+
       setTimeout(() => {
         inThrottle = false;
         if (lastArgs) {
@@ -101,9 +101,9 @@ function throttle<T extends (...args: any[]) => any>(
   let lastArgs: Parameters<T> | null = null;
   let lastThis: any = null;
   let lastCallTime = 0;
-  
+
   const { leading = true, trailing = true } = options;
-  
+
   function invokeFunc(time: number) {
     if (lastArgs && lastThis) {
       func.apply(lastThis, lastArgs);
@@ -111,21 +111,21 @@ function throttle<T extends (...args: any[]) => any>(
     lastArgs = lastThis = null;
     lastCallTime = time;
   }
-  
+
   return function(this: any, ...args: Parameters<T>) {
     const now = Date.now();
     const timeSinceLastCall = now - lastCallTime;
-    
+
     lastArgs = args;
     lastThis = this;
-    
+
     if (timeSinceLastCall >= limit) {
       if (leading) {
         invokeFunc(now);
       } else {
         lastCallTime = now;
       }
-      
+
       if (timeoutId) {
         clearTimeout(timeoutId);
         timeoutId = null;
@@ -158,7 +158,7 @@ function throttle<T extends (...args: any[]) => any>(
   let lastArgs: Parameters<T> | null = null;
   let lastThis: any = null;
   let lastCallTime = 0;
-  
+
   function invokeFunc() {
     if (lastArgs && lastThis) {
       func.apply(lastThis, lastArgs);
@@ -166,17 +166,17 @@ function throttle<T extends (...args: any[]) => any>(
       lastArgs = lastThis = null;
     }
   }
-  
+
   const throttled = function(this: any, ...args: Parameters<T>) {
     const now = Date.now();
-    
+
     if (now - lastCallTime >= limit) {
       func.apply(this, args);
       lastCallTime = now;
     } else {
       lastArgs = args;
       lastThis = this;
-      
+
       if (!timeoutId) {
         timeoutId = setTimeout(() => {
           invokeFunc();
@@ -185,7 +185,7 @@ function throttle<T extends (...args: any[]) => any>(
       }
     }
   };
-  
+
   throttled.cancel = function() {
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -194,7 +194,7 @@ function throttle<T extends (...args: any[]) => any>(
     lastArgs = lastThis = null;
     lastCallTime = 0;
   };
-  
+
   throttled.flush = function() {
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -202,7 +202,7 @@ function throttle<T extends (...args: any[]) => any>(
       invokeFunc();
     }
   };
-  
+
   return throttled;
 }
 ```
@@ -218,7 +218,7 @@ function useThrottle<T extends (...args: any[]) => any>(
 ): (...args: Parameters<T>) => void {
   const lastCallTime = useRef(0);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
+
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
@@ -226,11 +226,11 @@ function useThrottle<T extends (...args: any[]) => any>(
       }
     };
   }, []);
-  
+
   return useCallback(
     (...args: Parameters<T>) => {
       const now = Date.now();
-      
+
       if (now - lastCallTime.current >= limit) {
         func(...args);
         lastCallTime.current = now;
@@ -251,12 +251,12 @@ function ScrollComponent() {
   const throttledScroll = useThrottle(() => {
     console.log('Scroll:', window.scrollY);
   }, 100);
-  
+
   useEffect(() => {
     window.addEventListener('scroll', throttledScroll);
     return () => window.removeEventListener('scroll', throttledScroll);
   }, [throttledScroll]);
-  
+
   return <div>Scroll content</div>;
 }
 ```
@@ -268,7 +268,7 @@ function ScrollComponent() {
 ```typescript
 function useScrollProgress() {
   const [progress, setProgress] = useState(0);
-  
+
   useEffect(() => {
     const handleScroll = throttle(() => {
       const scrollTop = window.scrollY;
@@ -276,14 +276,14 @@ function useScrollProgress() {
       const scrollPercent = (scrollTop / docHeight) * 100;
       setProgress(scrollPercent);
     }, 100);
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       handleScroll.cancel();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
   return progress;
 }
 ```
@@ -293,19 +293,19 @@ function useScrollProgress() {
 ```typescript
 function useMousePosition() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  
+
   useEffect(() => {
     const handleMouseMove = throttle((e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     }, 50);
-    
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       handleMouseMove.cancel();
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  
+
   return position;
 }
 ```
@@ -316,7 +316,7 @@ function useMousePosition() {
 function LikeButton() {
   const [likes, setLikes] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
-  
+
   const handleLike = throttle(async () => {
     setIsProcessing(true);
     try {
@@ -326,7 +326,7 @@ function LikeButton() {
       setIsProcessing(false);
     }
   }, 1000);
-  
+
   return (
     <button onClick={handleLike} disabled={isProcessing}>
       Like ({likes})
@@ -343,7 +343,7 @@ function useWindowSize() {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  
+
   useEffect(() => {
     const handleResize = throttle(() => {
       setSize({
@@ -351,14 +351,14 @@ function useWindowSize() {
         height: window.innerHeight
       });
     }, 250);
-    
+
     window.addEventListener('resize', handleResize);
     return () => {
       handleResize.cancel();
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  
+
   return size;
 }
 ```
@@ -368,7 +368,7 @@ function useWindowSize() {
 ```typescript
 class ApiClient {
   private throttledRequest: <T>(url: string) => Promise<T>;
-  
+
   constructor() {
     this.throttledRequest = throttle(
       async <T>(url: string): Promise<T> => {
@@ -378,7 +378,7 @@ class ApiClient {
       1000
     );
   }
-  
+
   async get<T>(url: string): Promise<T> {
     return this.throttledRequest<T>(url);
   }
@@ -466,7 +466,7 @@ const resize = throttle(update, 250);
 ```typescript
 useEffect(() => {
   const throttledFn = throttle(fn, limit);
-  
+
   return () => {
     throttledFn.cancel();
   };

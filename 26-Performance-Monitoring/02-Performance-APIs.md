@@ -83,21 +83,21 @@ Navigation Timing Model:
 interface NavigationTiming {
   // Time to First Byte
   ttfb: number;
-  
+
   // DNS Lookup
   dnsLookup: number;
-  
+
   // TCP Connection
   tcpConnection: number;
-  
+
   // TLS Negotiation
   tlsNegotiation: number;
-  
+
   // Time to Content
   firstByte: number;
   contentLoaded: number;
   pageLoad: number;
-  
+
   // DOM
   domInteractive: number;
   domComplete: number;
@@ -105,7 +105,7 @@ interface NavigationTiming {
 
 function getNavigationTiming(): NavigationTiming {
   const timing = performance.timing;
-  
+
   return {
     ttfb: timing.responseStart - timing.requestStart,
     dnsLookup: timing.domainLookupEnd - timing.domainLookupStart,
@@ -141,7 +141,7 @@ interface ResourceTiming {
 
 function getResourceTimings(): ResourceTiming[] {
   const resources = performance.getEntriesByType('resource');
-  
+
   return resources.map((resource) => {
     const entry = resource as PerformanceResourceTiming;
     return {
@@ -158,7 +158,7 @@ function getResourceTimings(): ResourceTiming[] {
 
 // Filter by resource type
 function getImageResources(): ResourceTiming[] {
-  return getResourceTimings().filter((r) => 
+  return getResourceTimings().filter((r) =>
     r.type === 'img' || r.name.match(/\.(jpg|jpeg|png|gif|webp|avif)$/i)
   );
 }
@@ -179,13 +179,13 @@ function markComponentRender(componentName: string): void {
 
 function measureComponentRender(componentName: string): void {
   performance.mark(`${componentName}:render-end`);
-  
+
   performance.measure(
     `${componentName}:render-duration`,
     `${componentName}:render-start`,
     `${componentName}:render-end`
   );
-  
+
   // Get the measurement
   const entries = performance.getEntriesByName(`${componentName}:render-duration`);
   if (entries.length > 0) {
@@ -196,7 +196,7 @@ function measureComponentRender(componentName: string): void {
 // Usage in React
 function usePerformanceMark(componentName: string): void {
   markComponentRender(componentName);
-  
+
   useEffect(() => {
     measureComponentRender(componentName);
   }, [componentName]);
@@ -209,11 +209,11 @@ function measureAPICall<T>(
 ): Promise<T> {
   const markName = `api:${endpoint}`;
   performance.mark(`${markName}:start`);
-  
+
   return apiCall().finally(() => {
     performance.mark(`${markName}:end`);
     performance.measure(markName, `${markName}:start`, `${markName}:end`);
-    
+
     const entries = performance.getEntriesByName(markName);
     if (entries.length > 0) {
       console.log(`API ${endpoint} duration: ${entries[0].duration}ms`);
@@ -236,7 +236,7 @@ function observeResourceLoading(): void {
       });
     }
   });
-  
+
   observer.observe({ type: 'resource', buffered: true });
 }
 
@@ -250,7 +250,7 @@ function observeLongTasks(): void {
       });
     }
   });
-  
+
   observer.observe({ type: 'longtask', buffered: true });
 }
 
@@ -261,14 +261,14 @@ function observeLCP(): void {
     const lastEntry = entries[entries.length - 1];
     console.log('LCP:', lastEntry.startTime);
   });
-  
+
   observer.observe({ type: 'largest-contentful-paint', buffered: true });
 }
 
 // Observe Layout Shifts
 function observeCLS(): void {
   let clsValue = 0;
-  
+
   const observer = new PerformanceObserver((list) => {
     for (const entry of list.getEntries()) {
       if (!(entry as any).hadRecentInput) {
@@ -276,9 +276,9 @@ function observeCLS(): void {
       }
     }
   });
-  
+
   observer.observe({ type: 'layout-shift', buffered: true });
-  
+
   // Report on page hide
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
@@ -302,24 +302,24 @@ function observePaintTiming(): void {
       }
     }
   });
-  
+
   observer.observe({ type: 'paint', buffered: true });
 }
 
 // Get paint timing without observer
 function getPaintTiming(): { firstPaint: number; fcp: number } | null {
   const entries = performance.getEntriesByType('paint');
-  
+
   const firstPaint = entries.find((e) => e.name === 'first-paint');
   const fcp = entries.find((e) => e.name === 'first-contentful-paint');
-  
+
   if (firstPaint && fcp) {
     return {
       firstPaint: firstPaint.startTime,
       fcp: fcp.startTime,
     };
   }
-  
+
   return null;
 }
 ```
@@ -335,7 +335,7 @@ interface MemoryInfo {
 
 function getMemoryUsage(): MemoryInfo | null {
   const memory = (performance as any).memory;
-  
+
   if (memory) {
     return {
       usedJSHeapSize: memory.usedJSHeapSize,
@@ -343,20 +343,20 @@ function getMemoryUsage(): MemoryInfo | null {
       jsHeapSizeLimit: memory.jsHeapSizeLimit,
     };
   }
-  
+
   return null;
 }
 
 // Monitor memory leaks
 function monitorMemoryLeaks(): void {
   let lastMemory = getMemoryUsage();
-  
+
   setInterval(() => {
     const currentMemory = getMemoryUsage();
-    
+
     if (lastMemory && currentMemory) {
       const increase = currentMemory.usedJSHeapSize - lastMemory.usedJSHeapSize;
-      
+
       if (increase > 10 * 1024 * 1024) { // 10MB increase
         console.warn('Potential memory leak detected:', {
           increase: `${(increase / 1024 / 1024).toFixed(2)}MB`,
@@ -364,7 +364,7 @@ function monitorMemoryLeaks(): void {
         });
       }
     }
-    
+
     lastMemory = currentMemory;
   }, 5000);
 }
@@ -397,7 +397,7 @@ function collectPerformanceMetrics(): PerformanceMetrics {
 function startPerformanceMonitoring(interval: number = 30000): void {
   setInterval(() => {
     const metrics = collectPerformanceMetrics();
-    
+
     fetch('/api/performance', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -415,7 +415,7 @@ function trackABTestPerformance(
   variant: string
 ): void {
   const metrics = collectPerformanceMetrics();
-  
+
   fetch('/api/ab-test-performance', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

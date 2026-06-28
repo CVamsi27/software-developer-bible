@@ -361,7 +361,7 @@ export const handlers = [
 
   rest.get("/api/users/:id", (req, res, ctx) => {
     const { id } = req.params;
-    
+
     if (id === "non-existent") {
       return res(ctx.status(404), ctx.json({ error: "User not found" }));
     }
@@ -377,7 +377,7 @@ export const handlers = [
 
   rest.post("/api/users", async (req, res, ctx) => {
     const body = await req.json();
-    
+
     return res(
       ctx.status(201),
       ctx.json({

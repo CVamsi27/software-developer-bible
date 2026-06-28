@@ -95,11 +95,11 @@ function deepClone(obj: any, seen = new WeakMap()): any {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
-  
+
   if (seen.has(obj)) {
     return seen.get(obj);
   }
-  
+
   if (obj instanceof Date) return new Date(obj);
   if (obj instanceof RegExp) return new RegExp(obj);
   if (obj instanceof Map) {
@@ -114,14 +114,14 @@ function deepClone(obj: any, seen = new WeakMap()): any {
     obj.forEach(val => set.add(deepClone(val, seen)));
     return set;
   }
-  
+
   const clone = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
   seen.set(obj, clone);
-  
+
   for (const key of Reflect.ownKeys(obj)) {
     clone[key] = deepClone(obj[key as keyof typeof obj], seen);
   }
-  
+
   return clone;
 }
 ```
@@ -207,13 +207,13 @@ function reducer(state: State, action: Action): State {
 class HistoryManager<T> {
   private history: T[] = [];
   private currentIndex = -1;
-  
+
   push(state: T) {
     this.history = this.history.slice(0, this.currentIndex + 1);
     this.history.push(structuredClone(state));
     this.currentIndex++;
   }
-  
+
   undo(): T | undefined {
     if (this.currentIndex > 0) {
       this.currentIndex--;
@@ -221,7 +221,7 @@ class HistoryManager<T> {
     }
     return undefined;
   }
-  
+
   redo(): T | undefined {
     if (this.currentIndex < this.history.length - 1) {
       this.currentIndex++;
@@ -237,11 +237,11 @@ class HistoryManager<T> {
 ```typescript
 class Cache {
   private cache = new Map<string, any>();
-  
+
   set(key: string, value: any) {
     this.cache.set(key, structuredClone(value));
   }
-  
+
   get(key: string) {
     const value = this.cache.get(key);
     return value ? structuredClone(value) : undefined;

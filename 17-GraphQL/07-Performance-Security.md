@@ -187,10 +187,10 @@ const server = new ApolloServer({
 type Query {
   # Simple query: complexity 1
   user(id: ID!): User @complexity(value: 1)
-  
+
   # List query: complexity 2 + multiplier
   users(first: Int): [User!]! @complexity(value: 2, multipliers: ["first"])
-  
+
   # Expensive query: complexity 10
   analytics(dateRange: DateRange!): Analytics! @complexity(value: 10)
 }
@@ -199,10 +199,10 @@ type User {
   # Simple field: no additional complexity
   id: ID!
   name: String!
-  
+
   # List field with multiplier
   posts(first: Int): [Post!]! @complexity(value: 2, multipliers: ["first"])
-  
+
   # Expensive computed field
   recommendations: [Post!]! @complexity(value: 5)
 }
@@ -276,10 +276,10 @@ const queryLimiter = (maxQueries: number, windowMs: number) => {
   return (req, res, next) => {
     const userId = req.headers.authorization || req.ip;
     const now = Date.now();
-    
+
     const userQueries = queryRateLimit.get(userId) || [];
     const recentQueries = userQueries.filter(time => now - time < windowMs);
-    
+
     if (recentQueries.length >= maxQueries) {
       return res.status(429).json({
         errors: [{
@@ -288,7 +288,7 @@ const queryLimiter = (maxQueries: number, windowMs: number) => {
         }]
       });
     }
-    
+
     recentQueries.push(now);
     queryRateLimit.set(userId, recentQueries);
     next();
@@ -299,8 +299,8 @@ const queryLimiter = (maxQueries: number, windowMs: number) => {
 ### Persisted Queries
 
 ```typescript
-import { 
-  ApolloServerPluginAutomaticPersistedQueries 
+import {
+  ApolloServerPluginAutomaticPersistedQueries
 } from '@apollo/server/plugin/automaticPersistedQueries';
 
 // Server-side
@@ -332,7 +332,7 @@ import jwt from 'jsonwebtoken';
 // Context-based authentication
 const createContext = async ({ req }) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
-  
+
   if (!token) {
     return { currentUser: null };
   }
@@ -340,11 +340,11 @@ const createContext = async ({ req }) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await db.user.findById(decoded.userId);
-    
+
     if (!user || user.status !== 'ACTIVE') {
       return { currentUser: null };
     }
-    
+
     return { currentUser: user };
   } catch (error) {
     return { currentUser: null };
@@ -370,7 +370,7 @@ const resolvers = {
   Query: {
     user: async (_, { id }, context) => {
       // Only admins can view other users
-      if (context.currentUser?.role !== 'ADMIN' && 
+      if (context.currentUser?.role !== 'ADMIN' &&
           context.currentUser?.id !== id) {
         throw new GraphQLError('Not authorized', {
           extensions: { code: 'FORBIDDEN' }
@@ -383,7 +383,7 @@ const resolvers = {
   User: {
     email: (parent, _, context) => {
       // Only show email to self or admins
-      if (context.currentUser?.id === parent.id || 
+      if (context.currentUser?.id === parent.id ||
           context.currentUser?.role === 'ADMIN') {
         return parent.email;
       }
@@ -395,7 +395,7 @@ const resolvers = {
 // Directive-based authorization
 const typeDefs = `
   directive @auth(requires: Role = USER) on FIELD_DEFINITION | OBJECT
-  
+
   enum Role {
     ADMIN
     MODERATOR
@@ -415,20 +415,20 @@ const authDirectiveTransformer = (schema) =>
       if (authDirective) {
         const requires = authDirective.requires || 'USER';
         const originalResolve = fieldConfig.resolve;
-        
+
         fieldConfig.resolve = async (parent, args, context, info) => {
           if (!context.currentUser) {
             throw new GraphQLError('Not authenticated', {
               extensions: { code: 'UNAUTHENTICATED' }
             });
           }
-          
+
           if (requires === 'ADMIN' && context.currentUser.role !== 'ADMIN') {
             throw new GraphQLError('Not authorized', {
               extensions: { code: 'FORBIDDEN' }
             });
           }
-          
+
           return originalResolve(parent, args, context, info);
         };
       }
@@ -456,17 +456,17 @@ const resolvers = {
     createUser: async (_, { input }, context) => {
       // Validate input
       const result = CreateUserSchema.safeParse(input);
-      
+
       if (!result.success) {
         const errors = result.error.issues.map(issue => ({
           field: issue.path.join('.'),
           message: issue.message,
           code: 'VALIDATION_ERROR',
         }));
-        
+
         return { user: null, errors };
       }
-      
+
       // Create user with validated data
       const user = await context.dataSources.userAPI.create(result.data);
       return { user, errors: [] };
@@ -487,7 +487,7 @@ const corsOptions = {
       'https://app.example.com',
       'https://admin.example.com',
     ];
-    
+
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -531,7 +531,7 @@ const typeDefs = `
   type Query {
     # Cache for 1 minute, publicly
     popularPosts: [Post!]! @cacheControl(maxAge: 60, scope: PUBLIC)
-    
+
     # No caching for personalized data
     currentUser: User @cacheControl(maxAge: 0, scope: PRIVATE)
   }
@@ -638,17 +638,17 @@ const server = new ApolloServer({
 const metricsPlugin = {
   requestDidStart() {
     const start = Date.now();
-    
+
     return {
       willSendResponse({ operationName, response }) {
         const duration = Date.now() - start;
-        
+
         // Send to metrics service
         metrics.histogram('graphql.request.duration', duration, {
           operationName,
           status: response.errors ? 'error' : 'success',
         });
-        
+
         // Alert on slow queries
         if (duration > 1000) {
           alerting.warn('Slow GraphQL query', {

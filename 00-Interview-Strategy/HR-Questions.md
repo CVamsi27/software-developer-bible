@@ -598,12 +598,12 @@ growing others is a key part of senior engineering."
 ```
 1. Send a thank-you email
    Subject: Thank you for the [Role] conversation
-   
+
    Body:
    - Reference something specific from the conversation
    - Reiterate your interest (with a specific reason)
    - Keep it brief (3-4 sentences)
-   
+
    Example:
    "Hi [Name], thank you for the conversation today. I particularly
    enjoyed learning about the team's approach to [specific topic].

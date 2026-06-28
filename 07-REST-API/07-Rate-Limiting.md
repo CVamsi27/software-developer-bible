@@ -65,16 +65,16 @@ Limit: 100 requests
 // Fixed window implementation
 class FixedWindowRateLimiter {
   private windows: Map<string, { count: number; resetTime: number }> = new Map();
-  
+
   constructor(
     private maxRequests: number,
     private windowMs: number
   ) {}
-  
+
   isAllowed(key: string): { allowed: boolean; remaining: number; resetTime: number } {
     const now = Date.now();
     const window = this.windows.get(key);
-    
+
     if (!window || now > window.resetTime) {
       // New window
       this.windows.set(key, {
@@ -83,12 +83,12 @@ class FixedWindowRateLimiter {
       });
       return { allowed: true, remaining: this.maxRequests - 1, resetTime: now + this.windowMs };
     }
-    
+
     if (window.count >= this.maxRequests) {
       // Rate limited
       return { allowed: false, remaining: 0, resetTime: window.resetTime };
     }
-    
+
     // Increment count
     window.count++;
     return { allowed: true, remaining: this.maxRequests - window.count, resetTime: window.resetTime };
@@ -98,22 +98,22 @@ class FixedWindowRateLimiter {
 // Express middleware
 function fixedWindowLimiter(maxRequests: number, windowMs: number) {
   const limiter = new FixedWindowRateLimiter(maxRequests, windowMs);
-  
+
   return (req, res, next) => {
     const key = req.ip || req.connection.remoteAddress;
     const result = limiter.isAllowed(key);
-    
+
     res.set({
       'X-RateLimit-Limit': maxRequests.toString(),
       'X-RateLimit-Remaining': result.remaining.toString(),
       'X-RateLimit-Reset': Math.ceil(result.resetTime / 1000).toString()
     });
-    
+
     if (!result.allowed) {
       res.set('Retry-After', Math.ceil((result.resetTime - Date.now()) / 1000).toString());
       return res.status(429).json({ error: 'Rate limit exceeded' });
     }
-    
+
     next();
   };
 }
@@ -151,33 +151,33 @@ Advantages over fixed window:
 // Sliding window implementation
 class SlidingWindowRateLimiter {
   private requests: Map<string, number[]> = new Map();
-  
+
   constructor(
     private maxRequests: number,
     private windowMs: number
   ) {}
-  
+
   isAllowed(key: string): { allowed: boolean; remaining: number } {
     const now = Date.now();
     const windowStart = now - this.windowMs;
-    
+
     // Get existing requests for this key
     const requestTimes = this.requests.get(key) || [];
-    
+
     // Filter to only requests within the window
     const validRequests = requestTimes.filter(time => time > windowStart);
-    
+
     if (validRequests.length >= this.maxRequests) {
       return { allowed: false, remaining: 0 };
     }
-    
+
     // Add current request
     validRequests.push(now);
     this.requests.set(key, validRequests);
-    
+
     return { allowed: true, remaining: this.maxRequests - validRequests.length };
   }
-  
+
   // Cleanup old entries
   cleanup() {
     const now = Date.now();
@@ -195,23 +195,23 @@ class SlidingWindowRateLimiter {
 // Express middleware
 function slidingWindowLimiter(maxRequests: number, windowMs: number) {
   const limiter = new SlidingWindowRateLimiter(maxRequests, windowMs);
-  
+
   // Cleanup every minute
   setInterval(() => limiter.cleanup(), 60000);
-  
+
   return (req, res, next) => {
     const key = req.ip || req.connection.remoteAddress;
     const result = limiter.isAllowed(key);
-    
+
     res.set({
       'X-RateLimit-Limit': maxRequests.toString(),
       'X-RateLimit-Remaining': result.remaining.toString()
     });
-    
+
     if (!result.allowed) {
       return res.status(429).json({ error: 'Rate limit exceeded' });
     }
-    
+
     next();
   };
 }
@@ -247,32 +247,32 @@ After 5 seconds: [█████░░░░░] 5/10  (refilled 5 tokens)
 // Token bucket implementation
 class TokenBucketRateLimiter {
   private buckets: Map<string, { tokens: number; lastRefill: number }> = new Map();
-  
+
   constructor(
     private capacity: number,
     private refillRate: number, // tokens per second
     private refillInterval: number = 1000 // ms
   ) {}
-  
+
   isAllowed(key: string): { allowed: boolean; tokens: number } {
     const now = Date.now();
     let bucket = this.buckets.get(key);
-    
+
     if (!bucket) {
       bucket = { tokens: this.capacity, lastRefill: now };
       this.buckets.set(key, bucket);
     }
-    
+
     // Refill tokens
     const timePassed = now - bucket.lastRefill;
     const tokensToAdd = Math.floor(timePassed / this.refillInterval) * this.refillRate;
     bucket.tokens = Math.min(this.capacity, bucket.tokens + tokensToAdd);
     bucket.lastRefill = now;
-    
+
     if (bucket.tokens <= 0) {
       return { allowed: false, tokens: 0 };
     }
-    
+
     // Consume token
     bucket.tokens--;
     return { allowed: true, tokens: bucket.tokens };
@@ -282,20 +282,20 @@ class TokenBucketRateLimiter {
 // Express middleware
 function tokenBucketLimiter(capacity: number, refillRate: number) {
   const limiter = new TokenBucketRateLimiter(capacity, refillRate);
-  
+
   return (req, res, next) => {
     const key = req.ip || req.connection.remoteAddress;
     const result = limiter.isAllowed(key);
-    
+
     res.set({
       'X-RateLimit-Limit': capacity.toString(),
       'X-RateLimit-Remaining': result.tokens.toString()
     });
-    
+
     if (!result.allowed) {
       return res.status(429).json({ error: 'Rate limit exceeded' });
     }
-    
+
     next();
   };
 }
@@ -307,28 +307,28 @@ function tokenBucketLimiter(capacity: number, refillRate: number) {
 // Sliding window log - stores timestamps
 class SlidingWindowLogRateLimiter {
   private logs: Map<string, number[]> = new Map();
-  
+
   constructor(
     private maxRequests: number,
     private windowMs: number
   ) {}
-  
+
   isAllowed(key: string): { allowed: boolean; remaining: number; retryAfter?: number } {
     const now = Date.now();
     const windowStart = now - this.windowMs;
-    
+
     // Get and filter logs
     const logs = (this.logs.get(key) || []).filter(t => t > windowStart);
-    
+
     if (logs.length >= this.maxRequests) {
       const oldestInWindow = logs[0];
       const retryAfter = oldestInWindow + this.windowMs - now;
       return { allowed: false, remaining: 0, retryAfter };
     }
-    
+
     logs.push(now);
     this.logs.set(key, logs);
-    
+
     return { allowed: true, remaining: this.maxRequests - logs.length };
   }
 }
@@ -345,11 +345,11 @@ import Redis from 'ioredis';
 // Redis-based distributed rate limiter
 class RedisRateLimiter {
   private redis: Redis;
-  
+
   constructor(redis: Redis) {
     this.redis = redis;
   }
-  
+
   // Sliding window with Redis
   async isAllowed(
     key: string,
@@ -359,34 +359,34 @@ class RedisRateLimiter {
     const now = Date.now();
     const windowStart = now - windowMs;
     const redisKey = `ratelimit:${key}`;
-    
+
     const pipeline = this.redis.pipeline();
-    
+
     // Remove old entries
     pipeline.zremrangebyscore(redisKey, 0, windowStart);
-    
+
     // Add current request
     pipeline.zadd(redisKey, now.toString(), `${now}-${Math.random()}`);
-    
+
     // Count requests in window
     pipeline.zcard(redisKey);
-    
+
     // Set expiry
     pipeline.expire(redisKey, Math.ceil(windowMs / 1000));
-    
+
     const results = await pipeline.exec();
     const count = results[2][1] as number;
-    
+
     // Calculate reset time
     const resetTime = now + windowMs;
-    
+
     if (count > maxRequests) {
       return { allowed: false, remaining: 0, resetTime };
     }
-    
+
     return { allowed: true, remaining: maxRequests - count, resetTime };
   }
-  
+
   // Token bucket with Redis
   async isAllowedTokenBucket(
     key: string,
@@ -395,31 +395,31 @@ class RedisRateLimiter {
   ): Promise<{ allowed: boolean; tokens: number }> {
     const now = Date.now();
     const bucketKey = `bucket:${key}`;
-    
+
     const bucket = await this.redis.hgetall(bucketKey);
-    
+
     let tokens = bucket.tokens ? parseFloat(bucket.tokens) : capacity;
     let lastRefill = bucket.lastRefill ? parseInt(bucket.lastRefill) : now;
-    
+
     // Refill tokens
     const timePassed = now - lastRefill;
     const tokensToAdd = (timePassed / 1000) * refillRate;
     tokens = Math.min(capacity, tokens + tokensToAdd);
-    
+
     if (tokens < 1) {
       return { allowed: false, tokens: Math.floor(tokens) };
     }
-    
+
     // Consume token
     tokens -= 1;
-    
+
     // Update Redis
     await this.redis.hset(bucketKey, {
       tokens: tokens.toString(),
       lastRefill: now.toString()
     });
     await this.redis.expire(bucketKey, Math.ceil(capacity / refillRate) * 2);
-    
+
     return { allowed: true, tokens: Math.floor(tokens) };
   }
 }
@@ -441,41 +441,41 @@ function rateLimiter(options: {
     skip = () => false,
     message = 'Too many requests'
   } = options;
-  
+
   const redis = new Redis(process.env.REDIS_URL);
   const limiter = new RedisRateLimiter(redis);
-  
+
   return async (req: Request, res: Response, next: NextFunction) => {
     if (skip(req)) {
       return next();
     }
-    
+
     const key = keyGenerator(req);
-    
+
     try {
       const result = await limiter.isAllowed(key, max, windowMs);
-      
+
       // Set rate limit headers
       res.set({
         'X-RateLimit-Limit': max.toString(),
         'X-RateLimit-Remaining': Math.max(0, result.remaining).toString(),
         'X-RateLimit-Reset': Math.ceil(result.resetTime / 1000).toString()
       });
-      
+
       if (!result.allowed) {
         const retryAfter = Math.ceil((result.resetTime - Date.now()) / 1000);
         res.set('Retry-After', retryAfter.toString());
-        
+
         if (handler) {
           return handler(req, res);
         }
-        
+
         return res.status(429).json({
           error: message,
           retryAfter
         });
       }
-      
+
       next();
     } catch (err) {
       // If rate limiting fails, allow request (fail open)
@@ -524,17 +524,17 @@ class TieredRateLimiter {
     pro: { requests: 1000, windowMs: 60 * 60 * 1000 }, // 1000/hour
     enterprise: { requests: 10000, windowMs: 60 * 60 * 1000 } // 10000/hour
   };
-  
+
   async isAllowed(userId: string, tier: string): Promise<{ allowed: boolean; remaining: number }> {
     const tierConfig = this.tiers[tier] || this.tiers.free;
     const key = `ratelimit:${tier}:${userId}`;
-    
+
     const result = await this.redisRateLimiter.isAllowed(
       key,
       tierConfig.requests,
       tierConfig.windowMs
     );
-    
+
     return result;
   }
 }
@@ -543,7 +543,7 @@ class TieredRateLimiter {
 function tieredRateLimiter(req: Request, res: Response, next: NextFunction) {
   const userTier = req.user?.tier || 'free';
   const limiter = new TieredRateLimiter();
-  
+
   limiter.isAllowed(req.user.id, userTier)
     .then(result => {
       res.set({
@@ -551,7 +551,7 @@ function tieredRateLimiter(req: Request, res: Response, next: NextFunction) {
         'X-RateLimit-Remaining': result.remaining.toString(),
         'X-RateLimit-Tier': userTier
       });
-      
+
       if (!result.allowed) {
         return res.status(429).json({
           error: 'Rate limit exceeded',
@@ -559,7 +559,7 @@ function tieredRateLimiter(req: Request, res: Response, next: NextFunction) {
           upgradeUrl: '/pricing'
         });
       }
-      
+
       next();
     });
 }
@@ -575,7 +575,7 @@ app.use('/api', (req, res, next) => {
   // X-RateLimit-Remaining: Remaining requests in window
   // X-RateLimit-Reset: Unix timestamp when window resets
   // Retry-After: Seconds to wait (only on 429)
-  
+
   next();
 });
 
@@ -641,11 +641,11 @@ const limiter = new RedisRateLimiter(redis);
 app.use('/api', async (req, res, next) => {
   const key = req.ip;
   const result = await limiter.isAllowed(key, 100, 60 * 60 * 1000);
-  
+
   if (!result.allowed) {
     return res.status(429).json({ error: 'Rate limit exceeded' });
   }
-  
+
   next();
 });
 ```

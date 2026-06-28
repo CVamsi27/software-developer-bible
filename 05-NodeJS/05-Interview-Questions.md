@@ -575,7 +575,7 @@ const verifyToken = (token) => {
 // Middleware
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(401).json({ error: 'No token provided' });
   }
@@ -899,7 +899,7 @@ wss.on('connection', (ws, req) => {
   // Broadcast to all clients
   ws.on('message', (message) => {
     const data = JSON.parse(message);
-    
+
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(JSON.stringify({
@@ -1038,7 +1038,7 @@ emailQueue.process(async (job) => {
 
 imageQueue.process(async (job) => {
   const { userId, imagePath, sizes } = job.data;
-  
+
   for (const size of sizes) {
     await resizeImage(imagePath, size);
     await job.progress(size / sizes.length * 100);
@@ -1081,7 +1081,7 @@ const httpRequestDuration = new promClient.Histogram({
 // Middleware to collect metrics
 app.use((req, res, next) => {
   const end = httpRequestDuration.startTimer();
-  
+
   res.on('finish', () => {
     end({
       method: req.method,
@@ -1089,7 +1089,7 @@ app.use((req, res, next) => {
       status_code: res.statusCode
     });
   });
-  
+
   next();
 });
 
@@ -1098,7 +1098,7 @@ const tracer = opentelemetry.trace.getTracer('my-app');
 
 app.get('/api/data', async (req, res) => {
   const span = tracer.startSpan('fetch-data');
-  
+
   try {
     const data = await fetchData();
     span.setStatus({ code: opentelemetry.SpanStatusCode.OK });
@@ -1131,7 +1131,7 @@ app.use('/api/v2', v2Router);
 // Header-based versioning
 app.use('/api', (req, res, next) => {
   const version = req.headers['api-version'] || 'v1';
-  
+
   switch (version) {
     case 'v1':
       return v1Router(req, res, next);
@@ -1145,11 +1145,11 @@ app.use('/api', (req, res, next) => {
 // Query parameter versioning
 app.get('/api/data', (req, res, next) => {
   const version = req.query.version || 'v1';
-  
+
   if (version === 'v2') {
     return v2Handler(req, res, next);
   }
-  
+
   return v1Handler(req, res, next);
 });
 ```
@@ -1182,7 +1182,7 @@ if (cluster.isPrimary) {
 } else {
   // Worker process
   const pool = new Pool(poolConfig);
-  
+
   // Graceful shutdown
   process.on('SIGTERM', async () => {
     await pool.end();
@@ -1245,7 +1245,7 @@ class MessageQueue {
 
   async consume(queue, handler) {
     await this.channel.assertQueue(queue, { durable: true });
-    
+
     this.channel.consume(queue, async (msg) => {
       try {
         const content = JSON.parse(msg.content.toString());
@@ -1336,11 +1336,11 @@ const asyncHandler = (fn) => (req, res, next) => {
 // Usage
 app.get('/api/users/:id', asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
-  
+
   if (!user) {
     throw new AppError('User not found', 404, 'USER_NOT_FOUND');
   }
-  
+
   res.json(user);
 }));
 
@@ -1392,12 +1392,12 @@ class DistributedCache {
   // Cache-aside pattern
   async getOrSet(key, fetchFn, ttl = 3600) {
     let data = await this.get(key);
-    
+
     if (!data) {
       data = await fetchFn();
       await this.set(key, data, ttl);
     }
-    
+
     return data;
   }
 }
@@ -1406,7 +1406,7 @@ class DistributedCache {
 if (cluster.isPrimary) {
   // Primary process manages cache invalidation
   const cache = new DistributedCache();
-  
+
   cluster.on('message', (worker, msg) => {
     if (msg.type === 'CACHE_INVALIDATE') {
       cache.invalidatePattern(msg.pattern);
@@ -1415,7 +1415,7 @@ if (cluster.isPrimary) {
 } else {
   // Worker process uses cache
   const cache = new DistributedCache();
-  
+
   app.get('/api/users', async (req, res) => {
     const users = await cache.getOrSet(
       'users:all',
@@ -1463,13 +1463,13 @@ class UrlShortener {
 
     // Generate short code
     const shortCode = nanoid(7);
-    
+
     // Store in database
     await this.storeUrl(shortCode, url);
-    
+
     // Cache for future lookups
     this.cache.set(url, shortCode);
-    
+
     return shortCode;
   }
 
@@ -1488,10 +1488,10 @@ class UrlShortener {
 
     // Cache for 1 hour
     await redisClient.setex(`redirect:${shortCode}`, 3600, url);
-    
+
     // Track analytics
     await this.trackClick(shortCode);
-    
+
     return url;
   }
 
@@ -1556,14 +1556,14 @@ class ChatServer {
     this.wss = new WebSocket.Server({ port: 8080 });
     this.redis = new Redis();
     this.clients = new Map(); // userId -> WebSocket
-    
+
     this.setupWebSocket();
   }
 
   setupWebSocket() {
     this.wss.on('connection', (ws, req) => {
       const userId = this.authenticate(req);
-      
+
       if (!userId) {
         ws.close(1008, 'Unauthorized');
         return;
@@ -1613,7 +1613,7 @@ class ChatServer {
 
     // Broadcast to room members
     const members = await this.getRoomMembers(roomId);
-    
+
     for (const memberId of members) {
       const client = this.clients.get(memberId);
       if (client && client.readyState === WebSocket.OPEN) {
@@ -1627,7 +1627,7 @@ class ChatServer {
 
   broadcastPresence() {
     const onlineUsers = Array.from(this.clients.keys());
-    
+
     this.wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(JSON.stringify({
@@ -1673,7 +1673,7 @@ class DistributedStorage {
   async upload(file) {
     const fileHash = await this.calculateHash(file);
     const chunks = await this.chunkFile(file);
-    
+
     // Store metadata
     await this.storeMetadata(fileHash, {
       chunks: chunks.length,
@@ -1685,7 +1685,7 @@ class DistributedStorage {
     for (let i = 0; i < chunks.length; i++) {
       const chunk = chunks[i];
       const nodes = this.selectNodes(i, this.replicationFactor);
-      
+
       for (const node of nodes) {
         await this.storeChunk(node, fileHash, i, chunk);
       }
@@ -1709,11 +1709,11 @@ class DistributedStorage {
   async chunkFile(file, chunkSize = 1024 * 1024) {
     const buffer = fs.readFileSync(file);
     const chunks = [];
-    
+
     for (let i = 0; i < buffer.length; i += chunkSize) {
       chunks.push(buffer.slice(i, i + chunkSize));
     }
-    
+
     return chunks;
   }
 
@@ -1730,7 +1730,7 @@ class DistributedStorage {
     return new Promise((resolve) => {
       const hash = crypto.createHash('sha256');
       const stream = fs.createReadStream(file);
-      
+
       stream.on('data', (data) => hash.update(data));
       stream.on('end', () => resolve(hash.digest('hex')));
     });
@@ -1768,7 +1768,7 @@ class TaskScheduler {
 
   async scheduleRecurringJob(queueName, cronExpression, data) {
     const queue = this.queues.get(queueName);
-    
+
     // Add job with repeat option
     await queue.add(data, {
       repeat: { cron: cronExpression },
@@ -1779,7 +1779,7 @@ class TaskScheduler {
 
   async scheduleDelayedJob(queueName, data, delay) {
     const queue = this.queues.get(queueName);
-    
+
     await queue.add(data, {
       delay,
       attempts: 3,
@@ -1792,7 +1792,7 @@ class TaskScheduler {
 
   processJob(queueName, handler) {
     const queue = this.queues.get(queueName);
-    
+
     queue.process(async (job) => {
       try {
         console.log(`Processing job ${job.id} in queue ${queueName}`);
@@ -1815,7 +1815,7 @@ class TaskScheduler {
 
   async getJobStats(queueName) {
     const queue = this.queues.get(queueName);
-    
+
     const [waiting, active, completed, failed] = await Promise.all([
       queue.getWaitingCount(),
       queue.getActiveCount(),
@@ -1873,7 +1873,7 @@ class PaymentProcessor {
 
   async createPaymentIntent(amount, currency, metadata) {
     const idempotencyKey = this.generateIdempotencyKey();
-    
+
     try {
       const paymentIntent = await stripe.paymentIntents.create({
         amount,
@@ -1927,10 +1927,10 @@ class PaymentProcessor {
   async handlePaymentSuccess(paymentIntent) {
     // Update order status
     await this.updateOrderStatus(paymentIntent.metadata.orderId, 'paid');
-    
+
     // Send confirmation email
     await this.sendConfirmationEmail(paymentIntent.metadata.email);
-    
+
     // Update inventory
     await this.updateInventory(paymentIntent.metadata.items);
   }
@@ -1938,7 +1938,7 @@ class PaymentProcessor {
   async handlePaymentFailure(paymentIntent) {
     // Notify customer
     await this.sendPaymentFailedEmail(paymentIntent.metadata.email);
-    
+
     // Update order status
     await this.updateOrderStatus(paymentIntent.metadata.orderId, 'payment_failed');
   }
@@ -1987,7 +1987,7 @@ class CDNEdge {
 
   async handleRequest(req, res) {
     const cacheKey = this.getCacheKey(req);
-    
+
     // Check cache
     const cached = await this.getFromCache(cacheKey);
     if (cached) {
@@ -1998,7 +1998,7 @@ class CDNEdge {
 
     // Select origin
     const origin = this.selectOrigin();
-    
+
     // Proxy request
     this.proxy.web(req, res, {
       target: origin.url,
@@ -2033,9 +2033,9 @@ class CDNEdge {
     const totalWeight = healthyOrigins.reduce(
       (sum, origin) => sum + origin.weight, 0
     );
-    
+
     let random = Math.random() * totalWeight;
-    
+
     for (const origin of healthyOrigins) {
       random -= origin.weight;
       if (random <= 0) {
@@ -2098,7 +2098,7 @@ class FeatureFlagService {
   async initialize() {
     // Load flags from database/config
     const flags = await this.loadFlags();
-    
+
     for (const flag of flags) {
       this.flags.set(flag.key, {
         enabled: flag.enabled,
@@ -2111,7 +2111,7 @@ class FeatureFlagService {
 
   isEnabled(flagKey, context = {}) {
     const flag = this.flags.get(flagKey);
-    
+
     if (!flag) {
       return false;
     }
@@ -2136,7 +2136,7 @@ class FeatureFlagService {
 
   getVariant(flagKey, context = {}) {
     const flag = this.flags.get(flagKey);
-    
+
     if (!flag || !flag.variants) {
       return null;
     }
@@ -2144,7 +2144,7 @@ class FeatureFlagService {
     // Consistent hashing for variant assignment
     const hash = this.hashString(`${flagKey}:${context.userId}`);
     const variantIndex = hash % flag.variants.length;
-    
+
     return flag.variants[variantIndex];
   }
 
@@ -2241,7 +2241,7 @@ class AnalyticsPipeline {
   async initialize() {
     await this.producer.connect();
     await this.consumer.connect();
-    
+
     await this.consumer.subscribe({ topic: 'events' });
     await this.consumer.run({
       eachMessage: async ({ message }) => {
@@ -2267,13 +2267,13 @@ class AnalyticsPipeline {
   async processEvent(event) {
     // Enrich event
     const enriched = await this.enrichEvent(event);
-    
+
     // Store in real-time database
     await this.storeRealTime(enriched);
-    
+
     // Aggregate for time series
     await this.aggregate(enriched);
-    
+
     // Check for alerts
     await this.checkAlerts(enriched);
   }
@@ -2281,7 +2281,7 @@ class AnalyticsPipeline {
   async enrichEvent(event) {
     // Add user properties, location, etc.
     const user = await this.getUser(event.userId);
-    
+
     return {
       ...event,
       userProperties: user.properties,
@@ -2296,7 +2296,7 @@ class AnalyticsPipeline {
       event.timestamp,
       JSON.stringify(event)
     );
-    
+
     // Keep only last 24 hours
     const cutoff = Date.now() - 24 * 60 * 60 * 1000;
     await this.redis.zremrangebyscore(
@@ -2309,13 +2309,13 @@ class AnalyticsPipeline {
   async aggregate(event) {
     // Time-based aggregation
     const minute = Math.floor(event.timestamp / 60000) * 60000;
-    
+
     await this.redis.hincrby(
       `aggregated:${event.eventName}:${minute}`,
       'count',
       1
     );
-    
+
     await this.redis.hincrbyfloat(
       `aggregated:${event.eventName}:${minute}`,
       'totalValue',
@@ -2326,11 +2326,11 @@ class AnalyticsPipeline {
   async getMetrics(eventName, timeRange) {
     const metrics = [];
     const now = Date.now();
-    
+
     for (let i = 0; i < timeRange; i++) {
       const minute = now - (i * 60000);
       const key = `aggregated:${eventName}:${minute}`;
-      
+
       const data = await this.redis.hgetall(key);
       metrics.unshift({
         timestamp: minute,
@@ -2338,7 +2338,7 @@ class AnalyticsPipeline {
         totalValue: parseFloat(data.totalValue) || 0
       });
     }
-    
+
     return metrics;
   }
 }
@@ -2370,7 +2370,7 @@ class ServiceMesh {
       healthCheck: config.healthCheck,
       loadBalancer: config.loadBalancer || 'round-robin'
     });
-    
+
     // Start health checking
     this.startHealthCheck(name);
   }
@@ -2378,22 +2378,22 @@ class ServiceMesh {
   async route(serviceName, request) {
     // Get healthy endpoints
     const endpoints = await this.getHealthyEndpoints(serviceName);
-    
+
     if (endpoints.length === 0) {
       throw new Error(`No healthy endpoints for ${serviceName}`);
     }
 
     // Select endpoint based on load balancing
     const endpoint = this.selectEndpoint(endpoints, serviceName);
-    
+
     // Check circuit breaker
     const circuitBreaker = this.getCircuitBreaker(serviceName);
-    
+
     try {
       const response = await circuitBreaker.call(async () => {
         return await this.proxy.forward(endpoint, request);
       });
-      
+
       this.recordSuccess(serviceName, endpoint);
       return response;
     } catch (error) {
@@ -2414,7 +2414,7 @@ class ServiceMesh {
 
   selectEndpoint(endpoints, serviceName) {
     const service = this.services.get(serviceName);
-    
+
     switch (service.loadBalancer) {
       case 'round-robin':
         return this.roundRobin(endpoints);
@@ -2434,7 +2434,7 @@ class ServiceMesh {
 
   async startHealthCheck(serviceName) {
     const service = this.services.get(serviceName);
-    
+
     setInterval(async () => {
       for (const endpoint of service.endpoints) {
         try {
@@ -2528,16 +2528,16 @@ class DistributedRateLimiter {
 
     // Use Redis pipeline for atomicity
     const pipeline = this.redis.pipeline();
-    
+
     // Remove old entries
     pipeline.zremrangebyscore(key, 0, windowStart);
-    
+
     // Add current request
     pipeline.zadd(key, now, `${now}`);
-    
+
     // Count requests in window
     pipeline.zcard(key);
-    
+
     // Set expiry
     pipeline.expire(key, Math.ceil(this.windowMs / 1000));
 
@@ -2550,22 +2550,22 @@ class DistributedRateLimiter {
   async tokenBucket(identifier) {
     const key = `ratelimit:${identifier}`;
     const now = Date.now();
-    
+
     const script = `
       local key = KEYS[1]
       local maxTokens = tonumber(ARGV[1])
       local refillRate = tonumber(ARGV[2])
       local now = tonumber(ARGV[3])
-      
+
       local bucket = redis.call('hmget', key, 'tokens', 'last_refill')
       local tokens = tonumber(bucket[1]) or maxTokens
       local lastRefill = tonumber(bucket[2]) or now
-      
+
       -- Refill tokens
       local elapsed = now - lastRefill
       local refill = math.floor(elapsed * refillRate / 1000)
       tokens = math.min(maxTokens, tokens + refill)
-      
+
       -- Try to consume token
       if tokens >= 1 then
         tokens = tokens - 1
@@ -2612,16 +2612,16 @@ class DistributedRateLimiter {
       local capacity = tonumber(ARGV[1])
       local leakRate = tonumber(ARGV[2])
       local now = tonumber(ARGV[3])
-      
+
       local bucket = redis.call('hmget', key, 'water', 'last_leak')
       local water = tonumber(bucket[1]) or 0
       local lastLeak = tonumber(bucket[2]) or now
-      
+
       -- Leak water
       local elapsed = now - lastLeak
       local leaked = math.floor(elapsed * leakRate / 1000)
       water = math.max(0, water - leaked)
-      
+
       -- Try to add request
       if water < capacity then
         water = water + 1
@@ -2653,7 +2653,7 @@ class DistributedRateLimiter {
   async getUsage(identifier) {
     const key = `ratelimit:${identifier}`;
     const windowStart = Date.now() - this.windowMs;
-    
+
     const count = await this.redis.zcount(key, windowStart, '+inf');
     return {
       used: count,
@@ -2672,11 +2672,11 @@ const rateLimiter = new DistributedRateLimiter({
 
 app.use(async (req, res, next) => {
   const identifier = `${req.ip}:${req.path}`;
-  
+
   try {
     const allowed = await rateLimiter.isAllowed(identifier);
     const usage = await rateLimiter.getUsage(identifier);
-    
+
     res.set({
       'X-RateLimit-Limit': usage.total,
       'X-RateLimit-Remaining': usage.remaining,

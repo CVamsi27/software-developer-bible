@@ -65,7 +65,7 @@ app.get('/api/users', async (req, res) => {
   const { page = 1, limit = 10, sort = 'createdAt' } = req.query;
   const users = await UserService.findAll({ page, limit, sort });
   const total = await UserService.count();
-  
+
   res.json({
     data: users,
     pagination: { page, limit, total }
@@ -104,18 +104,18 @@ Client                          Server
 
 app.post('/api/users', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email required' });
   }
-  
+
   const existingUser = await UserService.findByEmail(email);
   if (existingUser) {
     return res.status(409).json({ error: 'Email already exists' });
   }
-  
+
   const user = await UserService.create({ name, email });
-  
+
   res.status(201)
     .header('Location', `/api/users/${user.id}`)
     .json({ data: user });
@@ -152,16 +152,16 @@ Client                          Server
 
 app.put('/api/users/:id', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email required' });
   }
-  
+
   const existingUser = await UserService.findById(req.params.id);
   if (!existingUser) {
     return res.status(404).json({ error: 'User not found' });
   }
-  
+
   const updatedUser = await UserService.replace(req.params.id, { name, email });
   res.json({ data: updatedUser });
 });
@@ -198,17 +198,17 @@ app.patch('/api/users/:id', async (req, res) => {
   if (!existingUser) {
     return res.status(404).json({ error: 'User not found' });
   }
-  
+
   // Only update provided fields
   const allowedFields = ['name', 'email', 'profile'];
   const updates: Partial<User> = {};
-  
+
   for (const field of allowedFields) {
     if (req.body[field] !== undefined) {
       updates[field] = req.body[field];
     }
   }
-  
+
   const updatedUser = await UserService.update(req.params.id, updates);
   res.json({ data: updatedUser });
 });
@@ -251,7 +251,7 @@ app.delete('/api/users/:id', async (req, res) => {
   if (!user) {
     return res.status(404).json({ error: 'User not found' });
   }
-  
+
   await UserService.delete(req.params.id);
   res.status(204).end();
 });
@@ -272,7 +272,7 @@ app.head('/api/users/:id', async (req, res) => {
   if (!user) {
     return res.status(404).end();
   }
-  
+
   res.set({
     'Content-Type': 'application/json',
     'X-User-Exists': 'true',
@@ -354,7 +354,7 @@ router.get('/', async (req, res) => {
   const userList = Array.from(users.values());
   const start = (parseInt(page as string) - 1) * parseInt(limit as string);
   const paginatedUsers = userList.slice(start, start + parseInt(limit as string));
-  
+
   res.json({
     data: paginatedUsers,
     pagination: {
@@ -387,19 +387,19 @@ router.head('/:id', async (req, res) => {
 // POST - Create new user
 router.post('/', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     return res.status(400).json({
       error: 'Validation failed',
       details: { name: !name ? 'Required' : undefined, email: !email ? 'Required' : undefined }
     });
   }
-  
+
   const existingUser = Array.from(users.values()).find(u => u.email === email);
   if (existingUser) {
     return res.status(409).json({ error: 'Email already exists' });
   }
-  
+
   const newUser: User = {
     id: uuidv4(),
     name,
@@ -407,9 +407,9 @@ router.post('/', async (req, res) => {
     createdAt: new Date(),
     updatedAt: new Date()
   };
-  
+
   users.set(newUser.id, newUser);
-  
+
   res.status(201)
     .header('Location', `/api/users/${newUser.id}`)
     .json({ data: newUser });
@@ -418,11 +418,11 @@ router.post('/', async (req, res) => {
 // PUT - Replace user (full update)
 router.put('/:id', async (req, res) => {
   const { name, email } = req.body;
-  
+
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email required for PUT' });
   }
-  
+
   const existingUser = users.get(req.params.id);
   if (!existingUser) {
     // PUT can create resource if it doesn't exist
@@ -436,14 +436,14 @@ router.put('/:id', async (req, res) => {
     users.set(req.params.id, newUser);
     return res.status(201).header('Location', `/api/users/${newUser.id}`).json({ data: newUser });
   }
-  
+
   const updatedUser: User = {
     ...existingUser,
     name,
     email,
     updatedAt: new Date()
   };
-  
+
   users.set(req.params.id, updatedUser);
   res.json({ data: updatedUser });
 });
@@ -454,16 +454,16 @@ router.patch('/:id', async (req, res) => {
   if (!existingUser) {
     return res.status(404).json({ error: 'User not found' });
   }
-  
+
   const allowedFields = ['name', 'email'];
   const updates: Partial<User> = {};
-  
+
   for (const field of allowedFields) {
     if (req.body[field] !== undefined) {
       updates[field] = req.body[field];
     }
   }
-  
+
   const updatedUser: User = {
     ...existingUser,
     ...updates,
@@ -471,7 +471,7 @@ router.patch('/:id', async (req, res) => {
     createdAt: existingUser.createdAt,
     updatedAt: new Date()
   };
-  
+
   users.set(req.params.id, updatedUser);
   res.json({ data: updatedUser });
 });
@@ -482,7 +482,7 @@ router.delete('/:id', async (req, res) => {
   if (!user) {
     return res.status(404).json({ error: 'User not found' });
   }
-  
+
   users.delete(req.params.id);
   res.status(204).end();
 });
@@ -509,32 +509,32 @@ const idempotencyKeys = new Map<string, { result: any; timestamp: Date }>();
 
 app.post('/api/payments', async (req, res) => {
   const idempotencyKey = req.headers['idempotency-key'] as string;
-  
+
   if (!idempotencyKey) {
     return res.status(400).json({ error: 'Idempotency-Key header required' });
   }
-  
+
   // Check if we've seen this key before
   const existingResult = idempotencyKeys.get(idempotencyKey);
   if (existingResult) {
     // Return cached response (idempotent behavior)
     return res.json(existingResult.result);
   }
-  
+
   // Process the payment
   const payment = await PaymentService.create(req.body);
-  
+
   // Store the result with the idempotency key
   idempotencyKeys.set(idempotencyKey, {
     result: { data: payment },
     timestamp: new Date()
   });
-  
+
   // Clean up old keys (TTL: 24 hours)
   setTimeout(() => {
     idempotencyKeys.delete(idempotencyKey);
   }, 24 * 60 * 60 * 1000);
-  
+
   res.status(201).json({ data: payment });
 });
 ```
@@ -555,7 +555,7 @@ router.post('/orders', authenticate, async (req, res) => {
   const idempotencyKey = req.headers['idempotency-key'];
   const existingOrder = await OrderService.findByIdempotencyKey(idempotencyKey);
   if (existingOrder) return res.json({ data: existingOrder });
-  
+
   const order = await OrderService.create({ userId: req.user.id, ...req.body });
   res.status(201).json({ data: order });
 });
@@ -586,13 +586,13 @@ router.delete('/orders/:id', authenticate, async (req, res) => {
 router.get('/files/:id/download', async (req, res) => {
   const file = await FileService.findById(req.params.id);
   if (!file) return res.status(404).json({ error: 'File not found' });
-  
+
   res.set({
     'Content-Type': file.mimeType,
     'Content-Disposition': `attachment; filename="${file.name}"`,
     'Content-Length': file.size
   });
-  
+
   const stream = await FileService.getStream(file.id);
   stream.pipe(res);
 });
@@ -605,7 +605,7 @@ router.post('/files', authenticate, upload.single('file'), async (req, res) => {
     size: req.file.size,
     userId: req.user.id
   });
-  
+
   res.status(201).json({ data: file });
 });
 
@@ -613,7 +613,7 @@ router.post('/files', authenticate, upload.single('file'), async (req, res) => {
 router.head('/files/:id', async (req, res) => {
   const file = await FileService.findById(req.params.id);
   if (!file) return res.status(404).end();
-  
+
   res.set({
     'Content-Type': file.mimeType,
     'Content-Length': file.size,
@@ -630,7 +630,7 @@ router.head('/files/:id', async (req, res) => {
 router.get('/notifications', authenticate, async (req, res) => {
   const { since } = req.query;
   const notifications = await NotificationService.findSince(req.user.id, since as string);
-  
+
   res.json({
     data: notifications,
     _links: {
@@ -688,7 +688,7 @@ router.post('/api/payments', async (req, res) => {
   const idempotencyKey = req.headers['idempotency-key'];
   const existing = await PaymentService.findByIdempotencyKey(idempotencyKey);
   if (existing) return res.json({ data: existing });
-  
+
   const payment = await PaymentService.create({ ...req.body, idempotencyKey });
   res.status(201).json({ data: payment });
 });

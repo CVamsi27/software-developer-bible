@@ -119,20 +119,20 @@ Object.entries(routes).forEach(([path, target]) => {
 // Gateway authentication
 const gatewayAuth = async (req, res, next) => {
   const token = extractToken(req);
-  
+
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   try {
     const payload = await verifyToken(token);
     req.user = payload;
-    
+
     // Add user info to headers for downstream services
     req.headers['x-user-id'] = payload.sub;
     req.headers['x-user-role'] = payload.role;
     req.headers['x-user-email'] = payload.email;
-    
+
     next();
   } catch (err) {
     return res.status(401).json({ error: 'Invalid token' });
@@ -178,7 +178,7 @@ app.use('/api', gatewayRateLimit);
 class LoadBalancer {
   private services: Map<string, string[]> = new Map();
   private currentIndex: Map<string, number> = new Map();
-  
+
   constructor() {
     this.services.set('user-service', [
       'http://user-1:3001',
@@ -190,17 +190,17 @@ class LoadBalancer {
       'http://order-2:3002'
     ]);
   }
-  
+
   getNext(serviceName: string): string {
     const instances = this.services.get(serviceName);
     if (!instances || instances.length === 0) {
       throw new Error(`No instances for ${serviceName}`);
     }
-    
+
     const index = this.currentIndex.get(serviceName) || 0;
     const nextIndex = (index + 1) % instances.length;
     this.currentIndex.set(serviceName, nextIndex);
-    
+
     return instances[index];
   }
 }
@@ -208,10 +208,10 @@ class LoadBalancer {
 // Health-check based load balancing
 class HealthAwareLoadBalancer extends LoadBalancer {
   private healthStatus: Map<string, boolean> = new Map();
-  
+
   async checkHealth(serviceName: string): Promise<void> {
     const instances = this.services.get(serviceName) || [];
-    
+
     for (const instance of instances) {
       try {
         await fetch(`${instance}/health`, { timeout: 5000 });
@@ -221,19 +221,19 @@ class HealthAwareLoadBalancer extends LoadBalancer {
       }
     }
   }
-  
+
   getHealthyInstance(serviceName: string): string {
     const instances = this.services.get(serviceName) || [];
     const healthy = instances.filter(i => this.healthStatus.get(i) !== false);
-    
+
     if (healthy.length === 0) {
       throw new Error(`No healthy instances for ${serviceName}`);
     }
-    
+
     const index = this.currentIndex.get(serviceName) || 0;
     const nextIndex = (index + 1) % healthy.length;
     this.currentIndex.set(serviceName, nextIndex);
-    
+
     return healthy[index];
   }
 }
@@ -247,22 +247,22 @@ const requestTransformer = (req, res, next) => {
   // Add gateway headers
   req.headers['x-gateway-timestamp'] = Date.now().toString();
   req.headers['x-request-id'] = generateRequestId();
-  
+
   // Transform request body
   if (req.body) {
     req.body = transformRequestBody(req.body);
   }
-  
+
   // Remove sensitive headers
   delete req.headers['x-internal-token'];
-  
+
   next();
 };
 
 function transformRequestBody(body: any): any {
   // Remove sensitive fields
   const { password, internalId, ...safeBody } = body;
-  
+
   // Add metadata
   return {
     ...safeBody,
@@ -280,13 +280,13 @@ function transformRequestBody(body: any): any {
 // Transform response before sending to client
 const responseTransformer = (req, res, next) => {
   const originalJson = res.json.bind(res);
-  
+
   res.json = (body) => {
     // Transform response
     const transformed = transformResponseBody(body, req);
     return originalJson(transformed);
   };
-  
+
   next();
 };
 
@@ -295,7 +295,7 @@ function transformResponseBody(body: any, req: express.Request): any {
   if (body.pagination) {
     body._links = generatePaginationLinks(body.pagination, req);
   }
-  
+
   // Remove internal fields
   if (body.data && Array.isArray(body.data)) {
     body.data = body.data.map(item => {
@@ -303,13 +303,13 @@ function transformResponseBody(body: any, req: express.Request): any {
       return safeItem;
     });
   }
-  
+
   // Add metadata
   body._meta = {
     requestId: req.headers['x-request-id'],
     timestamp: new Date().toISOString()
   };
-  
+
   return body;
 }
 ```
@@ -338,19 +338,19 @@ function createCircuitBreaker(serviceName: string, target: string) {
       resetTimeout: 30000
     }
   );
-  
+
   breaker.on('open', () => {
     console.log(`Circuit breaker OPEN for ${serviceName}`);
   });
-  
+
   breaker.on('halfOpen', () => {
     console.log(`Circuit breaker HALF-OPEN for ${serviceName}`);
   });
-  
+
   breaker.on('close', () => {
     console.log(`Circuit breaker CLOSED for ${serviceName}`);
   });
-  
+
   breakers.set(serviceName, breaker);
   return breaker;
 }
@@ -395,7 +395,7 @@ app.use((req, res, next) => {
 // Logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
-  
+
   res.on('finish', () => {
     const duration = Date.now() - start;
     console.log({
@@ -408,24 +408,24 @@ app.use((req, res, next) => {
       userAgent: req.headers['user-agent']
     });
   });
-  
+
   next();
 });
 
 // Authentication middleware
 const authenticate = async (req, res, next) => {
   const publicPaths = ['/api/health', '/api/auth/login', '/api/auth/register'];
-  
+
   if (publicPaths.some(p => req.path.startsWith(p))) {
     return next();
   }
-  
+
   const token = req.headers.authorization?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   try {
     const payload = await verifyToken(token);
     req.user = payload;
@@ -545,7 +545,7 @@ app.get('/api/dashboard', async (req, res) => {
     fetchFromService('order-service', `/orders?userId=${req.user.id}`),
     fetchFromService('notification-service', `/notifications?userId=${req.user.id}`)
   ]);
-  
+
   res.json({
     data: {
       user: user.data,
@@ -565,9 +565,9 @@ app.post('/api/users', async (req, res) => {
     name: req.body.name,
     email: req.body.email
   };
-  
+
   const response = await userGrpcClient.createUser(grpcRequest);
-  
+
   res.status(201).json({
     data: {
       id: response.id,
@@ -584,13 +584,13 @@ app.post('/api/users', async (req, res) => {
 // Aggregate paginated results
 app.get('/api/feed', async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
-  
+
   const [posts, stories, recommendations] = await Promise.all([
     fetchFromService('post-service', `/posts?page=${page}&limit=${limit}`),
     fetchFromService('story-service', `/stories?limit=5`),
     fetchFromService('recommendation-service', `/recommendations?userId=${req.user.id}`)
   ]);
-  
+
   res.json({
     data: {
       posts: posts.data,
@@ -607,18 +607,18 @@ app.get('/api/feed', async (req, res) => {
 // Centralized authentication
 app.use('/api', async (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   // Token introspection
   const tokenInfo = await introspectToken(token);
-  
+
   if (!tokenInfo.active) {
     return res.status(401).json({ error: 'Invalid token' });
   }
-  
+
   // Add user context to request
   req.user = {
     id: tokenInfo.sub,
@@ -626,12 +626,12 @@ app.use('/api', async (req, res, next) => {
     roles: tokenInfo.roles,
     permissions: tokenInfo.permissions
   };
-  
+
   // Add headers for downstream services
   req.headers['x-user-id'] = tokenInfo.sub;
   req.headers['x-user-email'] = tokenInfo.email;
   req.headers['x-user-roles'] = tokenInfo.roles.join(',');
-  
+
   next();
 });
 ```

@@ -219,7 +219,7 @@ interface CustomInputProps extends FieldProps {
 
 function CustomInput({ label, type = 'text', placeholder, ...props }: CustomInputProps) {
   const [field, meta] = useField(props);
-  
+
   return (
     <div className="form-group">
       <label htmlFor={field.name}>{label}</label>
@@ -513,7 +513,7 @@ function MultiStepForm() {
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
           {step === 3 && <Step3 />}
-          
+
           <button type="submit">
             {step === 3 ? 'Submit' : 'Next'}
           </button>
@@ -630,7 +630,7 @@ Formik Performance:
 
 ### FAANG-style (5)
 21. **Design a form system for a large application**
-- **Answer**: 
+- **Answer**:
   - Formik for form management
   - Yup for validation
   - Custom Field components
@@ -638,27 +638,27 @@ Formik Performance:
   - Accessibility compliance
 
 22. **How would you migrate from Formik to React Hook Form?**
-- **Answer**: 
+- **Answer**:
   - Migrate validation schemas
   - Replace controlled with uncontrolled components
   - Update form submission logic
   - Test thoroughly
 
 23. **Explain Formik's architecture**
-- **Answer**: 
+- **Answer**:
   - Context-based state management
   - Render props pattern
   - Field-level optimization
   - Yup integration
 
 24. **How do you handle forms in micro-frontends?**
-- **Answer**: 
+- **Answer**:
   - Independent Formik instances
   - Shared validation schemas
   - Event-based communication
 
 25. **Design a form validation system**
-- **Answer**: 
+- **Answer**:
   - Yup schemas for validation
   - Custom validation rules
   - Error formatting

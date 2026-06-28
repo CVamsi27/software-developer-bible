@@ -171,7 +171,7 @@ const mockFetchUser = jest.mocked(fetchUser);
 
 it("should handle API errors", async () => {
   mockFetchUser.mockRejectedValue(new Error("Network error"));
-  
+
   await expect(userService.getUser("123")).rejects.toThrow("Network error");
 });
 ```
@@ -199,10 +199,10 @@ describe("calculateDiscount", () => {
   it("should apply 10% discount for orders over $100", () => {
     // Arrange
     const order = { total: 150 };
-    
+
     // Act
     const discount = calculateDiscount(order);
-    
+
     // Assert
     expect(discount).toBe(15);
   });
@@ -261,9 +261,9 @@ describe("error handling", () => {
 
   it("should handle network errors gracefully", async () => {
     mockFetch.mockRejectedValue(new Error("Network error"));
-    
+
     const result = await service.fetchData();
-    
+
     expect(result).toEqual({ error: "Network error", data: null });
   });
 });
@@ -394,7 +394,7 @@ import { UserProfile } from "./UserProfile";
 describe("UserProfile", () => {
   it("should display user information", async () => {
     render(<UserProfile userId="123" />);
-    
+
     await waitFor(() => {
       expect(screen.getByText("John Doe")).toBeInTheDocument();
     });
@@ -403,11 +403,11 @@ describe("UserProfile", () => {
   it("should handle edit button click", async () => {
     const onEdit = jest.fn();
     const user = userEvent.setup();
-    
+
     render(<UserProfile userId="123" onEdit={onEdit} />);
-    
+
     await user.click(screen.getByRole("button", { name: /edit/i }));
-    
+
     expect(onEdit).toHaveBeenCalledWith("123");
   });
 });
@@ -436,7 +436,7 @@ afterAll(() => server.close());
 describe("UserList", () => {
   it("should display users", async () => {
     render(<UserList />);
-    
+
     await waitFor(() => {
       expect(screen.getByText("John")).toBeInTheDocument();
     });
@@ -448,9 +448,9 @@ describe("UserList", () => {
         return res(ctx.status(500));
       })
     );
-    
+
     render(<UserList />);
-    
+
     await waitFor(() => {
       expect(screen.getByText("Failed to load users")).toBeInTheDocument();
     });
@@ -510,7 +510,7 @@ it("should load data", () => {
 // ✅ GOOD: Proper waiting
 it("should load data", async () => {
   render(<DataComponent />);
-  
+
   await waitFor(() => {
     expect(screen.getByText("Data")).toBeInTheDocument();
   });
@@ -529,7 +529,7 @@ describe("User API Contract", () => {
   it("should return user with required fields", async () => {
     const response = await fetch("/api/users/1");
     const user = await response.json();
-    
+
     expect(user).toHaveProperty("id");
     expect(user).toHaveProperty("name");
     expect(user).toHaveProperty("email");
@@ -540,7 +540,7 @@ describe("User API Contract", () => {
 describe("User API Provider", () => {
   it("should implement consumer contract", async () => {
     const pact = new Pact({ consumer: "Frontend", provider: "Backend" });
-    
+
     await pact.addInteraction({
       state: "user exists",
       uponReceiving: "request for user",
@@ -564,23 +564,23 @@ import { useCounter } from "./useCounter";
 describe("useCounter", () => {
   it("should increment count", () => {
     const { result } = renderHook(() => useCounter(0));
-    
+
     act(() => {
       result.current.increment();
     });
-    
+
     expect(result.current.count).toBe(1);
   });
 
   it("should reset to initial value", () => {
     const { result } = renderHook(() => useCounter(10));
-    
+
     act(() => {
       result.current.increment();
       result.current.increment();
       result.current.reset();
     });
-    
+
     expect(result.current.count).toBe(10);
   });
 });
@@ -606,13 +606,13 @@ const onRenderCallback: ProfilerOnRenderCallback = (
 
 it("should render within time limit", () => {
   const start = performance.now();
-  
+
   render(
     <Profiler id="App" onRender={onRenderCallback}>
       <App />
     </Profiler>
   );
-  
+
   const end = performance.now();
   expect(end - start).toBeLessThan(100); // Under 100ms
 });
@@ -666,7 +666,7 @@ describe("User Repository", () => {
   it("should create and retrieve user", async () => {
     const user = await repo.create({ name: "John", email: "john@test.com" });
     const found = await repo.findById(user.id);
-    
+
     expect(found.name).toBe("John");
   });
 });
@@ -724,7 +724,7 @@ class OrderService {
     private db: Database,
     private email: EmailService
   ) {}
-  
+
   processOrder(order: Order) {
     // Dependencies are injected and can be mocked
   }
@@ -773,7 +773,7 @@ describe("Order Service Integration", () => {
       userId: "123",
       items: [{ productId: "456", quantity: 1 }],
     });
-    
+
     expect(order.status).toBe("confirmed");
     expect(order.paymentId).toBeDefined();
   });
@@ -875,10 +875,10 @@ describe("Authentication", () => {
   });
 
   it("should enforce rate limiting", async () => {
-    const requests = Array(100).fill(null).map(() => 
+    const requests = Array(100).fill(null).map(() =>
       request(app).post("/api/login")
     );
-    
+
     const results = await Promise.all(requests);
     const tooManyRequests = results.filter(r => r.status === 429);
     expect(tooManyRequests.length).toBeGreaterThan(0);
@@ -937,7 +937,7 @@ describe("Query Performance", () => {
     const start = performance.now();
     await db.query("SELECT * FROM users WHERE active = true");
     const duration = performance.now() - start;
-    
+
     expect(duration).toBeLessThan(100);
   });
 });
@@ -1060,21 +1060,21 @@ describe("WebSocket", () => {
   it("should receive real-time updates", async () => {
     const onMessage = jest.fn();
     const service = new RealtimeService();
-    
+
     service.subscribe("updates", onMessage);
-    
+
     // Simulate incoming message
     mockWebSocket.simulateMessage({ type: "update", data: { id: 1 } });
-    
+
     expect(onMessage).toHaveBeenCalledWith({ type: "update", data: { id: 1 } });
   });
 
   it("should reconnect on disconnect", async () => {
     const service = new RealtimeService();
     await service.connect();
-    
+
     mockWebSocket.simulateClose();
-    
+
     // Wait for reconnection attempt
     await waitFor(() => {
       expect(mockWebSocket.connect).toHaveBeenCalledTimes(2);
@@ -1100,9 +1100,9 @@ it("should update internal state", () => {
 it("should increment count on button click", async () => {
   const user = userEvent.setup();
   render(<Counter />);
-  
+
   await user.click(screen.getByRole("button", { name: /increment/i }));
-  
+
   expect(screen.getByText("Count: 1")).toBeInTheDocument();
 });
 
@@ -1110,15 +1110,15 @@ it("should increment count on button click", async () => {
 describe("Order State Machine", () => {
   it("should transition through valid states", () => {
     const machine = new OrderStateMachine();
-    
+
     expect(machine.getState()).toBe("pending");
-    
+
     machine.transition("CONFIRM");
     expect(machine.getState()).toBe("confirmed");
-    
+
     machine.transition("SHIP");
     expect(machine.getState()).toBe("shipped");
-    
+
     machine.transition("DELIVER");
     expect(machine.getState()).toBe("delivered");
   });
@@ -1138,15 +1138,15 @@ const testMetrics = {
   lineCoverage: 85,
   branchCoverage: 80,
   functionCoverage: 90,
-  
+
   // Quality metrics
   defectEscapeRate: 2, // Defects found in production per release
   mutationScore: 75,
-  
+
   // Performance metrics
   testExecutionTime: "45s",
   timeToFirstTest: "2s",
-  
+
   // Maintenance metrics
   flakyTestRate: 1, // Percentage of flaky tests
   testMaintenanceTime: "2h/week",
@@ -1248,19 +1248,19 @@ stages:
       - type-check
       - unit-tests
     timeout: 5m
-    
+
   - name: integration
     jobs:
       - integration-tests
       - contract-tests
     timeout: 15m
-    
+
   - name: e2e
     jobs:
       - e2e-tests
       - visual-regression
     timeout: 30m
-    
+
   - name: deployment
     jobs:
       - deploy-staging
@@ -1286,13 +1286,13 @@ stages:
 // Flaky test detection
 class FlakyTestDetector {
   private results: Map<string, boolean[]> = new Map();
-  
+
   recordResult(testName: string, passed: boolean) {
     const history = this.results.get(testName) || [];
     history.push(passed);
     this.results.set(testName, history.slice(-100)); // Keep last 100 runs
   }
-  
+
   getFlakyTests(): string[] {
     const flaky: string[] = [];
     for (const [name, history] of this.results) {
@@ -1308,11 +1308,11 @@ class FlakyTestDetector {
 // Quarantine system
 class TestQuarantine {
   private quarantined = new Set<string>();
-  
+
   quarantine(testName: string) {
     this.quarantined.add(testName);
   }
-  
+
   shouldRun(testName: string): boolean {
     return !this.quarantined.has(testName);
   }
@@ -1333,22 +1333,22 @@ test("complete e-commerce journey", async ({ page }) => {
   await page.fill('[data-testid="email"]', "user@test.com");
   await page.fill('[data-testid="password"]', "password123");
   await page.click('[data-testid="register"]');
-  
+
   // 2. Browse products
   await page.goto("/products");
   await expect(page.locator('[data-testid="product"]')).toHaveCount(10);
-  
+
   // 3. Add to cart
   await page.click('[data-testid="product-1"]');
   await page.click('[data-testid="add-to-cart"]');
   await expect(page.locator('[data-testid="cart-count"]')).toContainText("1");
-  
+
   // 4. Checkout
   await page.click('[data-testid="checkout"]');
   await page.fill('[data-testid="shipping"]', "123 Main St");
   await page.fill('[data-testid="card"]', "4242424242424242");
   await page.click('[data-testid="complete-purchase"]');
-  
+
   // 5. Verify confirmation
   await expect(page.locator('[data-testid="confirmation"]')).toBeVisible();
 });
@@ -1358,7 +1358,7 @@ class CheckoutPage {
   async fillShipping(address: string) {
     await this.page.fill('[data-testid="shipping"]', address);
   }
-  
+
   async completePurchase() {
     await this.page.click('[data-testid="complete-purchase"]');
   }
@@ -1393,22 +1393,22 @@ const testPriority = {
 function getTestsToRun(changedFiles: string[], timeBudget: number) {
   const allTests = getAllTests();
   const affectedTests = getAffectedTests(changedFiles);
-  
+
   // Always run affected tests
   const testsToRun = [...affectedTests];
-  
+
   // Fill remaining time budget with critical tests
   const remainingTime = timeBudget - estimateExecutionTime(testsToRun);
   const criticalTests = allTests
     .filter(t => t.priority === 'critical')
     .filter(t => !testsToRun.includes(t));
-  
+
   for (const test of criticalTests) {
     if (estimateExecutionTime([...testsToRun, test]) <= timeBudget) {
       testsToRun.push(test);
     }
   }
-  
+
   return testsToRun;
 }
 ```
@@ -1488,13 +1488,13 @@ class LegacyClass {
   process() {
     // Legacy code
   }
-  
+
   // New method for new feature
   processWithFeature() {
     this.process();
     return this.newFeature();
   }
-  
+
   private newFeature() {
     // Testable new code
   }

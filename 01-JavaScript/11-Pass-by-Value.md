@@ -323,10 +323,10 @@ function reducer(state: State, action: Action): State {
       // Bad: Mutates state
       // state.value = action.payload;
       // return state;
-      
+
       // Good: Returns new state
       return { ...state, value: action.payload };
-    
+
     default:
       return state;
   }
@@ -366,12 +366,12 @@ const deep2 = structuredClone(original);
 ```typescript
 class Component {
   private data = { value: 0 };
-  
+
   // Problem: 'this' context lost
   handleClick() {
     console.log(this.data.value);
   }
-  
+
   // Solution: Arrow function or bind
   handleClickFixed = () => {
     console.log(this.data.value);
@@ -564,7 +564,7 @@ A: A copy of the reference is passed. Both the original and the parameter point 
 
 **Q4: What is the difference between mutation and reassignment?**
 
-A: 
+A:
 - **Mutation**: Modifies the object's properties (affects original)
 - **Reassignment**: Changes what the variable points to (doesn't affect original)
 
@@ -615,7 +615,7 @@ frozen.value = 20;  // Silently fails
 
 **Q9: What is the difference between shallow and deep copy?**
 
-A: 
+A:
 - **Shallow copy**: Copies object properties, but nested objects are still references
 - **Deep copy**: Copies everything, including nested objects
 
@@ -636,7 +636,7 @@ A: When an object is created, it's stored in heap memory. Variables hold referen
 
 **Q12: What are the performance implications of copying vs referencing?**
 
-A: 
+A:
 - Referencing: O(1), just copies pointer
 - Shallow copy: O(n), copies n properties
 - Deep copy: O(n*m), copies all nested objects
@@ -651,7 +651,7 @@ A: Structural sharing is when immutable data structures share parts of their str
 
 **Q15: How do you handle large objects efficiently?**
 
-A: 
+A:
 1. Use references when possible
 2. Lazy loading for large properties
 3. WeakMap/WeakRef for caching
@@ -661,33 +661,33 @@ A:
 
 **Q16: Design an immutable state management system.**
 
-A: 
+A:
 ```typescript
 class ImmutableState<T> {
   private history: T[] = [];
   private currentIndex = 0;
-  
+
   constructor(initialState: T) {
     this.history.push(structuredClone(initialState));
   }
-  
+
   get state(): T {
     return this.history[this.currentIndex];
   }
-  
+
   update(updater: (state: T) => T): void {
     const newState = updater(structuredClone(this.state));
     this.history = this.history.slice(0, this.currentIndex + 1);
     this.history.push(newState);
     this.currentIndex++;
   }
-  
+
   undo(): void {
     if (this.currentIndex > 0) {
       this.currentIndex--;
     }
   }
-  
+
   redo(): void {
     if (this.currentIndex < this.history.length - 1) {
       this.currentIndex++;
@@ -698,26 +698,26 @@ class ImmutableState<T> {
 
 **Q17: How would you implement a deep freeze function?**
 
-A: 
+A:
 ```typescript
 function deepFreeze(obj: any): any {
   Object.freeze(obj);
-  
+
   Object.getOwnPropertyNames(obj).forEach(prop => {
-    if (obj[prop] !== null && 
+    if (obj[prop] !== null &&
         (typeof obj[prop] === 'object' || typeof obj[prop] === 'function') &&
         !Object.isFrozen(obj[prop])) {
       deepFreeze(obj[prop]);
     }
   });
-  
+
   return obj;
 }
 ```
 
 **Q18: Analyze the memory implications of different cloning strategies.**
 
-A: 
+A:
 - **Shallow copy**: Low memory, but shared nested objects
 - **Deep copy**: High memory, fully independent
 - **Structural sharing**: Balanced memory, immutable
@@ -725,7 +725,7 @@ A:
 
 **Q19: How do you optimize object copying for performance?**
 
-A: 
+A:
 1. Copy only needed properties
 2. Use typed arrays for numeric data
 3. Implement copy-on-write
@@ -734,7 +734,7 @@ A:
 
 **Q20: What are the security implications of object references?**
 
-A: 
+A:
 1. **Prototype pollution**: Modifying shared prototypes affects all objects
 2. **Information leakage**: References can expose internal state
 3. **Privilege escalation**: Malicious code can modify shared objects
@@ -765,7 +765,7 @@ function addItemSafe(items: string[], item: string) {
 
 **Q22: How do you handle deep cloning efficiently?**
 
-A: 
+A:
 1. Use structuredClone (modern browsers)
 2. JSON.parse(JSON.stringify()) for simple objects
 3. Custom deep clone with circular reference handling
@@ -777,7 +777,7 @@ A: Objects are garbage collected when no references point to them. If you copy a
 
 **Q24: How do different languages handle this differently?**
 
-A: 
+A:
 - **Java**: Primitives by value, objects by reference
 - **Python**: Everything by reference
 - **C++**: Can choose by value or by reference
@@ -785,7 +785,7 @@ A:
 
 **Q25: What are best practices for working with object references?**
 
-A: 
+A:
 1. Document mutation behavior
 2. Use pure functions when possible
 3. Create copies before modification

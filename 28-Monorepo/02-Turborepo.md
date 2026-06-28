@@ -218,17 +218,17 @@ import { join } from 'path';
 // Custom task to generate API types
 export function generateApiTypes() {
   const packages = ['packages/api-client', 'packages/web'];
-  
+
   packages.forEach((pkg) => {
     const configPath = join(pkg, 'turbo.json');
     const config = JSON.parse(readFileSync(configPath, 'utf-8'));
-    
+
     // Add custom task
     config.pipeline['generate:types'] = {
       dependsOn: ['^build'],
       outputs: ['src/types/**'],
     };
-    
+
     writeFileSync(configPath, JSON.stringify(config, null, 2));
   });
 }
@@ -288,30 +288,30 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'pnpm'
-      
+
       - name: Install pnpm
         run: npm install -g pnpm
-      
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      
+
       - name: Build
         run: pnpm turbo build --cache-dir=.turbo
-      
+
       - name: Lint
         run: pnpm turbo lint
-      
+
       - name: Test
         run: pnpm turbo test
 ```
@@ -465,7 +465,7 @@ Cache Hit Rate Optimization:
 
 ### FAANG-style (5)
 21. **Design a Turborepo setup for a large organization**
-    - Answer: 
+    - Answer:
       - Package structure with clear boundaries
       - Remote caching with Vercel/self-hosted
       - CI/CD with affected-based builds
@@ -473,7 +473,7 @@ Cache Hit Rate Optimization:
       - Developer tooling and documentation
 
 22. **How would you optimize Turborepo for a 500+ package monorepo?**
-    - Answer: 
+    - Answer:
       - Remote caching with high hit rates
       - Parallelization across packages
       - Incremental builds
@@ -481,7 +481,7 @@ Cache Hit Rate Optimization:
       - Monitoring and profiling
 
 23. **Explain Turborepo's architecture at scale**
-    - Answer: 
+    - Answer:
       - Task scheduler with dependency graph
       - Content-based hashing
       - Distributed caching
@@ -489,14 +489,14 @@ Cache Hit Rate Optimization:
       - Plugin system for extensions
 
 24. **How do you handle Turborepo in a microservices architecture?**
-    - Answer: 
+    - Answer:
       - Service-specific pipelines
       - Independent deployments
       - Shared libraries via packages
       - Coordinated releases
 
 25. **Design a CI/CD pipeline with Turborepo**
-    - Answer: 
+    - Answer:
       - Detect changes with `turbo run build --dry`
       - Run affected tests
       - Build with caching

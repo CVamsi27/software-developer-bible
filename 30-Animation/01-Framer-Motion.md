@@ -223,7 +223,7 @@ function AnimatePresenceExample() {
       <button onClick={() => setIsVisible(!isVisible)}>
         Toggle
       </button>
-      
+
       <AnimatePresence>
         {isVisible && (
           <motion.div
@@ -248,7 +248,7 @@ function PageTransition() {
     <div>
       <button onClick={() => setPage(1)}>Page 1</button>
       <button onClick={() => setPage(2)}>Page 2</button>
-      
+
       <AnimatePresence mode="wait">
         <motion.div
           key={page}
@@ -285,7 +285,7 @@ function LayoutAnimation() {
   return (
     <LayoutGroup>
       <button onClick={reorder}>Reorder</button>
-      
+
       {items.map((item) => (
         <motion.div
           key={item.id}
@@ -553,7 +553,7 @@ Animation Performance:
 
 ### FAANG-style (5)
 21. **Design an animation system for a design system**
-- **Answer**: 
+- **Answer**:
   - Custom motion components
   - Animation tokens
   - Variants library
@@ -561,28 +561,28 @@ Animation Performance:
   - Accessibility compliance
 
 22. **How would you implement complex animations at scale?**
-- **Answer**: 
+- **Answer**:
   - Animation composition
   - Performance budgets
   - Lazy loading animations
   - Monitoring and metrics
 
 23. **Explain animation performance optimization**
-- **Answer**: 
+- **Answer**:
   - GPU acceleration
   - Will-change management
   - Batch updates
   - Reduced motion support
 
 24. **How do you handle animations in micro-frontends?**
-- **Answer**: 
+- **Answer**:
   - Shared animation library
   - Consistent patterns
   - Performance budgets
   - Testing strategies
 
 25. **Design a page transition system**
-- **Answer**: 
+- **Answer**:
   - Route-based transitions
   - AnimatePresence for exit
   - Layout animations

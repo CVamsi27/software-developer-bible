@@ -368,32 +368,32 @@ class SeatReservationService:
         self.db = db
         self.redis = redis_client
         self.reservation_timeout = 600  # 10 minutes
-    
+
     async def reserve_seats(self, event_id: int, user_id: int,
                            seats: list) -> dict:
         # Use Redis for atomic seat locking
         lock_keys = []
-        
+
         for seat in seats:
             lock_key = f"seat:{event_id}:{seat['section']}:{seat['row']}:{seat['number']}"
             lock_keys.append(lock_key)
-        
+
         # Try to acquire all locks atomically
         pipe = self.redis.pipeline()
         for key in lock_keys:
             pipe.set(key, user_id, nx=True, ex=self.reservation_timeout)
-        
+
         results = pipe.execute()
-        
+
         # Check if all locks acquired
         if not all(results):
             # Release any acquired locks
             for key, acquired in zip(lock_keys, results):
                 if acquired:
                     self.redis.delete(key)
-            
+
             raise SeatUnavailableError("Some seats are no longer available")
-        
+
         # Create reservation in database
         reservation = await self.db.create_reservation(
             user_id=user_id,
@@ -401,23 +401,23 @@ class SeatReservationService:
             seats=seats,
             expires_at=datetime.now() + timedelta(seconds=self.reservation_timeout)
         )
-        
+
         return {
             'reservation_id': reservation['id'],
             'expires_at': reservation['expires_at'],
             'total_amount': sum(s['price'] for s in seats)
         }
-    
+
     async def release_expired_reservations(self):
         # Find expired reservations
         expired = await self.db.get_expired_reservations()
-        
+
         for reservation in expired:
             # Release seat locks in Redis
             for seat in reservation['seats']:
                 lock_key = f"seat:{reservation['event_id']}:{seat['section']}:{seat['row']}:{seat['number']}"
                 self.redis.delete(lock_key)
-            
+
             # Update reservation status
             await self.db.update_reservation_status(
                 reservation['id'], 'expired'
@@ -434,28 +434,28 @@ class BookingService:
         self.payments = payment_service
         self.tickets = ticket_service
         self.notifications = notification_service
-    
+
     async def confirm_booking(self, reservation_id: int,
                              user_id: int, payment_method: dict) -> dict:
         # Get reservation
         reservation = await self.db.get_reservation(reservation_id)
-        
+
         if not reservation or reservation['user_id'] != user_id:
             raise InvalidReservationError("Invalid reservation")
-        
+
         if reservation['status'] != 'active':
             raise ReservationExpiredError("Reservation expired")
-        
+
         # Process payment
         payment = await self.payments.process_payment(
             amount=reservation['total_amount'],
             method=payment_method,
             reference=f"booking_{reservation_id}"
         )
-        
+
         if payment['status'] != 'success':
             raise PaymentFailedError("Payment failed")
-        
+
         # Create booking
         booking = await self.db.create_booking(
             user_id=user_id,
@@ -464,28 +464,28 @@ class BookingService:
             total_amount=reservation['total_amount'],
             payment_id=payment['id']
         )
-        
+
         # Update seat status to booked
         for seat in reservation['seats']:
             await self.db.book_seat(
                 seat['id'], booking['id']
             )
-        
+
         # Generate tickets
         tickets = await self.tickets.generate_tickets(
             booking['id'], reservation['seats']
         )
-        
+
         # Send confirmation
         await self.notifications.send_booking_confirmation(
             user_id, booking, tickets
         )
-        
+
         # Update reservation status
         await self.db.update_reservation_status(
             reservation_id, 'converted'
         )
-        
+
         return {
             'booking_id': booking['id'],
             'tickets': tickets,
@@ -503,18 +503,18 @@ class TicketGeneratorService:
     def __init__(self, db, storage):
         self.db = db
         self.storage = storage
-    
+
     async def generate_tickets(self, booking_id: int,
                                seats: list) -> list:
         tickets = []
-        
+
         for seat in seats:
             # Generate unique ticket code
             ticket_code = self.generate_ticket_code()
-            
+
             # Generate QR code
             qr_code_url = await self.generate_qr_code(ticket_code)
-            
+
             # Create ticket record
             ticket = await self.db.create_ticket(
                 booking_id=booking_id,
@@ -522,37 +522,37 @@ class TicketGeneratorService:
                 ticket_code=ticket_code,
                 qr_code=qr_code_url
             )
-            
+
             tickets.append({
                 'ticket_id': ticket['id'],
                 'ticket_code': ticket_code,
                 'qr_code': qr_code_url,
                 'seat': seat
             })
-        
+
         return tickets
-    
+
     def generate_ticket_code(self) -> str:
         # Generate unique, short ticket code
         return f"TKT{uuid.uuid4().hex[:8].upper()}"
-    
+
     async def generate_qr_code(self, ticket_code: str) -> str:
         # Generate QR code image
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
         qr.add_data(ticket_code)
         qr.make(fit=True)
-        
+
         img = qr.make_image(fill_color="black", back_color="white")
-        
+
         # Save to storage
         buffer = BytesIO()
         img.save(buffer, format='PNG')
-        
+
         url = await self.storage.upload(
             f"tickets/{ticket_code}.png",
             buffer.getvalue()
         )
-        
+
         return url
 ```
 
@@ -562,12 +562,12 @@ class FlashSaleHandler:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
-    async def handle_flash_sale(self, event_id: int, 
+
+    async def handle_flash_sale(self, event_id: int,
                                total_seats: int):
         # Pre-load seat data into Redis
         seats = await self.db.get_event_seats(event_id)
-        
+
         # Create seat availability map in Redis
         for seat in seats:
             key = f"seat:{event_id}:{seat['section']}:{seat['row']}:{seat['number']}"
@@ -575,38 +575,38 @@ class FlashSaleHandler:
                 'status': 'available',
                 'price': seat['price']
             })
-        
+
         # Set sale start time
         self.redis.set(f"sale_start:{event_id}", "active")
-        
+
         # Monitor and handle high concurrency
         await self.process_concurrent_bookings(event_id, total_seats)
-    
+
     async def process_concurrent_bookings(self, event_id: int,
                                          total_seats: int):
         # Use Redis pipeline for atomic operations
         pipe = self.redis.pipeline()
-        
+
         # Track total bookings
         bookings_key = f"bookings:{event_id}"
-        
+
         while True:
             try:
                 # Check if sale is still active
                 if not self.redis.get(f"sale_start:{event_id}"):
                     break
-                
+
                 # Process booking requests
                 await self.process_booking_queue(event_id)
-                
+
                 # Check if sold out
                 booked_count = await self.db.get_booked_count(event_id)
                 if booked_count >= total_seats:
                     self.redis.delete(f"sale_start:{event_id}")
                     break
-                
+
                 await asyncio.sleep(0.1)
-                
+
             except Exception as e:
                 logger.error(f"Flash sale error: {e}")
 ```
@@ -618,29 +618,29 @@ class FlashSaleHandler:
 class SeatCache:
     def __init__(self, redis_client):
         self.redis = redis_client
-    
-    async def get_seat_status(self, event_id: int, 
+
+    async def get_seat_status(self, event_id: int,
                              section: str, row: str,
                              seat_number: int) -> str:
         key = f"seat:{event_id}:{section}:{row}:{seat_number}"
         return await self.redis.hget(key, 'status')
-    
-    async def reserve_seat(self, event_id: int, 
+
+    async def reserve_seat(self, event_id: int,
                           section: str, row: str,
                           seat_number: int, user_id: int,
                           timeout: int = 600) -> bool:
         key = f"seat:{event_id}:{section}:{row}:{seat_number}"
-        
+
         # Atomic reserve
         result = await self.redis.hsetnx(key, 'status', 'reserved')
-        
+
         if result:
             await self.redis.hset(key, 'reserved_by', user_id)
             await self.redis.expire(key, timeout)
             return True
-        
+
         return False
-    
+
     async def release_seat(self, event_id: int,
                           section: str, row: str,
                           seat_number: int):
@@ -655,20 +655,20 @@ class EventCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 300  # 5 minutes
-    
+
     async def get_event(self, event_id: int) -> dict:
         key = f"event:{event_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_event(self, event_id: int, event: dict):
         key = f"event:{event_id}"
         await self.redis.setex(key, self.ttl, json.dumps(event))
-    
+
     async def invalidate_event(self, event_id: int):
         await self.redis.delete(f"event:{event_id}")
 ```
@@ -708,16 +708,16 @@ class BookingEventProcessor:
     def __init__(self, kafka_consumer, notification_service):
         self.consumer = kafka_consumer
         self.notifications = notification_service
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'booking.confirmed':
                 await self.handle_booking_confirmed(event)
             elif event['event_type'] == 'booking.cancelled':
                 await self.handle_booking_cancelled(event)
-    
+
     async def handle_booking_confirmed(self, event: dict):
         # Send confirmation email
         await self.notifications.send_email(
@@ -725,7 +725,7 @@ class BookingEventProcessor:
             'booking_confirmation',
             event['data']
         )
-        
+
         # Send SMS with ticket details
         await self.notifications.send_sms(
             event['data']['user_id'],
@@ -758,10 +758,10 @@ Architecture:
 class BookingDatabaseScaler:
     def __init__(self):
         self.shards = 16
-    
+
     def get_shard(self, event_id: int) -> int:
         return event_id % self.shards
-    
+
     async def get_event_seats(self, event_id: int) -> list:
         shard = self.get_shard(event_id)
         return await self.shards[shard].execute(
@@ -776,17 +776,17 @@ class BookingDatabaseScaler:
 class SeatLockScaler:
     def __init__(self):
         self.redis_clusters = []  # Multiple Redis clusters
-    
+
     def get_cluster(self, event_id: int) -> int:
         return event_id % len(self.redis_clusters)
-    
-    async def reserve_seat(self, event_id: int, 
+
+    async def reserve_seat(self, event_id: int,
                           seat: dict, user_id: int) -> bool:
         cluster = self.get_cluster(event_id)
         redis_client = self.redis_clusters[cluster]
-        
+
         key = f"seat:{event_id}:{seat['section']}:{seat['row']}:{seat['number']}"
-        
+
         return await redis_client.hsetnx(key, 'status', 'reserved')
 ```
 
@@ -798,27 +798,27 @@ class ReservationTimeoutHandler:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
+
     async def start_timeout_processor(self):
         while True:
             try:
                 # Find expired reservations
                 expired = await self.db.get_expired_reservations()
-                
+
                 for reservation in expired:
                     await self.release_reservation(reservation)
-                
+
                 await asyncio.sleep(10)  # Check every 10 seconds
-                
+
             except Exception as e:
                 logger.error(f"Timeout processor error: {e}")
-    
+
     async def release_reservation(self, reservation: dict):
         # Release seats in Redis
         for seat in reservation['seats']:
             key = f"seat:{reservation['event_id']}:{seat['section']}:{seat['row']}:{seat['number']}"
             self.redis.delete(key)
-        
+
         # Update database
         await self.db.update_reservation_status(
             reservation['id'], 'expired'
@@ -840,33 +840,33 @@ class DoubleBookingPrevention:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
+
     async def book_seat(self, seat_id: int, booking_id: int) -> bool:
         # Use distributed lock
         lock_key = f"seat_lock:{seat_id}"
-        
+
         # Try to acquire lock
         lock_acquired = await self.redis.set(
             lock_key, booking_id, nx=True, ex=30
         )
-        
+
         if not lock_acquired:
             return False
-        
+
         try:
             # Check seat status
             seat = await self.db.get_seat(seat_id)
-            
+
             if seat['status'] != 'reserved':
                 return False
-            
+
             # Update to booked
             await self.db.update_seat_status(
                 seat_id, 'booked', booking_id
             )
-            
+
             return True
-            
+
         finally:
             # Release lock
             await self.redis.delete(lock_key)
@@ -901,15 +901,15 @@ alerts:
   - name: High Booking Rate
     condition: bookings_per_minute > 1000
     severity: info
-    
+
   - name: Seat Lock Contention
     condition: lock_acquisition_time > 100ms
     severity: warning
-    
+
   - name: Reservation Expiry Rate High
     condition: expiry_rate > 30%
     severity: warning
-    
+
   - name: Payment Failure Rate
     condition: payment_failure_rate > 5%
     severity: critical

@@ -210,7 +210,7 @@ describe("UserService Integration", () => {
   beforeAll(async () => {
     db = new Database();
     await db.connect();
-    
+
     const userRepository = new UserRepository(db);
     const emailService = new EmailService();
     userService = new UserService(userRepository, emailService);
@@ -270,7 +270,7 @@ describe("UserService Integration", () => {
       const emailService = {
         sendWelcomeEmail: jest.fn(),
       } as any;
-      
+
       const userServiceWithMock = new UserService(
         new UserRepository(db),
         emailService
@@ -339,7 +339,7 @@ export class ProductRepository {
     const setClauses = Object.keys(updates)
       .map((key, index) => `${key} = $${index + 1}`)
       .join(", ");
-    
+
     const values = Object.values(updates);
     values.push(id);
 
@@ -679,11 +679,11 @@ describe("OrderService Integration", () => {
   beforeAll(async () => {
     db = new Database();
     await db.connect();
-    
+
     productRepository = new ProductRepository(db);
     paymentGateway = new PaymentGateway("test-key");
     emailService = new EmailService();
-    
+
     orderService = new OrderService(
       productRepository,
       paymentGateway,
@@ -921,14 +921,14 @@ import { EmailService } from "./emailService";
 
 export function createApp(db: Database) {
   const app = express();
-  
+
   const emailService = new EmailService();
   const userRepository = new UserRepository(db);
   const userService = new UserService(userRepository, emailService);
   const userController = new UserController(userService);
 
   app.use(express.json());
-  
+
   app.get("/api/users/:id", (req, res) => userController.getUser(req, res));
   app.post("/api/users", (req, res) => userController.createUser(req, res));
 

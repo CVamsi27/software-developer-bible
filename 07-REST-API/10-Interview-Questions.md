@@ -147,38 +147,38 @@ import { nanoid } from 'nanoid';
 
 app.post('/api/shorten', authenticate, rateLimiter({ max: 10, windowMs: 60000 }), async (req, res) => {
   const { url, customCode } = req.body;
-  
+
   // Validate URL
   if (!isValidUrl(url)) {
     return res.status(400).json({ error: 'Invalid URL' });
   }
-  
+
   // Check if URL already exists
   const existing = await UrlService.findByOriginal(url, req.user.id);
   if (existing) {
     return res.json({ data: existing });
   }
-  
+
   // Generate or validate custom code
   const shortCode = customCode || nanoid(7);
-  
+
   if (customCode) {
     const exists = await UrlService.findByCode(customCode);
     if (exists) {
       return res.status(409).json({ error: 'Short code already exists' });
     }
   }
-  
+
   // Create short URL
   const shortUrl = await UrlService.create({
     shortCode,
     originalUrl: url,
     userId: req.user.id
   });
-  
+
   // Cache in Redis
   await redis.setex(`url:${shortCode}`, 86400, url);
-  
+
   res.status(201).json({
     data: {
       shortCode,
@@ -191,10 +191,10 @@ app.post('/api/shorten', authenticate, rateLimiter({ max: 10, windowMs: 60000 })
 // Redirect endpoint
 app.get('/:shortCode', async (req, res) => {
   const { shortCode } = req.params;
-  
+
   // Check cache first
   let originalUrl = await redis.get(`url:${shortCode}`);
-  
+
   if (!originalUrl) {
     // Cache miss, fetch from database
     const url = await UrlService.findByCode(shortCode);
@@ -202,18 +202,18 @@ app.get('/:shortCode', async (req, res) => {
       return res.status(404).json({ error: 'Short URL not found' });
     }
     originalUrl = url.originalUrl;
-    
+
     // Cache for next time
     await redis.setex(`url:${shortCode}`, 86400, originalUrl);
   }
-  
+
   // Track click asynchronously
   UrlService.trackClick(shortCode, {
     ip: req.ip,
     userAgent: req.headers['user-agent'],
     referer: req.headers['referer']
   });
-  
+
   // Redirect
   res.redirect(301, originalUrl);
 });
@@ -248,25 +248,25 @@ Pagination Strategies
 app.get('/api/users', async (req, res) => {
   const { cursor, limit = '10' } = req.query;
   const limitNum = Math.min(100, parseInt(limit as string));
-  
+
   let whereClause = {};
   if (cursor) {
     const decoded = JSON.parse(Buffer.from(cursor, 'base64').toString());
     whereClause = { id: { $gt: decoded.id } };
   }
-  
+
   const users = await UserService.findAll({
     where: whereClause,
     limit: limitNum + 1,
     order: [['id', 'ASC']]
   });
-  
+
   const hasMore = users.length > limitNum;
   const data = hasMore ? users.slice(0, limitNum) : users;
   const nextCursor = hasMore
     ? Buffer.from(JSON.stringify({ id: data[data.length - 1].id })).toString('base64')
     : null;
-  
+
   res.json({
     data,
     pagination: { hasMore, nextCursor }
@@ -319,7 +319,7 @@ app.use(cors({
 class TokenBucket {
   private tokens: number;
   private lastRefill: number;
-  
+
   constructor(
     private capacity: number,
     private refillRate: number
@@ -327,7 +327,7 @@ class TokenBucket {
     this.tokens = capacity;
     this.lastRefill = Date.now();
   }
-  
+
   consume(): boolean {
     this.refill();
     if (this.tokens >= 1) {
@@ -336,7 +336,7 @@ class TokenBucket {
     }
     return false;
   }
-  
+
   private refill() {
     const now = Date.now();
     const elapsed = now - this.lastRefill;
@@ -349,20 +349,20 @@ class TokenBucket {
 // Rate limiter middleware
 function rateLimiter(maxRequests: number, windowMs: number) {
   const buckets = new Map<string, TokenBucket>();
-  
+
   return (req, res, next) => {
     const key = req.user?.id || req.ip;
     let bucket = buckets.get(key);
-    
+
     if (!bucket) {
       bucket = new TokenBucket(maxRequests, maxRequests / (windowMs / 1000));
       buckets.set(key, bucket);
     }
-    
+
     if (!bucket.consume()) {
       return res.status(429).json({ error: 'Rate limit exceeded' });
     }
-    
+
     next();
   };
 }
@@ -409,11 +409,11 @@ const generateToken = (user) => {
 
 const authenticate = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(401).json({ error: 'Authentication required' });
   }
-  
+
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     req.user = payload;
@@ -499,7 +499,7 @@ v2Router.get('/users', async (req, res) => {
   const { page, limit } = req.query;
   const users = await UserService.findAll({ page, limit });
   const total = await UserService.count();
-  
+
   res.json({
     data: users,
     pagination: { page, limit, total }
@@ -538,12 +538,12 @@ Features:
 // Feed endpoint with cursor pagination
 app.get('/api/feed', authenticate, async (req, res) => {
   const { cursor, limit = '20' } = req.query;
-  
+
   const feed = await FeedService.getPersonalized(req.user.id, {
     cursor,
     limit: parseInt(limit as string)
   });
-  
+
   res.json({
     data: feed,
     pagination: {
@@ -559,16 +559,16 @@ app.get('/api/feed', authenticate, async (req, res) => {
 app.post('/api/posts', authenticate, upload.single('media'), async (req, res) => {
   const { content } = req.body;
   const mediaUrl = req.file ? await uploadToS3(req.file) : null;
-  
+
   const post = await PostService.create({
     userId: req.user.id,
     content,
     mediaUrl
   });
-  
+
   // Invalidate feed cache
   await cache.invalidate(`feed:${req.user.id}`);
-  
+
   res.status(201).json({ data: post });
 });
 ```

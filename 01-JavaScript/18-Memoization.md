@@ -63,14 +63,14 @@ function memoize<T extends (...args: any[]) => any>(
   fn: T
 ): (...args: Parameters<T>) => ReturnType<T> {
   const cache = new Map<string, ReturnType<T>>();
-  
+
   return function(...args: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify(args);
-    
+
     if (cache.has(key)) {
       return cache.get(key)!;
     }
-    
+
     const result = fn(...args);
     cache.set(key, result);
     return result;
@@ -99,11 +99,11 @@ function fibonacci(n: number): number {
 // With memoization: O(n)
 function fibonacciMemo(n: number, memo: Map<number, number> = new Map()): number {
   if (n <= 1) return n;
-  
+
   if (memo.has(n)) {
     return memo.get(n)!;
   }
-  
+
   const result = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
   memo.set(n, result);
   return result;
@@ -122,11 +122,11 @@ const fib = memoize((n: number): number => {
 class LRUCache<K, V> {
   private cache = new Map<K, V>();
   private maxSize: number;
-  
+
   constructor(maxSize: number) {
     this.maxSize = maxSize;
   }
-  
+
   get(key: K): V | undefined {
     const value = this.cache.get(key);
     if (value !== undefined) {
@@ -136,7 +136,7 @@ class LRUCache<K, V> {
     }
     return value;
   }
-  
+
   set(key: K, value: V) {
     if (this.cache.has(key)) {
       this.cache.delete(key);
@@ -154,15 +154,15 @@ function memoizeWithLRU<T extends (...args: any[]) => any>(
   maxSize: number = 100
 ): (...args: Parameters<T>) => ReturnType<T> {
   const cache = new LRUCache<string, ReturnType<T>>(maxSize);
-  
+
   return function(...args: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify(args);
-    
+
     const cached = cache.get(key);
     if (cached !== undefined) {
       return cached;
     }
-    
+
     const result = fn(...args);
     cache.set(key, result);
     return result;
@@ -180,12 +180,12 @@ function ExpensiveComponent({ items, filter }: Props) {
   const filteredItems = useMemo(() => {
     return items.filter(item => item.category === filter);
   }, [items, filter]);
-  
+
   // Memoize callback
   const handleClick = useCallback((id: string) => {
     console.log(`Clicked ${id}`);
   }, []);
-  
+
   return (
     <ul>
       {filteredItems.map(item => (
@@ -206,16 +206,16 @@ function memoizeWithTTL<T extends (...args: any[]) => any>(
   ttl: number = 60000
 ): (...args: Parameters<T>) => ReturnType<T> {
   const cache = new Map<string, { value: ReturnType<T>; timestamp: number }>();
-  
+
   return function(...args: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify(args);
     const now = Date.now();
-    
+
     const cached = cache.get(key);
     if (cached && now - cached.timestamp < ttl) {
       return cached.value;
     }
-    
+
     const result = fn(...args);
     cache.set(key, { value: result, timestamp: now });
     return result;
@@ -262,12 +262,12 @@ function ProductList({ products, category }: Props) {
     () => products.filter(p => p.category === category),
     [products, category]
   );
-  
+
   const total = useMemo(
     () => filtered.reduce((sum, p) => sum + p.price, 0),
     [filtered]
   );
-  
+
   return (
     <div>
       <p>Total: ${total}</p>
@@ -284,7 +284,7 @@ function ProductList({ products, category }: Props) {
 ```typescript
 function memoize<T extends (...args: any[]) => any>(fn: T) {
   const cache = new Map();
-  
+
   const memoized = function(...args: Parameters<T>) {
     const key = JSON.stringify(args);
     if (cache.has(key)) return cache.get(key);
@@ -292,7 +292,7 @@ function memoize<T extends (...args: any[]) => any>(fn: T) {
     cache.set(key, result);
     return result;
   };
-  
+
   return memoized;
 }
 
@@ -436,7 +436,7 @@ function memoizeWithStats<T extends (...args: any[]) => any>(fn: T) {
   const cache = new Map();
   let hits = 0;
   let misses = 0;
-  
+
   const memoized = function(...args: Parameters<T>) {
     const key = JSON.stringify(args);
     if (cache.has(key)) {
@@ -448,9 +448,9 @@ function memoizeWithStats<T extends (...args: any[]) => any>(fn: T) {
     cache.set(key, result);
     return result;
   };
-  
+
   memoized.getStats = () => ({ hits, misses, ratio: hits / (hits + misses) });
-  
+
   return memoized;
 }
 ```

@@ -236,7 +236,7 @@ while read oldrev newrev refname; do
       exit 1
     fi
   done
-  
+
   # Check for branch naming
   if [[ $refname == refs/heads/main ]] || [[ $refname == refs/heads/develop ]]; then
     # Require PR for main/develop

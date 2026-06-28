@@ -71,7 +71,7 @@ class House {
     public garden: string,
     public garage: string
   ) {}
-  
+
   toString(): string {
     return `
 House:
@@ -99,45 +99,45 @@ interface HouseBuilder {
 // Concrete builder
 class ConcreteHouseBuilder implements HouseBuilder {
   private house: House;
-  
+
   constructor() {
     this.house = new House('', '', '', '', '', '');
   }
-  
+
   reset(): void {
     this.house = new House('', '', '', '', '', '');
   }
-  
+
   buildFoundation(): HouseBuilder {
     this.house.foundation = 'Concrete foundation';
     return this;
   }
-  
+
   buildStructure(): HouseBuilder {
     this.house.structure = 'Wooden structure';
     return this;
   }
-  
+
   buildRoof(): HouseBuilder {
     this.house.roof = 'Tile roof';
     return this;
   }
-  
+
   buildInterior(): HouseBuilder {
     this.house.interior = 'Modern interior';
     return this;
   }
-  
+
   buildGarden(): HouseBuilder {
     this.house.garden = 'Landscaped garden';
     return this;
   }
-  
+
   buildGarage(): HouseBuilder {
     this.house.garage = 'Two-car garage';
     return this;
   }
-  
+
   getResult(): House {
     const result = this.house;
     this.reset();
@@ -148,15 +148,15 @@ class ConcreteHouseBuilder implements HouseBuilder {
 // Director
 class HouseDirector {
   private builder: HouseBuilder;
-  
+
   constructor(builder: HouseBuilder) {
     this.builder = builder;
   }
-  
+
   setBuilder(builder: HouseBuilder): void {
     this.builder = builder;
   }
-  
+
   buildSimpleHouse(): House {
     return this.builder
       .buildFoundation()
@@ -164,7 +164,7 @@ class HouseDirector {
       .buildRoof()
       .getResult();
   }
-  
+
   buildFullHouse(): House {
     return this.builder
       .buildFoundation()
@@ -210,71 +210,71 @@ class QueryBuilder {
   private orderDirection: 'ASC' | 'DESC' = 'ASC';
   private limitValue: number = 0;
   private offsetValue: number = 0;
-  
+
   from(table: string): this {
     this.table = table;
     return this;
   }
-  
+
   select(...fields: string[]): this {
     this.selectFields = fields;
     return this;
   }
-  
+
   where(condition: string): this {
     this.conditions.push(condition);
     return this;
   }
-  
+
   andWhere(condition: string): this {
     this.conditions.push(`AND ${condition}`);
     return this;
   }
-  
+
   orWhere(condition: string): this {
     this.conditions.push(`OR ${condition}`);
     return this;
   }
-  
+
   orderBy(field: string, direction: 'ASC' | 'DESC' = 'ASC'): this {
     this.orderByField = field;
     this.orderDirection = direction;
     return this;
   }
-  
+
   limit(limit: number): this {
     this.limitValue = limit;
     return this;
   }
-  
+
   offset(offset: number): this {
     this.offsetValue = offset;
     return this;
   }
-  
+
   build(): string {
     if (!this.table) {
       throw new Error('Table is required');
     }
-    
+
     let query = `SELECT ${this.selectFields.join(', ')} FROM ${this.table}`;
-    
+
     if (this.conditions.length > 0) {
       query += ` WHERE ${this.conditions.join(' ')}`;
     }
-    
+
     if (this.orderByField) {
       query += ` ORDER BY ${this.orderByField} ${this.orderDirection}`;
     }
-    
+
     if (this.limitValue) {
       query += ` LIMIT ${this.limitValue}`;
     }
-    
+
     if (this.offsetValue) {
       query += ` OFFSET ${this.offsetValue}`;
     }
-    
+
     return query;
   }
 }
@@ -308,7 +308,7 @@ interface HttpRequest {
 
 class HttpRequestBuilder {
   private request: HttpRequest;
-  
+
   constructor() {
     this.request = {
       method: 'GET',
@@ -319,7 +319,7 @@ class HttpRequestBuilder {
       retries: 0
     };
   }
-  
+
   reset(): this {
     this.request = {
       method: 'GET',
@@ -331,53 +331,53 @@ class HttpRequestBuilder {
     };
     return this;
   }
-  
+
   method(method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'): this {
     this.request.method = method;
     return this;
   }
-  
+
   url(url: string): this {
     this.request.url = url;
     return this;
   }
-  
+
   header(key: string, value: string): this {
     this.request.headers[key] = value;
     return this;
   }
-  
+
   headers(headers: Record<string, string>): this {
     Object.assign(this.request.headers, headers);
     return this;
   }
-  
+
   body(body: any): this {
     this.request.body = body;
     return this;
   }
-  
+
   json(data: any): this {
     this.request.body = JSON.stringify(data);
     this.request.headers['Content-Type'] = 'application/json';
     return this;
   }
-  
+
   timeout(timeout: number): this {
     this.request.timeout = timeout;
     return this;
   }
-  
+
   retries(retries: number): this {
     this.request.retries = retries;
     return this;
   }
-  
+
   bearerToken(token: string): this {
     this.request.headers['Authorization'] = `Bearer ${token}`;
     return this;
   }
-  
+
   build(): HttpRequest {
     if (!this.request.url) {
       throw new Error('URL is required');
@@ -423,48 +423,48 @@ interface AppConfig {
 
 class DatabaseConfigBuilder {
   private config: Partial<DatabaseConfig> = {};
-  
+
   host(host: string): this {
     this.config.host = host;
     return this;
   }
-  
+
   port(port: number): this {
     this.config.port = port;
     return this;
   }
-  
+
   credentials(username: string, password: string): this {
     this.config.username = username;
     this.config.password = password;
     return this;
   }
-  
+
   database(database: string): this {
     this.config.database = database;
     return this;
   }
-  
+
   ssl(ssl: boolean): this {
     this.config.ssl = ssl;
     return this;
   }
-  
+
   poolSize(size: number): this {
     this.config.poolSize = size;
     return this;
   }
-  
+
   timeout(timeout: number): this {
     this.config.timeout = timeout;
     return this;
   }
-  
+
   build(): DatabaseConfig {
     if (!this.config.host || !this.config.database) {
       throw new Error('Host and database are required');
     }
-    
+
     return {
       host: this.config.host,
       port: this.config.port || 5432,
@@ -508,7 +508,7 @@ interface Email {
 
 class EmailBuilder {
   private email: Email;
-  
+
   constructor() {
     this.email = {
       to: [],
@@ -522,61 +522,61 @@ class EmailBuilder {
       from: ''
     };
   }
-  
+
   from(address: string): this {
     this.email.from = address;
     return this;
   }
-  
+
   to(address: string): this {
     this.email.to.push(address);
     return this;
   }
-  
+
   cc(address: string): this {
     this.email.cc.push(address);
     return this;
   }
-  
+
   bcc(address: string): this {
     this.email.bcc.push(address);
     return this;
   }
-  
+
   subject(subject: string): this {
     this.email.subject = subject;
     return this;
   }
-  
+
   html(content: string): this {
     this.email.html = content;
     return this;
   }
-  
+
   text(content: string): this {
     this.email.text = content;
     return this;
   }
-  
+
   replyTo(address: string): this {
     this.email.replyTo = address;
     return this;
   }
-  
+
   attach(filename: string, content: Buffer): this {
     this.email.attachments.push({ filename, content });
     return this;
   }
-  
+
   build(): Email {
     if (this.email.to.length === 0) {
       throw new Error('At least one recipient is required');
     }
-    
+
     if (!this.email.subject) {
       throw new Error('Subject is required');
     }
-    
+
     return { ...this.email };
   }
 }
@@ -610,7 +610,7 @@ interface Component {
 
 class ComponentBuilder {
   private component: Component;
-  
+
   constructor(type: string) {
     this.component = {
       type,
@@ -620,37 +620,37 @@ class ComponentBuilder {
       id: ''
     };
   }
-  
+
   id(id: string): this {
     this.component.id = id;
     return this;
   }
-  
+
   className(className: string): this {
     this.component.className = className;
     return this;
   }
-  
+
   prop(key: string, value: any): this {
     this.component.props[key] = value;
     return this;
   }
-  
+
   props(props: Record<string, any>): this {
     Object.assign(this.component.props, props);
     return this;
   }
-  
+
   child(component: Component): this {
     this.component.children.push(component);
     return this;
   }
-  
+
   children(components: Component[]): this {
     this.component.children.push(...components);
     return this;
   }
-  
+
   text(content: string): this {
     this.component.children.push({
       type: 'text',
@@ -661,7 +661,7 @@ class ComponentBuilder {
     });
     return this;
   }
-  
+
   build(): Component {
     return { ...this.component };
   }
@@ -696,7 +696,7 @@ interface User {
 
 class UserTestBuilder {
   private user: Partial<User> = {};
-  
+
   static create(): UserTestBuilder {
     return new UserTestBuilder()
       .id(Math.random().toString(36).substr(2, 9))
@@ -707,46 +707,46 @@ class UserTestBuilder {
       .isActive(true)
       .createdAt(new Date());
   }
-  
+
   id(id: string): this {
     this.user.id = id;
     return this;
   }
-  
+
   name(name: string): this {
     this.user.name = name;
     return this;
   }
-  
+
   email(email: string): this {
     this.user.email = email;
     return this;
   }
-  
+
   age(age: number): this {
     this.user.age = age;
     return this;
   }
-  
+
   role(role: User['role']): this {
     this.user.role = role;
     return this;
   }
-  
+
   isActive(isActive: boolean): this {
     this.user.isActive = isActive;
     return this;
   }
-  
+
   createdAt(date: Date): this {
     this.user.createdAt = date;
     return this;
   }
-  
+
   build(): User {
     return this.user as User;
   }
-  
+
   buildMany(count: number): User[] {
     return Array.from({ length: count }, (_, index) => {
       return new UserTestBuilder()
@@ -779,67 +779,67 @@ class URLBuilder {
   private path: string = '';
   private queryParams: Record<string, string> = {};
   private fragment: string = '';
-  
+
   protocol(protocol: string): this {
     this.protocol = protocol;
     return this;
   }
-  
+
   host(host: string): this {
     this.host = host;
     return this;
   }
-  
+
   port(port: number): this {
     this.port = port;
     return this;
   }
-  
+
   path(path: string): this {
     this.path = path.startsWith('/') ? path : `/${path}`;
     return this;
   }
-  
+
   query(key: string, value: string): this {
     this.queryParams[key] = value;
     return this;
   }
-  
+
   queries(params: Record<string, string>): this {
     Object.assign(this.queryParams, params);
     return this;
   }
-  
+
   fragment(fragment: string): this {
     this.fragment = fragment;
     return this;
   }
-  
+
   build(): string {
     if (!this.host) {
       throw new Error('Host is required');
     }
-    
+
     let url = `${this.protocol}://${this.host}`;
-    
+
     if (this.port) {
       url += `:${this.port}`;
     }
-    
+
     url += this.path;
-    
+
     const queryString = Object.entries(this.queryParams)
       .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
       .join('&');
-    
+
     if (queryString) {
       url += `?${queryString}`;
     }
-    
+
     if (this.fragment) {
       url += `#${this.fragment}`;
     }
-    
+
     return url;
   }
 }
@@ -902,7 +902,7 @@ class CarBuilder {
 class BadBuilder {
   private state: any;
   private dependencies: any[];
-  
+
   // Hard to test and use
 }
 ```

@@ -176,11 +176,11 @@ loose coupling and independent scalability."
 ```
 1. CLARIFY the problem
    "Before I start, let me make sure I understand the requirements..."
-   
+
 2. ORGANIZE your space
    "I'll put the main architecture here, database schema on the right,
     and API endpoints on the left."
-   
+
 3. EXPLAIN your approach
    "I'm going to start with the high-level architecture, then zoom
     into the critical components."

@@ -355,39 +355,39 @@ class TemplateEngine:
         self.db = db
         self.env = Environment(loader=BaseLoader())
         self.cache = {}
-    
+
     async def render_template(self, template_name: str,
-                              variables: dict, 
+                              variables: dict,
                               language: str = 'en') -> dict:
         # Get template from cache or database
         cache_key = f"{template_name}:{language}"
-        
+
         if cache_key not in self.cache:
             template = await self.db.get_template(
                 template_name, language
             )
             self.cache[cache_key] = template
-        
+
         template = self.cache[cache_key]
-        
+
         # Render subject and body
         subject_template = self.env.from_string(
             template['subject'] or ''
         )
         body_template = self.env.from_string(template['body'])
-        
+
         return {
             'subject': subject_template.render(**variables),
             'body': body_template.render(**variables),
             'template_id': template['id']
         }
-    
+
     async def render_multichannel(self, template_name: str,
                                   variables: dict) -> dict:
         # Render for all channels
         channels = ['push', 'email', 'sms', 'in_app']
         results = {}
-        
+
         for channel in channels:
             try:
                 rendered = await self.render_template(
@@ -400,7 +400,7 @@ class TemplateEngine:
                 results[channel] = await self.render_template(
                     template_name, variables
                 )
-        
+
         return results
 ```
 
@@ -414,27 +414,27 @@ class NotificationDispatcher:
         self.push = push_service
         self.email = email_service
         self.sms = sms_service
-    
+
     async def dispatch(self, notification: dict) -> dict:
         user_id = notification['user_id']
         channel = notification['channel']
-        
+
         # Check user preferences
         if not await self.preferences.is_channel_enabled(
             user_id, channel
         ):
             return {'status': 'skipped', 'reason': 'channel_disabled'}
-        
+
         # Check quiet hours
         if await self.preferences.is_quiet_hours(user_id):
             return {'status': 'scheduled', 'reason': 'quiet_hours'}
-        
+
         # Render template
         rendered = await self.templates.render_template(
             notification['template'],
             notification['data']
         )
-        
+
         # Send via appropriate channel
         if channel == 'push':
             result = await self.push.send(user_id, rendered)
@@ -442,7 +442,7 @@ class NotificationDispatcher:
             result = await self.email.send(user_id, rendered)
         elif channel == 'sms':
             result = await self.sms.send(user_id, rendered)
-        
+
         return result
 ```
 
@@ -460,39 +460,39 @@ class NotificationRateLimiter:
             'sms': {'count': 10, 'window': 86400},    # 10/day
             'in_app': {'count': 200, 'window': 3600}  # 200/hour
         }
-    
+
     async def is_allowed(self, user_id: str, channel: str) -> bool:
         limit_config = self.limits.get(channel)
         if not limit_config:
             return True
-        
+
         key = f"rate_limit:{user_id}:{channel}"
-        
+
         # Get current count
         current = await self.redis.get(key)
         if current and int(current) >= limit_config['count']:
             return False
-        
+
         # Increment counter
         pipe = self.redis.pipeline()
         pipe.incr(key)
         pipe.expire(key, limit_config['window'])
         pipe.execute()
-        
+
         return True
-    
-    async def get_remaining(self, user_id: str, 
+
+    async def get_remaining(self, user_id: str,
                            channel: str) -> int:
         limit_config = self.limits.get(channel)
         if not limit_config:
             return float('inf')
-        
+
         key = f"rate_limit:{user_id}:{channel}"
         current = await self.redis.get(key)
-        
+
         if current:
             return max(0, limit_config['count'] - int(current))
-        
+
         return limit_config['count']
 ```
 
@@ -505,14 +505,14 @@ class PushNotificationService:
     def __init__(self, db, redis_client):
         self.db = db
         self.redis = redis_client
-    
+
     async def send(self, user_id: str, notification: dict) -> dict:
         # Get device tokens
         tokens = await self.db.get_device_tokens(user_id)
-        
+
         if not tokens:
             return {'status': 'no_devices'}
-        
+
         # Send to all devices
         results = []
         for token_info in tokens:
@@ -525,14 +525,14 @@ class PushNotificationService:
                     result = await self.send_fcm(
                         token_info['token'], notification
                     )
-                
+
                 results.append(result)
             except Exception as e:
                 # Log failure but continue with other devices
                 logger.error(f"Push failed for {token_info}: {e}")
-        
+
         return {'status': 'sent', 'results': results}
-    
+
     async def send_fcm(self, token: str, notification: dict) -> dict:
         message = messaging.Message(
             notification=messaging.Notification(
@@ -542,10 +542,10 @@ class PushNotificationService:
             data=notification.get('data', {}),
             token=token
         )
-        
+
         response = messaging.send(message)
         return {'message_id': response}
-    
+
     async def send_apns(self, token: str, notification: dict) -> dict:
         # Use HTTP/2 APNs API
         async with aiohttp.ClientSession() as session:
@@ -560,7 +560,7 @@ class PushNotificationService:
                 },
                 'data': notification.get('data', {})
             }
-            
+
             async with session.post(
                 'https://api.push.apple.com/3/device/' + token,
                 json=payload,
@@ -580,11 +580,11 @@ class EmailService:
         self.sg = sendgrid.SendGridAPIClient(
             api_key=os.environ.get('SENDGRID_API_KEY')
         )
-    
+
     async def send(self, user_id: str, notification: dict) -> dict:
         # Get user email
         user = await self.db.get_user(user_id)
-        
+
         # Create message
         message = Mail(
             from_email='noreply@example.com',
@@ -592,7 +592,7 @@ class EmailService:
             subject=notification.get('subject', ''),
             html_content=notification.get('body', '')
         )
-        
+
         # Send
         try:
             response = self.sg.send(message)
@@ -617,11 +617,11 @@ class SMSService:
             os.environ.get('TWILIO_SID'),
             os.environ.get('TWILIO_AUTH_TOKEN')
         )
-    
+
     async def send(self, user_id: str, notification: dict) -> dict:
         # Get user phone
         user = await self.db.get_user(user_id)
-        
+
         # Send SMS
         try:
             message = self.client.messages.create(
@@ -629,7 +629,7 @@ class SMSService:
                 from_='+1234567890',
                 to=user['phone']
             )
-            
+
             return {
                 'status': 'sent',
                 'provider_message_id': message.sid,
@@ -647,24 +647,24 @@ class TemplateCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 3600  # 1 hour
-    
+
     async def get_template(self, template_name: str,
                           language: str) -> dict:
         key = f"template:{template_name}:{language}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
+
     async def set_template(self, template_name: str,
                           language: str, template: dict):
         key = f"template:{template_name}:{language}"
         await self.redis.setex(
             key, self.ttl, json.dumps(template)
         )
-    
+
     async def invalidate(self, template_name: str):
         # Invalidate all language versions
         pattern = f"template:{template_name}:*"
@@ -679,17 +679,17 @@ class PreferencesCache:
     def __init__(self, redis_client):
         self.redis = redis_client
         self.ttl = 300  # 5 minutes
-    
+
     async def get_preferences(self, user_id: str) -> dict:
         key = f"preferences:{user_id}"
         cached = await self.redis.get(key)
-        
+
         if cached:
             return json.loads(cached)
-        
+
         return None
-    
-    async def set_preferences(self, user_id: str, 
+
+    async def set_preferences(self, user_id: str,
                              preferences: dict):
         key = f"preferences:{user_id}"
         await self.redis.setex(
@@ -730,26 +730,26 @@ class NotificationEventProcessor:
         self.consumer = kafka_consumer
         self.dispatcher = dispatcher
         self.analytics = analytics
-    
+
     async def process_events(self):
         async for message in self.consumer:
             event = message.value
-            
+
             if event['event_type'] == 'notification.created':
                 await self.handle_created(event)
             elif event['event_type'] == 'notification.delivered':
                 await self.handle_delivered(event)
-    
+
     async def handle_created(self, event: dict):
         # Dispatch notification
         result = await self.dispatcher.dispatch(event['data'])
-        
+
         # Update status
         await self.update_notification_status(
             event['data']['notification_id'],
             result['status']
         )
-        
+
         # Track analytics
         await self.analytics.track_sent(event['data'])
 ```
@@ -778,10 +778,10 @@ Architecture:
 class NotificationDatabaseScaler:
     def __init__(self):
         self.partitions = 12  # Monthly partitions
-    
+
     def get_partition(self, date: date) -> str:
         return f"notifications_{date.year}_{date.month:02d}"
-    
+
     async def insert_notification(self, notification: dict):
         partition = self.get_partition(notification['created_at'])
         # Insert into appropriate partition
@@ -792,7 +792,7 @@ class NotificationDatabaseScaler:
 class NotificationQueueScaler:
     def __init__(self):
         self.partitions = 16
-    
+
     def get_partition(self, user_id: int) -> int:
         return user_id % self.partitions
 ```
@@ -805,24 +805,24 @@ class NotificationRetry:
     def __init__(self):
         self.max_retries = 3
         self.retry_delays = [60, 300, 900]  # seconds
-    
+
     async def send_with_retry(self, notification: dict,
                               dispatcher):
         for attempt in range(self.max_retries):
             try:
                 result = await dispatcher.dispatch(notification)
-                
+
                 if result['status'] == 'sent':
                     return result
-                
+
             except Exception as e:
                 logger.error(f"Attempt {attempt} failed: {e}")
-                
+
                 if attempt < self.max_retries - 1:
                     await asyncio.sleep(
                         self.retry_delays[attempt]
                     )
-        
+
         # All retries failed
         return {'status': 'failed', 'reason': 'max_retries'}
 ```
@@ -845,23 +845,23 @@ class GracefulDegradation:
             'email': 'sms',
             'sms': 'in_app'
         }
-    
+
     async def send_with_fallback(self, notification: dict,
                                  dispatcher):
         channel = notification['channel']
-        
+
         try:
             result = await dispatcher.dispatch(notification)
-            
+
             if result['status'] == 'failed':
                 # Try fallback channel
                 fallback = self.fallback_channels.get(channel)
                 if fallback:
                     notification['channel'] = fallback
                     return await dispatcher.dispatch(notification)
-            
+
             return result
-            
+
         except Exception:
             # Use fallback channel
             fallback = self.fallback_channels.get(channel)
@@ -899,15 +899,15 @@ alerts:
   - name: High Failure Rate
     condition: failure_rate > 5%
     severity: critical
-    
+
   - name: Queue Backlog
     condition: queue_depth > 100000
     severity: warning
-    
+
   - name: Delivery Latency High
     condition: p95_latency > 10s
     severity: warning
-    
+
   - name: Provider Error Spike
     condition: provider_error_rate > 10%
     severity: critical

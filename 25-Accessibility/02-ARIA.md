@@ -59,15 +59,15 @@ ARIA has three main categories: Roles, States, and Properties:
 ### ARIA States
 ```html
 <!-- Checkbox state -->
-<div 
-  role="checkbox" 
+<div
+  role="checkbox"
   aria-checked="true"
   tabindex="0">
   Option
 </div>
 
 <!-- Expanded state -->
-<button 
+<button
   aria-expanded="true"
   aria-controls="menu1">
   Menu
@@ -86,8 +86,8 @@ ARIA has three main categories: Roles, States, and Properties:
 <div aria-hidden="true">Hidden from screen readers</div>
 
 <!-- Invalid state -->
-<input 
-  type="email" 
+<input
+  type="email"
   aria-invalid="true"
   aria-describedby="email-error">
 <div id="email-error" role="alert">Invalid email</div>
@@ -123,16 +123,16 @@ ARIA has three main categories: Roles, States, and Properties:
 ```html
 <!-- Tabs -->
 <div role="tablist" aria-label="Tabs">
-  <button 
-    role="tab" 
+  <button
+    role="tab"
     id="tab1"
     aria-selected="true"
     aria-controls="panel1"
     tabindex="0">
     Tab 1
   </button>
-  <button 
-    role="tab" 
+  <button
+    role="tab"
     id="tab2"
     aria-selected="false"
     aria-controls="panel2"
@@ -141,16 +141,16 @@ ARIA has three main categories: Roles, States, and Properties:
   </button>
 </div>
 
-<div 
-  role="tabpanel" 
+<div
+  role="tabpanel"
   id="panel1"
   aria-labelledby="tab1"
   tabindex="0">
   Panel 1 content
 </div>
 
-<div 
-  role="tabpanel" 
+<div
+  role="tabpanel"
   id="panel2"
   aria-labelledby="tab2"
   tabindex="0"
@@ -159,7 +159,7 @@ ARIA has three main categories: Roles, States, and Properties:
 </div>
 
 <!-- Modal dialog -->
-<div 
+<div
   role="dialog"
   aria-modal="true"
   aria-labelledby="dialog-title"
@@ -172,13 +172,13 @@ ARIA has three main categories: Roles, States, and Properties:
 <!-- Accordion -->
 <div>
   <h3>
-    <button 
+    <button
       aria-expanded="true"
       aria-controls="section1">
       Section 1
     </button>
   </h3>
-  <div 
+  <div
     id="section1"
     role="region"
     aria-labelledby="section1-heading">
@@ -223,8 +223,8 @@ ARIA has three main categories: Roles, States, and Properties:
     Email <span aria-hidden="true">*</span>
     <span class="sr-only">(required)</span>
   </label>
-  <input 
-    type="email" 
+  <input
+    type="email"
     id="email"
     aria-required="true"
     aria-invalid="false"
@@ -236,8 +236,8 @@ ARIA has three main categories: Roles, States, and Properties:
 <!-- Password strength -->
 <div>
   <label for="password">Password</label>
-  <input 
-    type="password" 
+  <input
+    type="password"
     id="password"
     aria-describedby="password-strength"
     aria-invalid="false">
@@ -249,8 +249,8 @@ ARIA has three main categories: Roles, States, and Properties:
 <!-- Search -->
 <form role="search" aria-label="Site search">
   <label for="search-input">Search</label>
-  <input 
-    type="search" 
+  <input
+    type="search"
     id="search-input"
     aria-describedby="search-hint">
   <div id="search-hint">Type to search</div>

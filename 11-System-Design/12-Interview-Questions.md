@@ -68,7 +68,7 @@ class TokenBucket:
         self.capacity = capacity
         self.tokens = capacity
         self.refill_rate = refill_rate
-    
+
     def allow_request(self):
         if self.tokens > 0:
             self.tokens -= 1
@@ -83,10 +83,10 @@ class SlidingWindowLog:
         self.window_size = window_size
         self.max_requests = max_requests
         self.requests = []
-    
+
     def allow_request(self):
         now = time.time()
-        self.requests = [r for r in self.requests 
+        self.requests = [r for r in self.requests
                         if now - r < self.window_size]
         if len(self.requests) < self.max_requests:
             self.requests.append(now)
@@ -98,12 +98,12 @@ class SlidingWindowLog:
 ```python
 def is_rate_limited(user_id, limit, window):
     key = f"rate_limit:{user_id}"
-    
+
     pipe = redis.pipeline()
     pipe.incr(key)
     pipe.expire(key, window)
     results = pipe.execute()
-    
+
     return results[0] > limit
 ```
 
@@ -220,13 +220,13 @@ class ConsistentHash:
         self.sorted_keys = []
         for node in nodes:
             self.add_node(node)
-    
+
     def add_node(self, node):
         key = hash(node)
         self.ring[key] = node
         self.sorted_keys.append(key)
         self.sorted_keys.sort()
-    
+
     def get_node(self, data_key):
         h = hash(data_key)
         for key in self.sorted_keys:
@@ -310,7 +310,7 @@ class TrieNode:
 class AutocompleteTrie:
     def __init__(self):
         self.root = TrieNode()
-    
+
     def insert(self, word):
         node = self.root
         for char in word:
@@ -319,7 +319,7 @@ class AutocompleteTrie:
             node = node.children[char]
         node.is_end = True
         node.frequency += 1
-    
+
     def search(self, prefix):
         node = self.root
         for char in prefix:
@@ -609,17 +609,17 @@ def process_payment(idempotency_key, payment_data):
     existing = redis.get(f"idempotency:{idempotency_key}")
     if existing:
         return json.loads(existing)
-    
+
     # Process payment
     result = charge(payment_data)
-    
+
     # Store result
     redis.setex(
         f"idempotency:{idempotency_key}",
         86400,
         json.dumps(result)
     )
-    
+
     return result
 ```
 
@@ -657,10 +657,10 @@ Client → API Gateway → Booking Service → Seat Service
 ```python
 def reserve_seat(event_id, seat_id, user_id):
     lock_key = f"seat:{event_id}:{seat_id}"
-    
+
     # Atomic reserve with TTL
     acquired = redis.set(lock_key, user_id, nx=True, ex=600)
-    
+
     if acquired:
         return {"status": "reserved", "expires_in": 600}
     else:
@@ -744,15 +744,15 @@ class DistributedCache:
     def __init__(self, nodes):
         self.ring = ConsistentHash(nodes)
         self.replication_factor = 3
-    
+
     def get(self, key):
         node = self.ring.get_node(key)
         return node.get(key)
-    
+
     def set(self, key, value):
         primary = self.ring.get_node(key)
         primary.set(key, value)
-        
+
         # Replicate
         for i in range(self.replication_factor):
             replica = self.ring.get_node(f"{key}:{i}")
@@ -917,9 +917,9 @@ Order Service → Payment Service → Inventory Service
 class EventStore:
     def append(self, event):
         self.events.append(event)
-    
+
     def get_events(self, aggregate_id):
-        return [e for e in self.events 
+        return [e for e in self.events
                 if e.aggregate_id == aggregate_id]
 ```
 
@@ -960,7 +960,7 @@ Producers → Kafka → Stream Processing → OLAP Database
 
 **Stream Processing:**
 ```sql
-SELECT 
+SELECT
     window_start,
     COUNT(*) as event_count,
     AVG(value) as avg_value
@@ -1049,12 +1049,12 @@ User Activity → Event Stream → Feature Store → ML Model
 def collaborative_filtering(user_id, matrix):
     # Find similar users
     similar_users = find_similar_users(user_id, matrix)
-    
+
     # Get their preferences
     recommendations = []
     for user in similar_users:
         recommendations.extend(get_user_preferences(user))
-    
+
     return rank_recommendations(recommendations)
 ```
 
@@ -1066,7 +1066,7 @@ def content_based(user_profile, items):
     for item in items:
         score = cosine_similarity(user_profile, item.features)
         scores.append((item, score))
-    
+
     return sorted(scores, key=lambda x: x[1], reverse=True)
 ```
 
@@ -1113,17 +1113,17 @@ class Edge:
 def shortest_path(graph, start, end):
     queue = [(start, [start])]
     visited = {start}
-    
+
     while queue:
         node, path = queue.pop(0)
         if node == end:
             return path
-        
+
         for neighbor in graph[node].edges:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append((neighbor, path + [neighbor]))
-    
+
     return None
 ```
 
@@ -1163,11 +1163,11 @@ class CircuitBreaker:
     def __init__(self):
         self.failure_count = 0
         self.state = "CLOSED"
-    
+
     def call(self, func):
         if self.state == "OPEN":
             raise CircuitOpenError()
-        
+
         try:
             result = func()
             self.failure_count = 0
@@ -1248,13 +1248,13 @@ Query ← Read Model ← Projection ← Event Handler
 class EventStore:
     def __init__(self):
         self.events = []
-    
+
     def append(self, event):
         self.events.append(event)
         self.publish(event)
-    
+
     def get_events(self, aggregate_id):
-        return [e for e in self.events 
+        return [e for e in self.events
                 if e.aggregate_id == aggregate_id]
 ```
 
@@ -1300,13 +1300,13 @@ Control Plane → Experiment Runner → Target System
 def inject_partition(service_a, service_b):
     # Block traffic between services
     iptables.block(service_a, service_b)
-    
+
     # Monitor impact
     metrics = monitor(service_a, service_b)
-    
+
     # Restore
     iptables.allow(service_a, service_b)
-    
+
     return analyze(metrics)
 ```
 
@@ -1315,10 +1315,10 @@ def inject_partition(service_a, service_b):
 def cpu_stress(target, duration):
     # Inject CPU load
     stress_ng.cpu(target, duration)
-    
+
     # Monitor recovery
     metrics = monitor(target)
-    
+
     return analyze(metrics)
 ```
 

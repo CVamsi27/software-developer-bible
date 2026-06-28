@@ -74,7 +74,7 @@ class BubbleSort<T> implements SortStrategy<T> {
     }
     return arr;
   }
-  
+
   getName(): string {
     return 'Bubble Sort';
   }
@@ -84,14 +84,14 @@ class QuickSort<T> implements SortStrategy<T> {
   sort(data: T[]): T[] {
     const arr = [...data];
     if (arr.length <= 1) return arr;
-    
+
     const pivot = arr[0];
     const left = arr.slice(1).filter(x => x <= pivot);
     const right = arr.slice(1).filter(x => x > pivot);
-    
+
     return [...this.sort(left), pivot, ...this.sort(right)];
   }
-  
+
   getName(): string {
     return 'Quick Sort';
   }
@@ -101,18 +101,18 @@ class MergeSort<T> implements SortStrategy<T> {
   sort(data: T[]): T[] {
     const arr = [...data];
     if (arr.length <= 1) return arr;
-    
+
     const mid = Math.floor(arr.length / 2);
     const left = this.sort(arr.slice(0, mid));
     const right = this.sort(arr.slice(mid));
-    
+
     return this.merge(left, right);
   }
-  
+
   private merge(left: T[], right: T[]): T[] {
     const result: T[] = [];
     let i = 0, j = 0;
-    
+
     while (i < left.length && j < right.length) {
       if (left[i] <= right[j]) {
         result.push(left[i++]);
@@ -120,10 +120,10 @@ class MergeSort<T> implements SortStrategy<T> {
         result.push(right[j++]);
       }
     }
-    
+
     return result.concat(left.slice(i), right.slice(j));
   }
-  
+
   getName(): string {
     return 'Merge Sort';
   }
@@ -132,15 +132,15 @@ class MergeSort<T> implements SortStrategy<T> {
 // Context
 class Sorter<T> {
   private strategy: SortStrategy<T>;
-  
+
   constructor(strategy: SortStrategy<T>) {
     this.strategy = strategy;
   }
-  
+
   setStrategy(strategy: SortStrategy<T>): void {
     this.strategy = strategy;
   }
-  
+
   sort(data: T[]): T[] {
     console.log(`Sorting with ${this.strategy.getName()}`);
     return this.strategy.sort(data);
@@ -177,24 +177,24 @@ interface PaymentResult {
 class CreditCardPayment implements PaymentStrategy {
   private cardNumber: string;
   private cvv: string;
-  
+
   constructor(cardNumber: string, cvv: string) {
     this.cardNumber = cardNumber;
     this.cvv = cvv;
   }
-  
+
   async pay(amount: number): Promise<PaymentResult> {
     console.log(`Processing credit card payment of $${amount}`);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     return {
       success: true,
       transactionId: 'cc_' + Date.now(),
       message: 'Credit card payment successful'
     };
   }
-  
+
   getPaymentMethod(): string {
     return 'Credit Card';
   }
@@ -202,22 +202,22 @@ class CreditCardPayment implements PaymentStrategy {
 
 class PayPalPayment implements PaymentStrategy {
   private email: string;
-  
+
   constructor(email: string) {
     this.email = email;
   }
-  
+
   async pay(amount: number): Promise<PaymentResult> {
     console.log(`Processing PayPal payment of $${amount} for ${this.email}`);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     return {
       success: true,
       transactionId: 'pp_' + Date.now(),
       message: 'PayPal payment successful'
     };
   }
-  
+
   getPaymentMethod(): string {
     return 'PayPal';
   }
@@ -226,23 +226,23 @@ class PayPalPayment implements PaymentStrategy {
 class BankTransferPayment implements PaymentStrategy {
   private accountNumber: string;
   private routingNumber: string;
-  
+
   constructor(accountNumber: string, routingNumber: string) {
     this.accountNumber = accountNumber;
     this.routingNumber = routingNumber;
   }
-  
+
   async pay(amount: number): Promise<PaymentResult> {
     console.log(`Processing bank transfer of $${amount}`);
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     return {
       success: true,
       transactionId: 'bt_' + Date.now(),
       message: 'Bank transfer initiated'
     };
   }
-  
+
   getPaymentMethod(): string {
     return 'Bank Transfer';
   }
@@ -252,27 +252,27 @@ class BankTransferPayment implements PaymentStrategy {
 class ShoppingCart {
   private items: Array<{ name: string; price: number }> = [];
   private paymentStrategy: PaymentStrategy | null = null;
-  
+
   addItem(name: string, price: number): void {
     this.items.push({ name, price });
   }
-  
+
   setPaymentStrategy(strategy: PaymentStrategy): void {
     this.paymentStrategy = strategy;
   }
-  
+
   getTotal(): number {
     return this.items.reduce((sum, item) => sum + item.price, 0);
   }
-  
+
   async checkout(): Promise<PaymentResult> {
     if (!this.paymentStrategy) {
       throw new Error('No payment method selected');
     }
-    
+
     const total = this.getTotal();
     console.log(`Checking out ${this.items.length} items for $${total}`);
-    
+
     return this.paymentStrategy.pay(total);
   }
 }
@@ -313,7 +313,7 @@ class EmailNotificationStrategy implements NotificationStrategy {
     // Simulate email sending
     return true;
   }
-  
+
   getName(): string {
     return 'Email';
   }
@@ -325,7 +325,7 @@ class SlackNotificationStrategy implements NotificationStrategy {
     // Simulate Slack API call
     return true;
   }
-  
+
   getName(): string {
     return 'Slack';
   }
@@ -337,7 +337,7 @@ class SMSNotificationStrategy implements NotificationStrategy {
     // Simulate SMS sending
     return true;
   }
-  
+
   getName(): string {
     return 'SMS';
   }
@@ -349,7 +349,7 @@ class PushNotificationStrategy implements NotificationStrategy {
     // Simulate push notification
     return true;
   }
-  
+
   getName(): string {
     return 'Push';
   }
@@ -359,40 +359,40 @@ class PushNotificationStrategy implements NotificationStrategy {
 class NotificationService {
   private strategies: Map<string, NotificationStrategy> = new Map();
   private defaultStrategy: NotificationStrategy;
-  
+
   constructor(defaultStrategy: NotificationStrategy) {
     this.defaultStrategy = defaultStrategy;
   }
-  
+
   registerStrategy(name: string, strategy: NotificationStrategy): void {
     this.strategies.set(name, strategy);
   }
-  
+
   setDefaultStrategy(strategy: NotificationStrategy): void {
     this.defaultStrategy = strategy;
   }
-  
+
   async send(notification: Notification, strategyName?: string): Promise<boolean> {
-    const strategy = strategyName 
-      ? this.strategies.get(strategyName) 
+    const strategy = strategyName
+      ? this.strategies.get(strategyName)
       : this.defaultStrategy;
-    
+
     if (!strategy) {
       throw new Error(`Strategy ${strategyName} not found`);
     }
-    
+
     console.log(`Sending via ${strategy.getName()}`);
     return strategy.send(notification);
   }
-  
+
   async sendToAll(notification: Notification): Promise<boolean[]> {
     const results: boolean[] = [];
-    
+
     for (const strategy of this.strategies.values()) {
       const result = await strategy.send(notification);
       results.push(result);
     }
-    
+
     return results;
   }
 }
@@ -434,11 +434,11 @@ class NoDiscount implements DiscountStrategy {
   calculateDiscount(amount: number): number {
     return 0;
   }
-  
+
   getName(): string {
     return 'No Discount';
   }
-  
+
   getMinAmount(): number {
     return 0;
   }
@@ -446,19 +446,19 @@ class NoDiscount implements DiscountStrategy {
 
 class PercentageDiscount implements DiscountStrategy {
   private percentage: number;
-  
+
   constructor(percentage: number) {
     this.percentage = percentage;
   }
-  
+
   calculateDiscount(amount: number): number {
     return amount * (this.percentage / 100);
   }
-  
+
   getName(): string {
     return `${this.percentage}% Discount`;
   }
-  
+
   getMinAmount(): number {
     return 0;
   }
@@ -467,23 +467,23 @@ class PercentageDiscount implements DiscountStrategy {
 class FixedAmountDiscount implements DiscountStrategy {
   private discountAmount: number;
   private minAmount: number;
-  
+
   constructor(discountAmount: number, minAmount: number) {
     this.discountAmount = discountAmount;
     this.minAmount = minAmount;
   }
-  
+
   calculateDiscount(amount: number): number {
     if (amount >= this.minAmount) {
       return this.discountAmount;
     }
     return 0;
   }
-  
+
   getName(): string {
     return `$${this.discountAmount} off (min $${this.minAmount})`;
   }
-  
+
   getMinAmount(): number {
     return this.minAmount;
   }
@@ -497,11 +497,11 @@ class BuyOneGetOneFree implements DiscountStrategy {
     const averagePrice = amount / itemCount;
     return freeItems * averagePrice;
   }
-  
+
   getName(): string {
     return 'Buy One Get One Free';
   }
-  
+
   getMinAmount(): number {
     return 0;
   }
@@ -511,37 +511,37 @@ class BuyOneGetOneFree implements DiscountStrategy {
 class Order {
   private items: Array<{ name: string; price: number; quantity: number }> = [];
   private discountStrategy: DiscountStrategy;
-  
+
   constructor(discountStrategy: DiscountStrategy = new NoDiscount()) {
     this.discountStrategy = discountStrategy;
   }
-  
+
   addItem(name: string, price: number, quantity: number = 1): void {
     this.items.push({ name, price, quantity });
   }
-  
+
   setDiscountStrategy(strategy: DiscountStrategy): void {
     this.discountStrategy = strategy;
   }
-  
+
   getSubtotal(): number {
     return this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   }
-  
+
   getItemCount(): number {
     return this.items.reduce((sum, item) => sum + item.quantity, 0);
   }
-  
+
   getDiscount(): number {
     const subtotal = this.getSubtotal();
     const context = { itemCount: this.getItemCount() };
     return this.discountStrategy.calculateDiscount(subtotal, context);
   }
-  
+
   getTotal(): number {
     return this.getSubtotal() - this.getDiscount();
   }
-  
+
   getSummary(): string {
     return `
 Order Summary:
@@ -586,7 +586,7 @@ class JWTAuthStrategy implements AuthStrategy {
     // Validate JWT token
     return { id: '1', name: 'John' };
   }
-  
+
   getName(): string {
     return 'JWT';
   }
@@ -598,7 +598,7 @@ class OAuthStrategy implements AuthStrategy {
     // Exchange code for token, get user info
     return { id: '2', name: 'Jane' };
   }
-  
+
   getName(): string {
     return 'OAuth';
   }
@@ -610,7 +610,7 @@ class APIKeyStrategy implements AuthStrategy {
     // Validate API key
     return { id: '3', name: 'API User' };
   }
-  
+
   getName(): string {
     return 'API Key';
   }
@@ -623,17 +623,17 @@ interface User {
 
 class AuthService {
   private strategies: Map<string, AuthStrategy> = new Map();
-  
+
   registerStrategy(name: string, strategy: AuthStrategy): void {
     this.strategies.set(name, strategy);
   }
-  
+
   async login(strategyName: string, credentials: any): Promise<User | null> {
     const strategy = this.strategies.get(strategyName);
     if (!strategy) {
       throw new Error(`Auth strategy ${strategyName} not found`);
     }
-    
+
     return strategy.authenticate(credentials);
   }
 }
@@ -655,14 +655,14 @@ interface ValidationResult {
 class RequiredFieldValidation implements ValidationStrategy {
   validate(data: any): ValidationResult {
     const errors: string[] = [];
-    
+
     if (!data || Object.keys(data).length === 0) {
       errors.push('Data is required');
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
-  
+
   getName(): string {
     return 'Required Field';
   }
@@ -672,14 +672,14 @@ class EmailValidation implements ValidationStrategy {
   validate(data: { email: string }): ValidationResult {
     const errors: string[] = [];
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!data.email || !emailRegex.test(data.email)) {
       errors.push('Invalid email format');
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
-  
+
   getName(): string {
     return 'Email';
   }
@@ -687,29 +687,29 @@ class EmailValidation implements ValidationStrategy {
 
 class PasswordValidation implements ValidationStrategy {
   private minLength: number;
-  
+
   constructor(minLength: number = 8) {
     this.minLength = minLength;
   }
-  
+
   validate(data: { password: string }): ValidationResult {
     const errors: string[] = [];
-    
+
     if (!data.password || data.password.length < this.minLength) {
       errors.push(`Password must be at least ${this.minLength} characters`);
     }
-    
+
     if (!/[A-Z]/.test(data.password)) {
       errors.push('Password must contain at least one uppercase letter');
     }
-    
+
     if (!/[0-9]/.test(data.password)) {
       errors.push('Password must contain at least one number');
     }
-    
+
     return { isValid: errors.length === 0, errors };
   }
-  
+
   getName(): string {
     return 'Password';
   }
@@ -717,21 +717,21 @@ class PasswordValidation implements ValidationStrategy {
 
 class ValidationService {
   private strategies: ValidationStrategy[] = [];
-  
+
   addStrategy(strategy: ValidationStrategy): void {
     this.strategies.push(strategy);
   }
-  
+
   validate(data: any): ValidationResult {
     const allErrors: string[] = [];
-    
+
     for (const strategy of this.strategies) {
       const result = strategy.validate(data);
       if (!result.isValid) {
         allErrors.push(...result.errors);
       }
     }
-    
+
     return {
       isValid: allErrors.length === 0,
       errors: allErrors
@@ -755,12 +755,12 @@ class GzipCompression implements CompressionStrategy {
     // Simulate gzip compression
     return data;
   }
-  
+
   decompress(data: Buffer): Buffer {
     console.log('Decompressing with Gzip...');
     return data;
   }
-  
+
   getName(): string {
     return 'Gzip';
   }
@@ -771,12 +771,12 @@ class DeflateCompression implements CompressionStrategy {
     console.log('Compressing with Deflate...');
     return data;
   }
-  
+
   decompress(data: Buffer): Buffer {
     console.log('Decompressing with Deflate...');
     return data;
   }
-  
+
   getName(): string {
     return 'Deflate';
   }
@@ -787,12 +787,12 @@ class BrotliCompression implements CompressionStrategy {
     console.log('Compressing with Brotli...');
     return data;
   }
-  
+
   decompress(data: Buffer): Buffer {
     console.log('Decompressing with Brotli...');
     return data;
   }
-  
+
   getName(): string {
     return 'Brotli';
   }
@@ -800,20 +800,20 @@ class BrotliCompression implements CompressionStrategy {
 
 class FileCompressor {
   private strategy: CompressionStrategy;
-  
+
   constructor(strategy: CompressionStrategy) {
     this.strategy = strategy;
   }
-  
+
   setStrategy(strategy: CompressionStrategy): void {
     this.strategy = strategy;
   }
-  
+
   compressFile(data: Buffer): Buffer {
     console.log(`Compressing file with ${this.strategy.getName()}`);
     return this.strategy.compress(data);
   }
-  
+
   decompressFile(data: Buffer): Buffer {
     console.log(`Decompressing file with ${this.strategy.getName()}`);
     return this.strategy.decompress(data);
@@ -856,7 +856,7 @@ class QuickSort {
 class ComplexStrategy {
   private state: any;
   private dependencies: any[];
-  
+
   // This makes the strategy hard to use and test
 }
 ```
@@ -867,7 +867,7 @@ class ComplexStrategy {
 // ❌ BAD - No default strategy
 class Context {
   private strategy: Strategy | null = null;
-  
+
   execute() {
     if (!this.strategy) {
       throw new Error('No strategy set');
@@ -898,7 +898,7 @@ class SimpleStrategy implements Strategy {
     // No instance variables, pure function
     return data.map(item => item * 2);
   }
-  
+
   getName(): string {
     return 'Simple';
   }
@@ -911,7 +911,7 @@ class SimpleStrategy implements Strategy {
 // ✅ GOOD - Default strategy
 class Context {
   private strategy: Strategy;
-  
+
   constructor(strategy: Strategy = new DefaultStrategy()) {
     this.strategy = strategy;
   }

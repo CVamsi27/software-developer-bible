@@ -14,6 +14,7 @@ Next.js supports multiple rendering strategies that determine **where** and **wh
 ## Why Do We Need It?
 
 Different pages have different requirements:
+
 - A **marketing page** rarely changes → SSG is optimal
 - A **user dashboard** with personalized data → SSR ensures fresh data
 - A **blog post** published occasionally → ISR gives static performance with freshness
@@ -92,6 +93,7 @@ Choosing the wrong strategy leads to stale data, slow loads, or unnecessary serv
 │        ▼                                                           │
 │  Next request gets fresh HTML                                      │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -132,6 +134,7 @@ export default function Dashboard() {
     </div>
   )
 }
+
 ```
 
 ### CSR — Client-Side Rendering (App Router)
@@ -166,6 +169,7 @@ export default function Dashboard() {
     </div>
   )
 }
+
 ```
 
 ### SSR — Server-Side Rendering (Pages Router)
@@ -213,6 +217,7 @@ export default function Profile({ user }: ProfileProps) {
     </div>
   )
 }
+
 ```
 
 ### SSR — Server-Side Rendering (App Router)
@@ -250,6 +255,7 @@ export default async function ProfilePage() {
     </div>
   )
 }
+
 ```
 
 ### SSG — Static Site Generation (Pages Router)
@@ -301,6 +307,7 @@ export default function BlogPost({ post }: PostProps) {
     </article>
   )
 }
+
 ```
 
 ### SSG — Static Site Generation (App Router)
@@ -351,6 +358,7 @@ export default async function BlogPost({
     </article>
   )
 }
+
 ```
 
 ### ISR — Incremental Static Regeneration (Pages Router)
@@ -397,6 +405,7 @@ export default function Product({ product }: { product: Product }) {
     </div>
   )
 }
+
 ```
 
 ### ISR — Incremental Static Regeneration (App Router)
@@ -438,6 +447,7 @@ export default async function ProductPage({
     </div>
   )
 }
+
 ```
 
 ### On-Demand Revalidation (ISR)
@@ -466,6 +476,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ revalidated: true, timestamp: Date.now() })
 }
+
 ```
 
 ### Fallback Rendering Strategies
@@ -484,6 +495,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // 'blocking': wait for server render, no fallback UI
   }
 }
+
 ```
 
 ```tsx
@@ -494,6 +506,7 @@ export async function generateStaticParams() {
   const posts = await fetchPosts()
   return posts.map(post => ({ slug: post.slug }))
 }
+
 ```
 
 ### Middleware with ISR
@@ -513,6 +526,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: '/products/:path*'
 }
+
 ```
 
 ## Real-World Use Cases
@@ -544,6 +558,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await fetchStaticContent()
   return { props: { data }, revalidate: 3600 }
 }
+
 ```
 
 ### 2. Exposing Sensitive Data in SSG
@@ -563,6 +578,7 @@ export const getStaticProps: GetStaticProps = async () => {
   })
   return { props: { data: await res.json() } }
 }
+
 ```
 
 ### 3. Forgetting revalidate in ISR
@@ -580,6 +596,7 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 300 // Update every 5 minutes
   }
 }
+
 ```
 
 ### 4. Mixing CSR and SSR Incorrectly
@@ -601,6 +618,7 @@ export default function Page({ initialData }) {
 
   return <div>Width: {width}</div>
 }
+
 ```
 
 ### 5. Not Handling Loading States
@@ -616,18 +634,27 @@ export default function Page({ data }) {
 export default function Loading() {
   return <div>Loading products...</div>
 }
+
 ```
 
 ## Best Practices
 
 1. **Default to SSG** — Start with static, add revalidation only when needed
+
 2. **Use ISR for content that updates** — Blog posts, product pages, news
+
 3. **Use SSR only when required** — Personalized dashboards, real-time data
+
 4. **Use CSR for highly interactive widgets** — When server rendering adds no value
+
 5. **Set appropriate revalidation intervals** — Balance freshness vs performance
+
 6. **Use on-demand revalidation** — Trigger updates via webhooks instead of polling
+
 7. **Implement proper error boundaries** — Handle failures gracefully
+
 8. **Use `next/dynamic` for heavy client components** — Code-split when possible
+
 9. **Test all rendering strategies** — They behave differently in development
 10. **Monitor build times** — Too many static pages increase build duration
 
@@ -649,6 +676,7 @@ CSR:  Large JS bundle (full React + page logic)
 SSR:  Large JS bundle + server rendering overhead
 SSG:  Large JS bundle, but pre-rendered HTML (fast paint)
 ISR:  Same as SSG, with periodic regeneration
+
 ```
 
 ## Interview Questions
@@ -804,6 +832,7 @@ force-static    → Force SSG
 force-dynamic   → Force SSR
 no-store        → No caching (SSR)
 no-cache        → Revalidate every time
+
 ```
 
 ## References & Learn More

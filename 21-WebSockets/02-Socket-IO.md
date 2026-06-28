@@ -25,13 +25,17 @@ Socket.io Transport Selection:
 
 1. Try WebSocket (fastest)
    ↓ (if fails)
+
 2. Try HTTP Long Polling
    ↓ (if fails)
+
 3. Try HTTP Streaming
    ↓ (if fails)
+
 4. Connection failed
 
 Result: Best available transport selected automatically
+
 ```
 
 ## How It Works
@@ -40,9 +44,12 @@ Result: Best available transport selected automatically
 
 ```text
 +-------------------+        +-------------------+        +-------------------+
+
 |     Client        |        |      Server       |        |     Database      |
 |   (Browser)       |        |   (Node.js)       |        |   (MongoDB)       |
+
 +-------------------+        +-------------------+        +-------------------+
+
         |                             |                           |
         |  1. HTTP GET /socket.io/    |                           |
         |---------------------------> |                           |
@@ -64,17 +71,23 @@ Result: Best available transport selected automatically
         |                             |                           |
         |  7. on('event', callback)   |                           |
         | <---------------------------| <--------------------------|
+
 ```
 
 ### Connection Lifecycle
 
 ```text
 +-----------+     +-----------+     +-----------+     +-----------+
+
 | CONNECTING| --> | CONNECTED | --> | RECONNECT | --> | DISCONNECT|
+
 +-----------+     +-----------+     +-----------+     +-----------+
+
       |                |                 |                 |
+
       | Transport      | Events flow     | Auto-retry     | Max attempts
       | negotiation    | both ways       | with backoff   | reached
+
 ```
 
 ## Code Examples
@@ -128,6 +141,7 @@ io.on('connection', (socket) => {
 });
 
 httpServer.listen(3000);
+
 ```
 
 ### Basic Client Setup
@@ -188,6 +202,7 @@ function sendWithAck(data: unknown): void {
     }
   });
 }
+
 ```
 
 ### Rooms
@@ -266,6 +281,7 @@ class RoomManager {
     socket.broadcast.emit(event, data);
   }
 }
+
 ```
 
 ### Namespaces
@@ -330,6 +346,7 @@ function sendNotification(userId: string, notification: Notification): void {
 function broadcastToTopic(topic: string, data: unknown): void {
   notificationsNamespace.to(`topic:${topic}`).emit('topic-update', data);
 }
+
 ```
 
 ### Events & Broadcasting
@@ -386,6 +403,7 @@ chatNamespace.on('connection', (socket) => {
     socket.broadcast.emit('room-update', data);
   });
 });
+
 ```
 
 ### Acknowledgments
@@ -440,6 +458,7 @@ function emitWithAck<T>(event: string, data: unknown): Promise<T> {
 
 // Usage
 const result = await emitWithAck<{ id: string }>('save-message', { content: 'Hello' });
+
 ```
 
 ### Reconnection Handling
@@ -519,6 +538,7 @@ class ResilientSocketClient {
     // Log for monitoring
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -580,6 +600,7 @@ class ChatServer {
     });
   }
 }
+
 ```
 
 ### 2. Collaborative Document Editing
@@ -630,6 +651,7 @@ class DocumentCollaboration {
     );
   }
 }
+
 ```
 
 ### 3. Live Auction System
@@ -694,6 +716,7 @@ class AuctionServer {
     );
   }
 }
+
 ```
 
 ### 4. Multiplayer Game
@@ -754,6 +777,7 @@ class GameServer {
     });
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -785,6 +809,7 @@ io.on('connection', (socket) => {
     this.notifyFriends(userId, 'offline');
   });
 });
+
 ```
 
 ### 2. Not Validating Data
@@ -815,6 +840,7 @@ socket.on('send-message', (data, callback) => {
     callback({ success: false, error: error.message });
   }
 });
+
 ```
 
 ### 3. Memory Leaks
@@ -845,6 +871,7 @@ io.on('connection', (socket) => {
     // Clean up any other resources
   });
 });
+
 ```
 
 ### 4. Not Using Rooms Properly
@@ -862,6 +889,7 @@ socket.on('send-message', (data) => {
     sender: socket.id,
   });
 });
+
 ```
 
 ### 5. Missing Error Handling
@@ -886,6 +914,7 @@ socket.on('save-data', async (data, callback) => {
     });
   }
 });
+
 ```
 
 ## Best Practices
@@ -919,6 +948,7 @@ adminNamespace.use((socket, next) => {
   }
   next();
 });
+
 ```
 
 ### 2. Rate Limiting
@@ -953,6 +983,7 @@ io.use((socket, next) => {
   }
   next();
 });
+
 ```
 
 ### 3. Graceful Shutdown
@@ -974,6 +1005,7 @@ process.on('SIGTERM', () => {
     process.exit(1);
   }, 30000);
 });
+
 ```
 
 ### 4. Monitoring & Logging
@@ -1000,6 +1032,7 @@ io.use((socket, next) => {
   };
   next();
 });
+
 ```
 
 ### 5. Security
@@ -1030,6 +1063,7 @@ const io = new Server(httpServer, {
 const io = new Server(httpServer, {
   maxHttpBufferSize: 1e6, // 1MB
 });
+
 ```
 
 ## Interview Questions
@@ -1037,30 +1071,35 @@ const io = new Server(httpServer, {
 ### Beginner (5)
 
 1. **What is Socket.io and how does it differ from WebSockets?**
+
    - Socket.io is a library built on top of WebSockets
    - Provides automatic fallback to HTTP long-polling
    - Offers rooms, namespaces, and acknowledgments
    - Handles reconnection automatically
 
 2. **What are Socket.io rooms?**
+
    - Virtual channels that clients can join/leave
    - Enable scoped broadcasting
    - Useful for chat rooms, game lobbies, etc.
    - Managed server-side with `socket.join()` and `socket.leave()`
 
 3. **What are Socket.io namespaces?**
+
    - Separate communication channels on a single connection
    - Allow logical separation of concerns
    - Can have their own middleware and event handlers
    - Default namespace is `/`
 
 4. **How does Socket.io handle reconnection?**
+
    - Automatic reconnection with exponential backoff
    - Configurable retry attempts and delays
    - Transport fallback on each attempt
    - State preservation across reconnections
 
 5. **What are acknowledgments in Socket.io?**
+
    - Callbacks that confirm message receipt
    - Server can acknowledge client messages
    - Client can acknowledge server messages
@@ -1069,30 +1108,35 @@ const io = new Server(httpServer, {
 ### Intermediate (5-8)
 
 6. **How do you implement real-time notifications with Socket.io?**
+
    - Use namespaces for notification types
    - Implement user-specific rooms
    - Handle presence/online status
    - Queue notifications for offline users
 
 7. **How do you handle Socket.io in a multi-server environment?**
+
    - Use Redis adapter for pub/sub
    - Implement sticky sessions
    - Share session state across servers
    - Use message brokers for cross-server communication
 
 8. **How do you secure Socket.io connections?**
+
    - Implement JWT authentication
    - Use WSS (WebSocket Secure)
    - Validate all incoming data
    - Rate limit connections and messages
 
 9. **How do you optimize Socket.io performance?**
+
    - Enable message compression
    - Use binary protocol when possible
    - Implement message batching
    - Monitor and tune buffer sizes
 
 10. **How do you handle Socket.io in microservices?**
+
     - Use Redis for cross-service communication
     - Implement service discovery
     - Use API gateway for WebSocket routing
@@ -1101,6 +1145,7 @@ const io = new Server(httpServer, {
 ### Senior (8-12)
 
 11. **Design a scalable chat system with Socket.io**
+
     - Connection management with Redis
     - Message persistence with Cassandra
     - Presence service with heartbeat
@@ -1108,24 +1153,28 @@ const io = new Server(httpServer, {
     - Push notification fallback
 
 12. **How do you handle message ordering in Socket.io?**
+
     - Use sequence numbers
     - Implement vector clocks
     - Consider CRDTs for conflict resolution
     - Use message queues for ordering guarantees
 
 13. **How do you implement Socket.io clustering?**
+
     - Use PM2 or Node.js cluster module
     - Redis adapter for cross-process communication
     - Sticky sessions for connection affinity
     - Health checks and load balancing
 
 14. **How do you monitor Socket.io in production?**
+
     - Track connection metrics
     - Monitor message rates
     - Alert on error rates
     - Dashboard for real-time visibility
 
 15. **How do you handle Socket.io during deployments?**
+
     - Graceful shutdown with connection draining
     - Version negotiation between client and server
     - Session migration between servers
@@ -1134,6 +1183,7 @@ const io = new Server(httpServer, {
 ### FAANG-style (5-8)
 
 16. **Design a real-time collaboration system (Google Docs)**
+
     - Operational Transform implementation
     - Conflict resolution strategies
     - Undo/redo with operation history
@@ -1141,6 +1191,7 @@ const io = new Server(httpServer, {
     - Version history and persistence
 
 17. **Design a multiplayer game backend**
+
     - Deterministic game loop
     - State synchronization (full vs delta)
     - Client-side prediction
@@ -1148,6 +1199,7 @@ const io = new Server(httpServer, {
     - Anti-cheat measures
 
 18. **Design a real-time analytics dashboard**
+
     - Data aggregation and filtering
     - WebSocket connection management
     - Data compression and optimization
@@ -1155,6 +1207,7 @@ const io = new Server(httpServer, {
     - Export and sharing capabilities
 
 19. **Design a live streaming chat system**
+
     - Message moderation and filtering
     - Emote and sticker handling
     - Donation and super chat features
@@ -1162,6 +1215,7 @@ const io = new Server(httpServer, {
     - Scale to millions of viewers
 
 20. **Design a collaborative design tool (Figma)**
+
     - Real-time cursor tracking
     - Operation transformation for design elements
     - Version control and history
@@ -1171,18 +1225,21 @@ const io = new Server(httpServer, {
 ### Follow-ups (5-8)
 
 21. **How do you test Socket.io applications?**
+
     - Unit tests for handlers
     - Integration tests with mock servers
     - Load testing with Artillery
     - Chaos engineering for failure scenarios
 
 22. **How do you handle Socket.io in mobile apps?**
+
     - Background connection management
     - Battery optimization
     - Network change handling
     - Push notification integration
 
 23. **What are common Socket.io pitfalls?**
+
     - Memory leaks from event listeners
     - Not handling disconnects
     - Broadcasting to wrong rooms
@@ -1190,6 +1247,7 @@ const io = new Server(httpServer, {
     - Not validating data
 
 24. **How do you debug Socket.io issues?**
+
     - Enable debug logging
     - Monitor network traffic
     - Use browser dev tools
@@ -1197,6 +1255,7 @@ const io = new Server(httpServer, {
     - Connection state tracking
 
 25. **How do you migrate from Socket.io to native WebSockets?**
+
     - Evaluate feature requirements
     - Implement WebSocket fallback
     - Migrate event handlers
@@ -1215,6 +1274,7 @@ Socket.io simplifies real-time communication with:
 - **Binary support**: Automatic binary detection
 
 Key best practices:
+
 - Always authenticate connections
 - Validate all incoming data
 - Use rooms for scoped broadcasting

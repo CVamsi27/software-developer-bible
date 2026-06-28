@@ -24,14 +24,19 @@
 │   Awaited<T>      - Unwrap Promise type                         │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **DRY principle**: Avoid repeating type transformations
+
 2. **Type safety**: Perform complex type operations safely
+
 3. **Code generation**: Create derived types from existing ones
+
 4. **API design**: Transform types for DTOs, responses, etc.
+
 5. **React patterns**: Type components, hooks, and state
 
 ## How It Works
@@ -64,6 +69,7 @@ function updateUser(id: string, updates: Partial<User>): Promise<User> {
 updateUser("1", { name: "Bob" });           // ✅ Only update name
 updateUser("1", { email: "new@b.com" });    // ✅ Only update email
 updateUser("1", { name: "Bob", age: 25 });  // ✅ Update multiple
+
 ```
 
 ### Required<T>
@@ -88,6 +94,7 @@ function createServer(config: RequiredConfig): Server {
   // config.host is guaranteed to be string
   return new Server(config.host, config.port, config.debug);
 }
+
 ```
 
 ### Readonly<T>
@@ -114,6 +121,7 @@ function useState<T>(initial: T): [Readonly<T>, (new: T) => void] {
   const setState = (newState: T) => { state = newState; };
   return [state, setState];
 }
+
 ```
 
 ### Pick<T, K>
@@ -139,6 +147,7 @@ type UserPreview = Pick<User, "id" | "name" | "email">;
 function getUserPreview(id: string): Promise<UserPreview> {
   return fetch(`/api/users/${id}?fields=id,name,email`);
 }
+
 ```
 
 ### Omit<T, K>
@@ -171,6 +180,7 @@ function createUser(data: CreateUserDTO): Promise<User> {
     })
   });
 }
+
 ```
 
 ### Record<K, T>
@@ -204,6 +214,7 @@ type StatusMessages = Record<
   "success" | "error" | "warning",
   { message: string; code: number }
 >;
+
 ```
 
 ### Exclude<T, U>
@@ -222,6 +233,7 @@ type SafeSortFields = Exclude<AllSortFields, "password">;
 function sortBy(field: SafeSortFields): void {
   // Can't sort by password
 }
+
 ```
 
 ### Extract<T, U>
@@ -236,6 +248,7 @@ type ActiveStatus = Extract<Status, "active" | "inactive">;
 type Event = "click" | "scroll" | "resize" | "load";
 type MouseEvents = Extract<Event, "click" | "scroll">;
 // "click" | "scroll"
+
 ```
 
 ### NonNullable<T>
@@ -254,6 +267,7 @@ function processValue(value: string | null): string {
   // value is string (NonNullable applied by control flow)
   return value.toUpperCase();
 }
+
 ```
 
 ### Parameters<T>
@@ -278,6 +292,7 @@ function debounce<T extends (...args: any[]) => any>(
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 }
+
 ```
 
 ### ReturnType<T>
@@ -302,6 +317,7 @@ function createInitialState() {
 
 type State = ReturnType<typeof createInitialState>;
 // { items: string[]; loading: boolean; error: string | null }
+
 ```
 
 ### InstanceType<T>
@@ -322,6 +338,7 @@ type UserInstance = InstanceType<typeof User>;
 function createUserService(UserModel: new (...args: any[]) => User): UserInstance {
   return new UserModel("default", "default@example.com");
 }
+
 ```
 
 ### Awaited<T>
@@ -339,6 +356,7 @@ async function fetchData(): Promise<Promise<string>> {
 
 type DataType = Awaited<ReturnType<typeof fetchData>>;
 // string
+
 ```
 
 ## Code Examples
@@ -376,6 +394,7 @@ type UserListResponse = ApiResponse<User[]>;
 type GetUserById = (id: string) => Promise<User | null>;
 type GetUserParams = Parameters<GetUserById>;  // [string]
 type GetUserReturn = ReturnType<GetUserById>;  // Promise<User | null>
+
 ```
 
 ### React Patterns
@@ -407,6 +426,7 @@ function useUser(id: string) {
 
 type UseUserReturn = ReturnType<typeof useUser>;
 // { user: User | null; loading: boolean; error: string | null }
+
 ```
 
 ## Common Mistakes
@@ -424,6 +444,7 @@ function updateUser(user: Partial<User>) {
 function updateUser(id: string, updates: Omit<Partial<User>, "id">) {
   return db.update(id, updates);
 }
+
 ```
 
 ### 2. Mixing Utility Types Unnecessarily
@@ -438,6 +459,7 @@ type UserUpdate = {
   email?: string;
   role?: User["role"];
 };
+
 ```
 
 ### 3. Forgetting Utility Types Exist
@@ -454,6 +476,7 @@ type UserWithoutPassword = {
 
 // ✅ Good: Use utility type
 type UserWithoutPassword = Omit<User, "password">;
+
 ```
 
 ## Best Practices
@@ -474,6 +497,7 @@ type SafeSortFields = Exclude<SortField, "password" | "email">;
 
 // 5. Use Parameters/ReturnType for function types
 type Handler = (...args: Parameters<typeof originalHandler>) => void;
+
 ```
 
 ## Performance Considerations
@@ -489,71 +513,91 @@ type Handler = (...args: Parameters<typeof originalHandler>) => void;
 ### Beginner
 
 1. **What is Partial<T>?**
+
    - Makes all properties of T optional
 
 2. **What is the difference between Pick and Omit?**
+
    - Pick extracts specified properties; Omit removes them
 
 3. **How do you make all properties required?**
+
    - Use `Required<T>`
 
 4. **What does Record<K, V> create?**
+
    - An object type with keys K and values V
 
 5. **How do you extract function parameter types?**
+
    - Use `Parameters<T>`
 
 ### Intermediate
 
 6. **When would you use Exclude vs Extract?**
+
    - Exclude removes types from a union; Extract keeps only matching types
 
 7. **How do you create a type with all readonly properties?**
+
    - Use `Readonly<T>`
 
 8. **What does NonNullable<T> do?**
+
    - Removes null and undefined from a type
 
 9. **How do you get the return type of an async function?**
+
    - Use `ReturnType<T>` which gives `Promise<T>`, or `Awaited<ReturnType<T>>` to unwrap
 
 10. **Can you chain utility types?**
+
     - Yes: `Partial<Omit<User, "id">>`
 
 ### Senior
 
 11. **Design a type system for a CRUD API using utility types**
+
     - Entity, CreateDTO, UpdateDTO, Response types
 
 12. **How would you implement a type-safe deep partial?**
+
     - Use recursive mapped types with Partial
 
 13. **Explain the relationship between Pick and Omit**
+
     - `Omit<T, K>` is equivalent to `Pick<T, Exclude<keyof T, K>>`
 
 14. **How do you type a function that transforms an object?**
+
     - Use mapped types with conditional types
 
 ### FAANG-style
 
 15. **Build a type-safe form validation system**
+
     - Use Partial for optional fields, Record for error maps
 
 16. **Implement a type-safe state management solution**
+
     - Use utility types for state, actions, and reducers
 
 17. **Create a type-safe API client**
+
     - Use ReturnType, Parameters for method signatures
 
 ### Follow-ups
 
 18. **How do utility types interact with generics?**
+
     - Utility types can be used inside generic constraints
 
 19. **Can you create custom utility types?**
+
     - Yes: Use mapped types, conditional types, and infer
 
 20. **How do you debug complex utility types?**
+
     - Use IDE hover, or create intermediate type aliases
 
 ## Summary
@@ -583,6 +627,7 @@ InstanceType<T>  // Class instance type
 
 // Promise unwrapping
 Awaited<T>       // Unwrap Promise recursively
+
 ```
 
 ## References & Learn More

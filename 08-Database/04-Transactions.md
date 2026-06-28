@@ -48,6 +48,7 @@ A transaction is a logical unit of work that contains one or more SQL statements
 │  │                Transaction Complete                   │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Isolation Levels
@@ -68,6 +69,7 @@ A transaction is a logical unit of work that contains one or more SQL statements
 Dirty Read: Reading uncommitted data from another transaction
 Non-Repeatable Read: Same query returns different results within transaction
 Phantom Read: New rows appear between reads in a transaction
+
 ```
 
 ## Code Examples
@@ -85,6 +87,7 @@ UPDATE accounts SET balance = balance + 100.00 WHERE id = 2;
 SELECT balance FROM accounts WHERE id IN (1, 2);
 
 COMMIT;  -- Or ROLLBACK if something went wrong
+
 ```
 
 ### Transaction with Error Handling
@@ -114,6 +117,7 @@ EXCEPTION WHEN OTHERS THEN
     RAISE NOTICE 'Transaction rolled back: %', SQLERRM;
 END;
 $$;
+
 ```
 
 ### Savepoints
@@ -134,6 +138,7 @@ ROLLBACK TO SAVEPOINT order_created;
 
 -- Order exists, but items were rolled back
 COMMIT;
+
 ```
 
 ### Isolation Level Examples
@@ -168,6 +173,7 @@ BEGIN;
 -- Conflicts cause serialization failure
 SELECT * FROM accounts WHERE id IN (1, 2);
 COMMIT;
+
 ```
 
 ### Advisory Locks
@@ -183,6 +189,7 @@ COMMIT;
 -- Try-lock (non-blocking)
 SELECT pg_try_advisory_lock(12345);
 -- Returns true if lock acquired, false if not
+
 ```
 
 ### Prisma Transactions
@@ -238,6 +245,7 @@ async function createOrderWithItems(
     }),
   ]);
 }
+
 ```
 
 ## Real-World Use Cases
@@ -272,6 +280,7 @@ INSERT INTO transfers (from_id, to_id, amount, created_at)
 VALUES (1, 2, 100, NOW());
 
 COMMIT;
+
 ```
 
 ### Inventory Management
@@ -299,6 +308,7 @@ INSERT INTO orders (product_id, user_id, quantity)
 VALUES (1, 123, 1);
 
 COMMIT;
+
 ```
 
 ### User Registration with Duplicate Check
@@ -321,6 +331,7 @@ INSERT INTO profiles (user_id, bio)
 VALUES (currval('users_id_seq'), '');
 
 COMMIT;
+
 ```
 
 ## Common Mistakes
@@ -339,6 +350,7 @@ COMMIT;  -- Locks held for hours!
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 COMMIT;  -- Release locks immediately
+
 ```
 
 ### 2. Not Using FOR UPDATE
@@ -356,6 +368,7 @@ BEGIN;
 SELECT balance FROM accounts WHERE id = 1 FOR UPDATE;  -- Lock row
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 COMMIT;
+
 ```
 
 ### 3. Implicit Commit
@@ -370,6 +383,7 @@ INSERT INTO order_items (...) VALUES (...);
 
 -- GOOD: Separate DDL from transactions
 -- Run DDL outside of transaction blocks
+
 ```
 
 ## Best Practices
@@ -416,6 +430,7 @@ SELECT
 FROM pg_stat_activity
 WHERE state != 'idle'
 AND query_start < now() - interval '5 minutes';
+
 ```
 
 ## Performance Considerations
@@ -446,6 +461,7 @@ SET lock_timeout = '10s';
 -- WAL impact
 -- Each transaction generates WAL
 -- Frequent commits = more WAL = more I/O
+
 ```
 
 ## Interview Questions
@@ -583,6 +599,7 @@ SELECT pg_advisory_unlock(key);
 
 -- Monitoring
 SELECT * FROM pg_stat_activity WHERE state = 'active';
+
 ```
 
 ## References & Learn More

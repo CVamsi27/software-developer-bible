@@ -3,13 +3,21 @@
 ## Table of Contents
 
 1. [Why Communication Matters](#why-communication-matters)
+
 2. [The Communication Framework](#the-communication-framework)
+
 3. [Technical Explanation Style](#technical-explanation-style)
+
 4. [Whiteboard Communication](#whiteboard-communication)
+
 5. [System Design Communication](#system-design-communication)
+
 6. [Asking Clarifying Questions](#asking-clarifying-questions)
+
 7. [Handling Pushback](#handling-pushback)
+
 8. [Virtual Interview Communication](#virtual-interview-communication)
+
 9. [Body Language & Presence](#body-language--presence)
 10. [Common Communication Pitfalls](#common-communication-pitfalls)
 
@@ -36,6 +44,7 @@ At the senior level, technical skill is assumed. What differentiates candidates 
 □ Do you ask the right questions before jumping to solutions?
 □ Can you defend your decisions without being defensive?
 □ Do you acknowledge uncertainty honestly?
+
 ```
 
 ---
@@ -57,6 +66,7 @@ At the senior level, technical skill is assumed. What differentiates candidates 
 For any technical question, structure your response:
 
 ```text
+
 1. High-Level Answer (30 seconds)
    "The short answer is [X]. Here's why..."
 
@@ -65,6 +75,7 @@ For any technical question, structure your response:
 
 3. Practical Application (30 seconds)
    "In practice, I've used this when [real-world example]..."
+
 ```
 
 **Example:**
@@ -93,6 +104,7 @@ Question: "How does React's virtual DOM work?"
    a parent re-render was cascading unnecessary child updates. Using
    React.memo and useCallback at the right boundaries reduced the
    diff scope by 80%."
+
 ```
 
 ---
@@ -135,6 +147,7 @@ The tradeoff: you now have distributed system challenges — network
 failures, data consistency, and operational complexity. That's why
 many companies start with a well-structured monolith and migrate
 to microservices when the team size justifies the complexity."
+
 ```
 
 ### Jargon Navigation
@@ -148,6 +161,7 @@ failures — essentially, when a downstream service starts failing,
 the circuit breaker 'trips' and immediately returns a fallback response
 instead of waiting for timeouts, which prevents the calling service
 from hanging."
+
 ```
 
 ### Visual Communication
@@ -165,6 +179,7 @@ Client App → API Gateway → Authentication Service
 The key point is that each service owns its own database. They
 communicate through events via the message queue, which gives us
 loose coupling and independent scalability."
+
 ```
 
 ---
@@ -174,6 +189,7 @@ loose coupling and independent scalability."
 ### Before You Start Drawing
 
 ```text
+
 1. CLARIFY the problem
    "Before I start, let me make sure I understand the requirements..."
 
@@ -184,6 +200,7 @@ loose coupling and independent scalability."
 3. EXPLAIN your approach
    "I'm going to start with the high-level architecture, then zoom
     into the critical components."
+
 ```
 
 ### While Drawing
@@ -191,6 +208,7 @@ loose coupling and independent scalability."
 **Rules for whiteboard clarity:**
 
 ```text
+
 1. Label EVERYTHING
    ❌ Drawing boxes without labels
    ✅ "This is the API Gateway, here we have the User Service..."
@@ -211,28 +229,45 @@ loose coupling and independent scalability."
 
 5. Keep it high-level first
    Draw the big picture, then zoom into components as needed.
+
 ```
 
 ### Common Whiteboard Scenarios
 
 **System Design Whiteboard:**
+
 ```text
+
 1. Clarify requirements (2 min)
+
 2. Draw high-level architecture (5 min)
+
 3. Identify key components (3 min)
+
 4. Deep dive into critical path (10 min)
+
 5. Address scalability and failure modes (5 min)
+
 6. Summarize tradeoffs (3 min)
+
 ```
 
 **Coding Whiteboard:**
+
 ```text
+
 1. Restate the problem (1 min)
+
 2. Clarify edge cases (2 min)
+
 3. Discuss approach and complexity (3 min)
+
 4. Write code (15 min)
+
 5. Walk through examples (3 min)
+
 6. Discuss optimizations (5 min)
+
 ```
 
 ### Handling Mistakes on the Whiteboard
@@ -243,6 +278,7 @@ now I realize [Y] would be better because [reason]. Let me adjust..."
 
 Don't: Erase frantically, look flustered, or pretend it was intentional
 Do: Acknowledge the correction calmly, explain your reasoning
+
 ```
 
 ---
@@ -263,6 +299,7 @@ Questions to ask:
 • "What are the latency requirements?"
 • "What consistency guarantees do we need?"
 • "Is this a greenfield or migration?"
+
 ```
 
 **Phase 2: High-Level Design (25-30% of time)**
@@ -277,6 +314,7 @@ Communication pattern:
 Here are the main components: [list them].
 The data flow is: [trace a request through the system].
 Does this high-level design make sense before I go deeper?"
+
 ```
 
 **Phase 3: Deep Dive (40-50% of time)**
@@ -295,6 +333,7 @@ Let me walk you through why...
 [Consider alternatives]
 
 Would you like me to go deeper on this component or move to another area?"
+
 ```
 
 **Phase 4: Tradeoffs & Wrap-up (10-15% of time)**
@@ -310,6 +349,7 @@ Communication pattern:
 • If we needed to [change requirement], we'd modify [component]
 
 If I had more time, I'd also consider [alternative approach]."
+
 ```
 
 ### Design Communication Checklist
@@ -322,6 +362,7 @@ If I had more time, I'd also consider [alternative approach]."
 □ Did I ask if the interviewer wants to go deeper?
 □ Did I consider failure modes and scalability?
 □ Did I acknowledge limitations of my design?
+
 ```
 
 ---
@@ -331,6 +372,7 @@ If I had more time, I'd also consider [alternative approach]."
 ### Why It Matters
 
 Clarifying questions show:
+
 - You think before coding
 - You understand ambiguity is real
 - You care about building the right thing
@@ -339,39 +381,48 @@ Clarifying questions show:
 ### Categories of Clarifying Questions
 
 **1. Requirements Clarification**
+
 ```text
 "What's the expected input size?"
 "Are there constraints on time or space complexity?"
 "Should this handle edge cases like [X]?"
 "Is this for read-heavy or write-heavy use cases?"
+
 ```
 
 **2. Technical Constraints**
+
 ```text
 "What language/framework should I use?"
 "Are there existing libraries I should leverage?"
 "What's the deployment environment?"
 "Are there performance requirements?"
+
 ```
 
 **3. Business Context**
+
 ```text
 "Who are the users of this system?"
 "What's the expected traffic pattern?"
 "What happens if this system goes down?"
 "Is there a deadline driving technical decisions?"
+
 ```
 
 **4. Scope Clarification**
+
 ```text
 "Should I implement the full system or focus on a specific part?"
 "Are we designing the API or the implementation?"
 "Should I handle error cases or focus on the happy path first?"
+
 ```
 
 ### The Clarification Framework
 
 ```text
+
 1. START with what you understand
    "So we're building a URL shortener that takes long URLs and
     returns short ones..."
@@ -387,6 +438,7 @@ Clarifying questions show:
 4. CONFIRM your understanding
    "Got it. So random short URLs, with click analytics, optimized
     for reads. Let me proceed with that."
+
 ```
 
 ### Example: Real Interview Scenario
@@ -416,6 +468,7 @@ SENIOR RESPONSE:
 This will help me choose between in-memory approaches like sliding
 window counters versus distributed solutions like Redis-based
 token buckets."
+
 ```
 
 ---
@@ -427,6 +480,7 @@ token buckets."
 When an interviewer challenges your approach:
 
 ```text
+
 1. ACKNOWLEDGE their point
    "That's a valid concern. You're right that [their point]."
 
@@ -440,6 +494,7 @@ When an interviewer challenges your approach:
 4. BE OPEN to changing your mind
    "Based on what you're saying, [alternative] might be better
     for this use case."
+
 ```
 
 ### Example: Handling Technical Pushback
@@ -469,6 +524,7 @@ YOU: "That's a good point. You're right that NoSQL would give us
      is defensible."
 
 INTERVIEWER: "Good thinking. Let's go with Option B."
+
 ```
 
 ### What NOT to Do When Pushed Back
@@ -479,6 +535,7 @@ INTERVIEWER: "Good thinking. Let's go with Option B."
 ❌ Immediately abandon your position without defending it
 ❌ Get visibly frustrated or defensive
 ❌ Make up technical details you're not sure about
+
 ```
 
 ### What TO Do
@@ -489,6 +546,7 @@ INTERVIEWER: "Good thinking. Let's go with Option B."
 ✅ "I haven't considered that angle. Here's how I'd adjust..."
 ✅ "You're right that [concern] is real. My mitigation would be..."
 ✅ Be honest: "I'm not 100% sure, but my instinct is..."
+
 ```
 
 ---
@@ -509,12 +567,14 @@ CHECKLIST:
 □ Have water nearby
 □ Have a notepad and pen for notes
 □ Test screen sharing if needed
+
 ```
 
 ### Screen Sharing Communication
 
 ```text
 WHEN SHARING YOUR SCREEN:
+
 1. Announce what you're sharing
    "I'm going to share my screen now to walk through the code."
 
@@ -533,6 +593,7 @@ WHEN SHARING YOUR SCREEN:
 5. Check in periodically
    "Does this approach make sense so far? Want me to explain
     any part in more detail?"
+
 ```
 
 ### Virtual Presence Tips
@@ -545,6 +606,7 @@ MAINTAIN PRESENCE:
 • Smile and show engagement
 • Avoid fidgeting or looking away frequently
 • Keep your voice at a consistent volume
+
 ```
 
 ---
@@ -570,6 +632,7 @@ DON'T:
 • Look at the clock
 • Touch your face excessively
 • Invade personal space
+
 ```
 
 ### Power Positioning
@@ -581,6 +644,7 @@ CONFIDENCE SIGNALS:
 • Pausing before answering (shows thoughtfulness)
 • Using silence effectively (don't fill every gap)
 • Speaking clearly and at moderate volume
+
 ```
 
 ---
@@ -598,6 +662,7 @@ Practice:
 • Time yourself answering common questions
 • If over 2 minutes, identify what can be cut
 • Use: "The short answer is X. Want me to go deeper?"
+
 ```
 
 ### 2. Being Too Vague
@@ -611,6 +676,7 @@ Vague: "I improved performance"
 Specific: "I reduced API response time from 1.2s to 180ms by
           implementing Redis caching for the top 200 most
           queried endpoints"
+
 ```
 
 ### 3. Neglecting the Audience
@@ -632,6 +698,7 @@ Staff Engineer: "What do you do?"
 ✅ "I'm building an event-driven architecture using Kafka and
     NestJS, implementing CQRS for the payment domain with
     eventual consistency via sagas."
+
 ```
 
 ### 4. Not Thinking Out Loud
@@ -649,6 +716,7 @@ LOUD:
 work because we need O(1) lookups by ID. A hash map would give us
 that. Now, for the ordering requirement, we could use a sorted
 structure or maintain a separate index. Let me consider the tradeoffs..."
+
 ```
 
 ### 5. Being Defensive
@@ -666,6 +734,7 @@ INTERVIEWER: "Have you considered using a message queue here?"
     right that a message queue would decouple the services better.
     Let me think about whether the added complexity is justified
     for this use case..."
+
 ```
 
 ### 6. Over-Apologizing
@@ -681,6 +750,7 @@ INTERVIEWER: "Have you considered using a message queue here?"
 
 ❌ "Sorry, let me think about that."
 ✅ "Let me take a moment to think through this."
+
 ```
 
 ### 7. Monotone Delivery
@@ -701,6 +771,7 @@ EXCITEMENT:
 SERIOUS:
 "The root cause was a RACE CONDITION in the payment processing
  pipeline that caused DUPLICATE CHARGES for some users."
+
 ```
 
 ---
@@ -718,6 +789,7 @@ Topics to practice:
 • Explain the CAP theorem.
 • What is containerization?
 • How does TCP/IP work?
+
 ```
 
 ### Drill 2: The Whiteboard Talk-Through
@@ -726,11 +798,17 @@ Draw a simple system architecture and narrate your drawing for 3 minutes.
 
 ```text
 Steps:
+
 1. Draw a basic 3-tier architecture
+
 2. Explain each component as you draw it
+
 3. Describe the data flow
+
 4. Identify potential bottlenecks
+
 5. Suggest improvements
+
 ```
 
 ### Drill 3: The Peer Explanation
@@ -743,6 +821,7 @@ Concepts to practice:
 • Microservices architecture
 • CI/CD pipelines
 • GraphQL vs REST
+
 ```
 
 ### Drill 4: The Pushback Response
@@ -754,6 +833,7 @@ Scenarios:
 • "Why not use [alternative technology]?"
 • "That won't scale, what about [limitation]?"
 • "I disagree with that approach because..."
+
 ```
 
 ---
@@ -781,6 +861,7 @@ AFTER:
 □ Ask if there are follow-up questions
 □ Thank the interviewer specifically
 □ Send a follow-up email within 24 hours
+
 ```
 
 ---
@@ -794,6 +875,7 @@ SENIOR communicates:  "I analyzed the problem, considered alternatives A
                        and B, chose X because of [tradeoff], and here's
                        the measurable impact. The main limitation is Y,
                        and if I were to revisit, I'd consider Z."
+
 ```
 
 ---

@@ -7,9 +7,13 @@
 ## Why Do We Need It?
 
 1. **Reduced bundle size** — Server Components don't ship JavaScript to the client
+
 2. **Direct data access** — Can query databases, read files, access secrets without API layers
+
 3. **Better performance** — Server rendering is faster than client-side data fetching
+
 4. **Security** — Sensitive logic stays on the server
+
 5. **Streaming** — Can progressively render and stream HTML to the client
 
 ## How It Works
@@ -61,6 +65,7 @@
 │                                                                 │
 │  Bundle impact: Full component JavaScript sent                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Component Composition Pattern
@@ -88,6 +93,7 @@
 │  │  └──────────────────────────────────────────────────┘   │    │
 │  └─────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -118,6 +124,7 @@ export default async function HomePage() {
     </div>
   )
 }
+
 ```
 
 ### Server Component with Data Fetching
@@ -157,6 +164,7 @@ export default async function DashboardPage() {
     </div>
   )
 }
+
 ```
 
 ### Nested Server Components
@@ -177,6 +185,7 @@ export default async function ProductsPage() {
     </div>
   )
 }
+
 ```
 
 ```tsx
@@ -215,6 +224,7 @@ export async function ProductCard({ product }: ProductCardProps) {
     </div>
   )
 }
+
 ```
 
 ### Server Component with External API
@@ -251,6 +261,7 @@ export default function GitHubPage() {
     </div>
   )
 }
+
 ```
 
 ### Streaming Server Components
@@ -290,6 +301,7 @@ export default function StreamingPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Component with Metadata
@@ -346,6 +358,7 @@ export default async function BlogPost({
     </article>
   )
 }
+
 ```
 
 ### Error Handling in Server Components
@@ -377,6 +390,7 @@ export default async function DashboardPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Component with Context
@@ -399,6 +413,7 @@ export async function getCurrentUser() {
 
   return session?.user ?? null
 }
+
 ```
 
 ```tsx
@@ -418,6 +433,7 @@ export default async function DashboardPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Component Composition Pattern
@@ -470,6 +486,7 @@ async function Sidebar() {
 function Footer() {
   return <footer>© 2024</footer>
 }
+
 ```
 
 ## Real-World Use Cases
@@ -518,6 +535,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 2. Passing Functions as Props
@@ -536,6 +554,7 @@ export function ClientButton() {
   const handleClick = () => console.log('clicked')
   return <button onClick={handleClick}>Click me</button>
 }
+
 ```
 
 ### 3. Accessing Browser APIs
@@ -562,6 +581,7 @@ export function BrowserInfo() {
 
   return <div>Width: {width}</div>
 }
+
 ```
 
 ### 4. Not Handling Loading States
@@ -584,6 +604,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 5. Exposing Sensitive Data
@@ -601,18 +622,27 @@ export default async function Page() {
   const data = await fetchWithKey(apiKey) // Key stays on server
   return <div>{data.publicField}</div> // Only public data
 }
+
 ```
 
 ## Best Practices
 
 1. **Default to Server Components** — Only use `'use client'` when interactivity is needed
+
 2. **Compose with Suspense** — Stream slow data fetches without blocking the page
+
 3. **Keep data fetching close to usage** — Each component fetches its own data
+
 4. **Use Server Components for data access** — Avoid unnecessary API layers
+
 5. **Isolate Client Components** — Keep them small and specific
+
 6. **Use error boundaries** — Handle failures gracefully per route
+
 7. **Cache data appropriately** — Use `next.revalidate` or `cache: 'force-cache'`
+
 8. **Avoid over-fetching** — Fetch only what each component needs
+
 9. **Use `notFound()` for missing data** — Trigger 404 pages properly
 10. **Test both component types** — Server and Client Components behave differently
 
@@ -622,34 +652,48 @@ export default async function Page() {
 
 ```text
 Server Component:
+
 - Component code: 0 bytes to client
 - Data fetching: 0 bytes to client
 - Dependencies: 0 bytes to client
 - Total: Minimal HTML only
 
 Client Component:
+
 - Component code: ~2-5KB minified
 - React runtime: ~40KB gzipped
 - Dependencies: Variable
 - Total: Full JavaScript bundle
+
 ```
 
 ### Rendering Performance
 
 ```text
 Server Component Rendering:
+
 1. Server executes (fast, no network latency)
+
 2. Data fetching (parallelized)
+
 3. HTML generation (fast)
+
 4. Stream to client (progressive)
 
 Client Component Rendering:
+
 1. Server renders placeholder (fast)
+
 2. HTML shell sent (fast)
+
 3. JavaScript downloads (network dependent)
+
 4. Hydration (CPU intensive)
+
 5. Data fetching (network dependent)
+
 6. Re-render (CPU intensive)
+
 ```
 
 ## Interview Questions
@@ -712,11 +756,17 @@ Client Component Rendering:
     Use Server Actions for mutations, client-side state for optimistic updates, and revalidateTag/revalidatePath to refresh Server Component data.
 
 18. **Explain the Server Component rendering pipeline in detail.**
+
     1. Server receives request
+
     2. React tree walks Server Components
+
     3. Each async Server Component awaits data
+
     4. HTML is generated and streamed
+
     5. Client receives and displays HTML
+
     6. Client Components hydrate separately
 
 19. **How do Server Components interact with caching?**
@@ -800,6 +850,7 @@ Client Component Rendering:
 
 ```text
 Server Component (default):
+
 - async function
 - Direct data access
 - No useState/useEffect
@@ -808,6 +859,7 @@ Server Component (default):
 
 Client Component:
 'use client' directive
+
 - useState/useEffect
 - Event handlers
 - Browser APIs
@@ -821,6 +873,7 @@ Client → receives Server as children ✅
 Data Passing:
 Server → Client: Props (serializable only)
 Client → Server: Server Actions
+
 ```
 
 ## References & Learn More

@@ -7,11 +7,17 @@
 ## Why Do We Need It?
 
 1. **Logging**: Log request/response details for monitoring.
+
 2. **Caching**: Cache responses to improve performance.
+
 3. **Transformation**: Transform response data (e.g., wrap in envelope).
+
 4. **Timeout**: Add timeout logic to prevent slow operations.
+
 5. **Error Handling**: Catch and transform errors.
+
 6. **Metrics**: Collect performance metrics.
+
 7. **Response Mapping**: Map or filter response data.
 
 ## How It Works
@@ -20,29 +26,44 @@ Interceptors implement `intercept(context, next)` receiving an `ExecutionContext
 
 ```text
 Request
+
    |
+
    v
 +-------------------------------+
+
 |       Interceptor (Before)    |
 |  - Log, Cache, Transform      |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |     next.handle() Observable  |
 |  +-------------------------+  |
 |  |     Route Handler       |  |
 |  +-------------------------+  |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |       Interceptor (After)     |
 |  - map(), tap(), catchError() |
+
 +-------------------------------+
+
    |
+
    v
 Response
+
 ```
 
 ### Common RxJS Operators
@@ -84,6 +105,7 @@ export class LoggingInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### Response Transformation Interceptor
@@ -112,6 +134,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, Response<T>> 
     );
   }
 }
+
 ```
 
 ### Caching Interceptor
@@ -140,6 +163,7 @@ export class CacheInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### Timeout Interceptor
@@ -161,6 +185,7 @@ export class TimeoutInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### Error Handling Interceptor
@@ -184,6 +209,7 @@ export class ErrorHandlingInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### Metrics Interceptor
@@ -210,6 +236,7 @@ export class MetricsInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### Serialization Interceptor
@@ -236,6 +263,7 @@ export class SerializeInterceptor implements NestInterceptor {
     return next.handle().pipe(map((data) => plainToInstance(dto, data, { excludeExtraneousValues: true })));
   }
 }
+
 ```
 
 ### File Upload Interceptor
@@ -267,6 +295,7 @@ export function SingleFileInterceptor(fieldName: string) {
     }),
   );
 }
+
 ```
 
 ## Real-World Use Cases
@@ -286,6 +315,7 @@ export class EnvelopeInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### 2. Request ID Injection
@@ -302,6 +332,7 @@ export class RequestIdInterceptor implements NestInterceptor {
     return next.handle();
   }
 }
+
 ```
 
 ### 3. Response Compression
@@ -317,6 +348,7 @@ export class CompressionInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -335,6 +367,7 @@ intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
   console.log('before');
   return next.handle();
 }
+
 ```
 
 ### 2. Blocking Operations in Interceptors
@@ -354,6 +387,7 @@ intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     }),
   );
 }
+
 ```
 
 ### 3. Not Handling Errors
@@ -376,24 +410,35 @@ intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     }),
   );
 }
+
 ```
 
 ## Best Practices
 
 1. **Single Responsibility**: Each interceptor should handle one concern.
+
 2. **Keep Fast**: Interceptors run on every request — keep them lightweight.
+
 3. **Use RxJS Operators**: Leverage `map()`, `tap()`, `catchError()` for clean transformations.
+
 4. **Error Handling**: Always handle errors in interceptors.
+
 5. **Async Operations**: Use RxJS operators for async work, not blocking code.
+
 6. **Composability**: Design interceptors to be composable and layered.
+
 7. **Testing**: Test interceptors by mocking `CallHandler`.
 
 ## Performance Considerations
 
 1. **Execution Time**: Interceptors run on every matching request.
+
 2. **Memory**: Cache interceptors can grow unbounded — implement eviction.
+
 3. **RxJS Overhead**: Observable chains have minimal overhead but can accumulate.
+
 4. **Global vs Local**: Apply interceptors only where needed.
+
 5. **Async Work**: Avoid heavy async operations — use message queues instead.
 
 ## Interview Questions
@@ -424,6 +469,7 @@ Use `map()` operator to wrap or reshape the response data before it's sent to th
 Check cache before `next.handle()`, return `of(cachedData)` if hit, otherwise cache the result in `tap()`.
 
 **Q8: How do interceptors differ from middleware?**
+
 - Middleware: Runs before routing, cannot access route handler info
 - Interceptor: Runs after routing, has access to handler metadata and response
 

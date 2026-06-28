@@ -50,6 +50,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
      │                               │
      │  10. Response with dashboard  │
      │<──────────────────────────────│
+
 ```
 
 ### Cookie Attributes
@@ -77,6 +78,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 │  - SameSite: Control cross-site cookie sending                  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Session vs JWT
@@ -107,6 +109,7 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 │  - Highly scalable                                             │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -178,6 +181,7 @@ app.post("/logout", (req, res) => {
     res.json({ success: true });
   });
 });
+
 ```
 
 ### Cookie Configuration
@@ -223,6 +227,7 @@ app.get("/signed", (req, res) => {
   });
   res.json({ success: true });
 });
+
 ```
 
 ### Session Store Implementations
@@ -273,6 +278,7 @@ app.use(
     },
   })
 );
+
 ```
 
 ### Session Security Middleware
@@ -339,31 +345,37 @@ app.post("/transfer", (req, res) => {
   }
   // Process transfer
 });
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. E-commerce Shopping Carts
+
 - Store cart contents in session
 - Persist across page loads
 - Handle guest vs authenticated carts
 
 ### 2. User Authentication
+
 - Keep users logged in
 - Session-based access control
 - Automatic logout on inactivity
 
 ### 3. Multi-Step Forms
+
 - Store form data across steps
 - Prevent data loss on navigation
 - Validate each step
 
 ### 4. A/B Testing
+
 - Store user variant in cookie
 - Consistent experience across requests
 - Long-term tracking with cookies
 
 ### 5. Language/Theme Preferences
+
 - Store preferences in cookies
 - Persist across sessions
 - Sync across devices
@@ -371,24 +383,39 @@ app.post("/transfer", (req, res) => {
 ## Common Mistakes
 
 1. **Not using Secure flag**: Cookies sent over HTTP can be intercepted
+
 2. **Not using HttpOnly**: JavaScript can steal session cookies via XSS
+
 3. **Storing sensitive data in cookies**: Cookies are client-side; don't store secrets
+
 4. **Not regenerating session ID**: Session fixation attacks
+
 5. **Using default session configuration**: Default settings are often insecure
+
 6. **Not implementing session expiration**: Sessions should expire
+
 7. **Storing session data in cookies**: Keep data server-side
+
 8. **Not using SameSite**: Vulnerable to CSRF attacks
 
 ## Best Practices
 
 1. **Use Secure flag** on all cookies in production
+
 2. **Use HttpOnly** for session cookies
+
 3. **Set SameSite=Strict** or **Lax** for CSRF protection
+
 4. **Regenerate session ID** after login
+
 5. **Implement session expiration** and timeout
+
 6. **Use secure session stores** (Redis, PostgreSQL)
+
 7. **Encrypt session data** if storing sensitive information
+
 8. **Implement session revocation** for logout
+
 9. **Monitor session activity** for anomalies
 10. **Use short session lifetimes** for sensitive applications
 

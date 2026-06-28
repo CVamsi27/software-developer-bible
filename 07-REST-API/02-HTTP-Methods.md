@@ -9,9 +9,13 @@ HTTP methods (also called HTTP verbs) define the action to be performed on a res
 HTTP methods provide a standardized way to interact with resources:
 
 1. **Predictability** - Developers know what each method does
+
 2. **Cacheability** - Browsers and proxies can optimize based on method
+
 3. **Security** - Safe methods don't modify server state
+
 4. **Reliability** - Idempotent methods can be safely retried
+
 5. **Tooling** - HTTP clients can optimize behavior per method
 
 ## How It Works
@@ -32,7 +36,8 @@ PUT       No      Yes           Yes         No
 PATCH     No      Yes*          Yes         No
 DELETE    No      Yes           Optional    No
 
-* PATCH is idempotent when the patch document itself is idempotent
+- PATCH is idempotent when the patch document itself is idempotent
+
 ```
 
 ### Detailed Method Specifications
@@ -55,6 +60,7 @@ Client                          Server
   │  ETag: "abc123"              │
   │  { "data": { ... } }         │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -77,6 +83,7 @@ app.get('/api/users/:id', async (req, res) => {
   if (!user) return res.status(404).json({ error: 'Not found' });
   res.json({ data: user });
 });
+
 ```
 
 #### POST - Create Resource
@@ -96,6 +103,7 @@ Client                          Server
   │  Location: /api/users/123     │
   │  { "data": { "id": "123" } } │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -126,6 +134,7 @@ app.post('/api/orders', async (req, res) => {
   const order = await OrderService.create(req.body);
   res.status(201).json({ data: order });
 });
+
 ```
 
 #### PUT - Replace Resource
@@ -144,6 +153,7 @@ Client                          Server
   │  200 OK                       │
   │  { "data": { "id": "123" } } │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -169,6 +179,7 @@ app.put('/api/users/:id', async (req, res) => {
 // PUT is idempotent - calling multiple times produces same result
 // First call: creates/updates user
 // Second call: same result (user already has those values)
+
 ```
 
 #### PATCH - Partial Update
@@ -187,6 +198,7 @@ Client                          Server
   │  200 OK                       │
   │  { "data": { "id": "123" } } │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -225,6 +237,7 @@ app.patch('/api/users/:id', async (req, res) => {
   const updatedUser = await UserService.update(req.params.id, req.body);
   res.json({ data: updatedUser });
 });
+
 ```
 
 #### DELETE - Remove Resource
@@ -240,6 +253,7 @@ Client                          Server
   │                               │
   │  204 No Content               │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -259,6 +273,7 @@ app.delete('/api/users/:id', async (req, res) => {
 // DELETE is idempotent - calling multiple times:
 // First call: deletes user, returns 204
 // Second call: user not found, returns 404 (but no state change)
+
 ```
 
 #### HEAD - Get Metadata Only
@@ -280,6 +295,7 @@ app.head('/api/users/:id', async (req, res) => {
   });
   res.status(200).end();
 });
+
 ```
 
 #### OPTIONS - Get Allowed Methods
@@ -304,6 +320,7 @@ app.options('/api/users/:id', (req, res) => {
   });
   res.status(200).end();
 });
+
 ```
 
 ### Idempotency Deep Dive
@@ -335,6 +352,7 @@ DELETE /api/users/123
   Request 2: User already deleted, returns 404
   Request 3: User already deleted, returns 404
   Result: ✅ Idempotent (same final state - user deleted)
+
 ```
 
 ## Code Examples
@@ -499,6 +517,7 @@ router.options('/:id', (req, res) => {
 });
 
 app.use('/api/users', router);
+
 ```
 
 ### Idempotency Key Implementation
@@ -537,6 +556,7 @@ app.post('/api/payments', async (req, res) => {
 
   res.status(201).json({ data: payment });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -577,6 +597,7 @@ router.delete('/orders/:id', authenticate, async (req, res) => {
   await OrderService.cancel(req.params.id);
   res.status(204).end();
 });
+
 ```
 
 ### 2. File Upload/Download
@@ -621,6 +642,7 @@ router.head('/files/:id', async (req, res) => {
   });
   res.status(200).end();
 });
+
 ```
 
 ### 3. Real-time Notifications
@@ -654,6 +676,7 @@ router.post('/notifications', authenticate, async (req, res) => {
   });
   res.status(201).json({ data: notification });
 });
+
 ```
 
 ## Common Mistakes
@@ -672,6 +695,7 @@ router.delete('/api/users/:id', async (req, res) => {
   await UserService.delete(req.params.id);
   res.status(204).end();
 });
+
 ```
 
 ### 2. Not Handling Idempotency Correctly
@@ -692,6 +716,7 @@ router.post('/api/payments', async (req, res) => {
   const payment = await PaymentService.create({ ...req.body, idempotencyKey });
   res.status(201).json({ data: payment });
 });
+
 ```
 
 ### 3. Wrong Status Codes
@@ -708,6 +733,7 @@ router.post('/api/users', async (req, res) => {
   const user = await UserService.create(req.body);
   res.status(201).header('Location', `/api/users/${user.id}`).json({ data: user });
 });
+
 ```
 
 ### 4. Missing Validation
@@ -728,18 +754,27 @@ router.put('/api/users/:id', async (req, res) => {
   const user = await UserService.replace(req.params.id, { name, email });
   res.json({ data: user });
 });
+
 ```
 
 ## Best Practices
 
 1. **Use GET for reads** - Never modify data with GET
+
 2. **Use POST for creation** - New resources, non-idempotent operations
+
 3. **Use PUT for full replacement** - All fields required, idempotent
+
 4. **Use PATCH for partial updates** - Only changed fields, can be idempotent
+
 5. **Use DELETE for removal** - Idempotent, safe to retry
+
 6. **Implement idempotency keys** - For POST requests in critical systems
+
 7. **Return proper status codes** - 200, 201, 204, 400, 404, etc.
+
 8. **Use Location header** - For POST responses with created resources
+
 9. **Support HEAD** - For checking resource existence without body
 10. **Document allowed methods** - Use OPTIONS and Allow headers
 

@@ -7,10 +7,15 @@
 ## Why Do We Need It?
 
 1. **Authentication** — Protect routes without per-page auth checks
+
 2. **Redirects** — URL-based redirects without page-level logic
+
 3. **A/B Testing** — Route users to different variants
+
 4. **Geographic routing** — Serve different content by location
+
 5. **Headers/Cookies** — Modify request before it reaches the page
+
 6. **Bot detection** — Serve different content to bots vs users
 
 ## How It Works
@@ -48,6 +53,7 @@
 │        ▼                                                        │
 │  Browser Response                                                │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Middleware vs API Routes vs Server Components
@@ -77,6 +83,7 @@
 │  ├─ Direct database access                                      │
 │  └─ Page-level logic                                            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -100,6 +107,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: '/dashboard/:path*',
 }
+
 ```
 
 ### Authentication Middleware
@@ -142,6 +150,7 @@ export const config = {
   matcher: ['/dashboard/:path*', '/settings/:path*', '/profile/:path*',
             '/login', '/register'],
 }
+
 ```
 
 ### Role-Based Access Control
@@ -194,6 +203,7 @@ export async function middleware(request: NextRequest) {
     return response
   }
 }
+
 ```
 
 ### A/B Testing Middleware
@@ -228,6 +238,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 ```
 
 ### Geographic Routing
@@ -261,6 +272,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 ```
 
 ### URL Rewriting
@@ -289,6 +301,7 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.next()
 }
+
 ```
 
 ### Bot Detection
@@ -322,6 +335,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 ```
 
 ### Rate Limiting
@@ -358,6 +372,7 @@ export function middleware(request: NextRequest) {
   record.count++
   return NextResponse.next()
 }
+
 ```
 
 ### Header Manipulation
@@ -395,6 +410,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 ```
 
 ### Cookie Handling
@@ -437,6 +453,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 ```
 
 ### Conditional Middleware
@@ -472,6 +489,7 @@ export const config = {
     '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }
+
 ```
 
 ### Chaining Middleware
@@ -490,6 +508,7 @@ export function authMiddleware(request: NextRequest) {
 
   return NextResponse.next()
 }
+
 ```
 
 ```tsx
@@ -516,6 +535,7 @@ export function rateLimitMiddleware(request: NextRequest) {
 
   return NextResponse.next()
 }
+
 ```
 
 ```tsx
@@ -544,6 +564,7 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.next()
 }
+
 ```
 
 ## Real-World Use Cases
@@ -582,6 +603,7 @@ export function middleware(request: NextRequest) {
   const country = request.geo?.country // OK
   return NextResponse.next()
 }
+
 ```
 
 ### 2. Not Matching All Required Paths
@@ -596,6 +618,7 @@ export const config = {
 export const config = {
   matcher: ['/dashboard/:path*', '/dashboard'],
 }
+
 ```
 
 ### 3. Infinite Redirects
@@ -614,6 +637,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/dashboard/:path*', '/settings/:path*'],
 }
+
 ```
 
 ### 4. Not Handling Edge Cases
@@ -641,6 +665,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 }
+
 ```
 
 ### 5. Modifying Request Body
@@ -660,18 +685,27 @@ export async function POST(request: Request) {
   // Process body
   return Response.json({ success: true })
 }
+
 ```
 
 ## Best Practices
 
 1. **Keep middleware thin** — Only essential logic (auth, redirects)
+
 2. **Use Edge-compatible APIs** — No Node.js modules
+
 3. **Be specific with matchers** — Don't run on unnecessary paths
+
 4. **Handle errors gracefully** — Always have fallback behavior
+
 5. **Cache when possible** — Use Response caching headers
+
 6. **Test thoroughly** — Middleware affects all matched routes
+
 7. **Monitor performance** — Middleware adds latency to every request
+
 8. **Use environment variables** — Don't hardcode secrets
+
 9. **Implement in stages** — Start with logging, then add logic
 10. **Document middleware behavior** — Team needs to understand the flow
 
@@ -679,6 +713,7 @@ export async function POST(request: Request) {
 
 ```text
 Middleware Performance:
+
 - Executes on Edge Runtime (fast cold starts)
 - Adds latency to every matched request
 - Should be lightweight (< 10ms typical)
@@ -686,11 +721,13 @@ Middleware Performance:
 - Cache responses when possible
 
 Optimization:
+
 - Use specific matchers
 - Short-circuit early
 - Avoid synchronous operations
 - Use Response caching
 - Monitor execution time
+
 ```
 
 ## Interview Questions
@@ -852,6 +889,7 @@ request.nextUrl               → URL object
 request.cookies               → Cookie access
 request.headers               → Headers
 request.geo                   → Geographic info
+
 ```
 
 ## References & Learn More

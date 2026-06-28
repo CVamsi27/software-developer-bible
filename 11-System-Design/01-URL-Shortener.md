@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Given a long URL, generate a short URL
 - Given a short URL, redirect to original URL
 - Users can create custom aliases for short URLs
@@ -11,6 +12,7 @@
 - API for URL creation, retrieval, and analytics
 
 ### Non-Functional Requirements
+
 - High availability (99.99% uptime)
 - Low latency redirect (< 10ms)
 - Short URLs should not be predictable
@@ -20,8 +22,10 @@
 - Analytics data retained for 1 year minimum
 
 ## Capacity Estimation
+
 ```text
 Storage Estimates:
+
 - 100M new URLs/day = ~1.16K URLs/second
 - 1B redirects/day = ~11.6K requests/second
 - Each URL record: ~500 bytes
@@ -29,16 +33,20 @@ Storage Estimates:
 - Storage: 182.5B × 500 bytes = ~91.25 TB
 
 Bandwidth Estimates:
+
 - Write: 1.16K × 500 bytes = ~580 KB/s
 - Read: 11.6K × 500 bytes = ~5.8 MB/s (assuming 10:1 read/write ratio)
 
 Cache Estimates:
+
 - 20% of daily traffic = 200M requests/day
 - Cache size: 200M × 500 bytes = ~100 GB
 - Use Redis cluster with multiple shards
+
 ```
 
 ## API Design
+
 ```yaml
 POST /api/v1/urls
   Request:
@@ -71,10 +79,12 @@ GET /api/v1/urls/{short_code}/analytics
 
 DELETE /api/v1/urls/{short_code}
   Response: 204 No Content
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Core URL table
 CREATE TABLE urls (
@@ -119,9 +129,11 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_verified BOOLEAN DEFAULT FALSE
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users     │     │      urls       │     │ click_analytics │
@@ -136,10 +148,12 @@ CREATE TABLE users (
                     │ is_active       │     │ referer         │
                     │ click_count     │     └─────────────────┘
                     └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
                           ┌──────────────┐
                           │   Clients    │
@@ -177,11 +191,13 @@ CREATE TABLE users (
                    │  Analytics   │
                    │   Workers    │
                    └──────────────┘
+
 ```
 
 ## Key Components
 
 ### Hash Generation Service
+
 ```python
 import hashlib
 import base64
@@ -214,9 +230,11 @@ class HashGenerator:
             long_url += str(uuid.uuid4())
 
         raise Exception("Could not generate unique short code")
+
 ```
 
 ### Rate Limiter
+
 ```python
 from redis import Redis
 from datetime import datetime, timedelta
@@ -239,11 +257,13 @@ class RateLimiter:
         pipe.execute()
 
         return True
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Cache Architecture
+
 ```python
 class CacheService:
     def __init__(self, redis_client):
@@ -274,9 +294,11 @@ class CacheService:
             return long_url
 
         return None
+
 ```
 
 ### Cache Invalidation Strategy
+
 - Write-through for new URL creation
 - TTL-based expiration aligned with URL expiration
 - Cache-aside pattern for reads
@@ -286,6 +308,7 @@ class CacheService:
 ## Message Queue (Kafka)
 
 ### Topics and Consumers
+
 ```text
 Topics:
 ├── url.created       (new URL creation events)
@@ -297,9 +320,11 @@ Consumers:
 ├── analytics-worker   → processes click events
 ├── cache-warmer       → pre-populates cache for hot URLs
 └── cleanup-worker     → removes expired URLs
+
 ```
 
 ### Click Event Processing
+
 ```python
 class ClickEventProcessor:
     def __init__(self, kafka_consumer, db, cache):
@@ -322,11 +347,13 @@ class ClickEventProcessor:
         # Batch write to analytics database every 1000 events
         if self.batch_counter >= 1000:
             await self.flush_analytics_batch()
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                    Load Balancer                         │
@@ -340,9 +367,11 @@ class ClickEventProcessor:
 │   App Pool   │   │   App Pool   │   │   App Pool   │
 │   (5-20)     │   │   (5-20)     │   │   (5-20)     │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Sharding
+
 ```python
 class ShardRouter:
     def __init__(self, shards: List[str]):
@@ -357,9 +386,11 @@ class ShardRouter:
     def get_db(self, short_code: str):
         shard = self.get_shard(short_code)
         return self.connections[shard]
+
 ```
 
 ### Read Replicas
+
 - Primary handles all writes
 - 3-5 read replicas per shard for read-heavy traffic
 - Async replication with < 100ms lag
@@ -368,6 +399,7 @@ class ShardRouter:
 ## Failure Handling
 
 ### Circuit Breaker Pattern
+
 ```python
 class CircuitBreaker:
     def __init__(self, failure_threshold=5, reset_timeout=60):
@@ -396,9 +428,11 @@ class CircuitBreaker:
             if self.failure_count >= self.failure_threshold:
                 self.state = 'OPEN'
             raise
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Redis down | Fall back to database, serve stale cache |
@@ -408,6 +442,7 @@ class CircuitBreaker:
 | DNS failure | Use IP fallback, client-side retry |
 
 ### Graceful Degradation
+
 - If analytics service down, clicks still work (fire-and-forget)
 - If rate limiter down, allow all requests (fail open)
 - If custom alias service down, generate random code instead
@@ -416,13 +451,16 @@ class CircuitBreaker:
 ## Monitoring
 
 ### Key Metrics (Prometheus + Grafana)
+
 ```yaml
 Business Metrics:
+
   - urls_created_per_second
   - redirects_per_second
   - click_rate_by_country
 
 System Metrics:
+
   - request_latency_p50/p95/p99
   - error_rate_4xx_5xx
   - cache_hit_ratio
@@ -430,15 +468,19 @@ System Metrics:
   - kafka_consumer_lag
 
 Infrastructure Metrics:
+
   - cpu_usage_per_instance
   - memory_usage_per_instance
   - network_io
   - disk_io
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Latency
     condition: p99_latency > 50ms for 5 minutes
     severity: warning
@@ -454,6 +496,7 @@ alerts:
   - name: High Error Rate
     condition: error_5xx_rate > 1% for 5 minutes
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -469,62 +512,76 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you handle 100M URLs created daily?**
+
    - Use consistent hashing for database sharding
    - Partition analytics tables by time
    - Use Redis cluster for caching
    - Batch analytics writes with Kafka
 
 2. **How do you ensure short URLs are not predictable?**
+
    - Use base62 encoding of random hashes
    - Add user-specific salt to hash generation
    - Limit custom alias attempts
    - Rate limit URL creation
 
 3. **How would you implement custom aliases?**
+
    - Separate table for custom aliases with unique constraint
    - Validate uniqueness before assignment
    - Reserve certain prefixes for system use
    - Allow users to reclaim unused aliases after expiry
 
 ### Scaling Questions
+
 4. **How do you scale to 1B redirects per day?**
+
    - CDN for static redirects
    - Redis cluster with 100+ nodes
    - Read replicas across regions
    - Connection pooling and keep-alive
 
 5. **How do you handle hot keys (viral URLs)?**
+
    - Multi-level caching (in-memory + Redis)
    - Cache warming for predicted hot URLs
    - Replicate hot keys across cache nodes
    - Local cache with TTL refresh
 
 ### Trade-off Questions
+
 6. **301 vs 302 redirects?**
+
    - 301: Browser caches, reduces server load, but can't track clicks
    - 302: Always hits server, enables analytics, respects expiration
    - Choose based on requirements (analytics vs performance)
 
 7. **SQL vs NoSQL for storage?**
+
    - SQL: ACID compliance, complex queries, joins
    - NoSQL: Better horizontal scaling, simpler schema
    - Choose PostgreSQL with partitioning for this use case
 
 ### Senior-level Questions
+
 8. **How do you prevent abuse of the URL shortener?**
+
    - Rate limiting per user/IP
    - URL reputation checking before creation
    - Block known malicious domains
    - Limit redirects per short URL
 
 9. **How would you implement geo-redirects?**
+
    - Store multiple destination URLs per short code
    - Use GeoIP to determine user location
    - Cache geo-redirect mappings
    - A/B test different destinations
 
 10. **How do you handle URL expiration?**
+
     - Soft delete with scheduled cleanup job
     - Check expiration on read (add to cache TTL)
     - Kafka topic for expiration events
@@ -533,6 +590,7 @@ alerts:
 ## Summary
 
 The URL Shortener system design covers:
+
 - **Scalability**: Sharded databases, Redis caching, CDN
 - **Performance**: Sub-10ms redirects, multi-level caching
 - **Reliability**: Circuit breakers, graceful degradation
@@ -540,10 +598,15 @@ The URL Shortener system design covers:
 - **Security**: Rate limiting, abuse prevention, HTTPS
 
 Key takeaways:
+
 1. Use consistent hashing for shard routing
+
 2. Implement multi-level caching (L1 in-memory, L2 Redis)
+
 3. Process analytics asynchronously with Kafka
+
 4. Handle failures gracefully with circuit breakers
+
 5. Monitor everything with proper alerting
 
 This design can handle 1B+ daily redirects while maintaining sub-10ms latency and 99.99% availability.
@@ -551,6 +614,7 @@ This design can handle 1B+ daily redirects while maintaining sub-10ms latency an
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

@@ -47,6 +47,7 @@ A database index is a data structure that improves the speed of data retrieval o
 │  │  • Low overhead  │  │  • Faster       │                  │
 │  └─────────────────┘  └─────────────────┘                  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### B-tree Structure
@@ -72,6 +73,7 @@ Properties:
 • Leaves are linked (range scans)
 • Each node contains keys + pointers
 • O(log n) for lookup, insert, delete
+
 ```
 
 ## Code Examples
@@ -122,6 +124,7 @@ CREATE INDEX idx_locations_coords ON locations USING GiST (coordinates);
 
 -- BRIN index for large, naturally ordered tables
 CREATE INDEX idx_logs_created ON logs USING BRIN (created_at);
+
 ```
 
 ### Index-Only Scans
@@ -142,6 +145,7 @@ WHERE user_id = 123;
 -- Check if index-only scan is used
 EXPLAIN SELECT status, total FROM orders WHERE user_id = 123;
 -- Look for "Index Only Scan" in output
+
 ```
 
 ### EXPLAIN ANALYZE
@@ -171,6 +175,7 @@ SELECT * FROM orders WHERE user_id = 123;
 -- Nested Loop: Join algorithm
 -- Hash Join: Join algorithm
 -- Sort: In-memory or disk sort
+
 ```
 
 ### Index Maintenance
@@ -210,6 +215,7 @@ SELECT
     pg_size_pretty(pg_relation_size(indexname::regclass)) AS size
 FROM pg_indexes
 WHERE tablename = 'users';
+
 ```
 
 ## Real-World Use Cases
@@ -245,6 +251,7 @@ LIMIT 20;
 -- Search query uses GIN for text search
 CREATE INDEX idx_products_name_search ON products
 USING GIN (to_tsvector('english', name));
+
 ```
 
 ### User Authentication
@@ -271,6 +278,7 @@ CREATE TABLE sessions (
 
 CREATE INDEX idx_sessions_user ON sessions(user_id);
 CREATE INDEX idx_sessions_expires ON sessions(expires_at);
+
 ```
 
 ### Time-series Data
@@ -299,6 +307,7 @@ AND user_id = 123
 AND created_at > NOW() - INTERVAL '7 days'
 ORDER BY created_at DESC
 LIMIT 100;
+
 ```
 
 ## Common Mistakes
@@ -321,6 +330,7 @@ CREATE INDEX idx_users_created ON users(created_at);
 -- GOOD: Index only what's queried
 CREATE UNIQUE INDEX idx_users_email ON users(email);  -- Login
 CREATE INDEX idx_users_name ON users(name);           -- Search
+
 ```
 
 ### 2. Not Indexing Foreign Keys
@@ -337,6 +347,7 @@ SELECT * FROM orders o JOIN users u ON o.user_id = u.id;
 
 -- GOOD
 CREATE INDEX idx_orders_user_id ON orders(user_id);
+
 ```
 
 ### 3. Wrong Index Type
@@ -348,6 +359,7 @@ CREATE INDEX idx_users_created_hash ON users USING HASH (created_at);
 
 -- GOOD: B-tree for range queries
 CREATE INDEX idx_users_created ON users(created_at);
+
 ```
 
 ### 4. Ignoring Index Selectivity
@@ -359,6 +371,7 @@ CREATE INDEX idx_users_gender ON users(gender);
 
 -- GOOD: Index on high-selectivity columns
 CREATE INDEX idx_users_email ON users(email);  -- Nearly unique
+
 ```
 
 ## Best Practices
@@ -394,6 +407,7 @@ INCLUDE (status, total, created_at);
 
 -- 8. Rebuild bloated indexes
 REINDEX INDEX CONCURRENTLY idx_users_email;
+
 ```
 
 ## Performance Considerations
@@ -426,6 +440,7 @@ WHERE relname = 'orders';
 -- Smaller index = faster scans = less storage
 CREATE INDEX idx_active ON users(email) WHERE is_active = true;
 -- Only indexes active users (maybe 20% of total)
+
 ```
 
 ## Interview Questions
@@ -556,6 +571,7 @@ ANALYZE table_name;
 
 -- EXPLAIN
 EXPLAIN (ANALYZE, BUFFERS) SELECT ...;
+
 ```
 
 ## References & Learn More

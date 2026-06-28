@@ -46,6 +46,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Push/Pop Operations
@@ -93,6 +94,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 │  └─────────────────────┘                                    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Code Execution Flow
@@ -163,6 +165,7 @@ The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript
 │  (Empty stack)                                               │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -196,6 +199,7 @@ console.log("Done!");
 // 4. farewell() removed
 // 5. greet() removed
 // 6. Global Context only
+
 ```
 
 ### Deep Nesting
@@ -229,6 +233,7 @@ level1();
 // Level 1 end
 
 // Call Stack Depth: 3 (max)
+
 ```
 
 ### Stack Overflow Example
@@ -252,6 +257,7 @@ function countdown(n: number): void {
 }
 
 countdown(5);  // 5, 4, 3, 2, 1, Done!
+
 ```
 
 ### Recursive Fibonacci (Stack Overflow Risk)
@@ -276,6 +282,7 @@ function fibMemoized(n: number, memo: Map<number, number> = new Map()): number {
 }
 
 // Still can overflow for very large n, but much better
+
 ```
 
 ### Tail Call Optimization (Limited Support)
@@ -298,6 +305,7 @@ function factorialIterative(n: number): number {
   }
   return result;
 }
+
 ```
 
 ### Asynchronous Code and Call Stack
@@ -333,6 +341,7 @@ console.log("End");
 // 4. Synchronous code completes
 // 5. Microtasks run (Promise)
 // 6. Macrotasks run (setTimeout)
+
 ```
 
 ### Error Handling and Stack Trace
@@ -362,6 +371,7 @@ try {
 }
 
 // Stack trace shows execution path
+
 ```
 
 ### Recursive Tree Traversal
@@ -395,6 +405,7 @@ const tree: TreeNode = {
 
 traverse(tree);  // 1, 2, 3, 4, 5
 // Stack depth depends on tree depth
+
 ```
 
 ## Real-World Use Cases
@@ -425,6 +436,7 @@ try {
   // Shows: processUser → validateUser → Error
   // Helps identify exactly where the error occurred
 }
+
 ```
 
 ### 2. Async Operations
@@ -445,6 +457,7 @@ async function fetchData(): Promise<void> {
 // 3. Event loop runs
 // 4. Promise resolves
 // 5. fetchData() resumes (pushed again)
+
 ```
 
 ### 3. Recursive Algorithms
@@ -474,6 +487,7 @@ function quickSort(arr: number[]): number[] {
 
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
+
 ```
 
 ### 4. Promise Chain Execution
@@ -489,6 +503,7 @@ function processOrder(orderId: number): Promise<string> {
 
 // Each .then() creates a new microtask
 // Call stack processes them sequentially
+
 ```
 
 ## Common Mistakes
@@ -513,6 +528,7 @@ function processArrayIterative(arr: number[]): void {
     console.log(arr[i]);
   }
 }
+
 ```
 
 ### 2. Blocking the Event Loop
@@ -552,6 +568,7 @@ function heavyComputationChunked(): void {
 
   processChunk();
 }
+
 ```
 
 ### 3. Forgetting to Return in Recursive Functions
@@ -577,6 +594,7 @@ function findMaxFixed(arr: number[], index = 0): number {
 
   return current > maxFromRest ? current : maxFromRest;
 }
+
 ```
 
 ## Best Practices
@@ -600,6 +618,7 @@ function flattenArray(arr: any[]): any[] {
 
   return result;
 }
+
 ```
 
 ### 2. Set Recursion Limits
@@ -619,6 +638,7 @@ function safeRecursion(
 
   wrapper();
 }
+
 ```
 
 ### 3. Monitor Stack Depth
@@ -639,6 +659,7 @@ function monitoredRecursion(): void {
 
   stackDepth--;
 }
+
 ```
 
 ### 4. Use Tail Recursion When Possible
@@ -655,6 +676,7 @@ function sumRegular(n: number): number {
   if (n === 0) return 0;
   return n + sumRegular(n - 1);  // Not tail position
 }
+
 ```
 
 ## Performance Considerations
@@ -682,6 +704,7 @@ function withHeapStorage(): void {
   // Arrays are objects, stored on heap
   // Stack frame only holds reference
 }
+
 ```
 
 ### Tail Call Optimization
@@ -707,6 +730,7 @@ function factorialIterative(n: number): number {
   }
   return result;
 }
+
 ```
 
 ### Memory Usage
@@ -736,6 +760,7 @@ function measureRecursion(): void {
   recurse(10000);
   console.log("After:", getMemoryUsage());
 }
+
 ```
 
 ## Interview Questions
@@ -753,10 +778,15 @@ A: LIFO stands for "Last In, First Out." It means the last item added to the sta
 **Q3: What happens when you call a function?**
 
 A: When you call a function:
+
 1. A new execution context is created
+
 2. The function is pushed onto the top of the call stack
+
 3. The function executes
+
 4. When the function returns, it's popped off the stack
+
 5. Execution continues from where the function was called
 
 **Q4: What is a stack overflow?**
@@ -772,15 +802,18 @@ A: Each nested call adds a new frame to the top of the stack. The innermost func
 **Q6: What is the difference between synchronous and asynchronous code in relation to the call stack?**
 
 A:
+
 - **Synchronous code**: Runs immediately on the call stack, blocking further execution until complete
 - **Asynchronous code**: Scheduled to run later (via Web APIs, callbacks, promises), allowing the call stack to continue processing other code
 
 Example:
+
 ```typescript
 console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);  // Async
 console.log("End");
 // Output: Start, End, Timeout
+
 ```
 
 **Q7: Why does the output of this code order as "Start, End, Promise, Timeout"?**
@@ -790,25 +823,35 @@ console.log("Start");
 setTimeout(() => console.log("Timeout"), 0);
 Promise.resolve().then(() => console.log("Promise"));
 console.log("End");
+
 ```
 
 A: Because:
+
 1. Synchronous code runs first ("Start", "End")
+
 2. Microtasks (Promises) run before macrotasks (setTimeout)
+
 3. So Promise runs before Timeout
 
 **Q8: How do you prevent stack overflow in recursive functions?**
 
 A:
+
 1. Add a base case to stop recursion
+
 2. Use iteration instead of recursion
+
 3. Use tail recursion (if engine supports TCO)
+
 4. Set a maximum recursion depth limit
+
 5. Use memoization to reduce recursive calls
 
 **Q9: What information is stored in a stack frame?**
 
 A: A stack frame typically contains:
+
 - Function parameters
 - Local variables
 - Return address (where to continue after function returns)
@@ -824,9 +867,13 @@ A: When an error occurs, JavaScript provides a stack trace showing the sequence 
 **Q11: Explain how the call stack works with async/await.**
 
 A: When `await` is encountered:
+
 1. The async function is suspended and popped from the stack
+
 2. The awaited promise is processed by the microtask queue
+
 3. When the promise resolves, the async function is pushed back onto the stack
+
 4. Execution continues after the `await`
 
 ```typescript
@@ -835,17 +882,20 @@ async function fetchData() {
   const data = await fetch(url);  // Function suspended
   console.log(data);  // Runs after promise resolves
 }
+
 ```
 
 **Q12: What is the maximum call stack size and how does it vary?**
 
 A: The maximum stack size varies by browser and JavaScript engine:
+
 - Chrome/V8: ~10,000-15,000 frames
 - Firefox/SpiderMonkey: ~50,000 frames
 - Safari/JavaScriptCore: ~10,000 frames
 - Node.js/V8: ~10,000-15,000 frames
 
 The exact size depends on:
+
 - Stack frame size (more local variables = smaller limit)
 - Available system memory
 - Engine-specific optimizations
@@ -853,19 +903,29 @@ The exact size depends on:
 **Q13: How do you monitor and debug call stack issues in production?**
 
 A:
+
 1. **Error tracking services**: Sentry, LogRocket capture stack traces
+
 2. **Performance monitoring**: Track long-running tasks
+
 3. **Heap snapshots**: Analyze memory usage
+
 4. **Stack trace logging**: Log stack traces for debugging
+
 5. **Chrome DevTools**: Use Performance tab to record call stacks
+
 6. **Node.js debugger**: Use `--inspect` flag
 
 **Q14: What is tail call optimization and why is it not widely supported?**
 
 A: TCO allows the engine to reuse the current stack frame when the last action is a function call. It's not widely supported because:
+
 1. Makes debugging harder (stack traces incomplete)
+
 2. Requires strict mode and specific syntax
+
 3. Complex to implement in JavaScript's dynamic nature
+
 4. Limited browser support (only Safari fully supports it)
 
 **Q15: How does the call stack interact with Web Workers?**
@@ -877,6 +937,7 @@ A: Web Workers have their own separate call stacks. They communicate via message
 **Q16: Design a call stack simulator.**
 
 A:
+
 ```typescript
 class CallStackSimulator {
   private stack: { name: string; context: any }[] = [];
@@ -909,16 +970,23 @@ class CallStackSimulator {
     return this.stack.length;
   }
 }
+
 ```
 
 **Q17: How would you optimize a recursive algorithm to prevent stack overflow?**
 
 A:
+
 1. **Convert to iteration**: Use loops instead of recursion
+
 2. **Tail recursion**: If engine supports TCO
+
 3. **Trampoline pattern**: Return thunks instead of recursive calls
+
 4. **Memoization**: Cache results to reduce calls
+
 5. **Divide and conquer**: Split problem into smaller chunks
+
 6. **Explicit stack**: Use heap-based stack instead of call stack
 
 ```typescript
@@ -939,17 +1007,20 @@ const factorial = trampoline(function f(n: number, acc = 1): any {
 });
 
 factorial(100000);  // Works without stack overflow
+
 ```
 
 **Q18: Analyze the time and space complexity of recursive vs iterative solutions.**
 
 A:
+
 - **Time Complexity**: Often the same (e.g., O(n) for factorial)
 - **Space Complexity**:
   - Recursion: O(n) stack space (plus any heap allocations)
   - Iteration: O(1) stack space (plus any heap allocations)
 
 Example - Fibonacci:
+
 - Recursive: O(2^n) time, O(n) space
 - Iterative: O(n) time, O(1) space
 - Memoized: O(n) time, O(n) space
@@ -957,6 +1028,7 @@ Example - Fibonacci:
 **Q19: How do you handle errors in recursive functions without losing stack context?**
 
 A:
+
 ```typescript
 function recursiveWithErrorHandling<T>(
   items: T[],
@@ -976,19 +1048,27 @@ function recursiveWithErrorHandling<T>(
     throw error;
   }
 }
+
 ```
 
 **Q20: Explain how the call stack affects performance in a high-traffic web application.**
 
 A:
+
 1. **Synchronous operations**: Block the stack, causing UI lag
+
 2. **Deep recursion**: Can cause stack overflow in edge cases
+
 3. **Memory pressure**: Many stack frames consume memory
+
 4. **Garbage collection**: Stack cleanup affects GC pressure
+
 5. **Async operations**: Free up stack for other requests
+
 6. **Worker offloading**: Move heavy computation off main stack
 
 Optimizations:
+
 - Use async/await for I/O operations
 - Break up heavy computations
 - Use Web Workers for CPU-intensive tasks
@@ -1000,12 +1080,17 @@ Optimizations:
 **Q21: What are the security implications of call stack manipulation?**
 
 A:
+
 1. **Stack smashing**: Overwriting return addresses (mitigated by modern engines)
+
 2. **Information leakage**: Stack traces expose code structure
+
 3. **DoS attacks**: Intentional stack overflow
+
 4. **Side-channel attacks**: Timing attacks via stack depth
 
 Prevention:
+
 - Input validation
 - Stack size limits
 - Error message sanitization
@@ -1014,11 +1099,13 @@ Prevention:
 **Q22: How do different JavaScript engines optimize the call stack?**
 
 A:
+
 - **V8 (Chrome/Node.js)**: Uses register-based calling convention, inlining, lazy compilation
 - **SpiderMonkey (Firefox)**: Uses IonMonkey compiler, baseline compiler
 - **JavaScriptCore (Safari)**: Uses FTL (Faster Than Light) JIT compiler
 
 Optimizations:
+
 - Function inlining
 - Tail call optimization (Safari)
 - Stack frame reuse
@@ -1027,15 +1114,21 @@ Optimizations:
 **Q23: What is the relationship between the call stack and memory management?**
 
 A:
+
 1. **Stack memory**: Automatically managed (LIFO)
+
 2. **Heap memory**: Managed by garbage collector
+
 3. **References**: Stack holds references to heap objects
+
 4. **Cleanup**: Stack frames are destroyed when functions return
+
 5. **Garbage collection**: Occurs when heap objects have no references
 
 **Q24: How do you test for stack overflow vulnerabilities?**
 
 A:
+
 ```typescript
 function testStackOverflow(): void {
   let depth = 0;
@@ -1054,15 +1147,21 @@ function testStackOverflow(): void {
 }
 
 // Use this to find safe recursion limits for your application
+
 ```
 
 **Q25: What are alternatives to recursion for tree traversal?**
 
 A:
+
 1. **Iterative with explicit stack**: Use array as stack
+
 2. **Breadth-first search**: Use queue instead of stack
+
 3. **Morris traversal**: O(1) space, modifies tree temporarily
+
 4. **Threaded binary trees**: Use null pointers for traversal
+
 5. **Yield/generator functions**: Pause and resume traversal
 
 ```typescript
@@ -1080,6 +1179,7 @@ function iterativeDFS(root: TreeNode): void {
     }
   }
 }
+
 ```
 
 ## Summary
@@ -1087,11 +1187,17 @@ function iterativeDFS(root: TreeNode): void {
 The call stack is fundamental to JavaScript execution:
 
 1. **LIFO structure**: Functions are pushed when called, popped when returned
+
 2. **Single-threaded**: Only one function executes at a time
+
 3. **Stack overflow**: Too many nested calls cause errors
+
 4. **Async handling**: Asynchronous code is queued, not blocking
+
 5. **Debugging**: Stack traces help locate errors
+
 6. **Performance**: Deep recursion impacts memory and can cause overflow
+
 7. **Optimization**: Use iteration, tail recursion, or explicit stacks when needed
 
 Understanding the call stack is essential for writing efficient, bug-free JavaScript and answering technical interview questions.
@@ -1142,6 +1248,7 @@ PERFORMANCE:
 • Deep recursion = high memory usage
 • Iteration is generally more efficient
 • TCO can help (limited support)
+
 ```
 
 ## References & Learn More

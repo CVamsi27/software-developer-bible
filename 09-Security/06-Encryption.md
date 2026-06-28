@@ -47,6 +47,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
 │  └──────────┘      └──────────────┘      └──────────┘          │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### TLS/HTTPS Handshake
@@ -73,6 +74,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
      │                                               │
      │  5. Encrypted communication                   │
      │<─────────────────────────────────────────────>│
+
 ```
 
 ### Hashing Process
@@ -87,6 +89,7 @@ In web development, encryption is used for protecting data in transit (HTTPS/TLS
                    │  Salt   │
                    │ (Random)│
                    └─────────┘
+
 ```
 
 ## Code Examples
@@ -137,6 +140,7 @@ class SymmetricEncryption {
 const encryptor = new SymmetricEncryption(process.env.ENCRYPTION_KEY!);
 const encrypted = encryptor.encrypt("Sensitive data");
 const decrypted = encryptor.decrypt(encrypted);
+
 ```
 
 ### Asymmetric Encryption (RSA)
@@ -191,6 +195,7 @@ class AsymmetricEncryption {
 const asymmetric = new AsymmetricEncryption();
 const encrypted = asymmetric.encrypt("Secret message");
 const decrypted = asymmetric.decrypt(encrypted);
+
 ```
 
 ### Password Hashing (bcrypt)
@@ -231,6 +236,7 @@ app.post("/login", async (req, res) => {
     // Login successful
   }
 });
+
 ```
 
 ### Argon2 Password Hashing
@@ -259,6 +265,7 @@ class Argon2Hasher {
 const argon2Hasher = new Argon2Hasher();
 const hash = await argon2Hasher.hash("password123");
 const isValid = await argon2Hasher.verify(hash, "password123");
+
 ```
 
 ### Encryption at Rest
@@ -312,31 +319,37 @@ prisma.$use(async (params, next) => {
 
   return result;
 });
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. HTTPS/TLS
+
 - Encrypts all data in transit between client and server
 - Prevents man-in-the-middle attacks
 - Required for secure web applications
 
 ### 2. Password Storage
+
 - Never store plaintext passwords
 - Use bcrypt, argon2, or scrypt with salt
 - Verify passwords without decrypting
 
 ### 3. Database Encryption
+
 - Encrypt sensitive fields (SSN, credit card numbers)
 - Use transparent data encryption for full database
 - Implement field-level encryption for specific data
 
 ### 4. API Communication
+
 - Encrypt sensitive data in API requests/responses
 - Use JWT with signed payloads
 - Implement mutual TLS for service-to-service communication
 
 ### 5. File Storage
+
 - Encrypt files before uploading to cloud storage
 - Use envelope encryption for large files
 - Implement key rotation for file encryption keys
@@ -344,12 +357,19 @@ prisma.$use(async (params, next) => {
 ## Common Mistakes
 
 1. **Using MD5 or SHA1 for passwords**: These are fast hashes, not suitable for password storage
+
 2. **Not using salt**: Enables rainbow table attacks
+
 3. **Rolling your own crypto**: Use established libraries (crypto, bcrypt, argon2)
+
 4. **Hardcoding encryption keys**: Never commit keys to source control
+
 5. **Using weak encryption algorithms**: Use AES-256, not DES or 3DES
+
 6. **Not rotating keys**: Implement key rotation for long-term security
+
 7. **Storing keys with encrypted data**: Keep keys separate from encrypted data
+
 8. **Not using HTTPS**: All web applications should use HTTPS
 
 ## Performance Considerations

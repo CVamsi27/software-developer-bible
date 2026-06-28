@@ -5,6 +5,7 @@
 **Services** provide stable networking for a set of Pods. They load-balance traffic across Pods and provide DNS-based service discovery. **Ingress** manages external HTTP/HTTPS access to Services, providing routing, TLS termination, and virtual hosting.
 
 Key concepts:
+
 - **Service**: Stable IP and DNS name for a set of Pods
 - **ClusterIP**: Internal-only service access
 - **NodePort**: Expose service on each node's IP
@@ -29,31 +30,50 @@ Key concepts:
 
 ```text
                         Internet
+
                             |
+
                             v
                     +---------------+
+
                     | LoadBalancer  |
                     | (Cloud LB)   |
+
                     +-------+-------+
+
                             |
+
                             v
                     +---------------+
+
                     |    Ingress    |
                     |   Controller  |
+
                     +-------+-------+
+
                             |
+
               +-------------+-------------+
+
               |             |             |
+
               v             v             v
       +-----------+  +-----------+  +-----------+
+
       |  Service  |  |  Service  |  |  Service  |
       |  (web)    |  |  (api)    |  |  (admin)  |
+
       +-----------+  +-----------+  +-----------+
+
          |    |        |    |        |    |
+
          v    v        v    v        v    v
       +----+ +----+ +----+ +----+ +----+ +----+
+
       |Pod | |Pod | |Pod | |Pod | |Pod | |Pod |
+
       +----+ +----+ +----+ +----+ +----+ +----+
+
 ```
 
 ### Service Types
@@ -61,54 +81,78 @@ Key concepts:
 ```text
 ClusterIP (default):
 +------------------+
+
 | Service          |
+
 | 10.96.0.10:80    |  <-- Cluster-internal IP
 +------------------+
   Accessible from: Pods in cluster only
 
 NodePort:
 +------------------+
+
 | Service          |
+
 | NodePort: 30080  |  <-- Exposed on every node
 +------------------+
   Accessible from: External via <NodeIP>:30080
 
 LoadBalancer:
 +------------------+
+
 | Service          |
+
 | Type: LoadBalancer|  <-- Cloud provider LB
 +------------------+
   Accessible from: External via LB IP
+
 ```
 
 ### Ingress Architecture
 
 ```text
                       External Traffic
+
                             |
+
                             v
                     +---------------+
+
                     |   Ingress    |
                     |   Controller |
                     |   (nginx)    |
+
                     +-------+-------+
+
                             |
+
                             v
                     +---------------+
+
                     |   Ingress    |
                     |    Rules     |
+
                     +-------+-------+
+
                             |
+
               +-------------+-------------+
+
               |             |             |
+
               v             v             v
         api.example.com  web.example.com  admin.example.com
+
               |             |             |
+
               v             v             v
         +---------+   +---------+   +---------+
+
         | api-svc |   | web-svc |   |admin-svc|
         | :8080   |   | :80     |   | :3000   |
+
         +---------+   +---------+   +---------+
+
 ```
 
 ## Code Examples
@@ -125,9 +169,11 @@ spec:
   selector:
     app: myapp
   ports:
+
     - protocol: TCP
       port: 80
       targetPort: 8080
+
 ```
 
 ### NodePort Service
@@ -142,10 +188,12 @@ spec:
   selector:
     app: myapp
   ports:
+
     - protocol: TCP
       port: 80
       targetPort: 8080
       nodePort: 30080
+
 ```
 
 ### LoadBalancer Service
@@ -164,11 +212,14 @@ spec:
   selector:
     app: myapp
   ports:
+
     - protocol: TCP
       port: 80
       targetPort: 8080
   loadBalancerSourceRanges:
+
     - 10.0.0.0/8
+
 ```
 
 ### Headless Service
@@ -183,9 +234,11 @@ spec:
   selector:
     app: myapp
   ports:
+
     - protocol: TCP
       port: 80
       targetPort: 8080
+
 ```
 
 ### Ingress
@@ -202,14 +255,17 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
+
     - hosts:
         - api.example.com
         - web.example.com
       secretName: tls-secret
   rules:
+
     - host: api.example.com
       http:
         paths:
+
           - path: /
             pathType: Prefix
             backend:
@@ -221,6 +277,7 @@ spec:
     - host: web.example.com
       http:
         paths:
+
           - path: /
             pathType: Prefix
             backend:
@@ -232,6 +289,7 @@ spec:
     - host: admin.example.com
       http:
         paths:
+
           - path: /api
             pathType: Prefix
             backend:
@@ -239,6 +297,7 @@ spec:
                 name: admin-api
                 port:
                   number: 8080
+
           - path: /
             pathType: Prefix
             backend:
@@ -246,6 +305,7 @@ spec:
                 name: admin-frontend
                 port:
                   number: 80
+
 ```
 
 ### Multi-Path Ingress
@@ -258,9 +318,11 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+
     - host: myapp.example.com
       http:
         paths:
+
           - path: /api
             pathType: Prefix
             backend:
@@ -268,6 +330,7 @@ spec:
                 name: api-service
                 port:
                   number: 8080
+
           - path: /static
             pathType: Prefix
             backend:
@@ -275,6 +338,7 @@ spec:
                 name: static-service
                 port:
                   number: 80
+
           - path: /
             pathType: Prefix
             backend:
@@ -282,6 +346,7 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
+
 ```
 
 ### Managing Services
@@ -306,6 +371,7 @@ kubectl run curl --image=curlimages/curl --rm -it -- \
 
 # Expose deployment as service
 kubectl expose deployment myapp --port=80 --target-port=8080
+
 ```
 
 ## Real-World Use Cases
@@ -323,6 +389,7 @@ spec:
   selector:
     app: api-gateway
   ports:
+
     - port: 80
       targetPort: 3000
 ---
@@ -336,6 +403,7 @@ spec:
   selector:
     app: auth
   ports:
+
     - port: 80
       targetPort: 8080
 ---
@@ -349,8 +417,10 @@ spec:
   selector:
     app: user
   ports:
+
     - port: 80
       targetPort: 8080
+
 ```
 
 ### 2. Ingress with Rate Limiting
@@ -368,13 +438,16 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
+
     - hosts:
         - api.example.com
       secretName: api-tls
   rules:
+
     - host: api.example.com
       http:
         paths:
+
           - path: /
             pathType: Prefix
             backend:
@@ -382,6 +455,7 @@ spec:
                 name: api-service
                 port:
                   number: 80
+
 ```
 
 ### 3. gRPC Service
@@ -399,10 +473,12 @@ spec:
   selector:
     app: grpc-server
   ports:
+
     - name: grpc
       port: 50051
       targetPort: 50051
       protocol: TCP
+
 ```
 
 ## Common Mistakes
@@ -432,6 +508,7 @@ spec:
   selector:
     app: api
   ports:
+
     - name: http
       port: 80
       targetPort: 8080
@@ -450,13 +527,16 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
+
     - hosts:
         - api.example.com
       secretName: api-tls
   rules:
+
     - host: api.example.com
       http:
         paths:
+
           - path: /
             pathType: Prefix
             backend:
@@ -464,16 +544,25 @@ spec:
                 name: api-service
                 port:
                   number: 80
+
 ```
 
 1. **Use ClusterIP by default** — only expose externally when needed
+
 2. **Always use TLS** — encrypt external traffic
+
 3. **Add readiness probes** — ensure traffic only goes to ready Pods
+
 4. **Use annotations** — configure Ingress controller features
+
 5. **Set resource limits** — prevent resource exhaustion
+
 6. **Use network policies** — restrict inter-service traffic
+
 7. **Monitor service health** — track endpoint availability
+
 8. **Use headless services** — for stateful applications
+
 9. **Configure health checks** — enable load balancer health checks
 10. **Use external-dns** — automate DNS record management
 
@@ -500,6 +589,7 @@ kubectl describe ingress myapp-ingress
 
 # View Ingress controller logs
 kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
+
 ```
 
 ## Interview Questions
@@ -642,11 +732,13 @@ kubectl run test --image=curlimages/curl --rm -it -- curl http://myapp:80
 
 # Ingress controller logs
 kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

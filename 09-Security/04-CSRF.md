@@ -50,6 +50,7 @@ CSRF attacks target state-changing operations (not data retrieval) and rely on t
      │                    6. Server validates session                 │
      │                    7. Transfer executes                        │
      │                               │                               │
+
 ```
 
 ### Same-Origin Policy and CSRF
@@ -77,6 +78,7 @@ CSRF attacks target state-changing operations (not data retrieval) and rely on t
 │     - JavaScript can make cross-origin requests (with CORS)     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -100,6 +102,7 @@ app.get("/api/delete-account", async (req, res) => {
   await db.deleteUser(userId);
   res.json({ success: true });
 });
+
 ```
 
 ### CSRF Protection Implementation
@@ -231,6 +234,7 @@ app.use(
     },
   })
 );
+
 ```
 
 ### React CSRF Implementation
@@ -282,26 +286,31 @@ function TransferForm() {
     });
   };
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Banking Applications
+
 - Transfer requests must be protected against CSRF
 - Password changes require CSRF tokens
 - Account modifications need verification
 
 ### 2. E-commerce Sites
+
 - Purchase orders must be CSRF-protected
 - Cart modifications require protection
 - Address and payment changes need CSRF tokens
 
 ### 3. Social Media Platforms
+
 - Posting, liking, and sharing require CSRF protection
 - Profile updates need CSRF tokens
 - Account settings changes must be protected
 
 ### 4. Admin Dashboards
+
 - All state-changing operations require CSRF protection
 - User management operations need CSRF tokens
 - Configuration changes must be protected
@@ -309,24 +318,39 @@ function TransferForm() {
 ## Common Mistakes
 
 1. **Using GET for state-changing operations**: GET requests should be idempotent; use POST for state changes
+
 2. **Not implementing CSRF protection**: Every state-changing endpoint needs protection
+
 3. **Using SameSite=None without CSRF tokens**: SameSite cookies don't protect all scenarios
+
 4. **Not validating CSRF tokens**: Must validate on every state-changing request
+
 5. **Storing CSRF tokens in localStorage**: Tokens should be in httpOnly cookies or session
+
 6. **Not protecting API endpoints**: APIs need CSRF protection too
+
 7. **Using predictable CSRF tokens**: Always use cryptographically random tokens
+
 8. **Not invalidating CSRF tokens after use**: Single-use tokens are more secure
 
 ## Best Practices
 
 1. **Use SameSite cookies** (Strict or Lax) as first line of defense
+
 2. **Implement CSRF tokens** for all state-changing operations
+
 3. **Use Double Submit Cookie** pattern for SPAs
+
 4. **Validate CSRF tokens** with timing-safe comparison
+
 5. **Use POST** for all state-changing operations
+
 6. **Set CSRF token expiration** (5-15 minutes)
+
 7. **Rotate CSRF tokens** after login/logout
+
 8. **Implement Content Security Policy** to limit script execution
+
 9. **Use HTTPS** to prevent token interception
 10. **Validate Origin and Referer headers** as additional protection
 

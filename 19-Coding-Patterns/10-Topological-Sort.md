@@ -80,6 +80,7 @@ function topologicalSortDFS(numCourses: number, prerequisites: number[][]): numb
 
   return result;
 }
+
 ```
 
 ## How It Works
@@ -96,13 +97,19 @@ Valid topological orders:
 [2, 0, 1, 3]
 
 Kahn's Algorithm (BFS):
+
 1. Find all nodes with in-degree 0: [0]
+
 2. Remove 0, update in-degrees: [1, 2] have in-degree 0
+
 3. Remove 1, update: [2, 3] have in-degree 0
+
 4. Remove 2, update: [3] has in-degree 0
+
 5. Remove 3: done!
 
 Result: [0, 1, 2, 3]
+
 ```
 
 ### ASCII Diagram
@@ -121,24 +128,28 @@ In-degrees: [0: 0, 1: 1, 2: 1, 3: 2]
 Queue: [0]
 
 Step 1: Process 0
+
 - Remove edges 0→1, 0→2
 - In-degrees: [0: 0, 1: 0, 2: 0, 3: 2]
 - Queue: [1, 2]
 - Result: [0]
 
 Step 2: Process 1
+
 - Remove edge 1→3
 - In-degrees: [0: 0, 1: 0, 2: 0, 3: 1]
 - Queue: [2]
 - Result: [0, 1]
 
 Step 3: Process 2
+
 - Remove edge 2→3
 - In-degrees: [0: 0, 1: 0, 2: 0, 3: 0]
 - Queue: [3]
 - Result: [0, 1, 2]
 
 Step 4: Process 3
+
 - No edges to remove
 - Queue: []
 - Result: [0, 1, 2, 3]
@@ -154,6 +165,7 @@ Back to 2: visited, add to front
 Back to 0: visited, add to front
 
 Result: [3, 1, 2, 0] (reverse finish order)
+
 ```
 
 ## Code Examples (TypeScript)
@@ -196,6 +208,7 @@ function canFinish(numCourses: number, prerequisites: number[][]): boolean {
 // Example
 console.log(canFinish(2, [[1,0]])); // true
 console.log(canFinish(2, [[1,0],[0,1]])); // false (cycle)
+
 ```
 
 ### Problem 2: Course Schedule II
@@ -236,6 +249,7 @@ function findOrder(numCourses: number, prerequisites: number[][]): number[] {
 // Example
 console.log(findOrder(2, [[1,0]])); // [0, 1]
 console.log(findOrder(4, [[1,0],[2,0],[3,1],[3,2]])); // [0, 1, 2, 3]
+
 ```
 
 ### Problem 3: Alien Dictionary
@@ -307,6 +321,7 @@ console.log(alienOrder(["z","x"]));
 // "zx"
 console.log(alienOrder(["z","x","z"]));
 // "" (cycle)
+
 ```
 
 ### Problem 4: Parallel Courses
@@ -353,6 +368,7 @@ function minimumSemesters(n: number, relations: number[][]): number {
 // Example
 console.log(minimumSemesters(3, [[1,3],[2,3]])); // 2
 console.log(minimumSemesters(3, [[1,2],[2,3],[3,1]])); // -1 (cycle)
+
 ```
 
 ### Problem 5: Longest Path in DAG
@@ -393,14 +409,19 @@ function longestPath(n: number, edges: number[][]): number[] {
 // Example
 console.log(longestPath(5, [[0,1,3],[0,2,2],[1,3,1],[2,3,4],[1,4,2]]));
 // [0, 3, 2, 4, 5]
+
 ```
 
 ## Common Mistakes
 
 1. **Not detecting cycles**: Topological sort only works on DAGs
+
 2. **Wrong edge direction**: Ensure edges represent dependencies correctly
+
 3. **Not handling all nodes**: Some nodes may have no edges
+
 4. **Forgetting to check if valid**: Result length must equal number of nodes
+
 5. **Not initializing in-degree**: Set all nodes with no incoming edges to 0
 
 ## Time/Space Complexity
@@ -419,20 +440,27 @@ console.log(longestPath(5, [[0,1,3],[0,2,2],[1,3,1],[2,3,4],[1,4,2]]));
 ### Easy
 
 1. **Course Schedule** (LeetCode 207)
+
 2. **Minimum Height Trees** (LeetCode 310)
 
 ### Medium
 
 1. **Course Schedule II** (LeetCode 210)
+
 2. **Alien Dictionary** (LeetCode 269)
+
 3. **Parallel Courses** (LeetCode 1136)
+
 4. **Longest Path in DAG** (custom problem)
+
 5. **Sort Items by Groups Respecting Dependencies** (LeetCode 1203)
 
 ### Hard
 
 1. **All Anagrams from a Dictionary** (LeetCode 212)
+
 2. **Parallel Courses III** (LeetCode 2050)
+
 3. **Critical Connections in a Network** (LeetCode 1192)
 
 ## Summary
@@ -462,15 +490,18 @@ Algorithms:
 └─────────────────────────────────────────┘
 
 When to use:
+
 - Task scheduling → Kahn's
 - Detecting cycles → DFS
 - Need order → Kahn's
 - Need to detect all cycles → DFS
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Topological Sort](https://leetcode.com/tag/topological-sort/)
 - [NeetCode Graphs](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

@@ -57,6 +57,7 @@ A **Closure** is a function that remembers and can access variables from its out
 │  └─────────────────────────────────────────────────────────┘│
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### How Closures Capture Variables
@@ -103,6 +104,7 @@ A **Closure** is a function that remembers and can access variables from its out
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Closure Scope Chain
@@ -141,6 +143,7 @@ A **Closure** is a function that remembers and can access variables from its out
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -161,6 +164,7 @@ console.log(hello("Alice"));    // "Hello, Alice!"
 console.log(goodbye("Alice"));  // "Goodbye, Alice!"
 
 // Each closure has its own 'greeting' variable
+
 ```
 
 ### Data Privacy (Module Pattern)
@@ -197,6 +201,7 @@ console.log(account.deposit(500));    // "Deposited $500. Balance: $1500"
 console.log(account.withdraw(200));   // "Withdrew $200. Balance: $1300"
 console.log(account.getBalance());    // 1300
 // console.log(account.balance);     // undefined (private!)
+
 ```
 
 ### Event Handler Closure
@@ -213,6 +218,7 @@ function setupButton(buttonId: string, message: string) {
 
 setupButton('btn1', 'Hello!');
 setupButton('btn2', 'Goodbye!');
+
 ```
 
 ### Loop Closure Problem
@@ -239,6 +245,7 @@ for (var i = 0; i < 3; i++) {
 for (var i = 0; i < 3; i++) {
   setTimeout((index) => console.log(index), 100, i);  // 0, 1, 2
 }
+
 ```
 
 ### Function Factory
@@ -257,6 +264,7 @@ const tenTimes = createMultiplier(10);
 console.log(double(5));    // 10
 console.log(triple(5));    // 15
 console.log(tenTimes(5));  // 50
+
 ```
 
 ### Memoization with Closures
@@ -285,6 +293,7 @@ const expensiveCalculation = memoize((n: number): number => {
 
 console.log(expensiveCalculation(4));  // Computing... 16
 console.log(expensiveCalculation(4));  // 16 (cached, no computation)
+
 ```
 
 ### React Hook Closure
@@ -316,6 +325,7 @@ function Counter() {
     </div>
   );
 }
+
 ```
 
 ### Private Class Fields (Closure Pattern)
@@ -346,6 +356,7 @@ console.log(person.name);  // "Alice"
 person.name = "Bob";
 console.log(person.name);  // "Bob"
 // Direct access not possible
+
 ```
 
 ## Real-World Use Cases
@@ -373,6 +384,7 @@ function useTodoList() {
 
   return { todos, addTodo, removeTodo, clearTodos };
 }
+
 ```
 
 ### 2. Debounce/Throttle Implementation
@@ -394,6 +406,7 @@ function debounce<T extends (...args: any[]) => any>(
 const handleSearch = debounce((query: string) => {
   console.log(`Searching: ${query}`);
 }, 300);
+
 ```
 
 ### 3. Event Listener Management
@@ -434,6 +447,7 @@ const events = createEventManager();
 const unsubscribe = events.on('data', (data: any) => console.log(data));
 events.emit('data', { value: 42 });
 unsubscribe();  // Remove listener
+
 ```
 
 ### 4. Configuration Pattern
@@ -462,6 +476,7 @@ function createApiConfig(baseUrl: string) {
 
 const api = createApiConfig('https://api.example.com');
 api.get('/users');  // Uses captured baseUrl
+
 ```
 
 ### 5. Iterator Pattern
@@ -487,6 +502,7 @@ const iterator = createRangeIterator(1, 5);
 console.log(iterator.next());  // { value: 1, done: false }
 console.log(iterator.next());  // { value: 2, done: false }
 // ... until done
+
 ```
 
 ## Common Mistakes
@@ -503,6 +519,7 @@ for (var i = 0; i < 3; i++) {
 for (let i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 100);  // 0, 1, 2
 }
+
 ```
 
 ### 2. Accidentally Capturing Large Objects
@@ -527,6 +544,7 @@ function processDataOptimized() {
     return summary.length;  // Only captures summary
   };
 }
+
 ```
 
 ### 3. Forgetting to Clean Up Closures
@@ -551,6 +569,7 @@ function createHandlerOptimized() {
     hugeData = null;  // Release reference
   };
 }
+
 ```
 
 ### 4. Arrow Function `this` in Closures
@@ -572,6 +591,7 @@ const obj2 = {
     console.log(this.name);
   }
 };
+
 ```
 
 ## Best Practices
@@ -595,6 +615,7 @@ function good() {
     return name;  // Only captures name
   };
 }
+
 ```
 
 ### 2. Use WeakMap for Private Data
@@ -611,6 +632,7 @@ class Person {
     return privateData.get(this)?.name;
   }
 }
+
 ```
 
 ### 3. Clean Up Event Listeners
@@ -628,6 +650,7 @@ function setupEventListener() {
 
 const cleanup = setupEventListener();
 // Later: cleanup();
+
 ```
 
 ### 4. Use Closure for Configuration
@@ -646,6 +669,7 @@ const createAppConfig = createConfig({
 
 const config = createAppConfig({ theme: 'dark' });
 // { theme: 'dark', language: 'en' }
+
 ```
 
 ## Performance Considerations
@@ -683,6 +707,7 @@ function createClosuresOptimized() {
 
   return closures;
 }
+
 ```
 
 ### Garbage Collection
@@ -708,6 +733,7 @@ function createClosureWithCleanup() {
     return result;
   };
 }
+
 ```
 
 ## Interview Questions
@@ -725,6 +751,7 @@ A: Closures are created when a function is defined inside another function and t
 **Q3: What is the use of closures?**
 
 A: Common uses include:
+
 - Data privacy (encapsulation)
 - Function factories
 - Event handlers
@@ -745,8 +772,11 @@ A: Closures have access to their own scope, the outer function's scope, and the 
 **Q6: Explain the loop closure problem and how to solve it.**
 
 A: The problem occurs when using `var` in loops - all callbacks share the same variable. Solutions:
+
 1. Use `let` instead of `var` (block scoping)
+
 2. Use IIFE to create new scope for each iteration
+
 3. Use `setTimeout` third argument to pass the value
 
 **Q7: How do closures affect memory management?**
@@ -756,6 +786,7 @@ A: Closures retain references to their lexical environment, preventing garbage c
 **Q8: What is the difference between closure and scope?**
 
 A:
+
 - **Scope**: Defines variable accessibility (where variables are visible)
 - **Closure**: The combination of a function and its lexical environment that it remembers
 
@@ -782,6 +813,7 @@ A: Closures prevent garbage collection of their lexical environment. The garbage
 **Q13: What is the memory footprint of closures?**
 
 A: Each closure retains a reference to its entire lexical environment chain. The footprint includes:
+
 - All variables in the closure's scope
 - All variables in outer scopes (if referenced)
 - The function itself
@@ -790,15 +822,21 @@ A: Each closure retains a reference to its entire lexical environment chain. The
 **Q14: How do you optimize closure memory usage?**
 
 A:
+
 1. Only capture variables you actually use
+
 2. Destructure objects to capture only needed properties
+
 3. Set references to null when done
+
 4. Use WeakMap for private data
+
 5. Avoid creating closures in loops unnecessarily
 
 **Q15: What is the relationship between closures and functional programming?**
 
 A: Closures enable functional programming concepts:
+
 - **Higher-order functions**: Functions that return functions
 - **Partial application**: Pre-filling function arguments
 - **Currying**: Converting functions to accept one argument at a time
@@ -810,6 +848,7 @@ A: Closures enable functional programming concepts:
 **Q16: Design a state management system using closures.**
 
 A:
+
 ```typescript
 function createStore<T>(initialState: T) {
   let state = initialState;
@@ -836,11 +875,13 @@ const unsubscribe = store.subscribe(() => {
 });
 store.setState({ count: 1 });  // Logs state change
 unsubscribe();
+
 ```
 
 **Q17: How would you implement a pub/sub system with closures?**
 
 A:
+
 ```typescript
 function createPubSub() {
   const subscribers = new Map<string, Set<Function>>();
@@ -870,32 +911,47 @@ function createPubSub() {
     }
   };
 }
+
 ```
 
 **Q18: Analyze the performance implications of closures in a React application.**
 
 A:
+
 1. **Memory**: Closures in hooks can prevent garbage collection
+
 2. **Re-renders**: New closures on each render cause unnecessary re-renders
+
 3. **Solution**: Use `useCallback` and `useMemo` to memoize closures
+
 4. **Cleanup**: Always clean up event listeners and subscriptions
+
 5. **Profiling**: Use React DevTools to identify closure-related performance issues
 
 **Q19: How do closures affect testability?**
 
 A:
+
 1. **Isolation**: Closures provide natural isolation for unit testing
+
 2. **Dependency injection**: Can mock dependencies through closure parameters
+
 3. **State management**: Easy to test state changes
+
 4. **Challenges**: Private state can be harder to verify
+
 5. **Solution**: Expose test-specific methods or use dependency injection
 
 **Q20: What are the security implications of closures?**
 
 A:
+
 1. **Data leakage**: Closures can expose private data if not careful
+
 2. **Prototype pollution**: Can affect all instances
+
 3. **XSS**: Closures in event handlers can be exploited
+
 4. **Mitigation**: Use strict mode, validate inputs, sanitize data
 
 ### Follow-ups (5-10 questions)
@@ -903,6 +959,7 @@ A:
 **Q21: Can you give an example of a closure-related memory leak?**
 
 A:
+
 ```typescript
 // Memory leak: Closure keeps reference to DOM element
 function createLeakyHandler() {
@@ -927,15 +984,21 @@ function createCleanHandler() {
     element?.removeEventListener('click', handler);
   };
 }
+
 ```
 
 **Q22: How do you debug closure-related issues?**
 
 A:
+
 1. **Chrome DevTools**: Inspect closure scopes in debugger
+
 2. **Console.log**: Log captured variables
+
 3. **WeakRef**: Track closure references
+
 4. **Memory snapshots**: Compare heap snapshots
+
 5. **Performance profiling**: Identify closure-related performance issues
 
 **Q23: What is the relationship between closures and modules?**
@@ -945,6 +1008,7 @@ A: Modules use closures to encapsulate private state. The module pattern returns
 **Q24: How do closures work in different JavaScript environments?**
 
 A:
+
 - **Browser**: Standard closure behavior
 - **Node.js**: Same behavior, but with module system
 - **Web Workers**: Separate global scope, but closures work the same
@@ -953,13 +1017,21 @@ A:
 **Q25: What are best practices for using closures in large applications?**
 
 A:
+
 1. Document closure behavior in complex functions
+
 2. Use TypeScript to track variable types
+
 3. Limit closure scope to what's needed
+
 4. Clean up event listeners and subscriptions
+
 5. Use WeakMap for private data
+
 6. Profile memory usage regularly
+
 7. Avoid creating closures in hot paths
+
 8. Use dependency injection for testability
 
 ## Summary
@@ -967,11 +1039,17 @@ A:
 Closures are a powerful JavaScript feature:
 
 1. **Definition**: Functions that remember their lexical environment
+
 2. **Creation**: Created when functions are defined
+
 3. **Use cases**: Data privacy, event handlers, React hooks, memoization
+
 4. **Memory**: Can prevent garbage collection if not managed
+
 5. **Performance**: Minimize captured variables
+
 6. **Debugging**: Use DevTools to inspect closure scopes
+
 7. **Best practices**: Clean up, limit scope, use WeakMap
 
 Understanding closures is essential for writing efficient, maintainable JavaScript and answering advanced interview questions.
@@ -1054,6 +1132,7 @@ INTERVIEW TIPS:
 • Show practical examples
 • Mention performance considerations
 • Talk about debugging techniques
+
 ```
 
 ## References & Learn More

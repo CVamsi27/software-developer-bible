@@ -5,6 +5,7 @@
 **Blue-Green Deployment** maintains two identical environments (blue and green). One serves production traffic while the other is updated. Traffic switches instantly after validation. **Canary Deployment** gradually rolls out changes to a small subset of users before full deployment.
 
 Key concepts:
+
 - **Blue-Green**: Two identical environments, instant traffic switch
 - **Canary**: Gradual rollout to small user subset
 - **Rolling Update**: Gradual replacement of instances
@@ -28,25 +29,37 @@ Key concepts:
 
 ```text
                     Load Balancer
+
                          |
+
                          v
             +------------------------+
+
             |    Traffic Router      |
             |   (current: blue)      |
+
             +------------------------+
+
                     |           |
+
                     v           v
             +-----------+ +-----------+
+
             |   BLUE    | |   GREEN   |
             | (current) | |   (new)   |
             |           | |           |
             | v1.0.0    | | v2.0.0   |
+
             +-----------+ +-----------+
+
                  |              |
+
                  v              v
             +-----------+ +-----------+
+
             | Database  | | Database  |
             | (shared)  | | (shared)  |
+
             +-----------+ +-----------+
 
 Step 1: Blue serves traffic (v1.0.0)
@@ -54,32 +67,42 @@ Step 2: Deploy v2.0.0 to Green
 Step 3: Test Green
 Step 4: Switch traffic to Green
 Step 5: Blue becomes standby (or rollback target)
+
 ```
 
 ### Canary Architecture
 
 ```text
                     Load Balancer
+
                          |
+
                          v
             +------------------------+
+
             |    Traffic Router      |
             |   (canary: 10%)        |
+
             +------------------------+
+
                     |           |
+
                     v           v
             +-----------+ +-----------+
+
             |  STABLE   | |  CANARY   |
             |   (90%)   | |   (10%)   |
             |           | |           |
             | v1.0.0    | | v2.0.0   |
             | 9 pods    | | 1 pod     |
+
             +-----------+ +-----------+
 
 Step 1: Deploy v2.0.0 to 1 pod (10%)
 Step 2: Monitor metrics (errors, latency)
 Step 3: If healthy, increase to 20%, 50%, 100%
 Step 4: If unhealthy, rollback immediately
+
 ```
 
 ### Rolling Update Architecture
@@ -92,6 +115,7 @@ Step 2:      [v1] [v1] [v1] [v2] [v2]
 Step 3:      [v1] [v1] [v2] [v2] [v2]
 Step 4:      [v1] [v2] [v2] [v2] [v2]
 Step 5:      [v2] [v2] [v2] [v2] [v2]
+
 ```
 
 ## Code Examples
@@ -120,9 +144,11 @@ spec:
         version: blue
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
 
 ---
@@ -147,9 +173,11 @@ spec:
         version: green
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
           ports:
+
             - containerPort: 8080
 
 ---
@@ -163,8 +191,10 @@ spec:
     app: myapp
     version: blue  # Change to green for new version
   ports:
+
     - port: 80
       targetPort: 8080
+
 ```
 
 ### Canary with Kubernetes
@@ -188,6 +218,7 @@ spec:
         track: stable
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
 
@@ -210,6 +241,7 @@ spec:
         track: canary
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
 
@@ -223,8 +255,10 @@ spec:
   selector:
     app: myapp
   ports:
+
     - port: 80
       targetPort: 8080
+
 ```
 
 ### Canary with Ingress (Nginx)
@@ -240,9 +274,11 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+
     - host: myapp.example.com
       http:
         paths:
+
           - path: /
             pathType: Prefix
             backend:
@@ -250,6 +286,7 @@ spec:
                 name: myapp-canary
                 port:
                   number: 80
+
 ```
 
 ### Feature Flags
@@ -267,6 +304,7 @@ if (featureFlags.newCheckout) {
 } else {
   return legacyCheckoutFlow();
 }
+
 ```
 
 ### Blue-Green Switch Script
@@ -287,6 +325,7 @@ kubectl patch svc myapp -p '{"spec":{"selector":{"version":"'$NEW_VERSION'"}}}'
 kubectl rollout status deployment/myapp-$NEW_VERSION
 
 echo "Deployment complete. New version: $NEW_VERSION"
+
 ```
 
 ### Canary Promotion Script
@@ -308,6 +347,7 @@ else
     nginx.ingress.kubernetes.io/canary-weight="$NEW_WEIGHT" \
     --overwrite
 fi
+
 ```
 
 ## Real-World Use Cases
@@ -328,6 +368,7 @@ spec:
     app: myapp
     version: blue
   ports:
+
     - port: 80
 
 ---
@@ -344,7 +385,9 @@ spec:
     app: myapp
     version: green
   ports:
+
     - port: 80
+
 ```
 
 ### 2. Canary with Istio
@@ -356,13 +399,16 @@ metadata:
   name: myapp
 spec:
   hosts:
+
     - myapp
   http:
+
     - route:
         - destination:
             host: myapp
             subset: stable
           weight: 90
+
         - destination:
             host: myapp
             subset: canary
@@ -376,12 +422,15 @@ metadata:
 spec:
   host: myapp
   subsets:
+
     - name: stable
       labels:
         track: stable
+
     - name: canary
       labels:
         track: canary
+
 ```
 
 ### 3. Feature Flags with LaunchDarkly
@@ -389,11 +438,13 @@ spec:
 ```yaml
 # Environment variable for feature flag
 env:
+
   - name: LAUNCHDARKLY_SDK_KEY
     valueFrom:
       secretKeyRef:
         name: feature-flags
         key: sdk-key
+
 ```
 
 ## Common Mistakes
@@ -428,6 +479,7 @@ spec:
         track: canary
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
           readinessProbe:
@@ -440,16 +492,25 @@ spec:
               path: /health
               port: 8080
             periodSeconds: 10
+
 ```
 
 1. **Always have a rollback plan** — automate rollback on failure
+
 2. **Use health checks** — validate deployments before traffic switch
+
 3. **Monitor metrics** — track error rates, latency, and business metrics
+
 4. **Use feature flags** — decouple deployment from release
+
 5. **Test database migrations** — ensure backward compatibility
+
 6. **Start with small canary** — 1-5% traffic initially
+
 7. **Automate promotion** — use metrics for automatic promotion
+
 8. **Use service mesh** — for advanced traffic management
+
 9. **Document runbooks** — for manual intervention
 10. **Practice deployments** — test in staging first
 
@@ -476,6 +537,7 @@ kubectl patch svc myapp -p '{"spec":{"selector":{"version":"green"}}}'
 
 # Rollback (blue-green)
 kubectl patch svc myapp -p '{"spec":{"selector":{"version":"blue"}}}'
+
 ```
 
 ## Interview Questions
@@ -620,11 +682,13 @@ kubectl logs -l track=canary -f
 
 # Feature flag
 export FEATURE_NEW_CHECKOUT=true
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Documentation](https://docs.docker.com/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)

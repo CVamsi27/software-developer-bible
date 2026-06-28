@@ -54,6 +54,7 @@ A JOIN is a SQL operation that combines rows from two or more tables based on a 
 │  │ 1=a, 1=b, 1=c, 2=a, 2=b...  │                          │
 │  └──────────────────────────────┘                          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Join Algorithms
@@ -83,6 +84,7 @@ A JOIN is a SQL operation that combines rows from two or more tables based on a 
 │  │  Complexity: O(n + m) with sort overhead             │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -119,6 +121,7 @@ FROM users u
 INNER JOIN orders o ON u.id = o.user_id
 INNER JOIN order_items oi ON o.id = oi.order_id
 INNER JOIN products p ON oi.product_id = p.id;
+
 ```
 
 ### LEFT JOIN
@@ -152,6 +155,7 @@ AND o.created_at = (
     FROM orders
     WHERE user_id = u.id
 );
+
 ```
 
 ### RIGHT JOIN
@@ -172,6 +176,7 @@ SELECT
 FROM products p
 LEFT JOIN order_items oi ON p.id = oi.product_id
 GROUP BY p.id, p.name;
+
 ```
 
 ### FULL JOIN
@@ -192,6 +197,7 @@ SELECT
 FROM users u
 FULL JOIN orders o ON u.id = o.user_id
 WHERE u.id IS NULL OR o.id IS NULL;
+
 ```
 
 ### CROSS JOIN
@@ -219,6 +225,7 @@ SELECT
 FROM products p
 CROSS JOIN sizes s
 CROSS JOIN colors c;
+
 ```
 
 ### LATERAL JOIN
@@ -254,6 +261,7 @@ CROSS JOIN LATERAL (
     ORDER BY u.coordinates <-> l.coordinates
     LIMIT 5
 ) AS nearest;
+
 ```
 
 ### Self Join
@@ -275,6 +283,7 @@ FROM employees e1
 INNER JOIN employees e2
     ON e1.department = e2.department
     AND e1.id < e2.id;
+
 ```
 
 ### Subqueries vs Joins
@@ -308,6 +317,7 @@ SELECT
 FROM users u
 LEFT JOIN orders o ON u.id = o.user_id
 GROUP BY u.id, u.name;
+
 ```
 
 ## Real-World Use Cases
@@ -331,6 +341,7 @@ INNER JOIN products p ON oi.product_id = p.id
 INNER JOIN categories c ON p.category_id = c.id
 WHERE o.created_at >= CURRENT_DATE - INTERVAL '30 days'
 ORDER BY o.created_at DESC;
+
 ```
 
 ### User Activity Report
@@ -351,6 +362,7 @@ LEFT JOIN LATERAL (
     LIMIT 1
 ) la ON true
 WHERE u.is_active = true;
+
 ```
 
 ### Inventory Check
@@ -367,6 +379,7 @@ LEFT JOIN order_items oi ON p.id = oi.product_id
 LEFT JOIN orders o ON oi.order_id = o.id
 AND o.created_at >= CURRENT_DATE - INTERVAL '30 days'
 GROUP BY p.id, p.name, p.stock;
+
 ```
 
 ## Common Mistakes
@@ -383,6 +396,7 @@ FROM users u, orders o;
 SELECT u.name, o.total
 FROM users u
 INNER JOIN orders o ON u.id = o.user_id;
+
 ```
 
 ### 2. Using WHERE Instead of ON
@@ -399,6 +413,7 @@ SELECT u.name, o.total
 FROM users u
 LEFT JOIN orders o ON u.id = o.user_id
 AND o.created_at > '2024-01-01';  -- Preserves LEFT JOIN
+
 ```
 
 ### 3. Not Using Table Aliases
@@ -413,6 +428,7 @@ JOIN orders ON users.id = orders.user_id;
 SELECT u.id, u.name, o.total
 FROM users u
 INNER JOIN orders o ON u.id = o.user_id;
+
 ```
 
 ## Best Practices
@@ -452,6 +468,7 @@ SELECT * FROM users u, orders o WHERE u.id = o.user_id;
 
 -- GOOD
 SELECT * FROM users u INNER JOIN orders o ON u.id = o.user_id;
+
 ```
 
 ## Performance Considerations
@@ -482,6 +499,7 @@ AND u.is_active = true;
 -- Use covering indexes
 CREATE INDEX idx_orders_covering ON orders(user_id)
 INCLUDE (total, created_at);
+
 ```
 
 ## Interview Questions
@@ -609,6 +627,7 @@ SELECT * FROM a LEFT JOIN b ON a.id = b.a_id WHERE b.a_id IS NULL;
 
 -- Self-join
 SELECT e.name, m.name FROM employees e LEFT JOIN employees m ON e.manager_id = m.id;
+
 ```
 
 ## References & Learn More

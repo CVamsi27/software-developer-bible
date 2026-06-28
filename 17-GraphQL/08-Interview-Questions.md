@@ -20,6 +20,7 @@ GraphQL Interview Focus Areas:
 │  5. Architecture     → Federation, gateways, microservices     │
 │  6. Tooling          → Apollo Server/Client, codegen, testing  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -33,6 +34,7 @@ GraphQL Interview Focus Areas:
 **Answer:** GraphQL is a query language for APIs and a runtime for executing those queries. It allows clients to request exactly the data they need from a single endpoint, eliminating over-fetching and under-fetching.
 
 **Key Points:**
+
 - Single endpoint (unlike REST's multiple endpoints)
 - Client specifies response shape
 - Strongly typed schema
@@ -46,6 +48,7 @@ query {
     email
   }
 }
+
 ```
 
 ---
@@ -64,13 +67,16 @@ query {
 | **Caching** | HTTP-level | Built-in HTTP caching |
 
 **REST Example (3 requests):**
+
 ```typescript
 GET /api/users/1
 GET /api/users/1/posts
 GET /api/posts/1/comments
+
 ```
 
 **GraphQL Example (1 request):**
+
 ```graphql
 query {
   user(id: "1") {
@@ -81,6 +87,7 @@ query {
     }
   }
 }
+
 ```
 
 ---
@@ -105,6 +112,7 @@ type Query {
 type Mutation {
   createUser(name: String!, email: String!): User!
 }
+
 ```
 
 ---
@@ -112,6 +120,7 @@ type Mutation {
 #### 4. What are the three root operation types?
 
 **Answer:**
+
 - **Query**: Read operations (idempotent, parallel execution)
 - **Mutation**: Write operations (sequential, side effects allowed)
 - **Subscription**: Real-time operations (WebSocket-based)
@@ -120,6 +129,7 @@ type Mutation {
 query { ... }     # Read
 mutation { ... }  # Write
 subscription { ... }  # Real-time
+
 ```
 
 ---
@@ -127,6 +137,7 @@ subscription { ... }  # Real-time
 #### 5. What are scalar types in GraphQL?
 
 **Answer:** Built-in leaf types that hold values:
+
 - `String` - Text
 - `Int` - 32-bit integer
 - `Float` - Double-precision floating point
@@ -134,11 +145,13 @@ subscription { ... }  # Real-time
 - `ID` - Unique identifier
 
 Custom scalars can be defined:
+
 ```graphql
 scalar DateTime
 scalar JSON
 scalar URL
 scalar Email
+
 ```
 
 ---
@@ -154,6 +167,7 @@ type User {
   email: String  # Can be null
   bio: String    # Can be null
 }
+
 ```
 
 ---
@@ -174,6 +188,7 @@ query {
     name
   }
 }
+
 ```
 
 ---
@@ -203,6 +218,7 @@ query {
     }
   }
 }
+
 ```
 
 ---
@@ -210,6 +226,7 @@ query {
 #### 9. What is the difference between `[String]` and `[String!]`?
 
 **Answer:**
+
 - `[String]` - List can be null, items can be null
 - `[String!]` - List can be null, items cannot be null
 - `[String!]!` - List cannot be null, items cannot be null
@@ -220,6 +237,7 @@ type User {
   friends: [String!]    # ["a", "b"] or null
   posts: [Post!]!       # Never null, items never null
 }
+
 ```
 
 ---
@@ -246,6 +264,7 @@ query {
     }
   }
 }
+
 ```
 
 ---
@@ -264,6 +283,7 @@ const resolvers = {
     posts: (parent) => db.post.findMany({ where: { authorId: parent.id } }),
   },
 };
+
 ```
 
 **Solution:** Use DataLoader to batch queries:
@@ -279,6 +299,7 @@ const resolvers = {
     posts: (parent, _, { loaders }) => loaders.post.load(parent.id),
   },
 };
+
 ```
 
 ---
@@ -298,6 +319,7 @@ const userLoader = new DataLoader(async (ids) => {
 User: {
   author: (parent, _, { loaders }) => loaders.user.load(parent.authorId),
 }
+
 ```
 
 ---
@@ -326,6 +348,7 @@ type PageInfo {
   hasNextPage: Boolean!
   endCursor: String
 }
+
 ```
 
 ---
@@ -345,6 +368,7 @@ input CreateUserInput {
 type Mutation {
   createUser(input: CreateUserInput!): CreateUserPayload!
 }
+
 ```
 
 ---
@@ -357,9 +381,11 @@ type Mutation {
 throw new GraphQLError('User not found', {
   extensions: { code: 'NOT_FOUND', id }
 });
+
 ```
 
 Response:
+
 ```json
 {
   "data": { "user": null },
@@ -368,6 +394,7 @@ Response:
     "extensions": { "code": "NOT_FOUND", "id": "1" }
   }]
 }
+
 ```
 
 ---
@@ -377,11 +404,14 @@ Response:
 **Answer:**
 
 **Schema-first:** Write SDL first, implement resolvers second.
+
 ```graphql
 type User { id: ID!, name: String! }
+
 ```
 
 **Code-first:** Define types in code, generate schema.
+
 ```typescript
 @ObjectType()
 class User {
@@ -391,6 +421,7 @@ class User {
   @Field()
   name: string;
 }
+
 ```
 
 ---
@@ -409,6 +440,7 @@ enum PostStatus {
 type Post {
   status: PostStatus!
 }
+
 ```
 
 ---
@@ -418,14 +450,18 @@ type Post {
 **Answer:**
 
 **Interface:** Defines a set of fields that implementing types must have.
+
 ```graphql
 interface Node { id: ID! }
 type User implements Node { id: ID!, name: String! }
+
 ```
 
 **Union:** A type that can be one of several types.
+
 ```graphql
 union SearchResult = User | Post | Tag
+
 ```
 
 ---
@@ -446,6 +482,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -453,6 +490,7 @@ const resolvers = {
 #### 20. What is the `__typename` field?
 
 **Answer:** Returns the actual type name of an object. Used for:
+
 - Client-side type resolution
 - Cache normalization
 - Union/interface handling
@@ -464,6 +502,7 @@ query {
     ... on Post { __typename, title }
   }
 }
+
 ```
 
 ---
@@ -498,6 +537,7 @@ const createContext = ({ req }) => {
     dataSources: createTenantDataSources(tenantId),
   };
 };
+
 ```
 
 ---
@@ -507,20 +547,25 @@ const createContext = ({ req }) => {
 **Answer:**
 
 ```text
+
 1. Schema Review Process
+
    - PR-based schema changes
    - Breaking change detection (GraphQL Inspector)
    - Compatibility testing
 
 2. Deprecation Policy
+
    - @deprecated directive
    - 6-month minimum deprecation period
    - Client migration tracking
 
 3. Schema Registry
+
    - Version control
    - Schema stitching coordination
    - Breaking change alerts
+
 ```
 
 ---
@@ -550,6 +595,7 @@ subscription OnDocumentUpdate($id: ID!) {
     updatedBy
   }
 }
+
 ```
 
 Conflict resolution using OT or CRDTs in resolvers.
@@ -562,19 +608,23 @@ Conflict resolution using OT or CRDTs in resolvers.
 
 ```text
 Phase 1: Gateway
+
 - GraphQL gateway over existing REST
 - No changes to backend services
 - Start with high-value endpoints
 
 Phase 2: Incremental
+
 - Add GraphQL resolvers for new features
 - Maintain REST compatibility
 - Client-side migration
 
 Phase 3: Complete
+
 - Decommission REST endpoints
 - Unified GraphQL API
 - Performance optimization
+
 ```
 
 ---
@@ -613,6 +663,7 @@ subscription NewFeedItem {
     ... on FeedItem { id type }
   }
 }
+
 ```
 
 ---
@@ -634,9 +685,11 @@ query GetUserProfile($id: ID!) @persisted {
 const ALLOWED_QUERIES = new Map([
   ['hash123', GetUserQuery],
 ]);
+
 ```
 
 Strategies:
+
 - Persisted queries for smaller payloads
 - Field-level caching
 - Query complexity limits
@@ -667,6 +720,7 @@ const gatewaySchema = stitchSchemas({
     extend type Post { author: User! }
   `,
 });
+
 ```
 
 ---
@@ -691,9 +745,11 @@ export const handler = startServerAndCreateLambdaHandler(
     }),
   }
 );
+
 ```
 
 Considerations:
+
 - Cold start optimization
 - Stateless context
 - Connection pooling
@@ -726,6 +782,7 @@ const metrics = {
   'graphql.cache.hit': Counter,
   'graphql.cache.miss': Counter,
 };
+
 ```
 
 ---
@@ -735,30 +792,37 @@ const metrics = {
 **Answer:**
 
 ```text
+
 1. Authentication
+
    - JWT/OAuth verification in context
    - Session management
 
 2. Authorization
+
    - Field-level permissions
    - Directive-based (@auth)
    - Role-based access control
 
 3. Query Security
+
    - Depth limiting
    - Complexity analysis
    - Persisted queries
    - Introspection disabled
 
 4. Input Security
+
    - Schema validation
    - Input sanitization
    - Rate limiting
 
 5. Infrastructure
+
    - CORS configuration
    - HTTPS enforcement
    - WAF rules
+
 ```
 
 ---
@@ -801,9 +865,11 @@ type Ride {
   actualArrival: DateTime
   route: [Location!]!
 }
+
 ```
 
 Considerations:
+
 - Real-time location tracking (subscriptions)
 - Geospatial queries
 - Fare calculation
@@ -848,6 +914,7 @@ Architecture:
 │                    - Database replicas                       │
 │                    - Read/write splitting                    │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -907,9 +974,11 @@ subscription OnDocumentUpdate($id: ID!) {
     }
   }
 }
+
 ```
 
 Conflict resolution:
+
 - Optimistic locking with version numbers
 - Operational Transformation (OT) or CRDTs
 - Last-write-wins for simple conflicts
@@ -963,9 +1032,11 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 Considerations:
+
 - Idempotent mutations
 - Audit logging
 - Compliance (PCI DSS)
@@ -981,6 +1052,7 @@ Considerations:
 ```graphql
 # Polymorphic content types
 union ContentBlock =
+
   | Paragraph
   | Heading
   | Image
@@ -1035,6 +1107,7 @@ mutation PublishPage($id: ID!) {
     }
   }
 }
+
 ```
 
 ---
@@ -1074,9 +1147,11 @@ const GET_USER = gql`
     }
   }
 `;
+
 ```
 
 Considerations:
+
 - Shared Apollo Client instance
 - Cache isolation per MFE
 - Cross-frontend cache updates
@@ -1149,9 +1224,11 @@ subscription GameUpdates($gameId: ID!) {
     winner
   }
 }
+
 ```
 
 Considerations:
+
 - Optimistic UI updates
 - Conflict resolution
 - Low-latency transport (WebSockets)
@@ -1228,6 +1305,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -1279,9 +1357,11 @@ subscription DeviceTelemetry($deviceId: ID!) {
     batteryLevel
   }
 }
+
 ```
 
 Considerations:
+
 - High-frequency data ingestion
 - Time-series database for telemetry
 - Command queuing and retry
@@ -1319,9 +1399,11 @@ type Query {
   # Version 2
   userV2(id: ID!): UserV2
 }
+
 ```
 
 Best practices:
+
 - Add fields, don't remove
 - Deprecate with @deprecated
 - Provide migration period
@@ -1344,6 +1426,7 @@ type User {
 
 # If name resolver returns null:
 # User becomes null (if User is non-null, error propagates to Query)
+
 ```
 
 ---
@@ -1384,6 +1467,7 @@ describe('User Query', () => {
     expect(res.data.user.name).toBe('John');
   });
 });
+
 ```
 
 ---
@@ -1408,6 +1492,7 @@ query GetUser($includeEmail: Boolean!) {
     email @include(if: $includeEmail)
   }
 }
+
 ```
 
 ---
@@ -1438,6 +1523,7 @@ mutation BatchCreateUsers($input: BatchCreateUsersInput!) {
     errors { index message code }
   }
 }
+
 ```
 
 ---
@@ -1463,6 +1549,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -1484,9 +1571,11 @@ packages/
 │   └── components/
 └── codegen/          # GraphQL codegen config
     └── codegen.yml
+
 ```
 
 Use:
+
 - Shared fragments
 - Codegen for type safety
 - Workspace dependencies
@@ -1499,6 +1588,7 @@ Use:
 **Answer:**
 
 **GraphQL Pros:**
+
 - No over/under-fetching
 - Single endpoint
 - Strong typing
@@ -1506,6 +1596,7 @@ Use:
 - No versioning
 
 **GraphQL Cons:**
+
 - Complex setup
 - Caching harder
 - File uploads tricky
@@ -1513,12 +1604,14 @@ Use:
 - Query complexity risks
 
 **When to use GraphQL:**
+
 - Complex data requirements
 - Multiple client types
 - Rapid iteration
 - Real-time features
 
 **When REST is better:**
+
 - Simple CRUD
 - File-heavy APIs
 - HTTP caching critical
@@ -1551,6 +1644,7 @@ export default function Home() {
     </ApolloProvider>
   );
 }
+
 ```
 
 ---
@@ -1581,9 +1675,11 @@ const metricsPlugin = {
     };
   },
 };
+
 ```
 
 Key metrics:
+
 - Query complexity
 - Response time (P50, P95, P99)
 - Error rate
@@ -1597,14 +1693,23 @@ Key metrics:
 **Answer:**
 
 ```text
+
 1. Federation 2.0 - Better schema composition
+
 2. Edge Computing - GraphQL at the edge
+
 3. AI Integration - Schema generation, query optimization
+
 4. Defer/Stream - Incremental delivery
+
 5. Client-side GraphQL - Local-first with GraphQL
+
 6. Type-safe APIs - Better codegen tooling
+
 7. Real-time First - Subscriptions as primary concern
+
 8. Security Focus - Standardized security practices
+
 ```
 
 ---

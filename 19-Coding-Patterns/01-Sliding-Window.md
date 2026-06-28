@@ -33,6 +33,7 @@ function slidingWindow(nums: number[], k: number): number {
 
   return maxSum;
 }
+
 ```
 
 ## How It Works
@@ -51,6 +52,7 @@ Target sum = 7
 [2, 1, 5] 1, 3, 2     → sum = 8 (too big, shrink)
  2 [1, 5] 1, 3, 2     → sum = 6 (too small, expand)
  2, [1, 5, 1] 3, 2    → sum = 7 ✓ found!
+
 ```
 
 ### ASCII Diagram
@@ -69,6 +71,7 @@ FIXED WINDOW                    VARIABLE WINDOW
   ▲                           ▲               ▲
   L                           L               R
   (left)                      (left)          (right)
+
 ```
 
 ## Code Examples (TypeScript)
@@ -98,6 +101,7 @@ function maxSumSubarray(nums: number[], k: number): number {
 // Example
 console.log(maxSumSubarray([2, 1, 5, 1, 3, 2], 3)); // 9
 // Explanation: [5, 1, 3] has the maximum sum
+
 ```
 
 ### Problem 2: Longest Substring Without Repeating Characters (Variable Window)
@@ -126,6 +130,7 @@ function lengthOfLongestSubstring(s: string): number {
 console.log(lengthOfLongestSubstring("abcabcbb")); // 3 ("abc")
 console.log(lengthOfLongestSubstring("bbbbb"));     // 1 ("b")
 console.log(lengthOfLongestSubstring("pwwkew"));    // 3 ("wke")
+
 ```
 
 ### Problem 3: Minimum Window Substring (Variable Window with Shrink)
@@ -179,6 +184,7 @@ function minWindow(s: string, t: string): string {
 
 // Example
 console.log(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
+
 ```
 
 ### Problem 4: Longest Repeating Character Replacement
@@ -210,14 +216,19 @@ function characterReplacement(s: string, k: number): number {
 
 // Example
 console.log(characterReplacement("AABABBA", 1)); // 4 ("AABA")
+
 ```
 
 ## Common Mistakes
 
 1. **Off-by-one errors**: Forgetting that the window size starts at 0 and needs `i >= k - 1` check
+
 2. **Not resetting window state**: When the problem requires independent windows
+
 3. **Forgetting to update left pointer**: In variable window, always shrink when condition is met
+
 4. **Using wrong data structure**: Use a Map or array for character frequency, not a Set
+
 5. **Not handling edge cases**: Empty strings, single elements, k > array length
 
 ## Time/Space Complexity
@@ -235,9 +246,11 @@ console.log(characterReplacement("AABABBA", 1)); // 4 ("AABA")
 ### Easy
 
 1. **Maximum Average Subarray I** (LeetCode 643)
+
    - Find max average of subarray of size k
 
 2. **Best Time to Buy and Sell Stock** (LeetCode 121)
+
    - Find max profit with one transaction
 
 3. **Maximum Profit in Job Scheduling** (related pattern)
@@ -245,16 +258,23 @@ console.log(characterReplacement("AABABBA", 1)); // 4 ("AABA")
 ### Medium
 
 1. **Longest Substring Without Repeating Characters** (LeetCode 3)
+
 2. **Longest Repeating Character Replacement** (LeetCode 424)
+
 3. **Minimum Size Subarray Sum** (LeetCode 209)
+
 4. **Permutation in String** (LeetCode 567)
+
 5. **Fruit Into Baskets** (LeetCode 904)
 
 ### Hard
 
 1. **Minimum Window Substring** (LeetCode 76)
+
 2. **Substring with Concatenation of All Words** (LeetCode 30)
+
 3. **Sliding Window Maximum** (LeetCode 239) — uses deque
+
 4. **Longest Substring with At Most K Distinct Characters** (LeetCode 340)
 
 ## Summary
@@ -281,14 +301,17 @@ Template:
 └─────────────────────────────────────────┘
 
 Key operations:
+
 - Expand: right++
 - Shrink: left++
 - Update: when window is valid
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Sliding Window](https://leetcode.com/tag/sliding-window/)
 - [NeetCode Sliding Window](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

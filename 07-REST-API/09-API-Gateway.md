@@ -9,9 +9,13 @@ An API Gateway is a server that acts as a single entry point for all client requ
 Without an API Gateway:
 
 1. **Complex client logic** - Clients must know all service endpoints
+
 2. **Cross-cutting concerns** - Auth, rate limiting repeated in each service
+
 3. **Service discovery** - Clients need to know service locations
+
 4. **Protocol translation** - Different services may use different protocols
+
 5. **Security exposure** - Internal services directly exposed to clients
 
 ## How It Works
@@ -42,6 +46,7 @@ Client          API Gateway              Microservices
   │                 │                         │
   │  201 Created    │                         │
   │◄────────────────│                         │
+
 ```
 
 ### Gateway Components
@@ -66,6 +71,7 @@ API Gateway Components
 │  │ Transformer │  │   & Metrics │  │   Layer     │ │
 │  └─────────────┘  └─────────────┘  └─────────────┘ │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### Routing
@@ -111,6 +117,7 @@ Object.entries(routes).forEach(([path, target]) => {
     changeOrigin: true
   }));
 });
+
 ```
 
 ### Authentication Middleware
@@ -140,6 +147,7 @@ const gatewayAuth = async (req, res, next) => {
 };
 
 app.use('/api', gatewayAuth);
+
 ```
 
 ### Rate Limiting
@@ -169,6 +177,7 @@ const gatewayRateLimit = rateLimit({
 });
 
 app.use('/api', gatewayRateLimit);
+
 ```
 
 ### Load Balancing
@@ -237,6 +246,7 @@ class HealthAwareLoadBalancer extends LoadBalancer {
     return healthy[index];
   }
 }
+
 ```
 
 ### Request Transformation
@@ -272,6 +282,7 @@ function transformRequestBody(body: any): any {
     }
   };
 }
+
 ```
 
 ### Response Transformation
@@ -312,6 +323,7 @@ function transformResponseBody(body: any, req: express.Request): any {
 
   return body;
 }
+
 ```
 
 ### Circuit Breaker
@@ -369,6 +381,7 @@ app.use('/api/users', async (req, res) => {
     throw err;
   }
 });
+
 ```
 
 ## Code Examples
@@ -531,6 +544,7 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
   console.log('API Gateway running on port 8080');
 });
+
 ```
 
 ## Real-World Use Cases
@@ -554,6 +568,7 @@ app.get('/api/dashboard', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 2. Protocol Translation
@@ -576,6 +591,7 @@ app.post('/api/users', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 3. Request/Response Aggregation
@@ -599,6 +615,7 @@ app.get('/api/feed', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 4. Authentication Gateway
@@ -634,6 +651,7 @@ app.use('/api', async (req, res, next) => {
 
   next();
 });
+
 ```
 
 ## Common Mistakes
@@ -662,6 +680,7 @@ app.use('/api/users', async (req, res) => {
     throw err;
   }
 });
+
 ```
 
 ### 2. Not Adding Request IDs
@@ -676,6 +695,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/api', createProxyMiddleware({ target: 'http://service:3001' }));
+
 ```
 
 ### 3. Not Rate Limiting at Gateway
@@ -689,6 +709,7 @@ app.use('/api', createProxyMiddleware({ target: 'http://service:3001' }));
 // ✅ Good: Rate limiting at gateway
 app.use('/api', rateLimiter({ max: 100, windowMs: 15 * 60 * 1000 }));
 app.use('/api/users', createProxyMiddleware({ target: 'http://user-service:3001' }));
+
 ```
 
 ### 4. Not Handling Timeouts
@@ -705,6 +726,7 @@ app.use('/api/users', createProxyMiddleware({
   proxyTimeout: 5000,
   timeout: 5000
 }));
+
 ```
 
 ### 5. Not Logging Errors
@@ -730,18 +752,27 @@ app.use('/api/users', createProxyMiddleware({
     res.status(502).json({ error: 'Bad Gateway' });
   }
 }));
+
 ```
 
 ## Best Practices
 
 1. **Centralize cross-cutting concerns** - Auth, rate limiting, logging at gateway
+
 2. **Use circuit breakers** - Prevent cascade failures
+
 3. **Implement request tracking** - X-Request-Id headers
+
 4. **Add timeouts** - Prevent hanging requests
+
 5. **Load balance** - Distribute traffic across instances
+
 6. **Cache responses** - Reduce load on services
+
 7. **Monitor gateway** - Track latency, error rates
+
 8. **Document API** - OpenAPI/Swagger for gateway routes
+
 9. **Health checks** - Monitor service health
 10. **Graceful degradation** - Fallback responses when services down
 

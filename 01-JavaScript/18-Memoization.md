@@ -52,6 +52,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -85,6 +86,7 @@ const expensiveCalculation = memoize((n: number): number => {
 
 console.log(expensiveCalculation(4));  // Computing... 16
 console.log(expensiveCalculation(4));  // 16 (cached)
+
 ```
 
 ### Fibonacci with Memoization
@@ -114,6 +116,7 @@ const fib = memoize((n: number): number => {
   if (n <= 1) return n;
   return fib(n - 1) + fib(n - 2);
 });
+
 ```
 
 ### Advanced Memoization with LRU Cache
@@ -168,6 +171,7 @@ function memoizeWithLRU<T extends (...args: any[]) => any>(
     return result;
   };
 }
+
 ```
 
 ### React useMemo/useCallback
@@ -196,6 +200,7 @@ function ExpensiveComponent({ items, filter }: Props) {
     </ul>
   );
 }
+
 ```
 
 ### Memoization with TTL
@@ -224,6 +229,7 @@ function memoizeWithTTL<T extends (...args: any[]) => any>(
 
 // Usage
 const apiCall = memoizeWithTTL(fetchData, 30000);  // Cache for 30 seconds
+
 ```
 
 ## Real-World Use Cases
@@ -240,6 +246,7 @@ const expensiveTransform = memoize((data: any[]) => {
     }))
     .sort((a, b) => b.score - a.score);
 });
+
 ```
 
 ### 2. API Response Caching
@@ -252,6 +259,7 @@ const apiCache = memoizeWithTTL(async (url: string) => {
 
 // Usage
 const users = await apiCache('/api/users');
+
 ```
 
 ### 3. React Component Optimization
@@ -277,6 +285,7 @@ function ProductList({ products, category }: Props) {
     </div>
   );
 }
+
 ```
 
 ### 4. Recursive Functions
@@ -301,6 +310,7 @@ const factorial = memoize((n: number): number => {
   if (n <= 1) return 1;
   return n * factorial(n - 1);
 });
+
 ```
 
 ## Common Mistakes
@@ -315,6 +325,7 @@ const add = memoize((a: number, b: number) => a + b);
 const complexCalculation = memoize((data: LargeDataset) => {
   // Expensive computation
 });
+
 ```
 
 ### 2. Ignoring Cache Size
@@ -331,6 +342,7 @@ function getData(key: string) {
 
 // Good: Bounded cache
 const cache = new LRUCache(1000);
+
 ```
 
 ### 3. Wrong Cache Key
@@ -349,6 +361,7 @@ function process(obj: object) {
   if (cache.has(key)) return cache.get(key);
   // ...
 }
+
 ```
 
 ### 4. Not Handling Cache Invalidation
@@ -359,6 +372,7 @@ const data = memoize(fetchData);
 
 // Good: Implement TTL or manual invalidation
 const data = memoizeWithTTL(fetchData, 60000);
+
 ```
 
 ## Best Practices
@@ -376,6 +390,7 @@ const data = memoizeWithTTL(fetchData, 60000);
 // - Simple operations
 // - Frequently changing data
 // - Functions with side effects
+
 ```
 
 ### 2. Set Cache Limits
@@ -386,6 +401,7 @@ const cache = new LRUCache(1000);
 
 // Or use TTL
 const cache = memoizeWithTTL(fn, 60000);
+
 ```
 
 ### 3. Use Proper Cache Keys
@@ -395,6 +411,7 @@ const cache = memoizeWithTTL(fn, 60000);
 function createKey(args: any[]): string {
   return JSON.stringify(args, Object.keys(args[0] || {}).sort());
 }
+
 ```
 
 ### 4. Profile Before Memoizing
@@ -408,6 +425,7 @@ console.timeEnd('memoized');
 console.time('original');
 originalFn(args);
 console.timeEnd('original');
+
 ```
 
 ## Performance Considerations
@@ -426,6 +444,7 @@ const fibonacci = memoize((n: number) => {
   if (n <= 1) return n;
   return fibonacci(n - 1) + fibonacci(n - 2);
 });
+
 ```
 
 ### Cache Hit Rate
@@ -453,6 +472,7 @@ function memoizeWithStats<T extends (...args: any[]) => any>(fn: T) {
 
   return memoized;
 }
+
 ```
 
 ## Interview Questions
@@ -572,11 +592,17 @@ A: Profile before memoizing, set cache limits, handle invalidation, monitor effe
 Memoization is a powerful optimization:
 
 1. **Definition**: Cache results of expensive function calls
+
 2. **Implementation**: Map/object with stringified keys
+
 3. **React**: useMemo, useCallback, React.memo
+
 4. **Cache strategies**: LRU, TTL, bounded size
+
 5. **Performance**: Trade memory for computation time
+
 6. **Best practices**: Profile, set limits, handle invalidation
+
 7. **Common issues**: Unbounded caches, stale data
 
 ## Cheat Sheet
@@ -640,6 +666,7 @@ BEST PRACTICES:
 • Set cache limits (LRU)
 • Handle invalidation (TTL)
 • Monitor effectiveness
+
 ```
 
 ## References & Learn More

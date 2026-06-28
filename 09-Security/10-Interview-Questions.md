@@ -42,6 +42,7 @@ This comprehensive guide covers the 40 most frequently asked security interview 
 │  └─ Novel security challenges                                   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -51,12 +52,19 @@ This comprehensive guide covers the 40 most frequently asked security interview 
 When answering security interview questions, use this structure:
 
 ```text
+
 1. Definition: What is it?
+
 2. Why: Why is it important?
+
 3. How: How does it work?
+
 4. Code: Show implementation
+
 5. Trade-offs: Discuss alternatives
+
 6. Real-world: Give examples
+
 ```
 
 ## Beginner Questions (10)
@@ -72,6 +80,7 @@ Cross-Site Scripting (XSS) allows attackers to inject malicious scripts into web
 - **DOM-based XSS**: Script executes in browser via DOM
 
 **Prevention:**
+
 ```typescript
 // 1. Output encoding
 function escapeHtml(text: string): string {
@@ -91,9 +100,11 @@ res.setHeader("Content-Security-Policy", "script-src 'self' 'nonce-xxx'");
 // 4. Use DOMPurify for HTML sanitization
 import DOMPurify from "dompurify";
 const clean = DOMPurify.sanitize(dirtyHtml);
+
 ```
 
 **Follow-up**: "How would you handle XSS in a React application?"
+
 - React auto-escapes JSX
 - Avoid dangerouslySetInnerHTML
 - Use DOMPurify for user-generated HTML
@@ -108,13 +119,19 @@ const clean = DOMPurify.sanitize(dirtyHtml);
 Cross-Site Request Forgery forces authenticated users to execute unwanted actions. The attacker exploits the trust between the user's browser and the application.
 
 **Attack Flow:**
+
 1. User logs into bank.com (session cookie set)
+
 2. User visits attacker's site
+
 3. Attacker's site sends request to bank.com
+
 4. Browser includes session cookie automatically
+
 5. Bank processes the request as legitimate
 
 **Prevention:**
+
 ```typescript
 // 1. SameSite cookies
 cookie: {
@@ -132,6 +149,7 @@ req.session.csrfToken = csrfToken;
 // Set cookie with random token, require same token in header
 res.cookie("csrf_token", token, { httpOnly: false });
 // Client reads cookie and sends as header
+
 ```
 
 ---
@@ -143,6 +161,7 @@ res.cookie("csrf_token", token, { httpOnly: false });
 SQL injection inserts malicious SQL code into queries, allowing attackers to access, modify, or delete data.
 
 **Prevention:**
+
 ```typescript
 // 1. Parameterized queries
 const query = "SELECT * FROM users WHERE id = $1";
@@ -158,6 +177,7 @@ import { z } from "zod";
 const schema = z.object({
   id: z.string().regex(/^\d+$/)
 });
+
 ```
 
 ---
@@ -170,6 +190,7 @@ const schema = z.object({
 - **Authorization**: Checking permissions (what can you do?)
 
 **Example:**
+
 ```typescript
 // Authentication middleware
 const authenticate = (req, res, next) => {
@@ -189,6 +210,7 @@ const authorize = (roles) => (req, res, next) => {
 
 // Usage
 app.get("/admin", authenticate, authorize(["admin"]), adminHandler);
+
 ```
 
 ---
@@ -198,11 +220,13 @@ app.get("/admin", authenticate, authorize(["admin"]), adminHandler);
 **Answer:**
 
 HTTPS is HTTP over TLS/SSL, encrypting all data in transit. It prevents:
+
 - Eavesdropping (man-in-the-middle attacks)
 - Data tampering
 - Impersonation
 
 **Implementation:**
+
 ```typescript
 // Express with HTTPS
 import https from "https";
@@ -223,6 +247,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+
 ```
 
 ---
@@ -246,6 +271,7 @@ const encrypted = cipher.update(text, "utf8", "hex");
 // Asymmetric (RSA)
 const encrypted = crypto.publicEncrypt(publicKey, buffer);
 const decrypted = crypto.privateDecrypt(privateKey, encrypted);
+
 ```
 
 ---
@@ -265,6 +291,7 @@ Security headers are HTTP response headers that instruct browsers on how to beha
 ```typescript
 import helmet from "helmet";
 app.use(helmet());
+
 ```
 
 ---
@@ -276,6 +303,7 @@ app.use(helmet());
 Users and systems should only have the minimum permissions necessary for their function.
 
 **Implementation:**
+
 ```typescript
 // Database user with limited permissions
 // Grant only SELECT, INSERT, UPDATE on specific tables
@@ -284,6 +312,7 @@ Users and systems should only have the minimum permissions necessary for their f
 // API with scoped permissions
 app.get("/api/users", authenticate, requireScope("users:read"), handler);
 app.post("/api/users", authenticate, requireScope("users:write"), handler);
+
 ```
 
 ---
@@ -307,6 +336,7 @@ const result = userSchema.safeParse(req.body);
 if (!result.success) {
   return res.status(400).json({ errors: result.error.errors });
 }
+
 ```
 
 ---
@@ -316,6 +346,7 @@ if (!result.success) {
 **Answer:**
 
 JSON Web Token is a compact, URL-safe token for transmitting claims. It consists of:
+
 - Header (algorithm, type)
 - Payload (claims, user data)
 - Signature (integrity verification)
@@ -328,6 +359,7 @@ const token = jwt.sign({ userId: "123" }, secret, { expiresIn: "1h" });
 
 // Verify
 const decoded = jwt.verify(token, secret);
+
 ```
 
 ---
@@ -365,6 +397,7 @@ const response = await fetch("https://auth.example.com/token", {
     code_verifier: codeVerifier,
   }),
 });
+
 ```
 
 ---
@@ -393,6 +426,7 @@ const validateSession = async (req, res, next) => {
   req.session = JSON.parse(session);
   next();
 };
+
 ```
 
 ---
@@ -433,6 +467,7 @@ export class UsersController {
     return this.userService.findAll();
   }
 }
+
 ```
 
 ---
@@ -466,6 +501,7 @@ const allowedRedirects = ["/dashboard", "/profile", "/settings"];
 if (allowedRedirects.includes(req.query.redirect)) {
   res.redirect(req.query.redirect);
 }
+
 ```
 
 ---
@@ -495,6 +531,7 @@ app.use(
 // 3. Use nonce in React
 // In index.html or template:
 // <script nonce="${nonce}">...</script>
+
 ```
 
 ---
@@ -532,6 +569,7 @@ const passwordSchema = z.string()
   .regex(/[a-z]/, "Must contain lowercase")
   .regex(/[0-9]/, "Must contain number")
   .regex(/[^A-Za-z0-9]/, "Must contain special character");
+
 ```
 
 ---
@@ -570,6 +608,7 @@ const authLimiter = rateLimit({
 });
 
 app.use("/login", authLimiter);
+
 ```
 
 ---
@@ -597,6 +636,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
 ```
 
 ---
@@ -633,6 +673,7 @@ app.use(
     },
   })
 );
+
 ```
 
 ---
@@ -672,6 +713,7 @@ app.post("/login", async (req, res) => {
     res.status(401).json({ error: "Invalid credentials" });
   }
 });
+
 ```
 
 ---
@@ -732,6 +774,7 @@ const validateDevice = (req, res, next) => {
   }
   next();
 };
+
 ```
 
 ---
@@ -794,6 +837,7 @@ const continuousAuth = async (req, res, next) => {
 
   next();
 };
+
 ```
 
 ---
@@ -847,6 +891,7 @@ const rotateKeys = async () => {
   // Archive old key
   await archiveOldKey(currentKey);
 };
+
 ```
 
 ---
@@ -894,6 +939,7 @@ const gatewaySecurity = async (req, res, next) => {
 // Configure mTLS between services
 // Implement authorization policies
 // Enable distributed tracing
+
 ```
 
 ---
@@ -949,6 +995,7 @@ const automatedResponse = async (anomaly: Anomaly) => {
     await createIncident(anomaly);
   }
 };
+
 ```
 
 ---
@@ -1007,6 +1054,7 @@ const manageConsent = async (userId: string, consentType: string, granted: boole
     create: { userId, type: consentType, granted },
   });
 };
+
 ```
 
 ---
@@ -1048,6 +1096,7 @@ describe("Security", () => {
     expect(escaped).not.toContain("<script>");
   });
 });
+
 ```
 
 ---
@@ -1090,6 +1139,7 @@ export const handler = async (event: APIGatewayEvent) => {
     body: JSON.stringify(result),
   };
 };
+
 ```
 
 ---
@@ -1139,6 +1189,7 @@ const validateMessage = (message: any) => {
 
   return schema.safeParse(message);
 };
+
 ```
 
 ---
@@ -1200,6 +1251,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   const path = await storeFile(req.file);
   res.json({ path });
 });
+
 ```
 
 ---
@@ -1262,6 +1314,7 @@ const apiLimiter = rateLimit({
 // 5. API versioning
 app.use("/api/v1", apiV1Router);
 app.use("/api/v2", apiV2Router);
+
 ```
 
 ---
@@ -1312,6 +1365,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -1354,6 +1408,7 @@ const getSecret = async (name: string) => {
   const secret = await k8sApi.readNamespacedSecret(name, "default");
   return Buffer.from(secret.data.value, "base64").toString();
 };
+
 ```
 
 ---
@@ -1372,6 +1427,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v3
 
       - name: Run Snyk to check for vulnerabilities
@@ -1392,6 +1448,7 @@ jobs:
 
       - name: Run SLSA provenance
         uses: slsa-framework/slsa-github-generator@v1.4.0
+
 ```
 
 ---
@@ -1426,6 +1483,7 @@ export const handler = async (event: RequestEvent) => {
 
 // 3. WAF rules at edge
 // Implement custom WAF rules for edge functions
+
 ```
 
 ---
@@ -1498,6 +1556,7 @@ class SecurityMonitor {
     return anomalies;
   }
 }
+
 ```
 
 ---
@@ -1566,6 +1625,7 @@ class AuditLogger {
     });
   }
 }
+
 ```
 
 ---
@@ -1645,6 +1705,7 @@ class ComplianceMonitor {
     await this.logForReporting(trade);
   }
 }
+
 ```
 
 ---
@@ -1741,6 +1802,7 @@ class HIPAAAuditLogger {
     return this.formatReport(logs);
   }
 }
+
 ```
 
 ---
@@ -1828,6 +1890,7 @@ class CrossBorderCompliance {
     await this.logForReporting(payment);
   }
 }
+
 ```
 
 ---
@@ -1837,10 +1900,15 @@ class CrossBorderCompliance {
 Mastering security interview questions requires understanding:
 
 1. **Fundamentals**: Authentication, authorization, encryption
+
 2. **Web Vulnerabilities**: XSS, CSRF, SQL injection, SSRF
+
 3. **Security Architecture**: Zero-trust, defense in depth
+
 4. **Compliance**: GDPR, HIPAA, PCI DSS
+
 5. **Implementation**: Security headers, CORS, CSP
+
 6. **Monitoring**: Logging, anomaly detection, incident response
 
 ## Cheat Sheet

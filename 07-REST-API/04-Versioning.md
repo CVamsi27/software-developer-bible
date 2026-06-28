@@ -9,9 +9,13 @@ API versioning is the practice of managing changes to an API by creating multipl
 As APIs evolve, changes can break existing client integrations:
 
 1. **Backward compatibility** - Existing clients continue to work
+
 2. **Gradual migration** - Clients can upgrade at their own pace
+
 3. **Deprecation management** - Old versions can be retired gracefully
+
 4. **Feature introduction** - New features can be added incrementally
+
 5. **Contract stability** - Clients have predictable behavior
 
 ## How It Works
@@ -37,6 +41,7 @@ API Versioning Strategies
 4. Content Negotiation (Media Type)
    GET /api/users
    Accept: application/json; version=1
+
 ```
 
 ### Strategy 1: URL Path Versioning
@@ -56,6 +61,7 @@ Client                    API Gateway                 Services
   │──────────────────────────►│                         │
   │                           │  Route to v2 service    │
   │                           │────────────────────────►│
+
 ```
 
 ```typescript
@@ -112,6 +118,7 @@ v2Router.get('/users/:id', async (req, res) => {
 // Mount versioned routers
 app.use('/api/v1', v1Router);
 app.use('/api/v2', v2Router);
+
 ```
 
 ### Strategy 2: Query Parameter Versioning
@@ -137,6 +144,7 @@ app.get('/api/users', (req, res) => {
     res.status(400).json({ error: 'Invalid version' });
   }
 });
+
 ```
 
 ### Strategy 3: Header Versioning
@@ -174,6 +182,7 @@ app.get('/api/users', (req, res) => {
 
   res.status(406).json({ error: 'Not Acceptable' });
 });
+
 ```
 
 ### Strategy 4: Media Type Versioning
@@ -196,6 +205,7 @@ app.get('/api/users', (req, res) => {
     return handleV2Users(req, res);
   }
 });
+
 ```
 
 ### Deprecation Management
@@ -218,6 +228,7 @@ const deprecationMiddleware = (req, res, next) => {
 
 // Warning header for deprecated versions
 app.use('/api/v1', deprecationMiddleware, v1Router);
+
 ```
 
 ### Version Migration Strategy
@@ -240,6 +251,7 @@ Phase 3: Remove V1
 ────────────────────────────
   GET /api/v1/users  ──────► 404 Not Found
   GET /api/v2/users  ──────► V2 Response
+
 ```
 
 ## Code Examples
@@ -379,6 +391,7 @@ versionedRouter.addVersion('1', v1Router);
 versionedRouter.addVersion('2', v2Router);
 
 app.use('/api', versionedRouter.handle.bind(versionedRouter));
+
 ```
 
 ### Deprecation Handler
@@ -409,6 +422,7 @@ app.use('/api', (req: Request, res: Response, next: NextFunction) => {
 
   next();
 });
+
 ```
 
 ### URL Rewriting for Migration
@@ -430,6 +444,7 @@ app.use('/api/users', (req, res, next) => {
   req.url = `/api/v2${req.url}`;
   next();
 });
+
 ```
 
 ## Real-World Use Cases
@@ -478,6 +493,7 @@ v3Router.get('/products', async (req, res) => {
     pagination: calculatePagination(req.query)
   });
 });
+
 ```
 
 ### 2. Authentication System Migration
@@ -521,6 +537,7 @@ v3Router.post('/auth/token', async (req, res) => {
       return res.status(400).json({ error: 'unsupported_grant_type' });
   }
 });
+
 ```
 
 ### 3. Webhook System Evolution
@@ -562,6 +579,7 @@ v3Router.post('/webhooks/:id/test', async (req, res) => {
   const result = await WebhookService.sendTestEvent(req.params.id);
   res.json({ data: result });
 });
+
 ```
 
 ## Common Mistakes
@@ -584,6 +602,7 @@ v2Router.get('/users/:id', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 2. Using Headers Only
@@ -600,6 +619,7 @@ app.get('/api/v1/users', ...);  // URL path (easy to test)
 app.get('/api/users', (req, res) => {
   const version = req.headers['api-version'] || '1';  // Fallback to header
 });
+
 ```
 
 ### 3. Not Deprecating Gracefully
@@ -619,6 +639,7 @@ app.use('/api/v1', (req, res, next) => {
   });
   next();
 });
+
 ```
 
 ### 4. Versioning Every Small Change
@@ -638,6 +659,7 @@ v1Router.get('/users/:id', async (req, res) => {
     metadata: { createdAt: user.createdAt }
   });
 });
+
 ```
 
 ### 5. Not Documenting Versions
@@ -653,18 +675,27 @@ app.get('/api/docs', (req, res) => {
     }
   });
 });
+
 ```
 
 ## Best Practices
 
 1. **Use URL path versioning** - Most visible and easiest to test
+
 2. **Version only breaking changes** - Non-breaking changes don't need versions
+
 3. **Deprecate gracefully** - Provide Sunset dates and migration guides
+
 4. **Support multiple versions** - But limit to 2-3 active versions
+
 5. **Document all versions** - Clear API documentation for each version
+
 6. **Use semantic versioning** - Major.Minor.Patch format
+
 7. **Add deprecation headers** - Inform clients about upcoming removals
+
 8. **Provide migration guides** - Help clients upgrade between versions
+
 9. **Monitor version usage** - Track which versions are being used
 10. **Automate version management** - Use middleware and configuration
 

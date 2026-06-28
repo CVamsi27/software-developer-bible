@@ -9,9 +9,13 @@ Pagination is the practice of dividing large datasets into smaller, manageable c
 Without pagination, APIs would face:
 
 1. **Memory exhaustion** - Loading millions of records at once
+
 2. **Network overhead** - Transferring massive payloads
+
 3. **Slow responses** - Long query times for large datasets
+
 4. **Poor UX** - Users waiting for complete data loads
+
 5. **Resource waste** - Client and server processing unnecessary data
 
 ## How It Works
@@ -37,6 +41,7 @@ Pagination Strategies
 4. Time-Based
    GET /api/events?since=2024-01-01T00:00:00Z&limit=10
    WHERE timestamp > '2024-01-01' LIMIT 10
+
 ```
 
 ### Offset-Based Pagination
@@ -66,6 +71,7 @@ Response:
     "pages": 10
   }
 }
+
 ```
 
 ```typescript
@@ -103,6 +109,7 @@ app.get('/api/users', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### Cursor-Based Pagination
@@ -136,6 +143,7 @@ Response:
     "nextCursor": "eyJpZCI6MjB9"
   }
 }
+
 ```
 
 ```typescript
@@ -171,6 +179,7 @@ app.get('/api/users', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### Keyset-Based Pagination
@@ -200,6 +209,7 @@ Response:
     }
   }
 }
+
 ```
 
 ```typescript
@@ -238,6 +248,7 @@ app.get('/api/users', async (req, res) => {
     }
   });
 });
+
 ```
 
 ### Infinite Scroll Implementation
@@ -269,6 +280,7 @@ app.get('/api/feed', authenticate, async (req, res) => {
     }
   });
 });
+
 ```
 
 ### Pagination Response Formats
@@ -309,6 +321,7 @@ interface KeysetPaginationResponse<T> {
     filters: Record<string, any>;
   };
 }
+
 ```
 
 ## Code Examples
@@ -410,6 +423,7 @@ function encodeCursor(data: any): string {
 function decodeCursor(cursor: string): any {
   return JSON.parse(Buffer.from(cursor, 'base64').toString());
 }
+
 ```
 
 ### Search with Pagination
@@ -442,6 +456,7 @@ app.get('/api/search', async (req, res) => {
     query: q
   });
 });
+
 ```
 
 ### Sorting with Pagination
@@ -482,6 +497,7 @@ app.get('/api/products', async (req, res) => {
     }
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -508,6 +524,7 @@ app.get('/api/feed', authenticate, async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 2. E-commerce Product Catalog
@@ -546,6 +563,7 @@ app.get('/api/products', async (req, res) => {
     filters
   });
 });
+
 ```
 
 ### 3. Chat Messages
@@ -570,6 +588,7 @@ app.get('/api/conversations/:id/messages', authenticate, async (req, res) => {
     }
   });
 });
+
 ```
 
 ### 4. Admin Dashboard Data
@@ -607,6 +626,7 @@ app.get('/api/admin/users', adminOnly, async (req, res) => {
     filters
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -621,6 +641,7 @@ const users = await UserService.findAll({ limit });
 // ✅ Good: Enforce maximum limit
 const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string) || 10));
 const users = await UserService.findAll({ limit });
+
 ```
 
 ### 2. Not Including Total Count
@@ -639,6 +660,7 @@ res.json({
     pages: Math.ceil(total / limitNum)
   }
 });
+
 ```
 
 ### 3. Inconsistent Sort Order
@@ -651,6 +673,7 @@ const users = await UserService.findAll({ page, limit });
 const sort = req.query.sort || 'createdAt';
 const order = req.query.order || 'desc';
 const users = await UserService.findAll({ page, limit, sort, order });
+
 ```
 
 ### 4. Not Handling Edge Cases
@@ -664,6 +687,7 @@ const users = await UserService.findAll({ offset: (page - 1) * limit });
 const page = Math.max(1, parseInt(req.query.page as string) || 1);
 const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string) || 10));
 const offset = (page - 1) * limit;
+
 ```
 
 ### 5. Not Providing Navigation Links
@@ -682,18 +706,27 @@ res.json({
     prev: page > 1 ? `/api/users?page=${page - 1}` : null
   }
 });
+
 ```
 
 ## Best Practices
 
 1. **Always paginate** - Never return unbounded results
+
 2. **Set maximum limits** - Prevent abuse (e.g., max 100 items)
+
 3. **Include total count** - For UI pagination displays
+
 4. **Provide navigation links** - HATEOAS-style next/prev
+
 5. **Use consistent defaults** - Page 1, limit 10-20
+
 6. **Validate inputs** - Handle invalid page/limit values
+
 7. **Document pagination** - Clear API documentation
+
 8. **Consider cursor for large datasets** - More efficient than offset
+
 9. **Cache pagination metadata** - Total counts can be cached
 10. **Support filtering** - Combine with pagination
 

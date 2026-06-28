@@ -7,9 +7,13 @@
 ## Why Do We Need It?
 
 1. **Interactivity** — useState, useEffect, event handlers require client-side execution
+
 2. **Browser APIs** — window, document, localStorage need the browser environment
+
 3. **Third-party libraries** — Many React libraries require client-side rendering
+
 4. **Rich UI** — Animations, drag-and-drop, real-time updates need client JS
+
 5. **Form handling** — Complex form state management requires client-side logic
 
 ## How It Works
@@ -47,6 +51,7 @@
 │     └─────────────────────────────────────────────────────┘    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Bundle Impact Comparison
@@ -74,6 +79,7 @@
 │                                                                 │
 │  Impact: 33x larger bundle for Client Component                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Hydration Process
@@ -89,6 +95,7 @@ Server Output:                    Client After Hydration:
   Static HTML                      Interactive Component
   No event listeners               Event listeners attached
   No state                         State managed by React
+
 ```
 
 ## Code Examples
@@ -116,6 +123,7 @@ export function Counter() {
     </div>
   )
 }
+
 ```
 
 ### Client Component with Effects
@@ -146,6 +154,7 @@ export function Clock() {
     </div>
   )
 }
+
 ```
 
 ### Client Component with localStorage
@@ -180,6 +189,7 @@ export function ThemeToggle() {
     </button>
   )
 }
+
 ```
 
 ### Client Component with Form Handling
@@ -254,6 +264,7 @@ export function ContactForm() {
     </form>
   )
 }
+
 ```
 
 ### Client Component with Context
@@ -313,6 +324,7 @@ export function useCart() {
   if (!context) throw new Error('useCart must be used within CartProvider')
   return context
 }
+
 ```
 
 ### Client Component with Third-Party Libraries
@@ -343,6 +355,7 @@ export function EventDatePicker() {
     </div>
   )
 }
+
 ```
 
 ### Client Component with Animations
@@ -388,6 +401,7 @@ export function AnimatedCard() {
     </motion.div>
   )
 }
+
 ```
 
 ### Client Component with WebSocket
@@ -456,6 +470,7 @@ export function LiveChat() {
     </div>
   )
 }
+
 ```
 
 ### Composing Server and Client Components
@@ -480,6 +495,7 @@ export default async function ProductsPage() {
     </div>
   )
 }
+
 ```
 
 ```tsx
@@ -520,6 +536,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
     </div>
   )
 }
+
 ```
 
 ```tsx
@@ -549,6 +566,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
     </div>
   )
 }
+
 ```
 
 ### Dynamic Client Component Loading
@@ -571,6 +589,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ## Real-World Use Cases
@@ -636,6 +655,7 @@ export function AddToCartButton({ id }: { id: string }) {
     </button>
   )
 }
+
 ```
 
 ### 2. Passing Complex Objects to Client Components
@@ -668,6 +688,7 @@ export function EventCard({ eventName, eventDate }: {
 }) {
   return <div>{eventName} - {new Date(eventDate).toLocaleDateString()}</div>
 }
+
 ```
 
 ### 3. Not Handling Hydration Mismatches
@@ -700,6 +721,7 @@ export function Greeting() {
 
   return <div>{greeting || <div aria-busy="true">Loading...</div>}</div>
 }
+
 ```
 
 ### 4. Fetching Data in Client Components
@@ -732,6 +754,7 @@ export default async function ProductList() {
   const products = await db.product.findMany()
   return products.map(p => <div key={p.id}>{p.name}</div>)
 }
+
 ```
 
 ### 5. Not Using Proper Error Handling
@@ -774,18 +797,27 @@ export function DataFetcher() {
 
   return <div>{data.value}</div>
 }
+
 ```
 
 ## Best Practices
 
 1. **Minimize Client Components** — Keep them small and focused
+
 2. **Isolate interactivity** — Extract interactive parts into separate Client Components
+
 3. **Use dynamic imports** — Lazy load heavy Client Components with `next/dynamic`
+
 4. **Handle hydration** — Ensure server and client render the same initial content
+
 5. **Serialize props** — Only pass serializable data from Server to Client Components
+
 6. **Use proper error boundaries** — Wrap Client Components in error boundaries
+
 7. **Optimize re-renders** — Use memo, useMemo, useCallback when needed
+
 8. **Avoid unnecessary effects** — Don't fetch data in useEffect if Server Component can
+
 9. **Test both environments** — Client Components behave differently in dev/prod
 10. **Monitor bundle size** — Track Client Component impact on bundle
 
@@ -797,20 +829,24 @@ export function DataFetcher() {
 Hydration time = Component tree size × Complexity
 
 Fast hydration:
+
 - Small component trees
 - Minimal state initialization
 - Few effects
 
 Slow hydration:
+
 - Large component trees
 - Complex state initialization
 - Many effects
 - Third-party libraries
+
 ```
 
 ### Optimization Strategies
 
 ```text
+
 1. Code splitting:
    dynamic(() => import('./heavy-component'))
 
@@ -825,6 +861,7 @@ Slow hydration:
 
 5. Virtualization:
    Use react-window for long lists
+
 ```
 
 ## Interview Questions
@@ -887,11 +924,17 @@ Slow hydration:
     Use local state for immediate UI updates, Server Actions for mutations, and revalidation to sync with Server Components.
 
 18. **Explain the hydration process in detail.**
+
     1. Server renders HTML
+
     2. Client downloads JS bundle
+
     3. React creates virtual DOM from HTML
+
     4. React compares with server HTML
+
     5. React attaches event listeners
+
     6. Component becomes interactive
 
 19. **How do you debug hydration mismatches?**
@@ -975,11 +1018,13 @@ Slow hydration:
 
 ```text
 'use client' directive:
+
 - Marks component as Client Component
 - Must be at top of file
 - Required for hooks/event handlers
 
 When to use:
+
 - useState/useEffect
 - Event handlers (onClick, onChange)
 - Browser APIs (window, document)
@@ -988,16 +1033,19 @@ When to use:
 - Animations
 
 When NOT to use:
+
 - Data fetching
 - Static content
 - Server-side logic
 - Simple display components
 
 Optimization:
+
 - next/dynamic for lazy loading
 - React.memo for re-render prevention
 - State colocation
 - Code splitting
+
 ```
 
 ## References & Learn More

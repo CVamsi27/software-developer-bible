@@ -7,6 +7,7 @@ The **App Router** is Next.js's modern routing system introduced in Next.js 13, 
 ## Why Do We Need It?
 
 The Pages Router had limitations:
+
 - No shared layouts without custom `_app.tsx` hacks
 - No built-in loading/error states per route
 - No route interception or parallel routes
@@ -62,6 +63,7 @@ The App Router solves these with a more powerful, flexible routing system.
 │  - Server Components by default                                 │
 │  - Parallel & intercepting routes                               │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### File-Based Routing Structure
@@ -95,6 +97,7 @@ app/
 │   └── [id]/page.tsx           → Intercepts /photos/:id
 └── api/
     └── users/route.ts          → API route
+
 ```
 
 ### Layout System
@@ -127,6 +130,7 @@ export default function RootLayout({
     </html>
   )
 }
+
 ```
 
 ```tsx
@@ -151,6 +155,7 @@ export default function DashboardLayout({
     </div>
   )
 }
+
 ```
 
 ### Loading States
@@ -166,6 +171,7 @@ export default function Loading() {
     </div>
   )
 }
+
 ```
 
 ### Error Handling
@@ -189,6 +195,7 @@ export default function Error({
     </div>
   )
 }
+
 ```
 
 ```tsx
@@ -201,6 +208,7 @@ export default function NotFound() {
     </div>
   )
 }
+
 ```
 
 ### Route Groups
@@ -225,6 +233,7 @@ export default function MarketingLayout({
 export default function AboutPage() {
   return <h1>About Us</h1>
 }
+
 ```
 
 ### Parallel Routes
@@ -262,6 +271,7 @@ export default function PhotoModal({ params }) {
     </div>
   )
 }
+
 ```
 
 ### Intercepting Routes
@@ -277,6 +287,7 @@ When navigating from /photos → /photos/123:
 
 When directly accessing /photos/123:
   Shows full page (non-intercepted route)
+
 ```
 
 ### Dynamic Routes
@@ -311,6 +322,7 @@ export default function DocsPage({
   // /docs/a → slug: ['a']
   return <h1>Docs: {params.slug?.join('/') || 'Home'}</h1>
 }
+
 ```
 
 ### Route Handlers
@@ -329,6 +341,7 @@ export async function POST(request: NextRequest) {
   const user = await createUser(body)
   return NextResponse.json(user, { status: 201 })
 }
+
 ```
 
 ### Templates
@@ -338,6 +351,7 @@ export async function POST(request: NextRequest) {
 export default function Template({ children }: { children: React.ReactNode }) {
   return <div className="fade-in">{children}</div>
 }
+
 ```
 
 ### Metadata
@@ -369,6 +383,7 @@ export default async function BlogPost({ params }) {
   const post = await getPost(slug)
   return <article>{post.content}</article>
 }
+
 ```
 
 ### Dynamic Segments with Generate Static Params
@@ -391,6 +406,7 @@ export default async function ProductPage({
   const product = await fetchProduct(id)
   return <h1>{product.name}</h1>
 }
+
 ```
 
 ### Route Segment Config
@@ -413,6 +429,7 @@ export const runtime = 'edge' // or 'nodejs'
 
 // Max duration (Vercel)
 export const maxDuration = 30
+
 ```
 
 ## Real-World Use Cases
@@ -445,6 +462,7 @@ app/
 └── api/
     ├── products/route.ts        → Products API
     └── checkout/route.ts        → Checkout API
+
 ```
 
 ### Blog Platform
@@ -469,6 +487,7 @@ app/
     ├── layout.tsx               → Admin layout
     ├── posts/page.tsx           → Post management
     └── settings/page.tsx
+
 ```
 
 ## Common Mistakes
@@ -490,6 +509,7 @@ export default function Counter() {
   const [count, setCount] = useState(0)
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>
 }
+
 ```
 
 ### 2. Mutating Props Directly
@@ -506,6 +526,7 @@ export default async function Page({ params }) {
   const { id } = await params
   return <h1>{id}</h1>
 }
+
 ```
 
 ### 3. Missing Layout in Nested Routes
@@ -523,6 +544,7 @@ app/
 │   ├── layout.tsx    → Shared dashboard layout
 │   ├── page.tsx
 │   └── settings/page.tsx
+
 ```
 
 ### 4. Not Handling Async Params
@@ -542,6 +564,7 @@ export default async function Page({
   const { id } = await params
   return <h1>{id}</h1>
 }
+
 ```
 
 ### 5. Using Client Components Unnecessarily
@@ -578,18 +601,27 @@ export default async function ProductPage({ params }) {
 export function AddToCartButton({ productId }: { productId: string }) {
   // ...
 }
+
 ```
 
 ## Best Practices
 
 1. **Keep server components as the default** — Only add `'use client'` when interactivity is needed
+
 2. **Use route groups** — Organize routes without affecting URL structure
+
 3. **Add loading.tsx** — Provide instant loading feedback for every route
+
 4. **Use error.tsx boundaries** — Catch and handle errors per route segment
+
 5. **Leverage nested layouts** — Share UI across route segments efficiently
+
 6. **Use parallel routes** — For modals, dashboards with multiple views
+
 7. **Implement intercepting routes** — For modal patterns over existing pages
+
 8. **Use generateStaticParams** — Pre-render dynamic routes at build time
+
 9. **Export metadata** — Per-page SEO optimization
 10. **Use templates** — For transition animations between routes
 
@@ -597,6 +629,7 @@ export function AddToCartButton({ productId }: { productId: string }) {
 
 ```text
 App Router Performance Benefits:
+
 - Server Components reduce client bundle size
 - Nested layouts avoid re-rendering shared UI
 - Loading states provide instant feedback
@@ -604,10 +637,12 @@ App Router Performance Benefits:
 - Streaming SSR improves TTFB
 
 Performance Costs:
+
 - More complex mental model
 - Additional server rendering overhead
 - Potential for excessive server component usage
 - Build time increases with more routes
+
 ```
 
 ## Interview Questions
@@ -779,6 +814,7 @@ Config:
 dynamic             → Rendering mode
 revalidate          → ISR interval
 runtime             → Edge or Node.js
+
 ```
 
 ## References & Learn More

@@ -9,17 +9,25 @@ Pipes execute after guards and before the route handler, operating on individual
 ## Why Do We Need It?
 
 1. **Input Validation**: Ensure incoming data meets expected format and constraints.
+
 2. **Data Transformation**: Convert data types (string to number, plain object to class instance).
+
 3. **Sanitization**: Clean and sanitize user input.
+
 4. **Error Handling**: Return meaningful validation errors to clients.
+
 5. **Separation of Concerns**: Keep validation logic out of controllers and services.
+
 6. **Reusability**: Apply the same validation logic across multiple endpoints.
+
 7. **DTO Integration**: Work seamlessly with class-validator and DTOs.
 
 ## How It Works
 
 Pipes have two responsibilities:
+
 1. **Validation**: Check if input data is valid
+
 2. **Transformation**: Transform the data to the desired type
 
 ### Pipe Execution Flow
@@ -49,6 +57,7 @@ Pipes have two responsibilities:
 │  └──────────────┘                                        │
 │                                                          │
 └──────────────────────────────────────────────────────────┘
+
 ```
 
 ### Built-in Pipes
@@ -83,6 +92,7 @@ Pipes have two responsibilities:
 │  └─────────────┘        └─────────────┘                 │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -140,6 +150,7 @@ export class CreateUserDto {
   @ArrayMinSize(1)
   interests: string[];
 }
+
 ```
 
 ### Global ValidationPipe
@@ -167,6 +178,7 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+
 ```
 
 ### ParseIntPipe
@@ -191,6 +203,7 @@ export class UserController {
     return this.userService.findAll(page, limit);
   }
 }
+
 ```
 
 ### Custom Pipe
@@ -218,6 +231,7 @@ export class ParseObjectIdPipe implements PipeTransform<string> {
 findOne(@Param('id', ParseObjectIdPipe) id: string) {
   return this.userService.findOne(id);
 }
+
 ```
 
 ### Transformation Pipe
@@ -241,6 +255,7 @@ export class TrimPipe implements PipeTransform {
     return value;
   }
 }
+
 ```
 
 ### Validation with Class-Validator
@@ -297,6 +312,7 @@ export class CreateOrderDto {
   @IsDateString()
   deliveryDate?: string;
 }
+
 ```
 
 ### Custom Validation Pipe
@@ -331,6 +347,7 @@ create(
 ) {
   return this.userService.create({ email, name });
 }
+
 ```
 
 ### Schema Validation Pipe (Joi)
@@ -374,6 +391,7 @@ const createUserSchema = Joi.object({
 create(@Body() body: any) {
   return this.userService.create(body);
 }
+
 ```
 
 ### Zod Validation Pipe
@@ -418,6 +436,7 @@ const createUserSchema = z.object({
 create(@Body() body: any) {
   return this.userService.create(body);
 }
+
 ```
 
 ### Nested Validation
@@ -453,6 +472,7 @@ export class CreateUserDto {
   @Type(() => AddressDto)
   address: AddressDto;
 }
+
 ```
 
 ## Real-World Use Cases
@@ -494,6 +514,7 @@ export class ValidateFilePipe implements PipeTransform {
     return file;
   }
 }
+
 ```
 
 ### 2. Pagination Pipe
@@ -519,6 +540,7 @@ export class PaginationPipe implements PipeTransform {
     return { page, limit, sortBy: value.sortBy, sortOrder };
   }
 }
+
 ```
 
 ### 3. MongoId Pipe
@@ -537,6 +559,7 @@ export class ParseMongoIdPipe implements PipeTransform {
     return value;
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -552,6 +575,7 @@ app.useGlobalPipes(new ValidationPipe({
   whitelist: true,
   forbidNonWhitelisted: true,
 }));
+
 ```
 
 ### 2. Not Transforming Input
@@ -568,6 +592,7 @@ findOne(@Param('id') id: string) {
 findOne(@Param('id', ParseIntPipe) id: number) {
   return this.userService.findOne(id); // id is number
 }
+
 ```
 
 ### 3. Validation Pipe Without DTO
@@ -584,6 +609,7 @@ create(@Body() body: any) {
 create(@Body() dto: CreateUserDto) {
   return this.userService.create(dto);
 }
+
 ```
 
 ### 4. Custom Pipe Without Injectable
@@ -603,25 +629,37 @@ export class TrimPipe implements PipeTransform {
     return value.trim();
   }
 }
+
 ```
 
 ## Best Practices
 
 1. **Global ValidationPipe**: Use `ValidationPipe` globally with whitelist and transform.
+
 2. **DTOs**: Always use DTOs with class-validator for request validation.
+
 3. **Custom Pipes**: Create custom pipes for reusable validation logic.
+
 4. **Error Messages**: Provide meaningful error messages in validation.
+
 5. **Type Safety**: Use `ParseIntPipe`, `ParseBoolPipe`, etc. for type safety.
+
 6. **Nested Validation**: Use `@ValidateNested()` for nested objects.
+
 7. **Async Validation**: Use async pipes for database lookups.
+
 8. **Testing**: Test pipes in isolation.
 
 ## Performance Considerations
 
 1. **Validation Overhead**: Validation adds processing time — validate only what's necessary.
+
 2. **Async Pipes**: Async pipes add latency — use caching when possible.
+
 3. **Pipe Caching**: Pipes are instantiated once — keep them lightweight.
+
 4. **Early Exit**: Return early in pipes for invalid data.
+
 5. **Batch Validation**: Validate arrays efficiently with `{ each: true }`.
 
 ## Interview Questions
@@ -632,6 +670,7 @@ export class TrimPipe implements PipeTransform {
 A pipe is a class implementing `PipeTransform` that validates and transforms input data before it reaches the route handler.
 
 **Q2: What is the difference between `ParseIntPipe` and `ValidationPipe`?**
+
 - `ParseIntPipe`: Converts string to number
 - `ValidationPipe`: Validates data against DTO constraints
 
@@ -650,6 +689,7 @@ Yes, pipes can return Promises.
 Implement `PipeTransform` interface with `transform()` method, add `@Injectable()`, and throw `BadRequestException` for invalid data.
 
 **Q7: What is the difference between `transform: true` and `ParseIntPipe`?**
+
 - `transform: true`: Automatically transforms payloads to DTO instances
 - `ParseIntPipe`: Explicitly converts string parameters to numbers
 

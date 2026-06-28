@@ -7,6 +7,7 @@ Service Discovery is a mechanism that allows services to find and communicate wi
 ## Why Do We Need It?
 
 In microservices:
+
 - Services are deployed across multiple hosts/containers
 - Instances are created/destroyed dynamically (auto-scaling, deployments)
 - Network locations (IPs, ports) change constantly
@@ -30,11 +31,15 @@ In microservices:
 │  Service B  │
 │  (Instance) │
 └─────────────┘
+
 ```
 
 **Flow:**
+
 1. Client queries discovery server for available instances
+
 2. Discovery server returns list of healthy instances
+
 3. Client selects instance (load balancing) and makes request
 
 ### Server-Side Discovery
@@ -50,12 +55,17 @@ In microservices:
                               │  Discovery      │
                               │  Server         │
                               └─────────────────┘
+
 ```
 
 **Flow:**
+
 1. Client sends request to load balancer/router
+
 2. Load balancer queries discovery server
+
 3. Load balancer forwards to selected instance
+
 4. Response returns through load balancer
 
 ## Code Examples
@@ -161,6 +171,7 @@ class ServiceClient {
     return response.json() as Promise<T>;
   }
 }
+
 ```
 
 ### TypeScript - Client-Side Discovery with Load Balancing
@@ -244,6 +255,7 @@ class DiscoveryClient {
     return response.json() as Promise<T>;
   }
 }
+
 ```
 
 ### TypeScript - DNS-Based Discovery
@@ -275,21 +287,25 @@ class DnsServiceDiscovery {
     }
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. E-Commerce Platform
+
 - Product service instances auto-register when deployed
 - Order service discovers product service dynamically
 - Handles scaling during flash sales
 
 ### 2. Microservices Mesh
+
 - Service mesh (Istio, Linkerd) uses discovery for traffic routing
 - Automatic failover when instances become unhealthy
 - Blue/green deployments without client changes
 
 ### 3. Multi-Region Deployment
+
 - Services register with region-specific discovery servers
 - Cross-region discovery for disaster recovery
 - Latency-aware instance selection
@@ -297,22 +313,35 @@ class DnsServiceDiscovery {
 ## Common Mistakes
 
 1. **Hardcoding service locations** - Defeats the purpose of discovery
+
 2. **No health checks** - Routing to dead instances
+
 3. **Missing deregistration** - Ghost instances consuming resources
+
 4. **Ignoring caching** - Overwhelming discovery server
+
 5. **Not handling failures** - Crashing when discovery server is down
+
 6. **Using discovery for synchronous calls only** - Should also work for async
+
 7. **No retry logic** - First failure causes immediate error
 
 ## Best Practices
 
 1. **Always implement health checks** - Both active and passive
+
 2. **Cache discovery results** - Reduce load on discovery server
+
 3. **Use circuit breakers** - Prevent cascade failures
+
 4. **Implement graceful degradation** - Fallback to cached data
+
 5. **Monitor discovery server** - High availability is critical
+
 6. **Use DNS when possible** - Built-in caching, no extra infrastructure
+
 7. **Version your services** - Support running multiple versions
+
 8. **Implement retry with backoff** - Handle transient failures
 
 ## Performance Considerations
@@ -328,118 +357,152 @@ class DnsServiceDiscovery {
 ### Beginner (5-10)
 
 1. **What is service discovery?**
+
    - Mechanism for services to find each other dynamically without hardcoded addresses.
 
 2. **Why is service discovery important in microservices?**
+
    - Services scale dynamically, instances change, manual configuration impossible at scale.
 
 3. **What's the difference between client-side and server-side discovery?**
+
    - Client-side: Client queries registry and selects instance
    - Server-side: Load balancer handles selection
 
 4. **What is a service registry?**
+
    - Central database storing service instances and their locations.
 
 5. **How do services register themselves?**
+
    - Send registration message with host, port, metadata to registry on startup.
 
 6. **What are health checks?**
+
    - Regular pings to verify service instances are running and responsive.
 
 7. **What happens when a service instance fails?**
+
    - Health check fails, instance removed from registry, traffic routed elsewhere.
 
 8. **Name two popular service discovery tools.**
+
    - Netflix Eureka, HashiCorp Consul, Apache ZooKeeper.
 
 ### Intermediate (5-10)
 
 9. **How does DNS-based service discovery work?**
+
    - Services registered as SRV records, clients resolve DNS to find instances.
 
 10. **What are the trade-offs between client-side and server-side discovery?**
+
     - Client-side: More control, client complexity
     - Server-side: Simpler clients, additional hop
 
 11. **How do you handle discovery server failure?**
+
     - Cache last known instances, use circuit breaker, graceful degradation.
 
 12. **What is service mesh and how does it relate to discovery?**
+
     - Infrastructure layer handling service-to-service communication including discovery.
 
 13. **How do you implement version-aware discovery?**
+
     - Include version in metadata, filter by version during discovery.
 
 14. **What's the CAP theorem impact on service discovery?**
+
     - Consistency vs availability trade-off; most choose AP (eventual consistency).
 
 15. **How do you handle cross-datacenter discovery?**
+
     - Hierarchical registries, DNS with geography-based routing.
 
 ### Senior (10-15)
 
 16. **Design a service discovery system from scratch.**
+
     - Registry, heartbeat mechanism, health checks, API, caching, consistency model.
 
 17. **How do you ensure high availability of the discovery server?**
+
     - Replication, leader election, clustering, failover mechanisms.
 
 18. **Explain eventual consistency in service discovery.**
     -短暂时间内不同客户端可能看到不同实例集合，最终收敛到一致状态。
 
 19. **How do you handle service discovery in Kubernetes?**
+
     - kube-dns/CoreDNS, headless services, service accounts.
 
 20. **What's the impact of container orchestration on discovery?**
+
     - Dynamic IPs, orchestration handles registration/deregistration automatically.
 
 21. **How do you implement discovery for stateful services?**
+
     - Stable network identities, persistent storage, ordered deployment.
 
 22. **Explain the sidecar pattern in service discovery.**
+
     - Proxy alongside each service handling discovery and communication.
 
 23. **How do you test service discovery?**
+
     - Chaos engineering, fault injection, integration tests with mock registry.
 
 24. **What metrics should you monitor for discovery?**
+
     - Registration rate, heartbeat failures, lookup latency, cache hit ratio.
 
 25. **How do you handle discovery during rolling deployments?**
+
     - New instances register, health checks pass, old instances deregister.
 
 ### FAANG-style (5-10)
 
 26. **Design Netflix's Eureka-like system.**
+
     - Peer replication, AP model, client caching, heartbeat renewal.
 
 27. **How would you handle 10,000 service instances with discovery?**
+
     - Hierarchical registry, sharding, aggressive caching, DNS abstraction.
 
 28. **Design discovery for multi-region active-active deployment.**
+
     - Regional registries, global DNS, latency-based routing, failover.
 
 29. **How do you prevent thundering herd on discovery server?**
+
     - Client-side caching, jittered heartbeats, read replicas.
 
 30. **Explain discovery in service mesh architecture.**
+
     - Control plane manages discovery, data plane proxies handle routing.
 
 ### Follow-ups (5-10)
 
 31. **How would you migrate from one discovery system to another?**
+
     - Dual registration, gradual migration, feature flags.
 
 32. **What security considerations exist for service discovery?**
+
     - Authentication, authorization, encryption,防止恶意注册。
 
 33. **How does service discovery interact with distributed tracing?**
+
     - Trace context propagation through discovery, service name resolution.
 
 34. **How would you implement discovery for serverless functions?**
+
     - Function registry, event-driven discovery, cold start handling.
 
 35. **What's the future of service discovery?**
+
     - Service mesh integration, AI-driven routing, edge computing.
 
 ## Summary
@@ -470,11 +533,13 @@ Service Discovery is fundamental to microservices architecture, enabling dynamic
 │ • Handle discovery server failure                       │
 │ • Monitor registration metrics                          │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Microservices Patterns by Chris Richardson](https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543)
 - [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358)
 - [Microservices.io](https://microservices.io/)

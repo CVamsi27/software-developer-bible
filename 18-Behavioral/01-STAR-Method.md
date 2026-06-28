@@ -46,6 +46,7 @@ The STAR method ensures your answers are:
 │ context  │ needed   │ specifically did              │
 │          │ to do     │          │                        │
 └──────────┴──────────┴──────────┴────────────────────────┘
+
 ```
 
 The key insight: **Actions should dominate your answer** (approximately 60%). Most candidates spend too much time on context and not enough on what they actually did.
@@ -213,16 +214,19 @@ Most behavioral interview answers should be 1-2 minutes. Here's a time allocatio
 ### Transition Phrases
 
 **Situation to Task:**
+
 - "My responsibility was to..."
 - "I needed to..."
 - "I was accountable for..."
 
 **Task to Action:**
+
 - "To address this, I..."
 - "I took the following approach..."
 - "Here's what I did specifically..."
 
 **Action to Result:**
+
 - "As a result..."
 - "The outcome was..."
 - "This led to..."
@@ -384,12 +388,19 @@ For each story, prepare:
 ### Technical Behavioral Questions
 
 1. Tell me about a time you made a significant architectural decision.
+
 2. Describe a situation where you had to balance technical debt against feature delivery.
+
 3. Tell me about a time you optimized a system's performance.
+
 4. Describe a production incident you handled.
+
 5. Tell me about a time you had to choose between multiple technical approaches.
+
 6. Describe a time you introduced a new technology to your team.
+
 7. Tell me about a time you had to work with a legacy codebase.
+
 8. Describe a time you improved a development process.
 
 ### Leadership Behavioral Questions
@@ -443,6 +454,7 @@ RESULT (25 sec):
 "As a result, [quantified outcome]...
  This [broader impact]...
  I learned [takeaway]..."
+
 ```
 
 ---
@@ -480,10 +492,15 @@ Senior leaders can articulate what went wrong and what they learned.
 The STAR method is a powerful framework for structuring behavioral interview answers. For senior full-stack roles:
 
 1. Keep context brief (15-20% of your answer)
+
 2. Spend most time on actions (50-60%)
+
 3. Quantify results with specific metrics
+
 4. Demonstrate senior-level thinking: trade-offs, influence, mentorship
+
 5. Build a story bank of 8-12 versatile stories
+
 6. Practice delivering answers in 90-120 seconds
 
 Remember: the interviewer is evaluating not just what you did, but how you think. Your STAR answers should reveal your decision-making process, your communication skills, and your ability to drive impact.
@@ -491,6 +508,7 @@ Remember: the interviewer is evaluating not just what you did, but how you think
 ---
 
 ## References & Learn More
+
 - [Cracking the PM Interview](https://www.amazon.com/Cracking-PM-Interview-Product-Management/dp/098478280X)
 - [The STAR Method Explained](https://www.indeed.com/career-advice/interviewing/star-method)
 - [Behavioral Interview Questions](https://www.themuse.com/advice/behavioral-interview-questions-answers)

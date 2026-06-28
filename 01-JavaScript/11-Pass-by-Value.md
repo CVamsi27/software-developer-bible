@@ -81,6 +81,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Primitive Types
@@ -120,6 +121,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Reference Types
@@ -160,6 +162,7 @@ JavaScript uses **pass by value** for all parameters. However, when passing obje
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -179,6 +182,7 @@ console.log('Outside function:', primitive);  // 10 (unchanged)
 
 // Primitive values are copied
 // Original is not affected
+
 ```
 
 ### Object Pass by Reference Value
@@ -196,6 +200,7 @@ console.log('Outside function:', obj.value);  // 20 (modified!)
 
 // Object reference is copied
 // Both point to same object
+
 ```
 
 ### Reassignment vs Mutation
@@ -220,6 +225,7 @@ function reassign(o: { value: number }) {
 
 reassign(obj2);
 console.log(obj2.value);  // 10 (unchanged)
+
 ```
 
 ### Array Examples
@@ -244,6 +250,7 @@ function replaceArray(a: number[]) {
 
 replaceArray(arr2);
 console.log(arr2);  // [1, 2, 3] (unchanged)
+
 ```
 
 ### String Immutability
@@ -266,6 +273,7 @@ console.log(str2);  // 'hello' (unchanged)
 
 str2 = str2.toUpperCase();  // Reassignment required
 console.log(str2);  // 'HELLO'
+
 ```
 
 ### Function Parameters
@@ -292,6 +300,7 @@ let a = [1, 2, 3];
 let b = addObject(a, 4);
 console.log(a);  // [1, 2, 3, 4] (modified!)
 console.log(b);  // [1, 2, 3, 4] (same array)
+
 ```
 
 ### Destructuring
@@ -309,6 +318,7 @@ let arr = [1, 2, 3];
 let [first, second] = arr;
 first = 10;  // Changes local 'first', not arr[0]
 console.log(arr[0]);  // 1 (unchanged)
+
 ```
 
 ## Real-World Use Cases
@@ -331,6 +341,7 @@ function reducer(state: State, action: Action): State {
       return state;
   }
 }
+
 ```
 
 ### 2. Pure Functions
@@ -346,6 +357,7 @@ function addToArray(arr: number[], value: number) {
 function addToArrayPure(arr: number[], value: number) {
   return [...arr, value];
 }
+
 ```
 
 ### 3. Object Cloning
@@ -359,6 +371,7 @@ const shallow = { ...original };
 const deep = JSON.parse(JSON.stringify(original));
 // Or
 const deep2 = structuredClone(original);
+
 ```
 
 ### 4. Event Handler Context
@@ -377,6 +390,7 @@ class Component {
     console.log(this.data.value);
   };
 }
+
 ```
 
 ### 5. Higher-Order Functions
@@ -393,6 +407,7 @@ const double = createMultiplier(2);
 console.log(double(5));  // 10
 
 // Closure captures 'multiplier' by value
+
 ```
 
 ## Common Mistakes
@@ -408,6 +423,7 @@ function modifyObject(obj: { value: number }) {
 let obj = { value: 10 };
 modifyObject(obj);
 console.log(obj.value);  // 10 (not 20!)
+
 ```
 
 ### 2. Mutating Arguments
@@ -426,6 +442,7 @@ console.log(arr);  // [1, 2, 3] (mutated!)
 function sortArraySafe(arr: number[]) {
   return [...arr].sort((a, b) => a - b);
 }
+
 ```
 
 ### 3. Sharing References
@@ -440,6 +457,7 @@ console.log(original.value);  // 20 (shared!)
 
 // Solution: Create actual copy
 let actualCopy = { ...original };
+
 ```
 
 ### 4. Forgetting Immutability
@@ -455,6 +473,7 @@ function updateItem(items: any[], index: number, value: any) {
 function updateItemSafe(items: any[], index: number, value: any) {
   return items.map((item, i) => i === index ? value : item);
 }
+
 ```
 
 ## Best Practices
@@ -469,6 +488,7 @@ const copy = { ...original };
 // Array shallow copy
 const arr = [1, 2, 3];
 const arrCopy = [...arr];
+
 ```
 
 ### 2. Use Object.freeze for Immutability
@@ -477,6 +497,7 @@ const arrCopy = [...arr];
 const frozen = Object.freeze({ value: 10 });
 frozen.value = 20;  // Silently fails (or throws in strict mode)
 console.log(frozen.value);  // 10
+
 ```
 
 ### 3. Prefer Pure Functions
@@ -492,24 +513,28 @@ let total = 0;
 function addToTotal(value: number) {
   total += value;  // Modifies external state
 }
+
 ```
 
 ### 4. Document Mutation Behavior
 
 ```typescript
 /**
- * Sorts the array in place (mutates original)
+
+ - Sorts the array in place (mutates original)
  */
 function sortInPlace(arr: number[]): number[] {
   return arr.sort((a, b) => a - b);
 }
 
 /**
- * Returns sorted copy (original unchanged)
+
+ - Returns sorted copy (original unchanged)
  */
 function sorted(arr: number[]): number[] {
   return [...arr].sort((a, b) => a - b);
 }
+
 ```
 
 ## Performance Considerations
@@ -531,6 +556,7 @@ function processCopy(o: typeof obj) {
 
 // For large objects, prefer referencing when possible
 // But be careful about mutations
+
 ```
 
 ### Immutability Libraries
@@ -544,6 +570,7 @@ const updated = original.set('c', 3);
 
 // original is unchanged
 // updated is new Map
+
 ```
 
 ## Interview Questions
@@ -565,16 +592,19 @@ A: A copy of the reference is passed. Both the original and the parameter point 
 **Q4: What is the difference between mutation and reassignment?**
 
 A:
+
 - **Mutation**: Modifies the object's properties (affects original)
 - **Reassignment**: Changes what the variable points to (doesn't affect original)
 
 **Q5: How do you create a copy of an object?**
 
 A: Use spread operator, Object.assign, or structuredClone:
+
 ```typescript
 const copy = { ...original };
 const copy2 = Object.assign({}, original);
 const copy3 = structuredClone(original);
+
 ```
 
 ### Intermediate (5-10 questions)
@@ -588,6 +618,7 @@ function change(x: number) {
 let a = 10;
 change(a);
 console.log(a);  // 10
+
 ```
 
 A: Because `a` is a primitive (number). When passed to `change`, its value is copied. Changing `x` inside the function only changes the local copy.
@@ -601,6 +632,7 @@ function change(obj: { value: number }) {
 let a = { value: 10 };
 change(a);
 console.log(a.value);  // 20
+
 ```
 
 A: Because `a` is an object. When passed to `change`, its reference is copied. Both `a` and `obj` point to the same object, so changing `obj.value` affects `a`.
@@ -608,24 +640,29 @@ A: Because `a` is an object. When passed to `change`, its reference is copied. B
 **Q8: How do you prevent mutation of an object?**
 
 A: Use Object.freeze:
+
 ```typescript
 const frozen = Object.freeze({ value: 10 });
 frozen.value = 20;  // Silently fails
+
 ```
 
 **Q9: What is the difference between shallow and deep copy?**
 
 A:
+
 - **Shallow copy**: Copies object properties, but nested objects are still references
 - **Deep copy**: Copies everything, including nested objects
 
 **Q10: How do you create a deep copy?**
 
 A: Use JSON.parse(JSON.stringify()) or structuredClone:
+
 ```typescript
 const deep = JSON.parse(JSON.stringify(original));
 // Or
 const deep2 = structuredClone(original);
+
 ```
 
 ### Senior (10-15 questions)
@@ -637,6 +674,7 @@ A: When an object is created, it's stored in heap memory. Variables hold referen
 **Q12: What are the performance implications of copying vs referencing?**
 
 A:
+
 - Referencing: O(1), just copies pointer
 - Shallow copy: O(n), copies n properties
 - Deep copy: O(n*m), copies all nested objects
@@ -652,9 +690,13 @@ A: Structural sharing is when immutable data structures share parts of their str
 **Q15: How do you handle large objects efficiently?**
 
 A:
+
 1. Use references when possible
+
 2. Lazy loading for large properties
+
 3. WeakMap/WeakRef for caching
+
 4. Streams for large data processing
 
 ### FAANG-style (5-10 questions)
@@ -662,6 +704,7 @@ A:
 **Q16: Design an immutable state management system.**
 
 A:
+
 ```typescript
 class ImmutableState<T> {
   private history: T[] = [];
@@ -694,11 +737,13 @@ class ImmutableState<T> {
     }
   }
 }
+
 ```
 
 **Q17: How would you implement a deep freeze function?**
 
 A:
+
 ```typescript
 function deepFreeze(obj: any): any {
   Object.freeze(obj);
@@ -713,11 +758,13 @@ function deepFreeze(obj: any): any {
 
   return obj;
 }
+
 ```
 
 **Q18: Analyze the memory implications of different cloning strategies.**
 
 A:
+
 - **Shallow copy**: Low memory, but shared nested objects
 - **Deep copy**: High memory, fully independent
 - **Structural sharing**: Balanced memory, immutable
@@ -726,18 +773,27 @@ A:
 **Q19: How do you optimize object copying for performance?**
 
 A:
+
 1. Copy only needed properties
+
 2. Use typed arrays for numeric data
+
 3. Implement copy-on-write
+
 4. Use object pools for frequent allocation
+
 5. Profile and measure actual usage
 
 **Q20: What are the security implications of object references?**
 
 A:
+
 1. **Prototype pollution**: Modifying shared prototypes affects all objects
+
 2. **Information leakage**: References can expose internal state
+
 3. **Privilege escalation**: Malicious code can modify shared objects
+
 4. **Mitigation**: Use Object.freeze, input validation
 
 ### Follow-ups (5-10 questions)
@@ -745,6 +801,7 @@ A:
 **Q21: Can you give an example of a bug caused by reference confusion?**
 
 A: Common bug:
+
 ```typescript
 // Bug: Array mutation
 function addItem(items: string[], item: string) {
@@ -761,14 +818,19 @@ console.log(updatedCart);  // ['apple', 'banana', 'orange']
 function addItemSafe(items: string[], item: string) {
   return [...items, item];
 }
+
 ```
 
 **Q22: How do you handle deep cloning efficiently?**
 
 A:
+
 1. Use structuredClone (modern browsers)
+
 2. JSON.parse(JSON.stringify()) for simple objects
+
 3. Custom deep clone with circular reference handling
+
 4. Libraries like lodash for complex cases
 
 **Q23: What is the relationship between references and garbage collection?**
@@ -778,6 +840,7 @@ A: Objects are garbage collected when no references point to them. If you copy a
 **Q24: How do different languages handle this differently?**
 
 A:
+
 - **Java**: Primitives by value, objects by reference
 - **Python**: Everything by reference
 - **C++**: Can choose by value or by reference
@@ -786,13 +849,21 @@ A:
 **Q25: What are best practices for working with object references?**
 
 A:
+
 1. Document mutation behavior
+
 2. Use pure functions when possible
+
 3. Create copies before modification
+
 4. Use Object.freeze for immutability
+
 5. Be careful with shared state
+
 6. Use TypeScript for type safety
+
 7. Test for unintended mutations
+
 8. Use immutable data structures when needed
 
 ## Summary
@@ -800,11 +871,17 @@ A:
 Understanding pass by value vs reference is crucial:
 
 1. **Primitives**: Passed by value (copied)
+
 2. **Objects**: Passed by value of reference (shared)
+
 3. **Mutation**: Changes affect original
+
 4. **Reassignment**: Doesn't affect original
+
 5. **Copying**: Use spread, Object.assign, or structuredClone
+
 6. **Immutability**: Use Object.freeze or immutable libraries
+
 7. **Best practices**: Document mutation, use pure functions
 
 Understanding this prevents bugs and enables better code design.
@@ -868,6 +945,7 @@ SECURITY:
 • Information leakage
 • Privilege escalation
 • Mitigation: freeze, validation
+
 ```
 
 ## References & Learn More

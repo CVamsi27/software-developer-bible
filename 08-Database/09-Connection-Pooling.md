@@ -52,6 +52,7 @@ Connection pooling is a technique that maintains a cache of database connections
 │  │  └─────────────────────────────────────────────┘   │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Pool States
@@ -85,6 +86,7 @@ Connection pooling is a technique that maintains a cache of database connections
 │  │  • Server closed connection                        │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -120,6 +122,7 @@ log_pooler_errors = 1
 ; Authentication
 auth_type = md5
 auth_file = /etc/pgbouncer/userlist.txt
+
 ```
 
 ### Prisma Connection Pool
@@ -139,6 +142,7 @@ datasource db {
 
 // Or in environment
 // DATABASE_URL="postgresql://user:pass@host:5432/db?connection_limit=20&pool_timeout=10"
+
 ```
 
 ```typescript
@@ -157,6 +161,7 @@ const prisma = new PrismaClient({
 
 // Prisma handles connection pooling internally
 // Each PrismaClient instance has its own pool
+
 ```
 
 ### Node.js pg Pool
@@ -204,6 +209,7 @@ pool.on('error', (err) => {
 process.on('SIGTERM', () => {
   pool.end();
 });
+
 ```
 
 ### Connection Pool Monitoring
@@ -231,6 +237,7 @@ SHOW POOLS;
 SHOW CLIENTS;
 SHOW SERVERS;
 SHOW STATS;
+
 ```
 
 ## Real-World Use Cases
@@ -263,6 +270,7 @@ export class UsersService {
     return this.prisma.user.findMany();
   }
 }
+
 ```
 
 ### Microservices
@@ -284,6 +292,7 @@ const poolB = new Pool({
 // With PgBouncer in front
 // PgBouncer manages connections to PostgreSQL
 // Each service connects to PgBouncer
+
 ```
 
 ### Connection Pool Sizing
@@ -301,6 +310,7 @@ const pool = new Pool({
   min: 2,
   idleTimeoutMillis: 30000,
 });
+
 ```
 
 ## Common Mistakes
@@ -324,6 +334,7 @@ async function getUser(id: number) {
   const result = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
   return result.rows[0];
 }
+
 ```
 
 ### 2. Pool Exhaustion
@@ -345,6 +356,7 @@ async function generateReport() {
   const result = await reportPool.query('SELECT * FROM large_table');
   return result.rows;
 }
+
 ```
 
 ### 3. Not Handling Connection Errors
@@ -363,6 +375,7 @@ pool.on('error', (err) => {
   console.error('Pool error:', err);
   // Implement recovery logic
 });
+
 ```
 
 ## Best Practices
@@ -411,6 +424,7 @@ process.on('SIGTERM', async () => {
 // 6. Use PgBouncer for production
 // PgBouncer manages connections efficiently
 // Supports transaction-level pooling
+
 ```
 
 ## Performance Considerations
@@ -434,6 +448,7 @@ process.on('SIGTERM', async () => {
 │  • Transaction: Connection held for transaction             │
 │  • Statement: Connection held for single statement          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
@@ -553,6 +568,7 @@ mydb = host=localhost port=5432 dbname=mydb
 pool_mode = transaction
 max_client_conn = 1000
 default_pool_size = 25
+
 ```
 
 ```typescript
@@ -567,6 +583,7 @@ const pool = new Pool({
 
 // Prisma
 DATABASE_URL="postgresql://...?connection_limit=20&pool_timeout=10"
+
 ```
 
 ```sql
@@ -574,6 +591,7 @@ DATABASE_URL="postgresql://...?connection_limit=20&pool_timeout=10"
 SELECT * FROM pg_stat_activity;
 SELECT * FROM pg_stat_database;
 SHOW POOLS;  -- PgBouncer
+
 ```
 
 ## References & Learn More

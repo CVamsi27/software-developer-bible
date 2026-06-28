@@ -5,6 +5,7 @@
 **Helm** is the package manager for Kubernetes. It packages Kubernetes manifests into reusable units called **charts**, manages releases, and enables templating and configuration management. Helm simplifies deployment, updates, and rollbacks of complex applications.
 
 Key concepts:
+
 - **Chart**: A package of Kubernetes resources (like apt/yum packages)
 - **Release**: A running instance of a chart with specific configuration
 - **Values**: Configuration parameters for a chart
@@ -28,21 +29,30 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                      Helm CLI                             |
 |  helm install, upgrade, rollback, list, etc.             |
+
 +----------------------------------------------------------+
+
                           |
+
                           v
 +----------------------------------------------------------+
+
 |                    Chart Repository                       |
 |  +----------+  +----------+  +----------+               |
 |  |  nginx   |  |  myapp   |  | postgres |               |
 |  |  v1.0.0  |  |  v2.0.0  |  |  v15.0  |               |
 |  +----------+  +----------+  +----------+               |
+
 +----------------------------------------------------------+
+
                           |
+
                           v
 +----------------------------------------------------------+
+
 |                    Kubernetes Cluster                      |
 |  +--------------------------------------------------+   |
 |  |                    Release: myapp-prod            |   |
@@ -54,7 +64,9 @@ Key concepts:
 |  |    - ConfigMap                                     |   |
 |  |    - Secret                                        |   |
 |  +--------------------------------------------------+   |
+
 +----------------------------------------------------------+
+
 ```
 
 ### Chart Structure
@@ -66,6 +78,7 @@ mychart/
 +-- values.yaml         # Default configuration values
 +-- values.schema.json  # JSON Schema for values
 +-- templates/          # Kubernetes manifest templates
+
 |   +-- deployment.yaml
 |   +-- service.yaml
 |   +-- configmap.yaml
@@ -75,6 +88,7 @@ mychart/
 |   +-- NOTES.txt       # Post-install notes
 +-- charts/             # Sub-charts (dependencies)
 +-- crds/               # Custom Resource Definitions
+
 ```
 
 ## Code Examples
@@ -90,10 +104,12 @@ type: application
 version: 1.0.0
 appVersion: "1.0.0"
 dependencies:
+
   - name: postgresql
     version: "12.x.x"
     repository: "https://charts.bitnami.com/bitnami"
     condition: postgresql.enabled
+
 ```
 
 ### Values File
@@ -118,13 +134,17 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
+
     - host: myapp.example.com
       paths:
+
         - path: /
           pathType: Prefix
   tls:
+
     - secretName: myapp-tls
       hosts:
+
         - myapp.example.com
 
 resources:
@@ -146,6 +166,7 @@ postgresql:
   auth:
     postgresPassword: "secret"
     database: "myapp"
+
 ```
 
 ### Deployment Template
@@ -171,10 +192,12 @@ spec:
         {{- include "mychart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
+
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
+
             - name: http
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
@@ -190,6 +213,7 @@ spec:
             periodSeconds: 10
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+
 ```
 
 ### Service Template
@@ -205,12 +229,14 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
+
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
       name: http
   selector:
     {{- include "mychart.selectorLabels" . | nindent 4 }}
+
 ```
 
 ### Ingress Template
@@ -233,8 +259,10 @@ spec:
   {{- if .Values.ingress.tls }}
   tls:
     {{- range .Values.ingress.tls }}
+
     - hosts:
         {{- range .hosts }}
+
         - {{ . | quote }}
         {{- end }}
       secretName: {{ .secretName }}
@@ -242,10 +270,12 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
+
     - host: {{ .host | quote }}
       http:
         paths:
           {{- range .paths }}
+
           - path: {{ .path }}
             pathType: {{ .pathType }}
             backend:
@@ -256,6 +286,7 @@ spec:
           {{- end }}
     {{- end }}
 {{- end }}
+
 ```
 
 ### Helper Templates
@@ -290,6 +321,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/name: {{ include "mychart.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
 ```
 
 ### Helm Commands
@@ -322,6 +354,7 @@ helm repo update
 # Show chart info
 helm show chart mychart
 helm show values mychart
+
 ```
 
 ### Environment-Specific Values
@@ -352,6 +385,7 @@ autoscaling:
   enabled: true
   minReplicas: 5
   maxReplicas: 20
+
 ```
 
 ## Real-World Use Cases
@@ -366,18 +400,21 @@ helm install myapp ./mychart \
   --set postgresql.auth.password=secret \
   --namespace production \
   --create-namespace
+
 ```
 
 ### 2. CI/CD Integration
 
 ```yaml
 # .github/workflows/deploy.yml
+
 - name: Deploy to Kubernetes
   run: |
     helm upgrade --install myapp ./chart \
       -f values-${{ env.ENVIRONMENT }}.yaml \
       --set image.tag=${{ github.sha }} \
       --wait --timeout 300s
+
 ```
 
 ### 3. Chart Testing
@@ -394,6 +431,7 @@ helm install myrelease ./mychart --dry-run --debug
 
 # Test release
 helm test myrelease
+
 ```
 
 ## Common Mistakes
@@ -420,20 +458,30 @@ version: 1.0.0
 appVersion: "1.0.0"
 
 dependencies:
+
   - name: postgresql
     version: "12.x.x"
     repository: "https://charts.bitnami.com/bitnami"
     condition: postgresql.enabled
+
 ```
 
 1. **Use semantic versioning** — follow semver for chart versions
+
 2. **Template everything** — avoid hardcoding in manifests
+
 3. **Use helpers** — create reusable template functions
+
 4. **Validate with lint** — `helm lint` before deployment
+
 5. **Test with dry-run** — `helm install --dry-run --debug`
+
 6. **Use values files** — separate configuration from templates
+
 7. **Manage dependencies** — use Chart.yaml dependencies
+
 8. **Document with NOTES.txt** — provide post-install instructions
+
 9. **Use namespaces** — isolate releases
 10. **Monitor releases** — use helm list and helm status
 
@@ -459,6 +507,7 @@ helm upgrade --install myrelease ./mychart \
 
 # Use values file
 helm install myrelease ./mychart -f values-prod.yaml
+
 ```
 
 ## Interview Questions
@@ -612,11 +661,13 @@ helm repo update
 
 # Search
 helm search repo nginx
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

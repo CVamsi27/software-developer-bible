@@ -4,6 +4,7 @@
 Keyboard navigation is the ability to access and interact with all website functionality using only a keyboard, without requiring a mouse. It's essential for users with motor disabilities, power users, and screen reader users.
 
 ## Why Do We Need It?
+
 - **Motor disabilities**: Users who cannot use a mouse
 - **Power users**: Many prefer keyboard for efficiency
 - **Screen reader users**: Primarily keyboard-based navigation
@@ -12,12 +13,14 @@ Keyboard navigation is the ability to access and interact with all website funct
 
 ## How It Works
 Keyboard navigation involves:
+
 - **Focus management**: Moving between interactive elements
 - **Tab order**: Sequential navigation through elements
 - **Keyboard shortcuts**: Direct access to functionality
 - **Focus indicators**: Visual feedback for focus position
 
 ### Keyboard Navigation Flow
+
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Keyboard Navigation Flow                      │
@@ -31,11 +34,13 @@ Keyboard navigation involves:
 │  └─────────────┘      └─────────────┘      └─────────────┘     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
 
 ### Focus Indicators
+
 ```css
 /* Default focus styles - don't remove! */
 :focus {
@@ -62,9 +67,11 @@ Keyboard navigation involves:
     outline-offset: 2px;
   }
 }
+
 ```
 
 ### Skip Links
+
 ```html
 <!-- Skip link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -95,9 +102,11 @@ Keyboard navigation involves:
     <!-- Main content -->
   </main>
 </body>
+
 ```
 
 ### Tab Order
+
 ```html
 <!-- Good: Logical tab order -->
 <form>
@@ -120,9 +129,11 @@ Keyboard navigation involves:
 
 <!-- Good: tabindex="-1" for programmatically focusable -->
 <div tabindex="-1" id="target">Focusable via script</div>
+
 ```
 
 ### Roving Tabindex
+
 ```html
 <!-- Tab list with roving tabindex -->
 <div role="tablist" aria-label="Tabs">
@@ -185,9 +196,11 @@ tablist.addEventListener('keydown', (e) => {
   tabs[newIndex].click();
 });
 </script>
+
 ```
 
 ### Keyboard Shortcuts
+
 ```html
 <!-- Keyboard shortcut handler -->
 <div
@@ -219,9 +232,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
+
 ```
 
 ### Focus Trapping (Modals)
+
 ```html
 <!-- Modal with focus trap -->
 <div
@@ -279,9 +294,11 @@ function closeModal() {
   document.getElementById('trigger-btn').focus();
 }
 </script>
+
 ```
 
 ### Arrow Key Navigation
+
 ```html
 <!-- Listbox with arrow key navigation -->
 <div
@@ -331,9 +348,11 @@ listbox.addEventListener('keydown', (e) => {
   currentIndex = newIndex;
 });
 </script>
+
 ```
 
 ### Menu Navigation
+
 ```html
 <!-- Dropdown menu -->
 <div class="dropdown">
@@ -401,36 +420,59 @@ menu.addEventListener('keydown', (e) => {
   items[newIndex].focus();
 });
 </script>
+
 ```
 
 ## Real-World Use Cases
+
 1. **Web applications**: Full keyboard support required
+
 2. **E-commerce**: Checkout process, product navigation
+
 3. **Enterprise software**: Data entry, complex workflows
+
 4. **Media players**: Playback controls, playlist navigation
+
 5. **Dashboards**: Data visualization, interactive charts
+
 6. **Mobile web**: Touch and keyboard hybrid
 
 ## Common Mistakes
+
 1. **Removing focus indicators**: Makes navigation impossible
+
 2. **Using positive tabindex**: Breaks natural tab order
+
 3. **Missing keyboard handlers**: No arrow key support
+
 4. **Trapping focus**: Modal doesn't release focus
+
 5. **No skip links**: Forces users to tab through navigation
+
 6. **Invisible focus**: Focus not visible to users
+
 7. **Mouse-only interactions**: No keyboard alternative
 
 ## Best Practices
+
 1. **Never remove focus indicators**: Style them instead
+
 2. **Use logical tab order**: Follow visual order
+
 3. **Implement skip links**: Allow bypassing repetitive content
+
 4. **Support arrow keys**: For composite widgets
+
 5. **Test with keyboard only**: Unplug mouse
+
 6. **Use tabindex="0"**: For focusable elements
+
 7. **Use tabindex="-1"**: For programmatically focusable
+
 8. **Provide visual feedback**: Focus should be obvious
 
 ## Performance Considerations
+
 - **Event listeners**: Minimal impact on performance
 - **Focus management**: Important for SPA performance
 - **Skip links**: No performance impact
@@ -439,116 +481,153 @@ menu.addEventListener('keydown', (e) => {
 ## Interview Questions
 
 ### Beginner (5-10)
+
 1. **What is keyboard navigation?**
+
    - Ability to use all website functionality with keyboard only.
 
 2. **What is tab order?**
+
    - Sequence in which elements receive focus when pressing Tab.
 
 3. **What is a skip link?**
+
    - Link that allows users to skip repetitive navigation.
 
 4. **What is focus indicator?**
+
    - Visual outline showing which element has focus.
 
 5. **What is `tabindex`?**
+
    - Attribute defining if element is focusable and tab order.
 
 6. **What is the difference between `tabindex="0"` and `tabindex="-1"`?**
+
     - 0 adds to tab order, -1 is focusable only programmatically.
 
 7. **Why should you never use positive tabindex?**
+
     - Breaks natural document flow and confuses users.
 
 8. **What is `:focus-visible`?**
+
     - CSS pseudo-class for keyboard focus, not mouse click.
 
 ### Intermediate (5-10)
+
 9. **How do you trap focus in a modal?**
+
     - Find focusable elements, cycle through on Tab/Shift+Tab.
 
 10. **What is roving tabindex?**
+
     - Managing tabindex values to create custom navigation patterns.
 
 11. **How do you implement arrow key navigation?**
+
     - Listen for keydown events, update focus programmatically.
 
 12. **What is `aria-activedescendant`?**
+
     - Manages focus in composite widgets without moving DOM focus.
 
 13. **How do you handle keyboard navigation in SPAs?**
+
     - Manage focus on route changes, restore focus, announce changes.
 
 14. **What is focus restoration?**
+
     - Returning focus to previous element after closing modal/dialog.
 
 15. **How do you test keyboard navigation?**
+
     - Unplug mouse, use only keyboard, check all functionality.
 
 16. **What is the difference between `tabindex` and `accesskey`?**
+
     - tabindex defines tab order, accesskey defines keyboard shortcut.
 
 ### Senior (10-15)
 17. **How do you implement keyboard navigation for complex widgets?**
+
     - Follow WAI-ARIA patterns, support arrow keys, manage focus.
 
 18. **What are the challenges of keyboard navigation in SPAs?**
+
     - Focus management, route changes, dynamic content.
 
 19. **How do you handle keyboard navigation with virtual scrolling?**
+
     - Manage focus for visible items, handle scroll events.
 
 20. **What is the impact of CSS on keyboard navigation?**
+
     - Focus indicators, visibility, layout can affect accessibility.
 
 21. **How do you implement keyboard shortcuts?**
+
     - Global event listeners, prevent default, provide alternatives.
 
 22. **What is `aria-keyshortcuts`?**
+
     - Defines keyboard shortcuts for elements.
 
 23. **How do you handle keyboard navigation in drag-and-drop?**
+
     - Provide keyboard alternative, aria-grabbed, aria-dropeffect.
 
 24. **What is the role of focus management in accessibility?**
+
     - Ensures logical navigation, provides context, maintains usability.
 
 ### FAANG-style (5-10)
 25. **Design a keyboard navigation system for a complex data grid.**
+
     - Arrow keys, Tab, Enter, Escape, page navigation, selection.
 
 26. **How would you implement keyboard shortcuts in a web application?**
+
     - Conflict detection, user customization, documentation, alternatives.
 
 27. **What are the trade-offs between different navigation patterns?**
+
     - Tab vs arrow, linear vs spatial, global vs local.
 
 28. **How do you test keyboard navigation at scale?**
+
     - Automated testing, manual audits, user testing, metrics.
 
 29. **Design a keyboard-navigable dashboard.**
+
     - Logical order, focus management, shortcuts, customization.
 
 ### Follow-ups (5-10)
 30. **How does keyboard navigation affect SEO?**
+
     - Minimal direct impact, but better UX improves engagement.
 
 31. **What is the future of keyboard navigation?**
+
     - Better browser support, new patterns, AI assistance.
 
 32. **How do you handle keyboard navigation with frameworks?**
+
     - Framework-specific patterns, component libraries, documentation.
 
 33. **What are common keyboard navigation issues in React/Vue?**
+
     - Missing handlers, wrong tabindex, focus management.
 
 34. **How do you train developers on keyboard navigation?**
+
     - Workshops, documentation, code reviews, testing exercises.
 
 ## Summary
 Keyboard navigation is essential for accessibility. Use semantic HTML, proper tabindex, skip links, and support arrow keys for composite widgets. Test with keyboard only and follow established patterns. Remember: if you can't reach it with Tab, it's not accessible.
 
 ## References & Learn More
+
 - [WCAG 2.1 - Keyboard Accessible](https://www.w3.org/WAI/WCAG21/Understanding/keyboard)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
 - [WebAIM Keyboard Accessibility](https://webaim.org/techniques/keyboard/)

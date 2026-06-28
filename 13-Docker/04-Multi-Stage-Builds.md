@@ -5,6 +5,7 @@
 **Multi-stage builds** allow you to use multiple `FROM` statements in a single Dockerfile. Each `FROM` begins a new stage. Artifacts from earlier stages can be selectively copied to later stages using `COPY --from=<stage>`. The final image contains only what is needed for production, dramatically reducing size.
 
 Key concepts:
+
 - **Build Stage**: Contains compilers, build tools, dev dependencies
 - **Production Stage**: Contains only runtime and application artifacts
 - **AS alias**: Names a stage for later reference
@@ -28,6 +29,7 @@ Key concepts:
 
 ```text
 +-----------------------------------------------------+
+
 |                Multi-Stage Build                      |
 |                                                       |
 |  Stage 1: builder                                    |
@@ -54,7 +56,9 @@ Key concepts:
 |  +-----------------------------------------------+  |
 |                                                       |
 |  Result: 280MB builder --> 80MB final image           |
+
 +-----------------------------------------------------+
+
 ```
 
 ### Image Size Comparison
@@ -62,14 +66,19 @@ Key concepts:
 ```text
 Single-stage:                          Multi-stage:
 +------------------+                  +------------------+
+
 | node:18-alpine   | 130 MB           |                  |
 | + build deps     | +200 MB          | Final Image      |
+
 | + prod deps      | +80 MB           | node:18-alpine   | 130 MB
 | + source code    | +5 MB            | + dist folder    |  5 MB
 | + dev tools      | +50 MB           | + prod deps      | 80 MB
+
 |                  |                   |                  |
+
 | TOTAL            | ~465 MB          | TOTAL            | ~215 MB
 +------------------+                  +------------------+
+
 ```
 
 ## Code Examples
@@ -100,6 +109,7 @@ USER node
 EXPOSE 3000
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "dist/server.js"]
+
 ```
 
 ### Go Application with Distroless
@@ -119,6 +129,7 @@ FROM gcr.io/distroless/static-debian12
 COPY --from=builder /server /server
 USER nonroot:nonroot
 ENTRYPOINT ["/server"]
+
 ```
 
 ### Python Flask Application
@@ -142,6 +153,7 @@ RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
 USER appuser
 EXPOSE 5000
 CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
+
 ```
 
 ### Rust Application with Scratch
@@ -156,6 +168,7 @@ FROM scratch
 COPY --from=builder /app/target/release/myapp /myapp
 USER 1000:1000
 ENTRYPOINT ["/myapp"]
+
 ```
 
 ### Angular/Frontend Application
@@ -172,6 +185,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist/myapp/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
+
 ```
 
 ### Custom Build Targets
@@ -185,6 +199,7 @@ docker build --target production -t myapp:latest .
 
 # Build all stages
 docker build -t myapp:latest .
+
 ```
 
 ## Real-World Use Cases
@@ -213,6 +228,7 @@ COPY --from=build-api /app/packages/api/dist ./dist
 COPY --from=build-api /app/packages/api/node_modules ./node_modules
 USER node
 CMD ["node", "dist/index.js"]
+
 ```
 
 ### 2. Full-Stack Application
@@ -242,6 +258,7 @@ COPY --from=backend-build /backend/node_modules ./backend/node_modules
 COPY --from=frontend-build /frontend/dist ./frontend/dist
 USER node
 CMD ["node", "backend/dist/server.js"]
+
 ```
 
 ### 3. Java Spring Boot with GraalVM
@@ -256,6 +273,7 @@ FROM scratch
 COPY --from=builder /app/target/myapp /myapp
 EXPOSE 8080
 ENTRYPOINT ["/myapp"]
+
 ```
 
 ## Common Mistakes
@@ -293,16 +311,25 @@ COPY --from=deps /app/node_modules ./node_modules
 USER nonroot
 EXPOSE 3000
 CMD ["dist/server.js"]
+
 ```
 
 1. **Name all stages** — improves readability and caching
+
 2. **Use distroless for final stage** — minimal attack surface
+
 3. **Separate dependency installation from source copy** — better caching
+
 4. **Use `npm ci` not `npm install`** — deterministic builds
+
 5. **Prune dev dependencies** — reduce final image size
+
 6. **Use `--target` for dev/debug** — build specific stages
+
 7. **Leverage BuildKit** — parallel stage execution
+
 8. **Pin base image versions** — reproducible builds
+
 9. **Order stages by build time** — slowest first for caching
 10. **Scan each stage** — catch vulnerabilities early
 
@@ -329,6 +356,7 @@ docker build --no-cache -t myapp .
 
 # Check image size
 docker images myapp
+
 ```
 
 ## Interview Questions
@@ -476,11 +504,13 @@ docker buildx build --platform linux/amd64,linux/arm64 -t myapp .
 # Check image size
 docker images myapp
 docker scout quickview myapp:latest
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [Docker Deep Dive by Nigel Poulton](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235)

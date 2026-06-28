@@ -9,9 +9,13 @@ HTTP status codes are three-digit numbers returned by the server in response to 
 Status codes provide standardized communication between client and server:
 
 1. **Machine-readable** - Clients can programmatically handle different responses
+
 2. **Debugging** - Developers can quickly identify issues
+
 3. **Caching** - Browsers and proxies optimize behavior based on status
+
 4. **Security** - Prevent information leakage with appropriate codes
+
 5. **API contracts** - Clear expectations for success and failure scenarios
 
 ## How It Works
@@ -29,6 +33,7 @@ Class   Meaning           Examples
 3xx     Redirection       301 Moved Permanently, 304 Not Modified
 4xx     Client Error      400 Bad Request, 401 Unauthorized, 404 Not Found
 5xx     Server Error      500 Internal Server Error, 503 Service Unavailable
+
 ```
 
 ### 1xx Informational
@@ -38,16 +43,20 @@ Class   Meaning           Examples
 ════════════════
 
 100 Continue
+
   - Server received request headers; client should proceed
   - Used with Expect: 100-continue header
 
 101 Switching Protocols
+
   - Server is switching protocols as requested by client
   - Common with WebSocket upgrades
 
 102 Processing (WebDAV)
+
   - Server has received and is processing the request
   - No status available yet
+
 ```
 
 ```typescript
@@ -58,6 +67,7 @@ Class   Meaning           Examples
 app.get('/ws', (req, res) => {
   // Express handles WebSocket upgrade automatically with ws library
 });
+
 ```
 
 ### 2xx Success
@@ -67,24 +77,30 @@ app.get('/ws', (req, res) => {
 ════════════════
 
 200 OK
+
   - Request succeeded
   - Used for GET, PUT, PATCH, DELETE responses
 
 201 Created
+
   - Resource successfully created
   - Should include Location header with new resource URL
 
 202 Accepted
+
   - Request accepted for processing
   - Processing not yet completed (async operations)
 
 204 No Content
+
   - Request succeeded but no content to return
   - Used for DELETE responses
 
 206 Partial Content
+
   - Server delivering only part of the resource
   - Used with Range header for resumable downloads
+
 ```
 
 ```typescript
@@ -135,6 +151,7 @@ app.get('/api/files/:id', async (req, res) => {
     res.json({ data: file });
   }
 });
+
 ```
 
 ### 3xx Redirection
@@ -144,27 +161,33 @@ app.get('/api/files/:id', async (req, res) => {
 ════════════════
 
 301 Moved Permanently
+
   - Resource has permanently moved to new URL
   - Search engines update their index
   - Browser caches this redirect
 
 302 Found (Temporary Redirect)
+
   - Resource temporarily at different URL
   - Original URL may be used again
   - Browser makes new request to new URL
 
 304 Not Modified
+
   - Resource hasn't changed since last request
   - Used with ETag/If-None-Match for caching
   - No body in response
 
 307 Temporary Redirect
+
   - Like 302 but preserves HTTP method
   - POST request stays POST after redirect
 
 308 Permanent Redirect
+
   - Like 301 but preserves HTTP method
   - POST request stays POST after redirect
+
 ```
 
 ```typescript
@@ -195,6 +218,7 @@ app.get('/api/products', async (req, res) => {
 app.post('/api/users', (req, res) => {
   res.redirect(307, '/api/v2/users');
 });
+
 ```
 
 ### 4xx Client Errors
@@ -204,52 +228,65 @@ app.post('/api/users', (req, res) => {
 ════════════════
 
 400 Bad Request
+
   - Malformed request syntax
   - Invalid JSON, missing required fields
 
 401 Unauthorized
+
   - Authentication required
   - Missing or invalid credentials
 
 403 Forbidden
+
   - Authenticated but insufficient permissions
   - Server refuses to authorize
 
 404 Not Found
+
   - Resource doesn't exist
   - Endpoint doesn't exist
 
 405 Method Not Allowed
+
   - HTTP method not supported for this resource
   - Include Allow header with supported methods
 
 408 Request Timeout
+
   - Server timed out waiting for request
   - Client took too long to send request
 
 409 Conflict
+
   - Request conflicts with current state
   - Duplicate resource, version conflict
 
 410 Gone
+
   - Resource permanently removed
   - Unlike 404, this is intentional and permanent
 
 413 Payload Too Large
+
   - Request body exceeds server limits
   - Reduce request size
 
 415 Unsupported Media Type
+
   - Content-Type header not supported
   - Check request format
 
 422 Unprocessable Entity
+
   - Request well-formed but semantically invalid
   - Validation errors
 
 429 Too Many Requests
+
   - Rate limit exceeded
   - Check Retry-After header
+
 ```
 
 ```typescript
@@ -332,6 +369,7 @@ app.use('/api', rateLimiter({
     res.set('Retry-After', '60');
   }
 }));
+
 ```
 
 ### 5xx Server Errors
@@ -341,26 +379,32 @@ app.use('/api', rateLimiter({
 ════════════════
 
 500 Internal Server Error
+
   - Generic server error
   - Unexpected condition encountered
   - Don't expose internal details
 
 501 Not Implemented
+
   - Server doesn't support the functionality
   - Feature not yet implemented
 
 502 Bad Gateway
+
   - Invalid response from upstream server
   - Gateway/proxy received bad response
 
 503 Service Unavailable
+
   - Server temporarily unable to handle request
   - Maintenance, overload, or dependency down
   - Include Retry-After header
 
 504 Gateway Timeout
+
   - Upstream server didn't respond in time
   - Gateway timeout waiting for response
+
 ```
 
 ```typescript
@@ -411,6 +455,7 @@ app.get('/api/data', async (req, res) => {
     throw err;
   }
 });
+
 ```
 
 ## Code Examples
@@ -515,6 +560,7 @@ app.delete('/api/users/:id', authenticate, async (req, res) => {
   await UserService.delete(req.params.id);
   res.status(204).end();
 });
+
 ```
 
 ## Real-World Use Cases
@@ -547,6 +593,7 @@ app.get('/api/profile', authenticate, async (req, res) => {
   }
   res.json({ data: user });
 });
+
 ```
 
 ### 2. File Operations
@@ -600,6 +647,7 @@ app.get('/api/files/:id', async (req, res) => {
     stream.pipe(res);
   }
 });
+
 ```
 
 ### 3. Payment Processing
@@ -631,6 +679,7 @@ app.post('/api/payments', authenticate, async (req, res) => {
     throw err;
   }
 });
+
 ```
 
 ## Common Mistakes
@@ -659,6 +708,7 @@ app.post('/api/users', async (req, res) => {
     res.status(409).json({ error: 'Email exists' });
   }
 });
+
 ```
 
 ### 2. Exposing Internal Errors
@@ -672,6 +722,7 @@ res.status(500).json({
   error: 'Internal Server Error',
   message: process.env.NODE_ENV === 'production' ? 'Something went wrong' : err.message
 });
+
 ```
 
 ### 3. Wrong Error for Authentication vs Authorization
@@ -689,6 +740,7 @@ if (!req.user) {
 if (req.user.role !== 'admin') {
   return res.status(403).json({ error: 'Insufficient permissions' });
 }
+
 ```
 
 ### 4. Missing Location Header for 201
@@ -699,6 +751,7 @@ res.status(201).json({ data: user });
 
 // ✅ Good
 res.status(201).header('Location', `/api/users/${user.id}`).json({ data: user });
+
 ```
 
 ### 5. Not Including Retry-After for 429/503
@@ -710,18 +763,27 @@ res.status(429).json({ error: 'Rate limited' });
 // ✅ Good
 res.set('Retry-After', '60');
 res.status(429).json({ error: 'Rate limited', retryAfter: 60 });
+
 ```
 
 ## Best Practices
 
 1. **Use appropriate codes** - Match status code to the actual situation
+
 2. **Be consistent** - Same error types should always return same codes
+
 3. **Include error details** - Help clients understand what went wrong
+
 4. **Don't expose internals** - Hide stack traces and server details in production
+
 5. **Use 201 for creation** - Always with Location header
+
 6. **Use 204 for deletion** - No content to return
+
 7. **Use 401 vs 403 correctly** - 401: not authenticated, 403: not authorized
+
 8. **Include Retry-After** - For 429 and 503 responses
+
 9. **Document status codes** - In API documentation
 10. **Handle all codes clientside** - Don't assume success
 

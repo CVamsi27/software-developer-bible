@@ -9,16 +9,23 @@ Guards have access to the execution context, which provides information about th
 ## Why Do We Need It?
 
 1. **Authorization**: Control access to routes based on user roles or permissions.
+
 2. **Authentication**: Verify user identity before processing requests.
+
 3. **Access Control**: Implement fine-grained permission systems.
+
 4. **Route Protection**: Protect sensitive endpoints from unauthorized access.
+
 5. **Rate Limiting**: Prevent abuse by limiting request frequency.
+
 6. **Feature Flags**: Enable/disable routes based on feature flags.
+
 7. **Input Validation**: Validate request context before processing.
 
 ## How It Works
 
 Guards implement the `CanActivate` interface, which has a single method: `canActivate(context: ExecutionContext)`. This method returns:
+
 - `true` if the request is allowed
 - `false` if the request is rejected (throws ForbiddenException)
 - A Promise or Observable that resolves to a boolean
@@ -60,6 +67,7 @@ Guards implement the `CanActivate` interface, which has a single method: `canAct
 │  └──────────────┘                                        │
 │                                                          │
 └──────────────────────────────────────────────────────────┘
+
 ```
 
 ### Guard Application Levels
@@ -100,6 +108,7 @@ Guards implement the `CanActivate` interface, which has a single method: `canAct
 │  └─────────────────────────────────────────────────────┘│
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -146,6 +155,7 @@ export class AuthGuard implements CanActivate {
     return type === 'Bearer' ? token : undefined;
   }
 }
+
 ```
 
 ### Role-Based Guard
@@ -174,6 +184,7 @@ export class RolesGuard implements CanActivate {
     return requiredRoles.some((role) => user.roles?.includes(role));
   }
 }
+
 ```
 
 ### Custom Decorator for Roles
@@ -210,6 +221,7 @@ export class UserController {
     return this.userService.update(id, dto); // Admins and moderators
   }
 }
+
 ```
 
 ### Permission-Based Guard
@@ -244,6 +256,7 @@ export class PermissionsGuard implements CanActivate {
     );
   }
 }
+
 ```
 
 ### API Key Guard
@@ -278,6 +291,7 @@ export class ApiKeyGuard implements CanActivate {
     return true;
   }
 }
+
 ```
 
 ### Rate Limiting Guard
@@ -330,6 +344,7 @@ export class RateLimitGuard implements CanActivate {
     return true;
   }
 }
+
 ```
 
 ### Scope Guard
@@ -364,6 +379,7 @@ export class ScopeGuard implements CanActivate {
     return true;
   }
 }
+
 ```
 
 ### Global Guard
@@ -394,6 +410,7 @@ bootstrap();
   ],
 })
 export class AppModule {}
+
 ```
 
 ## Real-World Use Cases
@@ -428,6 +445,7 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
     return user;
   }
 }
+
 ```
 
 ### 2. Subscription Tier Guard
@@ -461,6 +479,7 @@ export class SubscriptionGuard implements CanActivate {
     return tierLevels[userTier] >= tierLevels[requiredTier];
   }
 }
+
 ```
 
 ### 3. Feature Flag Guard
@@ -493,6 +512,7 @@ export class FeatureFlagGuard implements CanActivate {
 @FeatureFlag('new-dashboard')
 @Get('dashboard')
 getDashboard() { ... }
+
 ```
 
 ## Common Mistakes
@@ -509,6 +529,7 @@ canActivate(context: ExecutionContext): boolean {
 canActivate(context: ExecutionContext): boolean {
   throw new ForbiddenException('Insufficient permissions');
 }
+
 ```
 
 ### 2. Making Guards Too Complex
@@ -533,6 +554,7 @@ export class MegaGuard implements CanActivate {
 @UseGuards(AuthGuard, RolesGuard, RateLimitGuard)
 @Get('admin')
 adminEndpoint() {}
+
 ```
 
 ### 3. Not Using Reflector Properly
@@ -553,6 +575,7 @@ canActivate(context: ExecutionContext): boolean {
   ]);
   // ...
 }
+
 ```
 
 ### 4. Guards Blocking Every Request
@@ -574,25 +597,37 @@ export class ProperGuard implements CanActivate {
     return request.user !== undefined;
   }
 }
+
 ```
 
 ## Best Practices
 
 1. **Single Responsibility**: Each guard should handle one concern (auth, roles, rate limiting).
+
 2. **Composable**: Design guards to be composable and layered.
+
 3. **Use Reflector**: Always use Reflector for metadata access.
+
 4. **Throw Exceptions**: Throw descriptive exceptions instead of returning false.
+
 5. **Fast Execution**: Guards should be fast — avoid heavy operations.
+
 6. **Caching**: Cache permission/role checks when possible.
+
 7. **Testing**: Test guards in isolation with mocked context.
+
 8. **Documentation**: Document guard requirements with custom decorators.
 
 ## Performance Considerations
 
 1. **Execution Time**: Guards run on every matching request — keep them fast.
+
 2. **Caching**: Cache role/permission lookups to avoid repeated database queries.
+
 3. **Async Guards**: Use async guards sparingly — they add latency.
+
 4. **Early Return**: Return early when possible to avoid unnecessary checks.
+
 5. **Guard Ordering**: Order guards by likelihood of rejection (cheapest first).
 
 ## Interview Questions
@@ -623,6 +658,7 @@ Define roles in an enum, create a `@Roles()` decorator using `SetMetadata`, and 
 Use `@Public()` decorator and check for it in the guard to bypass authentication.
 
 **Q8: What is the difference between `APP_GUARD` and `@UseGuards()`?**
+
 - `APP_GUARD`: Applies guard globally via module provider
 - `@UseGuards()`: Applies guard to specific controller/method
 

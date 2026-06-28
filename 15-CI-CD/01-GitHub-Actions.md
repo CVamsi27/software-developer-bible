@@ -5,6 +5,7 @@
 **GitHub Actions** is a CI/CD platform built into GitHub that automates software workflows. It uses YAML-based **workflows** triggered by events (push, PR, schedule) to execute **jobs** containing **steps** (commands or actions).
 
 Key concepts:
+
 - **Workflow**: Automated process defined in `.github/workflows/`
 - **Job**: Group of steps running on the same runner
 - **Step**: Individual task (action or shell command)
@@ -29,6 +30,7 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                    GitHub Actions                         |
 |                                                           |
 |  +------------------+    +------------------+            |
@@ -55,14 +57,20 @@ Key concepts:
 |  |  |  Step 3: Deploy to Kubernetes              |  |   |
 |  |  +--------------------------------------------+  |   |
 |  +--------------------------------------------------+   |
+
 +----------------------------------------------------------+
+
                           |
+
                           v
               +-----------------------+
+
               |     Runner (VM)       |
               |  Ubuntu / Windows     |
               |  / macOS              |
+
               +-----------------------+
+
 ```
 
 ### Workflow File Structure
@@ -70,12 +78,15 @@ Key concepts:
 ```text
 .github/
 +-- workflows/
+
 |   +-- ci.yml
 |   +-- cd.yml
 |   +-- release.yml
 +-- actions/
+
 |   +-- setup/
 |       +-- action.yml
+
 ```
 
 ## Code Examples
@@ -97,6 +108,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -114,6 +126,7 @@ jobs:
 
       - name: Build
         run: npm run build
+
 ```
 
 ### Matrix Builds
@@ -132,12 +145,15 @@ jobs:
         node-version: [16, 18, 20]
 
     steps:
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+
       - run: npm ci
       - run: npm test
+
 ```
 
 ### Docker Build and Push
@@ -148,12 +164,14 @@ name: Docker Build
 on:
   push:
     tags:
+
       - 'v*'
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Login to Docker Hub
@@ -167,6 +185,7 @@ jobs:
         with:
           push: true
           tags: myapp:${{ github.ref_name }}
+
 ```
 
 ### Deploy to Kubernetes
@@ -182,6 +201,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Configure AWS credentials
@@ -198,6 +218,7 @@ jobs:
         run: |
           kubectl set image deployment/myapp myapp=myapp:${{ github.sha }}
           kubectl rollout status deployment/myapp
+
 ```
 
 ### Reusable Workflow
@@ -220,12 +241,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
+
       - run: npm ci
       - run: npm test
+
 ```
 
 ### Custom Action
@@ -241,12 +265,15 @@ inputs:
 runs:
   using: 'composite'
   steps:
+
     - uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
         cache: 'npm'
+
     - run: npm ci
       shell: bash
+
 ```
 
 ### Secrets Management
@@ -256,23 +283,27 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
       - name: Use secret
         run: echo "Deploying with ${{ secrets.DEPLOY_KEY }}"
         env:
           API_KEY: ${{ secrets.API_KEY }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
 ```
 
 ### Caching
 
 ```yaml
 steps:
+
   - uses: actions/cache@v4
     with:
       path: ~/.npm
       key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       restore-keys: |
         ${{ runner.os }}-node-
+
 ```
 
 ## Real-World Use Cases
@@ -292,10 +323,12 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       - run: npm ci
       - run: npm run lint
 
@@ -303,10 +336,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     steps:
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       - run: npm ci
       - run: npm test
       - uses: actions/upload-artifact@v4
@@ -318,9 +353,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
+
       - uses: actions/checkout@v4
       - name: Build Docker image
         run: docker build -t myapp:${{ github.sha }} .
+
       - name: Push to registry
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
@@ -334,6 +371,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment: staging
     steps:
+
       - uses: actions/checkout@v4
       - name: Deploy to staging
         run: |
@@ -346,11 +384,13 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment: production
     steps:
+
       - uses: actions/checkout@v4
       - name: Deploy to production
         run: |
           kubectl set image deployment/myapp myapp=myapp:${{ github.sha }} -n production
           kubectl rollout status deployment/myapp -n production
+
 ```
 
 ### 2. Release Workflow
@@ -361,12 +401,14 @@ name: Release
 on:
   push:
     tags:
+
       - 'v*'
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -387,6 +429,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: ${{ steps.changelog.outputs.changelog }}
+
 ```
 
 ### 3. Security Scanning
@@ -400,6 +443,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Run Trivy vulnerability scanner
@@ -409,6 +453,7 @@ jobs:
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
+
 ```
 
 ## Common Mistakes
@@ -442,6 +487,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -459,16 +505,25 @@ jobs:
         with:
           name: build-artifacts
           path: dist/
+
 ```
 
 1. **Use specific action versions** — `actions/checkout@v4`, not `@main`
+
 2. **Cache dependencies** — speed up builds
+
 3. **Use matrix builds** — test across environments
+
 4. **Use reusable workflows** — reduce duplication
+
 5. **Use environments** — protect deployments
+
 6. **Use secrets** — never hardcode credentials
+
 7. **Use permissions** — follow least privilege
+
 8. **Use concurrency groups** — prevent redundant runs
+
 9. **Use status badges** — track workflow status
 10. **Monitor costs** — use self-hosted runners when needed
 
@@ -495,6 +550,7 @@ gh run cancel <run-id>
 
 # Re-run a workflow
 gh run rerun <run-id>
+
 ```
 
 ## Interview Questions
@@ -630,6 +686,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
       - run: npm test
 
@@ -642,6 +699,7 @@ strategy:
     node: [16, 18, 20]
 
 # Artifacts
+
 - uses: actions/upload-artifact@v4
   with:
     name: build
@@ -650,11 +708,13 @@ strategy:
 # Reusable workflow
 on:
   workflow_call:
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Documentation](https://docs.docker.com/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)

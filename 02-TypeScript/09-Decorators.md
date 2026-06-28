@@ -28,14 +28,19 @@
 │   └──────────────────┴─────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Metaprogramming**: Add behavior to classes and methods
+
 2. **Code reuse**: Implement cross-cutting concerns (logging, validation)
+
 3. **Declarative syntax**: Express intent through annotations
+
 4. **Framework support**: Used by Angular, NestJS, TypeORM, etc.
+
 5. **Aspect-oriented programming**: Separate concerns from business logic
 
 ## How It Works
@@ -134,6 +139,7 @@ class UserService {
     // Implementation
   }
 }
+
 ```
 
 ### Stage 3 Decorators (TC39 proposal)
@@ -187,6 +193,7 @@ function bound(originalMethod: any, context: ClassFieldDecoratorContext) {
     return result;
   };
 }
+
 ```
 
 ## Code Examples
@@ -294,6 +301,7 @@ class ApiClient {
     return response.json();
   }
 }
+
 ```
 
 ### Advanced Patterns
@@ -391,6 +399,7 @@ class Button {
     console.log(this.label);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -424,6 +433,7 @@ function Log(
     return originalMethod.apply(this, args);
   };
 }
+
 ```
 
 ### 2. Forgetting to Return Descriptor
@@ -457,6 +467,7 @@ function Log(
 
   return descriptor;
 }
+
 ```
 
 ### 3. Using Wrong Decorator Signature
@@ -476,6 +487,7 @@ function log(originalMethod: any, context: ClassMethodDecoratorContext) {
     return originalMethod.call(this, ...args);
   };
 }
+
 ```
 
 ## Best Practices
@@ -489,8 +501,9 @@ function log(originalMethod: any, context: ClassMethodDecoratorContext) {
 
 // 3. Document decorator behavior
 /**
- * Caches method results based on arguments.
- * @Cache
+
+ - Caches method results based on arguments.
+ - @Cache
  */
 function Cache(
   target: any,
@@ -506,6 +519,7 @@ function Cache(
 // 5. Be aware of decorator ordering
 // Class decorators: bottom to top
 // Method decorators: right to left
+
 ```
 
 ## Performance Considerations
@@ -521,71 +535,91 @@ function Cache(
 ### Beginner
 
 1. **What are decorators?**
+
    - A way to add annotations and metadata to classes and members
 
 2. **What types of decorators exist?**
+
    - Class, method, property, and parameter decorators
 
 3. **How do you enable decorators in TypeScript?**
+
    - Set `"experimentalDecorators": true` in tsconfig.json
 
 4. **What is a decorator factory?**
+
    - A function that returns a decorator
 
 5. **What is the difference between experimental and stage 3 decorators?**
+
    - Different API signatures and behavior
 
 ### Intermediate
 
 6. **How do you create a method decorator?**
+
    - Receive target, propertyKey, and descriptor parameters
 
 7. **What is a decorator factory?**
+
    - A function that returns a decorator function
 
 8. **How do you preserve `this` in decorators?**
+
    - Use `.apply(this, args)` or arrow functions
 
 9. **Can you stack multiple decorators?**
+
    - Yes, they are applied bottom to top
 
 10. **How do you add metadata with decorators?**
+
     - Use Reflect.defineMetadata
 
 ### Senior
 
 11. **Design a dependency injection system using decorators**
+
     - Use class and parameter decorators with Reflect metadata
 
 12. **How do you implement a logging framework with decorators?**
+
     - Use method decorators to wrap original methods
 
 13. **Create a validation system using decorators**
+
     - Use property decorators for field validation
 
 14. **How do you handle async decorators?**
+
     - Wrap async methods and return promises
 
 ### FAANG-style
 
 15. **Build an ORM using decorators**
+
     - Use decorators for entity mapping, relationships
 
 16. **Implement a middleware system using decorators**
+
     - Use decorators for route handlers, middleware
 
 17. **Create a plugin system using decorators**
+
     - Use decorators for plugin registration
 
 ### Follow-ups
 
 18. **How do decorators interact with inheritance?**
+
     - Decorators are applied to the class, not instances
 
 19. **Can you use decorators with interfaces?**
+
     - No, decorators only work with classes and members
 
 20. **How do you test code with decorators?**
+
     - Mock decorator behavior, test decorated methods directly
 
 ## Summary
@@ -626,6 +660,7 @@ function Sealed(constructor: Function) {
   Object.seal(constructor);
   Object.seal(constructor.prototype);
 }
+
 ```
 
 ## References & Learn More

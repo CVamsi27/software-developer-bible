@@ -11,8 +11,11 @@ The pattern is particularly useful when exactly one object is needed to coordina
 Without the Singleton pattern, multiple instances of a class could be created, leading to:
 
 1. **Resource waste**: Multiple database connections consuming excessive memory
+
 2. **Inconsistent state**: Different instances holding different configuration values
+
 3. **Race conditions**: Multiple threads accessing shared resources simultaneously
+
 4. **Global access problems**: No centralized point to access critical services
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Singleton pattern, multiple instances of a class could be created, l
 The Singleton pattern works by:
 
 1. Making the constructor private to prevent direct instantiation
+
 2. Creating a static method that acts as the global access point
+
 3. Maintaining a single static instance within the class
+
 4. Providing lazy initialization or eager initialization based on requirements
 
 ```text
@@ -46,6 +52,7 @@ The Singleton pattern works by:
         │   All Code Accesses│
         │   Same Instance    │
         └───────────────────┘
+
 ```
 
 ## Code Examples
@@ -77,6 +84,7 @@ const singleton1 = Singleton.getInstance();
 const singleton2 = Singleton.getInstance();
 
 console.log(singleton1 === singleton2); // true - same instance
+
 ```
 
 ### Thread-Safe Singleton with Double-Checked Locking
@@ -110,6 +118,7 @@ class ThreadSafeSingleton {
     return { results: [] };
   }
 }
+
 ```
 
 ### Module-Level Singleton (TypeScript Best Practice)
@@ -152,6 +161,7 @@ class Database {
 
 // Export a single instance
 export const database = new Database();
+
 ```
 
 ### Configuration Manager Singleton
@@ -208,6 +218,7 @@ class ConfigurationManager {
 const config = ConfigurationManager.getInstance();
 console.log(config.get('port')); // 3000
 console.log(config.get('environment')); // 'development'
+
 ```
 
 ### Logger Singleton
@@ -279,6 +290,7 @@ class Logger {
     return [...this.logs];
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -325,6 +337,7 @@ class DatabasePool {
     }
   }
 }
+
 ```
 
 ### 2. Cache Manager
@@ -381,6 +394,7 @@ class CacheManager {
     return true;
   }
 }
+
 ```
 
 ### 3. Event Bus
@@ -425,6 +439,7 @@ class EventBus {
     }
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -446,6 +461,7 @@ class BadSingleton {
     return BadSingleton.instance;
   }
 }
+
 ```
 
 ### 2. Overusing Singleton
@@ -470,6 +486,7 @@ class UserService {
     // Implementation
   }
 }
+
 ```
 
 ### 3. Global State Pollution
@@ -492,6 +509,7 @@ class GlobalState {
 }
 
 // This creates tight coupling and makes testing difficult
+
 ```
 
 ### 4. Making Everything Static
@@ -512,6 +530,7 @@ class StaticService {
 
 // This is harder to test and has the same problems as Singleton
 // but without the benefits of dependency injection
+
 ```
 
 ## Best Practices
@@ -525,6 +544,7 @@ class Database {
 }
 
 export const database = new Database();
+
 ```
 
 ### 2. Implement Dependency Injection
@@ -556,6 +576,7 @@ class Container {
 const db = new Database({ host: 'localhost', port: 5432 });
 Container.register('database', db);
 const database = Container.resolve<Database>('database');
+
 ```
 
 ### 3. Make Constructor Private and Document
@@ -563,12 +584,14 @@ const database = Container.resolve<Database>('database');
 ```typescript
 // ✅ GOOD - Clear documentation
 /**
- * Singleton class for managing application configuration.
- * Use ConfigurationManager.getInstance() to access the instance.
+
+ - Singleton class for managing application configuration.
+ - Use ConfigurationManager.getInstance() to access the instance.
  *
- * @example
- * const config = ConfigurationManager.getInstance();
- * const port = config.get('port');
+
+ - @example
+ - const config = ConfigurationManager.getInstance();
+ - const port = config.get('port');
  */
 class ConfigurationManager {
   private static instance: ConfigurationManager;
@@ -584,6 +607,7 @@ class ConfigurationManager {
     return ConfigurationManager.instance;
   }
 }
+
 ```
 
 ### 4. Consider Testability
@@ -612,6 +636,7 @@ class Database {
     return Database.instance;
   }
 }
+
 ```
 
 ### 5. Use Lazy Initialization When Appropriate
@@ -638,6 +663,7 @@ class ExpensiveService {
     return ExpensiveService.instance;
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -657,86 +683,111 @@ class ExpensiveService {
 ### Beginner
 
 1. **What is the Singleton pattern?**
+
    - Ensures a class has only one instance and provides global access to it.
 
 2. **When would you use a Singleton?**
+
    - For database connections, configuration managers, logging services, and caching.
 
 3. **What's the difference between lazy and eager initialization?**
+
    - Lazy creates the instance on first use; eager creates it immediately.
 
 4. **How do you prevent multiple instances in JavaScript/TypeScript?**
+
    - Using module exports, private constructors, or static instance variables.
 
 5. **What are the problems with Singleton?**
+
    - Global state, tight coupling, testing difficulties, and concurrency issues.
 
 ### Intermediate
 
 6. **How do you make a Singleton thread-safe?**
+
    - Double-checked locking, mutex, or using language-specific features.
 
 7. **What's the difference between Singleton and static class?**
+
    - Singleton can implement interfaces, be passed as parameter, and supports inheritance.
 
 8. **How do you test code that uses Singleton?**
+
    - Use dependency injection, mock the Singleton, or use test doubles.
 
 9. **What are Singleton alternatives?**
+
    - Dependency injection, service locator, module pattern.
 
 10. **How do you handle Singleton in distributed systems?**
+
     - Use distributed locks, database constraints, or design without Singleton.
 
 ### Senior
 
 11. **How does Singleton affect scalability?**
+
     - Can become a bottleneck; consider connection pooling or removing Singleton.
 
 12. **What's the relationship between Singleton and Factory patterns?**
+
     - Factory can create Singletons; Singleton can be used in Factory implementations.
 
 13. **How do you handle Singleton in microservices?**
+
     - Each service has its own Singleton; avoid shared Singletons across services.
 
 14. **What are the SOLID violations with Singleton?**
+
     - Single Responsibility, Open/Closed, Dependency Inversion violations.
 
 15. **How do you refactor Singleton code?**
+
     - Extract dependencies, use DI container, make it testable.
 
 ### FAANG-style
 
 16. **Design a Singleton for a distributed caching system.**
+
     - Consider consistency, partition tolerance, cache invalidation.
 
 17. **How would you implement Singleton in a multi-process environment?**
+
     - Use file locks, database constraints, or shared memory.
 
 18. **What are the implications of Singleton in cloud-native applications?**
+
     - Consider serverless, containers, horizontal scaling.
 
 19. **How do you handle Singleton in event-driven architectures?**
+
     - Use event sourcing, CQRS, or remove Singleton dependency.
 
 20. **Design a Singleton that supports hot reloading.**
+
     - Consider graceful shutdown, state migration, version compatibility.
 
 ### Follow-ups
 
 21. **Can Singleton be inherited?**
+
     - Yes, but it complicates the pattern; consider composition over inheritance.
 
 22. **How do you handle Singleton in testing frameworks?**
+
     - Use dependency injection, reset instances between tests, use test doubles.
 
 23. **What are the memory implications of Singleton?**
+
     - Singletons persist for app lifetime, can cause memory leaks if not managed.
 
 24. **How do you handle Singleton in serverless environments?**
+
     - Consider cold starts, instance reuse, and state management.
 
 25. **What's the impact of Singleton on code maintainability?**
+
     - Increases coupling, makes refactoring harder, reduces code flexibility.
 
 ## Summary
@@ -779,6 +830,7 @@ The Singleton pattern is a powerful tool for ensuring a single instance and glob
 │ • Service locator                           │
 │ • Static class                              │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

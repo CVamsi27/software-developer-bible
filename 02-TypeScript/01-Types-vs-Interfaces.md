@@ -26,14 +26,19 @@
 │   ✅ Computed properties   ❌ Computed properties               │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type safety**: Both enforce contracts at compile time
+
 2. **Code documentation**: Self-documenting code with explicit shapes
+
 3. **IDE support**: Autocomplete, refactoring, and error detection
+
 4. **Scalability**: Essential for large codebases and team collaboration
+
 5. **Framework integration**: React props, API responses, database models
 
 ## How It Works
@@ -52,6 +57,7 @@ interface PointInterface {
   x: number;
   y: number;
 }
+
 ```
 
 ### Declaration Merging (Interface Only)
@@ -68,6 +74,7 @@ interface Window {
 // Type aliases cannot merge — second declaration causes error
 type Config = { debug: boolean };
 type Config = { verbose: boolean }; // ❌ Duplicate identifier
+
 ```
 
 ### Extends vs Intersection
@@ -98,6 +105,7 @@ interface Entity extends Serializable, Loggable {
 
 // ─── Type Intersection (equivalent) ──────────────────────────
 type Entity = Serializable & Loggable & { id: number };
+
 ```
 
 ### Nameability
@@ -112,6 +120,7 @@ function process(data: { items: number[] }) {} // Both work
 // Named types are better for error messages
 type User = { name: string; age: number };
 interface UserInterface { name: string; age: number }
+
 ```
 
 ## Code Examples
@@ -134,6 +143,7 @@ const p4: Point = p3; // ✅ OK — extra properties allowed
 
 // Extra properties are NOT allowed in object literals
 const p5: Point = { x: 1, y: 2, z: 3 }; // ❌ Error: excess property
+
 ```
 
 ### Common Patterns
@@ -156,6 +166,7 @@ type UserResponse = ApiResponse<User>;
 
 // ─── Pattern 2: Discriminated Unions (type only) ────────────
 type Shape =
+
   | { kind: "circle"; radius: number }
   | { kind: "rectangle"; width: number; height: number };
 
@@ -183,6 +194,7 @@ class UserRepository implements Repository<User> {
   async save(user: User): Promise<User> { return user; }
   async delete(id: string): Promise<boolean> { return true; }
 }
+
 ```
 
 ### Extending and Intersecting
@@ -234,6 +246,7 @@ type Timestamped = {
 interface User extends HasId, Timestamped {
   name: string;
 }
+
 ```
 
 ## Real-World Use Cases
@@ -259,6 +272,7 @@ type CreateUserDTO = Omit<User, "id" | "createdAt" | "updatedAt">;
 
 // Type for update (all fields optional)
 type UpdateUserDTO = Partial<CreateUserDTO>;
+
 ```
 
 ### Configuration
@@ -287,6 +301,7 @@ interface AppConfig {
     format: "json" | "text";
   };
 }
+
 ```
 
 ## Common Mistakes
@@ -299,6 +314,7 @@ interface Status = "active" | "inactive"; // Syntax error
 
 // ✅ Correct
 type Status = "active" | "inactive";
+
 ```
 
 ### 2. Using Type When Interface Would Be Better
@@ -315,6 +331,7 @@ interface Config {
 interface Config {
   verbose: boolean; // Merges automatically
 }
+
 ```
 
 ### 3. Forgetting Structural Typing
@@ -326,6 +343,7 @@ type Bird = { quack(): void };
 
 const duck: Duck = { quack: () => console.log("quack") };
 const bird: Bird = duck; // ✅ No error — same structure
+
 ```
 
 ### 4. Excessive Intersections
@@ -338,6 +356,7 @@ type ComplexType = A & B & C & D & E & F;
 interface ComplexType extends A, B, C {
   // Group related properties
 }
+
 ```
 
 ## Best Practices
@@ -367,6 +386,7 @@ type InternalState = {
 
 // 5. Be consistent within your project
 // Pick one style for similar use cases and stick with it
+
 ```
 
 ## Performance Considerations
@@ -382,63 +402,78 @@ type InternalState = {
 ### Beginner
 
 1. **What is the difference between `type` and `interface`?**
+
    - `type` can represent any TypeScript type (primitives, unions, tuples, etc.)
    - `interface` is designed for object shapes and supports declaration merging
 
 2. **When would you use a type alias over an interface?**
+
    - When you need unions (`string | number`)
    - When you need tuples (`[string, number]`)
    - When you need to create aliases for primitives
 
 3. **What is declaration merging?**
+
    - Interface feature where multiple declarations of the same interface are automatically combined
 
 4. **Can interfaces extend types?**
+
    - Yes, interfaces can extend type intersections
 
 5. **What is structural typing?**
+
    - TypeScript's type system where compatibility is based on structure, not explicit declarations
 
 ### Intermediate
 
 6. **How do you extend multiple interfaces?**
+
    ```typescript
    interface C extends A, B { }
+
 ```
 
 7. **What's the difference between `extends` and `&`?**
+
    - `extends` is for interface inheritance, can override properties
    - `&` is intersection, creates a type that has all properties
 
 8. **When would you prefer interface over type for object shapes?**
+
    - When you need declaration merging
    - When defining class contracts
    - For public API surfaces
 
 9. **How do you handle excess property checks?**
+
    - Use type assertions or intermediate variables
    - Excess property checks only apply to object literals
 
 10. **Can you use `typeof` with both types and interfaces?**
+
     - Yes, `typeof` works on values, whether they're typed with type aliases or interfaces
 
 ### Senior
 
 11. **Explain the performance implications of deep type intersections**
+
     - Deep intersections can cause exponential type expansion
     - TypeScript may struggle with complex intersection types
     - Prefer interface extends chains for large object hierarchies
 
 12. **How do type aliases and interfaces differ in error messages?**
+
     - Interfaces often produce clearer error messages
     - Type aliases can produce "Type X is not assignable to type Y" without details
 
 13. **When designing a library, which should you export?**
+
     - Interfaces for extensibility (declaration merging)
     - Types for complex union patterns
     - Both when appropriate
 
 14. **How do you handle backward compatibility when changing types?**
+
     - Use interface extension for additive changes
     - Use type aliases for breaking changes
     - Consider versioning type definitions
@@ -446,16 +481,19 @@ type InternalState = {
 ### FAANG-style
 
 15. **Design a type system for a social media platform's post types**
+
     - Use interfaces for base entities
     - Use discriminated unions for post variants
     - Use types for utility patterns
 
 16. **How would you implement a plugin system using TypeScript types?**
+
     - Use interfaces for plugin contracts
     - Use declaration merging for plugin registration
     - Use types for configuration unions
 
 17. **Implement a type-safe event system**
+
     - Map event names to payload types
     - Use interfaces for event emitter contracts
     - Use types for event unions
@@ -463,12 +501,15 @@ type InternalState = {
 ### Follow-ups
 
 18. **How does TypeScript's `interface` handle optional properties differently from `type`?**
+
     - Both use `?` syntax, but interfaces handle declaration merging of optional properties differently
 
 19. **Can you use `keyof` with both types and interfaces?**
+
     - Yes, both work with `keyof`
 
 20. **What are the implications for circular references?**
+
     - Interfaces handle circular references naturally
     - Types can have circular reference issues in some cases
 
@@ -506,6 +547,7 @@ interface Animal { name: string; }
 // Type assertion (works with both):
 const a: Animal = { name: "Cat" };
 const b: typeof a = { name: "Dog" }; // Works with both type and interface
+
 ```
 
 ## References & Learn More

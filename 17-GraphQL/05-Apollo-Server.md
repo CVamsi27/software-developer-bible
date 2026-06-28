@@ -6,6 +6,7 @@
 
 ```text
 Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio
+
 ```
 
 ---
@@ -33,6 +34,7 @@ With Apollo Server:
 │  5. Apollo Studio for production monitoring                     │
 │  6. Plugin system for extensibility                             │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Apollo Server vs Alternatives
@@ -83,17 +85,21 @@ With Apollo Server:
 │  └──────────────────────────────────────────────────────────┘   │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Request Lifecycle
 
 ```text
+
 1. HTTP Request arrives
         │
         ▼
+
 2. HTTP Framework (Express/Fastify) receives
         │
         ▼
+
 3. Apollo Server middleware processes
         │
         ├── Parse request body
@@ -101,26 +107,31 @@ With Apollo Server:
         ├── Extract query, variables, operationName
         │
         ▼
+
 4. Query parsing (query string → AST)
         │
         ├── Invalid syntax → 400 error
         │
         ▼
+
 5. Schema validation (AST against schema)
         │
         ├── Invalid query → 400 error
         │
         ▼
+
 6. Plugin hooks execute
         │
         ├── requestDidStart
         │
         ▼
+
 7. Context creation
         │
         ├── context(req) → { dataSources, loaders, etc. }
         │
         ▼
+
 8. Resolver execution
         │
         ├── Root resolvers
@@ -128,6 +139,7 @@ With Apollo Server:
         ├── Field resolvers (with DataLoader)
         │
         ▼
+
 9. Response formatting
         │
         ├── Format success response
@@ -141,6 +153,7 @@ With Apollo Server:
         │
         ▼
 11. HTTP Response sent
+
 ```
 
 ---
@@ -187,6 +200,7 @@ const { url } = await startStandaloneServer(server, {
 });
 
 console.log(`Server ready at ${url}`);
+
 ```
 
 ### Express Integration
@@ -220,6 +234,7 @@ app.use(
 app.listen(4000, () => {
   console.log('Server running at http://localhost:4000/graphql');
 });
+
 ```
 
 ### Fastify Integration
@@ -244,6 +259,7 @@ app.register(server.createHandler({ path: '/graphql' }));
 app.listen({ port: 4000 }, () => {
   console.log('Server running at http://localhost:4000/graphql');
 });
+
 ```
 
 ### Context with Authentication
@@ -286,6 +302,7 @@ const server = new ApolloServer({
 const { url } = await startStandaloneServer(server, {
   context: createContext,
 });
+
 ```
 
 ### Plugin System
@@ -328,6 +345,7 @@ const server = new ApolloServer({
     }),
   ],
 });
+
 ```
 
 ### Schema-First with SDL File
@@ -347,6 +365,7 @@ const server = new ApolloServer({
   schema,
   resolvers,  // Can also pass resolvers here
 });
+
 ```
 
 ### Code-First with TypeGraphQL
@@ -368,6 +387,7 @@ const server = new ApolloServer({
     ApolloServerPluginLandingPageLocalDefault({ embed: true }),
   ],
 });
+
 ```
 
 ### File Uploads
@@ -419,6 +439,7 @@ const resolvers = {
 
 // Add middleware for Express
 app.use(graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 10 }));
+
 ```
 
 ### Subscriptions
@@ -475,6 +496,7 @@ const server = new ApolloServer({
     },
   ],
 });
+
 ```
 
 ### Health Check and Liveness Probes
@@ -508,6 +530,7 @@ app.get('/graphql/introspection', async (req, res) => {
 
   res.status(200).json(result);
 });
+
 ```
 
 ---
@@ -549,6 +572,7 @@ const server = new ApolloServer({
     };
   },
 });
+
 ```
 
 ### 2. Multi-Tenant Server
@@ -576,6 +600,7 @@ const server = new ApolloServer({
   resolvers,
   context: createContext,
 });
+
 ```
 
 ### 3. GraphQL Gateway
@@ -606,6 +631,7 @@ const server = new ApolloServer({
   gateway,
   subscriptions: false,
 });
+
 ```
 
 ---
@@ -632,6 +658,7 @@ const server = new ApolloServer({
     ApolloServerPluginLandingPageProductionDefault(),
   ],
 });
+
 ```
 
 ### 2. Missing Error Handling
@@ -669,6 +696,7 @@ const server = new ApolloServer({
     return formattedError;
   },
 });
+
 ```
 
 ### 3. Not Using Apollo Studio
@@ -688,6 +716,7 @@ const server = new ApolloServer({
     }),
   ],
 });
+
 ```
 
 ### 4. Forgetting to Drain HTTP Server
@@ -708,6 +737,7 @@ const server = new ApolloServer({
 });
 await server.start();
 app.use('/graphql', expressMiddleware(server));
+
 ```
 
 ### 5. Exposing Introspection in Production
@@ -726,6 +756,7 @@ const server = new ApolloServer({
   resolvers,
   introspection: process.env.NODE_ENV !== 'production',
 });
+
 ```
 
 ---
@@ -735,60 +766,74 @@ const server = new ApolloServer({
 ### Configuration
 
 ```text
+
 1. Use environment variables for configuration
+
    - API keys
    - Database connections
    - Feature flags
 
 2. Enable plugins for production
+
    - Usage reporting
    - Cache control
    - Landing page
    - HTTP server drain
 
 3. Configure error handling
+
    - Log errors
    - Don't expose internals
    - Use error codes
 
 4. Disable introspection in production
+
    - Security through obscurity
    - Prevent schema discovery
+
 ```
 
 ### Context Creation
 
 ```text
+
 1. Keep context lightweight
+
    - Don't create heavy objects
    - Use DataLoader for batching
 
 2. Handle authentication in context
+
    - Verify tokens
    - Set currentUser
 
 3. Create per-request instances
+
    - DataSources
    - Loaders
    - Cache connections
+
 ```
 
 ### Development vs Production
 
 ```text
 Development:
+
   - Enable introspection
   - Enable Playground/Sandbox
   - Include stack traces
   - Enable CORS for localhost
 
 Production:
+
   - Disable introspection
   - Disable Playground (or use embedded)
   - Don't include stack traces
   - Restrict CORS
   - Enable usage reporting
   - Enable response caching
+
 ```
 
 ---
@@ -825,6 +870,7 @@ const typeDefs = `
     content: String! @cacheControl(maxAge: 3600)
   }
 `;
+
 ```
 
 ### Query Complexity Limits
@@ -852,6 +898,7 @@ const server = new ApolloServer({
     })
   ],
 });
+
 ```
 
 ### Batched Queries
@@ -863,6 +910,7 @@ const server = new ApolloServer({
   resolvers,
   allowBatchedHttpRequests: true,
 });
+
 ```
 
 ---

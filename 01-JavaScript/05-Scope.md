@@ -60,6 +60,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Scope Chain
@@ -102,6 +103,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Lexical Scope
@@ -142,6 +144,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### var vs let/const Scope
@@ -189,6 +192,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -209,6 +213,7 @@ function checkScope() {
 
 checkScope();
 console.log(globalConst);  // Accessible everywhere
+
 ```
 
 ### Function Scope
@@ -229,6 +234,7 @@ function outerFunction() {
 
 outerFunction();
 console.log(outerVar);  // ReferenceError! Not accessible
+
 ```
 
 ### Block Scope
@@ -251,6 +257,7 @@ function blockScopeExample() {
 }
 
 blockScopeExample();
+
 ```
 
 ### Loop Scope
@@ -269,6 +276,7 @@ for (let j = 0; j < 3; j++) {
 // Why? var i is hoisted to function/global scope
 // All callbacks share the same i variable
 // By the time setTimeout runs, i is already 3
+
 ```
 
 ### Nested Functions
@@ -295,6 +303,7 @@ function level1() {
 }
 
 level1();
+
 ```
 
 ### Scope with Closures
@@ -315,6 +324,7 @@ counter.increment();  // 1
 counter.increment();  // 2
 console.log(counter.getCount());  // 2
 // count is not accessible outside
+
 ```
 
 ### Block Scope in Switch Statements
@@ -336,6 +346,7 @@ function switchExample(value: string) {
 
   // result is not accessible here
 }
+
 ```
 
 ### IIFE (Immediately Invoked Function Expression)
@@ -354,6 +365,7 @@ console.log(privateVar);  // ReferenceError!
   const privateVar = 'I am private';
   console.log(privateVar);  // Accessible
 })();
+
 ```
 
 ## Real-World Use Cases
@@ -392,6 +404,7 @@ const Calculator = (function() {
 
 Calculator.add(5).subtract(2).getResult();  // 3
 // result is not accessible directly
+
 ```
 
 ### 2. Event Handler Scope
@@ -424,6 +437,7 @@ function setupForm() {
     console.log('Submitting...');
   }
 }
+
 ```
 
 ### 3. React Component Scope
@@ -456,6 +470,7 @@ function UserProfile({ userId }: { userId: string }) {
   if (loading) return <div>Loading...</div>;
   return <div>{user?.name}</div>;
 }
+
 ```
 
 ### 4. Configuration Pattern
@@ -481,6 +496,7 @@ function createConfig(environment: string) {
 const envConfig = createConfig('development');
 console.log(envConfig.getApiUrl());  // 'http://localhost:3000'
 // configs is not accessible directly
+
 ```
 
 ## Common Mistakes
@@ -497,6 +513,7 @@ for (var i = 0; i < 5; i++) {
 for (let i = 0; i < 5; i++) {
   setTimeout(() => console.log(i), 100);  // 0, 1, 2, 3, 4
 }
+
 ```
 
 ### 2. Accidental Global Variables
@@ -515,6 +532,7 @@ function intentionalLocal() {
   let localLet = 'I am also local';
   var localVar2 = 'I am function-scoped';
 }
+
 ```
 
 ### 3. Shadowing Issues
@@ -536,6 +554,7 @@ function example() {
 
 example();
 console.log(x);  // 10 (global scope)
+
 ```
 
 ### 4. Hoisting Confusion
@@ -557,6 +576,7 @@ function tdzExample() {
   }
   let y = 20;
 }
+
 ```
 
 ## Best Practices
@@ -573,6 +593,7 @@ let counter = 0;
 counter++;
 
 // Avoid var entirely
+
 ```
 
 ### 2. Declare Variables at Top of Scope
@@ -594,6 +615,7 @@ function processData(data: any[]) {
 
   return result;
 }
+
 ```
 
 ### 3. Use Block Scope for Loops
@@ -610,6 +632,7 @@ for (let i = 0; i < items.length; i++) {
 for (var i = 0; i < items.length; i++) {
   var item = items[i];  // Shared across iterations
 }
+
 ```
 
 ### 4. Avoid Global Variables
@@ -627,6 +650,7 @@ const Counter = (function() {
     getCount: () => count
   };
 })();
+
 ```
 
 ## Performance Considerations
@@ -648,6 +672,7 @@ function example() {
 
   // largeArray is destroyed when function returns
 }
+
 ```
 
 ### Scope Chain Lookup
@@ -699,6 +724,7 @@ function level4Optimized(a: number, b: number, c: number) {
   const d = 4;
   console.log(a + b + c + d);
 }
+
 ```
 
 ## Interview Questions
@@ -712,13 +738,17 @@ A: Scope determines where variables and functions are accessible in your code. I
 **Q2: What are the different types of scope in JavaScript?**
 
 A: There are three main types:
+
 1. **Global scope**: Accessible everywhere
+
 2. **Function scope**: Accessible only within the function
+
 3. **Block scope**: Accessible only within the block (for `let`/`const`)
 
 **Q3: What is the difference between var, let, and const?**
 
 A:
+
 - `var`: Function-scoped, can be reassigned, hoisted
 - `let`: Block-scoped, can be reassigned, TDZ
 - `const`: Block-scoped, cannot be reassigned, TDZ
@@ -752,6 +782,7 @@ A: You can access global variables directly from any scope. However, it's better
 **Q10: What is the difference between scope and context?**
 
 A:
+
 - **Scope**: Where variables are accessible (determined by code structure)
 - **Context**: What `this` refers to (determined by how functions are called)
 
@@ -768,6 +799,7 @@ A: Deeply nested scopes require more lookups to resolve variables. This can impa
 **Q13: How do different JavaScript engines optimize scope resolution?**
 
 A: Engines use techniques like:
+
 - Inline caching for property access
 - Hidden classes for object shapes
 - JIT compilation to optimize scope lookups
@@ -786,6 +818,7 @@ A: Hoisting moves declarations to the top of their scope. `var` is hoisted to fu
 **Q16: Design a scope-aware variable resolver.**
 
 A:
+
 ```typescript
 class ScopeResolver {
   private scopes: Map<string, Map<string, any>> = new Map();
@@ -818,11 +851,13 @@ class ScopeResolver {
     return new Map();
   }
 }
+
 ```
 
 **Q17: How would you implement block scoping for `var` in transpilers?**
 
 A:
+
 ```typescript
 // Original code
 function example() {
@@ -840,11 +875,13 @@ function example() {
   }
   console.log(x);
 }
+
 ```
 
 **Q18: Analyze the memory implications of different scoping strategies.**
 
 A:
+
 - **Global scope**: Longest lifetime, highest memory impact
 - **Function scope**: Medium lifetime, moderate memory impact
 - **Block scope**: Shortest lifetime, lowest memory impact
@@ -854,6 +891,7 @@ Optimization: Use block scoping to minimize variable lifetimes.
 **Q19: How do you handle scope in a REPL environment?**
 
 A:
+
 ```typescript
 class REPL {
   private globalScope = new Map<string, any>();
@@ -870,14 +908,19 @@ class REPL {
     return new Map(this.currentScope);
   }
 }
+
 ```
 
 **Q20: What are the security implications of scope in JavaScript?**
 
 A:
+
 1. **Global scope pollution**: Can be exploited for attacks
+
 2. **eval()**: Can inject code into current scope
+
 3. **with statement**: Deprecated due to scope ambiguity
+
 4. **Prototype pollution**: Can affect all objects in scope
 
 ### Follow-ups (5-10 questions)
@@ -885,6 +928,7 @@ A:
 **Q21: Can you give an example of a scope-related bug in production?**
 
 A: Common bug:
+
 ```typescript
 // Bug: var in loop causes unexpected behavior
 function processItems(items: any[]) {
@@ -903,15 +947,21 @@ function processItemsFixed(items: any[]) {
     }, 100);
   }
 }
+
 ```
 
 **Q22: How do you debug scope-related issues?**
 
 A:
+
 1. **Chrome DevTools**: Use Scope panel in debugger
+
 2. **console.log**: Log variable values at different points
+
 3. **Breakpoints**: Set breakpoints to inspect scope
+
 4. **Linters**: Use ESLint to catch scope issues
+
 5. **TypeScript**: Catch scope errors at compile time
 
 **Q23: What is the relationship between scope and `this`?**
@@ -921,22 +971,35 @@ A: `this` is not part of the scope chain. It depends on how functions are called
 **Q24: How do you handle scope in a single-page application?**
 
 A:
+
 1. Use module pattern for encapsulation
+
 2. Avoid global variables
+
 3. Use React/Vue component scope
+
 4. Implement state management (Redux, Vuex)
+
 5. Use closures for private state
 
 **Q25: What are best practices for managing scope in large codebases?**
 
 A:
+
 1. Use `const` by default, `let` when needed
+
 2. Avoid `var` entirely
+
 3. Declare variables at top of scope
+
 4. Use block scoping in loops
+
 5. Avoid variable shadowing
+
 6. Use TypeScript for type safety
+
 7. Implement linting rules
+
 8. Document scope behavior in complex functions
 
 ## Summary
@@ -944,11 +1007,17 @@ A:
 Scope is fundamental to JavaScript:
 
 1. **Three types**: Global, function, and block scope
+
 2. **var vs let/const**: Function-scoped vs block-scoped
+
 3. **Lexical scoping**: Scope determined by code structure
+
 4. **Scope chain**: Hierarchical variable resolution
+
 5. **Closures**: Retain access to outer scopes
+
 6. **Memory**: Variables destroyed when scope ends
+
 7. **Best practices**: Use const/let, avoid var, minimize scope
 
 Understanding scope is essential for writing clean, efficient, bug-free JavaScript.
@@ -1008,11 +1077,12 @@ SECURITY:
 • Avoid global pollution
 • Don't use eval()
 • Prevent prototype pollution
+
 ```
 
 ## References & Learn More
 
-- [MDN: Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [MDN: Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#block_scoping)
 - [JavaScript.info: Scope & Closures](https://javascript.info/closure)
 - [DigitalOcean: Understanding Scope and Closures in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-scope-and-closures-in-javascript)
 - [Dev.to: JavaScript Scope Explained](https://dev.to/boywithnohorns/javascript-scope-explained-1h83)

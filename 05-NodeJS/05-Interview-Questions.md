@@ -7,6 +7,7 @@ This chapter contains the **40 most frequently asked Node.js interview questions
 ## Why Do We Need It?
 
 Understanding these questions is crucial for:
+
 - **Technical Interviews**: Demonstrate deep knowledge of Node.js
 - **Architecture Decisions**: Make informed choices about system design
 - **Debugging**: Identify and solve common issues
@@ -44,6 +45,7 @@ Understanding these questions is crucial for:
 │  • Follow-up questions                                       │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -57,6 +59,7 @@ Understanding these questions is crucial for:
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It's used for building scalable network applications due to its non-blocking I/O model.
 
 **Key Points:**
+
 - Event-driven, non-blocking I/O
 - Single-threaded but concurrent
 - npm package manager
@@ -74,6 +77,7 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
+
 ```
 
 ---
@@ -85,10 +89,15 @@ server.listen(3000, () => {
 The event loop is the mechanism that allows Node.js to perform non-blocking I/O operations despite JavaScript being single-threaded. It continuously monitors the call stack and callback queues.
 
 **Event Loop Phases:**
+
 1. Timers: setTimeout(), setInterval()
+
 2. Pending I/O: callbacks from I/O operations
+
 3. Poll: retrieve new I/O events
+
 4. Check: setImmediate()
+
 5. Close Callbacks: close events
 
 ```javascript
@@ -109,6 +118,7 @@ Promise.resolve().then(() => {
 console.log('End');
 
 // Output: Start → End → Promise → Timeout/Immediate
+
 ```
 
 ---
@@ -132,13 +142,16 @@ process.nextTick(() => {
 console.log('Main');
 
 // Output: Main → nextTick → setImmediate
+
 ```
 
 **Use `process.nextTick` when:**
+
 - You need to execute code after the current operation
 - You want to ensure a function runs before I/O callbacks
 
 **Use `setImmediate` when:**
+
 - You want to execute code after I/O callbacks
 - You want to break up long-running operations
 
@@ -151,9 +164,13 @@ console.log('Main');
 Streams are objects that allow you to read or write data sequentially, piece by piece, rather than loading the entire data into memory at once.
 
 **Four Types:**
+
 1. Readable: fs.createReadStream()
+
 2. Writable: fs.createWriteStream()
+
 3. Duplex: net.Socket (both readable and writable)
+
 4. Transform: zlib.createGzip() (modifies data)
 
 ```javascript
@@ -178,6 +195,7 @@ const upperCaseTransform = new Transform({
 readStream
   .pipe(upperCaseTransform)
   .pipe(writeStream);
+
 ```
 
 ---
@@ -198,9 +216,11 @@ const myModule = require('./myModule');
 import fs from 'fs';
 import { readFile } from 'fs/promises';
 import myModule from './myModule.js';
+
 ```
 
 **Key Differences:**
+
 - CommonJS is Node.js default, ES Modules need `.mjs` extension or `"type": "module"` in package.json
 - ES Modules are tree-shakeable
 - CommonJS can be used conditionally, ES Modules are static
@@ -235,6 +255,7 @@ const authMiddleware = (req, res, next) => {
 app.get('/protected', authMiddleware, (req, res) => {
   res.send('Protected content');
 });
+
 ```
 
 ---
@@ -277,6 +298,7 @@ async function getData() {
     throw err;
   }
 }
+
 ```
 
 ---
@@ -302,6 +324,7 @@ console.log(buf2.toString('hex')); // '48656c6c6f'
 const buffer = Buffer.alloc(4);
 buffer.writeUInt32BE(1234567890, 0);
 console.log(buffer.readUInt32BE(0)); // 1234567890
+
 ```
 
 ---
@@ -326,6 +349,7 @@ console.log(math.add(1, 2)); // 3
 
 // Destructuring
 const { add, subtract } = require('./math');
+
 ```
 
 ---
@@ -358,6 +382,7 @@ npm update
 
 # Audit for vulnerabilities
 npm audit
+
 ```
 
 ---
@@ -386,9 +411,11 @@ Promise.resolve().then(() => {
 console.log('Main');
 
 // Output: Main → nextTick → Promise → setImmediate
+
 ```
 
 **Performance Consideration:**
+
 - `process.nextTick` can starve the event loop if used recursively
 - Use `setImmediate` for heavy operations to allow I/O to be processed
 
@@ -437,6 +464,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 ```
 
 ---
@@ -479,6 +507,7 @@ child.send({ task: 'processData' });
 child.on('message', (result) => {
   console.log('Result:', result);
 });
+
 ```
 
 ---
@@ -514,6 +543,7 @@ async function fetchData() {
 
 // Always catch promises
 fetchData().catch(console.error);
+
 ```
 
 ---
@@ -540,9 +570,11 @@ password.write('my-secret-password');
 
 // For temporary buffers where security isn't critical
 const tempBuffer = Buffer.allocUnsafe(1024);
+
 ```
 
 **When to use `allocUnsafe`:**
+
 - When performance is critical
 - When you'll immediately overwrite all data
 - When the buffer won't be exposed externally
@@ -597,6 +629,7 @@ const hashPassword = async (password) => {
 const comparePassword = async (password, hash) => {
   return await bcrypt.compare(password, hash);
 };
+
 ```
 
 ---
@@ -630,9 +663,11 @@ readStream.on('data', (chunk) => {
 readStream.on('end', () => {
   console.log('File reading complete');
 });
+
 ```
 
 **When to use each:**
+
 - `readFile`: Small files, when you need all data at once
 - `createReadStream`: Large files, when you can process data in chunks
 
@@ -697,6 +732,7 @@ const cacheMiddleware = async (req, res, next) => {
 
   next();
 };
+
 ```
 
 ---
@@ -740,9 +776,11 @@ if (isMainThread) {
   }
   parentPort.postMessage(sum);
 }
+
 ```
 
 **When to use each:**
+
 - `cluster`: For I/O-bound workloads, scaling across CPU cores
 - `worker_threads`: For CPU-bound workloads, sharing memory
 
@@ -783,6 +821,7 @@ logger.error('Database connection failed', { error: err.message });
 // Request logging middleware
 const morgan = require('morgan');
 app.use(morgan('combined'));
+
 ```
 
 ---
@@ -872,6 +911,7 @@ class CircuitBreaker {
     this.state = 'CLOSED';
   }
 }
+
 ```
 
 ---
@@ -931,6 +971,7 @@ wss.on('connection', (ws) => {
   ws.isAlive = true;
   ws.on('pong', () => { ws.isAlive = true; });
 });
+
 ```
 
 ---
@@ -989,6 +1030,7 @@ const obs = new PerformanceObserver((items) => {
 });
 
 obs.observe({ entryTypes: ['measure'] });
+
 ```
 
 ---
@@ -1053,6 +1095,7 @@ emailQueue.on('completed', (job) => {
 emailQueue.on('failed', (job, err) => {
   console.error(`Email job ${job.id} failed:`, err);
 });
+
 ```
 
 ---
@@ -1113,6 +1156,7 @@ app.get('/api/data', async (req, res) => {
     span.end();
   }
 });
+
 ```
 
 ---
@@ -1152,6 +1196,7 @@ app.get('/api/data', (req, res, next) => {
 
   return v1Handler(req, res, next);
 });
+
 ```
 
 ---
@@ -1211,6 +1256,7 @@ async function query(text, params) {
 
   throw lastError;
 }
+
 ```
 
 ---
@@ -1276,6 +1322,7 @@ await mq.consume('orders', async (order) => {
   console.log('Processing order:', order);
   await processOrder(order);
 });
+
 ```
 
 ---
@@ -1345,6 +1392,7 @@ app.get('/api/users/:id', asyncHandler(async (req, res) => {
 }));
 
 app.use(errorHandler);
+
 ```
 
 ---
@@ -1425,6 +1473,7 @@ if (cluster.isPrimary) {
     res.json(users);
   });
 }
+
 ```
 
 ---
@@ -1536,6 +1585,7 @@ app.get('/:shortCode', async (req, res) => {
     res.status(404).json({ error: 'URL not found' });
   }
 });
+
 ```
 
 ---
@@ -1649,6 +1699,7 @@ class ChatServer {
 }
 
 new ChatServer();
+
 ```
 
 ---
@@ -1736,6 +1787,7 @@ class DistributedStorage {
     });
   }
 }
+
 ```
 
 ---
@@ -1853,6 +1905,7 @@ scheduler.processJob('emails', async (data) => {
 scheduler.processJob('reports', async (data) => {
   await generateReport(data.type);
 });
+
 ```
 
 ---
@@ -1960,6 +2013,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
     res.status(400).json({ error: error.message });
   }
 });
+
 ```
 
 ---
@@ -2078,6 +2132,7 @@ class CDNEdge {
     }
   }
 }
+
 ```
 
 ---
@@ -2214,6 +2269,7 @@ app.get('/api/checkout', (req, res) => {
   }
   return legacyCheckoutHandler(req, res);
 });
+
 ```
 
 ---
@@ -2342,6 +2398,7 @@ class AnalyticsPipeline {
     return metrics;
   }
 }
+
 ```
 
 ---
@@ -2485,6 +2542,7 @@ class CircuitBreaker {
     }
   }
 }
+
 ```
 
 ---
@@ -2696,6 +2754,7 @@ app.use(async (req, res, next) => {
     next();
   }
 });
+
 ```
 
 ---
@@ -2770,6 +2829,7 @@ These 40 questions cover the most important Node.js concepts for technical inter
 │  • APM tools (New Relic, Datadog)                            │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

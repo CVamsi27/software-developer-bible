@@ -11,8 +11,11 @@ The pattern is particularly useful when you need to provide a simple interface t
 Without the Facade pattern, clients interact directly with complex subsystems, leading to:
 
 1. **Tight coupling**: Clients depend on many subsystem classes
+
 2. **Complex code**: Clients need to understand subsystem internals
+
 3. **Difficult maintenance**: Changes in subsystems affect clients
+
 4. **Code duplication**: Common operations repeated everywhere
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Facade pattern, clients interact directly with complex subsystems, l
 The Facade pattern works by:
 
 1. Defining a facade class that provides simplified methods
+
 2. The facade delegates calls to appropriate subsystem classes
+
 3. Clients interact only with the facade
+
 4. The facade handles subsystem coordination
 
 ```text
@@ -48,6 +54,7 @@ The Facade pattern works by:
 │ │Sub 1 │ │Sub 2 │   │Sub 3 │                  │
 │ └──────┘ └──────┘   └──────┘                  │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -131,6 +138,7 @@ class ComputerFacade {
 const computer = new ComputerFacade();
 computer.startComputer();
 // No need to know about CPU, Memory, HardDrive details
+
 ```
 
 ### API Facade
@@ -254,6 +262,7 @@ class ECommerceFacade {
 const ecommerce = new ECommerceFacade();
 const token = await ecommerce.login('john', 'password');
 const order = await ecommerce.placeOrder(token, 'user1', [{ id: '1', quantity: 2 }]);
+
 ```
 
 ### Database Facade
@@ -415,6 +424,7 @@ await db.update('users', '1', { name: 'Jane' });
 await db.delete('users', '1');
 
 await db.shutdown();
+
 ```
 
 ### File System Facade
@@ -520,6 +530,7 @@ const fs = new FileSystemFacade();
 await fs.readAndProcess('file.txt', content => content.toUpperCase());
 await fs.backupAndCompress('important.txt');
 await fs.searchAndReplace('./src', 'oldFunction', 'newFunction');
+
 ```
 
 ## Real-World Use Cases
@@ -636,6 +647,7 @@ class CheckoutFacade {
     };
   }
 }
+
 ```
 
 ### 2. Notification Facade
@@ -728,6 +740,7 @@ class NotificationFacade {
     }
   }
 }
+
 ```
 
 ### 3. Deployment Facade
@@ -842,6 +855,7 @@ class DeploymentFacade {
     return this.k8s.scale(deployment, replicas);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -855,6 +869,7 @@ class GodFacade {
     // Does too much, violates Single Responsibility
   }
 }
+
 ```
 
 ### 2. Facade with Business Logic
@@ -869,6 +884,7 @@ class BadFacade {
     }
   }
 }
+
 ```
 
 ### 3. Bypassing Facade
@@ -878,6 +894,7 @@ class BadFacade {
 const client = new Client();
 const subsystem = new Subsystem();
 client.directlyUseSubsystem(subsystem); // Should use facade
+
 ```
 
 ### 4. Not Providing All Needed Methods
@@ -888,6 +905,7 @@ class IncompleteFacade {
   async create(): Promise<void> { ... }
   // Missing: read, update, delete
 }
+
 ```
 
 ## Best Practices
@@ -899,6 +917,7 @@ class IncompleteFacade {
 class UserFacade {
   // Only user-related operations
 }
+
 ```
 
 ### 2. Delegate to Appropriate Subsystems
@@ -913,6 +932,7 @@ class OrderFacade {
     return order;
   }
 }
+
 ```
 
 ### 3. Use Dependency Injection
@@ -925,6 +945,7 @@ class Facade {
     private service2: Service2
   ) {}
 }
+
 ```
 
 ### 4. Provide Comprehensive Interface
@@ -937,6 +958,7 @@ class DatabaseFacade {
   async update<T>(table: string, id: string, data: any): Promise<T> { ... }
   async delete(table: string, id: string): Promise<boolean> { ... }
 }
+
 ```
 
 ## Performance Considerations
@@ -956,86 +978,111 @@ class DatabaseFacade {
 ### Beginner
 
 1. **What is the Facade pattern?**
+
    - A structural pattern that provides a simplified interface to a complex subsystem.
 
 2. **When would you use Facade pattern?**
+
    - When you need to simplify a complex system or provide a unified interface.
 
 3. **What's the difference between Facade and Adapter?**
+
    - Facade simplifies interface; Adapter makes incompatible interfaces compatible.
 
 4. **How do you implement Facade in TypeScript?**
+
    - Create a facade class that delegates to subsystem classes.
 
 5. **What are the benefits of Facade pattern?**
+
    - Simplified interface, loose coupling, and improved readability.
 
 ### Intermediate
 
 6. **Can Facade add functionality?**
+
    - Yes, but keep it focused on coordination, not business logic.
 
 7. **How do you test Facade pattern?**
+
    - Mock subsystems, test facade's delegation logic.
 
 8. **What's the relationship between Facade and Mediator?**
+
    - Facade simplifies; Mediator centralizes communication between objects.
 
 9. **How do you handle Facade versioning?**
+
    - Use API versioning, backward compatibility, and deprecation warnings.
 
 10. **Can Facade be used with microservices?**
+
     - Yes, as an API gateway or service facade.
 
 ### Senior
 
 11. **How does Facade pattern affect scalability?**
+
     - Facades are lightweight; subsystems can be scaled independently.
 
 12. **What are the SOLID violations with Facade?**
+
     - Usually follows SOLID; watch for facade violating Single Responsibility.
 
 13. **How do you handle Facade in distributed systems?**
+
     - Use API gateways, service meshes, or backend for frontends.
 
 14. **What are the memory implications of Facade?**
+
     - Facades are usually stateless; subsystems consume memory.
 
 15. **How do you refactor Facade code?**
+
     - Extract common logic, use composition, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Facade for a microservices architecture.**
+
     - Consider API gateway, service discovery, and load balancing.
 
 17. **How would you implement Facade for distributed systems?**
+
     - Consider network transparency, fault tolerance, and caching.
 
 18. **What are the implications of Facade in cloud-native applications?**
+
     - Consider serverless facades, API gateways, and edge computing.
 
 19. **How do you handle Facade in event-driven architectures?**
+
     - Use event facades, message brokers, and async operations.
 
 20. **Design a Facade that supports multiple clients.**
+
     - Consider client-specific facades, API versioning, and authentication.
 
 ### Follow-ups
 
 21. **Can Facade pattern be combined with other patterns?**
+
     - Yes, commonly with Adapter, Mediator, and Proxy patterns.
 
 22. **How do you handle Facade in testing frameworks?**
+
     - Use dependency injection, create test facades, and mock subsystems.
 
 23. **What are the memory implications of Facade pattern?**
+
     - Facades are usually lightweight; subsystems consume memory.
 
 24. **How do you handle Facade in serverless environments?**
+
     - Consider stateless facades, API gateways, and function composition.
 
 25. **What's the impact of Facade on code maintainability?**
+
     - Improves maintainability by simplifying complex systems.
 
 ## Summary
@@ -1077,6 +1124,7 @@ The Facade pattern is essential for simplifying complex systems and providing un
 │ • Mediator (centralized communication)      │
 │ • Proxy (controls access)                   │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

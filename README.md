@@ -73,26 +73,39 @@ Every chapter follows this structure:
 ## Summary
 
 ## References & Learn More
+
 ```
 
 ## How to Use
 
 1. **New to a topic?** Start with the definition and "Why" sections
+
 2. **Preparing for interview?** Focus on Interview Questions at the end
+
 3. **Quick review?** Use the Cheat Sheet at the bottom of each chapter
+
 4. **Deep dive?** Read through internal working and code examples
+
 5. **Explore further?** Check the References & Learn More section at the end
 
 ## Priority Order for Interview Prep
 
 1. JavaScript (core fundamentals)
+
 2. TypeScript (type system mastery)
+
 3. React (hooks, rendering, performance)
+
 4. Next.js (App Router, RSC, streaming)
+
 5. REST APIs (design principles)
+
 6. Security (JWT, OAuth, XSS, CSRF)
+
 7. Database (PostgreSQL, indexing, transactions)
+
 8. NestJS (DI, guards, pipes)
+
 9. System Design (architecture, scaling)
 10. Design Patterns (SOLID, GoF patterns)
 11. Testing (Jest, RTL, E2E)

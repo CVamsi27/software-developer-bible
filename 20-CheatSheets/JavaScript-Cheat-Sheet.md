@@ -82,6 +82,7 @@
 ## Common Patterns
 
 ### Module Pattern (IIFE)
+
 ```js
 const Module = (function() {
   let private = 0;
@@ -90,9 +91,11 @@ const Module = (function() {
     getCount() { return private; }
   };
 })();
+
 ```
 
 ### Observer Pattern (Pub/Sub)
+
 ```js
 class EventEmitter {
   constructor() { this.events = {}; }
@@ -107,9 +110,11 @@ class EventEmitter {
     this.events[event]?.forEach(fn => fn(...args));
   }
 }
+
 ```
 
 ### Currying
+
 ```js
 const curry = (fn) => {
   const arity = fn.length;
@@ -121,9 +126,11 @@ const curry = (fn) => {
 const add = curry((a, b, c) => a + b + c);
 add(1)(2)(3); // 6
 add(1, 2)(3); // 6
+
 ```
 
 ### Memoization
+
 ```js
 const memo = (fn) => {
   const cache = new Map();
@@ -135,9 +142,11 @@ const memo = (fn) => {
     return result;
   };
 };
+
 ```
 
 ### Debounce / Throttle
+
 ```js
 const debounce = (fn, ms) => {
   let timer;
@@ -153,17 +162,21 @@ const throttle = (fn, ms) => {
     if (now - last >= ms) { last = now; fn(...args); }
   };
 };
+
 ```
 
 ### Promise Retry
+
 ```js
 const retry = (fn, maxRetries, delay) =>
   fn().catch(err => maxRetries > 0
     ? new Promise(r => setTimeout(r, delay)).then(() => retry(fn, maxRetries - 1, delay))
     : Promise.reject(err));
+
 ```
 
 ### Object Pool (Memory Management)
+
 ```js
 class ObjectPool {
   constructor(create, reset, maxSize) {
@@ -177,9 +190,11 @@ class ObjectPool {
     if (this.pool.length < this.maxSize) this.pool.push(obj);
   }
 }
+
 ```
 
 ### Iterator / Generator Pattern
+
 ```js
 function* fibonacci() {
   let [a, b] = [0, 1];
@@ -190,9 +205,11 @@ function* fibonacci() {
 }
 const take = (gen, n) => [...Array(n)].map(() => gen.next().value);
 take(fibonacci(), 10); // [0,1,1,2,3,5,8,13,21,34]
+
 ```
 
 ### Proxy Validation
+
 ```js
 const validated = (obj, schema) => new Proxy(obj, {
   set(target, prop, value) {
@@ -202,6 +219,7 @@ const validated = (obj, schema) => new Proxy(obj, {
     return Reflect.set(target, prop, value);
   }
 });
+
 ```
 
 ## Red Flags (Things NOT to Say)
@@ -246,6 +264,7 @@ const validated = (obj, schema) => new Proxy(obj, {
 ---
 
 ## References & Learn More
+
 - [Cheat Sheet Collection](https://github.com/detailyang/awesome-cheatsheet)
 - [DevHints](https://devhints.io/)
 - [LeetCode](https://leetcode.com/)

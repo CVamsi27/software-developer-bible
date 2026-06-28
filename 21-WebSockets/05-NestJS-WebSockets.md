@@ -25,24 +25,33 @@ The WebSocket Gateway acts as a bridge between clients and the NestJS applicatio
 
 ```text
 +------------------+     +------------------+     +------------------+
+
 |     Client       |     |   WebSocket      |     |    NestJS        |
 |    (Browser)     | --> |   Gateway        | --> |   Application    |
+
 +------------------+     +------------------+     +------------------+
+
                               |                         |
+
                               | Guards                  | Services
                               | Interceptors           | Controllers
                               | Pipes                  | Modules
+
                               | Filters                |
+
 ```
 
 ### Gateway Lifecycle
 
 ```text
 +-----------+     +-----------+     +-----------+     +-----------+
+
 |  Module   | --> |  Gateway  | --> |  Handle   | --> |  Cleanup  |
 |  Init     |     |  Listen   |     |  Events   |     |  OnModule |
 |           |     |           |     |           |     |  Destroy  |
+
 +-----------+     +-----------+     +-----------+     +-----------+
+
 ```
 
 ## Code Examples
@@ -110,6 +119,7 @@ export class AppGateway
     });
   }
 }
+
 ```
 
 ### Gateway with DI Services
@@ -172,6 +182,7 @@ export class ChatGateway {
     });
   }
 }
+
 ```
 
 ### Guards for WebSocket Authentication
@@ -223,6 +234,7 @@ export class ProtectedGateway {
     client.emit('response', { message: `Hello ${user.username}` });
   }
 }
+
 ```
 
 ### Interceptors
@@ -263,6 +275,7 @@ export class LoggedGateway {
     return { event: 'event-response', data: { message: 'Handled' } };
   }
 }
+
 ```
 
 ### Pipes for Validation
@@ -315,6 +328,7 @@ export class ValidatedGateway {
     console.log(data.roomId, data.content, data.priority);
   }
 }
+
 ```
 
 ### Rooms Management
@@ -398,6 +412,7 @@ export class RoomGateway {
     });
   }
 }
+
 ```
 
 ### Namespaces
@@ -452,6 +467,7 @@ export class AdminGateway {
     this.server.emit('announcement', data.message);
   }
 }
+
 ```
 
 ### Client-Side Integration
@@ -508,6 +524,7 @@ class NestWebSocketClient {
     this.socket.disconnect();
   }
 }
+
 ```
 
 ### Error Handling
@@ -550,6 +567,7 @@ export class ErrorHandledGateway {
     }
   }
 }
+
 ```
 
 ### Module Configuration
@@ -579,6 +597,7 @@ import { NotificationService } from './notification.service';
   ],
 })
 export class WebSocketModule {}
+
 ```
 
 ## Real-World Use Cases
@@ -627,6 +646,7 @@ export class ChatGateway {
     });
   }
 }
+
 ```
 
 ### 2. Real-Time Notifications
@@ -656,6 +676,7 @@ export class NotificationGateway {
     });
   }
 }
+
 ```
 
 ### 3. Live Collaboration
@@ -688,6 +709,7 @@ export class CollaborationGateway {
     });
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -714,6 +736,7 @@ export class SecureGateway {
     const user = client.data.user;
   }
 }
+
 ```
 
 ### 2. Not Handling Disconnects
@@ -738,6 +761,7 @@ export class GoodGateway {
     this.updatePresence(client.data.user?.id, 'offline');
   }
 }
+
 ```
 
 ### 3. Not Validating Data
@@ -758,6 +782,7 @@ handleMessage(
   // data is validated and typed
   saveToDatabase(data);
 }
+
 ```
 
 ## Best Practices
@@ -783,6 +808,7 @@ async handleMessage(
 ): Promise<void> {
   // Process validated data
 }
+
 ```
 
 ### 2. Implement Rate Limiting
@@ -810,6 +836,7 @@ export class WsThrottlerGuard implements CanActivate {
     return true;
   }
 }
+
 ```
 
 ### 3. Use Namespace for Separation
@@ -826,6 +853,7 @@ export class NotificationGateway {}
 // Admin namespace
 @WebSocketGateway({ namespace: '/admin' })
 export class AdminGateway {}
+
 ```
 
 ## Interview Questions
@@ -833,30 +861,35 @@ export class AdminGateway {}
 ### Beginner (5)
 
 1. **What is a WebSocket Gateway in NestJS?**
+
    - Bridge between clients and NestJS application
    - Handles WebSocket connections and events
    - Supports decorators, guards, interceptors
    - Built on top of Socket.io
 
 2. **How do you create a WebSocket Gateway?**
+
    - Use `@WebSocketGateway()` decorator
    - Implement `OnGatewayInit`, `OnGatewayConnection`, `OnGatewayDisconnect`
    - Use `@SubscribeMessage()` for event handling
    - Inject services via constructor
 
 3. **What are WebSocket Guards?**
+
    - Authentication/authorization for WebSocket connections
    - Implement `CanActivate` interface
    - Access client via `context.switchToWs().getClient()`
    - Throw `WsException` for rejection
 
 4. **How do you handle WebSocket events?**
+
    - Use `@SubscribeMessage('event-name')` decorator
    - Access data with `@MessageBody()`
    - Access client with `@ConnectedSocket()`
    - Return response or emit event
 
 5. **What is the difference between WebSocket and HTTP in NestJS?**
+
    - WebSocket is persistent connection
    - HTTP is request-response
    - WebSocket uses Gateway, HTTP uses Controller
@@ -865,30 +898,35 @@ export class AdminGateway {}
 ### Intermediate (5-8)
 
 6. **How do you implement authentication in WebSocket Gateway?**
+
    - Use JWT guard
    - Extract token from handshake
    - Verify token and attach user to client
    - Use in all message handlers
 
 7. **How do you handle rooms in NestJS WebSockets?**
+
    - Use `client.join(roomId)` to join
    - Use `client.leave(roomId)` to leave
    - Use `this.server.to(roomId).emit()` for room messages
    - Track room membership
 
 8. **How do you use interceptors with WebSocket?**
+
    - Create class implementing `NestInterceptor`
    - Use `@UseInterceptors()` decorator
    - Log, transform, or handle errors
    - Apply globally or per gateway
 
 9. **How do you test WebSocket Gateways?**
+
    - Mock Socket.io server
    - Test message handlers
    - Test guards and interceptors
    - Use `socket.io-client` for integration tests
 
 10. **How do you handle errors in WebSocket Gateways?**
+
     - Use exception filters
     - Throw `WsException`
     - Catch errors in handlers
@@ -897,30 +935,35 @@ export class AdminGateway {}
 ### Senior (8-12)
 
 11. **Design a scalable WebSocket architecture with NestJS**
+
     - Use Redis adapter for scaling
     - Implement connection pooling
     - Use namespaces for separation
     - Monitor with metrics
 
 12. **How do you handle WebSocket scaling across multiple servers?**
+
     - Use `@nestjs/platform-socket.io` with Redis adapter
     - Implement sticky sessions
     - Share state via Redis
     - Use message brokers for cross-server communication
 
 13. **How do you implement WebSocket middleware?**
+
     - Use `@WebSocketGateway({ useMiddleware: ... })`
     - Implement `NestMiddleware`
     - Log, validate, or transform messages
     - Apply to all gateway events
 
 14. **How do you handle WebSocket in microservices?**
+
     - Use WebSocket gateway in API gateway
     - Communicate via message broker
     - Implement service discovery
     - Handle connection state
 
 15. **How do you monitor WebSocket connections?**
+
     - Track connection counts
     - Monitor message rates
     - Alert on errors
@@ -929,6 +972,7 @@ export class AdminGateway {}
 ### FAANG-style (5-8)
 
 16. **Design a real-time chat system with NestJS**
+
     - WebSocket gateway for connections
     - Redis for scaling
     - Message persistence
@@ -936,6 +980,7 @@ export class AdminGateway {}
     - Push notification fallback
 
 17. **Design a collaborative editing system**
+
     - Operational Transform or CRDT
     - Cursor presence
     - Version history
@@ -943,6 +988,7 @@ export class AdminGateway {}
     - Offline support
 
 18. **Design a multiplayer game backend**
+
     - WebSocket gateway for connections
     - Game state management
     - Anti-cheat measures
@@ -950,6 +996,7 @@ export class AdminGateway {}
     - Reconnection handling
 
 19. **Design a live notification system**
+
     - WebSocket gateway for real-time
     - Redis for scaling
     - Message persistence
@@ -957,6 +1004,7 @@ export class AdminGateway {}
     - Delivery guarantees
 
 20. **Design a live dashboard system**
+
     - WebSocket for real-time updates
     - Data aggregation
     - Connection management
@@ -966,30 +1014,35 @@ export class AdminGateway {}
 ### Follow-ups (5-8)
 
 21. **How do you handle WebSocket reconnection in NestJS?**
+
     - Client-side reconnection logic
     - Server-side state preservation
     - Missed message recovery
     - Connection state tracking
 
 22. **How do you secure WebSocket connections?**
+
     - Use WSS (WebSocket Secure)
     - Implement JWT authentication
     - Rate limit connections
     - Validate all messages
 
 23. **How do you optimize WebSocket performance?**
+
     - Message compression
     - Binary protocol
     - Connection pooling
     - Message batching
 
 24. **How do you handle WebSocket in production?**
+
     - Graceful shutdown
     - Health checks
     - Monitoring and alerting
     - Log aggregation
 
 25. **How do you migrate to NestJS WebSockets?**
+
     - Start with simple gateway
     - Add authentication
     - Implement guards and interceptors
@@ -1008,6 +1061,7 @@ NestJS WebSockets provide:
 - **DI Support**: Full dependency injection
 
 Key benefits:
+
 - Maintainable, testable code
 - Consistent architecture with HTTP
 - Built-in security features

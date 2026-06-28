@@ -7,6 +7,7 @@ RabbitMQ is an open-source message broker that implements the Advanced Message Q
 ## Why Do We Need It?
 
 In microservices:
+
 - Decouple services through asynchronous messaging
 - Ensure reliable message delivery with acknowledgments
 - Support complex routing and message filtering
@@ -44,6 +45,7 @@ In microservices:
 │   │  (Subscriber)││  (Subscriber)││  (Subscriber)│                │
 │   └─────────────┘└─────────────┘└─────────────┘                │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Exchange Types
@@ -101,6 +103,7 @@ In microservices:
 │                   └──────────┘          └──────────┘  └────────┘│
 │              (All queues receive the message)                   │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -291,6 +294,7 @@ class RabbitMQProducer {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   }
 }
+
 ```
 
 ### TypeScript - RabbitMQ Consumer
@@ -461,6 +465,7 @@ class RabbitMQConsumer {
     return this.isProcessing;
   }
 }
+
 ```
 
 ### TypeScript - Dead Letter Queue Configuration
@@ -541,6 +546,7 @@ class DeadLetterQueueSetup {
     console.log(`Max length queue setup: ${queueName} (max: ${maxLength})`);
   }
 }
+
 ```
 
 ### TypeScript - Request/Reply Pattern
@@ -625,26 +631,31 @@ class RabbitMQRequestReply {
     }
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. E-Commerce Order Processing
+
 - Order events published to exchanges
 - Inventory, payment, shipping services consume from queues
 - Dead letter queues for failed processing
 
 ### 2. IoT Data Ingestion
+
 - Devices publish telemetry data
 - Multiple consumers process data differently
 - Priority queues for critical alerts
 
 ### 3. Task Distribution
+
 - Work queues for distributing tasks across workers
 - Competing consumers for load balancing
 - Priority queues for urgent tasks
 
 ### 4. Notification System
+
 - Fanout exchange for broadcasting notifications
 - Topic exchange for routing to specific services
 - TTL queues for expiring notifications
@@ -652,23 +663,37 @@ class RabbitMQRequestReply {
 ## Common Mistakes
 
 1. **Not acknowledging messages** - Messages redelivered indefinitely
+
 2. **Ignoring prefetch count** - Consumer overwhelmed
+
 3. **No dead letter queue** - Failed messages lost
+
 4. **Wrong exchange type** - Messages not routed correctly
+
 5. **Not handling reconnection** - Consumer crashes permanently
+
 6. **Missing message persistence** - Messages lost on broker restart
+
 7. **No monitoring** - Can't detect queue buildup
+
 8. **Blocking in consumer** - Prevents processing other messages
 
 ## Best Practices
 
 1. **Always acknowledge messages** - After successful processing
+
 2. **Use prefetch count** - Limit unacknowledged messages per consumer
+
 3. **Implement dead letter queues** - For failed message handling
+
 4. **Use message persistence** - For important messages
+
 5. **Handle reconnection** - Automatic reconnection logic
+
 6. **Monitor queue lengths** - Alert on growing queues
+
 7. **Use correlation IDs** - Track request/reply patterns
+
 8. **Implement circuit breakers** - For producer/consumer failures
 
 ## Performance Considerations
@@ -684,117 +709,152 @@ class RabbitMQRequestReply {
 ### Beginner (5-10)
 
 1. **What is RabbitMQ?**
+
    - Open-source message broker implementing AMQP protocol.
 
 2. **What is a message broker?**
+
    - Intermediary that receives, stores, and forwards messages between services.
 
 3. **What is an exchange?**
+
    - Component that routes messages to queues based on binding rules.
 
 4. **What are the exchange types?**
+
    - Direct, Topic, Fanout, Headers.
 
 5. **What is a queue?**
+
    - Buffer that stores messages until consumed.
 
 6. **What is a binding?**
+
    - Rule that connects exchange to queue with routing key.
 
 7. **What is message acknowledgment?**
+
    - Consumer confirms successful message processing.
 
 8. **What is a dead letter queue?**
+
    - Queue for messages that can't be processed or rejected.
 
 ### Intermediate (5-10)
 
 9. **What is the difference between RabbitMQ and Kafka?**
+
    - RabbitMQ: Traditional broker, complex routing
    - Kafka: Distributed log, high throughput streaming
 
 10. **How does RabbitMQ ensure message delivery?**
+
     - Persistence, acknowledgments, publisher confirms.
 
 11. **What is prefetch count?**
+
     - Number of unacknowledged messages delivered to consumer at once.
 
 12. **What is a consumer group?**
+
     - Group of consumers that jointly consume from queues.
 
 13. **How do you handle message ordering?**
+
     - Single queue, single consumer, or partitioned queues.
 
 14. **What is TTL in RabbitMQ?**
+
     - Time-to-live: Message expiration time.
 
 15. **How do you monitor RabbitMQ?**
+
     - Management UI, plugins, metrics APIs.
 
 16. **What is publisher confirms?**
+
     - Broker acknowledges message receipt to publisher.
 
 ### Senior (10-15)
 
 17. **Design a RabbitMQ-based order processing system.**
+
     - Exchanges, queues, DLQ, retry logic, monitoring.
 
 18. **How do you handle RabbitMQ clustering?**
+
     - Erlang clustering, queue mirroring, node discovery.
 
 19. **Explain RabbitMQ high availability.**
+
     - Queue mirroring, load balancing, failover.
 
 20. **How do you secure RabbitMQ?**
+
     - SSL/TLS, SASL, ACLs, vhosts.
 
 21. **What is RabbitMQ federation?**
+
     - Cross-datacenter message replication.
 
 22. **How do you handle message replay?**
+
     - Replay from queue, event sourcing, backup queues.
 
 23. **Explain RabbitMQ performance tuning.**
+
     - Prefetch, persistence, batch publishing, connection pooling.
 
 24. **How do you handle RabbitMQ in microservices?**
+
     - Service decoupling, async processing, event-driven.
 
 25. **What are RabbitMQ best practices?**
+
     - Idempotent consumers, DLQ, monitoring, capacity planning.
 
 ### FAANG-style (5-10)
 
 26. **Design Netflix's messaging system with RabbitMQ.**
+
     - Multi-datacenter, federation, monitoring, exactly-once.
 
 27. **How would you handle 100K messages/second?**
+
     - Connection pooling, batch publishing, consumer parallelism.
 
 28. **Design a real-time notification system.**
+
     - Fanout exchanges, priority queues, TTL, delivery tracking.
 
 29. **How do you handle RabbitMQ disaster recovery?**
+
     - Clustering, mirroring, backup strategies, failover.
 
 30. **Explain RabbitMQ in event-driven architecture.**
+
     - Event sourcing, CQRS, saga pattern integration.
 
 ### Follow-ups (5-10)
 
 31. **How do you migrate from RabbitMQ to Kafka?**
+
     - Strangler fig pattern, dual write, gradual migration.
 
 32. **What is the impact of RabbitMQ on microservices?**
+
     - Decoupling, async processing, eventual consistency.
 
 33. **How do you test RabbitMQ-based systems?**
+
     - Embedded broker, integration tests, contract testing.
 
 34. **What is the future of RabbitMQ?**
+
     - Quorum queues, Khepri, cloud-native deployments.
 
 35. **How do you choose between RabbitMQ and Kafka?**
+
     - RabbitMQ for complex routing, Kafka for streaming.
 
 ## Summary
@@ -835,11 +895,13 @@ RabbitMQ is a versatile message broker ideal for microservices communication. It
 │ • Monitor queue lengths                                 │
 │ • Use correlation IDs                                   │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Microservices Patterns by Chris Richardson](https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543)
 - [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358)
 - [Microservices.io](https://microservices.io/)

@@ -11,8 +11,11 @@ The pattern is particularly useful for processing pipelines, middleware chains, 
 Without the Chain of Responsibility pattern, request handling leads to:
 
 1. **Tight coupling**: Sender depends on specific handlers
+
 2. **Complex conditionals**: Large if/else chains for routing
+
 3. **Difficult maintenance**: Adding new handlers requires modifying existing code
+
 4. **Code duplication**: Common handling logic repeated
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Chain of Responsibility pattern, request handling leads to:
 The Chain of Responsibility pattern works by:
 
 1. Defining a handler interface with a method to handle requests
+
 2. Each handler has a reference to the next handler in the chain
+
 3. When a handler receives a request, it either handles it or passes it along
+
 4. The chain continues until a handler processes the request or the end is reached
 
 ```text
@@ -48,6 +54,7 @@ The Chain of Responsibility pattern works by:
 │                                                  │
 │  Request passes through chain until handled       │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -169,6 +176,7 @@ const result2 = processRequest({
   ip: '127.0.0.1'
 });
 console.log('Result:', result2);
+
 ```
 
 ### Express-style Middleware
@@ -285,6 +293,7 @@ const response = await chain.execute(
 );
 
 console.log('Response:', response);
+
 ```
 
 ### Discount Calculator Chain
@@ -391,6 +400,7 @@ const context = {
 const discount = calculateDiscount(amount, context);
 console.log(`\nTotal discount: $${discount}`);
 console.log(`Final price: $${amount - discount}`);
+
 ```
 
 ### Validation Chain
@@ -547,6 +557,7 @@ console.log(validateUser(validUser));
 
 console.log('\nInvalid user:');
 console.log(validateUser(invalidUser));
+
 ```
 
 ## Real-World Use Cases
@@ -654,6 +665,7 @@ const response = await app.handleRequest(
   { url: '/api/users', method: 'GET', headers: {}, body: null, params: {}, query: {} },
   { status: 200, body: null, headers: {} }
 );
+
 ```
 
 ### 2. Error Handling Chain
@@ -804,6 +816,7 @@ console.log(handleError(new NotFoundError('User')));
 
 console.log('\nUnknown error:');
 console.log(handleError(new Error('Something went wrong')));
+
 ```
 
 ### 3. Request Processing Pipeline
@@ -911,6 +924,7 @@ try {
 } catch (error) {
   console.error('Pipeline error:', error.message);
 }
+
 ```
 
 ## Common Mistakes
@@ -928,6 +942,7 @@ chain
   .setNext(new Handler6())
   .setNext(new Handler7());
 // Hard to debug and maintain
+
 ```
 
 ### 2. Not Handling End of Chain
@@ -943,6 +958,7 @@ class Handler {
     return null;
   }
 }
+
 ```
 
 ### 3. Circular Chain
@@ -953,6 +969,7 @@ const handler1 = new Handler();
 const handler2 = new Handler();
 handler1.setNext(handler2);
 handler2.setNext(handler1); // Infinite loop
+
 ```
 
 ### 4. Handler with Too Much Logic
@@ -965,6 +982,7 @@ class BadHandler extends BaseHandler {
     // Should be split into multiple handlers
   }
 }
+
 ```
 
 ## Best Practices
@@ -976,6 +994,7 @@ class BadHandler extends BaseHandler {
 class AuthHandler extends BaseHandler {
   // Only handles authentication
 }
+
 ```
 
 ### 2. Handle End of Chain
@@ -987,6 +1006,7 @@ class FinalHandler extends BaseHandler {
     return { status: 404, message: 'Not handled' };
   }
 }
+
 ```
 
 ### 3. Use Builder Pattern
@@ -1001,6 +1021,7 @@ class ChainBuilder {
     return handlers[0];
   }
 }
+
 ```
 
 ### 4. Make Handlers Stateless
@@ -1012,6 +1033,7 @@ class StatelessHandler extends BaseHandler {
     // No instance variables
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -1031,86 +1053,111 @@ class StatelessHandler extends BaseHandler {
 ### Beginner
 
 1. **What is the Chain of Responsibility pattern?**
+
    - A behavioral pattern that passes requests along a chain of handlers.
 
 2. **When would you use Chain of Responsibility?**
+
    - For middleware, validation, logging, and request processing pipelines.
 
 3. **What's the difference between Chain of Responsibility and Decorator?**
+
    - Chain passes request along; Decorator adds behavior to same object.
 
 4. **How do you implement Chain of Responsibility in TypeScript?**
+
    - Create handlers with setNext method and handle method.
 
 5. **What are the benefits of Chain of Responsibility?**
+
    - Loose coupling, flexibility, and single responsibility.
 
 ### Intermediate
 
 6. **How do you handle end of chain?**
+
    - Use a final handler that processes unhandled requests.
 
 7. **Can handlers modify the request?**
+
    - Yes, handlers can modify request before passing it along.
 
 8. **How do you test Chain of Responsibility?**
+
    - Test each handler independently, test chain composition.
 
 9. **What's the relationship between Chain and Pipeline?**
+
    - Chain is a type of pipeline; pipeline can have parallel branches.
 
 10. **How do you handle errors in chain?**
+
     - Use try-catch, error handlers, or error middleware.
 
 ### Senior
 
 11. **How does Chain of Responsibility affect scalability?**
+
     - Chains are lightweight; handlers can be distributed.
 
 12. **What are the SOLID violations with Chain?**
+
     - Usually follows SOLID; watch for handlers violating Single Responsibility.
 
 13. **How do you handle Chain in microservices?**
+
     - Use chains for request processing, validation, and transformation.
 
 14. **What are the memory implications of Chain?**
+
     - Chains are usually stateless; handlers consume minimal memory.
 
 15. **How do you refactor Chain code?**
+
     - Extract common logic, use composition, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Chain for a distributed system.**
+
     - Consider network transparency, fault tolerance, and load balancing.
 
 17. **How would you implement Chain for cloud-native applications?**
+
     - Consider serverless functions, middleware, and function composition.
 
 18. **What are the implications of Chain in event-driven architectures?**
+
     - Use chains for event processing, routing, and transformation.
 
 19. **How do you handle Chain in real-time systems?**
+
     - Consider latency, throughput, and resource management.
 
 20. **Design a Chain that supports parallel processing.**
+
     - Consider parallel handlers, fork-join, and result aggregation.
 
 ### Follow-ups
 
 21. **Can Chain of Responsibility be combined with other patterns?**
+
     - Yes, commonly with Decorator, Pipeline, and Middleware patterns.
 
 22. **How do you handle Chain in testing frameworks?**
+
     - Use dependency injection, create test handlers, and mock implementations.
 
 23. **What are the memory implications of Chain pattern?**
+
     - Chains are usually stateless; handlers consume minimal memory.
 
 24. **How do you handle Chain in serverless environments?**
+
     - Consider stateless handlers, function composition, and cold starts.
 
 25. **What's the impact of Chain on code maintainability?**
+
     - Improves maintainability by enabling flexible request processing.
 
 ## Summary
@@ -1152,6 +1199,7 @@ The Chain of Responsibility pattern is essential for processing pipelines and mi
 │ • Pipeline (processing stages)              │
 │ • Middleware (request processing)           │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

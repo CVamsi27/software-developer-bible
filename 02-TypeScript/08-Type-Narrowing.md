@@ -25,14 +25,19 @@
 │   }                                                            │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type safety**: Safely work with specific types in conditional blocks
+
 2. **Code clarity**: Make type relationships explicit
+
 3. **Error prevention**: Catch type errors at compile time
+
 4. **API design**: Create type-safe functions and interfaces
+
 5. **Pattern matching**: Implement complex type-based logic
 
 ## How It Works
@@ -50,6 +55,7 @@ function processValue(value: string | number | boolean): string {
     return value ? "true" : "false"; // ✅ boolean
   }
 }
+
 ```
 
 ### instanceof
@@ -71,6 +77,7 @@ function handleError(error: HttpError | NetworkError): string {
     return `Network ${error.code}: ${error.message}`;
   }
 }
+
 ```
 
 ### in Operator
@@ -94,6 +101,7 @@ function move(animal: Bird | Fish): void {
     animal.swim(); // ✅ Fish
   }
 }
+
 ```
 
 ### User-Defined Type Guards
@@ -123,6 +131,7 @@ function interact(animal: Cat | Dog): void {
     animal.fetch(); // ✅ Dog
   }
 }
+
 ```
 
 ### Discriminated Unions
@@ -130,6 +139,7 @@ function interact(animal: Cat | Dog): void {
 ```typescript
 // Union with common discriminant
 type Shape =
+
   | { kind: "circle"; radius: number }
   | { kind: "rectangle"; width: number; height: number }
   | { kind: "triangle"; base: number; height: number };
@@ -162,6 +172,7 @@ function areaExhaustive(shape: Shape): number {
       return assertNever(shape); // ✅ Compile error if missing case
   }
 }
+
 ```
 
 ### The never Type
@@ -189,6 +200,7 @@ function processShape(shape: Shape): number {
       return _exhaustive;
   }
 }
+
 ```
 
 ## Code Examples
@@ -198,6 +210,7 @@ function processShape(shape: Shape): number {
 ```typescript
 // ─── API Response handling ────────────────────────────────────
 type ApiResponse<T> =
+
   | { status: "success"; data: T }
   | { status: "error"; error: string }
   | { status: "loading" };
@@ -215,6 +228,7 @@ function handleResponse<T>(response: ApiResponse<T>): string {
 
 // ─── Type-safe event handling ─────────────────────────────────
 type Event =
+
   | { type: "click"; x: number; y: number }
   | { type: "keypress"; key: string }
   | { type: "scroll"; top: number };
@@ -248,6 +262,7 @@ function processUser(json: string): void {
     console.log(user.name); // ✅ TypeScript knows user has name
   }
 }
+
 ```
 
 ### Advanced Patterns
@@ -255,6 +270,7 @@ function processUser(json: string): void {
 ```typescript
 // ─── Type-safe reducer ────────────────────────────────────────
 type Action =
+
   | { type: "INCREMENT"; amount: number }
   | { type: "DECREMENT"; amount: number }
   | { type: "RESET" };
@@ -320,6 +336,7 @@ function getNestedValue(
 
   return typeof current === "string" ? current : undefined;
 }
+
 ```
 
 ## Common Mistakes
@@ -350,6 +367,7 @@ function getArea(shape: Shape): number {
       return _exhaustive;
   }
 }
+
 ```
 
 ### 2. Over-narrowing
@@ -375,6 +393,7 @@ function process(value: string | number) {
   }
   // result is string
 }
+
 ```
 
 ### 3. Not Using Type Guards
@@ -401,6 +420,7 @@ function process(value: unknown) {
     value.toUpperCase(); // ✅ Safe
   }
 }
+
 ```
 
 ## Best Practices
@@ -408,6 +428,7 @@ function process(value: unknown) {
 ```typescript
 // 1. Use discriminated unions for complex types
 type Result<T> =
+
   | { success: true; data: T }
   | { success: false; error: string };
 
@@ -438,6 +459,7 @@ function assertNever(x: never): never {
 // 5. Prefer type narrowing over type assertions
 // ❌ Bad: (value as string).toUpperCase()
 // ✅ Good: if (typeof value === "string") value.toUpperCase()
+
 ```
 
 ## Performance Considerations
@@ -453,71 +475,91 @@ function assertNever(x: never): never {
 ### Beginner
 
 1. **What is type narrowing?**
+
    - Refining a broader type to a more specific type through control flow
 
 2. **How do you narrow with typeof?**
+
    - Check `typeof value === "string"` to narrow to string
 
 3. **What is a type guard?**
+
    - A function that returns a type predicate (`value is Type`)
 
 4. **What is a discriminated union?**
+
    - A union of types with a common discriminant property
 
 5. **What is the never type?**
+
    - A type that represents values that never occur
 
 ### Intermediate
 
 6. **How do you implement exhaustive checking?**
+
    - Use `switch` with `never` in default case
 
 7. **What is the difference between typeof and instanceof?**
+
    - typeof checks primitive types; instanceof checks class instances
 
 8. **How do you narrow with the in operator?**
+
    - Check `"property" in object` to narrow to types with that property
 
 9. **When would you use a user-defined type guard?**
+
    - When TypeScript can't infer narrowing from built-in checks
 
 10. **How do you handle nullable types?**
+
     - Use null checks: `if (value !== null)`
 
 ### Senior
 
 11. **Design a type-safe parser using discriminated unions**
+
     - Create AST nodes with discriminant properties
 
 12. **How do you implement a type-safe state machine?**
+
     - Use discriminated unions for states and transitions
 
 13. **Create a type-safe middleware chain**
+
     - Use type narrowing to propagate types through middleware
 
 14. **How do you handle complex union types?**
+
     - Break down unions into smaller, more manageable types
 
 ### FAANG-style
 
 15. **Build a type-safe JSON parser**
+
     - Use type guards to validate and narrow unknown data
 
 16. **Implement a type-safe router**
+
     - Use discriminated unions for routes and parameters
 
 17. **Create a type-safe form validation system**
+
     - Use type narrowing for validation results
 
 ### Follow-ups
 
 18. **How does type narrowing interact with generics?**
+
     - Narrowing works within generic functions
 
 19. **Can you narrow tuple types?**
+
     - Yes, using length checks and index access
 
 20. **How do you debug type narrowing issues?**
+
     - Use IDE hover, add intermediate variables, or use `@ts-expect-error`
 
 ## Summary
@@ -543,6 +585,7 @@ function isString(x: unknown): x is string {
 
 // Discriminated union
 type Shape =
+
   | { kind: "circle"; radius: number }
   | { kind: "rectangle"; width: number; height: number };
 
@@ -554,6 +597,7 @@ function process(shape: Shape): number {
     default: const _: never = shape; return _;
   }
 }
+
 ```
 
 ## References & Learn More

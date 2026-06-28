@@ -9,6 +9,7 @@
 ## When to Use
 
 **Greedy:**
+
 - When local optimal leads to global optimal
 - Scheduling problems (job sequencing, activity selection)
 - Huffman coding, Dijkstra's algorithm
@@ -16,6 +17,7 @@
 - When you can make a choice without reconsidering
 
 **Prefix Sum:**
+
 - Range sum queries (subarray sum)
 - Finding subarrays with specific sum
 - Difference arrays
@@ -51,6 +53,7 @@ function greedySort(items: number[][]): number {
   }
   return result;
 }
+
 ```
 
 ## How It Works
@@ -71,14 +74,21 @@ Sort by end time:
 (1,4) (3,5) (0,6) (5,7) (3,9) (5,9) (6,10) (8,11) (8,12) (2,14) (12,16)
 
 Greedy choice:
+
 1. Pick (1,4) - ends earliest
+
 2. Skip (3,5), (0,6) - overlap
+
 3. Pick (5,7) - first non-overlapping
+
 4. Skip (3,9), (5,9), (6,10) - overlap
+
 5. Pick (8,11) - first non-overlapping
+
 6. Pick (12,16) - first non-overlapping
 
 Result: 4 activities
+
 ```
 
 ### ASCII Diagram
@@ -116,10 +126,13 @@ Sort by profit: A(100), D(25), C(27), B(19), E(15)
 Time slots: [_][_][_][_][_][_][_][_][_][_]
 
 1. Job A (deadline 2): [_][_][A][_][_][_][_][_][_][_]
+
 2. Job D (deadline 1): [_][_][A][_][_][_][_][_][_][_] → [D][_][A][_][_][_][_][_][_][_]
+
 3. Job C (deadline 2): [D][_][A][_][_][_][_][_][_][_] → [D][C][A][_][_][_][_][_][_][_]
 
 Total profit: 100 + 25 + 27 = 152
+
 ```
 
 ## Code Examples (TypeScript)
@@ -147,6 +160,7 @@ const numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
 console.log(numArray.sumRange(0, 2)); // 1 (-2+0+3)
 console.log(numArray.sumRange(2, 5)); // -1 (3-5+2-1)
 console.log(numArray.sumRange(0, 5)); // -3 (sum of all)
+
 ```
 
 ### Problem 2: Subarray Sum Equals K
@@ -175,6 +189,7 @@ function subarraySum(nums: number[], k: number): number {
 // Example
 console.log(subarraySum([1, 1, 1], 2)); // 2
 console.log(subarraySum([1, 2, 3], 3)); // 2
+
 ```
 
 ### Problem 3: Product of Array Except Self (Prefix Product)
@@ -204,6 +219,7 @@ function productExceptSelf(nums: number[]): number[] {
 // Example
 console.log(productExceptSelf([1, 2, 3, 4])); // [24, 12, 8, 6]
 console.log(productExceptSelf([-1, 1, 0, -3, 3])); // [0, 0, 9, 0, 0]
+
 ```
 
 ### Problem 4: Maximum Subarray Sum (Kadane's Algorithm - Greedy)
@@ -225,6 +241,7 @@ function maxSubArray(nums: number[]): number {
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
 console.log(maxSubArray([1])); // 1
 console.log(maxSubArray([5, 4, -1, 7, 8])); // 23
+
 ```
 
 ### Problem 5: Jump Game (Greedy)
@@ -244,6 +261,7 @@ function canJump(nums: number[]): boolean {
 // Example
 console.log(canJump([2, 3, 1, 1, 4])); // true
 console.log(canJump([3, 2, 1, 0, 4])); // false
+
 ```
 
 ### Problem 6: Gas Station (Greedy)
@@ -271,6 +289,7 @@ function canCompleteCircuit(gas: number[], cost: number[]): number {
 // Example
 console.log(canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2])); // 3
 console.log(canCompleteCircuit([2,3,4], [3,4,3])); // -1
+
 ```
 
 ### Problem 7: Maximum Product Subarray
@@ -294,14 +313,19 @@ function maxProduct(nums: number[]): number {
 // Example
 console.log(maxProduct([2, 3, -2, 4])); // 6
 console.log(maxProduct([-2, 0, -1])); // 0
+
 ```
 
 ## Common Mistakes
 
 1. **Not verifying greedy choice**: Ensure local optimal leads to global optimal
+
 2. **Wrong prefix sum indexing**: Off-by-one errors in range queries
+
 3. **Forgetting negative numbers**: In max subarray, current sum can reset
+
 4. **Not handling edge cases**: Empty arrays, single elements
+
 5. **Greedy doesn't always work**: Some problems require DP instead
 
 ## Time/Space Complexity
@@ -319,25 +343,37 @@ console.log(maxProduct([-2, 0, -1])); // 0
 ### Easy
 
 1. **Maximum Subarray** (LeetCode 53)
+
 2. **Best Time to Buy and Sell Stock** (LeetCode 121)
+
 3. **Range Sum Query - Immutable** (LeetCode 303)
+
 4. **Jump Game** (LeetCode 55)
 
 ### Medium
 
 1. **Subarray Sum Equals K** (LeetCode 560)
+
 2. **Product of Array Except Self** (LeetCode 238)
+
 3. **Jump Game II** (LeetCode 45)
+
 4. **Gas Station** (LeetCode 134)
+
 5. **Maximum Product Subarray** (LeetCode 152)
+
 6. **Hand of Straights** (LeetCode 846)
+
 7. **Task Scheduler** (LeetCode 621)
 
 ### Hard
 
 1. **Wildcard Matching** (LeetCode 44)
+
 2. **Sliding Window Maximum** (LeetCode 239)
+
 3. **Frog Jump** (LeetCode 403)
+
 4. **Russian Doll Envelopes** (LeetCode 354)
 
 ## Summary
@@ -370,21 +406,25 @@ Prefix Sum:
 └─────────────────────────────────────────┘
 
 When to use greedy:
+
 - Activity selection
 - Job scheduling
 - Huffman coding
 - Coin change (canonical systems)
 
 When to use prefix sum:
+
 - Range sum queries
 - Subarray sum problems
 - Difference arrays
 - 2D range queries
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Greedy](https://leetcode.com/tag/greedy/)
 - [NeetCode Greedy](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

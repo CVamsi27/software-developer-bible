@@ -12,6 +12,7 @@
 ## How to Use This Guide
 
 Each answer follows the STAR method:
+
 - **Situation**: Brief context (15-20 seconds)
 - **Task**: Your responsibility (10-15 seconds)
 - **Action**: What you specifically did (50-70 seconds)
@@ -493,6 +494,7 @@ Adapt these examples to your own experiences. Use specific stories from your car
 > "What's the biggest challenge the engineering organization is facing right now?"
 
 **Avoid Asking:**
+
 - Questions easily answered by the website
 - Questions about benefits/salary (save for HR)
 - Questions that suggest you haven't done research
@@ -534,16 +536,23 @@ Always have deeper layers to your stories.
 For HR behavioral questions:
 
 1. **Prepare 8-12 versatile stories** that cover multiple themes
+
 2. **Quantify everything**—numbers make answers memorable
+
 3. **Use "I" not "we"**—they're hiring you, not your team
+
 4. **Be honest about failures**—they reveal more than successes
+
 5. **Connect to the role**—show why your experience matters here
+
 6. **Practice delivery**—answers should be 90-120 seconds
+
 7. **Prepare thoughtful questions**—your questions reveal your priorities
 
 ---
 
 ## References & Learn More
+
 - [Glassdoor Interview Questions](https://www.glassdoor.com/Interview/index.htm)
 - [Indeed Career Guide](https://www.indeed.com/career-advice)
 - [Harvard Business Review](https://hbr.org/)

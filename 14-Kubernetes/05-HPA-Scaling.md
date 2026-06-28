@@ -5,6 +5,7 @@
 **Horizontal Pod Autoscaler (HPA)** automatically scales the number of Pod replicas based on observed metrics (CPU, memory, custom). **Vertical Pod Autoscaler (VPA)** adjusts resource requests/limits. Together, they enable dynamic capacity management.
 
 Key concepts:
+
 - **HPA**: Scales Pod count horizontally
 - **VPA**: Adjusts Pod resource requests vertically
 - **Metrics**: CPU, memory, custom metrics, external metrics
@@ -28,32 +29,46 @@ Key concepts:
 
 ```text
                     +------------------+
+
                     |  Metrics Server  |
                     |  (CPU, Memory)   |
+
                     +--------+---------+
+
                              |
+
                              v
                     +------------------+
+
                     |       HPA        |
                     | Controller       |
+
                     +--------+---------+
+
                              |
+
               +--------------+--------------+
+
               |              |              |
+
               v              v              v
         +----------+  +----------+  +----------+
+
         |   Pod    |  |   Pod    |  |   Pod    |
         | (target) |  | (target) |  | (target) |
+
         +----------+  +----------+  +----------+
 
 If CPU > 70%:  Scale UP   (add Pods)
 If CPU < 30%:  Scale DOWN (remove Pods)
+
 ```
 
 ### Scaling Flow
 
 ```text
 +----------------------------------------------------------+
+
 |                    Scaling Decision                        |
 |                                                           |
 |  1. Collect metrics every 15s (default)                   |
@@ -63,12 +78,14 @@ If CPU < 30%:  Scale DOWN (remove Pods)
 |     )                                                    |
 |  3. Apply scaling policy (min/max, surge/down)            |
 |  4. Update Deployment replica count                       |
+
 +----------------------------------------------------------+
 
 Example:
   Current: 3 replicas, 80% CPU
   Target: 50% CPU
   Desired: ceil(3 * 80/50) = ceil(4.8) = 5 replicas
+
 ```
 
 ## Code Examples
@@ -88,12 +105,14 @@ spec:
   minReplicas: 2
   maxReplicas: 10
   metrics:
+
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
+
 ```
 
 ### HPA with Memory
@@ -111,18 +130,21 @@ spec:
   minReplicas: 2
   maxReplicas: 20
   metrics:
+
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
+
     - type: Resource
       resource:
         name: memory
         target:
           type: Utilization
           averageUtilization: 80
+
 ```
 
 ### HPA with Custom Metrics
@@ -140,6 +162,7 @@ spec:
   minReplicas: 2
   maxReplicas: 50
   metrics:
+
     - type: Pods
       pods:
         metric:
@@ -147,6 +170,7 @@ spec:
         target:
           type: AverageValue
           averageValue: "1000"
+
 ```
 
 ### HPA with Scaling Policy
@@ -164,6 +188,7 @@ spec:
   minReplicas: 2
   maxReplicas: 20
   metrics:
+
     - type: Resource
       resource:
         name: cpu
@@ -174,15 +199,18 @@ spec:
     scaleUp:
       stabilizationWindowSeconds: 60
       policies:
+
         - type: Pods
           value: 4
           periodSeconds: 60
     scaleDown:
       stabilizationWindowSeconds: 300
       policies:
+
         - type: Percent
           value: 10
           periodSeconds: 60
+
 ```
 
 ### VPA (Vertical Pod Autoscaler)
@@ -201,6 +229,7 @@ spec:
     updateMode: "Auto"
   resourcePolicy:
     containerPolicies:
+
       - containerName: myapp
         minAllowed:
           cpu: 100m
@@ -209,6 +238,7 @@ spec:
           cpu: 2000m
           memory: 4Gi
         controlledResources: ["cpu", "memory"]
+
 ```
 
 ### Deployment with Resource Requests
@@ -229,6 +259,7 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           resources:
@@ -238,6 +269,7 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "1000m"
+
 ```
 
 ### Cluster Autoscaler
@@ -259,15 +291,18 @@ spec:
         app: cluster-autoscaler
     spec:
       containers:
+
         - name: cluster-autoscaler
           image: k8s.gcr.io/autoscaling/cluster-autoscaler:v1.28.0
           command:
+
             - ./cluster-autoscaler
             - --v=4
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
             - --expander=least-waste
             - --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/my-cluster
+
 ```
 
 ### Managing HPA
@@ -289,6 +324,7 @@ kubectl scale deployment/myapp --replicas=5
 
 # Delete HPA
 kubectl delete hpa myapp-hpa
+
 ```
 
 ## Real-World Use Cases
@@ -311,6 +347,7 @@ spec:
         app: web
     spec:
       containers:
+
         - name: web
           image: web:1.0
           resources:
@@ -334,6 +371,7 @@ spec:
   minReplicas: 3
   maxReplicas: 50
   metrics:
+
     - type: Resource
       resource:
         name: cpu
@@ -344,15 +382,18 @@ spec:
     scaleUp:
       stabilizationWindowSeconds: 30
       policies:
+
         - type: Percent
           value: 100
           periodSeconds: 15
     scaleDown:
       stabilizationWindowSeconds: 300
       policies:
+
         - type: Percent
           value: 10
           periodSeconds: 60
+
 ```
 
 ### 2. API with Custom Metrics
@@ -370,6 +411,7 @@ spec:
   minReplicas: 5
   maxReplicas: 100
   metrics:
+
     - type: Pods
       pods:
         metric:
@@ -377,12 +419,14 @@ spec:
         target:
           type: AverageValue
           averageValue: "500"
+
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
+
 ```
 
 ### 3. Batch Processing with Queue Length
@@ -400,6 +444,7 @@ spec:
   minReplicas: 1
   maxReplicas: 20
   metrics:
+
     - type: External
       external:
         metric:
@@ -410,6 +455,7 @@ spec:
         target:
           type: AverageValue
           averageValue: "10"
+
 ```
 
 ## Common Mistakes
@@ -440,6 +486,7 @@ spec:
   minReplicas: 3
   maxReplicas: 20
   metrics:
+
     - type: Resource
       resource:
         name: cpu
@@ -450,25 +497,36 @@ spec:
     scaleUp:
       stabilizationWindowSeconds: 60
       policies:
+
         - type: Pods
           value: 4
           periodSeconds: 60
     scaleDown:
       stabilizationWindowSeconds: 300
       policies:
+
         - type: Percent
           value: 10
           periodSeconds: 120
+
 ```
 
 1. **Always set resource requests** — required for HPA to calculate utilization
+
 2. **Use CPU as primary metric** — most responsive for scaling
+
 3. **Set min/max replicas** — prevent over/under scaling
+
 4. **Use stabilization windows** — prevent flapping
+
 5. **Define scaling policies** — control scale-up/down speed
+
 6. **Monitor HPA status** — check events and metrics
+
 7. **Use VPA for right-sizing** — optimize resource requests
+
 8. **Test scaling behavior** — load test before production
+
 9. **Combine HPA with PDB** — protect during scaling
 10. **Use Cluster Autoscaler** — scale nodes when needed
 
@@ -495,6 +553,7 @@ kubectl top pods -l app=myapp
 # Manually trigger scaling test
 kubectl run load-test --image=busybox --rm -it -- \
   sh -c "while true; do wget -qO- http://myapp:80; done"
+
 ```
 
 ## Interview Questions
@@ -641,11 +700,13 @@ kubectl scale deployment myapp --replicas=5
 # Cluster Autoscaler
 kubectl get nodes
 kubectl describe node <name>
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

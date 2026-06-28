@@ -82,12 +82,19 @@
 ## Common Patterns
 
 ### Cache-Aside (Lazy Loading)
+
 ```text
+
 1. Check cache for key
+
 2. Cache HIT → return cached value
+
 3. Cache MISS → query database
+
 4. Store result in cache with TTL
+
 5. Return result
+
 ```
 ```python
 def get_user(user_id):
@@ -101,9 +108,11 @@ def get_user(user_id):
     if user:
         redis.setex(f"user:{user_id}", 3600, json.dumps(user))
     return user
+
 ```
 
 ### Sliding Window Rate Limiter (Redis)
+
 ```python
 def is_rate_limited(user_id, limit=100, window=60):
     key = f"rate:{user_id}:{int(time.time()) // window}"
@@ -112,9 +121,11 @@ def is_rate_limited(user_id, limit=100, window=60):
     pipe.expire(key, window)
     current = pipe.execute()[0]
     return current > limit
+
 ```
 
 ### Circuit Breaker (State Machine)
+
 ```python
 class CircuitBreaker:
     def __init__(self, failure_threshold=5, recovery_timeout=30):
@@ -143,9 +154,11 @@ class CircuitBreaker:
             if self.failure_count >= self.failure_threshold:
                 self.state = 'OPEN'
             raise
+
 ```
 
 ### Event Sourcing
+
 ```python
 class EventStore:
     def __init__(self):
@@ -176,9 +189,11 @@ class EventStore:
         if event['event_type'] == 'UserEmailChanged':
             return {**state, 'email': event['data']['email']}
         return state
+
 ```
 
 ### Idempotent API Endpoint
+
 ```typescript
 async function createOrder(req: Request) {
   const idempotencyKey = req.headers['x-idempotency-key'];
@@ -198,9 +213,11 @@ async function createOrder(req: Request) {
 
   return response;
 }
+
 ```
 
 ### Distributed Lock (Redis)
+
 ```python
 def acquire_lock(lock_name, timeout=10):
     identifier = str(uuid.uuid4())
@@ -222,9 +239,11 @@ def release_lock(lock_name, identifier):
     end
     """
     return redis.eval(script, 1, lock_key, identifier)
+
 ```
 
 ### K8s Deployment + Service + HPA
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -241,9 +260,11 @@ spec:
         app: api-server
     spec:
       containers:
+
       - name: api
         image: myapp:1.0
         ports:
+
         - containerPort: 3000
         resources:
           requests:
@@ -274,6 +295,7 @@ spec:
   selector:
     app: api-server
   ports:
+
   - port: 80
     targetPort: 3000
 ---
@@ -289,15 +311,18 @@ spec:
   minReplicas: 2
   maxReplicas: 20
   metrics:
+
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
         averageUtilization: 70
+
 ```
 
 ### Docker Multi-Stage Build
+
 ```dockerfile
 # Build stage
 FROM node:20-alpine AS builder
@@ -319,9 +344,11 @@ COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 USER nextjs
 EXPOSE 3000
 CMD ["node", "dist/main.js"]
+
 ```
 
 ### Kafka Consumer Group
+
 ```python
 from kafka import KafkaConsumer, TopicPartition
 
@@ -342,6 +369,7 @@ for message in consumer:
         # Send to dead letter topic
         producer.send('orders-dlq', value=message.value)
         consumer.commit()  # Skip failed message
+
 ```
 
 ## Red Flags (Things NOT to Say)
@@ -388,6 +416,7 @@ for message in consumer:
 ---
 
 ## References & Learn More
+
 - [Cheat Sheet Collection](https://github.com/detailyang/awesome-cheatsheet)
 - [DevHints](https://devhints.io/)
 - [LeetCode](https://leetcode.com/)

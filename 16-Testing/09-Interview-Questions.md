@@ -50,6 +50,7 @@ This chapter contains the 40 most commonly asked testing interview questions wit
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -75,6 +76,7 @@ This chapter contains the 40 most commonly asked testing interview questions wit
  /                \ • Moderate speed
 /    Unit Tests    \ Unit Tests (70%)
 /--------------------\• Fast, isolated
+
 ```
 
 The pyramid ensures fast feedback while maintaining confidence in the application.
@@ -92,22 +94,27 @@ The pyramid ensures fast feedback while maintaining confidence in the applicatio
 | E2E | Complete user flow | Slow | High | High |
 
 **Unit Test Example:**
+
 ```typescript
 it("should add two numbers", () => {
   expect(add(2, 3)).toBe(5);
 });
+
 ```
 
 **Integration Test Example:**
+
 ```typescript
 it("should create user and send email", async () => {
   const user = await userService.createUser({ name: "John" });
   expect(user.id).toBeDefined();
   expect(mockEmailService.sendWelcomeEmail).toHaveBeenCalledWith(user.email);
 });
+
 ```
 
 **E2E Test Example:**
+
 ```typescript
 test("complete checkout flow", async ({ page }) => {
   await page.goto("/products");
@@ -117,6 +124,7 @@ test("complete checkout flow", async ({ page }) => {
   await page.click('[data-testid="complete-purchase"]');
   await expect(page.locator('[data-testid="confirmation"]')).toBeVisible();
 });
+
 ```
 
 ---
@@ -126,7 +134,9 @@ test("complete checkout flow", async ({ page }) => {
 **Answer:** TDD is a software development approach where tests are written before the actual code. The process follows the Red-Green-Refactor cycle:
 
 1. **RED**: Write a failing test
+
 2. **GREEN**: Write minimal code to pass the test
+
 3. **REFACTOR**: Improve code while keeping tests green
 
 ```typescript
@@ -145,9 +155,11 @@ function factorial(n: number): number {
 function factorial(n: number): number {
   return n <= 1 ? 1 : n * factorial(n - 1);
 }
+
 ```
 
 **Benefits:**
+
 - Better code design
 - Comprehensive test coverage
 - Confidence in refactoring
@@ -174,9 +186,11 @@ it("should handle API errors", async () => {
 
   await expect(userService.getUser("123")).rejects.toThrow("Network error");
 });
+
 ```
 
 **When NOT to mock:**
+
 - When testing the integration between real components
 - When the mock would be more complex than the real implementation
 - When you're testing simple, pure functions
@@ -212,6 +226,7 @@ describe("calculateDiscount", () => {
     expect(calculateDiscount(order)).toBe(0);
   });
 });
+
 ```
 
 ---
@@ -239,6 +254,7 @@ it("should calculate total price", () => {
   // Assert
   expect(total).toBe(40);
 });
+
 ```
 
 ---
@@ -267,6 +283,7 @@ describe("error handling", () => {
     expect(result).toEqual({ error: "Network error", data: null });
   });
 });
+
 ```
 
 ---
@@ -280,6 +297,7 @@ describe("error handling", () => {
 - **Function coverage**: Percentage of functions called
 
 **Good targets:**
+
 - Overall: 70-80%
 - Critical business logic: 90%+
 - Utility functions: 80%+
@@ -294,6 +312,7 @@ File               | % Stmts | % Branch | % Funcs | % Lines |
 -------------------|---------|----------|---------|---------|
 All files          |   85.71 |    83.33 |   83.33 |   85.71 |
 -------------------|---------|----------|---------|---------|
+
 ```
 
 **Note:** 100% coverage doesn't mean zero bugs. Focus on testing critical paths and edge cases.
@@ -323,6 +342,7 @@ class FakeDatabase {
   async findById(id: string) { return this.data.get(id); }
   async save(entity: any) { this.data.set(entity.id, entity); }
 }
+
 ```
 
 ---
@@ -338,10 +358,15 @@ class FakeDatabase {
 - **When requirements change**: To verify new behavior
 
 **Priority for testing:**
+
 1. Critical business logic
+
 2. Complex algorithms
+
 3. Edge cases and error handling
+
 4. Integration points
+
 5. UI components
 
 ---
@@ -378,6 +403,7 @@ it("should call callback", (done) => {
 it("should reject on failure", async () => {
   await expect(failingOperation()).rejects.toThrow("Error message");
 });
+
 ```
 
 ---
@@ -411,6 +437,7 @@ describe("UserProfile", () => {
     expect(onEdit).toHaveBeenCalledWith("123");
   });
 });
+
 ```
 
 ---
@@ -456,6 +483,7 @@ describe("UserList", () => {
     });
   });
 });
+
 ```
 
 ---
@@ -475,14 +503,17 @@ it("should render correctly", () => {
 
 // Update snapshots when intentional changes occur
 // jest --updateSnapshot
+
 ```
 
 **Pros:**
+
 - Catches unintended UI changes
 - Easy to review changes
 - Good for component libraries
 
 **Cons:**
+
 - Can become brittle
 - Large snapshot files
 - Difficult to review changes
@@ -494,9 +525,13 @@ it("should render correctly", () => {
 **Answer:** Flaky tests are tests that sometimes pass and sometimes fail. Fix them by:
 
 1. **Identify root cause**: Timing, state, network issues
+
 2. **Fix timing issues**: Use proper waiting strategies
+
 3. **Isolate tests**: Ensure no shared state
+
 4. **Mock external dependencies**: Remove network flakiness
+
 5. **Use deterministic data**: Avoid random values
 
 ```typescript
@@ -515,6 +550,7 @@ it("should load data", async () => {
     expect(screen.getByText("Data")).toBeInTheDocument();
   });
 });
+
 ```
 
 ---
@@ -549,6 +585,7 @@ describe("User API Provider", () => {
     });
   });
 });
+
 ```
 
 ---
@@ -584,6 +621,7 @@ describe("useCounter", () => {
     expect(result.current.count).toBe(10);
   });
 });
+
 ```
 
 ---
@@ -633,6 +671,7 @@ export default function () {
   http.get('http://test-api.com/users');
 }
 */
+
 ```
 
 ---
@@ -670,6 +709,7 @@ describe("User Repository", () => {
     expect(found.name).toBe("John");
   });
 });
+
 ```
 
 ---
@@ -696,6 +736,7 @@ it("should return true for 2", () => {
 
 // Mutation score = (killed mutations / total mutations) * 100
 // High score = robust tests
+
 ```
 
 **Tools:** Stryker, mutmut, pitest
@@ -739,9 +780,11 @@ interface IUserRepository {
 class UserService {
   constructor(private repo: IUserRepository) {}
 }
+
 ```
 
 **Key principles:**
+
 - Single Responsibility Principle
 - Dependency Injection
 - Interface-based design
@@ -783,9 +826,11 @@ describe("Order Service Integration", () => {
 test("complete purchase flow", async ({ page }) => {
   // Test entire user journey across services
 });
+
 ```
 
 **Testing pyramid for microservices:**
+
 - Unit tests: 60%
 - Integration tests: 25%
 - Contract tests: 10%
@@ -806,6 +851,7 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v3
       - run: npm ci
       - run: npm run test:unit -- --coverage
@@ -820,6 +866,7 @@ jobs:
           POSTGRES_DB: testdb
           POSTGRES_PASSWORD: test
     steps:
+
       - uses: actions/checkout@v3
       - run: npm ci
       - run: npm run test:integration
@@ -827,6 +874,7 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v3
       - run: npm ci
       - run: npx playwright install
@@ -836,9 +884,11 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+
 ```
 
 **Best practices:**
+
 - Run fast tests first (unit, then integration, then E2E)
 - Fail fast on critical failures
 - Parallelize when possible
@@ -895,6 +945,7 @@ describe("Authorization", () => {
       .expect(403);
   });
 });
+
 ```
 
 ---
@@ -941,6 +992,7 @@ describe("Query Performance", () => {
     expect(duration).toBeLessThan(100);
   });
 });
+
 ```
 
 ---
@@ -1001,6 +1053,7 @@ describe("UserService", () => {
     // Test logic
   });
 });
+
 ```
 
 ---
@@ -1033,9 +1086,11 @@ func TestTerraformVPC(t *testing.T) {
   vpcId := terraform.Output(t, terraformOptions, "vpc_id")
   assert.NotEmpty(t, vpcId)
 }
+
 ```
 
 **Key aspects:**
+
 - Validate configuration syntax
 - Test deployments in staging
 - Verify resource creation
@@ -1081,6 +1136,7 @@ describe("WebSocket", () => {
     });
   });
 });
+
 ```
 
 ---
@@ -1123,6 +1179,7 @@ describe("Order State Machine", () => {
     expect(machine.getState()).toBe("delivered");
   });
 });
+
 ```
 
 ---
@@ -1165,6 +1222,7 @@ function analyzeTestEffectiveness() {
     ],
   };
 }
+
 ```
 
 ---
@@ -1202,6 +1260,7 @@ function analyzeTestEffectiveness() {
 │     • Performance monitoring                                │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 **Implementation:**
@@ -1231,6 +1290,7 @@ function getTestsForChanges(changedFiles: string[]): string[] {
   // Analyze dependencies and return only affected tests
   return testAnalysis.getAffectedTests(changedFiles);
 }
+
 ```
 
 ---
@@ -1242,8 +1302,10 @@ function getTestsForChanges(changedFiles: string[]): string[] {
 ```yaml
 # Pipeline stages
 stages:
+
   - name: fast-feedback
     jobs:
+
       - lint
       - type-check
       - unit-tests
@@ -1251,25 +1313,30 @@ stages:
 
   - name: integration
     jobs:
+
       - integration-tests
       - contract-tests
     timeout: 15m
 
   - name: e2e
     jobs:
+
       - e2e-tests
       - visual-regression
     timeout: 30m
 
   - name: deployment
     jobs:
+
       - deploy-staging
       - smoke-tests
       - deploy-production
     timeout: 60m
+
 ```
 
 **Optimization strategies:**
+
 - Parallel execution
 - Caching dependencies
 - Test splitting
@@ -1317,6 +1384,7 @@ class TestQuarantine {
     return !this.quarantined.has(testName);
   }
 }
+
 ```
 
 ---
@@ -1363,6 +1431,7 @@ class CheckoutPage {
     await this.page.click('[data-testid="complete-purchase"]');
   }
 }
+
 ```
 
 ---
@@ -1411,6 +1480,7 @@ function getTestsToRun(changedFiles: string[], timeBudget: number) {
 
   return testsToRun;
 }
+
 ```
 
 ---
@@ -1426,10 +1496,15 @@ function getTestsToRun(changedFiles: string[], timeBudget: number) {
 - **Senior**: Strategic testing, risk-based approach, mentoring others
 
 **Key lessons learned:**
+
 1. 100% coverage doesn't mean zero bugs
+
 2. Test behavior, not implementation
+
 3. Tests should provide confidence, not just coverage
+
 4. Testing is a team responsibility
+
 5. Pragmatism over dogmatism
 
 ---
@@ -1466,6 +1541,7 @@ const reactTestingComparison = {
     bestFor: ["Legacy React apps", "Complex component testing"],
   },
 };
+
 ```
 
 ---
@@ -1502,13 +1578,19 @@ class LegacyClass {
 
 // 3. Strangler fig pattern
 // Gradually replace legacy code with new, tested code
+
 ```
 
 **Strategy:**
+
 1. Add characterization tests
+
 2. Identify critical paths
+
 3. Refactor incrementally
+
 4. Add tests for new features
+
 5. Replace legacy code gradually
 
 ---
@@ -1522,13 +1604,19 @@ class LegacyClass {
 "We had a microservices architecture with event-driven communication. The challenge was testing eventual consistency and message ordering."
 
 **Solution:**
+
 1. Implemented contract testing between services
+
 2. Created deterministic test data factories
+
 3. Used test containers for integration tests
+
 4. Implemented retry mechanisms with timeouts
+
 5. Added distributed tracing for debugging
 
 **Result:**
+
 - Reduced production incidents by 60%
 - Improved deployment confidence
 - Faster debugging with tracing
@@ -1559,14 +1647,21 @@ class LegacyClass {
 // - Test isolation
 // - Refactoring tests
 // - Code review
+
 ```
 
 **Teaching methods:**
+
 1. Pair programming on tests
+
 2. Code review with feedback
+
 3. Start with simple examples
+
 4. Gradually increase complexity
+
 5. Share testing war stories
+
 6. Establish team conventions
 
 ---
@@ -1576,13 +1671,19 @@ class LegacyClass {
 These 40 questions cover the essential testing knowledge for senior full-stack interviews. Key themes:
 
 1. **Fundamentals**: Testing pyramid, TDD/BDD, test types
+
 2. **Tools**: Jest, React Testing Library, MSW, Cypress/Playwright
+
 3. **Patterns**: AAA, factories, builders, fixtures
+
 4. **Strategy**: Test distribution, CI/CD, metrics
+
 5. **Advanced**: Microservices, security, performance
+
 6. **Leadership**: Mentoring, legacy code, team practices
 
 **Preparation tips:**
+
 - Practice explaining concepts clearly
 - Prepare real-world examples from your experience
 - Understand trade-offs and when to apply different approaches

@@ -65,6 +65,7 @@ class UnionFind {
     return this.components;
   }
 }
+
 ```
 
 ## How It Works
@@ -89,6 +90,7 @@ find(3) = 0 (with path compression)
 
 connected(0, 3) = true
 connected(0, 4) = false
+
 ```
 
 ### ASCII Diagram
@@ -98,11 +100,17 @@ UNION-FIND WITH PATH COMPRESSION:
 
 Before path compression:
     0
+
     |
+
     1
+
     |
+
     2
+
     |
+
     3
 
 find(3) traverses: 3 → 2 → 1 → 0
@@ -118,10 +126,12 @@ UNION BY RANK:
 
 Union(0, 1):     Union(2, 3):     Union(1, 2):
   0                 2                 0
+
   |                 |               / | \
   1                 3              1  2  3
 
 rank[0] = 1       rank[2] = 1     rank[0] = 2
+
 ```
 
 ## Code Examples (TypeScript)
@@ -215,6 +225,7 @@ function numIslands2(m: number, n: number, positions: number[][]): number[] {
 // Example
 console.log(numIslands2(3, 3, [[0,0],[0,1],[1,2],[2,1]]));
 // [1, 1, 2, 3]
+
 ```
 
 ### Problem 2: Accounts Merge
@@ -274,6 +285,7 @@ console.log(accountsMerge([
 // [["John","john00@mail.com","john_newyork@mail.com","johnsmith@mail.com"],
 //  ["Mary","mary@mail.com"],
 //  ["John","johnnybravo@mail.com"]]
+
 ```
 
 ### Problem 3: Redundant Connection
@@ -295,6 +307,7 @@ function findRedundantConnection(edges: number[][]): number[] {
 // Example
 console.log(findRedundantConnection([[1,2],[1,3],[2,3]])); // [2,3]
 console.log(findRedundantConnection([[1,2],[2,3],[3,4],[1,4],[1,5]])); // [1,4]
+
 ```
 
 ### Problem 4: Number of Connected Components in an Undirected Graph
@@ -313,6 +326,7 @@ function countComponents(n: number, edges: number[][]): number {
 // Example
 console.log(countComponents(5, [[0,1],[1,2],[3,4]])); // 3
 console.log(countComponents(5, [[0,1],[1,2],[2,3],[3,4]])); // 1
+
 ```
 
 ### Problem 5: Surrounded Regions (Union-Find approach)
@@ -362,14 +376,19 @@ const board = [
 solve(board);
 console.log(board);
 // [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+
 ```
 
 ## Common Mistakes
 
 1. **Not using path compression**: Makes find operations O(n) instead of O(α(n))
+
 2. **Not using union by rank**: Can lead to unbalanced trees
+
 3. **Forgetting to check if already connected**: Union should return false if roots are same
+
 4. **Wrong index handling**: Ensure 0-indexed or 1-indexed consistently
+
 5. **Not updating component count**: Keep track of number of components
 
 ## Time/Space Complexity
@@ -388,21 +407,29 @@ console.log(board);
 ### Easy
 
 1. **Number of Provinces** (LeetCode 547)
+
 2. **Max Area of Island** (LeetCode 695)
 
 ### Medium
 
 1. **Accounts Merge** (LeetCode 721)
+
 2. **Number of Connected Components in an Undirected Graph** (LeetCode 323)
+
 3. **Redundant Connection** (LeetCode 684)
+
 4. **Redundant Connection II** (LeetCode 685)
+
 5. **Number of Islands II** (LeetCode 305)
+
 6. **Surrounded Regions** (LeetCode 130)
 
 ### Hard
 
 1. **Smallest String With Swaps** (LeetCode 1202)
+
 2. **Accounts Merge** (LeetCode 721)
+
 3. **Number of Islands II** (LeetCode 305)
 
 ## Summary
@@ -430,18 +457,23 @@ Key operations:
 └─────────────────────────────────────────┘
 
 Optimizations:
+
 1. Path compression: flatten tree during find
+
 2. Union by rank: attach smaller tree to larger
 
 Common patterns:
+
 - Grid problems: id = row * cols + col
 - Track component count: increment on union
 - Detect cycle: union returns false
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Union Find](https://leetcode.com/tag/union-find/)
 - [NeetCode Union Find](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

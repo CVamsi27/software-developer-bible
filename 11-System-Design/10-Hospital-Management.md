@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Patient registration and profiles
 - Appointment scheduling
 - Doctor management
@@ -15,6 +16,7 @@
 - Telemedicine support
 
 ### Non-Functional Requirements
+
 - HIPAA compliance
 - High availability (99.99%)
 - Data encryption at rest and in transit
@@ -25,8 +27,10 @@
 - Multi-tenant architecture
 
 ## Capacity Estimation
+
 ```text
 Hospital Estimates:
+
 - 100 hospitals
 - 10K doctors
 - 100K patients per hospital
@@ -34,12 +38,14 @@ Hospital Estimates:
 - 10 appointments per patient per year
 
 Appointment Estimates:
+
 - 100K appointments per day
 - Average appointment: 30 minutes
 - Peak hours: 9 AM - 5 PM
 - Concurrent appointments: 5K
 
 Storage Estimates:
+
 - Patient records: 10M × 10 KB = 100 GB
 - Medical records: 10M × 100 KB = 1 TB
 - Lab results: 10M × 50 KB = 500 GB
@@ -47,12 +53,15 @@ Storage Estimates:
 - Total: ~1.65 TB
 
 Bandwidth Estimates:
+
 - Patient queries: 10K × 10 KB = 100 MB/s
 - Appointment requests: 1K × 1 KB = 1 MB/s
 - Total: ~101 MB/s peak
+
 ```
 
 ## API Design
+
 ```yaml
 # Patient Registration
 POST /api/v1/patients
@@ -160,10 +169,12 @@ POST /api/v1/billing
       "services": [...],
       "insurance_claim": {...}
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Hospitals table (multi-tenant)
 CREATE TABLE hospitals (
@@ -306,9 +317,11 @@ CREATE TABLE audit_log (
     user_agent TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) PARTITION BY RANGE (created_at);
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  hospitals  │     │     users       │     │    patients     │
@@ -373,10 +386,12 @@ CREATE TABLE audit_log (
                         │ user_agent      │
                         │ created_at      │
                         └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -417,11 +432,13 @@ CREATE TABLE audit_log (
      │  (HIPAA         │
      │   Compliant)    │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### HIPAA Compliance Service
+
 ```python
 class HIPAAComplianceService:
     def __init__(self, db, encryption_service):
@@ -494,9 +511,11 @@ class HIPAAComplianceService:
                 decrypted[key] = value
 
         return decrypted
+
 ```
 
 ### Appointment Scheduling Service
+
 ```python
 class AppointmentSchedulingService:
     def __init__(self, db, redis_client, notification_service):
@@ -597,9 +616,11 @@ class AppointmentSchedulingService:
         )
 
         return True
+
 ```
 
 ### Medical Records Service
+
 ```python
 class MedicalRecordsService:
     def __init__(self, db, encryption_service, audit_service):
@@ -667,9 +688,11 @@ class MedicalRecordsService:
         )
 
         return record
+
 ```
 
 ### Multi-Tenant Service
+
 ```python
 class MultiTenantService:
     def __init__(self, db):
@@ -702,11 +725,13 @@ class MultiTenantService:
         """, (hospital_id, hospital_id, hospital_id))
 
         return stats[0] if stats else {}
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Appointment Cache
+
 ```python
 class AppointmentCache:
     def __init__(self, redis_client):
@@ -731,9 +756,11 @@ class AppointmentCache:
     async def invalidate_availability(self, doctor_id: int,
                                      date: str):
         await self.redis.delete(f"availability:{doctor_id}:{date}")
+
 ```
 
 ### Patient Cache
+
 ```python
 class PatientCache:
     def __init__(self, redis_client):
@@ -755,11 +782,13 @@ class PatientCache:
 
     async def invalidate_patient(self, patient_id: int):
         await self.redis.delete(f"patient:{patient_id}")
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── appointment.created     (new appointment)
@@ -784,9 +813,11 @@ Event Schema:
     "time": "09:00"
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class HospitalEventProcessor:
     def __init__(self, kafka_consumer, notification_service):
@@ -814,11 +845,13 @@ class HospitalEventProcessor:
             event['data']['doctor_id'],
             event['data']
         )
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -833,9 +866,11 @@ Architecture:
 │  Service     │   │  Service     │   │  Records     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Sharding
+
 ```python
 class HospitalDatabaseScaler:
     def __init__(self):
@@ -853,11 +888,13 @@ class HospitalDatabaseScaler:
             "SELECT * FROM patients WHERE id = %s",
             (patient_id,)
         )
+
 ```
 
 ## Failure Handling
 
 ### Appointment Conflict Resolution
+
 ```python
 class AppointmentConflictResolver:
     def __init__(self, db, redis_client):
@@ -884,9 +921,11 @@ class AppointmentConflictResolver:
             'conflicts': conflicts,
             'alternatives': alternative_slots
         }
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Database failover | Read from replica |
@@ -896,6 +935,7 @@ class AppointmentConflictResolver:
 | Audit log failure | Buffer locally |
 
 ### Data Recovery
+
 ```python
 class DataRecoveryService:
     def __init__(self, db, backup_service):
@@ -915,39 +955,48 @@ class DataRecoveryService:
             return {'status': 'recovered', 'record': backup}
 
         return {'status': 'not_found'}
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - appointments_per_day
   - patient_satisfaction_score
   - average_wait_time
   - no_show_rate
 
 System Metrics:
+
   - appointment_booking_latency_p95
   - medical_record_access_latency
   - api_response_time
   - error_rate
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - database_query_latency
   - redis_memory_usage
 
 Compliance Metrics:
+
   - hipaa_audit_events
   - access_denied_count
   - encryption_operations
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High No-Show Rate
     condition: no_show_rate > 20%
     severity: warning
@@ -963,6 +1012,7 @@ alerts:
   - name: Database Connection Pool Exhausted
     condition: active_connections > 90%
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -978,64 +1028,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you design a HIPAA-compliant system?**
+
    - Encrypt PHI at rest and in transit
    - Audit logging for all access
    - Role-based access control
    - Data backup and recovery
 
 2. **How do you handle appointment scheduling?**
+
    - Real-time availability checking
    - Pessimistic locking for slots
    - Cache invalidation on booking
    - Conflict detection and resolution
 
 3. **How would you implement multi-tenancy?**
+
    - Shared database with row-level security
    - Hospital-specific encryption keys
    - Separate audit logs per hospital
    - Feature flags per hospital
 
 ### Scaling Questions
+
 4. **How do you scale to 100K+ patients?**
+
    - Database sharding by hospital
    - Redis for caching
    - Read replicas for queries
    - Async processing for records
 
 5. **How do you handle peak appointment times?**
+
    - Pre-warm availability cache
    - Queue booking requests
    - Auto-scale during peaks
    - Monitor and alert
 
 ### Trade-off Questions
+
 6. **How do you balance security vs usability?**
+
    - Strong authentication
    - Role-based access
    - Session management
    - Audit without friction
 
 7. **How do you handle data migration between hospitals?**
+
    - Patient consent required
    - Secure data transfer
    - Audit trail
    - Backup before migration
 
 ### Senior-level Questions
+
 8. **How would you implement telemedicine?**
+
    - Video conferencing integration
    - E-prescriptions
    - Virtual waiting room
    - Insurance verification
 
 9. **How do you handle lab result integration?**
+
    - HL7/FHIR standards
    - Real-time result delivery
    - Abnormal result alerts
    - Result interpretation
 
 10. **How would you implement predictive analytics?**
+
     - Patient risk scoring
     - Appointment no-show prediction
     - Resource allocation
@@ -1044,6 +1108,7 @@ alerts:
 ## Summary
 
 The Hospital Management system design covers:
+
 - **HIPAA Compliance**: Encryption, audit logging, access control
 - **Multi-tenancy**: Shared database with row-level security
 - **Appointment Scheduling**: Real-time availability with caching
@@ -1051,10 +1116,15 @@ The Hospital Management system design covers:
 - **Scalability**: Database sharding, caching, async processing
 
 Key takeaways:
+
 1. Implement HIPAA compliance from the start
+
 2. Use pessimistic locking for appointment slots
+
 3. Encrypt PHI at application level
+
 4. Audit all access to sensitive data
+
 5. Design for multi-tenancy with hospital isolation
 
 This design supports 100K+ patients with 10K+ appointments per day while maintaining HIPAA compliance.
@@ -1062,6 +1132,7 @@ This design supports 100K+ patients with 10K+ appointments per day while maintai
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

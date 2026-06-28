@@ -7,6 +7,7 @@
 ```text
 Performance = Query Optimization + Caching + Rate Limiting + Monitoring
 Security    = Authentication + Authorization + Input Validation + Attack Prevention
+
 ```
 
 ---
@@ -35,6 +36,7 @@ With Performance & Security:
 │  5. Rate limiting prevents abuse                                │
 │  6. Monitoring provides visibility                              │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Common Attacks
@@ -97,6 +99,7 @@ With Performance & Security:
 │  └──────────────────────────────────────────────────────────┘   │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Performance Architecture
@@ -134,6 +137,7 @@ With Performance & Security:
 │  └──────────────────────────────────────────────────────────┘   │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -178,6 +182,7 @@ const server = new ApolloServer({
   resolvers,
   validationRules: [complexityRule(1000)],
 });
+
 ```
 
 ### Schema-Level Complexity Scoring
@@ -206,6 +211,7 @@ type User {
   # Expensive computed field
   recommendations: [Post!]! @complexity(value: 5)
 }
+
 ```
 
 ### Depth Limiting
@@ -237,6 +243,7 @@ const customDepthLimit = (maxDepth: number) => {
     },
   });
 };
+
 ```
 
 ### Rate Limiting
@@ -294,6 +301,7 @@ const queryLimiter = (maxQueries: number, windowMs: number) => {
     next();
   };
 };
+
 ```
 
 ### Persisted Queries
@@ -322,6 +330,7 @@ const client = new ApolloClient({
   }).concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 ```
 
 ### Authentication
@@ -360,6 +369,7 @@ const authenticate = async (resolve, parent, args, context, info) => {
   }
   return resolve(parent, args, context, info);
 };
+
 ```
 
 ### Authorization
@@ -435,6 +445,7 @@ const authDirectiveTransformer = (schema) =>
       return fieldConfig;
     },
   });
+
 ```
 
 ### Input Validation
@@ -473,6 +484,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### CORS Configuration
@@ -501,6 +513,7 @@ const corsOptions = {
 };
 
 app.use('/graphql', cors(corsOptions));
+
 ```
 
 ### Response Caching
@@ -536,6 +549,7 @@ const typeDefs = `
     currentUser: User @cacheControl(maxAge: 0, scope: PRIVATE)
   }
 `;
+
 ```
 
 ---
@@ -578,6 +592,7 @@ const server = new ApolloServer({
     return formattedError;
   },
 });
+
 ```
 
 ### 2. Query Whitelisting
@@ -612,6 +627,7 @@ const server = new ApolloServer({
     }),
   ],
 });
+
 ```
 
 ### 3. Monitoring and Alerting
@@ -660,6 +676,7 @@ const metricsPlugin = {
     };
   },
 };
+
 ```
 
 ---
@@ -681,6 +698,7 @@ const server = new ApolloServer({
   resolvers,
   validationRules: [complexityRule(1000)],
 });
+
 ```
 
 ### 2. Exposing Introspection in Production
@@ -699,6 +717,7 @@ const server = new ApolloServer({
   resolvers,
   introspection: process.env.NODE_ENV !== 'production',
 });
+
 ```
 
 ### 3. Missing Authentication
@@ -724,6 +743,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 4. Not Using DataLoader
@@ -742,6 +762,7 @@ const resolvers = {
     posts: (parent, _, { loaders }) => loaders.postsByAuthor.load(parent.id),
   },
 };
+
 ```
 
 ### 5. Missing Rate Limiting
@@ -755,6 +776,7 @@ app.use('/graphql', rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
 }), expressMiddleware(server));
+
 ```
 
 ---
@@ -776,6 +798,7 @@ app.use('/graphql', rateLimit({
 □ Log security events
 □ Monitor for attacks
 □ Regular security audits
+
 ```
 
 ### Performance Checklist
@@ -791,6 +814,7 @@ app.use('/graphql', rateLimit({
 □ Implement pagination
 □ Cache expensive operations
 □ Profile resolver execution
+
 ```
 
 ### Query Optimization
@@ -820,6 +844,7 @@ const resolvers = {
 const server = new ApolloServer({
   validationRules: [complexityRule(1000)],
 });
+
 ```
 
 ---
@@ -840,6 +865,7 @@ Key Metrics to Track:
 │  7. Query Throughput    - Requests per second                  │
 │  8. Resolver Duration   - Time per resolver                    │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Caching Strategy
@@ -862,6 +888,7 @@ Cache Layers:
 │  Database Cache                                                  │
 │  └─ Query cache, connection pooling                            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---

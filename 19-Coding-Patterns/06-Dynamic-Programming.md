@@ -39,6 +39,7 @@ function dpTab(n: number): number {
 
   return dp[n];
 }
+
 ```
 
 ## How It Works
@@ -70,6 +71,7 @@ dp[2] = dp[1] + dp[0] = 1
 dp[3] = dp[2] + dp[1] = 2
 dp[4] = dp[3] + dp[2] = 3
 dp[5] = dp[4] + dp[3] = 5
+
 ```
 
 ### ASCII Diagram
@@ -98,6 +100,7 @@ LCS TABLE:
   B     0  1  2  3  4
 
 Answer: 4 (ABCB)
+
 ```
 
 ## Code Examples (TypeScript)
@@ -139,6 +142,7 @@ function fibTab(n: number): number {
 // Example
 console.log(fibMemo(10)); // 55
 console.log(fibTab(10));  // 55
+
 ```
 
 ### Problem 2: 0/1 Knapsack
@@ -166,6 +170,7 @@ function knapsack(weights: number[], values: number[], capacity: number): number
 
 // Example
 console.log(knapsack([2, 3, 4, 5], [3, 4, 5, 6], 5)); // 7
+
 ```
 
 ### Problem 3: Longest Common Subsequence
@@ -194,6 +199,7 @@ function longestCommonSubsequence(text1: string, text2: string): number {
 console.log(longestCommonSubsequence("abcde", "ace")); // 3
 console.log(longestCommonSubsequence("abc", "abc"));   // 3
 console.log(longestCommonSubsequence("abc", "def"));   // 0
+
 ```
 
 ### Problem 4: Longest Increasing Subsequence
@@ -216,6 +222,7 @@ function lengthOfLIS(nums: number[]): number {
 
 // Example
 console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18])); // 4 ([2,3,7,101])
+
 ```
 
 ### Problem 5: Coin Change
@@ -239,6 +246,7 @@ function coinChange(coins: number[], amount: number): number {
 // Example
 console.log(coinChange([1, 2, 5], 11)); // 3 (5 + 5 + 1)
 console.log(coinChange([2], 3));         // -1
+
 ```
 
 ### Problem 6: Edit Distance
@@ -273,14 +281,19 @@ function minDistance(word1: string, word2: string): number {
 // Example
 console.log(minDistance("horse", "ros")); // 3
 console.log(minDistance("intention", "execution")); // 5
+
 ```
 
 ## Common Mistakes
 
 1. **Not identifying overlapping subproblems**: Use memoization to avoid redundant work
+
 2. **Wrong recurrence relation**: Carefully define the relationship between subproblems
+
 3. **Incorrect base case**: Always define base cases before recurrence
+
 4. **Not considering all options**: In knapsack, consider both including and excluding items
+
 5. **Space optimization not needed**: Sometimes O(n) space is sufficient, don't over-optimize
 
 ## Time/Space Complexity
@@ -299,25 +312,37 @@ console.log(minDistance("intention", "execution")); // 5
 ### Easy
 
 1. **Climbing Stairs** (LeetCode 70)
+
 2. **House Robber** (LeetCode 198)
+
 3. **Min Cost Climbing Stairs** (LeetCode 746)
 
 ### Medium
 
 1. **Coin Change** (LeetCode 322)
+
 2. **Longest Increasing Subsequence** (LeetCode 300)
+
 3. **Word Break** (LeetCode 139)
+
 4. **Unique Paths** (LeetCode 62)
+
 5. **Maximum Product Subarray** (LeetCode 152)
+
 6. **Decode Ways** (LeetCode 91)
+
 7. **Longest Common Subsequence** (LeetCode 1143)
 
 ### Hard
 
 1. **Edit Distance** (LeetCode 72)
+
 2. **Burst Balloons** (LeetCode 312)
+
 3. **Regular Expression Matching** (LeetCode 10)
+
 4. **Wildcard Matching** (LeetCode 44)
+
 5. **Longest Valid Parentheses** (LeetCode 32)
 
 ## Summary
@@ -347,15 +372,21 @@ Types:
 └─────────────────────────────────────────┘
 
 Steps to solve DP:
+
 1. Define state: what does dp[i] represent?
+
 2. Base case: what are the simplest cases?
+
 3. Recurrence: how to compute dp[i] from smaller subproblems?
+
 4. Answer: where is the final answer in the table?
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Dynamic Programming](https://leetcode.com/tag/dynamic-programming/)
 - [NeetCode Dynamic Programming](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

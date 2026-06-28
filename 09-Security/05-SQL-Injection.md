@@ -51,6 +51,7 @@ SQL Injection (SQLi) is a code injection technique that exploits security vulner
 │     Payload stored, executed later                              │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Attack Flow
@@ -76,6 +77,7 @@ SQL Injection (SQLi) is a code injection technique that exploits security vulner
      │                               │                               │
      │  4. Authentication bypassed   │                               │
      │<──────────────────────────────│                               │
+
 ```
 
 ## Code Examples
@@ -104,6 +106,7 @@ app.get("/search", async (req, res) => {
   const query = `SELECT * FROM products WHERE name LIKE '%${term}%'`;
   const result = await db.query(query);
 });
+
 ```
 
 ### Secure Code Examples
@@ -164,6 +167,7 @@ app.post("/login", async (req, res) => {
   const query = "SELECT * FROM users WHERE username = $1 AND password = $2";
   const user = await db.query(query, [username, password]);
 });
+
 ```
 
 ### ORM Usage (Prisma)
@@ -216,6 +220,7 @@ const dynamicQuery = async (filters: Record<string, any>) => {
 
   return prisma.user.findMany({ where });
 };
+
 ```
 
 ### Stored Procedure Security
@@ -237,26 +242,31 @@ BEGIN
                QUOTENAME(@ColumnName) + N' LIKE @SearchTerm';
     EXEC sp_executesql @Sql, N'@SearchTerm NVARCHAR(128)', @SearchTerm = @SearchTerm;
 END;
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Login Authentication
+
 - Attackers bypass authentication with `' OR '1'='1`
 - Always use parameterized queries for authentication
 - Implement account lockout after failed attempts
 
 ### 2. Search Functionality
+
 - User search inputs can contain SQLi payloads
 - Use parameterized queries with LIKE clauses
 - Validate and sanitize search terms
 
 ### 3. Data Export
+
 - SQLi in data export can dump entire database
 - Use parameterized queries for all queries
 - Implement access control on export functionality
 
 ### 4. Admin Interfaces
+
 - Admin panels often have more database access
 - SQLi in admin interfaces is especially dangerous
 - Implement least privilege for database accounts
@@ -264,24 +274,39 @@ END;
 ## Common Mistakes
 
 1. **Using string concatenation**: Never concatenate user input into SQL
+
 2. **Not using parameterized queries**: Always use prepared statements
+
 3. **Trusting user input**: Validate and sanitize all input
+
 4. **Using ORM raw queries unsafely**: Even with ORMs, raw queries need parameterization
+
 5. **Not validating data types**: Validate input types before using in queries
+
 6. **Using dynamic SQL without sanitization**: Use QUOTENAME or equivalent
+
 7. **Granting excessive database privileges**: Use least privilege principle
+
 8. **Not monitoring database queries**: Log and monitor for suspicious queries
 
 ## Best Practices
 
 1. **Use parameterized queries** for all database operations
+
 2. **Use ORM** (Prisma, TypeORM, Sequelize) for automatic parameterization
+
 3. **Validate input types** and formats before using in queries
+
 4. **Implement least privilege** for database accounts
+
 5. **Use stored procedures** with parameters
+
 6. **Implement input validation** with allowlists
+
 7. **Use Web Application Firewalls** (WAF) for additional protection
+
 8. **Regular security audits** and penetration testing
+
 9. **Monitor database queries** for suspicious patterns
 10. **Keep database software** up to date
 

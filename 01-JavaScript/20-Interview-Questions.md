@@ -15,6 +15,7 @@ A: Primitive types: Number, String, Boolean, null, undefined, Symbol, BigInt. Re
 **Q3: What is the difference between `let`, `const`, and `var`?**
 
 A:
+
 - `var`: Function-scoped, hoisted, reassignable
 - `let`: Block-scoped, not hoisted (TDZ), reassignable
 - `const`: Block-scoped, not hoisted (TDZ), not reassignable
@@ -60,6 +61,7 @@ A: JavaScript uses prototypal inheritance where objects inherit from other objec
 **Q13: What is the difference between `map`, `filter`, and `reduce`?**
 
 A:
+
 - `map`: Transforms each element, returns new array
 - `filter`: Selects elements based on condition, returns new array
 - `reduce`: Accumulates elements into a single value
@@ -101,6 +103,7 @@ A: Execution context is the environment where code runs. It contains the lexical
 **Q22: What is the difference between call, apply, and bind?**
 
 A:
+
 - `call`: Invokes function with specific `this` and individual arguments
 - `apply`: Invokes function with specific `this` and arguments array
 - `bind`: Returns new function with `this` permanently bound
@@ -175,6 +178,7 @@ function debounce<T extends (...args: any[]) => any>(
     timeoutId = setTimeout(() => func.apply(this, args), wait);
   };
 }
+
 ```
 
 **Q37: Implement a memoization function with LRU cache.**
@@ -199,6 +203,7 @@ function memoize<T extends (...args: any[]) => any>(fn: T, maxSize = 100) {
     return result;
   };
 }
+
 ```
 
 **Q38: Design an event emitter class.**
@@ -225,6 +230,7 @@ class EventEmitter {
     this.listeners.get(event)?.forEach(cb => cb(...args));
   }
 }
+
 ```
 
 **Q39: Implement a deep clone function.**
@@ -248,6 +254,7 @@ function deepClone<T>(obj: T, seen = new WeakMap()): T {
 
   return clone;
 }
+
 ```
 
 **Q40: Design a promise-based task scheduler with concurrency control.**
@@ -284,6 +291,7 @@ class TaskScheduler {
     }
   }
 }
+
 ```
 
 **Q41: Implement a reactive state management system.**
@@ -311,24 +319,39 @@ A: Use Map for registrations, resolve dependencies recursively, handle circular 
 **Q46: How would you optimize a React application that's re-rendering too much?**
 
 A:
+
 1. Use React.memo for pure components
+
 2. Memoize expensive computations with useMemo
+
 3. Memoize callbacks with useCallback
+
 4. Avoid inline objects/functions in JSX
+
 5. Use React DevTools Profiler to identify issues
+
 6. Implement code splitting with React.lazy
+
 7. Use virtualization for long lists
 
 **Q47: Explain how you would debug a memory leak in a production application.**
 
 A:
+
 1. Monitor memory usage over time
+
 2. Take heap snapshots in Chrome DevTools
+
 3. Compare snapshots to find growing objects
+
 4. Check for detached DOM elements
+
 5. Verify event listener cleanup
+
 6. Review closure captures
+
 7. Use performance.memory API
+
 8. Implement memory monitoring alerts
 
 **Q48: How would you implement optimistic UI updates?**
@@ -338,22 +361,35 @@ A: Update UI immediately, make API call, rollback on failure. Use local state fo
 **Q49: Design a caching strategy for a web application.**
 
 A:
+
 1. Browser cache with appropriate headers
+
 2. Service worker for offline support
+
 3. Client-side cache with TTL
+
 4. Server-side cache (Redis)
+
 5. CDN for static assets
+
 6. Cache invalidation strategy
 
 **Q50: How would you handle authentication in a single-page application?**
 
 A:
+
 1. JWT tokens stored in httpOnly cookies
+
 2. Refresh token rotation
+
 3. Secure token storage
+
 4. CSRF protection
+
 5. Session management
+
 6. Automatic logout on inactivity
+
 7. Multi-factor authentication
 
 ## Summary
@@ -361,9 +397,13 @@ A:
 This comprehensive guide covers 50 essential JavaScript interview questions across all difficulty levels:
 
 1. **Beginner**: Core concepts, data types, basic syntax
+
 2. **Intermediate**: Advanced features, patterns, frameworks
+
 3. **Senior**: Architecture, performance, internals
+
 4. **FAANG-style**: System design, implementation, optimization
+
 5. **Follow-ups**: Real-world scenarios, debugging, best practices
 
 Understanding these topics thoroughly will help you ace any JavaScript interview.
@@ -413,6 +453,7 @@ BEST PRACTICES:
 • Testing (Jest, React Testing Library)
 • Code Review
 • Documentation
+
 ```
 
 ## References & Learn More

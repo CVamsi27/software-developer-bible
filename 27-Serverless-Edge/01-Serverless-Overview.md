@@ -4,6 +4,7 @@
 Serverless computing is a cloud execution model where the cloud provider dynamically manages the allocation and provisioning of servers. Developers write and deploy code without worrying about the underlying infrastructure, paying only for actual compute time consumed.
 
 ## Why Do We Need It?
+
 - **No Server Management**: No patching, updating, or maintaining servers
 - **Auto-Scaling**: Automatically scales with demand, including to zero
 - **Cost Efficiency**: Pay only for execution time, not idle resources
@@ -44,11 +45,13 @@ Serverless computing is a cloud execution model where the cloud provider dynamic
 │  │  • Monitor and debug      • Handle errors                   │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## AWS Lambda
 
 ### Lambda Execution Model
+
 ```text
 Lambda Function Lifecycle:
 ┌─────────────────────────────────────────────────────────────────┐
@@ -63,6 +66,7 @@ Lambda Function Lifecycle:
 │  Invoke Phase: Execute handler function                        │
 │  Shutdown: After idle timeout (default 3 min)                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -129,6 +133,7 @@ async function createUser(data: Partial<User>): Promise<User> {
     email: data.email || '',
   };
 }
+
 ```
 
 ### 2. Vercel Serverless Function
@@ -183,6 +188,7 @@ async function updateUser(id: string, data: any) {
 async function deleteUser(id: string) {
   // Implementation
 }
+
 ```
 
 ### 3. Cold Start Optimization
@@ -212,6 +218,7 @@ export const handler = async (event: APIGatewayProxyEvent) => {
     body: JSON.stringify(result.Item),
   };
 };
+
 ```
 
 ### 4. Serverless with DynamoDB Streams
@@ -257,6 +264,7 @@ async function processUpdatedItem(
   console.log('Item updated:', { old: oldItem, new: newItem });
   // Update related data, trigger workflows, etc.
 }
+
 ```
 
 ### 5. Serverless with S3 Events
@@ -297,11 +305,13 @@ async function processFile(key: string, content: string) {
   console.log(`Processing file: ${key}`);
   // Image processing, data validation, etc.
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### API Backend
+
 ```text
 Use Case: RESTful API for mobile app
 ┌─────────────────────────────────────────────────────────────────┐
@@ -313,9 +323,11 @@ Use Case: RESTful API for mobile app
 │  • No server management                                         │
 │  • Built-in authentication (Cognito)                            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Data Processing Pipeline
+
 ```text
 Use Case: Real-time data transformation
 ┌─────────────────────────────────────────────────────────────────┐
@@ -326,22 +338,31 @@ Use Case: Real-time data transformation
 │  • Automatic parallelism                                        │
 │  • Cost-effective for sporadic workloads                        │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Common Mistakes
 
 1. **Cold start latency**: Not optimizing initialization code
+
 2. **Memory allocation**: Under-provisioning memory (also affects CPU)
+
 3. **Timeout limits**: Not handling long-running processes
+
 4. **Vendor lock-in**: Over-relying on provider-specific features
+
 5. **State management**: Assuming state between invocations
 
 ## Best Practices
 
 1. **Minimize cold starts**: Keep packages small, initialize clients outside handler
+
 2. **Right-size memory**: More memory = more CPU = faster execution
+
 3. **Use provisioned concurrency**: For latency-sensitive applications
+
 4. **Implement error handling**: Dead letter queues, retry mechanisms
+
 5. **Monitor and alert**: Track cold starts, duration, error rates
 
 ## Performance Considerations
@@ -361,103 +382,136 @@ Cold Start Optimization:
 │  • Lazy load dependencies                                       │
 │  • Use SnapStart (Java)                                         │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
 
 ### Beginner (5)
+
 1. **What is serverless computing?**
+
    - Answer: A cloud model where providers manage servers; developers deploy code without infrastructure concerns, paying only for execution time.
 
 2. **What is AWS Lambda?**
+
    - Answer: AWS's serverless compute service that runs code in response to events without provisioning or managing servers.
 
 3. **What is a cold start?**
+
    - Answer: The initialization time when a serverless function is invoked for the first time or after being idle, including downloading code and starting the runtime.
 
 4. **What are the benefits of serverless?**
+
    - Answer: No server management, auto-scaling, pay-per-use, faster development, built-in availability.
 
 5. **What is a serverless function trigger?**
+
    - Answer: An event that causes a function to execute, such as HTTP requests, database changes, file uploads, or scheduled events.
 
 ### Intermediate (5)
+
 6. **How do you reduce cold start latency?**
+
    - Answer: Keep packages small, initialize clients outside handler, use provisioned concurrency, choose faster runtimes, minimize VPC configuration.
 
 7. **What is the relationship between memory and CPU in Lambda?**
+
    - Answer: Memory allocation is proportional to CPU allocation. More memory = more CPU power and network bandwidth.
 
 8. **How do you handle errors in serverless functions?**
+
    - Answer: Implement try-catch, use dead letter queues for async invocations, set up CloudWatch alarms, implement retry logic.
 
 9. **What is a Lambda layer?**
+
    - Answer: A package of libraries and dependencies that can be shared across multiple functions, reducing deployment package size.
 
 10. **How do you monitor serverless applications?**
+
     - Answer: Use CloudWatch for logs and metrics, X-Ray for tracing, and third-party tools like Datadog for advanced monitoring.
 
 ### Senior (10)
 11. **How do you handle long-running processes in serverless?**
+
     - Answer: Break into smaller functions, use Step Functions for orchestration, implement async processing with SQS/SNS.
 
 12. **What is the maximum execution time for Lambda?**
+
     - Answer: 15 minutes. For longer processes, use Step Functions or break into smaller tasks.
 
 13. **How do you implement connection pooling in Lambda?**
+
     - Answer: Initialize database connections outside the handler to reuse across invocations. Use RDS Proxy for database connection management.
 
 14. **Explain Lambda concurrency limits**
+
     - Answer: Default 1000 concurrent executions per region. Can request increase. Use reserved concurrency for critical functions.
 
 15. **How do you handle deployment in serverless?**
+
     - Answer: Use frameworks like Serverless Framework or SAM, implement CI/CD pipelines, use infrastructure as code.
 
 16. **What is the impact of VPC on Lambda?**
+
     - Answer: VPC configuration adds cold start latency (1-2 seconds) but provides access to VPC resources like RDS.
 
 17. **How do you test serverless functions locally?**
+
     - Answer: Use SAM Local, Serverless Offline, or LocalStack for local testing and debugging.
 
 18. **What is Lambda@Edge?**
+
     - Answer: Lambda functions that run at CloudFront edge locations, enabling low-latency processing close to users.
 
 19. **How do you handle state in serverless?**
+
     - Answer: Use external stores like DynamoDB, ElastiCache, or S3. Don't rely on in-memory state between invocations.
 
 20. **What are the cost considerations for serverless?**
+
     - Answer: Pay per request and duration, consider provisioned concurrency costs, monitor for cost optimization opportunities.
 
 ### FAANG-style (5)
 21. **Design a serverless architecture for a real-time chat application**
+
     - Answer: API Gateway + Lambda for API, WebSocket API for real-time, DynamoDB for storage, ElastiCache for session management, SNS for notifications.
 
 22. **How would you implement CI/CD for serverless?**
+
     - Answer: Use GitHub Actions/GitLab CI, SAM/Serverless Framework for deployment, automate testing with SAM Local, implement canary deployments.
 
 23. **Explain serverless at scale**
+
     - Answer: Handle cold starts with provisioned concurrency, implement circuit breakers, use multiple regions for availability, optimize cost with right-sizing.
 
 24. **How do you debug serverless in production?**
+
     - Answer: Use X-Ray for distributed tracing, CloudWatch Logs Insights for log analysis, implement structured logging, use custom metrics.
 
 25. **Design a serverless data pipeline**
+
     - Answer: S3 → Lambda (trigger) → Transform → Write to data store. Use Step Functions for orchestration, SQS for buffering, DynamoDB for metadata.
 
 ### Follow-ups (5)
 26. **How do you handle secrets in serverless?**
+
     - Answer: Use AWS Secrets Manager or Parameter Store, avoid hardcoding, rotate secrets regularly, use IAM roles for service access.
 
 27. **What is the impact of serverless on database design?**
+
     - Answer: Consider connection pooling, use serverless-friendly databases (DynamoDB, Aurora Serverless), optimize for Lambda's execution model.
 
 28. **How do you handle rate limiting in serverless?**
+
     - Answer: Use API Gateway throttling, implement token bucket in DynamoDB, use WAF for additional protection.
 
 29. **What are the limitations of serverless?**
+
     - Answer: Cold starts, execution time limits, memory limits, vendor lock-in, debugging complexity.
 
 30. **How do you migrate from server to serverless?**
+
     - Answer: Start with new features, refactor stateless components first, use strangler fig pattern, implement comprehensive testing.
 
 ## Summary

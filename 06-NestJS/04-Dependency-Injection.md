@@ -9,10 +9,15 @@ In NestJS, DI works through constructor injection: you declare dependencies as c
 ## Why Do We Need It?
 
 1. **Loose Coupling**: Components depend on abstractions, not concrete implementations.
+
 2. **Testability**: Easy to mock dependencies for unit testing.
+
 3. **Maintainability**: Dependencies are explicitly declared and managed centrally.
+
 4. **Reusability**: Services can be used in different contexts with different implementations.
+
 5. **Lifecycle Management**: The container manages instantiation, scoping, and cleanup.
+
 6. **Configuration**: Different configurations for different environments through DI.
 
 ## How It Works
@@ -20,9 +25,13 @@ In NestJS, DI works through constructor injection: you declare dependencies as c
 NestJS's DI container works in several phases:
 
 1. **Collection**: Gather all providers from modules
+
 2. **Resolution**: Build a dependency graph
+
 3. **Instantiation**: Create instances in topological order
+
 4. **Injection**: Inject dependencies through constructors
+
 5. **Caching**: Cache instances for singleton scope
 
 ### DI Resolution Flow
@@ -55,6 +64,7 @@ NestJS's DI container works in several phases:
 │  4. Instantiate and cache (singleton)                       │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Constructor Injection
@@ -82,6 +92,7 @@ NestJS's DI container works in several phases:
 │  └────────────────────────────────────────────────┘  │
 │                                                      │
 └──────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -110,6 +121,7 @@ export class UserService {
     return users;
   }
 }
+
 ```
 
 ### Injection Tokens
@@ -153,6 +165,7 @@ export class OrderService {
     private readonly paymentService: PaymentService,
   ) {}
 }
+
 ```
 
 ### Symbol Injection Tokens
@@ -187,6 +200,7 @@ export class AppService {
     private readonly cache: CacheService,
   ) {}
 }
+
 ```
 
 ### Interface Injection
@@ -227,6 +241,7 @@ export class UserController {
     private readonly userService: IUserService,
   ) {}
 }
+
 ```
 
 ### Provider Override in Tests
@@ -266,6 +281,7 @@ describe('UserService', () => {
     expect(mockUserRepository.findAll).toHaveBeenCalled();
   });
 });
+
 ```
 
 ### Dynamic Provider Resolution
@@ -286,6 +302,7 @@ export class NotificationService {
     return handler.send(data);
   }
 }
+
 ```
 
 ### Forward Reference for Circular Dependencies
@@ -320,6 +337,7 @@ export class ServiceB {
     private serviceA: ServiceA,
   ) {}
 }
+
 ```
 
 ### Custom Provider Patterns
@@ -348,6 +366,7 @@ export class ServiceB {
   ],
 })
 export class HttpModule {}
+
 ```
 
 ### Scoped Providers
@@ -391,6 +410,7 @@ export class ServiceA {
 export class ServiceB {
   constructor(private readonly counter: Counter) {} // Different counter
 }
+
 ```
 
 ## Real-World Use Cases
@@ -417,6 +437,7 @@ export const PAYMENT_STRATEGY = 'PAYMENT_STRATEGY';
   ],
 })
 export class PaymentModule {}
+
 ```
 
 ### 2. Database Connection Pool
@@ -446,6 +467,7 @@ export class DatabaseModule {
     };
   }
 }
+
 ```
 
 ### 3. Event-Driven Architecture
@@ -484,6 +506,7 @@ export class UserService {
     return user;
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -502,6 +525,7 @@ export class UserService {
 export class UserService {
   constructor(private readonly repo: UserRepository) {}
 }
+
 ```
 
 ### 2. Circular Dependencies Without Resolution
@@ -521,6 +545,7 @@ export class ServiceA {
     private serviceB: ServiceB,
   ) {}
 }
+
 ```
 
 ### 3. Injecting Request-Scoped Providers into Singletons
@@ -542,6 +567,7 @@ export class UserService {
     // ...
   }
 }
+
 ```
 
 ### 4. Overusing @Inject()
@@ -565,6 +591,7 @@ export class UserService {
     private payment: PaymentService,
   ) {}
 }
+
 ```
 
 ### 5. Not Handling Provider Errors
@@ -590,28 +617,42 @@ export class UserService {
     }
   },
 }
+
 ```
 
 ## Best Practices
 
 1. **Constructor Injection**: Always use constructor injection for dependencies.
+
 2. **Interface Tokens**: Use interfaces/tokens for flexible provider binding.
+
 3. **Minimal Dependencies**: Keep provider dependencies minimal.
+
 4. **Forward Reference**: Use `forwardRef()` to resolve circular dependencies.
+
 5. **Provider Scope**: Choose appropriate scope for each provider.
+
 6. **Factory Providers**: Use factories for complex initialization.
+
 7. **Error Handling**: Handle errors in factory providers.
+
 8. **Testing**: Override providers in tests for isolation.
+
 9. **Documentation**: Document complex provider configurations.
 10. **Lifecycle Hooks**: Implement cleanup in `OnModuleDestroy`.
 
 ## Performance Considerations
 
 1. **Singleton Caching**: Singletons are cached — instantiate only once.
+
 2. **Transient Overhead**: Transient providers create new instances per injection.
+
 3. **Request Scope**: Request-scoped providers add overhead per request.
+
 4. **Lazy Resolution**: Providers can be resolved lazily on first use.
+
 5. **Circular Resolution**: Circular dependencies add resolution overhead.
+
 6. **Factory Execution**: Factory providers run at module initialization.
 
 ## Interview Questions
@@ -642,6 +683,7 @@ Tokens (strings, Symbols, or classes) used to identify providers when the type a
 Use `forwardRef()` to defer resolution, or restructure code to remove the circular dependency.
 
 **Q8: What is the difference between `useClass` and `useFactory`?**
+
 - `useClass`: Instantiates a class as the provider
 - `useFactory`: Uses a function to create the provider (more flexible)
 
@@ -663,6 +705,7 @@ Use `useFactory` with an async function, or implement `OnModuleInit` lifecycle h
 Implement a container with registration, resolution, scoping, and lifecycle management. Use graph algorithms for dependency resolution.
 
 **Q14: What are the performance implications of DI?**
+
 - Startup time: Graph resolution and instantiation
 - Memory: Singleton caching vs transient overhead
 - Request latency: Request-scoped provider creation
@@ -684,6 +727,7 @@ class Container {
   resolve<T>(token: Token): T { ... }
   inject<T>(token: Token): T { ... }
 }
+
 ```
 
 **Q17: How would you implement request context propagation?**
@@ -696,6 +740,7 @@ Use dynamic modules with tenant-specific providers. Create isolated DI container
 Use shared libraries with local DI, or centralized service discovery with remote provider resolution.
 
 **Q20: How would you optimize DI performance?**
+
 - Lazy instantiation
 - Provider pooling
 - Dependency caching

@@ -13,8 +13,11 @@ Fiber represents each component as a **fiber node** (a JavaScript object) contai
 The previous reconciler (React 15 and earlier) was synchronous and unblockable:
 
 1. **Main thread blocking**: Once React started rendering, it couldn't be interrupted. Long component trees would block the main thread.
+
 2. **No prioritization**: All updates were treated equally. A typing event and a data fetch completion got the same priority.
+
 3. **Janky animations**: Long renders caused frame drops, making animations janky.
+
 4. **No pause/resume**: React couldn't pause rendering to handle urgent events.
 
 ```text
@@ -49,6 +52,7 @@ Fiber Reconciler (React 16+):
 │ └──────────────────────────────────────────┘ │
 │ Total: 3 frames, no jank, events handled    │
 └──────────────────────────────────────────────┘
+
 ```
 
 ## How It Works
@@ -92,6 +96,7 @@ interface FiberNode {
   layoutEffect: Effect | null;     // useLayoutEffect effects
   destroyEffect: Effect | null;    // Cleanup functions
 }
+
 ```
 
 ### Fiber Tree Structure
@@ -122,12 +127,19 @@ Fiber Tree (Linked List):
     └── sibling: null
 
 Traversal Order:
+
 1. App → Header → Logo (child-first, depth-first)
+
 2. → Nav (sibling of Logo)
+
 3. → Main (sibling of Header)
+
 4. → Card → Title → Content
+
 5. → Sidebar (sibling of Card)
+
 6. → Footer (sibling of Main)
+
 ```
 
 ### Work Loop
@@ -175,6 +187,7 @@ performUnitOfWork(fiber) {
 
   return null;
 }
+
 ```
 
 ### Two-Phase Rendering
@@ -216,6 +229,7 @@ Commit Phase (不可中断):
 │ 3. Layout: useLayoutEffect callbacks            │
 │ 4. Passive: useEffect callbacks (async)         │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ### Priority Lanes
@@ -256,6 +270,7 @@ Lane Example:
 │ Frame 3: Process Transition lanes (low priority)          │
 │ Frame 4: Process Idle lane (background)                   │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -285,6 +300,7 @@ enum WorkTag {
   LazyComponent = 14,
   // ... more types
 }
+
 ```
 
 ### Demonstrating Concurrent Rendering
@@ -316,6 +332,7 @@ const SearchApp = () => {
     </div>
   );
 };
+
 ```
 
 ### Demonstrating Time Slicing
@@ -345,6 +362,7 @@ const LargeList = () => {
     </div>
   );
 };
+
 ```
 
 ### useTransition vs useDeferredValue
@@ -383,6 +401,7 @@ const useDeferredValueExample = () => {
     </div>
   );
 };
+
 ```
 
 ### Concurrent Features in Action
@@ -413,6 +432,7 @@ const ConcurrentApp = () => {
     </div>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -443,6 +463,7 @@ const SearchDashboard = () => {
     </div>
   );
 };
+
 ```
 
 ### 2. Tab Switching with Heavy Content
@@ -470,6 +491,7 @@ const TabContainer = () => {
     </div>
   );
 };
+
 ```
 
 ### 3. Animation with Priority
@@ -498,6 +520,7 @@ const AnimatedList = () => {
     </div>
   );
 };
+
 ```
 
 ### 4. Server-Side Rendering with Streaming
@@ -526,6 +549,7 @@ const root = ReactDOM.hydrateRoot(
     onHydrated: () => console.log('Hydrated'),
   }
 );
+
 ```
 
 ## Common Mistakes
@@ -541,6 +565,7 @@ const App = () => {
   const [isPending, startTransition] = useTransition();
   // ...
 };
+
 ```
 
 ### 2. Assuming All Updates Are Low Priority
@@ -561,6 +586,7 @@ const handleSearch = (value: string) => {
     setFilteredResults(filterData(value)); // Non-urgent: can be deferred
   });
 };
+
 ```
 
 ### 3. Misunderstanding `useDeferredValue`
@@ -572,6 +598,7 @@ const deferredValue = useDeferredValue(expensiveValue); // Wrong: defeats the pu
 
 // ✅ CORRECT: Use useDeferredValue for derived values that can lag
 const query = useDeferredValue(searchInput); // OK: search results can lag
+
 ```
 
 ### 4. Not Understanding Lane Priorities
@@ -598,16 +625,23 @@ const handleMixed = () => {
     setDeferredState(newValue);
   });
 };
+
 ```
 
 ## Best Practices
 
 1. **Use `useTransition` for non-urgent state updates**: Search filtering, tab switching, list updates.
+
 2. **Use `useDeferredValue` for derived values**: When a value can lag behind its source.
+
 3. **Keep urgent updates outside `startTransition`**: Input values, click handlers should be immediate.
+
 4. **Profile before using concurrent features**: Not all apps need them.
+
 5. **Combine with `React.memo`**: Concurrent features work best with memoized components.
+
 6. **Use Suspense with concurrent features**: Boundaries help React prioritize hydration.
+
 7. **Understand the lanes model**: Know which updates get which priority.
 
 ## Performance Considerations
@@ -615,6 +649,7 @@ const handleMixed = () => {
 ### Fiber Overhead
 
 Fiber adds memory overhead compared to the stack reconciler:
+
 - Each fiber node is ~1KB (vs ~100B for stack frames)
 - Linked list structure requires more memory
 - Scheduling logic adds CPU overhead
@@ -664,9 +699,13 @@ A: `useDeferredValue` returns a deferred version of a value that can lag behind 
 
 **Q9: How does Fiber improve performance?**
 A: Fiber improves performance by:
+
 1. Not blocking the main thread during rendering
+
 2. Prioritizing urgent updates over non-urgent ones
+
 3. Allowing React to keep the UI responsive during heavy renders
+
 4. Enabling concurrent features like transitions
 
 **Q10: Is Fiber a new API or internal architecture?**
@@ -676,7 +715,9 @@ A: Fiber is an internal architecture change, not a new API. Developers don't int
 
 **Q11: Explain the two-tree architecture in Fiber.**
 A: Fiber maintains two fiber trees:
+
 1. **Current tree**: Represents what's currently on screen
+
 2. **Work-in-progress tree**: Being constructed during rendering
 When rendering completes, the work-in-progress tree becomes the current tree (via the `alternate` link).
 
@@ -685,6 +726,7 @@ A: The `alternate` property on a fiber node points to the corresponding fiber in
 
 **Q13: How does Fiber handle side effects?**
 A: Effects (like `useEffect`) are collected during the render phase and applied during the commit phase. Each fiber can have:
+
 - `updateEffect`: For `useEffect`
 - `layoutEffect`: For `useLayoutEffect`
 - `destroyEffect`: For cleanup functions
@@ -702,13 +744,18 @@ const handleClick = () => {
   // DOM is now updated
   console.log(document.getElementById('count')?.textContent); // Shows new count
 };
+
 ```
 
 **Q15: How does React schedule work?**
 A: React uses a scheduler based on `MessageChannel` (or `requestIdleCallback` polyfill). The scheduler:
+
 1. Accepts tasks with priority levels
+
 2. Uses a task queue sorted by priority
+
 3. Executes tasks within frame budget (~16ms)
+
 4. Yields to browser when time runs out
 
 **Q16: What is the difference between `useTransition` and `setTimeout`?**
@@ -730,6 +777,7 @@ A: `NoMode` is a fiber mode flag. In React 18, the default mode enables concurre
 
 **Q21: Explain the complete Fiber work loop algorithm.**
 A:
+
 ```typescript
 function workLoop(deadline) {
   while (nextUnitOfWork && !shouldYield()) {
@@ -755,6 +803,7 @@ function performUnitOfWork(fiber) {
   }
   return null;
 }
+
 ```
 
 **Q22: How does React determine if a transition is "urgent"?**
@@ -765,10 +814,15 @@ A: `useTransition` returns `isPending` (a boolean tracking if the transition is 
 
 **Q24: How does Fiber handle Suspense boundaries?**
 A: When a component suspends (throws a Promise), React:
+
 1. Catches the promise at the Suspense boundary
+
 2. Marks the suspended fiber as "suspended"
+
 3. Shows the fallback UI
+
 4. When the promise resolves, React resumes rendering and commits the real UI
+
 5. This works because Fiber can pause/resume rendering
 
 **Q25: Explain the `subtreeFlags` property.**
@@ -793,10 +847,15 @@ A: During the render phase, React uses keys to match old and new children. If a 
 
 **Q31: Design a system that uses concurrent features for a real-time collaborative editor.**
 A:
+
 1. **Priority model**: User keystrokes → Sync lane; remote changes → Transition lanes
+
 2. **useTransition**: Mark remote changes as non-urgent
+
 3. **useDeferredValue**: Defer rendering of non-visible collaborators
+
 4. **Suspense**: Lazy load collaborative features
+
 5. **State management**: CRDT-based with React state
 
 ```typescript
@@ -827,23 +886,31 @@ const CollaborativeEditor = () => {
     </div>
   );
 };
+
 ```
 
 **Q32: How would you debug a Fiber-related performance issue?**
 A:
+
 1. **React DevTools Profiler**: Record interactions, identify slow commits
+
 2. **Chrome DevTools Performance**: Record and analyze fiber processing time
+
 3. **React.Profiler component**: Programmatic profiling with `onRender` callback
+
 4. **Lane analysis**: Log which lanes are being processed
+
 5. **Custom fiber inspection**: Access fiber nodes via `__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED`
 
 **Q33: Explain the memory model of Fiber and how to optimize it.**
 A: Each fiber node contains:
+
 - ~50 properties (1-2KB each)
 - References to other fibers (parent, child, sibling, alternate)
 - State, props, effects
 
 Optimization:
+
 - **Component unmounting**: Ensure components unmount when not needed
 - **Virtualization**: Only render visible components
 - **State cleanup**: Clean up state when components unmount
@@ -851,9 +918,13 @@ Optimization:
 
 **Q34: How would you implement a custom scheduler on top of Fiber?**
 A:
+
 1. **Access fiber internals**: Use React's internal APIs (not recommended for production)
+
 2. **Custom lanes**: Define custom lane priorities for your use case
+
 3. **Task scheduling**: Use `scheduler` package to schedule work
+
 4. **Priority inversion**: Implement priority inheritance for nested updates
 
 ```typescript
@@ -868,18 +939,25 @@ const CustomScheduler = () => {
 
   return { scheduleTask };
 };
+
 ```
 
 **Q35: How does Fiber handle the interaction between concurrent rendering and Suspense?**
 A: When a component suspends during concurrent rendering:
+
 1. React pauses rendering of the suspended subtree
+
 2. The Suspense boundary shows the fallback
+
 3. React continues rendering other parts of the tree
+
 4. When the promise resolves, React resumes rendering the suspended subtree
+
 5. React commits all changes atomically
 
 **Q36: Analyze the performance characteristics of the Fiber architecture.**
 A:
+
 | Metric | Stack Reconciler | Fiber Reconciler |
 |--------|-----------------|------------------|
 | Memory per component | ~100B | ~1-2KB |
@@ -890,9 +968,13 @@ A:
 
 **Q37: How would you test concurrent features in a CI environment?**
 A:
+
 1. **React Testing Library**: Use `act()` to wrap concurrent updates
+
 2. **Fake timers**: Control `setTimeout` and `MessageChannel` for deterministic testing
+
 3. **Custom scheduler**: Mock React's scheduler for testing priority
+
 4. **End-to-end tests**: Use Cypress/Playwright with `waitFor` for async updates
 
 ```typescript
@@ -909,6 +991,7 @@ test('concurrent update', async () => {
 
   expect(result.current.isPending).toBe(false);
 });
+
 ```
 
 **Q38: How does Fiber interact with React Server Components?**
@@ -919,15 +1002,20 @@ A: This experimental feature allows React to avoid showing Suspense fallbacks du
 
 **Q40: How would you implement a priority queue for custom React scheduling?**
 A:
+
 1. **Define lanes**: Create custom lane constants for your priorities
+
 2. **Schedule updates**: Use `React.startTransition` with custom priorities
+
 3. **Lane merging**: Implement lane intersection for priority inheritance
+
 4. **Scheduler integration**: Use `scheduler` package with custom priorities
 
 ### Follow-ups (5-10)
 
 **Q41: What is the relationship between Fiber and React 18's concurrent rendering?**
 A: Fiber is the foundation that enables concurrent rendering. React 18 builds on Fiber to add:
+
 - Time-sliced rendering
 - Priority-based scheduling
 - Transitions
@@ -939,6 +1027,7 @@ A: "Fiber is like a smart scheduling system for React. Instead of doing all the 
 
 **Q43: What are the limitations of the current Fiber implementation?**
 A:
+
 - Memory overhead (2x compared to stack reconciler)
 - Complexity (harder to debug)
 - Some concurrent features are still experimental
@@ -955,6 +1044,7 @@ A: The Profiler hooks into Fiber's `onRender` callback. During the commit phase,
 
 **Q47: What is the future of Fiber?**
 A: React is exploring:
+
 - Better time-slicing algorithms
 - Offscreen rendering (now called Activity)
 - Automatic memoization via React Compiler
@@ -963,17 +1053,26 @@ A: React is exploring:
 
 **Q48: How would you optimize Fiber for a specific use case (e.g., games)?**
 A: For games:
+
 1. **Direct DOM manipulation**: Use refs for high-frequency updates
+
 2. **requestAnimationFrame**: Bypass React's scheduler for animations
+
 3. **Minimal state**: Store game state outside React state
+
 4. **Web Workers**: Offload heavy computation
+
 5. **Custom reconciler**: If needed, create a game-specific reconciler
 
 **Q49: How does Fiber handle the interaction between `useEffect` and concurrent rendering?**
 A: `useEffect` runs after the commit phase, during browser idle time. During concurrent rendering:
+
 1. Effects are collected during render phase
+
 2. Previous effects are cleaned up during commit
+
 3. New effects are scheduled via `requestIdleCallback` or `MessageChannel`
+
 4. React can batch multiple effect runs
 
 **Q50: What is the `NoCommit` flag and how does it affect Fiber?**
@@ -1025,6 +1124,7 @@ Common Pitfalls:
 ├── Assuming all updates are equal priority
 ├── Not profiling before using concurrent features
 └── Over-using startTransition for simple updates
+
 ```
 
 ## References & Learn More

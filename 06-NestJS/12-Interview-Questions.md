@@ -11,6 +11,7 @@
 **Answer:** NestJS is a progressive Node.js framework for building efficient, scalable server-side applications. It uses TypeScript and combines OOP (Object-Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).
 
 **Why use it:**
+
 - Built-in dependency injection
 - Modular architecture
 - TypeScript-first
@@ -22,6 +23,7 @@
 ### Q2: What are the main components of a NestJS application?
 
 **Answer:**
+
 - **Modules**: Organize code into related capabilities
 - **Controllers**: Handle HTTP requests and define routes
 - **Providers/Services**: Business logic and data access
@@ -34,6 +36,7 @@
 ### Q3: What is the difference between NestJS and Express?
 
 **Answer:**
+
 | Feature | NestJS | Express |
 |---------|--------|---------|
 | Architecture | Opinionated, modular | Unopinionated, minimal |
@@ -50,6 +53,7 @@ NestJS uses Express (or Fastify) under the hood but adds structure and features.
 **Answer:** A module is a class decorated with `@Module()` that organizes closely related set of capabilities. Every NestJS app has at least one module (root module).
 
 Properties:
+
 - `providers`: Services available within the module
 - `controllers`: Request handlers
 - `imports`: Other modules whose exports are needed
@@ -67,6 +71,7 @@ export class UserService {
     private readonly cacheService: CacheService, // Injected
   ) {}
 }
+
 ```
 
 Benefits: Loose coupling, testability, reusability.
@@ -74,6 +79,7 @@ Benefits: Loose coupling, testability, reusability.
 ### Q6: What is the difference between `@Injectable()` and `@Inject()`?
 
 **Answer:**
+
 - `@Injectable()`: Marks a class as a provider that can be managed by DI container
 - `@Inject()`: Used to inject dependencies using custom tokens when type alone isn't sufficient
 
@@ -85,11 +91,13 @@ constructor(
   @Inject('CUSTOM_TOKEN') // Custom token injection
   private custom: any,
 ) {}
+
 ```
 
 ### Q7: What are the different HTTP method decorators in NestJS?
 
 **Answer:**
+
 - `@Get()` - GET requests
 - `@Post()` - POST requests
 - `@Put()` - PUT requests (full update)
@@ -124,6 +132,7 @@ app.useGlobalPipes(new ValidationPipe({
 create(@Body() dto: CreateUserDto) {
   return this.userService.create(dto);
 }
+
 ```
 
 ### Q9: What is the purpose of `@Controller()` decorator?
@@ -139,11 +148,13 @@ export class UserController {
   @Get(':id') // GET /users/:id
   findOne(@Param('id') id: string) {}
 }
+
 ```
 
 ### Q10: How do you run a NestJS application?
 
 **Answer:**
+
 ```bash
 # Development
 npm run start:dev
@@ -154,15 +165,18 @@ npm run start:prod
 
 # With debugging
 npm run start:debug
+
 ```
 
 The entry point is `main.ts`:
+
 ```typescript
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3000);
 }
 bootstrap();
+
 ```
 
 ---
@@ -172,14 +186,17 @@ bootstrap();
 ### Q11: What is middleware and how does it differ from guards?
 
 **Answer:**
+
 - **Middleware**: Executes before routing, handles cross-cutting concerns (logging, CORS)
 - **Guard**: Executes after routing, handles authorization
 
 ```text
 Request → Middleware → Guard → Interceptor → Pipe → Controller
+
 ```
 
 Middleware:
+
 ```typescript
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
@@ -188,11 +205,13 @@ export class LoggerMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ### Q12: What is the difference between `@Put()` and `@Patch()`?
 
 **Answer:**
+
 - `@Put()`: Full replacement of the resource
 - `@Patch()`: Partial update of specific fields
 
@@ -206,11 +225,13 @@ replace(@Body() dto: FullUserDto) {
 update(@Body() dto: PartialUserDto) {
   // Updates only provided fields
 }
+
 ```
 
 ### Q13: What is a DTO and why is it important?
 
 **Answer:** DTO (Data Transfer Object) defines the shape of data for requests/responses. It enables:
+
 - Input validation
 - Type safety
 - API documentation (Swagger)
@@ -225,13 +246,17 @@ export class CreateUserDto {
   @IsEmail()
   email: string;
 }
+
 ```
 
 ### Q14: How do you implement authentication in NestJS?
 
 **Answer:**
+
 1. Use `@nestjs/jwt` for JWT tokens
+
 2. Create an AuthGuard
+
 3. Apply guard to protected routes
 
 ```typescript
@@ -246,11 +271,13 @@ export class UserController {
     return req.user;
   }
 }
+
 ```
 
 ### Q15: What is the difference between a Guard and an Interceptor?
 
 **Answer:**
+
 | Feature | Guard | Interceptor |
 |---------|-------|-------------|
 | Purpose | Authorization | Cross-cutting concerns |
@@ -262,12 +289,16 @@ export class UserController {
 ### Q16: How do you handle errors in NestJS?
 
 **Answer:**
+
 1. Throw HTTP exceptions:
+
 ```typescript
 throw new NotFoundException('User not found');
+
 ```
 
 2. Use exception filters:
+
 ```typescript
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -279,11 +310,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ### Q17: What is the difference between `useClass`, `useFactory`, `useValue`, and `useExisting`?
 
 **Answer:**
+
 ```typescript
 // useClass: Instantiate a class
 { provide: 'SERVICE', useClass: MyService }
@@ -296,11 +329,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
 
 // useExisting: Alias to existing provider
 { provide: 'Alias', useExisting: MyService }
+
 ```
 
 ### Q18: What is the purpose of `@nestjs/config`?
 
 **Answer:** It provides Type-safe configuration management:
+
 ```typescript
 @Module({
   imports: [
@@ -321,11 +356,13 @@ export class AppService {
     return this.config.get<string>('DB_HOST');
   }
 }
+
 ```
 
 ### Q19: How do you test a NestJS service?
 
 **Answer:**
+
 ```typescript
 describe('UserService', () => {
   let service: UserService;
@@ -348,11 +385,13 @@ describe('UserService', () => {
     expect(await service.findAll()).toEqual([]);
   });
 });
+
 ```
 
 ### Q20: What is Swagger and how do you integrate it?
 
 **Answer:** Swagger provides API documentation:
+
 ```typescript
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
@@ -370,9 +409,11 @@ async function bootstrap() {
 
   await app.listen(3000);
 }
+
 ```
 
 Controller:
+
 ```typescript
 @ApiTags('users')
 @Controller('users')
@@ -382,6 +423,7 @@ export class UserController {
   @Get()
   findAll() {}
 }
+
 ```
 
 ---
@@ -391,18 +433,27 @@ export class UserController {
 ### Q21: How would you design a scalable NestJS application?
 
 **Answer:**
+
 1. **Modular Architecture**: Group by feature
+
 2. **CQRS**: Separate read/write models
+
 3. **Event-Driven**: Use message brokers for async communication
+
 4. **Caching**: Redis for response caching
+
 5. **Database**: Read replicas, connection pooling
+
 6. **Microservices**: Split by bounded context
+
 7. **Load Balancing**: Multiple instances behind load balancer
+
 8. **Monitoring**: Logging, metrics, tracing
 
 ### Q22: Explain the NestJS request lifecycle
 
 **Answer:**
+
 ```text
 Request
   → Global Middleware
@@ -414,11 +465,13 @@ Request
           ← Interceptor (after)
       ← Exception Filter (if error)
   ← Response
+
 ```
 
 ### Q23: What is the difference between Singleton, Transient, and Request scope?
 
 **Answer:**
+
 - **Singleton (Default)**: One instance per module
 - **Transient**: New instance per consumer
 - **Request**: New instance per HTTP request
@@ -434,11 +487,13 @@ class TransientService {}
 class RequestService {
   constructor(private request: Request) {}
 }
+
 ```
 
 ### Q24: How do you implement CQRS in NestJS?
 
 **Answer:**
+
 ```typescript
 // Command
 export class CreateUserCommand {
@@ -460,11 +515,13 @@ export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
 async create(@Body() dto: CreateUserDto) {
   return this.commandBus.execute(new CreateUserCommand(dto.name, dto.email));
 }
+
 ```
 
 ### Q25: What is the difference between `ClientProxy.send()` and `ClientProxy.emit()`?
 
 **Answer:**
+
 - `send()`: Request-response pattern, expects response
 - `emit()`: Event pattern, fire-and-forget
 
@@ -474,12 +531,14 @@ const user = await this.client.send({ cmd: 'get_user' }, { id }).toPromise();
 
 // Event
 this.client.emit('user_created', userData);
+
 ```
 
 ### Q26: How do you implement rate limiting in NestJS?
 
 **Answer:**
 Using `@nestjs/throttler`:
+
 ```typescript
 @Module({
   imports: [
@@ -496,11 +555,13 @@ export class AppModule {}
 @UseGuards(ThrottlerGuard)
 @Get('expensive')
 expensiveEndpoint() {}
+
 ```
 
 ### Q27: How do you implement file uploads in NestJS?
 
 **Answer:**
+
 ```typescript
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 
@@ -518,11 +579,13 @@ export class UploadController {
     return files.map(f => ({ filename: f.originalname }));
   }
 }
+
 ```
 
 ### Q28: How do you implement WebSocket in NestJS?
 
 **Answer:**
+
 ```typescript
 // Gateway
 @WebSocketGateway()
@@ -544,12 +607,14 @@ export class EventsGateway {
   providers: [EventsGateway],
 })
 export class EventsModule {}
+
 ```
 
 ### Q29: How do you handle database transactions in NestJS?
 
 **Answer:**
 Using TypeORM:
+
 ```typescript
 @Injectable()
 export class UserService {
@@ -573,11 +638,13 @@ export class UserService {
     }
   }
 }
+
 ```
 
 ### Q30: What is the purpose of `OnModuleInit` and `OnApplicationShutdown`?
 
 **Answer:** Lifecycle hooks:
+
 ```typescript
 @Injectable()
 export class AppService implements OnModuleInit, OnApplicationShutdown {
@@ -591,6 +658,7 @@ export class AppService implements OnModuleInit, OnApplicationShutdown {
     await this.closeConnection();
   }
 }
+
 ```
 
 ---
@@ -600,6 +668,7 @@ export class AppService implements OnModuleInit, OnApplicationShutdown {
 ### Q31: Design a multi-tenant NestJS application
 
 **Answer:**
+
 ```typescript
 // Tenant middleware
 @Injectable()
@@ -624,11 +693,13 @@ export class UserService {
     return this.connection.getRepository(User).find();
   }
 }
+
 ```
 
 ### Q32: How would you implement distributed caching?
 
 **Answer:**
+
 ```typescript
 // Redis cache module
 @Module({
@@ -660,11 +731,13 @@ export class ProductService {
     return products;
   }
 }
+
 ```
 
 ### Q33: Design a circuit breaker pattern in NestJS
 
 **Answer:**
+
 ```typescript
 @Injectable()
 export class CircuitBreakerService {
@@ -701,11 +774,13 @@ export class CircuitBreakerService {
     }
   }
 }
+
 ```
 
 ### Q34: How would you implement event sourcing in NestJS?
 
 **Answer:**
+
 ```typescript
 // Event store
 @Injectable()
@@ -740,11 +815,13 @@ export class OrderAggregate {
     this.applyEvent(event);
   }
 }
+
 ```
 
 ### Q35: Design a real-time notification system
 
 **Answer:**
+
 ```typescript
 // Notification service
 @Injectable()
@@ -786,11 +863,13 @@ export class NotificationGateway {
     this.server.to(`user:${userId}`).emit('notification', notification);
   }
 }
+
 ```
 
 ### Q36: How would you implement API versioning?
 
 **Answer:**
+
 ```typescript
 // main.ts
 app.enableVersioning({
@@ -809,11 +888,13 @@ export class UsersV2Controller {
   @Get()
   findAll() { return 'v2 users with new fields'; }
 }
+
 ```
 
 ### Q37: Design a feature flag system
 
 **Answer:**
+
 ```typescript
 @Injectable()
 export class FeatureFlagService {
@@ -854,13 +935,17 @@ export class FeatureFlagGuard implements CanActivate {
     return this.featureService.isEnabled(flag);
   }
 }
+
 ```
 
 ### Q38: How would you implement zero-downtime deployments?
 
 **Answer:**
+
 1. **Health Checks**: Ensure service is ready before accepting traffic
+
 2. **Graceful Shutdown**: Complete in-flight requests before stopping
+
 3. **Load Balancer**: Route traffic away from old instances
 
 ```typescript
@@ -886,11 +971,13 @@ export class AppService implements OnApplicationShutdown {
     await this.server.close();
   }
 }
+
 ```
 
 ### Q39: Design a distributed tracing system
 
 **Answer:**
+
 ```typescript
 // Trace interceptor
 @Injectable()
@@ -924,19 +1011,29 @@ export class TraceInterceptor implements NestInterceptor {
     this.tracer.export({ traceId, spanId, duration, status });
   }
 }
+
 ```
 
 ### Q40: How would you optimize NestJS application performance?
 
 **Answer:**
+
 1. **Caching**: Redis for response caching
+
 2. **Compression**: Enable gzip
+
 3. **Connection Pooling**: Database connection pools
+
 4. **Lazy Loading**: Defer non-critical modules
+
 5. **Async Operations**: Non-blocking I/O
+
 6. **Pagination**: Always paginate lists
+
 7. **Response Compression**: Compress large payloads
+
 8. **Rate Limiting**: Prevent abuse
+
 9. **Load Balancing**: Multiple instances
 10. **Monitoring**: Track and optimize slow queries
 
@@ -952,6 +1049,7 @@ const app = await NestFactory.create<NestFastifyApplication>(
   AppModule,
   new FastifyAdapter(),
 );
+
 ```
 
 ---
@@ -959,6 +1057,7 @@ const app = await NestFactory.create<NestFastifyApplication>(
 ## Summary
 
 These 40 questions cover NestJS from beginner to FAANG-level complexity. Key areas:
+
 - **Beginner**: Core concepts, decorators, basic patterns
 - **Intermediate**: Testing, authentication, validation, Swagger
 - **Senior**: Architecture, CQRS, microservices, patterns

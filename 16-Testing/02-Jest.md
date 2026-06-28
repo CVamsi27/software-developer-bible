@@ -5,6 +5,7 @@
 Jest is a JavaScript testing framework developed by Facebook (Meta) that provides a complete testing solution for modern JavaScript applications. It offers a zero-configuration setup, built-in assertion library, mocking capabilities, and comprehensive code coverage reporting.
 
 **Key Features:**
+
 - **Zero Configuration**: Works out of the box for most JavaScript projects
 - **Fast Execution**: Parallel test running with intelligent test ordering
 - **Built-in Mocking**: Complete mocking system for functions, modules, and timers
@@ -66,6 +67,7 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
 │  │  mockImplementation  mockReturnValue                    ││
 │  └─────────────────────────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Test Execution Flow
@@ -96,6 +98,7 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
            │  Generate    │────▶│  Output      │
            │  Coverage    │     │  Report      │
            └──────────────┘     └──────────────┘
+
 ```
 
 ## Code Examples
@@ -147,6 +150,7 @@ module.exports = {
   // Test timeout
   testTimeout: 10000,
 };
+
 ```
 
 ### describe/it/expect
@@ -254,6 +258,7 @@ describe("Calculator", () => {
     });
   });
 });
+
 ```
 
 ### Mocking with jest.mock and jest.fn
@@ -356,6 +361,7 @@ describe("UserService", () => {
     });
   });
 });
+
 ```
 
 ### Spies with jest.spyOn
@@ -493,6 +499,7 @@ describe("InventoryManager", () => {
     expect(result.message).toContain("Insufficient stock");
   });
 });
+
 ```
 
 ### Snapshot Testing
@@ -577,6 +584,7 @@ describe("UserCard", () => {
 
 // Updating snapshots
 // Run: jest --updateSnapshot
+
 ```
 
 ### Code Coverage
@@ -650,6 +658,7 @@ describe("utils", () => {
 // All files          |   85.71 |    83.33 |   83.33 |   85.71 |
 // utils.ts           |   85.71 |    83.33 |   83.33 |   85.71 |
 // -------------------|---------|----------|---------|---------|
+
 ```
 
 ### Setup and Teardown
@@ -744,6 +753,7 @@ export const waitFor = async (
   }
   throw new Error("Timeout waiting for condition");
 };
+
 ```
 
 ### Timer Mocking
@@ -808,6 +818,7 @@ describe("debounce", () => {
     expect(mockFn).toHaveBeenCalledWith("arg1", "arg2");
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -878,6 +889,7 @@ describe("Users API", () => {
     });
   });
 });
+
 ```
 
 ### 2. Testing React Components
@@ -948,6 +960,7 @@ describe("LoginForm", () => {
     expect(screen.getByText("Password is required")).toBeInTheDocument();
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -981,6 +994,7 @@ it("test 1", () => {
 it("test 2", () => {
   expect(mockFn).toHaveBeenCalledTimes(0); // Correct!
 });
+
 ```
 
 ### 2. Not Using jest.mocked
@@ -993,6 +1007,7 @@ const mockFetch = fetch as jest.Mock;
 // ✅ GOOD: Type-safe mocking
 jest.mock("./api");
 const mockFetch = jest.mocked(fetch);
+
 ```
 
 ### 3. Testing Async Code Improperly
@@ -1017,18 +1032,27 @@ it("should fetch data", () => {
     expect(data).toBeDefined();
   });
 });
+
 ```
 
 ## Best Practices
 
 1. **Use `jest.mocked()`** for type-safe mocking
+
 2. **Clear mocks between tests** with `jest.clearAllMocks()`
+
 3. **Use `beforeEach`/`afterEach`** for setup and teardown
+
 4. **Mock at the module boundary** rather than internal functions
+
 5. **Use snapshot testing sparingly** and review snapshots carefully
+
 6. **Set coverage thresholds** to maintain test quality
+
 7. **Use `jest.useFakeTimers()`** for time-dependent code
+
 8. **Keep test files close** to the code they test
+
 9. **Use descriptive test names** that explain behavior
 10. **Avoid testing implementation details** - test behavior instead
 
@@ -1048,6 +1072,7 @@ module.exports = {
   // Run tests sequentially if they have shared state
   // runInBand: true,
 };
+
 ```
 
 ### Test Optimization
@@ -1085,6 +1110,7 @@ describe("Database", () => {
     // Use shared db connection
   });
 });
+
 ```
 
 ## Interview Questions

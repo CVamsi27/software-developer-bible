@@ -7,9 +7,13 @@
 ## Why Do We Need It?
 
 1. **Faster Time to First Byte (TTFB)** — Users see content immediately
+
 2. **Better user experience** — Progressive loading instead of blank screens
+
 3. **Parallel data fetching** — Multiple data sources load simultaneously
+
 4. **Improved Core Web Vitals** — Better LCP and FCP scores
+
 5. **Reduced latency** — Content appears as it becomes available
 
 ## How It Works
@@ -78,6 +82,7 @@
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Streaming Architecture
@@ -116,6 +121,7 @@
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -160,6 +166,7 @@ export default function Loading() {
     </div>
   )
 }
+
 ```
 
 ### Multiple Suspense Boundaries
@@ -232,6 +239,7 @@ async function RecentActivity() {
     </div>
   )
 }
+
 ```
 
 ### Nested Streaming
@@ -271,6 +279,7 @@ async function DashboardContent() {
     </div>
   )
 }
+
 ```
 
 ### Streaming with Error Handling
@@ -319,6 +328,7 @@ async function DashboardData() {
     throw error // Will be caught by error.tsx
   }
 }
+
 ```
 
 ### Streaming with loading.tsx and error.tsx
@@ -376,6 +386,7 @@ export default function ProductsPage() {
     </div>
   )
 }
+
 ```
 
 ### Parallel Streaming
@@ -423,6 +434,7 @@ async function SlowComponentB() {
   const data = await fetchDataB()
   return <div>Component B: {data.value}</div>
 }
+
 ```
 
 ### Selective Streaming
@@ -462,6 +474,7 @@ async function SlowContent() {
   const data = await fetchSlowData() // 5 seconds
   return <div>{data.content}</div>
 }
+
 ```
 
 ### Streaming with Progressive Enhancement
@@ -516,6 +529,7 @@ async function DashboardCharts() {
   const chartData = await fetchChartData() // Very slow
   return <Chart data={chartData} />
 }
+
 ```
 
 ## Real-World Use Cases
@@ -556,6 +570,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 2. Making Everything a Suspense Boundary
@@ -594,6 +609,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 3. Not Handling Loading States
@@ -622,6 +638,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 4. Streaming Too Much Content
@@ -650,6 +667,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### 5. Not Using loading.tsx
@@ -676,18 +694,27 @@ export default function Page() {
 export default function Loading() {
   return <LoadingSkeleton />
 }
+
 ```
 
 ## Best Practices
 
 1. **Use loading.tsx for route-level loading** — Automatic Suspense boundary
+
 2. **Strategic Suspense boundaries** — Only for slow content
+
 3. **Provide meaningful loading states** — Skeletons, not spinners
+
 4. **Parallel streaming** — Multiple Suspense boundaries stream simultaneously
+
 5. **Error boundaries** — Handle errors per Suspense boundary
+
 6. **Progressive enhancement** — Fast content first, slow content streams in
+
 7. **Test streaming behavior** — Verify in development and production
+
 8. **Monitor performance** — Track streaming metrics
+
 9. **Optimize data fetching** — Parallel fetches for faster streaming
 10. **Use nested streaming** — For complex page hierarchies
 
@@ -695,16 +722,19 @@ export default function Loading() {
 
 ```text
 Streaming Performance Benefits:
+
 - TTFB: Immediate (shell sent first)
 - FCP: Fast (essential content renders)
 - LCP: Progressive (main content streams)
 - CLS: Minimal (skeletons prevent layout shift)
 
 Optimization:
+
 - Parallel data fetching
 - Strategic Suspense boundaries
 - Loading state design
 - Error handling per boundary
+
 ```
 
 ## Interview Questions
@@ -869,10 +899,12 @@ Error handling:
 app/error.tsx → Error boundary for route
 
 Performance:
+
 - TTFB: Immediate shell
 - FCP: Fast essential content
 - LCP: Progressive main content
 - CLS: Minimal with skeletons
+
 ```
 
 ## References & Learn More

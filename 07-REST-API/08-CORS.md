@@ -9,9 +9,13 @@ CORS (Cross-Origin Resource Sharing) is a security mechanism implemented in web 
 Without CORS:
 
 1. **Security risks** - Malicious sites could access sensitive data from other origins
+
 2. **API limitations** - Legitimate cross-origin requests would be blocked
+
 3. **Development issues** - Frontend and backend on different origins can't communicate
+
 4. **Third-party integrations** - External services can't access your API
+
 5. **Microservices** - Services on different domains can't communicate
 
 ## How It Works
@@ -33,6 +37,7 @@ Different Origins:
   https://api.example.com  vs  https://www.example.com  ❌ (different domain)
   https://api.example.com  vs  https://api.example.com:8080  ❌ (different port)
   https://api.example.com  vs  https://api.other.com  ❌ (different domain)
+
 ```
 
 ### CORS Request Flow
@@ -64,6 +69,7 @@ Browser                          Server
   │  200 OK                       │
   │  Access-Control-Allow-Origin: https://app.com
   │◄──────────────────────────────│
+
 ```
 
 ### CORS Headers
@@ -73,26 +79,34 @@ CORS Response Headers
 ═════════════════════
 
 Access-Control-Allow-Origin: https://app.com
+
   - Which origins can access the resource
   - Can be * for public APIs or specific origin
 
 Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+
   - Which HTTP methods are allowed
 
 Access-Control-Allow-Headers: Content-Type, Authorization
+
   - Which headers can be sent in request
 
 Access-Control-Allow-Credentials: true
+
   - Whether cookies/credentials can be sent
 
 Access-Control-Expose-Headers: X-Custom-Header
+
   - Which headers can be read by JavaScript
 
 Access-Control-Max-Age: 86400
+
   - How long preflight response can be cached (seconds)
 
 Access-Control-Max-Age: 86400
+
   - How long preflight can be cached (seconds)
+
 ```
 
 ```typescript
@@ -134,6 +148,7 @@ app.get('/api/public', cors(), (req, res) => {
 app.get('/api/private', cors({ origin: 'https://app.com' }), (req, res) => {
   res.json({ data: 'private data' });
 });
+
 ```
 
 ### Preflight Requests
@@ -143,12 +158,16 @@ Preflight Request Requirements
 ══════════════════════════════
 
 Browser sends preflight when:
+
   1. Method is not GET, HEAD, or POST
+
   2. POST with Content-Type other than:
+
      - application/x-www-form-urlencoded
      - multipart/form-data
      - text/plain
   3. Custom headers are sent (e.g., Authorization)
+
   4. Credentials are included
 
 Example preflight:
@@ -157,6 +176,7 @@ Host: api.example.com
 Origin: https://app.com
 Access-Control-Request-Method: PUT
 Access-Control-Request-Headers: Content-Type, Authorization
+
 ```
 
 ```typescript
@@ -179,6 +199,7 @@ app.use(cors({
   origin: 'https://app.com',
   credentials: true
 }));
+
 ```
 
 ## Code Examples
@@ -255,6 +276,7 @@ app.use((err, req, res, next) => {
   }
   next(err);
 });
+
 ```
 
 ### CORS for Microservices
@@ -292,6 +314,7 @@ app.use('/api/public', cors({
   methods: ['GET'],
   allowedHeaders: []
 }));
+
 ```
 
 ### CORS with Credentials
@@ -319,6 +342,7 @@ axios.get('https://api.example.com/data', {
     'Authorization': 'Bearer token'
   }
 });
+
 ```
 
 ### Dynamic CORS Configuration
@@ -346,6 +370,7 @@ app.use((req, res, next) => {
 
   next();
 });
+
 ```
 
 ## Real-World Use Cases
@@ -362,6 +387,7 @@ app.use(cors({
 
 // Handle preflight
 app.options('/api/*', cors());
+
 ```
 
 ### 2. Third-Party API Access
@@ -382,6 +408,7 @@ app.use('/api/internal', (req, res, next) => {
   }
   next();
 });
+
 ```
 
 ### 3. Mobile App Backend
@@ -402,6 +429,7 @@ app.use(cors({
   },
   credentials: true
 }));
+
 ```
 
 ### 4. Development Environment
@@ -416,6 +444,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   app.use(cors(corsConfig));
 }
+
 ```
 
 ## Common Mistakes
@@ -434,6 +463,7 @@ app.use(cors({
   origin: ['https://app.com', 'https://admin.com'],
   credentials: true
 }));
+
 ```
 
 ### 2. Not Handling Preflight Requests
@@ -449,6 +479,7 @@ app.options('/api/data', cors());
 app.put('/api/data', (req, res) => {
   res.json({ data: 'updated' });
 });
+
 ```
 
 ### 3. Not Including Required Headers
@@ -465,6 +496,7 @@ app.use(cors({
   origin: 'https://app.com',
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
+
 ```
 
 ### 4. Not Setting Max-Age
@@ -480,6 +512,7 @@ app.use(cors({
   origin: 'https://app.com',
   maxAge: 86400 // 24 hours
 }));
+
 ```
 
 ### 5. Exposing Wrong Headers
@@ -495,18 +528,27 @@ app.use(cors({
   origin: 'https://app.com',
   exposedHeaders: ['X-Total-Count', 'X-Page-Count', 'Link']
 }));
+
 ```
 
 ## Best Practices
 
 1. **Never use wildcard with credentials** - Specify allowed origins
+
 2. **Handle preflight requests** - OPTIONS endpoint for all routes
+
 3. **Set maxAge** - Cache preflight for 24 hours
+
 4. **Expose custom headers** - Let JavaScript read them
+
 5. **Validate origin** - Check against whitelist
+
 6. **Use HTTPS** - CORS over HTTP is insecure
+
 7. **Document CORS** - Clear API documentation
+
 8. **Test CORS** - Verify in browser developer tools
+
 9. **Monitor CORS errors** - Track blocked requests
 10. **Consider CSP** - Content Security Policy for additional security
 

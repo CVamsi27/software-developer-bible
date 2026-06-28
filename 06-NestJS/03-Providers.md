@@ -9,10 +9,15 @@ NestJS manages providers through its powerful **Dependency Injection (DI)** syst
 ## Why Do We Need It?
 
 1. **Separation of Concerns**: Providers encapsulate business logic separate from HTTP handling.
+
 2. **Reusability**: Services can be reused across multiple controllers and modules.
+
 3. **Testability**: Providers can be easily mocked and tested in isolation.
+
 4. **Dependency Injection**: Automatic dependency management through the DI container.
+
 5. **Lifecycle Management**: NestJS manages provider instantiation, scoping, and cleanup.
+
 6. **Modular Architecture**: Providers are organized within modules with clear boundaries.
 
 ## How It Works
@@ -41,6 +46,7 @@ Providers are registered in a module's `providers` array. NestJS's DI container 
 │  5. Provider ready for use                              │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### Provider Types
@@ -66,6 +72,7 @@ Providers are registered in a module's `providers` array. NestJS's DI container 
 │  │ token       │  │ token       │                  │
 │  └─────────────┘  └─────────────┘                  │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -129,6 +136,7 @@ export class UserService {
     this.eventEmitter.emit('user.deleted', { id });
   }
 }
+
 ```
 
 ### Repository Provider
@@ -174,6 +182,7 @@ export class UserRepository {
     await this.repository.delete(id);
   }
 }
+
 ```
 
 ### Factory Provider
@@ -204,6 +213,7 @@ export function createLoggerService(context: string): LoggerService {
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Value Provider
@@ -237,6 +247,7 @@ export const SMTP_CONFIG = 'SMTP_CONFIG';
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Existing Provider (Alias)
@@ -252,6 +263,7 @@ export class AppModule {}
   ],
 })
 export class UserModule {}
+
 ```
 
 ### Provider Scope
@@ -272,6 +284,7 @@ export class TransientService {}
 export class RequestContextService {
   constructor(private readonly request: Request) {}
 }
+
 ```
 
 ### Custom Provider Tokens
@@ -300,6 +313,7 @@ export class OrderService {
     private readonly paymentService: PaymentServiceInterface,
   ) {}
 }
+
 ```
 
 ### Async Provider
@@ -319,6 +333,7 @@ export class OrderService {
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Entity Provider
@@ -346,6 +361,7 @@ export class FeatureModule {}
   ],
 })
 export class EntityModule {}
+
 ```
 
 ## Real-World Use Cases
@@ -386,6 +402,7 @@ export class ProductService {
     );
   }
 }
+
 ```
 
 ### 2. Strategy Pattern with Providers
@@ -415,6 +432,7 @@ export const STORAGE_STRATEGY = 'STORAGE_STRATEGY';
   ],
 })
 export class StorageModule {}
+
 ```
 
 ### 3. Interceptor-Style Provider
@@ -432,6 +450,7 @@ export class TransformInterceptor implements NestInterceptor {
     );
   }
 }
+
 ```
 
 ### 4. Custom Decorator with Provider
@@ -452,6 +471,7 @@ export const CurrentUser = createParamDecorator(
 getProfile(@CurrentUser('id') userId: string) {
   return this.userService.getProfile(userId);
 }
+
 ```
 
 ## Common Mistakes
@@ -469,6 +489,7 @@ export class UserService {
 export class UserService {
   constructor(private readonly repo: UserRepository) {}
 }
+
 ```
 
 ### 2. Circular Dependency
@@ -493,6 +514,7 @@ export class UserService {
     private readonly orderService: OrderService,
   ) {}
 }
+
 ```
 
 ### 3. Not Handling Provider Scope
@@ -514,6 +536,7 @@ export class UserService {
 export class RequestContextService {
   constructor(private readonly request: Request) {} // Correct usage
 }
+
 ```
 
 ### 4. Creating Instances Manually
@@ -530,6 +553,7 @@ export class UserService {
 export class UserService {
   constructor(private readonly mailService: MailService) {}
 }
+
 ```
 
 ### 5. Over-Injecting Dependencies
@@ -558,28 +582,42 @@ export class UserService {
     private readonly cacheService: CacheService,
   ) {}
 }
+
 ```
 
 ## Best Practices
 
 1. **Single Responsibility**: Each provider should have one clear purpose.
+
 2. **Constructor Injection**: Always use constructor injection for dependencies.
+
 3. **Interface Segregation**: Use interfaces for provider contracts.
+
 4. **Provider Scope**: Choose appropriate scope (default, transient, request).
+
 5. **Factory Providers**: Use factories for complex initialization logic.
+
 6. **Custom Tokens**: Use injection tokens for flexible provider binding.
+
 7. **Error Handling**: Handle errors within providers, not in controllers.
+
 8. **Logging**: Include logging in providers for debugging.
+
 9. **Async Providers**: Use async factories for async initialization.
 10. **Testing**: Mock providers in tests using `Test.createTestingModule()`.
 
 ## Performance Considerations
 
 1. **Singleton Scope**: Default scope is singleton — one instance per module.
+
 2. **Transient Scope**: Creates new instances — use sparingly for performance.
+
 3. **Request Scope**: New instance per request — adds overhead for each request.
+
 4. **Lazy Loading**: Providers can be lazy-loaded to reduce startup time.
+
 5. **Provider Caching**: Cache frequently accessed provider data.
+
 6. **Connection Pooling**: Reuse database connections through singleton repositories.
 
 ## Interview Questions
@@ -604,6 +642,7 @@ Declare it as a constructor parameter with the appropriate type.
 ### Intermediate
 
 **Q6: What is the difference between `useClass`, `useFactory`, `useValue`, and `useExisting`?**
+
 - `useClass`: Instantiate a class as the provider
 - `useFactory`: Use a factory function to create the provider
 - `useValue`: Use a static value as the provider

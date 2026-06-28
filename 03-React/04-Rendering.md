@@ -5,7 +5,9 @@
 Rendering in React is the process of calling component functions to produce a Virtual DOM tree, which React then uses to determine what changes to apply to the real DOM. It's important to understand that "rendering" in React does **not** mean updating the DOM — it means calling your component functions to produce a description of what the UI should look like.
 
 React's rendering process has two distinct phases:
+
 1. **Render Phase**: Calls component functions, creates Virtual DOM, diffs (reconciliation). This phase is **interruptible** and has **no side effects**.
+
 2. **Commit Phase**: Applies changes to the DOM, runs effects. This phase is **synchronous** and **cannot be interrupted**.
 
 ## Why Do We Need It?
@@ -13,9 +15,13 @@ React's rendering process has two distinct phases:
 ### Understanding Rendering Triggers
 
 Many React performance issues stem from misunderstanding when and why re-renders happen. Understanding rendering helps you:
+
 1. **Avoid unnecessary re-renders**: Know what triggers a re-render
+
 2. **Optimize performance**: Use memoization effectively
+
 3. **Debug issues**: Understand why components re-render unexpectedly
+
 4. **Use concurrent features**: Know when updates can be deferred
 
 ### Common Misconceptions
@@ -38,6 +44,7 @@ Common Rendering Misconceptions:
 
 ❌ "React only re-renders changed components"
 ✅ React re-renders changed components AND their ancestors (unless memoized).
+
 ```
 
 ## How It Works
@@ -105,6 +112,7 @@ State Change / Prop Change / Parent Re-render
 │ - Browser paints pixels (repaint)                       │
 │ - Screen updates                                        │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### Triggers for Re-render
@@ -128,6 +136,7 @@ Re-render Triggers:
 ├── Updating state to same value (primitives)
 ├── Updating state to same reference (objects)
 └── Unmounted component
+
 ```
 
 ### Batch Updates
@@ -180,6 +189,7 @@ escape hatch: flushSync
 │ });                                                         │
 │ // DOM updated again immediately                            │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Concurrent Rendering
@@ -209,6 +219,7 @@ Concurrent Rendering:
 │                                                             │
 │ Benefit: Browser never blocked, UI stays responsive         │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -245,6 +256,7 @@ const RenderCommitDemo = () => {
 // 1. RENDER PHASE: Component function called
 // 2. COMMIT PHASE (Layout): After DOM mutation, before paint
 // 3. COMMIT PHASE (Passive): After paint
+
 ```
 
 ### Batch Updates
@@ -274,6 +286,7 @@ const BatchUpdateExample = () => {
     </div>
   );
 };
+
 ```
 
 ### flushSync for Immediate DOM Updates
@@ -311,6 +324,7 @@ const FlushSyncExample = () => {
     </div>
   );
 };
+
 ```
 
 ### createRoot vs hydrateRoot
@@ -335,6 +349,7 @@ hydrateRoot(
 );
 // React skips calling component functions (server already did)
 // React attaches event listeners and reconciles with server HTML
+
 ```
 
 ### Concurrent Features
@@ -366,6 +381,7 @@ const ConcurrentRenderingDemo = () => {
     </div>
   );
 };
+
 ```
 
 ### Controlling Re-renders with React.memo
@@ -401,6 +417,7 @@ const Parent = () => {
     </div>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -447,6 +464,7 @@ const FormWithValidation = () => {
     </form>
   );
 };
+
 ```
 
 ### 2. Dashboard with Auto-refresh
@@ -475,6 +493,7 @@ const Dashboard = () => {
     </div>
   );
 };
+
 ```
 
 ### 3. Image Gallery with Lazy Loading
@@ -516,6 +535,7 @@ const ImageGallery = ({ images }: { images: Image[] }) => {
     </div>
   );
 };
+
 ```
 
 ### 4. Context Provider with Performance
@@ -541,6 +561,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     </AppContext.Provider>
   );
 };
+
 ```
 
 ## Common Mistakes
@@ -574,6 +595,7 @@ const handleClick = () => {
   // DOM now updated
   console.log(ref.current?.textContent); // Shows new count
 };
+
 ```
 
 ### 2. Re-rendering Entire Component Tree
@@ -606,6 +628,7 @@ const Parent = () => {
     </div>
   );
 };
+
 ```
 
 ### 3. Using useEffect for Derived State
@@ -632,6 +655,7 @@ const FilteredList = ({ items, query }: Props) => {
 
   return <List items={filtered} />;
 };
+
 ```
 
 ### 4. Creating New References in Render
@@ -654,16 +678,23 @@ const Parent = () => {
 
   return <Child style={style} onClick={handleClick} />;
 };
+
 ```
 
 ## Best Practices
 
 1. **Understand render phase vs commit phase**: Render is pure, commit has side effects.
+
 2. **Don't call setState in render phase**: It causes infinite loops (except in conditions).
+
 3. **Compute during render, not in useEffect**: Derived state should be computed synchronously.
+
 4. **Use flushSync when you need immediate DOM updates**: For measurements after state change.
+
 5. **Memoize expensive computations**: Use `useMemo` for costly calculations.
+
 6. **Stabilize references**: Use `useCallback` for functions passed as props.
+
 7. **Profile before optimizing**: Use React DevTools Profiler to find actual bottlenecks.
 
 ## Performance Considerations
@@ -689,12 +720,19 @@ const Parent = () => {
 ### Optimization Checklist
 
 1. ✅ Profile with React DevTools Profiler
+
 2. ✅ Add `React.memo` to pure components
+
 3. ✅ Use `useMemo` for expensive computations
+
 4. ✅ Use `useCallback` for stable function references
+
 5. ✅ Colocate state near where it's used
+
 6. ✅ Split contexts to reduce consumer re-renders
+
 7. ✅ Virtualize long lists
+
 8. ✅ Lazy load heavy components
 
 ## Interview Questions
@@ -735,13 +773,21 @@ A: `useLayoutEffect` runs synchronously after DOM mutations but before browser p
 
 **Q11: Explain the complete rendering pipeline from state change to screen update.**
 A:
+
 1. State change triggers re-render
+
 2. React calls component function (render phase)
+
 3. Virtual DOM is created
+
 4. React diffs new vs old Virtual DOM (reconciliation)
+
 5. React marks fibers with flags (Placement, Update, Deletion)
+
 6. React commits changes to DOM (commit phase)
+
 7. Browser paints pixels to screen
+
 8. useEffect callbacks run (passive effects)
 
 **Q12: How does React batch updates in React 18?**
@@ -761,9 +807,11 @@ A: `useTransition` marks updates as non-urgent. React keeps the old UI visible w
 
 **Q17: What is the difference between `useEffect` and `useLayoutEffect` timing?**
 A:
+
 ```text
 useLayoutEffect: DOM mutation → useLayoutEffect → browser paint
 useEffect: DOM mutation → browser paint → useEffect
+
 ```
 `useLayoutEffect` blocks paint; `useEffect` doesn't.
 
@@ -775,9 +823,13 @@ A: `React.Profiler` is a component that measures rendering performance. It provi
 
 **Q20: How do you measure rendering performance in production?**
 A:
+
 1. React Profiler (development only)
+
 2. Chrome DevTools Performance tab (record interactions)
+
 3. React.Profiler component (programmatic profiling)
+
 4. User-centric metrics (First Contentful Paint, Time to Interactive)
 
 ### Senior (10-15)
@@ -790,6 +842,7 @@ A: Concurrent rendering adds interruption points in the render phase. React can 
 
 **Q23: What is the `startTransition` API and when should you use it?**
 A: `startTransition` marks state updates as non-urgent transitions. Use it for:
+
 - Search filtering (defer results)
 - Tab switching (keep old tab visible)
 - List updates (smooth scrolling)
@@ -820,23 +873,35 @@ A: StrictMode intentionally double-renders components in development to detect s
 
 **Q31: Design a rendering optimization strategy for a large-scale application.**
 A:
+
 1. **Component architecture**: Flat hierarchy, small focused components
+
 2. **State design**: Normalize state, colocate state, split contexts
+
 3. **Memoization**: `React.memo` for pure components, `useMemo`/`useCallback` for expensive computations
+
 4. **Virtualization**: Only render visible components
+
 5. **Code splitting**: Lazy load heavy components
+
 6. **Profiling**: Regular profiling with React DevTools
 
 **Q32: How would you debug a rendering performance issue in production?**
 A:
+
 1. **User metrics**: Track FCP, TTI, LCP
+
 2. **Chrome DevTools Performance**: Record interactions, analyze flame charts
+
 3. **React.Profiler**: Add to suspected slow components
+
 4. **Custom logging**: Log render times in production
+
 5. **Sentry/error tracking**: Track slow renders
 
 **Q33: Analyze the memory implications of rendering.**
 A: Each render creates:
+
 - New Virtual DOM tree (~1-2KB per component)
 - New hooks state (if references change)
 - New effect queues
@@ -844,18 +909,28 @@ For 10,000 components, that's ~10-20MB per render. Mitigate with virtualization 
 
 **Q34: How would you implement a custom rendering scheduler?**
 A:
+
 1. **Priority model**: Define update priorities (urgent, normal, low)
+
 2. **Task queue**: Sort tasks by priority
+
 3. **Frame budget**: Execute tasks within 16ms frame
+
 4. **Interruption**: Yield to browser when time runs out
+
 5. **Integration**: Use React's `scheduler` package
 
 **Q35: Design a rendering pipeline for a real-time collaborative app.**
 A:
+
 1. **CRDT state**: Conflict-free replicated data types
+
 2. **Priority updates**: User's own changes > remote changes
+
 3. **Batching**: Group related updates
+
 4. **Virtualization**: Only render visible collaboration elements
+
 5. **Concurrency**: Use `useTransition` for remote updates
 
 **Q36: How does React Server Components affect rendering?**
@@ -863,6 +938,7 @@ A: Server Components don't participate in client-side rendering. They're seriali
 
 **Q37: Analyze the performance characteristics of different rendering strategies.**
 A:
+
 | Strategy | When to Use | Trade-off |
 |----------|-------------|-----------|
 | Full render | Simple apps | Simple but slow |
@@ -873,10 +949,15 @@ A:
 
 **Q38: How would you implement a rendering profiler for production?**
 A:
+
 1. **React.Profiler**: Add to components
+
 2. **Custom hook**: Track render times
+
 3. **Performance API**: Use `performance.mark()` and `performance.measure()`
+
 4. **Analytics**: Send render metrics to backend
+
 5. **Dashboard**: Visualize slow renders
 
 **Q39: How does rendering interact with React Suspense?**
@@ -884,10 +965,15 @@ A: Suspense can "suspend" rendering during the render phase. When a component su
 
 **Q40: Design a system for A/B testing React rendering performance.**
 A:
+
 1. **Feature flags**: Toggle rendering optimizations
+
 2. **Metrics**: Track render times, user engagement
+
 3. **Randomization**: Randomly assign users to variants
+
 4. **Analysis**: Compare performance between variants
+
 5. **Rollback**: Quick rollback if performance degrades
 
 ### Follow-ups (5-10)
@@ -897,6 +983,7 @@ A: "When you interact with our app, React figures out what parts of the screen n
 
 **Q42: What are the edge cases in rendering?**
 A:
+
 - Conditional hooks (illegal in React)
 - Side effects in render phase (should be idempotent)
 - Dynamic component types
@@ -920,14 +1007,20 @@ A: Profiler uses `React.Profiler`'s `onRender` callback. It tracks render times,
 
 **Q48: How would you optimize rendering for a low-end device?**
 A:
+
 1. **Reduce component count**: Fewer components to render
+
 2. **Simplify UI**: Less complex layouts
+
 3. **Virtualization**: Only render visible content
+
 4. **Code splitting**: Load only necessary code
+
 5. **Defer non-urgent updates**: Use `useTransition`
 
 **Q49: What is the future of React rendering?**
 A: React is exploring:
+
 - Automatic memoization via React Compiler
 - Better concurrent rendering
 - Offscreen rendering (Activity component)
@@ -988,6 +1081,7 @@ Common Pitfalls:
 ├── Using useEffect for derived state
 ├── Creating new references in render
 └── Not understanding render vs commit phase
+
 ```
 
 ## References & Learn More

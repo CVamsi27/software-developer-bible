@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Browse available events/shows
 - View seating charts
 - Select seats
@@ -14,6 +15,7 @@
 - Support for different event types (movies, concerts, sports)
 
 ### Non-Functional Requirements
+
 - High availability (99.99%)
 - Strong consistency for seat reservations
 - Handle flash sales (high concurrency)
@@ -24,8 +26,10 @@
 - Mobile-first design
 
 ## Capacity Estimation
+
 ```text
 Booking Estimates:
+
 - 100K concurrent users during flash sales
 - 10K bookings per minute at peak
 - 1M bookings per day
@@ -33,24 +37,29 @@ Booking Estimates:
 - Daily tickets: 2M
 
 Event Estimates:
+
 - 10K events per day
 - Average venue: 500 seats
 - Total seats: 5M per day
 - Seat reservation timeout: 10 minutes
 
 Storage Estimates:
+
 - Booking data: 1 KB per booking
 - Daily: 1M × 1 KB = 1 GB
 - Event metadata: 10K × 10 KB = 100 MB
 - Total: ~1.1 GB/day
 
 Bandwidth Estimates:
+
 - Booking requests: 10K × 1 KB = 10 MB/s
 - Seat availability checks: 100K × 100 bytes = 10 MB/s
 - Total: 20 MB/s peak
+
 ```
 
 ## API Design
+
 ```yaml
 # Browse Events
 GET /api/v1/events
@@ -145,10 +154,12 @@ POST /api/v1/bookings/{id}/cancel
       "refund_amount": 630,  # after cancellation fee
       "refund_status": "processing"
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Events table
 CREATE TABLE events (
@@ -258,9 +269,11 @@ CREATE TABLE refunds (
     status VARCHAR(20) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   venues    │     │     events      │     │seating_sections │
@@ -310,10 +323,12 @@ CREATE TABLE refunds (
                                             │ qr_code         │
                                             │ status          │
                                             └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -354,11 +369,13 @@ CREATE TABLE refunds (
      │  Generator      │
      │  (QR Codes)     │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### Seat Reservation Service
+
 ```python
 import redis
 from datetime import datetime, timedelta
@@ -422,9 +439,11 @@ class SeatReservationService:
             await self.db.update_reservation_status(
                 reservation['id'], 'expired'
             )
+
 ```
 
 ### Booking Service
+
 ```python
 class BookingService:
     def __init__(self, db, reservation_service, payment_service,
@@ -491,9 +510,11 @@ class BookingService:
             'tickets': tickets,
             'total_amount': reservation['total_amount']
         }
+
 ```
 
 ### Ticket Generator Service
+
 ```python
 import qrcode
 import uuid
@@ -554,9 +575,11 @@ class TicketGeneratorService:
         )
 
         return url
+
 ```
 
 ### Flash Sale Handler
+
 ```python
 class FlashSaleHandler:
     def __init__(self, db, redis_client):
@@ -609,11 +632,13 @@ class FlashSaleHandler:
 
             except Exception as e:
                 logger.error(f"Flash sale error: {e}")
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Seat Availability Cache
+
 ```python
 class SeatCache:
     def __init__(self, redis_client):
@@ -647,9 +672,11 @@ class SeatCache:
         key = f"seat:{event_id}:{section}:{row}:{seat_number}"
         await self.redis.hset(key, 'status', 'available')
         await self.redis.hdel(key, 'reserved_by')
+
 ```
 
 ### Event Cache
+
 ```python
 class EventCache:
     def __init__(self, redis_client):
@@ -671,11 +698,13 @@ class EventCache:
 
     async def invalidate_event(self, event_id: int):
         await self.redis.delete(f"event:{event_id}")
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── booking.created        (new booking)
@@ -700,9 +729,11 @@ Event Schema:
     "total_amount": 700
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class BookingEventProcessor:
     def __init__(self, kafka_consumer, notification_service):
@@ -732,11 +763,13 @@ class BookingEventProcessor:
             'booking_sms',
             event['data']
         )
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -751,9 +784,11 @@ Architecture:
 │  Service     │   │  Service     │   │  Service     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Scaling
+
 ```python
 class BookingDatabaseScaler:
     def __init__(self):
@@ -769,9 +804,11 @@ class BookingDatabaseScaler:
             "(SELECT id FROM seating_sections WHERE event_id = %s)",
             (event_id,)
         )
+
 ```
 
 ### Seat Lock Scaling
+
 ```python
 class SeatLockScaler:
     def __init__(self):
@@ -788,11 +825,13 @@ class SeatLockScaler:
         key = f"seat:{event_id}:{seat['section']}:{seat['row']}:{seat['number']}"
 
         return await redis_client.hsetnx(key, 'status', 'reserved')
+
 ```
 
 ## Failure Handling
 
 ### Reservation Timeout Handler
+
 ```python
 class ReservationTimeoutHandler:
     def __init__(self, db, redis_client):
@@ -823,9 +862,11 @@ class ReservationTimeoutHandler:
         await self.db.update_reservation_status(
             reservation['id'], 'expired'
         )
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Redis down | Fall back to database locks |
@@ -835,6 +876,7 @@ class ReservationTimeoutHandler:
 | Seat lock timeout | Automatic release |
 
 ### Double Booking Prevention
+
 ```python
 class DoubleBookingPrevention:
     def __init__(self, db, redis_client):
@@ -870,34 +912,42 @@ class DoubleBookingPrevention:
         finally:
             # Release lock
             await self.redis.delete(lock_key)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - bookings_per_minute
   - seat_utilization_rate
   - average_booking_value
   - cancellation_rate
 
 System Metrics:
+
   - reservation_latency_p95
   - seat_lock_acquisition_time
   - payment_processing_time
   - ticket_generation_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - redis_memory_usage
   - database_connection_pool
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Booking Rate
     condition: bookings_per_minute > 1000
     severity: info
@@ -913,6 +963,7 @@ alerts:
   - name: Payment Failure Rate
     condition: payment_failure_rate > 5%
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -927,64 +978,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you prevent double booking?**
+
    - Use distributed locks (Redis)
    - Atomic seat status updates
    - Reservation timeout for cleanup
    - Database constraints as fallback
 
 2. **How would you handle flash sales?**
+
    - Pre-load seat data into Redis
    - Use atomic operations
    - Monitor and scale dynamically
    - Queue overflow handling
 
 3. **How would you implement seat reservations?**
+
    - Temporary holds with timeout
    - Redis for fast locks
    - Database for persistence
    - Automatic cleanup for expired reservations
 
 ### Scaling Questions
+
 4. **How do you scale to 100K concurrent users?**
+
    - Horizontal scaling of services
    - Redis cluster for seat locks
    - Database sharding by event
    - CDN for static content
 
 5. **How do you handle high concurrency during flash sales?**
+
    - Pre-warm Redis cache
    - Use atomic operations
    - Monitor and auto-scale
    - Queue overflow handling
 
 ### Trade-off Questions
+
 6. **How do you balance consistency vs availability?**
+
    - Strong consistency for seat booking
    - Eventual consistency for availability checks
    - Reservation timeout for cleanup
    - Fallback to database locks
 
 7. **How do you handle payment failures?**
+
    - Release reserved seats
    - Allow retry
    - Queue for later processing
    - Notify user
 
 ### Senior-level Questions
+
 8. **How would you implement dynamic pricing?**
+
    - Real-time price calculation
    - A/B testing for pricing
    - Demand-based pricing
    - Price history tracking
 
 9. **How do you handle event cancellations?**
+
    - Automatic refund processing
    - Notification to all ticket holders
    - Rescheduling options
    - Compensation logic
 
 10. **How would you implement waitlist management?**
+
     - FIFO queue for waitlist
     - Notification when seats available
     - Time-limited offers
@@ -993,6 +1058,7 @@ alerts:
 ## Summary
 
 The Ticket Booking system design covers:
+
 - **Seat Management**: Redis-based atomic locking
 - **Reservation System**: Temporary holds with timeout
 - **Booking Flow**: Reservation → Payment → Confirmation
@@ -1000,10 +1066,15 @@ The Ticket Booking system design covers:
 - **Ticket Generation**: QR codes for mobile
 
 Key takeaways:
+
 1. Use Redis for fast, atomic seat locking
+
 2. Implement reservation timeout for cleanup
+
 3. Handle flash sales with pre-warmed caches
+
 4. Prevent double booking with distributed locks
+
 5. Generate QR codes for mobile tickets
 
 This design supports 100K+ concurrent users with strong consistency for seat bookings.
@@ -1011,6 +1082,7 @@ This design supports 100K+ concurrent users with strong consistency for seat boo
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

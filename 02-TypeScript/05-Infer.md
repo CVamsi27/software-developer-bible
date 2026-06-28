@@ -22,14 +22,19 @@
 │   type Result = GetReturnType<Fn>;  // R is captured as string  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type extraction**: Extract types from complex type structures
+
 2. **Library design**: Create flexible type utilities
+
 3. **Type inference**: Let TypeScript figure out types for you
+
 4. **Code reuse**: Capture and reuse inferred types
+
 5. **Advanced patterns**: Build sophisticated type-level programming
 
 ## How It Works
@@ -48,6 +53,7 @@ type ElementType<T> = T extends (infer E)[] ? E : never;
 
 type C = ElementType<string[]>;  // string
 type D = ElementType<number[]>;  // number
+
 ```
 
 ### In Function Parameters
@@ -63,6 +69,7 @@ type Params<T> = T extends (...args: infer P) => any ? P : never;
 
 type B = Params<(x: string, y: number, z: boolean) => void>;
 // [string, number, boolean]
+
 ```
 
 ### In Return Types
@@ -79,6 +86,7 @@ type C = UnwrapPromise<number>;           // number (not a promise)
 type DeepUnwrap<T> = T extends Promise<infer U> ? DeepUnwrap<U> : T;
 
 type D = DeepUnwrap<Promise<Promise<Promise<string>>>>; // string
+
 ```
 
 ### In Tuple Positions
@@ -98,6 +106,7 @@ type B = Tail<[string, number, boolean]>; // [number, boolean]
 type Last<T extends any[]> = T extends [...any[], infer L] ? L : never;
 
 type C = Last<[string, number, boolean]>; // boolean
+
 ```
 
 ### Complex Inference Patterns
@@ -128,6 +137,7 @@ class User {
 }
 
 type UserInstance = InstanceOf<typeof User>; // User
+
 ```
 
 ## Code Examples
@@ -171,6 +181,7 @@ type Middleware<T> = T extends (req: infer Req, res: infer Res, next: infer Next
 
 type ExpressMiddleware = Middleware<express.Handler>;
 // { request: Request; response: Response; next: NextFunction }
+
 ```
 
 ### Advanced Patterns
@@ -228,6 +239,7 @@ interface Mixed {
 
 type StringKeys = ExtractByType<Mixed, string>; // "name" | "email"
 type NumberKeys = ExtractByType<Mixed, number>; // "age"
+
 ```
 
 ## Common Mistakes
@@ -242,6 +254,7 @@ type Bad<T> = T extends infer U ? U : never;
 // ✅ Correct: infer in specific position
 type Good<T> = T extends Promise<infer U> ? U : never;
 // Captures the Promise's inner type
+
 ```
 
 ### 2. Not Handling the False Branch
@@ -252,6 +265,7 @@ type ExtractString<T> = T extends string ? infer S : unknown;
 
 // ✅ Good: Return a sensible default
 type ExtractString<T> = T extends string ? T : never;
+
 ```
 
 ### 3. Overcomplicating Inference
@@ -271,6 +285,7 @@ type Complex<T> =
 type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T;
 type Flatten<T> = T extends Array<infer E> ? Flatten<E> : T;
 type Result = Flatten<Unwrap<T>>;
+
 ```
 
 ## Best Practices
@@ -294,10 +309,12 @@ type PromiseProps<T> = {
 
 // 5. Document complex infer patterns
 /**
- * Extracts the first element of a tuple type.
- * Returns `never` if T is not a tuple.
+
+ - Extracts the first element of a tuple type.
+ - Returns `never` if T is not a tuple.
  */
 type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H : never;
+
 ```
 
 ## Performance Considerations
@@ -313,79 +330,103 @@ type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H
 ### Beginner
 
 1. **What does `infer` do?**
+
    - Extracts and names a type within a conditional type
 
 2. **How do you extract a function's return type?**
+
    ```typescript
    type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
 ```
 
 3. **Can you have multiple `infer` in one conditional?**
+
    - Yes, but only one per position
 
 4. **What happens if infer doesn't match?**
+
    - The conditional type evaluates to the false branch
 
 5. **How do you extract Promise inner type?**
+
    ```typescript
    type Unwrap<T> = T extends Promise<infer U> ? U : T;
+
 ```
 
 ### Intermediate
 
 6. **Write a type that extracts first array element**
+
    ```typescript
    type First<T extends any[]> = T extends [infer F, ...any[]] ? F : never;
+
 ```
 
 7. **How do you extract all function parameters?**
+
    ```typescript
    type Params<T> = T extends (...args: infer P) => any ? P : never;
+
 ```
 
 8. **Can infer be used outside conditional types?**
+
    - No, it's only valid in the `extends` clause
 
 9. **How do you handle nested promises?**
+
    - Use recursive conditional types with infer
 
 10. **What is the difference between infer and extends?**
+
     - `extends` checks assignability; `infer` captures a type
 
 ### Senior
 
 11. **Design a type that extracts all event handler types**
+
     - Use infer to capture event parameters
 
 12. **How do you create a type-safe deep clone function?**
+
     - Use infer to preserve type information through cloning
 
 13. **Implement a type-safe curry function using infer**
+
     - Capture argument types and return type
 
 14. **How do you handle function overloads with infer?**
+
     - Use infer with conditional types to match signatures
 
 ### FAANG-style
 
 15. **Build a type-safe ORM query builder**
+
     - Use infer to extract model types from queries
 
 16. **Create a type-safe middleware chain**
+
     - Use infer to propagate types through middleware
 
 17. **Implement a type-safe state machine**
+
     - Use infer to capture state and event types
 
 ### Follow-ups
 
 18. **How does infer interact with union types?**
+
     - Infer distributes over unions automatically
 
 19. **Can you use infer in mapped types?**
+
     - No, infer is only valid in conditional type extends clauses
 
 20. **How do you debug infer issues?**
+
     - Create intermediate type aliases and use IDE hover
 
 ## Summary
@@ -415,6 +456,7 @@ type PropType<T, K> = T extends { [P in K]: infer V } ? V : never;
 
 // Deep unwrap
 type DeepUnwrap<T> = T extends Promise<infer U> ? DeepUnwrap<U> : T;
+
 ```
 
 ## References & Learn More

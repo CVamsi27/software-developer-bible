@@ -30,6 +30,7 @@ Level 3: Rendering Optimization
 ├── Concurrent features: Prioritize updates
 ├── useTransition: Defer non-urgent updates
 └── useDeferredValue: Lag behind source value
+
 ```
 
 ## Code Examples
@@ -57,6 +58,7 @@ const Parent = () => {
     </div>
   );
 };
+
 ```
 
 ### useMemo for Expensive Computations
@@ -79,6 +81,7 @@ const DataVisualization = ({ rawData }: { rawData: RawDataPoint[] }) => {
     </div>
   );
 };
+
 ```
 
 ### Virtualization
@@ -111,6 +114,7 @@ const VirtualList = ({ items }: { items: Item[] }) => {
     </div>
   );
 };
+
 ```
 
 ### Code Splitting
@@ -133,6 +137,7 @@ const App = () => {
     </div>
   );
 };
+
 ```
 
 ### Concurrent Features
@@ -157,24 +162,35 @@ const SearchApp = () => {
     </div>
   );
 };
+
 ```
 
 ## Common Mistakes
 
 1. **Overusing React.memo**: Only memoize expensive components
+
 2. **Not stabilizing references**: Use useCallback for functions passed as props
+
 3. **Not virtualizing long lists**: Only render visible items
+
 4. **Not code splitting**: Lazy load heavy components
 
 ## Best Practices
 
 1. Profile before optimizing with React DevTools Profiler
+
 2. Memoize expensive computations with useMemo
+
 3. Stabilize references with useCallback
+
 4. Virtualize long lists
+
 5. Code split routes and heavy components
+
 6. Use concurrent features for non-urgent updates
+
 7. Colocate state near usage
+
 8. Split contexts to reduce consumer re-renders
 
 ## Performance Metrics
@@ -350,6 +366,7 @@ Performance Optimization:
 ├── State colocation: Keep state near usage
 ├── Context splitting: Reduce consumer re-renders
 └── Profiling: React DevTools Profiler
+
 ```
 
 ## References & Learn More

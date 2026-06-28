@@ -11,8 +11,11 @@ The pattern is particularly useful when you need to create an object with many o
 Without the Builder pattern, object creation can be problematic:
 
 1. **Telescoping constructors**: Too many constructor parameters
+
 2. **Complex initialization**: Multiple steps needed to create an object
+
 3. **Immutable objects**: Difficult to create immutable objects with many fields
+
 4. **Readability**: Constructor calls with many parameters are hard to read
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Builder pattern, object creation can be problematic:
 The Builder pattern works by:
 
 1. Creating a separate builder class for constructing objects
+
 2. Providing step-by-step methods for building the object
+
 3. Allowing the same construction process to create different representations
+
 4. Providing a final build method that returns the constructed object
 
 ```text
@@ -54,6 +60,7 @@ The Builder pattern works by:
 │  │    Complex object with many parts        │   │
 │  └──────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -196,6 +203,7 @@ const customHouse = builder
   .getResult();
 
 console.log(customHouse.toString());
+
 ```
 
 ### Fluent Builder with Type Safety
@@ -292,6 +300,7 @@ const query = new QueryBuilder()
 
 console.log(query);
 // SELECT id, name, email FROM users WHERE age > 18 AND status = "active" ORDER BY name ASC LIMIT 10 OFFSET 20
+
 ```
 
 ### HTTP Request Builder
@@ -398,6 +407,7 @@ const request = new HttpRequestBuilder()
   .build();
 
 console.log(request);
+
 ```
 
 ### Configuration Builder
@@ -489,6 +499,7 @@ const dbConfig = new DatabaseConfigBuilder()
   .build();
 
 console.log(dbConfig);
+
 ```
 
 ### Email Builder
@@ -593,6 +604,7 @@ const email = new EmailBuilder()
   .build();
 
 console.log(email);
+
 ```
 
 ## Real-World Use Cases
@@ -679,6 +691,7 @@ const form = new ComponentBuilder('form')
   .className('login-form')
   .child(button)
   .build();
+
 ```
 
 ### 2. Test Data Builder
@@ -767,6 +780,7 @@ const user = UserTestBuilder.create()
   .build();
 
 const users = UserTestBuilder.create().buildMany(10);
+
 ```
 
 ### 3. URL Builder
@@ -857,6 +871,7 @@ const url = new URLBuilder()
 
 console.log(url);
 // https://api.example.com:443/users?page=1&limit=10#section1
+
 ```
 
 ## Common Mistakes
@@ -876,6 +891,7 @@ class BadBuilder {
   setPartH(): this { ... }
   // Hard to use and maintain
 }
+
 ```
 
 ### 2. Builder Without Interface
@@ -893,6 +909,7 @@ class CarBuilder {
 }
 
 // These builders have no common interface
+
 ```
 
 ### 3. Builder with Mutable State
@@ -905,6 +922,7 @@ class BadBuilder {
 
   // Hard to test and use
 }
+
 ```
 
 ### 4. Not Providing Default Values
@@ -919,6 +937,7 @@ class BadBuilder {
     // Should have sensible defaults
   }
 }
+
 ```
 
 ## Best Practices
@@ -931,6 +950,7 @@ interface Builder<T> {
   reset(): this;
   build(): T;
 }
+
 ```
 
 ### 2. Provide Sensible Defaults
@@ -944,6 +964,7 @@ class GoodBuilder {
     verbose: false
   };
 }
+
 ```
 
 ### 3. Use Fluent Interface
@@ -954,6 +975,7 @@ const result = new Builder()
   .setA('value')
   .setB('value')
   .build();
+
 ```
 
 ### 4. Keep Builders Focused
@@ -962,6 +984,7 @@ const result = new Builder()
 // ✅ GOOD - Single responsibility
 class DatabaseBuilder implements Builder<DatabaseConfig> { ... }
 class ServerBuilder implements Builder<ServerConfig> { ... }
+
 ```
 
 ## Performance Considerations
@@ -981,86 +1004,111 @@ class ServerBuilder implements Builder<ServerConfig> { ... }
 ### Beginner
 
 1. **What is the Builder pattern?**
+
    - A creational pattern that separates object construction from representation.
 
 2. **When would you use Builder pattern?**
+
    - When you have many optional parameters or complex construction steps.
 
 3. **What's the difference between Builder and Factory?**
+
    - Builder creates objects step by step; Factory creates objects in one step.
 
 4. **How do you implement Builder in TypeScript?**
+
    - Create a builder class with fluent interface and a build method.
 
 5. **What are the benefits of Builder pattern?**
+
    - Readability, flexibility, immutability, and testability.
 
 ### Intermediate
 
 6. **What's the difference between Builder and Prototype?**
+
    - Builder creates new objects; Prototype clones existing objects.
 
 7. **How do you handle validation in Builder?**
+
    - Validate in the build method and throw descriptive errors.
 
 8. **Can Builder be used with immutable objects?**
+
    - Yes, Builder is ideal for creating immutable objects with many fields.
 
 9. **How do you test Builder pattern?**
+
    - Test each method independently and verify the build output.
 
 10. **What's the relationship between Builder and Fluent Interface?**
+
     - Builder often uses Fluent Interface for method chaining.
 
 ### Senior
 
 11. **How does Builder pattern affect scalability?**
+
     - Builders are lightweight; the built objects can be optimized.
 
 12. **What are the SOLID violations with Builder?**
+
     - Usually follows SOLID; watch for builders violating Single Responsibility.
 
 13. **How do you handle Builder in microservices?**
+
     - Builders can be shared across services; keep them focused.
 
 14. **What are the memory implications of Builder?**
+
     - Builders are temporary; the built object persists.
 
 15. **How do you refactor Builder code?**
+
     - Extract common logic, use generics, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Builder for a complex API request.**
+
     - Consider validation, serialization, and error handling.
 
 17. **How would you implement Builder for distributed systems?**
+
     - Consider serialization, versioning, and backward compatibility.
 
 18. **What are the implications of Builder in cloud-native applications?**
+
     - Consider configuration, feature flags, and dynamic configuration.
 
 19. **How do you handle Builder in event-driven architectures?**
+
     - Use builders for event construction and validation.
 
 20. **Design a Builder that supports validation.**
+
     - Consider field-level and cross-field validation.
 
 ### Follow-ups
 
 21. **Can Builder pattern be combined with other patterns?**
+
     - Yes, commonly with Factory, Singleton, and Fluent Interface patterns.
 
 22. **How do you handle Builder in testing frameworks?**
+
     - Create test builders with sensible defaults.
 
 23. **What are the memory implications of Builder pattern?**
+
     - Builders are temporary; the built object consumes memory.
 
 24. **How do you handle Builder in serverless environments?**
+
     - Consider cold starts, stateless design, and configuration.
 
 25. **What's the impact of Builder on code maintainability?**
+
     - Improves maintainability by making object creation readable and flexible.
 
 ## Summary
@@ -1102,6 +1150,7 @@ The Builder pattern is essential for creating complex objects with many optional
 │ • Prototype (clones objects)                │
 │ • Fluent Interface (method chaining)        │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

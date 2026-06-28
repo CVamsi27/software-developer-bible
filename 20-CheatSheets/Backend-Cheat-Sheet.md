@@ -79,6 +79,7 @@
 ## Common Patterns
 
 ### NestJS CRUD Controller
+
 ```ts
 @Controller('users')
 @UseGuards(AuthGuard)
@@ -113,9 +114,11 @@ export class UserController {
     return this.userService.remove(id);
   }
 }
+
 ```
 
 ### PostgreSQL Index Strategy
+
 ```sql
 -- Single column lookup
 CREATE INDEX idx_users_email ON users(email);
@@ -141,9 +144,11 @@ CREATE INDEX idx_logs_created ON logs USING BRIN(created_at);
 -- EXPLAIN to verify
 EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)
 SELECT * FROM posts WHERE author_id = 123 AND created_at > '2024-01-01';
+
 ```
 
 ### Prisma Schema with Relations
+
 ```prisma
 model User {
   id        String   @id @default(cuid())
@@ -176,9 +181,11 @@ model Tag {
   name  String @unique
   posts Post[]
 }
+
 ```
 
 ### JWT Auth Flow
+
 ```ts
 // Token generation
 async generateTokens(user: User) {
@@ -223,9 +230,11 @@ async refresh(refreshToken: string) {
 
   return this.generateTokens({ id: payload.sub, email: payload.email });
 }
+
 ```
 
 ### Rate Limiting (NestJS)
+
 ```ts
 // throttler.module.ts
 @Module({
@@ -245,9 +254,11 @@ export const SkipThrottle = () => SetMetadata('skipThrottle', true);
 // Per-user throttle
 export const UserThrottle = (ttl: number, limit: number) =>
   SetMetadata('throttle', { [`${limit}-${ttl}`]: { ttl, limit } });
+
 ```
 
 ### Input Validation (DTOs)
+
 ```ts
 // create-user.dto.ts
 export class CreateUserDto {
@@ -279,9 +290,11 @@ app.useGlobalPipes(new ValidationPipe({
   forbidNonWhitelisted: true, // Throw on unknown properties
   transform: true,        // Auto-transform to DTO types
 }));
+
 ```
 
 ### Health Check
+
 ```ts
 // health.controller.ts
 @Controller('health')
@@ -300,9 +313,11 @@ export class HealthController {
     ]);
   }
 }
+
 ```
 
 ### Structured Logging
+
 ```ts
 // logger.service.ts
 @Injectable()
@@ -325,9 +340,11 @@ export class AppLogger implements LoggerService {
     this.logger.error(message, { trace, context, requestId });
   }
 }
+
 ```
 
 ### Database Transaction (Prisma)
+
 ```ts
 // Interactive transaction
 async transfer(fromId: string, toId: string, amount: number) {
@@ -356,6 +373,7 @@ async transfer(fromId: string, toId: string, amount: number) {
     return { success: true };
   });
 }
+
 ```
 
 ## Red Flags (Things NOT to Say)
@@ -400,6 +418,7 @@ async transfer(fromId: string, toId: string, amount: number) {
 ---
 
 ## References & Learn More
+
 - [Cheat Sheet Collection](https://github.com/detailyang/awesome-cheatsheet)
 - [DevHints](https://devhints.io/)
 - [LeetCode](https://leetcode.com/)

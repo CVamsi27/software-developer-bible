@@ -9,10 +9,15 @@ State management in React refers to how application state (data that changes ove
 ### The Problem
 
 As applications grow, state becomes complex:
+
 1. **Shared state**: Multiple components need the same data
+
 2. **Derived state**: Data computed from other state
+
 3. **Async state**: Data from APIs with loading/error states
+
 4. **Persistent state**: Data that persists across page reloads
+
 5. **Server state**: Data synchronized with a backend
 
 ### State Categories
@@ -47,6 +52,7 @@ State Categories:
    ├── Current route
    ├── Query parameters
    └── Filters, pagination
+
 ```
 
 ## How It Works
@@ -78,6 +84,7 @@ Global State (Context/Redux):
 │ Component B                                                 │
 │ └── const user = useContext(AuthContext) // Can access!     │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Context vs Redux vs Zustand
@@ -113,6 +120,7 @@ Jotai:
 ├── Good for: granular state
 ├── Features: async, devtools
 └── Minimal boilerplate
+
 ```
 
 ### Server State vs Client State
@@ -145,6 +153,7 @@ Server State (React Query):
 │ Persistence: Server database                               │
 │ Features: Caching, background refetching, retry            │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -161,6 +170,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ### Lifted State
@@ -179,6 +189,7 @@ const Parent = () => {
 const Child = ({ count, onIncrement }: { count: number; onIncrement: () => void }) => (
   <button onClick={onIncrement}>Count: {count}</button>
 );
+
 ```
 
 ### Context API
@@ -193,6 +204,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 const useTheme = () => useContext(ThemeContext);
+
 ```
 
 ### Zustand
@@ -226,6 +238,7 @@ const TodoList = () => {
   const addTodo = useTodoStore((state) => state.addTodo);
   return <div>{/* ... */}</div>;
 };
+
 ```
 
 ### Redux Toolkit
@@ -248,6 +261,7 @@ const todosSlice = createSlice({
 });
 
 const store = configureStore({ reducer: { todos: todosSlice.reducer } });
+
 ```
 
 ### React Query (TanStack Query)
@@ -268,6 +282,7 @@ const useCreateUser = () => {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['users'] }),
   });
 };
+
 ```
 
 ### Optimistic Updates
@@ -291,24 +306,35 @@ const useToggleTodo = () => {
     onSettled: () => queryClient.invalidateQueries({ queryKey: ['todos'] }),
   });
 };
+
 ```
 
 ## Common Mistakes
 
 1. **Putting everything in global state**: Use local state when possible
+
 2. **Not normalizing state**: Keep state flat for efficient updates
+
 3. **Using Context for complex state**: Use Redux/Zustand for complex logic
+
 4. **Not handling loading/error states**: Always handle async states
+
 5. **Over-fetching**: Use caching with React Query
 
 ## Best Practices
 
 1. **Start with local state**: Use useState for component-specific data
+
 2. **Lift state when needed**: Move state to common ancestor for siblings
+
 3. **Use Context for global data**: Theme, auth, language
+
 4. **Use Redux/Zustand for complex state**: Multiple updates, middleware
+
 5. **Use React Query for server state**: Caching, background refetching
+
 6. **Normalize state**: Flat structures for efficient updates
+
 7. **Colocate state**: Keep state near where it's used
 
 ## Interview Questions
@@ -490,6 +516,7 @@ Best Practices:
 ├── Use React Query for server state
 ├── Normalize state
 └── Colocate state
+
 ```
 
 ## References & Learn More

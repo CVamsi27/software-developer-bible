@@ -51,6 +51,7 @@ Normalization is the process of organizing a relational database to reduce data 
 │  │  • Every determinant is a candidate key             │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Functional Dependencies
@@ -68,6 +69,7 @@ Key concepts:
   • Full functional dependency: All attributes depend on the ENTIRE key
   • Partial dependency: Attribute depends on PART of a composite key
   • Transitive dependency: A → B → C (A determines C through B)
+
 ```
 
 ## Code Examples
@@ -97,6 +99,7 @@ CREATE TABLE orders_unnormalized (
 -- • Can only store fixed number of products per order
 -- • If customer changes email, must update ALL their orders
 -- • Hard to query: "find all orders for product X"
+
 ```
 
 ### First Normal Form (1NF)
@@ -121,6 +124,7 @@ CREATE TABLE orders_1nf (
 --   • Update: Change email → must update multiple rows
 --   • Delete: Delete last product → lose customer info
 --   • Insert: Can't add customer without an order
+
 ```
 
 ### Second Normal Form (2NF)
@@ -154,6 +158,7 @@ CREATE TABLE order_items (
 
 -- Still has transitive dependency:
 -- order_id → customer_id → customer_name
+
 ```
 
 ### Third Normal Form (3NF)
@@ -203,6 +208,7 @@ CREATE TABLE order_items (
 -- • Product info stored once
 -- • Order links to customer via foreign key
 -- • Order items link order to product
+
 ```
 
 ### BCNF (Boyce-Codd Normal Form)
@@ -239,6 +245,7 @@ CREATE TABLE student_enrollments (
     course_id INTEGER,
     PRIMARY KEY (student_id, course_id)
 );
+
 ```
 
 ### Denormalization Examples
@@ -297,6 +304,7 @@ CREATE TABLE user_profiles (
     total_spent DECIMAL(10, 2) DEFAULT 0,
     last_order_date TIMESTAMPTZ
 );
+
 ```
 
 ## Real-World Use Cases
@@ -355,6 +363,7 @@ CREATE TABLE order_items (
     unit_price DECIMAL(10, 2) NOT NULL,
     PRIMARY KEY (order_id, product_id)
 );
+
 ```
 
 ## Common Mistakes
@@ -382,6 +391,7 @@ CREATE TABLE customers (
     phone TEXT,
     phone_type TEXT CHECK (phone_type IN ('mobile', 'home', 'work'))
 );
+
 ```
 
 ### 2. Not Using Foreign Keys
@@ -400,6 +410,7 @@ CREATE TABLE orders_good (
     customer_id INTEGER REFERENCES customers(id),
     product_id INTEGER REFERENCES products(id)
 );
+
 ```
 
 ### 3. Storing Derived Data Without Sync
@@ -419,6 +430,7 @@ SELECT
 FROM orders o
 JOIN order_items oi ON o.id = oi.order_id
 GROUP BY o.id;
+
 ```
 
 ## Best Practices
@@ -455,6 +467,7 @@ EXPLAIN ANALYZE SELECT ...;
 -- 6. Keep normalization in mind for writes
 -- Highly normalized = more joins for reads but faster updates
 -- Denormalized = fewer joins but more update work
+
 ```
 
 ## Performance Considerations
@@ -494,6 +507,7 @@ CREATE TABLE order_summaries (
 );
 
 -- Update with triggers on orders and order_items
+
 ```
 
 ## Interview Questions
@@ -622,6 +636,7 @@ Normalization eliminates redundancy and anomalies through a series of normal for
 -- 2. Materialized views
 -- 3. Summary tables
 -- 4. Duplicate data with sync
+
 ```
 
 ## References & Learn More

@@ -28,6 +28,7 @@ Financial Tickers         -> WebSocket + Redis Streams
 IoT Sensor Data           -> MQTT + Kafka
 Live Dashboards           -> SSE + Time Series DB
 Social Media Feeds        -> SSE + Fan-out
+
 ```
 
 ## How It Works
@@ -37,34 +38,47 @@ Social Media Feeds        -> SSE + Fan-out
 ```text
 Pattern 1: Direct Connection
 +--------+     +--------+     +--------+
+
 | Client | --> | Server | --> | Client |
+
 +--------+     +--------+     +--------+
 Simple, but does not scale
 
 Pattern 2: Pub/Sub
 +--------+     +---------+     +---------+     +--------+
+
 | Client | --> | Pub/Sub | --> | Broker  | --> | Client |
+
 +--------+     +---------+     +---------+     +--------+
 Scalable, decoupled
 
 Pattern 3: Event Sourcing
 +--------+     +---------+     +---------+     +---------+
+
 | Client | --> | Event   | --> | Event   | --> | Read    |
 |        |     | Store   |     | Handler |     | Model   |
+
 +--------+     +---------+     +---------+     +---------+
 Audit trail, temporal queries
 
 Pattern 4: CQRS + Event Sourcing
 +--------+     +---------+     +---------+
+
 | Client | --> | Command | --> | Event   |
 |        |     | Side    |     | Store   |
+
 +--------+     +---------+     +---------+
+
                           |
+
 +--------+     +---------+     +---------+
+
 | Client | <-- | Query   | <-- | Event   |
 |        |     | Side    |     | Handler |
+
 +--------+     +---------+     +---------+
 Optimized read/write models
+
 ```
 
 ### Scaling WebSockets
@@ -80,26 +94,35 @@ Load Balanced:
 Client ---     +-- Server 1 --+
 Client ---+----|              |--- Database
 Client ---     +-- Server 2 --+
+
                     |
+
 Client ---     +-- Server 3 --+
 Client ---+----|              |--- Redis Pub/Sub
 Client ---     +-- Server 4 --+
+
                     |
+
               Cross-server communication via Redis
 
 Geographic Distribution:
                     +-- US East --+
 Client (US) -------|             |--- Origin
                     +-------------+
+
                          |
+
                     +-- US West --+
 Client (US) -------|             |--- Origin
                     +-------------+
+
                          |
+
                     +-- EU West --+
 Client (EU) -------|             |--- Origin
                     +-------------+
               CDN/Edge for static, WebSocket for real-time
+
 ```
 
 ## Code Examples
@@ -161,6 +184,7 @@ pubsub.subscribe('chat:general', (message) => {
 });
 
 pubsub.publish('chat:general', JSON.stringify({ user: 'Alice', text: 'Hello!' }));
+
 ```
 
 ### WebSocket Server with Redis Scaling
@@ -269,6 +293,7 @@ class ScalableWebSocketServer {
     });
   }
 }
+
 ```
 
 ### Message Queue with Kafka
@@ -346,6 +371,7 @@ await kafka.consume('chat-messages', 'chat-group', async ({ message }) => {
   const data = JSON.parse(message.value!.toString());
   console.log('Received:', data);
 });
+
 ```
 
 ### Event Sourcing
@@ -417,6 +443,7 @@ class EventStore {
     }
   }
 }
+
 ```
 
 ### CQRS Pattern
@@ -490,6 +517,7 @@ class QueryHandler {
     );
   }
 }
+
 ```
 
 ### Redis Streams for Real-Time
@@ -566,6 +594,7 @@ class RedisStreamConsumer {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -614,6 +643,7 @@ class ChatArchitecture {
     });
   }
 }
+
 ```
 
 ### 2. Live Notification System
@@ -646,6 +676,7 @@ class NotificationSystem {
     }
   }
 }
+
 ```
 
 ### 3. Real-Time Analytics Dashboard
@@ -685,6 +716,7 @@ class AnalyticsDashboard {
     return metrics;
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -703,6 +735,7 @@ socket.on('message', async (data) => {
   await messageQueue.publish('chat:message', data); // Non-blocking
   io.to(data.roomId).emit('new-message', data);
 });
+
 ```
 
 ### 2. Not Handling Message Ordering
@@ -722,6 +755,7 @@ socket.on('update', (data) => {
     timestamp: Date.now(),
   }));
 });
+
 ```
 
 ### 3. Not Implementing Dead Letter Queues
@@ -747,6 +781,7 @@ consumer.consume('orders', async (message) => {
     await consumer.ack(message);
   }
 });
+
 ```
 
 ## Best Practices
@@ -774,6 +809,7 @@ class AuditableService {
     await this.eventStore.append(event);
   }
 }
+
 ```
 
 ### 2. Implement Circuit Breakers
@@ -817,6 +853,7 @@ class CircuitBreaker {
     }
   }
 }
+
 ```
 
 ### 3. Use Consistent Hashing for Distribution
@@ -849,6 +886,7 @@ class ConsistentHash<T> {
     return createHash('md5').update(key).digest('hex').slice(0, 8);
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -857,29 +895,35 @@ class ConsistentHash<T> {
 
 ```text
 Message Broker Throughput (messages/sec):
+
 - Redis Pub/Sub: 100,000-500,000
 - Kafka: 100,000-2,000,000
 - RabbitMQ: 20,000-50,000
 - NATS: 100,000-1,000,000
+
 ```
 
 ### Latency Comparison
 
 ```text
 End-to-End Latency:
+
 - Redis Pub/Sub: 1-5ms
 - Kafka: 5-15ms
 - RabbitMQ: 1-10ms
 - NATS: 1-5ms
+
 ```
 
 ### Memory Usage
 
 ```text
 Per Connection Memory:
+
 - WebSocket: 0.5-2 KB
 - SSE: 1-2 KB
 - HTTP Long Polling: 2-8 KB
+
 ```
 
 ## Interview Questions
@@ -887,30 +931,35 @@ Per Connection Memory:
 ### Beginner (5)
 
 1. **What is pub/sub and why use it?**
+
    - Publish-subscribe pattern for decoupled communication
    - Producers don't know about consumers
    - Enables horizontal scaling
    - Message brokers handle routing
 
 2. **What is event sourcing?**
+
    - Store state changes as events
    - Rebuild state by replaying events
    - Provides complete audit trail
    - Enables temporal queries
 
 3. **What is CQRS?**
+
    - Command Query Responsibility Segregation
    - Separate read and write models
    - Optimize each model independently
    - Often combined with event sourcing
 
 4. **How do you scale WebSockets?**
+
    - Use Redis Pub/Sub for cross-server communication
    - Implement sticky sessions
    - Use message brokers for durability
    - Consider geographic distribution
 
 5. **What is a message broker?**
+
    - Middleware for async communication
    - Decouples producers and consumers
    - Provides message persistence
@@ -919,30 +968,35 @@ Per Connection Memory:
 ### Intermediate (5-8)
 
 6. **How do you handle message ordering?**
+
    - Use sequence numbers
    - Implement vector clocks
    - Use single-partition topics
    - Consider CRDTs for conflicts
 
 7. **What is backpressure?**
+
    - Consumer can't keep up with producer
    - Monitor queue depths
    - Implement flow control
    - Use bounded queues
 
 8. **How do you handle failures?**
+
    - Dead letter queues
    - Retry with exponential backoff
    - Circuit breakers
    - Idempotent operations
 
 9. **What is message durability?**
+
    - Persist messages to disk
    - Replicate across nodes
    - Acknowledgment-based delivery
    - Recovery after crashes
 
 10. **How do you monitor real-time systems?**
+
     - Track message rates
     - Monitor queue depths
     - Alert on latency spikes
@@ -951,6 +1005,7 @@ Per Connection Memory:
 ### Senior (8-12)
 
 11. **Design a chat system for 10M users**
+
     - Connection management with consistent hashing
     - Message fanout via Redis Pub/Sub
     - Presence service with heartbeat
@@ -958,24 +1013,29 @@ Per Connection Memory:
     - CDN for media delivery
 
 12. **How do you handle exactly-once delivery?**
+
     - Idempotent operations
     - Deduplication at consumer
     - Transactional outbox pattern
     - Consider trade-offs (at-least-once vs exactly-once)
 
 13. **How do you implement event replay?**
+
     - Event store with versioning
     - Snapshot and replay
     -投影 rebuild
+
     - Time-travel debugging
 
 14. **How do you handle distributed transactions?**
+
     - Saga pattern
     - Two-phase commit
     - Event sourcing
     - Consider eventual consistency
 
 15. **How do you optimize for high throughput?**
+
     - Batch processing
     - Message compression
     - Partitioning strategies
@@ -984,6 +1044,7 @@ Per Connection Memory:
 ### FAANG-style (5-8)
 
 16. **Design a real-time collaboration system**
+
     - CRDT or OT for conflict resolution
     - Cursor presence and awareness
     - Version history and undo
@@ -991,6 +1052,7 @@ Per Connection Memory:
     - Scaling to millions of users
 
 17. **Design a live auction platform**
+
     - Real-time bidding with WebSocket
     - Timer management and extensions
     - Fraud detection
@@ -998,6 +1060,7 @@ Per Connection Memory:
     - Payment integration
 
 18. **Design a multiplayer game backend**
+
     - Deterministic game loop
     - State synchronization
     - Client-side prediction
@@ -1005,6 +1068,7 @@ Per Connection Memory:
     - Anti-cheat measures
 
 19. **Design a live monitoring dashboard**
+
     - Real-time metrics streaming
     - Data aggregation and filtering
     - Alert management
@@ -1012,6 +1076,7 @@ Per Connection Memory:
     - Export and sharing
 
 20. **Design a stock trading platform**
+
     - Real-time price updates
     - Order matching engine
     - Risk management
@@ -1021,18 +1086,21 @@ Per Connection Memory:
 ### Follow-ups (5-8)
 
 21. **How do you test real-time systems?**
+
     - Load testing with tools like Artillery
     - Chaos engineering for failures
     - Integration tests with mock brokers
     - Monitoring and alerting
 
 22. **How do you handle real-time data in microservices?**
+
     - Event-driven architecture
     - API gateway for WebSocket routing
     - Service discovery
     - Distributed tracing
 
 23. **What are common pitfalls?**
+
     - Not handling backpressure
     - Missing dead letter queues
     - No circuit breakers
@@ -1040,6 +1108,7 @@ Per Connection Memory:
     - Not testing failure scenarios
 
 24. **How do you secure real-time systems?**
+
     - Authentication and authorization
     - Rate limiting
     - Input validation
@@ -1047,6 +1116,7 @@ Per Connection Memory:
     - Audit logging
 
 25. **How do you migrate to real-time architecture?**
+
     - Start with notifications
     - Add WebSocket for chat
     - Implement event sourcing
@@ -1063,6 +1133,7 @@ Real-time architecture encompasses:
 - **Scaling**: Consistent hashing, Redis Pub/Sub, geographic distribution
 
 Key considerations:
+
 - Choose the right pattern for your use case
 - Handle failures gracefully with dead letter queues
 - Monitor everything (latency, throughput, errors)

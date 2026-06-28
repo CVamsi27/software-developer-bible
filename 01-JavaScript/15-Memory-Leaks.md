@@ -67,6 +67,7 @@ A **Memory Leak** occurs when a program allocates memory but fails to release it
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Detection Methods
@@ -101,6 +102,7 @@ A **Memory Leak** occurs when a program allocates memory but fails to release it
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -123,6 +125,7 @@ function noLeak() {
     localArray.push(i);
   }
 }
+
 ```
 
 ### Forgotten Timer
@@ -148,6 +151,7 @@ function startTimerFixed() {
   // Clear when done
   clearInterval(intervalId);
 }
+
 ```
 
 ### Detached DOM
@@ -178,6 +182,7 @@ function createAndRemoveFixed() {
   button.removeEventListener('click', handler);
   document.body.removeChild(button);
 }
+
 ```
 
 ### Closure Memory Leak
@@ -201,6 +206,7 @@ function createHandlerFixed() {
     console.log(length);  // Only number kept alive
   };
 }
+
 ```
 
 ### Event Listener Leak
@@ -225,6 +231,7 @@ class Component {
     window.removeEventListener('resize', this.handleResize);
   }
 }
+
 ```
 
 ### React useEffect Leak
@@ -248,6 +255,7 @@ useEffect(() => {
     subscription.unsubscribe();
   };
 }, []);
+
 ```
 
 ### Array Growth
@@ -270,6 +278,7 @@ function addToCacheFixed(item: any) {
     cache.shift();  // Remove oldest
   }
 }
+
 ```
 
 ### WeakMap/WeakRef
@@ -288,6 +297,7 @@ function processObject(obj: object) {
   return result;
   // When obj is garbage collected, cache entry is removed
 }
+
 ```
 
 ## Real-World Use Cases
@@ -324,6 +334,7 @@ function DataComponent() {
 
   return <div>{JSON.stringify(data)}</div>;
 }
+
 ```
 
 ### 2. Event Delegation
@@ -345,6 +356,7 @@ function setupItemsFixed(container: HTMLElement) {
     }
   });
 }
+
 ```
 
 ### 3. Object Pooling
@@ -369,6 +381,7 @@ class ObjectPool<T> {
     this.pool.push(obj);
   }
 }
+
 ```
 
 ### 4. Cache with Expiration
@@ -407,6 +420,7 @@ class Cache<K, V> {
     }
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -426,6 +440,7 @@ useEffect(() => {
   window.addEventListener('resize', handler);
   return () => window.removeEventListener('resize', handler);
 }, []);
+
 ```
 
 ### 2. Storing Large Objects in State
@@ -436,6 +451,7 @@ const [data, setData] = useState(largeObject);
 
 // Good: Store only needed data
 const [summary, setSummary] = useState(extractSummary(largeObject));
+
 ```
 
 ### 3. Not Using WeakMap/WeakRef
@@ -448,6 +464,7 @@ cache.set(obj, result);
 // Good: WeakMap allows GC
 const cache = new WeakMap();
 cache.set(obj, result);
+
 ```
 
 ### 4. Global State Growth
@@ -465,6 +482,7 @@ const globalState = {
     this.items = [];
   }
 };
+
 ```
 
 ## Best Practices
@@ -483,6 +501,7 @@ const handler = () => {};
 element.addEventListener('click', handler);
 // Later
 element.removeEventListener('click', handler);
+
 ```
 
 ### 2. Use WeakMap/WeakRef
@@ -493,6 +512,7 @@ const cache = new WeakMap();
 
 // For event listeners on objects
 const listeners = new WeakMap<object, Function>();
+
 ```
 
 ### 3. Limit Cache Size
@@ -514,6 +534,7 @@ class LimitedCache<T> {
     this.cache.set(key, value);
   }
 }
+
 ```
 
 ### 4. Use Object Pooling
@@ -527,6 +548,7 @@ const pool = new ObjectPool(() => ({
 const obj = pool.acquire();
 // Use object
 pool.release(obj);
+
 ```
 
 ## Performance Considerations
@@ -543,6 +565,7 @@ function monitorMemory() {
 }
 
 setInterval(monitorMemory, 5000);
+
 ```
 
 ### Garbage Collection Impact
@@ -563,6 +586,7 @@ function processItems(items: any[]) {
     return item;
   });
 }
+
 ```
 
 ## Interview Questions
@@ -682,11 +706,17 @@ A: Clean up resources, use weak references, limit caches, monitor usage, test fo
 Memory leaks are critical to prevent:
 
 1. **Causes**: Detached DOM, forgotten timers, closures, global variables
+
 2. **Detection**: Chrome DevTools, performance.memory, heap snapshots
+
 3. **Prevention**: Clean up, use WeakMap, limit caches, object pooling
+
 4. **React**: Always clean up useEffect
+
 5. **Performance**: Monitor memory, reduce allocations
+
 6. **Best practices**: Document cleanup, test for leaks
+
 7. **Tools**: Chrome DevTools, memory profilers
 
 ## Cheat Sheet
@@ -752,6 +782,7 @@ BEST PRACTICES:
 • Limit caches
 • Monitor memory
 • Test for leaks
+
 ```
 
 ## References & Learn More

@@ -5,6 +5,7 @@
 A **Pod** is the smallest deployable unit in Kubernetes—a group of one or more containers that share storage, network, and a specification for how to run. A **ReplicaSet** ensures a specified number of Pod replicas are running at any given time. Pods are ephemeral; ReplicaSets maintain desired state.
 
 Key concepts:
+
 - **Pod**: Co-located, co-scheduled containers sharing network/storage
 - **ReplicaSet**: Maintains stable set of replica Pods
 - **Labels**: Key-value pairs attached to Pods for selection
@@ -28,6 +29,7 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                        Pod                                 |
 |  +-------------------+  +-------------------+            |
 |  |    Container 1    |  |    Container 2    |            |
@@ -42,38 +44,53 @@ Key concepts:
 |  |    /data (emptyDir)                                    |
 |  |    /config (configMap)                                 |
 |  +--------------------------------------------------------|
+
 +----------------------------------------------------------+
+
          |                    |
+
          v                    v
 +------------------+  +------------------+
+
 |   Node (Worker)  |  |   Node (Worker)  |
 |   10.0.0.1       |  |   10.0.0.2       |
+
 +------------------+  +------------------+
+
 ```
 
 ### ReplicaSet Architecture
 
 ```text
                     +------------------+
+
                     |   ReplicaSet     |
                     |  replicas: 3     |
                     |  selector:       |
                     |   app: web       |
+
                     +--------+---------+
+
                              |
+
               +--------------+--------------+
+
               |              |              |
+
               v              v              v
         +----------+  +----------+  +----------+
+
         |   Pod    |  |   Pod    |  |   Pod    |
         | 10.244.  |  | 10.244.  |  | 10.244.  |
         |  1.5     |  |  1.6     |  |  1.7     |
+
         +----------+  +----------+  +----------+
         Labels:        Labels:        Labels:
         app: web       app: web       app: web
         env: prod      env: prod      env: prod
 
 If a Pod fails, ReplicaSet creates a new one to maintain count.
+
 ```
 
 ## Code Examples
@@ -90,9 +107,11 @@ metadata:
     environment: production
 spec:
   containers:
+
     - name: myapp
       image: myapp:1.0.0
       ports:
+
         - containerPort: 8080
       resources:
         requests:
@@ -101,6 +120,7 @@ spec:
         limits:
           memory: "256Mi"
           cpu: "500m"
+
 ```
 
 ### Multi-Container Pod (Sidecar Pattern)
@@ -112,25 +132,31 @@ metadata:
   name: myapp-with-sidecar
 spec:
   containers:
+
     - name: app
       image: myapp:1.0.0
       ports:
+
         - containerPort: 8080
 
     - name: log-shipper
       image: fluentd:latest
       volumeMounts:
+
         - name: app-logs
           mountPath: /var/log/app
 
     - name: metrics
       image: prom/prometheus
       ports:
+
         - containerPort: 9090
 
   volumes:
+
     - name: app-logs
       emptyDir: {}
+
 ```
 
 ### ReplicaSet
@@ -155,9 +181,11 @@ spec:
         environment: production
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
           resources:
             requests:
@@ -166,6 +194,7 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
+
 ```
 
 ### Pod Lifecycle
@@ -177,11 +206,13 @@ metadata:
   name: myapp-lifecycle
 spec:
   initContainers:
+
     - name: init-db
       image: busybox
       command: ['sh', '-c', 'until nslookup mydb; do echo waiting for mydb; sleep 2; done']
 
   containers:
+
     - name: myapp
       image: myapp:1.0.0
 
@@ -194,6 +225,7 @@ spec:
             command: ["/bin/sh", "-c", "nginx -s quit && sleep 5"]
 
   terminationGracePeriodSeconds: 30
+
 ```
 
 ### Pod with Probes
@@ -205,6 +237,7 @@ metadata:
   name: myapp-probes
 spec:
   containers:
+
     - name: myapp
       image: myapp:1.0.0
 
@@ -231,6 +264,7 @@ spec:
         initialDelaySeconds: 5
         periodSeconds: 10
         timeoutSeconds: 3
+
 ```
 
 ### Managing Pods and ReplicaSets
@@ -259,6 +293,7 @@ kubectl exec -it myapp-pod -- sh
 # Delete
 kubectl delete pod myapp-pod
 kubectl delete replicaset myapp-rs
+
 ```
 
 ## Real-World Use Cases
@@ -275,19 +310,24 @@ metadata:
     tier: frontend
 spec:
   containers:
+
     - name: nginx
       image: nginx:1.25-alpine
       ports:
+
         - containerPort: 80
       volumeMounts:
+
         - name: nginx-config
           mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
 
   volumes:
+
     - name: nginx-config
       configMap:
         name: nginx-config
+
 ```
 
 ### 2. Database Pod with Persistent Storage
@@ -308,24 +348,30 @@ spec:
         app: postgres
     spec:
       containers:
+
         - name: postgres
           image: postgres:15-alpine
           env:
+
             - name: POSTGRES_DB
               value: mydb
+
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-credentials
                   key: password
           volumeMounts:
+
             - name: pg-data
               mountPath: /var/lib/postgresql/data
 
       volumes:
+
         - name: pg-data
           persistentVolumeClaim:
             claimName: pg-pvc
+
 ```
 
 ### 3. Batch Job Pod
@@ -341,14 +387,18 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
+
     - name: processor
       image: myapp/data-processor:1.0
       command: ["python", "process.py"]
       env:
+
         - name: INPUT_PATH
           value: "s3://bucket/input/"
+
         - name: OUTPUT_PATH
           value: "s3://bucket/output/"
+
 ```
 
 ## Common Mistakes
@@ -391,14 +441,17 @@ spec:
         fsGroup: 2000
 
       initContainers:
+
         - name: init-db
           image: busybox:1.36
           command: ['sh', '-c', 'until nslookup db; do sleep 2; done']
 
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
 
           resources:
@@ -424,8 +477,10 @@ spec:
             periodSeconds: 10
 
           env:
+
             - name: DB_HOST
               value: "db"
+
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -433,16 +488,25 @@ spec:
                   key: password
 
       terminationGracePeriodSeconds: 60
+
 ```
 
 1. **Never use bare Pods** — always use ReplicaSets or Deployments
+
 2. **Set resource requests and limits** — enable scheduling and prevent OOM
+
 3. **Add health checks** — enable self-healing
+
 4. **Use labels consistently** — enable service discovery and monitoring
+
 5. **Run as non-root** — security best practice
+
 6. **Use init containers** — for dependency initialization
+
 7. **Set terminationGracePeriodSeconds** — allow graceful shutdown
+
 8. **Use PodDisruptionBudgets** — protect during voluntary disruptions
+
 9. **Limit pod size** — smaller pods enable better scheduling
 10. **Use namespaces** — isolate workloads
 
@@ -466,6 +530,7 @@ kubectl describe pod myapp | grep -A 5 "Events"
 
 # View pod density on nodes
 kubectl get pods --all-namespaces -o wide | awk '{print $8}' | sort | uniq -c
+
 ```
 
 ## Interview Questions
@@ -616,11 +681,13 @@ kubectl top nodes
 # Apply
 kubectl apply -f pod.yaml
 kubectl diff -f pod.yaml
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

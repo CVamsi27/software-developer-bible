@@ -9,6 +9,7 @@
 ## When to Use
 
 **DFS:**
+
 - Finding paths between two nodes
 - Detecting cycles in graphs
 - Topological sorting
@@ -16,6 +17,7 @@
 - When you need to explore all possibilities
 
 **BFS:**
+
 - Finding shortest path in unweighted graphs
 - Level-order traversal of trees
 - Finding connected components
@@ -66,6 +68,7 @@ function bfs(root: TreeNode | null): void {
     if (node.right) queue.push(node.right);
   }
 }
+
 ```
 
 ## How It Works
@@ -83,6 +86,7 @@ DFS Traversal (In-order):  4 → 2 → 5 → 1 → 3 → 6
 DFS Traversal (Post-order): 4 → 5 → 2 → 6 → 3 → 1
 
 BFS Traversal (Level-order): 1 → 2 → 3 → 4 → 5 → 6
+
 ```
 
 ### ASCII Diagram
@@ -112,6 +116,7 @@ Level 0: [1]
 Level 1: [2, 3]
 Level 2: [4, 5, 6]
 Order: 1 → 2 → 3 → 4 → 5 → 6
+
 ```
 
 ## Code Examples (TypeScript)
@@ -159,6 +164,7 @@ const grid = [
   ["0","0","0","0","0"]
 ];
 console.log(numIslands(grid)); // 1
+
 ```
 
 ### Problem 2: Binary Tree Level Order Traversal (BFS)
@@ -205,6 +211,7 @@ const root = new TreeNode(3,
   new TreeNode(20, new TreeNode(15), new TreeNode(7))
 );
 console.log(levelOrder(root)); // [[3], [9, 20], [15, 7]]
+
 ```
 
 ### Problem 3: Clone Graph (DFS with Memoization)
@@ -241,6 +248,7 @@ function cloneGraph(node: Node | null): Node | null {
 
   return dfs(node);
 }
+
 ```
 
 ### Problem 4: Number of Provinces (Union-Find + DFS)
@@ -279,6 +287,7 @@ const isConnected = [
   [0, 0, 1]
 ];
 console.log(findCircleNum(isConnected)); // 2
+
 ```
 
 ### Problem 5: Rotting Oranges (BFS)
@@ -339,6 +348,7 @@ const oranges = [
   [0, 1, 1]
 ];
 console.log(orangesRotting(oranges)); // 4
+
 ```
 
 ### Problem 6: Word Ladder (BFS)
@@ -378,14 +388,19 @@ function ladderLength(
 
 // Example
 console.log(ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])); // 5
+
 ```
 
 ## Common Mistakes
 
 1. **Not marking visited nodes**: Leads to infinite loops in graphs with cycles
+
 2. **Wrong traversal order**: DFS uses stack (LIFO), BFS uses queue (FIFO)
+
 3. **Forgetting base case**: Always check for null/empty before recursing
+
 4. **Modifying input**: Be careful when modifying the grid/graph during traversal
+
 5. **Not handling disconnected components**: Always iterate through all nodes
 
 ## Time/Space Complexity
@@ -405,25 +420,37 @@ console.log(ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])); 
 ### Easy
 
 1. **Binary Tree Inorder Traversal** (LeetCode 94)
+
 2. **Maximum Depth of Binary Tree** (LeetCode 104)
+
 3. **Same Tree** (LeetCode 100)
+
 4. **Symmetric Tree** (LeetCode 101)
 
 ### Medium
 
 1. **Number of Islands** (LeetCode 200)
+
 2. **Binary Tree Level Order Traversal** (LeetCode 102)
+
 3. **Clone Graph** (LeetCode 133)
+
 4. **Course Schedule** (LeetCode 207)
+
 5. **Rotting Oranges** (LeetCode 994)
+
 6. **Flood Fill** (LeetCode 733)
+
 7. **Max Area of Island** (LeetCode 695)
 
 ### Hard
 
 1. **Word Ladder** (LeetCode 127)
+
 2. **Alien Dictionary** (LeetCode 269)
+
 3. **Longest Increasing Path in a Matrix** (LeetCode 329)
+
 4. **Critical Connections in a Network** (LeetCode 1192)
 
 ## Summary
@@ -454,16 +481,19 @@ BFS:
 └─────────────────────────────────────────┘
 
 When to use which?
+
 - Shortest path → BFS
 - All paths → DFS
 - Level order → BFS
 - Cycle detection → DFS
 - Topological sort → DFS
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode DFS/BFS](https://leetcode.com/tag/breadth-first-search/)
 - [NeetCode Graphs](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

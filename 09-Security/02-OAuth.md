@@ -32,6 +32,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 │                  (Stores Resources)                          │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Authorization Code Flow
@@ -75,6 +76,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
      │                     │  9. Protected      │
      │                     │     resource       │
      │                     │<───────────────────│
+
 ```
 
 ### PKCE Flow (for Public Clients)
@@ -104,6 +106,7 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
      │                     │                         │
      │                     │  5. Access token         │
      │                     │<────────────────────────│
+
 ```
 
 ## Code Examples
@@ -228,6 +231,7 @@ const refreshAccessToken = async (
 
   return response.json();
 };
+
 ```
 
 ### OAuth 2.0 Express Middleware
@@ -319,6 +323,7 @@ app.get(
     // Access photos with req.oauthToken
   }
 );
+
 ```
 
 ### GitHub OAuth Integration Example
@@ -372,31 +377,37 @@ app.get("/auth/github/callback", async (req, res) => {
     res.status(500).json({ error: "OAuth authentication failed" });
   }
 });
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Social Login
+
 - "Sign in with Google/GitHub/Facebook"
 - User grants access to basic profile information
 - Application doesn't store or handle user passwords
 
 ### 2. API Access (Machine-to-Machine)
+
 - Server-to-server communication using Client Credentials flow
 - No user involvement; service authenticates directly
 - Used for backend services, cron jobs, microservices
 
 ### 3. Third-Party Integrations
+
 - Accessing user's Google Drive, Dropbox, or GitHub repos
 - Granular scope-based permissions
 - User can revoke access at any time
 
 ### 4. Mobile Applications
+
 - Authorization Code flow with PKCE (no client secret on device)
 - Tokens stored in secure storage (Keychain/Keystore)
 - Refresh tokens for seamless session management
 
 ### 5. SPA + API Architecture
+
 - Authorization Code flow with PKCE
 - Tokens stored in httpOnly cookies or memory
 - API validates tokens on each request
@@ -422,13 +433,21 @@ app.get("/auth/github/callback", async (req, res) => {
 ## Best Practices
 
 1. **Always use Authorization Code flow with PKCE** for public clients (SPA, mobile)
+
 2. **Validate the `state` parameter** to prevent CSRF attacks
+
 3. **Request minimal scopes** — only what's needed
+
 4. **Store tokens securely**: httpOnly cookies for web, secure storage for mobile
+
 5. **Implement refresh token rotation** with single-use tokens
+
 6. **Validate all token claims** (issuer, audience, expiration)
+
 7. **Use short-lived access tokens** (15 minutes or less)
+
 8. **Implement token revocation** for logout
+
 9. **Log and monitor** OAuth usage for anomaly detection
 10. **Keep client secrets secure** — never expose in client-side code
 

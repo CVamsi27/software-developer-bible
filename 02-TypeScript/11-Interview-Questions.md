@@ -20,14 +20,19 @@ This comprehensive guide covers the most frequently asked TypeScript interview q
 │   └──────────────┴─────────────────────────────────────────┘  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need This?
 
 1. **Interview preparation**: Be ready for common TypeScript questions
+
 2. **Knowledge validation**: Test your understanding of TypeScript concepts
+
 3. **Career advancement**: Demonstrate expertise in TypeScript
+
 4. **Code quality**: Write better TypeScript code
+
 5. **Team leadership**: Mentor junior developers
 
 ## Beginner Questions (10)
@@ -46,11 +51,13 @@ function add(a, b) {
 function add(a: number, b: number): number {
   return a + b;
 }
+
 ```
 
 ### 2. What are the benefits of using TypeScript?
 
 **Answer**:
+
 - **Type safety**: Catch errors at compile time
 - **Better IDE support**: Autocomplete, refactoring, navigation
 - **Self-documenting code**: Types serve as documentation
@@ -60,6 +67,7 @@ function add(a: number, b: number): number {
 ### 3. What is the difference between `any` and `unknown`?
 
 **Answer**:
+
 - `any`: Disables type checking, allows any operation
 - `unknown`: Type-safe alternative to `any`, requires type checking before use
 
@@ -75,11 +83,13 @@ value.toUpperCase(); // Error: Object is of type 'unknown'
 if (typeof value === "string") {
   value.toUpperCase(); // OK after type check
 }
+
 ```
 
 ### 4. What are type aliases and interfaces?
 
 **Answer**:
+
 - **Type alias (`type`)**: Creates a name for any type (primitives, unions, intersections)
 - **Interface**: Defines the shape of objects, supports declaration merging
 
@@ -93,6 +103,7 @@ interface UserInterface {
   name: string;
   age: number;
 }
+
 ```
 
 ### 5. What is structural typing?
@@ -112,6 +123,7 @@ interface Coordinate {
 
 const point: Point = { x: 1, y: 2 };
 const coord: Coordinate = point; // OK - same structure
+
 ```
 
 ### 6. What are generics?
@@ -125,6 +137,7 @@ function identity<T>(value: T): T {
 
 const str = identity("hello"); // T is string
 const num = identity(42); // T is number
+
 ```
 
 ### 7. What are utility types?
@@ -141,6 +154,7 @@ interface User {
 type PartialUser = Partial<User>; // All properties optional
 type ReadonlyUser = Readonly<User>; // All properties readonly
 type UserName = Pick<User, "name">; // { name: string }
+
 ```
 
 ### 8. What is type narrowing?
@@ -155,6 +169,7 @@ function process(value: string | number) {
     return value.toFixed(2); // number
   }
 }
+
 ```
 
 ### 9. What are discriminated unions?
@@ -163,6 +178,7 @@ function process(value: string | number) {
 
 ```typescript
 type Shape =
+
   | { kind: "circle"; radius: number }
   | { kind: "rectangle"; width: number; height: number };
 
@@ -174,6 +190,7 @@ function area(shape: Shape): number {
       return shape.width * shape.height;
   }
 }
+
 ```
 
 ### 10. What is the `never` type?
@@ -197,6 +214,7 @@ function process(shape: Shape): number {
       return _exhaustive;
   }
 }
+
 ```
 
 ## Intermediate Questions (10)
@@ -214,11 +232,13 @@ async function fetchUser(id: string): Promise<User> {
 
 // Using ReturnType
 type UserReturn = ReturnType<typeof fetchUser>; // Promise<User>
+
 ```
 
 ### 12. What is the difference between `extends` and `&`?
 
 **Answer**:
+
 - `extends`: Interface inheritance, can override properties
 - `&`: Intersection type, creates a type with all properties
 
@@ -234,6 +254,7 @@ interface Dog extends Animal {
 // &
 type Animal = { name: string };
 type Dog = Animal & { breed: string };
+
 ```
 
 ### 13. How do you type event handlers?
@@ -251,6 +272,7 @@ function handleInput(event: Event) {
   const target = event.target as HTMLInputElement;
   console.log(target.value);
 }
+
 ```
 
 ### 14. What are mapped types?
@@ -265,6 +287,7 @@ type Optional<T> = {
 type Readonly<T> = {
   readonly [K in keyof T]: T[K];
 };
+
 ```
 
 ### 15. What are conditional types?
@@ -276,6 +299,7 @@ type IsString<T> = T extends string ? true : false;
 
 type A = IsString<string>; // true
 type B = IsString<number>; // false
+
 ```
 
 ### 16. How do you type a generic React component?
@@ -297,6 +321,7 @@ function List<T>({ items, renderItem }: Props<T>) {
   items={["a", "b", "c"]}
   renderItem={(item) => <span>{item}</span>}
 />
+
 ```
 
 ### 17. What is the `infer` keyword?
@@ -308,6 +333,7 @@ type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 
 type Fn = () => string;
 type Result = ReturnType<Fn>; // string
+
 ```
 
 ### 18. How do you type a REST API response?
@@ -329,6 +355,7 @@ interface PaginatedResponse<T> extends ApiResponse<T[]> {
 
 type UserResponse = ApiResponse<User>;
 type UserListResponse = PaginatedResponse<User>;
+
 ```
 
 ### 19. What are type guards?
@@ -345,6 +372,7 @@ function process(value: unknown) {
     value.toUpperCase(); // OK after type guard
   }
 }
+
 ```
 
 ### 20. How do you type a reducer?
@@ -353,6 +381,7 @@ function process(value: unknown) {
 
 ```typescript
 type Action =
+
   | { type: "INCREMENT"; amount: number }
   | { type: "DECREMENT"; amount: number }
   | { type: "RESET" };
@@ -371,6 +400,7 @@ function reducer(state: State, action: Action): State {
       return { count: 0 };
   }
 }
+
 ```
 
 ## Senior Questions (10)
@@ -408,6 +438,7 @@ class TypedEventEmitter<Events extends Record<string, any>> {
     );
   }
 }
+
 ```
 
 ### 22. Design a type-safe state management solution
@@ -444,6 +475,7 @@ function reducer<S, A extends Action<keyof ActionMap>>(
       return state;
   }
 }
+
 ```
 
 ### 23. How do you create a type-safe router?
@@ -464,6 +496,7 @@ function createRoute<T extends string>(route: T): { path: T; params: RouteParams
 
 const userRoute = createRoute("/users/:id");
 // { path: "/users/:id"; params: { id: string } }
+
 ```
 
 ### 24. Implement a type-safe curry function
@@ -493,6 +526,7 @@ function curry<Args extends any[], Return>(
 
 const add = curry((a: number, b: number, c: number) => a + b + c);
 add(1)(2)(3); // 6
+
 ```
 
 ### 25. How do you type a deep object path?
@@ -517,6 +551,7 @@ interface Config {
 }
 
 type HostType = DeepPropertyAccess<Config, "database.host">; // string
+
 ```
 
 ### 26. Design a type-safe form validation system
@@ -565,6 +600,7 @@ function validate<T extends Record<string, any>>(
 
   return errors;
 }
+
 ```
 
 ### 27. How do you create a type-safe middleware chain?
@@ -590,6 +626,7 @@ function createMiddlewareChain<T>(
     next();
   };
 }
+
 ```
 
 ### 28. Implement a type-safe query builder
@@ -627,6 +664,7 @@ class QueryBuilder<T extends Table> {
 const query = new QueryBuilder("users")
   .select("id", "name")
   .where("id = '1'");
+
 ```
 
 ### 29. How do you type a plugin system?
@@ -654,6 +692,7 @@ const loggerPlugin: Plugin<App> = {
     console.log("Logger installed");
   }
 };
+
 ```
 
 ### 30. Design a type-safe configuration system
@@ -698,6 +737,7 @@ const config = createConfig({
     ssl: false
   }
 });
+
 ```
 
 ## FAANG-style Questions (10)
@@ -741,6 +781,7 @@ class ApiClient {
 
 const api = new ApiClient();
 const users = await api.request("/users", "GET");
+
 ```
 
 ### 32. Implement a type-safe state machine
@@ -768,6 +809,7 @@ class StateMachine<S extends State> {
 
 const machine = new StateMachine<"idle">("idle");
 const next = machine.transition("FETCH"); // "loading"
+
 ```
 
 ### 33. Design a type-safe ORM
@@ -802,6 +844,7 @@ class Repository<T extends Model> {
 
 const userRepo = new Repository<User>();
 const user = await userRepo.findById("1");
+
 ```
 
 ### 34. Implement a type-safe middleware system
@@ -840,6 +883,7 @@ function createRouter() {
     }
   };
 }
+
 ```
 
 ### 35. Design a type-safe validation library
@@ -875,6 +919,7 @@ function validate<T extends Record<string, any>>(
 
   return { valid, errors };
 }
+
 ```
 
 ### 36. Implement a type-safe event system
@@ -910,6 +955,7 @@ class TypedEventEmitter<Events extends Record<string, any>> {
     );
   }
 }
+
 ```
 
 ### 37. Design a type-safe dependency injection container
@@ -940,6 +986,7 @@ class DatabaseService {
 const container = new Container();
 container.register("database", DatabaseService);
 const db = container.resolve<DatabaseService>("database");
+
 ```
 
 ### 38. Implement a type-safe plugin system
@@ -973,6 +1020,7 @@ const loggerPlugin: Plugin<App> = {
     console.log("Logger plugin installed");
   }
 };
+
 ```
 
 ### 39. Design a type-safe configuration system
@@ -1013,6 +1061,7 @@ class ConfigManager<T extends Record<string, any>> {
     this.config = { ...this.config, ...overrides } as T;
   }
 }
+
 ```
 
 ### 40. Implement a type-safe query builder
@@ -1058,6 +1107,7 @@ const query = new QueryBuilder("users")
   .select("id", "name")
   .where("id = '1'")
   .build();
+
 ```
 
 ## Follow-up Questions (10)
@@ -1065,6 +1115,7 @@ const query = new QueryBuilder("users")
 ### 41. How does TypeScript handle module resolution?
 
 **Answer**: TypeScript uses module resolution algorithms to find type declarations. It supports:
+
 - Node module resolution
 - Classic module resolution
 - Path mapping
@@ -1079,11 +1130,13 @@ const query = new QueryBuilder("users")
 declare module "lodash" {
   export function chunk<T>(array: T[], size: number): T[][];
 }
+
 ```
 
 ### 43. How do you handle circular dependencies?
 
 **Answer**:
+
 - Use interfaces instead of type aliases
 - Limit circular references
 - Use dependency injection
@@ -1099,11 +1152,13 @@ declare global {
     myCustomProperty: string;
   }
 }
+
 ```
 
 ### 45. How do you optimize TypeScript compilation?
 
 **Answer**:
+
 - Use project references for large codebases
 - Enable incremental compilation
 - Use `skipLibCheck` for faster compilation
@@ -1117,6 +1172,7 @@ declare global {
 type EventName = "click" | "scroll";
 type Handler = `on${Capitalize<EventName>}`;
 // "onClick" | "onScroll"
+
 ```
 
 ### 47. How do you type a WebSocket connection?
@@ -1144,6 +1200,7 @@ class TypedWebSocket {
     };
   }
 }
+
 ```
 
 ### 48. What are type assertions?
@@ -1153,6 +1210,7 @@ class TypedWebSocket {
 ```typescript
 const element = document.getElementById("app") as HTMLDivElement;
 const value = someUnknown as string;
+
 ```
 
 ### 49. How do you handle async/await with TypeScript?
@@ -1170,11 +1228,13 @@ async function fetchData<T>(url: string): Promise<T> {
 
 // Usage
 const user = await fetchData<User>("/api/users/1");
+
 ```
 
 ### 50. What are the best practices for TypeScript in production?
 
 **Answer**:
+
 - Enable strict mode
 - Use explicit return types for public APIs
 - Avoid `any` — use `unknown` instead
@@ -1219,6 +1279,7 @@ function process(x: Shape): number {
     default: const _: never = x; return _;
   }
 }
+
 ```
 
 ## References & Learn More

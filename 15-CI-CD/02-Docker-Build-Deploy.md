@@ -5,6 +5,7 @@
 A **Docker build pipeline** automates the process of building, testing, and deploying Docker images. It includes image building, registry storage, versioning, and deployment strategies. The pipeline ensures consistent, reproducible deployments across environments.
 
 Key concepts:
+
 - **Build Pipeline**: Automated build, test, and deploy workflow
 - **Container Registry**: Storage for Docker images (Docker Hub, ECR, GCR)
 - **Image Tagging**: Version identification for images
@@ -28,6 +29,7 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                  Docker Build Pipeline                     |
 |                                                           |
 |  +------------------+    +------------------+            |
@@ -54,13 +56,19 @@ Key concepts:
 |  |              Container Registry                    |   |
 |  |  myapp:1.0.0, myapp:1.0.1, myapp:latest         |   |
 |  +--------------------------------------------------+   |
+
 +----------------------------------------------------------+
+
                           |
+
                           v
               +-----------------------+
+
               |    Kubernetes/VMs     |
               |    (Deployment)       |
+
               +-----------------------+
+
 ```
 
 ### Image Tagging Strategy
@@ -71,6 +79,7 @@ v1.0.0        --->     myapp:1.0.0       --->  myapp:1.0.0
 v1.0.1        --->     myapp:1.0.1       --->  myapp:1.0.1
 main          --->     myapp:latest      --->  myapp:latest
 abc1234       --->     myapp:abc1234     --->  myapp:abc1234
+
 ```
 
 ## Code Examples
@@ -97,6 +106,7 @@ jobs:
       packages: write
 
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Log in to Container Registry
@@ -130,6 +140,7 @@ jobs:
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
+
 ```
 
 ### AWS ECR Pipeline
@@ -145,6 +156,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Configure AWS credentials
@@ -175,6 +187,7 @@ jobs:
             --cluster my-cluster \
             --service my-service \
             --force-new-deployment
+
 ```
 
 ### Multi-Stage Build Pipeline
@@ -188,6 +201,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Build builder stage
@@ -203,6 +217,7 @@ jobs:
         run: |
           docker tag myapp:latest registry.example.com/myapp:${{ github.sha }}
           docker push registry.example.com/myapp:${{ github.sha }}
+
 ```
 
 ### Deployment to Kubernetes
@@ -218,6 +233,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Build and push image
@@ -242,6 +258,7 @@ jobs:
             myapp=myapp:${{ github.ref_name }} \
             -n production
           kubectl rollout status deployment/myapp -n production
+
 ```
 
 ### Docker Compose Pipeline
@@ -257,6 +274,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Build and deploy
@@ -268,6 +286,7 @@ jobs:
         run: |
           sleep 30
           curl -f http://localhost:3000/health
+
 ```
 
 ## Real-World Use Cases
@@ -283,6 +302,7 @@ jobs:
   build-test-scan:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Build image
@@ -303,6 +323,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Push to registry
@@ -311,6 +332,7 @@ jobs:
           docker push registry.example.com/myapp:${{ github.sha }}
           docker tag registry.example.com/myapp:${{ github.sha }} registry.example.com/myapp:latest
           docker push registry.example.com/myapp:latest
+
 ```
 
 ### 2. Multi-Environment Deployment
@@ -327,6 +349,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     steps:
+
       - uses: actions/checkout@v4
       - name: Deploy to staging
         run: ./deploy.sh staging
@@ -336,9 +359,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+
       - uses: actions/checkout@v4
       - name: Deploy to production
         run: ./deploy.sh production
+
 ```
 
 ## Common Mistakes
@@ -367,6 +392,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Build and push
@@ -385,16 +411,25 @@ jobs:
           image-ref: myapp:${{ github.sha }}
           severity: CRITICAL
           exit-code: 1
+
 ```
 
 1. **Use semantic versioning** — tag images with version numbers
+
 2. **Never use `latest` in production** — use specific tags
+
 3. **Scan images for vulnerabilities** — block critical CVEs
+
 4. **Use multi-stage builds** — minimize image size
+
 5. **Cache Docker layers** — speed up builds
+
 6. **Use health checks** — verify deployment success
+
 7. **Implement rollback** — automated rollback on failure
+
 8. **Use image signing** — verify image integrity
+
 9. **Monitor image size** — prevent bloat
 10. **Use registry replication** — distribute images globally
 
@@ -422,6 +457,7 @@ trivy image myapp:latest
 docker tag myapp:latest myapp:1.0.0
 docker push myapp:1.0.0
 docker push myapp:latest
+
 ```
 
 ## Interview Questions
@@ -568,11 +604,13 @@ trivy image myapp:1.0.0
 docker compose build
 docker compose up -d
 docker compose down
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Documentation](https://docs.docker.com/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)

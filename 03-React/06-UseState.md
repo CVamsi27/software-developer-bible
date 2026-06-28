@@ -28,6 +28,7 @@ class Counter extends React.Component {
     );
   }
 }
+
 ```
 
 ### The Solution
@@ -46,6 +47,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ## How It Works
@@ -88,6 +90,7 @@ Hook Call Order:
 │                                                             │
 │ If you call hooks conditionally, the order breaks!          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### State Batching
@@ -133,6 +136,7 @@ flushSync: Escape Hatch
 │   // DOM updated again                                      │
 │ };                                                          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Functional Updates
@@ -164,6 +168,7 @@ When to Use Functional Updates:
 ├── Multiple state updates in same handler
 ├── State updates in async callbacks
 └── State updates that depend on current state
+
 ```
 
 ### Lazy Initialization
@@ -192,6 +197,7 @@ When to Use:
 ├── Reading from localStorage
 ├── Complex initial state calculations
 └── Any operation that should only run once
+
 ```
 
 ## Code Examples
@@ -213,6 +219,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ### Multiple State Variables
@@ -260,6 +267,7 @@ const UserFormObject = () => {
     </form>
   );
 };
+
 ```
 
 ### Functional Updates
@@ -289,6 +297,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ### Lazy Initialization
@@ -308,6 +317,7 @@ const ExpensiveComponent = () => {
 
   return <div className={theme}>...</div>;
 };
+
 ```
 
 ### Complex State Updates
@@ -342,6 +352,7 @@ const TodoApp = () => {
     </div>
   );
 };
+
 ```
 
 ### State with Previous Value
@@ -371,6 +382,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -423,6 +435,7 @@ const ContactForm = () => {
     </form>
   );
 };
+
 ```
 
 ### 2. Toggle State
@@ -448,6 +461,7 @@ const Modal = () => {
     </>
   );
 };
+
 ```
 
 ### 3. Array State
@@ -487,6 +501,7 @@ const TagInput = () => {
     </div>
   );
 };
+
 ```
 
 ### 4. Dependent State
@@ -539,6 +554,7 @@ const MultiStepForm = () => {
     </div>
   );
 };
+
 ```
 
 ## Common Mistakes
@@ -573,6 +589,7 @@ const Counter = () => {
 
   return <button onClick={incrementThree}>+3</button>;
 };
+
 ```
 
 ### 2. Mutating State Directly
@@ -603,6 +620,7 @@ const TodoApp = () => {
 
   return <TodoInput onAdd={addTodo} />;
 };
+
 ```
 
 ### 3. Setting State During Render
@@ -634,6 +652,7 @@ const Counter = () => {
     </div>
   );
 };
+
 ```
 
 ### 4. Using Object/Array State Without Spread
@@ -660,16 +679,23 @@ const UserForm = () => {
 
   return <button onClick={updateName}>Set Name</button>;
 };
+
 ```
 
 ## Best Practices
 
 1. **Use functional updates when setting state based on previous state**: `setState(prev => newValue)`.
+
 2. **Use lazy initialization for expensive initial state**: `useState(() => expensiveComputation())`.
+
 3. **Keep state minimal**: Only store what you need in state.
+
 4. **Use multiple state variables for unrelated state**: Don't combine unrelated values into one object.
+
 5. **Don't mutate state directly**: Always create new objects/arrays.
+
 6. **Use state colocation**: Keep state as close to where it's used as possible.
+
 7. **Avoid setting state during render**: It causes unnecessary re-renders.
 
 ## Performance Considerations
@@ -749,8 +775,10 @@ A: `useState` is for simple state. `useReducer` is for complex state with multip
 
 **Q17: How do you handle derived state?**
 A: Compute derived state during render, not in `useEffect`:
+
 ```typescript
 const filtered = useMemo(() => items.filter(...), [items, query]);
+
 ```
 
 **Q18: What is the performance impact of state updates?**
@@ -761,6 +789,7 @@ A: Lift state up to the nearest common ancestor and pass it down via props, or u
 
 **Q20: What are the common patterns for state management?**
 A:
+
 - Local state: `useState` for component-specific state
 - Lifted state: State moved to parent component
 - Context: State shared across component tree
@@ -770,11 +799,17 @@ A:
 
 **Q21: Explain the complete state update lifecycle.**
 A:
+
 1. Setter function called
+
 2. React creates an Update object
+
 3. Update enqueued in fiber's updateQueue
+
 4. React schedules a re-render
+
 5. During next render:
+
    - React processes all queued updates
    - Computes new state for each update
    - Returns new state value
@@ -806,36 +841,51 @@ A: State updates trigger re-renders of the component and all its descendants (un
 
 **Q30: How do you test stateful components?**
 A: Use React Testing Library:
+
 ```typescript
 test('increments counter', () => {
   render(<Counter />);
   fireEvent.click(screen.getByText('+1'));
   expect(screen.getByText('Count: 1')).toBeInTheDocument();
 });
+
 ```
 
 ### FAANG-style (5-10)
 
 **Q31: Design a state management system for a large-scale application.**
 A:
+
 1. **Local state**: `useState` for component-specific state
+
 2. **Lifted state**: State moved to common ancestors
+
 3. **Context**: State shared across component tree
+
 4. **External stores**: Redux/Zustand for global state
+
 5. **Server state**: React Query/TanStack Query
+
 6. **State normalization**: Flatten nested state
+
 7. **State colocation**: Keep state near usage
 
 **Q32: How would you debug a state-related issue?**
 A:
+
 1. **React DevTools**: Inspect state values
+
 2. **Why did this render**: Enable in React DevTools
+
 3. **Console logging**: Log state changes
+
 4. **React.Profiler**: Measure render performance
+
 5. **Chrome DevTools**: Record interactions
 
 **Q33: Analyze the performance implications of state design.**
 A:
+
 - **Granular state**: More state variables = more re-renders
 - **Object state**: New reference on update = unnecessary re-renders
 - **Derived state**: Computing in render vs useEffect
@@ -843,6 +893,7 @@ A:
 
 **Q34: How would you implement state persistence?**
 A:
+
 ```typescript
 const usePersistedState = (key: string, initialValue: any) => {
   const [state, setState] = useState(() => {
@@ -856,26 +907,38 @@ const usePersistedState = (key: string, initialValue: any) => {
 
   return [state, setState];
 };
+
 ```
 
 **Q35: Design a state management system for offline-first apps.**
 A:
+
 1. **Local storage**: Persist state locally
+
 2. **Sync queue**: Queue changes for sync
+
 3. **Conflict resolution**: CRDT or last-write-wins
+
 4. **Optimistic updates**: Show changes immediately
+
 5. **Background sync**: Sync when online
 
 **Q36: How would you implement state time-travel debugging?**
 A:
+
 1. **State history**: Store all state snapshots
+
 2. **Time-travel controls**: Navigate to past states
+
 3. **Action replay**: Replay user actions
+
 4. **State diffing**: Show what changed between states
+
 5. **DevTools integration**: Visualize state changes
 
 **Q37: Analyze the memory implications of state.**
 A:
+
 - **Per state variable**: ~100 bytes
 - **Object state**: Additional memory for properties
 - **Array state**: Additional memory for elements
@@ -884,6 +947,7 @@ A:
 
 **Q38: How would you implement state synchronization across tabs?**
 A:
+
 ```typescript
 const useCrossTabState = (key: string, initialValue: any) => {
   const [state, setState] = useState(() => {
@@ -908,6 +972,7 @@ const useCrossTabState = (key: string, initialValue: any) => {
 
   return [state, setPersistedState];
 };
+
 ```
 
 **Q39: How does state interact with React Server Components?**
@@ -915,10 +980,15 @@ A: Server Components can't use state. They're rendered on the server and seriali
 
 **Q40: Design a state management system for real-time collaborative apps.**
 A:
+
 1. **CRDT**: Conflict-free replicated data types
+
 2. **Operational transformation**: Transform operations
+
 3. **State merging**: Merge concurrent changes
+
 4. **Conflict resolution**: Handle conflicting edits
+
 5. **Optimistic updates**: Show changes immediately
 
 ### Follow-ups (5-10)
@@ -928,6 +998,7 @@ A: "`useState` is like a variable that React watches. When you change it, React 
 
 **Q42: What are the edge cases in state management?**
 A:
+
 - Stale closures in async callbacks
 - State updates after unmount
 - Conditional hook calls
@@ -936,10 +1007,12 @@ A:
 
 **Q43: How does state handle the "derived state" pattern?**
 A: Derived state should be computed during render, not stored in state:
+
 ```typescript
 const [items, setItems] = useState([]);
 const [query, setQuery] = useState('');
 const filtered = useMemo(() => items.filter(...), [items, query]);
+
 ```
 
 **Q44: What is the relationship between state and React DevTools?**
@@ -950,6 +1023,7 @@ A: StrictMode double-renders in development. This can cause state to appear to r
 
 **Q46: What is the future of state management in React?**
 A: React is exploring:
+
 - Automatic memoization (React Compiler)
 - Better concurrent state handling
 - Server state integration
@@ -957,6 +1031,7 @@ A: React is exploring:
 
 **Q47: How would you implement state validation?**
 A:
+
 ```typescript
 const useValidatedState = (initialValue: any, validator: Function) => {
   const [state, setState] = useState(initialValue);
@@ -974,10 +1049,12 @@ const useValidatedState = (initialValue: any, validator: Function) => {
 
   return [state, setValidatedState, error];
 };
+
 ```
 
 **Q48: How does state handle the "optimistic update" pattern?**
 A: Optimistic updates show changes immediately before server confirmation:
+
 ```typescript
 const handleLike = async (postId: string) => {
   setPosts(prev => prev.map(p =>
@@ -992,10 +1069,12 @@ const handleLike = async (postId: string) => {
     ));
   }
 };
+
 ```
 
 **Q49: How would you implement state rollback?**
 A:
+
 ```typescript
 const useRollbackState = (initialValue: any) => {
   const [history, setHistory] = useState([initialValue]);
@@ -1011,10 +1090,12 @@ const useRollbackState = (initialValue: any) => {
 
   return [history[index], setState, { undo, redo, canUndo: index > 0, canRedo: index < history.length - 1 }];
 };
+
 ```
 
 **Q50: How does state interact with React's concurrent features?**
 A: Concurrent features affect state:
+
 - Transitions defer state updates
 - `useDeferredValue` creates lagging state
 - Suspense can pause state updates
@@ -1065,6 +1146,7 @@ When to Use useState vs useReducer:
 ├── useState: Simple state, few sub-values
 ├── useReducer: Complex state, multiple sub-values, complex logic
 └── Both use the same underlying mechanism
+
 ```
 
 ## References & Learn More

@@ -7,9 +7,13 @@
 ## Why Do We Need It?
 
 1. **API endpoints** — Serve data to clients, webhooks, and external services
+
 2. **Backend logic** — Handle authentication, validation, and business logic
+
 3. **Third-party integration** — Process webhooks and external API calls
+
 4. **File handling** — Upload/download files
+
 5. **Edge computing** — Run API logic at the edge
 
 ## How It Works
@@ -47,6 +51,7 @@
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Route Handler vs API Route (Pages Router)
@@ -70,6 +75,7 @@
 │  ├─ No streaming                                                │
 │  └─ Deprecated in Next.js 13+                                   │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -100,6 +106,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json(newUser, { status: 201 })
 }
+
 ```
 
 ### Dynamic Route Handler
@@ -155,6 +162,7 @@ export async function DELETE(
 
   return NextResponse.json({ success: true })
 }
+
 ```
 
 ### Route Handler with Query Params
@@ -193,6 +201,7 @@ export async function GET(request: NextRequest) {
     }),
   })
 }
+
 ```
 
 ### Route Handler with Headers
@@ -220,6 +229,7 @@ export async function GET(request: NextRequest) {
     },
   })
 }
+
 ```
 
 ### Route Handler with Cookies
@@ -257,6 +267,7 @@ export async function DELETE(request: NextRequest) {
   response.cookies.delete('session')
   return response
 }
+
 ```
 
 ### Route Handler with Streaming
@@ -288,6 +299,7 @@ export async function GET(request: NextRequest) {
     },
   })
 }
+
 ```
 
 ### Route Handler with Webhooks
@@ -331,6 +343,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ received: true })
 }
+
 ```
 
 ### Route Handler with File Upload
@@ -360,6 +373,7 @@ export async function POST(request: NextRequest) {
     pathname: blob.pathname,
   })
 }
+
 ```
 
 ### Route Handler with Edge Runtime
@@ -378,6 +392,7 @@ export async function GET(request: Request) {
     timestamp: Date.now(),
   })
 }
+
 ```
 
 ### Route Handler with Revalidation
@@ -410,6 +425,7 @@ export async function POST(request: NextRequest) {
     timestamp: Date.now(),
   })
 }
+
 ```
 
 ### Route Handler with Error Handling
@@ -460,6 +476,7 @@ export async function POST(request: NextRequest) {
     )
   }
 }
+
 ```
 
 ### Route Handler with Middleware Integration
@@ -484,6 +501,7 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.next()
 }
+
 ```
 
 ### Route Handler with ISR
@@ -503,6 +521,7 @@ export async function GET(request: NextRequest) {
     },
   })
 }
+
 ```
 
 ## Real-World Use Cases
@@ -540,6 +559,7 @@ export async function GET() {
   const data = await response.json()
   return Response.json(data)
 }
+
 ```
 
 ### 2. Not Handling All HTTP Methods
@@ -569,6 +589,7 @@ export async function PUT(request: Request) {
 export async function DELETE() {
   return Response.json({ success: true })
 }
+
 ```
 
 ### 3. Not Validating Request Body
@@ -595,6 +616,7 @@ export async function POST(request: Request) {
   await db.user.create({ data: validated })
   return Response.json({ success: true }, { status: 201 })
 }
+
 ```
 
 ### 4. Not Returning Proper Status Codes
@@ -622,6 +644,7 @@ export async function POST(request: Request) {
     )
   }
 }
+
 ```
 
 ### 5. Not Handling CORS
@@ -646,18 +669,27 @@ export async function GET() {
     }
   )
 }
+
 ```
 
 ## Best Practices
 
 1. **Use proper HTTP methods** — GET for reading, POST for creating, etc.
+
 2. **Return appropriate status codes** — 200, 201, 400, 401, 404, 500
+
 3. **Validate all inputs** — Use Zod or similar for request validation
+
 4. **Handle errors gracefully** — Try/catch with proper error responses
+
 5. **Use Edge Runtime when possible** — For better performance
+
 6. **Implement rate limiting** — Prevent abuse
+
 7. **Add CORS headers** — For cross-origin requests
+
 8. **Use streaming** — For long-running operations
+
 9. **Cache responses** — Use Cache-Control headers
 10. **Document your API** — Clear endpoint documentation
 
@@ -665,17 +697,20 @@ export async function GET() {
 
 ```text
 Route Handler Performance:
+
 - Edge Runtime: Fast cold starts, limited APIs
 - Node.js Runtime: Full API access, slower starts
 - Streaming: Progressive response delivery
 - Caching: Reduce server load with proper headers
 
 Optimization:
+
 - Use Edge Runtime for simple handlers
 - Implement response caching
 - Use streaming for slow operations
 - Minimize database queries
 - Use connection pooling
+
 ```
 
 ## Interview Questions
@@ -845,6 +880,7 @@ Config:
 export const runtime = 'edge'
 export const revalidate = 60
 export const dynamic = 'force-dynamic'
+
 ```
 
 ## References & Learn More

@@ -32,6 +32,7 @@ function merge(intervals: number[][]): number[][] {
   merged.push(current);
   return merged;
 }
+
 ```
 
 ## How It Works
@@ -53,6 +54,7 @@ Step 3: current = [8,10]
 Step 4: Add [15,18]
 
 Result: [[1,6], [8,10], [15,18]]
+
 ```
 
 ### ASCII Diagram
@@ -60,27 +62,32 @@ Result: [[1,6], [8,10], [15,18]]
 ```text
 MERGE INTERVALS:
 Original:     [1,3]  [2,6]      [8,10]         [15,18]
+
               |-----|  |--------|
                           |---------|             |--------|
 
 After sort:   [1,3]  [2,6]      [8,10]         [15,18]
 
 Merge:        [1,6]            [8,10]         [15,18]
+
               |-----------|
                                 |---------|
                                                   |--------|
 
 INSERT INTERVAL:
 Original:     [1,3]  [6,9]
+
               |-----|
                         |---------|
 
 Insert [2,5]: [1,5]           [6,9]
+
               |----------|
                         |---------|
 
 MEETING ROOMS:
 Room 1:  [0,30]  [5,10]  [15,20]
+
          |-------------------------------|
               |----|
                    |---------|
@@ -88,11 +95,13 @@ Room 1:  [0,30]  [5,10]  [15,20]
 Overlap exists! Need multiple rooms.
 
 Room 2:  [5,10] [15,20] [30,40]
+
               |----|
                    |---------|
                                 |---------|
 
 No overlaps! One room enough.
+
 ```
 
 ## Code Examples (TypeScript)
@@ -125,6 +134,7 @@ console.log(merge([[1,3],[2,6],[8,10],[15,18]]));
 // [[1,6],[8,10],[15,18]]
 console.log(merge([[1,4],[4,5]]));
 // [[1,5]]
+
 ```
 
 ### Problem 2: Insert Interval
@@ -160,6 +170,7 @@ console.log(insert([[1,3],[6,9]], [2,5]));
 // [[1,5],[6,9]]
 console.log(insert([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]));
 // [[1,2],[3,10],[12,16]]
+
 ```
 
 ### Problem 3: Meeting Rooms II
@@ -187,6 +198,7 @@ function minMeetingRooms(intervals: number[][]): number {
 // Example
 console.log(minMeetingRooms([[0,30],[5,10],[15,20]])); // 2
 console.log(minMeetingRooms([[7,10],[2,4]])); // 1
+
 ```
 
 ### Problem 4: Non-overlapping Intervals
@@ -213,6 +225,7 @@ function eraseOverlapIntervals(intervals: number[][]): number {
 // Example
 console.log(eraseOverlapIntervals([[1,2],[2,3],[3,4],[1,3]])); // 1
 console.log(eraseOverlapIntervals([[1,2],[1,2],[1,2]])); // 2
+
 ```
 
 ### Problem 5: Minimum Number of Arrows to Burst Balloons
@@ -238,6 +251,7 @@ function findMinArrowShots(points: number[][]): number {
 // Example
 console.log(findMinArrowShots([[10,16],[2,8],[1,6],[7,12]])); // 2
 console.log(findMinArrowShots([[1,2],[3,4],[5,6],[7,8]])); // 4
+
 ```
 
 ### Problem 6: Employee Free Time
@@ -282,14 +296,19 @@ const schedule = [
 ];
 console.log(employeeFreeTime(schedule));
 // [[3,4]]
+
 ```
 
 ## Common Mistakes
 
 1. **Not sorting intervals**: Always sort by start time first
+
 2. **Wrong comparison**: Use end time for greedy, start time for merging
+
 3. **Off-by-one errors**: Be careful with strict vs non-strict comparisons
+
 4. **Not handling empty input**: Check for empty arrays
+
 5. **Modifying input**: Create copies when needed
 
 ## Time/Space Complexity
@@ -306,20 +325,27 @@ console.log(employeeFreeTime(schedule));
 ### Easy
 
 1. **Merge Sorted Array** (LeetCode 88)
+
 2. **Meeting Rooms** (LeetCode 252)
 
 ### Medium
 
 1. **Merge Intervals** (LeetCode 56)
+
 2. **Insert Interval** (LeetCode 57)
+
 3. **Non-overlapping Intervals** (LeetCode 435)
+
 4. **Minimum Number of Arrows to Burst Balloons** (LeetCode 452)
+
 5. **Interval List Intersections** (LeetCode 986)
 
 ### Hard
 
 1. **Meeting Rooms II** (LeetCode 253)
+
 2. **Employee Free Time** (LeetCode 759)
+
 3. **Maximum Number of Non-overlapping Intervals** (LeetCode 1985)
 
 ## Summary
@@ -342,17 +368,21 @@ Key operations:
 └─────────────────────────────────────────┘
 
 When to sort by:
+
 - Start time: For merging intervals
 - End time: For greedy (non-overlapping)
 
 Key insight:
+
 - Merge if current.start <= previous.end
 - Non-overlap if current.start > previous.end
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Intervals](https://leetcode.com/tag/interval/)
 - [NeetCode Intervals](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

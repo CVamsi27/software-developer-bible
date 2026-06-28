@@ -11,8 +11,11 @@ The pattern is particularly useful in Domain-Driven Design (DDD) and Clean Archi
 Without the Repository pattern, business logic is tightly coupled to data access, leading to:
 
 1. **Tight coupling**: Business logic depends on specific database implementations
+
 2. **Code duplication**: Data access logic repeated throughout the codebase
+
 3. **Difficult testing**: Hard to mock database operations for unit tests
+
 4. **Hard to change databases**: Switching from PostgreSQL to MongoDB requires rewriting many files
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Repository pattern, business logic is tightly coupled to data access
 The Repository pattern works by:
 
 1. Defining an interface for data access operations
+
 2. Implementing the interface for specific data stores
+
 3. Business logic depends only on the interface, not implementations
+
 4. Dependency injection provides the concrete implementation
 
 ```text
@@ -50,6 +56,7 @@ The Repository pattern works by:
 │ │SQL   │ │DB    │   │System│                  │
 │ └──────┘ └──────┘   └──────┘                  │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -80,6 +87,7 @@ interface FindOptions {
   orderBy?: string;
   order?: 'asc' | 'desc';
 }
+
 ```
 
 ### User Repository Implementation
@@ -172,6 +180,7 @@ class InMemoryUserRepository implements Repository<User> {
     return Array.from(this.users.values()).filter(u => u.isActive);
   }
 }
+
 ```
 
 ### Repository with Prisma
@@ -290,6 +299,7 @@ class PrismaUserRepository implements Repository<User> {
     return prismaUsers.map(u => this.toDomain(u));
   }
 }
+
 ```
 
 ### Generic Repository with Specifications
@@ -444,6 +454,7 @@ const activeAdmins = await userRepo.find(
     new HasRoleSpecification('admin')
   )
 );
+
 ```
 
 ### Unit of Work Pattern
@@ -540,6 +551,7 @@ class UserService {
     }
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -626,6 +638,7 @@ class ProductRepository {
     });
   }
 }
+
 ```
 
 ### 2. Order Repository with Relationships
@@ -726,6 +739,7 @@ class OrderRepository {
     };
   }
 }
+
 ```
 
 ### 3. Search Repository
@@ -832,6 +846,7 @@ class ProductSearchRepository extends SearchableRepository<Product> {
     return `${product.name} ${product.category}`;
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -851,6 +866,7 @@ class BadRepository {
 
   // No business logic, no query methods
 }
+
 ```
 
 ### 2. Repository with Business Logic
@@ -866,6 +882,7 @@ class BadRepository {
     return { user, order };
   }
 }
+
 ```
 
 ### 3. Not Using Interface
@@ -877,6 +894,7 @@ class UserRepository {
     // Direct database access without interface
   }
 }
+
 ```
 
 ### 4. God Repository
@@ -889,6 +907,7 @@ class Repository {
   async findOrder(id: string): Promise<Order> { ... }
   // Violates Single Responsibility Principle
 }
+
 ```
 
 ## Best Practices
@@ -903,6 +922,7 @@ interface UserRepository {
   save(user: User): Promise<User>;
   delete(id: string): Promise<boolean>;
 }
+
 ```
 
 ### 2. Keep Repositories Focused
@@ -916,6 +936,7 @@ class UserRepository implements UserRepositoryInterface {
 class OrderRepository implements OrderRepositoryInterface {
   // Only order-related operations
 }
+
 ```
 
 ### 3. Use Specification Pattern for Complex Queries
@@ -924,6 +945,7 @@ class OrderRepository implements OrderRepositoryInterface {
 // ✅ GOOD - Reusable query logic
 const activeUsers = await userRepo.find(new IsActiveUserSpecification());
 const adminUsers = await userRepo.find(new HasRoleSpecification('admin'));
+
 ```
 
 ### 4. Implement Caching at Repository Level
@@ -946,6 +968,7 @@ class CachedUserRepository implements UserRepository {
     return user;
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -965,86 +988,111 @@ class CachedUserRepository implements UserRepository {
 ### Beginner
 
 1. **What is the Repository pattern?**
+
    - An abstraction over data access that separates business logic from persistence.
 
 2. **When would you use Repository pattern?**
+
    - When you need to decouple business logic from data access or switch databases easily.
 
 3. **What's the difference between Repository and DAO?**
+
    - Repository is domain-focused; DAO is data-focused. Repository is an aggregate root.
 
 4. **How do you implement Repository in TypeScript?**
+
    - Define an interface, implement for specific data stores, and use dependency injection.
 
 5. **What are the benefits of Repository pattern?**
+
    - Loose coupling, easier testing, and database independence.
 
 ### Intermediate
 
 6. **How do you handle complex queries in Repository?**
+
    - Use Specification pattern, query builders, or custom repository methods.
 
 7. **Can Repository have business logic?**
+
    - No, keep business logic in services. Repository should only handle data access.
 
 8. **How do you test Repository pattern?**
+
    - Use in-memory implementations, mock databases, or test doubles.
 
 9. **What's the relationship between Repository and Unit of Work?**
+
    - Unit of Work coordinates multiple repositories and transactions.
 
 10. **How do you handle caching in Repository?**
+
     - Implement caching at repository level with cache invalidation strategies.
 
 ### Senior
 
 11. **How does Repository pattern affect scalability?**
+
     - Can implement different strategies for read/write separation and sharding.
 
 12. **What are the SOLID violations with Repository?**
+
     - Usually follows SOLID; watch for violating Interface Segregation.
 
 13. **How do you handle Repository in microservices?**
+
     - Each service has its own repositories; avoid shared repositories.
 
 14. **What are the memory implications of Repository?**
+
     - Repositories are usually stateless; caching can consume memory.
 
 15. **How do you refactor Repository code?**
+
     - Extract common logic, use generics, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Repository for a distributed database.**
+
     - Consider consistency, partition tolerance, and conflict resolution.
 
 17. **How would you implement Repository for event sourcing?**
+
     - Use event store, projections, and snapshots.
 
 18. **What are the implications of Repository in cloud-native applications?**
+
     - Consider serverless databases, connection limits, and scaling.
 
 19. **How do you handle Repository in CQRS?**
+
     - Separate read and write repositories with different optimizations.
 
 20. **Design a Repository that supports multi-tenancy.**
+
     - Consider tenant isolation, data partitioning, and security.
 
 ### Follow-ups
 
 21. **Can Repository pattern be combined with other patterns?**
+
     - Yes, commonly with Unit of Work, Specification, and Factory patterns.
 
 22. **How do you handle Repository in testing frameworks?**
+
     - Use in-memory implementations, mock databases, and test containers.
 
 23. **What are the memory implications of Repository pattern?**
+
     - Repositories are usually lightweight; caching consumes memory.
 
 24. **How do you handle Repository in serverless environments?**
+
     - Consider connection pooling, cold starts, and stateless design.
 
 25. **What's the impact of Repository on code maintainability?**
+
     - Improves maintainability by centralizing data access and reducing duplication.
 
 ## Summary
@@ -1087,6 +1135,7 @@ The Repository pattern is essential for clean architecture and domain-driven des
 │ • Data Mapper                               │
 │ • Active Record                             │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

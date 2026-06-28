@@ -9,11 +9,17 @@ Every NestJS application has at least one module — the **root module** (`AppMo
 ## Why Do We Need It?
 
 1. **Encapsulation**: Modules group related functionality together, keeping code organized and maintainable.
+
 2. **Dependency Management**: They define clear boundaries for dependency injection, controlling which providers are available in which contexts.
+
 3. **Reusability**: Feature modules can be easily imported into other modules, promoting code reuse.
+
 4. **Scalability**: As applications grow, modules provide a clear structure for adding new features without impacting existing code.
+
 5. **Testing**: Well-defined module boundaries make unit and integration testing straightforward.
+
 6. **Lazy Loading**: Modules can be loaded on demand, improving application startup time.
+
 7. **Clear Architecture**: Enforces a modular architecture that aligns with SOLID principles.
 
 ## How It Works
@@ -52,6 +58,7 @@ NestJS modules work through a decorator-based system. The `@Module()` decorator 
 │  Imports: [UserModule, AuthModule]               │
 │  Exports: [OrderModule]                         │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ### Module Dependency Graph
@@ -74,6 +81,7 @@ NestJS modules work through a decorator-based system. The `@Module()` decorator 
    │ Database   │ │ Payment    │ │ JWT        │
    │ Module     │ │ Module     │ │ Module     │
    └────────────┘ └────────────┘ └────────────┘
+
 ```
 
 ## Code Examples
@@ -97,6 +105,7 @@ import { User } from './entities/user.entity';
   exports: [UserService], // Export so other modules can use UserService
 })
 export class UserModule {}
+
 ```
 
 ### Root Module
@@ -122,6 +131,7 @@ import { DatabaseModule } from './database/database.module';
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Feature Module with Relationships
@@ -148,6 +158,7 @@ import { PaymentModule } from '../payment/payment.module';
   exports: [OrderService],
 })
 export class OrderModule {}
+
 ```
 
 ### Dynamic Module
@@ -195,6 +206,7 @@ export class DatabaseModule {
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Configurable Dynamic Module
@@ -251,6 +263,7 @@ export class MailModule {
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Shared Module Pattern
@@ -270,6 +283,7 @@ const SHARED_PROVIDERS = [LoggerService, CacheService, NotificationService];
   exports: SHARED_PROVIDERS,
 })
 export class SharedModule {}
+
 ```
 
 ### Module with Re-export
@@ -287,6 +301,7 @@ import { LoggerModule } from './logger.module';
   exports: [ConfigModule, DatabaseModule, LoggerModule],
 })
 export class CoreModule {}
+
 ```
 
 ### Lazy Module
@@ -312,6 +327,7 @@ import { LazyModule } from '@nestjs/core';
   ],
 })
 export class AppModule {}
+
 ```
 
 ## Real-World Use Cases
@@ -355,6 +371,7 @@ src/
     ├── logger/
     ├── interceptors/
     └── guards/
+
 ```
 
 ### 2. Microservice Module Boundaries
@@ -370,6 +387,7 @@ src/
   providers: [OrderService, OrderRepository],
 })
 export class OrderMicroserviceModule {}
+
 ```
 
 ### 3. Plugin Architecture
@@ -400,6 +418,7 @@ export class PluginModule {
   ],
 })
 export class AppModule {}
+
 ```
 
 ## Common Mistakes
@@ -426,6 +445,7 @@ export class UserModule {}
   providers: [UserService],
 })
 export class UserModule {}
+
 ```
 
 ### 2. Missing Exports
@@ -451,6 +471,7 @@ export class OrderModule {
   exports: [UserService],
 })
 export class UserModule {}
+
 ```
 
 ### 3. Over-Importing
@@ -469,6 +490,7 @@ export class AppModule {}
   imports: [TypeOrmModule.forFeature([User])],
 })
 export class UserModule {}
+
 ```
 
 ### 4. Not Using @Global Properly
@@ -489,6 +511,7 @@ export class SharedModule {}
   exports: [LoggerService, ConfigService],
 })
 export class SharedModule {}
+
 ```
 
 ### 5. Module Initialization Order Issues
@@ -516,28 +539,42 @@ export class AppModule {}
   ],
 })
 export class AppModule {}
+
 ```
 
 ## Best Practices
 
 1. **Single Responsibility**: Each module should have a single, well-defined purpose.
+
 2. **Feature Modules**: Organize code by feature, not by type (controllers, services, etc.).
+
 3. **Shared Module**: Create a dedicated `SharedModule` for cross-cutting concerns.
+
 4. **Barrel Exports**: Use index.ts files to simplify imports.
+
 5. **Lazy Loading**: Use `LazyModule` for heavy modules not needed at startup.
+
 6. **Dynamic Modules**: Leverage dynamic modules for configurable functionality.
+
 7. **Avoid Circular Dependencies**: Design module dependency trees as directed acyclic graphs (DAGs).
+
 8. **Minimal Exports**: Only export what other modules actually need.
+
 9. **Use Global Sparingly**: Reserve `@Global()` for truly universal providers.
 10. **Module Testing**: Test modules in isolation with `Test.createTestingModule()`.
 
 ## Performance Considerations
 
 1. **Module Initialization**: Modules are instantiated once during application bootstrap. Heavy initialization should be deferred.
+
 2. **Provider Scope**: Default scope is singleton. Use `TRANSIENT` or `REQUEST` scope carefully as they create new instances per request.
+
 3. **Tree-Shaking**: NestJS CLI tree-shakes unused imports during compilation.
+
 4. **Lazy Loading**: Defer non-critical module imports to reduce startup time.
+
 5. **Dynamic Module Config**: Use `forRootAsync` to load configuration asynchronously and avoid blocking.
+
 6. **Module Caching**: NestJS caches module metadata. Restart the application if module structure changes in development.
 
 ## Interview Questions
@@ -551,6 +588,7 @@ A module is a class decorated with `@Module()` that groups related controllers, 
 The root module (`AppModule`) is the entry point of a NestJS application. It's the first module loaded and typically imports all other feature modules.
 
 **Q3: What are the properties of the `@Module()` decorator?**
+
 - `providers`: Services and repositories available within the module
 - `controllers`: Request handlers
 - `imports`: Other modules whose exports are needed
@@ -571,10 +609,12 @@ A dynamic module is a module that can be configured at runtime. It's created by 
 Use the `@Global()` decorator on the module to make its exported providers available globally without explicit imports.
 
 **Q8: What is the difference between `forRoot()` and `forFeature()`?**
+
 - `forRoot()`: Initializes a module with global configuration (e.g., database connection)
 - `forFeature()`: Registers specific entities/services within a feature module
 
 **Q9: How do you handle circular dependencies?**
+
 - Use `forwardRef()` to defer resolution
 - Restructure code to remove the circular dependency
 - Create a shared module or use event-based communication
@@ -591,6 +631,7 @@ NestJS loads modules in topological order based on imports. The root module load
 Each module has its own dependency injection scope. Providers in one module are not accessible in another unless explicitly exported and imported.
 
 **Q13: What are the different provider scopes in NestJS?**
+
 - `DEFAULT`: Singleton (one instance per module)
 - `TRANSIENT`: New instance for each consumer that injects it
 - `REQUEST`: New instance for each request
@@ -624,6 +665,7 @@ export class TenantModule {
     };
   }
 }
+
 ```
 
 **Q17: How would you implement module-level caching in a distributed system?**

@@ -47,6 +47,7 @@ A **Promise** is an object representing the eventual completion or failure of an
 │  • Once settled, value/reason cannot change                │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Promise Execution Flow
@@ -100,6 +101,7 @@ A **Promise** is an object representing the eventual completion or failure of an
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -125,6 +127,7 @@ fetchUser(1)
   .then(user => console.log(user))  // { id: 1, name: 'User 1' }
   .catch(error => console.error(error))
   .finally(() => console.log('Done'));
+
 ```
 
 ### Promise Chaining
@@ -155,6 +158,7 @@ fetchData('https://api.example.com')
 // Each .then() returns a new promise
 // If you return a promise, it's awaited
 // If you return a value, it's wrapped in a resolved promise
+
 ```
 
 ### Error Handling
@@ -192,6 +196,7 @@ riskyOperation()
     console.error(error);
     return 'Default value';  // Recovery
   });
+
 ```
 
 ### Promise.all
@@ -211,6 +216,7 @@ Promise.all([promise1, promise2, promise3])
   });
 
 // If any promise rejects, Promise.all rejects immediately
+
 ```
 
 ### Promise.allSettled
@@ -236,6 +242,7 @@ Promise.allSettled([promise1, promise2, promise3])
 // { status: 'fulfilled', value: 'Success' }
 // { status: 'rejected', reason: 'Error' }
 // { status: 'fulfilled', value: 'Another success' }
+
 ```
 
 ### Promise.any
@@ -260,6 +267,7 @@ Promise.any([promise1, promise2, promise3])
     // Only rejects if ALL promises reject
     console.error('All failed:', error);
   });
+
 ```
 
 ### Promise.race
@@ -280,6 +288,7 @@ Promise.race([promise1, promise2])
   .catch(error => {
     console.error('Error:', error);
   });
+
 ```
 
 ### Practical Examples
@@ -317,6 +326,7 @@ function retry<T>(fn: () => Promise<T>, maxAttempts: number): Promise<T> {
 retry(() => fetch('/api/data'), 3)
   .then(response => response.json())
   .catch(error => console.error('All attempts failed'));
+
 ```
 
 ## Real-World Use Cases
@@ -337,6 +347,7 @@ async function fetchUserData(userId: string) {
     throw error;
   }
 }
+
 ```
 
 ### 2. Parallel Operations
@@ -351,6 +362,7 @@ async function loadDashboard() {
 
   return { user, posts, notifications };
 }
+
 ```
 
 ### 3. Sequential Operations
@@ -362,6 +374,7 @@ async function processData() {
   const saved = await saveToDatabase(processed);
   return saved;
 }
+
 ```
 
 ### 4. Error Recovery
@@ -375,6 +388,7 @@ async function fetchWithFallback() {
     return await fetchFallback();
   }
 }
+
 ```
 
 ### 5. Caching
@@ -392,6 +406,7 @@ async function cachedFetch(url: string) {
 
   return promise;
 }
+
 ```
 
 ## Common Mistakes
@@ -416,6 +431,7 @@ fetchUser()
   .then(posts => {
     // posts is defined
   });
+
 ```
 
 ### 2. Forgetting .catch()
@@ -430,6 +446,7 @@ fetchUser()
 fetchUser()
   .then(user => console.log(user))
   .catch(error => console.error(error));
+
 ```
 
 ### 3. Creating Promises Unnecessarily
@@ -448,6 +465,7 @@ function getUser(id: number) {
 function getUser(id: number) {
   return fetch(`/api/users/${id}`).then(r => r.json());
 }
+
 ```
 
 ### 4. Mixing async/await with .then()
@@ -464,6 +482,7 @@ async function getData() {
   const user = await fetchUser();
   return user;
 }
+
 ```
 
 ## Best Practices
@@ -485,6 +504,7 @@ async function process() {
     handleError(error);
   }
 }
+
 ```
 
 ### 2. Return Promises
@@ -498,6 +518,7 @@ promise
   .then(processed => {
     console.log(processed);
   });
+
 ```
 
 ### 3. Use Promise Utilities
@@ -514,6 +535,7 @@ const result = await Promise.race([promise, timeout]);
 
 // Promise.any for first success
 const result = await Promise.any([p1, p2, p3]);
+
 ```
 
 ### 4. Avoid Nested Promises
@@ -530,6 +552,7 @@ getUser().then(user => {
 getUser()
   .then(user => getPosts(user.id))
   .then(posts => console.log(posts));
+
 ```
 
 ## Performance Considerations
@@ -554,6 +577,7 @@ async function parallel() {
   ]);
   return { a, b, c };
 }
+
 ```
 
 ### Memory Usage
@@ -584,6 +608,7 @@ async function processBatched() {
   }
   return results;
 }
+
 ```
 
 ## Interview Questions
@@ -597,6 +622,7 @@ A: A Promise is an object representing the eventual completion or failure of an 
 **Q2: What are the three states of a Promise?**
 
 A:
+
 - **Pending**: Initial state, neither fulfilled nor rejected
 - **Fulfilled**: Operation completed successfully
 - **Rejected**: Operation failed
@@ -604,6 +630,7 @@ A:
 **Q3: What is the difference between `.then()` and `.catch()`?**
 
 A:
+
 - `.then()`: Handles fulfilled state, receives the resolved value
 - `.catch()`: Handles rejected state, receives the error/reason
 
@@ -614,6 +641,7 @@ A: Promise chaining is linking multiple `.then()` handlers together. Each `.then
 **Q5: How do you create a Promise?**
 
 A: Use the `Promise` constructor:
+
 ```typescript
 const promise = new Promise((resolve, reject) => {
   // Async operation
@@ -623,6 +651,7 @@ const promise = new Promise((resolve, reject) => {
     reject(error);
   }
 });
+
 ```
 
 ### Intermediate (5-10 questions)
@@ -630,6 +659,7 @@ const promise = new Promise((resolve, reject) => {
 **Q6: What is the difference between `Promise.all`, `Promise.allSettled`, `Promise.race`, and `Promise.any`?**
 
 A:
+
 - `Promise.all`: Resolves when all resolve, rejects if any rejects
 - `Promise.allSettled`: Resolves when all settle (fulfilled or rejected)
 - `Promise.race`: Resolves/rejects with first settled promise
@@ -650,6 +680,7 @@ A: `finally()` runs regardless of whether the promise is fulfilled or rejected. 
 **Q10: How do you convert a callback-based function to a Promise?**
 
 A: Use the `Promise` constructor:
+
 ```typescript
 function promisify(callbackFn) {
   return function(...args) {
@@ -661,6 +692,7 @@ function promisify(callbackFn) {
     });
   };
 }
+
 ```
 
 ### Senior (10-15 questions)
@@ -668,9 +700,13 @@ function promisify(callbackFn) {
 **Q11: Explain the Promise resolution procedure.**
 
 A: When a promise is resolved:
+
 1. If value is a thenable, adopt its state
+
 2. If value is a promise, queue `.then()` handlers
+
 3. If value is a plain value, wrap in resolved promise
+
 4. Settle the promise with the value
 
 **Q12: What is promise unwrapping?**
@@ -680,12 +716,14 @@ A: Promise unwrapping is when a `.then()` handler returns a promise, and the nex
 **Q13: What is the difference between returning a value and returning a Promise in `.then()`?**
 
 A:
+
 - Returning a value: Wraps it in a resolved promise
 - Returning a promise: The next `.then()` waits for it to settle
 
 **Q14: How do you implement a custom Promise.all?**
 
 A:
+
 ```typescript
 function customPromiseAll(promises) {
   return new Promise((resolve, reject) => {
@@ -705,11 +743,13 @@ function customPromiseAll(promises) {
     });
   });
 }
+
 ```
 
 **Q15: What are the performance implications of Promise.all vs sequential awaits?**
 
 A:
+
 - `Promise.all`: Runs in parallel, faster for independent operations
 - Sequential awaits: Runs one after another, slower but simpler
 - Use `Promise.all` when operations don't depend on each other
@@ -719,6 +759,7 @@ A:
 **Q16: Design a Promise-based task scheduler.**
 
 A:
+
 ```typescript
 class TaskScheduler {
   private queue: (() => Promise<any>)[] = [];
@@ -750,11 +791,13 @@ class TaskScheduler {
     }
   }
 }
+
 ```
 
 **Q17: How would you implement Promise.retry with exponential backoff?**
 
 A:
+
 ```typescript
 async function retryWithBackoff<T>(
   fn: () => Promise<T>,
@@ -780,11 +823,13 @@ async function retryWithBackoff<T>(
 
   throw new Error('Max attempts reached');
 }
+
 ```
 
 **Q18: Analyze the memory implications of Promise chains.**
 
 A:
+
 - Each `.then()` creates a new promise
 - Old promises are garbage collected when no longer referenced
 - Long chains can use significant memory
@@ -793,18 +838,27 @@ A:
 **Q19: How do you debug Promise chains?**
 
 A:
+
 1. Add `.then()` with logging
+
 2. Use `console.trace()` in `.catch()`
+
 3. Chrome DevTools: Async stack traces
+
 4. Use `Promise.allSettled()` to see all results
+
 5. Implement custom promise wrappers with logging
 
 **Q20: What are the security implications of Promises?**
 
 A:
+
 1. **Timing attacks**: Measure promise resolution time
+
 2. **Resource exhaustion**: Create too many promises
+
 3. **Information leakage**: Promise values can be intercepted
+
 4. **Mitigation**: Limit concurrent promises, validate inputs
 
 ### Follow-ups (5-10 questions)
@@ -812,6 +866,7 @@ A:
 **Q21: Can you give an example of a Promise-related bug in production?**
 
 A: Common bug: Unhandled rejection
+
 ```typescript
 // Bug: Missing .catch()
 fetchUser()
@@ -824,11 +879,13 @@ fetchUser()
   .then(user => fetchPosts(user.id))
   .then(posts => renderPosts(posts))
   .catch(error => showError(error));
+
 ```
 
 **Q22: How do you handle Promise cancellation?**
 
 A:
+
 ```typescript
 function cancellablePromise<T>(promise: Promise<T>): [Promise<T>, () => void] {
   let cancelled = false;
@@ -851,6 +908,7 @@ function cancellablePromise<T>(promise: Promise<T>): [Promise<T>, () => void] {
 
   return [wrappedPromise, cancel];
 }
+
 ```
 
 **Q23: What is the relationship between Promises and async/await?**
@@ -860,6 +918,7 @@ A: async/await is syntactic sugar over Promises. `async` functions always return
 **Q24: How do different frameworks handle Promises?**
 
 A:
+
 - **React**: useEffect with async functions, state management
 - **Vue**: Composition API with async setup
 - **Angular**: HttpClient returns Observables (can convert to Promises)
@@ -868,13 +927,21 @@ A:
 **Q25: What are best practices for working with Promises?**
 
 A:
+
 1. Always handle errors with `.catch()` or try/catch
+
 2. Return values in `.then()` handlers
+
 3. Use `Promise.all` for parallel operations
+
 4. Avoid creating Promises unnecessarily
+
 5. Use async/await for cleaner code
+
 6. Implement proper cancellation patterns
+
 7. Monitor unhandled rejections
+
 8. Use TypeScript for type safety
 
 ## Summary
@@ -882,11 +949,17 @@ A:
 Promises are essential for async JavaScript:
 
 1. **Three states**: Pending, fulfilled, rejected
+
 2. **Chaining**: Link multiple async operations
+
 3. **Error handling**: Centralized with `.catch()`
+
 4. **Composition**: `Promise.all`, `Promise.race`, etc.
+
 5. **Microtasks**: Run after sync code, before macrotasks
+
 6. **Best practices**: Handle errors, return promises, use utilities
+
 7. **Performance**: Prefer parallel when possible
 
 Understanding Promises is crucial for writing clean, maintainable asynchronous JavaScript.
@@ -954,6 +1027,7 @@ DEBUGGING:
 • console.trace() in .catch()
 • Chrome DevTools async traces
 • Promise.allSettled() for all results
+
 ```
 
 ## References & Learn More

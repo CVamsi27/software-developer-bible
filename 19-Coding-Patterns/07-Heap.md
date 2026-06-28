@@ -72,6 +72,7 @@ class MinHeap {
     return this.heap.length;
   }
 }
+
 ```
 
 ## How It Works
@@ -97,6 +98,7 @@ Max-Heap:
     3  4 1  2
 
 Parent is always larger than children.
+
 ```
 
 ### ASCII Diagram
@@ -135,6 +137,7 @@ Then bubble down 6:
       3   6
      / \ / \
     7  4 5
+
 ```
 
 ## Code Examples (TypeScript)
@@ -173,6 +176,7 @@ console.log(kthLargest.add(3)); // 4
 console.log(kthLargest.add(5)); // 5
 console.log(kthLargest.add(10)); // 5
 console.log(kthLargest.add(9)); // 8
+
 ```
 
 ### Problem 2: Find Median from Data Stream
@@ -297,6 +301,7 @@ medianFinder.addNum(2);
 console.log(medianFinder.findMedian()); // 1.5
 medianFinder.addNum(3);
 console.log(medianFinder.findMedian()); // 2
+
 ```
 
 ### Problem 3: Top K Frequent Elements
@@ -327,6 +332,7 @@ function topKFrequent(nums: number[], k: number): number[] {
 // Example
 console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [1, 2]
 console.log(topKFrequent([1], 1)); // [1]
+
 ```
 
 ### Problem 4: Merge K Sorted Lists
@@ -367,6 +373,7 @@ function mergeKLists(lists: (ListNode | null)[]): ListNode | null {
 
   return dummy.next;
 }
+
 ```
 
 ### Problem 5: Task Scheduler
@@ -413,14 +420,19 @@ function leastInterval(tasks: string[], n: number): number {
 
 // Example
 console.log(leastInterval(["A","A","A","B","B","B"], 2)); // 8
+
 ```
 
 ## Common Mistakes
 
 1. **Wrong heap property**: Max-heap vs min-heap, negate values for max behavior
+
 2. **Not maintaining heap after operations**: Always bubble up/down after push/pop
+
 3. **Using wrong comparison**: For max-heap in JS, negate values or use custom comparator
+
 4. **Not handling edge cases**: Empty heap, single element, all same values
+
 5. **Forgetting to sort after batch operations**: Heap property must be maintained
 
 ## Time/Space Complexity
@@ -438,21 +450,29 @@ console.log(leastInterval(["A","A","A","B","B","B"], 2)); // 8
 ### Easy
 
 1. **Kth Largest Element in a Stream** (LeetCode 703)
+
 2. **Last Stone Weight** (LeetCode 1046)
 
 ### Medium
 
 1. **Top K Frequent Elements** (LeetCode 347)
+
 2. **Task Scheduler** (LeetCode 621)
+
 3. **Reorganize String** (LeetCode 767)
+
 4. **Kth Smallest Element in a Sorted Matrix** (LeetCode 378)
+
 5. **Find K Pairs with Smallest Sums** (LeetCode 373)
 
 ### Hard
 
 1. **Find Median from Data Stream** (LeetCode 295)
+
 2. **Merge K Sorted Lists** (LeetCode 23)
+
 3. **Smallest Range Covering Elements from K Lists** (LeetCode 632)
+
 4. **IPO** (LeetCode 502)
 
 ## Summary
@@ -482,20 +502,24 @@ Max-Heap:
 └─────────────────────────────────────────┘
 
 Key operations:
+
 - push(val): O(log n)
 - pop(): O(log n)
 - peek(): O(1)
 
 When to use heap:
+
 - Need min/max frequently
 - Top K elements
 - Merge K sorted streams
 - Median finding
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Heap](https://leetcode.com/tag/heap/)
 - [NeetCode Heap](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

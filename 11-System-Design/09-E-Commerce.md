@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Product catalog with search and filtering
 - Shopping cart management
 - Checkout process
@@ -15,6 +16,7 @@
 - Promotions and discounts
 
 ### Non-Functional Requirements
+
 - High availability (99.99%)
 - Support 100K+ concurrent users
 - Handle 10K+ orders per minute
@@ -25,19 +27,23 @@
 - Global shipping support
 
 ## Capacity Estimation
+
 ```text
 User Estimates:
+
 - 10M registered users
 - 1M daily active users
 - 100K concurrent users at peak
 
 Product Estimates:
+
 - 10M products
 - 100K new products per day
 - 1M product images
 - Average product data: 5 KB
 
 Order Estimates:
+
 - 100K orders per day
 - Average order: 3 items
 - Daily items: 300K
@@ -45,6 +51,7 @@ Order Estimates:
 - Daily GMV: $5M
 
 Storage Estimates:
+
 - Product catalog: 10M × 5 KB = 50 GB
 - Product images: 1M × 500 KB = 500 GB
 - Order data: 100K × 2 KB = 200 MB/day
@@ -52,13 +59,16 @@ Storage Estimates:
 - Total: ~560 GB + 200 MB/day
 
 Bandwidth Estimates:
+
 - Product browsing: 1M × 50 KB = 50 GB/day = ~580 KB/s
 - Order placement: 100K × 2 KB = 200 MB/day = ~2.3 KB/s
 - Image loading: 10M × 500 KB = 5 TB/day = ~58 MB/s
 - Total: ~59 MB/s peak
+
 ```
 
 ## API Design
+
 ```yaml
 # Product Catalog
 GET /api/v1/products
@@ -154,10 +164,12 @@ GET /api/v1/inventory/{product_id}
       "available": 45,
       "reserved": 5
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -335,9 +347,11 @@ CREATE TABLE promotions (
     end_date TIMESTAMP NOT NULL,
     is_active BOOLEAN DEFAULT TRUE
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    products     │     │   categories    │
@@ -399,10 +413,12 @@ CREATE TABLE promotions (
                         │ status          │
                         │ transaction_id  │
                         └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -443,11 +459,13 @@ CREATE TABLE promotions (
      │  (Product       │
      │   Search)       │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### Product Catalog Service
+
 ```python
 class ProductCatalogService:
     def __init__(self, db, cache, search_engine):
@@ -513,9 +531,11 @@ class ProductCatalogService:
             return True
 
         return False
+
 ```
 
 ### Shopping Cart Service
+
 ```python
 class CartService:
     def __init__(self, db, redis_client, product_service):
@@ -611,9 +631,11 @@ class CartService:
         if user_id:
             return f"cart:user:{user_id}"
         return f"cart:session:{session_id}"
+
 ```
 
 ### Checkout Service
+
 ```python
 class CheckoutService:
     def __init__(self, db, cart_service, inventory_service,
@@ -723,9 +745,11 @@ class CheckoutService:
         if address['country'] == 'US':
             return 5.99
         return 15.99
+
 ```
 
 ### Inventory Management Service
+
 ```python
 class InventoryService:
     def __init__(self, db, redis_client, notification_service):
@@ -808,11 +832,13 @@ class InventoryService:
         stock = await self.db.get_stock(product_id)
         if stock < 10:
             await self.send_low_stock_alert(product_id, stock)
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Product Cache
+
 ```python
 class ProductCache:
     def __init__(self, redis_client):
@@ -844,9 +870,11 @@ class ProductCache:
             await self.redis.zadd(key, {json.dumps(product): -i})
 
         await self.redis.expire(key, 3600)  # 1 hour
+
 ```
 
 ### Cart Cache
+
 ```python
 class CartCache:
     def __init__(self, redis_client):
@@ -865,11 +893,13 @@ class CartCache:
     async def set_cart(self, user_id: int, cart: dict):
         key = f"cart:{user_id}"
         await self.redis.setex(key, self.ttl, json.dumps(cart))
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── order.created          (new order)
@@ -893,9 +923,11 @@ Event Schema:
     "total": 1050.98
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class OrderEventProcessor:
     def __init__(self, kafka_consumer, notification_service,
@@ -922,11 +954,13 @@ class OrderEventProcessor:
 
         # Update analytics
         await self.update_analytics(event)
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -941,9 +975,11 @@ Architecture:
 │  Service     │   │  Checkout    │   │  Service     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Sharding
+
 ```python
 class EcommerceDatabaseScaler:
     def __init__(self):
@@ -957,9 +993,11 @@ class EcommerceDatabaseScaler:
 
     def get_order_shard(self, order_id: int) -> int:
         return order_id % self.shards
+
 ```
 
 ### Search Scaling
+
 ```python
 class SearchServiceScaler:
     def __init__(self):
@@ -984,11 +1022,13 @@ class SearchServiceScaler:
         )
 
         return results
+
 ```
 
 ## Failure Handling
 
 ### Inventory Overselling Prevention
+
 ```python
 class InventoryProtection:
     def __init__(self, db, redis_client):
@@ -1023,9 +1063,11 @@ class InventoryProtection:
 
         finally:
             await self.redis.delete(lock_key)
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Database failover | Read from replica |
@@ -1035,6 +1077,7 @@ class InventoryProtection:
 | Network partition | Store locally, sync later |
 
 ### Order Processing Recovery
+
 ```python
 class OrderRecovery:
     def __init__(self, db, kafka_client):
@@ -1062,34 +1105,42 @@ class OrderRecovery:
         elif payment['status'] == 'success':
             # Complete order
             await self.complete_order(order['id'])
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - orders_per_minute
   - average_order_value
   - cart_abandonment_rate
   - conversion_rate
 
 System Metrics:
+
   - product_search_latency_p95
   - checkout_latency_p95
   - inventory_update_latency
   - api_response_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - database_query_latency
   - redis_memory_usage
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Cart Abandonment
     condition: cart_abandonment_rate > 70%
     severity: warning
@@ -1105,6 +1156,7 @@ alerts:
   - name: Search Latency High
     condition: p95_search_latency > 500ms
     severity: warning
+
 ```
 
 ## Trade-offs
@@ -1120,19 +1172,23 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you design an e-commerce product catalog?**
+
    - PostgreSQL for structured data
    - Elasticsearch for search
    - Redis for caching
    - CDN for images
 
 2. **How do you handle shopping cart management?**
+
    - Redis for fast access
    - Merge carts on login
    - Session-based for guests
    - 24-hour expiration
 
 3. **How would you implement checkout?**
+
    - Validate inventory
    - Reserve stock
    - Process payment
@@ -1140,45 +1196,55 @@ alerts:
    - Send confirmation
 
 ### Scaling Questions
+
 4. **How do you scale to 100K concurrent users?**
+
    - Horizontal scaling
    - Database sharding
    - Redis clustering
    - CDN for static content
 
 5. **How do you handle flash sales?**
+
    - Pre-warm cache
    - Use atomic operations
    - Queue overflow
    - Monitor and auto-scale
 
 ### Trade-off Questions
+
 6. **How do you balance consistency vs performance?**
+
    - Strong consistency for inventory
    - Eventual consistency for product data
    - Cache invalidation strategy
    - Transaction boundaries
 
 7. **How do you prevent inventory overselling?**
+
    - Distributed locks
    - Atomic operations
    - Reservation system
    - Real-time monitoring
 
 ### Senior-level Questions
+
 8. **How would you implement personalization?**
+
    - User behavior tracking
    - Recommendation engine
    - A/B testing
    - Real-time pricing
 
 9. **How do you handle global shipping?**
+
    - Multi-region deployment
    - Local payment methods
    - Currency conversion
    - Customs calculation
 
 10. **How would you implement multi-vendor support?**
+
     - Vendor management
     - Commission calculation
     - Split payments
@@ -1187,6 +1253,7 @@ alerts:
 ## Summary
 
 The E-Commerce system design covers:
+
 - **Product Catalog**: PostgreSQL + Elasticsearch
 - **Shopping Cart**: Redis-based with session support
 - **Checkout**: Atomic inventory reservation
@@ -1194,10 +1261,15 @@ The E-Commerce system design covers:
 - **Search**: Full-text with faceted filtering
 
 Key takeaways:
+
 1. Use Redis for fast cart and cache operations
+
 2. Implement atomic inventory updates to prevent overselling
+
 3. Use Elasticsearch for product search
+
 4. Process orders asynchronously with Kafka
+
 5. Design for flash sales with pre-warmed caches
 
 This design supports 100K+ concurrent users with 10K+ orders per minute.
@@ -1205,6 +1277,7 @@ This design supports 100K+ concurrent users with 10K+ orders per minute.
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

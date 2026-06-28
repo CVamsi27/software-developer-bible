@@ -5,6 +5,7 @@
 A **Deployment** provides declarative updates for Pods and ReplicaSets. It manages the desired state of your application, enabling rolling updates, rollbacks, scaling, and self-healing. Deployments are the most common way to run stateless applications in Kubernetes.
 
 Key concepts:
+
 - **Deployment**: Manages ReplicaSets and Pods
 - **Rolling Update**: Gradual replacement of Pods
 - **Rollback**: Revert to previous Deployment revision
@@ -28,34 +29,47 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                      Deployment                           |
 |  name: myapp                                             |
 |  replicas: 3                                             |
 |  strategy: RollingUpdate                                 |
 |  image: myapp:2.0                                        |
+
 +----------------------------------------------------------+
+
                           |
+
                           v
 +----------------------------------------------------------+
+
 |                    ReplicaSet (new)                       |
 |  name: myapp-abc123                                       |
 |  replicas: 3                                             |
 |  selector: app=myapp                                     |
+
 +----------------------------------------------------------+
+
          |              |              |
+
          v              v              v
    +----------+  +----------+  +----------+
+
    |   Pod    |  |   Pod    |  |   Pod    |
    | myapp:2.0|  | myapp:2.0|  | myapp:2.0|
+
    +----------+  +----------+  +----------+
 
 +----------------------------------------------------------+
+
 |                    ReplicaSet (old)                       |
 |  name: myapp-xyz789                                       |
 |  replicas: 0                                             |
 |  selector: app=myapp                                     |
+
 +----------------------------------------------------------+
   (scaled to 0 during rolling update)
+
 ```
 
 ### Rolling Update Process
@@ -63,33 +77,46 @@ Key concepts:
 ```text
 Step 1: Initial State
 +--------+  +--------+  +--------+
+
 | v1 Pod |  | v1 Pod |  | v1 Pod |
+
 +--------+  +--------+  +--------+
 
 Step 2: Create new Pod
 +--------+  +--------+  +--------+  +--------+
+
 | v1 Pod |  | v1 Pod |  | v1 Pod |  | v2 Pod |
+
 +--------+  +--------+  +--------+  +--------+
 
 Step 3: Terminate old Pod
 +--------+  +--------+  +--------+
+
 | v1 Pod |  | v1 Pod |  | v2 Pod |
+
 +--------+  +--------+  +--------+
 
 Step 4: Create another new Pod
 +--------+  +--------+  +--------+  +--------+
+
 | v1 Pod |  | v1 Pod |  | v2 Pod |  | v2 Pod |
+
 +--------+  +--------+  +--------+  +--------+
 
 Step 5: Terminate another old Pod
 +--------+  +--------+  +--------+
+
 | v1 Pod |  | v2 Pod |  | v2 Pod |
+
 +--------+  +--------+  +--------+
 
 Step 6: Complete
 +--------+  +--------+  +--------+
+
 | v2 Pod |  | v2 Pod |  | v2 Pod |
+
 +--------+  +--------+  +--------+
+
 ```
 
 ## Code Examples
@@ -114,9 +141,11 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
           resources:
             requests:
@@ -125,6 +154,7 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
+
 ```
 
 ### Rolling Update Strategy
@@ -150,8 +180,10 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
+
 ```
 
 ### Recreate Strategy
@@ -174,8 +206,10 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
+
 ```
 
 ### Deployment with Probes and Lifecycle
@@ -197,6 +231,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 60
       containers:
+
         - name: myapp
           image: myapp:2.0.0
 
@@ -235,13 +270,16 @@ spec:
               cpu: "1000m"
 
           env:
+
             - name: DB_HOST
               value: "db-service"
+
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-credentials
                   key: password
+
 ```
 
 ### Managing Deployments
@@ -270,6 +308,7 @@ kubectl rollout history deployment/myapp
 # Pause/resume
 kubectl rollout pause deployment/myapp
 kubectl rollout resume deployment/myapp
+
 ```
 
 ### Deployment with HPA
@@ -290,6 +329,7 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
           resources:
@@ -313,12 +353,14 @@ spec:
   minReplicas: 3
   maxReplicas: 20
   metrics:
+
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
+
 ```
 
 ## Real-World Use Cases
@@ -345,9 +387,11 @@ spec:
         app: web
     spec:
       containers:
+
         - name: web
           image: web:2.0
           ports:
+
             - containerPort: 80
 
           readinessProbe:
@@ -360,6 +404,7 @@ spec:
             preStop:
               exec:
                 command: ["/bin/sh", "-c", "sleep 15"]
+
 ```
 
 ### 2. Canary Deployment
@@ -383,6 +428,7 @@ spec:
         track: stable
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
 
@@ -405,8 +451,10 @@ spec:
         track: canary
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
+
 ```
 
 ### 3. Blue-Green Deployment
@@ -430,6 +478,7 @@ spec:
         version: blue
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
 
@@ -452,6 +501,7 @@ spec:
         version: green
     spec:
       containers:
+
         - name: myapp
           image: myapp:2.0.0
 
@@ -466,8 +516,10 @@ spec:
     app: myapp
     version: blue  # Change to green for new version
   ports:
+
     - port: 80
       targetPort: 8080
+
 ```
 
 ## Common Mistakes
@@ -512,6 +564,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 60
       containers:
+
         - name: myapp
           image: myapp:1.0.0
 
@@ -551,6 +604,7 @@ spec:
               cpu: "1000m"
 
           env:
+
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
@@ -560,25 +614,37 @@ spec:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
+
             - weight: 100
               podAffinityTerm:
                 labelSelector:
                   matchExpressions:
+
                     - key: app
                       operator: In
                       values:
+
                         - myapp
                 topologyKey: kubernetes.io/hostname
+
 ```
 
 1. **Use RollingUpdate with maxUnavailable=0** — zero-downtime deployments
+
 2. **Add all three probe types** — startup, liveness, readiness
+
 3. **Set resource requests and limits** — enable scheduling and prevent OOM
+
 4. **Use pod anti-affinity** — distribute across nodes
+
 5. **Set revisionHistoryLimit** — manage revision history
+
 6. **Use preStop hooks** — allow graceful shutdown
+
 7. **Pin image versions** — never use `latest`
+
 8. **Add PodDisruptionBudget** — protect during node maintenance
+
 9. **Use namespaces** — isolate environments
 10. **Monitor rollout status** — `kubectl rollout status`
 
@@ -602,6 +668,7 @@ kubectl top pods -l app=myapp
 
 # View rollout history
 kubectl rollout history deployment/myapp
+
 ```
 
 ## Interview Questions
@@ -752,11 +819,13 @@ kubectl rollout resume deployment/myapp
 
 # Restart (rolling)
 kubectl rollout restart deployment/myapp
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

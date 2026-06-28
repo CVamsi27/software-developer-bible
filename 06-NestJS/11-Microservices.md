@@ -9,11 +9,17 @@ Each microservice is a complete NestJS application with its own controllers, ser
 ## Why Do We Need It?
 
 1. **Scalability**: Scale individual services independently.
+
 2. **Fault Isolation**: Failure in one service doesn't crash others.
+
 3. **Technology Flexibility**: Different services can use different databases.
+
 4. **Team Autonomy**: Teams can work on services independently.
+
 5. **Deployment**: Deploy individual services without affecting others.
+
 6. **Performance**: Distribute load across multiple instances.
+
 7. **Complexity Management**: Break monolith into manageable pieces.
 
 ## How It Works
@@ -52,6 +58,7 @@ NestJS microservices communicate using transport layers. The client sends messag
 │  └─────────────┘ └─────────────┘ └─────────────┘         │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Transport Layers
@@ -91,6 +98,7 @@ async function bootstrap() {
   await app.listen();
 }
 bootstrap();
+
 ```
 
 ### Message Pattern (Request-Response)
@@ -120,6 +128,7 @@ export class UserController {
     return this.userService.findAll(data.page, data.limit);
   }
 }
+
 ```
 
 ### Event Pattern
@@ -139,6 +148,7 @@ export class UserController {
     await this.inventoryService.reserveStock(data.items);
   }
 }
+
 ```
 
 ### Client (API Gateway)
@@ -171,6 +181,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Client Service
@@ -200,6 +211,7 @@ export class UserClientService {
     this.client.emit('user_created', event);
   }
 }
+
 ```
 
 ### TCP Transport
@@ -225,6 +237,7 @@ ClientsModule.register([
     options: { host: '127.0.0.1', port: 3001 },
   },
 ]);
+
 ```
 
 ### Redis Transport
@@ -250,6 +263,7 @@ ClientsModule.register([
     options: { host: 'localhost', port: 6379 },
   },
 ]);
+
 ```
 
 ### Kafka Transport
@@ -294,6 +308,7 @@ ClientsModule.register([
 async handleUserTopic(@Payload() message: KafkaMessage) {
   console.log(message.value);
 }
+
 ```
 
 ### RabbitMQ Transport
@@ -324,6 +339,7 @@ ClientsModule.register([
     },
   },
 ]);
+
 ```
 
 ### gRPC Transport
@@ -361,6 +377,7 @@ export class UserController {
     return { id: data.id, name: 'John', email: 'john@example.com' };
   }
 }
+
 ```
 
 ### Exception Handling in Microservices
@@ -390,6 +407,7 @@ export class MicroserviceExceptionFilter implements ExceptionFilter {
 export class UserController {
   // ...
 }
+
 ```
 
 ### Health Checks
@@ -421,6 +439,7 @@ export class HealthController {
     ]);
   }
 }
+
 ```
 
 ### Service Discovery
@@ -445,6 +464,7 @@ export class HealthController {
   ],
 })
 export class AppModule {}
+
 ```
 
 ## Real-World Use Cases
@@ -469,6 +489,7 @@ export class AppModule {}
 │  Communication: Kafka for events, TCP for commands          │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2. Real-Time Chat System
@@ -492,6 +513,7 @@ export class PresenceController {
     await this.redis.set(`user:${data.userId}:status`, 'online');
   }
 }
+
 ```
 
 ### 3. Event-Driven Analytics
@@ -508,6 +530,7 @@ export class EventCollectorController {
     });
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -528,6 +551,7 @@ async createOrder(dto: CreateOrderDto) {
   this.eventBus.publish(new OrderCreatedEvent(order));
   // Other services react independently
 }
+
 ```
 
 ### 2. Not Handling Service Failures
@@ -547,6 +571,7 @@ async getUser(id: string) {
     throw new ServiceUnavailableException('User service unavailable');
   }
 }
+
 ```
 
 ### 3. Missing Health Checks
@@ -563,25 +588,37 @@ check() {
     () => this.tcp.pingCheck('user-service', 'tcp://127.0.0.1:3001'),
   ]);
 }
+
 ```
 
 ## Best Practices
 
 1. **Service Independence**: Each service owns its data and logic.
+
 2. **API Contracts**: Define clear contracts between services.
+
 3. **Event-Driven**: Use events for loose coupling.
+
 4. **Health Checks**: Implement health checks for all services.
+
 5. **Circuit Breakers**: Implement circuit breakers for fault tolerance.
+
 6. **Distributed Tracing**: Use correlation IDs across services.
+
 7. **Graceful Degradation**: Services should degrade gracefully when dependencies fail.
+
 8. **Containerization**: Use Docker/Kubernetes for deployment.
 
 ## Performance Considerations
 
 1. **Message Broker Selection**: Choose based on throughput and durability needs.
+
 2. **Connection Pooling**: Reuse connections to message brokers.
+
 3. **Batch Processing**: Batch messages when possible.
+
 4. **Async Communication**: Prefer async over sync for loose coupling.
+
 5. **Load Balancing**: Distribute messages across service instances.
 
 ## Interview Questions
@@ -592,6 +629,7 @@ check() {
 A lightweight, independently deployable service communicating over the network using message patterns and transport layers.
 
 **Q2: What is the difference between message patterns and event patterns?**
+
 - Message pattern: Request-response (expects response)
 - Event pattern: Fire-and-forget (no response)
 
@@ -607,6 +645,7 @@ Using `ClientProxy` with `send()` for commands and `emit()` for events.
 ### Intermediate
 
 **Q6: What is the difference between TCP and Redis transport?**
+
 - TCP: Direct connection, fast, no persistence
 - Redis: Through Redis, supports pub/sub, persistent
 

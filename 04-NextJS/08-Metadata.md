@@ -7,9 +7,13 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 ## Why Do We Need It?
 
 1. **SEO** — Proper meta tags improve search engine rankings
+
 2. **Social sharing** — Open Graph and Twitter cards control how links appear
+
 3. **Accessibility** — Proper document structure helps screen readers
+
 4. **Branding** — Consistent titles and descriptions across pages
+
 5. **Analytics** — Proper metadata enables tracking and attribution
 
 ## How It Works
@@ -45,6 +49,7 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Metadata Types
@@ -82,6 +87,7 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 │  └─ other (custom)                                              │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -110,6 +116,7 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
 ```
 
 ### Page-Specific Metadata
@@ -131,6 +138,7 @@ export default function AboutPage() {
     </div>
   )
 }
+
 ```
 
 ### Open Graph Metadata
@@ -159,6 +167,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
+
 ```
 
 ### Twitter Card Metadata
@@ -177,6 +186,7 @@ export const metadata: Metadata = {
     creator: '@username',
   },
 }
+
 ```
 
 ### Dynamic Metadata with generateMetadata
@@ -237,6 +247,7 @@ export default async function BlogPost({ params }) {
     </article>
   )
 }
+
 ```
 
 ### Template Titles
@@ -255,6 +266,7 @@ export const metadata: Metadata = {
 export const metadata: Metadata = {
   title: 'About', // Renders as "About | My Application"
 }
+
 ```
 
 ### Canonical URLs
@@ -272,6 +284,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     },
   }
 }
+
 ```
 
 ### Multi-Language Metadata
@@ -302,6 +315,7 @@ export async function generateMetadata({
     },
   }
 }
+
 ```
 
 ### Icons and Manifest
@@ -322,6 +336,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
 }
+
 ```
 
 ### Structured Data (JSON-LD)
@@ -356,6 +371,7 @@ export default async function BlogPost({ params }) {
     </article>
   )
 }
+
 ```
 
 ### Product Structured Data
@@ -397,6 +413,7 @@ export default async function ProductPage({ params }) {
     </div>
   )
 }
+
 ```
 
 ### Breadcrumb Structured Data
@@ -442,6 +459,7 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
     </>
   )
 }
+
 ```
 
 ### robots.txt Generation
@@ -462,6 +480,7 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: 'https://example.com/sitemap.xml',
   }
 }
+
 ```
 
 ### Sitemap Generation
@@ -498,6 +517,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...postEntries,
   ]
 }
+
 ```
 
 ### Metadata Base URL
@@ -512,6 +532,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'], // Resolves to https://example.com/og-image.png
   },
 }
+
 ```
 
 ## Real-World Use Cases
@@ -545,6 +566,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'], // Resolves to full URL
   },
 }
+
 ```
 
 ### 2. Duplicate Titles
@@ -565,6 +587,7 @@ export const metadata: Metadata = {
 
 // app/about/page.tsx
 export const metadata: Metadata = { title: 'About' } // Just the unique part
+
 ```
 
 ### 3. Missing OG Images
@@ -594,6 +617,7 @@ export const metadata: Metadata = {
     ],
   },
 }
+
 ```
 
 ### 4. Not Generating Dynamic Metadata
@@ -614,6 +638,7 @@ export async function generateMetadata({ params }) {
     description: post.excerpt,
   }
 }
+
 ```
 
 ### 5. Ignoring Mobile Metadata
@@ -650,18 +675,27 @@ export const metadata: Metadata = {
     ],
   },
 }
+
 ```
 
 ## Best Practices
 
 1. **Use metadataBase** — Always define for proper URL resolution
+
 2. **Use templates** — Consistent title formatting across pages
+
 3. **Generate dynamic metadata** — For dynamic content pages
+
 4. **Include OG images** — Essential for social sharing
+
 5. **Add structured data** — For rich search results
+
 6. **Generate sitemaps** — Help search engines discover pages
+
 7. **Define robots.txt** — Control crawling behavior
+
 8. **Test metadata** — Use Open Graph debugger tools
+
 9. **Keep descriptions concise** — 150-160 characters optimal
 10. **Update metadata** — Keep metadata fresh with content changes
 
@@ -669,16 +703,19 @@ export const metadata: Metadata = {
 
 ```text
 Metadata Performance:
+
 - Static metadata: No runtime cost
 - Dynamic metadata: Async data fetching
 - generateMetadata: Cached per request
 - Structured data: Minimal impact
 
 Optimization:
+
 - Use static metadata when possible
 - Cache generateMetadata results
 - Minimize structured data size
 - Pre-generate metadata for popular pages
+
 ```
 
 ## Interview Questions
@@ -846,6 +883,7 @@ export default function sitemap(): MetadataRoute.Sitemap { [...] }
 
 Robots:
 export default function robots(): MetadataRoute.Robots { [...] }
+
 ```
 
 ## References & Learn More

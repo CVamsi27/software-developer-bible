@@ -26,28 +26,45 @@ Docker is a containerization platform that packages applications with their depe
 ```text
 VM Architecture:
 +------------------+  +------------------+
+
 |     App B        |  |     App A        |
 |     Bins/Libs    |  |     Bins/Libs    |
 |     Guest OS     |  |     Guest OS     |
+
 +------------------+  +------------------+
+
 |        Hypervisor                   |
+
 +-------------------------------------+
+
 |        Host OS                      |
+
 +-------------------------------------+
+
 |        Hardware                     |
+
 +-------------------------------------+
 
 Docker Architecture:
 +------------------+  +------------------+
+
 |     App B        |  |     App A        |
 |     Bins/Libs    |  |     Bins/Libs    |
+
 +------------------+  +------------------+
+
 |     Docker Engine (Shared Kernel)    |
+
 +-------------------------------------+
+
 |        Host OS                      |
+
 +-------------------------------------+
+
 |        Hardware                     |
+
 +-------------------------------------+
+
 ```
 
 ---
@@ -62,18 +79,25 @@ A Docker image is a read-only template with instructions for creating a containe
 
 ```text
 +-------------------------------+
+
 | Layer N: CMD ["app"]          |  <-- ~0 bytes (metadata)
 +-------------------------------+
+
 | Layer N-1: COPY dist/         |  <-- varies
 +-------------------------------+
+
 | Layer N-2: RUN npm ci         |  <-- ~150 MB
 +-------------------------------+
+
 | Layer N-3: COPY package.json  |  <-- ~0.05 MB
 +-------------------------------+
+
 | Layer N-4: WORKDIR /app       |  <-- ~0 bytes
 +-------------------------------+
+
 | Layer 0: node:18-alpine       |  <-- ~130 MB
 +-------------------------------+
+
 ```
 
 Each layer is content-addressable (SHA256 hash). Layers are cached and shared across images.
@@ -101,6 +125,7 @@ COPY dist/ ./dist/
 # Only use ADD when needed
 ADD archive.tar.gz /app/
 ADD https://example.com/file.txt /app/
+
 ```
 
 ---
@@ -122,12 +147,17 @@ RUN npm ci
 COPY package*.json ./
 RUN npm ci
 COPY . .
+
 ```
 
 **Cache Hierarchy (least to most changeable):**
+
 1. Base image (rarely changes)
+
 2. System dependencies (occasionally)
+
 3. Application dependencies (weekly)
+
 4. Application code (daily)
 
 ---
@@ -139,6 +169,7 @@ COPY . .
 Multi-stage builds use multiple `FROM` statements to build in stages. Only artifacts from later stages are included in the final image.
 
 **Benefits:**
+
 - Smaller production images (no build tools)
 - Better security (no compilers/shells)
 - Faster CI/CD (smaller images)
@@ -154,6 +185,7 @@ FROM node:18-alpine
 COPY --from=builder /app/dist ./dist
 USER node
 CMD ["node", "dist/server.js"]
+
 ```
 
 ---
@@ -178,13 +210,16 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 
 # 4. External secrets (Vault, AWS SSM)
 # Use entrypoint scripts to fetch secrets
+
 ```
 
 **Never:**
+
 ```dockerfile
 # BAD: Secrets baked into image
 ENV API_KEY=sk_live_abc123
 COPY secrets.json /app/
+
 ```
 
 ---
@@ -196,6 +231,7 @@ COPY secrets.json /app/
 Docker Compose is a tool for defining and running multi-container applications using YAML configuration.
 
 **Use Cases:**
+
 - Local development environments
 - Multi-service applications
 - Integration testing
@@ -219,6 +255,7 @@ services:
 
 volumes:
   pg_data:
+
 ```
 
 ---
@@ -247,6 +284,7 @@ docker run --network mynet --name db postgres
 
 # Containers communicate via name
 # Inside api: curl http://db:5432
+
 ```
 
 ---
@@ -279,6 +317,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 COPY dist/ ./dist
 USER node
+
 ```
 
 ---
@@ -302,6 +341,7 @@ CMD ["server.js"]
 
 # Result: node server.js
 # Override args: docker run myapp app.js  -->  node app.js
+
 ```
 
 ---
@@ -328,6 +368,7 @@ docker run --tmpfs /tmp:rw,size=100m myapp
 
 # Read-only
 docker run -v /data:/app/data:ro myapp
+
 ```
 
 ---
@@ -355,6 +396,7 @@ docker inspect --format='{{.State.Health.Status}}' <container>
 
 # 6. View resource usage
 docker stats <container>
+
 ```
 
 ---
@@ -379,6 +421,7 @@ coverage
 .nyc_output
 .vscode
 .idea
+
 ```
 
 **Impact:** A project with `node_modules` (200MB) vs without (2MB) significantly affects build context upload time.
@@ -407,6 +450,7 @@ services:
     depends_on:
       migrations:
         condition: service_completed_successfully
+
 ```
 
 **Option 2: Entrypoint Script**
@@ -416,6 +460,7 @@ services:
 set -e
 npm run migrate
 exec node server.js
+
 ```
 
 **Option 3: Kubernetes Jobs**
@@ -447,6 +492,7 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 
 # Use SSH mounts
 RUN --mount=type=ssh ssh git@github.com
+
 ```
 
 ---
@@ -460,6 +506,7 @@ Health checks verify container health status.
 ```dockerfile
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
+
 ```
 
 | Parameter | Description |
@@ -488,6 +535,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 | CI/CD | GitHub Actions, GitLab CI, Jenkins |
 
 **Production Checklist:**
+
 - Non-root user
 - Health checks
 - Resource limits
@@ -516,6 +564,7 @@ docker kill --signal=SIGTERM mycontainer
 
 # Stop all running containers
 docker stop $(docker ps -q)
+
 ```
 
 ---
@@ -536,6 +585,7 @@ COPY ./config.json /app/config.json
 
 # Using volumes (best for development)
 docker run -v $(pwd)/config:/app/config myapp
+
 ```
 
 ---
@@ -558,6 +608,7 @@ docker compose run --rm app npm test
 
 # Run with service overrides
 docker compose run --rm -e DEBUG=true app sh
+
 ```
 
 ---
@@ -570,6 +621,7 @@ docker compose run --rm -e DEBUG=true app sh
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
 ```
 
 **Option 2: Profiles**
@@ -581,6 +633,7 @@ services:
 
   debug:
     profiles: ["dev"]
+
 ```
 
 **Option 3: Environment Variables**
@@ -593,6 +646,7 @@ DATABASE_URL=postgres://localhost/dev
 # .env.prod
 NODE_ENV=production
 DATABASE_URL=postgres://prod-db/prod
+
 ```
 
 ---
@@ -623,6 +677,7 @@ An image is a template. A container is a running instance of that image with add
 # Application logs to stdout
 CMD ["node", "server.js"]
 # In app: console.log("Request processed")
+
 ```
 
 **Option 2: Docker Logging Drivers**
@@ -636,6 +691,7 @@ docker run --log-driver=syslog myapp
 
 # fluentd
 docker run --log-driver=fluentd myapp
+
 ```
 
 **Option 3: Compose Configuration**
@@ -648,6 +704,7 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
 ```
 
 ---
@@ -670,6 +727,7 @@ docker context use remote
 
 # Run commands on remote host
 docker ps
+
 ```
 
 ---
@@ -690,6 +748,7 @@ docker run --cpu-shares=512 myapp
 
 # GPU access
 docker run --gpus all myapp
+
 ```
 
 **Compose:**
@@ -705,6 +764,7 @@ services:
         reservations:
           memory: 256M
           cpus: "0.5"
+
 ```
 
 ---
@@ -730,6 +790,7 @@ docker push registry.example.com/myapp:1.0.0
 
 # Pull from registry
 docker pull registry.example.com/myapp:1.0.0
+
 ```
 
 ---
@@ -739,18 +800,21 @@ docker pull registry.example.com/myapp:1.0.0
 **Answer:**
 
 **Image Security:**
+
 - Use minimal base images (Alpine, distroless)
 - Scan for vulnerabilities (Trivy, Clair)
 - Sign images (Docker Content Trust)
 - Don't run as root
 
 **Runtime Security:**
+
 - Read-only filesystem
 - Drop capabilities
 - No new privileges
 - Resource limits
 
 **Network Security:**
+
 - Internal networks for backend services
 - TLS for all connections
 - Network policies
@@ -764,6 +828,7 @@ docker run \
   --security-opt no-new-privileges \
   --user 1000:1000 \
   myapp
+
 ```
 
 ---
@@ -805,6 +870,7 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
 # Restore volume
 docker run --rm -v mydata:/data -v $(pwd):/backup \
   alpine tar xzf /backup/backup.tar.gz -C /data
+
 ```
 
 ---
@@ -814,13 +880,21 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
 **Answer:**
 
 1. **Use specific image versions** — `node:18.17.0-alpine`
+
 2. **Use multi-stage builds** — separate build and runtime
+
 3. **Order instructions by change frequency** — deps before source
+
 4. **Use .dockerignore** — exclude unnecessary files
+
 5. **Run as non-root** — `USER node`
+
 6. **Add health checks** — enable orchestration monitoring
+
 7. **Minimize layers** — combine RUN commands
+
 8. **Use BuildKit** — better caching and security
+
 9. **Scan images** — check for vulnerabilities
 10. **Document with LABELs** — metadata for maintainability
 
@@ -845,6 +919,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD node -e "require('http').get('http://localhost:3000/health')"
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "dist/server.js"]
+
 ```
 
 ---
@@ -852,6 +927,7 @@ CMD ["node", "dist/server.js"]
 ## Summary
 
 Docker interview questions typically cover:
+
 - Core concepts (images, containers, Dockerfile)
 - Best practices (multi-stage builds, security, optimization)
 - Production concerns (logging, monitoring, orchestration)
@@ -889,11 +965,13 @@ docker compose logs -f
 # Multi-stage
 FROM builder AS stage1
 COPY --from=stage1 /app/dist ./dist
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [Docker Deep Dive by Nigel Poulton](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235)

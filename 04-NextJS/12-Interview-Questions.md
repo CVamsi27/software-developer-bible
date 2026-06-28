@@ -12,6 +12,7 @@ This guide covers 40 of the most commonly asked Next.js interview questions, cat
 
 **Answer:**
 Next.js is a React framework for production that provides:
+
 - **Server-Side Rendering (SSR)** — Better SEO and performance
 - **Static Site Generation (SSG)** — Fast page loads
 - **File-based routing** — No routing library needed
@@ -25,6 +26,7 @@ Next.js is a React framework for production that provides:
 export default function Home() {
   return <h1>Welcome to Next.js</h1>
 }
+
 ```
 
 **When to use:** For production React applications needing SEO, performance, and developer experience.
@@ -54,6 +56,7 @@ export default function About() {
 export default function About() {
   return <h1>About</h1>
 }
+
 ```
 
 **Recommendation:** Use App Router for new projects — it's the future of Next.js.
@@ -79,6 +82,7 @@ export default async function Page() {
   })
   return <div>{data.value}</div>
 }
+
 ```
 
 **Benefits:** Fresh data, good SEO, works without JavaScript.
@@ -102,6 +106,7 @@ export default async function Page() {
   const data = await fetch('https://api.example.com/data')
   return <div>{data.value}</div>
 }
+
 ```
 
 **Benefits:** Fastest loading, excellent SEO, low server cost.
@@ -135,6 +140,7 @@ export default function DashboardLayout({ children }) {
     </div>
   )
 }
+
 ```
 
 **Benefits:** Shared UI without prop drilling, performance optimization.
@@ -153,6 +159,7 @@ export default async function Page() {
   const posts = await db.post.findMany()
   return posts.map(p => <div key={p.id}>{p.title}</div>)
 }
+
 ```
 
 **Benefits:** Zero client JS, direct data access, better security.
@@ -172,6 +179,7 @@ export function Counter() {
   const [count, setCount] = useState(0)
   return <button onClick={() => setCount(c => c + 1)}>{count}</button>
 }
+
 ```
 
 **When to use:** When you need useState, useEffect, event handlers, or browser APIs.
@@ -195,9 +203,11 @@ export function Navigation() {
     </nav>
   )
 }
+
 ```
 
 **Programmatic navigation:**
+
 ```tsx
 'use client'
 import { useRouter } from 'next/navigation'
@@ -212,6 +222,7 @@ export function LogoutButton() {
 
   return <button onClick={handleLogout}>Logout</button>
 }
+
 ```
 
 ---
@@ -230,9 +241,11 @@ export default async function Page() {
 
   return <div>{data.value}</div>
 }
+
 ```
 
 **With error handling:**
+
 ```tsx
 export default async function Page() {
   try {
@@ -244,6 +257,7 @@ export default async function Page() {
     return <div>Error loading data</div>
   }
 }
+
 ```
 
 ---
@@ -271,6 +285,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/dashboard/:path*'],
 }
+
 ```
 
 **Use cases:** Authentication, redirects, A/B testing, geographic routing.
@@ -316,6 +331,7 @@ export async function POST(request: Request) {
 
   return response
 }
+
 ```
 
 ---
@@ -355,6 +371,7 @@ export default function NewPostPage() {
     </form>
   )
 }
+
 ```
 
 ---
@@ -380,9 +397,11 @@ export function ProductImage() {
     />
   )
 }
+
 ```
 
 **Key features:**
+
 - Lazy loading (except priority)
 - WebP/AVIF format conversion
 - Responsive sizing
@@ -412,6 +431,7 @@ const data = await fetch(url, { next: { tags: ['posts'] } })
 import { revalidateTag, revalidatePath } from 'next/cache'
 revalidateTag('posts')
 revalidatePath('/posts')
+
 ```
 
 ---
@@ -444,6 +464,7 @@ export async function GET(
   const user = await db.user.findUnique({ where: { id } })
   return NextResponse.json(user)
 }
+
 ```
 
 ---
@@ -481,6 +502,7 @@ export default function NotFound() {
     </div>
   )
 }
+
 ```
 
 ---
@@ -510,6 +532,7 @@ export async function generateMetadata({ params }) {
     },
   }
 }
+
 ```
 
 ---
@@ -537,6 +560,7 @@ export default function PhotoModal({ params }) {
     </div>
   )
 }
+
 ```
 
 **Use cases:** Modals over existing pages, split views, dashboards.
@@ -571,6 +595,7 @@ export default function DashboardPage() {
 export default function Loading() {
   return <div>Loading dashboard...</div>
 }
+
 ```
 
 ---
@@ -607,6 +632,7 @@ export default function LocaleLayout({ children, params }) {
     </html>
   )
 }
+
 ```
 
 ---
@@ -643,6 +669,7 @@ export default async function DashboardPage() {
 
   return <Dashboard data={data} />
 }
+
 ```
 
 ---
@@ -670,9 +697,11 @@ export default function Layout({ children }) {
     </div>
   )
 }
+
 ```
 
 **Key considerations:**
+
 - Shared React runtime
 - Independent deployments
 - Shared state management
@@ -716,6 +745,7 @@ export default function Page() {
 const HeavyChart = dynamic(() => import('./HeavyChart'), {
   loading: () => <ChartSkeleton />,
 })
+
 ```
 
 ---
@@ -769,6 +799,7 @@ export function RealTimeData() {
 
   return <div>{data?.value}</div>
 }
+
 ```
 
 ---
@@ -806,6 +837,7 @@ test('GET /api/users returns users', async ({ request }) => {
   const users = await response.json()
   expect(Array.isArray(users)).toBeTruthy()
 })
+
 ```
 
 ---
@@ -840,6 +872,7 @@ export function middleware(request) {
   }
   return NextResponse.next()
 }
+
 ```
 
 ---
@@ -889,6 +922,7 @@ export function AppProvider({ children }) {
 }
 
 export const useApp = () => useContext(AppContext)
+
 ```
 
 ---
@@ -931,6 +965,7 @@ export function withErrorTracking<T>(fn: () => T): T {
     throw error
   }
 }
+
 ```
 
 ---
@@ -968,6 +1003,7 @@ export default async function Page() {
 
   return variant === 'a' ? <VersionA /> : <VersionB />
 }
+
 ```
 
 ---
@@ -999,13 +1035,19 @@ export default async function AboutPage() {
   const data = await fetchAbout()
   return <div>{data.content}</div>
 }
+
 ```
 
 **Migration strategy:**
+
 1. Start with static pages
+
 2. Migrate dynamic pages
+
 3. Update API routes
+
 4. Test thoroughly
+
 5. Deploy with feature flags
 
 ---
@@ -1017,6 +1059,7 @@ export default async function AboutPage() {
 **Answer:**
 
 **Architecture:**
+
 - **Edge rendering:** Use Edge Runtime for fast cold starts
 - **CDN caching:** Cache static pages at edge
 - **Database:** Connection pooling, read replicas
@@ -1042,6 +1085,7 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   max: 20,
 })
+
 ```
 
 ---
@@ -1051,6 +1095,7 @@ const pool = new Pool({
 **Answer:**
 
 **Architecture:**
+
 - WebSocket for real-time sync
 - Operational Transformation (OT) or CRDT for conflict resolution
 - Server Components for initial load
@@ -1077,6 +1122,7 @@ export function CollaborativeEditor({ documentId }) {
 
   return <Editor onChange={handleChange} />
 }
+
 ```
 
 ---
@@ -1086,6 +1132,7 @@ export function CollaborativeEditor({ documentId }) {
 **Answer:**
 
 **Architecture:**
+
 - **Multi-region:** Deploy to multiple regions
 - **Geo-routing:** Route users to nearest region
 - **Data replication:** Sync data across regions
@@ -1109,6 +1156,7 @@ async function getData(region) {
   const dbUrl = process.env[`DATABASE_${region.toUpperCase()}`]
   return fetch(dbUrl)
 }
+
 ```
 
 ---
@@ -1118,6 +1166,7 @@ async function getData(region) {
 **Answer:**
 
 **Architecture:**
+
 - **API Gateway:** Next.js as BFF (Backend for Frontend)
 - **Service discovery:** Environment-based service URLs
 - **Circuit breakers:** Handle service failures
@@ -1149,6 +1198,7 @@ export async function callService(service, path, options) {
 export async function GET() {
   return callService('users', '/users')
 }
+
 ```
 
 ---
@@ -1158,6 +1208,7 @@ export async function GET() {
 **Answer:**
 
 **Architecture:**
+
 - **Pre-rendering:** ISR for popular products
 - **CDN:** Aggressive caching at edge
 - **Queue:** Order processing queue
@@ -1195,6 +1246,7 @@ export default async function ProductPage({ params }) {
     return <ProductDetails product={cached} degraded />
   }
 }
+
 ```
 
 ---
@@ -1242,6 +1294,7 @@ export default async function Page() {
   const result = await pool.query('SELECT * FROM users')
   return <div>{result.rows.length} users</div>
 }
+
 ```
 
 **Connection pooling:** Reuse connections across requests in development.
@@ -1284,6 +1337,7 @@ export function middleware(request) {
 
   return NextResponse.next()
 }
+
 ```
 
 ---
@@ -1322,6 +1376,7 @@ self.addEventListener('fetch', (event) => {
     })
   )
 })
+
 ```
 
 ---
@@ -1367,9 +1422,11 @@ export function middleware(request) {
   console.log(`${request.method} ${request.nextUrl.pathname}`)
   return NextResponse.next()
 }
+
 ```
 
 **Tools:**
+
 - React DevTools
 - Next.js DevTools
 - Vercel Analytics
@@ -1391,6 +1448,7 @@ export function middleware(request) {
 
 ```text
 Key Concepts:
+
 - App Router: app/ directory, Server Components, nested layouts
 - Data Fetching: fetch() in Server Components, ISR, SSR
 - Caching: Data Cache, Full Route Cache, Router Cache
@@ -1399,16 +1457,19 @@ Key Concepts:
 - Middleware: Edge Runtime, redirects, rewrites
 
 Performance:
+
 - Use ISR for static content
 - Use SSR for personalized content
 - Use streaming for slow data
 - Use Suspense for progressive loading
 
 Best Practices:
+
 - Default to Server Components
 - Use 'use client' sparingly
 - Implement proper error handling
 - Monitor performance metrics
+
 ```
 
 ## References & Learn More

@@ -9,9 +9,13 @@ NestJS middleware is similar to Express middleware and can be implemented as a f
 ## Why Do We Need It?
 
 1. **Cross-Cutting Concerns**: Handle logging, CORS, authentication, compression.
+
 2. **Request Processing**: Modify request/response before reaching controllers.
+
 3. **Third-Party Integration**: Integrate Express/Fastify middleware.
+
 4. **Modularity**: Organize middleware in a modular fashion.
+
 5. **Flexibility**: Apply middleware to specific routes or globally.
 
 ## How It Works
@@ -20,46 +24,72 @@ Middleware runs in the order they are registered, before guards, interceptors, p
 
 ```text
 Request
+
    |
+
    v
 +-------------------------------+
+
 |       Middleware 1            |
 |  (Logger, CORS)              |
+
 +-------------------------------+
+
    | next()
    v
 +-------------------------------+
+
 |       Middleware 2            |
 |  (Auth, Rate Limit)          |
+
 +-------------------------------+
+
    | next()
    v
 +-------------------------------+
+
 |          Guard                |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |       Interceptor             |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |           Pipe                |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |       Controller              |
+
 +-------------------------------+
+
    |
+
    v
 Response
+
 ```
 
 ### Middleware Consumer
 
 The `MiddlewareConsumer` provides methods to configure middleware:
+
 - `apply()`: Apply middleware
 - `exclude()`: Exclude specific routes
 - `forRoutes()`: Specify routes
@@ -90,6 +120,7 @@ export class LoggerMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ### Function-Based Middleware
@@ -109,6 +140,7 @@ export function corsMiddleware(req: Request, res: Response, next: NextFunction) 
 
   next();
 }
+
 ```
 
 ### Module Configuration
@@ -145,6 +177,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
+
 ```
 
 ### Auth Middleware
@@ -175,6 +208,7 @@ export class AuthMiddleware implements NestMiddleware {
     }
   }
 }
+
 ```
 
 ### Rate Limiting Middleware
@@ -208,6 +242,7 @@ export class RateLimitMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ### Body Parser Middleware
@@ -236,6 +271,7 @@ export class BodyParserMiddleware implements NestMiddleware {
     }
   }
 }
+
 ```
 
 ### Request ID Middleware
@@ -255,6 +291,7 @@ export class RequestIdMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ### Multiple Middleware
@@ -268,6 +305,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
+
 ```
 
 ### Conditional Middleware
@@ -294,6 +332,7 @@ export class ConditionalMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -319,6 +358,7 @@ export class GlobalLoggerMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ### 2. Request Sanitization Middleware
@@ -345,6 +385,7 @@ export class SanitizeMiddleware implements NestMiddleware {
     return obj;
   }
 }
+
 ```
 
 ### 3. Tenant Resolution Middleware
@@ -365,6 +406,7 @@ export class TenantMiddleware implements NestMiddleware {
     next();
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -383,6 +425,7 @@ use(req: Request, res: Response, next: NextFunction): void {
   console.log(req.url);
   next();
 }
+
 ```
 
 ### 2. Heavy Operations in Middleware
@@ -399,6 +442,7 @@ async use(req: Request, res: Response, next: NextFunction): Promise<void> {
   req.data = await heavyAsyncOperation();
   next();
 }
+
 ```
 
 ### 3. Modifying Response After Send
@@ -415,24 +459,35 @@ use(req: Request, res: Response, next: NextFunction): void {
   res.setHeader('X-Custom', 'value');
   next();
 }
+
 ```
 
 ## Best Practices
 
 1. **Single Responsibility**: Each middleware handles one concern.
+
 2. **Always Call next()**: Ensure middleware doesn't hang requests.
+
 3. **Error Handling**: Use try-catch and call next(error) for errors.
+
 4. **Keep Fast**: Middleware runs on every matching request.
+
 5. **Use NestMiddleware**: Class-based middleware for DI support.
+
 6. **Exclude Routes**: Use `exclude()` for routes that don't need middleware.
+
 7. **Order Matters**: Apply middleware in the correct order.
 
 ## Performance Considerations
 
 1. **Execution Order**: Middleware runs on every matching request.
+
 2. **Async Overhead**: Async middleware adds latency per request.
+
 3. **Memory**: In-memory stores (rate limiting) can grow unbounded.
+
 4. **Conditional Execution**: Skip unnecessary middleware based on route.
+
 5. **Caching**: Cache middleware results when possible.
 
 ## Interview Questions
@@ -457,6 +512,7 @@ Yes, middleware can add properties to the request object.
 ### Intermediate
 
 **Q6: What is the difference between middleware and interceptors?**
+
 - Middleware: Runs before routing, no access to handler metadata
 - Interceptor: Runs after routing, has access to handler and response
 

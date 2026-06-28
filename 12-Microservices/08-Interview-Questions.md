@@ -33,6 +33,7 @@ Microservices architecture is widely adopted in modern software development. Und
 │  └── Deep dives, edge cases, advanced topics                   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -72,6 +73,7 @@ MICROSERVICES ARCHITECTURE:
 │ User DB │  │Product  │  │ Order   │
 │         │  │  DB     │  │  DB     │
 └─────────┘  └─────────┘  └─────────┘
+
 ```
 
 **Follow-up:** What are the benefits and drawbacks?
@@ -82,11 +84,13 @@ MICROSERVICES ARCHITECTURE:
 Microservices communicate through two primary patterns:
 
 1. **Synchronous Communication** (HTTP/REST, gRPC)
+
    - Request/response model
    - Direct service-to-service calls
    - Examples: REST API calls, gRPC streams
 
 2. **Asynchronous Communication** (Message Queues, Events)
+
    - Event-driven architecture
    - Decoupled services
    - Examples: Kafka, RabbitMQ, AWS SQS
@@ -114,6 +118,7 @@ class OrderService {
     });
   }
 }
+
 ```
 
 #### Q3: What is service discovery?
@@ -138,6 +143,7 @@ class ServiceDiscoveryClient {
     return instances[Math.floor(Math.random() * instances.length)];
   }
 }
+
 ```
 
 #### Q4: What is an API Gateway?
@@ -159,6 +165,7 @@ gateway.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 gateway.use('/api/users', createProxyMiddleware({ target: 'http://user-service:3001' }));
 gateway.use('/api/products', createProxyMiddleware({ target: 'http://product-service:3002' }));
 gateway.use('/api/orders', createProxyMiddleware({ target: 'http://order-service:3003' }));
+
 ```
 
 #### Q5: What is the difference between synchronous and asynchronous communication?
@@ -179,6 +186,7 @@ const user = await httpClient.get('/users/123');
 
 // Asynchronous: Fire and forget, process later
 await messageQueue.publish('user-events', { type: 'USER_CREATED', data: user });
+
 ```
 
 ### Intermediate Questions
@@ -216,6 +224,7 @@ class OrderSaga {
     await this.orderService.cancel(order.id);
   }
 }
+
 ```
 
 #### Q7: What is the Circuit Breaker pattern?
@@ -261,6 +270,7 @@ class CircuitBreaker {
     }
   }
 }
+
 ```
 
 #### Q8: What is event sourcing?
@@ -297,6 +307,7 @@ const events = [
   { type: 'PaymentReceived', data: { amount: 100 } },
   { type: 'OrderShipped', data: { trackingNumber: '123456' } },
 ];
+
 ```
 
 #### Q9: What is CQRS?
@@ -324,6 +335,7 @@ class OrderQueryHandler {
     return this.orderViewRepository.findById(orderId);
   }
 }
+
 ```
 
 #### Q10: How do you handle distributed transactions?
@@ -332,8 +344,11 @@ class OrderQueryHandler {
 Distributed transactions are handled through:
 
 1. **Saga Pattern** - Compensating transactions
+
 2. **Eventual Consistency** - Accept temporary inconsistency
+
 3. **Two-Phase Commit (2PC)** - Distributed locks (rarely used)
+
 4. **Outbox Pattern** - Reliable event publishing
 
 ```typescript
@@ -355,6 +370,7 @@ class OrderService {
     // Separate process publishes events from outbox
   }
 }
+
 ```
 
 ### Senior Questions
@@ -362,6 +378,7 @@ class OrderService {
 #### Q11: How would you design a microservices system for an e-commerce platform?
 
 **Answer:**
+
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                  E-COMMERCE MICROSERVICES                       │
@@ -387,9 +404,11 @@ class OrderService {
 │   MESSAGE BROKER (Kafka/RabbitMQ)                              │
 │   └── Event-driven communication between services              │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Key decisions:**
+
 - API Gateway for client simplification
 - Event-driven communication for loose coupling
 - Database per service for independence
@@ -430,6 +449,7 @@ async function getUserWithFallback(userId: string): Promise<User> {
 const userPool = new Pool({ max: 10 });
 const orderPool = new Pool({ max: 20 });
 // Isolate failures to specific services
+
 ```
 
 #### Q13: How do you implement distributed tracing?
@@ -473,6 +493,7 @@ async function processOrder(orderId: string): Promise<void> {
     span.end();
   }
 }
+
 ```
 
 #### Q14: How do you ensure data consistency across services?
@@ -523,6 +544,7 @@ class OrderService {
     });
   }
 }
+
 ```
 
 #### Q15: How do you handle database per service pattern?
@@ -571,6 +593,7 @@ class OrderQueryService {
     return { ...order, user, products };
   }
 }
+
 ```
 
 ### FAANG-Style Questions
@@ -578,6 +601,7 @@ class OrderQueryService {
 #### Q16: Design a URL shortener like bit.ly
 
 **Answer:**
+
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    URL SHORTENER DESIGN                         │
@@ -595,6 +619,7 @@ class OrderQueryService {
 │   • Cache: Redis for hot URLs                                    │
 │   • Analytics: Track clicks, referrers                          │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```typescript
@@ -646,11 +671,13 @@ class UrlService {
     return code;
   }
 }
+
 ```
 
 #### Q17: Design a real-time chat application
 
 **Answer:**
+
 ```typescript
 // WebSocket Gateway
 class ChatGateway {
@@ -709,11 +736,13 @@ class MessageService {
     );
   }
 }
+
 ```
 
 #### Q18: Design a notification system
 
 **Answer:**
+
 ```typescript
 // Notification Service
 class NotificationService {
@@ -771,11 +800,13 @@ class PushService {
     ));
   }
 }
+
 ```
 
 #### Q19: Design a rate limiting system
 
 **Answer:**
+
 ```typescript
 // Rate Limiter using Token Bucket algorithm
 class RateLimiter {
@@ -828,11 +859,13 @@ class DistributedRateLimiter {
     return requestCount <= limit;
   }
 }
+
 ```
 
 #### Q20: Design a distributed caching system
 
 **Answer:**
+
 ```typescript
 // Distributed Cache with Consistent Hashing
 class DistributedCache {
@@ -907,6 +940,7 @@ class ProductService {
     await this.cache.delete(`product:${productId}`);
   }
 }
+
 ```
 
 ### Follow-up Questions
@@ -914,6 +948,7 @@ class ProductService {
 #### Q21: How do you handle database migrations in microservices?
 
 **Answer:**
+
 ```typescript
 // Database migration strategy
 class MigrationService {
@@ -954,11 +989,13 @@ class MigrationService {
     }
   }
 }
+
 ```
 
 #### Q22: How do you handle service versioning?
 
 **Answer:**
+
 ```typescript
 // API Versioning strategies
 
@@ -997,11 +1034,13 @@ class UserServiceV2 extends UserServiceV1 {
     };
   }
 }
+
 ```
 
 #### Q23: How do you monitor microservices?
 
 **Answer:**
+
 ```typescript
 // Metrics collection
 class MetricsCollector {
@@ -1064,11 +1103,13 @@ app.use(tracingMiddleware);
 
 // Logging
 app.use(loggingMiddleware);
+
 ```
 
 #### Q24: How do you handle secrets management?
 
 **Answer:**
+
 ```typescript
 // Secrets management with AWS Secrets Manager
 class SecretsManager {
@@ -1111,11 +1152,13 @@ const config = {
 // Never commit secrets to code
 // Use .env files locally (add to .gitignore)
 // Use secrets manager in production
+
 ```
 
 #### Q25: How do you handle blue-green deployments?
 
 **Answer:**
+
 ```typescript
 // Blue-Green deployment with Kubernetes
 const deployment = {
@@ -1186,11 +1229,13 @@ async function rollback(): Promise<void> {
   // Scale up blue
   await kubernetes.scaleDeployment('user-service-blue', 3);
 }
+
 ```
 
 #### Q26: How do you handle circuit breaker in async systems?
 
 **Answer:**
+
 ```typescript
 // Async Circuit Breaker with Message Queue
 class AsyncCircuitBreaker {
@@ -1249,11 +1294,13 @@ class AsyncCircuitBreaker {
     }
   }
 }
+
 ```
 
 #### Q27: How do you handle idempotency in distributed systems?
 
 **Answer:**
+
 ```typescript
 // Idempotency Key pattern
 class IdempotentService {
@@ -1319,11 +1366,13 @@ app.post('/api/payments', async (req, res) => {
 
   res.json(result);
 });
+
 ```
 
 #### Q28: How do you handle distributed locking?
 
 **Answer:**
+
 ```typescript
 // Redis-based distributed lock
 class DistributedLock {
@@ -1397,11 +1446,13 @@ async function transferFunds(from: string, to: string, amount: number) {
     await accountService.credit(to, amount);
   });
 }
+
 ```
 
 #### Q29: How do you handle service mesh?
 
 **Answer:**
+
 ```yaml
 # Istio Service Mesh Configuration
 apiVersion: networking.istio.io/v1alpha3
@@ -1410,13 +1461,16 @@ metadata:
   name: user-service
 spec:
   hosts:
+
   - user-service
   http:
+
   - route:
     - destination:
         host: user-service
         subset: v1
       weight: 90
+
     - destination:
         host: user-service
         subset: v2
@@ -1429,9 +1483,11 @@ metadata:
 spec:
   host: user-service
   subsets:
+
   - name: v1
     labels:
       version: v1
+
   - name: v2
     labels:
       version: v2
@@ -1447,6 +1503,7 @@ spec:
       consecutive5xxErrors: 5
       interval: 30s
       baseEjectionTime: 30s
+
 ```
 
 ```typescript
@@ -1470,11 +1527,13 @@ class UserService {
     return this.userRepository.findById(userId);
   }
 }
+
 ```
 
 #### Q30: How do you handle event-driven architecture at scale?
 
 **Answer:**
+
 ```typescript
 // Event-driven architecture with Kafka
 class EventDrivenArchitecture {
@@ -1550,29 +1609,34 @@ class EventSourcedOrderService {
     return this.orderProjection.get(orderId);
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Netflix
+
 - 1000+ microservices
 - Handles 200M+ subscribers
 - Real-time streaming, recommendations
 - Event-driven architecture with Kafka
 
 ### 2. Uber
+
 - Microservices for ride matching, pricing, payments
 - Real-time location tracking
 - Event sourcing for trip events
 - Circuit breakers for resilience
 
 ### 3. Amazon
+
 - Hundreds of microservices
 - Independent deployment
 - Saga pattern for order processing
 - Event-driven for inventory management
 
 ### 4. LinkedIn
+
 - Activity feeds, messaging
 - Kafka for event streaming
 - CQRS for read-heavy workloads
@@ -1581,23 +1645,37 @@ class EventSourcedOrderService {
 ## Common Mistakes
 
 1. **Distributed monolith** - Services too coupled
+
 2. **Shared databases** - Violates service independence
+
 3. **Synchronous everything** - Creates tight coupling
+
 4. **Ignoring failure handling** - Cascade failures
+
 5. **Missing monitoring** - Can't debug issues
+
 6. **Over-engineering** - Unnecessary complexity
+
 7. **Wrong service boundaries** - Chatty services
+
 8. **Ignoring data consistency** - Data corruption
 
 ## Best Practices
 
 1. **Design for failure** - Assume services will fail
+
 2. **Embrace eventual consistency** - Don't fight it
+
 3. **Use circuit breakers** - Prevent cascade failures
+
 4. **Implement idempotency** - Handle retries safely
+
 5. **Monitor everything** - Metrics, logs, traces
+
 6. **Automate deployments** - CI/CD pipelines
+
 7. **Use API contracts** - Clear service boundaries
+
 8. **Document architecture** - Keep docs updated
 
 ## Performance Considerations
@@ -1615,117 +1693,152 @@ class EventSourcedOrderService {
 ### Beginner (5-10)
 
 1. **What is microservices architecture?**
+
    - Collection of loosely coupled, independently deployable services.
 
 2. **Why use microservices?**
+
    - Scalability, independent deployment, technology flexibility, team autonomy.
 
 3. **What is service discovery?**
+
    - Mechanism for services to find each other dynamically.
 
 4. **What is an API Gateway?**
+
    - Single entry point handling cross-cutting concerns.
 
 5. **What is the difference between REST and gRPC?**
+
    - REST: HTTP/JSON, text-based
    - gRPC: HTTP/2, Protocol Buffers, binary
 
 6. **What is containerization?**
+
    - Packaging applications with dependencies (Docker).
 
 7. **What is orchestration?**
+
    - Managing containers at scale (Kubernetes).
 
 8. **What is continuous integration?**
+
    - Automated building and testing of code changes.
 
 ### Intermediate (5-10)
 
 9. **What is the Saga pattern?**
+
    - Managing distributed transactions with compensation.
 
 10. **What is circuit breaker?**
+
     - Preventing cascade failures by stopping calls to failing services.
 
 11. **What is event sourcing?**
+
     - Storing state changes as immutable events.
 
 12. **What is CQRS?**
+
     - Separating read and write models for optimization.
 
 13. **How do you handle service failures?**
+
     - Circuit breakers, retries, fallbacks, bulkheading.
 
 14. **What is distributed tracing?**
+
     - Tracking requests across service boundaries.
 
 15. **How do you ensure data consistency?**
+
     - Sagas, eventual consistency, outbox pattern.
 
 16. **What is service mesh?**
+
     - Infrastructure layer for service-to-service communication.
 
 ### Senior (10-15)
 
 17. **Design a microservices system for e-commerce.**
+
     - Service boundaries, communication patterns, data management.
 
 18. **How do you handle database per service?**
+
     - API composition, event-driven synchronization.
 
 19. **What is the outbox pattern?**
+
     - Reliable event publishing within transactions.
 
 20. **How do you handle distributed transactions?**
+
     - Saga pattern, eventual consistency, compensation.
 
 21. **What is event-driven architecture?**
+
     - Services communicate through events.
 
 22. **How do you monitor microservices?**
+
     - Metrics, logs, traces, health checks.
 
 23. **What is blue-green deployment?**
+
     - Zero-downtime deployment strategy.
 
 24. **How do you handle secrets management?**
+
     - Secrets manager, environment variables, encryption.
 
 25. **What is service versioning?**
+
     - Managing API changes without breaking clients.
 
 ### FAANG-style (5-10)
 
 26. **Design Netflix's microservices architecture.**
+
     - 1000+ services, event-driven, high availability.
 
 27. **How would you handle 1M requests/second?**
+
     - Caching, load balancing, async processing, optimization.
 
 28. **Design a real-time analytics system.**
+
     - Stream processing, event sourcing, CQRS.
 
 29. **How do you ensure microservices security?**
+
     - mTLS, API gateway, authentication, authorization.
 
 30. **Explain microservices testing strategies.**
+
     - Unit, integration, contract, end-to-end testing.
 
 ### Follow-ups (5-10)
 
 31. **How do you migrate from monolith to microservices?**
+
     - Strangler fig pattern, gradual extraction.
 
 32. **What is the impact of microservices on development?**
+
     - Team autonomy, deployment complexity, monitoring.
 
 33. **How do you handle microservices debugging?**
+
     - Distributed tracing, logging, correlation IDs.
 
 34. **What is the future of microservices?**
+
     - Serverless, service mesh, AI-driven operations.
 
 35. **How do you choose between microservices and monolith?**
+
     - Team size, complexity, deployment frequency.
 
 ## Summary
@@ -1777,11 +1890,13 @@ Microservices architecture requires understanding of distributed systems, commun
 │  ✗ Missing monitoring                                          │
 │  ✗ Over-engineering                                            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Microservices Patterns by Chris Richardson](https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543)
 - [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358)
 - [Microservices.io](https://microservices.io/)

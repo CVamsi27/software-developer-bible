@@ -11,8 +11,11 @@ Also known as Wrapper pattern, it's particularly useful when integrating third-p
 Without the Adapter pattern, integrating incompatible interfaces leads to:
 
 1. **Tight coupling**: Code depends on specific external interfaces
+
 2. **Code duplication**: Conversion logic repeated everywhere
+
 3. **Difficult maintenance**: Changes in external APIs require modifying multiple files
+
 4. **Testing challenges**: Hard to mock external dependencies
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Adapter pattern, integrating incompatible interfaces leads to:
 The Adapter pattern works by:
 
 1. Defining a target interface that the client expects
+
 2. Creating an adapter class that implements the target interface
+
 3. The adapter wraps the adaptee (existing class with incompatible interface)
+
 4. Translating calls between the two interfaces
 
 ```text
@@ -52,6 +58,7 @@ The Adapter pattern works by:
 │  │    + specificRequest(): string           │   │
 │  └──────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -123,6 +130,7 @@ const oldPlayer = new OldMediaPlayer();
 const adapter = new OldMediaPlayerAdapter(oldPlayer);
 
 playMusic(adapter, 'song.mp3'); // Works with the adapter
+
 ```
 
 ### API Response Adapter
@@ -227,6 +235,7 @@ class UserService {
     return user;
   }
 }
+
 ```
 
 ### Database Adapter
@@ -381,6 +390,7 @@ const mongoAdapter = new MongoDBAdapter(new MongoDBDatabase());
 
 const pgRepo = new UserRepository(pgAdapter);
 const mongoRepo = new UserRepository(mongoAdapter);
+
 ```
 
 ### Payment Gateway Adapter
@@ -631,6 +641,7 @@ const paypal = new PayPalAdapter(new PayPalAPI());
 
 const orderService1 = new OrderService(stripe);
 const orderService2 = new OrderService(paypal);
+
 ```
 
 ## Real-World Use Cases
@@ -757,6 +768,7 @@ class MailgunAdapter implements EmailService {
     }
   }
 }
+
 ```
 
 ### 2. Legacy System Integration
@@ -856,6 +868,7 @@ class InventoryService {
     return false;
   }
 }
+
 ```
 
 ### 3. XML to JSON Adapter
@@ -936,6 +949,7 @@ const configManager = new ConfigurationManager(adapter);
 
 const config = configManager.loadConfig('<config><db>localhost</db></config>');
 console.log(config);
+
 ```
 
 ## Common Mistakes
@@ -947,6 +961,7 @@ console.log(config);
 class SimpleAdapter {
   // Adapting something that could be easily modified
 }
+
 ```
 
 ### 2. Adapter with Too Much Logic
@@ -959,6 +974,7 @@ class BadAdapter {
     // Should only adapt interface
   }
 }
+
 ```
 
 ### 3. Not Using Interface
@@ -974,6 +990,7 @@ class JSONAdapter {
 }
 
 // These adapters have no common interface
+
 ```
 
 ### 4. Tight Coupling
@@ -987,6 +1004,7 @@ class BadAdapter {
     this.specificImplementation = new SpecificClass();
   }
 }
+
 ```
 
 ## Best Practices
@@ -1009,6 +1027,7 @@ class JSONParserAdapter implements Parser {
   parse(data: string): any { ... }
   stringify(data: any): string { ... }
 }
+
 ```
 
 ### 2. Keep Adapters Focused
@@ -1026,6 +1045,7 @@ class OrderAdapter {
     // Only adapts order data
   }
 }
+
 ```
 
 ### 3. Use Dependency Injection
@@ -1038,6 +1058,7 @@ class Service {
 
 // In dependency injection container
 container.register('adapter', new SpecificAdapter());
+
 ```
 
 ### 4. Make Adapters Stateless
@@ -1049,6 +1070,7 @@ class StatelessAdapter {
     // Pure function, no state
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -1068,86 +1090,111 @@ class StatelessAdapter {
 ### Beginner
 
 1. **What is the Adapter pattern?**
+
    - A structural pattern that allows objects with incompatible interfaces to collaborate.
 
 2. **When would you use Adapter pattern?**
+
    - When integrating third-party libraries, legacy systems, or APIs with different interfaces.
 
 3. **What's the difference between Adapter and Facade?**
+
    - Adapter makes one interface compatible; Facade simplifies a complex system.
 
 4. **How do you implement Adapter in TypeScript?**
+
    - Create an adapter class that implements the target interface and wraps the adaptee.
 
 5. **What are the benefits of Adapter pattern?**
+
    - Reusability, flexibility, and separation of concerns.
 
 ### Intermediate
 
 6. **What's the difference between Object Adapter and Class Adapter?**
+
    - Object Adapter uses composition; Class Adapter uses inheritance.
 
 7. **Can Adapter add functionality?**
+
    - Yes, but keep it focused on interface adaptation, not business logic.
 
 8. **How do you test Adapter pattern?**
+
    - Mock the adaptee, test the adapter's interface implementation.
 
 9. **What's the relationship between Adapter and Decorator?**
+
    - Adapter changes interface; Decorator adds behavior while keeping interface.
 
 10. **How do you handle multiple adaptees?**
+
     - Create separate adapters for each adaptee or use a compound adapter.
 
 ### Senior
 
 11. **How does Adapter pattern affect scalability?**
+
     - Adapters are lightweight; the adapted objects can be optimized.
 
 12. **What are the SOLID violations with Adapter?**
+
     - Usually follows SOLID; watch for adapters violating Single Responsibility.
 
 13. **How do you handle Adapter in microservices?**
+
     - Use adapters for API integration, protocol translation, and data transformation.
 
 14. **What are the memory implications of Adapter?**
+
     - Adapters are usually stateless; the adapted objects consume memory.
 
 15. **How do you refactor Adapter code?**
+
     - Extract common logic, use composition, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design an Adapter for a legacy system.**
+
     - Consider backward compatibility, error handling, and performance.
 
 17. **How would you implement Adapter for distributed systems?**
+
     - Consider network transparency, serialization, and fault tolerance.
 
 18. **What are the implications of Adapter in cloud-native applications?**
+
     - Consider serverless functions, API gateways, and protocol translation.
 
 19. **How do you handle Adapter in event-driven architectures?**
+
     - Use adapters for event transformation and protocol translation.
 
 20. **Design an Adapter that supports versioning.**
+
     - Consider backward compatibility, version negotiation, and migration.
 
 ### Follow-ups
 
 21. **Can Adapter pattern be combined with other patterns?**
+
     - Yes, commonly with Factory, Decorator, and Proxy patterns.
 
 22. **How do you handle Adapter in testing frameworks?**
+
     - Use dependency injection, create test adapters, and mock implementations.
 
 23. **What are the memory implications of Adapter pattern?**
+
     - Adapters are usually lightweight; the adapted objects consume memory.
 
 24. **How do you handle Adapter in serverless environments?**
+
     - Consider stateless design, cold starts, and protocol translation.
 
 25. **What's the impact of Adapter on code maintainability?**
+
     - Improves maintainability by decoupling systems and centralizing adaptation logic.
 
 ## Summary
@@ -1189,6 +1236,7 @@ The Adapter pattern is essential for integrating incompatible interfaces. It all
 │ • Decorator (adds behavior)                 │
 │ • Proxy (controls access)                   │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

@@ -48,6 +48,7 @@ This guide contains 40 of the most commonly asked database/PostgreSQL interview 
 │  │  • Real-world scenarios                             │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Beginner Questions (5)
@@ -58,6 +59,7 @@ This guide contains 40 of the most commonly asked database/PostgreSQL interview 
 PostgreSQL is a powerful, open-source, object-relational database management system (ORDBMS) with over 30 years of active development. It extends SQL with features like custom data types, functions, operators, and index methods.
 
 **Key points:**
+
 - ACID-compliant
 - Supports MVCC (Multi-Version Concurrency Control)
 - Extensible with custom types, functions, and extensions
@@ -66,6 +68,7 @@ PostgreSQL is a powerful, open-source, object-relational database management sys
 - Built-in replication and high availability
 
 **Example:**
+
 ```sql
 -- Basic PostgreSQL features
 CREATE TABLE users (
@@ -80,6 +83,7 @@ SELECT * FROM users WHERE metadata->>'role' = 'admin';
 
 -- Array query
 SELECT * WHERE 'premium' = ANY(tags);
+
 ```
 
 ### 2. What is a primary key and foreign key?
@@ -90,6 +94,7 @@ A **primary key** is a column (or set of columns) that uniquely identifies each 
 A **foreign key** is a column (or set of columns) that references a primary key in another table, establishing a relationship between the two tables.
 
 **Example:**
+
 ```sql
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,  -- Primary key
@@ -101,9 +106,11 @@ CREATE TABLE orders (
     user_id INTEGER REFERENCES users(id),  -- Foreign key
     total DECIMAL(10, 2)
 );
+
 ```
 
 **Why important:**
+
 - Enforces referential integrity
 - Prevents orphaned records
 - Enables JOIN operations
@@ -112,10 +119,12 @@ CREATE TABLE orders (
 ### 3. What is the difference between WHERE and HAVING?
 
 **Answer:**
+
 - **WHERE** filters rows before GROUP BY aggregation
 - **HAVING** filters groups after GROUP BY aggregation
 
 **Example:**
+
 ```sql
 -- WHERE: filters before aggregation
 SELECT user_id, COUNT(*) AS order_count
@@ -128,6 +137,7 @@ SELECT user_id, COUNT(*) AS order_count
 FROM orders
 GROUP BY user_id
 HAVING COUNT(*) > 5;  -- Filter groups after
+
 ```
 
 ### 4. What is an index and why use it?
@@ -136,12 +146,14 @@ HAVING COUNT(*) > 5;  -- Filter groups after
 An index is a data structure that improves the speed of data retrieval operations at the cost of additional storage and write overhead.
 
 **Why use indexes:**
+
 - Faster queries (O(log n) vs O(n))
 - Enforce uniqueness
 - Improve JOIN performance
 - Support efficient filtering
 
 **Example:**
+
 ```sql
 -- Without index: Sequential scan
 SELECT * FROM users WHERE email = 'test@example.com';
@@ -149,6 +161,7 @@ SELECT * FROM users WHERE email = 'test@example.com';
 -- With index: Index scan
 CREATE INDEX idx_users_email ON users(email);
 SELECT * FROM users WHERE email = 'test@example.com';
+
 ```
 
 ### 5. What is a JOIN?
@@ -157,6 +170,7 @@ SELECT * FROM users WHERE email = 'test@example.com';
 A JOIN combines rows from two or more tables based on a related column between them.
 
 **Types of JOINs:**
+
 - **INNER JOIN**: Only matching rows
 - **LEFT JOIN**: All from left + matching from right
 - **RIGHT JOIN**: All from right + matching from left
@@ -164,10 +178,12 @@ A JOIN combines rows from two or more tables based on a related column between t
 - **CROSS JOIN**: All combinations
 
 **Example:**
+
 ```sql
 SELECT u.name, o.total
 FROM users u
 INNER JOIN orders o ON u.id = o.user_id;
+
 ```
 
 ## Intermediate Questions (5)
@@ -178,12 +194,14 @@ INNER JOIN orders o ON u.id = o.user_id;
 Normalization is the process of organizing a database to reduce redundancy and improve integrity.
 
 **Normal forms:**
+
 - **1NF**: Atomic values, no repeating groups
 - **2NF**: 1NF + no partial dependencies
 - **3NF**: 2NF + no transitive dependencies
 - **BCNF**: 3NF + every determinant is a candidate key
 
 **Example:**
+
 ```sql
 -- Unnormalized
 CREATE TABLE orders_bad (
@@ -214,11 +232,13 @@ CREATE TABLE order_items (
     product_id INT REFERENCES products(id),
     quantity INT
 );
+
 ```
 
 ### 7. What is the difference between DELETE and TRUNCATE?
 
 **Answer:**
+
 | Feature | DELETE | TRUNCATE |
 |---------|--------|----------|
 | Type | DML | DDL |
@@ -229,21 +249,25 @@ CREATE TABLE order_items (
 | Reset counter | No | Yes (resets IDENTITY) |
 
 **Example:**
+
 ```sql
 -- DELETE: Removes specific rows, logs each delete
 DELETE FROM users WHERE id = 1;
 
 -- TRUNCATE: Removes all rows, resets counters
 TRUNCATE TABLE users;
+
 ```
 
 ### 8. What is the difference between INNER JOIN and LEFT JOIN?
 
 **Answer:**
+
 - **INNER JOIN**: Returns only rows with matches in both tables
 - **LEFT JOIN**: Returns all rows from left table + matching from right (NULLs if no match)
 
 **Example:**
+
 ```sql
 -- INNER JOIN: Only users with orders
 SELECT u.name, o.total
@@ -255,39 +279,46 @@ SELECT u.name, o.total
 FROM users u
 LEFT JOIN orders o ON u.id = o.user_id;
 -- Users without orders have NULL in o.total
+
 ```
 
 ### 9. What is a transaction?
 
 **Answer:**
 A transaction is a logical unit of work that maintains ACID properties:
+
 - **Atomicity**: All or nothing
 - **Consistency**: Valid state transitions
 - **Isolation**: Concurrent transactions don't interfere
 - **Durability**: Committed data persists
 
 **Example:**
+
 ```sql
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
+
 ```
 
 ### 10. What is an execution plan?
 
 **Answer:**
 An execution plan shows how PostgreSQL will execute a query, including:
+
 - Scan types (Seq Scan, Index Scan)
 - Join algorithms (Nested Loop, Hash Join)
 - Cost estimates
 - Estimated rows
 
 **Example:**
+
 ```sql
 EXPLAIN ANALYZE
 SELECT * FROM users WHERE email = 'test@example.com';
 -- Shows which index is used, estimated vs actual rows
+
 ```
 
 ## Senior Questions (10)
@@ -298,18 +329,21 @@ SELECT * FROM users WHERE email = 'test@example.com';
 MVCC (Multi-Version Concurrency Control) maintains multiple versions of data objects. Each transaction sees a consistent snapshot without blocking others.
 
 **PostgreSQL implementation:**
+
 - Each row has `xmin` (creating xid) and `xmax` (deleting xid)
 - Old versions kept until VACUUM
 - Readers don't block writers
 - Writers don't block readers
 
 **Example:**
+
 ```sql
 -- Check tuple versions
 SELECT ctid, xmin, xmax, * FROM users WHERE id = 1;
 
 -- xmin: transaction that created the row
 -- xmax: transaction that deleted/updated the row (0 if not deleted)
+
 ```
 
 ### 12. What is WAL and why is it important?
@@ -318,29 +352,37 @@ SELECT ctid, xmin, xmax, * FROM users WHERE id = 1;
 WAL (Write-Ahead Logging) ensures durability by writing changes to a log before applying them to the data files.
 
 **Importance:**
+
 - Enables crash recovery
 - Supports point-in-time recovery
 - Enables streaming replication
 - Improves write performance (sequential vs random I/O)
 
 **Example:**
+
 ```sql
 -- WAL location
 SHOW wal_level;
 SHOW archive_mode;
 SHOW archive_command;
+
 ```
 
 ### 13. How does PostgreSQL handle concurrent updates?
 
 **Answer:**
 PostgreSQL uses MVCC with last-commit-wins semantics:
+
 1. Transaction reads snapshot
+
 2. Transaction modifies data
+
 3. At commit, PostgreSQL checks for conflicts
+
 4. If conflict: serialization error (Serializable) or last commit wins (Read Committed)
 
 **Example:**
+
 ```sql
 -- Read Committed: last commit wins
 -- Session 1: UPDATE accounts SET balance = 200 WHERE id = 1;
@@ -350,6 +392,7 @@ PostgreSQL uses MVCC with last-commit-wins semantics:
 -- Serializable: raises error
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 -- Similar scenario raises serialization_failure
+
 ```
 
 ### 14. What is a GIN index?
@@ -358,12 +401,14 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 GIN (Generalized Inverted Index) is for composite values like arrays, JSONB, and full-text search.
 
 **Use cases:**
+
 - JSONB containment queries
 - Array element queries
 - Full-text search
 - hstore key-value queries
 
 **Example:**
+
 ```sql
 -- GIN for JSONB
 CREATE INDEX idx_metadata ON events USING GIN (metadata);
@@ -372,11 +417,13 @@ SELECT * FROM events WHERE metadata @> '{"type": "signup"}';
 -- GIN for arrays
 CREATE INDEX idx_tags ON products USING GIN (tags);
 SELECT * WHERE 'premium' = ANY(tags);
+
 ```
 
 ### 15. What is the difference between logical and physical replication?
 
 **Answer:**
+
 | Feature | Logical | Physical |
 |---------|---------|----------|
 | Level | Row-level | Block-level |
@@ -386,12 +433,14 @@ SELECT * WHERE 'premium' = ANY(tags);
 | Use case | Reporting, data integration | HA, read scaling |
 
 **Example:**
+
 ```sql
 -- Logical replication setup
 CREATE PUBLICATION my_pub FOR TABLE users, orders;
 CREATE SUBSCRIPTION my_sub
   CONNECTION 'host=... dbname=...'
   PUBLICATION my_pub;
+
 ```
 
 ### 16. What is table partitioning?
@@ -400,11 +449,13 @@ CREATE SUBSCRIPTION my_sub
 Splitting a large table into smaller, manageable pieces while maintaining a single table interface.
 
 **Types:**
+
 - **Range**: By date or numeric range
 - **List**: By discrete values
 - **Hash**: By hash of partition key
 
 **Example:**
+
 ```sql
 CREATE TABLE orders (
     id SERIAL,
@@ -413,6 +464,7 @@ CREATE TABLE orders (
 
 CREATE TABLE orders_2024_q1 PARTITION OF orders
     FOR VALUES FROM ('2024-01-01') TO ('2024-04-01');
+
 ```
 
 ### 17. What is the N+1 query problem?
@@ -421,6 +473,7 @@ CREATE TABLE orders_2024_q1 PARTITION OF orders
 Executing 1 query for the main list + N queries for each related record.
 
 **Example:**
+
 ```typescript
 // BAD: N+1 queries
 const users = await prisma.user.findMany();
@@ -434,6 +487,7 @@ for (const user of users) {
 const users = await prisma.user.findMany({
   include: { posts: true }
 });
+
 ```
 
 ### 18. How do you handle schema migrations in production?
@@ -442,10 +496,13 @@ const users = await prisma.user.findMany({
 Use migration tools with zero-downtime strategies:
 
 1. **Expand phase**: Add new columns/tables
+
 2. **Migrate phase**: Backfill data
+
 3. **Contract phase**: Remove old columns
 
 **Example:**
+
 ```typescript
 // Prisma migration
 npx prisma migrate dev --name add_user_status
@@ -457,6 +514,7 @@ ALTER TABLE users ADD COLUMN status TEXT DEFAULT 'active';
 UPDATE users SET status = 'active' WHERE status IS NULL;
 -- 3. Remove default
 ALTER TABLE users ALTER COLUMN status DROP DEFAULT;
+
 ```
 
 ### 19. What is connection pooling and why is it needed?
@@ -465,11 +523,13 @@ ALTER TABLE users ALTER COLUMN status DROP DEFAULT;
 Connection pooling maintains a cache of database connections for reuse.
 
 **Why needed:**
+
 - Reduces connection overhead (TCP handshake, authentication)
 - Limits concurrent connections
 - Improves performance
 
 **Example:**
+
 ```typescript
 // Prisma connection pool
 DATABASE_URL="postgresql://...?connection_limit=20&pool_timeout=10"
@@ -482,6 +542,7 @@ mydb = host=localhost port=5432 dbname=mydb
 pool_mode = transaction
 max_client_conn = 1000
 default_pool_size = 25
+
 ```
 
 ### 20. What is a materialized view?
@@ -490,11 +551,13 @@ default_pool_size = 25
 A materialized view stores the result of a query physically. Must be refreshed manually.
 
 **Use cases:**
+
 - Complex aggregations
 - Dashboard queries
 - Data warehousing
 
 **Example:**
+
 ```sql
 CREATE MATERIALIZED VIEW sales_dashboard AS
 SELECT
@@ -505,6 +568,7 @@ GROUP BY 1;
 
 -- Refresh
 REFRESH MATERIALIZED VIEW CONCURRENTLY sales_dashboard;
+
 ```
 
 ## FAANG-style Questions (5)
@@ -512,6 +576,7 @@ REFRESH MATERIALIZED VIEW CONCURRENTLY sales_dashboard;
 ### 21. Design a schema for a social media platform.
 
 **Answer:**
+
 ```sql
 -- Core tables
 CREATE TABLE users (
@@ -547,18 +612,25 @@ CREATE INDEX idx_posts_author ON posts(author_id);
 CREATE INDEX idx_posts_created ON posts(created_at DESC);
 CREATE INDEX idx_follows_follower ON follows(follower_id);
 CREATE INDEX idx_follows_following ON follows(following_id);
+
 ```
 
 ### 22. How would you optimize a query on a billion-row table?
 
 **Answer:**
+
 1. **Partitioning**: Split by date or ID range
+
 2. **Materialized views**: Pre-compute aggregations
+
 3. **Proper indexes**: B-tree for range, GIN for JSONB
+
 4. **Query optimization**: Avoid SELECT *, filter early
+
 5. **Read replicas**: Offload read queries
 
 **Example:**
+
 ```sql
 -- Partition by date
 CREATE TABLE events (
@@ -576,12 +648,14 @@ GROUP BY 1;
 
 -- BRIN index for naturally ordered data
 CREATE INDEX idx_events_created ON events USING BRIN (created_at);
+
 ```
 
 ### 23. Design a multi-tenant SaaS schema.
 
 **Answer:**
 **Option 1: Schema-per-tenant**
+
 ```sql
 CREATE SCHEMA tenant_1;
 CREATE SCHEMA tenant_2;
@@ -589,9 +663,11 @@ CREATE SCHEMA tenant_2;
 -- Each schema has its own tables
 CREATE TABLE tenant_1.users (...);
 CREATE TABLE tenant_2.users (...);
+
 ```
 
 **Option 2: Row-level security**
+
 ```sql
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -604,9 +680,11 @@ ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY tenant_isolation ON users
     USING (tenant_id = current_setting('app.tenant_id')::INTEGER);
+
 ```
 
 **Option 3: Database-per-tenant**
+
 - Separate database for each tenant
 - Maximum isolation
 - Higher operational cost
@@ -614,6 +692,7 @@ CREATE POLICY tenant_isolation ON users
 ### 24. Design a real-time leaderboard.
 
 **Answer:**
+
 ```sql
 -- Option 1: PostgreSQL with window functions
 CREATE TABLE scores (
@@ -636,11 +715,13 @@ LIMIT 10;
 -- Option 2: Redis sorted sets (better for real-time)
 -- ZADD leaderboard 100 user:123
 -- ZREVRANGE leaderboard 0 9 WITHSCORES
+
 ```
 
 ### 25. Design a distributed transaction system.
 
 **Answer:**
+
 ```typescript
 // Saga pattern
 async function processOrder(orderId: string) {
@@ -666,6 +747,7 @@ async function processOrder(orderId: string) {
     throw error;
   }
 }
+
 ```
 
 ## Follow-up Questions (5)
@@ -674,6 +756,7 @@ async function processOrder(orderId: string) {
 
 **Answer:**
 Choose MongoDB when:
+
 - Schema changes frequently
 - Document-heavy workloads
 - Rapid prototyping
@@ -681,6 +764,7 @@ Choose MongoDB when:
 - JSON documents are the primary data model
 
 Choose PostgreSQL when:
+
 - ACID compliance is required
 - Complex queries and joins
 - Data integrity is critical
@@ -690,12 +774,17 @@ Choose PostgreSQL when:
 ### 27. How do you handle schema changes without downtime?
 
 **Answer:**
+
 1. **Expand-contract pattern**
+
 2. **Feature flags**
+
 3. **Backward-compatible changes**
+
 4. **Dual writes**
 
 **Example:**
+
 ```sql
 -- 1. Add new column
 ALTER TABLE users ADD COLUMN email_normalized TEXT;
@@ -712,11 +801,13 @@ CREATE TRIGGER set_normalized_email
 -- 4. Remove old column (after migration)
 ALTER TABLE users DROP COLUMN email;
 ALTER TABLE users RENAME COLUMN email_normalized TO email;
+
 ```
 
 ### 28. What is the impact of isolation level on performance?
 
 **Answer:**
+
 | Isolation Level | Performance | Use Case |
 |----------------|-------------|----------|
 | Read Uncommitted | Best | Rarely used |
@@ -729,6 +820,7 @@ Higher isolation = more locking = more overhead.
 ### 29. How do you monitor PostgreSQL in production?
 
 **Answer:**
+
 ```sql
 -- Slow queries
 SELECT * FROM pg_stat_activity
@@ -747,11 +839,13 @@ FROM pg_stat_user_tables;
 
 -- Connection count
 SELECT COUNT(*) FROM pg_stat_activity;
+
 ```
 
 ### 30. What is the difference between optimistic and pessimistic locking?
 
 **Answer:**
+
 | Feature | Optimistic | Pessimistic |
 |---------|-----------|-------------|
 | Assumption | Conflicts rare | Conflicts likely |
@@ -787,6 +881,7 @@ Best Practices:
 • Use parameterized queries
 • Monitor slow queries
 • Update statistics regularly
+
 ```
 
 ## References & Learn More

@@ -49,6 +49,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### What Gets Hoisted
@@ -78,6 +79,7 @@
 │  TDZ = Temporal Dead Zone (cannot access before declaration)│
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### var vs let/const Hoisting
@@ -111,6 +113,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Function Hoisting
@@ -156,6 +159,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Temporal Dead Zone (TDZ)
@@ -200,6 +204,7 @@
 │  • Supports block scoping properly                         │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -217,6 +222,7 @@ console.log(name);  // "Alice"
 // console.log(name);  // undefined
 // name = "Alice";
 // console.log(name);  // "Alice"
+
 ```
 
 ### let/const TDZ
@@ -241,6 +247,7 @@ try {
 
 const COLOR = "red";
 console.log(COLOR);  // "red"
+
 ```
 
 ### Function Declaration vs Expression
@@ -272,6 +279,7 @@ try {
 }
 
 const divide = (a: number, b: number): number => a / b;
+
 ```
 
 ### Class Hoisting
@@ -299,6 +307,7 @@ const MyClassExpression = class {
     this.value = 42;
   }
 };
+
 ```
 
 ### Hoisting in Loops
@@ -317,6 +326,7 @@ for (let j = 0; j < 3; j++) {
 // Why? var i is hoisted to function/global scope
 // All callbacks share the same i variable
 // By the time setTimeout runs, i is already 3
+
 ```
 
 ### Nested Function Hoisting
@@ -335,6 +345,7 @@ function outer() {
 }
 
 outer();
+
 ```
 
 ### Conditional Function Declaration
@@ -363,6 +374,7 @@ if (true) {
 }
 
 console.log(sayGoodbye());  // "Hello" (as expected)
+
 ```
 
 ## Real-World Use Cases
@@ -387,6 +399,7 @@ function multiply(a: number, b: number): number {
 function add(a: number, b: number): number {
   return a + b;
 }
+
 ```
 
 ### 2. Module Pattern
@@ -410,6 +423,7 @@ const Module = (function() {
 
 // Can't access privateVar directly
 console.log(Module.getVar());  // "private"
+
 ```
 
 ### 3. React Component Hoisting
@@ -424,6 +438,7 @@ function App() {
 function ChildComponent() {
   return <div>Hello</div>;
 }
+
 ```
 
 ### 4. TypeScript Interface Hoisting
@@ -439,6 +454,7 @@ interface User {
 function createUser(user: User): User {
   return user;
 }
+
 ```
 
 ## Common Mistakes
@@ -458,6 +474,7 @@ function example() {
   }
   console.log(x);  // 20
 }
+
 ```
 
 ### 2. Assuming let/const Are Hoisted Like var
@@ -470,6 +487,7 @@ try {
 } catch (e) {
   console.log("Correct behavior: TDZ");
 }
+
 ```
 
 ### 3. Function Expression Hoisting
@@ -490,6 +508,7 @@ function greetFixed() {
   return "Hello";
 }
 const result = greetFixed();  // Works!
+
 ```
 
 ### 4. Class Hoisting
@@ -505,6 +524,7 @@ try {
 class MyClass {
   constructor() {}
 }
+
 ```
 
 ## Best Practices
@@ -522,6 +542,7 @@ counter++;
 
 // Avoid var entirely
 // var is function-scoped, leads to confusing bugs
+
 ```
 
 ### 2. Declare Variables at Top of Scope
@@ -543,6 +564,7 @@ function processData(data: any[]) {
 
   return result;
 }
+
 ```
 
 ### 3. Use Function Declarations for hoisting
@@ -561,6 +583,7 @@ function transform(item: any) {
 const processItemExpr = condition
   ? (item: any) => item.value
   : (item: any) => item.name;
+
 ```
 
 ### 4. Avoid Conditional Function Declarations
@@ -581,6 +604,7 @@ if (condition) {
 const doSomething = condition
   ? () => "A"
   : () => "B";
+
 ```
 
 ## Performance Considerations
@@ -606,6 +630,7 @@ function exampleOptimized() {
   }
   // y is not accessible here, memory can be freed
 }
+
 ```
 
 ### Function Declaration Optimization
@@ -622,6 +647,7 @@ function expensiveOperation() {
 const expensiveOperationExpr = function() {
   return Math.random();
 };
+
 ```
 
 ## Interview Questions
@@ -635,6 +661,7 @@ A: Hoisting is JavaScript's behavior of moving declarations to the top of their 
 **Q2: What is the difference between var and let/const hoisting?**
 
 A:
+
 - `var` declarations are hoisted and initialized to `undefined`
 - `let`/`const` declarations are hoisted but not initialized (Temporal Dead Zone)
 - Accessing a `let`/`const` before declaration throws a ReferenceError
@@ -661,6 +688,7 @@ var x = 5;
 
 console.log(y);  // ReferenceError
 let y = 10;
+
 ```
 
 A: During creation phase, `var x` is hoisted and initialized to `undefined`. `let y` is hoisted but remains uninitialized (TDZ). Accessing an uninitialized variable throws a ReferenceError.
@@ -679,6 +707,7 @@ if (true) {
 }
 
 console.log(sayHello());  // What does this output?
+
 ```
 
 A: Function declarations are hoisted regardless of conditions. The last declaration wins, so `sayHello()` returns "Goodbye". This is why function expressions are safer for conditional logic.
@@ -690,6 +719,7 @@ A: Arrow functions are function expressions, so only the variable declaration is
 **Q9: What is the difference between hoisting and TDZ?**
 
 A:
+
 - **Hoisting**: Moving declarations to the top of scope
 - **TDZ**: The period where a variable is hoisted but not yet initialized
 
@@ -705,16 +735,23 @@ A: No. `let` and `const` variables are in the TDZ before their declaration. Acce
 **Q11: Explain the complete lifecycle of a hoisted variable.**
 
 A:
+
 1. **Creation Phase**: Variable declaration is scanned and memory is allocated
+
 2. **Initialization**: `var` = `undefined`, `let`/`const` = uninitialized (TDZ)
+
 3. **Execution Phase**: Code runs line by line
+
 4. **Assignment**: Variable gets its value when the assignment statement executes
+
 5. **Usage**: Variable can be accessed after initialization
 
 **Q12: Why does JavaScript have hoisting?**
 
 A: Hoisting exists because JavaScript uses a two-pass compilation:
+
 1. First pass: Scan for declarations and create the execution context
+
 2. Second pass: Execute the code
 
 This allows function declarations to be used anywhere in the scope, enabling more flexible code organization.
@@ -726,6 +763,7 @@ A: Closures capture variables from their lexical environment. If a variable is h
 **Q14: What are the performance implications of hoisting?**
 
 A:
+
 - `var` is allocated for the entire function scope, even if only used in one block
 - `let`/`const` are block-scoped, allowing better memory optimization
 - Function declarations are created once during creation phase
@@ -734,6 +772,7 @@ A:
 **Q15: How do different JavaScript engines handle hoisting?**
 
 A: All modern engines follow the ECMAScript specification for hoisting. However, they may optimize differently:
+
 - V8 (Chrome): Uses lazy parsing for faster startup
 - SpiderMonkey (Firefox): Uses similar lazy parsing
 - JavaScriptCore (Safari): Uses FTL JIT compiler
@@ -743,6 +782,7 @@ A: All modern engines follow the ECMAScript specification for hoisting. However,
 **Q16: Design a code analyzer that detects potential hoisting issues.**
 
 A:
+
 ```typescript
 interface HoistingIssue {
   type: 'var-before-use' | 'tdz-violation' | 'conditional-function';
@@ -788,11 +828,13 @@ function analyzeHoisting(code: string): HoistingIssue[] {
 
   return issues;
 }
+
 ```
 
 **Q17: How would you implement a hoisting-aware linter rule?**
 
 A:
+
 ```typescript
 class HoistingRule {
   private declarations: Map<string, { line: number; type: string }> = new Map();
@@ -823,11 +865,13 @@ class HoistingRule {
     console.error(`Line ${node.loc.start.line}: ${message}`);
   }
 }
+
 ```
 
 **Q18: Explain how hoisting interacts with the module system.**
 
 A:
+
 - **CommonJS**: `require()` is synchronous, hoisting works as expected
 - **ES Modules**: `import` statements are hoisted to the top of the module
 - **Dynamic imports**: `import()` is not hoisted, returns a Promise
@@ -841,23 +885,33 @@ import { bar } from './module2'; // Hoisted to top
 if (condition) {
   const module = await import('./dynamic-module');  // Not hoisted
 }
+
 ```
 
 **Q19: How do you handle hoisting in code generation?**
 
 A: When generating JavaScript code:
+
 1. Collect all declarations first
+
 2. Generate declarations at the top of scope
+
 3. Generate assignments in their original positions
+
 4. Handle function declarations specially (full hoisting)
+
 5. Consider TDZ for let/const in output
 
 **Q20: What are the security implications of hoisting?**
 
 A:
+
 1. **Code injection**: Hoisted functions can be overwritten
+
 2. **Prototype pollution**: Hoisted constructors can be modified
+
 3. **Variable shadowing**: Hoisted variables can shadow outer scope
+
 4. **Temporal attacks**: TDZ can be exploited for timing attacks
 
 ### Follow-ups (5-10 questions)
@@ -865,6 +919,7 @@ A:
 **Q21: Can you give an example of a real-world bug caused by hoisting?**
 
 A: Common bug in loops:
+
 ```typescript
 // Bug: All callbacks share same 'var' variable
 for (var i = 0; i < 5; i++) {
@@ -882,20 +937,27 @@ for (var i = 0; i < 5; i++) {
     setTimeout(() => console.log(index), 100);  // 0, 1, 2, 3, 4
   })(i);
 }
+
 ```
 
 **Q22: How do you debug hoisting-related issues?**
 
 A:
+
 1. Use `console.trace()` to see execution flow
+
 2. Check variable values at different points
+
 3. Use Chrome DevTools to step through code
+
 4. Add breakpoints before and after declarations
+
 5. Use linter rules to detect potential issues
 
 **Q23: What is the relationship between hoisting and scope?**
 
 A: Hoisting is tied to scope because declarations are hoisted to the top of their containing scope:
+
 - `var`: Function or global scope
 - `let`/`const`: Block scope
 - Function declarations: Function or global scope
@@ -903,6 +965,7 @@ A: Hoisting is tied to scope because declarations are hoisted to the top of thei
 **Q24: How does hoisting work in different JavaScript environments?**
 
 A:
+
 - **Browser**: Standard hoisting behavior
 - **Node.js**: Same hoisting behavior
 - **Strict mode**: Some hoisting differences (e.g., `eval` doesn't create variables)
@@ -911,11 +974,17 @@ A:
 **Q25: What are best practices to avoid hoisting issues?**
 
 A:
+
 1. Use `const` by default, `let` when needed
+
 2. Avoid `var` entirely
+
 3. Declare variables at the top of scope
+
 4. Use function declarations for hoisting, expressions for conditional logic
+
 5. Enable strict mode
+
 6. Use linters to catch potential issues
 
 ## Summary
@@ -923,11 +992,17 @@ A:
 Hoisting is a fundamental JavaScript concept:
 
 1. **What**: Declarations are moved to the top of their scope
+
 2. **var**: Hoisted and initialized to `undefined`
+
 3. **let/const**: Hoisted but not initialized (TDZ)
+
 4. **Functions**: Declarations fully hoisted, expressions not
+
 5. **Classes**: Not hoisted (TDZ like let/const)
+
 6. **TDZ**: Prevents access before initialization
+
 7. **Best practices**: Use const/let, avoid var, declare at top
 
 Understanding hoisting is crucial for writing bug-free JavaScript and answering interview questions confidently.
@@ -986,6 +1061,7 @@ DEBUGGING:
 • Chrome DevTools breakpoints
 • Linter rules for detection
 • Step through code line by line
+
 ```
 
 ## References & Learn More

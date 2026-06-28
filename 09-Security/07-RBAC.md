@@ -38,6 +38,7 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
 │  (Inherits all lower-level permissions)                         │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### RBAC Flow
@@ -50,6 +51,7 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
      │                │                 │                 │
      │           Get user's        Check role has      Return
      │           assigned roles    required perm       response
+
 ```
 
 ## Code Examples
@@ -196,6 +198,7 @@ rbac.addRole({
 rbac.assignRole("user-1", "admin");
 rbac.hasPermission("user-1", "user", "manage"); // true
 rbac.hasPermission("user-1", "post", "delete"); // true
+
 ```
 
 ### NestJS RBAC Implementation
@@ -335,6 +338,7 @@ export class UsersController {
     return this.userService.create(createUserDto);
   }
 }
+
 ```
 
 ### Database Schema (Prisma)
@@ -386,6 +390,7 @@ model RolePermission {
   @@id([roleId, permissionId])
   @@map("role_permissions")
 }
+
 ```
 
 ### Prisma Query for RBAC
@@ -431,26 +436,31 @@ const hasPermission = async (
     )
   );
 };
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Enterprise Applications
+
 - Employee roles (admin, manager, employee)
 - Department-based access (HR, Finance, Engineering)
 - Hierarchical permissions
 
 ### 2. Cloud Platforms (AWS, GCP, Azure)
+
 - IAM roles and policies
 - Service account permissions
 - Resource-based access control
 
 ### 3. Content Management Systems
+
 - Editor roles (admin, editor, author, viewer)
 - Content type permissions
 - Workflow approvals
 
 ### 4. Multi-Tenant SaaS
+
 - Tenant-specific roles
 - Organization-level permissions
 - Feature-based access control
@@ -458,24 +468,39 @@ const hasPermission = async (
 ## Common Mistakes
 
 1. **Role explosion**: Too many granular roles become unmanageable
+
 2. **Not implementing least privilege**: Granting more permissions than needed
+
 3. **Hardcoding permissions**: Permissions should be configurable
+
 4. **Not auditing role assignments**: Regular review of who has what access
+
 5. **Ignoring role inheritance**: Properly model hierarchical permissions
+
 6. **Not handling role changes**: Update permissions in real-time
+
 7. **Mixing authentication and authorization**: RBAC is authorization, not authentication
+
 8. **Not testing permission boundaries**: Verify access control in tests
 
 ## Best Practices
 
 1. **Implement least privilege**: Grant only necessary permissions
+
 2. **Use role hierarchy**: Model inheritance properly
+
 3. **Audit regularly**: Review role assignments and permissions
+
 4. **Separate duties**: Prevent conflicts with role separation
+
 5. **Use descriptive role names**: Clear naming conventions
+
 6. **Implement permission caching**: Reduce database queries
+
 7. **Test access control**: Include RBAC in test suites
+
 8. **Document roles and permissions**: Maintain clear documentation
+
 9. **Implement time-based access**: Temporary role assignments
 10. **Use attribute-based access control (ABAC)** for complex scenarios
 

@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Real-time odds updates
 - Place bets on live events
 - Cash out before event ends
@@ -14,6 +15,7 @@
 - Live streaming integration
 
 ### Non-Functional Requirements
+
 - Ultra-low latency (< 100ms for odds updates)
 - High availability (99.99%)
 - Handle 100K+ concurrent users
@@ -24,37 +26,45 @@
 - Global deployment
 
 ## Capacity Estimation
+
 ```text
 User Estimates:
+
 - 1M registered users
 - 100K daily active users
 - 50K concurrent users at peak
 
 Betting Estimates:
+
 - 10K bets per second at peak
 - Average bet: $20
 - Daily volume: 1M bets × $20 = $20M
 - Yearly volume: $7.3B
 
 Event Estimates:
+
 - 1K live events per day
 - Average 100 markets per event
 - 100K odds updates per minute
 
 Storage Estimates:
+
 - Bet data: 1M × 500 bytes = 500 MB/day
 - Odds history: 100K × 100 bytes = 10 MB/minute
 - User data: 1M × 1 KB = 1 GB
 - Total: ~1.5 GB/day
 
 Bandwidth Estimates:
+
 - Odds updates: 100K × 100 bytes = 10 MB/s
 - Bet placement: 10K × 500 bytes = 5 MB/s
 - Live feeds: 1K × 10 KB = 10 MB/s
 - Total: ~25 MB/s peak
+
 ```
 
 ## API Design
+
 ```yaml
 # Get Live Events
 GET /api/v1/events/live
@@ -150,10 +160,12 @@ POST /api/v1/users/{id}/wallet/deposit
       "payment_method": "card",
       "card_token": "tok_abc"
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -293,9 +305,11 @@ CREATE TABLE live_feeds (
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    events       │     │    sports       │
@@ -351,10 +365,12 @@ CREATE TABLE live_feeds (
                     │ settled_at      │
                     │ payout_amount   │
                     └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -396,11 +412,13 @@ CREATE TABLE live_feeds (
      │  (Real-time     │
      │   Updates)      │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### Real-time Odds Service
+
 ```python
 import asyncio
 import json
@@ -470,9 +488,11 @@ class OddsService:
 
         for client in clients:
             await client.send(json.dumps(message))
+
 ```
 
 ### Betting Service
+
 ```python
 class BettingService:
     def __init__(self, db, redis_client, odds_service,
@@ -600,9 +620,11 @@ class BettingService:
         # Apply cash out margin
         cashout_margin = 0.90  # 10% margin
         return round(cashout * cashout_margin, 2)
+
 ```
 
 ### Settlement Service
+
 ```python
 class SettlementService:
     def __init__(self, db, wallet_service, notification_service):
@@ -665,9 +687,11 @@ class SettlementService:
 
         # Update bet status
         await self.db.settle_bet(bet_id, 'void', bet['amount'])
+
 ```
 
 ### WebSocket Manager
+
 ```python
 import websockets
 import json
@@ -723,11 +747,13 @@ class WebSocketManager:
                 await websocket.send(message)
             except websockets.ConnectionClosed:
                 await self.disconnect(websocket, event_id)
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Odds Cache
+
 ```python
 class OddsCache:
     def __init__(self, redis_client):
@@ -759,9 +785,11 @@ class OddsCache:
     async def set_all_odds(self, event_id: int, odds: dict):
         key = f"event_odds:{event_id}"
         await self.redis.setex(key, self.ttl, json.dumps(odds))
+
 ```
 
 ### Session Cache
+
 ```python
 class BettingSessionCache:
     def __init__(self, redis_client):
@@ -783,11 +811,13 @@ class BettingSessionCache:
                 event_ids.append(int(parts[2]))
 
         return event_ids
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── odds.updated           (odds changes)
@@ -812,9 +842,11 @@ Event Schema:
     "odds": 1.50
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class BettingEventProcessor:
     def __init__(self, kafka_consumer, settlement_service,
@@ -842,11 +874,13 @@ class BettingEventProcessor:
             event['data']['user_id'],
             event['data']
         )
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -861,9 +895,11 @@ Architecture:
 │  Service     │   │  Service     │   │  Service     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Sharding
+
 ```python
 class BettingDatabaseScaler:
     def __init__(self):
@@ -874,9 +910,11 @@ class BettingDatabaseScaler:
 
     def get_event_shard(self, event_id: int) -> int:
         return event_id % self.shards
+
 ```
 
 ### WebSocket Scaling
+
 ```python
 class WebSocketScaler:
     def __init__(self):
@@ -888,11 +926,13 @@ class WebSocketScaler:
 
         # Register connection
         await server.register(websocket, event_id)
+
 ```
 
 ## Failure Handling
 
 ### Odds Lock Mechanism
+
 ```python
 class OddsLockManager:
     def __init__(self, redis_client):
@@ -920,9 +960,11 @@ class OddsLockManager:
             return await self.lock_odds(outcome_id, amount)
 
         return float(odds)
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Odds service down | Use last known odds with warning |
@@ -932,6 +974,7 @@ class OddsLockManager:
 | Settlement delay | Queue for retry |
 
 ### Bet Conflict Resolution
+
 ```python
 class BetConflictResolver:
     def __init__(self, redis_client, db):
@@ -951,13 +994,16 @@ class BetConflictResolver:
 
         # Process bet
         return await self.process_bet(bet_data)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - bets_per_second
   - total_volume
   - average_bet_size
@@ -965,6 +1011,7 @@ Business Metrics:
   - win_rate
 
 System Metrics:
+
   - odds_update_latency_p99
   - bet_placement_latency_p95
   - settlement_latency
@@ -972,15 +1019,19 @@ System Metrics:
   - api_response_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - redis_memory_usage
   - kafka_consumer_lag
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Odds Update Latency
     condition: p99_odds_latency > 100ms
     severity: critical
@@ -996,6 +1047,7 @@ alerts:
   - name: Fraud Detection Spike
     condition: fraud_alerts > 100
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -1011,62 +1063,76 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you implement real-time odds updates?**
+
    - WebSocket for push updates
    - Redis for fast access
    - Background jobs for calculation
    - Event-driven architecture
 
 2. **How do you handle high-concurrency betting?**
+
    - Atomic operations
    - Distributed locks
    - Queue overflow handling
    - Rate limiting
 
 3. **How would you implement cash out?**
+
    - Dynamic calculation based on current odds
    - Atomic wallet operations
    - Real-time settlement
    - Fraud detection
 
 ### Scaling Questions
+
 4. **How do you scale to 100K concurrent users?**
+
    - Horizontal scaling
    - WebSocket clustering
    - Database sharding
    - Redis clustering
 
 5. **How do you handle peak betting volumes?**
+
    - Pre-warm caches
    - Queue-based processing
    - Auto-scaling
    - Rate limiting
 
 ### Trade-off Questions
+
 6. **How do you balance speed vs accuracy?**
+
    - Fast odds updates with eventual accuracy
    - Bet validation with quick confirmation
    - Settlement with verification
 
 7. **How do you handle odds changes during bet placement?**
+
    - Lock odds for bet duration
    - Accept/reject based on policy
    - Notify user of changes
 
 ### Senior-level Questions
+
 8. **How would you implement responsible gambling?**
+
    - Deposit limits
    - Loss limits
    - Session time limits
    - Self-exclusion
 
 9. **How do you detect and prevent fraud?**
+
    - Pattern detection
    - Velocity checks
    - Device fingerprinting
    - Account behavior analysis
 
 10. **How would you implement live streaming integration?**
+
     - Low-latency video feed
     - Synchronized odds display
     - Watch and bet simultaneously
@@ -1075,6 +1141,7 @@ alerts:
 ## Summary
 
 The Live Betting system design covers:
+
 - **Real-time Odds**: WebSocket + Redis for < 100ms updates
 - **Bet Placement**: Atomic operations with distributed locks
 - **Cash Out**: Dynamic calculation with fraud detection
@@ -1082,10 +1149,15 @@ The Live Betting system design covers:
 - **Scalability**: Horizontal scaling with sharding
 
 Key takeaways:
+
 1. Use WebSocket for real-time odds updates
+
 2. Implement atomic bet placement with locks
+
 3. Calculate cash out dynamically based on current odds
+
 4. Settle bets in real-time for better UX
+
 5. Detect fraud with pattern analysis
 
 This design supports 100K+ concurrent users with < 100ms odds updates and 10K+ bets per second.
@@ -1093,6 +1165,7 @@ This design supports 100K+ concurrent users with < 100ms odds updates and 10K+ b
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

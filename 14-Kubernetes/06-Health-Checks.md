@@ -5,6 +5,7 @@
 **Health checks** in Kubernetes verify that containers are running correctly. There are three types: **startup probes** (initialization), **liveness probes** (ongoing health), and **readiness probes** (traffic readiness). They enable self-healing and traffic management.
 
 Key concepts:
+
 - **Startup Probe**: Runs once at container startup, disables other probes until success
 - **Liveness Probe**: Checks if container is alive; restarts on failure
 - **Readiness Probe**: Checks if container can receive traffic; removes from Service on failure
@@ -27,11 +28,16 @@ Key concepts:
 
 ```text
                     kubelet
+
                       |
+
          +------------+------------+
+
          |            |            |
+
          v            v            v
   +------------+ +------------+ +------------+
+
   |  Startup   | |  Liveness  | |  Readiness |
   |   Probe    | |   Probe    | |   Probe    |
   |            | |            | |            |
@@ -39,29 +45,40 @@ Key concepts:
   |  once at   | |  periodic  | |  periodic  |
   |  startup   | |  after     | |  after     |
   |            | |  startup   | |  startup   |
+
   +-----+------+ +-----+------+ +-----+------+
+
         |              |              |
+
         v              v              v
   +------------+ +------------+ +------------+
+
   |  Success:  | |  Failure:  | |  Failure:  |
   |  Enable    | |  Restart   | |  Remove    |
   |  liveness  | |  container | |  from svc  |
   |  & ready   | |            | |            |
+
   +------------+ +------------+ +------------+
+
 ```
 
 ### Probe Timeline
 
 ```text
 Container Start
+
       |
+
       v
 [Startup Probe] -----> Success -----> [Liveness Probe] -----> [Readiness Probe]
+
       |                    |                    |                      |
       |                    |                    |                      |
+
       v                    v                    v                      v
    Failure             Failure              Failure                Failure
    (restart)           (restart)           (restart)              (remove from svc)
+
 ```
 
 ## Code Examples
@@ -75,9 +92,11 @@ metadata:
   name: myapp
 spec:
   containers:
+
     - name: myapp
       image: myapp:1.0.0
       ports:
+
         - containerPort: 8080
 
       startupProbe:
@@ -104,6 +123,7 @@ spec:
         periodSeconds: 10
         timeoutSeconds: 3
         failureThreshold: 3
+
 ```
 
 ### Exec Probe
@@ -112,10 +132,12 @@ spec:
 livenessProbe:
   exec:
     command:
+
       - cat
       - /tmp/healthy
   initialDelaySeconds: 5
   periodSeconds: 10
+
 ```
 
 ### TCP Socket Probe
@@ -126,6 +148,7 @@ livenessProbe:
     port: 8080
   initialDelaySeconds: 15
   periodSeconds: 10
+
 ```
 
 ### gRPC Probe
@@ -136,6 +159,7 @@ livenessProbe:
     port: 50051
   initialDelaySeconds: 10
   periodSeconds: 10
+
 ```
 
 ### Startup Probe with Failure Threshold
@@ -148,6 +172,7 @@ startupProbe:
   failureThreshold: 30
   periodSeconds: 10
   # 30 * 10s = 300s max startup time
+
 ```
 
 ### Deployment with Probes
@@ -168,9 +193,11 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
 
           startupProbe:
@@ -195,6 +222,7 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
+
 ```
 
 ### Health Check Endpoint Example
@@ -226,6 +254,7 @@ app.get('/ready', (req, res) => {
 app.get('/alive', (req, res) => {
   res.status(200).json({ status: 'alive' });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -248,14 +277,17 @@ spec:
         app: postgres
     spec:
       containers:
+
         - name: postgres
           image: postgres:15-alpine
           ports:
+
             - containerPort: 5432
 
           startupProbe:
             exec:
               command:
+
                 - pg_isready
                 - -U
                 - postgres
@@ -265,6 +297,7 @@ spec:
           livenessProbe:
             exec:
               command:
+
                 - pg_isready
                 - -U
                 - postgres
@@ -274,11 +307,13 @@ spec:
           readinessProbe:
             exec:
               command:
+
                 - pg_isready
                 - -U
                 - postgres
             periodSeconds: 10
             timeoutSeconds: 5
+
 ```
 
 ### 2. Microservice with Dependencies
@@ -299,9 +334,11 @@ spec:
         app: api
     spec:
       containers:
+
         - name: api
           image: api:1.0
           ports:
+
             - containerPort: 8080
 
           startupProbe:
@@ -326,6 +363,7 @@ spec:
             timeoutSeconds: 3
             successThreshold: 1
             failureThreshold: 3
+
 ```
 
 ### 3. Worker Process
@@ -346,17 +384,20 @@ spec:
         app: worker
     spec:
       containers:
+
         - name: worker
           image: worker:1.0
 
           livenessProbe:
             exec:
               command:
+
                 - cat
                 - /tmp/healthy
             periodSeconds: 30
             timeoutSeconds: 5
             failureThreshold: 3
+
 ```
 
 ## Common Mistakes
@@ -397,16 +438,25 @@ readinessProbe:
   timeoutSeconds: 3
   failureThreshold: 3
   successThreshold: 1
+
 ```
 
 1. **Implement all three probe types** — startup, liveness, readiness
+
 2. **Use different endpoints** — /health, /ready, /alive
+
 3. **Set appropriate timeouts** — prevent hanging probes
+
 4. **Use startup probe for slow apps** — prevent premature liveness failures
+
 5. **Don't check external deps in liveness** — only check self-health
+
 6. **Check dependencies in readiness** — ensure traffic readiness
+
 7. **Tune failure thresholds** — balance between responsiveness and stability
+
 8. **Monitor probe results** — track probe failures in metrics
+
 9. **Use exec for simple checks** — cat file, pg_isready
 10. **Use httpGet for web apps** — standard health check pattern
 
@@ -430,6 +480,7 @@ kubectl get events --field-selector reason=Unhealthy
 
 # Check probe configuration
 kubectl get pod myapp -o jsonpath='{.spec.containers[*].livenessProbe}'
+
 ```
 
 ## Interview Questions
@@ -571,11 +622,13 @@ kubectl delete pod myapp
 
 # View health endpoint
 kubectl exec -it myapp -- curl http://localhost:8080/health
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

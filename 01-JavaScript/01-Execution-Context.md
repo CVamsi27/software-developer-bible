@@ -39,6 +39,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 │     - Avoid using eval() - security risks                   │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Creation Phase vs Execution Phase
@@ -69,6 +70,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Execution Context Stack (Call Stack)
@@ -120,6 +122,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Execution Context Components
@@ -156,6 +159,7 @@ Think of it as a container that holds everything the JavaScript engine needs to 
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -184,6 +188,7 @@ function outerFunction() {
 }
 
 outerFunction();
+
 ```
 
 ### Variable Hoisting in Execution Context
@@ -202,6 +207,7 @@ function greet() {
 }
 
 greet();
+
 ```
 
 ### Object Method Execution Context
@@ -219,6 +225,7 @@ user.greet();  // this = user object
 
 const greetFn = user.greet;
 greetFn();  // this = undefined (strict mode) or window
+
 ```
 
 ### Nested Execution Contexts
@@ -246,6 +253,7 @@ outer();
 // Context stack progression:
 // GEC created → outer() called → middle() called → inner() called
 // inner() returns → middle() returns → outer() returns
+
 ```
 
 ### Eval Execution Context (Avoid!)
@@ -265,6 +273,7 @@ checkThis();  // window (non-strict) or undefined (strict)
 
 const obj = { method: checkThis };
 obj.method();  // obj
+
 ```
 
 ## Real-World Use Cases
@@ -288,6 +297,7 @@ counter.increment();  // 1
 counter.increment();  // 2
 console.log(counter.getCount());  // 2
 // count is not accessible outside
+
 ```
 
 ### 2. Event Handler Context
@@ -312,6 +322,7 @@ const handler = new ButtonHandler();
 const handler2 = new ButtonHandler();
 handler2.handleClick = handler2.handleClick.bind(handler2);
 handler2.handleClick();  // Works
+
 ```
 
 ### 3. React Component Context
@@ -329,6 +340,7 @@ function Counter() {
     </button>
   );
 }
+
 ```
 
 ### 4. Closure Pattern in Loops
@@ -350,6 +362,7 @@ for (var i = 0; i < 3; i++) {
     setTimeout(() => console.log(index), 100);  // 0, 1, 2
   })(i);
 }
+
 ```
 
 ## Common Mistakes
@@ -366,6 +379,7 @@ if (true) {
   let y = 10;
 }
 console.log(y);  // ReferenceError - let is block scoped
+
 ```
 
 ### 2. Losing `this` Context
@@ -389,6 +403,7 @@ const obj2 = {
     }, 1000);
   }
 };
+
 ```
 
 ### 3. Mixing `var` and `let` in Loops
@@ -403,6 +418,7 @@ for (var i = 0; i < 3; i++) {
 for (let i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 100);  // 0, 1, 2
 }
+
 ```
 
 ### 4. Arrow Functions and `this`
@@ -416,17 +432,25 @@ const obj = {
 };
 
 obj.greet();  // Window { ... }
+
 ```
 
 ## Best Practices
 
 1. **Use `let` and `const`** instead of `var` for block scoping
+
 2. **Always bind methods** or use arrow functions for callbacks
+
 3. **Avoid `eval()`** - use safer alternatives
+
 4. **Be explicit about `this`** - use `.bind()`, arrow functions, or explicit parameters
+
 5. **Understand scope chain** - know where variables come from
+
 6. **Keep functions small** - easier to reason about execution contexts
+
 7. **Use strict mode** - `'use strict'` helps catch common mistakes
+
 8. **Avoid global variables** - they pollute the global execution context
 
 ## Performance Considerations
@@ -448,6 +472,7 @@ function createObjects() {
     obj.value = i;  // Reuse same object
   }
 }
+
 ```
 
 ### Stack Overflow Prevention
@@ -465,6 +490,7 @@ function betterApproach(n) {
     n--;
   }
 }
+
 ```
 
 ## Interview Questions
@@ -478,13 +504,17 @@ A: An execution context is the environment where JavaScript code is evaluated an
 **Q2: What are the types of execution contexts?**
 
 A: There are three types:
+
 1. **Global Execution Context (GEC)**: Created when the program starts, one per program
+
 2. **Function Execution Context (FEC)**: Created when a function is called, multiple can exist
+
 3. **Eval Execution Context (EEC)**: Created when code is executed inside `eval()`
 
 **Q3: What happens during the creation phase of an execution context?**
 
 A: During the creation phase:
+
 - Function declarations are scanned and stored
 - Variables are allocated memory
 - `var` variables are set to `undefined`
@@ -500,6 +530,7 @@ A: The execution context stack (also called the call stack) is a LIFO (Last In, 
 **Q5: What is the difference between lexical environment and variable environment?**
 
 A:
+
 - **Lexical Environment**: Stores block-scoped variables (`let`/`const`) and references to the outer environment
 - **Variable Environment**: Stores function-scoped variables (`var`), function declarations, and function arguments
 
@@ -508,12 +539,14 @@ A:
 **Q6: Why does `console.log(x)` return `undefined` but `console.log(y)` throws a ReferenceError?**
 
 A:
+
 ```typescript
 console.log(x);  // undefined
 var x = 5;
 
 console.log(y);  // ReferenceError
 let y = 10;
+
 ```
 During creation phase, `var x` is hoisted and initialized to `undefined`, while `let y` is hoisted but remains uninitialized (Temporal Dead Zone). Accessing an uninitialized variable throws a ReferenceError.
 
@@ -524,6 +557,7 @@ A: The TDZ is the period between when a variable is hoisted and when it's initia
 **Q8: How does the `this` keyword work in different execution contexts?**
 
 A:
+
 - **Global context**: `this` refers to `window` (browser) or `global` (Node.js)
 - **Function context**: Depends on how the function is called (default binding)
 - **Method context**: `this` refers to the object the method belongs to
@@ -543,11 +577,17 @@ A: JavaScript is single-threaded, so only one execution context is active at a t
 **Q11: Explain how JavaScript processes code step by step from start to finish.**
 
 A:
+
 1. **Creation Phase**: JavaScript engine scans the code, hoists declarations, and creates execution contexts
+
 2. **Global Execution Context Created**: GEC is created with global object, `this` binding
+
 3. **Function Calls**: When functions are called, new FECs are created and pushed onto the stack
+
 4. **Execution Phase**: Code is executed line by line, values are assigned
+
 5. **Function Returns**: When functions return, their FECs are popped from the stack
+
 6. **Program End**: When all code is executed, GEC is popped and program ends
 
 **Q12: How does the scope chain relate to execution contexts?**
@@ -557,6 +597,7 @@ A: Each execution context has a reference to its outer lexical environment (pare
 **Q13: What is the difference between the creation phase and execution phase?**
 
 A:
+
 - **Creation Phase**:
   - Function declarations are scanned and stored
   - Variable declarations are hoisted
@@ -570,6 +611,7 @@ A:
 **Q14: How does strict mode affect execution contexts?**
 
 A: Strict mode (`'use strict'`) changes several behaviors:
+
 - `this` in functions defaults to `undefined` instead of `window`
 - Prevents accidental global variable creation
 - Throws errors for silent failures (e.g., read-only properties)
@@ -585,10 +627,15 @@ A: Closures occur when a function retains access to its lexical environment even
 **Q16: Design a system to track execution contexts in a JavaScript runtime.**
 
 A: Key components:
+
 1. **Context Stack Manager**: Maintains the call stack
+
 2. **Context Factory**: Creates new execution contexts with proper bindings
+
 3. **Scope Chain Builder**: Links contexts to their parent scopes
+
 4. **Memory Manager**: Tracks variable allocation and cleanup
+
 5. **Debug Interface**: Allows inspection of current contexts
 
 ```typescript
@@ -607,21 +654,29 @@ class ExecutionContextManager {
     return this.stack[this.stack.length - 1];
   }
 }
+
 ```
 
 **Q17: How would you optimize execution context creation for performance?**
 
 A:
+
 1. **Minimize function creation**: Reuse function references
+
 2. **Avoid deep nesting**: Flatten scope chains
+
 3. **Use block scoping**: `let`/`const` over `var` for smaller scopes
+
 4. **Lazy evaluation**: Only create contexts when needed
+
 5. **Context pooling**: Reuse contexts for repeated function calls
+
 6. **Avoid `eval()`**: Parse code statically when possible
 
 **Q18: What are the implications of execution contexts for concurrent programming in JavaScript?**
 
 A: Since JavaScript is single-threaded with an event loop:
+
 - Only one execution context runs at a time
 - Long-running contexts block the event loop
 - Web Workers create separate execution contexts with message passing
@@ -631,10 +686,15 @@ A: Since JavaScript is single-threaded with an event loop:
 **Q19: How do you handle errors across multiple execution contexts?**
 
 A:
+
 1. **Try-catch blocks**: Catch errors within a context
+
 2. **Error boundaries**: React-like patterns for component trees
+
 3. **Promise rejection handling**: `.catch()` or `unhandledrejection` event
+
 4. **Global error handlers**: `window.onerror`, `window.onunhandledrejection`
+
 5. **Error propagation**: Errors bubble up through the scope chain
 
 **Q20: Explain how execution contexts work in a recursive function with tail call optimization.**
@@ -646,6 +706,7 @@ A: With TCO, if the last action is a function call, the current context can be r
 **Q21: Can you give an example of a real-world bug caused by execution context misunderstanding?**
 
 A: Common bug: Losing `this` in callbacks
+
 ```typescript
 class User {
   constructor(private name: string) {}
@@ -668,11 +729,13 @@ class User {
     }, 1000);
   }
 }
+
 ```
 
 **Q22: How do execution contexts differ between browser and Node.js environments?**
 
 A:
+
 - **Global Object**: `window` vs `global`
 - **Module System**: CommonJS vs ES Modules
 - **Event Loop**: Browser vs Node.js phases
@@ -686,20 +749,31 @@ A: Each execution context holds references to variables. When a context is poppe
 **Q24: How do you debug execution context issues in production?**
 
 A:
+
 1. **Source maps**: Map minified code to original
+
 2. **Error tracking**: Sentry, LogRocket for runtime errors
+
 3. **Performance monitoring**: Track long-running contexts
+
 4. **Heap snapshots**: Analyze memory usage
+
 5. **Stack traces**: Understand execution flow
+
 6. **Console logging**: Strategic `console.log` for debugging
 
 **Q25: What are the security implications of execution contexts?**
 
 A:
+
 1. **XSS**: Malicious code can access execution contexts
+
 2. **Prototype pollution**: Can affect all contexts
+
 3. **CORS**: Restricts cross-origin context access
+
 4. **Content Security Policy**: Limits script execution
+
 5. **Sandboxing**: Web Workers provide isolated contexts
 
 ## Summary
@@ -707,11 +781,17 @@ A:
 Execution contexts are fundamental to understanding how JavaScript works. Key takeaways:
 
 1. **Three types**: Global, Function, and Eval execution contexts
+
 2. **Two phases**: Creation phase (hoisting, memory allocation) and Execution phase (code runs)
+
 3. **Stack-based**: Call stack manages context execution (LIFO)
+
 4. **Scope chain**: Lexical environments create variable access chains
+
 5. **`this` binding**: Depends on how functions are called
+
 6. **Closures**: Functions can retain access to outer execution contexts
+
 7. **Performance**: Understanding contexts helps optimize memory and prevent stack overflow
 
 Understanding execution contexts is crucial for writing efficient, bug-free JavaScript and answering interview questions confidently.
@@ -766,6 +846,7 @@ BEST PRACTICES:
 • Avoid eval()
 • Keep functions small
 • Be explicit about 'this'
+
 ```
 
 ## References & Learn More

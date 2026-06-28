@@ -5,8 +5,11 @@
 React Context API is a mechanism for passing data through the component tree without having to pass props down manually at every level. It provides a way to share values (like themes, authentication status, or language preferences) between components that are "connected" — that is, don't need to be direct parent-child relationships.
 
 Context consists of three parts:
+
 1. **Context Object**: Created with `React.createContext()`
+
 2. **Provider**: Wraps the component tree to provide the value
+
 3. **Consumer**: Reads the value from the nearest Provider
 
 ## Why Do We Need It?
@@ -29,6 +32,7 @@ App (has theme state)
 
 Problem: Layout, Sidebar, Main, Content all receive theme
 props even though they don't use them!
+
 ```
 
 ### The Solution: Context
@@ -46,6 +50,7 @@ ThemeContext.Provider (has theme state)
 │           └── Article (uses useContext(ThemeContext)) ← Direct access!
 
 Benefit: Only ThemeToggle and Article need to know about theme
+
 ```
 
 ## How It Works
@@ -89,6 +94,7 @@ Context API Flow:
 │   );                                                        │
 │ };                                                          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Context Propagation
@@ -122,6 +128,7 @@ Context Propagation:
 │                                                             │
 │ Inner Provider shadows outer Provider                      │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Consumer Component
@@ -148,6 +155,7 @@ Consumer Component (Alternative):
 │   );                                                        │
 │ };                                                          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -210,6 +218,7 @@ const App = () => (
     <ThemeToggle />
   </ThemeProvider>
 );
+
 ```
 
 ### Context with Multiple Values
@@ -249,6 +258,7 @@ const useApp = () => {
   }
   return context;
 };
+
 ```
 
 ### Context with Performance Optimization
@@ -281,6 +291,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
+
 ```
 
 ### Context with TypeScript
@@ -332,6 +343,7 @@ const useAuth = (): AuthContextType => {
   }
   return context;
 };
+
 ```
 
 ### Nested Context
@@ -364,6 +376,7 @@ const Header = () => {
     </header>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -441,6 +454,7 @@ export const useAuth = () => {
   }
   return context;
 };
+
 ```
 
 ### 2. Theme Context
@@ -506,6 +520,7 @@ export const useTheme = () => {
   }
   return context;
 };
+
 ```
 
 ### 3. Internationalization Context
@@ -562,6 +577,7 @@ export const useI18n = () => {
   }
   return context;
 };
+
 ```
 
 ### 4. Shopping Cart Context
@@ -645,6 +661,7 @@ export const useCart = () => {
   }
   return context;
 };
+
 ```
 
 ## Common Mistakes
@@ -681,6 +698,7 @@ const App = () => {
     </ThemeContext.Provider>
   );
 };
+
 ```
 
 ### 2. Creating Context Inside Component
@@ -707,6 +725,7 @@ const Parent = () => {
     </ThemeContext.Provider>
   );
 };
+
 ```
 
 ### 3. Not Providing Error Handling
@@ -725,6 +744,7 @@ const useTheme = () => {
   }
   return context;
 };
+
 ```
 
 ### 4. Overusing Context
@@ -750,16 +770,23 @@ const Component = () => {
     <button onClick={() => setCount(c => c + 1)}>+1</button>
   );
 };
+
 ```
 
 ## Best Practices
 
 1. **Memoize context value**: Use `useMemo` to prevent unnecessary consumer re-renders.
+
 2. **Create context outside components**: Don't create context inside render functions.
+
 3. **Provide error handling**: Throw errors in custom hooks when context is undefined.
+
 4. **Split contexts**: Don't put everything in one context. Split by concern.
+
 5. **Use custom hooks**: Encapsulate context consumption in custom hooks.
+
 6. **Default values wisely**: Provide meaningful default values or null.
+
 7. **Don't overuse context**: Use local state for component-specific data.
 
 ## Performance Considerations
@@ -792,8 +819,11 @@ A: Context API is a React mechanism for passing data through the component tree 
 
 **Q2: What are the three parts of Context?**
 A:
+
 1. **Context Object**: Created with `React.createContext()`
+
 2. **Provider**: Wraps component tree to provide value
+
 3. **Consumer**: Reads value from nearest Provider
 
 **Q3: What is prop drilling?**
@@ -819,6 +849,7 @@ A: Consumer is an alternative to `useContext` for reading context. It uses rende
 
 **Q10: When should you use Context?**
 A: Use Context for:
+
 - Global data (themes, language)
 - Authentication state
 - Any data needed by many components at different nesting levels
@@ -830,9 +861,13 @@ A: When a Provider's value changes, all consumers re-render. This can be optimiz
 
 **Q12: How do you optimize Context performance?**
 A:
+
 1. Memoize Provider value with `useMemo`
+
 2. Split large contexts into smaller ones
+
 3. Use `useTransition` for non-urgent updates
+
 4. Memoize consumer components with `React.memo`
 
 **Q13: What is the relationship between Context and Redux?**
@@ -843,8 +878,10 @@ A: Context updates when the Provider's value prop changes. Consumers re-render. 
 
 **Q15: Can you use Context with TypeScript?**
 A: Yes. Create typed context:
+
 ```typescript
 const ThemeContext = createContext<string | null>(null);
+
 ```
 
 **Q16: What is the difference between Context and prop drilling?**
@@ -852,10 +889,12 @@ A: Context passes data directly to consumers. Prop drilling passes data through 
 
 **Q17: How do you split Contexts?**
 A: Split by concern:
+
 ```typescript
 const ThemeContext = createContext('light');
 const UserContext = createContext<User | null>(null);
 const AuthContext = createContext<AuthContextType | null>(null);
+
 ```
 
 **Q18: What is the default value in createContext?**
@@ -863,16 +902,19 @@ A: The default value is used when no Provider is found. It's useful for testing 
 
 **Q19: How do you test Context?**
 A: Wrap test components with Provider:
+
 ```typescript
 render(
   <ThemeContext.Provider value="dark">
     <Component />
   </ThemeContext.Provider>
 );
+
 ```
 
 **Q20: What are the common Context patterns?**
 A:
+
 - Provider component with state
 - Custom hook for consumption
 - Memoized context value
@@ -882,9 +924,13 @@ A:
 
 **Q21: Explain the complete Context update lifecycle.**
 A:
+
 1. Provider value prop changes
+
 2. React notifies all consumers
+
 3. Consumers re-render with new value
+
 4. React updates DOM if needed
 
 **Q22: How does Context interact with React.memo?**
@@ -904,6 +950,7 @@ A: React DevTools shows Context values in the component tree. You can inspect Pr
 
 **Q27: What is the relationship between Context and state management?**
 A: Context provides simple global state. Complex apps need Redux/Zustand for:
+
 - Complex update logic
 - Middleware
 - Devtools
@@ -922,22 +969,33 @@ A: Error boundaries catch errors in Context consumers. They don't catch errors i
 
 **Q31: Design a Context-based state management system.**
 A:
+
 1. **Split contexts**: By concern (theme, auth, data)
+
 2. **Memoize values**: Prevent unnecessary re-renders
+
 3. **Custom hooks**: Encapsulate consumption
+
 4. **Error handling**: Throw errors for missing providers
+
 5. **Performance**: Use `useTransition` for non-urgent updates
 
 **Q32: How would you debug a Context performance issue?**
 A:
+
 1. React DevTools: Check Provider value changes
+
 2. Profiler: Measure consumer re-renders
+
 3. Console logging: Log value changes
+
 4. Chrome DevTools: Record interactions
+
 5. Memoization analysis: Check if values are memoized
 
 **Q33: Analyze the memory implications of Context.**
 A:
+
 - Each Context: ~100 bytes per consumer
 - Provider value: Depends on value type
 - For 1000 consumers: ~100KB
@@ -945,6 +1003,7 @@ A:
 
 **Q34: How would you implement a Context-based form system?**
 A:
+
 ```typescript
 const FormContext = createContext<FormContextType | null>(null);
 
@@ -968,10 +1027,12 @@ const FormProvider = ({ children }: { children: React.ReactNode }) => {
     </FormContext.Provider>
   );
 };
+
 ```
 
 **Q35: Design a Context-based real-time data system.**
 A:
+
 ```typescript
 const DataContext = createContext<DataContextType | null>(null);
 
@@ -995,6 +1056,7 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     </DataContext.Provider>
   );
 };
+
 ```
 
 **Q36: How does Context handle the "tearing" problem?**
@@ -1002,6 +1064,7 @@ A: Tearing occurs when different parts of the UI show inconsistent states. Conte
 
 **Q37: Analyze the performance characteristics of Context.**
 A:
+
 | Metric | Without Memo | With Memo |
 |--------|--------------|-----------|
 | Value creation | Every render | When deps change |
@@ -1010,6 +1073,7 @@ A:
 
 **Q38: How would you implement a Context-based caching system?**
 A:
+
 ```typescript
 const CacheContext = createContext<CacheContextType | null>(null);
 
@@ -1032,6 +1096,7 @@ const CacheProvider = ({ children }: { children: React.ReactNode }) => {
     </CacheContext.Provider>
   );
 };
+
 ```
 
 **Q39: How does Context interact with React Suspense?**
@@ -1039,6 +1104,7 @@ A: Suspense can suspend rendering during Context updates. This keeps the old UI 
 
 **Q40: Design a Context-based testing utility.**
 A:
+
 ```typescript
 const TestWrapper = ({ children, contextValue }: { children: React.ReactNode; contextValue: any }) => {
   return (
@@ -1049,6 +1115,7 @@ const TestWrapper = ({ children, contextValue }: { children: React.ReactNode; co
 };
 
 render(<Component />, { wrapper: TestWrapper });
+
 ```
 
 ### Follow-ups (5-10)
@@ -1058,6 +1125,7 @@ A: "Context is like a walkie-talkie system. Instead of passing notes through peo
 
 **Q42: What are the edge cases in Context?**
 A:
+
 - Missing Provider (uses default value)
 - Value changes causing all consumers to re-render
 - Circular dependencies between contexts
@@ -1074,6 +1142,7 @@ A: StrictMode double-renders in development. Context persists across double-rend
 
 **Q46: What is the future of Context in React?**
 A: React is exploring:
+
 - Better concurrent rendering support
 - Improved performance
 - Better DevTools integration
@@ -1081,6 +1150,7 @@ A: React is exploring:
 
 **Q47: How would you implement Context-based i18n?**
 A:
+
 ```typescript
 const I18nContext = createContext<I18nContextType | null>(null);
 
@@ -1104,10 +1174,12 @@ const I18nProvider = ({ children }: { children: React.ReactNode }) => {
     </I18nContext.Provider>
   );
 };
+
 ```
 
 **Q48: How does Context handle the "derived context" pattern?**
 A: Compute derived values during render:
+
 ```typescript
 const ThemeContext = createContext('light');
 const DarkThemeContext = createContext(false);
@@ -1122,6 +1194,7 @@ const App = () => {
     </DarkThemeContext.Provider>
   );
 };
+
 ```
 
 **Q49: What is the relationship between Context and React.memo?**
@@ -1129,6 +1202,7 @@ A: `React.memo` prevents re-renders when props haven't changed. Context updates 
 
 **Q50: How would you implement Context-based form validation?**
 A:
+
 ```typescript
 const FormContext = createContext<FormContextType | null>(null);
 
@@ -1155,6 +1229,7 @@ const FormProvider = ({ children }: { children: React.ReactNode }) => {
     </FormContext.Provider>
   );
 };
+
 ```
 
 ## Summary
@@ -1212,6 +1287,7 @@ Relationships:
 ├── Context vs props: Global vs local data
 ├── Context vs state: Shared vs component-specific
 └── Context + React.memo: Context bypasses memo
+
 ```
 
 ## References & Learn More

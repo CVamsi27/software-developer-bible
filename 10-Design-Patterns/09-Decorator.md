@@ -11,8 +11,11 @@ The pattern is particularly useful when you need to add responsibilities to obje
 Without the Decorator pattern, extending object behavior leads to:
 
 1. **Class explosion**: Many subclasses for each combination of behaviors
+
 2. **Rigid hierarchy**: Static inheritance makes changes difficult
+
 3. **Code duplication**: Common behaviors repeated across subclasses
+
 4. **Violation of Open/Closed Principle**: Modifying existing classes for new behavior
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Decorator pattern, extending object behavior leads to:
 The Decorator pattern works by:
 
 1. Defining a common interface for components and decorators
+
 2. Creating concrete components that implement the base behavior
+
 3. Creating decorators that wrap components and add behavior
+
 4. Decorators delegate to the wrapped component and add their behavior
 
 ```text
@@ -49,6 +55,7 @@ The Decorator pattern works by:
 │  │    - wrapped: Component                  │  │
 │  └──────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -173,6 +180,7 @@ const decoratedFile = new CompressionDecorator(
   new EncryptionDecorator(new FileDataSource('data.txt'))
 );
 processFile(decoratedFile);
+
 ```
 
 ### HTTP Middleware Decorator
@@ -321,6 +329,7 @@ const response = await server.handleRequest({
 });
 
 console.log(response);
+
 ```
 
 ### Notification Decorator
@@ -475,6 +484,7 @@ class NotificationService {
 // Usage
 const service = new NotificationService();
 await service.notify('Hello World!');
+
 ```
 
 ### TypeScript Decorators (Language Feature)
@@ -531,6 +541,7 @@ class UserService {
     return { id: '1', ...data };
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -629,6 +640,7 @@ const stream = new EncodedStream(
 
 console.log(stream.read()); // SGVsbG8sIFdv
 console.log(stream.getLength()); // 10
+
 ```
 
 ### 2. Data Processing Decorator
@@ -730,6 +742,7 @@ const processor = new CachingProcessor(
 
 const result = processor.process('{"name": "John"}');
 console.log(result); // { name: 'John', processed: true }
+
 ```
 
 ### 3. Logging Decorator
@@ -856,6 +869,7 @@ const logger = new TimestampLogger(
 logger.log('Application started');
 logger.error('Something went wrong');
 logger.warn('This is a warning');
+
 ```
 
 ## Common Mistakes
@@ -875,6 +889,7 @@ const decorated = new DecoratorA(
     )
   )
 );
+
 ```
 
 ### 2. Decorator with State
@@ -887,6 +902,7 @@ class BadDecorator extends BaseDecorator {
 
   // Hard to reason about
 }
+
 ```
 
 ### 3. Not Implementing Interface
@@ -898,6 +914,7 @@ class BadDecorator {
 
   // Missing interface methods
 }
+
 ```
 
 ### 4. Breaking Decorator Chain
@@ -910,6 +927,7 @@ class BadDecorator extends BaseDecorator {
     return 'modified';
   }
 }
+
 ```
 
 ## Best Practices
@@ -925,6 +943,7 @@ class GoodDecorator implements Component {
     return this.wrapped.process(data);
   }
 }
+
 ```
 
 ### 2. Keep Decorators Focused
@@ -934,6 +953,7 @@ class GoodDecorator implements Component {
 class LoggingDecorator implements Component {
   // Only adds logging
 }
+
 ```
 
 ### 3. Use Dependency Injection
@@ -943,6 +963,7 @@ class LoggingDecorator implements Component {
 class Decorator {
   constructor(private wrapped: Component) {}
 }
+
 ```
 
 ### 4. Limit Decorator Chain
@@ -954,6 +975,7 @@ const decorated = new CachingDecorator(
     new Component()
   )
 );
+
 ```
 
 ## Performance Considerations
@@ -973,86 +995,111 @@ const decorated = new CachingDecorator(
 ### Beginner
 
 1. **What is the Decorator pattern?**
+
    - A structural pattern that adds behavior to objects dynamically by wrapping them.
 
 2. **When would you use Decorator pattern?**
+
    - When you need to add responsibilities to objects dynamically without subclassing.
 
 3. **What's the difference between Decorator and Adapter?**
+
    - Decorator adds behavior; Adapter changes interface.
 
 4. **How do you implement Decorator in TypeScript?**
+
    - Create a base decorator that implements the component interface and wraps the component.
 
 5. **What are the benefits of Decorator pattern?**
+
    - Flexible behavior extension, Single Responsibility, and组合able behaviors.
 
 ### Intermediate
 
 6. **Can Decorator change the return type?**
+
    - No, decorators should maintain the component interface.
 
 7. **How do you test Decorator pattern?**
+
    - Test each decorator independently, test decorator chains.
 
 8. **What's the relationship between Decorator and Proxy?**
+
    - Both wrap objects; Decorator adds behavior, Proxy controls access.
 
 9. **How do you handle decorator ordering?**
+
    - Order matters; the outermost decorator's behavior is applied first.
 
 10. **Can Decorator be used with inheritance?**
+
     - Yes, but prefer composition over inheritance.
 
 ### Senior
 
 11. **How does Decorator pattern affect scalability?**
+
     - Decorators are lightweight; chains can be optimized.
 
 12. **What are the SOLID violations with Decorator?**
+
     - Usually follows SOLID; watch for decorators violating Single Responsibility.
 
 13. **How do you handle Decorator in microservices?**
+
     - Use decorators for cross-cutting concerns like logging and caching.
 
 14. **What are the memory implications of Decorator?**
+
     - Decorators are usually stateless; chains consume minimal memory.
 
 15. **How do you refactor Decorator code?**
+
     - Extract common logic, use generics, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Decorator for a microservices architecture.**
+
     - Consider cross-cutting concerns, middleware, and observability.
 
 17. **How would you implement Decorator for distributed systems?**
+
     - Consider network transparency, serialization, and fault tolerance.
 
 18. **What are the implications of Decorator in cloud-native applications?**
+
     - Consider serverless functions, middleware, and function composition.
 
 19. **How do you handle Decorator in event-driven architectures?**
+
     - Use decorators for event processing, transformation, and routing.
 
 20. **Design a Decorator that supports A/B testing.**
+
     - Consider traffic splitting, metrics collection, and gradual rollout.
 
 ### Follow-ups
 
 21. **Can Decorator pattern be combined with other patterns?**
+
     - Yes, commonly with Proxy, Adapter, and Composite patterns.
 
 22. **How do you handle Decorator in testing frameworks?**
+
     - Use dependency injection, create test decorators, and mock implementations.
 
 23. **What are the memory implications of Decorator pattern?**
+
     - Decorators are usually lightweight; chains consume minimal memory.
 
 24. **How do you handle Decorator in serverless environments?**
+
     - Consider stateless decorators, middleware, and function composition.
 
 25. **What's the impact of Decorator on code maintainability?**
+
     - Improves maintainability by enabling flexible behavior extension.
 
 ## Summary
@@ -1094,6 +1141,7 @@ The Decorator pattern is essential for adding behavior to objects dynamically. I
 │ • Adapter (changes interface)               │
 │ • Composite (tree structure)                │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

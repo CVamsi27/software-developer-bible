@@ -5,6 +5,7 @@
 Test patterns are established, reusable solutions to common problems encountered when writing tests. They provide structure, consistency, and maintainability to test suites. These patterns have evolved through years of practice and help teams write better, more readable, and more maintainable tests.
 
 **Key Patterns:**
+
 - **AAA (Arrange-Act-Assert)**: Standard test structure
 - **Given-When-Then (BDD)**: Behavior-focused test structure
 - **Factory Pattern**: Creating test data objects
@@ -42,6 +43,7 @@ Test patterns are established, reusable solutions to common problems encountered
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
@@ -90,6 +92,7 @@ Test patterns are established, reusable solutions to common problems encountered
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Given-When-Then (BDD) Pattern
@@ -123,6 +126,7 @@ Test patterns are established, reusable solutions to common problems encountered
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -201,6 +205,7 @@ describe("Calculator", () => {
     });
   });
 });
+
 ```
 
 ### BDD Pattern Implementation
@@ -320,6 +325,7 @@ describe("UserService", () => {
     });
   });
 });
+
 ```
 
 ### Factory Pattern
@@ -399,6 +405,7 @@ describe("User Service", () => {
     expect(new Set(users.map((u) => u.id)).size).toBe(5); // All unique
   });
 });
+
 ```
 
 ### Test Data Builder Pattern
@@ -503,6 +510,7 @@ describe("User Profile", () => {
     expect(user.profile.bio).toBeUndefined();
   });
 });
+
 ```
 
 ### Object Mother Pattern
@@ -580,6 +588,7 @@ describe("Authorization Service", () => {
     expect(authorizationService.canAccess(inactive, "resource")).toBe(false);
   });
 });
+
 ```
 
 ### Fixture Pattern
@@ -659,6 +668,7 @@ describe("User API", () => {
     expect(response.body).toHaveLength(3);
   });
 });
+
 ```
 
 ### Four Phase Test Pattern
@@ -688,6 +698,7 @@ describe("Shopping Cart", () => {
   // Phase 4: Teardown (automatic with Jest)
   // Jest automatically cleans up after each test
 });
+
 ```
 
 ### Helper Pattern
@@ -746,6 +757,7 @@ describe("UserProfile", () => {
     expect(screen.getByText("Please log in")).toBeInTheDocument();
   });
 });
+
 ```
 
 ### Snapshot Testing Pattern
@@ -783,6 +795,7 @@ it("should generate correct ID", () => {
   const id = generateId("user", "john@example.com");
   expect(id).toMatchInlineSnapshot();
 });
+
 ```
 
 ### Parameterized Testing Pattern
@@ -817,6 +830,7 @@ describe("Math operations", () => {
     expect(add(a, b)).toBe(expected);
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -900,6 +914,7 @@ describe("OrderService", () => {
     );
   });
 });
+
 ```
 
 ### 2. Testing State Machines
@@ -992,6 +1007,7 @@ describe("OrderStateMachine", () => {
     });
   });
 });
+
 ```
 
 ### 3. Testing Async Operations
@@ -1088,6 +1104,7 @@ describe("AsyncService", () => {
     });
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -1126,6 +1143,7 @@ describe("Calculator", () => {
     });
   });
 });
+
 ```
 
 ### 2. Too Many Assertions
@@ -1154,6 +1172,7 @@ it("should calculate order total", () => {
   const result = service.processOrder(order);
   expect(result.total).toBe(100);
 });
+
 ```
 
 ### 3. Not Using Setup/Teardown
@@ -1193,18 +1212,27 @@ it("test 1", () => {
 it("test 2", () => {
   // test logic with shared db
 });
+
 ```
 
 ## Best Practices
 
 1. **Be consistent**: Choose a pattern and stick with it
+
 2. **Keep tests focused**: One behavior per test
+
 3. **Use descriptive names**: Test names should explain behavior
+
 4. **Follow AAA**: Arrange, Act, Assert for clarity
+
 5. **Use factories**: Create reusable test data builders
+
 6. **Clean up resources**: Use lifecycle hooks properly
+
 7. **Avoid test interdependence**: Tests should run independently
+
 8. **Use helpers**: Extract common test utilities
+
 9. **Document patterns**: Help team members understand conventions
 10. **Refactor regularly**: Keep test code maintainable
 
@@ -1237,6 +1265,7 @@ beforeEach(async () => {
 afterEach(async () => {
   await db.cleanup();
 });
+
 ```
 
 ## Interview Questions

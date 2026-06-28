@@ -33,6 +33,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 │  Planning Time: 0.123 ms                                   │
 │  Execution Time: 12.456 ms                                 │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Scan Types
@@ -69,6 +70,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 │  │  • Good for multiple OR conditions                  │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Join Algorithms
@@ -108,6 +110,7 @@ An execution plan is PostgreSQL's strategy for executing a SQL query. It shows h
 │  │  Bad for: Unsorted data (sort overhead)             │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -129,6 +132,7 @@ SELECT * FROM users WHERE email = 'test@example.com';
 -- EXPLAIN with all options
 EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)
 SELECT * FROM users WHERE email = 'test@example.com';
+
 ```
 
 ### Understanding Output
@@ -164,6 +168,7 @@ GROUP BY u.name;
 --                 (actual time=0.089..0.090 rows=1000 loops=1)
 -- Planning Time: 0.156 ms
 -- Execution Time: 12.567 ms
+
 ```
 
 ### Index Usage Analysis
@@ -198,6 +203,7 @@ SELECT
 FROM pg_stat_user_tables
 WHERE seq_scan > 100
 ORDER BY seq_tup_read DESC;
+
 ```
 
 ### Query Optimization Examples
@@ -226,6 +232,7 @@ CREATE INDEX idx_users_lower_email ON users(LOWER(email));
 EXPLAIN ANALYZE
 SELECT * FROM users WHERE LOWER(email) = 'test@example.com';
 -- Index Scan using idx_users_lower_email on users  (cost=0.43..8.31 rows=1 width=56)
+
 ```
 
 ## Real-World Use Cases
@@ -255,6 +262,7 @@ GROUP BY u.name
 HAVING COUNT(o.id) > 10
 ORDER BY total_spent DESC
 LIMIT 20;
+
 ```
 
 ### Index Optimization
@@ -281,6 +289,7 @@ AND price < 100
 AND is_active = true;
 -- Index Scan using idx_products_category_price_active on products
 --   (cost=0.43..12.34 rows=50 width=100)
+
 ```
 
 ### Join Optimization
@@ -303,6 +312,7 @@ JOIN orders o ON u.id = o.user_id;
 -- Nested Loop  (cost=0.43..12.34 rows=10000 width=52)
 --   ->  Index Scan using idx_orders_user_id on orders o
 --   ->  Index Scan using users_pkey on users u
+
 ```
 
 ## Common Mistakes
@@ -315,6 +325,7 @@ SELECT * FROM orders WHERE user_id = 123;
 
 -- GOOD: Understanding the execution plan
 EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 123;
+
 ```
 
 ### 2. Ignoring Cost Estimates
@@ -328,6 +339,7 @@ EXPLAIN ANALYZE SELECT * FROM users;
 EXPLAIN SELECT * FROM users;
 -- Look at cost=0.00..1234.00
 -- Lower cost = better plan
+
 ```
 
 ### 3. Not Checking Buffers
@@ -340,6 +352,7 @@ EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 123;
 EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM orders WHERE user_id = 123;
 -- Look for "Buffers: shared hit=123 read=45"
 -- High read = disk I/O = slow
+
 ```
 
 ## Best Practices
@@ -367,6 +380,7 @@ ANALYZE table_name;
 -- 7. Check for sequential scans on large tables
 EXPLAIN SELECT * FROM large_table WHERE ...;
 -- Look for "Seq Scan" - consider adding index
+
 ```
 
 ## Performance Considerations
@@ -393,6 +407,7 @@ ANALYZE table_name;
 -- Memory impact
 -- work_mem affects hash join and sort operations
 SET work_mem = '256MB';  -- Increase for complex queries
+
 ```
 
 ## Interview Questions
@@ -521,6 +536,7 @@ SELECT * FROM pg_stat_user_indexes WHERE relname = 'users';
 
 -- Update statistics
 ANALYZE users;
+
 ```
 
 ## References & Learn More

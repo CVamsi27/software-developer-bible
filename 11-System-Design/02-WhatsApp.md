@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - 1:1 text messaging between users
 - Group messaging (up to 1024 members)
 - Media sharing (images, videos, documents)
@@ -14,6 +15,7 @@
 - User profile management
 
 ### Non-Functional Requirements
+
 - Low latency message delivery (< 100ms)
 - High availability (99.99%)
 - Message ordering guaranteed
@@ -24,8 +26,10 @@
 - End-to-end encryption for privacy
 
 ## Capacity Estimation
+
 ```text
 Storage Estimates:
+
 - 500M DAU × 40 messages/day = 20B messages/day
 - Average message: 100 bytes
 - Daily storage: 20B × 100 bytes = 2 TB/day
@@ -33,17 +37,21 @@ Storage Estimates:
 - Media storage: 10x messages = 7.3 PB/year
 
 Bandwidth Estimates:
+
 - Messages: 20B × 100 bytes = 2 TB/day = ~23 MB/s
 - Media: 7.3 PB/day = ~84.5 GB/s (peak: 5x)
 - Total: ~425 GB/s peak bandwidth
 
 Connection Estimates:
+
 - 500M DAU, 30% online = 150M concurrent connections
 - WebSocket memory: 150M × 10 KB = 1.5 TB RAM
 - Need 1500+ WebSocket servers (100K connections each)
+
 ```
 
 ## API Design
+
 ```yaml
 # Authentication
 POST /api/v1/auth/login
@@ -89,10 +97,12 @@ POST /api/v1/groups
       " admins": ["usr_123"]
     }
   Response: { "group_id": "grp_001", "created_at": "..." }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -158,9 +168,11 @@ CREATE TABLE message_status (
 CREATE INDEX idx_messages_conversation ON messages(conversation_id, created_at DESC);
 CREATE INDEX idx_messages_sender ON messages(sender_id);
 CREATE INDEX idx_conversation_participants_user ON conversation_participants(user_id);
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌────────────────────────┐     ┌─────────────────┐
 │    users    │     │    conversations       │     │    messages     │
@@ -194,10 +206,12 @@ CREATE INDEX idx_conversation_participants_user ON conversation_participants(use
               │ status                 │
               │ updated_at             │
               └────────────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                        Mobile Clients                            │
@@ -241,11 +255,13 @@ CREATE INDEX idx_conversation_participants_user ON conversation_participants(use
      │  Cassandra  │ │  S3/CDN     │ │  ClickHouse │
      │  Cluster    │ │             │ │             │
      └─────────────┘ └─────────────┘ └─────────────┘
+
 ```
 
 ## Key Components
 
 ### WebSocket Connection Manager
+
 ```python
 import asyncio
 import websockets
@@ -300,9 +316,11 @@ class ConnectionManager:
                 "user_id": user_id,
                 "status": status
             })
+
 ```
 
 ### Message Queue Producer
+
 ```python
 from kafka import KafkaProducer
 import json
@@ -338,9 +356,11 @@ class MessageProducer:
         print(f"Message sent to {record_metadata.topic} "
               f"partition {record_metadata.partition} "
               f"offset {record_metadata.offset}")
+
 ```
 
 ### Encryption Service
+
 ```python
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
@@ -383,9 +403,11 @@ class EncryptionService:
         f = Fernet(key)
         decrypted = f.decrypt(encrypted_message.encode())
         return decrypted.decode()
+
 ```
 
 ### Message Delivery Service
+
 ```python
 class MessageDeliveryService:
     def __init__(self, connection_manager, db, notification_service):
@@ -428,11 +450,13 @@ class MessageDeliveryService:
                 await self.db.queue_offline_message(
                     participant_id, message
                 )
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Presence Cache
+
 ```python
 class PresenceCache:
     def __init__(self, redis_client):
@@ -452,9 +476,11 @@ class PresenceCache:
 
     async def get_last_seen(self, user_id: str) -> str:
         return await self.redis.get(f"last_seen:{user_id}")
+
 ```
 
 ### Message Cache
+
 ```python
 class MessageCache:
     def __init__(self, redis_client):
@@ -476,11 +502,13 @@ class MessageCache:
         key = f"conversation:{conversation_id}"
         messages = await self.redis.lrange(key, -limit, -1)
         return [json.loads(msg) for msg in messages]
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topic Architecture
+
 ```text
 Topics:
 ├── messages.new           (incoming messages)
@@ -491,12 +519,15 @@ Topics:
 └── notifications.push     (push notification requests)
 
 Partitioning Strategy:
+
 - messages.new: partition by conversation_id (ordering)
 - presence.updates: partition by user_id
 - media.upload: partition by media_type
+
 ```
 
 ### Consumer Groups
+
 ```python
 class MessageConsumer:
     def __init__(self):
@@ -529,11 +560,13 @@ class MessageConsumer:
             message['conversation_id'],
             message['created_at']
         )
+
 ```
 
 ## Scaling Strategy
 
 ### Connection Scaling
+
 ```text
 WebSocket Server Cluster:
 ┌─────────────────────────────────────────────────────────┐
@@ -556,9 +589,11 @@ WebSocket Server Cluster:
                     │ (Connection    │
                     │  Mapping)      │
                     └───────────────┘
+
 ```
 
 ### Database Scaling
+
 ```python
 class ShardRouter:
     def __init__(self, num_shards: int = 16):
@@ -570,9 +605,11 @@ class ShardRouter:
     def get_user_shard(self, user_id: int) -> int:
         # Different sharding for user data
         return (user_id * 7) % self.num_shards
+
 ```
 
 ### Geographic Distribution
+
 ```text
 Global Deployment:
 ┌─────────────────────────────────────────────────────────┐
@@ -594,11 +631,13 @@ Global Deployment:
                     │  Kafka Mirror  │
                     │  (Cross-DC)    │
                     └───────────────┘
+
 ```
 
 ## Failure Handling
 
 ### Message Delivery Guarantees
+
 ```python
 class ReliableDelivery:
     def __init__(self):
@@ -627,9 +666,11 @@ class ReliableDelivery:
         # All attempts failed, queue for later delivery
         await self.queue_for_later(message, recipient_id)
         return False
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | WebSocket server crash | Client auto-reconnects, message queue preserves order |
@@ -639,6 +680,7 @@ class ReliableDelivery:
 | Network partition | Store messages locally, sync when reconnected |
 
 ### Offline Message Handling
+
 ```python
 class OfflineMessageHandler:
     def __init__(self, db, notification_service):
@@ -668,19 +710,23 @@ class OfflineMessageHandler:
         for message in messages:
             await self.send_message(user_id, message)
             await self.db.mark_message_synced(message['id'])
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - messages_per_second
   - active_users_by_region
   - delivery_success_rate
   - average_delivery_latency
 
 System Metrics:
+
   - websocket_connections
   - kafka_consumer_lag
   - database_query_latency
@@ -688,15 +734,19 @@ System Metrics:
   - error_rate_by_type
 
 Infrastructure Metrics:
+
   - cpu_usage_per_server
   - memory_usage_per_server
   - network_throughput
   - disk_io_latency
+
 ```
 
 ### Alerting
+
 ```yaml
 alerts:
+
   - name: High Delivery Latency
     condition: p99_latency > 500ms
     severity: critical
@@ -712,6 +762,7 @@ alerts:
   - name: Database Replication Lag
     condition: replication_lag > 1s
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -727,64 +778,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you handle message ordering?**
+
    - Partition Kafka topics by conversation_id
    - Use sequence numbers per conversation
    - Client-side deduplication
    - Server-side ordering guarantees per partition
 
 2. **How do you implement read receipts?**
+
    - Track last_read_message_id per user per conversation
    - Async update via Kafka
    - Batch updates to reduce write amplification
    - Client shows "delivered" vs "read" based on status
 
 3. **How would you handle group messaging?**
+
    - Store group membership in separate table
    - Fan-out on write for small groups (< 100)
    - Fan-out on read for large groups (> 100)
    - Separate notification logic for group mentions
 
 ### Scaling Questions
+
 4. **How do you scale to 500M DAU?**
+
    - Geographic sharding with data residency
    - WebSocket connection pooling
    - Read replicas for message queries
    - CDN for media delivery
 
 5. **How do you handle viral group messages?**
+
    - Rate limit message sending
    - Implement message queue backpressure
    - Cache hot conversations
    - Use fan-out on read for large groups
 
 ### Trade-off Questions
+
 6. **How do you balance encryption with features?**
+
    - E2E encryption for messages
    - Server can see metadata (sender, timestamp)
    - Search requires client-side indexing
    - Backup requires key escrow
 
 7. **How do you handle message deletion?**
+
    - Soft delete with tombstone messages
    - Propagate deletion to all devices
    - Remove from caches and backups
    - Legal retention requirements
 
 ### Senior-level Questions
+
 8. **How would you implement voice/video calls?**
+
    - WebRTC for peer-to-peer media
    - Signaling server via WebSocket
    - TURN servers for NAT traversal
    - SFU for group calls
 
 9. **How do you prevent spam and abuse?**
+
    - Rate limiting per user
    - Message content analysis
    - Report and block functionality
    - Phone number verification
 
 10. **How would you implement message search?**
+
     - Client-side encrypted search
     - Server-side metadata search
     - Elasticsearch for message content
@@ -793,6 +858,7 @@ alerts:
 ## Summary
 
 The WhatsApp system design covers:
+
 - **Real-time Communication**: WebSocket-based messaging
 - **Scalability**: Geographic sharding, connection pooling
 - **Security**: End-to-end encryption, secure key management
@@ -800,10 +866,15 @@ The WhatsApp system design covers:
 - **Performance**: Multi-level caching, message ordering
 
 Key takeaways:
+
 1. Use WebSocket with connection pooling for real-time
+
 2. Implement E2E encryption with proper key management
+
 3. Partition by conversation_id for ordering guarantees
+
 4. Handle offline users with push notifications and message queue
+
 5. Scale geographically with data residency compliance
 
 This design handles 500M DAU with 100B messages/day while maintaining < 100ms delivery latency.
@@ -811,6 +882,7 @@ This design handles 500M DAU with 100B messages/day while maintaining < 100ms de
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

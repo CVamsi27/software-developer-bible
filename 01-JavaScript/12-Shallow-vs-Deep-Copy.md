@@ -37,6 +37,7 @@ A **Shallow Copy** creates a new object with the same property values, but neste
 │  • Deep: Completely independent nested objects             │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -56,6 +57,7 @@ console.log(original.name);  // 'Alice' (unchanged)
 
 shallow.hobbies.push('cooking');
 console.log(original.hobbies);  // ['reading', 'gaming', 'cooking'] (changed!)
+
 ```
 
 ### Deep Copy with structuredClone
@@ -70,6 +72,7 @@ const deep = structuredClone(original);
 
 deep.address.city = 'Boston';
 console.log(original.address.city);  // 'New York' (unchanged)
+
 ```
 
 ### JSON Method
@@ -86,6 +89,7 @@ const copy = JSON.parse(JSON.stringify(original));
 // - Circular references
 // - Date objects (become strings)
 // - RegExp (becomes empty object)
+
 ```
 
 ### Recursive Deep Copy
@@ -124,6 +128,7 @@ function deepClone(obj: any, seen = new WeakMap()): any {
 
   return clone;
 }
+
 ```
 
 ### Object.assign for Shallow Copy
@@ -134,6 +139,7 @@ const copy = Object.assign({}, original);
 
 copy.b.c = 999;
 console.log(original.b.c);  // 999 (shared nested object)
+
 ```
 
 ### Array Copying
@@ -155,6 +161,7 @@ console.log(arr[1][0]);  // 999 (shared)
 
 deep2[1][0] = 888;
 console.log(arr[1][0]);  // 999 (independent)
+
 ```
 
 ## Real-World Use Cases
@@ -180,6 +187,7 @@ function updateUser(state: State, updates: Partial<User>) {
     user: { ...state.user, ...updates }
   };
 }
+
 ```
 
 ### Immutable Data in Redux
@@ -199,6 +207,7 @@ function reducer(state: State, action: Action): State {
       return state;
   }
 }
+
 ```
 
 ### Undo/Redo Pattern
@@ -230,6 +239,7 @@ class HistoryManager<T> {
     return undefined;
   }
 }
+
 ```
 
 ### API Response Caching
@@ -247,6 +257,7 @@ class Cache {
     return value ? structuredClone(value) : undefined;
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -259,6 +270,7 @@ const copy = { ...original };
 
 copy.nested.value = 2;
 console.log(original.nested.value);  // 2 (shared!)
+
 ```
 
 ### 2. JSON.stringify Limitations
@@ -274,6 +286,7 @@ const obj = {
 
 const copy = JSON.parse(JSON.stringify(obj));
 // date becomes string, fn/undef lost, NaN -> null, Infinity -> null
+
 ```
 
 ### 3. Circular References
@@ -285,6 +298,7 @@ obj.self = obj;  // Circular reference
 // JSON.stringify throws TypeError
 // structuredClone handles it correctly
 const copy = structuredClone(obj);
+
 ```
 
 ### 4. Not Freezing After Copy
@@ -296,6 +310,7 @@ const copy = { ...original };
 // copy.nested is still mutable
 // Need to freeze if immutability is desired
 Object.freeze(copy);
+
 ```
 
 ## Best Practices
@@ -310,6 +325,7 @@ const shallow = { ...original };
 const deep = structuredClone(original);
 
 // Performance critical: Consider immutable libraries
+
 ```
 
 ### 2. Use TypeScript for Type Safety
@@ -324,24 +340,28 @@ function updateItem<T extends { id: string }>(
     item.id === id ? { ...item, ...updates } : item
   );
 }
+
 ```
 
 ### 3. Document Mutation Behavior
 
 ```typescript
 /**
- * Returns new array (original unchanged)
+
+ - Returns new array (original unchanged)
  */
 function addItem<T>(arr: T[], item: T): T[] {
   return [...arr, item];
 }
 
 /**
- * Mutates original array
+
+ - Mutates original array
  */
 function addItemInPlace<T>(arr: T[], item: T): void {
   arr.push(item);
 }
+
 ```
 
 ### 4. Use Object.freeze for Constants
@@ -353,6 +373,7 @@ const CONFIG = Object.freeze({
 });
 
 // CONFIG.apiUrl = 'other'; // Silently fails
+
 ```
 
 ## Performance Considerations
@@ -370,6 +391,7 @@ const deep = structuredClone(largeObject);
 // 1. Reference when possible
 // 2. Lazy copying
 // 3. Structural sharing
+
 ```
 
 ### Memory Usage
@@ -383,6 +405,7 @@ const deep = structuredClone(largeObject);
 console.time('copy');
 const copy = structuredClone(largeObject);
 console.timeEnd('copy');
+
 ```
 
 ## Interview Questions
@@ -426,6 +449,7 @@ A: Shallow copy is O(n) where n is number of properties. Deep copy is O(n*m) whe
 **Q9: How do you update nested state immutably?**
 
 A: Use spread operator at each level:
+
 ```typescript
 const newState = {
   ...state,
@@ -434,6 +458,7 @@ const newState = {
     value: newValue
   }
 };
+
 ```
 
 **Q10: When should you use shallow vs deep copy?**
@@ -445,11 +470,13 @@ A: Shallow for simple objects or when you want shared nested references. Deep wh
 **Q11: How do you handle circular references in deep copy?**
 
 A: Use a WeakMap to track visited objects:
+
 ```typescript
 function deepClone(obj, seen = new WeakMap()) {
   if (seen.has(obj)) return seen.get(obj);
   // ... copy and add to seen
 }
+
 ```
 
 **Q12: What is structural sharing and how does it relate to copying?**
@@ -517,11 +544,17 @@ A: Document mutation behavior, choose appropriate copy method, use TypeScript, f
 Understanding shallow vs deep copy is essential:
 
 1. **Shallow copy**: Fast, but nested objects are shared
+
 2. **Deep copy**: Independent, but more expensive
+
 3. **structuredClone**: Modern, handles most types
+
 4. **JSON method**: Simple but limited
+
 5. **Performance**: Choose based on needs
+
 6. **Best practices**: Document behavior, use TypeScript
+
 7. **Common bugs**: Assume deep when it's shallow
 
 ## Cheat Sheet
@@ -570,6 +603,7 @@ BEST PRACTICES:
 • Use TypeScript
 • Freeze when needed
 • Measure before optimizing
+
 ```
 
 ## References & Learn More

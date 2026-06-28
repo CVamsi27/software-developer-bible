@@ -7,9 +7,13 @@ Next.js implements a multi-layered caching system that improves performance by s
 ## Why Do We Need It?
 
 1. **Performance** — Serve content faster with cached responses
+
 2. **Cost reduction** — Reduce server load and database queries
+
 3. **Scalability** — Handle more users without proportional resource increase
+
 4. **User experience** — Instant navigation with cached pages
+
 5. **SEO** — Fast page loads improve search rankings
 
 ## How It Works
@@ -53,6 +57,7 @@ Next.js implements a multi-layered caching system that improves performance by s
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Cache Invalidation Flow
@@ -85,6 +90,7 @@ Next.js implements a multi-layered caching system that improves performance by s
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -108,6 +114,7 @@ export default async function ProductsPage() {
     </div>
   )
 }
+
 ```
 
 ### Data Cache — No Store (Always Fresh)
@@ -127,6 +134,7 @@ export default async function DashboardPage() {
     </div>
   )
 }
+
 ```
 
 ### Data Cache — Force Cache
@@ -146,6 +154,7 @@ export default async function AboutPage() {
     </div>
   )
 }
+
 ```
 
 ### Tag-Based Revalidation
@@ -166,6 +175,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ revalidated: true, timestamp: Date.now() })
 }
+
 ```
 
 ```tsx
@@ -184,6 +194,7 @@ export default async function BlogPage() {
     </div>
   )
 }
+
 ```
 
 ### Path-Based Revalidation
@@ -204,6 +215,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ revalidated: true, timestamp: Date.now() })
 }
+
 ```
 
 ### Full Route Cache
@@ -228,6 +240,7 @@ export default async function ProductsPage() {
 
 // Force dynamic (bypass Full Route Cache)
 export const dynamic = 'force-dynamic'
+
 ```
 
 ### Request Memoization
@@ -248,6 +261,7 @@ export default async function DashboardPage() {
     </div>
   )
 }
+
 ```
 
 ### React cache() for Deduplication
@@ -265,6 +279,7 @@ export const getUserPosts = cache(async (userId: string) => {
   const res = await fetch(`https://api.example.com/users/${userId}/posts`)
   return res.json()
 })
+
 ```
 
 ```tsx
@@ -285,6 +300,7 @@ export default async function UserPage({ params }) {
     </div>
   )
 }
+
 ```
 
 ### Route Segment Config for Caching
@@ -301,6 +317,7 @@ export const fetchCache = 'no-store'
 
 // Revalidate every 60 seconds
 export const revalidate = 60
+
 ```
 
 ### Cache with Headers
@@ -319,6 +336,7 @@ export async function GET(request: NextRequest) {
     },
   })
 }
+
 ```
 
 ### Incremental Static Regeneration (ISR)
@@ -343,6 +361,7 @@ export default async function ProductPage({ params }) {
     </div>
   )
 }
+
 ```
 
 ### On-Demand Revalidation via Webhook
@@ -379,6 +398,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ received: true })
 }
+
 ```
 
 ### Cache Monitoring
@@ -397,6 +417,7 @@ export async function GET() {
     timestamp: Date.now(),
   })
 }
+
 ```
 
 ## Real-World Use Cases
@@ -432,6 +453,7 @@ export default async function Dashboard() {
   })
   return <div>{data.privateInfo}</div>
 }
+
 ```
 
 ### 2. Not Invalidating Stale Cache
@@ -450,6 +472,7 @@ export async function addProduct(product) {
   await db.product.create({ data: product })
   revalidateTag('products') // Invalidate cache
 }
+
 ```
 
 ### 3. Over-Caching
@@ -470,6 +493,7 @@ export default async function Page() {
   })
   return <div>{data.value}</div>
 }
+
 ```
 
 ### 4. Not Handling Cache Errors
@@ -496,6 +520,7 @@ export default async function Page() {
     return <div>Failed to load data</div>
   }
 }
+
 ```
 
 ### 5. Mixing Cache Strategies Incorrectly
@@ -521,18 +546,27 @@ export default async function Page() {
   })
   return <div>{data.value}</div>
 }
+
 ```
 
 ## Best Practices
 
 1. **Cache by default** — Start with caching, opt out when needed
+
 2. **Use tags for granular invalidation** — More precise cache control
+
 3. **Implement on-demand revalidation** — Update cache when data changes
+
 4. **Cache at the right level** — Data cache for fetches, route cache for pages
+
 5. **Monitor cache hit rates** — Track and optimize cache usage
+
 6. **Handle cache misses gracefully** — Fallback for uncached content
+
 7. **Use Request Memoization** — Deduplicate fetches automatically
+
 8. **Implement proper error handling** — Cache failures shouldn't break the app
+
 9. **Document caching strategies** — Team needs to understand the approach
 10. **Test cache behavior** — Verify in development and production
 
@@ -540,16 +574,19 @@ export default async function Page() {
 
 ```text
 Cache Performance Impact:
+
 - First request: Normal performance (cache miss)
 - Subsequent requests: Fast performance (cache hit)
 - Revalidation: Background regeneration
 - Cache invalidation: Triggers fresh fetch
 
 Optimization:
+
 - Set appropriate revalidation times
 - Use on-demand revalidation for critical updates
 - Implement cache warming for popular content
 - Monitor cache hit rates
+
 ```
 
 ## Interview Questions
@@ -710,6 +747,7 @@ revalidateTag('tag')                     → Invalidate by tag
 React cache():
 import { cache } from 'react'
 export const getData = cache(async () => { ... })
+
 ```
 
 ## References & Learn More

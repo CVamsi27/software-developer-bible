@@ -6,6 +6,7 @@ GraphQL is a **query language for APIs** and a **runtime for executing those que
 
 ```text
 GraphQL = Query Language + Type System + Execution Engine + Introspection
+
 ```
 
 Unlike REST, which exposes data through multiple endpoints with fixed response structures, GraphQL exposes a **single endpoint** where clients specify exactly what data they want.
@@ -25,19 +26,23 @@ REST Pain Points:
 │  4. Versioning pain  → /api/v1/, /api/v2/                      │
 │  5. Fixed structures → Server dictates response shape           │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Example: Mobile app needing user profile + posts**
 
 REST approach:
+
 ```typescript
 // 3 separate requests needed
 const user = await fetch('/api/users/1');          // Request 1
 const posts = await fetch('/api/users/1/posts');   // Request 2
 const comments = await fetch('/api/posts/1/comments'); // Request 3
+
 ```
 
 GraphQL approach:
+
 ```typescript
 // 1 single request
 const result = await fetch('/graphql', {
@@ -55,6 +60,7 @@ const result = await fetch('/graphql', {
     }`
   })
 });
+
 ```
 
 ### Benefits of GraphQL
@@ -109,25 +115,31 @@ const result = await fetch('/graphql', {
 │  │  NoSQL)  │  │          │  │          │  │          │       │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Request Lifecycle
 
 ```text
+
 1. Client sends query
         │
         ▼
+
 2. Query hits GraphQL endpoint
         │
         ▼
+
 3. Schema validation (is query valid?)
         │
         ├── No → Return validation error
         │
         ▼ Yes
+
 4. Query parsing + AST generation
         │
         ▼
+
 5. Resolver execution
         │
         ├── Root resolvers execute
@@ -137,10 +149,13 @@ const result = await fetch('/graphql', {
         └── DataLoader batching (if configured)
         │
         ▼
+
 6. Response assembled matching query shape
         │
         ▼
+
 7. Client receives exactly what was requested
+
 ```
 
 ---
@@ -196,6 +211,7 @@ interface Node {
 
 # Union Types
 union SearchResult = User | Post | Comment
+
 ```
 
 ### Type Relationships Diagram
@@ -213,6 +229,7 @@ union SearchResult = User | Post | Comment
                       │ status:     │
                       │  PostStatus │
                       └─────────────┘
+
 ```
 
 ---
@@ -252,6 +269,7 @@ query SearchUsers($query: String!, $limit: Int) {
     }
   }
 }
+
 ```
 
 ### Mutations (Write Operations)
@@ -276,6 +294,7 @@ mutation UpdatePost($id: ID!, $input: UpdatePostInput!) {
     updatedAt
   }
 }
+
 ```
 
 ### Subscriptions (Real-time)
@@ -304,6 +323,7 @@ subscription OnPostUpdate($postId: ID!) {
     updatedAt
   }
 }
+
 ```
 
 ---
@@ -356,6 +376,7 @@ class UserResolver {
     return await db.user.create({ data: input });
   }
 }
+
 ```
 
 ### Apollo Server Setup
@@ -416,6 +437,7 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers });
 const { url } = await startStandaloneServer(server, { listen: { port: 4000 } });
 console.log(`Server ready at ${url}`);
+
 ```
 
 ### Client Query (Apollo Client)
@@ -469,6 +491,7 @@ function UserProfile({ userId }: { userId: string }) {
     </div>
   );
 }
+
 ```
 
 ---
@@ -476,6 +499,7 @@ function UserProfile({ userId }: { userId: string }) {
 ## Real-World Use Cases
 
 ### 1. Social Media Platform
+
 ```graphql
 # Facebook/Instagram-style feed
 query NewsFeed($cursor: String) {
@@ -502,9 +526,11 @@ query NewsFeed($cursor: String) {
     pageInfo { hasNextPage endCursor }
   }
 }
+
 ```
 
 ### 2. E-Commerce Platform
+
 ```graphql
 # Product catalog with filtering
 query ProductCatalog($filters: ProductFilters!) {
@@ -530,9 +556,11 @@ query ProductCatalog($filters: ProductFilters!) {
     totalCount
   }
 }
+
 ```
 
 ### 3. Content Management System
+
 ```graphql
 # Flexible content types
 union ContentBlock = Paragraph | Image | Video | CodeBlock | Quote
@@ -552,9 +580,11 @@ type SEOFields {
   description: String
   ogImage: String
 }
+
 ```
 
 ### 4. Real-time Dashboard
+
 ```graphql
 # Live metrics
 subscription DashboardMetrics {
@@ -570,6 +600,7 @@ subscription DashboardMetrics {
     }
   }
 }
+
 ```
 
 ---
@@ -577,6 +608,7 @@ subscription DashboardMetrics {
 ## Common Mistakes
 
 ### 1. N+1 Query Problem
+
 ```typescript
 // BAD: N+1 queries
 const resolvers = {
@@ -597,9 +629,11 @@ const postLoader = new DataLoader(async (userIds) => {
   });
   return userIds.map(id => posts.filter(p => p.authorId === id));
 });
+
 ```
 
 ### 2. Missing Error Handling
+
 ```typescript
 // BAD: No error handling
 const resolvers = {
@@ -629,9 +663,11 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 3. Exposing Sensitive Data
+
 ```graphql
 # BAD: Exposing internal fields
 type User {
@@ -648,9 +684,11 @@ type User {
   email: String!
   # passwordHash and internalNotes are not in the schema
 }
+
 ```
 
 ### 4. Over-fetching in Nested Queries
+
 ```graphql
 # BAD: Fetching everything
 query {
@@ -678,9 +716,11 @@ query {
     }
   }
 }
+
 ```
 
 ### 5. Ignoring Pagination
+
 ```typescript
 // BAD: No pagination - returns everything
 const resolvers = {
@@ -713,6 +753,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -720,34 +761,59 @@ const resolvers = {
 ## Best Practices
 
 ### Schema Design
+
 ```text
+
 1. Design schema-first, implementation-second
+
 2. Use descriptive names (getUser, not fetchUserData)
+
 3. Return type-safe errors with extensions
+
 4. Use Input types for mutations
+
 5. Implement proper pagination (Relay-style)
+
 6. Use enums for fixed sets of values
+
 7. Keep schema versionless (add fields, don't remove)
+
 ```
 
 ### Resolver Implementation
+
 ```text
+
 1. Keep resolvers thin - delegate to service layer
+
 2. Use DataLoader for N+1 prevention
+
 3. Implement proper authorization
+
 4. Cache resolved data appropriately
+
 5. Use async/await consistently
+
 6. Handle null cases explicitly
+
 ```
 
 ### Client Best Practices
+
 ```text
+
 1. Use fragments for reusable selections
+
 2. Implement query polling for non-critical data
+
 3. Use optimistic updates for mutations
+
 4. Implement proper loading/error states
+
 5. Cache normalized data
+
 6. Use variables instead of string interpolation
+
 ```
 
 ---
@@ -775,6 +841,7 @@ const server = new ApolloServer({
     })
   ]
 });
+
 ```
 
 ### Depth Limiting
@@ -787,6 +854,7 @@ const server = new ApolloServer({
   resolvers,
   validationRules: [depthLimit(7)]
 });
+
 ```
 
 ### Response Caching
@@ -804,6 +872,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -819,6 +888,7 @@ const resolvers = {
    GraphQL uses a single endpoint with flexible queries, while REST uses multiple endpoints with fixed response structures. GraphQL eliminates over-fetching and under-fetching.
 
 3. **What are the three root operation types?**
+
    - **Query**: Read operations
    - **Mutation**: Write operations
    - **Subscription**: Real-time operations

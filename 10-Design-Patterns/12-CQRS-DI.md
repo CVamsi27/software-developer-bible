@@ -13,15 +13,23 @@ Dependency Injection is a design pattern where an object receives its dependenci
 ## Why Do We Need Them?
 
 ### CQRS Benefits:
+
 1. **Independent Scaling**: Read and write sides can be scaled independently
+
 2. **Optimized Models**: Different models for reads and writes
+
 3. **Flexibility**: Different storage technologies for different needs
+
 4. **Performance**: Optimized queries without affecting write operations
 
 ### DI Benefits:
+
 1. **Loose Coupling**: Classes don't create their dependencies
+
 2. **Testability**: Easy to mock dependencies for testing
+
 3. **Flexibility**: Easy to swap implementations
+
 4. **Maintainability**: Changes in dependencies don't affect dependents
 
 ## How They Work
@@ -51,6 +59,7 @@ Dependency Injection is a design pattern where an object receives its dependenci
 │  │         Event Bus / Synchronization      │   │
 │  └──────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ### DI Container:
@@ -79,6 +88,7 @@ Dependency Injection is a design pattern where an object receives its dependenci
 │  │    - ServiceB: IServiceB                 │   │
 │  └──────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -422,6 +432,7 @@ async function main() {
 }
 
 main();
+
 ```
 
 ### Dependency Injection Container
@@ -591,6 +602,7 @@ async function main() {
 }
 
 main();
+
 ```
 
 ### TypeScript Decorator-based DI
@@ -697,6 +709,7 @@ Container.bind(DATABASE_TOKEN, Database);
 Container.bind(USER_SERVICE_TOKEN, UserService);
 
 const userService = Container.resolve<UserService>(USER_SERVICE_TOKEN);
+
 ```
 
 ### React Context DI
@@ -799,6 +812,7 @@ function App() {
     </ThemeProvider>
   );
 }
+
 ```
 
 ## Real-World Use Cases
@@ -1024,6 +1038,7 @@ async function main() {
 }
 
 main();
+
 ```
 
 ### 2. DI with NestJS-style
@@ -1165,6 +1180,7 @@ async function main() {
 }
 
 main();
+
 ```
 
 ## Common Mistakes
@@ -1177,6 +1193,7 @@ class SimpleEntity {
   // Simple CRUD doesn't need CQRS
   // Use it only when read/write patterns differ significantly
 }
+
 ```
 
 ### 2. DI Container Abuse
@@ -1187,6 +1204,7 @@ class SimpleService {
   // Simple service that doesn't need DI
   // DI is for external dependencies
 }
+
 ```
 
 ### 3. Circular Dependencies
@@ -1200,6 +1218,7 @@ class ServiceA {
 class ServiceB {
   constructor(private serviceA: ServiceA) {} // Circular!
 }
+
 ```
 
 ### 4. Not Using Interface
@@ -1209,6 +1228,7 @@ class ServiceB {
 class Service {
   constructor(private dependency: ConcreteClass) {} // Should use interface
 }
+
 ```
 
 ## Best Practices
@@ -1222,6 +1242,7 @@ class Service {
 // - Different scaling needs
 // - Complex business logic
 // - Multiple read models
+
 ```
 
 ### 2. Constructor Injection
@@ -1234,6 +1255,7 @@ class Service {
     private dependency2: Interface2
   ) {}
 }
+
 ```
 
 ### 3. Interface-based Dependencies
@@ -1243,6 +1265,7 @@ class Service {
 class Service {
   constructor(private repository: UserRepository) {} // Interface, not implementation
 }
+
 ```
 
 ### 4. Composition Root
@@ -1254,6 +1277,7 @@ function configureDI(): Container {
   container.register('Repository', new ConcreteRepository());
   return container;
 }
+
 ```
 
 ## Performance Considerations
@@ -1273,86 +1297,111 @@ function configureDI(): Container {
 ### Beginner
 
 1. **What is CQRS?**
+
    - An architectural pattern separating read and write operations into different models.
 
 2. **What is Dependency Injection?**
+
    - A design pattern where objects receive dependencies from external sources.
 
 3. **When would you use CQRS?**
+
    - When read and write patterns differ significantly, or different scaling needs.
 
 4. **How do you implement DI in TypeScript?**
+
    - Use constructor injection, interfaces, and DI containers.
 
 5. **What are the benefits of DI?**
+
    - Loose coupling, testability, flexibility, and maintainability.
 
 ### Intermediate
 
 6. **What's the difference between CQRS and Event Sourcing?**
+
    - CQRS separates reads/writes; Event Sourcing stores state changes as events.
 
 7. **How do you handle eventual consistency in CQRS?**
+
    - Use event handlers, sagas, or polling for synchronization.
 
 8. **Can you use CQRS without Event Sourcing?**
+
    - Yes, CQRS can work with traditional databases.
 
 9. **What's the difference between DI and Service Locator?**
+
    - DI is explicit; Service Locator is implicit dependency resolution.
 
 10. **How do you test code with DI?**
+
     - Use mock implementations, inject test doubles.
 
 ### Senior
 
 11. **How does CQRS affect scalability?**
+
     - Enables independent scaling of read and write sides.
 
 12. **What are the SOLID violations with CQRS/DI?**
+
     - Usually follows SOLID; watch for violating Dependency Inversion.
 
 13. **How do you handle CQRS in microservices?**
+
     - Use separate services for read/write, or separate databases.
 
 14. **What are the memory implications of DI?**
+
     - DI containers store registrations; singleton instances persist.
 
 15. **How do you refactor to CQRS/DI?**
+
     - Start with simple separation, gradually introduce complexity.
 
 ### FAANG-style
 
 16. **Design a CQRS system for high availability.**
+
     - Consider replication, partitioning, and consistency guarantees.
 
 17. **How would you implement DI for distributed systems?**
+
     - Use service discovery, configuration management, and health checks.
 
 18. **What are the implications of CQRS in cloud-native applications?**
+
     - Consider serverless, auto-scaling, and cost optimization.
 
 19. **How do you handle CQRS in event-driven architectures?**
+
     - Use event buses, message queues, and eventual consistency.
 
 20. **Design a DI container that supports lifecycle management.**
+
     - Consider singleton, transient, and scoped lifetimes.
 
 ### Follow-ups
 
 21. **Can CQRS/DI be combined with other patterns?**
+
     - Yes, commonly with Event Sourcing, Repository, and Factory patterns.
 
 22. **How do you handle CQRS/DI in testing frameworks?**
+
     - Use dependency injection, create test containers, and mock implementations.
 
 23. **What are the memory implications of CQRS/DI?**
+
     - CQRS requires separate models; DI containers store registrations.
 
 24. **How do you handle CQRS/DI in serverless environments?**
+
     - Consider stateless design, function composition, and cold starts.
 
 25. **What's the impact of CQRS/DI on code maintainability?**
+
     - Improves maintainability by separating concerns and promoting loose coupling.
 
 ## Summary
@@ -1397,6 +1446,7 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 │ • Not using interfaces                       │
 │ • Complexity overhead                        │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

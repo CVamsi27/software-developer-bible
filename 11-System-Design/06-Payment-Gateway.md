@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Process credit/debit card payments
 - Support multiple payment methods (cards, wallets, bank transfers)
 - Handle refunds and chargebacks
@@ -14,6 +15,7 @@
 - Fraud detection
 
 ### Non-Functional Requirements
+
 - High availability (99.999% - five nines)
 - PCI DSS Level 1 compliance
 - Idempotency for all operations
@@ -24,8 +26,10 @@
 - Global payment support
 
 ## Capacity Estimation
+
 ```text
 Transaction Estimates:
+
 - 100K transactions per second (peak)
 - 10M transactions per day
 - Average transaction size: $50
@@ -33,23 +37,28 @@ Transaction Estimates:
 - Yearly volume: $182.5B
 
 Storage Estimates:
+
 - Transaction data: 1 KB per transaction
 - Daily: 10M × 1 KB = 10 GB
 - Yearly: 10 GB × 365 = 3.65 TB
 - With 7 year retention: 25.55 TB
 
 Bandwidth Estimates:
+
 - Inbound: 100K × 1 KB = 100 MB/s
 - Outbound: 100K × 500 bytes = 50 MB/s
 - Total: 150 MB/s peak
 
 Availability Requirements:
+
 - 99.999% uptime = 5.26 minutes downtime per year
 - Multi-region deployment
 - Active-active across 3+ regions
+
 ```
 
 ## API Design
+
 ```yaml
 # Create Payment Intent
 POST /api/v1/payment-intents
@@ -130,10 +139,12 @@ GET /api/v1/transactions/{id}
       "customer_id": "cust_123",
       "created_at": "2025-01-15T10:30:00Z"
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Merchants table
 CREATE TABLE merchants (
@@ -265,9 +276,11 @@ CREATE TABLE fraud_signals (
     details JSONB,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │  merchants  │     │   customers     │     │ payment_methods │
@@ -316,10 +329,12 @@ CREATE TABLE fraud_signals (
 │ settlement_date │     │ status          │
 └─────────────────┘     │ attempts        │
                         └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -360,11 +375,13 @@ CREATE TABLE fraud_signals (
      │  (Stripe,       │
      │   Adyen, etc.)  │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### Idempotency Service
+
 ```python
 import hashlib
 import json
@@ -416,9 +433,11 @@ class IdempotencyService:
             json.dumps(result)
         )
         await self.redis.delete(f"idempotency_lock:{key}")
+
 ```
 
 ### Payment Processing Service
+
 ```python
 class PaymentProcessor:
     def __init__(self, db, idempotency_service, fraud_service):
@@ -493,9 +512,11 @@ class PaymentProcessor:
             return self.processors['paypal']
         else:
             return self.processors['stripe']
+
 ```
 
 ### Fraud Detection Service
+
 ```python
 class FraudDetectionService:
     def __init__(self, db, redis_client):
@@ -567,9 +588,11 @@ class FraudDetectionService:
             }
 
         return None
+
 ```
 
 ### Webhook Service
+
 ```python
 import hmac
 import hashlib
@@ -652,9 +675,11 @@ class WebhookService:
             payload_str.encode(),
             hashlib.sha256
         ).hexdigest()
+
 ```
 
 ### Reconciliation Service
+
 ```python
 class ReconciliationService:
     def __init__(self, db, processor_client):
@@ -706,11 +731,13 @@ class ReconciliationService:
                       discrepancy['processor_amount'])
             if diff < 100:  # Less than $1
                 await self.auto_resolve(discrepancy)
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Idempotency Cache
+
 ```python
 class IdempotencyCache:
     def __init__(self, redis_client):
@@ -737,9 +764,11 @@ class IdempotencyCache:
     async def get_result(self, key: str) -> dict:
         result = await self.redis.get(f"idempotency:{key}")
         return json.loads(result) if result else None
+
 ```
 
 ### Rate Limiting Cache
+
 ```python
 class PaymentRateLimiter:
     def __init__(self, redis_client):
@@ -760,11 +789,13 @@ class PaymentRateLimiter:
         pipe.execute()
 
         return True
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── payment.initiated        (payment starts)
@@ -789,9 +820,11 @@ Event Schema:
     "merchant_id": "mer_012"
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class PaymentEventProcessor:
     def __init__(self, kafka_consumer, webhook_service):
@@ -817,11 +850,13 @@ class PaymentEventProcessor:
 
         # Update analytics
         await self.update_analytics(event)
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -837,9 +872,11 @@ Architecture:
 │  Service     │   │  Service     │   │  Service     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Scaling
+
 ```python
 class PaymentDatabaseScaler:
     def __init__(self):
@@ -854,9 +891,11 @@ class PaymentDatabaseScaler:
         else:
             # Route to master
             return await self.master.execute(query, params)
+
 ```
 
 ### Global Deployment
+
 ```text
 Global Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -880,11 +919,13 @@ Global Architecture:
                     │  Kafka Mirror  │
                     │  (Cross-DC)    │
                     └───────────────┘
+
 ```
 
 ## Failure Handling
 
 ### Circuit Breaker Pattern
+
 ```python
 class CircuitBreaker:
     def __init__(self):
@@ -913,9 +954,11 @@ class CircuitBreaker:
             if self.failure_count >= self.failure_threshold:
                 self.state = 'OPEN'
             raise
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Payment processor down | Failover to backup processor |
@@ -925,6 +968,7 @@ class CircuitBreaker:
 | Network partition | Store locally, sync when reconnected |
 
 ### Retry Logic
+
 ```python
 class RetryLogic:
     def __init__(self):
@@ -947,34 +991,42 @@ class RetryLogic:
                 raise
 
         raise last_exception
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - transactions_per_second
   - success_rate
   - average_transaction_amount
   - total_volume_by_currency
 
 System Metrics:
+
   - payment_processing_latency_p95
   - api_response_time
   - error_rate_by_type
   - webhook_delivery_rate
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - database_connection_pool
   - redis_memory_usage
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Failure Rate
     condition: failure_rate > 5%
     severity: critical
@@ -990,6 +1042,7 @@ alerts:
   - name: Reconciliation Discrepancies
     condition: discrepancy_count > 10
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -1005,64 +1058,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you ensure payment idempotency?**
+
    - Unique idempotency key per request
    - Redis for fast lookup with TTL
    - Database as source of truth
    - Atomic operations to prevent race conditions
 
 2. **How do you handle payment failures?**
+
    - Retry with exponential backoff
    - Circuit breaker for processor failures
    - Graceful degradation with fallback processors
    - Clear error messages to merchants
 
 3. **How would you implement fraud detection?**
+
    - Rule-based checks (velocity, amount limits)
    - Machine learning models
    - Real-time scoring
    - Manual review queue for suspicious transactions
 
 ### Scaling Questions
+
 4. **How do you scale to 100K transactions per second?**
+
    - Horizontal scaling of payment service
    - Database sharding by merchant
    - Redis for hot data
    - Kafka for async processing
 
 5. **How do you handle global payments?**
+
    - Regional deployment
    - Local payment method support
    - Currency conversion
    - Compliance with local regulations
 
 ### Trade-off Questions
+
 6. **How do you balance speed vs security?**
+
    - Fast path for low-risk transactions
    - Enhanced verification for high-risk
    - Asynchronous fraud checks
    - Customer-initiated verification
 
 7. **How do you handle chargebacks?**
+
    - Automated evidence collection
    - Merchant notification
    - Dispute resolution workflow
    - Financial impact tracking
 
 ### Senior-level Questions
+
 8. **How would you implement PCI compliance?**
+
    - Tokenization of card data
    - Encrypted storage
    - Access controls
    - Audit logging
 
 9. **How do you ensure data durability?**
+
    - Write-ahead logging
    - Replication across regions
    - Regular backups
    - Point-in-time recovery
 
 10. **How would you implement multi-currency support?**
+
     - Real-time exchange rates
     - Settlement in merchant's currency
     - Cross-border fee handling
@@ -1071,6 +1138,7 @@ alerts:
 ## Summary
 
 The Payment Gateway system design covers:
+
 - **Idempotency**: Redis-based with database fallback
 - **Fraud Detection**: Rule-based with ML enhancement
 - **Webhook Delivery**: Async with retry logic
@@ -1078,10 +1146,15 @@ The Payment Gateway system design covers:
 - **Compliance**: PCI DSS Level 1
 
 Key takeaways:
+
 1. Use idempotency keys for all payment operations
+
 2. Implement circuit breakers for processor failures
+
 3. Use Redis for fast idempotency checks
+
 4. Process webhooks asynchronously with retries
+
 5. Reconcile daily to catch discrepancies
 
 This design supports 100K+ transactions per second with 99.999% availability and full PCI compliance.
@@ -1089,6 +1162,7 @@ This design supports 100K+ transactions per second with 99.999% availability and
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

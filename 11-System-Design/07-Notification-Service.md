@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Send push notifications (iOS, Android)
 - Send email notifications
 - Send SMS notifications
@@ -14,6 +15,7 @@
 - A/B testing for notifications
 
 ### Non-Functional Requirements
+
 - High availability (99.99%)
 - Delivery latency < 5 seconds for push
 - Support 100M+ users
@@ -24,30 +26,37 @@
 - GDPR compliance
 
 ## Capacity Estimation
+
 ```text
 Notification Estimates:
+
 - 100M users × 10 notifications/day = 1B notifications/day
 - Peak: 1B / 86400 = ~11.6K notifications/second
 - Average notification size: 1 KB
 - Daily data: 1B × 1 KB = 1 TB
 
 Channel Distribution:
+
 - Push: 60% = 600M/day
 - Email: 30% = 300M/day
 - SMS: 10% = 100M/day
 
 Storage Estimates:
+
 - Notification logs: 1 TB/day × 30 days = 30 TB/month
 - User preferences: 100M × 1 KB = 100 GB
 - Templates: 10K × 10 KB = 100 MB
 
 Bandwidth Estimates:
+
 - Outbound: 11.6K × 1 KB = 11.6 MB/s
 - Peak: 5x = 58 MB/s
 - SMS provider: 100M × 160 bytes = 16 GB/day
+
 ```
 
 ## API Design
+
 ```yaml
 # Send Notification
 POST /api/v1/notifications
@@ -121,10 +130,12 @@ GET /api/v1/notifications/history
       "has_more": true,
       "cursor": "cur_345"
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Users notification preferences
 CREATE TABLE user_preferences (
@@ -234,9 +245,11 @@ CREATE TABLE notification_analytics (
     failed_count INT DEFAULT 0,
     UNIQUE(template_id, channel, date)
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────────────┐     ┌─────────────────┐
 │  user_preferences   │     │    templates     │
@@ -292,10 +305,12 @@ CREATE TABLE notification_analytics (
 │ is_active           │
 │ last_used_at        │
 └─────────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -341,11 +356,13 @@ CREATE TABLE notification_analytics (
                     │   (Delivery Tracking,│
                     │    Metrics)          │
                     └──────────────────────┘
+
 ```
 
 ## Key Components
 
 ### Template Engine
+
 ```python
 from jinja2 import Environment, BaseLoader
 import json
@@ -402,9 +419,11 @@ class TemplateEngine:
                 )
 
         return results
+
 ```
 
 ### Notification Dispatcher
+
 ```python
 class NotificationDispatcher:
     def __init__(self, preference_service, template_engine,
@@ -444,9 +463,11 @@ class NotificationDispatcher:
             result = await self.sms.send(user_id, rendered)
 
         return result
+
 ```
 
 ### Rate Limiter
+
 ```python
 from redis import Redis
 from datetime import datetime, timedelta
@@ -494,9 +515,11 @@ class NotificationRateLimiter:
             return max(0, limit_config['count'] - int(current))
 
         return limit_config['count']
+
 ```
 
 ### Push Notification Service
+
 ```python
 from firebase_admin import messaging
 import aiohttp
@@ -567,9 +590,11 @@ class PushNotificationService:
                 headers=self.get_apns_headers()
             ) as response:
                 return await response.json()
+
 ```
 
 ### Email Service
+
 ```python
 import sendgrid
 from sendgrid.helpers.mail import Mail
@@ -604,9 +629,11 @@ class EmailService:
             }
         except Exception as e:
             return {'status': 'failed', 'error': str(e)}
+
 ```
 
 ### SMS Service
+
 ```python
 from twilio.rest import Client
 
@@ -637,11 +664,13 @@ class SMSService:
             }
         except Exception as e:
             return {'status': 'failed', 'error': str(e)}
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Template Cache
+
 ```python
 class TemplateCache:
     def __init__(self, redis_client):
@@ -671,9 +700,11 @@ class TemplateCache:
         keys = await self.redis.keys(pattern)
         if keys:
             await self.redis.delete(*keys)
+
 ```
 
 ### User Preferences Cache
+
 ```python
 class PreferencesCache:
     def __init__(self, redis_client):
@@ -695,11 +726,13 @@ class PreferencesCache:
         await self.redis.setex(
             key, self.ttl, json.dumps(preferences)
         )
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── notification.created    (new notifications)
@@ -721,9 +754,11 @@ Event Schema:
     "template": "order_shipped"
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class NotificationEventProcessor:
     def __init__(self, kafka_consumer, dispatcher, analytics):
@@ -752,11 +787,13 @@ class NotificationEventProcessor:
 
         # Track analytics
         await self.analytics.track_sent(event['data'])
+
 ```
 
 ## Scaling Strategy
 
 ### Horizontal Scaling
+
 ```text
 Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -771,9 +808,11 @@ Architecture:
 │  Service     │   │  Service     │   │  Service     │
 │  (10+ nodes) │   │  (10+ nodes) │   │  (10+ nodes) │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Scaling
+
 ```python
 class NotificationDatabaseScaler:
     def __init__(self):
@@ -785,9 +824,11 @@ class NotificationDatabaseScaler:
     async def insert_notification(self, notification: dict):
         partition = self.get_partition(notification['created_at'])
         # Insert into appropriate partition
+
 ```
 
 ### Queue Scaling
+
 ```python
 class NotificationQueueScaler:
     def __init__(self):
@@ -795,11 +836,13 @@ class NotificationQueueScaler:
 
     def get_partition(self, user_id: int) -> int:
         return user_id % self.partitions
+
 ```
 
 ## Failure Handling
 
 ### Retry Logic
+
 ```python
 class NotificationRetry:
     def __init__(self):
@@ -825,9 +868,11 @@ class NotificationRetry:
 
         # All retries failed
         return {'status': 'failed', 'reason': 'max_retries'}
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | FCM/APNs down | Retry with exponential backoff |
@@ -837,6 +882,7 @@ class NotificationRetry:
 | Kafka down | Buffer locally, process later |
 
 ### Graceful Degradation
+
 ```python
 class GracefulDegradation:
     def __init__(self):
@@ -868,34 +914,42 @@ class GracefulDegradation:
             if fallback:
                 notification['channel'] = fallback
                 return await dispatcher.dispatch(notification)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - notifications_per_second
   - delivery_rate_by_channel
   - open_rate_by_channel
   - click_rate_by_channel
 
 System Metrics:
+
   - delivery_latency_p95
   - queue_depth
   - error_rate_by_provider
   - template_render_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - kafka_consumer_lag
   - redis_memory_usage
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Failure Rate
     condition: failure_rate > 5%
     severity: critical
@@ -911,6 +965,7 @@ alerts:
   - name: Provider Error Spike
     condition: provider_error_rate > 10%
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -926,64 +981,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you design a notification service?**
+
    - Template engine for customizable notifications
    - User preferences for channel selection
    - Rate limiting to prevent abuse
    - Delivery tracking and analytics
 
 2. **How do you handle notification preferences?**
+
    - Store preferences in database
    - Cache in Redis for fast lookup
    - Check before sending
    - Respect quiet hours
 
 3. **How would you implement A/B testing?**
+
    - Create multiple template variants
    - Random user assignment
    - Track open/click rates
    - Statistical significance testing
 
 ### Scaling Questions
+
 4. **How do you scale to 1B notifications per day?**
+
    - Partition notifications by user
    - Horizontal scaling of services
    - Kafka for async processing
    - Database sharding by time
 
 5. **How do you handle rate limiting?**
+
    - Redis-based rate limiting
    - Per-user and per-channel limits
    - Graceful degradation
    - Queue overflow handling
 
 ### Trade-off Questions
+
 6. **How do you balance delivery speed vs cost?**
+
    - Priority queues for important notifications
    - Batch processing for non-urgent
    - Channel selection based on urgency
    - Cost optimization by provider
 
 7. **How do you ensure delivery guarantees?**
+
    - At-least-once delivery
    - Idempotency for deduplication
    - Dead letter queue for failures
    - Retry with exponential backoff
 
 ### Senior-level Questions
+
 8. **How would you implement multi-language support?**
+
    - Template versioning by language
    - User locale detection
    - Fallback to default language
    - Translation management
 
 9. **How do you handle notification fatigue?**
+
    - Smart batching
    - Priority-based delivery
    - User engagement tracking
    - Frequency capping
 
 10. **How would you implement real-time notifications?**
+
     - WebSocket for in-app
     - Push for mobile
     - SSE for web
@@ -992,6 +1061,7 @@ alerts:
 ## Summary
 
 The Notification Service system design covers:
+
 - **Multi-channel**: Push, email, SMS, in-app
 - **Template Engine**: Customizable notifications
 - **Rate Limiting**: Per-user and per-channel
@@ -999,10 +1069,15 @@ The Notification Service system design covers:
 - **Scalability**: Handles 1B+ notifications/day
 
 Key takeaways:
+
 1. Use template engine for customizable notifications
+
 2. Implement user preferences for channel selection
+
 3. Use rate limiting to prevent notification fatigue
+
 4. Track delivery status for reliability
+
 5. Design for graceful degradation
 
 This design supports 100M+ users with 1B+ notifications per day while maintaining 99.99% availability.
@@ -1010,6 +1085,7 @@ This design supports 100M+ users with 1B+ notifications per day while maintainin
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

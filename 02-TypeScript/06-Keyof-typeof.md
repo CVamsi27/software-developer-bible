@@ -23,14 +23,19 @@
 │   // "name" | "age"              // { name: string; age: number }│
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type safety**: Safely reference object keys and values
+
 2. **Code reuse**: Create types from existing values
+
 3. **Mapped types**: Use keys to iterate over object properties
+
 4. **Type inference**: Let TypeScript infer types from runtime values
+
 5. **Refactoring**: Automatically update types when values change
 
 ## How It Works
@@ -56,6 +61,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 const user: User = { name: "Alice", age: 30, email: "a@b.com" };
 const name = getProperty(user, "name");  // string
 const age = getProperty(user, "age");    // number
+
 ```
 
 ### typeof
@@ -93,6 +99,7 @@ function createUser(name: string) {
 
 type CreateUserReturn = ReturnType<typeof createUser>;
 // { name: string; createdAt: Date }
+
 ```
 
 ### keyof in Mapped Types
@@ -121,6 +128,7 @@ type UserFlags = Record<keyof User, boolean>;
 type PartialUser = {
   [K in keyof User]?: User[K];
 };
+
 ```
 
 ### Key Remapping with `as`
@@ -155,6 +163,7 @@ interface Mixed {
 
 type Nullable = NullableKeys<Mixed>;
 // { phone: string | null }
+
 ```
 
 ### typeof with keyof
@@ -177,6 +186,7 @@ function navigate(route: Route): void {
 navigate("home");    // ✅
 navigate("about");   // ✅
 navigate("missing"); // ❌ Error
+
 ```
 
 ## Code Examples
@@ -245,6 +255,7 @@ function getConfig(key: ConfigKey): ConfigValue {
 
 const host = getConfig("host");     // string
 const port = getConfig("port");     // number
+
 ```
 
 ### Advanced Patterns
@@ -298,6 +309,7 @@ const userRoute = createRoute("/users/:id");
 
 const homeRoute = createRoute("/home");
 // { path: "/home"; params?: never }
+
 ```
 
 ## Common Mistakes
@@ -311,6 +323,7 @@ type Bad = keyof string; // "toString" | "charAt" | ... (not useful)
 // ✅ Correct: Use keyof on interfaces/types
 interface User { name: string; age: number; }
 type Keys = keyof User; // "name" | "age"
+
 ```
 
 ### 2. Not Constraining Generic Keys
@@ -325,6 +338,7 @@ function getProp<T, K>(obj: T, key: K) {
 function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
+
 ```
 
 ### 3. Forgetting typeof Returns the Value Type
@@ -336,6 +350,7 @@ type T1 = typeof str; // "hello" (the literal type), not string
 
 // ✅ To get the primitive type, use string directly
 type T2 = string; // string
+
 ```
 
 ## Best Practices
@@ -363,6 +378,7 @@ type PrefixKeys<T> = {
 type Optional<T> = {
   [K in keyof T]?: T[K];
 };
+
 ```
 
 ## Performance Considerations
@@ -378,75 +394,96 @@ type Optional<T> = {
 ### Beginner
 
 1. **What does `keyof` do?**
+
    - Extracts the keys of an object type as a union
 
 2. **What does `typeof` do?**
+
    - Extracts the type of a value/expression
 
 3. **How do you safely access object properties?**
+
    - Use `K extends keyof T` constraint
 
 4. **Can you use keyof on arrays?**
+
    - Yes, it returns array method names and indices
 
 5. **How do you create a type from a const object?**
+
    - Use `typeof obj[keyof typeof obj]`
 
 ### Intermediate
 
 6. **Write a type-safe getProperty function**
+
    ```typescript
    function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
      return obj[key];
    }
+
 ```
 
 7. **How do you filter keys in a mapped type?**
+
    - Use key remapping with `as`: `[K in keyof T as Condition ? K : never]`
 
 8. **What is the difference between keyof T and keyof any?**
+
    - keyof T extracts keys of specific type; keyof any is string | number | symbol
 
 9. **How do you create an enum-like type from an object?**
+
    - Use `typeof obj[keyof typeof obj]`
 
 10. **Can you use typeof in type annotations?**
+
     - Yes: `const x: typeof y = y;`
 
 ### Senior
 
 11. **Design a type-safe property validator**
+
     - Use keyof and mapped types to validate object properties
 
 12. **How do you create a type-safe event system?**
+
     - Use keyof for event names, typeof for payloads
 
 13. **Implement a type-safe deep property access**
+
     - Use recursive keyof with template literals
 
 14. **How do you handle dynamic property names?**
+
     - Use computed property names with keyof constraints
 
 ### FAANG-style
 
 15. **Build a type-safe form builder**
+
     - Use keyof for field names, typeof for default values
 
 16. **Create a type-safe API router**
+
     - Use typeof for route definitions, keyof for parameter extraction
 
 17. **Implement a type-safe state management solution**
+
     - Use keyof for action types, typeof for payloads
 
 ### Follow-ups
 
 18. **How do keyof and typeof interact with generics?**
+
     - Both work with generic types and values
 
 19. **Can you use keyof with intersection types?**
+
     - Yes, keyof distributes over intersections
 
 20. **How do you handle symbol keys with keyof?**
+
     - keyof includes symbol keys in the union
 
 ## Summary
@@ -477,6 +514,7 @@ type Prefix<T> = { [K in keyof T as `get_${string & K}`]: () => T[K] };
 // typeof with keyof for const objects
 const routes = { home: "/", about: "/about" } as const;
 type Route = keyof typeof routes;
+
 ```
 
 ## References & Learn More

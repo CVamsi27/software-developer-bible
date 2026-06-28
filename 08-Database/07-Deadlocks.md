@@ -36,6 +36,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 │     • T1 waits for T2, T2 waits for T1                      │
 │     • Chain of transactions waiting for each other           │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Deadlock Example
@@ -65,6 +66,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 │  PostgreSQL detects this and aborts T2 (victim).            │
 │  ERROR: deadlock detected                                   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Lock Modes
@@ -87,6 +89,7 @@ A deadlock is a situation where two or more transactions are blocked forever, ea
 
 • Compatible with itself (Shared modes)
 • Blocks conflicting modes
+
 ```
 
 ## Code Examples
@@ -112,6 +115,7 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 UPDATE accounts SET balance = balance + 200 WHERE id = 1;
 -- T2 waits for T1 to release row 1
 -- DEADLOCK! PostgreSQL aborts one transaction
+
 ```
 
 ### Preventing Deadlocks with Lock Ordering
@@ -132,6 +136,7 @@ SELECT * FROM accounts WHERE id IN (1, 2) ORDER BY id FOR UPDATE;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
+
 ```
 
 ### SELECT FOR UPDATE
@@ -156,6 +161,7 @@ FOR UPDATE SKIP LOCKED
 LIMIT 10;
 -- Returns only unlocked rows
 COMMIT;
+
 ```
 
 ### Advisory Locks
@@ -175,6 +181,7 @@ SELECT pg_try_advisory_lock(12345);
 -- Named locks
 SELECT pg_advisory_lock(hashtext('my_lock'));
 SELECT pg_advisory_unlock(hashtext('my_lock'));
+
 ```
 
 ### Lock Monitoring
@@ -212,6 +219,7 @@ AND blocked.pid != blocking.pid;
 
 -- Kill a blocking session
 SELECT pg_terminate_backend(pid);
+
 ```
 
 ## Real-World Use Cases
@@ -245,6 +253,7 @@ UPDATE accounts SET balance = balance + amount WHERE id = to_id;
 INSERT INTO transfers (from_id, to_id, amount) VALUES (from_id, to_id, amount);
 
 COMMIT;
+
 ```
 
 ### Order Processing (Optimistic Locking)
@@ -271,6 +280,7 @@ AND version = 1;  -- Check version
 
 -- If affected_rows = 0, someone else updated it
 -- Retry or handle conflict
+
 ```
 
 ### Task Queue (SKIP LOCKED)
@@ -292,6 +302,7 @@ UPDATE tasks SET status = 'processing' WHERE id = ?;
 COMMIT;
 
 -- Multiple workers can process different tasks safely
+
 ```
 
 ## Common Mistakes
@@ -346,6 +357,7 @@ async function transfer(fromId: number, toId: number, amount: number) {
     }
   }
 }
+
 ```
 
 ### 2. Lock Ordering Violations
@@ -368,6 +380,7 @@ BEGIN;
 UPDATE accounts SET balance = ... WHERE id = LEAST(1, 2);
 UPDATE accounts SET balance = ... WHERE id = GREATEST(1, 2);
 COMMIT;
+
 ```
 
 ### 3. Long Transactions Holding Locks
@@ -386,6 +399,7 @@ BEGIN;
 SELECT * FROM accounts WHERE id = 1 FOR UPDATE;
 UPDATE accounts SET balance = 100 WHERE id = 1;
 COMMIT;  -- Release lock immediately
+
 ```
 
 ## Best Practices
@@ -420,6 +434,7 @@ UPDATE table SET version = version + 1 WHERE id = 1 AND version = 1;
 -- 8. Set deadlock_timeout
 SHOW deadlock_timeout;  -- Default: 1s
 SET deadlock_timeout = '500ms';
+
 ```
 
 ## Performance Considerations
@@ -443,6 +458,7 @@ GROUP BY mode;
 
 -- Avoid table-level locks
 -- Use row-level locks (FOR UPDATE) instead of LOCK TABLE
+
 ```
 
 ## Interview Questions
@@ -574,6 +590,7 @@ SELECT pg_terminate_backend(pid);
 -- Set timeout
 SET lock_timeout = '5s';
 SET deadlock_timeout = '500ms';
+
 ```
 
 ## References & Learn More

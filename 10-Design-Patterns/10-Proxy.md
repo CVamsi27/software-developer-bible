@@ -11,8 +11,11 @@ The pattern is particularly useful for lazy loading, access control, logging, ca
 Without the Proxy pattern, direct object access leads to:
 
 1. **Security issues**: No access control or validation
+
 2. **Performance problems**: Loading expensive resources upfront
+
 3. **Tight coupling**: Direct dependency on concrete implementations
+
 4. **Difficult monitoring**: No logging or audit trails
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Proxy pattern, direct object access leads to:
 The Proxy pattern works by:
 
 1. Defining a common interface for the real object and proxy
+
 2. Creating a proxy class that wraps the real object
+
 3. The proxy controls access to the real object
+
 4. The proxy can add behavior before/after delegating to the real object
 
 ```text
@@ -48,6 +54,7 @@ The Proxy pattern works by:
 │          │+ request(): void   │               │
 │          └──────────────┘                     │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -119,6 +126,7 @@ proxy.display();
 
 console.log('\nSecond display (uses cached image):');
 proxy.display();
+
 ```
 
 ### Virtual Proxy (Lazy Loading)
@@ -218,6 +226,7 @@ await db.query('SELECT * FROM users');
 // Subsequent queries use existing connection
 console.log('\nSecond query (uses existing connection):');
 await db.query('SELECT * FROM orders');
+
 ```
 
 ### Protection Proxy (Access Control)
@@ -344,6 +353,7 @@ try {
 
 console.log('\nViewer can read:');
 console.log(viewerProxy.read());
+
 ```
 
 ### Caching Proxy
@@ -427,6 +437,7 @@ console.log('\nSecond fetch (cache hit):');
 await fetcher.fetch('https://api.example.com/data');
 
 console.log('\nCache size:', fetcher.getCacheSize());
+
 ```
 
 ### Logging Proxy
@@ -527,6 +538,7 @@ await service.createUser({ name: 'Jane' });
 await service.updateUser('1', { name: 'John Updated' });
 
 console.log('\nAll logs:', service.getLogs());
+
 ```
 
 ## Real-World Use Cases
@@ -620,6 +632,7 @@ state.watch('user.name', (newValue, oldValue) => {
 
 state.getData().count = 1; // Logs: Count changed from 0 to 1
 state.getData().user.name = 'Jane'; // Logs: Name changed from John to Jane
+
 ```
 
 ### 2. API Rate Limiting Proxy
@@ -696,6 +709,7 @@ for (let i = 0; i < 7; i++) {
     console.log(`Request ${i + 1} failed: ${error.message}`);
   }
 }
+
 ```
 
 ### 3. Authentication Proxy
@@ -797,6 +811,7 @@ try {
 } catch (error) {
   console.log(error.message);
 }
+
 ```
 
 ## Common Mistakes
@@ -814,6 +829,7 @@ class BadProxy {
     return null;
   }
 }
+
 ```
 
 ### 2. Not Implementing Interface
@@ -825,6 +841,7 @@ class BadProxy {
 
   // Missing interface methods
 }
+
 ```
 
 ### 3. Circular Proxy
@@ -838,6 +855,7 @@ class CircularProxy {
     this.proxy = this;
   }
 }
+
 ```
 
 ### 4. Proxy with State
@@ -850,6 +868,7 @@ class StatefulProxy {
 
   // Hard to reason about
 }
+
 ```
 
 ## Best Practices
@@ -865,6 +884,7 @@ class GoodProxy implements Subject {
     this.real.request();
   }
 }
+
 ```
 
 ### 2. Keep Proxy Focused
@@ -874,6 +894,7 @@ class GoodProxy implements Subject {
 class LoggingProxy implements Subject {
   // Only adds logging
 }
+
 ```
 
 ### 3. Use Dependency Injection
@@ -883,6 +904,7 @@ class LoggingProxy implements Subject {
 class Proxy {
   constructor(private real: Subject) {}
 }
+
 ```
 
 ### 4. Document Proxy Behavior
@@ -890,11 +912,13 @@ class Proxy {
 ```typescript
 // ✅ GOOD - Clear documentation
 /**
- * Logging proxy that logs all method calls
+
+ - Logging proxy that logs all method calls
  */
 class LoggingProxy implements Subject {
   // Implementation
 }
+
 ```
 
 ## Performance Considerations
@@ -914,86 +938,111 @@ class LoggingProxy implements Subject {
 ### Beginner
 
 1. **What is the Proxy pattern?**
+
    - A structural pattern that provides a surrogate for another object to control access.
 
 2. **When would you use Proxy pattern?**
+
    - For lazy loading, access control, logging, caching, and remote resources.
 
 3. **What's the difference between Proxy and Decorator?**
+
    - Both wrap objects; Proxy controls access, Decorator adds behavior.
 
 4. **How do you implement Proxy in TypeScript?**
+
    - Create a proxy class that implements the subject interface and wraps the real subject.
 
 5. **What are the benefits of Proxy pattern?**
+
    - Access control, lazy loading, logging, caching, and security.
 
 ### Intermediate
 
 6. **What are the different types of Proxies?**
+
    - Virtual (lazy loading), Protection (access control), Caching, Logging, Remote.
 
 7. **How do you test Proxy pattern?**
+
    - Test proxy behavior independently, mock real subject.
 
 8. **What's the relationship between Proxy and Facade?**
+
    - Proxy controls access; Facade simplifies interface.
 
 9. **How do you handle proxy chaining?**
+
    - Each proxy wraps the next; order matters.
 
 10. **Can Proxy change the interface?**
+
     - No, proxy must maintain the subject interface.
 
 ### Senior
 
 11. **How does Proxy pattern affect scalability?**
+
     - Proxies are lightweight; consider connection pooling for scaling.
 
 12. **What are the SOLID violations with Proxy?**
+
     - Usually follows SOLID; watch for proxies violating Single Responsibility.
 
 13. **How do you handle Proxy in microservices?**
+
     - Use proxies for API gateways, service meshes, and load balancing.
 
 14. **What are the memory implications of Proxy?**
+
     - Proxies are usually stateless; the real subject consumes memory.
 
 15. **How do you refactor Proxy code?**
+
     - Extract common logic, use composition, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Proxy for a distributed system.**
+
     - Consider network transparency, fault tolerance, and load balancing.
 
 17. **How would you implement Proxy for cloud-native applications?**
+
     - Consider serverless functions, API gateways, and service meshes.
 
 18. **What are the implications of Proxy in event-driven architectures?**
+
     - Use proxies for event routing, filtering, and transformation.
 
 19. **How do you handle Proxy in real-time systems?**
+
     - Consider latency, throughput, and resource management.
 
 20. **Design a Proxy that supports A/B testing.**
+
     - Consider traffic splitting, metrics collection, and gradual rollout.
 
 ### Follow-ups
 
 21. **Can Proxy pattern be combined with other patterns?**
+
     - Yes, commonly with Decorator, Adapter, and Factory patterns.
 
 22. **How do you handle Proxy in testing frameworks?**
+
     - Use dependency injection, create test proxies, and mock implementations.
 
 23. **What are the memory implications of Proxy pattern?**
+
     - Proxies are usually lightweight; the real subject consumes memory.
 
 24. **How do you handle Proxy in serverless environments?**
+
     - Consider stateless proxies, API gateways, and function composition.
 
 25. **What's the impact of Proxy on code maintainability?**
+
     - Improves maintainability by adding indirection and control.
 
 ## Summary
@@ -1036,6 +1085,7 @@ The Proxy pattern is essential for controlling access to objects. It enables laz
 │ • Adapter (changes interface)               │
 │ • Facade (simplifies interface)             │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

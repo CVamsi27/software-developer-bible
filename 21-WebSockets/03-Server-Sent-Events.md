@@ -24,12 +24,14 @@ SSE uses the `EventSource` API on the client and standard HTTP on the server, pr
 
 ```text
 Use SSE when:                    Use WebSockets when:
+
 - Server pushes updates          - Bidirectional communication needed
 - No client → server messages    - Client sends frequent messages
 - Simple implementation needed   - Binary data transfer required
 - HTTP infrastructure available  - Low-latency critical
 - Auto-reconnection needed       - Custom protocol needed
 - Event sourcing useful          - Full-duplex required
+
 ```
 
 ## How It Works
@@ -38,6 +40,7 @@ Use SSE when:                    Use WebSockets when:
 
 ```text
 Client                              Server
+
   |                                    |
   |  GET /events HTTP/1.1              |
   |  Accept: text/event-stream         |
@@ -61,6 +64,7 @@ Client                              Server
   |  retry: 5000\n                     |
   |  data: Reconnect in 5s\n\n         |
   |<-----------------------------------|
+
 ```
 
 ### Message Format
@@ -89,18 +93,24 @@ data: Will retry in 3 seconds\n\n
 Comments (ignored by client):
 : This is a comment\n
 : Keep-alive ping\n\n
+
 ```
 
 ### Connection Lifecycle
 
 ```text
 +-----------+     +-----------+     +-----------+     +-----------+
+
 | CONNECTING| --> |   OPEN    | --> | CONNECTING| --> |   OPEN    |
+
 +-----------+     +-----------+     +-----------+     +-----------+
+
       |                |                 |                 |
+
       | HTTP Request   | Receive data    | Auto-reconnect  | Resume
       | sent           | from server     | on disconnect   | from last
       |                |                 |                 | event ID
+
 ```
 
 ## Code Examples
@@ -166,6 +176,7 @@ class SSEClient {
     this.eventSource = null;
   }
 }
+
 ```
 
 ### Basic SSE Server (Express)
@@ -256,6 +267,7 @@ setInterval(() => {
 }, 30000);
 
 app.listen(3000);
+
 ```
 
 ### TypeScript SSE Client with Events
@@ -362,6 +374,7 @@ client.on('user-connected', (data) => {
 });
 
 client.connect();
+
 ```
 
 ### SSE with Node.js (No Framework)
@@ -431,6 +444,7 @@ setInterval(() => {
 }, 5000);
 
 server.listen(3000);
+
 ```
 
 ### SSE with Authentication
@@ -489,6 +503,7 @@ function sendToUser(userId: string, event: string, data: unknown): void {
     client.res.write(`data: ${JSON.stringify(data)}\n\n`);
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -540,6 +555,7 @@ class NewsFeedService {
     });
   }
 }
+
 ```
 
 ### 2. Live Sports Scores
@@ -585,6 +601,7 @@ class SportsScoreService {
     res.write(`data: ${JSON.stringify({ gameId, ...score })}\n\n`);
   }
 }
+
 ```
 
 ### 3. Live Dashboard Metrics
@@ -625,6 +642,7 @@ class DashboardMetricsService {
     return result;
   }
 }
+
 ```
 
 ### 4. Chat Application (SSE + Fetch)
@@ -675,6 +693,7 @@ class ChatClient {
     this.eventSource.close();
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -693,6 +712,7 @@ res.writeHead(200, {
   'X-Accel-Buffering': 'no', // For nginx
   'Content-Encoding': 'identity', // Disable compression
 });
+
 ```
 
 ### 2. Not Handling Client Disconnects
@@ -725,6 +745,7 @@ app.get('/events', (req, res) => {
     unregisterClient(clientId);
   });
 });
+
 ```
 
 ### 3. Not Using Event IDs
@@ -736,6 +757,7 @@ res.write(`data: ${JSON.stringify(data)}\n\n`);
 // ✅ Good: Include event IDs for reconnection
 res.write(`id: ${event.id}\n`);
 res.write(`data: ${JSON.stringify(event.data)}\n\n`);
+
 ```
 
 ### 4. Not Handling Reconnection
@@ -760,6 +782,7 @@ eventSource.onerror = () => {
   console.log('Reconnecting...');
   // EventSource auto-reconnects, but we can track state
 };
+
 ```
 
 ### 5. Sending Binary Data
@@ -772,6 +795,7 @@ res.write(binaryData); // Will fail
 const base64 = binaryData.toString('base64');
 res.write(`data: ${base64}\n\n`);
 // Or use WebSockets for binary data
+
 ```
 
 ## Best Practices
@@ -788,6 +812,7 @@ setInterval(() => {
     }
   });
 }, 30000);
+
 ```
 
 ### 2. Event ID Management
@@ -822,6 +847,7 @@ function getEventsAfterId(lastId: number): Event[] {
   });
   return events.sort((a, b) => a.id - b.id);
 }
+
 ```
 
 ### 3. Compression
@@ -845,6 +871,7 @@ app.get('/events', (req, res) => {
 
   // Use sendEvent instead of res.write
 });
+
 ```
 
 ### 4. Connection Pooling
@@ -873,6 +900,7 @@ class SSEConnectionPool {
     }
   }
 }
+
 ```
 
 ### 5. Error Handling
@@ -902,6 +930,7 @@ app.get('/events', async (req, res) => {
     }
   }
 });
+
 ```
 
 ## Performance Considerations
@@ -910,33 +939,40 @@ app.get('/events', async (req, res) => {
 
 ```text
 SSE vs WebSockets Memory:
+
 - SSE: ~1-2 KB per connection (HTTP overhead)
 - WebSockets: ~0.5-1 KB per connection
 
 10,000 connections:
+
 - SSE: ~10-20 MB
 - WebSockets: ~5-10 MB
+
 ```
 
 ### Throughput
 
 ```text
 Message Rate:
+
 - SSE: 10,000-50,000 messages/second
 - WebSockets: 50,000-500,000 messages/second
 
 SSE is sufficient for most server-push scenarios
+
 ```
 
 ### Latency
 
 ```text
 Latency Comparison:
+
 - HTTP Polling: 100-500ms
 - SSE: 10-50ms
 - WebSockets: 1-10ms
 
 SSE provides good latency for server-push use cases
+
 ```
 
 ## Interview Questions
@@ -944,30 +980,35 @@ SSE provides good latency for server-push use cases
 ### Beginner (5)
 
 1. **What are Server-Sent Events (SSE)?**
+
    - Standard for server-to-client streaming over HTTP
    - Uses EventSource API on client
    - Provides automatic reconnection
    - Unidirectional (server → client)
 
 2. **How does SSE differ from WebSockets?**
+
    - SSE is unidirectional; WebSockets are bidirectional
    - SSE uses HTTP; WebSockets use separate protocol
    - SSE has automatic reconnection; WebSockets require manual
    - SSE is simpler to implement
 
 3. **What is the EventSource API?**
+
    - Browser API for receiving SSE
    - Handles connection management
    - Provides automatic reconnection
    - Supports event types and IDs
 
 4. **When should you use SSE vs WebSockets?**
+
    - SSE: Server push, notifications, live feeds
    - WebSockets: Chat, gaming, collaboration
    - SSE: When bidirectional not needed
    - WebSockets: When low latency critical
 
 5. **How do SSE handle reconnection?**
+
    - Automatic reconnection on disconnect
    - Uses last-event-id header
    - Server can set retry interval
@@ -976,30 +1017,35 @@ SSE provides good latency for server-push use cases
 ### Intermediate (5-8)
 
 6. **How do you implement SSE with authentication?**
+
    - Pass token in query string or header
    - Validate token on connection
    - Associate client with user
    - Clean up on disconnect
 
 7. **How do you handle multiple event types in SSE?**
+
    - Use event field in message
    - Listen for specific events on client
    - Default to 'message' event if not specified
    - Type events for better organization
 
 8. **How do you scale SSE across multiple servers?**
+
    - Use Redis for pub/sub
    - Implement sticky sessions
    - Share client state
    - Load balance connections
 
 9. **How do you handle large payloads in SSE?**
+
    - Implement pagination
    - Use compression
    - Send data in chunks
    - Monitor bandwidth usage
 
 10. **How do you test SSE implementations?**
+
     - Unit test event formatting
     - Integration test connection handling
     - Load test with multiple clients
@@ -1008,6 +1054,7 @@ SSE provides good latency for server-push use cases
 ### Senior (8-12)
 
 11. **Design a real-time notification system with SSE**
+
     - User subscription management
     - Event routing and filtering
     - Persistence for offline users
@@ -1015,24 +1062,28 @@ SSE provides good latency for server-push use cases
     - Analytics and monitoring
 
 12. **How do you handle SSE in microservices?**
+
     - API gateway for connection management
     - Event bus for cross-service communication
     - Centralized subscription service
     - Service discovery for scaling
 
 13. **How do you implement SSE with message queues?**
+
     - Queue messages for reliability
     - Fan-out to multiple subscribers
     - Handle queue backpressure
     - Dead letter queues for failed messages
 
 14. **How do you monitor SSE connections in production?**
+
     - Track connection counts
     - Monitor message rates
     - Alert on error rates
     - Dashboard for real-time visibility
 
 15. **How do you handle SSE during deployments?**
+
     - Graceful connection draining
     - Version negotiation
     - Session migration
@@ -1041,6 +1092,7 @@ SSE provides good latency for server-push use cases
 ### FAANG-style (5-8)
 
 16. **Design a live feed system (Twitter-like)**
+
     - Real-time updates for followed users
     - Timeline generation and caching
     - Fan-out on write vs fan-out on read
@@ -1048,6 +1100,7 @@ SSE provides good latency for server-push use cases
     - Rate limiting and abuse prevention
 
 17. **Design a live sports score system**
+
     - Real-time score updates
     - Game state management
     - Historical data and playback
@@ -1055,6 +1108,7 @@ SSE provides good latency for server-push use cases
     - Analytics and statistics
 
 18. **Design a live collaboration tool**
+
     - Real-time cursor tracking
     - Operation transformation
     - Conflict resolution
@@ -1062,6 +1116,7 @@ SSE provides good latency for server-push use cases
     - Offline support
 
 19. **Design a live auction platform**
+
     - Real-time bidding
     - Timer management
     - Bid validation and fraud detection
@@ -1069,6 +1124,7 @@ SSE provides good latency for server-push use cases
     - Payment integration
 
 20. **Design a live monitoring dashboard**
+
     - Real-time metrics streaming
     - Data aggregation and filtering
     - Alert management
@@ -1078,30 +1134,35 @@ SSE provides good latency for server-push use cases
 ### Follow-ups (5-8)
 
 21. **How do you handle SSE in load-balanced environments?**
+
     - Sticky sessions
     - Redis for state sharing
     - Consistent hashing
     - Health checks
 
 22. **How do you secure SSE endpoints?**
+
     - HTTPS only
     - Token validation
     - Rate limiting
     - Input validation
 
 23. **How do you handle SSE with CDNs?**
+
     - Cache-Control headers
     - Streaming support
     - Edge computing
     - Origin shielding
 
 24. **How do you debug SSE issues?**
+
     - Browser dev tools
     - Server logs
     - Network monitoring
     - Client state inspection
 
 25. **What are SSE alternatives?**
+
     - WebSockets
     - HTTP/2 Server Push
     - gRPC streaming
@@ -1118,6 +1179,7 @@ SSE is ideal for server-to-client streaming with:
 - **Event sourcing**: Natural fit for event-driven architectures
 
 Key considerations:
+
 - Use when bidirectional not needed
 - Implement proper event IDs for reconnection
 - Handle client disconnects gracefully

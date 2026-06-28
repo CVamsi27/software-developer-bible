@@ -14,9 +14,13 @@
 Senior-level behavioral questions evaluate five core competencies:
 
 1. **Technical Leadership**: Making architectural decisions, driving technical excellence
+
 2. **People Leadership**: Mentoring, conflict resolution, team building
+
 3. **Strategic Thinking**: Balancing business and technical needs, long-term planning
+
 4. **Communication**: Influencing stakeholders, explaining complex concepts
+
 5. **Execution**: Delivering results under constraints, managing trade-offs
 
 For each question, your answer should demonstrate:
@@ -457,6 +461,7 @@ Use this framework to prepare for any leadership question:
 ### Step 1: Identify Your Leadership Theme
 
 Every strong leader has a narrative. Examples:
+
 - "I transform struggling teams into high performers"
 - "I bridge technical and business worlds"
 - " I make complex systems simple"
@@ -473,6 +478,7 @@ Your answers should feel connected, not random. Each story should reinforce your
 ### Step 4: Prepare for Depth
 
 Senior interviewers will drill into your answers. For each story, prepare:
+
 - What would you do differently?
 - What did you learn?
 - How did this change your approach?
@@ -489,11 +495,17 @@ The strongest candidates show growth. Your answers should demonstrate how your l
 For senior leadership behavioral questions:
 
 1. **Show judgment**: Not just what you did, but why you chose that approach
+
 2. **Quantify impact**: Numbers make your leadership tangible
+
 3. **Demonstrate systems thinking**: Show how your decisions affected the broader organization
+
 4. **Be honest about failures**: They reveal more about your leadership than successes
+
 5. **Show evolution**: Demonstrate how you've grown as a leader
+
 6. **Connect to the role**: Show why your leadership experience matters here
+
 7. **Prepare for depth**: Senior interviewers will drill into your answers
 
 Remember: senior leadership isn't about having all the answers. It's about creating environments where the team finds the best answers, making decisions under uncertainty, and driving impact through others.
@@ -501,6 +513,7 @@ Remember: senior leadership isn't about having all the answers. It's about creat
 ---
 
 ## References & Learn More
+
 - [The Making of a Manager by Julie Zhuo](https://www.amazon.com/Making-Manager-What-Everyone-Looks/dp/0735219567)
 - [High Output Management by Andrew Grove](https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884)
 - [Leaders Eat Last by Simon Sinek](https://www.amazon.com/Leaders-Eat-Last-Why-Together/dp/1591845327)

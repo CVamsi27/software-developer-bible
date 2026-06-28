@@ -7,6 +7,7 @@
 ```text
 Query   → Read operations (idempotent, side-effect free)
 Mutation → Write operations (sequential execution, side effects allowed)
+
 ```
 
 ---
@@ -44,6 +45,7 @@ GraphQL Approach:
 │  3. Client controls response shape                              │
 │  4. Type-safe operations                                        │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Execution Guarantees
@@ -66,6 +68,7 @@ Query: { user(id: 1) { name posts { title } } }
 1. Parse query into AST
         │
         ▼
+
 2. Validate against schema
         │
         ├── User type exists? ✓
@@ -73,6 +76,7 @@ Query: { user(id: 1) { name posts { title } } }
         ├── posts field exists? ✓
         │
         ▼
+
 3. Execute resolvers (parallel where possible)
         │
         ├── user(id: 1) ─────┐
@@ -82,10 +86,13 @@ Query: { user(id: 1) { name posts { title } } }
         └── User.posts ──────┘
         │
         ▼
+
 4. Assemble response matching query shape
         │
         ▼
+
 5. Return { data: { user: { name: "...", posts: [...] } } }
+
 ```
 
 ### Mutation Execution Flow
@@ -96,12 +103,14 @@ Mutation: { createUser(input: { name: "John" }) { id name } }
 1. Parse mutation into AST
         │
         ▼
+
 2. Validate against schema
         │
         ├── CreateUserInput type valid? ✓
         ├── CreateUserPayload type valid? ✓
         │
         ▼
+
 3. Execute resolvers (SEQUENTIAL)
         │
         ├── Mutation.createUser(input: { name: "John" })
@@ -112,7 +121,9 @@ Mutation: { createUser(input: { name: "John" }) { id name } }
         └── User.name (after mutation completes)
         │
         ▼
+
 4. Return { data: { createUser: { id: "...", name: "John" } } }
+
 ```
 
 ---
@@ -166,6 +177,7 @@ query {
     views
   }
 }
+
 ```
 
 ### Query with Arguments and Filtering
@@ -219,6 +231,7 @@ query GetPostsSorted($sort: SortInput!) {
     }
   }
 }
+
 ```
 
 ### Query with Fragments
@@ -271,6 +284,7 @@ query Search($query: String!) {
     }
   }
 }
+
 ```
 
 ### Basic Mutations
@@ -302,6 +316,7 @@ mutation DeletePost($id: ID!) {
     deletedPostId
   }
 }
+
 ```
 
 ### Mutations with Error Handling
@@ -352,6 +367,7 @@ mutation CreateUser($input: CreateUserInput!) {
     }
   }
 }
+
 ```
 
 ### Mutations with Input Validation
@@ -396,6 +412,7 @@ mutation CreatePostWithTags($input: CreatePostInput!) {
     }
   }
 }
+
 ```
 
 ### Optimistic Updates
@@ -455,6 +472,7 @@ function PostEditor({ post }: { post: Post }) {
     </form>
   );
 }
+
 ```
 
 ### Variables and Operation Names
@@ -521,6 +539,7 @@ function UserPosts({ userId }: { userId: string }) {
     </div>
   );
 }
+
 ```
 
 ### Server-Side Error Handling
@@ -582,6 +601,7 @@ export const resolvers: Resolvers = {
     },
   },
 };
+
 ```
 
 ### Client-Side Error Handling
@@ -623,6 +643,7 @@ function UserProfile({ userId }: { userId: string }) {
     </div>
   );
 }
+
 ```
 
 ---
@@ -685,6 +706,7 @@ query ProductCatalog(
     }
   }
 }
+
 ```
 
 ### 2. User Registration Flow
@@ -742,6 +764,7 @@ input CompleteProfileInput {
   website: URL
   interests: [String!]
 }
+
 ```
 
 ### 3. Real-time Chat
@@ -781,6 +804,7 @@ subscription OnNewMessage($conversationId: ID!) {
     createdAt
   }
 }
+
 ```
 
 ### 4. Content Management
@@ -836,6 +860,7 @@ input PublishOptions {
   socialMedia: Boolean = false
   scheduleAt: DateTime
 }
+
 ```
 
 ---
@@ -860,6 +885,7 @@ query GetUser {
 }
 
 # Why: Better debugging, logging, and error tracking
+
 ```
 
 ### 2. Over-fetching in Queries
@@ -904,6 +930,7 @@ query {
     }
   }
 }
+
 ```
 
 ### 3. Missing Error Handling in Mutations
@@ -938,6 +965,7 @@ const handleSubmit = async (input) => {
     showToast('An error occurred', 'error');
   }
 };
+
 ```
 
 ### 4. Ignoring Query Variables
@@ -965,6 +993,7 @@ const { data } = await client.query({
   query: GET_USER,
   variables: { id: userId }
 });
+
 ```
 
 ### 5. Not Handling Loading States
@@ -990,6 +1019,7 @@ function UserProfile({ userId }) {
 
   return <h1>{data.user.name}</h1>;
 }
+
 ```
 
 ### 6. Not Using Fragments
@@ -1041,6 +1071,7 @@ const GET_USER_POSTS = gql`
     }
   }
 `;
+
 ```
 
 ---
@@ -1050,6 +1081,7 @@ const GET_USER_POSTS = gql`
 ### Query Best Practices
 
 ```text
+
 1. Always name operations
    query GetUser { ... }
 
@@ -1067,11 +1099,13 @@ const GET_USER_POSTS = gql`
 
 6. Use operation-level directives
    query GetUser @skip(if: $skipUser) { ... }
+
 ```
 
 ### Mutation Best Practices
 
 ```text
+
 1. Use Input types for mutation arguments
    mutation CreateUser(input: CreateUserInput!) { ... }
 
@@ -1089,11 +1123,13 @@ const GET_USER_POSTS = gql`
 
 6. Validate input in resolvers, not client
    if (!input.email) return error;
+
 ```
 
 ### Error Handling Best Practices
 
 ```text
+
 1. Use error codes for programmatic handling
    code: NOT_FOUND, UNAUTHORIZED, VALIDATION_ERROR
 
@@ -1101,6 +1137,7 @@ const GET_USER_POSTS = gql`
    { field: "email", message: "Invalid email" }
 
 3. Distinguish between user and system errors
+
    - User errors: validation, not found, unauthorized
    - System errors: database, network, internal
 
@@ -1109,6 +1146,7 @@ const GET_USER_POSTS = gql`
 
 5. Log errors for monitoring
    logger.error("Query failed", { query, error });
+
 ```
 
 ---
@@ -1147,6 +1185,7 @@ const server = new ApolloServer({
     queryComplexityRule({ maximumComplexity: 1000 })
   ]
 });
+
 ```
 
 ### Mutation Optimization
@@ -1177,6 +1216,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -1215,6 +1255,7 @@ const resolvers = {
    Use multipart form data specification or separate REST endpoints. Apollo Server supports this via the Upload scalar type.
 
 10. **What is the difference between `fetchPolicy` options in Apollo Client?**
+
     - `cache-first`: Use cache, fetch if missing
     - `network-only`: Always fetch, update cache
     - `cache-and-network`: Return cache, also fetch
@@ -1223,6 +1264,7 @@ const resolvers = {
 ### Senior
 
 11. **How would you implement optimistic updates for a complex mutation?**
+
     ```typescript
     const [updatePost] = useMutation(UPDATE_POST, {
       optimisticResponse: {
@@ -1245,6 +1287,7 @@ const resolvers = {
         });
       },
     });
+
 ```
 
 12. **How do you handle mutations that affect multiple parts of the cache?**

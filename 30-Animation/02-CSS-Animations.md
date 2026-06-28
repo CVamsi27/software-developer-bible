@@ -4,6 +4,7 @@
 CSS animations provide a way to create smooth, performant animations using only CSS, without JavaScript. They include transitions for simple state changes and keyframe animations for complex sequences.
 
 ## Why Do We Need It?
+
 - **Performance**: Hardware-accelerated, runs on GPU
 - **Simplicity**: No JavaScript required for basic animations
 - **Declarative**: Define animations in CSS
@@ -42,6 +43,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -106,6 +108,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 .cubic-bezier {
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
 ```
 
 ### 2. CSS Keyframe Animations
@@ -198,6 +201,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 .bounce {
   animation: bounce 1s ease-in-out;
 }
+
 ```
 
 ### 3. Transform Properties
@@ -265,6 +269,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 .origin-custom {
   transform-origin: 30% 70%;
 }
+
 ```
 
 ### 4. Animation Properties
@@ -321,6 +326,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 .running {
   animation-play-state: running;
 }
+
 ```
 
 ### 5. Performance Optimization
@@ -358,6 +364,7 @@ CSS animations provide a way to create smooth, performant animations using only 
 .bad-position {
   left: 100px; /* Bad for performance */
 }
+
 ```
 
 ### 6. Responsive Animations
@@ -387,6 +394,7 @@ CSS animations provide a way to create smooth, performant animations using only 
     animation-duration: 0.5s;
   }
 }
+
 ```
 
 ### 7. CSS Variables in Animations
@@ -413,11 +421,13 @@ CSS animations provide a way to create smooth, performant animations using only 
 .dynamic:hover {
   --scale: 1.2;
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### Button Hover Effects
+
 ```css
 .button {
   background: linear-gradient(45deg, #007bff, #0056b3);
@@ -455,9 +465,11 @@ CSS animations provide a way to create smooth, performant animations using only 
 .button:hover::before {
   left: 100%;
 }
+
 ```
 
 ### Loading Skeleton
+
 ```css
 @keyframes shimmer {
   0% {
@@ -479,9 +491,11 @@ CSS animations provide a way to create smooth, performant animations using only 
   animation: shimmer 1.5s infinite;
   border-radius: 4px;
 }
+
 ```
 
 ### Page Transition
+
 ```css
 .page {
   opacity: 0;
@@ -506,22 +520,31 @@ CSS animations provide a way to create smooth, performant animations using only 
     transform: translateY(-20px);
   }
 }
+
 ```
 
 ## Common Mistakes
 
 1. **Animating non-transform properties**: width, height, margin cause reflows
+
 2. **Missing will-change**: Can cause performance issues
+
 3. **Overusing will-change**: Can consume GPU memory
+
 4. **Ignoring reduced motion**: Accessibility concern
+
 5. **Not using transform**: Missing hardware acceleration
 
 ## Best Practices
 
 1. **Use transform properties**: translate, scale, rotate, opacity
+
 2. **Add will-change**: For complex animations
+
 3. **Respect reduced motion**: Check prefers-reduced-motion
+
 4. **Keep animations subtle**: Enhance, don't distract
+
 5. **Use CSS variables**: For dynamic values
 
 ## Performance Considerations
@@ -550,75 +573,99 @@ CSS Animation Performance:
 │  • Use ease-in for exiting                                      │
 │  • Use ease-in-out for UI state changes                         │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
 
 ### Beginner (5)
+
 1. **What is the difference between transitions and keyframe animations?**
+
    - Answer: Transitions animate between two states; keyframe animations can have multiple states and more control.
 
 2. **What is the transform property?**
+
    - Answer: A CSS property for 2D/3D transformations (translate, scale, rotate, skew).
 
 3. **What is hardware acceleration?**
+
    - Answer: Using GPU for animations, achieved with transform and opacity properties.
 
 4. **What is will-change?**
+
    - Answer: A CSS property that hints to the browser about upcoming animations for optimization.
 
 5. **What is prefers-reduced-motion?**
+
    - Answer: A media query that detects if user prefers reduced motion for accessibility.
 
 ### Intermediate (5)
+
 6. **How do you create a CSS transition?**
+
    - Answer: Use `transition` property: `transition: transform 0.3s ease;`
 
 7. **What is the animation-fill-mode?**
+
    - Answer: Defines how styles apply before and after animation (forwards, backwards, both).
 
 8. **How do you pause a CSS animation?**
+
    - Answer: Use `animation-play-state: paused;`
 
 9. **What is the transform-origin property?**
+
    - Answer: Defines the point around which transformations occur.
 
 10. **How do you create infinite animations?**
+
     - Answer: Use `animation-iteration-count: infinite;`
 
 ### Senior (10)
 11. **How do you optimize CSS animations for performance?**
+
     - Answer: Use transform/opacity, add will-change, avoid animating layout properties, respect reduced motion.
 
 12. **What causes animation jank?**
+
     - Answer: Animating layout properties, excessive DOM manipulation, heavy JavaScript, main thread blocking.
 
 13. **How do you create complex animation sequences?**
+
     - Answer: Use animation-delay, multiple keyframes, or JavaScript animation libraries.
 
 14. **How do you handle animations in responsive design?**
+
     - Answer: Use media queries, CSS variables, and respect prefers-reduced-motion.
 
 15. **What is the difference between animation and transition?**
+
     - Answer: Animation has more control (keyframes, iteration, direction), transition is simpler for state changes.
 
 16. **How do you create 3D transforms?**
+
     - Answer: Use transform-style: preserve-3d and perspective property.
 
 17. **How do you handle animations with React?**
+
     - Answer: Use CSS classes, styled-components, or animation libraries like Framer Motion.
 
 18. **What is the performance impact of box-shadow animations?**
+
     - Answer: Box-shadow is not GPU-accelerated, can cause repaints. Use filter: drop-shadow() instead.
 
 19. **How do you test CSS animations?**
+
     - Answer: Visual regression testing, manual testing, automation with tools like Playwright.
 
 20. **How do you handle animations in SSR?**
+
     - Answer: CSS animations work in SSR, but JavaScript animations need client-side hydration.
 
 ### FAANG-style (5)
 21. **Design an animation system for a design system**
+
 - **Answer**:
   - Animation tokens (duration, easing)
   - Transition utilities
@@ -627,6 +674,7 @@ CSS Animation Performance:
   - Accessibility compliance
 
 22. **How would you optimize animations for low-end devices?**
+
 - **Answer**:
   - Simplify animations
   - Reduce DOM changes
@@ -634,6 +682,7 @@ CSS Animation Performance:
   - Provide fallbacks
 
 23. **Explain animation performance monitoring**
+
 - **Answer**:
   - Frame rate measurement
   - Layout thrashing detection
@@ -641,12 +690,14 @@ CSS Animation Performance:
   - User experience metrics
 
 24. **How do you handle animations in micro-frontends?**
+
 - **Answer**:
   - Consistent animation tokens
   - Performance budgets
   - Shared animation library
 
 25. **Design a page transition system**
+
 - **Answer**:
   - Route-based transitions
   - Loading states
@@ -655,18 +706,23 @@ CSS Animation Performance:
 
 ### Follow-ups (5)
 26. **How do you handle animations in React Server Components?**
+
 - **Answer**: CSS animations work in RSC, but JavaScript animations need client components.
 
 27. **How do you handle animations with third-party libraries?**
+
 - **Answer**: Use CSS-in-JS libraries that support animations, or use animation libraries.
 
 28. **How do you handle animation performance at scale?**
+
 - **Answer**: Automated testing, performance budgets, monitoring, and optimization.
 
 29. **How do you handle animations in different browsers?**
+
 - **Answer**: Use vendor prefixes, feature detection, and fallbacks.
 
 30. **How do you handle animations with content changes?**
+
 - **Answer**: Use layout animations, FLIP technique, or animation libraries.
 
 ## Summary

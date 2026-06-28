@@ -36,6 +36,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 │                                                             │
 │  Both can read/write without blocking each other!           │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Tuple Visibility Rules
@@ -64,6 +65,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 │  │  • xmax is aborted (deleting txn rolled back)        │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Transaction ID Flow
@@ -94,6 +96,7 @@ MVCC (Multi-Version Concurrency Control) is a database concurrency control techn
 │  xmax: Transaction ID that deleted/updated the tuple        │
 │       (0 if not deleted)                                    │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -123,6 +126,7 @@ SELECT balance FROM accounts WHERE id = 1;
 COMMIT;
 SELECT balance FROM accounts WHERE id = 1;
 -- Returns 500
+
 ```
 
 ### Inspecting Tuple Versions
@@ -152,6 +156,7 @@ SELECT
 -- txid_current | txid_status | txid_status
 -- -------------+-------------+------------
 --          102 |    committed|   aborted
+
 ```
 
 ### Vacuum and Dead Tuples
@@ -176,6 +181,7 @@ VACUUM ANALYZE accounts;   -- Vacuum + update statistics
 SHOW autovacuum;
 SHOW autovacuum_vacuum_threshold;
 SHOW autovacuum_vacuum_scale_factor;
+
 ```
 
 ### Transaction ID Wraparound
@@ -205,6 +211,7 @@ SELECT
 FROM pg_class
 WHERE relkind = 'r'
 ORDER BY xid_age DESC;
+
 ```
 
 ### Prisma with MVCC
@@ -239,6 +246,7 @@ async function transferMoney(fromId: number, toId: number, amount: number) {
     return { success: true };
   });
 }
+
 ```
 
 ## Real-World Use Cases
@@ -263,6 +271,7 @@ COMMIT;
 
 -- Other users can still READ the product (non-blocking)
 -- But can't UPDATE until this transaction commits
+
 ```
 
 ### Reporting Queries
@@ -282,6 +291,7 @@ ORDER BY 1;
 
 -- Writes to orders table continue without blocking
 COMMIT;
+
 ```
 
 ### Audit Trail
@@ -315,6 +325,7 @@ BEGIN
     RETURN COALESCE(NEW, OLD);
 END;
 $$ LANGUAGE plpgsql;
+
 ```
 
 ## Common Mistakes
@@ -337,6 +348,7 @@ SELECT balance FROM accounts WHERE id = 1;
 -- Returns 100, not 200!
 
 COMMIT;  -- Must commit to see new data
+
 ```
 
 ### 2. Ignoring Dead Tuples
@@ -355,6 +367,7 @@ FROM pg_stat_user_tables
 WHERE n_dead_tup > 1000;
 
 VACUUM ANALYZE large_table;
+
 ```
 
 ### 3. Long Transactions Prevent Vacuum
@@ -370,6 +383,7 @@ COMMIT;
 BEGIN;
 -- Do work quickly
 COMMIT;
+
 ```
 
 ## Best Practices
@@ -408,6 +422,7 @@ SET statement_timeout = '30s';
 -- 7. Use appropriate isolation levels
 -- Read Committed for most cases
 -- Serializable for financial transactions
+
 ```
 
 ## Performance Considerations
@@ -433,6 +448,7 @@ WHERE relname = 'accounts';
 -- PostgreSQL uses 32-bit transaction IDs
 -- Must freeze old tuples before wraparound
 -- Autovacuum handles this automatically
+
 ```
 
 ## Interview Questions
@@ -565,6 +581,7 @@ VACUUM FULL table_name;  -- Locks table!
 -- Autovacuum settings
 SHOW autovacuum;
 ALTER TABLE table SET (autovacuum_vacuum_scale_factor = 0.01);
+
 ```
 
 ## References & Learn More

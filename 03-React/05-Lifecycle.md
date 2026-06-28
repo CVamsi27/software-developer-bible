@@ -11,8 +11,11 @@ Understanding the lifecycle is crucial for managing side effects, subscriptions,
 ### The Problem
 
 Components need to perform actions at specific points in their existence:
+
 1. **On mount**: Fetch data, set up subscriptions, initialize DOM
+
 2. **On update**: Respond to prop/state changes, re-fetch data
+
 3. **On unmount**: Clean up subscriptions, cancel API calls, release resources
 
 Without lifecycle hooks, developers would need manual tracking systems, leading to memory leaks and bugs.
@@ -43,6 +46,7 @@ Function Components (React 16.8+):
 │ }, []);                                                       │
 │ useLayoutEffect(() => {}, [])  → After DOM mutation         │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## How It Works
@@ -118,6 +122,7 @@ ERROR HANDLING:
 │    - Log errors to error reporting service                  │
 │    - Called during commit phase                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Function Component Lifecycle with useEffect
@@ -167,6 +172,7 @@ CLEANUP FUNCTION:
 │ 1. Before the effect re-runs (deps changed)                │
 │ 2. When component unmounts                                  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Lifecycle Method Mapping
@@ -185,6 +191,7 @@ shouldComponentUpdate() →    React.memo() + useMemo/useCallback
 getDerivedStateFromProps() → derive state during render
 getSnapshotBeforeUpdate() → useLayoutEffect + ref
 componentDidCatch()    →     Error Boundary component
+
 ```
 
 ## Code Examples
@@ -248,6 +255,7 @@ class UserProfile extends Component<Props, State> {
     return <div>{user?.name}</div>;
   }
 }
+
 ```
 
 ### Function Component with useEffect
@@ -309,6 +317,7 @@ const UserProfile = ({ userId }: { userId: string }) => {
   if (loading) return <div>Loading...</div>;
   return <div>{user?.name}</div>;
 };
+
 ```
 
 ### Cleanup Function Patterns
@@ -365,6 +374,7 @@ const useFetch = (url: string) => {
 
   return data;
 };
+
 ```
 
 ### Conditional Lifecycle
@@ -408,6 +418,7 @@ const MyComponent = ({ userId, theme }: Props) => {
     return () => tracker.stop();
   }, [userId]);
 };
+
 ```
 
 ## Real-World Use Cases
@@ -448,6 +459,7 @@ const UserProfile = ({ userId }: { userId: string }) => {
   if (!user) return <div>Loading...</div>;
   return <div>{user.name}</div>;
 };
+
 ```
 
 ### 2. WebSocket Connection Management
@@ -475,6 +487,7 @@ const useWebSocket = (url: string) => {
 
   return messages;
 };
+
 ```
 
 ### 3. Document Title Sync
@@ -496,6 +509,7 @@ const Dashboard = () => {
   useDocumentTitle('Dashboard - MyApp');
   return <div>Dashboard</div>;
 };
+
 ```
 
 ### 4. Intersection Observer for Lazy Loading
@@ -524,6 +538,7 @@ const useIntersectionObserver = (
 
   return isVisible;
 };
+
 ```
 
 ### 5. Window Resize Handler
@@ -552,6 +567,7 @@ const useWindowSize = () => {
 
   return size;
 };
+
 ```
 
 ## Common Mistakes
@@ -580,6 +596,7 @@ const GoodComponent = () => {
     return () => clearInterval(interval); // Cleanup
   }, []);
 };
+
 ```
 
 ### 2. Using useEffect for Derived State
@@ -605,6 +622,7 @@ const FilteredList = ({ items, query }: Props) => {
 
   return <List items={filtered} />;
 };
+
 ```
 
 ### 3. Incorrect Dependency Arrays
@@ -634,6 +652,7 @@ const GoodComponent = ({ userId }: { userId: string }) => {
     fetchUser(userId);
   }, [userId]); // Only runs when userId changes
 };
+
 ```
 
 ### 4. Calling setState Without Condition
@@ -662,16 +681,23 @@ const GoodComponent = () => {
 
   return <div>{count}</div>;
 };
+
 ```
 
 ## Best Practices
 
 1. **Always return cleanup functions**: For subscriptions, timers, event listeners, and fetch requests.
+
 2. **Use dependency arrays correctly**: Include all values the effect uses.
+
 3. **Compute derived state during render**: Don't use `useEffect` for data transformation.
+
 4. **Split effects by concern**: One effect per side effect.
+
 5. **Use `useLayoutEffect` for DOM measurements**: When you need to measure before paint.
+
 6. **Use `useEffect` for everything else**: Subscriptions, data fetching, logging.
+
 7. **Avoid async functions in useEffect**: Use inner async function or `.then()`.
 
 ## Performance Considerations
@@ -705,6 +731,7 @@ A: The lifecycle is the series of events from when a component is created (mount
 
 **Q2: What are the main lifecycle methods in class components?**
 A: Main methods:
+
 - `componentDidMount()`: After first render
 - `componentDidUpdate()`: After re-renders
 - `componentWillUnmount()`: Before unmount
@@ -722,6 +749,7 @@ A: `useLayoutEffect` runs synchronously after DOM mutations but before the brows
 
 **Q6: What is `componentDidMount` used for?**
 A: `componentDidMount` runs after the first render and DOM paint. It's used for:
+
 - Setting up subscriptions
 - Fetching initial data
 - Direct DOM manipulation
@@ -729,6 +757,7 @@ A: `componentDidMount` runs after the first render and DOM paint. It's used for:
 
 **Q7: What is `componentWillUnmount` used for?**
 A: `componentWillUnmount` runs before the component is removed from the DOM. It's used to:
+
 - Clean up subscriptions
 - Cancel API calls
 - Remove event listeners
@@ -747,6 +776,7 @@ A: Mounting: constructor → getDerivedStateFromProps → render → componentDi
 
 **Q11: How do you handle data fetching in function components?**
 A:
+
 ```typescript
 const fetchData = async (id: string) => {
   const response = await fetch(`/api/data/${id}`);
@@ -775,10 +805,12 @@ const MyComponent = ({ id }: { id: string }) => {
   if (loading) return <Spinner />;
   return <DataDisplay data={data} />;
 };
+
 ```
 
 **Q12: How do you handle multiple side effects?**
 A: Use multiple `useEffect` calls, each handling a single concern:
+
 ```typescript
 const MyComponent = ({ userId, theme }: Props) => {
   // Effect 1: Fetch user data
@@ -796,6 +828,7 @@ const MyComponent = ({ userId, theme }: Props) => {
     trackPageView(userId);
   }, [userId]);
 };
+
 ```
 
 **Q13: What is `getDerivedStateFromProps` and when should you use it?**
@@ -809,12 +842,14 @@ A: Use error boundaries (class components with `componentDidCatch` or `getDerive
 
 **Q16: What is the difference between `componentDidMount` and `useEffect` with `[]`?**
 A: Functionally similar, but timing differs:
+
 - `componentDidMount`: After first render, before paint
 - `useEffect([])`: After first render, after paint
 `useEffect` is slightly delayed but doesn't block paint.
 
 **Q17: How do you handle async operations in `useEffect`?**
 A: Don't use async functions directly. Use inner async function or `.then()`:
+
 ```typescript
 useEffect(() => {
   const asyncFn = async () => {
@@ -823,16 +858,19 @@ useEffect(() => {
   };
   asyncFn();
 }, []);
+
 ```
 
 **Q18: What is the "zombie children" problem?**
 A: When a component updates state after unmounting (often in async operations). Prevention:
+
 - Use AbortController for fetch
 - Check if component is still mounted
 - Use cleanup functions
 
 **Q19: How do you handle window focus/blur events?**
 A:
+
 ```typescript
 useEffect(() => {
   const handleFocus = () => console.log('focused');
@@ -846,6 +884,7 @@ useEffect(() => {
     window.removeEventListener('blur', handleBlur);
   };
 }, []);
+
 ```
 
 **Q20: What is the order of useEffect execution?**
@@ -855,11 +894,17 @@ A: Effects run in the order they're defined, after the browser paints. Multiple 
 
 **Q21: Explain the complete lifecycle of a Suspense boundary.**
 A: When a component suspends:
+
 1. React pauses rendering of the suspended subtree
+
 2. The Suspense boundary shows the fallback
+
 3. React continues rendering other parts of the tree
+
 4. When the promise resolves, React resumes rendering
+
 5. React commits all changes atomically
+
 6. The real UI replaces the fallback
 
 **Q22: How does the lifecycle differ with React Server Components?**
@@ -867,6 +912,7 @@ A: Server Components don't have lifecycle methods or hooks. They run once on the
 
 **Q23: How do you test lifecycle behavior?**
 A:
+
 ```typescript
 import { render, act, cleanup } from '@testing-library/react';
 
@@ -888,10 +934,12 @@ test('fetches data on mount', async () => {
 
   mockFetch.mockRestore();
 });
+
 ```
 
 **Q24: How do you handle lifecycle in custom hooks?**
 A: Custom hooks encapsulate lifecycle logic:
+
 ```typescript
 const useDocumentTitle = (title: string) => {
   useEffect(() => {
@@ -907,10 +955,12 @@ const useInterval = (callback: Function, delay: number) => {
     return () => clearInterval(id);
   }, [callback, delay]);
 };
+
 ```
 
 **Q25: What are the performance implications of lifecycle methods?**
 A:
+
 - `componentDidMount`/`useEffect([])`: One-time cost
 - `componentDidUpdate`/`useEffect([deps])`: Per-change cost
 - `render`/component function: Every render
@@ -918,6 +968,7 @@ A:
 
 **Q26: How does React handle lifecycle during concurrent rendering?**
 A: During concurrent rendering:
+
 - Render phase can be interrupted
 - Effects are batched and applied after commit
 - `useLayoutEffect` still runs synchronously
@@ -925,6 +976,7 @@ A: During concurrent rendering:
 
 **Q27: What is the relationship between lifecycle and React DevTools?**
 A: React DevTools shows:
+
 - Component mount/unmount timing
 - Re-render reasons (which props/state changed)
 - Effect timing and dependencies
@@ -932,18 +984,21 @@ A: React DevTools shows:
 
 **Q28: How do you handle lifecycle in error boundaries?**
 A: Error boundaries use:
+
 - `getDerivedStateFromError`: Update state on error
 - `componentDidCatch`: Log errors
 - They don't have mount/update lifecycle for error handling
 
 **Q29: How do you handle lifecycle with React.memo?**
 A: `React.memo` wraps components to skip re-renders. This affects lifecycle:
+
 - `componentDidUpdate`/`useEffect` only run when props change
 - Skipped renders don't call component function
 - Memoization reduces lifecycle calls
 
 **Q30: What are the common lifecycle patterns in production apps?**
 A:
+
 - Data fetching with caching
 - WebSocket connection management
 - Document title sync
@@ -956,22 +1011,33 @@ A:
 
 **Q31: Design a lifecycle management system for a complex app.**
 A:
+
 1. **Custom hooks**: Encapsulate lifecycle logic
+
 2. **Context providers**: Global lifecycle management
+
 3. **Error boundaries**: Catch lifecycle errors
+
 4. **Suspense**: Handle async lifecycle
+
 5. **Cleanup registry**: Centralized cleanup management
 
 **Q32: How would you debug a lifecycle-related memory leak?**
 A:
+
 1. **Chrome DevTools Memory**: Heap snapshots to find leaked objects
+
 2. **React DevTools**: Check for unmounted component state updates
+
 3. **Custom logging**: Log mount/unmount events
+
 4. **Network tab**: Check for pending requests after unmount
+
 5. **Profilers**: React.Profiler for lifecycle performance
 
 **Q33: Analyze the performance impact of lifecycle in large apps.**
 A:
+
 - **Mount**: 1000 components × 1ms each = 1s total
 - **Update**: Frequent updates cause cascading re-renders
 - **Unmount**: Cleanup functions add overhead
@@ -979,6 +1045,7 @@ A:
 
 **Q34: How would you implement a lifecycle observer pattern?**
 A:
+
 ```typescript
 const useLifecycleObserver = (callbacks: LifecycleCallbacks) => {
   useEffect(() => {
@@ -990,24 +1057,32 @@ const useLifecycleObserver = (callbacks: LifecycleCallbacks) => {
     callbacks.onUpdate?.();
   });
 };
+
 ```
 
 **Q35: Design a lifecycle-aware state management system.**
 A:
+
 1. **State containers**: Manage state with lifecycle hooks
+
 2. **Subscriptions**: Auto-cleanup on unmount
+
 3. **Side effects**: Lifecycle-bound effects
+
 4. **Error handling**: Graceful degradation
+
 5. **Performance**: Memoized selectors
 
 **Q36: How does lifecycle interact with React Suspense and transitions?**
 A: Suspense can suspend lifecycle effects. Transitions can defer effect execution. This creates complex timing:
+
 - Suspense boundaries pause effects
 - Transitions keep old effects until new ones are ready
 - Cleanup runs during transition
 
 **Q37: Analyze the lifecycle of React Server Components.**
 A: Server Components:
+
 - Run once on the server (no lifecycle)
 - Serialized as references
 - Client Components hydrate with normal lifecycle
@@ -1016,26 +1091,41 @@ A: Server Components:
 
 **Q38: How would you implement cross-component lifecycle coordination?**
 A:
+
 1. **Context**: Share lifecycle state across components
+
 2. **Event emitter**: Component communication
+
 3. **Custom hooks**: Coordinated lifecycle logic
+
 4. **Ref forwarding**: Imperative lifecycle access
+
 5. **Render props**: Lifecycle-aware rendering
 
 **Q39: What are the testing strategies for lifecycle behavior?**
 A:
+
 1. **Unit tests**: Test individual lifecycle methods
+
 2. **Integration tests**: Test component interactions
+
 3. **E2E tests**: Test real user scenarios
+
 4. **Performance tests**: Measure lifecycle impact
+
 5. **Memory tests**: Detect lifecycle-related leaks
 
 **Q40: How do you handle lifecycle in micro-frontends?**
 A:
+
 1. **Isolation**: Each micro-frontend has its own lifecycle
+
 2. **Communication**: Event bus between lifecycles
+
 3. **Shared state**: Cross-lifecycle state management
+
 4. **Cleanup**: Proper teardown on unmount
+
 5. **Error boundaries**: Isolate lifecycle failures
 
 ### Follow-ups (5-10)
@@ -1045,6 +1135,7 @@ A: "A component's lifecycle is like a person's life: birth (mount), growing up (
 
 **Q42: What are the edge cases in lifecycle management?**
 A:
+
 - Conditional effects with changing dependencies
 - Async operations completing after unmount
 - Nested effects with complex dependencies
@@ -1053,12 +1144,14 @@ A:
 
 **Q43: How does lifecycle handle the "race condition" problem?**
 A: Race conditions occur when multiple async operations complete out of order. Solutions:
+
 - AbortController to cancel previous requests
 - Race condition detection (latest request wins)
 - State flags to prevent stale updates
 
 **Q44: What is the relationship between lifecycle and React strict mode?**
 A: StrictMode double-renders in development to detect lifecycle issues:
+
 - Missing cleanup functions
 - Impure render functions
 - Unsafe lifecycle methods
@@ -1066,6 +1159,7 @@ A: StrictMode double-renders in development to detect lifecycle issues:
 
 **Q45: How does lifecycle interact with React DevTools Profiler?**
 A: Profiler tracks:
+
 - Component mount/unmount timing
 - Re-render frequency and duration
 - Effect execution time
@@ -1073,6 +1167,7 @@ A: Profiler tracks:
 
 **Q46: What is the future of lifecycle in React?**
 A: React is moving toward:
+
 - Automatic memoization (React Compiler)
 - Better concurrent lifecycle handling
 - Server Components (no lifecycle)
@@ -1081,14 +1176,20 @@ A: React is moving toward:
 
 **Q47: How would you implement a lifecycle debugger?**
 A:
+
 1. **Custom hook**: Log lifecycle events
+
 2. **React DevTools plugin**: Extend DevTools
+
 3. **Performance API**: Measure lifecycle timing
+
 4. **Visual timeline**: Display lifecycle events
+
 5. **Production logging**: Track lifecycle in production
 
 **Q48: How does lifecycle handle the "state update after unmount" problem?**
 A: React 18 warns about state updates after unmount. Prevention:
+
 - Use AbortController for fetch
 - Check component mounted status
 - Use cleanup functions
@@ -1096,6 +1197,7 @@ A: React 18 warns about state updates after unmount. Prevention:
 
 **Q49: What are the testing patterns for lifecycle behavior?**
 A:
+
 ```typescript
 // Test mount behavior
 test('fetches data on mount', async () => {
@@ -1111,10 +1213,12 @@ test('cleans up on unmount', () => {
   unmount();
   // Assert cleanup occurred
 });
+
 ```
 
 **Q50: How does lifecycle interact with React's concurrent features?**
 A: Concurrent features affect lifecycle:
+
 - Render phase can be interrupted
 - Effects are batched and deferred
 - `useLayoutEffect` still synchronous
@@ -1170,6 +1274,7 @@ Best Practices:
 ├── Use useLayoutEffect for DOM measurements
 ├── Use useEffect for side effects
 └── Handle async operations properly
+
 ```
 
 ## References & Learn More

@@ -6,6 +6,7 @@ GraphQL Schema Design is the process of defining the **type system**, **operatio
 
 ```text
 Schema = Type Definitions + Type Relationships + Operations + Directives
+
 ```
 
 The schema is written in the **Schema Definition Language (SDL)**, a declarative syntax that describes what operations are possible and what data can be returned.
@@ -34,6 +35,7 @@ With Schema-First:
 │  4. Breaking change detection                        │
 │  5. Self-documenting API                             │
 └──────────────────────────────────────────────────────┘
+
 ```
 
 ### Schema Design Principles
@@ -82,6 +84,7 @@ With Schema-First:
 │  │  [Post]     │   │  ID!        │                             │
 │  └─────────────┘   └─────────────┘                             │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Type Relationships Diagram
@@ -106,6 +109,7 @@ With Schema-First:
               │              │              │
               │    1:N       │    1:N       │
               └──────────────┴──────────────┘
+
 ```
 
 ---
@@ -520,6 +524,7 @@ enum ErrorCode {
   CONFLICT
   INTERNAL_ERROR
 }
+
 ```
 
 ### TypeScript Type Generation (typegen)
@@ -585,6 +590,7 @@ export interface Post {
 }
 
 // ... more generated types
+
 ```
 
 ### Resolver Implementation with Type Safety
@@ -691,6 +697,7 @@ export const resolvers: Resolvers = {
     },
   },
 };
+
 ```
 
 ### Schema Stitching Example
@@ -784,6 +791,7 @@ const gatewaySchema = stitchSchemas({
     },
   },
 });
+
 ```
 
 ---
@@ -842,12 +850,14 @@ input ProductFilterInput {
   tags: [String!]
   rating: Float
 }
+
 ```
 
 ### 2. CMS Content Model
 
 ```graphql
 union ContentBlock =
+
   | Paragraph
   | Heading
   | Image
@@ -896,6 +906,7 @@ type SEOFields {
   ogImage: URL
   keywords: [String!]
 }
+
 ```
 
 ### 3. Analytics Dashboard Schema
@@ -912,6 +923,7 @@ type Dashboard implements Node {
 }
 
 union Widget =
+
   | ChartWidget
   | MetricWidget
   | TableWidget
@@ -946,6 +958,7 @@ type DataPoint {
   timestamp: DateTime!
   value: Float!
 }
+
 ```
 
 ---
@@ -968,6 +981,7 @@ type Query {
 type Query {
   user(id: ID!): User
 }
+
 ```
 
 ### 2. Inconsistent Naming
@@ -988,6 +1002,7 @@ type Query {
   comments(postId: ID!, first: Int, after: String): CommentConnection!
   tags: [Tag!]!
 }
+
 ```
 
 ### 3. Missing Pagination
@@ -1004,6 +1019,7 @@ type Query {
   users(first: Int, after: String): UserConnection!
   posts(first: Int, after: String): PostConnection!
 }
+
 ```
 
 ### 4. Exposing Internal IDs
@@ -1020,6 +1036,7 @@ type User {
 type User {
   id: ID!  # Opaque, versioned ID (e.g., base64 encoded)
 }
+
 ```
 
 ### 5. No Input Validation
@@ -1038,6 +1055,7 @@ input CreateUserInput {
   email: Email!  # Custom scalar with validation
   age: Int  # Validated in resolver
 }
+
 ```
 
 ### 6. Circular References
@@ -1059,6 +1077,7 @@ type Comment {
 }
 
 # GOOD: Limit depth in resolvers or use DataLoader
+
 ```
 
 ---
@@ -1073,6 +1092,7 @@ Fields:      camelCase   → firstName, createdAt, totalCount
 Enums:       SCREAMING   → POST_STATUS, USER_ROLE
 Arguments:   camelCase   → first, after, search
 Input types: PascalCase + Input suffix → CreateUserInput
+
 ```
 
 ### Schema Evolution
@@ -1091,6 +1111,7 @@ DON'T:
   ✗ Change field types
   ✗ Remove enum values
   ✗ Change argument types
+
 ```
 
 ### Pagination Pattern (Relay Connection)
@@ -1109,6 +1130,7 @@ Connection Pattern:
 │  │ totalCount│                                      │
 │  └──────────┘                                       │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### Error Handling Pattern
@@ -1125,6 +1147,7 @@ type UserError {
   message: String!  # Human-readable message
   code: ErrorCode!  # Machine-readable code
 }
+
 ```
 
 ---
@@ -1165,6 +1188,7 @@ const complexity = getComplexity({
 if (complexity > 1000) {
   throw new Error(`Query too complex: ${complexity}. Maximum: 1000`);
 }
+
 ```
 
 ### Schema-Level Caching
@@ -1188,6 +1212,7 @@ type Post {
   author: User! @cacheControl(maxAge: 300)
   comments: [Comment!]! @cacheControl(maxAge: 60)
 }
+
 ```
 
 ---

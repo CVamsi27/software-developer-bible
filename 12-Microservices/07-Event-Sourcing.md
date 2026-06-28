@@ -7,6 +7,7 @@ Event Sourcing is a design pattern where state changes are stored as an immutabl
 ## Why Do We Need It?
 
 In microservices:
+
 - Complete audit trail of all changes
 - Temporal queries - see state at any point in time
 - Debugging and root cause analysis
@@ -51,6 +52,7 @@ EVENT SOURCING:
 │                                                         │
 │   All events are stored, current state is derived       │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### Event Store Architecture
@@ -89,6 +91,7 @@ EVENT SOURCING:
 │                         │  └───────────────────────┘  │ │
 │                         └─────────────────────────────┘ │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -185,6 +188,7 @@ class EventStore {
     return Math.max(...events.map(e => e.metadata.version)) + 1;
   }
 }
+
 ```
 
 ### TypeScript - Aggregate with Event Sourcing
@@ -374,6 +378,7 @@ class OrderAggregate extends AggregateRoot {
     return order;
   }
 }
+
 ```
 
 ### TypeScript - Projections
@@ -479,6 +484,7 @@ class OrderSummaryProjection implements ProjectionHandler {
     return Array.from(this.orderSummaries.values());
   }
 }
+
 ```
 
 ### TypeScript - CQRS with Event Sourcing
@@ -596,6 +602,7 @@ class OrderQueryHandler {
       .filter(order => order.userId === userId);
   }
 }
+
 ```
 
 ### TypeScript - Temporal Queries
@@ -698,29 +705,34 @@ class TemporalQueryService {
     }
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Financial Systems
+
 - Complete audit trail for transactions
 - Regulatory compliance
 - Temporal queries for reporting
 - Reconciliation and debugging
 
 ### 2. E-Commerce
+
 - Order history and tracking
 - Customer behavior analysis
 - Inventory management
 - Returns and refunds
 
 ### 3. Healthcare
+
 - Patient medical history
 - Audit trail for compliance
 - Temporal queries for diagnosis
 - Research and analytics
 
 ### 4. IoT
+
 - Device state history
 - Telemetry data analysis
 - Predictive maintenance
@@ -729,23 +741,37 @@ class TemporalQueryService {
 ## Common Mistakes
 
 1. **Storing too many events** - Need event compaction/snapshots
+
 2. **Not designing events carefully** - Events are immutable, hard to change
+
 3. **Ignoring event versioning** - Schema evolution challenges
+
 4. **No snapshot strategy** - Slow rebuilds
+
 5. **Tight coupling to event structure** - Breaking changes
+
 6. **Missing correlation IDs** - Can't trace event chains
+
 7. **Not handling event ordering** - Critical for consistency
+
 8. **Ignoring performance** - Event replay can be slow
 
 ## Best Practices
 
 1. **Design events as facts** - Immutable, describe what happened
+
 2. **Use event versioning** - For schema evolution
+
 3. **Implement snapshots** - For performance optimization
+
 4. **Include metadata** - Timestamp, correlation ID, causation ID
+
 5. **Keep events small** - Store references, not full data
+
 6. **Use idempotent handlers** - Events may be replayed
+
 7. **Plan for event compaction** - Manage storage growth
+
 8. **Monitor event throughput** - Performance and capacity planning
 
 ## Performance Considerations
@@ -761,117 +787,152 @@ class TemporalQueryService {
 ### Beginner (5-10)
 
 1. **What is Event Sourcing?**
+
    - Pattern where state changes stored as immutable sequence of events.
 
 2. **Why use Event Sourcing?**
+
    - Complete audit trail, temporal queries, debugging, event-driven integration.
 
 3. **What is an event in Event Sourcing?**
+
    - Immutable fact describing something that happened in the system.
 
 4. **What is an aggregate?**
+
    - Business entity that emits events and maintains consistency.
 
 5. **What is a projection?**
+
    - Read model built by processing events for querying.
 
 6. **What is the difference between command and event?**
+
    - Command: Intent to do something (may be rejected)
    - Event: Fact that something happened (cannot be rejected)
 
 7. **What is event replay?**
+
    - Rebuilding state by processing historical events.
 
 8. **What is a snapshot in Event Sourcing?**
+
    - Saved state at point in time to avoid replaying all events.
 
 ### Intermediate (5-10)
 
 9. **What is CQRS with Event Sourcing?**
+
    - Command Query Responsibility Segregation: Separate write (events) and read (projections) models.
 
 10. **How do you handle event schema evolution?**
+
     - Versioning, upcasting, backward/forward compatibility.
 
 11. **What is eventual consistency in Event Sourcing?**
+
     - Projections may lag behind event store, reads eventually reflect latest events.
 
 12. **How do you handle concurrent modifications?**
+
     - Optimistic concurrency, version checking, conflict resolution.
 
 13. **What is event compaction?**
+
     - Removing or merging old events to reduce storage.
 
 14. **How do you query temporal data?**
+
     - Reconstruct state at specific point in time using events.
 
 15. **What are event store guarantees?**
+
     - Durability, ordering, exactly-once (with idempotency).
 
 16. **How do you handle event ordering?**
+
     - Aggregate-level ordering, sequence numbers, timestamps.
 
 ### Senior (10-15)
 
 17. **Design an Event Sourcing system from scratch.**
+
     - Event store, aggregates, projections, snapshots, versioning.
 
 18. **How do you handle event versioning?**
+
     - Schema registry, upcasters, backward compatibility.
 
 19. **What is the relationship between Event Sourcing and DDD?**
+
     - Aggregates, bounded contexts, domain events, ubiquitous language.
 
 20. **How do you implement event store persistence?**
+
     - Database, event store systems, distributed storage.
 
 21. **Explain event sourcing performance optimization.**
+
     - Snapshots, partitioning, parallel projection, compaction.
 
 22. **How do you handle event sourcing in microservices?**
+
     - Each service owns events, eventual consistency, saga pattern.
 
 23. **What is event sourcing security?**
+
     - Event encryption, access control, audit trail.
 
 24. **How do you test event-sourced systems?**
+
     - Event fixtures, aggregate tests, projection tests.
 
 25. **What are event sourcing limitations?**
+
     - Complexity, eventual consistency, storage growth, learning curve.
 
 ### FAANG-style (5-10)
 
 26. **Design Netflix's event sourcing system.**
+
     - High throughput, multi-region, event-driven architecture.
 
 27. **How would you handle 1M events/second?**
+
     - Sharding, partitioning, distributed event store, caching.
 
 28. **Design event sourcing for global e-commerce.**
+
     - Multi-region, currency, compliance, real-time analytics.
 
 29. **How do you ensure event sourcing reliability?**
+
     - Replication, backup, disaster recovery, monitoring.
 
 30. **Explain event sourcing in serverless architecture.**
+
     - Event-driven functions, state management, cold starts.
 
 ### Follow-ups (5-10)
 
 31. **How do you migrate to Event Sourcing?**
+
     - Strangler fig pattern, dual write, event capture.
 
 32. **What is the impact of Event Sourcing on microservices?**
+
     - Decoupling, async processing, event-driven communication.
 
 33. **How do you debug event-sourced systems?**
+
     - Event replay, temporal queries, distributed tracing.
 
 34. **What is the future of Event Sourcing?**
+
     - Serverless event stores, AI-driven projections, real-time analytics.
 
 35. **How do you choose between Event Sourcing and traditional storage?**
+
     - Audit requirements, temporal queries, event-driven needs.
 
 ## Summary
@@ -915,11 +976,13 @@ Event Sourcing provides complete audit trails and temporal queries by storing im
 │ ✗ Eventual consistency                                  │
 │ ✗ Storage growth                                        │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Microservices Patterns by Chris Richardson](https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543)
 - [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358)
 - [Microservices.io](https://microservices.io/)

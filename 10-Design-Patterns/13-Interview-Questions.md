@@ -26,15 +26,18 @@ class Singleton {
     return Singleton.instance;
   }
 }
+
 ```
 
 **When to use:**
+
 - Database connection pools
 - Configuration managers
 - Logging services
 - Caching mechanisms
 
 **Follow-up:** What are the problems with Singleton?
+
 - Global state, tight coupling, testing difficulties, concurrency issues.
 
 ---
@@ -65,9 +68,11 @@ class VehicleFactory {
     }
   }
 }
+
 ```
 
 **Why useful:**
+
 - Loose coupling
 - Easier maintenance
 - Better testability
@@ -100,9 +105,11 @@ class Subject {
     this.observers.forEach(o => o.update(this));
   }
 }
+
 ```
 
 **Where used:**
+
 - React state management
 - Node.js EventEmitter
 - Event-driven architectures
@@ -133,6 +140,7 @@ class PrinterAdapter implements ModernPrinter {
     this.oldPrinter.printOld(document);
   }
 }
+
 ```
 
 ---
@@ -171,6 +179,7 @@ const query = new QueryBuilder()
   .from('users')
   .where('age > 18')
   .build();
+
 ```
 
 ---
@@ -202,6 +211,7 @@ class ComputerFacade {
     this.cpu.execute();
   }
 }
+
 ```
 
 ---
@@ -209,6 +219,7 @@ class ComputerFacade {
 ### 7. What is the difference between Creational, Structural, and Behavioral patterns?
 
 **Answer:**
+
 - **Creational**: Deal with object creation (Singleton, Factory, Builder)
 - **Structural**: Deal with object composition (Adapter, Facade, Decorator)
 - **Behavioral**: Deal with object communication (Observer, Strategy, Chain of Responsibility)
@@ -237,6 +248,7 @@ class MilkDecorator implements Coffee {
   getCost(): number { return this.coffee.getCost() + 2; }
   getDescription(): string { return `${this.coffee.getDescription()}, milk`; }
 }
+
 ```
 
 ---
@@ -265,6 +277,7 @@ class ProxyImage implements Image {
     this.realImage.display();
   }
 }
+
 ```
 
 ---
@@ -294,6 +307,7 @@ class Sorter {
     return this.strategy.sort(data);
   }
 }
+
 ```
 
 ---
@@ -303,6 +317,7 @@ class Sorter {
 ### 11. What are the SOLID principles and how do design patterns relate to them?
 
 **Answer:**
+
 - **S**ingle Responsibility: Each class has one reason to change
 - **O**pen/Closed: Open for extension, closed for modification
 - **L**iskov Substitution: Subtypes must be substitutable for base types
@@ -310,6 +325,7 @@ class Sorter {
 - **D**ependency Inversion: Depend on abstractions, not concretions
 
 Design patterns implement SOLID principles:
+
 - Strategy → Open/Closed
 - Factory → Dependency Inversion
 - Interface Segregation → Many small interfaces
@@ -319,6 +335,7 @@ Design patterns implement SOLID principles:
 ### 12. What is the difference between Strategy and State patterns?
 
 **Answer:**
+
 - **Strategy**: Swaps algorithms at runtime, client selects strategy
 - **State**: Changes behavior based on internal state, state transitions
 
@@ -334,6 +351,7 @@ class TrafficLight {
     this.state = this.state.next();
   }
 }
+
 ```
 
 ---
@@ -341,6 +359,7 @@ class TrafficLight {
 ### 13. What is the difference between Decorator and Proxy patterns?
 
 **Answer:**
+
 - **Decorator**: Adds behavior, focuses on extending functionality
 - **Proxy**: Controls access, focuses on managing object lifecycle
 
@@ -373,9 +392,11 @@ class PostgresUserRepository implements UserRepository {
     // Database delete
   }
 }
+
 ```
 
 **When to use:**
+
 - Domain-driven design
 - Need database abstraction
 - Complex queries
@@ -413,6 +434,7 @@ class AuthHandler extends Handler {
     return super.handle(request);
   }
 }
+
 ```
 
 ---
@@ -440,6 +462,7 @@ class CSVProcessor extends DataProcessor {
   protected processData(): void { console.log('Processing CSV'); }
   protected writeData(): void { console.log('Writing CSV'); }
 }
+
 ```
 
 ---
@@ -471,6 +494,7 @@ class History {
     return this.commands.pop();
   }
 }
+
 ```
 
 ---
@@ -500,6 +524,7 @@ class ChatRoom implements Mediator {
     });
   }
 }
+
 ```
 
 ---
@@ -531,6 +556,7 @@ class Composite implements Component {
     return this.children.reduce((sum, child) => sum + child.operation(), 0);
   }
 }
+
 ```
 
 ---
@@ -559,6 +585,7 @@ class ArrayIterator<T> implements Iterator<T> {
     return this.array[this.position++];
   }
 }
+
 ```
 
 ---
@@ -569,13 +596,19 @@ class ArrayIterator<T> implements Iterator<T> {
 
 **Answer:**
 Consider:
+
 1. **Problem type**: What problem are you solving?
+
 2. **Context**: What's the application context?
+
 3. **Trade-offs**: What are the costs and benefits?
+
 4. **Existing patterns**: What patterns are already in use?
+
 5. **Team familiarity**: What does the team know?
 
 **Decision framework:**
+
 - Creating objects → Factory, Builder, Singleton
 - Adding behavior → Decorator, Strategy
 - Simplifying interface → Facade, Adapter
@@ -586,10 +619,12 @@ Consider:
 ### 22. What is the relationship between Design Patterns and Architecture?
 
 **Answer:**
+
 - **Patterns**: Solutions to recurring design problems
 - **Architecture**: High-level structure of the system
 
 Patterns support architecture:
+
 - **Microservices**: Factory, Strategy, Observer
 - **Clean Architecture**: Repository, Factory, Strategy
 - **Event-Driven**: Observer, Mediator, Command
@@ -602,8 +637,11 @@ Patterns support architecture:
 Cross-cutting concerns (logging, security, transactions) can be handled with:
 
 1. **Decorator Pattern**: Add behavior dynamically
+
 2. **Chain of Responsibility**: Middleware pipeline
+
 3. **Proxy Pattern**: Control access
+
 4. **AOP (Aspect-Oriented Programming)**: Separate concerns
 
 ```typescript
@@ -618,6 +656,7 @@ class LoggingDecorator implements Service {
     return result;
   }
 }
+
 ```
 
 ---
@@ -625,10 +664,15 @@ class LoggingDecorator implements Service {
 ### 24. What are anti-patterns related to design patterns?
 
 **Answer:**
+
 1. **Pattern Overuse**: Using patterns when simpler solutions exist
+
 2. **Gold Plating**: Adding unnecessary complexity
+
 3. **God Object**: Class doing too much
+
 4. **Spaghetti Code**: No structure or patterns
+
 5. **Resume Driven Development**: Using patterns just to show knowledge
 
 ---
@@ -636,6 +680,7 @@ class LoggingDecorator implements Service {
 ### 25. How do you test code that uses design patterns?
 
 **Answer:**
+
 - **Factory**: Mock the factory, test product creation
 - **Strategy**: Test each strategy independently
 - **Observer**: Mock observers, verify notifications
@@ -654,6 +699,7 @@ strategies.forEach(strategy => {
   const sorter = new Sorter(strategy);
   expect(sorter.sort([3, 1, 2])).toEqual([1, 2, 3]);
 });
+
 ```
 
 ---
@@ -661,6 +707,7 @@ strategies.forEach(strategy => {
 ### 26. How do patterns affect performance?
 
 **Answer:**
+
 - **Singleton**: Minimal overhead, single instance
 - **Factory**: Slight overhead for object creation
 - **Proxy**: Adds indirection layer
@@ -668,6 +715,7 @@ strategies.forEach(strategy => {
 - **Chain of Responsibility**: Chain length affects performance
 
 **Optimizations:**
+
 - Lazy initialization
 - Caching in proxies
 - Early termination in chains
@@ -678,6 +726,7 @@ strategies.forEach(strategy => {
 ### 27. What is the relationship between patterns and SOLID principles?
 
 **Answer:**
+
 | Pattern | SOLID Principle |
 |---------|----------------|
 | Strategy | Open/Closed |
@@ -691,6 +740,7 @@ strategies.forEach(strategy => {
 ### 28. How do you handle design patterns in distributed systems?
 
 **Answer:**
+
 - **Factory**: Create distributed objects
 - **Observer**: Event-driven communication
 - **Proxy**: Remote proxies, stubs
@@ -698,6 +748,7 @@ strategies.forEach(strategy => {
 - **Mediator**: Message brokers
 
 **Considerations:**
+
 - Network latency
 - Fault tolerance
 - Consistency
@@ -708,6 +759,7 @@ strategies.forEach(strategy => {
 ### 29. What are modern alternatives to classic design patterns?
 
 **Answer:**
+
 - **Singleton → Module pattern, DI containers**
 - **Factory → DI containers, dependency injection**
 - **Observer → Reactive programming (RxJS), Event Emitter**
@@ -719,10 +771,15 @@ strategies.forEach(strategy => {
 ### 30. How do you refactor code to use design patterns?
 
 **Answer:**
+
 1. **Identify code smells**: Duplication, complex conditionals
+
 2. **Extract common behavior**: Look for repeated code
+
 3. **Apply appropriate pattern**: Match problem to pattern
+
 4. **Refactor incrementally**: Small changes, test often
+
 5. **Document decisions**: Why this pattern was chosen
 
 ---
@@ -731,12 +788,14 @@ strategies.forEach(strategy => {
 
 **Answer:**
 **Positive:**
+
 - Clear structure and intent
 - Reusable solutions
 - Better testability
 - Team communication
 
 **Negative:**
+
 - Over-engineering
 - Added complexity
 - Learning curve
@@ -747,10 +806,15 @@ strategies.forEach(strategy => {
 ### 32. How do you handle design patterns in legacy code?
 
 **Answer:**
+
 1. **Identify refactoring opportunities**: Look for code smells
+
 2. **Apply Strangler Fig pattern**: Gradually replace
+
 3. **Use Adapter pattern**: Integrate with legacy
+
 4. **Introduce patterns incrementally**: Start with low-risk areas
+
 5. **Write tests first**: Ensure behavior preservation
 
 ---
@@ -758,10 +822,12 @@ strategies.forEach(strategy => {
 ### 33. What is the relationship between patterns and frameworks?
 
 **Answer:**
+
 - **Patterns**: General solutions to problems
 - **Framework**: Specific implementation using patterns
 
 Examples:
+
 - **React**: Observer (state changes), Composite (components)
 - **Express**: Chain of Responsibility (middleware)
 - **NestJS**: Factory, Strategy, Decorator (decorators)
@@ -771,6 +837,7 @@ Examples:
 ### 34. How do you handle design patterns in microservices?
 
 **Answer:**
+
 - **Factory**: Create service instances
 - **Strategy**: Different implementations per service
 - **Observer**: Event-driven communication
@@ -778,6 +845,7 @@ Examples:
 - **CQRS**: Separate read/write models
 
 **Considerations:**
+
 - Service boundaries
 - Communication patterns
 - Data consistency
@@ -788,6 +856,7 @@ Examples:
 ### 35. What are the trade-offs of using design patterns?
 
 **Answer:**
+
 | Benefit | Trade-off |
 |---------|-----------|
 | Code reuse | Added complexity |
@@ -801,12 +870,14 @@ Examples:
 
 **Answer:**
 Use analogies:
+
 - **Factory**: Like a manufacturing assembly line
 - **Strategy**: Like different routes to the same destination
 - **Facade**: Like a hotel concierge
 - **Decorator**: Like adding toppings to a pizza
 
 Focus on benefits:
+
 - Easier to maintain
 - Faster development
 - Better quality
@@ -816,6 +887,7 @@ Focus on benefits:
 ### 37. What is the role of design patterns in code reviews?
 
 **Answer:**
+
 - **Identify pattern usage**: Ensure correct application
 - **Check for anti-patterns**: Spot over-engineering
 - **Verify SOLID compliance**: Ensure principles are followed
@@ -827,6 +899,7 @@ Focus on benefits:
 ### 38. How do design patterns evolve over time?
 
 **Answer:**
+
 - **Classic patterns**: GoF patterns still relevant
 - **Modern adaptations**: React patterns, serverless patterns
 - **Language-specific**: TypeScript decorators, async/await patterns
@@ -837,9 +910,13 @@ Focus on benefits:
 ### 39. What are the most overused design patterns?
 
 **Answer:**
+
 1. **Singleton**: Often when DI is better
+
 2. **Factory**: When simple object creation works
+
 3. **Observer**: When simple callbacks suffice
+
 4. **Decorator**: When inheritance works fine
 
 **Rule of thumb**: Don't use a pattern if a simpler solution exists.
@@ -849,6 +926,7 @@ Focus on benefits:
 ### 40. How do you stay updated with design pattern trends?
 
 **Answer:**
+
 - Read blogs and articles
 - Study framework source code
 - Attend conferences and meetups
@@ -864,6 +942,7 @@ Focus on benefits:
 
 **Answer:**
 Patterns to use:
+
 - **Factory**: Create short URLs
 - **Strategy**: Different encoding algorithms
 - **Proxy**: Caching layer
@@ -893,6 +972,7 @@ class URLShortener {
     return shortUrl;
   }
 }
+
 ```
 
 ---
@@ -901,6 +981,7 @@ class URLShortener {
 
 **Answer:**
 Patterns to use:
+
 - **Observer**: Notify subscribers
 - **Strategy**: Different notification channels
 - **Chain of Responsibility**: Processing pipeline
@@ -920,6 +1001,7 @@ class NotificationSystem {
     }
   }
 }
+
 ```
 
 ---
@@ -928,6 +1010,7 @@ class NotificationSystem {
 
 **Answer:**
 Patterns to use:
+
 - **Factory**: Load and create plugins
 - **Strategy**: Different plugin behaviors
 - **Proxy**: Plugin isolation
@@ -953,6 +1036,7 @@ class PluginManager {
     return plugin.execute(command);
   }
 }
+
 ```
 
 ---
@@ -961,6 +1045,7 @@ class PluginManager {
 
 **Answer:**
 Patterns to use:
+
 - **Strategy**: Different payment providers
 - **Factory**: Create payment processors
 - **Adapter**: Integrate third-party APIs
@@ -981,6 +1066,7 @@ class PaymentService {
     return this.decorator.process(adapted);
   }
 }
+
 ```
 
 ---
@@ -989,6 +1075,7 @@ class PaymentService {
 
 **Answer:**
 Patterns to use:
+
 - **Proxy**: Cache proxy
 - **Strategy**: Different eviction policies
 - **Observer**: Cache invalidation
@@ -1015,6 +1102,7 @@ class CacheLayer {
     await this.invalidator.notify(pattern, 'invalidate');
   }
 }
+
 ```
 
 ---
@@ -1024,10 +1112,15 @@ class CacheLayer {
 ### 46. How would you refactor a codebase that doesn't use design patterns?
 
 **Answer:**
+
 1. **Identify code smells**: Look for duplication, complex conditionals
+
 2. **Start with low-risk areas**: Choose isolated modules
+
 3. **Write tests**: Ensure behavior preservation
+
 4. **Apply patterns incrementally**: One pattern at a time
+
 5. **Document changes**: Explain why patterns were chosen
 
 ---
@@ -1035,10 +1128,15 @@ class CacheLayer {
 ### 47. How do you handle design pattern disagreements in a team?
 
 **Answer:**
+
 1. **Discuss trade-offs**: Benefits vs costs
+
 2. **Consider context**: What works for the project
+
 3. **Look at precedents**: What patterns are already used
+
 4. **Prototype**: Try different approaches
+
 5. **Make a decision**: Avoid analysis paralysis
 
 ---
@@ -1046,12 +1144,19 @@ class CacheLayer {
 ### 48. What questions should you ask before applying a design pattern?
 
 **Answer:**
+
 1. What problem are we solving?
+
 2. Is this the simplest solution?
+
 3. What are the trade-offs?
+
 4. Does this fit our architecture?
+
 5. Will the team understand this?
+
 6. How will this affect testing?
+
 7. What are the performance implications?
 
 ---
@@ -1059,6 +1164,7 @@ class CacheLayer {
 ### 49. How do you document design pattern usage?
 
 **Answer:**
+
 - **Code comments**: Explain why, not what
 - **Architecture decision records**: Document decisions
 - **README files**: Explain pattern usage
@@ -1109,6 +1215,7 @@ class CacheLayer {
 │ • KISS (Keep It Simple, Stupid)                             │
 │ • YAGNI (You Aren't Gonna Need It)                          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

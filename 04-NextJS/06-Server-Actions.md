@@ -7,9 +7,13 @@
 ## Why Do We Need It?
 
 1. **No API routes needed** — Simplifies data mutations
+
 2. **Progressive enhancement** — Forms work without JavaScript
+
 3. **Type safety** — End-to-end TypeScript types
+
 4. **Security** — Server-side execution, no exposed endpoints
+
 5. **Caching integration** — Automatic revalidation with `revalidatePath`/`revalidateTag`
 
 ## How It Works
@@ -58,6 +62,7 @@
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Server Actions vs API Routes
@@ -83,6 +88,7 @@
 │  ├─ Custom response formats                                     │
 │  └─ More flexible                                               │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -112,6 +118,7 @@ export async function createPost(formData: FormData) {
   revalidatePath('/posts')
   redirect('/posts')
 }
+
 ```
 
 ### Using Server Action in Form
@@ -147,6 +154,7 @@ export default function NewPostPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Action with Validation
@@ -194,6 +202,7 @@ export async function createUser(
   revalidatePath('/users')
   return { success: true }
 }
+
 ```
 
 ### Using useFormState Hook
@@ -239,6 +248,7 @@ export default function NewUserPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Action with useFormStatus
@@ -256,6 +266,7 @@ export async function subscribe(formData: FormData) {
 
   return { success: true }
 }
+
 ```
 
 ```tsx
@@ -288,6 +299,7 @@ export function SubscribeForm() {
     </form>
   )
 }
+
 ```
 
 ### Server Action with useTransition
@@ -313,6 +325,7 @@ export async function toggleLike(postId: string) {
 
   revalidatePath('/posts')
 }
+
 ```
 
 ```tsx
@@ -338,6 +351,7 @@ export function LikeButton({ postId, initialLiked }: {
     </button>
   )
 }
+
 ```
 
 ### Server Action with Optimistic Updates
@@ -387,6 +401,7 @@ export function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
     </div>
   )
 }
+
 ```
 
 ### Server Action with Cookies
@@ -413,6 +428,7 @@ export async function updatePreferences(formData: FormData) {
 
   revalidatePath('/')
 }
+
 ```
 
 ### Server Action with Error Handling
@@ -461,6 +477,7 @@ export async function uploadFile(
     return { error: 'Upload failed. Please try again.' }
   }
 }
+
 ```
 
 ### Inline Server Action
@@ -493,6 +510,7 @@ export default function PostsPage() {
     </div>
   )
 }
+
 ```
 
 ### Server Action with File Upload
@@ -525,6 +543,7 @@ export async function uploadDocument(formData: FormData) {
 
   revalidatePath('/documents')
 }
+
 ```
 
 ### Server Action with Search Params
@@ -545,6 +564,7 @@ export async function searchProducts(formData: FormData) {
 
   redirect(`/products?${params.toString()}`)
 }
+
 ```
 
 ## Real-World Use Cases
@@ -577,6 +597,7 @@ export async function createPost(formData: FormData) {
 export async function createPost(formData: FormData) {
   await db.post.create({ data: { title: formData.get('title') } })
 }
+
 ```
 
 ### 2. Returning Non-Serializable Data
@@ -601,6 +622,7 @@ export async function getData() {
     value: 42, // Primitive
   }
 }
+
 ```
 
 ### 3. Not Handling Errors
@@ -635,6 +657,7 @@ export async function updateUser(
     return { error: 'Failed to update user' }
   }
 }
+
 ```
 
 ### 4. Not Using Revalidation
@@ -660,6 +683,7 @@ export async function createPost(formData: FormData) {
   revalidatePath('/posts') // Refresh /posts page
   revalidateTag('posts') // Refresh all pages with 'posts' tag
 }
+
 ```
 
 ### 5. Calling Server Action from Server Component
@@ -681,18 +705,27 @@ export default async function Page() {
   const data = await db.post.findMany() // Direct data fetching
   return <div>{data.length} posts</div>
 }
+
 ```
 
 ## Best Practices
 
 1. **Use 'use server' directive** — Always at the top of the file or function
+
 2. **Return serializable data** — No functions, Dates, or Maps
+
 3. **Handle errors gracefully** — Return error states to client
+
 4. **Use revalidation** — Call `revalidatePath` or `revalidateTag` after mutations
+
 5. **Validate inputs** — Use Zod or similar for server-side validation
+
 6. **Keep actions focused** — One action per operation
+
 7. **Use useFormState for forms** — For error handling and state management
+
 8. **Use useFormStatus for loading** — Show pending state during submission
+
 9. **Test server actions** — Unit test the action logic separately
 10. **Document action contracts** — Define clear input/output types
 
@@ -700,16 +733,19 @@ export default async function Page() {
 
 ```text
 Server Actions Performance:
+
 - Execute on server (no client JS overhead)
 - Automatic revalidation avoids full page reload
 - Progressive enhancement works without JS
 - Type safety reduces runtime errors
 
 Optimization:
+
 - Keep actions focused and fast
 - Use parallel revalidation when possible
 - Implement proper error handling
 - Cache frequently accessed data
+
 ```
 
 ## Interview Questions
@@ -855,6 +891,7 @@ Optimization:
 
 ```text
 'use server' directive:
+
 - At top of file or function
 - Marks as Server Action
 - Enables server-side execution
@@ -876,9 +913,11 @@ revalidatePath('/path')  → Invalidate specific path
 revalidateTag('tag')     → Invalidate by tag
 
 Validation:
+
 - Use Zod for schema validation
 - Validate on server
 - Return errors to client
+
 ```
 
 ## References & Learn More

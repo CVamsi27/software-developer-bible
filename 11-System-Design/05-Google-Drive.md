@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Upload and download files
 - File synchronization across devices
 - Real-time collaboration on documents
@@ -14,6 +15,7 @@
 - Storage quota management
 
 ### Non-Functional Requirements
+
 - Strong consistency for file operations
 - High availability (99.99%)
 - Support 1B+ files
@@ -24,26 +26,32 @@
 - Cross-platform compatibility
 
 ## Capacity Estimation
+
 ```text
 Storage Estimates:
+
 - 1B files × 1 MB average = 1 PB
 - With versions: 1 PB × 10 versions = 10 PB
 - Metadata: 1B × 1 KB = 1 TB
 - Total: ~11 PB
 
 Bandwidth Estimates:
+
 - 100M DAU × 10 MB sync/day = 1 PB/day = ~11.6 TB/s
 - Peak: 5x = 58 TB/s
 - Upload/download ratio: 30/70
 
 File Operations:
+
 - 10M concurrent sync operations
 - 100K operations/second
 - Average file size: 1 MB
 - Throughput: 100 GB/s
+
 ```
 
 ## API Design
+
 ```yaml
 # File Operations
 POST /api/v1/files/upload
@@ -114,10 +122,12 @@ WebSocket /api/v1/files/{file_id}/collaborate
       ],
       "version": 123
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Files table
 CREATE TABLE files (
@@ -218,9 +228,11 @@ CREATE TABLE users (
     storage_used BIGINT DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │     files       │     │ file_versions   │
@@ -273,10 +285,12 @@ CREATE TABLE users (
                     │ sync_status     │
                     │ last_synced_at  │
                     └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -316,11 +330,13 @@ CREATE TABLE users (
      │  (S3/GCS)       │
      │  (File Content) │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### File Sync Service
+
 ```python
 import hashlib
 from typing import List, Dict
@@ -394,9 +410,11 @@ class FileSyncService:
             'conflicts': delta['conflicts'],
             'sync_timestamp': datetime.now().isoformat()
         }
+
 ```
 
 ### Delta Sync Engine
+
 ```python
 class DeltaSyncEngine:
     def __init__(self):
@@ -441,9 +459,11 @@ class DeltaSyncEngine:
                 result[op['position']:op['position'] + op['length']] = b''
 
         return bytes(result)
+
 ```
 
 ### Conflict Resolution Service
+
 ```python
 class ConflictResolver:
     def __init__(self):
@@ -516,9 +536,11 @@ class ConflictResolver:
             'resolution': 'conflict_copy_created',
             'conflict_file_name': conflict_name
         }
+
 ```
 
 ### Version Control Service
+
 ```python
 class VersionControlService:
     def __init__(self, db, storage):
@@ -578,11 +600,13 @@ class VersionControlService:
     async def get_version_history(self, file_id: int,
                                   limit: int = 50) -> list:
         return await self.db.get_versions(file_id, limit)
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### File Metadata Cache
+
 ```python
 class FileMetadataCache:
     def __init__(self, redis_client):
@@ -608,9 +632,11 @@ class FileMetadataCache:
         for file in files:
             await self.redis.rpush(key, json.dumps(file))
         await self.redis.expire(key, 300)  # 5 minutes
+
 ```
 
 ### Sync Status Cache
+
 ```python
 class SyncStatusCache:
     def __init__(self, redis_client):
@@ -634,11 +660,13 @@ class SyncStatusCache:
         all_status = await self.redis.hgetall(key)
         return [fid for fid, status in all_status.items()
                 if status == 'pending']
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── file.created          (new file uploads)
@@ -663,9 +691,11 @@ Event Schema:
     "device_id": "dev_012"
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class FileEventProcessor:
     def __init__(self, kafka_consumer, db, notification_service):
@@ -703,11 +733,13 @@ class FileEventProcessor:
 
         # Update search index
         await self.update_search_index(event['file_id'])
+
 ```
 
 ## Scaling Strategy
 
 ### File Storage Scaling
+
 ```text
 Storage Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -736,9 +768,11 @@ Storage Architecture:
                     │  Replication    │
                     │  (3x copies)    │
                     └─────────────────┘
+
 ```
 
 ### Database Scaling
+
 ```python
 class ShardRouter:
     def __init__(self, num_shards: int = 64):
@@ -750,9 +784,11 @@ class ShardRouter:
     def get_file_shard(self, file_id: int) -> int:
         # Different sharding for file metadata
         return (file_id * 7) % self.num_shards
+
 ```
 
 ### Sync Service Scaling
+
 ```python
 class SyncServiceScaler:
     def __init__(self):
@@ -774,11 +810,13 @@ class SyncServiceScaler:
         for user_id, user_requests in grouped.items():
             # Process all requests for a user together
             await self.process_user_sync(user_id, user_requests)
+
 ```
 
 ## Failure Handling
 
 ### Sync Conflict Recovery
+
 ```python
 class SyncConflictRecovery:
     def __init__(self, db, notification_service):
@@ -805,9 +843,11 @@ class SyncConflictRecovery:
 
         # Notify affected users
         await self.notify_resolution(conflict, resolved)
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Storage node down | Replication ensures availability |
@@ -817,6 +857,7 @@ class SyncConflictRecovery:
 | Conflict resolution fails | Create conflict copy |
 
 ### Offline Support
+
 ```python
 class OfflineSupport:
     def __init__(self, local_storage, sync_service):
@@ -839,19 +880,23 @@ class OfflineSupport:
                 await self.local.mark_synced(change['file_id'])
             except ConflictError as e:
                 await self.handle_offline_conflict(change, e)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - files_uploaded_per_hour
   - active_sync_operations
   - storage_usage_by_user
   - collaboration_sessions_active
 
 System Metrics:
+
   - sync_latency_p95
   - file_download_time
   - conflict_resolution_rate
@@ -859,16 +904,20 @@ System Metrics:
   - api_response_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - network_throughput
   - disk_io
   - storage_iops
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Sync Latency
     condition: p95_sync_latency > 5s
     severity: warning
@@ -884,6 +933,7 @@ alerts:
   - name: Sync Queue Backlog
     condition: sync_queue_size > 10000
     severity: warning
+
 ```
 
 ## Trade-offs
@@ -899,64 +949,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you implement real-time file sync?**
+
    - WebSocket for live updates
    - Delta sync for efficiency
    - Conflict detection and resolution
    - Offline support with queue
 
 2. **How do you handle file versioning?**
+
    - Store each version in object storage
    - Metadata tracks version history
    - Rollback creates new version
    - Garbage collection for old versions
 
 3. **How would you implement collaboration?**
+
    - Operational transform for concurrent edits
    - WebSocket for real-time updates
    - Conflict detection and resolution
    - User presence indicators
 
 ### Scaling Questions
+
 4. **How do you scale to 1B+ files?**
+
    - Object storage for file content
    - Database sharding for metadata
    - CDN for frequent downloads
    - Caching for hot files
 
 5. **How do you handle 10M concurrent sync operations?**
+
    - Partition sync requests by user
    - Batch operations for efficiency
    - Priority queues for important files
    - Connection pooling
 
 ### Trade-off Questions
+
 6. **How do you balance consistency vs availability?**
+
    - Strong consistency for metadata
    - Eventual consistency for sync status
    - Conflict resolution for concurrent edits
    - Offline support with eventual sync
 
 7. **How do you handle large file uploads?**
+
    - Chunked upload for reliability
    - Resumable uploads for large files
    - Parallel chunk upload
    - Checksum verification
 
 ### Senior-level Questions
+
 8. **How would you implement end-to-end encryption?**
+
    - Client-side encryption keys
    - Key management service
    - Encrypted metadata
    - Secure sharing with keys
 
 9. **How do you optimize for different file types?**
+
    - Preview generation for documents
    - Thumbnail creation for images
    - Video transcoding
    - Metadata extraction
 
 10. **How would you implement file search?**
+
     - Full-text indexing with Elasticsearch
     - Metadata-based search
     - Content-based search for documents
@@ -965,6 +1029,7 @@ alerts:
 ## Summary
 
 The Google Drive system design covers:
+
 - **File Sync**: Delta sync for efficiency
 - **Conflict Resolution**: Operational transform for documents
 - **Version Control**: Full version history with rollback
@@ -972,10 +1037,15 @@ The Google Drive system design covers:
 - **Collaboration**: Real-time editing with conflict detection
 
 Key takeaways:
+
 1. Use delta sync for efficient bandwidth usage
+
 2. Implement operational transform for real-time collaboration
+
 3. Store file content in object storage (S3/GCS)
+
 4. Use database sharding for metadata scalability
+
 5. Implement conflict resolution for concurrent edits
 
 This design supports 1B+ files with 10M concurrent sync operations while maintaining strong consistency for metadata.
@@ -983,6 +1053,7 @@ This design supports 1B+ files with 10M concurrent sync operations while maintai
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

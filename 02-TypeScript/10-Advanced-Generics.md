@@ -21,14 +21,19 @@
 │   └─────────────────┴───────────────────────────────────────┘  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type-level programming**: Express complex type relationships
+
 2. **Library design**: Create flexible, type-safe APIs
+
 3. **Advanced patterns**: Implement sophisticated abstractions
+
 4. **Type inference**: Guide TypeScript's type inference
+
 5. **Code reuse**: Build reusable type utilities
 
 ## How It Works
@@ -72,6 +77,7 @@ const arrayFunctor: Functor<Array> = {
 const promiseFunctor: Functor<Promise> = {
   map: (fa, f) => fa.then(f)
 };
+
 ```
 
 ### Generic Constraints with keyof
@@ -113,6 +119,7 @@ type SetProperty<
   : Path extends keyof T
     ? { [K in keyof T]: K extends Path ? Value : T[K] }
     : T;
+
 ```
 
 ### Conditional Generic Types
@@ -138,6 +145,7 @@ function process<T>(value: T): T extends string ? number : boolean {
   }
   return (value !== null) as any;
 }
+
 ```
 
 ### Variadic Generics
@@ -196,6 +204,7 @@ const process = pipe(
   (x: number) => x.toString()
 );
 // (arg: number) => string
+
 ```
 
 ### Recursive Generic Types
@@ -233,6 +242,7 @@ type DeepFlatten<T> =
 
 type Nested = number[][][];
 type Flat = DeepFlatten<Nested>; // number
+
 ```
 
 ### Generic Utility Types Deep Dive
@@ -283,6 +293,7 @@ const users = [
 
 const grouped = groupBy(users, (u) => u.role);
 // { admin: User[]; user: User[] }
+
 ```
 
 ## Code Examples
@@ -379,6 +390,7 @@ function select<T extends Table>(
 select("users", ["id", "name"]); // ✅
 select("posts", ["id", "title"]); // ✅
 select("users", ["id", "title"]); // ❌ Error: "title" not in users
+
 ```
 
 ## Common Mistakes
@@ -403,6 +415,7 @@ interface User {
 function process<T extends User>(value: T): T {
   return value;
 }
+
 ```
 
 ### 2. Not Using Default Types
@@ -421,6 +434,7 @@ interface Response<T = unknown> {
 }
 
 const response: Response = { data: null, status: 200 }; // OK
+
 ```
 
 ### 3. Recursive Types Without Base Case
@@ -431,6 +445,7 @@ type Infinite<T> = { value: T; next: Infinite<T> };
 
 // ✅ Good: Base case
 type LinkedList<T> = { value: T; next: LinkedList<T> } | null;
+
 ```
 
 ## Best Practices
@@ -457,8 +472,9 @@ function merge<T extends object, U extends object>(a: T, b: U): T & U {
 
 // 4. Document complex generic types
 /**
- * Maps event names to their payload types.
- * Used for type-safe event handling.
+
+ - Maps event names to their payload types.
+ - Used for type-safe event handling.
  */
 type EventMap = Record<string, unknown>;
 
@@ -469,6 +485,7 @@ function identity<T>(value: T): T {
 
 // TypeScript infers T from the argument
 const result = identity("hello"); // T is inferred as string
+
 ```
 
 ## Performance Considerations
@@ -484,71 +501,91 @@ const result = identity("hello"); // T is inferred as string
 ### Beginner
 
 1. **What are advanced generics?**
+
    - Complex generic patterns beyond basic type parameters
 
 2. **What is a generic constraint?**
+
    - A restriction on what types a generic parameter can accept
 
 3. **How do you create a generic interface?**
+
    - Use `<T>` syntax: `interface Box<T> { value: T; }`
 
 4. **Can you have multiple type parameters?**
+
    - Yes: `<T, U, V>` etc.
 
 5. **What is a default type parameter?**
+
    - A fallback type: `<T = unknown>`
 
 ### Intermediate
 
 6. **How do you simulate higher-kinded types?**
+
    - Use interfaces with `_type` property
 
 7. **What are variadic generics?**
+
    - Type parameters that accept variable-length tuples
 
 8. **How do you create a type-safe curry function?**
+
    - Use recursive conditional types with `infer`
 
 9. **What is a recursive generic type?**
+
    - A generic type that references itself
 
 10. **How do you constrain a generic to be a function?**
+
     - Use `T extends (...args: any[]) => any`
 
 ### Senior
 
 11. **Implement a type-safe pipe function**
+
     - Use variadic generics and conditional types
 
 12. **Design a type-safe ORM query builder**
+
     - Use generic constraints for table/column relationships
 
 13. **How do you create a type-safe event system?**
+
     - Use mapped types with generic constraints
 
 14. **What is the difference between `any` and `unknown` in generics?**
+
     - `unknown` preserves type safety; `any` bypasses it
 
 ### FAANG-style
 
 15. **Build a type-safe state management solution**
+
     - Use advanced generics for actions, reducers, middleware
 
 16. **Implement a type-safe API client**
+
     - Use generics for request/response types
 
 17. **Create a type-safe form validation system**
+
     - Use generics for field types, validation rules
 
 ### Follow-ups
 
 18. **How do generics interact with conditional types?**
+
     - Generic parameters can be used in conditional type checks
 
 19. **Can you have generic type aliases?**
+
     - Yes: `type Box<T> = { value: T; }`
 
 20. **How do you debug complex generic types?**
+
     - Create intermediate type aliases, use IDE hover
 
 ## Summary
@@ -581,6 +618,7 @@ type Curry<Args extends any[], Return> =
 // Higher-kinded type simulation
 interface HKT { _type: unknown; }
 interface ArrayHKT extends HKT { _type: unknown[]; }
+
 ```
 
 ## References & Learn More

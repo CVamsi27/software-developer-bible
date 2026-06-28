@@ -11,11 +11,15 @@ A **trace** is a directed acyclic graph (DAG) of spans representing the causal r
 In a monolith, a stack trace tells you what happened. In microservices, a single user request may touch 5-20 services. Without tracing:
 
 1. You can't see which service is slow
+
 2. You can't correlate errors across service boundaries
+
 3. Debugging requires grep across dozens of log streams
+
 4. You don't know the full call graph for a request
 
 Tracing provides:
+
 - **End-to-end latency** breakdown per service
 - **Dependency mapping** (which services call which)
 - **Error attribution** (which service failed and why)
@@ -68,6 +72,7 @@ Tracing provides:
   │                                                              │
   │  Standard: W3C Trace Context (traceparent + tracestate)     │
   └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -136,6 +141,7 @@ process.on("SIGTERM", () => {
 
 sdk.start();
 export default sdk;
+
 ```
 
 ### Custom Spans and Attributes
@@ -232,6 +238,7 @@ async function callExternalAPI(url: string) {
     }
   );
 }
+
 ```
 
 ### Context Propagation Across Services
@@ -279,6 +286,7 @@ app.get("/api/orders/:id", async (req, res) => {
   const order = await getOrder(req.params.id);
   res.json(order);
 });
+
 ```
 
 ### Baggage (Cross-Service Context)
@@ -307,6 +315,7 @@ function handleRequest(req: express.Request) {
     // Apply premium routing/logic
   }
 }
+
 ```
 
 ### Trace-to-Log Correlation
@@ -346,6 +355,7 @@ async function processItem(itemId: string) {
     throw err;
   }
 }
+
 ```
 
 ### Sampling Strategies
@@ -375,25 +385,34 @@ const parentBasedSampler = new ParentBasedSampler({
     tail_sampling:
       decision_wait: 10s
       policies:
+
         - name: errors
           type: status_code
           status_code: { status_codes: [ERROR] }
+
         - name: slow
           type: latency
           latency: { threshold_ms: 1000 }
+
         - name: normal
           type: probabilistic
           probabilistic: { sampling_percentage: 1 }
 */
+
 ```
 
 ## Real-World Use Cases
 
 1. **Latency debugging**: Find which microservice in a 10-service chain is adding 2 seconds of latency
+
 2. **Dependency mapping**: Automatically discover service call graphs from production traffic
+
 3. **Error root cause**: Trace an error from the user-facing API down to the failing database query
+
 4. **Performance optimization**: Identify the critical path and optimize the slowest span
+
 5. **SLA monitoring**: Measure end-to-end latency percentiles for user-facing endpoints
+
 6. **Capacity planning**: Understand which services are most called and need scaling
 
 ## Common Mistakes
@@ -410,13 +429,21 @@ const parentBasedSampler = new ParentBasedSampler({
 ## Best Practices
 
 1. **Use OpenTelemetry** — vendor-neutral standard, avoid lock-in
+
 2. **Instrument at boundaries** — service entry/exit, DB calls, external APIs
+
 3. **Use semantic conventions** — `http.method`, `db.system`, `rpc.service` for consistency
+
 4. **Propagate W3C Trace Context** — the standard for context propagation
+
 5. **Tail-based sampling at the collector** — not at the SDK, for better decisions
+
 6. **Correlate traces with logs** — inject `traceId` and `spanId` into log entries
+
 7. **Name spans by operation** — `GET /api/orders`, `postgres.query`, not vague names
+
 8. **Set span kind correctly** — `CLIENT`, `SERVER`, `PRODUCER`, `CONSUMER`, `INTERNAL`
+
 9. **Keep span attributes flat** — avoid nested objects, use dot notation (`order.id`)
 
 ## Performance Considerations
@@ -433,86 +460,111 @@ const parentBasedSampler = new ParentBasedSampler({
 ### Beginner
 
 1. **What is the difference between a trace and a span?**
+
    - A trace is the full request lifecycle across services. A span is a single unit of work within that trace. Spans are nested and form a tree.
 
 2. **Why is distributed tracing important in microservices?**
+
    - A single request may touch 10+ services. Without tracing, you can't see which service is slow, which failed, or how they're connected.
 
 3. **What is context propagation?**
+
    - Passing trace context (traceId, spanId) between services via HTTP headers so spans from the same request are linked into one trace.
 
 4. **What is OpenTelemetry?**
+
    - A vendor-neutral open standard for collecting traces, metrics, and logs. It provides SDKs, APIs, and a collector for instrumentation.
 
 5. **What is span sampling?**
+
    - Deciding which traces to record vs discard. Without sampling, high-traffic systems would generate unmanageable amounts of trace data.
 
 ### Intermediate
 
 6. **Explain the difference between head-based and tail-based sampling.**
+
    - Head-based: decision made at trace start (SDK decides to sample or not). Tail-based: decision made after trace completes (collector evaluates full trace). Tail-based is better for keeping error/slow traces.
 
 7. **How do you correlate traces with logs?**
+
    - Inject `traceId` and `spanId` into every log entry using a logger formatter that reads the active span context. Link traces to logs in your observability platform.
 
 8. **What are semantic conventions in OpenTelemetry?**
+
    - Standardized attribute names for common operations (`http.method`, `db.system`, `rpc.service`) ensuring consistent, queryable traces across services.
 
 9. **How does W3C Trace Context work?**
+
    - Two headers: `traceparent` (version-traceId-spanId-traceFlags) and `tracestate` (vendor-specific data). Every service in the chain reads/writes these headers.
 
 10. **What is a span event?**
+
     - A timestamped annotation within a span (e.g., "retry attempt", "cache miss"). Less structured than child spans, useful for point-in-time observations.
 
 ### Senior
 
 11. **Design a tracing architecture for 50 microservices.**
+
     - Deploy OTel SDK in each service (auto-instrumentation + custom spans). Deploy OTel Collector as DaemonSet per node. Use tail-based sampling in collector (keep errors, slow, 1% success). Export to Jaeger/Tempo. Build service dependency graph from trace data.
 
 12. **Your traces show correct latency but users complain about slowness. What's missing?**
+
     - Client-side tracing (Real User Monitoring / RUM). The trace only covers server-side. Network latency, client rendering, and DNS are invisible. Add frontend performance monitoring.
 
 13. **How do you handle tracing across async boundaries (queues, events)?**
+
     - Use messaging semantic conventions (`messaging.system`, `messaging.destination`). Propagate trace context in message attributes. On consumer side, extract context from message to link producer and consumer spans.
 
 14. **Explain the critical path in a trace and how to find it.**
+
     - The critical path is the sequence of spans that determines total trace duration. It's the longest chain of dependent spans. Find it by walking from root span, always choosing the child with the latest end time.
 
 15. **How would you implement trace-based alerting?**
+
     - Alert on P99 end-to-end latency (histogram from traces). Alert on error rate per service from span status codes. Alert on dependency failures (external API latency). Use trace data to enrich metric alerts with context.
 
 ### FAANG-style
 
 16. **If you could add one instrumentation to your system, what would it be?**
+
     - HTTP server middleware that creates a span for every incoming request, propagates context, and records status code and duration. This gives you end-to-end latency, error rates, and dependency mapping for free.
 
 17. **How do you prevent trace context from being lost in your system?**
+
     - Ensure all HTTP libraries use OTel instrumentation (auto-instrumentation covers most). Use context propagation middleware for message queues. Audit service mesh (Istio/Linkerd) for context passing. Add integration tests that verify trace continuity.
 
 18. **Your trace shows a 5-second gap with no child spans. What happened?**
+
     - The service is doing synchronous blocking work not instrumented (file I/O, CPU computation, external API without instrumentation). Check for uninstrumented libraries, blocking event loop operations, or manual span creation missing.
 
 19. **How would you trace serverless functions?**
+
     - Use OTel SDK with Lambda layer. Propagate context via SQS/SNS message attributes. Use X-Ray daemon or OTel Collector as Lambda extension. Instrument handler entry/exit.
 
 20. **Explain trace merging in a service mesh.**
+
     - Service mesh (Istio, Linkerd) adds its own spans to traces. This can create duplicate spans or break context if not configured correctly. Ensure mesh uses W3C Trace Context and doesn't override application-level trace context.
 
 ### Follow-ups
 
 21. **How do you handle tracing in batch processing?**
+
     - Create one trace per batch job, with spans per item processed. Use `BATCH` span kind. Propagate context within the batch but not across batches.
 
 22. **What's the storage cost of tracing vs logging?**
+
     - Tracing generates less data than logging per request but requires structured storage. A typical trace with 10 spans is ~2KB. At 1000 req/s with 10% sampling = ~200MB/day.
 
 23. **How do you trace GraphQL queries?**
+
     - Instrument the GraphQL resolver layer. Create spans per resolver. Use query name as span attribute. Track field-level latency to find slow resolvers.
 
 24. **When would you NOT use OpenTelemetry?**
+
     - When you're already deeply invested in a vendor-specific solution (Datadog APM, AWS X-Ray) and the migration cost outweighs benefits. Even then, OTel can be used alongside.
 
 25. **How do you test tracing instrumentation?**
+
     - Use in-memory exporters to capture spans in tests. Assert that expected spans are created with correct attributes. Use OTel SDK's `InMemorySpanExporter` for integration tests.
 
 ## Summary

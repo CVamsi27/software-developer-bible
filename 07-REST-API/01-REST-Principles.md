@@ -19,9 +19,13 @@ Before REST, web services relied on complex protocols like SOAP requiring heavy 
 REST emerged as a simpler alternative that:
 
 1. **Reduces complexity** - Uses standard HTTP methods and status codes
+
 2. **Improves performance** - Lightweight JSON payloads instead of verbose XML
+
 3. **Enhances scalability** - Stateless design enables horizontal scaling
+
 4. **Increases interoperability** - Works with any client that speaks HTTP
+
 5. **Simplifies development** - Intuitive resource-based URL design
 
 ## How It Works
@@ -48,6 +52,7 @@ Client-Server Architecture
    User Interface          Business Logic
    Presentation            Data Storage
    Client-Side Logic       Server-Side Logic
+
 ```
 
 ```typescript
@@ -73,6 +78,7 @@ async function getUser(userId: string): Promise<User> {
   const result = await response.json();
   return result.data;
 }
+
 ```
 
 #### 2. Stateless
@@ -94,6 +100,7 @@ Headers: { Authorization: "Bearer abc123" }
 ──────────────────────────────────────────► Server processes request
                                            Returns order 456
                                            No state stored
+
 ```
 
 ```typescript
@@ -115,6 +122,7 @@ app.post('/api/orders', authenticate, async (req, res) => {
   });
   res.status(201).json({ data: order });
 });
+
 ```
 
 #### 3. Cacheable
@@ -139,6 +147,7 @@ Client                        Server
   │  Cache-Control: max-age=3600│
   │  ETag: "def456"            │
   │◄────────────────────────────│
+
 ```
 
 ```typescript
@@ -160,6 +169,7 @@ app.get('/api/orders', authenticate, async (req, res) => {
   res.set({ 'Cache-Control': 'private, no-cache', 'ETag': etag });
   res.json({ data: orders });
 });
+
 ```
 
 #### 4. Uniform Interface
@@ -176,6 +186,7 @@ Resource Identification via URIs
 ✅ Good: /api/users/123/posts/789
 ❌ Bad:  /api/getUser?id=123
 ❌ Bad:  /api/user/123/delete
+
 ```
 
 **b) Manipulation Through Representations**
@@ -206,6 +217,7 @@ app.post('/api/users', async (req, res) => {
   };
   res.status(201).json(representation);
 });
+
 ```
 
 **c) Self-Descriptive Messages** - Each request/response contains enough information to be understood.
@@ -228,6 +240,7 @@ app.get('/api/orders/:id', authenticate, async (req, res) => {
   };
   res.json(response);
 });
+
 ```
 
 #### 5. Layered System
@@ -242,6 +255,7 @@ Layered System Architecture
 │ Client  │────►│  Load   │────►│   API   │────►│Database │
 │         │     │ Balancer│     │ Gateway │     │         │
 └─────────┘     └─────────┘     └─────────┘     └─────────┘
+
 ```
 
 #### 6. Code on Demand (Optional)
@@ -263,6 +277,7 @@ PATCH     Partial update       Yes*        No      Yes
 DELETE    Delete resource      Yes         No      Optional
 HEAD      Get metadata only    Yes         Yes     No
 OPTIONS   Get allowed methods  Yes         Yes     No
+
 ```
 
 ## Code Examples
@@ -345,6 +360,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
 });
 
 app.use('/api/users', router);
+
 ```
 
 ## Real-World Use Cases
@@ -359,6 +375,7 @@ app.get('/api/cart', authenticate, ...);          // Get user's cart
 app.post('/api/cart/items', authenticate, ...);   // Add item to cart
 app.post('/api/orders', authenticate, ...);       // Place order
 app.get('/api/orders', authenticate, ...);        // List user's orders
+
 ```
 
 ### 2. Social Media API
@@ -369,6 +386,7 @@ app.post('/api/posts', authenticate, ...);        // Create post
 app.get('/api/feed', authenticate, ...);          // Get personalized feed
 app.post('/api/posts/:id/comments', authenticate, ...); // Add comment
 app.post('/api/posts/:id/like', authenticate, ...);    // Like post
+
 ```
 
 ### 3. Banking API
@@ -377,6 +395,7 @@ app.post('/api/posts/:id/like', authenticate, ...);    // Like post
 app.get('/api/accounts', authenticate, ...);      // List accounts
 app.get('/api/accounts/:id/transactions', authenticate, ...); // List transactions
 app.post('/api/transfers', authenticate, ...);    // Create transfer
+
 ```
 
 ## Common Mistakes
@@ -391,6 +410,7 @@ app.post('/api/createUser', ...);
 // ✅ Good
 app.get('/api/users', ...);
 app.post('/api/users', ...);
+
 ```
 
 ### 2. Breaking Stateless Constraint
@@ -406,6 +426,7 @@ app.post('/api/login', (req, res) => {
   const token = generateJWT({ userId: user.id });
   res.json({ data: { token } });
 });
+
 ```
 
 ### 3. Ignoring Cacheability
@@ -417,6 +438,7 @@ res.json({ data: products });
 // ✅ Good: Proper cache headers
 res.set({ 'Cache-Control': 'public, max-age=3600', 'ETag': generateETag(products) });
 res.json({ data: products });
+
 ```
 
 ### 4. Not Using Hypermedia (HATEOAS)
@@ -427,6 +449,7 @@ res.json({ data: user });
 
 // ✅ Good: Response with links
 res.json({ data: user, _links: { self: `/api/users/${user.id}`, posts: `/api/users/${user.id}/posts` } });
+
 ```
 
 ### 5. Incorrect HTTP Status Codes
@@ -439,18 +462,27 @@ res.json({ data: user });
 res.status(201).json({ data: user });
 res.status(400).json({ error: 'Invalid input' });
 res.status(404).json({ error: 'Not found' });
+
 ```
 
 ## Best Practices
 
 1. **Use plural nouns** - `/api/users` not `/api/user`
+
 2. **Use HTTP methods correctly** - GET for read, POST for create, PUT for update, DELETE for remove
+
 3. **Return proper status codes** - 200, 201, 204, 400, 401, 403, 404, 500
+
 4. **Implement pagination** - Use query params for page/limit
+
 5. **Use consistent response format** - Standardize data/error structure
+
 6. **Version your API** - `/api/v1/users`
+
 7. **Support filtering and sorting** - Query parameters
+
 8. **Handle errors gracefully** - Consistent error responses
+
 9. **Document your API** - OpenAPI/Swagger
 10. **Use HTTPS** - Always encrypt in transit
 

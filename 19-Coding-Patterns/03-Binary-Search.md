@@ -34,6 +34,7 @@ function binarySearch(nums: number[], target: number): number {
 
   return -1; // not found
 }
+
 ```
 
 ## How It Works
@@ -55,6 +56,7 @@ Step 3: left=5, right=6, mid=5
         [|23|, 38]
          mid
         23 = 23, found at index 5!
+
 ```
 
 ### ASCII Diagram
@@ -86,6 +88,7 @@ RIGHT BOUND SEARCH (last occurrence)
             (found 2, keep searching right)
               L       M
                     R (right bound found at index 3)
+
 ```
 
 ## Code Examples (TypeScript)
@@ -115,6 +118,7 @@ function binarySearch(nums: number[], target: number): number {
 // Example
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9)); // 4
 console.log(binarySearch([-1, 0, 3, 5, 9, 12], 2)); // -1
+
 ```
 
 ### Problem 2: Left Bound Binary Search (First Occurrence)
@@ -142,6 +146,7 @@ function searchLeftBound(nums: number[], target: number): number {
 // Example
 console.log(searchLeftBound([5, 7, 7, 8, 8, 10], 8)); // 3 (first 8)
 console.log(searchLeftBound([5, 7, 7, 8, 8, 10], 6)); // -1
+
 ```
 
 ### Problem 3: Right Bound Binary Search (Last Occurrence)
@@ -169,6 +174,7 @@ function searchRightBound(nums: number[], target: number): number {
 // Example
 console.log(searchRightBound([5, 7, 7, 8, 8, 10], 8)); // 4 (last 8)
 console.log(searchRightBound([5, 7, 7, 8, 8, 10], 6)); // -1
+
 ```
 
 ### Problem 4: Search in Rotated Sorted Array
@@ -207,6 +213,7 @@ function searchRotated(nums: number[], target: number): number {
 // Example
 console.log(searchRotated([4, 5, 6, 7, 0, 1, 2], 0)); // 4
 console.log(searchRotated([4, 5, 6, 7, 0, 1, 2], 3)); // -1
+
 ```
 
 ### Problem 5: Find Minimum in Rotated Sorted Array
@@ -232,6 +239,7 @@ function findMin(nums: number[]): number {
 // Example
 console.log(findMin([3, 4, 5, 1, 2])); // 1
 console.log(findMin([4, 5, 6, 7, 0, 1, 2])); // 0
+
 ```
 
 ### Problem 6: Search a 2D Matrix
@@ -269,14 +277,19 @@ const matrix = [
 ];
 console.log(searchMatrix(matrix, 3)); // true
 console.log(searchMatrix(matrix, 13)); // false
+
 ```
 
 ## Common Mistakes
 
 1. **Infinite loops**: Always ensure `left` and `right` move toward each other
+
 2. **Off-by-one with mid**: Use `Math.floor((left + right) / 2)` or `left + (right - left) / 2`
+
 3. **Wrong boundary**: `left <= right` vs `left < right` depends on the problem
+
 4. **Not handling duplicates**: When duplicates exist, you may need to handle them explicitly
+
 5. **Integer overflow**: Use `left + (right - left) / 2` instead of `(left + right) / 2`
 
 ## Time/Space Complexity
@@ -294,24 +307,35 @@ console.log(searchMatrix(matrix, 13)); // false
 ### Easy
 
 1. **Binary Search** (LeetCode 704)
+
 2. **First Bad Version** (LeetCode 278)
+
 3. **Valid Perfect Square** (LeetCode 367)
 
 ### Medium
 
 1. **Search in Rotated Sorted Array** (LeetCode 33)
+
 2. **Find First and Last Position of Element in Sorted Array** (LeetCode 34)
+
 3. **Search in Rotated Sorted Array II** (LeetCode 81)
+
 4. **Find Minimum in Rotated Sorted Array** (LeetCode 153)
+
 5. **Capacity To Ship Packages Within D Days** (LeetCode 1011)
+
 6. **Koko Eating Bananas** (LeetCode 875)
+
 7. **Search a 2D Matrix** (LeetCode 74)
 
 ### Hard
 
 1. **Median of Two Sorted Arrays** (LeetCode 4)
+
 2. **Find in Mountain Array** (LeetCode 1095)
+
 3. **Split Array Largest Sum** (LeetCode 410)
+
 4. **Aggressive Cows** (SPOJ)
 
 ## Summary
@@ -344,11 +368,13 @@ Variants:
 └─────────────────────────────────────────┘
 
 Key: Always ensure left and right converge
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Binary Search](https://leetcode.com/tag/binary-search/)
 - [NeetCode Binary Search](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

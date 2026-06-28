@@ -5,6 +5,7 @@
 Integration testing is a level of software testing where individual units or components are combined and tested as a group. The goal is to verify that different modules work correctly together when integrated, exposing defects in the interactions between components.
 
 **Key Characteristics:**
+
 - Tests interactions between multiple units
 - Verifies data flow between components
 - Tests interfaces and contracts between modules
@@ -31,6 +32,7 @@ Integration testing is a level of software testing where individual units or com
 │  • Low confidence     • Medium confidence  • High conf.    │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
@@ -76,6 +78,7 @@ Integration testing is a level of software testing where individual units or com
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Common Integration Points
@@ -107,6 +110,7 @@ Integration testing is a level of software testing where individual units or com
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -285,6 +289,7 @@ describe("UserService Integration", () => {
     });
   });
 });
+
 ```
 
 ### Database Integration Testing
@@ -466,6 +471,7 @@ describe("ProductRepository Integration", () => {
     });
   });
 });
+
 ```
 
 ### External API Integration Testing
@@ -596,6 +602,7 @@ describe("PaymentGateway Integration", () => {
     expect(result.error).toBe("Invalid amount");
   });
 });
+
 ```
 
 ### Service Layer Integration
@@ -749,6 +756,7 @@ describe("OrderService Integration", () => {
     });
   });
 });
+
 ```
 
 ### Message Queue Integration
@@ -904,6 +912,7 @@ describe("MessageQueue Integration", () => {
     await expect(messageQueue.publish(message)).resolves.not.toThrow();
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -1018,6 +1027,7 @@ describe("API Integration", () => {
     });
   });
 });
+
 ```
 
 ### 2. Testing with Test Containers
@@ -1034,6 +1044,7 @@ services:
       POSTGRES_USER: testuser
       POSTGRES_PASSWORD: testpass
     ports:
+
       - "5433:5432"
 */
 
@@ -1082,6 +1093,7 @@ describe("Database Integration with Test Containers", () => {
     expect(result.rows[0].value).toBe(1);
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -1102,6 +1114,7 @@ it("should create user in database", async () => {
   const found = await db.query("SELECT * FROM users WHERE id = $1", [user.id]);
   expect(found.rows).toHaveLength(1);
 });
+
 ```
 
 ### 2. Not Cleaning Up Test Data
@@ -1116,6 +1129,7 @@ beforeAll(async () => {
 beforeEach(async () => {
   await db.clear();
 });
+
 ```
 
 ### 3. Using Production Database
@@ -1126,18 +1140,27 @@ const db = new Database(process.env.PRODUCTION_DB_URL);
 
 // ✅ GOOD: Use test database
 const db = new Database(process.env.TEST_DB_URL);
+
 ```
 
 ## Best Practices
 
 1. **Use test databases** that mirror production
+
 2. **Clean up test data** before/after each test
+
 3. **Mock external services** that are slow or unreliable
+
 4. **Test real interactions** between components
+
 5. **Use transactions** that rollback after tests
+
 6. **Test error scenarios** and edge cases
+
 7. **Keep tests independent** - no shared state
+
 8. **Use fixtures** for consistent test data
+
 9. **Test contracts** between services
 10. **Monitor test execution time** and optimize
 
@@ -1163,6 +1186,7 @@ beforeAll(async () => {
 afterAll(async () => {
   await db.restoreSnapshot();
 });
+
 ```
 
 ### Parallel Test Execution
@@ -1186,6 +1210,7 @@ module.exports = {
     },
   ],
 };
+
 ```
 
 ## Interview Questions

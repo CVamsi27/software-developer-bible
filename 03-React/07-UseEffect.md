@@ -11,6 +11,7 @@
 ### The Problem
 
 Function components are pure — they only take props and return JSX. But real applications need to interact with the outside world:
+
 - Fetch data from APIs
 - Set up WebSocket connections
 - Subscribe to browser events
@@ -40,6 +41,7 @@ useEffect(() => {
   const subscription = subscribe(channel);
   return () => subscription.unsubscribe();
 }, [channel]); // Re-subscribe when channel changes
+
 ```
 
 ## How It Works
@@ -84,6 +86,7 @@ Unmount:
 │ 2. useEffect cleanup runs                                  │
 │ 3. Component memory freed                                  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Dependency Array
@@ -121,6 +124,7 @@ Multiple Dependencies:
 │   console.log('Runs when userId OR theme changes');        │
 │ }, [userId, theme]);                                        │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Cleanup Function
@@ -151,6 +155,7 @@ Example: Subscription with Cleanup
 │ 3. Effect runs again → new subscription created            │
 │ 4. Component unmounts → cleanup runs → subscription removed│
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Common Patterns
@@ -208,6 +213,7 @@ Pattern 5: External Store Subscription
 │   return unsubscribe;                                       │
 │ }, [store]);                                                │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -264,6 +270,7 @@ const UserProfile = ({ userId }: { userId: string }) => {
     </div>
   );
 };
+
 ```
 
 ### Event Listener
@@ -300,6 +307,7 @@ const ResponsiveComponent = () => {
     </div>
   );
 };
+
 ```
 
 ### Timer with Cleanup
@@ -332,6 +340,7 @@ const Clock = () => {
 
   return <div>{time.toLocaleTimeString()}</div>;
 };
+
 ```
 
 ### Document Title Sync
@@ -352,6 +361,7 @@ const Dashboard = () => {
   useDocumentTitle('Dashboard - MyApp');
   return <div>Dashboard</div>;
 };
+
 ```
 
 ### Intersection Observer
@@ -390,6 +400,7 @@ const LazyImage = ({ src, alt }: { src: string; alt: string }) => {
     </div>
   );
 };
+
 ```
 
 ### Fetch with Abort Controller
@@ -443,6 +454,7 @@ const UserList = () => {
   if (error) return <div>Error: {error.message}</div>;
   return <ul>{users?.map(u => <li key={u.id}>{u.name}</li>)}</ul>;
 };
+
 ```
 
 ## Real-World Use Cases
@@ -476,6 +488,7 @@ const SearchInput = () => {
 
   return <input value={query} onChange={e => setQuery(e.target.value)} />;
 };
+
 ```
 
 ### 2. WebSocket Connection
@@ -506,6 +519,7 @@ const useWebSocket = (url: string) => {
 
   return { messages, isConnected, sendMessage };
 };
+
 ```
 
 ### 3. localStorage Sync
@@ -542,6 +556,7 @@ const ThemeToggle = () => {
     </button>
   );
 };
+
 ```
 
 ### 4. Geolocation
@@ -565,6 +580,7 @@ const useGeolocation = () => {
 
   return { location, error };
 };
+
 ```
 
 ## Common Mistakes
@@ -585,6 +601,7 @@ const SearchComponent = ({ query }: { query: string }) => {
     fetchResults(query);
   }, [query]); // Re-runs when query changes
 };
+
 ```
 
 ### 2. Missing Cleanup
@@ -609,6 +626,7 @@ const TimerComponent = () => {
     return () => clearInterval(interval); // Cleanup
   }, []);
 };
+
 ```
 
 ### 3. Using useEffect for Derived State
@@ -634,6 +652,7 @@ const FilteredList = ({ items, query }: Props) => {
 
   return <List items={filtered} />;
 };
+
 ```
 
 ### 4. Async Functions in useEffect
@@ -658,6 +677,7 @@ useEffect(() => {
 useEffect(() => {
   fetchData().then(data => setData(data));
 }, []);
+
 ```
 
 ### 5. Not Using Abort Controller
@@ -684,16 +704,23 @@ useEffect(() => {
 
   return () => controller.abort();
 }, [userId]);
+
 ```
 
 ## Best Practices
 
 1. **Always include dependencies**: Every external value used inside the effect should be in the dependency array.
+
 2. **Always return cleanup functions**: For subscriptions, timers, event listeners, and fetch requests.
+
 3. **Use AbortController for fetch**: Prevent race conditions and memory leaks.
+
 4. **Don't use useEffect for derived state**: Compute during render instead.
+
 5. **Split effects by concern**: One effect per side effect.
+
 6. **Use `useLayoutEffect` for DOM measurements**: When you need to measure before paint.
+
 7. **Avoid async functions directly**: Use inner async function or `.then()`.
 
 ## Performance Considerations
@@ -736,10 +763,12 @@ A: `useLayoutEffect` runs after DOM mutation but before paint (synchronous). `us
 
 **Q6: How do you fetch data in useEffect?**
 A: Use `useEffect` with an async function or `.then()`:
+
 ```typescript
 useEffect(() => {
   fetch(url).then(res => res.json()).then(data => setData(data));
 }, [url]);
+
 ```
 
 **Q7: What happens if you don't provide a dependency array?**
@@ -750,15 +779,18 @@ A: If you provide an empty array `[]`, the effect runs only once, after the firs
 
 **Q9: Can you use async functions in useEffect?**
 A: Not directly. Use an inner async function or `.then()`:
+
 ```typescript
 useEffect(() => {
   const fetchData = async () => { /* ... */ };
   fetchData();
 }, []);
+
 ```
 
 **Q10: What is the cleanup function used for?**
 A: The cleanup function is used to:
+
 - Cancel subscriptions
 - Clear timers
 - Remove event listeners
@@ -769,18 +801,26 @@ A: The cleanup function is used to:
 
 **Q11: Explain the complete useEffect lifecycle.**
 A:
+
 1. Component renders
+
 2. DOM is updated
+
 3. Browser paints
+
 4. `useEffect` callback runs (async)
+
 5. If deps change:
+
    - Previous cleanup function runs
    - New effect runs
 6. On unmount:
+
    - Cleanup function runs
 
 **Q12: How do you handle race conditions in useEffect?**
 A: Use `AbortController` to cancel previous requests:
+
 ```typescript
 useEffect(() => {
   const controller = new AbortController();
@@ -789,6 +829,7 @@ useEffect(() => {
     .then(setData);
   return () => controller.abort();
 }, [url]);
+
 ```
 
 **Q13: What is the "stale closure" problem in useEffect?**
@@ -796,10 +837,12 @@ A: Stale closures occur when useEffect captures stale values. Solution: include 
 
 **Q14: How do you avoid infinite loops?**
 A: Don't set state inside useEffect without proper dependencies. If you must set state based on other state, do it during render:
+
 ```typescript
 if (condition && state !== expectedValue) {
   setState(expectedValue);
 }
+
 ```
 
 **Q15: What is the difference between useEffect and useLayoutEffect?**
@@ -807,19 +850,23 @@ A: `useLayoutEffect` runs synchronously after DOM mutation, before paint. `useEf
 
 **Q16: How do you fetch data when a prop changes?**
 A: Include the prop in the dependency array:
+
 ```typescript
 useEffect(() => {
   fetch(`/api/users/${userId}`).then(res => res.json()).then(setUser);
 }, [userId]); // Re-fetch when userId changes
+
 ```
 
 **Q17: How do you subscribe to events in useEffect?**
 A:
+
 ```typescript
 useEffect(() => {
   window.addEventListener('resize', handleResize);
   return () => window.removeEventListener('resize', handleResize);
 }, []);
+
 ```
 
 **Q18: What is the performance impact of useEffect?**
@@ -827,6 +874,7 @@ A: `useEffect` runs after paint, so it doesn't block rendering. However, too man
 
 **Q19: How do you test useEffect?**
 A: Use React Testing Library's `act` to handle async operations:
+
 ```typescript
 test('fetches data', async () => {
   render(<Component />);
@@ -834,10 +882,12 @@ test('fetches data', async () => {
     expect(screen.getByText('Data')).toBeInTheDocument();
   });
 });
+
 ```
 
 **Q20: What are the common useEffect patterns?**
 A:
+
 - Data fetching with cleanup
 - Event listener setup/teardown
 - Timer management
@@ -849,9 +899,13 @@ A:
 
 **Q21: Explain the timing of useEffect relative to browser painting.**
 A: `useEffect` runs after the browser paints. This means:
+
 1. React commits DOM changes
+
 2. Browser calculates layout
+
 3. Browser paints pixels
+
 4. `useEffect` runs (async)
 This is ideal for side effects that don't need to block paint.
 
@@ -863,6 +917,7 @@ A: Suspense can suspend rendering during the render phase. When a component susp
 
 **Q24: How do you handle multiple async operations in useEffect?**
 A: Use `AbortController` and track which operation is current:
+
 ```typescript
 useEffect(() => {
   let cancelled = false;
@@ -871,6 +926,7 @@ useEffect(() => {
   });
   return () => { cancelled = true; };
 }, [url]);
+
 ```
 
 **Q25: What is the difference between useEffect and useMemo?**
@@ -878,6 +934,7 @@ A: `useMemo` memoizes a computed value during render. `useEffect` performs side 
 
 **Q26: How do you handle errors in useEffect?**
 A: Use try/catch in async functions:
+
 ```typescript
 useEffect(() => {
   const fetchData = async () => {
@@ -890,6 +947,7 @@ useEffect(() => {
   };
   fetchData();
 }, [url]);
+
 ```
 
 **Q27: What is the "zombie children" problem?**
@@ -900,12 +958,14 @@ A: `React.memo` prevents re-renders when props haven't changed. This means `useE
 
 **Q29: What is the performance impact of wrong dependencies?**
 A: Wrong dependencies cause:
+
 - Missing dependencies: Stale values, bugs
 - Extra dependencies: Unnecessary effect runs
 - Both impact performance and correctness
 
 **Q30: How do you handle cleanup for complex subscriptions?**
 A: Use a cleanup registry:
+
 ```typescript
 useEffect(() => {
   const cleanups: (() => void)[] = [];
@@ -913,17 +973,24 @@ useEffect(() => {
   cleanups.push(subscribeToChannel2());
   return () => cleanups.forEach(cleanup => cleanup());
 }, []);
+
 ```
 
 ### FAANG-style (5-10)
 
 **Q31: Design a data fetching layer using useEffect.**
 A:
+
 1. **Custom hook**: Encapsulate fetch logic
+
 2. **Cache**: Store fetched data
+
 3. **Deduplication**: Avoid duplicate requests
+
 4. **Retry**: Automatic retry on failure
+
 5. **Abort**: Cancel stale requests
+
 6. **Optimistic updates**: Show data immediately
 
 ```typescript
@@ -952,10 +1019,12 @@ const useFetch = <T>(url: string) => {
 
   return state;
 };
+
 ```
 
 **Q32: How would you implement a custom useEffect with different timing?**
 A:
+
 ```typescript
 const useInterval = (callback: () => void, delay: number) => {
   const savedCallback = useRef(callback);
@@ -970,10 +1039,12 @@ const useInterval = (callback: () => void, delay: number) => {
     return () => clearInterval(id);
   }, [delay]);
 };
+
 ```
 
 **Q33: Analyze the memory implications of useEffect.**
 A:
+
 - Each effect stores a closure (references to outer variables)
 - Cleanup functions prevent memory leaks
 - Missing cleanup causes memory leaks (subscriptions, timers)
@@ -981,14 +1052,20 @@ A:
 
 **Q34: How would you debug a useEffect issue?**
 A:
+
 1. **React DevTools**: Check component re-renders
+
 2. **Console logging**: Log effect execution and cleanup
+
 3. **Network tab**: Monitor fetch requests
+
 4. **Memory tab**: Detect memory leaks
+
 5. **React StrictMode**: Double-renders to detect issues
 
 **Q35: Design a useEffect-based state machine.**
 A:
+
 ```typescript
 const useStateMachine = <T>(initialState: T, transitions: Record<string, (state: T) => T>) => {
   const [state, setState] = useState(initialState);
@@ -999,6 +1076,7 @@ const useStateMachine = <T>(initialState: T, transitions: Record<string, (state:
 
   return [state, transition];
 };
+
 ```
 
 **Q36: How does useEffect interact with React Server Components?**
@@ -1006,6 +1084,7 @@ A: Server Components don't have `useEffect`. Client Components hydrate with norm
 
 **Q37: Analyze the performance characteristics of useEffect.**
 A: `useEffect` runs asynchronously, so it doesn't block rendering. However:
+
 - Too many effects cause unnecessary work
 - Wrong dependencies cause re-runs
 - Cleanup functions add overhead
@@ -1013,6 +1092,7 @@ A: `useEffect` runs asynchronously, so it doesn't block rendering. However:
 
 **Q38: How would you implement a useEffect-based animation?**
 A:
+
 ```typescript
 const useAnimation = (ref: React.RefObject<HTMLElement>, deps: any[]) => {
   useEffect(() => {
@@ -1030,10 +1110,12 @@ const useAnimation = (ref: React.RefObject<HTMLElement>, deps: any[]) => {
     return () => animation.cancel();
   }, deps);
 };
+
 ```
 
 **Q39: How does useEffect handle the "state update after unmount" problem?**
 A: React 18 warns about state updates after unmount. Prevention:
+
 - Use `AbortController` for fetch
 - Check if component is still mounted
 - Use cleanup functions
@@ -1041,6 +1123,7 @@ A: React 18 warns about state updates after unmount. Prevention:
 
 **Q40: Design a useEffect-based testing utility.**
 A:
+
 ```typescript
 const renderWithEffects = async (component: React.ReactElement) => {
   const result = render(component);
@@ -1049,6 +1132,7 @@ const renderWithEffects = async (component: React.ReactElement) => {
   });
   return result;
 };
+
 ```
 
 ### Follow-ups (5-10)
@@ -1058,6 +1142,7 @@ A: "`useEffect` is like a postcard you send after painting a picture. React pain
 
 **Q42: What are the edge cases in useEffect?**
 A:
+
 - Stale closures in async callbacks
 - Race conditions with multiple fetches
 - Missing dependencies causing bugs
@@ -1066,12 +1151,15 @@ A:
 
 **Q43: How does useEffect handle the "derived state" pattern?**
 A: Don't use `useEffect` for derived state. Compute during render:
+
 ```typescript
 const filtered = useMemo(() => items.filter(...), [items, query]);
+
 ```
 
 **Q44: What is the relationship between useEffect and React DevTools?**
 A: React DevTools shows:
+
 - Which effects are running
 - When effects run
 - Effect dependencies
@@ -1082,6 +1170,7 @@ A: StrictMode double-renders in development, causing effects to run twice. This 
 
 **Q46: What is the future of useEffect in React?**
 A: React is exploring:
+
 - Better concurrent effect handling
 - Automatic cleanup detection
 - Improved dependency arrays
@@ -1089,6 +1178,7 @@ A: React is exploring:
 
 **Q47: How would you implement a useEffect-based form validator?**
 A:
+
 ```typescript
 const useFormValidation = <T>(values: T, rules: Record<string, (value: any) => string | null>) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -1104,10 +1194,12 @@ const useFormValidation = <T>(values: T, rules: Record<string, (value: any) => s
 
   return errors;
 };
+
 ```
 
 **Q48: How does useEffect handle the "multiple async operations" problem?**
 A: Use `AbortController` and track which operation is current:
+
 ```typescript
 useEffect(() => {
   let cancelled = false;
@@ -1118,6 +1210,7 @@ useEffect(() => {
   fetchData();
   return () => { cancelled = true; };
 }, [url]);
+
 ```
 
 **Q49: What is the relationship between useEffect and React Suspense?**
@@ -1125,6 +1218,7 @@ A: Suspense can suspend rendering during the render phase. When a component susp
 
 **Q50: How would you implement a useEffect-based real-time data sync?**
 A:
+
 ```typescript
 const useRealtimeSync = <T>(url: string) => {
   const [data, setData] = useState<T | null>(null);
@@ -1139,6 +1233,7 @@ const useRealtimeSync = <T>(url: string) => {
 
   return data;
 };
+
 ```
 
 ## Summary
@@ -1199,6 +1294,7 @@ Performance:
 ├── Cleanup prevents memory leaks
 ├── Too many effects cause performance issues
 └── Use React.memo to prevent unnecessary re-renders
+
 ```
 
 ## References & Learn More

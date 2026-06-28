@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Request a ride from current location to destination
 - Match riders with nearby drivers
 - Real-time driver tracking on map
@@ -14,6 +15,7 @@
 - Driver availability management
 
 ### Non-Functional Requirements
+
 - Low latency matching (< 30 seconds)
 - High availability (99.99%)
 - Real-time location updates (every 4 seconds)
@@ -23,8 +25,10 @@
 - Secure payment processing (PCI compliant)
 
 ## Capacity Estimation
+
 ```text
 Storage Estimates:
+
 - 20M DAU × 2 rides/day = 40M rides/day
 - Average ride data: 5 KB
 - Daily storage: 40M × 5 KB = 200 GB/day
@@ -32,18 +36,22 @@ Storage Estimates:
 - Location storage: 250K × 200 bytes = 50 MB/sec
 
 Bandwidth Estimates:
+
 - Ride requests: 40M × 5 KB = 200 GB/day = ~2.3 MB/s
 - Location updates: 50 MB/s = 50 MB/s
 - Total: ~52.3 MB/s average, ~260 MB/s peak
 
 Driver Estimates:
+
 - 5M drivers globally
 - 1M concurrent during peak
 - Location updates every 4 seconds
 - Need 1000+ location processing servers
+
 ```
 
 ## API Design
+
 ```yaml
 # Ride Request
 POST /api/v1/rides
@@ -100,10 +108,12 @@ POST /api/v1/rides/{ride_id}/complete
 # Get ETA
 GET /api/v1/eta?pickup_lat=37.7749&pickup_lng=-122.4194&destination_lat=37.7849&destination_lng=-122.4094
   Response: { "eta_seconds": 1800, "distance_km": 5.2 }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Riders table
 CREATE TABLE riders (
@@ -189,9 +199,11 @@ CREATE TABLE payments (
     transaction_id VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │   riders    │     │     rides       │     │    drivers      │
@@ -225,10 +237,12 @@ CREATE TABLE payments (
                     │ status          │
                     │ transaction_id  │
                     └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Mobile Apps (Rider/Driver)                     │
@@ -267,11 +281,13 @@ CREATE TABLE payments (
      │  (Spatial       │
      │   Queries)      │
      └─────────────────┘
+
 ```
 
 ## Key Components
 
 ### Geospatial Indexing Service
+
 ```python
 from sqlalchemy import create_engine
 from geoalchemy2 import Geography
@@ -335,9 +351,11 @@ class GeospatialService:
             'eta_seconds': route['duration'],
             'distance_km': route['distance'] / 1000
         }
+
 ```
 
 ### Ride Matching Service
+
 ```python
 from typing import Optional
 import asyncio
@@ -439,9 +457,11 @@ class RideMatchingService:
             return True
 
         return False
+
 ```
 
 ### Surge Pricing Service
+
 ```python
 from datetime import datetime, timedelta
 import math
@@ -496,9 +516,11 @@ class SurgePricingService:
         # Count available drivers in area
         nearby_drivers = await self.geo.find_nearby_drivers(lat, lng, 5)
         return len([d for d in nearby_drivers if d['available']])
+
 ```
 
 ### ETA Calculation Service
+
 ```python
 class ETACalculationService:
     def __init__(self, traffic_service, routing_service):
@@ -550,11 +572,13 @@ class ETACalculationService:
             return 'heavy'
         else:
             return 'severe'
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Location Cache
+
 ```python
 class LocationCache:
     def __init__(self, redis_client):
@@ -593,9 +617,11 @@ class LocationCache:
     async def remove_driver(self, driver_id: str):
         self.redis.zrem('driver_locations', driver_id)
         self.redis.delete(f"driver:{driver_id}")
+
 ```
 
 ### Surge Pricing Cache
+
 ```python
 class SurgeCache:
     def __init__(self, redis_client):
@@ -616,11 +642,13 @@ class SurgeCache:
     def get_region_id(self, lat: float, lng: float) -> str:
         # Round to 0.01 degree grid (~1km)
         return f"{lat:.2f}:{lng:.2f}"
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── ride.requested        (new ride requests)
@@ -644,9 +672,11 @@ Event Schema:
     "destination": {"lat": 37.7849, "lng": -122.4094}
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class RideEventProcessor:
     def __init__(self, kafka_consumer, db, cache):
@@ -689,11 +719,13 @@ class RideEventProcessor:
 
         # Process payment
         await self.process_payment(data)
+
 ```
 
 ## Scaling Strategy
 
 ### Geographic Sharding
+
 ```text
 Global Deployment:
 ┌─────────────────────────────────────────────────────────┐
@@ -710,9 +742,11 @@ Global Deployment:
 │  Location    │   │  Location    │   │  Location    │
 │  DB Shards   │   │  DB Shards   │   │  DB Shards   │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Location Service Scaling
+
 ```python
 class LocationServiceScaler:
     def __init__(self):
@@ -732,9 +766,11 @@ class LocationServiceScaler:
             return 'eu-west'
         else:
             return 'apac'
+
 ```
 
 ### Database Scaling
+
 ```text
 Database Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -750,11 +786,13 @@ Database Architecture:
      │  Replica    │ │  Replica    │ │  Replica    │
      │  (US-East)  │ │  (EU-West)  │ │  (APAC)     │
      └─────────────┘ └─────────────┘ └─────────────┘
+
 ```
 
 ## Failure Handling
 
 ### Driver Offline Detection
+
 ```python
 class DriverOfflineDetector:
     def __init__(self, redis_client, notification_service):
@@ -796,9 +834,11 @@ class DriverOfflineDetector:
         # Mark driver as offline
         await self.redis.srem('active_drivers', driver_id)
         await self.geo.remove_driver(driver_id)
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | Location service down | Use cached locations, degrade ETA accuracy |
@@ -808,6 +848,7 @@ class DriverOfflineDetector:
 | Network partition | Store location locally, sync when reconnected |
 
 ### Ride Cancellation Handling
+
 ```python
 class CancellationHandler:
     def __init__(self, db, notification_service, refund_service):
@@ -848,13 +889,16 @@ class CancellationHandler:
 
         # Log cancellation for analytics
         await self.db.log_cancellation(ride_id, cancelled_by, reason)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - rides_per_minute
   - average_wait_time
   - ride_completion_rate
@@ -862,6 +906,7 @@ Business Metrics:
   - driver_utilization_rate
 
 System Metrics:
+
   - matching_latency_p95
   - location_update_frequency
   - api_response_time
@@ -869,16 +914,20 @@ System Metrics:
   - database_query_latency
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - network_latency_between_regions
   - redis_memory_usage
   - kafka_consumer_lag
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Matching Latency
     condition: p95_matching_latency > 30s
     severity: critical
@@ -894,6 +943,7 @@ alerts:
   - name: Payment Processing Failures
     condition: payment_failure_rate > 5%
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -908,64 +958,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you match riders with drivers efficiently?**
+
    - Use geospatial indexing (Redis GEO)
    - Progressive search radius expansion
    - Multi-factor scoring (distance, rating, acceptance)
    - Real-time availability tracking
 
 2. **How do you handle surge pricing?**
+
    - Real-time demand/supply analysis per region
    - Dynamic multiplier calculation
    - Price transparency before booking
    - Gradual surge increase/decrease
 
 3. **How would you ensure accurate ETA?**
+
    - Integrate with traffic data APIs
    - Machine learning for historical patterns
    - Real-time route optimization
    - Confidence intervals for ETAs
 
 ### Scaling Questions
+
 4. **How do you scale location updates for 1M drivers?**
+
    - Geohash-based sharding
    - Redis for real-time queries
    - Kafka for event processing
    - Write-optimized time-series storage
 
 5. **How do you handle peak demand (New Year's Eve)?**
+
    - Predictive driver positioning
    - Gradual surge pricing increase
    - Rider incentives for flexibility
    - Driver supply incentives
 
 ### Trade-off Questions
+
 6. **How do you balance rider wait time vs driver utilization?**
+
    - Optimize for rider experience primarily
    - Driver acceptance rate incentives
    - Fair distribution of rides
    - Avoid driver burnout
 
 7. **How do you handle ride pooling (UberPool)?**
+
    - Graph-based route optimization
    - Real-time rerouting for new pickups
    - Fare splitting logic
    - Delivery time guarantees
 
 ### Senior-level Questions
+
 8. **How would you implement safety features?**
+
    - Real-time ride tracking for contacts
    - Emergency button integration
    - Driver background check system
    - Trip anomaly detection
 
 9. **How do you handle multi-city operations?**
+
    - Regional data residency
    - Cross-border ride handling
    - Currency conversion
    - Local regulation compliance
 
 10. **How would you optimize for electric vehicles?**
+
     - Range-aware routing
     - Charging station integration
     - Battery level in matching
@@ -974,6 +1038,7 @@ alerts:
 ## Summary
 
 The Uber system design covers:
+
 - **Real-time Location Tracking**: Redis GEO for sub-second queries
 - **Intelligent Matching**: Multi-factor scoring algorithm
 - **Dynamic Pricing**: Surge based on demand/supply
@@ -981,10 +1046,15 @@ The Uber system design covers:
 - **Reliability**: Circuit breakers, fallback mechanisms
 
 Key takeaways:
+
 1. Use Redis GEO for efficient geospatial queries
+
 2. Implement progressive search radius for matching
+
 3. Process location updates asynchronously via Kafka
+
 4. Use PostGIS for complex spatial queries
+
 5. Design for failure with graceful degradation
 
 This design supports 20M DAU with < 30 second matching latency and 99.99% availability.
@@ -992,6 +1062,7 @@ This design supports 20M DAU with < 30 second matching latency and 99.99% availa
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

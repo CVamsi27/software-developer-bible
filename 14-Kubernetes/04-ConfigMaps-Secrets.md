@@ -5,6 +5,7 @@
 **ConfigMaps** store non-sensitive configuration data as key-value pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.
 
 Key concepts:
+
 - **ConfigMap**: Non-sensitive configuration data
 - **Secret**: Sensitive data (base64 encoded, not encrypted by default)
 - **Environment variable**: Inject ConfigMap/Secret as env var
@@ -27,6 +28,7 @@ Key concepts:
 
 ```text
 +----------------------------------------------------------+
+
 |                    Kubernetes Cluster                      |
 |                                                           |
 |  +------------------+    +------------------+            |
@@ -48,7 +50,9 @@ Key concepts:
 |  |  |  DB_PASS=***      |  |    config.json    |    |   |
 |  |  +-------------------+  +-------------------+    |   |
 |  +--------------------------------------------------+   |
+
 +----------------------------------------------------------+
+
 ```
 
 ## Code Examples
@@ -81,6 +85,7 @@ data:
         proxy_pass http://localhost:8080;
       }
     }
+
 ```
 
 ### Secret
@@ -96,6 +101,7 @@ data:
   DATABASE_PASSWORD: cGFzc3dvcmQxMjM=  # base64 encoded
   API_KEY: c2tfbGl2ZV9hYmMxMjM=
   JWT_SECRET: c2VjcmV0X2p3dF9rZXk=
+
 ```
 
 ### Create from literals
@@ -118,6 +124,7 @@ kubectl create configmap nginx-config \
 # From env file
 kubectl create secret generic db-creds \
   --from-env-file=.env
+
 ```
 
 ### Environment Variable Injection
@@ -129,10 +136,12 @@ metadata:
   name: myapp
 spec:
   containers:
+
     - name: myapp
       image: myapp:1.0.0
       env:
         # From ConfigMap key
+
         - name: DATABASE_HOST
           valueFrom:
             configMapKeyRef:
@@ -140,6 +149,7 @@ spec:
               key: DATABASE_HOST
 
         # From Secret key
+
         - name: DATABASE_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -148,10 +158,13 @@ spec:
 
       # All keys from ConfigMap
       envFrom:
+
         - configMapRef:
             name: app-config
+
         - secretRef:
             name: app-secrets
+
 ```
 
 ### Volume Mount
@@ -163,24 +176,30 @@ metadata:
   name: myapp
 spec:
   containers:
+
     - name: myapp
       image: myapp:1.0.0
       volumeMounts:
+
         - name: config-volume
           mountPath: /etc/config
           readOnly: true
+
         - name: secret-volume
           mountPath: /etc/secrets
           readOnly: true
 
   volumes:
+
     - name: config-volume
       configMap:
         name: app-config
+
     - name: secret-volume
       secret:
         secretName: app-secrets
         defaultMode: 0400
+
 ```
 
 ### Deployment with ConfigMap and Secret
@@ -201,26 +220,33 @@ spec:
         app: myapp
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           ports:
+
             - containerPort: 8080
 
           envFrom:
+
             - configMapRef:
                 name: app-config
+
             - secretRef:
                 name: app-secrets
 
           volumeMounts:
+
             - name: nginx-config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
 
       volumes:
+
         - name: nginx-config
           configMap:
             name: nginx-config
+
 ```
 
 ### Immutable ConfigMap
@@ -234,6 +260,7 @@ immutable: true
 data:
   DATABASE_HOST: "postgres"
   LOG_LEVEL: "info"
+
 ```
 
 ## Real-World Use Cases
@@ -258,6 +285,7 @@ data:
         "betaFeatures": false
       }
     }
+
 ```
 
 ### 2. Database Credentials
@@ -272,6 +300,7 @@ data:
   POSTGRES_DB: bXlhcHA=           # myapp
   POSTGRES_USER: cG9zdGdyZXM=     # postgres
   POSTGRES_PASSWORD: c2VjcmV0     # secret
+
 ```
 
 ### 3. TLS Certificate
@@ -293,9 +322,11 @@ metadata:
   name: myapp
 spec:
   tls:
+
     - hosts:
         - example.com
       secretName: tls-secret
+
 ```
 
 ### 4. Docker Registry Credentials
@@ -306,6 +337,7 @@ kubectl create secret docker-registry regcred \
   --docker-username=user \
   --docker-password=pass \
   --docker-email=user@example.com
+
 ```
 
 ## Common Mistakes
@@ -375,31 +407,45 @@ spec:
     spec:
       serviceAccountName: myapp-sa
       containers:
+
         - name: myapp
           image: myapp:1.0.0
           envFrom:
+
             - configMapRef:
                 name: app-config
+
             - secretRef:
                 name: app-secrets
           volumeMounts:
+
             - name: config
               mountPath: /etc/config
               readOnly: true
       volumes:
+
         - name: config
           configMap:
             name: app-config
+
 ```
 
 1. **Never commit secrets to Git** — use external secret management
+
 2. **Use immutable ConfigMaps** — prevent accidental changes
+
 3. **Set restrictive file permissions** — `defaultMode: 0400` for secrets
+
 4. **Rotate secrets regularly** — implement secret rotation
+
 5. **Use namespaces** — isolate ConfigMaps/Secrets per namespace
+
 6. **Use RBAC** — restrict access to Secrets
+
 7. **Enable encryption at rest** — encrypt Secrets in etcd
+
 8. **Use external secret stores** — Vault, AWS SSM, GCP Secret Manager
+
 9. **Version your ConfigMaps** — append version suffixes
 10. **Monitor ConfigMap changes** — audit ConfigMap updates
 
@@ -430,6 +476,7 @@ kubectl edit configmap myconfig
 
 # Delete ConfigMap
 kubectl delete configmap myconfig
+
 ```
 
 ## Interview Questions
@@ -574,11 +621,13 @@ kubectl apply -f secret.yaml
 # Delete
 kubectl delete configmap myconfig
 kubectl delete secret mysecret
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

@@ -5,14 +5,21 @@
 Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. They work like a `try-catch` block for React components.
 
 Error Boundaries must be **class components** with either `componentDidCatch` or `getDerivedStateFromError` methods. They catch errors during:
+
 1. Rendering
+
 2. Lifecycle methods
+
 3. Constructors of child components
 
 They do **not** catch errors in:
+
 1. Event handlers
+
 2. Asynchronous code (setTimeout, promises)
+
 3. Server-side rendering
+
 4. Errors in the error boundary itself
 
 ## Why Do We Need It?
@@ -35,6 +42,7 @@ App
 
 Result: ENTIRE APP CRASHES!
 White screen of death for the user
+
 ```
 
 ### The Solution
@@ -56,6 +64,7 @@ App
 
 Result: Comment shows ErrorUI
 Rest of the app continues working!
+
 ```
 
 ## How It Works
@@ -93,6 +102,7 @@ Error Reporting:
 │     └── Log to error reporting service                      │
 │     └── Update state to show fallback                       │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Error Boundary Methods
@@ -124,6 +134,7 @@ componentDidCatch (Instance):
 │                                                             │
 │ ✅ Can have side effects (logging, reporting)               │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Error Boundary Diagram
@@ -175,6 +186,7 @@ Error Boundary Flow:
                     │  "Something     │
                     │   went wrong"   │
                     └─────────────────┘
+
 ```
 
 ## Code Examples
@@ -227,6 +239,7 @@ class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+
 ```
 
 ### Error Boundary with Retry
@@ -266,6 +279,7 @@ class ErrorBoundaryWithRetry extends Component<
     return this.props.children;
   }
 }
+
 ```
 
 ### Nested Error Boundaries
@@ -286,6 +300,7 @@ const App = () => (
     </aside>
   </ErrorBoundary>
 );
+
 ```
 
 ### Error Boundary with Logging
@@ -330,6 +345,7 @@ class ErrorBoundaryWithLogging extends Component<Props, State> {
     return this.props.children;
   }
 }
+
 ```
 
 ### Function Component with Error Boundary
@@ -355,6 +371,7 @@ const App = () => (
     <BuggyComponent />
   </ErrorBoundary>
 );
+
 ```
 
 ## Real-World Use Cases
@@ -378,6 +395,7 @@ const Dashboard = () => (
     <DashboardContent />
   </ErrorBoundary>
 );
+
 ```
 
 ### 2. Widget-Level Error Boundaries
@@ -406,6 +424,7 @@ const Dashboard = () => (
     </ErrorBoundary>
   </div>
 );
+
 ```
 
 ### 3. Form Error Handling
@@ -424,6 +443,7 @@ const ContactForm = () => (
     <Form onSubmit={handleSubmit} />
   </ErrorBoundary>
 );
+
 ```
 
 ### 4. Image Gallery Error Handling
@@ -441,6 +461,7 @@ const GalleryImage = ({ src, alt }: { src: string; alt: string }) => (
     <img src={src} alt={alt} />
   </ErrorBoundary>
 );
+
 ```
 
 ## Common Mistakes
@@ -469,6 +490,7 @@ const App = () => (
     </ErrorBoundary>
   </div>
 );
+
 ```
 
 ### 2. Using Error Boundaries for Event Handlers
@@ -500,6 +522,7 @@ class MyComponent extends Component {
     return <button onClick={this.handleClick}>Click</button>;
   }
 }
+
 ```
 
 ### 3. Not Providing Recovery Mechanism
@@ -545,6 +568,7 @@ class ErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
 ```
 
 ### 4. Using Function Components
@@ -570,16 +594,23 @@ class ErrorBoundary extends Component {
     return this.state.hasError ? this.props.fallback : this.props.children;
   }
 }
+
 ```
 
 ## Best Practices
 
 1. **Use class components**: Error Boundaries must be class components.
+
 2. **Place them strategically**: Around critical sections, not the entire app.
+
 3. **Provide recovery mechanisms**: Allow users to retry or navigate away.
+
 4. **Log errors**: Use `componentDidCatch` to report to error services.
+
 5. **Use multiple boundaries**: Different fallbacks for different sections.
+
 6. **Don't catch event handler errors**: Use try-catch for those.
+
 7. **Test error states**: Verify fallback UI displays correctly.
 
 ## Performance Considerations
@@ -624,12 +655,14 @@ A: An instance method called when a child component throws an error. It's used f
 
 **Q6: What errors do Error Boundaries catch?**
 A: They catch errors in:
+
 - Rendering
 - Lifecycle methods
 - Constructors of child components
 
 **Q7: What errors do Error Boundaries NOT catch?**
 A: They don't catch errors in:
+
 - Event handlers
 - Asynchronous code (setTimeout, promises)
 - Server-side rendering
@@ -648,20 +681,29 @@ A: Throw an error in a child component and verify the fallback UI displays.
 
 **Q11: Explain the complete Error Boundary lifecycle.**
 A:
+
 1. Child component throws error during render
+
 2. React catches the error
+
 3. Calls `getDerivedStateFromError` (render phase)
+
 4. Updates state with error
+
 5. Calls `componentDidCatch` (commit phase)
+
 6. Logs error
+
 7. Renders fallback UI
 
 **Q12: How do you implement retry functionality?**
 A: Store error in state, provide a retry function that resets state:
+
 ```typescript
 retry = () => {
   this.setState({ hasError: false, error: null });
 };
+
 ```
 
 **Q13: How do you log errors to external services?**
@@ -669,6 +711,7 @@ A: Use `componentDidCatch` to send errors to services like Sentry, LogRocket, or
 
 **Q14: How do you use multiple Error Boundaries?**
 A: Nest them for different sections:
+
 ```typescript
 <ErrorBoundary fallback={<AppError />}>
   <Header />
@@ -676,6 +719,7 @@ A: Nest them for different sections:
     <Content />
   </ErrorBoundary>
 </ErrorBoundary>
+
 ```
 
 **Q15: What is the difference between Error Boundaries and try-catch?**
@@ -683,6 +727,7 @@ A: `try-catch` is imperative and works in event handlers. Error Boundaries are d
 
 **Q16: How do you handle errors in event handlers?**
 A: Use `try-catch` blocks:
+
 ```typescript
 handleClick = () => {
   try {
@@ -691,6 +736,7 @@ handleClick = () => {
     console.error(error);
   }
 };
+
 ```
 
 **Q17: Can Error Boundaries catch errors in useEffect?**
@@ -704,6 +750,7 @@ A: Minimal. They only have overhead when no error (rendering children) and when 
 
 **Q20: How do you handle errors in async code?**
 A: Use `try-catch` in async functions:
+
 ```typescript
 useEffect(() => {
   const fetchData = async () => {
@@ -716,17 +763,24 @@ useEffect(() => {
   };
   fetchData();
 }, []);
+
 ```
 
 ### Senior (10-15)
 
 **Q21: Explain the complete Error Boundary architecture.**
 A:
+
 1. Error Boundary component (class)
+
 2. Child component tree
+
 3. Error catching mechanism (React internals)
+
 4. State management (hasError, error)
+
 5. Fallback rendering
+
 6. Error reporting
 
 **Q22: How do Error Boundaries interact with React Suspense?**
@@ -737,6 +791,7 @@ A: Error Boundaries provide the `componentDidCatch` method to log errors to exte
 
 **Q24: How do you implement error recovery patterns?**
 A:
+
 - Retry mechanism (reset state)
 - Fallback UI with navigation
 - Graceful degradation
@@ -759,6 +814,7 @@ A: You can't use hooks in Error Boundaries (they must be class components). But 
 
 **Q30: What are the common Error Boundary patterns?**
 A:
+
 - Route-level boundaries
 - Widget-level boundaries
 - Form-level boundaries
@@ -769,22 +825,33 @@ A:
 
 **Q31: Design an Error Boundary system for a large app.**
 A:
+
 1. **Hierarchy**: App-level → Route-level → Component-level
+
 2. **Recovery**: Retry, navigation, fallback
+
 3. **Logging**: Error reporting, analytics
+
 4. **Monitoring**: Error tracking, alerts
+
 5. **Testing**: Error state verification
 
 **Q32: How would you debug an Error Boundary issue?**
 A:
+
 1. React DevTools: Check Error Boundary state
+
 2. Console: Log errors
+
 3. Error reporting: Check Sentry/LogRocket
+
 4. Testing: Force errors in tests
+
 5. Monitoring: Check error rates
 
 **Q33: Analyze the performance implications of Error Boundaries.**
 A:
+
 - Rendering: Minimal overhead (only when no error)
 - Error catching: One-time cost (only on error)
 - Logging: Network cost (sending to services)
@@ -792,6 +859,7 @@ A:
 
 **Q34: How would you implement a centralized error handling system?**
 A:
+
 ```typescript
 class GlobalErrorBoundary extends Component {
   state = { hasError: false, error: null };
@@ -814,24 +882,32 @@ class GlobalErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
 ```
 
 **Q35: Design an Error Boundary testing strategy.**
 A:
+
 1. **Unit tests**: Test Error Boundary in isolation
+
 2. **Integration tests**: Test Error Boundary with children
+
 3. **E2E tests**: Test error recovery flows
+
 4. **Chaos testing**: Inject errors randomly
+
 5. **Monitoring**: Track error rates in production
 
 **Q36: How does Error Boundary handle the "error in error boundary" problem?**
 A: If an Error Boundary itself throws, React will unmount the entire tree. Prevention:
+
 - Keep Error Boundaries simple
 - Test Error Boundaries thoroughly
 - Use try-catch in lifecycle methods
 
 **Q37: Analyze the memory implications of Error Boundaries.**
 A:
+
 - Each Error Boundary: ~100 bytes
 - Error state: ~50 bytes
 - For 100 boundaries: ~15KB
@@ -839,6 +915,7 @@ A:
 
 **Q38: How would you implement a self-healing Error Boundary?**
 A:
+
 ```typescript
 class SelfHealingBoundary extends Component {
   state = { hasError: false, errorCount: 0 };
@@ -866,6 +943,7 @@ class SelfHealingBoundary extends Component {
     return this.props.children;
   }
 }
+
 ```
 
 **Q39: How does Error Boundary interact with React Suspense?**
@@ -873,10 +951,15 @@ A: Error Boundaries catch errors from Suspense boundaries. They work together �
 
 **Q40: Design an Error Boundary monitoring system.**
 A:
+
 1. **Error tracking**: Sentry, LogRocket
+
 2. **Analytics**: Error rates, user impact
+
 3. **Alerting**: Threshold-based alerts
+
 4. **Dashboards**: Error visualization
+
 5. **Reporting**: Error trends, resolution
 
 ### Follow-ups (5-10)
@@ -886,6 +969,7 @@ A: "Error Boundaries are like safety nets. If a component crashes, the safety ne
 
 **Q42: What are the edge cases in Error Boundaries?**
 A:
+
 - Errors in event handlers (not caught)
 - Async errors (not caught)
 - Errors in the boundary itself (unmounts tree)
@@ -902,6 +986,7 @@ A: StrictMode double-renders in development. Error Boundaries catch errors norma
 
 **Q46: What is the future of Error Boundaries in React?**
 A: React is exploring:
+
 - Better error reporting
 - Improved recovery patterns
 - Integration with Suspense
@@ -909,6 +994,7 @@ A: React is exploring:
 
 **Q47: How would you implement a user feedback Error Boundary?**
 A:
+
 ```typescript
 class FeedbackErrorBoundary extends Component {
   state = { hasError: false, error: null };
@@ -937,10 +1023,12 @@ class FeedbackErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
 ```
 
 **Q48: How does Error Boundary handle the "graceful degradation" pattern?**
 A: Error Boundaries enable graceful degradation by:
+
 - Showing fallback UI
 - Providing recovery mechanisms
 - Keeping rest of app working
@@ -951,9 +1039,13 @@ A: `React.memo` prevents re-renders. Error Boundaries catch errors. They work in
 
 **Q50: How would you implement a progressive Error Boundary system?**
 A:
+
 1. **Level 1**: App-level boundary (catches everything)
+
 2. **Level 2**: Route-level boundaries (catches route errors)
+
 3. **Level 3**: Component-level boundaries (catches component errors)
+
 4. **Fallback hierarchy**: More specific fallbacks at lower levels
 
 ## Summary
@@ -1020,6 +1112,7 @@ Performance:
 ├── One-time cost on error
 ├── Low memory usage
 └── Network cost for logging
+
 ```
 
 ## References & Learn More

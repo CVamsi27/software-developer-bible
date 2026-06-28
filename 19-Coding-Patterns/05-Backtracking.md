@@ -36,6 +36,7 @@ function backtrack(path: number[], choices: number[]): void {
     path.pop();
   }
 }
+
 ```
 
 ## How It Works
@@ -48,10 +49,13 @@ Permutations of [1, 2, 3]:
                  [1]   [2]   [3]
                 / \    / \    / \
              [1,2][1,3][2,1][2,3][3,1][3,2]
+
               |    |    |    |    |    |
+
            [1,2,3][1,3,2][2,1,3][2,3,1][3,1,2][3,2,1]
 
 Backtracking prunes invalid branches early.
+
 ```
 
 ### ASCII Diagram
@@ -64,7 +68,9 @@ Level 0:         []
 Level 1:     [1] [2] [3]
             / \   |
 Level 2: [1,2][1,3][2,3]
+
            |
+
 Level 3: [1,2,3]
 
 N-QUEENS (4x4):
@@ -74,6 +80,7 @@ Q . . .      Column 0: Q at row 0
 . . . Q      Column 3: Q at row 3
 
 No two queens attack each other!
+
 ```
 
 ## Code Examples (TypeScript)
@@ -101,6 +108,7 @@ function subsets(nums: number[]): number[][] {
 // Example
 console.log(subsets([1, 2, 3]));
 // [[], [1], [1,2], [1,2,3], [1,3], [2], [2,3], [3]]
+
 ```
 
 ### Problem 2: Permutations
@@ -129,6 +137,7 @@ function permute(nums: number[]): number[][] {
 // Example
 console.log(permute([1, 2, 3]));
 // [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+
 ```
 
 ### Problem 3: Combination Sum
@@ -160,6 +169,7 @@ function combinationSum(candidates: number[], target: number): number[][] {
 // Example
 console.log(combinationSum([2, 3, 6, 7], 7));
 // [[2,2,3], [7]]
+
 ```
 
 ### Problem 4: N-Queens
@@ -206,6 +216,7 @@ function solveNQueens(n: number): string[][] {
 // Example
 console.log(solveNQueens(4));
 // [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+
 ```
 
 ### Problem 5: Sudoku Solver
@@ -267,6 +278,7 @@ const sudoku = [
 ];
 solveSudoku(sudoku);
 console.log(sudoku);
+
 ```
 
 ### Problem 6: Word Search
@@ -315,14 +327,19 @@ const board = [
 console.log(exist(board, "ABCCED")); // true
 console.log(exist(board, "SEE"));    // true
 console.log(exist(board, "ABCB"));   // false
+
 ```
 
 ## Common Mistakes
 
 1. **Forgetting to backtrack**: Always undo the choice after recursion
+
 2. **Not pruning early**: Add conditions to skip invalid branches
+
 3. **Modifying reference instead of copy**: When adding to result, always push a copy
+
 4. **Wrong base case**: Ensure base case covers all valid solutions
+
 5. **Not handling duplicates**: Sort input and skip duplicates when needed
 
 ## Time/Space Complexity
@@ -342,25 +359,37 @@ console.log(exist(board, "ABCB"));   // false
 ### Easy
 
 1. **Subsets** (LeetCode 78)
+
 2. **Letter Combinations of a Phone Number** (LeetCode 17)
+
 3. **Generate Parentheses** (LeetCode 22)
 
 ### Medium
 
 1. **Permutations** (LeetCode 46)
+
 2. **Permutations II** (LeetCode 47)
+
 3. **Combination Sum** (LeetCode 39)
+
 4. **Combination Sum II** (LeetCode 40)
+
 5. **Word Search** (LeetCode 79)
+
 6. **Palindrome Partitioning** (LeetCode 131)
+
 7. **Subsets II** (LeetCode 90)
 
 ### Hard
 
 1. **N-Queens** (LeetCode 51)
+
 2. **N-Queens II** (LeetCode 52)
+
 3. **Sudoku Solver** (LeetCode 37)
+
 4. **Expression Add Operators** (LeetCode 282)
+
 5. **Palindrome Permutation II** (LeetCode 267)
 
 ## Summary
@@ -385,19 +414,23 @@ Template:
 └─────────────────────────────────────────┘
 
 Key operations:
+
 - Choose: path.push(choice)
 - Explore: backtrack()
 - Un-choose: path.pop()
 
 Pruning techniques:
+
 - Sort and break early
 - Skip duplicates
 - Validate before recursing
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Backtracking](https://leetcode.com/tag/backtracking/)
 - [NeetCode Backtracking](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

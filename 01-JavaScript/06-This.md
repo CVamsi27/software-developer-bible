@@ -80,6 +80,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### this in Different Contexts
@@ -149,6 +150,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### call, apply, bind
@@ -202,6 +204,7 @@ The **`this`** keyword in JavaScript refers to the object that is currently exec
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -220,6 +223,7 @@ person.greet();  // "Hello, Alice"
 
 // 'this' refers to 'person' object
 // because greet() is called on person
+
 ```
 
 ### this in Constructor
@@ -239,6 +243,7 @@ class Person {
 
 const alice = new Person('Alice');
 alice.greet();  // "Hello, Alice"
+
 ```
 
 ### Arrow Function this
@@ -263,6 +268,7 @@ obj.greetArrow();    // undefined
 
 // Arrow functions don't have their own 'this'
 // They inherit from enclosing lexical scope
+
 ```
 
 ### Event Handler this
@@ -281,6 +287,7 @@ button?.addEventListener('click', () => {
   console.log(this);  // window
   // this.style.color = 'red';  // Error!
 });
+
 ```
 
 ### call, apply, bind Examples
@@ -306,6 +313,7 @@ console.log(greetAlice('Hey', '?'));  // "Hey, Alice?"
 // bind with partial application
 const greetAliceHey = greet.bind(alice, 'Hey');
 console.log(greetAliceHey('!'));  // "Hey, Alice!"
+
 ```
 
 ### this in Loops
@@ -336,6 +344,7 @@ const obj = {
     }.bind(this));
   }
 };
+
 ```
 
 ### this in Class Methods
@@ -362,6 +371,7 @@ class Counter {
 const counter = new Counter();
 counter.increment().increment().increment();
 console.log(counter.getCount());  // 3
+
 ```
 
 ### this in React
@@ -395,6 +405,7 @@ class MyComponent extends Component {
     );
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -442,6 +453,7 @@ const query = new QueryBuilder()
   .build();
 
 console.log(query);  // "SELECT * FROM users WHERE age > 18 AND active = true LIMIT 10"
+
 ```
 
 ### 2. Event Delegation
@@ -461,6 +473,7 @@ function setupEventDelegation(container: HTMLElement) {
     }
   });
 }
+
 ```
 
 ### 3. Object Pool Pattern
@@ -493,6 +506,7 @@ const pool = new ObjectPool(() => ({ x: 0, y: 0 }));
 const obj = pool.acquire();
 obj.x = 10;
 pool.release(obj);
+
 ```
 
 ### 4. Decorator Pattern
@@ -515,6 +529,7 @@ function handleSearch(query: string) {
 }
 
 const debouncedSearch = debounce(handleSearch, 300);
+
 ```
 
 ## Common Mistakes
@@ -546,6 +561,7 @@ class Timer {
     }.bind(this), 1000);
   }
 }
+
 ```
 
 ### 2. Arrow Functions as Object Methods
@@ -567,6 +583,7 @@ const obj = {
 
 obj.greet();      // undefined
 obj.greetGood();  // 'Alice'
+
 ```
 
 ### 3. Forgetting to Bind in Constructor
@@ -586,6 +603,7 @@ class Component {
 // When passed as callback, 'this' is lost
 const component = new Component();
 button.addEventListener('click', component.handleClick);  // this = button
+
 ```
 
 ### 4. this in Nested Functions
@@ -615,6 +633,7 @@ const obj2 = {
     inner();
   }
 };
+
 ```
 
 ## Best Practices
@@ -632,6 +651,7 @@ class Component {
     });
   }
 }
+
 ```
 
 ### 2. Bind Methods in Constructor
@@ -646,6 +666,7 @@ class Component {
     console.log(this);
   }
 }
+
 ```
 
 ### 3. Use Explicit Parameters Instead of this
@@ -660,18 +681,21 @@ function processUser() {
 function processUser(user: { name: string }) {
   console.log(user.name);
 }
+
 ```
 
 ### 4. Document this Behavior
 
 ```typescript
 /**
- * Processes the item.
- * @this {Product} The product being processed
+
+ - Processes the item.
+ - @this {Product} The product being processed
  */
 function processItem(this: Product, quantity: number) {
   this.stock -= quantity;
 }
+
 ```
 
 ## Performance Considerations
@@ -705,6 +729,7 @@ class Component extends React.Component {
     );
   }
 }
+
 ```
 
 ### Arrow Function Performance
@@ -721,6 +746,7 @@ const obj = {
   // Arrow function: slower, but useful for callbacks
   callback: () => this
 };
+
 ```
 
 ## Interview Questions
@@ -734,6 +760,7 @@ A: `this` is a keyword that refers to the object that is currently executing the
 **Q2: What is `this` in a regular function?**
 
 A: In a regular function, `this` depends on how the function is called:
+
 - Called as a method: `this` = the object
 - Called standalone: `this` = global object (or undefined in strict mode)
 - Called with `call`/`apply`/`bind`: `this` = the specified object
@@ -755,6 +782,7 @@ A: In a regular function event handler, `this` refers to the element that trigge
 **Q6: What is the difference between `call`, `apply`, and `bind`?**
 
 A:
+
 - **call**: Invokes the function with a specific `this` value and individual arguments
 - **apply**: Invokes the function with a specific `this` value and arguments as an array
 - **bind**: Returns a new function with `this` permanently bound to the specified value
@@ -766,14 +794,19 @@ A: Arrow functions were designed to solve the problem of losing `this` in callba
 **Q8: How do you fix lost `this` in a callback?**
 
 A: Several solutions:
+
 1. Use arrow function: `() => this.method()`
+
 2. Use `bind`: `this.method.bind(this)`
+
 3. Store `this` in a variable: `const self = this;`
+
 4. Use `call`/`apply` when invoking
 
 **Q9: What is `this` in strict mode?**
 
 A: In strict mode:
+
 - Regular function: `this` is `undefined` (not global object)
 - Method call: `this` is the object (unchanged)
 - Constructor: `this` is the new object (unchanged)
@@ -787,14 +820,19 @@ A: In class methods, `this` refers to the class instance. However, if you pass t
 **Q11: Explain the precedence of `this` binding rules.**
 
 A: The rules apply in this order:
+
 1. **new binding**: `new` keyword binds `this` to new object
+
 2. **explicit binding**: `call`/`apply`/`bind` binds `this`
+
 3. **implicit binding**: Method call binds `this` to object
+
 4. **default binding**: Standalone call binds `this` to global/undefined
 
 **Q12: What are the limitations of `call` and `apply`?**
 
 A:
+
 - They immediately invoke the function
 - They don't create a permanent binding
 - They can't be used with constructors after instantiation
@@ -803,6 +841,7 @@ A:
 **Q13: How does `this` work in TypeScript classes?**
 
 A: TypeScript adds `this` typing:
+
 ```typescript
 class Counter {
   count = 0;
@@ -812,6 +851,7 @@ class Counter {
     this.count++;
   }
 }
+
 ```
 
 **Q14: What is the relationship between `this` and closures?**
@@ -821,9 +861,13 @@ A: Closures capture the lexical scope, including `this`. Arrow functions inherit
 **Q15: How do you handle `this` in a React class component?**
 
 A:
+
 1. Bind methods in constructor
+
 2. Use class fields with arrow functions
+
 3. Use `bind` in JSX: `onClick={this.handleClick.bind(this)}`
+
 4. Use hooks in functional components (no `this` needed)
 
 ### FAANG-style (5-10 questions)
@@ -831,6 +875,7 @@ A:
 **Q16: Design a context management system using `this`.**
 
 A:
+
 ```typescript
 class ContextManager {
   private contexts = new Map<string, any>();
@@ -860,11 +905,13 @@ class ContextManager {
     }
   }
 }
+
 ```
 
 **Q17: How would you implement a custom `this` binding function?**
 
 A:
+
 ```typescript
 function myBind(fn: Function, thisArg: any, ...args: any[]) {
   return function(...newArgs: any[]) {
@@ -880,11 +927,13 @@ function greet(this: any, greeting: string) {
 const alice = { name: 'Alice' };
 const greetAlice = myBind(greet, alice);
 console.log(greetAlice('Hello'));  // "Hello, Alice!"
+
 ```
 
 **Q18: Analyze the performance implications of `this` binding.**
 
 A:
+
 - **call/apply**: Fast, immediate invocation
 - **bind**: Creates new function, slight overhead
 - **Arrow functions**: No own `this`, slight overhead
@@ -895,6 +944,7 @@ Optimization: Bind once, reuse the bound function.
 **Q19: How do you handle `this` in async/await?**
 
 A:
+
 ```typescript
 class ApiClient {
   private baseUrl: string;
@@ -920,14 +970,19 @@ class ApiClient2 {
     return response.json();
   };
 }
+
 ```
 
 **Q20: What are the security implications of `this`?**
 
 A:
+
 1. **Prototype pollution**: `this` can be exploited to modify prototypes
+
 2. **Context manipulation**: Malicious code can change `this` binding
+
 3. **Privileged access**: `this` can expose internal state
+
 4. **Mitigation**: Use `Object.freeze`, input validation, strict mode
 
 ### Follow-ups (5-10 questions)
@@ -935,6 +990,7 @@ A:
 **Q21: Can you give an example of a `this`-related bug in production?**
 
 A: Common bug in React:
+
 ```typescript
 class Button extends React.Component {
   handleClick() {
@@ -961,15 +1017,21 @@ class Button extends React.Component {
     return <button onClick={this.handleClick}>Click</button>;
   }
 }
+
 ```
 
 **Q22: How do you debug `this` binding issues?**
 
 A:
+
 1. **console.log(this)**: Log `this` value at different points
+
 2. **Chrome DevTools**: Inspect `this` in debugger
+
 3. **Breakpoints**: Set breakpoints to check `this`
+
 4. **TypeScript**: Use `this` parameter for type checking
+
 5. **Linters**: ESLint rules for `this` usage
 
 **Q23: What is the relationship between `this` and prototypes?**
@@ -979,6 +1041,7 @@ A: When a method is called on an object, `this` refers to the object. If the met
 **Q24: How do different frameworks handle `this`?**
 
 A:
+
 - **React**: Class components need binding, hooks don't use `this`
 - **Vue**: Options API uses `this`, Composition API doesn't
 - **Angular**: Dependency injection, `this` less important
@@ -987,13 +1050,21 @@ A:
 **Q25: What are best practices for managing `this`?**
 
 A:
+
 1. Use arrow functions for callbacks
+
 2. Bind methods in constructor
+
 3. Use TypeScript `this` parameter
+
 4. Prefer functional components over class components
+
 5. Document `this` behavior in complex functions
+
 6. Use explicit parameters instead of relying on `this`
+
 7. Avoid `this` in global scope
+
 8. Test `this` binding in unit tests
 
 ## Summary
@@ -1001,11 +1072,17 @@ A:
 `this` is a powerful but confusing JavaScript feature:
 
 1. **Dynamic binding**: Value depends on how function is called
+
 2. **Four rules**: Default, implicit, explicit, arrow function
+
 3. **call/apply/bind**: Explicit control over `this`
+
 4. **Arrow functions**: Inherit `this` from lexical scope
+
 5. **Common issues**: Lost `this` in callbacks
+
 6. **Solutions**: Arrow functions, bind, explicit parameters
+
 7. **Best practices**: Use arrows for callbacks, bind in constructor
 
 Understanding `this` is essential for writing clean, maintainable JavaScript and answering interview questions.
@@ -1017,9 +1094,13 @@ THIS CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
 
 BINDING RULES (in order):
+
 1. new binding: new Foo() → this = new object
+
 2. Explicit: call/apply/bind → this = specified
+
 3. Implicit: obj.method() → this = obj
+
 4. Default: func() → this = global/undefined
 
 COMMON PATTERNS:
@@ -1073,6 +1154,7 @@ DEBUGGING:
 • Chrome DevTools Scope panel
 • TypeScript this parameter
 • ESLint rules
+
 ```
 
 ## References & Learn More

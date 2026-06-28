@@ -61,6 +61,7 @@ PostgreSQL uses a client-server model with multiple processes:
 │  │  Writer  │  │  pointer │  │  Launcher │  │  Writer  │  │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Memory Architecture
@@ -99,6 +100,7 @@ PostgreSQL uses a client-server model with multiple processes:
 │  │    (Track all locks)                                │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Write-Ahead Logging (WAL)
@@ -128,6 +130,7 @@ PostgreSQL uses a client-server model with multiple processes:
 │                                                             │
 │  Recovery: Replay WAL from last checkpoint                   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -166,6 +169,7 @@ CREATE TABLE data_types_demo (
     -- UUID
     uuid_col UUID DEFAULT gen_random_uuid()
 );
+
 ```
 
 ### JSONB Operations
@@ -218,6 +222,7 @@ SET metadata = jsonb_set(
     '"enterprise"'
 )
 WHERE id = 1;
+
 ```
 
 ### Array Types
@@ -251,6 +256,7 @@ SELECT name, unnest(tags) AS tag FROM products;
 SELECT
     array_agg(DISTINCT tag) AS all_tags
 FROM products, unnest(tags) AS tag;
+
 ```
 
 ### Common Table Expressions (CTEs)
@@ -300,6 +306,7 @@ ranked_products AS (
     FROM monthly_sales
 )
 SELECT * FROM ranked_products WHERE rank <= 5;
+
 ```
 
 ### Window Functions
@@ -336,6 +343,7 @@ SELECT
         ORDER BY salary DESC
     ) AS next_salary
 FROM employees;
+
 ```
 
 ### Prisma Schema for PostgreSQL
@@ -380,6 +388,7 @@ model Post {
   @@index([published, createdAt])
   @@map("posts")
 }
+
 ```
 
 ## Real-World Use Cases
@@ -417,6 +426,7 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER trg_product_search
     BEFORE INSERT OR UPDATE ON products
     FOR EACH ROW EXECUTE FUNCTION update_product_search();
+
 ```
 
 ### Real-time Analytics with Window Functions
@@ -441,6 +451,7 @@ SELECT
     active_users - LAG(active_users, 7) OVER (ORDER BY day) AS week_over_week
 FROM daily_active
 ORDER BY day;
+
 ```
 
 ## Common Mistakes
@@ -453,6 +464,7 @@ SELECT * FROM orders WHERE user_id = 123;
 
 -- Good: Understanding the execution plan
 EXPLAIN ANALYZE SELECT * FROM orders WHERE user_id = 123;
+
 ```
 
 ### 2. Over-normalizing When Denormalization is Better
@@ -482,6 +494,7 @@ JOIN statuses s ON o.status_id = s.id;
 
 -- Refresh periodically
 REFRESH MATERIALIZED VIEW CONCURRENTLY dashboard_orders;
+
 ```
 
 ### 3. Ignoring Connection Pooling
@@ -510,6 +523,7 @@ async function getUser(id: number) {
   const result = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
   return result.rows[0];
 }
+
 ```
 
 ## Best Practices
@@ -548,6 +562,7 @@ SELECT * FROM large_table WHERE some_column = 'value';
 -- 5. Create indexes for frequently queried columns
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_status ON orders(status) WHERE status != 'cancelled';
+
 ```
 
 ## Performance Considerations
@@ -584,6 +599,7 @@ SELECT
     state
 FROM pg_stat_activity
 WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
+
 ```
 
 ## Interview Questions
@@ -716,6 +732,7 @@ pg_restore -h host -U user dbname backup.dump
 SHOW shared_buffers;
 SHOW work_mem;
 SHOW max_connections;
+
 ```
 
 ## References & Learn More

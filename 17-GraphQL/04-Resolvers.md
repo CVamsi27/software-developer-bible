@@ -6,6 +6,7 @@
 
 ```text
 Resolver = Function(Schema Field) → Data Source
+
 ```
 
 ---
@@ -29,6 +30,7 @@ With Resolvers:
 │  type Query { user(id: ID!): User }                            │
 │  Query.user = (parent, { id }) => db.user.findById(id)         │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Resolver Responsibilities
@@ -56,6 +58,7 @@ With Resolvers:
   context: any,          // Shared context (auth, data sources, etc.)
   info: any              // Query AST, field name, path, etc.
 ) => any | Promise<any>
+
 ```
 
 ### Resolver Chain Execution
@@ -103,6 +106,7 @@ Execution Chain:
 │     ▼ Returns: "John"                                           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Resolver Field Mapping
@@ -125,6 +129,7 @@ type Post {
   title: String!                →  Post.title(parent, args, ctx, info)
   author: User!                 →  Post.author(parent, args, ctx, info)
 }
+
 ```
 
 ---
@@ -194,6 +199,7 @@ const { url } = await startStandaloneServer(server, {
     currentUser: await authenticateUser(req.headers.authorization),
   }),
 });
+
 ```
 
 ### TypeScript Typed Resolvers
@@ -247,6 +253,7 @@ export const resolvers: Resolvers = {
     },
   },
 };
+
 ```
 
 ### DataLoader Implementation
@@ -324,6 +331,7 @@ const resolvers: Resolvers = {
     },
   },
 };
+
 ```
 
 ### Advanced Resolver Patterns
@@ -445,6 +453,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -486,6 +495,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 2. Social Media Feed Resolver
@@ -538,6 +548,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 3. GraphQL Gateway with Multiple Services
@@ -577,6 +588,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -604,6 +616,7 @@ const resolvers = {
     posts: (parent, _, { loaders }) => loaders.postsByAuthor.load(parent.id),
   },
 };
+
 ```
 
 ### 2. Missing Null Checks
@@ -632,6 +645,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 3. Exposing Sensitive Data
@@ -658,6 +672,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 4. Blocking the Event Loop
@@ -688,6 +703,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 5. Not Using Context Properly
@@ -720,6 +736,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ### 6. Resolver Side Effects
@@ -756,6 +773,7 @@ const resolvers = {
     },
   },
 };
+
 ```
 
 ---
@@ -765,29 +783,36 @@ const resolvers = {
 ### Resolver Organization
 
 ```text
+
 1. Keep resolvers thin
+
    - Delegate business logic to services
    - Resolvers only handle data fetching and transformation
 
 2. Use DataLoader for N+1 prevention
+
    - Create loaders in context
    - Use for any field that triggers DB queries
 
 3. Implement proper error handling
+
    - Try-catch async operations
    - Throw GraphQLError with extensions
    - Handle null cases
 
 4. Use context for shared state
+
    - Authentication
    - Data sources
    - Loaders
    - Cache
 
 5. Cache expensive operations
+
    - Use Redis/Memcached
    - Cache at resolver level
    - Use query-level caching
+
 ```
 
 ### DataLoader Best Practices
@@ -821,6 +846,7 @@ loaders.user.prime(userId, userData);
 // 4. Clear cache when data changes
 await updateUser(id, data);
 loaders.user.clear(id);
+
 ```
 
 ---
@@ -858,6 +884,7 @@ Query Execution Timeline:
 │ T=120ms  All authors complete (1 query instead of 3)           │
 │ T=120ms  Total: 120ms (with DataLoader)                       │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Query Complexity Scoring
@@ -893,6 +920,7 @@ const complexity = getComplexity({
 if (complexity > 1000) {
   throw new Error(`Query too complex: ${complexity}. Maximum: 1000`);
 }
+
 ```
 
 ---
@@ -905,6 +933,7 @@ if (complexity > 1000) {
    A resolver is a function that populates the data for each field in a GraphQL schema. It's the execution layer that connects schema to data sources.
 
 2. **What are the resolver function arguments?**
+
    - `parent`: Result from parent resolver
    - `args`: Arguments passed to this field
    - `context`: Shared context (auth, data sources)

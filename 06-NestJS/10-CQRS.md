@@ -7,16 +7,23 @@
 ## Why Do We Need It?
 
 1. **Separation of Concerns**: Read and write models have different optimization strategies.
+
 2. **Scalability**: Reads and writes can be scaled independently.
+
 3. **Performance**: Optimized read models (projections) for queries, normalized write models for commands.
+
 4. **Flexibility**: Different data stores for reads (Elasticsearch) and writes (PostgreSQL).
+
 5. **Event Sourcing**: Natural fit for event-driven architectures.
+
 6. **Testability**: Commands and queries can be tested independently.
+
 7. **Complex Domains**: Simplifies complex business logic by separating concerns.
 
 ## How It Works
 
 CQRS separates the application into two sides:
+
 - **Command Side**: Handles state mutations (write operations)
 - **Query Side**: Handles data retrieval (read operations)
 
@@ -55,6 +62,7 @@ CQRS separates the application into two sides:
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### CQRS Flow
@@ -65,6 +73,7 @@ Client -> Command -> CommandBus -> CommandHandler -> WriteModel -> Event -> Read
 
 Query Flow:
 Client -> Query -> QueryBus -> QueryHandler -> ReadModel -> Response
+
 ```
 
 ## Code Examples
@@ -80,6 +89,7 @@ export class CreateUserCommand {
     public readonly password: string,
   ) {}
 }
+
 ```
 
 ### Command Handler
@@ -114,6 +124,7 @@ export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
     return user;
   }
 }
+
 ```
 
 ### Query
@@ -130,6 +141,7 @@ export class GetUsersQuery {
     public readonly limit: number,
   ) {}
 }
+
 ```
 
 ### Query Handler
@@ -161,6 +173,7 @@ export class GetUsersHandler implements IQueryHandler<GetUsersQuery> {
     return this.userReadRepository.findAll(query.page, query.limit);
   }
 }
+
 ```
 
 ### Event
@@ -175,6 +188,7 @@ export class UserCreatedEvent {
     public readonly createdAt: Date,
   ) {}
 }
+
 ```
 
 ### Event Handler
@@ -200,6 +214,7 @@ export class UserCreatedHandler implements IEventHandler<UserCreatedEvent> {
     });
   }
 }
+
 ```
 
 ### Controller Using CQRS
@@ -240,6 +255,7 @@ export class UserController {
     return this.queryBus.execute(new GetUsersQuery(page, limit));
   }
 }
+
 ```
 
 ### Module Configuration
@@ -270,6 +286,7 @@ const EventHandlers = [UserCreatedHandler];
   ],
 })
 export class UserModule {}
+
 ```
 
 ### Event Sourcing
@@ -327,6 +344,7 @@ export class UserAggregate extends AggregateRoot {
     }
   }
 }
+
 ```
 
 ### Saga
@@ -363,6 +381,7 @@ export class OrderSaga {
     );
   };
 }
+
 ```
 
 ## Real-World Use Cases
@@ -390,6 +409,7 @@ export class GetOrderSummaryHandler implements IQueryHandler<GetOrderSummaryQuer
     return this.orderReadModel.getSummary(query.orderId);
   }
 }
+
 ```
 
 ### 2. Real-Time Analytics Dashboard
@@ -411,6 +431,7 @@ export class GetDashboardHandler {
     return this.analyticsReadModel.getDashboardData(query.dateRange);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -423,6 +444,7 @@ export class GetDashboardHandler {
 
 // GOOD: Use CQRS when read/write models differ significantly
 // Complex business rules, different read/write stores, event sourcing
+
 ```
 
 ### 2. Not Publishing Events
@@ -446,6 +468,7 @@ export class CreateUserHandler {
     return user;
   }
 }
+
 ```
 
 ### 3. Query Handlers Accessing Write Model
@@ -466,24 +489,35 @@ export class GetUserHandler {
     return this.readRepository.findById(query.id); // Correct model
   }
 }
+
 ```
 
 ## Best Practices
 
 1. **Start Simple**: Only use CQRS when read/write models differ significantly.
+
 2. **Event-Driven**: Publish events after every state change.
+
 3. **Read Model Optimization**: Optimize read models for query patterns.
+
 4. **Idempotent Commands**: Make commands idempotent for retry safety.
+
 5. **Event Store**: Use event store for audit trail and replay.
+
 6. **Separate Databases**: Use different databases for reads and writes when beneficial.
+
 7. **Testing**: Test commands and queries independently.
 
 ## Performance Considerations
 
 1. **Eventual Consistency**: Read models may lag behind write models.
+
 2. **Read Model Projections**: Can be resource-intensive.
+
 3. **Event Store Growth**: Events accumulate — implement snapshots.
+
 4. **Query Optimization**: Read models can be denormalized for fast reads.
+
 5. **Scaling**: Commands and queries can scale independently.
 
 ## Interview Questions
@@ -494,6 +528,7 @@ export class GetUserHandler {
 Command Query Responsibility Segregation — separates read and write operations into different models.
 
 **Q2: What is the difference between a command and a query?**
+
 - Command: Changes state (create, update, delete)
 - Query: Returns data without modifying state
 

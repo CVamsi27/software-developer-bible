@@ -34,6 +34,7 @@ function twoPointers(arr: number[]): number {
 
   return -1;
 }
+
 ```
 
 ## How It Works
@@ -55,6 +56,7 @@ Same Direction (Fast/Slow):
 Step 1: S=0, F=0
 Step 2: S=1, F=2
 Step 3: S=2, F=4  (fast reaches end first)
+
 ```
 
 ### ASCII Diagram
@@ -87,6 +89,7 @@ FAST/SLOW POINTER (Cycle Detection)
 
 Slow moves 1 step, Fast moves 2 steps
 They will meet at node 3 if cycle exists
+
 ```
 
 ## Code Examples (TypeScript)
@@ -115,6 +118,7 @@ function twoSumSorted(numbers: number[], target: number): number[] {
 
 // Example
 console.log(twoSumSorted([2, 7, 11, 15], 9)); // [1, 2]
+
 ```
 
 ### Problem 2: Container With Most Water
@@ -146,6 +150,7 @@ function maxArea(height: number[]): number {
 // Example
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); // 49
 // Container between index 1 (height 8) and index 8 (height 7)
+
 ```
 
 ### Problem 3: Trapping Rain Water
@@ -177,6 +182,7 @@ function trap(height: number[]): number {
 
 // Example
 console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])); // 6
+
 ```
 
 ### Problem 4: Valid Palindrome
@@ -201,6 +207,7 @@ function isPalindrome(s: string): boolean {
 
 // Example
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+
 ```
 
 ### Problem 5: Linked List Cycle Detection (Fast/Slow)
@@ -232,6 +239,7 @@ function hasCycle(head: ListNode | null): boolean {
 
   return false;
 }
+
 ```
 
 ### Problem 6: Three Sum
@@ -272,14 +280,19 @@ function threeSum(nums: number[]): number[][] {
 // Example
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 // [[-1, -1, 2], [-1, 0, 1]]
+
 ```
 
 ## Common Mistakes
 
 1. **Forgetting to check boundaries**: Always verify `left < right` before accessing elements
+
 2. **Not handling duplicates**: In problems requiring unique results, skip duplicate values
+
 3. **Moving wrong pointer**: In container problems, always move the smaller height
+
 4. **Off-by-one with indices**: Remember array indexing when returning results
+
 5. **Not considering all cases**: Empty arrays, single element, all same values
 
 ## Time/Space Complexity
@@ -297,22 +310,31 @@ console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 ### Easy
 
 1. **Valid Palindrome** (LeetCode 125)
+
 2. **Merge Sorted Array** (LeetCode 88)
+
 3. **Remove Duplicates from Sorted Array** (LeetCode 26)
 
 ### Medium
 
 1. **Two Sum II - Input Array is Sorted** (LeetCode 167)
+
 2. **Container With Most Water** (LeetCode 11)
+
 3. **3Sum** (LeetCode 15)
+
 4. **3Sum Closest** (LeetCode 16)
+
 5. **4Sum** (LeetCode 18)
 
 ### Hard
 
 1. **Trapping Rain Water** (LeetCode 42)
+
 2. **Shortest Unsorted Continuous Subarray** (LeetCode 581)
+
 3. **3Sum Smaller** (LeetCode 259)
+
 4. **Count of Range Sum** (LeetCode 327)
 
 ## Summary
@@ -345,11 +367,13 @@ Types:
 
 Key insight: If sum too small, move left pointer right
             If sum too big, move right pointer left
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Two Pointers](https://leetcode.com/tag/two-pointers/)
 - [NeetCode Two Pointers](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

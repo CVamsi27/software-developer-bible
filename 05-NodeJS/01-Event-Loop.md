@@ -36,6 +36,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 │  │    CLOSE CALLBACKS        │  ← sockets.on('close', ...)
 │  └─────────────┬─────────────┘
 └─────────────────┘
+
 ```
 
 ### Detailed Phase Breakdown
@@ -82,6 +83,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 │ • E.g., socket.on('close', ...)                              │
 │ • Handles cleanup of resources                               │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Microtasks: process.nextTick and Promise
@@ -106,6 +108,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 │  3. Event loop phases (timers, poll, etc.)                   │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ### setImmediate vs setTimeout(0)
@@ -139,6 +142,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 │  // Output: always "immediate" then "timeout"               │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Concurrency Handling Flow
@@ -169,6 +173,7 @@ The event loop runs through several **phases** in a specific order. Each phase h
 │   └─────────────────────┘                                    │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -209,6 +214,7 @@ console.log('6. End');
 // 5. Promise resolved
 // 2. setTimeout callback (TIMERS phase)
 // 3. setImmediate callback (CHECK phase)
+
 ```
 
 ### setImmediate vs setTimeout(0) Inside I/O
@@ -229,6 +235,7 @@ fs.readFile('package.json', () => {
   });
 });
 // Output: setImmediate always runs first
+
 ```
 
 ### Microtask Priority
@@ -265,6 +272,7 @@ fs.readFile('package.json', () => {
 // 3. Promise
 // 5. setImmediate
 // 4. setTimeout
+
 ```
 
 ### Event Loop Blocking Example
@@ -323,6 +331,7 @@ function processInChunks(): Promise<void> {
 }
 
 server.listen(3000);
+
 ```
 
 ### Real Event Loop Phases in Action
@@ -383,6 +392,7 @@ fs.readFile(__filename, () => {
       console.log('[CLOSE] stream close callback');
     });
 });
+
 ```
 
 ### Custom Event Emitter with Event Loop
@@ -447,6 +457,7 @@ scheduler.on('drain', () => {
 scheduler.addTask(() => 'Task 1', 1);
 scheduler.addTask(() => 'Task 2', 2);
 scheduler.addTask(() => 'Task 3', 1);
+
 ```
 
 ## Real-World Use Cases
@@ -480,6 +491,7 @@ function handleRequest(req: http.IncomingMessage): Promise<any> {
     setTimeout(() => resolve({ status: 'ok' }), 10);
   });
 }
+
 ```
 
 ### 2. Rate Limiter Using Event Loop
@@ -526,6 +538,7 @@ const server = http.createServer((req, res) => {
   // Process request
   res.end('OK');
 });
+
 ```
 
 ### 3. Graceful Shutdown
@@ -567,6 +580,7 @@ process.on('SIGTERM', () => {
     process.exit(1);
   }, 30000);
 });
+
 ```
 
 ## Common Mistakes
@@ -599,6 +613,7 @@ app.get('/compute', (req, res) => {
     res.status(500).json({ error: error.message });
   });
 });
+
 ```
 
 ### 2. Using process.nextTick Recursively
@@ -620,6 +635,7 @@ function processAllSafe() {
     processAllSafe();
   });
 }
+
 ```
 
 ### 3. Not Handling Unhandled Rejections
@@ -636,6 +652,7 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 Promise.reject(new Error('Something failed'));
+
 ```
 
 ### 4. Misunderstanding setTimeout Minimum Delay
@@ -648,6 +665,7 @@ setTimeout(() => {
 
 // In practice, delays can be longer depending on system load
 // Never use setTimeout(fn, 0) for precise timing
+
 ```
 
 ### 5. Not Using setImmediate for I/O Callbacks
@@ -666,6 +684,7 @@ fs.readFile('file.txt', () => {
     // This executes in the CHECK phase after POLL
   });
 });
+
 ```
 
 ## Best Practices
@@ -675,6 +694,7 @@ fs.readFile('file.txt', () => {
 ```typescript
 // Remember the order: timers → pending → poll → check → close
 // process.nextTick and Promise microtasks run between phases
+
 ```
 
 ### 2. Use setImmediate for Chunked Processing
@@ -707,6 +727,7 @@ async function processLargeDataset(items: any[]) {
     processChunk();
   });
 }
+
 ```
 
 ### 3. Monitor Event Loop Lag
@@ -728,6 +749,7 @@ function monitorEventLoop() {
     start = process.hrtime.bigint();
   }, 1000);
 }
+
 ```
 
 ### 4. Prefer Async/Await Over Callbacks
@@ -744,6 +766,7 @@ async function fetchData() {
     throw error;
   }
 }
+
 ```
 
 ### 5. Handle Backpressure in Streams
@@ -763,6 +786,7 @@ readStream.on('data', (chunk) => {
     });
   }
 });
+
 ```
 
 ## Performance Considerations
@@ -776,6 +800,7 @@ process.env.UV_THREADPOOL_SIZE = '8';
 
 // Or set before starting the application
 // UV_THREADPOOL_SIZE=8 node app.js
+
 ```
 
 ### 2. Event Loop Monitoring
@@ -796,6 +821,7 @@ setInterval(() => {
   });
   histogram.reset();
 }, 5000);
+
 ```
 
 ### 3. Memory Usage Tracking
@@ -810,6 +836,7 @@ function getMemoryUsage() {
     external: `${(usage.external / 1024 / 1024).toFixed(2)} MB`,
   };
 }
+
 ```
 
 ## Interview Questions
@@ -817,161 +844,211 @@ function getMemoryUsage() {
 ### Beginner
 
 1. **What is the event loop in Node.js?**
+
    - The event loop is the mechanism that enables non-blocking I/O in Node.js. It continuously monitors the call stack and callback queues, executing callbacks when the stack is empty and events are available.
 
 2. **Name the phases of the event loop.**
+
    - Timers, Pending I/O, Poll, Check, Close Callbacks.
 
 3. **What is the difference between setTimeout and setImmediate?**
+
    - setTimeout schedules a callback in the timers phase, while setImmediate schedules in the check phase. Inside I/O callbacks, setImmediate always runs before setTimeout(0).
 
 4. **What is process.nextTick?**
+
    - process.nextTick schedules a callback to run before the event loop continues. It has the highest priority among microtasks.
 
 5. **Can Node.js handle multiple concurrent connections?**
+
    - Yes, through the event loop's non-blocking I/O model, Node.js can handle thousands of concurrent connections on a single thread.
 
 6. **What is a callback queue?**
+
    - The callback queue is where callbacks wait after being triggered by async operations. The event loop processes these callbacks when the call stack is empty.
 
 7. **How does Node.js achieve non-blocking I/O?**
+
    - Node.js offloads I/O operations to the system kernel or thread pool (via libuv), allowing the event loop to continue processing other tasks while I/O completes.
 
 8. **What is libuv?**
+
    - libuv is a C library that provides the event loop implementation, thread pool, and async I/O operations for Node.js.
 
 9. **What is a microtask?**
+
    - A microtask is a high-priority task (like process.nextTick or Promise callbacks) that runs before the event loop continues to the next phase.
 
 10. **What happens when you call setTimeout with 0ms delay?**
+
     - The callback is queued in the timers phase, but the minimum delay is actually ~1ms due to system timer resolution.
 
 ### Intermediate
 
 11. **What is event loop starvation and how does it occur?**
+
     - Event loop starvation happens when synchronous or long-running tasks block the event loop, preventing callbacks from being processed. This can occur with CPU-intensive operations or recursive process.nextTick calls.
 
 12. **Explain the order of execution when multiple async operations are queued.**
+
     - process.nextTick > Promise microtasks > timers > pending I/O > poll > check > close. Microtasks always run before the event loop progresses to the next phase.
 
 13. **How would you handle a CPU-intensive task without blocking the event loop?**
+
     - Use worker threads, child processes, or break the task into smaller chunks with setImmediate between them. This allows the event loop to continue processing.
 
 14. **What is the difference between process.nextTick and setImmediate?**
+
     - process.nextTick runs before the event loop continues to the next phase (microtask), while setImmediate runs in the check phase (macrotask). nextTick has higher priority.
 
 15. **How does Node.js handle errors in async operations?**
+
     - Errors in async operations are caught through error-first callbacks or Promise.catch(). Unhandled rejections trigger the 'unhandledRejection' event.
 
 16. **What is the purpose of the poll phase?**
+
     - The poll phase retrieves new I/O events, executes I/O callbacks, and determines when to block for new I/O. It balances between processing callbacks and waiting for new events.
 
 17. **How can you monitor event loop lag?**
+
     - Use setInterval to measure actual vs expected execution time, or use the perf_hooks.monitorEventLoopDelay() API for accurate measurements.
 
 18. **What is the maximum number of callbacks Node.js processes per event loop iteration?**
+
     - It depends on the phase. For example, the poll phase processes up to a fixed number of I/O callbacks before moving to the check phase.
 
 19. **Explain the relationship between libuv thread pool and the event loop.**
+
     - The libuv thread pool handles CPU-intensive and blocking operations off the main event loop thread. When these operations complete, callbacks are queued back to the event loop.
 
 20. **What happens if you use process.nextTick inside a loop?**
+
     - It can starve the event loop because process.nextTick callbacks are processed before any other phase. Use setImmediate instead for recursive async work.
 
 ### Senior
 
 21. **How would you design a system to handle 100K concurrent WebSocket connections?**
+
     - Use clustering for multi-core utilization, implement connection pooling, use efficient memory management, implement heartbeat mechanisms, and consider load balancers with sticky sessions.
 
 22. **Explain how Node.js handles backpressure in streams.**
+
     - Backpressure occurs when readable stream produces data faster than writable can consume. Node.js handles this through pause/resume mechanisms, highWaterMark, and drain events.
 
 23. **How would you debug an event loop performance issue in production?**
+
     - Use --inspect flag with Chrome DevTools, monitor event loop lag with perf_hooks, analyze CPU profiles, check for memory leaks, and use APM tools.
 
 24. **What are the trade-offs between using process.nextTick vs setImmediate?**
+
     - nextTick has higher priority but can starve the event loop. setImmediate is safer but runs later. Use nextTick for critical cleanup, setImmediate for non-critical async work.
 
 25. **How would you implement a rate limiter using the event loop?**
+
     - Use timestamps to track requests within a time window, implement sliding window algorithm, and use setImmediate to avoid blocking during cleanup.
 
 26. **Explain the performance implications of Promise.all vs sequential awaits.**
+
     - Promise.all runs operations concurrently, reducing total wait time. Sequential awaits execute one after another, which is slower but uses fewer resources and is easier to debug.
 
 27. **How would you handle memory leaks in long-running Node.js applications?**
+
     - Monitor heap usage, use --expose-gc for manual garbage collection, implement memory leak detection with tools like memwatch-next, and regularly profile memory usage.
 
 28. **What is the impact of V8's garbage collection on the event loop?**
+
     - V8's GC can cause pauses, especially minor GCs. These pauses block the event loop. Optimize by reducing object allocations and using object pooling.
 
 29. **How would you implement a work queue system with backpressure?**
+
     - Use a bounded queue with configurable capacity, implement producer-consumer pattern, and pause producers when queue is full using stream backpressure mechanisms.
 
 30. **Explain the event loop behavior in clustered vs single-process mode.**
+
     - Each worker has its own event loop. The master process distributes connections using round-robin or OS-level scheduling. Workers don't share memory, communicating via IPC.
 
 ### FAANG-style
 
 31. **Design a chat application supporting 1M concurrent users with Node.js.**
+
     - Use clustering, sticky sessions for WebSocket, Redis pub/sub for message broadcasting, horizontal scaling with load balancers, and implement connection pooling with heartbeat monitoring.
 
 32. **How would you implement a distributed task queue using Node.js event loop concepts?**
+
     - Use Redis/RabbitMQ for task distribution, implement worker pools with concurrency control, add retry logic with exponential backoff, and monitor task processing time.
 
 33. **Explain how to optimize Node.js for high-throughput HTTP APIs.**
+
     - Use clustering, implement caching layers, optimize database queries, use HTTP/2, implement connection pooling, enable gzip compression, and use efficient serialization.
 
 34. **How would you handle graceful shutdown in a distributed system?**
+
     - Implement health check endpoints, use process.nextTick for cleanup, implement connection draining, use load balancer deregistration, and handle in-flight requests.
 
 35. **Design a real-time data processing pipeline with Node.js.**
+
     - Use streams for data flow, implement backpressure handling, use worker threads for CPU-intensive operations, implement checkpointing for fault tolerance, and monitor processing latency.
 
 36. **How would you implement a circuit breaker pattern in Node.js?**
+
     - Track failure rates, implement state machine (closed/open/half-open), use timers for reset periods, integrate with event loop phases, and add fallback mechanisms.
 
 37. **Explain how to achieve zero-downtime deployments with Node.js.**
+
     - Use graceful shutdown, implement health checks, use load balancer deregistration, implement session persistence, and coordinate with process managers.
 
 38. **How would you optimize Node.js memory usage in production?**
+
     - Use stream processing for large data, implement object pooling, optimize V8 garbage collection, use weak references for caching, and monitor heap usage.
 
 39. **Design a WebSocket server supporting 100K concurrent connections.**
+
     - Use clustering, implement connection pooling, use Redis for pub/sub, implement heartbeat monitoring, optimize buffer usage, and handle backpressure.
 
 40. **How would you implement distributed tracing in a Node.js microservices architecture?**
+
     - Use OpenTelemetry, propagate trace context via HTTP headers, implement span creation, collect metrics, and integrate with monitoring systems.
 
 ### Follow-ups
 
 41. **How does Node.js handle I/O operations differently from CPU-bound operations?**
+
     - I/O operations are offloaded to the system kernel or thread pool, while CPU-bound operations block the main thread. Use worker threads for CPU-intensive tasks.
 
 42. **What happens when you mix process.nextTick and setImmediate in a loop?**
+
     - process.nextTick callbacks will execute first, potentially starving the event loop. setImmediate allows other phases to process between iterations.
 
 43. **How would you implement a custom event loop monitor?**
+
     - Use setInterval to measure execution timing, implement histogram for lag distribution, track phase-specific metrics, and export to monitoring systems.
 
 44. **Explain the memory model implications of closures in async code.**
+
     - Closures capture variables by reference, preventing garbage collection. This can cause memory leaks if not managed properly, especially in long-running applications.
 
 45. **How does Node.js handle signal handling in the event loop?**
+
     - Signals are processed outside the event loop using libuv's signal handling. They interrupt the current operation and execute signal handlers synchronously.
 
 46. **What is the impact of DNS resolution on the event loop?**
+
     - DNS resolution can block the event loop if not async. Use dns.lookup() for cached results or dns.resolve() for fresh resolution.
 
 47. **How would you implement a connection pool with backpressure support?**
+
     - Use a bounded pool, implement request queuing, add timeout mechanisms, monitor pool utilization, and implement pool resizing based on load.
 
 48. **Explain how to debug event loop delays in production.**
+
     - Use --inspect with Chrome DevTools, implement custom monitoring with perf_hooks, analyze CPU profiles, and use APM tools for distributed tracing.
 
 49. **How does Node.js handle concurrent file I/O operations?**
+
     - File I/O uses the libuv thread pool for async operations. The thread pool size limits concurrent file operations. Increase UV_THREADPOOL_SIZE for more concurrency.
 
 50. **What are the trade-offs between using cluster vs worker threads?**
+
     - Cluster provides process isolation and multi-core utilization. Worker threads share memory and have lower overhead. Use cluster for I/O-bound, worker threads for CPU-bound.
 
 ## Summary
@@ -1026,6 +1103,7 @@ The Node.js event loop is the foundation of its non-blocking I/O architecture. U
 │  • DNS resolution blocking                                   │
 │                                                              │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

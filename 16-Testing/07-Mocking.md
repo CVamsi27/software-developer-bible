@@ -5,6 +5,7 @@
 Mocking is a testing technique where you replace real objects, functions, or modules with simulated versions (test doubles) that mimic the behavior of the real implementations. Mocking allows you to isolate the code under test and control the test environment by providing predictable responses and verifying interactions.
 
 **Key Concepts:**
+
 - **Test Double**: Any replacement for a real object in testing
 - **Mock**: A test double that records interactions for later verification
 - **Stub**: A test double that returns predefined responses
@@ -38,6 +39,7 @@ Mocking is a testing technique where you replace real objects, functions, or mod
 │             (in-memory DB, etc.)                            │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
@@ -88,6 +90,7 @@ Mocking is a testing technique where you replace real objects, functions, or mod
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -129,6 +132,7 @@ mockFn.mockReset();
 
 // Restore original implementation (for spies)
 mockFn.mockRestore();
+
 ```
 
 ### jest.mock() - Module Mocking
@@ -186,6 +190,7 @@ jest.mock("./api", () => ({
   ...jest.requireActual("./api"),
   fetchUser: jest.fn(),
 }));
+
 ```
 
 ### jest.spyOn() - Spy on Methods
@@ -288,6 +293,7 @@ describe("InventoryManager", () => {
     expect(sendAlertSpy).not.toHaveBeenCalled();
   });
 });
+
 ```
 
 ### Manual Mocks
@@ -341,6 +347,7 @@ describe("File Operations", () => {
     );
   });
 });
+
 ```
 
 ### API Mocking with MSW
@@ -443,6 +450,7 @@ describe("UserList with MSW", () => {
     });
   });
 });
+
 ```
 
 ### Mocking Timer Functions
@@ -531,6 +539,7 @@ describe("Date mocking", () => {
     expect(new Date().getHours()).toBe(11);
   });
 });
+
 ```
 
 ### Mocking Fetch/Network Requests
@@ -620,6 +629,7 @@ describe("with jest-fetch-mock", () => {
     await expect(fetchWithRetry("/api/data")).rejects.toThrow("Network error");
   });
 });
+
 ```
 
 ### Mocking Class Instances
@@ -693,6 +703,7 @@ describe("EmailService Mock", () => {
     expect(result).toEqual({ sent: 2, failed: 0 });
   });
 });
+
 ```
 
 ### Mocking with Factory Functions
@@ -751,6 +762,7 @@ describe("UserService", () => {
     expect(result).toHaveLength(5);
   });
 });
+
 ```
 
 ### Mocking Database
@@ -829,6 +841,7 @@ describe("Database Mock", () => {
     expect(db.disconnect).toHaveBeenCalled();
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -952,6 +965,7 @@ describe("PaymentService", () => {
     );
   });
 });
+
 ```
 
 ### 2. Testing File Operations
@@ -1042,6 +1056,7 @@ describe("FileService", () => {
     });
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -1066,6 +1081,7 @@ jest.mock("./email");
 it("should create user with valid data", async () => {
   // Test the actual business logic
 });
+
 ```
 
 ### 2. Not Clearing Mocks
@@ -1087,6 +1103,7 @@ it("test 2", () => {
 beforeEach(() => {
   jest.clearAllMocks();
 });
+
 ```
 
 ### 3. Mocking Implementation Details
@@ -1115,18 +1132,27 @@ it("should store hashed password", async () => {
     expect.arrayContaining([expect.stringContaining("hashed_")])
   );
 });
+
 ```
 
 ## Best Practices
 
 1. **Mock at the boundary**: Mock external services, not internal functions
+
 2. **Clear mocks between tests**: Use `jest.clearAllMocks()` or `mockReset()`
+
 3. **Use `jest.mocked()`**: Type-safe mocking for TypeScript
+
 4. **Verify interactions**: Check that mocks were called correctly
+
 5. **Restore mocks**: Use `jest.restoreAllMocks()` in `afterEach`
+
 6. **Use MSW for API mocking**: Network-level mocking is more realistic
+
 7. **Create mock factories**: Reusable test data builders
+
 8. **Document mock behavior**: Comment complex mock implementations
+
 9. **Keep mocks simple**: Avoid complex logic in mock implementations
 10. **Test both success and failure**: Mock both successful and error responses
 
@@ -1148,6 +1174,7 @@ afterAll(() => {
 beforeEach(() => {
   jest.clearAllMocks();
 });
+
 ```
 
 ### Efficient Mocking
@@ -1171,6 +1198,7 @@ beforeEach(() => {
   mockService = createMockService();
   jest.clearAllMocks();
 });
+
 ```
 
 ## Interview Questions

@@ -62,6 +62,7 @@ class Trie {
     return true;
   }
 }
+
 ```
 
 ## How It Works
@@ -78,25 +79,40 @@ Inserting: "apple", "app", "application"
    p   |
   / \  |
  l   e  (end)
+
  |
+
  i
+
  |
+
  c
+
  |
+
  a
+
  |
+
  t
+
  |
+
  i
+
  |
+
  o
+
  |
+
  n
  (end)
 
 Words: "apple" (root→a→p→p→l→e*)
        "app" (root→a→p→p*)
        "application" (root→a→p→p→l→i→c→a→t→i→o→n*)
+
 ```
 
 ### ASCII Diagram
@@ -132,7 +148,8 @@ TRIE STRUCTURE:
 │                   (end)                 │
 └─────────────────────────────────────────┘
 
-* marks end of word
+- marks end of word
+
 ```
 
 ## Code Examples (TypeScript)
@@ -196,6 +213,7 @@ console.log(trie.search("apple"));     // true
 console.log(trie.search("app"));       // true
 console.log(trie.startsWith("app"));   // true
 console.log(trie.startsWith("apl"));   // false
+
 ```
 
 ### Problem 2: Design Add and Search Words Data Structure
@@ -260,6 +278,7 @@ console.log(wordDict.search("pad")); // false
 console.log(wordDict.search("bad")); // true
 console.log(wordDict.search(".ad")); // true
 console.log(wordDict.search("b..")); // true
+
 ```
 
 ### Problem 3: Word Search II
@@ -319,6 +338,7 @@ const board = [
 ];
 const words = ["oath","pea","eat","rain"];
 console.log(findWords(board, words)); // ["eat","oath"]
+
 ```
 
 ### Problem 4: Longest Word in Dictionary
@@ -351,6 +371,7 @@ function longestWord(words: string[]): string {
 // Example
 console.log(longestWord(["w","wo","wor","worl","world"])); // "world"
 console.log(longestWord(["a","ap","app","appl","apple"])); // "apple"
+
 ```
 
 ### Problem 5: Replace Words
@@ -402,6 +423,7 @@ console.log(replaceWords(
   ["cat", "bat", "rat"],
   "the cattle was rattled by the battery"
 )); // "the cat was rat by the bat"
+
 ```
 
 ### Problem 6: Map Sum Pairs
@@ -456,14 +478,19 @@ mapSum.insert("apple", 3);
 console.log(mapSum.sum("ap"));     // 3
 mapSum.insert("app", 2);
 console.log(mapSum.sum("ap"));     // 5
+
 ```
 
 ## Common Mistakes
 
 1. **Not handling edge cases**: Empty strings, single characters
+
 2. **Forgetting to mark end of word**: Always set `isEnd = true` after inserting
+
 3. **Not cleaning up after removal**: If implementing deletion, handle all cases
+
 4. **Using array instead of Map**: Map is more flexible for character storage
+
 5. **Not checking for null**: Always verify node exists before accessing children
 
 ## Time/Space Complexity
@@ -482,21 +509,29 @@ console.log(mapSum.sum("ap"));     // 5
 ### Easy
 
 1. **Implement Trie (Prefix Tree)** (LeetCode 208)
+
 2. **Maximum Depth of N-ary Tree** (LeetCode 559)
 
 ### Medium
 
 1. **Design Add and Search Words Data Structure** (LeetCode 211)
+
 2. **Word Search II** (LeetCode 212)
+
 3. **Longest Word in Dictionary** (LeetCode 720)
+
 4. **Map Sum Pairs** (LeetCode 677)
+
 5. **Replace Words** (LeetCode 648)
+
 6. **Search Suggestions System** (LeetCode 1268)
 
 ### Hard
 
 1. **Palindrome Pairs** (LeetCode 336)
+
 2. **Word Search II** (LeetCode 212) — uses Trie + DFS
+
 3. **Stream of Characters** (LeetCode 1032)
 
 ## Summary
@@ -518,24 +553,29 @@ Structure:
 └─────────────────────────────────────────┘
 
 Operations:
+
 - insert(word): O(m) time
 - search(word): O(m) time
 - startsWith(prefix): O(m) time
 
 Key insight:
+
 - Share common prefixes
 - Use isEnd to distinguish words from prefixes
 - For '.' matching, use DFS/backtracking
 
 Common patterns:
+
 - Build trie from dictionary
 - Search with DFS
 - Check prefixes efficiently
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [LeetCode Trie](https://leetcode.com/tag/trie/)
 - [NeetCode Trie](https://neetcode.io/)
 - [CP-Algorithms](https://cp-algorithms.com/)

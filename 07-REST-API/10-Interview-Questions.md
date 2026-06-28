@@ -9,9 +9,13 @@ This comprehensive guide covers the most frequently asked REST API interview que
 REST API design is a critical skill for full-stack developers. Interviewers test:
 
 1. **Fundamental knowledge** - HTTP methods, status codes, resource design
+
 2. **Architecture decisions** - Versioning, pagination, authentication
+
 3. **Security awareness** - CORS, rate limiting, input validation
+
 4. **Scalability thinking** - Caching, load balancing, microservices
+
 5. **Real-world experience** - Common pitfalls, best practices, tradeoffs
 
 ## How It Works
@@ -23,29 +27,35 @@ REST API Interview Structure
 ════════════════════════════
 
 1. Conceptual Questions (10-15 min)
+
    - What is REST?
    - Explain HTTP methods
    - Status codes usage
 
 2. Design Questions (20-30 min)
+
    - Design a URL shortener API
    - Design a social media feed
    - Design a payment system
 
 3. Implementation Questions (15-20 min)
+
    - Code a rate limiter
    - Implement pagination
    - Design authentication
 
 4. Architecture Questions (15-20 min)
+
    - Microservices API design
    - API gateway patterns
    - Caching strategies
 
 5. Tradeoff Questions (10-15 min)
+
    - REST vs GraphQL
    - Pagination strategies
    - Authentication methods
+
 ```
 
 ## Code Examples
@@ -57,11 +67,17 @@ REST API Interview Structure
 REST (Representational State Transfer) is an architectural style for designing networked applications. It uses standard HTTP methods and resource-based URLs.
 
 **Key constraints:**
+
 1. **Client-Server** - Separation of concerns
+
 2. **Stateless** - No server-side session
+
 3. **Cacheable** - Responses can be cached
+
 4. **Uniform Interface** - Consistent resource identification
+
 5. **Layered System** - Client can't tell if connected directly to server
+
 6. **Code on Demand** - Optional executable code
 
 ```typescript
@@ -75,6 +91,7 @@ app.post('/api/users', async (req, res) => {
   const user = await UserService.create(req.body);
   res.status(201).json({ data: user });
 });
+
 ```
 
 ### Question 2: What is the difference between PUT and PATCH?
@@ -106,6 +123,7 @@ app.patch('/api/users/:id', async (req, res) => {
   // Only provided fields updated
   res.json({ data: user });
 });
+
 ```
 
 ### Question 3: Design a URL Shortener API
@@ -133,12 +151,15 @@ Data Model:
   }
 
 Rate Limits:
+
   - 10 URLs per minute for free tier
   - 100 URLs per minute for pro tier
 
 Caching:
+
   - Cache redirect mappings in Redis
   - TTL: 24 hours
+
 ```
 
 ```typescript
@@ -217,6 +238,7 @@ app.get('/:shortCode', async (req, res) => {
   // Redirect
   res.redirect(301, originalUrl);
 });
+
 ```
 
 ### Question 4: How do you implement pagination?
@@ -229,18 +251,22 @@ Pagination Strategies
 
 1. Offset-Based (Traditional)
    GET /api/users?page=3&limit=10
+
    - Simple, supports random access
    - Inefficient for large offsets
 
 2. Cursor-Based (Recommended)
    GET /api/users?cursor=abc123&limit=10
+
    - Efficient for large datasets
    - Stable under concurrent changes
 
 3. Keyset-Based
    GET /api/users?createdAfter=2024-01-01&limit=10
+
    - Good for time-series data
    - Natural ordering
+
 ```
 
 ```typescript
@@ -272,6 +298,7 @@ app.get('/api/users', async (req, res) => {
     pagination: { hasMore, nextCursor }
   });
 });
+
 ```
 
 ### Question 5: Explain CORS and why it matters
@@ -297,6 +324,7 @@ Browser                    Server
   │  POST /api/data          │
   │  Origin: https://app.com │
   │─────────────────────────►│
+
 ```
 
 ```typescript
@@ -308,6 +336,7 @@ app.use(cors({
   credentials: true,
   maxAge: 86400
 }));
+
 ```
 
 ### Question 6: How do you implement rate limiting?
@@ -366,6 +395,7 @@ function rateLimiter(maxRequests: number, windowMs: number) {
     next();
   };
 }
+
 ```
 
 ### Question 7: Design authentication for a REST API
@@ -393,6 +423,7 @@ Client                    Server
   │  200 OK                │
   │  { data: [...] }      │
   │◄───────────────────────│
+
 ```
 
 ```typescript
@@ -428,6 +459,7 @@ app.get('/api/users', authenticate, async (req, res) => {
   const users = await UserService.findAll();
   res.json({ data: users });
 });
+
 ```
 
 ### Question 8: What is HATEOAS and why is it important?
@@ -456,11 +488,15 @@ res.json({
     items: '/api/orders/123/items'
   }
 });
+
 ```
 
 Benefits:
+
 1. **Discoverability** - Client can discover available actions
+
 2. **Loose coupling** - Client doesn't need to hardcode URLs
+
 3. **Evolvability** - Server can change URLs without breaking client
 
 ### Question 9: How do you handle API versioning?
@@ -481,6 +517,7 @@ Versioning Strategies
 3. Header
    GET /api/users
    Accept: application/vnd.api.v1+json
+
 ```
 
 ```typescript
@@ -508,6 +545,7 @@ v2Router.get('/users', async (req, res) => {
 
 app.use('/api/v1', v1Router);
 app.use('/api/v2', v2Router);
+
 ```
 
 ### Question 10: Design a REST API for a social media feed
@@ -528,10 +566,12 @@ Endpoints:
   POST   /api/posts/:id/comment - Add comment
 
 Features:
+
   - Infinite scroll (cursor pagination)
   - Real-time updates (WebSocket)
   - Feed ranking algorithm
   - Media upload support
+
 ```
 
 ```typescript
@@ -571,6 +611,7 @@ app.post('/api/posts', authenticate, upload.single('media'), async (req, res) =>
 
   res.status(201).json({ data: post });
 });
+
 ```
 
 ## Interview Questions
@@ -738,13 +779,21 @@ app.post('/api/posts', authenticate, upload.single('media'), async (req, res) =>
 ## Best Practices
 
 1. **Use plural nouns** - /api/users not /api/user
+
 2. **Use HTTP methods correctly** - GET for read, POST for create, etc.
+
 3. **Return proper status codes** - 200, 201, 204, 400, 401, 403, 404
+
 4. **Implement pagination** - Never return unbounded results
+
 5. **Use consistent response format** - Standardize data/error structure
+
 6. **Version your API** - URL path versioning recommended
+
 7. **Handle errors gracefully** - Consistent error responses
+
 8. **Document your API** - OpenAPI/Swagger
+
 9. **Use HTTPS** - Always encrypt in transit
 10. **Rate limit** - Protect against abuse
 

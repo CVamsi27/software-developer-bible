@@ -11,14 +11,19 @@ Reconciliation is central to React's performance model. Without it, every state 
 ### The Problem
 
 When a component's state changes, React needs to figure out:
+
 1. Which components need to re-render
+
 2. What changed between the old and new UI
+
 3. How to update the real DOM efficiently
 
 ### Naive Approach (O(n³))
 
 A "perfect" tree diff algorithm would:
+
 1. Compare every node in the old tree with every node in the new tree: O(n²)
+
 2. Find the minimum number of operations to transform one tree to another: O(n³)
 
 For a 1,000-node tree, that's 1,000,000,000 operations. Too slow for real-time UIs.
@@ -26,7 +31,9 @@ For a 1,000-node tree, that's 1,000,000,000 operations. Too slow for real-time U
 ### React's Approach (O(n))
 
 React makes two key assumptions that reduce complexity to O(n):
+
 1. **Different node types produce different trees**: If a `<div>` changes to a `<span>`, React destroys the old subtree and creates a new one.
+
 2. **Keys identify stable elements**: The `key` prop tells React which elements have moved, been added, or removed.
 
 ```text
@@ -48,6 +55,7 @@ React's Algorithm:
 │ 1,000 nodes → 1,000 operations         │
 │ Fast enough for real-time UIs          │
 └─────────────────────────────────────────┘
+
 ```
 
 ## How It Works
@@ -106,6 +114,7 @@ Level 3: Element Diff
 │ <div key="1">A</div> → <span key="1">A</span>          │
 │ Same key + different type → Replace node               │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### Reconciliation Algorithm in Detail
@@ -158,6 +167,7 @@ function reconcileChildren(
 
   return newFirstChild;
 }
+
 ```
 
 ### Key Prop: The Secret Sauce
@@ -191,6 +201,7 @@ Key 3: C → C (no change)
 Key 4: new → D (create)
 
 Result: Only D is created, A/B/C are reused!
+
 ```
 
 ### ASCII Diagram: Full Reconciliation Flow
@@ -234,6 +245,7 @@ State Change
 │ Commit Phase     │
 │ (Apply DOM changes)│
 └─────────────────┘
+
 ```
 
 ## Code Examples
@@ -258,6 +270,7 @@ const App = () => {
   // 2. Reconciles: div type same ✓, h1 type same ✓, text changed ✗
   // 3. Updates only the text node in the real DOM
 };
+
 ```
 
 ### List Reconciliation with Keys
@@ -284,6 +297,7 @@ const GoodList = ({ items }: { items: { id: number; text: string }[] }) => (
     ))}
   </ul>
 );
+
 ```
 
 ### Conditional Rendering
@@ -297,12 +311,17 @@ const ConditionalComponent = ({ showDetails }: { showDetails: boolean }) => (
       <SummaryPanel />  // When false: mount SummaryPanel
     )}
     {/* React reconciles by:
+
         1. Different component types (DetailsPanel vs SummaryPanel)
+
         2. Unmount old component
+
         3. Mount new component
+
         4. Run cleanup effects, then new effects */}
   </div>
 );
+
 ```
 
 ### Key Changing Behavior
@@ -340,6 +359,7 @@ const SameKeyExample = () => {
     </div>
   );
 };
+
 ```
 
 ### Fragment Reconciliation
@@ -358,6 +378,7 @@ const FragmentExample = ({ items }: { items: Item[] }) => (
   // Without Fragment keys, React would have trouble tracking
   // the dt/dd pairs when items are reordered
 );
+
 ```
 
 ### Component Type Change
@@ -374,6 +395,7 @@ const ComponentTypeChange = ({ useNewComponent }: { useNewComponent: boolean }) 
         React treats it as a completely new component */}
   </div>
 );
+
 ```
 
 ### Reconciliation with State
@@ -407,6 +429,7 @@ const StateReconciliation = () => {
     </ul>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -423,12 +446,14 @@ const ChatMessages = ({ messages }: { messages: Message[] }) => (
       />
     ))}
     {/* React efficiently:
+
         - Creates new messages only (no key matches)
         - Updates existing messages if edited
         - Removes deleted messages (unmatched keys)
         - Reorders if messages are sorted differently */}
   </div>
 );
+
 ```
 
 ### 2. Dynamic Form with Conditional Fields
@@ -440,12 +465,14 @@ const DynamicForm = ({ config }: { config: FormConfig }) => (
       <FormField key={field.id} field={field} />
     ))}
     {/* When config changes:
+
         - Same fields: update props
         - New fields: create components
         - Removed fields: unmount components
         - Reordered fields: move DOM nodes efficiently */}
   </form>
 );
+
 ```
 
 ### 3. Table with Sorting and Filtering
@@ -466,6 +493,7 @@ const DataTable = ({ data, sortKey, filterText }: DataTableProps) => {
           </tr>
         ))}
         {/* React efficiently handles:
+
             - Filtering: removes unmatched items
             - Sorting: reorders DOM nodes (keys stay same)
             - Data changes: updates only changed cells */}
@@ -473,6 +501,7 @@ const DataTable = ({ data, sortKey, filterText }: DataTableProps) => {
     </table>
   );
 };
+
 ```
 
 ### 4. Tabs with Shared State
@@ -491,6 +520,7 @@ const TabbedInterface = () => {
     </div>
   );
 };
+
 ```
 
 ## Common Mistakes
@@ -515,6 +545,7 @@ const BadTodoList = ({ todos }: { todos: Todo[] }) => (
 //               key 1 changed from B to A (update!)
 //               key 2 changed from C to B (update!)
 // All items re-rendered unnecessarily!
+
 ```
 
 ### 2. Changing Key to Force Re-render
@@ -537,6 +568,7 @@ const GoodComponent = ({ userId }: { userId: string }) => (
   // When userId changes, the profile resets
   // This is the correct use case for key-based reset
 );
+
 ```
 
 ### 3. Not Providing Keys for Dynamic Lists
@@ -559,6 +591,7 @@ const GoodKeyList = ({ items }: { items: { id: string; text: string }[] }) => (
     ))}
   </ul>
 );
+
 ```
 
 ### 4. Misunderstanding Re-render Scope
@@ -591,16 +624,23 @@ const Parent = () => {
     </div>
   );
 };
+
 ```
 
 ## Best Practices
 
 1. **Always use stable, unique keys**: Never use array indices for reorderable lists.
+
 2. **Use domain IDs as keys**: Database IDs, UUIDs, or other stable identifiers.
+
 3. **Don't change key to force re-render**: Use state or context instead.
+
 4. **Understand key-based reset**: Changing a key intentionally resets component state.
+
 5. **Memoize expensive children**: Use `React.memo` to prevent unnecessary re-renders.
+
 6. **Avoid inline objects/arrays in JSX**: They create new references each render.
+
 7. **Profile before optimizing**: Use React DevTools Profiler to identify actual bottlenecks.
 
 ## Performance Considerations
@@ -667,8 +707,11 @@ A: React re-renders when: (1) component state changes, (2) parent component re-r
 
 **Q11: Explain the three levels of diffing in reconciliation.**
 A:
+
 1. **Tree Diff**: Different component types → destroy old subtree, create new
+
 2. **Component Diff**: Same type → update props, keep instance
+
 3. **Element Diff**: Same type → update attributes; different type → replace node
 
 **Q12: Why are array indices bad keys?**
@@ -702,13 +745,21 @@ A: React treats the component with the new key as completely new. It unmounts th
 
 **Q21: Explain the complete reconciliation algorithm step by step.**
 A:
+
 1. Compare root elements by type
+
 2. If same type: update props, recurse into children
+
 3. If different type: unmount old subtree, mount new subtree
+
 4. For lists: use keys to match elements
+
 5. Matched elements: update if props changed
+
 6. Unmatched old elements: unmount
+
 7. New elements: mount
+
 8. Recurse through all children depth-first
 
 **Q22: How does React handle the "cross-level" mutation problem?**
@@ -722,6 +773,7 @@ A: Without keys, React compares siblings by index. Swapping siblings causes Reac
 
 **Q25: Explain the trade-offs between reconciliation speed and accuracy.**
 A: React prioritizes speed over perfect accuracy:
+
 - Assumes different types = different trees (may miss moves)
 - Assumes keys are stable (breaks with dynamic keys)
 - O(n) instead of O(n³) (misses some optimizations)
@@ -738,6 +790,7 @@ A: React compares the type of element at each conditional branch. If the conditi
 
 **Q29: What is the impact of `React.memo` on reconciliation performance?**
 A: `React.memo` prevents unnecessary subtree reconciliation. For a component with 1000 children, skipping reconciliation saves:
+
 - Virtual DOM creation: ~1000 objects
 - Diffing: ~1000 comparisons
 - Potential DOM updates: 0 (no changes)
@@ -749,11 +802,17 @@ A: If two elements have the same key, React treats them as the same element. Thi
 
 **Q31: Design a reconciliation strategy for a virtualized list with 100,000 items.**
 A:
+
 1. **Virtualization**: Only render visible items (~50 at a time)
+
 2. **Stable keys**: Use database IDs, not indices
+
 3. **Memoization**: `React.memo` for item components
+
 4. **State design**: Store only visible item data
+
 5. **Lazy loading**: Load items as user scrolls
+
 6. **Pagination**: Load data in pages
 
 ```typescript
@@ -779,14 +838,20 @@ const VirtualList = ({ items }: { items: Item[] }) => {
     </div>
   );
 };
+
 ```
 
 **Q32: How would you implement a custom reconciliation algorithm?**
 A:
+
 1. **Define fiber nodes**: Create your own node structure
+
 2. **Implement diffing**: Compare old and new trees
+
 3. **Handle updates**: Create, update, delete nodes
+
 4. **Commit changes**: Apply to target platform (DOM, Canvas, etc.)
+
 5. **Integration**: Use `react-reconciler` package
 
 ```typescript
@@ -805,10 +870,12 @@ const HostConfig = {
 };
 
 const CustomReconciler = createReconciler(HostConfig);
+
 ```
 
 **Q33: Analyze the performance impact of wrong keys in a production app.**
 A:
+
 - **Memory**: Each re-render creates new Virtual DOM nodes
 - **CPU**: Unnecessary diffing and DOM updates
 - **DOM**: Excessive insertions, deletions, and updates
@@ -817,22 +884,33 @@ A:
 
 **Q34: How would you benchmark reconciliation performance?**
 A:
+
 1. **React Profiler**: Measure render and commit times
+
 2. **Chrome DevTools Performance**: Record and analyze flame charts
+
 3. **Custom benchmarks**: Use `React.Profiler` with `onRender` callback
+
 4. **Memory profiling**: Heap snapshots to track Virtual DOM memory
+
 5. **Comparison tests**: Compare different key strategies
 
 **Q35: Design a reconciliation-aware state management system.**
 A:
+
 1. **Normalize state**: Store data in flat, normalized structures
+
 2. **Stable references**: Use IDs, not object references
+
 3. **Selective updates**: Update only changed entities
+
 4. **Batching**: Group related state changes
+
 5. **Memoization**: Cache derived data
 
 **Q36: How does React handle the "dynamic component type" pattern?**
 A:
+
 ```typescript
 const DynamicComponent = ({ type }: { type: string }) => {
   const Component = getComponent(type);
@@ -843,6 +921,7 @@ const DynamicComponent = ({ type }: { type: string }) => {
   // 3. All state is lost
   // This is correct behavior for dynamic components
 };
+
 ```
 
 **Q37: Explain the reconciliation implications of React Server Components.**
@@ -850,14 +929,20 @@ A: Server Components don't participate in client-side reconciliation. They're se
 
 **Q38: How would you optimize reconciliation for a real-time collaborative app?**
 A:
+
 1. **CRDT-based state**: Conflict-free replicated data types
+
 2. **Incremental updates**: Only send changed data
+
 3. **Operational transformation**: Transform operations across clients
+
 4. **Virtualization**: Only render visible collaboration elements
+
 5. **Priority updates**: User's own changes > remote changes
 
 **Q39: Analyze the memory implications of reconciliation for large component trees.**
 A:
+
 - **Per component**: ~1-2KB for fiber node
 - **Virtual DOM**: ~2x memory for old + new trees
 - **Large app**: 10,000 components → ~20-40MB
@@ -866,11 +951,17 @@ A:
 
 **Q40: How would you design a reconciliation system for a non-React framework?**
 A:
+
 1. **Define update model**: How state changes trigger UI updates
+
 2. **Virtual representation**: Create in-memory UI tree
+
 3. **Diffing algorithm**: Compare old and new trees
+
 4. **Patching strategy**: Apply minimal DOM changes
+
 5. **Scheduling**: Prioritize updates, batch changes
+
 6. **Error handling**: Graceful degradation on failures
 
 ### Follow-ups (5-10)
@@ -880,6 +971,7 @@ A: "When you change something on a website, React doesn't rebuild the entire pag
 
 **Q42: What are the edge cases in reconciliation?**
 A:
+
 - Conditional fragments with different structures
 - Dynamic component types
 - Portal rendering (breaks tree structure)
@@ -900,14 +992,20 @@ A: React DevTools uses reconciliation internals to display the component tree. I
 
 **Q47: How would you test reconciliation behavior?**
 A:
+
 1. **Unit tests**: Test component rendering with different props
+
 2. **Integration tests**: Test component interactions
+
 3. **Visual regression tests**: Compare screenshots before/after changes
+
 4. **Performance tests**: Measure render times with React Profiler
+
 5. **Edge case tests**: Test key changes, conditional rendering, etc.
 
 **Q48: How does reconciliation handle the "deep comparison" problem?**
 A: React uses shallow comparison by default. Deep comparison is expensive. For complex objects, use:
+
 - `React.memo` with custom comparator
 - `useMemo` to memoize expensive computations
 - Normalized state to reduce comparison depth
@@ -917,10 +1015,15 @@ A: StrictMode intentionally double-renders components in development. This helps
 
 **Q50: How would you design a debugging tool for reconciliation?**
 A:
+
 1. **Visualization**: Show Virtual DOM tree before/after changes
+
 2. **Diff highlighting**: Color-code created, updated, deleted nodes
+
 3. **Timeline**: Show reconciliation steps over time
+
 4. **Performance metrics**: Render time, commit time, DOM operations
+
 5. **Key analysis**: Show which keys matched, which didn't
 
 ## Summary
@@ -961,6 +1064,7 @@ Optimization Strategies:
 ├── Virtualization: Only render visible items
 ├── State colocation: Move state closer to usage
 └── Key-based reset: Use key to intentionally reset state
+
 ```
 
 ## References & Learn More

@@ -5,9 +5,13 @@
 React Suspense is a feature that lets you "suspend" rendering of a component tree until some condition is met (like data loading or code loading). It provides a declarative way to handle loading states in React applications. Suspense works by catching a "promise" thrown by a child component and showing a fallback UI until the promise resolves.
 
 Suspense is the foundation for several React features:
+
 1. **Code Splitting**: Lazy loading components with `React.lazy`
+
 2. **Data Fetching**: Integration with frameworks like Next.js, Relay
+
 3. **Server Components**: Streaming server-rendered HTML
+
 4. **Selective Hydration**: Hydrating urgent components first
 
 ## Why Do We Need It?
@@ -44,6 +48,7 @@ const UserProfile = ({ userId }: { userId: string }) => {
 
   return <div>{user.name}</div>;
 };
+
 ```
 
 ### The Solution
@@ -63,6 +68,7 @@ const App = () => (
     <UserProfile userId="1" />
   </Suspense>
 );
+
 ```
 
 ## How It Works
@@ -91,6 +97,7 @@ Suspense Rendering:
 │                 └── When promise RESOLVES:                  │
 │                     └── Renders child component              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Code Splitting with React.lazy
@@ -128,6 +135,7 @@ With Code Splitting:
 │ Initial load: 51KB                                          │
 │ Dashboard loads only when user navigates to /dashboard      │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Suspense Boundaries
@@ -155,6 +163,7 @@ Multiple Boundaries:
 │ Benefit: Each section loads independently!                  │
 │ MainContent loading doesn't block Sidebar                  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Error Handling with Error Boundaries
@@ -175,6 +184,7 @@ Suspense + Error Boundary:
 │ Success: Shows AsyncComponent                               │
 │ Error: Shows ErrorUI                                        │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -210,6 +220,7 @@ const App = () => {
     </div>
   );
 };
+
 ```
 
 ### Nested Suspense Boundaries
@@ -232,6 +243,7 @@ const App = () => (
     </aside>
   </div>
 );
+
 ```
 
 ### Suspense with React.lazy and Error Boundary
@@ -266,6 +278,7 @@ const App = () => (
     </Suspense>
   </ErrorBoundary>
 );
+
 ```
 
 ### Suspense for Data Fetching (with React 18+)
@@ -290,6 +303,7 @@ const App = () => (
     <UserProfile userId="1" />
   </Suspense>
 );
+
 ```
 
 ### Multiple Lazy Components
@@ -320,6 +334,7 @@ const App = () => {
     </div>
   );
 };
+
 ```
 
 ## Real-World Use Cases
@@ -354,6 +369,7 @@ const App = () => (
     </Suspense>
   </BrowserRouter>
 );
+
 ```
 
 ### 2. Heavy Component Lazy Loading
@@ -386,6 +402,7 @@ const DocumentEditor = () => {
     </div>
   );
 };
+
 ```
 
 ### 3. Dashboard with Independent Sections
@@ -420,6 +437,7 @@ const Dashboard = () => (
     </div>
   </div>
 );
+
 ```
 
 ### 4. Modal with Lazy Content
@@ -441,6 +459,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
     </div>
   );
 };
+
 ```
 
 ## Common Mistakes
@@ -463,6 +482,7 @@ const App = () => {
     </Suspense>
   );
 };
+
 ```
 
 ### 2. Too Broad Suspense Boundaries
@@ -490,6 +510,7 @@ const App = () => (
     </Suspense>
   </>
 );
+
 ```
 
 ### 3. Not Handling Errors
@@ -511,6 +532,7 @@ const App = () => (
     </Suspense>
   </ErrorBoundary>
 );
+
 ```
 
 ### 4. Lazy Loading Too Much
@@ -523,16 +545,23 @@ const Icon = lazy(() => import('./Icon')); // 0.5KB - unnecessary!
 // ✅ GOOD: Lazy load large components
 const RichTextEditor = lazy(() => import('./RichTextEditor')); // 100KB - worth it!
 const Chart = lazy(() => import('./Chart')); // 50KB - worth it!
+
 ```
 
 ## Best Practices
 
 1. **Always wrap lazy components with Suspense**: Without it, React throws an error.
+
 2. **Use specific Suspense boundaries**: Don't wrap entire app in one Suspense.
+
 3. **Combine with Error Boundaries**: Handle both loading and error states.
+
 4. **Lazy load large components**: Don't lazy load small, frequently used components.
+
 5. **Use route-based code splitting**: Lazy load entire pages/routes.
+
 6. **Provide meaningful fallbacks**: Show loading indicators, not blank screens.
+
 7. **Preload when possible**: Start loading before user navigates.
 
 ## Performance Considerations
@@ -589,6 +618,7 @@ A: Code splitting is the practice of splitting your bundle into smaller chunks t
 
 **Q10: When should you use Suspense?**
 A: Use Suspense for:
+
 - Lazy loading components
 - Data fetching (with frameworks)
 - Any asynchronous operation that needs a loading state
@@ -600,10 +630,12 @@ A: When a component suspends, it throws a Promise. React catches the Promise at 
 
 **Q12: How do you preload lazy components?**
 A: Call the lazy function before rendering:
+
 ```typescript
 const Dashboard = lazy(() => import('./Dashboard'));
 // Preload
 Dashboard.preload();
+
 ```
 
 **Q13: Can you use Suspense with data fetching?**
@@ -611,12 +643,14 @@ A: Yes, but you need a framework or library that supports it (like React 18's `u
 
 **Q14: How do you handle errors in lazy components?**
 A: Wrap Suspense with an Error Boundary:
+
 ```typescript
 <ErrorBoundary fallback={<Error />}>
   <Suspense fallback={<Spinner />}>
     <LazyComponent />
   </Suspense>
 </ErrorBoundary>
+
 ```
 
 **Q15: What is the difference between Suspense and loading states?**
@@ -624,11 +658,13 @@ A: Suspense is declarative — you wrap components. Loading states are imperativ
 
 **Q16: How do you test Suspense boundaries?**
 A: Use `waitFor` in tests:
+
 ```typescript
 render(<Component />);
 await waitFor(() => {
   expect(screen.getByText('Content')).toBeInTheDocument();
 });
+
 ```
 
 **Q17: Can you nest Suspense boundaries?**
@@ -639,14 +675,17 @@ A: Suspense adds minimal overhead. The main benefit is code splitting, which red
 
 **Q19: How does Suspense interact with React Router?**
 A: Wrap Routes with Suspense for route-based code splitting:
+
 ```typescript
 <Suspense fallback={<Spinner />}>
   <Routes>...</Routes>
 </Suspense>
+
 ```
 
 **Q20: What are the common Suspense patterns?**
 A:
+
 - Route-based code splitting
 - Heavy component lazy loading
 - Modal content lazy loading
@@ -656,11 +695,17 @@ A:
 
 **Q21: Explain the complete Suspense lifecycle.**
 A:
+
 1. Component calls `lazy()` or throws a Promise
+
 2. React catches the Promise at the nearest Suspense boundary
+
 3. Fallback UI is shown
+
 4. Promise resolves
+
 5. React retries rendering
+
 6. Component renders successfully
 
 **Q22: How does Suspense interact with concurrent rendering?**
@@ -671,12 +716,14 @@ A: Server Components can suspend during server rendering. React streams HTML as 
 
 **Q24: How does Suspense handle the "shell" pattern?**
 A: The shell pattern keeps the app shell visible while content loads:
+
 ```typescript
 <Layout>
   <Suspense fallback={<ContentSpinner />}>
     <Content />
   </Suspense>
 </Layout>
+
 ```
 
 **Q25: What is the difference between Suspense and useEffect?**
@@ -684,18 +731,24 @@ A: Suspense is declarative and handles loading states. `useEffect` is imperative
 
 **Q26: How do you optimize Suspense performance?**
 A:
+
 1. Use specific Suspense boundaries
+
 2. Preload lazy components
+
 3. Combine with React.memo
+
 4. Use SuspenseList for ordered loading
 
 **Q27: What is SuspenseList?**
 A: `SuspenseList` coordinates the loading of multiple Suspense boundaries:
+
 ```typescript
 <SuspenseList revealOrder="forwards">
   <Suspense fallback={<Spinner1 />}>...</Suspense>
   <Suspense fallback={<Spinner2 />}>...</Suspense>
 </SuspenseList>
+
 ```
 
 **Q28: How does Suspense handle the "fallback cascade" problem?**
@@ -706,6 +759,7 @@ A: React DevTools shows Suspense boundaries and their states (suspended, resolve
 
 **Q30: How do you handle Suspense in testing?**
 A: Use `act` and `waitFor`:
+
 ```typescript
 test('loads component', async () => {
   render(<SuspenseComponent />);
@@ -713,28 +767,40 @@ test('loads component', async () => {
     expect(screen.getByText('Loaded')).toBeInTheDocument();
   });
 });
+
 ```
 
 ### FAANG-style (5-10)
 
 **Q31: Design a Suspense-based architecture for a large app.**
 A:
+
 1. **Route-based splitting**: Lazy load routes
+
 2. **Component splitting**: Lazy load heavy components
+
 3. **Error boundaries**: Handle loading and errors
+
 4. **Preloading**: Start loading before navigation
+
 5. **SuspenseList**: Coordinate multiple loads
 
 **Q32: How would you debug a Suspense performance issue?**
 A:
+
 1. React DevTools: Check Suspense states
+
 2. Network tab: Monitor chunk loading
+
 3. Chrome DevTools: Record interactions
+
 4. Profiler: Measure render times
+
 5. Bundle analyzer: Check chunk sizes
 
 **Q33: Analyze the memory implications of Suspense.**
 A:
+
 - Lazy components: Loaded and cached in memory
 - Multiple boundaries: Each has state
 - Memory overhead: Minimal compared to benefits
@@ -742,6 +808,7 @@ A:
 
 **Q34: How would you implement a Suspense-based loading system?**
 A:
+
 ```typescript
 const useSuspenseData = <T>(fetcher: () => Promise<T>) => {
   const [data, setData] = useState<T | null>(null);
@@ -759,10 +826,12 @@ const useSuspenseData = <T>(fetcher: () => Promise<T>) => {
 
   return data;
 };
+
 ```
 
 **Q35: Design a Suspense-based error handling system.**
 A:
+
 ```typescript
 const SuspenseErrorBoundary = ({ children, fallback, errorFallback }) => (
   <ErrorBoundary fallback={errorFallback}>
@@ -771,6 +840,7 @@ const SuspenseErrorBoundary = ({ children, fallback, errorFallback }) => (
     </Suspense>
   </ErrorBoundary>
 );
+
 ```
 
 **Q36: How does Suspense interact with React Server Components?**
@@ -778,6 +848,7 @@ A: Server Components can suspend during server rendering. React streams HTML as 
 
 **Q37: Analyze the performance characteristics of Suspense.**
 A:
+
 | Metric | Without Suspense | With Suspense |
 |--------|------------------|---------------|
 | Initial bundle | 500KB | 100KB |
@@ -787,6 +858,7 @@ A:
 
 **Q38: How would you implement a Suspense-based image loading system?**
 A:
+
 ```typescript
 const LazyImage = ({ src, alt }: { src: string; alt: string }) => {
   const [loaded, setLoaded] = useState(false);
@@ -802,16 +874,19 @@ const LazyImage = ({ src, alt }: { src: string; alt: string }) => {
     </Suspense>
   );
 };
+
 ```
 
 **Q39: How does Suspense handle the "infinite loading" problem?**
 A: Infinite loading occurs when Suspense never resolves. Prevention:
+
 - Set timeouts for loading states
 - Provide retry mechanisms
 - Show error states after timeout
 
 **Q40: Design a Suspense-based virtualization system.**
 A:
+
 ```typescript
 const VirtualizedList = ({ items }: { items: Item[] }) => {
   const [visibleRange, setVisibleRange] = useState({ start: 0, end: 10 });
@@ -826,6 +901,7 @@ const VirtualizedList = ({ items }: { items: Item[] }) => {
     </div>
   );
 };
+
 ```
 
 ### Follow-ups (5-10)
@@ -835,6 +911,7 @@ A: "Suspense is like a 'please wait' screen. When a component needs to load some
 
 **Q42: What are the edge cases in Suspense?**
 A:
+
 - Missing Suspense boundary
 - Fallback cascade (nested spinners)
 - Infinite loading states
@@ -852,6 +929,7 @@ A: StrictMode double-renders in development. Suspense boundaries work normally �
 
 **Q46: What is the future of Suspense in React?**
 A: React is exploring:
+
 - Better data fetching integration
 - Improved concurrent features
 - Better error handling
@@ -859,6 +937,7 @@ A: React is exploring:
 
 **Q47: How would you implement Suspense for a form?**
 A:
+
 ```typescript
 const LazyForm = lazy(() => import('./LazyForm'));
 
@@ -867,10 +946,12 @@ const FormContainer = () => (
     <LazyForm />
   </Suspense>
 );
+
 ```
 
 **Q48: How does Suspense handle the "preloading" pattern?**
 A: Preloading starts loading before navigation:
+
 ```typescript
 const Dashboard = lazy(() => import('./Dashboard'));
 
@@ -882,6 +963,7 @@ const NavLink = () => (
     Dashboard
   </Link>
 );
+
 ```
 
 **Q49: What is the relationship between Suspense and React.memo?**
@@ -889,6 +971,7 @@ A: `React.memo` prevents re-renders. Suspense handles loading states. They work 
 
 **Q50: How would you implement Suspense for a chat application?**
 A:
+
 ```typescript
 const Chat = () => (
   <div>
@@ -900,6 +983,7 @@ const Chat = () => (
     </Suspense>
   </div>
 );
+
 ```
 
 ## Summary
@@ -957,6 +1041,7 @@ Relationships:
 ├── Suspense + Error Boundaries = Loading + error handling
 ├── Suspense + React Router = Route-based splitting
 └── Suspense + React.memo = Memoized loading states
+
 ```
 
 ## References & Learn More

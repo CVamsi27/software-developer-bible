@@ -23,8 +23,11 @@ A JWT consists of three Base64URL-encoded parts separated by dots:
 
 ```text
 xxxxx.yyyyy.zzzzz
+
 |       |       |
+
 Header  Payload Signature
+
 ```
 
 **Header**: Contains metadata about the token (algorithm, token type)
@@ -59,6 +62,7 @@ Header  Payload Signature
        │                                                   │
        │  11. Response with data                           │
        │<──────────────────────────────────────────────────│
+
 ```
 
 ### Token Expiration and Refresh Flow
@@ -79,6 +83,7 @@ Header  Payload Signature
        │                                             │
        │  Return { accessToken, refreshToken }       │
        │<────────────────────────────────────────────│
+
 ```
 
 ## Code Examples
@@ -129,6 +134,7 @@ const verifyRefreshToken = (token: string): { userId: string } => {
     issuer: "myapp",
   }) as { userId: string };
 };
+
 ```
 
 ### JWT Middleware (Express)
@@ -180,6 +186,7 @@ const authorizeRole = (roles: string[]) => {
 
 // Usage
 app.get("/admin", authenticateToken, authorizeRole(["admin"]), adminHandler);
+
 ```
 
 ### JWT with RS256 (Asymmetric Keys)
@@ -207,6 +214,7 @@ const verifyToken = (token: string): TokenPayload => {
     issuer: "auth-server",
   }) as TokenPayload;
 };
+
 ```
 
 ### Token Blacklisting (for logout)
@@ -233,26 +241,31 @@ const isTokenBlacklisted = async (token: string): Promise<boolean> => {
   const result = await redis.get(`bl:${token}`);
   return result !== null;
 };
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Single Sign-On (SSO)
+
 - User authenticates with a central identity provider
 - JWT is issued and shared across multiple services
 - Each service validates the JWT independently
 
 ### 2. API Gateway Authentication
+
 - API gateway validates JWT before routing to microservices
 - Claims are forwarded to downstream services
 - No need for each service to authenticate independently
 
 ### 3. Mobile and SPA Authentication
+
 - Tokens stored securely on client
 - Short-lived access tokens minimize risk if compromised
 - Refresh tokens enable seamless re-authentication
 
 ### 4. Third-Party API Access
+
 - OAuth 2.0 flows issue JWTs for API access
 - Scoped permissions encoded in token claims
 - Time-limited access without sharing credentials
@@ -278,13 +291,21 @@ const isTokenBlacklisted = async (token: string): Promise<boolean> => {
 ## Best Practices
 
 1. **Use short-lived access tokens** (15 minutes or less)
+
 2. **Implement refresh token rotation** with single-use refresh tokens
+
 3. **Store tokens in httpOnly, Secure, SameSite=Strict cookies** for web apps
+
 4. **Use RS256 for multi-service architectures** to avoid sharing secrets
+
 5. **Validate all standard claims** (`iss`, `aud`, `exp`, `nbf`, `iat`)
+
 6. **Implement token revocation** for logout and security incidents
+
 7. **Never store sensitive data** in the JWT payload
+
 8. **Use strong secrets** (minimum 256-bit for HMAC algorithms)
+
 9. **Keep tokens small** to avoid HTTP header size issues
 10. **Implement rate limiting** on token refresh endpoints
 

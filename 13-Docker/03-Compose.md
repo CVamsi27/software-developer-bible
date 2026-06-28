@@ -5,6 +5,7 @@
 **Docker Compose** is a tool for defining and running multi-container Docker applications using a declarative YAML file. It manages services, networks, and volumes as a single unit, enabling local development environments and multi-service architectures.
 
 Key concepts:
+
 - **Service**: A container definition with build/run configuration
 - **Network**: Isolated communication layer between services
 - **Volume**: Persistent storage attached to services
@@ -49,6 +50,7 @@ Key concepts:
 │                      │                               │
 │               Docker Networks                        │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ### Project Structure
@@ -66,6 +68,7 @@ myproject/
 │   └── postgres.conf
 └── scripts/
     └── init.sh
+
 ```
 
 ## Code Examples
@@ -84,8 +87,10 @@ services:
       args:
         NODE_ENV: production
     ports:
+
       - "3000:3000"
     environment:
+
       - NODE_ENV=production
       - DATABASE_URL=postgresql://postgres:secret@postgres:5432/mydb
       - REDIS_URL=redis://redis:6379
@@ -95,6 +100,7 @@ services:
       redis:
         condition: service_healthy
     networks:
+
       - frontend
       - backend
     restart: unless-stopped
@@ -102,6 +108,7 @@ services:
   postgres:
     image: postgres:15-alpine
     volumes:
+
       - pg_data:/var/lib/postgresql/data
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
@@ -109,6 +116,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
     networks:
+
       - backend
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
@@ -120,8 +128,10 @@ services:
   redis:
     image: redis:7-alpine
     volumes:
+
       - redis_data:/data
     networks:
+
       - backend
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -133,14 +143,18 @@ services:
   nginx:
     image: nginx:alpine
     ports:
+
       - "80:80"
       - "443:443"
     volumes:
+
       - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./certs:/etc/nginx/certs:ro
     depends_on:
+
       - app
     networks:
+
       - frontend
     restart: unless-stopped
 
@@ -152,6 +166,7 @@ networks:
   frontend:
   backend:
     internal: true
+
 ```
 
 ### Compose Profiles
@@ -164,31 +179,37 @@ services:
   app:
     build: .
     ports:
+
       - "3000:3000"
     profiles:
+
       - dev
       - prod
 
   debug:
     image: busybox
     profiles:
+
       - debug
 
   postgres:
     image: postgres:15
     profiles:
+
       - dev
       - prod
 
   redis:
     image: redis:7-alpine
     profiles:
+
       - dev
       - prod
 
 # Usage:
 # docker compose --profile dev up
 # docker compose --profile debug up
+
 ```
 
 ### Environment Variable Handling
@@ -201,12 +222,15 @@ services:
   app:
     build: .
     env_file:
+
       - .env
       - .env.local
     environment:
+
       - NODE_ENV=${NODE_ENV:-production}
       - LOG_LEVEL=${LOG_LEVEL:-info}
     secrets:
+
       - db_password
       - api_key
 
@@ -215,6 +239,7 @@ secrets:
     file: ./secrets/db_password.txt
   api_key:
     environment: API_KEY
+
 ```
 
 ### Multi-Stage Development Setup
@@ -228,13 +253,16 @@ services:
     build:
       target: development
     volumes:
+
       - ./src:/app/src
       - /app/node_modules
     command: npm run dev
     environment:
+
       - NODE_ENV=development
       - DEBUG=app:*
     ports:
+
       - "3000:3000"
       - "9229:9229"  # Node.js debugger
 
@@ -242,13 +270,17 @@ services:
     build:
       target: test
     volumes:
+
       - ./src:/app/src
       - /app/node_modules
     command: npm test
     environment:
+
       - NODE_ENV=test
     profiles:
+
       - test
+
 ```
 
 ### Dockerfile for Compose
@@ -283,6 +315,7 @@ COPY --from=build /app/dist ./dist
 COPY package*.json ./
 USER node
 CMD ["node", "dist/server.js"]
+
 ```
 
 ## Real-World Use Cases
@@ -299,10 +332,13 @@ services:
       dockerfile: Dockerfile
       target: development
     volumes:
+
       - ./frontend/src:/app/src
     ports:
+
       - "3001:3000"
     environment:
+
       - REACT_APP_API_URL=http://localhost:3002
 
   backend:
@@ -311,16 +347,20 @@ services:
       dockerfile: Dockerfile
       target: development
     volumes:
+
       - ./backend/src:/app/src
     ports:
+
       - "3002:3000"
     environment:
+
       - DATABASE_URL=postgres://postgres:secret@db:5432/mydb
       - REDIS_URL=redis://redis:6379
 
   db:
     image: postgres:15-alpine
     volumes:
+
       - pg_data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: mydb
@@ -332,11 +372,13 @@ services:
   mailhog:
     image: mailhog/mailhog
     ports:
+
       - "1025:1025"
       - "8025:8025"
 
 volumes:
   pg_data:
+
 ```
 
 ### 2. CI/CD Pipeline Services
@@ -350,6 +392,7 @@ services:
       context: .
       target: test
     environment:
+
       - DATABASE_URL=postgres://test:test@test-db:5432/testdb
     depends_on:
       test-db:
@@ -373,7 +416,9 @@ services:
       target: development
     command: npm run lint
     profiles:
+
       - lint
+
 ```
 
 ## Common Mistakes
@@ -401,13 +446,17 @@ services:
       context: .
       target: production
       args:
+
         - NODE_ENV=production
     ports:
+
       - "${APP_PORT:-3000}:3000"
     environment:
+
       - NODE_ENV=production
       - DATABASE_URL=${DATABASE_URL}
     secrets:
+
       - db_password
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', r => process.exit(r.statusCode === 200 ? 0 : 1))"]
@@ -427,6 +476,7 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
+
       - frontend
       - backend
 
@@ -438,16 +488,25 @@ networks:
   frontend:
   backend:
     internal: true
+
 ```
 
 1. **Use Compose v2** — `docker compose` CLI, not `docker-compose`
+
 2. **Use profiles** — separate dev/test/prod configurations
+
 3. **Pin image versions** — never use `latest`
+
 4. **Add health checks** — enable `depends_on` conditions
+
 5. **Use `.env` files** — never hardcode secrets
+
 6. **Set resource limits** — prevent container resource exhaustion
+
 7. **Use `restart: unless-stopped`** — automatic recovery
+
 8. **Configure logging** — limit log file sizes
+
 9. **Use secrets** — for passwords and API keys
 10. **Use `internal` networks** — for backend isolation
 
@@ -474,6 +533,7 @@ docker compose watch
 
 # Scale a service
 docker compose up --scale worker=3
+
 ```
 
 ## Interview Questions
@@ -631,11 +691,13 @@ docker compose --profile debug up
 
 # Environment
 docker compose config  # validate and view resolved config
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [Docker Deep Dive by Nigel Poulton](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235)

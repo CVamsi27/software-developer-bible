@@ -75,8 +75,10 @@
 ## Common Patterns
 
 ### Discriminated Union (State Machine)
+
 ```ts
 type RequestState<T> =
+
   | { status: 'idle' }
   | { status: 'loading' }
   | { status: 'success'; data: T }
@@ -90,9 +92,11 @@ function render<T>(state: RequestState<T>) {
     case 'error': return state.error.message; // narrowed to { error: Error }
   }
 }
+
 ```
 
 ### Builder Pattern with Generics
+
 ```ts
 class QueryBuilder<T extends Record<string, unknown>> {
   private filters: Partial<T> = {};
@@ -106,9 +110,11 @@ class QueryBuilder<T extends Record<string, unknown>> {
     return { ...this.filters };
   }
 }
+
 ```
 
 ### Type-Safe Event Emitter
+
 ```ts
 type EventMap = {
   'user:login': { userId: string; timestamp: number };
@@ -128,9 +134,11 @@ class TypedEmitter<T extends Record<string, unknown>> {
     this.handlers.get(event as string)?.forEach(h => h(payload));
   }
 }
+
 ```
 
 ### Branded Types (Preventing Type Confusion)
+
 ```ts
 type UserId = string & { readonly __brand: 'UserId' };
 type OrderId = string & { readonly __brand: 'OrderId' };
@@ -139,9 +147,11 @@ function createUserId(id: string): UserId { return id as UserId; }
 function getOrder(userId: UserId, orderId: OrderId) { ... }
 
 // getOrder(orderId, userId) → compile error! Prevents swapping arguments.
+
 ```
 
 ### Exhaustive Check
+
 ```ts
 function assertNever(x: never): never {
   throw new Error(`Unexpected value: ${x}`);
@@ -156,9 +166,11 @@ function getColor(c: Color): string {
     default: return assertNever(c); // compile error if case missing
   }
 }
+
 ```
 
 ### Recursive Types
+
 ```ts
 type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object
@@ -167,11 +179,14 @@ type DeepReadonly<T> = {
 };
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
+
 ```
 
 ### Type-Safe API Response
+
 ```ts
 type ApiResponse<T> =
+
   | { ok: true; data: T; status: number }
   | { ok: false; error: string; status: number };
 
@@ -180,9 +195,11 @@ async function fetchTyped<T>(url: string): Promise<ApiResponse<T>> {
   if (!res.ok) return { ok: false, error: await res.text(), status: res.status };
   return { ok: true, data: await res.json(), status: res.status };
 }
+
 ```
 
 ### Decorator Pattern (Stage 3)
+
 ```ts
 function logged(originalMethod: any, context: ClassMethodDecoratorContext) {
   return function(this: any, ...args: any[]) {
@@ -197,9 +214,11 @@ class Calculator {
   @logged
   add(a: number, b: number) { return a + b; }
 }
+
 ```
 
 ### Template Literal Type Builder
+
 ```ts
 type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 type Endpoint = '/users' | '/posts' | '/comments';
@@ -207,9 +226,11 @@ type Route = `${HTTPMethod} ${Endpoint}`;
 // = "GET /users" | "GET /posts" | ... (12 combinations)
 
 type CSSProperty = `margin-${'top' | 'bottom' | 'left' | 'right'}`;
+
 ```
 
 ### Type-Safe localStorage
+
 ```ts
 interface StorageSchema {
   'auth-token': string;
@@ -225,6 +246,7 @@ function getStorage<K extends keyof StorageSchema>(key: K): StorageSchema[K] | n
 function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[K]): void {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
 ```
 
 ## Red Flags (Things NOT to Say)
@@ -271,6 +293,7 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 ---
 
 ## References & Learn More
+
 - [Cheat Sheet Collection](https://github.com/detailyang/awesome-cheatsheet)
 - [DevHints](https://devhints.io/)
 - [LeetCode](https://leetcode.com/)

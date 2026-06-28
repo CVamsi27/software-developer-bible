@@ -70,6 +70,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Generator Methods
@@ -111,6 +112,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -131,6 +133,7 @@ console.log(counter.next());  // { value: 3, done: false }
 console.log(counter.next());  // { value: 4, done: false }
 console.log(counter.next());  // { value: 5, done: false }
 console.log(counter.next());  // { value: undefined, done: true }
+
 ```
 
 ### Generator with Return Value
@@ -163,6 +166,7 @@ function* take<T>(gen: Generator<T>, count: number): Generator<T> {
 
 const first10 = [...take(fibonacci(), 10)];
 console.log(first10);  // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
 ```
 
 ### Passing Values to Generators
@@ -178,6 +182,7 @@ const gen = inputProcessor();
 console.log(gen.next());           // { value: "What is your name?", done: false }
 console.log(gen.next("Alice"));    // { value: "Hello Alice, what is your age?", done: false }
 console.log(gen.next("30"));       // { value: "Alice is 30 years old", done: true }
+
 ```
 
 ### Generator for Iteration
@@ -201,6 +206,7 @@ for (const num of range) {
 // Convert to array
 const numbers = [...new Range(1, 5)];
 console.log(numbers);  // [1, 2, 3, 4, 5]
+
 ```
 
 ### Async Generator
@@ -230,6 +236,7 @@ async function getAllData() {
 
   return allData;
 }
+
 ```
 
 ### Generator Composition
@@ -252,6 +259,7 @@ function* combined() {
 
 const gen = combined();
 console.log([...gen]);  // [1, 2, 3, 4]
+
 ```
 
 ### Generator for State Machine
@@ -285,6 +293,7 @@ machine.next('START');    // { value: 'running', done: false }
 machine.next('PAUSE');    // { value: 'paused', done: false }
 machine.next('START');    // { value: 'running', done: false }
 machine.next('STOP');     // { value: 'idle', done: false }
+
 ```
 
 ## Real-World Use Cases
@@ -311,6 +320,7 @@ function* loadLargeDataset(): Generator<DataChunk> {
 for (const chunk of loadLargeDataset()) {
   processChunk(chunk);
 }
+
 ```
 
 ### 2. Infinite Sequences
@@ -326,6 +336,7 @@ function* infiniteCounter(): Generator<number> {
 // Use with take
 const counter = infiniteCounter();
 const first100 = [...take(counter, 100)];
+
 ```
 
 ### 3. Async/Await Implementation
@@ -366,6 +377,7 @@ function runGenerator(gen: Generator) {
     step();
   });
 }
+
 ```
 
 ### 4. Custom Iterators
@@ -393,6 +405,7 @@ const fs = new FileSystem();
 for (const file of fs.walk('/path/to/dir')) {
   console.log(file);
 }
+
 ```
 
 ### 5. Pipeline Processing
@@ -425,6 +438,7 @@ const processed = pipeline(
 );
 
 console.log([...processed]);  // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
 ```
 
 ## Common Mistakes
@@ -444,6 +458,7 @@ const gen = myGen();  // Returns generator object, doesn't execute
 for (const value of myGen()) {
   console.log(value);
 }
+
 ```
 
 ### 2. Not Handling Generator Completion
@@ -459,6 +474,7 @@ const g = gen();
 g.next();  // { value: 1, done: false }
 g.next();  // { value: 2, done: false }
 g.next();  // { value: 3, done: true }
+
 ```
 
 ### 3. Mixing yield and return
@@ -477,6 +493,7 @@ function* gen() {
   yield 2;
   yield 3;
 }
+
 ```
 
 ### 4. Not Using yield*
@@ -498,6 +515,7 @@ function* combined() {
   yield* generator1();
   yield* generator2();
 }
+
 ```
 
 ## Best Practices
@@ -523,6 +541,7 @@ while (!result.done) {
   console.log(result.value);
   result = gen.next();
 }
+
 ```
 
 ### 2. Combine Generators
@@ -534,6 +553,7 @@ function* allData() {
   yield* fetchData2();
   yield* fetchData3();
 }
+
 ```
 
 ### 3. Use TypeScript Generics
@@ -546,14 +566,16 @@ function* take<T>(gen: Generator<T>, count: number): Generator<T> {
     yield value;
   }
 }
+
 ```
 
 ### 4. Document Generator Behavior
 
 ```typescript
 /**
- * Generates fibonacci numbers infinitely
- * @yields Fibonacci numbers starting from 0
+
+ - Generates fibonacci numbers infinitely
+ - @yields Fibonacci numbers starting from 0
  */
 function* fibonacci(): Generator<number> {
   let a = 0, b = 1;
@@ -562,6 +584,7 @@ function* fibonacci(): Generator<number> {
     [a, b] = [b, a + b];
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -590,6 +613,7 @@ const arr = rangeArray(1, 1000000);  // Stores all 1M values
 
 // Generator uses memory for one value at a time
 const gen = range(1, 1000000);  // Stores nothing until iterated
+
 ```
 
 ### Time Complexity
@@ -614,6 +638,7 @@ function* fibonacciMemo(): Generator<number> {
     yield fib(i);
   }
 }
+
 ```
 
 ## Interview Questions
@@ -733,11 +758,17 @@ A: Use for...of, combine with yield*, add TypeScript generics, document behavior
 Generators are powerful for lazy evaluation:
 
 1. **Syntax**: `function*` and `yield`
+
 2. **Iterator protocol**: `next()`, `return()`, `throw()`
+
 3. **Lazy evaluation**: Produce values on demand
+
 4. **Memory efficient**: O(1) space complexity
+
 5. **Use cases**: Infinite sequences, async flows, state machines
+
 6. **Composition**: Use `yield*` for delegation
+
 7. **Async generators**: `async function*` with `for await...of`
 
 ## Cheat Sheet
@@ -820,6 +851,7 @@ COMMON MISTAKES:
 • Not handling completion
 • Mixing yield and return
 • Not using yield*
+
 ```
 
 ## References & Learn More

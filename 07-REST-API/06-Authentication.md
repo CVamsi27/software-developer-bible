@@ -9,9 +9,13 @@ API authentication is the process of verifying the identity of a client making r
 Without authentication:
 
 1. **Data breaches** - Unauthorized access to sensitive data
+
 2. **Abuse** - Uncontrolled API usage, rate limit bypass
+
 3. **Compliance violations** - GDPR, HIPAA, SOC2 requirements
+
 4. **Revenue loss** - Unauthorized access to paid features
+
 5. **Trust issues** - Users won't share data with unsecured APIs
 
 ## How It Works
@@ -46,6 +50,7 @@ Authentication Methods
    Username:password in header
    ✅ Simple
    ❌ Insecure without HTTPS
+
 ```
 
 ### API Key Authentication
@@ -63,6 +68,7 @@ Client                          Server
   │  200 OK                       │
   │  { "data": "..." }           │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -100,6 +106,7 @@ app.get('/api/data', apiKeyAuth, rateLimiter({
 }), async (req, res) => {
   res.json({ data: 'secret' });
 });
+
 ```
 
 ### JWT Authentication
@@ -134,6 +141,7 @@ Client                          Server
   │  200 OK                       │
   │  { "data": [...] }           │
   │◄──────────────────────────────│
+
 ```
 
 ```typescript
@@ -222,6 +230,7 @@ app.get('/api/admin/users', authenticate, authorize('admin'), async (req, res) =
   const users = await UserService.findAll();
   res.json({ data: users });
 });
+
 ```
 
 ### Token Refresh Flow
@@ -250,6 +259,7 @@ Client                          Server
   │  GET /api/data                │
   │  Authorization: Bearer <new>  │
   │──────────────────────────────►│
+
 ```
 
 ```typescript
@@ -303,6 +313,7 @@ app.post('/api/auth/refresh', async (req, res) => {
     return res.status(401).json({ error: 'Invalid refresh token' });
   }
 });
+
 ```
 
 ### OAuth 2.0 Flow
@@ -338,6 +349,7 @@ User        Client          Auth Server       Resource Server
   │            │                  │                  │
   │            │  9. Response     │                  │
   │            │◄──────────────────────────────────│
+
 ```
 
 ```typescript
@@ -397,6 +409,7 @@ app.get('/api/auth/google/callback', async (req, res) => {
 
   res.json({ data: { token, user } });
 });
+
 ```
 
 ## Code Examples
@@ -614,6 +627,7 @@ function extractToken(req): string | null {
   }
   return null;
 }
+
 ```
 
 ## Real-World Use Cases
@@ -645,6 +659,7 @@ app.get('/api/data', authenticateTenant, async (req, res) => {
   const data = await DataService.findAll();
   res.json({ data });
 });
+
 ```
 
 ### 2. API Gateway Authentication
@@ -676,6 +691,7 @@ const gatewayAuth = async (req, res, next) => {
 
   next();
 };
+
 ```
 
 ### 3. Machine-to-Machine Authentication
@@ -706,6 +722,7 @@ app.post('/api/auth/token', async (req, res) => {
     expires_in: 3600
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -718,6 +735,7 @@ const payload = jwt.decode(token);
 
 // ✅ Good: Verify signature
 const payload = jwt.verify(token, JWT_SECRET);
+
 ```
 
 ### 2. Storing Secrets in Code
@@ -729,6 +747,7 @@ const JWT_SECRET = 'my-secret-key';
 // ✅ Good
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) throw new Error('JWT_SECRET not configured');
+
 ```
 
 ### 3. Not Rotating Refresh Tokens
@@ -757,6 +776,7 @@ app.post('/api/auth/refresh', async (req, res) => {
 
   res.json({ token: newToken, refreshToken: newRefreshToken });
 });
+
 ```
 
 ### 4. Missing HTTPS
@@ -771,6 +791,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.listen(3000);
 }
+
 ```
 
 ### 5. Not Handling Token Expiration
@@ -781,18 +802,27 @@ const token = jwt.sign({ sub: user.id }, JWT_SECRET);
 
 // ✅ Good: Always set expiration
 const token = jwt.sign({ sub: user.id }, JWT_SECRET, { expiresIn: '1h' });
+
 ```
 
 ## Best Practices
 
 1. **Use HTTPS always** - Encrypt tokens in transit
+
 2. **Set short token expiry** - 15 min for access tokens
+
 3. **Rotate refresh tokens** - Prevent token reuse attacks
+
 4. **Store tokens securely** - HttpOnly cookies or secure storage
+
 5. **Validate on every request** - Don't trust client-side validation
+
 6. **Use strong secrets** - 256-bit minimum for HMAC
+
 7. **Implement rate limiting** - Prevent brute force attacks
+
 8. **Log authentication events** - Monitor for suspicious activity
+
 9. **Support MFA** - Multi-factor authentication for sensitive operations
 10. **Use industry standards** - OAuth 2.0, OpenID Connect
 

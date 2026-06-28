@@ -5,6 +5,7 @@
 **Controllers** in NestJS are classes decorated with `@Controller()` that handle incoming HTTP requests and return responses. They act as the presentation layer of the application, receiving requests from clients, processing them (often by delegating to services), and returning appropriate responses.
 
 Controllers are responsible for:
+
 - Defining route endpoints using method-level decorators
 - Parsing request parameters, body, query strings, and headers
 - Validating incoming data
@@ -14,11 +15,17 @@ Controllers are responsible for:
 ## Why Do We Need It?
 
 1. **Separation of Concerns**: Controllers handle HTTP-specific logic, keeping business logic in services.
+
 2. **Route Definition**: Clean, decorator-based route declaration.
+
 3. **Request/Response Handling**: Built-in support for HTTP methods, status codes, headers, and streaming.
+
 4. **Validation**: Integration with pipes for automatic request validation.
+
 5. **Error Handling**: Consistent error handling through exception filters.
+
 6. **Documentation**: Swagger/OpenAPI integration for API documentation.
+
 7. **Testing**: Easy to test in isolation with mocked services.
 
 ## How It Works
@@ -26,9 +33,13 @@ Controllers are responsible for:
 When an HTTP request arrives at NestJS:
 
 1. The framework matches the URL to a registered route
+
 2. The appropriate controller method is invoked
+
 3. Any middleware, guards, interceptors, and pipes run in order
+
 4. The controller method processes the request
+
 5. The response is returned to the client
 
 ### Request Lifecycle
@@ -44,6 +55,7 @@ When an HTTP request arrives at NestJS:
 │  Client  │◀──│ Interceptor│◀──│   Filter   │◀──│ Controller │
 │ Response │    │ (After)    │    │ (if error) │    │  Method    │
 └─────────┘    └────────────┘    └────────────┘    └────────────┘
+
 ```
 
 ### Route Resolution
@@ -80,6 +92,7 @@ HTTP Request
 │   Execute Method     │
 │   Return Response    │
 └──────────────────────┘
+
 ```
 
 ## Code Examples
@@ -121,6 +134,7 @@ export class UserController {
     return this.userService.remove(id);
   }
 }
+
 ```
 
 ### HTTP Method Decorators
@@ -175,6 +189,7 @@ export class ResourceController {
     res.end();
   }
 }
+
 ```
 
 ### Request Parameters and Body
@@ -254,6 +269,7 @@ export class AdvancedController {
     return createUserDto;
   }
 }
+
 ```
 
 ### Status Codes and Headers
@@ -297,6 +313,7 @@ export class StatusController {
     res.end();
   }
 }
+
 ```
 
 ### DTOs with Validation
@@ -357,6 +374,7 @@ export class CreateUserDto {
   @ArrayMinSize(1)
   interests: string[];
 }
+
 ```
 
 ### Versioned Controllers
@@ -379,6 +397,7 @@ export class VersionedController {
     return { version: 2, users: [], metadata: {} };
   }
 }
+
 ```
 
 ### Sub-Controllers and Resource Nesting
@@ -410,6 +429,7 @@ export class PostsController {
     return { userId, ...body };
   }
 }
+
 ```
 
 ### Controller Inheritance
@@ -447,6 +467,7 @@ export class UserController extends BaseEntityController<User> {
     super(userService);
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -494,6 +515,7 @@ export class ProductController {
     await this.productService.remove(id);
   }
 }
+
 ```
 
 ### 2. GraphQL Resolver (Alternative to REST)
@@ -514,6 +536,7 @@ export class UserResolver {
     return this.userService.create(input);
   }
 }
+
 ```
 
 ### 3. File Upload Controller
@@ -545,6 +568,7 @@ export class UploadController {
     return files.map(f => ({ filename: f.originalname, size: f.size }));
   }
 }
+
 ```
 
 ### 4. Streaming Response Controller
@@ -569,6 +593,7 @@ export class StreamController {
     fileStream.pipe(res);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -600,6 +625,7 @@ export class UserController {
     return this.userService.create(dto);
   }
 }
+
 ```
 
 ### 2. Not Validating Input
@@ -616,6 +642,7 @@ create(@Body() body: any) {
 create(@Body() createUserDto: CreateUserDto) {
   return this.userService.create(createUserDto);
 }
+
 ```
 
 ### 3. Using @Res() Without @Body()
@@ -639,6 +666,7 @@ findAll(@Res({ passthrough: true }) res: Response) {
 findAll() {
   return { data: [] }; // NestJS handles serialization
 }
+
 ```
 
 ### 4. Not Using Proper Status Codes
@@ -656,6 +684,7 @@ create(@Body() dto: CreateUserDto) {
 create(@Body() dto: CreateUserDto) {
   return this.userService.create(dto); // Returns 201
 }
+
 ```
 
 ### 5. Over-Fetching Data
@@ -673,28 +702,42 @@ async findOne(@Param('id') id: string) {
   const user = await this.userService.findOne(id);
   return plainToInstance(UserResponseDto, user);
 }
+
 ```
 
 ## Best Practices
 
 1. **Thin Controllers**: Keep controllers thin — delegate business logic to services.
+
 2. **Use DTOs**: Always validate incoming data with DTOs and class-validator.
+
 3. **Proper HTTP Methods**: Use the correct HTTP methods (GET, POST, PUT, PATCH, DELETE).
+
 4. **Status Codes**: Return appropriate HTTP status codes.
+
 5. **Error Handling**: Let exception filters handle errors, don't try-catch everything.
+
 6. **Documentation**: Use Swagger decorators for API documentation.
+
 7. **Input Sanitization**: Sanitize all user input to prevent injection attacks.
+
 8. **Response Transformation**: Use class-transformer to shape responses.
+
 9. **Rate Limiting**: Implement rate limiting on sensitive endpoints.
 10. **Versioning**: Use API versioning for breaking changes.
 
 ## Performance Considerations
 
 1. **Response Caching**: Use `@CacheTTL()` and `@CacheKey()` for caching responses.
+
 2. **Pagination**: Always implement pagination for list endpoints.
+
 3. **Compression**: Enable response compression for large payloads.
+
 4. **Async Operations**: Use async/await for I/O operations to avoid blocking.
+
 5. **Response Streaming**: Stream large files instead of loading them entirely in memory.
+
 6. **Connection Pooling**: Use connection pooling for database operations.
 
 ## Interview Questions
@@ -708,6 +751,7 @@ A controller is a class decorated with `@Controller()` that handles incoming HTT
 Use method-level decorators like `@Get()`, `@Post()`, `@Put()`, `@Delete()` with optional path parameters.
 
 **Q3: What is the difference between `@Put()` and `@Patch()`?**
+
 - `@Put()`: Full update — replaces the entire resource
 - `@Patch()`: Partial update — modifies specific fields
 
@@ -729,6 +773,7 @@ Use `class-validator` decorators on DTO properties and enable `ValidationPipe` g
 Use the `@HttpCode()` decorator or `@nestjs/common`'s `HttpStatus` enum.
 
 **Q9: What is the difference between `@Res()` and `@Res({ passthrough: true })`?**
+
 - `@Res()`: Takes full control of response handling (NestJS can't intercept)
 - `@Res({ passthrough: true })`: Access Response object while allowing NestJS to handle response
 
@@ -738,6 +783,7 @@ Use `@UseInterceptors(FileInterceptor('fieldname'))` with `@UploadedFile()` deco
 ### Senior
 
 **Q11: How would you design a RESTful API for a social media platform?**
+
 - Use resource-based URL design
 - Implement proper HTTP methods and status codes
 - Use pagination for feeds
@@ -766,6 +812,7 @@ Implement sliding window rate limiting using Redis, with different limits per en
 @RateLimit({ points: 10, duration: 60 })
 @Get('expensive-operation')
 async expensiveOperation() { ... }
+
 ```
 
 **Q17: How would you implement request/response logging without impacting performance?**

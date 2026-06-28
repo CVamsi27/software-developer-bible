@@ -9,15 +9,21 @@ NestJS has a built-in `ExceptionsFilter` (default exception filter) that handles
 ## Why Do We Need It?
 
 1. **Centralized Error Handling**: Handle all errors in one place.
+
 2. **Consistent Responses**: Return uniform error response format.
+
 3. **Error Logging**: Log errors for debugging and monitoring.
+
 4. **Custom Error Codes**: Map application errors to HTTP status codes.
+
 5. **Error Transformation**: Transform internal errors to user-friendly messages.
+
 6. **Security**: Hide internal error details from clients.
 
 ## How It Works
 
 Exception filters catch exceptions thrown by:
+
 - Controllers
 - Services
 - Guards
@@ -30,25 +36,36 @@ They receive the exception and the `ArgumentsHost` which provides access to the 
 
 ```text
 Request
+
    |
+
    v
 +-------------------------------+
+
 |       Controller/Service      |
 |       throws exception        |
+
 +-------------------------------+
+
    |
+
    v
 +-------------------------------+
+
 |     Exception Filter          |
 |  1. Catch exception          |
 |  2. Log error                |
 |  3. Determine HTTP status    |
 |  4. Format response          |
 |  5. Send response            |
+
 +-------------------------------+
+
    |
+
    v
 Error Response (JSON)
+
 ```
 
 ### Built-in HTTP Exceptions
@@ -97,6 +114,7 @@ export class UserService {
 //   "message": "User with ID 123 not found",
 //   "error": "Not Found"
 // }
+
 ```
 
 ### Custom Exception Filter
@@ -141,6 +159,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     response.status(status).json(errorResponse);
   }
 }
+
 ```
 
 ### Global Exception Filter
@@ -171,6 +190,7 @@ bootstrap();
   ],
 })
 export class AppModule {}
+
 ```
 
 ### Catching All Exceptions
@@ -215,6 +235,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ### Validation Exception Filter
@@ -247,6 +268,7 @@ export class ValidationExceptionFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ### Database Exception Filter
@@ -291,6 +313,7 @@ export class DatabaseExceptionFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ### GraphQL Exception Filter
@@ -326,6 +349,7 @@ export class GraphQLExceptionFilter implements ExceptionFilter {
     return map[status] || 'INTERNAL_SERVER_ERROR';
   }
 }
+
 ```
 
 ### Custom Application Exception
@@ -362,6 +386,7 @@ export class PaymentService {
     // Process payment
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -404,6 +429,7 @@ export class ProductionExceptionFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ### 2. Error Response Envelope
@@ -436,6 +462,7 @@ export class ErrorEnvelopeFilter implements ExceptionFilter {
     });
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -459,6 +486,7 @@ export class GoodFilter implements ExceptionFilter {
     // Handle HTTP exceptions specifically
   }
 }
+
 ```
 
 ### 2. Exposing Internal Errors
@@ -474,6 +502,7 @@ response.status(500).json({
   message: 'Internal server error',
   // Don't include stack trace in production
 });
+
 ```
 
 ### 3. Not Logging Errors
@@ -489,6 +518,7 @@ catch(exception: unknown, host: ArgumentsHost) {
   this.logger.error(exception);
   response.status(500).json({ message: 'Error' });
 }
+
 ```
 
 ### 4. Wrong Filter Application
@@ -501,23 +531,33 @@ export class UserController {}
 
 // GOOD: Global filter for all routes
 app.useGlobalFilters(new HttpExceptionFilter());
+
 ```
 
 ## Best Practices
 
 1. **Global Filters**: Use global filters for consistent error handling.
+
 2. **Specific Filters**: Create specific filters for different error types.
+
 3. **Always Log**: Log all errors for debugging and monitoring.
+
 4. **Hide Details**: Don't expose internal error details in production.
+
 5. **Consistent Format**: Return uniform error response format.
+
 6. **Error Codes**: Use meaningful error codes for client-side handling.
+
 7. **Testing**: Test filters with different exception types.
 
 ## Performance Considerations
 
 1. **Filter Execution**: Filters run only when exceptions are thrown.
+
 2. **Logging Overhead**: Async logging doesn't block request processing.
+
 3. **Error Serialization**: Keep error response objects small.
+
 4. **Monitoring**: Send errors to monitoring services asynchronously.
 
 ## Interview Questions
@@ -545,6 +585,7 @@ Use `@Catch()` without parameters to catch all exceptions.
 Implement `ExceptionFilter`, use `@Catch()` decorator, handle exception in `catch()` method.
 
 **Q7: What is the difference between `@Catch(HttpException)` and `@Catch()`?**
+
 - `@Catch(HttpException)`: Only catches HttpException
 - `@Catch()`: Catches all exceptions
 

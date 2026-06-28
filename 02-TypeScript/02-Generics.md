@@ -20,14 +20,19 @@
 │   The actual type is determined when the function is called     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type safety**: Maintain type information through generic code
+
 2. **Code reuse**: Write one function/class that works with many types
+
 3. **API design**: Create flexible libraries and frameworks
+
 4. **Data structures**: Implement generic collections like arrays, maps, sets
+
 5. **React components**: Type props, state, and hooks generically
 
 ## How It Works
@@ -46,6 +51,7 @@ const num = identity(42);      // T is number
 
 // Explicit type argument (rarely needed)
 const explicit = identity<string>("hello");
+
 ```
 
 ### Constraints
@@ -70,6 +76,7 @@ const user = { name: "Alice", age: 30 };
 getProperty(user, "name");  // ✅ returns string
 getProperty(user, "age");   // ✅ returns number
 getProperty(user, "email"); // ❌ Error: "email" not in keyof User
+
 ```
 
 ### Default Types
@@ -99,6 +106,7 @@ const response2: ApiResponse<User> = {
   status: 200,
   message: "OK"
 };
+
 ```
 
 ## Code Examples
@@ -129,6 +137,7 @@ function merge<T extends object, U extends object>(a: T, b: U): T & U {
 
 const merged = merge({ name: "Alice" }, { age: 30 });
 // { name: string; age: number }
+
 ```
 
 ### Generic Interfaces
@@ -167,6 +176,7 @@ class UserRepository implements Repository<User> {
     return true;
   }
 }
+
 ```
 
 ### Generic Classes
@@ -238,6 +248,7 @@ class Cache<T> {
 const userCache = new Cache<User>();
 userCache.set("user:1", { id: "1", name: "Alice", email: "a@b.com" }, 60000);
 const cachedUser = userCache.get("user:1"); // User | undefined
+
 ```
 
 ### Real-World Use Cases
@@ -309,6 +320,7 @@ emitter.on("user:created", (data) => {
   console.log(data.userId); // ✅ TypeScript knows data.userId exists
 });
 emitter.emit("user:created", { userId: "123" }); // ✅ Type-safe
+
 ```
 
 ## Common Mistakes
@@ -330,6 +342,7 @@ function add(a: number, b: number): number {
 function add<T extends number | string>(a: T, b: T): T {
   return (a as any) + b;
 }
+
 ```
 
 ### 2. Not Constraining Type Parameters
@@ -344,6 +357,7 @@ function getLength<T>(value: T): number {
 function getLength<T extends { length: number }>(value: T): number {
   return value.length;
 }
+
 ```
 
 ### 3. Using `any` in Generic Code
@@ -358,6 +372,7 @@ function first<T>(arr: T[]): any {
 function first<T>(arr: T[]): T | undefined {
   return arr[0];
 }
+
 ```
 
 ## Best Practices
@@ -397,6 +412,7 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
   }
   return result;
 }
+
 ```
 
 ## Performance Considerations
@@ -412,46 +428,59 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
 ### Beginner
 
 1. **What are generics in TypeScript?**
+
    - Type parameters that allow writing reusable, type-safe code
 
 2. **How do you define a generic function?**
+
    ```typescript
    function identity<T>(value: T): T { return value; }
+
 ```
 
 3. **What is the purpose of generic constraints?**
+
    - To limit what types a generic parameter can accept
 
 4. **Can you have multiple type parameters?**
+
    - Yes: `<T, U, V>` etc.
 
 5. **What is the default type parameter?**
+
    - A fallback type when no type is specified: `<T = unknown>`
 
 ### Intermediate
 
 6. **When would you use generic constraints with keyof?**
+
    - When accessing properties dynamically on a generic type
 
 7. **How do generics differ from `any`?**
+
    - Generics preserve type information; `any` loses it
 
 8. **Can you use generics with interfaces?**
+
    - Yes: `interface Box<T> { value: T; }`
 
 9. **How do you constrain a generic to be a function?**
+
    ```typescript
    function call<T extends (...args: any[]) => any>(fn: T): ReturnType<T> {
      return fn();
    }
+
 ```
 
 10. **What is type inference in generics?**
+
     - TypeScript automatically determining the type parameter from usage
 
 ### Senior
 
 11. **Design a generic curry function**
+
     ```typescript
     type Curry<Args extends any[], Return> =
       Args extends [infer First, ...infer Rest]
@@ -463,37 +492,47 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
     ): Curry<Args, Return> {
       // Implementation
     }
+
 ```
 
 12. **Implement a type-safe event emitter**
+
     - Map event names to payload types using generics
 
 13. **How do you handle generic type inference in complex scenarios?**
+
     - Use explicit type arguments when inference fails
 
 14. **Explain variance in generic types**
+
     - Covariance, contravariance, invariance in generic positions
 
 ### FAANG-style
 
 15. **Implement a generic immutable data structure**
+
     - Design a persistent list or tree with generic types
 
 16. **Build a type-safe query builder**
+
     - Use generics to infer result types from query definitions
 
 17. **Create a generic validation framework**
+
     - Type-safe validators that infer output types
 
 ### Follow-ups
 
 18. **How do generics interact with union types?**
+
     - Generic constraints can use unions; generic parameters can be unions
 
 19. **Can you have generic type aliases?**
+
     - Yes: `type Box<T> = { value: T; }`
 
 20. **How do generics work with async/await?**
+
     - Generic functions can return promises: `function fetch<T>(): Promise<T>`
 
 ## Summary
@@ -528,6 +567,7 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> { /* ... */ }
 function merge<T extends object, U extends object>(a: T, b: U): T & U {
   return { ...a, ...b };
 }
+
 ```
 
 ## References & Learn More

@@ -5,6 +5,7 @@
 A **Docker image** is a read-only template containing instructions for creating a container. It consists of layered filesystem changes. A **Docker container** is a runnable instance of an image—lightweight, isolated, and ephemeral. Images are built from a **Dockerfile**, a declarative script of build instructions.
 
 Key terms:
+
 - **Image**: Immutable blueprint (e.g., `nginx:1.25`)
 - **Container**: Running process with isolated CPU, memory, filesystem, network
 - **Layer**: Each Dockerfile instruction produces an immutable layer
@@ -36,21 +37,29 @@ RUN npm ci --production      # Layer 3: install deps
 COPY . .                     # Layer 4: copy source
 EXPOSE 3000                  # Layer 5: metadata
 CMD ["node", "server.js"]    # Layer 6: default command
+
 ```
 
 ### Container Lifecycle
 
 ```text
   docker build
+
        |
+
        v
   [Image] --docker run--> [Container] --docker stop--> [Stopped]
+
                               |                              |
+
                               v                              v
                           [Running]                   [docker rm]
+
                               |                              |
+
                               v                              v
                          docker pause              [Removed from disk]
+
 ```
 
 ### Image Architecture
@@ -68,6 +77,7 @@ CMD ["node", "server.js"]    # Layer 6: default command
 ├─────────────────────────────────────────────┤
 │  Total image: ~280 MB                       │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -102,6 +112,7 @@ USER node
 
 # Start application
 CMD ["node", "server.js"]
+
 ```
 
 ### Building and Running
@@ -124,6 +135,7 @@ docker run -d -p 3000:3000 \
 
 # Run interactively
 docker run -it -p 3000:3000 myapp:1.0.0 sh
+
 ```
 
 ### Multi-Stage Build
@@ -145,6 +157,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY package*.json ./
 USER node
 CMD ["node", "dist/server.js"]
+
 ```
 
 ### Inspecting Images and Containers
@@ -176,6 +189,7 @@ docker rm myapp
 
 # Remove image
 docker rmi myapp:1.0.0
+
 ```
 
 ### .dockerignore
@@ -194,6 +208,7 @@ docker-compose.yml
 .idea
 coverage
 .nyc_output
+
 ```
 
 ## Real-World Use Cases
@@ -209,6 +224,7 @@ COPY dist/ ./dist/
 USER 1001
 EXPOSE 8080
 CMD ["node", "dist/index.js"]
+
 ```
 
 ### 2. Python Django App
@@ -226,6 +242,7 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+
 ```
 
 ### 3. Go Binary (Distroless)
@@ -242,6 +259,7 @@ FROM gcr.io/distroless/static-debian12
 COPY --from=builder /server /server
 USER nonroot:nonroot
 ENTRYPOINT ["/server"]
+
 ```
 
 ## Common Mistakes
@@ -279,16 +297,25 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD node -e "require('http').get('http://localhost:3000/health', r => { process.exit(r.statusCode === 200 ? 0 : 1) })"
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["node", "dist/server.js"]
+
 ```
 
 1. **Pin base image versions** — avoid `:latest`
+
 2. **Use multi-stage builds** — minimize final image size
+
 3. **Order instructions by change frequency** — deps before source
+
 4. **Run as non-root** — security best practice
+
 5. **Use `.dockerignore`** — exclude unnecessary files
+
 6. **Leverage layer caching** — copy dependency files first
+
 7. **Add HEALTHCHECK** — enables orchestrator health monitoring
+
 8. **Use specific distroless/alpine images** — smaller attack surface
+
 9. **Combine RUN commands** — reduce layer count
 10. **Scan images** — use `docker scout` or Trivy
 
@@ -315,6 +342,7 @@ docker images myapp
 
 # Scan image for vulnerabilities
 docker scout cves myapp:1.0.0
+
 ```
 
 ## Interview Questions
@@ -483,11 +511,13 @@ COPY --from=stage1 /app/dist ./dist
 
 # Secrets in build
 RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [Docker Deep Dive by Nigel Poulton](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235)

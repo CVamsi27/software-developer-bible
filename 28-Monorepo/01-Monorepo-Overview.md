@@ -4,6 +4,7 @@
 A monorepo (monolithic repository) is a software development strategy where code for multiple projects is stored in a single repository. It provides a unified approach to managing multiple packages, applications, or services with shared dependencies and configurations.
 
 ## Why Do We Need It?
+
 - **Code Sharing**: Easily share code between projects
 - **Atomic Changes**: Make changes across multiple packages in one commit
 - **Consistent Dependencies**: Single source of truth for dependency versions
@@ -50,6 +51,7 @@ A monorepo (monolithic repository) is a software development strategy where code
 │      └── typescript-config/ (shared TS config)                     │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Monorepo vs Polyrepo
@@ -68,6 +70,7 @@ Comparison:
 │ Team Independence  │ Limited               │ High                │
 │ Tooling            │ Specialized needed    │ Standard            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Workspace Concept
@@ -77,9 +80,11 @@ Comparison:
 ```yaml
 # pnpm-workspace.yaml
 packages:
+
   - 'packages/*'
   - 'apps/*'
   - 'tools/*'
+
 ```
 
 ```json
@@ -98,6 +103,7 @@ packages:
     "typescript": "^5.0.0"
   }
 }
+
 ```
 
 ```json
@@ -115,6 +121,7 @@ packages:
     "typescript": "^5.0.0"
   }
 }
+
 ```
 
 ## Code Examples
@@ -124,9 +131,11 @@ packages:
 ```yaml
 # pnpm-workspace.yaml
 packages:
+
   - 'packages/*'
   - 'apps/*'
   - 'tools/*'
+
 ```
 
 ```json
@@ -140,6 +149,7 @@ packages:
     "clean": "pnpm -r run clean"
   }
 }
+
 ```
 
 ```bash
@@ -157,6 +167,7 @@ pnpm --filter @myorg/web run dev
 
 # Run script in package and its dependencies
 pnpm --filter @myorg/web... run build
+
 ```
 
 ### 2. Yarn Workspace Setup
@@ -176,6 +187,7 @@ pnpm --filter @myorg/web... run build
     "dev": "yarn workspaces foreach run dev"
   }
 }
+
 ```
 
 ```bash
@@ -190,6 +202,7 @@ yarn workspaces foreach run build
 
 # Run script in specific workspace
 yarn workspace @myorg/web run dev
+
 ```
 
 ### 3. npm Workspace Setup
@@ -204,6 +217,7 @@ yarn workspace @myorg/web run dev
     "apps/*"
   ]
 }
+
 ```
 
 ```bash
@@ -218,6 +232,7 @@ npm run build --workspaces
 
 # Run script in specific workspace
 npm run dev --workspace=@myorg/web
+
 ```
 
 ### 4. Shared TypeScript Configuration
@@ -244,6 +259,7 @@ npm run dev --workspace=@myorg/web
     "sourceMap": true
   }
 }
+
 ```
 
 ```json
@@ -257,6 +273,7 @@ npm run dev --workspace=@myorg/web
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
+
 ```
 
 ### 5. Shared ESLint Configuration
@@ -276,6 +293,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'warn',
   },
 };
+
 ```
 
 ```javascript
@@ -287,6 +305,7 @@ module.exports = {
     'react/prop-types': 'off',
   },
 };
+
 ```
 
 ### 6. Package.json Scripts for Monorepo
@@ -308,11 +327,13 @@ module.exports = {
     "typecheck": "turbo run typecheck"
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### Large Enterprise Applications
+
 ```text
 Use Case: Multiple products sharing core libraries
 ┌─────────────────────────────────────────────────────────────────┐
@@ -334,9 +355,11 @@ Use Case: Multiple products sharing core libraries
 │  • Shared type definitions                                     │
 │  • Coordinated releases                                        │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Design System Development
+
 ```text
 Use Case: Shared component library
 ┌─────────────────────────────────────────────────────────────────┐
@@ -354,22 +377,31 @@ Use Case: Shared component library
 │  • Coordinated component updates                               │
 │  • Shared testing and documentation                            │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Common Mistakes
 
 1. **Too many packages**: Over-modularizing leads to complexity
+
 2. **Circular dependencies**: Packages depending on each other
+
 3. **Inconsistent versions**: Different packages using different versions
+
 4. **Slow builds**: Not optimizing build pipelines
+
 5. **Poor tooling**: Not using appropriate monorepo tools
 
 ## Best Practices
 
 1. **Start simple**: Begin with fewer packages, split when needed
+
 2. **Clear boundaries**: Define package responsibilities clearly
+
 3. **Consistent tooling**: Use Turborepo, Nx, or Lerna
+
 4. **Automate everything**: CI/CD, testing, linting
+
 5. **Document structure**: Keep architecture documentation updated
 
 ## Performance Considerations
@@ -397,75 +429,99 @@ Build Optimization Strategies:
 │  • Use workspace protocol for local packages                   │
 │  • Bundle for production                                       │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
 
 ### Beginner (5)
+
 1. **What is a monorepo?**
+
    - Answer: A software development strategy where code for multiple projects is stored in a single repository.
 
 2. **What are the benefits of a monorepo?**
+
    - Answer: Code sharing, atomic changes, consistent dependencies, simplified refactoring, better code review.
 
 3. **What is a workspace in package managers?**
+
    - Answer: A feature that allows managing multiple packages in a single repository with shared dependencies.
 
 4. **What is the difference between monorepo and polyrepo?**
+
    - Answer: Monorepo stores all code in one repository; polyrepo stores each project in separate repositories.
 
 5. **Which package managers support workspaces?**
+
    - Answer: npm, yarn, and pnpm all support workspaces for monorepo management.
 
 ### Intermediate (5)
+
 6. **How do you manage dependencies in a monorepo?**
+
    - Answer: Use workspace protocol for local packages, hoist common dependencies, maintain consistent versions across packages.
 
 7. **What is the workspace protocol?**
+
    - Answer: Using `workspace:*` in package.json to reference local packages instead of published versions.
 
 8. **How do you handle versioning in a monorepo?**
+
    - Answer: Use tools like Changesets or Lerna for coordinated versioning, or independent versioning per package.
 
 9. **What are the challenges of monorepos?**
+
    - Answer: Build performance, tooling complexity, team coordination, CI/CD complexity, code ownership.
 
 10. **How do you structure a monorepo?**
+
     - Answer: Separate packages (shared libraries) from apps (deployable applications), use clear naming conventions.
 
 ### Senior (10)
 11. **How do you optimize build performance in a monorepo?**
+
     - Answer: Use caching (Turborepo/Nx), parallelization, incremental builds, affected commands, and remote caching.
 
 12. **Explain Turborepo's caching strategy**
+
     - Answer: Turborepo caches build outputs locally and remotely, only rebuilding packages that changed based on content hashing.
 
 13. **How do you handle circular dependencies?**
+
     - Answer: Restructure packages, extract shared code to a new package, use dependency injection, or refactor to break the cycle.
 
 14. **What is the impact of monorepo on CI/CD?**
+
     - Answer: Unified pipelines, build caching, affected-based testing, coordinated deployments, but increased complexity.
 
 15. **How do you manage code ownership in a monorepo?**
+
     - Answer: Use CODEOWNERS file, package-level ownership, clear documentation, and team boundaries.
 
 16. **Explain Nx's computation cache**
+
     - Answer: Nx caches task results based on inputs, using content hashing to determine when to rebuild vs reuse cached results.
 
 17. **How do you handle database migrations in a monorepo?**
+
     - Answer: Shared migration directory, version-controlled schemas, coordinated migrations across packages.
 
 18. **What is the strangler fig pattern in monorepo migration?**
+
     - Answer: Gradually migrating from polyrepo to monorepo by moving packages incrementally while maintaining both systems.
 
 19. **How do you test in a monorepo?**
+
     - Answer: Unit tests per package, integration tests across packages, end-to-end tests for apps, use affected commands.
 
 20. **How do you handle different TypeScript versions across packages?**
+
     - Answer: Use a shared TypeScript version, or isolate packages with their own TypeScript configurations.
 
 ### FAANG-style (5)
 21. **Design a monorepo architecture for a large organization**
+
     - Answer:
       - Package structure: core, shared, domain-specific packages
       - Tooling: Nx/Turborepo with remote caching
@@ -474,6 +530,7 @@ Build Optimization Strategies:
       - Documentation: Architecture decision records
 
 22. **How would you migrate from polyrepo to monorepo?**
+
     - Answer:
       - Phase 1: Set up monorepo structure
       - Phase 2: Move shared packages
@@ -482,6 +539,7 @@ Build Optimization Strategies:
       - Phase 5: Deprecate old repositories
 
 23. **Explain monorepo at scale**
+
     - Answer:
       - Thousands of packages
       - Hundreds of developers
@@ -490,6 +548,7 @@ Build Optimization Strategies:
       - Advanced caching strategies
 
 24. **How do you handle monorepo security?**
+
     - Answer:
       - Dependency scanning
       - Secret management
@@ -498,6 +557,7 @@ Build Optimization Strategies:
       - Vulnerability detection
 
 25. **Design a CI/CD pipeline for a monorepo**
+
     - Answer:
       - Detect changes (affected packages)
       - Run tests for affected packages
@@ -507,18 +567,23 @@ Build Optimization Strategies:
 
 ### Follow-ups (5)
 26. **How do you handle monorepo with multiple programming languages?**
+
     - Answer: Use language-agnostic tooling, separate build systems per language, shared configuration where possible.
 
 27. **What is the impact of monorepo on developer experience?**
+
     - Answer: Single clone, easy code navigation, atomic changes, but potential complexity with tooling.
 
 28. **How do you handle monorepo in distributed teams?**
+
     - Answer: Clear ownership, documentation, CODEOWNERS, automated testing, code review guidelines.
 
 29. **What are the alternatives to monorepo?**
+
     - Answer: Polyrepo, multi-repo, or hybrid approaches with shared packages via npm.
 
 30. **How do you optimize monorepo for large teams?**
+
     - Answer: Clear package boundaries, ownership, documentation, automated tooling, and communication.
 
 ## Summary

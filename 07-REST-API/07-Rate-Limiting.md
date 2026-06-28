@@ -9,9 +9,13 @@ Rate limiting is a technique used to control the number of requests a client can
 Without rate limiting:
 
 1. **Service degradation** - Overwhelmed servers become slow or unresponsive
+
 2. **Resource exhaustion** - Database, memory, CPU depleted
+
 3. **Unfair usage** - One client monopolizes resources
+
 4. **Cost overruns** - Unexpected infrastructure costs
+
 5. **Security vulnerabilities** - DDoS attacks, brute force attempts
 
 ## How It Works
@@ -41,6 +45,7 @@ Rate Limiting Algorithms
    Bucket: 10 tokens
    Leak: 1 token/second
    Requests: Queue if full
+
 ```
 
 ### Fixed Window Algorithm
@@ -59,6 +64,7 @@ Limit: 100 requests
 10:59:00  Request 101 Count: 101 ✗ Rate limited
 11:00:00  Window resets
 11:01:00  Request 1   Count: 1   ✓
+
 ```
 
 ```typescript
@@ -120,6 +126,7 @@ function fixedWindowLimiter(maxRequests: number, windowMs: number) {
 
 // Usage
 app.use('/api', fixedWindowLimiter(100, 60 * 60 * 1000)); // 100 requests per hour
+
 ```
 
 ### Sliding Window Algorithm
@@ -142,9 +149,11 @@ Limit: 100 requests per hour
 Result: ✓ Allowed (95 remaining)
 
 Advantages over fixed window:
+
 - No boundary burst issues
 - More accurate counting
 - Smoother rate limiting
+
 ```
 
 ```typescript
@@ -215,6 +224,7 @@ function slidingWindowLimiter(maxRequests: number, windowMs: number) {
     next();
   };
 }
+
 ```
 
 ### Token Bucket Algorithm
@@ -241,6 +251,7 @@ Request 10: [░░░░░░░░░░] 0/10  ✓
 Request 11: [░░░░░░░░░░] 0/10  ✗ Rate limited
 
 After 5 seconds: [█████░░░░░] 5/10  (refilled 5 tokens)
+
 ```
 
 ```typescript
@@ -299,6 +310,7 @@ function tokenBucketLimiter(capacity: number, refillRate: number) {
     next();
   };
 }
+
 ```
 
 ### Sliding Window Log Algorithm
@@ -332,6 +344,7 @@ class SlidingWindowLogRateLimiter {
     return { allowed: true, remaining: this.maxRequests - logs.length };
   }
 }
+
 ```
 
 ## Code Examples
@@ -512,6 +525,7 @@ app.use('/api/search',
     skip: (req) => req.user?.role === 'admin'
   })
 );
+
 ```
 
 ### Tiered Rate Limiting
@@ -563,6 +577,7 @@ function tieredRateLimiter(req: Request, res: Response, next: NextFunction) {
       next();
     });
 }
+
 ```
 
 ### Rate Limit Headers
@@ -586,6 +601,7 @@ res.status(429).json({
   retryAfter: 60,
   documentation: 'https://api.example.com/docs/rate-limiting'
 });
+
 ```
 
 ## Real-World Use Cases
@@ -603,6 +619,7 @@ const rateLimits = {
 Object.entries(rateLimits).forEach(([path, config]) => {
   app.use(path, rateLimiter(config));
 });
+
 ```
 
 ### 2. User-Specific Rate Limiting
@@ -628,6 +645,7 @@ app.post('/api/uploads', rateLimiter({
   max: 5, // 5 uploads per hour
   keyGenerator: (req) => req.user.id
 }));
+
 ```
 
 ### 3. Distributed Rate Limiting
@@ -648,6 +666,7 @@ app.use('/api', async (req, res, next) => {
 
   next();
 });
+
 ```
 
 ### 4. API Key Based Rate Limiting
@@ -666,6 +685,7 @@ const apiKeyLimits = new Map([
   ['key-pro', { max: 1000, windowMs: 60 * 60 * 1000 }],
   ['key-enterprise', { max: 10000, windowMs: 60 * 60 * 1000 }]
 ]);
+
 ```
 
 ## Common Mistakes
@@ -684,6 +704,7 @@ res.set({
   'Retry-After': '60'
 });
 res.status(429).json({ error: 'Rate limited' });
+
 ```
 
 ### 2. Not Failing Open
@@ -707,6 +728,7 @@ try {
   console.error('Rate limiter error:', err);
   next(); // Allow request if rate limiter fails
 }
+
 ```
 
 ### 3. Rate Limiting by Wrong Key
@@ -717,6 +739,7 @@ keyGenerator: (req) => req.ip
 
 // ✅ Good: Rate limit by user ID or API key
 keyGenerator: (req) => req.user?.id || req.headers['x-api-key'] || req.ip
+
 ```
 
 ### 4. Not Considering Distributed Systems
@@ -727,6 +750,7 @@ const requests = new Map<string, number[]>();
 
 // ✅ Good: Redis-based rate limiting
 const redis = new Redis();
+
 ```
 
 ### 5. Not Providing Retry Information
@@ -742,18 +766,27 @@ res.status(429).json({
   retryAfter: 60,
   message: 'Please wait 60 seconds before retrying'
 });
+
 ```
 
 ## Best Practices
 
 1. **Always return rate limit headers** - X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+
 2. **Include Retry-After on 429** - Tell clients when to retry
+
 3. **Fail open** - Don't block requests if rate limiter fails
+
 4. **Use distributed storage** - Redis for multi-server setups
+
 5. **Different limits per tier** - Free, Pro, Enterprise
+
 6. **Different limits per endpoint** - Heavy endpoints get lower limits
+
 7. **Consider user authentication** - Rate limit by user ID, not just IP
+
 8. **Document rate limits** - Clear API documentation
+
 9. **Monitor rate limiting** - Track 429 responses
 10. **Provide upgrade path** - Link to pricing for higher limits
 

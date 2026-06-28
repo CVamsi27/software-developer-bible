@@ -51,6 +51,7 @@ Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mappin
 │  │              Database (PostgreSQL, MySQL, etc.)      │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Schema → Client Flow
@@ -87,6 +88,7 @@ Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mappin
 │  │  // TypeScript knows return type is User[]          │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -151,6 +153,7 @@ enum Role {
   ADMIN
   MODERATOR
 }
+
 ```
 
 ### CRUD Operations
@@ -226,6 +229,7 @@ async function findPublishedPosts() {
   });
   return posts;
 }
+
 ```
 
 ### Relations
@@ -289,6 +293,7 @@ async function createUserWithPosts() {
   });
   return user;
 }
+
 ```
 
 ### Transactions
@@ -339,6 +344,7 @@ async function createOrderWithItems(
     }),
   ]);
 }
+
 ```
 
 ### Raw Queries
@@ -378,6 +384,7 @@ async function executeRaw() {
     UPDATE users SET updated_at = NOW() WHERE id = ${userId}
   `;
 }
+
 ```
 
 ### Connection Pooling
@@ -394,6 +401,7 @@ const prisma = new PrismaClient({
 });
 
 // DATABASE_URL="postgresql://user:pass@host:5432/db?connection_limit=20&pool_timeout=10"
+
 ```
 
 ## Real-World Use Cases
@@ -493,6 +501,7 @@ async function createOrder(userId: string, items: Array<{ productId: string; qua
     return order;
   });
 }
+
 ```
 
 ### User Authentication
@@ -535,6 +544,7 @@ async function login(email: string, password: string) {
 
   return user;
 }
+
 ```
 
 ## Common Mistakes
@@ -556,6 +566,7 @@ const users = await prisma.user.findMany({
     posts: true,
   },
 });
+
 ```
 
 ### 2. Missing Indexes
@@ -573,6 +584,7 @@ model Post {
   authorId String
   @@index([authorId])
 }
+
 ```
 
 ### 3. Not Using Transactions
@@ -600,6 +612,7 @@ await prisma.$transaction([
     data: { balance: { increment: amount } },
   }),
 ]);
+
 ```
 
 ## Best Practices
@@ -645,6 +658,7 @@ try {
 
 // 7. Use Prisma Studio for data inspection
 // npx prisma studio
+
 ```
 
 ## Performance Considerations
@@ -684,6 +698,7 @@ const result = await prisma.$queryRaw`
   GROUP BY 1
   ORDER BY 1
 `;
+
 ```
 
 ## Interview Questions
@@ -803,6 +818,7 @@ npx prisma migrate deploy  # Apply migrations
 npx prisma studio        # Open Prisma Studio
 npx prisma db push       # Sync schema to database
 npx prisma db seed       # Seed database
+
 ```
 
 ```typescript
@@ -821,6 +837,7 @@ await prisma.$transaction(async (tx) => { /* ... */ });
 // Raw queries
 await prisma.$queryRaw`SELECT * FROM users`;
 await prisma.$executeRaw`UPDATE users SET name = ${name}`;
+
 ```
 
 ## References & Learn More

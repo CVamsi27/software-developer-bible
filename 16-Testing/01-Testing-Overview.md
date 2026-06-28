@@ -36,21 +36,25 @@ Testing is the systematic process of evaluating a software application to identi
              /--------------------\
             /    Static Analysis   \  Linting, type checking, always running
            /------------------------\
+
 ```
 
 **Base Layer - Unit Tests (70%)**
+
 - Test individual functions, classes, or components in isolation
 - Fast execution (milliseconds)
 - Low maintenance cost
 - High granularity
 
 **Middle Layer - Integration Tests (20%)**
+
 - Test interactions between multiple units
 - Verify modules work together correctly
 - Moderate execution time
 - Medium maintenance cost
 
 **Top Layer - E2E Tests (10%)**
+
 - Test complete user workflows through the entire application
 - Slow execution (seconds to minutes)
 - High maintenance cost
@@ -60,8 +64,11 @@ Testing is the systematic process of evaluating a software application to identi
 
 ```text
 +------------------+------------+----------+---------+----------------+
+
 | Type             | Speed      | Cost     | Scope   | Confidence     |
+
 +------------------+------------+----------+---------+----------------+
+
 | Unit             | Very Fast  | Low      | Single  | Low-Medium     |
 | Integration      | Medium     | Medium   | Multiple| Medium-High    |
 | E2E              | Slow       | High     | Full    | High           |
@@ -69,7 +76,9 @@ Testing is the systematic process of evaluating a software application to identi
 | Regression       | Varies     | High     | Full    | High           |
 | Performance      | Slow       | High     | System  | Varies         |
 | Security         | Medium     | High     | Varies  | High           |
+
 +------------------+------------+----------+---------+----------------+
+
 ```
 
 ### TDD Cycle (Red-Green-Refactor)
@@ -96,6 +105,7 @@ Testing is the systematic process of evaluating a software application to identi
     └────────┬────────┘                               │
              │                                        │
              └────────────────────────────────────────┘
+
 ```
 
 ### BDD Workflow
@@ -112,14 +122,18 @@ Feature: User Login
     And I click the login button
     Then I should be redirected to the dashboard
     And I should see a welcome message
+
 ```
 
 ### When to Write Tests
 
 ```text
 +-----------------------------+--------------------------------+
+
 | Situation                   | When to Write Tests            |
+
 +-----------------------------+--------------------------------+
+
 | New Feature                 | Before implementation (TDD)    |
 | Bug Fix                     | Before fixing (reproduce first)|
 | Refactoring                 | Before refactoring             |
@@ -128,7 +142,9 @@ Feature: User Login
 | UI Component                | During development             |
 | Performance Critical Code   | With performance tests         |
 | Security Sensitive Code     | With security tests            |
+
 +-----------------------------+--------------------------------+
+
 ```
 
 ### Testing Philosophy Spectrum
@@ -148,6 +164,7 @@ Feature: User Login
     │  Rule         Philosophy            Everything││
     │  (Pragmatic)  (Balanced)            (Dogmatic)││
     └────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -199,6 +216,7 @@ describe("Math functions", () => {
     });
   });
 });
+
 ```
 
 ### TDD Example - Shopping Cart
@@ -319,6 +337,7 @@ export class ShoppingCart {
     this.discountPercentage = discount;
   }
 }
+
 ```
 
 ### BDD Example with Cucumber-style
@@ -351,6 +370,7 @@ Feature: User Login
 
 // Step definitions would be implemented in TypeScript
 // using a framework like Cucumber.js or Serenity/JS
+
 ```
 
 ### Integration Test Example
@@ -411,6 +431,7 @@ describe("UserService Integration", () => {
     expect(emailLog[0].subject).toBe("Welcome!");
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -451,6 +472,7 @@ test.describe("Checkout Flow", () => {
     await expect(page.locator('[data-testid="order-number"]')).toBeVisible();
   });
 });
+
 ```
 
 ### 2. API Endpoint Testing
@@ -497,6 +519,7 @@ describe("Users API", () => {
     });
   });
 });
+
 ```
 
 ### 3. React Component Testing
@@ -544,6 +567,7 @@ describe("UserProfile", () => {
     expect(onEdit).toHaveBeenCalledWith("123");
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -569,6 +593,7 @@ it("should display updated name after save", async () => {
 
   expect(screen.getByText("New Name")).toBeInTheDocument();
 });
+
 ```
 
 ### 2. Overly Complex Tests
@@ -587,6 +612,7 @@ describe("when user submits form", () => {
   it("should show success message", () => {});
   it("should reset form fields", () => {});
 });
+
 ```
 
 ### 3. Flaky Tests
@@ -612,6 +638,7 @@ it("should expire session after inactivity", async () => {
   jest.advanceTimersByTime(1);
   expect(isLoggedIn()).toBe(false);
 });
+
 ```
 
 ### 4. Test Interdependence
@@ -637,18 +664,27 @@ it("should update user", () => {
   const updated = updateUser(userId, { name: "Updated" });
   expect(updated.name).toBe("Updated");
 });
+
 ```
 
 ## Best Practices
 
 1. **Follow the AAA Pattern**: Arrange, Act, Assert
+
 2. **Test Behavior, Not Implementation**: Focus on what the code does, not how
+
 3. **Keep Tests Independent**: Each test should be able to run in isolation
+
 4. **Use Descriptive Test Names**: Names should explain what is being tested and expected outcome
+
 5. **Mock External Dependencies**: Isolate the code under test
+
 6. **Test Edge Cases**: Empty inputs, null values, boundary conditions
+
 7. **Maintain Test Code Like Production Code**: Refactor tests regularly
+
 8. **Write Tests Before Code (TDD)**: When practical, follow the red-green-refactor cycle
+
 9. **Aim for High Confidence, Not 100% Coverage**: Focus on critical paths
 10. **Keep Tests Fast**: Slow tests won't be run frequently
 
@@ -658,13 +694,18 @@ it("should update user", () => {
 
 ```text
 +------------------+----------------+------------------+
+
 | Test Type        | Typical Time   | Target Time      |
+
 +------------------+----------------+------------------+
+
 | Unit Test        | < 10ms         | < 5ms            |
 | Integration Test | < 100ms        | < 50ms           |
 | E2E Test         | < 30s          | < 10s            |
 | Snapshot Test    | < 50ms         | < 20ms           |
+
 +------------------+----------------+------------------+
+
 ```
 
 ### Parallelization Strategy
@@ -690,6 +731,7 @@ Test Suite Distribution:
     │ E2E Tests               │
     │ (Run last, critical)    │
     └─────────────────────────┘
+
 ```
 
 ## Interview Questions

@@ -6,6 +6,7 @@
 
 ```text
 Apollo Client = GraphQL Client + Normalized Cache + React Hooks + DevTools
+
 ```
 
 ---
@@ -33,6 +34,7 @@ With Apollo Client:
 │  5. Automatic re-rendering on cache changes                     │
 │  6. DevTools for debugging                                      │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Apollo Client vs Alternatives
@@ -96,6 +98,7 @@ With Apollo Client:
 │  │  └──────────┘  └──────────┘  └──────────┘              │   │
 │  └─────────────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Normalized Cache
@@ -143,9 +146,11 @@ Normalized Cache (InMemoryCache):
 └─────────────────────────────────────────────────────────────────┘
 
 Benefits:
+
 - Single source of truth per entity
 - Automatic cache updates when data changes
 - Efficient re-renders (only affected components update)
+
 ```
 
 ---
@@ -189,6 +194,7 @@ const { data } = await client.query({
 });
 
 console.log(data.user.name);  // "John"
+
 ```
 
 ### React Provider Setup
@@ -212,6 +218,7 @@ function Root() {
 }
 
 export default Root;
+
 ```
 
 ### useQuery Hook
@@ -294,6 +301,7 @@ function UserPosts({ userId }: { userId: string }) {
     </div>
   );
 }
+
 ```
 
 ### useMutation Hook
@@ -397,6 +405,7 @@ function CreatePostForm() {
     </form>
   );
 }
+
 ```
 
 ### useLazyQuery Hook
@@ -444,6 +453,7 @@ function UserSearch() {
     </div>
   );
 }
+
 ```
 
 ### useSubscription Hook
@@ -478,6 +488,7 @@ function PostComments({ postId }: { postId: string }) {
 
   // ... render comments
 }
+
 ```
 
 ### Cache Updates
@@ -541,6 +552,7 @@ const [updateUser] = useMutation(UPDATE_USER, {
     });
   },
 });
+
 ```
 
 ### Apollo Client with TypeScript
@@ -582,6 +594,7 @@ function UserProfile({ userId }: { userId: string }) {
     </div>
   );
 }
+
 ```
 
 ---
@@ -656,6 +669,7 @@ function InfiniteScrollFeed() {
     </InfiniteScroll>
   );
 }
+
 ```
 
 ### 2. Optimistic UI with Undo
@@ -727,6 +741,7 @@ function PostCard({ post }: { post: Post }) {
     </div>
   );
 }
+
 ```
 
 ### 3. Form with Auto-Save
@@ -792,6 +807,7 @@ function AutoSaveEditor({ draftId }: { draftId: string }) {
     </div>
   );
 }
+
 ```
 
 ---
@@ -818,6 +834,7 @@ function UserProfile({ userId }) {
 
   return <h1>{data.user.name}</h1>;
 }
+
 ```
 
 ### 2. Not Using Cache Properly
@@ -834,6 +851,7 @@ const { data } = useQuery(GET_USER, {
   variables: { id: userId },
   fetchPolicy: 'cache-first',  // Default: use cache, fetch if missing
 });
+
 ```
 
 ### 3. Missing Cache Updates
@@ -859,6 +877,7 @@ const [createPost] = useMutation(CREATE_POST, {
     });
   },
 });
+
 ```
 
 ### 4. Not Using Variables
@@ -883,6 +902,7 @@ const query = gql`
 `;
 
 const { data } = useQuery(query, { variables: { id: userId } });
+
 ```
 
 ### 5. Ignoring Error Policy
@@ -901,6 +921,7 @@ const { data, error } = useQuery(GET_USER, {
 if (data?.user) {
   // Data is available even with errors
 }
+
 ```
 
 ---
@@ -910,6 +931,7 @@ if (data?.user) {
 ### Query Optimization
 
 ```text
+
 1. Use fragments for reusable selections
    fragment UserFields on User { id name email }
 
@@ -920,17 +942,20 @@ if (data?.user) {
    posts(first: 10, after: $cursor) { ... }
 
 4. Set appropriate fetch policies
+
    - cache-first (default): Use cache, fetch if missing
    - network-only: Always fetch, update cache
    - cache-and-network: Return cache, also fetch
 
 5. Use polling for real-time data
    pollInterval: 30000
+
 ```
 
 ### Cache Management
 
 ```text
+
 1. Define keyFields for normalization
    typePolicies: { User: { keyFields: ['id'] } }
 
@@ -945,11 +970,13 @@ if (data?.user) {
 
 5. Monitor cache size
    cache.gc()  // Garbage collect
+
 ```
 
 ### Performance
 
 ```text
+
 1. Use skip option for conditional queries
    skip: !userId
 
@@ -963,6 +990,7 @@ if (data?.user) {
 
 5. Use polling sparingly
    Prefer subscriptions for real-time
+
 ```
 
 ---
@@ -980,6 +1008,7 @@ import { useQuery } from '@apollo/client/react/hooks';
 
 // Avoid importing everything
 // import * as Apollo from '@apollo/client';  // BAD
+
 ```
 
 ### Query Batching
@@ -997,6 +1026,7 @@ const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
 });
+
 ```
 
 ### Cache Pagination
@@ -1019,6 +1049,7 @@ const cache = new InMemoryCache({
     },
   },
 });
+
 ```
 
 ---
@@ -1046,6 +1077,7 @@ const cache = new InMemoryCache({
 
 6. **What are fetch policies?**
    Strategies for how Apollo Client uses the cache:
+
    - `cache-first`: Use cache, fetch if missing
    - `network-only`: Always fetch, update cache
    - `cache-and-network`: Return cache, also fetch

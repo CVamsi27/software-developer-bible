@@ -46,6 +46,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -87,6 +88,7 @@ function handleScroll() {
 
 const throttledScroll = throttle(handleScroll, 100);
 window.addEventListener('scroll', throttledScroll);
+
 ```
 
 ### Throttle with Leading/Trailing
@@ -141,6 +143,7 @@ function throttle<T extends (...args: any[]) => any>(
 
 // Usage
 const throttledFn = throttle(fn, 100, { leading: true, trailing: false });
+
 ```
 
 ### Throttle with Cancel/Flush
@@ -205,6 +208,7 @@ function throttle<T extends (...args: any[]) => any>(
 
   return throttled;
 }
+
 ```
 
 ### React Hook
@@ -259,6 +263,7 @@ function ScrollComponent() {
 
   return <div>Scroll content</div>;
 }
+
 ```
 
 ## Real-World Use Cases
@@ -286,6 +291,7 @@ function useScrollProgress() {
 
   return progress;
 }
+
 ```
 
 ### 2. Mouse Move Handler
@@ -308,6 +314,7 @@ function useMousePosition() {
 
   return position;
 }
+
 ```
 
 ### 3. Button Click Handler
@@ -333,6 +340,7 @@ function LikeButton() {
     </button>
   );
 }
+
 ```
 
 ### 4. Window Resize Handler
@@ -361,6 +369,7 @@ function useWindowSize() {
 
   return size;
 }
+
 ```
 
 ### 5. API Rate Limiting
@@ -383,6 +392,7 @@ class ApiClient {
     return this.throttledRequest<T>(url);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -406,6 +416,7 @@ useEffect(() => {
     window.removeEventListener('scroll', handleScroll);
   };
 }, []);
+
 ```
 
 ### 2. Wrong Limit Time
@@ -419,6 +430,7 @@ const scroll = throttle(updatePosition, 1000);
 
 // Good: Balance based on use case
 const scroll = throttle(updatePosition, 100);
+
 ```
 
 ### 3. Using Throttle for Debounce Cases
@@ -430,6 +442,7 @@ const search = throttle(fetchResults, 300);
 
 // Good: Use debounce for search
 const search = debounce(fetchResults, 300);
+
 ```
 
 ### 4. Not Handling Trailing Call
@@ -441,6 +454,7 @@ const fn = throttle(originalFn, 100, { trailing: false });
 
 // Good: Handle trailing
 const fn = throttle(originalFn, 100, { trailing: true });
+
 ```
 
 ## Best Practices
@@ -459,6 +473,7 @@ const click = throttle(handleClick, 1000);
 
 // Resize: 250ms
 const resize = throttle(update, 250);
+
 ```
 
 ### 2. Clean Up Throttled Functions
@@ -471,6 +486,7 @@ useEffect(() => {
     throttledFn.cancel();
   };
 }, [fn, limit]);
+
 ```
 
 ### 3. Use Cancel Method
@@ -481,6 +497,7 @@ const throttledFn = throttle(fn, limit);
 
 // Cleanup
 throttledFn.cancel();
+
 ```
 
 ### 4. Consider Leading vs Trailing
@@ -494,6 +511,7 @@ const fn = throttle(fn, 100, { trailing: true });
 
 // Both: Execute at start and end
 const fn = throttle(fn, 100, { leading: true, trailing: true });
+
 ```
 
 ## Performance Considerations
@@ -511,6 +529,7 @@ const handleScroll = throttle(updateAnimation, 16);
 const handleScroll = () => {
   requestAnimationFrame(updateAnimation);
 };
+
 ```
 
 ### Memory Usage
@@ -533,6 +552,7 @@ const Component = () => {
   );
   return <button onClick={throttledFn}>Click</button>;
 };
+
 ```
 
 ## Interview Questions
@@ -652,11 +672,17 @@ A: Choose appropriate limit, clean up, use TypeScript, handle edge cases.
 Throttling is essential for performance:
 
 1. **Definition**: Limits function execution frequency
+
 2. **Use cases**: Scroll, mouse move, button clicks
+
 3. **Implementation**: Flag + setTimeout
+
 4. **Options**: Leading, trailing, cancel, flush
+
 5. **Performance**: Prevents excessive function calls
+
 6. **Cleanup**: Always clean up timers
+
 7. **Testing**: Use fake timers
 
 ## Cheat Sheet
@@ -719,11 +745,12 @@ TESTING:
 • jest.useFakeTimers()
 • jest.advanceTimersByTime()
 • Verify call counts
+
 ```
 
 ## References & Learn More
 
 - [Lodash: throttle()](https://lodash.com/docs/4.17.15#throttle)
-- [MDN: throttling](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)
+- [MDN: throttling](https://developer.mozilla.org/en-US/docs/Glossary/Throttling)
 - [CSS-Tricks: Throttle and Debounce in JavaScript](https://css-tricks.com/throttle-and-debounce-in-javascript/)
 - [GeeksforGeeks: Throttle vs Debounce](https://www.geeksforgeeks.org/throttle-in-javascript/)

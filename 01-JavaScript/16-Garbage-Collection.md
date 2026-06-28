@@ -55,6 +55,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Reference Counting
@@ -98,6 +99,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Generational GC
@@ -143,6 +145,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -171,6 +174,7 @@ function createCircular() {
   b = null;
   // Both objects are eligible for GC
 }
+
 ```
 
 ### Closures and GC
@@ -199,6 +203,7 @@ function createClosureFixed() {
     return length;
   };
 }
+
 ```
 
 ### WeakMap and GC
@@ -222,6 +227,7 @@ processObject(obj);
 
 // When obj is garbage collected, cache entry is also removed
 obj = null;
+
 ```
 
 ### Object Pooling
@@ -252,6 +258,7 @@ const pool = new ObjectPool(() => ({ x: 0, y: 0 }));
 const obj = pool.acquire();
 // Use obj
 pool.release(obj);  // Return to pool instead of GC
+
 ```
 
 ### Typed Arrays
@@ -264,6 +271,7 @@ const view = new Uint8Array(buffer);
 // More efficient than regular arrays
 // Memory is allocated in contiguous blocks
 // GC can handle them more efficiently
+
 ```
 
 ## Real-World Use Cases
@@ -290,6 +298,7 @@ function Component({ items }: { items: Item[] }) {
 
   return <List items={processed} />;
 }
+
 ```
 
 ### 2. Event Listener Management
@@ -307,6 +316,7 @@ class EventEmitter {
 
   // When target is GC'd, listeners are also GC'd
 }
+
 ```
 
 ### 3. Cache Implementation
@@ -336,6 +346,7 @@ class GC-friendlyCache<K extends object, V> {
     return entry.value;
   }
 }
+
 ```
 
 ### 4. Memory Monitoring
@@ -356,6 +367,7 @@ function monitorMemory() {
 }
 
 setInterval(monitorMemory, 5000);
+
 ```
 
 ## Common Mistakes
@@ -376,6 +388,7 @@ function process() {
   process大数据(data);
   data = null;  // Allow GC
 }
+
 ```
 
 ### 2. Global Caches Without Limits
@@ -403,6 +416,7 @@ function getCached(key: string) {
   }
   return cache.get(key);
 }
+
 ```
 
 ### 3. Not Using WeakMap for Object References
@@ -419,6 +433,7 @@ const objectCache = new WeakMap();
 function process(obj: object) {
   objectCache.set(obj, result);
 }
+
 ```
 
 ### 4. Forgetting to Clear Timers
@@ -439,6 +454,7 @@ function start() {
 
   return () => clearInterval(id);
 }
+
 ```
 
 ## Best Practices
@@ -461,6 +477,7 @@ function process(items: Item[]) {
     return item;
   });
 }
+
 ```
 
 ### 2. Use Object Pooling
@@ -478,6 +495,7 @@ function createParticle() {
 function destroyParticle(particle: Particle) {
   pool.release(particle);
 }
+
 ```
 
 ### 3. Implement Bounded Caches
@@ -499,6 +517,7 @@ class BoundedCache<K, V> {
     this.cache.set(key, value);
   }
 }
+
 ```
 
 ### 4. Use WeakRef for Large Objects
@@ -516,6 +535,7 @@ class DataStore {
     this.data = new WeakRef(data);
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -542,6 +562,7 @@ function process() {
     // ... process chunk
   }
 }
+
 ```
 
 ### Memory Pressure
@@ -556,6 +577,7 @@ if ('memory' in performance) {
     cache.clear();
   }
 }
+
 ```
 
 ## Interview Questions
@@ -675,11 +697,17 @@ A: Minimize allocations, use pooling, implement bounded caches, monitor usage, t
 Garbage collection is essential for JavaScript:
 
 1. **Algorithm**: Mark-and-sweep (handles circular refs)
+
 2. **Generational**: Young/old generation optimization
+
 3. **Performance**: GC pauses can impact performance
+
 4. **Best practices**: Minimize allocations, use pooling
+
 5. **WeakMap/WeakRef**: Allow GC of referenced objects
+
 6. **Monitoring**: Track memory usage
+
 7. **Common issues**: Closures, global caches, timers
 
 ## Cheat Sheet
@@ -739,6 +767,7 @@ COMMON ISSUES:
 • Global variables
 • Forgotten timers
 • Closures capturing large objects
+
 ```
 
 ## References & Learn More

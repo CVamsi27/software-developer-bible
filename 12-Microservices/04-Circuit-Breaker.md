@@ -7,6 +7,7 @@ Circuit Breaker is a design pattern that prevents an application from repeatedly
 ## Why Do We Need It?
 
 In microservices:
+
 - Prevent cascade failures when downstream services fail
 - Allow failing services time to recover
 - Provide fallback behavior during outages
@@ -38,6 +39,7 @@ In microservices:
 │                  │ Requests  │                                  │
 │                  └───────────┘                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### State Transitions
@@ -47,6 +49,7 @@ CLOSED → OPEN: When failure count exceeds threshold
 OPEN → HALF-OPEN: After timeout period expires
 HALF-OPEN → CLOSED: If probe request succeeds
 HALF-OPEN → OPEN: If probe request fails
+
 ```
 
 ### Request Flow
@@ -74,6 +77,7 @@ HALF-OPEN → OPEN: If probe request fails
         │Forward │    │Reject/ │    │Forward │
         │Request │    │Fallback│    │Probe   │
         └────────┘    └────────┘    └────────┘
+
 ```
 
 ## Code Examples
@@ -194,6 +198,7 @@ class CircuitBreaker {
     console.log('Circuit breaker: Reset to CLOSED');
   }
 }
+
 ```
 
 ### TypeScript - Advanced Circuit Breaker with Fallback
@@ -292,6 +297,7 @@ class UserService {
     return { id: 'default', name: 'Guest User' };
   }
 }
+
 ```
 
 ### TypeScript - Retry with Exponential Backoff
@@ -407,6 +413,7 @@ class ResilientServiceClient {
     });
   }
 }
+
 ```
 
 ### TypeScript - Circuit Breaker with Metrics
@@ -540,26 +547,31 @@ class CircuitBreakerHealthCheck {
     return true;
   }
 }
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Netflix
+
 - Circuit breakers on all external service calls
 - Fallback to cached data or degraded functionality
 - Prevent cascade failures across microservices
 
 ### 2. E-Commerce
+
 - Payment service circuit breaker
 - Fallback to alternative payment provider
 - Cache product data when inventory service fails
 
 ### 3. Social Media
+
 - Circuit breaker on recommendation service
 - Show cached recommendations during outage
 - Graceful degradation of features
 
 ### 4. Banking
+
 - Circuit breaker on core banking API
 - Fallback to read-only mode during issues
 - Queue transactions for later processing
@@ -567,23 +579,37 @@ class CircuitBreakerHealthCheck {
 ## Common Mistakes
 
 1. **Wrong thresholds** - Too sensitive or not sensitive enough
+
 2. **No fallback** - Circuit opens with no recovery path
+
 3. **Not monitoring** - Missing visibility into circuit state
+
 4. **No timeout** - Requests hang indefinitely
+
 5. **Ignoring half-open** - Not allowing recovery testing
+
 6. **Not resetting** - Circuit stays open permanently
+
 7. **Wrong error classification** - Retrying non-retryable errors
+
 8. **No logging** - Can't debug circuit breaker behavior
 
 ## Best Practices
 
 1. **Set appropriate thresholds** - Based on service SLA and error tolerance
+
 2. **Always implement fallback** - Provide degraded functionality
+
 3. **Monitor circuit state** - Alert on state changes
+
 4. **Use timeouts** - Prevent hung requests
+
 5. **Log state transitions** - Essential for debugging
+
 6. **Test circuit breakers** - Chaos engineering, fault injection
+
 7. **Use exponential backoff** - For retries
+
 8. **Consider bulkheading** - Isolate failures to specific services
 
 ## Performance Considerations
@@ -599,116 +625,151 @@ class CircuitBreakerHealthCheck {
 ### Beginner (5-10)
 
 1. **What is the Circuit Breaker pattern?**
+
    - Pattern that prevents cascade failures by stopping calls to failing services.
 
 2. **Why use circuit breakers?**
+
    - Prevent cascade failures, allow recovery, provide fallback behavior.
 
 3. **What are the three states of a circuit breaker?**
+
    - CLOSED (normal), OPEN (failing), HALF-OPEN (testing recovery).
 
 4. **When does circuit breaker open?**
+
    - When failure count exceeds threshold within time window.
 
 5. **When does circuit breaker close?**
+
    - When probe requests succeed in HALF-OPEN state.
 
 6. **What is a fallback?**
+
    - Alternative behavior when circuit is open (cached data, default response).
 
 7. **How is circuit breaker different from retry?**
+
    - Circuit breaker stops requests; retry attempts again after delay.
 
 8. **What is exponential backoff?**
+
    - Increasing delay between retry attempts to reduce load.
 
 ### Intermediate (5-10)
 
 9. **How do you set failure thresholds?**
+
    - Based on service SLA, error tolerance, and recovery time.
 
 10. **What is bulkheading?**
+
     - Isolating failures to prevent one failing service from affecting others.
 
 11. **How do you monitor circuit breakers?**
+
     - Track state changes, failure rates, fallback usage, response times.
 
 12. **What is a half-open state?**
+
     - Testing if service has recovered with limited probe requests.
 
 13. **How do you handle timeout in circuit breakers?**
+
     - Set appropriate timeout values, use Promise.race for timeout.
 
 14. **What is a health check?**
+
     - Periodic probe to determine if service is healthy.
 
 15. **How do you test circuit breakers?**
+
     - Fault injection, chaos engineering, integration tests.
 
 16. **What metrics should you track?**
+
     - Request count, failure rate, circuit state, response time.
 
 ### Senior (10-15)
 
 17. **Design a circuit breaker system from scratch.**
+
     - State machine, configuration, monitoring, fallback integration.
 
 18. **How do you handle distributed circuit breakers?**
+
     - Shared state via distributed cache, eventual consistency.
 
 19. **What is the relationship between circuit breakers and service mesh?**
+
     - Service mesh provides built-in circuit breaking at infrastructure level.
 
 20. **How do you implement circuit breakers in event-driven systems?**
+
     - Circuit breakers on event producers/consumers, dead letter queues.
 
 21. **Explain circuit breaker patterns in microservices.**
+
     - Hierarchical circuits, cascading fallbacks, compensation.
 
 22. **How do you handle circuit breakers during deployments?**
+
     - Gradual rollout, feature flags, traffic shifting.
 
 23. **What is adaptive circuit breaking?**
+
     - Dynamic thresholds based on real-time metrics.
 
 24. **How do you debug circuit breaker issues?**
+
     - Distributed tracing, logging, metrics visualization.
 
 25. **What are the limitations of circuit breakers?**
+
     - Eventual consistency, complex configuration, false positives.
 
 ### FAANG-style (5-10)
 
 26. **Design Netflix's circuit breaker system.**
+
     - Hystrix-like implementation, fallback strategies, monitoring.
 
 27. **How would you implement circuit breakers for 1000+ services?**
+
     - Hierarchical circuits, bulkheading, shared infrastructure.
 
 28. **Design circuit breakers for global deployment.**
+
     - Regional circuits, global state, latency-aware thresholds.
 
 29. **How do you prevent thundering herd with circuit breakers?**
+
     - Jitter, gradual recovery, request coalescing.
 
 30. **Explain circuit breakers in serverless architecture.**
+
     - Cold start handling, function-level circuits, async fallbacks.
 
 ### Follow-ups (5-10)
 
 31. **How do you migrate to circuit breakers?**
+
     - Gradual adoption, wrapper pattern, feature flags.
 
 32. **What is the impact of circuit breakers on latency?**
+
     - Adds overhead, but benefits outweigh costs during failures.
 
 33. **How do you choose between circuit breaker and retry?**
+
     - Circuit breaker for persistent failures; retry for transient issues.
 
 34. **What is the future of circuit breaking?**
+
     - AI-driven adaptive thresholds, service mesh integration.
 
 35. **How do you handle circuit breakers in synchronous vs async?**
+
     - Different timeout strategies, async monitoring.
 
 ## Summary
@@ -750,11 +811,13 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 │ • Circuit state, response times                         │
 │ • Fallback usage, rejection rates                       │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Microservices Patterns by Chris Richardson](https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543)
 - [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358)
 - [Microservices.io](https://microservices.io/)

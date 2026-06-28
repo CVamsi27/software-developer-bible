@@ -5,6 +5,7 @@
 End-to-End (E2E) testing is a software testing technique that validates the entire application workflow from start to finish, simulating real user scenarios. E2E tests verify that all components work together correctly in a production-like environment, including the frontend, backend, database, and external services.
 
 **Key Characteristics:**
+
 - Tests complete user workflows
 - Runs in real browser environments
 - Highest confidence in application behavior
@@ -34,6 +35,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 │  Focus on critical user journeys                           │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
@@ -92,6 +94,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Cypress vs Playwright
@@ -118,6 +121,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 │  Pricing              │ Free/Paid        │ Free             │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Page Object Pattern
@@ -157,6 +161,7 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -275,6 +280,7 @@ describe("Checkout Flow", () => {
     );
   });
 });
+
 ```
 
 ### Playwright Example
@@ -380,6 +386,7 @@ test.describe("Checkout Flow", () => {
     );
   });
 });
+
 ```
 
 ### Page Object Pattern Implementation
@@ -519,6 +526,7 @@ test.describe("Login with Page Objects", () => {
     expect(welcomeText).toContain("Welcome");
   });
 });
+
 ```
 
 ### Visual Regression Testing
@@ -567,6 +575,7 @@ test.describe("Visual Regression", () => {
     await expect(page).toHaveScreenshot("login-page.png");
   });
 });
+
 ```
 
 ### Network Interception
@@ -629,6 +638,7 @@ test.describe("API Mocking", () => {
     // Verify authenticated request works
   });
 });
+
 ```
 
 ### Testing Authentication Flows
@@ -674,6 +684,7 @@ test.describe("Dashboard", () => {
     await expect(page).toHaveURL(/.*login/);
   });
 });
+
 ```
 
 ### Testing Forms
@@ -752,6 +763,7 @@ test.describe("Registration Form", () => {
     ).toHaveAttribute("type", "text");
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -816,6 +828,7 @@ test.describe("E-commerce Complete Flow", () => {
     ).toContainText("Thank you for your order");
   });
 });
+
 ```
 
 ### 2. Admin Dashboard
@@ -884,6 +897,7 @@ test.describe("Admin Dashboard", () => {
     ).toBeVisible();
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -904,6 +918,7 @@ test("should display data after clicking button", async ({ page }) => {
   await page.click('[data-testid="button"]');
   await expect(page.locator('[data-testid="data"]')).toBeVisible();
 });
+
 ```
 
 ### 2. Hardcoded Waits
@@ -923,6 +938,7 @@ test("good example", async ({ page }) => {
   // Or use:
   await page.waitForSelector('[data-testid="result"]');
 });
+
 ```
 
 ### 3. Flaky Tests
@@ -943,18 +959,27 @@ test("reliable test", async ({ page }) => {
   const items = await page.locator('[data-testid="item"]').count();
   expect(items).toBeGreaterThan(0);
 });
+
 ```
 
 ## Best Practices
 
 1. **Use Page Object Pattern**: Encapsulate page interactions
+
 2. **Test critical user journeys**: Focus on essential workflows
+
 3. **Use data-testid attributes**: Stable selectors for testing
+
 4. **Avoid hardcoded waits**: Use auto-waiting features
+
 5. **Mock external services**: Use route interception
+
 6. **Clean up test data**: Reset state between tests
+
 7. **Use environment variables**: Different configs for different environments
+
 8. **Run tests in parallel**: Speed up test execution
+
 9. **Take screenshots on failure**: Debug failing tests easily
 10. **Monitor flaky tests**: Track and fix flakiness
 
@@ -992,6 +1017,7 @@ export default defineConfig({
     },
   ],
 });
+
 ```
 
 ### Test Splitting
@@ -1008,11 +1034,13 @@ jobs:
       matrix:
         shard: [1, 2, 3, 4]
     steps:
+
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: npm ci
       - run: npx playwright install
       - run: npx playwright test --shard=${{ matrix.shard }}/4
+
 ```
 
 ## Interview Questions

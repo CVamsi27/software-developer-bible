@@ -39,6 +39,7 @@
 │  │  5. Release lock (COMMIT)                            │   │
 │  └─────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Optimistic Locking Flow
@@ -58,6 +59,7 @@
 │      → affected_rows = 0                                    │
 │      → Retry or handle conflict                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Pessimistic Locking Flow
@@ -78,6 +80,7 @@
 │  T2: Gets lock, reads updated data                         │
 │      → Proceeds with correct values                        │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -109,6 +112,7 @@ AND version = 5;  -- Check version!
 -- Check if update succeeded
 -- If rows_affected = 0, conflict occurred
 -- Retry or handle conflict
+
 ```
 
 ### Optimistic Locking in TypeScript
@@ -185,6 +189,7 @@ async function transferOptimistic(
 
   throw new Error('Max retries exceeded');
 }
+
 ```
 
 ### Pessimistic Locking with SELECT FOR UPDATE
@@ -221,6 +226,7 @@ FOR UPDATE SKIP LOCKED
 LIMIT 10;
 -- Returns only unlocked rows
 COMMIT;
+
 ```
 
 ### Pessimistic Locking in TypeScript
@@ -272,6 +278,7 @@ async function transferPessimistic(
     return { success: true };
   });
 }
+
 ```
 
 ### Hybrid Approach
@@ -327,6 +334,7 @@ async function hybridTransfer(
     throw new Error('Conflict detected');
   }
 }
+
 ```
 
 ## Real-World Use Cases
@@ -351,6 +359,7 @@ AND stock > 0
 AND version = 5;  -- Optimistic lock
 
 -- If affected_rows = 0, either out of stock or conflict
+
 ```
 
 ### User Profile Updates
@@ -370,6 +379,7 @@ SET name = 'John Doe',
 WHERE id = 1;
 
 COMMIT;
+
 ```
 
 ### Task Queue Processing
@@ -389,6 +399,7 @@ LIMIT 1;
 UPDATE tasks SET status = 'processing' WHERE id = ?;
 
 COMMIT;
+
 ```
 
 ### Financial Transactions
@@ -413,6 +424,7 @@ UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 INSERT INTO transactions (account_id, amount) VALUES (1, -100);
 
 COMMIT;
+
 ```
 
 ## Common Mistakes
@@ -432,6 +444,7 @@ BEGIN;
 SELECT * FROM accounts WHERE id = 1 FOR UPDATE;
 UPDATE accounts SET balance = balance + 10 WHERE id = 1;
 COMMIT;
+
 ```
 
 ### 2. Not Handling Conflicts
@@ -465,6 +478,7 @@ async function updateAccount(id: number, data: any, maxRetries = 3) {
     }
   }
 }
+
 ```
 
 ### 3. Lock Ordering Violations
@@ -488,6 +502,7 @@ COMMIT;
 BEGIN;
 SELECT * FROM accounts WHERE id IN (1, 2) ORDER BY id FOR UPDATE;
 COMMIT;
+
 ```
 
 ## Best Practices
@@ -517,6 +532,7 @@ SELECT * FROM pg_locks WHERE NOT granted;
 
 -- 7. Set lock timeout
 SET lock_timeout = '5s';
+
 ```
 
 ## Performance Considerations
@@ -541,6 +557,7 @@ SELECT
     SUM(CASE WHEN NOT granted THEN 1 ELSE 0 END) AS waiting
 FROM pg_locks
 GROUP BY mode;
+
 ```
 
 ## Interview Questions
@@ -667,6 +684,7 @@ SELECT * FROM pg_stat_activity WHERE wait_event_type = 'Lock';
 
 -- Set timeout
 SET lock_timeout = '5s';
+
 ```
 
 ## References & Learn More

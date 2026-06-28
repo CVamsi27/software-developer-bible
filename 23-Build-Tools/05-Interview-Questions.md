@@ -11,6 +11,7 @@ This chapter contains 30 carefully curated interview questions covering build to
 ### 1. What is a build tool and why do we need it?
 **Answer:**
 A build tool automates tasks involved in web development such as bundling, transpiling, minifying, and optimizing code. We need build tools because:
+
 - Browsers cannot natively understand modern JavaScript features (ES6+, JSX, TypeScript)
 - Applications consist of many modules that need to be combined
 - Assets (CSS, images, fonts) need processing
@@ -19,6 +20,7 @@ A build tool automates tasks involved in web development such as bundling, trans
 
 ### 2. What is the difference between Webpack and Vite?
 **Answer:**
+
 | Feature | Webpack | Vite |
 |---------|---------|------|
 | **Dev Server** | Bundles entire app before serving | Uses native ES modules, no bundling |
@@ -31,9 +33,13 @@ A build tool automates tasks involved in web development such as bundling, trans
 ### 3. What is Hot Module Replacement (HMR)?
 **Answer:**
 HMR allows modules to be updated in the browser without full page reload during development. When a file changes:
+
 1. The dev server detects the change
+
 2. Sends the updated module to the browser
+
 3. Browser replaces the old module with the new one
+
 4. Application state is preserved
 
 Benefits: Faster development cycle, preserves application state, instant feedback.
@@ -41,11 +47,15 @@ Benefits: Faster development cycle, preserves application state, instant feedbac
 ### 4. What is tree shaking and how does it work?
 **Answer:**
 Tree shaking is the process of removing unused code from bundles. It works by:
+
 1. Analyzing import/export relationships
+
 2. Identifying which exports are actually used
+
 3. Removing unused exports from the final bundle
 
 Requirements:
+
 - Use ES modules (import/export)
 - Mark package as `sideEffects: false` in package.json
 - Use production mode in bundler
@@ -53,6 +63,7 @@ Requirements:
 ### 5. What is code splitting and why is it important?
 **Answer:**
 Code splitting breaks your bundle into smaller chunks that can be loaded on demand. It's important because:
+
 - Reduces initial load time
 - Loads only code needed for current view
 - Improves Core Web Vitals (LCP, FID)
@@ -66,6 +77,7 @@ Methods: Dynamic imports, route-based splitting, vendor splitting.
 Loaders transform non-JS files into valid Webpack modules. They process files as they are imported.
 
 Common loaders:
+
 - `babel-loader`: Transforms JavaScript/JSX
 - `css-loader`: Resolves CSS imports
 - `style-loader`: Injects CSS into DOM
@@ -75,6 +87,7 @@ Common loaders:
 ### 7. What is the purpose of `mode` in Webpack?
 **Answer:**
 The `mode` option tells Webpack which built-in optimizations to use:
+
 - **development**: Optimizes for fast rebuilds, useful error messages
 - **production**: Optimizes for minification, tree shaking, dead code elimination
 - **none**: No optimizations applied
@@ -83,6 +96,7 @@ Always set mode explicitly for predictable behavior.
 
 ### 8. What is the difference between `style-loader` and `MiniCssExtractPlugin`?
 **Answer:**
+
 - **style-loader**: Injects CSS into the DOM via `<style>` tags at runtime
 - **MiniCssExtractPlugin**: Extracts CSS into separate `.css` files
 
@@ -94,6 +108,7 @@ Use `style-loader` for development (faster builds) and `MiniCssExtractPlugin` fo
 
 ### 9. How do you implement code splitting in a React application?
 **Answer:**
+
 ```jsx
 // Route-based splitting
 import React, { lazy, Suspense } from 'react';
@@ -114,10 +129,12 @@ function App() {
 
 // Component-based splitting
 const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
 ```
 
 ### 10. What is the difference between gzip and Brotli compression?
 **Answer:**
+
 | Feature | gzip | Brotli |
 |---------|------|--------|
 | **Compression Ratio** | Good (70-80%) | Better (80-90%) |
@@ -128,6 +145,7 @@ const HeavyComponent = lazy(() => import('./HeavyComponent'));
 
 ### 11. How do you configure Webpack for TypeScript?
 **Answer:**
+
 ```javascript
 // webpack.config.js
 module.exports = {
@@ -156,11 +174,13 @@ module.exports = {
     "esModuleInterop": true
   }
 }
+
 ```
 
 ### 12. What is the purpose of `contenthash` in output filenames?
 **Answer:**
 `contenthash` provides a unique hash based on file content for cache busting:
+
 - If file content changes, hash changes → browser fetches new version
 - If content stays same, hash stays same → browser uses cached version
 
@@ -168,6 +188,7 @@ This ensures optimal caching while preventing stale files.
 
 ### 13. How do you optimize Webpack build performance?
 **Answer:**
+
 ```javascript
 module.exports = {
   cache: {
@@ -193,12 +214,14 @@ module.exports = {
     }
   }
 };
+
 ```
 
 Techniques: Enable caching, limit loader scope, use thread-loader, minimize plugins.
 
 ### 14. What is the difference between `require` and `import`?
 **Answer:**
+
 | Feature | require | import |
 |---------|---------|--------|
 | **Module System** | CommonJS | ES Modules |
@@ -209,6 +232,7 @@ Techniques: Enable caching, limit loader scope, use thread-loader, minimize plug
 
 ### 15. How do you handle environment variables in Webpack?
 **Answer:**
+
 ```javascript
 // webpack.config.js
 const { DefinePlugin } = require('webpack');
@@ -228,10 +252,12 @@ NODE_ENV=production
 
 // Access in code
 console.log(process.env.API_URL);
+
 ```
 
 ### 16. What is the difference between Vite's dev and build modes?
 **Answer:**
+
 - **Dev mode**: Uses native ES modules, no bundling, instant server start
 - **Build mode**: Uses Rollup for production optimization, tree shaking, code splitting
 
@@ -243,19 +269,28 @@ Dev is optimized for DX (fast updates), build is optimized for performance (smal
 
 ### 17. Explain Webpack's compilation flow in detail.
 **Answer:**
+
 1. **Initialize**: Load configuration, create compiler instance
+
 2. **Entry**: Start from entry point(s)
+
 3. **Resolve**: Find all imported modules
+
 4. **Loaders**: Transform non-JS files
+
 5. **Parse**: Build dependency graph
+
 6. **Plugins**: Execute at various hooks
+
 7. **Optimize**: Tree shake, minify, code split
+
 8. **Emit**: Write output bundles to disk
 
 Key concepts: Compiler, Compilation, Module, Chunk, Asset.
 
 ### 18. How do you implement micro-frontends with Module Federation?
 **Answer:**
+
 ```javascript
 // Host application
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
@@ -281,11 +316,13 @@ plugins: [
     shared: { react: { singleton: true }, 'react-dom': { singleton: true } }
   })
 ];
+
 ```
 
 ### 19. What is the purpose of `splitChunks.cacheGroups`?
 **Answer:**
 `cacheGroups` defines rules for how chunks are split:
+
 ```javascript
 optimization: {
   splitChunks: {
@@ -309,11 +346,13 @@ optimization: {
     }
   }
 }
+
 ```
 
 ### 20. How do you handle server-side rendering with Webpack?
 **Answer:**
 Create separate client and server configs:
+
 ```javascript
 // Client config
 module.exports = {
@@ -329,11 +368,13 @@ module.exports = {
   output: { filename: 'server.bundle.js' },
   externals: [nodeExternals()]
 };
+
 ```
 
 ### 21. What are Webpack externals and when to use them?
 **Answer:**
 Externals exclude dependencies from the bundle:
+
 ```javascript
 module.exports = {
   externals: {
@@ -341,15 +382,18 @@ module.exports = {
     'react-dom': 'ReactDOM'
   }
 };
+
 ```
 
 Use when:
+
 - Library is available globally (CDN)
 - Avoiding duplicate code in micro-frontends
 - Reducing bundle size for known dependencies
 
 ### 22. How do you implement long-term caching with Webpack?
 **Answer:**
+
 ```javascript
 module.exports = {
   output: {
@@ -370,10 +414,12 @@ module.exports = {
     }
   }
 };
+
 ```
 
 ### 23. How do you debug Webpack configuration issues?
 **Answer:**
+
 ```bash
 # Verbose output
 webpack --stats verbose
@@ -389,10 +435,12 @@ DEBUG=loader:* webpack
 
 # Check resolved config
 node -e "console.log(require('./webpack.config.js'))"
+
 ```
 
 ### 24. What is the difference between `require.ensure` and dynamic `import()`?
 **Answer:**
+
 - `require.ensure`: Webpack-specific, older syntax
 - `import()`: Standard JavaScript, recommended
 
@@ -406,10 +454,12 @@ require.ensure(['./module'], function(require) {
 import('./module').then(module => {
   // Use module
 });
+
 ```
 
 ### 25. How do you optimize for Core Web Vitals?
 **Answer:**
+
 - **LCP**: Optimize critical rendering path, preload resources
 - **FID**: Reduce main thread work, defer non-critical JS
 - **CLS**: Set dimensions for images/videos, avoid dynamic content insertion
@@ -423,16 +473,19 @@ import('./module').then(module => {
 
 // Image dimensions
 <img width="800" height="600" src="image.jpg" alt="">
+
 ```
 
 ### 26. How do you handle monorepos with Webpack?
 **Answer:**
 Use Turborepo or Lerna with shared Webpack config:
+
 ```json
 // package.json
 {
   "workspaces": ["packages/*"]
 }
+
 ```
 
 ```javascript
@@ -444,6 +497,7 @@ module.exports = {
 // packages/app/webpack.config.js
 const base = require('../../shared/webpack.config');
 module.exports = { ...base, entry: './src/index.js' };
+
 ```
 
 ---
@@ -453,6 +507,7 @@ module.exports = { ...base, entry: './src/index.js' };
 ### 27. Design a Webpack configuration for a large-scale application with 100+ routes.
 **Answer:**
 Considerations:
+
 - Route-based code splitting
 - Vendor chunking strategy
 - Shared modules between routes
@@ -475,44 +530,63 @@ module.exports = {
   },
   cache: { type: 'filesystem' }
 };
+
 ```
 
 ### 28. How would you reduce initial load time by 50% for a React application?
 **Answer:**
 Strategy:
+
 1. Route-based code splitting (lazy loading)
+
 2. Prefetching critical routes
+
 3. Tree shaking unused code
+
 4. Compressing assets (Brotli)
+
 5. CDN for static assets
+
 6. Service worker for caching
+
 7. Image optimization (WebP, lazy loading)
+
 8. Defer non-critical JavaScript
 
 Expected impact:
+
 - Code splitting: 30-40% reduction
 - Compression: 60-80% size reduction
 - Image optimization: 50-70% size reduction
 
 ### 29. Explain how Module Federation works at runtime.
 **Answer:**
+
 1. **Container Initialization**: Host and remote containers are created
+
 2. **Scope Negotiation**: Containers negotiate shared dependencies
+
 3. **Module Loading**: Remote modules are loaded on-demand
+
 4. **Shared Dependencies**: Singleton modules are shared via promises
+
 5. **Fallback Mechanism**: If remote fails, fallback or error handling
 
 Runtime flow:
+
 ```text
 Host → Request remote module → Remote container loaded →
 Module scope negotiated → Module exported →
 Shared dependencies resolved → Module returned to host
+
 ```
 
 ### 30. How would you handle bundle size monitoring in CI/CD?
 **Answer:**
+
 ```yaml
 # GitHub Actions example
+
 - name: Build
   run: npm run build
 
@@ -525,8 +599,10 @@ Shared dependencies resolved → Module returned to host
     fi
 
 # Or use bundlesize
+
 - name: Check bundle size
   run: npx bundlesize --config .bundlesizerc.json
+
 ```
 
 ```json
@@ -536,6 +612,7 @@ Shared dependencies resolved → Module returned to host
   "maxSize": "250 kB",
   "compression": "gzip"
 }
+
 ```
 
 ---
@@ -545,6 +622,7 @@ Shared dependencies resolved → Module returned to host
 ### 31. How does Webpack's caching mechanism work internally?
 **Answer:**
 Webpack uses filesystem caching:
+
 - Stores build metadata (resolved dependencies, transformed code)
 - On subsequent builds, checks if files changed
 - Only recomputes changed modules
@@ -554,9 +632,13 @@ Cache location: `node_modules/.cache/webpack`
 
 ### 32. What happens when a loader throws an error during compilation?
 **Answer:**
+
 1. Webpack stops compilation
+
 2. Error is logged with file location and loader
+
 3. If dev server is running, waits for file changes
+
 4. No output is generated until error is fixed
 
 Debugging: Check loader options, file syntax, and dependencies.
@@ -564,16 +646,19 @@ Debugging: Check loader options, file syntax, and dependencies.
 ### 33. How do you handle circular dependencies in Webpack?
 **Answer:**
 Webpack handles circular dependencies but may cause issues:
+
 - Modules may be partially loaded
 - `export` values may be undefined at import time
 
 Solutions:
+
 - Refactor to remove circular dependencies
 - Use dependency injection
 - Lazy load one side of the cycle
 
 ### 34. What is the impact of `devtool` settings on build performance?
 **Answer:**
+
 | devtool | Speed | Quality | Use Case |
 |---------|-------|---------|----------|
 | `eval` | Fast | Low | Development |
@@ -584,6 +669,7 @@ Solutions:
 
 ### 35. How do you test Webpack configurations?
 **Answer:**
+
 ```javascript
 // webpack.test.js
 const webpack = require('webpack');
@@ -606,6 +692,7 @@ describe('Webpack Config', () => {
     });
   });
 });
+
 ```
 
 ---
@@ -615,13 +702,17 @@ describe('Webpack Config', () => {
 This comprehensive guide covers build tools from fundamentals to advanced concepts. Key areas include:
 
 1. **Webpack**: Entry/output, loaders, plugins, optimization
+
 2. **Vite**: Modern tooling with native ES modules
+
 3. **Turbopack**: Next-generation incremental bundler
+
 4. **Optimization**: Code splitting, tree shaking, compression
 
 Understanding these concepts is essential for modern frontend development and technical interviews.
 
 ## References & Learn More
+
 - [Webpack Documentation](https://webpack.js.org/)
 - [Vite Documentation](https://vitejs.dev/)
 - [Turbopack Documentation](https://turbo.build/pack)

@@ -21,14 +21,19 @@
 │   type B = IsString<number>;  // "no"                           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
 
 1. **Type computation**: Create types based on other types
+
 2. **Type narrowing**: Filter types based on conditions
+
 3. **Library design**: Create flexible, type-safe APIs
+
 4. **Runtime to compile-time**: Map runtime logic to type system
+
 5. **Complex transformations**: Build sophisticated type utilities
 
 ## How It Works
@@ -42,6 +47,7 @@ type IsString<T> = T extends string ? true : false;
 type A = IsString<string>;  // true
 type B = IsString<number>;  // false
 type C = IsString<"hello">; // true (string literal extends string)
+
 ```
 
 ### Distributing Over Unions
@@ -57,6 +63,7 @@ type StrArr = ToArray<string | number>;
 type ToArrayNonDist<T> = [T] extends [any] ? T[] : never;
 type Result = ToArrayNonDist<string | number>;
 // (string | number)[]
+
 ```
 
 ### Nested Conditionals
@@ -74,6 +81,7 @@ type TypeName<T> =
 type A = TypeName<string>;    // "string"
 type B = TypeName<() => void>; // "function"
 type C = TypeName<string[]>;   // "object"
+
 ```
 
 ### The `infer` Keyword
@@ -90,6 +98,7 @@ type UnpackPromise<T> = T extends Promise<infer U> ? U : T;
 
 type A = UnpackPromise<Promise<string>>;  // string
 type B = UnpackPromise<number>;           // number
+
 ```
 
 ## Code Examples
@@ -156,6 +165,7 @@ type DeepFlatten<T> = T extends (infer U)[] ? DeepFlatten<U> : T;
 
 type Nested = number[][][];
 type Flat = DeepFlatten<Nested>; // number
+
 ```
 
 ### Complex Patterns
@@ -191,6 +201,7 @@ type Discriminate<U, K extends string, V> =
   U extends { [P in K]: V } ? U : never;
 
 type Shape =
+
   | { kind: "circle"; radius: number }
   | { kind: "rectangle"; width: number; height: number };
 
@@ -199,6 +210,7 @@ type Circle = Discriminate<Shape, "kind", "circle">;
 
 type Rectangle = Discriminate<Shape, "kind", "rectangle">;
 // { kind: "rectangle"; width: number; height: number }
+
 ```
 
 ## Common Mistakes
@@ -213,6 +225,7 @@ type A = IsNever<never>; // never (not true!)
 // ✅ Fix: Wrap in tuple to prevent distribution
 type IsNever<T> = [T] extends [never] ? true : false;
 type B = IsNever<never>; // true
+
 ```
 
 ### 2. Using `any` Instead of `unknown`
@@ -223,6 +236,7 @@ type BadReturnType<T> = T extends (...args: any[]) => any ? any : never;
 
 // ✅ Good: Preserve type information
 type GoodReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
 ```
 
 ### 3. Overcomplicating Conditionals
@@ -242,6 +256,7 @@ type Complex<T> =
 // ✅ Better: Use a helper type
 type Primitive = "str" | "num" | "bool";
 type GetType<T> = T extends string ? "str" : T extends number ? "num" : "bool";
+
 ```
 
 ## Best Practices
@@ -264,9 +279,11 @@ type IsString<T> = T extends string ? true : false;
 
 // 5. Document complex conditional types with comments
 /**
- * Extracts the resolved type of a Promise or returns the type itself.
+
+ - Extracts the resolved type of a Promise or returns the type itself.
  */
 type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
+
 ```
 
 ## Performance Considerations
@@ -282,75 +299,97 @@ type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
 ### Beginner
 
 1. **What is a conditional type?**
+
    - A type that selects types based on conditions using `extends ? :`
 
 2. **How do you check if a type is a string?**
+
    ```typescript
    type IsString<T> = T extends string ? true : false;
+
 ```
 
 3. **What is the `infer` keyword?**
+
    - Used in conditional types to extract/infer types
 
 4. **Do conditional types distribute over unions?**
+
    - Yes, automatically
 
 5. **How do you prevent distribution?**
+
    - Wrap the checked type in a tuple: `[T] extends [any]`
 
 ### Intermediate
 
 6. **Write a type that extracts array element type**
+
    ```typescript
    type ElementOf<T> = T extends (infer E)[] ? E : never;
+
 ```
 
 7. **How do you create a deep readonly type?**
+
    - Use recursive conditional types with mapped types
 
 8. **What is the difference between `any` and `unknown` in conditional types?**
+
    - `unknown` preserves type safety; `any` bypasses it
 
 9. **How do you extract function parameter types?**
+
    - Use `infer` with function type pattern: `T extends (...args: infer P) => any ? P : never`
 
 10. **Can you have async conditional types?**
+
     - No, conditional types are evaluated at compile time
 
 ### Senior
 
 11. **Explain distribution in conditional types**
+
     - When T is a union, the conditional type distributes over each union member
 
 12. **How do you create a type-safe equals function?**
+
     - Use conditional types to enforce type equality
 
 13. **Design a type that recursively makes all properties optional**
+
     - Use recursive conditional types with Partial
 
 14. **How do you handle circular type references?**
+
     - Use interfaces or limit recursion depth
 
 ### FAANG-style
 
 15. **Implement a type-safe deep merge**
+
     - Use conditional types to merge object types recursively
 
 16. **Create a type-safe route matcher**
+
     - Parse route parameters and infer types
 
 17. **Build a type-safe query language**
+
     - Use conditional types to validate query syntax
 
 ### Follow-ups
 
 18. **How do conditional types interact with generics?**
+
     - Generic type parameters can be used in conditional type checks
 
 19. **Can you use conditional types in mapped types?**
+
     - Yes: `{ [K in keyof T]: T[K] extends string ? string : number }`
 
 20. **How do you debug complex conditional types?**
+
     - Use IDE hover, create intermediate type aliases, or use `@ts-expect-error`
 
 ## Summary
@@ -379,6 +418,7 @@ type TypeName<T> =
 type DeepReadonly<T> =
   T extends object ? { readonly [K in keyof T]: DeepReadonly<T[K]> } :
   T;
+
 ```
 
 ## References & Learn More

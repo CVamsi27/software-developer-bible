@@ -59,6 +59,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### __proto__ vs prototype
@@ -124,6 +125,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Constructor Functions
@@ -167,6 +169,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 │  • All instances share the same greet() method             │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Class-Based Inheritance
@@ -221,6 +224,7 @@ A **Prototype** is an object from which other objects inherit properties and met
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -241,6 +245,7 @@ dog.name = 'Rex';
 console.log(dog.speak());  // "Rex makes a sound"
 
 // dog inherits from animal via prototype chain
+
 ```
 
 ### Constructor Function
@@ -267,6 +272,7 @@ console.log(ford.drive());   // "Ford Mustang is driving"
 
 // Shared method via prototype
 console.log(tesla.drive === ford.drive);  // true
+
 ```
 
 ### hasOwnProperty
@@ -286,6 +292,7 @@ for (const key in person) {
     console.log(`${key}: ${person[key]}`);
   }
 }
+
 ```
 
 ### Object.create
@@ -310,6 +317,7 @@ console.log(person.toString());  // "Alice"
 // Create object with null prototype
 const empty = Object.create(null);
 console.log(empty.toString);  // undefined (no Object.prototype)
+
 ```
 
 ### Inheritance Patterns
@@ -358,6 +366,7 @@ class Dog2 extends Animal2 {
     return `${this.name} barks`;
   }
 }
+
 ```
 
 ### Prototype Method Override
@@ -393,6 +402,7 @@ console.log(rect.toString());    // "Rectangle(5x10)"
 console.log(square.toString());  // "Square(5)"
 console.log(rect.area());        // 50
 console.log(square.area());      // 25
+
 ```
 
 ### Prototype Inspection
@@ -424,6 +434,7 @@ function getPrototypeMethods(obj: any): string[] {
 
 console.log(getPrototypeMethods(obj));
 // ['constructor', 'toString', 'valueOf', 'hasOwnProperty', ...]
+
 ```
 
 ## Real-World Use Cases
@@ -450,6 +461,7 @@ myList.push(2);
 myList.push(3);
 
 console.log(myList.map((x: number) => x * 2));  // [2, 4, 6]
+
 ```
 
 ### 2. Mixin Pattern
@@ -498,6 +510,7 @@ class UserService {
 const service = new UserService();
 service.addUser({ name: 'Alice' });
 console.log(service.serialize());
+
 ```
 
 ### 3. Plugin System
@@ -537,6 +550,7 @@ class PluginManager {
     }
   }
 }
+
 ```
 
 ### 4. Event Emitter
@@ -584,6 +598,7 @@ class Logger extends EventEmitter {
 const logger = new Logger();
 logger.on('log', (msg: string) => console.log(`Listener: ${msg}`));
 logger.log('Hello');  // Triggers listener
+
 ```
 
 ## Common Mistakes
@@ -615,6 +630,7 @@ PersonFixed.prototype.greet = function() {
 };
 
 console.log(PersonFixed.prototype.constructor === PersonFixed);  // true
+
 ```
 
 ### 2. Modifying Built-in Prototypes
@@ -632,6 +648,7 @@ Array.prototype.last = function() {
 function last<T>(arr: T[]): T | undefined {
   return arr[arr.length - 1];
 }
+
 ```
 
 ### 3. Confusing __proto__ and prototype
@@ -652,6 +669,7 @@ console.log(Person.prototype);  // { constructor: Person }
 // Don't use __proto__ directly
 // Use Object.getPrototypeOf() instead
 console.log(Object.getPrototypeOf(alice) === Person.prototype);  // true
+
 ```
 
 ### 4. Forgetting to Call super()
@@ -671,6 +689,7 @@ class Dog extends Animal {
     this.breed = breed;
   }
 }
+
 ```
 
 ## Best Practices
@@ -695,6 +714,7 @@ function PersonLegacy(name: string) {
 PersonLegacy.prototype.greet = function() {
   return `Hello, ${this.name}`;
 };
+
 ```
 
 ### 2. Prefer Composition Over Inheritance
@@ -718,6 +738,7 @@ class Animal2 {
 
 const dog = new Animal2('Rex', 'barks');
 const cat = new Animal2('Whiskers', 'meows');
+
 ```
 
 ### 3. Freeze Prototypes When Needed
@@ -730,6 +751,7 @@ const frozenObj = Object.freeze({
 
 // Or freeze entire prototype
 Object.freeze(Array.prototype);
+
 ```
 
 ### 4. Use TypeScript Interfaces
@@ -750,6 +772,7 @@ class Dog implements Speakable, Nammable {
     return `${this.name} barks`;
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -770,6 +793,7 @@ for (let i = 0; i < 100; i++) {
 console.log(current.level);  // Traverses 100 prototypes
 
 // Better: Keep prototype chains shallow
+
 ```
 
 ### Method Sharing
@@ -791,6 +815,7 @@ function PersonFixed(name: string) {
 PersonFixed.prototype.greet = function() {  // Shared by all instances
   return `Hello, ${this.name}`;
 };
+
 ```
 
 ## Interview Questions
@@ -808,6 +833,7 @@ A: The prototype chain is a series of objects linked by their prototype referenc
 **Q3: What is the difference between `__proto__` and `prototype`?**
 
 A:
+
 - `__proto__`: Property on every object that points to its prototype (deprecated, use `Object.getPrototypeOf()`)
 - `prototype`: Property on functions that becomes the prototype of objects created with `new`
 
@@ -824,9 +850,13 @@ A: `Object.create` creates a new object with a specified prototype. It's used to
 **Q6: How do you implement inheritance in JavaScript?**
 
 A: Several ways:
+
 1. Prototype chaining: `Dog.prototype = Object.create(Animal.prototype)`
+
 2. ES6 classes: `class Dog extends Animal`
+
 3. Constructor stealing: `Animal.call(this, name)`
+
 4. Mixins: `Object.assign(Dog.prototype, animalMethods)`
 
 **Q7: What is the `constructor` property?**
@@ -836,12 +866,14 @@ A: The `constructor` property is a reference to the function that created the ob
 **Q8: How do you properly set up prototype inheritance?**
 
 A:
+
 ```typescript
 function Child() {
   Parent.call(this);  // Call parent constructor
 }
 Child.prototype = Object.create(Parent.prototype);
 Child.prototype.constructor = Child;  // Fix constructor
+
 ```
 
 **Q9: What is method overriding?**
@@ -851,10 +883,12 @@ A: Method overriding is when a child class provides a different implementation o
 **Q10: How do you check if an object is an instance of a class?**
 
 A: Use the `instanceof` operator:
+
 ```typescript
 const dog = new Dog('Rex');
 console.log(dog instanceof Dog);     // true
 console.log(dog instanceof Animal);  // true
+
 ```
 
 ### Senior (10-15 questions)
@@ -874,6 +908,7 @@ A: Engines use hidden classes, inline caching, and JIT compilation to speed up p
 **Q14: What is the difference between prototypal and classical inheritance?**
 
 A:
+
 - **Prototypal**: Objects inherit directly from other objects via prototype chain
 - **Classical**: Classes are blueprints, instances are created from classes
 
@@ -882,6 +917,7 @@ JavaScript uses prototypal inheritance, with classes as syntactic sugar.
 **Q15: How do you implement multiple inheritance in JavaScript?**
 
 A: JavaScript doesn't support multiple inheritance directly. Use mixins:
+
 ```typescript
 const Serializable = { serialize() {} };
 const Loggable = { log() {} };
@@ -892,6 +928,7 @@ class MyClass extends BaseClass {
     Object.assign(this, Serializable, Loggable);
   }
 }
+
 ```
 
 ### FAANG-style (5-10 questions)
@@ -899,6 +936,7 @@ class MyClass extends BaseClass {
 **Q16: Design a prototype-based object system.**
 
 A:
+
 ```typescript
 class PrototypeSystem {
   private prototypes = new Map<string, any>();
@@ -925,11 +963,13 @@ class PrototypeSystem {
     this.prototypes.set(name, child);
   }
 }
+
 ```
 
 **Q17: How would you implement a class system without using classes?**
 
 A:
+
 ```typescript
 function createClass(constructor: Function, methods: any) {
   const proto = Object.create(null);
@@ -960,11 +1000,13 @@ const Person = createClass(
 
 const alice = Person('Alice');
 console.log(alice.greet());  // "Hello, Alice"
+
 ```
 
 **Q18: Analyze the memory usage of prototype-based inheritance.**
 
 A:
+
 - **Shared methods**: One copy per prototype, not per instance
 - **Instance properties**: One copy per instance
 - **Prototype chain**: Each level adds a reference
@@ -975,18 +1017,27 @@ Memory efficient: Methods are shared. Each instance only stores unique propertie
 **Q19: How do you handle prototype pollution attacks?**
 
 A:
+
 1. Use `Object.freeze` to prevent modifications
+
 2. Use `Object.create(null)` for objects without prototype
+
 3. Validate input before adding to prototypes
+
 4. Use hasOwnProperty checks
+
 5. Avoid modifying built-in prototypes
 
 **Q20: What are the security implications of prototype pollution?**
 
 A:
+
 1. **Prototype pollution**: Malicious code can modify Object.prototype
+
 2. **Property injection**: Attackers can inject properties
+
 3. **Privilege escalation**: Can modify security-related properties
+
 4. **Mitigation**: Input validation, freezing prototypes, using null prototypes
 
 ### Follow-ups (5-10 questions)
@@ -994,6 +1045,7 @@ A:
 **Q21: Can you give an example of a prototype-related bug in production?**
 
 A: Common bug:
+
 ```typescript
 // Bug: Modifying Object.prototype
 Object.prototype.isEmpty = function() {
@@ -1007,15 +1059,21 @@ console.log({ a: 1 }.isEmpty());  // false
 
 // Fix: Don't modify built-in prototypes
 // Use utility functions instead
+
 ```
 
 **Q22: How do you debug prototype-related issues?**
 
 A:
+
 1. **Chrome DevTools**: Inspect prototype chain in debugger
+
 2. **console.log**: Log `Object.getPrototypeOf(obj)`
+
 3. **instanceof**: Check prototype chain membership
+
 4. **hasOwnProperty**: Distinguish own vs inherited properties
+
 5. **TypeScript**: Type checking prevents many issues
 
 **Q23: What is the relationship between prototypes and TypeScript?**
@@ -1025,6 +1083,7 @@ A: TypeScript compiles to JavaScript, using prototypes under the hood. Classes i
 **Q24: How do frameworks use prototypes?**
 
 A:
+
 - **React**: Class components use prototype methods
 - **Vue**: Options API uses prototype for methods
 - **Angular**: Dependency injection via prototypes
@@ -1033,13 +1092,21 @@ A:
 **Q25: What are best practices for working with prototypes?**
 
 A:
+
 1. Use class syntax for clarity
+
 2. Prefer composition over inheritance
+
 3. Keep prototype chains shallow
+
 4. Don't modify built-in prototypes
+
 5. Use TypeScript for type safety
+
 6. Freeze prototypes when needed
+
 7. Use Object.create(null) for dictionaries
+
 8. Document prototype behavior
 
 ## Summary
@@ -1047,11 +1114,17 @@ A:
 Prototypes are fundamental to JavaScript:
 
 1. **Definition**: Objects inherit from other objects via prototype chain
+
 2. **__proto__ vs prototype**: Instance reference vs function property
+
 3. **Constructor functions**: Create objects with shared methods
+
 4. **Class syntax**: Modern way to work with prototypes
+
 5. **Inheritance**: Enable code reuse and hierarchies
+
 6. **Performance**: Shared methods, shallow chains preferred
+
 7. **Best practices**: Use classes, prefer composition, freeze when needed
 
 Understanding prototypes is essential for mastering JavaScript and answering interview questions.
@@ -1123,6 +1196,7 @@ DEBUGGING:
 • Object.getPrototypeOf(): Check prototype
 • instanceof: Check chain membership
 • hasOwnProperty(): Distinguish own vs inherited
+
 ```
 
 ## References & Learn More

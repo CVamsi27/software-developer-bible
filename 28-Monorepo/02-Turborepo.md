@@ -4,6 +4,7 @@
 Turborepo is a high-performance build system for JavaScript and TypeScript codebases, designed for scaling monorepos. It provides intelligent caching, parallelization, and task scheduling to dramatically speed up builds and development workflows.
 
 ## Why Do We Need It?
+
 - **Build Speed**: Intelligent caching reduces build times by 85%+
 - **Parallelization**: Run tasks in parallel across packages
 - **Remote Sharing**: Share cache across team and CI/CD
@@ -48,11 +49,13 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 │  │  • Content-based hashing                                    │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Pipeline Configuration
 
 ### turbo.json Structure
+
 ```json
 {
   "$schema": "https://turbo.build/schema.json",
@@ -83,6 +86,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
     }
   }
 }
+
 ```
 
 ## Code Examples
@@ -107,6 +111,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
     }
   }
 }
+
 ```
 
 ```json
@@ -125,6 +130,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
     "turbo": "^1.10.0"
   }
 }
+
 ```
 
 ### 2. Task Dependencies
@@ -154,6 +160,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
     }
   }
 }
+
 ```
 
 ### 3. Package-Specific Configuration
@@ -175,6 +182,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
     }
   }
 }
+
 ```
 
 ### 4. Remote Caching Setup
@@ -189,6 +197,7 @@ npx turbo link
 # Or use self-hosted remote cache
 export TURBO_TOKEN=your-token
 export TURBO_TEAM=your-team
+
 ```
 
 ```json
@@ -205,6 +214,7 @@ export TURBO_TEAM=your-team
     "signature": true
   }
 }
+
 ```
 
 ### 5. Custom Turborepo Tasks
@@ -238,6 +248,7 @@ export function updateDependencies() {
   execSync('pnpm update -r', { stdio: 'inherit' });
   execSync('turbo run build', { stdio: 'inherit' });
 }
+
 ```
 
 ### 6. Turborepo with Docker
@@ -271,6 +282,7 @@ COPY --from=base /app/node_modules ./node_modules
 
 EXPOSE 3000
 CMD ["node", "dist/server.js"]
+
 ```
 
 ### 7. Turborepo CI/CD Configuration
@@ -290,6 +302,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
@@ -314,6 +327,7 @@ jobs:
 
       - name: Test
         run: pnpm turbo test
+
 ```
 
 ### 8. Turborepo with Changesets
@@ -331,6 +345,7 @@ jobs:
   "updateInternalDependencies": "patch",
   "ignore": []
 }
+
 ```
 
 ```bash
@@ -342,11 +357,13 @@ pnpm changeset version
 
 # Publish packages
 pnpm changeset publish
+
 ```
 
 ## Real-World Use Cases
 
 ### Large-Scale Application
+
 ```text
 Monorepo Structure:
 ┌─────────────────────────────────────────────────────────────────┐
@@ -362,22 +379,31 @@ Monorepo Structure:
 │                                                                 │
 │  Total Build Time: 117s → 7.7s (93% faster)                    │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Common Mistakes
 
 1. **Incorrect outputs**: Not specifying build outputs correctly
+
 2. **Missing dependencies**: Not declaring task dependencies
+
 3. **Ignoring global dependencies**: Forgetting env files or configs
+
 4. **Over-caching**: Caching tasks that shouldn't be cached
+
 5. **Not using remote caching**: Missing out on team-wide cache
 
 ## Best Practices
 
 1. **Define clear outputs**: Specify exactly what each task produces
+
 2. **Use content hashing**: Let Turborepo determine when to rebuild
+
 3. **Leverage remote caching**: Share cache across team and CI/CD
+
 4. **Monitor cache hit rates**: Track and optimize cache effectiveness
+
 5. **Use affected commands**: Only run tasks for changed packages
 
 ## Performance Considerations
@@ -396,75 +422,99 @@ Cache Hit Rate Optimization:
 │  • Verify environment variables                                │
 │  • Check for non-deterministic builds                          │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
 
 ### Beginner (5)
+
 1. **What is Turborepo?**
+
    - Answer: A high-performance build system for JavaScript/TypeScript monorepos with intelligent caching and parallelization.
 
 2. **What are the benefits of Turborepo?**
+
    - Answer: Faster builds through caching, parallelization, remote cache sharing, and zero configuration.
 
 3. **What is a turbo.json pipeline?**
+
    - Answer: Configuration that defines how tasks relate to each other, what they cache, and their dependencies.
 
 4. **How does Turborepo caching work?**
+
    - Answer: Content-based hashing of inputs, stores outputs locally and remotely, reuses cache when inputs haven't changed.
 
 5. **What is remote caching?**
+
    - Answer: Sharing build cache across team members and CI/CD via Vercel or self-hosted solutions.
 
 ### Intermediate (5)
+
 6. **How do you configure task dependencies in Turborepo?**
+
    - Answer: Use `dependsOn` in turbo.json to specify which tasks must run before others.
 
 7. **What are task inputs and outputs?**
+
    - Answer: Inputs are files that affect task execution; outputs are files produced by the task that should be cached.
 
 8. **How do you run tasks for specific packages?**
+
    - Answer: Use `--filter` flag: `turbo run build --filter=@myorg/web`
 
 9. **What is the difference between `^build` and `build`?**
+
    - Answer: `^build` runs build in dependencies first; `build` only runs in the current package.
 
 10. **How do you handle environment variables in Turborepo?**
+
     - Answer: Use `globalEnv` or task-specific `env` in turbo.json to declare environment dependencies.
 
 ### Senior (10)
 11. **How does Turborepo determine when to use cache?**
+
     - Answer: Content-based hashing of all inputs (files, dependencies, environment), compares with stored cache metadata.
 
 12. **Explain Turborepo's parallelization strategy**
+
     - Answer: Analyzes dependency graph, identifies independent tasks, runs them in parallel using worker threads.
 
 13. **How do you optimize Turborepo cache hit rates?**
+
     - Answer: Minimize input changes, use stable dependencies, avoid unnecessary env vars, use proper outputs.
 
 14. **What is the impact of global dependencies on caching?**
+
     - Answer: Changes to global dependencies invalidate cache for all tasks, so minimize them.
 
 15. **How do you debug Turborepo cache issues?**
+
     - Answer: Use `--dry` and `--verbose` flags, check `.turbo` directory, analyze cache inputs.
 
 16. **How do you handle non-deterministic tasks?**
+
     - Answer: Mark as `cache: false` or use proper inputs/outputs to capture all affecting files.
 
 17. **What is the difference between local and remote cache?**
+
     - Answer: Local cache is per machine; remote cache is shared across team/CI via Vercel or self-hosted.
 
 18. **How do you secure remote cache?**
+
     - Answer: Use token-based authentication, restrict access, enable signature verification.
 
 19. **How do you migrate from Lerna to Turborepo?**
+
     - Answer: Keep package structure, replace Lerna commands with Turborepo, configure turbo.json.
 
 20. **How do you monitor Turborepo performance?**
+
     - Answer: Track cache hit rates, build times, use `--dry` to analyze task execution.
 
 ### FAANG-style (5)
 21. **Design a Turborepo setup for a large organization**
+
     - Answer:
       - Package structure with clear boundaries
       - Remote caching with Vercel/self-hosted
@@ -473,6 +523,7 @@ Cache Hit Rate Optimization:
       - Developer tooling and documentation
 
 22. **How would you optimize Turborepo for a 500+ package monorepo?**
+
     - Answer:
       - Remote caching with high hit rates
       - Parallelization across packages
@@ -481,6 +532,7 @@ Cache Hit Rate Optimization:
       - Monitoring and profiling
 
 23. **Explain Turborepo's architecture at scale**
+
     - Answer:
       - Task scheduler with dependency graph
       - Content-based hashing
@@ -489,6 +541,7 @@ Cache Hit Rate Optimization:
       - Plugin system for extensions
 
 24. **How do you handle Turborepo in a microservices architecture?**
+
     - Answer:
       - Service-specific pipelines
       - Independent deployments
@@ -496,6 +549,7 @@ Cache Hit Rate Optimization:
       - Coordinated releases
 
 25. **Design a CI/CD pipeline with Turborepo**
+
     - Answer:
       - Detect changes with `turbo run build --dry`
       - Run affected tests
@@ -505,18 +559,23 @@ Cache Hit Rate Optimization:
 
 ### Follow-ups (5)
 26. **How do you handle Turborepo with Docker?**
+
     - Answer: Multi-stage builds, copy dependency files first for layer caching, use turbo prune for minimal images.
 
 27. **What is the impact of Turborepo on developer experience?**
+
     - Answer: Faster builds, less waiting, better productivity, but requires understanding caching concepts.
 
 28. **How do you handle Turborepo in monorepos with multiple languages?**
+
     - Answer: Use language-specific task runners within Turborepo, configure appropriate inputs/outputs.
 
 29. **How do you handle Turborepo with different Node.js versions?**
+
     - Answer: Use `.node-version` or `engines` in package.json, ensure consistent environments.
 
 30. **What are the limitations of Turborepo?**
+
     - Answer: JavaScript/TypeScript focus, learning curve for caching, remote cache costs, and complexity at scale.
 
 ## Summary

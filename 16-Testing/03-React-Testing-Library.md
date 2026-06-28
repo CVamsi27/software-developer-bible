@@ -7,6 +7,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 **Core Philosophy**: "The more your tests resemble the way your software is used, the more confidence they can give you."
 
 **Key Principles:**
+
 - Test what the user sees and does, not how the component is implemented
 - Prefer `getByRole` over `getByTestId` for accessibility-driven queries
 - Use `userEvent` over `fireEvent` for realistic user interactions
@@ -59,6 +60,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 │  │  within()  renderHook()                                ││
 │  └─────────────────────────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Query Priority Hierarchy
@@ -85,6 +87,7 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 │  8. getByTestId    │  Test IDs (last resort)               │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Testing User Flow
@@ -101,6 +104,7 @@ Example:
 render(<LoginForm />)  →  getByRole('button', {name: /login/i})
                         →  userEvent.click(button)
                         →  expect(mockSubmit).toHaveBeenCalled()
+
 ```
 
 ## Code Examples
@@ -230,6 +234,7 @@ describe("Counter", () => {
     expect(onChange).toHaveBeenCalledWith(1);
   });
 });
+
 ```
 
 ### Form Component Testing
@@ -392,6 +397,7 @@ describe("LoginForm", () => {
     expect(screen.getByRole("alert")).toHaveTextContent("Invalid credentials");
   });
 });
+
 ```
 
 ### Async Component Testing
@@ -542,6 +548,7 @@ describe("UserProfile", () => {
     expect(screen.queryByRole("button", { name: /edit profile/i })).not.toBeInTheDocument();
   });
 });
+
 ```
 
 ### Component with Context
@@ -645,6 +652,7 @@ describe("ThemedCard", () => {
     expect(screen.getByRole("button", { name: /switch to light mode/i })).toBeInTheDocument();
   });
 });
+
 ```
 
 ### Complex Form with React Hook Form
@@ -826,6 +834,7 @@ describe("RegistrationForm", () => {
     });
   });
 });
+
 ```
 
 ### Custom Hook Testing
@@ -975,6 +984,7 @@ describe("useCounter", () => {
     expect(result.current.count).toBe(10);
   });
 });
+
 ```
 
 ### Testing with Mock Service Worker
@@ -1110,6 +1120,7 @@ describe("ProductList", () => {
     expect(screen.getByRole("status")).toHaveTextContent("Loading products...");
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -1157,6 +1168,7 @@ describe("Checkout Flow", () => {
     });
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -1171,6 +1183,7 @@ expect(screen.getByTestId("user-name")).toHaveTextContent("John");
 // ✅ GOOD: Using getByRole or getByText
 <div role="heading" aria-level={2}>John</div>
 expect(screen.getByRole("heading", { name: /john/i })).toBeInTheDocument();
+
 ```
 
 ### 2. Not Using userEvent
@@ -1182,6 +1195,7 @@ fireEvent.click(button);
 // ✅ GOOD: Using userEvent
 const user = userEvent.setup();
 await user.click(button);
+
 ```
 
 ### 3. Testing Implementation Details
@@ -1192,18 +1206,27 @@ expect(component.state.isLoading).toBe(true);
 
 // ✅ GOOD: Testing visible output
 expect(screen.getByRole("status")).toHaveTextContent("Loading...");
+
 ```
 
 ## Best Practices
 
 1. **Query by role, label, or text** before test ID
+
 2. **Use `userEvent`** for realistic interactions
+
 3. **Test accessibility** by default
+
 4. **Avoid testing implementation details**
+
 5. **Use `waitFor`** for async operations
+
 6. **Mock at the network level** with MSW when possible
+
 7. **Use `screen`** instead of destructuring `render`
+
 8. **Test error states** and loading states
+
 9. **Keep tests focused** on one behavior
 10. **Use custom render functions** for providers
 
@@ -1225,6 +1248,7 @@ await waitFor(() => {}, { timeout: 100 });
 
 // ✅ GOOD: Use default or appropriate timeout
 await waitFor(() => {});
+
 ```
 
 ## Interview Questions
@@ -1370,6 +1394,7 @@ React Testing Library is the standard for testing React applications because it:
 - **Has excellent documentation** and community support
 
 Key takeaways:
+
 - Query by role, label, or text before test ID
 - Use `userEvent` for realistic user interactions
 - Test what the user sees, not how the component is implemented

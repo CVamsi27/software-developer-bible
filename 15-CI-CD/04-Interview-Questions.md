@@ -13,6 +13,7 @@
 **CD (Continuous Delivery/Deployment)**: Automatically deploy code changes to production.
 
 **Importance:**
+
 - Faster release cycles
 - Reduced manual errors
 - Early bug detection
@@ -39,13 +40,21 @@
 **Answer:**
 
 ```text
+
 1. Source     --> Code commit triggers pipeline
+
 2. Build      --> Compile code, build artifacts
+
 3. Test       --> Unit tests, integration tests
+
 4. Security   --> Vulnerability scanning
+
 5. Package    --> Create Docker image/artifacts
+
 6. Deploy     --> Deploy to staging/production
+
 7. Monitor    --> Verify deployment health
+
 ```
 
 ---
@@ -64,9 +73,11 @@ RUN npm ci --only=production
 COPY . .
 EXPOSE 3000
 CMD ["node", "server.js"]
+
 ```
 
 **Benefits:**
+
 - Reproducible builds
 - Environment consistency
 - Version control for infrastructure
@@ -94,6 +105,7 @@ CMD ["node", "server.js"]
 Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerized applications.
 
 **Key Features:**
+
 - Self-healing
 - Horizontal scaling
 - Service discovery
@@ -107,6 +119,7 @@ Kubernetes is a container orchestration platform that automates deployment, scal
 **Answer:**
 
 A Deployment manages ReplicaSets and Pods, providing:
+
 - Rolling updates
 - Rollbacks
 - Scaling
@@ -125,8 +138,10 @@ spec:
   template:
     spec:
       containers:
+
         - name: myapp
           image: myapp:1.0.0
+
 ```
 
 ---
@@ -138,12 +153,14 @@ spec:
 Managing infrastructure through code instead of manual processes.
 
 **Tools:**
+
 - Terraform
 - AWS CloudFormation
 - Pulumi
 - Ansible
 
 **Benefits:**
+
 - Version control
 - Reproducibility
 - Automation
@@ -165,11 +182,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v4
       - run: npm ci
       - run: npm test
       - run: docker build -t myapp .
       - run: docker push myapp:latest
+
 ```
 
 ---
@@ -181,6 +200,7 @@ jobs:
 Version control tracks changes to code over time.
 
 **Benefits:**
+
 - Collaboration
 - History tracking
 - Branching/merging
@@ -188,6 +208,7 @@ Version control tracks changes to code over time.
 - Audit trail
 
 **Tools:**
+
 - Git
 - GitHub
 - GitLab
@@ -202,12 +223,14 @@ Version control tracks changes to code over time.
 An architecture style where applications are built as small, independent services.
 
 **Benefits:**
+
 - Independent deployment
 - Technology flexibility
 - Scalability
 - Fault isolation
 
 **Challenges:**
+
 - Distributed system complexity
 - Network latency
 - Data consistency
@@ -221,6 +244,7 @@ An architecture style where applications are built as small, independent service
 A storage system for Docker images.
 
 **Examples:**
+
 - Docker Hub
 - AWS ECR
 - Google GCR
@@ -248,6 +272,7 @@ A storage system for Docker images.
 A Service provides stable networking for Pods.
 
 **Types:**
+
 - ClusterIP: Internal only
 - NodePort: Expose on node IP
 - LoadBalancer: Cloud load balancer
@@ -261,6 +286,7 @@ A Service provides stable networking for Pods.
 The package manager for Kubernetes.
 
 **Benefits:**
+
 - Packages multiple manifests
 - Manages releases
 - Configurable via values
@@ -295,6 +321,7 @@ A webhook triggers a CI/CD pipeline when an event occurs (e.g., code push, PR cr
 A production-like environment used for testing before deployment.
 
 **Purpose:**
+
 - Integration testing
 - Performance testing
 - User acceptance testing
@@ -309,6 +336,7 @@ A production-like environment used for testing before deployment.
 Gradually rolling out changes to a small subset of users.
 
 **Benefits:**
+
 - Reduced risk
 - Real-world testing
 - Easy rollback
@@ -322,6 +350,7 @@ Gradually rolling out changes to a small subset of users.
 Maintaining two identical environments and switching traffic between them.
 
 **Benefits:**
+
 - Zero downtime
 - Instant rollback
 - Easy testing
@@ -338,9 +367,11 @@ A technique to enable/disable features without deployment.
 if (featureFlags.newCheckout) {
   return newCheckoutFlow();
 }
+
 ```
 
 **Benefits:**
+
 - Decouple deployment from release
 - A/B testing
 - Gradual rollout
@@ -354,6 +385,7 @@ if (featureFlags.newCheckout) {
 Monitoring and understanding system state through logs, metrics, and traces.
 
 **Components:**
+
 - Logging (ELK, Loki)
 - Metrics (Prometheus, Grafana)
 - Tracing (Jaeger, Zipkin)
@@ -367,12 +399,14 @@ Monitoring and understanding system state through logs, metrics, and traces.
 A Git-centric approach to infrastructure and deployment.
 
 **Principles:**
+
 - Git as single source of truth
 - Automated deployment
 - Version control for infrastructure
 - Pull-based model
 
 **Tools:**
+
 - Argo CD
 - Flux
 
@@ -385,6 +419,7 @@ A Git-centric approach to infrastructure and deployment.
 Defining CI/CD pipelines in version-controlled files.
 
 **Examples:**
+
 - GitHub Actions (YAML)
 - GitLab CI (.gitlab-ci.yml)
 - Jenkins (Jenkinsfile)
@@ -398,6 +433,7 @@ Defining CI/CD pipelines in version-controlled files.
 Storing and versioning build artifacts.
 
 **Examples:**
+
 - Docker images (registry)
 - npm packages (npm registry)
 - Maven artifacts (Nexus)
@@ -424,6 +460,7 @@ Storing and versioning build artifacts.
 A tool for securely storing and accessing secrets.
 
 **Examples:**
+
 - HashiCorp Vault
 - AWS Secrets Manager
 - Azure Key Vault
@@ -438,6 +475,7 @@ A tool for securely storing and accessing secrets.
 Manages external HTTP/HTTPS access to Services.
 
 **Features:**
+
 - TLS termination
 - Host-based routing
 - Path-based routing
@@ -451,11 +489,13 @@ Manages external HTTP/HTTPS access to Services.
 An infrastructure layer for service communication.
 
 **Examples:**
+
 - Istio
 - Linkerd
 - Consul Connect
 
 **Features:**
+
 - Traffic management
 - Security (mTLS)
 - Observability
@@ -467,13 +507,21 @@ An infrastructure layer for service communication.
 **Answer:**
 
 1. **Automate everything** - Build, test, deploy
+
 2. **Version control** - All configuration and code
+
 3. **Fast feedback** - Short pipeline duration
+
 4. **Security scanning** - Integrate in pipeline
+
 5. **Monitoring** - Track pipeline health
+
 6. **Rollback strategy** - Automated rollback on failure
+
 7. **Environment parity** - Same across environments
+
 8. **Secrets management** - Never hardcode
+
 9. **Documentation** - Maintain runbooks
 10. **Continuous improvement** - Regular pipeline reviews
 
@@ -482,6 +530,7 @@ An infrastructure layer for service communication.
 ## Summary
 
 CI/CD interview questions cover:
+
 - Core concepts (CI, CD, pipelines)
 - Container technologies (Docker, Kubernetes)
 - Deployment strategies (blue-green, canary)
@@ -513,11 +562,13 @@ kubectl rollout undo deployment/myapp
 helm install myrelease ./mychart
 helm upgrade myrelease ./mychart
 helm rollback myrelease 1
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Documentation](https://docs.docker.com/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)

@@ -11,6 +11,7 @@
 Kubernetes (K8s) is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications.
 
 **Key Benefits:**
+
 - **Self-healing**: Restarts failed containers, replaces and reschedules containers
 - **Horizontal scaling**: Scale up/down automatically based on metrics
 - **Service discovery**: DNS-based service discovery and load balancing
@@ -25,11 +26,13 @@ Kubernetes (K8s) is an open-source container orchestration platform that automat
 **Answer:**
 
 A Pod is the smallest deployable unit in Kubernetes. It represents a single instance of a running process and can contain one or more containers that share:
+
 - Network namespace (same IP address)
 - Storage volumes
 - Process namespace
 
 **When to use multi-container Pods:**
+
 - Sidecar pattern (log shipping, proxies)
 - Ambassador pattern (service proxies)
 - Adapter pattern (output formatting)
@@ -76,11 +79,15 @@ Kubernetes uses DNS for service discovery:
 Service Name: myservice
 Namespace: production
 FQDN: myservice.production.svc.cluster.local
+
 ```
 
 **Methods:**
+
 1. **DNS**: CoreDNS resolves service names to Cluster IPs
+
 2. **Environment variables**: Injected into Pods at creation
+
 3. **Headless Services**: Return Pod IPs directly
 
 ---
@@ -111,15 +118,18 @@ spec:
   minReplicas: 2
   maxReplicas: 10
   metrics:
+
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
+
 ```
 
 **Metrics used:**
+
 - CPU utilization
 - Memory utilization
 - Custom metrics (requests/second)
@@ -138,6 +148,7 @@ spec:
 | Startup | Is initialization complete? | Delay other probes |
 
 **Probe Handlers:**
+
 - `exec`: Run command
 - `httpGet`: HTTP request
 - `tcpSocket`: TCP connection
@@ -156,14 +167,17 @@ kubectl create secret generic db-creds \
 
 # Use in Pod
 env:
+
   - name: DB_PASSWORD
     valueFrom:
       secretKeyRef:
         name: db-creds
         key: password
+
 ```
 
 **Best Practices:**
+
 - Use external secret stores (Vault)
 - Enable encryption at rest
 - Use RBAC to restrict access
@@ -182,22 +196,27 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 spec:
   tls:
+
     - hosts:
         - myapp.example.com
       secretName: tls-secret
   rules:
+
     - host: myapp.example.com
       http:
         paths:
+
           - path: /api
             backend:
               service:
                 name: api-service
                 port:
                   number: 80
+
 ```
 
 **Features:**
+
 - TLS termination
 - Host-based routing
 - Path-based routing
@@ -220,6 +239,7 @@ kubectl create -f pod.yaml
 
 # Creates or updates
 kubectl apply -f pod.yaml
+
 ```
 
 ---
@@ -230,6 +250,7 @@ kubectl apply -f pod.yaml
 
 ```text
 +----------------------------------------------------------+
+
 |                    Control Plane                           |
 |  +----------------+  +----------------+  +----------+    |
 |  |   API Server   |  |    Scheduler   |  |  etcd    |    |
@@ -239,7 +260,9 @@ kubectl apply -f pod.yaml
 |  |  Controller    |  |   Cloud        |                  |
 |  |  Manager       |  |   Controller   |                  |
 |  +----------------+  +----------------+                  |
+
 +----------------------------------------------------------+
+
 ```
 
 | Component | Responsibility |
@@ -268,6 +291,7 @@ metadata:
   name: my-pvc
 spec:
   accessModes:
+
     - ReadWriteOnce
   resources:
     requests:
@@ -275,9 +299,11 @@ spec:
 
 # Use in Pod
 volumes:
+
   - name: data
     persistentVolumeClaim:
       claimName: my-pvc
+
 ```
 
 ---
@@ -295,9 +321,11 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
+
 ```
 
 **Commands:**
+
 ```bash
 # Update image
 kubectl set image deployment/myapp myapp=myapp:2.0
@@ -307,6 +335,7 @@ kubectl rollout status deployment/myapp
 
 # Rollback
 kubectl rollout undo deployment/myapp
+
 ```
 
 ---
@@ -318,6 +347,7 @@ kubectl rollout undo deployment/myapp
 A DaemonSet ensures a Pod runs on all (or specific) nodes.
 
 **Use Cases:**
+
 - Log collectors (Fluentd, Filebeat)
 - Monitoring agents (Prometheus Node Exporter)
 - Network plugins (Calico, Weave)
@@ -334,8 +364,10 @@ spec:
   template:
     spec:
       containers:
+
         - name: fluentd
           image: fluentd:latest
+
 ```
 
 ---
@@ -363,9 +395,11 @@ spec:
       template:
         spec:
           containers:
+
             - name: backup
               image: backup:latest
           restartPolicy: OnFailure
+
 ```
 
 ---
@@ -375,11 +409,15 @@ spec:
 **Answer:**
 
 **Key Principles:**
+
 1. Every Pod gets a unique IP
+
 2. Pods can communicate without NAT
+
 3. Agents on a node can communicate with all Pods
 
 **Network Plugins (CNI):**
+
 - Calico: Network policy
 - Flannel: Simple overlay
 - Cilium: eBPF-based networking
@@ -401,9 +439,11 @@ kubectl config set-context --current --namespace=production
 
 # List resources in namespace
 kubectl get pods -n production
+
 ```
 
 **Use Cases:**
+
 - Environment isolation (dev, staging, prod)
 - Resource quotas per team
 - RBAC boundaries
@@ -423,10 +463,12 @@ kubectl taint nodes node1 key=value:NoSchedule
 
 # Toleration in Pod
 tolerations:
+
   - key: "key"
     operator: "Equal"
     value: "value"
     effect: "NoSchedule"
+
 ```
 
 ---
@@ -450,6 +492,7 @@ kubectl logs --previous <pod-name>
 # 3. Failed health checks
 # 4. Insufficient resources
 # 5. Incorrect command/args
+
 ```
 
 ---
@@ -475,6 +518,7 @@ kubectl logs --previous <pod-name>
 Helm is the package manager for Kubernetes.
 
 **Benefits:**
+
 - Packages multiple manifests into charts
 - Manages releases and rollbacks
 - Configurable via values files
@@ -489,6 +533,7 @@ helm upgrade myrelease ./mychart -f new-values.yaml
 
 # Rollback
 helm rollback myrelease 1
+
 ```
 
 ---
@@ -507,14 +552,18 @@ spec:
     matchLabels:
       app: web
   policyTypes:
+
     - Ingress
   ingress:
+
     - from:
         - podSelector:
             matchLabels:
               app: api
       ports:
+
         - port: 8080
+
 ```
 
 ---
@@ -532,6 +581,7 @@ kind: Role
 metadata:
   namespace: production
 rules:
+
   - apiGroups: [""]
     resources: ["pods"]
     verbs: ["get", "list"]
@@ -542,11 +592,13 @@ kind: RoleBinding
 metadata:
   name: pod-reader
 subjects:
+
   - kind: User
     name: jane
 roleRef:
   kind: Role
   name: pod-reader
+
 ```
 
 ---
@@ -556,12 +608,14 @@ roleRef:
 **Answer:**
 
 **Tools:**
+
 - **KubeFed**: Kubernetes-native federation
 - **Rancher**: Multi-cluster management UI
 - **Anthos**: Google's hybrid/multi-cloud platform
 - **Azure Arc**: Azure's hybrid platform
 
 **Strategies:**
+
 - GitOps with Argo CD
 - Service mesh (Istio, Linkerd)
 - Centralized monitoring
@@ -577,15 +631,19 @@ Init containers run before main containers and must complete successfully.
 ```yaml
 spec:
   initContainers:
+
     - name: init-db
       image: busybox
       command: ['sh', '-c', 'until nslookup db; do sleep 2; done']
   containers:
+
     - name: app
       image: myapp:1.0
+
 ```
 
 **Use Cases:**
+
 - Wait for dependencies
 - Database migrations
 - Configuration setup
@@ -597,6 +655,7 @@ spec:
 **Answer:**
 
 **Components:**
+
 - **Metrics Server**: Basic CPU/memory metrics
 - **Prometheus**: Metrics collection
 - **Grafana**: Visualization
@@ -610,6 +669,7 @@ kubectl top nodes
 
 # View events
 kubectl get events --sort-by=.metadata.creationTimestamp
+
 ```
 
 ---
@@ -630,6 +690,7 @@ spec:
   selector:
     matchLabels:
       app: myapp
+
 ```
 
 ---
@@ -639,13 +700,18 @@ spec:
 **Answer:**
 
 **Tools:**
+
 - **Argo CD**: GitOps continuous delivery
 - **Flux**: GitOps toolkit
 
 **Workflow:**
+
 1. Store manifests in Git
+
 2. Argo CD watches repository
+
 3. Automatically syncs changes
+
 4. Provides rollback via Git
 
 ---
@@ -655,12 +721,19 @@ spec:
 **Answer:**
 
 1. **RBAC**: Restrict access with roles
+
 2. **Network Policies**: Limit pod-to-pod communication
+
 3. **Pod Security Standards**: Run as non-root
+
 4. **Image scanning**: Use Trivy/Clair
+
 5. **Secrets management**: External secret stores
+
 6. **Audit logging**: Monitor API access
+
 7. **Resource quotas**: Prevent resource exhaustion
+
 8. **Regular updates**: Keep K8s and images updated
 
 ---
@@ -668,6 +741,7 @@ spec:
 ## Summary
 
 Kubernetes interview questions cover:
+
 - Core concepts (Pods, Services, Deployments)
 - Networking (Services, Ingress, Network Policies)
 - Storage (PVs, PVCs, StorageClasses)
@@ -699,11 +773,13 @@ kubectl get endpoints myapp
 kubectl get events --sort-by=.metadata.creationTimestamp
 kubectl top pods
 kubectl top nodes
+
 ```
 
 ---
 
 ## References & Learn More
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)

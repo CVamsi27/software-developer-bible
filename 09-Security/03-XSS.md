@@ -44,6 +44,7 @@ Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to 
 │     Script executes entirely in the browser                     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Attack Flow
@@ -72,6 +73,7 @@ Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to 
      │  6. Stolen data sent to       │                               │
      │     attacker                  │                               │
      │<──────────────────────────────────────────────────────────────│
+
 ```
 
 ## Code Examples
@@ -107,6 +109,7 @@ function displayComment(comment: string) {
   const div = document.getElementById("comments");
   div.innerHTML += `<p>${comment}</p>`; // XSS vulnerability
 }
+
 ```
 
 ### Secure Code Examples
@@ -170,6 +173,7 @@ const cspMiddleware = (req, res, next) => {
 };
 
 app.use(cspMiddleware);
+
 ```
 
 ### Input Validation and Sanitization
@@ -207,31 +211,37 @@ const validateUrl = (url: string): string => {
 const generateNonce = (): string => {
   return require("crypto").randomBytes(16).toString("base64");
 };
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Comment Systems
+
 - User-submitted comments can contain malicious scripts
 - Must sanitize before storing and when displaying
 - Use DOMPurify or similar libraries for sanitization
 
 ### 2. User Profiles
+
 - Usernames, bios, and profile fields can contain XSS
 - Sanitize all user-generated content
 - Use CSP to prevent script execution
 
 ### 3. Search Functionality
+
 - Search queries reflected in results pages
 - Always encode user input in output
 - Avoid using search terms in HTML attributes
 
 ### 4. Rich Text Editors
+
 - Allow limited HTML tags for formatting
 - Whitelist allowed tags and attributes
 - Sanitize before storing and when displaying
 
 ### 5. Admin Dashboards
+
 - Display user-generated content in admin panels
 - Use sandboxed iframes for untrusted content
 - Implement strict CSP policies
@@ -239,24 +249,39 @@ const generateNonce = (): string => {
 ## Common Mistakes
 
 1. **Trusting user input**: Never assume input is safe; always validate and sanitize
+
 2. **Using innerHTML without sanitization**: Always sanitize or use textContent
+
 3. **Not implementing CSP**: CSP is a critical defense layer
+
 4. **Sanitizing on input only**: Must also sanitize on output (stored XSS)
+
 5. **Using eval()**: Never use eval() with user input
+
 6. **Not encoding output**: Always encode user data in HTML responses
+
 7. **Using document.write()**: Avoid document.write() with dynamic content
+
 8. **Ignoring DOM-based XSS**: Client-side scripts can be vulnerable too
 
 ## Best Practices
 
 1. **Validate all input** on both client and server
+
 2. **Sanitize output** before rendering in HTML
+
 3. **Implement Content Security Policy (CSP)** with strict rules
+
 4. **Use textContent** instead of innerHTML
+
 5. **Use DOMPurify** for HTML sanitization
+
 6. **Encode special characters** in HTML, CSS, JavaScript, and URLs
+
 7. **Use frameworks** that auto-escape (React, Angular, Vue)
+
 8. **Implement rate limiting** to prevent mass injection
+
 9. **Use HTTPOnly cookies** for session tokens (limits XSS impact)
 10. **Regular security audits** and penetration testing
 

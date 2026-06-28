@@ -85,6 +85,7 @@
 ## Common Patterns
 
 ### Data Fetching with Loading States
+
 ```tsx
 // app/posts/page.tsx (Server Component)
 import { Suspense } from 'react';
@@ -109,9 +110,11 @@ async function PostsList() {
     </ul>
   );
 }
+
 ```
 
 ### Form with Server Action
+
 ```tsx
 // app/actions.ts
 'use server';
@@ -140,9 +143,11 @@ export default function NewPost() {
     </form>
   );
 }
+
 ```
 
 ### Auth Middleware
+
 ```ts
 // middleware.ts
 import { NextResponse } from 'next/server';
@@ -165,9 +170,11 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/dashboard/:path*'],
 };
+
 ```
 
 ### Parallel Routes (Modal)
+
 ```tsx
 // app/dashboard/layout.tsx
 export default function DashboardLayout({
@@ -189,9 +196,11 @@ export default function DashboardLayout({
 export default function AnalyticsPage() {
   return <div className="analytics-panel">...</div>;
 }
+
 ```
 
 ### Intercepting Routes (Modal)
+
 ```tsx
 // app/@modal/(..)photos/[id]/page.tsx
 import Modal from '@/components/Modal';
@@ -203,9 +212,11 @@ export default function PhotoModal({ params }: { params: { id: string } }) {
     </Modal>
   );
 }
+
 ```
 
 ### Optimistic Updates with `useOptimistic`
+
 ```tsx
 'use client';
 import { useOptimistic } from 'react';
@@ -229,9 +240,11 @@ function TodoList({ todos, addTodo }) {
     </form>
   );
 }
+
 ```
 
 ### Route Handler (API)
+
 ```ts
 // app/api/users/route.ts
 import { NextResponse } from 'next/server';
@@ -253,9 +266,11 @@ export async function POST(request: Request) {
   const user = await db.user.create({ data: body });
   return NextResponse.json(user, { status: 201 });
 }
+
 ```
 
 ### Streaming with Suspense + Loading
+
 ```tsx
 // app/dashboard/loading.tsx
 export default function DashboardLoading() {
@@ -270,9 +285,11 @@ export default function DashboardLoading() {
     </div>
   );
 }
+
 ```
 
 ### Context + Provider Pattern
+
 ```tsx
 // contexts/theme.tsx
 'use client';
@@ -299,9 +316,11 @@ export const useTheme = () => {
   if (!ctx) throw new Error('useTheme must be inside ThemeProvider');
   return ctx;
 };
+
 ```
 
 ### `generateStaticParams` + `generateMetadata`
+
 ```tsx
 // app/blog/[slug]/page.tsx
 export async function generateStaticParams() {
@@ -318,6 +337,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = await fetch(`https://api.example.com/posts/${params.slug}`).then(r => r.json());
   return <article><h1>{post.title}</h1><p>{post.content}</p></article>;
 }
+
 ```
 
 ## Red Flags (Things NOT to Say)
@@ -363,6 +383,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 ---
 
 ## References & Learn More
+
 - [Cheat Sheet Collection](https://github.com/detailyang/awesome-cheatsheet)
 - [DevHints](https://devhints.io/)
 - [LeetCode](https://leetcode.com/)

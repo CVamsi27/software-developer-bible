@@ -7,9 +7,13 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 ## Why Do We Need It?
 
 1. **Performance** — Optimized images load faster
+
 2. **Core Web Vitals** — Better LCP, CLS, and FCP scores
+
 3. **Bandwidth savings** — Automatic format optimization
+
 4. **Responsive design** — Serve appropriate sizes for different devices
+
 5. **User experience** — Blur placeholders and lazy loading
 
 ## How It Works
@@ -51,6 +55,7 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 │     └─────────────────────────────────────────────────────┘    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Before vs After Optimization
@@ -87,6 +92,7 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 │                                                                 │
 │  Result: Fast loading, minimal bandwidth, great UX              │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -111,6 +117,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### Remote Images
@@ -129,6 +136,7 @@ export default function Page() {
     />
   )
 }
+
 ```
 
 ```tsx
@@ -147,6 +155,7 @@ module.exports = {
     ],
   },
 }
+
 ```
 
 ### Responsive Images
@@ -167,6 +176,7 @@ export default function Page() {
     />
   )
 }
+
 ```
 
 ### Blur Placeholder
@@ -187,6 +197,7 @@ export default function Page() {
     />
   )
 }
+
 ```
 
 ### Auto Blur Placeholder
@@ -198,6 +209,7 @@ module.exports = {
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
 }
+
 ```
 
 ```tsx
@@ -215,6 +227,7 @@ export default function Page() {
     />
   )
 }
+
 ```
 
 ### Lazy Loading
@@ -245,6 +258,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### Fill Mode
@@ -265,6 +279,7 @@ export default function Page() {
     </div>
   )
 }
+
 ```
 
 ### Image Gallery
@@ -298,6 +313,7 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
     </div>
   )
 }
+
 ```
 
 ### Avatar Component
@@ -337,6 +353,7 @@ export function Avatar({ src, alt, size = 'md' }: AvatarProps) {
     </div>
   )
 }
+
 ```
 
 ### Hero Image with Overlay
@@ -365,6 +382,7 @@ export function Hero() {
     </div>
   )
 }
+
 ```
 
 ### Product Image with Zoom
@@ -400,6 +418,7 @@ export function ProductImage({ src, alt }: { src: string; alt: string }) {
     </div>
   )
 }
+
 ```
 
 ### Responsive Background Image
@@ -426,6 +445,7 @@ export function Section() {
     </section>
   )
 }
+
 ```
 
 ### Image with Loading States
@@ -469,6 +489,7 @@ export function ImageWithLoading({
     </div>
   )
 }
+
 ```
 
 ### Next.js Image Configuration
@@ -504,6 +525,7 @@ module.exports = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 }
+
 ```
 
 ## Real-World Use Cases
@@ -529,6 +551,7 @@ module.exports = {
 
 // ✅ GOOD: Always set width and height
 <Image src="/photo.jpg" alt="Photo" width={800} height={600} />
+
 ```
 
 ### 2. Using Priority on All Images
@@ -542,6 +565,7 @@ module.exports = {
 // ✅ GOOD: Only above-the-fold images get priority
 <Image src="/hero.jpg" alt="Hero" width={1200} height={600} priority />
 <Image src="/content.jpg" alt="Content" width={800} height={600} />
+
 ```
 
 ### 3. Not Using Remote Patterns
@@ -560,6 +584,7 @@ module.exports = {
     ],
   },
 }
+
 ```
 
 ### 4. Ignoring Aspect Ratio
@@ -577,6 +602,7 @@ module.exports = {
   height={600}
   style={{ objectFit: 'cover' }}
 />
+
 ```
 
 ### 5. Not Using Blur Placeholder
@@ -595,18 +621,27 @@ module.exports = {
   placeholder="blur"
   blurDataURL="data:image/jpeg;base64,..."
 />
+
 ```
 
 ## Best Practices
 
 1. **Always set width and height** — Prevents layout shift
+
 2. **Use priority for above-the-fold images** — Improves LCP
+
 3. **Implement blur placeholders** — Better loading experience
+
 4. **Configure remote patterns** — For external images
+
 5. **Use responsive sizes** — Serve appropriate sizes
+
 6. **Lazy load below-the-fold images** — Save bandwidth
+
 7. **Use fill mode for backgrounds** — For flexible layouts
+
 8. **Optimize image formats** — Enable WebP/AVIF
+
 9. **Test on different devices** — Verify responsive behavior
 10. **Monitor image performance** — Track loading metrics
 
@@ -614,6 +649,7 @@ module.exports = {
 
 ```text
 Image Optimization Benefits:
+
 - File size: 30-50% reduction with WebP/AVIF
 - Lazy loading: Saves bandwidth for below-fold images
 - Responsive sizing: Smaller images on mobile
@@ -621,9 +657,11 @@ Image Optimization Benefits:
 - CDN caching: Fast subsequent loads
 
 Core Web Vitals Impact:
+
 - LCP: Improved with priority loading
 - CLS: Prevented with width/height
 - FCP: Improved with lazy loading
+
 ```
 
 ## Interview Questions
@@ -792,6 +830,7 @@ next.config.js → images.remotePatterns
 
 Configuration:
 next.config.js → images.deviceSizes, imageSizes, formats
+
 ```
 
 ## References & Learn More

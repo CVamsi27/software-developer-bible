@@ -45,6 +45,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Debounce vs Throttle
@@ -80,6 +81,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -115,6 +117,7 @@ const debouncedSearch = debounce(search, 300);
 input.addEventListener('input', (e) => {
   debouncedSearch(e.target.value);
 });
+
 ```
 
 ### Debounce with Leading Option
@@ -166,6 +169,7 @@ function debounce<T extends (...args: any[]) => any>(
 
 // Usage with leading option
 const debouncedFn = debounce(fn, 300, { leading: true });
+
 ```
 
 ### Debounce with Cancel and Flush
@@ -231,6 +235,7 @@ debouncedSearch.cancel();
 
 // Execute pending call immediately
 debouncedSearch.flush();
+
 ```
 
 ### React Hook
@@ -271,6 +276,7 @@ function SearchComponent() {
     />
   );
 }
+
 ```
 
 ## Real-World Use Cases
@@ -310,6 +316,7 @@ function SearchInput() {
     </div>
   );
 }
+
 ```
 
 ### 2. Window Resize Handler
@@ -338,6 +345,7 @@ function useWindowSize() {
 
   return size;
 }
+
 ```
 
 ### 3. Form Validation
@@ -374,6 +382,7 @@ function Form() {
     </div>
   );
 }
+
 ```
 
 ### 4. Scroll Event Handler
@@ -396,6 +405,7 @@ function useScrollPosition() {
 
   return scrollY;
 }
+
 ```
 
 ### 5. Button Click Handler
@@ -419,6 +429,7 @@ function SubmitButton() {
     </button>
   );
 }
+
 ```
 
 ## Common Mistakes
@@ -448,6 +459,7 @@ useEffect(() => {
     window.removeEventListener('resize', handleResize);
   };
 }, []);
+
 ```
 
 ### 2. Using Debounce Everywhere
@@ -464,6 +476,7 @@ const handleScroll = () => {
     updateAnimation();
   });
 };
+
 ```
 
 ### 3. Wrong Wait Time
@@ -477,6 +490,7 @@ const search = debounce(fetchResults, 2000);
 
 // Good: Balance based on use case
 const search = debounce(fetchResults, 300);
+
 ```
 
 ### 4. Not Handling Edge Cases
@@ -488,6 +502,7 @@ const search = debounce(fetchResults, 300);
 
 // Good: Leading edge for immediate feedback
 const search = debounce(fetchResults, 300, { leading: true });
+
 ```
 
 ## Best Practices
@@ -503,6 +518,7 @@ const validate = debounce(validateField, 500);
 
 // Resize: 100ms (responsive but not too frequent)
 const resize = debounce(handleResize, 100);
+
 ```
 
 ### 2. Clean Up Debounced Functions
@@ -518,6 +534,7 @@ useEffect(() => {
     debouncedFn.cancel();
   };
 }, [fn, wait]);
+
 ```
 
 ### 3. Use TypeScript
@@ -529,6 +546,7 @@ function debounce<T extends (...args: any[]) => any>(
 ): (...args: Parameters<T>) => void {
   // Implementation
 }
+
 ```
 
 ### 4. Add Cancel and Flush Methods
@@ -544,6 +562,7 @@ function debounce<T extends (...args: any[]) => any>(
 } {
   // Implementation with cancel and flush
 }
+
 ```
 
 ## Performance Considerations
@@ -568,6 +587,7 @@ const Component = () => {
   );
   return <button onClick={debouncedFn}>Click</button>;
 };
+
 ```
 
 ### Timer Precision
@@ -579,6 +599,7 @@ const Component = () => {
 // For precise timing, use:
 // - requestAnimationFrame for animations
 // - Performance.now() for measurements
+
 ```
 
 ## Interview Questions
@@ -698,11 +719,17 @@ A: Choose appropriate wait time, clean up, use TypeScript, handle edge cases.
 Debouncing is essential for performance:
 
 1. **Definition**: Delays execution until pause in calls
+
 2. **Use cases**: Search, resize, form validation
+
 3. **Implementation**: setTimeout with clearTimeout
+
 4. **Options**: Leading, trailing, cancel, flush
+
 5. **Performance**: Prevents excessive function calls
+
 6. **Cleanup**: Always clean up timers
+
 7. **Testing**: Use fake timers
 
 ## Cheat Sheet
@@ -762,6 +789,7 @@ TESTING:
 • jest.useFakeTimers()
 • jest.advanceTimersByTime()
 • Verify call counts
+
 ```
 
 ## References & Learn More

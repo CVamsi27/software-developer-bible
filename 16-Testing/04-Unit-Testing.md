@@ -5,6 +5,7 @@
 Unit testing is a software testing technique where individual units or components of software are tested in isolation to verify that each unit functions correctly. A "unit" is the smallest testable part of an application—typically a function, method, class, or module.
 
 **Key Characteristics:**
+
 - Tests a single unit of code in isolation
 - Fast execution (milliseconds)
 - Low maintenance cost
@@ -25,6 +26,7 @@ Unit testing is a software testing technique where individual units or component
 │              Mocked Dependencies                            │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Why Do We Need It?
@@ -71,6 +73,7 @@ Unit testing is a software testing technique where individual units or component
 │  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Test Doubles Hierarchy
@@ -100,6 +103,7 @@ Unit testing is a software testing technique where individual units or component
 │            (in-memory database, etc.)                       │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -225,6 +229,7 @@ describe("Pure Functions", () => {
     });
   });
 });
+
 ```
 
 ### Class Testing
@@ -334,6 +339,7 @@ describe("Temperature", () => {
     });
   });
 });
+
 ```
 
 ### Testing with Dependencies
@@ -461,6 +467,7 @@ describe("UserService", () => {
     });
   });
 });
+
 ```
 
 ### Isolating Dependencies
@@ -625,6 +632,7 @@ describe("OrderProcessor", () => {
     });
   });
 });
+
 ```
 
 ### Testing Edge Cases
@@ -738,6 +746,7 @@ describe("String Utilities", () => {
     });
   });
 });
+
 ```
 
 ### Testing Async Code
@@ -878,6 +887,7 @@ describe("Async Utilities", () => {
     });
   });
 });
+
 ```
 
 ## Real-World Use Cases
@@ -992,6 +1002,7 @@ describe("PriceCalculator", () => {
     });
   });
 });
+
 ```
 
 ### 2. Testing a State Machine
@@ -1108,6 +1119,7 @@ describe("OrderStateMachine", () => {
     expect(machine.canTransition("PROCESS")).toBe(false);
   });
 });
+
 ```
 
 ## Common Mistakes
@@ -1132,6 +1144,7 @@ it("should calculate part a", () => {
 it("should calculate part b", () => {
   expect(complexFunction().b).toBe(2);
 });
+
 ```
 
 ### 2. Testing Implementation Details
@@ -1162,6 +1175,7 @@ it("should store hashed password", async () => {
   expect(user.password).not.toBe("test");
   expect(user.password).toContain("hashed_");
 });
+
 ```
 
 ### 3. Not Cleaning Up
@@ -1193,18 +1207,27 @@ it("should increment", () => {
 it("should start fresh", () => {
   expect(counter).toBe(0);
 });
+
 ```
 
 ## Best Practices
 
 1. **Follow AAA Pattern**: Arrange, Act, Assert
+
 2. **Test one thing per test**: Each test should verify one behavior
+
 3. **Keep tests independent**: No test should depend on another
+
 4. **Use descriptive names**: Test names should explain the behavior
+
 5. **Test edge cases**: Empty inputs, null values, boundaries
+
 6. **Mock external dependencies**: Databases, APIs, file system
+
 7. **Keep tests fast**: Unit tests should run in milliseconds
+
 8. **Test error handling**: Verify exceptions and error messages
+
 9. **Use test data builders**: Create reusable test data factories
 10. **Maintain test code**: Refactor tests like production code
 
@@ -1223,6 +1246,7 @@ Unit Test Performance:
 │ • Avoid unnecessary setup/teardown                         │
 │ • Profile slow tests                                       │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Parallel Execution
@@ -1240,6 +1264,7 @@ module.exports = {
     },
   ],
 };
+
 ```
 
 ## Interview Questions

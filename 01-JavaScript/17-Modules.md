@@ -69,6 +69,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Module Loading
@@ -106,6 +107,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -136,6 +138,7 @@ export default class Calculator {
     return this.result;
   }
 }
+
 ```
 
 ```typescript
@@ -148,6 +151,7 @@ console.log(add(2, 3));  // 5
 const calc = new Calculator();
 calc.add(5).add(10);
 console.log(calc.getResult());  // 15
+
 ```
 
 ### Named vs Default Exports
@@ -161,6 +165,7 @@ export const parseJSON = (str: string) => JSON.parse(str);
 export default function greet(name: string) {
   return `Hello, ${name}`;
 }
+
 ```
 
 ```typescript
@@ -177,6 +182,7 @@ import { formatDate as format } from './utils';
 // Namespace import
 import * as utils from './utils';
 console.log(utils.formatDate(new Date()));
+
 ```
 
 ### Dynamic Imports
@@ -199,6 +205,7 @@ const module = await import(
   /* webpackChunkName: "heavy" */
   './heavy-module'
 );
+
 ```
 
 ### Re-exports
@@ -211,6 +218,7 @@ export { Comment } from './comment';
 
 // Or rename
 export { User as UserModel } from './user';
+
 ```
 
 ### CommonJS (Node.js)
@@ -228,6 +236,7 @@ module.exports = { PI, add };
 // Or
 exports.PI = PI;
 exports.add = add;
+
 ```
 
 ```typescript
@@ -236,6 +245,7 @@ const { PI, add } = require('./utils');
 // Or
 const utils = require('./utils');
 console.log(utils.PI);
+
 ```
 
 ## Real-World Use Cases
@@ -257,6 +267,7 @@ export function Button({ children, onClick, variant = 'primary' }: ButtonProps) 
     </button>
   );
 }
+
 ```
 
 ```typescript
@@ -270,6 +281,7 @@ function App() {
     </Button>
   );
 }
+
 ```
 
 ### 2. Utility Library
@@ -279,6 +291,7 @@ function App() {
 export { formatDate, parseDate } from './date';
 export { debounce, throttle } from './timing';
 export { deepClone, isEqual } from './objects';
+
 ```
 
 ```typescript
@@ -290,6 +303,7 @@ export function formatDate(date: Date): string {
 export function parseDate(str: string): Date {
   return new Date(str);
 }
+
 ```
 
 ### 3. API Client
@@ -306,6 +320,7 @@ export class ApiClient {
 }
 
 export const api = new ApiClient('https://api.example.com');
+
 ```
 
 ```typescript
@@ -320,6 +335,7 @@ export interface User {
 export async function getUsers(): Promise<User[]> {
   return api.get<User[]>('/users');
 }
+
 ```
 
 ### 4. Configuration
@@ -339,6 +355,7 @@ const config = {
 
 const env = process.env.NODE_ENV || 'development';
 export default config[env as keyof typeof config];
+
 ```
 
 ## Common Mistakes
@@ -355,6 +372,7 @@ import { a } from './a';  // Circular!
 export const b = 'b';
 
 // Solution: Restructure code, use dependency injection
+
 ```
 
 ### 2. Default vs Named Exports
@@ -368,6 +386,7 @@ export function bar() {}
 // Either all default or all named
 export function foo() {}
 export function bar() {}
+
 ```
 
 ### 3. Import Side Effects
@@ -379,6 +398,7 @@ import './styles.css';
 
 // Good: Use side-effect imports explicitly
 import './polyfill';  // Document that this is for side effects
+
 ```
 
 ### 4. Missing File Extensions
@@ -389,6 +409,7 @@ import { foo } from './utils';
 
 // Good: Explicit extension (ESM)
 import { foo } from './utils.js';
+
 ```
 
 ## Best Practices
@@ -402,6 +423,7 @@ export function parseDate(str: string) {}
 
 // Import with clear names
 import { formatDate, parseDate } from './utils';
+
 ```
 
 ### 2. Create Barrel Files
@@ -411,6 +433,7 @@ import { formatDate, parseDate } from './utils';
 export * from './date';
 export * from './timing';
 export * from './objects';
+
 ```
 
 ### 3. Lazy Load When Possible
@@ -426,6 +449,7 @@ function App() {
     </Suspense>
   );
 }
+
 ```
 
 ### 4. Use TypeScript for Type Safety
@@ -441,6 +465,7 @@ export interface User {
 // user.ts
 import { User } from './types';
 export function getUser(id: string): Promise<User> {}
+
 ```
 
 ## Performance Considerations
@@ -454,6 +479,7 @@ const About = React.lazy(() => import('./pages/About'));
 
 // Component-based splitting
 const HeavyChart = React.lazy(() => import('./components/HeavyChart'));
+
 ```
 
 ### Tree Shaking
@@ -470,6 +496,7 @@ import { add } from './math';
 // Bad: Default export with everything
 export default { add, multiply };
 // Both are included even if only add is used
+
 ```
 
 ### Module Bundling
@@ -505,6 +532,7 @@ export default { add, multiply };
 │  • Vite                                                     │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Interview Questions
@@ -624,11 +652,17 @@ A: Use named exports, create barrel files, lazy load when possible, avoid circul
 Modules are essential for modern JavaScript:
 
 1. **CommonJS**: require(), synchronous, Node.js
+
 2. **ES Modules**: import/export, asynchronous, modern standard
+
 3. **Tree shaking**: Remove unused code
+
 4. **Code splitting**: Load code on demand
+
 5. **Best practices**: Named exports, barrel files, avoid circular deps
+
 6. **Performance**: Lazy loading, proper bundling
+
 7. **TypeScript**: Type safety with modules
 
 ## Cheat Sheet
@@ -683,6 +717,7 @@ TOOLS:
 • Webpack/Rollup/esbuild
 • TypeScript
 • Node.js
+
 ```
 
 ## References & Learn More

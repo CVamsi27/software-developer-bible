@@ -11,8 +11,11 @@ The pattern is particularly useful when you have multiple algorithms for a speci
 Without the Strategy pattern, algorithms are often implemented with conditional statements, leading to:
 
 1. **Code duplication**: Similar algorithms repeated in different places
+
 2. **Violation of Open/Closed Principle**: Adding new algorithms requires modifying existing code
+
 3. **Complex conditionals**: Large switch/case or if/else chains
+
 4. **Difficult testing**: Hard to test individual algorithms in isolation
 
 ## How It Works
@@ -20,8 +23,11 @@ Without the Strategy pattern, algorithms are often implemented with conditional 
 The Strategy pattern works by:
 
 1. Defining a common interface for all algorithms
+
 2. Implementing each algorithm as a separate class
+
 3. Keeping a reference to the current strategy in the context
+
 4. Allowing the strategy to be changed at runtime
 
 ```text
@@ -48,6 +54,7 @@ The Strategy pattern works by:
 │  Context can switch between strategies           │
 │  at runtime                                      │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -156,6 +163,7 @@ console.log(sorted); // [1, 1, 2, 3, 4, 5, 6, 9]
 sorter.setStrategy(new BubbleSort<number>());
 const sortedAgain = sorter.sort([3, 1, 4, 1, 5, 9, 2, 6]);
 console.log(sortedAgain); // [1, 1, 2, 3, 4, 5, 6, 9]
+
 ```
 
 ### Payment Strategy Pattern
@@ -289,6 +297,7 @@ await cart.checkout();
 // Switch to PayPal
 cart.setPaymentStrategy(new PayPalPayment('user@example.com'));
 await cart.checkout();
+
 ```
 
 ### Notification Strategy Pattern
@@ -417,6 +426,7 @@ await notificationService.send(notification, 'slack');
 
 // Send via all strategies
 await notificationService.sendToAll(notification);
+
 ```
 
 ### Discount Strategy Pattern
@@ -545,6 +555,7 @@ class Order {
   getSummary(): string {
     return `
 Order Summary:
+
 - Items: ${this.getItemCount()}
 - Subtotal: $${this.getSubtotal().toFixed(2)}
 - Discount (${this.discountStrategy.getName()}): -$${this.getDiscount().toFixed(2)}
@@ -568,6 +579,7 @@ console.log(order.getSummary());
 // Apply fixed amount discount
 order.setDiscountStrategy(new FixedAmountDiscount(50, 100));
 console.log(order.getSummary());
+
 ```
 
 ## Real-World Use Cases
@@ -637,6 +649,7 @@ class AuthService {
     return strategy.authenticate(credentials);
   }
 }
+
 ```
 
 ### 2. Data Validation Strategy
@@ -738,6 +751,7 @@ class ValidationService {
     };
   }
 }
+
 ```
 
 ### 3. Compression Strategy
@@ -819,6 +833,7 @@ class FileCompressor {
     return this.strategy.decompress(data);
   }
 }
+
 ```
 
 ## Common Mistakes
@@ -832,6 +847,7 @@ class EmailStrategy2 implements NotificationStrategy { ... }
 class EmailStrategy3 implements NotificationStrategy { ... }
 
 // These could be combined with configuration
+
 ```
 
 ### 2. Not Using Interface
@@ -847,6 +863,7 @@ class QuickSort {
 }
 
 // Should implement a common SortStrategy interface
+
 ```
 
 ### 3. Strategy with Too Much State
@@ -859,6 +876,7 @@ class ComplexStrategy {
 
   // This makes the strategy hard to use and test
 }
+
 ```
 
 ### 4. Not Providing Default Strategy
@@ -875,6 +893,7 @@ class Context {
     // Should have a default strategy
   }
 }
+
 ```
 
 ## Best Practices
@@ -887,6 +906,7 @@ interface Strategy {
   execute(data: any): any;
   getName(): string;
 }
+
 ```
 
 ### 2. Keep Strategies Stateless
@@ -903,6 +923,7 @@ class SimpleStrategy implements Strategy {
     return 'Simple';
   }
 }
+
 ```
 
 ### 3. Provide Default Strategy
@@ -916,6 +937,7 @@ class Context {
     this.strategy = strategy;
   }
 }
+
 ```
 
 ### 4. Use Factory for Strategy Creation
@@ -931,6 +953,7 @@ class StrategyFactory {
     }
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -950,86 +973,111 @@ class StrategyFactory {
 ### Beginner
 
 1. **What is the Strategy pattern?**
+
    - A behavioral pattern that defines a family of algorithms and makes them interchangeable.
 
 2. **When would you use Strategy pattern?**
+
    - When you have multiple algorithms for a task and want to switch between them dynamically.
 
 3. **What's the difference between Strategy and State patterns?**
+
    - Strategy swaps algorithms; State changes behavior based on internal state.
 
 4. **How do you implement Strategy in TypeScript?**
+
    - Define a common interface, implement concrete strategies, and use a context to switch between them.
 
 5. **What are the benefits of Strategy pattern?**
+
    - Open/Closed Principle, better testability, and runtime flexibility.
 
 ### Intermediate
 
 6. **How do you handle strategy selection?**
+
    - Use configuration, user input, or factory pattern to select strategies.
 
 7. **Can strategies have state?**
+
    - Yes, but prefer stateless strategies for simplicity and testability.
 
 8. **How do you test Strategy pattern?**
+
    - Test each strategy independently, mock strategies in context tests.
 
 9. **What's the relationship between Strategy and Factory?**
+
    - Factory creates objects; Strategy defines algorithms; they can be combined.
 
 10. **How do you handle strategy errors?**
+
     - Define error handling in each strategy or use a wrapper/decorator.
 
 ### Senior
 
 11. **How does Strategy pattern affect scalability?**
+
     - New strategies can be added without modifying existing code.
 
 12. **What are the SOLID violations with Strategy?**
+
     - Usually follows SOLID; watch for context violating Single Responsibility.
 
 13. **How do you handle Strategy in microservices?**
+
     - Strategies can be in the same service or separate services depending on coupling.
 
 14. **What are the memory implications of Strategy?**
+
     - Stateless strategies are lightweight; strategies with dependencies consume more memory.
 
 15. **How do you refactor Strategy code?**
+
     - Extract common logic, use composition, and apply SOLID principles.
 
 ### FAANG-style
 
 16. **Design a Strategy for load balancing algorithms.**
+
     - Consider round-robin, least connections, IP hash, and dynamic switching.
 
 17. **How would you implement Strategy for distributed systems?**
+
     - Consider remote strategy execution, serialization, and fault tolerance.
 
 18. **What are the implications of Strategy in cloud-native applications?**
+
     - Consider serverless execution, container scaling, and resource management.
 
 19. **How do you handle Strategy in event-driven architectures?**
+
     - Use strategies for event processing, routing, and transformation.
 
 20. **Design a Strategy that supports A/B testing.**
+
     - Consider traffic splitting, metrics collection, and gradual rollout.
 
 ### Follow-ups
 
 21. **Can Strategy pattern be combined with other patterns?**
+
     - Yes, commonly with Factory, Decorator, and State patterns.
 
 22. **How do you handle Strategy in testing frameworks?**
+
     - Use dependency injection, create test strategies, and mock implementations.
 
 23. **What are the memory implications of Strategy pattern?**
+
     - Stateless strategies are lightweight; the context holds the reference.
 
 24. **How do you handle Strategy in serverless environments?**
+
     - Consider cold starts, stateless design, and function composition.
 
 25. **What's the impact of Strategy on code maintainability?**
+
     - Improves maintainability by separating algorithms and reducing conditionals.
 
 ## Summary
@@ -1071,6 +1119,7 @@ The Strategy pattern is powerful for encapsulating algorithms and making them in
 │ • Factory (creates strategies)              │
 │ • Decorator (adds behavior)                 │
 └─────────────────────────────────────────────┘
+
 ```
 
 ## References & Learn More

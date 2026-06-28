@@ -2,6 +2,7 @@
 
 ## Requirements
 ### Functional Requirements
+
 - Stream video content on demand
 - Personalized content recommendations
 - Multiple user profiles per account
@@ -14,6 +15,7 @@
 - 4K/HDR streaming support
 
 ### Non-Functional Requirements
+
 - High availability (99.99%)
 - Global content delivery (< 50ms latency)
 - Adaptive streaming quality
@@ -24,25 +26,31 @@
 - Cross-device synchronization
 
 ## Capacity Estimation
+
 ```text
 Storage Estimates:
+
 - 15M concurrent streams × 5 Mbps = 75 Tbps bandwidth
 - 200M users × 2 hours/day × 100 MB/hour = 40 PB/month viewing
 - Content library: 100K hours × 1 GB/hour = 100 TB raw
 - With multiple qualities: 100 TB × 10 = 1 PB
 
 Bandwidth Estimates:
+
 - Peak: 15M × 5 Mbps = 75 Tbps (global CDN)
 - Average: 50 Tbps
 - CDN edge servers: 10,000+ globally
 
 Encoding Estimates:
+
 - Each title encoded in 10+ formats (4K, 1080p, 720p, etc.)
 - 100K titles × 10 formats × 50 GB = 50 PB storage
 - Encoding time: 1 hour of content × 10 formats × 1000 parallel = 10K hours
+
 ```
 
 ## API Design
+
 ```yaml
 # Content Discovery
 GET /api/v1/browse
@@ -105,10 +113,12 @@ POST /api/v1/watch/{content_id}/progress
       "duration_seconds": 2700,
       "bitrate": 5000
     }
+
 ```
 
 ## Database Design
 ### Schema
+
 ```sql
 -- Users table
 CREATE TABLE users (
@@ -216,9 +226,11 @@ CREATE TABLE content_metadata (
 );
 
 CREATE INDEX idx_content_search ON content_metadata USING GIN(search_vector);
+
 ```
 
 ### ER Diagram (ASCII)
+
 ```text
 ┌─────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    users    │     │    profiles     │     │  watch_history  │
@@ -265,10 +277,12 @@ CREATE INDEX idx_content_search ON content_metadata USING GIN(search_vector);
 │ director        │
 │ search_vector   │
 └─────────────────┘
+
 ```
 
 ## Architecture
 ### ASCII Architecture Diagram
+
 ```text
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Client Applications                           │
@@ -315,11 +329,13 @@ CREATE INDEX idx_content_search ON content_metadata USING GIN(search_vector);
                     │  Recommendation      │
                     │  Engine (ML)         │
                     └──────────────────────┘
+
 ```
 
 ## Key Components
 
 ### Adaptive Bitrate Streaming
+
 ```python
 class AdaptiveBitrateService:
     def __init__(self):
@@ -359,9 +375,11 @@ class AdaptiveBitrateService:
             })
 
         return manifest
+
 ```
 
 ### Content Delivery Network (CDN)
+
 ```python
 class CDNService:
     def __init__(self):
@@ -394,9 +412,11 @@ class CDNService:
                 self.get_nearest_edge(region),
                 content_id
             )
+
 ```
 
 ### Video Transcoding Pipeline
+
 ```python
 class TranscodingPipeline:
     def __init__(self):
@@ -439,9 +459,11 @@ class TranscodingPipeline:
             'codec': format['codec'],
             'bitrate': format['bitrate']
         }
+
 ```
 
 ### Recommendation Engine
+
 ```python
 class RecommendationEngine:
     def __init__(self, db, redis_client):
@@ -513,11 +535,13 @@ class RecommendationEngine:
         """, (genres, preferences['profile_id']))
 
         return recommendations
+
 ```
 
 ## Caching Strategy (Redis)
 
 ### Content Cache
+
 ```python
 class ContentCache:
     def __init__(self, redis_client):
@@ -543,9 +567,11 @@ class ContentCache:
     async def get_trending(self, region: str, limit: int = 20) -> list:
         key = f"trending:{region}"
         return await self.redis.zrange(key, 0, limit - 1)
+
 ```
 
 ### Session Cache
+
 ```python
 class SessionCache:
     def __init__(self, redis_client):
@@ -566,11 +592,13 @@ class SessionCache:
                                     progress: int):
         key = f"watch_progress:{session_id}:{content_id}"
         await self.redis.setex(key, 86400, progress)  # 24 hours
+
 ```
 
 ## Message Queue (Kafka)
 
 ### Topics and Events
+
 ```text
 Topics:
 ├── content.viewed          (playback events)
@@ -595,9 +623,11 @@ Event Schema:
     "device_type": "smart_tv"
   }
 }
+
 ```
 
 ### Event Processing
+
 ```python
 class ViewingEventProcessor:
     def __init__(self, kafka_consumer, db, recommendation_engine):
@@ -628,11 +658,13 @@ class ViewingEventProcessor:
             event['content_id'],
             event['data']['progress_seconds']
         )
+
 ```
 
 ## Scaling Strategy
 
 ### Global CDN Architecture
+
 ```text
 CDN Topology:
 ┌─────────────────────────────────────────────────────────┐
@@ -654,9 +686,11 @@ CDN Topology:
 │  Edge PoPs   │   │  Edge PoPs   │   │  Edge PoPs   │
 │  (100+)      │   │  (80+)       │   │  (60+)       │
 └──────────────┘   └──────────────┘   └──────────────┘
+
 ```
 
 ### Database Scaling
+
 ```text
 Database Architecture:
 ┌─────────────────────────────────────────────────────────┐
@@ -676,9 +710,11 @@ Database Architecture:
 Content Metadata: PostgreSQL with read replicas
 Watch History: Cassandra for write-heavy workload
 Search: Elasticsearch cluster
+
 ```
 
 ### Streaming Service Scaling
+
 ```python
 class StreamingServiceScaler:
     def __init__(self):
@@ -707,11 +743,13 @@ class StreamingServiceScaler:
         # Use load balancer with health checks
         servers = await self.get_healthy_servers()
         return min(servers, key=lambda s: s['active_sessions'])
+
 ```
 
 ## Failure Handling
 
 ### Playback Failure Recovery
+
 ```python
 class PlaybackRecovery:
     def __init__(self):
@@ -746,9 +784,11 @@ class PlaybackRecovery:
 
         # All retries failed
         return await self.graceful_degradation(session_id)
+
 ```
 
 ### Failure Scenarios
+
 | Failure | Mitigation |
 |---------|------------|
 | CDN node failure | Automatic failover to next closest edge |
@@ -758,6 +798,7 @@ class PlaybackRecovery:
 | Recommendation engine down | Serve popular content |
 
 ### Graceful Degradation
+
 ```python
 class GracefulDegradation:
     def __init__(self):
@@ -776,13 +817,16 @@ class GracefulDegradation:
 
             # Last resort: serve popular content
             return await self.get_popular_content(region)
+
 ```
 
 ## Monitoring
 
 ### Key Metrics
+
 ```yaml
 Business Metrics:
+
   - streams_per_minute
   - unique_viewers
   - average_watch_time
@@ -790,6 +834,7 @@ Business Metrics:
   - recommendation_click_rate
 
 System Metrics:
+
   - playback_start_time_p95
   - rebuffer_rate
   - cdn_hit_ratio
@@ -797,16 +842,20 @@ System Metrics:
   - api_response_time
 
 Infrastructure Metrics:
+
   - server_cpu_usage
   - memory_usage
   - network_throughput
   - disk_io
   - cdn_bandwidth_utilization
+
 ```
 
 ### Alerting Rules
+
 ```yaml
 alerts:
+
   - name: High Rebuffer Rate
     condition: rebuffer_rate > 1%
     severity: critical
@@ -822,6 +871,7 @@ alerts:
   - name: Playback Start Slow
     condition: p95_start_time > 5s
     severity: critical
+
 ```
 
 ## Trade-offs
@@ -837,64 +887,78 @@ alerts:
 ## Interview Questions
 
 ### Design Questions
+
 1. **How would you design Netflix's video streaming?**
+
    - Adaptive bitrate streaming (HLS/DASH)
    - Multi-CDN for global delivery
    - Client-side manifest parsing
    - DRM for content protection
 
 2. **How does the recommendation engine work?**
+
    - Collaborative filtering (similar users)
    - Content-based filtering (similar content)
    - Deep learning for feature extraction
    - A/B testing for algorithm optimization
 
 3. **How would you handle 15M concurrent streams?**
+
    - Global CDN with 10,000+ edge servers
    - Origin shield for cache hierarchy
    - Connection pooling and keep-alive
    - Regional load balancing
 
 ### Scaling Questions
+
 4. **How do you scale content encoding?**
+
    - Distributed transcoding workers
    - Parallel encoding for different qualities
    - Cloud-based elastic scaling
    - Progress tracking and retry logic
 
 5. **How do you handle global content delivery?**
+
    - Multi-region deployment
    - GeoDNS for routing
    - Predictive prefetching
    - Edge caching for popular content
 
 ### Trade-off Questions
+
 6. **How do you balance quality vs bandwidth?**
+
    - Adaptive bitrate based on network conditions
    - Quality caps based on subscription tier
    - Offline quality options
    - Bandwidth saving modes
 
 7. **How do you handle content protection (DRM)?**
+
    - Multi-DRM support (Widevine, FairPlay)
    - License server integration
    - Offline license management
    - Forensic watermarking
 
 ### Senior-level Questions
+
 8. **How would you implement offline viewing?**
+
    - Secure download with DRM
    - Storage management on device
    - Expiration and renewal
    - Sync watch progress when online
 
 9. **How do you optimize for different devices?**
+
    - Device capability detection
    - Quality profile selection
    - UI/UX adaptation
    - Codec support detection
 
 10. **How would you implement live streaming?**
+
     - Low-latency HLS/DASH
     - Real-time encoding
     - Chat and interaction
@@ -903,6 +967,7 @@ alerts:
 ## Summary
 
 The Netflix system design covers:
+
 - **Global CDN**: 10,000+ edge servers for < 50ms latency
 - **Adaptive Streaming**: Dynamic quality based on bandwidth
 - **Personalization**: ML-powered recommendations
@@ -910,10 +975,15 @@ The Netflix system design covers:
 - **Reliability**: Multi-CDN, graceful degradation
 
 Key takeaways:
+
 1. Use multi-CDN for redundancy and performance
+
 2. Implement adaptive bitrate for optimal quality
+
 3. Leverage ML for personalized recommendations
+
 4. Design for global scale with regional deployment
+
 5. Ensure content protection with DRM
 
 This design supports 200M+ subscribers with 15M concurrent streams while maintaining < 1% rebuffer rate.
@@ -921,6 +991,7 @@ This design supports 200M+ subscribers with 15M concurrent streams while maintai
 ---
 
 ## References & Learn More
+
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [System Design Interview by Alex Xu](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 - [GitHub - system-design-primer](https://github.com/donnemartin/system-design-primer)

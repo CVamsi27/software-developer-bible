@@ -43,6 +43,7 @@ Web security encompasses the practices, technologies, and policies designed to p
 │  └─────────────────────────────────────────────────────────┘    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Security Headers Overview
@@ -83,6 +84,7 @@ Web security encompasses the practices, technologies, and policies designed to p
 │  └─ Controls camera, microphone, geolocation                    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -144,6 +146,7 @@ app.post("/csp-report", express.json({ type: "application/csp-report" }), (req, 
   console.error("CSP Violation:", req.body);
   res.status(204).end();
 });
+
 ```
 
 ### HSTS Configuration
@@ -166,6 +169,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+
 ```
 
 ### CORS Configuration
@@ -203,6 +207,7 @@ app.use("/api", cors(corsOptions));
 
 // Preflight handler
 app.options("*", cors(corsOptions));
+
 ```
 
 ### Security Headers Middleware
@@ -248,6 +253,7 @@ const securityHeaders = (
 };
 
 app.use(securityHeaders);
+
 ```
 
 ### Clickjacking Protection
@@ -278,6 +284,7 @@ app.use(
 //     window.top.location = window.self.location;
 //   }
 // </script>
+
 ```
 
 ### Open Redirect Prevention
@@ -321,6 +328,7 @@ app.get("/redirect", (req, res) => {
     res.redirect("/dashboard");
   }
 });
+
 ```
 
 ### SSRF Prevention
@@ -395,6 +403,7 @@ app.post("/fetch-url", preventSSRF, async (req, res) => {
   const data = await response.json();
   res.json(data);
 });
+
 ```
 
 ### XXE Prevention
@@ -437,29 +446,34 @@ app.post("/xml-data", express.text({ type: "application/xml" }), (req, res) => {
   // Process parsed data
   res.json({ success: true });
 });
+
 ```
 
 ## Real-World Use Cases
 
 ### 1. Financial Applications
+
 - Strict CSP to prevent script injection
 - HSTS for secure connections
 - CORS for API access control
 - Comprehensive security headers
 
 ### 2. E-commerce Platforms
+
 - Clickjacking protection for checkout pages
 - Open redirect prevention for payment redirects
 - SSRF prevention for product image loading
 - Security headers for user data protection
 
 ### 3. Social Media Platforms
+
 - CSP for user-generated content
 - CORS for API access
 - Security headers for privacy
 - XXE prevention for XML imports
 
 ### 4. Healthcare Applications
+
 - HIPAA-compliant security headers
 - CSP for PHI protection
 - HSTS for secure connections
@@ -468,24 +482,39 @@ app.post("/xml-data", express.text({ type: "application/xml" }), (req, res) => {
 ## Common Mistakes
 
 1. **Not implementing CSP**: Critical for preventing XSS
+
 2. **Using unsafe-inline in CSP**: Weakens CSP protection
+
 3. **Not using HSTS**: Allows SSL stripping attacks
+
 4. **Overly permissive CORS**: CORS bypasses security
+
 5. **Not preventing clickjacking**: Users can be tricked
+
 6. **Ignoring open redirects**: Can lead to phishing
+
 7. **Not preventing SSRF**: Server can be used as proxy
+
 8. **Not preventing XXE**: XML parsing vulnerabilities
 
 ## Best Practices
 
 1. **Implement strict CSP** with nonce-based scripts
+
 2. **Use HSTS** with long max-age and includeSubDomains
+
 3. **Configure CORS** with specific allowed origins
+
 4. **Prevent clickjacking** with X-Frame-Options and CSP
+
 5. **Validate redirect URLs** to prevent open redirects
+
 6. **Prevent SSRF** by blocking private IPs
+
 7. **Prevent XXE** by disabling external entities
+
 8. **Use security headers** (helmet.js makes this easy)
+
 9. **Regular security audits** and penetration testing
 10. **Monitor security headers** with tools like securityheaders.com
 

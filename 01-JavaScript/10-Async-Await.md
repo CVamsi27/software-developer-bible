@@ -61,6 +61,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Async/Await vs Promises
@@ -111,6 +112,7 @@
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ## Code Examples
@@ -133,6 +135,7 @@ async function main() {
     console.error(error);
   }
 }
+
 ```
 
 ### Sequential Operations
@@ -144,6 +147,7 @@ async function processData() {
   const saved = await saveToDatabase(processed);  // Wait for save
   return saved;
 }
+
 ```
 
 ### Parallel Operations
@@ -164,6 +168,7 @@ async function loadDashboard() {
 
   return { user, posts, notifications };
 }
+
 ```
 
 ### Error Handling
@@ -185,6 +190,7 @@ async function riskyOperation() {
     console.log('Operation completed');
   }
 }
+
 ```
 
 ### Async Iteration
@@ -215,6 +221,7 @@ async function useAsyncGenerator() {
     if (value > 5) break;
   }
 }
+
 ```
 
 ### Real-World Patterns
@@ -270,6 +277,7 @@ function createCancellable<T>(promise: Promise<T>) {
     cancel: () => { cancelled = true; }
   };
 }
+
 ```
 
 ## Real-World Use Cases
@@ -300,6 +308,7 @@ async function updateUserProfile(userId: string, data: Partial<User>) {
 
   return await response.json();
 }
+
 ```
 
 ### 2. File Operations (Node.js)
@@ -319,6 +328,7 @@ async function readMultipleFiles(paths: string[]) {
   );
   return contents;
 }
+
 ```
 
 ### 3. Database Operations
@@ -342,6 +352,7 @@ async function createOrder(userId: string, items: OrderItem[]) {
 
   return order;
 }
+
 ```
 
 ### 4. React Component
@@ -373,6 +384,7 @@ function UserProfile({ userId }: { userId: string }) {
   if (error) return <div>Error: {error.message}</div>;
   return <div>{user?.name}</div>;
 }
+
 ```
 
 ### 5. Middleware Pattern
@@ -402,6 +414,7 @@ const authMiddleware: Middleware = async (ctx, next) => {
   ctx.user = verifyToken(token);
   await next();
 };
+
 ```
 
 ## Common Mistakes
@@ -422,6 +435,7 @@ async function getData() {
   const data = await response.json();
   return data;
 }
+
 ```
 
 ### 2. Unnecessary Sequential Operations
@@ -444,6 +458,7 @@ async function loadDashboard() {
   ]);
   return { user, posts, notifications };
 }
+
 ```
 
 ### 3. Missing Error Handling
@@ -468,6 +483,7 @@ async function riskyOperation() {
     throw error;
   }
 }
+
 ```
 
 ### 4. Async in Loops
@@ -493,6 +509,7 @@ async function processItemsBatched(items: any[]) {
     await Promise.all(batch.map(item => processItem(item)));
   }
 }
+
 ```
 
 ## Best Practices
@@ -507,6 +524,7 @@ async function processData() {
   await saveToDatabase(processed);
   return processed;
 }
+
 ```
 
 ### 2. Always Handle Errors
@@ -521,6 +539,7 @@ async function riskyOperation() {
     throw error;
   }
 }
+
 ```
 
 ### 3. Use Promise.all for Parallel Operations
@@ -536,6 +555,7 @@ async function loadMultipleResources() {
 
   return { users, posts, comments };
 }
+
 ```
 
 ### 4. Avoid async in Loops
@@ -553,6 +573,7 @@ async function processLargeArray(items: any[]) {
     await new Promise(resolve => setTimeout(resolve, 0));
   }
 }
+
 ```
 
 ## Performance Considerations
@@ -577,6 +598,7 @@ async function parallel() {
   ]);
   return { a, b, c };  // Total: 1 second
 }
+
 ```
 
 ### Memory Usage
@@ -603,6 +625,7 @@ async function processBatched(items: any[]) {
 
   return results;
 }
+
 ```
 
 ### Error Recovery
@@ -622,6 +645,7 @@ async function fetchWithFallback() {
     }
   }
 }
+
 ```
 
 ## Interview Questions
@@ -635,21 +659,29 @@ A: Async/await is syntactic sugar over Promises that makes asynchronous code loo
 **Q2: What does the `async` keyword do?**
 
 A: The `async` keyword:
+
 1. Makes the function always return a Promise
+
 2. Allows using `await` inside the function
+
 3. Makes the function's return value automatically wrapped in a Promise
 
 **Q3: What does the `await` keyword do?**
 
 A: The `await` keyword:
+
 1. Pauses execution until a Promise settles
+
 2. Returns the resolved value
+
 3. Throws if the Promise is rejected
+
 4. Can only be used inside `async` functions
 
 **Q4: How do you handle errors with async/await?**
 
 A: Use try/catch blocks:
+
 ```typescript
 async function riskyOperation() {
   try {
@@ -659,6 +691,7 @@ async function riskyOperation() {
     handleError(error);
   }
 }
+
 ```
 
 **Q5: Can you use await outside of async functions?**
@@ -670,6 +703,7 @@ A: No, `await` can only be used inside `async` functions or at the top level of 
 **Q6: What is the difference between sequential and parallel async operations?**
 
 A:
+
 - **Sequential**: Each operation waits for the previous one to complete
 - **Parallel**: Operations run simultaneously
 
@@ -680,11 +714,13 @@ const b = await fetchB();
 
 // Parallel
 const [a, b] = await Promise.all([fetchA(), fetchB()]);
+
 ```
 
 **Q7: How do you make multiple independent API calls in parallel?**
 
 A: Use `Promise.all`:
+
 ```typescript
 async function loadDashboard() {
   const [user, posts, notifications] = await Promise.all([
@@ -694,11 +730,13 @@ async function loadDashboard() {
   ]);
   return { user, posts, notifications };
 }
+
 ```
 
 **Q8: What is an async generator function?**
 
 A: An async generator function uses `async function*` and `yield` to produce values asynchronously:
+
 ```typescript
 async function* asyncGenerator() {
   let i = 0;
@@ -707,16 +745,19 @@ async function* asyncGenerator() {
     yield i++;
   }
 }
+
 ```
 
 **Q9: How do you iterate over an async generator?**
 
 A: Use `for await...of`:
+
 ```typescript
 for await (const value of asyncGenerator()) {
   console.log(value);
   if (value > 5) break;
 }
+
 ```
 
 **Q10: What is the relationship between async/await and Promises?**
@@ -728,10 +769,15 @@ A: Async/await is syntactic sugar over Promises. `async` functions always return
 **Q11: Explain the execution model of async/await.**
 
 A:
+
 1. `async` function runs synchronously until first `await`
+
 2. At `await`, function is suspended and returns a Promise
+
 3. Execution returns to the caller
+
 4. When the awaited Promise settles, function resumes
+
 5. Function continues until next `await` or completion
 
 **Q12: How does async/await interact with the event loop?**
@@ -741,6 +787,7 @@ A: `await` yields control back to the event loop. Microtasks (Promise callbacks)
 **Q13: What are the performance implications of async/await?**
 
 A:
+
 - Sequential awaits can be slower than parallel Promises
 - Each `await` creates a new Promise (memory overhead)
 - Async functions have slightly more overhead than regular functions
@@ -748,6 +795,7 @@ A:
 **Q14: How do you implement cancellation with async/await?**
 
 A:
+
 ```typescript
 function createCancellable<T>(promise: Promise<T>) {
   let cancelled = false;
@@ -767,14 +815,19 @@ function createCancellable<T>(promise: Promise<T>) {
     cancel: () => { cancelled = true; }
   };
 }
+
 ```
 
 **Q15: How do you handle async operations in React?**
 
 A:
+
 1. `useEffect` with async functions
+
 2. State variables for loading/error
+
 3. Cleanup functions for cancellation
+
 4. Custom hooks for reusable logic
 
 ### FAANG-style (5-10 questions)
@@ -782,6 +835,7 @@ A:
 **Q16: Design an async task scheduler with concurrency control.**
 
 A:
+
 ```typescript
 class AsyncTaskScheduler {
   private queue: (() => Promise<any>)[] = [];
@@ -817,11 +871,13 @@ class AsyncTaskScheduler {
     }
   }
 }
+
 ```
 
 **Q17: How would you implement async/await without using async/await?**
 
 A:
+
 ```typescript
 function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
   return function(...args: any[]) {
@@ -852,11 +908,13 @@ function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
     });
   };
 }
+
 ```
 
 **Q18: Analyze the memory implications of async/await.**
 
 A:
+
 - Each `await` creates a new Promise
 - Suspended functions retain local variables
 - Long chains can accumulate memory
@@ -865,18 +923,27 @@ A:
 **Q19: How do you debug async/await code?**
 
 A:
+
 1. Chrome DevTools: Async stack traces
+
 2. Add logging at key points
+
 3. Use `console.trace()` to see call stack
+
 4. Breakpoints work across `await` boundaries
+
 5. Use `Promise.allSettled()` to see all results
 
 **Q20: What are the security implications of async/await?**
 
 A:
+
 1. **Timing attacks**: Measure async operation time
+
 2. **Resource exhaustion**: Create too many concurrent operations
+
 3. **Information leakage**: Async errors can expose internals
+
 4. **Mitigation**: Rate limiting, input validation, error handling
 
 ### Follow-ups (5-10 questions)
@@ -884,6 +951,7 @@ A:
 **Q21: Can you give an example of an async/await bug in production?**
 
 A: Common bug: Missing error handling
+
 ```typescript
 // Bug: Unhandled rejection
 async function fetchData() {
@@ -905,11 +973,13 @@ async function fetchData() {
     throw error;
   }
 }
+
 ```
 
 **Q22: How do you handle async operations in Redux?**
 
 A:
+
 ```typescript
 // Redux thunk
 const fetchUser = (id: string) => async (dispatch: Dispatch) => {
@@ -922,6 +992,7 @@ const fetchUser = (id: string) => async (dispatch: Dispatch) => {
     dispatch({ type: 'FETCH_USER_FAILURE', error });
   }
 };
+
 ```
 
 **Q23: What is the relationship between async/await and generators?**
@@ -931,6 +1002,7 @@ A: Async/await is syntactic sugar over generators. Generators yield values, whil
 **Q24: How do different frameworks handle async operations?**
 
 A:
+
 - **React**: useEffect, useState, custom hooks
 - **Vue**: Composition API with async setup
 - **Angular**: HttpClient, async pipe
@@ -939,13 +1011,21 @@ A:
 **Q25: What are best practices for working with async/await?**
 
 A:
+
 1. Always handle errors with try/catch
+
 2. Use Promise.all for parallel operations
+
 3. Avoid unnecessary sequential awaits
+
 4. Use TypeScript for type safety
+
 5. Implement cancellation patterns
+
 6. Monitor unhandled rejections
+
 7. Use async generators for streaming data
+
 8. Test async code thoroughly
 
 ## Summary
@@ -953,11 +1033,17 @@ A:
 Async/await is the modern way to handle asynchronous JavaScript:
 
 1. **Syntax sugar**: Makes async code look synchronous
+
 2. **Readability**: Easier to understand and maintain
+
 3. **Error handling**: Familiar try/catch blocks
+
 4. **Performance**: Use Promise.all for parallel operations
+
 5. **Best practices**: Handle errors, avoid sequential when parallel is better
+
 6. **Debugging**: Easier than Promise chains
+
 7. **Patterns**: Retry, timeout, cancellation
 
 Understanding async/await is essential for modern JavaScript development.
@@ -1060,6 +1146,7 @@ DEBUGGING:
 • console.trace() in catch
 • Logging at key points
 • Promise.allSettled() for visibility
+
 ```
 
 ## References & Learn More

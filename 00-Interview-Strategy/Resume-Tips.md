@@ -3,13 +3,21 @@
 ## Table of Contents
 
 1. [The Senior Resume Mindset](#the-senior-resume-mindset)
+
 2. [Resume Formatting & Structure](#resume-formatting--structure)
+
 3. [Professional Summary](#professional-summary)
+
 4. [Quantifying Achievements](#quantifying-achievements)
+
 5. [Tech Stack Presentation](#tech-stack-presentation)
+
 6. [Project Descriptions](#project-descriptions)
+
 7. [ATS Optimization](#ats-optimization)
+
 8. [Common Mistakes](#common-mistakes)
+
 9. [One-Page vs Two-Page Debate](#one-page-vs-two-page-debate)
 10. [Final Checklist](#final-checklist)
 
@@ -51,6 +59,7 @@ A senior engineer's resume is fundamentally different from a mid-level one. Recr
 ├─────────────────────────────────────────────┤
 │  Optional: Certifications, Side Projects     │
 └─────────────────────────────────────────────┘
+
 ```
 
 ### Formatting Rules
@@ -68,10 +77,15 @@ A senior engineer's resume is fundamentally different from a mid-level one. Recr
 ### Section Order (Priority)
 
 1. **Contact Info** — Keep it minimal
+
 2. **Professional Summary** — Your elevator pitch
+
 3. **Experience** — Core of the resume
+
 4. **Technical Skills** — Keyword-rich
+
 5. **Education** — Brief at senior level
+
 6. **Certifications / Projects** — Optional differentiators
 
 ---
@@ -86,6 +100,7 @@ This is the most important 3-4 lines on your resume. It must answer: **Why shoul
 Experienced software engineer with 8+ years of experience in full stack
 development. Proficient in JavaScript, React, Node.js. Passionate about
 building great software. Team player with strong communication skills.
+
 ```
 
 **Why it fails:** Generic, no quantifiable impact, could be anyone.
@@ -98,6 +113,7 @@ serving 2M+ users. Led migration from monolith to microservices, reducing
 deployment time by 75%. Architected real-time payment processing system
 handling $50M+ annual volume. Experienced in mentoring 12+ engineers and
 driving engineering practices across 3 product teams.
+
 ```
 
 **Why it works:** Specific domain, measurable outcomes, leadership evidence.
@@ -108,6 +124,7 @@ driving engineering practices across 3 product teams.
 [Title] with [X] years building [domain/type of products] serving [scale].
 [Key achievement #1 with metric]. [Key achievement #2 with metric].
 [Leadership/culture contribution].
+
 ```
 
 ---
@@ -120,19 +137,23 @@ This is the single most impactful thing you can do. Numbers create credibility.
 
 ```text
 Action Verb + What You Built/Did + Measurable Outcome
+
 ```
 
 ### Transformation Examples
 
 **Before:**
+
 ```text
 • Worked on improving application performance
 • Helped reduce bugs in the application
 • Built new features for the dashboard
 • Involved in code reviews and mentoring
+
 ```
 
 **After:**
+
 ```text
 • Optimized React rendering pipeline, reducing FCP from 3.2s to 0.8s (75% improvement)
   and improving Lighthouse score from 52 to 94 across 15 core pages
@@ -142,6 +163,7 @@ Action Verb + What You Built/Did + Measurable Outcome
   reducing feature delivery time by 40% for 3 product teams
 • Mentored 4 junior engineers through structured 1:1s and pair programming,
   with 3 receiving promotions within 18 months
+
 ```
 
 ### Metrics That Matter for Senior Engineers
@@ -165,6 +187,7 @@ Optimized | Streamlined | Automated | Consolidated | Migrated
 Mentored | Guided | Influenced | Established | Standardized
 Delivered | Shipped | Launched | Scaled | Hardened
 Reduced | Increased | Improved | Eliminated | Transformed
+
 ```
 
 ---
@@ -183,6 +206,7 @@ Databases:      PostgreSQL, MongoDB, Redis, Elasticsearch
 Cloud/DevOps:   AWS (EC2, ECS, Lambda, S3, RDS), Docker, Kubernetes, Terraform
 Testing:        Jest, Cypress, Playwright, React Testing Library
 Tools:          Git, GitHub Actions, Datadog, Sentry, Figma
+
 ```
 
 ### Skill Level Indicators (Optional)
@@ -194,6 +218,7 @@ TypeScript ████████████████████ Expert
 Python     ████████████████░░░░ Advanced
 Go         ████████████░░░░░░░░ Intermediate
 Rust       ████████░░░░░░░░░░░░ Learning
+
 ```
 
 ### What NOT to Do
@@ -217,18 +242,22 @@ Rust       ████████░░░░░░░░░░░░ Learning
 **Context:** One-line description of the product/domain/team size
 
 **Key Achievements:**
+
 - Achievement 1 (with metric)
 - Achievement 2 (with metric)
 - Achievement 3 (with metric)
 
 **Tech Stack:** TypeScript, React, Next.js, Node.js, PostgreSQL, AWS, Docker
+
 ```
 
 ### Writing Achievement Bullets
 
 **Framework:**
+
 ```text
 [Action] [specific system/feature] using [technology], resulting in [metric/outcome]
+
 ```
 
 **Examples:**
@@ -249,6 +278,7 @@ Rust       ████████░░░░░░░░░░░░ Learning
 
 • Created automated deployment pipeline using GitHub Actions and ArgoCD,
   enabling 15+ daily deployments with zero-downtime rollbacks
+
 ```
 
 ### Project Section (For Side Projects / Open Source)
@@ -267,6 +297,7 @@ Rust       ████████░░░░░░░░░░░░ Learning
   using WebSockets and Stripe integration
 • Handles 1K+ transactions/day with end-to-end encryption
 • Tech: Next.js, Socket.io, Stripe API, PostgreSQL, Redis
+
 ```
 
 ---
@@ -291,20 +322,26 @@ Applicant Tracking Systems (Greenhouse, Lever, Workday, iCIMS) parse and filter 
 ### Keyword Strategy
 
 1. **Read the job description** — Identify repeated terms and required skills
+
 2. **Mirror their language** — If they say "microservices," don't write "distributed systems"
+
 3. **Include both acronyms and full terms** — "CI/CD (Continuous Integration/Continuous Deployment)"
+
 4. **Weave keywords into achievements** — Don't just list them in a skills section
 
 ### Example: Keyword Integration
 
 **Job Description Extract:**
+
 ```text
 Looking for experience with React, Node.js, PostgreSQL, AWS, microservices,
 CI/CD pipelines, and agile methodologies. Experience with performance
 optimization and monitoring is a plus.
+
 ```
 
 **Resume Integration:**
+
 ```text
 • Architected microservices platform on AWS (ECS, Lambda, RDS PostgreSQL)
   using Node.js and TypeScript, serving 2M+ API requests/day
@@ -314,6 +351,7 @@ optimization and monitoring is a plus.
 
 • Led React performance optimization initiative using Datadog RUM monitoring,
   improving Core Web Vitals across 15 pages (LCP: 4.2s → 1.1s)
+
 ```
 
 ---
@@ -323,24 +361,30 @@ optimization and monitoring is a plus.
 ### Top 10 Senior Resume Mistakes
 
 **1. Describing responsibilities instead of achievements**
+
 ```text
 ❌ "Responsible for developing frontend applications"
 ✅ "Built React component library adopted by 4 teams, reducing UI
     development time by 35%"
+
 ```
 
 **2. Being too vague**
+
 ```text
 ❌ "Improved application performance"
 ✅ "Reduced API response time from 800ms to 120ms by implementing
     Redis caching layer and optimizing 12 PostgreSQL queries"
+
 ```
 
 **3. Listing every technology ever touched**
+
 ```text
 ❌ "HTML, CSS, JavaScript, React, Angular, Vue, Node.js, Python, Java,
     C++, Ruby, PHP, Go, Rust, Swift, Kotlin..."
 ✅ Curated list of 12-15 most relevant technologies grouped by category
+
 ```
 
 **4. Ignoring the job description**
@@ -369,11 +413,13 @@ At senior level, this signals carelessness. Have 2-3 people review it.
 ## One-Page vs Two-Page Debate
 
 ### One Page If:
+
 - Less than 10 years of experience
 - Applying to startups or smaller companies
 - Career has been focused (same domain/stack)
 
 ### Two Pages If:
+
 - 10+ years of relevant experience
 - Significant open source, publications, or speaking
 - Applying to FAANG or large enterprises

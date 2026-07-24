@@ -1193,3 +1193,232 @@ DON'T Use CQRS When:
 - 🌐 **Website:** [VisuAlgo](https://visualgo.net/) — AVL Tree rotations
 - 🎥 **YouTube:** [ByteByteGo](https://www.youtube.com/@ByteByteGo) — System Design concepts
 - 🌐 **Website:** [Microservices.io](https://microservices.io/patterns/) — Microservices patterns
+
+---
+
+# Dependency Injection
+
+> **Design Pattern:** Invert control of object creation. Dependencies are provided rather than created internally.
+
+## Concept
+
+```
+Dependency Injection (DI): A class receives its dependencies from outside
+instead of creating them itself.
+
+Without DI (tight coupling):
+class UserService {
+    private UserRepository repo = new PostgresUserRepository(); // hardcoded
+}
+
+With DI (loose coupling):
+class UserService {
+    private final UserRepository repo;
+    UserService(UserRepository repo) { this.repo = repo; } // injected
+}
+```
+
+## Types of DI
+
+```java
+// 1. Constructor Injection (preferred)
+class OrderService {
+    private final OrderRepository orderRepo;
+    private final PaymentService paymentService;
+    
+    OrderService(OrderRepository orderRepo, PaymentService paymentService) {
+        this.orderRepo = orderRepo;
+        this.paymentService = paymentService;
+    }
+}
+
+// 2. Setter Injection
+class OrderService {
+    private OrderRepository orderRepo;
+    
+    void setOrderRepo(OrderRepository orderRepo) {
+        this.orderRepo = orderRepo;
+    }
+}
+
+// 3. Field Injection (not recommended, hard to test)
+class OrderService {
+    @Autowired
+    private OrderRepository orderRepo;
+}
+```
+
+## DI Containers
+
+```
+Spring (Java):
+- @Component, @Service, @Repository — mark classes for DI
+- @Autowired — inject dependencies
+- @Configuration — define beans
+
+NestJS (TypeScript):
+- @Injectable() — mark class for DI
+- @Inject() — inject dependencies
+- Module system — organize providers
+```
+
+## Benefits
+
+```
+✅ Loose coupling — classes don't know about concrete implementations
+✅ Testability — easy to inject mocks
+✅ Flexibility — swap implementations without changing code
+✅ Single Responsibility — classes focus on business logic
+```
+
+---
+
+# Repository Pattern
+
+> **Design Pattern:** Abstract data access layer. Separates business logic from persistence.
+
+## Concept
+
+```
+Repository: Acts as an in-memory collection of domain objects
+- Hides data access complexity
+- Provides CRUD operations
+- Enables unit testing without database
+```
+
+## Implementation
+
+```java
+// Interface
+interface UserRepository {
+    User findById(Long id);
+    List<User> findAll();
+    User save(User user);
+    void delete(Long id);
+    User findByEmail(String email);
+}
+
+// PostgreSQL implementation
+class PostgresUserRepository implements UserRepository {
+    private final JdbcTemplate jdbcTemplate;
+    
+    PostgresUserRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+    
+    public User findById(Long id) {
+        return jdbcTemplate.queryForObject(
+            "SELECT * FROM users WHERE id = ?",
+            new UserRowMapper(), id
+        );
+    }
+}
+
+// In-memory implementation (for testing)
+class InMemoryUserRepository implements UserRepository {
+    private final Map<Long, User> users = new HashMap<>();
+    
+    public User findById(Long id) { return users.get(id); }
+    public User save(User user) {
+        users.put(user.getId(), user);
+        return user;
+    }
+}
+```
+
+## Benefits
+
+```
+✅ Separation of concerns — business logic separate from data access
+✅ Testability — swap real DB for in-memory in tests
+✅ Flexibility — change database without changing business code
+✅ Single source of truth — all data access goes through repository
+```
+
+---
+
+# MVC (Model-View-Controller)
+
+> **Design Pattern:** Separate application into three interconnected components.
+
+## Concept
+
+```
+MVC: Separation of concerns in web applications
+
+Model: Data and business logic
+- Represents domain entities
+- Contains business rules
+- Handles data validation
+
+View: User interface
+- Displays data from Model
+- Handles user input
+- Templates, HTML, React components
+
+Controller: Request handling
+- Receives user input
+- Interacts with Model
+- Returns appropriate View
+```
+
+## Flow
+
+```
+User Request → Controller → Model → View → Response
+
+1. User clicks button → sends HTTP request
+2. Controller receives request, calls Model method
+3. Model processes data, returns result
+4. Controller selects View, passes data
+5. View renders response to user
+```
+
+## Implementation (Spring MVC)
+
+```java
+// Model
+@Entity
+class User {
+    @Id Long id;
+    String name;
+    String email;
+}
+
+@Repository
+interface UserRepository extends JpaRepository<User, Long> {}
+
+// Controller
+@RestController
+@RequestMapping("/users")
+class UserController {
+    private final UserRepository userRepository;
+    
+    UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        return userRepository.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+    
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User saved = userRepository.save(user);
+        return ResponseEntity.ok(saved);
+    }
+}
+```
+
+## MVC vs MVVM vs MVP
+
+```
+| Pattern | View-Model Binding | Testability | Complexity |
+|---------|-------------------|-------------|------------|
+| MVC     | Indirect (Controller) | Good | Low |
+| MVVM    | Two-way binding (Data binding) | Very Good | Medium |
+| MVP     | Presenter mediates | Very Good | Medium |
+```

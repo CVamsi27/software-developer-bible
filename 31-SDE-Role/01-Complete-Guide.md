@@ -632,12 +632,12 @@ class Student implements Comparable<Student> {
 Comparator<Student> byName = Comparator.comparing(s -> s.name);
 Comparator<Student> byAge = Comparator.comparingInt(s -> s.age);
 Comparator<Student> byAgeDesc = byAge.reversed();
-Comparator<Student>复合 = byName.thenComparing(byAge);
+Comparator<Student> composite = byName.thenComparing(byAge);
 
 List<Student> students = new ArrayList<>();
 Collections.sort(students, byName);           // by name
 students.sort(byAgeDesc);                     // by age descending
-students.sort(复合);                           // by name, then by age
+students.sort(composite);                           // by name, then by age
 ```
 
 ## 1.8 Lambda Expressions and Streams API

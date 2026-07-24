@@ -38,7 +38,9 @@ A comprehensive, interview-focused reference for senior full-stack engineering r
 | 29 | [Form Handling](29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
 | 30 | [Animation](30-Animation/) | 3 | Framer Motion, CSS Animations |
 
-**Total: 219 files**
+| 31 | [SDE Interview Guide](31-SDE-Role/) | 4 | Complete SDE Interview Prep (28 Phases) |
+
+**Total: 223 files**
 
 ## Chapter Template
 
@@ -122,3 +124,42 @@ Every chapter follows this structure:
 22. Monorepo (Turborepo, Nx)
 23. Form Handling (React Hook Form, Zod)
 24. Animation (Framer Motion, CSS)
+
+## SDE Interview Guide (Complete Resource)
+
+For a **comprehensive SDE interview preparation guide** targeting top product-based companies (Microsoft, Google, Amazon, Meta, Apple), see [31-SDE-Role/](31-SDE-Role/).
+
+This guide covers **28 phases** with full explanations, code examples, LeetCode problems, and resources:
+
+| Phase | Topic | Focus |
+|-------|-------|-------|
+| 1 | Java Language Mastery | Collections, Streams, Generics, Multithreading |
+| 2 | Time & Space Complexity | Big O, Amortized Analysis |
+| 3 | Data Structures | Arrays, Strings, LinkedList, Stack, Queue, Heap, Trees, Graphs |
+| 4 | Algorithms | Sorting, Searching, Binary Search |
+| 5 | Pattern Recognition | 20 essential patterns (Two Pointers, Sliding Window, etc.) |
+| 6 | Dynamic Programming | Memoization, Tabulation, Knapsack, LIS, LCS |
+| 7 | Graph Algorithms | DFS, BFS, Dijkstra, Union Find, Topological Sort |
+| 8 | Trees (Advanced) | BST, Trie, Serialization, LCA |
+| 9 | Bit Manipulation | XOR, Bitmasks, Subset Generation |
+| 10 | Mathematics | Primes, GCD, Modular Arithmetic, Combinatorics |
+| 11 | OOP | SOLID, Encapsulation, Polymorphism, Composition |
+| 12 | Design Patterns | Singleton, Factory, Builder, Strategy, Observer |
+| 13 | Operating Systems | Processes, Threads, Deadlocks, Memory, Synchronization |
+| 14 | Computer Networks | TCP/IP, HTTP, DNS, Load Balancing, Caching |
+| 15 | Databases | SQL, Normalization, Indexes, Transactions, MVCC |
+| 16 | System Design | URL Shortener, Chat, Rate Limiter, Crawler, etc. |
+| 17 | REST API Design | URL Design, Status Codes, Pagination, Versioning |
+| 18 | Security | SQL Injection, XSS, CSRF, JWT, Encryption |
+| 19 | Concurrency | Threads, Locks, CompletableFuture, Producer-Consumer |
+| 20 | Git & Version Control | Branching, Rebase, Cherry-Pick, Hooks |
+| 21 | Linux & Shell | Commands, Scripting, Process Management |
+| 22 | Behavioral Interviews | STAR Method, Amazon LPs, Microsoft Growth Mindset |
+| 23 | Resume Deep Dive | Bullet Points, Projects, Action Verbs |
+| 24 | Testing | JUnit, Mockito, Integration, API Testing |
+| 25 | Cloud & Infrastructure | Docker, Kubernetes, AWS/Azure, CI/CD |
+| 26 | Frontend (Full-Stack) | JavaScript Internals, React, Next.js, TypeScript |
+| 27 | Mock Interviews & Practice | Schedule, Platforms, Day-of Tips |
+| 28 | Company-Specific Prep | Microsoft, Google, Amazon, Meta, Apple, Netflix |
+
+**Total Study Time: ~640 hours (~16-32 weeks)**

@@ -76,32 +76,32 @@ Example answer structure:
 ### 🔥 Most Asked Microsoft Questions (2024–2025)
 
 #### Tier 1: Must-Know (Asked Frequently)
-```
-1.  Two Sum                          (Easy)
-2.  Valid Parentheses                (Easy)
-3.  Merge Two Sorted Lists           (Easy)
-4.  Binary Tree Level Order Traversal (Medium)
-5.  LRU Cache                        (Medium) ← VERY COMMON
-6.  Clone Graph                      (Medium)
-7.  Word Ladder                      (Medium)
-8.  Group Anagrams                   (Medium)
-9.  Longest Substring Without Repeating Characters (Medium)
-10. Product of Array Except Self     (Medium)
-```
+| # | Problem | Difficulty | Link |
+|---|---------|------------|------|
+| 1 | Two Sum | Easy | [LC #1](https://leetcode.com/problems/two-sum/) |
+| 2 | Valid Parentheses | Easy | [LC #20](https://leetcode.com/problems/valid-parentheses/) |
+| 3 | Merge Two Sorted Lists | Easy | [LC #21](https://leetcode.com/problems/merge-two-sorted-lists/) |
+| 4 | Binary Tree Level Order Traversal | Medium | [LC #102](https://leetcode.com/problems/binary-tree-level-order-traversal/) |
+| 5 | LRU Cache | Medium | [LC #146](https://leetcode.com/problems/lru-cache/) ← VERY COMMON |
+| 6 | Clone Graph | Medium | [LC #133](https://leetcode.com/problems/clone-graph/) |
+| 7 | Word Ladder | Medium | [LC #127](https://leetcode.com/problems/word-ladder/) |
+| 8 | Group Anagrams | Medium | [LC #49](https://leetcode.com/problems/group-anagrams/) |
+| 9 | Longest Substring Without Repeating Characters | Medium | [LC #3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) |
+| 10 | Product of Array Except Self | Medium | [LC #238](https://leetcode.com/problems/product-of-array-except-self/) |
 
 #### Tier 2: High Probability
-```
-11. Serialize and Deserialize Binary Tree (Hard)
-12. Binary Tree Zigzag Level Order Traversal (Medium)
-13. Merge Two Binary Trees            (Easy)
-14. Find Median from Data Stream      (Hard)
-15. Design Hit Counter / Rate Limiter (Medium)
-16. Task Scheduler                    (Medium)
-17. Number of Islands                 (Medium)
-18. Course Schedule (I & II)          (Medium)
-19. Trapping Rain Water               (Hard)
-20. 3Sum                              (Medium)
-```
+| # | Problem | Difficulty | Link |
+|---|---------|------------|------|
+| 11 | Serialize and Deserialize Binary Tree | Hard | [LC #297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) |
+| 12 | Binary Tree Zigzag Level Order Traversal | Medium | [LC #103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) |
+| 13 | Merge Two Binary Trees | Easy | [LC #617](https://leetcode.com/problems/merge-two-binary-trees/) |
+| 14 | Find Median from Data Stream | Hard | [LC #295](https://leetcode.com/problems/find-median-from-data-stream/) |
+| 15 | Design Hit Counter / Rate Limiter | Medium | [LC #359](https://leetcode.com/problems/logger-rate-limiter/) |
+| 16 | Task Scheduler | Medium | [LC #621](https://leetcode.com/problems/task-scheduler/) |
+| 17 | Number of Islands | Medium | [LC #200](https://leetcode.com/problems/number-of-islands/) |
+| 18 | Course Schedule (I & II) | Medium | [LC #207](https://leetcode.com/problems/course-schedule/) |
+| 19 | Trapping Rain Water | Hard | [LC #42](https://leetcode.com/problems/trapping-rain-water/) |
+| 20 | 3Sum | Medium | [LC #15](https://leetcode.com/problems/3sum/) |
 
 #### Tier 3: Azure-Specific / System-Oriented
 ```
@@ -345,6 +345,50 @@ A:
   Consider: Lock renewal, failure handling, clock skew
 ```
 
+### Azure Networking
+
+```
+VNet (Virtual Network):
+- Isolated network environment in Azure
+- Subnets for organizing resources
+- Peering for connecting VNets
+
+NSG (Network Security Group):
+- Firewall rules for inbound/outbound traffic
+- Rule priority (lower = higher priority)
+- Can associate with subnet or NIC
+
+Load Balancer vs Application Gateway:
+- LB: Layer 4 (TCP/UDP), high performance, no SSL termination
+- AG: Layer 7 (HTTP/HTTPS), SSL termination, WAF, URL routing
+
+Azure Front Door:
+- Global load balancing + CDN
+- SSL offloading, health probes, failover
+- Used for multi-region applications
+```
+
+### Azure Pricing Awareness (Important for System Design)
+
+```
+Pricing Models:
+- Pay-as-you-go: Most flexible, highest cost
+- Reserved Instances: 1-3 year commitment, 30-60% savings
+- Spot Instances: Unused capacity, up to 90% savings (ephemeral)
+
+Cost Optimization in Design Answers:
+- Use Azure Blob Storage lifecycle management (hot → cool → archive)
+- Choose appropriate Cosmos DB consistency level (lower = cheaper)
+- Use Azure Functions for sporadic workloads (pay per execution)
+- Consider Azure Cache for Redis to reduce database reads
+
+Example in Interview:
+"For this design, I'd use Azure Blob Storage with lifecycle rules
+ to auto-tier old data to Cool storage, reducing costs by 50%.
+ For hot data, I'd use Azure Cache for Redis to minimize
+ Cosmos DB RU consumption."
+```
+
 ### Azure Storage Internals
 
 ```
@@ -412,6 +456,45 @@ A:
 
 4. Specific Team Interest: "I'm particularly excited about [specific Azure team]
    because [specific reason about their product/challenges]."
+```
+
+### As Appropriate (AA) Round — Senior Leader Interview
+
+```
+Purpose: Final culture/leadership check by a senior leader (L65+)
+Duration: 30-45 minutes
+Format: Conversational, not technical
+
+What they probe:
+- Leadership potential and strategic thinking
+- "Would I want this person on my team?"
+- How you handle ambiguity and make decisions
+- Long-term career goals and alignment with Microsoft
+
+Tips:
+- Share a story about technical leadership (not just coding)
+- Show you think about business impact, not just technical solutions
+- Ask them about their vision for the team/organization
+- Be genuine — they can spot rehearsed answers
+```
+
+### Questions to Ask Your Interviewers
+
+```
+Technical:
+- "What's the biggest technical challenge your team is currently solving?"
+- "How does the team approach on-call and incident response?"
+- "What's the ratio of new feature work vs tech debt?"
+
+Team Culture:
+- "How does the team collaborate across time zones?"
+- "What does career growth look like for SDEs on this team?"
+- "How do you balance shipping quickly with code quality?"
+
+Azure-Specific:
+- "How does this team's service handle multi-region deployment?"
+- "What Azure services does this team use most, and why?"
+- "How do you handle the scale challenges unique to Azure?"
 ```
 
 ---

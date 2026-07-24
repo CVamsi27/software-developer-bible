@@ -1706,6 +1706,10 @@ class Trie {
 }
 ```
 
+### More Advanced Trees
+
+> **Note:** For Segment Tree, Fenwick Tree (BIT), and AVL Tree concepts, see [Advanced Topics](05-Advanced-Topics.md).
+
 ### Problems to Practice
 
 | Problem | Difficulty | Pattern |

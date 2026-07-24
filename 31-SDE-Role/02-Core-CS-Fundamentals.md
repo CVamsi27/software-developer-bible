@@ -938,6 +938,10 @@ class TypeCommand implements Command {
 | State | Behavioral | State-dependent behavior |
 | Mediator | Behavioral | Communication between objects |
 
+## More Design Patterns
+
+> **Note:** For Dependency Injection, Repository, and MVC patterns, see [Advanced Topics](05-Advanced-Topics.md).
+
 ## Problems to Practice
 
 | Problem | Difficulty | Pattern |

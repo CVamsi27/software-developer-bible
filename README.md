@@ -38,9 +38,9 @@ A comprehensive, interview-focused reference for senior full-stack engineering r
 | 29 | [Form Handling](29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
 | 30 | [Animation](30-Animation/) | 3 | Framer Motion, CSS Animations |
 
-| 31 | [SDE Interview Guide](31-SDE-Role/) | 4 | Complete SDE Interview Prep (28 Phases) |
+| 31 | [SDE Interview Guide](31-SDE-Role/) | 5 | Complete SDE Interview Prep (28 Phases) |
 
-**Total: 223 files**
+**Total: 224 files**
 
 ## Chapter Template
 

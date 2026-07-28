@@ -126,13 +126,13 @@ URL-encode special characters:
 
 ### INDEX.md Badges (3 per file)
 
-### INDEX.md Badges (3 per file)
-
 ```markdown
 [![Files](https://img.shields.io/badge/files-20-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 ```
+
+Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badges with the same format.
 
 ### Standard Badge Colors
 
@@ -450,14 +450,27 @@ else:
 
 ```markdown
 ## See Also
+- [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
 - [TypeScript](../02-TypeScript/)
-- [Coding Patterns](../19-Coding-Patterns/)
 ```
 
-- Always use relative paths (e.g., `../xx-Section/`)
-- Link to the section directory (not a specific file)
-- List the most relevant related sections first
+#### Rules
+
+- **Heading level**: Use `## See Also` (level-2). Some new files use `### See Also` (level-3) — convert to `##` when encountered.
+- **Alphabetization**: Links must be **alphabetized** by link text (case-insensitive). This is enforced project-wide.
+- **Placement**: `## See Also` must come **before** `## References` / `## References & Learn More`.
+- **Path style**: Always use relative paths (e.g., `../xx-Section/`).
+- **Cross-section links**: Link to the section directory (e.g., `../01-JavaScript/`), not a specific file.
+- **Intra-section links**: When linking to another file within the same section, link to the specific file (e.g., `../05-HPA-Scaling.md`). This is acceptable — ~12% of all See Also links are intra-section file references.
+
+#### Accepted Link Formats
+
+| Variant | Example | Usage |
+|---------|---------|-------|
+| Section directory | `- [React](../03-React/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](../02-Jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](../../07-REST-API/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -468,7 +481,8 @@ else:
 - [Another Resource](https://example.com/)
 ```
 
-- Always use the heading `## References & Learn More` (exactly)
+- **Preferred heading**: `## References & Learn More` (used by ~90% of files)
+- **Accepted variant**: `## References` (used by ~10% of files — acceptable when referencing fewer external resources)
 - Links should point to high-quality, authoritative resources
 - Official documentation, books, and well-known tutorials are preferred
 
@@ -551,7 +565,7 @@ A: A closure is...
 ```
 
 - Uses `## See Also` and `## References & Learn More` like concept files
-- Has a `## Quick Reference` section instead of `## Cheat Sheet`
+- **Bottom section**: Uses either `## Quick Reference` (preferred, 2 files) or `## Cheat Sheet` (also accepted, 11 files). Both are valid.
 - Questions are grouped by difficulty level with H3 headings
 
 ### System Design Case Studies
@@ -754,7 +768,7 @@ After making changes, verify the following:
 - [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
 
 **Interview Questions files** (`NN-Interview-Questions.md`):
-- [ ] Uses `## Quick Reference` instead of `## Cheat Sheet`
+- [ ] Uses `## Quick Reference` (preferred) or `## Cheat Sheet` (accepted) as bottom section
 - [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
 - [ ] Has `## N Most Asked [Section] Interview Questions` as first section
 
@@ -789,12 +803,20 @@ After making changes, verify the following:
 - [ ] ASCII diagrams use `text` tag
 - [ ] Opening and closing ` ``` ` are balanced (same count)
 
+### See Also
+
+- [ ] `## See Also` uses level-2 heading (`##`), not level-3 (`###`)
+- [ ] Links are alphabetized by display text (case-insensitive)
+- [ ] `## See Also` comes before `## References` / `## References & Learn More`
+- [ ] Cross-section links use section directory format: `../XX-Section/`
+- [ ] Intra-section links may use specific file references: `../NN-File.md`
+
 ### File Quality
 
 - [ ] File ends with exactly one trailing newline
 - [ ] No trailing whitespace on any line
 - [ ] No duplicated sections or headings
-- [ ] No broken links
+- [ ] No broken internal links
 - [ ] INDEX.md has `## Navigation` with correct previous/next links
 - [ ] INDEX.md has `**Cross-references:**` with related sections
 ### Running Verification
@@ -831,7 +853,7 @@ else:
 python3 /tmp/generate_report.py
 ```
 
-> **Note:** The report generator script (`/tmp/generate_report.py`) was created during the formatting standardization session. It scans all 299 `.md` files and produces the `PROJECT-STATS.md` report. If the script is unavailable, you can recreate it by reviewing the existing `PROJECT-STATS.md` for the report structure or re-running the formatting audit scripts.
+> **Note:** The report generator script (`/tmp/generate_report.py`) was created during the formatting standardization session. It scans all 333 `.md` files and produces the `PROJECT-STATS.md` report. If the script is unavailable, you can recreate it by reviewing the existing `PROJECT-STATS.md` for the report structure or re-running the formatting audit scripts.
 
 ### Quick Troubleshooting
 

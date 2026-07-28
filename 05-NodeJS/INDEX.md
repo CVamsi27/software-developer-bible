@@ -1,8 +1,8 @@
 # Node.js — Index
 
-> **11 files** — Event loop internals, streams, buffers, file system, HTTP servers, parallel processing, process management, security, and interview questions.
+> **10 files** — Event loop internals, streams, buffers, file system, HTTP servers, parallel processing, process management, security, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 

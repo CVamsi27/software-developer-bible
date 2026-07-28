@@ -737,7 +737,7 @@ class RateLimiterPool:
 
     def __init__(self, num_instances: int = 10):
         self.instances = [
-            RateLimiterMiddleware(redis_pool) 
+            RateLimiterMiddleware(redis_pool)
             for _ in range(num_instances)
         ]
         self.router = ConsistentHashRing(

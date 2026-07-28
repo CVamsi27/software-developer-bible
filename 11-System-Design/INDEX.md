@@ -1,8 +1,8 @@
 # System Design — Index
 
-> **12 files** — Real-world system design case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, and interview questions.
+> **16 files** — Real-world system design case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter Feed, Rate Limiter, Chat System, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -19,11 +19,16 @@
 | 09 | [E-Commerce](09-E-Commerce.md) | Product catalog, cart, inventory, order management, payment flow |
 | 10 | [Hospital Management](10-Hospital-Management.md) | Appointment scheduling, EHR, billing, interoperability |
 | 11 | [Live Betting](11-Live-Betting.md) | Real-time odds, event processing, concurrency, consistency |
-| 12 | [Interview Questions](12-Interview-Questions.md) | 50+ curated questions with answers |
+| 12 | [Twitter Feed](12-Twitter-Feed.md) | News feed fanout, timeline caching, trending topics, hashtag search |
+| 13 | [Rate Limiter](13-Rate-Limiter.md) | Token bucket, sliding window, distributed rate limit, 429 handling |
+| 14 | [Web Crawler](14-Web-Crawler.md) | URL frontier, politeness, content dedup, robots.txt, simhash |
+| 15 | [Chat System](15-Chat-System.md) | WebSocket messaging, presence, typing indicators, offline sync |
+| 16 | [Interview Questions](16-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 
 **Cross-references:** [Microservices](../12-Microservices/) | [Database](../08-Database/) | [REST APIs](../07-REST-API/) | [WebSockets](../21-WebSockets/)
+
 ---
 
 ## Navigation

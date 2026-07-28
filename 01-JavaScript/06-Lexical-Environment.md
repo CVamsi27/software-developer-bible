@@ -56,7 +56,7 @@ function outer(a) {
     │    c → <uninit>   (let, TDZ)            │
     │  Outer: global environment               │
     └─────────────────────────────────────────┘
-    
+
     return function inner(b) {
         ┌─────────────────────────────────────────┐
         │  Lexical Environment (inner call)        │

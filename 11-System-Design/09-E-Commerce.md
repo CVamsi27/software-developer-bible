@@ -1204,8 +1204,8 @@ This design supports 100K+ concurrent users with 10K+ orders per minute.
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

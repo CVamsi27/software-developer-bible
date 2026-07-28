@@ -251,9 +251,9 @@ Webpack is a powerful, flexible module bundler essential for modern web developm
 ---
 
 ## See Also
-- [React](../03-React/)
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)
+- [React](../03-React/)
 
 ## References & Learn More
 

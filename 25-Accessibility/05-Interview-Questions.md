@@ -395,9 +395,9 @@ Accessibility is essential for creating inclusive web experiences. Understanding
 ---
 
 ## See Also
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Testing](../16-Testing/)
-- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

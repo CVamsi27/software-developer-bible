@@ -443,8 +443,8 @@ const b: typeof a = { name: "Dog" }; // Works with both type and interface
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
-- [React](../03-React/)
 - [NestJS](../06-NestJS/)
+- [React](../03-React/)
 
 ## References & Learn More
 

@@ -733,12 +733,12 @@ Test mode: Simulate exam conditions
 These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, covering core CS concepts, design patterns, system design, behavioral questions, and more to support active recall study.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

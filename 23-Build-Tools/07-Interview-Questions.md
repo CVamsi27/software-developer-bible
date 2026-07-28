@@ -720,9 +720,9 @@ Understanding these concepts is essential for modern frontend development and te
 ---
 
 ## See Also
-- [React](../03-React/)
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)
+- [React](../03-React/)
 
 ## References & Learn More
 

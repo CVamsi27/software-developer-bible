@@ -3489,12 +3489,12 @@ TreeNode deserialize(String data) {
 This comprehensive guide covers all essential topics for senior full-stack engineer interviews, from core CS fundamentals to system design, behavioral preparation, and career strategy. Master these concepts to demonstrate breadth and depth across the full engineering spectrum.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

@@ -549,10 +549,10 @@ CQRS separates read and write operations into different models, enabling indepen
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
+- [Microservices](../12-Microservices/)
 - [Node.js](../05-NodeJS/)
 - [REST APIs](../07-REST-API/)
-- [Microservices](../12-Microservices/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

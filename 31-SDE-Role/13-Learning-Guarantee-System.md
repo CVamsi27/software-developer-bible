@@ -673,12 +673,12 @@ Each guess tells you 'higher' or 'lower' until you find it."
 This learning guarantee system provides a structured framework for mastering interview topics through active recall, spaced repetition, practice testing, and self-assessment to ensure thorough preparation.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

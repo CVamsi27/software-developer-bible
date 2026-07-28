@@ -1013,8 +1013,8 @@ This design supports 100M+ users with 1B+ notifications per day while maintainin
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

@@ -517,8 +517,8 @@ kubectl delete secret mysecret
 ---
 
 ## See Also
-- [Docker](../13-Docker/)
 - [CI/CD](../15-CI-CD/)
+- [Docker](../13-Docker/)
 - [Observability](../22-Observability/)
 - [Serverless & Edge](../27-Serverless-Edge/)
 

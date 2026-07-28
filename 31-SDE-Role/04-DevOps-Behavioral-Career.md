@@ -2001,12 +2001,12 @@ Courses:
 This guide covers DevOps practices, behavioral interview preparation, and career growth strategies. Topics include CI/CD pipelines, containerization, monitoring, the STAR method, and navigating the senior engineering career path.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

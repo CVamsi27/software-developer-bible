@@ -525,12 +525,12 @@ Result:    What was the outcome? (metrics, impact)
 This cheat sheet provides a quick reference for essential interview concepts across all topics, including time complexities, common algorithms, data structure operations, and system design building blocks for rapid review.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

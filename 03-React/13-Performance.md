@@ -230,11 +230,11 @@ Performance Optimization:
 ---
 
 ## See Also
+- [Animation](../30-Animation/)
+- [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)
 - [Testing](../16-Testing/)
-- [Form Handling](../29-Form-Handling/)
-- [Animation](../30-Animation/)
 
 ## References & Learn More
 

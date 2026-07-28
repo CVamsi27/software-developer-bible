@@ -856,10 +856,10 @@ API authentication is critical for security. JWT is the most common choice for m
 ---
 
 ## See Also
+- [Microservices](../12-Microservices/)
 - [NestJS](../06-NestJS/)
 - [Security](../09-Security/)
 - [System Design](../11-System-Design/)
-- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

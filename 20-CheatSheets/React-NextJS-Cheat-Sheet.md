@@ -396,9 +396,9 @@ This cheat sheet provides a concise reference to core React NextJS concepts, pat
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
 - [React](../03-React/)
 - [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

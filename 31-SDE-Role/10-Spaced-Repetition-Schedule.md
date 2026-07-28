@@ -373,12 +373,12 @@ Evening (1-1.5 hours):
 This schedule provides a structured 12-week spaced repetition plan for interview preparation, balancing topic review, problem-solving practice, and mock interviews to maximize long-term retention.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

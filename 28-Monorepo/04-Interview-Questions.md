@@ -304,8 +304,8 @@ Monorepo provides a unified approach to managing multiple projects with shared c
 
 ## See Also
 - [Build Tools](../23-Build-Tools/)
-- [Git Advanced](../24-Git-Advanced/)
 - [CI/CD](../15-CI-CD/)
+- [Git Advanced](../24-Git-Advanced/)
 
 ## References & Learn More
 

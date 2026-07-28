@@ -521,8 +521,8 @@ Framer Motion provides a powerful, declarative API for creating performant anima
 ---
 
 ## See Also
-- [React](../03-React/)
 - [Performance Monitoring](../26-Performance-Monitoring/)
+- [React](../03-React/)
 
 ## References & Learn More
 

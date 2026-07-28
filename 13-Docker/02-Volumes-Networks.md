@@ -447,8 +447,8 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
 ---
 
 ## See Also
-- [Kubernetes](../14-Kubernetes/)
 - [CI/CD](../15-CI-CD/)
+- [Kubernetes](../14-Kubernetes/)
 - [Microservices](../12-Microservices/)
 
 ## References & Learn More

@@ -644,12 +644,12 @@ For each problem, record:
 This guide provides a structured LeetCode study plan organized by topic and difficulty, with recommended problem sets for arrays, strings, trees, graphs, dynamic programming, and system design practice to build interview confidence.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

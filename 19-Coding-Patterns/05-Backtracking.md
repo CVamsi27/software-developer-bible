@@ -438,8 +438,8 @@ Pruning techniques:
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
-- [System Design](../11-System-Design/)
 - [SDE Role](../31-SDE-Role/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

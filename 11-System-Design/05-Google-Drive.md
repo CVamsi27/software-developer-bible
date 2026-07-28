@@ -981,8 +981,8 @@ This design supports 1B+ files with 10M concurrent sync operations while maintai
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

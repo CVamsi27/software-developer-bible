@@ -400,8 +400,8 @@ docker scout quickview myapp:latest
 ---
 
 ## See Also
-- [Kubernetes](../14-Kubernetes/)
 - [CI/CD](../15-CI-CD/)
+- [Kubernetes](../14-Kubernetes/)
 - [Microservices](../12-Microservices/)
 
 ## References & Learn More

@@ -930,10 +930,10 @@ The Observer pattern is essential for event-driven programming and reactive syst
 ---
 
 ## See Also
-- [NestJS](../06-NestJS/)
-- [JavaScript](../01-JavaScript/)
-- [System Design](../11-System-Design/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

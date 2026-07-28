@@ -259,9 +259,9 @@ Turbopack represents the future of frontend bundling, offering unprecedented per
 ---
 
 ## See Also
-- [React](../03-React/)
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)
+- [React](../03-React/)
 
 ## References & Learn More
 

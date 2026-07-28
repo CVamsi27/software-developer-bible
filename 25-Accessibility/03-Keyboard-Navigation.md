@@ -490,9 +490,9 @@ Keyboard navigation is essential for accessibility. Use semantic HTML, proper ta
 ---
 
 ## See Also
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Testing](../16-Testing/)
-- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

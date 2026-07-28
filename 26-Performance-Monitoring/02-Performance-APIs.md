@@ -498,10 +498,10 @@ Performance APIs provide powerful tools for measuring and optimizing web applica
 ---
 
 ## See Also
-- [React](../03-React/)
+- [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)
 - [Observability](../22-Observability/)
-- [Accessibility](../25-Accessibility/)
+- [React](../03-React/)
 
 ## References & Learn More
 

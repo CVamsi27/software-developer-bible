@@ -1345,10 +1345,10 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 ---
 
 ## See Also
-- [NestJS](../06-NestJS/)
-- [JavaScript](../01-JavaScript/)
-- [System Design](../11-System-Design/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

@@ -398,8 +398,8 @@ Serverless computing provides a powerful model for building scalable, cost-effec
 ---
 
 ## See Also
-- [Next.js](../04-NextJS/)
 - [Docker](../13-Docker/)
+- [Next.js](../04-NextJS/)
 - [Observability](../22-Observability/)
 
 ## References & Learn More

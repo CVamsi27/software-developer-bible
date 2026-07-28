@@ -595,9 +595,9 @@ Formik provides a comprehensive solution for form management in React. While it 
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
 - [React](../03-React/)
 - [TypeScript](../02-TypeScript/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

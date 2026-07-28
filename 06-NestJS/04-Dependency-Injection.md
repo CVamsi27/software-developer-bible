@@ -686,10 +686,10 @@ Dependency Injection is NestJS's core mechanism for managing component dependenc
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
+- [Microservices](../12-Microservices/)
 - [Node.js](../05-NodeJS/)
 - [REST APIs](../07-REST-API/)
-- [Microservices](../12-Microservices/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

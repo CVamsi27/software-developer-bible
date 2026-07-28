@@ -564,8 +564,8 @@ Serverless patterns provide proven solutions for common architectural challenges
 ---
 
 ## See Also
-- [Next.js](../04-NextJS/)
 - [Docker](../13-Docker/)
+- [Next.js](../04-NextJS/)
 - [Observability](../22-Observability/)
 
 ## References & Learn More

@@ -149,8 +149,8 @@ argocd app rollback my-app 3
 
 ### See Also
 
-- [Docker Build & Deploy](../02-Docker-Build-Deploy.md)
 - [Blue-Green & Canary](../03-Blue-Green-Canary.md)
+- [Docker Build & Deploy](../02-Docker-Build-Deploy.md)
 - [GitHub Actions](../01-GitHub-Actions.md)
 - [Kubernetes Deployments](../../14-Kubernetes/02-Deployments.md)
 

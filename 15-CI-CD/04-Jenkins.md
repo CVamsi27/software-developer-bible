@@ -214,10 +214,10 @@ buildNodeApp(nodeVersion: '20')
 
 ### See Also
 
-- [GitHub Actions](../01-GitHub-Actions.md)
-- [GitLab CI](../05-GitLab-CI.md)
 - [ArgoCD](../06-ArgoCD.md)
 - [Docker Build & Deploy](../02-Docker-Build-Deploy.md)
+- [GitHub Actions](../01-GitHub-Actions.md)
+- [GitLab CI](../05-GitLab-CI.md)
 
 ### References
 

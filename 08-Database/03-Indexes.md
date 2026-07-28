@@ -480,9 +480,9 @@ EXPLAIN (ANALYZE, BUFFERS) SELECT ...;
 ---
 
 ## See Also
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [REST APIs](../07-REST-API/)
 - [System Design](../11-System-Design/)
-- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

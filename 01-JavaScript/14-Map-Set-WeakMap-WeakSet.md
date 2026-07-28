@@ -439,10 +439,10 @@ KEY DIFFERENCES:
 ---
 
 ## See Also
+- [Garbage Collection](20-Garbage-Collection.md)
+- [Memory Leaks](19-Memory-Leaks.md)
 - [Pass by Value](13-Pass-by-Value.md)
 - [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md)
-- [Memory Leaks](19-Memory-Leaks.md)
-- [Garbage Collection](20-Garbage-Collection.md)
 
 ## References & Learn More
 

@@ -488,10 +488,10 @@ KEY FACTS:
 ---
 
 ## See Also
-- [Scope](05-Scope.md)
 - [Closures](04-Closures.md)
-- [Hoisting](03-Hoisting.md)
 - [Execution Context](01-Execution-Context.md)
+- [Hoisting](03-Hoisting.md)
+- [Scope](05-Scope.md)
 
 ## References & Learn More
 

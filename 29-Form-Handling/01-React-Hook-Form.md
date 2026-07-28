@@ -543,9 +543,9 @@ React Hook Form provides a performant, developer-friendly approach to form manag
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
 - [React](../03-React/)
 - [TypeScript](../02-TypeScript/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

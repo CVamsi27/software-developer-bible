@@ -1735,9 +1735,9 @@ Key metrics:
 ---
 
 ## See Also
-- [REST APIs](../07-REST-API/)
-- [React](../03-React/)
 - [NestJS](../06-NestJS/)
+- [React](../03-React/)
+- [REST APIs](../07-REST-API/)
 
 ## References & Learn More
 

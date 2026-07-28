@@ -366,9 +366,9 @@ ARIA enhances accessibility for complex web applications. Use it when native HTM
 ---
 
 ## See Also
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Testing](../16-Testing/)
-- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

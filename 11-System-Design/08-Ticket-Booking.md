@@ -1010,8 +1010,8 @@ This design supports 100K+ concurrent users with strong consistency for seat boo
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

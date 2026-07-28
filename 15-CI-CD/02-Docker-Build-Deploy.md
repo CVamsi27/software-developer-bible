@@ -501,8 +501,8 @@ docker compose down
 
 ## See Also
 - [Docker](../13-Docker/)
-- [Kubernetes](../14-Kubernetes/)
 - [Git Advanced](../24-Git-Advanced/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

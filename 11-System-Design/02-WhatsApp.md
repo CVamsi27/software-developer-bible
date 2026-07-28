@@ -810,8 +810,8 @@ This design handles 500M DAU with 100B messages/day while maintaining < 100ms de
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

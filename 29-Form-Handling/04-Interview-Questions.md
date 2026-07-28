@@ -298,9 +298,9 @@ Form handling is a critical skill for React developers. Master controlled/uncont
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
 - [React](../03-React/)
 - [TypeScript](../02-TypeScript/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

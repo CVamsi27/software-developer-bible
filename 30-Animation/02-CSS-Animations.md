@@ -589,8 +589,8 @@ CSS animations provide a performant, declarative way to create smooth animations
 ---
 
 ## See Also
-- [React](../03-React/)
 - [Performance Monitoring](../26-Performance-Monitoring/)
+- [React](../03-React/)
 
 ## References & Learn More
 

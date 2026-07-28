@@ -813,9 +813,9 @@ SECURITY:
 ---
 
 ## See Also
-- [TypeScript](../02-TypeScript/)
-- [Node.js](../05-NodeJS/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [Node.js](../05-NodeJS/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

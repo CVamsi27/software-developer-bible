@@ -990,8 +990,8 @@ This design supports 20M DAU with < 30 second matching latency and 99.99% availa
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
 - [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
 

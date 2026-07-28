@@ -2059,12 +2059,12 @@ db.users.createIndex({ "address.city": 1 });
 This guide covers the core computer science fundamentals required for technical interviews, including bit manipulation, mathematics, sorting algorithms, data structures, dynamic programming, and graph algorithms with Java implementations.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

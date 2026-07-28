@@ -608,10 +608,10 @@ Modules are NestJS's fundamental organizational unit that encapsulate related fu
 ---
 
 ## See Also
+- [Design Patterns](../10-Design-Patterns/)
+- [Microservices](../12-Microservices/)
 - [Node.js](../05-NodeJS/)
 - [REST APIs](../07-REST-API/)
-- [Microservices](../12-Microservices/)
-- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

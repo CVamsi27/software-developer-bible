@@ -196,9 +196,9 @@ CMD ["node", "app/main.js"]
 
 ### See Also
 
+- [Docker Security](../09-Security/)
 - [Images & Containers](../01-Images-Containers.md)
 - [Multi-Stage Builds](../04-Multi-Stage-Builds.md)
-- [Docker Security](../09-Security/)
 
 ### References
 

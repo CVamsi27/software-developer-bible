@@ -1278,10 +1278,10 @@ Key takeaways:
 ---
 
 ## See Also
-- [React](../03-React/)
-- [NestJS](../06-NestJS/)
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)
+- [NestJS](../06-NestJS/)
+- [React](../03-React/)
 
 ## References & Learn More
 

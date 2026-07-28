@@ -398,8 +398,8 @@ Edge functions provide a powerful way to reduce latency and improve performance 
 ---
 
 ## See Also
-- [Next.js](../04-NextJS/)
 - [Docker](../13-Docker/)
+- [Next.js](../04-NextJS/)
 - [Observability](../22-Observability/)
 
 ## References & Learn More

@@ -411,10 +411,10 @@ Core Web Vitals are essential metrics for measuring and improving user experienc
 ---
 
 ## See Also
-- [React](../03-React/)
+- [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)
 - [Observability](../22-Observability/)
-- [Accessibility](../25-Accessibility/)
+- [React](../03-React/)
 
 ## References & Learn More
 

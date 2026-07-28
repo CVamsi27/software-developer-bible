@@ -747,9 +747,9 @@ Client → Server: Server Actions
 ---
 
 ## See Also
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Serverless & Edge](../27-Serverless-Edge/)
-- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -695,9 +695,9 @@ Don't Use:
 ---
 
 ## See Also
-
 - [Advanced Generics](10-Advanced-Generics.md)
 - [Conditional Types](04-Conditional-Types.md)
+- [Declaration Files](14-Declaration-Files.md)
 - [Infer](05-Infer.md)
 - [JavaScript](../01-JavaScript/)
 - [Mapped Types](07-Mapped-Types.md)

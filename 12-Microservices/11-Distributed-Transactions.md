@@ -46,12 +46,14 @@ COMMIT;
 ---
 
 ### See Also
-
 - [API Gateway](02-API-Gateway.md)
+- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
+- [CQRS](13-CQRS.md)
 - [Event Sourcing](07-Event-Sourcing.md)
 - [Interview Questions](08-Interview-Questions.md)
 - [Saga Pattern](03-Saga-Pattern.md)
 - [Service Mesh](10-Service-Mesh.md)
+- [Strangler Fig](12-Strangler-Fig.md)
 
 ## References & Learn More
 

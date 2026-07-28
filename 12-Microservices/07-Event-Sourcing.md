@@ -832,9 +832,11 @@ Event Sourcing provides complete audit trails and temporal queries by storing im
 ---
 
 ## See Also
+- [CQRS](13-CQRS.md)
 - [Docker](../13-Docker/)
 - [Kubernetes](../14-Kubernetes/)
 - [NestJS](../06-NestJS/)
+- [Strangler Fig](12-Strangler-Fig.md)
 - [System Design](../11-System-Design/)
 
 ## References & Learn More

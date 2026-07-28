@@ -751,6 +751,7 @@ RabbitMQ is a versatile message broker ideal for microservices communication. It
 ---
 
 ## See Also
+- [CQRS](13-CQRS.md)
 - [Docker](../13-Docker/)
 - [Kubernetes](../14-Kubernetes/)
 - [NestJS](../06-NestJS/)

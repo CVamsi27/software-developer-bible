@@ -668,9 +668,11 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 ---
 
 ## See Also
+- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
 - [Docker](../13-Docker/)
 - [Kubernetes](../14-Kubernetes/)
 - [NestJS](../06-NestJS/)
+- [Strangler Fig](12-Strangler-Fig.md)
 - [System Design](../11-System-Design/)
 
 ## References & Learn More

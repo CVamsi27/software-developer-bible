@@ -743,9 +743,12 @@ Client → Server: Server Actions
 ---
 
 ## See Also
+- [Authentication](13-Authentication.md)
+- [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Serverless & Edge](../27-Serverless-Edge/)
+- [Static Exports](15-Static-Exports.md)
 
 ## References & Learn More
 

@@ -1106,7 +1106,7 @@ Performance:
 ---
 
 ## See Also
-
+- [Compound Components](18-Compound-Components.md)
 - [Form Handling (React Hook Form, Formik)](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)

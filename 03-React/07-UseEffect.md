@@ -808,6 +808,7 @@ Performance:
 
 ## See Also
 - [Animation](../30-Animation/)
+- [Custom Hooks](16-Custom-Hooks.md)
 - [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)

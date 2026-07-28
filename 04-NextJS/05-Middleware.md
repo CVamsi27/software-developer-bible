@@ -770,6 +770,7 @@ request.geo                   → Geographic info
 ---
 
 ## See Also
+- [Authentication](13-Authentication.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Serverless & Edge](../27-Serverless-Edge/)

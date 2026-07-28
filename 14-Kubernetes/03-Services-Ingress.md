@@ -627,6 +627,7 @@ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 - [CI/CD](../15-CI-CD/)
 - [Docker](../13-Docker/)
 - [Observability](../22-Observability/)
+- [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md)
 - [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More

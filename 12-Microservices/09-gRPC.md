@@ -73,8 +73,9 @@ server.bindAsync('0.0.0.0:50051',
 ---
 
 ### See Also
-
 - [API Gateway](02-API-Gateway.md)
+- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
+- [CQRS](13-CQRS.md)
 - [Interview Questions](08-Interview-Questions.md)
 - [Kafka](05-Kafka.md)
 - [REST APIs](../07-REST-API/)

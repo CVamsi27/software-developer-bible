@@ -815,6 +815,7 @@ Rate limiting is essential for API protection and fair usage. Token bucket is th
 ---
 
 ## See Also
+- [Bulkhead Pattern](../12-Microservices/14-Bulkhead-Pattern.md)
 - [Microservices](../12-Microservices/)
 - [NestJS](../06-NestJS/)
 - [Security](../09-Security/)

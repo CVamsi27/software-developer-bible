@@ -84,9 +84,10 @@ spec:
 ---
 
 ### See Also
-
 - [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)
 - [Interview Questions](08-Interview-Questions.md)
+- [PodPresets](13-PodPresets.md)
+- [Resource Quotas](14-Resource-Quotas.md)
 - [Security Contexts](01-Pods-ReplicaSets.md)
 - [Services & Ingress](03-Services-Ingress.md)
 

@@ -764,6 +764,7 @@ export default function robots(): MetadataRoute.Robots { [...] }
 ---
 
 ## See Also
+- [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [Serverless & Edge](../27-Serverless-Edge/)

@@ -377,6 +377,7 @@ Best Practices:
 
 ## See Also
 - [Animation](../30-Animation/)
+- [Compound Components](18-Compound-Components.md)
 - [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)

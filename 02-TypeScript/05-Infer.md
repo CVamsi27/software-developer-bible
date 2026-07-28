@@ -359,9 +359,12 @@ type DeepUnwrap<T> = T extends Promise<infer U> ? DeepUnwrap<U> : T;
 ---
 
 ## See Also
+- [Branded Types](13-Branded-Types.md)
+- [Declaration Files](14-Declaration-Files.md)
 - [JavaScript](../01-JavaScript/)
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)
+- [Template Literal Types](12-Template-Literal-Types.md)
 
 ## References & Learn More
 

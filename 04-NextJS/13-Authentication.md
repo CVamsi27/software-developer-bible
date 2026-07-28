@@ -809,13 +809,13 @@ Common Patterns:
 ---
 
 ## See Also
-
 - [Caching in Next.js](09-Caching.md)
 - [Client Components](04-Client-Components.md)
 - [Middleware](05-Middleware.md)
 - [Route Handlers](07-Route-Handlers.md)
 - [Server Actions](06-Server-Actions.md)
 - [Server Components](03-Server-Components.md)
+- [Static Exports](15-Static-Exports.md)
 
 ## References & Learn More
 

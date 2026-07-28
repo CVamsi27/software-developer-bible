@@ -512,6 +512,8 @@ function process(shape: Shape): number {
 ---
 
 ## See Also
+- [Branded Types](13-Branded-Types.md)
+- [Declaration Files](14-Declaration-Files.md)
 - [JavaScript](../01-JavaScript/)
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

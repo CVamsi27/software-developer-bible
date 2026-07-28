@@ -718,6 +718,7 @@ Optimization Strategies:
 - [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)
+- [Portals](17-Portals.md)
 - [Testing](../16-Testing/)
 
 ## References & Learn More

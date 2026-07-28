@@ -595,6 +595,8 @@ kubectl describe node <name>
 - [CI/CD](../15-CI-CD/)
 - [Docker](../13-Docker/)
 - [Observability](../22-Observability/)
+- [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md)
+- [Resource Quotas](14-Resource-Quotas.md)
 - [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More

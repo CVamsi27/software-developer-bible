@@ -639,6 +639,7 @@ Apache Kafka is essential for building event-driven microservices. It provides h
 ---
 
 ## See Also
+- [CQRS](13-CQRS.md)
 - [Docker](../13-Docker/)
 - [Kubernetes](../14-Kubernetes/)
 - [NestJS](../06-NestJS/)

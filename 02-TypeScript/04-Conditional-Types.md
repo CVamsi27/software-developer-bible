@@ -327,9 +327,11 @@ type DeepReadonly<T> =
 ---
 
 ## See Also
+- [Branded Types](13-Branded-Types.md)
 - [JavaScript](../01-JavaScript/)
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)
+- [Template Literal Types](12-Template-Literal-Types.md)
 
 ## References & Learn More
 

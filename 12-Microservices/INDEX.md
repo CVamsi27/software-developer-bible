@@ -1,8 +1,8 @@
 # Microservices — Index
 
-> **13 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, CQRS, strangler fig, and interview questions.
+> **14 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, CQRS, bulkhead, strangler fig, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-13-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -21,6 +21,7 @@
 | 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
 | 12 | [Strangler Fig](12-Strangler-Fig.md) | Legacy migration, strangler facade, parallel run, feature flags, dual-write |
 | 13 | [CQRS](13-CQRS.md) | Command/query separation, event sourcing integration, mediator pattern, read/write models, eventual consistency |
+| 14 | [Bulkhead Pattern](14-Bulkhead-Pattern.md) | Thread pool isolation, semaphore, circuit breaker integration, tenant isolation, resilience |
 
 ---
 

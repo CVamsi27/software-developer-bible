@@ -1,8 +1,8 @@
 # Kubernetes — Index
 
-> **13 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, PDBs, admission injection, and interview questions.
+> **14 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-13-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -21,6 +21,7 @@
 | 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
 | 12 | [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability |
 | 13 | [PodPresets](13-PodPresets.md) | Admission-time injection, env vars, volumes, secrets, label selectors, Kyverno alternatives |
+| 14 | [Resource Quotas](14-Resource-Quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring |
 
 ---
 

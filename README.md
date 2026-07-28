@@ -2,10 +2,10 @@
 
 > **A comprehensive, interview-focused reference for senior full-stack engineering roles.**
 >
-> 32 sections · 260+ files · TypeScript, React, Next.js, NestJS, PostgreSQL, Prisma, REST APIs, Security, System Design
+> 32 sections · 310+ files · JavaScript, TypeScript, React, Next.js, Node.js, NestJS, PostgreSQL, System Design, DevOps
 
 [![Sections](https://img.shields.io/badge/sections-32-blue)](#structure)
-[![Files](https://img.shields.io/badge/files-260%2B-green)](#structure)
+[![Files](https://img.shields.io/badge/files-310%2B-green)](#structure)
 [![Last Updated](https://img.shields.io/badge/last%20updated-July%202026-orange)](#)
 
 ---
@@ -28,11 +28,11 @@
 | # | Section | Files | Focus |
 |---|---------|------:|-------|
 | 00 | [Interview Strategy](00-Interview-Strategy/) | 4 | Resume, HR, STAR, Communication |
-| 01 | [JavaScript](01-JavaScript/) | 20 | Core JS, Event Loop, Closures, Async |
+| 01 | [JavaScript](01-JavaScript/) | 26 | Core JS, Event Loop, Closures, Async, Functional Patterns |
 | 02 | [TypeScript](02-TypeScript/) | 11 | Types, Generics, Utility Types, Advanced |
 | 03 | [React](03-React/) | 15 | Hooks, Fiber, Rendering, Performance |
 | 04 | [Next.js](04-NextJS/) | 12 | App Router, RSC, Caching, Streaming |
-| 05 | [Node.js](05-NodeJS/) | 5 | Event Loop, Streams, Clustering |
+| 05 | [Node.js](05-NodeJS/) | 11 | Event Loop, Streams, File System, HTTP, Workers |
 | 06 | [NestJS](06-NestJS/) | 12 | DI, Guards, Pipes, CQRS, Microservices |
 | 07 | [REST APIs](07-REST-API/) | 10 | Principles, Status Codes, Auth, CORS |
 | 08 | [Database](08-Database/) | 12 | PostgreSQL, Indexes, Transactions, Prisma |
@@ -40,9 +40,9 @@
 | 10 | [Design Patterns](10-Design-Patterns/) | 13 | Singleton, Factory, Strategy, CQRS |
 | 11 | [System Design](11-System-Design/) | 12 | WhatsApp, Uber, Netflix, Payment Gateway |
 | 12 | [Microservices](12-Microservices/) | 8 | Saga, Circuit Breaker, Kafka, RabbitMQ |
-| 13 | [Docker](13-Docker/) | 5 | Images, Containers, Compose |
+| 13 | [Docker](13-Docker/) | 6 | Images, Containers, Compose, Best Practices |
 | 14 | [Kubernetes](14-Kubernetes/) | 8 | Pods, Deployments, HPA, Helm |
-| 15 | [CI/CD](15-CI-CD/) | 4 | GitHub Actions, Deploy, Rollback |
+| 15 | [CI/CD](15-CI-CD/) | 7 | GitHub Actions, Jenkins, GitLab CI, ArgoCD |
 | 16 | [Testing](16-Testing/) | 9 | Jest, RTL, Unit, Integration, E2E, Mocking |
 | 17 | [GraphQL](17-GraphQL/) | 8 | Schema, Resolvers, Apollo, Performance |
 | 18 | [Behavioral](18-Behavioral/) | 3 | STAR Method, 40+ Questions |
@@ -50,7 +50,7 @@
 | 20 | [Cheat Sheets](20-CheatSheets/) | 5 | Quick Reference Cards |
 | 21 | [WebSockets](21-WebSockets/) | 6 | Socket.io, SSE, Real-time Architecture |
 | 22 | [Observability](22-Observability/) | 6 | Logging, Monitoring, Tracing, Sentry |
-| 23 | [Build Tools](23-Build-Tools/) | 5 | Webpack, Vite, Turbopack, Optimization |
+| 23 | [Build Tools](23-Build-Tools/) | 7 | Webpack, Vite, Babel, ESBuild, SWC |
 | 24 | [Git Advanced](24-Git-Advanced/) | 5 | Branching, Rebase, Hooks, Commands |
 | 25 | [Accessibility](25-Accessibility/) | 5 | WCAG, ARIA, Keyboard Navigation, Testing |
 | 26 | [Performance Monitoring](26-Performance-Monitoring/) | 4 | Core Web Vitals, APIs, Profiling |
@@ -58,9 +58,9 @@
 | 28 | [Monorepo](28-Monorepo/) | 4 | Turborepo, Nx, Workspaces |
 | 29 | [Form Handling](29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
 | 30 | [Animation](30-Animation/) | 3 | Framer Motion, CSS Animations |
-| 31 | [SDE Interview Guide](31-SDE-Role/) | 20 | Complete SDE Interview Prep (28 Phases) |
+| 31 | [SDE Interview Guide](31-SDE-Role/) | 21 | Complete SDE Interview Prep (28 Phases) |
 
-**Total: ~264 files** (excluding INDEX.md files)
+**Total: ~310 files** (including section INDEX.md files)
 
 ---
 
@@ -188,4 +188,4 @@ This guide covers **28 phases** with full explanations, code examples, LeetCode 
 
 ---
 
-*Last updated: July 2026 — 32 sections, 260+ files*
+*Last updated: July 2026 — 32 sections, 310+ files*

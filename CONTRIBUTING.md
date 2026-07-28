@@ -122,13 +122,9 @@ URL-encode special characters:
 - Spaces → `%20` (preferred over `_` for readability)
 - `&` → `%26`
 
-### Content File Badges (3 per file)
+> **Note:** Badges are only used on INDEX.md files. Content files do not use badges — their metadata (section, type/category, status) is stored in YAML frontmatter instead.
 
-```markdown
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-```
+### INDEX.md Badges (3 per file)
 
 ### INDEX.md Badges (3 per file)
 

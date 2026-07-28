@@ -16,7 +16,7 @@
 
 ---
 
-**Cross-references:** [JavaScript Event Loop](../01-JavaScript/08-Event-Loop.md) | [NestJS](../06-NestJS/) | [Docker](../13-Docker/)
+**Cross-references:** [JavaScript Event Loop](../01-JavaScript/09-Event-Loop.md) | [NestJS](../06-NestJS/) | [Docker](../13-Docker/)
 ---
 
 ## Navigation

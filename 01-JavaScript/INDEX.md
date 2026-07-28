@@ -1,8 +1,8 @@
 # JavaScript — Index
 
-> **20 files** — Core JavaScript concepts from execution context to async patterns, memory management, and interview questions.
+> **26 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-26-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -13,21 +13,27 @@
 | 03 | [Hoisting](03-Hoisting.md) | var/let/const hoisting, temporal dead zone, function hoisting |
 | 04 | [Closures](04-Closures.md) | Lexical scoping, closure lifecycle, module pattern |
 | 05 | [Scope](05-Scope.md) | Global, function, block scope, scope chain, lexical environment |
-| 06 | [`this` Keyword](06-This.md) | Implicit/explicit binding, arrow functions, call/apply/bind |
-| 07 | [Prototypes](07-Prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance |
-| 08 | [Event Loop](08-Event-Loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline |
-| 09 | [Promises](09-Promises.md) | Promise states, chaining, error handling, `Promise.all/race/allSettled/any` |
-| 10 | [Async/Await](10-Async-Await.md) | Async functions, error handling, concurrency, sequential vs parallel |
-| 11 | [Pass by Value](11-Pass-by-Value.md) | Primitive vs reference, value/reference semantics |
-| 12 | [Shallow vs Deep Copy](12-Shallow-vs-Deep-Copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods |
-| 13 | [Debounce](13-Debounce.md) | Implementation, leading/trailing, real-world use cases |
-| 14 | [Throttle](14-Throttle.md) | Implementation, vs debounce, animation frame throttling |
-| 15 | [Memory Leaks](15-Memory-Leaks.md) | Detached DOM, closures, circular references, detection |
-| 16 | [Garbage Collection](16-Garbage-Collection.md) | Mark-and-sweep, generational collection, V8 Orinoco |
-| 17 | [Modules](17-Modules.md) | ESM vs CommonJS, dynamic imports, tree shaking |
-| 18 | [Memoization](18-Memoization.md) | Caching, `_.memoize`, React.memo, optimization |
-| 19 | [Generators](19-Generators.md) | `function*`, yield, iterators, async generators |
-| 20 | [Interview Questions](20-Interview-Questions.md) | 50+ curated questions with answers |
+| 06 | [Lexical Environment](06-Lexical-Environment.md) | Environment records, outer reference, scope chain internals |
+| 07 | [`this` Keyword](07-This.md) | Implicit/explicit binding, arrow functions, call/apply/bind |
+| 08 | [Prototypes](08-Prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance |
+| 09 | [Event Loop](09-Event-Loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline |
+| 10 | [Promises](10-Promises.md) | Promise states, chaining, error handling, `Promise.all/race/allSettled/any` |
+| 11 | [Async/Await](11-Async-Await.md) | Async functions, error handling, concurrency, sequential vs parallel |
+| 12 | [Error Handling](12-Error-Handling.md) | try/catch/finally, custom errors, error propagation, async error handling |
+| 13 | [Pass by Value](13-Pass-by-Value.md) | Primitive vs reference, value/reference semantics |
+| 14 | [Map, Set, WeakMap, WeakSet](14-Map-Set-WeakMap-WeakSet.md) | Keyed collections, weak references, memory-efficient lookups |
+| 15 | [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods |
+| 16 | [Proxy & Reflect](16-Proxy-Reflect.md) | Metaprogramming, traps, validation, reactive patterns |
+| 17 | [Debounce](17-Debounce.md) | Implementation, leading/trailing, real-world use cases |
+| 18 | [Throttle](18-Throttle.md) | Implementation, vs debounce, animation frame throttling |
+| 19 | [Memory Leaks](19-Memory-Leaks.md) | Detached DOM, closures, circular references, detection |
+| 20 | [Garbage Collection](20-Garbage-Collection.md) | Mark-and-sweep, generational collection, V8 Orinoco |
+| 21 | [Modules](21-Modules.md) | ESM vs CommonJS, dynamic imports, tree shaking |
+| 22 | [Memoization](22-Memoization.md) | Caching, `_.memoize`, React.memo, optimization |
+| 23 | [Generators](23-Generators.md) | `function*`, yield, iterators, async generators |
+| 24 | [Currying & Composition](24-Currying-Composition.md) | Currying, partial application, pipe, compose, functional patterns |
+| 25 | [Recursion & Tail Call](25-Recursion-Tail-Call.md) | Recursive patterns, tail call optimization, trampolining, memoization |
+| 26 | [Interview Questions](26-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

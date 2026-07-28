@@ -1,9 +1,9 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Complete navigation hub** — 32 sections, 260+ files, covering the full spectrum of senior full-stack engineering interview preparation.
+> **Complete navigation hub** — 32 sections, 310+ files, covering the full spectrum of senior full-stack engineering interview preparation.
 
 [![Sections](https://img.shields.io/badge/sections-32-blue)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-300%2B-green)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-310%2B-green)](INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-July%202026-orange)](INDEX.md)
 
 ---
@@ -22,7 +22,7 @@
 | # | Section | Files | Topics |
 |---|---------|------:|--------|
 | 00 | [Interview Strategy](00-Interview-Strategy/) | 4 | Communication, HR, Resume, STAR Method |
-| 01 | [JavaScript](01-JavaScript/) | 20 | Execution Context, Call Stack, Hoisting, Closures, Scope, `this`, Prototypes, Event Loop, Promises, Async/Await, Pass-by-Value, Shallow/Deep Copy, Debounce, Throttle, Memory Leaks, GC, Modules, Memoization, Generators |
+| 01 | [JavaScript](01-JavaScript/) | 26 | Execution Context, Call Stack, Hoisting, Closures, Scope, Lexical Environment, `this`, Prototypes, Event Loop, Promises, Async/Await, Error Handling, Pass-by-Value, Map/Set/WeakMap, Shallow/Deep Copy, Proxy/Reflect, Debounce, Throttle, Memory Leaks, GC, Modules, Memoization, Generators, Currying/Composition, Recursion/TCO |
 | 02 | [TypeScript](02-TypeScript/) | 11 | Types vs Interfaces, Generics, Utility Types, Conditional Types, Infer, keyof/typeof, Mapped Types, Narrowing, Decorators, Advanced Generics |
 | 03 | [React](03-React/) | 15 | Virtual DOM, Fiber, Reconciliation, Rendering, Lifecycle, useState, useEffect, useMemo/useCallback, useRef, Context API, Suspense, Error Boundary, Performance, State Management |
 | 04 | [Next.js](04-NextJS/) | 12 | SSR/CSR/SSG/ISR, App Router, Server Components, Client Components, Middleware, Server Actions, Route Handlers, Metadata, Caching, Streaming, Image Optimization |
@@ -31,7 +31,7 @@
 
 | # | Section | Files | Topics |
 |---|---------|------:|--------|
-| 05 | [Node.js](05-NodeJS/) | 5 | Event Loop, Streams, Buffers, Clustering |
+| 05 | [Node.js](05-NodeJS/) | 11 | Event Loop, Streams, Buffers, Clustering, File System, HTTP Module, Child Processes/Workers, Process/Environment, Node Security |
 | 06 | [NestJS](06-NestJS/) | 12 | Modules, Controllers, Providers, DI, Guards, Pipes, Interceptors, Middleware, Exception Filters, CQRS, Microservices |
 | 07 | [REST APIs](07-REST-API/) | 10 | Principles, HTTP Methods, Status Codes, Versioning, Pagination, Auth, Rate Limiting, CORS, API Gateway |
 | 08 | [Database](08-Database/) | 12 | PostgreSQL, Normalization, Indexes, Transactions, MVCC, Joins, Deadlocks, Locking, Connection Pooling, Prisma, Execution Plans |
@@ -50,11 +50,11 @@
 
 | # | Section | Files | Topics |
 |---|---------|------:|--------|
-| 13 | [Docker](13-Docker/) | 5 | Images & Containers, Volumes & Networks, Compose, Multi-Stage Builds |
+| 13 | [Docker](13-Docker/) | 6 | Images & Containers, Volumes & Networks, Compose, Multi-Stage Builds, Dockerfile Best Practices & Security |
 | 14 | [Kubernetes](14-Kubernetes/) | 8 | Pods & ReplicaSets, Deployments, Services & Ingress, ConfigMaps & Secrets, HPA, Health Checks, Helm |
-| 15 | [CI/CD](15-CI-CD/) | 4 | GitHub Actions, Docker Build & Deploy, Blue-Green & Canary |
+| 15 | [CI/CD](15-CI-CD/) | 7 | GitHub Actions, Docker Build & Deploy, Blue-Green & Canary, Jenkins, GitLab CI, ArgoCD (GitOps) |
 | 22 | [Observability](22-Observability/) | 6 | Logging, Monitoring, Tracing, Error Tracking, Health Checks |
-| 23 | [Build Tools](23-Build-Tools/) | 5 | Webpack, Vite, Turbopack, Build Optimization |
+| 23 | [Build Tools](23-Build-Tools/) | 7 | Webpack, Vite, Turbopack, Build Optimization, Babel, ESBuild & SWC |
 | 27 | [Serverless & Edge](27-Serverless-Edge/) | 4 | Overview, Edge Functions, Serverless Patterns |
 
 ## Testing & Quality
@@ -77,7 +77,7 @@
 |---|---------|------:|--------|
 | 18 | [Behavioral](18-Behavioral/) | 3 | STAR Method, HR Questions, Leadership Questions |
 | 19 | [Coding Patterns](19-Coding-Patterns/) | 12 | Sliding Window, Two Pointers, Binary Search, DFS/BFS, Backtracking, DP, Heap, Trie, Union Find, Topological Sort, Intervals, Greedy/Prefix Sum |
-| 31 | [SDE Role](31-SDE-Role/) | 20 | Complete Guide, CS Fundamentals, System Design, DevOps, Advanced Topics, LeetCode Study Plan, Company Guides, Progress Tracker, Flashcards |
+| 31 | [SDE Role](31-SDE-Role/) | 21 | Complete Guide, CS Fundamentals, System Design, DevOps, Advanced Topics, LeetCode Study Plan, Company Guides, Progress Tracker, Flashcards, Resume & Negotiation |
 
 ## Quick Reference
 
@@ -185,4 +185,4 @@ Each section now has its own `INDEX.md` file with a detailed file listing and to
 
 ---
 
-*Last updated: July 2026 — 32 sections, 260+ files, 32 INDEX.md files*
+*Last updated: July 2026 — 32 sections, 310+ files, 32 INDEX.md files*

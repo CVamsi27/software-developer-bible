@@ -29,6 +29,7 @@
 | 17 | [Quick Reference Cards](17-Quick-Reference-Cards.md) | One-page cards for Arrays, Trees, Graphs, DP, etc. |
 | 18 | [Learning Guarantee System](18-Learning-Guarantee-System.md) | Active recall, mastery criteria, practice testing |
 | 19 | [Flashcard Decks](19-Flashcard-Decks.md) | 240+ cards across 8 topics for Anki/Quizlet |
+| 20 | [Resume & Negotiation](20-Resume-Negotiation.md) | Resume ATS optimization, STAR bullets, offer negotiation, comp breakdown |
 
 ## Company-Specific Guides
 

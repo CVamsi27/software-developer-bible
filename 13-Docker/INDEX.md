@@ -1,8 +1,8 @@
 # Docker — Index
 
-> **5 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, and interview questions.
+> **6 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, best practices, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -12,7 +12,8 @@
 | 02 | [Volumes & Networks](02-Volumes-Networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks |
 | 03 | [Compose](03-Compose.md) | Docker Compose, multi-container apps, service configuration |
 | 04 | [Multi-Stage Builds](04-Multi-Stage-Builds.md) | Build stages, dependency caching, image size optimization |
-| 05 | [Interview Questions](05-Interview-Questions.md) | 50+ curated questions with answers |
+| 05 | [Best Practices & Security](05-Dockerfile-Best-Practices.md) | Layer caching, non-root, distroless, scanning, labels |
+| 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

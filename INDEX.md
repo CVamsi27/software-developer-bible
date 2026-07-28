@@ -44,26 +44,26 @@
 | 09 | [Security](09-Security/) | 10 | JWT, OAuth, XSS, CSRF, SQL Injection, Encryption, RBAC, Session/Cookies, Web Security |
 | 10 | [Design Patterns](10-Design-Patterns/) | 13 | Singleton, Factory, Strategy, Observer, Repository, Builder, Adapter, Facade, Decorator, Proxy, Chain of Responsibility, CQRS/DI |
 | 11 | [System Design](11-System-Design/) | 12 | URL Shortener, WhatsApp, Uber, Netflix, Google Drive, Payment Gateway, Notification Service, Ticket Booking, E-Commerce, Hospital Mgmt, Live Betting |
-| 12 | [Microservices](12-Microservices/) | 8 | Service Discovery, API Gateway, Saga, Circuit Breaker, Kafka, RabbitMQ, Event Sourcing |
+| 12 | [Microservices](12-Microservices/) | 11 | Service Discovery, API Gateway, Saga, Circuit Breaker, Kafka, RabbitMQ, Event Sourcing, gRPC, Service Mesh, Distributed Transactions |
 
 ## DevOps & Infrastructure
 
 | # | Section | Files | Topics |
 |---|---------|------:|--------|
 | 13 | [Docker](13-Docker/) | 6 | Images & Containers, Volumes & Networks, Compose, Multi-Stage Builds, Dockerfile Best Practices & Security |
-| 14 | [Kubernetes](14-Kubernetes/) | 8 | Pods & ReplicaSets, Deployments, Services & Ingress, ConfigMaps & Secrets, HPA, Health Checks, Helm |
+| 14 | [Kubernetes](14-Kubernetes/) | 11 | Pods & ReplicaSets, Deployments, Services & Ingress, ConfigMaps & Secrets, HPA, Health Checks, Helm, StatefulSets, Jobs, RBAC & Network Policies |
 | 15 | [CI/CD](15-CI-CD/) | 7 | GitHub Actions, Docker Build & Deploy, Blue-Green & Canary, Jenkins, GitLab CI, ArgoCD (GitOps) |
 | 22 | [Observability](22-Observability/) | 6 | Logging, Monitoring, Tracing, Error Tracking, Health Checks |
 | 23 | [Build Tools](23-Build-Tools/) | 7 | Webpack, Vite, Turbopack, Build Optimization, Babel, ESBuild & SWC |
-| 27 | [Serverless & Edge](27-Serverless-Edge/) | 4 | Overview, Edge Functions, Serverless Patterns |
+| 27 | [Serverless & Edge](27-Serverless-Edge/) | 6 | Overview, Edge Functions, Serverless Patterns, AWS Lambda, Vercel |
 
 ## Testing & Quality
 
 | # | Section | Files | Topics |
 |---|---------|------:|--------|
-| 16 | [Testing](16-Testing/) | 9 | Overview, Jest, RTL, Unit, Integration, E2E, Mocking, Test Patterns |
+| 16 | [Testing](16-Testing/) | 11 | Overview, Jest, RTL, Unit, Integration, E2E, Mocking, Test Patterns, Vitest, Performance Testing |
 | 25 | [Accessibility](25-Accessibility/) | 5 | WCAG, ARIA, Keyboard Navigation, Testing A11y |
-| 26 | [Performance Monitoring](26-Performance-Monitoring/) | 4 | Core Web Vitals, Performance APIs, Profiling Tools |
+| 26 | [Performance Monitoring](26-Performance-Monitoring/) | 6 | Core Web Vitals, Performance APIs, Profiling Tools, Lighthouse CI, Bundle Analysis |
 
 ## Real-Time & Communication
 
@@ -87,7 +87,7 @@
 | 24 | [Git Advanced](24-Git-Advanced/) | 5 | Branching Strategies, Rebase/Cherry-Pick, Hooks, Commands |
 | 28 | [Monorepo](28-Monorepo/) | 4 | Overview, Turborepo, Nx |
 | 29 | [Form Handling](29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
-| 30 | [Animation](30-Animation/) | 3 | Framer Motion, CSS Animations |
+| 30 | [Animation](30-Animation/) | 6 | Framer Motion, CSS Animations, Web Animations API, GSAP, React Spring |
 
 ---
 

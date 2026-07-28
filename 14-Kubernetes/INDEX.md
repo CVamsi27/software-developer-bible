@@ -1,8 +1,8 @@
 # Kubernetes — Index
 
-> **8 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, and interview questions.
+> **11 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -15,7 +15,10 @@
 | 05 | [HPA & Scaling](05-HPA-Scaling.md) | Horizontal pod autoscaling, metrics, custom metrics, VPA |
 | 06 | [Health Checks](06-Health-Checks.md) | Liveness, readiness, startup probes, probe configuration |
 | 07 | [Helm](07-Helm.md) | Charts, templates, values, releases, dependency management |
-| 08 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
+| 08 | [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md) | Stateful workloads, stable network IDs, node-level agents |
+| 09 | [Jobs & CronJobs](10-Jobs-CronJobs.md) | Batch jobs, scheduled tasks, backoff, parallelism |
+| 10 | [RBAC & Network Policies](11-RBAC-Network-Policies.md) | Access control, least privilege, micro-segmentation |
+| 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

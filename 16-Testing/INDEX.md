@@ -1,8 +1,8 @@
 # Testing — Index
 
-> **9 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E testing, mocking, test patterns, and interview questions.
+> **11 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, mocking, test patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-9-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-ffd700)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -16,7 +16,9 @@
 | 06 | [E2E Testing](06-E2E-Testing.md) | Playwright, Cypress, user flows, visual regression |
 | 07 | [Mocking](07-Mocking.md) | Mock functions, spies, modules, network requests, time |
 | 08 | [Test Patterns](08-Test-Patterns.md) | Arrange-Act-Assert, factory methods, test fixtures |
-| 09 | [Interview Questions](09-Interview-Questions.md) | 50+ curated questions with answers |
+| 09 | [Vitest](10-Vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads |
+| 10 | [Performance & Load Testing](11-Performance-Load-Testing.md) | k6, Artillery, JMeter, thresholds, ramp-up, stress testing |
+| 11 | [Interview Questions](09-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

@@ -1,8 +1,4 @@
----
-section: Next.js
-category: Frontend
-tags: [concept]
----
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
 # Server Actions in Next.js
 

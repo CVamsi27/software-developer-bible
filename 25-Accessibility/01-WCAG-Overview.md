@@ -1,8 +1,4 @@
----
-section: Accessibility
-category: Quality
-tags: [overview, reference]
----
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
 # WCAG Overview
 

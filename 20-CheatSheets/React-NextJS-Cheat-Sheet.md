@@ -1,8 +1,4 @@
----
-section: CheatSheets
-category: Reference
-tags: [cheat-sheet, reference]
----
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
 # React & Next.js Cheat Sheet
 

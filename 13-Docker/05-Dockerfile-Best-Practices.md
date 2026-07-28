@@ -1,8 +1,4 @@
----
-section: Docker
-category: DevOps
-tags: [concept, reference]
----
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
 # Dockerfile Best Practices & Security
 

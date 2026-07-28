@@ -1,8 +1,4 @@
----
-section: WebSockets
-category: Real-Time
-tags: [interview-questions, reference]
----
+[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
 # WebSockets & Real-Time Interview Questions
 

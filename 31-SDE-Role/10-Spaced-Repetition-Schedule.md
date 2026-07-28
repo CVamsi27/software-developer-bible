@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [schedule]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # 🔄 Spaced Repetition Schedule
 

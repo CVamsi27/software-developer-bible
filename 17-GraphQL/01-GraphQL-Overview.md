@@ -1,8 +1,4 @@
----
-section: GraphQL
-category: Backend
-tags: [overview, reference]
----
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
 # GraphQL Overview
 

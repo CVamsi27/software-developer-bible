@@ -1,8 +1,4 @@
----
-section: Build Tools
-category: DevOps
-tags: [concept]
----
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
 # Build Optimization
 

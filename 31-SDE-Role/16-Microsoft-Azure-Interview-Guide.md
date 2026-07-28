@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [guide]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # 🏢 Microsoft Azure Team — Interview Guide (2025–2026)
 

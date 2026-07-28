@@ -1,8 +1,4 @@
----
-section: Monorepo
-category: Reference
-tags: [overview, reference]
----
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
 # Monorepo Overview
 

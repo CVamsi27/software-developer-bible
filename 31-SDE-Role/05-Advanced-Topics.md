@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [concept, reference]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # Advanced Topics
 

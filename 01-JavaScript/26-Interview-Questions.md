@@ -1,8 +1,4 @@
----
-section: JavaScript
-category: Core
-tags: [interview-questions, reference]
----
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
 # JavaScript Interview Questions
 

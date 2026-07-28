@@ -1,8 +1,4 @@
----
-section: Testing
-category: Quality
-tags: [concept]
----
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
 # Mocking
 

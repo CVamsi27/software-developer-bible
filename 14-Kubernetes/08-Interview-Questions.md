@@ -1,8 +1,4 @@
----
-section: Kubernetes
-category: DevOps
-tags: [interview-questions, reference]
----
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
 # Kubernetes Interview Questions
 

@@ -1,8 +1,4 @@
----
-section: Interview Strategy
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # STAR Method: Complete Guide for Senior Engineers
 

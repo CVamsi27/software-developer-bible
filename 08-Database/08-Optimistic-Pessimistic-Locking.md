@@ -1,8 +1,4 @@
----
-section: Database
-category: Backend
-tags: [concept]
----
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
 # Optimistic vs Pessimistic Locking
 

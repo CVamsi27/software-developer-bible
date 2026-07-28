@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # Core Computer Science Fundamentals (Phases 9–15)
 

@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # System Design, APIs & Security (Phases 16–19)
 

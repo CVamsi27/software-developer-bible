@@ -1,8 +1,4 @@
----
-section: Security
-category: Architecture
-tags: [concept]
----
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
 # Cross-Site Request Forgery (CSRF)
 

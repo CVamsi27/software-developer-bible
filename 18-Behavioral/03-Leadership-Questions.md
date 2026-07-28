@@ -1,8 +1,4 @@
----
-section: Behavioral
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # Leadership & Senior-Level Behavioral Questions: 20 STAR-Formatted Answers
 

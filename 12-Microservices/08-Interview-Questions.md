@@ -1,8 +1,4 @@
----
-section: Microservices
-category: Architecture
-tags: [interview-questions, reference]
----
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
 # Microservices Interview Questions
 

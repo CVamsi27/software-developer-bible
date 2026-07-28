@@ -1,8 +1,4 @@
----
-section: JavaScript
-category: Core
-tags: [concept]
----
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
 # Debounce
 

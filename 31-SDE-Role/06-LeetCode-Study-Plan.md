@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [study-plan]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 

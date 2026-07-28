@@ -1,8 +1,4 @@
----
-section: Interview Strategy
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # HR Round Strategy for Senior Full Stack Engineers
 

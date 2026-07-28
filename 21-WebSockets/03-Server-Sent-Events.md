@@ -1,8 +1,4 @@
----
-section: WebSockets
-category: Real-Time
-tags: [concept]
----
+[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
 # Server-Sent Events (SSE)
 

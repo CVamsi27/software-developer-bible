@@ -1,8 +1,4 @@
----
-section: Node.js
-category: Backend
-tags: [interview-questions, reference]
----
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
 # Node.js Interview Questions
 

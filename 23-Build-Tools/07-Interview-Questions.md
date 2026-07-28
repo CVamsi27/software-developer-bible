@@ -1,8 +1,4 @@
----
-section: Build Tools
-category: DevOps
-tags: [interview-questions, reference]
----
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
 # Build Tools Interview Questions
 

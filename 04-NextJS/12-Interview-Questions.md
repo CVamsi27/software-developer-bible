@@ -1,8 +1,4 @@
----
-section: Next.js
-category: Frontend
-tags: [interview-questions, reference]
----
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
 # Next.js Interview Questions — Comprehensive Guide
 

@@ -1,8 +1,4 @@
----
-section: Accessibility
-category: Quality
-tags: [concept]
----
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
 # ARIA (Accessible Rich Internet Applications)
 

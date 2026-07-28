@@ -1,8 +1,4 @@
----
-section: Behavioral
-category: Interview
-tags: [concept]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
 

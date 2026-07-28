@@ -1,8 +1,4 @@
----
-section: GraphQL
-category: Backend
-tags: [concept]
----
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
 # Apollo Client
 

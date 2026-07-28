@@ -1,8 +1,4 @@
----
-section: SDE Role
-category: Interview
-tags: [cheat-sheet, reference]
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 # 📋 SDE Interview Cheat Sheet — Last-Minute Review
 

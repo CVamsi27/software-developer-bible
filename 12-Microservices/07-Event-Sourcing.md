@@ -1,8 +1,4 @@
----
-section: Microservices
-category: Architecture
-tags: [concept]
----
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
 # Event Sourcing
 

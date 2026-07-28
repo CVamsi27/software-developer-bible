@@ -1,8 +1,4 @@
----
-section: Accessibility
-category: Quality
-tags: [interview-questions, reference]
----
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
 # Accessibility Interview Questions
 

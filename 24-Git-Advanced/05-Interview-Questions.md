@@ -1,8 +1,4 @@
----
-section: Git Advanced
-category: Reference
-tags: [interview-questions, reference]
----
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
 # Git Advanced Interview Questions
 

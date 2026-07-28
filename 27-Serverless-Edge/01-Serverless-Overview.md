@@ -1,8 +1,4 @@
----
-section: Serverless & Edge
-category: DevOps
-tags: [overview, reference]
----
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
 # Serverless Overview
 

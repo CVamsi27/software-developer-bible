@@ -101,7 +101,7 @@ tags: [concept]
 
 ### Basic Server Action
 
-```tsx
+```typescript
 // app/actions/post.ts
 'use server'
 
@@ -129,7 +129,7 @@ export async function createPost(formData: FormData) {
 
 ### Using Server Action in Form
 
-```tsx
+```typescript
 // app/posts/new/page.tsx
 import { createPost } from '../actions/post'
 
@@ -165,7 +165,7 @@ export default function NewPostPage() {
 
 ### Server Action with Validation
 
-```tsx
+```typescript
 // app/actions/user.ts
 'use server'
 
@@ -213,7 +213,7 @@ export async function createUser(
 
 ### Using useFormState Hook
 
-```tsx
+```typescript
 // app/users/new/page.tsx
 'use client'
 
@@ -259,7 +259,7 @@ export default function NewUserPage() {
 
 ### Server Action with useFormStatus
 
-```tsx
+```typescript
 // app/actions/subscribe.ts
 'use server'
 
@@ -275,7 +275,7 @@ export async function subscribe(formData: FormData) {
 
 ```
 
-```tsx
+```typescript
 // components/subscribe-form.tsx
 'use client'
 
@@ -310,7 +310,7 @@ export function SubscribeForm() {
 
 ### Server Action with useTransition
 
-```tsx
+```typescript
 // app/actions/like.ts
 'use server'
 
@@ -334,7 +334,7 @@ export async function toggleLike(postId: string) {
 
 ```
 
-```tsx
+```typescript
 // components/like-button.tsx
 'use client'
 
@@ -362,7 +362,7 @@ export function LikeButton({ postId, initialLiked }: {
 
 ### Server Action with Optimistic Updates
 
-```tsx
+```typescript
 // components/todo-list.tsx
 'use client'
 
@@ -412,7 +412,7 @@ export function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 
 ### Server Action with Cookies
 
-```tsx
+```typescript
 // app/actions/preferences.ts
 'use server'
 
@@ -439,7 +439,7 @@ export async function updatePreferences(formData: FormData) {
 
 ### Server Action with Error Handling
 
-```tsx
+```typescript
 // app/actions/upload.ts
 'use server'
 
@@ -488,7 +488,7 @@ export async function uploadFile(
 
 ### Inline Server Action
 
-```tsx
+```typescript
 // app/posts/page.tsx
 import { revalidatePath } from 'next/cache'
 
@@ -521,7 +521,7 @@ export default function PostsPage() {
 
 ### Server Action with File Upload
 
-```tsx
+```typescript
 // app/actions/upload-document.ts
 'use server'
 
@@ -554,7 +554,7 @@ export async function uploadDocument(formData: FormData) {
 
 ### Server Action with Search Params
 
-```tsx
+```typescript
 // app/actions/search.ts
 'use server'
 
@@ -590,7 +590,7 @@ export async function searchProducts(formData: FormData) {
 
 ### 1. Not Using 'use server' Directive
 
-```tsx
+```typescript
 // ❌ BAD: Missing directive
 export async function createPost(formData: FormData) {
   await db.post.create({ data: { title: formData.get('title') } })
@@ -608,7 +608,7 @@ export async function createPost(formData: FormData) {
 
 ### 2. Returning Non-Serializable Data
 
-```tsx
+```typescript
 // ❌ BAD: Returning non-serializable data
 'use server'
 
@@ -633,7 +633,7 @@ export async function getData() {
 
 ### 3. Not Handling Errors
 
-```tsx
+```typescript
 // ❌ BAD: No error handling
 'use server'
 
@@ -668,7 +668,7 @@ export async function updateUser(
 
 ### 4. Not Using Revalidation
 
-```tsx
+```typescript
 // ❌ BAD: No revalidation after mutation
 'use server'
 
@@ -694,7 +694,7 @@ export async function createPost(formData: FormData) {
 
 ### 5. Calling Server Action from Server Component
 
-```tsx
+```typescript
 // ❌ BAD: Direct call in Server Component
 'use server'
 export async function getData() {

@@ -92,7 +92,7 @@ tags: [cheat-sheet, reference]
 
 ### Data Fetching with Loading States
 
-```tsx
+```typescript
 // app/posts/page.tsx (Server Component)
 import { Suspense } from 'react';
 
@@ -121,7 +121,7 @@ async function PostsList() {
 
 ### Form with Server Action
 
-```tsx
+```typescript
 // app/actions.ts
 'use server';
 
@@ -181,7 +181,7 @@ export const config = {
 
 ### Parallel Routes (Modal)
 
-```tsx
+```typescript
 // app/dashboard/layout.tsx
 export default function DashboardLayout({
   children,
@@ -207,7 +207,7 @@ export default function AnalyticsPage() {
 
 ### Intercepting Routes (Modal)
 
-```tsx
+```typescript
 // app/@modal/(..)photos/[id]/page.tsx
 import Modal from '@/components/Modal';
 
@@ -223,7 +223,7 @@ export default function PhotoModal({ params }: { params: { id: string } }) {
 
 ### Optimistic Updates with `useOptimistic`
 
-```tsx
+```typescript
 'use client';
 import { useOptimistic } from 'react';
 
@@ -277,7 +277,7 @@ export async function POST(request: Request) {
 
 ### Streaming with Suspense + Loading
 
-```tsx
+```typescript
 // app/dashboard/loading.tsx
 export default function DashboardLoading() {
   return (
@@ -296,7 +296,7 @@ export default function DashboardLoading() {
 
 ### Context + Provider Pattern
 
-```tsx
+```typescript
 // contexts/theme.tsx
 'use client';
 import { createContext, useContext, useState } from 'react';
@@ -327,7 +327,7 @@ export const useTheme = () => {
 
 ### `generateStaticParams` + `generateMetadata`
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 export async function generateStaticParams() {
   const posts = await fetch('https://api.example.com/posts').then(r => r.json());

@@ -115,7 +115,7 @@ Use `style-loader` for development (faster builds) and `MiniCssExtractPlugin` fo
 ### 9. How do you implement code splitting in a React application?
 **Answer:**
 
-```jsx
+```typescript
 // Route-based splitting
 import React, { lazy, Suspense } from 'react';
 

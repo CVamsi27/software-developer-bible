@@ -26,7 +26,7 @@ Next.js is a React framework for production that provides:
 - **Image optimization** — Automatic image processing
 - **Code splitting** — Automatic bundle optimization
 
-```tsx
+```typescript
 // Example: Simple page in Next.js
 // app/page.tsx
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
 | Error | `_error.tsx` | `error.tsx` |
 | Server Components | No | Yes |
 
-```tsx
+```typescript
 // Pages Router: pages/about.tsx
 export default function About() {
   return <h1>About</h1>
@@ -74,7 +74,7 @@ export default function About() {
 **Answer:**
 SSR renders pages on the server for every request. The server fetches data, renders HTML, and sends it to the browser.
 
-```tsx
+```typescript
 // Pages Router SSR
 export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetch('https://api.example.com/data')
@@ -100,7 +100,7 @@ export default async function Page() {
 **Answer:**
 SSG generates HTML at build time. Pages are pre-rendered and served from CDN.
 
-```tsx
+```typescript
 // Pages Router SSG
 export const getStaticProps: GetStaticProps = async () => {
   const data = await fetch('https://api.example.com/data')
@@ -124,7 +124,7 @@ export default async function Page() {
 **Answer:**
 Layouts are shared UI that persist across navigations. They don't re-render on route changes.
 
-```tsx
+```typescript
 // app/layout.tsx — Root layout (required)
 export default function RootLayout({ children }) {
   return (
@@ -158,7 +158,7 @@ export default function DashboardLayout({ children }) {
 **Answer:**
 Server Components render on the server and send only HTML to the client. They can't use hooks or browser APIs.
 
-```tsx
+```typescript
 // Server Component (default in App Router)
 export default async function Page() {
   // Direct database access!
@@ -177,7 +177,7 @@ export default async function Page() {
 **Answer:**
 Client Components render on the client with full interactivity. Use `'use client'` directive.
 
-```tsx
+```typescript
 'use client'
 import { useState } from 'react'
 
@@ -197,7 +197,7 @@ export function Counter() {
 **Answer:**
 Use the `next/link` component for client-side navigation.
 
-```tsx
+```typescript
 import Link from 'next/link'
 
 export function Navigation() {
@@ -214,7 +214,7 @@ export function Navigation() {
 
 **Programmatic navigation:**
 
-```tsx
+```typescript
 'use client'
 import { useRouter } from 'next/navigation'
 
@@ -238,7 +238,7 @@ export function LogoutButton() {
 **Answer:**
 In App Router, fetch data directly in Server Components.
 
-```tsx
+```typescript
 // Server Component — direct fetch
 export default async function Page() {
   const data = await fetch('https://api.example.com/data', {
@@ -252,7 +252,7 @@ export default async function Page() {
 
 **With error handling:**
 
-```tsx
+```typescript
 export default async function Page() {
   try {
     const data = await fetch('https://api.example.com/data')
@@ -273,7 +273,7 @@ export default async function Page() {
 **Answer:**
 Middleware runs before a request is completed. It can redirect, rewrite, or modify requests.
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -304,7 +304,7 @@ export const config = {
 
 **Answer:**
 
-```tsx
+```typescript
 // middleware.ts — Route protection
 import { NextResponse } from 'next/server'
 
@@ -346,7 +346,7 @@ export async function POST(request: Request) {
 
 **Answer:**
 
-```tsx
+```typescript
 // app/actions/post.ts
 'use server'
 
@@ -386,7 +386,7 @@ export default function NewPostPage() {
 
 **Answer:**
 
-```tsx
+```typescript
 import Image from 'next/image'
 
 export function ProductImage() {
@@ -420,7 +420,7 @@ export function ProductImage() {
 
 **Answer:**
 
-```tsx
+```typescript
 // Time-based revalidation (ISR)
 const data = await fetch(url, { next: { revalidate: 60 } })
 
@@ -446,7 +446,7 @@ revalidatePath('/posts')
 
 **Answer:**
 
-```tsx
+```typescript
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -479,7 +479,7 @@ export async function GET(
 
 **Answer:**
 
-```tsx
+```typescript
 // app/error.tsx — Route-level error boundary
 'use client'
 
@@ -517,7 +517,7 @@ export default function NotFound() {
 
 **Answer:**
 
-```tsx
+```typescript
 // app/layout.tsx — Static metadata
 export const metadata: Metadata = {
   title: { template: '%s | MyApp', default: 'MyApp' },
@@ -547,7 +547,7 @@ export async function generateMetadata({ params }) {
 
 **Answer:**
 
-```tsx
+```typescript
 // app/layout.tsx
 export default function Layout({ children, modal }) {
   return (
@@ -577,7 +577,7 @@ export default function PhotoModal({ params }) {
 
 **Answer:**
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -610,7 +610,7 @@ export default function Loading() {
 
 **Answer:**
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 
@@ -649,7 +649,7 @@ export default function LocaleLayout({ children, params }) {
 
 **Answer:**
 
-```tsx
+```typescript
 // Strategy by page type:
 // - Marketing pages: SSG with ISR
 // - Product pages: ISR with on-demand revalidation
@@ -684,7 +684,7 @@ export default async function DashboardPage() {
 
 **Answer:**
 
-```tsx
+```typescript
 // Using Module Federation
 // app/layout.tsx
 import dynamic from 'next/dynamic'
@@ -719,7 +719,7 @@ export default function Layout({ children }) {
 
 **Answer:**
 
-```tsx
+```typescript
 // 1. Use ISR for popular pages
 export const revalidate = 60
 
@@ -760,7 +760,7 @@ const HeavyChart = dynamic(() => import('./HeavyChart'), {
 
 **Answer:**
 
-```tsx
+```typescript
 // Using Server-Sent Events
 // app/api/events/route.ts
 export async function GET() {
@@ -814,7 +814,7 @@ export function RealTimeData() {
 
 **Answer:**
 
-```tsx
+```typescript
 // Unit tests with Jest
 // __tests__/components/Counter.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react'
@@ -852,7 +852,7 @@ test('GET /api/users returns users', async ({ request }) => {
 
 **Answer:**
 
-```tsx
+```typescript
 // lib/feature-flags.ts
 export const featureFlags = {
   newDashboard: process.env.FEATURE_NEW_DASHBOARD === 'true',
@@ -887,7 +887,7 @@ export function middleware(request) {
 
 **Answer:**
 
-```tsx
+```typescript
 // Using URL state for shareable state
 'use client'
 import { useSearchParams, useRouter } from 'next/navigation'
@@ -937,7 +937,7 @@ export const useApp = () => useContext(AppContext)
 
 **Answer:**
 
-```tsx
+```typescript
 // lib/monitoring.ts
 export function trackMetric(name: string, value: number) {
   if (typeof window !== 'undefined') {
@@ -980,7 +980,7 @@ export function withErrorTracking<T>(fn: () => T): T {
 
 **Answer:**
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 
@@ -1018,7 +1018,7 @@ export default async function Page() {
 
 **Answer:**
 
-```tsx
+```typescript
 // Step 1: Create app/ directory alongside pages/
 // Step 2: Migrate pages incrementally
 // Step 3: Move data fetching logic
@@ -1072,7 +1072,7 @@ export default async function AboutPage() {
 - **State:** Redis for session management
 - **Monitoring:** APM, error tracking, metrics
 
-```tsx
+```typescript
 // Edge middleware for fast routing
 export const runtime = 'edge'
 
@@ -1107,7 +1107,7 @@ const pool = new Pool({
 - Server Components for initial load
 - Client Components for editing
 
-```tsx
+```typescript
 // WebSocket connection
 'use client'
 import { useEffect, useRef } from 'react'
@@ -1144,7 +1144,7 @@ export function CollaborativeEditor({ documentId }) {
 - **Data replication:** Sync data across regions
 - **Edge functions:** Run logic at edge
 
-```tsx
+```typescript
 // middleware.ts — Geo-based routing
 export function middleware(request) {
   const country = request.geo?.country || 'US'
@@ -1178,7 +1178,7 @@ async function getData(region) {
 - **Circuit breakers:** Handle service failures
 - **Load balancing:** Distribute requests
 
-```tsx
+```typescript
 // lib/services.ts
 const services = {
   users: process.env.USER_SERVICE_URL,
@@ -1220,7 +1220,7 @@ export async function GET() {
 - **Queue:** Order processing queue
 - **Fallback:** Graceful degradation
 
-```tsx
+```typescript
 // Pre-render popular products
 export async function generateStaticParams() {
   const popularProducts = await getPopularProducts()
@@ -1279,7 +1279,7 @@ export default async function ProductPage({ params }) {
 
 **Answer:**
 
-```tsx
+```typescript
 // lib/db.ts
 import { Pool } from 'pg'
 
@@ -1311,7 +1311,7 @@ export default async function Page() {
 
 **Answer:**
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 
@@ -1352,7 +1352,7 @@ export function middleware(request) {
 
 **Answer:**
 
-```tsx
+```typescript
 // next.config.js
 module.exports = {
   experimental: {
@@ -1391,7 +1391,7 @@ self.addEventListener('fetch', (event) => {
 
 **Answer:**
 
-```tsx
+```typescript
 // Performance monitoring
 export default async function Page() {
   const start = performance.now()

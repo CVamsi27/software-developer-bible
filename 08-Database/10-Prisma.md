@@ -101,7 +101,7 @@ Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mappin
 
 ### Schema Definition
 
-```prisma
+```text
 // schema.prisma
 generator client {
   provider        = "prisma-client-js"

@@ -99,7 +99,7 @@ Connection pooling is a technique that maintains a cache of database connections
 
 ### PgBouncer Configuration
 
-```ini
+```text
 ; pgbouncer.ini
 [databases]
 mydb = host=localhost port=5432 dbname=mydb
@@ -133,7 +133,7 @@ auth_file = /etc/pgbouncer/userlist.txt
 
 ### Prisma Connection Pool
 
-```prisma
+```text
 // schema.prisma
 generator client {
   provider = "prisma-client-js"
@@ -462,7 +462,7 @@ process.on('SIGTERM', async () => {
 Connection pooling is essential for database performance. Use PgBouncer for production PostgreSQL. Configure pool size based on workload. Monitor pool health and handle connection failures. Prisma manages connection pooling internally.
 
 ## Cheat Sheet
-```ini
+```text
 # PgBouncer configuration
 [databases]
 mydb = host=localhost port=5432 dbname=mydb

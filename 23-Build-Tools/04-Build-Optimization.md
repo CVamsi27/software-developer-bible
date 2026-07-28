@@ -86,7 +86,7 @@ import { add } from './utils.js';
 
 ### Code Splitting with React
 
-```jsx
+```typescript
 // App.jsx
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

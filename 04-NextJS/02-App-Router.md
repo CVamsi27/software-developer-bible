@@ -108,7 +108,7 @@ app/
 
 ### Layout System
 
-```tsx
+```typescript
 // app/layout.tsx — Root Layout (required)
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -139,7 +139,7 @@ export default function RootLayout({
 
 ```
 
-```tsx
+```typescript
 // app/dashboard/layout.tsx — Nested Layout
 export default function DashboardLayout({
   children,
@@ -166,7 +166,7 @@ export default function DashboardLayout({
 
 ### Loading States
 
-```tsx
+```typescript
 // app/dashboard/loading.tsx — Automatic Suspense boundary
 export default function Loading() {
   return (
@@ -182,7 +182,7 @@ export default function Loading() {
 
 ### Error Handling
 
-```tsx
+```typescript
 // app/dashboard/error.tsx — Error boundary
 'use client'
 
@@ -204,7 +204,7 @@ export default function Error({
 
 ```
 
-```tsx
+```typescript
 // app/not-found.tsx — 404 page
 export default function NotFound() {
   return (
@@ -219,7 +219,7 @@ export default function NotFound() {
 
 ### Route Groups
 
-```tsx
+```typescript
 // app/(marketing)/layout.tsx — Marketing layout (no URL segment)
 export default function MarketingLayout({
   children,
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
 ### Parallel Routes
 
-```tsx
+```typescript
 // app/layout.tsx — Render multiple pages simultaneously
 export default function Layout({
   children,
@@ -298,7 +298,7 @@ When directly accessing /photos/123:
 
 ### Dynamic Routes
 
-```tsx
+```typescript
 // app/products/[id]/page.tsx — Dynamic segment
 export default function ProductPage({
   params,
@@ -333,7 +333,7 @@ export default function DocsPage({
 
 ### Route Handlers
 
-```tsx
+```typescript
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -352,7 +352,7 @@ export async function POST(request: NextRequest) {
 
 ### Templates
 
-```tsx
+```typescript
 // app/template.tsx — Re-renders on navigation (unlike layout)
 export default function Template({ children }: { children: React.ReactNode }) {
   return <div className="fade-in">{children}</div>
@@ -362,7 +362,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
 ### Metadata
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 import type { Metadata } from 'next'
 
@@ -394,7 +394,7 @@ export default async function BlogPost({ params }) {
 
 ### Dynamic Segments with Generate Static Params
 
-```tsx
+```typescript
 // app/products/[id]/page.tsx
 export async function generateStaticParams() {
   const products = await fetchProducts()
@@ -417,7 +417,7 @@ export default async function ProductPage({
 
 ### Route Segment Config
 
-```tsx
+```typescript
 // Force dynamic rendering
 export const dynamic = 'force-dynamic'
 
@@ -500,7 +500,7 @@ app/
 
 ### 1. Forgetting 'use client' in Interactive Components
 
-```tsx
+```typescript
 // ❌ BAD: Trying to use useState without 'use client'
 export default function Counter() {
   const [count, setCount] = useState(0) // Error!
@@ -520,7 +520,7 @@ export default function Counter() {
 
 ### 2. Mutating Props Directly
 
-```tsx
+```typescript
 // ❌ BAD: Mutating params directly
 export default async function Page({ params }) {
   params.id = 'new-id' // Never mutate params!
@@ -537,7 +537,7 @@ export default async function Page({ params }) {
 
 ### 3. Missing Layout in Nested Routes
 
-```tsx
+```typescript
 // ❌ BAD: Inconsistent layout across nested routes
 app/
 ├── dashboard/page.tsx
@@ -555,7 +555,7 @@ app/
 
 ### 4. Not Handling Async Params
 
-```tsx
+```typescript
 // ❌ BAD: Accessing params synchronously
 export default function Page({ params }) {
   return <h1>{params.id}</h1> // params is a Promise in Next.js 15!
@@ -575,7 +575,7 @@ export default async function Page({
 
 ### 5. Using Client Components Unnecessarily
 
-```tsx
+```typescript
 // ❌ BAD: Marking entire page as client component
 'use client'
 export default function ProductPage({ product }) {

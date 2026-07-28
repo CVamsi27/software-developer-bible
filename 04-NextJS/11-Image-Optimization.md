@@ -105,7 +105,7 @@ Next.js provides an **Image component** (`next/image`) that automatically optimi
 
 ### Basic Image Usage
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -128,7 +128,7 @@ export default function Page() {
 
 ### Remote Images
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -145,7 +145,7 @@ export default function Page() {
 
 ```
 
-```tsx
+```typescript
 // next.config.js
 module.exports = {
   images: {
@@ -166,7 +166,7 @@ module.exports = {
 
 ### Responsive Images
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -187,7 +187,7 @@ export default function Page() {
 
 ### Blur Placeholder
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -208,7 +208,7 @@ export default function Page() {
 
 ### Auto Blur Placeholder
 
-```tsx
+```typescript
 // next.config.js
 module.exports = {
   images: {
@@ -218,7 +218,7 @@ module.exports = {
 
 ```
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 import heroImg from '@/public/hero.jpg'
@@ -238,7 +238,7 @@ export default function Page() {
 
 ### Lazy Loading
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -269,7 +269,7 @@ export default function Page() {
 
 ### Fill Mode
 
-```tsx
+```typescript
 // app/page.tsx
 import Image from 'next/image'
 
@@ -290,7 +290,7 @@ export default function Page() {
 
 ### Image Gallery
 
-```tsx
+```typescript
 // components/image-gallery.tsx
 import Image from 'next/image'
 
@@ -324,7 +324,7 @@ export function ImageGallery({ images }: { images: GalleryImage[] }) {
 
 ### Avatar Component
 
-```tsx
+```typescript
 // components/avatar.tsx
 import Image from 'next/image'
 
@@ -364,7 +364,7 @@ export function Avatar({ src, alt, size = 'md' }: AvatarProps) {
 
 ### Hero Image with Overlay
 
-```tsx
+```typescript
 // components/hero.tsx
 import Image from 'next/image'
 
@@ -393,7 +393,7 @@ export function Hero() {
 
 ### Product Image with Zoom
 
-```tsx
+```typescript
 // components/product-image.tsx
 'use client'
 
@@ -429,7 +429,7 @@ export function ProductImage({ src, alt }: { src: string; alt: string }) {
 
 ### Responsive Background Image
 
-```tsx
+```typescript
 // components/section.tsx
 import Image from 'next/image'
 
@@ -456,7 +456,7 @@ export function Section() {
 
 ### Image with Loading States
 
-```tsx
+```typescript
 // components/image-with-loading.tsx
 'use client'
 
@@ -500,7 +500,7 @@ export function ImageWithLoading({
 
 ### Next.js Image Configuration
 
-```tsx
+```typescript
 // next.config.js
 module.exports = {
   images: {
@@ -551,7 +551,7 @@ module.exports = {
 
 ### 1. Not Setting Width and Height
 
-```tsx
+```typescript
 // ❌ BAD: Missing dimensions causes layout shift
 <Image src="/photo.jpg" alt="Photo" />
 
@@ -562,7 +562,7 @@ module.exports = {
 
 ### 2. Using Priority on All Images
 
-```tsx
+```typescript
 // ❌ BAD: All images marked as priority
 <Image src="/photo1.jpg" alt="1" width={800} height={600} priority />
 <Image src="/photo2.jpg" alt="2" width={800} height={600} priority />
@@ -576,7 +576,7 @@ module.exports = {
 
 ### 3. Not Using Remote Patterns
 
-```tsx
+```typescript
 // ❌ BAD: Remote image not configured
 <Image src="https://example.com/photo.jpg" alt="Photo" width={800} height={600} />
 // Error: Invalid src prop
@@ -595,7 +595,7 @@ module.exports = {
 
 ### 4. Ignoring Aspect Ratio
 
-```tsx
+```typescript
 // ❌ BAD: Incorrect aspect ratio
 <Image src="/photo.jpg" alt="Photo" width={800} height={800} />
 // Image will be stretched if original is not square
@@ -613,7 +613,7 @@ module.exports = {
 
 ### 5. Not Using Blur Placeholder
 
-```tsx
+```typescript
 // ❌ BAD: No loading placeholder
 <Image src="/photo.jpg" alt="Photo" width={800} height={600} />
 // Shows nothing while loading

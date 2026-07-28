@@ -96,7 +96,7 @@ tags: [concept]
 
 ### Basic Middleware
 
-```tsx
+```typescript
 // middleware.ts (root of project)
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -118,7 +118,7 @@ export const config = {
 
 ### Authentication Middleware
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -161,7 +161,7 @@ export const config = {
 
 ### Role-Based Access Control
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -214,7 +214,7 @@ export async function middleware(request: NextRequest) {
 
 ### A/B Testing Middleware
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -249,7 +249,7 @@ export function middleware(request: NextRequest) {
 
 ### Geographic Routing
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -283,7 +283,7 @@ export function middleware(request: NextRequest) {
 
 ### URL Rewriting
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -312,7 +312,7 @@ export function middleware(request: NextRequest) {
 
 ### Bot Detection
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -346,7 +346,7 @@ export function middleware(request: NextRequest) {
 
 ### Rate Limiting
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -383,7 +383,7 @@ export function middleware(request: NextRequest) {
 
 ### Header Manipulation
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -421,7 +421,7 @@ export function middleware(request: NextRequest) {
 
 ### Cookie Handling
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -464,7 +464,7 @@ export function middleware(request: NextRequest) {
 
 ### Conditional Middleware
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -500,7 +500,7 @@ export const config = {
 
 ### Chaining Middleware
 
-```tsx
+```typescript
 // lib/middleware/auth.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -517,7 +517,7 @@ export function authMiddleware(request: NextRequest) {
 
 ```
 
-```tsx
+```typescript
 // lib/middleware/rate-limit.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -544,7 +544,7 @@ export function rateLimitMiddleware(request: NextRequest) {
 
 ```
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -592,7 +592,7 @@ export function middleware(request: NextRequest) {
 
 ### 1. Running Node.js APIs in Middleware
 
-```tsx
+```typescript
 // ❌ BAD: Node.js APIs not available in Edge Runtime
 import fs from 'fs'
 import { db } from './database'
@@ -614,7 +614,7 @@ export function middleware(request: NextRequest) {
 
 ### 2. Not Matching All Required Paths
 
-```tsx
+```typescript
 // ❌ BAD: Only matches /dashboard
 export const config = {
   matcher: '/dashboard',
@@ -629,7 +629,7 @@ export const config = {
 
 ### 3. Infinite Redirects
 
-```tsx
+```typescript
 // ❌ BAD: Redirect loop
 export function middleware(request: NextRequest) {
   if (!request.cookies.get('token')) {
@@ -648,7 +648,7 @@ export const config = {
 
 ### 4. Not Handling Edge Cases
 
-```tsx
+```typescript
 // ❌ BAD: No error handling
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value
@@ -676,7 +676,7 @@ export function middleware(request: NextRequest) {
 
 ### 5. Modifying Request Body
 
-```tsx
+```typescript
 // ❌ BAD: Can't modify request body in middleware
 export function middleware(request: NextRequest) {
   const body = request.body // Can't read!

@@ -349,7 +349,7 @@ export class UsersController {
 
 ### Database Schema (Prisma)
 
-```prisma
+```text
 model User {
   id        String   @id @default(cuid())
   email     String   @unique

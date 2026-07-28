@@ -159,7 +159,7 @@ function solutionPattern(problem: string): string {
 
 - **Answer**: Use AnimatePresence with route changes:
 
-```tsx
+```typescript
 <AnimatePresence mode="wait">
   <motion.div
     key={location.pathname}

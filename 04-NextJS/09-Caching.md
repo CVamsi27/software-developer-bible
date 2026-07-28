@@ -103,7 +103,7 @@ Next.js implements a multi-layered caching system that improves performance by s
 
 ### Data Cache — Time-Based Revalidation
 
-```tsx
+```typescript
 // app/products/page.tsx
 export default async function ProductsPage() {
   // Cache for 60 seconds
@@ -125,7 +125,7 @@ export default async function ProductsPage() {
 
 ### Data Cache — No Store (Always Fresh)
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 export default async function DashboardPage() {
   // Never cache, always fetch fresh
@@ -145,7 +145,7 @@ export default async function DashboardPage() {
 
 ### Data Cache — Force Cache
 
-```tsx
+```typescript
 // app/about/page.tsx
 export default async function AboutPage() {
   // Cache indefinitely until manually revalidated
@@ -165,7 +165,7 @@ export default async function AboutPage() {
 
 ### Tag-Based Revalidation
 
-```tsx
+```typescript
 // app/api/revalidate/route.ts
 import { revalidateTag } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
@@ -184,7 +184,7 @@ export async function POST(request: NextRequest) {
 
 ```
 
-```tsx
+```typescript
 // app/blog/page.tsx
 export default async function BlogPage() {
   const posts = await fetch('https://api.example.com/posts', {
@@ -205,7 +205,7 @@ export default async function BlogPage() {
 
 ### Path-Based Revalidation
 
-```tsx
+```typescript
 // app/api/revalidate-path/route.ts
 import { revalidatePath } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
@@ -226,7 +226,7 @@ export async function POST(request: NextRequest) {
 
 ### Full Route Cache
 
-```tsx
+```typescript
 // app/products/page.tsx — Automatically cached (static)
 export default async function ProductsPage() {
   // This page is statically generated and cached
@@ -251,7 +251,7 @@ export const dynamic = 'force-dynamic'
 
 ### Request Memoization
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 export default async function DashboardPage() {
   // Both fetch calls are deduplicated automatically
@@ -272,7 +272,7 @@ export default async function DashboardPage() {
 
 ### React cache() for Deduplication
 
-```tsx
+```typescript
 // lib/data.ts
 import { cache } from 'react'
 
@@ -288,7 +288,7 @@ export const getUserPosts = cache(async (userId: string) => {
 
 ```
 
-```tsx
+```typescript
 // app/users/[id]/page.tsx
 import { getUser, getUserPosts } from '@/lib/data'
 
@@ -311,7 +311,7 @@ export default async function UserPage({ params }) {
 
 ### Route Segment Config for Caching
 
-```tsx
+```typescript
 // Force static (enable Full Route Cache)
 export const dynamic = 'force-static'
 
@@ -328,7 +328,7 @@ export const revalidate = 60
 
 ### Cache with Headers
 
-```tsx
+```typescript
 // app/api/products/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -347,7 +347,7 @@ export async function GET(request: NextRequest) {
 
 ### Incremental Static Regeneration (ISR)
 
-```tsx
+```typescript
 // app/products/[id]/page.tsx
 export default async function ProductPage({ params }) {
   const { id } = await params
@@ -372,7 +372,7 @@ export default async function ProductPage({ params }) {
 
 ### On-Demand Revalidation via Webhook
 
-```tsx
+```typescript
 // app/api/webhooks/stripe/route.ts
 import { revalidateTag } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
@@ -409,7 +409,7 @@ export async function POST(request: NextRequest) {
 
 ### Cache Monitoring
 
-```tsx
+```typescript
 // app/api/cache-status/route.ts
 import { NextResponse } from 'next/server'
 
@@ -443,7 +443,7 @@ export async function GET() {
 
 ### 1. Caching Sensitive Data
 
-```tsx
+```typescript
 // ❌ BAD: Caching user-specific data
 export default async function Dashboard() {
   const data = await fetch('https://api.example.com/dashboard', {
@@ -464,7 +464,7 @@ export default async function Dashboard() {
 
 ### 2. Not Invalidating Stale Cache
 
-```tsx
+```typescript
 // ❌ BAD: Data never updates after mutation
 export default async function ProductsPage() {
   const products = await fetch('https://api.example.com/products', {
@@ -483,7 +483,7 @@ export async function addProduct(product) {
 
 ### 3. Over-Caching
 
-```tsx
+```typescript
 // ❌ BAD: Caching everything aggressively
 export default async function Page() {
   const data = await fetch('https://api.example.com/data', {
@@ -504,7 +504,7 @@ export default async function Page() {
 
 ### 4. Not Handling Cache Errors
 
-```tsx
+```typescript
 // ❌ BAD: No error handling for cache misses
 export default async function Page() {
   const data = await fetch('https://api.example.com/data', {
@@ -531,7 +531,7 @@ export default async function Page() {
 
 ### 5. Mixing Cache Strategies Incorrectly
 
-```tsx
+```typescript
 // ❌ BAD: Conflicting cache settings
 export const dynamic = 'force-dynamic' // No Full Route Cache
 export const revalidate = 60 // But trying to ISR?

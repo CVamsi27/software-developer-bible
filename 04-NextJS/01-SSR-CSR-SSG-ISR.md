@@ -106,7 +106,7 @@ Choosing the wrong strategy leads to stale data, slow loads, or unnecessary serv
 
 ### CSR — Client-Side Rendering (Pages Router)
 
-```tsx
+```typescript
 // pages/dashboard.tsx
 import { useEffect, useState } from 'react'
 
@@ -145,7 +145,7 @@ export default function Dashboard() {
 
 ### CSR — Client-Side Rendering (App Router)
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 'use client'
 
@@ -180,7 +180,7 @@ export default function Dashboard() {
 
 ### SSR — Server-Side Rendering (Pages Router)
 
-```tsx
+```typescript
 // pages/profile.tsx
 import { GetServerSideProps } from 'next'
 
@@ -228,7 +228,7 @@ export default function Profile({ user }: ProfileProps) {
 
 ### SSR — Server-Side Rendering (App Router)
 
-```tsx
+```typescript
 // app/profile/page.tsx
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -266,7 +266,7 @@ export default async function ProfilePage() {
 
 ### SSG — Static Site Generation (Pages Router)
 
-```tsx
+```typescript
 // pages/blog/[slug].tsx
 import { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -318,7 +318,7 @@ export default function BlogPost({ post }: PostProps) {
 
 ### SSG — Static Site Generation (App Router)
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation'
 
@@ -369,7 +369,7 @@ export default async function BlogPost({
 
 ### ISR — Incremental Static Regeneration (Pages Router)
 
-```tsx
+```typescript
 // pages/products/[id].tsx
 import { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -416,7 +416,7 @@ export default function Product({ product }: { product: Product }) {
 
 ### ISR — Incremental Static Regeneration (App Router)
 
-```tsx
+```typescript
 // app/products/[id]/page.tsx
 interface Product {
   id: string
@@ -458,7 +458,7 @@ export default async function ProductPage({
 
 ### On-Demand Revalidation (ISR)
 
-```tsx
+```typescript
 // app/api/revalidate/route.ts
 import { revalidateTag, revalidatePath } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
@@ -487,7 +487,7 @@ export async function POST(request: NextRequest) {
 
 ### Fallback Rendering Strategies
 
-```tsx
+```typescript
 // Pages Router fallback options
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -504,7 +504,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 ```
 
-```tsx
+```typescript
 // App Router: generateStaticParams + dynamicParams
 export const dynamicParams = true // Allow on-demand generation
 
@@ -517,7 +517,7 @@ export async function generateStaticParams() {
 
 ### Middleware with ISR
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -552,7 +552,7 @@ export const config = {
 
 ### 1. Using SSR When SSG Would Suffice
 
-```tsx
+```typescript
 // ❌ BAD: Fetching static data on every request
 export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetchStaticContent()
@@ -569,7 +569,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 ### 2. Exposing Sensitive Data in SSG
 
-```tsx
+```typescript
 // ❌ BAD: API keys in client bundle
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(`https://api.example.com/data?key=${process.env.API_KEY}`)
@@ -589,7 +589,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 ### 3. Forgetting revalidate in ISR
 
-```tsx
+```typescript
 // ❌ BAD: Page will never update after build
 export const getStaticProps: GetStaticProps = async () => {
   return { props: { data: await fetchData() } } // Missing revalidate
@@ -607,7 +607,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 ### 4. Mixing CSR and SSR Incorrectly
 
-```tsx
+```typescript
 // ❌ BAD: Using window in SSR
 export const getServerSideProps: GetServerSideProps = async () => {
   const width = window.innerWidth // Error! window is undefined on server
@@ -629,7 +629,7 @@ export default function Page({ initialData }) {
 
 ### 5. Not Handling Loading States
 
-```tsx
+```typescript
 // ❌ BAD: No loading state for SSR/ISR
 export default function Page({ data }) {
   return <div>{data.items.map(...)}</div> //闪烁 with slow data

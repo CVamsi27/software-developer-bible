@@ -240,7 +240,7 @@ fibFast(100); // 354224848179262000000 (fast)
 
 ### Recursive React Component (Tree View)
 
-```jsx
+```typescript
 function TreeNode({ node }) {
   return (
     <li>

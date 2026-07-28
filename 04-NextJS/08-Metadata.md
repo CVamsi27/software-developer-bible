@@ -100,7 +100,7 @@ The **Metadata API** in Next.js provides a systematic way to define and manage m
 
 ### Basic Static Metadata
 
-```tsx
+```typescript
 // app/layout.tsx
 import type { Metadata } from 'next'
 
@@ -127,7 +127,7 @@ export default function RootLayout({ children }) {
 
 ### Page-Specific Metadata
 
-```tsx
+```typescript
 // app/about/page.tsx
 import type { Metadata } from 'next'
 
@@ -149,7 +149,7 @@ export default function AboutPage() {
 
 ### Open Graph Metadata
 
-```tsx
+```typescript
 // app/page.tsx
 import type { Metadata } from 'next'
 
@@ -178,7 +178,7 @@ export const metadata: Metadata = {
 
 ### Twitter Card Metadata
 
-```tsx
+```typescript
 // app/page.tsx
 import type { Metadata } from 'next'
 
@@ -197,7 +197,7 @@ export const metadata: Metadata = {
 
 ### Dynamic Metadata with generateMetadata
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 import type { Metadata } from 'next'
 
@@ -258,7 +258,7 @@ export default async function BlogPost({ params }) {
 
 ### Template Titles
 
-```tsx
+```typescript
 // app/layout.tsx
 export const metadata: Metadata = {
   title: {
@@ -277,7 +277,7 @@ export const metadata: Metadata = {
 
 ### Canonical URLs
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 export async function generateMetadata({ params }): Promise<Metadata> {
   const { slug } = await params
@@ -295,7 +295,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 ### Multi-Language Metadata
 
-```tsx
+```typescript
 // app/[locale]/layout.tsx
 export async function generateMetadata({
   params,
@@ -326,7 +326,7 @@ export async function generateMetadata({
 
 ### Icons and Manifest
 
-```tsx
+```typescript
 // app/layout.tsx
 import type { Metadata } from 'next'
 
@@ -347,7 +347,7 @@ export const metadata: Metadata = {
 
 ### Structured Data (JSON-LD)
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 export default async function BlogPost({ params }) {
   const { slug } = await params
@@ -382,7 +382,7 @@ export default async function BlogPost({ params }) {
 
 ### Product Structured Data
 
-```tsx
+```typescript
 // app/products/[id]/page.tsx
 export default async function ProductPage({ params }) {
   const { id } = await params
@@ -424,7 +424,7 @@ export default async function ProductPage({ params }) {
 
 ### Breadcrumb Structured Data
 
-```tsx
+```typescript
 // components/breadcrumb.tsx
 interface BreadcrumbItem {
   name: string
@@ -470,7 +470,7 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
 
 ### robots.txt Generation
 
-```tsx
+```typescript
 // app/robots.ts
 import type { MetadataRoute } from 'next'
 
@@ -491,7 +491,7 @@ export default function robots(): MetadataRoute.Robots {
 
 ### Sitemap Generation
 
-```tsx
+```typescript
 // app/sitemap.ts
 import type { MetadataRoute } from 'next'
 
@@ -528,7 +528,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 ### Metadata Base URL
 
-```tsx
+```typescript
 // app/layout.tsx
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
@@ -557,7 +557,7 @@ export const metadata: Metadata = {
 
 ### 1. Not Using metadataBase
 
-```tsx
+```typescript
 // ❌ BAD: Relative URLs won't work
 export const metadata: Metadata = {
   openGraph: {
@@ -577,7 +577,7 @@ export const metadata: Metadata = {
 
 ### 2. Duplicate Titles
 
-```tsx
+```typescript
 // ❌ BAD: Layout and page both define title
 // app/layout.tsx
 export const metadata: Metadata = { title: 'My App' }
@@ -598,7 +598,7 @@ export const metadata: Metadata = { title: 'About' } // Just the unique part
 
 ### 3. Missing OG Images
 
-```tsx
+```typescript
 // ❌ BAD: No OG image defined
 export const metadata: Metadata = {
   title: 'My Page',
@@ -628,7 +628,7 @@ export const metadata: Metadata = {
 
 ### 4. Not Generating Dynamic Metadata
 
-```tsx
+```typescript
 // ❌ BAD: Static metadata for dynamic content
 // app/blog/[slug]/page.tsx
 export const metadata: Metadata = {
@@ -649,7 +649,7 @@ export async function generateMetadata({ params }) {
 
 ### 5. Ignoring Mobile Metadata
 
-```tsx
+```typescript
 // ❌ BAD: Only desktop dimensions
 export const metadata: Metadata = {
   openGraph: {

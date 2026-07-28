@@ -106,7 +106,7 @@ tags: [concept]
 
 ### Basic Server Component
 
-```tsx
+```typescript
 // app/page.tsx — Server Component by default
 import { db } from '@/lib/database'
 
@@ -135,7 +135,7 @@ export default async function HomePage() {
 
 ### Server Component with Data Fetching
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 import { AnalyticsChart } from './analytics-chart'
@@ -175,7 +175,7 @@ export default async function DashboardPage() {
 
 ### Nested Server Components
 
-```tsx
+```typescript
 // app/products/page.tsx — Parent Server Component
 import { ProductCard } from './product-card'
 import { db } from '@/lib/database'
@@ -194,7 +194,7 @@ export default async function ProductsPage() {
 
 ```
 
-```tsx
+```typescript
 // app/products/product-card.tsx — Child Server Component
 import { AddToCartButton } from './add-to-cart-button'
 
@@ -235,7 +235,7 @@ export async function ProductCard({ product }: ProductCardProps) {
 
 ### Server Component with External API
 
-```tsx
+```typescript
 // app/github/page.tsx
 import { Suspense } from 'react'
 
@@ -272,7 +272,7 @@ export default function GitHubPage() {
 
 ### Streaming Server Components
 
-```tsx
+```typescript
 // app/streaming/page.tsx
 import { Suspense } from 'react'
 
@@ -312,7 +312,7 @@ export default function StreamingPage() {
 
 ### Server Component with Metadata
 
-```tsx
+```typescript
 // app/blog/[slug]/page.tsx
 import type { Metadata } from 'next'
 
@@ -369,7 +369,7 @@ export default async function BlogPost({
 
 ### Error Handling in Server Components
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { notFound } from 'next/navigation'
 
@@ -401,7 +401,7 @@ export default async function DashboardPage() {
 
 ### Server Component with Context
 
-```tsx
+```typescript
 // lib/user-context.tsx
 import { cookies } from 'next/headers'
 import { db } from '@/lib/database'
@@ -422,7 +422,7 @@ export async function getCurrentUser() {
 
 ```
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { getCurrentUser } from '@/lib/user-context'
 
@@ -444,7 +444,7 @@ export default async function DashboardPage() {
 
 ### Server Component Composition Pattern
 
-```tsx
+```typescript
 // app/page.tsx — Composition pattern for data fetching
 import { Suspense } from 'react'
 
@@ -512,7 +512,7 @@ function Footer() {
 
 ### 1. Using useState/useEffect in Server Components
 
-```tsx
+```typescript
 // ❌ BAD: Hooks don't work in Server Components
 export default async function Page() {
   const [count, setCount] = useState(0) // Error!
@@ -546,7 +546,7 @@ export default function Page() {
 
 ### 2. Passing Functions as Props
 
-```tsx
+```typescript
 // ❌ BAD: Can't pass functions from Server to Client Components
 async function Page() {
   const handleClick = () => console.log('clicked') // Can't pass this!
@@ -565,7 +565,7 @@ export function ClientButton() {
 
 ### 3. Accessing Browser APIs
 
-```tsx
+```typescript
 // ❌ BAD: Browser APIs don't exist on the server
 export default async function Page() {
   const width = window.innerWidth // Error!
@@ -592,7 +592,7 @@ export function BrowserInfo() {
 
 ### 4. Not Handling Loading States
 
-```tsx
+```typescript
 // ❌ BAD: Slow data fetch blocks entire page
 export default async function Page() {
   const data = await fetchSlowData() // 3 second delay
@@ -615,7 +615,7 @@ export default function Page() {
 
 ### 5. Exposing Sensitive Data
 
-```tsx
+```typescript
 // ❌ BAD: Leaking secrets to client
 export default async function Page() {
   const apiKey = process.env.API_KEY

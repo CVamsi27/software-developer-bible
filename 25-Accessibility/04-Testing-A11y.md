@@ -264,7 +264,7 @@ describe('Accessibility', () => {
 
 ### Manual Testing Checklist
 
-```markdown
+```text
 ## Manual Testing Checklist
 
 ### Visual
@@ -305,7 +305,7 @@ describe('Accessibility', () => {
 
 ### Testing with Real Users
 
-```markdown
+```text
 ## User Testing Protocol
 
 ### Participants

@@ -134,7 +134,7 @@ tags: [concept]
 
 ### Basic Streaming with loading.tsx
 
-```tsx
+```typescript
 // app/dashboard/page.tsx — Server Component
 import { Suspense } from 'react'
 
@@ -177,7 +177,7 @@ export default function Loading() {
 
 ### Multiple Suspense Boundaries
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -250,7 +250,7 @@ async function RecentActivity() {
 
 ### Nested Streaming
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -290,7 +290,7 @@ async function DashboardContent() {
 
 ### Streaming with Error Handling
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -339,7 +339,7 @@ async function DashboardData() {
 
 ### Streaming with loading.tsx and error.tsx
 
-```tsx
+```typescript
 // app/products/loading.tsx
 export default function Loading() {
   return (
@@ -397,7 +397,7 @@ export default function ProductsPage() {
 
 ### Parallel Streaming
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -445,7 +445,7 @@ async function SlowComponentB() {
 
 ### Selective Streaming
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -485,7 +485,7 @@ async function SlowContent() {
 
 ### Streaming with Progressive Enhancement
 
-```tsx
+```typescript
 // app/dashboard/page.tsx
 import { Suspense } from 'react'
 
@@ -554,7 +554,7 @@ async function DashboardCharts() {
 
 ### 1. Not Using Suspense Boundaries
 
-```tsx
+```typescript
 // ❌ BAD: No Suspense boundaries
 export default function Page() {
   return (
@@ -581,7 +581,7 @@ export default function Page() {
 
 ### 2. Making Everything a Suspense Boundary
 
-```tsx
+```typescript
 // ❌ BAD: Too many boundaries
 export default function Page() {
   return (
@@ -620,7 +620,7 @@ export default function Page() {
 
 ### 3. Not Handling Loading States
 
-```tsx
+```typescript
 // ❌ BAD: No loading state
 export default function Page() {
   return (
@@ -649,7 +649,7 @@ export default function Page() {
 
 ### 4. Streaming Too Much Content
 
-```tsx
+```typescript
 // ❌ BAD: Streaming everything
 export default function Page() {
   return (
@@ -678,7 +678,7 @@ export default function Page() {
 
 ### 5. Not Using loading.tsx
 
-```tsx
+```typescript
 // ❌ BAD: Manual Suspense everywhere
 export default function Page() {
   return (

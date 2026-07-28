@@ -20,7 +20,7 @@ tags: [concept]
 
 ## Code Examples
 
-```tsx
+```typescript
 import { useSpring, animated, useTrail } from '@react-spring/web';
 
 // Basic spring

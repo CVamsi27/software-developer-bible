@@ -354,7 +354,7 @@ FROM employees;
 
 ### Prisma Schema for PostgreSQL
 
-```prisma
+```text
 // schema.prisma
 generator client {
   provider        = "prisma-client-js"

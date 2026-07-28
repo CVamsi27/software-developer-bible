@@ -560,7 +560,7 @@ tags: [study-plan]
 
 For each problem, record:
 
-```markdown
+```text
 ## [Problem Name](link)
 - **Pattern:** [Pattern name]
 - **Time:** [How long it took]
@@ -576,7 +576,7 @@ For each problem, record:
 
 ## 📊 Weekly Summary Template
 
-```markdown
+```text
 # Week X Summary
 
 ## Problems Solved

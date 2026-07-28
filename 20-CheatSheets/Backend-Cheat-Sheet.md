@@ -155,7 +155,7 @@ SELECT * FROM posts WHERE author_id = 123 AND created_at > '2024-01-01';
 
 ### Prisma Schema with Relations
 
-```prisma
+```text
 model User {
   id        String   @id @default(cuid())
   email     String   @unique

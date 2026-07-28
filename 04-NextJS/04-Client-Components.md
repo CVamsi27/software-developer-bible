@@ -108,7 +108,7 @@ Server Output:                    Client After Hydration:
 
 ### Basic Client Component
 
-```tsx
+```typescript
 // components/counter.tsx
 'use client'
 
@@ -134,7 +134,7 @@ export function Counter() {
 
 ### Client Component with Effects
 
-```tsx
+```typescript
 // components/clock.tsx
 'use client'
 
@@ -165,7 +165,7 @@ export function Clock() {
 
 ### Client Component with localStorage
 
-```tsx
+```typescript
 // components/theme-toggle.tsx
 'use client'
 
@@ -200,7 +200,7 @@ export function ThemeToggle() {
 
 ### Client Component with Form Handling
 
-```tsx
+```typescript
 // components/contact-form.tsx
 'use client'
 
@@ -275,7 +275,7 @@ export function ContactForm() {
 
 ### Client Component with Context
 
-```tsx
+```typescript
 // contexts/cart-context.tsx
 'use client'
 
@@ -335,7 +335,7 @@ export function useCart() {
 
 ### Client Component with Third-Party Libraries
 
-```tsx
+```typescript
 // components/date-picker.tsx
 'use client'
 
@@ -366,7 +366,7 @@ export function EventDatePicker() {
 
 ### Client Component with Animations
 
-```tsx
+```typescript
 // components/animated-card.tsx
 'use client'
 
@@ -412,7 +412,7 @@ export function AnimatedCard() {
 
 ### Client Component with WebSocket
 
-```tsx
+```typescript
 // components/live-chat.tsx
 'use client'
 
@@ -481,7 +481,7 @@ export function LiveChat() {
 
 ### Composing Server and Client Components
 
-```tsx
+```typescript
 // app/products/page.tsx — Server Component
 import { ProductFilters } from './product-filters' // Client
 import { ProductGrid } from './product-grid' // Server
@@ -504,7 +504,7 @@ export default async function ProductsPage() {
 
 ```
 
-```tsx
+```typescript
 // app/products/product-filters.tsx — Client Component
 'use client'
 
@@ -545,7 +545,7 @@ export function ProductFilters({ categories }: { categories: Category[] }) {
 
 ```
 
-```tsx
+```typescript
 // app/products/product-grid.tsx — Server Component
 import { AddToCartButton } from './add-to-cart-button' // Client
 
@@ -577,7 +577,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
 
 ### Dynamic Client Component Loading
 
-```tsx
+```typescript
 // app/page.tsx
 import dynamic from 'next/dynamic'
 
@@ -617,7 +617,7 @@ export default function Page() {
 
 ### 1. Overusing Client Components
 
-```tsx
+```typescript
 // ❌ BAD: Entire page is client component
 'use client'
 export default function ProductPage({ product }) {
@@ -666,7 +666,7 @@ export function AddToCartButton({ id }: { id: string }) {
 
 ### 2. Passing Complex Objects to Client Components
 
-```tsx
+```typescript
 // ❌ BAD: Passing non-serializable props
 'use client'
 import { Date } from 'moment'
@@ -699,7 +699,7 @@ export function EventCard({ eventName, eventDate }: {
 
 ### 3. Not Handling Hydration Mismatches
 
-```tsx
+```typescript
 // ❌ BAD: Server and client render different content
 'use client'
 export function Greeting() {
@@ -732,7 +732,7 @@ export function Greeting() {
 
 ### 4. Fetching Data in Client Components
 
-```tsx
+```typescript
 // ❌ BAD: Client-side data fetching
 'use client'
 import { useEffect, useState } from 'react'
@@ -765,7 +765,7 @@ export default async function ProductList() {
 
 ### 5. Not Using Proper Error Handling
 
-```tsx
+```typescript
 // ❌ BAD: No error handling
 'use client'
 export function DataFetcher() {

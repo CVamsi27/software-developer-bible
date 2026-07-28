@@ -118,7 +118,7 @@ All content files and INDEX.md files use [shields.io](https://shields.io/) badge
 https://img.shields.io/badge/<label>-<value>-<color>
 ```
 
-URL-encode special characters:
+URL-encode%20special characters:
 - Spaces → `%20` (preferred over `_` for readability)
 - `&` → `%26`
 
@@ -126,7 +126,7 @@ URL-encode special characters:
 
 ### INDEX.md Badges (3 per file)
 
-```markdown
+```text
 [![Files](https://img.shields.io/badge/files-20-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
@@ -181,7 +181,7 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 
 Every concept file follows this exact section order. Sections that are not applicable may be omitted, but the order below is the canonical structure:
 
-```markdown
+```text
 # Title
 
 [badges]
@@ -255,7 +255,7 @@ Either a `text` code block with `═══════` headers and `•` bullet
 Concept files typically use **numbered lists** or **bullet lists** for these sections. However, DevOps-focused files (Docker, Kubernetes, CI/CD) often use **table formats** for clarity:
 
 **Table format for Why:**
-```markdown
+```text
 ## Why Do We Need It?
 
 | Problem | Solution |
@@ -265,7 +265,7 @@ Concept files typically use **numbered lists** or **bullet lists** for these sec
 ```
 
 **Table format for Common Mistakes:**
-```markdown
+```text
 ## Common Mistakes
 
 | Mistake | Fix |
@@ -282,7 +282,7 @@ Two formats are used depending on content:
 
 **Code-block format** (122 files) — for detailed textual summaries:
 
-````markdown
+````text
 ## Cheat Sheet
 ```text
 TOPIC CHEAT SHEET
@@ -300,7 +300,7 @@ BEST PRACTICES:
 
 **Table format** (31 files) — for structured concept/definition pairs:
 
-```markdown
+```text
 ## Cheat Sheet
 
 | Concept | Description |
@@ -315,7 +315,7 @@ BEST PRACTICES:
 
 Every section has an `INDEX.md` file. Format:
 
-```markdown
+```text
 # Section Name — Index
 
 > **N files** — Brief description of the section.
@@ -388,12 +388,17 @@ All opening code blocks **must** have a language tag. Use the **full, official**
 | `scss` | SCSS styles |
 | `protobuf` | Protocol Buffer definitions |
 | `promql` | Prometheus query language |
+| `groovy` | Groovy/Jenkins pipeline scripts |
+| `ini` | INI configuration files |
+| `markdown` | Markdown formatting examples |
+| `tsx` | TypeScript/React JSX (use `typescript` instead) |
+| `jsx` | JavaScript/React JSX (use `typescript` instead) |
 
 ### ASCII Diagrams
 
 Use `text` code blocks for ASCII art diagrams:
 
-````markdown
+````text
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  COMPONENT NAME                              │
@@ -448,7 +453,7 @@ else:
 
 ### In Content Files (`## See Also`)
 
-```markdown
+```text
 ## See Also
 - [Coding Patterns](19-Coding-Patterns/)
 - [JavaScript](01-JavaScript/)
@@ -474,7 +479,7 @@ else:
 
 ### In Content Files (`## References & Learn More`)
 
-```markdown
+```text
 ## References & Learn More
 
 - [Resource Title](https://example.com/)
@@ -488,7 +493,7 @@ else:
 
 ### In INDEX.md (`**Cross-references:**`)
 
-```markdown
+```text
 **Cross-references:** [JavaScript](01-JavaScript/) | [TypeScript](02-TypeScript/) | [Coding Patterns](19-Coding-Patterns/)
 ```
 
@@ -498,7 +503,7 @@ else:
 
 ### In INDEX.md (`## Navigation`)
 
-```markdown
+```text
 ## Navigation
 
 ← Previous: `../xx-Section/INDEX.md` · [🏠 Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
@@ -518,7 +523,7 @@ else:
 
 These files (e.g., `20-Interview-Questions.md`) follow a different structure:
 
-```markdown
+```text
 # Section Interview Questions
 
 [badges]
@@ -572,7 +577,7 @@ A: A closure is...
 
 These files (e.g., `11-System-Design/01-URL-Shortener.md`) follow a case-study structure:
 
-```markdown
+```text
 # Title System Design
 
 [badges]
@@ -625,7 +630,7 @@ These files (e.g., `11-System-Design/01-URL-Shortener.md`) follow a case-study s
 
 These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
 
-```markdown
+```text
 # Title Cheat Sheet
 
 [badges]
@@ -645,7 +650,7 @@ These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
 
 These files (in `18-Behavioral/`) start with a `## Table of Contents` rather than `## Definition`:
 
-```markdown
+```text
 # Title
 
 [badges]
@@ -662,7 +667,7 @@ These files (in `18-Behavioral/`) start with a `## Table of Contents` rather tha
 
 These files (in `19-Coding-Patterns/`) describe algorithmic patterns for interview preparation. They have a unique structure optimized for problem-solving:
 
-```markdown
+```text
 # Pattern Name
 
 [badges]

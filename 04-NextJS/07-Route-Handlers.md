@@ -88,7 +88,7 @@ tags: [concept]
 
 ### Basic Route Handler
 
-```tsx
+```typescript
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
 
 ### Dynamic Route Handler
 
-```tsx
+```typescript
 // app/api/users/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -173,7 +173,7 @@ export async function DELETE(
 
 ### Route Handler with Query Params
 
-```tsx
+```typescript
 // app/api/search/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -212,7 +212,7 @@ export async function GET(request: NextRequest) {
 
 ### Route Handler with Headers
 
-```tsx
+```typescript
 // app/api/data/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -240,7 +240,7 @@ export async function GET(request: NextRequest) {
 
 ### Route Handler with Cookies
 
-```tsx
+```typescript
 // app/api/session/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -278,7 +278,7 @@ export async function DELETE(request: NextRequest) {
 
 ### Route Handler with Streaming
 
-```tsx
+```typescript
 // app/api/stream/route.ts
 import { NextRequest } from 'next/server'
 
@@ -310,7 +310,7 @@ export async function GET(request: NextRequest) {
 
 ### Route Handler with Webhooks
 
-```tsx
+```typescript
 // app/api/webhooks/stripe/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
@@ -354,7 +354,7 @@ export async function POST(request: NextRequest) {
 
 ### Route Handler with File Upload
 
-```tsx
+```typescript
 // app/api/upload/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
@@ -384,7 +384,7 @@ export async function POST(request: NextRequest) {
 
 ### Route Handler with Edge Runtime
 
-```tsx
+```typescript
 // app/api/edge/route.ts
 export const runtime = 'edge'
 
@@ -403,7 +403,7 @@ export async function GET(request: Request) {
 
 ### Route Handler with Revalidation
 
-```tsx
+```typescript
 // app/api/revalidate/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath, revalidateTag } from 'next/cache'
@@ -436,7 +436,7 @@ export async function POST(request: NextRequest) {
 
 ### Route Handler with Error Handling
 
-```tsx
+```typescript
 // app/api/users/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -487,7 +487,7 @@ export async function POST(request: NextRequest) {
 
 ### Route Handler with Middleware Integration
 
-```tsx
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -512,7 +512,7 @@ export function middleware(request: NextRequest) {
 
 ### Route Handler with ISR
 
-```tsx
+```typescript
 // app/api/products/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -549,7 +549,7 @@ export async function GET(request: NextRequest) {
 
 ### 1. Using Node.js APIs in Edge Runtime
 
-```tsx
+```typescript
 // ❌ BAD: Node.js APIs not available in Edge
 export const runtime = 'edge'
 
@@ -570,7 +570,7 @@ export async function GET() {
 
 ### 2. Not Handling All HTTP Methods
 
-```tsx
+```typescript
 // ❌ BAD: Only handling GET
 export async function GET() {
   return Response.json({ data: [] })
@@ -600,7 +600,7 @@ export async function DELETE() {
 
 ### 3. Not Validating Request Body
 
-```tsx
+```typescript
 // ❌ BAD: No validation
 export async function POST(request: Request) {
   const body = await request.json()
@@ -627,7 +627,7 @@ export async function POST(request: Request) {
 
 ### 4. Not Returning Proper Status Codes
 
-```tsx
+```typescript
 // ❌ BAD: Always returning 200
 export async function POST(request: Request) {
   try {
@@ -655,7 +655,7 @@ export async function POST(request: Request) {
 
 ### 5. Not Handling CORS
 
-```tsx
+```typescript
 // ❌ BAD: No CORS headers
 export async function GET() {
   return Response.json({ data: [] })

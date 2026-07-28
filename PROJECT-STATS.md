@@ -151,7 +151,7 @@ Compared to the previous report (333 files), the project continues to grow and b
 |--------|:---------:|:--------:|:----:|
 | Total files | 337 | 333 | **+4** |
 | Content files | 302 | 296 | **+6** |
-| System Design section | 16 | 11 | +5 (Twitter Feed, Rate Limiter, Web Crawler, Chat System + interview questions renumbered) |
+| System Design section | 16 | 12 | +4 (Twitter Feed, Rate Limiter, Web Crawler, Chat System) |
 | `## Summary` added | 303 | 278 | +22 (Microservices, K8s, CI/CD, Testing, Build Tools, Perf, Serverless, Animation, SDE Role) |
 | Code block tags fixed | — | — | 27 files: `tsx`→`typescript`, `prisma`→`text`, `ini`→`text`, `jsx`→`typescript` |
 | Heading standardizations | — | — | `## Quick Reference`→`## Cheat Sheet` (13 files), `### References`→`## References & Learn More` (29 files) |

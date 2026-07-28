@@ -6,10 +6,6 @@ tags: [concept]
 
 # Heap
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A heap is a specialized tree-based data structure that satisfies the heap property: in a max-heap, for any given node, its value is greater than or equal to the values of its children; in a min-heap, its value is less than or equal to its children. It's commonly used to implement priority queues.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Union-Find
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Union-Find (also called Disjoint Set Union or DSU) is a data structure that tracks a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It supports two operations: `find` (determine which set an element belongs to) and `union` (merge two sets into one).

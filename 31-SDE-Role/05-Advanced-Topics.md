@@ -6,10 +6,6 @@ tags: [concept, reference]
 
 # Advanced Topics
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Reference-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Appendix:** Additional topics covering Segment Trees, Fenwick Trees, AVL Trees, distributed systems, design patterns, and concurrency for staff+ engineering interviews.
 
 ---

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Throttle
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Throttling** is a technique that limits how often a function can execute. It ensures a function is called at most once in a specified time period, regardless of how many times it's triggered.

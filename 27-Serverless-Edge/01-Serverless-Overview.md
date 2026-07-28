@@ -6,10 +6,6 @@ tags: [overview, reference]
 
 # Serverless Overview
 
-[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Serverless computing is a cloud execution model where the cloud provider dynamically manages the allocation and provisioning of servers. Developers write and deploy code without worrying about the underlying infrastructure, paying only for actual compute time consumed.
 

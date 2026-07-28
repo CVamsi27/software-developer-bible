@@ -6,10 +6,6 @@ tags: [concept]
 
 # Real-Time Architecture
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Real-time architecture is a **system design approach** that enables applications to process and deliver data with minimal latency, providing immediate updates to users as events occur. It encompasses patterns, protocols, and infrastructure for building responsive, event-driven systems.

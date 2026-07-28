@@ -6,10 +6,6 @@ tags: [concept]
 
 # Cross-Site Scripting (XSS)
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious client-side scripts into web pages viewed by other users. When a victim views the affected page, the malicious script executes in their browser, enabling the attacker to steal data, hijack sessions, or perform actions on behalf of the user. XSS is one of the most common web vulnerabilities, consistently appearing in the OWASP Top 10.

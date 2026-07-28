@@ -6,10 +6,6 @@ tags: [concept]
 
 # RabbitMQ
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 RabbitMQ is an open-source message broker that implements the Advanced Message Queuing Protocol (AMQP). It provides reliable, flexible messaging between services with features like routing, acknowledgment, dead letter queues, and multiple messaging patterns (pub/sub, work queues, request/reply).

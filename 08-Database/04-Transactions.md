@@ -6,10 +6,6 @@ tags: [concept]
 
 # Database Transactions
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A transaction is a logical unit of work that contains one or more SQL statements. Transactions ensure that all operations within them are completed successfully (committed) or none of them take effect (rolled back), maintaining database consistency even in the face of errors or failures.

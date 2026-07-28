@@ -6,10 +6,6 @@ tags: [concept]
 
 # Service Discovery
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Service Discovery is a mechanism that allows services to find and communicate with each other dynamically in a microservices architecture. Instead of hardcoding network locations, services register themselves with a discovery server and look up other services through it.

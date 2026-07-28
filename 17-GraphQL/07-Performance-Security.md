@@ -6,10 +6,6 @@ tags: [concept]
 
 # Performance & Security
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **GraphQL Performance & Security** encompasses strategies and techniques to optimize query execution, prevent abuse, protect against attacks, and ensure reliable operation of GraphQL APIs in production environments.

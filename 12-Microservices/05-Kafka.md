@@ -6,10 +6,6 @@ tags: [concept]
 
 # Apache Kafka
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Apache Kafka is a distributed event streaming platform designed for high-throughput, fault-tolerant, and scalable data streaming. It publishes, subscribes to, stores, and processes records (messages) in real-time, making it ideal for microservices communication and data pipelines.

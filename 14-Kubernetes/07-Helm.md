@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes Helm
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Helm** is the package manager for Kubernetes. It packages Kubernetes manifests into reusable units called **charts**, manages releases, and enables templating and configuration management. Helm simplifies deployment, updates, and rollbacks of complex applications.

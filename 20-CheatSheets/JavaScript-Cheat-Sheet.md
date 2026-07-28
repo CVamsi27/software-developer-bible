@@ -6,10 +6,6 @@ tags: [cheat-sheet, reference]
 
 # JavaScript Cheat Sheet
 
-[![Section](https://img.shields.io/badge/section-CheatSheets-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Quick Reference Table
 
 | Concept | Key Point | Code/Example |

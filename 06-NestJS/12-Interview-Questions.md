@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # NestJS Interview Questions
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## 40 Most Asked NestJS Interview Questions with Detailed Answers
 
 ---

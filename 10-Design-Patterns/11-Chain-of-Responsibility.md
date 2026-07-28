@@ -6,10 +6,6 @@ tags: [concept]
 
 # Chain of Responsibility Pattern
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Chain of Responsibility pattern is a behavioral design pattern that allows passing requests along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.

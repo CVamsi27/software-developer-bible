@@ -6,10 +6,6 @@ tags: [concept]
 
 # Streaming in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Streaming** in Next.js allows you to progressively render and send HTML from the server to the client. Instead of waiting for all data to load before rendering, the server sends the page shell immediately and streams in slower components as they become ready.

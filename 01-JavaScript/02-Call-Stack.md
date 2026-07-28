@@ -6,10 +6,6 @@ tags: [concept]
 
 # Call Stack
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript uses to keep track of function execution. When a function is called, it's pushed onto the top of the stack; when the function returns, it's popped off. The call stack ensures that code runs in the correct order and that we know where we are in the execution.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
 
-[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Table of Contents
 
 - [How to Use This Guide](#how-to-use-this-guide)

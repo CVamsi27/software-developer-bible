@@ -6,10 +6,6 @@ tags: [concept]
 
 # useRef
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 `useRef` is a React Hook that creates a mutable reference object with a `.current` property. It serves two primary purposes:

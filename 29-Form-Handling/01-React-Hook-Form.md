@@ -6,10 +6,6 @@ tags: [concept]
 
 # React Hook Form
 
-[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 React Hook Form is a performance-first form library for React that provides performant, flexible, and extensible forms with easy-to-use validation. It uses uncontrolled components and native HTML validation to minimize re-renders.
 

@@ -6,10 +6,6 @@ tags: [study-plan]
 
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Study%20Plan-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Goal:** Solve 360+ problems, master all patterns, nail system design, and ace behavioral rounds.
 >
 > **Daily Commitment:** 4-6 hours/day, 6 days/week (rest on Sunday)

@@ -6,10 +6,6 @@ tags: [concept]
 
 # useState
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 `useState` is a React Hook that lets you add state to function components. It returns a stateful value and a function to update it. When the state updater is called, React re-renders the component with the new state value.

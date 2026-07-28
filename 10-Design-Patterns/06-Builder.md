@@ -6,10 +6,6 @@ tags: [concept]
 
 # Builder Pattern
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Builder pattern is a creational design pattern that separates the construction of a complex object from its representation. It allows you to produce different types and representations of an object using the same construction code.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Memory Leaks
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Memory Leak** occurs when a program allocates memory but fails to release it when no longer needed. In JavaScript, this happens when objects are no longer used but still have references, preventing garbage collection.

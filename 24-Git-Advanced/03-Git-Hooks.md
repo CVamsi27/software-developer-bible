@@ -6,10 +6,6 @@ tags: [concept]
 
 # Git Hooks
 
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Git hooks are scripts that run automatically when specific Git events occur (commit, push, merge, etc.). They allow you to enforce policies, automate tasks, and integrate with other tools.
 

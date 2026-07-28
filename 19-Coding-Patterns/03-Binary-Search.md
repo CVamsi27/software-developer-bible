@@ -6,10 +6,6 @@ tags: [concept]
 
 # Binary Search
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Binary search is a search algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates the half where the target cannot exist.

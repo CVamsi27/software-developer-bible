@@ -734,7 +734,8 @@ After making changes, verify the following:
 ### Required for All New Files
 
 - [ ] File has YAML frontmatter with `section`, `category`, `tags`
-- [ ] 3 badges present: Section/Type/Status or Files/Category/Status
+- [ ] INDEX.md files have 3 badges: Files, Category, Status
+- [ ] Content files do NOT have badges (only frontmatter metadata)
 - [ ] All badge URLs follow shields.io conventions
 - [ ] Badge values URL-encoded properly (spaces → `%20`)
 - [ ] `## Summary` section present (near end of file)

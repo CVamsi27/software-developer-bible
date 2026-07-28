@@ -6,10 +6,6 @@ tags: [concept]
 
 # Types vs Interfaces
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Type aliases (`type`)** and **interfaces (`interface`)** are TypeScript constructs that describe the shape of objects and other data structures. While they overlap significantly in functionality, they have distinct features and use cases.

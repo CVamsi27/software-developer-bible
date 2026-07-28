@@ -6,10 +6,6 @@ tags: [concept]
 
 # Schema Design
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 GraphQL Schema Design is the process of defining the **type system**, **operations**, and **relationships** that form your API contract. A well-designed schema serves as documentation, enables tooling, and ensures type safety across your entire stack.

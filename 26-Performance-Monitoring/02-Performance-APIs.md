@@ -6,10 +6,6 @@ tags: [concept]
 
 # Performance APIs
 
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Performance APIs are browser APIs that provide detailed timing and performance data about web pages, resources, and user interactions. They enable developers to measure and optimize application performance with precise, low-level timing information.
 

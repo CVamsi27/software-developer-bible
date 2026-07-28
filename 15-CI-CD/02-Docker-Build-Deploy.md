@@ -6,10 +6,6 @@ tags: [concept]
 
 # Docker Build & Deploy Pipeline
 
-[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Docker build pipeline** automates the process of building, testing, and deploying Docker images. It includes image building, registry storage, versioning, and deployment strategies. The pipeline ensures consistent, reproducible deployments across environments.

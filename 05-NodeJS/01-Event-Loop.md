@@ -6,10 +6,6 @@ tags: [concept]
 
 # Node.js Event Loop
 
-[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The **Event Loop** is the core mechanism in Node.js that enables non-blocking I/O operations despite JavaScript being single-threaded. It continuously monitors the call stack and callback queues, executing callbacks when the stack is empty and events are available. Node.js implements the event loop using **libuv**, a C library that provides the underlying event loop and async I/O operations.

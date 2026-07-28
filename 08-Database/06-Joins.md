@@ -6,10 +6,6 @@ tags: [concept]
 
 # Database Joins
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A JOIN is a SQL operation that combines rows from two or more tables based on a related column between them. Joins allow you to query data from multiple tables in a single result set, enabling relationships between entities to be traversed efficiently.

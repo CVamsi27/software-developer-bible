@@ -6,10 +6,6 @@ tags: [concept]
 
 # Jest
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Jest is a JavaScript testing framework developed by Facebook (Meta) that provides a complete testing solution for modern JavaScript applications. It offers a zero-configuration setup, built-in assertion library, mocking capabilities, and comprehensive code coverage reporting.

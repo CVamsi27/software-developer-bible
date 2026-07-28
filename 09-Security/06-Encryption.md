@@ -6,10 +6,6 @@ tags: [concept]
 
 # Encryption
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Encryption is the process of converting plaintext into ciphertext using an algorithm and a key, making the data unreadable without the corresponding decryption key. It is a fundamental security mechanism that protects data confidentiality and integrity. Encryption can be symmetric (same key for encryption and decryption) or asymmetric (different keys for encryption and decryption).

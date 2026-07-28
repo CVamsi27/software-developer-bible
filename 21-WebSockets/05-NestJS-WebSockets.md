@@ -6,10 +6,6 @@ tags: [concept]
 
 # NestJS WebSockets
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 NestJS provides first-class support for WebSockets through its **WebSocket Gateway** system. Built on top of Socket.io, NestJS WebSockets integrate seamlessly with the NestJS ecosystem, supporting **decorators, dependency injection, guards, interceptors, pipes, and filters** just like HTTP controllers.

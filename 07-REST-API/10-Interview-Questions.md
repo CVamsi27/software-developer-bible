@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # REST API Interview Questions
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This comprehensive guide covers the most frequently asked REST API interview questions, organized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you prepare for senior full-stack developer interviews.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Singleton Pattern
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Singleton pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. It's one of the most well-known and commonly used design patterns in software development.

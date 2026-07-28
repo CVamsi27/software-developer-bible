@@ -6,10 +6,6 @@ tags: [concept]
 
 # Image Optimization in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Next.js provides an **Image component** (`next/image`) that automatically optimizes images through lazy loading, format conversion (WebP/AVIF), responsive sizing, and blur placeholders. It prevents layout shift and improves Core Web Vitals.

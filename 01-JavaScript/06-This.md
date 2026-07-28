@@ -6,10 +6,6 @@ tags: [concept]
 
 # This
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The **`this`** keyword in JavaScript refers to the object that is currently executing the code. Its value depends on how a function is called (execution context), not where it's defined. This is called **dynamic binding** or **dynamic scoping** of `this`.

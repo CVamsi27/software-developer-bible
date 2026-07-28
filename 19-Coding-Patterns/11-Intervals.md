@@ -6,10 +6,6 @@ tags: [concept]
 
 # Intervals
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Interval problems involve working with ranges defined by start and end points (e.g., [start, end]). They typically require merging, inserting, or checking overlaps between intervals. Common operations include merging overlapping intervals, inserting new intervals, and finding non-overlapping intervals.

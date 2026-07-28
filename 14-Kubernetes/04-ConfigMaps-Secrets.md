@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes ConfigMaps & Secrets
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **ConfigMaps** store non-sensitive configuration data as key-value pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.

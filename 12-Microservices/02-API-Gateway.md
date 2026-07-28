@@ -6,10 +6,6 @@ tags: [concept]
 
 # API Gateway
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 An API Gateway is a server that acts as a single entry point for all client requests in a microservices architecture. It handles cross-cutting concerns like routing, authentication, rate limiting, and request transformation before forwarding requests to appropriate backend services.

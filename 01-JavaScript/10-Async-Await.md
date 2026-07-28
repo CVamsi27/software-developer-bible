@@ -6,10 +6,6 @@ tags: [concept]
 
 # Async/Await
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Async/Await** is syntactic sugar over Promises that makes asynchronous code look and feel synchronous. An `async` function always returns a Promise, and `await` pauses execution until a Promise settles, making asynchronous code more readable and maintainable.

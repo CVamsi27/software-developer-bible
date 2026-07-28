@@ -6,10 +6,6 @@ tags: [concept]
 
 # Infer
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **`infer`** is a keyword used in conditional types to extract and name a type within a type position. It allows you to "infer" or "capture" a type from another type for reuse.

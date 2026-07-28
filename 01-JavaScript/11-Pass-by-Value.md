@@ -6,10 +6,6 @@ tags: [concept]
 
 # Pass by Value vs Pass by Reference
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 JavaScript uses **pass by value** for all parameters. However, when passing objects, the "value" being passed is a reference to the object, not the object itself. This creates the illusion of pass by reference, but it's actually pass by value of the reference.

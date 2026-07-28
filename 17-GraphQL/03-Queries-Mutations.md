@@ -6,10 +6,6 @@ tags: [concept]
 
 # Queries & Mutations
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Queries** and **Mutations** are the two primary read and write operations in GraphQL. Queries retrieve data without side effects, while mutations modify data and return the updated state. Both follow the same syntax rules but differ in execution guarantees.

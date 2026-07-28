@@ -6,10 +6,6 @@ tags: [concept]
 
 # Error Tracking
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Error tracking is the practice of capturing, grouping, prioritizing, and alerting on application errors across all environments. Unlike logging (which records events), error tracking focuses specifically on exceptions, crashes, and failures — grouping them by stack trace and root cause to help teams fix the most impactful issues first.

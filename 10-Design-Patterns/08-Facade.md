@@ -6,10 +6,6 @@ tags: [concept]
 
 # Facade Pattern
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Facade pattern is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes. It hides the complexity of the subsystem and provides a unified interface to the client.

@@ -6,10 +6,6 @@ tags: [guide]
 
 # 🍎 Apple — Interview Guide (2025–2026)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Target Role:** ICT2 (Junior) / ICT3 (Mid) / ICT4 (Senior) Software Engineer
 >
 > **Teams to Consider:** iOS/macOS Frameworks, Siri/AI, Cloud Services, Hardware-Software Integration, Apple Music, Maps

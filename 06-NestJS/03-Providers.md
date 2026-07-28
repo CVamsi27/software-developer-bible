@@ -6,10 +6,6 @@ tags: [concept]
 
 # Providers
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Providers** in NestJS are fundamental building blocks that handle business logic, data access, and utility functions. They are classes decorated with `@Injectable()` that can be injected as dependencies into other providers, controllers, or other components. Providers are the "brains" of the application — they process data, interact with databases, call external APIs, and implement business rules.

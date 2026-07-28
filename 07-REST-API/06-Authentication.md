@@ -6,10 +6,6 @@ tags: [concept]
 
 # API Authentication
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 API authentication is the process of verifying the identity of a client making requests to an API. It ensures that only authorized users and applications can access protected resources. Authentication answers "Who are you?" while authorization answers "What can you do?"

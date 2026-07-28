@@ -6,10 +6,6 @@ tags: [concept]
 
 # Git Advanced Commands
 
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Git advanced commands are powerful tools for debugging, history manipulation, and repository management. They go beyond basic add/commit/push operations to provide sophisticated workflows.
 

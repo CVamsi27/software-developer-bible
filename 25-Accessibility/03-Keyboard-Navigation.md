@@ -6,10 +6,6 @@ tags: [concept]
 
 # Keyboard Navigation
 
-[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Keyboard navigation is the ability to access and interact with all website functionality using only a keyboard, without requiring a mouse. It's essential for users with motor disabilities, power users, and screen reader users.
 

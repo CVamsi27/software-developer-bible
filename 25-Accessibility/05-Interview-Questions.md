@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Accessibility Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Comprehensive Interview Guide
 
 This chapter contains 25 carefully curated interview questions covering accessibility concepts, WCAG guidelines, ARIA, testing, and implementation. Questions are organized by difficulty level and include detailed answers.

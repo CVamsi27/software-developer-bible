@@ -6,10 +6,6 @@ tags: [concept]
 
 # Hoisting
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Hoisting** is JavaScript's behavior of moving declarations to the top of their containing scope during the creation phase of the execution context. This means variables and functions can be used before they are declared in the code. However, only the declarations are hoisted, not the initializations.

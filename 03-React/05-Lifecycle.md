@@ -6,10 +6,6 @@ tags: [concept]
 
 # Lifecycle
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The component lifecycle in React refers to the series of events that happen from the moment a component is created (mounted), through updates, to when it's destroyed (unmounted). In class components, lifecycle methods provide hooks into these phases. In function components, `useEffect` and `useLayoutEffect` serve as lifecycle replacements.

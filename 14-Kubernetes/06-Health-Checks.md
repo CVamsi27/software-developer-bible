@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes Health Checks
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Health checks** in Kubernetes verify that containers are running correctly. There are three types: **startup probes** (initialization), **liveness probes** (ongoing health), and **readiness probes** (traffic readiness). They enable self-healing and traffic management.

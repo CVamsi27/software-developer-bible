@@ -6,10 +6,6 @@ tags: [concept]
 
 # Distributed Tracing
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Distributed tracing is a method of tracking the flow of a request as it travels through multiple services in a distributed system. Each unit of work is recorded as a **span**, and all spans from a single request form a **trace**. Tracing answers the question: *"Where did time go for this request?"*

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Decorators
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Decorators** are a stage 3 ECMAScript feature (and TypeScript experimental feature) that provide a way to add annotations and metadata to classes, methods, properties, and parameters. They enable metaprogramming and aspect-oriented programming patterns.

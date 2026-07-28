@@ -6,10 +6,6 @@ tags: [concept]
 
 # Route Handlers in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Route Handlers** are the App Router equivalent of API Routes in the Pages Router. They allow you to create API endpoints within the `app/` directory, handling HTTP requests with full access to Web APIs like Request and Response objects.

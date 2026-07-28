@@ -6,10 +6,6 @@ tags: [concept]
 
 # Execution Plans
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 An execution plan is PostgreSQL's strategy for executing a SQL query. It shows how the database will retrieve and process data, including which indexes to use, how to join tables, and the estimated cost of each operation. Understanding execution plans is essential for query optimization and performance tuning.

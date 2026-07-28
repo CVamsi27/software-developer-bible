@@ -6,10 +6,6 @@ tags: [concept]
 
 # Greedy & Prefix Sum
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Greedy Algorithm**: A technique that makes the locally optimal choice at each step with the hope of finding a global optimum. It builds a solution piece by piece, always choosing the next piece that offers the most immediate benefit.

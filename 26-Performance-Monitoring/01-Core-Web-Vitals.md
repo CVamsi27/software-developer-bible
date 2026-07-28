@@ -6,10 +6,6 @@ tags: [concept]
 
 # Core Web Vitals
 
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Core Web Vitals are a set of standardized metrics from Google that measure real-world user experience for loading performance, interactivity, and visual stability of web pages. They are part of Google's Page Experience signals and directly impact SEO rankings.
 

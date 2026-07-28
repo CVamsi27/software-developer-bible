@@ -6,10 +6,6 @@ tags: [quick-reference]
 
 # 📋 Quick Reference Cards
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Reference-lightgrey)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **One-page summaries for each major topic**
 >
 > Print these. Keep them on your desk. Review before mock interviews.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Sessions and Cookies
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Sessions** are server-side storage mechanisms that maintain user state across multiple HTTP requests. A session stores user data on the server and associates it with a unique session ID sent to the client.

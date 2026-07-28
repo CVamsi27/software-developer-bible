@@ -6,10 +6,6 @@ tags: [concept]
 
 # Role-Based Access Control (RBAC)
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Role-Based Access Control (RBAC) is a method of regulating access to resources based on the roles of individual users. In RBAC, permissions are assigned to roles, and users are assigned to roles. Users inherit the permissions of their assigned roles. RBAC simplifies access management by providing a structured approach to assigning and managing permissions across an organization.

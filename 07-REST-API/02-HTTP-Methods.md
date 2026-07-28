@@ -6,10 +6,6 @@ tags: [concept]
 
 # HTTP Methods
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 HTTP methods (also called HTTP verbs) define the action to be performed on a resource. Each method has specific semantics regarding safety, idempotency, and whether it allows a request body. Understanding these properties is crucial for designing correct and predictable REST APIs.

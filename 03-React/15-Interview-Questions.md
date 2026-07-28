@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # React Interview Questions
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## 60 Most Asked React Interview Questions
 
 ### Category 1: Fundamentals (Questions 1-15)

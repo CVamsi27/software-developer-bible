@@ -6,10 +6,6 @@ tags: [concept]
 
 # REST Principles
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 REST (Representational State Transfer) is an architectural style for designing networked applications, introduced by Roy Fielding in his 2000 doctoral dissertation. It provides a set of constraints and principles that emphasize scalability, simplicity, modifiability, and visibility.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Memoization
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Memoization** is an optimization technique that caches the results of expensive function calls and returns the cached result when the same inputs occur again. It trades memory for computation time.

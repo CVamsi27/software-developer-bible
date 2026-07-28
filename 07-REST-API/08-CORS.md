@@ -6,10 +6,6 @@ tags: [concept]
 
 # CORS (Cross-Origin Resource Sharing)
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 CORS (Cross-Origin Resource Sharing) is a security mechanism implemented in web browsers that restricts how web pages from one origin can request resources from a different origin. It allows servers to specify who can access their resources and how, using HTTP headers.

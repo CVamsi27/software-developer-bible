@@ -6,10 +6,6 @@ tags: [concept]
 
 # Connection Pooling
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Connection pooling is a technique that maintains a cache of database connections for reuse by applications. Instead of creating a new connection for each request, the application borrows a connection from the pool, uses it, and returns it. This reduces the overhead of establishing connections and improves application performance.

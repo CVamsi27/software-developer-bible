@@ -6,10 +6,6 @@ tags: [concept]
 
 # Optimistic vs Pessimistic Locking
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Optimistic Locking** assumes conflicts are rare and checks for conflicts only at commit time, typically using a version column. **Pessimistic Locking** assumes conflicts are likely and acquires locks before modifying data, preventing other transactions from accessing the same rows until the lock is released.

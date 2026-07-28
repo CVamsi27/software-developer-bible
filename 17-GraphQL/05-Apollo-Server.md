@@ -6,10 +6,6 @@ tags: [concept]
 
 # Apollo Server
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Apollo Server** is the reference implementation of a GraphQL server in JavaScript/TypeScript. It's a production-ready, spec-compliant GraphQL server that integrates with any Node.js HTTP framework (Express, Fastify, Koa, etc.) or runs standalone. It provides built-in features for query validation, execution, error handling, caching, and monitoring.

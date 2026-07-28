@@ -6,10 +6,6 @@ tags: [concept]
 
 # Metadata API in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The **Metadata API** in Next.js provides a systematic way to define and manage metadata for your pages, including titles, descriptions, Open Graph images, Twitter cards, and structured data. It supports both static metadata via `metadata` export and dynamic metadata via `generateMetadata`.

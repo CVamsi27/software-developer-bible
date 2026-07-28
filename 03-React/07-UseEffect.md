@@ -6,10 +6,6 @@ tags: [concept]
 
 # useEffect
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 `useEffect` is a React Hook that lets you synchronize a component with an external system. It runs side effects after React has committed changes to the DOM. Side effects include data fetching, subscriptions, manually changing the DOM, and any other operations that can't be done during rendering.

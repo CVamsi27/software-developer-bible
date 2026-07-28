@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # System Design Interview Questions
 
-[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Overview
 This file contains 30 most asked system design interview questions with detailed answers, categorized by difficulty level. Each answer includes architecture, key components, trade-offs, and scaling considerations.
 

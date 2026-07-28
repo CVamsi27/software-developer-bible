@@ -6,10 +6,6 @@ tags: [concept]
 
 # Rate Limiting
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Rate limiting is a technique used to control the number of requests a client can make to an API within a specified time period. It protects APIs from abuse, ensures fair usage, prevents resource exhaustion, and maintains service availability for all users.

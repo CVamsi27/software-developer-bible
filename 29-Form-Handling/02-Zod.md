@@ -6,10 +6,6 @@ tags: [concept]
 
 # Zod
 
-[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Zod is a TypeScript-first schema declaration and validation library. It provides a concise, expressive syntax for defining data schemas and validating data at runtime, with automatic TypeScript type inference.
 

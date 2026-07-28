@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes Deployments
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Deployment** provides declarative updates for Pods and ReplicaSets. It manages the desired state of your application, enabling rolling updates, rollbacks, scaling, and self-healing. Deployments are the most common way to run stateless applications in Kubernetes.

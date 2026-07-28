@@ -6,10 +6,6 @@ tags: [concept]
 
 # Leadership & Senior-Level Behavioral Questions: 20 STAR-Formatted Answers
 
-[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Table of Contents
 
 - [What Interviewers Expect from Senior Leaders](#what-interviewers-expect-from-senior-leaders)

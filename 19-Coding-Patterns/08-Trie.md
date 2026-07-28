@@ -6,10 +6,6 @@ tags: [concept]
 
 # Trie
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A Trie (also called a prefix tree or digital tree) is a tree-like data structure used to store a dynamic set of strings, where each node represents a character. It's particularly efficient for prefix-based operations like autocomplete, spell checking, and word search.

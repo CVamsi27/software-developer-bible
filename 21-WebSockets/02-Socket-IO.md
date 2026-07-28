@@ -6,10 +6,6 @@ tags: [concept]
 
 # Socket.io
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Socket.io is a **real-time, event-driven JavaScript library** that enables bidirectional communication between clients and servers. Built on top of WebSockets, it provides automatic fallbacks to HTTP long-polling and other transports, ensuring connectivity across different network environments.

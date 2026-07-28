@@ -6,10 +6,6 @@ tags: [concept]
 
 # Conditional Types
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Conditional types** are TypeScript types that select types based on conditions, similar to the ternary operator (`? :`) in JavaScript. They enable creating types that depend on type relationships.

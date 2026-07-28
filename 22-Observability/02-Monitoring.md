@@ -6,10 +6,6 @@ tags: [concept]
 
 # Monitoring
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Monitoring is the process of collecting, analyzing, and acting on metrics (numeric measurements) to understand system health, performance, and behavior over time. While logging tells you *what happened*, monitoring tells you *how your system is performing* right now and whether it has deviated from expected behavior.

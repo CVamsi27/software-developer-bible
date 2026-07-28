@@ -6,10 +6,6 @@ tags: [concept]
 
 # Branching Strategies
 
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 A branching strategy is a framework that defines how branches are created, named, merged, and deleted in a version control system. It provides a structured approach to managing parallel development, releases, and collaboration.
 

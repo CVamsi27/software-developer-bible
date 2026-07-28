@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Observability Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Overview
 
 This file contains the 30 most commonly asked observability interview questions with detailed answers, covering logging, monitoring, tracing, error tracking, and health checks. Questions are organized by difficulty level.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # GitHub Actions
 
-[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **GitHub Actions** is a CI/CD platform built into GitHub that automates software workflows. It uses YAML-based **workflows** triggered by events (push, PR, schedule) to execute **jobs** containing **steps** (commands or actions).

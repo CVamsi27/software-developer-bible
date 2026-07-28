@@ -6,10 +6,6 @@ tags: [concept]
 
 # Scope
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Scope** in JavaScript determines the accessibility and lifetime of variables and functions. It defines where variables are declared and where they can be accessed. JavaScript has three main types of scope: global scope, function scope, and block scope.

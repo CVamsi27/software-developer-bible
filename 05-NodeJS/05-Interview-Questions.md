@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Node.js Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This chapter contains the **40 most frequently asked Node.js interview questions** with detailed answers, categorized by difficulty level. Each question includes explanations, code examples, and common follow-ups to help you prepare for technical interviews at various levels.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Shallow Copy vs Deep Copy
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Shallow Copy** creates a new object with the same property values, but nested objects are still referenced. A **Deep Copy** creates a new object with completely independent copies of all nested objects.

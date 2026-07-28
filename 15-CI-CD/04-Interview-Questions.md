@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # CI/CD Interview Questions
 
-[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## 30 Most Asked CI/CD Interview Questions with Detailed Answers
 
 ---

@@ -6,10 +6,6 @@ tags: [concept]
 
 # E2E Testing
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 End-to-End (E2E) testing is a software testing technique that validates the entire application workflow from start to finish, simulating real user scenarios. E2E tests verify that all components work together correctly in a production-like environment, including the frontend, backend, database, and external services.

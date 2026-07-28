@@ -6,10 +6,6 @@ tags: [concept]
 
 # Profiling Tools
 
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Profiling tools are browser and external utilities that help developers analyze, debug, and optimize web application performance by providing detailed insights into rendering, JavaScript execution, memory usage, and network activity.
 

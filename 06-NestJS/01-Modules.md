@@ -6,10 +6,6 @@ tags: [concept]
 
 # NestJS Modules
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Module** in NestJS is a class decorated with `@Module()` that organizes closely related set of capabilities. Modules are the fundamental building blocks of a NestJS application's architecture, providing a way to encapsulate providers (services, repositories, etc.) and manage their scope, dependencies, and exposure to other parts of the application.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Two Pointers
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Two pointers is a technique that uses two variables to iterate through a data structure, typically from different positions or at different speeds. It's used to solve problems involving pairs, comparisons, or when you need to examine relationships between elements at different positions.

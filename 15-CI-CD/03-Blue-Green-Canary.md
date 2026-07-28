@@ -6,10 +6,6 @@ tags: [concept]
 
 # Blue-Green & Canary Deployments
 
-[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Blue-Green Deployment** maintains two identical environments (blue and green). One serves production traffic while the other is updated. Traffic switches instantly after validation. **Canary Deployment** gradually rolls out changes to a small subset of users before full deployment.

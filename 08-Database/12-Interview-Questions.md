@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Database Interview Questions - Comprehensive Guide
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This guide contains 40 of the most commonly asked database/PostgreSQL interview questions, categorized by difficulty level. Each question includes a detailed answer to help you understand the concept and articulate it clearly in interviews.

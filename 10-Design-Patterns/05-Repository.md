@@ -6,10 +6,6 @@ tags: [concept]
 
 # Repository Pattern
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Repository pattern is a structural design pattern that provides an abstraction over the data access layer, separating the business logic from the persistence logic. It acts as a collection-like interface for accessing domain objects, hiding the details of data storage and retrieval.

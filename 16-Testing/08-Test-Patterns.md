@@ -6,10 +6,6 @@ tags: [concept]
 
 # Test Patterns
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Test patterns are established, reusable solutions to common problems encountered when writing tests. They provide structure, consistency, and maintainability to test suites. These patterns have evolved through years of practice and help teams write better, more readable, and more maintainable tests.

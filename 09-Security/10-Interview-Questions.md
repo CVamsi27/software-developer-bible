@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Security Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This comprehensive guide covers the 40 most frequently asked security interview questions for Senior Full Stack Developer positions. Questions are categorized by difficulty level with detailed answers, examples, and follow-up discussions. These questions span authentication, authorization, encryption, web vulnerabilities, and security architecture.

@@ -6,10 +6,6 @@ tags: [guide]
 
 # 🏢 Microsoft Azure Team — Interview Guide (2025–2026)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Target Role:** SDE II (L62) / Senior SDE (L63) on Azure Teams
 >
 > **Teams to Consider:** Azure Compute, Azure Storage, Azure Networking, Azure AI/Data, Azure DevOps, Azure Security, Azure Cosmos DB, Azure Kubernetes Service

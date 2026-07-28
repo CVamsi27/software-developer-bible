@@ -6,10 +6,6 @@ tags: [concept]
 
 # Node.js Buffers
 
-[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Buffer** is a fixed-size block of memory used to store raw binary data in Node.js. Since JavaScript was originally designed to work with text, Buffers provide a way to manipulate binary data directly. Buffers represent sequences of octets (bytes) and are allocated outside the V8 heap, making them ideal for handling large amounts of binary data.

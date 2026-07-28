@@ -6,10 +6,6 @@ tags: [concept]
 
 # Logging
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Logging is the practice of recording discrete events that occur during software execution. Logs provide a chronological record of what happened in a system, serving as the foundation of observability. They capture context about requests, errors, state changes, and business events in a format that humans and machines can parse.

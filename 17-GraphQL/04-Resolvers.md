@@ -6,10 +6,6 @@ tags: [concept]
 
 # Resolvers
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Resolvers** are functions that populate the data for each field in your GraphQL schema. They are the execution layer that connects your schema to your data sources (databases, APIs, microservices, etc.). Each field in the schema can have a corresponding resolver that determines how that field's value is computed.

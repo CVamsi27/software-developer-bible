@@ -6,10 +6,6 @@ tags: [cheat-sheet, reference]
 
 # 📋 SDE Interview Cheat Sheet — Last-Minute Review
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Print this. Read it the night before and morning of your interview.**
 
 ---

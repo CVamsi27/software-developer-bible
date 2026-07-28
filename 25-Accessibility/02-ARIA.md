@@ -6,10 +6,6 @@ tags: [concept]
 
 # ARIA (Accessible Rich Internet Applications)
 
-[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 ARIA (Accessible Rich Internet Applications) is a set of attributes that define ways to make web content and web applications more accessible to people with disabilities. It provides additional semantics for dynamic content and complex UI components.
 

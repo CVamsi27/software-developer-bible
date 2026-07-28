@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Performance Monitoring Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 This comprehensive guide covers 25+ interview questions on performance monitoring, ranging from Core Web Vitals fundamentals to advanced real-user monitoring system design.
 

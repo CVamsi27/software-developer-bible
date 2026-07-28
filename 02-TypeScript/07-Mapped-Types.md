@@ -6,10 +6,6 @@ tags: [concept]
 
 # Mapped Types
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Mapped types** are types that transform existing types by iterating over their keys using `[K in keyof T]` syntax. They allow you to create new types by mapping over every property in a type.

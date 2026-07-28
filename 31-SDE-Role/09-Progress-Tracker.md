@@ -6,10 +6,6 @@ tags: [tool]
 
 # 📊 SDE Interview Prep — Progress Tracker
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Track your journey to landing your dream job!**
 >
 > Update this tracker daily/weekly to stay on top of your preparation.

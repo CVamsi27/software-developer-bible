@@ -6,10 +6,6 @@ tags: [concept]
 
 # Health Checks
 
-[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Health checks are endpoints or mechanisms that report whether a service is alive and able to handle requests. They are the most basic form of observability — a binary signal (healthy/unhealthy) that load balancers, orchestrators, and monitoring systems use to route traffic and manage service lifecycle.

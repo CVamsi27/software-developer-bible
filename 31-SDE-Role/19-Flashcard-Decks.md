@@ -6,10 +6,6 @@ tags: [flashcards]
 
 # 🃏 Interactive Flashcard Decks
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Ready-to-import flashcards for Anki and Quizlet**
 >
 > Use these for daily active recall practice. Each card tests one key concept.

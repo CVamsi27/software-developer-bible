@@ -6,10 +6,6 @@ tags: [concept]
 
 # CQRS & Dependency Injection Patterns
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 ### CQRS (Command Query Responsibility Segregation)

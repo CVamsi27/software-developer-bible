@@ -6,10 +6,6 @@ tags: [concept]
 
 # Client Components in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Client Components** are React components that render on the client side with full interactivity. They use the `'use client'` directive at the top of the file and can access React hooks, browser APIs, and event handlers. They are hydrated after the server-rendered HTML is sent to the browser.

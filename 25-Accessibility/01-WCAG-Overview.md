@@ -6,10 +6,6 @@ tags: [overview, reference]
 
 # WCAG Overview
 
-[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 WCAG (Web Content Accessibility Guidelines) is a set of guidelines developed by W3C (World Wide Web Consortium) to make web content more accessible to people with disabilities. It provides standards for creating accessible web content.
 

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Controllers
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Controllers** in NestJS are classes decorated with `@Controller()` that handle incoming HTTP requests and return responses. They act as the presentation layer of the application, receiving requests from clients, processing them (often by delegating to services), and returning appropriate responses.

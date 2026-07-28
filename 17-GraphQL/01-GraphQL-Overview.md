@@ -6,10 +6,6 @@ tags: [overview, reference]
 
 # GraphQL Overview
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 GraphQL is a **query language for APIs** and a **runtime for executing those queries** against your data. Developed by Facebook in 2012 and open-sourced in 2015, it provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need—nothing more, nothing less.

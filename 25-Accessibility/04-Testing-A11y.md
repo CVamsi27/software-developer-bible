@@ -6,10 +6,6 @@ tags: [concept]
 
 # Testing Accessibility
 
-[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Accessibility testing is the practice of verifying that web content is usable by people with disabilities. It involves automated tools, manual testing, and assistive technology testing to ensure compliance with WCAG guidelines.
 

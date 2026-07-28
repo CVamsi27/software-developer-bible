@@ -6,10 +6,6 @@ tags: [concept]
 
 # 🎯 Learning Guarantee System
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Don't just study — MASTER the material**
 >
 > This system ensures you actually learn and retain everything through active recall, practice testing, and mastery-based progression.

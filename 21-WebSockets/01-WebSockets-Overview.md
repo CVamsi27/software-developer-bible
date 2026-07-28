@@ -6,10 +6,6 @@ tags: [overview, reference]
 
 # WebSockets Overview
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 WebSockets provide a **full-duplex, bidirectional communication protocol** over a single TCP connection. Unlike HTTP's request-response model, WebSockets allow both client and server to send messages independently at any time without the overhead of repeated HTTP handshakes.

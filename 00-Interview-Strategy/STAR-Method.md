@@ -6,10 +6,6 @@ tags: [concept]
 
 # STAR Method: Complete Guide for Senior Engineers
 
-[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Table of Contents
 
 1. [What is the STAR Method?](#what-is-the-star-method)

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Debounce
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Debouncing** is a technique that delays the execution of a function until after a specified period of inactivity. Each time the function is called, the timer resets. The function only executes when there's a pause in calls.

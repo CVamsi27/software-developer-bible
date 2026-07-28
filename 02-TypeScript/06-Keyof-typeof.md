@@ -6,10 +6,6 @@ tags: [concept]
 
 # Keyof & Typeof
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 - **`keyof`**: A type operator that extracts the keys of an object type as a union of string literal types

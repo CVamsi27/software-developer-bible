@@ -6,10 +6,6 @@ tags: [concept]
 
 # Type Narrowing
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Type narrowing** is the process of refining a broader type into a more specific type through control flow analysis, type guards, and other TypeScript mechanisms. It allows you to safely work with specific types within conditional blocks.

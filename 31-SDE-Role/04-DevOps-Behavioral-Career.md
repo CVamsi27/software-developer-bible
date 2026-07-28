@@ -6,10 +6,6 @@ tags: [concept]
 
 # DevOps, Behavioral & Career Preparation (Phases 20–28)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ---
 
 # Phase 20: Git & Version Control

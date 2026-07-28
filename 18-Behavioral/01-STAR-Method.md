@@ -6,10 +6,6 @@ tags: [concept]
 
 # The STAR Method: Mastering Behavioral Interview Answers
 
-[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Table of Contents
 
 - [What is the STAR Method?](#what-is-the-star-method)

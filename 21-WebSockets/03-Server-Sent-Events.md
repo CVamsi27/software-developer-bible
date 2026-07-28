@@ -6,10 +6,6 @@ tags: [concept]
 
 # Server-Sent Events (SSE)
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Server-Sent Events (SSE) is a **standardized technology** that allows servers to push data to clients over HTTP in real-time. Unlike WebSockets, SSE provides **unidirectional communication** from server to client, making it ideal for scenarios where the client only needs to receive updates (news feeds, live scores, notifications).

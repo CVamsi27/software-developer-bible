@@ -6,10 +6,6 @@ tags: [concept]
 
 # Sliding Window
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The sliding window pattern is a technique that uses a "window" (a subset of elements) that slides over a data structure to solve problems involving contiguous sequences. It maintains a window of elements and adjusts the window boundaries as it traverses the input, avoiding redundant recalculations.

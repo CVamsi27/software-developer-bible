@@ -6,10 +6,6 @@ tags: [concept]
 
 # Virtual DOM
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The Virtual DOM (VDOM) is a lightweight, in-memory JavaScript representation of the real Document Object Model (DOM). It is a programming concept where an ideal, or "virtual," representation of a UI is kept in memory and synced with the real DOM by a library such as React. This process is called **reconciliation**.

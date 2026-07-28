@@ -6,10 +6,6 @@ tags: [concept]
 
 # Prototypes
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Prototype** is an object from which other objects inherit properties and methods. In JavaScript, every object has a hidden `[[Prototype]]` property that references another object. This creates a **prototype chain** that enables inheritance and property sharing.

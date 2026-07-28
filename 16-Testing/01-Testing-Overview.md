@@ -6,10 +6,6 @@ tags: [overview, reference]
 
 # Testing Overview
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Testing is the systematic process of evaluating a software application to identify defects, verify that requirements are met, and ensure the system behaves as expected under various conditions. In modern software development, testing is not merely a phase but an integral practice woven throughout the entire development lifecycle.

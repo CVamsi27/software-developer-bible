@@ -6,10 +6,6 @@ tags: [concept]
 
 # Utility Types
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Utility types** are built-in TypeScript types that provide common type transformations. They allow you to manipulate and transform types without writing complex type logic from scratch.

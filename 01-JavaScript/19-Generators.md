@@ -6,10 +6,6 @@ tags: [concept]
 
 # Generators
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Generators** are special functions that can be paused and resumed. They use `function*` syntax and `yield` keyword to produce a sequence of values lazily (on-demand), implementing the iterator protocol.

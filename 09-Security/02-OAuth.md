@@ -6,10 +6,6 @@ tags: [concept]
 
 # OAuth 2.0
 
-[![Section](https://img.shields.io/badge/section-Security-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user resources on a third-party service without exposing the user's credentials. It is defined by RFC 6749 and provides a standardized protocol for delegated authorization. OAuth 2.0 separates the roles of resource owner, client, authorization server, and resource server, enabling secure delegated access.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Node.js Clustering
 
-[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Clustering** is a Node.js module that allows you to create multiple worker processes that share a single port. It enables you to utilize multiple CPU cores by forking the main process into multiple worker processes, each running its own instance of the Node.js event loop. The cluster module uses the `child_process.fork()` method internally to create workers.

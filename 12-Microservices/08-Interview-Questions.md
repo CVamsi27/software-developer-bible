@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Microservices Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This comprehensive guide covers 30+ most frequently asked microservices interview questions, categorized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you ace your senior full-stack developer interview.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Closures
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Closure** is a function that remembers and can access variables from its outer (lexical) scope, even after the outer function has finished executing and its execution context has been removed from the call stack. Closures are created every time a function is created, at function creation time.

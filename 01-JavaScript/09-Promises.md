@@ -6,10 +6,6 @@ tags: [concept]
 
 # Promises
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Promise** is an object representing the eventual completion or failure of an asynchronous operation. It's a container for a future value that allows you to chain asynchronous operations and handle their results or errors in a clean, readable way.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Apollo Client
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Apollo Client** is a comprehensive state management library for JavaScript that integrates with GraphQL. It manages the interaction between client and server by parsing, caching, and error handling GraphQL operations. It provides React hooks, Vue integration, and vanilla JS support for building data-driven applications.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Node.js Streams
 
-[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Streams** are one of the most powerful concepts in Node.js. They are instances of `Stream` class that allow you to read or write data sequentially, piece by piece (in chunks), rather than loading the entire data into memory at once. Streams implement the `EventEmitter` interface, making them event-driven and easy to use.

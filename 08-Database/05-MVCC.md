@@ -6,10 +6,6 @@ tags: [concept]
 
 # MVCC (Multi-Version Concurrency Control)
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 MVCC (Multi-Version Concurrency Control) is a database concurrency control technique that maintains multiple versions of data objects. Each transaction sees a consistent snapshot of the database at a particular point in time, without blocking other transactions from reading or writing. This allows readers and writers to operate concurrently without conflicting.

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Integration Testing
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Integration testing is a level of software testing where individual units or components are combined and tested as a group. The goal is to verify that different modules work correctly together when integrated, exposing defects in the interactions between components.

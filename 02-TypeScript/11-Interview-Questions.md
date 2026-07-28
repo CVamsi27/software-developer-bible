@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # TypeScript Interview Questions
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This comprehensive guide covers the most frequently asked TypeScript interview questions, categorized by difficulty level. Master these questions to ace your next TypeScript interview.

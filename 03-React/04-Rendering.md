@@ -6,10 +6,6 @@ tags: [concept]
 
 # Rendering
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Rendering in React is the process of calling component functions to produce a Virtual DOM tree, which React then uses to determine what changes to apply to the real DOM. It's important to understand that "rendering" in React does **not** mean updating the DOM — it means calling your component functions to produce a description of what the UI should look like.

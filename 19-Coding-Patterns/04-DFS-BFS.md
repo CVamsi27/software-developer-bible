@@ -6,10 +6,6 @@ tags: [concept]
 
 # DFS & BFS
 
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Depth-First Search (DFS)**: A traversal algorithm that explores as far as possible along each branch before backtracking. Uses a stack (explicit or call stack).

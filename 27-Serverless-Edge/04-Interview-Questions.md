@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Serverless/Edge Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 This comprehensive guide covers 25+ interview questions on serverless and edge computing, from fundamentals to advanced system design.
 

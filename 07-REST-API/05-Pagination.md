@@ -6,10 +6,6 @@ tags: [concept]
 
 # Pagination
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Pagination is the practice of dividing large datasets into smaller, manageable chunks (pages) that can be retrieved incrementally. It's essential for REST APIs to avoid returning excessive data, improve performance, reduce memory usage, and provide a better user experience.

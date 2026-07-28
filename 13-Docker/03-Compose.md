@@ -6,10 +6,6 @@ tags: [concept]
 
 # Docker Compose
 
-[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Docker Compose** is a tool for defining and running multi-container Docker applications using a declarative YAML file. It manages services, networks, and volumes as a single unit, enabling local development environments and multi-service architectures.

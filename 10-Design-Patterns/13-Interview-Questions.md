@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Design Patterns Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Overview
 
 This comprehensive guide covers 40 of the most commonly asked design patterns interview questions, categorized by difficulty level. Each question includes a detailed answer, code examples where applicable, and follow-up points.

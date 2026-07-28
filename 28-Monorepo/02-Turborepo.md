@@ -6,10 +6,6 @@ tags: [concept]
 
 # Turborepo
 
-[![Section](https://img.shields.io/badge/section-Monorepo-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Turborepo is a high-performance build system for JavaScript and TypeScript codebases, designed for scaling monorepos. It provides intelligent caching, parallelization, and task scheduling to dramatically speed up builds and development workflows.
 

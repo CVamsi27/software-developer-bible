@@ -6,10 +6,6 @@ tags: [guide]
 
 # 🟠 Amazon (AWS) — Interview Guide (2025–2026)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Target Role:** SDE I (L4) / SDE II (L5) / Senior SDE (L6)
 >
 > **Teams to Consider:** AWS, Alexa, Prime, Retail, Kindle, Twitch, Ring

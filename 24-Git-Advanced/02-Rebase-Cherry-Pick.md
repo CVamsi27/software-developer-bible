@@ -6,10 +6,6 @@ tags: [concept]
 
 # Rebase & Cherry-Pick
 
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 - **Rebase**: A Git operation that reapplies commits on top of another base tip, creating a linear history

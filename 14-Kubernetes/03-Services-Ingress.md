@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes Services & Ingress
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Services** provide stable networking for a set of Pods. They load-balance traffic across Pods and provide DNS-based service discovery. **Ingress** manages external HTTP/HTTPS access to Services, providing routing, TLS termination, and virtual hosting.

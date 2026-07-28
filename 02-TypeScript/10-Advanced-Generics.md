@@ -6,10 +6,6 @@ tags: [concept]
 
 # Advanced Generics
 
-[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Advanced generics** encompass complex generic patterns that go beyond basic type parameters. They include higher-kinded types simulation, variadic generics, conditional generic types, and sophisticated constraint patterns.

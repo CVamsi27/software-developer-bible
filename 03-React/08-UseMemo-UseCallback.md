@@ -6,10 +6,6 @@ tags: [concept]
 
 # useMemo & useCallback
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 `useMemo` and `useCallback` are React Hooks for performance optimization through memoization. `useMemo` memoizes a **computed value** — it returns a cached result of an expensive computation. `useCallback` memoizes a **function** — it returns a cached reference to a function between re-renders.

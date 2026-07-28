@@ -6,10 +6,6 @@ tags: [concept]
 
 # Execution Context
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 An **Execution Context** is the environment in which JavaScript code is evaluated and executed. It contains all the necessary information for the JS engine to run a specific piece of code, including variable declarations, function declarations, scope chain, and the `this` binding.

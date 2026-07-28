@@ -6,10 +6,6 @@ tags: [concept]
 
 # CSS Animations
 
-[![Section](https://img.shields.io/badge/section-Animation-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 CSS animations provide a way to create smooth, performant animations using only CSS, without JavaScript. They include transitions for simple state changes and keyframe animations for complex sequences.
 

@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Form Handling Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 This comprehensive guide covers 25 interview questions on form handling in React, from fundamentals to advanced system design.
 

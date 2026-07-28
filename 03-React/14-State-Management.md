@@ -6,10 +6,6 @@ tags: [concept]
 
 # State Management
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 State management in React refers to how application state (data that changes over time) is stored, updated, and shared across components. It ranges from local component state (`useState`) to global state management solutions (Redux, Zustand, Jotai) and server state management (React Query/TanStack Query).

@@ -6,10 +6,6 @@ tags: [concept]
 
 # Server Actions in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Server Actions** are asynchronous functions that run on the server and can be called from Client Components or Server Components. They use the `'use server'` directive and enable form handling, data mutations, and progressive enhancement without creating API routes.

@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # GraphQL Interview Questions
 
-[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This comprehensive guide covers the **30 most frequently asked GraphQL interview questions** with detailed answers, code examples, and explanations. Questions range from beginner to FAANG-level and cover schema design, resolvers, performance, security, and architecture.

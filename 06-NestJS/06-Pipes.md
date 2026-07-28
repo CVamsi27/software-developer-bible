@@ -6,10 +6,6 @@ tags: [concept]
 
 # Pipes
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Pipes** in NestJS are classes that implement the `PipeTransform` interface. They are used to transform input data and validate it before it reaches the route handler. Pipes can transform data (e.g., string to number) or validate data against constraints (e.g., email format, required fields).

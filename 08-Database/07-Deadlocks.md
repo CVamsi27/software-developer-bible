@@ -6,10 +6,6 @@ tags: [concept]
 
 # Database Deadlocks
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A deadlock is a situation where two or more transactions are blocked forever, each waiting for the other to release a lock. In PostgreSQL, deadlocks are detected automatically and resolved by aborting one of the transactions (the victim).

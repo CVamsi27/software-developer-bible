@@ -6,10 +6,6 @@ tags: [concept]
 
 # Saga Pattern
 
-[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Saga Pattern is a design pattern for managing distributed transactions across multiple microservices. Instead of using a single ACID transaction, sagas break the transaction into a sequence of local transactions, each publishing events that trigger the next step. If any step fails, compensating transactions are executed to undo previous work.

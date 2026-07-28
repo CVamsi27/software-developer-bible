@@ -6,10 +6,6 @@ tags: [schedule]
 
 # 🔄 Spaced Repetition Schedule
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Maximize retention with scientifically-backed review intervals**
 >
 > Based on the Ebbinghaus forgetting curve — review just before you forget!

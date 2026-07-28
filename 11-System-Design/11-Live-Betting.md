@@ -6,10 +6,6 @@ tags: [concept]
 
 # Live Betting System Design
 
-[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Requirements
 ### Functional Requirements
 

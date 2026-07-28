@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Monorepo Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Monorepo-lightgrey)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 This comprehensive guide covers 20 interview questions on monorepo architecture, from fundamentals to advanced system design.
 

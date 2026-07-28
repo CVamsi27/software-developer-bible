@@ -6,10 +6,6 @@ tags: [concept]
 
 # Webpack
 
-[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then bundles every module your project needs into one or more bundles (usually JavaScript files) to be used by a browser.
 

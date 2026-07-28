@@ -6,10 +6,6 @@ tags: [concept]
 
 # Caching in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Next.js implements a multi-layered caching system that improves performance by storing and reusing rendered results, data fetches, and static assets. The caching system includes **Data Cache**, **Full Route Cache**, **Router Cache**, and **Request Memoization**.

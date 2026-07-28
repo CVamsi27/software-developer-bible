@@ -6,10 +6,6 @@ tags: [concept]
 
 # PostgreSQL
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 PostgreSQL is a powerful, open-source, object-relational database management system (ORDBMS) with over 30 years of active development. It extends SQL with features like custom data types, functions, operators, and index methods. PostgreSQL is ACID-compliant, supports MVCC (Multi-Version Concurrency Control), and is known for its reliability, feature robustness, and performance.

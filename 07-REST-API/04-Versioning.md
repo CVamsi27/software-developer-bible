@@ -6,10 +6,6 @@ tags: [concept]
 
 # API Versioning
 
-[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 API versioning is the practice of managing changes to an API by creating multiple versions that can coexist. It allows API providers to evolve their APIs without breaking existing clients, enabling backward compatibility while introducing new features or modifying existing behavior.

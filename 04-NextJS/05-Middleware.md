@@ -6,10 +6,6 @@ tags: [concept]
 
 # Middleware in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Middleware** in Next.js is code that runs **before** a request is completed. It executes on the Edge Runtime, allowing you to modify the request/response, redirect, rewrite URLs, set headers, and implement authentication — all before the page renders.

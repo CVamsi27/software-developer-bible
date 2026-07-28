@@ -6,10 +6,6 @@ tags: [tool]
 
 # ⏱️ Daily Study Timer Template
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Track every minute of your preparation**
 >
 > Based on the Pomodoro Technique: 25 min focused work + 5 min break

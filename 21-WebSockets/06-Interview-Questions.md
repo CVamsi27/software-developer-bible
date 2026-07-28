@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # WebSockets & Real-Time Interview Questions
 
-[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 This chapter contains the **30 most frequently asked interview questions** about WebSockets, real-time communication, and related technologies. Each question includes a detailed answer, code examples, and follow-up points to help you ace your next interview.

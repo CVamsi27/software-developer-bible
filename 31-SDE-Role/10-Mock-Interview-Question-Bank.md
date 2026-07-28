@@ -6,10 +6,6 @@ tags: [practice]
 
 # 🎯 Mock Interview Question Bank
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Practice-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **90 curated questions** for coding, system design, and behavioral rounds.
 >
 > **How to Use:** Pick 2-3 questions per mock session. Time yourself. Practice explaining your thought process out loud.

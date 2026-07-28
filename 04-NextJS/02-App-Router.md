@@ -6,10 +6,6 @@ tags: [concept]
 
 # App Router in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 The **App Router** is Next.js's modern routing system introduced in Next.js 13, built on top of React Server Components. It uses a file-system based router within the `app/` directory with enhanced features like nested layouts, loading states, error handling, and parallel routes.

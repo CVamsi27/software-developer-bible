@@ -6,10 +6,6 @@ tags: [concept]
 
 # SSR, CSR, SSG, and ISR in Next.js
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Next.js supports multiple rendering strategies that determine **where** and **when** your pages are rendered:

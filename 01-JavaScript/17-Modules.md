@@ -6,10 +6,6 @@ tags: [concept]
 
 # Modules
 
-[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Modules** are reusable pieces of code that encapsulate functionality and can be imported/exported between files. They provide code organization, encapsulation, and dependency management in JavaScript applications.

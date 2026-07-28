@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Next.js Interview Questions — Comprehensive Guide
 
-[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Overview
 
 This guide covers 40 of the most commonly asked Next.js interview questions, categorized by difficulty level from Beginner to FAANG-style. Each answer includes explanations, code examples, and real-world context.

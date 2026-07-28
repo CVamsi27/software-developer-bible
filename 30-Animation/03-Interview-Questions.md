@@ -6,10 +6,6 @@ tags: [interview-questions, reference]
 
 # Animation Interview Questions
 
-[![Section](https://img.shields.io/badge/section-Animation-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 This comprehensive guide covers 20 interview questions on animation in web development, from CSS basics to advanced React animation patterns.
 

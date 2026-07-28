@@ -6,10 +6,6 @@ tags: [concept]
 
 # Exception Filters
 
-[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Exception Filters** in NestJS are classes that implement the `ExceptionFilter` interface. They are responsible for catching exceptions thrown during request handling and transforming them into appropriate HTTP responses. Exception filters provide a centralized way to handle errors consistently across the application.

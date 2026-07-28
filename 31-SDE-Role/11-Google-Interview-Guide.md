@@ -6,10 +6,6 @@ tags: [guide]
 
 # 🔵 Google (Alphabet) — Interview Guide (2025–2026)
 
-[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
-[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 > **Target Role:** L3 (Junior) / L4 (Mid) / L5 (Senior) Software Engineer
 >
 > **Teams to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML

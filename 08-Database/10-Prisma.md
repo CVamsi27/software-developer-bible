@@ -6,10 +6,6 @@ tags: [concept]
 
 # Prisma
 
-[![Section](https://img.shields.io/badge/section-Database-success)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mapping) that provides a type-safe database client, schema management, and migration tooling. It replaces traditional ORMs with a schema-first approach, generating a fully typed client from your database schema.

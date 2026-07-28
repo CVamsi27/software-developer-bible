@@ -6,10 +6,6 @@ tags: [concept]
 
 # Serverless Patterns
 
-[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Serverless patterns are reusable architectural designs for building serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
 

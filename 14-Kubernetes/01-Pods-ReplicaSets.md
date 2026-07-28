@@ -6,10 +6,6 @@ tags: [concept]
 
 # Kubernetes Pods & ReplicaSets
 
-[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Pod** is the smallest deployable unit in Kubernetes—a group of one or more containers that share storage, network, and a specification for how to run. A **ReplicaSet** ensures a specified number of Pod replicas are running at any given time. Pods are ephemeral; ReplicaSets maintain desired state.

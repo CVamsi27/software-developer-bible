@@ -6,10 +6,6 @@ tags: [concept]
 
 # Docker Images & Containers
 
-[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 A **Docker image** is a read-only template containing instructions for creating a container. It consists of layered filesystem changes. A **Docker container** is a runnable instance of an image—lightweight, isolated, and ephemeral. Images are built from a **Dockerfile**, a declarative script of build instructions.

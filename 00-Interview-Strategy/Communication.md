@@ -6,10 +6,6 @@ tags: [concept]
 
 # Communication Skills for Senior Engineer Interviews
 
-[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Table of Contents
 
 1. [Why Communication Matters](#why-communication-matters)

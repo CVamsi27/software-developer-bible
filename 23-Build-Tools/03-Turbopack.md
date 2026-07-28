@@ -6,10 +6,6 @@ tags: [concept]
 
 # Turbopack
 
-[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Turbopack is an incremental bundler optimized for JavaScript and TypeScript, built in Rust by Vercel. It's designed as a successor to Webpack, focusing on performance through incremental computation and caching.
 

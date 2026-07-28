@@ -6,10 +6,6 @@ tags: [concept]
 
 # Formik
 
-[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Formik is a popular React form library that helps with form state management, validation, and submission. It provides a set of components and hooks for building forms with React, focusing on simplicity and developer experience.
 

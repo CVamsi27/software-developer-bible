@@ -6,10 +6,6 @@ tags: [concept]
 
 # React Fiber
 
-[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 React Fiber is the **reconciliation engine** (reconciler) introduced in React 16 that replaced the previous stack-based reconciler. It is a reimplementation of React's core algorithm that enables **incremental rendering** — the ability to split rendering work into chunks and spread it out over multiple frames. Fiber is not a feature you use directly; it's the internal architecture that powers React's ability to pause, resume, and prioritize rendering work.

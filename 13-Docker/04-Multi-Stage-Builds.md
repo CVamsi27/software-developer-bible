@@ -6,10 +6,6 @@ tags: [concept]
 
 # Docker Multi-Stage Builds
 
-[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 **Multi-stage builds** allow you to use multiple `FROM` statements in a single Dockerfile. Each `FROM` begins a new stage. Artifacts from earlier stages can be selectively copied to later stages using `COPY --from=<stage>`. The final image contains only what is needed for production, dramatically reducing size.

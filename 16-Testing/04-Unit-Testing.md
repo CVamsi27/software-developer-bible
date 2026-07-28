@@ -6,10 +6,6 @@ tags: [concept]
 
 # Unit Testing
 
-[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 
 Unit testing is a software testing technique where individual units or components of software are tested in isolation to verify that each unit functions correctly. A "unit" is the smallest testable part of an application—typically a function, method, class, or module.

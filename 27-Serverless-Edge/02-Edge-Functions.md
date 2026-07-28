@@ -6,10 +6,6 @@ tags: [concept]
 
 # Edge Functions
 
-[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
-[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
-
 ## Definition
 Edge functions are serverless functions that run at the edge of a network, close to end users, rather than in a centralized data center. They execute on CDN nodes (Points of Presence) to reduce latency and improve performance for user-facing operations.
 

@@ -1,8 +1,8 @@
 # React — Index
 
-> **16 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, performance, and interview questions.
+> **17 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, portals, performance, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-17-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -24,6 +24,7 @@
 | 14 | [State Management](14-State-Management.md) | Redux, Zustand, Jotai, Context vs external state |
 | 15 | [Interview Questions](15-Interview-Questions.md) | 50+ curated questions with answers |
 | 16 | [Custom Hooks](16-Custom-Hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices |
+| 17 | [Portals](17-Portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety |
 
 ---
 

@@ -1,8 +1,8 @@
 # TypeScript — Index
 
-> **12 files** — TypeScript type system mastery from basic types to template literals, advanced generics, decorators, and interview questions.
+> **13 files** — TypeScript type system mastery from basic types to branded types, template literals, advanced generics, decorators, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-13-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -20,6 +20,7 @@
 | 10 | [Advanced Generics](10-Advanced-Generics.md) | Template literal types, variadic tuples, recursive types |
 | 11 | [Interview Questions](11-Interview-Questions.md) | 50+ curated questions with answers |
 | 12 | [Template Literal Types](12-Template-Literal-Types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types |
+| 13 | [Branded Types](13-Branded-Types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions |
 
 ---
 

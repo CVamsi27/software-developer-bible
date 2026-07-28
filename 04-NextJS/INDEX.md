@@ -1,8 +1,8 @@
 # Next.js — Index
 
-> **13 files** — App Router, rendering strategies, server components, caching, streaming, authentication, and interview questions.
+> **14 files** — App Router, rendering strategies, server components, caching, streaming, ISR, authentication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-13-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -21,6 +21,7 @@
 | 11 | [Image Optimization](11-Image-Optimization.md) | next/image, lazy loading, responsive images |
 | 12 | [Interview Questions](12-Interview-Questions.md) | 50+ curated questions with answers |
 | 13 | [Authentication](13-Authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC |
+| 14 | [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md) | Stale-while-revalidate, on-demand revalidation, cache tags, generateStaticParams, fallback strategies |
 
 ---
 

@@ -1,8 +1,8 @@
 # React — Index
 
-> **15 files** — React internals from Virtual DOM to rendering, hooks, patterns, performance, and interview questions.
+> **16 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, performance, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -23,10 +23,11 @@
 | 13 | [Performance](13-Performance.md) | Profiling, React.memo, virtualization, bailout |
 | 14 | [State Management](14-State-Management.md) | Redux, Zustand, Jotai, Context vs external state |
 | 15 | [Interview Questions](15-Interview-Questions.md) | 50+ curated questions with answers |
+| 16 | [Custom Hooks](16-Custom-Hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices |
 
 ---
 
-**Cross-references:** [Virtual DOM](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL, Vitest)](../16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation (Framer, GSAP, React Spring)](../30-Animation/)
+**Cross-references:** [JavaScript](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL, Vitest)](../16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation (Framer, GSAP, React Spring)](../30-Animation/)
 ---
 
 ## Navigation

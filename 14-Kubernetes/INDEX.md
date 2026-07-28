@@ -1,8 +1,8 @@
 # Kubernetes — Index
 
-> **11 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, and interview questions.
+> **12 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, PDBs, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -19,6 +19,7 @@
 | 09 | [Jobs & CronJobs](10-Jobs-CronJobs.md) | Batch jobs, scheduled tasks, backoff, parallelism |
 | 10 | [RBAC & Network Policies](11-RBAC-Network-Policies.md) | Access control, least privilege, micro-segmentation |
 | 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
+| 12 | [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability |
 
 ---
 

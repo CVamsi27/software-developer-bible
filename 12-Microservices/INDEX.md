@@ -1,8 +1,8 @@
 # Microservices — Index
 
-> **11 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, Kafka, RabbitMQ, event sourcing, gRPC, service mesh, distributed transactions, and interview questions.
+> **12 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, strangler fig, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -19,6 +19,7 @@
 | 09 | [Service Mesh](10-Service-Mesh.md) | Istio, Linkerd, Envoy, mTLS, traffic management, observability |
 | 10 | [Distributed Transactions](11-Distributed-Transactions.md) | Saga choreography/orchestration, outbox pattern, 2PC |
 | 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
+| 12 | [Strangler Fig](12-Strangler-Fig.md) | Legacy migration, strangler facade, parallel run, feature flags, dual-write |
 
 ---
 

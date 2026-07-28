@@ -731,23 +731,66 @@ These files (in `31-SDE-Role/`) are comprehensive study guides covering multiple
 
 After making changes, verify the following:
 
-### Required for New Files
+### Required for All New Files
 
 - [ ] File has YAML frontmatter with `section`, `category`, `tags`
 - [ ] 3 badges present: Section/Type/Status or Files/Category/Status
 - [ ] All badge URLs follow shields.io conventions
 - [ ] Badge values URL-encoded properly (spaces → `%20`)
-- [ ] Content structure follows the standard section order
-- [ ] `## Summary` section present
+- [ ] `## Summary` section present (near end of file)
 - [ ] `## See Also` section present with correct relative links
 - [ ] `## References & Learn More` section present
+
+### File-Type-Specific Structure
+
+**Standard concept files** (most sections):
+- [ ] Section order: Definition → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary → Cheat Sheet
+- [ ] `## Definition` is the first content section after badges
+- [ ] `## Code Examples` uses `typescript` language tag
+- [ ] If `## Cheat Sheet` is present, the `---` separator goes between it and `## See Also`
+
+**Coding Pattern files** (`19-Coding-Patterns/`):
+- [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
+- [ ] Has `## Template` section with code skeleton
+- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary → Cheat Sheet
+- [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
+- [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
+
+**Interview Questions files** (`NN-Interview-Questions.md`):
+- [ ] Uses `## Quick Reference` instead of `## Cheat Sheet`
+- [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
+- [ ] Has `## N Most Asked [Section] Interview Questions` as first section
+
+**System Design case studies** (`11-System-Design/`):
+- [ ] Starts with `## Requirements` (Functional + Non-Functional) instead of `## Definition`
+- [ ] Has `## Capacity Estimation`, `## API Design`, `## Database Design` sections
+- [ ] Architecture diagrams in `text` code blocks
+- [ ] Has `## Trade-offs` section before `## Summary`
+
+**CheatSheet files** (`20-CheatSheets/`):
+- [ ] Starts with `## Quick Reference Table` as first content section
+- [ ] No `## Definition` or `## Why Do We Need It?` sections
+
+**Behavioral guides** (`18-Behavioral/`):
+- [ ] Starts with `## Table of Contents` instead of `## Definition`
+- [ ] Uses narrative/storytelling style
+
+**SDE Role guides** (`31-SDE-Role/`):
+- [ ] Uses `## See Also` and `## References & Learn More` at the end
+- [ ] Code blocks use `java`, `text`, `typescript`, `sql` as appropriate
+
+### Why and Common Mistakes Format
+
+- [ ] **Concept files**: Use numbered or bullet lists for these sections
+- [ ] **DevOps files** (Docker, K8s, CI/CD): May use `| Problem \| Solution |` table for Why and `| Mistake \| Fix |` table for Common Mistakes
+- [ ] Either format is acceptable — but the format should be consistent within each section
 
 ### Code Blocks
 
 - [ ] All opening code blocks have a language tag
-- [ ] No `ts`, `js`, `shell`, `py`, `yml`, `gql` — use full tag names
+- [ ] No `ts`, `js`, `shell`, `sh`, `py`, `yml`, `gql` — use full tag names (`typescript`, `javascript`, `bash`, `python`, `yaml`, `graphql`)
 - [ ] ASCII diagrams use `text` tag
-- [ ] Opening and closing ` ``` ` are balanced
+- [ ] Opening and closing ` ``` ` are balanced (same count)
 
 ### File Quality
 

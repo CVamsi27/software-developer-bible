@@ -2,6 +2,10 @@
 
 > **Complete navigation hub** — 32 sections, 260+ files, covering the full spectrum of senior full-stack engineering interview preparation.
 
+[![Sections](https://img.shields.io/badge/sections-32-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-300%2B-green)](INDEX.md)
+[![Last Updated](https://img.shields.io/badge/last%20updated-July%202026-orange)](INDEX.md)
+
 ---
 
 ## 🎯 Quick Navigation

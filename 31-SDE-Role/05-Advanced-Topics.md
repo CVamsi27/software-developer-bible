@@ -1,6 +1,20 @@
 ---
+section: SDE Role
+category: Interview
+tags: [concept, reference]
+---
 
-# Appendix: Additional Topics
+# Advanced Topics
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Reference-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+> **Appendix:** Additional topics covering Segment Trees, Fenwick Trees, AVL Trees, distributed systems, design patterns, and concurrency for staff+ engineering interviews.
+
+---
+
+# Segment Tree (Basic)
 
 > This appendix covers topics from the original outline that are essential for interview preparation but may not have been covered in detail in the main sections.
 

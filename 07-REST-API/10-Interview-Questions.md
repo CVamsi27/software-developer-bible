@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [interview-questions, reference]
+---
+
 # REST API Interview Questions
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -810,7 +820,6 @@ app.post('/api/posts', authenticate, upload.single('media'), async (req, res) =>
 REST API design is fundamental for full-stack development. Master HTTP methods, status codes, resource design, and common patterns. Practice designing APIs for real-world scenarios and understand tradeoffs between different approaches. Always consider security, scalability, and maintainability.
 
 ## Cheat Sheet
-
 | Topic | Key Points |
 |-------|------------|
 | **REST** | Stateless, resource-based, uses HTTP methods |
@@ -823,6 +832,14 @@ REST API design is fundamental for full-stack development. Master HTTP methods, 
 | **CORS** | Required for cross-origin requests |
 | **API Gateway** | Single entry point, handles cross-cutting concerns |
 | **HATEOAS** | Include links in responses for discoverability |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

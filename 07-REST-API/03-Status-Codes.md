@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # HTTP Status Codes
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -795,84 +805,12 @@ res.status(429).json({ error: 'Rate limited', retryAfter: 60 });
 - **Caching** - 2xx responses with cache headers improve performance
 - **Compression** - 200 responses benefit from gzip
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What does 200 OK mean?** - Request succeeded; used for GET, PUT, PATCH, DELETE responses.
-
-2. **When should you use 201 Created?** - When a new resource is successfully created via POST.
-
-3. **What is the difference between 400 and 422?** - 400: Malformed request; 422: Well-formed but semantically invalid.
-
-4. **When to use 404 vs 410?** - 404: Resource not found (may exist later); 410: Resource permanently removed.
-
-5. **What does 500 indicate?** - Internal server error; unexpected condition on the server.
-
-### Intermediate (5)
-
-6. **Explain 401 vs 403** - 401: Authentication required (provide credentials); 403: Authenticated but not authorized (insufficient permissions).
-
-7. **When to use 304 Not Modified?** - When client has cached version; save bandwidth by not sending body.
-
-8. **What is Retry-After header?** - Tells client how long to wait before retrying; used with 429 and 503.
-
-9. **How do you handle 502 Bad Gateway?** - Implement circuit breaker, fallback responses, retry with backoff.
-
-10. **When to use 202 Accepted?** - For async operations; request accepted but processing not complete.
-
-### Senior (10)
-
-11. **Design error response format** - Consistent JSON structure with error code, message, details, request ID.
-
-12. **How do you version error responses?** - Include API version in error response, evolve error format carefully.
-
-13. **Handle partial failures in batch operations** - Return 207 Multi-Status with per-item results.
-
-14. **Design rate limiting with 429** - Include rate limit headers (X-RateLimit-Limit, X-RateLimit-Remaining, Retry-After).
-
-15. **Implement graceful degradation** - Return 503 with Retry-After during maintenance, serve cached responses.
-
-16. **Handle idempotency with status codes** - Return 409 Conflict for duplicate idempotency keys.
-
-17. **Design webhook retry logic** - Use exponential backoff, dead letter queue after max retries.
-
-18. **Handle CORS preflight failures** - Return appropriate 4xx codes, document required headers.
-
-19. **Implement request validation** - Return 400 for malformed, 422 for validation errors with details.
-
-20. **Design monitoring for status codes** - Track error rates, set up alerts for 5xx spikes.
-
-### FAANG-style (5)
-
-21. **Design a globally distributed API error handling** - Consistent errors across regions, failover handling.
-
-22. **Handle cascading failures** - Circuit breaker pattern, bulkhead isolation, fallback responses.
-
-23. **Design error budget system** - Track SLO compliance, alert on error rate thresholds.
-
-24. **Implement chaos engineering for error handling** - Test 5xx scenarios, verify graceful degradation.
-
-25. **Design API error analytics pipeline** - Aggregate errors, pattern detection, automated alerting.
-
-### Follow-ups (5)
-
-26. **How do you test status code handling?** - Unit tests for each code, integration tests for error flows.
-
-27. **What are common status code mistakes?** - Using 200 for errors, exposing internals, missing headers.
-
-28. **How do status codes affect caching?** - 2xx cacheable, 3xx redirect caching, 4xx/5xx typically not cached.
-
-29. **How do proxies handle status codes?** - May cache, transform, or retry based on code and headers.
-
-30. **How do browsers handle different status codes?** - 3xx: follow redirect, 4xx: show error, 5xx: retry or error page.
 
 ## Summary
 
 HTTP status codes are essential for communicating request outcomes between client and server. Using appropriate status codes makes APIs predictable, debuggable, and standards-compliant. Always use the correct class (2xx for success, 4xx for client errors, 5xx for server errors) and include relevant headers like Location, Retry-After, and Allow.
 
 ## Cheat Sheet
-
 | Code | Meaning | When to Use |
 |------|---------|-------------|
 | 200 | OK | Successful GET, PUT, PATCH |
@@ -891,6 +829,14 @@ HTTP status codes are essential for communicating request outcomes between clien
 | 500 | Server Error | Unexpected failure |
 | 502 | Bad Gateway | Upstream error |
 | 503 | Service Unavailable | Temporarily down |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

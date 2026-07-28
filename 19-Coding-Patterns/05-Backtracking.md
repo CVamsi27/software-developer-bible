@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Backtracking
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -397,7 +407,6 @@ console.log(exist(board, "ABCB"));   // false
 Backtracking systematically explores all possible solutions by building candidates incrementally and abandoning a candidate ("backtracking") as soon as it determines the candidate cannot lead to a valid solution.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Backtracking
 Use when: All solutions, permutations, combinations, constraint satisfaction
@@ -428,6 +437,13 @@ Pruning techniques:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

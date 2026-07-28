@@ -1,4 +1,14 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept]
+---
+
 # HR Round Strategy for Senior Full Stack Engineers
+
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -731,3 +741,19 @@ growing others is a key part of senior engineering."
 6. **Remember: you're interviewing them too** — This is a two-way street
 
 > The HR round is where technical ability meets human connection. Show them both.
+---
+
+
+## Summary
+
+The HR round is a strategic evaluation opportunity, not a formality. This guide covers company research frameworks, salary negotiation tactics, cultural fit signals, and the key questions to ask to make a strong impression.
+
+## References & Learn More
+
+- [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
+- [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
+- [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)

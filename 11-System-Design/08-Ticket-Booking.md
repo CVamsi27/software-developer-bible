@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Ticket Booking System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -975,85 +985,6 @@ alerts:
 | Ticket Storage | PDF | QR Code | QR Code (mobile-friendly) |
 | Flash Sale | Queue-based | Lock-based | Lock-based (simpler) |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you prevent double booking?**
-
-   - Use distributed locks (Redis)
-   - Atomic seat status updates
-   - Reservation timeout for cleanup
-   - Database constraints as fallback
-
-2. **How would you handle flash sales?**
-
-   - Pre-load seat data into Redis
-   - Use atomic operations
-   - Monitor and scale dynamically
-   - Queue overflow handling
-
-3. **How would you implement seat reservations?**
-
-   - Temporary holds with timeout
-   - Redis for fast locks
-   - Database for persistence
-   - Automatic cleanup for expired reservations
-
-### Scaling Questions
-
-4. **How do you scale to 100K concurrent users?**
-
-   - Horizontal scaling of services
-   - Redis cluster for seat locks
-   - Database sharding by event
-   - CDN for static content
-
-5. **How do you handle high concurrency during flash sales?**
-
-   - Pre-warm Redis cache
-   - Use atomic operations
-   - Monitor and auto-scale
-   - Queue overflow handling
-
-### Trade-off Questions
-
-6. **How do you balance consistency vs availability?**
-
-   - Strong consistency for seat booking
-   - Eventual consistency for availability checks
-   - Reservation timeout for cleanup
-   - Fallback to database locks
-
-7. **How do you handle payment failures?**
-
-   - Release reserved seats
-   - Allow retry
-   - Queue for later processing
-   - Notify user
-
-### Senior-level Questions
-
-8. **How would you implement dynamic pricing?**
-
-   - Real-time price calculation
-   - A/B testing for pricing
-   - Demand-based pricing
-   - Price history tracking
-
-9. **How do you handle event cancellations?**
-
-   - Automatic refund processing
-   - Notification to all ticket holders
-   - Rescheduling options
-   - Compensation logic
-
-10. **How would you implement waitlist management?**
-
-    - FIFO queue for waitlist
-    - Notification when seats available
-    - Time-limited offers
-    - Automatic promotion
 
 ## Summary
 
@@ -1080,6 +1011,14 @@ Key takeaways:
 This design supports 100K+ concurrent users with strong consistency for seat bookings.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

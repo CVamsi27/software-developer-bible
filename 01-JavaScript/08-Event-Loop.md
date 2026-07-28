@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Event Loop
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -823,292 +833,6 @@ class TaskScheduler {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is the event loop in JavaScript?**
-
-A: The event loop is the mechanism that allows JavaScript to perform non-blocking operations. It continuously checks the call stack and callback queues, executing tasks when the stack is empty.
-
-**Q2: Why is JavaScript single-threaded?**
-
-A: JavaScript is single-threaded to simplify programming and avoid concurrency issues like race conditions. The event loop allows it to handle asynchronous operations without blocking.
-
-**Q3: What is the difference between synchronous and asynchronous code?**
-
-A:
-
-- **Synchronous**: Executes immediately, blocks further execution
-- **Asynchronous**: Scheduled to run later, allows other code to run
-
-**Q4: What is a callback queue?**
-
-A: The callback queue (or task queue) is where callback functions are placed after their associated asynchronous operations complete (e.g., setTimeout, I/O).
-
-**Q5: What is the call stack?**
-
-A: The call stack is a LIFO data structure that tracks function execution. When a function is called, it's pushed onto the stack; when it returns, it's popped off.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is the difference between microtasks and macrotasks?**
-
-A:
-
-- **Microtasks**: Promise callbacks, queueMicrotask - run after current task, before next macrotask
-- **Macrotasks**: setTimeout, I/O - one per event loop iteration
-
-**Q7: Why does `setTimeout(() => {}, 0)` not execute immediately?**
-
-A: Because it's a macrotask. It's queued and runs after:
-
-1. Current synchronous code completes
-
-2. All microtasks complete
-
-3. Rendering (if needed)
-
-**Q8: What is `queueMicrotask` used for?**
-
-A: `queueMicrotask` schedules a function to run in the microtask queue. It's useful for high-priority updates that need to run before the next macrotask or render.
-
-**Q9: How does `requestAnimationFrame` relate to the event loop?**
-
-A: `requestAnimationFrame` runs before the browser paints, after microtasks. It's used for smooth animations and is tied to the browser's refresh rate (typically 60fps).
-
-**Q10: What is microtask starvation?**
-
-A: Microtask starvation occurs when microtasks keep being added faster than they can be processed. This blocks macrotasks and rendering, causing the UI to freeze.
-
-### Senior (10-15 questions)
-
-**Q11: Explain the complete event loop flow in the browser.**
-
-A:
-
-1. Execute synchronous code (call stack)
-
-2. When call stack empty:
-   a. Process ALL microtasks
-   b. If microtasks added more microtasks, process them too
-   c. Process ONE macrotask
-   d. Render if needed (every ~16ms)
-
-3. Repeat from step 2
-
-**Q12: How does the event loop differ between browser and Node.js?**
-
-A:
-
-- **Browser**: Single event loop, microtasks then macrotasks, rendering
-- **Node.js**: Multiple phases (timers, I/O, poll, check, close callbacks), process.nextTick before microtasks
-
-**Q13: What is `process.nextTick` in Node.js?**
-
-A: `process.nextTick` schedules a callback to run after the current operation completes, before the event loop continues. It has higher priority than microtasks.
-
-**Q14: How do you prevent UI blocking in the browser?**
-
-A:
-
-1. Break up heavy computations into chunks
-
-2. Use `setTimeout` or `requestAnimationFrame` to yield
-
-3. Use Web Workers for CPU-intensive tasks
-
-4. Use `requestIdleCallback` for low-priority work
-
-**Q15: What is the rendering pipeline and how does it relate to the event loop?**
-
-A: The rendering pipeline: JavaScript → Style → Layout → Paint → Composite. The event loop runs JavaScript, then rendering if needed. `requestAnimationFrame` runs before Style.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a task scheduler with priority queues.**
-
-A:
-
-```typescript
-class TaskScheduler {
-  private queues = {
-    critical: [] as (() => void)[],
-    high: [] as (() => void)[],
-    medium: [] as (() => void)[],
-    low: [] as (() => void)[]
-  };
-
-  schedule(task: () => void, priority: keyof typeof this.queues) {
-    this.queues[priority].push(task);
-    this.process();
-  }
-
-  private process() {
-    queueMicrotask(() => {
-      // Process in priority order
-      for (const priority of ['critical', 'high', 'medium', 'low']) {
-        if (this.queues[priority].length > 0) {
-          const task = this.queues[priority].shift()!;
-          task();
-          break;
-        }
-      }
-
-      // Continue if tasks remain
-      if (Object.values(this.queues).some(q => q.length > 0)) {
-        this.process();
-      }
-    });
-  }
-}
-
-```
-
-**Q17: How would you implement a non-blocking deep clone?**
-
-A:
-
-```typescript
-async function deepCloneAsync<T>(obj: T): Promise<T> {
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-
-  if (Array.isArray(obj)) {
-    const clone = [];
-    for (let i = 0; i < obj.length; i++) {
-      clone[i] = await deepCloneAsync(obj[i]);
-
-      // Yield every 100 items
-      if (i % 100 === 0) {
-        await new Promise(resolve => setTimeout(resolve, 0));
-      }
-    }
-    return clone as T;
-  }
-
-  const clone = {} as T;
-  const keys = Object.keys(obj);
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    (clone as any)[key] = await deepCloneAsync((obj as any)[key]);
-
-    // Yield periodically
-    if (i % 100 === 0) {
-      await new Promise(resolve => setTimeout(resolve, 0));
-    }
-  }
-
-  return clone;
-}
-
-```
-
-**Q18: Analyze the performance implications of microtasks vs macrotasks.**
-
-A:
-
-- **Microtasks**: Run immediately after current task, block rendering
-- **Macrotasks**: Run in separate iterations, allow rendering between
-
-Use microtasks for: High-priority updates, state synchronization
-Use macrotasks for: Low-priority work, animations, UI updates
-
-**Q19: How do you debug event loop issues?**
-
-A:
-
-1. **Chrome DevTools**: Performance tab, flame chart
-
-2. **console.trace()**: See call stack
-
-3. **Performance API**: measureTask, performance.now()
-
-4. **requestAnimationFrame**: Monitor frame rate
-
-5. **Web Workers**: Isolate heavy computations
-
-**Q20: What are the security implications of the event loop?**
-
-A:
-
-1. **Timing attacks**: Measure task execution time
-
-2. **DoS**: Starve microtask queue
-
-3. **Information leakage**: Task scheduling reveals code structure
-
-4. **Mitigation**: Limit task frequency, use rate limiting
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of an event loop bug in production?**
-
-A: Common bug: Microtask starvation
-
-```typescript
-// Bug: Infinite microtask loop
-function processData(data: any[]) {
-  queueMicrotask(() => {
-    processItem(data[0]);
-    if (data.length > 1) {
-      processData(data.slice(1));  // Adds more microtasks
-    }
-  });
-}
-
-// This blocks UI because microtasks never stop
-// Fix: Use setTimeout for long-running tasks
-
-```
-
-**Q22: How do you handle event loop delays in production?**
-
-A:
-
-1. Monitor task execution time
-
-2. Use performance APIs to measure delays
-
-3. Break up long-running tasks
-
-4. Use Web Workers for heavy computations
-
-5. Implement task scheduling with priorities
-
-**Q23: What is the relationship between event loop and Web Workers?**
-
-A: Web Workers have their own event loops and call stacks. They communicate via messages, not shared memory. The main thread's event loop is unaffected by worker operations.
-
-**Q24: How do different frameworks handle the event loop?**
-
-A:
-
-- **React**: Uses microtasks for state updates, batch processing
-- **Vue**: NextTick for DOM updates, microtask-based
-- **Angular**: Zone.js patches async operations
-- **Svelte**: Compiled to efficient async operations
-
-**Q25: What are best practices for working with the event loop?**
-
-A:
-
-1. Use async/await for readability
-
-2. Avoid blocking the event loop
-
-3. Use Web Workers for heavy tasks
-
-4. Prefer microtasks for high-priority work
-
-5. Monitor frame rate and task timing
-
-6. Break up long-running operations
-
-7. Use requestAnimationFrame for animations
-
-8. Implement proper error handling
 
 ## Summary
 
@@ -1131,7 +855,6 @@ The event loop is fundamental to JavaScript:
 Understanding the event loop is essential for writing responsive, efficient JavaScript applications.
 
 ## Cheat Sheet
-
 ```text
 EVENT LOOP CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -1199,6 +922,13 @@ BEST PRACTICES:
 • Implement task scheduling
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Generics
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -423,124 +433,12 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
 - **Union types**: Generic constraints with unions can cause type explosion
 - **Conditional types**: Deep conditional generics can cause slow type checking
 
-## Interview Questions
-
-### Beginner
-
-1. **What are generics in TypeScript?**
-
-   - Type parameters that allow writing reusable, type-safe code
-
-2. **How do you define a generic function?**
-
-   ```typescript
-   function identity<T>(value: T): T { return value; }
-
-```
-
-3. **What is the purpose of generic constraints?**
-
-   - To limit what types a generic parameter can accept
-
-4. **Can you have multiple type parameters?**
-
-   - Yes: `<T, U, V>` etc.
-
-5. **What is the default type parameter?**
-
-   - A fallback type when no type is specified: `<T = unknown>`
-
-### Intermediate
-
-6. **When would you use generic constraints with keyof?**
-
-   - When accessing properties dynamically on a generic type
-
-7. **How do generics differ from `any`?**
-
-   - Generics preserve type information; `any` loses it
-
-8. **Can you use generics with interfaces?**
-
-   - Yes: `interface Box<T> { value: T; }`
-
-9. **How do you constrain a generic to be a function?**
-
-   ```typescript
-   function call<T extends (...args: any[]) => any>(fn: T): ReturnType<T> {
-     return fn();
-   }
-
-```
-
-10. **What is type inference in generics?**
-
-    - TypeScript automatically determining the type parameter from usage
-
-### Senior
-
-11. **Design a generic curry function**
-
-    ```typescript
-    type Curry<Args extends any[], Return> =
-      Args extends [infer First, ...infer Rest]
-        ? (arg: First) => Curry<Rest, Return>
-        : Return;
-
-    function curry<Args extends any[], Return>(
-      fn: (...args: Args) => Return
-    ): Curry<Args, Return> {
-      // Implementation
-    }
-
-```
-
-12. **Implement a type-safe event emitter**
-
-    - Map event names to payload types using generics
-
-13. **How do you handle generic type inference in complex scenarios?**
-
-    - Use explicit type arguments when inference fails
-
-14. **Explain variance in generic types**
-
-    - Covariance, contravariance, invariance in generic positions
-
-### FAANG-style
-
-15. **Implement a generic immutable data structure**
-
-    - Design a persistent list or tree with generic types
-
-16. **Build a type-safe query builder**
-
-    - Use generics to infer result types from query definitions
-
-17. **Create a generic validation framework**
-
-    - Type-safe validators that infer output types
-
-### Follow-ups
-
-18. **How do generics interact with union types?**
-
-    - Generic constraints can use unions; generic parameters can be unions
-
-19. **Can you have generic type aliases?**
-
-    - Yes: `type Box<T> = { value: T; }`
-
-20. **How do generics work with async/await?**
-
-    - Generic functions can return promises: `function fetch<T>(): Promise<T>`
 
 ## Summary
 
 Generics are essential for writing reusable, type-safe TypeScript code. They allow you to create flexible functions, classes, and interfaces that work with multiple types while preserving type information. Use constraints to ensure type safety, and leverage TypeScript's type inference to minimize explicit type annotations.
 
 ## Cheat Sheet
-
 ```typescript
 // Basic generic function
 function identity<T>(value: T): T { return value; }
@@ -569,6 +467,13 @@ function merge<T extends object, U extends object>(a: T, b: U): T & U {
 }
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

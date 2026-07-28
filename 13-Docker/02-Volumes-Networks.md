@@ -1,4 +1,14 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Volumes & Networks
+
+[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -397,99 +407,12 @@ docker run --rm --network mynet alpine \
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the difference between a bind mount and a named volume?**
-   Bind mount maps a host path; named volume is managed by Docker and stored in Docker's directory.
-
-2. **What is Docker's default network?**
-   `bridge` — all containers on the same host can communicate via the `docker0` bridge.
-
-3. **How do you make a container accessible only to other containers?**
-   Use an `internal` network or set `--internal` flag.
-
-4. **What is a tmpfs mount?**
-   A mount stored in host memory only; data is lost when container stops.
-
-5. **How do containers discover each other?**
-   DNS-based discovery using container names on the same network.
-
-### Intermediate (5-10)
-
-6. **Explain Docker's bridge networking.**
-   Each container gets a veth pair; one end in container, other on the `docker0` bridge. NAT handles outbound traffic.
-
-7. **What is the difference between `docker network create` drivers?**
-   `bridge` (single host), `host` (share host network), `overlay` (multi-host Swarm), `macvlan` (assign MAC addresses).
-
-8. **How do you back up Docker volumes?**
-   `docker run --rm -v mydata:/data -v $(pwd):/backup alpine tar czf /backup/backup.tar.gz -C /data .`
-
-9. **What happens to volumes when a container is removed?**
-   Named volumes persist. Anonymous volumes are removed unless `--rm` is not used.
-
-10. **How do you restrict container network access?**
-    Use `internal` networks, `iptables` rules, or `--network` isolation.
-
-### Senior (10-15)
-
-11. **Explain the veth pair concept in Docker networking.**
-    A Virtual Ethernet pair connects the container's network namespace to the bridge. One end is inside the container (eth0), the other is on the host bridge.
-
-12. **How does Docker handle DNS resolution across containers?**
-    Docker runs an embedded DNS server (127.0.0.11) that resolves container names to IPs on user-defined networks.
-
-13. **What is macvlan networking?**
-    Assigns a MAC address to a container, making it appear as a physical device on the network. Useful for legacy applications expecting direct L2 connectivity.
-
-14. **How would you implement network policy enforcement in Docker?**
-    Use Swarm's `--opt encrypted` for overlay networks, or integrate with Calico/Cilium for Kubernetes.
-
-15. **Explain volume driver plugins.**
-    External plugins (NFS, AWS EBS, Azure Disk) that extend Docker's storage capabilities. Installed via `docker plugin install`.
-
-### FAANG-style (5-10)
-
-16. **Design a storage strategy for a stateful microservices application.**
-    Use local SSD volumes for databases with daily backups to S3. Replicate via application-level replication (PostgreSQL streaming, Redis Sentinel).
-
-17. **How would you handle cross-host container communication with zero-trust?**
-    Use mutual TLS on overlay networks, or service mesh (Istio/Linkerd) for encryption, authentication, and authorization.
-
-18. **Describe a disaster recovery plan for Docker volumes.**
-    Automated backups to cloud storage, cross-region replication, tested restore procedures, RPO/RTO definitions.
-
-19. **How would you debug DNS resolution issues in Docker?**
-    Check `/etc/resolv.conf` inside container, verify network mode, use `nslookup`, inspect embedded DNS server.
-
-20. **Design a multi-tenant network architecture in Docker.**
-    Separate overlay networks per tenant, network policies restricting cross-traffic, shared ingress with TLS termination.
-
-### Follow-ups (5-10)
-
-21. **What is the difference between Docker's embedded DNS and host DNS?**
-    Embedded DNS resolves container/service names; host DNS resolves external domains. Docker forwards unresolved queries to host DNS.
-
-22. **How do you handle IP address exhaustion in Docker networks?**
-    Use larger subnets, multiple networks, or `ip-range` to allocate specific blocks.
-
-23. **Can a container belong to multiple networks?**
-    Yes — a container can connect to multiple networks simultaneously.
-
-24. **What is the `host` network mode?**
-    Container shares the host's network namespace directly. No network isolation; highest performance.
-
-25. **How do you monitor Docker network traffic?**
-    Use `tcpdump`, `iftop`, or integrate with monitoring tools (Prometheus, cAdvisor).
 
 ## Summary
 
 Volumes provide persistent storage for containers. Networks enable service discovery and isolation. Named volumes with health checks, internal networks with proper DNS, and secrets management are essential for production Docker deployments.
 
 ## Cheat Sheet
-
 ```bash
 # Volumes
 docker volume create mydata
@@ -525,6 +448,13 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
 ```
 
 ---
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [CI/CD](../15-CI-CD/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

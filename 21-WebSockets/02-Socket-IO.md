@@ -1,4 +1,14 @@
+---
+section: WebSockets
+category: Real-Time
+tags: [concept]
+---
+
 # Socket.io
+
+[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1066,201 +1076,6 @@ const io = new Server(httpServer, {
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Socket.io and how does it differ from WebSockets?**
-
-   - Socket.io is a library built on top of WebSockets
-   - Provides automatic fallback to HTTP long-polling
-   - Offers rooms, namespaces, and acknowledgments
-   - Handles reconnection automatically
-
-2. **What are Socket.io rooms?**
-
-   - Virtual channels that clients can join/leave
-   - Enable scoped broadcasting
-   - Useful for chat rooms, game lobbies, etc.
-   - Managed server-side with `socket.join()` and `socket.leave()`
-
-3. **What are Socket.io namespaces?**
-
-   - Separate communication channels on a single connection
-   - Allow logical separation of concerns
-   - Can have their own middleware and event handlers
-   - Default namespace is `/`
-
-4. **How does Socket.io handle reconnection?**
-
-   - Automatic reconnection with exponential backoff
-   - Configurable retry attempts and delays
-   - Transport fallback on each attempt
-   - State preservation across reconnections
-
-5. **What are acknowledgments in Socket.io?**
-
-   - Callbacks that confirm message receipt
-   - Server can acknowledge client messages
-   - Client can acknowledge server messages
-   - Timeout handling for unacknowledged messages
-
-### Intermediate (5-8)
-
-6. **How do you implement real-time notifications with Socket.io?**
-
-   - Use namespaces for notification types
-   - Implement user-specific rooms
-   - Handle presence/online status
-   - Queue notifications for offline users
-
-7. **How do you handle Socket.io in a multi-server environment?**
-
-   - Use Redis adapter for pub/sub
-   - Implement sticky sessions
-   - Share session state across servers
-   - Use message brokers for cross-server communication
-
-8. **How do you secure Socket.io connections?**
-
-   - Implement JWT authentication
-   - Use WSS (WebSocket Secure)
-   - Validate all incoming data
-   - Rate limit connections and messages
-
-9. **How do you optimize Socket.io performance?**
-
-   - Enable message compression
-   - Use binary protocol when possible
-   - Implement message batching
-   - Monitor and tune buffer sizes
-
-10. **How do you handle Socket.io in microservices?**
-
-    - Use Redis for cross-service communication
-    - Implement service discovery
-    - Use API gateway for WebSocket routing
-    - Centralized logging and monitoring
-
-### Senior (8-12)
-
-11. **Design a scalable chat system with Socket.io**
-
-    - Connection management with Redis
-    - Message persistence with Cassandra
-    - Presence service with heartbeat
-    - Media handling with CDN
-    - Push notification fallback
-
-12. **How do you handle message ordering in Socket.io?**
-
-    - Use sequence numbers
-    - Implement vector clocks
-    - Consider CRDTs for conflict resolution
-    - Use message queues for ordering guarantees
-
-13. **How do you implement Socket.io clustering?**
-
-    - Use PM2 or Node.js cluster module
-    - Redis adapter for cross-process communication
-    - Sticky sessions for connection affinity
-    - Health checks and load balancing
-
-14. **How do you monitor Socket.io in production?**
-
-    - Track connection metrics
-    - Monitor message rates
-    - Alert on error rates
-    - Dashboard for real-time visibility
-
-15. **How do you handle Socket.io during deployments?**
-
-    - Graceful shutdown with connection draining
-    - Version negotiation between client and server
-    - Session migration between servers
-    - Rollback strategies
-
-### FAANG-style (5-8)
-
-16. **Design a real-time collaboration system (Google Docs)**
-
-    - Operational Transform implementation
-    - Conflict resolution strategies
-    - Undo/redo with operation history
-    - Cursor presence and awareness
-    - Version history and persistence
-
-17. **Design a multiplayer game backend**
-
-    - Deterministic game loop
-    - State synchronization (full vs delta)
-    - Client-side prediction
-    - Lag compensation
-    - Anti-cheat measures
-
-18. **Design a real-time analytics dashboard**
-
-    - Data aggregation and filtering
-    - WebSocket connection management
-    - Data compression and optimization
-    - Historical data loading
-    - Export and sharing capabilities
-
-19. **Design a live streaming chat system**
-
-    - Message moderation and filtering
-    - Emote and sticker handling
-    - Donation and super chat features
-    - Moderation tools and permissions
-    - Scale to millions of viewers
-
-20. **Design a collaborative design tool (Figma)**
-
-    - Real-time cursor tracking
-    - Operation transformation for design elements
-    - Version control and history
-    - Export and rendering
-    - Plugin system support
-
-### Follow-ups (5-8)
-
-21. **How do you test Socket.io applications?**
-
-    - Unit tests for handlers
-    - Integration tests with mock servers
-    - Load testing with Artillery
-    - Chaos engineering for failure scenarios
-
-22. **How do you handle Socket.io in mobile apps?**
-
-    - Background connection management
-    - Battery optimization
-    - Network change handling
-    - Push notification integration
-
-23. **What are common Socket.io pitfalls?**
-
-    - Memory leaks from event listeners
-    - Not handling disconnects
-    - Broadcasting to wrong rooms
-    - Missing error handling
-    - Not validating data
-
-24. **How do you debug Socket.io issues?**
-
-    - Enable debug logging
-    - Monitor network traffic
-    - Use browser dev tools
-    - Server-side logging
-    - Connection state tracking
-
-25. **How do you migrate from Socket.io to native WebSockets?**
-
-    - Evaluate feature requirements
-    - Implement WebSocket fallback
-    - Migrate event handlers
-    - Test across browsers
-    - Monitor performance differences
 
 ## Summary
 
@@ -1281,6 +1096,13 @@ Key best practices:
 - Handle disconnects gracefully
 - Monitor and log connection metrics
 - Implement rate limiting
+
+---
+
+## See Also
+- [System Design](../11-System-Design/)
+- [NestJS](../06-NestJS/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

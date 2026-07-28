@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # E-Commerce System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -1169,86 +1179,6 @@ alerts:
 | Order Processing | Sync | Async | Async (Kafka) |
 | Product Cache | Write-through | Cache-aside | Cache-aside |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you design an e-commerce product catalog?**
-
-   - PostgreSQL for structured data
-   - Elasticsearch for search
-   - Redis for caching
-   - CDN for images
-
-2. **How do you handle shopping cart management?**
-
-   - Redis for fast access
-   - Merge carts on login
-   - Session-based for guests
-   - 24-hour expiration
-
-3. **How would you implement checkout?**
-
-   - Validate inventory
-   - Reserve stock
-   - Process payment
-   - Create order
-   - Send confirmation
-
-### Scaling Questions
-
-4. **How do you scale to 100K concurrent users?**
-
-   - Horizontal scaling
-   - Database sharding
-   - Redis clustering
-   - CDN for static content
-
-5. **How do you handle flash sales?**
-
-   - Pre-warm cache
-   - Use atomic operations
-   - Queue overflow
-   - Monitor and auto-scale
-
-### Trade-off Questions
-
-6. **How do you balance consistency vs performance?**
-
-   - Strong consistency for inventory
-   - Eventual consistency for product data
-   - Cache invalidation strategy
-   - Transaction boundaries
-
-7. **How do you prevent inventory overselling?**
-
-   - Distributed locks
-   - Atomic operations
-   - Reservation system
-   - Real-time monitoring
-
-### Senior-level Questions
-
-8. **How would you implement personalization?**
-
-   - User behavior tracking
-   - Recommendation engine
-   - A/B testing
-   - Real-time pricing
-
-9. **How do you handle global shipping?**
-
-   - Multi-region deployment
-   - Local payment methods
-   - Currency conversion
-   - Customs calculation
-
-10. **How would you implement multi-vendor support?**
-
-    - Vendor management
-    - Commission calculation
-    - Split payments
-    - Vendor analytics
 
 ## Summary
 
@@ -1275,6 +1205,14 @@ Key takeaways:
 This design supports 100K+ concurrent users with 10K+ orders per minute.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

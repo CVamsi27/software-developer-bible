@@ -1,4 +1,14 @@
+---
+section: Node.js
+category: Backend
+tags: [interview-questions, reference]
+---
+
 # Node.js Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -2775,7 +2785,6 @@ These 40 questions cover the most important Node.js concepts for technical inter
 - **Distributed Systems**: Scaling and reliability
 
 ## Cheat Sheet
-
 ```text
 ┌───────────────────────────────────────────────────────────────┐
 │              NODE.JS INTERVIEW CHEAT SHEET                   │
@@ -2831,6 +2840,13 @@ These 40 questions cover the most important Node.js concepts for technical inter
 └───────────────────────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

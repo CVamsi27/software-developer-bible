@@ -1,4 +1,14 @@
+---
+section: Observability
+category: DevOps
+tags: [interview-questions, reference]
+---
+
 # Observability Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Overview
 
@@ -1270,6 +1280,13 @@ These questions cover the full spectrum of observability knowledge, from basic c
 7. **Security**: Balance visibility with privacy
 
 Success in observability interviews requires understanding both the technical implementation and the operational practices that make observability effective in production.
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

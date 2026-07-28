@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Queries & Mutations
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1221,122 +1231,6 @@ const resolvers = {
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the difference between a query and a mutation?**
-   Queries are for reading data (idempotent, parallel execution). Mutations are for writing data (sequential execution, side effects allowed).
-
-2. **What are GraphQL variables?**
-   Variables allow passing dynamic values to queries/mutations without string interpolation. They're defined in the query and passed as a separate object.
-
-3. **What is an operation name?**
-   A named identifier for a query or mutation (e.g., `query GetUser { ... }`). It improves debugging, logging, and error tracking.
-
-4. **What are fragments?**
-   Reusable pieces of query logic that can be spread into multiple queries. They help avoid duplication and maintain consistency.
-
-5. **How does GraphQL handle errors in mutations?**
-   Through the `errors` array in the response. Business logic errors are returned in payload types, while system errors go to the top-level errors array.
-
-### Intermediate
-
-6. **What is the difference between `errorPolicy: 'none'` and `errorPolicy: 'all'`?**
-   `none` (default) throws errors and doesn't return partial data. `all` returns both data and errors, allowing partial results.
-
-7. **How do you implement pagination in GraphQL?**
-   Use the Relay Connection pattern with edges, nodes, cursors, and pageInfo. This provides consistent cursor-based pagination.
-
-8. **What are inline fragments?**
-   Syntax for querying polymorphic types: `... on Type { fields }`. Used with unions and interfaces.
-
-9. **How do you handle file uploads in mutations?**
-   Use multipart form data specification or separate REST endpoints. Apollo Server supports this via the Upload scalar type.
-
-10. **What is the difference between `fetchPolicy` options in Apollo Client?**
-
-    - `cache-first`: Use cache, fetch if missing
-    - `network-only`: Always fetch, update cache
-    - `cache-and-network`: Return cache, also fetch
-    - `no-cache`: Never use cache
-
-### Senior
-
-11. **How would you implement optimistic updates for a complex mutation?**
-
-    ```typescript
-    const [updatePost] = useMutation(UPDATE_POST, {
-      optimisticResponse: {
-        updatePost: {
-          __typename: 'UpdatePostPayload',
-          post: {
-            __typename: 'Post',
-            ...currentPost,
-            ...input,
-          },
-          errors: [],
-        },
-      },
-      update(cache, { data }) {
-        cache.modify({
-          id: cache.identify(currentPost),
-          fields: {
-            title() { return data.updatePost.post.title; },
-          },
-        });
-      },
-    });
-
-```
-
-12. **How do you handle mutations that affect multiple parts of the cache?**
-    Use `cache.modify` or `cache.writeQuery` to update multiple entries. Consider refetching queries if cache updates are complex.
-
-13. **Explain the trade-offs between `refetchQueries` and `update` function.**
-    `refetchQueries`: Simple but causes loading states and extra network requests. `update`: Immediate UI update but more complex to implement.
-
-14. **How do you implement mutation middleware?**
-    Use Apollo Link chain, context-based middleware in resolvers, or custom hooks that wrap mutations.
-
-15. **How would you handle rate limiting for mutations?**
-    Client-side: debounce/throttle. Server-side: query complexity analysis, rate limiting middleware, persisted queries.
-
-### FAANG-style
-
-16. **Design a mutation for a social media "like" feature with optimistic updates.**
-    Consider: immediate UI feedback, cache normalization, undo functionality, real-time updates via subscriptions, and handling concurrent likes.
-
-17. **How would you implement a multi-step form using GraphQL mutations?**
-    Use draft/save mutations, server-side validation at each step, and a final "submit" mutation that validates all steps atomically.
-
-18. **Explain how you'd handle a mutation that triggers a long-running job.**
-    Return job ID immediately, use subscriptions or polling for status updates, handle timeouts, and provide cancellation.
-
-19. **How do you optimize mutations that touch many cache entries?**
-    Batch cache updates, use `cache.writeFragment` for targeted updates, consider optimistic responses for complex mutations.
-
-20. **Design a query/mutation strategy for offline-first applications.**
-    Queue mutations, handle conflicts (OT/CRDT), sync when online, provide merge strategies, and handle partial failures.
-
-### Follow-ups
-
-21. **What happens if a mutation resolver throws an error?**
-    The error is caught and added to the `errors` array. If the mutation was part of a transaction, it may rollback depending on implementation.
-
-22. **How do you handle mutations in a microservices architecture?**
-    Use saga pattern for distributed transactions, eventual consistency, idempotent mutations, and compensation logic.
-
-23. **What is the difference between local state mutations and server mutations?**
-    Local: Apollo Client cache updates only. Server: GraphQL mutations that persist data. They can be combined for optimistic updates.
-
-24. **How do you test mutations?**
-    Unit test resolvers with mocked context, integration test with test database, and end-to-end test with Apollo Server testing utilities.
-
-25. **How do you handle batch mutations?**
-    Use input arrays and return arrays of results/errors. Consider transactions and partial success handling.
-
----
 
 ## Summary
 
@@ -1350,6 +1244,13 @@ const resolvers = {
 | **Optimism** | Use optimisticResponse for better UX |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

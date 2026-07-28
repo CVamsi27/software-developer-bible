@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Middleware in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -730,131 +740,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is middleware in Next.js?**
-   Middleware runs before a request is completed. It can modify the request/response, redirect, rewrite, or set headers. It executes on the Edge Runtime.
-
-2. **Where does middleware run?**
-   On the Edge Runtime, before the page renders. It intercepts the request before it reaches the server.
-
-3. **What is the Edge Runtime?**
-   A lightweight JavaScript runtime optimized for edge computing. It's fast, has limited APIs, and runs close to users.
-
-4. **How do you create middleware?**
-   Create a `middleware.ts` file at the root of your project (next to `app/` or `pages/`).
-
-5. **What can middleware do?**
-   Redirect, rewrite URLs, set headers/cookies, read request headers, check authentication, and modify the response.
-
-6. **What can't middleware do?**
-   Access Node.js APIs, read request body, make database queries, or use most npm packages.
-
-7. **How do you match specific paths in middleware?**
-   Use the `config.matcher` export with path patterns like `/dashboard/:path*`.
-
-8. **What is the difference between redirect and rewrite?**
-   Redirect changes the URL the browser sees. Rewrite internally maps to a different URL without changing the browser URL.
-
-### Intermediate (5-10)
-
-9. **How do you implement authentication in middleware?**
-   Check for auth tokens in cookies/headers, verify them, and redirect to login if invalid. Use `jose` or `jsonwebtoken` for JWT verification.
-
-10. **How do you handle CORS in middleware?**
-    Set CORS headers on the response: `Access-Control-Allow-Origin`, `Access-Control-Allow-Methods`, etc.
-
-11. **What is the performance impact of middleware?**
-    Middleware runs on every matched request. Keep it lightweight. Complex logic increases TTFB. Use Edge Runtime for fast execution.
-
-12. **How do you test middleware?**
-    Use integration tests with mock requests, test in development mode, and use tools like Playwright for E2E testing.
-
-13. **How do you handle errors in middleware?**
-    Wrap logic in try/catch, return appropriate error responses, and provide fallback behavior.
-
-14. **Can middleware access request body?**
-    No. Middleware runs before the body is parsed. Use API routes for body processing.
-
-15. **How do you implement rate limiting in middleware?**
-    Use in-memory stores (development) or Redis (production) to track request counts per IP within time windows.
-
-### Senior (10-15)
-
-16. **Design a global authentication system using middleware.**
-    Use middleware for token validation, implement role-based access control, handle token refresh, and integrate with session management.
-
-17. **How would you implement A/B testing with middleware?**
-    Assign variants via cookies, rewrite to variant-specific pages, track assignments, and ensure consistent experience.
-
-18. **Design a multi-tenant routing system with middleware.**
-    Detect tenant from subdomain/header, route to tenant-specific pages, inject tenant context, and handle cross-tenant isolation.
-
-19. **How would you implement feature flags in middleware?**
-    Check flag values from environment/config, conditionally enable/disable routes, and use header-based flag overrides.
-
-20. **Design a CDN caching strategy using middleware.**
-    Set cache-control headers, implement stale-while-revalidate, handle cache invalidation, and use ETags.
-
-21. **How would you implement geographic routing for a global application?**
-    Use `request.geo` for location detection, implement locale-specific routing, handle timezone differences, and serve region-specific content.
-
-22. **Design a maintenance mode system using middleware.**
-    Check maintenance flag from environment/database, redirect to maintenance page, allow admin access, and handle scheduled maintenance windows.
-
-23. **How would you implement security headers in middleware?**
-    Add CSP, X-Frame-Options, HSTS, and other security headers. Handle CORS for API routes. Implement request validation.
-
-24. **Design a request logging and monitoring system with middleware.**
-    Log request metadata, track performance metrics, implement error tracking, and integrate with observability tools.
-
-25. **How would you implement a proxy system using middleware?**
-    Rewrite requests to backend services, handle authentication forwarding, implement load balancing, and manage service discovery.
-
-### FAANG-style (5-10)
-
-26. **Design a middleware architecture for a platform serving 1B+ requests/day.**
-    Use edge computing, implement intelligent routing, use distributed caching, and handle failover scenarios.
-
-27. **How would you implement request deduplication in middleware?**
-    Use request fingerprinting, implement idempotency keys, and handle concurrent duplicate requests.
-
-28. **Design a middleware system that adapts based on network conditions.**
-    Detect network quality, adjust response compression, implement adaptive loading, and optimize for slow connections.
-
-29. **How would you implement a service mesh using middleware?**
-    Handle service discovery, implement circuit breakers, manage load balancing, and handle service-to-service authentication.
-
-30. **Design a middleware architecture for multi-region deployment.**
-    Implement geo-routing, handle data residency requirements, manage cross-region replication, and optimize for latency.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Edge Runtime?**
-    No Node.js APIs, limited npm package support, no file system access, and smaller execution limits.
-
-32. **How does middleware affect SEO?**
-    Middleware can add canonical URLs, handle redirects for SEO, and implement hreflang headers.
-
-33. **What is the future of middleware in Next.js?**
-    More Edge Runtime APIs, better DevTools, improved performance, and deeper integration with React.
-
-34. **How do you handle middleware in development vs production?**
-    Test thoroughly in development, monitor in production, and use feature flags for gradual rollout.
-
-35. **What security considerations apply to middleware?**
-    Never expose secrets, validate all inputs, implement CSRF protection, and use secure headers.
-
-36. **How do you debug middleware issues?**
-    Use console.log (appears in server logs), test with specific URLs, and use browser dev tools to inspect headers.
-
-37. **How does middleware interact with caching?**
-    Middleware can set cache headers, implement cache invalidation, and control caching behavior for different routes.
-
-38. **What are alternatives to middleware for similar functionality?**
-    Server Components for page-level logic, API routes for request handling, and client-side code for user-specific logic.
 
 ## Summary
 
@@ -869,7 +754,6 @@ Optimization:
 | Performance | Fast, adds minimal latency |
 
 ## Cheat Sheet
-
 ```text
 File: middleware.ts (root)
 Runtime: Edge
@@ -891,6 +775,13 @@ request.headers               → Headers
 request.geo                   → Geographic info
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

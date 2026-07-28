@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # Test Patterns
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1268,137 +1278,6 @@ afterEach(async () => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the AAA pattern?**
-   Arrange-Act-Assert: set up test data, execute code under test, verify results.
-
-2. **What is BDD?**
-   Behavior-Driven Development: tests written in Given-When-Then format focusing on behavior.
-
-3. **What is a test factory?**
-   A pattern for creating test data objects with sensible defaults and customization.
-
-4. **What is a test data builder?**
-   A fluent API for constructing complex test objects step by step.
-
-5. **What is an Object Mother?**
-   A class with static methods that create predefined test objects.
-
-6. **Why use lifecycle hooks?**
-   To share setup/teardown code and avoid duplication across tests.
-
-7. **What is parameterized testing?**
-   Running the same test logic with different inputs and expected outputs.
-
-8. **What is snapshot testing?**
-   Capturing rendered output and comparing it to stored snapshots.
-
-9. **What are test helpers?**
-   Reusable functions that simplify common test operations.
-
-10. **Why is consistency important in tests?**
-    Makes tests easier to read, understand, and maintain.
-
-### Intermediate (5-10)
-
-11. **When should you use AAA vs BDD?**
-    AAA for simple tests, BDD for complex business logic and stakeholder communication.
-
-12. **How do you handle test data dependencies?**
-    Use fixtures, factories, or builders to create isolated test data.
-
-13. **What is the difference between factories and builders?**
-    Factories create objects with defaults. Builders provide step-by-step construction.
-
-14. **How do you test complex state machines?**
-    Test each valid and invalid transition, use parameterized tests.
-
-15. **How do you handle test cleanup?**
-    Use afterEach/afterAll hooks, transactions, or fixtures with cleanup.
-
-16. **What is the Four Phase Test pattern?**
-    Setup → Exercise → Verify → Teardown: explicit test phases.
-
-17. **How do you test async operations?**
-    Use async/await, mock timers, and proper waiting strategies.
-
-18. **When should you use snapshot testing?**
-    For UI components to catch unexpected visual changes.
-
-19. **How do you test edge cases systematically?**
-    Use parameterized tests with comprehensive test cases.
-
-20. **What is the difference between fixtures and factories?**
-    Fixtures are pre-defined data. Factories create data dynamically.
-
-### Senior (10-15)
-
-21. **How do you choose test patterns for a codebase?**
-    Consider team expertise, codebase complexity, and maintainability needs.
-
-22. **How do you refactor tests to use patterns?**
-    Start with AAA, extract helpers, create factories as needed.
-
-23. **How do you handle testing complex business rules?**
-    Use parameterized tests, decision tables, or specification pattern.
-
-24. **How do you test distributed systems?**
-    Use contract testing, integration tests, and chaos engineering.
-
-25. **How do you handle test data management at scale?**
-    Use fixtures, factories, and test data management tools.
-
-26. **How do you ensure test maintainability?**
-    Follow SOLID principles, extract helpers, and refactor regularly.
-
-27. **How do you handle testing legacy code?**
-    Use characterization tests, strangler fig pattern, and gradual improvement.
-
-28. **How do you test infrastructure as code?**
-    Use Terratest, validate configurations, and test deployments.
-
-29. **How do you handle testing in CI/CD?**
-    Implement test stages, parallel execution, and failure notifications.
-
-30. **How do you measure test pattern effectiveness?**
-    Track maintenance burden, test readability, and defect detection rate.
-
-### FAANG-style (5-10)
-
-31. **How would you design test patterns for a large organization?**
-    Establish guidelines, create shared utilities, and document conventions.
-
-32. **How do you handle testing microservices?**
-    Use contract testing, service virtualization, and integration tests.
-
-33. **How do you ensure consistency across teams?**
-    Create testing standards, shared libraries, and code review processes.
-
-34. **How do you handle testing with complex dependencies?**
-    Use dependency injection, mock at boundaries, and test contracts.
-
-35. **How do you balance test patterns with pragmatic testing?**
-    Choose patterns that provide value, avoid over-engineering.
-
-### Follow-ups (5-10)
-
-36. **How has your use of test patterns evolved?**
-    Discuss adoption of factories, builders, and parameterized tests.
-
-37. **What test patterns have you found most valuable?**
-    AAA, factories, and parameterized tests for most situations.
-
-38. **How do you introduce test patterns to a team?**
-    Start with simple examples, establish patterns gradually.
-
-39. **What's the most complex testing pattern you've implemented?**
-    Describe complex scenarios and solutions.
-
-40. **How do you balance patterns with simplicity?**
-    Choose appropriate patterns, avoid over-engineering.
 
 ## Summary
 
@@ -1414,6 +1293,14 @@ Test patterns provide structure and consistency to test suites. Key patterns:
 - **Helpers**: Common test utilities
 
 Choose patterns that fit your team's needs and codebase complexity.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

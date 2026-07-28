@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Notification Service System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -978,85 +988,6 @@ alerts:
 | Caching | Redis | Memcached | Redis (rich data) |
 | Delivery | Synchronous | Async | Async (scalability) |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you design a notification service?**
-
-   - Template engine for customizable notifications
-   - User preferences for channel selection
-   - Rate limiting to prevent abuse
-   - Delivery tracking and analytics
-
-2. **How do you handle notification preferences?**
-
-   - Store preferences in database
-   - Cache in Redis for fast lookup
-   - Check before sending
-   - Respect quiet hours
-
-3. **How would you implement A/B testing?**
-
-   - Create multiple template variants
-   - Random user assignment
-   - Track open/click rates
-   - Statistical significance testing
-
-### Scaling Questions
-
-4. **How do you scale to 1B notifications per day?**
-
-   - Partition notifications by user
-   - Horizontal scaling of services
-   - Kafka for async processing
-   - Database sharding by time
-
-5. **How do you handle rate limiting?**
-
-   - Redis-based rate limiting
-   - Per-user and per-channel limits
-   - Graceful degradation
-   - Queue overflow handling
-
-### Trade-off Questions
-
-6. **How do you balance delivery speed vs cost?**
-
-   - Priority queues for important notifications
-   - Batch processing for non-urgent
-   - Channel selection based on urgency
-   - Cost optimization by provider
-
-7. **How do you ensure delivery guarantees?**
-
-   - At-least-once delivery
-   - Idempotency for deduplication
-   - Dead letter queue for failures
-   - Retry with exponential backoff
-
-### Senior-level Questions
-
-8. **How would you implement multi-language support?**
-
-   - Template versioning by language
-   - User locale detection
-   - Fallback to default language
-   - Translation management
-
-9. **How do you handle notification fatigue?**
-
-   - Smart batching
-   - Priority-based delivery
-   - User engagement tracking
-   - Frequency capping
-
-10. **How would you implement real-time notifications?**
-
-    - WebSocket for in-app
-    - Push for mobile
-    - SSE for web
-    - Event-driven architecture
 
 ## Summary
 
@@ -1083,6 +1014,14 @@ Key takeaways:
 This design supports 100M+ users with 1B+ notifications per day while maintaining 99.99% availability.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

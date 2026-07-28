@@ -1,4 +1,14 @@
+---
+section: Form Handling
+category: Frontend
+tags: [interview-questions, reference]
+---
+
 # Form Handling Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 This comprehensive guide covers 25 interview questions on form handling in React, from fundamentals to advanced system design.
@@ -288,6 +298,13 @@ function solutionPattern(problem: string): string {
 ## Summary
 
 Form handling is a critical skill for React developers. Master controlled/uncontrolled components, validation patterns, and form libraries to build excellent user experiences.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [TypeScript](../02-TypeScript/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

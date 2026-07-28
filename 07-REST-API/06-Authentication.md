@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # API Authentication
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -834,84 +844,12 @@ const token = jwt.sign({ sub: user.id }, JWT_SECRET, { expiresIn: '1h' });
 - **Certificate caching** - Cache JWKS for RSA tokens
 - **Connection pooling** - Reuse database connections
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is the difference between authentication and authorization?** - Authentication: verifying identity; Authorization: verifying permissions.
-
-2. **What is JWT?** - JSON Web Token; a compact, URL-safe token format for securely transmitting information.
-
-3. **What are API keys?** - Simple tokens passed in headers to identify and authenticate clients.
-
-4. **Why should we use HTTPS?** - Encrypts data in transit, prevents token interception.
-
-5. **What is token expiration?** - Setting a time limit on token validity to reduce risk of stolen tokens.
-
-### Intermediate (5)
-
-6. **Explain OAuth 2.0 flow** - Delegated authorization framework with authorization code, implicit, and client credentials grants.
-
-7. **What are refresh tokens?** - Long-lived tokens used to obtain new access tokens without re-authentication.
-
-8. **How do you store JWT tokens securely?** - HttpOnly, Secure cookies for web; secure storage for mobile.
-
-9. **What is token rotation?** - Issuing new refresh tokens on each use to prevent token reuse attacks.
-
-10. **How do you handle token revocation?** - Use token blacklist, short expiry, or refresh token rotation.
-
-### Senior (10)
-
-11. **Design a scalable authentication system** - Stateless JWT, distributed session store, token introspection.
-
-12. **Implement MFA with TOTP** - Time-based one-time passwords, QR code generation, backup codes.
-
-13. **Design API key management** - Generation, rotation, scoping, usage tracking.
-
-14. **How do you prevent token theft?** - Secure storage, short expiry, token binding, device fingerprinting.
-
-15. **Design SSO for microservices** - Centralized auth, token propagation, session sharing.
-
-16. **Implement passwordless authentication** - Magic links, WebAuthn, biometrics.
-
-17. **Design rate limiting per user** - Token bucket, sliding window, distributed counters.
-
-18. **How do you handle concurrent token refresh?** - Token families, reuse detection, graceful degradation.
-
-19. **Design audit logging for auth events** - Login attempts, token usage, permission changes.
-
-20. **Implement zero-trust authentication** - Verify every request, no implicit trust, continuous validation.
-
-### FAANG-style (5)
-
-21. **Design authentication for a global platform** - Multi-region, latency-aware, failover strategies.
-
-22. **Design session management at scale** - Distributed sessions, sticky sessions, session affinity.
-
-23. **Implement certificate-based authentication** - mTLS, certificate rotation, revocation lists.
-
-24. **Design authentication for IoT devices** - Device provisioning, certificate management, secure boot.
-
-25. **How would you migrate from sessions to JWT?** - Dual support, gradual migration, backward compatibility.
-
-### Follow-ups (5)
-
-26. **What are the security risks of JWT?** - Token theft, no revocation, payload exposure.
-
-27. **How do you handle password reset securely?** - Time-limited tokens, rate limiting, notification.
-
-28. **What is session fixation and how to prevent it?** - Attack where attacker sets session ID; regenerate on login.
-
-29. **How do you implement remember-me functionality?** - Long-lived refresh tokens, secure cookie.
-
-30. **What are the tradeoffs between JWT and sessions?** - JWT: scalable but can't revoke; Sessions: revocable but stateful.
 
 ## Summary
 
 API authentication is critical for security. JWT is the most common choice for modern APIs due to its stateless nature. Always use HTTPS, implement token rotation, and handle expiration properly. For complex systems, consider OAuth 2.0 and multi-factor authentication. Regular security audits and monitoring are essential.
 
 ## Cheat Sheet
-
 | Method | Security | Scalability | Use Case |
 |--------|----------|-------------|----------|
 | API Key | Medium | High | External APIs |
@@ -919,6 +857,14 @@ API authentication is critical for security. JWT is the most common choice for m
 | OAuth 2.0 | High | High | Third-party access |
 | Session | Medium | Low | Traditional web |
 | Basic Auth | Low | High | Simple internal APIs |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

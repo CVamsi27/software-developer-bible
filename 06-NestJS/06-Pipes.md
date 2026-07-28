@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Pipes
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -662,103 +672,12 @@ export class TrimPipe implements PipeTransform {
 
 5. **Batch Validation**: Validate arrays efficiently with `{ each: true }`.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a pipe in NestJS?**
-A pipe is a class implementing `PipeTransform` that validates and transforms input data before it reaches the route handler.
-
-**Q2: What is the difference between `ParseIntPipe` and `ValidationPipe`?**
-
-- `ParseIntPipe`: Converts string to number
-- `ValidationPipe`: Validates data against DTO constraints
-
-**Q3: How do you apply a pipe globally?**
-Use `app.useGlobalPipes()` in main.ts or register via module.
-
-**Q4: What is `whitelist` in ValidationPipe?**
-Strips properties not defined in the DTO.
-
-**Q5: Can pipes be async?**
-Yes, pipes can return Promises.
-
-### Intermediate
-
-**Q6: How do you create a custom validation pipe?**
-Implement `PipeTransform` interface with `transform()` method, add `@Injectable()`, and throw `BadRequestException` for invalid data.
-
-**Q7: What is the difference between `transform: true` and `ParseIntPipe`?**
-
-- `transform: true`: Automatically transforms payloads to DTO instances
-- `ParseIntPipe`: Explicitly converts string parameters to numbers
-
-**Q8: How do you handle nested object validation?**
-Use `@ValidateNested()` with `@Type(() => NestedDto)`.
-
-**Q9: What is `forbidNonWhitelisted`?**
-When true, throws an error if non-whitelisted properties are present (instead of silently stripping them).
-
-**Q10: How do you validate query parameters?**
-Use `@Query()` with DTO and ValidationPipe.
-
-### Senior
-
-**Q11: How would you implement a pipe that validates against a database?**
-Create an async pipe that queries the database (e.g., check if email exists) and throws exceptions for invalid data.
-
-**Q12: How do you handle internationalized error messages?**
-Inject a localization service and use locale-specific error messages based on request headers.
-
-**Q13: Design a comprehensive validation strategy.**
-Layer validation: DTO validation (format), business rule validation (service layer), database validation (constraints).
-
-**Q14: How do you handle file validation in pipes?**
-Use `ParseFilePipe` with validators like `FileTypeValidator` and `MaxFileSizeValidator`.
-
-**Q15: How would you implement conditional validation?**
-Use class-validator's `@ValidateIf()` or create custom decorators with metadata.
-
-### FAANG-Style
-
-**Q16: Design a validation system for a GraphQL API.**
-Implement pipes for GraphQL argument validation using `GqlExecutionContext`. Use class-validator with GraphQL decorators.
-
-**Q17: How would you implement schema versioning in validation?**
-Use different DTOs per API version, or add version-aware validation logic to pipes.
-
-**Q18: Design a real-time validation system for streaming data.**
-Implement pipes that validate chunks of streaming data, buffering and validating incrementally.
-
-**Q19: How would you handle validation in distributed systems?**
-Implement validation at the API gateway, propagate validation context, and use schema registry for message validation.
-
-**Q20: Design a self-documenting validation system.**
-Generate OpenAPI/Swagger documentation from validation pipes. Use class-validator metadata to generate schemas.
-
-### Follow-ups
-
-**Q21: How do you test custom pipes?**
-Create a testing module, instantiate the pipe, and test transform with valid/invalid inputs.
-
-**Q22: What happens when a pipe throws an exception?**
-NestJS catches it and sends an appropriate error response (400 Bad Request by default).
-
-**Q23: Can pipes access the request object?**
-Yes, use `@Req()` decorator in the controller and pass to pipe, or use `ExecutionContext`.
-
-**Q24: How do you chain multiple pipes?**
-Apply multiple pipes with `@UsePipes()` or parameter-level pipes: `@Param('id', ParseIntPipe, AdditionalValidation)`.
-
-**Q25: What is the order of pipe execution?**
-Pipes execute in the order they're defined (parameter-level first, then method-level, then controller-level).
 
 ## Summary
 
 Pipes are NestJS's data transformation and validation mechanism. They ensure incoming data is valid and properly typed before reaching route handlers. Built-in pipes handle common cases, while custom pipes implement specific validation logic. Integration with class-validator and class-transformer provides powerful DTO-based validation.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `PipeTransform` | Interface pipes implement |
@@ -776,6 +695,14 @@ Pipes are NestJS's data transformation and validation mechanism. They ensure inc
 | `@ValidateNested()` | Validate nested objects |
 | `@Type(() => Class)` | Transform nested objects |
 | `BadRequestException` | Throw for validation errors |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [interview-questions, reference]
+---
+
 # GraphQL Interview Questions
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1725,6 +1735,13 @@ Key metrics:
 | **Follow-ups** | Testing, Next.js, monitoring, trade-offs |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

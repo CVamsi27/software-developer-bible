@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Route Handlers in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -713,131 +723,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What are Route Handlers?**
-   Route Handlers are API endpoints in the App Router. They handle HTTP requests using Web standard APIs (Request/Response) and can run on Edge or Node.js runtime.
-
-2. **Where do Route Handlers live?**
-   In the `app/` directory, typically under `api/`. File name must be `route.ts`.
-
-3. **How do you create a Route Handler?**
-   Create a `route.ts` file and export named functions for HTTP methods (GET, POST, PUT, DELETE).
-
-4. **What is the difference between Route Handlers and API Routes?**
-   Route Handlers use Web standard APIs, support Edge Runtime, and are in the App Router. API Routes use custom req/res objects and are in Pages Router.
-
-5. **How do you access request body in Route Handlers?**
-   Use `await request.json()` for JSON, `await request.formData()` for forms, or `await request.text()` for raw text.
-
-6. **How do you return JSON from Route Handlers?**
-   Use `Response.json(data)` or `NextResponse.json(data)` with optional status and headers.
-
-7. **Can Route Handlers run on Edge Runtime?**
-   Yes! Add `export const runtime = 'edge'` to use Edge Runtime for faster execution.
-
-8. **How do you handle errors in Route Handlers?**
-   Use try/catch blocks and return appropriate HTTP status codes with error messages.
-
-### Intermediate (5-10)
-
-9. **How do you handle authentication in Route Handlers?**
-   Check headers for tokens, validate JWTs, verify API keys, or check session cookies.
-
-10. **How do you implement rate limiting?**
-    Use in-memory stores or Redis to track requests per IP/client and return 429 when exceeded.
-
-11. **How do you handle file uploads?**
-    Use `request.formData()` to access files, process them, and upload to storage services.
-
-12. **How do you implement streaming responses?**
-    Return a `ReadableStream` with appropriate Content-Type headers for SSE or chunked responses.
-
-13. **How do you handle CORS?**
-    Add CORS headers to responses or use middleware to handle preflight requests.
-
-14. **How do you implement webhook handling?**
-    Verify webhook signatures, parse payloads, and process events with proper error handling.
-
-15. **How do you cache Route Handler responses?**
-    Use Cache-Control headers or Next.js caching with `revalidate` option.
-
-### Senior (10-15)
-
-16. **Design a RESTful API using Route Handlers.**
-    Implement proper HTTP methods, status codes, pagination, filtering, and error handling. Use middleware for authentication and rate limiting.
-
-17. **How would you implement a GraphQL API with Route Handlers?**
-    Handle POST requests, parse GraphQL queries, resolve data, and return responses. Use DataLoader for efficient data fetching.
-
-18. **Explain the Route Handler execution model.**
-    Request → Middleware → Route Matching → Method Handler → Response. Edge Runtime for fast execution, Node.js for full API access.
-
-19. **How do you implement real-time features with Route Handlers?**
-    Use Server-Sent Events (SSE) or WebSocket upgrades for real-time communication.
-
-20. **Design a webhook processing system.**
-    Implement signature verification, idempotency handling, retry logic, and event queue processing.
-
-21. **How would you implement API versioning?**
-    Use URL-based versioning (/api/v1/, /api/v2/) or header-based versioning with proper routing.
-
-22. **Design a rate limiting system for Route Handlers.**
-    Implement token bucket or sliding window algorithms, use Redis for distributed limiting, and handle rate limit headers.
-
-23. **How do you implement request validation middleware?**
-    Create reusable validation functions, use Zod schemas, and return structured error responses.
-
-24. **Design an API monitoring system.**
-    Track response times, error rates, request volumes, and implement alerting for anomalies.
-
-25. **How would you implement API documentation?**
-    Use OpenAPI/Swagger, generate documentation from code, and provide interactive API explorer.
-
-### FAANG-style (5-10)
-
-26. **Design a globally distributed API with Route Handlers.**
-    Use edge computing, implement geo-routing, handle data replication, and optimize for latency.
-
-27. **How would you implement a microservices API gateway?**
-    Handle service discovery, load balancing, authentication, and request routing across services.
-
-28. **Design an API that handles millions of requests per day.**
-    Implement caching, connection pooling, query optimization, and horizontal scaling.
-
-29. **How would you implement API rate limiting at scale?**
-    Use distributed rate limiting, implement adaptive limits, and handle rate limit abuse.
-
-30. **Design a system for API versioning and deprecation.**
-    Implement version detection, migration tools, deprecation warnings, and backward compatibility.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Route Handlers?**
-    Edge Runtime limitations, no streaming in some cases, and debugging complexity.
-
-32. **How do Route Handlers affect SEO?**
-    API endpoints aren't directly SEO-relevant, but they serve data for SEO-optimized pages.
-
-33. **What is the future of Route Handlers?**
-    Better Edge support, improved streaming, and enhanced Developer Experience.
-
-34. **How do you test Route Handlers?**
-    Use Jest for unit tests, supertest for integration tests, and Playwright for E2E tests.
-
-35. **What security considerations apply?**
-    Input validation, authentication, rate limiting, CORS, and secure headers.
-
-36. **How do Route Handlers interact with caching?**
-    They can use HTTP caching, Next.js data cache, and full route cache.
-
-37. **What are alternatives to Route Handlers?**
-    Server Actions, external API services, and serverless functions.
-
-38. **How do you monitor Route Handlers in production?**
-    Log requests, track metrics, implement alerting, and use APM tools.
 
 ## Summary
 
@@ -852,7 +737,6 @@ Optimization:
 | Use case | API endpoints |
 
 ## Cheat Sheet
-
 ```text
 File: app/api/[...]/route.ts
 
@@ -882,6 +766,13 @@ export const revalidate = 60
 export const dynamic = 'force-dynamic'
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

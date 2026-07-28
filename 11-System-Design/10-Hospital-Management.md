@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Hospital Management System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -1025,85 +1035,6 @@ alerts:
 | Audit | Synchronous | Asynchronous | Synchronous (HIPAA) |
 | Scheduling | Optimistic | Pessimistic | Pessimistic |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you design a HIPAA-compliant system?**
-
-   - Encrypt PHI at rest and in transit
-   - Audit logging for all access
-   - Role-based access control
-   - Data backup and recovery
-
-2. **How do you handle appointment scheduling?**
-
-   - Real-time availability checking
-   - Pessimistic locking for slots
-   - Cache invalidation on booking
-   - Conflict detection and resolution
-
-3. **How would you implement multi-tenancy?**
-
-   - Shared database with row-level security
-   - Hospital-specific encryption keys
-   - Separate audit logs per hospital
-   - Feature flags per hospital
-
-### Scaling Questions
-
-4. **How do you scale to 100K+ patients?**
-
-   - Database sharding by hospital
-   - Redis for caching
-   - Read replicas for queries
-   - Async processing for records
-
-5. **How do you handle peak appointment times?**
-
-   - Pre-warm availability cache
-   - Queue booking requests
-   - Auto-scale during peaks
-   - Monitor and alert
-
-### Trade-off Questions
-
-6. **How do you balance security vs usability?**
-
-   - Strong authentication
-   - Role-based access
-   - Session management
-   - Audit without friction
-
-7. **How do you handle data migration between hospitals?**
-
-   - Patient consent required
-   - Secure data transfer
-   - Audit trail
-   - Backup before migration
-
-### Senior-level Questions
-
-8. **How would you implement telemedicine?**
-
-   - Video conferencing integration
-   - E-prescriptions
-   - Virtual waiting room
-   - Insurance verification
-
-9. **How do you handle lab result integration?**
-
-   - HL7/FHIR standards
-   - Real-time result delivery
-   - Abnormal result alerts
-   - Result interpretation
-
-10. **How would you implement predictive analytics?**
-
-    - Patient risk scoring
-    - Appointment no-show prediction
-    - Resource allocation
-    - Disease outbreak detection
 
 ## Summary
 
@@ -1130,6 +1061,14 @@ Key takeaways:
 This design supports 100K+ patients with 10K+ appointments per day while maintaining HIPAA compliance.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

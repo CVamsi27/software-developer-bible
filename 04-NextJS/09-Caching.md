@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Caching in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -589,131 +599,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What are the caching layers in Next.js?**
-   Request Memoization, Data Cache, Full Route Cache, and Router Cache. Each serves different purposes.
-
-2. **What is the Data Cache?**
-   Persistent cache for fetch results across requests. Can be revalidated by time or on-demand.
-
-3. **What is the Full Route Cache?**
-   Caches the entire rendered output of static routes. Stores React Server Component HTML/RSC payload.
-
-4. **What is the Router Cache?**
-   Client-side cache in the browser. Caches RSC payload for instant navigation.
-
-5. **How do you enable caching?**
-   Use `next.revalidate` for time-based caching, `cache: 'force-cache'` for permanent, or `cache: 'no-store'` for no caching.
-
-6. **What is Request Memoization?**
-   Automatic deduplication of fetch calls in the same request. If you fetch the same URL twice, it only runs once.
-
-7. **How do you invalidate cache?**
-   Use `revalidatePath()` or `revalidateTag()` for on-demand invalidation, or wait for time-based expiration.
-
-8. **What is ISR?**
-   Incremental Static Regeneration combines static generation with periodic revalidation, updating pages after build time.
-
-### Intermediate (5-10)
-
-9. **How does tag-based revalidation work?**
-   Tag fetch calls with `next.tags`, then call `revalidateTag()` to invalidate all fetches with that tag.
-
-10. **How do you cache API responses?**
-    Use Cache-Control headers in Route Handlers, or `next.revalidate` in Server Components.
-
-11. **What is the difference between `force-cache` and `revalidate`?**
-    `force-cache` caches indefinitely until manually invalidated. `revalidate` caches for a specified time period.
-
-12. **How do you handle cache for personalized content?**
-    Don't cache personalized content, or use `cache: 'no-store'`. Cache only public, non-user-specific data.
-
-13. **How do you implement cache warming?**
-    Pre-fetch popular pages at build time, use ISR to keep them fresh, and implement background regeneration.
-
-14. **What is the relationship between ISR and CDN caching?**
-    ISR stores in Data Cache. CDN serves cached content. Revalidation triggers background regeneration at edge.
-
-15. **How do you monitor cache performance?**
-    Track cache hit rates, monitor revalidation frequency, and log cache misses for optimization.
-
-### Senior (10-15)
-
-16. **Design a caching strategy for an e-commerce platform.**
-    Use ISR for product pages (60s revalidation), on-demand revalidation for inventory changes, no cache for cart/checkout, and CDN caching for static assets.
-
-17. **How would you implement cache invalidation at scale?**
-    Use tag-based invalidation, implement webhook handlers, use message queues for async invalidation, and monitor cache freshness.
-
-18. **Explain the cache hierarchy and when to use each layer.**
-    Request Memoization for deduplication, Data Cache for persistent fetches, Full Route Cache for static pages, Router Cache for client navigation.
-
-19. **How do you handle cache consistency in distributed systems?**
-    Implement cache versioning, use eventual consistency models, handle stale reads, and implement cache coherence protocols.
-
-20. **Design a cache monitoring and alerting system.**
-    Track hit rates, monitor latency, alert on anomalies, and implement dashboards for cache performance.
-
-21. **How would you implement multi-region caching?**
-    Use CDN edge caching, implement regional cache invalidation, handle data residency, and optimize for latency.
-
-22. **Design a cache warming strategy for high-traffic events.**
-    Predict popular content, pre-fetch at scale, implement background warming, and handle traffic spikes.
-
-23. **How do you handle cache for real-time data?**
-    Use short revalidation periods, implement WebSocket for live updates, and combine with client-side polling.
-
-24. **Design a cache invalidation system with webhooks.**
-    Handle webhook events, implement idempotent invalidation, use message queues, and ensure reliability.
-
-25. **How would you implement cache for internationalized content?**
-    Cache per locale, implement locale-based tags, handle language switching, and optimize for multi-language sites.
-
-### FAANG-style (5-10)
-
-26. **Design a distributed caching system for millions of pages.**
-    Use multi-tier caching, implement cache sharding, handle cache stampedes, and optimize for consistency.
-
-27. **How would you implement machine learning for cache optimization?**
-    Predict cache hits, optimize revalidation timing, implement adaptive caching, and learn from access patterns.
-
-28. **Design a cache system with automatic optimization.**
-    Implement self-tuning caches, use heuristics for revalidation, and adapt to traffic patterns.
-
-29. **How would you implement cache for a CDN at global scale?**
-    Use edge caching, implement cache consistency across regions, handle failover, and optimize for latency.
-
-30. **Design a cache system with fault tolerance.**
-    Implement cache fallbacks, handle cache failures gracefully, use circuit breakers, and ensure availability.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Next.js caching?**
-    Limited to fetch API, no fine-grained cache control, and caching behavior can be confusing.
-
-32. **How does caching affect debugging?**
-    Cached responses may show stale data, making debugging difficult. Use cache bypass for debugging.
-
-33. **What is the future of caching in Next.js?**
-    Better cache controls, improved DevTools, and more granular invalidation options.
-
-34. **How do you test caching behavior?**
-    Test cache hits/misses, verify revalidation, monitor cache statistics, and test error scenarios.
-
-35. **What security considerations apply to caching?**
-    Don't cache sensitive data, implement cache poisoning prevention, and handle cache-based attacks.
-
-36. **How do you handle cache for offline support?**
-    Implement Service Worker caching, use IndexedDB for offline data, and handle sync when online.
-
-37. **What are alternatives to Next.js caching?**
-    CDN caching, Redis caching, browser caching, and custom caching solutions.
-
-38. **How do you migrate caching strategies?**
-    Analyze current caching, implement gradually, monitor performance, and adjust based on metrics.
 
 ## Summary
 
@@ -725,7 +610,6 @@ Optimization:
 | Router Cache | Client (browser) | Cache RSC payload | Navigation |
 
 ## Cheat Sheet
-
 ```text
 Data Cache options:
 fetch(url)                              → Default caching
@@ -749,6 +633,13 @@ import { cache } from 'react'
 export const getData = cache(async () => { ... })
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

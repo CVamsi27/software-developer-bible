@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # SSR, CSR, SSG, and ISR in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -679,131 +689,6 @@ ISR:  Same as SSG, with periodic regeneration
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the difference between SSR and CSR?**
-   CSR renders in the browser after JS loads; SSR renders on the server on every request. SSR provides faster first paint and better SEO.
-
-2. **What does SSG stand for and when should you use it?**
-   Static Site Generation pre-builds HTML at build time. Use for content that doesn't change frequently (marketing pages, docs, blogs).
-
-3. **What is ISR?**
-   Incremental Static Regeneration allows static pages to be updated after build time through revalidation, combining static performance with dynamic data.
-
-4. **Which rendering strategy is best for SEO?**
-   SSG and SSR are best for SEO because they provide fully rendered HTML. CSR is worse for SEO because crawlers may not execute JavaScript.
-
-5. **Can you use all rendering strategies in the App Router?**
-   Yes, but the API is different. Use `fetch` with `cache` and `next.revalidate` options instead of `getServerSideProps`/`getStaticProps`.
-
-6. **What is `fallback` in `getStaticPaths`?**
-   It determines what happens when a page is requested that wasn't pre-rendered: `false` = 404, `true` = show fallback UI, `'blocking'` = server-render on demand.
-
-7. **How does hydration work?**
-   Hydration is when React attaches event listeners to pre-rendered HTML, making it interactive. The HTML is served from the server, then React takes over.
-
-8. **What is TTFB?**
-   Time to First Byte — how long it takes for the browser to receive the first byte of data. SSG has the best TTFB, SSR is slower.
-
-### Intermediate (5-10)
-
-9. **Explain the difference between `revalidate: 60` and on-demand revalidation.**
-   `revalidate: 60` revalidates after 60 seconds (time-based). On-demand revalidation uses `revalidateTag()` or `revalidatePath()` triggered by events like webhook calls.
-
-10. **How do you handle authentication with SSR?**
-    Access cookies/headers in `getServerSideProps` (Pages Router) or directly in the Server Component (App Router) to check authentication before rendering.
-
-11. **What is the `stale-while-revalidate` pattern in ISR?**
-    Serve the stale (cached) page immediately while regenerating in the background. Next request gets the fresh version.
-
-12. **How do you generate static pages dynamically in the App Router?**
-    Use `generateStaticParams()` to define which paths to pre-render and `dynamicParams = true/false` to control on-demand generation.
-
-13. **When would you use `force-dynamic` in the App Router?**
-    When you need SSR behavior (fresh data on every request) — for personalized pages, real-time dashboards, or pages with user-specific content.
-
-14. **How do you debug rendering strategy?**
-    Use `next.config.js` to enable debug headers, check the `x-render-mode` header, or use `next build` to see which pages are static vs dynamic.
-
-15. **What happens if `getStaticProps` throws an error?**
-    In Pages Router, the page shows a 500 error. In build mode, the build fails. You should handle errors gracefully.
-
-### Senior (10-15)
-
-16. **Design a rendering strategy for an e-commerce platform with 100K+ products.**
-    Use ISR with `generateStaticParams` for the top 10K products, `dynamicParams: true` for the rest. Set `revalidate: 300` for prices, use on-demand revalidation for inventory changes via webhooks. Use SSR for cart/checkout pages.
-
-17. **How would you implement ISR with database-backed content?**
-    Use on-demand revalidation triggered by CMS webhooks or database change events. Store a version/hash in the database, compare at request time. Implement a stale-while-revalidate pattern with Redis caching as a fallback.
-
-18. **Explain the performance tradeoffs between SSR and ISR for a news site.**
-    SSR: Always fresh, but slower TTFB and higher server cost. ISR: Fast TTFB, lower server cost, but content can be stale. Solution: Use ISR with short revalidation (30s) and on-demand revalidation for breaking news.
-
-19. **How do you handle edge cases in `getStaticPaths` with fallback?**
-    For `fallback: 'blocking'`, implement rate limiting to prevent abuse. For `fallback: true`, ensure proper loading states. Consider using `getServerSideProps` fallback for personalized content.
-
-20. **How would you migrate a large CRA app to Next.js with mixed rendering?**
-    Identify page types: static pages → SSG, dynamic pages → SSR, interactive widgets → CSR. Migrate incrementally using `next/dynamic` for lazy loading. Set up proper caching headers and monitor performance.
-
-21. **Design a system for A/B testing with different rendering strategies.**
-    Use middleware to detect A/B test variants via cookies/headers. Serve different page variants using `getStaticProps` with different data based on the variant. Cache each variant separately. Use edge functions for low-latency routing.
-
-22. **How do you handle streaming SSR with React Suspense?**
-    Use `loading.tsx` in App Router for automatic Suspense boundaries. Wrap slow data fetches in `<Suspense>` components. The shell renders first, then streaming fills in delayed content.
-
-23. **Explain the relationship between ISR and CDN caching.**
-    ISR stores rendered pages in the data cache. When deployed to Vercel/CDN, the CDN serves cached HTML. Revalidation triggers a background regeneration. The CDN invalidates its cache when the data cache updates.
-
-24. **How do you prevent stale data in ISR for critical pages?**
-    Use short revalidation intervals (5-30s) combined with on-demand revalidation. Implement client-side polling for real-time updates. Use WebSocket connections for live data. Monitor cache hit rates.
-
-25. **How would you implement ISR with a headless CMS?**
-    Set up webhook handlers in Next.js to receive publish/unpublish events from the CMS. Trigger `revalidateTag()` for the affected content. Use `revalidatePath()` for navigation/menu changes. Implement draft mode for content preview.
-
-### FAANG-style (5-10)
-
-26. **Design a rendering architecture that handles 1M+ daily users with 99.9% availability.**
-    Use SSG for public pages, ISR with aggressive caching for product pages, SSR for authenticated dashboards. Implement circuit breakers for data fetching, fallback rendering strategies, and edge caching. Monitor with observability tools.
-
-27. **How would you optimize rendering performance for a page with 50+ data dependencies?**
-    Use parallel data fetching with `Promise.all()`. Implement streaming SSR to render the shell first. Use React Suspense boundaries for progressive loading. Consider using React cache() for deduplication. Profile with React DevTools.
-
-28. **Explain how you'd implement a rendering strategy that adapts based on user device/network.**
-    Detect device type and network quality in middleware. Serve lightweight CSR for slow connections, full SSR for fast ones. Use Service Workers for offline support. Implement adaptive image loading.
-
-29. **Design a system for real-time collaborative editing with SSR.**
-    Use WebSocket connections for real-time sync. Implement operational transformation or CRDT for conflict resolution. Use SSR for initial page load with pre-populated data. Switch to CSR for interactive editing. Implement presence indicators.
-
-30. **How would you handle rendering failures gracefully in a distributed system?**
-    Implement retry logic with exponential backoff. Use fallback rendering (serve stale cache). Implement circuit breakers to prevent cascade failures. Use health checks and alerting. Design degraded mode rendering.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of ISR compared to SSR?**
-    ISR can serve stale data within the revalidation window. It doesn't support request-time data like headers/cookies. It requires a data cache layer. On-demand revalidation has latency.
-
-32. **How do you handle SEO with CSR-heavy applications?**
-    Use pre-rendering services (Prerender.io), implement SSR for critical pages, use dynamic sitemaps, and implement proper meta tags. Consider using a hybrid approach.
-
-33. **What is the impact of rendering strategy on Core Web Vitals?**
-    CSR: Poor LCP/FCP, good CLS. SSR: Good LCP/FP, potential CLS. SSG: Excellent all metrics. ISR: Same as SSG with background updates.
-
-34. **How do you test different rendering strategies?**
-    Use `next build && next start` to test production builds. Test ISR with time-based and on-demand revalidation. Use Lighthouse for performance testing. Implement E2E tests for each strategy.
-
-35. **What are the cost implications of each strategy?**
-    CSR: Low server cost, high CDN cost. SSR: High server cost, low CDN cost. SSG: Zero server cost, high CDN cost. ISR: Low server cost, high CDN cost.
-
-36. **How do you handle internationalization with different rendering strategies?**
-    Use SSG for statically translated pages, ISR for content that changes per locale, SSR for user-specific localized content. Use middleware for locale detection and routing.
-
-37. **What is the relationship between rendering strategy and caching layers?**
-    SSG: Build-time cache only. SSR: No caching by default (add cache headers). ISR: Data cache + full route cache. Understanding cache hierarchy is crucial for performance.
-
-38. **How do you handle form submissions with different rendering strategies?**
-    CSR: Client-side form handling. SSR: Server Actions or API routes. SSG: Static forms with client-side submission. ISR: Same as SSG. Use progressive enhancement for maximum compatibility.
 
 ## Summary
 
@@ -817,7 +702,6 @@ ISR:  Same as SSG, with periodic regeneration
 | Complexity | Low | Medium | Low | Medium |
 
 ## Cheat Sheet
-
 ```text
 CSR  → 'use client' + useEffect (App Router)
 SSR  → fetch() in Server Component, cache: 'no-store' (App Router)
@@ -834,6 +718,13 @@ no-store        → No caching (SSR)
 no-cache        → Revalidate every time
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # PostgreSQL
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -602,114 +612,12 @@ WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is PostgreSQL?**
-   Open-source, ACID-compliant, object-relational database with extensibility.
-
-2. **What is the difference between SQL and PostgreSQL?**
-   SQL is a language; PostgreSQL is a database that implements SQL with extensions.
-
-3. **What are the main data types?**
-   INTEGER, TEXT, VARCHAR, BOOLEAN, TIMESTAMP, JSONB, UUID, arrays.
-
-4. **What is a primary key?**
-   A column (or set) that uniquely identifies each row; cannot be NULL.
-
-5. **What is an index?**
-   A data structure that improves query speed by allowing fast lookups.
-
-### Intermediate (5)
-
-6. **What is JSONB and why use it?**
-   Binary JSON format with indexing support; flexible schema within relational DB.
-
-7. **What are CTEs?**
-   Common Table Expressions; temporary named result sets for complex queries.
-
-8. **What is a materialized view?**
-   A view stored as a physical table; must be refreshed manually.
-
-9. **What is the difference between WHERE and HAVING?**
-   WHERE filters rows before GROUP BY; HAVING filters groups after.
-
-10. **What are window functions?**
-    Functions that perform calculations across related rows without collapsing them.
-
-### Senior (10)
-
-11. **Explain PostgreSQL's MVCC implementation.**
-    Uses tuple versioning (xmin/xmax); old versions kept until VACUUM.
-
-12. **What is WAL and why is it important?**
-    Write-Ahead Logging; ensures durability and enables point-in-time recovery.
-
-13. **How does PostgreSQL handle concurrent updates?**
-    MVCC with serialization; last commit wins or serialization error.
-
-14. **What is a GIN index?**
-    Generalized Inverted Index; for arrays, JSONB, full-text search.
-
-15. **Explain connection pooling and why it's needed.**
-    Reuses connections to avoid fork overhead; PgBouncer, PgPool-II.
-
-16. **What is table partitioning?**
-    Splitting large tables into smaller pieces; range, list, or hash.
-
-17. **What is logical replication vs physical replication?**
-    Logical: row-level, selective; Physical: block-level, exact copies.
-
-18. **How do you handle schema migrations in production?**
-    Use tools like Prisma Migrate, Flyway, or Alembic with zero-downtime strategies.
-
-19. **What is the N+1 query problem and how do you solve it?**
-    Multiple individual queries instead of one; solve with JOINs or eager loading.
-
-20. **Explain query optimization techniques.**
-    EXPLAIN ANALYZE, proper indexes, avoiding SELECT *, parameterized queries.
-
-### FAANG-style (5)
-
-21. **Design a schema for a social media feed with billions of posts.**
-    Partitioning by user_id, denormalized feed table, Redis cache.
-
-22. **How would you implement a real-time leaderboard?**
-    Sorted sets in Redis, or PostgreSQL with window functions + materialized view.
-
-23. **Explain CAP theorem in context of PostgreSQL replication.**
-    PostgreSQL is CP; favors consistency over availability during network partitions.
-
-24. **Design a multi-tenant SaaS database architecture.**
-    Schema-per-tenant, row-level security, or database-per-tenant.
-
-25. **How do you handle schema changes without downtime?**
-    Expand-contract pattern, feature flags, backward-compatible migrations.
-
-### Follow-ups (5)
-
-26. **When would you choose MongoDB over PostgreSQL?**
-    Flexible schemas, document-heavy workloads, rapid prototyping.
-
-27. **How does PostgreSQL handle full-text search?**
-    tsvector, tsquery, GIN indexes; can replace Elasticsearch for simple cases.
-
-28. **What is the performance impact of JSONB vs structured columns?**
-    JSONB has slight overhead; structured columns are faster for known queries.
-
-29. **How do you monitor PostgreSQL in production?**
-    pg_stat_statements, pgBadger, Prometheus + Grafana, pg_stat_activity.
-
-30. **What are advisory locks in PostgreSQL?**
-    Application-level locks; useful for distributed locking without table rows.
 
 ## Summary
 
 PostgreSQL is the most feature-rich open-source relational database. Its key strengths include MVCC for concurrency, JSONB for flexibility, extensibility, and standards compliance. Understanding its architecture (process model, shared memory, WAL) is essential for performance tuning and debugging. Use appropriate indexes, connection pooling, and query optimization for production workloads.
 
 ## Cheat Sheet
-
 ```bash
 # Connection
 psql -h localhost -p 5432 -U username -d database
@@ -734,6 +642,13 @@ SHOW work_mem;
 SHOW max_connections;
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

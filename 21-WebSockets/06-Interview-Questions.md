@@ -1,4 +1,14 @@
+---
+section: WebSockets
+category: Real-Time
+tags: [interview-questions, reference]
+---
+
 # WebSockets & Real-Time Interview Questions
+
+[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1670,6 +1680,13 @@ class RegionalServer {
 4. What monitoring would you implement?
 
 5. How would you test this system?
+
+---
+
+## See Also
+- [System Design](../11-System-Design/)
+- [NestJS](../06-NestJS/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

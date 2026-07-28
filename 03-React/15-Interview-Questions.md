@@ -1,4 +1,14 @@
+---
+section: React
+category: Frontend
+tags: [interview-questions, reference]
+---
+
 # React Interview Questions
+
+[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## 60 Most Asked React Interview Questions
 
@@ -219,6 +229,15 @@ Covers: Design patterns, architecture decisions, system design, future of React.
 ## Summary
 
 This guide covers 60 essential React interview questions across all difficulty levels. Master these topics to demonstrate deep understanding of React's architecture, hooks, performance optimization, and best practices.
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [Next.js](../04-NextJS/)
+- [Testing](../16-Testing/)
+- [Form Handling](../29-Form-Handling/)
+- [Animation](../30-Animation/)
 
 ## References & Learn More
 

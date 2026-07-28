@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # API Gateway
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -784,84 +794,12 @@ app.use('/api/users', createProxyMiddleware({
 - **Async processing** - Non-blocking I/O
 - **Connection limits** - Prevent connection exhaustion
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is an API Gateway?** - A single entry point for all client requests, handling routing, auth, and other concerns.
-
-2. **Why do we need an API Gateway?** - Simplifies client logic, centralizes cross-cutting concerns, improves security.
-
-3. **What is routing in an API Gateway?** - Directing requests to appropriate backend services based on path or other criteria.
-
-4. **What is rate limiting at the gateway?** - Controlling request rates before they reach individual services.
-
-5. **What is request transformation?** - Modifying request headers, body, or path before forwarding to services.
-
-### Intermediate (5)
-
-6. **How does an API Gateway handle authentication?** - Validates tokens, adds user context to headers, forwards to services.
-
-7. **What is a circuit breaker?** - A pattern to prevent cascade failures by stopping requests to failing services.
-
-8. **How do you implement load balancing?** - Round-robin, least connections, or health-aware algorithms.
-
-9. **What is response aggregation?** - Combining responses from multiple services into a single response.
-
-10. **How do you handle service discovery?** - Use service registry (Consul, etcd) or environment variables.
-
-### Senior (10)
-
-11. **Design an API Gateway for microservices** - Routing, auth, rate limiting, circuit breakers, monitoring.
-
-12. **How do you handle gateway high availability?** - Multiple instances, load balancing, health checks, failover.
-
-13. **Design request/response transformation** - Header manipulation, body transformation, protocol translation.
-
-14. **How do you monitor an API Gateway?** - Metrics, logging, tracing, alerting on latency and errors.
-
-15. **Design gateway caching** - Response caching, cache invalidation, cache headers.
-
-16. **How do you handle gateway security?** - TLS termination, WAF integration, DDoS protection.
-
-17. **Design gateway for real-time applications** - WebSocket support, SSE handling, long polling.
-
-18. **How do you test an API Gateway?** - Load testing, chaos engineering, integration testing.
-
-19. **Design gateway for multi-region deployment** - Regional routing, latency-aware routing, failover.
-
-20. **How do you version APIs at the gateway?** - Path-based versioning, header-based routing, A/B testing.
-
-### FAANG-style (5)
-
-21. **Design an API Gateway for Netflix-scale traffic** - Distributed gateway, edge caching, regional routing.
-
-22. **How would you implement gateway for serverless?** - Lambda@Edge, CloudFront functions, cold start optimization.
-
-23. **Design gateway for GraphQL federation** - Schema stitching, query planning, distributed resolvers.
-
-24. **How do you handle gateway for gRPC services?** - gRPC-Web, protocol translation, load balancing.
-
-25. **Design gateway for IoT devices** - MQTT support, device authentication, protocol translation.
-
-### Follow-ups (5)
-
-26. **What are the alternatives to API Gateway?** - Service mesh, client-side load balancing, direct service calls.
-
-27. **How do you handle gateway deployment?** - Blue-green, canary, rolling updates, feature flags.
-
-28. **What is the difference between API Gateway and Service Mesh?** - Gateway: edge proxy; Service Mesh: sidecar proxy for service-to-service.
-
-29. **How do you handle gateway configuration?** - Config files, environment variables, dynamic configuration.
-
-30. **What are the limitations of API Gateway?** - Single point of failure, latency overhead, complexity.
 
 ## Summary
 
 An API Gateway is essential for microservices architectures. It provides a single entry point, centralizes cross-cutting concerns, and simplifies client interactions. Key features include routing, authentication, rate limiting, circuit breaking, and request transformation. Always implement monitoring, health checks, and graceful degradation.
 
 ## Cheat Sheet
-
 | Component | Purpose | Implementation |
 |-----------|---------|----------------|
 | Routing | Direct requests to services | Path-based, header-based |
@@ -873,6 +811,14 @@ An API Gateway is essential for microservices architectures. It provides a singl
 | Response Transform | Modify responses | Pagination links, field removal |
 | Caching | Reduce service load | Response caching, CDN integration |
 | Monitoring | Track performance | Metrics, logging, tracing |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

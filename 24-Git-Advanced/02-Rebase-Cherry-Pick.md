@@ -1,4 +1,14 @@
+---
+section: Git Advanced
+category: Reference
+tags: [concept]
+---
+
 # Rebase & Cherry-Pick
+
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -232,153 +242,15 @@ git rebase --abort
 - **Conflict resolution**: Can be time-consuming
 - **Large repositories**: Consider shallow clones
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is git rebase?**
-
-   - Reapplies commits on top of another base, creating linear history.
-
-2. **What is git cherry-pick?**
-
-   - Applies a specific commit from one branch to another.
-
-3. **What is the difference between rebase and merge?**
-
-   - Rebase creates linear history, merge preserves branch history.
-
-4. **When should you use rebase?**
-
-   - When you want clean, linear history without merge commits.
-
-5. **When should you use cherry-pick?**
-
-   - When you need to apply specific commits to other branches.
-
-6. **What is interactive rebase?**
-
-   - Rebase that allows editing, squashing, or dropping commits.
-
-7. **What is the `-m` flag in cherry-pick?**
-
-   - Specifies which parent to use when cherry-picking a merge commit.
-
-8. **How do you abort a rebase?**
-
-   - `git rebase --abort` returns to the original state.
-
-### Intermediate (5-10)
-
-9. **What happens to commits during rebase?**
-
-   - New commits are created with different hashes but same changes.
-
-10. **How do you resolve conflicts during rebase?**
-
-    - Edit files, stage changes, continue rebase with `git rebase --continue`.
-
-11. **What is the difference between `git merge --squash` and `git rebase -i`?**
-
-    - Squash combines all changes into one commit, interactive rebase allows selective squashing.
-
-12. **How do you cherry-pick a range of commits?**
-
-    - `git cherry-pick start..end` or `git cherry-pick start^..end`.
-
-13. **What is autostash in rebase?**
-
-    - Automatically stashes changes before rebase and applies after.
-
-14. **How do you track cherry-picked commits?**
-
-    - Cherry-picked commits have different hashes, track manually or use `git log --cherry`.
-
-15. **What is the difference between `git pull` and `git pull --rebase`?**
-
-    - Pull --rebase rebases your changes on top of remote changes.
-
-16. **How do you rebase onto a different branch?**
-
-    - `git rebase --onto newbase oldbase branch`.
-
-### Senior (10-15)
-17. **When should you never rebase?**
-
-    - Never rebase commits that have been pushed to a shared repository.
-
-18. **How does rebase affect commit hashes?**
-
-    - All rebased commits get new hashes, breaking references.
-
-19. **What is the `--onto` flag in rebase?**
-
-    - Rebases commits from one branch onto another, excluding commits from a third branch.
-
-20. **How do you handle cherry-pick conflicts?**
-
-    - Same as merge conflicts: resolve, stage, continue cherry-pick.
-
-21. **What is the difference between `git revert` and `git reset`?**
-
-    - Revert creates new commit that undoes changes, reset moves HEAD.
-
-22. **How do you cherry-pick multiple branches?**
-
-    - Iterate through branches or use a script to cherry-pick commits.
-
-23. **What is the impact of rebase on pull requests?**
-
-    - Can make review difficult, prefer merge for PRs.
-
-24. **How do you handle upstream changes during rebase?**
-
-    - Fetch first, then rebase onto upstream branch.
-
-### FAANG-style (5-10)
-25. **Design a workflow for applying hotfixes to multiple release branches.**
-
-    - Cherry-pick fix to each branch, test independently, coordinate releases.
-
-26. **How would you handle a large-scale rebase across 100+ branches?**
-
-    - Script the process, test each branch, coordinate with team, have rollback plan.
-
-27. **What are the trade-offs between rebase and merge in large teams?**
-
-    - Rebase: clean history but risky. Merge: safe but messy history.
-
-28. **How do you implement a feature flag system with cherry-pick?**
-
-    - Cherry-pick feature flag code, enable/disable via configuration.
-
-29. **Design a system to track cherry-picked commits across branches.**
-
-    - Use commit message markers, database tracking, or Git hooks.
-
-### Follow-ups (5-10)
-30. **How does rebase handle merge commits?**
-
-    - Skips merge commits unless specified with `-m`.
-
-31. **What is the difference between `git rebase` and `git rebase -i`?**
-
-    - Interactive allows editing commits, regular just replays them.
-
-32. **How do you undo a cherry-pick?**
-
-    - `git revert <cherry-picked-commit-hash>`.
-
-33. **What is the `--no-commit` flag in cherry-pick?**
-
-    - Applies changes without creating a commit.
-
-34. **How do you handle binary files during rebase?**
-
-    - Same as text files, but conflicts may require manual resolution.
 
 ## Summary
 Rebase and cherry-pick are powerful Git operations for managing history and applying specific changes. Rebase creates clean, linear history while cherry-pick allows selective commit application. Use them carefully, especially on shared branches, and always test after applying these operations.
+
+---
+
+## See Also
+- [CI/CD](../15-CI-CD/)
+- [Monorepo](../28-Monorepo/)
 
 ## References & Learn More
 

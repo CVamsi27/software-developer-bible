@@ -1,14 +1,25 @@
+---
+section: SDE Role
+category: Interview
+tags: [quick-reference]
+---
+
 # 📋 Quick Reference Cards
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Reference-lightgrey)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **One-page summaries for each major topic**
-> 
+>
 > Print these. Keep them on your desk. Review before mock interviews.
 
 ---
 
 ## 🃏 Card 1: Arrays & Strings
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  ARRAYS & STRINGS — Quick Reference                             │
 ├─────────────────────────────────────────────────────────────────┤
@@ -60,13 +71,15 @@
 │  • Delete: O(n)  • Space: O(1) for in-place                   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 2: Trees
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  TREES — Quick Reference                                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -128,13 +141,15 @@
 │  Inorder traversal of BST = Sorted array                       │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 3: Graphs
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  GRAPHS — Quick Reference                                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -199,13 +214,15 @@
 │  • Network Delay (#743)     • Redundant Connection (#684)      │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 4: Dynamic Programming
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  DYNAMIC PROGRAMMING — Quick Reference                          │
 ├─────────────────────────────────────────────────────────────────┤
@@ -255,13 +272,15 @@
 │  use two variables instead of array!                           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 5: System Design
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  SYSTEM DESIGN — Quick Reference                                │
 ├─────────────────────────────────────────────────────────────────┤
@@ -311,13 +330,15 @@
 │  • YouTube, Netflix, Uber, WhatsApp                            │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 6: Linked Lists & Stacks
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  LINKED LISTS & STACKS — Quick Reference                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -375,13 +396,15 @@
 │  • Largest Rectangle (#84)• Trapping Rain (#42)                │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 7: Hash Maps & Heaps
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  HASH MAPS & HEAPS — Quick Reference                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -430,13 +453,15 @@
 │  • Merge K Lists (#23)   • Find Median (#295)                  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## 🃏 Card 8: Binary Search & Sorting
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  BINARY SEARCH & SORTING — Quick Reference                      │
 ├─────────────────────────────────────────────────────────────────┤
@@ -492,6 +517,7 @@
 │  • Median Arrays (#4)   • Search Matrix (#74)                  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -530,3 +556,25 @@
 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week study schedule |
 | [Mock Interview Bank](10-Mock-Interview-Question-Bank.md) | 90 practice questions |
 | [Progress Tracker](09-Progress-Tracker.md) | Track your readiness |
+---
+
+
+## Summary
+
+These quick reference cards provide single-page summaries of essential interview topics, including arrays, trees, graphs, dynamic programming, system design, and data structure cheat sheets for rapid review.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Streaming in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -737,131 +747,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is streaming in Next.js?**
-   Streaming allows progressive rendering where the server sends the page shell immediately and streams in slower components as they load.
-
-2. **How do you enable streaming?**
-   Use `loading.tsx` for automatic Suspense boundaries, or wrap components in `<Suspense>` with a fallback.
-
-3. **What is a Suspense boundary?**
-   A boundary that shows a fallback UI while its children load. When children are ready, they replace the fallback.
-
-4. **What is `loading.tsx`?**
-   A file that automatically wraps the route in a Suspense boundary. It shows while the route's content loads.
-
-5. **How does streaming improve performance?**
-   It reduces TTFB by sending the shell immediately, and improves FCP by showing essential content first.
-
-6. **What should you put in loading.tsx?**
-   Skeleton loaders, placeholders, or loading indicators that match the layout of the actual content.
-
-7. **Can you have multiple Suspense boundaries?**
-   Yes! Multiple boundaries can stream independently, showing loading states for different parts of the page.
-
-8. **What is the relationship between streaming and SSR?**
-   Streaming is an enhancement to SSR that allows progressive rendering instead of waiting for all data before sending HTML.
-
-### Intermediate (5-10)
-
-9. **How do you handle errors in streaming?**
-   Use `error.tsx` files alongside `loading.tsx`. Each Suspense boundary can have its own error handling.
-
-10. **How do you design good loading states?**
-    Use skeleton loaders that match the final layout, avoid layout shift, and provide meaningful feedback.
-
-11. **What is nested streaming?**
-    Suspense boundaries inside other Suspense boundaries, allowing hierarchical progressive loading.
-
-12. **How does streaming affect Core Web Vitals?**
-    Improves TTFB and FCP by sending content progressively. Can improve LCP by prioritizing main content.
-
-13. **How do you test streaming behavior?**
-    Use throttled network in dev tools, simulate slow data fetches, and verify progressive loading.
-
-14. **What is the relationship between streaming and caching?**
-    Cached content renders immediately, uncached content streams. Streaming works with ISR and SSR.
-
-15. **How do you handle streaming with client components?**
-    Client components hydrate after the shell loads. Use `'use client'` only for interactive parts.
-
-### Senior (10-15)
-
-16. **Design a streaming architecture for a complex dashboard.**
-    Use nested Suspense boundaries, prioritize critical data, stream charts and secondary data, and implement error recovery.
-
-17. **How would you implement streaming with real-time data?**
-    Use Server Components for initial data, Client Components for real-time updates, and WebSocket for live data.
-
-18. **Explain the streaming rendering pipeline.**
-    Server renders shell → Sends HTML → Starts data fetches → Streams chunks as ready → Client hydrates progressively.
-
-19. **How do you optimize streaming for slow networks?**
-    Prioritize critical content, implement chunked loading, use service workers, and optimize payload size.
-
-20. **Design a streaming system for a social media feed.**
-    Stream posts as they load, implement infinite scrolling, handle real-time updates, and optimize for mobile.
-
-21. **How would you implement streaming with authentication?**
-    Stream public content first, delay authenticated content until verification, and handle auth errors gracefully.
-
-22. **Explain the relationship between streaming and React Suspense.**
-    Next.js streaming uses React Suspense under the hood. Server Components can be async and stream their output.
-
-23. **How do you handle streaming with internationalization?**
-    Stream locale-independent content first, load translations progressively, and handle locale switching.
-
-24. **Design a streaming system for e-commerce.**
-    Stream product info first, load reviews and recommendations in parallel, and handle dynamic pricing.
-
-25. **How would you implement streaming analytics?**
-    Track streaming performance, monitor TTFB/FCP, measure chunk delivery, and optimize based on metrics.
-
-### FAANG-style (5-10)
-
-26. **Design a streaming system for millions of concurrent users.**
-    Use edge streaming, implement CDN caching, optimize chunk sizes, and handle traffic spikes.
-
-27. **How would you implement adaptive streaming?**
-    Detect network conditions, adjust chunk sizes, prioritize content, and fallback for slow connections.
-
-28. **Design a streaming architecture with edge computing.**
-    Use edge functions for streaming, implement geo-distributed streaming, and optimize for latency.
-
-29. **How would you implement streaming with machine learning?**
-    Predict optimal streaming strategies, prioritize content based on user behavior, and optimize delivery.
-
-30. **Design a streaming system with fault tolerance.**
-    Implement fallback rendering, handle chunk failures, retry lost chunks, and ensure delivery.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of streaming?**
-    Some content can't be streamed, client hydration has overhead, and debugging is more complex.
-
-32. **How does streaming affect SEO?**
-    Search engines see the complete content, but streaming improves page speed which benefits SEO.
-
-33. **What is the future of streaming in Next.js?**
-    Better chunk optimization, improved DevTools, and more granular streaming controls.
-
-34. **How do you debug streaming issues?**
-    Use React DevTools, monitor network chunks, check server logs, and verify Suspense boundaries.
-
-35. **What security considerations apply to streaming?**
-    Stream only public content initially, verify authentication before streaming sensitive data.
-
-36. **How does streaming interact with caching?**
-    Cached content renders immediately, uncached content streams. Cache hit = no streaming needed.
-
-37. **What are alternatives to streaming?**
-    Traditional SSR, CSR with loading states, and lazy loading with dynamic imports.
-
-38. **How do you measure streaming performance?**
-    Track TTFB, FCP, LCP, chunk delivery time, and streaming success rates.
 
 ## Summary
 
@@ -876,7 +761,6 @@ Optimization:
 | Performance | Improved Core Web Vitals |
 
 ## Cheat Sheet
-
 ```text
 Route-level streaming:
 app/loading.tsx → Automatic Suspense boundary
@@ -906,6 +790,13 @@ Performance:
 - CLS: Minimal with skeletons
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

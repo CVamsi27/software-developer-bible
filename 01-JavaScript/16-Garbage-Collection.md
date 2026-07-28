@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Garbage Collection
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -580,117 +590,6 @@ if ('memory' in performance) {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is garbage collection in JavaScript?**
-
-A: Garbage collection is the automatic process of reclaiming memory occupied by objects that are no longer in use or reachable.
-
-**Q2: How does JavaScript determine which objects to collect?**
-
-A: JavaScript uses mark-and-sweep algorithm. It marks all reachable objects from roots, then sweeps (collects) unmarked objects.
-
-**Q3: What are root objects?**
-
-A: Root objects are starting points for garbage collection: global object, current call stack, and any object referenced by roots.
-
-**Q4: Can you force garbage collection?**
-
-A: No, you cannot force GC in JavaScript. Some browsers provide `gc()` for debugging, but it's not part of the standard.
-
-**Q5: What is memory pressure?**
-
-A: Memory pressure occurs when the system is low on memory, causing frequent GC cycles and potential performance issues.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is the difference between mark-and-sweep and reference counting?**
-
-A: Mark-and-sweep handles circular references, reference counting doesn't. Mark-and-sweep is used in modern JavaScript engines.
-
-**Q7: What is generational garbage collection?**
-
-A: Objects are divided into young and old generations. Young generation is collected frequently, old generation less frequently.
-
-**Q8: How do closures affect garbage collection?**
-
-A: Closures capture their lexical environment. If a closure is alive, its captured variables cannot be garbage collected.
-
-**Q9: What is WeakMap and how does it relate to GC?**
-
-A: WeakMap allows garbage collection of its keys. When a key has no other references, it and its value can be collected.
-
-**Q10: How do you reduce GC pressure in JavaScript?**
-
-A: Minimize object creation, use object pooling, implement bounded caches, process data in chunks.
-
-### Senior (10-15 questions)
-
-**Q11: Explain V8's garbage collection process.**
-
-A: V8 uses generational GC with Scavenge for young gen and Mark-Sweep-Compact for old gen. It includes incremental and concurrent marking.
-
-**Q12: What are the performance implications of GC pauses?**
-
-A: GC pauses can cause UI jank and reduced throughput. Mitigate by reducing allocations and using object pooling.
-
-**Q13: How do you profile memory usage in production?**
-
-A: Use performance.memory API, Chrome DevTools, heap snapshots, and memory monitoring tools.
-
-**Q14: What is the relationship between GC and memory leaks?**
-
-A: Memory leaks prevent GC from collecting unreachable objects, causing memory usage to grow indefinitely.
-
-**Q15: How do different JavaScript engines optimize GC?**
-
-A: V8 uses concurrent marking, SpiderMonkey uses compartmental GC, JavaScriptCore uses bmalloc.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a memory-efficient caching system.**
-
-A: Use WeakMap for object keys, implement LRU eviction, set TTL, limit cache size, monitor memory usage.
-
-**Q17: How would you implement automatic memory cleanup?**
-
-A: Reference counting, weak references, periodic cleanup, automatic disposal patterns.
-
-**Q18: Analyze the memory implications of different data structures.**
-
-A: Arrays vs Maps vs WeakMaps, object pooling, structural sharing, typed arrays.
-
-**Q19: How do you debug memory issues in production?**
-
-A: Memory profiling, heap dumps, growth detection, error tracking, performance monitoring.
-
-**Q20: What are security implications of memory management?**
-
-A: Information leakage through memory dumps, denial of service through memory exhaustion.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of GC-related performance issue?**
-
-A: Frequent object creation in a hot path causes GC pauses, leading to UI jank.
-
-**Q22: How do you handle GC in a real-time application?**
-
-A: Object pooling, pre-allocation, minimize allocations, use typed arrays.
-
-**Q23: What is the relationship between GC and the event loop?**
-
-A: GC can run during idle periods or between tasks. Major GC can cause delays.
-
-**Q24: How do different frameworks handle memory management?**
-
-A: React: memo/useCallback. Vue: reactivity system. Angular: change detection.
-
-**Q25: What are best practices for memory management?**
-
-A: Minimize allocations, use pooling, implement bounded caches, monitor usage, test for leaks.
 
 ## Summary
 
@@ -711,7 +610,6 @@ Garbage collection is essential for JavaScript:
 7. **Common issues**: Closures, global caches, timers
 
 ## Cheat Sheet
-
 ```text
 GARBAGE COLLECTION CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -769,6 +667,13 @@ COMMON ISSUES:
 • Closures capturing large objects
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

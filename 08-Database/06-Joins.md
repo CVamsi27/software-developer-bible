@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Joins
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -502,114 +512,12 @@ INCLUDE (total, created_at);
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is a JOIN?**
-   Combines rows from two or more tables based on related columns.
-
-2. **What is the difference between INNER JOIN and LEFT JOIN?**
-   INNER: only matching rows; LEFT: all from left table + matching from right.
-
-3. **What is a Cartesian product?**
-   Every combination of rows from two tables; happens with missing join condition.
-
-4. **What is a self join?**
-   Joining a table to itself; useful for hierarchical data.
-
-5. **What is the difference between WHERE and HAVING?**
-   WHERE filters rows before GROUP BY; HAVING filters groups after.
-
-### Intermediate (5)
-
-6. **What is a LATERAL join?**
-   Allows subquery to reference columns from preceding tables.
-
-7. **When would you use a CROSS JOIN?**
-   Generating combinations (product variants, date series).
-
-8. **What is the difference between a subquery and a JOIN?**
-   Subquery returns values; JOIN combines rows. Performance varies.
-
-9. **How do you find unmatched records?**
-   LEFT JOIN with IS NULL check.
-
-10. **What is an anti-join?**
-    Finding rows in one table without matching rows in another.
-
-### Senior (10)
-
-11. **Explain Nested Loop, Hash Join, and Merge Join.**
-    Nested Loop: O(n*m), good for small indexed joins; Hash: O(n+m), builds hash table; Merge: O(n+m), requires sorted data.
-
-12. **How does PostgreSQL choose join algorithm?**
-    Based on table sizes, statistics, available indexes, cost estimates.
-
-13. **What is join ordering and why does it matter?**
-    Order tables are joined; affects intermediate result sizes and performance.
-
-14. **What is a hash join and when is it optimal?**
-    Build hash table on smaller table; optimal for equi-joins on large tables.
-
-15. **How do you optimize a slow JOIN?**
-    Index join columns, filter early, use covering indexes, check statistics.
-
-16. **What is a materialized view for join optimization?**
-    Pre-computed join result; refresh periodically.
-
-17. **What is the difference between SEMI JOIN and ANTI JOIN?**
-    SEMI: returns rows with matches; ANTI: returns rows without matches.
-
-18. **How do joins work with NULL values?**
-    NULL != NULL; use IS NULL or COALESCE for NULL handling.
-
-19. **What is a partition-wise join?**
-    Join partitions of partitioned tables; improves parallelism.
-
-20. **How do you handle many-to-many joins?**
-    Junction/bridge table with foreign keys.
-
-### FAANG-style (5)
-
-21. **Design a schema for a social network with friends and posts.**
-    Users, friendships (junction table), posts with proper indexes.
-
-22. **How would you optimize a JOIN on billion-row tables?**
-    Partitioning, materialized views, approximate queries.
-
-23. **Explain the impact of joins on ACID transactions.**
-    Joins see consistent snapshot; locks affect concurrent access.
-
-24. **Design a real-time analytics system with complex joins.**
-    Star schema, columnar storage, pre-aggregated views.
-
-25. **How do you handle JOINs in distributed databases?**
-    Co-locate data, shuffle joins, broadcast joins.
-
-### Follow-ups (5)
-
-26. **What is the difference between JOIN and UNION?**
-    JOIN combines columns; UNION combines rows.
-
-27. **How do you handle duplicate column names in JOINs?**
-    Use aliases and explicit column selection.
-
-28. **What is a natural join and why is it risky?**
-    Joins on columns with same name; can produce unexpected results.
-
-29. **What is the performance impact of JOINs on indexing?**
-    Join columns need indexes; composite indexes help.
-
-30. **How do you debug a slow JOIN?**
-    EXPLAIN ANALYZE, check statistics, index join columns.
 
 ## Summary
 
 Joins combine data from multiple tables. INNER JOIN returns only matches; LEFT/RIGHT/FULL JOIN include non-matches. LATERAL JOIN enables correlated subqueries. Always index join columns and use EXPLAIN ANALYZE to verify performance. Choose the right join type based on your data requirements.
 
 ## Cheat Sheet
-
 ```sql
 -- Join types
 SELECT * FROM a INNER JOIN b ON a.id = b.a_id;
@@ -629,6 +537,13 @@ SELECT * FROM a LEFT JOIN b ON a.id = b.a_id WHERE b.a_id IS NULL;
 SELECT e.name, m.name FROM employees e LEFT JOIN employees m ON e.manager_id = m.id;
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

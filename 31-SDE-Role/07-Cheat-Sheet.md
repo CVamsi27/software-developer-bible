@@ -1,4 +1,14 @@
+---
+section: SDE Role
+category: Interview
+tags: [cheat-sheet, reference]
+---
+
 # 📋 SDE Interview Cheat Sheet — Last-Minute Review
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 > **Print this. Read it the night before and morning of your interview.**
 
@@ -6,13 +16,15 @@
 
 ## ⚡ Phase 1: Java Fundamentals
 
-```
+```text
+
 Collections: ArrayList, HashMap, HashSet, LinkedList, TreeMap, PriorityQueue
 Streams:     filter(), map(), flatMap(), reduce(), collect(), sorted()
 Lambdas:     (x, y) -> x + y  |  Function<T,R>  |  Predicate<T>
 Optional:    of(), empty(), isPresent(), orElse(), map(), flatMap()
 Concurrency: synchronized, volatile, ReentrantLock, CountDownLatch
 Async:       ExecutorService.submit(), CompletableFuture.supplyAsync().thenApply()
+
 ```
 
 **Key Patterns:** `Comparable<T>` (natural order) vs `Comparator<T>` (custom order)
@@ -68,7 +80,8 @@ Async:       ExecutorService.submit(), CompletableFuture.supplyAsync().thenApply
 
 ## ⚡ Phase 5: Pattern Recognition
 
-```
+```text
+
 HashMap     → Two sum, frequency, grouping
 Two Pointers → Pair problems, sorted arrays, palindrome
 Sliding Window → Substring/subarray problems
@@ -81,6 +94,7 @@ Greedy      → Interval scheduling, jump game
 DP          → Overlapping subproblems, optimal substructure
 Union-Find  → Connected components, dynamic connectivity
 Trie        → Prefix matching, autocomplete
+
 ```
 
 ---
@@ -88,6 +102,7 @@ Trie        → Prefix matching, autocomplete
 ## ⚡ Phase 6: Dynamic Programming
 
 **Template:**
+
 ```python
 # 1. State: What are we tracking?
 # 2. Choice: What decisions do we make?
@@ -106,6 +121,7 @@ dp = [0] * (n + 1)
 dp[0] = base
 for i in range(1, n + 1):
     dp[i] = f(dp[i-1], dp[i-2], ...)
+
 ```
 
 **Classic Patterns:**
@@ -141,12 +157,14 @@ for i in range(1, n + 1):
 
 ## ⚡ Phase 8: Trees (Advanced)
 
-```
+```text
+
 Traversal Orders:
   Preorder:  Root → Left → Right  (copy tree)
   Inorder:   Left → Root → Right  (BST sorted order)
   Postorder: Left → Right → Root  (delete tree)
   Level-order: BFS with queue    (level by level)
+
 ```
 
 **Key Properties:**
@@ -159,7 +177,8 @@ Traversal Orders:
 
 ## ⚡ Phase 9: Bit Manipulation
 
-```
+```text
+
 x & (x-1)    → Clear lowest set bit
 x & (-x)     → Isolate lowest set bit
 x ^ x = 0    → XOR self = 0
@@ -167,6 +186,7 @@ x ^ 0 = x    → XOR zero = self
 1 << n        → 2^n
 x >> 1        → x / 2
 x & 1         → Check odd/even
+
 ```
 
 **Common Tricks:** Single number (XOR all), power of two (`x > 0 && (x & (x-1)) == 0`), count bits, subset generation.
@@ -175,12 +195,14 @@ x & 1         → Check odd/even
 
 ## ⚡ Phase 10: Math
 
-```
+```text
+
 GCD(a, b) = GCD(b, a % b)          // Euclidean
 LCM(a, b) = a / GCD(a, b) * b      // Avoid overflow
 Sieve: O(n log log n) primes up to n
 Fast Power: a^n = (a^(n/2))^2       // O(log n)
 nCr = n! / (r! * (n-r)!)            // Combinations
+
 ```
 
 ---
@@ -218,7 +240,8 @@ nCr = n! / (r! * (n-r)!)            // Combinations
 
 ## ⚡ Phase 13: Operating Systems
 
-```
+```text
+
 Process vs Thread: Process = isolated memory, Thread = shared memory
 Context Switch: Save/restore registers when switching tasks
 Deadlock Conditions: Mutual exclusion, Hold & wait, No preemption, Circular wait
@@ -231,13 +254,15 @@ Synchronization:
 
 Virtual Memory: Page table maps virtual → physical addresses
 Page Replacement: LRU, FIFO, Optimal
+
 ```
 
 ---
 
 ## ⚡ Phase 14: Computer Networks
 
-```
+```text
+
 OSI Model (7 layers):
   7. Application  → HTTP, DNS, FTP
   6. Presentation → SSL/TLS, encryption
@@ -255,6 +280,7 @@ HTTP Methods: GET, POST, PUT, PATCH, DELETE
 Status Codes: 200 OK, 201 Created, 301 Redirect, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 500 Server Error
 
 REST: Stateless, resource-based, standard HTTP methods
+
 ```
 
 ---
@@ -268,6 +294,7 @@ REST: Stateless, resource-based, standard HTTP methods
 -- Isolation Levels: Read Uncommitted → Read Committed → Repeatable Read → Serializable
 -- Locks: Shared (read), Exclusive (write), Deadlock (wait-for graph)
 -- MVCC: Multi-Version Concurrency Control, snapshot isolation
+
 ```
 
 **Query Optimization:** EXPLAIN ANALYZE, index on WHERE/JOIN/ORDER BY columns, avoid SELECT *, limit result set.
@@ -276,7 +303,8 @@ REST: Stateless, resource-based, standard HTTP methods
 
 ## ⚡ Phase 16: NoSQL & Distributed Systems
 
-```
+```text
+
 CAP Theorem: Pick 2 of Consistency, Availability, Partition Tolerance
   CP: MongoDB, HBase, Redis Cluster
   AP: Cassandra, DynamoDB, CouchDB
@@ -285,6 +313,7 @@ Types: Key-Value (Redis), Document (MongoDB), Wide-Column (Cassandra), Graph (Ne
 
 Redis Commands: GET, SET, HSET, LPUSH, SADD, EXPIRE, PUBLISH/SUBSCRIBE
 MongoDB: find(), insertOne(), aggregate(), $lookup, $match, $group
+
 ```
 
 ---
@@ -315,19 +344,22 @@ MongoDB: find(), insertOne(), aggregate(), $lookup, $match, $group
 
 ## ⚡ Phase 18: REST APIs
 
-```
+```text
+
 Idempotency: PUT/DELETE = idempotent, POST = not idempotent
 Pagination: offset-based (?page=2&limit=20) or cursor-based (?cursor=abc)
 Rate Limiting: Token bucket, sliding window, fixed window
 Versioning: /api/v1/users, header-based, query param
 Authentication: API keys, OAuth2, JWT
+
 ```
 
 ---
 
 ## ⚡ Phase 19: Security
 
-```
+```text
+
 SQL Injection: Use parameterized queries/prepared statements
 XSS: Sanitize input, Content-Security-Policy header
 CSRF: SameSite cookies, CSRF tokens
@@ -336,6 +368,7 @@ JWT: Header.Payload.Signature, stateless auth
 OAuth2: Authorization Code flow, PKCE for SPAs
 HTTPS: TLS handshake, certificate chain, HSTS
 Password Storage: bcrypt/argon2 + salt, never store plaintext
+
 ```
 
 ---
@@ -351,6 +384,7 @@ Future<T> future = pool.submit(() -> compute());
 CompletableFuture.supplyAsync(() -> fetchData())
     .thenApply(data -> transform(data))
     .thenAccept(result -> save(result));
+
 ```
 
 **Lock Types:** Mutex (exclusive), Semaphore (counting), ReadWriteLock (shared reads)
@@ -367,12 +401,14 @@ CompletableFuture.supplyAsync(() -> fetchData())
 
 ## ⚡ Phase 21: Git
 
-```
+```text
+
 git rebase main        → Linear history
 git cherry-pick <sha>  → Apply specific commit
 git squash commits     → Combine into one
 git reset --soft HEAD~1→ Undo commit, keep changes
 git revert <sha>       → Create undo commit (safe)
+
 ```
 
 ---
@@ -388,17 +424,20 @@ ps aux | grep java          # Process list
 curl -X POST url -d '{}'    # HTTP requests
 netstat -tlnp               # Listening ports
 top -bn1 | head -20         # System stats
+
 ```
 
 ---
 
 ## ⚡ Phase 23: Behavioral (STAR Method)
 
-```
+```text
+
 Situation: Set the context (when, where, what)
 Task:      What was your responsibility?
 Action:    What did YOU do? (be specific)
 Result:    What was the outcome? (metrics, impact)
+
 ```
 
 **Key Themes:** Leadership, Conflict Resolution, Failure, Ambiguity, Customer Focus, Mentoring
@@ -484,3 +523,25 @@ Result:    What was the outcome? (metrics, impact)
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This cheat sheet provides a quick reference for essential interview concepts across all topics, including time complexities, common algorithms, data structure operations, and system design building blocks for rapid review.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

@@ -1,4 +1,14 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useState
+
+[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -719,394 +729,12 @@ const UserForm = () => {
 | Complex update logic | ❌ | ✅ |
 | Testing | ✅ | ✅ |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is useState?**
-A: `useState` is a React Hook that adds state to function components. It returns a stateful value and a setter function. When the setter is called, React re-renders the component with the new state.
-
-**Q2: How do you initialize state with useState?**
-A: `const [count, setCount] = useState(0)`. The argument to `useState` is the initial state value.
-
-**Q3: Can you update state directly?**
-A: No. Always use the setter function: `setCount(5)`. Direct state mutation (`count = 5`) won't trigger re-renders.
-
-**Q4: What is lazy initialization in useState?**
-A: Lazy initialization lets you pass a function to `useState` that only runs on the first render: `useState(() => expensiveComputation())`. This prevents expensive computations on every render.
-
-**Q5: What is state batching?**
-A: React batches multiple state updates into a single re-render. For example, calling `setCount` and `setName` in the same handler only causes one re-render.
-
-**Q6: What are functional updates?**
-A: Functional updates let you update state based on the previous state: `setCount(prev => prev + 1)`. This is important when setting state multiple times in the same handler.
-
-**Q7: Can useState be conditional?**
-A: No. Hooks must be called in the same order every render. Calling hooks conditionally breaks the hook order and causes errors.
-
-**Q8: What is the difference between state and props?**
-A: State is internal to a component and can be changed. Props are passed from parent to child and are read-only.
-
-**Q9: When does useState cause a re-render?**
-A: When you call the setter function with a new value. If you set state to the same value (for primitives), React skips the re-render.
-
-**Q10: Can you use useState with objects?**
-A: Yes. Use the spread operator to update: `setUser(prev => ({ ...prev, name: 'John' }))`.
-
-### Intermediate (5-10)
-
-**Q11: Explain how useState works internally.**
-A: `useState` stores state in the fiber node's `memoizedState` property. On each render, it returns the current state from the fiber. When the setter is called, it creates an Update object, enqueues it in the fiber's updateQueue, and schedules a re-render.
-
-**Q12: What is the difference between state and refs?**
-A: State triggers re-renders when changed; refs don't. State is for data that should be displayed; refs are for mutable values that don't affect rendering (DOM access, timers, etc.).
-
-**Q13: How does React handle state updates in event handlers?**
-A: React batches state updates in event handlers. Multiple updates are queued and applied together in a single re-render. This is called automatic batching (React 18).
-
-**Q14: What is the `flushSync` API?**
-A: `flushSync` forces React to synchronously flush pending state updates. Use it when you need immediate DOM updates after state change (e.g., measuring DOM after state change).
-
-**Q15: How do you reset state?**
-A: Use a `key` prop to reset state: `<Component key={resetKey} />`. When the key changes, React unmounts the old component and mounts a new one with fresh state.
-
-**Q16: What is the difference between `useState` and `useReducer`?**
-A: `useState` is for simple state. `useReducer` is for complex state with multiple sub-values or complex update logic. Both use the same underlying mechanism.
-
-**Q17: How do you handle derived state?**
-A: Compute derived state during render, not in `useEffect`:
-
-```typescript
-const filtered = useMemo(() => items.filter(...), [items, query]);
-
-```
-
-**Q18: What is the performance impact of state updates?**
-A: State updates trigger re-renders. Multiple updates batched together cause one re-render. State updates to the same value (primitives) skip re-renders.
-
-**Q19: How do you share state between components?**
-A: Lift state up to the nearest common ancestor and pass it down via props, or use Context API for deeply nested components.
-
-**Q20: What are the common patterns for state management?**
-A:
-
-- Local state: `useState` for component-specific state
-- Lifted state: State moved to parent component
-- Context: State shared across component tree
-- External stores: Redux, Zustand, etc.
-
-### Senior (10-15)
-
-**Q21: Explain the complete state update lifecycle.**
-A:
-
-1. Setter function called
-
-2. React creates an Update object
-
-3. Update enqueued in fiber's updateQueue
-
-4. React schedules a re-render
-
-5. During next render:
-
-   - React processes all queued updates
-   - Computes new state for each update
-   - Returns new state value
-   - Component re-renders with new state
-
-**Q22: How does state batching work in React 18?**
-A: React 18 uses automatic batching via the `scheduleCallback` function. All state updates (in event handlers, setTimeout, promises) are batched into a single re-render. This is implemented via the `flushSync` escape hatch.
-
-**Q23: What is the "state closure" problem?**
-A: State closures occur when a callback captures stale state. For example, a `setTimeout` that references `count` will use the value at the time the timeout was set, not the current value. Solution: functional updates or refs.
-
-**Q24: How does state work with React Suspense?**
-A: Suspense can suspend state updates during concurrent rendering. When a component suspends, React pauses rendering and shows the fallback. State updates are queued and applied when the component resumes.
-
-**Q25: What is the difference between `useState` and `useRef` for mutable values?**
-A: `useState` triggers re-renders; `useRef` doesn't. Use `useState` for data that should be displayed. Use `useRef` for DOM access, timers, and values that don't affect rendering.
-
-**Q26: How do you handle complex state updates?**
-A: Use `useReducer` for complex state with multiple sub-values or complex update logic. It provides a `dispatch` function and a `reducer` that handles state transitions.
-
-**Q27: What is the "state hoisting" pattern?**
-A: State hoisting moves state to the nearest common ancestor. Child components receive state and callbacks via props. This is the standard way to share state between siblings.
-
-**Q28: How does state interact with React.memo?**
-A: `React.memo` wraps components to skip re-renders when props haven't changed. State updates still trigger re-renders of the component itself, but memoized children won't re-render unless their props change.
-
-**Q29: What is the performance impact of state on large component trees?**
-A: State updates trigger re-renders of the component and all its descendants (unless memoized). For large trees, this can be expensive. Mitigate with `React.memo`, state colocation, and context splitting.
-
-**Q30: How do you test stateful components?**
-A: Use React Testing Library:
-
-```typescript
-test('increments counter', () => {
-  render(<Counter />);
-  fireEvent.click(screen.getByText('+1'));
-  expect(screen.getByText('Count: 1')).toBeInTheDocument();
-});
-
-```
-
-### FAANG-style (5-10)
-
-**Q31: Design a state management system for a large-scale application.**
-A:
-
-1. **Local state**: `useState` for component-specific state
-
-2. **Lifted state**: State moved to common ancestors
-
-3. **Context**: State shared across component tree
-
-4. **External stores**: Redux/Zustand for global state
-
-5. **Server state**: React Query/TanStack Query
-
-6. **State normalization**: Flatten nested state
-
-7. **State colocation**: Keep state near usage
-
-**Q32: How would you debug a state-related issue?**
-A:
-
-1. **React DevTools**: Inspect state values
-
-2. **Why did this render**: Enable in React DevTools
-
-3. **Console logging**: Log state changes
-
-4. **React.Profiler**: Measure render performance
-
-5. **Chrome DevTools**: Record interactions
-
-**Q33: Analyze the performance implications of state design.**
-A:
-
-- **Granular state**: More state variables = more re-renders
-- **Object state**: New reference on update = unnecessary re-renders
-- **Derived state**: Computing in render vs useEffect
-- **State colocation**: Moving state closer reduces re-renders
-
-**Q34: How would you implement state persistence?**
-A:
-
-```typescript
-const usePersistedState = (key: string, initialValue: any) => {
-  const [state, setState] = useState(() => {
-    const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : initialValue;
-  });
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
-
-  return [state, setState];
-};
-
-```
-
-**Q35: Design a state management system for offline-first apps.**
-A:
-
-1. **Local storage**: Persist state locally
-
-2. **Sync queue**: Queue changes for sync
-
-3. **Conflict resolution**: CRDT or last-write-wins
-
-4. **Optimistic updates**: Show changes immediately
-
-5. **Background sync**: Sync when online
-
-**Q36: How would you implement state time-travel debugging?**
-A:
-
-1. **State history**: Store all state snapshots
-
-2. **Time-travel controls**: Navigate to past states
-
-3. **Action replay**: Replay user actions
-
-4. **State diffing**: Show what changed between states
-
-5. **DevTools integration**: Visualize state changes
-
-**Q37: Analyze the memory implications of state.**
-A:
-
-- **Per state variable**: ~100 bytes
-- **Object state**: Additional memory for properties
-- **Array state**: Additional memory for elements
-- **State history**: Memory for previous states
-- **Optimization**: Use `useReducer` for complex state
-
-**Q38: How would you implement state synchronization across tabs?**
-A:
-
-```typescript
-const useCrossTabState = (key: string, initialValue: any) => {
-  const [state, setState] = useState(() => {
-    const saved = localStorage.getItem(key);
-    return saved ? JSON.parse(saved) : initialValue;
-  });
-
-  useEffect(() => {
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === key) {
-        setState(JSON.parse(e.newValue!));
-      }
-    };
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, [key]);
-
-  const setPersistedState = (value: any) => {
-    setState(value);
-    localStorage.setItem(key, JSON.stringify(value));
-  };
-
-  return [state, setPersistedState];
-};
-
-```
-
-**Q39: How does state interact with React Server Components?**
-A: Server Components can't use state. They're rendered on the server and serialized. Client Components hydrate with normal state. Server and client state are separate.
-
-**Q40: Design a state management system for real-time collaborative apps.**
-A:
-
-1. **CRDT**: Conflict-free replicated data types
-
-2. **Operational transformation**: Transform operations
-
-3. **State merging**: Merge concurrent changes
-
-4. **Conflict resolution**: Handle conflicting edits
-
-5. **Optimistic updates**: Show changes immediately
-
-### Follow-ups (5-10)
-
-**Q41: How would you explain useState to a junior developer?**
-A: "`useState` is like a variable that React watches. When you change it, React re-renders the component with the new value. You get the current value and a function to change it: `const [count, setCount] = useState(0)`."
-
-**Q42: What are the edge cases in state management?**
-A:
-
-- Stale closures in async callbacks
-- State updates after unmount
-- Conditional hook calls
-- State serialization/deserialization
-- Concurrent state updates
-
-**Q43: How does state handle the "derived state" pattern?**
-A: Derived state should be computed during render, not stored in state:
-
-```typescript
-const [items, setItems] = useState([]);
-const [query, setQuery] = useState('');
-const filtered = useMemo(() => items.filter(...), [items, query]);
-
-```
-
-**Q44: What is the relationship between state and React DevTools?**
-A: React DevTools shows component state, allows editing, and tracks why components re-render. It's essential for debugging state-related issues.
-
-**Q45: How does state interact with React StrictMode?**
-A: StrictMode double-renders in development. This can cause state to appear to reset. It's intentional — it helps detect side effects and impure render functions.
-
-**Q46: What is the future of state management in React?**
-A: React is exploring:
-
-- Automatic memoization (React Compiler)
-- Better concurrent state handling
-- Server state integration
-- Improved state colocation patterns
-
-**Q47: How would you implement state validation?**
-A:
-
-```typescript
-const useValidatedState = (initialValue: any, validator: Function) => {
-  const [state, setState] = useState(initialValue);
-  const [error, setError] = useState<string | null>(null);
-
-  const setValidatedState = (value: any) => {
-    const validationError = validator(value);
-    if (validationError) {
-      setError(validationError);
-    } else {
-      setError(null);
-      setState(value);
-    }
-  };
-
-  return [state, setValidatedState, error];
-};
-
-```
-
-**Q48: How does state handle the "optimistic update" pattern?**
-A: Optimistic updates show changes immediately before server confirmation:
-
-```typescript
-const handleLike = async (postId: string) => {
-  setPosts(prev => prev.map(p =>
-    p.id === postId ? { ...p, likes: p.likes + 1 } : p
-  ));
-  try {
-    await api.likePost(postId);
-  } catch {
-    // Revert on error
-    setPosts(prev => prev.map(p =>
-      p.id === postId ? { ...p, likes: p.likes - 1 } : p
-    ));
-  }
-};
-
-```
-
-**Q49: How would you implement state rollback?**
-A:
-
-```typescript
-const useRollbackState = (initialValue: any) => {
-  const [history, setHistory] = useState([initialValue]);
-  const [index, setIndex] = useState(0);
-
-  const setState = (value: any) => {
-    setHistory(prev => [...prev.slice(0, index + 1), value]);
-    setIndex(prev => prev + 1);
-  };
-
-  const undo = () => setIndex(prev => Math.max(0, prev - 1));
-  const redo = () => setIndex(prev => Math.min(history.length - 1, prev + 1));
-
-  return [history[index], setState, { undo, redo, canUndo: index > 0, canRedo: index < history.length - 1 }];
-};
-
-```
-
-**Q50: How does state interact with React's concurrent features?**
-A: Concurrent features affect state:
-
-- Transitions defer state updates
-- `useDeferredValue` creates lagging state
-- Suspense can pause state updates
-- State updates can be interrupted
 
 ## Summary
 
 `useState` is the fundamental React Hook for adding state to function components. It provides a stateful value and a setter function. Key features include functional updates, lazy initialization, and automatic batching. Understanding `useState` is crucial for building interactive React applications.
 
 ## Cheat Sheet
-
 ```text
 useState Key Points:
 ├── What: Hook for adding state to function components
@@ -1148,6 +776,15 @@ When to Use useState vs useReducer:
 └── Both use the same underlying mechanism
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [Next.js](../04-NextJS/)
+- [Testing](../16-Testing/)
+- [Form Handling](../29-Form-Handling/)
+- [Animation](../30-Animation/)
 
 ## References & Learn More
 

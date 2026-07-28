@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # SQL Injection
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -320,137 +330,6 @@ END;
 | Query Caching | Parameterized queries enable query plan caching |
 | Index Usage | Proper parameterization preserves index usage |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is SQL injection?**
-A: SQL injection is a vulnerability where user input is inserted directly into SQL queries, allowing attackers to execute arbitrary SQL code. It can lead to data theft, authentication bypass, and data modification.
-
-**Q2: How do you prevent SQL injection?**
-A: Use parameterized queries (prepared statements), use ORMs (Prisma, TypeORM), validate input types, implement least privilege for database accounts, and use stored procedures with parameters.
-
-**Q3: What is a parameterized query?**
-A: A parameterized query separates SQL code from user data. The SQL template is defined first, then parameters are bound separately. The database treats parameters as data, not executable code.
-
-**Q4: What is the difference between SQL injection and ORM?**
-A: SQL injection exploits direct SQL string construction. ORMs abstract SQL queries and automatically parameterize them, preventing most SQLi. However, ORMs can still be vulnerable if raw queries are used unsafely.
-
-**Q5: Can SQL injection affect all database systems?**
-A: Yes, SQL injection affects all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle, SQLite). The syntax may vary, but the vulnerability exists in any system where user input is concatenated into queries.
-
-**Q6: What is blind SQL injection?**
-A: Blind SQL injection occurs when the application doesn't return SQL errors or results directly. Attackers infer information through boolean conditions (true/false) or time delays (sleep functions).
-
-**Q7: What is a UNION-based SQL injection?**
-A: UNION-based SQL injection uses the UNION SQL operator to combine results from the original query with results from injected queries, allowing attackers to extract data from other tables.
-
-**Q8: What is second-order SQL injection?**
-A: Second-order SQL injection occurs when malicious input is stored in the database and later used in a vulnerable query. The initial input doesn't trigger the vulnerability; the stored data does when retrieved.
-
-**Q9: How does Prisma prevent SQL injection?**
-A: Prisma automatically parameterizes all queries, whether using the query builder or raw queries. It treats user input as data, not executable SQL code, preventing injection attacks.
-
-**Q10: What is input validation and how does it help?**
-A: Input validation checks user input against expected formats (type, length, range, format). While not a primary defense against SQLi, it reduces the attack surface by rejecting invalid input.
-
-### Intermediate (5-10)
-
-**Q11: How would you implement SQL injection protection in a legacy application?**
-A: Implement parameterized queries gradually. Use ORM wrappers. Deploy WAF rules. Implement input validation. Add query monitoring. Plan for code refactoring to use parameterized queries.
-
-**Q12: How do you test for SQL injection vulnerabilities?**
-A: Use automated scanners (SQLMap, OWASP ZAP), manual testing with payloads, code review, and static analysis. Test all input fields, URL parameters, and HTTP headers.
-
-**Q13: What is the impact of SQL injection on stored procedures?**
-A: Stored procedures can be vulnerable if they use dynamic SQL without parameterization. Use QUOTENAME in SQL Server, proper escaping, or pass parameters to stored procedures.
-
-**Q14: How do you handle SQL injection in NoSQL databases?**
-A: NoSQL databases (MongoDB, CouchDB) are also vulnerable. Use parameterized queries, validate input types, avoid $where operators with user input, and use ORM methods.
-
-**Q15: What is a WAF and how does it help with SQLi?**
-A: Web Application Firewall (WAF) filters and monitors HTTP traffic. It can detect and block common SQLi payloads. However, WAF is not a substitute for proper input validation and parameterized queries.
-
-**Q16: How do you prevent SQL injection in dynamic SQL?**
-A: Use parameterized dynamic SQL (sp_executesql in SQL Server), QUOTENAME for identifiers, proper escaping, and validate all dynamic inputs. Avoid constructing dynamic SQL when possible.
-
-**Q17: What is the principle of least privilege in database security?**
-A: Grant database users only the minimum permissions needed for their function. Application database accounts should have limited permissions (e.g., no DROP TABLE, no admin operations).
-
-**Q18: How do you handle SQL injection in file upload functionality?**
-A: Validate file types and content. Use parameterized queries for metadata storage. Never use file content in SQL queries. Implement virus scanning. Store files separately from the database.
-
-**Q19: What is SQL injection through HTTP headers?**
-A: Attackers can inject SQL payloads in HTTP headers (User-Agent, Referer, etc.) if the application logs or queries these values. Always parameterize header values used in database operations.
-
-**Q20: How do you monitor for SQL injection attacks?**
-A: Log all database queries, implement anomaly detection, monitor for unusual query patterns, use database activity monitoring tools, and set up alerts for suspicious activities.
-
-### Senior (10-15)
-
-**Q21: Design a comprehensive SQL injection defense strategy for a large application.**
-A: Layer 1: Parameterized queries everywhere. Layer 2: Input validation with allowlists. Layer 3: ORM with strict schemas. Layer 4: WAF rules. Layer 5: Database activity monitoring. Layer 6: Regular security audits.
-
-**Q22: How would you migrate a large codebase from string concatenation to parameterized queries?**
-A: Audit codebase for vulnerable patterns. Use static analysis tools. Refactor incrementally. Implement automated testing. Deploy gradually with feature flags. Monitor for regressions.
-
-**Q23: Explain how SQL injection can lead to remote code execution.**
-A: In some databases (SQL Server with xp_cmdshell, MySQL with UDF), attackers can execute OS commands through SQL injection. This requires specific database configurations and is highly dangerous.
-
-**Q24: How would you implement SQL injection protection for a multi-tenant SaaS application?**
-A: Use tenant-specific database connections or schemas. Validate tenant context in all queries. Implement row-level security. Use parameterized queries with tenant ID. Audit cross-tenant access attempts.
-
-**Q25: Design a system for automatic SQL injection detection and prevention.**
-A: Implement static analysis in CI/CD. Deploy runtime protection (WAF, RASP). Use database activity monitoring. Build automated response system. Implement continuous security testing.
-
-**Q26: How would you handle SQL injection in a microservices architecture?**
-A: Implement parameterized queries at service level. Use API gateway for input validation. Deploy WAF at perimeter. Implement service mesh for inter-service security. Monitor database queries across services.
-
-**Q27: Explain the impact of SQL injection on database replication.**
-A: SQL injection can corrupt replicated data, spread malicious data across replicas, and compromise the entire replication chain. Implement security measures on all nodes and monitor replication traffic.
-
-**Q28: How would you implement SQL injection protection for a GraphQL API?**
-A: Use query whitelisting. Validate all input arguments. Use parameterized resolvers. Implement query depth limiting. Monitor for suspicious query patterns.
-
-**Q29: Design a SQL injection testing strategy for a critical application.**
-A: Combine automated scanning, manual penetration testing, code review, and red team exercises. Test in staging environment. Implement bug bounty program. Conduct regular security assessments.
-
-**Q30: How would you handle SQL injection in a containerized environment?**
-A: Implement database connection pooling. Use secrets management for credentials. Deploy WAF in service mesh. Monitor container-to-database traffic. Implement network segmentation.
-
-### FAANG-style (5-10)
-
-**Q31: Design a SQL injection prevention system for a database handling 10 million queries per minute.**
-A: Implement connection pooling with parameterized queries. Use query plan caching. Deploy distributed WAF. Implement real-time anomaly detection. Use machine learning for pattern recognition.
-
-**Q32: How would you implement SQL injection protection for a system with dynamic schema changes?**
-A: Use schema validation at query time. Implement parameterized queries for dynamic schemas. Use ORM with schema introspection. Deploy runtime protection. Monitor schema changes.
-
-**Q33: Design a system that detects and prevents zero-day SQL injection attacks.**
-A: Implement behavioral analysis. Use machine learning for anomaly detection. Deploy runtime application self-protection (RASP). Build automated response system. Implement honeypots.
-
-**Q34: How would you handle SQL injection in a globally distributed database system?**
-A: Implement region-specific security policies. Use centralized WAF with regional deployment. Monitor cross-region queries. Implement data residency controls. Use encryption in transit and at rest.
-
-**Q35: Design a SQL injection prevention system that adapts to new attack patterns.**
-A: Use machine learning for pattern recognition. Implement threat intelligence feeds. Deploy adaptive WAF rules. Build automated rule generation. Implement continuous learning from attacks.
-
-### Follow-ups (5-10)
-
-**Q36: How would your SQL injection defense change for a system with 99.999% uptime requirements?**
-A: Implement zero-downtime security updates. Use blue-green deployments for WAF rules. Deploy canary releases for security patches. Implement automated rollback. Monitor for false positives.
-
-**Q37: If parameterized queries were not available, how would you prevent SQL injection?**
-A: Use stored procedures with parameters. Implement input validation with strict allowlists. Use escaping functions specific to the database. Deploy WAF. Implement database activity monitoring.
-
-**Q38: How would you handle SQL injection in a system with complex reporting queries?**
-A: Use parameterized views. Implement query builders. Use reporting tools with built-in SQL injection protection. Validate all report parameters. Implement query signing.
-
-**Q39: How would your approach change for a healthcare application with HIPAA requirements?**
-A: Implement encryption for all PHI. Use audit logging for all database access. Implement access controls. Conduct regular security assessments. Maintain compliance documentation.
-
-**Q40: If you discovered SQL injection in production, what would be your incident response?**
-A: Immediately deploy WAF rules to block attack patterns. Rotate database credentials. Audit all database changes. Notify affected users. Conduct post-mortem. Implement additional monitoring.
 
 ## Summary
 
@@ -465,7 +344,6 @@ SQL Injection is a critical vulnerability that can lead to complete data comprom
 - Keep database software up to date
 
 ## Cheat Sheet
-
 | Defense | Implementation |
 |---------|---------------|
 | Parameterized Queries | Separate SQL code from data |
@@ -476,6 +354,12 @@ SQL Injection is a critical vulnerability that can lead to complete data comprom
 | WAF | Filter malicious payloads |
 | Monitoring | Log and alert on suspicious queries |
 | Escaping | Database-specific escaping functions |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

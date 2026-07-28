@@ -1,4 +1,14 @@
+---
+section: SDE Role
+category: Interview
+tags: [concept]
+---
+
 # System Design, APIs & Security (Phases 16–19)
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ---
 
@@ -10,7 +20,8 @@
 
 ### The 4-Step Framework (Alex Xu's Method)
 
-```
+```text
+
 Step 1: Requirements Clarification (5-10 min)
 ├── Functional Requirements
 │   └── What should the system do?
@@ -43,11 +54,13 @@ Step 4: Wrap Up (5-10 min)
 ├── Monitoring and metrics
 ├── Future improvements
 └── Handle follow-up questions
+
 ```
 
 ### Back-of-Envelope Calculations
 
-```
+```text
+
 Common Numbers to Memorize:
 - 1 day = 86,400 seconds ≈ 100,000 seconds
 - 1 million requests/day ≈ 12 QPS
@@ -65,6 +78,7 @@ Typical Numbers:
 - Video: 50 MB
 - Message: 100 bytes
 - URL: 50 bytes
+
 ```
 
 ## Common System Design Problems
@@ -78,12 +92,15 @@ Typical Numbers:
 - Analytics (click count, etc.)
 
 **High-Level Design:**
-```
+
+```text
+
 Client → Load Balancer → Web Server → Cache → Database
                                 ↓
                           URL Generation Service
                                 ↓
                           Hash/Encode Service
+
 ```
 
 **Key Decisions:**
@@ -95,6 +112,7 @@ Client → Load Balancer → Web Server → Cache → Database
 - **Read-heavy:** 90% reads, 10% writes → optimize for reads
 
 **Database Schema:**
+
 ```sql
 CREATE TABLE urls (
     id SERIAL PRIMARY KEY,
@@ -106,10 +124,13 @@ CREATE TABLE urls (
 );
 
 CREATE INDEX idx_urls_short_code ON urls(short_code);
+
 ```
 
 **API Design:**
-```
+
+```text
+
 POST /api/shorten
 Body: { "url": "https://very-long-url.com/path", "custom_alias": "mylink" }
 Response: { "short_url": "https://short.ly/abc123" }
@@ -119,6 +140,7 @@ Response: 301/302 Redirect to original URL
 
 GET /api/analytics/{short_code}
 Response: { "clicks": 1234, "unique_visitors": 890 }
+
 ```
 
 **Scaling:**
@@ -138,12 +160,15 @@ Response: { "clicks": 1234, "unique_visitors": 890 }
 - Push notifications
 
 **High-Level Design:**
-```
+
+```text
+
 Client ←→ WebSocket ←→ Chat Server ←→ Message Queue ←→ Storage
                      ↓
               Presence Service
               Notification Service
               Media Service
+
 ```
 
 **Key Decisions:**
@@ -154,7 +179,9 @@ Client ←→ WebSocket ←→ Chat Server ←→ Message Queue ←→ Storage
 - **Push Notifications:** APNs (iOS), FCM (Android)
 
 **Message Flow:**
-```
+
+```text
+
 1. User A sends message via WebSocket
 2. Chat Server receives message
 3. Chat Server stores message in database
@@ -162,9 +189,11 @@ Client ←→ WebSocket ←→ Chat Server ←→ Message Queue ←→ Storage
    a. If online: deliver via WebSocket
    b. If offline: send push notification
 5. Update delivery status (sent → delivered → read)
+
 ```
 
 **Database Schema:**
+
 ```sql
 -- Users
 CREATE TABLE users (
@@ -200,6 +229,7 @@ CREATE TABLE conversation_members (
     joined_at TIMESTAMP,
     PRIMARY KEY (conversation_id, user_id)
 );
+
 ```
 
 **Scaling:**
@@ -219,12 +249,15 @@ CREATE TABLE conversation_members (
 - Analytics (delivery rate, open rate)
 
 **High-Level Design:**
-```
+
+```text
+
 Service A → Notification API → Message Queue → Notification Service → Push/SMS/Email
                                     ↓
                               Preference Service
                               Rate Limiter
                               Analytics Service
+
 ```
 
 **Key Decisions:**
@@ -235,7 +268,9 @@ Service A → Notification API → Message Queue → Notification Service → Pu
 - **Deduplication:** Check for duplicate notifications
 
 **Notification Flow:**
-```
+
+```text
+
 1. Service sends notification request to API
 2. API validates request and enqueues to Kafka
 3. Preference Service checks user preferences
@@ -243,6 +278,7 @@ Service A → Notification API → Message Queue → Notification Service → Pu
 5. Notification Service dequeues and renders template
 6. Notification Service sends via appropriate channel
 7. Analytics Service tracks delivery status
+
 ```
 
 ---
@@ -264,14 +300,14 @@ class TokenBucket {
     private final int refillRate; // tokens per second
     private double tokens;
     private long lastRefillTime;
-    
+
     TokenBucket(int capacity, int refillRate) {
         this.capacity = capacity;
         this.refillRate = refillRate;
         this.tokens = capacity;
         this.lastRefillTime = System.currentTimeMillis();
     }
-    
+
     synchronized boolean allowRequest() {
         refill();
         if (tokens >= 1) {
@@ -280,7 +316,7 @@ class TokenBucket {
         }
         return false;
     }
-    
+
     private void refill() {
         long now = System.currentTimeMillis();
         double elapsed = (now - lastRefillTime) / 1000.0;
@@ -294,22 +330,22 @@ class SlidingWindowLog {
     private final Map<String, LinkedList<Long>> userLogs = new HashMap<>();
     private final int maxRequests;
     private final long windowSizeMs;
-    
+
     SlidingWindowLog(int maxRequests, long windowSizeMs) {
         this.maxRequests = maxRequests;
         this.windowSizeMs = windowSizeMs;
     }
-    
+
     synchronized boolean allowRequest(String userId) {
         long now = System.currentTimeMillis();
         userLogs.putIfAbsent(userId, new LinkedList<>());
         LinkedList<Long> logs = userLogs.get(userId);
-        
+
         // Remove old entries
         while (!logs.isEmpty() && logs.getFirst() <= now - windowSizeMs) {
             logs.removeFirst();
         }
-        
+
         if (logs.size() < maxRequests) {
             logs.addLast(now);
             return true;
@@ -317,6 +353,7 @@ class SlidingWindowLog {
         return false;
     }
 }
+
 ```
 
 **Distributed Rate Limiting:**
@@ -336,11 +373,14 @@ class SlidingWindowLog {
 - Freshness (re-crawl periodically)
 
 **High-Level Design:**
-```
+
+```text
+
 URL Frontier → Fetcher → Parser → Content Processor
      ↓              ↓          ↓
   DNS Resolver   robots.txt  Dedup Service
                     Cache    URL Extractor
+
 ```
 
 **Key Decisions:**
@@ -360,12 +400,15 @@ URL Frontier → Fetcher → Parser → Content Processor
 - Partitioning for scalability
 
 **Architecture:**
-```
+
+```text
+
 Client → Proxy → Coordinator → Partition Servers
                                   ↓
                               Storage Engine (LSM-Tree)
                                   ↓
                               Write-Ahead Log
+
 ```
 
 **Key Decisions:**
@@ -385,12 +428,15 @@ Client → Proxy → Coordinator → Partition Servers
 - Like, comment, share
 
 **Architecture:**
-```
+
+```text
+
 Post Service → Fan-out Service → Feed Service
                 ↓
           User Graph Service
           Media Service
           Notification Service
+
 ```
 
 **Fan-out Strategies:**
@@ -413,11 +459,14 @@ Post Service → Fan-out Service → Feed Service
 - Personalized suggestions
 
 **Architecture:**
-```
+
+```text
+
 Client → API Gateway → Autocomplete Service → Trie Service
                                                 ↓
                                           Analytics Service
                                           Trending Service
+
 ```
 
 **Key Decisions:**
@@ -432,7 +481,8 @@ Client → API Gateway → Autocomplete Service → Trie Service
 
 ### CAP Theorem
 
-```
+```text
+
 In a distributed system, you can only guarantee 2 of 3:
 ├── Consistency — every read gets the most recent write
 ├── Availability — every request gets a response
@@ -441,20 +491,24 @@ In a distributed system, you can only guarantee 2 of 3:
 Since network partitions are inevitable:
 - CP Systems: Consistent but may be unavailable (e.g., HBase, MongoDB)
 - AP Systems: Available but may be inconsistent (e.g., Cassandra, DynamoDB)
+
 ```
 
 ### Consistent Hashing
 
-```
+```text
+
 - Maps both servers and keys to a hash ring
 - Adding/removing server only affects nearby keys
 - Virtual nodes: each server maps to multiple points on ring
 - Reduces hotspots and improves distribution
+
 ```
 
 ### Database Scaling
 
-```
+```text
+
 Read Scaling:
 - Read replicas (primary-replica replication)
 - Caching layer (Redis, Memcached)
@@ -468,11 +522,13 @@ Write Scaling:
 Vertical Scaling:
 - More CPU, RAM, storage
 - Simpler but has limits
+
 ```
 
 ### Message Queues
 
-```
+```text
+
 When to Use:
 - Decouple services
 - Buffer writes during traffic spikes
@@ -484,11 +540,13 @@ Popular Options:
 ├── RabbitMQ — flexible routing, AMQP
 ├── SQS — managed, simple
 └── Pulsar — multi-tenant, tiered storage
+
 ```
 
 ### Microservices vs Monolith
 
-```
+```text
+
 Monolith:
 ├── Pros: Simple deployment, easy debugging, no network overhead
 ├── Cons: Scaling entire app, tight coupling, tech lock-in
@@ -498,6 +556,7 @@ Microservices:
 ├── Pros: Independent scaling, tech flexibility, team autonomy
 ├── Cons: Distributed complexity, network latency, debugging hard
 └── When: Large team, complex domain, multiple products
+
 ```
 
 ## System Design Problems to Practice
@@ -542,7 +601,8 @@ Microservices:
 
 ## REST Principles
 
-```
+```text
+
 1. Client-Server Architecture
    - Separation of concerns
    - Client handles UI, server handles data
@@ -560,11 +620,13 @@ Microservices:
    - Standard HTTP methods
    - HATEOAS (optional)
    - Resource representation (JSON, XML)
+
 ```
 
 ## URL Design
 
-```
+```text
+
 Good:
 GET    /api/v1/users           — list users
 GET    /api/v1/users/123       — get user 123
@@ -580,6 +642,7 @@ Bad:
 GET /api/getUser?id=123
 POST /api/deleteUser
 GET /api/user_list
+
 ```
 
 ## HTTP Methods
@@ -620,6 +683,7 @@ GET /api/user_list
 502 Bad Gateway           — upstream service error
 503 Service Unavailable   — service temporarily down
 504 Gateway Timeout       — upstream service timeout
+
 ```
 
 ## Request/Response Design
@@ -671,6 +735,7 @@ GET /api/user_list
         ]
     }
 }
+
 ```
 
 ## Pagination
@@ -704,6 +769,7 @@ GET /api/v1/users?cursor=abc123&limit=20
         "has_next": true
     }
 }
+
 ```
 
 ## Filtering, Sorting, Searching
@@ -722,11 +788,13 @@ GET /api/v1/users?sort=-created_at,name  — multiple sort fields
 // Searching
 GET /api/v1/users?q=alice
 GET /api/v1/products?q=laptop&category=electronics
+
 ```
 
 ## API Versioning
 
-```
+```text
+
 # URL versioning (most common)
 /api/v1/users
 /api/v2/users
@@ -736,6 +804,7 @@ Accept: application/vnd.myapp.v2+json
 
 # Query parameter
 /api/users?version=2
+
 ```
 
 ## Authentication & Authorization
@@ -757,6 +826,7 @@ POST /oauth/token
     "client_id": "your_client_id",
     "client_secret": "your_client_secret"
 }
+
 ```
 
 ## Rate Limiting
@@ -775,11 +845,13 @@ X-RateLimit-Reset: 1625000000 // when window resets
         "retry_after": 60
     }
 }
+
 ```
 
 ## API Best Practices
 
-```
+```text
+
 1. Use nouns for resources, not verbs
    ✅ GET /users
    ❌ GET /getUsers
@@ -809,6 +881,7 @@ X-RateLimit-Reset: 1625000000 // when window resets
 9. Use HATEOAS for discoverability (optional)
 
 10. Document your APIs (OpenAPI/Swagger)
+
 ```
 
 ### Resources for REST API Design
@@ -846,11 +919,13 @@ ResultSet rs = stmt.executeQuery();
 
 // GOOD — use ORM (Prisma, Hibernate)
 User user = userRepository.findByEmail(email);
+
 ```
 
 ### 2. Cross-Site Scripting (XSS)
 
-```
+```text
+
 Types:
 1. Stored XSS — malicious script stored in database
 2. Reflected XSS — script in URL parameter
@@ -861,6 +936,7 @@ Prevention:
 - Content Security Policy (CSP) headers
 - Input validation and sanitization
 - Use framework's built-in escaping (React escapes by default)
+
 ```
 
 ```java
@@ -872,11 +948,13 @@ Prevention:
 
 // Server-side: sanitize HTML input
 String sanitized = Jsoup.clean(userInput, Safelist.basic());
+
 ```
 
 ### 3. Cross-Site Request Forgery (CSRF)
 
-```
+```text
+
 Attack: Malicious site makes requests to your site using user's cookies
 
 Prevention:
@@ -884,6 +962,7 @@ Prevention:
 - SameSite cookie attribute
 - Check Origin/Referer headers
 - Require re-authentication for sensitive actions
+
 ```
 
 ```java
@@ -897,11 +976,13 @@ public ResponseEntity<?> transfer(
     }
     // process transfer
 }
+
 ```
 
 ### 4. Authentication Attacks
 
-```
+```text
+
 Brute Force:
 - Rate limiting
 - Account lockout after N failed attempts
@@ -917,6 +998,7 @@ Credential Stuffing:
 - Require strong passwords
 - Enable MFA (multi-factor authentication)
 - Monitor for unusual login patterns
+
 ```
 
 ### 5. Insecure Direct Object References (IDOR)
@@ -937,6 +1019,7 @@ public Order getOrder(@PathVariable Long id) {
     }
     return order;
 }
+
 ```
 
 ## Encryption
@@ -959,6 +1042,7 @@ KeyPair keyPair = keyGen.generateKeyPair();
 // Use for: passwords, data integrity
 String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12));
 boolean matches = BCrypt.checkpw(password, hashed);
+
 ```
 
 ## Password Storage
@@ -975,6 +1059,7 @@ boolean valid = BCrypt.checkpw(password, hash);
 
 // scrypt: memory-hard, ASIC-resistant
 // argon2: winner of Password Hashing Competition
+
 ```
 
 ## CORS (Cross-Origin Resource Sharing)
@@ -993,11 +1078,13 @@ public class CorsConfig implements WebMvcConfigurer {
             .maxAge(3600);
     }
 }
+
 ```
 
 ## JWT Security
 
-```
+```text
+
 JWT Structure: Header.Payload.Signature
 
 Best Practices:
@@ -1007,6 +1094,7 @@ Best Practices:
 - Store tokens in httpOnly, secure cookies (not localStorage)
 - Validate signature, expiration, issuer, audience
 - Include token revocation mechanism
+
 ```
 
 ```java
@@ -1028,11 +1116,13 @@ public ResponseEntity<?> refreshToken(@RequestBody RefreshTokenRequest request) 
     // issue new access token
     // optionally issue new refresh token
 }
+
 ```
 
 ## Security Checklist for Interviews
 
-```
+```text
+
 Authentication:
 ✅ Use bcrypt/argon2 for password hashing
 ✅ Implement MFA
@@ -1062,6 +1152,7 @@ Monitoring:
 ✅ Log security events
 ✅ Alert on suspicious activity
 ✅ Regular security audits
+
 ```
 
 ### Resources for Security
@@ -1106,6 +1197,7 @@ int result = future.get(); // blocks
 
 // 4. Virtual Threads (Java 21+)
 Thread.startVirtualThread(() -> System.out.println("Virtual thread"));
+
 ```
 
 ## Synchronization
@@ -1114,12 +1206,12 @@ Thread.startVirtualThread(() -> System.out.println("Virtual thread"));
 // synchronized keyword
 class Counter {
     private int count = 0;
-    
+
     // Method-level lock
     public synchronized void increment() {
         count++;
     }
-    
+
     // Block-level lock
     public void decrement() {
         synchronized (this) {
@@ -1133,7 +1225,7 @@ class FlexibleLock {
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition notEmpty = lock.newCondition();
     private final Queue<Integer> queue = new LinkedList<>();
-    
+
     public void produce(int item) {
         lock.lock();
         try {
@@ -1146,7 +1238,7 @@ class FlexibleLock {
             lock.unlock();
         }
     }
-    
+
     public int consume() {
         lock.lock();
         try {
@@ -1159,6 +1251,7 @@ class FlexibleLock {
         }
     }
 }
+
 ```
 
 ## Common Concurrency Problems
@@ -1172,9 +1265,9 @@ class BoundedBuffer<T> {
     private final Lock lock = new ReentrantLock();
     private final Condition notFull = lock.newCondition();
     private final Condition notEmpty = lock.newCondition();
-    
+
     BoundedBuffer(int capacity) { this.capacity = capacity; }
-    
+
     public void put(T item) throws InterruptedException {
         lock.lock();
         try {
@@ -1185,7 +1278,7 @@ class BoundedBuffer<T> {
             lock.unlock();
         }
     }
-    
+
     public T take() throws InterruptedException {
         lock.lock();
         try {
@@ -1198,6 +1291,7 @@ class BoundedBuffer<T> {
         }
     }
 }
+
 ```
 
 ### Readers-Writers Problem
@@ -1208,7 +1302,7 @@ class ReadWriteLock {
     private final Lock readLock = rwLock.readLock();
     private final Lock writeLock = rwLock.writeLock();
     private int readers = 0;
-    
+
     public void read() {
         readLock.lock();
         try {
@@ -1219,7 +1313,7 @@ class ReadWriteLock {
             readLock.unlock();
         }
     }
-    
+
     public void write() {
         writeLock.lock();
         try {
@@ -1229,6 +1323,7 @@ class ReadWriteLock {
         }
     }
 }
+
 ```
 
 ### Dining Philosophers
@@ -1239,13 +1334,13 @@ class Philosopher implements Runnable {
     private final int id;
     private final ReentrantLock leftFork;
     private final ReentrantLock rightFork;
-    
+
     Philosopher(int id, ReentrantLock left, ReentrantLock right) {
         this.id = id;
         this.leftFork = left;
         this.fork = right;
     }
-    
+
     public void run() {
         while (true) {
             think();
@@ -1263,6 +1358,7 @@ class Philosopher implements Runnable {
         }
     }
 }
+
 ```
 
 ## CompletableFuture
@@ -1293,6 +1389,7 @@ both.thenRun(() -> {
 // Wait for first (race)
 CompletableFuture<Object> first = CompletableFuture.anyOf(future1, future2);
 first.thenAccept(result -> System.out.println("Winner: " + result));
+
 ```
 
 ## Thread Safety Patterns
@@ -1302,12 +1399,12 @@ first.thenAccept(result -> System.out.println("Winner: " + result));
 final class ImmutablePoint {
     private final int x;
     private final int y;
-    
+
     ImmutablePoint(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    
+
     public int getX() { return x; }
     public int getY() { return y; }
 }
@@ -1326,6 +1423,7 @@ counter.compareAndSet(5, 10); // CAS operation
 ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
 map.putIfAbsent("key", 1);
 map.compute("key", (k, v) -> v == null ? 1 : v + 1);
+
 ```
 
 ## Concurrency Problems
@@ -1370,3 +1468,25 @@ map.compute("key", (k, v) -> v == null ? 1 : v + 1);
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers system design concepts, API design principles, and security fundamentals for senior engineering interviews. Topics include distributed systems, architectural patterns, authentication, authorization, and secure coding practices.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

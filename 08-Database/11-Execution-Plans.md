@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Execution Plans
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -410,114 +420,12 @@ SET work_mem = '256MB';  -- Increase for complex queries
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is EXPLAIN?**
-   Shows PostgreSQL's execution plan for a query.
-
-2. **What is the difference between EXPLAIN and EXPLAIN ANALYZE?**
-   EXPLAIN: shows plan only; EXPLAIN ANALYZE: executes and shows actual results.
-
-3. **What is a sequential scan?**
-   Reading entire table; used when no index is beneficial.
-
-4. **What is an index scan?**
-   Using index to find rows; faster than sequential scan.
-
-5. **What does "cost" mean in EXPLAIN output?**
-   Estimated cost of operation; lower is better.
-
-### Intermediate (5)
-
-6. **What is the difference between Index Scan and Index Only Scan?**
-   Index Scan: uses index then heap; Index Only Scan: data from index only.
-
-7. **What is a Hash Join?**
-   Builds hash table on smaller table, probes with larger table.
-
-8. **What is the difference between Nested Loop and Hash Join?**
-   Nested Loop: O(n*m); Hash Join: O(n+m).
-
-9. **What is "Buffers" in EXPLAIN output?**
-   Shows I/O operations; shared hit = memory, shared read = disk.
-
-10. **What is the difference between cost and actual time?**
-    Cost: estimated; Actual: measured during execution.
-
-### Senior (10)
-
-11. **How does PostgreSQL choose between join algorithms?**
-    Based on table sizes, statistics, available indexes, memory.
-
-12. **What is the impact of statistics on execution plans?**
-    Outdated statistics = wrong cost estimates = bad plans.
-
-13. **What is the difference between cost and actual time?**
-    Cost: model-based estimate; Actual: measured during execution.
-
-14. **How do you optimize a query with multiple OR conditions?**
-    Use Bitmap Index Scan; consider UNION ALL.
-
-15. **What is the difference between Seq Scan and Index Scan?**
-    Seq Scan: reads entire table; Index Scan: uses index for lookup.
-
-16. **How do you handle parallel query execution?**
-    PostgreSQL can parallelize Seq Scan, Hash Join, etc.
-
-17. **What is the impact of work_mem on query performance?**
-    Affects hash join and sort operations; increase for complex queries.
-
-18. **How do you debug a slow query?**
-    EXPLAIN ANALYZE, check buffers, verify indexes, update statistics.
-
-19. **What is the difference between planning and execution time?**
-    Planning: generating plan; Execution: running query.
-
-20. **How do you compare different query approaches?**
-    Run EXPLAIN ANALYZE for each; compare cost and actual time.
-
-### FAANG-style (5)
-
-21. **How would you optimize a query on a billion-row table?**
-    Partitioning, materialized views, approximate queries, proper indexes.
-
-22. **Design a query performance monitoring system.**
-    pg_stat_statements, pgBadger, custom dashboards.
-
-23. **How do you handle query optimization in a distributed database?**
-    Distributed query planning, data locality, partition pruning.
-
-24. **Design a system for automatic index recommendation.**
-    Query analysis, workload capture, index suggestion engine.
-
-25. **How do you optimize for both reads and writes?**
-    Read replicas, write-optimized indexes, materialized views.
-
-### Follow-ups (5)
-
-26. **What is the difference between EXPLAIN and EXPLAIN ANALYZE?**
-    EXPLAIN: estimated plan; EXPLAIN ANALYZE: actual execution with timing.
-
-27. **How do you handle parallel execution in EXPLAIN?**
-    Look for "Parallel" in output; workers = number of parallel processes.
-
-28. **What is the difference between planning and execution time?**
-    Planning: generating plan; Execution: running query.
-
-29. **How do you optimize a query with many JOINs?**
-    Join order, indexes on join columns, filter early.
-
-30. **What is the impact of data distribution on execution plans?**
-    Skewed data can cause bad plans; ANALYZE helps statistics.
 
 ## Summary
 
 EXPLAIN ANALYZE is essential for query optimization. Understand scan types (Seq Scan, Index Scan, Index Only Scan), join algorithms (Nested Loop, Hash Join, Merge Join), and cost estimates. Always check buffers for I/O impact. Update statistics regularly and verify index usage.
 
 ## Cheat Sheet
-
 ```sql
 -- Basic EXPLAIN
 EXPLAIN SELECT * FROM users WHERE id = 1;
@@ -538,6 +446,13 @@ SELECT * FROM pg_stat_user_indexes WHERE relname = 'users';
 ANALYZE users;
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

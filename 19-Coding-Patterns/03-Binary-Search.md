@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Binary Search
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -343,7 +353,6 @@ console.log(searchMatrix(matrix, 13)); // false
 Binary search is a fundamental algorithm for searching in sorted data. The key insight is to reduce the search space by half each iteration, achieving O(log n) time complexity.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Binary Search
 Use when: Sorted arrays, monotonic functions, search space
@@ -372,6 +381,13 @@ Key: Always ensure left and right converge
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept]
+---
+
 # Resume Tips for Senior Full Stack Engineers
+
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -472,3 +482,18 @@ Before sending your resume, verify:
 ---
 
 *Your resume's job is simple: get you the interview. The interview's job is to get you the offer. Optimize accordingly.*
+---
+
+## Summary
+
+Your resume's job is simple: get you the interview. This guide covers quantifying achievements with metrics, ATS optimization, senior-level professional summary writing, and common formatting mistakes to avoid.
+
+## References & Learn More
+
+- [Official Documentation](https://developer.mozilla.org/en-US/)
+- [LeetCode](https://leetcode.com/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)

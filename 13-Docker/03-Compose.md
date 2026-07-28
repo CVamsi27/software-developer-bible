@@ -1,4 +1,14 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Compose
+
+[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -536,129 +546,12 @@ docker compose up --scale worker=3
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Docker Compose?**
-   A tool for defining and running multi-container Docker applications with a YAML file.
-
-2. **What is the difference between `docker run` and `docker-compose up`?**
-   `docker run` manages single containers; Compose manages multiple services, networks, and volumes together.
-
-3. **What is the `depends_on` directive?**
-   Controls service startup order and can wait for health checks.
-
-4. **How do you stop a Compose application?**
-   `docker compose down` stops and removes containers; `docker compose down -v` also removes volumes.
-
-5. **What is a Compose profile?**
-   A way to define optional services that only start when the profile is activated.
-
-6. **How do you pass environment variables?**
-   Via `.env` file, `environment` section, or `env_file` directive.
-
-7. **What is the default network created by Compose?**
-   A bridge network named `<project_name>_default`.
-
-8. **How do you view logs?**
-   `docker compose logs -f [service]`
-
-9. **What is the difference between `docker-compose` and `docker compose`?**
-   `docker-compose` is the standalone v1 binary; `docker compose` is the v2 plugin.
-
-10. **How do you rebuild images?**
-    `docker compose build --no-cache` or `docker compose up --build`
-
-### Intermediate (5-10)
-
-11. **How does Compose handle service discovery?**
-    Services are accessible by their service name as DNS entries on shared networks.
-
-12. **What is `docker-compose.override.yml`?**
-    Automatically loaded alongside `docker-compose.yml` to override or extend configuration.
-
-13. **How do you run a one-off command in a service?**
-    `docker compose run <service> <command>` or `docker compose exec <service> <command>`.
-
-14. **What is the difference between `run` and `exec`?**
-    `run` creates a new container; `exec` runs in an existing running container.
-
-15. **How do you scale services?**
-    `docker compose up --scale <service>=<count>` (limited to single host).
-
-16. **How do you handle different environments?**
-    Use multiple Compose files: `docker compose -f docker-compose.yml -f docker-compose.prod.yml up`.
-
-17. **What is the `build` context?**
-    The directory sent to the Docker daemon for building the image.
-
-18. **How do you mount secrets in Compose?**
-    Use the `secrets` top-level element with `file:` or `environment:` sources.
-
-19. **What is `docker compose watch`?**
-    A feature that watches for file changes and rebuilds/restarts services automatically.
-
-20. **How do you configure resource limits?**
-    Under `deploy.resources.limits` (Compose v3) or `mem_limit`/`cpus` (Compose v2).
-
-### Senior (10-15)
-
-21. **How would you structure Compose files for a microservices architecture?**
-    Use base file + environment-specific overrides. Separate network definitions per service boundary. Use profiles for optional services (debug, monitoring).
-
-22. **How do you handle database migrations in Compose?**
-    Use a migration service with `depends_on` health checks, or run migrations in the app's entrypoint script.
-
-23. **Explain Compose's networking model.**
-    Compose creates a default bridge network. Services communicate via DNS names. You can define custom networks for isolation.
-
-24. **How do you implement zero-downtime deployment with Compose?**
-    Use `docker compose up --no-deps --scale app=N` with a load balancer, or rolling updates via Swarm mode.
-
-25. **How do you handle secrets securely in Compose?**
-    Use Docker secrets (Swarm), `env_file` for local dev, or external secret management (Vault, AWS SSM).
-
-### FAANG-style (5-10)
-
-26. **Design a production Compose setup for a high-availability application.**
-    Multiple replicas behind a load balancer, health checks, resource limits, logging to centralized system, volume backups, network isolation.
-
-27. **How would you migrate from Compose to Kubernetes?**
-    Map Compose services to Deployments, volumes to PVs, networks to Services, and use Kompose or manual YAML conversion.
-
-28. **Describe a multi-host Compose deployment strategy.**
-    Use Docker Swarm mode or orchestrate Compose with remote Docker contexts. For true multi-host, migrate to Kubernetes.
-
-29. **How would you debug a Compose application with 20+ services?**
-    Use `docker compose logs --tail=100`, check health status, verify network connectivity, use debug profiles.
-
-30. **Design a Compose-based development environment for a team of 50 engineers.**
-    Use `.env` files with sensible defaults, mount host SSH keys, cache node_modules as named volumes, provide scripts for common tasks.
-
-### Follow-ups (5-10)
-
-31. **What is the `init` directive in Compose?**
-    Runs an init process (tini) inside the container to handle PID 1 responsibilities.
-
-32. **How do you handle file permissions with bind mounts?**
-    Use `user` directive, create matching UID/GID, or use named volumes.
-
-33. **Can Compose work with Docker Swarm?**
-    Yes — `docker stack deploy -c docker-compose.yml` deploys to Swarm.
-
-34. **What is the `external` keyword for volumes/networks?**
-    References resources created outside Compose that shouldn't be removed by `docker compose down`.
-
-35. **How do you configure HTTPS in Compose with nginx?**
-    Mount certificate files and configure nginx.conf with SSL directives.
 
 ## Summary
 
 Docker Compose simplifies multi-container application management through declarative YAML configuration. It provides service discovery, network management, volume orchestration, and environment variable handling. Essential for local development, testing, and simple deployments.
 
 ## Cheat Sheet
-
 ```bash
 # Lifecycle
 docker compose up -d
@@ -695,6 +588,13 @@ docker compose config  # validate and view resolved config
 ```
 
 ---
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [CI/CD](../15-CI-CD/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

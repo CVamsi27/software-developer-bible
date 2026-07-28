@@ -1,4 +1,14 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # GitHub Actions
+
+[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -553,129 +563,12 @@ gh run rerun <run-id>
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is GitHub Actions?**
-   A CI/CD platform built into GitHub for automating software workflows.
-
-2. **What is a workflow?**
-   An automated process defined in `.github/workflows/`.
-
-3. **What is a job?**
-   A group of steps running on the same runner.
-
-4. **What is a step?**
-   An individual task (action or shell command).
-
-5. **What is a runner?**
-   A server that executes jobs (GitHub-hosted or self-hosted).
-
-6. **What is an action?**
-   A reusable unit of code from the marketplace or custom.
-
-7. **How do you trigger a workflow?**
-   Via events (push, PR, schedule, manual).
-
-8. **What is the `uses` keyword?**
-   Specifies an action to use in a step.
-
-9. **How do you access secrets?**
-   `${{ secrets.SECRET_NAME }}`
-
-10. **What is the default workflow directory?**
-    `.github/workflows/`
-
-### Intermediate (5-10)
-
-11. **What is matrix strategy?**
-    Run jobs across multiple configurations (OS, versions).
-
-12. **What is a reusable workflow?**
-    A workflow called from another workflow via `workflow_call`.
-
-13. **What are artifacts?**
-    Files produced by a workflow, downloadable or passed between jobs.
-
-14. **What are environments?**
-    Deployment targets with protection rules and secrets.
-
-15. **What is concurrency?**
-    Prevents multiple workflow runs from running simultaneously.
-
-16. **What is the `needs` keyword?**
-    Defines job dependencies.
-
-17. **What is the `if` keyword?**
-    Conditional execution of jobs or steps.
-
-18. **How do you cache dependencies?**
-    Use `actions/cache` or built-in caching in setup actions.
-
-19. **What is the `outputs` keyword?**
-    Pass data between jobs or workflows.
-
-20. **What is the `workflow_dispatch` event?**
-    Manual workflow trigger from the GitHub UI.
-
-### Senior (10-15)
-
-21. **How would you design a CI/CD pipeline for a monorepo?**
-    Use path filters, reusable workflows, and matrix builds per service.
-
-22. **How do you handle secrets in GitHub Actions?**
-    Use GitHub Secrets, environment secrets, and OIDC for cloud providers.
-
-23. **What is OIDC in GitHub Actions?**
-    OpenID Connect for passwordless authentication with cloud providers.
-
-24. **How do you optimize GitHub Actions workflows?**
-    Cache dependencies, parallelize jobs, and use matrix builds.
-
-25. **How do you handle deployment approvals?**
-    Use environment protection rules with required reviewers.
-
-### FAANG-style (5-10)
-
-26. **Design a CI/CD pipeline for 100+ microservices.**
-    Use path-based triggers, reusable workflows, and matrix builds. Implement caching and parallelization.
-
-27. **How would you handle GitHub Actions costs?**
-    Use self-hosted runners, optimize workflow duration, and implement caching.
-
-28. **Design a security scanning pipeline.**
-    Integrate Trivy, Snyk, and CodeQL. Block PRs on critical vulnerabilities.
-
-29. **How would you implement GitOps with GitHub Actions?**
-    Use Argo CD or Flux with GitHub Actions for image updates.
-
-30. **Design a multi-environment deployment pipeline.**
-    Use environments with protection rules, manual approvals, and rollback strategies.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between `runs-on: ubuntu-latest` and self-hosted?**
-    GitHub-hosted: managed by GitHub. Self-hosted: your own infrastructure.
-
-32. **How do you handle workflow file syntax errors?**
-    Use `actionlint` or GitHub's workflow validation.
-
-33. **What is the `GITHUB_TOKEN`?**
-    A default token for authentication with GitHub API.
-
-34. **How do you debug workflow failures?**
-    Enable debug logging, use `tmate` action, and check workflow logs.
-
-35. **What is the difference between `push` and `pull_request` events?**
-    `push`: code pushed to branch. `pull_request`: PR opened/updated.
 
 ## Summary
 
 GitHub Actions provides a powerful, integrated CI/CD platform. Workflows are defined in YAML, triggered by events, and executed on runners. Key features include matrix builds, caching, secrets management, and reusable workflows.
 
 ## Cheat Sheet
-
 ```bash
 # Workflow file location
 .github/workflows/ci.yml
@@ -712,6 +605,13 @@ on:
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
+- [Git Advanced](../24-Git-Advanced/)
 
 ## References & Learn More
 

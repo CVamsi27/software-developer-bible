@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Server Actions in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -748,131 +758,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What are Server Actions?**
-   Server Actions are async functions that run on the server, called from Client or Server Components. They use `'use server'` directive and enable data mutations.
-
-2. **How do you create a Server Action?**
-   Add `'use server'` at the top of a file or function. Export the function and use it in forms or event handlers.
-
-3. **What is the difference between Server Actions and API Routes?**
-   Server Actions are simpler, type-safe, and integrated with caching. API Routes offer more control over HTTP requests/responses.
-
-4. **How do you handle form submission with Server Actions?**
-   Use the `action` prop on forms with a Server Action function. Access form data via `FormData` parameter.
-
-5. **What is progressive enhancement?**
-   Forms work without JavaScript enabled. Server Actions handle form submission on the server, making the app functional even without client-side code.
-
-6. **How do you show loading state with Server Actions?**
-   Use `useFormStatus` hook to access the `pending` state during form submission.
-
-7. **How do you handle validation in Server Actions?**
-   Validate on the server using Zod or similar libraries. Return validation errors to the client via return values.
-
-8. **What is `revalidatePath`?**
-   A function that invalidates the cache for a specific path, causing it to re-render with fresh data.
-
-### Intermediate (5-10)
-
-9. **How do you use `useFormState` with Server Actions?**
-   `useFormState` manages form state and returns `[state, action]`. The Server Action receives previous state and FormData.
-
-10. **How do you implement optimistic updates with Server Actions?**
-    Use `useOptimistic` hook to immediately update UI, then call Server Action to persist changes.
-
-11. **How do you handle file uploads with Server Actions?**
-    Use `FormData` to access files, process them on the server, and upload to storage services.
-
-12. **What is the relationship between Server Actions and caching?**
-    Server Actions can call `revalidatePath` or `revalidateTag` to invalidate cache after mutations.
-
-13. **How do you pass custom data to Server Actions?**
-    Use hidden form fields, `formData.append()`, or call Server Actions directly with custom parameters.
-
-14. **How do you handle multiple Server Actions in one form?**
-    Use separate buttons with different `formAction` props or handle logic within a single action.
-
-15. **What are the security considerations for Server Actions?**
-    Always validate inputs server-side, use CSRF protection, implement rate limiting, and never trust client data.
-
-### Senior (10-15)
-
-16. **Design a comprehensive form system using Server Actions.**
-    Use `useFormState` for state management, `useFormStatus` for loading states, Zod for validation, and Server Actions for submission.
-
-17. **How would you implement a multi-step form with Server Actions?**
-    Use URL state for step tracking, Server Actions for data persistence between steps, and progressive enhancement for each step.
-
-18. **Explain the Server Actions execution model.**
-    Client sends POST request with action ID, server routes to the action, executes with provided data, and returns result. Automatic revalidation follows.
-
-19. **How do you handle complex mutations with Server Actions?**
-    Use transactions, implement retry logic, handle partial failures, and provide rollback mechanisms.
-
-20. **Design a file upload system with Server Actions.**
-    Implement chunked uploads for large files, validate file types/sizes, process on server, and upload to storage services.
-
-21. **How would you implement rate limiting for Server Actions?**
-    Use middleware or action-level checks, implement IP-based tracking, and return appropriate error responses.
-
-22. **Explain the relationship between Server Actions and React Suspense.**
-    Server Actions can trigger Suspense boundaries, showing loading states while the action executes. Use `useTransition` for non-blocking updates.
-
-23. **How do you implement real-time updates after Server Actions?**
-    Combine Server Actions with WebSocket/SSE, use revalidation for polling, or implement optimistic updates with rollback.
-
-24. **Design an error recovery system for Server Actions.**
-    Implement retry logic, provide user-friendly error messages, log errors for debugging, and offer fallback options.
-
-25. **How would you implement a workflow system with Server Actions?**
-    Use a state machine approach, track workflow progress in database, implement step-by-step execution, and handle failures gracefully.
-
-### FAANG-style (5-10)
-
-26. **Design a distributed transaction system using Server Actions.**
-    Implement saga pattern, handle compensation logic, track transaction state, and ensure data consistency across services.
-
-27. **How would you implement a command pattern with Server Actions?**
-    Define command types, serialize commands, execute on server, and handle undo/redo operations.
-
-28. **Design a batch processing system with Server Actions.**
-    Implement job queues, handle progress tracking, provide rollback capabilities, and manage resource limits.
-
-29. **How would you implement a workflow engine using Server Actions?**
-    Define workflow steps, track execution state, handle parallel branches, and implement compensation logic.
-
-30. **Design a distributed system with Server Actions for coordination.**
-    Use Server Actions for orchestration, implement circuit breakers, handle service failures, and ensure idempotency.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Server Actions?**
-    Server-side execution only, no streaming, limited error handling, and require form data or serializable arguments.
-
-32. **How do Server Actions affect testing?**
-    Test action logic separately, mock database calls, test error scenarios, and verify revalidation behavior.
-
-33. **What is the future of Server Actions?**
-    Better streaming support, improved error handling, more React integration, and enhanced DevTools.
-
-34. **How do you migrate from API Routes to Server Actions?**
-    Identify mutation endpoints, convert to Server Actions, update client code, and verify caching behavior.
-
-35. **What security best practices apply to Server Actions?**
-    Validate all inputs, implement CSRF protection, use authentication/authorization, and rate limit requests.
-
-36. **How do Server Actions interact with middleware?**
-    Server Actions execute after middleware, so middleware can't intercept them directly. Use middleware for request-level logic.
-
-37. **What are alternatives to Server Actions?**
-    API Routes, GraphQL mutations, tRPC, and direct database calls from Client Components.
-
-38. **How do you monitor Server Actions in production?**
-    Log action execution, track performance metrics, monitor error rates, and implement alerting.
 
 ## Summary
 
@@ -888,7 +773,6 @@ Optimization:
 | Use case | Data mutations |
 
 ## Cheat Sheet
-
 ```text
 'use server' directive:
 
@@ -919,6 +803,13 @@ Validation:
 - Return errors to client
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # Blue-Green & Canary Deployments
+
+[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -540,129 +550,12 @@ kubectl patch svc myapp -p '{"spec":{"selector":{"version":"blue"}}}'
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is blue-green deployment?**
-   Maintaining two identical environments and switching traffic between them.
-
-2. **What is canary deployment?**
-   Gradually rolling out changes to a small subset of users.
-
-3. **What is a rolling update?**
-   Gradually replacing old instances with new ones.
-
-4. **What is a feature flag?**
-   A toggle to enable/disable features without deployment.
-
-5. **What is the benefit of blue-green?**
-   Zero downtime and instant rollback.
-
-6. **What is the benefit of canary?**
-   Reduced risk by testing with small user subset.
-
-7. **How do you switch traffic in blue-green?**
-   Update service selector or load balancer configuration.
-
-8. **How do you monitor a canary deployment?**
-   Track error rates, latency, and business metrics.
-
-9. **What is a rollback?**
-   Reverting to a previous version after a failed deployment.
-
-10. **When would you use blue-green vs canary?**
-    Blue-green: instant switch. Canary: gradual rollout with validation.
-
-### Intermediate (5-10)
-
-11. **How do you handle database migrations in blue-green?**
-    Use backward-compatible migrations that work with both versions.
-
-12. **What is the difference between blue-green and canary?**
-    Blue-green: instant switch. Canary: gradual rollout.
-
-13. **How do you implement canary with Kubernetes?**
-    Use two Deployments with different replica counts and a shared Service.
-
-14. **What is traffic splitting?**
-    Dividing traffic between versions (e.g., 90/10 split).
-
-15. **How do you automate canary promotion?**
-    Use metrics thresholds to automatically increase traffic.
-
-16. **What is a service mesh?**
-    Infrastructure layer for service communication (Istio, Linkerd).
-
-17. **How do you handle session affinity in blue-green?**
-    Use sticky sessions or external session storage.
-
-18. **What is the cost of blue-green?**
-    Running two environments doubles resource usage.
-
-19. **How do you test a canary deployment?**
-    Monitor metrics and run integration tests.
-
-20. **What is the difference between canary and feature flags?**
-    Canary: traffic-based. Feature flags: user-based.
-
-### Senior (10-15)
-
-21. **Design a blue-green deployment strategy for a microservices application.**
-    Use Kubernetes Deployments with service selectors, database migration strategy, and automated traffic switching.
-
-22. **How would you implement canary deployment with automatic rollback?**
-    Use metrics monitoring, threshold-based promotion, and automated rollback on failure.
-
-23. **What is the impact of blue-green on database?**
-    Requires backward-compatible migrations and shared database.
-
-24. **How do you handle stateful applications in blue-green?**
-    Use StatefulSets with persistent volumes and careful migration.
-
-25. **Design a canary analysis system.**
-    Monitor error rates, latency, and business metrics. Use statistical significance for promotion decisions.
-
-### FAANG-style (5-10)
-
-26. **Design a progressive delivery system for 100+ microservices.**
-    Use Argo Rollouts with canary analysis, automated promotion, and rollback.
-
-27. **How would you implement canary deployment across multiple regions?**
-    Use global traffic management with regional canary analysis.
-
-28. **Design a feature flag system for gradual rollout.**
-    Use LaunchDarkly or custom system with user segmentation and metrics tracking.
-
-29. **How would you handle database schema changes in blue-green?**
-    Use expand-contract pattern with backward-compatible migrations.
-
-30. **Design a rollback strategy for failed deployments.**
-    Use automated rollback triggers, manual override, and database rollback procedures.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between canary and A/B testing?**
-    Canary: infrastructure-based. A/B: user-based experimentation.
-
-32. **How do you handle cache invalidation in blue-green?**
-    Use cache warming and versioned cache keys.
-
-33. **What is the maximum canary duration?**
-    Depends on traffic volume and metrics stability. Usually 15-30 minutes.
-
-34. **How do you handle configuration changes in blue-green?**
-    Use ConfigMaps with environment-specific values.
-
-35. **What is the difference between blue-green and red-black?**
-    Same concept, different naming convention.
 
 ## Summary
 
 Blue-green provides instant traffic switching and rollback. Canary enables gradual rollout with validation. Feature flags decouple deployment from release. Choose based on risk tolerance, rollback needs, and validation requirements.
 
 ## Cheat Sheet
-
 ```bash
 # Blue-Green switch
 kubectl patch svc myapp -p '{"spec":{"selector":{"version":"green"}}}'
@@ -686,6 +579,13 @@ export FEATURE_NEW_CHECKOUT=true
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
+- [Git Advanced](../24-Git-Advanced/)
 
 ## References & Learn More
 

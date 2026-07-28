@@ -1,4 +1,14 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Clustering
+
+[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -980,217 +990,6 @@ const pool = require('generic-pool').createPool({
 
 ```
 
-## Interview Questions
-
-### Beginner
-
-1. **What is clustering in Node.js?**
-
-   - Clustering allows creating multiple worker processes that share a single port, utilizing multiple CPU cores.
-
-2. **Why do we need clustering?**
-
-   - To utilize multiple CPU cores, provide fault tolerance, and improve throughput.
-
-3. **What is the difference between primary and worker processes?**
-
-   - Primary process manages workers and distributes connections, while worker processes handle requests.
-
-4. **How does cluster.fork() work?**
-
-   - It creates a new worker process by forking the current process, similar to child_process.fork().
-
-5. **What is round-robin scheduling?**
-
-   - A load balancing method where connections are distributed to workers in sequence.
-
-6. **How do workers communicate with the primary process?**
-
-   - Through IPC (Inter-Process Communication) using process.send() and worker.send().
-
-7. **What happens when a worker crashes?**
-
-   - The 'exit' event is emitted, and you can fork a new worker to replace it.
-
-8. **Can workers share memory?**
-
-   - No, workers are separate processes with their own memory space.
-
-9. **What is the default scheduling policy?**
-
-   - Round-robin on Linux/Mac, OS-level scheduling on Windows.
-
-10. **How do you stop a worker?**
-
-    - Use worker.kill() or worker.disconnect() for graceful shutdown.
-
-### Intermediate
-
-11. **How do you implement sticky sessions?**
-
-    - Use IP-based routing to ensure requests from the same client go to the same worker.
-
-12. **What is the difference between cluster and worker_threads?**
-
-    - Cluster creates separate processes, while worker_threads run in the same process with shared memory.
-
-13. **How do you handle configuration changes in cluster?**
-
-    - Send configuration updates via IPC messages to workers.
-
-14. **What is the impact of clustering on memory usage?**
-
-    - Each worker has its own memory space, so total memory usage increases with more workers.
-
-15. **How do you implement graceful shutdown?**
-
-    - Disconnect workers, wait for them to finish, then exit.
-
-16. **What is the difference between SCHED_RR and SCHED_NONE?**
-
-    - SCHED_RR uses round-robin, SCHED_NONE uses OS-level scheduling.
-
-17. **How do you handle shared resources?**
-
-    - Use external storage like Redis for shared state between workers.
-
-18. **What is the maximum number of workers?**
-
-    - Limited by system resources, but typically equal to CPU cores.
-
-19. **How do you monitor worker health?**
-
-    - Implement periodic health checks and collect metrics from workers.
-
-20. **What happens to existing connections during shutdown?**
-
-    - They're maintained until the worker finishes processing them.
-
-### Senior
-
-21. **How would you design a clustering system for 10K concurrent connections?**
-
-    - Use sticky sessions, connection pooling, implement backpressure, and monitor resource usage.
-
-22. **Explain the trade-offs between clustering and load balancing.**
-
-    - Clustering is single-machine, load balancing can span multiple machines. Clustering has lower latency but limited scalability.
-
-23. **How would you implement zero-downtime deployment with clustering?**
-
-    - Use rolling updates, implement health checks, and coordinate worker restarts.
-
-24. **How do you handle worker memory leaks?**
-
-    - Monitor memory usage, implement automatic restarts, and profile worker processes.
-
-25. **Explain the impact of clustering on Node.js event loop.**
-
-    - Each worker has its own event loop, so clustering doesn't affect individual worker performance.
-
-26. **How would you implement distributed tracing across workers?**
-
-    - Use trace context propagation, implement correlation IDs, and integrate with monitoring systems.
-
-27. **How do you optimize clustering for different workloads?**
-
-    - I/O-bound: more workers. CPU-bound: workers equal to cores. Memory-bound: fewer workers.
-
-28. **What is the impact of clustering on garbage collection?**
-
-    - Each worker has its own GC, so total GC pressure increases but is distributed.
-
-29. **How would you implement auto-scaling with clustering?**
-
-    - Monitor CPU/memory usage, implement dynamic worker creation/removal, and use external orchestrators.
-
-30. **How do you handle worker crashes in production?**
-
-    - Implement automatic restarts, log crash information, and alert on repeated crashes.
-
-### FAANG-style
-
-31. **Design a clustering system for a microservices architecture.**
-
-    - Use service discovery, implement circuit breakers, add load balancing, and support auto-scaling.
-
-32. **How would you implement clustering across multiple machines?**
-
-    - Use load balancers, implement session persistence, handle failover, and coordinate deployments.
-
-33. **Design a clustering system with fault tolerance.**
-
-    - Implement health checks, use redundant workers, add automatic failover, and monitor system health.
-
-34. **How would you optimize clustering for real-time applications?**
-
-    - Use sticky sessions, implement connection pooling, optimize message passing, and minimize latency.
-
-35. **Design a clustering system for batch processing.**
-
-    - Implement task distribution, add progress tracking, handle failures, and optimize resource usage.
-
-36. **How would you implement clustering with different worker types?**
-
-    - Create specialized workers, implement routing logic, and coordinate between worker types.
-
-37. **Design a clustering system for global distribution.**
-
-    - Use geo-aware routing, implement data replication, handle latency, and support failover.
-
-38. **How would you implement clustering with resource constraints?**
-
-    - Implement resource monitoring, add throttling, and optimize memory/CPU usage per worker.
-
-39. **Design a clustering system for machine learning inference.**
-
-    - Implement model loading, add batch inference, handle GPU resources, and optimize latency.
-
-40. **How would you implement clustering with security requirements?**
-
-    - Add authentication, implement encryption, handle secrets, and audit worker activities.
-
-### Follow-ups
-
-41. **What happens if a worker takes too long to start?**
-
-    - Implement startup timeouts and restart workers that don't start in time.
-
-42. **How do you handle configuration differences between workers?**
-
-    - Pass configuration via environment variables or IPC messages.
-
-43. **What is the impact of clustering on logging?**
-
-    - Each worker logs independently, so use structured logging and correlate by worker ID.
-
-44. **How do you implement rate limiting across workers?**
-
-    - Use shared storage (Redis) for rate limit counters.
-
-45. **What happens when the primary process crashes?**
-
-    - All workers die. Use process managers like PM2 to restart the primary process.
-
-46. **How do you handle signal propagation to workers?**
-
-    - Primary process receives signals and forwards them to workers.
-
-47. **What is the impact of clustering on database connections?**
-
-    - Each worker may create its own connections. Use connection pooling and limit connections per worker.
-
-48. **How do you implement distributed caching with clustering?**
-
-    - Use external cache (Redis) or implement consistent hashing for cache distribution.
-
-49. **What happens during rolling updates with clustering?**
-
-    - New workers start while old ones finish, ensuring zero downtime.
-
-50. **How do you debug issues in clustered applications?**
-
-    - Use worker-specific logging, implement distributed tracing, and monitor each worker independently.
 
 ## Summary
 
@@ -1204,7 +1003,6 @@ Clustering is essential for scaling Node.js applications across multiple CPU cor
 - Monitor resource usage per worker
 
 ## Cheat Sheet
-
 ```text
 ┌───────────────────────────────────────────────────────────────┐
 │                   CLUSTERING CHEAT SHEET                     │
@@ -1264,6 +1062,13 @@ Clustering is essential for scaling Node.js applications across multiple CPU cor
 └───────────────────────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

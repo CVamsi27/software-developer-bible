@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Uber System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -955,85 +965,6 @@ alerts:
 | Surge Pricing | Static rules | ML-based dynamic | Static rules (simpler, predictable) |
 | ETA Calculation | Direct API call | Cached + real-time hybrid | Hybrid for accuracy + speed |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you match riders with drivers efficiently?**
-
-   - Use geospatial indexing (Redis GEO)
-   - Progressive search radius expansion
-   - Multi-factor scoring (distance, rating, acceptance)
-   - Real-time availability tracking
-
-2. **How do you handle surge pricing?**
-
-   - Real-time demand/supply analysis per region
-   - Dynamic multiplier calculation
-   - Price transparency before booking
-   - Gradual surge increase/decrease
-
-3. **How would you ensure accurate ETA?**
-
-   - Integrate with traffic data APIs
-   - Machine learning for historical patterns
-   - Real-time route optimization
-   - Confidence intervals for ETAs
-
-### Scaling Questions
-
-4. **How do you scale location updates for 1M drivers?**
-
-   - Geohash-based sharding
-   - Redis for real-time queries
-   - Kafka for event processing
-   - Write-optimized time-series storage
-
-5. **How do you handle peak demand (New Year's Eve)?**
-
-   - Predictive driver positioning
-   - Gradual surge pricing increase
-   - Rider incentives for flexibility
-   - Driver supply incentives
-
-### Trade-off Questions
-
-6. **How do you balance rider wait time vs driver utilization?**
-
-   - Optimize for rider experience primarily
-   - Driver acceptance rate incentives
-   - Fair distribution of rides
-   - Avoid driver burnout
-
-7. **How do you handle ride pooling (UberPool)?**
-
-   - Graph-based route optimization
-   - Real-time rerouting for new pickups
-   - Fare splitting logic
-   - Delivery time guarantees
-
-### Senior-level Questions
-
-8. **How would you implement safety features?**
-
-   - Real-time ride tracking for contacts
-   - Emergency button integration
-   - Driver background check system
-   - Trip anomaly detection
-
-9. **How do you handle multi-city operations?**
-
-   - Regional data residency
-   - Cross-border ride handling
-   - Currency conversion
-   - Local regulation compliance
-
-10. **How would you optimize for electric vehicles?**
-
-    - Range-aware routing
-    - Charging station integration
-    - Battery level in matching
-    - EV-specific pricing
 
 ## Summary
 
@@ -1060,6 +991,14 @@ Key takeaways:
 This design supports 20M DAU with < 30 second matching latency and 99.99% availability.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

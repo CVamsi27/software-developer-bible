@@ -1,4 +1,14 @@
+---
+section: Git Advanced
+category: Reference
+tags: [interview-questions, reference]
+---
+
 # Git Advanced Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Comprehensive Interview Guide
 
@@ -40,6 +50,7 @@ git stash list
 git stash pop
 
 ```
+
 Use when:
 
 - Switching branches with uncommitted changes
@@ -58,6 +69,7 @@ git cherry-pick abc1234
 git cherry-pick --no-commit abc1234
 
 ```
+
 Use for:
 
 - Applying hotfixes to multiple branches
@@ -171,6 +183,7 @@ git rebase -i HEAD~3
 # drop = remove commit
 
 ```
+
 Use to:
 
 - Clean up commit history before merging
@@ -235,6 +248,7 @@ git blame path/to/file
 git blame -L 10,20 path/to/file
 
 ```
+
 Use to:
 
 - Find who introduced a bug
@@ -338,6 +352,7 @@ git push --force origin feature
 git push --force-with-lease origin feature
 
 ```
+
 Risks:
 
 - Loses commits for collaborators
@@ -634,6 +649,12 @@ monorepo:
 
 ## Summary
 Advanced Git commands are essential for complex development workflows. Master bisect for debugging, reflog for recovery, and understand when to use revert vs reset. Practice these commands and understand their implications for team collaboration.
+
+---
+
+## See Also
+- [CI/CD](../15-CI-CD/)
+- [Monorepo](../28-Monorepo/)
 
 ## References & Learn More
 

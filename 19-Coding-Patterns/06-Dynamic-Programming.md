@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Dynamic Programming
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -350,7 +360,6 @@ console.log(minDistance("intention", "execution")); // 5
 Dynamic Programming is a powerful technique for solving optimization problems with overlapping subproblems and optimal substructure. Choose between memoization (top-down) and tabulation (bottom-up) based on the problem.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Dynamic Programming
 Use when: Optimization, counting, overlapping subproblems
@@ -384,6 +393,13 @@ Steps to solve DP:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

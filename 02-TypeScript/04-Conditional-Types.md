@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Conditional Types
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -294,110 +304,12 @@ type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
 - **Caching**: TypeScript caches conditional type results
 - **Infinite recursion**: Guard against infinite type recursion
 
-## Interview Questions
-
-### Beginner
-
-1. **What is a conditional type?**
-
-   - A type that selects types based on conditions using `extends ? :`
-
-2. **How do you check if a type is a string?**
-
-   ```typescript
-   type IsString<T> = T extends string ? true : false;
-
-```
-
-3. **What is the `infer` keyword?**
-
-   - Used in conditional types to extract/infer types
-
-4. **Do conditional types distribute over unions?**
-
-   - Yes, automatically
-
-5. **How do you prevent distribution?**
-
-   - Wrap the checked type in a tuple: `[T] extends [any]`
-
-### Intermediate
-
-6. **Write a type that extracts array element type**
-
-   ```typescript
-   type ElementOf<T> = T extends (infer E)[] ? E : never;
-
-```
-
-7. **How do you create a deep readonly type?**
-
-   - Use recursive conditional types with mapped types
-
-8. **What is the difference between `any` and `unknown` in conditional types?**
-
-   - `unknown` preserves type safety; `any` bypasses it
-
-9. **How do you extract function parameter types?**
-
-   - Use `infer` with function type pattern: `T extends (...args: infer P) => any ? P : never`
-
-10. **Can you have async conditional types?**
-
-    - No, conditional types are evaluated at compile time
-
-### Senior
-
-11. **Explain distribution in conditional types**
-
-    - When T is a union, the conditional type distributes over each union member
-
-12. **How do you create a type-safe equals function?**
-
-    - Use conditional types to enforce type equality
-
-13. **Design a type that recursively makes all properties optional**
-
-    - Use recursive conditional types with Partial
-
-14. **How do you handle circular type references?**
-
-    - Use interfaces or limit recursion depth
-
-### FAANG-style
-
-15. **Implement a type-safe deep merge**
-
-    - Use conditional types to merge object types recursively
-
-16. **Create a type-safe route matcher**
-
-    - Parse route parameters and infer types
-
-17. **Build a type-safe query language**
-
-    - Use conditional types to validate query syntax
-
-### Follow-ups
-
-18. **How do conditional types interact with generics?**
-
-    - Generic type parameters can be used in conditional type checks
-
-19. **Can you use conditional types in mapped types?**
-
-    - Yes: `{ [K in keyof T]: T[K] extends string ? string : number }`
-
-20. **How do you debug complex conditional types?**
-
-    - Use IDE hover, create intermediate type aliases, or use `@ts-expect-error`
 
 ## Summary
 
 Conditional types are powerful for creating computed types. They enable type-level programming and are essential for advanced TypeScript patterns. Master `infer` and distribution to unlock the full potential of TypeScript's type system.
 
 ## Cheat Sheet
-
 ```typescript
 // Basic conditional type
 type IsString<T> = T extends string ? true : false;
@@ -420,6 +332,13 @@ type DeepReadonly<T> =
   T;
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

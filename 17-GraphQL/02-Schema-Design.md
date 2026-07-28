@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Schema Design
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1217,94 +1227,6 @@ type Post {
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is a GraphQL schema?**
-   A schema defines the types, relationships, and operations available in a GraphQL API. It's the contract between client and server.
-
-2. **What is the difference between a scalar and an object type?**
-   Scalars are leaf types (String, Int, Boolean, etc.) that hold values. Object types are composite types with fields that can be other types.
-
-3. **What does `!` mean in GraphQL?**
-   The `!` indicates non-null. `String!` means the field will never return null.
-
-4. **What is an Input type?**
-   A special object type used exclusively for mutation arguments, enabling structured and validated input.
-
-5. **What are Enums used for?**
-   Enums represent a fixed set of values (like statuses or types), providing type safety and documentation.
-
-### Intermediate
-
-6. **What is schema stitching?**
-   Combining multiple GraphQL schemas into a single unified schema, allowing clients to query across multiple services.
-
-7. **What is the Relay Connection specification?**
-   A pagination pattern using edges, nodes, cursors, and pageInfo to provide consistent, cursor-based pagination.
-
-8. **How do you handle file uploads in GraphQL?**
-   Use multipart form data specification or separate REST endpoints. GraphQL spec doesn't natively support file uploads.
-
-9. **What are custom scalars?**
-   User-defined scalar types (like DateTime, JSON, Email) that extend GraphQL's built-in type system.
-
-10. **How do you version a GraphQL API?**
-    Through schema evolution: add new fields/types, deprecate old ones with @deprecated, never remove until no clients use them.
-
-### Senior
-
-11. **How would you design a schema for a multi-tenant SaaS?**
-    Use tenant-scoped queries, field-level authorization, tenant context in resolvers, and possibly schema-per-tenant for strict isolation.
-
-12. **Explain the trade-offs between schema-first and code-first approaches.**
-    Schema-first: better for API contracts, mocking, documentation. Code-first: better for type safety, refactoring, developer experience.
-
-13. **How do you handle schema governance at scale?**
-    Schema review process, breaking change detection tools (GraphQL Inspector), compatibility testing, deprecation policies, and schema registry.
-
-14. **Design a schema that supports real-time collaboration.**
-    Use subscriptions for live updates, optimistic UI, conflict resolution (OT or CRDTs), and versioning for concurrent edits.
-
-15. **How do you optimize schema for mobile clients?**
-    Query whitelisting, persisted queries, field-level caching, response compression, and mobile-specific query complexity limits.
-
-### FAANG-style
-
-16. **Design a GraphQL schema for a social media platform with 1B users.**
-    Consider: sharding strategy, cursor-based pagination, denormalization for read performance, CDN caching, and query complexity limits.
-
-17. **How would you migrate a REST API with 100 endpoints to GraphQL?**
-    Strangler fig pattern, GraphQL gateway over REST, incremental adoption, starting with high-value endpoints, maintaining backward compatibility.
-
-18. **Explain how you'd implement a global search API with GraphQL.**
-    Union types for polymorphic results, cursor-based pagination, relevance scoring, filtering, and query complexity management for deep searches.
-
-19. **How do you handle schema composition in a microservices architecture?**
-    Apollo Federation with @key, @requires, @provides directives. Schema registry for coordination. Breaking change detection across services.
-
-20. **Design a GraphQL API for a real-time multiplayer game.**
-    Subscriptions for game state, optimistic updates, conflict resolution, low-latency transport (WebSockets), and rate limiting for fair play.
-
-### Follow-ups
-
-21. **What happens when two fields return the same data?**
-    This is generally fine (redundancy for convenience), but consider if one should reference the other or if you need a wrapper type.
-
-22. **How do you handle circular dependencies in resolvers?**
-    Use DataLoader, limit query depth, or restructure schema to break cycles.
-
-23. **What is the difference between @skip and @include directives?**
-    Both are query-time directives for conditional field selection. @skip(name: "field") omits when true. @include includes when true.
-
-24. **How do you handle batch operations in mutations?**
-    Use input arrays and return arrays of results/errors. Consider transactions and partial success handling.
-
-25. **What is the purpose of the __typename meta-field?**
-    Returns the actual type name of an object. Used for client-side type resolution, cache normalization, and union/interface handling.
-
----
 
 ## Summary
 
@@ -1318,6 +1240,13 @@ type Post {
 | **Performance** | Complexity limits, caching, depth limits |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

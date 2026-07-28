@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # MVCC (Multi-Version Concurrency Control)
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -451,114 +461,12 @@ WHERE relname = 'accounts';
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is MVCC?**
-   Multi-Version Concurrency Control; maintains multiple versions of data for concurrent access.
-
-2. **What is a snapshot in MVCC?**
-   A consistent view of data at a particular point in time.
-
-3. **What is a dead tuple?**
-   An old version of a row that's no longer visible to any transaction.
-
-4. **What is vacuum?**
-   Process that reclaims space from dead tuples.
-
-5. **What is transaction ID (xid)?**
-   Unique identifier for each transaction; used for visibility checks.
-
-### Intermediate (5)
-
-6. **What is xmin and xmax?**
-   xmin: creating transaction ID; xmax: deleting/updating transaction ID.
-
-7. **How does PostgreSQL handle concurrent updates?**
-   Last commit wins or serialization error (depending on isolation level).
-
-8. **What is transaction ID wraparound?**
-   When xid counter wraps around; prevented by freezing old tuples.
-
-9. **What is the difference between VACUUM and VACUUM FULL?**
-   VACUUM: non-blocking, reclaims space; VACUUM FULL: blocking, compacts table.
-
-10. **What is autovacuum?**
-    Automatic vacuum process; runs based on thresholds.
-
-### Senior (10)
-
-11. **Explain tuple visibility rules.**
-    xmin committed + xmax not committed = visible.
-
-12. **What is the visibility map?**
-    Tracks which pages are all-visible; speeds up vacuum and queries.
-
-13. **How does MVCC affect index scans?**
-    Indexes point to all versions; must check visibility for each.
-
-14. **What is the difference between hot updates and regular updates?**
-    HOT: update doesn't change key columns; avoids index update.
-
-15. **What is the transaction ID freeze threshold?**
-    When xid age reaches 200M; autovacuum freezes old tuples.
-
-16. **How do you monitor MVCC health?**
-    pg_stat_user_tables (dead tuples), pg_database (xid age).
-
-17. **What is the impact of long transactions on MVCC?**
-    Prevent vacuum, cause bloat, increase xid age.
-
-18. **What is a serialization failure?**
-    Conflict detected in Serializable isolation; must retry transaction.
-
-19. **How does PostgreSQL detect visibility?**
-    Checks xmin/xmax commit status in pg_xact.
-
-20. **What is the difference between read committed and repeatable read in MVCC?**
-    Read committed: new snapshot per statement; repeatable read: snapshot per transaction.
-
-### FAANG-style (5)
-
-21. **Design a system to handle 1 million concurrent transactions.**
-    Connection pooling, read replicas, partitioning, proper vacuum tuning.
-
-22. **How do you handle MVCC in a distributed database?**
-    Hybrid logical clocks, vector clocks, CRDTs.
-
-23. **Explain the write amplification problem in MVCC.**
-    Each update creates new version + index updates + WAL.
-
-24. **How do you optimize for read-heavy workloads with MVCC?**
-    Read replicas, materialized views, covering indexes.
-
-25. **Design a garbage collection system for old versions.**
-    Background vacuum, incremental vacuum, priority-based cleanup.
-
-### Follow-ups (5)
-
-26. **What is the difference between physical and logical replication?**
-    Physical: block-level; Logical: row-level with xid tracking.
-
-27. **How do you handle transaction ID exhaustion?**
-    Monitoring, autovacuum tuning, emergency freeze.
-
-28. **What is the impact of MVCC on storage?**
-    Multiple versions = more storage; vacuum reclaims space.
-
-29. **How do you debug visibility issues?**
-    pg_visibility extension, xmin/xmax inspection.
-
-30. **What is the relationship between MVCC and isolation levels?**
-    MVCC provides snapshot isolation; higher levels add conflict detection.
 
 ## Summary
 
 MVCC enables high concurrency by maintaining multiple versions of data. Each transaction sees a consistent snapshot without blocking others. Understanding xmin/xmax, vacuum, and transaction ID lifecycle is crucial. Keep transactions short to prevent bloat. Monitor dead tuples and xid age regularly.
 
 ## Cheat Sheet
-
 ```sql
 -- Inspect tuple versions
 SELECT ctid, xmin, xmax, * FROM table WHERE id = 1;
@@ -583,6 +491,13 @@ SHOW autovacuum;
 ALTER TABLE table SET (autovacuum_vacuum_scale_factor = 0.01);
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

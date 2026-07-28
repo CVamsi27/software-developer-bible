@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # Unit Testing
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1267,137 +1277,6 @@ module.exports = {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a unit test?**
-   A unit test tests a single unit of code (function, method, class) in isolation to verify it works correctly.
-
-2. **Why should we write unit tests?**
-   Unit tests catch bugs early, improve code design, enable safe refactoring, and serve as documentation.
-
-3. **What is the AAA pattern?**
-   Arrange-Act-Assert: set up test data, execute the code, verify the results.
-
-4. **What is a mock?**
-   A mock is a test double that simulates the behavior of real objects to isolate the code under test.
-
-5. **How do you test a function that depends on an API?**
-   Mock the API call and verify the function handles both success and error responses correctly.
-
-6. **What is test isolation?**
-   Test isolation means tests don't depend on each other and can run independently in any order.
-
-7. **How do you test edge cases?**
-   Test with empty inputs, null values, boundary conditions, and error scenarios.
-
-8. **What makes a good unit test?**
-   Fast, isolated, repeatable, self-validating, and timely (written at the right time).
-
-9. **When should you write unit tests?**
-   Ideally before writing the code (TDD), but always before marking a feature as complete.
-
-10. **How do you test error handling?**
-    Use `.toThrow()` or `.rejects` to verify exceptions are thrown with correct messages.
-
-### Intermediate (5-10)
-
-11. **What is the difference between mocks, stubs, and fakes?**
-    Stubs return predefined values, mocks verify interactions, fakes are simplified working implementations.
-
-12. **How do you test private methods?**
-    Test them indirectly through public methods, or refactor to make them testable.
-
-13. **How do you test asynchronous code?**
-    Use async/await, return promises, or use `done` callback. Mock timers for time-dependent code.
-
-14. **What is mutation testing?**
-    Mutation testing introduces code changes to verify tests catch them. High mutation score means robust tests.
-
-15. **How do you test a class with multiple dependencies?**
-    Mock each dependency and verify interactions with each one.
-
-16. **What is the difference between `jest.fn()` and `jest.spyOn()`?**
-    `jest.fn()` creates a new mock function. `jest.spyOn()` creates a spy on an existing method.
-
-17. **How do you test code that uses randomness?**
-    Mock `Math.random()` or inject a random number generator for deterministic tests.
-
-18. **How do you test database operations?**
-    Use in-memory databases, mock database calls, or use test containers.
-
-19. **What is the test pyramid?**
-    Many unit tests, fewer integration tests, few E2E tests. Balance speed and confidence.
-
-20. **How do you handle flaky tests?**
-    Identify root cause, fix timing issues, ensure proper mocking, and isolate tests.
-
-### Senior (10-15)
-
-21. **How do you design testable code?**
-    Apply SOLID principles, use dependency injection, prefer pure functions, and avoid tight coupling.
-
-22. **How do you test legacy code?**
-    Use characterization tests, extract and refactor, and gradually increase coverage.
-
-23. **How do you measure test effectiveness?**
-    Track defect escape rate, mutation score, code coverage, and test maintenance burden.
-
-24. **How do you test microservices?**
-    Use contract testing, integration tests with real dependencies, and E2E tests for critical flows.
-
-25. **How do you handle testing in CI/CD?**
-    Run tests in parallel, use test impact analysis, fail fast, and maintain test stability.
-
-26. **How do you test infrastructure as code?**
-    Use tools like Terratest, validate configurations, and test deployments in staging.
-
-27. **How do you test security?**
-    Include security testing in CI/CD, use static analysis, and validate input sanitization.
-
-28. **How do you test for performance?**
-    Establish baselines, use load testing tools, and monitor key metrics.
-
-29. **How do you handle test data management?**
-    Use factories, fixtures, and data builders. Implement cleanup strategies.
-
-30. **How do you ensure test quality at scale?**
-    Implement test review processes, track health metrics, and maintain test documentation.
-
-### FAANG-style (5-10)
-
-31. **How would you design a testing strategy for a large-scale application?**
-    Risk-based testing, test automation at multiple levels, shift-left practices.
-
-32. **How do you handle testing in a micro-frontend architecture?**
-    Contract testing between micro-frontends, integration tests, and shared utilities.
-
-33. **How do you ensure test reliability at scale?**
-    Flaky test detection, quarantine system, and stability metrics.
-
-34. **How do you test with complex state management?**
-    Test state changes through user interactions, not internal state.
-
-35. **How do you balance speed and coverage?**
-    Prioritize critical paths, use test impact analysis, and implement parallel execution.
-
-### Follow-ups (5-10)
-
-36. **How has your unit testing approach evolved?**
-    Discuss shift from coverage-focused to confidence-focused testing.
-
-37. **What testing tools have you used and why?**
-    Compare Jest, Mocha, Vitest, and explain selection criteria.
-
-38. **How do you handle testing legacy code?**
-    Characterization tests, Michael Feathers' techniques, and gradual improvement.
-
-39. **What's the most challenging unit testing problem you've solved?**
-    Describe complex mocking scenarios, performance issues, or flaky tests.
-
-40. **How do you teach unit testing to junior developers?**
-    Start with simple examples, emphasize AAA pattern, and practice TDD.
 
 ## Summary
 
@@ -1413,6 +1292,14 @@ Unit testing is the foundation of a robust test suite. Key principles:
 - **Aim for high confidence**, not 100% coverage
 
 A strong unit test suite enables confident refactoring, faster development, and higher code quality.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

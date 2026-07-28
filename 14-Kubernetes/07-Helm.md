@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Helm
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -510,129 +520,12 @@ helm install myrelease ./mychart -f values-prod.yaml
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Helm?**
-   The package manager for Kubernetes. Packages manifests into reusable charts.
-
-2. **What is a Helm chart?**
-   A package of Kubernetes resources with templating and configuration management.
-
-3. **What is a Helm release?**
-   A running instance of a chart with specific configuration.
-
-4. **What is values.yaml?**
-   Default configuration values for a chart.
-
-5. **How do you install a Helm chart?**
-   `helm install myrelease ./mychart`
-
-6. **How do you upgrade a release?**
-   `helm upgrade myrelease ./mychart -f new-values.yaml`
-
-7. **How do you rollback a release?**
-   `helm rollback myrelease 1`
-
-8. **What is a Helm repository?**
-   A collection of charts, similar to package repositories.
-
-9. **How do you list releases?**
-   `helm list -A`
-
-10. **How do you uninstall a release?**
-    `helm uninstall myrelease`
-
-### Intermediate (5-10)
-
-11. **What is the difference between helm install and helm upgrade?**
-    install creates a new release. upgrade updates an existing release.
-
-12. **What is the --wait flag?**
-    Waits for all resources to be ready before marking the release as successful.
-
-13. **What is the --atomic flag?**
-    Rolls back on failure and cleans up on success.
-
-14. **How do you test a Helm chart?**
-    Use `helm lint`, `helm template`, and `helm install --dry-run`.
-
-15. **What is Chart.yaml?**
-    Metadata file for the chart, including name, version, and dependencies.
-
-16. **What are sub-charts?**
-    Charts defined in the charts/ directory or declared in Chart.yaml dependencies.
-
-17. **How do you manage secrets in Helm?**
-    Use external-secrets operator, sealed-secrets, or Helm secrets plugin.
-
-18. **What is NOTES.txt?**
-    Post-install notes displayed after helm install.
-
-19. **How do you template a chart?**
-    `helm template myrelease ./mychart -f values.yaml`
-
-20. **What is helm lint?**
-    Validates chart structure and templates for errors.
-
-### Senior (10-15)
-
-21. **How would you structure Helm charts for a microservices application?**
-    Use umbrella charts with sub-charts for each service, shared templates, and environment-specific values.
-
-22. **What is the difference between Helm 2 and Helm 3?**
-    Helm 3 removed Tiller, added OCI support, and improved security.
-
-23. **How do you manage Helm releases across multiple clusters?**
-    Use Argo CD or Flux for GitOps-based release management.
-
-24. **What is the impact of Helm on CI/CD pipelines?**
-    Simplifies deployment, enables rollbacks, and provides release management.
-
-25. **How do you handle Helm chart dependencies in production?**
-    Use Chart.lock, pin versions, and test dependency upgrades.
-
-### FAANG-style (5-10)
-
-26. **Design a Helm chart strategy for 100+ microservices.**
-    Use base charts with overlays, shared templates, and automated chart updates.
-
-27. **How would you implement Helm chart versioning across environments?**
-    Use chart repositories with promotion, semantic versioning, and release channels.
-
-28. **Design a rollback strategy for Helm releases.**
-    Use --atomic, automated rollback on failure, and manual rollback procedures.
-
-29. **How would you handle Helm chart security?**
-    Scan charts for vulnerabilities, validate templates, and use signed charts.
-
-30. **Describe a Helm chart testing strategy.**
-    Unit tests for templates, integration tests with kind, and production validation.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between helm install and helm upgrade --install?**
-    --install creates the release if it doesn't exist. upgrade --install is idempotent.
-
-32. **How do you handle Helm chart upgrades with breaking changes?**
-    Use migration notes, upgrade paths, and testing.
-
-33. **What is helm test?**
-    Runs tests defined in the chart to validate the release.
-
-34. **How do you manage Helm releases in a namespace?**
-    Use --namespace flag or set namespace in values.
-
-35. **What is the difference between values.yaml and --set?**
-    values.yaml provides default values. --set overrides values at install time.
 
 ## Summary
 
 Helm simplifies Kubernetes application management through charts, templating, and release management. It enables versioned deployments, rollbacks, and configuration management. Essential for managing complex applications in production.
 
 ## Cheat Sheet
-
 ```bash
 # Install
 helm install myrelease ./mychart -f values.yaml
@@ -665,6 +558,14 @@ helm search repo nginx
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

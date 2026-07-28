@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # Pagination
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -738,90 +748,26 @@ res.json({
 - **Count queries** - Can be expensive; consider caching
 - **Partial responses** - Use field selection to reduce payload
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is pagination?** - Dividing large datasets into smaller chunks for efficient retrieval.
-
-2. **Why do we need pagination?** - Reduce memory usage, improve performance, better user experience.
-
-3. **What is the difference between page and limit?** - Page: which page to retrieve; Limit: items per page.
-
-4. **What is offset-based pagination?** - Skip N records (offset) and return M records (limit).
-
-5. **When should you use pagination?** - Whenever a collection could contain more items than can be efficiently returned.
-
-### Intermediate (5)
-
-6. **Explain cursor-based pagination** - Uses a cursor (usually ID) to fetch next set; more efficient than offset for large datasets.
-
-7. **What are the tradeoffs between offset and cursor?** - Offset: simple, supports random access; Cursor: efficient, stable under changes.
-
-8. **How do you calculate total pages?** - `Math.ceil(total / limit)`.
-
-9. **How do you handle sorting with pagination?** - Apply sort before pagination, ensure consistent ordering.
-
-10. **What is infinite scroll?** - UI pattern that loads more content as user scrolls; uses cursor pagination.
-
-### Senior (10)
-
-11. **Design pagination for a search engine** - Cursors, relevance scoring, facet counts, deep pagination.
-
-12. **How do you handle pagination in distributed systems?** - Consistent cursors, conflict resolution, eventual consistency.
-
-13. **Design cursor-based pagination with complex sorts** - Multi-field cursors, composite keys, tie-breaking.
-
-14. **How do you cache pagination results?** - Cache keys with page/cursor, invalidation strategies.
-
-15. **Design pagination for real-time data** - Stable cursors, handling insertions/deletions during pagination.
-
-16. **How do you handle pagination with filters?** - Dynamic cursors based on filter state, filter-aware pagination.
-
-17. **Design pagination for GraphQL connections** - Edge/cursor pattern, page info, connections.
-
-18. **How do you optimize count queries?** - Estimated counts, cached counts, async updates.
-
-19. **Design pagination for admin dashboards** - Large page sizes, export functionality, real-time updates.
-
-20. **How do you handle pagination in microservices?** - Aggregated pagination, service-level pagination, API gateway.
-
-### FAANG-style (5)
-
-21. **Design pagination for a social network feed** - Real-time updates, ranking, cursor stability.
-
-22. **Design pagination for e-commerce product search** - Faceted search, infinite scroll, preloading.
-
-23. **Design pagination for a messaging system** - Message ordering, read receipts, unread counts.
-
-24. **How would you migrate from offset to cursor pagination?** - Backward compatibility, gradual migration.
-
-25. **Design pagination analytics system** - Track usage patterns, optimize page sizes, detect abuse.
-
-### Follow-ups (5)
-
-26. **What is the N+1 problem in pagination?** - Executing N queries for N items; solve with eager loading.
-
-27. **How do you handle pagination with soft deletes?** - Exclude deleted records from counts and results.
-
-28. **What is deep pagination?** - Requesting very high page numbers; inefficient with offset, fine with cursor.
-
-29. **How do you handle concurrent modifications during pagination?** - Stable cursors, snapshot isolation.
-
-30. **What is the default page size?** - Typically 10-20 items; depends on use case and screen size.
 
 ## Summary
 
 Pagination is essential for efficient API design. Offset-based pagination is simple but can be inefficient for large datasets. Cursor-based pagination is more performant for large datasets and real-time data. Always include pagination metadata, navigation links, and validate inputs. Choose the pagination strategy based on your data size, access patterns, and consistency requirements.
 
 ## Cheat Sheet
-
 | Strategy | Use Case | Pros | Cons |
 |----------|----------|------|------|
 | Offset | Small datasets, random access | Simple, supports page jumping | Slow for large offsets |
 | Cursor | Large datasets, real-time | Efficient, stable | No random access |
 | Keyset | Time-series data | Efficient, natural ordering | Complex implementation |
 | Infinite Scroll | Mobile, social feeds | Good UX, lazy loading | No direct URL access |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

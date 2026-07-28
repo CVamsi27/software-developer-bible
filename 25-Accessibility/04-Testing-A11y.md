@@ -1,4 +1,14 @@
+---
+section: Accessibility
+category: Quality
+tags: [concept]
+---
+
 # Testing Accessibility
+
+[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Accessibility testing is the practice of verifying that web content is usable by people with disabilities. It involves automated tools, manual testing, and assistive technology testing to ensure compliance with WCAG guidelines.
@@ -387,153 +397,16 @@ describe('Accessibility', () => {
 - **Screen reader testing**: Requires setup and expertise
 - **Regression testing**: Important for maintenance
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is accessibility testing?**
-
-   - Verifying web content is usable by people with disabilities.
-
-2. **What is axe-core?**
-
-   - Automated accessibility testing engine for web applications.
-
-3. **What is Lighthouse?**
-
-   - Google's tool for auditing web page quality, including accessibility.
-
-4. **Why is manual testing important?**
-
-   - Automated tools can't catch all accessibility issues.
-
-5. **What is a screen reader?**
-
-   - Assistive technology that reads screen content aloud.
-
-6. **What is WAVE?**
-
-   - Web Accessibility Evaluation Tool for identifying accessibility issues.
-
-7. **What is the difference between automated and manual testing?**
-
-   - Automated finds technical issues, manual finds user experience issues.
-
-8. **Why should you test with real users?**
-
-   - Real users provide valuable feedback on actual usability.
-
-### Intermediate (5-10)
-
-9. **How do you integrate accessibility testing into CI/CD?**
-
-   - Use axe-core, Lighthouse, or pa11y in build pipeline.
-
-10. **What are the limitations of automated testing?**
-
-    - Can't catch keyboard navigation, color contrast context, usability issues.
-
-11. **How do you test color contrast?**
-
-    - Use tools like axe, Colour Contrast Analyser, browser extensions.
-
-12. **What is the difference between WCAG A, AA, and AAA testing?**
-
-    - A is minimum, AA is standard, AAA is enhanced requirements.
-
-13. **How do you test keyboard navigation?**
-
-    - Tab through all elements, test arrow keys, check focus indicators.
-
-14. **What is the role of screen readers in testing?**
-
-    - Test that content is properly announced and navigable.
-
-15. **How do you test dynamic content?**
-
-    - Verify live regions announce changes, focus management works.
-
-16. **What is regression testing for accessibility?**
-
-    - Ensuring new code doesn't introduce accessibility issues.
-
-### Senior (10-15)
-17. **How do you design an accessibility testing strategy?**
-
-    - Automated, manual, user testing, training, documentation.
-
-18. **What are the metrics for accessibility testing?**
-
-    - WCAG compliance, violation count, user satisfaction, task completion.
-
-19. **How do you handle accessibility testing in micro-frontends?**
-
-    - Test at component and integration levels, shared testing utilities.
-
-20. **What is the cost of not testing accessibility?**
-
-    - Legal risks, lost users, brand damage, remediation costs.
-
-21. **How do you test accessibility in complex components?**
-
-    - Manual testing, ARIA validation, keyboard testing, screen reader testing.
-
-22. **What is the role of accessibility in code reviews?**
-
-    - Review for semantic HTML, ARIA usage, keyboard support.
-
-23. **How do you test accessibility across browsers?**
-
-    - Test with different screen readers, browser combinations.
-
-24. **What is the impact of testing on development velocity?**
-
-    - Initial slowdown, but reduces bugs and rework.
-
-### FAANG-style (5-10)
-25. **Design an accessibility testing system for a large application.**
-
-    - Automated testing, manual audits, user testing, training, monitoring.
-
-26. **How would you implement accessibility testing at scale?**
-
-    - Centralized testing, shared utilities, automated reporting, metrics.
-
-27. **What are the trade-offs between different testing approaches?**
-
-    - Speed vs thoroughness, cost vs value, automation vs manual.
-
-28. **How do you prioritize accessibility issues?**
-
-    - User impact, legal risk, effort to fix, frequency.
-
-29. **Design an accessibility testing dashboard.**
-
-    - Metrics, trends, violations, user feedback, compliance status.
-
-### Follow-ups (5-10)
-30. **How does accessibility testing affect release cycles?**
-
-    - Adds testing time, but reduces post-release issues.
-
-31. **What is the future of accessibility testing?**
-
-    - AI-powered testing, better automation, real-time feedback.
-
-32. **How do you train QA teams on accessibility testing?**
-
-    - Workshops, documentation, hands-on practice, certifications.
-
-33. **What is the role of accessibility in agile development?**
-
-    - Include in sprint planning, acceptance criteria, Definition of Done.
-
-34. **How do you measure accessibility success?**
-
-    - WCAG compliance, user testing results, bug reports, metrics.
 
 ## Summary
 Accessibility testing combines automated tools, manual testing, and real user feedback. Use axe-core and Lighthouse for automated testing, test keyboard navigation manually, and validate with screen readers. Include accessibility in your development workflow and test early and often.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Testing](../16-Testing/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

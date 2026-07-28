@@ -1,4 +1,14 @@
+---
+section: Form Handling
+category: Frontend
+tags: [concept]
+---
+
 # Zod
+
+[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Zod is a TypeScript-first schema declaration and validation library. It provides a concise, expressive syntax for defining data schemas and validating data at runtime, with automatic TypeScript type inference.
@@ -472,160 +482,17 @@ Zod Performance:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Zod?**
-
-   - Answer: A TypeScript-first schema declaration and validation library with automatic type inference.
-
-2. **What is `z.infer`?**
-
-   - Answer: A utility type that infers TypeScript types from Zod schemas.
-
-3. **What is the difference between `parse` and `safeParse`?**
-
-   - Answer: `parse` throws on error; `safeParse` returns a result object with success/error.
-
-4. **How do you create an object schema?**
-
-   - Answer: Use `z.object()` with property definitions: `z.object({ name: z.string() })`.
-
-5. **How do you add default values?**
-
-   - Answer: Use `.default()`: `z.string().default('value')`.
-
-### Intermediate (5)
-
-6. **How do you handle optional fields?**
-
-   - Answer: Use `.optional()`: `z.string().optional()` or `z.string().nullable()`.
-
-7. **What are transformations?**
-
-   - Answer: Functions that modify validated data: `z.string().transform(val => val.toUpperCase())`.
-
-8. **How do you handle nested objects?**
-
-   - Answer: Compose schemas: `z.object({ address: z.object({ city: z.string() }) })`.
-
-9. **What is `superRefine`?**
-
-   - Answer: A method for complex cross-field validation with custom error paths.
-
-10. **How do you validate arrays?**
-
-    - Answer: Use `z.array()`: `z.array(z.string()).min(1).max(10)`.
-
-### Senior (10)
-11. **How do you handle discriminated unions?**
-
-    - Answer: Use `z.discriminatedUnion()` for tagged unions with a discriminant field.
-
-12. **How do you integrate Zod with tRPC?**
-
-    - Answer: Use Zod schemas for input/output validation in tRPC procedures.
-
-13. **How do you handle async validation?**
-
-    - Answer: Use `.refine()` with async validation logic, but prefer sync validation when possible.
-
-14. **How do you optimize Zod performance?**
-
-    - Answer: Reuse schemas, avoid unnecessary transforms, use `safeParse` for error handling.
-
-15. **How do you handle API contract validation?**
-
-    - Answer: Define request/response schemas, validate at API boundaries, share schemas between client/server.
-
-16. **How do you handle complex conditional validation?**
-
-    - Answer: Use `superRefine` or `.refine()` with conditional logic.
-
-17. **How do you handle file uploads?**
-
-    - Answer: Use `z.instanceof(File)` or custom validation for file metadata.
-
-18. **How do you handle internationalized error messages?**
-
-    - Answer: Pass error message functions that return localized strings.
-
-19. **How do you test Zod schemas?**
-
-    - Answer: Test valid/invalid inputs, test transforms, test error messages.
-
-20. **How do you handle schema composition?**
-
-    - Answer: Use `.merge()`, `.extend()`, or `.pick()` to compose schemas.
-
-### FAANG-style (5)
-21. **Design a type-safe API layer with Zod**
-
-- **Answer**:
-  - Define request/response schemas
-  - Share schemas between client/server
-  - Validate at API boundaries
-  - Auto-generate TypeScript types
-  - Document with schemas
-
-22. **How would you handle form validation at scale?**
-
-- **Answer**:
-  - Shared validation schemas
-  - Custom validation rules
-  - Performance optimization
-  - Accessibility compliance
-  - Analytics integration
-
-23. **Explain Zod's type inference system**
-
-- **Answer**:
-  - Maps Zod types to TypeScript types
-  - Handles complex types (unions, intersections)
-  - Preserves literal types
-  - Infers optional/nullable correctly
-
-24. **How do you optimize Zod for large schemas?**
-
-- **Answer**:
-  - Schema composition
-  - Lazy evaluation
-  - Caching
-  - Selective validation
-
-25. **Design a validation system for a microservices architecture**
-
-- **Answer**:
-  - Shared schemas in a package
-  - Service-specific validation
-  - Contract testing
-  - Schema versioning
-
-### Follow-ups (5)
-26. **How do you handle Zod in server-side rendering?**
-
-- **Answer**: Validate data on server, pass validated data to client, use schemas for both.
-
-27. **How do you handle Zod with React Server Components?**
-
-- **Answer**: Validate data on server, pass typed data to client components.
-
-28. **How do you handle Zod in edge functions?**
-
-- **Answer**: Zod works in edge environments, use lightweight schemas for performance.
-
-29. **How do you handle Zod schema versioning?**
-
-- **Answer**: Version schemas, migrate gradually, maintain backward compatibility.
-
-30. **How do you handle Zod in micro-frontends?**
-
-- **Answer**: Share schemas via package, validate at boundaries, consistent error handling.
 
 ## Summary
 
 Zod provides a powerful, type-safe approach to schema validation in TypeScript. Master its API, integration patterns, and best practices for building robust validation systems.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [TypeScript](../02-TypeScript/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

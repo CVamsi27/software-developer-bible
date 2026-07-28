@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Proxy Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -933,124 +943,12 @@ class LoggingProxy implements Subject {
 
 5. **Async Operations**: Consider async proxies for non-blocking operations.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Proxy pattern?**
-
-   - A structural pattern that provides a surrogate for another object to control access.
-
-2. **When would you use Proxy pattern?**
-
-   - For lazy loading, access control, logging, caching, and remote resources.
-
-3. **What's the difference between Proxy and Decorator?**
-
-   - Both wrap objects; Proxy controls access, Decorator adds behavior.
-
-4. **How do you implement Proxy in TypeScript?**
-
-   - Create a proxy class that implements the subject interface and wraps the real subject.
-
-5. **What are the benefits of Proxy pattern?**
-
-   - Access control, lazy loading, logging, caching, and security.
-
-### Intermediate
-
-6. **What are the different types of Proxies?**
-
-   - Virtual (lazy loading), Protection (access control), Caching, Logging, Remote.
-
-7. **How do you test Proxy pattern?**
-
-   - Test proxy behavior independently, mock real subject.
-
-8. **What's the relationship between Proxy and Facade?**
-
-   - Proxy controls access; Facade simplifies interface.
-
-9. **How do you handle proxy chaining?**
-
-   - Each proxy wraps the next; order matters.
-
-10. **Can Proxy change the interface?**
-
-    - No, proxy must maintain the subject interface.
-
-### Senior
-
-11. **How does Proxy pattern affect scalability?**
-
-    - Proxies are lightweight; consider connection pooling for scaling.
-
-12. **What are the SOLID violations with Proxy?**
-
-    - Usually follows SOLID; watch for proxies violating Single Responsibility.
-
-13. **How do you handle Proxy in microservices?**
-
-    - Use proxies for API gateways, service meshes, and load balancing.
-
-14. **What are the memory implications of Proxy?**
-
-    - Proxies are usually stateless; the real subject consumes memory.
-
-15. **How do you refactor Proxy code?**
-
-    - Extract common logic, use composition, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Proxy for a distributed system.**
-
-    - Consider network transparency, fault tolerance, and load balancing.
-
-17. **How would you implement Proxy for cloud-native applications?**
-
-    - Consider serverless functions, API gateways, and service meshes.
-
-18. **What are the implications of Proxy in event-driven architectures?**
-
-    - Use proxies for event routing, filtering, and transformation.
-
-19. **How do you handle Proxy in real-time systems?**
-
-    - Consider latency, throughput, and resource management.
-
-20. **Design a Proxy that supports A/B testing.**
-
-    - Consider traffic splitting, metrics collection, and gradual rollout.
-
-### Follow-ups
-
-21. **Can Proxy pattern be combined with other patterns?**
-
-    - Yes, commonly with Decorator, Adapter, and Factory patterns.
-
-22. **How do you handle Proxy in testing frameworks?**
-
-    - Use dependency injection, create test proxies, and mock implementations.
-
-23. **What are the memory implications of Proxy pattern?**
-
-    - Proxies are usually lightweight; the real subject consumes memory.
-
-24. **How do you handle Proxy in serverless environments?**
-
-    - Consider stateless proxies, API gateways, and function composition.
-
-25. **What's the impact of Proxy on code maintainability?**
-
-    - Improves maintainability by adding indirection and control.
 
 ## Summary
 
 The Proxy pattern is essential for controlling access to objects. It enables lazy loading, access control, logging, caching, and remote resource management. Use it to add a layer of indirection without modifying the real subject.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           PROXY PATTERN                     │
@@ -1087,6 +985,14 @@ The Proxy pattern is essential for controlling access to objects. It enables laz
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

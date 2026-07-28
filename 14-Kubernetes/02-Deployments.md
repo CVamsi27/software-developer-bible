@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Deployments
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -671,129 +681,12 @@ kubectl rollout history deployment/myapp
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a Deployment?**
-   Manages ReplicaSets and Pods, providing rolling updates and rollbacks.
-
-2. **What is the difference between a Deployment and a ReplicaSet?**
-   Deployment adds deployment strategy, rollbacks, and history on top of ReplicaSet.
-
-3. **What is a rolling update?**
-   Gradually replaces old Pods with new ones without downtime.
-
-4. **How do you rollback a Deployment?**
-   `kubectl rollout undo deployment/myapp`
-
-5. **What is maxSurge?**
-   Maximum number of Pods above desired count during update.
-
-6. **What is maxUnavailable?**
-   Minimum number of Pods unavailable during update.
-
-7. **How do you scale a Deployment?**
-   `kubectl scale deployment/myapp --replicas=5`
-
-8. **How do you update the image?**
-   `kubectl set image deployment/myapp myapp=myapp:2.0.0`
-
-9. **What is the default update strategy?**
-   RollingUpdate.
-
-10. **How do you view Deployment history?**
-    `kubectl rollout history deployment/myapp`
-
-### Intermediate (5-10)
-
-11. **What is the difference between RollingUpdate and Recreate?**
-    RollingUpdate gradually replaces Pods. Recreate terminates all old Pods before creating new ones.
-
-12. **How does Kubernetes know when a new Pod is ready?**
-    Readiness probe must return success. Traffic is routed only to ready Pods.
-
-13. **What is a revision in a Deployment?**
-    A snapshot of the Deployment's Pod template. Each update creates a new revision.
-
-14. **How do you pause a Deployment?**
-    `kubectl rollout pause deployment/myapp` — allows multiple changes without creating revisions.
-
-15. **What happens if a Pod fails during a rolling update?**
-    The Deployment controller retries based on the progressDeadlineSeconds.
-
-16. **How do you set a Deployment to only use specific nodes?**
-    Use nodeSelector or node affinity in the Pod template.
-
-17. **What is the minimum number of Pods during a rolling update?**
-    Desired replicas minus maxUnavailable.
-
-18. **How do you check if a Deployment is healthy?**
-    `kubectl get deployment myapp` — check READY and AVAILABLE columns.
-
-19. **What is a progressive delivery?**
-    Advanced deployment strategies like canary, blue-green, or feature flags.
-
-20. **How do you handle environment-specific configurations?**
-    Use ConfigMaps and Secrets, or separate YAML files per environment.
-
-### Senior (10-15)
-
-21. **How do you implement zero-downtime deployments?**
-    Use RollingUpdate with maxUnavailable=0, readiness probes, and preStop hooks.
-
-22. **What is the difference between maxSurge and maxUnavailable?**
-    maxSurge controls how many extra Pods can exist. maxUnavailable controls how many can be missing.
-
-23. **How do you handle database schema changes in a Deployment?**
-    Run migrations as a separate Job before updating the Deployment.
-
-24. **Explain Deployment progressDeadlineSeconds.**
-    Maximum time for a Deployment to progress before it's considered failed.
-
-25. **How do you implement canary deployments in Kubernetes?**
-    Deploy a small number of new Pods with a different label, use Service selector to route traffic.
-
-### FAANG-style (5-10)
-
-26. **Design a deployment pipeline for 100+ microservices.**
-    Use Argo CD or Flux for GitOps, automated rollbacks, canary analysis, and progressive delivery.
-
-27. **How would you handle a failed deployment at 3 AM?**
-    Implement automatic rollback on failure, alerting, and runbook automation.
-
-28. **Design a multi-region deployment strategy.**
-    Use regional Deployments with PodDisruptionBudgets, cross-region service mesh, and traffic shifting.
-
-29. **How would you optimize deployment speed?**
-    Use image pre-pulling, init containers, and parallel rollouts across namespaces.
-
-30. **Describe a deployment strategy for a stateful application.**
-    Use StatefulSets with ordered deployment, persistent volumes, and readiness gates.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between a Deployment and a StatefulSet?**
-    Deployment: stateless, unordered. StatefulSet: stateful, ordered, stable network/storage.
-
-32. **How do you handle secret rotation in a Deployment?**
-    Update the Secret, then rolling restart the Deployment.
-
-33. **What is a canary analysis?**
-    Monitoring metrics after a canary deployment to decide to promote or rollback.
-
-34. **How do you handle multi-container deployments?**
-    Define multiple containers in the Pod template with shared volumes/network.
-
-35. **What is the maximum number of revisions a Deployment keeps?**
-    Default is 10, configurable via revisionHistoryLimit.
 
 ## Summary
 
 Deployments are the standard way to manage stateless applications in Kubernetes. They provide rolling updates, rollbacks, and self-healing. Proper probe configuration, resource limits, and update strategies are essential for production reliability.
 
 ## Cheat Sheet
-
 ```bash
 # Deployment
 kubectl apply -f deployment.yaml
@@ -823,6 +716,14 @@ kubectl rollout restart deployment/myapp
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

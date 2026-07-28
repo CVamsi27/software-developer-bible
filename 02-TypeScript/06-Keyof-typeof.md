@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Keyof & Typeof
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -389,109 +399,12 @@ type Optional<T> = {
 - **Large objects**: typeof on large objects can create complex types
 - **Union size**: keyof on large types creates large unions
 
-## Interview Questions
-
-### Beginner
-
-1. **What does `keyof` do?**
-
-   - Extracts the keys of an object type as a union
-
-2. **What does `typeof` do?**
-
-   - Extracts the type of a value/expression
-
-3. **How do you safely access object properties?**
-
-   - Use `K extends keyof T` constraint
-
-4. **Can you use keyof on arrays?**
-
-   - Yes, it returns array method names and indices
-
-5. **How do you create a type from a const object?**
-
-   - Use `typeof obj[keyof typeof obj]`
-
-### Intermediate
-
-6. **Write a type-safe getProperty function**
-
-   ```typescript
-   function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-     return obj[key];
-   }
-
-```
-
-7. **How do you filter keys in a mapped type?**
-
-   - Use key remapping with `as`: `[K in keyof T as Condition ? K : never]`
-
-8. **What is the difference between keyof T and keyof any?**
-
-   - keyof T extracts keys of specific type; keyof any is string | number | symbol
-
-9. **How do you create an enum-like type from an object?**
-
-   - Use `typeof obj[keyof typeof obj]`
-
-10. **Can you use typeof in type annotations?**
-
-    - Yes: `const x: typeof y = y;`
-
-### Senior
-
-11. **Design a type-safe property validator**
-
-    - Use keyof and mapped types to validate object properties
-
-12. **How do you create a type-safe event system?**
-
-    - Use keyof for event names, typeof for payloads
-
-13. **Implement a type-safe deep property access**
-
-    - Use recursive keyof with template literals
-
-14. **How do you handle dynamic property names?**
-
-    - Use computed property names with keyof constraints
-
-### FAANG-style
-
-15. **Build a type-safe form builder**
-
-    - Use keyof for field names, typeof for default values
-
-16. **Create a type-safe API router**
-
-    - Use typeof for route definitions, keyof for parameter extraction
-
-17. **Implement a type-safe state management solution**
-
-    - Use keyof for action types, typeof for payloads
-
-### Follow-ups
-
-18. **How do keyof and typeof interact with generics?**
-
-    - Both work with generic types and values
-
-19. **Can you use keyof with intersection types?**
-
-    - Yes, keyof distributes over intersections
-
-20. **How do you handle symbol keys with keyof?**
-
-    - keyof includes symbol keys in the union
 
 ## Summary
 
 `keyof` and `typeof` are fundamental TypeScript operators for type-safe property access and type inference. They enable powerful patterns like type-safe object manipulation, enum-like objects, and generic constraints. Master them to write more robust TypeScript code.
 
 ## Cheat Sheet
-
 ```typescript
 // keyof: Extract object keys
 interface User { name: string; age: number; }
@@ -516,6 +429,13 @@ const routes = { home: "/", about: "/about" } as const;
 type Route = keyof typeof routes;
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

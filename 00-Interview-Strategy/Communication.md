@@ -1,4 +1,14 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept]
+---
+
 # Communication Skills for Senior Engineer Interviews
+
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -881,3 +891,19 @@ SENIOR communicates:  "I analyzed the problem, considered alternatives A
 ---
 
 *Communication is the multiplier for technical skill. The best solution poorly communicated loses to a good solution well communicated.*
+---
+
+
+## Summary
+
+Effective communication is the multiplier for technical skill. This guide covers the CLEAR communication framework, technical explanation techniques, whiteboard strategies, and common pitfalls. Master these skills to demonstrate senior-level thinking during interviews.
+
+## References & Learn More
+
+- [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
+- [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
+- [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)

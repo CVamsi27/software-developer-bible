@@ -1,4 +1,14 @@
+---
+section: Behavioral
+category: Interview
+tags: [concept]
+---
+
 # Leadership & Senior-Level Behavioral Questions: 20 STAR-Formatted Answers
+
+[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -511,6 +521,12 @@ For senior leadership behavioral questions:
 Remember: senior leadership isn't about having all the answers. It's about creating environments where the team finds the best answers, making decisions under uncertainty, and driving impact through others.
 
 ---
+
+---
+
+## See Also
+- [Interview Strategy](../00-Interview-Strategy/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

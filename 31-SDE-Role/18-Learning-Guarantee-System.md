@@ -1,14 +1,25 @@
+---
+section: SDE Role
+category: Interview
+tags: [concept]
+---
+
 # 🎯 Learning Guarantee System
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Don't just study — MASTER the material**
-> 
+>
 > This system ensures you actually learn and retain everything through active recall, practice testing, and mastery-based progression.
 
 ---
 
 ## 🧠 The Science of Guaranteed Learning
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  WHY MOST PEOPLE FORGET                                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -26,6 +37,7 @@ OUR SYSTEM COMBINES:
 ✓ Mastery-Based Progression (don't move on until mastered)
 ✓ Teaching Others (explain concepts out loud)
 ✓ Practice Testing (solve problems under pressure)
+
 ```
 
 ---
@@ -33,23 +45,31 @@ OUR SYSTEM COMBINES:
 ## 📋 The 5-Step Learning Guarantee Process
 
 ### Step 1: Learn (Day 1)
-```
+
+```text
+
 1. Read the concept/pattern
 2. Understand the WHY, not just the HOW
 3. Write down the key idea in your own words
 4. Create a mental model or analogy
+
 ```
 
 ### Step 2: Practice (Day 1-2)
-```
+
+```text
+
 1. Solve 3-5 problems using the pattern
 2. Time yourself (target: 20 min for Medium)
 3. If stuck > 30 min, look at solution
 4. Re-solve from memory immediately after
+
 ```
 
 ### Step 3: Recall (Day 2-3)
-```
+
+```text
+
 1. Cover all notes and solutions
 2. From memory, write down:
    - The pattern name
@@ -58,23 +78,30 @@ OUR SYSTEM COMBINES:
    - 2-3 key problems
 3. Check against your notes
 4. Fill in any gaps
+
 ```
 
 ### Step 4: Teach (Day 3-4)
-```
+
+```text
+
 1. Explain the concept out loud (as if teaching someone)
 2. Record yourself explaining it
 3. Watch the recording — did you explain clearly?
 4. Identify gaps in your explanation
 5. Re-explain until clear
+
 ```
 
 ### Step 5: Test (Day 4-7)
-```
+
+```text
+
 1. Solve 2-3 NEW problems (not ones you've seen)
 2. Do it under interview conditions (45 min, 2 problems)
 3. If you pass → Move to Mastery level
 4. If you fail → Return to Step 1
+
 ```
 
 ---
@@ -83,7 +110,8 @@ OUR SYSTEM COMBINES:
 
 ### How to Know You've Mastered Something
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  MASTERY LEVELS                                                │
 ├─────────────────────────────────────────────────────────────────┤
@@ -118,6 +146,7 @@ OUR SYSTEM COMBINES:
 │  📊 Pass rate: 95%+                                            │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Mastery Checkpoints
@@ -138,7 +167,8 @@ OUR SYSTEM COMBINES:
 
 ### Concept Recall Template
 
-```
+```text
+
 TOPIC: _______________
 DATE: ___/___/___
 
@@ -164,11 +194,13 @@ FROM MEMORY (no notes!):
 5. Time/Space Complexity:
    - Time: O(___)
    - Space: O(___)
+
 ```
 
 ### Problem Recall Template
 
-```
+```text
+
 PROBLEM: _______________
 PATTERN: _______________
 
@@ -190,11 +222,13 @@ FROM MEMORY (before looking at solution):
    _________________________________________________
    _________________________________________________
    _________________________________________________
+
 ```
 
 ### Teaching Template
 
-```
+```text
+
 TOPIC: _______________
 
 EXPLAIN OUT LOUD (record yourself):
@@ -216,6 +250,7 @@ EXPLAIN OUT LOUD (record yourself):
 
 TOTAL TIME: ___ minutes
 CLARITY SCORE (1-10): ___
+
 ```
 
 ---
@@ -224,7 +259,8 @@ CLARITY SCORE (1-10): ___
 
 ### Daily Self-Quiz (10 min)
 
-```
+```text
+
 MORNING QUIZ:
 1. Recall yesterday's pattern from memory
 2. Write down template without looking
@@ -233,11 +269,13 @@ MORNING QUIZ:
 5. Score: ___/4
 
 If score < 3/4, review again before moving on.
+
 ```
 
 ### Weekly Mastery Test (45 min)
 
-```
+```text
+
 WEEKLY TEST FORMAT:
 - 2 Medium problems (25 min each)
 - 1 Hard problem (35 min)
@@ -249,11 +287,13 @@ SCORING:
 - 2/3 correct = Need more practice
 - 1/3 correct = Review fundamentals
 - 0/3 correct = Start over
+
 ```
 
 ### Mock Interview Test (60 min)
 
-```
+```text
+
 MOCK INTERVIEW FORMAT:
 - 2 coding problems (45 min)
 - 1 system design (45 min) OR behavioral (30 min)
@@ -264,6 +304,7 @@ PASS CRITERIA:
 - Coding: 2/2 correct, clean code, optimal
 - System Design: Complete design, trade-offs, scaling
 - Behavioral: Structured STAR answers, specific examples
+
 ```
 
 ---
@@ -278,7 +319,8 @@ PASS CRITERIA:
 
 ### Weekly Mastery Dashboard
 
-```
+```text
+
 WEEK ___: ___/___ to ___/
 
 TOPICS MASTERED THIS WEEK:
@@ -300,11 +342,13 @@ WEAK AREAS IDENTIFIED:
 FOCUS FOR NEXT WEEK:
 - _______________
 - _______________
+
 ```
 
 ### Monthly Mastery Summary
 
-```
+```text
+
 MONTH: ___/___
 
 TOTAL TIME STUDIED: ___h ___m
@@ -333,13 +377,15 @@ INTERVIEW READY CHECKLIST:
 ☐ Can design system in 45 min
 ☐ Can tell STAR stories clearly
 ☐ Completed 10+ mock interviews
+
 ```
 
 ---
 
 ## 🔄 The Mastery Loop
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │   ┌──────────┐                                                  │
@@ -376,6 +422,7 @@ INTERVIEW READY CHECKLIST:
 │        └──── Fail (<90%) ──→ 🔄 Return to LEARN                │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -384,30 +431,36 @@ INTERVIEW READY CHECKLIST:
 
 ### Morning (1 hour): Learn & Practice
 
-```
+```text
+
 08:00 - 08:10  Daily Quiz (recall yesterday's material)
 08:10 - 08:20  Learn new concept (read/watch)
 08:20 - 08:50  Practice problems (3 problems)
 08:50 - 09:00  Document patterns in notes
+
 ```
 
 ### Afternoon (1.5 hours): Recall & Teach
 
-```
+```text
+
 14:00 - 14:15  Active Recall (cover notes, write from memory)
 14:15 - 14:30  Check against notes, fill gaps
 14:30 - 14:45  Teach concept out loud (record yourself)
 14:45 - 15:00  Review recording, identify gaps
 15:00 - 15:30  Solve 2 more problems (different variations)
+
 ```
 
 ### Evening (1 hour): Test & Review
 
-```
+```text
+
 18:00 - 18:30  Mastery Test (1-2 problems under pressure)
 18:30 - 18:45  Review test results
 18:45 - 19:00  Update progress tracker
 19:00 - 19:00  Plan tomorrow's focus
+
 ```
 
 ---
@@ -416,7 +469,8 @@ INTERVIEW READY CHECKLIST:
 
 ### Anki Flashcards
 
-```
+```text
+
 CREATE CARDS FOR:
 1. Pattern Recognition
    Front: "When do you use Two Pointers?"
@@ -433,11 +487,13 @@ CREATE CARDS FOR:
 4. Complexity Analysis
    Front: "Binary Search - Time/Space?"
    Back: "O(log n) time, O(1) space"
+
 ```
 
 ### Record & Review
 
-```
+```text
+
 RECORD YOURSELF:
 1. Explain a concept for 2 minutes
 2. Solve a problem while talking through it
@@ -448,6 +504,7 @@ TOOLS:
 - Voice Memos (iOS)
 - QuickTime (Mac)
 - OBS Studio (free, records screen + audio)
+
 ```
 
 ---
@@ -455,36 +512,51 @@ TOOLS:
 ## 🧠 The Feynman Technique for Interview Prep
 
 ### Step 1: Choose a Concept
-```
+
+```text
+
 Pick ONE concept (e.g., "Binary Search on Answer")
+
 ```
 
 ### Step 2: Teach It to a Child
-```
+
+```text
+
 Explain it in simple terms:
 "Binary Search on Answer is when you don't know the answer,
 but you know if a guess is too high or too low.
 So you keep guessing and narrowing down until you find it."
+
 ```
 
 ### Step 3: Identify Gaps
-```
+
+```text
+
 Where did you struggle to explain?
 What couldn't you simplify?
 What questions would a beginner ask?
+
 ```
 
 ### Step 4: Go Back & Learn
-```
+
+```text
+
 Fill in the gaps you identified.
 Then try explaining again.
+
 ```
 
 ### Step 5: Simplify & Use Analogies
-```
+
+```text
+
 Create an analogy:
 "Binary Search on Answer is like guessing a number between 1-100.
 Each guess tells you 'higher' or 'lower' until you find it."
+
 ```
 
 ---
@@ -493,7 +565,8 @@ Each guess tells you 'higher' or 'lower' until you find it."
 
 ### Before Moving to Next Topic
 
-```
+```text
+
 ☐ Can explain the concept in simple terms
 ☐ Can write the template from memory
 ☐ Can solve 3+ problems independently
@@ -501,22 +574,26 @@ Each guess tells you 'higher' or 'lower' until you find it."
 ☐ Can teach it to someone else
 ☐ Can handle follow-up questions
 ☐ Passed mastery test (90%+)
+
 ```
 
 ### Weekly Checkpoint
 
-```
+```text
+
 ☐ Completed all daily quizzes
 ☐ Mastered at least 2 new topics
 ☐ Passed weekly mastery test
 ☐ Completed at least 1 mock interview
 ☐ Updated progress tracker
 ☐ Identified weak areas for next week
+
 ```
 
 ### Before Interview Day
 
-```
+```text
+
 ☐ All topics at Level 4+ mastery
 ☐ Can solve Medium in 20 min
 ☐ Can solve Hard in 35 min
@@ -525,6 +602,7 @@ Each guess tells you 'higher' or 'lower' until you find it."
 ☐ Completed 10+ mock interviews
 ☐ Can explain any concept from memory
 ☐ Confident and ready
+
 ```
 
 ---
@@ -532,21 +610,30 @@ Each guess tells you 'higher' or 'lower' until you find it."
 ## 💡 The 3 Rules of Guaranteed Learning
 
 ### Rule 1: Never Move On Without Mastery
-```
+
+```text
+
 ❌ Don't say: "I kind of get it, let's move on"
 ✅ Do say: "I can solve this from memory in under 20 minutes"
+
 ```
 
 ### Rule 2: Test Yourself Daily
-```
+
+```text
+
 ❌ Don't say: "I'll review before the interview"
 ✅ Do say: "I tested myself today and got 90%+"
+
 ```
 
 ### Rule 3: Teach What You Learn
-```
+
+```text
+
 ❌ Don't say: "I understand it in my head"
 ✅ Do say: "I can explain it clearly to someone else"
+
 ```
 
 ---
@@ -583,3 +670,25 @@ Each guess tells you 'higher' or 'lower' until you find it."
 > **Remember:** The goal isn't to read everything — it's to MASTER everything. One concept mastered is worth 10 concepts skimmed!
 
 > **Pro Tip:** After mastering a topic, teach it to someone else (friend, family, rubber duck). If you can teach it clearly, you truly understand it!
+---
+
+
+## Summary
+
+This learning guarantee system provides a structured framework for mastering interview topics through active recall, spaced repetition, practice testing, and self-assessment to ensure thorough preparation.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Controllers
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -740,116 +750,12 @@ async findOne(@Param('id') id: string) {
 
 6. **Connection Pooling**: Use connection pooling for database operations.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a controller in NestJS?**
-A controller is a class decorated with `@Controller()` that handles incoming HTTP requests and returns responses. It defines route endpoints and delegates business logic to services.
-
-**Q2: How do you define a route in NestJS?**
-Use method-level decorators like `@Get()`, `@Post()`, `@Put()`, `@Delete()` with optional path parameters.
-
-**Q3: What is the difference between `@Put()` and `@Patch()`?**
-
-- `@Put()`: Full update — replaces the entire resource
-- `@Patch()`: Partial update — modifies specific fields
-
-**Q4: How do you access route parameters?**
-Use the `@Param()` decorator to access route parameters.
-
-**Q5: How do you access the request body?**
-Use the `@Body()` decorator to access the request body.
-
-### Intermediate
-
-**Q6: What is the purpose of DTOs?**
-DTOs (Data Transfer Objects) define the shape of incoming data and enable validation using class-validator decorators.
-
-**Q7: How do you validate request body in NestJS?**
-Use `class-validator` decorators on DTO properties and enable `ValidationPipe` globally or per-controller.
-
-**Q8: How do you return different HTTP status codes?**
-Use the `@HttpCode()` decorator or `@nestjs/common`'s `HttpStatus` enum.
-
-**Q9: What is the difference between `@Res()` and `@Res({ passthrough: true })`?**
-
-- `@Res()`: Takes full control of response handling (NestJS can't intercept)
-- `@Res({ passthrough: true })`: Access Response object while allowing NestJS to handle response
-
-**Q10: How do you handle file uploads?**
-Use `@UseInterceptors(FileInterceptor('fieldname'))` with `@UploadedFile()` decorator.
-
-### Senior
-
-**Q11: How would you design a RESTful API for a social media platform?**
-
-- Use resource-based URL design
-- Implement proper HTTP methods and status codes
-- Use pagination for feeds
-- Implement rate limiting
-- Use versioning for API evolution
-- Implement proper authentication and authorization
-
-**Q12: How do you handle streaming responses in NestJS?**
-Use `@Res()` with pipe operations, or use `@Sse()` for Server-Sent Events, or return Observable with `@nestjs/common`'s `StreamableFile`.
-
-**Q13: How do you implement API versioning?**
-Use NestJS's built-in versioning with `app.enableVersioning()` and `@Version('1')` decorator on controllers.
-
-**Q14: How would you handle nested resources?**
-Use sub-controllers with nested routes like `@Controller('users/:userId/posts')`.
-
-**Q15: How do you prevent N+1 queries in controller responses?**
-Use eager loading in ORM, DataLoader pattern, or GraphQL with proper resolver planning.
-
-### FAANG-Style
-
-**Q16: Design a rate limiting strategy for a public API.**
-Implement sliding window rate limiting using Redis, with different limits per endpoint and user tier. Use decorators for configuration.
-
-```typescript
-@RateLimit({ points: 10, duration: 60 })
-@Get('expensive-operation')
-async expensiveOperation() { ... }
-
-```
-
-**Q17: How would you implement request/response logging without impacting performance?**
-Use interceptors with async logging to a message queue (Kafka/SQS) instead of synchronous file/network logging. Sample at high traffic.
-
-**Q18: Design a controller architecture for a GraphQL/REST hybrid API.**
-Use separate controller layers for REST and GraphQL, sharing the same service layer. Implement proper data loaders for GraphQL.
-
-**Q19: How would you handle controller testing with complex dependency graphs?**
-Use `Test.createTestingModule()` with `overrideProvider()` for mocking. Implement integration tests with Testcontainers for database.
-
-**Q20: How do you implement API throttling for different user tiers?**
-Use dynamic rate limiting based on user role/subscription level, stored in Redis with user-specific keys.
-
-### Follow-ups
-
-**Q21: How do you handle controller inheritance?**
-Use abstract base controllers with common CRUD operations. Extend in concrete controllers for specific entities.
-
-**Q22: What is the purpose of `@SetMetadata()`?**
-Attach custom metadata to routes, used by guards and interceptors for authorization and logging.
-
-**Q23: How do you implement content negotiation?**
-Use `@Header()` decorator and check `Accept` header to return different formats (JSON, XML, etc.).
-
-**Q24: How do you handle CORS in controllers?**
-Enable globally with `app.enableCors()` or configure per-controller with `@Header()`.
-
-**Q25: What is the purpose of `@UseInterceptors()` on controllers?**
-Apply interceptors at the controller level to handle all routes within that controller (logging, caching, transformation).
 
 ## Summary
 
 Controllers are NestJS's HTTP handling layer that define routes, validate input, and delegate business logic to services. They provide decorator-based route definition, built-in validation support, and seamless integration with guards, interceptors, and pipes. Proper controller design follows thin controller principles, uses DTOs for validation, and returns appropriate HTTP responses.
 
 ## Cheat Sheet
-
 | Decorator | Purpose |
 |-----------|---------|
 | `@Controller('path')` | Define a controller with base route |
@@ -867,6 +773,14 @@ Controllers are NestJS's HTTP handling layer that define routes, validate input,
 | `@UsePipes()` | Apply pipes |
 | `@Version()` | API versioning |
 | `@SetMetadata()` | Set custom metadata |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

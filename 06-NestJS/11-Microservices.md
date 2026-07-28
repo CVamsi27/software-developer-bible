@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Microservices
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -621,103 +631,12 @@ check() {
 
 5. **Load Balancing**: Distribute messages across service instances.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a microservice in NestJS?**
-A lightweight, independently deployable service communicating over the network using message patterns and transport layers.
-
-**Q2: What is the difference between message patterns and event patterns?**
-
-- Message pattern: Request-response (expects response)
-- Event pattern: Fire-and-forget (no response)
-
-**Q3: What transport layers does NestJS support?**
-TCP, Redis, Kafka, RabbitMQ, NATS, gRPC, MQTT.
-
-**Q4: How do you create a microservice in NestJS?**
-Use `NestFactory.createMicroservice()` with transport options.
-
-**Q5: How do clients communicate with microservices?**
-Using `ClientProxy` with `send()` for commands and `emit()` for events.
-
-### Intermediate
-
-**Q6: What is the difference between TCP and Redis transport?**
-
-- TCP: Direct connection, fast, no persistence
-- Redis: Through Redis, supports pub/sub, persistent
-
-**Q7: How do you handle errors in microservices?**
-Use exception filters, implement retry logic, and circuit breakers.
-
-**Q8: How do you implement service discovery?**
-Use Consul, Eureka, or Kubernetes service discovery.
-
-**Q9: How do you handle distributed transactions?**
-Use saga pattern, eventual consistency, or two-phase commit.
-
-**Q10: How do you test microservices?**
-Use integration tests with test containers, mock external services.
-
-### Senior
-
-**Q11: Design a microservices architecture for a social media platform.**
-Services: User, Post, Feed, Notification, Search, Analytics. Kafka for events, Redis for caching, PostgreSQL/MongoDB for storage.
-
-**Q12: How would you implement distributed tracing?**
-Use OpenTelemetry, propagate trace headers through services, export to Jaeger/Zipkin.
-
-**Q13: Design a circuit breaker for microservices.**
-Track failures, open circuit after threshold, fallback to cached/default response.
-
-**Q14: How would you handle data consistency across services?**
-Use saga pattern for distributed transactions, eventual consistency with event sourcing.
-
-**Q15: Design a service mesh for microservices.**
-Use Istio/Linkerd for service-to-service communication, load balancing, and security.
-
-### FAANG-Style
-
-**Q16: Design a microservices system for Netflix-scale streaming.**
-Services: User, Content, Recommendation, Streaming, Billing. Kafka for events, Cassandra for storage, Redis for caching.
-
-**Q17: How would you implement zero-downtime deployments?**
-Blue-green deployments, rolling updates, canary releases with feature flags.
-
-**Q18: Design a multi-region microservices architecture.**
-Data replication, regional routing, failover mechanisms.
-
-**Q19: How would you implement rate limiting across services?**
-Centralized rate limiter at API gateway, distributed rate limiting with Redis.
-
-**Q20: Design a microservices system for real-time gaming.**
-WebSocket connections, game state synchronization, matchmaking service.
-
-### Follow-ups
-
-**Q21: How do you handle service versioning?**
-API versioning, backward compatibility, feature flags.
-
-**Q22: What is the CAP theorem and how does it apply?**
-Consistency, Availability, Partition tolerance — choose two. Microservices typically favor availability and partition tolerance.
-
-**Q23: How do you handle service authentication?**
-Mutual TLS, JWT tokens, OAuth2 between services.
-
-**Q24: How do you monitor microservices?**
-Centralized logging (ELK), metrics (Prometheus), distributed tracing.
-
-**Q25: When should you NOT use microservices?**
-Small teams, simple domains, early-stage products, tight coupling requirements.
 
 ## Summary
 
 NestJS Microservices provide a complete framework for building distributed systems with multiple transport layers. They enable independent scaling, deployment, and technology choices. Key concepts include message/event patterns, transport selection, service discovery, and fault tolerance. Microservices are best suited for complex domains with clear service boundaries.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `createMicroservice()` | Create a microservice application |
@@ -734,6 +653,14 @@ NestJS Microservices provide a complete framework for building distributed syste
 | `@Payload()` | Extract message payload |
 | `RpcException` | Exception for microservices |
 | `ClientsModule` | Register microservice clients |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

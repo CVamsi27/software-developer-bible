@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # WhatsApp System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -775,85 +785,6 @@ alerts:
 | Ordering | Per-conversation | Global | Per-conversation |
 | Delivery | At-most-once | At-least-once | At-least-once |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you handle message ordering?**
-
-   - Partition Kafka topics by conversation_id
-   - Use sequence numbers per conversation
-   - Client-side deduplication
-   - Server-side ordering guarantees per partition
-
-2. **How do you implement read receipts?**
-
-   - Track last_read_message_id per user per conversation
-   - Async update via Kafka
-   - Batch updates to reduce write amplification
-   - Client shows "delivered" vs "read" based on status
-
-3. **How would you handle group messaging?**
-
-   - Store group membership in separate table
-   - Fan-out on write for small groups (< 100)
-   - Fan-out on read for large groups (> 100)
-   - Separate notification logic for group mentions
-
-### Scaling Questions
-
-4. **How do you scale to 500M DAU?**
-
-   - Geographic sharding with data residency
-   - WebSocket connection pooling
-   - Read replicas for message queries
-   - CDN for media delivery
-
-5. **How do you handle viral group messages?**
-
-   - Rate limit message sending
-   - Implement message queue backpressure
-   - Cache hot conversations
-   - Use fan-out on read for large groups
-
-### Trade-off Questions
-
-6. **How do you balance encryption with features?**
-
-   - E2E encryption for messages
-   - Server can see metadata (sender, timestamp)
-   - Search requires client-side indexing
-   - Backup requires key escrow
-
-7. **How do you handle message deletion?**
-
-   - Soft delete with tombstone messages
-   - Propagate deletion to all devices
-   - Remove from caches and backups
-   - Legal retention requirements
-
-### Senior-level Questions
-
-8. **How would you implement voice/video calls?**
-
-   - WebRTC for peer-to-peer media
-   - Signaling server via WebSocket
-   - TURN servers for NAT traversal
-   - SFU for group calls
-
-9. **How do you prevent spam and abuse?**
-
-   - Rate limiting per user
-   - Message content analysis
-   - Report and block functionality
-   - Phone number verification
-
-10. **How would you implement message search?**
-
-    - Client-side encrypted search
-    - Server-side metadata search
-    - Elasticsearch for message content
-    - Respect E2E encryption boundaries
 
 ## Summary
 
@@ -880,6 +811,14 @@ Key takeaways:
 This design handles 500M DAU with 100B messages/day while maintaining < 100ms delivery latency.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

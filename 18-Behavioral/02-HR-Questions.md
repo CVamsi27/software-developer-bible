@@ -1,4 +1,14 @@
+---
+section: Behavioral
+category: Interview
+tags: [concept]
+---
+
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
+
+[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -550,6 +560,12 @@ For HR behavioral questions:
 7. **Prepare thoughtful questions**—your questions reveal your priorities
 
 ---
+
+---
+
+## See Also
+- [Interview Strategy](../00-Interview-Strategy/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

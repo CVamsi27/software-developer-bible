@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [interview-questions, reference]
+---
+
 # TypeScript Interview Questions
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1248,7 +1258,6 @@ const user = await fetchData<User>("/api/users/1");
 This comprehensive guide covers TypeScript interview questions from beginner to FAANG-level. Master these concepts and patterns to demonstrate your expertise in TypeScript and ace your next interview.
 
 ## Cheat Sheet
-
 ```typescript
 // Type safety
 let value: unknown; // Prefer over any
@@ -1281,6 +1290,13 @@ function process(x: Shape): number {
 }
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

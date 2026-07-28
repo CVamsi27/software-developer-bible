@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # HTTP Methods
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -786,84 +796,12 @@ router.put('/api/users/:id', async (req, res) => {
 - **Compression** - Enable gzip for GET responses
 - **Pagination** - Always paginate large collections
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is the difference between GET and POST?** - GET retrieves data (safe, idempotent); POST creates data (not safe, not idempotent).
-
-2. **When should you use PUT vs PATCH?** - PUT for full resource replacement; PATCH for partial updates.
-
-3. **What makes DELETE idempotent?** - Calling DELETE multiple times produces the same result (resource is deleted or already gone).
-
-4. **What is the purpose of HEAD method?** - Same as GET but returns only headers, useful for checking if resource exists.
-
-5. **What status code should POST return?** - 201 Created with Location header.
-
-### Intermediate (5)
-
-6. **Explain idempotency and why it matters** - Idempotent operations produce same result when called multiple times; important for retry logic and fault tolerance.
-
-7. **When would you use OPTIONS method?** - CORS preflight requests, discovering allowed methods for a resource.
-
-8. **How do you handle concurrent PUT requests?** - Use optimistic locking with ETag/If-Match headers.
-
-9. **What is the difference between 400 and 422 status codes?** - 400: Malformed request; 422: Request well-formed but semantically invalid.
-
-10. **How do you implement idempotency for POST?** - Use Idempotency-Key header and store results server-side.
-
-### Senior (10)
-
-11. **Design an idempotent payment system** - Idempotency keys, idempotent database operations, retry-safe webhooks.
-
-12. **How do you handle PATCH with JSON Patch?** - Implement RFC 6902 for standard patch operations.
-
-13. **Design a bulk operations API** - POST for batch create, DELETE for batch remove, progress tracking.
-
-14. **How do you version HTTP methods?** - Deprecation headers, method routing, backward compatibility.
-
-15. **Implement optimistic concurrency control** - ETag headers, If-Match conditional updates.
-
-16. **Design a retry-safe notification system** - Idempotency keys, deduplication, exactly-once semantics.
-
-17. **How do you handle long-running PUT operations?** - Return 202 Accepted with status polling endpoint.
-
-18. **Design a soft-delete system with DELETE** - Mark as deleted, purge after retention period.
-
-19. **How do you handle partial failures in batch operations?** - Transaction rollback, partial success responses, error aggregation.
-
-20. **Implement cache invalidation with methods** - ETag generation, Cache-Control headers, purge strategies.
-
-### FAANG-style (5)
-
-21. **Design a distributed counter with idempotent increments** - CRDT, vector clocks, conflict resolution.
-
-22. **Design a shopping cart API with concurrent updates** - Merge strategies, version vectors, conflict detection.
-
-23. **Design a document collaboration system** - OT/CRDT, operation transforms, conflict resolution.
-
-24. **How would you migrate from POST to PUT without downtime?** - Dual-write, feature flags, gradual migration.
-
-25. **Design a webhook delivery system with retries** - Idempotency, exponential backoff, dead letter queue.
-
-### Follow-ups (5)
-
-26. **What are the limitations of idempotency keys?** - Storage overhead, TTL management, key generation strategies.
-
-27. **When would you NOT use idempotency?** - Logging, analytics, non-critical metrics.
-
-28. **How do you test idempotency?** - Send same request twice, verify same response, check database state.
-
-29. **What is exactly-once delivery?** - Guarantees message processed once despite retries; requires idempotency.
-
-30. **How do you handle idempotency across microservices?** - Distributed idempotency stores, correlation IDs, saga patterns.
 
 ## Summary
 
 HTTP methods are the foundation of REST API design. Each method has specific properties—safe, idempotent, cacheable—that determine how it should be used. Understanding these properties is crucial for building reliable, fault-tolerant APIs. Always use the correct method for the operation, implement idempotency for critical operations, and return appropriate status codes.
 
 ## Cheat Sheet
-
 | Method | Safe | Idempotent | Has Body | Cacheable | Use Case |
 |--------|------|------------|----------|-----------|----------|
 | GET | Yes | Yes | No | Yes | Read resource |
@@ -873,6 +811,14 @@ HTTP methods are the foundation of REST API design. Each method has specific pro
 | DELETE | No | Yes | Optional | No | Remove resource |
 | HEAD | Yes | Yes | No | Yes | Get metadata |
 | OPTIONS | Yes | Yes | Optional | No | Get allowed methods |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Behavioral
+category: Interview
+tags: [concept]
+---
+
 # The STAR Method: Mastering Behavioral Interview Answers
+
+[![Section](https://img.shields.io/badge/section-Behavioral-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -506,6 +516,12 @@ The STAR method is a powerful framework for structuring behavioral interview ans
 Remember: the interviewer is evaluating not just what you did, but how you think. Your STAR answers should reveal your decision-making process, your communication skills, and your ability to drive impact.
 
 ---
+
+---
+
+## See Also
+- [Interview Strategy](../00-Interview-Strategy/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

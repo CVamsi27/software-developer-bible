@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Event Sourcing
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -782,165 +792,12 @@ class TemporalQueryService {
 - **Event compaction**: Remove old events or merge similar events
 - **Indexing**: Index events for efficient querying
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Event Sourcing?**
-
-   - Pattern where state changes stored as immutable sequence of events.
-
-2. **Why use Event Sourcing?**
-
-   - Complete audit trail, temporal queries, debugging, event-driven integration.
-
-3. **What is an event in Event Sourcing?**
-
-   - Immutable fact describing something that happened in the system.
-
-4. **What is an aggregate?**
-
-   - Business entity that emits events and maintains consistency.
-
-5. **What is a projection?**
-
-   - Read model built by processing events for querying.
-
-6. **What is the difference between command and event?**
-
-   - Command: Intent to do something (may be rejected)
-   - Event: Fact that something happened (cannot be rejected)
-
-7. **What is event replay?**
-
-   - Rebuilding state by processing historical events.
-
-8. **What is a snapshot in Event Sourcing?**
-
-   - Saved state at point in time to avoid replaying all events.
-
-### Intermediate (5-10)
-
-9. **What is CQRS with Event Sourcing?**
-
-   - Command Query Responsibility Segregation: Separate write (events) and read (projections) models.
-
-10. **How do you handle event schema evolution?**
-
-    - Versioning, upcasting, backward/forward compatibility.
-
-11. **What is eventual consistency in Event Sourcing?**
-
-    - Projections may lag behind event store, reads eventually reflect latest events.
-
-12. **How do you handle concurrent modifications?**
-
-    - Optimistic concurrency, version checking, conflict resolution.
-
-13. **What is event compaction?**
-
-    - Removing or merging old events to reduce storage.
-
-14. **How do you query temporal data?**
-
-    - Reconstruct state at specific point in time using events.
-
-15. **What are event store guarantees?**
-
-    - Durability, ordering, exactly-once (with idempotency).
-
-16. **How do you handle event ordering?**
-
-    - Aggregate-level ordering, sequence numbers, timestamps.
-
-### Senior (10-15)
-
-17. **Design an Event Sourcing system from scratch.**
-
-    - Event store, aggregates, projections, snapshots, versioning.
-
-18. **How do you handle event versioning?**
-
-    - Schema registry, upcasters, backward compatibility.
-
-19. **What is the relationship between Event Sourcing and DDD?**
-
-    - Aggregates, bounded contexts, domain events, ubiquitous language.
-
-20. **How do you implement event store persistence?**
-
-    - Database, event store systems, distributed storage.
-
-21. **Explain event sourcing performance optimization.**
-
-    - Snapshots, partitioning, parallel projection, compaction.
-
-22. **How do you handle event sourcing in microservices?**
-
-    - Each service owns events, eventual consistency, saga pattern.
-
-23. **What is event sourcing security?**
-
-    - Event encryption, access control, audit trail.
-
-24. **How do you test event-sourced systems?**
-
-    - Event fixtures, aggregate tests, projection tests.
-
-25. **What are event sourcing limitations?**
-
-    - Complexity, eventual consistency, storage growth, learning curve.
-
-### FAANG-style (5-10)
-
-26. **Design Netflix's event sourcing system.**
-
-    - High throughput, multi-region, event-driven architecture.
-
-27. **How would you handle 1M events/second?**
-
-    - Sharding, partitioning, distributed event store, caching.
-
-28. **Design event sourcing for global e-commerce.**
-
-    - Multi-region, currency, compliance, real-time analytics.
-
-29. **How do you ensure event sourcing reliability?**
-
-    - Replication, backup, disaster recovery, monitoring.
-
-30. **Explain event sourcing in serverless architecture.**
-
-    - Event-driven functions, state management, cold starts.
-
-### Follow-ups (5-10)
-
-31. **How do you migrate to Event Sourcing?**
-
-    - Strangler fig pattern, dual write, event capture.
-
-32. **What is the impact of Event Sourcing on microservices?**
-
-    - Decoupling, async processing, event-driven communication.
-
-33. **How do you debug event-sourced systems?**
-
-    - Event replay, temporal queries, distributed tracing.
-
-34. **What is the future of Event Sourcing?**
-
-    - Serverless event stores, AI-driven projections, real-time analytics.
-
-35. **How do you choose between Event Sourcing and traditional storage?**
-
-    - Audit requirements, temporal queries, event-driven needs.
 
 ## Summary
 
 Event Sourcing provides complete audit trails and temporal queries by storing immutable events. Combined with CQRS, it enables scalable read and write models. Key considerations include event design, versioning, and performance optimization.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                 EVENT SOURCING                          │
@@ -980,6 +837,14 @@ Event Sourcing provides complete audit trails and temporal queries by storing im
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

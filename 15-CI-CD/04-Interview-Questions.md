@@ -1,4 +1,14 @@
+---
+section: CI/CD
+category: DevOps
+tags: [interview-questions, reference]
+---
+
 # CI/CD Interview Questions
+
+[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## 30 Most Asked CI/CD Interview Questions with Detailed Answers
 
@@ -541,7 +551,6 @@ CI/CD interview questions cover:
 Focus on understanding the **why** behind each concept.
 
 ## Cheat Sheet
-
 ```bash
 # Git
 git commit -m "message"
@@ -566,6 +575,13 @@ helm rollback myrelease 1
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
+- [Git Advanced](../24-Git-Advanced/)
 
 ## References & Learn More
 

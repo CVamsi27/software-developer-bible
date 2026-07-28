@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [interview-questions, reference]
+---
+
 # Kubernetes Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## 30 Most Asked Kubernetes Interview Questions with Detailed Answers
 
@@ -751,7 +761,6 @@ Kubernetes interview questions cover:
 Focus on understanding the **why** behind each concept.
 
 ## Cheat Sheet
-
 ```bash
 # Pods
 kubectl get pods -o wide
@@ -777,6 +786,14 @@ kubectl top nodes
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

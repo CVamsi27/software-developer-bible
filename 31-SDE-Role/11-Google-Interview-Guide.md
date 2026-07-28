@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # 🔵 Google (Alphabet) — Interview Guide (2025–2026)
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Target Role:** L3 (Junior) / L4 (Mid) / L5 (Senior) Software Engineer
-> 
+>
 > **Teams to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML
 
 ---
@@ -51,18 +61,20 @@
 
 ### "Why Google?" — Answer Framework
 
-```
-1. Impact at Scale: "Google serves billions of users daily. I want to work on 
+```text
+
+1. Impact at Scale: "Google serves billions of users daily. I want to work on
    systems that impact people worldwide — from Search to Maps to Cloud."
 
-2. Technical Innovation: "Google pushes boundaries in AI, distributed systems, 
+2. Technical Innovation: "Google pushes boundaries in AI, distributed systems,
    and infrastructure. I want to solve problems at this scale."
 
-3. Learning Culture: "Google's 20% time, internal talks, and engineering 
+3. Learning Culture: "Google's 20% time, internal talks, and engineering
    culture emphasize continuous learning."
 
-4. Specific Team: "I'm particularly interested in [specific team] because 
+4. Specific Team: "I'm particularly interested in [specific team] because
    [specific reason about their technical challenges/products]."
+
 ```
 
 ---
@@ -112,7 +124,8 @@
 
 ### 📝 Coding Round Tips for Google
 
-```
+```text
+
 ✅ DO:
   • Talk through your approach BEFORE coding
   • Start with brute force, then optimize
@@ -128,6 +141,7 @@
   • Ignore edge cases
   • Try to "run" code mentally without tracing step-by-step
   • Give up when stuck — ask for hints, they WANT to help you succeed
+
 ```
 
 ---
@@ -157,7 +171,8 @@
 
 ### System Design Framework for Google
 
-```
+```text
+
 Step 1: Requirements (5 min)
   - Functional: What does the system do?
   - Non-functional: Scale, latency, availability, consistency
@@ -183,6 +198,7 @@ Step 5: Wrap-up (5 min)
   - Summarize key decisions
   - Discuss trade-offs
   - Mention monitoring and alerting
+
 ```
 
 ---
@@ -191,7 +207,8 @@ Step 5: Wrap-up (5 min)
 
 ### Distributed Systems
 
-```
+```text
+
 Q: Design a globally distributed key-value store.
 A:
   - Consistent hashing for partitioning
@@ -214,11 +231,13 @@ A:
   - AP: DynamoDB-style systems (high availability)
   - Google Spanner: Uses TrueTime for external consistency
   - Trade-off: Latency vs consistency
+
 ```
 
 ### Concurrency & Performance
 
-```
+```text
+
 Q: How would you optimize a slow database query?
 A:
   1. EXPLAIN ANALYZE to understand query plan
@@ -234,6 +253,7 @@ A:
   - Doubly Linked List for O(1) eviction
   - Synchronization: ReadWriteLock or synchronized blocks
   - Consider: ConcurrentHashMap + ConcurrentLinkedDeque
+
 ```
 
 ---
@@ -242,13 +262,15 @@ A:
 
 ### Must-Have Stories (Prepare 5-6)
 
-```
+```text
+
 1. A time you failed and what you learned (Growth Mindset)
 2. A time you had to make a decision with incomplete information
 3. A time you disagreed with a teammate and resolved it
 4. A time you mentored someone or helped them grow
 5. A time you went above and beyond for a user/customer
 6. A time you had to learn something new quickly
+
 ```
 
 ### Common Google Behavioral Questions
@@ -294,7 +316,8 @@ A:
 
 ## 🎯 Final Checklist Before Google Interview
 
-```
+```text
+
 Technical:
   [ ] Can solve Medium problems in 20-25 min in Google Docs
   [ ] Can solve Hard problems in 35-45 min
@@ -313,6 +336,7 @@ Logistics:
   [ ] Have backup plan for connectivity issues
   [ ] Know interviewer names and their teams
   [ ] Have questions prepared for interviewers
+
 ```
 
 ---
@@ -323,7 +347,7 @@ Logistics:
 
 ---
 
-*Last updated: July 2025*
+*Last updated: July 2026*
 
 ---
 
@@ -345,3 +369,25 @@ Logistics:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers Google's interview process, including coding expectations, googleyness and leadership assessment, system design focus areas, and strategies for navigating Google's unique hiring bar.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

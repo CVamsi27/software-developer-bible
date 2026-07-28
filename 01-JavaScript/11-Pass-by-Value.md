@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Pass by Value vs Pass by Reference
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -573,298 +583,6 @@ const updated = original.set('c', 3);
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: Does JavaScript pass by value or pass by reference?**
-
-A: JavaScript passes by value. For primitives, the value itself is copied. For objects, the reference (address) is copied, but it's still pass by value of the reference.
-
-**Q2: What happens when you pass a primitive to a function?**
-
-A: The primitive value is copied. Changes to the parameter inside the function don't affect the original value.
-
-**Q3: What happens when you pass an object to a function?**
-
-A: A copy of the reference is passed. Both the original and the parameter point to the same object. Changes to the object's properties affect the original.
-
-**Q4: What is the difference between mutation and reassignment?**
-
-A:
-
-- **Mutation**: Modifies the object's properties (affects original)
-- **Reassignment**: Changes what the variable points to (doesn't affect original)
-
-**Q5: How do you create a copy of an object?**
-
-A: Use spread operator, Object.assign, or structuredClone:
-
-```typescript
-const copy = { ...original };
-const copy2 = Object.assign({}, original);
-const copy3 = structuredClone(original);
-
-```
-
-### Intermediate (5-10 questions)
-
-**Q6: Why does this code output 10 instead of 20?**
-
-```typescript
-function change(x: number) {
-  x = 20;
-}
-let a = 10;
-change(a);
-console.log(a);  // 10
-
-```
-
-A: Because `a` is a primitive (number). When passed to `change`, its value is copied. Changing `x` inside the function only changes the local copy.
-
-**Q7: Why does this code output 20?**
-
-```typescript
-function change(obj: { value: number }) {
-  obj.value = 20;
-}
-let a = { value: 10 };
-change(a);
-console.log(a.value);  // 20
-
-```
-
-A: Because `a` is an object. When passed to `change`, its reference is copied. Both `a` and `obj` point to the same object, so changing `obj.value` affects `a`.
-
-**Q8: How do you prevent mutation of an object?**
-
-A: Use Object.freeze:
-
-```typescript
-const frozen = Object.freeze({ value: 10 });
-frozen.value = 20;  // Silently fails
-
-```
-
-**Q9: What is the difference between shallow and deep copy?**
-
-A:
-
-- **Shallow copy**: Copies object properties, but nested objects are still references
-- **Deep copy**: Copies everything, including nested objects
-
-**Q10: How do you create a deep copy?**
-
-A: Use JSON.parse(JSON.stringify()) or structuredClone:
-
-```typescript
-const deep = JSON.parse(JSON.stringify(original));
-// Or
-const deep2 = structuredClone(original);
-
-```
-
-### Senior (10-15 questions)
-
-**Q11: Explain the memory model for object references.**
-
-A: When an object is created, it's stored in heap memory. Variables hold references (pointers) to this memory. When passed to functions, the reference is copied, not the object.
-
-**Q12: What are the performance implications of copying vs referencing?**
-
-A:
-
-- Referencing: O(1), just copies pointer
-- Shallow copy: O(n), copies n properties
-- Deep copy: O(n*m), copies all nested objects
-
-**Q13: How do you implement immutable data structures?**
-
-A: Use libraries like Immutable.js, or implement persistent data structures that share structure between versions.
-
-**Q14: What is structural sharing?**
-
-A: Structural sharing is when immutable data structures share parts of their structure with previous versions, reducing memory usage while maintaining immutability.
-
-**Q15: How do you handle large objects efficiently?**
-
-A:
-
-1. Use references when possible
-
-2. Lazy loading for large properties
-
-3. WeakMap/WeakRef for caching
-
-4. Streams for large data processing
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design an immutable state management system.**
-
-A:
-
-```typescript
-class ImmutableState<T> {
-  private history: T[] = [];
-  private currentIndex = 0;
-
-  constructor(initialState: T) {
-    this.history.push(structuredClone(initialState));
-  }
-
-  get state(): T {
-    return this.history[this.currentIndex];
-  }
-
-  update(updater: (state: T) => T): void {
-    const newState = updater(structuredClone(this.state));
-    this.history = this.history.slice(0, this.currentIndex + 1);
-    this.history.push(newState);
-    this.currentIndex++;
-  }
-
-  undo(): void {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    }
-  }
-
-  redo(): void {
-    if (this.currentIndex < this.history.length - 1) {
-      this.currentIndex++;
-    }
-  }
-}
-
-```
-
-**Q17: How would you implement a deep freeze function?**
-
-A:
-
-```typescript
-function deepFreeze(obj: any): any {
-  Object.freeze(obj);
-
-  Object.getOwnPropertyNames(obj).forEach(prop => {
-    if (obj[prop] !== null &&
-        (typeof obj[prop] === 'object' || typeof obj[prop] === 'function') &&
-        !Object.isFrozen(obj[prop])) {
-      deepFreeze(obj[prop]);
-    }
-  });
-
-  return obj;
-}
-
-```
-
-**Q18: Analyze the memory implications of different cloning strategies.**
-
-A:
-
-- **Shallow copy**: Low memory, but shared nested objects
-- **Deep copy**: High memory, fully independent
-- **Structural sharing**: Balanced memory, immutable
-- **Lazy copying**: Copy on write, efficient for large objects
-
-**Q19: How do you optimize object copying for performance?**
-
-A:
-
-1. Copy only needed properties
-
-2. Use typed arrays for numeric data
-
-3. Implement copy-on-write
-
-4. Use object pools for frequent allocation
-
-5. Profile and measure actual usage
-
-**Q20: What are the security implications of object references?**
-
-A:
-
-1. **Prototype pollution**: Modifying shared prototypes affects all objects
-
-2. **Information leakage**: References can expose internal state
-
-3. **Privilege escalation**: Malicious code can modify shared objects
-
-4. **Mitigation**: Use Object.freeze, input validation
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a bug caused by reference confusion?**
-
-A: Common bug:
-
-```typescript
-// Bug: Array mutation
-function addItem(items: string[], item: string) {
-  items.push(item);
-  return items;
-}
-
-let cart = ['apple', 'banana'];
-let updatedCart = addItem(cart, 'orange');
-console.log(cart);  // ['apple', 'banana', 'orange'] (mutated!)
-console.log(updatedCart);  // ['apple', 'banana', 'orange']
-
-// Fix: Create copy
-function addItemSafe(items: string[], item: string) {
-  return [...items, item];
-}
-
-```
-
-**Q22: How do you handle deep cloning efficiently?**
-
-A:
-
-1. Use structuredClone (modern browsers)
-
-2. JSON.parse(JSON.stringify()) for simple objects
-
-3. Custom deep clone with circular reference handling
-
-4. Libraries like lodash for complex cases
-
-**Q23: What is the relationship between references and garbage collection?**
-
-A: Objects are garbage collected when no references point to them. If you copy a reference, the object stays alive. If you delete all references, it becomes eligible for GC.
-
-**Q24: How do different languages handle this differently?**
-
-A:
-
-- **Java**: Primitives by value, objects by reference
-- **Python**: Everything by reference
-- **C++**: Can choose by value or by reference
-- **JavaScript**: Everything by value (including object references)
-
-**Q25: What are best practices for working with object references?**
-
-A:
-
-1. Document mutation behavior
-
-2. Use pure functions when possible
-
-3. Create copies before modification
-
-4. Use Object.freeze for immutability
-
-5. Be careful with shared state
-
-6. Use TypeScript for type safety
-
-7. Test for unintended mutations
-
-8. Use immutable data structures when needed
 
 ## Summary
 
@@ -887,7 +605,6 @@ Understanding pass by value vs reference is crucial:
 Understanding this prevents bugs and enables better code design.
 
 ## Cheat Sheet
-
 ```text
 PASS BY VALUE VS REFERENCE CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -947,6 +664,13 @@ SECURITY:
 • Mitigation: freeze, validation
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

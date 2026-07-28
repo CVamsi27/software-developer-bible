@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Services & Ingress
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -592,129 +602,12 @@ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a Kubernetes Service?**
-   A stable network endpoint for a set of Pods, providing load balancing and DNS.
-
-2. **What are the Service types?**
-   ClusterIP, NodePort, LoadBalancer, ExternalName.
-
-3. **What is the difference between ClusterIP and NodePort?**
-   ClusterIP is internal only. NodePort exposes on each node's IP.
-
-4. **What is an Ingress?**
-   Manages external HTTP/HTTPS access to Services with routing rules.
-
-5. **How does a Service find its Pods?**
-   Via label selectors matching Pod labels.
-
-6. **What is a headless Service?**
-   A Service with `clusterIP: None`, returning Pod IPs directly.
-
-7. **What is the default Service type?**
-   ClusterIP.
-
-8. **How do you expose a Deployment externally?**
-   Create a Service of type NodePort or LoadBalancer, or use Ingress.
-
-9. **What is an Ingress Controller?**
-   A reverse proxy that implements Ingress rules (nginx, traefik, etc.).
-
-10. **How do you enable TLS on Ingress?**
-    Add a `tls` section with host and secret reference.
-
-### Intermediate (5-10)
-
-11. **How does Kubernetes handle service discovery?**
-    CoreDNS resolves service names to cluster IPs. Environment variables also work.
-
-12. **What is the difference between Service and Ingress?**
-    Service provides L4 load balancing. Ingress provides L7 routing with host/path rules.
-
-13. **How do you configure session affinity?**
-    Set `sessionAffinity: ClientIP` in the Service spec.
-
-14. **What is externalTrafficPolicy?**
-    Controls how external traffic is routed: `Cluster` (default) or `Local`.
-
-15. **How do you rate-limit traffic in Ingress?**
-    Use Ingress controller annotations (e.g., nginx.ingress.kubernetes.io/rate-limit).
-
-16. **What is a ServiceEntry in Istio?**
-    Extends service mesh to external services not in Kubernetes.
-
-17. **How do you handle gRPC load balancing?**
-    Use headless service or configure gRPC load balancing in the Service.
-
-18. **What is the difference between LoadBalancer and NodePort?**
-    NodePort exposes on node IP. LoadBalancer provisions a cloud load balancer.
-
-19. **How do you manage TLS certificates?**
-    Use cert-manager for automatic Let's Encrypt certificates.
-
-20. **What is the difference between Ingress and Gateway API?**
-    Gateway API is the next-gen standard with richer features and better role separation.
-
-### Senior (10-15)
-
-21. **How would you design a multi-tenant ingress architecture?**
-    Use namespace-based isolation, separate Ingress controllers per tenant, and network policies.
-
-22. **Explain Ingress controller traffic flow.**
-    External traffic hits LB -> Ingress controller Pod -> routes to Service -> Pod.
-
-23. **How do you handle WebSocket connections in Ingress?**
-    Use annotations for WebSocket upgrade support: `nginx.ingress.kubernetes.io/proxy-read-timeout`.
-
-24. **What is the difference between LoadBalancer and MetalLB?**
-    LoadBalancer uses cloud provider LB. MetalLB provides bare-metal LoadBalancer implementation.
-
-25. **How do you implement canary deployments with Ingress?**
-    Use Ingress annotations for traffic splitting (nginx.ingress.kubernetes.io/canary-weight).
-
-### FAANG-style (5-10)
-
-26. **Design a global load balancing architecture for a multi-region application.**
-    Use cloud LB for regional routing, Ingress for local routing, and DNS for geographic distribution.
-
-27. **How would you handle 1M+ requests per second?**
-    Use horizontal pod autoscaling, connection pooling, CDN, and efficient Ingress configuration.
-
-28. **Design a zero-downtime service migration strategy.**
-    Use Ingress traffic shifting, Service label updates, and DNS TTL management.
-
-29. **How would you implement service mesh without Istio?**
-    Use Linkerd for lighter-weight service mesh, or configure mTLS manually.
-
-30. **Describe a disaster recovery strategy for Ingress.**
-    Multi-cluster Ingress, failover DNS, cross-region replication, and automated recovery.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between Ingress and Egress?**
-    Ingress: external -> cluster. Egress: cluster -> external.
-
-32. **How do you handle UDP traffic in Kubernetes?**
-    Use LoadBalancer Service with `protocol: UDP` or NodePort.
-
-33. **What is the maximum number of Services per namespace?**
-    No hard limit, but performance degrades with many Services.
-
-34. **How do you monitor Service health?**
-    Use Prometheus metrics, endpoint health checks, and Service mesh observability.
-
-35. **What is a ExternalName Service?**
-    Maps a service name to a DNS CNAME record for external services.
 
 ## Summary
 
 Services provide stable networking for Pods. Ingress manages external HTTP/HTTPS access. Together, they enable service discovery, load balancing, and external traffic management in Kubernetes.
 
 ## Cheat Sheet
-
 ```bash
 # Services
 kubectl get svc
@@ -736,6 +629,14 @@ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

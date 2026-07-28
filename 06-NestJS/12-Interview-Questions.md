@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [interview-questions, reference]
+---
+
 # NestJS Interview Questions
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## 40 Most Asked NestJS Interview Questions with Detailed Answers
 
@@ -1062,6 +1072,14 @@ These 40 questions cover NestJS from beginner to FAANG-level complexity. Key are
 - **Intermediate**: Testing, authentication, validation, Swagger
 - **Senior**: Architecture, CQRS, microservices, patterns
 - **FAANG**: Distributed systems, event sourcing, performance optimization
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

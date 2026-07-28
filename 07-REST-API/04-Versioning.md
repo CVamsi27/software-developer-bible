@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # API Versioning
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -707,90 +717,26 @@ app.get('/api/docs', (req, res) => {
 - **Monitoring** - Track performance per version
 - **Load testing** - Test each version independently
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is API versioning?** - Managing changes to APIs by creating multiple versions that coexist.
-
-2. **Why do we need API versioning?** - Maintain backward compatibility while evolving APIs.
-
-3. **What are the main versioning strategies?** - URL path, query parameter, header, and media type versioning.
-
-4. **Which versioning strategy is most common?** - URL path versioning (`/api/v1/users`).
-
-5. **What is a breaking change?** - A change that breaks existing client integrations.
-
-### Intermediate (5)
-
-6. **When should you create a new version?** - Only for breaking changes; non-breaking additions can be added to existing versions.
-
-7. **How do you handle deprecation?** - Add Deprecation and Sunset headers, provide migration timeline and guides.
-
-8. **What is semantic versioning?** - Major.Minor.Patch format; increment major for breaking changes.
-
-9. **How do you route requests to different versions?** - Use middleware to detect version and route to appropriate handler.
-
-10. **How do you handle version conflicts?** - Clear version precedence rules, fallback to default version.
-
-### Senior (10)
-
-11. **Design a version migration strategy** - Phased approach: support both, deprecate old, remove old.
-
-12. **How do you handle database migrations across versions?** - Schema versioning, backward-compatible migrations, feature flags.
-
-13. **Design a version-aware caching system** - Version-specific cache keys, invalidation strategies per version.
-
-14. **How do you monitor API version usage?** - Track version in logs, dashboard for version adoption metrics.
-
-15. **Design webhook versioning** - Version in webhook URL or payload, migration support.
-
-16. **How do you handle versioning in microservices?** - Service-level versioning, API gateway routing, contract testing.
-
-17. **Design a version rollback system** - Blue-green deployments, feature flags, instant rollback capability.
-
-18. **How do you handle versioning for GraphQL?** - Schema evolution, deprecation directives, version field.
-
-19. **Design a version-aware rate limiter** - Different limits per version, upgrade incentives.
-
-20. **How do you test multiple versions?** - Contract testing, version-specific test suites, compatibility testing.
-
-### FAANG-style (5)
-
-21. **Design API versioning for a global platform** - Regional version support, A/B testing, gradual rollout.
-
-22. **How do you handle versioning for real-time APIs?** - WebSocket versioning, protocol evolution, backward compatibility.
-
-23. **Design a version migration automation system** - Automated code generation, compatibility checking, migration scripts.
-
-24. **How do you handle versioning for API marketplaces?** - Version discovery, pricing per version, usage analytics.
-
-25. **Design a zero-downtime version migration** - Traffic splitting, shadow testing, automatic client upgrades.
-
-### Follow-ups (5)
-
-26. **What are the tradeoffs of each versioning strategy?** - URL path: visible but pollutes URLs; Header: clean URLs but harder to test.
-
-27. **How do you handle versioning for mobile apps?** - Bundle API version with app, support old versions, force upgrades.
-
-28. **What is the maximum number of versions to support?** - Typically 2-3; depends on resources and adoption rates.
-
-29. **How do you handle versioning for third-party integrations?** - Long deprecation periods, version discovery, migration support.
-
-30. **How do you communicate version changes?** - Changelog, email notifications, dashboard alerts, developer portal.
 
 ## Summary
 
 API versioning is essential for evolving APIs without breaking existing clients. URL path versioning is the most common and recommended approach. Always version only breaking changes, deprecate gracefully with clear timelines, and provide migration guides. Monitor version usage and retire old versions when adoption drops.
 
 ## Cheat Sheet
-
 | Strategy | Example | Pros | Cons |
 |----------|---------|------|------|
 | URL Path | `/api/v1/users` | Visible, easy to test | URL pollution |
 | Query Param | `?version=1` | Easy to implement | Not RESTful |
 | Header | `Accept: vnd.api.v1+json` | Clean URLs | Hard to test |
 | Media Type | `application/json; v=1` | RESTful | Complex parsing |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

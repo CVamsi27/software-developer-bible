@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Prototypes
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -818,296 +828,6 @@ PersonFixed.prototype.greet = function() {  // Shared by all instances
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is a prototype in JavaScript?**
-
-A: A prototype is an object from which other objects inherit properties and methods. Every object has a hidden `[[Prototype]]` property that references another object, creating a prototype chain.
-
-**Q2: What is the prototype chain?**
-
-A: The prototype chain is a series of objects linked by their prototype references. When you access a property, JavaScript looks up the chain until it finds the property or reaches null.
-
-**Q3: What is the difference between `__proto__` and `prototype`?**
-
-A:
-
-- `__proto__`: Property on every object that points to its prototype (deprecated, use `Object.getPrototypeOf()`)
-- `prototype`: Property on functions that becomes the prototype of objects created with `new`
-
-**Q4: What is `hasOwnProperty`?**
-
-A: `hasOwnProperty` is a method on `Object.prototype` that checks if an object has a property directly (not inherited from prototype).
-
-**Q5: What is `Object.create`?**
-
-A: `Object.create` creates a new object with a specified prototype. It's used to create objects with custom prototypes without using constructors.
-
-### Intermediate (5-10 questions)
-
-**Q6: How do you implement inheritance in JavaScript?**
-
-A: Several ways:
-
-1. Prototype chaining: `Dog.prototype = Object.create(Animal.prototype)`
-
-2. ES6 classes: `class Dog extends Animal`
-
-3. Constructor stealing: `Animal.call(this, name)`
-
-4. Mixins: `Object.assign(Dog.prototype, animalMethods)`
-
-**Q7: What is the `constructor` property?**
-
-A: The `constructor` property is a reference to the function that created the object. It's automatically added to the prototype when a function is created.
-
-**Q8: How do you properly set up prototype inheritance?**
-
-A:
-
-```typescript
-function Child() {
-  Parent.call(this);  // Call parent constructor
-}
-Child.prototype = Object.create(Parent.prototype);
-Child.prototype.constructor = Child;  // Fix constructor
-
-```
-
-**Q9: What is method overriding?**
-
-A: Method overriding is when a child class provides a different implementation of a method that exists in its parent class. The child's method takes precedence in the prototype chain.
-
-**Q10: How do you check if an object is an instance of a class?**
-
-A: Use the `instanceof` operator:
-
-```typescript
-const dog = new Dog('Rex');
-console.log(dog instanceof Dog);     // true
-console.log(dog instanceof Animal);  // true
-
-```
-
-### Senior (10-15 questions)
-
-**Q11: Explain the relationship between prototypes and closures.**
-
-A: Closures capture the lexical scope, which includes access to prototypes. Methods defined in constructors can access prototype methods through the scope chain.
-
-**Q12: What are the performance implications of deep prototype chains?**
-
-A: Deep chains increase property lookup time. Each level adds another reference to traverse. Keep chains shallow for better performance.
-
-**Q13: How do JavaScript engines optimize prototype lookups?**
-
-A: Engines use hidden classes, inline caching, and JIT compilation to speed up property access. They create hidden classes for objects with the same shape and cache property locations.
-
-**Q14: What is the difference between prototypal and classical inheritance?**
-
-A:
-
-- **Prototypal**: Objects inherit directly from other objects via prototype chain
-- **Classical**: Classes are blueprints, instances are created from classes
-
-JavaScript uses prototypal inheritance, with classes as syntactic sugar.
-
-**Q15: How do you implement multiple inheritance in JavaScript?**
-
-A: JavaScript doesn't support multiple inheritance directly. Use mixins:
-
-```typescript
-const Serializable = { serialize() {} };
-const Loggable = { log() {} };
-
-class MyClass extends BaseClass {
-  constructor() {
-    super();
-    Object.assign(this, Serializable, Loggable);
-  }
-}
-
-```
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a prototype-based object system.**
-
-A:
-
-```typescript
-class PrototypeSystem {
-  private prototypes = new Map<string, any>();
-
-  create(name: string, properties: any) {
-    this.prototypes.set(name, properties);
-  }
-
-  clone(name: string) {
-    const proto = this.prototypes.get(name);
-    if (!proto) throw new Error(`Prototype ${name} not found`);
-
-    const clone = Object.create(proto);
-    Object.assign(clone, { _proto: name });
-    return clone;
-  }
-
-  extend(name: string, parentName: string, extraProperties: any) {
-    const parent = this.prototypes.get(parentName);
-    if (!parent) throw new Error(`Parent ${parentName} not found`);
-
-    const child = Object.create(parent);
-    Object.assign(child, extraProperties);
-    this.prototypes.set(name, child);
-  }
-}
-
-```
-
-**Q17: How would you implement a class system without using classes?**
-
-A:
-
-```typescript
-function createClass(constructor: Function, methods: any) {
-  const proto = Object.create(null);
-
-  Object.keys(methods).forEach(key => {
-    proto[key] = methods[key];
-  });
-
-  proto.constructor = constructor;
-
-  return function(...args: any[]) {
-    const instance = Object.create(proto);
-    constructor.apply(instance, args);
-    return instance;
-  };
-}
-
-const Person = createClass(
-  function(name: string) {
-    this.name = name;
-  },
-  {
-    greet() {
-      return `Hello, ${this.name}`;
-    }
-  }
-);
-
-const alice = Person('Alice');
-console.log(alice.greet());  // "Hello, Alice"
-
-```
-
-**Q18: Analyze the memory usage of prototype-based inheritance.**
-
-A:
-
-- **Shared methods**: One copy per prototype, not per instance
-- **Instance properties**: One copy per instance
-- **Prototype chain**: Each level adds a reference
-- **Hidden classes**: Engines optimize by sharing class structures
-
-Memory efficient: Methods are shared. Each instance only stores unique properties.
-
-**Q19: How do you handle prototype pollution attacks?**
-
-A:
-
-1. Use `Object.freeze` to prevent modifications
-
-2. Use `Object.create(null)` for objects without prototype
-
-3. Validate input before adding to prototypes
-
-4. Use hasOwnProperty checks
-
-5. Avoid modifying built-in prototypes
-
-**Q20: What are the security implications of prototype pollution?**
-
-A:
-
-1. **Prototype pollution**: Malicious code can modify Object.prototype
-
-2. **Property injection**: Attackers can inject properties
-
-3. **Privilege escalation**: Can modify security-related properties
-
-4. **Mitigation**: Input validation, freezing prototypes, using null prototypes
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a prototype-related bug in production?**
-
-A: Common bug:
-
-```typescript
-// Bug: Modifying Object.prototype
-Object.prototype.isEmpty = function() {
-  return Object.keys(this).length === 0;
-};
-
-// Third-party library breaks
-const config = {};
-console.log(config.isEmpty());  // true
-console.log({ a: 1 }.isEmpty());  // false
-
-// Fix: Don't modify built-in prototypes
-// Use utility functions instead
-
-```
-
-**Q22: How do you debug prototype-related issues?**
-
-A:
-
-1. **Chrome DevTools**: Inspect prototype chain in debugger
-
-2. **console.log**: Log `Object.getPrototypeOf(obj)`
-
-3. **instanceof**: Check prototype chain membership
-
-4. **hasOwnProperty**: Distinguish own vs inherited properties
-
-5. **TypeScript**: Type checking prevents many issues
-
-**Q23: What is the relationship between prototypes and TypeScript?**
-
-A: TypeScript compiles to JavaScript, using prototypes under the hood. Classes in TypeScript are syntactic sugar over prototype-based inheritance. TypeScript adds type checking but doesn't change runtime behavior.
-
-**Q24: How do frameworks use prototypes?**
-
-A:
-
-- **React**: Class components use prototype methods
-- **Vue**: Options API uses prototype for methods
-- **Angular**: Dependency injection via prototypes
-- **jQuery**: All methods defined on prototype
-
-**Q25: What are best practices for working with prototypes?**
-
-A:
-
-1. Use class syntax for clarity
-
-2. Prefer composition over inheritance
-
-3. Keep prototype chains shallow
-
-4. Don't modify built-in prototypes
-
-5. Use TypeScript for type safety
-
-6. Freeze prototypes when needed
-
-7. Use Object.create(null) for dictionaries
-
-8. Document prototype behavior
 
 ## Summary
 
@@ -1130,7 +850,6 @@ Prototypes are fundamental to JavaScript:
 Understanding prototypes is essential for mastering JavaScript and answering interview questions.
 
 ## Cheat Sheet
-
 ```text
 PROTOTYPES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -1198,6 +917,13 @@ DEBUGGING:
 • hasOwnProperty(): Distinguish own vs inherited
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

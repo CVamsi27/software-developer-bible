@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Exception Filters
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -560,101 +570,12 @@ app.useGlobalFilters(new HttpExceptionFilter());
 
 4. **Monitoring**: Send errors to monitoring services asynchronously.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is an exception filter in NestJS?**
-A class implementing `ExceptionFilter` that catches exceptions and transforms them into HTTP responses.
-
-**Q2: What is the default exception filter?**
-NestJS has a built-in filter that catches `HttpException` and returns standard error responses.
-
-**Q3: How do you apply a filter globally?**
-Use `app.useGlobalFilters()` or `APP_FILTER` token.
-
-**Q4: What is `ArgumentsHost`?**
-Provides access to request/response context and handler information.
-
-**Q5: How do you catch all exceptions?**
-Use `@Catch()` without parameters to catch all exceptions.
-
-### Intermediate
-
-**Q6: How do you create a custom exception filter?**
-Implement `ExceptionFilter`, use `@Catch()` decorator, handle exception in `catch()` method.
-
-**Q7: What is the difference between `@Catch(HttpException)` and `@Catch()`?**
-
-- `@Catch(HttpException)`: Only catches HttpException
-- `@Catch()`: Catches all exceptions
-
-**Q8: How do you access the request object in a filter?**
-Use `host.switchToHttp().getRequest()`.
-
-**Q9: How do you return different error formats?**
-Implement different filters for different contexts (REST, GraphQL, WebSocket).
-
-**Q10: How do you handle validation errors?**
-Catch `BadRequestException` and extract validation error details.
-
-### Senior
-
-**Q11: Design a comprehensive error handling strategy.**
-Layer 1: Input validation (pipes) -> Layer 2: Business errors (service) -> Layer 3: System errors (filters).
-
-**Q12: How would you implement error monitoring?**
-Send errors to Sentry/DataDog asynchronously, include correlation IDs.
-
-**Q13: Design error handling for microservices.**
-Centralized API gateway filter, service-specific filters, propagate error context.
-
-**Q14: How would you implement error retry logic?**
-Use interceptors with exponential backoff, not filters.
-
-**Q15: Design error handling for WebSocket connections.**
-Create WebSocket exception filter that sends error messages through socket.
-
-### FAANG-Style
-
-**Q16: Design a distributed error tracking system.**
-Correlate errors across services, centralize in error tracking service, alert on patterns.
-
-**Q17: How would you implement error rate limiting?**
-Track error rates per endpoint, trigger alerts when threshold exceeded.
-
-**Q18: Design error handling for serverless functions.**
-Transform errors to Lambda-compatible format, handle cold start errors.
-
-**Q19: How would you implement error-based circuit breaking?**
-Track errors per service, open circuit when error rate exceeds threshold.
-
-**Q20: Design a self-healing error system.**
-Detect error patterns, automatically restart unhealthy services, rollback deployments.
-
-### Follow-ups
-
-**Q21: Can filters access route handler metadata?**
-Yes, through `host.getHandler()` and `host.getClass()`.
-
-**Q22: How do you test exception filters?**
-Mock `ArgumentsHost`, create exception, verify response format.
-
-**Q23: What is the order of filter execution?**
-Method-level -> Controller-level -> Global.
-
-**Q24: Can filters be async?**
-Yes, filters can be async.
-
-**Q25: How do you handle errors in WebSocket gateways?**
-Create `WsExceptionFilter` using `WsException` and `WsArgumentsHost`.
 
 ## Summary
 
 Exception Filters are NestJS's centralized error handling mechanism. They catch exceptions thrown during request processing and transform them into appropriate HTTP responses. Built-in filters handle basic cases, while custom filters provide application-specific error handling with logging, monitoring, and consistent error response formats.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `ExceptionFilter` | Interface filters implement |
@@ -670,6 +591,14 @@ Exception Filters are NestJS's centralized error handling mechanism. They catch 
 | `NotFoundException` | 404 - Not found |
 | `ConflictException` | 409 - Conflict |
 | `InternalServerErrorException` | 500 - Server error |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

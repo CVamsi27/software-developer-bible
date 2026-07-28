@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Apollo Client
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1054,99 +1064,6 @@ const cache = new InMemoryCache({
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is Apollo Client?**
-   Apollo Client is a GraphQL client that manages data fetching, caching, and state management for JavaScript applications.
-
-2. **How do you set up Apollo Client in React?**
-   Create `ApolloClient` instance, wrap app with `ApolloProvider`, and use hooks like `useQuery` and `useMutation`.
-
-3. **What is the difference between `useQuery` and `useLazyQuery`?**
-   `useQuery` executes immediately on render. `useLazyQuery` executes only when you call the returned function.
-
-4. **What is the Apollo Client cache?**
-   A normalized in-memory cache that stores query results. It automatically updates when mutations modify cached data.
-
-5. **How do you handle loading states?**
-   Use the `loading` boolean from `useQuery` to show spinners or skeleton UI.
-
-### Intermediate
-
-6. **What are fetch policies?**
-   Strategies for how Apollo Client uses the cache:
-
-   - `cache-first`: Use cache, fetch if missing
-   - `network-only`: Always fetch, update cache
-   - `cache-and-network`: Return cache, also fetch
-   - `no-cache`: Never use cache
-
-7. **How do you update cache after mutations?**
-   Use the `update` function to modify cache, `refetchQueries` to refetch affected queries, or `optimisticResponse` for instant UI.
-
-8. **What is optimistic UI?**
-   Showing the expected result before the server responds. If the server fails, Apollo automatically rolls back.
-
-9. **How do you handle pagination?**
-   Use `fetchMore` with cursor-based pagination and `updateQuery` to merge results.
-
-10. **What are fragments?**
-    Reusable selections that can be spread into queries. They help avoid duplication and improve cache normalization.
-
-### Senior
-
-11. **How would you optimize Apollo Client for a large application?**
-    Code splitting, query batching, cache pagination, optimistic updates, and monitoring with Apollo DevTools.
-
-12. **Explain Apollo Client's normalized cache.**
-    Entities are stored by `__typename:id`. Queries reference entities. Updates propagate automatically.
-
-13. **How do you handle cache conflicts?**
-    Use `keyFields` for proper normalization, `merge` functions for lists, and `optimisticResponse` for concurrent updates.
-
-14. **How would you implement offline support?**
-    Queue mutations, persist cache to localStorage/IndexedDB, and sync when online.
-
-15. **How do you migrate from REST to Apollo Client?**
-    Start with new features, use `@rest` link for gradual migration, and maintain backward compatibility.
-
-### FAANG-style
-
-16. **Design a caching strategy for a social media feed.**
-    Normalized cache for entities, cursor-based pagination, optimistic updates for likes/comments, and TTL-based eviction.
-
-17. **How would you handle Apollo Client in a micro-frontends architecture?**
-    Shared Apollo Client instance, cache isolation per micro-frontend, and cross-frontend cache updates.
-
-18. **Explain your approach to Apollo Client performance monitoring.**
-    Track query execution time, cache hit rates, network requests, and bundle size impact.
-
-19. **How do you handle real-time updates with Apollo Client?**
-    Use subscriptions, optimistic updates, and cache normalization for instant UI updates.
-
-20. **Design a global state management solution with Apollo Client.**
-    Use `@client` directives for local state, cache policies for normalization, and reactive variables for fine-grained updates.
-
-### Follow-ups
-
-21. **What happens when Apollo Client loses network connection?**
-    Queries fail, mutations queue (if configured), and cache remains available. Use `errorPolicy: 'all'` for offline-first.
-
-22. **How does Apollo Client handle concurrent mutations?**
-    Mutations execute in order. Optimistic updates are applied immediately. Cache updates are atomic.
-
-23. **What is the difference between `update` and `refetchQueries`?**
-    `update` modifies cache immediately. `refetchQueries` fetches fresh data from server. Use `update` for instant UI, `refetchQueries` for data consistency.
-
-24. **How do you debug Apollo Client issues?**
-    Use Apollo DevTools, enable logging, check cache state, and monitor network requests.
-
-25. **What are the limitations of Apollo Client?**
-    Bundle size, complexity for simple apps, learning curve, and dependency on Apollo ecosystem.
-
----
 
 ## Summary
 
@@ -1160,6 +1077,13 @@ const cache = new InMemoryCache({
 | **DevTools** | Essential for debugging |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

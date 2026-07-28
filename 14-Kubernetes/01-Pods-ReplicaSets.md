@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Pods & ReplicaSets
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -533,129 +543,12 @@ kubectl get pods --all-namespaces -o wide | awk '{print $8}' | sort | uniq -c
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a Pod?**
-   The smallest deployable unit in Kubernetes. One or more containers sharing network/storage.
-
-2. **What is a ReplicaSet?**
-   Ensures a specified number of Pod replicas are running at any time.
-
-3. **What are labels in Kubernetes?**
-   Key-value pairs attached to resources for identification and selection.
-
-4. **How do you list all Pods?**
-   `kubectl get pods --all-namespaces`
-
-5. **What is the difference between a Pod and a container?**
-   A Pod can contain multiple containers. A container is a single runtime instance.
-
-6. **How do you delete a Pod?**
-   `kubectl delete pod <name>` or `kubectl delete -f pod.yaml`
-
-7. **What happens when a Pod dies?**
-   If managed by a ReplicaSet, a new Pod is created to replace it.
-
-8. **How do you view Pod logs?**
-   `kubectl logs <pod-name>`
-
-9. **What is a Namespace?**
-   A virtual cluster partition for resource isolation.
-
-10. **What is the difference between kubectl apply and kubectl create?**
-    `create` creates a new resource; `apply` creates or updates idempotently.
-
-### Intermediate (5-10)
-
-11. **What are the Pod states?**
-    Pending, Running, Succeeded, Failed, Unknown.
-
-12. **What is a multi-container Pod?**
-    A Pod with multiple containers sharing network/storage, used for sidecars, ambassadors, or adapters.
-
-13. **What are init containers?**
-    Containers that run before main containers, used for initialization tasks.
-
-14. **How does Kubernetes schedule Pods?**
-    The scheduler matches Pod resource requests to node available resources.
-
-15. **What is Pod affinity/anti-affinity?**
-    Rules that constrain which nodes Pods can be scheduled on based on other Pods' labels.
-
-16. **What are tolerations and taints?**
-    Taints repel Pods from nodes; tolerations allow Pods to be scheduled on tainted nodes.
-
-17. **How do you debug a pending Pod?**
-    `kubectl describe pod <name>` to see events and scheduling constraints.
-
-18. **What is a Pod disruption budget?**
-    Limits voluntary disruptions (node drain, upgrades) to protect availability.
-
-19. **What are resource requests vs limits?**
-    Requests: minimum resources guaranteed. Limits: maximum resources allowed.
-
-20. **How do you exec into a Pod?**
-    `kubectl exec -it <pod> -- sh` or `kubectl exec -it <pod> -c <container> -- sh`
-
-### Senior (10-15)
-
-21. **Explain the Pod lifecycle hooks.**
-    `postStart`: runs after container starts. `preStop`: runs before container stops. Used for initialization and graceful shutdown.
-
-22. **How does Kubernetes handle Pod networking?**
-    Each Pod gets a unique IP. Containers in a Pod share the network namespace. Pods communicate via IP or DNS.
-
-23. **What is the difference between a ReplicaSet and a Deployment?**
-    ReplicaSet maintains replicas. Deployment adds rolling updates, rollbacks, and history.
-
-24. **How do you implement zero-downtime deployments?**
-    Use Deployments with rolling updates, readiness probes, and PodDisruptionBudgets.
-
-25. **Explain Pod topology spread constraints.**
-    Distribute Pods across zones/nodes based on labels to ensure high availability.
-
-### FAANG-style (5-10)
-
-26. **Design a Pod scheduling strategy for a latency-sensitive application.**
-    Use node affinity for specific hardware, Pod anti-affinity for HA, topology spread constraints, and resource overcommitment controls.
-
-27. **How would you handle a Pod that keeps crashing (CrashLoopBackOff)?**
-    Check logs, examine events, verify resource limits, check health probe configuration, review init containers.
-
-28. **Design a sidecar pattern for a microservice mesh.**
-    Envoy proxy sidecar for traffic management, Fluentd for logging, Prometheus exporter for metrics.
-
-29. **How would you optimize Pod density on a node?**
-    Right-size resource requests, use Pod overhead calculations, consider vertical scaling.
-
-30. **Describe a strategy for managing Pod security at scale.**
-    Pod Security Standards (restricted/baseline/privileged), OPA/Gatekeeper policies, image scanning, runtime security.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between emptyDir and hostPath?**
-    `emptyDir`: empty at Pod start, shared between containers. `hostPath`: mounts host filesystem.
-
-32. **How do you handle DNS resolution in Pods?**
-    Kubernetes provides DNS via CoreDNS. Pods use `<service-name>.<namespace>.svc.cluster.local`.
-
-33. **What is the maximum number of Pods per node?**
-    Default is 110, configurable via kubelet `--max-pods` flag.
-
-34. **How do you handle Pod-to-Pod communication across namespaces?**
-    Use fully qualified domain name: `<service>.<namespace>.svc.cluster.local`.
-
-35. **What is the difference between Pod and Node affinity?**
-    Pod affinity: schedule based on other Pods. Node affinity: schedule based on node properties.
 
 ## Summary
 
 Pods are Kubernetes' atomic units. ReplicaSets ensure desired replica count. Mastering Pod lifecycle, multi-container patterns, scheduling constraints, and resource management is essential for Kubernetes operations.
 
 ## Cheat Sheet
-
 ```bash
 # Pods
 kubectl get pods -o wide
@@ -685,6 +578,14 @@ kubectl diff -f pod.yaml
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

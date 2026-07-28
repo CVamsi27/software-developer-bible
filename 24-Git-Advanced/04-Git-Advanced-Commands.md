@@ -1,4 +1,14 @@
+---
+section: Git Advanced
+category: Reference
+tags: [concept]
+---
+
 # Git Advanced Commands
+
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Git advanced commands are powerful tools for debugging, history manipulation, and repository management. They go beyond basic add/commit/push operations to provide sophisticated workflows.
@@ -361,153 +371,15 @@ git blame --date=short path/to/file
 - **Submodule**: Can be slow to update
 - **Sparse checkout**: Reduces disk usage
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is git bisect?**
-
-   - Binary search tool to find which commit introduced a bug.
-
-2. **What is git stash?**
-
-   - Temporarily stores modified tracked files.
-
-3. **What is git reflog?**
-
-   - Reference log showing all HEAD movements.
-
-4. **What is the difference between revert and reset?**
-
-   - Revert creates new commit undoing changes, reset moves HEAD.
-
-5. **What is git worktree?**
-
-   - Multiple working directories attached to same repository.
-
-6. **What is git submodule?**
-
-   - Repository embedded inside another repository.
-
-7. **What is git cherry-pick?**
-
-   - Apply specific commit from one branch to another.
-
-8. **What is git sparse-checkout?**
-
-   - Partial checkout of repository contents.
-
-### Intermediate (5-10)
-
-9. **How do you use git bisect to find a bug?**
-
-   - Start bisect, mark good/bad commits, let Git find first bad commit.
-
-10. **How do you recover a lost commit with reflog?**
-
-    - Find commit in reflog, checkout or reset to that commit.
-
-11. **How do you manage multiple branches simultaneously?**
-
-    - Use git worktree for separate working directories.
-
-12. **When should you use git stash vs commit?**
-
-    - Stash for temporary storage, commit for permanent changes.
-
-13. **How do you update all submodules?**
-
-    - `git submodule update --remote --merge`.
-
-14. **What is the difference between `git diff` and `git diff --staged`?**
-
-    - Diff shows unstaged changes, --staged shows staged changes.
-
-15. **How do you search commits by message?**
-
-    - `git log --grep="search term"`.
-
-16. **What is the `--no-commit` flag in cherry-pick?**
-
-    - Applies changes without creating a commit.
-
-### Senior (10-15)
-17. **How would you use bisect with automated testing?**
-
-    - Use `git bisect run` with test script to automate process.
-
-18. **What are the limitations of git reflog?**
-
-    - Only local, expires after 90 days by default.
-
-19. **How do you handle merge conflicts with worktree?**
-
-    - Resolve in one worktree, commit, then update others.
-
-20. **What is the impact of submodules on CI/CD?**
-
-    - Need to initialize and update, can cause build failures.
-
-21. **How do you implement a hotfix workflow with worktree?**
-
-    - Create worktree for hotfix, fix issue, merge, cleanup.
-
-22. **What is the difference between `git reset` modes?**
-
-    - Soft (staged), mixed (unstaged), hard (discard).
-
-23. **How do you clean up repository history?**
-
-    - Use rebase, filter-branch, or BFG Repo-Cleaner.
-
-24. **What is the role of reflog in disaster recovery?**
-
-    - Tracks all HEAD movements, allows recovery of lost commits.
-
-### FAANG-style (5-10)
-25. **Design a debugging workflow for a production issue.**
-
-    - Reproduce, bisect, fix, test, deploy, monitor.
-
-26. **How would you handle a corrupted repository?**
-
-    - fsck, reflog recovery, clone from backup, BFG cleaner.
-
-27. **What are the trade-offs between submodules and monorepo?**
-
-    - Submodules: independent, complex. Monorepo: unified, simpler.
-
-28. **How do you manage 100+ submodules?**
-
-    - Automation, documentation, CI/CD integration, version pinning.
-
-29. **Design a system for automated git operations.**
-
-    - Scripts, hooks, CI/CD integration, monitoring, rollback.
-
-### Follow-ups (5-10)
-30. **How does git bisect handle non-deterministic failures?**
-
-    - Use `--skip` to skip flaky tests, run multiple times.
-
-31. **What happens if you delete a branch referenced in reflog?**
-
-    - Reflog still contains commits, can be recovered.
-
-32. **How do you handle submodule version conflicts?**
-
-    - Update to compatible versions, test thoroughly.
-
-33. **What is the future of git submodules?**
-
-    - Git subtree, monorepos, package managers gaining popularity.
-
-34. **How do you implement git operations in CI/CD?**
-
-    - Use Git tokens, SSH keys, automated workflows.
 
 ## Summary
 Git advanced commands provide powerful tools for debugging, recovery, and complex workflows. Master bisect for debugging, reflog for recovery, worktree for parallel work, and understand when to use revert vs reset. Practice these commands in safe environments before using in production.
+
+---
+
+## See Also
+- [CI/CD](../15-CI-CD/)
+- [Monorepo](../28-Monorepo/)
 
 ## References & Learn More
 

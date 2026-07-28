@@ -12,7 +12,8 @@
 
 ## Concept
 
-```
+```text
+
 Segment Tree: Binary tree where each node represents a range of the array
 - Leaf nodes: individual elements
 - Internal nodes: result of combining children (sum, min, max)
@@ -23,6 +24,7 @@ Use Cases:
 - Range sum query: sum(arr[l..r])
 - Range min/max query: min(arr[l..r])
 - Range update: add value to all elements in [l..r]
+
 ```
 
 ## Implementation
@@ -31,13 +33,13 @@ Use Cases:
 class SegmentTree {
     private int[] tree;
     private int n;
-    
+
     SegmentTree(int[] arr) {
         n = arr.length;
         tree = new int[4 * n];
         build(arr, 1, 0, n - 1);
     }
-    
+
     void build(int[] arr, int node, int start, int end) {
         if (start == end) {
             tree[node] = arr[start];
@@ -48,7 +50,7 @@ class SegmentTree {
             tree[node] = tree[2 * node] + tree[2 * node + 1]; // sum
         }
     }
-    
+
     void update(int node, int start, int end, int idx, int val) {
         if (start == end) {
             tree[node] = val;
@@ -59,15 +61,16 @@ class SegmentTree {
             tree[node] = tree[2 * node] + tree[2 * node + 1];
         }
     }
-    
+
     int query(int node, int start, int end, int l, int r) {
         if (r < start || end < l) return 0; // outside range
         if (l <= start && end <= r) return tree[node]; // fully inside
         int mid = (start + end) / 2;
-        return query(2 * node, start, mid, l, r) + 
+        return query(2 * node, start, mid, l, r) +
                query(2 * node + 1, mid + 1, end, l, r);
     }
 }
+
 ```
 
 ## Problems
@@ -87,7 +90,8 @@ class SegmentTree {
 
 ## Concept
 
-```
+```text
+
 Fenwick Tree: Array-based data structure for prefix sum queries
 - Space: O(n)
 - Update: O(log n)
@@ -96,6 +100,7 @@ Fenwick Tree: Array-based data structure for prefix sum queries
 
 Key Idea: Use binary representation to determine which elements to update/query
 - lowbit(x) = x & (-x): the lowest set bit
+
 ```
 
 ## Implementation
@@ -104,7 +109,7 @@ Key Idea: Use binary representation to determine which elements to update/query
 class FenwickTree {
     private int[] tree;
     private int n;
-    
+
     FenwickTree(int[] arr) {
         n = arr.length;
         tree = new int[n + 1];
@@ -112,14 +117,14 @@ class FenwickTree {
             update(i + 1, arr[i]);
         }
     }
-    
+
     void update(int i, int delta) {
         while (i <= n) {
             tree[i] += delta;
             i += i & (-i); // add lowbit
         }
     }
-    
+
     int query(int i) { // prefix sum [1..i]
         int sum = 0;
         while (i > 0) {
@@ -128,16 +133,18 @@ class FenwickTree {
         }
         return sum;
     }
-    
+
     int rangeQuery(int l, int r) { // sum [l..r]
         return query(r) - query(l - 1);
     }
 }
+
 ```
 
 ## Fenwick Tree vs Segment Tree
 
-```
+```text
+
 | Feature         | Fenwick Tree | Segment Tree    |
 |-----------------|--------------|-----------------|
 | Space           | O(n)         | O(4n)           |
@@ -146,6 +153,7 @@ class FenwickTree {
 | Implementation  | Simple       | Complex         |
 | Range Update    | Hard         | Easy            |
 | Range Query     | Prefix only | Any operation   |
+
 ```
 
 ---
@@ -156,7 +164,8 @@ class FenwickTree {
 
 ## Concept
 
-```
+```text
+
 AVL Tree: Self-balancing Binary Search Tree
 - Balance Factor: height(left) - height(right) ∈ {-1, 0, 1}
 - Rotations: maintain balance after insert/delete
@@ -165,11 +174,13 @@ AVL Tree: Self-balancing Binary Search Tree
   - Left-Right Rotation
   - Right-Left Rotation
 - Guarantee: O(log n) for search, insert, delete
+
 ```
 
 ## Rotations
 
-```
+```text
+
 Left Rotation (LL case):
     y           x
    / \         / \
@@ -201,11 +212,13 @@ y   C  →  z   C  →  x   y
 A   z     y   B     A B C
    / \   / \
   B   C A   B
+
 ```
 
 ## When to Use AVL vs Red-Black Tree
 
-```
+```text
+
 AVL Tree:
 - Stricter balancing (height difference ≤ 1)
 - Faster lookups (more balanced)
@@ -216,6 +229,7 @@ Red-Black Tree (used in Java TreeMap, HashMap):
 - Less strict balancing
 - Fewer rotations on insert/delete
 - Use when: write-heavy, balanced read/write
+
 ```
 
 ---
@@ -226,7 +240,8 @@ Red-Black Tree (used in Java TreeMap, HashMap):
 
 ## Requirements
 
-```
+```text
+
 Functional:
 - Multiple floors with parking spots
 - Different vehicle types (car, motorcycle, truck)
@@ -238,11 +253,13 @@ Non-Functional:
 - Handle 1000s of vehicles
 - Real-time availability
 - Support multiple payment methods
+
 ```
 
 ## High-Level Design
 
-```
+```text
+
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
 │   Entry      │────→│  Parking     │────→│  Spot           │
 │   Terminal   │     │  Controller  │     │  Manager        │
@@ -253,6 +270,7 @@ Non-Functional:
                     │  Board      │        │  (Redis +   │
                     └─────────────┘        │  PostgreSQL) │
                                            └─────────────┘
+
 ```
 
 ## Key Classes
@@ -277,7 +295,7 @@ class ParkingSpot {
 class ParkingLot {
     Map<Integer, List<ParkingSpot>> floors;
     Map<String, ParkingSpot> vehicleToSpot;
-    
+
     ParkingSpot assignSpot(Vehicle vehicle) {
         // Find available spot of correct type
         for (List<ParkingSpot> floor : floors.values()) {
@@ -291,7 +309,7 @@ class ParkingLot {
         }
         return null; // no spot available
     }
-    
+
     double releaseSpot(String licensePlate, long exitTime) {
         ParkingSpot spot = vehicleToSpot.remove(licensePlate);
         long duration = exitTime - spot.vehicle.entryTime;
@@ -299,6 +317,7 @@ class ParkingLot {
         return calculatePayment(duration, spot.type);
     }
 }
+
 ```
 
 ## Database Schema
@@ -320,6 +339,7 @@ CREATE TABLE parking_transactions (
     exit_time TIMESTAMP,
     payment_amount DECIMAL
 );
+
 ```
 
 ---
@@ -330,7 +350,8 @@ CREATE TABLE parking_transactions (
 
 ## Requirements
 
-```
+```text
+
 Functional:
 - put(key, value, ttl)
 - get(key)
@@ -342,11 +363,13 @@ Non-Functional:
 - Low latency (< 1ms)
 - Horizontal scaling
 - Data consistency
+
 ```
 
 ## High-Level Design
 
-```
+```text
+
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
 │   Client     │────→│  Cache       │────→│  Cache          │
 │              │     │  Proxy       │     │  Servers        │
@@ -357,11 +380,13 @@ Non-Functional:
                                           │  Persistent  │
                                           │  Storage     │
                                           └─────────────┘
+
 ```
 
 ## Key Decisions
 
-```
+```text
+
 1. Partitioning: Consistent Hashing
    - Each key maps to a position on hash ring
    - Each server owns a range of positions
@@ -381,6 +406,7 @@ Non-Functional:
 4. Consistency:
    - Eventual consistency for performance
    - Read-your-writes consistency option
+
 ```
 
 ## Consistent Hashing
@@ -389,21 +415,21 @@ Non-Functional:
 class ConsistentHash {
     private final TreeMap<Long, String> ring = new TreeMap<>();
     private final int virtualNodes = 150;
-    
+
     void addServer(String server) {
         for (int i = 0; i < virtualNodes; i++) {
             long hash = getHash(server + "#" + i);
             ring.put(hash, server);
         }
     }
-    
+
     void removeServer(String server) {
         for (int i = 0; i < virtualNodes; i++) {
             long hash = getHash(server + "#" + i);
             ring.remove(hash);
         }
     }
-    
+
     String getServer(String key) {
         if (ring.isEmpty()) return null;
         long hash = getHash(key);
@@ -412,6 +438,7 @@ class ConsistentHash {
         return entry.getValue();
     }
 }
+
 ```
 
 ---
@@ -422,7 +449,8 @@ class ConsistentHash {
 
 ## Cookies
 
-```
+```text
+
 Cookies: Small pieces of data stored on client side
 - Sent with every HTTP request to the same domain
 - Set by server via Set-Cookie header
@@ -436,11 +464,13 @@ Types:
 
 Example:
 Set-Cookie: session_id=abc123; HttpOnly; Secure; SameSite=Strict; Path=/
+
 ```
 
 ## Sessions
 
-```
+```text
+
 Sessions: Server-side storage of user state
 - Session ID stored in cookie
 - Server maps session ID to user data
@@ -452,11 +482,13 @@ Flow:
 3. Client sends cookie with every request
 4. Server looks up session data
 5. Session expires after inactivity
+
 ```
 
 ## JWT vs Sessions
 
-```
+```text
+
 | Feature       | JWT                    | Sessions               |
 |---------------|------------------------|------------------------|
 | Storage       | Client-side (cookie)   | Server-side            |
@@ -464,11 +496,13 @@ Flow:
 | Revocation    | Hard (blacklist)       | Easy (delete session)  |
 | Performance   | No server lookup       | Server lookup needed   |
 | Size          | Larger (contains data) | Smaller (just ID)      |
+
 ```
 
 ## Security Considerations
 
-```
+```text
+
 Cookie Security:
 ✅ Use HttpOnly flag (prevents XSS)
 ✅ Use Secure flag (HTTPS only)
@@ -482,6 +516,7 @@ Session Security:
 ✅ Invalidate on logout
 ✅ Use secure random session IDs
 ❌ Never use predictable session IDs
+
 ```
 
 ---
@@ -519,11 +554,13 @@ System.out.println("Parallel: " + (System.currentTimeMillis() - start) + "ms");
          .filter(n -> isPrime(n))
          .count();
  }).get();
+
 ```
 
 ## When to Use Parallel Streams
 
-```
+```text
+
 USE Parallel Streams When:
 ✅ Large datasets (> 10,000 elements)
 ✅ CPU-bound operations (not I/O bound)
@@ -536,6 +573,7 @@ DON'T Use Parallel Streams When:
 ❌ Operations with shared mutable state
 ❌ Ordered operations that depend on encounter order
 ❌ Operations that throw exceptions frequently
+
 ```
 
 ## Common Pitfalls
@@ -561,11 +599,13 @@ numbers.parallelStream()
 Map<Integer, Boolean> safeCache = new ConcurrentHashMap<>();
 numbers.parallelStream()
     .forEach(n -> safeCache.put(n, isPrime(n))); // Safe
+
 ```
 
 ## Performance Considerations
 
-```
+```text
+
 Overhead Factors:
 - Thread creation/management
 - Task splitting and joining
@@ -582,6 +622,7 @@ Best Practices:
 - Use appropriate thread pool size
 - Avoid side effects
 - Consider work-stealing (ForkJoinPool)
+
 ```
 
 ---
@@ -592,7 +633,8 @@ Best Practices:
 
 ## What is Starvation?
 
-```
+```text
+
 Starvation: A thread cannot gain regular access to shared resources
 - Happens when high-priority threads monopolize resources
 - Low-priority threads may wait indefinitely
@@ -602,6 +644,7 @@ Common Causes:
 1. Priority inversion
 2. Greedy resource allocation
 3. Inadequate locking
+
 ```
 
 ## Examples
@@ -610,9 +653,9 @@ Common Causes:
 // Starvation example
 class Worker implements Runnable {
     private final Lock lock;
-    
+
     Worker(Lock lock) { this.lock = lock; }
-    
+
     public void run() {
         while (true) {
             lock.lock();
@@ -633,6 +676,7 @@ class Worker implements Runnable {
 ReentrantLock lock = new ReentrantLock();
 // Multiple threads competing for lock
 // Some threads may never get the lock
+
 ```
 
 ## Prevention Strategies
@@ -667,11 +711,13 @@ ExecutorService executor = new ThreadPoolExecutor(
     4, 4, 0L, TimeUnit.MILLISECONDS,
     new LinkedBlockingQueue<>(100) // bounded queue
 );
+
 ```
 
 ## Starvation vs Deadlock vs Livelock
 
-```
+```text
+
 | Issue      | Description                              | Threads    |
 |------------|------------------------------------------|------------|
 | Starvation | Thread never gets resource               | Running    |
@@ -682,6 +728,7 @@ Key Difference:
 - Starvation: at least one thread makes progress
 - Deadlock: NO thread makes progress
 - Livelock: threads are active but not progressing
+
 ```
 
 ---
@@ -692,7 +739,8 @@ Key Difference:
 
 ## Aggregation vs Composition
 
-```
+```text
+
 Aggregation (HAS-A, weak):
 - Child can exist independently of parent
 - Parent and child have independent lifecycles
@@ -704,6 +752,7 @@ Composition (HAS-A, strong):
 - Parent controls child lifecycle
   - Example: House has Rooms
   - House is destroyed, Rooms are destroyed too
+
 ```
 
 ## Examples
@@ -718,12 +767,12 @@ class Employee {
 class Department {
     String name;
     List<Employee> employees; // aggregation — employees exist independently
-    
+
     Department(String name) {
         this.name = name;
         this.employees = new ArrayList<>();
     }
-    
+
     void addEmployee(Employee emp) {
         employees.add(emp);
     }
@@ -735,6 +784,7 @@ Employee alice = new Employee("Alice");
 dept.addEmployee(alice);
 dept = null; // Department garbage collected
 // alice still exists!
+
 ```
 
 ```java
@@ -747,7 +797,7 @@ class Room {
 class House {
     String address;
     List<Room> rooms; // composition — rooms are created with house
-    
+
     House(String address) {
         this.address = address;
         this.rooms = Arrays.asList(
@@ -761,11 +811,13 @@ class House {
 // When House is destroyed, Rooms are destroyed too
 House house = new House("123 Main St");
 house = null; // House and all Rooms garbage collected
+
 ```
 
 ## When to Use Which
 
-```
+```text
+
 Use Aggregation When:
 - Child can be shared between multiple parents
 - Child has independent lifecycle
@@ -775,6 +827,7 @@ Use Composition When:
 - Child belongs to exactly one parent
 - Child lifecycle is controlled by parent
 - Example: Window has WindowFrame (Frame is part of Window)
+
 ```
 
 ---
@@ -785,7 +838,8 @@ Use Composition When:
 
 ## Requirements
 
-```
+```text
+
 Functional:
 - produce(topic, message)
 - consume(topic, consumerGroup, callback)
@@ -797,11 +851,13 @@ Non-Functional:
 - Low latency (< 10ms)
 - Durability (messages persist to disk)
 - Horizontal scaling
+
 ```
 
 ## High-Level Design
 
-```
+```text
+
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
 │   Producer   │────→│  Message     │────→│  Topic          │
 │              │     │  Broker      │     │  (Partitioned)  │
@@ -811,11 +867,13 @@ Non-Functional:
                                           │  Consumer   │
                                           │  Group      │
                                           └─────────────┘
+
 ```
 
 ## Key Concepts
 
-```
+```text
+
 1. Topics and Partitions:
    - Topic: logical channel for messages
    - Partition: physical division of topic (enables parallelism)
@@ -835,6 +893,7 @@ Non-Functional:
    - Write-ahead log (WAL)
    - Replication across brokers
    - Configurable retention period
+
 ```
 
 ## Kafka-like Architecture
@@ -864,18 +923,20 @@ class MessageConsumer {
 class MessageBroker {
     Map<String, List<Partition>> topics;
     Map<String, ConsumerGroup> consumerGroups;
-    
+
     void storeMessage(String topic, int partition, Message msg) {
         // 1. Append to partition log
         // 2. Replicate to followers
         // 3. Acknowledge producer
     }
 }
+
 ```
 
 ## Guarantees
 
-```
+```text
+
 At-Most-Once: Message may be lost, never duplicated
 - Consumer processes then commits offset
 - If consumer crashes before commit, message reprocessed
@@ -887,6 +948,7 @@ At-Least-Once: Message may be duplicated, never lost (Kafka default)
 Exactly-Once: Message processed exactly once (hard to achieve)
 - Requires idempotent consumers
 - Transactional messaging
+
 ```
 
 ---
@@ -897,7 +959,8 @@ Exactly-Once: Message processed exactly once (hard to achieve)
 
 ## What is an API Gateway?
 
-```
+```text
+
 API Gateway: Single entry point that routes requests to appropriate services
 
 Responsibilities:
@@ -909,11 +972,13 @@ Responsibilities:
 6. Caching
 7. Logging and monitoring
 8. Protocol translation (HTTP → gRPC)
+
 ```
 
 ## High-Level Design
 
-```
+```text
+
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
 │   Client     │────→│  API         │────→│  Microservices  │
 │   (Web/Mobile)│    │  Gateway     │     │                 │
@@ -924,11 +989,13 @@ Responsibilities:
                   │  Discovery  │
                   │  (Eureka)   │
                   └─────────────┘
+
 ```
 
 ## API Gateway vs Direct Service Calls
 
-```
+```text
+
 | Feature          | API Gateway        | Direct Calls       |
 |------------------|--------------------|--------------------|
 | Single Entry     | Yes                | No                 |
@@ -936,11 +1003,13 @@ Responsibilities:
 | Client Coupling  | Loose              | Tight              |
 | Protocol Support | Multiple           | Service-specific   |
 | Complexity       | Additional layer   | Simpler            |
+
 ```
 
 ## Common Patterns
 
-```
+```text
+
 1. BFF (Backend for Frontend):
    - Separate gateway per client type
    - Web gateway, Mobile gateway, IoT gateway
@@ -955,6 +1024,7 @@ Responsibilities:
    - Gateway handles authentication
    - Services focus on business logic
    - Security centralized at edge
+
 ```
 
 ---
@@ -965,7 +1035,8 @@ Responsibilities:
 
 ## Synchronous Communication
 
-```
+```text
+
 REST (HTTP):
 - Request-response model
 - JSON/XML payloads
@@ -983,11 +1054,13 @@ GraphQL:
 - Client specifies exact data needed
 - Single endpoint
 - Use when: Flexible data requirements
+
 ```
 
 ## Asynchronous Communication
 
-```
+```text
+
 Message Queue (Kafka, RabbitMQ):
 - Producer sends message to queue
 - Consumer processes asynchronously
@@ -1005,11 +1078,13 @@ Pub/Sub:
 - Subscribers receive all messages
 - Fan-out pattern
 - Use when: Broadcasting, notifications
+
 ```
 
 ## Communication Pattern Selection
 
-```
+```text
+
 | Pattern            | Use Case                    | Consistency     |
 |--------------------|-----------------------------|-----------------|
 | Request-Response   | CRUD operations             | Strong          |
@@ -1018,6 +1093,7 @@ Pub/Sub:
 | CQRS               | Read/write optimization     | Eventual        |
 | Saga               | Distributed transactions    | Eventual        |
 | Circuit Breaker    | Fault tolerance             | Varies          |
+
 ```
 
 ---
@@ -1028,7 +1104,8 @@ Pub/Sub:
 
 ## Concept
 
-```
+```text
+
 Event Sourcing: Store all changes as a sequence of events
 
 Traditional:
@@ -1045,6 +1122,7 @@ Benefits:
 - Time travel (replay to any point)
 - Debugging (reproduce exact state)
 - Analytics on event patterns
+
 ```
 
 ## Implementation
@@ -1064,7 +1142,7 @@ class BankAccount {
     String accountId;
     List<Event> events = new ArrayList<>();
     double balance = 0;
-    
+
     void applyEvent(Event event) {
         switch (event.eventType) {
             case "DEPOSITED":
@@ -1076,7 +1154,7 @@ class BankAccount {
         }
         events.add(event);
     }
-    
+
     // Rebuild state from events
     void rebuild() {
         balance = 0;
@@ -1084,7 +1162,7 @@ class BankAccount {
             applyEvent(event);
         }
     }
-    
+
     // Get state at specific point in time
     double getBalanceAt(Instant timestamp) {
         double bal = 0;
@@ -1095,11 +1173,13 @@ class BankAccount {
         return bal;
     }
 }
+
 ```
 
 ## Event Store
 
-```
+```text
+
 Event Store: Database for storing events
 
 Options:
@@ -1117,6 +1197,7 @@ CREATE TABLE events (
     timestamp TIMESTAMP,
     version INT
 );
+
 ```
 
 ---
@@ -1127,7 +1208,8 @@ CREATE TABLE events (
 
 ## Concept
 
-```
+```text
+
 CQRS: Separate read and write models
 
 Traditional:
@@ -1143,11 +1225,13 @@ Benefits:
 - Optimize read/write independently
 - Scale reads and writes separately
 - Different consistency models for reads vs writes
+
 ```
 
 ## Architecture
 
-```
+```text
+
 Commands (Write):
 ┌─────────┐    ┌─────────────┐    ┌─────────────┐
 │ Client   │───→│ Command     │───→│ Write DB    │
@@ -1165,11 +1249,13 @@ Queries (Read):
 │ Client   │───→│ Query       │───→│ Read DB     │
 │          │    │ Handler     │    │ (Redis/ES)  │
 └─────────┘    └─────────────┘    └─────────────┘
+
 ```
 
 ## When to Use CQRS
 
-```
+```text
+
 USE CQRS When:
 ✅ Read and write patterns are very different
 ✅ Read and write workloads are imbalanced (100:1 reads)
@@ -1181,6 +1267,7 @@ DON'T Use CQRS When:
 ❌ Small team (increases complexity)
 ❌ Strong consistency needed for all operations
 ❌ Read and write patterns are similar
+
 ```
 
 ---
@@ -1202,7 +1289,8 @@ DON'T Use CQRS When:
 
 ## Concept
 
-```
+```text
+
 Dependency Injection (DI): A class receives its dependencies from outside
 instead of creating them itself.
 
@@ -1216,6 +1304,7 @@ class UserService {
     private final UserRepository repo;
     UserService(UserRepository repo) { this.repo = repo; } // injected
 }
+
 ```
 
 ## Types of DI
@@ -1225,7 +1314,7 @@ class UserService {
 class OrderService {
     private final OrderRepository orderRepo;
     private final PaymentService paymentService;
-    
+
     OrderService(OrderRepository orderRepo, PaymentService paymentService) {
         this.orderRepo = orderRepo;
         this.paymentService = paymentService;
@@ -1235,7 +1324,7 @@ class OrderService {
 // 2. Setter Injection
 class OrderService {
     private OrderRepository orderRepo;
-    
+
     void setOrderRepo(OrderRepository orderRepo) {
         this.orderRepo = orderRepo;
     }
@@ -1246,11 +1335,13 @@ class OrderService {
     @Autowired
     private OrderRepository orderRepo;
 }
+
 ```
 
 ## DI Containers
 
-```
+```text
+
 Spring (Java):
 - @Component, @Service, @Repository — mark classes for DI
 - @Autowired — inject dependencies
@@ -1260,15 +1351,18 @@ NestJS (TypeScript):
 - @Injectable() — mark class for DI
 - @Inject() — inject dependencies
 - Module system — organize providers
+
 ```
 
 ## Benefits
 
-```
+```text
+
 ✅ Loose coupling — classes don't know about concrete implementations
 ✅ Testability — easy to inject mocks
 ✅ Flexibility — swap implementations without changing code
 ✅ Single Responsibility — classes focus on business logic
+
 ```
 
 ---
@@ -1279,11 +1373,13 @@ NestJS (TypeScript):
 
 ## Concept
 
-```
+```text
+
 Repository: Acts as an in-memory collection of domain objects
 - Hides data access complexity
 - Provides CRUD operations
 - Enables unit testing without database
+
 ```
 
 ## Implementation
@@ -1301,11 +1397,11 @@ interface UserRepository {
 // PostgreSQL implementation
 class PostgresUserRepository implements UserRepository {
     private final JdbcTemplate jdbcTemplate;
-    
+
     PostgresUserRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-    
+
     public User findById(Long id) {
         return jdbcTemplate.queryForObject(
             "SELECT * FROM users WHERE id = ?",
@@ -1317,22 +1413,25 @@ class PostgresUserRepository implements UserRepository {
 // In-memory implementation (for testing)
 class InMemoryUserRepository implements UserRepository {
     private final Map<Long, User> users = new HashMap<>();
-    
+
     public User findById(Long id) { return users.get(id); }
     public User save(User user) {
         users.put(user.getId(), user);
         return user;
     }
 }
+
 ```
 
 ## Benefits
 
-```
+```text
+
 ✅ Separation of concerns — business logic separate from data access
 ✅ Testability — swap real DB for in-memory in tests
 ✅ Flexibility — change database without changing business code
 ✅ Single source of truth — all data access goes through repository
+
 ```
 
 ---
@@ -1343,7 +1442,8 @@ class InMemoryUserRepository implements UserRepository {
 
 ## Concept
 
-```
+```text
+
 MVC: Separation of concerns in web applications
 
 Model: Data and business logic
@@ -1360,11 +1460,13 @@ Controller: Request handling
 - Receives user input
 - Interacts with Model
 - Returns appropriate View
+
 ```
 
 ## Flow
 
-```
+```text
+
 User Request → Controller → Model → View → Response
 
 1. User clicks button → sends HTTP request
@@ -1372,6 +1474,7 @@ User Request → Controller → Model → View → Response
 3. Model processes data, returns result
 4. Controller selects View, passes data
 5. View renders response to user
+
 ```
 
 ## Implementation (Spring MVC)
@@ -1393,34 +1496,37 @@ interface UserRepository extends JpaRepository<User, Long> {}
 @RequestMapping("/users")
 class UserController {
     private final UserRepository userRepository;
-    
+
     UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    
+
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable Long id) {
         return userRepository.findById(id)
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
     }
-    
+
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User saved = userRepository.save(user);
         return ResponseEntity.ok(saved);
     }
 }
+
 ```
 
 ## MVC vs MVVM vs MVP
 
-```
+```text
+
 | Pattern | View-Model Binding | Testability | Complexity |
 |---------|-------------------|-------------|------------|
 | MVC     | Indirect (Controller) | Good | Low |
 | MVVM    | Two-way binding (Data binding) | Very Good | Medium |
 | MVP     | Presenter mediates | Very Good | Medium |
+
 ```
 
 ---
@@ -1443,3 +1549,25 @@ class UserController {
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers advanced topics for staff+ engineering interviews, including distributed systems consistency models, advanced concurrency patterns, performance optimization techniques, and architectural decision-making frameworks.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

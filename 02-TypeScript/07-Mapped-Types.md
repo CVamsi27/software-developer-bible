@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Mapped Types
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -462,113 +472,12 @@ type NullableKeys<T> = {
 - **IDE**: Complex mapped types may affect IDE performance
 - **Caching**: TypeScript caches mapped type results
 
-## Interview Questions
-
-### Beginner
-
-1. **What is a mapped type?**
-
-   - A type that transforms existing types by iterating over their keys
-
-2. **How do you make all properties optional?**
-
-   ```typescript
-   type Optional<T> = { [K in keyof T]?: T[K] };
-
-```
-
-3. **What does `[K in keyof T]` mean?**
-
-   - Iterate over all keys K in type T
-
-4. **How do you preserve property types in a mapped type?**
-
-   - Use `T[K]` to reference the original type
-
-5. **What is key remapping?**
-
-   - Using `as` to transform key names in mapped types
-
-### Intermediate
-
-6. **Write a type that makes all properties required**
-
-   ```typescript
-   type Required<T> = { [K in keyof T]-?: T[K] };
-
-```
-
-7. **How do you filter properties in a mapped type?**
-
-   - Use key remapping with conditional: `[K in keyof T as Condition ? K : never]`
-
-8. **What is the difference between `?` and `-?`?**
-
-   - `?` adds optional modifier; `-?` removes it
-
-9. **How do you make all properties readonly?**
-
-   ```typescript
-   type Readonly<T> = { readonly [K in keyof T]: T[K] };
-
-```
-
-10. **Can you nest mapped types?**
-
-    - Yes: Use recursion for deep transformations
-
-### Senior
-
-11. **Design a type-safe form validation system**
-
-    - Use mapped types for field states, error types
-
-12. **How do you create a type-safe ORM query builder?**
-
-    - Use mapped types for column selections, joins
-
-13. **Implement a type-safe state management solution**
-
-    - Use mapped types for state, actions, reducers
-
-14. **How do you handle deeply nested objects?**
-
-    - Use recursive mapped types with conditional types
-
-### FAANG-style
-
-15. **Build a type-safe API client**
-
-    - Use mapped types for request/response transformations
-
-16. **Create a type-safe configuration system**
-
-    - Use mapped types for config validation, defaults
-
-17. **Implement a type-safe event system**
-
-    - Use mapped types for event handlers, payloads
-
-### Follow-ups
-
-18. **How do mapped types interact with generics?**
-
-    - Generic type parameters can be used in mapped types
-
-19. **Can you use mapped types with unions?**
-
-    - Yes, but behavior may be unexpected
-
-20. **How do you debug complex mapped types?**
-
-    - Create intermediate type aliases, use IDE hover
 
 ## Summary
 
 Mapped types are essential for type transformation in TypeScript. They enable bulk operations on object properties and are the foundation for many utility types. Master them to create flexible, type-safe code.
 
 ## Cheat Sheet
-
 ```typescript
 // Basic mapped type
 type Mapped<T> = { [K in keyof T]: T[K] };
@@ -599,6 +508,13 @@ type DeepPartial<T> = {
 };
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

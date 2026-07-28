@@ -1,4 +1,14 @@
+---
+section: Observability
+category: DevOps
+tags: [concept]
+---
+
 # Health Checks
+
+[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -497,121 +507,17 @@ CMD ["node", "dist/server.js"]
 - **Timeout per check** — set 2-3s max per dependency to prevent health check hangs
 - **Startup probe interval** — set longer intervals (5-10s) to avoid flooding during startup
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the difference between a liveness probe and a readiness probe?**
-
-   - Liveness: "Is the process alive?" — failure restarts the container. Readiness: "Can it serve traffic?" — failure removes it from service endpoints without restart.
-
-2. **Why do you need a startup probe?**
-
-   - For slow-starting applications. Without it, liveness probes might kill the container before it finishes initializing. Startup probe disables liveness/readiness until the app is started.
-
-3. **What HTTP status code indicates a healthy service?**
-
-   - 200 OK for healthy, 503 Service Unavailable for unhealthy. Load balancers and orchestrators use these codes to make routing decisions.
-
-4. **Where should health checks run — on the app port or a separate port?**
-
-   - Separate port (e.g., 8081). This allows the health check to respond even when the main app is overloaded, and can be restricted via network policies.
-
-5. **What should a liveness check verify?**
-
-   - Process state only: event loop responsiveness, memory usage, no deadlocks. Should NOT depend on external services (DB, cache) because those failures should trigger readiness failure, not container restart.
-
-### Intermediate
-
-6. **How would you design health checks for a system with 5 microservices?**
-
-   - Each service exposes `/health/live` and `/health/ready`. Readiness checks its own dependencies. Upstream services check downstream readiness. Use a service mesh for centralized health check management.
-
-7. **Your readiness probe fails when the database is under load. What happens?**
-
-   - Kubernetes removes the pod from service endpoints. Other pods handle traffic. If all pods fail readiness, no traffic is served. Monitor readiness failure rate and set alerts.
-
-8. **How do you handle health checks during deployment?**
-
-   - New pods start with startup probe. Once started, readiness probe passes and they receive traffic. Old pods receive preStop hook, mark not ready, drain connections, then terminate.
-
-9. **What is connection draining and why is it important?**
-
-   - After marking not ready, wait for in-flight HTTP requests to complete before shutting down. Without draining, users get 502/504 errors during deployments. Use `preStop` hook with `sleep 10`.
-
-10. **How do you test health checks?**
-
-    - Integration tests that hit health endpoints. Chaos engineering: kill DB, verify readiness fails. Load tests that verify health check response time under stress. Verify Kubernetes probe behavior in staging.
-
-### Senior
-
-11. **Design a health check system for a multi-region deployment.**
-
-    - Each region has independent health checks. Cross-region health checks verify connectivity. Use DNS-based failover with health checks (Route53, CloudFlare). Monitor regional health independently. Alert when a region is unhealthy.
-
-12. **Your liveness probe is causing cascading failures. What's wrong and how do you fix it?**
-
-    - Liveness probe depends on database. DB goes slow → liveness times out → pods restart → DB gets more connection pressure → more pods restart. Fix: Remove external dependencies from liveness. Only check process state.
-
-13. **How do you handle health checks in serverless (Lambda)?**
-
-    - Lambda doesn't support health checks directly. Use CloudWatch alarms on error rates and duration. Use Lambda's built-in concurrency metrics. For API Gateway, check `/health` endpoint.
-
-14. **Design a health check for a system with eventual consistency.**
-
-    - Readiness should check write-read consistency. Include staleness metrics. Allow degraded state (200 with warning) when slightly behind. Use "soft" readiness that returns 200 but marks as degraded.
-
-15. **How do you monitor the health check system itself?**
-
-    - Track health check response time (alert if >500ms). Track health check failure rate per service. Monitor Kubernetes probe failure events. Alert when no health check data received for a service (monitoring gap).
-
-### FAANG-style
-
-16. **If you could only implement ONE health check, what would it be?**
-
-    - Readiness check that verifies database connectivity. Most outages are caused by database issues, and routing traffic to a pod with a dead DB connection causes cascading failures.
-
-17. **How would you build a self-healing system using health checks?**
-
-    - Liveness → restart deadlocked processes. Readiness → remove unhealthy instances. Auto-scaling → add capacity when health degrades. Circuit breakers → stop calling unhealthy dependencies. All together: detect, isolate, recover automatically.
-
-18. **Your system is healthy but users report errors. What's missing?**
-
-    - Synthetic monitoring (external health checks from user perspective). Real User Monitoring (RUM). Health checks verify internal state but not external reachability or client-side issues.
-
-19. **How do you handle health checks in a container orchestration system without Kubernetes?**
-
-    - Use Consul, etcd, or custom health check registry. Services register health checks on startup. Load balancers query the registry. Implement custom health check scripts for Docker Swarm, Nomad, or ECS.
-
-20. **Explain the relationship between health checks, circuit breakers, and bulkheads.**
-
-    - Health checks detect failures. Circuit breakers stop calling failing dependencies (prevent cascade). Bulkheads isolate failures to prevent one bad dependency from consuming all resources. Together: detect → isolate → recover.
-
-### Follow-ups
-
-21. **How do you handle health checks for stateful services (databases, queues)?**
-
-    - Check replication lag, connection pool, disk space. For queues: check consumer lag, message age. Include state-specific metrics in health response.
-
-22. **What's the difference between a health check and a readiness check?**
-
-    - Health check is the general concept. Readiness check specifically answers "can it serve traffic?" — it's one type of health check alongside liveness and startup.
-
-23. **How do you handle health checks during database migrations?**
-
-    - Readiness returns 503 during migration. Use startup probe for long migrations. Consider separate migration pods that don't serve traffic.
-
-24. **How do you handle health checks in service meshes (Istio, Linkerd)?**
-
-    - Service mesh adds its own health checking. Configure `DestinationRule` for outlier detection. Use mesh health checks alongside application health checks.
-
-25. **When would you NOT implement health checks?**
-
-    - Short-lived CLI tools, batch jobs (use exit codes instead), local development (use simpler mechanisms). Health checks add complexity that's only justified for long-running services.
 
 ## Summary
 
 Health checks are the foundation of service reliability. Implement liveness (process state), readiness (dependency state), and startup (initialization) probes. Keep liveness independent of external services. Monitor health check failure rates and include dependency status in responses.
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

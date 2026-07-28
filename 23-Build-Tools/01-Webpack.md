@@ -1,4 +1,14 @@
+---
+section: Build Tools
+category: DevOps
+tags: [concept]
+---
+
 # Webpack
+
+[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then bundles every module your project needs into one or more bundles (usually JavaScript files) to be used by a browser.
@@ -239,149 +249,16 @@ optimization: {
 - **Source maps**: Use appropriate devtool settings for dev vs prod
 - **Parallel processing**: Use thread-loader for heavy tasks
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Webpack and why is it used?**
-
-   - Webpack is a module bundler that combines assets into optimized bundles for browsers.
-
-2. **What is the difference between entry and output in Webpack?**
-
-   - Entry: Starting point(s) for the dependency graph. Output: Where bundles are written.
-
-3. **What are loaders in Webpack?**
-
-   - Loaders transform non-JS files (CSS, images) into valid modules webpack can process.
-
-4. **What are plugins in Webpack?**
-
-   - Plugins perform broader tasks like optimization, asset management, and environment variable injection.
-
-5. **What is the purpose of webpack-dev-server?**
-
-   - Provides a development server with HMR, live reloading, and proxying.
-
-6. **What does `mode` do in Webpack configuration?**
-
-   - Sets environment-specific optimizations: development, production, or none.
-
-7. **What is Hot Module Replacement (HMR)?**
-
-   - Updates modules in the browser without full page reload during development.
-
-8. **How do you handle static assets in Webpack?**
-
-   - Use asset modules (asset/resource, asset/inline) or file-loader/url-loader.
-
-### Intermediate (5-10)
-
-9. **What is code splitting and how do you implement it?**
-
-   - Breaking bundles into smaller chunks. Use dynamic imports, splitChunks plugin, or entry points.
-
-10. **What is tree shaking?**
-
-   - Removing unused code from bundles. Requires ES modules and `sideEffects: false`.
-
-11. **How do you optimize Webpack build performance?**
-
-   - Use caching, limit loader scope, minimize plugins, use thread-loader.
-
-12. **What is the difference between `style-loader` and `MiniCssExtractPlugin`?**
-
-   - style-loader injects CSS into DOM via JS. MiniCssExtractPlugin extracts CSS to files.
-
-13. **How do you configure Webpack for TypeScript?**
-
-   - Use ts-loader or babel-loader with @babel/preset-typescript.
-
-14. **What is the purpose of `contenthash` in output filenames?**
-
-   - Provides unique hashes based on file content for effective cache busting.
-
-15. **How do you handle different environments in Webpack?**
-
-   - Use environment variables, separate config files, or webpack-merge.
-
-### Senior (10-15)
-16. **Explain Webpack's compilation flow in detail.**
-
-   - Entry → Resolve → Loaders → Plugins → Optimize → Output
-
-17. **How do you implement micro-frontends with Webpack?**
-
-   - Use Module Federation plugin for runtime sharing of dependencies.
-
-18. **What is the purpose of `splitChunks.cacheGroups`?**
-
-   - Defines rules for how chunks are split, like separating vendor code.
-
-19. **How do you debug Webpack configuration issues?**
-
-   - Use `webpack --stats verbose`, analyze with BundleAnalyzerPlugin, inspect output.
-
-20. **What is the difference between `require.ensure` and dynamic `import()`?**
-
-   - Both create split points, but `import()` is standard and more flexible.
-
-21. **How do you handle server-side rendering with Webpack?**
-
-   - Create separate client and server configs, use `target: 'node'` for server.
-
-22. **What are Webpack externals and when to use them?**
-
-   - Exclude dependencies from bundle. Use for libraries already available globally.
-
-23. **How do you implement long-term caching with Webpack?**
-
-   - Use contenthash, splitChunks, and proper chunk naming.
-
-### FAANG-style (5-10)
-24. **Design a Webpack configuration for a large-scale application with 100+ routes.**
-
-    - Consider: code splitting per route, vendor chunking, shared modules, parallel builds.
-
-25. **How would you reduce initial load time by 50% for a React application?**
-
-    - Route-based code splitting, lazy loading, prefetching, tree shaking, compression.
-
-26. **Explain how Module Federation works at runtime.**
-
-    - Containers expose/consume modules at runtime, sharing dependencies dynamically.
-
-27. **How do you handle monorepo builds with Webpack?**
-
-    - Use workspaces, shared configs, cache across packages, parallel compilation.
-
-28. **What are the trade-offs between Webpack and Vite for large applications?**
-
-    - Build time, DX, plugin ecosystem, production optimization, legacy support.
-
-### Follow-ups (5-10)
-29. **How does Webpack's caching mechanism work internally?**
-
-    - Filesystem caching stores build metadata for faster subsequent builds.
-
-30. **What happens when a loader throws an error during compilation?**
-
-    - Webpack stops compilation, reports the error, and waits for file changes.
-
-31. **How do you handle circular dependencies in Webpack?**
-
-    - Webpack handles them but may cause undefined imports. Refactor to avoid.
-
-32. **What is the impact of `devtool` settings on build performance?**
-
-    - Source maps vary in speed/quality. `eval` is fastest, `source-map` is slowest.
-
-33. **How do you test Webpack configurations?**
-
-    - Use webpack's Node.js API, mock file system, and validate output.
 
 ## Summary
 Webpack is a powerful, flexible module bundler essential for modern web development. It handles complex dependency graphs, transforms various file types, and optimizes output for production. Understanding entry/output, loaders, plugins, code splitting, and optimization techniques is crucial for building performant applications.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Next.js](../04-NextJS/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

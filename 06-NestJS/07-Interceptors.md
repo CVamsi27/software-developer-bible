@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Interceptors
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -441,101 +451,12 @@ intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
 
 5. **Async Work**: Avoid heavy async operations — use message queues instead.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is an interceptor in NestJS?**
-A class implementing `NestInterceptor` that wraps route handler execution, enabling logging, caching, transformation, and error handling.
-
-**Q2: When do interceptors execute?**
-After guards and pipes, wrapping the route handler execution (before and after).
-
-**Q3: What is `CallHandler`?**
-An object representing the route handler. Call `handle()` to execute it and get an Observable.
-
-**Q4: What RxJS operator is used for logging in interceptors?**
-`tap()` — performs side effects without modifying the stream.
-
-**Q5: Can interceptors modify the response?**
-Yes, using `map()` operator on the Observable returned by `next.handle()`.
-
-### Intermediate
-
-**Q6: How do you implement response transformation?**
-Use `map()` operator to wrap or reshape the response data before it's sent to the client.
-
-**Q7: How do you implement caching?**
-Check cache before `next.handle()`, return `of(cachedData)` if hit, otherwise cache the result in `tap()`.
-
-**Q8: How do interceptors differ from middleware?**
-
-- Middleware: Runs before routing, cannot access route handler info
-- Interceptor: Runs after routing, has access to handler metadata and response
-
-**Q9: How do you add timeout to requests?**
-Use `timeout()` RxJS operator on the Observable from `next.handle()`.
-
-**Q10: Can interceptors handle errors?**
-Yes, using `catchError()` operator on the Observable.
-
-### Senior
-
-**Q11: Design a distributed tracing interceptor.**
-Extract/propagate trace headers, create spans for each request, export to Jaeger/Zipkin.
-
-**Q12: How would you implement response compression?**
-Check Accept-Encoding header, compress response body, set Content-Encoding header.
-
-**Q13: Design an interceptor for request/response auditing.**
-Log full request/response to audit service asynchronously via message queue.
-
-**Q14: How would you implement rate limiting with interceptors?**
-Track request counts in Redis with sliding window, return 429 when exceeded.
-
-**Q15: Design an interceptor for feature flags.**
-Check feature flag before handler, return 404 or custom response if disabled.
-
-### FAANG-Style
-
-**Q16: Design a circuit breaker interceptor.**
-Track failures, open circuit after threshold, fallback to cached/default response.
-
-**Q17: How would you implement request/response encryption?**
-Decrypt request body before handler, encrypt response after handler.
-
-**Q18: Design an interceptor for API versioning.**
-Route to different handlers based on version header or URL prefix.
-
-**Q19: How would you implement real-time monitoring?**
-Stream request metrics to Prometheus/DataDog via async interceptor.
-
-**Q20: Design an interceptor for request validation at scale.**
-Use schema registry, validate against versioned schemas, cache validation results.
-
-### Follow-ups
-
-**Q21: Can interceptors access route handler metadata?**
-Yes, through `ExecutionContext` using `Reflector`.
-
-**Q22: How do you test interceptors?**
-Mock `CallHandler` with `handle: () => of(mockData)`, verify Observable output.
-
-**Q23: Can interceptors be applied globally?**
-Yes, via `app.useGlobalInterceptors()` or `APP_INTERCEPTOR` token.
-
-**Q24: What is the order of interceptor execution?**
-Global -> Controller -> Method (applied in order defined).
-
-**Q25: Can interceptors be async?**
-The `intercept` method returns Observable, but you can use async operators within the chain.
 
 ## Summary
 
 Interceptors are NestJS's powerful mechanism for cross-cutting concerns that need access to both request and response. They leverage RxJS for composable transformations, enabling logging, caching, transformation, timeout, and error handling in a clean, functional style.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `NestInterceptor` | Interface interceptors implement |
@@ -550,6 +471,14 @@ Interceptors are NestJS's powerful mechanism for cross-cutting concerns that nee
 | `of()` | Return cached value |
 | `throwError()` | Throw error in stream |
 | `APP_INTERCEPTOR` | Register global interceptor |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

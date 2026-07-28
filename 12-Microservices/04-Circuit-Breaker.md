@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Circuit Breaker
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -620,164 +630,12 @@ class CircuitBreakerHealthCheck {
 - **Success threshold** - Number of successes before closing circuit
 - **Jitter** - Prevent thundering herd when circuit closes
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the Circuit Breaker pattern?**
-
-   - Pattern that prevents cascade failures by stopping calls to failing services.
-
-2. **Why use circuit breakers?**
-
-   - Prevent cascade failures, allow recovery, provide fallback behavior.
-
-3. **What are the three states of a circuit breaker?**
-
-   - CLOSED (normal), OPEN (failing), HALF-OPEN (testing recovery).
-
-4. **When does circuit breaker open?**
-
-   - When failure count exceeds threshold within time window.
-
-5. **When does circuit breaker close?**
-
-   - When probe requests succeed in HALF-OPEN state.
-
-6. **What is a fallback?**
-
-   - Alternative behavior when circuit is open (cached data, default response).
-
-7. **How is circuit breaker different from retry?**
-
-   - Circuit breaker stops requests; retry attempts again after delay.
-
-8. **What is exponential backoff?**
-
-   - Increasing delay between retry attempts to reduce load.
-
-### Intermediate (5-10)
-
-9. **How do you set failure thresholds?**
-
-   - Based on service SLA, error tolerance, and recovery time.
-
-10. **What is bulkheading?**
-
-    - Isolating failures to prevent one failing service from affecting others.
-
-11. **How do you monitor circuit breakers?**
-
-    - Track state changes, failure rates, fallback usage, response times.
-
-12. **What is a half-open state?**
-
-    - Testing if service has recovered with limited probe requests.
-
-13. **How do you handle timeout in circuit breakers?**
-
-    - Set appropriate timeout values, use Promise.race for timeout.
-
-14. **What is a health check?**
-
-    - Periodic probe to determine if service is healthy.
-
-15. **How do you test circuit breakers?**
-
-    - Fault injection, chaos engineering, integration tests.
-
-16. **What metrics should you track?**
-
-    - Request count, failure rate, circuit state, response time.
-
-### Senior (10-15)
-
-17. **Design a circuit breaker system from scratch.**
-
-    - State machine, configuration, monitoring, fallback integration.
-
-18. **How do you handle distributed circuit breakers?**
-
-    - Shared state via distributed cache, eventual consistency.
-
-19. **What is the relationship between circuit breakers and service mesh?**
-
-    - Service mesh provides built-in circuit breaking at infrastructure level.
-
-20. **How do you implement circuit breakers in event-driven systems?**
-
-    - Circuit breakers on event producers/consumers, dead letter queues.
-
-21. **Explain circuit breaker patterns in microservices.**
-
-    - Hierarchical circuits, cascading fallbacks, compensation.
-
-22. **How do you handle circuit breakers during deployments?**
-
-    - Gradual rollout, feature flags, traffic shifting.
-
-23. **What is adaptive circuit breaking?**
-
-    - Dynamic thresholds based on real-time metrics.
-
-24. **How do you debug circuit breaker issues?**
-
-    - Distributed tracing, logging, metrics visualization.
-
-25. **What are the limitations of circuit breakers?**
-
-    - Eventual consistency, complex configuration, false positives.
-
-### FAANG-style (5-10)
-
-26. **Design Netflix's circuit breaker system.**
-
-    - Hystrix-like implementation, fallback strategies, monitoring.
-
-27. **How would you implement circuit breakers for 1000+ services?**
-
-    - Hierarchical circuits, bulkheading, shared infrastructure.
-
-28. **Design circuit breakers for global deployment.**
-
-    - Regional circuits, global state, latency-aware thresholds.
-
-29. **How do you prevent thundering herd with circuit breakers?**
-
-    - Jitter, gradual recovery, request coalescing.
-
-30. **Explain circuit breakers in serverless architecture.**
-
-    - Cold start handling, function-level circuits, async fallbacks.
-
-### Follow-ups (5-10)
-
-31. **How do you migrate to circuit breakers?**
-
-    - Gradual adoption, wrapper pattern, feature flags.
-
-32. **What is the impact of circuit breakers on latency?**
-
-    - Adds overhead, but benefits outweigh costs during failures.
-
-33. **How do you choose between circuit breaker and retry?**
-
-    - Circuit breaker for persistent failures; retry for transient issues.
-
-34. **What is the future of circuit breaking?**
-
-    - AI-driven adaptive thresholds, service mesh integration.
-
-35. **How do you handle circuit breakers in synchronous vs async?**
-
-    - Different timeout strategies, async monitoring.
 
 ## Summary
 
 Circuit Breaker is essential for building resilient microservices. It prevents cascade failures by stopping requests to failing services and providing fallback behavior. Key aspects include state management, threshold configuration, and monitoring.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                CIRCUIT BREAKER                          │
@@ -815,6 +673,14 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

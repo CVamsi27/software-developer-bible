@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # Integration Testing
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1213,137 +1223,6 @@ module.exports = {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is integration testing?**
-   Integration testing verifies that multiple units or components work correctly together.
-
-2. **How is integration testing different from unit testing?**
-   Unit tests verify individual components in isolation. Integration tests verify interactions between components.
-
-3. **What should you test in integration tests?**
-   API endpoints, database operations, service interactions, and data flow between components.
-
-4. **How do you test database operations?**
-   Use a test database, create test data, verify queries work correctly, and clean up after tests.
-
-5. **What is a test container?**
-   A test container is a lightweight, disposable Docker container used for integration testing.
-
-6. **How do you mock external APIs?**
-   Use tools like MSW (Mock Service Worker) or nock to intercept network requests.
-
-7. **Why should you clean up test data?**
-   To ensure test isolation and prevent tests from affecting each other.
-
-8. **What is contract testing?**
-   Contract testing verifies that API consumers and providers agree on the interface.
-
-9. **How do you test error handling in integration tests?**
-   Test both success and error scenarios, verify appropriate error responses.
-
-10. **What is the test pyramid?**
-    Many unit tests, fewer integration tests, few E2E tests - balancing speed and confidence.
-
-### Intermediate (5-10)
-
-11. **How do you test microservices?**
-    Use contract testing, integration tests with real dependencies, and E2E tests for critical flows.
-
-12. **What is an API contract?**
-    The interface definition that specifies endpoints, request/response formats, and behavior.
-
-13. **How do you handle flaky integration tests?**
-    Fix timing issues, ensure proper cleanup, use deterministic test data, and isolate tests.
-
-14. **How do you test with message queues?**
-    Mock the queue or use in-memory implementations, verify message handling.
-
-15. **What is the difference between integration and E2E testing?**
-    Integration tests verify component interactions. E2E tests verify complete user workflows.
-
-16. **How do you test authentication/authorization?**
-    Test with valid/invalid tokens, verify access control for different user roles.
-
-17. **How do you test file uploads/downloads?**
-    Use test files, mock storage services, verify file handling logic.
-
-18. **What is test data management?**
-    Creating, maintaining, and cleaning up test data for integration tests.
-
-19. **How do you test with caching?**
-    Test cache hits/misses, verify cache invalidation, test cache warming.
-
-20. **How do you handle test environment setup?**
-    Use Docker, test containers, or infrastructure as code for consistent environments.
-
-### Senior (10-15)
-
-21. **How do you design testable architecture?**
-    Apply SOLID principles, use dependency injection, and design clear boundaries.
-
-22. **How do you test distributed systems?**
-    Use chaos engineering, distributed tracing, and resilience testing.
-
-23. **What is chaos engineering?**
-    Intentionally introducing failures to test system resilience and recovery.
-
-24. **How do you test event-driven architectures?**
-    Verify event publishing, handling, and eventual consistency.
-
-25. **How do you handle test data in CI/CD?**
-    Use fixtures, factories, and database migrations for consistent test data.
-
-26. **How do you test API versioning?**
-    Test backward compatibility, version negotiation, and deprecation handling.
-
-27. **How do you test multi-tenant applications?**
-    Verify data isolation, tenant-specific configurations, and access control.
-
-28. **How do you test real-time features?**
-    Test WebSocket connections, pub/sub patterns, and real-time updates.
-
-29. **How do you handle testing in cloud environments?**
-    Use cloud-specific test utilities, mock cloud services, and test deployment pipelines.
-
-30. **How do you measure integration test effectiveness?**
-    Track defect detection rate, test execution time, and maintenance burden.
-
-### FAANG-style (5-10)
-
-31. **How would you design integration testing for a microservices architecture?**
-    Contract testing, integration tests with service virtualization, and E2E tests for critical paths.
-
-32. **How do you handle testing in a CI/CD pipeline?**
-    Implement test stages, parallel execution, and fail-fast mechanisms.
-
-33. **How do you ensure test reliability at scale?**
-    Implement flakiness detection, quarantine system, and stability metrics.
-
-34. **How do you test with real-time data processing?**
-    Use deterministic test data, verify processing pipelines, and test error handling.
-
-35. **How do you balance test coverage with execution time?**
-    Prioritize critical paths, use test impact analysis, and optimize test suite.
-
-### Follow-ups (5-10)
-
-36. **How has your integration testing approach evolved?**
-    Discuss adoption of contract testing, test containers, and shift-left practices.
-
-37. **What tools have you used for integration testing?**
-    Compare Jest, Supertest, Testcontainers, and MSW.
-
-38. **How do you handle testing legacy systems?**
-    Characterization tests, strangler fig pattern, and gradual migration.
-
-39. **What's the most challenging integration testing problem you've solved?**
-    Describe complex integration scenarios and solutions.
-
-40. **How do you train teams on integration testing?**
-    Start with simple examples, establish patterns, and share best practices.
 
 ## Summary
 
@@ -1359,6 +1238,14 @@ Integration testing is essential for verifying that components work together cor
 - **Integrate into CI/CD** for continuous feedback
 
 A well-designed integration test suite catches issues that unit tests miss while providing higher confidence than E2E tests alone.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

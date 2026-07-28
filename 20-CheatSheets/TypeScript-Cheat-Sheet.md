@@ -1,4 +1,14 @@
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
+
 # TypeScript Cheat Sheet
+
+[![Section](https://img.shields.io/badge/section-CheatSheets-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Quick Reference Table
 
@@ -76,7 +86,7 @@
 
 ### Discriminated Union (State Machine)
 
-```ts
+```typescript
 type RequestState<T> =
 
   | { status: 'idle' }
@@ -97,7 +107,7 @@ function render<T>(state: RequestState<T>) {
 
 ### Builder Pattern with Generics
 
-```ts
+```typescript
 class QueryBuilder<T extends Record<string, unknown>> {
   private filters: Partial<T> = {};
 
@@ -115,7 +125,7 @@ class QueryBuilder<T extends Record<string, unknown>> {
 
 ### Type-Safe Event Emitter
 
-```ts
+```typescript
 type EventMap = {
   'user:login': { userId: string; timestamp: number };
   'user:logout': { userId: string };
@@ -139,7 +149,7 @@ class TypedEmitter<T extends Record<string, unknown>> {
 
 ### Branded Types (Preventing Type Confusion)
 
-```ts
+```typescript
 type UserId = string & { readonly __brand: 'UserId' };
 type OrderId = string & { readonly __brand: 'OrderId' };
 
@@ -152,7 +162,7 @@ function getOrder(userId: UserId, orderId: OrderId) { ... }
 
 ### Exhaustive Check
 
-```ts
+```typescript
 function assertNever(x: never): never {
   throw new Error(`Unexpected value: ${x}`);
 }
@@ -171,7 +181,7 @@ function getColor(c: Color): string {
 
 ### Recursive Types
 
-```ts
+```typescript
 type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object
     ? DeepReadonly<T[K]>
@@ -184,7 +194,7 @@ type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string
 
 ### Type-Safe API Response
 
-```ts
+```typescript
 type ApiResponse<T> =
 
   | { ok: true; data: T; status: number }
@@ -200,7 +210,7 @@ async function fetchTyped<T>(url: string): Promise<ApiResponse<T>> {
 
 ### Decorator Pattern (Stage 3)
 
-```ts
+```typescript
 function logged(originalMethod: any, context: ClassMethodDecoratorContext) {
   return function(this: any, ...args: any[]) {
     console.log(`Calling ${String(context.name)} with`, args);
@@ -219,7 +229,7 @@ class Calculator {
 
 ### Template Literal Type Builder
 
-```ts
+```typescript
 type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 type Endpoint = '/users' | '/posts' | '/comments';
 type Route = `${HTTPMethod} ${Endpoint}`;
@@ -231,7 +241,7 @@ type CSSProperty = `margin-${'top' | 'bottom' | 'left' | 'right'}`;
 
 ### Type-Safe localStorage
 
-```ts
+```typescript
 interface StorageSchema {
   'auth-token': string;
   'user-preferences': { theme: 'light' | 'dark' };
@@ -291,6 +301,19 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 - **`satisfies`**: Validates expression matches type without widening. `const x = { a: 1 } satisfies Record<string, number>` keeps `{ a: number }`.
 
 ---
+
+---
+
+
+## Summary
+
+This cheat sheet provides a concise reference to core TypeScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

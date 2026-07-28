@@ -1,4 +1,14 @@
+---
+section: Git Advanced
+category: Reference
+tags: [concept]
+---
+
 # Git Hooks
+
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Git hooks are scripts that run automatically when specific Git events occur (commit, push, merge, etc.). They allow you to enforce policies, automate tasks, and integrate with other tools.
@@ -340,153 +350,15 @@ fi
 - **Async operations**: Consider background processing
 - **Caching**: Cache results for repeated operations
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What are Git hooks?**
-
-   - Scripts that run automatically during Git events like commit, push, merge.
-
-2. **Where are Git hooks stored?**
-
-   - In `.git/hooks/` directory.
-
-3. **What is a pre-commit hook?**
-
-   - Runs before a commit is created, used for linting and testing.
-
-4. **What is a commit-msg hook?**
-
-   - Runs after commit message is entered, validates format.
-
-5. **How do you make a hook executable?**
-
-   - `chmod +x .git/hooks/hook-name`.
-
-6. **What is Husky?**
-
-   - Tool for managing Git hooks in JavaScript projects.
-
-7. **What is the purpose of `--no-verify`?**
-
-   - Skips Git hooks for a specific command.
-
-8. **What is lint-staged?**
-
-   - Tool that runs linters on staged files only.
-
-### Intermediate (5-10)
-
-9. **How do you create a custom Git hook?**
-
-   - Create script in `.git/hooks/`, make executable, add logic.
-
-10. **What is the difference between client-side and server-side hooks?**
-
-    - Client-side run on developer machine, server-side run on repository server.
-
-11. **How do you install Husky in a project?**
-
-    - `npm install husky --save-dev`, `npx husky install`, add prepare script.
-
-12. **What is commitlint?**
-
-    - Tool to validate commit messages against conventional commits format.
-
-13. **How do you skip Git hooks?**
-
-    - Use `--no-verify` flag with git command.
-
-14. **What is the post-merge hook used for?**
-
-    - Runs after merge, useful for installing dependencies.
-
-15. **How do you test Git hooks?**
-
-    - Create test commits, verify hook behavior, check error handling.
-
-16. **What is the prepare-commit-msg hook?**
-
-    - Modifies default commit message before editor opens.
-
-### Senior (10-15)
-17. **How do you manage Git hooks across a team?**
-
-    - Use Husky, commit hooks to version control, document conventions.
-
-18. **What are server-side hooks used for?**
-
-    - Enforce policies, prevent large files, validate branch naming.
-
-19. **How do you handle hook failures gracefully?**
-
-    - Provide clear error messages, suggest fixes, allow skipping.
-
-20. **What is the impact of hooks on CI/CD?**
-
-    - Can reduce CI failures by catching issues early, but add development overhead.
-
-21. **How do you implement security checks in Git hooks?**
-
-    - Scan for secrets, validate file sizes, check for sensitive data.
-
-22. **What is the difference between Husky v4 and v8?**
-
-    - v8 uses `.husky/` directory, simpler configuration, better performance.
-
-23. **How do you handle hooks in monorepos?**
-
-    - Root-level hooks, package-specific hooks, or tool-specific solutions.
-
-24. **What are the limitations of Git hooks?**
-
-    - Can be bypassed, not shared by default, platform-specific.
-
-### FAANG-style (5-10)
-25. **Design a Git hook system for a 100+ engineer team.**
-
-    - Centralized configuration, performance monitoring, rollback capability.
-
-26. **How would you implement automated security scanning in Git hooks?**
-
-    - Integrate with security tools, scan dependencies, validate configurations.
-
-27. **What are the trade-offs between pre-commit and CI checks?**
-
-    - Pre-commit: faster feedback, local. CI: comprehensive, shared.
-
-28. **How do you handle hook performance at scale?**
-
-    - Caching, parallel execution, incremental analysis.
-
-29. **Design a system to track hook usage and effectiveness.**
-
-    - Metrics collection, reporting dashboard, optimization insights.
-
-### Follow-ups (5-10)
-30. **How do Git hooks interact with rebasing?**
-
-    - Hooks run during rebase, can cause issues if not designed carefully.
-
-31. **What happens if a hook fails during merge?**
-
-    - Merge is aborted, hook error is displayed.
-
-32. **How do you handle hooks in containerized environments?**
-
-    - Mount hooks, ensure executability, test in container.
-
-33. **What is the future of Git hooks?**
-
-    - Better tooling, integration with IDEs, cloud-based hooks.
-
-34. **How do you migrate hooks between projects?**
-
-    - Copy hook scripts, update paths, test functionality.
 
 ## Summary
 Git hooks are powerful for automating workflows and enforcing standards. Use Husky for easy management, lint-staged for performance, and commitlint for message validation. Keep hooks fast, provide clear feedback, and document their purpose for team adoption.
+
+---
+
+## See Also
+- [CI/CD](../15-CI-CD/)
+- [Monorepo](../28-Monorepo/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept]
+---
+
 # Performance APIs
+
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Performance APIs are browser APIs that provide detailed timing and performance data about web pages, resources, and user interactions. They enable developers to measure and optimize application performance with precise, low-level timing information.
@@ -485,138 +495,18 @@ API Performance Impact:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is the Performance API?**
-
-   - Answer: A set of browser APIs for measuring timing and performance data of web pages and resources.
-
-2. **What is `performance.now()`?**
-
-   - Answer: Returns a high-resolution timestamp in milliseconds, more precise than `Date.now()`.
-
-3. **What is Navigation Timing API?**
-
-   - Answer: API that provides detailed timing information about page navigation and loading.
-
-4. **What is Resource Timing API?**
-
-   - Answer: API that measures timing and resource loading data for all page resources.
-
-5. **What is User Timing API?**
-
-   - Answer: API for creating custom performance marks and measures for application-specific metrics.
-
-### Intermediate (5)
-
-6. **How do you measure TTFB?**
-
-   - Answer: `performance.timing.responseStart - performance.timing.navigationStart`
-
-7. **What is PerformanceObserver?**
-
-   - Answer: An API that asynchronously observes performance entries as they are added to the browser's performance timeline.
-
-8. **What are the different entry types?**
-
-   - Answer: navigation, resource, paint, mark, measure, longtask, largest-contentful-paint, layout-shift.
-
-9. **How do you track custom metrics?**
-
-   - Answer: Use `performance.mark()` and `performance.measure()` to create custom timing measurements.
-
-10. **What is the difference between `getEntries()` and `PerformanceObserver`?**
-
-    - Answer: `getEntries()` returns all entries at once; `PerformanceObserver` notifies you when new entries are added.
-
-### Senior (10)
-11. **Explain Navigation Timing Level 1 vs Level 2**
-
-    - Answer: Level 1 uses `performance.timing` object; Level 2 uses `PerformanceNavigationTiming` entries with more accurate timestamps.
-
-12. **How do you measure Long Tasks?**
-
-    - Answer: Use `PerformanceObserver` with `type: 'longtask'` to detect tasks blocking the main thread for >50ms.
-
-13. **What is the relationship between TTFB and FCP?**
-
-    - Answer: TTFB must complete before FCP can occur; FCP = TTFB + server processing + resource loading.
-
-14. **How do you handle cross-origin resource timing?**
-
-    - Answer: Resources need `Timing-Allow-Origin` header; otherwise timing data is zeroed out.
-
-15. **What metrics would you track for a SPA?**
-
-    - Answer: TTFB, FCP, LCP, CLS, INP, custom metrics for route changes and component renders.
-
-16. **How do you collect metrics without affecting performance?**
-
-    - Answer: Use `requestIdleCallback`, `sendBeacon`, buffer metrics, sample data, use Web Workers.
-
-17. **Explain the `buffered` option in PerformanceObserver**
-
-    - Answer: When `true`, includes entries that occurred before the observer was created, useful for capturing page load metrics.
-
-18. **How do you measure component render time in React?**
-
-    - Answer: Use `performance.mark()` in render function and `performance.measure()` in useEffect.
-
-19. **What is the difference between `entryType: 'resource'` and `entryType: 'navigation'`?**
-
-    - Answer: Navigation entries track page navigation; resource entries track individual resource loads (images, scripts, etc.).
-
-20. **How do you handle performance data from iframes?**
-
-    - Answer: Use `postMessage` to communicate metrics; iframes have separate performance timelines.
-
-### FAANG-style (5)
-21. **Design a performance monitoring system**
-
-    - Answer: Collect via PerformanceObserver → buffer in localStorage → send via sendBeacon → process in streaming pipeline → store in time-series DB → visualize with dashboards.
-
-22. **How would you detect performance regressions in CI/CD?**
-
-    - Answer: Run Lighthouse in CI, compare against baseline, fail build if thresholds exceeded, run in consistent environment.
-
-23. **Explain how you'd measure perceived performance**
-
-    - Answer: Use User Timing for custom milestones, combine with Core Web Vitals, track user-centric metrics like time-to-interactive.
-
-24. **How do you optimize for the Navigation Timing waterfall?**
-
-    - Answer: Minimize DNS lookups, use connection pooling, optimize server response, preload critical resources.
-
-25. **Design a system to track performance across micro-frontends**
-
-    - Answer: Each micro-frontend reports to parent via postMessage, aggregate metrics, attribute performance to specific micro-frontends.
-
-### Follow-ups (5)
-26. **How do you handle performance monitoring in Server-Side Rendering?**
-
-    - Answer: Collect server-side timing data, combine with client-side metrics, use hydration timing.
-
-27. **What is the impact of Service Workers on Performance APIs?**
-
-    - Answer: Service workers can intercept resource requests, affecting resource timing; navigation timing still works.
-
-28. **How do you measure performance of Web Workers?**
-
-    - Answer: Use `performance.mark()` and `performance.measure()` within workers; communicate results via postMessage.
-
-29. **Explain the relationship between Performance APIs and Real User Monitoring (RUM)**
-
-    - Answer: Performance APIs provide the data collection mechanism; RUM is the practice of collecting and analyzing that data from real users.
-
-30. **How do you handle performance measurement in SPAs with client-side routing?**
-
-    - Answer: Measure route change duration, component render time, data loading time; track custom metrics per route.
 
 ## Summary
 
 Performance APIs provide powerful tools for measuring and optimizing web application performance. Master Navigation Timing, Resource Timing, User Timing, and PerformanceObserver to build comprehensive monitoring solutions.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Build Tools](../23-Build-Tools/)
+- [Observability](../22-Observability/)
+- [Accessibility](../25-Accessibility/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept]
+---
+
 # Profiling Tools
+
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Profiling tools are browser and external utilities that help developers analyze, debug, and optimize web application performance by providing detailed insights into rendering, JavaScript execution, memory usage, and network activity.
@@ -524,138 +534,18 @@ Tool Selection Guide:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Chrome DevTools Performance tab?**
-
-   - Answer: A browser tool that records and analyzes runtime performance, showing flame charts, network activity, and rendering metrics.
-
-2. **What is Lighthouse?**
-
-   - Answer: An open-source tool for auditing web page quality, including performance, accessibility, SEO, and best practices.
-
-3. **What is a flame chart?**
-
-   - Answer: A visualization of call stack activity over time, where width represents duration and height represents call stack depth.
-
-4. **What is WebPageTest?**
-
-   - Answer: An external tool for testing website performance from different locations and connection speeds.
-
-5. **What does the Memory tab show?**
-
-   - Answer: Heap snapshots, allocation timelines, and memory leak detection tools.
-
-### Intermediate (5)
-
-6. **How do you identify long tasks in Chrome DevTools?**
-
-   - Answer: Look for red triangles in the FPS chart or long bars in the Main thread flame chart.
-
-7. **What is the difference between Lighthouse and WebPageTest?**
-
-   - Answer: Lighthouse runs locally with simulated conditions; WebPageTest runs from remote locations with real browsers.
-
-8. **How do you profile React components?**
-
-   - Answer: Use React DevTools Profiler or the `Profiler` component with `onRender` callback.
-
-9. **What is Speed Index?**
-
-   - Answer: A WebPageTest metric measuring how quickly content is visually displayed during page load.
-
-10. **How do you detect memory leaks?**
-
-    - Answer: Take heap snapshots and compare them, look for growing detached DOM elements or event listeners.
-
-### Senior (10)
-11. **Explain the performance recording workflow**
-
-    - Answer: Open DevTools → Performance tab → Record → Interact → Stop → Analyze flame chart, network, and rendering.
-
-12. **How do you optimize based on flame chart analysis?**
-
-    - Answer: Identify long functions, reduce call stack depth, memoize expensive calculations, use Web Workers for heavy computation.
-
-13. **What causes layout thrashing?**
-
-    - Answer: Rapidly alternating between reading and writing DOM properties, causing multiple reflows/repaints.
-
-14. **How do you profile in CI/CD?**
-
-    - Answer: Run Lighthouse CI, set performance budgets, fail builds if thresholds exceeded.
-
-15. **Explain the difference between Lighthouse and RUM**
-
-    - Answer: Lighthouse is lab testing with controlled conditions; RUM measures real user experience in production.
-
-16. **How do you profile a Single Page Application?**
-
-    - Answer: Profile route changes, component renders, data fetching; use custom marks for app-specific metrics.
-
-17. **What is the Impact metric in Lighthouse?**
-
-    - Answer: An estimate of how much time each resource contributed to blocking the main thread.
-
-18. **How do you profile network performance?**
-
-    - Answer: Use Network tab to analyze waterfalls, check for parallel downloads, optimize critical path.
-
-19. **What are Core Web Vitals in DevTools?**
-
-    - Answer: Built-in measurements for LCP, CLS, and INP in the Performance and Lighthouse tabs.
-
-20. **How do you handle profiling in production?**
-
-    - Answer: Use Real User Monitoring, sample metrics, send via sendBeacon, analyze in analytics dashboards.
-
-### FAANG-style (5)
-21. **Design a performance monitoring dashboard**
-
-    - Answer: Collect via RUM → process in streaming pipeline → store in time-series DB → visualize with Grafana/Datadog → alert on regressions.
-
-22. **How would you automate performance regression detection?**
-
-    - Answer: Run Lighthouse in CI, compare against baseline, statistical analysis of metric distributions, automated alerts.
-
-23. **Explain performance profiling at scale**
-
-    - Answer: Sample-based collection, distributed tracing, anomaly detection, automated optimization suggestions.
-
-24. **How do you profile micro-frontends?**
-
-    - Answer: Individual profiling per micro-frontend, aggregate metrics, attribute performance to specific teams.
-
-25. **Design a performance budget system**
-
-    - Answer: Define thresholds per metric, integrate with CI/CD, visual dashboards, automated alerts, developer tools integration.
-
-### Follow-ups (5)
-26. **How do you profile Server-Side Rendering performance?**
-
-    - Answer: Combine server-side timing (TTFB, render time) with client-side metrics (hydration time, interactivity).
-
-27. **What is the relationship between profiling and monitoring?**
-
-    - Answer: Profiling identifies issues; monitoring tracks them over time; together they provide complete performance visibility.
-
-28. **How do you profile mobile performance?**
-
-    - Answer: Use remote debugging, throttle CPU/network, test on real devices, use WebPageTest mobile locations.
-
-29. **Explain the impact of JavaScript framework on profiling**
-
-    - Answer: Framework-specific tools (React DevTools, Vue DevTools) provide better insights; understand framework internals.
-
-30. **How do you profile third-party script impact?**
-
-    - Answer: Use Lighthouse impact analysis, block third-party scripts and compare, lazy load non-critical scripts.
 
 ## Summary
 
 Profiling tools are essential for identifying and fixing performance issues. Master Chrome DevTools, Lighthouse, WebPageTest, and React DevTools to build comprehensive performance analysis workflows.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Build Tools](../23-Build-Tools/)
+- [Observability](../22-Observability/)
+- [Accessibility](../25-Accessibility/)
 
 ## References & Learn More
 

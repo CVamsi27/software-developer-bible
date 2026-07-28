@@ -1,4 +1,14 @@
+---
+section: Form Handling
+category: Frontend
+tags: [concept]
+---
+
 # Formik
+
+[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Formik is a popular React form library that helps with form state management, validation, and submission. It provides a set of components and hooks for building forms with React, focusing on simplicity and developer experience.
@@ -582,158 +592,17 @@ Formik Performance:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Formik?**
-
-   - Answer: A React form library that handles form state management, validation, and submission.
-
-2. **What is the difference between Formik component and useFormik hook?**
-
-   - Answer: Formik component provides context and render props; useFormik hook is for custom components.
-
-3. **What is the Field component?**
-
-   - Answer: A component that connects input elements to Formik state with automatic onChange and onBlur handlers.
-
-4. **What is Yup?**
-
-   - Answer: A JavaScript schema builder commonly used with Formik for validation.
-
-5. **What is the touched state?**
-
-   - Answer: An object tracking which fields have been focused and blurred.
-
-### Intermediate (5)
-
-6. **How do you handle form submission?**
-
-   - Answer: Use `onSubmit` prop with Formik component or `handleSubmit` from useFormik hook.
-
-7. **How do you reset a form?**
-
-   - Answer: Use `resetForm` method or pass `initialValues` to `resetForm`.
-
-8. **How do you handle async validation?**
-
-   - Answer: Return a Promise from validation function.
-
-9. **How do you access form state in child components?**
-
-   - Answer: Use `useFormikContext` hook or render props pattern.
-
-10. **How do you handle multiple forms?**
-
-    - Answer: Each Formik instance is independent; use separate instances.
-
-### Senior (10)
-11. **What is the difference between Formik and React Hook Form?**
-
-    - Answer: Formik uses controlled components; React Hook Form uses uncontrolled components for better performance.
-
-12. **How do you optimize Formik performance?**
-
-    - Answer: Use Formik component, minimize context consumers, use custom Field components.
-
-13. **How do you handle complex validation?**
-
-    - Answer: Use Yup's `when` for conditional validation or custom validation functions.
-
-14. **How do you integrate Formik with Redux?**
-
-    - Answer: Use `mapDispatchToProps` or connect Formik state to Redux store.
-
-15. **How do you handle file uploads?**
-
-    - Answer: Use Field component with type="file" and handle in onChange.
-
-16. **How do you handle form persistence?**
-
-    - Answer: Store form state in localStorage and restore on mount.
-
-17. **How do you handle form analytics?**
-
-    - Answer: Track field interactions using Formik's callbacks.
-
-18. **How do you handle form accessibility?**
-
-    - Answer: Use Field component with labels, aria attributes, and error announcements.
-
-19. **How do you test Formik components?**
-
-    - Answer: Use @testing-library/react with Formik's simulated events.
-
-20. **How do you handle form in server-side rendering?**
-
-    - Answer: Pass initial values from server and hydrate Formik state.
-
-### FAANG-style (5)
-21. **Design a form system for a large application**
-
-- **Answer**:
-  - Formik for form management
-  - Yup for validation
-  - Custom Field components
-  - Form templates
-  - Accessibility compliance
-
-22. **How would you migrate from Formik to React Hook Form?**
-
-- **Answer**:
-  - Migrate validation schemas
-  - Replace controlled with uncontrolled components
-  - Update form submission logic
-  - Test thoroughly
-
-23. **Explain Formik's architecture**
-
-- **Answer**:
-  - Context-based state management
-  - Render props pattern
-  - Field-level optimization
-  - Yup integration
-
-24. **How do you handle forms in micro-frontends?**
-
-- **Answer**:
-  - Independent Formik instances
-  - Shared validation schemas
-  - Event-based communication
-
-25. **Design a form validation system**
-
-- **Answer**:
-  - Yup schemas for validation
-  - Custom validation rules
-  - Error formatting
-  - Accessibility compliance
-
-### Follow-ups (5)
-26. **How do you handle Formik in React Server Components?**
-
-- **Answer**: Use initial values from server, hydrate Formik state on client.
-
-27. **How do you handle Formik with GraphQL?**
-
-- **Answer**: Use Apollo Client or react-query for form submissions and validation.
-
-28. **How do you handle Formik in TypeScript?**
-
-- **Answer**: Define form value interfaces, use FormikProps for type safety.
-
-29. **How do you handle Formik form persistence?**
-
-- **Answer**: Use localStorage or sessionStorage to persist form state.
-
-30. **How do you handle Formik with third-party components?**
-
-- **Answer**: Use Field component with custom render props or useField hook.
 
 ## Summary
 
 Formik provides a comprehensive solution for form management in React. While it offers excellent developer experience, consider React Hook Form for better performance in large forms.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [TypeScript](../02-TypeScript/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

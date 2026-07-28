@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes HPA & Scaling
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -556,129 +566,12 @@ kubectl run load-test --image=busybox --rm -it -- \
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is HPA?**
-   Horizontal Pod Autoscaler automatically scales Pod replicas based on metrics.
-
-2. **What metrics does HPA use?**
-   CPU utilization, memory utilization, custom metrics, external metrics.
-
-3. **How do you create an HPA?**
-   `kubectl autoscale deployment myapp --cpu-percent=70 --min=2 --max=10`
-
-4. **What is the default scaling metric?**
-   CPU utilization.
-
-5. **What is minReplicas and maxReplicas?**
-   Minimum and maximum number of Pods HPA can scale to.
-
-6. **What is VPA?**
-   Vertical Pod Autoscaler adjusts Pod resource requests/limits.
-
-7. **What is Cluster Autoscaler?**
-   Automatically adds/removes nodes based on Pod scheduling needs.
-
-8. **How does HPA calculate desired replicas?**
-   `desiredReplicas = ceil(currentReplicas * (currentMetric / targetMetric))`
-
-9. **What is stabilizationWindowSeconds?**
-   Time window to prevent scaling flapping.
-
-10. **How do you check HPA status?**
-    `kubectl get hpa` or `kubectl describe hpa myapp-hpa`
-
-### Intermediate (5-10)
-
-11. **What is the difference between HPA and VPA?**
-    HPA scales Pod count. VPA scales Pod resources.
-
-12. **Can you use HPA and VPA together?**
-    Yes, but configure them to avoid conflicts (VPA for memory, HPA for CPU).
-
-13. **What are custom metrics?**
-    Application-specific metrics (requests/second, queue length) exposed via Prometheus.
-
-14. **What is the Metrics Server?**
-    Provides CPU/memory metrics to HPA. Required for HPA to function.
-
-15. **How do you prevent scaling flapping?**
-    Use stabilizationWindowSeconds in scaling behavior.
-
-16. **What is scale-down stabilization?**
-    Prevents rapid scale-down by waiting for a stabilization period.
-
-17. **How do you use external metrics in HPA?**
-    Reference external metrics from Prometheus or cloud monitoring.
-
-18. **What is the relationship between HPA and PDB?**
-    PDB limits voluntary disruptions during scaling operations.
-
-19. **How do you test HPA behavior?**
-    Use load testing tools and watch HPA events.
-
-20. **What happens if metrics are unavailable?**
-    HPA uses the last known metrics or doesn't scale.
-
-### Senior (10-15)
-
-21. **Design a scaling strategy for a microservices application.**
-    Use HPA per service with service-specific metrics, PDB for availability, and Cluster Autoscaler for node scaling.
-
-22. **How would you handle scaling for a stateful application?**
-    Use StatefulSet with volume scaling, and careful scaling policies.
-
-23. **Explain HPA scaling behavior configuration.**
-    Define scale-up/down policies with stabilization windows and rate limits.
-
-24. **How do you optimize scaling for cost?**
-    Use spot instances, right-size with VPA, and set appropriate min/max.
-
-25. **What is the impact of resource requests on scaling?**
-    Inaccurate requests cause incorrect utilization calculations and poor scaling.
-
-### FAANG-style (5-10)
-
-26. **Design a scaling architecture for 1M+ requests per second.**
-    Multi-layer scaling: HPA for Pods, Cluster Autoscaler for nodes, CDN for caching, and global load balancing.
-
-27. **How would you handle scaling during a traffic spike?**
-    Pre-warm capacity, use aggressive scale-up policies, and implement circuit breakers.
-
-28. **Design a cost-optimized scaling strategy.**
-    Use VPA for right-sizing, spot instances, aggressive scale-down, and reserved capacity for baseline.
-
-29. **How would you implement predictive scaling?**
-    Use historical metrics to pre-scale before traffic arrives.
-
-30. **Describe a scaling strategy for a batch processing system.**
-    Scale based on queue length, use priority classes, and implement backpressure.
-
-### Follow-ups (5-10)
-
-31. **What is the minimum number of replicas for HPA?**
-    At least 1. If minReplicas=0, the Deployment won't scale to zero with HPA.
-
-32. **How does HPA interact with Deployment minReadySeconds?**
-    HPA waits for minReadySeconds before considering a Pod ready.
-
-33. **What is the maximum number of metrics in HPA?**
-    10 metrics (CPU, memory, custom, external).
-
-34. **How do you handle scaling in multiple dimensions?**
-    Use multiple HPA instances or combine metrics in one HPA.
-
-35. **What is the difference between HPA v1 and v2?**
-    v2 supports multiple metrics, custom metrics, and scaling behavior.
 
 ## Summary
 
 HPA enables automatic scaling based on metrics. VPA optimizes resource requests. Combined with Cluster Autoscaler, they provide full-stack auto-scaling. Proper resource requests, scaling policies, and stabilization windows are essential for reliable scaling.
 
 ## Cheat Sheet
-
 ```bash
 # HPA
 kubectl autoscale deployment myapp --cpu-percent=70 --min=2 --max=10
@@ -704,6 +597,14 @@ kubectl describe node <name>
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

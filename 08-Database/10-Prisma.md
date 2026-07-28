@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Prisma
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -701,114 +711,12 @@ const result = await prisma.$queryRaw`
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Prisma?**
-   Next-generation TypeScript ORM with schema-first approach.
-
-2. **What is schema.prisma?**
-   Declarative schema file defining models, relations, and enums.
-
-3. **What is the difference between include and select?**
-   Include: fetch related records; Select: specify which fields to return.
-
-4. **What is npx prisma generate?**
-   Generates TypeScript client from schema.
-
-5. **What is the difference between findUnique and findFirst?**
-   findUnique: requires unique field; findFirst: returns first match.
-
-### Intermediate (5)
-
-6. **How do you handle transactions in Prisma?**
-   Use $transaction for interactive or batch transactions.
-
-7. **What is the N+1 query problem?**
-   Multiple individual queries instead of one; solve with include.
-
-8. **How do you do pagination in Prisma?**
-   skip/take for offset, cursor for cursor-based.
-
-9. **What are raw queries?**
-   Direct SQL execution; use for complex operations.
-
-10. **How does Prisma handle connection pooling?**
-    Built-in pool; configure via DATABASE_URL parameters.
-
-### Senior (10)
-
-11. **How does Prisma generate TypeScript types?**
-    From schema.prisma; types match model definitions.
-
-12. **What is the Prisma engine?**
-    Rust-based query engine; handles SQL generation and execution.
-
-13. **How do you optimize Prisma queries?**
-    Use select, avoid N+1, index foreign keys, use raw queries.
-
-14. **What are Prisma migrations?**
-    Schema versioning; auto-generate SQL from schema changes.
-
-15. **How do you handle database-specific features?**
-    Use previewFeatures, raw queries, or extensions.
-
-16. **What is the difference between Prisma and traditional ORMs?**
-    Schema-first, type-safe, no runtime reflection.
-
-17. **How do you handle complex queries in Prisma?**
-    Use raw queries, $queryRaw, or $executeRaw.
-
-18. **What is Prisma Client?**
-    Auto-generated, type-safe database client.
-
-19. **How do you handle errors in Prisma?**
-    Try-catch with error codes (P2002, P2025, etc.).
-
-20. **What is the difference between Prisma and Drizzle?**
-    Prisma: schema-first, generated client; Drizzle: SQL-like, lightweight.
-
-### FAANG-style (5)
-
-21. **Design a Prisma schema for a social media platform.**
-    Users, posts, comments, likes with proper relations and indexes.
-
-22. **How would you optimize Prisma for high traffic?**
-    Connection pooling, read replicas, caching, query optimization.
-
-23. **Design a multi-tenant Prisma schema.**
-    Schema per tenant, row-level security, or database per tenant.
-
-24. **How do you handle schema migrations in production?**
-    Prisma Migrate, expand-contract pattern, zero-downtime strategies.
-
-25. **Design a real-time system with Prisma.**
-    Prisma + WebSocket, subscriptions, event-driven architecture.
-
-### Follow-ups (5)
-
-26. **What is the difference between Prisma Migrate and db push?**
-    Migrate: version-controlled; db push: schema sync without migrations.
-
-27. **How do you handle soft deletes in Prisma?**
-    DeletedAt timestamp, custom middleware.
-
-28. **What is Prisma Accelerate?**
-    Connection pooling and caching service for Prisma.
-
-29. **How do you test Prisma applications?**
-    Use in-memory database, reset between tests.
-
-30. **What is the future of Prisma?**
-    Edge runtime, serverless optimization, more database support.
 
 ## Summary
 
 Prisma provides a type-safe, schema-first approach to database access. Use schema.prisma to define models, generate a TypeScript client, and manage migrations. Leverage transactions, include/select, and raw queries for complex operations. Handle N+1 queries with eager loading and optimize with proper indexes.
 
 ## Cheat Sheet
-
 ```bash
 # Prisma commands
 npx prisma init          # Initialize project
@@ -839,6 +747,13 @@ await prisma.$queryRaw`SELECT * FROM users`;
 await prisma.$executeRaw`UPDATE users SET name = ${name}`;
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

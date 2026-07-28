@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # CQRS (Command Query Responsibility Segregation)
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -520,101 +530,12 @@ export class GetUserHandler {
 
 5. **Scaling**: Commands and queries can scale independently.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is CQRS?**
-Command Query Responsibility Segregation — separates read and write operations into different models.
-
-**Q2: What is the difference between a command and a query?**
-
-- Command: Changes state (create, update, delete)
-- Query: Returns data without modifying state
-
-**Q3: What is the role of the EventBus?**
-Distributes events from command handlers to event handlers for projection updates.
-
-**Q4: What is a projection in CQRS?**
-A read model built from events, optimized for specific query patterns.
-
-**Q5: When should you use CQRS?**
-When read and write models differ significantly, or when you need event sourcing.
-
-### Intermediate
-
-**Q6: How does CQRS differ from traditional CRUD?**
-Traditional CRUD uses one model for reads and writes. CQRS separates them, allowing independent optimization.
-
-**Q7: What is event sourcing?**
-Storing all state changes as a sequence of events, allowing state reconstruction.
-
-**Q8: How do you handle eventual consistency?**
-Use read-through caching, polling, or real-time notifications to sync read models.
-
-**Q9: What is a saga in CQRS?**
-A pattern for managing complex business processes that span multiple commands.
-
-**Q10: How do you test CQRS components?**
-Test command handlers, query handlers, and event handlers independently.
-
-### Senior
-
-**Q11: Design a CQRS system for a bank.**
-Write side: Event-sourced account aggregate. Read side: Denormalized transaction history.
-
-**Q12: How would you handle concurrent commands?**
-Use optimistic locking, aggregate versioning, or pessimistic locking.
-
-**Q13: Design event store implementation.**
-Use append-only store with aggregate ID, version, event type, and payload.
-
-**Q14: How would you implement read model rebuild?**
-Replay all events from the beginning to reconstruct read models.
-
-**Q15: Design a multi-tenant CQRS system.**
-Partition events by tenant, create tenant-specific read models.
-
-### FAANG-Style
-
-**Q16: Design CQRS for a social media platform.**
-Write side: User actions (posts, likes). Read side: News feed, notifications.
-
-**Q17: How would you implement CQRS across microservices?**
-Each service owns its events, use event bus (Kafka) for cross-service communication.
-
-**Q18: Design CQRS for real-time analytics.**
-Write side: Event stream. Read side: Pre-aggregated analytics dashboards.
-
-**Q19: How would you handle schema evolution in events?**
-Use upcasters, event versioning, or event adaptation.
-
-**Q20: Design CQRS for a distributed system.**
-Event-driven architecture, eventual consistency, saga pattern for distributed transactions.
-
-### Follow-ups
-
-**Q21: What are the trade-offs of CQRS?**
-Increased complexity, eventual consistency, more infrastructure.
-
-**Q22: How do you handle read model failures?**
-Rebuild from events, implement read model redundancy.
-
-**Q23: Can CQRS work with REST APIs?**
-Yes, REST endpoints dispatch commands/queries through the bus.
-
-**Q24: How do you monitor CQRS systems?**
-Track command/query latency, event processing lag, read model freshness.
-
-**Q25: What is the difference between CQRS and event sourcing?**
-CQRS separates reads/writes. Event sourcing stores events. They're complementary but independent.
 
 ## Summary
 
 CQRS separates read and write operations into different models, enabling independent optimization, scalability, and event-driven architectures. In NestJS, the `@nestjs/cqrs` library provides command/query buses, handlers, and events. CQRS is most valuable in complex domains with different read/write requirements.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | Command | Operation that changes state |
@@ -629,6 +550,14 @@ CQRS separates read and write operations into different models, enabling indepen
 | Aggregate | Domain entity with business logic |
 | Saga | Manages complex workflows |
 | Event Store | Stores all state-changing events |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

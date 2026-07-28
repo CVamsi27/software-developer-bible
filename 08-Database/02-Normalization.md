@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Normalization
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -510,114 +520,12 @@ CREATE TABLE order_summaries (
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is normalization?**
-   Organizing tables to reduce redundancy and improve integrity.
-
-2. **What is 1NF?**
-   Atomic values, no repeating groups, each row unique.
-
-3. **What is the difference between a primary key and a foreign key?**
-   Primary key uniquely identifies a row; foreign key references another table's primary key.
-
-4. **What is data redundancy?**
-   Storing the same data in multiple places; wastes space and causes anomalies.
-
-5. **What is an anomaly?**
-   Inconsistency caused by poor database design (insert, update, delete anomalies).
-
-### Intermediate (5)
-
-6. **Explain 2NF and give an example.**
-   No partial dependencies; each non-key attribute depends on the entire primary key.
-
-7. **What is a transitive dependency?**
-   A → B → C; A determines C through B. Violates 3NF.
-
-8. **What is BCNF?**
-   Every determinant is a candidate key; stricter than 3NF.
-
-9. **When should you denormalize?**
-   Read-heavy workloads, complex aggregations, performance-critical queries.
-
-10. **What are the trade-offs of normalization?**
-    More joins (slower reads) vs. less storage and easier updates.
-
-### Senior (10)
-
-11. **Design a normalized schema for a blog platform.**
-    Users, posts, comments, tags, categories with proper relationships.
-
-12. **How do you handle many-to-many relationships?**
-    Junction/bridge tables with foreign keys.
-
-13. **What is an implicit join and why is it dangerous?**
-    Comma-separated FROM clause; easy to accidentally create cross joins.
-
-14. **How do you denormalize without losing integrity?**
-    Triggers, materialized views, application-level sync.
-
-15. **Explain the concept of a surrogate key vs. natural key.**
-    Surrogate: artificial ID; Natural: business meaningful key.
-
-16. **What is a composite primary key?**
-    Primary key consisting of multiple columns.
-
-17. **How does normalization affect indexing?**
-    Smaller tables = smaller indexes = faster scans.
-
-18. **What is a covering index?**
-    Index that contains all columns needed for a query (no table access).
-
-19. **How do you handle schema evolution in normalized databases?**
-    Migrations, backward-compatible changes, default values.
-
-20. **What is domain-driven design's impact on normalization?**
-    Bounded contexts may justify denormalization within a context.
-
-### FAANG-style (5)
-
-21. **Design a schema for Instagram-like photo sharing.**
-    Users, photos, likes, comments, followers with proper normalization.
-
-22. **How would you optimize a schema for billion-row analytics?**
-    Star schema, partitioning, materialized views, columnar storage.
-
-23. **Explain the difference between OLTP and OLAP normalization.**
-    OLTP: highly normalized; OLAP: denormalized (star/snowflake schema).
-
-24. **Design a multi-tenant SaaS schema with isolation.**
-    Schema-per-tenant, row-level security, or database-per-tenant.
-
-25. **How do you handle soft deletes in normalized schemas?**
-    deleted_at timestamp, unique constraints must account for soft-deleted rows.
-
-### Follow-ups (5)
-
-26. **What is the difference between a view and a materialized view?**
-    View: virtual, always current; Materialized: stored, must be refreshed.
-
-27. **How do you enforce referential integrity without foreign keys?**
-    Application logic, triggers, or check constraints (not recommended).
-
-28. **What is denormalization for?**
-    Performance optimization by reducing joins at the cost of redundancy.
-
-29. **What are functional dependencies?**
-    Mathematical relationships: if A determines B, then for each A there's one B.
-
-30. **How does PostgreSQL handle views?**
-    Views are stored queries; updated on SELECT; no performance overhead.
 
 ## Summary
 
 Normalization eliminates redundancy and anomalies through a series of normal forms (1NF→2NF→3NF→BCNF). Start with 3NF for most applications. Denormalize selectively for performance in read-heavy workloads. Use materialized views and triggers to maintain consistency when denormalizing. The key trade-off is between write efficiency (normalized) and read performance (denormalized).
 
 ## Cheat Sheet
-
 ```sql
 -- Normal Forms Quick Reference
 -- 1NF: Atomic values, no repeating groups
@@ -638,6 +546,13 @@ Normalization eliminates redundancy and anomalies through a series of normal for
 -- 4. Duplicate data with sync
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Dependency Injection
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -655,120 +665,12 @@ export class UserService {
 
 6. **Factory Execution**: Factory providers run at module initialization.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is dependency injection in NestJS?**
-DI is a pattern where NestJS's IoC container manages and injects dependencies into components through constructor parameters.
-
-**Q2: What is the IoC container?**
-The IoC container is NestJS's dependency injection container that manages provider instantiation, dependency resolution, and lifecycle.
-
-**Q3: What is constructor injection?**
-Declaring dependencies as constructor parameters. NestJS resolves and injects them when creating the class instance.
-
-**Q4: What is a singleton provider?**
-A provider with default scope — one instance per module that provides it.
-
-**Q5: How do you inject a provider into a controller?**
-Declare the provider type as a constructor parameter.
-
-### Intermediate
-
-**Q6: What are injection tokens?**
-Tokens (strings, Symbols, or classes) used to identify providers when the type alone isn't sufficient (interfaces, multiple implementations).
-
-**Q7: How do you resolve circular dependencies?**
-Use `forwardRef()` to defer resolution, or restructure code to remove the circular dependency.
-
-**Q8: What is the difference between `useClass` and `useFactory`?**
-
-- `useClass`: Instantiates a class as the provider
-- `useFactory`: Uses a function to create the provider (more flexible)
-
-**Q9: How do you override a provider in tests?**
-Use `Test.createTestingModule()` with `overrideProvider()` to replace providers with mocks.
-
-**Q10: What is request-scoped dependency injection?**
-Creates a new instance of the provider for each HTTP request, allowing request-specific data to be stored.
-
-### Senior
-
-**Q11: Explain how NestJS resolves the dependency graph.**
-NestJS performs topological sort on the dependency graph, instantiating leaf dependencies first, then working up to the root. It handles circular dependencies with forwardRef.
-
-**Q12: How do you implement a provider with async initialization?**
-Use `useFactory` with an async function, or implement `OnModuleInit` lifecycle hook.
-
-**Q13: How would you design a DI system from scratch?**
-Implement a container with registration, resolution, scoping, and lifecycle management. Use graph algorithms for dependency resolution.
-
-**Q14: What are the performance implications of DI?**
-
-- Startup time: Graph resolution and instantiation
-- Memory: Singleton caching vs transient overhead
-- Request latency: Request-scoped provider creation
-
-**Q15: How do you handle DI in distributed systems?**
-Use service meshes (Istio), shared libraries, or microservice-specific DI patterns.
-
-### FAANG-Style
-
-**Q16: Design a DI container from scratch.**
-Implement container with `register()`, `resolve()`, `inject()`, lifecycle hooks, and graph resolution.
-
-```typescript
-class Container {
-  private providers = new Map<Token, Provider>();
-  private instances = new Map<Token, any>();
-
-  register<T>(token: Token, provider: Provider<T>) { ... }
-  resolve<T>(token: Token): T { ... }
-  inject<T>(token: Token): T { ... }
-}
-
-```
-
-**Q17: How would you implement request context propagation?**
-Use async hooks or continuation-local storage to propagate request context through the DI container.
-
-**Q18: Design a multi-tenant DI system.**
-Use dynamic modules with tenant-specific providers. Create isolated DI containers per tenant.
-
-**Q19: How would you implement DI for microservices?**
-Use shared libraries with local DI, or centralized service discovery with remote provider resolution.
-
-**Q20: How would you optimize DI performance?**
-
-- Lazy instantiation
-- Provider pooling
-- Dependency caching
-- Graph optimization
-
-### Follow-ups
-
-**Q21: What is the order of dependency resolution?**
-Topological order — dependencies are resolved before dependents. Leaf nodes first.
-
-**Q22: How do you handle optional dependencies?**
-Use `@Optional()` decorator to make dependencies optional.
-
-**Q23: What happens if a dependency fails to resolve?**
-The application throws an error and fails to start.
-
-**Q24: How do you implement provider scopes at runtime?**
-Use `ModuleRef` to resolve providers with different scopes dynamically.
-
-**Q25: How do you debug DI issues?**
-Enable debug logging with `nest start --debug`, use `ModuleRef` to inspect providers.
 
 ## Summary
 
 Dependency Injection is NestJS's core mechanism for managing component dependencies. The IoC container handles instantiation, resolution, and lifecycle management automatically. Understanding DI patterns — constructor injection, injection tokens, provider scopes, and circular dependency resolution — is essential for building scalable, testable NestJS applications.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | Constructor Injection | Declare dependencies as constructor params |
@@ -785,6 +687,14 @@ Dependency Injection is NestJS's core mechanism for managing component dependenc
 | `useExisting` | Alias to existing provider |
 | `ModuleRef` | Runtime DI container access |
 | `overrideProvider()` | Replace providers in tests |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

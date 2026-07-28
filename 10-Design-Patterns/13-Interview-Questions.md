@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [interview-questions, reference]
+---
+
 # Design Patterns Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Overview
 
@@ -1181,7 +1191,6 @@ class CacheLayer {
 ---
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │           DESIGN PATTERNS INTERVIEW CHEAT SHEET             │
@@ -1217,6 +1226,19 @@ class CacheLayer {
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+---
+
+
+## Summary
+
+This guide covers the essential concepts, code examples, and best practices for this topic. Use it as a comprehensive reference for interview preparation and day-to-day development.
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

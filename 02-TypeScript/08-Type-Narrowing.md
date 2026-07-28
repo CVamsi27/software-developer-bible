@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Type Narrowing
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -470,104 +480,12 @@ function assertNever(x: never): never {
 - **Bundle size**: No impact on bundle size
 - **Debugging**: Narrowed types improve debugging experience
 
-## Interview Questions
-
-### Beginner
-
-1. **What is type narrowing?**
-
-   - Refining a broader type to a more specific type through control flow
-
-2. **How do you narrow with typeof?**
-
-   - Check `typeof value === "string"` to narrow to string
-
-3. **What is a type guard?**
-
-   - A function that returns a type predicate (`value is Type`)
-
-4. **What is a discriminated union?**
-
-   - A union of types with a common discriminant property
-
-5. **What is the never type?**
-
-   - A type that represents values that never occur
-
-### Intermediate
-
-6. **How do you implement exhaustive checking?**
-
-   - Use `switch` with `never` in default case
-
-7. **What is the difference between typeof and instanceof?**
-
-   - typeof checks primitive types; instanceof checks class instances
-
-8. **How do you narrow with the in operator?**
-
-   - Check `"property" in object` to narrow to types with that property
-
-9. **When would you use a user-defined type guard?**
-
-   - When TypeScript can't infer narrowing from built-in checks
-
-10. **How do you handle nullable types?**
-
-    - Use null checks: `if (value !== null)`
-
-### Senior
-
-11. **Design a type-safe parser using discriminated unions**
-
-    - Create AST nodes with discriminant properties
-
-12. **How do you implement a type-safe state machine?**
-
-    - Use discriminated unions for states and transitions
-
-13. **Create a type-safe middleware chain**
-
-    - Use type narrowing to propagate types through middleware
-
-14. **How do you handle complex union types?**
-
-    - Break down unions into smaller, more manageable types
-
-### FAANG-style
-
-15. **Build a type-safe JSON parser**
-
-    - Use type guards to validate and narrow unknown data
-
-16. **Implement a type-safe router**
-
-    - Use discriminated unions for routes and parameters
-
-17. **Create a type-safe form validation system**
-
-    - Use type narrowing for validation results
-
-### Follow-ups
-
-18. **How does type narrowing interact with generics?**
-
-    - Narrowing works within generic functions
-
-19. **Can you narrow tuple types?**
-
-    - Yes, using length checks and index access
-
-20. **How do you debug type narrowing issues?**
-
-    - Use IDE hover, add intermediate variables, or use `@ts-expect-error`
 
 ## Summary
 
 Type narrowing is essential for writing safe TypeScript code. It allows you to work with specific types within conditional blocks and catch type errors at compile time. Master discriminated unions, type guards, and exhaustive checking for robust type-safe code.
 
 ## Cheat Sheet
-
 ```typescript
 // typeof narrowing
 if (typeof x === "string") { /* x is string */ }
@@ -599,6 +517,13 @@ function process(shape: Shape): number {
 }
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

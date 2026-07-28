@@ -1,4 +1,14 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept]
+---
+
 # STAR Method: Complete Guide for Senior Engineers
+
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Table of Contents
 
@@ -933,3 +943,19 @@ RULES:
 ---
 
 *The STAR method transforms vague anecdotes into compelling evidence of your capabilities. Master it, and you'll ace every behavioral interview.*
+---
+
+
+## Summary
+
+The STAR method transforms vague anecdotes into compelling evidence of your capabilities. This guide covers the four components (Situation, Task, Action, Result), story bank strategies, technical templates, and common mistakes to avoid.
+
+## References & Learn More
+
+- [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
+- [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
+- [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)

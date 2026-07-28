@@ -1,18 +1,29 @@
+---
+section: SDE Role
+category: Interview
+tags: [study-plan]
+---
+
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Study%20Plan-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Goal:** Solve 360+ problems, master all patterns, nail system design, and ace behavioral rounds.
-> 
+>
 > **Daily Commitment:** 4-6 hours/day, 6 days/week (rest on Sunday)
-> 
+>
 > **Total:** ~400-500 hours over 12 weeks
-> 
+>
 > **Schedule:** Morning (Coding) → Afternoon (DSA/Patterns) → Evening (System Design + Behavioral)
 
 ---
 
 ## ⏰ Daily Time Block Template
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────────────┐
 │  MORNING SESSION (2-3 hours) — Problem Solving                 │
 │  ├── 08:00 - 08:30  Review yesterday's problems (30 min)      │
@@ -31,6 +42,7 @@
 │  ├── 18:00 - 18:45  System Design study (alternating days)    │
 │  └── 18:45 - 19:30  Behavioral prep / mock questions          │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -59,7 +71,7 @@
 ## 📆 Week 1: Arrays & Strings (32 Problems)
 
 > **Focus:** Master fundamental array manipulation and string operations
-> 
+>
 > **Pattern Recognition:** Linear scan, in-place modification, prefix sums
 
 ### Daily Schedule
@@ -134,7 +146,7 @@
 ## 📆 Week 2: Two Pointers & Sliding Window (30 Problems)
 
 > **Focus:** Pattern recognition for pointer-based problems
-> 
+>
 > **Pattern Recognition:** Opposite direction pointers, same direction pointers, variable-size window
 
 ### Daily Schedule
@@ -207,7 +219,7 @@
 ## 📆 Week 3: Hash Maps & Sets (30 Problems)
 
 > **Focus:** Frequency counting, grouping, and lookup optimization
-> 
+>
 > **Pattern Recognition:** Frequency map, grouping, two-sum variants
 
 ### Daily Schedule
@@ -280,7 +292,7 @@
 ## 📆 Week 4: Binary Search (30 Problems)
 
 > **Focus:** Classic binary search and "search on answer" pattern
-> 
+>
 > **Pattern Recognition:** Exact match, boundary search, predicate function
 
 ### Daily Schedule
@@ -500,7 +512,8 @@
 
 ## 🎯 Daily Routine (4-6 Hours)
 
-```
+```text
+
 ┌────────────────────────────────────────────────────────────┐
 │  08:00 - 12:00  Morning Session (Problem Solving)         │
 │  ├── Review yesterday's problems (30 min)                 │
@@ -520,11 +533,13 @@
 │  ├── System Design study (alternating days) (45 min)      │
 │  └── Behavioral prep / mock questions (45 min)            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ## 📝 Problem Journal Template
 
 For each problem, record:
+
 ```markdown
 ## [Problem Name](link)
 - **Pattern:** [Pattern name]
@@ -534,6 +549,7 @@ For each problem, record:
 - **Mistakes:** [What to avoid next time]
 - **Related:** [Similar problems]
 - **Status:** [Solved / Review Needed / Mastered]
+
 ```
 
 ---
@@ -546,7 +562,7 @@ For each problem, record:
 ## Problems Solved
 - Total: XX
 - Easy: XX
-- Medium: XX  
+- Medium: XX
 - Hard: XX
 
 ## Time Spent
@@ -567,6 +583,7 @@ For each problem, record:
 ## Next Week Focus
 - [ ] [Goal 1]
 - [ ] [Goal 2]
+
 ```
 
 ---
@@ -601,3 +618,25 @@ For each problem, record:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide provides a structured LeetCode study plan organized by topic and difficulty, with recommended problem sets for arrays, strings, trees, graphs, dynamic programming, and system design practice to build interview confidence.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

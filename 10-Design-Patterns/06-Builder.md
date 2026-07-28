@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Builder Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -999,124 +1009,12 @@ class ServerBuilder implements Builder<ServerConfig> { ... }
 
 5. **Validation**: Validate in build method to catch errors early.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Builder pattern?**
-
-   - A creational pattern that separates object construction from representation.
-
-2. **When would you use Builder pattern?**
-
-   - When you have many optional parameters or complex construction steps.
-
-3. **What's the difference between Builder and Factory?**
-
-   - Builder creates objects step by step; Factory creates objects in one step.
-
-4. **How do you implement Builder in TypeScript?**
-
-   - Create a builder class with fluent interface and a build method.
-
-5. **What are the benefits of Builder pattern?**
-
-   - Readability, flexibility, immutability, and testability.
-
-### Intermediate
-
-6. **What's the difference between Builder and Prototype?**
-
-   - Builder creates new objects; Prototype clones existing objects.
-
-7. **How do you handle validation in Builder?**
-
-   - Validate in the build method and throw descriptive errors.
-
-8. **Can Builder be used with immutable objects?**
-
-   - Yes, Builder is ideal for creating immutable objects with many fields.
-
-9. **How do you test Builder pattern?**
-
-   - Test each method independently and verify the build output.
-
-10. **What's the relationship between Builder and Fluent Interface?**
-
-    - Builder often uses Fluent Interface for method chaining.
-
-### Senior
-
-11. **How does Builder pattern affect scalability?**
-
-    - Builders are lightweight; the built objects can be optimized.
-
-12. **What are the SOLID violations with Builder?**
-
-    - Usually follows SOLID; watch for builders violating Single Responsibility.
-
-13. **How do you handle Builder in microservices?**
-
-    - Builders can be shared across services; keep them focused.
-
-14. **What are the memory implications of Builder?**
-
-    - Builders are temporary; the built object persists.
-
-15. **How do you refactor Builder code?**
-
-    - Extract common logic, use generics, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Builder for a complex API request.**
-
-    - Consider validation, serialization, and error handling.
-
-17. **How would you implement Builder for distributed systems?**
-
-    - Consider serialization, versioning, and backward compatibility.
-
-18. **What are the implications of Builder in cloud-native applications?**
-
-    - Consider configuration, feature flags, and dynamic configuration.
-
-19. **How do you handle Builder in event-driven architectures?**
-
-    - Use builders for event construction and validation.
-
-20. **Design a Builder that supports validation.**
-
-    - Consider field-level and cross-field validation.
-
-### Follow-ups
-
-21. **Can Builder pattern be combined with other patterns?**
-
-    - Yes, commonly with Factory, Singleton, and Fluent Interface patterns.
-
-22. **How do you handle Builder in testing frameworks?**
-
-    - Create test builders with sensible defaults.
-
-23. **What are the memory implications of Builder pattern?**
-
-    - Builders are temporary; the built object consumes memory.
-
-24. **How do you handle Builder in serverless environments?**
-
-    - Consider cold starts, stateless design, and configuration.
-
-25. **What's the impact of Builder on code maintainability?**
-
-    - Improves maintainability by making object creation readable and flexible.
 
 ## Summary
 
 The Builder pattern is essential for creating complex objects with many optional parameters. It improves readability, flexibility, and testability. Use it when you need step-by-step construction, immutable objects, or many configuration options.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           BUILDER PATTERN                   │
@@ -1152,6 +1050,14 @@ The Builder pattern is essential for creating complex objects with many optional
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

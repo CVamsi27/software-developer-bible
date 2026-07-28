@@ -1,4 +1,14 @@
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
+
 # Backend Cheat Sheet
+
+[![Section](https://img.shields.io/badge/section-CheatSheets-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Quick Reference Table
 
@@ -80,7 +90,7 @@
 
 ### NestJS CRUD Controller
 
-```ts
+```typescript
 @Controller('users')
 @UseGuards(AuthGuard)
 export class UserController {
@@ -186,7 +196,7 @@ model Tag {
 
 ### JWT Auth Flow
 
-```ts
+```typescript
 // Token generation
 async generateTokens(user: User) {
   const payload = { sub: user.id, email: user.email };
@@ -235,7 +245,7 @@ async refresh(refreshToken: string) {
 
 ### Rate Limiting (NestJS)
 
-```ts
+```typescript
 // throttler.module.ts
 @Module({
   imports: [
@@ -259,7 +269,7 @@ export const UserThrottle = (ttl: number, limit: number) =>
 
 ### Input Validation (DTOs)
 
-```ts
+```typescript
 // create-user.dto.ts
 export class CreateUserDto {
   @IsEmail()
@@ -295,7 +305,7 @@ app.useGlobalPipes(new ValidationPipe({
 
 ### Health Check
 
-```ts
+```typescript
 // health.controller.ts
 @Controller('health')
 export class HealthController {
@@ -318,7 +328,7 @@ export class HealthController {
 
 ### Structured Logging
 
-```ts
+```typescript
 // logger.service.ts
 @Injectable()
 export class AppLogger implements LoggerService {
@@ -345,7 +355,7 @@ export class AppLogger implements LoggerService {
 
 ### Database Transaction (Prisma)
 
-```ts
+```typescript
 // Interactive transaction
 async transfer(fromId: string, toId: string, amount: number) {
   return this.prisma.$transaction(async (tx) => {
@@ -416,6 +426,19 @@ async transfer(fromId: string, toId: string, amount: number) {
 - **Monitoring**: Health checks (`/health`), structured JSON logging, request ID correlation, EXPLAIN ANALYZE for queries, circuit breakers for external services.
 
 ---
+
+---
+
+
+## Summary
+
+This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

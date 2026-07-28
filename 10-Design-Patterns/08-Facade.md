@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Facade Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -973,124 +983,12 @@ class DatabaseFacade {
 
 5. **Lazy Initialization**: Initialize subsystems only when needed.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Facade pattern?**
-
-   - A structural pattern that provides a simplified interface to a complex subsystem.
-
-2. **When would you use Facade pattern?**
-
-   - When you need to simplify a complex system or provide a unified interface.
-
-3. **What's the difference between Facade and Adapter?**
-
-   - Facade simplifies interface; Adapter makes incompatible interfaces compatible.
-
-4. **How do you implement Facade in TypeScript?**
-
-   - Create a facade class that delegates to subsystem classes.
-
-5. **What are the benefits of Facade pattern?**
-
-   - Simplified interface, loose coupling, and improved readability.
-
-### Intermediate
-
-6. **Can Facade add functionality?**
-
-   - Yes, but keep it focused on coordination, not business logic.
-
-7. **How do you test Facade pattern?**
-
-   - Mock subsystems, test facade's delegation logic.
-
-8. **What's the relationship between Facade and Mediator?**
-
-   - Facade simplifies; Mediator centralizes communication between objects.
-
-9. **How do you handle Facade versioning?**
-
-   - Use API versioning, backward compatibility, and deprecation warnings.
-
-10. **Can Facade be used with microservices?**
-
-    - Yes, as an API gateway or service facade.
-
-### Senior
-
-11. **How does Facade pattern affect scalability?**
-
-    - Facades are lightweight; subsystems can be scaled independently.
-
-12. **What are the SOLID violations with Facade?**
-
-    - Usually follows SOLID; watch for facade violating Single Responsibility.
-
-13. **How do you handle Facade in distributed systems?**
-
-    - Use API gateways, service meshes, or backend for frontends.
-
-14. **What are the memory implications of Facade?**
-
-    - Facades are usually stateless; subsystems consume memory.
-
-15. **How do you refactor Facade code?**
-
-    - Extract common logic, use composition, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Facade for a microservices architecture.**
-
-    - Consider API gateway, service discovery, and load balancing.
-
-17. **How would you implement Facade for distributed systems?**
-
-    - Consider network transparency, fault tolerance, and caching.
-
-18. **What are the implications of Facade in cloud-native applications?**
-
-    - Consider serverless facades, API gateways, and edge computing.
-
-19. **How do you handle Facade in event-driven architectures?**
-
-    - Use event facades, message brokers, and async operations.
-
-20. **Design a Facade that supports multiple clients.**
-
-    - Consider client-specific facades, API versioning, and authentication.
-
-### Follow-ups
-
-21. **Can Facade pattern be combined with other patterns?**
-
-    - Yes, commonly with Adapter, Mediator, and Proxy patterns.
-
-22. **How do you handle Facade in testing frameworks?**
-
-    - Use dependency injection, create test facades, and mock subsystems.
-
-23. **What are the memory implications of Facade pattern?**
-
-    - Facades are usually lightweight; subsystems consume memory.
-
-24. **How do you handle Facade in serverless environments?**
-
-    - Consider stateless facades, API gateways, and function composition.
-
-25. **What's the impact of Facade on code maintainability?**
-
-    - Improves maintainability by simplifying complex systems.
 
 ## Summary
 
 The Facade pattern is essential for simplifying complex systems and providing unified interfaces. It improves readability, reduces coupling, and makes systems easier to use. Use it to hide subsystem complexity, layer your system, or provide simplified APIs.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           FACADE PATTERN                    │
@@ -1126,6 +1024,14 @@ The Facade pattern is essential for simplifying complex systems and providing un
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

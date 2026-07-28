@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Payment Gateway System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -1055,85 +1065,6 @@ alerts:
 | Webhooks | Synchronous | Async with retry | Async with retry |
 | Reconciliation | Real-time | Batch | Batch (daily) |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you ensure payment idempotency?**
-
-   - Unique idempotency key per request
-   - Redis for fast lookup with TTL
-   - Database as source of truth
-   - Atomic operations to prevent race conditions
-
-2. **How do you handle payment failures?**
-
-   - Retry with exponential backoff
-   - Circuit breaker for processor failures
-   - Graceful degradation with fallback processors
-   - Clear error messages to merchants
-
-3. **How would you implement fraud detection?**
-
-   - Rule-based checks (velocity, amount limits)
-   - Machine learning models
-   - Real-time scoring
-   - Manual review queue for suspicious transactions
-
-### Scaling Questions
-
-4. **How do you scale to 100K transactions per second?**
-
-   - Horizontal scaling of payment service
-   - Database sharding by merchant
-   - Redis for hot data
-   - Kafka for async processing
-
-5. **How do you handle global payments?**
-
-   - Regional deployment
-   - Local payment method support
-   - Currency conversion
-   - Compliance with local regulations
-
-### Trade-off Questions
-
-6. **How do you balance speed vs security?**
-
-   - Fast path for low-risk transactions
-   - Enhanced verification for high-risk
-   - Asynchronous fraud checks
-   - Customer-initiated verification
-
-7. **How do you handle chargebacks?**
-
-   - Automated evidence collection
-   - Merchant notification
-   - Dispute resolution workflow
-   - Financial impact tracking
-
-### Senior-level Questions
-
-8. **How would you implement PCI compliance?**
-
-   - Tokenization of card data
-   - Encrypted storage
-   - Access controls
-   - Audit logging
-
-9. **How do you ensure data durability?**
-
-   - Write-ahead logging
-   - Replication across regions
-   - Regular backups
-   - Point-in-time recovery
-
-10. **How would you implement multi-currency support?**
-
-    - Real-time exchange rates
-    - Settlement in merchant's currency
-    - Cross-border fee handling
-    - Currency conversion at settlement
 
 ## Summary
 
@@ -1160,6 +1091,14 @@ Key takeaways:
 This design supports 100K+ transactions per second with 99.999% availability and full PCI compliance.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

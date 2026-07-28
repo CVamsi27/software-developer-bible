@@ -1,4 +1,14 @@
+---
+section: Accessibility
+category: Quality
+tags: [concept]
+---
+
 # ARIA (Accessible Rich Internet Applications)
+
+[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 ARIA (Accessible Rich Internet Applications) is a set of attributes that define ways to make web content and web applications more accessible to people with disabilities. It provides additional semantics for dynamic content and complex UI components.
@@ -354,153 +364,16 @@ ARIA has three main categories: Roles, States, and Properties:
 - **Dynamic updates**: Frequent updates can be overwhelming
 - **Caching**: Screen readers cache page structure
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is ARIA?**
-
-   - Accessible Rich Internet Applications, attributes for accessibility.
-
-2. **What are the three types of ARIA?**
-
-   - Roles, States, and Properties.
-
-3. **When should you use ARIA?**
-
-   - When native HTML semantics are insufficient for complex widgets.
-
-4. **What is `aria-label`?**
-
-   - Provides accessible name for element without visible text.
-
-5. **What is `aria-describedby`?**
-
-   - Associates element with description for additional context.
-
-6. **What is a live region?**
-
-   - Area that updates dynamically, announced to screen readers.
-
-7. **What is the difference between `aria-hidden` and `hidden`?**
-
-   - aria-hidden hides from screen readers only, hidden hides from all.
-
-8. **What is `role="button"`?**
-
-   - Defines element as interactive button for screen readers.
-
-### Intermediate (5-10)
-
-9. **When should you NOT use ARIA?**
-
-   - When native HTML provides same semantics (use button, not role="button").
-
-10. **What is `aria-expanded`?**
-
-    - Indicates whether collapsible section is expanded or collapsed.
-
-11. **How do you make a custom dropdown accessible?**
-
-    - role="listbox", aria-expanded, aria-activedescendant, keyboard navigation.
-
-12. **What is `aria-live` and its values?**
-
-    - Indicates live region, values: polite, assertive, off.
-
-13. **How do you handle focus in modals?**
-
-    - Trap focus, return focus on close, aria-modal="true".
-
-14. **What is `aria-controls`?**
-
-    - Associates element with controlled element (like dropdown menu).
-
-15. **How do you make drag-and-drop accessible?**
-
-    - Provide keyboard alternative, aria-grabbed, aria-dropeffect.
-
-16. **What is `aria-activedescendant`?**
-
-    - Manages focus in composite widgets without moving DOM focus.
-
-### Senior (10-15)
-17. **How do you implement ARIA in a design system?**
-
-    - Component guidelines, documentation, testing, examples.
-
-18. **What are the WAI-ARIA Authoring Practices?**
-
-    - Patterns for common widgets with ARIA examples and keyboard interaction.
-
-19. **How do you test ARIA implementation?**
-
-    - Screen readers, axe-core, manual testing, automated tools.
-
-20. **What is the difference between `aria-label` and `aria-labelledby`?**
-
-    - label provides text,-labelledby references visible text.
-
-21. **How do you handle ARIA in SPAs?**
-
-    - Live regions for route changes, focus management, dynamic content.
-
-22. **What is `role="presentation"`?**
-
-    - Removes semantic meaning from element (for layout tables).
-
-23. **How do you make charts accessible with ARIA?**
-
-    - Text alternatives, keyboard navigation, data tables as alternative.
-
-24. **What is `aria-busy`?**
-
-    - Indicates element is being updated, screen readers should wait.
-
-### FAANG-style (5-10)
-25. **Design an ARIA testing strategy for a complex application.**
-
-    - Automated testing, manual audits, screen reader testing, user feedback.
-
-26. **How would you make a rich text editor accessible?**
-
-    - ARIA properties, keyboard shortcuts, role="textbox", aria-multiline.
-
-27. **What are the challenges of ARIA in micro-frontends?**
-
-    - Consistent patterns, shared components, focus management across boundaries.
-
-28. **How do you prioritize ARIA implementation?**
-
-    - User impact, legal requirements, effort, frequency of use.
-
-29. **Design an accessible data table component.**
-
-    - role="grid", aria-sort, aria-selected, keyboard navigation.
-
-### Follow-ups (5-10)
-30. **How does ARIA affect SEO?**
-
-    - Minimal direct impact, but better semantics can help.
-
-31. **What is the future of ARIA?**
-
-    - Better browser support, more native semantics, tooling improvements.
-
-32. **How do you handle ARIA with framework components?**
-
-    - Framework-specific patterns, component libraries, documentation.
-
-33. **What are common ARIA mistakes in React/Vue?**
-
-    - Missing state updates, wrong role usage, overcomplicating.
-
-34. **How do you train developers on ARIA?**
-
-    - Workshops, documentation, code reviews, testing exercises.
 
 ## Summary
 ARIA enhances accessibility for complex web applications. Use it when native HTML is insufficient, follow established patterns, and test with screen readers. Remember: first rule of ARIA is don't use ARIA if you can use native HTML.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Testing](../16-Testing/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

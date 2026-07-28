@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Performance & Security
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -893,94 +903,6 @@ Cache Layers:
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is query complexity analysis?**
-   A technique to calculate the "cost" of a GraphQL query based on field complexity scores. Prevents expensive queries from exhausting resources.
-
-2. **What is depth limiting?**
-   Restricting how deeply nested a query can be. Prevents queries like `user { posts { comments { author { ... } } } }`.
-
-3. **What is rate limiting?**
-   Restricting the number of requests a client can make in a given time period. Prevents abuse and DoS attacks.
-
-4. **What is CORS?**
-   Cross-Origin Resource Sharing. A mechanism that allows or restricts resources to be requested from another domain.
-
-5. **Why disable introspection in production?**
-   Introspection exposes the entire schema, allowing attackers to discover vulnerabilities and craft malicious queries.
-
-### Intermediate
-
-6. **How do you implement authentication in GraphQL?**
-   Use context to verify tokens, set `currentUser`, and check in resolvers. Use directives for declarative auth.
-
-7. **What is the difference between authentication and authorization?**
-   Authentication: verifying identity. Authorization: verifying permissions. GraphQL needs both.
-
-8. **How do you handle rate limiting for GraphQL?**
-   HTTP-level (per request), query-level (per operation), and complexity-based (per query cost).
-
-9. **What are persisted queries?**
-   Pre-registered query hashes that allow clients to send only the hash instead of the full query. Improves security and performance.
-
-10. **How do you implement field-level authorization?**
-    Check permissions in resolvers, use directives, or implement middleware for declarative authorization.
-
-### Senior
-
-11. **Design a security architecture for a public GraphQL API.**
-    Multiple layers: HTTP security, query validation, authentication, authorization, input validation, and monitoring.
-
-12. **How would you handle a DDoS attack on a GraphQL API?**
-    Rate limiting, query complexity limits, WAF rules, CDN caching, and auto-scaling.
-
-13. **Explain your approach to GraphQL security auditing.**
-    Schema review, dependency scanning, penetration testing, access control verification, and monitoring.
-
-14. **How do you secure GraphQL in a microservices architecture?**
-    Gateway authentication, service-to-service auth, token propagation, and centralized policy enforcement.
-
-15. **Design a monitoring system for GraphQL performance.**
-    Distributed tracing, metrics collection, alerting, dashboards, and anomaly detection.
-
-### FAANG-style
-
-16. **Design a rate limiting system for a multi-tenant GraphQL API.**
-    Tenant-based quotas, query complexity limits, adaptive throttling, and usage analytics.
-
-17. **How would you implement query whitelisting for a mobile app?**
-    Persisted queries, client registration, version control, and fallback mechanisms.
-
-18. **Explain your approach to GraphQL security in a regulated industry.**
-    Compliance requirements, audit logging, data encryption, access controls, and regular assessments.
-
-19. **How do you prevent information leakage in GraphQL errors?**
-    Sanitize error messages, use error codes, log detailed errors server-side, and return generic messages to clients.
-
-20. **Design a real-time monitoring system for GraphQL performance.**
-    Streaming metrics, anomaly detection, automated alerting, and correlation with business metrics.
-
-### Follow-ups
-
-21. **What happens when a query exceeds complexity limits?**
-    Server returns an error with `QUERY_TOO_COMPLEX` code. Client should retry with simpler query.
-
-22. **How do you handle CORS preflight requests?**
-    Configure `Access-Control-Allow-Origin`, `Methods`, and `Headers`. Use `maxAge` to cache preflight responses.
-
-23. **What is the difference between JWT and session authentication?**
-    JWT: stateless, token-based, scalable. Session: server-side storage, more secure, requires sticky sessions.
-
-24. **How do you implement query batching?**
-    Use `BatchHttpLink` on client, configure server to accept batches, and handle partial failures.
-
-25. **What are the trade-offs of persisted queries?**
-    Pros: better security, smaller payloads, caching. Cons: deployment complexity, versioning challenges.
-
----
 
 ## Summary
 
@@ -997,6 +919,13 @@ Cache Layers:
 | **Monitoring** | Track metrics and alert on issues |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

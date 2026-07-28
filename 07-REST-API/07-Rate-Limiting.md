@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # Rate Limiting
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -798,90 +808,26 @@ res.status(429).json({
 - **Connection pooling** - Reuse Redis connections
 - **Async processing** - Don't block on rate limit checks
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is rate limiting?** - Controlling the number of requests a client can make within a time period.
-
-2. **Why do we need rate limiting?** - Prevent abuse, ensure fair usage, protect server resources.
-
-3. **What HTTP status code indicates rate limiting?** - 429 Too Many Requests.
-
-4. **What headers are used for rate limiting?** - X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After.
-
-5. **What is the difference between rate limiting and throttling?** - Rate limiting: hard cap; Throttling: slows down requests.
-
-### Intermediate (5)
-
-6. **Explain token bucket algorithm** - Tokens added at fixed rate, requests consume tokens, allows bursts.
-
-7. **What is the sliding window algorithm?** - Counts requests in a moving time window, more accurate than fixed window.
-
-8. **How do you implement distributed rate limiting?** - Use Redis or similar distributed store for consistent counting.
-
-9. **How do you rate limit authenticated vs unauthenticated users?** - Different limits based on user ID or API key.
-
-10. **What is the Retry-After header?** - Tells client how many seconds to wait before retrying.
-
-### Senior (10)
-
-11. **Design a rate limiting system for a global API** - Regional rate limits, consistent counting across regions.
-
-12. **How do you handle rate limiting in microservices?** - Centralized rate limiter or distributed with eventual consistency.
-
-13. **Design rate limiting with multiple dimensions** - Per user, per endpoint, per IP, per API key.
-
-14. **How do you test rate limiting?** - Load testing, verifying 429 responses, checking header accuracy.
-
-15. **Design adaptive rate limiting** - Adjust limits based on server load, time of day, user behavior.
-
-16. **How do you handle rate limiting for webhooks?** - Separate limits, retry queues, exponential backoff.
-
-17. **Design rate limiting for batch operations** - Cost-based limiting, request weighting.
-
-18. **How do you handle rate limiting during incidents?** - Graceful degradation, priority queues, emergency limits.
-
-19. **Design rate limiting analytics** - Track usage patterns, detect abuse, capacity planning.
-
-20. **How do you communicate rate limits to clients?** - Documentation, headers, error responses, developer portal.
-
-### FAANG-style (5)
-
-21. **Design a globally distributed rate limiting system** - Consistent hashing, regional counters, conflict resolution.
-
-22. **Design rate limiting for a multi-tenant SaaS** - Tenant isolation, fair usage, burst handling.
-
-23. **How would you implement rate limiting for GraphQL?** - Query complexity analysis, depth limiting, field-level limits.
-
-24. **Design rate limiting with ML-based detection** - Anomaly detection, adaptive thresholds, abuse patterns.
-
-25. **Design a rate limiting system that scales to millions of users** - Approximate algorithms, probabilistic data structures.
-
-### Follow-ups (5)
-
-26. **What are the tradeoffs between different algorithms?** - Fixed window: simple but bursty; Sliding window: accurate but complex.
-
-27. **How do you handle rate limiting for long-running requests?** - Separate limits, timeout handling, progress callbacks.
-
-28. **What is the impact of rate limiting on user experience?** - Frustration, lost revenue, but necessary for stability.
-
-29. **How do you handle rate limiting for different HTTP methods?** - Separate limits for GET, POST, PUT, DELETE.
-
-30. **How do you handle rate limiting in serverless architectures?** - Distributed state, cold start considerations, provider limits.
 
 ## Summary
 
 Rate limiting is essential for API protection and fair usage. Token bucket is the most flexible algorithm, allowing bursts while maintaining average rates. Always include rate limit headers and Retry-After on 429 responses. Use distributed storage for multi-server setups and consider tiered limits for different user plans.
 
 ## Cheat Sheet
-
 | Algorithm | Burst Handling | Accuracy | Complexity |
 |-----------|---------------|----------|------------|
 | Fixed Window | Poor | Medium | Low |
 | Sliding Window | Good | High | Medium |
 | Token Bucket | Excellent | High | Medium |
 | Leaky Bucket | Poor | High | High |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

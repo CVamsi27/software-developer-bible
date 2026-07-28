@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Two Pointers
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -342,7 +352,6 @@ console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 Two pointers is a fundamental pattern that reduces time complexity by avoiding nested loops. It's most effective when the input is sorted or when comparing elements from different positions.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Two Pointers
 Use when: Sorted arrays, pairs, cycles, comparisons
@@ -371,6 +380,13 @@ Key insight: If sum too small, move left pointer right
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

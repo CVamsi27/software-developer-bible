@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Observer Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -880,124 +890,12 @@ class ConcreteObserver implements Observer {
 
 5. **Priority Ordering**: If observers have priorities, use a priority queue.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Observer pattern?**
-
-   - A behavioral pattern that defines a one-to-many dependency between objects.
-
-2. **When would you use Observer pattern?**
-
-   - For event handling, UI updates, notifications, and reactive programming.
-
-3. **What's the difference between Observer and Pub/Sub?**
-
-   - Observer is direct notification; Pub/Sub uses a message broker for decoupling.
-
-4. **How do you prevent memory leaks in Observer?**
-
-   - Always provide a detach method and clean up observers when done.
-
-5. **What are the benefits of Observer pattern?**
-
-   - Loose coupling, automatic notifications, and dynamic relationships.
-
-### Intermediate
-
-6. **How do you handle observer errors?**
-
-   - Use try-catch in notification, log errors, and continue notifying other observers.
-
-7. **Can observers be notified asynchronously?**
-
-   - Yes, use Promise.all or event loop for async notification.
-
-8. **How do you test Observer pattern?**
-
-   - Mock observers, verify notification calls, test attach/detach operations.
-
-9. **What's the relationship between Observer and Strategy?**
-
-   - Observer notifies; Strategy defines algorithms; they can be combined.
-
-10. **How do you handle circular dependencies?**
-
-    - Use event queues, break cycles, or redesign the relationship.
-
-### Senior
-
-11. **How does Observer pattern affect scalability?**
-
-    - Can become a bottleneck with many observers; consider batching or async.
-
-12. **What are the SOLID violations with Observer?**
-
-    - Usually follows SOLID; watch for subject violating Single Responsibility.
-
-13. **How do you handle Observer in microservices?**
-
-    - Use message brokers, event buses, or distributed pub/sub systems.
-
-14. **What are the memory implications of Observer?**
-
-    - Observers persist as long as they're attached; use WeakRef for cleanup.
-
-15. **How do you refactor Observer code?**
-
-    - Extract common logic, use generics, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design an Observer for a real-time chat system.**
-
-    - Consider scalability, message ordering, and offline users.
-
-17. **How would you implement Observer for distributed systems?**
-
-    - Use message brokers, event sourcing, and eventual consistency.
-
-18. **What are the implications of Observer in cloud-native applications?**
-
-    - Consider serverless functions, event-driven architecture, and scaling.
-
-19. **How do you handle Observer in event-driven architectures?**
-
-    - Use event buses, message queues, and CQRS patterns.
-
-20. **Design an Observer that supports backpressure.**
-
-    - Consider buffering, rate limiting, and flow control.
-
-### Follow-ups
-
-21. **Can Observer pattern be combined with other patterns?**
-
-    - Yes, commonly with Mediator, Command, and Memento patterns.
-
-22. **How do you handle Observer in testing frameworks?**
-
-    - Use dependency injection, create test observers, and mock implementations.
-
-23. **What are the memory implications of Observer pattern?**
-
-    - Observers persist as long as attached; use WeakRef for automatic cleanup.
-
-24. **How do you handle Observer in serverless environments?**
-
-    - Consider stateless design, event-driven triggers, and cold starts.
-
-25. **What's the impact of Observer on code maintainability?**
-
-    - Improves maintainability by decoupling subjects and observers.
 
 ## Summary
 
 The Observer pattern is essential for event-driven programming and reactive systems. It provides loose coupling between subjects and observers, automatic notifications, and dynamic relationships. Use it for UI updates, event handling, notifications, and real-time data synchronization.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           OBSERVER PATTERN                  │
@@ -1033,6 +931,14 @@ The Observer pattern is essential for event-driven programming and reactive syst
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

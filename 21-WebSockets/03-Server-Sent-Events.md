@@ -1,4 +1,14 @@
+---
+section: WebSockets
+category: Real-Time
+tags: [concept]
+---
+
 # Server-Sent Events (SSE)
+
+[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -975,198 +985,6 @@ SSE provides good latency for server-push use cases
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What are Server-Sent Events (SSE)?**
-
-   - Standard for server-to-client streaming over HTTP
-   - Uses EventSource API on client
-   - Provides automatic reconnection
-   - Unidirectional (server → client)
-
-2. **How does SSE differ from WebSockets?**
-
-   - SSE is unidirectional; WebSockets are bidirectional
-   - SSE uses HTTP; WebSockets use separate protocol
-   - SSE has automatic reconnection; WebSockets require manual
-   - SSE is simpler to implement
-
-3. **What is the EventSource API?**
-
-   - Browser API for receiving SSE
-   - Handles connection management
-   - Provides automatic reconnection
-   - Supports event types and IDs
-
-4. **When should you use SSE vs WebSockets?**
-
-   - SSE: Server push, notifications, live feeds
-   - WebSockets: Chat, gaming, collaboration
-   - SSE: When bidirectional not needed
-   - WebSockets: When low latency critical
-
-5. **How do SSE handle reconnection?**
-
-   - Automatic reconnection on disconnect
-   - Uses last-event-id header
-   - Server can set retry interval
-   - Client tracks received events
-
-### Intermediate (5-8)
-
-6. **How do you implement SSE with authentication?**
-
-   - Pass token in query string or header
-   - Validate token on connection
-   - Associate client with user
-   - Clean up on disconnect
-
-7. **How do you handle multiple event types in SSE?**
-
-   - Use event field in message
-   - Listen for specific events on client
-   - Default to 'message' event if not specified
-   - Type events for better organization
-
-8. **How do you scale SSE across multiple servers?**
-
-   - Use Redis for pub/sub
-   - Implement sticky sessions
-   - Share client state
-   - Load balance connections
-
-9. **How do you handle large payloads in SSE?**
-
-   - Implement pagination
-   - Use compression
-   - Send data in chunks
-   - Monitor bandwidth usage
-
-10. **How do you test SSE implementations?**
-
-    - Unit test event formatting
-    - Integration test connection handling
-    - Load test with multiple clients
-    - Test reconnection behavior
-
-### Senior (8-12)
-
-11. **Design a real-time notification system with SSE**
-
-    - User subscription management
-    - Event routing and filtering
-    - Persistence for offline users
-    - Delivery guarantees
-    - Analytics and monitoring
-
-12. **How do you handle SSE in microservices?**
-
-    - API gateway for connection management
-    - Event bus for cross-service communication
-    - Centralized subscription service
-    - Service discovery for scaling
-
-13. **How do you implement SSE with message queues?**
-
-    - Queue messages for reliability
-    - Fan-out to multiple subscribers
-    - Handle queue backpressure
-    - Dead letter queues for failed messages
-
-14. **How do you monitor SSE connections in production?**
-
-    - Track connection counts
-    - Monitor message rates
-    - Alert on error rates
-    - Dashboard for real-time visibility
-
-15. **How do you handle SSE during deployments?**
-
-    - Graceful connection draining
-    - Version negotiation
-    - Session migration
-    - Rollback strategies
-
-### FAANG-style (5-8)
-
-16. **Design a live feed system (Twitter-like)**
-
-    - Real-time updates for followed users
-    - Timeline generation and caching
-    - Fan-out on write vs fan-out on read
-    - Media handling and CDN integration
-    - Rate limiting and abuse prevention
-
-17. **Design a live sports score system**
-
-    - Real-time score updates
-    - Game state management
-    - Historical data and playback
-    - Push notifications for score changes
-    - Analytics and statistics
-
-18. **Design a live collaboration tool**
-
-    - Real-time cursor tracking
-    - Operation transformation
-    - Conflict resolution
-    - Version history
-    - Offline support
-
-19. **Design a live auction platform**
-
-    - Real-time bidding
-    - Timer management
-    - Bid validation and fraud detection
-    - Winner notification
-    - Payment integration
-
-20. **Design a live monitoring dashboard**
-
-    - Real-time metrics streaming
-    - Data aggregation and filtering
-    - Alert management
-    - Historical data viewing
-    - Export and sharing
-
-### Follow-ups (5-8)
-
-21. **How do you handle SSE in load-balanced environments?**
-
-    - Sticky sessions
-    - Redis for state sharing
-    - Consistent hashing
-    - Health checks
-
-22. **How do you secure SSE endpoints?**
-
-    - HTTPS only
-    - Token validation
-    - Rate limiting
-    - Input validation
-
-23. **How do you handle SSE with CDNs?**
-
-    - Cache-Control headers
-    - Streaming support
-    - Edge computing
-    - Origin shielding
-
-24. **How do you debug SSE issues?**
-
-    - Browser dev tools
-    - Server logs
-    - Network monitoring
-    - Client state inspection
-
-25. **What are SSE alternatives?**
-
-    - WebSockets
-    - HTTP/2 Server Push
-    - gRPC streaming
-    - MQTT
 
 ## Summary
 
@@ -1185,6 +1003,13 @@ Key considerations:
 - Handle client disconnects gracefully
 - Scale with Redis pub/sub
 - Monitor connection metrics
+
+---
+
+## See Also
+- [System Design](../11-System-Design/)
+- [NestJS](../06-NestJS/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

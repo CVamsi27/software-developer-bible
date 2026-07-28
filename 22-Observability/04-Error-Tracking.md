@@ -1,4 +1,14 @@
+---
+section: Observability
+category: DevOps
+tags: [concept]
+---
+
 # Error Tracking
+
+[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -535,121 +545,17 @@ Sentry.addBreadcrumb({
 - **Before send filtering** — filter client-side to reduce network calls to Sentry
 - **Queue buffering** — SDK buffers events before sending; flush on process exit
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the difference between error tracking and logging?**
-
-   - Logging records all events (info, warn, error). Error tracking specifically captures, groups, and manages exceptions with context, deduplication, and workflow features.
-
-2. **What is a source map and why do you need it with error tracking?**
-
-   - Source maps translate minified production code back to original source. Without them, stack traces in error tracking show unreadable minified code.
-
-3. **What are breadcrumbs in error tracking?**
-
-   - A chronological trail of user actions and system events leading up to an error. They help reproduce the conditions that caused the error.
-
-4. **What is error fingerprinting?**
-
-   - Generating a unique hash from the error type, message, and stack trace to group identical errors into single issues, even when triggered by different users.
-
-5. **Why should you upload source maps in CI/CD?**
-
-   - To ensure every production deployment has accurate stack traces. Manual uploads are error-prone and get forgotten.
-
-### Intermediate
-
-6. **How does Sentry group errors?**
-
-   - By exception type + message + stack trace (filename + line). Same code path throwing the same error = same issue. Custom fingerprints can override grouping.
-
-7. **What is the difference between `beforeSend` and `ignoreErrors`?**
-
-   - `ignoreErrors` drops events matching patterns before they're processed. `beforeSend` gives you full event access to filter, modify, or drop events programmatically.
-
-8. **How do you handle errors in async/await code with Sentry?**
-
-   - Wrap async operations in try/catch. Use `Sentry.withScope()` to attach context. Ensure the Sentry Express error handler is after all routes.
-
-9. **What is error regression and how do you detect it?**
-
-   - When a previously resolved error re-appears. Sentry marks it as "Regressed" and re-opens the issue. Requires marking issues as resolved (manually or automatically).
-
-10. **How do you set up alerts for new errors without alerting on all errors?**
-
-    - Configure Sentry alerts for "New Issue" events only. Set up separate alerts for "Regression" events. Use issue states (unresolved/resolved) to filter.
-
-### Senior
-
-11. **Design an error tracking strategy for a monorepo with 10 services.**
-
-    - One Sentry organization, separate projects per service. Shared SDK configuration. Source maps uploaded per service in CI. Unified Slack channel for critical errors. Weekly error budget review. Error ownership via CODEOWNERS.
-
-12. **Your error tracking shows 10,000 errors/day but the app seems fine. What's happening?**
-
-    - Likely non-critical errors (validation failures logged as errors, network retries, client-side errors). Review error grouping, adjust severity, filter non-actionable errors. Consider if some should be warnings.
-
-13. **How do you track errors across microservices?**
-
-    - Propagate `traceId` through all services. When an error occurs in any service, the trace context links to the original request. Use distributed tracing (OpenTelemetry) alongside error tracking.
-
-14. **How would you handle PII in error reports?**
-
-    - Sanitize in `beforeSend` callback. Use Sentry's `sendDefaultPii: false`. Strip sensitive fields from request bodies. Never log passwords, tokens, or PII in error context.
-
-15. **Design an error budget system. How do you combine error tracking with SLOs?**
-
-    - Define SLI (success rate from error tracking). Calculate error budget (1 - SLO = allowed error rate). Track actual error rate vs budget. Alert when budget is being consumed too fast. Stop deployments when budget is exhausted.
-
-### FAANG-style
-
-16. **If you could only add ONE thing to improve error visibility, what would it be?**
-
-    - Automatic error grouping with source maps. Most teams have errors but can't prioritize because they see minified stack traces. Source maps + grouping turns noise into actionable issues.
-
-17. **How would you build a custom error tracking system? What are the trade-offs vs Sentry?**
-
-    - Build: error ingestion API, fingerprinting engine, storage (Elasticsearch), dashboard, alerting. Trade-offs: Sentry handles millions of events, has mature SDKs, and years of edge cases. Custom gives you full control over data retention and costs.
-
-18. **Your error rate spiked 500% after a deploy. Walk through your response.**
-
-    - Check Sentry for new/regressed issues. Identify the problematic commit. Rollback if severity is high. Check error type (5xx = server error, 4xx = client issue). Check if it's a specific endpoint or user segment. Fix forward if easy, rollback if complex.
-
-19. **How do you handle errors in Web Workers / Service Workers?**
-
-    - Use Sentry's browser worker plugin. Capture errors via `self.onerror` and `self.onunhandledrejection`. Ensure source maps are uploaded for worker bundles. Workers have limited context — attach available metadata manually.
-
-20. **Explain the relationship between error tracking, monitoring, and tracing.**
-
-    - Error tracking captures *what* went wrong (exceptions). Monitoring captures *how* the system is performing (metrics). Tracing captures *where* in the request path the failure occurred (spans). Together they give complete observability.
-
-### Follow-ups
-
-21. **How do you track client-side JavaScript errors?**
-
-    - Use Sentry React/Vue/Angular SDK. Initialize in entry point. Set up `ErrorBoundary` components. Use `BrowserTracing` for performance. Upload source maps for minified bundles.
-
-22. **What's the difference between handled and unhandled errors?**
-
-    - Unhandled: crashes, uncaught exceptions — most critical. Handled: caught exceptions, rejected promises — lower severity but still valuable for tracking patterns.
-
-23. **How do you test error tracking in development?**
-
-    - Use Sentry's development mode (`environment: "development"`). Test `beforeSend` filtering. Verify source maps work locally. Use `Sentry.captureException()` in test endpoints.
-
-24. **How do you handle errors in serverless (Lambda)?**
-
-    - Use `@sentry/serverless`. Wrap handler with `Sentry.AWSLambda.wrapHandler()`. Ensure source maps are uploaded. Monitor Cold Start errors separately.
-
-25. **When would you NOT use Sentry?**
-
-    - Strict data residency requirements (Sentry Cloud may not be available in all regions). Self-hosted Sentry solves this. Very low error volume (manual logging suffices). Regulatory constraints on third-party tools.
 
 ## Summary
 
 Error tracking transforms raw exceptions into actionable, grouped issues with context, ownership, and workflow. Sentry is the industry standard, but the principles apply to any tool: capture errors with context, group intelligently, upload source maps, track releases, and review trends regularly.
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

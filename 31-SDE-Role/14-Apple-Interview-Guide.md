@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # 🍎 Apple — Interview Guide (2025–2026)
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Target Role:** ICT2 (Junior) / ICT3 (Mid) / ICT4 (Senior) Software Engineer
-> 
+>
 > **Teams to Consider:** iOS/macOS Frameworks, Siri/AI, Cloud Services, Hardware-Software Integration, Apple Music, Maps
 
 ---
@@ -76,7 +86,8 @@
 
 ### 📝 Coding Round Tips for Apple
 
-```
+```text
+
 ✅ DO:
   • Talk through your approach BEFORE coding
   • Focus on memory efficiency and performance
@@ -92,6 +103,7 @@
   • Ignore edge cases
   • Forget to mention memory management
   • Give up when stuck — ask for hints
+
 ```
 
 ---
@@ -119,7 +131,8 @@
 
 ### System Design Framework for Apple
 
-```
+```text
+
 Step 1: Requirements (5 min)
   - Functional: What does the system do?
   - Non-functional: Privacy, performance, battery, memory
@@ -145,6 +158,7 @@ Step 5: Wrap-up (5 min)
   - Summarize key decisions
   - Discuss trade-offs (privacy vs features)
   - Mention monitoring ( Instruments, Xcode)
+
 ```
 
 ---
@@ -153,7 +167,8 @@ Step 5: Wrap-up (5 min)
 
 ### On-Device vs Cloud Trade-offs
 
-```
+```text
+
 On-Device Processing:
 Pros:
 - Better privacy (data stays on device)
@@ -184,11 +199,13 @@ Apple's approach: On-device优先
 - Use on-device when possible
 - Use cloud only when necessary
 - Privacy by design
+
 ```
 
 ### Swift-Specific Questions
 
-```
+```text
+
 Q: Explain Swift's memory management (ARC).
 A:
 - Automatic Reference Counting (ARC)
@@ -210,11 +227,13 @@ A:
 - Or use DispatchQueue with sync/async
 - Or use Actors (Swift 5.5+)
 - Consider: Memory warnings, eviction policy
+
 ```
 
 ### Concurrency in Swift
 
-```
+```text
+
 Q: Explain Swift concurrency (async/await, Actors).
 A:
 - async/await: Modern async code (replaces completion handlers)
@@ -227,6 +246,7 @@ func fetchData() async throws -> Data {
     let (data, _) = try await URLSession.shared.data(from: url)
     return data
 }
+
 ```
 
 ---
@@ -235,13 +255,15 @@ func fetchData() async throws -> Data {
 
 ### Must-Have Stories (Prepare 5-6)
 
-```
+```text
+
 1. A time you had to learn something new quickly (Innovation)
 2. A time you refused to compromise on quality (Quality/Craftsmanship)
 3. A time you resolved a technical disagreement (Collaboration)
 4. A time you went above and beyond for a user (Privacy/User Focus)
 5. A time you failed and what you learned (Growth Mindset)
 6. A time you simplified a complex system (Simplicity)
+
 ```
 
 ### Common Apple Behavioral Questions
@@ -259,21 +281,23 @@ func fetchData() async throws -> Data {
 
 ### "Why Apple?" — Answer Framework
 
-```
-1. Impact at Scale: "Apple products are used by billions of people daily. 
+```text
+
+1. Impact at Scale: "Apple products are used by billions of people daily.
    I want to work on systems that impact people's lives."
 
-2. Innovation Culture: "Apple pushes boundaries in hardware-software 
+2. Innovation Culture: "Apple pushes boundaries in hardware-software
    integration. I want to be part of this innovation."
 
-3. Privacy Focus: "Apple's commitment to user privacy aligns with my 
+3. Privacy Focus: "Apple's commitment to user privacy aligns with my
    values. I want to build products that respect users."
 
-4. Quality & Craftsmanship: "Apple's attention to detail and quality 
+4. Quality & Craftsmanship: "Apple's attention to detail and quality
    resonates with how I approach engineering."
 
-5. Specific Team: "I'm particularly interested in [specific team] because 
+5. Specific Team: "I'm particularly interested in [specific team] because
    [specific reason about their technical challenges/products]."
+
 ```
 
 ---
@@ -306,7 +330,8 @@ func fetchData() async throws -> Data {
 
 ## 🎯 Final Checklist Before Apple Interview
 
-```
+```text
+
 Technical:
   [ ] Can solve Medium problems in 20-25 minutes
   [ ] Can solve Hard problems in 35-45 minutes
@@ -327,6 +352,7 @@ Logistics:
   [ ] Have questions prepared for interviewers
   [ ] Research the specific team's tech stack
   [ ] For iOS teams: Have Xcode ready for any live coding
+
 ```
 
 ---
@@ -337,7 +363,7 @@ Logistics:
 
 ---
 
-*Last updated: July 2025*
+*Last updated: July 2026*
 
 ---
 
@@ -359,3 +385,25 @@ Logistics:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers Apple's interview process, including the unique cross-functional approach, domain-specific deep dives, and strategies for demonstrating craftsmanship and attention to detail in your responses.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

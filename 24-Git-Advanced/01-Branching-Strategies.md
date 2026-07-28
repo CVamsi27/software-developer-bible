@@ -1,4 +1,14 @@
+---
+section: Git Advanced
+category: Reference
+tags: [concept]
+---
+
 # Branching Strategies
+
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 A branching strategy is a framework that defines how branches are created, named, merged, and deleted in a version control system. It provides a structured approach to managing parallel development, releases, and collaboration.
@@ -223,153 +233,15 @@ git merge feature/new-checkout-flow
 - **Repository size**: Avoid large binary files in branches
 - **Pull request size**: Keep small for easier reviews
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a branching strategy?**
-
-   - Framework for managing branches in version control.
-
-2. **Why do we need branching strategies?**
-
-   - To coordinate parallel development, manage releases, and maintain code quality.
-
-3. **What is the difference between Git Flow and GitHub Flow?**
-
-   - Git Flow has multiple branch types (feature, release, hotfix), GitHub Flow is simpler with feature branches and main.
-
-4. **What is a feature branch?**
-
-   - Temporary branch for developing new features, merged to main after review.
-
-5. **What is a release branch?**
-
-   - Branch used to prepare a new release, isolated from ongoing development.
-
-6. **What is a hotfix branch?**
-
-   - Quick fix for production issues, merged to both main and develop.
-
-7. **How do you delete a branch in Git?**
-
-   - `git branch -d branch-name` (local), `git push origin --delete branch-name` (remote).
-
-8. **What is `--no-ff` in merge?**
-
-   - Forces a merge commit, preserving branch history.
-
-### Intermediate (5-10)
-
-9. **When should you use Git Flow?**
-
-   - For projects with scheduled releases, multiple versions, or strict release cycles.
-
-10. **When should you use GitHub Flow?**
-
-    - For continuous deployment, web applications, rapid iteration.
-
-11. **What is trunk-based development?**
-
-    - Development directly on main or short-lived branches, with frequent integration.
-
-12. **How do you handle merge conflicts?**
-
-    - Resolve locally, communicate with team, test thoroughly before pushing.
-
-13. **What are feature flags?**
-
-    - Code mechanisms to enable/disable features without deploying new code.
-
-14. **How do you manage multiple parallel releases?**
-
-    - Use release branches, cherry-pick commits, or version-specific branches.
-
-15. **What is `git pull --rebase`?**
-
-    - Rebase your changes on top of remote changes, creating linear history.
-
-16. **How do you revert a merged branch?**
-
-    - Use `git revert` to create undo commits, not `git reset`.
-
-### Senior (10-15)
-17. **How do you choose a branching strategy for a team?**
-
-    - Consider: release cadence, team size, risk tolerance, deployment process.
-
-18. **How do you implement trunk-based development safely?**
-
-    - Feature flags, comprehensive testing, small changes, feature branches.
-
-19. **What is the impact of branching strategy on CI/CD?**
-
-    - Determines when tests run, how deployments happen, release frequency.
-
-20. **How do you handle database migrations with branching?**
-
-    - Separate migration files, backward-compatible changes, migration testing.
-
-21. **What is the difference between merge, rebase, and squash?**
-
-    - Merge: preserves history, creates merge commit. Rebase: linear history. Squash: combines commits.
-
-22. **How do you manage branching for microservices?**
-
-    - Independent branches per service, coordinated releases, API versioning.
-
-23. **What is the role of code reviews in branching strategies?**
-
-    - Quality assurance, knowledge sharing, catching issues early.
-
-24. **How do you handle long-lived branches?**
-
-    - Avoid when possible, rebase frequently, merge often.
-
-### FAANG-style (5-10)
-25. **Design a branching strategy for a team of 50 engineers across 5 services.**
-
-    - Consider: service independence, coordinated releases, shared libraries, testing strategy.
-
-26. **How would you implement continuous deployment with feature flags?**
-
-    - Short-lived branches, feature flags, automated testing, gradual rollouts.
-
-27. **What are the trade-offs between Git Flow and trunk-based development?**
-
-    - Release flexibility vs complexity, safety vs speed, history vs simplicity.
-
-28. **How do you handle branching for mobile app development?**
-
-    - Release branches for app store, feature branches for development, beta testing.
-
-29. **Design a branching strategy for a regulated industry (healthcare, finance).**
-
-    - Audit trails, compliance requirements, release approvals, documentation.
-
-### Follow-ups (5-10)
-30. **How does branching strategy evolve as a team grows?**
-
-    - From simple to more structured, add automation, documentation, training.
-
-31. **What metrics indicate a good branching strategy?**
-
-    - Low merge conflict rate, fast integration, quick releases, high code quality.
-
-32. **How do you handle branching for open source projects?**
-
-    - Fork-based workflow, PR reviews, contributor guidelines, release tagging.
-
-33. **What is the impact of branching strategy on developer experience?**
-
-    - Affects workflow complexity, merge frequency, release process.
-
-34. **How do you migrate from one branching strategy to another?**
-
-    - Gradual transition, team training, documentation, tooling updates.
 
 ## Summary
 Branching strategies are essential for managing code changes in teams. Choose a strategy based on your team size, release cadence, and deployment process. Common strategies include Git Flow, GitHub Flow, and trunk-based development. The key is consistency and team alignment.
+
+---
+
+## See Also
+- [CI/CD](../15-CI-CD/)
+- [Monorepo](../28-Monorepo/)
 
 ## References & Learn More
 

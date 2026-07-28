@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Topological Sort
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -468,7 +478,6 @@ console.log(longestPath(5, [[0,1,3],[0,2,2],[1,3,1],[2,3,4],[1,4,2]]));
 Topological sort provides a linear ordering of vertices in a DAG. It's essential for problems involving dependencies and ordering constraints. Two main approaches: Kahn's (BFS) and DFS-based.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Topological Sort
 Use when: Dependencies, ordering, DAG processing
@@ -499,6 +508,13 @@ When to use:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

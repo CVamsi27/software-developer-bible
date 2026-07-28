@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Indexes
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -443,114 +453,12 @@ CREATE INDEX idx_active ON users(email) WHERE is_active = true;
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is an index?**
-   A data structure that speeds up data retrieval at the cost of write overhead.
-
-2. **When should you create an index?**
-   On columns used in WHERE, JOIN, ORDER BY, and GROUP BY clauses.
-
-3. **What is the default index type in PostgreSQL?**
-   B-tree.
-
-4. **What is a unique index?**
-   An index that enforces uniqueness; prevents duplicate values.
-
-5. **Do indexes speed up INSERT/UPDATE/DELETE?**
-   No, they slow them down (additional maintenance overhead).
-
-### Intermediate (5)
-
-6. **What is a composite index?**
-   An index on multiple columns; column order matters.
-
-7. **What is a partial index?**
-   An index on a subset of rows (using WHERE clause).
-
-8. **What is an index-only scan?**
-   Query answered entirely from the index without accessing the table.
-
-9. **What is a covering index?**
-   Index with INCLUDE columns; enables index-only scans.
-
-10. **What is the difference between GIN and GiST?**
-    GIN: inverted index for contained data; GiST: generalized search tree.
-
-### Senior (10)
-
-11. **Explain B-tree index structure.**
-    Balanced tree with sorted keys; O(log n) operations; leaf nodes linked.
-
-12. **When would you use a Hash index over B-tree?**
-    Equality-only queries; hash is O(1) but doesn't support range scans.
-
-13. **What is index selectivity?**
-    Ratio of distinct values to total rows; higher = better index candidate.
-
-14. **How do you identify missing indexes?**
-    pg_stat_user_tables sequential scans; EXPLAIN showing Seq Scan on large tables.
-
-15. **What is index bloat and how do you fix it?**
-    Wasted space from updates/deletes; fix with REINDEX or pg_repack.
-
-16. **Explain BRIN indexes.**
-    Block Range Index; stores min/max per block range; great for naturally ordered data.
-
-17. **What is a multi-column index and when to use it?**
-    Index on multiple columns; use when queries filter on leading columns.
-
-18. **How do indexes affect JOIN performance?**
-    Index foreign keys; enable Nested Loop joins instead of Hash/Merge joins.
-
-19. **What is expression indexing?**
-    Index on function result; e.g., LOWER(email) for case-insensitive search.
-
-20. **How do you monitor index health?**
-    pg_stat_user_indexes, index bloat queries, REINDEX monitoring.
-
-### FAANG-style (5)
-
-21. **Design indexes for a billion-row analytics table.**
-    BRIN for time-series, composite indexes for common queries, partitioning.
-
-22. **How do you handle index creation without downtime?**
-    CREATE INDEX CONCURRENTLY; avoids locking the table.
-
-23. **Explain index merge optimization.**
-    PostgreSQL can use multiple indexes and merge results.
-
-24. **How do you optimize a query with multiple OR conditions?**
-    Bitmap Index Scan; OR can use multiple indexes combined.
-
-25. **Design a schema for a search autocomplete feature.**
-    Trigram indexes (pg_trgm), GIN for text search, prefix matching.
-
-### Follow-ups (5)
-
-26. **What is the difference between REINDEX and pg_repack?**
-    REINDEX: locks table; pg_repack: online rebuild without locks.
-
-27. **How do indexes interact with MVCC?**
-    Indexes point to all tuple versions; old versions cleaned by VACUUM.
-
-28. **What is an unreadable index?**
-    Index on expression; useful for case-insensitive or transformed searches.
-
-29. **When does PostgreSQL NOT use an index?**
-    Small tables, low selectivity, complex expressions, parallel queries.
-
-30. **What is the pg_trgm extension?**
-    Trigram matching for fuzzy text search; enables LIKE '%term%' to use indexes.
 
 ## Summary
 
 Indexes are essential for query performance but come with write overhead. B-tree is the default and most versatile type. Use composite indexes with proper column ordering. Partial and covering indexes optimize specific queries. Always use EXPLAIN ANALYZE to verify index usage. Monitor index health and remove unused indexes.
 
 ## Cheat Sheet
-
 ```sql
 -- Create indexes
 CREATE INDEX idx_name ON table(column);
@@ -573,6 +481,13 @@ ANALYZE table_name;
 EXPLAIN (ANALYZE, BUFFERS) SELECT ...;
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

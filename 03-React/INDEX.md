@@ -1,0 +1,34 @@
+# React — Index
+
+> **15 files** — React internals from Virtual DOM to rendering, hooks, patterns, performance, and interview questions.
+
+[![Files](https://img.shields.io/badge/files-15-blue)](INDEX.md)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+| # | File | Topics |
+|---|------|--------|
+| 01 | [Virtual DOM](01-Virtual-DOM.md) | VDOM concept, diffing, batching, React elements |
+| 02 | [Fiber](02-Fiber.md) | Fiber architecture, work loop, priority, reconciliation |
+| 03 | [Reconciliation](03-Reconciliation.md) | Diffing algorithm, keys, component types |
+| 04 | [Rendering](04-Rendering.md) | Render phases, commit phase, bailing out |
+| 05 | [Lifecycle](05-Lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup |
+| 06 | [useState](06-UseState.md) | State initialization, batching, functional updates |
+| 07 | [useEffect](07-UseEffect.md) | Dependencies, cleanup, effect timing, strict mode |
+| 08 | [useMemo / useCallback](08-UseMemo-UseCallback.md) | Memoization, dependency tracking, when to use |
+| 09 | [useRef](09-UseRef.md) | DOM refs, mutable refs, forwardRef, callback refs |
+| 10 | [Context API](10-Context-API.md) | createContext, Provider, useContext, performance |
+| 11 | [Suspense](11-Suspense.md) | Suspense boundaries, data fetching, transitions |
+| 12 | [Error Boundary](12-Error-Boundary.md) | Error boundaries, error recovery, logging |
+| 13 | [Performance](13-Performance.md) | Profiling, React.memo, virtualization, bailout |
+| 14 | [State Management](14-State-Management.md) | Redux, Zustand, Jotai, Context vs external state |
+| 15 | [Interview Questions](15-Interview-Questions.md) | 50+ curated questions with answers |
+
+---
+
+**Cross-references:** [Virtual DOM](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL)](../16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation](../30-Animation/)
+---
+
+## Navigation
+
+[← Previous: TypeScript](../02-TypeScript/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Next.js →](../04-NextJS/INDEX.md)

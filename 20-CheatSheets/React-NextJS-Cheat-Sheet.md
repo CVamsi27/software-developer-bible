@@ -1,4 +1,14 @@
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
+
 # React & Next.js Cheat Sheet
+
+[![Section](https://img.shields.io/badge/section-CheatSheets-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Quick Reference Table
 
@@ -148,7 +158,7 @@ export default function NewPost() {
 
 ### Auth Middleware
 
-```ts
+```typescript
 // middleware.ts
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
@@ -245,7 +255,7 @@ function TodoList({ todos, addTodo }) {
 
 ### Route Handler (API)
 
-```ts
+```typescript
 // app/api/users/route.ts
 import { NextResponse } from 'next/server';
 
@@ -381,6 +391,19 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 - **Key APIs**: `generateStaticParams`, `generateMetadata`, `cookies()`, `headers()`, `redirect()`, `notFound()`, `useRouter()`, `usePathname()`, `useSearchParams()`, `useParams()`.
 
 ---
+
+---
+
+
+## Summary
+
+This cheat sheet provides a concise reference to core React NextJS concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

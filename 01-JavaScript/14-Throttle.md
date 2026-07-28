@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Throttle
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -555,117 +565,6 @@ const Component = () => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is throttling?**
-
-A: Throttling limits how often a function can execute. It ensures a function is called at most once in a specified time period.
-
-**Q2: When would you use throttle?**
-
-A: Scroll events, mouse move, button clicks, or any event that fires rapidly and you need regular updates.
-
-**Q3: What is a good default limit for throttle?**
-
-A: 100ms is a good default. Adjust based on use case (16ms for animations, 1000ms for clicks).
-
-**Q4: What is leading vs trailing throttle?**
-
-A: Leading executes at the start of the interval, trailing at the end. Default is leading only.
-
-**Q5: How do you cancel a throttled function?**
-
-A: Call the cancel method: `throttledFn.cancel()`
-
-### Intermediate (5-10 questions)
-
-**Q6: How do you implement throttle from scratch?**
-
-A: Use a flag and setTimeout. Set flag on execution, clear after limit.
-
-**Q7: What is the difference between throttle and debounce?**
-
-A: Throttle limits execution frequency, debounce delays until inactivity. Throttle executes at regular intervals, debounce once after pause.
-
-**Q8: How do you throttle an async function?**
-
-A: Wrap the async function in throttle. The throttled function will be called at the limit.
-
-**Q9: How do you use throttle in React?**
-
-A: Use useCallback with throttle, or create a custom useThrottle hook with useRef.
-
-**Q10: What are common mistakes with throttle?**
-
-A: Not cleaning up, wrong limit time, using for debounce cases, not handling trailing call.
-
-### Senior (10-15 questions)
-
-**Q11: How do you implement throttle with both leading and trailing options?**
-
-A: Track call time, invoke on leading edge if enabled, set timeout for trailing edge.
-
-**Q12: How do you handle throttled functions in server-side rendering?**
-
-A: Ensure throttle only runs on client side, handle hydration properly.
-
-**Q13: How do you test throttled functions?**
-
-A: Use fake timers (jest.useFakeTimers), advance time, verify calls.
-
-**Q14: How do you optimize throttle for high-frequency events?**
-
-A: Use requestAnimationFrame for visual updates, combine with debounce.
-
-**Q15: How do you handle multiple throttled calls?**
-
-A: Each throttled function has its own timer. Use one throttle per function.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a throttle utility with advanced features.**
-
-A: Support leading/trailing, cancel/flush, custom timers, and different modes.
-
-**Q17: How would you implement throttle in a Web Worker?**
-
-A: Post messages to worker, throttle in worker, post results back.
-
-**Q18: Analyze the memory implications of throttle.**
-
-A: Each throttled function holds timer reference. Clean up on unmount.
-
-**Q19: How do you debug throttle issues?**
-
-A: Log timer IDs, track call times, use performance monitoring.
-
-**Q20: What are security implications of throttle?**
-
-A: Rate limiting, DoS prevention, input validation.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a throttle bug in production?**
-
-A: Not cleaning up timers causes memory leaks and stale state.
-
-**Q22: How do you handle throttle in a micro-frontend architecture?**
-
-A: Each micro-frontend manages its own throttle. Share utilities if needed.
-
-**Q23: What is the relationship between throttle and event loop?**
-
-A: Throttle uses setTimeout (macrotask). Executed after current synchronous code.
-
-**Q24: How do different frameworks handle throttle?**
-
-A: React: custom hooks. Vue: composables. Angular: pipes.
-
-**Q25: What are best practices for throttle?**
-
-A: Choose appropriate limit, clean up, use TypeScript, handle edge cases.
 
 ## Summary
 
@@ -686,7 +585,6 @@ Throttling is essential for performance:
 7. **Testing**: Use fake timers
 
 ## Cheat Sheet
-
 ```text
 THROTTLE CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -747,6 +645,13 @@ TESTING:
 • Verify call counts
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

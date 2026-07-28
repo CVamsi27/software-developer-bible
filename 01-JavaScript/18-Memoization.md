@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Memoization
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -475,117 +485,6 @@ function memoizeWithStats<T extends (...args: any[]) => any>(fn: T) {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is memoization?**
-
-A: Memoization is an optimization technique that caches function results and returns cached results for repeated inputs.
-
-**Q2: When should you use memoization?**
-
-A: For expensive computations, API calls, recursive functions, and complex filtering/sorting operations.
-
-**Q3: What is the difference between memoization and caching?**
-
-A: Memoization is a specific form of caching that caches function results based on inputs. Caching is a broader term for storing data.
-
-**Q4: What is a cache hit vs cache miss?**
-
-A: Cache hit: Requested data found in cache. Cache miss: Data not found, must compute.
-
-**Q5: How do you implement basic memoization?**
-
-A: Use a Map or object to store results keyed by stringified arguments.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is LRU cache?**
-
-A: Least Recently Used cache evicts the oldest accessed item when full. Good for bounded memory usage.
-
-**Q7: How does memoization relate to React's useMemo?**
-
-A: useMemo memoizes expensive computations, preventing recalculation on every render unless dependencies change.
-
-**Q8: What are the memory implications of memoization?**
-
-A: Memoized functions consume memory for cache. Unbounded caches can cause memory leaks.
-
-**Q9: How do you handle cache invalidation?**
-
-A: Use TTL, manual invalidation, or dependency-based invalidation.
-
-**Q10: What is the time complexity of memoization?**
-
-A: First call: same as original function. Subsequent calls: O(1) for cache lookup.
-
-### Senior (10-15 questions)
-
-**Q11: How do you implement memoization for async functions?**
-
-A: Cache promises, not results. Return cached promise for same arguments.
-
-**Q12: How do you handle cache keys for complex objects?**
-
-A: Use stable stringification, custom key functions, or WeakMap for object keys.
-
-**Q13: What is the relationship between memoization and pure functions?**
-
-A: Memoization works best with pure functions (same input → same output). Impure functions may produce different results.
-
-**Q14: How do you profile memoization effectiveness?**
-
-A: Track cache hits/misses, measure execution time, monitor memory usage.
-
-**Q15: How do you implement memoization with TTL?**
-
-A: Store timestamp with cached value, evict if expired.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a memoization library with advanced features.**
-
-A: Support LRU, TTL, async functions, cache statistics, and manual invalidation.
-
-**Q17: How would you implement memoization in a distributed system?**
-
-A: Use Redis or Memcached, handle cache coherence, implement distributed locking.
-
-**Q18: Analyze the performance implications of different caching strategies.**
-
-A: Compare LRU, LFU, FIFO, and TTL-based approaches for different workloads.
-
-**Q19: How do you debug memoization issues?**
-
-A: Log cache operations, track hit rates, monitor memory, profile execution.
-
-**Q20: What are security implications of memoization?**
-
-A: Cache poisoning, information leakage through cache timing attacks.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a memoization bug in production?**
-
-A: Cache never invalidated, serving stale data to users.
-
-**Q22: How do you handle memoization in a micro-frontend architecture?**
-
-A: Each micro-frontend manages its own cache, shared cache services.
-
-**Q23: What is the relationship between memoization and memo?**
-
-A: React.memo prevents re-renders, useMemo prevents recomputation. Both trade memory for performance.
-
-**Q24: How do different frameworks handle memoization?**
-
-A: React: useMemo/useCallback. Vue: computed. Angular: ChangeDetectionStrategy.OnPush.
-
-**Q25: What are best practices for memoization?**
-
-A: Profile before memoizing, set cache limits, handle invalidation, monitor effectiveness.
 
 ## Summary
 
@@ -606,7 +505,6 @@ Memoization is a powerful optimization:
 7. **Common issues**: Unbounded caches, stale data
 
 ## Cheat Sheet
-
 ```text
 MEMOIZATION CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -668,6 +566,13 @@ BEST PRACTICES:
 • Monitor effectiveness
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Chain of Responsibility Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1048,124 +1058,12 @@ class StatelessHandler extends BaseHandler {
 
 5. **Lazy Initialization**: Initialize handlers only when needed.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Chain of Responsibility pattern?**
-
-   - A behavioral pattern that passes requests along a chain of handlers.
-
-2. **When would you use Chain of Responsibility?**
-
-   - For middleware, validation, logging, and request processing pipelines.
-
-3. **What's the difference between Chain of Responsibility and Decorator?**
-
-   - Chain passes request along; Decorator adds behavior to same object.
-
-4. **How do you implement Chain of Responsibility in TypeScript?**
-
-   - Create handlers with setNext method and handle method.
-
-5. **What are the benefits of Chain of Responsibility?**
-
-   - Loose coupling, flexibility, and single responsibility.
-
-### Intermediate
-
-6. **How do you handle end of chain?**
-
-   - Use a final handler that processes unhandled requests.
-
-7. **Can handlers modify the request?**
-
-   - Yes, handlers can modify request before passing it along.
-
-8. **How do you test Chain of Responsibility?**
-
-   - Test each handler independently, test chain composition.
-
-9. **What's the relationship between Chain and Pipeline?**
-
-   - Chain is a type of pipeline; pipeline can have parallel branches.
-
-10. **How do you handle errors in chain?**
-
-    - Use try-catch, error handlers, or error middleware.
-
-### Senior
-
-11. **How does Chain of Responsibility affect scalability?**
-
-    - Chains are lightweight; handlers can be distributed.
-
-12. **What are the SOLID violations with Chain?**
-
-    - Usually follows SOLID; watch for handlers violating Single Responsibility.
-
-13. **How do you handle Chain in microservices?**
-
-    - Use chains for request processing, validation, and transformation.
-
-14. **What are the memory implications of Chain?**
-
-    - Chains are usually stateless; handlers consume minimal memory.
-
-15. **How do you refactor Chain code?**
-
-    - Extract common logic, use composition, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Chain for a distributed system.**
-
-    - Consider network transparency, fault tolerance, and load balancing.
-
-17. **How would you implement Chain for cloud-native applications?**
-
-    - Consider serverless functions, middleware, and function composition.
-
-18. **What are the implications of Chain in event-driven architectures?**
-
-    - Use chains for event processing, routing, and transformation.
-
-19. **How do you handle Chain in real-time systems?**
-
-    - Consider latency, throughput, and resource management.
-
-20. **Design a Chain that supports parallel processing.**
-
-    - Consider parallel handlers, fork-join, and result aggregation.
-
-### Follow-ups
-
-21. **Can Chain of Responsibility be combined with other patterns?**
-
-    - Yes, commonly with Decorator, Pipeline, and Middleware patterns.
-
-22. **How do you handle Chain in testing frameworks?**
-
-    - Use dependency injection, create test handlers, and mock implementations.
-
-23. **What are the memory implications of Chain pattern?**
-
-    - Chains are usually stateless; handlers consume minimal memory.
-
-24. **How do you handle Chain in serverless environments?**
-
-    - Consider stateless handlers, function composition, and cold starts.
-
-25. **What's the impact of Chain on code maintainability?**
-
-    - Improves maintainability by enabling flexible request processing.
 
 ## Summary
 
 The Chain of Responsibility pattern is essential for processing pipelines and middleware. It enables flexible request handling, loose coupling, and single responsibility. Use it for validation, authentication, logging, and any scenario where requests need to pass through multiple handlers.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │       CHAIN OF RESPONSIBILITY PATTERN       │
@@ -1201,6 +1099,14 @@ The Chain of Responsibility pattern is essential for processing pipelines and mi
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

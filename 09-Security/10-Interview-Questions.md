@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [interview-questions, reference]
+---
+
 # Security Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1912,7 +1922,6 @@ Mastering security interview questions requires understanding:
 6. **Monitoring**: Logging, anomaly detection, incident response
 
 ## Cheat Sheet
-
 | Category | Key Concepts |
 |----------|--------------|
 | Authentication | JWT, OAuth 2.0, MFA, Sessions |
@@ -1923,6 +1932,12 @@ Mastering security interview questions requires understanding:
 | Compliance | GDPR, HIPAA, PCI DSS |
 | Monitoring | Logging, SIEM, Anomaly detection |
 | Architecture | Zero-trust, Defense in depth |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

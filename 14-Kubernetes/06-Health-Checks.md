@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Health Checks
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -483,129 +493,12 @@ kubectl get pod myapp -o jsonpath='{.spec.containers[*].livenessProbe}'
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What are the three types of health checks?**
-   Startup, liveness, and readiness probes.
-
-2. **What is a liveness probe?**
-   Checks if a container is running. Restarts on failure.
-
-3. **What is a readiness probe?**
-   Checks if a container can receive traffic. Removes from Service on failure.
-
-4. **What is a startup probe?**
-   Runs once at startup. Disables other probes until success.
-
-5. **What are the probe handler types?**
-   exec, httpGet, tcpSocket, gRPC.
-
-6. **What is failureThreshold?**
-   Number of consecutive failures before marking the probe as failed.
-
-7. **What is periodSeconds?**
-   How often the kubelet performs the probe.
-
-8. **What is timeoutSeconds?**
-   Maximum time for a probe to complete.
-
-9. **What is initialDelaySeconds?**
-   Delay before the first probe runs.
-
-10. **What is successThreshold?**
-    Number of consecutive successes needed to mark as successful.
-
-### Intermediate (5-10)
-
-11. **What is the difference between liveness and readiness?**
-    Liveness: restart on failure. Readiness: remove from Service on failure.
-
-12. **When would you use a startup probe?**
-    For applications with long initialization times.
-
-13. **How do you implement health check endpoints?**
-    Return 200 for success, non-200 for failure.
-
-14. **What happens when a readiness probe fails?**
-    Pod is removed from Service endpoints. No traffic is sent.
-
-15. **What happens when a liveness probe fails?**
-    Container is restarted by kubelet.
-
-16. **Can you use different ports for different probes?**
-    Yes, each probe can target a different port.
-
-17. **What is the default probe behavior?**
-    No probes are configured by default.
-
-18. **How do you check database connectivity in a probe?**
-    Use exec probe with pg_isready or similar command.
-
-19. **What is the difference between exec and httpGet probes?**
-    exec runs a command; httpGet makes an HTTP request.
-
-20. **How do you debug probe failures?**
-    Check pod events, logs, and probe configuration.
-
-### Senior (10-15)
-
-21. **How would you design health checks for a microservices application?**
-    Implement /health (self), /ready (dependencies), and /alive (basic). Use startup probes for slow starters.
-
-22. **What is the relationship between probes and Pod Disruption Budgets?**
-    PDB limits voluntary disruptions. Probes enable self-healing for involuntary failures.
-
-23. **How do you handle health checks during rolling updates?**
-    Use readiness probes to ensure new Pods are ready before old Pods are terminated.
-
-24. **What is the impact of aggressive liveness probes?**
-    Can cause unnecessary restarts and instability.
-
-25. **How do you implement health checks for gRPC services?**
-    Use gRPC probe type or implement HTTP health endpoint.
-
-### FAANG-style (5-10)
-
-26. **Design a health check strategy for a distributed system.**
-    Implement cascading health checks, circuit breakers, and graceful degradation.
-
-27. **How would you handle health checks during a network partition?**
-    Use local health checks, not external dependencies, in liveness probes.
-
-28. **Design a health check system for 1000+ microservices.**
-    Standardize health endpoints, implement centralized monitoring, and use service mesh health checks.
-
-29. **How would you implement health checks for batch jobs?**
-    Use exec probes to check job progress and completion.
-
-30. **Describe a health check strategy for a multi-region application.**
-    Implement region-aware health checks, cross-region dependency checks, and automatic failover.
-
-### Follow-ups (5-10)
-
-31. **What is the relationship between readiness and liveness probes?**
-    Both run independently. Liveness failure restarts the container. Readiness failure removes from Service.
-
-32. **How do you handle health checks during startup?**
-    Use startup probe to delay liveness/readiness until initialization completes.
-
-33. **What is the maximum number of probe failures before restart?**
-    Configurable via failureThreshold. Default is 3 for liveness/readiness.
-
-34. **How do you implement health checks for sidecar containers?**
-    Same as regular containers. Each container has its own probes.
-
-35. **What is the difference between health checks in Kubernetes and Docker?**
-    Kubernetes: kubelet-managed, three probe types. Docker: Dockerfile HEALTHCHECK instruction.
 
 ## Summary
 
 Health checks enable self-healing and traffic management. Startup probes handle initialization, liveness probes ensure ongoing health, and readiness probes control traffic routing. Proper probe configuration is essential for production reliability.
 
 ## Cheat Sheet
-
 ```bash
 # Check pod status
 kubectl get pods
@@ -626,6 +519,14 @@ kubectl exec -it myapp -- curl http://localhost:8080/health
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Memory Leaks
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -589,117 +599,6 @@ function processItems(items: any[]) {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is a memory leak in JavaScript?**
-
-A: A memory leak occurs when allocated memory is not released after it's no longer needed, causing memory usage to grow over time.
-
-**Q2: What are common causes of memory leaks?**
-
-A: Detached DOM elements, forgotten timers, unclosed event listeners, global variables, and closures capturing large objects.
-
-**Q3: How do you detect memory leaks?**
-
-A: Use Chrome DevTools Memory tab, performance.memory API, or monitor memory usage over time.
-
-**Q4: How do you prevent memory leaks in React?**
-
-A: Clean up useEffect, remove event listeners, cancel async operations, and avoid storing large objects in state.
-
-**Q5: What is a detached DOM element?**
-
-A: A DOM element that has been removed from the document but still has JavaScript references, preventing garbage collection.
-
-### Intermediate (5-10 questions)
-
-**Q6: How do closures cause memory leaks?**
-
-A: Closures capture their lexical environment. If a closure captures a large object and the closure is kept alive, the large object cannot be garbage collected.
-
-**Q7: How do you use WeakMap to prevent memory leaks?**
-
-A: WeakMap allows garbage collection of keys. If a key object has no other references, it and its value can be collected.
-
-**Q8: How do you properly clean up event listeners?**
-
-A: Store handler reference, remove it in cleanup function (useEffect return, beforeunload, etc.).
-
-**Q9: What is the difference between memory leak and memory growth?**
-
-A: Memory leak is unbounded growth due to unreleased references. Memory growth can be normal (caching) but should be bounded.
-
-**Q10: How do you test for memory leaks?**
-
-A: Run repeated operations, monitor memory usage, take heap snapshots, compare before/after.
-
-### Senior (10-15 questions)
-
-**Q11: How do you implement a memory-efficient cache?**
-
-A: Use WeakMap for object keys, implement LRU eviction, set TTL, limit cache size.
-
-**Q12: How do you handle memory leaks in a long-running application?**
-
-A: Regular cleanup intervals, memory monitoring, object pooling, bounded caches.
-
-**Q13: How do you prevent memory leaks in Node.js?**
-
-A: Stream large data, close database connections, clear intervals/timeouts, handle errors.
-
-**Q14: How do you use heap snapshots effectively?**
-
-A: Take baseline snapshot, perform action, take second snapshot, compare to find growth.
-
-**Q15: How do you optimize garbage collection?**
-
-A: Reduce allocations, reuse objects, use typed arrays, minimize closure captures.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a memory monitoring system.**
-
-A: Track allocations, detect growth patterns, alert on thresholds, provide diagnostics.
-
-**Q17: How would you implement automatic memory cleanup?**
-
-A: Reference counting, weak references, periodic cleanup, automatic disposal.
-
-**Q18: Analyze memory implications of different data structures.**
-
-A: Arrays vs Maps vs WeakMaps, object pooling, structural sharing.
-
-**Q19: How do you debug memory leaks in production?**
-
-A: Memory profiling, heap dumps, growth detection, error tracking.
-
-**Q20: What are security implications of memory leaks?**
-
-A: Denial of service, information leakage through memory dumps, resource exhaustion.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a memory leak bug in production?**
-
-A: React component not cleaning up setInterval, causing memory to grow indefinitely.
-
-**Q22: How do you handle memory leaks in a micro-frontend architecture?**
-
-A: Each micro-frontend manages its own memory, shared cleanup protocols.
-
-**Q23: What is the relationship between memory leaks and garbage collection?**
-
-A: Leaks prevent GC from collecting unreachable objects, causing memory growth.
-
-**Q24: How do different frameworks handle memory management?**
-
-A: React: useEffect cleanup. Vue: onUnmounted. Angular: ngOnDestroy.
-
-**Q25: What are best practices for memory management?**
-
-A: Clean up resources, use weak references, limit caches, monitor usage, test for leaks.
 
 ## Summary
 
@@ -720,7 +619,6 @@ Memory leaks are critical to prevent:
 7. **Tools**: Chrome DevTools, memory profilers
 
 ## Cheat Sheet
-
 ```text
 MEMORY LEAKS CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -784,6 +682,13 @@ BEST PRACTICES:
 • Test for leaks
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

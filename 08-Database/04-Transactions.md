@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Transactions
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -464,114 +474,12 @@ SET lock_timeout = '10s';
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is a transaction?**
-   A logical unit of work; all-or-nothing execution.
-
-2. **What does ACID stand for?**
-   Atomicity, Consistency, Isolation, Durability.
-
-3. **What is the difference between COMMIT and ROLLBACK?**
-   COMMIT saves changes; ROLLBACK discards them.
-
-4. **What is the default isolation level in PostgreSQL?**
-   Read Committed.
-
-5. **What is a savepoint?**
-   A point within a transaction to which you can partially roll back.
-
-### Intermediate (5)
-
-6. **What is a dirty read?**
-   Reading uncommitted data from another transaction.
-
-7. **What is the difference between Read Committed and Repeatable Read?**
-   Read Committed sees latest committed data; Repeatable Read uses snapshot.
-
-8. **What is a phantom read?**
-   New rows appear between reads in a transaction.
-
-9. **What is FOR UPDATE?**
-   Locks selected rows until transaction completes.
-
-10. **What are advisory locks?**
-    Application-level locks; not tied to table rows.
-
-### Senior (10)
-
-11. **Explain MVCC in PostgreSQL.**
-    Multi-Version Concurrency Control; each transaction sees a snapshot.
-
-12. **What is serialization failure?**
-    Conflict detected in Serializable isolation; must retry.
-
-13. **How does PostgreSQL handle deadlocks?**
-    Detects circular wait; rolls back one transaction.
-
-14. **What is the difference between implicit and explicit transactions?**
-    Implicit: auto-commit per statement; Explicit: BEGIN/COMMIT block.
-
-15. **What is a two-phase commit?**
-    Protocol for distributed transactions; prepare then commit.
-
-16. **How do you handle transaction timeouts?**
-    SET statement_timeout; application-level timeout logic.
-
-17. **What is transaction logging (WAL)?**
-    Write-Ahead Log; ensures durability and enables recovery.
-
-18. **What is the difference between READ COMMITTED and READ UNCOMMITTED?**
-    READ UNCOMMITTED allows dirty reads; READ COMMITTED doesn't.
-
-19. **How do you implement retry logic for failed transactions?**
-    Application-level retry with exponential backoff.
-
-20. **What is the impact of long transactions on performance?**
-    Holds locks, prevents vacuum, bloats tables.
-
-### FAANG-style (5)
-
-21. **Design a distributed transaction system.**
-    Saga pattern, event sourcing, eventual consistency.
-
-22. **How do you handle transactions across microservices?**
-    Saga pattern, two-phase commit, event-driven architecture.
-
-23. **Explain the CAP theorem in context of transactions.**
-    PostgreSQL is CP; favors consistency over availability.
-
-24. **How do you achieve exactly-once processing?**
-    Idempotency, deduplication, transactional outbox pattern.
-
-25. **Design a real-time bidding system with transactions.**
-    Serializable isolation, optimistic locking, row-level locking.
-
-### Follow-ups (5)
-
-26. **What is the difference between optimistic and pessimistic locking?**
-    Optimistic: check version at commit; Pessimistic: lock rows upfront.
-
-27. **How do you handle deadlocks in application code?**
-    Retry logic, consistent lock ordering, lock timeout.
-
-28. **What is the impact of isolation level on performance?**
-    Higher isolation = more overhead; Serializable is slowest.
-
-29. **How do you debug transaction issues?**
-    pg_stat_activity, lock monitoring, log_min_duration_statement.
-
-30. **What is the difference between statement-level and transaction-level rollback?**
-    SAVEPOINT allows partial rollback; ROLLBACK discards entire transaction.
 
 ## Summary
 
 Transactions ensure data consistency through ACID properties. PostgreSQL defaults to Read Committed isolation. Use FOR UPDATE for read-modify-write patterns. Keep transactions short to minimize lock duration. Handle deadlocks and serialization failures with retry logic. Understand MVCC for proper concurrency control.
 
 ## Cheat Sheet
-
 ```sql
 -- Basic transaction
 BEGIN;
@@ -601,6 +509,13 @@ SELECT pg_advisory_unlock(key);
 SELECT * FROM pg_stat_activity WHERE state = 'active';
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

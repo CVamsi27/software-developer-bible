@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [interview-questions, reference]
+---
+
 # Testing Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1689,6 +1699,14 @@ These 40 questions cover the essential testing knowledge for senior full-stack i
 - Understand trade-offs and when to apply different approaches
 - Stay updated on testing trends and tools
 - Focus on providing value, not just passing interviews
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

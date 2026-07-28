@@ -1,4 +1,14 @@
+---
+section: Observability
+category: DevOps
+tags: [concept]
+---
+
 # Monitoring
+
+[![Section](https://img.shields.io/badge/section-Observability-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -462,121 +472,17 @@ setInterval(() => {
 - **Scrape interval** — 15s is standard; shorter intervals increase storage without proportional value
 - **Retention** — Prometheus stores ~15 days by default; use Thanos/Mimir for long-term storage
 
-## Interview Questions
-
-### Beginner
-
-1. **What are the four golden signals of monitoring?**
-
-   - Latency (time to serve requests), Traffic (requests per second), Errors (error rate), Saturation (how full resources are).
-
-2. **What is the difference between a counter and a gauge?**
-
-   - A counter only increases (total requests). A gauge can go up or down (current memory, active connections).
-
-3. **What is Prometheus and how does it collect metrics?**
-
-   - Prometheus is a time-series database that scrapes `/metrics` endpoints on a configurable interval (pull model). It stores metrics locally and supports PromQL for querying.
-
-4. **Why shouldn't you use high-cardinality labels?**
-
-   - Each unique label value creates a new time series. Labels like `userId` with millions of values cause storage explosion and slow queries.
-
-5. **What is the RED method?**
-
-   - Rate (requests/second), Errors (error rate), Duration (latency). Applied to every service for uniform observability.
-
-### Intermediate
-
-6. **Explain the difference between a histogram and a summary.**
-
-   - Both measure distributions. Histograms aggregate on the server side (Prometheus), allowing cross-instance quantile calculations. Summaries compute quantiles client-side, which is less flexible but doesn't require server-side aggregation.
-
-7. **How would you set up alerting for an SLO of 99.9% availability?**
-
-   - Define SLI (success rate = non-5xx responses / total requests). Calculate error budget (0.1%). Alert when burn rate exceeds threshold (e.g., burning error budget 14.4x in 1h means exhausting in 1 week).
-
-8. **What is a PromQL recording rule and when would you use it?**
-
-   - Recording rules precompute PromQL expressions and save results as new metrics. Use for expensive queries needed on dashboards (e.g., complex aggregations over large time ranges).
-
-9. **How do you monitor a message queue system?**
-
-   - Track queue depth (gauge), consumer lag (gauge), processing rate (counter), and error rate (counter). Alert when queue depth exceeds threshold or consumer lag grows.
-
-10. **What is the USE method?**
-
-    - Utilization (percentage of resource in use), Saturation (queue depth / wait time), Errors (error count). Applied to infrastructure resources (CPU, memory, disk, network).
-
-### Senior
-
-11. **Design a monitoring strategy for a microservices system.**
-
-    - Standardize on RED metrics per service. Deploy Prometheus with federation or Thanos for scale. Build dashboards per service and cross-service. Implement SLO-based alerting with burn rate. Use recording rules for dashboard performance. Store long-term metrics in Thanos/Mimir.
-
-12. **Your P99 latency alert fires at 3am. Walk through your investigation.**
-
-    - Check Grafana dashboard for which service/route is slow. Compare before/after deploy timeline. Check CPU/memory saturation. Review recent config changes. Check dependency latency (DB, cache, external APIs). Check for traffic spikes. Use distributed trace to find the slow span.
-
-13. **How do you handle metric explosion in a large system?**
-
-    - Control label cardinality at instrumentation time. Use metric aggregation at the edge (OpenTelemetry Collector). Set retention policies per metric. Use Prometheus remote write with downsampling. Audit metrics quarterly to remove unused ones.
-
-14. **Explain error budget burn rate and why it's better than simple threshold alerts.**
-
-    - Burn rate = how fast you're consuming your error budget. A 99.9% SLO with 1h window burn rate of 14.4x means you'll exhaust budget in 1 week. This accounts for traffic volume — a 1% error rate on low traffic is less urgent than on high traffic. Reduces false positives compared to static thresholds.
-
-15. **Design a canary deployment monitoring system.**
-
-    - Deploy new version to small percentage of traffic. Compare error rate, latency, and business metrics between canary and baseline. Use statistical significance testing. Auto-promote if metrics are within thresholds, auto-rollback if degraded. Use Flagger or Argo Rollouts.
-
-### FAANG-style
-
-16. **If you could only monitor 3 metrics for a web service, what would they be?**
-
-    - Request rate (traffic), error rate (reliability), P99 latency (user experience). These cover the RED method and give immediate visibility into service health.
-
-17. **How would you detect a slow database query that's degrading performance?**
-
-    - Instrument database query duration as a histogram. Create an alert on p99 query latency. Use query-level labels to identify slow queries. Enable slow query logging for threshold-based capture. Use pg_stat_statements or equivalent.
-
-18. **Your system shows 0% error rate but users report issues. What's happening?**
-
-    - Errors might be happening outside instrumentation (client-side, network). Check client-side monitoring. Check for partial failures (200 responses with error bodies). Check timeout behavior (requests succeeding but slowly). Check for data correctness issues (200 OK but wrong data).
-
-19. **Design a cost-effective monitoring stack for a startup.**
-
-    - Start with Prometheus + Grafana (free). Use Loki for logs (cheaper than ELK). Use Tempo for traces. Instrument with OpenTelemetry. Keep metric retention short (15 days). Use cloud-managed alternatives (CloudWatch, Datadog) only if team can't maintain infra.
-
-20. **How do you monitor the monitoring system itself?**
-
-    - Monitor Prometheus/Grafana scrape success, storage usage, query latency. Use blackbox exporters for external checks. Run a separate monitoring stack (meta-monitoring). Alert on monitoring gaps (no metrics for a service for >5 minutes).
-
-### Follow-ups
-
-21. **What's the difference between Prometheus pull model vs push model (StatsD)?**
-
-    - Pull: Prometheus scrapes targets — simple, service doesn't need to know Prometheus address, but requires network accessibility. Push: services push metrics (StatsD, Pushgateway) — simpler firewall config, but services need to know collector address and can lose data during outages.
-
-22. **How do you handle metric collection in Kubernetes?**
-
-    - Use Prometheus operator with ServiceMonitor CRDs. Deploy node-exporter as DaemonSet. Use kube-state-metrics for cluster objects. Auto-discover pods with label selectors. Use admission webhooks for annotation-based scraping.
-
-23. **When would you use Grafana over Kibana for monitoring?**
-
-    - Grafana for time-series metrics (Prometheus, InfluxDB). Kibana for log analytics (Elasticsearch). Grafana can also query Loki for logs. For a unified view, use Grafana as the single pane with Prometheus, Loki, and Tempo as backends.
-
-24. **How do you test alerting rules before deploying them?**
-
-    - Use Promtool to validate rules: `promtool check rules alerts.yml`. Use promtool test to simulate scenarios. Dry-run against historical data. Use Grafana alert provisioning for testing. Deploy to staging first with synthetic traffic.
-
-25. **What metrics would you track for a database?**
-
-    - Connection pool (active, idle, waiting), query latency (p50, p95, p99), replication lag, cache hit ratio, disk I/O, locks, transactions per second, deadlocks, table bloat.
 
 ## Summary
 
 Monitoring transforms raw metrics into actionable visibility. Use the RED/USE/Four Golden Signals frameworks to ensure comprehensive coverage. Instrument with Prometheus, visualize with Grafana, and alert with SLO-based burn rates. Control label cardinality, version dashboards, and maintain alert hygiene to keep the system useful.
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: WebSockets
+category: Real-Time
+tags: [overview, reference]
+---
+
 # WebSockets Overview
+
+[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
+[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -824,187 +834,6 @@ Message Rate (messages/second):
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is the difference between HTTP and WebSockets?**
-
-   - HTTP is request-response; WebSockets are full-duplex bidirectional
-   - HTTP creates new connections; WebSockets use a single persistent connection
-   - HTTP has high overhead per message; WebSockets have minimal frame overhead
-
-2. **What is the WebSocket handshake?**
-
-   - An HTTP request with `Upgrade: websocket` header
-   - Server responds with `101 Switching Protocols`
-   - Connection upgrades from HTTP to WebSocket protocol
-
-3. **What does full-duplex mean?**
-
-   - Both client and server can send messages independently at any time
-   - Like a phone call where both parties can speak simultaneously
-   - Contrast with half-duplex (walkie-talkie) and simplex (radio)
-
-4. **What is the WebSocket URL scheme?**
-
-   - `ws://` for unencrypted (like `http://`)
-   - `wss://` for encrypted (like `https://`)
-   - Always use `wss://` in production
-
-5. **How do you detect if a WebSocket connection is open?**
-
-   - Check `ws.readyState === WebSocket.OPEN`
-   - Listen for `onopen` event
-   - Check `ws.readyState === 1`
-
-### Intermediate (5-8)
-
-6. **How do you handle WebSocket reconnection?**
-
-   - Implement exponential backoff
-   - Track reconnection attempts
-   - Reset state on successful reconnection
-   - Handle edge cases (server restart, network changes)
-
-7. **What is the purpose of the `Sec-WebSocket-Key` header?**
-
-   - Prevents caching proxies from reusing connections
-   - Provides proof that the server understands WebSockets
-   - Not for security (connection is not encrypted at this point)
-
-8. **How do you handle binary data in WebSockets?**
-
-   - Use `ws.send(arrayBuffer)` for sending
-   - Check `event.data instanceof ArrayBuffer` for receiving
-   - Set appropriate binary type: `ws.binaryType = 'arraybuffer'`
-
-9. **What are WebSocket subprotocols?**
-
-   - Negotiated during handshake via `Sec-WebSocket-Protocol`
-   - Allow application-level protocol definition
-   - Example: `graphql-ws` for GraphQL subscriptions
-
-10. **How do you handle WebSocket errors?**
-
-    - Listen for `onerror` event
-    - Handle `onclose` with appropriate reconnection logic
-    - Log error codes and reasons
-
-### Senior (8-12)
-
-11. **How would you scale WebSockets across multiple servers?**
-
-    - Use sticky sessions or connection-based routing
-    - Implement Redis Pub/Sub for cross-server communication
-    - Consider message brokers (RabbitMQ, Kafka)
-    - Use consistent hashing for session affinity
-
-12. **How do you handle message ordering in distributed WebSockets?**
-
-    - Use sequence numbers or timestamps
-    - Implement vector clocks for causal ordering
-    - Consider CRDTs for conflict resolution
-    - Use message queues for guaranteed ordering
-
-13. **What is backpressure and how do you handle it?**
-
-    - Server can't process messages as fast as they arrive
-    - Monitor `bufferedAmount` property
-    - Implement message queuing with limits
-    - Drop or defer messages when buffer is full
-
-14. **How do you secure WebSocket connections?**
-
-    - Always use WSS (WebSocket Secure)
-    - Implement authentication (JWT, session cookies)
-    - Validate all incoming messages
-    - Rate limit connections and messages
-    - Use CSP headers to prevent XSS
-
-15. **How do you handle connection state in microservices?**
-
-    - Centralized connection registry (Redis)
-    - Event-driven architecture for state sync
-    - Saga pattern for distributed transactions
-    - Circuit breaker for fault tolerance
-
-### FAANG-style (5-8)
-
-16. **Design a chat system supporting 10 million concurrent users**
-
-    - Connection management with consistent hashing
-    - Message fanout using pub/sub
-    - Presence service with heartbeat
-    - Message storage with Cassandra/DynamoDB
-    - CDN for media delivery
-
-17. **How would you implement real-time collaboration (Google Docs style)?**
-
-    - Operational Transform (OT) or CRDT
-    - Conflict resolution strategies
-    - Undo/redo with operation history
-    - Cursor presence and awareness
-
-18. **Design a multiplayer game backend**
-
-    - Deterministic game loop
-    - State synchronization (full vs delta)
-    - Client-side prediction
-    - Lag compensation techniques
-    - Anti-cheat measures
-
-19. **How do you handle WebSocket connections during deployment?**
-
-    - Graceful shutdown with connection draining
-    - Blue-green deployment strategy
-    - Session migration between servers
-    - Health checks and readiness probes
-
-20. **Optimize WebSocket performance for high-throughput scenarios**
-
-    - Message batching and compression
-    - Binary protocol instead of JSON
-    - Connection pooling and multiplexing
-    - Memory-efficient data structures
-    - Profiling and bottleneck identification
-
-### Follow-ups (5-8)
-
-21. **What happens if a WebSocket server crashes?**
-
-    - Clients receive `onclose` event with code 1006
-    - Clients should implement reconnection logic
-    - Consider session persistence for recovery
-    - Monitor connection drops for alerting
-
-22. **How do you test WebSocket applications?**
-
-    - Unit tests for message handlers
-    - Integration tests with mock servers
-    - Load testing with tools like Artillery
-    - Chaos engineering for failure scenarios
-
-23. **What are WebSocket alternatives and when would you use them?**
-
-    - SSE for server-to-client only
-    - HTTP/2 Server Push for static assets
-    - gRPC for high-performance RPC
-    - MQTT for IoT devices
-
-24. **How do you monitor WebSocket connections in production?**
-
-    - Track connection counts and durations
-    - Monitor message rates and latency
-    - Alert on error rates and disconnections
-    - Dashboard for real-time visibility
-
-25. **What are common WebSocket attack vectors and mitigations?**
-
-    - Cross-site WebSocket hijacking (CSWSH)
-    - DoS attacks via connection flooding
-    - Message injection and manipulation
-    - Information disclosure through errors
 
 ## Summary
 
@@ -1017,6 +846,13 @@ WebSockets are essential for building real-time applications that require bidire
 - **Best Practices**: Authentication, rate limiting, compression, monitoring
 
 Understanding WebSockets at a deep level demonstrates system design expertise and the ability to build performant, real-time applications.
+
+---
+
+## See Also
+- [System Design](../11-System-Design/)
+- [NestJS](../06-NestJS/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

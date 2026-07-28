@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Guards
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -630,101 +640,12 @@ export class ProperGuard implements CanActivate {
 
 5. **Guard Ordering**: Order guards by likelihood of rejection (cheapest first).
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a guard in NestJS?**
-A guard is a class implementing `CanActivate` that determines whether a request should be handled. It's used for authorization and access control.
-
-**Q2: When do guards execute in the request lifecycle?**
-After middleware, before interceptors and pipes.
-
-**Q3: What does `canActivate` return?**
-A boolean (or Promise/Observable resolving to boolean) — `true` to allow, `false` or throw exception to reject.
-
-**Q4: How do you apply a guard to a controller?**
-Use `@UseGuards(AuthGuard)` decorator on the controller class.
-
-**Q5: What is the Reflector used for in guards?**
-To access metadata set by decorators (e.g., roles, permissions).
-
-### Intermediate
-
-**Q6: How do you create a role-based access control system?**
-Define roles in an enum, create a `@Roles()` decorator using `SetMetadata`, and implement a `RolesGuard` that reads the metadata.
-
-**Q7: How do you make some routes public (skip auth)?**
-Use `@Public()` decorator and check for it in the guard to bypass authentication.
-
-**Q8: What is the difference between `APP_GUARD` and `@UseGuards()`?**
-
-- `APP_GUARD`: Applies guard globally via module provider
-- `@UseGuards()`: Applies guard to specific controller/method
-
-**Q9: How do you test a guard?**
-Create a mock `ExecutionContext`, set up the reflector with metadata, and verify `canActivate` returns the expected value.
-
-**Q10: Can guards be async?**
-Yes, `canActivate` can return a Promise or Observable.
-
-### Senior
-
-**Q11: Design a multi-tenant authorization system.**
-Use guards with tenant context extracted from request headers. Implement tenant-specific permission databases and caching layers.
-
-**Q12: How would you implement ABAC (Attribute-Based Access Control)?**
-Create a guard that evaluates policies based on user attributes, resource attributes, and environment conditions.
-
-**Q13: How do you handle guard performance in high-traffic systems?**
-Cache permission checks in Redis, implement guard result memoization, and use async guards with connection pooling.
-
-**Q14: How would you implement distributed rate limiting?**
-Use Redis with sliding window algorithm, implementing the guard logic with Redis transactions.
-
-**Q15: Design a guard system for microservices.**
-Implement guards at the API gateway level, propagate auth context through service mesh, and use JWT claims for authorization.
-
-### FAANG-Style
-
-**Q16: Design a zero-trust security model with guards.**
-Every request must be authenticated and authorized. Implement guards at every level: gateway, service, and database.
-
-**Q17: How would you implement real-time permission updates?**
-Use WebSockets or Server-Sent Events to push permission changes. Guards check a local cache with TTL.
-
-**Q18: Design a guard for GraphQL resolvers.**
-Implement `GqlExecutionContext.create()` to extract GraphQL context, then apply the same authorization logic.
-
-**Q19: How would you audit guard decisions?**
-Log guard decisions to an audit service asynchronously. Include user, resource, action, and decision.
-
-**Q20: Design a guard system supporting dynamic permissions.**
-Store permissions in a database, cache in Redis, and implement a guard that checks against the cached permissions.
-
-### Follow-ups
-
-**Q21: How do you handle guard errors gracefully?**
-Catch exceptions in guards and throw appropriate HTTP exceptions with meaningful messages.
-
-**Q22: Can guards access the database?**
-Yes, but it adds latency. Cache database lookups when possible.
-
-**Q23: How do you order multiple guards?**
-Guards execute in the order they're defined. Use `APP_GUARD` for global, `@UseGuards()` for specific.
-
-**Q24: How do you mock guards in tests?**
-Override the guard provider in the test module with a mock that always returns true.
-
-**Q25: What's the difference between guards and middleware?**
-Middleware runs first and handles cross-cutting concerns. Guards are specifically for authorization and access control.
 
 ## Summary
 
 Guards are NestJS's authorization mechanism that determines whether requests should be allowed or rejected. They implement the `CanActivate` interface and have access to the execution context for making authorization decisions. Guards work with decorators and Reflector for metadata-driven authorization patterns.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `CanActivate` | Interface guards implement |
@@ -738,6 +659,14 @@ Guards are NestJS's authorization mechanism that determines whether requests sho
 | `@Public()` | Mark route as public |
 | `ForbiddenException` | Throw for unauthorized access |
 | `UnauthorizedException` | Throw for unauthenticated requests |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

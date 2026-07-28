@@ -1,4 +1,14 @@
+---
+section: SDE Role
+category: Interview
+tags: [concept]
+---
+
 # DevOps, Behavioral & Career Preparation (Phases 20–28)
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ---
 
@@ -74,11 +84,13 @@ git reflog                  # View all reference updates
 git bisect start            # Binary search for bug
 git bisect bad              # Mark current commit as bad
 git bisect good <commit>    # Mark commit as good
+
 ```
 
 ## Merge vs Rebase
 
-```
+```text
+
 Merge:
 - Creates merge commit
 - Preserves history
@@ -96,6 +108,7 @@ When to Use What:
 - Cleaning up commits: Rebase (linear history)
 - Updating feature branch with main: Rebase (avoid merge commits)
 - Shared/public branch: Never rebase
+
 ```
 
 ## Git Hooks
@@ -117,11 +130,13 @@ fi
 # Husky (Node.js) — modern git hooks
 npx husky init
 echo "npm run lint" > .husky/pre-commit
+
 ```
 
 ## Branching Strategies
 
-```
+```text
+
 Git Flow:
 - main (production)
 - develop (integration)
@@ -137,6 +152,7 @@ Trunk-Based Development:
 - main (always deployable)
 - Short-lived feature branches (< 1 day)
 - Feature flags for incomplete features
+
 ```
 
 ### Resources for Git
@@ -228,6 +244,7 @@ journalctl -u service     # Service logs
 systemctl status service  # Service status
 systemctl start service   # Start service
 systemctl stop service    # Stop service
+
 ```
 
 ## Shell Scripting
@@ -289,6 +306,7 @@ esac
 set -e  # Exit on error
 set -u  # Treat unset variables as errors
 trap 'echo "Error on line $LINENO"' ERR
+
 ```
 
 ##管道和重定向
@@ -312,6 +330,7 @@ EOF
 
 # Process substitution
 diff <(sort file1) <(sort file2)
+
 ```
 
 ### Resources for Linux
@@ -331,16 +350,19 @@ diff <(sort file1) <(sort file2)
 
 ## The STAR Method
 
-```
+```text
+
 S — Situation: Set the context (brief, relevant)
 T — Task: Describe your specific responsibility
 A — Action: Detail what YOU did (use "I", not "we")
 R — Result: Quantify the outcome and what you learned
+
 ```
 
 ### Example: Conflict Resolution
 
-```
+```text
+
 S: "In my previous role, I was working on a critical payment feature with
     a senior engineer who insisted on using a complex event-driven architecture.
     I believed a simpler synchronous approach would be faster to implement."
@@ -358,11 +380,13 @@ R: "We went with the hybrid approach. The feature shipped 2 weeks ahead of
     schedule, and the simplified architecture reduced bugs by 40%. My teammate
     and I now have a great working relationship and often collaborate on
     design decisions."
+
 ```
 
 ## Amazon Leadership Principles
 
-```
+```text
+
 1.  Customer Obsession — Start with customer, work backwards
 2.  Ownership — Think long-term, act on behalf of the company
 3.  Invent and Simplify — Innovate and find ways to simplify
@@ -377,11 +401,13 @@ R: "We went with the hybrid approach. The feature shipped 2 weeks ahead of
 12. Dive Deep — Stay connected to details
 13. Have Backbone; Disagree and Commit — Respectfully challenge, commit fully
 14. Deliver Results — Focus on key inputs, deliver with quality
+
 ```
 
 ## Microsoft Growth Mindset
 
-```
+```text
+
 Key Themes:
 - Learning from failure and iterating
 - Embracing challenges and ambiguity
@@ -395,62 +421,74 @@ Example Stories to Prepare:
 3. How you helped a struggling teammate
 4. A time you challenged the status quo
 5. How you adapted to changing requirements
+
 ```
 
 ## Common Behavioral Questions
 
 ### Leadership & Influence
 
-```
+```text
+
 - Tell me about a time you led a project or team.
 - Describe a situation where you had to influence without authority.
 - How did you handle a situation where you disagreed with your manager?
 - Tell me about a time you had to make a difficult decision with incomplete information.
 - Describe a time you had to get buy-in from multiple stakeholders.
+
 ```
 
 ### Conflict & Collaboration
 
-```
+```text
+
 - Tell me about a time you had a conflict with a coworker.
 - Describe a situation where you had to work with someone difficult.
 - How did you handle a disagreement about technical approach?
 - Tell me about a time you had to give difficult feedback.
 - Describe a time you had to collaborate across teams.
+
 ```
 
 ### Failure & Learning
 
-```
+```text
+
 - Tell me about a time you failed.
 - Describe a mistake you made and how you handled it.
 - What's the biggest technical mistake you've made?
 - How did you handle a project that was behind schedule?
 - Tell me about a time you had to quickly learn something new.
+
 ```
 
 ### Technical Decisions
 
-```
+```text
+
 - Describe a difficult technical decision you made.
 - Tell me about a time you chose a technology that didn't work out.
 - How did you handle technical debt in a project?
 - Describe a time you had to balance speed vs quality.
 - Tell me about a time you improved system performance.
+
 ```
 
 ### Customer Focus
 
-```
+```text
+
 - Tell me about a time you went above and beyond for a customer.
 - How did you handle conflicting customer requirements?
 - Describe a time you used data to make a product decision.
 - How did you prioritize features based on customer feedback?
+
 ```
 
 ## Story Bank Template
 
-```
+```text
+
 Prepare 8-10 versatile stories that can answer multiple questions:
 
 Story 1: Technical Leadership
@@ -492,11 +530,13 @@ Story 9: Ambiguity
 Story 10: Deadline Pressure
 - Delivered critical feature under tight deadline
 - Can answer: pressure, prioritization, delivery
+
 ```
 
 ## STAR Story Structure (2 minutes max)
 
-```
+```text
+
 Opening (10 seconds):
 "I'd like to talk about [situation]..."
 
@@ -514,6 +554,7 @@ Action (60-90 seconds):
 Result (15 seconds):
 "As a result, [quantified outcome]...
  What I learned was [lesson]..."
+
 ```
 
 ### Resources for Behavioral Interviews
@@ -532,7 +573,8 @@ Result (15 seconds):
 
 ## Resume Format for SDE
 
-```
+```text
+
 [Your Name]
 [Email] | [Phone] | [LinkedIn] | [GitHub] | [Portfolio]
 
@@ -557,11 +599,13 @@ PROJECTS
 • [What it does]
 • [Tech stack]
 • [Impact/metric]
+
 ```
 
 ## Writing Impactful Bullet Points
 
-```
+```text
+
 Formula: Action Verb + What You Did + Technology/Method + Impact/Metric
 
 Good:
@@ -576,11 +620,13 @@ Bad:
 ❌ "Worked on backend services" (no action, no metric)
 ❌ "Responsible for API development" (passive, no impact)
 ❌ "Used React to build frontend" (no outcome)
+
 ```
 
 ## Project Descriptions
 
-```
+```text
+
 Project: E-Commerce Platform
 - Built full-stack e-commerce platform with React, Next.js, NestJS, and PostgreSQL
 - Implemented payment processing with Stripe, handling 10K+ transactions/day
@@ -593,11 +639,13 @@ Project: Real-Time Chat Application
 - Implemented message persistence with Cassandra and presence tracking with Redis
 - Built notification system with Firebase Cloud Messaging for mobile push
 - Tech: React, Node.js, WebSocket, Cassandra, Redis, Docker
+
 ```
 
 ## Common Resume Mistakes
 
-```
+```text
+
 1. ❌ No metrics or quantifiable results
 2. ❌ Passive language ("responsible for", "worked on")
 3. ❌ Too long (keep to 1-2 pages)
@@ -614,15 +662,18 @@ Best Practices:
 ✅ Include 3-4 bullets per role
 ✅ Highlight leadership and impact
 ✅ Include side projects that show passion
+
 ```
 
 ## Action Verbs for Technical Resumes
 
-```
+```text
+
 Architected, Built, Designed, Developed, Implemented, Led, Optimized,
 Reduced, Increased, Improved, Automated, Migrated, Deployed, Launched,
 Scaled, Integrated, Refactored, Streamlined, Mentored, Collaborated,
 Delivered, Launched, Standardized, Established, Created, Established
+
 ```
 
 ### Resources for Resume
@@ -640,17 +691,19 @@ Delivered, Launched, Standardized, Established, Created, Established
 
 ## Testing Pyramid
 
-```
+```text
+
          /\
         /  \        E2E Tests (few, slow, expensive)
        / E2E\       - Test full user flows
-      /------\      
+      /------\
      /        \     Integration Tests (some, medium speed)
     / Integr.  \    - Test component interactions
-   /------------\   
+   /------------\
   /              \  Unit Tests (many, fast, cheap)
  /   Unit Tests   \ - Test individual functions/classes
 /------------------\
+
 ```
 
 ## Unit Testing with JUnit
@@ -660,35 +713,35 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    
+
     private Calculator calculator;
-    
+
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
     }
-    
+
     @Test
     void shouldAddTwoNumbers() {
         assertEquals(5, calculator.add(2, 3));
     }
-    
+
     @Test
     void shouldSubtractTwoNumbers() {
         assertEquals(1, calculator.subtract(3, 2));
     }
-    
+
     @Test
     void shouldDivideTwoNumbers() {
         assertEquals(2.5, calculator.divide(5, 2), 0.001);
     }
-    
+
     @Test
     void shouldThrowExceptionWhenDividingByZero() {
-        assertThrows(ArithmeticException.class, 
+        assertThrows(ArithmeticException.class,
             () -> calculator.divide(5, 0));
     }
-    
+
     @ParameterizedTest
     @CsvSource({
         "1, 1, 2",
@@ -698,13 +751,14 @@ class CalculatorTest {
     void shouldAddMultiplePairs(int a, int b, int expected) {
         assertEquals(expected, calculator.add(a, b));
     }
-    
+
     @Test
     @DisplayName("Should handle negative numbers correctly")
     void shouldHandleNegativeNumbers() {
         assertEquals(-5, calculator.add(-2, -3));
     }
 }
+
 ```
 
 ## Mocking with Mockito
@@ -720,19 +774,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class OrderServiceTest {
-    
+
     @Mock
     private OrderRepository orderRepository;
-    
+
     @Mock
     private PaymentService paymentService;
-    
+
     @Mock
     private NotificationService notificationService;
-    
+
     @InjectMocks
     private OrderService orderService;
-    
+
     @Test
     void shouldCreateOrderSuccessfully() {
         // Arrange
@@ -741,19 +795,19 @@ class OrderServiceTest {
             .thenReturn(new Order(1L, "product-1", 2, OrderStatus.PENDING));
         when(paymentService.processPayment(anyDouble()))
             .thenReturn(true);
-        
+
         // Act
         Order order = orderService.createOrder(request);
-        
+
         // Assert
         assertNotNull(order);
         assertEquals(OrderStatus.CONFIRMED, order.getStatus());
-        
+
         verify(orderRepository).save(any(Order.class));
         verify(paymentService).processPayment(anyDouble());
         verify(notificationService).sendConfirmation(any(Order.class));
     }
-    
+
     @Test
     void shouldFailWhenPaymentFails() {
         // Arrange
@@ -761,40 +815,41 @@ class OrderServiceTest {
             .thenReturn(new Order(1L, "product-1", 2, OrderStatus.PENDING));
         when(paymentService.processPayment(anyDouble()))
             .thenReturn(false);
-        
+
         // Act
         Order order = orderService.createOrder(new OrderRequest("product-1", 2));
-        
+
         // Assert
         assertEquals(OrderStatus.FAILED, order.getStatus());
         verify(notificationService).sendFailure(any(Order.class));
     }
-    
+
     @Test
     void shouldGetOrderById() {
         // Arrange
         when(orderRepository.findById(1L))
             .thenReturn(Optional.of(new Order(1L, "product-1", 2, OrderStatus.PENDING)));
-        
+
         // Act
         Order order = orderService.getOrder(1L);
-        
+
         // Assert
         assertNotNull(order);
         assertEquals("product-1", order.getProductId());
     }
-    
+
     @Test
     void shouldThrowExceptionWhenOrderNotFound() {
         // Arrange
         when(orderRepository.findById(999L))
             .thenReturn(Optional.empty());
-        
+
         // Act & Assert
         assertThrows(OrderNotFoundException.class,
             () -> orderService.getOrder(999L));
     }
 }
+
 ```
 
 ## Integration Testing
@@ -803,39 +858,40 @@ class OrderServiceTest {
 @SpringBootTest
 @Transactional
 class UserRepositoryIntegrationTest {
-    
+
     @Autowired
     private UserRepository userRepository;
-    
+
     @Test
     void shouldSaveAndRetrieveUser() {
         // Arrange
         User user = new User("Alice", "alice@example.com");
-        
+
         // Act
         User saved = userRepository.save(user);
         Optional<User> found = userRepository.findById(saved.getId());
-        
+
         // Assert
         assertTrue(found.isPresent());
         assertEquals("Alice", found.get().getName());
         assertEquals("alice@example.com", found.get().getEmail());
     }
-    
+
     @Test
     void shouldFindUsersByEmail() {
         // Arrange
         userRepository.save(new User("Alice", "alice@example.com"));
         userRepository.save(new User("Bob", "bob@example.com"));
-        
+
         // Act
         List<User> users = userRepository.findByEmailContaining("alice");
-        
+
         // Assert
         assertEquals(1, users.size());
         assertEquals("Alice", users.get(0).getName());
     }
 }
+
 ```
 
 ## API Testing
@@ -843,35 +899,37 @@ class UserRepositoryIntegrationTest {
 ```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class UserControllerTest {
-    
+
     @Autowired
     private TestRestTemplate restTemplate;
-    
+
     @Test
     void shouldCreateUser() {
         CreateUserRequest request = new CreateUserRequest("Alice", "alice@example.com");
-        
+
         ResponseEntity<User> response = restTemplate.postForEntity(
             "/api/users", request, User.class);
-        
+
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertNotNull(response.getBody());
         assertEquals("Alice", response.getBody().getName());
     }
-    
+
     @Test
     void shouldReturn404ForNonexistentUser() {
         ResponseEntity<User> response = restTemplate.getForEntity(
             "/api/users/999", User.class);
-        
+
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 }
+
 ```
 
 ## Testing Best Practices
 
-```
+```text
+
 Unit Tests:
 ✅ Test one thing at a time
 ✅ Use descriptive test names
@@ -898,6 +956,7 @@ General:
 ✅ Test behavior, not implementation
 ✅ Write tests before fixing bugs (regression tests)
 ✅ Use test data builders/factories
+
 ```
 
 ## Test Data Builders
@@ -909,12 +968,12 @@ public class UserBuilder {
     private String email = "test@example.com";
     private int age = 25;
     private boolean active = true;
-    
+
     public UserBuilder withName(String name) { this.name = name; return this; }
     public UserBuilder withEmail(String email) { this.email = email; return this; }
     public UserBuilder withAge(int age) { this.age = age; return this; }
     public UserBuilder inactive() { this.active = false; return this; }
-    
+
     public User build() {
         return new User(name, email, age, active);
     }
@@ -925,6 +984,7 @@ User user = new UserBuilder()
     .withName("Alice")
     .withEmail("alice@example.com")
     .build();
+
 ```
 
 ### Resources for Testing
@@ -950,6 +1010,7 @@ WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 ```
 
 ```bash
@@ -961,6 +1022,7 @@ docker logs <container>                # View logs
 docker exec -it <container> bash       # Shell into container
 docker-compose up -d                   # Start services
 docker-compose down                    # Stop services
+
 ```
 
 ## Docker Compose
@@ -977,7 +1039,7 @@ services:
     depends_on:
       - db
       - redis
-  
+
   db:
     image: postgres:15
     environment:
@@ -985,10 +1047,10 @@ services:
       - POSTGRES_PASSWORD=secret
     volumes:
       - postgres_data:/var/lib/postgresql/data
-  
+
   redis:
     image: redis:7-alpine
-  
+
   kafka:
     image: confluentinc/cp-kafka:7.4.0
     environment:
@@ -997,6 +1059,7 @@ services:
 
 volumes:
   postgres_data:
+
 ```
 
 ## Kubernetes Basics
@@ -1070,6 +1133,7 @@ spec:
       target:
         type: Utilization
         averageUtilization: 70
+
 ```
 
 ## CI/CD with GitHub Actions
@@ -1114,11 +1178,13 @@ jobs:
     - name: Deploy to EKS
       run: |
         kubectl set image deployment/myapp myapp=$ECR_URL/myapp:${{ github.sha }}
+
 ```
 
 ## AWS Services You Should Know
 
-```
+```text
+
 Compute:
 ├── EC2 — virtual machines
 ├── Lambda — serverless functions
@@ -1157,11 +1223,13 @@ Monitoring:
 ├── CloudWatch — monitoring and logs
 ├── X-Ray — distributed tracing
 └── CloudTrail — audit logging
+
 ```
 
 ## Azure Services (Microsoft)
 
-```
+```text
+
 Compute:
 ├── Azure VMs — virtual machines
 ├── Azure Functions — serverless
@@ -1194,6 +1262,7 @@ CDN & DNS:
 ├── Azure CDN — content delivery
 ├── Azure DNS — DNS management
 └── API Management — managed APIs
+
 ```
 
 ### Resources for Cloud & Infrastructure
@@ -1218,7 +1287,8 @@ CDN & DNS:
 
 ### Event Loop
 
-```
+```text
+
 Call Stack: Executes synchronous code
 Web APIs: Browser APIs (setTimeout, fetch, DOM)
 Callback Queue: Async callbacks waiting to execute
@@ -1235,6 +1305,7 @@ Promise.resolve().then(() => console.log('3')); // microtask
 console.log('4');                    // sync
 
 Output: 1, 4, 3, 2
+
 ```
 
 ### Closures
@@ -1242,7 +1313,7 @@ Output: 1, 4, 3, 2
 ```javascript
 function createCounter() {
     let count = 0; // enclosed variable
-    
+
     return {
         increment: () => ++count,
         decrement: () => --count,
@@ -1254,6 +1325,7 @@ const counter = createCounter();
 counter.increment(); // 1
 counter.increment(); // 2
 counter.getCount();  // 2
+
 ```
 
 ### Prototypal Inheritance
@@ -1280,6 +1352,7 @@ Dog.prototype.speak = function() {
 
 const dog = new Dog('Rex');
 dog.speak(); // "Rex barks"
+
 ```
 
 ## TypeScript Advanced Types
@@ -1312,7 +1385,7 @@ type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 type ParamType<T> = T extends (...args: infer P) => any ? P : never;
 
 // Discriminated Unions
-type Shape = 
+type Shape =
     | { kind: 'circle'; radius: number }
     | { kind: 'rectangle'; width: number; height: number }
     | { kind: 'triangle'; base: number; height: number };
@@ -1324,6 +1397,7 @@ function area(shape: Shape): number {
         case 'triangle': return (shape.base * shape.height) / 2;
     }
 }
+
 ```
 
 ## React Hooks Deep Dive
@@ -1381,6 +1455,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
     return [storedValue, setValue] as const;
 }
+
 ```
 
 ## React Performance Optimization
@@ -1429,6 +1504,7 @@ const Settings = lazy(() => import('./Settings'));
 
 // 5. Optimize images
 <img src="photo.webp" loading="lazy" alt="Photo" />
+
 ```
 
 ## Next.js App Router
@@ -1447,7 +1523,7 @@ export default function RootLayout({ children }) {
 async function HomePage() {
     const data = await fetch('https://api.example.com/data');
     const posts = await data.json();
-    
+
     return (
         <main>
             <h1>Welcome</h1>
@@ -1470,11 +1546,13 @@ function Counter() {
     const [count, setCount] = useState(0);
     return <button onClick={() => setCount(c => c + 1)}>Count: {count}</button>;
 }
+
 ```
 
 ## Browser Rendering Pipeline
 
-```
+```text
+
 1. DOM Construction — HTML → DOM tree
 2. CSSOM Construction — CSS → CSSOM tree
 3. Render Tree — DOM + CSSOM
@@ -1488,6 +1566,7 @@ Optimization Tips:
 - Use transform and opacity for animations (compositor-only)
 - Use will-change for animations
 - Debounce scroll/resize handlers
+
 ```
 
 ### Resources for Frontend
@@ -1510,7 +1589,8 @@ Optimization Tips:
 
 ## Practice Schedule
 
-```
+```text
+
 Week 1-4: Foundation
 - Solve 3-5 easy problems daily (patterns)
 - Read system design book (1 chapter/day)
@@ -1530,11 +1610,13 @@ Week 13-16: Final Prep
 - Review weak areas
 - Full mock interviews (2-3 hours each)
 - Company-specific preparation
+
 ```
 
 ## Mock Interview Platforms
 
-```
+```text
+
 Free:
 ├── [Pramp](https://www.pramp.com/) — peer-to-peer mock interviews
 ├── [Interviewing.io](https://interviewing.io/) — anonymous mock interviews
@@ -1551,11 +1633,13 @@ Self-Practice:
 ├── Talk out loud (practice explaining)
 ├── Write on paper/whiteboard
 └── Record yourself and review
+
 ```
 
 ## Interview Day Tips
 
-```
+```text
+
 Before Interview:
 ✅ Test your setup (camera, mic, internet)
 ✅ Have water and notepad ready
@@ -1588,6 +1672,7 @@ After Interview:
 ✅ Send thank you email within 24 hours
 ✅ Note what went well and what to improve
 ✅ Don't overthink — move to next preparation
+
 ```
 
 ---
@@ -1598,7 +1683,8 @@ After Interview:
 
 ## Microsoft
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Arrays, Strings, Trees, Graphs, DP
 ├── System Design: Large-scale distributed systems, Azure
@@ -1615,11 +1701,13 @@ Common Questions:
 - Design a file synchronization system (OneDrive-like)
 - Design a notification system (Teams-like)
 - Design a document collaboration system
+
 ```
 
 ## Google
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Heavy algorithmic focus, DP, Graphs
 ├── System Design: Large-scale, distributed, Google-scale
@@ -1636,11 +1724,13 @@ Common Questions:
 - Design Google Search Autocomplete
 - Design YouTube/Netflix
 - Design Google Maps
+
 ```
 
 ## Amazon
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Arrays, Strings, Trees, Graphs
 ├── System Design: E-commerce, logistics, scale
@@ -1657,11 +1747,13 @@ Common Questions:
 - Design a payment system
 - Design an e-commerce platform
 - Design a recommendation engine
+
 ```
 
 ## Meta (Facebook)
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Arrays, Strings, Trees, Graphs, DP
 ├── System Design: Social graph, news feed, real-time
@@ -1678,11 +1770,13 @@ Common Questions:
 - Design News Feed
 - Design Facebook Messenger/WhatsApp
 - Design Instagram Stories
+
 ```
 
 ## Apple
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Strong fundamentals, attention to detail
 ├── System Design: Privacy-focused, hardware-software integration
@@ -1699,11 +1793,13 @@ Common Questions:
 - Design iMessage
 - Design AirDrop
 - Design HealthKit
+
 ```
 
 ## Netflix
 
-```
+```text
+
 Focus Areas:
 ├── Coding: Strong fundamentals, practical solutions
 ├── System Design: Streaming, CDN, personalization
@@ -1720,11 +1816,13 @@ Common Questions:
 - Design video streaming system
 - Design recommendation engine
 - Design content delivery network
+
 ```
 
 ## Interview Preparation Checklist
 
-```
+```text
+
 2 Weeks Before:
 ✅ Resume polished and reviewed
 ✅ LinkedIn updated
@@ -1754,6 +1852,7 @@ Day Of:
 ✅ Stay calm and confident
 ✅ Be yourself
 ✅ Ask good questions
+
 ```
 
 ---
@@ -1762,7 +1861,8 @@ Day Of:
 
 ## The Complete Interview Prep Roadmap
 
-```
+```text
+
 Phase 1:   Java Language Mastery          — 25 hours
 Phase 2:   Time & Space Complexity        — 10 hours
 Phase 3:   Data Structures                — 40 hours
@@ -1793,11 +1893,13 @@ Phase 27:  Mock Interviews & Practice     — 40 hours
 Phase 28:  Company-Specific Preparation   — 15 hours
 
 Total: ~640 hours (~16 weeks at 40 hrs/week)
+
 ```
 
 ## Key Success Factors
 
-```
+```text
+
 1. Consistency > Intensity
    - Study daily, even if just 1-2 hours
    - Avoid cramming before interviews
@@ -1819,11 +1921,13 @@ Total: ~640 hours (~16 weeks at 40 hrs/week)
    - Exercise regularly
    - Sleep well
    - Stay positive
+
 ```
 
 ## Recommended Study Plan
 
-```
+```text
+
 If you have 3 months (12 weeks):
 - Weeks 1-4: Java, DSA fundamentals, easy/medium problems
 - Weeks 5-8: System design, advanced DSA, medium/hard problems
@@ -1833,11 +1937,13 @@ If you have 6 months (24 weeks):
 - Weeks 1-8: Foundation (all topics at basic level)
 - Weeks 9-16: Intermediate (deep dive into each topic)
 - Weeks 17-24: Advanced (mock interviews, company prep)
+
 ```
 
 ## Best Resources Summary
 
-```
+```text
+
 Books:
 📘 Cracking the Coding Interview — Gayle McDowell
 📘 Elements of Programming Interviews — Adnan Aziz
@@ -1866,6 +1972,7 @@ Courses:
 💻 Educative.io — interactive courses
 💻 AlgoExpert — curated problems
 💻 Exponent — system design + mock interviews
+
 ```
 
 ---
@@ -1892,3 +1999,25 @@ Courses:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers DevOps practices, behavioral interview preparation, and career growth strategies. Topics include CI/CD pipelines, containerization, monitoring, the STAR method, and navigating the senior engineering career path.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

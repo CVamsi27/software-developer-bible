@@ -1,4 +1,14 @@
+---
+section: Build Tools
+category: DevOps
+tags: [interview-questions, reference]
+---
+
 # Build Tools Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Comprehensive Interview Guide
 
@@ -710,6 +720,13 @@ This comprehensive guide covers build tools from fundamentals to advanced concep
 4. **Optimization**: Code splitting, tree shaking, compression
 
 Understanding these concepts is essential for modern frontend development and technical interviews.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Next.js](../04-NextJS/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

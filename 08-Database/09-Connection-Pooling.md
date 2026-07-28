@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Connection Pooling
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -451,114 +461,12 @@ process.on('SIGTERM', async () => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is connection pooling?**
-   Maintaining a cache of database connections for reuse.
-
-2. **Why use connection pooling?**
-   Reduces connection overhead, improves performance.
-
-3. **What is PgBouncer?**
-   Lightweight connection pooler for PostgreSQL.
-
-4. **What is the difference between max and min pool size?**
-   Max: upper limit of connections; Min: connections kept in pool.
-
-5. **What is idle timeout?**
-   Time after which idle connections are closed.
-
-### Intermediate (5)
-
-6. **What are PgBouncer pool modes?**
-   Session, Transaction, Statement; each holds connection differently.
-
-7. **How do you size a connection pool?**
-   Based on CPU cores, workload, and response time.
-
-8. **What is connection leak?**
-   When connections are not returned to pool; causes exhaustion.
-
-9. **What is connection validation?**
-   Checking if connection is still alive before use.
-
-10. **What is the difference between connection pool and thread pool?**
-    Connection pool: manages DB connections; Thread pool: manages threads.
-
-### Senior (10)
-
-11. **How do you handle connection pool exhaustion?**
-    Increase pool size, optimize queries, use separate pools.
-
-12. **What is connection multiplexing?**
-    Multiple logical connections over fewer physical connections.
-
-13. **How does PgBouncer improve performance?**
-    Reduces PostgreSQL connection overhead, enables transaction pooling.
-
-14. **What is the impact of connection pool size on performance?**
-    Too small: queuing; Too large: context switching, memory.
-
-15. **How do you monitor connection pool health?**
-    Track active, idle, waiting connections; alert on thresholds.
-
-16. **What is connection timeout vs query timeout?**
-    Connection timeout: time to get connection; Query timeout: time to execute.
-
-17. **How do you handle connection failures in a pool?**
-    Retry logic, health checks, automatic reconnection.
-
-18. **What is the difference between connection pooling and query caching?**
-    Connection pooling: reuses connections; Query caching: caches results.
-
-19. **How do you implement connection pooling in Prisma?**
-    Prisma manages pool internally; configure via DATABASE_URL parameters.
-
-20. **What is the relationship between connection pool and transaction isolation?**
-    Isolation level affects lock duration; impacts connection reuse.
-
-### FAANG-style (5)
-
-21. **Design a connection pool for 1 million concurrent users.**
-    PgBouncer, multiple pools, read replicas, connection multiplexing.
-
-22. **How do you handle connection pooling across regions?**
-    Regional pools, connection routing, failover.
-
-23. **Design a connection pool monitoring system.**
-    Metrics, alerting, dashboards, auto-scaling.
-
-24. **How do you optimize connection pool for microservices?**
-    Service-specific pools, circuit breakers, bulkheads.
-
-25. **Design a connection pool for serverless applications.**
-    PgBouncer, connection proxies, stateless design.
-
-### Follow-ups (5)
-
-26. **What is the difference between connection pooling and connection reuse?**
-    Pooling: manages connections; Reuse: uses same connection multiple times.
-
-27. **How do you handle database failover with connection pooling?**
-    PgBouncer health checks, automatic reconnection, DNS failover.
-
-28. **What is the impact of connection pooling on ACID transactions?**
-    Transaction mode: connection held for transaction; Session mode: held longer.
-
-29. **How do you debug connection pool issues?**
-    Monitor pool stats, check for leaks, analyze query performance.
-
-30. **What is the difference between PgBouncer and PgPool-II?**
-    PgBouncer: lightweight, fast; PgPool-II: more features, heavier.
 
 ## Summary
 
 Connection pooling is essential for database performance. Use PgBouncer for production PostgreSQL. Configure pool size based on workload. Monitor pool health and handle connection failures. Prisma manages connection pooling internally.
 
 ## Cheat Sheet
-
 ```ini
 # PgBouncer configuration
 [databases]
@@ -593,6 +501,13 @@ SELECT * FROM pg_stat_database;
 SHOW POOLS;  -- PgBouncer
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

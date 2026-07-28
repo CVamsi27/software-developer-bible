@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Union-Find
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -437,7 +447,6 @@ console.log(board);
 Union-Find is a powerful data structure for dynamic connectivity problems. With path compression and union by rank, it achieves nearly constant time per operation.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Union-Find (DSU)
 Use when: Connected components, cycle detection, merging sets
@@ -471,6 +480,13 @@ Common patterns:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

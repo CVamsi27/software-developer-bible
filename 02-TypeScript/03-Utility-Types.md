@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Utility Types
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -508,104 +518,12 @@ type Handler = (...args: Parameters<typeof originalHandler>) => void;
 - **IDE**: Complex utility types may affect IDE performance
 - **Tree shaking**: No impact on bundle size
 
-## Interview Questions
-
-### Beginner
-
-1. **What is Partial<T>?**
-
-   - Makes all properties of T optional
-
-2. **What is the difference between Pick and Omit?**
-
-   - Pick extracts specified properties; Omit removes them
-
-3. **How do you make all properties required?**
-
-   - Use `Required<T>`
-
-4. **What does Record<K, V> create?**
-
-   - An object type with keys K and values V
-
-5. **How do you extract function parameter types?**
-
-   - Use `Parameters<T>`
-
-### Intermediate
-
-6. **When would you use Exclude vs Extract?**
-
-   - Exclude removes types from a union; Extract keeps only matching types
-
-7. **How do you create a type with all readonly properties?**
-
-   - Use `Readonly<T>`
-
-8. **What does NonNullable<T> do?**
-
-   - Removes null and undefined from a type
-
-9. **How do you get the return type of an async function?**
-
-   - Use `ReturnType<T>` which gives `Promise<T>`, or `Awaited<ReturnType<T>>` to unwrap
-
-10. **Can you chain utility types?**
-
-    - Yes: `Partial<Omit<User, "id">>`
-
-### Senior
-
-11. **Design a type system for a CRUD API using utility types**
-
-    - Entity, CreateDTO, UpdateDTO, Response types
-
-12. **How would you implement a type-safe deep partial?**
-
-    - Use recursive mapped types with Partial
-
-13. **Explain the relationship between Pick and Omit**
-
-    - `Omit<T, K>` is equivalent to `Pick<T, Exclude<keyof T, K>>`
-
-14. **How do you type a function that transforms an object?**
-
-    - Use mapped types with conditional types
-
-### FAANG-style
-
-15. **Build a type-safe form validation system**
-
-    - Use Partial for optional fields, Record for error maps
-
-16. **Implement a type-safe state management solution**
-
-    - Use utility types for state, actions, and reducers
-
-17. **Create a type-safe API client**
-
-    - Use ReturnType, Parameters for method signatures
-
-### Follow-ups
-
-18. **How do utility types interact with generics?**
-
-    - Utility types can be used inside generic constraints
-
-19. **Can you create custom utility types?**
-
-    - Yes: Use mapped types, conditional types, and infer
-
-20. **How do you debug complex utility types?**
-
-    - Use IDE hover, or create intermediate type aliases
 
 ## Summary
 
 Utility types are essential tools for type transformation in TypeScript. Master them to write cleaner, more maintainable code. They're especially useful for creating DTOs, API responses, and React component props.
 
 ## Cheat Sheet
-
 ```typescript
 // Object transformations
 Partial<T>     // All optional
@@ -629,6 +547,13 @@ InstanceType<T>  // Class instance type
 Awaited<T>       // Unwrap Promise recursively
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

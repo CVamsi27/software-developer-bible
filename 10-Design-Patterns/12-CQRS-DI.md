@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # CQRS & Dependency Injection Patterns
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1292,124 +1302,12 @@ function configureDI(): Container {
 
 5. **Lazy Loading**: Consider lazy loading for expensive dependencies.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is CQRS?**
-
-   - An architectural pattern separating read and write operations into different models.
-
-2. **What is Dependency Injection?**
-
-   - A design pattern where objects receive dependencies from external sources.
-
-3. **When would you use CQRS?**
-
-   - When read and write patterns differ significantly, or different scaling needs.
-
-4. **How do you implement DI in TypeScript?**
-
-   - Use constructor injection, interfaces, and DI containers.
-
-5. **What are the benefits of DI?**
-
-   - Loose coupling, testability, flexibility, and maintainability.
-
-### Intermediate
-
-6. **What's the difference between CQRS and Event Sourcing?**
-
-   - CQRS separates reads/writes; Event Sourcing stores state changes as events.
-
-7. **How do you handle eventual consistency in CQRS?**
-
-   - Use event handlers, sagas, or polling for synchronization.
-
-8. **Can you use CQRS without Event Sourcing?**
-
-   - Yes, CQRS can work with traditional databases.
-
-9. **What's the difference between DI and Service Locator?**
-
-   - DI is explicit; Service Locator is implicit dependency resolution.
-
-10. **How do you test code with DI?**
-
-    - Use mock implementations, inject test doubles.
-
-### Senior
-
-11. **How does CQRS affect scalability?**
-
-    - Enables independent scaling of read and write sides.
-
-12. **What are the SOLID violations with CQRS/DI?**
-
-    - Usually follows SOLID; watch for violating Dependency Inversion.
-
-13. **How do you handle CQRS in microservices?**
-
-    - Use separate services for read/write, or separate databases.
-
-14. **What are the memory implications of DI?**
-
-    - DI containers store registrations; singleton instances persist.
-
-15. **How do you refactor to CQRS/DI?**
-
-    - Start with simple separation, gradually introduce complexity.
-
-### FAANG-style
-
-16. **Design a CQRS system for high availability.**
-
-    - Consider replication, partitioning, and consistency guarantees.
-
-17. **How would you implement DI for distributed systems?**
-
-    - Use service discovery, configuration management, and health checks.
-
-18. **What are the implications of CQRS in cloud-native applications?**
-
-    - Consider serverless, auto-scaling, and cost optimization.
-
-19. **How do you handle CQRS in event-driven architectures?**
-
-    - Use event buses, message queues, and eventual consistency.
-
-20. **Design a DI container that supports lifecycle management.**
-
-    - Consider singleton, transient, and scoped lifetimes.
-
-### Follow-ups
-
-21. **Can CQRS/DI be combined with other patterns?**
-
-    - Yes, commonly with Event Sourcing, Repository, and Factory patterns.
-
-22. **How do you handle CQRS/DI in testing frameworks?**
-
-    - Use dependency injection, create test containers, and mock implementations.
-
-23. **What are the memory implications of CQRS/DI?**
-
-    - CQRS requires separate models; DI containers store registrations.
-
-24. **How do you handle CQRS/DI in serverless environments?**
-
-    - Consider stateless design, function composition, and cold starts.
-
-25. **What's the impact of CQRS/DI on code maintainability?**
-
-    - Improves maintainability by separating concerns and promoting loose coupling.
 
 ## Summary
 
 CQRS and DI are essential architectural patterns for complex applications. CQRS separates read and write operations for independent optimization, while DI promotes loose coupling and testability. Use them when complexity warrants the added overhead.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │        CQRS & DI PATTERNS                   │
@@ -1448,6 +1346,14 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

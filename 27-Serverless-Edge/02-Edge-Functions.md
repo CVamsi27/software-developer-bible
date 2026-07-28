@@ -1,4 +1,14 @@
+---
+section: Serverless & Edge
+category: DevOps
+tags: [concept]
+---
+
 # Edge Functions
+
+[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Edge functions are serverless functions that run at the edge of a network, close to end users, rather than in a centralized data center. They execute on CDN nodes (Points of Presence) to reduce latency and improve performance for user-facing operations.
@@ -385,138 +395,17 @@ Edge vs Serverless Comparison:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What are edge functions?**
-
-   - Answer: Serverless functions that run at CDN edge locations, close to users, reducing latency for dynamic content processing.
-
-2. **What is Cloudflare Workers?**
-
-   - Answer: A serverless execution environment that allows you to run JavaScript at Cloudflare's edge network.
-
-3. **What is the difference between edge and serverless?**
-
-   - Answer: Edge functions run at multiple CDN locations globally; serverless functions run in a single region.
-
-4. **When should you use edge functions?**
-
-   - Answer: For latency-sensitive tasks like authentication, routing, A/B testing, and personalization.
-
-5. **What is Vercel Edge Middleware?**
-
-   - Answer: Code that runs at the edge before page rendering, used for redirects, rewrites, and headers.
-
-### Intermediate (5)
-
-6. **How do edge functions handle cold starts?**
-
-   - Answer: Edge functions use V8 isolates with cold starts under 5ms, much faster than traditional serverless.
-
-7. **What are the limitations of edge functions?**
-
-   - Answer: CPU time limits (10ms-30s), memory limits (128MB), limited Node.js API support, stateless execution.
-
-8. **How do you store state at the edge?**
-
-   - Answer: Use Cloudflare KV for key-value storage, Durable Objects for stateful coordination, or external databases.
-
-9. **What is the execution model for Cloudflare Workers?**
-
-   - Answer: Each request runs in an isolated V8 isolate, with no shared memory between requests.
-
-10. **How do you handle errors in edge functions?**
-
-    - Answer: Implement try-catch, use error boundaries, provide fallback responses, monitor with logging.
-
-### Senior (10)
-11. **Design a real-time personalization system using edge functions**
-
-    - Answer: Use edge for user segmentation, KV for segment storage, Durable Objects for session state, and streaming for dynamic content.
-
-12. **How do you implement rate limiting at the edge?**
-
-    - Answer: Use KV to store request counts with TTL, implement sliding window algorithm, handle concurrent requests.
-
-13. **What is the relationship between edge and CDN?**
-
-    - Answer: Edge functions execute on CDN nodes, leveraging the same global distribution but adding compute capability.
-
-14. **How do you debug edge functions in production?**
-
-    - Answer: Use structured logging, implement request tracing, leverage provider debugging tools, test with wrangler.
-
-15. **Explain the trade-offs of edge computing**
-
-    - Answer: Lower latency vs limited compute, global distribution vs consistency challenges, reduced origin load vs complexity.
-
-16. **How do you handle authentication at the edge?**
-
-    - Answer: Verify JWTs at the edge, use KV for token blacklists, implement refresh token rotation.
-
-17. **What are Durable Objects?**
-
-    - Answer: Cloudflare's stateful primitives that provide single-instance coordination for edge applications.
-
-18. **How do you optimize edge function performance?**
-
-    - Answer: Minimize dependencies, use streaming responses, leverage caching, avoid heavy computation.
-
-19. **How do you test edge functions locally?**
-
-    - Answer: Use Wrangler for local development, Miniflare for testing, mock edge runtime APIs.
-
-20. **What is the difference between edge middleware and edge functions?**
-
-    - Answer: Middleware runs before request handling (routing, auth); functions handle specific endpoints.
-
-### FAANG-style (5)
-21. **Design a global API gateway using edge functions**
-
-    - Answer: Edge for routing/auth, Durable Objects for session management, KV for configuration, origin for heavy computation.
-
-22. **How would you implement A/B testing at scale with edge functions?**
-
-    - Answer: Use consistent hashing for user assignment, KV for experiment configuration, Durable Objects for metrics aggregation.
-
-23. **Explain edge computing for real-time applications**
-
-    - Answer: Use edge for WebSocket handling, Durable Objects for room coordination, streaming for real-time updates.
-
-24. **How do you handle data consistency in edge applications?**
-
-    - Answer: Use eventual consistency with KV, Durable Objects for strong consistency, CRDTs for conflict resolution.
-
-25. **Design a serverless edge architecture for e-commerce**
-
-    - Answer: Edge for personalization/pricing, origin for inventory/payment, KV for product data, Durable Objects for cart state.
-
-### Follow-ups (5)
-26. **How do you migrate from serverless to edge?**
-
-    - Answer: Identify edge-appropriate workloads, refactor for edge constraints, implement gradually, test thoroughly.
-
-27. **What is the impact of edge computing on SEO?**
-
-    - Answer: Faster page loads improve SEO, edge rendering can improve Core Web Vitals, dynamic rendering for bots.
-
-28. **How do you handle security at the edge?**
-
-    - Answer: WAF integration, DDoS protection, rate limiting, input validation, secure headers.
-
-29. **What are the cost considerations for edge functions?**
-
-    - Answer: Request-based pricing, CPU time billing, compare with origin costs, optimize for cost efficiency.
-
-30. **How do you monitor edge function performance?**
-
-    - Answer: Use provider analytics, implement custom metrics, track latency percentiles, monitor error rates.
 
 ## Summary
 
 Edge functions provide a powerful way to reduce latency and improve performance by executing code at CDN edge locations. They are ideal for latency-sensitive tasks but have computational limitations compared to traditional serverless functions.
+
+---
+
+## See Also
+- [Next.js](../04-NextJS/)
+- [Docker](../13-Docker/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

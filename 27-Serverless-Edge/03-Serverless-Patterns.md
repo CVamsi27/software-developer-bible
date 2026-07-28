@@ -1,4 +1,14 @@
+---
+section: Serverless & Edge
+category: DevOps
+tags: [concept]
+---
+
 # Serverless Patterns
+
+[![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Serverless patterns are reusable architectural designs for building serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
@@ -551,138 +561,17 @@ Pattern Selection Guide:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is the API Gateway + Lambda pattern?**
-
-   - Answer: A pattern where API Gateway handles HTTP requests and triggers Lambda functions for processing.
-
-2. **What is SQS used for in serverless?**
-
-   - Answer: Decoupling services, async processing, buffering requests, and handling traffic spikes.
-
-3. **What is EventBridge?**
-
-   - Answer: AWS's serverless event bus that connects applications with events from AWS services, SaaS apps, and custom applications.
-
-4. **What is a dead letter queue?**
-
-   - Answer: A queue that receives messages that failed processing after maximum retries, enabling later investigation.
-
-5. **What is idempotency?**
-
-   - Answer: The property where executing an operation multiple times produces the same result as executing it once.
-
-### Intermediate (5)
-
-6. **When should you use Step Functions vs simple Lambda chaining?**
-
-   - Answer: Use Step Functions for complex workflows with branching, parallel execution, or human approval. Use Lambda chaining for simple sequential operations.
-
-7. **How do you handle errors in SQS + Lambda?**
-
-   - Answer: Use partial batch failures, dead letter queues, exponential backoff retry, and visibility timeout.
-
-8. **What is the difference between SQS and SNS?**
-
-   - Answer: SQS is point-to-point (one consumer); SNS is pub-sub (many consumers). SQS buffers messages; SNS routes immediately.
-
-9. **How do you implement event sourcing in serverless?**
-
-   - Answer: Store events in DynamoDB/S3, use Lambda to project events into read models, replay events to rebuild state.
-
-10. **What is CQRS and when should you use it?**
-
-    - Answer: Separating read and write operations. Use when read and write patterns differ significantly or when scaling independently.
-
-### Senior (10)
-11. **Design a serverless e-commerce order processing system**
-
-    - Answer: API Gateway + Lambda for API, SQS for async processing, Step Functions for order workflow, DynamoDB for state, EventBridge for events.
-
-12. **How do you handle distributed transactions in serverless?**
-
-    - Answer: Use Saga pattern with compensating transactions, or event sourcing for eventual consistency.
-
-13. **Explain choreography vs orchestration**
-
-    - Answer: Choreography: Services react to events independently. Orchestration: Central coordinator manages workflow. Use choreography for simple, orchestration for complex.
-
-14. **How do you test serverless patterns?**
-
-    - Answer: Unit test handlers, integration test with localstack/SAM Local, end-to-end test with deployed stack, use step functions local.
-
-15. **What are the limitations of serverless patterns?**
-
-    - Answer: Cold starts, execution time limits, vendor lock-in, debugging complexity, state management challenges.
-
-16. **How do you monitor async serverless workflows?**
-
-    - Answer: Use CloudWatch for logs, X-Ray for tracing, custom metrics, Step Functions visual execution history.
-
-17. **How do you handle data consistency in event-driven architectures?**
-
-    - Answer: Use eventual consistency, implement idempotency, use transactional outbox pattern, handle duplicate events.
-
-18. **What is the Strangler Fig pattern in serverless migration?**
-
-    - Answer: Gradually replacing legacy system components with serverless alternatives, routing traffic between old and new.
-
-19. **How do you optimize serverless costs?**
-
-    - Answer: Right-size memory, use provisioned concurrency strategically, optimize execution time, use ARM architectures.
-
-20. **Design a serverless real-time notification system**
-
-    - Answer: EventBridge for events, Lambda for processing, SNS for fan-out, SQS for buffering, WebSocket API for real-time delivery.
-
-### FAANG-style (5)
-21. **Design a serverless system processing 1 million events per second**
-
-    - Answer: Kinesis for ingestion, Lambda for processing, DynamoDB for storage, auto-scaling, multi-region deployment, monitoring at scale.
-
-22. **How would you implement a serverless microservices architecture?**
-
-    - Answer: Event-driven communication, API Gateway per service, Lambda for compute, DynamoDB per service, EventBridge for events, Step Functions for workflows.
-
-23. **Explain serverless at global scale**
-
-    - Answer: Multi-region deployment, edge computing for latency, data replication, failover strategies, global consistency challenges.
-
-24. **How do you handle serverless security at scale?**
-
-    - Answer: IAM least privilege, VPC for isolation, secrets management, WAF for API protection, audit logging.
-
-25. **Design a serverless data pipeline for analytics**
-
-    - Answer: Kinesis for streaming, Lambda for ETL, S3 for data lake, Athena for querying, Glue for cataloging, QuickSight for visualization.
-
-### Follow-ups (5)
-26. **How do you handle stateful operations in serverless?**
-
-    - Answer: Use external state stores (DynamoDB, ElastiCache), Durable Objects for edge, or Step Functions for workflow state.
-
-27. **What is the impact of serverless on DevOps?**
-
-    - Answer: Infrastructure as code, CI/CD for serverless, monitoring complexity, debugging challenges, new deployment strategies.
-
-28. **How do you migrate a monolith to serverless?**
-
-    - Answer: Strangler Fig pattern, identify serverless-suitable components, refactor incrementally, test thoroughly.
-
-29. **What are the anti-patterns in serverless?**
-
-    - Answer: God functions, synchronous chains, missing error handling, over-provisioning, tight coupling.
-
-30. **How do you ensure reliability in serverless systems?**
-
-    - Answer: Dead letter queues, retries with backoff, circuit breakers, health checks, monitoring and alerting.
 
 ## Summary
 
 Serverless patterns provide proven solutions for common architectural challenges. Understand when to use each pattern, how to implement them correctly, and how to handle failures gracefully.
+
+---
+
+## See Also
+- [Next.js](../04-NextJS/)
+- [Docker](../13-Docker/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

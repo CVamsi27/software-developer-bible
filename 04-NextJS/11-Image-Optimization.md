@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Image Optimization in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -664,131 +674,6 @@ Core Web Vitals Impact:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the Next.js Image component?**
-   A component that automatically optimizes images through lazy loading, format conversion, and responsive sizing.
-
-2. **How do you use the Image component?**
-   Import from `next/image`, provide src, alt, width, and height props.
-
-3. **What is lazy loading?**
-   Loading images only when they enter the viewport, saving bandwidth and improving initial load.
-
-4. **What is the blur placeholder?**
-   A low-quality image placeholder shown while the full image loads, improving perceived performance.
-
-5. **Why do we need width and height?**
-   To prevent layout shift by reserving space before the image loads.
-
-6. **What is priority loading?**
-   Loading images immediately without lazy loading, used for above-the-fold images.
-
-7. **How do remote images work?**
-   Configure allowed domains in `next.config.js` with `remotePatterns`.
-
-8. **What formats does Next.js support?**
-   WebP and AVIF for modern browsers, with JPEG/PNG fallback.
-
-### Intermediate (5-10)
-
-9. **How do you configure image optimization?**
-   Use `next.config.js` with `images` property for device sizes, formats, and remote patterns.
-
-10. **What is the fill mode?**
-    A mode where the image fills its parent container, useful for responsive backgrounds.
-
-11. **How do you handle responsive images?**
-    Use `sizes` prop to define breakpoints and serve appropriate image sizes.
-
-12. **What is the difference between priority and lazy loading?**
-    Priority loads immediately, lazy loading defers until the image is in viewport.
-
-13. **How do you optimize images for mobile?**
-    Use responsive sizes, smaller dimensions for mobile, and appropriate quality settings.
-
-14. **How do you handle image aspect ratios?**
-    Use `objectFit` with `cover` or `contain`, or use `fill` mode with aspect ratio containers.
-
-15. **What is CDN caching for images?**
-    Optimized images are cached on the CDN, serving them faster on subsequent requests.
-
-### Senior (10-15)
-
-16. **Design an image optimization strategy for an e-commerce platform.**
-    Use priority for product images, blur placeholders for galleries, responsive sizes for different devices, and CDN caching.
-
-17. **How would you implement image optimization at scale?**
-    Use Vercel Image Optimization or custom image processing pipeline, implement CDN caching, and monitor performance.
-
-18. **Explain the image optimization pipeline.**
-    Image request → Resize → Convert format → Compress → Cache → Deliver.
-
-19. **How do you handle user-uploaded images?**
-    Process on upload, generate multiple sizes, convert to WebP/AVIF, and store optimized versions.
-
-20. **Design a system for dynamic image generation.**
-    Use server-side image processing, generate thumbnails, create social media previews, and cache results.
-
-21. **How would you implement image optimization for AMP pages?**
-    Use AMP-compatible image formats, implement preloading, and follow AMP image guidelines.
-
-22. **Explain the relationship between image optimization and Core Web Vitals.**
-    Optimized images improve LCP (faster loading), CLS (no layout shift), and FCP (faster first paint).
-
-23. **How do you handle images in Server Components?**
-    Use the Image component normally, it works in both Server and Client Components.
-
-24. **Design an image CDN architecture.**
-    Implement edge caching, on-demand optimization, format negotiation, and responsive delivery.
-
-25. **How would you implement image analytics?**
-    Track loading performance, monitor format usage, measure bandwidth savings, and optimize based on data.
-
-### FAANG-style (5-10)
-
-26. **Design a global image optimization system.**
-    Use edge computing, implement geo-distributed caching, handle format negotiation, and optimize for latency.
-
-27. **How would you implement machine learning for image optimization?**
-    Use ML for quality assessment, adaptive compression, content-aware cropping, and format selection.
-
-28. **Design an image system for social media.**
-    Generate platform-specific sizes, optimize for sharing, implement preview generation, and handle different formats.
-
-29. **How would you implement image optimization for video thumbnails?**
-    Extract frames, generate multiple thumbnails, optimize for preview, and cache results.
-
-30. **Design a system for accessibility with images.**
-    Implement alt text generation, provide text alternatives, ensure contrast, and support screen readers.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Next.js Image component?**
-    Requires width/height, remote images need configuration, and some features are Vercel-only.
-
-32. **How does image optimization affect build time?**
-    Local images are processed at build time, increasing build duration. Remote images are processed on-demand.
-
-33. **What is the future of image optimization in Next.js?**
-    Better format support, improved caching, and more configuration options.
-
-34. **How do you test image optimization?**
-    Use Lighthouse, check network tab for format, verify lazy loading, and test on different devices.
-
-35. **What security considerations apply to images?**
-    Validate remote URLs, prevent image-based attacks, and implement content security policy.
-
-36. **How do you handle images in offline mode?**
-    Cache images with Service Workers, implement fallback images, and handle network failures.
-
-37. **What are alternatives to Next.js Image component?**
-    HTML img tag, lazy loading libraries, and CDN image optimization services.
-
-38. **How do you monitor image performance in production?**
-    Track loading times, monitor format usage, measure bandwidth, and alert on issues.
 
 ## Summary
 
@@ -803,7 +688,6 @@ Core Web Vitals Impact:
 | CDN | Automatic caching |
 
 ## Cheat Sheet
-
 ```text
 Basic usage:
 import Image from 'next/image'
@@ -832,6 +716,13 @@ Configuration:
 next.config.js → images.deviceSizes, imageSizes, formats
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

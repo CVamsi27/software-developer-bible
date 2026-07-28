@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Adapter Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1085,124 +1095,12 @@ class StatelessAdapter {
 
 5. **Caching**: Cache adapted results if the same data is adapted multiple times.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Adapter pattern?**
-
-   - A structural pattern that allows objects with incompatible interfaces to collaborate.
-
-2. **When would you use Adapter pattern?**
-
-   - When integrating third-party libraries, legacy systems, or APIs with different interfaces.
-
-3. **What's the difference between Adapter and Facade?**
-
-   - Adapter makes one interface compatible; Facade simplifies a complex system.
-
-4. **How do you implement Adapter in TypeScript?**
-
-   - Create an adapter class that implements the target interface and wraps the adaptee.
-
-5. **What are the benefits of Adapter pattern?**
-
-   - Reusability, flexibility, and separation of concerns.
-
-### Intermediate
-
-6. **What's the difference between Object Adapter and Class Adapter?**
-
-   - Object Adapter uses composition; Class Adapter uses inheritance.
-
-7. **Can Adapter add functionality?**
-
-   - Yes, but keep it focused on interface adaptation, not business logic.
-
-8. **How do you test Adapter pattern?**
-
-   - Mock the adaptee, test the adapter's interface implementation.
-
-9. **What's the relationship between Adapter and Decorator?**
-
-   - Adapter changes interface; Decorator adds behavior while keeping interface.
-
-10. **How do you handle multiple adaptees?**
-
-    - Create separate adapters for each adaptee or use a compound adapter.
-
-### Senior
-
-11. **How does Adapter pattern affect scalability?**
-
-    - Adapters are lightweight; the adapted objects can be optimized.
-
-12. **What are the SOLID violations with Adapter?**
-
-    - Usually follows SOLID; watch for adapters violating Single Responsibility.
-
-13. **How do you handle Adapter in microservices?**
-
-    - Use adapters for API integration, protocol translation, and data transformation.
-
-14. **What are the memory implications of Adapter?**
-
-    - Adapters are usually stateless; the adapted objects consume memory.
-
-15. **How do you refactor Adapter code?**
-
-    - Extract common logic, use composition, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design an Adapter for a legacy system.**
-
-    - Consider backward compatibility, error handling, and performance.
-
-17. **How would you implement Adapter for distributed systems?**
-
-    - Consider network transparency, serialization, and fault tolerance.
-
-18. **What are the implications of Adapter in cloud-native applications?**
-
-    - Consider serverless functions, API gateways, and protocol translation.
-
-19. **How do you handle Adapter in event-driven architectures?**
-
-    - Use adapters for event transformation and protocol translation.
-
-20. **Design an Adapter that supports versioning.**
-
-    - Consider backward compatibility, version negotiation, and migration.
-
-### Follow-ups
-
-21. **Can Adapter pattern be combined with other patterns?**
-
-    - Yes, commonly with Factory, Decorator, and Proxy patterns.
-
-22. **How do you handle Adapter in testing frameworks?**
-
-    - Use dependency injection, create test adapters, and mock implementations.
-
-23. **What are the memory implications of Adapter pattern?**
-
-    - Adapters are usually lightweight; the adapted objects consume memory.
-
-24. **How do you handle Adapter in serverless environments?**
-
-    - Consider stateless design, cold starts, and protocol translation.
-
-25. **What's the impact of Adapter on code maintainability?**
-
-    - Improves maintainability by decoupling systems and centralizing adaptation logic.
 
 ## Summary
 
 The Adapter pattern is essential for integrating incompatible interfaces. It allows you to reuse existing code, integrate third-party libraries, and maintain clean architecture. Use it when you need to bridge different interfaces without modifying existing code.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           ADAPTER PATTERN                   │
@@ -1238,6 +1136,14 @@ The Adapter pattern is essential for integrating incompatible interfaces. It all
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

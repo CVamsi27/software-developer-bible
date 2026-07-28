@@ -1,4 +1,14 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes ConfigMaps & Secrets
+
+[![Section](https://img.shields.io/badge/section-Kubernetes-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -479,129 +489,12 @@ kubectl delete configmap myconfig
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a ConfigMap?**
-   Stores non-sensitive configuration data as key-value pairs for Pods.
-
-2. **What is a Secret?**
-   Stores sensitive data (passwords, tokens) in base64-encoded format.
-
-3. **What is the difference between ConfigMap and Secret?**
-   ConfigMaps are for non-sensitive data. Secrets are for sensitive data with base64 encoding.
-
-4. **How do you use a ConfigMap in a Pod?**
-   As environment variables (envFrom) or volume mounts.
-
-5. **How do you create a Secret from a file?**
-   `kubectl create secret generic mysecret --from-file=key.json`
-
-6. **What is base64 encoding?**
-   A binary-to-text encoding scheme. Not encryption—just encoding.
-
-7. **How do you update a ConfigMap?**
-   `kubectl edit configmap myconfig` or `kubectl apply -f configmap.yaml`
-
-8. **What happens when a ConfigMap is updated?**
-   Volume mounts are updated automatically. Environment variables require Pod restart.
-
-9. **What is an immutable ConfigMap?**
-   A ConfigMap that cannot be updated after creation.
-
-10. **How do you view Secret values?**
-    `kubectl get secret mysecret -o jsonpath='{.data.key}' | base64 -d`
-
-### Intermediate (5-10)
-
-11. **How do you mount a ConfigMap as a file?**
-    Use `volumes` and `volumeMounts` in the Pod spec.
-
-12. **What is envFrom?**
-    Injects all keys from a ConfigMap/Secret as environment variables.
-
-13. **How do you set file permissions for mounted Secrets?**
-    Use `defaultMode` in the volume spec.
-
-14. **What is projected volume?**
-    Combines multiple ConfigMaps/Secrets into a single volume.
-
-15. **How do you encrypt Secrets at rest?**
-    Enable encryption provider in kube-apiserver configuration.
-
-16. **What is the maximum size of a ConfigMap/Secret?**
-    1MB (limited by etcd).
-
-17. **How do you share ConfigMaps across namespaces?**
-    You can't directly. Copy or use external configuration management.
-
-18. **What is the difference between configMapRef and configMapKeyRef?**
-    configMapRef injects all keys. configMapKeyRef injects a specific key.
-
-19. **How do you handle ConfigMap updates without Pod restart?**
-    Mount as volume. Kubernetes updates the mounted files automatically.
-
-20. **What is the security implication of Secrets?**
-    Base64 is not encryption. Enable etcd encryption and RBAC.
-
-### Senior (10-15)
-
-21. **How would you manage secrets across multiple environments?**
-    Use external secret stores (Vault), namespace isolation, and secret rotation.
-
-22. **Explain etcd encryption for Secrets.**
-    Enable EncryptionConfiguration in kube-apiserver with AES-CBC or AES-GCM.
-
-23. **How do you implement secret rotation?**
-    Use external-secrets operator, sealed-secrets, or custom controllers.
-
-24. **What is the difference between Secret types?**
-    Opaque (generic), kubernetes.io/tls, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth.
-
-25. **How do you audit ConfigMap/Secret access?**
-    Enable Kubernetes audit logging and monitor access events.
-
-### FAANG-style (5-10)
-
-26. **Design a secrets management architecture for 100+ microservices.**
-    Use HashiCorp Vault with Kubernetes auth, external-secrets operator, and automated rotation.
-
-27. **How would you handle secrets in a multi-cluster setup?**
-    Use central secret store with replication, or sealed-secrets per cluster.
-
-28. **Design a ConfigMap management strategy for configuration drift.**
-    Use GitOps with ConfigMap as Code, automated validation, and drift detection.
-
-29. **How would you implement zero-downtime secret rotation?**
-    Use projected volumes with auto-reload, or external-secrets operator.
-
-30. **Describe a compliance strategy for secrets management.**
-    Encryption at rest, RBAC, audit logging, rotation policies, and access reviews.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between Secret and ConfigMap?**
-    Secret is base64-encoded and supports RBAC. ConfigMap is plain text.
-
-32. **How do you use Secrets with Helm?**
-    Use Helm secrets plugin or external-secrets operator.
-
-33. **What is sealed-secrets?**
-    A Kubernetes controller that decrypts Secrets encrypted with kubeseal.
-
-34. **How do you handle secrets in CI/CD pipelines?**
-    Use CI/CD secrets management, not Kubernetes Secrets.
-
-35. **What is the difference between env and volume mount for Secrets?**
-    Env: available as environment variable. Volume: mounted as file.
 
 ## Summary
 
 ConfigMaps and Secrets separate configuration from code. ConfigMaps store non-sensitive data; Secrets store sensitive data. Use volume mounts for automatic updates, environment variables for simplicity, and external secret management for production security.
 
 ## Cheat Sheet
-
 ```bash
 # ConfigMap
 kubectl create configmap myconfig --from-literal=key=value
@@ -625,6 +518,14 @@ kubectl delete secret mysecret
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [CI/CD](../15-CI-CD/)
+- [Observability](../22-Observability/)
+- [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More
 

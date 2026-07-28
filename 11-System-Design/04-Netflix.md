@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Netflix System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -884,85 +894,6 @@ alerts:
 | Encoding | H.264 (compatible) | H.265 (efficient) | Both (device support) |
 | Recommendations | Collaborative filtering | Content-based | Hybrid approach |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you design Netflix's video streaming?**
-
-   - Adaptive bitrate streaming (HLS/DASH)
-   - Multi-CDN for global delivery
-   - Client-side manifest parsing
-   - DRM for content protection
-
-2. **How does the recommendation engine work?**
-
-   - Collaborative filtering (similar users)
-   - Content-based filtering (similar content)
-   - Deep learning for feature extraction
-   - A/B testing for algorithm optimization
-
-3. **How would you handle 15M concurrent streams?**
-
-   - Global CDN with 10,000+ edge servers
-   - Origin shield for cache hierarchy
-   - Connection pooling and keep-alive
-   - Regional load balancing
-
-### Scaling Questions
-
-4. **How do you scale content encoding?**
-
-   - Distributed transcoding workers
-   - Parallel encoding for different qualities
-   - Cloud-based elastic scaling
-   - Progress tracking and retry logic
-
-5. **How do you handle global content delivery?**
-
-   - Multi-region deployment
-   - GeoDNS for routing
-   - Predictive prefetching
-   - Edge caching for popular content
-
-### Trade-off Questions
-
-6. **How do you balance quality vs bandwidth?**
-
-   - Adaptive bitrate based on network conditions
-   - Quality caps based on subscription tier
-   - Offline quality options
-   - Bandwidth saving modes
-
-7. **How do you handle content protection (DRM)?**
-
-   - Multi-DRM support (Widevine, FairPlay)
-   - License server integration
-   - Offline license management
-   - Forensic watermarking
-
-### Senior-level Questions
-
-8. **How would you implement offline viewing?**
-
-   - Secure download with DRM
-   - Storage management on device
-   - Expiration and renewal
-   - Sync watch progress when online
-
-9. **How do you optimize for different devices?**
-
-   - Device capability detection
-   - Quality profile selection
-   - UI/UX adaptation
-   - Codec support detection
-
-10. **How would you implement live streaming?**
-
-    - Low-latency HLS/DASH
-    - Real-time encoding
-    - Chat and interaction
-    - DVR functionality
 
 ## Summary
 
@@ -989,6 +920,14 @@ Key takeaways:
 This design supports 200M+ subscribers with 15M concurrent streams while maintaining < 1% rebuffer rate.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

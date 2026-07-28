@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Providers
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -620,103 +630,12 @@ export class UserService {
 
 6. **Connection Pooling**: Reuse database connections through singleton repositories.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a provider in NestJS?**
-A provider is a class decorated with `@Injectable()` that handles business logic, data access, or utility functions. Providers are managed by NestJS's DI container.
-
-**Q2: What is the difference between a provider and a controller?**
-Providers handle business logic and data access. Controllers handle HTTP requests and responses. Controllers typically delegate to providers.
-
-**Q3: How do you make a provider available to other modules?**
-Export the provider in the module's `exports` array, then import that module in the consuming module.
-
-**Q4: What is the default scope of a provider?**
-Singleton — one instance per module that provides it.
-
-**Q5: How do you inject a provider into a controller?**
-Declare it as a constructor parameter with the appropriate type.
-
-### Intermediate
-
-**Q6: What is the difference between `useClass`, `useFactory`, `useValue`, and `useExisting`?**
-
-- `useClass`: Instantiate a class as the provider
-- `useFactory`: Use a factory function to create the provider
-- `useValue`: Use a static value as the provider
-- `useExisting`: Alias to an existing provider
-
-**Q7: What is transient scope and when would you use it?**
-Transient scope creates a new instance for each consumer that injects it. Use when each consumer needs its own isolated instance (e.g., counters, accumulators).
-
-**Q8: How do you use custom injection tokens?**
-Define a token (string or Symbol), register the provider with that token, and use `@Inject(token)` to inject it.
-
-**Q9: What is `ModuleRef` and how do you use it?**
-`ModuleRef` provides access to the DI container at runtime. Use it to dynamically resolve providers outside the normal DI flow.
-
-**Q10: How do you handle async provider initialization?**
-Use `useFactory` with an async function and specify `inject` for dependencies.
-
-### Senior
-
-**Q11: How would you implement a plugin architecture using providers?**
-Use dynamic modules with factory providers. Each plugin provides a token and implementation class. Register plugins dynamically.
-
-**Q12: How do you test providers with complex dependencies?**
-Use `Test.createTestingModule()` with `overrideProvider()` to mock dependencies. Isolate the provider under test.
-
-**Q13: Explain provider lifetime management in NestJS.**
-Providers are instantiated when their module loads (default) or lazily on first injection. Singleton providers persist for the app lifetime. Request-scoped providers are created per request and destroyed after.
-
-**Q14: How do you implement provider-level caching?**
-Inject a cache service and cache results at the provider level. Use cache keys based on method parameters.
-
-**Q15: How would you handle provider cleanup on application shutdown?**
-Implement `OnModuleDestroy` or `OnApplicationShutdown` lifecycle hooks.
-
-### FAANG-Style
-
-**Q16: Design a provider system for a multi-tenant application.**
-Use dynamic module pattern with `forRoot()` for each tenant. Create tenant-specific providers using factory pattern with tenant context.
-
-**Q17: How would you implement a circuit breaker pattern in a provider?**
-Create a wrapper provider that tracks failures and opens the circuit after threshold. Use observables for async fallback.
-
-**Q18: Design a provider for distributed tracing.**
-Inject trace context from requests, propagate through all providers, export to Jaeger/Zipkin. Use async hooks for context propagation.
-
-**Q19: How would you implement provider versioning?**
-Use injection tokens with version strings. Register versioned providers and inject specific versions based on API version.
-
-**Q20: Design a provider system for feature flags.**
-Create a FeatureFlagService that loads flags from a config service. Inject it into providers that need feature-gated behavior.
-
-### Follow-ups
-
-**Q21: How do you handle provider dependency resolution order?**
-NestJS resolves dependencies topologically. Use `forwardRef()` for circular dependencies.
-
-**Q22: What happens if a provider throws during initialization?**
-The application fails to start. Handle errors in factory providers or use async initialization with error handling.
-
-**Q23: How do you scope providers to specific routes?**
-Use request-scoped providers with request context, or create route-specific providers with custom decorators.
-
-**Q24: How do you share providers between modules without making them global?**
-Export the provider from one module and import that module in the consuming module.
-
-**Q25: How do you handle provider configuration from environment variables?**
-Use ConfigService injected into providers, or use factory providers that read from process.env.
 
 ## Summary
 
 Providers are NestJS's core building blocks that implement business logic, data access, and utility functions. They leverage dependency injection for automatic instantiation and dependency resolution. Understanding provider types (class, factory, value, existing), scopes (singleton, transient, request), and patterns is essential for building well-architected NestJS applications.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `@Injectable()` | Marks a class as a provider |
@@ -731,6 +650,14 @@ Providers are NestJS's core building blocks that implement business logic, data 
 | `@Inject(token)` | Inject using custom token |
 | `ModuleRef` | Runtime DI container access |
 | `forwardRef()` | Resolve circular dependencies |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

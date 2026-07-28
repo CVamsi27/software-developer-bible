@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Generators
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -641,117 +651,6 @@ function* fibonacciMemo(): Generator<number> {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is a generator in JavaScript?**
-
-A: A generator is a special function that can be paused and resumed. It uses `function*` syntax and `yield` to produce values lazily.
-
-**Q2: What is the `yield` keyword?**
-
-A: `yield` pauses generator execution and returns a value. When `.next()` is called again, execution resumes after the `yield`.
-
-**Q3: What does `.next()` return?**
-
-A: `.next()` returns `{ value, done }` where `value` is the yielded value and `done` indicates if the generator is complete.
-
-**Q4: How do you create a generator?**
-
-A: Use `function*` syntax and call the function: `const gen = myGenerator();`
-
-**Q5: What is lazy evaluation?**
-
-A: Lazy evaluation means values are computed only when needed. Generators produce values one at a time on demand.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is the iterator protocol?**
-
-A: An object implements the iterator protocol if it has a `next()` method returning `{ value, done }`. Generators automatically implement this.
-
-**Q7: How do you pass values to a generator?**
-
-A: Pass values to `.next(value)`. The value becomes the result of the `yield` expression the generator is paused at.
-
-**Q8: What is `yield*`?**
-
-A: `yield*` delegates to another generator, iterating over its values and yielding them.
-
-**Q9: How do you create infinite sequences?**
-
-A: Use a `while(true)` loop in the generator, yielding values indefinitely.
-
-**Q10: What is the return value of a generator?**
-
-A: The `return` value is only available when `.next()` is called after the last `yield`, returning `{ value: returnValue, done: true }`.
-
-### Senior (10-15 questions)
-
-**Q11: How do you implement async/await with generators?**
-
-A: Use a runner function that calls `.next()` with resolved promise values and handles `.throw()` for errors.
-
-**Q12: What are async generators?**
-
-A: Async generators use `async function*` and `yield` promises. They're iterated with `for await...of`.
-
-**Q13: How do generators implement iterators?**
-
-A: Generators automatically implement the iterator protocol with `next()`, `return()`, and `throw()` methods.
-
-**Q14: How do you handle errors in generators?**
-
-A: Use `try/catch` inside the generator or call `.throw(error)` to inject errors.
-
-**Q15: What are generator use cases?**
-
-A: Lazy evaluation, infinite sequences, async flows, state machines, custom iterators, pipeline processing.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a generator-based task scheduler.**
-
-A: Use generators to yield tasks, implement priority queues, and coordinate async operations.
-
-**Q17: How would you implement coroutines with generators?**
-
-A: Use two generators that pass values to each other via `.next()` and `yield`.
-
-**Q18: Analyze the memory implications of generators vs arrays.**
-
-A: Generators use O(1) space, arrays use O(n). Generators are better for large/infinite sequences.
-
-**Q19: How do you debug generator issues?**
-
-A: Add console.log before/after yields, use try/catch, step through with debugger.
-
-**Q20: What are security implications of generators?**
-
-A: Generators can be used to implement cooperative multitasking, potential for denial of service.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a generator bug in production?**
-
-A: Infinite generator without proper termination causing memory issues.
-
-**Q22: How do you handle generators in a micro-frontend architecture?**
-
-A: Each micro-frontend can expose generators for data streaming, coordinated via message passing.
-
-**Q23: What is the relationship between generators and observables?**
-
-A: Generators pull values, observables push values. Both represent streams of data.
-
-**Q24: How do different frameworks handle generators?**
-
-A: Redux-Saga uses generators for side effects. MobX uses generators for async actions.
-
-**Q25: What are best practices for working with generators?**
-
-A: Use for...of, combine with yield*, add TypeScript generics, document behavior.
 
 ## Summary
 
@@ -772,7 +671,6 @@ Generators are powerful for lazy evaluation:
 7. **Async generators**: `async function*` with `for await...of`
 
 ## Cheat Sheet
-
 ```text
 GENERATORS CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -853,6 +751,13 @@ COMMON MISTAKES:
 • Not using yield*
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

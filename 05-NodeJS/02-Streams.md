@@ -1,4 +1,14 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Streams
+
+[![Section](https://img.shields.io/badge/section-Node.js-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1182,217 +1192,6 @@ class GoodTransform extends Transform {
 
 ```
 
-## Interview Questions
-
-### Beginner
-
-1. **What are streams in Node.js?**
-
-   - Streams are objects that allow reading or writing data sequentially in chunks, rather than loading the entire data into memory at once.
-
-2. **Name the four types of streams.**
-
-   - Readable, Writable, Duplex (both), and Transform (modify data).
-
-3. **What is the difference between readable and writable streams?**
-
-   - Readable streams produce data (sources), while writable streams consume data (destinations).
-
-4. **What is piping in streams?**
-
-   - Piping connects a readable stream to a writable stream, automatically managing data flow between them using `.pipe()`.
-
-5. **What is backpressure?**
-
-   - Backpressure occurs when a writable stream can't keep up with a readable stream's data production rate. It's handled by pausing the readable stream.
-
-6. **What is highWaterMark?**
-
-   - A threshold that determines when a stream should apply backpressure. Default is 16KB for buffers, 16 for object mode.
-
-7. **How do you handle errors in streams?**
-
-   - Use `.on('error', handler)` or use `pipeline()` for automatic error propagation.
-
-8. **What is objectMode in streams?**
-
-   - A stream configuration that allows processing JavaScript objects instead of Buffers or strings.
-
-9. **What is the difference between .pipe() and pipeline()?**
-
-   - `.pipe()` doesn't handle errors, while `pipeline()` provides automatic error handling and cleanup.
-
-10. **When should you use streams?**
-
-    - When processing large files, real-time data, or when memory efficiency is critical.
-
-### Intermediate
-
-11. **How does a Transform stream work?**
-
-    - Transform streams receive input data, modify it, and produce output. They implement both Readable and Writable interfaces.
-
-12. **What is the _flush method in Transform streams?**
-
-    - Called when there's no more data to process, allowing cleanup or flushing of buffered data.
-
-13. **How do you implement custom backpressure handling?**
-
-    - Check the return value of `write()`, pause the readable stream when false, and resume on 'drain' event.
-
-14. **What is a highWaterMark in object mode?**
-
-    - The number of objects that can be buffered before backpressure is applied (default 16).
-
-15. **How do streams handle errors differently from other Node.js code?**
-
-    - Streams emit 'error' events instead of throwing exceptions. You must listen for these events.
-
-16. **What is the purpose of the 'finish' event?**
-
-    - Emitted when all data has been flushed to the underlying system.
-
-17. **How do you create a readable stream from an array?**
-
-    - Use `Readable.from(array)` or implement a custom Readable with `_read()`.
-
-18. **What is the difference between push(null) and end()?**
-
-    - `push(null)` signals end of readable data, while `end()` signals end of writable data.
-
-19. **How do you handle multiple pipes?**
-
-    - Chain pipes: `a.pipe(b).pipe(c).pipe(d)`. Handle errors at each stage.
-
-20. **What is the 'drain' event?**
-
-    - Emitted when a writable stream's buffer falls below highWaterMark after being full.
-
-### Senior
-
-21. **How would you design a streaming ETL pipeline?**
-
-    - Use Transform streams for each ETL stage, implement error boundaries, add monitoring, and handle backpressure throughout.
-
-22. **Explain memory management in long-running stream processing.**
-
-    - Monitor heap usage, implement stream cleanup, avoid accumulating data, and use object pooling for transforms.
-
-23. **How would you implement a distributed stream processing system?**
-
-    - Use message queues (Kafka/RabbitMQ), implement checkpointing, handle reconnection, and ensure exactly-once processing.
-
-24. **How do you debug stream issues in production?**
-
-    - Use stream events for monitoring, implement custom metrics, log stream states, and use APM tools.
-
-25. **What are the performance implications of object vs buffer mode?**
-
-    - Object mode has higher overhead due to serialization, while buffer mode is more efficient for binary data.
-
-26. **How would you implement rate limiting in streams?**
-
-    - Use Transform streams with timing logic, implement token buckets, or use external rate limiters.
-
-27. **Explain how to handle stream errors in microservices.**
-
-    - Implement circuit breakers, add retry logic, use dead letter queues, and propagate errors via events.
-
-28. **How do you optimize stream performance for high throughput?**
-
-    - Tune highWaterMark, use parallel processing, implement connection pooling, and optimize chunk sizes.
-
-29. **What is the impact of V8 garbage collection on streams?**
-
-    - Large buffers can trigger major GCs. Optimize by using smaller chunks and releasing references.
-
-30. **How would you implement a streaming API for real-time analytics?**
-
-    - Use Server-Sent Events or WebSocket with Transform streams for aggregation and filtering.
-
-### FAANG-style
-
-31. **Design a streaming data pipeline processing 1M events/second.**
-
-    - Use partitioned streams, implement backpressure handling, use shared-nothing architecture, and add monitoring.
-
-32. **How would you implement exactly-once stream processing?**
-
-    - Use idempotent operations, implement checkpointing, use transactional messaging, and add deduplication.
-
-33. **Design a stream processing system with fault tolerance.**
-
-    - Implement checkpointing, use replication, add automatic recovery, and implement dead letter queues.
-
-34. **How would you handle schema evolution in streaming systems?**
-
-    - Use schema registries, implement backward/forward compatibility, and version your data formats.
-
-35. **Design a real-time fraud detection system using streams.**
-
-    - Use windowed aggregations, implement complex event processing, add ML model inference, and handle late-arriving data.
-
-36. **How would you implement stream processing with exactly-once semantics?**
-
-    - Use transactional outbox pattern, implement idempotent consumers, and use distributed transactions.
-
-37. **Design a streaming system for IoT data processing.**
-
-    - Handle high cardianality, implement time-window aggregations, use edge processing, and add data validation.
-
-38. **How would you optimize stream processing for cost efficiency?**
-
-    - Use auto-scaling, implement batch processing, optimize serialization, and use spot instances.
-
-39. **Design a multi-region streaming architecture.**
-
-    - Implement cross-region replication, handle conflict resolution, optimize for latency, and add failover.
-
-40. **How would you implement stream processing with ML model integration?**
-
-    - Use feature stores, implement online inference, handle model versioning, and add A/B testing.
-
-### Follow-ups
-
-41. **What happens when a stream's buffer is full?**
-
-    - The stream applies backpressure, pausing the source and emitting 'pause' event.
-
-42. **How do you handle stream errors in async/await?**
-
-    - Use promisified pipeline or wrap in try/catch with stream events.
-
-43. **What is the difference between readable.pipe() and readable.pipe()?**
-
-    - `pipe()` returns the destination stream, allowing chaining. Both handle backpressure.
-
-44. **How do you implement custom stream classes?**
-
-    - Extend Stream class, implement `_read()`, `_write()`, or `_transform()` methods.
-
-45. **What is the 'close' event in streams?**
-
-    - Emitted when the stream and any of its underlying resources have been closed.
-
-46. **How do you handle stream cleanup?**
-
-    - Use 'close' event, implement _destroy() method, and use pipeline() for automatic cleanup.
-
-47. **What is the impact of encoding on stream performance?**
-
-    - Encoding affects buffer size and processing speed. UTF-8 is common but has overhead for binary data.
-
-48. **How do you implement stream retry logic?**
-
-    - Track failed chunks, implement exponential backoff, and use dead letter queues.
-
-49. **What is the difference between stream modes?**
-
-    - Streams can be in flowing mode (auto-reading), paused mode (manual reading), or object mode.
-
-50. **How do you monitor stream health in production?**
-
-    - Track throughput, latency, error rates, and backpressure events using custom metrics.
 
 ## Summary
 
@@ -1405,7 +1204,6 @@ Streams are essential for processing large data efficiently in Node.js. Key take
 - Monitor stream performance and memory usage in production
 
 ## Cheat Sheet
-
 ```text
 ┌───────────────────────────────────────────────────────────────┐
 │                    STREAMS CHEAT SHEET                       │
@@ -1454,6 +1252,13 @@ Streams are essential for processing large data efficiently in Node.js. Key take
 └───────────────────────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

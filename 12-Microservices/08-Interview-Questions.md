@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [interview-questions, reference]
+---
+
 # Microservices Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1846,7 +1856,6 @@ class EventSourcedOrderService {
 Microservices architecture requires understanding of distributed systems, communication patterns, and architectural decisions. Master these concepts and practice implementing them to ace your senior developer interviews.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │           MICROSERVICES INTERVIEW CHEAT SHEET                   │
@@ -1894,6 +1903,14 @@ Microservices architecture requires understanding of distributed systems, commun
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

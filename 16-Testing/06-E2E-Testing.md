@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # E2E Testing
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1043,137 +1053,6 @@ jobs:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is E2E testing?**
-   E2E testing validates complete user workflows from start to finish, simulating real user scenarios in a production-like environment.
-
-2. **How is E2E different from integration testing?**
-   Integration tests verify component interactions. E2E tests verify complete user workflows through the entire application stack.
-
-3. **What are the benefits of E2E testing?**
-   High confidence, real user perspective, cross-browser testing, and visual regression detection.
-
-4. **What are the drawbacks of E2E testing?**
-   Slow execution, expensive maintenance, flaky tests, and limited debugging information.
-
-5. **What tools are commonly used for E2E testing?**
-   Cypress, Playwright, Selenium, and Puppeteer are popular choices.
-
-6. **What is the Page Object pattern?**
-   A design pattern that encapsulates page interactions in reusable objects, improving test maintainability.
-
-7. **How do you handle authentication in E2E tests?**
-   Use authentication setup scripts, save storage state, or mock authentication.
-
-8. **What is visual regression testing?**
-   Comparing screenshots of UI before and after changes to detect unintended visual changes.
-
-9. **How do you handle flaky E2E tests?**
-   Fix timing issues, use proper waiting strategies, and isolate test state.
-
-10. **When should you write E2E tests?**
-    For critical user journeys, complex workflows, and scenarios that span multiple components.
-
-### Intermediate (5-10)
-
-11. **How do you mock APIs in E2E tests?**
-    Use route interception (Playwright) or cy.intercept (Cypress) to mock network requests.
-
-12. **How do you test file uploads in E2E tests?**
-    Use file chooser APIs or set input files directly.
-
-13. **How do you handle multi-tab testing?**
-    Use browser context APIs to manage multiple pages/tabs.
-
-14. **How do you test responsive design?**
-    Use viewport settings to test different screen sizes.
-
-15. **How do you handle iframe testing?**
-    Use frame locators or frame-specific selectors.
-
-16. **How do you test WebSocket connections?**
-    Use page events or mock WebSocket servers.
-
-17. **How do you handle shadow DOM?**
-    Use shadow-piercing selectors or APIs that pierce shadow boundaries.
-
-18. **How do you test PDF generation?**
-    Download the PDF and verify its content or structure.
-
-19. **How do you handle testing with real-time features?**
-    Use polling or event-based assertions.
-
-20. **How do you test accessibility in E2E?**
-    Integrate axe-core or similar accessibility testing libraries.
-
-### Senior (10-15)
-
-21. **How do you design a scalable E2E test suite?**
-    Use page objects, test data factories, parallel execution, and test filtering.
-
-22. **How do you handle testing in CI/CD?**
-    Implement test stages, artifact collection, and failure notifications.
-
-23. **How do you reduce E2E test execution time?**
-    Parallel execution, test splitting, mocking non-critical services, and test prioritization.
-
-24. **How do you handle flaky tests at scale?**
-    Implement quarantine systems, track flakiness metrics, and automated retries.
-
-25. **How do you test micro-frontends?**
-    Test each micro-frontend independently and their integration.
-
-26. **How do you test with complex authentication flows?**
-    Use OAuth mocking, test token refresh, and session management.
-
-27. **How do you handle testing with real-time data?**
-    Use deterministic test data and verify eventual consistency.
-
-28. **How do you test internationalization?**
-    Test different language outputs and RTL layouts.
-
-29. **How do you handle testing with complex state?**
-    Test state persistence, cross-tab state, and offline capabilities.
-
-30. **How do you measure E2E test effectiveness?**
-    Track defect detection rate, test execution time, and maintenance burden.
-
-### FAANG-style (5-10)
-
-31. **How would you design E2E testing for a large-scale application?**
-    Risk-based testing, test impact analysis, and selective test execution.
-
-32. **How do you handle testing in a microservices architecture?**
-    Contract testing, service virtualization, and integration test environments.
-
-33. **How do you ensure test reliability at scale?**
-    Implement flakiness detection, quarantine system, and stability metrics.
-
-34. **How do you handle testing with complex user journeys?**
-    Break down into smaller test scenarios, use test data factories.
-
-35. **How do you balance coverage with execution time?**
-    Prioritize critical paths, use smoke tests, and implement test filtering.
-
-### Follow-ups (5-10)
-
-36. **How has your E2E testing approach evolved?**
-    Discuss adoption of Playwright, shift to component testing, and CI/CD integration.
-
-37. **What tools have you used for E2E testing?**
-    Compare Cypress, Playwright, and Selenium, explain selection criteria.
-
-38. **How do you handle testing legacy applications?**
-    Strangler fig pattern, gradual migration, and characterization tests.
-
-39. **What's the most challenging E2E testing problem you've solved?**
-    Describe complex testing scenarios and solutions.
-
-40. **How do you train teams on E2E testing?**
-    Start with simple examples, establish patterns, and share best practices.
 
 ## Summary
 
@@ -1189,6 +1068,14 @@ E2E testing is essential for verifying complete user workflows. Key principles:
 - **Use visual regression testing** for UI stability
 
 A well-designed E2E test suite provides high confidence while remaining maintainable.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

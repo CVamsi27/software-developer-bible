@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Sliding Window
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -282,7 +292,6 @@ console.log(characterReplacement("AABABBA", 1)); // 4 ("AABA")
 The sliding window pattern is essential for problems involving contiguous subarrays or substrings. It reduces time complexity from O(n²) to O(n) by maintaining and updating the window instead of recalculating from scratch.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Sliding Window
 Use when: Contiguous subarray/substring problems
@@ -309,6 +318,13 @@ Key operations:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

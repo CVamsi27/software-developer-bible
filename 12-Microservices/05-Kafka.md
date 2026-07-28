@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Apache Kafka
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -590,164 +600,12 @@ class KafkaStreamProcessor {
 - **Partition count**: Based on consumer parallelism needs
 - **Consumer fetch size**: Balance latency vs throughput
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Apache Kafka?**
-
-   - Distributed event streaming platform for high-throughput data pipelines.
-
-2. **What is a Kafka topic?**
-
-   - Logical channel for publishing and subscribing to messages.
-
-3. **What is a Kafka partition?**
-
-   - Topic subdivision for parallel processing and ordering guarantees.
-
-4. **What is a Kafka consumer group?**
-
-   - Group of consumers that jointly consume a topic, each partition consumed by one consumer.
-
-5. **What is a Kafka producer?**
-
-   - Application that publishes messages to Kafka topics.
-
-6. **What is a Kafka consumer?**
-
-   - Application that subscribes to and processes messages from topics.
-
-7. **What is message offset?**
-
-   - Unique identifier for each message within a partition.
-
-8. **What is consumer lag?**
-
-   - Difference between latest message and consumer's current position.
-
-### Intermediate (5-10)
-
-9. **What is exactly-once delivery?**
-
-   - Guarantee that each message is processed exactly once, no duplicates.
-
-10. **What is a dead letter queue?**
-
-    - Queue for messages that can't be processed after retries.
-
-11. **How does Kafka achieve fault tolerance?**
-
-    - Replication across brokers, leader election, ISR.
-
-12. **What is a Kafka broker?**
-
-    - Server that stores data and serves client requests.
-
-13. **What is ISR in Kafka?**
-
-    - In-Sync Replicas - replicas that are fully caught up with leader.
-
-14. **How do you handle Kafka rebalancing?**
-
-    - Pause processing, commit offsets, handle partition reassignment.
-
-15. **What is Kafka Connect?**
-
-    - Framework for integrating Kafka with external systems.
-
-16. **What is Kafka Streams?**
-
-    - Client library for building stream processing applications.
-
-### Senior (10-15)
-
-17. **Design a Kafka-based order processing system.**
-
-    - Topics for each stage, consumer groups, idempotency, monitoring.
-
-18. **How do you handle schema evolution in Kafka?**
-
-    - Schema Registry, Avro/Protobuf, backward/forward compatibility.
-
-19. **Explain Kafka exactly-once semantics.**
-
-    - Producer idempotency, transactional API, consumer offset commits.
-
-20. **How do you monitor Kafka clusters?**
-
-    - Consumer lag, broker metrics, partition distribution, replication.
-
-21. **What is Kafka MirrorMaker?**
-
-    - Tool for replicating data between Kafka clusters.
-
-22. **How do you secure Kafka?**
-
-    - SSL/TLS, SASL, ACLs, encryption at rest.
-
-23. **Explain Kafka performance tuning.**
-
-    - Batch size, compression, partition count, consumer configuration.
-
-24. **How do you handle Kafka in microservices?**
-
-    - Event-driven architecture, CQRS, saga pattern integration.
-
-25. **What are Kafka best practices for production?**
-
-    - Replication, monitoring, capacity planning, disaster recovery.
-
-### FAANG-style (5-10)
-
-26. **Design Netflix's Kafka infrastructure.**
-
-    - Multi-region, mirroring, monitoring, exactly-once processing.
-
-27. **How would you handle 1M messages/second?**
-
-    - Partitioning strategy, consumer parallelism, batching, compression.
-
-28. **Design a real-time analytics pipeline with Kafka.**
-
-    - Stream processing, windowing, aggregation, materialized views.
-
-29. **How do you handle Kafka disaster recovery?**
-
-    - Multi-cluster setup, MirrorMaker, backup strategies.
-
-30. **Explain Kafka in event-driven architecture.**
-
-    - Event sourcing, CQRS, saga pattern, event schema management.
-
-### Follow-ups (5-10)
-
-31. **How do you migrate to Kafka from another message queue?**
-
-    - Strangler fig pattern, dual write, gradual migration.
-
-32. **What is the impact of Kafka on microservices?**
-
-    - Decoupling, async processing, eventual consistency.
-
-33. **How do you test Kafka-based systems?**
-
-    - Embedded Kafka, integration tests, contract testing.
-
-34. **What is the future of Kafka?**
-
-    - Serverless Kafka, cloud-native, edge computing integration.
-
-35. **How do you choose between Kafka and RabbitMQ?**
-
-    - Kafka for streaming, RabbitMQ for traditional messaging.
 
 ## Summary
 
 Apache Kafka is essential for building event-driven microservices. It provides high-throughput, fault-tolerant data streaming with exactly-once delivery semantics. Key concepts include topics, partitions, consumer groups, and offsets.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                   APACHE KAFKA                          │
@@ -786,6 +644,14 @@ Apache Kafka is essential for building event-driven microservices. It provides h
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

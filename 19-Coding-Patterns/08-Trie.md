@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Trie
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -539,7 +549,6 @@ console.log(mapSum.sum("ap"));     // 5
 Trie is a powerful data structure for prefix-based operations. It's essential for autocomplete, spell checking, and word games. The key insight is sharing common prefixes to save space.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Trie (Prefix Tree)
 Use when: Prefix matching, autocomplete, word search
@@ -573,6 +582,13 @@ Common patterns:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

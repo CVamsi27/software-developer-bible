@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # 🟠 Amazon (AWS) — Interview Guide (2025–2026)
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Target Role:** SDE I (L4) / SDE II (L5) / Senior SDE (L6)
-> 
+>
 > **Teams to Consider:** AWS, Alexa, Prime, Retail, Kindle, Twitch, Ring
 
 ---
@@ -61,7 +71,8 @@
 
 ### STAR Method for Amazon
 
-```
+```text
+
 Situation: Set the context (when, where, what was the challenge)
 Task:      What was YOUR responsibility? (not the team's)
 Action:    What did YOU do? Be specific, use "I" not "we"
@@ -72,6 +83,7 @@ Amazon-specific tips:
 - Quantify results: "reduced latency by 60%", "saved $2M"
 - Be honest about failures — focus on what you learned
 - Map every story to 2-3 LPs explicitly
+
 ```
 
 ---
@@ -121,7 +133,8 @@ Amazon-specific tips:
 
 ### 📝 Coding Round Tips for Amazon
 
-```
+```text
+
 ✅ DO:
   • Talk through your approach BEFORE coding
   • Start with brute force, then optimize
@@ -137,6 +150,7 @@ Amazon-specific tips:
   • Ignore edge cases
   • Forget to mention test cases
   • Give up when stuck — ask for hints
+
 ```
 
 ---
@@ -164,7 +178,8 @@ Amazon-specific tips:
 
 ### System Design Framework for Amazon
 
-```
+```text
+
 Step 1: Requirements (5 min)
   - Functional: What does the system do?
   - Non-functional: Scale, latency, availability
@@ -191,6 +206,7 @@ Step 5: Wrap-up (5 min)
   - Discuss trade-offs
   - Mention monitoring (CloudWatch)
   - Cost optimization strategies
+
 ```
 
 ---
@@ -210,7 +226,8 @@ Step 5: Wrap-up (5 min)
 
 ### Distributed Systems
 
-```
+```text
+
 Q: Design a distributed lock service.
 A:
   - Option 1: DynamoDB with condition expressions
@@ -225,6 +242,7 @@ A:
   - Implement retry logic with exponential backoff
   - Consider read-repair or anti-entropy protocols
   - AWS: DynamoDB offers eventually consistent reads by default
+
 ```
 
 ---
@@ -233,7 +251,8 @@ A:
 
 ### Must-Have Stories (Prepare 7-8)
 
-```
+```text
+
 1. A time you took ownership beyond your job description (Ownership)
 2. A time you made a decision quickly with incomplete information (Bias for Action)
 3. A time you went deep into data to solve a problem (Dive Deep)
@@ -242,6 +261,7 @@ A:
 6. A time you went above and beyond for a customer (Customer Obsession)
 7. A time you failed and what you learned (Learn and Be Curious)
 8. A time you mentored someone (Hire and Develop the Best)
+
 ```
 
 ### Common Amazon Behavioral Questions
@@ -259,18 +279,20 @@ A:
 
 ### "Why Amazon?" — Answer Framework
 
-```
-1. Customer Obsession: "Amazon's principle of starting with the customer 
+```text
+
+1. Customer Obsession: "Amazon's principle of starting with the customer
    and working backwards resonates deeply with how I approach engineering."
 
-2. Scale: "Amazon handles millions of requests per second. I want to work 
+2. Scale: "Amazon handles millions of requests per second. I want to work
    on systems that operate at this scale."
 
-3. Ownership Culture: "Amazon empowers engineers to own their services 
+3. Ownership Culture: "Amazon empowers engineers to own their services
    end-to-end. I thrive in this kind of environment."
 
-4. Specific Team: "I'm particularly interested in [specific team] because 
+4. Specific Team: "I'm particularly interested in [specific team] because
    [specific reason about their technical challenges/products]."
+
 ```
 
 ---
@@ -303,7 +325,8 @@ A:
 
 ## 🎯 Final Checklist Before Amazon Interview
 
-```
+```text
+
 Technical:
   [ ] Can solve Medium problems in 20-25 minutes
   [ ] Can solve Hard problems in 35-45 minutes
@@ -323,6 +346,7 @@ Logistics:
   [ ] Know interviewer names and their teams
   [ ] Have questions prepared for interviewers
   [ ] Research the specific team you're interviewing for
+
 ```
 
 ---
@@ -333,7 +357,7 @@ Logistics:
 
 ---
 
-*Last updated: July 2025*
+*Last updated: July 2026*
 
 ---
 
@@ -355,3 +379,25 @@ Logistics:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers Amazon's interview process with a focus on Amazon's Leadership Principles, bar raiser rounds, system design expectations, and strategies for demonstrating customer obsession and ownership.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

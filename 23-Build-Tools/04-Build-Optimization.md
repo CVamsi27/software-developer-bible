@@ -1,4 +1,14 @@
+---
+section: Build Tools
+category: DevOps
+tags: [concept]
+---
+
 # Build Optimization
+
+[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Build optimization refers to the process of improving the performance, size, and efficiency of web application bundles through various techniques like code splitting, tree shaking, compression, and minification.
@@ -393,153 +403,16 @@ plugins: [
 - **Service Workers**: Cache assets for offline use
 - **HTTP/2**: Leverage multiplexing for parallel loading
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is bundle size and why does it matter?**
-
-   - Total size of JavaScript/CSS files sent to browser. Larger bundles = slower loads.
-
-2. **What is tree shaking?**
-
-   - Removing unused code from bundles. Requires ES modules and sideEffects config.
-
-3. **What is code splitting?**
-
-   - Breaking bundles into smaller chunks loaded on demand.
-
-4. **What is minification?**
-
-   - Removing unnecessary characters (whitespace, comments) to reduce file size.
-
-5. **What is compression in web development?**
-
-   - Reducing file size for transfer using algorithms like gzip or Brotli.
-
-6. **What is lazy loading?**
-
-   - Loading resources only when needed, not upfront.
-
-7. **What is a bundle analyzer?**
-
-   - Tool that visualizes bundle contents and sizes.
-
-8. **What is content hashing?**
-
-   - Unique hash based on file content for cache busting.
-
-### Intermediate (5-10)
-
-9. **How do you implement code splitting in React?**
-
-   - Use React.lazy() with dynamic imports and Suspense.
-
-10. **What is the difference between gzip and Brotli?**
-
-    - Brotli provides better compression but is slower to compress.
-
-11. **How do you configure Webpack for optimal builds?**
-
-    - Set mode: 'production', enable minimization, configure splitChunks.
-
-12. **What is the purpose of `sideEffects: false` in package.json?**
-
-    - Tells bundler the package has no side effects, enabling tree shaking.
-
-13. **How do you optimize images for web?**
-
-    - Compress, use modern formats (WebP), implement responsive images.
-
-14. **What is critical CSS?**
-
-    - CSS needed for above-the-fold content, inlined for faster rendering.
-
-15. **How do you measure bundle performance?**
-
-    - Use Lighthouse, Webpack Bundle Analyzer, Chrome DevTools.
-
-16. **What is the impact of HTTP/2 on bundle optimization?**
-
-    - Multiplexing reduces need for bundling, but optimization still matters.
-
-### Senior (10-15)
-17. **Design a bundle optimization strategy for a large application.**
-
-    - Analyze current state, set budgets, implement splitting, monitor.
-
-18. **How do you handle code splitting in micro-frontends?**
-
-    - Each micro-frontend is a separate bundle, shared dependencies via Module Federation.
-
-19. **What are the trade-offs between different minification tools?**
-
-    - Terser vs esbuild vs UglifyJS: speed, compression ratio, compatibility.
-
-20. **How do you optimize for Core Web Vitals?**
-
-    - Focus on LCP, FID, CLS through resource prioritization and lazy loading.
-
-21. **What is the role of service workers in optimization?**
-
-    - Cache assets for offline use, implement background sync.
-
-22. **How do you handle bundle size in CI/CD?**
-
-    - Set size limits, fail builds that exceed thresholds.
-
-23. **What is the impact of ES modules on optimization?**
-
-    - Enables tree shaking, but may increase HTTP requests without bundling.
-
-24. **How do you optimize for different network conditions?**
-
-    - Implement adaptive loading, prioritize critical resources.
-
-### FAANG-style (5-10)
-25. **Design a bundle optimization system for a company with 100+ applications.**
-
-    - Shared configuration, centralized monitoring, automated optimization.
-
-26. **How would you reduce initial load time by 50% for a React application?**
-
-    - Code splitting, lazy loading, prefetching, compression, CDN optimization.
-
-27. **Explain the impact of bundle size on user conversion rates.**
-
-    - Studies show 100ms delay can reduce conversions by 1%.
-
-28. **How do you optimize for emerging markets with slow networks?**
-
-    - Aggressive compression, minimal JavaScript, offline-first architecture.
-
-29. **Design a real-time bundle monitoring system.**
-
-    - Track size over time, alert on increases, visualize trends.
-
-### Follow-ups (5-10)
-30. **How does code splitting affect SEO?**
-
-    - Proper implementation maintains SEO; poor splitting can harm it.
-
-31. **What is the relationship between bundle size and Time to Interactive?**
-
-    - Larger bundles take longer to parse and execute, delaying interactivity.
-
-32. **How do you handle third-party scripts in optimization?**
-
-    - Load asynchronously, defer non-critical, consider self-hosting.
-
-33. **What is the future of bundle optimization?**
-
-    - Edge computing, module federation, import maps, HTTP/3.
-
-34. **How do you balance optimization with developer experience?**
-
-    - Automate optimization, use sensible defaults, provide clear feedback.
 
 ## Summary
 Build optimization is crucial for delivering fast, efficient web applications. Key techniques include code splitting, tree shaking, compression, and minification. A systematic approach with monitoring and automation ensures consistent performance improvements.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Next.js](../04-NextJS/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

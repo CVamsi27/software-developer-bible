@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Debounce
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -602,117 +612,6 @@ const Component = () => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is debouncing?**
-
-A: Debouncing delays function execution until after a pause in calls. Each call resets the timer. The function only executes when there's inactivity.
-
-**Q2: When would you use debounce?**
-
-A: Search input, form validation, window resize, or any event that fires rapidly and you only need the final value.
-
-**Q3: What is a good default wait time for debounce?**
-
-A: 300ms is a good default for user input. Adjust based on use case.
-
-**Q4: How do you cancel a debounced function?**
-
-A: Call the cancel method: `debouncedFn.cancel()`
-
-**Q5: What is the difference between debounce and throttle?**
-
-A: Debounce waits for inactivity, throttle limits execution frequency. Debounce executes once after pause, throttle executes at regular intervals.
-
-### Intermediate (5-10 questions)
-
-**Q6: How do you implement debounce from scratch?**
-
-A: Use setTimeout and clearTimeout. Each call clears the previous timer and sets a new one.
-
-**Q7: What is leading vs trailing debounce?**
-
-A: Leading executes at the start of the pause, trailing at the end. Default is trailing only.
-
-**Q8: How do you debounce an async function?**
-
-A: Wrap the async function in debounce. The debounced function will be called, and you can await the result.
-
-**Q9: How do you use debounce in React?**
-
-A: Use useCallback with debounce, or create a custom useDebounce hook with useRef.
-
-**Q10: What are common mistakes with debounce?**
-
-A: Not cleaning up, wrong wait time, using for animations, not handling edge cases.
-
-### Senior (10-15 questions)
-
-**Q11: How do you implement debounce with both leading and trailing options?**
-
-A: Track call time, invoke on leading edge if enabled, set timeout for trailing edge.
-
-**Q12: How do you handle debounced functions in server-side rendering?**
-
-A: Ensure debounce only runs on client side, handle hydration properly.
-
-**Q13: How do you test debounced functions?**
-
-A: Use fake timers (jest.useFakeTimers), advance time, verify calls.
-
-**Q14: How do you optimize debounce for high-frequency events?**
-
-A: Use requestAnimationFrame for visual updates, combine with throttle.
-
-**Q15: How do you handle multiple debounced calls?**
-
-A: Each debounced function has its own timer. Use one debounce per function.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a debounce utility with advanced features.**
-
-A: Support leading/trailing, cancel/flush, maxWait, custom timers.
-
-**Q17: How would you implement debounce in a Web Worker?**
-
-A: Post messages to worker, debounce in worker, post results back.
-
-**Q18: Analyze the memory implications of debounce.**
-
-A: Each debounced function holds timer reference. Clean up on unmount.
-
-**Q19: How do you debug debounce issues?**
-
-A: Log timer IDs, track call times, use performance monitoring.
-
-**Q20: What are security implications of debounce?**
-
-A: Rate limiting, DoS prevention, input validation.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a debounce bug in production?**
-
-A: Not cleaning up timers causes memory leaks and stale state.
-
-**Q22: How do you handle debounce in a micro-frontend architecture?**
-
-A: Each micro-frontend manages its own debounce. Share utilities if needed.
-
-**Q23: What is the relationship between debounce and event loop?**
-
-A: Debounce uses setTimeout (macrotask). Executed after current synchronous code.
-
-**Q24: How do different frameworks handle debounce?**
-
-A: React: custom hooks. Vue: composables. Angular: pipes.
-
-**Q25: What are best practices for debounce?**
-
-A: Choose appropriate wait time, clean up, use TypeScript, handle edge cases.
 
 ## Summary
 
@@ -733,7 +632,6 @@ Debouncing is essential for performance:
 7. **Testing**: Use fake timers
 
 ## Cheat Sheet
-
 ```text
 DEBOUNCE CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -791,6 +689,13 @@ TESTING:
 • Verify call counts
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

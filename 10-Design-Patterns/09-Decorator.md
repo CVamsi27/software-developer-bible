@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Decorator Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -990,124 +1000,12 @@ const decorated = new CachingDecorator(
 
 5. **Batch Operations**: Implement batch operations in decorators for better performance.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Decorator pattern?**
-
-   - A structural pattern that adds behavior to objects dynamically by wrapping them.
-
-2. **When would you use Decorator pattern?**
-
-   - When you need to add responsibilities to objects dynamically without subclassing.
-
-3. **What's the difference between Decorator and Adapter?**
-
-   - Decorator adds behavior; Adapter changes interface.
-
-4. **How do you implement Decorator in TypeScript?**
-
-   - Create a base decorator that implements the component interface and wraps the component.
-
-5. **What are the benefits of Decorator pattern?**
-
-   - Flexible behavior extension, Single Responsibility, and组合able behaviors.
-
-### Intermediate
-
-6. **Can Decorator change the return type?**
-
-   - No, decorators should maintain the component interface.
-
-7. **How do you test Decorator pattern?**
-
-   - Test each decorator independently, test decorator chains.
-
-8. **What's the relationship between Decorator and Proxy?**
-
-   - Both wrap objects; Decorator adds behavior, Proxy controls access.
-
-9. **How do you handle decorator ordering?**
-
-   - Order matters; the outermost decorator's behavior is applied first.
-
-10. **Can Decorator be used with inheritance?**
-
-    - Yes, but prefer composition over inheritance.
-
-### Senior
-
-11. **How does Decorator pattern affect scalability?**
-
-    - Decorators are lightweight; chains can be optimized.
-
-12. **What are the SOLID violations with Decorator?**
-
-    - Usually follows SOLID; watch for decorators violating Single Responsibility.
-
-13. **How do you handle Decorator in microservices?**
-
-    - Use decorators for cross-cutting concerns like logging and caching.
-
-14. **What are the memory implications of Decorator?**
-
-    - Decorators are usually stateless; chains consume minimal memory.
-
-15. **How do you refactor Decorator code?**
-
-    - Extract common logic, use generics, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Decorator for a microservices architecture.**
-
-    - Consider cross-cutting concerns, middleware, and observability.
-
-17. **How would you implement Decorator for distributed systems?**
-
-    - Consider network transparency, serialization, and fault tolerance.
-
-18. **What are the implications of Decorator in cloud-native applications?**
-
-    - Consider serverless functions, middleware, and function composition.
-
-19. **How do you handle Decorator in event-driven architectures?**
-
-    - Use decorators for event processing, transformation, and routing.
-
-20. **Design a Decorator that supports A/B testing.**
-
-    - Consider traffic splitting, metrics collection, and gradual rollout.
-
-### Follow-ups
-
-21. **Can Decorator pattern be combined with other patterns?**
-
-    - Yes, commonly with Proxy, Adapter, and Composite patterns.
-
-22. **How do you handle Decorator in testing frameworks?**
-
-    - Use dependency injection, create test decorators, and mock implementations.
-
-23. **What are the memory implications of Decorator pattern?**
-
-    - Decorators are usually lightweight; chains consume minimal memory.
-
-24. **How do you handle Decorator in serverless environments?**
-
-    - Consider stateless decorators, middleware, and function composition.
-
-25. **What's the impact of Decorator on code maintainability?**
-
-    - Improves maintainability by enabling flexible behavior extension.
 
 ## Summary
 
 The Decorator pattern is essential for adding behavior to objects dynamically. It promotes the Open/Closed Principle, enables flexible composition, and avoids class explosion. Use it for cross-cutting concerns, middleware, and extending functionality without modifying existing code.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           DECORATOR PATTERN                 │
@@ -1143,6 +1041,14 @@ The Decorator pattern is essential for adding behavior to objects dynamically. I
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

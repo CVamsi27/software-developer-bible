@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [overview, reference]
+---
+
 # GraphQL Overview
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -877,112 +887,6 @@ const resolvers = {
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is GraphQL?**
-   GraphQL is a query language for APIs that allows clients to request exactly the data they need from a single endpoint.
-
-2. **How does GraphQL differ from REST?**
-   GraphQL uses a single endpoint with flexible queries, while REST uses multiple endpoints with fixed response structures. GraphQL eliminates over-fetching and under-fetching.
-
-3. **What are the three root operation types?**
-
-   - **Query**: Read operations
-   - **Mutation**: Write operations
-   - **Subscription**: Real-time operations
-
-4. **What is a GraphQL schema?**
-   A schema is a contract between client and server that defines the types, queries, mutations, and subscriptions available.
-
-5. **What are scalar types in GraphQL?**
-   Built-in leaf types: String, Int, Float, Boolean, and ID.
-
-### Intermediate
-
-6. **What is schema-first design?**
-   Defining the GraphQL schema before implementation. The schema serves as the API contract and guides server development.
-
-7. **How does GraphQL handle versioning?**
-   Through schema evolution: add new fields/types without removing old ones. Deprecate with `@deprecated` directive instead of version bumping.
-
-8. **What is introspection?**
-   GraphQL's ability to query the schema itself using `__schema` and `__type` meta-fields, enabling tools like GraphiQL.
-
-9. **What are Input types?**
-   Special object types used exclusively for mutation arguments, enabling structured input with validation.
-
-10. **How do you handle errors in GraphQL?**
-    Return errors in the `errors` array with `message`, `locations`, `path`, and custom `extensions` (like error codes).
-
-### Senior
-
-11. **Explain the N+1 problem in GraphQL and how to solve it.**
-    When resolving nested fields, each parent item triggers a separate database query. DataLoader solves this by batching and caching requests within a single execution.
-
-12. **How would you implement authorization?**
-    Use directives (@auth), context-based middleware, or field-level authorization in resolvers. Consider role-based (RBAC) or attribute-based (ABAC) access control.
-
-13. **Describe your approach to schema governance.**
-    Schema review process, breaking change detection (using tools like GraphQL Inspector), compatibility testing, and deprecation policies.
-
-14. **How do you optimize GraphQL queries for mobile?**
-    Query whitelisting, persisted queries, response caching, query complexity limits, and field-level caching strategies.
-
-15. **Explain the difference between schema stitching and federation.**
-    Schema stitching combines multiple schemas into one. Federation distributes a schema across multiple services with @key, @requires, and @provides directives.
-
-### FAANG-style
-
-16. **Design a GraphQL API for a social media feed.**
-    Discuss: pagination (cursor-based), edge/node pattern, polymorphic types (union/interface), subscription for real-time updates, query complexity management.
-
-17. **How would you handle a GraphQL service that receives 10M requests/day?**
-    Caching layers (CDN, application, database), query complexity analysis, rate limiting, persisted queries, horizontal scaling, DataLoader optimization, monitoring.
-
-18. **Explain your approach to migrating a REST API to GraphQL.**
-    Strangler fig pattern, starting with high-value endpoints, maintaining backward compatibility, incremental adoption, GraphQL gateway over existing REST services.
-
-19. **How do you prevent GraphQL from becoming a performance bottleneck?**
-    Query depth/complexity limits, rate limiting per client, persisted queries, response caching, monitoring, query batching, and efficient resolvers.
-
-20. **Describe how you would implement real-time features with subscriptions.**
-    WebSocket transport, subscription filtering, connection management, scaling with Redis pub/sub, handling disconnected clients, security considerations.
-
-### Follow-ups
-
-21. **What happens when a resolver throws an error?**
-    The error is caught and added to the `errors` array. Partial data may still be returned if some fields resolved successfully.
-
-22. **How does Apollo Client normalize cache?**
-    Uses `__typename` and `id` to create unique keys. Normalizes nested objects into a flat map, enabling efficient cache updates.
-
-23. **What are fragment collocation and fragment spreads?**
-    Collocation: defining fragments where the data is used. Spreads: using `...FragmentName` to include fragments in queries, enabling composition.
-
-24. **How do you handle file uploads in GraphQL?**
-    Use multipart form data spec (graphql-multipart-request-spec) or separate REST endpoints for uploads. Apollo Server supports this via Upload scalar.
-
-25. **Explain the concept of schema directives.**
-    Custom directives that add metadata to schema elements: `@deprecated`, `@auth`, `@cacheControl`, etc. Used for authorization, caching, and validation.
-
-26. **How do you test GraphQL resolvers?**
-    Unit tests with mocked context, integration tests with test database, schema snapshot tests, and query testing with tools like Apollo Server testing utilities.
-
-27. **What are the trade-offs of using GraphQL over REST?**
-    GraphQL: flexible but complex, single endpoint but needs tooling, type-safe but steeper learning curve. REST: simpler but rigid, multiple endpoints but easier caching.
-
-28. **How do you handle GraphQL in microservices?**
-    Use Apollo Federation or Schema Stitching to compose a unified schema from multiple services. Consider API gateway patterns.
-
-29. **What monitoring/metrics would you track for a GraphQL API?**
-    Query complexity, resolver execution time, error rates, cache hit rates, subscription connections, N+1 query counts, and client-specific metrics.
-
-30. **How do you secure a GraphQL API?**
-    Authentication (JWT/session), authorization (field-level), query complexity limits, rate limiting, persisted queries, CORS, input validation, and query whitelisting.
-
----
 
 ## Summary
 
@@ -996,6 +900,13 @@ const resolvers = {
 | **Best Practice** | Schema-first, type-safe, secure by default |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept]
+---
+
 # Core Web Vitals
+
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Core Web Vitals are a set of standardized metrics from Google that measure real-world user experience for loading performance, interactivity, and visual stability of web pages. They are part of Google's Page Experience signals and directly impact SEO rankings.
@@ -398,138 +408,18 @@ Optimization Priority Matrix:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What are Core Web Vitals?**
-
-   - Answer: Standardized metrics measuring real user experience for loading (LCP), interactivity (INP), and visual stability (CLS).
-
-2. **What does LCP measure?**
-
-   - Answer: Largest Contentful Paint measures when the largest contentful element becomes visible, targeting ≤ 2.5 seconds.
-
-3. **What replaced FID?**
-
-   - Answer: INP (Interaction to Next Paint) replaced FID in March 2024, measuring all interactions rather than just the first.
-
-4. **What is a good CLS score?**
-
-   - Answer: CLS ≤ 0.1 is considered good, 0.1-0.25 needs improvement, and > 0.25 is poor.
-
-5. **How do you measure Core Web Vitals?**
-
-   - Answer: Using the web-vitals library, Chrome DevTools, or Lighthouse.
-
-### Intermediate (5)
-
-6. **How do you track Core Web Vitals in production?**
-
-   - Answer: Use web-vitals library with sendBeacon API to send metrics to analytics endpoint.
-
-7. **What is the web-vitals library?**
-
-   - Answer: A Google library that provides functions to measure Core Web Vitals with a consistent API.
-
-8. **How do you measure CLS for dynamic content?**
-
-   - Answer: Use session windows to group layout shifts and avoid penalizing intentional shifts.
-
-9. **What is the relationship between CWV and SEO?**
-
-   - Answer: Google uses Core Web Vitals as a Page Experience signal, directly impacting search rankings.
-
-10. **How do you set up performance budgets?**
-
-    - Answer: Define thresholds for each metric and fail CI/CD if budgets are exceeded.
-
-### Senior (10)
-11. **Explain CLS score calculation**
-
-    - Answer: CLS = Impact Fraction × Distance Fraction, where Impact Fraction is how much viewport was affected and Distance Fraction is how far elements moved.
-
-12. **How do you handle third-party impact on CWV?**
-
-    - Answer: Lazy load non-critical scripts, use async/defer, consider web workers for heavy computation.
-
-13. **What is the relationship between TTFB and LCP?**
-
-    - Answer: TTFB is the foundation; LCP cannot be faster than TTFB. Optimize server response first.
-
-14. **How do you measure INP for complex interactions?**
-
-    - Answer: INP measures the latency of all interactions, reporting the worst case (p98 or higher).
-
-15. **Explain the difference between lab and field metrics**
-
-    - Answer: Lab metrics (Lighthouse) are controlled; field metrics (RUM) reflect real users with varying devices and networks.
-
-16. **How do you optimize LCP for SPAs?**
-
-    - Answer: SSR/SSG, preload critical resources, optimize image loading, avoid render-blocking resources.
-
-17. **What causes layout shifts?**
-
-    - Answer: Images without dimensions, dynamic content injection, web fonts causing FOIT/FOUT, late-loading ads.
-
-18. **How do you handle CWV in a micro-frontend architecture?**
-
-    - Answer: Measure each micro-frontend's contribution, aggregate metrics, and optimize load order.
-
-19. **What is the impact of CWV on conversion rates?**
-
-    - Answer: Studies show 1-second delay in LCP can reduce conversions by 7%, and 100ms delay in INP can reduce conversions by 1%.
-
-20. **How do you prioritize CWV optimizations?**
-
-    - Answer: Focus on metrics where you're closest to thresholds, have highest business impact, and lowest implementation effort.
-
-### FAANG-style (5)
-21. **Design a CWV monitoring system**
-
-    - Answer: Collect metrics via web-vitals, buffer locally, send via sendBeacon, process with streaming pipeline (Kafka), store in time-series DB, visualize with dashboards.
-
-22. **How would you detect CWV regressions automatically?**
-
-    - Answer: Statistical comparison of metric distributions, anomaly detection, A/B testing with CWV as guardrail metric.
-
-23. **Explain the performance waterfall for a typical page load**
-
-    - Answer: DNS → TCP → TLS → TTFB → First Byte → DOMContentLoaded → Load → LCP → INP (user interaction).
-
-24. **How do you optimize CWV for global audiences?**
-
-    - Answer: Edge caching, CDN, regional deployment, consider network conditions in different geographies.
-
-25. **What is the relationship between CWV and Core Business Metrics?**
-
-    - Answer: CWV improvements correlate with increased engagement, reduced bounce rates, and higher conversion rates.
-
-### Follow-ups (5)
-26. **How do you handle CWV measurement in iframes?**
-
-    - Answer: Use PerformanceObserver in the iframe, or use postMessage to communicate metrics to parent.
-
-27. **What is the impact of Service Workers on CWV?**
-
-    - Answer: Service workers can improve TTFB and LCP through caching, but can also cause issues if not implemented correctly.
-
-28. **How do you measure CWV for AMP pages?**
-
-    - Answer: AMP has built-in performance guarantees, but you can still use web-vitals library for measurement.
-
-29. **Explain the difference between FCP and LCP**
-
-    - Answer: FCP measures when any content renders; LCP measures when the largest contentful element renders. LCP is often the hero image or main text.
-
-30. **How do you optimize CWV for news websites with heavy ad loads?**
-
-    - Answer: Lazy load ads, use placeholder dimensions, optimize ad loading order, consider ad-free experiences for better metrics.
 
 ## Summary
 
 Core Web Vitals are essential metrics for measuring and improving user experience. Focus on LCP (loading), INP (interactivity), and CLS (visual stability) to ensure your website provides a good user experience and ranks well in search results.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Build Tools](../23-Build-Tools/)
+- [Observability](../22-Observability/)
+- [Accessibility](../25-Accessibility/)
 
 ## References & Learn More
 

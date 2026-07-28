@@ -1,4 +1,14 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Images & Containers
+
+[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -345,144 +355,12 @@ docker scout cves myapp:1.0.0
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the difference between an image and a container?**
-   Image is a template; container is a running instance of that image.
-
-2. **What is a Dockerfile?**
-   A text file with instructions to build a Docker image.
-
-3. **What does the `COPY` instruction do?**
-   Copies files from the build context into the image filesystem.
-
-4. **What is the difference between `COPY` and `ADD`?**
-   `COPY` copies files. `ADD` can also extract tar archives and fetch remote URLs. Prefer `COPY`.
-
-5. **What is a `.dockerignore` file?**
-   Lists files/directories excluded from the build context.
-
-6. **What does `EXPOSE` do?**
-   Documents which ports the container listens on (metadata only; does not publish).
-
-7. **How do you build an image?**
-   `docker build -t name:tag .`
-
-8. **What is the difference between `CMD` and `ENTRYPOINT`?**
-   `ENTRYPOINT` defines the executable; `CMD` provides default arguments.
-
-9. **What is Docker Hub?**
-   Docker's default public container registry.
-
-10. **How do you list running containers?**
-    `docker ps`
-
-### Intermediate (5-10)
-
-11. **How does Docker layer caching work?**
-    Each instruction creates a layer. If layers haven't changed, Docker reuses cached versions. Only changed layers are rebuilt.
-
-12. **Why should you copy `package.json` before `COPY . .`?**
-    Dependencies are cached as long as `package.json` doesn't change, speeding up rebuilds.
-
-13. **What is a multi-stage build?**
-    Using multiple `FROM` statements to build in one stage and copy only artifacts to a slim final stage.
-
-14. **What is the build context?**
-    The set of files sent to the Docker daemon when building. Specified as the last argument to `docker build`.
-
-15. **How do you reduce Docker image size?**
-    Use Alpine base, multi-stage builds, `.dockerignore`, `npm ci --only=production`, clean caches.
-
-16. **What is `dumb-init`?**
-    A minimal init system that handles signal forwarding and zombie process reaping in containers.
-
-17. **What is the difference between `docker run` and `docker create`?**
-    `create` creates a container without starting it; `run` creates and starts.
-
-18. **How do you pass environment variables to a container?**
-    `-e KEY=VALUE` or `--env-file .env`
-
-19. **What is a container registry?**
-    A storage/distribution system for Docker images (Docker Hub, ECR, GCR).
-
-20. **How do you debug a container that keeps crashing?**
-    `docker logs <container>`, `docker exec -it <container> sh`, check health check configuration.
-
-### Senior (10-15)
-
-21. **Explain the union filesystem (UnionFS) used by Docker.**
-    UnionFS layers multiple filesystems. Lower layers are read-only; top layer is read-write. Docker uses OverlayFS (overlay2).
-
-22. **What is content-addressable storage in Docker?**
-    Each layer is identified by a SHA256 hash of its content. Identical content produces the same hash, enabling deduplication.
-
-23. **How does Docker handle PID 1 and zombie processes?**
-    Docker doesn't run an init system by default. The process inside the container becomes PID 1 and doesn't reap zombies. Use `dumb-init` or `tini`.
-
-24. **What is Docker BuildKit?**
-    BuildKit is the modern build backend. It supports parallel builds, caching strategies, secret mounts, and SSH forwarding.
-
-25. **Explain `--mount` vs `-v` (volume mount).**
-    `-v` (legacy): auto-creates volumes, bind-mount syntax. `--mount`: explicit, more readable, supports read-only, tmpfs, and build mounts.
-
-26. **What is image signing and verification?**
-    Docker Content Trust (DCT) uses Notary to sign images. `docker trust sign` signs; `DOCKER_CONTENT_TRUST=1` enforces verification.
-
-27. **How do you handle secrets in Docker builds?**
-    Use BuildKit secret mounts (`--mount=type=secret`) to avoid leaking secrets in layers.
-
-28. **What are distroless images?**
-    Google's minimal images containing only the application and its runtime dependencies—no shell, package manager, or OS utilities.
-
-29. **How does Docker handle networking inside a container?**
-    Each container gets its own network namespace with a virtual ethernet (veth) pair connected to the Docker bridge.
-
-30. **What is the difference between `COPY --from=builder` and volume mounting?**
-    `COPY --from` bakes artifacts into the image. Volume mounting overlays at runtime. For production, `COPY --from` is preferred.
-
-### FAANG-style (5-10)
-
-31. **Design a Docker image scanning pipeline for a microservices architecture.**
-    Integrate Trivy/Grype in CI, block deployments on critical CVEs, maintain allowlist for acceptable vulnerabilities, scan both base images and application layers.
-
-32. **How would you optimize a Node.js Docker image from 1.2GB to under 100MB?**
-    Alpine base, multi-stage build, `npm ci --only=production`, remove dev dependencies, use `node:18-alpine` (~130MB), drop unnecessary files.
-
-33. **Explain Docker layer deduplication across multiple images.**
-    Layers are content-addressable. If two images share a base layer, it's stored once on disk. Docker uses hard links/reflinks.
-
-34. **How would you implement a zero-downtime deployment with Docker Compose?**
-    Use `docker compose up --no-deps --scale service=N` with a load balancer, or orchestrate with rolling restarts.
-
-35. **Describe a strategy for managing Docker image tags across environments.**
-    Use Git SHA, semantic versioning, or build number. Promote same image from dev → staging → prod. Never rebuild for different environments.
-
-### Follow-ups (5-10)
-
-36. **What happens when a container's main process exits?**
-    The container stops. Docker records the exit code. Orchestrators may restart based on restart policy.
-
-37. **How do you handle database migrations in Docker?**
-    Run migrations as an init container or sidecar before app starts, or use a separate job/pod.
-
-38. **Can you share data between containers?**
-    Yes, via shared volumes, shared memory (`--ipc`), or network communication.
-
-39. **What is `docker commit` and why is it discouraged?**
-    Creates an image from a container's current state. Discouraged because it's opaque and not reproducible.
-
-40. **How do you handle timezone in Docker containers?**
-    Mount `/etc/localtime` or set `TZ` environment variable.
 
 ## Summary
 
 Docker images are immutable, layered templates. Containers are ephemeral runtime instances. Mastering Dockerfiles, layer caching, multi-stage builds, and security practices is essential for any senior engineer. Images should be minimal, scanned, non-root, and reproducible.
 
 ## Cheat Sheet
-
 ```bash
 # Build
 docker build -t name:tag .
@@ -515,6 +393,13 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 ```
 
 ---
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [CI/CD](../15-CI-CD/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

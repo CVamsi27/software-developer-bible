@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # OAuth 2.0
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -461,137 +471,6 @@ app.get("/auth/github/callback", async (req, res) => {
 | PKCE | Slight overhead for challenge generation, negligible |
 | Refresh Flow | Additional network request when tokens expire |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is OAuth 2.0 and how does it differ from authentication?**
-A: OAuth 2.0 is an authorization framework for delegated access. It lets users grant third-party apps limited access to their resources without sharing credentials. Authentication verifies identity; OAuth 2.0 grants permissions. OpenID Connect extends OAuth 2.0 for authentication.
-
-**Q2: What are the four roles in OAuth 2.0?**
-A: Resource Owner (user), Client (application), Authorization Server (issues tokens), and Resource Server (hosts protected resources).
-
-**Q3: What is the Authorization Code flow?**
-A: A flow where the client redirects the user to the authorization server, the user authenticates and consents, the server returns an authorization code, and the client exchanges the code for tokens on the server side.
-
-**Q4: What is PKCE and why is it needed?**
-A: Proof Key for Code Exchange (RFC 7636) prevents authorization code interception attacks. The client generates a code verifier, sends a challenge (hash), and proves possession during token exchange. Required for public clients.
-
-**Q5: What is the difference between access and refresh tokens?**
-A: Access tokens are short-lived credentials for API access. Refresh tokens are long-lived credentials used to obtain new access tokens without user interaction.
-
-**Q6: What are scopes in OAuth 2.0?**
-A: Scopes define the specific permissions a client is requesting. They allow fine-grained access control (e.g., "read:email", "write:repos").
-
-**Q7: What is the `state` parameter used for?**
-A: The `state` parameter is a random value used to prevent CSRF attacks. The client generates it, stores it, and verifies it when the authorization server redirects back.
-
-**Q8: What is the Client Credentials flow?**
-A: A machine-to-machine flow where the client authenticates with its own credentials (client_id + client_secret) and receives an access token without user involvement.
-
-**Q9: What is the Implicit flow?**
-A: A deprecated flow where the access token is returned directly in the URL fragment. It was used for SPAs but has been replaced by Authorization Code + PKCE due to security concerns.
-
-**Q10: What is token introspection?**
-A: An endpoint (RFC 7662) that validates a token by querying the authorization server. Useful for opaque tokens or when real-time revocation checking is needed.
-
-### Intermediate (5-10)
-
-**Q11: How would you implement OAuth 2.0 for a Single Page Application?**
-A: Use Authorization Code flow with PKCE. Store tokens in httpOnly cookies (for API calls) or memory (for SPA access). Use refresh token rotation. Never store tokens in localStorage.
-
-**Q12: How do you handle token refresh in a concurrent request scenario?**
-A: Implement a token refresh queue. When a token expires, queue all pending requests, refresh the token once, and retry all queued requests with the new token.
-
-**Q13: What is the difference between JWT and opaque tokens?**
-A: JWTs are self-contained with claims; validation is local. Opaque tokens are random strings; validation requires a network call to the authorization server (introspection).
-
-**Q14: How do you handle logout in OAuth 2.0?**
-A: Revoke the refresh token (invalidates future access), clear tokens from the client, and optionally call the authorization server's revocation endpoint (RFC 7009).
-
-**Q15: What are the security implications of the authorization code flow?**
-A: The authorization code can be intercepted. PKCE mitigates this by ensuring only the client that initiated the flow can exchange the code. Always use PKCE for public clients.
-
-**Q16: How do you handle multiple redirect URIs?**
-A: The redirect URI must exactly match (case-sensitive) what's registered with the authorization server. Avoid wildcards. Use separate registrations for different environments.
-
-**Q17: What is the difference between bearer and proof-of-possession tokens?**
-A: Bearer tokens grant access to anyone who presents them. Proof-of-possession tokens require the client to prove possession of a cryptographic key, preventing token theft.
-
-**Q18: How do you implement OAuth 2.0 for a microservices architecture?**
-A: Use an API gateway to handle OAuth validation. Services receive validated user context from the gateway. Use client credentials flow for service-to-service communication.
-
-**Q19: What is the OAuth 2.0 Token Revocation endpoint?**
-A: An endpoint (RFC 7009) that allows clients to invalidate tokens. Supports revoking access tokens and/or refresh tokens. Essential for logout and security incidents.
-
-**Q20: How do you handle OAuth errors?**
-A: Follow RFC 6749 error format: return appropriate error codes (invalid_grant, unauthorized_client, etc.) with descriptive messages. Log errors for monitoring but don't expose internal details.
-
-### Senior (10-15)
-
-**Q21: Design an OAuth 2.0 system for a platform with 50+ microservices.**
-A: Centralized authorization server issues JWTs. API gateway validates tokens. Services trust the gateway and receive user context via headers. Use RS256 for signing. Implement token introspection at the gateway. Use Redis for revocation lists.
-
-**Q22: How would you implement OAuth 2.0 for a B2B platform with different tenant configurations?**
-A: Implement tenant-aware authorization. Each tenant has its own OAuth client configuration, scopes, and policies. Use JWT claims to carry tenant context. Implement tenant-specific token signing if needed.
-
-**Q23: Explain how to implement a secure OAuth 2.0 consent management system.**
-A: Store consent records per user, per client, per scope. Implement consent revocation UI. On each authorization request, check existing consent. Request incremental consent for new scopes. Audit consent changes.
-
-**Q24: How would you handle OAuth 2.0 in a zero-trust environment?**
-A: Validate tokens on every request. Implement proof-of-possession tokens. Bind tokens to client certificates (mTLS). Use short-lived tokens. Implement continuous authorization (re-validate periodically).
-
-**Q25: Design a system for cross-domain OAuth 2.0 with shared user base.**
-A: Use centralized identity provider with OAuth 2.0 federation. Implement trust relationships between domains. Use JWT claims for domain context. Implement domain-specific authorization policies.
-
-**Q26: How would you handle OAuth 2.0 for IoT devices with limited capabilities?**
-A: Use device authorization flow for input-constrained devices. Implement device code grant. Use hardware security modules for key storage. Implement certificate-based client authentication.
-
-**Q27: Explain how to implement OAuth 2.0 token binding for enhanced security.**
-A: Bind tokens to TLS channel (DPoP - Demonstrating Proof of Possession). Bind tokens to client certificate (mTLS). Bind tokens to device fingerprint. Validate binding on each request.
-
-**Q28: How would you implement OAuth 2.0 with just-in-time access provisioning?**
-A: On authorization, check if user has required permissions. If not, trigger access request workflow. Implement approval chains. Grant temporary access with expiration. Implement access review cycles.
-
-**Q29: Design an OAuth 2.0 system that supports both web and API access patterns.**
-A: Use Authorization Code flow with PKCE for web. Use client credentials for API access. Issue different token types (JWT for API, opaque for web). Implement token exchange (RFC 8693) for delegation.
-
-**Q30: How would you handle OAuth 2.0 in a multi-region deployment?**
-A: Replicate authorization server across regions. Use global session management. Implement region-aware token validation. Handle cross-region token exchange. Ensure consistency of revocation lists.
-
-### FAANG-style (5-10)
-
-**Q31: Design an OAuth 2.0 system supporting 1 billion daily active users.**
-A: Horizontally scale authorization servers. Use distributed token storage (Redis Cluster). Implement token caching at edge (CDN). Use async revocation propagation. Implement rate limiting per client. Monitor for abuse patterns.
-
-**Q32: How would you implement OAuth 2.0 for a financial institution with regulatory requirements?**
-A: Implement step-up authentication for sensitive operations. Use FIDO2/WebAuthn for strong client authentication. Implement transaction signing. Maintain comprehensive audit logs. Implement consent with legal requirements.
-
-**Q33: Design a system for OAuth 2.0 token sharing between competing organizations.**
-A: Implement trust federation with standardized metadata exchange. Use signed JWT assertions for cross-org authentication. Implement fine-grained scope negotiation. Audit all cross-org token usage.
-
-**Q34: How would you migrate from OAuth 2.0 to a new protocol without breaking existing clients?**
-A: Implement protocol versioning. Support both protocols simultaneously. Use token exchange to bridge old and new systems. Implement gradual client migration with feature flags.
-
-**Q35: Design an OAuth 2.0 system that provides real-time access analytics across 100+ services.**
-A: Implement centralized logging with correlation IDs. Use event streaming (Kafka) for token usage events. Implement real-time dashboards. Build anomaly detection models. Implement automated alerting.
-
-### Follow-ups (5-10)
-
-**Q36: How would your design change if you needed to support OAuth 2.0 for both B2C and B2B use cases?**
-A: B2C: Authorization Code flow with social login support. B2B: Client credentials with SAML federation. Implement separate client registrations and policies per use case. Use consistent token format but different claim sets.
-
-**Q37: If the security team required all tokens to be encrypted, how would you implement JWE?**
-A: Use JWE for token payloads. Implement key management service for encryption keys. Handle key rotation. Ensure backward compatibility during migration. Performance impact: additional encryption/decryption overhead.
-
-**Q38: How would you implement OAuth 2.0 for a system requiring audit trails for every access?**
-A: Implement comprehensive logging of all token issuance and usage. Use JWT claims to carry audit context. Implement centralized audit storage. Build compliance reporting. Implement tamper-evident audit logs.
-
-**Q39: If OAuth 2.0 token validation was a performance bottleneck, what optimizations would you apply?**
-A: Cache public keys. Use JWT for self-contained validation. Implement token validation at edge. Use hardware acceleration. Implement async validation for non-critical paths.
-
-**Q40: How would you handle OAuth 2.0 in environments where the authorization server is temporarily unavailable?**
-A: Implement token caching with grace periods. Use last-valid token within acceptable window. Implement fallback authorization. Monitor authorization server health. Implement circuit breakers.
 
 ## Summary
 
@@ -606,7 +485,6 @@ OAuth 2.0 is the standard framework for delegated authorization, enabling secure
 - OAuth 2.0 is authorization, not authentication (use OIDC for auth)
 
 ## Cheat Sheet
-
 | Concept | Recommendation |
 |---------|---------------|
 | Flow (Web App) | Authorization Code + PKCE |
@@ -621,6 +499,12 @@ OAuth 2.0 is the standard framework for delegated authorization, enabling secure
 | Token Storage (Web) | httpOnly, Secure, SameSite cookies |
 | Token Storage (Mobile) | Keychain (iOS) / Keystore (Android) |
 | Logout | Revoke refresh token + clear client tokens |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

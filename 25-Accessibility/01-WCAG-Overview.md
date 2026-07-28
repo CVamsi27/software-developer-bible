@@ -1,4 +1,14 @@
+---
+section: Accessibility
+category: Quality
+tags: [overview, reference]
+---
+
 # WCAG Overview
+
+[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 WCAG (Web Content Accessibility Guidelines) is a set of guidelines developed by W3C (World Wide Web Consortium) to make web content more accessible to people with disabilities. It provides standards for creating accessible web content.
@@ -345,153 +355,16 @@ Robust - Content must be robust for assistive technologies
 - **Skip links**: No performance impact
 - **Focus management**: Important for SPA performance
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is WCAG?**
-
-   - Web Content Accessibility Guidelines, W3C standard for accessible web content.
-
-2. **What are the four principles of WCAG?**
-
-   - Perceivable, Operable, Understandable, Robust (POUR).
-
-3. **What is the difference between Level A, AA, and AAA?**
-
-   - A is minimum, AA is standard, AAA is enhanced accessibility.
-
-4. **What is alt text?**
-
-   - Alternative text for images, describes image content for screen readers.
-
-5. **Why is color contrast important?**
-
-   - Ensures text is readable for people with low vision or color blindness.
-
-6. **What is semantic HTML?**
-
-   - Using HTML elements for their intended purpose (nav, header, main).
-
-7. **What is a landmark role?**
-
-   - ARIA roles that define page regions (banner, navigation, main).
-
-8. **What is keyboard accessibility?**
-
-   - Ability to use all functionality via keyboard without mouse.
-
-### Intermediate (5-10)
-
-9. **How do you make forms accessible?**
-
-   - Labels, fieldsets, legends, error messages, aria-required.
-
-10. **What is ARIA and when to use it?**
-
-    - Accessible Rich Internet Applications, use when native HTML insufficient.
-
-11. **How do you handle dynamic content?**
-
-    - Use aria-live regions to announce changes to screen readers.
-
-12. **What is the difference between `role="alert"` and `aria-live="assertive"`?**
-
-    - Both interrupt user, but role="alert" has implicit aria-live.
-
-13. **How do you test accessibility?**
-
-    - Automated tools (axe, Lighthouse), manual testing, screen readers.
-
-14. **What are skip links?**
-
-    - Links that allow keyboard users to skip repetitive content.
-
-15. **How do you handle focus in SPAs?**
-
-    - Manage focus on route changes, use aria-live for announcements.
-
-16. **What is `prefers-reduced-motion`?**
-
-    - CSS media query for users who prefer reduced motion.
-
-### Senior (10-15)
-17. **How do you implement accessibility in a design system?**
-
-    - Component guidelines, documentation, testing, automation.
-
-18. **What is the impact of accessibility on SEO?**
-
-    - Semantic HTML, alt text, headings improve search rankings.
-
-19. **How do you handle accessibility in complex components?**
-
-    - Proper ARIA attributes, keyboard navigation, focus management.
-
-20. **What is the difference between WCAG 2.0 and 2.1?**
-
-    - 2.1 adds requirements for mobile, cognitive, low vision disabilities.
-
-21. **How do you make video content accessible?**
-
-    - Captions, audio descriptions, transcripts, player controls.
-
-22. **What is cognitive accessibility?**
-
-    - Making content understandable for people with cognitive disabilities.
-
-23. **How do you handle accessibility in micro-frontends?**
-
-    - Consistent patterns, shared components, testing across boundaries.
-
-24. **What is the role of accessibility in design thinking?**
-
-    - Include accessibility from ideation, not as afterthought.
-
-### FAANG-style (5-10)
-25. **Design an accessibility testing strategy for a large application.**
-
-    - Automated testing, manual audits, user testing, training, monitoring.
-
-26. **How would you make a complex data visualization accessible?**
-
-    - Text alternatives, keyboard navigation, screen reader support.
-
-27. **What are the business benefits of accessibility?**
-
-    - Legal compliance, wider market, better UX, SEO, brand reputation.
-
-28. **How do you prioritize accessibility issues?**
-
-    - Impact on users, legal risk, effort to fix, frequency.
-
-29. **Design an accessible component library.**
-
-    - Documentation, examples, testing, automation, guidelines.
-
-### Follow-ups (5-10)
-30. **How does accessibility affect conversion rates?**
-
-    - Studies show accessible sites have higher conversion rates.
-
-31. **What is the relationship between accessibility and inclusive design?**
-
-    - Accessibility is outcome, inclusive design is process.
-
-32. **How do you handle accessibility in internationalization?**
-
-    - RTL support, language attributes, cultural considerations.
-
-33. **What is the future of accessibility?**
-
-    - AI assistance, better tools, legal requirements, user awareness.
-
-34. **How do you measure accessibility success?**
-
-    - WCAG compliance, user testing, automated scores, bug reports.
 
 ## Summary
 WCAG provides guidelines for making web content accessible. Follow POUR principles, aim for Level AA compliance, use semantic HTML, and test with assistive technology. Accessibility is not just legal compliance but ethical responsibility and good business.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Testing](../16-Testing/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Animation
+category: Frontend
+tags: [concept]
+---
+
 # Framer Motion
+
+[![Section](https://img.shields.io/badge/section-Animation-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Framer Motion is a production-ready React animation library that provides a simple, declarative API for creating smooth, performant animations. It handles complex animation logic while maintaining excellent performance through hardware acceleration.
@@ -508,159 +518,16 @@ Animation Performance:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is Framer Motion?**
-
-   - Answer: A React animation library providing declarative API for smooth, performant animations.
-
-2. **What are motion components?**
-
-   - Answer: Wrappers around HTML elements (motion.div, motion.span) that enable animations.
-
-3. **What is AnimatePresence?**
-
-   - Answer: A component that enables exit animations by keeping components in the DOM until animation completes.
-
-4. **What are variants?**
-
-   - Answer: Named animation states that can be reused across components.
-
-5. **What is the transition property?**
-
-   - Answer: Configuration for how animations occur (duration, easing, type).
-
-### Intermediate (5)
-
-6. **How do you create a hover animation?**
-
-   - Answer: Use `whileHover` prop: `<motion.div whileHover={{ scale: 1.1 }}>`
-
-7. **What is the difference between `animate` and `whileHover`?**
-
-   - Answer: `animate` is the default state; `whileHover` is the state on hover.
-
-8. **How do you animate exit transitions?**
-
-   - Answer: Use `exit` prop with `AnimatePresence` wrapper.
-
-9. **What is layout animation?**
-
-   - Answer: Automatic animation when element's position changes, using `layout` prop.
-
-10. **How do you create a spring animation?**
-
-    - Answer: Use `type: 'spring'` in transition: `transition={{ type: 'spring', stiffness: 300 }}`
-
-### Senior (10)
-11. **How does Framer Motion optimize performance?**
-
-    - Answer: Uses transform/opacity for GPU acceleration, automatic will-change, batch updates, optimized re-renders.
-
-12. **What is the difference between Framer Motion and React Spring?**
-
-    - Answer: Both are animation libraries; Framer Motion has simpler API, better gesture support, and layout animations.
-
-13. **How do you handle complex animation sequences?**
-
-    - Answer: Use `useAnimation` hook with async/await for sequential animations.
-
-14. **How do you create scroll-triggered animations?**
-
-    - Answer: Use `whileInView` prop or `useScroll` hook with `useTransform`.
-
-15. **How do you optimize animations for performance?**
-
-    - Answer: Use transform properties, minimize DOM changes, use `will-change` sparingly, respect reduced motion.
-
-16. **How do you handle gesture animations?**
-
-    - Answer: Use `whileHover`, `whileTap`, `whileDrag` props with drag constraints.
-
-17. **How do you create page transitions?**
-
-    - Answer: Use `AnimatePresence` with `mode="wait"` and route-based key changes.
-
-18. **How do you animate SVG elements?**
-
-    - Answer: Use motion.path, motion.circle, etc. with pathLength and pathOffset animations.
-
-19. **How do you test animations?**
-
-    - Answer: Mock timers, test animation states, use React Testing Library for DOM assertions.
-
-20. **How do you handle accessibility in animations?**
-
-    - Answer: Check `prefers-reduced-motion`, provide alternatives, avoid flashing content.
-
-### FAANG-style (5)
-21. **Design an animation system for a design system**
-
-- **Answer**:
-  - Custom motion components
-  - Animation tokens
-  - Variants library
-  - Performance monitoring
-  - Accessibility compliance
-
-22. **How would you implement complex animations at scale?**
-
-- **Answer**:
-  - Animation composition
-  - Performance budgets
-  - Lazy loading animations
-  - Monitoring and metrics
-
-23. **Explain animation performance optimization**
-
-- **Answer**:
-  - GPU acceleration
-  - Will-change management
-  - Batch updates
-  - Reduced motion support
-
-24. **How do you handle animations in micro-frontends?**
-
-- **Answer**:
-  - Shared animation library
-  - Consistent patterns
-  - Performance budgets
-  - Testing strategies
-
-25. **Design a page transition system**
-
-- **Answer**:
-  - Route-based transitions
-  - AnimatePresence for exit
-  - Layout animations
-  - Loading states
-
-### Follow-ups (5)
-26. **How do you handle animations in SSR?**
-
-- **Answer**: Disable animations on server, hydrate on client, use `useEffect` for client-only animations.
-
-27. **How do you handle animations in React Server Components?**
-
-- **Answer**: Animations only work on client, use client components for animated elements.
-
-28. **How do you handle animations with third-party libraries?**
-
-- **Answer**: Use Framer Motion for React integration, or use the underlying animation library directly.
-
-29. **How do you handle animation performance monitoring?**
-
-- **Answer**: Track frame rate, jank, use Performance API, monitor layout thrashing.
-
-30. **How do you handle animations in low-end devices?**
-
-- **Answer**: Simplify animations, use reduced motion, test on real devices, provide fallbacks.
 
 ## Summary
 
 Framer Motion provides a powerful, declarative API for creating performant animations in React. Master its components, gestures, and layout animations to build delightful user experiences.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Repository Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -983,124 +993,12 @@ class CachedUserRepository implements UserRepository {
 
 5. **Lazy Loading**: Consider lazy loading for related entities when appropriate.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Repository pattern?**
-
-   - An abstraction over data access that separates business logic from persistence.
-
-2. **When would you use Repository pattern?**
-
-   - When you need to decouple business logic from data access or switch databases easily.
-
-3. **What's the difference between Repository and DAO?**
-
-   - Repository is domain-focused; DAO is data-focused. Repository is an aggregate root.
-
-4. **How do you implement Repository in TypeScript?**
-
-   - Define an interface, implement for specific data stores, and use dependency injection.
-
-5. **What are the benefits of Repository pattern?**
-
-   - Loose coupling, easier testing, and database independence.
-
-### Intermediate
-
-6. **How do you handle complex queries in Repository?**
-
-   - Use Specification pattern, query builders, or custom repository methods.
-
-7. **Can Repository have business logic?**
-
-   - No, keep business logic in services. Repository should only handle data access.
-
-8. **How do you test Repository pattern?**
-
-   - Use in-memory implementations, mock databases, or test doubles.
-
-9. **What's the relationship between Repository and Unit of Work?**
-
-   - Unit of Work coordinates multiple repositories and transactions.
-
-10. **How do you handle caching in Repository?**
-
-    - Implement caching at repository level with cache invalidation strategies.
-
-### Senior
-
-11. **How does Repository pattern affect scalability?**
-
-    - Can implement different strategies for read/write separation and sharding.
-
-12. **What are the SOLID violations with Repository?**
-
-    - Usually follows SOLID; watch for violating Interface Segregation.
-
-13. **How do you handle Repository in microservices?**
-
-    - Each service has its own repositories; avoid shared repositories.
-
-14. **What are the memory implications of Repository?**
-
-    - Repositories are usually stateless; caching can consume memory.
-
-15. **How do you refactor Repository code?**
-
-    - Extract common logic, use generics, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Repository for a distributed database.**
-
-    - Consider consistency, partition tolerance, and conflict resolution.
-
-17. **How would you implement Repository for event sourcing?**
-
-    - Use event store, projections, and snapshots.
-
-18. **What are the implications of Repository in cloud-native applications?**
-
-    - Consider serverless databases, connection limits, and scaling.
-
-19. **How do you handle Repository in CQRS?**
-
-    - Separate read and write repositories with different optimizations.
-
-20. **Design a Repository that supports multi-tenancy.**
-
-    - Consider tenant isolation, data partitioning, and security.
-
-### Follow-ups
-
-21. **Can Repository pattern be combined with other patterns?**
-
-    - Yes, commonly with Unit of Work, Specification, and Factory patterns.
-
-22. **How do you handle Repository in testing frameworks?**
-
-    - Use in-memory implementations, mock databases, and test containers.
-
-23. **What are the memory implications of Repository pattern?**
-
-    - Repositories are usually lightweight; caching consumes memory.
-
-24. **How do you handle Repository in serverless environments?**
-
-    - Consider connection pooling, cold starts, and stateless design.
-
-25. **What's the impact of Repository on code maintainability?**
-
-    - Improves maintainability by centralizing data access and reducing duplication.
 
 ## Summary
 
 The Repository pattern is essential for clean architecture and domain-driven design. It provides an abstraction over data access, making it easier to test, maintain, and switch between different data stores. Use it to separate business logic from persistence concerns.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           REPOSITORY PATTERN                │
@@ -1137,6 +1035,14 @@ The Repository pattern is essential for clean architecture and domain-driven des
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

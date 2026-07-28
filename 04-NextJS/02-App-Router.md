@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # App Router in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -645,131 +655,6 @@ Performance Costs:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the App Router in Next.js?**
-   The App Router is Next.js's modern routing system using the `app/` directory, built on React Server Components with nested layouts, loading states, and error handling.
-
-2. **How does the App Router differ from the Pages Router?**
-   App Router uses Server Components by default, supports nested layouts per route, has built-in loading/error states, and supports parallel and intercepting routes.
-
-3. **What is a route group in the App Router?**
-   A route group uses parentheses `(groupName)` to organize routes without affecting the URL structure. It's for logical grouping only.
-
-4. **What is the purpose of `layout.tsx`?**
-   Layouts are shared UI that persist across navigations. They don't re-render on route changes, providing performance benefits and consistent UI.
-
-5. **What is the difference between `layout.tsx` and `template.tsx`?**
-   Layouts persist across navigations (don't re-render), while templates re-render on every navigation. Use templates for transition animations.
-
-6. **How do you create a loading state for a route?**
-   Add a `loading.tsx` file in the route directory. It's automatically wrapped in a Suspense boundary.
-
-7. **What is a parallel route?**
-   Parallel routes use `@folder` syntax to render multiple pages simultaneously in the same layout, useful for modals and split views.
-
-8. **What is an intercepting route?**
-   Intercepting routes use `(.)` syntax to intercept navigation and render a different UI (like a modal) while preserving the URL.
-
-### Intermediate (5-10)
-
-9. **How do you handle 404 errors in the App Router?**
-   Create a `not-found.tsx` file in the route directory. Call `notFound()` from `next/navigation` to trigger it.
-
-10. **What is the purpose of `generateStaticParams`?**
-    It pre-generates static pages for dynamic routes at build time, combining the benefits of SSG with dynamic routing.
-
-11. **How do you pass data between layouts?**
-    Use React Context, URL search params, or cookies. Layouts can't pass props to each other directly.
-
-12. **What is the `dynamic` route segment config?**
-    It controls rendering behavior: `force-dynamic` (SSR), `force-static` (SSG), or `auto` (default based on data fetching).
-
-13. **How do you implement authentication in the App Router?**
-    Use middleware for route protection, Server Components for checking auth state, and Server Actions for login/logout.
-
-14. **What is the purpose of `template.tsx`?**
-    Templates wrap children like layouts but re-render on every navigation, useful for animations or re-triggering effects.
-
-15. **How do you handle nested dynamic routes?**
-    Use nested folders with `[param]` syntax. Each level can have its own `page.tsx`, `layout.tsx`, and `loading.tsx`.
-
-### Senior (10-15)
-
-16. **Design a multi-tenant application using the App Router.**
-    Use middleware for tenant detection, route groups for tenant-specific layouts, and Server Components for data fetching with tenant context.
-
-17. **How would you implement a micro-frontend architecture with the App Router?**
-    Use Module Federation with `next/dynamic`, parallel routes for independent modules, and shared layouts for consistent UI.
-
-18. **Explain the rendering pipeline for a nested layout.**
-    Root layout renders → child layouts render → page renders. Each layout wraps its children. Loading states apply to the nearest Suspense boundary.
-
-19. **How do you optimize bundle splitting in the App Router?**
-    Use `next/dynamic` for lazy loading, route groups for logical splitting, and Server Components to keep client bundles small.
-
-20. **Design a real-time dashboard with the App Router.**
-    Use Server Components for initial data, client components for real-time updates, parallel routes for multiple views, and WebSocket for live data.
-
-21. **How do you handle complex navigation patterns?**
-    Use route groups for organization, parallel routes for simultaneous views, intercepting routes for modals, and middleware for conditional routing.
-
-22. **Explain the relationship between layouts and caching.**
-    Layouts are cached by default. Server Component layouts re-render only when their props change. Client Component layouts re-render on state changes.
-
-23. **How do you implement i18n with the App Router?**
-    Use middleware for locale detection, route groups for locale-specific content, and `generateStaticParams` for static locale pages.
-
-24. **Design a page with multiple data dependencies with different loading states.**
-    Use multiple Suspense boundaries with `loading.tsx` or inline `<Suspense>` components. Each data fetch gets its own loading state.
-
-25. **How do you handle error recovery in nested layouts?**
-    Use `error.tsx` at each layout level. Errors bubble up to the nearest error boundary. Implement retry logic in error components.
-
-### FAANG-style (5-10)
-
-26. **Design a routing system that handles 10K+ routes efficiently.**
-    Use dynamic imports, implement route preloading, use edge middleware for fast matching, and leverage ISR for popular routes.
-
-27. **How would you implement A/B testing with the App Router?**
-    Use middleware to detect variants via cookies, serve different page variants, and cache each variant separately with ISR.
-
-28. **Design a system for handling concurrent route transitions.**
-    Use parallel routes for simultaneous rendering, implement optimistic updates, and use React transitions for smooth UI updates.
-
-29. **How would you implement a route-level feature flag system?**
-    Use Server Components to check flags, middleware for route protection, and dynamic imports for flag-based component loading.
-
-30. **Design a multi-region routing system with edge functions.**
-    Use Edge Runtime middleware for geo-routing, implement region-specific layouts, and use CDN caching for static content.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of the App Router?**
-    Complex mental model, learning curve from Pages Router, potential for excessive server rendering, and compatibility issues with some libraries.
-
-32. **How do you migrate from Pages Router to App Router?**
-    Migrate incrementally, use `pages/_app.tsx` alongside `app/layout.tsx`, and leverage `next/dynamic` for gradual migration.
-
-33. **What is the impact of App Router on bundle size?**
-    Server Components reduce client bundles, but the framework itself is larger. Use `next/dynamic` for code splitting.
-
-34. **How do you test App Router applications?**
-    Use `next/jest` for unit tests, Playwright for E2E tests, and test Server Components with `@testing-library/react`.
-
-35. **What is the future of the App Router?**
-    Continued optimization, better DevTools, improved caching, and deeper React Server Component integration.
-
-36. **How do you handle complex form workflows with the App Router?**
-    Use Server Actions for form submission, client components for form state, and route handlers for API fallback.
-
-37. **What is the relationship between App Router and React 18+?**
-    App Router leverages React 18 features: Server Components, Suspense, transitions, and streaming SSR.
-
-38. **How do you optimize navigation performance?**
-    Use `next/link` for prefetching, implement route preloading, use streaming SSR, and leverage caching strategies.
 
 ## Summary
 
@@ -786,7 +671,6 @@ Performance Costs:
 | Server Components | No | Yes |
 
 ## Cheat Sheet
-
 ```text
 File Structure:
 ├── page.tsx          → Route page
@@ -816,6 +700,13 @@ revalidate          → ISR interval
 runtime             → Edge or Node.js
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

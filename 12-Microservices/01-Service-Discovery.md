@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Service Discovery
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -352,165 +362,12 @@ class DnsServiceDiscovery {
 - **DNS TTL**: 30-60 seconds for service records
 - **Connection pooling**: Reuse connections to discovered instances
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is service discovery?**
-
-   - Mechanism for services to find each other dynamically without hardcoded addresses.
-
-2. **Why is service discovery important in microservices?**
-
-   - Services scale dynamically, instances change, manual configuration impossible at scale.
-
-3. **What's the difference between client-side and server-side discovery?**
-
-   - Client-side: Client queries registry and selects instance
-   - Server-side: Load balancer handles selection
-
-4. **What is a service registry?**
-
-   - Central database storing service instances and their locations.
-
-5. **How do services register themselves?**
-
-   - Send registration message with host, port, metadata to registry on startup.
-
-6. **What are health checks?**
-
-   - Regular pings to verify service instances are running and responsive.
-
-7. **What happens when a service instance fails?**
-
-   - Health check fails, instance removed from registry, traffic routed elsewhere.
-
-8. **Name two popular service discovery tools.**
-
-   - Netflix Eureka, HashiCorp Consul, Apache ZooKeeper.
-
-### Intermediate (5-10)
-
-9. **How does DNS-based service discovery work?**
-
-   - Services registered as SRV records, clients resolve DNS to find instances.
-
-10. **What are the trade-offs between client-side and server-side discovery?**
-
-    - Client-side: More control, client complexity
-    - Server-side: Simpler clients, additional hop
-
-11. **How do you handle discovery server failure?**
-
-    - Cache last known instances, use circuit breaker, graceful degradation.
-
-12. **What is service mesh and how does it relate to discovery?**
-
-    - Infrastructure layer handling service-to-service communication including discovery.
-
-13. **How do you implement version-aware discovery?**
-
-    - Include version in metadata, filter by version during discovery.
-
-14. **What's the CAP theorem impact on service discovery?**
-
-    - Consistency vs availability trade-off; most choose AP (eventual consistency).
-
-15. **How do you handle cross-datacenter discovery?**
-
-    - Hierarchical registries, DNS with geography-based routing.
-
-### Senior (10-15)
-
-16. **Design a service discovery system from scratch.**
-
-    - Registry, heartbeat mechanism, health checks, API, caching, consistency model.
-
-17. **How do you ensure high availability of the discovery server?**
-
-    - Replication, leader election, clustering, failover mechanisms.
-
-18. **Explain eventual consistency in service discovery.**
-    -短暂时间内不同客户端可能看到不同实例集合，最终收敛到一致状态。
-
-19. **How do you handle service discovery in Kubernetes?**
-
-    - kube-dns/CoreDNS, headless services, service accounts.
-
-20. **What's the impact of container orchestration on discovery?**
-
-    - Dynamic IPs, orchestration handles registration/deregistration automatically.
-
-21. **How do you implement discovery for stateful services?**
-
-    - Stable network identities, persistent storage, ordered deployment.
-
-22. **Explain the sidecar pattern in service discovery.**
-
-    - Proxy alongside each service handling discovery and communication.
-
-23. **How do you test service discovery?**
-
-    - Chaos engineering, fault injection, integration tests with mock registry.
-
-24. **What metrics should you monitor for discovery?**
-
-    - Registration rate, heartbeat failures, lookup latency, cache hit ratio.
-
-25. **How do you handle discovery during rolling deployments?**
-
-    - New instances register, health checks pass, old instances deregister.
-
-### FAANG-style (5-10)
-
-26. **Design Netflix's Eureka-like system.**
-
-    - Peer replication, AP model, client caching, heartbeat renewal.
-
-27. **How would you handle 10,000 service instances with discovery?**
-
-    - Hierarchical registry, sharding, aggressive caching, DNS abstraction.
-
-28. **Design discovery for multi-region active-active deployment.**
-
-    - Regional registries, global DNS, latency-based routing, failover.
-
-29. **How do you prevent thundering herd on discovery server?**
-
-    - Client-side caching, jittered heartbeats, read replicas.
-
-30. **Explain discovery in service mesh architecture.**
-
-    - Control plane manages discovery, data plane proxies handle routing.
-
-### Follow-ups (5-10)
-
-31. **How would you migrate from one discovery system to another?**
-
-    - Dual registration, gradual migration, feature flags.
-
-32. **What security considerations exist for service discovery?**
-
-    - Authentication, authorization, encryption,防止恶意注册。
-
-33. **How does service discovery interact with distributed tracing?**
-
-    - Trace context propagation through discovery, service name resolution.
-
-34. **How would you implement discovery for serverless functions?**
-
-    - Function registry, event-driven discovery, cold start handling.
-
-35. **What's the future of service discovery?**
-
-    - Service mesh integration, AI-driven routing, edge computing.
 
 ## Summary
 
 Service Discovery is fundamental to microservices architecture, enabling dynamic service location without hardcoded addresses. Key concepts include client-side vs server-side discovery, health checks, and caching strategies. Modern implementations often use service meshes and integrate with container orchestration platforms.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                 SERVICE DISCOVERY                       │
@@ -537,6 +394,14 @@ Service Discovery is fundamental to microservices architecture, enabling dynamic
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

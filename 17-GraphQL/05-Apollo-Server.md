@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Apollo Server
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -915,94 +925,6 @@ const server = new ApolloServer({
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is Apollo Server?**
-   Apollo Server is a reference implementation of a GraphQL server. It handles query parsing, validation, execution, and HTTP transport.
-
-2. **How do you set up Apollo Server with Express?**
-   Use `@apollo/server/express4` package. Create server, start it, and use `expressMiddleware` middleware.
-
-3. **What is the context function?**
-   The context function runs per request and returns an object that's available to all resolvers. It's used for authentication, data sources, and loaders.
-
-4. **What are Apollo Server plugins?**
-   Plugins extend Apollo Server's functionality. They hook into lifecycle events like request start, response send, etc.
-
-5. **What is Apollo Studio?**
-   Apollo Studio is a cloud-based platform for monitoring, analyzing, and validating GraphQL operations.
-
-### Intermediate
-
-6. **How do you handle CORS in Apollo Server?**
-   Use CORS middleware (like `cors` package) or configure Apollo Server's built-in CORS options.
-
-7. **What is the difference between `formatError` and error plugins?**
-   `formatError` transforms error responses. Plugins can intercept errors before formatting for logging, reporting, etc.
-
-8. **How do you implement file uploads?**
-   Use `graphql-upload` package with middleware. Configure `Upload` scalar and handle streams in resolvers.
-
-9. **What is the Apollo Server landing page?**
-   Built-in GraphQL IDE for development (Playground/Sandbox). Can be embedded or disabled in production.
-
-10. **How do you handle subscriptions?**
-    Use WebSocket server (ws) with `ws.use` package. Configure `useServer` for subscription handling.
-
-### Senior
-
-11. **How would you deploy Apollo Server to production?**
-    Use Docker/Kubernetes, configure health checks, enable usage reporting, set up caching, and monitor with Apollo Studio.
-
-12. **Explain Apollo Server's caching strategy.**
-    Response caching (HTTP cache headers), field-level caching (`@cacheControl`), and query complexity analysis.
-
-13. **How do you handle multi-tenancy?**
-    Tenant ID in context, separate data sources per tenant, and tenant-aware resolvers.
-
-14. **What is Apollo Federation?**
-    Distributes a GraphQL schema across multiple services using `@key`, `@requires`, and `@provides` directives.
-
-15. **How do you monitor Apollo Server in production?**
-    Apollo Studio for metrics, custom plugins for logging, APM tools (New Relic, Datadog), and health checks.
-
-### FAANG-style
-
-16. **Design a production Apollo Server architecture for a high-traffic API.**
-    Consider: horizontal scaling, caching layers, query complexity limits, rate limiting, monitoring, and disaster recovery.
-
-17. **How would you migrate from Express to Fastify with Apollo Server?**
-    Swap HTTP framework, update middleware, test compatibility, and benchmark performance.
-
-18. **Explain your approach to Apollo Server security hardening.**
-    Introspection off, CORS restricted, rate limiting, query depth/complexity limits, input validation, and authentication.
-
-19. **How do you handle Apollo Server in a serverless environment?**
-    Use `@apollo/server` with Lambda/Cloud Functions, configure cold starts, and handle stateless context.
-
-20. **Design a monitoring dashboard for Apollo Server.**
-    Metrics: query complexity, resolver time, error rates, cache hits. Visualization: Apollo Studio + custom dashboards.
-
-### Follow-ups
-
-21. **What happens when Apollo Server receives an invalid query?**
-    Returns 400 Bad Request with validation errors in the `errors` array.
-
-22. **How does Apollo Server handle CORS?**
-    Uses HTTP framework's CORS middleware or built-in options. Configure allowed origins, methods, and headers.
-
-23. **What is the difference between Apollo Server and Apollo Gateway?**
-    Server: single GraphQL endpoint. Gateway: routes queries to multiple federated services.
-
-24. **How do you handle Apollo Server in development vs production?**
-    Development: introspection on, Sandbox enabled, stack traces. Production: introspection off, usage reporting, no stack traces.
-
-25. **What are the limitations of Apollo Server?**
-    Single language (Node.js), requires Apollo ecosystem for full features, subscription scaling challenges.
-
----
 
 ## Summary
 
@@ -1016,6 +938,13 @@ const server = new ApolloServer({
 | **Monitoring** | Apollo Studio + custom plugins |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

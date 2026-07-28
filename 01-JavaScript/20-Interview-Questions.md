@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [interview-questions, reference]
+---
+
 # JavaScript Interview Questions
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## 50 Most Asked JavaScript Interview Questions
 
@@ -455,6 +465,13 @@ BEST PRACTICES:
 • Documentation
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

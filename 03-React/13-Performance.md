@@ -1,4 +1,14 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # React Performance Optimization
+
+[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -202,159 +212,12 @@ const SearchApp = () => {
 | Time to Interactive | < 3.8s | Lighthouse |
 | Cumulative Layout Shift | < 0.1 | Lighthouse |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is React.memo?**
-A: `React.memo` is a higher-order component that prevents re-rendering when props haven't changed (shallow comparison).
-
-**Q2: What is useMemo?**
-A: `useMemo` memoizes a computed value, only re-computing when dependencies change.
-
-**Q3: What is useCallback?**
-A: `useCallback` memoizes a function reference, only re-creating when dependencies change.
-
-**Q4: What is code splitting?**
-A: Code splitting is splitting your bundle into smaller chunks loaded on demand.
-
-**Q5: What is virtualization?**
-A: Virtualization renders only visible items in a list, not all items.
-
-**Q6: When should you use React.memo?**
-A: When a component re-renders frequently with the same props.
-
-**Q7: What is the difference between useMemo and useCallback?**
-A: useMemo memoizes values; useCallback memoizes functions.
-
-**Q8: How do you lazy load a component?**
-A: `const Component = lazy(() => import('./Component'));`
-
-**Q9: What are performance metrics?**
-A: FCP, LCP, TTI, CLS, TBT measure loading and interactivity.
-
-**Q10: How do you profile React performance?**
-A: Use React DevTools Profiler to record and analyze renders.
-
-### Intermediate (5-10)
-
-**Q11: How does React.memo work internally?**
-A: It wraps the component and compares props with Object.is before re-rendering.
-
-**Q12: When should you NOT use useMemo?**
-A: For cheap computations or values not passed to memoized children.
-
-**Q13: What is the performance impact of inline objects?**
-A: New references on every render cause memoized children to re-render.
-
-**Q14: How do you optimize a large list?**
-A: Use virtualization (react-window or react-virtual).
-
-**Q15: What is the relationship between React.memo and useCallback?**
-A: useCallback stabilizes function references so React.memo can prevent re-renders.
-
-**Q16: How do you measure rendering performance?**
-A: React DevTools Profiler, Chrome DevTools Performance, React.Profiler.
-
-**Q17: What is state colocation?**
-A: Keeping state as close as possible to where it's used.
-
-**Q18: How do you optimize context performance?**
-A: Memoize context value, split contexts by concern.
-
-**Q19: What is the impact of deep component trees?**
-A: More components = more re-renders when parent updates.
-
-**Q20: How do you prevent unnecessary re-renders?**
-A: React.memo, useMemo, useCallback, state colocation.
-
-### Senior (10-15)
-
-**Q21: Design a performance optimization strategy for a large app.**
-A: Profile first, memoize expensive components, virtualize lists, code split routes, split contexts.
-
-**Q22: How do you debug performance issues?**
-A: React DevTools Profiler, Chrome DevTools Performance, custom logging.
-
-**Q23: What is the relationship between performance and bundle size?**
-A: Larger bundles = longer load times, slower Time to Interactive.
-
-**Q24: How do you optimize for mobile?**
-A: Reduce bundle size, virtualize lists, use concurrent features.
-
-**Q25: What is the impact of React Compiler on performance?**
-A: Automatic memoization reduces need for manual useMemo/useCallback.
-
-**Q26: How do you handle performance in server components?**
-A: Server Components don't contribute to client bundle size.
-
-**Q27: What is the relationship between performance and testing?**
-A: Performance tests ensure optimizations don't break functionality.
-
-**Q28: How do you monitor performance in production?**
-A: Real User Monitoring (RUM), Lighthouse CI, custom metrics.
-
-**Q29: What is the impact of third-party libraries?**
-A: Bundle size, re-renders, runtime overhead.
-
-**Q30: How do you optimize React Native performance?**
-A: FlatList, useCallback, useMemo, Hermes engine.
-
-### FAANG-style (5-10)
-
-**Q31: Design a performance monitoring system.**
-A: Client-side metrics, server-side metrics, alerting, dashboards.
-
-**Q32: How would you optimize a real-time dashboard?**
-A: Virtualization, debouncing, web workers, concurrent features.
-
-**Q33: Analyze the performance implications of React patterns.**
-A: HOCs, render props, compound components, context.
-
-**Q34: How would you implement performance budgets?**
-A: Lighthouse CI, bundle size limits, performance tests.
-
-**Q35: Design a performance testing strategy.**
-A: Unit tests, integration tests, load tests, E2E tests.
-
-**Q36: How do you handle performance regressions?**
-A: CI/CD checks, monitoring, automated alerts.
-
-**Q37: What is the relationship between performance and architecture?**
-A: Component structure, state management, data fetching.
-
-**Q38: How do you optimize for SEO?**
-A: Server-side rendering, code splitting, performance metrics.
-
-**Q39: What is the impact of TypeScript on performance?**
-A: Build-time only, no runtime overhead.
-
-**Q40: How do you handle performance in micro-frontends?**
-A: Independent bundles, shared dependencies, lazy loading.
-
-### Follow-ups (5-10)
-
-**Q41: How would you explain performance optimization to a non-technical person?**
-A: Making the app faster and more responsive by reducing unnecessary work.
-
-**Q42: What are the edge cases in performance optimization?**
-A: Over-optimization, trade-offs, memory vs CPU.
-
-**Q43: How does performance interact with accessibility?**
-A: Performance affects user experience, which affects accessibility.
-
-**Q44: What is the relationship between performance and security?**
-A: Some security measures (encryption) add performance overhead.
-
-**Q45: How do you handle performance in legacy apps?**
-A: Incremental optimization, profiling, gradual migration.
 
 ## Summary
 
 React performance optimization involves memoization, virtualization, code splitting, and concurrent features. Profile before optimizing, focus on actual bottlenecks, and balance performance with code maintainability.
 
 ## Cheat Sheet
-
 ```text
 Performance Optimization:
 ├── React.memo: Prevent unnecessary re-renders
@@ -368,6 +231,15 @@ Performance Optimization:
 └── Profiling: React DevTools Profiler
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [Next.js](../04-NextJS/)
+- [Testing](../16-Testing/)
+- [Form Handling](../29-Form-Handling/)
+- [Animation](../30-Animation/)
 
 ## References & Learn More
 

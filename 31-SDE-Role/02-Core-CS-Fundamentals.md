@@ -1,4 +1,14 @@
+---
+section: SDE Role
+category: Interview
+tags: [concept]
+---
+
 # Core Computer Science Fundamentals (Phases 9–15)
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ---
 
@@ -33,6 +43,7 @@
 
 // Unsigned Right Shift (>>>) — fill with zeros
 -8 >>> 1 = positive value
+
 ```
 
 ### Essential Bit Tricks
@@ -87,6 +98,7 @@ int reverseBits(int n) {
 // a ^ 0 = a
 // a ^ b = b ^ a (commutative)
 // (a ^ b) ^ c = a ^ (b ^ c) (associative)
+
 ```
 
 ### Subset Generation with Bitmasks
@@ -105,6 +117,7 @@ void generateSubsets(int[] nums) {
         System.out.println(subset);
     }
 }
+
 ```
 
 ## Bit Manipulation Problems
@@ -153,7 +166,7 @@ boolean[] sieve(int n) {
     boolean[] isPrime = new boolean[n + 1];
     Arrays.fill(isPrime, true);
     isPrime[0] = isPrime[1] = false;
-    
+
     for (int i = 2; i * i <= n; i++) {
         if (isPrime[i]) {
             for (int j = i * i; j <= n; j += i) {
@@ -192,6 +205,7 @@ Map<Integer, Integer> primeFactorization(int n) {
     if (n > 1) factors.put(n, 1);
     return factors;
 }
+
 ```
 
 ## GCD and LCM
@@ -221,6 +235,7 @@ int[] extendedGCD(int a, int b) {
     int y = prev[1] - (a / b) * prev[2];
     return new int[]{gcd, x, y};
 }
+
 ```
 
 ## Modular Arithmetic
@@ -263,11 +278,12 @@ long nCr(int n, int r, long mod) {
     long[] fact = new long[n + 1];
     fact[0] = 1;
     for (int i = 1; i <= n; i++) fact[i] = fact[i - 1] * i % mod;
-    
+
     long num = fact[n];
     long den = fact[r] * fact[n - r] % mod;
     return num * powerMod(den, mod - 2, mod) % mod;
 }
+
 ```
 
 ## Combinatorics and Probability
@@ -298,6 +314,7 @@ void combinations(int n, int k, int start, List<Integer> current, List<List<Inte
         current.remove(current.size() - 1);
     }
 }
+
 ```
 
 ## Math Problems
@@ -334,26 +351,27 @@ void combinations(int n, int k, int start, List<Integer> current, List<List<Inte
 class BankAccount {
     private double balance;  // private — hidden from outside
     private String owner;
-    
+
     public BankAccount(String owner, double initialBalance) {
         this.owner = owner;
         this.balance = initialBalance;
     }
-    
+
     // Public methods provide controlled access
     public void deposit(double amount) {
         if (amount <= 0) throw new IllegalArgumentException("Amount must be positive");
         balance += amount;
     }
-    
+
     public boolean withdraw(double amount) {
         if (amount > balance) return false;
         balance -= amount;
         return true;
     }
-    
+
     public double getBalance() { return balance; }
 }
+
 ```
 
 ### 2. Abstraction
@@ -363,7 +381,7 @@ class BankAccount {
 abstract class Shape {
     abstract double area();
     abstract double perimeter();
-    
+
     // Template method pattern
     public void describe() {
         System.out.println("Area: " + area() + ", Perimeter: " + perimeter());
@@ -372,30 +390,31 @@ abstract class Shape {
 
 class Circle extends Shape {
     double radius;
-    
+
     Circle(double radius) { this.radius = radius; }
-    
+
     @Override
     double area() { return Math.PI * radius * radius; }
-    
+
     @Override
     double perimeter() { return 2 * Math.PI * radius; }
 }
 
 class Rectangle extends Shape {
     double width, height;
-    
+
     Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
-    
+
     @Override
     double area() { return width * height; }
-    
+
     @Override
     double perimeter() { return 2 * (width + height); }
 }
+
 ```
 
 ### 3. Inheritance
@@ -404,28 +423,29 @@ class Rectangle extends Shape {
 // IS-A relationship — code reuse
 class Animal {
     String name;
-    
+
     Animal(String name) { this.name = name; }
-    
+
     void speak() { System.out.println(name + " speaks"); }
 }
 
 class Dog extends Animal {
     Dog(String name) { super(name); }
-    
+
     @Override
     void speak() { System.out.println(name + " barks"); }
-    
+
     void fetch() { System.out.println(name + " fetches"); }
 }
 
 // Multi-level inheritance
 class Puppy extends Dog {
     Puppy(String name) { super(name); }
-    
+
     @Override
     void speak() { System.out.println(name + " yips"); }
 }
+
 ```
 
 ### 4. Polymorphism
@@ -446,6 +466,7 @@ void makeSound(Animal animal) {
 Dog dog = new Dog("Rex");
 Animal animal = dog;
 makeSound(animal); // "Rex barks" — polymorphism in action
+
 ```
 
 ### 5. Composition (HAS-A relationship)
@@ -459,17 +480,18 @@ class Engine {
 class Car {
     private Engine engine;  // composition
     private List<Wheel> wheels;
-    
+
     Car() {
         this.engine = new Engine();
         this.wheels = Arrays.asList(new Wheel(), new Wheel(), new Wheel(), new Wheel());
     }
-    
+
     void start() {
         engine.start();
         System.out.println("Car started");
     }
 }
+
 ```
 
 ## Interfaces vs Abstract Classes
@@ -478,11 +500,11 @@ class Car {
 // Interface — contract (can have multiple inheritance)
 interface Flyable {
     void fly();  // abstract by default
-    
+
     default void glide() {  // default method (Java 8+)
         System.out.println("Gliding");
     }
-    
+
     static boolean canFly(Flyable f) {
         return f != null;
     }
@@ -495,7 +517,7 @@ interface Swimmable {
 // A class can implement multiple interfaces
 class Duck extends Animal implements Flyable, Swimmable {
     Duck(String name) { super(name); }
-    
+
     @Override public void fly() { System.out.println(name + " flies"); }
     @Override public void swim() { System.out.println(name + " swims"); }
 }
@@ -503,15 +525,16 @@ class Duck extends Animal implements Flyable, Swimmable {
 // Abstract class — partial implementation (single inheritance only)
 abstract class Vehicle {
     String name;
-    
+
     Vehicle(String name) { this.name = name; }
-    
+
     abstract void start();  // must be implemented
-    
+
     void stop() {  // concrete method
         System.out.println(name + " stopped");
     }
 }
+
 ```
 
 ## SOLID Principles
@@ -586,15 +609,16 @@ class Robot implements Workable {
 // Depend on abstractions, not concretions
 class OrderService {
     private final PaymentProcessor processor;  // depends on interface
-    
+
     OrderService(PaymentProcessor processor) {
         this.processor = processor;
     }
-    
+
     void processOrder(double amount) {
         processor.process(amount);
     }
 }
+
 ```
 
 ## Composition vs Inheritance
@@ -631,11 +655,11 @@ class OrderService {
 class DatabaseConnection {
     private static volatile DatabaseConnection instance;
     private Connection connection;
-    
+
     private DatabaseConnection() {
         connection = createConnection();
     }
-    
+
     public static DatabaseConnection getInstance() {
         if (instance == null) {
             synchronized (DatabaseConnection.class) {
@@ -646,7 +670,7 @@ class DatabaseConnection {
         }
         return instance;
     }
-    
+
     private Connection createConnection() {
         // create database connection
         return null;
@@ -656,15 +680,16 @@ class DatabaseConnection {
 // Enum-based Singleton (Joshua Bloch's recommendation)
 enum Database {
     INSTANCE;
-    
+
     private Connection connection;
-    
+
     Database() {
         connection = createConnection();
     }
-    
+
     public Connection getConnection() { return connection; }
 }
+
 ```
 
 ### Factory Method
@@ -701,6 +726,7 @@ class NotificationFactory {
 // Usage
 Notification notification = NotificationFactory.create("email");
 notification.send("Hello!");
+
 ```
 
 ### Builder
@@ -713,13 +739,13 @@ class Pizza {
     private boolean pepperoni;
     private boolean mushrooms;
     private List<String> toppings;
-    
+
     private Pizza() {} // private constructor
-    
+
     // Builder
     static class Builder {
         private Pizza pizza = new Pizza();
-        
+
         Builder size(String size) { pizza.size = size; return this; }
         Builder cheese(boolean cheese) { pizza.cheese = cheese; return this; }
         Builder pepperoni(boolean pepperoni) { pizza.pepperoni = pepperoni; return this; }
@@ -740,6 +766,7 @@ Pizza pizza = new Pizza.Builder()
     .pepperoni(true)
     .addTopping("olives")
     .build();
+
 ```
 
 ## Structural Patterns
@@ -754,11 +781,12 @@ interface MediaPlayer {
 
 class VLCAdapter implements MediaPlayer {
     private VLCLibrary vlc = new VLCLibrary();
-    
+
     public void play(String filename) {
         vlc.playVLC(filename); // adapts the interface
     }
 }
+
 ```
 
 ### Decorator
@@ -795,6 +823,7 @@ class SugarDecorator extends CoffeeDecorator {
 // Usage
 Coffee coffee = new SugarDecorator(new MilkDecorator(new SimpleCoffee()));
 // cost: 1.8, description: "Simple coffee, milk, sugar"
+
 ```
 
 ### Facade
@@ -805,13 +834,13 @@ class ComputerFacade {
     private CPU cpu;
     private Memory memory;
     private HardDrive hardDrive;
-    
+
     ComputerFacade() {
         this.cpu = new CPU();
         this.memory = new Memory();
         this.hardDrive = new HardDrive();
     }
-    
+
     void start() {
         cpu.freeze();
         memory.load(0, hardDrive.read(0, 1024));
@@ -819,6 +848,7 @@ class ComputerFacade {
         cpu.execute();
     }
 }
+
 ```
 
 ## Behavioral Patterns
@@ -833,21 +863,22 @@ interface Observer {
 
 class EventEmitter {
     private Map<String, List<Observer>> listeners = new HashMap<>();
-    
+
     void subscribe(String event, Observer observer) {
         listeners.computeIfAbsent(event, k -> new ArrayList<>()).add(observer);
     }
-    
+
     void unsubscribe(String event, Observer observer) {
         listeners.get(event).remove(observer);
     }
-    
+
     void emit(String event) {
         for (Observer observer : listeners.getOrDefault(event, new ArrayList<>())) {
             observer.update(event);
         }
     }
 }
+
 ```
 
 ### Strategy
@@ -868,7 +899,7 @@ class QuickSort implements SortStrategy {
 
 class Sorter {
     private SortStrategy strategy;
-    
+
     Sorter(SortStrategy strategy) { this.strategy = strategy; }
     void setStrategy(SortStrategy strategy) { this.strategy = strategy; }
     void sort(int[] arr) { strategy.sort(arr); }
@@ -879,6 +910,7 @@ Sorter sorter = new Sorter(new QuickSort());
 sorter.sort(array);
 sorter.setStrategy(new BubbleSort());
 sorter.sort(array);
+
 ```
 
 ### Command
@@ -900,15 +932,16 @@ class TextEditor {
 class TypeCommand implements Command {
     private TextEditor editor;
     private String text;
-    
+
     TypeCommand(TextEditor editor, String text) {
         this.editor = editor;
         this.text = text;
     }
-    
+
     public void execute() { editor.type(text); }
     public void undo() { editor.delete(text.length()); }
 }
+
 ```
 
 ### Strategy vs Observer vs State
@@ -985,7 +1018,8 @@ class TypeCommand implements Command {
 
 ## Process Scheduling
 
-```
+```text
+
 CPU Scheduling Algorithms:
 ├── FCFS (First Come First Served) — non-preemptive
 ├── SJF (Shortest Job First) — non-preemptive
@@ -998,6 +1032,7 @@ Key Metrics:
 - Turnaround Time = Completion Time - Arrival Time
 - Waiting Time = Turnaround Time - Burst Time
 - Response Time = First Response Time - Arrival Time
+
 ```
 
 ## Deadlocks
@@ -1031,13 +1066,15 @@ try {
 
 // Banker's Algorithm — safe state detection
 // Before granting request, check if system remains in safe state
+
 ```
 
 ## Memory Management
 
 ### Virtual Memory
 
-```
+```text
+
 Virtual Memory: Each process thinks it has its own memory space
 ├── Page Table: maps virtual → physical addresses
 ├── Page: fixed-size block of virtual memory (typically 4KB)
@@ -1051,11 +1088,13 @@ Page Replacement Algorithms:
 ├── Optimal — theoretical best, not implementable
 ├── Clock — approximation of LRU
 └── LFU — least frequently used
+
 ```
 
 ### Cache
 
-```
+```text
+
 Cache Levels:
 ├── L1 — smallest, fastest (32KB-64KB, ~1ns)
 ├── L2 — medium (256KB-512KB, ~3ns)
@@ -1066,6 +1105,7 @@ Cache Associativity:
 ├── Direct Mapped — each block maps to exactly one cache line
 ├── Fully Associative — block can go anywhere
 └── Set Associative — block can go anywhere in a set
+
 ```
 
 ## Synchronization Primitives
@@ -1106,11 +1146,13 @@ CountDownLatch latch = new CountDownLatch(3);
 latch.countDown();
 // in waiting thread:
 latch.await(); // blocks until count reaches 0
+
 ```
 
 ## Inter-Process Communication (IPC)
 
-```
+```text
+
 IPC Methods:
 ├── Pipes — unidirectional, parent-child
 ├── Named Pipes (FIFO) — bidirectional, unrelated processes
@@ -1119,6 +1161,7 @@ IPC Methods:
 ├── Sockets — network communication
 ├── Signals — asynchronous notification
 └── Semaphores — synchronization between processes
+
 ```
 
 ## OS Problems
@@ -1152,7 +1195,8 @@ IPC Methods:
 
 ## The OSI Model
 
-```
+```text
+
 Layer 7: Application    — HTTP, HTTPS, FTP, SMTP, DNS
 Layer 6: Presentation   — SSL/TLS, encryption, compression
 Layer 5: Session        — session management, authentication
@@ -1160,6 +1204,7 @@ Layer 4: Transport      — TCP, UDP, port numbers
 Layer 3: Network        — IP, routing, packets
 Layer 2: Data Link      — MAC addresses, frames, switches
 Layer 1: Physical       — cables, signals, bits
+
 ```
 
 ## TCP vs UDP
@@ -1175,17 +1220,20 @@ Layer 1: Physical       — cables, signals, bits
 
 ### TCP Three-Way Handshake
 
-```
+```text
+
 Client → Server: SYN (I want to connect)
 Server → Client: SYN-ACK (I acknowledge)
 Client → Server: ACK (connection established)
 
 Connection termination: FIN → FIN-ACK → ACK
+
 ```
 
 ### TCP Flow Control and Congestion Control
 
-```
+```text
+
 Flow Control:
 - Sliding window protocol
 - Receiver advertises window size
@@ -1196,6 +1244,7 @@ Congestion Control:
 - Congestion Avoidance — linear growth
 - Fast Retransmit — 3 duplicate ACKs
 - Fast Recovery — after fast retransmit
+
 ```
 
 ## HTTP/HTTPS
@@ -1214,7 +1263,8 @@ Congestion Control:
 
 ### HTTP Status Codes
 
-```
+```text
+
 1xx: Informational
   100 Continue
   101 Switching Protocols
@@ -1245,11 +1295,13 @@ Congestion Control:
   502 Bad Gateway
   503 Service Unavailable
   504 Gateway Timeout
+
 ```
 
 ### HTTPS and TLS
 
-```
+```text
+
 TLS Handshake (simplified):
 1. Client Hello — supported cipher suites
 2. Server Hello — chosen cipher suite + certificate
@@ -1261,11 +1313,13 @@ Security Properties:
 - Confidentiality — encryption
 - Integrity — message authentication codes
 - Authentication — certificates
+
 ```
 
 ## DNS
 
-```
+```text
+
 DNS Resolution Process:
 1. Browser cache
 2. OS cache
@@ -1282,11 +1336,13 @@ Record Types:
 - MX: mail exchange
 - TXT: text records (SPF, DKIM)
 - NS: name server
+
 ```
 
 ## Load Balancing
 
-```
+```text
+
 Algorithms:
 ├── Round Robin — simple rotation
 ├── Weighted Round Robin — based on server capacity
@@ -1298,11 +1354,13 @@ Algorithms:
 L4 vs L7 Load Balancing:
 - L4: Transport layer (TCP/UDP) — faster, less flexible
 - L7: Application layer (HTTP) — content-based routing, SSL termination
+
 ```
 
 ## Caching
 
-```
+```text
+
 Cache Levels:
 ├── Browser Cache — client-side
 ├── CDN Edge Cache — distributed globally
@@ -1321,11 +1379,13 @@ Cache Policies:
 ├── LFU — Least Frequently Used
 ├── FIFO — First In First Out
 └── TTL — Time To Live expiration
+
 ```
 
 ## WebSocket vs SSE vs HTTP
 
-```
+```text
+
 WebSocket:
 - Full-duplex communication
 - Persistent connection
@@ -1344,16 +1404,19 @@ HTTP Polling:
 HTTP Long Polling:
 - Server holds request until data available
 - Compromise between polling and push
+
 ```
 
 ## gRPC
 
-```
+```text
+
 - Built on HTTP/2
 - Protocol Buffers (binary serialization)
 - Four types: Unary, Server streaming, Client streaming, Bidirectional
 - Use case: microservices communication
 - 10x faster than REST for binary data
+
 ```
 
 ## Network Problems
@@ -1407,6 +1470,7 @@ DROP TABLE IF EXISTS users;
 -- Create index
 CREATE INDEX idx_users_email ON users(email);
 CREATE UNIQUE INDEX idx_users_email ON users(email);
+
 ```
 
 ### DML (Data Manipulation Language)
@@ -1414,7 +1478,7 @@ CREATE UNIQUE INDEX idx_users_email ON users(email);
 ```sql
 -- Insert
 INSERT INTO users (email, name) VALUES ('alice@example.com', 'Alice');
-INSERT INTO users (email, name) VALUES 
+INSERT INTO users (email, name) VALUES
     ('bob@example.com', 'Bob'),
     ('charlie@example.com', 'Charlie');
 
@@ -1427,6 +1491,7 @@ DELETE FROM users WHERE id = 1;
 -- Upsert (PostgreSQL)
 INSERT INTO users (email, name) VALUES ('alice@example.com', 'Alice')
 ON CONFLICT (email) DO UPDATE SET name = EXCLUDED.name;
+
 ```
 
 ### Joins
@@ -1462,13 +1527,14 @@ LEFT JOIN employees m ON e.manager_id = m.id;
 SELECT u.name, p.name
 FROM users u
 CROSS JOIN products p;
+
 ```
 
 ### Aggregate Functions
 
 ```sql
 -- COUNT, SUM, AVG, MIN, MAX
-SELECT 
+SELECT
     COUNT(*) as total_users,
     COUNT(DISTINCT email) as unique_emails,
     AVG(age) as average_age,
@@ -1477,7 +1543,7 @@ SELECT
 FROM users;
 
 -- GROUP BY
-SELECT 
+SELECT
     department,
     COUNT(*) as emp_count,
     AVG(salary) as avg_salary
@@ -1487,7 +1553,7 @@ HAVING COUNT(*) > 5
 ORDER BY avg_salary DESC;
 
 -- Window Functions
-SELECT 
+SELECT
     name,
     department,
     salary,
@@ -1497,6 +1563,7 @@ SELECT
     SUM(salary) OVER (PARTITION BY department) as dept_total,
     AVG(salary) OVER (PARTITION BY department) as dept_avg
 FROM employees;
+
 ```
 
 ### Subqueries and CTEs
@@ -1523,19 +1590,21 @@ LEFT JOIN user_orders uo ON au.id = uo.user_id;
 WITH RECURSIVE org_chart AS (
     SELECT id, name, manager_id, 1 as level
     FROM employees WHERE manager_id IS NULL
-    
+
     UNION ALL
-    
+
     SELECT e.id, e.name, e.manager_id, oc.level + 1
     FROM employees e
     INNER JOIN org_chart oc ON e.manager_id = oc.id
 )
 SELECT * FROM org_chart ORDER BY level, name;
+
 ```
 
 ## Normalization
 
-```
+```text
+
 1NF — First Normal Form
 - Each column contains atomic values
 - No repeating groups
@@ -1558,6 +1627,7 @@ Users (id, name, email)           — 3NF ✓
 Orders (id, user_id, product_id, product_name)
   → product_name depends on product_id, not id — violates 3NF
   → Fix: Products (id, name), Orders (id, user_id, product_id)
+
 ```
 
 ## Indexes
@@ -1585,11 +1655,13 @@ CREATE INDEX idx_users_email_hash ON users USING hash(email);
 
 -- Analyze query plan
 EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'alice@example.com';
+
 ```
 
 ### Index Best Practices
 
-```
+```text
+
 DO:
 ✅ Index columns used in WHERE, JOIN, ORDER BY
 ✅ Index foreign keys
@@ -1601,6 +1673,7 @@ DON'T:
 ❌ Index low-cardinality columns (like boolean)
 ❌ Over-index (each index slows INSERT/UPDATE/DELETE)
 ❌ Use functions on indexed columns (breaks index usage)
+
 ```
 
 ## Transactions and ACID
@@ -1616,6 +1689,7 @@ COMMIT;
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 ROLLBACK; -- undo all changes
+
 ```
 
 ### ACID Properties
@@ -1629,7 +1703,8 @@ ROLLBACK; -- undo all changes
 
 ### Isolation Levels
 
-```
+```text
+
 Level               | Dirty Read | Non-Repeatable Read | Phantom Read
 ---------------------|------------|---------------------|-------------
 Read Uncommitted     | Yes        | Yes                 | Yes
@@ -1641,6 +1716,7 @@ In PostgreSQL:
 - Default: Read Committed
 - REPEATABLE READ uses MVCC
 - SERIALIZABLE uses SSI (Serializable Snapshot Isolation)
+
 ```
 
 ## Query Optimization
@@ -1661,6 +1737,7 @@ EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'alice@example.com';
 SELECT * FROM users WHERE LOWER(email) = 'alice@example.com';
 -- Good: functional index
 CREATE INDEX idx_users_email_lower ON users(LOWER(email));
+
 ```
 
 ## Partitioning
@@ -1683,11 +1760,13 @@ CREATE TABLE orders_2025 PARTITION OF orders
 -- - Faster queries (only scan relevant partitions)
 -- - Easier data management (drop old partitions)
 -- - Better parallelism
+
 ```
 
 ## Replication and Sharding
 
-```
+```text
+
 Replication:
 ├── Primary-Replica — read replicas for read scaling
 ├── Multi-Master — multiple write nodes
@@ -1706,6 +1785,7 @@ Sharding Challenges:
 - Distributed transactions
 - Rebalancing
 - Joins across shards
+
 ```
 
 ## Database Problems
@@ -1739,7 +1819,8 @@ Sharding Challenges:
 
 ## CAP Theorem
 
-```
+```text
+
 In a distributed system, you can only guarantee 2 of 3:
 ├── Consistency — every read gets the most recent write
 ├── Availability — every request gets a response
@@ -1749,13 +1830,15 @@ Since network partitions are inevitable:
 - CP Systems: Consistent but may be unavailable (e.g., HBase, MongoDB)
 - AP Systems: Available but may be inconsistent (e.g., Cassandra, DynamoDB)
 - CA Systems: Consistent and available but no partition tolerance (single node)
+
 ```
 
 ## Types of NoSQL Databases
 
 ### 1. Key-Value Store (Redis, DynamoDB)
 
-```
+```text
+
 Characteristics:
 ├── Simple key-value pairs
 ├── O(1) read/write
@@ -1767,11 +1850,13 @@ Use Cases:
 - Session storage
 - User profiles
 - Shopping carts
+
 ```
 
 ### 2. Document Store (MongoDB, CouchDB)
 
-```
+```text
+
 Characteristics:
 ├── JSON/BSON documents
 ├── Flexible schema
@@ -1783,11 +1868,13 @@ Use Cases:
 - User profiles
 - Product catalogs
 - Event logging
+
 ```
 
 ### 3. Wide Column Store (Cassandra, HBase)
 
-```
+```text
+
 Characteristics:
 ├── Rows with dynamic columns
 ├── Optimized for writes
@@ -1799,11 +1886,13 @@ Use Cases:
 - IoT data
 - Chat messages
 - Event sourcing
+
 ```
 
 ### 4. Graph Database (Neo4j, ArangoDB)
 
-```
+```text
+
 Characteristics:
 ├── Nodes and relationships
 ├── Optimized for traversals
@@ -1815,11 +1904,13 @@ Use Cases:
 - Recommendation engines
 - Fraud detection
 - Knowledge graphs
+
 ```
 
 ## When to Use What
 
-```
+```text
+
 | Need                        | Use                    |
 |-----------------------------|------------------------|
 | Simple caching              | Redis                  |
@@ -1831,11 +1922,13 @@ Use Cases:
 | Geospatial queries          | MongoDB + Redis GEO    |
 | Strong consistency          | PostgreSQL             |
 | Event sourcing              | Cassandra / EventStore |
+
 ```
 
 ## Distributed Systems Concepts
 
-```
+```text
+
 Consistency Models:
 ├── Strong Consistency — read returns most recent write
 ├── Eventual Consistency — read eventually returns most recent write
@@ -1847,6 +1940,7 @@ Replication Strategies:
 ├── Multi-Leader — multiple leaders accept writes
 ├── Leaderless — any node can accept writes (quorum)
 └── Consistent Hashing — distribute data across nodes
+
 ```
 
 ## Redis Deep Dive
@@ -1886,6 +1980,7 @@ redis.pfcount("visitors"); // approximate unique count
 // Pub/Sub
 redis.publish("channel", "message");
 redis.subscribe("channel");
+
 ```
 
 ## NoSQL Problems
@@ -1930,6 +2025,7 @@ db.orders.aggregate([
 // Indexes
 db.users.createIndex({ email: 1 }, { unique: true });
 db.users.createIndex({ "address.city": 1 });
+
 ```
 
 ### Resources for NoSQL & Distributed Systems
@@ -1961,3 +2057,25 @@ db.users.createIndex({ "address.city": 1 });
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers the core computer science fundamentals required for technical interviews, including bit manipulation, mathematics, sorting algorithms, data structures, dynamic programming, and graph algorithms with Java implementations.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

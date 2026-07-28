@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [interview-questions, reference]
+---
+
 # Database Interview Questions - Comprehensive Guide
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -859,7 +869,6 @@ SELECT COUNT(*) FROM pg_stat_activity;
 Master these questions to ace your database interview. Focus on understanding concepts, not just memorizing answers. Practice explaining answers clearly and concisely.
 
 ## Cheat Sheet
-
 ```text
 Key Concepts:
 • ACID: Atomicity, Consistency, Isolation, Durability
@@ -883,6 +892,13 @@ Best Practices:
 • Update statistics regularly
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

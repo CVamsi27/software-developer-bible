@@ -1,7 +1,7 @@
 # 🎯 SDE Interview Preparation Guide
 
 > **Your complete roadmap to landing a job at top product-based companies**
-> 
+>
 > **14 comprehensive guides | 28 phases | 360+ practice problems | 5 company-specific guides**
 
 ---
@@ -49,7 +49,8 @@ This guide covers **everything** you need to prepare for SDE interviews at Micro
 
 ### For Beginners (New to Interview Prep)
 
-```
+```text
+
 Week 1-2: Foundation
 ├── 01-Complete-Guide.md (Phases 1-4: Java, Complexity, Data Structures, Algorithms)
 ├── 07-Cheat-Sheet.md (Skim for overview)
@@ -76,11 +77,13 @@ Week 9-12: Final Preparation
 ├── 10-Mock-Interview-Question-Bank.md (Practice mocks)
 ├── 06-LeetCode-Study-Plan.md (Complete Weeks 9-12)
 └── Company-specific guide (Final review)
+
 ```
 
 ### For Experienced Engineers (3+ Years)
 
-```
+```text
+
 Week 1: Quick Review
 ├── 07-Cheat-Sheet.md (Review all 28 phases)
 ├── 01-Complete-Guide.md (Skim Phases 1-8, focus on gaps)
@@ -101,11 +104,13 @@ Week 9-12: Final Polish
 ├── 05-Advanced-Topics.md (Fill remaining gaps)
 ├── 06-LeetCode-Study-Plan.md (Complete remaining weeks)
 └── Mock interviews (Use 10-Mock-Interview-Question-Bank.md)
+
 ```
 
 ### For Microsoft Azure Specifically
 
-```
+```text
+
 Priority Order:
 1. 08-Microsoft-Azure-Interview-Guide.md (Company-specific prep)
 2. 01-Complete-Guide.md (Phases 1-8: DSA)
@@ -114,6 +119,7 @@ Priority Order:
 5. 06-LeetCode-Study-Plan.md (12-week schedule)
 6. 10-Mock-Interview-Question-Bank.md (Practice questions)
 7. 09-Progress-Tracker.md (Track progress)
+
 ```
 
 ---
@@ -122,26 +128,32 @@ Priority Order:
 
 ### If You Have 4-6 Weeks
 
-```
+```text
+
 Focus: Phases 1-8 (DSA) + System Design + Behavioral
 Files: 01, 03, 06, 07, 08/11/12/13/14 (company-specific)
 Time: 4-6 hours/day
+
 ```
 
 ### If You Have 8-12 Weeks
 
-```
+```text
+
 Focus: All 28 Phases + System Design + Company-Specific
 Files: All 14 files
 Time: 4-6 hours/day
+
 ```
 
 ### If You Have 16+ Weeks
 
-```
+```text
+
 Focus: Complete coverage + Advanced topics + Mock interviews
 Files: All 14 files + external resources
 Time: 4-6 hours/day
+
 ```
 
 ---
@@ -251,4 +263,4 @@ Before scheduling your interviews, you should be able to:
 
 ---
 
-*Last updated: July 2025*
+*Last updated: July 2026*

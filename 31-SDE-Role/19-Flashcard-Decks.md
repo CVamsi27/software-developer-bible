@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [flashcards]
+---
+
 # 🃏 Interactive Flashcard Decks
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Ready-to-import flashcards for Anki and Quizlet**
-> 
+>
 > Use these for daily active recall practice. Each card tests one key concept.
 
 ---
@@ -9,21 +19,27 @@
 ## 📥 How to Import
 
 ### Anki Import
-```
+
+```text
+
 1. Copy the Anki-formatted cards below
 2. Open Anki → File → Import
 3. Paste into a text file with tab separation
 4. Import as "Text File"
 5. Study daily using Anki's spaced repetition
+
 ```
 
 ### Quizlet Import
-```
+
+```text
+
 1. Copy the Quizlet-formatted cards below
 2. Go to Quizlet.com → Create → Import
 3. Paste the cards (term | definition format)
 4. Save as a study set
 5. Use Quizlet's Learn mode for spaced repetition
+
 ```
 
 ---
@@ -31,7 +47,9 @@
 ## 📚 Deck 1: Arrays & Strings (30 Cards)
 
 ### Anki Format (Front → Back)
-```
+
+```text
+
 Two Pointers: When to use?	When array is sorted OR when finding pairs/triplets with specific condition
 Sliding Window: When to use?	When finding subarray/substring of fixed or variable size
 Prefix Sum: When to use?	When need range sum queries efficiently
@@ -62,10 +80,13 @@ Container With Most Water: Time Complexity?	O(n) time, O(1) space
 3Sum: Time Complexity?	O(n²) time, O(1) space
 Longest Substring: Time Complexity?	O(n) time, O(min(n, m)) space where m is charset
 Valid Parentheses: Pattern?	Stack: push opening, pop closing, check match
+
 ```
 
 ### Quizlet Format (Term | Definition)
-```
+
+```text
+
 Two Pointers: When to use? | When array is sorted OR when finding pairs/triplets with specific condition
 Sliding Window: When to use? | When finding subarray/substring of fixed or variable size
 Prefix Sum: When to use? | When need range sum queries efficiently
@@ -96,6 +117,7 @@ Container With Most Water: Time Complexity? | O(n) time, O(1) space
 3Sum: Time Complexity? | O(n²) time, O(1) space
 Longest Substring: Time Complexity? | O(n) time, O(min(n, m)) space where m is charset
 Valid Parentheses: Pattern? | Stack: push opening, pop closing, check match
+
 ```
 
 ---
@@ -103,7 +125,9 @@ Valid Parentheses: Pattern? | Stack: push opening, pop closing, check match
 ## 📚 Deck 2: Trees (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 Preorder Traversal: Order?	Root → Left → Right
 Inorder Traversal: Order?	Left → Root → Right (BST = sorted)
 Postorder Traversal: Order?	Left → Right → Root
@@ -134,10 +158,13 @@ Path Sum III: Prefix Sum on Tree?	Run prefix sum from root, check if (current - 
 Serialize: delimiter?	Comma-separated values with "null" for empty nodes
 Tree Traversal: When Preorder?	When need to process root before children (copy tree)
 Tree Traversal: When Inorder?	When need sorted order (BST) or specific processing order
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 Preorder Traversal: Order? | Root → Left → Right
 Inorder Traversal: Order? | Left → Root → Right (BST = sorted)
 Postorder Traversal: Order? | Left → Right → Root
@@ -168,6 +195,7 @@ Path Sum III: Prefix Sum on Tree? | Run prefix sum from root, check if (current 
 Serialize: delimiter? | Comma-separated values with "null" for empty nodes
 Tree Traversal: When Preorder? | When need to process root before children (copy tree)
 Tree Traversal: When Inorder? | When need sorted order (BST) or specific processing order
+
 ```
 
 ---
@@ -175,7 +203,9 @@ Tree Traversal: When Inorder? | When need sorted order (BST) or specific process
 ## 📚 Deck 3: Graphs (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 DFS (Graph): Algorithm?	Recursive or stack, mark visited
 BFS (Graph): Algorithm?	Queue, mark visited when enqueuing
 Topological Sort: When to use?	When need linear ordering of DAG (prerequisites, build order)
@@ -207,10 +237,13 @@ BFS: Time Complexity?	O(V + E)
 DFS: Time Complexity?	O(V + E)
 Union-Find: Time Complexity?	O(α(n)) amortized (nearly constant)
 Kruskal's: Time Complexity?	O(E log E)
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 DFS (Graph): Algorithm? | Recursive or stack, mark visited
 BFS (Graph): Algorithm? | Queue, mark visited when enqueuing
 Topological Sort: When to use? | When need linear ordering of DAG (prerequisites, build order)
@@ -242,6 +275,7 @@ BFS: Time Complexity? | O(V + E)
 DFS: Time Complexity? | O(V + E)
 Union-Find: Time Complexity? | O(α(n)) amortized (nearly constant)
 Kruskal's: Time Complexity? | O(E log E)
+
 ```
 
 ---
@@ -249,7 +283,9 @@ Kruskal's: Time Complexity? | O(E log E)
 ## 📚 Deck 4: Dynamic Programming (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 DP Core Idea?	Solve overlapping subproblems, store results
 Memoization?	Top-down: recursive + cache (HashMap/Array)
 Tabulation?	Bottom-up: iterative, fill table from base cases
@@ -280,10 +316,13 @@ Top-Down vs Bottom-Up?	Top-down: easier to write, Bottom-up: better space
 Knapsack: When to use?	When need to maximize value with constraint (weight, capacity)
 LIS: O(n²) vs O(n log n)?	Binary search optimization: patience sorting
 DP: Common mistakes?	Wrong base case, wrong order of filling, missing cases
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 DP Core Idea? | Solve overlapping subproblems, store results
 Memoization? | Top-down: recursive + cache (HashMap/Array)
 Tabulation? | Bottom-up: iterative, fill table from base cases
@@ -314,6 +353,7 @@ Top-Down vs Bottom-Up? | Top-down: easier to write, Bottom-up: better space
 Knapsack: When to use? | When need to maximize value with constraint (weight, capacity)
 LIS: O(n²) vs O(n log n)? | Binary search optimization: patience sorting
 DP: Common mistakes? | Wrong base case, wrong order of filling, missing cases
+
 ```
 
 ---
@@ -321,7 +361,9 @@ DP: Common mistakes? | Wrong base case, wrong order of filling, missing cases
 ## 📚 Deck 5: System Design (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 System Design Framework?	1. Requirements 2. Estimation 3. High-Level 4. Deep Dive 5. Wrap-up
 Functional Requirements?	What the system should do (features)
 Non-Functional Requirements?	Scale, latency, availability, consistency, cost
@@ -352,10 +394,13 @@ Scalability Patterns?	Vertical, Horizontal, Sharding, Caching
 Availability Target?	99.9% = 8.76 hours/year downtime
 Latency Targets?	p95 < 200ms, p99 < 500ms
 Cost Optimization?	Reserved instances, spot instances, right-sizing
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 System Design Framework? | 1. Requirements 2. Estimation 3. High-Level 4. Deep Dive 5. Wrap-up
 Functional Requirements? | What the system should do (features)
 Non-Functional Requirements? | Scale, latency, availability, consistency, cost
@@ -386,6 +431,7 @@ Scalability Patterns? | Vertical, Horizontal, Sharding, Caching
 Availability Target? | 99.9% = 8.76 hours/year downtime
 Latency Targets? | p95 < 200ms, p99 < 500ms
 Cost Optimization? | Reserved instances, spot instances, right-sizing
+
 ```
 
 ---
@@ -393,7 +439,9 @@ Cost Optimization? | Reserved instances, spot instances, right-sizing
 ## 📚 Deck 6: Linked Lists & Stacks (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 Reverse Linked List: Approach?	Iterative: track prev, curr, next; reverse pointer
 Reverse Linked List: Recursive?	Base case → recurse → reverse pointer
 Detect Cycle (Floyd)?	Slow and fast pointers, cycle if they meet
@@ -424,10 +472,13 @@ Queue Applications?	BFS, scheduling, buffering, printer
 Priority Queue?	Heap-based, O(log n) insert/extract
 Linked List Cycle II: Algorithm?	Floyd's: find meeting point, then find cycle start
 LRU Cache: Eviction Policy?	Least Recently Used - remove from back of list
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 Reverse Linked List: Approach? | Iterative: track prev, curr, next; reverse pointer
 Reverse Linked List: Recursive? | Base case → recurse → reverse pointer
 Detect Cycle (Floyd)? | Slow and fast pointers, cycle if they meet
@@ -458,6 +509,7 @@ Queue Applications? | BFS, scheduling, buffering, printer
 Priority Queue? | Heap-based, O(log n) insert/extract
 Linked List Cycle II: Algorithm? | Floyd's: find meeting point, then find cycle start
 LRU Cache: Eviction Policy? | Least Recently Used - remove from back of list
+
 ```
 
 ---
@@ -465,7 +517,9 @@ LRU Cache: Eviction Policy? | Least Recently Used - remove from back of list
 ## 📚 Deck 7: Hash Maps & Heaps (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 HashMap: When to use?	O(1) lookup, frequency counting, grouping
 Two Sum Pattern?	Map<num, index>, check complement
 Frequency Count?	Map<num, count>, iterate and count
@@ -496,10 +550,13 @@ Heap: Build Time?	O(n)
 Top K: Time Complexity?	O(n log k)
 Merge K Lists: Time Complexity?	O(N log k) where N = total nodes
 Median: Time Complexity?	O(log n) insert, O(1) find median
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 HashMap: When to use? | O(1) lookup, frequency counting, grouping
 Two Sum Pattern? | Map<num, index>, check complement
 Frequency Count? | Map<num, count>, iterate and count
@@ -530,6 +587,7 @@ Heap: Build Time? | O(n)
 Top K: Time Complexity? | O(n log k)
 Merge K Lists: Time Complexity? | O(N log k) where N = total nodes
 Median: Time Complexity? | O(log n) insert, O(1) find median
+
 ```
 
 ---
@@ -537,7 +595,9 @@ Median: Time Complexity? | O(log n) insert, O(1) find median
 ## 📚 Deck 8: Binary Search & Sorting (30 Cards)
 
 ### Anki Format
-```
+
+```text
+
 Binary Search: When to use?	Sorted array, find specific value or boundary
 Binary Search Template?	left=0, right=n-1, while left<=right, mid calculation
 Lower Bound?	Find first position ≥ target
@@ -568,10 +628,13 @@ Random Pick with Weight?	Prefix sum + binary search on cumulative weights
 Binary Search: Common mistakes?	Off-by-one, infinite loop, wrong boundary
 Binary Search: left=mid+1?	When arr[mid] < target, search right half
 Binary Search: right=mid-1?	When arr[mid] > target, search left half
+
 ```
 
 ### Quizlet Format
-```
+
+```text
+
 Binary Search: When to use? | Sorted array, find specific value or boundary
 Binary Search Template? | left=0, right=n-1, while left<=right, mid calculation
 Lower Bound? | Find first position ≥ target
@@ -602,6 +665,7 @@ Random Pick with Weight? | Prefix sum + binary search on cumulative weights
 Binary Search: Common mistakes? | Off-by-one, infinite loop, wrong boundary
 Binary Search: left=mid+1? | When arr[mid] < target, search right half
 Binary Search: right=mid-1? | When arr[mid] > target, search left half
+
 ```
 
 ---
@@ -609,7 +673,9 @@ Binary Search: right=mid-1? | When arr[mid] > target, search left half
 ## 📖 How to Use These Flashcards
 
 ### Daily Routine
-```
+
+```text
+
 Morning (10 min):
 - Review 10-15 cards from yesterday
 - Mark "Hard" cards for more frequent review
@@ -617,31 +683,41 @@ Morning (10 min):
 Evening (10 min):
 - Review 10-15 cards from today
 - Add new cards from problems solved
+
 ```
 
 ### Weekly Review
-```
+
+```text
+
 Saturday (30 min):
 - Review all "Hard" cards
 - Test yourself on templates without looking
 - Add cards for any new concepts learned
+
 ```
 
 ### Anki Settings
-```
+
+```text
+
 New cards/day: 20
 Reviews/day: 100
 Learning steps: 1m 10m
 Graduating interval: 1 day
 Easy interval: 4 days
+
 ```
 
 ### Quizlet Settings
-```
+
+```text
+
 Learn mode: Enable spaced repetition
 Write mode: Practice writing answers
 Match mode: Quick recall games
 Test mode: Simulate exam conditions
+
 ```
 
 ---
@@ -654,3 +730,25 @@ Test mode: Simulate exam conditions
 | [Spaced Repetition Schedule](15-Spaced-Repetition-Schedule.md) | Review intervals for optimal retention |
 | [Learning Guarantee System](18-Learning-Guarantee-System.md) | Active recall and mastery criteria |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
+---
+
+
+## Summary
+
+These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, covering core CS concepts, design patterns, system design, behavioral questions, and more to support active recall study.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

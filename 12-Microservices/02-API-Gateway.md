@@ -1,4 +1,14 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # API Gateway
+
+[![Section](https://img.shields.io/badge/section-Microservices-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -502,164 +512,12 @@ class GatewayWithCircuitBreaker {
 - **CDN integration** - Cache static responses at edge
 - **Load balancing** - Distribute across gateway instances
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is an API Gateway?**
-
-   - Single entry point for all client requests, handling cross-cutting concerns.
-
-2. **Why use an API Gateway?**
-
-   - Centralizes auth, rate limiting, routing; simplifies client interaction.
-
-3. **What are common API Gateway features?**
-
-   - Routing, authentication, rate limiting, caching, request transformation.
-
-4. **How does API Gateway differ from load balancer?**
-
-   - Gateway handles application logic; load balancer distributes traffic.
-
-5. **What is request transformation?**
-
-   - Modifying request/response format between client and service.
-
-6. **How does rate limiting work?**
-
-   - Tracks requests per client/IP and blocks excess requests.
-
-7. **What is backend for frontend (BFF)?**
-
-   - Separate API Gateway for each client type (web, mobile, etc.).
-
-8. **Name popular API Gateway solutions.**
-
-   - Kong, AWS API Gateway, Azure API Management, Zuul.
-
-### Intermediate (5-10)
-
-9. **How do you implement authentication in API Gateway?**
-
-   - JWT validation, OAuth2, API keys at gateway level.
-
-10. **What is circuit breaker pattern in gateway?**
-
-    - Prevents cascade failures by stopping requests to failing services.
-
-11. **How do you handle long-running requests?**
-
-    - Async processing, webhooks, or polling pattern.
-
-12. **What is request/response caching?**
-
-    - Caching responses to reduce backend load and latency.
-
-13. **How do you implement API versioning?**
-
-    - URL path (/v1/), header, or query parameter versioning.
-
-14. **What is canary deployment?**
-
-    - Routing small percentage of traffic to new version for testing.
-
-15. **How do you handle service discovery with gateway?**
-
-    - Gateway queries service registry for dynamic routing.
-
-16. **What metrics should you monitor?**
-
-    - Request rate, error rate, latency, throughput, circuit breaker state.
-
-### Senior (10-15)
-
-17. **Design a highly available API Gateway.**
-
-    - Multiple instances, health checks, failover, no single point of failure.
-
-18. **How do you prevent gateway from becoming bottleneck?**
-
-    - Caching, async processing, horizontal scaling, efficient routing.
-
-19. **Explain gateway pattern in microservices.**
-
-    - Edge service handling cross-cutting concerns, protocol translation.
-
-20. **How do you handle gateway during deployments?**
-
-    - Blue/green deployments, traffic shifting, rollback mechanisms.
-
-21. **What is API composition pattern?**
-
-    - Gateway aggregates data from multiple services into single response.
-
-22. **How do you implement request validation?**
-
-    - JSON Schema validation, OpenAPI specifications, middleware validation.
-
-23. **Explain distributed tracing in gateway context.**
-
-    - Propagate trace IDs through gateway to all backend services.
-
-24. **How do you handle multi-region gateway?**
-
-    - Regional gateways, global load balancing, DNS-based routing.
-
-25. **What security considerations exist for gateway?**
-
-    - DDoS protection, WAF integration, input sanitization, HTTPS.
-
-### FAANG-style (5-10)
-
-26. **Design Netflix's Zuul gateway.**
-
-    - Dynamic routing, filters, canary deployments, failure recovery.
-
-27. **How would you handle 1M requests/second?**
-
-    - Horizontal scaling, caching, connection pooling, async processing.
-
-28. **Design gateway for GraphQL federation.**
-
-    - Schema stitching, query planning, distributed resolvers.
-
-29. **How do you implement gateway for gRPC services?**
-
-    - gRPC-JSON transcoding, protocol translation, load balancing.
-
-30. **Explain gateway in service mesh architecture.**
-
-    - Gateway handles north-south traffic; service mesh handles east-west.
-
-### Follow-ups (5-10)
-
-31. **How do you migrate from monolith gateway to microservices?**
-
-    - Strangler fig pattern, gradual route extraction.
-
-32. **What is the impact of gateway on latency?**
-
-    - Additional hop, but benefits outweigh costs with proper optimization.
-
-33. **How do you test API Gateway?**
-
-    - Integration tests, load testing, chaos engineering.
-
-34. **How do you handle gateway for WebSocket connections?**
-
-    - Persistent connections, sticky sessions, message routing.
-
-35. **What is the future of API Gateway?**
-
-    - Serverless gateways, edge computing, AI-driven routing.
 
 ## Summary
 
 API Gateway is essential for microservices architecture, providing a unified entry point with centralized cross-cutting concerns. Key features include routing, authentication, rate limiting, and request transformation. Proper implementation ensures security, performance, and maintainability.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │                    API GATEWAY                          │
@@ -691,6 +549,14 @@ API Gateway is essential for microservices architecture, providing a unified ent
 ```
 
 ---
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [System Design](../11-System-Design/)
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
 
 ## References & Learn More
 

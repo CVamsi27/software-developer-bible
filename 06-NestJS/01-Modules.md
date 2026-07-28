@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # NestJS Modules
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -577,132 +587,12 @@ export class AppModule {}
 
 6. **Module Caching**: NestJS caches module metadata. Restart the application if module structure changes in development.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is a NestJS module?**
-A module is a class decorated with `@Module()` that groups related controllers, providers, and imports. It's the basic building block for organizing NestJS applications.
-
-**Q2: What is the root module?**
-The root module (`AppModule`) is the entry point of a NestJS application. It's the first module loaded and typically imports all other feature modules.
-
-**Q3: What are the properties of the `@Module()` decorator?**
-
-- `providers`: Services and repositories available within the module
-- `controllers`: Request handlers
-- `imports`: Other modules whose exports are needed
-- `exports`: Providers available to modules that import this module
-
-**Q4: Why do we need modules in NestJS?**
-Modules provide encapsulation, dependency management, code reuse, and scalability. They enforce a modular architecture and control provider visibility.
-
-**Q5: What happens if you don't export a provider?**
-Other modules cannot inject that provider. It becomes private to the module where it's defined.
-
-### Intermediate
-
-**Q6: What is a dynamic module?**
-A dynamic module is a module that can be configured at runtime. It's created by returning a `DynamicModule` object from a static method (e.g., `forRoot()`).
-
-**Q7: How do you share a provider across all modules?**
-Use the `@Global()` decorator on the module to make its exported providers available globally without explicit imports.
-
-**Q8: What is the difference between `forRoot()` and `forFeature()`?**
-
-- `forRoot()`: Initializes a module with global configuration (e.g., database connection)
-- `forFeature()`: Registers specific entities/services within a feature module
-
-**Q9: How do you handle circular dependencies?**
-
-- Use `forwardRef()` to defer resolution
-- Restructure code to remove the circular dependency
-- Create a shared module or use event-based communication
-
-**Q10: Can a module import itself?**
-No, this would cause an infinite loop. NestJS detects and prevents self-imports.
-
-### Senior
-
-**Q11: Explain module initialization order in NestJS.**
-NestJS loads modules in topological order based on imports. The root module loads first, then its direct imports, then their imports, and so on. The order is determined by dependency analysis, not the order in the imports array.
-
-**Q12: How does NestJS handle module isolation?**
-Each module has its own dependency injection scope. Providers in one module are not accessible in another unless explicitly exported and imported.
-
-**Q13: What are the different provider scopes in NestJS?**
-
-- `DEFAULT`: Singleton (one instance per module)
-- `TRANSIENT`: New instance for each consumer that injects it
-- `REQUEST`: New instance for each request
-
-**Q14: How would you design a plugin system using NestJS modules?**
-Use dynamic modules with `register()` or `forRootAsync()` methods. Each plugin provides a token and implementation class. The plugin module registers all plugins as providers with their tokens.
-
-**Q15: What is the purpose of `ModuleRef`?**
-`ModuleRef` provides access to the module's dependency injection container at runtime, allowing dynamic resolution of providers and accessing providers outside the normal DI flow.
-
-### FAANG-Style
-
-**Q16: Design a multi-tenant architecture using NestJS modules.**
-Create a `TenantModule` that dynamically configures database connections based on tenant ID. Use middleware to extract tenant context, then use `ModuleRef` to resolve tenant-specific services.
-
-```typescript
-@Module({})
-export class TenantModule {
-  static forRoot(tenantId: string): DynamicModule {
-    return {
-      module: TenantModule,
-      providers: [
-        {
-          provide: 'TENANT_CONFIG',
-          useFactory: (configService: ConfigService) => ({
-            database: configService.get(`TENANT_${tenantId}_DB`),
-          }),
-          inject: [ConfigService],
-        },
-      ],
-    };
-  }
-}
-
-```
-
-**Q17: How would you implement module-level caching in a distributed system?**
-Create a `CacheModule` using dynamic module pattern with Redis adapter. Use `@Global()` to make it available everywhere. Implement cache invalidation through event-driven patterns.
-
-**Q18: Explain how you'd structure modules for a microservices architecture.**
-Each microservice has its own NestJS application with isolated modules. Use `@nestjs/microservices` for transport (TCP, Redis, Kafka). Shared libraries are published as npm packages and imported as modules.
-
-**Q19: How do you handle module testing in complex dependency graphs?**
-Use `Test.createTestingModule()` with `overrideProvider()` to mock dependencies. Create isolated test modules that import only the modules under test. Use `close()` to clean up after tests.
-
-**Q20: Describe a strategy for module lazy loading in large applications.**
-Use `LazyModule` with dynamic imports. Implement route-based module loading where feature modules load only when their routes are accessed. Use webpack's dynamic imports for code splitting.
-
-### Follow-ups
-
-**Q21: What happens if two modules export the same provider token?**
-The last imported module's provider wins. NestJS uses a "last wins" strategy for token resolution.
-
-**Q22: How do you test a module with external dependencies?**
-Use `Test.createTestingModule()` with `overrideProvider()` to replace external dependencies with mocks or stubs.
-
-**Q23: Can you have multiple instances of the same module?**
-No, NestJS ensures singleton module instances. However, dynamic modules can create different configurations of the same module class.
-
-**Q24: How do you handle module configuration validation?**
-Use Joi, Zod, or class-validator with custom validation pipes in dynamic module factories. Validate configuration before module initialization.
-
-**Q25: What's the difference between `@Module` and `@Global`?**
-`@Module` defines a module's structure. `@Global` makes the module's exported providers available globally, so importing modules don't need to explicitly import it.
 
 ## Summary
 
 Modules are NestJS's fundamental organizational unit that encapsulate related functionality, manage dependencies, and provide clear boundaries between different parts of an application. They enable modular architecture, dependency injection, code reuse, and testability. Understanding modules — including dynamic modules, module scoping, and best practices — is essential for building scalable NestJS applications.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `@Module({})` | Decorator that defines a module |
@@ -719,6 +609,14 @@ Modules are NestJS's fundamental organizational unit that encapsulate related fu
 | `TRANSIENT` scope | New instance per consumer |
 | `REQUEST` scope | New instance per request |
 | `DEFAULT` scope | Singleton per module |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

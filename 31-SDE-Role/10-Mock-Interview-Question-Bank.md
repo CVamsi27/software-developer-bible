@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [practice]
+---
+
 # 🎯 Mock Interview Question Bank
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Practice-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **90 curated questions** for coding, system design, and behavioral rounds.
-> 
+>
 > **How to Use:** Pick 2-3 questions per mock session. Time yourself. Practice explaining your thought process out loud.
 
 ---
@@ -114,7 +124,8 @@
 
 #### Detailed Breakdown: URL Shortener
 
-```
+```text
+
 Requirements:
 - Shorten URLs (POST /shorten)
 - Redirect to original (GET /{shortCode})
@@ -141,6 +152,7 @@ Complexity:
 - Shorten: O(1)
 - Redirect: O(1)
 - Storage: O(n)
+
 ```
 
 ---
@@ -162,7 +174,8 @@ Complexity:
 
 #### Detailed Breakdown: Chat System
 
-```
+```text
+
 Requirements:
 - 1:1 and group messaging
 - Online/offline presence
@@ -199,6 +212,7 @@ Consistency:
 - Message ordering: Sequence numbers
 - Delivery: At-least-once with dedup
 - Read receipts: Async processing
+
 ```
 
 ---
@@ -215,7 +229,8 @@ Consistency:
 
 #### Detailed Breakdown: Design Uber/Maps
 
-```
+```text
+
 Requirements:
 - Find nearby drivers
 - Match rider to driver
@@ -264,6 +279,7 @@ Consistency:
 - Location: Eventually consistent (OK)
 - Trip state: Strongly consistent
 - Payments: Exactly-once
+
 ```
 
 ---
@@ -282,27 +298,29 @@ Consistency:
 
 #### Sample Answer: Growth Mindset
 
-```
+```text
+
 Question: Tell me about a time you made a mistake.
 
-Situation: "In my previous role, I deployed a database migration to production 
+Situation: "In my previous role, I deployed a database migration to production
 without proper testing, which caused a 30-minute outage."
 
 Task: "I needed to fix the issue immediately and prevent it from happening again."
 
-Action: 
+Action:
 1. "I immediately rolled back the migration"
 2. "I set up a staging environment that mirrors production"
 3. "I implemented a mandatory code review process for migrations"
 4. "I created a checklist for all future deployments"
 
-Result: 
+Result:
 - "Zero downtime incidents in the next 6 months"
 - "Team adopted the process, reducing deployment issues by 80%"
 - "I personally learned to never skip testing, no matter how small the change"
 
-Lesson: "This taught me that speed without quality creates more work. Now I 
+Lesson: "This taught me that speed without quality creates more work. Now I
 always invest time upfront to save time later."
+
 ```
 
 ---
@@ -343,27 +361,29 @@ always invest time upfront to save time later."
 
 #### Sample Answer: Why Microsoft?
 
-```
+```text
+
 Question: Why Microsoft?
 
 Answer: "Three reasons:
 
-1. Impact at Scale: Azure serves millions of customers globally, from startups 
-to enterprises. I want to work on systems that power this scale. Specifically, 
-the Azure Compute team's work on serverless computing fascinates me because 
+1. Impact at Scale: Azure serves millions of customers globally, from startups
+to enterprises. I want to work on systems that power this scale. Specifically,
+the Azure Compute team's work on serverless computing fascinates me because
 it's democratizing access to cloud resources.
 
-2. Growth Mindset Culture: Microsoft's culture of learning aligns with how I 
-approach my career. I've read about Satya Nadella's transformation of the 
-company, and I want to be part of an organization that values learning over 
+2. Growth Mindset Culture: Microsoft's culture of learning aligns with how I
+approach my career. I've read about Satya Nadella's transformation of the
+company, and I want to be part of an organization that values learning over
 knowing.
 
-3. Technical Challenge: The distributed systems problems at Azure are unique — 
-global consistency, fault tolerance, and performance at scale. These are the 
+3. Technical Challenge: The distributed systems problems at Azure are unique —
+global consistency, fault tolerance, and performance at scale. These are the
 kind of problems I want to solve.
 
-I'm particularly excited about [specific team] because [specific reason about 
+I'm particularly excited about [specific team] because [specific reason about
 their product/challenges]."
+
 ```
 
 ---
@@ -372,7 +392,8 @@ their product/challenges]."
 
 ### Coding Mock (45 minutes)
 
-```
+```text
+
 Structure:
 ├── 0-5 min: Problem clarification
 ├── 5-10 min: Approach discussion (brute force → optimal)
@@ -387,11 +408,13 @@ What to Practice:
 - Writing clean, readable code
 - Testing edge cases
 - Analyzing time/space complexity
+
 ```
 
 ### System Design Mock (45-60 minutes)
 
-```
+```text
+
 Structure:
 ├── 0-5 min: Requirements clarification
 ├── 5-10 min: Estimation (QPS, storage, bandwidth)
@@ -406,11 +429,13 @@ What to Practice:
 - Referencing specific technologies
 - Handling scaling questions
 - Mentioning monitoring and observability
+
 ```
 
 ### Behavioral Mock (30-45 minutes)
 
-```
+```text
+
 Structure:
 ├── 5-10 min: Introduction and background
 ├── 10-35 min: STAR questions (3-5 questions)
@@ -423,6 +448,7 @@ What to Practice:
 - Being specific with examples
 - Showing self-awareness
 - Asking thoughtful questions
+
 ```
 
 ---
@@ -478,3 +504,25 @@ What to Practice:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This question bank provides a comprehensive collection of mock interview questions across coding, system design, and behavioral categories to simulate real interview conditions and practice your responses.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

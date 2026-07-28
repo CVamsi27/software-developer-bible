@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # URL Shortener System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -509,83 +519,6 @@ alerts:
 | Redirect Type | 301 (permanent, cached) | 302 (temporary, always check) | 302 (respect expiration) |
 | Analytics | Synchronous | Async (Kafka) | Async (non-blocking) |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you handle 100M URLs created daily?**
-
-   - Use consistent hashing for database sharding
-   - Partition analytics tables by time
-   - Use Redis cluster for caching
-   - Batch analytics writes with Kafka
-
-2. **How do you ensure short URLs are not predictable?**
-
-   - Use base62 encoding of random hashes
-   - Add user-specific salt to hash generation
-   - Limit custom alias attempts
-   - Rate limit URL creation
-
-3. **How would you implement custom aliases?**
-
-   - Separate table for custom aliases with unique constraint
-   - Validate uniqueness before assignment
-   - Reserve certain prefixes for system use
-   - Allow users to reclaim unused aliases after expiry
-
-### Scaling Questions
-
-4. **How do you scale to 1B redirects per day?**
-
-   - CDN for static redirects
-   - Redis cluster with 100+ nodes
-   - Read replicas across regions
-   - Connection pooling and keep-alive
-
-5. **How do you handle hot keys (viral URLs)?**
-
-   - Multi-level caching (in-memory + Redis)
-   - Cache warming for predicted hot URLs
-   - Replicate hot keys across cache nodes
-   - Local cache with TTL refresh
-
-### Trade-off Questions
-
-6. **301 vs 302 redirects?**
-
-   - 301: Browser caches, reduces server load, but can't track clicks
-   - 302: Always hits server, enables analytics, respects expiration
-   - Choose based on requirements (analytics vs performance)
-
-7. **SQL vs NoSQL for storage?**
-
-   - SQL: ACID compliance, complex queries, joins
-   - NoSQL: Better horizontal scaling, simpler schema
-   - Choose PostgreSQL with partitioning for this use case
-
-### Senior-level Questions
-
-8. **How do you prevent abuse of the URL shortener?**
-
-   - Rate limiting per user/IP
-   - URL reputation checking before creation
-   - Block known malicious domains
-   - Limit redirects per short URL
-
-9. **How would you implement geo-redirects?**
-
-   - Store multiple destination URLs per short code
-   - Use GeoIP to determine user location
-   - Cache geo-redirect mappings
-   - A/B test different destinations
-
-10. **How do you handle URL expiration?**
-
-    - Soft delete with scheduled cleanup job
-    - Check expiration on read (add to cache TTL)
-    - Kafka topic for expiration events
-    - Grace period before permanent deletion
 
 ## Summary
 
@@ -612,6 +545,14 @@ Key takeaways:
 This design can handle 1B+ daily redirects while maintaining sub-10ms latency and 99.99% availability.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

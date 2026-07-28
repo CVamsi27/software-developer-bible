@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Async/Await
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -648,385 +658,6 @@ async function fetchWithFallback() {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is async/await in JavaScript?**
-
-A: Async/await is syntactic sugar over Promises that makes asynchronous code look and feel synchronous. `async` functions return Promises, and `await` pauses execution until a Promise settles.
-
-**Q2: What does the `async` keyword do?**
-
-A: The `async` keyword:
-
-1. Makes the function always return a Promise
-
-2. Allows using `await` inside the function
-
-3. Makes the function's return value automatically wrapped in a Promise
-
-**Q3: What does the `await` keyword do?**
-
-A: The `await` keyword:
-
-1. Pauses execution until a Promise settles
-
-2. Returns the resolved value
-
-3. Throws if the Promise is rejected
-
-4. Can only be used inside `async` functions
-
-**Q4: How do you handle errors with async/await?**
-
-A: Use try/catch blocks:
-
-```typescript
-async function riskyOperation() {
-  try {
-    const result = await doSomething();
-    return result;
-  } catch (error) {
-    handleError(error);
-  }
-}
-
-```
-
-**Q5: Can you use await outside of async functions?**
-
-A: No, `await` can only be used inside `async` functions or at the top level of ES modules.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is the difference between sequential and parallel async operations?**
-
-A:
-
-- **Sequential**: Each operation waits for the previous one to complete
-- **Parallel**: Operations run simultaneously
-
-```typescript
-// Sequential
-const a = await fetchA();
-const b = await fetchB();
-
-// Parallel
-const [a, b] = await Promise.all([fetchA(), fetchB()]);
-
-```
-
-**Q7: How do you make multiple independent API calls in parallel?**
-
-A: Use `Promise.all`:
-
-```typescript
-async function loadDashboard() {
-  const [user, posts, notifications] = await Promise.all([
-    fetchUser(),
-    fetchPosts(),
-    fetchNotifications()
-  ]);
-  return { user, posts, notifications };
-}
-
-```
-
-**Q8: What is an async generator function?**
-
-A: An async generator function uses `async function*` and `yield` to produce values asynchronously:
-
-```typescript
-async function* asyncGenerator() {
-  let i = 0;
-  while (true) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    yield i++;
-  }
-}
-
-```
-
-**Q9: How do you iterate over an async generator?**
-
-A: Use `for await...of`:
-
-```typescript
-for await (const value of asyncGenerator()) {
-  console.log(value);
-  if (value > 5) break;
-}
-
-```
-
-**Q10: What is the relationship between async/await and Promises?**
-
-A: Async/await is syntactic sugar over Promises. `async` functions always return Promises, and `await` is equivalent to `.then()` but with better readability.
-
-### Senior (10-15 questions)
-
-**Q11: Explain the execution model of async/await.**
-
-A:
-
-1. `async` function runs synchronously until first `await`
-
-2. At `await`, function is suspended and returns a Promise
-
-3. Execution returns to the caller
-
-4. When the awaited Promise settles, function resumes
-
-5. Function continues until next `await` or completion
-
-**Q12: How does async/await interact with the event loop?**
-
-A: `await` yields control back to the event loop. Microtasks (Promise callbacks) run between synchronous code and the next macrotask. Async functions are resumed via microtasks.
-
-**Q13: What are the performance implications of async/await?**
-
-A:
-
-- Sequential awaits can be slower than parallel Promises
-- Each `await` creates a new Promise (memory overhead)
-- Async functions have slightly more overhead than regular functions
-
-**Q14: How do you implement cancellation with async/await?**
-
-A:
-
-```typescript
-function createCancellable<T>(promise: Promise<T>) {
-  let cancelled = false;
-
-  const wrappedPromise = new Promise<T>((resolve, reject) => {
-    promise
-      .then(value => {
-        if (!cancelled) resolve(value);
-      })
-      .catch(error => {
-        if (!cancelled) reject(error);
-      });
-  });
-
-  return {
-    promise: wrappedPromise,
-    cancel: () => { cancelled = true; }
-  };
-}
-
-```
-
-**Q15: How do you handle async operations in React?**
-
-A:
-
-1. `useEffect` with async functions
-
-2. State variables for loading/error
-
-3. Cleanup functions for cancellation
-
-4. Custom hooks for reusable logic
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design an async task scheduler with concurrency control.**
-
-A:
-
-```typescript
-class AsyncTaskScheduler {
-  private queue: (() => Promise<any>)[] = [];
-  private running = 0;
-  private maxConcurrent: number;
-
-  constructor(maxConcurrent: number = 5) {
-    this.maxConcurrent = maxConcurrent;
-  }
-
-  async add<T>(task: () => Promise<T>): Promise<T> {
-    return new Promise((resolve, reject) => {
-      this.queue.push(async () => {
-        try {
-          this.running++;
-          resolve(await task());
-        } catch (error) {
-          reject(error);
-        } finally {
-          this.running--;
-          this.processQueue();
-        }
-      });
-
-      this.processQueue();
-    });
-  }
-
-  private processQueue() {
-    while (this.running < this.maxConcurrent && this.queue.length > 0) {
-      const task = this.queue.shift()!;
-      task();
-    }
-  }
-}
-
-```
-
-**Q17: How would you implement async/await without using async/await?**
-
-A:
-
-```typescript
-function asyncToGenerator<T>(fn: (...args: any[]) => Promise<T>) {
-  return function(...args: any[]) {
-    return new Promise((resolve, reject) => {
-      const gen = fn.apply(this, args);
-
-      function step(key: string, arg?: any) {
-        let result: any;
-        try {
-          result = gen[key](arg);
-        } catch (error) {
-          return reject(error);
-        }
-
-        const { value, done } = result;
-
-        if (done) {
-          return resolve(value);
-        }
-
-        Promise.resolve(value).then(
-          (val) => step('next', val),
-          (err) => step('throw', err)
-        );
-      }
-
-      step('next');
-    });
-  };
-}
-
-```
-
-**Q18: Analyze the memory implications of async/await.**
-
-A:
-
-- Each `await` creates a new Promise
-- Suspended functions retain local variables
-- Long chains can accumulate memory
-- Solution: Use `Promise.all` for parallel, batch processing
-
-**Q19: How do you debug async/await code?**
-
-A:
-
-1. Chrome DevTools: Async stack traces
-
-2. Add logging at key points
-
-3. Use `console.trace()` to see call stack
-
-4. Breakpoints work across `await` boundaries
-
-5. Use `Promise.allSettled()` to see all results
-
-**Q20: What are the security implications of async/await?**
-
-A:
-
-1. **Timing attacks**: Measure async operation time
-
-2. **Resource exhaustion**: Create too many concurrent operations
-
-3. **Information leakage**: Async errors can expose internals
-
-4. **Mitigation**: Rate limiting, input validation, error handling
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of an async/await bug in production?**
-
-A: Common bug: Missing error handling
-
-```typescript
-// Bug: Unhandled rejection
-async function fetchData() {
-  const response = await fetch('/api/data');
-  return await response.json();
-}
-// If fetch fails, unhandled rejection
-
-// Fix: Add error handling
-async function fetchData() {
-  try {
-    const response = await fetch('/api/data');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error('Failed to fetch data:', error);
-    throw error;
-  }
-}
-
-```
-
-**Q22: How do you handle async operations in Redux?**
-
-A:
-
-```typescript
-// Redux thunk
-const fetchUser = (id: string) => async (dispatch: Dispatch) => {
-  dispatch({ type: 'FETCH_USER_START' });
-
-  try {
-    const user = await fetchUserApi(id);
-    dispatch({ type: 'FETCH_USER_SUCCESS', payload: user });
-  } catch (error) {
-    dispatch({ type: 'FETCH_USER_FAILURE', error });
-  }
-};
-
-```
-
-**Q23: What is the relationship between async/await and generators?**
-
-A: Async/await is syntactic sugar over generators. Generators yield values, while async functions yield Promises. Browsers transpile async/await to generator code for compatibility.
-
-**Q24: How do different frameworks handle async operations?**
-
-A:
-
-- **React**: useEffect, useState, custom hooks
-- **Vue**: Composition API with async setup
-- **Angular**: HttpClient, async pipe
-- **Svelte**: onMount, reactive statements
-
-**Q25: What are best practices for working with async/await?**
-
-A:
-
-1. Always handle errors with try/catch
-
-2. Use Promise.all for parallel operations
-
-3. Avoid unnecessary sequential awaits
-
-4. Use TypeScript for type safety
-
-5. Implement cancellation patterns
-
-6. Monitor unhandled rejections
-
-7. Use async generators for streaming data
-
-8. Test async code thoroughly
 
 ## Summary
 
@@ -1049,7 +680,6 @@ Async/await is the modern way to handle asynchronous JavaScript:
 Understanding async/await is essential for modern JavaScript development.
 
 ## Cheat Sheet
-
 ```text
 ASYNC/AWAIT CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -1148,6 +778,13 @@ DEBUGGING:
 • Promise.allSettled() for visibility
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

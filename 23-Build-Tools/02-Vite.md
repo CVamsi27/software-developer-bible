@@ -1,4 +1,14 @@
+---
+section: Build Tools
+category: DevOps
+tags: [concept]
+---
+
 # Vite
+
+[![Section](https://img.shields.io/badge/section-Build%20Tools-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 Vite (French word for "fast", pronounced /vit/) is a modern frontend build tool that provides an extremely fast development experience and optimized production builds. It leverages native ES modules in development and Rollup for production bundling.
@@ -265,153 +275,16 @@ export default defineConfig({
 - **Pre-bundling**: Dependencies are pre-bundled with esbuild (10-100x faster than Webpack)
 - **Source maps**: Use `hidden` for production to reduce bundle size
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Vite and how does it differ from Webpack?**
-
-   - Vite uses native ES modules in development for instant server start, while Webpack bundles everything.
-
-2. **What is the entry point in a Vite project?**
-
-   - `index.html` is the entry point, which imports JavaScript modules directly.
-
-3. **How do you start a Vite dev server?**
-
-   - Run `npm run dev` or `vite` command. It starts instantly without bundling.
-
-4. **What is pre-bundling in Vite?**
-
-   - Dependencies are pre-bundled with esbuild for faster cold starts.
-
-5. **How do you configure Vite for React?**
-
-   - Install `@vitejs/plugin-react` and add it to plugins in `vite.config.js`.
-
-6. **What is `import.meta.env` in Vite?**
-
-   - Object containing environment variables prefixed with `VITE_`.
-
-7. **How does Vite handle CSS?**
-
-   - Native CSS support with automatic PostCSS processing and CSS modules.
-
-8. **What is the difference between `dev` and `build` in Vite?**
-
-   - Dev uses native ES modules, build uses Rollup for production optimization.
-
-### Intermediate (5-10)
-
-9. **How do you create a custom Vite plugin?**
-
-   - Export a function returning object with hooks like `transform`, `configureServer`.
-
-10. **How do you configure path aliases in Vite?**
-
-    - Use `resolve.alias` in `vite.config.js` to map paths.
-
-11. **What is the purpose of `vite.config.js`?**
-
-    - Configuration file for plugins, server settings, build options, and more.
-
-12. **How do you handle environment variables in Vite?**
-
-    - Use `.env` files with `VITE_` prefix, access via `import.meta.env`.
-
-13. **How do you set up proxy in Vite?**
-
-    - Configure `server.proxy` in `vite.config.js` for API forwarding.
-
-14. **What is library mode in Vite?**
-
-    - Build mode for creating reusable libraries with `build.lib` option.
-
-15. **How do you optimize build size in Vite?**
-
-    - Use `build.rollupOptions.output.manualChunks`, enable compression.
-
-16. **What is the difference between Vite and Vite SSR?**
-
-    - Vite SSR provides server-side rendering support with `vite ssr` command.
-
-### Senior (10-15)
-17. **Explain Vite's dependency pre-bundling algorithm.**
-
-    - Uses esbuild to bundle node_modules dependencies, converting CJS to ESM.
-
-18. **How does Vite's HMR work internally?**
-
-    - Uses WebSocket connection, updates modules via `import.meta.hot` API.
-
-19. **How do you migrate a Webpack project to Vite?**
-
-    - Replace config, update imports, handle environment variables, test thoroughly.
-
-20. **What are the limitations of Vite?**
-
-    - Native ES module requirement (no IE11), smaller plugin ecosystem than Webpack.
-
-21. **How do you handle SSR with Vite?**
-
-    - Use `vite-plugin-ssr` or frameworks like Nuxt, SvelteKit that integrate SSR.
-
-22. **How do you debug Vite configuration issues?**
-
-    - Use `vite --debug`, inspect with `vite inspect`, check browser network tab.
-
-23. **What is the purpose of `optimizeDeps` in Vite?**
-
-    - Controls dependency pre-bundling behavior and inclusion/exclusion.
-
-24. **How do you handle monorepos with Vite?**
-
-    - Use workspaces, configure `resolve.alias` for shared packages.
-
-### FAANG-style (5-10)
-25. **Design a Vite configuration for a large-scale application with 50+ routes.**
-
-    - Consider: code splitting, dynamic imports, shared chunks, manual chunks configuration.
-
-26. **How would you optimize Vite build time for a monorepo with 20 packages?**
-
-    - Parallel builds, shared configs, caching, incremental compilation.
-
-27. **Compare Vite and Webpack for enterprise applications.**
-
-    - DX, build time, plugin ecosystem, legacy support, team expertise.
-
-28. **How would you implement micro-frontends with Vite?**
-
-    - Use Module Federation plugin or import maps for runtime sharing.
-
-29. **Explain Vite's architecture and extensibility points.**
-
-    - Plugin API with hooks, middleware system, resolver customization.
-
-### Follow-ups (5-10)
-30. **What happens when Vite encounters a CommonJS module?**
-
-    - Pre-bundles it with esbuild to convert to ESM for browser consumption.
-
-31. **How does Vite handle dynamic imports?**
-
-    - Uses native `import()` with automatic code splitting via Rollup.
-
-32. **What is the impact of `build.target` on bundle size?**
-
-    - Higher targets produce smaller bundles by using modern JavaScript features.
-
-33. **How do you handle CSS-in-JS with Vite?**
-
-    - Most CSS-in-JS libraries work out of the box; configure if needed.
-
-34. **What is the future of Vite in the frontend ecosystem?**
-
-    - Growing adoption, framework-agnostic, potential for wider tooling integration.
 
 ## Summary
 Vite represents a paradigm shift in frontend tooling, offering instant development servers and optimized production builds. Its use of native ES modules for development and Rollup for production makes it fast, simple, and powerful. While it has some limitations, its benefits in developer experience and performance make it an excellent choice for modern web applications.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Next.js](../04-NextJS/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useMemo & useCallback
+
+[![Section](https://img.shields.io/badge/section-React-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -674,359 +684,12 @@ const Parent = () => {
 | Function in useEffect deps | ❌ | ✅ |
 | Simple computation | ❌ | ❌ |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is useMemo?**
-A: `useMemo` is a React Hook that memoizes a computed value. It returns a cached result of an expensive computation, only re-computing when dependencies change.
-
-**Q2: What is useCallback?**
-A: `useCallback` is a React Hook that memoizes a function. It returns a cached function reference, only re-creating the function when dependencies change.
-
-**Q3: When should you use useMemo?**
-A: Use `useMemo` for:
-
-- Expensive computations (sorting, filtering, parsing)
-- Object/array references passed as props
-- Derived state that shouldn't recalculate on every render
-
-**Q4: When should you use useCallback?**
-A: Use `useCallback` for:
-
-- Event handlers passed to memoized children
-- Functions used in useEffect dependencies
-- Functions that shouldn't cause child re-renders
-
-**Q5: What is the dependency array?**
-A: The dependency array tells React when to re-compute/re-create. If any dependency changes, the memoized value/function is updated.
-
-**Q6: What happens if you provide an empty dependency array?**
-A: The value/function is computed/created only once on mount and never updated.
-
-**Q7: Can you use useMemo/useCallback with any values?**
-A: Yes, but you should only include values that the computation/function actually uses. Unnecessary dependencies cause unnecessary re-computations.
-
-**Q8: What is the difference between useMemo and useCallback?**
-A: `useMemo` memoizes a value. `useCallback` memoizes a function. `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
-
-**Q9: Do useMemo/useCallback prevent re-renders?**
-A: No. They prevent re-computation/re-creation. This can prevent child re-renders if the memoized value/function is passed as props to memoized children.
-
-**Q10: Is it bad to memoize everything?**
-A: Yes. Memoization has overhead. Only memoize expensive computations or values passed to memoized children. Cheap operations don't benefit from memoization.
-
-### Intermediate (5-10)
-
-**Q11: Explain the internal mechanism of useMemo.**
-A: `useMemo` stores `[value, deps]` in the fiber's `memoizedState`. On each render, it compares new deps with memoized deps. If same, returns cached value. If different, runs function, caches new value.
-
-**Q12: How does useCallback relate to useMemo?**
-A: `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`. Both memoize, but `useCallback` is specifically for functions.
-
-**Q13: What is the performance impact of wrong dependencies?**
-A: Missing dependencies cause stale values. Extra dependencies cause unnecessary re-computations. Both impact performance and correctness.
-
-**Q14: How do useMemo/useCallback interact with React.memo?**
-A: `React.memo` prevents re-renders when props haven't changed. `useMemo`/`useCallback` ensure props have stable references, so `React.memo` can prevent re-renders.
-
-**Q15: Can you use useMemo/useCallback with conditional logic?**
-A: No. Hooks must be called in the same order every render. You can't call them conditionally.
-
-**Q16: What is the relationship between useMemo/useCallback and React DevTools?**
-A: React DevTools shows memoized values and can help identify unnecessary re-computations. The Profiler can show render performance improvements.
-
-**Q17: How do you test memoized values?**
-A: Test that the value is correct, not that it's memoized. Memoization is an optimization, not a feature.
-
-**Q18: What is the memory impact of useMemo/useCallback?**
-A: Memoized values are stored in fiber nodes. Each memoized value uses memory. Over-memoization increases memory usage.
-
-**Q19: Can useMemo/useCallback cause bugs?**
-A: Yes, if dependencies are wrong. Missing dependencies cause stale values. Extra dependencies cause unnecessary re-computations.
-
-**Q20: What are the alternatives to useMemo/useCallback?**
-A: `React.memo` for component re-render prevention, state colocation for reducing re-render scope, and React Compiler for automatic memoization.
-
-### Senior (10-15)
-
-**Q21: Explain the complete memoization lifecycle in React.**
-A:
-
-1. Component renders
-
-2. `useMemo`/`useCallback` called with function and deps
-
-3. React compares new deps with memoized deps
-
-4. If same: return cached value/function
-
-5. If different: run function, cache result, return new value
-
-6. Value/function stored in fiber's `memoizedState`
-
-**Q22: How does React Compiler change the memoization landscape?**
-A: React Compiler (experimental) automatically memoizes components and hooks. It analyzes code at build time and adds memoization. This reduces the need for manual `useMemo`/`useCallback`.
-
-**Q23: What is the relationship between memoization and React's concurrent rendering?**
-A: Concurrent rendering can interrupt rendering. Memoized values ensure consistent results across interrupted renders. Stable references prevent unnecessary re-renders during concurrent updates.
-
-**Q24: How do you optimize a large application with useMemo/useCallback?**
-A:
-
-1. Profile with React DevTools Profiler
-
-2. Memoize expensive computations
-
-3. Memoize functions passed to memoized children
-
-4. Use `React.memo` for pure components
-
-5. Colocate state to reduce re-render scope
-
-**Q25: What is the performance impact of memoization on initial render?**
-A: Memoization adds overhead on initial render (computing and caching). This overhead is usually negligible compared to the benefit of avoiding re-computation on subsequent renders.
-
-**Q26: How do useMemo/useCallback handle the "referential equality" problem?**
-A: Without memoization, new object/function references are created on every render. `useMemo`/`useCallback` return the same reference, enabling `React.memo` to prevent re-renders.
-
-**Q27: What is the relationship between memoization and state colocation?**
-A: State colocation reduces re-render scope. Memoization prevents unnecessary re-computation/re-creation. Both are optimization strategies that work together.
-
-**Q28: How do you handle memoization with complex dependencies?**
-A: Keep dependencies minimal and correct. If dependencies are complex, consider:
-
-- Splitting into smaller memoized values
-- Using `useReducer` for complex state
-- Refactoring to reduce dependency complexity
-
-**Q29: What is the impact of memoization on bundle size?**
-A: `useMemo`/`useCallback` are included in React's core. They don't add significant bundle size. However, overuse can increase code complexity.
-
-**Q30: How do you profile memoization effectiveness?**
-A:
-
-1. React DevTools Profiler: Compare render times with/without memoization
-
-2. Chrome DevTools Performance: Analyze re-render frequency
-
-3. Custom logging: Log when memoized values are recomputed
-
-### FAANG-style (5-10)
-
-**Q31: Design a memoization strategy for a large-scale application.**
-A:
-
-1. **Component-level**: `React.memo` for pure components
-
-2. **Hook-level**: `useMemo`/`useCallback` for expensive operations
-
-3. **Context-level**: Memoize context values
-
-4. **State-level**: Colocate state, normalize data
-
-5. **Build-level**: React Compiler for automatic memoization
-
-**Q32: How would you debug a memoization performance issue?**
-A:
-
-1. React DevTools Profiler: Identify slow renders
-
-2. Chrome DevTools Performance: Analyze re-render frequency
-
-3. Custom logging: Log memoization hits/misses
-
-4. React DevTools: Check memoized values
-
-5. Memory profiling: Track memoization memory usage
-
-**Q33: Analyze the memory implications of memoization.**
-A:
-
-- Each memoized value: ~100 bytes
-- Memoized functions: ~50 bytes
-- For 1000 components: ~150KB
-- Over-memoization: Increased memory usage
-- Under-memoization: Increased CPU usage
-
-**Q34: How would you implement a custom memoization hook?**
-A:
-
-```typescript
-const useCustomMemo = <T>(factory: () => T, deps: any[]): T => {
-  const memoizedRef = useRef<{ value: T; deps: any[] } | null>(null);
-
-  if (!memoizedRef.current || !areDepsEqual(memoizedRef.current.deps, deps)) {
-    memoizedRef.current = { value: factory(), deps };
-  }
-
-  return memoizedRef.current.value;
-};
-
-```
-
-**Q35: Design a memoization testing strategy.**
-A:
-
-1. **Unit tests**: Test memoized values are correct
-
-2. **Performance tests**: Measure render times
-
-3. **Integration tests**: Test component interactions
-
-4. **Memory tests**: Detect memory leaks
-
-5. **Regression tests**: Ensure memoization doesn't break
-
-**Q36: How does memoization interact with React Suspense?**
-A: Suspense can suspend rendering during the render phase. Memoized values ensure consistent results across suspended renders. Stable references prevent unnecessary re-renders.
-
-**Q37: Analyze the performance characteristics of different memoization strategies.**
-A:
-
-| Strategy | When to Use | Trade-off |
-|----------|-------------|-----------|
-| React.memo | Pure components | Memory overhead |
-| useMemo | Expensive computations | CPU overhead |
-| useCallback | Stable function refs | Memory overhead |
-| React Compiler | Automatic | Build-time cost |
-
-**Q38: How would you implement memoization for a virtualized list?**
-A:
-
-```typescript
-const VirtualList = ({ items }: { items: Item[] }) => {
-  const virtualizer = useVirtualizer({
-    count: items.length,
-    getScrollElement: () => parentRef.current,
-    estimateSize: () => 50,
-  });
-
-  // Memoize visible items
-  const visibleItems = useMemo(
-    () => virtualizer.getVirtualItems(),
-    [virtualizer]
-  );
-
-  // Memoize row renderer
-  const renderRow = useCallback(
-    (index: number) => <ListItem key={items[index].id} item={items[index]} />,
-    [items]
-  );
-
-  return (
-    <div ref={parentRef}>
-      {visibleItems.map(virtualRow => renderRow(virtualRow.index))}
-    </div>
-  );
-};
-
-```
-
-**Q39: How does memoization interact with React Server Components?**
-A: Server Components don't have hooks. Client Components hydrate with normal memoization. Server Components are rendered once on the server and serialized.
-
-**Q40: Design a memoization system for real-time collaborative apps.**
-A:
-
-1. **CRDT state**: Memoize conflict-free data
-
-2. **Optimistic updates**: Memoize local state
-
-3. **Remote updates**: Memoize remote state
-
-4. **Merge logic**: Memoize merge operations
-
-5. **Render optimization**: Memoize rendered elements
-
-### Follow-ups (5-10)
-
-**Q41: How would you explain useMemo/useCallback to a junior developer?**
-A: "`useMemo` is like a calculator that remembers its last result. If the inputs haven't changed, it gives you the same result without recalculating. `useCallback` is like a sticky note with a function on it — it gives you the same note instead of writing a new one every time."
-
-**Q42: What are the edge cases in memoization?**
-A:
-
-- Stale dependencies causing bugs
-- Over-memoization increasing memory
-- Under-memoization missing performance gains
-- Circular dependencies causing infinite loops
-- Complex dependencies making maintenance hard
-
-**Q43: How does memoization handle the "derived state" pattern?**
-A: Memoization is perfect for derived state:
-
-```typescript
-const filtered = useMemo(() => items.filter(...), [items, query]);
-const sorted = useMemo(() => filtered.sort(...), [filtered]);
-
-```
-
-**Q44: What is the relationship between memoization and React DevTools?**
-A: React DevTools shows memoized values and helps identify unnecessary re-computations. The Profiler can show render performance improvements from memoization.
-
-**Q45: How does memoization interact with React StrictMode?**
-A: StrictMode double-renders in development. Memoization helps ensure consistent results across double-renders.
-
-**Q46: What is the future of memoization in React?**
-A: React Compiler will automatically memoize components and hooks. This reduces the need for manual `useMemo`/`useCallback`.
-
-**Q47: How would you implement memoization for a form?**
-A:
-
-```typescript
-const useMemoizedForm = <T>(initialValues: T) => {
-  const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const isValid = useMemo(() => {
-    return Object.keys(errors).length === 0;
-  }, [errors]);
-
-  const handleChange = useCallback((field: string, value: any) => {
-    setValues(prev => ({ ...prev, [field]: value }));
-  }, []);
-
-  return { values, errors, isValid, handleChange };
-};
-
-```
-
-**Q48: How does memoization handle the "performance regression" problem?**
-A: Performance regressions happen when memoization is removed or dependencies change. Prevention:
-
-- Automated testing for performance
-- Regression testing for memoization
-- Monitoring render times in production
-
-**Q49: What is the relationship between memoization and code splitting?**
-A: Memoization works with code-split components. Memoized values ensure consistent results across loading states.
-
-**Q50: How would you implement memoization for a chart component?**
-A:
-
-```typescript
-const Chart = ({ data, options }: ChartProps) => {
-  const chartConfig = useMemo(
-    () => ({ data, options }),
-    [data, options]
-  );
-
-  const handlePointClick = useCallback((point: DataPoint) => {
-    console.log('Point clicked:', point);
-  }, []);
-
-  return <D3Chart config={chartConfig} onPointClick={handlePointClick} />;
-};
-
-```
 
 ## Summary
 
 `useMemo` and `useCallback` are performance optimization hooks that memoize computed values and functions. They prevent unnecessary re-computations and re-creations, which can prevent child re-renders when combined with `React.memo`. Use them for expensive computations and functions passed to memoized children.
 
 ## Cheat Sheet
-
 ```text
 useMemo/useCallback Key Points:
 ├── useMemo: Memoizes computed values
@@ -1071,6 +734,15 @@ Relationships:
 └── React Compiler = Automatic memoization
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [Next.js](../04-NextJS/)
+- [Testing](../16-Testing/)
+- [Form Handling](../29-Form-Handling/)
+- [Animation](../30-Animation/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # Mocking
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1201,137 +1211,6 @@ beforeEach(() => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is mocking in testing?**
-   Mocking is replacing real objects with simulated versions to isolate code under test and control the test environment.
-
-2. **Why do we need mocking?**
-   For isolation, speed, control over responses, verification of interactions, and simulating error conditions.
-
-3. **What is the difference between a mock and a stub?**
-   Stubs return predefined values and don't track interactions. Mocks verify interactions and have expectations.
-
-4. **What is `jest.fn()`?**
-   Creates a mock function that tracks calls, arguments, and return values.
-
-5. **What is `jest.mock()`?**
-   Replaces an entire module with a mock implementation, auto-mocking all exports.
-
-6. **What is `jest.spyOn()`?**
-   Creates a spy on an existing method while preserving the original implementation.
-
-7. **What is `jest.mocked()`?**
-   A TypeScript helper that casts a module to its mocked version for type safety.
-
-8. **How do you clear mock history?**
-   Use `mockClear()`, `mockReset()`, or `jest.clearAllMocks()`.
-
-9. **What is a manual mock?**
-   A hand-written mock placed in `__mocks__` directory to replace a module.
-
-10. **What is MSW?**
-    Mock Service Worker is a library for mocking network requests at the network level.
-
-### Intermediate (5-10)
-
-11. **How do you mock API calls?**
-    Use MSW for network-level mocking, or `jest.mock` for module-level mocking.
-
-12. **How do you mock timers?**
-    Use `jest.useFakeTimers()` and `jest.advanceTimersByTime()`.
-
-13. **How do you mock class instances?**
-    Mock the class constructor or use `jest.spyOn` on instance methods.
-
-14. **How do you mock database operations?**
-    Mock the database module or use in-memory database for testing.
-
-15. **How do you mock file system operations?**
-    Mock `fs` module or use `jest-fs-mock` library.
-
-16. **How do you verify mock calls?**
-    Use `toHaveBeenCalledWith`, `toHaveBeenCalledTimes`, `toHaveBeenLastCalledWith`.
-
-17. **How do you mock error responses?**
-    Use `mockRejectedValue` or `mockImplementation` to throw errors.
-
-18. **How do you create partial mocks?**
-    Use `jest.requireActual` and spread with overrides.
-
-19. **How do you mock modules with dependencies?**
-    Use factory functions in `jest.mock` or manual mocks.
-
-20. **How do you mock global objects?**
-    Assign to global properties or use `jest.spyOn(global, 'property')`.
-
-### Senior (10-15)
-
-21. **How do you design testable code for easy mocking?**
-    Use dependency injection, interfaces, and composition over inheritance.
-
-22. **How do you handle complex mocking scenarios?**
-    Use mock factories, builders, and layered mocking strategies.
-
-23. **How do you test code with multiple external dependencies?**
-    Mock at service boundaries and verify interactions with each.
-
-24. **How do you handle mocking in microservices?**
-    Use contract testing and mock service virtualization.
-
-25. **How do you mock GraphQL queries?**
-    Use MSW for network-level GraphQL mocking.
-
-26. **How do you mock WebSocket connections?**
-    Mock WebSocket constructor or use in-memory WebSocket implementations.
-
-27. **How do you mock real-time features?**
-    Use controlled time or mock event emitters.
-
-28. **How do you handle mocking in CI/CD?**
-    Ensure mocks are deterministic and don't depend on environment.
-
-29. **How do you test mocking code itself?**
-    Verify mock behavior, test mock factories, and validate test setup.
-
-30. **How do you balance mocking with real implementations?**
-    Mock external dependencies, use real implementations for internal logic.
-
-### FAANG-style (5-10)
-
-31. **How would you design a mocking strategy for a large codebase?**
-    Establish mocking guidelines, create shared utilities, and document patterns.
-
-32. **How do you handle mocking in a microservices architecture?**
-    Use contract testing, service virtualization, and mock API gateways.
-
-33. **How do you ensure mock reliability at scale?**
-    Implement mock validation, track mock health, and version mock contracts.
-
-34. **How do you handle mocking with complex state machines?**
-    Use mock state machines or test state transitions through public interfaces.
-
-35. **How do you balance mock simplicity with test fidelity?**
-    Mock at appropriate boundaries and maintain mock documentation.
-
-### Follow-ups (5-10)
-
-36. **How has your mocking approach evolved?**
-    Discuss shift from over-mocking to strategic mocking at boundaries.
-
-37. **What mocking tools have you used?**
-    Compare Jest mocks, MSW, nock, and explain selection criteria.
-
-38. **How do you handle mocking legacy code?**
-    Characterization tests, extract and refactor, and gradual mock introduction.
-
-39. **What's the most complex mocking problem you've solved?**
-    Describe complex scenarios and solutions.
-
-40. **How do you teach mocking to junior developers?**
-    Start with simple examples, emphasize when to mock, and establish patterns.
 
 ## Summary
 
@@ -1347,6 +1226,14 @@ Mocking is essential for isolating tests and controlling the test environment. K
 - **Document mock behavior**: Help future maintainers
 
 A well-designed mocking strategy makes tests reliable, fast, and maintainable.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

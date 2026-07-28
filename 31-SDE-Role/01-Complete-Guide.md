@@ -1,4 +1,14 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # The Ultimate SDE Interview Preparation Guide
+
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 > **Target Roles:** SDE II / SDE III at Microsoft, Google, Amazon, Meta, Apple, Netflix, and top product-based companies.
 > **Experience Level:** 3–7 years of software development experience.
@@ -86,6 +96,7 @@ String[] names = {"Alice", "Bob", "Charlie"};
 // 2D Arrays
 int[][] matrix = new int[3][3];
 int[][] grid = {{1, 2, 3}, {4, 5, 6}};
+
 ```
 
 ### Autoboxing and Unboxing
@@ -99,6 +110,7 @@ Boolean c = true;      // boolean → Boolean
 // Unboxing: wrapper → primitive
 int x = a;             // Integer → int
 double y = b;          // Double → double
+
 ```
 
 ### Variable Scope and Shadowing
@@ -112,6 +124,7 @@ public void example() {
     }
     // System.out.println(y); // ERROR: y is not in scope
 }
+
 ```
 
 ## 1.2 Operators
@@ -143,6 +156,7 @@ int bitwiseOr = 5 | 3;    // 7 (0101 | 0011 = 0111)
 int bitwiseXor = 5 ^ 3;   // 6 (0101 ^ 0011 = 0110)
 int leftShift = 1 << 3;   // 8 (0001 → 1000)
 int rightShift = 8 >> 2;  // 2 (1000 → 0010)
+
 ```
 
 ### Ternary Operator
@@ -150,6 +164,7 @@ int rightShift = 8 >> 2;  // 2 (1000 → 0010)
 ```java
 int max = (a > b) ? a : b;
 String parity = (n % 2 == 0) ? "even" : "odd";
+
 ```
 
 ### instanceof
@@ -164,6 +179,7 @@ if (obj instanceof String) {
 if (obj instanceof String s) {
     System.out.println(s.length());
 }
+
 ```
 
 ## 1.3 Control Flow
@@ -205,6 +221,7 @@ for (int r = 0; r < rows; r++) {
         }
     }
 }
+
 ```
 
 ## 1.4 Strings
@@ -223,6 +240,7 @@ System.out.println(a == b);      // true (same reference from pool)
 String c = new String("hello");
 System.out.println(a == c);      // false (different objects)
 System.out.println(a.equals(c)); // true (same content)
+
 ```
 
 ### Essential String Methods
@@ -253,6 +271,7 @@ s.isEmpty()                   // false
 s.isBlank()                   // false (Java 11+)
 s.repeat(3)                   // "Hello, World!Hello, World!Hello, World!" (Java 11+)
 s.strip()                     // "Hello, World!" (Unicode-aware trim)
+
 ```
 
 ### StringBuilder (Mutable)
@@ -274,6 +293,7 @@ sb.delete(0, 6);           // delete range [0, 6)
 sb.replace(0, 5, "New");   // replace range [0, 5)
 sb.charAt(0);              // get char at index
 sb.length();               // current length
+
 ```
 
 ### String Comparison Patterns
@@ -290,6 +310,7 @@ String s = null;
 // s.equals("hello")  // NullPointerException!
 "hello".equals(s)      // false ✓
 Objects.equals(s, "hello") // false ✓
+
 ```
 
 ## 1.5 Arrays
@@ -325,6 +346,7 @@ Arrays.fill(arr, 0);           // fill all with 0
 
 // toString
 System.out.println(Arrays.toString(arr)); // [1, 2, 3, 4, 5]
+
 ```
 
 ### 2D Arrays
@@ -351,6 +373,7 @@ for (int[] row : grid) {
         System.out.print(cell + " ");
     }
 }
+
 ```
 
 ### Key Array Patterns for Interviews
@@ -377,13 +400,15 @@ public int[] prefixSum(int[] nums) {
 }
 
 // Range Sum Query: sum[l..r] = prefix[r+1] - prefix[l]
+
 ```
 
 ## 1.6 Collections Framework
 
 ### The Collections Hierarchy
 
-```
+```text
+
 Iterable
 ├── Collection
 │   ├── List (ordered, duplicates allowed)
@@ -403,6 +428,7 @@ Iterable
 │   ├── LinkedHashMap
 │   ├── TreeMap
 │   └── Hashtable
+
 ```
 
 ### ArrayList
@@ -430,6 +456,7 @@ Collections.sort(list);                          // ascending
 Collections.sort(list, Collections.reverseOrder()); // descending
 list.sort(Comparator.naturalOrder());             // Java 8+
 list.sort(Comparator.reverseOrder());             // Java 8+
+
 ```
 
 ### LinkedList
@@ -456,6 +483,7 @@ Deque<Integer> stack = new LinkedList<>();
 stack.push(1);                // add to head
 stack.pop();                  // remove from head
 stack.peek();                 // peek at head
+
 ```
 
 ### HashMap
@@ -486,6 +514,7 @@ map.computeIfAbsent("Alice", k -> k.length());
 
 // Merge
 map.merge("Alice", 10, Integer::sum); // adds 10 to existing value
+
 ```
 
 ### HashMap Internals (Interview Critical!)
@@ -494,21 +523,22 @@ map.merge("Alice", 10, Integer::sum); // adds 10 to existing value
 /*
  * HashMap uses an array of buckets.
  * Key's hashCode() determines the bucket index.
- * 
+ *
  * Collision Resolution: Chaining (linked list in each bucket)
- * 
+ *
  * Load Factor: 0.75 (default)
  * - When load > threshold, HashMap resizes (doubles capacity)
- * 
+ *
  * Time Complexity:
  * - put():    O(1) average, O(n) worst case
  * - get():    O(1) average, O(n) worst case
  * - remove(): O(1) average, O(n) worst case
- * 
- * In Java 8+: When a bucket has > 8 entries, 
+ *
+ * In Java 8+: When a bucket has > 8 entries,
  * the linked list converts to a balanced tree (red-black tree).
  * This makes worst case O(log n) instead of O(n).
  */
+
 ```
 
 ### HashSet
@@ -538,6 +568,7 @@ intersection.retainAll(b); // [2, 3]
 // Difference
 Set<Integer> diff = new HashSet<>(a);
 diff.removeAll(b); // [1]
+
 ```
 
 ### TreeSet (Sorted Set)
@@ -562,6 +593,7 @@ treeSet.pollLast();  // 3 (remove and return largest)
 treeSet.subSet(1, true, 3, true); // [1, 2, 3] (inclusive)
 treeSet.headSet(2);               // [1] (elements < 2)
 treeSet.tailSet(2);               // [2, 3] (elements >= 2)
+
 ```
 
 ### PriorityQueue (Heap)
@@ -587,6 +619,7 @@ maxHeap.poll();      // 5
 // Custom Comparator
 PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]); // sort by first element
 PriorityQueue<String> pq2 = new PriorityQueue<>(Comparator.comparingInt(String::length));
+
 ```
 
 ### Deque (ArrayDeque)
@@ -612,6 +645,7 @@ deque.offerFirst(0); // add to head
 deque.offerLast(3);  // add to tail
 deque.pollFirst();   // remove from head
 deque.pollLast();    // remove from tail
+
 ```
 
 ## 1.7 Comparable vs Comparator
@@ -638,6 +672,7 @@ List<Student> students = new ArrayList<>();
 Collections.sort(students, byName);           // by name
 students.sort(byAgeDesc);                     // by age descending
 students.sort(composite);                           // by name, then by age
+
 ```
 
 ## 1.8 Lambda Expressions and Streams API
@@ -668,6 +703,7 @@ Runnable runnable = () -> System.out.println("Hello");
 List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
 names.forEach(name -> System.out.println(name));  // lambda
 names.forEach(System.out::println);                // method reference
+
 ```
 
 ### Streams API
@@ -744,6 +780,7 @@ IntSummaryStatistics stats = numbers.stream()
 // Custom Collectors
 Map<Integer, List<Integer>> byRemainder = numbers.stream()
     .collect(Collectors.groupingBy(n -> n % 3));
+
 ```
 
 ## 1.9 Optional
@@ -766,6 +803,7 @@ Optional<Integer> filtered = Optional.of(10)
     .filter(n -> n > 5);  // Optional[10]
 Optional<Integer> empty = Optional.of(5)
     .filter(n -> n > 5);  // Optional.empty()
+
 ```
 
 ## 1.10 Exception Handling
@@ -795,18 +833,19 @@ try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
 // Custom exceptions
 class InsufficientFundsException extends Exception {
     private double deficit;
-    
+
     public InsufficientFundsException(double deficit) {
         super("Insufficient funds. Deficit: " + deficit);
         this.deficit = deficit;
     }
-    
+
     public double getDeficit() { return deficit; }
 }
 
 // Checked vs Unchecked
 // Checked: IOException, SQLException → must catch or declare (throws)
 // Unchecked: NullPointerException, ArrayIndexOutOfBounds → runtime exceptions
+
 ```
 
 ## 1.11 Enums
@@ -850,6 +889,7 @@ switch (dir) {
 Direction.NORTH.name();        // "NORTH"
 Direction.valueOf("NORTH");    // Direction.NORTH
 Direction.values();            // [NORTH, SOUTH, EAST, WEST]
+
 ```
 
 ## 1.12 Generics
@@ -858,7 +898,7 @@ Direction.values();            // [NORTH, SOUTH, EAST, WEST]
 // Generic class
 class Box<T> {
     private T content;
-    
+
     public Box(T content) { this.content = content; }
     public T getContent() { return content; }
     public void setContent(T content) { this.content = content; }
@@ -895,6 +935,7 @@ public void printList(List<?> list) {
         System.out.println(item);
     }
 }
+
 ```
 
 ## 1.13 Multithreading Basics
@@ -925,11 +966,11 @@ int result = future.get(); // blocks until done
 // Synchronization
 class Counter {
     private int count = 0;
-    
+
     public synchronized void increment() {
         count++; // thread-safe
     }
-    
+
     public void decrement() {
         synchronized (this) {
             count--;
@@ -950,7 +991,7 @@ try {
 class ProducerConsumer {
     private final Queue<Integer> queue = new LinkedList<>();
     private final int CAPACITY = 10;
-    
+
     public synchronized void produce(int item) throws InterruptedException {
         while (queue.size() == CAPACITY) {
             wait();
@@ -958,7 +999,7 @@ class ProducerConsumer {
         queue.add(item);
         notifyAll();
     }
-    
+
     public synchronized int consume() throws InterruptedException {
         while (queue.isEmpty()) {
             wait();
@@ -968,6 +1009,7 @@ class ProducerConsumer {
         return item;
     }
 }
+
 ```
 
 ### ExecutorService
@@ -995,6 +1037,7 @@ CompletableFuture.supplyAsync(() -> fetchDataFromAPI())
         System.out.println("Error: " + ex.getMessage());
         return null;
     });
+
 ```
 
 ### Resources for Java
@@ -1075,6 +1118,7 @@ void generateSubsets(int[] arr, int index, List<Integer> current) {
     // Exclude current element
     generateSubsets(arr, index + 1, current);
 }
+
 ```
 
 ### Space Complexity
@@ -1101,6 +1145,7 @@ void traverseBalanced(TreeNode node) {
     traverseBalanced(node.left);   // depth = O(log n) for balanced tree
     traverseBalanced(node.right);
 }
+
 ```
 
 ### Amortized Analysis
@@ -1108,16 +1153,17 @@ void traverseBalanced(TreeNode node) {
 ```java
 /*
  * ArrayList.add() is O(1) amortized.
- * 
+ *
  * When the internal array is full, it doubles in size.
  * Copying all elements takes O(n), but this happens rarely.
  * Over n additions:
  * - Most adds: O(1)
  * - Some adds: O(n) (when resizing)
  * - Average: O(1) per operation
- * 
+ *
  * Similarly, HashMap.resize() is O(n) but amortized O(1).
  */
+
 ```
 
 ### Quick Reference: When to Use What
@@ -1226,6 +1272,7 @@ public boolean isAnagram(String s, String t) {
     }
     return true;
 }
+
 ```
 
 ### Problems to Practice
@@ -1249,7 +1296,7 @@ public boolean isAnagram(String s, String t) {
 class ListNode {
     int val;
     ListNode next;
-    
+
     ListNode(int val) { this.val = val; }
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
@@ -1257,13 +1304,13 @@ class ListNode {
 class LinkedList {
     ListNode head;
     int size;
-    
+
     // Insert at beginning — O(1)
     public void addFirst(int val) {
         head = new ListNode(val, head);
         size++;
     }
-    
+
     // Insert at end — O(n)
     public void addLast(int val) {
         if (head == null) {
@@ -1275,7 +1322,7 @@ class LinkedList {
         }
         size++;
     }
-    
+
     // Delete by value — O(n)
     public void delete(int val) {
         if (head == null) return;
@@ -1293,7 +1340,7 @@ class LinkedList {
             size--;
         }
     }
-    
+
     // Reverse — O(n) time, O(1) space
     public void reverse() {
         ListNode prev = null, curr = head;
@@ -1305,7 +1352,7 @@ class LinkedList {
         }
         head = prev;
     }
-    
+
     // Detect cycle (Floyd's) — O(n) time, O(1) space
     public boolean hasCycle() {
         ListNode slow = head, fast = head;
@@ -1316,7 +1363,7 @@ class LinkedList {
         }
         return false;
     }
-    
+
     // Find middle element — O(n)
     public ListNode findMiddle() {
         ListNode slow = head, fast = head;
@@ -1327,6 +1374,7 @@ class LinkedList {
         return slow;
     }
 }
+
 ```
 
 ### Doubly Linked List
@@ -1335,9 +1383,10 @@ class LinkedList {
 class DoublyListNode {
     int val;
     DoublyListNode prev, next;
-    
+
     DoublyListNode(int val) { this.val = val; }
 }
+
 ```
 
 ### Key Linked List Patterns
@@ -1360,6 +1409,7 @@ ListNode dummy = new ListNode(0);
 dummy.next = head;
 // ... operations ...
 return dummy.next;
+
 ```
 
 ### Problems to Practice
@@ -1394,13 +1444,14 @@ boolean empty = stack.isEmpty();
 // Using ArrayList
 class Stack<T> {
     private ArrayList<T> list = new ArrayList<>();
-    
+
     public void push(T item) { list.add(item); }
     public T pop() { return list.remove(list.size() - 1); }
     public T peek() { return list.get(list.size() - 1); }
     public boolean isEmpty() { return list.isEmpty(); }
     public int size() { return list.size(); }
 }
+
 ```
 
 ### Monotonic Stack
@@ -1410,7 +1461,7 @@ class Stack<T> {
 public int[] nextGreaterElement(int[] nums) {
     int[] result = new int[nums.length];
     Deque<Integer> stack = new ArrayDeque<>(); // stores indices
-    
+
     for (int i = nums.length - 1; i >= 0; i--) {
         while (!stack.isEmpty() && nums[stack.peek()] <= nums[i]) {
             stack.pop();
@@ -1425,7 +1476,7 @@ public int[] nextGreaterElement(int[] nums) {
 public int[] dailyTemperatures(int[] temperatures) {
     int[] result = new int[temperatures.length];
     Deque<Integer> stack = new ArrayDeque<>();
-    
+
     for (int i = 0; i < temperatures.length; i++) {
         while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
             int prev = stack.pop();
@@ -1435,6 +1486,7 @@ public int[] dailyTemperatures(int[] temperatures) {
     }
     return result;
 }
+
 ```
 
 ### Problems to Practice
@@ -1482,6 +1534,7 @@ public void bfs(TreeNode root) {
         }
     }
 }
+
 ```
 
 ## 3.6 Heap (Priority Queue)
@@ -1499,22 +1552,23 @@ public int[] topKFrequent(int[] nums, int k) {
     for (int num : nums) {
         freq.put(num, freq.getOrDefault(num, 0) + 1);
     }
-    
+
     // Min heap of size k
-    PriorityQueue<Map.Entry<Integer, Integer>> pq = 
+    PriorityQueue<Map.Entry<Integer, Integer>> pq =
         new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
-    
+
     for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
         pq.offer(entry);
         if (pq.size() > k) pq.poll();
     }
-    
+
     int[] result = new int[k];
     for (int i = 0; i < k; i++) {
         result[i] = pq.poll().getKey();
     }
     return result;
 }
+
 ```
 
 ### Problems to Practice
@@ -1540,7 +1594,7 @@ public int[] topKFrequent(int[] nums, int k) {
 class TreeNode {
     int val;
     TreeNode left, right;
-    
+
     TreeNode(int val) { this.val = val; }
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
@@ -1548,6 +1602,7 @@ class TreeNode {
         this.right = right;
     }
 }
+
 ```
 
 ### Tree Traversals
@@ -1596,10 +1651,10 @@ void postorder(TreeNode node) {
 List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> result = new ArrayList<>();
     if (root == null) return result;
-    
+
     Queue<TreeNode> queue = new LinkedList<>();
     queue.offer(root);
-    
+
     while (!queue.isEmpty()) {
         int size = queue.size();
         List<Integer> level = new ArrayList<>();
@@ -1613,6 +1668,7 @@ List<List<Integer>> levelOrder(TreeNode root) {
     }
     return result;
 }
+
 ```
 
 ### Binary Search Tree (BST)
@@ -1620,7 +1676,7 @@ List<List<Integer>> levelOrder(TreeNode root) {
 ```java
 class BST {
     TreeNode root;
-    
+
     // Insert — O(log n) average
     TreeNode insert(TreeNode node, int val) {
         if (node == null) return new TreeNode(val);
@@ -1628,14 +1684,14 @@ class BST {
         else if (val > node.val) node.right = insert(node.right, val);
         return node;
     }
-    
+
     // Search — O(log n) average
     TreeNode search(TreeNode node, int val) {
         if (node == null || node.val == val) return node;
         if (val < node.val) return search(node.left, val);
         return search(node.right, val);
     }
-    
+
     // Delete — O(log n) average
     TreeNode delete(TreeNode node, int val) {
         if (node == null) return null;
@@ -1654,12 +1710,13 @@ class BST {
         }
         return node;
     }
-    
+
     TreeNode findMin(TreeNode node) {
         while (node.left != null) node = node.left;
         return node;
     }
 }
+
 ```
 
 ### Trie (Prefix Tree)
@@ -1672,7 +1729,7 @@ class TrieNode {
 
 class Trie {
     TrieNode root = new TrieNode();
-    
+
     public void insert(String word) {
         TrieNode node = root;
         for (char c : word.toCharArray()) {
@@ -1684,16 +1741,16 @@ class Trie {
         }
         node.isEnd = true;
     }
-    
+
     public boolean search(String word) {
         TrieNode node = findNode(word);
         return node != null && node.isEnd;
     }
-    
+
     public boolean startsWith(String prefix) {
         return findNode(prefix) != null;
     }
-    
+
     private TrieNode findNode(String s) {
         TrieNode node = root;
         for (char c : s.toCharArray()) {
@@ -1704,6 +1761,7 @@ class Trie {
         return node;
     }
 }
+
 ```
 
 ### More Advanced Trees
@@ -1746,6 +1804,7 @@ weightedGraph.computeIfAbsent(u, k -> new ArrayList<>()).add(new int[]{v, weight
 int[][] grid = new int[m][n];
 // Cell (i,j) neighbors: (i-1,j), (i+1,j), (i,j-1), (i,j+1)
 int[][] dirs = {{-1,0}, {1,0}, {0,-1}, {0,1}};
+
 ```
 
 ### Key Graph Algorithms
@@ -1767,7 +1826,7 @@ void bfs(Map<Integer, List<Integer>> graph, int start) {
     Set<Integer> visited = new HashSet<>();
     queue.offer(start);
     visited.add(start);
-    
+
     while (!queue.isEmpty()) {
         int node = queue.poll();
         System.out.println(node);
@@ -1788,12 +1847,12 @@ List<Integer> topologicalSort(Map<Integer, List<Integer>> graph, int numNodes) {
             inDegree[v]++;
         }
     }
-    
+
     Queue<Integer> queue = new LinkedList<>();
     for (int i = 0; i < numNodes; i++) {
         if (inDegree[i] == 0) queue.offer(i);
     }
-    
+
     List<Integer> result = new ArrayList<>();
     while (!queue.isEmpty()) {
         int node = queue.poll();
@@ -1811,15 +1870,15 @@ int[] dijkstra(Map<Integer, List<int[]>> graph, int start, int n) {
     int[] dist = new int[n];
     Arrays.fill(dist, Integer.MAX_VALUE);
     dist[start] = 0;
-    
+
     PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
     pq.offer(new int[]{start, 0});
-    
+
     while (!pq.isEmpty()) {
         int[] curr = pq.poll();
         int u = curr[0], d = curr[1];
         if (d > dist[u]) continue;
-        
+
         for (int[] edge : graph.getOrDefault(u, new ArrayList<>())) {
             int v = edge[0], weight = edge[1];
             if (dist[u] + weight < dist[v]) {
@@ -1834,18 +1893,18 @@ int[] dijkstra(Map<Integer, List<int[]>> graph, int start, int n) {
 // Union Find
 class UnionFind {
     int[] parent, rank;
-    
+
     UnionFind(int n) {
         parent = new int[n];
         rank = new int[n];
         for (int i = 0; i < n; i++) parent[i] = i;
     }
-    
+
     int find(int x) {
         if (parent[x] != x) parent[x] = find(parent[x]); // path compression
         return parent[x];
     }
-    
+
     boolean union(int x, int y) {
         int px = find(x), py = find(y);
         if (px == py) return false;
@@ -1855,6 +1914,7 @@ class UnionFind {
         return true;
     }
 }
+
 ```
 
 ### Problems to Practice
@@ -1939,14 +1999,14 @@ void mergeSort(int[] arr, int left, int right) {
 void merge(int[] arr, int left, int mid, int right) {
     int[] temp = new int[right - left + 1];
     int i = left, j = mid + 1, k = 0;
-    
+
     while (i <= mid && j <= right) {
         if (arr[i] <= arr[j]) temp[k++] = arr[i++];
         else temp[k++] = arr[j++];
     }
     while (i <= mid) temp[k++] = arr[i++];
     while (j <= right) temp[k++] = arr[j++];
-    
+
     System.arraycopy(temp, 0, arr, left, temp.length);
 }
 
@@ -2000,6 +2060,7 @@ void heapify(int[] arr, int n, int i) {
         heapify(arr, n, largest);
     }
 }
+
 ```
 
 ### Non-Comparison Sort
@@ -2010,7 +2071,7 @@ void countingSort(int[] arr) {
     int max = Arrays.stream(arr).max().getAsInt();
     int[] count = new int[max + 1];
     for (int num : arr) count[num]++;
-    
+
     int idx = 0;
     for (int i = 0; i <= max; i++) {
         while (count[i]-- > 0) {
@@ -2026,6 +2087,7 @@ void radixSort(int[] arr) {
         countingSortByDigit(arr, exp);
     }
 }
+
 ```
 
 ### Sorting Comparison Table
@@ -2085,7 +2147,7 @@ int upperBound(int[] arr, int target) {
 int minCapacity(int[] weights, int days) {
     int low = Arrays.stream(weights).max().getAsInt();
     int high = Arrays.stream(weights).sum();
-    
+
     while (low < high) {
         int mid = low + (high - low) / 2;
         if (canShip(weights, days, mid)) {
@@ -2108,6 +2170,7 @@ boolean canShip(int[] weights, int days, int capacity) {
     }
     return daysNeeded <= days;
 }
+
 ```
 
 ### Problems to Practice
@@ -2160,6 +2223,7 @@ int maxArea(int[] height) {
     }
     return maxArea;
 }
+
 ```
 
 **Problems:**
@@ -2209,17 +2273,17 @@ String minWindow(String s, String t) {
     Map<Character, Integer> need = new HashMap<>();
     Map<Character, Integer> have = new HashMap<>();
     for (char c : t.toCharArray()) need.put(c, need.getOrDefault(c, 0) + 1);
-    
+
     int haveCount = 0, needCount = need.size();
     int left = 0, minLen = Integer.MAX_VALUE, minStart = 0;
-    
+
     for (int right = 0; right < s.length(); right++) {
         char c = s.charAt(right);
         have.put(c, have.getOrDefault(c, 0) + 1);
         if (need.containsKey(c) && have.get(c).equals(need.get(c))) {
             haveCount++;
         }
-        
+
         while (haveCount == needCount) {
             if (right - left + 1 < minLen) {
                 minLen = right - left + 1;
@@ -2235,6 +2299,7 @@ String minWindow(String s, String t) {
     }
     return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
 }
+
 ```
 
 **Problems:**
@@ -2290,6 +2355,7 @@ boolean isHappy(int n) {
     }
     return fast == 1;
 }
+
 ```
 
 **Problems:**
@@ -2322,6 +2388,7 @@ int search(int[] nums, int target) {
     }
     return -1;
 }
+
 ```
 
 ## Pattern 5: Prefix Sum
@@ -2343,6 +2410,7 @@ int subarraySum(int[] nums, int k) {
     }
     return count;
 }
+
 ```
 
 ## Pattern 6: Stack (Monotonic)
@@ -2361,6 +2429,7 @@ int[] nextGreaterElement(int[] nums) {
     }
     return result;
 }
+
 ```
 
 ## Pattern 7: BFS (Level-by-Level)
@@ -2379,7 +2448,7 @@ int orangesRotting(int[][] grid) {
         }
     }
     if (fresh == 0) return 0;
-    
+
     int[][] dirs = {{-1,0},{1,0},{0,-1},{0,1}};
     int minutes = 0;
     while (!queue.isEmpty()) {
@@ -2401,6 +2470,7 @@ int orangesRotting(int[][] grid) {
     }
     return fresh == 0 ? minutes : -1;
 }
+
 ```
 
 ## Pattern 8: DFS (Recursive/Backtracking)
@@ -2423,6 +2493,7 @@ void backtrack(int[] nums, int start, List<Integer> current, List<List<Integer>>
         current.remove(current.size() - 1);
     }
 }
+
 ```
 
 ## Pattern 9: Topological Sort
@@ -2435,17 +2506,17 @@ boolean canFinish(int numCourses, int[][] prerequisites) {
     List<List<Integer>> graph = new ArrayList<>();
     int[] inDegree = new int[numCourses];
     for (int i = 0; i < numCourses; i++) graph.add(new ArrayList<>());
-    
+
     for (int[] pre : prerequisites) {
         graph.get(pre[1]).add(pre[0]);
         inDegree[pre[0]]++;
     }
-    
+
     Queue<Integer> queue = new LinkedList<>();
     for (int i = 0; i < numCourses; i++) {
         if (inDegree[i] == 0) queue.offer(i);
     }
-    
+
     int count = 0;
     while (!queue.isEmpty()) {
         int course = queue.poll();
@@ -2457,6 +2528,7 @@ boolean canFinish(int numCourses, int[][] prerequisites) {
     }
     return count == numCourses;
 }
+
 ```
 
 ## Pattern 10: Union Find
@@ -2475,6 +2547,7 @@ int findCircleNum(int[][] isConnected) {
     }
     return uf.count;
 }
+
 ```
 
 ## Pattern 11: Greedy
@@ -2505,6 +2578,7 @@ int eraseOverlapIntervals(int[][] intervals) {
     }
     return count;
 }
+
 ```
 
 ## Pattern 12: Dynamic Programming
@@ -2540,6 +2614,7 @@ void backtrack(char[][] board, int row, List<List<String>> result) {
         }
     }
 }
+
 ```
 
 ## Pattern 14: Trie
@@ -2566,6 +2641,7 @@ int[] countBits(int n) {
     }
     return dp;
 }
+
 ```
 
 ## Pattern 16: Merge Intervals
@@ -2584,6 +2660,7 @@ int[][] merge(int[][] intervals) {
     }
     return merged.toArray(new int[0][]);
 }
+
 ```
 
 ## Pattern 17: Heap / Priority Queue
@@ -2597,7 +2674,7 @@ int[][] merge(int[][] intervals) {
 List<Integer> spiralOrder(int[][] matrix) {
     List<Integer> result = new ArrayList<>();
     int top = 0, bottom = matrix.length - 1, left = 0, right = matrix[0].length - 1;
-    
+
     while (top <= bottom && left <= right) {
         for (int i = left; i <= right; i++) result.add(matrix[top][i]);
         top++;
@@ -2614,6 +2691,7 @@ List<Integer> spiralOrder(int[][] matrix) {
     }
     return result;
 }
+
 ```
 
 ## Pattern 19: Hashing
@@ -2626,25 +2704,26 @@ List<Integer> spiralOrder(int[][] matrix) {
 // LRU Cache
 class LRUCache extends LinkedHashMap<Integer, Integer> {
     private int capacity;
-    
+
     public LRUCache(int capacity) {
         super(capacity, 0.75f, true);
         this.capacity = capacity;
     }
-    
+
     public int get(int key) {
         return super.getOrDefault(key, -1);
     }
-    
+
     public void put(int key, int value) {
         super.put(key, value);
     }
-    
+
     @Override
     protected boolean removeEldestEntry(Map.Entry eldest) {
         return size() > capacity;
     }
 }
+
 ```
 
 ### Resources for Pattern Recognition
@@ -2678,6 +2757,7 @@ long fib(int n) {
     memo.put(n, result);
     return result;
 }
+
 ```
 
 ### Tabulation (Bottom-Up) — Iterative
@@ -2694,6 +2774,7 @@ long fib(int n) {
     }
     return dp[n];
 }
+
 ```
 
 ### Space Optimization
@@ -2710,6 +2791,7 @@ long fib(int n) {
     }
     return prev1;
 }
+
 ```
 
 ## DP Patterns
@@ -2727,6 +2809,7 @@ int climbStairs(int n) {
     }
     return dp[n];
 }
+
 ```
 
 **Problems:** Fibonacci, Climbing Stairs, House Robber, Min Cost Climbing Stairs
@@ -2737,18 +2820,19 @@ int climbStairs(int n) {
 int knapsack(int[] weights, int[] values, int capacity) {
     int n = weights.length;
     int[][] dp = new int[n + 1][capacity + 1];
-    
+
     for (int i = 1; i <= n; i++) {
         for (int w = 0; w <= capacity; w++) {
             dp[i][w] = dp[i - 1][w]; // don't take
             if (weights[i - 1] <= w) {
-                dp[i][w] = Math.max(dp[i][w], 
+                dp[i][w] = Math.max(dp[i][w],
                     dp[i - 1][w - weights[i - 1]] + values[i - 1]);
             }
         }
     }
     return dp[n][capacity];
 }
+
 ```
 
 **Problems:** 0/1 Knapsack, Partition Equal Subset Sum, Target Sum, Last Stone Weight II
@@ -2761,7 +2845,7 @@ int coinChange(int[] coins, int amount) {
     int[] dp = new int[amount + 1];
     Arrays.fill(dp, amount + 1);
     dp[0] = 0;
-    
+
     for (int i = 1; i <= amount; i++) {
         for (int coin : coins) {
             if (coin <= i) {
@@ -2771,6 +2855,7 @@ int coinChange(int[] coins, int amount) {
     }
     return dp[amount] > amount ? -1 : dp[amount];
 }
+
 ```
 
 **Problems:** Coin Change, Coin Change 2, Rod Cutting, Integer Break
@@ -2781,7 +2866,7 @@ int coinChange(int[] coins, int amount) {
 int lcs(String text1, String text2) {
     int m = text1.length(), n = text2.length();
     int[][] dp = new int[m + 1][n + 1];
-    
+
     for (int i = 1; i <= m; i++) {
         for (int j = 1; j <= n; j++) {
             if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
@@ -2793,6 +2878,7 @@ int lcs(String text1, String text2) {
     }
     return dp[m][n];
 }
+
 ```
 
 **Problems:** LCS, Edit Distance, Longest Increasing Subsequence, Shortest Common Supersequence
@@ -2805,7 +2891,7 @@ int lengthOfLIS(int[] nums) {
     int[] dp = new int[nums.length];
     Arrays.fill(dp, 1);
     int maxLen = 1;
-    
+
     for (int i = 1; i < nums.length; i++) {
         for (int j = 0; j < i; j++) {
             if (nums[j] < nums[i]) {
@@ -2828,6 +2914,7 @@ int lengthOfLISOptimal(int[] nums) {
     }
     return sub.size();
 }
+
 ```
 
 **Problems:** LIS, Russian Doll Envelopes, Number of Longest Increasing Subsequence
@@ -2840,7 +2927,7 @@ int uniquePaths(int m, int n) {
     int[][] dp = new int[m][n];
     for (int i = 0; i < m; i++) dp[i][0] = 1;
     for (int j = 0; j < n; j++) dp[0][j] = 1;
-    
+
     for (int i = 1; i < m; i++) {
         for (int j = 1; j < n; j++) {
             dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
@@ -2854,10 +2941,10 @@ int minPathSum(int[][] grid) {
     int m = grid.length, n = grid[0].length;
     int[][] dp = new int[m][n];
     dp[0][0] = grid[0][0];
-    
+
     for (int i = 1; i < m; i++) dp[i][0] = dp[i - 1][0] + grid[i][0];
     for (int j = 1; j < n; j++) dp[0][j] = dp[0][j - 1] + grid[0][j];
-    
+
     for (int i = 1; i < m; i++) {
         for (int j = 1; j < n; j++) {
             dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
@@ -2865,6 +2952,7 @@ int minPathSum(int[][] grid) {
     }
     return dp[m - 1][n - 1];
 }
+
 ```
 
 **Problems:** Unique Paths, Unique Paths II, Minimum Path Sum, Dungeon Game, Maximal Square
@@ -2876,7 +2964,7 @@ int minPathSum(int[][] grid) {
 int matrixChainOrder(int[] dims) {
     int n = dims.length - 1;
     int[][] dp = new int[n][n];
-    
+
     for (int len = 2; len <= n; len++) {
         for (int i = 0; i < n - len + 1; i++) {
             int j = i + len - 1;
@@ -2889,6 +2977,7 @@ int matrixChainOrder(int[] dims) {
     }
     return dp[0][n - 1];
 }
+
 ```
 
 **Problems:** Matrix Chain Multiplication, Palindrome Partitioning, Burst Balloons
@@ -2898,6 +2987,7 @@ int matrixChainOrder(int[] dims) {
 ```java
 // Count numbers with specific digit properties
 // Used for problems like: count numbers from 1 to N with certain digit constraints
+
 ```
 
 ### DP Problems to Practice (by difficulty)
@@ -2952,7 +3042,7 @@ void bfs(List<List<Integer>> graph, int start) {
     boolean[] visited = new boolean[graph.size()];
     queue.offer(start);
     visited[start] = true;
-    
+
     while (!queue.isEmpty()) {
         int node = queue.poll();
         for (int neighbor : graph.get(node)) {
@@ -2963,6 +3053,7 @@ void bfs(List<List<Integer>> graph, int start) {
         }
     }
 }
+
 ```
 
 ## Shortest Path Algorithms
@@ -2976,15 +3067,15 @@ int[] dijkstra(List<List<int[]>> graph, int start) {
     int[] dist = new int[n];
     Arrays.fill(dist, Integer.MAX_VALUE);
     dist[start] = 0;
-    
+
     PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
     pq.offer(new int[]{start, 0});
-    
+
     while (!pq.isEmpty()) {
         int[] curr = pq.poll();
         int u = curr[0], d = curr[1];
         if (d > dist[u]) continue;
-        
+
         for (int[] edge : graph.get(u)) {
             int v = edge[0], weight = edge[1];
             if (dist[u] + weight < dist[v]) {
@@ -2995,6 +3086,7 @@ int[] dijkstra(List<List<int[]>> graph, int start) {
     }
     return dist;
 }
+
 ```
 
 ### Bellman-Ford — O(VE)
@@ -3005,7 +3097,7 @@ int[] bellmanFord(int n, int[][] edges, int start) {
     int[] dist = new int[n];
     Arrays.fill(dist, Integer.MAX_VALUE);
     dist[start] = 0;
-    
+
     for (int i = 0; i < n - 1; i++) {
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
@@ -3016,6 +3108,7 @@ int[] bellmanFord(int n, int[][] edges, int start) {
     }
     return dist;
 }
+
 ```
 
 ### Floyd-Warshall — O(V³)
@@ -3035,6 +3128,7 @@ int[][] floydWarshall(int[][] dist) {
     }
     return dist;
 }
+
 ```
 
 ## Minimum Spanning Tree
@@ -3046,7 +3140,7 @@ int kruskal(int n, int[][] edges) {
     Arrays.sort(edges, (a, b) -> a[2] - b[2]);
     UnionFind uf = new UnionFind(n);
     int totalWeight = 0, edgesUsed = 0;
-    
+
     for (int[] edge : edges) {
         if (uf.union(edge[0], edge[1])) {
             totalWeight += edge[2];
@@ -3056,6 +3150,7 @@ int kruskal(int n, int[][] edges) {
     }
     return totalWeight;
 }
+
 ```
 
 ### Prim's Algorithm — O(E log V)
@@ -3067,14 +3162,14 @@ int prim(List<List<int[]>> graph) {
     PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
     pq.offer(new int[]{0, 0}); // {node, weight}
     int totalWeight = 0;
-    
+
     while (!pq.isEmpty()) {
         int[] curr = pq.poll();
         int u = curr[0], w = curr[1];
         if (visited[u]) continue;
         visited[u] = true;
         totalWeight += w;
-        
+
         for (int[] edge : graph.get(u)) {
             if (!visited[edge[0]]) {
                 pq.offer(new int[]{edge[0], edge[1]});
@@ -3083,6 +3178,7 @@ int prim(List<List<int[]>> graph) {
     }
     return totalWeight;
 }
+
 ```
 
 ## Topological Sort
@@ -3094,12 +3190,12 @@ List<Integer> topologicalSort(int n, List<List<Integer>> graph) {
     for (int i = 0; i < n; i++) {
         for (int v : graph.get(i)) inDegree[v]++;
     }
-    
+
     Queue<Integer> queue = new LinkedList<>();
     for (int i = 0; i < n; i++) {
         if (inDegree[i] == 0) queue.offer(i);
     }
-    
+
     List<Integer> result = new ArrayList<>();
     while (!queue.isEmpty()) {
         int node = queue.poll();
@@ -3111,6 +3207,7 @@ List<Integer> topologicalSort(int n, List<List<Integer>> graph) {
     }
     return result.size() == n ? result : new ArrayList<>();
 }
+
 ```
 
 ## Cycle Detection
@@ -3143,6 +3240,7 @@ boolean hasCycleUndirected(int n, int[][] edges) {
     }
     return false;
 }
+
 ```
 
 ## Bipartite Graph
@@ -3151,7 +3249,7 @@ boolean hasCycleUndirected(int n, int[][] edges) {
 boolean isBipartite(int[][] graph) {
     int[] color = new int[graph.length];
     Arrays.fill(color, -1);
-    
+
     for (int i = 0; i < graph.length; i++) {
         if (color[i] == -1) {
             Queue<Integer> queue = new LinkedList<>();
@@ -3172,6 +3270,7 @@ boolean isBipartite(int[][] graph) {
     }
     return true;
 }
+
 ```
 
 ## Strongly Connected Components (Kosaraju's Algorithm)
@@ -3180,6 +3279,7 @@ boolean isBipartite(int[][] graph) {
 // Step 1: Get finish order with DFS
 // Step 2: Transpose graph
 // Step 3: DFS on transposed graph in reverse finish order
+
 ```
 
 ## Graph Problems to Practice
@@ -3261,6 +3361,7 @@ void backtrack(TreeNode node, int remaining, List<Integer> path, List<List<Integ
     }
     path.remove(path.size() - 1);
 }
+
 ```
 
 ## Binary Search Tree Operations
@@ -3292,6 +3393,7 @@ int kthSmallest(TreeNode root, int k) {
     }
     return -1;
 }
+
 ```
 
 ## Serialize and Deserialize Binary Tree
@@ -3339,6 +3441,7 @@ TreeNode deserialize(String data) {
     }
     return root;
 }
+
 ```
 
 ## Advanced Tree Problems
@@ -3384,3 +3487,25 @@ TreeNode deserialize(String data) {
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This comprehensive guide covers all essential topics for senior full-stack engineer interviews, from core CS fundamentals to system design, behavioral preparation, and career strategy. Master these concepts to demonstrate breadth and depth across the full engineering spectrum.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Heap
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -480,7 +490,6 @@ console.log(leastInterval(["A","A","A","B","B","B"], 2)); // 8
 Heaps are essential for problems requiring efficient access to minimum or maximum elements. They're commonly used for top K problems, merging sorted data, and scheduling.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Heap / Priority Queue
 Use when: Top K, median, merge sorted, scheduling
@@ -517,6 +526,13 @@ When to use heap:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

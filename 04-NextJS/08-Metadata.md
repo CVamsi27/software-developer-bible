@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Metadata API in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -718,131 +728,6 @@ Optimization:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the Metadata API in Next.js?**
-   The Metadata API provides a way to define and manage metadata for pages, including titles, descriptions, Open Graph tags, and structured data.
-
-2. **What is the difference between static and dynamic metadata?**
-   Static metadata is defined as a constant export. Dynamic metadata uses `generateMetadata` to compute metadata based on request parameters.
-
-3. **How do you define metadata for a page?**
-   Export a `metadata` object or `generateMetadata` function from the page file.
-
-4. **What is Open Graph metadata?**
-   Open Graph metadata controls how your page appears when shared on social media (Facebook, LinkedIn, etc.) with title, description, and image.
-
-5. **How do you add structured data to a page?**
-   Add a `<script type="application/ld+json">` tag with JSON-LD formatted structured data.
-
-6. **What is a metadata template?**
-   A template in layout metadata defines a pattern for page titles, like `%s | My App`, where `%s` is replaced by the page title.
-
-7. **How do you generate a sitemap in Next.js?**
-   Create a `sitemap.ts` file that exports a function returning an array of URLs with metadata.
-
-8. **What is metadataBase?**
-   The base URL used to resolve relative URLs in metadata, like OG images. It ensures proper absolute URLs.
-
-### Intermediate (5-10)
-
-9. **How do you handle metadata for dynamic routes?**
-   Use `generateMetadata` with params to fetch data and return appropriate metadata for each dynamic page.
-
-10. **How do you add Twitter card metadata?**
-    Use the `twitter` property in metadata to define card type, title, description, and images.
-
-11. **How do you handle multi-language metadata?**
-    Use `generateMetadata` with locale params and `alternates.languages` to define language-specific metadata.
-
-12. **What is canonical URL and why is it important?**
-    A canonical URL tells search engines the preferred version of a page, preventing duplicate content issues.
-
-13. **How do you add robots metadata?**
-    Use the `robots` property to control indexing and following behavior for search engines.
-
-14. **How do you add icons to your app?**
-    Use the `icons` property in metadata to define favicons, Apple touch icons, and other icons.
-
-15. **How do you handle metadata for nested layouts?**
-    Each layout can define metadata that extends parent layouts. Page metadata overrides layout metadata.
-
-### Senior (10-15)
-
-16. **Design a comprehensive SEO strategy using Next.js Metadata API.**
-    Implement dynamic metadata for all pages, add structured data, generate sitemaps, optimize OG images, and monitor search performance.
-
-17. **How would you implement automated OG image generation?**
-    Use Vercel OG or Sharp to generate images dynamically based on page content, and cache them for performance.
-
-18. **Explain the relationship between Metadata API and Core Web Vitals.**
-    Proper metadata improves SEO ranking factors, which correlate with Core Web Vitals. Good metadata also improves click-through rates.
-
-19. **How do you handle metadata for large-scale applications?**
-    Use templates, generate metadata from CMS data, implement metadata caching, and validate metadata programmatically.
-
-20. **Design a metadata validation system.**
-    Create schemas for metadata, validate at build time, test with social media debuggers, and monitor for metadata issues.
-
-21. **How would you implement metadata for an e-commerce platform?**
-    Generate product schema, dynamic OG images with product photos, price information, and availability status.
-
-22. **Design a metadata management system for a CMS.**
-    Create metadata templates, auto-generate from content, allow custom overrides, and validate before publishing.
-
-23. **How do you handle metadata for internationalized applications?**
-    Use hreflang tags, locale-specific metadata, and country-targeted content with proper canonical URLs.
-
-24. **Design a system for A/B testing metadata.**
-    Generate variant-specific metadata, track performance by variant, and implement statistical significance testing.
-
-25. **How would you implement metadata analytics?**
-    Track metadata changes, monitor search performance, measure social sharing metrics, and alert on metadata issues.
-
-### FAANG-style (5-10)
-
-26. **Design a metadata system for millions of pages.**
-    Use static generation for popular pages, dynamic generation for long-tail, implement metadata caching, and optimize for crawl budget.
-
-27. **How would you implement machine learning for metadata optimization?**
-    Use ML to generate titles/descriptions, predict click-through rates, optimize for search intent, and A/B test results.
-
-28. **Design a metadata pipeline for real-time content.**
-    Stream metadata updates, implement cache invalidation, handle breaking news metadata, and ensure freshness.
-
-29. **How would you implement metadata at global scale?**
-    Use CDN caching, implement regional metadata, handle timezone differences, and optimize for local search.
-
-30. **Design a metadata system with privacy compliance.**
-    Implement GDPR-compliant metadata, handle consent-based tracking, and respect user privacy preferences.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of the Metadata API?**
-    Dynamic metadata requires server-side execution, some properties are browser-dependent, and structured data validation is manual.
-
-32. **How does Metadata API affect performance?**
-    Static metadata has no impact. Dynamic metadata adds server-side execution time. Structured data adds minimal payload.
-
-33. **What is the future of the Metadata API?**
-    Better validation tools, automated optimization, AI-generated metadata, and improved social media integration.
-
-34. **How do you test metadata?**
-    Use Open Graph debugger, Google Rich Results Test, validate structured data, and check social media previews.
-
-35. **What security considerations apply to metadata?**
-    Never expose sensitive information, validate metadata inputs, and sanitize user-generated metadata.
-
-36. **How do you handle metadata for single-page applications?**
-    Use the Metadata API for initial load, implement dynamic metadata updates with useEffect, and handle client-side routing.
-
-37. **What are alternatives to the Metadata API?**
-    Next/head component (deprecated), manual HTML meta tags, and third-party SEO libraries.
-
-38. **How do you monitor metadata in production?**
-    Track metadata changes, monitor search console, test with validation tools, and set up alerts for issues.
 
 ## Summary
 
@@ -858,7 +743,6 @@ Optimization:
 | Robots | `robots.ts` export |
 
 ## Cheat Sheet
-
 ```yaml
 Static metadata:
 export const metadata: Metadata = {
@@ -885,6 +769,13 @@ Robots:
 export default function robots(): MetadataRoute.Robots { [...] }
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

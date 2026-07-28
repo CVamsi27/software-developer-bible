@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Server Components in Next.js
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -696,142 +706,6 @@ Client Component Rendering:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a Server Component?**
-   A Server Component renders on the server and sends only HTML to the client. It can't use React hooks or browser APIs but can directly access databases and files.
-
-2. **How do Server Components differ from Client Components?**
-   Server Components render on the server with zero client JS. Client Components render on the client with full interactivity. Server Components are the default in App Router.
-
-3. **Why can't Server Components use useState?**
-   useState is a client-side hook. Server Components execute once on the server and don't maintain state. Use Client Components for stateful UI.
-
-4. **What are the benefits of Server Components?**
-   Reduced bundle size, direct data access, better security, faster initial rendering, and streaming capabilities.
-
-5. **How do you make a component a Server Component?**
-   In App Router, all components are Server Components by default. No special directive needed.
-
-6. **Can Server Components fetch data?**
-   Yes, directly! No useEffect or API routes needed. Just use async/await with fetch, databases, or any data source.
-
-7. **How do Server Components handle errors?**
-   Errors throw in Server Components are caught by the nearest `error.tsx` boundary. Use `notFound()` for 404 errors.
-
-8. **What is the relationship between Server Components and streaming?**
-   Server Components can be wrapped in Suspense to stream HTML progressively. Fast components render first, slow ones stream in later.
-
-### Intermediate (5-10)
-
-9. **How do Server Components and Client Components compose?**
-   Server Components can import Client Components, but not vice versa. Client Components receive Server Components as `children` or `props`.
-
-10. **What is the component composition pattern?**
-    Server Components at the top fetch data and compose the page. Client Components handle specific interactive elements. This minimizes client-side JavaScript.
-
-11. **How do you pass data from Server to Client Components?**
-    Use props — but only serializable data (no functions, no Date objects, no Maps/Sets). Convert complex types to plain objects.
-
-12. **Can Server Components use context?**
-    Not React Context directly. Use `headers()`, `cookies()`, or `params` for server-side context. Client Components can use React Context normally.
-
-13. **How do Server Components affect SEO?**
-    Excellent SEO — content is rendered on the server, so crawlers see full HTML without executing JavaScript.
-
-14. **What is the `async` keyword in Server Components?**
-    Server Components can be async functions, allowing direct use of await for data fetching. This is not possible in Client Components.
-
-15. **How do you test Server Components?**
-    Use `@testing-library/react` with a server rendering mock, or test the data fetching logic separately. Integration tests are most valuable.
-
-### Senior (10-15)
-
-16. **Design a data fetching architecture using Server Components.**
-    Use a composition pattern: top-level Server Component orchestrates data fetching, child Server Components fetch their own data, wrap each in Suspense for streaming. Use React cache() for deduplication.
-
-17. **How would you implement optimistic updates with Server Components?**
-    Use Server Actions for mutations, client-side state for optimistic updates, and revalidateTag/revalidatePath to refresh Server Component data.
-
-18. **Explain the Server Component rendering pipeline in detail.**
-
-    1. Server receives request
-
-    2. React tree walks Server Components
-
-    3. Each async Server Component awaits data
-
-    4. HTML is generated and streamed
-
-    5. Client receives and displays HTML
-
-    6. Client Components hydrate separately
-
-19. **How do Server Components interact with caching?**
-    Server Components can use fetch with cache options, React cache() for deduplication, and revalidation strategies. The Full Route Cache stores rendered output.
-
-20. **Design a system for real-time updates with Server Components.**
-    Use Server Components for initial render, WebSocket/SSE for live updates via Client Components, and revalidation for periodic data refresh.
-
-21. **How do you handle complex state management with Server Components?**
-    Keep state in Client Components. Use URL state for shared state. Server Components handle data fetching and initial state. Use Server Actions for mutations.
-
-22. **Explain the security implications of Server Components.**
-    Sensitive logic stays on the server, no API keys in bundles, direct database access is safe. But be careful not to leak secrets through props or errors.
-
-23. **How would you implement a micro-frontend with Server Components?**
-    Use Module Federation or import maps, each micro-frontend as a Server Component tree, with shared layouts and parallel routes for composition.
-
-24. **Design a performance monitoring system for Server Components.**
-    Track render times, data fetching duration, cache hit rates, streaming performance. Use React DevTools profiling and custom performance marks.
-
-25. **How do Server Components affect bundle analysis?**
-    Server Components don't appear in client bundles. Use `next build` output to verify. Client Components should be isolated and code-split.
-
-### FAANG-style (5-10)
-
-26. **Design a Server Component architecture that handles 1M+ concurrent users.**
-    Use edge rendering, implement connection pooling for databases, use streaming for progressive rendering, and leverage CDN caching for static Server Component output.
-
-27. **How would you implement A/B testing with Server Components?**
-    Use middleware to detect variants, Server Components to render variant-specific content, and cache each variant separately with ISR.
-
-28. **Design a system for Server Component composition across microservices.**
-    Use Federation patterns, each microservice exports Server Components, compose them in a shell application, and handle cross-service data dependencies.
-
-29. **How would you optimize Server Component performance for slow databases?**
-    Use connection pooling, implement query optimization, use streaming to show partial results, and cache aggressively with ISR.
-
-30. **Design a Server Component architecture for global distribution.**
-    Use edge functions for geo-routing, replicate databases regionally, implement smart caching, and use streaming to minimize latency.
-
-### Follow-ups (5-10)
-
-31. **What are the limitations of Server Components?**
-    No hooks, no browser APIs, no context, serialization constraints, debugging complexity, and learning curve.
-
-32. **How do Server Components affect debugging?**
-    Server-side errors don't appear in browser console. Use server logs, React DevTools, and error boundaries for debugging.
-
-33. **What is the future of Server Components?**
-    Better DevTools, improved streaming, more server-side APIs, and deeper integration with React features.
-
-34. **How do Server Components interact with Service Workers?**
-    Server Components don't affect Service Workers directly. Service Workers cache client-side assets, not server-rendered HTML.
-
-35. **What is the relationship between Server Components and React Server Actions?**
-    Server Actions are Server Components that can be called from Client Components. They enable mutations without API routes.
-
-36. **How do you migrate existing Client Components to Server Components?**
-    Identify components that don't need interactivity, move data fetching to Server Components, and isolate truly interactive parts as Client Components.
-
-37. **What testing strategies work best for Server Components?**
-    Test data fetching logic separately, use integration tests for full pages, mock external services, and test error handling scenarios.
-
-38. **How do Server Components affect accessibility?**
-    Server-rendered HTML is immediately accessible. No FOUC or layout shift from hydration. Better for screen readers and assistive technologies.
 
 ## Summary
 
@@ -847,7 +721,6 @@ Client Component Rendering:
 | Default | Yes | No |
 
 ## Cheat Sheet
-
 ```text
 Server Component (default):
 
@@ -875,6 +748,13 @@ Server → Client: Props (serializable only)
 Client → Server: Server Actions
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

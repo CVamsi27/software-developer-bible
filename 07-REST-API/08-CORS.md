@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # CORS (Cross-Origin Resource Sharing)
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -560,84 +570,12 @@ app.use(cors({
 - **Avoid wildcard** - More processing for origin validation
 - **Async origin checking** - Don't block on origin validation
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is CORS?** - Cross-Origin Resource Sharing; a security mechanism for cross-origin HTTP requests.
-
-2. **Why do we need CORS?** - Browsers block cross-origin requests by default for security.
-
-3. **What is a preflight request?** - OPTIONS request sent by browser to check if cross-origin request is allowed.
-
-4. **What headers are used for CORS?** - Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers.
-
-5. **What is the difference between same-origin and cross-origin?** - Same-origin: same protocol, domain, port; Cross-origin: different in any.
-
-### Intermediate (5)
-
-6. **When is a preflight request sent?** - For non-simple requests (PUT, DELETE, custom headers, credentials).
-
-7. **What is Access-Control-Allow-Credentials?** - Header indicating if cookies/credentials can be sent.
-
-8. **How do you handle CORS in Node.js?** - Use cors middleware or manual header setting.
-
-9. **What is the maxAge header?** - How long preflight response can be cached (seconds).
-
-10. **How do you expose custom headers to JavaScript?** - Use Access-Control-Expose-Headers header.
-
-### Senior (10)
-
-11. **Design CORS for a multi-tenant API** - Dynamic origin validation, tenant-specific rules.
-
-12. **How do you handle CORS in microservices?** - API gateway handles CORS, services trust internal requests.
-
-13. **Design CORS with authentication** - Credentials handling, secure cookie settings.
-
-14. **How do you debug CORS issues?** - Browser dev tools, check preflight response, verify headers.
-
-15. **Design CORS for WebSocket connections** - Origin validation during upgrade handshake.
-
-16. **How do you handle CORS in serverless functions?** - Middleware, environment-based configuration.
-
-17. **Design CORS for file uploads** - Expose progress headers, handle large payloads.
-
-18. **How do you handle CORS with GraphQL?** - OPTIONS handling, custom headers for queries.
-
-19. **Design CORS monitoring and analytics** - Track blocked requests, origin statistics.
-
-20. **How do you handle CORS during incidents?** - Graceful degradation, fallback origins.
-
-### FAANG-style (5)
-
-21. **Design CORS for a global platform** - Regional origins, latency considerations, edge caching.
-
-22. **How would you implement CORS for a service mesh?** - Sidecar proxy handling, distributed CORS.
-
-23. **Design CORS with zero-trust security** - Verify every request, no implicit trust.
-
-24. **How do you handle CORS for real-time applications?** - WebSocket origins, SSE headers.
-
-25. **Design CORS for API marketplaces** - Third-party origins, dynamic whitelisting.
-
-### Follow-ups (5)
-
-26. **What are CORS security risks?** - Misconfigured origins, credential leakage, CSRF attacks.
-
-27. **How does CORS relate to CSRF?** - CORS doesn't prevent CSRF; use CSRF tokens.
-
-28. **Can CORS be bypassed?** - Server-side requests don't have CORS restrictions.
-
-29. **How do you test CORS?** - Browser dev tools, curl, automated tests.
-
-30. **What is the future of CORS?** - Potential changes with WebTransport, HTTP/3.
 
 ## Summary
 
 CORS is essential for secure cross-origin communication. Always specify allowed origins instead of using wildcards, handle preflight requests, and set appropriate maxAge for caching. Test CORS thoroughly and monitor for issues. Remember that CORS is a browser mechanism; server-to-server requests don't have CORS restrictions.
 
 ## Cheat Sheet
-
 | Header | Purpose | Example |
 |--------|---------|---------|
 | Access-Control-Allow-Origin | Allowed origins | https://app.com |
@@ -648,6 +586,14 @@ CORS is essential for secure cross-origin communication. Always specify allowed 
 | Access-Control-Max-Age | Preflight cache duration | 86400 (24 hours) |
 | Access-Control-Request-Method | Requested method (preflight) | PUT |
 | Access-Control-Request-Headers | Requested headers (preflight) | Content-Type |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

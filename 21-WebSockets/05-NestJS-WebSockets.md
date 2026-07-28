@@ -1,4 +1,14 @@
+---
+section: WebSockets
+category: Real-Time
+tags: [concept]
+---
+
 # NestJS WebSockets
+
+[![Section](https://img.shields.io/badge/section-WebSockets-brightgreen)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -856,197 +866,6 @@ export class AdminGateway {}
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is a WebSocket Gateway in NestJS?**
-
-   - Bridge between clients and NestJS application
-   - Handles WebSocket connections and events
-   - Supports decorators, guards, interceptors
-   - Built on top of Socket.io
-
-2. **How do you create a WebSocket Gateway?**
-
-   - Use `@WebSocketGateway()` decorator
-   - Implement `OnGatewayInit`, `OnGatewayConnection`, `OnGatewayDisconnect`
-   - Use `@SubscribeMessage()` for event handling
-   - Inject services via constructor
-
-3. **What are WebSocket Guards?**
-
-   - Authentication/authorization for WebSocket connections
-   - Implement `CanActivate` interface
-   - Access client via `context.switchToWs().getClient()`
-   - Throw `WsException` for rejection
-
-4. **How do you handle WebSocket events?**
-
-   - Use `@SubscribeMessage('event-name')` decorator
-   - Access data with `@MessageBody()`
-   - Access client with `@ConnectedSocket()`
-   - Return response or emit event
-
-5. **What is the difference between WebSocket and HTTP in NestJS?**
-
-   - WebSocket is persistent connection
-   - HTTP is request-response
-   - WebSocket uses Gateway, HTTP uses Controller
-   - WebSocket supports bidirectional communication
-
-### Intermediate (5-8)
-
-6. **How do you implement authentication in WebSocket Gateway?**
-
-   - Use JWT guard
-   - Extract token from handshake
-   - Verify token and attach user to client
-   - Use in all message handlers
-
-7. **How do you handle rooms in NestJS WebSockets?**
-
-   - Use `client.join(roomId)` to join
-   - Use `client.leave(roomId)` to leave
-   - Use `this.server.to(roomId).emit()` for room messages
-   - Track room membership
-
-8. **How do you use interceptors with WebSocket?**
-
-   - Create class implementing `NestInterceptor`
-   - Use `@UseInterceptors()` decorator
-   - Log, transform, or handle errors
-   - Apply globally or per gateway
-
-9. **How do you test WebSocket Gateways?**
-
-   - Mock Socket.io server
-   - Test message handlers
-   - Test guards and interceptors
-   - Use `socket.io-client` for integration tests
-
-10. **How do you handle errors in WebSocket Gateways?**
-
-    - Use exception filters
-    - Throw `WsException`
-    - Catch errors in handlers
-    - Emit error events to client
-
-### Senior (8-12)
-
-11. **Design a scalable WebSocket architecture with NestJS**
-
-    - Use Redis adapter for scaling
-    - Implement connection pooling
-    - Use namespaces for separation
-    - Monitor with metrics
-
-12. **How do you handle WebSocket scaling across multiple servers?**
-
-    - Use `@nestjs/platform-socket.io` with Redis adapter
-    - Implement sticky sessions
-    - Share state via Redis
-    - Use message brokers for cross-server communication
-
-13. **How do you implement WebSocket middleware?**
-
-    - Use `@WebSocketGateway({ useMiddleware: ... })`
-    - Implement `NestMiddleware`
-    - Log, validate, or transform messages
-    - Apply to all gateway events
-
-14. **How do you handle WebSocket in microservices?**
-
-    - Use WebSocket gateway in API gateway
-    - Communicate via message broker
-    - Implement service discovery
-    - Handle connection state
-
-15. **How do you monitor WebSocket connections?**
-
-    - Track connection counts
-    - Monitor message rates
-    - Alert on errors
-    - Dashboard for visibility
-
-### FAANG-style (5-8)
-
-16. **Design a real-time chat system with NestJS**
-
-    - WebSocket gateway for connections
-    - Redis for scaling
-    - Message persistence
-    - Presence tracking
-    - Push notification fallback
-
-17. **Design a collaborative editing system**
-
-    - Operational Transform or CRDT
-    - Cursor presence
-    - Version history
-    - Conflict resolution
-    - Offline support
-
-18. **Design a multiplayer game backend**
-
-    - WebSocket gateway for connections
-    - Game state management
-    - Anti-cheat measures
-    - Scaling across servers
-    - Reconnection handling
-
-19. **Design a live notification system**
-
-    - WebSocket gateway for real-time
-    - Redis for scaling
-    - Message persistence
-    - User preferences
-    - Delivery guarantees
-
-20. **Design a live dashboard system**
-
-    - WebSocket for real-time updates
-    - Data aggregation
-    - Connection management
-    - Caching strategies
-    - Export functionality
-
-### Follow-ups (5-8)
-
-21. **How do you handle WebSocket reconnection in NestJS?**
-
-    - Client-side reconnection logic
-    - Server-side state preservation
-    - Missed message recovery
-    - Connection state tracking
-
-22. **How do you secure WebSocket connections?**
-
-    - Use WSS (WebSocket Secure)
-    - Implement JWT authentication
-    - Rate limit connections
-    - Validate all messages
-
-23. **How do you optimize WebSocket performance?**
-
-    - Message compression
-    - Binary protocol
-    - Connection pooling
-    - Message batching
-
-24. **How do you handle WebSocket in production?**
-
-    - Graceful shutdown
-    - Health checks
-    - Monitoring and alerting
-    - Log aggregation
-
-25. **How do you migrate to NestJS WebSockets?**
-
-    - Start with simple gateway
-    - Add authentication
-    - Implement guards and interceptors
-    - Scale with Redis
 
 ## Summary
 
@@ -1067,6 +886,13 @@ Key benefits:
 - Built-in security features
 - Easy scaling with Redis adapter
 - Production-ready patterns
+
+---
+
+## See Also
+- [System Design](../11-System-Design/)
+- [NestJS](../06-NestJS/)
+- [Observability](../22-Observability/)
 
 ## References & Learn More
 

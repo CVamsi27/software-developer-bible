@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Live Betting System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -1060,83 +1070,6 @@ alerts:
 | Settlement | Real-time | Batch | Real-time for UX |
 | Cash Out | Pre-calculated | On-demand | On-demand |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you implement real-time odds updates?**
-
-   - WebSocket for push updates
-   - Redis for fast access
-   - Background jobs for calculation
-   - Event-driven architecture
-
-2. **How do you handle high-concurrency betting?**
-
-   - Atomic operations
-   - Distributed locks
-   - Queue overflow handling
-   - Rate limiting
-
-3. **How would you implement cash out?**
-
-   - Dynamic calculation based on current odds
-   - Atomic wallet operations
-   - Real-time settlement
-   - Fraud detection
-
-### Scaling Questions
-
-4. **How do you scale to 100K concurrent users?**
-
-   - Horizontal scaling
-   - WebSocket clustering
-   - Database sharding
-   - Redis clustering
-
-5. **How do you handle peak betting volumes?**
-
-   - Pre-warm caches
-   - Queue-based processing
-   - Auto-scaling
-   - Rate limiting
-
-### Trade-off Questions
-
-6. **How do you balance speed vs accuracy?**
-
-   - Fast odds updates with eventual accuracy
-   - Bet validation with quick confirmation
-   - Settlement with verification
-
-7. **How do you handle odds changes during bet placement?**
-
-   - Lock odds for bet duration
-   - Accept/reject based on policy
-   - Notify user of changes
-
-### Senior-level Questions
-
-8. **How would you implement responsible gambling?**
-
-   - Deposit limits
-   - Loss limits
-   - Session time limits
-   - Self-exclusion
-
-9. **How do you detect and prevent fraud?**
-
-   - Pattern detection
-   - Velocity checks
-   - Device fingerprinting
-   - Account behavior analysis
-
-10. **How would you implement live streaming integration?**
-
-    - Low-latency video feed
-    - Synchronized odds display
-    - Watch and bet simultaneously
-    - Multi-device support
 
 ## Summary
 
@@ -1163,6 +1096,14 @@ Key takeaways:
 This design supports 100K+ concurrent users with < 100ms odds updates and 10K+ bets per second.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

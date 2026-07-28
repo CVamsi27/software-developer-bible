@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Promises
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -611,338 +621,6 @@ async function processBatched() {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is a Promise in JavaScript?**
-
-A: A Promise is an object representing the eventual completion or failure of an asynchronous operation. It's a container for a future value that allows you to chain asynchronous operations.
-
-**Q2: What are the three states of a Promise?**
-
-A:
-
-- **Pending**: Initial state, neither fulfilled nor rejected
-- **Fulfilled**: Operation completed successfully
-- **Rejected**: Operation failed
-
-**Q3: What is the difference between `.then()` and `.catch()`?**
-
-A:
-
-- `.then()`: Handles fulfilled state, receives the resolved value
-- `.catch()`: Handles rejected state, receives the error/reason
-
-**Q4: What is Promise chaining?**
-
-A: Promise chaining is linking multiple `.then()` handlers together. Each `.then()` returns a new promise, allowing you to chain operations sequentially.
-
-**Q5: How do you create a Promise?**
-
-A: Use the `Promise` constructor:
-
-```typescript
-const promise = new Promise((resolve, reject) => {
-  // Async operation
-  if (success) {
-    resolve(value);
-  } else {
-    reject(error);
-  }
-});
-
-```
-
-### Intermediate (5-10 questions)
-
-**Q6: What is the difference between `Promise.all`, `Promise.allSettled`, `Promise.race`, and `Promise.any`?**
-
-A:
-
-- `Promise.all`: Resolves when all resolve, rejects if any rejects
-- `Promise.allSettled`: Resolves when all settle (fulfilled or rejected)
-- `Promise.race`: Resolves/rejects with first settled promise
-- `Promise.any`: Resolves with first fulfilled, rejects if all reject
-
-**Q7: What is microtask in relation to Promises?**
-
-A: Promise callbacks (`.then`, `.catch`, `.finally`) are microtasks. They run after the current synchronous code completes but before macrotasks (setTimeout, I/O).
-
-**Q8: What happens if you don't handle a rejected Promise?**
-
-A: It results in an "unhandled promise rejection" warning. In modern browsers and Node.js, this can cause the program to terminate.
-
-**Q9: What is `finally()` used for?**
-
-A: `finally()` runs regardless of whether the promise is fulfilled or rejected. It's useful for cleanup operations that should always execute.
-
-**Q10: How do you convert a callback-based function to a Promise?**
-
-A: Use the `Promise` constructor:
-
-```typescript
-function promisify(callbackFn) {
-  return function(...args) {
-    return new Promise((resolve, reject) => {
-      callbackFn(...args, (error, result) => {
-        if (error) reject(error);
-        else resolve(result);
-      });
-    });
-  };
-}
-
-```
-
-### Senior (10-15 questions)
-
-**Q11: Explain the Promise resolution procedure.**
-
-A: When a promise is resolved:
-
-1. If value is a thenable, adopt its state
-
-2. If value is a promise, queue `.then()` handlers
-
-3. If value is a plain value, wrap in resolved promise
-
-4. Settle the promise with the value
-
-**Q12: What is promise unwrapping?**
-
-A: Promise unwrapping is when a `.then()` handler returns a promise, and the next `.then()` waits for that promise to settle before executing.
-
-**Q13: What is the difference between returning a value and returning a Promise in `.then()`?**
-
-A:
-
-- Returning a value: Wraps it in a resolved promise
-- Returning a promise: The next `.then()` waits for it to settle
-
-**Q14: How do you implement a custom Promise.all?**
-
-A:
-
-```typescript
-function customPromiseAll(promises) {
-  return new Promise((resolve, reject) => {
-    const results = [];
-    let completed = 0;
-
-    promises.forEach((promise, index) => {
-      Promise.resolve(promise)
-        .then(value => {
-          results[index] = value;
-          completed++;
-          if (completed === promises.length) {
-            resolve(results);
-          }
-        })
-        .catch(reject);
-    });
-  });
-}
-
-```
-
-**Q15: What are the performance implications of Promise.all vs sequential awaits?**
-
-A:
-
-- `Promise.all`: Runs in parallel, faster for independent operations
-- Sequential awaits: Runs one after another, slower but simpler
-- Use `Promise.all` when operations don't depend on each other
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a Promise-based task scheduler.**
-
-A:
-
-```typescript
-class TaskScheduler {
-  private queue: (() => Promise<any>)[] = [];
-  private running = 0;
-  private maxConcurrent: number;
-
-  constructor(maxConcurrent: number = 5) {
-    this.maxConcurrent = maxConcurrent;
-  }
-
-  async add(task: () => Promise<any>): Promise<any> {
-    while (this.running >= this.maxConcurrent) {
-      await new Promise(resolve => setTimeout(resolve, 10));
-    }
-
-    this.running++;
-    try {
-      return await task();
-    } finally {
-      this.running--;
-      this.processQueue();
-    }
-  }
-
-  private processQueue() {
-    if (this.queue.length > 0 && this.running < this.maxConcurrent) {
-      const task = this.queue.shift()!;
-      this.add(task);
-    }
-  }
-}
-
-```
-
-**Q17: How would you implement Promise.retry with exponential backoff?**
-
-A:
-
-```typescript
-async function retryWithBackoff<T>(
-  fn: () => Promise<T>,
-  maxAttempts: number = 3,
-  baseDelay: number = 1000
-): Promise<T> {
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      return await fn();
-    } catch (error) {
-      if (attempt === maxAttempts) {
-        throw error;
-      }
-
-      const delay = baseDelay * Math.pow(2, attempt - 1);
-      const jitter = delay * 0.1 * Math.random();
-
-      await new Promise(resolve =>
-        setTimeout(resolve, delay + jitter)
-      );
-    }
-  }
-
-  throw new Error('Max attempts reached');
-}
-
-```
-
-**Q18: Analyze the memory implications of Promise chains.**
-
-A:
-
-- Each `.then()` creates a new promise
-- Old promises are garbage collected when no longer referenced
-- Long chains can use significant memory
-- Solution: Use async/await for flatter code
-
-**Q19: How do you debug Promise chains?**
-
-A:
-
-1. Add `.then()` with logging
-
-2. Use `console.trace()` in `.catch()`
-
-3. Chrome DevTools: Async stack traces
-
-4. Use `Promise.allSettled()` to see all results
-
-5. Implement custom promise wrappers with logging
-
-**Q20: What are the security implications of Promises?**
-
-A:
-
-1. **Timing attacks**: Measure promise resolution time
-
-2. **Resource exhaustion**: Create too many promises
-
-3. **Information leakage**: Promise values can be intercepted
-
-4. **Mitigation**: Limit concurrent promises, validate inputs
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a Promise-related bug in production?**
-
-A: Common bug: Unhandled rejection
-
-```typescript
-// Bug: Missing .catch()
-fetchUser()
-  .then(user => fetchPosts(user.id))
-  .then(posts => renderPosts(posts));
-// If fetchUser rejects, unhandled rejection
-
-// Fix: Always add .catch()
-fetchUser()
-  .then(user => fetchPosts(user.id))
-  .then(posts => renderPosts(posts))
-  .catch(error => showError(error));
-
-```
-
-**Q22: How do you handle Promise cancellation?**
-
-A:
-
-```typescript
-function cancellablePromise<T>(promise: Promise<T>): [Promise<T>, () => void] {
-  let cancelled = false;
-  let cancel: () => void;
-
-  const wrappedPromise = new Promise<T>((resolve, reject) => {
-    cancel = () => {
-      cancelled = true;
-      reject(new Error('Cancelled'));
-    };
-
-    promise
-      .then(value => {
-        if (!cancelled) resolve(value);
-      })
-      .catch(error => {
-        if (!cancelled) reject(error);
-      });
-  });
-
-  return [wrappedPromise, cancel];
-}
-
-```
-
-**Q23: What is the relationship between Promises and async/await?**
-
-A: async/await is syntactic sugar over Promises. `async` functions always return Promises, and `await` pauses execution until a Promise settles.
-
-**Q24: How do different frameworks handle Promises?**
-
-A:
-
-- **React**: useEffect with async functions, state management
-- **Vue**: Composition API with async setup
-- **Angular**: HttpClient returns Observables (can convert to Promises)
-- **Svelte**: onMount with async functions
-
-**Q25: What are best practices for working with Promises?**
-
-A:
-
-1. Always handle errors with `.catch()` or try/catch
-
-2. Return values in `.then()` handlers
-
-3. Use `Promise.all` for parallel operations
-
-4. Avoid creating Promises unnecessarily
-
-5. Use async/await for cleaner code
-
-6. Implement proper cancellation patterns
-
-7. Monitor unhandled rejections
-
-8. Use TypeScript for type safety
 
 ## Summary
 
@@ -965,7 +643,6 @@ Promises are essential for async JavaScript:
 Understanding Promises is crucial for writing clean, maintainable asynchronous JavaScript.
 
 ## Cheat Sheet
-
 ```text
 PROMISES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -1029,6 +706,13 @@ DEBUGGING:
 • Promise.allSettled() for all results
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

@@ -1,14 +1,25 @@
+---
+section: SDE Role
+category: Interview
+tags: [tool]
+---
+
 # ⏱️ Daily Study Timer Template
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Track every minute of your preparation**
-> 
+>
 > Based on the Pomodoro Technique: 25 min focused work + 5 min break
 
 ---
 
 ## 🍅 Pomodoro Technique Basics
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────┐
 │  POMODORO CYCLE                                         │
 ├─────────────────────────────────────────────────────────┤
@@ -21,6 +32,7 @@
 │  🍅 Work Session: 25 minutes                           │
 │  🎉 Long Break: 15-30 minutes (after 4 pomodoros)     │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -71,7 +83,8 @@
 
 ### Daily Summary
 
-```
+```text
+
 Total Study Time: ___h ___m
 Total Pomodoros Completed: ___
 Productive Time: ___h ___m (___%)
@@ -81,25 +94,28 @@ Break Time: ___h ___m (___%)
 Problems Solved: ___
 Problems Reviewed: ___
 New Concepts Learned: ___
+
 ```
 
 ### Daily Reflection
 
-```
+```text
+
 What went well today:
-- 
-- 
-- 
+-
+-
+-
 
 What could be improved:
-- 
-- 
-- 
+-
+-
+-
 
 Tomorrow's focus:
-- 
-- 
-- 
+-
+-
+-
+
 ```
 
 ---
@@ -121,7 +137,8 @@ Tomorrow's focus:
 
 ### Weekly Stats
 
-```
+```text
+
 Total Study Time: ___h ___m
 Average Daily: ___h ___m
 Total Pomodoros: ___
@@ -132,6 +149,7 @@ Least Productive Day: ___ (___h ___m)
 
 Productive vs Review Ratio: ___% : ___%
 Target Ratio: 60% : 40%
+
 ```
 
 ---
@@ -150,21 +168,23 @@ Target Ratio: 60% : 40%
 
 ### Monthly Insights
 
-```
+```text
+
 Average Daily Study Time: ___h ___m
 Most Studied Topic: ___
 Least Studied Topic: ___
 Productivity Trend: ⬆️ / ➡️ / ⬇️
 
 Key Accomplishments:
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 Areas for Improvement:
-1. 
-2. 
-3. 
+1.
+2.
+3.
+
 ```
 
 ---
@@ -207,7 +227,8 @@ Areas for Improvement:
 
 ### 4-Hour Study Day
 
-```
+```text
+
 08:00 - 08:05  Set up workspace, start timer
 08:05 - 08:30  🍅 Pomodoro 1: Review yesterday's material
 08:30 - 08:35  ☕ Break
@@ -226,13 +247,15 @@ Areas for Improvement:
 11:40 - 11:45  ☕ Break
 11:45 - 12:10  🍅 Pomodoro 8: Behavioral prep
 12:10 - 12:30  🎉 Long Break + Summary
+
 ```
 
 **Total: 8 Pomodoros = 3.5 hours productive + 1 hour breaks = 4.5 hours total**
 
 ### 6-Hour Study Day
 
-```
+```text
+
 Morning Session (3 hours):
 ├── 08:00 - 10:00  4 Pomodoros (Coding - New Problems)
 ├── 10:00 - 10:15  Long Break
@@ -247,6 +270,7 @@ Evening Session (1 hour):
 └── 18:00 - 19:00  2 Pomodoros (Light Review + Planning)
 
 Total: 13 Pomodoros = 5.5 hours productive + 1 hour breaks = 6.5 hours total
+
 ```
 
 ---
@@ -275,13 +299,15 @@ echo "☕ Break started! 5 minutes..." && sleep 300 && echo "⏰ Break over!"
 
 # macOS/Linux - 15 minute long break
 echo "🎉 Long break! 15 minutes..." && sleep 900 && echo "⏰ Break over!"
+
 ```
 
 ---
 
 ## 📱 Printable Daily Timer Card
 
-```
+```text
+
 ┌─────────────────────────────────────────────────────────┐
 │  DAILY STUDY TIMER CARD                                 │
 │  Date: ___/___/___                                      │
@@ -302,6 +328,7 @@ echo "🎉 Long break! 15 minutes..." && sleep 900 && echo "⏰ Break over!"
 │  Problems Solved: ___                                   │
 │  Notes: ________________________________________        │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -339,7 +366,8 @@ echo "🎉 Long break! 15 minutes..." && sleep 900 && echo "⏰ Break over!"
 
 ### Weekly Productivity Score
 
-```
+```text
+
 Formula: (Productive Minutes / Total Minutes) × 100
 
 Target: 70-80% productive time
@@ -349,6 +377,7 @@ Example:
 - Productive time: 5 hours (300 min)
 - Break time: 1 hour (60 min)
 - Productivity score: (300/360) × 100 = 83% ✅
+
 ```
 
 ### Efficiency Metrics
@@ -366,3 +395,25 @@ Example:
 > **Remember:** The goal isn't to study more hours — it's to study MORE EFFECTIVELY. Quality focused time beats distracted hours every time!
 
 > **Pro Tip:** Track your pomodoros for 2 weeks, then analyze the data. You'll discover your most productive times of day, optimal session lengths, and topics that need more attention.
+---
+
+
+## Summary
+
+This daily study timer provides a structured approach to managing your interview preparation time, with Pomodoro-based sessions, topic rotation, and progress tracking templates.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

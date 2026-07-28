@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # 🔷 Meta (Facebook) — Interview Guide (2025–2026)
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Guide-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Target Role:** E3 (Junior) / E4 (Mid) / E5 (Senior) Software Engineer
-> 
+>
 > **Teams to Consider:** Instagram, WhatsApp, Messenger, Reality Labs (Quest), AI/ML, Infrastructure
 
 ---
@@ -82,7 +92,8 @@
 
 ### 📝 Coding Round Tips for Meta
 
-```
+```text
+
 ✅ DO:
   • Talk through your approach BEFORE coding
   • Start with brute force, then optimize
@@ -98,6 +109,7 @@
   • Ignore edge cases
   • Spend too long on one approach — iterate quickly
   • Give up when stuck — ask for hints
+
 ```
 
 ---
@@ -127,7 +139,8 @@
 
 ### System Design Framework for Meta
 
-```
+```text
+
 Step 1: Requirements (5 min)
   - Functional: What does the system do?
   - Non-functional: Scale, latency, availability
@@ -153,6 +166,7 @@ Step 5: Wrap-up (5 min)
   - Summarize key decisions
   - Discuss trade-offs
   - Mention monitoring and observability
+
 ```
 
 ---
@@ -161,7 +175,8 @@ Step 5: Wrap-up (5 min)
 
 ### Product Architecture vs System Design
 
-```
+```text
+
 System Design (Infrastructure teams):
 - Focus: Backend architecture, distributed systems
 - Example: Design a distributed cache, Design a message queue
@@ -171,11 +186,13 @@ Product Architecture (Product teams):
 - Focus: Client-server interaction, user-facing workflows
 - Example: Design Instagram feed, Design Stories feature
 - Emphasis: API design, data modeling, UX considerations
+
 ```
 
 ### Fan-out on Read vs Write
 
-```
+```text
+
 Fan-out on Write (Push model):
 - When user posts, push to all followers' feeds
 - Pros: Fast read, pre-computed feeds
@@ -192,6 +209,7 @@ Meta's approach: Hybrid
 - Regular users: Fan-out on write
 - Celebrities (millions of followers): Fan-out on read
 - Feed = pre-computed (write) + on-demand (read)
+
 ```
 
 ---
@@ -200,13 +218,15 @@ Meta's approach: Hybrid
 
 ### Must-Have Stories (Prepare 5-6)
 
-```
+```text
+
 1. A time you had to make a decision quickly (Move Fast)
 2. A time you took a bold risk (Be Bold)
 3. A time you focused on high-impact work (Focus on Impact)
 4. A time you resolved a conflict with a teammate (Be Open)
 5. A time you failed and what you learned (Growth Mindset)
 6. A time you went above and beyond for a user (Impact)
+
 ```
 
 ### Common Meta Behavioral Questions
@@ -224,18 +244,20 @@ Meta's approach: Hybrid
 
 ### "Why Meta?" — Answer Framework
 
-```
-1. Impact at Scale: "Meta products (Facebook, Instagram, WhatsApp) connect 
+```text
+
+1. Impact at Scale: "Meta products (Facebook, Instagram, WhatsApp) connect
    billions of people. I want to work on systems that impact humanity."
 
-2. Move Fast Culture: "Meta's culture of shipping quickly and iterating 
+2. Move Fast Culture: "Meta's culture of shipping quickly and iterating
    resonates with how I approach engineering."
 
-3. Technical Innovation: "From React to PyTorch to TIGRA, Meta pushes 
+3. Technical Innovation: "From React to PyTorch to TIGRA, Meta pushes
    boundaries in developer tools and AI."
 
-4. Specific Team: "I'm particularly interested in [specific team] because 
+4. Specific Team: "I'm particularly interested in [specific team] because
    [specific reason about their technical challenges/products]."
+
 ```
 
 ---
@@ -268,7 +290,8 @@ Meta's approach: Hybrid
 
 ## 🎯 Final Checklist Before Meta Interview
 
-```
+```text
+
 Technical:
   [ ] Can solve Medium problems in 15-20 minutes
   [ ] Can solve Hard problems in 30-40 minutes
@@ -287,6 +310,7 @@ Logistics:
   [ ] Know interviewer names and their teams
   [ ] Have questions prepared for interviewers
   [ ] Research the specific team you're interviewing for
+
 ```
 
 ---
@@ -297,7 +321,7 @@ Logistics:
 
 ---
 
-*Last updated: July 2025*
+*Last updated: July 2026*
 
 ---
 
@@ -319,3 +343,25 @@ Logistics:
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## Summary
+
+This guide covers Meta's interview process, including coding expectations, system design focus areas, behavioral questions aligned with Meta's values, and preparation strategies for Meta's fast-paced interview cycle.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

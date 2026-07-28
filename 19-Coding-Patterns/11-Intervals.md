@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Intervals
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -353,7 +363,6 @@ console.log(employeeFreeTime(schedule));
 Interval problems are common in scheduling and range-based scenarios. The key is sorting intervals appropriately and then using greedy or merging strategies.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Intervals
 Use when: Merging, inserting, checking overlaps
@@ -380,6 +389,13 @@ Key insight:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

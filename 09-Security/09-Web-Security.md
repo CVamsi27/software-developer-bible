@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # Web Security
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -528,137 +538,6 @@ app.post("/xml-data", express.text({ type: "application/xml" }), (req, res) => {
 | Security Headers | Negligible performance impact |
 | SSRF Prevention | DNS resolution adds latency |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is Content Security Policy (CSP)?**
-A: CSP is a security header that restricts which resources (scripts, styles, images) can be loaded and executed on a page. It helps prevent XSS by blocking unauthorized scripts.
-
-**Q2: What is HSTS?**
-A: HTTP Strict Transport Security forces browsers to use HTTPS for all connections to a domain. It prevents SSL stripping attacks and ensures secure communication.
-
-**Q3: What is CORS?**
-A: Cross-Origin Resource Sharing controls which domains can access resources on your server. It's a browser security feature that prevents unauthorized cross-origin requests.
-
-**Q4: What is clickjacking?**
-A: Clickjacking tricks users into clicking on hidden elements on a web page. Attackers overlay transparent iframes to trick users into performing unintended actions.
-
-**Q5: What is an open redirect?**
-A: An open redirect vulnerability allows attackers to redirect users to malicious sites by manipulating URL parameters. It can be used for phishing attacks.
-
-**Q6: What is SSRF?**
-A: Server-Side Request Forgery allows attackers to make requests from the server to internal or external resources. It can be used to access internal services or scan networks.
-
-**Q7: What is XXE?**
-A: XML External Entity injection allows attackers to include external entities in XML documents, potentially accessing sensitive data or causing denial of service.
-
-**Q8: What security headers should every web application have?**
-A: CSP, HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, and X-XSS-Protection.
-
-**Q9: How do you prevent clickjacking?**
-A: Use X-Frame-Options header (DENY or SAMEORIGIN) and CSP frame-ancestors directive.
-
-**Q10: What is the difference between X-Frame-Options and CSP frame-ancestors?**
-A: X-Frame-Options is older and limited. CSP frame-ancestors is more flexible and supports multiple domains. Use both for compatibility.
-
-### Intermediate (5-10)
-
-**Q11: How would you implement CSP for a React application?**
-A: Use nonce-based CSP. Generate nonce per request. Add nonce to script tags. Configure CSP header with nonce. Use webpack to inject nonces in build.
-
-**Q12: How do you configure CORS for a microservices architecture?**
-A: Configure CORS at API gateway. Use specific allowed origins. Implement CORS for each service if needed. Use credentials carefully.
-
-**Q13: How do you prevent SSRF in a web application?**
-A: Validate and sanitize URLs. Block private IP ranges. Use allowlists for domains. Implement network segmentation. Monitor outbound requests.
-
-**Q14: How do you implement XXE prevention in XML parsing?**
-A: Disable external entities and DTDs. Use safe XML parsers. Prefer JSON over XML. Validate XML input. Use parser configurations that prevent XXE.
-
-**Q15: How do you handle security headers in a server-side rendered application?**
-A: Use middleware to set headers. Configure CSP for server-rendered content. Handle dynamic content in CSP. Test headers thoroughly.
-
-**Q16: How do you implement security headers in a CDN?**
-A: Configure headers at CDN level. Use CDN-specific configurations. Implement header overrides. Test header propagation.
-
-**Q17: How do you handle CSP violations?**
-A: Implement CSP reporting. Monitor violation reports. Adjust CSP rules as needed. Use report-uri or report-to directives.
-
-**Q18: How do you implement HSTS preloading?**
-A: Submit domain to HSTS preload list. Ensure includeSubDomains is set. Use long max-age. Test preloading in staging.
-
-**Q19: How do you handle security headers in a microservices architecture?**
-A: Implement headers at gateway level. Use service mesh for internal headers. Test header propagation. Monitor header compliance.
-
-**Q20: How do you audit security headers?**
-A: Use tools like securityheaders.com. Implement automated testing. Monitor header compliance. Regular security audits.
-
-### Senior (10-15)
-
-**Q21: Design a comprehensive web security strategy for a large application.**
-A: Layer 1: Network (WAF, DDoS protection). Layer 2: Application (CSP, HSTS, CORS). Layer 3: Code (input validation, output encoding). Layer 4: Data (encryption, access control).
-
-**Q22: How would you implement CSP for a single-page application with dynamic content?**
-A: Use nonce-based CSP. Implement dynamic nonce generation. Handle inline scripts carefully. Use CSP reporting. Test thoroughly.
-
-**Q23: Design a security header strategy for a multi-tenant application.**
-A: Implement tenant-specific CSP. Use tenant-aware CORS. Configure headers per tenant. Test tenant isolation.
-
-**Q24: How would you handle security headers in a serverless architecture?**
-A: Configure headers at API Gateway. Use Lambda@Edge for CloudFront. Implement headers in serverless functions. Test header propagation.
-
-**Q25: Design a security monitoring system for web attacks.**
-A: Implement real-time monitoring. Use SIEM for log analysis. Deploy WAF with custom rules. Implement anomaly detection. Build automated response.
-
-**Q26: How would you implement security headers for a GraphQL API?**
-A: Configure CSP for GraphQL playground. Implement CORS for GraphQL endpoints. Use security headers for mutations. Test GraphQL-specific attacks.
-
-**Q27: Design a security header strategy for a global application.**
-A: Implement regional compliance. Use CDN for header distribution. Test regional variations. Monitor global compliance.
-
-**Q28: How would you handle security headers in a containerized environment?**
-A: Configure headers in reverse proxy. Use service mesh for internal headers. Implement headers in container orchestration. Test container security.
-
-**Q29: Design a security header testing strategy.**
-A: Implement automated testing in CI/CD. Use security scanning tools. Test header combinations. Monitor header drift.
-
-**Q30: How would you implement security headers for a progressive web app (PWA)?**
-A: Configure headers for service workers. Implement offline security. Handle push notification security. Test PWA-specific security.
-
-### FAANG-style (5-10)
-
-**Q31: Design a security header system for a platform serving 1 billion requests per day.**
-A: Use CDN for header distribution. Implement edge caching for headers. Use hardware acceleration. Monitor header performance. Implement global compliance.
-
-**Q32: How would you implement CSP for a system with complex third-party integrations?**
-A: Use specific third-party domains in CSP. Implement script nonce for third-party scripts. Use Subresource Integrity. Monitor third-party compliance.
-
-**Q33: Design a security header strategy for a system with strict compliance requirements.**
-A: Implement compliance-specific headers. Use automated compliance checking. Maintain audit trails. Implement compliance reporting.
-
-**Q34: How would you handle security headers in a system with real-time collaboration?**
-A: Configure headers for WebSocket connections. Implement real-time header updates. Handle dynamic content. Test collaboration-specific security.
-
-**Q35: Design a security header system for a global financial platform.**
-A: Implement strict CSP. Use HSTS preload. Configure strict CORS. Implement comprehensive monitoring. Meet regulatory requirements.
-
-### Follow-ups (5-10)
-
-**Q36: How would your security header strategy change if you needed to support legacy browsers?**
-A: Implement fallback headers. Use compatible CSP versions. Test browser compatibility. Use progressive enhancement.
-
-**Q37: If CSP was breaking third-party scripts, how would you handle it?**
-A: Use specific third-party domains. Implement script nonce. Use Subresource Integrity. Evaluate alternatives to problematic scripts.
-
-**Q38: How would you implement security headers for a system with strict performance requirements?**
-A: Use CDN caching. Implement header compression. Optimize header delivery. Monitor performance impact.
-
-**Q39: How would your approach change for a system handling classified information?**
-A: Implement strict security headers. Use hardware security modules. Implement air-gapped deployment. Meet government security standards.
-
-**Q40: If you discovered a security header bypass, what would be your incident response?**
-A: Immediately patch the vulnerability. Update security headers. Monitor for exploitation. Conduct post-mortem. Implement additional monitoring.
 
 ## Summary
 
@@ -675,7 +554,6 @@ Web security is a comprehensive approach to protecting web applications from att
 - Regular security audits and testing
 
 ## Cheat Sheet
-
 | Header | Purpose | Value |
 |--------|---------|-------|
 | Content-Security-Policy | Prevent XSS | default-src 'self'; script-src 'self' 'nonce-xxx' |
@@ -686,6 +564,12 @@ Web security is a comprehensive approach to protecting web applications from att
 | Referrer-Policy | Control referrer | strict-origin-when-cross-origin |
 | Permissions-Policy | Control features | camera=(), microphone=() |
 | CORS | Control cross-origin | Access-Control-Allow-Origin |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

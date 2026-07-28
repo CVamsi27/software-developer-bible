@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Strategy Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -968,124 +978,12 @@ class StrategyFactory {
 
 5. **Garbage Collection**: Stateless strategies don't create GC pressure.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Strategy pattern?**
-
-   - A behavioral pattern that defines a family of algorithms and makes them interchangeable.
-
-2. **When would you use Strategy pattern?**
-
-   - When you have multiple algorithms for a task and want to switch between them dynamically.
-
-3. **What's the difference between Strategy and State patterns?**
-
-   - Strategy swaps algorithms; State changes behavior based on internal state.
-
-4. **How do you implement Strategy in TypeScript?**
-
-   - Define a common interface, implement concrete strategies, and use a context to switch between them.
-
-5. **What are the benefits of Strategy pattern?**
-
-   - Open/Closed Principle, better testability, and runtime flexibility.
-
-### Intermediate
-
-6. **How do you handle strategy selection?**
-
-   - Use configuration, user input, or factory pattern to select strategies.
-
-7. **Can strategies have state?**
-
-   - Yes, but prefer stateless strategies for simplicity and testability.
-
-8. **How do you test Strategy pattern?**
-
-   - Test each strategy independently, mock strategies in context tests.
-
-9. **What's the relationship between Strategy and Factory?**
-
-   - Factory creates objects; Strategy defines algorithms; they can be combined.
-
-10. **How do you handle strategy errors?**
-
-    - Define error handling in each strategy or use a wrapper/decorator.
-
-### Senior
-
-11. **How does Strategy pattern affect scalability?**
-
-    - New strategies can be added without modifying existing code.
-
-12. **What are the SOLID violations with Strategy?**
-
-    - Usually follows SOLID; watch for context violating Single Responsibility.
-
-13. **How do you handle Strategy in microservices?**
-
-    - Strategies can be in the same service or separate services depending on coupling.
-
-14. **What are the memory implications of Strategy?**
-
-    - Stateless strategies are lightweight; strategies with dependencies consume more memory.
-
-15. **How do you refactor Strategy code?**
-
-    - Extract common logic, use composition, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Strategy for load balancing algorithms.**
-
-    - Consider round-robin, least connections, IP hash, and dynamic switching.
-
-17. **How would you implement Strategy for distributed systems?**
-
-    - Consider remote strategy execution, serialization, and fault tolerance.
-
-18. **What are the implications of Strategy in cloud-native applications?**
-
-    - Consider serverless execution, container scaling, and resource management.
-
-19. **How do you handle Strategy in event-driven architectures?**
-
-    - Use strategies for event processing, routing, and transformation.
-
-20. **Design a Strategy that supports A/B testing.**
-
-    - Consider traffic splitting, metrics collection, and gradual rollout.
-
-### Follow-ups
-
-21. **Can Strategy pattern be combined with other patterns?**
-
-    - Yes, commonly with Factory, Decorator, and State patterns.
-
-22. **How do you handle Strategy in testing frameworks?**
-
-    - Use dependency injection, create test strategies, and mock implementations.
-
-23. **What are the memory implications of Strategy pattern?**
-
-    - Stateless strategies are lightweight; the context holds the reference.
-
-24. **How do you handle Strategy in serverless environments?**
-
-    - Consider cold starts, stateless design, and function composition.
-
-25. **What's the impact of Strategy on code maintainability?**
-
-    - Improves maintainability by separating algorithms and reducing conditionals.
 
 ## Summary
 
 The Strategy pattern is powerful for encapsulating algorithms and making them interchangeable. It promotes the Open/Closed Principle, improves testability, and allows runtime flexibility. Use it when you have multiple algorithms for a task and want to switch between them dynamically.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           STRATEGY PATTERN                  │
@@ -1121,6 +1019,14 @@ The Strategy pattern is powerful for encapsulating algorithms and making them in
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

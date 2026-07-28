@@ -1,4 +1,14 @@
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
+
 # Resolvers
+
+[![Section](https://img.shields.io/badge/section-GraphQL-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -925,98 +935,6 @@ if (complexity > 1000) {
 
 ---
 
-## Interview Questions
-
-### Beginner
-
-1. **What is a resolver?**
-   A resolver is a function that populates the data for each field in a GraphQL schema. It's the execution layer that connects schema to data sources.
-
-2. **What are the resolver function arguments?**
-
-   - `parent`: Result from parent resolver
-   - `args`: Arguments passed to this field
-   - `context`: Shared context (auth, data sources)
-   - `info`: Query AST, field name, path
-
-3. **What is the difference between root resolvers and field resolvers?**
-   Root resolvers (Query, Mutation, Subscription) handle top-level operations. Field resolvers handle individual fields on types.
-
-4. **What is the N+1 problem?**
-   When resolving nested fields, each parent item triggers a separate database query. Example: querying users and their posts creates 1 query for users + N queries for posts.
-
-5. **What is DataLoader?**
-   A utility that batches and caches database queries within a single execution cycle, solving the N+1 problem.
-
-### Intermediate
-
-6. **How do resolvers execute in GraphQL?**
-   Resolvers execute in parallel at the same level. Parent resolvers complete before child resolvers start.
-
-7. **What is the `info` argument used for?**
-   Contains query AST, field name, return type, schema, and path. Used for advanced optimization and debugging.
-
-8. **How do you handle authorization in resolvers?**
-   Check `context.currentUser` and permissions in resolvers. Use directives for declarative authorization.
-
-9. **What are custom scalars and how do you implement them?**
-   User-defined scalar types with serialize, parseValue, and parseLiteral methods for custom data types.
-
-10. **How do you resolve union and interface types?**
-    Use `__resolveType` function to determine which concrete type to return.
-
-### Senior
-
-11. **How would you design a resolver architecture for a large application?**
-    Layered approach: schema → resolvers → services → repositories → data sources. Use dependency injection and DataLoader.
-
-12. **Explain your DataLoader strategy for a complex schema.**
-    Create loaders per entity, prime cache when data is available, clear on mutations, and scope per request.
-
-13. **How do you optimize resolver execution?**
-    Parallel execution, DataLoader batching, query complexity limits, field-level caching, and avoiding blocking operations.
-
-14. **How would you implement real-time updates with subscriptions?**
-    WebSocket transport, pub/sub pattern (Redis), filtering, connection management, and scaling.
-
-15. **How do you handle resolver errors in production?**
-    Structured error handling, logging, monitoring, error boundaries, partial data, and client error recovery.
-
-### FAANG-style
-
-16. **Design a resolver architecture for a social media platform with 1B users.**
-    Sharding, DataLoader with Redis caching, query complexity limits, CDN for static fields, and distributed tracing.
-
-17. **How would you migrate a REST API to GraphQL resolvers?**
-    Start with high-value endpoints, wrap existing services, maintain backward compatibility, and incrementally adopt.
-
-18. **Explain your approach to resolver performance monitoring.**
-    Distributed tracing (OpenTelemetry), resolver execution time, N+1 detection, cache hit rates, and query complexity.
-
-19. **How do you handle resolver conflicts in a microservices architecture?**
-    Schema federation, gateway pattern, distributed resolvers, and service discovery.
-
-20. **Design a resolver for a real-time collaborative editor.**
-    Optimistic updates, conflict resolution (OT/CRDT), WebSocket subscriptions, and offline support.
-
-### Follow-ups
-
-21. **What happens if a resolver returns null for a non-null field?**
-    GraphQL propagates null to the parent. If the parent is also non-null, it continues up until finding a nullable field or reaching the root.
-
-22. **How do you test resolvers?**
-    Unit test with mocked context, integration test with test database, and end-to-end test with Apollo Server testing utilities.
-
-23. **What is the difference between `@resolveType` and `__resolveType`?**
-    `__resolveType` is the resolver function. `@resolveType` is a directive for declarative type resolution.
-
-24. **How do you handle resolver middleware?**
-    Use Apollo Link chain, context-based middleware, or custom resolver wrappers.
-
-25. **What are the best practices for resolver naming?**
-    Use descriptive names that match the schema field names. Avoid abbreviations and be consistent.
-
----
 
 ## Summary
 
@@ -1030,6 +948,13 @@ if (complexity > 1000) {
 | **Performance** | DataLoader, caching, complexity limits |
 
 ---
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

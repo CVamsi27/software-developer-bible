@@ -1,4 +1,14 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Google Drive System Design
+
+[![Section](https://img.shields.io/badge/section-System%20Design-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Requirements
 ### Functional Requirements
@@ -946,85 +956,6 @@ alerts:
 | Consistency | Strong | Eventual | Strong for metadata |
 | Versioning | Full copies | Deltas | Full copies (simpler) |
 
-## Interview Questions
-
-### Design Questions
-
-1. **How would you implement real-time file sync?**
-
-   - WebSocket for live updates
-   - Delta sync for efficiency
-   - Conflict detection and resolution
-   - Offline support with queue
-
-2. **How do you handle file versioning?**
-
-   - Store each version in object storage
-   - Metadata tracks version history
-   - Rollback creates new version
-   - Garbage collection for old versions
-
-3. **How would you implement collaboration?**
-
-   - Operational transform for concurrent edits
-   - WebSocket for real-time updates
-   - Conflict detection and resolution
-   - User presence indicators
-
-### Scaling Questions
-
-4. **How do you scale to 1B+ files?**
-
-   - Object storage for file content
-   - Database sharding for metadata
-   - CDN for frequent downloads
-   - Caching for hot files
-
-5. **How do you handle 10M concurrent sync operations?**
-
-   - Partition sync requests by user
-   - Batch operations for efficiency
-   - Priority queues for important files
-   - Connection pooling
-
-### Trade-off Questions
-
-6. **How do you balance consistency vs availability?**
-
-   - Strong consistency for metadata
-   - Eventual consistency for sync status
-   - Conflict resolution for concurrent edits
-   - Offline support with eventual sync
-
-7. **How do you handle large file uploads?**
-
-   - Chunked upload for reliability
-   - Resumable uploads for large files
-   - Parallel chunk upload
-   - Checksum verification
-
-### Senior-level Questions
-
-8. **How would you implement end-to-end encryption?**
-
-   - Client-side encryption keys
-   - Key management service
-   - Encrypted metadata
-   - Secure sharing with keys
-
-9. **How do you optimize for different file types?**
-
-   - Preview generation for documents
-   - Thumbnail creation for images
-   - Video transcoding
-   - Metadata extraction
-
-10. **How would you implement file search?**
-
-    - Full-text indexing with Elasticsearch
-    - Metadata-based search
-    - Content-based search for documents
-    - Search result ranking
 
 ## Summary
 
@@ -1051,6 +982,14 @@ Key takeaways:
 This design supports 1B+ files with 10M concurrent sync operations while maintaining strong consistency for metadata.
 
 ---
+
+---
+
+## See Also
+- [Microservices](../12-Microservices/)
+- [Database](../08-Database/)
+- [REST APIs](../07-REST-API/)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

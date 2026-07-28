@@ -1,4 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # Middleware
+
+[![Section](https://img.shields.io/badge/section-NestJS-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -490,101 +500,12 @@ use(req: Request, res: Response, next: NextFunction): void {
 
 5. **Caching**: Cache middleware results when possible.
 
-## Interview Questions
-
-### Beginner
-
-**Q1: What is middleware in NestJS?**
-A function with access to request, response, and next function that executes before route handlers.
-
-**Q2: How do you apply middleware to all routes?**
-Use `consumer.apply(Middleware).forRoutes('*')`.
-
-**Q3: What is `next()` in middleware?**
-Calls the next middleware in the stack. Without it, the request hangs.
-
-**Q4: How do you exclude routes from middleware?**
-Use `exclude()` method with path and method.
-
-**Q5: Can middleware modify the request object?**
-Yes, middleware can add properties to the request object.
-
-### Intermediate
-
-**Q6: What is the difference between middleware and interceptors?**
-
-- Middleware: Runs before routing, no access to handler metadata
-- Interceptor: Runs after routing, has access to handler and response
-
-**Q7: How do you implement authentication in middleware?**
-Verify JWT token, attach user to request, call next() or throw UnauthorizedException.
-
-**Q8: Can middleware be async?**
-Yes, middleware can return a Promise.
-
-**Q9: How do you apply middleware to specific controllers?**
-Use `consumer.apply(Middleware).forRoutes(ControllerClass)`.
-
-**Q10: Can middleware access the response after the handler?**
-Use `res.on('finish', ...)` to execute code after response is sent.
-
-### Senior
-
-**Q11: Design a middleware chain for a production API.**
-Request ID -> CORS -> Rate Limiting -> Auth -> Logging -> Handler.
-
-**Q12: How would you implement middleware for microservices?**
-Apply middleware at API gateway level, propagate context through service mesh.
-
-**Q13: Design a middleware for request validation.**
-Parse and validate request body against schema, throw BadRequestException for invalid data.
-
-**14: How would you implement middleware caching?**
-Check cache before next(), cache response using res.on('finish').
-
-**Q15: Design a middleware for multi-tenant applications.**
-Extract tenant from header, load tenant config, attach to request.
-
-### FAANG-Style
-
-**Q16: Design a middleware for distributed tracing.**
-Extract/propagate trace headers, create spans, export to tracing system.
-
-**Q17: How would you implement request/response transformation middleware?**
-Decrypt request body before handler, encrypt response after handler.
-
-**Q18: Design a middleware for API versioning.**
-Route to different handlers based on version header or URL prefix.
-
-**Q19: How would you implement middleware for feature flags?**
-Check feature flag, modify request or return early if feature disabled.
-
-**Q20: Design a middleware for audit logging.**
-Log full request/response to audit service asynchronously.
-
-### Follow-ups
-
-**Q21: Can middleware throw exceptions?**
-Yes, middleware can throw exceptions that are caught by exception filters.
-
-**Q22: How do you test middleware?**
-Create mock req/res/next objects, call use() method, verify behavior.
-
-**Q23: What is the order of middleware execution?**
-In the order they are registered in `apply()`.
-
-**Q24: Can middleware be applied to WebSocket routes?**
-Yes, but WebSocket middleware has a different interface.
-
-**Q25: How do you handle errors in middleware?**
-Use try-catch, call `next(error)` to pass to error handler.
 
 ## Summary
 
 Middleware in NestJS provides a way to execute logic before route handlers, similar to Express middleware. They handle cross-cutting concerns like logging, authentication, and CORS. NestJS middleware can be class-based (with DI support) or function-based, and are configured through the `MiddlewareConsumer`.
 
 ## Cheat Sheet
-
 | Concept | Description |
 |---------|-------------|
 | `NestMiddleware` | Interface for class-based middleware |
@@ -596,6 +517,14 @@ Middleware in NestJS provides a way to execute logic before route handlers, simi
 | `forRoutes()` | Specify target routes |
 | `forRoutes('*')` | Apply to all routes |
 | `RequestMethod.GET` | Filter by HTTP method |
+
+---
+
+## See Also
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Microservices](../12-Microservices/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

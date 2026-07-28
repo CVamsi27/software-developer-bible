@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Modules
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -535,117 +545,6 @@ export default { add, multiply };
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is a module in JavaScript?**
-
-A: A module is a reusable piece of code that encapsulates functionality and can be imported/exported between files.
-
-**Q2: What is the difference between CommonJS and ES Modules?**
-
-A: CommonJS uses require() and is synchronous. ES Modules use import/export and are asynchronous with static analysis.
-
-**Q3: What is a default export?**
-
-A: A default export is the main export of a module, imported without curly braces: `import foo from './module'`
-
-**Q4: What is a named export?**
-
-A: Named exports are exported with specific names, imported with curly braces: `import { foo } from './module'`
-
-**Q5: What is tree shaking?**
-
-A: Tree shaking is dead code elimination that removes unused exports from the final bundle.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is a barrel file?**
-
-A: A barrel file re-exports all exports from a directory, allowing single imports: `export * from './utils'`
-
-**Q7: What is dynamic import?**
-
-A: Dynamic import() loads a module asynchronously, enabling code splitting: `const module = await import('./module')`
-
-**Q8: What are circular dependencies?**
-
-A: When module A depends on B and B depends on A. Can cause issues with initialization order.
-
-**Q9: How do you avoid global scope pollution with modules?**
-
-A: Modules have their own scope. Only exported values are accessible outside.
-
-**Q10: What is the module loading process?**
-
-A: Parse → Resolve → Fetch → Parse → Link → Evaluate. ES Modules are loaded asynchronously.
-
-### Senior (10-15 questions)
-
-**Q11: How do ES Modules differ from CommonJS at runtime?**
-
-A: CommonJS evaluates at runtime, ES Modules are statically analyzed. ES Modules are loaded asynchronously and have live bindings.
-
-**Q12: What is the relationship between modules and bundlers?**
-
-A: Bundlers combine modules into single files for browser delivery. They handle dependencies, code splitting, and optimization.
-
-**Q13: How do you handle module resolution in TypeScript?**
-
-A: Configure tsconfig.json paths, use barrel files, or use bundler's module resolution.
-
-**Q14: What are live bindings in ES Modules?**
-
-A: Live bindings mean imports reflect the current value of exports. If an export changes, all imports see the change.
-
-**Q15: How do you implement lazy loading with modules?**
-
-A: Use dynamic import() to load modules on demand, combined with React.lazy or similar patterns.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a module system from scratch.**
-
-A: Implement module loading, dependency resolution, circular dependency detection, and caching.
-
-**Q17: How would you implement code splitting without a bundler?**
-
-A: Use dynamic import() and HTTP/2 server push, or implement manual chunking.
-
-**Q18: Analyze the performance implications of different module strategies.**
-
-A: Compare loading time, bundle size, caching behavior, and runtime performance.
-
-**Q19: How do you debug module loading issues?**
-
-A: Use network tab, source maps, module-specific debugging tools, and console logging.
-
-**Q20: What are security implications of modules?**
-
-A: Code injection, dependency vulnerabilities, prototype pollution through imports.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a module-related bug in production?**
-
-A: Circular dependency causing undefined imports at runtime.
-
-**Q22: How do you handle modules in a monorepo?**
-
-A: Use workspace packages, shared barrel files, and proper dependency management.
-
-**Q23: What is the relationship between modules and micro-frontends?**
-
-A: Each micro-frontend is a module, loaded independently, sharing dependencies.
-
-**Q24: How do different frameworks handle modules?**
-
-A: React: component modules. Vue: SFC modules. Angular: NgModules.
-
-**Q25: What are best practices for working with modules?**
-
-A: Use named exports, create barrel files, lazy load when possible, avoid circular dependencies.
 
 ## Summary
 
@@ -666,7 +565,6 @@ Modules are essential for modern JavaScript:
 7. **TypeScript**: Type safety with modules
 
 ## Cheat Sheet
-
 ```text
 MODULES CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -719,6 +617,13 @@ TOOLS:
 • Node.js
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Infer
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -325,116 +335,12 @@ type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H
 - **Distribution**: Infer interacts with distribution in conditional types
 - **Recursion**: Recursive infer can cause infinite type recursion
 
-## Interview Questions
-
-### Beginner
-
-1. **What does `infer` do?**
-
-   - Extracts and names a type within a conditional type
-
-2. **How do you extract a function's return type?**
-
-   ```typescript
-   type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
-
-```
-
-3. **Can you have multiple `infer` in one conditional?**
-
-   - Yes, but only one per position
-
-4. **What happens if infer doesn't match?**
-
-   - The conditional type evaluates to the false branch
-
-5. **How do you extract Promise inner type?**
-
-   ```typescript
-   type Unwrap<T> = T extends Promise<infer U> ? U : T;
-
-```
-
-### Intermediate
-
-6. **Write a type that extracts first array element**
-
-   ```typescript
-   type First<T extends any[]> = T extends [infer F, ...any[]] ? F : never;
-
-```
-
-7. **How do you extract all function parameters?**
-
-   ```typescript
-   type Params<T> = T extends (...args: infer P) => any ? P : never;
-
-```
-
-8. **Can infer be used outside conditional types?**
-
-   - No, it's only valid in the `extends` clause
-
-9. **How do you handle nested promises?**
-
-   - Use recursive conditional types with infer
-
-10. **What is the difference between infer and extends?**
-
-    - `extends` checks assignability; `infer` captures a type
-
-### Senior
-
-11. **Design a type that extracts all event handler types**
-
-    - Use infer to capture event parameters
-
-12. **How do you create a type-safe deep clone function?**
-
-    - Use infer to preserve type information through cloning
-
-13. **Implement a type-safe curry function using infer**
-
-    - Capture argument types and return type
-
-14. **How do you handle function overloads with infer?**
-
-    - Use infer with conditional types to match signatures
-
-### FAANG-style
-
-15. **Build a type-safe ORM query builder**
-
-    - Use infer to extract model types from queries
-
-16. **Create a type-safe middleware chain**
-
-    - Use infer to propagate types through middleware
-
-17. **Implement a type-safe state machine**
-
-    - Use infer to capture state and event types
-
-### Follow-ups
-
-18. **How does infer interact with union types?**
-
-    - Infer distributes over unions automatically
-
-19. **Can you use infer in mapped types?**
-
-    - No, infer is only valid in conditional type extends clauses
-
-20. **How do you debug infer issues?**
-
-    - Create intermediate type aliases and use IDE hover
 
 ## Summary
 
 The `infer` keyword is essential for extracting types from complex type structures. It enables powerful type-level programming and is crucial for building type-safe libraries and frameworks. Master infer to unlock advanced TypeScript patterns.
 
 ## Cheat Sheet
-
 ```typescript
 // Basic infer
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
@@ -458,6 +364,13 @@ type PropType<T, K> = T extends { [P in K]: infer V } ? V : never;
 type DeepUnwrap<T> = T extends Promise<infer U> ? DeepUnwrap<U> : T;
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

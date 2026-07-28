@@ -1,4 +1,14 @@
+---
+section: Performance Monitoring
+category: Quality
+tags: [interview-questions, reference]
+---
+
 # Performance Monitoring Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 This comprehensive guide covers 25+ interview questions on performance monitoring, ranging from Core Web Vitals fundamentals to advanced real-user monitoring system design.
@@ -104,6 +114,7 @@ onINP(sendToAnalytics);
 onCLS(sendToAnalytics);
 
 ```
+
 Use `sendBeacon` for non-blocking metric submission.
 
 **Q7: What is the difference between lab and field metrics?**
@@ -306,6 +317,14 @@ Use `sendBeacon` for non-blocking metric submission.
 ## Summary
 
 Performance monitoring interviews test your understanding of web performance metrics, tools, and optimization strategies. Focus on Core Web Vitals, practical implementation, and system design for large-scale monitoring.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Build Tools](../23-Build-Tools/)
+- [Observability](../22-Observability/)
+- [Accessibility](../25-Accessibility/)
 
 ## References & Learn More
 

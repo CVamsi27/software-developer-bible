@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # React Testing Library
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1251,137 +1261,6 @@ await waitFor(() => {});
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is React Testing Library?**
-   RTL is a testing utility that provides DOM queries and utilities for testing React components from the user's perspective.
-
-2. **Why is RTL preferred over Enzyme?**
-   RTL encourages testing behavior over implementation, is easier to learn, and promotes accessibility by default.
-
-3. **What is `screen` in RTL?**
-   `screen` is an object containing queries bound to the entire document, making tests more readable.
-
-4. **What is the difference between `getBy` and `queryBy`?**
-   `getBy` throws an error if element not found. `queryBy` returns null if not found, useful for asserting absence.
-
-5. **How do you test async components?**
-   Use `waitFor` or `findBy` queries to wait for async operations to complete.
-
-6. **What is `userEvent`?**
-   `userEvent` simulates real user interactions with better accuracy than `fireEvent`.
-
-7. **How do you test form submissions?**
-   Use `userEvent.type` for inputs and `userEvent.click` for submit buttons, then verify results.
-
-8. **What is `cleanup` in RTL?**
-   `cleanup` unmounts React trees rendered in the document, called automatically after each test.
-
-9. **How do you test components with Context?**
-   Wrap the component with the provider in a custom render function.
-
-10. **What are `findBy` queries?**
-    `findBy` queries return promises that resolve when elements are found, useful for async content.
-
-### Intermediate (5-10)
-
-11. **How do you test loading states?**
-    Render the component, check for loading indicator, then use `waitFor` to wait for content.
-
-12. **How do you test error boundaries?**
-    Render a component that throws, verify fallback UI renders.
-
-13. **How do you test with React Router?**
-    Wrap component with `MemoryRouter` or use custom render with router context.
-
-14. **How do you test custom hooks?**
-    Use `renderHook` from `@testing-library/react-hooks`.
-
-15. **How do you mock API calls?**
-    Use MSW (Mock Service Worker) for network-level mocking.
-
-16. **How do you test accessibility?**
-    Use `jest-axe` to run accessibility audits on rendered components.
-
-17. **How do you test animations?**
-    Mock timer functions and verify state changes at specific times.
-
-18. **How do you test portals?**
-    RTL automatically handles portals, query within the portal content.
-
-19. **How do you test drag and drop?**
-    Use `@testing-library/user-event` v14+ which supports drag and drop.
-
-20. **How do you test file uploads?**
-    Create a `File` object and use `userEvent.upload`.
-
-### Senior (10-15)
-
-21. **How do you test a component library?**
-    Test each component in isolation, verify accessibility, and test various prop combinations.
-
-22. **How do you handle testing with internationalization?**
-    Mock i18n providers, test different language outputs.
-
-23. **How do you test server-side rendering?**
-    Use `@testing-library/react` with `renderToString` and verify HTML output.
-
-24. **How do you test performance?**
-    Use `React.Profiler` and measure render times.
-
-25. **How do you test complex state management?**
-    Test state changes through user interactions, not internal state.
-
-26. **How do you test with GraphQL?**
-    Use `msw` to mock GraphQL responses.
-
-27. **How do you test with WebSockets?**
-    Mock WebSocket connections and simulate messages.
-
-28. **How do you test with Redux?**
-    Wrap component with `Provider` and test through user interactions.
-
-29. **How do you test with Formik?**
-    Test form submissions and validation through user interactions.
-
-30. **How do you test complex animations?**
-    Use `jest.useFakeTimers()` and verify DOM changes at specific times.
-
-### FAANG-style (5-10)
-
-31. **How would you design a testing strategy for a design system?**
-    Test component API, accessibility, visual regression, and integration with consuming apps.
-
-32. **How do you handle testing micro-frontends?**
-    Use contract testing between micro-frontends and test shared dependencies.
-
-33. **How do you ensure test reliability at scale?**
-    Implement flaky test detection, quarantine system, and test stability metrics.
-
-34. **How do you test with complex forms (multi-step, conditional)?**
-    Test each step independently and verify state persistence between steps.
-
-35. **How do you test with real-time features?**
-    Mock WebSocket connections, test reconnection logic, and verify UI updates.
-
-### Follow-ups (5-10)
-
-36. **How has RTL changed your testing approach?**
-    Discuss shift from testing implementation to testing behavior.
-
-37. **What custom utilities have you created with RTL?**
-    Custom render functions, query helpers, and assertion utilities.
-
-38. **How do you handle testing legacy components with RTL?**
-    Gradual migration strategy, wrapper components for context.
-
-39. **What are the limitations of RTL?**
-    Difficult to test certain animations, complex drag-and-drop, and canvas elements.
-
-40. **How do you contribute to RTL's ecosystem?**
-    Creating custom queries, sharing patterns, and helping others.
 
 ## Summary
 
@@ -1400,6 +1279,14 @@ Key takeaways:
 - Test what the user sees, not how the component is implemented
 - Mock at the network level when possible
 - Keep tests focused and maintainable
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

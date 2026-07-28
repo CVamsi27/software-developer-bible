@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # Role-Based Access Control (RBAC)
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -514,137 +524,6 @@ const hasPermission = async (
 | Cache Invalidation | Invalidate cache on role/permission changes |
 | Real-time Updates | Use pub/sub for permission changes |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is RBAC?**
-A: Role-Based Access Control is a method where permissions are assigned to roles, and users are assigned to roles. Users inherit permissions from their roles. It simplifies access management and enforces least privilege.
-
-**Q2: What is the difference between RBAC and ACL?**
-A: RBAC assigns permissions to roles, and users to roles. ACL (Access Control List) assigns permissions directly to users for specific resources. RBAC is more scalable for large organizations.
-
-**Q3: What is least privilege?**
-A: The principle that users should only have the minimum permissions needed to perform their job functions. This limits the impact of compromised accounts.
-
-**Q4: What is separation of duties?**
-A: A security principle where critical tasks require multiple users to complete. Prevents fraud by ensuring no single user has complete control.
-
-**Q5: What is role hierarchy?**
-A: A structure where roles inherit permissions from parent roles. For example, an "Admin" role might inherit all permissions from "Editor" and "Viewer" roles.
-
-**Q6: What is the difference between RBAC and ABAC?**
-A: RBAC assigns permissions based on roles. ABAC (Attribute-Based Access Control) assigns permissions based on attributes (user, resource, environment). ABAC is more flexible but complex.
-
-**Q7: How do you implement RBAC in a web application?**
-A: Define roles and permissions in the database. Assign roles to users. Check permissions in middleware/guards before allowing access to resources. Use decorators for role-based access.
-
-**Q8: What is a permission?**
-A: A specific action allowed on a resource (e.g., "user:create", "post:read"). Permissions define what operations users can perform.
-
-**Q9: What is a role?**
-A: A collection of permissions that define what a user can do. Roles are assigned to users, and users inherit the role's permissions.
-
-**Q10: How do you handle role changes in real-time?**
-A: Use pub/sub messaging to notify services of permission changes. Implement cache invalidation. Use event-driven architecture for real-time updates.
-
-### Intermediate (5-10)
-
-**Q11: How would you implement RBAC for a multi-tenant SaaS?**
-A: Use tenant-specific roles. Implement organization-level permission inheritance. Use tenant context in permission checks. Implement tenant isolation in queries.
-
-**Q12: How do you handle RBAC in a microservices architecture?**
-A: Use a centralized authorization service. Implement permission caching. Use JWT claims for role information. Validate permissions at API gateway.
-
-**Q13: How do you test RBAC implementations?**
-A: Write tests for each role/permission combination. Test edge cases (no role, multiple roles). Use integration tests for permission checks. Implement permission assertion helpers.
-
-**Q14: How do you handle RBAC for APIs?**
-A: Validate JWT tokens for role information. Check permissions in middleware. Use OpenAPI specifications for documentation. Implement rate limiting per role.
-
-**Q15: How do you audit RBAC?**
-A: Log all permission checks. Maintain audit trail of role assignments. Implement regular access reviews. Use SIEM for monitoring.
-
-**Q16: How do you handle RBAC for file uploads?**
-A: Check upload permissions before processing. Use role-based storage paths. Implement file-level permissions. Audit file access.
-
-**Q17: How do you handle RBAC for admin dashboards?**
-A: Implement role-based UI components. Hide unauthorized features. Validate permissions on API calls. Use feature flags for role-based features.
-
-**Q18: How do you handle RBAC for GraphQL?**
-A: Implement resolver-level permission checks. Use directive-based authorization. Validate query permissions. Implement field-level access control.
-
-**Q19: How do you handle RBAC for real-time features?**
-A: Validate permissions on WebSocket connections. Check permissions for each message. Implement room/channel-level access control.
-
-**Q20: How do you handle RBAC for batch operations?**
-A: Validate permissions for each operation. Implement batch permission checks. Use parallel permission validation. Audit batch operations.
-
-### Senior (10-15)
-
-**Q21: Design an RBAC system for a global enterprise with 100,000+ users.**
-A: Use hierarchical role structure. Implement permission caching with Redis. Use event-driven permission updates. Implement multi-region deployment. Use efficient database queries.
-
-**Q22: How would you implement RBAC for a financial trading platform?**
-A: Implement strict separation of duties. Use time-based permissions. Implement step-up authentication for sensitive operations. Audit all trading actions.
-
-**Q23: Design an RBAC system that supports both internal and external users.**
-A: Use different role hierarchies for internal/external. Implement guest roles with limited permissions. Use attribute-based access for complex scenarios.
-
-**Q24: How would you handle RBAC for a healthcare application?**
-A: Implement HIPAA-compliant access controls. Use patient-level permissions. Implement emergency access procedures. Audit all PHI access.
-
-**Q25: Design an RBAC system for a cloud infrastructure platform.**
-A: Use IAM-style roles and policies. Implement resource-based access control. Use service accounts for machine access. Implement cross-account access.
-
-**Q26: How would you implement RBAC for a content management system?**
-A: Implement content-type permissions. Use workflow-based access control. Implement draft/published state permissions. Use editorial roles (author, editor, publisher).
-
-**Q27: Design an RBAC system that supports dynamic permissions.**
-A: Use attribute-based access control. Implement policy-based permissions. Use rule engines for complex logic. Implement real-time permission evaluation.
-
-**Q28: How would you handle RBAC for a multiplayer game?**
-A: Implement player roles (admin, moderator, player). Use game-state permissions. Implement anti-cheat access controls. Audit player actions.
-
-**Q29: Design an RBAC system for a DevOps platform.**
-A: Implement environment-based permissions (dev, staging, prod). Use deployment permissions. Implement infrastructure access controls. Audit all changes.
-
-**Q30: How would you implement RBAC for a financial reporting system?**
-A: Implement report-level permissions. Use data masking based on roles. Implement approval workflows. Audit report access and generation.
-
-### FAANG-style (5-10)
-
-**Q31: Design an RBAC system for a platform with 1 billion users.**
-A: Use distributed permission caching. Implement hierarchical role structure. Use event-driven permission updates. Implement multi-region deployment. Use efficient indexing.
-
-**Q32: How would you implement RBAC for a system requiring real-time permission changes?**
-A: Use pub/sub messaging for permission updates. Implement WebSocket-based notifications. Use optimistic locking for permission changes. Implement conflict resolution.
-
-**Q33: Design an RBAC system that supports complex organizational hierarchies.**
-A: Use tree-based role structures. Implement permission inheritance. Use organizational context in permission checks. Implement cross-department access.
-
-**Q34: How would you implement RBAC for a system with strict compliance requirements?**
-A: Implement comprehensive audit logging. Use time-based access controls. Implement emergency access procedures. Use cryptographic verification for permissions.
-
-**Q35: Design an RBAC system for a system with multiple authentication methods.**
-A: Use authentication-agnostic permission checks. Implement context-based permissions. Use attribute-based access control. Implement permission binding to authentication methods.
-
-### Follow-ups (5-10)
-
-**Q36: How would your RBAC design change for a system with temporary access needs?**
-A: Implement time-based role assignments. Use just-in-time access. Implement access expiration. Audit temporary access usage.
-
-**Q37: If RBAC was causing performance issues, how would you optimize?**
-A: Implement permission caching. Use database indexing. Pre-compute inherited permissions. Use efficient query patterns. Implement lazy loading.
-
-**Q38: How would you implement RBAC for a system with complex approval workflows?**
-A: Implement approval-based permissions. Use workflow engines. Implement step-up authentication. Audit approval decisions.
-
-**Q39: How would your approach change for a system with international users?**
-A: Implement locale-based permissions. Use regional compliance requirements. Implement cross-border access controls. Audit international access.
-
-**Q40: If you discovered unauthorized access, what would be your incident response?**
-A: Immediately revoke compromised permissions. Audit access logs. Notify affected users. Implement additional monitoring. Conduct post-mortem.
 
 ## Summary
 
@@ -660,7 +539,6 @@ RBAC is a scalable and manageable approach to access control that assigns permis
 - Consider ABAC for complex scenarios
 
 ## Cheat Sheet
-
 | Concept | Implementation |
 |---------|---------------|
 | Role | Collection of permissions |
@@ -671,6 +549,12 @@ RBAC is a scalable and manageable approach to access control that assigns permis
 | Audit | Log all permission changes |
 | Caching | Redis for permission caching |
 | Testing | Test each role/permission combination |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

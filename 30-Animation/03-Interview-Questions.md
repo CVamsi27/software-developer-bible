@@ -1,4 +1,14 @@
+---
+section: Animation
+category: Frontend
+tags: [interview-questions, reference]
+---
+
 # Animation Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Animation-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 This comprehensive guide covers 20 interview questions on animation in web development, from CSS basics to advanced React animation patterns.
@@ -312,6 +322,12 @@ function solutionPattern(problem: string): string {
 ## Summary
 
 Animation is a critical skill for creating engaging user experiences. Master CSS animations, React animation libraries, performance optimization, and accessibility considerations.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

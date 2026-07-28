@@ -1,4 +1,14 @@
+---
+section: REST APIs
+category: Backend
+tags: [concept]
+---
+
 # REST Principles
+
+[![Section](https://img.shields.io/badge/section-REST%20APIs-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -496,84 +506,12 @@ res.status(404).json({ error: 'Not found' });
 - Use connection pooling
 - Consider GraphQL for complex data requirements
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is REST?** - REST is an architectural style for designing networked applications using HTTP methods and resource-based URLs.
-
-2. **What are the HTTP methods?** - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS.
-
-3. **What is a resource in REST?** - A resource is any concept that can be named and identified, accessed via URIs.
-
-4. **What is the difference between PUT and PATCH?** - PUT replaces the entire resource; PATCH updates specific fields.
-
-5. **What makes REST stateless?** - Each request contains all information needed; server stores no client context.
-
-### Intermediate (5)
-
-6. **Explain HATEOAS** - Hypermedia as the Engine of Application State; responses include links for discoverability.
-
-7. **What is idempotency?** - A property where making the same request multiple times produces the same result (GET, PUT, DELETE are idempotent).
-
-8. **Why use plural nouns in URIs?** - Consistency and clarity; `/api/users` represents a collection.
-
-9. **What is content negotiation?** - Client and server agree on response format via Accept/Content-Type headers.
-
-10. **Explain the uniform interface constraint** - Standardized way to interact with resources using URIs, representations, and self-descriptive messages.
-
-### Senior (10)
-
-11. **How do you version a REST API?** - URL path (`/v1/users`), query parameter, or header-based versioning.
-
-12. **Explain cache strategies for REST APIs** - ETag validation, Cache-Control headers, CDN caching, conditional requests.
-
-13. **How do you handle N+1 query problems?** - Use eager loading, batch queries, or GraphQL.
-
-14. **Design a REST API for a social media feed** - Endpoints, pagination, filtering, real-time updates.
-
-15. **How do you ensure API security?** - Authentication (JWT, OAuth), rate limiting, input validation, HTTPS, CORS.
-
-16. **Explain eventual consistency in REST** - When data is temporarily inconsistent across distributed systems.
-
-17. **How do you handle file uploads in REST?** - multipart/form-data, presigned URLs for cloud storage.
-
-18. **Design a REST API for microservices** - Service discovery, API gateway, circuit breakers.
-
-19. **How do you handle soft deletes?** - Use `deleted_at` timestamp, filter queries to exclude deleted records.
-
-20. **Explain Richardson Maturity Model** - Level 0 (HTTP), Level 1 (Resources), Level 2 (HTTP Verbs), Level 3 (HATEOAS).
-
-### FAANG-style (5)
-
-21. **Design a URL shortener REST API** - Generate short URLs, redirect, analytics, rate limiting.
-
-22. **Design a real-time chat REST API** - Messages, conversations, WebSocket integration.
-
-23. **Design a payment processing REST API** - Idempotency, webhooks, retry logic, security.
-
-24. **How would you migrate from v1 to v2 without breaking changes?** - Deprecation headers, dual support, gradual migration.
-
-25. **Design a REST API for a distributed system** - CAP theorem, consistency models, conflict resolution.
-
-### Follow-ups (5)
-
-26. **What are the limitations of REST?** - Over-fetching/under-fetching, multiple round trips, no real-time support natively.
-
-27. **When would you choose GraphQL over REST?** - Complex data requirements, mobile apps, reducing over-fetching.
-
-28. **How do you handle API rate limiting?** - Token bucket, sliding window, fixed window algorithms.
-
-29. **Explain CORS and why it matters** - Cross-Origin Resource Sharing; security mechanism for browser-based requests.
-
-30. **How do you test REST APIs?** - Unit tests, integration tests, contract testing, load testing.
 
 ## Summary
 
 REST is a powerful architectural style that leverages HTTP's existing features to create scalable, maintainable web services. Understanding its six constraints—client-server, stateless, cacheable, uniform interface, layered system, and code on demand—is essential for designing robust APIs. Following best practices like proper URI design, correct HTTP methods, appropriate status codes, and consistent response formats ensures your API is intuitive and maintainable.
 
 ## Cheat Sheet
-
 | Concept | Details |
 |---------|---------|
 | **Resources** | Nouns in URIs (`/api/users`) |
@@ -586,6 +524,14 @@ REST is a powerful architectural style that leverages HTTP's existing features t
 | **Versioning** | URL path (`/v1/users`) or headers |
 | **Pagination** | Use page/limit query parameters |
 | **Consistency** | Uniform interface, self-descriptive messages |
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [Security](../09-Security/)
+- [System Design](../11-System-Design/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

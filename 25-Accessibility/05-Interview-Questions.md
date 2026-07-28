@@ -1,4 +1,14 @@
+---
+section: Accessibility
+category: Quality
+tags: [interview-questions, reference]
+---
+
 # Accessibility Interview Questions
+
+[![Section](https://img.shields.io/badge/section-Accessibility-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Comprehensive Interview Guide
 
@@ -53,6 +63,7 @@ Semantic HTML uses elements for their intended purpose:
 </header>
 
 ```
+
 It matters because:
 
 - Screen readers understand page structure
@@ -68,6 +79,7 @@ Alt text describes image content for screen readers:
 <img src="chart.png" alt="Sales increased 25% from Q1 to Q2">
 
 ```
+
 Use it for:
 
 - Informative images
@@ -122,6 +134,7 @@ ARIA (Accessible Rich Internet Applications) provides additional semantics:
 <button aria-expanded="false" aria-controls="menu1">Menu</button>
 
 ```
+
 Use when:
 
 - Native HTML semantics are insufficient
@@ -382,6 +395,13 @@ Studies show:
 
 ## Summary
 Accessibility is essential for creating inclusive web experiences. Understanding WCAG principles, semantic HTML, ARIA, testing techniques, and implementation patterns is crucial for modern web development. Remember: accessibility is not just a checklist but a mindset.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Testing](../16-Testing/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

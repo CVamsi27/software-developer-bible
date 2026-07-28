@@ -1,4 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Factory Pattern
+
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -814,124 +824,12 @@ Factory.register('sms', () => new SMSNotification());
 
 5. **Compilation Time**: TypeScript generics and interfaces add compile-time safety with no runtime cost.
 
-## Interview Questions
-
-### Beginner
-
-1. **What is the Factory pattern?**
-
-   - A creational pattern that provides an interface for creating objects without specifying concrete classes.
-
-2. **What's the difference between Simple Factory and Factory Method?**
-
-   - Simple Factory uses a single method; Factory Method uses subclasses to create objects.
-
-3. **When would you use a Factory?**
-
-   - When object creation is complex, involves multiple steps, or needs to be flexible.
-
-4. **What are the benefits of Factory pattern?**
-
-   - Loose coupling, easier maintenance, better testability, and flexibility.
-
-5. **How do you implement a Simple Factory in TypeScript?**
-
-   - Use a static method with a switch statement to create different object types.
-
-### Intermediate
-
-6. **What's the difference between Factory and Abstract Factory?**
-
-   - Factory creates one product type; Abstract Factory creates families of related products.
-
-7. **How do you handle errors in Factory pattern?**
-
-   - Throw descriptive errors for unknown types, validate inputs, and handle creation failures.
-
-8. **Can you use Factory with dependency injection?**
-
-   - Yes, inject the factory or its dependencies to make it testable and configurable.
-
-9. **How do you test Factory pattern?**
-
-   - Mock the factory, test each product independently, verify factory returns correct types.
-
-10. **What are the SOLID violations with Factory?**
-
-    - Open/Closed Principle violations if not designed properly.
-
-### Senior
-
-11. **How does Factory pattern affect scalability?**
-
-    - Factories can be extended easily; consider registration patterns for large systems.
-
-12. **What's the relationship between Factory and Strategy patterns?**
-
-    - Factory creates objects; Strategy defines algorithms; they can be combined.
-
-13. **How do you handle Factory in microservices?**
-
-    - Each service can have its own factories; avoid shared factories across services.
-
-14. **What are the memory implications of Factory?**
-
-    - Factories are usually stateless; the created objects consume memory.
-
-15. **How do you refactor Factory code?**
-
-    - Extract common logic, use registration pattern, and apply SOLID principles.
-
-### FAANG-style
-
-16. **Design a Factory for a plugin system.**
-
-    - Consider dynamic loading, registration, lifecycle management, and isolation.
-
-17. **How would you implement Factory for distributed systems?**
-
-    - Consider remote object creation, serialization, and network transparency.
-
-18. **What are the implications of Factory in cloud-native applications?**
-
-    - Consider serverless cold starts, container scaling, and resource management.
-
-19. **How do you handle Factory in event-driven architectures?**
-
-    - Use factories to create event handlers, producers, and consumers.
-
-20. **Design a Factory that supports multiple configurations.**
-
-    - Consider configuration injection, environment-specific factories, and feature flags.
-
-### Follow-ups
-
-21. **Can Factory pattern be combined with other patterns?**
-
-    - Yes, commonly with Singleton, Abstract Factory, and Prototype patterns.
-
-22. **How do you handle Factory in testing frameworks?**
-
-    - Use dependency injection, create test factories, and mock object creation.
-
-23. **What are the memory implications of Factory pattern?**
-
-    - Factories are usually lightweight; the created objects consume memory.
-
-24. **How do you handle Factory in serverless environments?**
-
-    - Consider cold starts, instance reuse, and stateless factory design.
-
-25. **What's the impact of Factory on code maintainability?**
-
-    - Improves maintainability by centralizing creation logic and reducing coupling.
 
 ## Summary
 
 The Factory pattern is essential for creating objects without specifying concrete classes. It promotes loose coupling, improves testability, and makes code more maintainable. Use Simple Factory for basic creation, Factory Method for subclass-based creation, and Abstract Factory for creating families of related objects.
 
 ## Cheat Sheet
-
 ```text
 ┌─────────────────────────────────────────────┐
 │           FACTORY PATTERN                   │
@@ -968,6 +866,14 @@ The Factory pattern is essential for creating objects without specifying concret
 └─────────────────────────────────────────────┘
 
 ```
+
+---
+
+## See Also
+- [NestJS](../06-NestJS/)
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

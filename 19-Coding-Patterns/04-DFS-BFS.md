@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # DFS & BFS
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -458,7 +468,6 @@ console.log(ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])); 
 DFS and BFS are fundamental graph/tree traversal algorithms. DFS goes deep before wide (stack/recursion), while BFS goes wide before deep (queue). Choose based on whether you need depth-first exploration or level-by-level processing.
 
 ## Cheat Sheet
-
 ```text
 Pattern: DFS / BFS
 Use when: Graphs, trees, mazes, connected components
@@ -491,6 +500,13 @@ When to use which?
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

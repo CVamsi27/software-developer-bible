@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Optimistic vs Pessimistic Locking
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -560,114 +570,12 @@ GROUP BY mode;
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is optimistic locking?**
-   Assumes conflicts are rare; checks version at commit time.
-
-2. **What is pessimistic locking?**
-   Assumes conflicts are likely; acquires locks before modifying.
-
-3. **When would you use optimistic locking?**
-   Low contention scenarios; read-heavy workloads.
-
-4. **When would you use pessimistic locking?**
-   High contention scenarios; write-heavy workloads.
-
-5. **What is a version column?**
-   Incremented on each update; used for optimistic lock detection.
-
-### Intermediate (5)
-
-6. **How do you implement optimistic locking in SQL?**
-   UPDATE ... WHERE id = ? AND version = ?;
-
-7. **What is SELECT FOR UPDATE?**
-   Acquires exclusive lock on selected rows.
-
-8. **What is the difference between FOR UPDATE and FOR SHARE?**
-   FOR UPDATE: exclusive lock; FOR SHARE: shared lock.
-
-9. **What is NOWAIT?**
-   Fails immediately if row is locked.
-
-10. **What is SKIP LOCKED?**
-    Skips locked rows; useful for task queues.
-
-### Senior (10)
-
-11. **How do you choose between optimistic and pessimistic locking?**
-    Based on contention level, consistency requirements, performance needs.
-
-12. **What is the retry strategy for optimistic locking?**
-    Exponential backoff, limited retries, conflict detection.
-
-13. **How do you handle deadlocks with pessimistic locking?**
-    Consistent lock ordering, lock timeout, retry logic.
-
-14. **What is the impact of isolation level on locking?**
-    Higher isolation = more locks = more contention.
-
-15. **How do you implement optimistic locking in Prisma?**
-    Version column, updateMany with version check.
-
-16. **What is two-phase locking (2PL)?**
-    Acquire all locks before committing; ensures serializability.
-
-17. **How do you handle long-running transactions with pessimistic locking?**
-    Lock timeout, short transactions, optimistic alternative.
-
-18. **What is lock escalation?**
-    Converting row locks to table locks; PostgreSQL doesn't do this.
-
-19. **How do you monitor lock contention?**
-    pg_locks, pg_stat_activity, deadlock logs.
-
-20. **What is the relationship between MVCC and locking?**
-    MVCC reduces lock need; readers don't block writers.
-
-### FAANG-style (5)
-
-21. **Design a distributed locking system.**
-    Redis locks, ZooKeeper, consensus protocols.
-
-22. **How would you implement optimistic locking in a distributed system?**
-    Vector clocks, version vectors, conflict resolution.
-
-23. **Design a high-concurrency bidding system.**
-    Optimistic locking, row-level locking, lock timeout.
-
-24. **How do you handle conflicts in optimistic locking?**
-    Last-writer-wins, merge strategies, user resolution.
-
-25. **Design a task queue without deadlocks.**
-    SKIP LOCKED, advisory locks, optimistic locking.
-
-### Follow-ups (5)
-
-26. **What is the difference between pessimistic and optimistic concurrency control?**
-    Pessimistic: prevent conflicts; Optimistic: detect and resolve.
-
-27. **How do you handle optimistic locking failures?**
-    Retry with backoff, user notification, conflict resolution.
-
-28. **What is the impact of optimistic locking on performance?**
-    Better concurrency but retry overhead.
-
-29. **How do you choose lock modes?**
-    FOR UPDATE for writes, FOR SHARE for reads.
-
-30. **What is the difference between row-level and table-level locks?**
-    Row-level: fine-grained, better concurrency; Table-level: coarse, blocks more.
 
 ## Summary
 
 Choose optimistic locking for low-contention scenarios; use pessimistic locking for high contention. Optimistic uses version columns and checks at commit time; pessimistic uses SELECT FOR UPDATE. Always implement retry logic for optimistic locking. Use consistent lock ordering to prevent deadlocks with pessimistic locking.
 
 ## Cheat Sheet
-
 ```sql
 -- Optimistic locking
 UPDATE table SET version = version + 1 WHERE id = ? AND version = ?;
@@ -686,6 +594,13 @@ SELECT * FROM pg_stat_activity WHERE wait_event_type = 'Lock';
 SET lock_timeout = '5s';
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

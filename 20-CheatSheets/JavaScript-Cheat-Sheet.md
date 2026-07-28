@@ -1,4 +1,14 @@
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
+
 # JavaScript Cheat Sheet
+
+[![Section](https://img.shields.io/badge/section-CheatSheets-lightgrey)](.)
+[![Type](https://img.shields.io/badge/type-Cheat%20Sheet-yellow)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Quick Reference Table
 
@@ -83,7 +93,7 @@
 
 ### Module Pattern (IIFE)
 
-```js
+```javascript
 const Module = (function() {
   let private = 0;
   return {
@@ -96,7 +106,7 @@ const Module = (function() {
 
 ### Observer Pattern (Pub/Sub)
 
-```js
+```javascript
 class EventEmitter {
   constructor() { this.events = {}; }
   on(event, fn) {
@@ -115,7 +125,7 @@ class EventEmitter {
 
 ### Currying
 
-```js
+```javascript
 const curry = (fn) => {
   const arity = fn.length;
   return function curried(...args) {
@@ -131,7 +141,7 @@ add(1, 2)(3); // 6
 
 ### Memoization
 
-```js
+```javascript
 const memo = (fn) => {
   const cache = new Map();
   return (...args) => {
@@ -147,7 +157,7 @@ const memo = (fn) => {
 
 ### Debounce / Throttle
 
-```js
+```javascript
 const debounce = (fn, ms) => {
   let timer;
   return (...args) => {
@@ -167,7 +177,7 @@ const throttle = (fn, ms) => {
 
 ### Promise Retry
 
-```js
+```javascript
 const retry = (fn, maxRetries, delay) =>
   fn().catch(err => maxRetries > 0
     ? new Promise(r => setTimeout(r, delay)).then(() => retry(fn, maxRetries - 1, delay))
@@ -177,7 +187,7 @@ const retry = (fn, maxRetries, delay) =>
 
 ### Object Pool (Memory Management)
 
-```js
+```javascript
 class ObjectPool {
   constructor(create, reset, maxSize) {
     this.create = create; this.reset = reset;
@@ -195,7 +205,7 @@ class ObjectPool {
 
 ### Iterator / Generator Pattern
 
-```js
+```javascript
 function* fibonacci() {
   let [a, b] = [0, 1];
   while (true) {
@@ -210,7 +220,7 @@ take(fibonacci(), 10); // [0,1,1,2,3,5,8,13,21,34]
 
 ### Proxy Validation
 
-```js
+```javascript
 const validated = (obj, schema) => new Proxy(obj, {
   set(target, prop, value) {
     if (schema[prop] && !schema[prop](value)) {
@@ -262,6 +272,19 @@ const validated = (obj, schema) => new Proxy(obj, {
 - **Key operators**: `??` (nullish), `?.` (optional chaining), `...` (spread/rest), `typeof` (but `typeof null === "object"`).
 
 ---
+
+---
+
+
+## Summary
+
+This cheat sheet provides a concise reference to core JavaScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

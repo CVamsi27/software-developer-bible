@@ -1,4 +1,14 @@
+---
+section: Next.js
+category: Frontend
+tags: [interview-questions, reference]
+---
+
 # Next.js Interview Questions — Comprehensive Guide
+
+[![Section](https://img.shields.io/badge/section-Next.js-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Interview%20Questions-orange)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Overview
 
@@ -1471,6 +1481,13 @@ Best Practices:
 - Monitor performance metrics
 
 ```
+
+---
+
+## See Also
+- [React](../03-React/)
+- [Serverless & Edge](../27-Serverless-Edge/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

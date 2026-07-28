@@ -1,4 +1,14 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Multi-Stage Builds
+
+[![Section](https://img.shields.io/badge/section-Docker-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -359,129 +369,12 @@ docker images myapp
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a multi-stage build?**
-   A Dockerfile technique using multiple `FROM` statements to build in stages, copying only needed artifacts to the final image.
-
-2. **Why use multi-stage builds?**
-   To keep production images small by excluding build tools, dev dependencies, and source code.
-
-3. **What does `COPY --from=builder` do?**
-   Copies files from the stage named `builder` into the current stage.
-
-4. **How do you name a stage?**
-   Use `AS alias` after the `FROM` instruction: `FROM node:18 AS builder`.
-
-5. **Can you build a specific stage?**
-   Yes: `docker build --target builder -t myapp:debug .`
-
-6. **What is the difference between single-stage and multi-stage builds?**
-   Single-stage: one `FROM`, everything in one image. Multi-stage: multiple `FROM`, only artifacts copied to final image.
-
-7. **How do multi-stage builds improve security?**
-   Build tools, compilers, and dev dependencies are excluded from the final image.
-
-8. **What happens to earlier stages after the build?**
-   They are not included in the final image but remain in build cache.
-
-9. **Can you copy from any stage?**
-   Yes, using `COPY --from=<stage-name-or-index>`.
-
-10. **What is a distroless image?**
-    A minimal image containing only the runtime and app—no shell, package manager, or OS utilities.
-
-### Intermediate (5-10)
-
-11. **How does BuildKit improve multi-stage builds?**
-    BuildKit builds independent stages in parallel, significantly reducing build time.
-
-12. **How would you optimize a Node.js multi-stage build?**
-    Copy package.json first, install deps, copy source, build, then create production stage with only dist and production node_modules.
-
-13. **What is the `--target` flag used for?**
-    Builds up to a specific named stage, useful for dev/test/debug builds.
-
-14. **How do you handle secrets in multi-stage builds?**
-    Use `--mount=type=secret` with BuildKit to avoid leaking secrets in layers.
-
-15. **What is the best base image for production?**
-    Distroless or Alpine for minimal size and security.
-
-16. **How do you test a multi-stage build locally?**
-    Build with `--target` to intermediate stages and run tests there.
-
-17. **What is `npm prune --production`?**
-    Removes devDependencies from node_modules, reducing image size.
-
-18. **How do you handle monorepos with multi-stage builds?**
-    Build shared libraries in early stages, copy artifacts to application stages.
-
-19. **What is the difference between `COPY --from` and volume mounts?**
-    `COPY --from` bakes files into the image. Volume mounts overlay at runtime.
-
-20. **How do you debug a failed multi-stage build?**
-    Build with `--target` up to the failing stage, or use `docker run -it <stage-image> sh`.
-
-### Senior (10-15)
-
-21. **Design a multi-stage Dockerfile for a microservices monorepo.**
-    Use base stage for shared configs, dependency stages per service, build stages for compilation, production stages with distroless. Leverage BuildKit cache mounts.
-
-22. **How would you implement build caching across CI/CD pipelines?**
-    Use BuildKit cache mounts for npm/yarn, registry-based caching, or Docker layer cache in CI.
-
-23. **What is the security implication of leaving build tools in production?**
-    Increased attack surface—compilers and shells can be used to exploit vulnerabilities.
-
-24. **How do you handle native dependencies in multi-stage builds?**
-    Build native modules in a full base image, copy compiled binaries to Alpine/distroless final stage.
-
-25. **Explain BuildKit cache mounts for package managers.**
-    `RUN --mount=type=cache,target=/root/.npm npm ci` caches npm's download cache across builds.
-
-### FAANG-style (5-10)
-
-26. **Design a Docker build pipeline for 100+ microservices.**
-    Use shared base images, BuildKit cache imports/exports, registry caching, and parallel builds. Implement image promotion across environments.
-
-27. **How would you optimize Docker build times from 30 minutes to under 5 minutes?**
-    BuildKit parallel stages, cache mounts, minimal context, layer ordering, remote cache, and pre-built base images.
-
-28. **Describe a strategy for managing base image updates across services.**
-    Use a base image repository with automated updates, dependency scanning, and coordinated rollouts.
-
-29. **How would you implement reproducible builds across different architectures?**
-    Use multi-arch builds (`docker buildx build --platform linux/amd64,linux/arm64`), pin exact base image digests.
-
-30. **Design a security scanning pipeline for multi-stage builds.**
-    Scan each stage independently, block critical CVEs, maintain allowlists, integrate with CI/CD gates.
-
-### Follow-ups (5-10)
-
-31. **What happens if a stage fails during a multi-stage build?**
-    The entire build fails. Docker does not cache failed stages.
-
-32. **Can you use multi-stage builds with `docker compose`?**
-    Yes, Compose supports multi-stage builds via the `target` build option.
-
-33. **How do you copy SSH keys in multi-stage builds?**
-    Use `--mount=type=ssh` with BuildKit: `RUN --mount=type=ssh ssh git@github.com`.
-
-34. **What is the difference between `COPY --from` and `ADD --from`?**
-    Both copy from previous stages. `ADD` can also extract tarballs and fetch URLs.
-
-35. **How do you handle Docker layer caching with multi-stage builds?**
-    Order instructions by change frequency. Use BuildKit cache mounts for package managers.
 
 ## Summary
 
 Multi-stage builds separate build-time and run-time concerns, producing minimal, secure production images. They improve caching, reduce image sizes, and enable consistent dev/prod environments using a single Dockerfile with different target stages.
 
 ## Cheat Sheet
-
 ```bash
 # Build specific stage
 docker build --target builder -t myapp:debug .
@@ -508,6 +401,13 @@ docker scout quickview myapp:latest
 ```
 
 ---
+
+---
+
+## See Also
+- [Kubernetes](../14-Kubernetes/)
+- [CI/CD](../15-CI-CD/)
+- [Microservices](../12-Microservices/)
 
 ## References & Learn More
 

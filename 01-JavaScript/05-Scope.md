@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Scope
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -727,280 +737,6 @@ function level4Optimized(a: number, b: number, c: number) {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is scope in JavaScript?**
-
-A: Scope determines where variables and functions are accessible in your code. It defines the lifetime and visibility of variables.
-
-**Q2: What are the different types of scope in JavaScript?**
-
-A: There are three main types:
-
-1. **Global scope**: Accessible everywhere
-
-2. **Function scope**: Accessible only within the function
-
-3. **Block scope**: Accessible only within the block (for `let`/`const`)
-
-**Q3: What is the difference between var, let, and const?**
-
-A:
-
-- `var`: Function-scoped, can be reassigned, hoisted
-- `let`: Block-scoped, can be reassigned, TDZ
-- `const`: Block-scoped, cannot be reassigned, TDZ
-
-**Q4: What is lexical scope?**
-
-A: Lexical scope means scope is determined by where code is written (defined), not where it's called. JavaScript uses lexical scoping.
-
-**Q5: What is the scope chain?**
-
-A: The scope chain is the hierarchy of scopes that JavaScript uses to resolve variable names. It goes from the current scope outward to the global scope.
-
-### Intermediate (5-10 questions)
-
-**Q6: Why does `var` have function scope instead of block scope?**
-
-A: This is a historical design decision from before ES6. `var` was designed to be function-scoped for simplicity, but this caused many bugs. ES6 introduced `let` and `const` with block scoping to fix these issues.
-
-**Q7: How does the scope chain work with closures?**
-
-A: Closures retain access to their lexical environment (scope chain) even after the outer function returns. This allows inner functions to access outer variables.
-
-**Q8: What is variable shadowing?**
-
-A: Variable shadowing occurs when a variable in an inner scope has the same name as a variable in an outer scope. The inner variable "shadows" the outer one.
-
-**Q9: How do you access global variables inside a function?**
-
-A: You can access global variables directly from any scope. However, it's better to pass them as parameters for clarity and testability.
-
-**Q10: What is the difference between scope and context?**
-
-A:
-
-- **Scope**: Where variables are accessible (determined by code structure)
-- **Context**: What `this` refers to (determined by how functions are called)
-
-### Senior (10-15 questions)
-
-**Q11: How does scope relate to memory management?**
-
-A: Variables are destroyed when their scope ends (garbage collected). Understanding scope helps predict variable lifetimes and prevent memory leaks.
-
-**Q12: What are the performance implications of deep scope chains?**
-
-A: Deeply nested scopes require more lookups to resolve variables. This can impact performance in tight loops or frequently called functions.
-
-**Q13: How do different JavaScript engines optimize scope resolution?**
-
-A: Engines use techniques like:
-
-- Inline caching for property access
-- Hidden classes for object shapes
-- JIT compilation to optimize scope lookups
-- Deoptimization when scope assumptions are violated
-
-**Q14: How does scope work with `eval()`?**
-
-A: `eval()` executes code in the current scope, which can modify variables in that scope. This is why `eval()` is dangerous and discouraged.
-
-**Q15: What is the relationship between scope and hoisting?**
-
-A: Hoisting moves declarations to the top of their scope. `var` is hoisted to function scope, while `let`/`const` are hoisted to block scope but remain in TDZ.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design a scope-aware variable resolver.**
-
-A:
-
-```typescript
-class ScopeResolver {
-  private scopes: Map<string, Map<string, any>> = new Map();
-  private parentScope: ScopeResolver | null = null;
-
-  constructor(parent?: ScopeResolver) {
-    this.parentScope = parent || null;
-  }
-
-  declare(name: string, value: any): void {
-    const currentScope = this.getCurrentScope();
-    currentScope.set(name, value);
-  }
-
-  resolve(name: string): any {
-    const currentScope = this.getCurrentScope();
-    if (currentScope.has(name)) {
-      return currentScope.get(name);
-    }
-
-    if (this.parentScope) {
-      return this.parentScope.resolve(name);
-    }
-
-    throw new Error(`Variable '${name}' not defined`);
-  }
-
-  private getCurrentScope(): Map<string, any> {
-    // Implementation depends on use case
-    return new Map();
-  }
-}
-
-```
-
-**Q17: How would you implement block scoping for `var` in transpilers?**
-
-A:
-
-```typescript
-// Original code
-function example() {
-  if (true) {
-    var x = 10;
-  }
-  console.log(x);
-}
-
-// Transpiled to block scoping
-function example() {
-  var x;  // Declare at function scope
-  if (true) {
-    x = 10;  // Assign in block
-  }
-  console.log(x);
-}
-
-```
-
-**Q18: Analyze the memory implications of different scoping strategies.**
-
-A:
-
-- **Global scope**: Longest lifetime, highest memory impact
-- **Function scope**: Medium lifetime, moderate memory impact
-- **Block scope**: Shortest lifetime, lowest memory impact
-
-Optimization: Use block scoping to minimize variable lifetimes.
-
-**Q19: How do you handle scope in a REPL environment?**
-
-A:
-
-```typescript
-class REPL {
-  private globalScope = new Map<string, any>();
-  private currentScope = this.globalScope;
-
-  execute(code: string): any {
-    // Parse code
-    // Create new scope for execution
-    // Evaluate in current scope
-    // Return result
-  }
-
-  getScope(): Map<string, any> {
-    return new Map(this.currentScope);
-  }
-}
-
-```
-
-**Q20: What are the security implications of scope in JavaScript?**
-
-A:
-
-1. **Global scope pollution**: Can be exploited for attacks
-
-2. **eval()**: Can inject code into current scope
-
-3. **with statement**: Deprecated due to scope ambiguity
-
-4. **Prototype pollution**: Can affect all objects in scope
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a scope-related bug in production?**
-
-A: Common bug:
-
-```typescript
-// Bug: var in loop causes unexpected behavior
-function processItems(items: any[]) {
-  for (var i = 0; i < items.length; i++) {
-    setTimeout(() => {
-      console.log(items[i]);  // Undefined for all iterations!
-    }, 100);
-  }
-}
-
-// Fix: Use let
-function processItemsFixed(items: any[]) {
-  for (let i = 0; i < items.length; i++) {
-    setTimeout(() => {
-      console.log(items[i]);  // Correct item for each iteration
-    }, 100);
-  }
-}
-
-```
-
-**Q22: How do you debug scope-related issues?**
-
-A:
-
-1. **Chrome DevTools**: Use Scope panel in debugger
-
-2. **console.log**: Log variable values at different points
-
-3. **Breakpoints**: Set breakpoints to inspect scope
-
-4. **Linters**: Use ESLint to catch scope issues
-
-5. **TypeScript**: Catch scope errors at compile time
-
-**Q23: What is the relationship between scope and `this`?**
-
-A: `this` is not part of the scope chain. It depends on how functions are called, not where they're defined. Arrow functions inherit `this` from their lexical scope.
-
-**Q24: How do you handle scope in a single-page application?**
-
-A:
-
-1. Use module pattern for encapsulation
-
-2. Avoid global variables
-
-3. Use React/Vue component scope
-
-4. Implement state management (Redux, Vuex)
-
-5. Use closures for private state
-
-**Q25: What are best practices for managing scope in large codebases?**
-
-A:
-
-1. Use `const` by default, `let` when needed
-
-2. Avoid `var` entirely
-
-3. Declare variables at top of scope
-
-4. Use block scoping in loops
-
-5. Avoid variable shadowing
-
-6. Use TypeScript for type safety
-
-7. Implement linting rules
-
-8. Document scope behavior in complex functions
 
 ## Summary
 
@@ -1023,7 +759,6 @@ Scope is fundamental to JavaScript:
 Understanding scope is essential for writing clean, efficient, bug-free JavaScript.
 
 ## Cheat Sheet
-
 ```text
 SCOPE CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -1079,6 +814,13 @@ SECURITY:
 • Prevent prototype pollution
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

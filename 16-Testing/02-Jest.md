@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
+
 # Jest
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -1113,152 +1123,6 @@ describe("Database", () => {
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is Jest and why is it popular?**
-   Jest is a JavaScript testing framework with zero configuration, built-in assertions, mocking, and coverage. It's popular due to its simplicity, speed, and comprehensive feature set.
-
-2. **What is the difference between `describe`, `it`, and `test`?**
-   `describe` groups related tests. `it` and `test` are aliases for defining individual test cases. `it` is more common in BDD style.
-
-3. **What is `expect` in Jest?**
-   `expect` is Jest's assertion function that takes a value and returns an object with matchers to test the value against.
-
-4. **How do you mock a function in Jest?**
-   Use `jest.fn()` to create a mock function, or `jest.mock()` to mock an entire module.
-
-5. **What is snapshot testing?**
-   Snapshot testing captures the rendered output of a component and compares it to a stored snapshot to detect unexpected changes.
-
-6. **How do you run only specific tests?**
-   Use `it.only()` or `describe.only()`, or run tests with a pattern: `jest --testNamePattern="pattern"`.
-
-7. **What is `beforeEach` and `afterEach`?**
-   These are lifecycle hooks that run before and after each test in a describe block, used for setup and cleanup.
-
-8. **How do you mock timers in Jest?**
-   Use `jest.useFakeTimers()` and `jest.advanceTimersByTime()` to control time in tests.
-
-9. **What is code coverage in Jest?**
-   Code coverage measures which parts of your code are executed by tests. Jest uses Istanbul to generate coverage reports.
-
-10. **How do you handle async code in Jest tests?**
-    Use `async/await`, return promises, or use `done` callback for asynchronous operations.
-
-### Intermediate (5-10)
-
-11. **What is the difference between `jest.fn()` and `jest.mock()`?**
-    `jest.fn()` creates a mock function. `jest.mock()` replaces an entire module with a mock implementation.
-
-12. **How do you test error boundaries in React with Jest?**
-    Use `render` with error throwing components and verify fallback UI renders correctly.
-
-13. **What is `jest.spyOn` and when would you use it?**
-    `jest.spyOn` creates a mock that tracks calls to an existing method while preserving the original implementation.
-
-14. **How do you mock API calls in Jest?**
-    Use `jest.mock` for module-level mocking, or MSW (Mock Service Worker) for network-level mocking.
-
-15. **What is the difference between `mockReturnValue` and `mockImplementation`?**
-    `mockReturnValue` returns a fixed value. `mockImplementation` executes a function that can have logic and return different values.
-
-16. **How do you test React hooks?**
-    Use `@testing-library/react-hooks` library or wrap hooks in test components with React Testing Library.
-
-17. **What is `jest.requireActual`?**
-    `jest.requireActual` imports the real implementation of a module, useful when you want to mock part of a module.
-
-18. **How do you test middleware in Express?**
-    Create mock request/response objects and call the middleware function directly.
-
-19. **What is `fakeTimers` in Jest?**
-    `fakeTimers` replaces real timer functions with mock implementations to control time in tests.
-
-20. **How do you debug failing Jest tests?**
-    Use `--verbose` flag, add `console.log`, use debugger with `node --inspect`, or use VS Code Jest extension.
-
-### Senior (10-15)
-
-21. **How would you set up Jest for a monorepo?**
-    Use Jest projects configuration, set up shared configuration, and manage test isolation between packages.
-
-22. **How do you handle flaky tests in Jest?**
-    Identify root causes (timing, state, network), fix them, and implement retry mechanisms for environmental issues.
-
-23. **What is Jest's `moduleFileExtensions` configuration?**
-    It specifies file extensions Jest should look for when resolving modules. Important for TypeScript and other languages.
-
-24. **How do you optimize Jest for large codebases?**
-    Use `--changedSince`, `--onlyChanged`, parallel execution, and test splitting strategies.
-
-25. **How do you test database migrations with Jest?**
-    Run migrations in `beforeAll`, test the migration logic, and verify data integrity.
-
-26. **What is `jest-environment-jsdom`?**
-    A Jest environment that provides a browser-like DOM API for testing browser code in Node.js.
-
-27. **How do you mock GraphQL queries?**
-    Use `jest.mock` for Apollo Client or use MSW for network-level GraphQL mocking.
-
-28. **What is `globalSetup` and `globalTeardown`?**
-    These run once before all test suites and after all test suites, useful for starting/stopping servers or databases.
-
-29. **How do you test performance-critical code?**
-    Use `jest.retryTimes` for flaky performance tests, and benchmark with `performance.now()`.
-
-30. **How do you integrate Jest with CI/CD?**
-    Use `--ci` flag, generate coverage reports, fail on coverage thresholds, and parallelize test execution.
-
-### FAANG-style (5-10)
-
-31. **How would you design a testing strategy for a microservices architecture?**
-    Use contract testing, integration tests, and E2E tests. Implement test isolation and independent deployment testing.
-
-32. **How do you handle testing in a CI/CD pipeline with Jest?**
-    Implement test parallelization, use test impact analysis, cache dependencies, and fail fast on critical failures.
-
-33. **How would you debug memory leaks in Jest tests?**
-    Use `--detectOpenHandles`, profile memory usage, and ensure proper cleanup in `afterAll`.
-
-34. **How do you test serverless functions with Jest?**
-    Mock AWS services, test handler functions directly, and verify event processing.
-
-35. **How would you implement test data factories in Jest?**
-    Create factory functions with defaults, traits, and sequence generators for test data.
-
-36. **How do you test WebSocket connections in Jest?**
-    Mock WebSocket server, test client connection handling, and verify message passing.
-
-37. **How would you handle testing in a micro-frontend architecture?**
-    Use contract testing between micro-frontends, integration tests, and shared test utilities.
-
-38. **How do you test edge computing scenarios with Jest?**
-    Mock edge runtime APIs, test service worker logic, and verify offline capabilities.
-
-39. **How would you implement visual regression testing with Jest?**
-    Use `jest-image-screenshot` or integrate with Percy/Chromatic for visual comparison.
-
-40. **How do you ensure test isolation in a shared test environment?**
-    Use database transactions with rollbacks, mock external services, and implement proper cleanup.
-
-### Follow-ups (5-10)
-
-41. **How has your Jest usage evolved over time?**
-    Discuss adoption of best practices, migration from other tools, and continuous improvement.
-
-42. **What Jest plugins or extensions have you found valuable?**
-    `jest-axe` for accessibility, `jest-fetch-mock` for fetch mocking, `jest-mock-extended` for type-safe mocking.
-
-43. **How do you handle testing legacy code with Jest?**
-    Use characterization tests, gradually increase coverage, and refactor while maintaining test coverage.
-
-44. **What's the most challenging Jest testing problem you've solved?**
-    Describe complex mocking scenarios, performance issues, or flaky test investigations.
-
-45. **How do you balance test speed with test confidence?**
-    Discuss test pyramid, prioritization strategies, and when to use different test types.
 
 ## Summary
 
@@ -1273,6 +1137,14 @@ Jest is a comprehensive JavaScript testing framework that provides everything ne
 - **Extensible**: Rich plugin ecosystem for additional functionality
 
 Master Jest by understanding its core concepts, practicing mock patterns, and implementing test-driven development.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

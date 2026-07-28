@@ -1,4 +1,14 @@
+---
+section: Testing
+category: Quality
+tags: [overview, reference]
+---
+
 # Testing Overview
+
+[![Section](https://img.shields.io/badge/section-Testing-ffd700)](.)
+[![Type](https://img.shields.io/badge/type-Overview-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -734,152 +744,6 @@ Test Suite Distribution:
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is the testing pyramid?**
-   The testing pyramid is a model that recommends having many unit tests at the base, fewer integration tests in the middle, and even fewer E2E tests at the top. It balances fast feedback with comprehensive coverage.
-
-2. **What is the difference between unit, integration, and E2E tests?**
-   Unit tests verify individual components in isolation. Integration tests verify interactions between components. E2E tests verify complete user workflows through the entire application.
-
-3. **What is TDD?**
-   Test-Driven Development is a practice where you write a failing test first, write minimal code to pass the test, then refactor while keeping tests green.
-
-4. **Why should we write tests?**
-   Tests catch bugs early, provide regression safety, serve as documentation, enable refactoring, and support CI/CD practices.
-
-5. **What is test coverage?**
-   Test coverage measures the percentage of code that is executed by tests. While useful, 100% coverage doesn't guarantee bug-free code.
-
-6. **What is a mock?**
-   A mock is a test double that simulates the behavior of real objects. Mocks help isolate the code under test by replacing external dependencies.
-
-7. **What is the AAA pattern?**
-   Arrange-Act-Assert is a test structure pattern: set up test data (Arrange), execute the code (Act), verify the results (Assert).
-
-8. **What makes a good test?**
-   Good tests are fast, reliable, isolated, maintainable, and test behavior rather than implementation details.
-
-9. **What is regression testing?**
-   Regression testing ensures that new code changes haven't broken existing functionality. It involves re-running previously passing tests.
-
-10. **What is a test fixture?**
-    A test fixture is the setup and teardown of test data and environment state required for tests to run correctly.
-
-### Intermediate (5-10)
-
-11. **How do you test async code?**
-    Use async/await with Jest, handle promises with `.resolves`/`.rejects`, and ensure proper cleanup of timers and resources.
-
-12. **What is snapshot testing?**
-    Snapshot tests capture the rendered output of a component and compare it to a stored snapshot. They catch unexpected UI changes.
-
-13. **How do you handle flaky tests?**
-    Fix timing issues, use proper mocking, ensure test isolation, avoid shared state, and use deterministic test data.
-
-14. **What is code coverage and what's a good target?**
-    Code coverage measures executed code percentage. Aim for 70-80% overall, with 90%+ for critical business logic.
-
-15. **How do you test error handling?**
-    Use `.toThrow()` for synchronous errors, test both success and failure paths, and verify error messages and types.
-
-16. **What is the difference between mocks and stubs?**
-    Stubs provide predetermined responses to calls. Mocks verify interactions and can have expectations set on how they're called.
-
-17. **How do you test React components?**
-    Use React Testing Library for component tests, mock external dependencies, test user interactions, and verify accessibility.
-
-18. **What is test isolation and why is it important?**
-    Test isolation means tests don't share state or depend on each other. It ensures tests can run in any order and be parallelized.
-
-19. **How do you test database operations?**
-    Use test databases, transaction rollbacks, fixtures, and verify both read and write operations.
-
-20. **What is property-based testing?**
-    Property-based testing generates random inputs to verify properties that should hold true, complementing example-based tests.
-
-### Senior (10-15)
-
-21. **How do you design testable code?**
-    Apply SOLID principles, use dependency injection, prefer composition over inheritance, and keep functions pure when possible.
-
-22. **How do you test microservices?**
-    Use contract testing between services, integration tests with real dependencies, and E2E tests for critical workflows.
-
-23. **What is contract testing?**
-    Contract testing verifies that API consumers and providers agree on the contract. Tools like Pact enable consumer-driven contracts.
-
-24. **How do you test distributed systems?**
-    Use chaos engineering, distributed tracing, circuit breaker testing, and eventual consistency verification.
-
-25. **How do you measure test effectiveness?**
-    Track defect escape rate, test coverage, mutation testing score, mean time to detect, and test maintenance burden.
-
-26. **What is mutation testing?**
-    Mutation testing introduces code mutations to verify tests catch them. A high mutation score indicates robust tests.
-
-27. **How do you test for performance?**
-    Use load testing tools, establish baselines, test under various conditions, and monitor key metrics like response time and throughput.
-
-28. **How do you handle test data management?**
-    Use factories, fixtures, and data builders. Implement cleanup strategies and ensure test data doesn't leak between tests.
-
-29. **How do you test security?**
-    Include security testing in CI/CD, use static analysis tools, perform penetration testing, and validate input sanitization.
-
-30. **What is the test automation pyramid anti-pattern?**
-    The "ice cream cone" anti-pattern has too many manual tests, some E2E tests, few unit tests, and no static analysis.
-
-### FAANG-style (5-10)
-
-31. **How would you design a testing strategy for a large-scale application?**
-    Consider risk-based testing, test automation at multiple levels, shift-left practices, and continuous testing in CI/CD.
-
-32. **How do you handle testing in a CI/CD pipeline?**
-    Implement parallel test execution, use test impact analysis, run appropriate test stages, and provide fast feedback.
-
-33. **How do you ensure test quality at scale?**
-    Implement test review processes, track test health metrics, use test classification, and maintain test documentation.
-
-34. **How do you test a system with external dependencies?**
-    Use contract testing, mock external services, implement circuit breakers, and have fallback strategies.
-
-35. **How do you handle flaky tests in a large test suite?**
-    Quarantine flaky tests, track flakiness metrics, fix root causes, and implement retry mechanisms as temporary measure.
-
-36. **How do you balance speed and coverage in testing?**
-    Prioritize critical paths, use test impact analysis, implement parallel execution, and focus on risk-based testing.
-
-37. **How do you test infrastructure as code?**
-    Use tools like Terratest, validate configurations, test deployments in staging, and implement drift detection.
-
-38. **How do you test machine learning models?**
-    Validate data quality, test model performance metrics, implement A/B testing, and monitor model drift.
-
-39. **How do you handle testing legacy code?**
-    Use characterization tests, implement Michael Feathers' "Working Effectively with Legacy Code" techniques, and gradually increase coverage.
-
-40. **How do you measure testing ROI?**
-    Track defect reduction, calculate time saved in debugging, measure release confidence, and quantify customer satisfaction impact.
-
-### Follow-ups (5-10)
-
-41. **How has your testing strategy evolved over your career?**
-    Discuss shift from manual to automated testing, adoption of TDD/BDD, and integration of testing into CI/CD.
-
-42. **What testing tools have you used and why did you choose them?**
-    Explain selection criteria: community support, integration capabilities, performance, and team expertise.
-
-43. **How do you handle testing in a fast-paced startup environment?**
-    Focus on critical path testing, use pragmatic coverage targets, implement smoke tests, and maintain test quality.
-
-44. **How do you onboard new team members on testing practices?**
-    Provide testing guidelines, code examples, pair programming on tests, and establish review processes.
-
-45. **What's the most challenging testing situation you've faced?**
-    Describe the context, challenges encountered, solutions implemented, and lessons learned.
 
 ## Summary
 
@@ -894,6 +758,14 @@ Testing is a fundamental practice in modern software development that ensures co
 - Continuously improve testing practices
 
 A well-tested codebase is maintainable, reliable, and enables teams to ship features quickly with confidence.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
+- [CI/CD](../15-CI-CD/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

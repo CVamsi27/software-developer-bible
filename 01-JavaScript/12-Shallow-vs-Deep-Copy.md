@@ -1,4 +1,14 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Shallow Copy vs Deep Copy
+
+[![Section](https://img.shields.io/badge/section-JavaScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -408,136 +418,6 @@ console.timeEnd('copy');
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10 questions)
-
-**Q1: What is the difference between shallow and deep copy?**
-
-A: Shallow copy copies top-level properties but nested objects are shared references. Deep copy creates completely independent copies of all nested objects.
-
-**Q2: How do you create a shallow copy of an object?**
-
-A: Use spread operator `{ ...obj }` or `Object.assign({}, obj)`.
-
-**Q3: How do you create a deep copy of an object?**
-
-A: Use `structuredClone(obj)` or `JSON.parse(JSON.stringify(obj))`.
-
-**Q4: Why is `{ ...obj }` not a deep copy?**
-
-A: Because it only copies top-level properties. Nested objects are still referenced, not copied.
-
-**Q5: What are the limitations of JSON.stringify for deep copy?**
-
-A: It can't handle functions, undefined values, circular references, Date objects, RegExp, and other special types.
-
-### Intermediate (5-10 questions)
-
-**Q6: What is structuredClone and why is it better?**
-
-A: `structuredClone` is a built-in method that creates deep copies. It handles circular references, Date, RegExp, Map, Set, and other types that JSON can't.
-
-**Q7: How do you deep copy an array?**
-
-A: Use `structuredClone(arr)` or `JSON.parse(JSON.stringify(arr))`. Spread `[...arr]` only creates a shallow copy.
-
-**Q8: What is the performance difference between shallow and deep copy?**
-
-A: Shallow copy is O(n) where n is number of properties. Deep copy is O(n*m) where m is depth of nesting.
-
-**Q9: How do you update nested state immutably?**
-
-A: Use spread operator at each level:
-
-```typescript
-const newState = {
-  ...state,
-  nested: {
-    ...state.nested,
-    value: newValue
-  }
-};
-
-```
-
-**Q10: When should you use shallow vs deep copy?**
-
-A: Shallow for simple objects or when you want shared nested references. Deep when you need complete independence.
-
-### Senior (10-15 questions)
-
-**Q11: How do you handle circular references in deep copy?**
-
-A: Use a WeakMap to track visited objects:
-
-```typescript
-function deepClone(obj, seen = new WeakMap()) {
-  if (seen.has(obj)) return seen.get(obj);
-  // ... copy and add to seen
-}
-
-```
-
-**Q12: What is structural sharing and how does it relate to copying?**
-
-A: Structural sharing is when immutable data structures share parts with previous versions, reducing memory while maintaining immutability.
-
-**Q13: How do you implement copy-on-write?**
-
-A: Start with references, only copy when modification is attempted. Used in virtual DOM and state management.
-
-**Q14: What are the memory implications of deep copying large objects?**
-
-A: Each copy consumes memory proportional to object size. For very large objects, consider streaming, lazy loading, or references.
-
-**Q15: How do different frameworks handle immutable state?**
-
-A: React uses shallow comparison, Redux recommends immutable updates, Vue uses Proxy-based reactivity.
-
-### FAANG-style (5-10 questions)
-
-**Q16: Design an efficient immutable data structure.**
-
-A: Use persistent data structures with structural sharing. Libraries like Immutable.js implement these efficiently.
-
-**Q17: How would you implement a diff algorithm for state changes?**
-
-A: Compare old and new state, track changes at each level. Use structural sharing to minimize memory.
-
-**Q18: Analyze the trade-offs between different copy methods.**
-
-A: Performance vs correctness vs memory. Shallow is fast but may have bugs. Deep is correct but expensive.
-
-**Q19: How do you optimize deep copy for specific use cases?**
-
-A: Know your data structure, copy only what's needed, use typed arrays for numeric data, implement custom copy for special types.
-
-**Q20: What are security implications of object copying?**
-
-A: Prototype pollution through shallow copies, information leakage through references.
-
-### Follow-ups (5-10 questions)
-
-**Q21: Can you give an example of a bug caused by shallow copy?**
-
-A: React state mutation - modifying nested state without proper deep updates causes re-render issues.
-
-**Q22: How do you test for unintended mutations?**
-
-A: Use immutable test libraries, freeze objects in tests, snapshot testing.
-
-**Q23: What is the relationship between copying and garbage collection?**
-
-A: Copies create new objects that need GC. Old objects are collected when no references remain.
-
-**Q24: How do you handle copying in a concurrent environment?**
-
-A: Use immutable data structures, locks, or copy-on-write strategies.
-
-**Q25: What are best practices for working with copies?**
-
-A: Document mutation behavior, choose appropriate copy method, use TypeScript, freeze when needed, measure performance.
 
 ## Summary
 
@@ -558,7 +438,6 @@ Understanding shallow vs deep copy is essential:
 7. **Common bugs**: Assume deep when it's shallow
 
 ## Cheat Sheet
-
 ```dockerfile
 SHALLOW vs DEEP COPY CHEAT SHEET
 ═══════════════════════════════════════════════════════════════
@@ -605,6 +484,13 @@ BEST PRACTICES:
 • Measure before optimizing
 
 ```
+
+---
+
+## See Also
+- [TypeScript](../02-TypeScript/)
+- [Node.js](../05-NodeJS/)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

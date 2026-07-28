@@ -1,4 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Deadlocks
+
+[![Section](https://img.shields.io/badge/section-Database-success)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -461,114 +471,12 @@ GROUP BY mode;
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is a deadlock?**
-   Two or more transactions waiting for each other to release locks.
-
-2. **How does PostgreSQL detect deadlocks?**
-   Automatic detection via lock graph analysis.
-
-3. **What happens when a deadlock is detected?**
-   One transaction is aborted (the victim).
-
-4. **What is FOR UPDATE?**
-   Locks selected rows until transaction completes.
-
-5. **What is lock ordering?**
-   Consistent order of acquiring locks to prevent deadlocks.
-
-### Intermediate (5)
-
-6. **What are the four conditions for deadlock?**
-   Mutual exclusion, hold and wait, no preemption, circular wait.
-
-7. **What is the difference between pessimistic and optimistic locking?**
-   Pessimistic: lock rows upfront; Optimistic: check version at commit.
-
-8. **What is NOWAIT?**
-   Fails immediately if row is locked instead of waiting.
-
-9. **What is SKIP LOCKED?**
-   Skips locked rows; useful for task queues.
-
-10. **What is advisory locking?**
-    Application-level locks; not tied to table rows.
-
-### Senior (10)
-
-11. **How do you prevent deadlocks in application code?**
-    Consistent lock ordering, short transactions, retry logic.
-
-12. **What is lock escalation?**
-    Converting many row locks to fewer table locks; PostgreSQL doesn't do this.
-
-13. **What is the difference between row-level and table-level locks?**
-    Row-level: fine-grained, better concurrency; Table-level: coarse, blocks more.
-
-14. **How do you monitor lock contention in production?**
-    pg_locks, pg_stat_activity, deadlock logs.
-
-15. **What is a livelock?**
-    Transactions keep restarting but never complete; different from deadlock.
-
-16. **What is lock timeout and how does it help?**
-    Fails if lock not acquired within timeout; prevents indefinite waiting.
-
-17. **What is the impact of deadlocks on performance?**
-    Transaction restarts, wasted work, reduced throughput.
-
-18. **How do you handle deadlocks in distributed systems?**
-    Distributed locks, consensus protocols, retry with backoff.
-
-19. **What is the difference between pessimistic and optimistic concurrency control?**
-    Pessimistic: prevent conflicts; Optimistic: detect and resolve conflicts.
-
-20. **What is deadlock_timeout?**
-    How long to wait before checking for deadlocks; default 1 second.
-
-### FAANG-style (5)
-
-21. **Design a deadlock-free banking system.**
-    Consistent lock ordering, two-phase locking, optimistic locking.
-
-22. **How would you handle deadlocks in a distributed database?**
-    Distributed lock manager, consensus protocols, eventual consistency.
-
-23. **Design a high-concurrency task queue without deadlocks.**
-    SKIP LOCKED, advisory locks, optimistic locking.
-
-24. **How do you handle deadlocks in microservices?**
-    Saga pattern, idempotency, retry with exponential backoff.
-
-25. **Design a real-time bidding system with concurrency control.**
-    Optimistic locking, row-level locking, lock timeout.
-
-### Follow-ups (5)
-
-26. **What is two-phase locking (2PL)?**
-    Acquire all locks before committing; ensures serializability.
-
-27. **What is the difference between exclusive and shared locks?**
-    Exclusive: only one holder; Shared: multiple holders allowed.
-
-28. **How do you test for deadlocks?**
-    Concurrent load testing, deadlock detection tools.
-
-29. **What is the relationship between isolation levels and deadlocks?**
-    Higher isolation = more locks = more deadlock potential.
-
-30. **How do you choose between pessimistic and optimistic locking?**
-    Pessimistic: high contention; Optimistic: low contention.
 
 ## Summary
 
 Deadlocks occur when transactions wait for each other in a circular pattern. PostgreSQL detects and resolves them automatically. Prevent deadlocks with consistent lock ordering, short transactions, and appropriate lock modes. Use optimistic locking for read-heavy workloads and SKIP LOCKED for task queues.
 
 ## Cheat Sheet
-
 ```sql
 -- Lock rows
 SELECT * FROM table WHERE id = 1 FOR UPDATE;
@@ -592,6 +500,13 @@ SET lock_timeout = '5s';
 SET deadlock_timeout = '500ms';
 
 ```
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

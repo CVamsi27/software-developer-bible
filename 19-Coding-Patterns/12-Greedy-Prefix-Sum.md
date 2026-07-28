@@ -1,4 +1,14 @@
+---
+section: Coding Patterns
+category: Interview
+tags: [concept]
+---
+
 # Greedy & Prefix Sum
+
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-red)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -381,7 +391,6 @@ console.log(maxProduct([-2, 0, -1])); // 0
 Greedy algorithms make locally optimal choices at each step. Prefix sum enables efficient range queries. Together, they solve many optimization and query problems efficiently.
 
 ## Cheat Sheet
-
 ```text
 Pattern: Greedy + Prefix Sum
 Use when: Optimization, range queries, local optimal → global optimal
@@ -422,6 +431,13 @@ When to use prefix sum:
 ```
 
 ---
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [System Design](../11-System-Design/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 

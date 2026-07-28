@@ -1,4 +1,14 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # Docker Build & Deploy Pipeline
+
+[![Section](https://img.shields.io/badge/section-CI/CD-ff7f00)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -460,129 +470,12 @@ docker push myapp:latest
 
 ```
 
-## Interview Questions
-
-### Beginner (5-10)
-
-1. **What is a Docker build pipeline?**
-   Automated workflow for building, testing, and deploying Docker images.
-
-2. **What is a container registry?**
-   Storage system for Docker images (Docker Hub, ECR, GCR).
-
-3. **What is image tagging?**
-   Version identification for Docker images (e.g., `myapp:1.0.0`).
-
-4. **Why not use `latest` tag in production?**
-   It's ambiguous and can lead to unexpected deployments.
-
-5. **What is image scanning?**
-   Analyzing images for security vulnerabilities.
-
-6. **What is a multi-stage build?**
-   Using multiple `FROM` statements to build and production in separate stages.
-
-7. **How do you push an image to a registry?**
-   `docker push registry.example.com/myapp:tag`
-
-8. **What is layer caching?**
-   Reusing unchanged Docker layers to speed up builds.
-
-9. **What is a health check?**
-   An endpoint to verify container health.
-
-10. **What is a rollback?**
-    Reverting to a previous version after a failed deployment.
-
-### Intermediate (5-10)
-
-11. **How do you implement CI/CD for Docker?**
-    Use GitHub Actions, GitLab CI, or Jenkins to build, test, and deploy images.
-
-12. **What is the difference between `docker build` and `docker compose build`?**
-    `docker build` builds a single image. `docker compose build` builds multiple services.
-
-13. **How do you handle secrets in Docker builds?**
-    Use BuildKit secret mounts or external secret management.
-
-14. **What is image signing?**
-    Cryptographic signing to verify image integrity and source.
-
-15. **How do you implement blue-green deployment with Docker?**
-    Run two environments and switch traffic between them.
-
-16. **What is a canary deployment?**
-    Gradually rolling out changes to a small subset of users.
-
-17. **How do you handle database migrations in Docker?**
-    Run migrations as init containers or separate jobs.
-
-18. **What is the difference between `docker pull` and `docker push`?**
-    `pull` downloads images. `push` uploads images.
-
-19. **How do you optimize Docker build speed?**
-    Use BuildKit, cache layers, and minimize build context.
-
-20. **What is a Dockerfile best practice?**
-    Use multi-stage builds, pin versions, and run as non-root.
-
-### Senior (10-15)
-
-21. **Design a Docker build pipeline for a microservices architecture.**
-    Use path-based triggers, matrix builds, and shared base images. Implement caching and scanning.
-
-22. **How would you handle image promotion across environments?**
-    Use registry tags, image scanning gates, and automated promotion.
-
-23. **What is the difference between rolling, blue-green, and canary deployments?**
-    Rolling: gradual replacement. Blue-green: two environments. Canary: small subset.
-
-24. **How do you implement zero-downtime deployments with Docker?**
-    Use health checks, readiness probes, and graceful shutdown.
-
-25. **Design a disaster recovery strategy for Docker images.**
-    Use registry replication, image backup, and cross-region distribution.
-
-### FAANG-style (5-10)
-
-26. **Design a Docker build pipeline for 100+ microservices.**
-    Use shared base images, BuildKit cache, and matrix builds. Implement automated scanning and promotion.
-
-27. **How would you optimize Docker build times from 30 minutes to under 5?**
-    BuildKit parallel builds, cache mounts, minimal context, and remote cache.
-
-28. **Design a multi-region Docker deployment strategy.**
-    Use regional registries, edge caching, and automated failover.
-
-29. **How would you implement image governance?**
-    Use image signing, vulnerability scanning, and compliance policies.
-
-30. **Describe a Docker image management strategy.**
-    Implement lifecycle policies, automated cleanup, and retention rules.
-
-### Follow-ups (5-10)
-
-31. **What is the difference between `docker save` and `docker export`?**
-    `save` preserves layers and metadata. `export` flattens to a tarball.
-
-32. **How do you handle Docker image cleanup?**
-    Use `docker system prune` and implement registry retention policies.
-
-33. **What is the difference between a Docker image and a Docker container?**
-    Image: read-only template. Container: running instance.
-
-34. **How do you handle Docker image versioning?**
-    Use semantic versioning, Git SHA, and build numbers.
-
-35. **What is the impact of image size on deployment?**
-    Larger images take longer to pull and deploy.
 
 ## Summary
 
 A Docker build pipeline automates image creation, testing, and deployment. Key components include CI/CD workflows, container registries, image tagging, and deployment strategies. Proper implementation ensures consistent, secure, and efficient deployments.
 
 ## Cheat Sheet
-
 ```bash
 # Build
 docker build -t myapp:1.0.0 .
@@ -608,6 +501,13 @@ docker compose down
 ```
 
 ---
+
+---
+
+## See Also
+- [Docker](../13-Docker/)
+- [Kubernetes](../14-Kubernetes/)
+- [Git Advanced](../24-Git-Advanced/)
 
 ## References & Learn More
 

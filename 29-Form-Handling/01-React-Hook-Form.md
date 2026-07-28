@@ -1,4 +1,14 @@
+---
+section: Form Handling
+category: Frontend
+tags: [concept]
+---
+
 # React Hook Form
+
+[![Section](https://img.shields.io/badge/section-Form%20Handling-00b4d8)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 React Hook Form is a performance-first form library for React that provides performant, flexible, and extensible forms with easy-to-use validation. It uses uncontrolled components and native HTML validation to minimize re-renders.
@@ -530,160 +540,17 @@ React Hook Form Performance:
 
 ```
 
-## Interview Questions
-
-### Beginner (5)
-
-1. **What is React Hook Form?**
-
-   - Answer: A performance-first form library for React that uses uncontrolled components and native HTML validation to minimize re-renders.
-
-2. **What is the `register` function?**
-
-   - Answer: A function that registers input fields with React Hook Form, providing validation and state management.
-
-3. **What is `handleSubmit`?**
-
-   - Answer: A function that handles form submission, validates all fields, and calls the submit handler with form data.
-
-4. **What is `formState`?**
-
-   - Answer: An object containing form state like errors, isSubmitting, isDirty, isValid, etc.
-
-5. **What is `Controller`?**
-
-   - Answer: A component for integrating controlled third-party components with React Hook Form.
-
-### Intermediate (5)
-
-6. **What is the difference between `register` and `Controller`?**
-
-   - Answer: `register` is for native HTML inputs (uncontrolled); `Controller` is for third-party components that need controlled state.
-
-7. **How do you handle dynamic fields?**
-
-   - Answer: Use `useFieldArray` hook to manage dynamic lists of fields with add, remove, and move operations.
-
-8. **What is the `watch` function?**
-
-   - Answer: A function that watches specific fields and re-renders when their values change.
-
-9. **How do you handle async validation?**
-
-   - Answer: Return a promise from validation function; React Hook Form handles loading state and validation.
-
-10. **What is the `mode` option?**
-
-    - Answer: Determines when validation runs (onSubmit, onChange, onBlur, all).
-
-### Senior (10)
-11. **How does React Hook Form achieve better performance?**
-
-    - Answer: Uses uncontrolled components, ref-based access, minimal re-renders, and optimized state management.
-
-12. **How do you integrate with Zod?**
-
-    - Answer: Use `zodResolver` from `@hookform/resolvers/zod` as the resolver option in `useForm`.
-
-13. **How do you handle complex nested objects?**
-
-    - Answer: Use dot notation in register (e.g., `register('user.address.city')`) or nested field arrays.
-
-14. **How do you handle form-level validation?**
-
-    - Answer: Use `validate` option in `useForm` or custom validation logic in submit handler.
-
-15. **How do you optimize re-renders?**
-
-    - Answer: Use `watch` with selector, avoid unnecessary Controller usage, use `useFormContext` appropriately.
-
-16. **How do you handle server-side validation errors?**
-
-    - Answer: Use `setError` to set errors from server response, or `setError('root.serverError')` for form-level errors.
-
-17. **How do you handle file uploads?**
-
-    - Answer: Use `register` with `valueAs` option or Controller with controlled component.
-
-18. **How do you handle multi-step forms?**
-
-    - Answer: Use `FormProvider` to share form context, or maintain separate forms per step.
-
-19. **How do you test React Hook Form components?**
-
-    - Answer: Use `renderHook` with `useForm`, or test form components with `@testing-library/react`.
-
-20. **How do you handle conditional fields?**
-
-    - Answer: Use `watch` to conditionally render fields and apply conditional validation.
-
-### FAANG-style (5)
-21. **Design a form system for a large application**
-
-- **Answer**:
-  - React Hook Form for performance
-  - Zod for schema validation
-  - FormProvider for context
-  - Custom hooks for common patterns
-  - Storybook for documentation
-
-22. **How would you handle forms in a micro-frontend architecture?**
-
-- **Answer**:
-  - Independent form libraries per micro-frontend
-  - Shared validation schemas
-  - Event-based communication
-  - Consistent UX patterns
-
-23. **Explain form validation architecture**
-
-- **Answer**:
-  - Client-side: Zod schemas
-  - Server-side: Same schemas with additional rules
-  - Real-time validation with debouncing
-  - Accessibility considerations
-
-24. **How do you optimize form performance at scale?**
-
-- **Answer**:
-  - Memoization of validation functions
-  - Debounced validation
-  - Lazy loading of complex fields
-  - Virtualization for long lists
-
-25. **Design a form builder system**
-
-- **Answer**:
-  - JSON schema for form definition
-  - Dynamic component rendering
-  - Validation rule engine
-  - Accessibility compliance
-  - Performance optimization
-
-### Follow-ups (5)
-26. **How do you handle forms in server-side rendering?**
-
-- **Answer**: Use `defaultValues` with `useEffect`, or hydrate form state from server.
-
-27. **How do you handle offline form submission?**
-
-- **Answer**: Store form data in localStorage/IndexedDB, sync when online.
-
-28. **How do you handle form analytics?**
-
-- **Answer**: Track field interactions, submission attempts, validation errors, and completion rates.
-
-29. **How do you handle form accessibility?**
-
-- **Answer**: Use proper labels, ARIA attributes, error announcements, and keyboard navigation.
-
-30. **How do you handle form internationalization?**
-
-- **Answer**: Use i18n libraries for labels and error messages, support RTL layouts.
 
 ## Summary
 
 React Hook Form provides a performant, developer-friendly approach to form management in React. Master its API, validation integration, and best practices for building excellent forms.
+
+---
+
+## See Also
+- [React](../03-React/)
+- [TypeScript](../02-TypeScript/)
+- [Design Patterns](../10-Design-Patterns/)
 
 ## References & Learn More
 

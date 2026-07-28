@@ -1,4 +1,14 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Advanced Generics
+
+[![Section](https://img.shields.io/badge/section-TypeScript-blueviolet)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -496,104 +506,12 @@ const result = identity("hello"); // T is inferred as string
 - **Memory**: Large generic types consume more memory
 - **Caching**: TypeScript caches generic type results
 
-## Interview Questions
-
-### Beginner
-
-1. **What are advanced generics?**
-
-   - Complex generic patterns beyond basic type parameters
-
-2. **What is a generic constraint?**
-
-   - A restriction on what types a generic parameter can accept
-
-3. **How do you create a generic interface?**
-
-   - Use `<T>` syntax: `interface Box<T> { value: T; }`
-
-4. **Can you have multiple type parameters?**
-
-   - Yes: `<T, U, V>` etc.
-
-5. **What is a default type parameter?**
-
-   - A fallback type: `<T = unknown>`
-
-### Intermediate
-
-6. **How do you simulate higher-kinded types?**
-
-   - Use interfaces with `_type` property
-
-7. **What are variadic generics?**
-
-   - Type parameters that accept variable-length tuples
-
-8. **How do you create a type-safe curry function?**
-
-   - Use recursive conditional types with `infer`
-
-9. **What is a recursive generic type?**
-
-   - A generic type that references itself
-
-10. **How do you constrain a generic to be a function?**
-
-    - Use `T extends (...args: any[]) => any`
-
-### Senior
-
-11. **Implement a type-safe pipe function**
-
-    - Use variadic generics and conditional types
-
-12. **Design a type-safe ORM query builder**
-
-    - Use generic constraints for table/column relationships
-
-13. **How do you create a type-safe event system?**
-
-    - Use mapped types with generic constraints
-
-14. **What is the difference between `any` and `unknown` in generics?**
-
-    - `unknown` preserves type safety; `any` bypasses it
-
-### FAANG-style
-
-15. **Build a type-safe state management solution**
-
-    - Use advanced generics for actions, reducers, middleware
-
-16. **Implement a type-safe API client**
-
-    - Use generics for request/response types
-
-17. **Create a type-safe form validation system**
-
-    - Use generics for field types, validation rules
-
-### Follow-ups
-
-18. **How do generics interact with conditional types?**
-
-    - Generic parameters can be used in conditional type checks
-
-19. **Can you have generic type aliases?**
-
-    - Yes: `type Box<T> = { value: T; }`
-
-20. **How do you debug complex generic types?**
-
-    - Create intermediate type aliases, use IDE hover
 
 ## Summary
 
 Advanced generics enable sophisticated type-level programming in TypeScript. They're essential for building type-safe libraries, frameworks, and complex applications. Master constraints, conditional types, and variadic generics for maximum type safety.
 
 ## Cheat Sheet
-
 ```typescript
 // Generic constraint
 function first<T extends { length: number }>(arr: T): T[0] { return arr[0]; }
@@ -620,6 +538,13 @@ interface HKT { _type: unknown; }
 interface ArrayHKT extends HKT { _type: unknown[]; }
 
 ```
+
+---
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [React](../03-React/)
+- [NestJS](../06-NestJS/)
 
 ## References & Learn More
 

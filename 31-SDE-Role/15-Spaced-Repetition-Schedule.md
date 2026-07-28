@@ -1,20 +1,32 @@
+---
+section: SDE Role
+category: Interview
+tags: [schedule]
+---
+
 # 🔄 Spaced Repetition Schedule
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Maximize retention with scientifically-backed review intervals**
-> 
+>
 > Based on the Ebbinghaus forgetting curve — review just before you forget!
 
 ---
 
 ## 🧠 How Spaced Repetition Works
 
-```
+```text
+
 Day 0:  Learn new material
 Day 1:  First review (1 day later)
 Day 3:  Second review (3 days later)
 Day 7:  Third review (1 week later)
 Day 14: Fourth review (2 weeks later)
 Day 30: Fifth review (1 month later)
+
 ```
 
 **Key Principle:** Each successful review extends the interval. If you struggle, restart from a shorter interval.
@@ -223,12 +235,14 @@ Day 30: Fifth review (1 month later)
 
 ### How to Determine Mastery Level
 
-```
+```text
+
 New:      Can't solve without help
 Learning: Can solve with hints, takes >30 min
 Familiar: Can solve independently, 20-30 min
 Mastered: Can solve quickly, <20 min, explain clearly
 Expert:   Can solve in <15 min, can teach, know variations
+
 ```
 
 ---
@@ -274,19 +288,23 @@ Expert:   Can solve in <15 min, can teach, know variations
 - [Google Sheets](https://sheets.google.com/) — Custom tracking spreadsheet
 
 ### Anki Setup for Interview Prep
-```
+
+```text
+
 1. Create a new deck: "SDE Interview Prep"
 2. Add cards for each concept/pattern
 3. Tag cards by topic (Arrays, Trees, DP, etc.)
 4. Use built-in spaced repetition scheduler
 5. Review daily (10-15 min)
+
 ```
 
 ---
 
 ## 📈 Expected Retention Curve
 
-```
+```text
+
 Without Spaced Repetition:
 Day 1:  100% retention
 Day 3:  60% retention
@@ -300,6 +318,7 @@ Day 3:  95% → Review → 100%
 Day 7:  90% → Review → 100%
 Day 14: 85% → Review → 100%
 Day 30: 80% → Review → 100%
+
 ```
 
 **Result:** Instead of forgetting 85% in a month, you retain 80%+ with regular review!
@@ -316,7 +335,8 @@ Day 30: 80% → Review → 100%
 
 ### Daily Time Allocation (4-6 hours)
 
-```
+```text
+
 Morning (2-3 hours):
 ├── 30 min: Review yesterday's material
 ├── 2 hours: Solve new problems
@@ -330,6 +350,7 @@ Afternoon (1.5-2 hours):
 Evening (1-1.5 hours):
 ├── 30 min: System Design / Behavioral
 └── 30 min: Complete remaining reviews
+
 ```
 
 ---
@@ -349,3 +370,25 @@ Evening (1-1.5 hours):
 > **Remember:** Spaced repetition is about working smarter, not harder. By reviewing at the right intervals, you'll retain more information with less total study time!
 
 > **Pro Tip:** Combine spaced repetition with interleaving — mix different topics in your practice sessions rather than focusing on one topic for hours. This improves your ability to identify which pattern to apply!
+---
+
+
+## Summary
+
+This schedule provides a structured 12-week spaced repetition plan for interview preparation, balancing topic review, problem-solving practice, and mock interviews to maximize long-term retention.
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

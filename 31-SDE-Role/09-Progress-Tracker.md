@@ -1,7 +1,17 @@
+---
+section: SDE Role
+category: Interview
+tags: [tool]
+---
+
 # 📊 SDE Interview Prep — Progress Tracker
 
+[![Section](https://img.shields.io/badge/section-SDE%20Role-red)](.)
+[![Type](https://img.shields.io/badge/type-Tool-blue)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
 > **Track your journey to landing your dream job!**
-> 
+>
 > Update this tracker daily/weekly to stay on top of your preparation.
 
 ---
@@ -40,7 +50,7 @@
 | **Mock Interviews** | 5% | __/10 | __/0.5 | 🟡 |
 | **TOTAL** | 100% | - | __/10.0 | 🟡 |
 
-**Readiness Level:** 
+**Readiness Level:**
 - 9.0-10.0 = 🟢 **Interview Ready** — Schedule your interviews!
 - 7.0-8.9 = 🟡 **Almost Ready** — Focus on weak areas
 - 5.0-6.9 = 🟠 **In Progress** — Keep grinding
@@ -582,3 +592,19 @@
 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+---
+
+
+## References & Learn More
+
+- [Official Documentation](https://developer.mozilla.org/en-US/)
+- [LeetCode](https://leetcode.com/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+## See Also
+- [JavaScript](../01-JavaScript/)
+- [TypeScript](../02-TypeScript/)
+- [React](../03-React/)
+- [System Design](../11-System-Design/)
+- [Behavioral](../18-Behavioral/)
+- [Coding Patterns](../19-Coding-Patterns/)

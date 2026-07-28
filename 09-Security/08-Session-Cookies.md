@@ -1,4 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # Sessions and Cookies
+
+[![Section](https://img.shields.io/badge/section-Security-800080)](.)
+[![Type](https://img.shields.io/badge/type-Concept-informational)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 ## Definition
 
@@ -429,137 +439,6 @@ app.post("/transfer", (req, res) => {
 | Session Data | Keep minimal for performance |
 | Serialization | Use efficient formats (JSON, MessagePack) |
 
-## Interview Questions
-
-### Beginner (5-10)
-
-**Q1: What is the difference between a session and a cookie?**
-A: A session stores data on the server, identified by a session ID. A cookie stores data on the client (browser) and is sent with every request. Sessions are more secure; cookies are simpler.
-
-**Q2: What is the HttpOnly cookie flag?**
-A: HttpOnly prevents JavaScript from accessing the cookie via document.cookie. This protects session cookies from XSS attacks, as malicious scripts cannot steal them.
-
-**Q3: What is the Secure cookie flag?**
-A: Secure ensures cookies are only sent over HTTPS connections. This prevents cookies from being transmitted over unencrypted HTTP, protecting against eavesdropping.
-
-**Q4: What is SameSite cookie attribute?**
-A: SameSite controls when cookies are sent with cross-site requests. Strict: never sent cross-site. Lax: sent for top-level navigation. None: sent with all requests.
-
-**Q5: Why should you regenerate session ID after login?**
-A: Prevents session fixation attacks. If an attacker sets a session ID before login, regenerating ensures the attacker's ID is invalidated after successful authentication.
-
-**Q6: What is session expiration?**
-A: Sessions should expire after a period of inactivity or a maximum lifetime. This limits the window of opportunity for attackers if a session is compromised.
-
-**Q7: Where should session data be stored?**
-A: Server-side in secure stores like Redis, PostgreSQL, or MongoDB. Never store sensitive session data in cookies (they're client-side and can be tampered with).
-
-**Q8: What is a session store?**
-A: A backend for storing session data. Options include in-memory (development), Redis (production), PostgreSQL, MongoDB, or file systems. Production should use persistent, scalable stores.
-
-**Q9: What is the difference between session-based and token-based authentication?**
-A: Session-based stores data server-side; session ID in cookie. Token-based (JWT) stores data in the token itself; stateless. Sessions are easier to revoke; tokens are more scalable.
-
-**Q10: What is session fixation?**
-A: An attack where an attacker sets a victim's session ID before authentication. After login, the attacker uses the known session ID to hijack the session.
-
-### Intermediate (5-10)
-
-**Q11: How would you implement session management for a microservices architecture?**
-A: Use centralized session store (Redis Cluster). Implement session sharing across services. Use API gateway for session validation. Implement session stickiness or shared sessions.
-
-**Q12: How do you handle session security in a multi-tenant application?**
-A: Use tenant-specific session namespaces. Implement tenant isolation in session store. Validate tenant context on each request. Audit cross-tenant session access.
-
-**Q13: How do you implement session revocation for logout?**
-A: Destroy session on server. Clear session cookie on client. If using Redis, delete session key. Implement immediate session invalidation.
-
-**Q14: How do you handle session persistence across devices?**
-A: Implement device tracking in session. Use device-specific sessions. Sync session data across devices. Implement device management UI.
-
-**Q15: How do you monitor session activity?**
-A: Log session creation, access, and destruction. Monitor for unusual patterns (multiple IPs, rapid requests). Implement session anomaly detection. Use SIEM for monitoring.
-
-**Q16: How do you handle session data serialization?**
-A: Use efficient formats (JSON, MessagePack). Implement compression for large sessions. Use schema validation. Handle versioning for session structure changes.
-
-**Q17: How do you implement session-based CSRF protection?**
-A: Store CSRF token in session. Validate token on state-changing requests. Regenerate token periodically. Use double-submit cookie pattern for SPAs.
-
-**Q18: How do you handle session security in server-side rendering?**
-A: Use httpOnly cookies for session ID. Implement CSP headers. Validate session on each render. Use secure session stores.
-
-**Q19: How do you implement session analytics?**
-A: Track session duration, page views, user actions. Implement funnel analysis. Use session replay for debugging. Respect user privacy.
-
-**Q20: How do you handle session migration?**
-A: Implement session versioning. Migrate old sessions gracefully. Use backward compatibility. Implement rollback procedures.
-
-### Senior (10-15)
-
-**Q21: Design a session management system for a global application with 100 million users.**
-A: Use distributed Redis Cluster. Implement session sharding by user ID. Use read replicas for session reads. Implement session caching at edge. Monitor session latency.
-
-**Q22: How would you implement session security for a financial application?**
-A: Implement step-up authentication for sensitive operations. Use session binding to device/IP. Implement session anomaly detection. Audit all session activity.
-
-**Q23: Design a session system that supports both web and mobile clients.**
-A: Use different session stores per platform. Implement platform-specific session lifetimes. Use secure storage on mobile (Keychain/Keystore). Implement cross-platform session management.
-
-**Q24: How would you handle session security in a zero-trust environment?**
-A: Validate sessions on every request. Implement continuous authentication. Use session attestation. Monitor for session hijacking.
-
-**Q25: Design a session system for a real-time collaboration platform.**
-A: Use WebSocket sessions. Implement session-based presence. Handle concurrent session access. Implement session-based conflict resolution.
-
-**Q26: How would you implement session management for a system with strict compliance requirements?**
-A: Implement comprehensive session logging. Use tamper-evident session storage. Implement session audit trails. Meet regulatory requirements (SOX, HIPAA).
-
-**Q27: Design a session system that supports session failover.**
-A: Use multi-region Redis replication. Implement session replication. Use sticky sessions or shared sessions. Implement failover procedures.
-
-**Q28: How would you handle session security for a healthcare application?**
-A: Implement patient-specific sessions. Use session-based access controls. Audit all session activity. Meet HIPAA requirements.
-
-**Q29: Design a session system for a high-traffic event (e.g., ticket sales).**
-A: Use distributed session stores. Implement session caching. Use optimistic locking for concurrent access. Implement queue-based session processing.
-
-**Q30: How would you implement session management for a system with anonymous users?**
-A: Use anonymous sessions with limited lifetime. Implement session-to-account merging. Use fingerprinting for anonymous tracking. Respect privacy regulations.
-
-### FAANG-style (5-10)
-
-**Q31: Design a session management system handling 1 billion active sessions.**
-A: Use globally distributed Redis. Implement session sharding. Use edge caching. Implement session compression. Monitor session metrics at scale.
-
-**Q32: How would you implement session security for a system with nation-state adversaries?**
-A: Use hardware security modules. Implement session attestation. Use quantum-resistant algorithms. Implement air-gapped session stores.
-
-**Q33: Design a session system for a system with 99.999% uptime requirements.**
-A: Use multi-region replication. Implement automatic failover. Use session caching. Implement circuit breakers. Monitor session health.
-
-**Q34: How would you implement session management for a system with strict latency requirements (< 1ms)?**
-A: Use in-memory session stores. Implement session caching at application level. Use efficient serialization. Optimize session lookups.
-
-**Q35: Design a session system that supports real-time session analytics.**
-A: Use event streaming for session events. Implement real-time dashboards. Use machine learning for anomaly detection. Implement automated response.
-
-### Follow-ups (5-10)
-
-**Q36: How would your session design change if cookies were not available?**
-A: Use URL-based sessions (less secure). Implement token-based authentication (JWT). Use local storage with manual token management. Implement device binding.
-
-**Q37: If Redis was experiencing high latency, how would you optimize session lookups?**
-A: Implement session caching at application level. Use connection pooling. Implement read replicas. Use session compression. Optimize data structures.
-
-**Q38: How would you implement session management for a system with regulatory data retention requirements?**
-A: Implement session logging with retention policies. Use encrypted session archives. Implement secure deletion. Maintain audit trails.
-
-**Q39: How would your approach change for a system handling classified information?**
-A: Use hardware security modules. Implement session attestation. Use air-gapped session stores. Implement strict access controls.
-
-**Q40: If you discovered session hijacking in production, what would be your incident response?**
-A: Immediately invalidate compromised sessions. Force re-authentication. Implement additional monitoring. Rotate session secrets. Notify affected users.
 
 ## Summary
 
@@ -575,7 +454,6 @@ Sessions and cookies are fundamental to maintaining state in web applications. K
 - Never store sensitive data in cookies
 
 ## Cheat Sheet
-
 | Attribute | Recommendation |
 |-----------|---------------|
 | HttpOnly | Always true for session cookies |
@@ -586,6 +464,12 @@ Sessions and cookies are fundamental to maintaining state in web applications. K
 | Session ID Length | 32+ bytes of randomness |
 | Session Regeneration | After login, privilege escalation |
 | Session Cleanup | Implement TTL and garbage collection |
+
+---
+
+## See Also
+- [REST APIs](../07-REST-API/)
+- [System Design](../11-System-Design/)
 
 ## References & Learn More
 

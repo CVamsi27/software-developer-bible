@@ -500,5 +500,5 @@ PROTOTYPE POLLUTION:
 
 - [OWASP Node.js Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html)
 - [Node.js Security Guide](https://nodejs.org/en/learn/getting-started/security-best-practices)
-- [Snyk: Node.js Security](https://snyk.io/blog/node-js-security-best-practices/)
+- [Snyk: Node.js Security](https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/)
 - [npm audit Documentation](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities)

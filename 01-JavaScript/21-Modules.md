@@ -625,4 +625,4 @@ TOOLS:
 - [MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [JavaScript.info: Modules](https://javascript.info/modules-intro)
 - [Node.js: CommonJS vs ES Modules](https://nodejs.org/api/esm.html)
-- [LogRocket: A Guide to JavaScript Modules](https://blog.logrocket.com/a-guide-to-javascript-modules/)
+- [LogRocket: A Guide to JavaScript Modules](https://blog.logrocket.com/javascript-modules/)

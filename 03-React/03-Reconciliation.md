@@ -727,5 +727,5 @@ Optimization Strategies:
 ## References & Learn More
 
 - [React Docs: Reconciliation](https://react.dev/reference/react/Children)
-- [React Reconciliation Algorithm](https://www.freecodecamp.org/news/the-new-react-algorithm-in-/)
+- [React Reconciliation Algorithm](https://www.freecodecamp.org/news/react-reconciliation-algorithm/)
 - [React Key Prop](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)

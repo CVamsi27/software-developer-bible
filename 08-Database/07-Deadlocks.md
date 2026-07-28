@@ -508,5 +508,5 @@ SET deadlock_timeout = '500ms';
 - [PostgreSQL Deadlocks Documentation](https://www.postgresql.org/docs/current/explicit-locking.html)
 - [Deadlock Detection in PostgreSQL - PostgreSQL Wiki](https://wiki.postgresql.org/wiki/Deadlock)
 - [Understanding PostgreSQL Locking - Percona](https://www.percona.com/blog/)
-- [How to Resolve Deadlocks - DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-sql-deadlock-detect-tool)
+- [How to Resolve Deadlocks - DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-sql-deadlock-detection-tool)
 - [Two-Phase Locking (2PL) - Wikipedia](https://en.wikipedia.org/wiki/Two-phase_locking)

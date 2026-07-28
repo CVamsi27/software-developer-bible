@@ -528,6 +528,6 @@ Framer Motion provides a powerful, declarative API for creating performant anima
 
 - [Framer Motion Documentation](https://www.framer.com/motion/)
 - [Framer Motion GitHub](https://github.com/framer/motion)
-- [Animation Examples](https://www.framer.com/motion/examples/)
-- [Gesture Examples](https://www.framer.com/motion/gesture/)
+- [Animation Examples](https://www.framer.com/motion/)
+- [Gesture Examples](https://www.framer.com/motion/gestures/)
 - [Layout Animations](https://www.framer.com/motion/layout-animations/)

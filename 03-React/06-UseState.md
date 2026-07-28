@@ -784,5 +784,5 @@ When to Use useState vs useReducer:
 ## References & Learn More
 
 - [React Docs: useState](https://react.dev/reference/react/useState)
-- [React useState Hook Guide](https://www.freecodecamp.org/news/usestate-hook-explained/)
+- [React useState Hook Guide](https://www.freecodecamp.org/news/usestate-hook-in-react/)
 - [How useState Works Under the Hood](https://dmitripavlutin.com/usestate-react-hook/)

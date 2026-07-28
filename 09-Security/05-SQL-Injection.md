@@ -361,6 +361,6 @@ SQL Injection is a critical vulnerability that can lead to complete data comprom
 - [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 - [OWASP SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection)
 - [PortSwigger SQL Injection Tutorials](https://portswigger.net/web-security/sql-injection)
-- [Prisma SQL Injection Prevention](https://www.prisma.io/docs/guides/security/sanitization)
+- [Prisma SQL Injection Prevention](https://www.prisma.io/docs/orm/prisma-client/queries/raw-database-access)
 - [Bobby Tables - SQL Injection Examples](https://bobby-tables.com/)
-- [SQL Injection Knowledge Base](https://sql injection knowledge base)
+- [SQL Injection Knowledge Base](https://portswigger.net/web-security/sql-injection)

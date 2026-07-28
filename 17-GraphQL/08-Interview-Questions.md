@@ -1743,6 +1743,6 @@ Key metrics:
 
 - [GraphQL Official Spec](https://spec.graphql.org/)
 - [How to GraphQL](https://www.howtographql.com/)
-- [Apollo Best Practices](https://www.apollographql.com/blog/graphql/best-practices/)
+- [Apollo Best Practices](https://www.apollographql.com/tutorials/)
 - [GraphQL Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html)
 - [Real World GraphQL](https://github.com/APIs-guru/graphql-apis)

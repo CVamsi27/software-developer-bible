@@ -1023,6 +1023,6 @@ Buffers are essential for binary data handling in Node.js. Key takeaways:
 ## References & Learn More
 
 - [Node.js Buffer Docs](https://nodejs.org/api/buffer.html)
-- [Node.js Buffer Guide](https://nodejs.org/en/learn/manipulating-files/working-with-folders-in-the-command-line)
-- [Understanding Buffers and Streams](https://www.freecodecamp.org/news/node-js-streams-you-need-to-know/)
+- [Node.js Buffer Guide](https://nodejs.org/en/learn/manipulating-files/working-with-folders-in-nodejs)
+- [Understanding Buffers and Streams](https://www.freecodecamp.org/news/node-js-streams/)
 - [Binary Data in Node.js](https://blog.bitsrc.io/binary-data-in-node-js-you-need-to-know-ce04df27e190)

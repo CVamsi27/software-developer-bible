@@ -989,7 +989,7 @@ User user = new UserBuilder()
 - 📘 **Book:** *xUnit Test Patterns* by Gerard Meszaros — testing patterns
 - 🌐 **Website:** [JUnit 5 Documentation](https://junit.org/junit5/docs/current/user-guide/)
 - 🌐 **Website:** [Mockito Documentation](https://site.mockito.org/)
-- 🌐 **Website:** [Test Driven Development](https://martinfowler.com/articles/tdd.html) — Martin Fowler
+- 🌐 **Website:** [Test Driven Development](https://martinfowler.com/bliki/TestDrivenDevelopment.html) — Martin Fowler
 
 ---
 

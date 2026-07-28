@@ -559,5 +559,5 @@ Error tracking transforms raw exceptions into actionable, grouped issues with co
 - [Sentry React SDK](https://docs.sentry.io/platforms/javascript/react/)
 - [Sentry CLI](https://docs.sentry.io/product/cli/)
 - [Source Maps Explained](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
-- [Error Handling Best Practices](https://github.com/nicktraz/error-handling-best-practices)
+- [Error Handling Best Practices](https://github.com/nicktraz/node-error-handling)
 - [Sentry Release Management](https://docs.sentry.io/product/releases/)

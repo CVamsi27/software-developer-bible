@@ -517,5 +517,5 @@ SELECT * FROM pg_stat_activity WHERE state = 'active';
 - [PostgreSQL Transaction Isolation Documentation](https://www.postgresql.org/docs/current/transaction-iso.html)
 - [PostgreSQL Locking Documentation](https://www.postgresql.org/docs/current/locking-indexes.html)
 - [ACID Transactions Explained - PostgreSQL](https://www.postgresql.org/docs/current/tutorial-transactions.html)
-- [Understanding Transaction Isolation Levels - Baeldung](https://www.baeldung.com/transaction-isolation-levels)
+- [Understanding Transaction Isolation Levels - Baeldung](https://www.baeldung.com/sql/transaction-isolation-levels)
 - [Two-Phase Commit Protocol - Wikipedia](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)

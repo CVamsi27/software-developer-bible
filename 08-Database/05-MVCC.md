@@ -500,4 +500,4 @@ ALTER TABLE table SET (autovacuum_vacuum_scale_factor = 0.01);
 - [PostgreSQL MVCC Explained - EnterpriseDB](https://www.enterprisedb.com/blog/postgresql-vacuuming-part-1-vacuum-essentials)
 - [Understanding MVCC in PostgreSQL - Cybertec](https://www.cybertec-postgresql.com/en/postgresql-multiversion-concurrency-control/)
 - [PostgreSQL VACUUM and ANALYZE - PostgreSQL Wiki](https://wiki.postgresql.org/wiki/VACUUM)
-- [How MVCC Works - Amazon Aurora Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora PostgreSQL Aurora Repairs.html)
+- [How MVCC Works - Amazon Aurora Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Management.html)

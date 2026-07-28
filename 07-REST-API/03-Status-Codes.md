@@ -838,5 +838,5 @@ HTTP status codes are essential for communicating request outcomes between clien
 - [HTTP Status Codes - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [HTTP Status Code Definitions](https://httpstatuses.com/)
 - [RFC 8610 - HTTP Status Code Registry](https://www.iana.org/assignments/http-status-codes/)
-- [Which HTTP Status Code To Use - DigitalOcean](https://www.digitalocean.com/community/tutorials/which-http-status-code-to-use)
+- [Which HTTP Status Code To Use - DigitalOcean](https://www.digitalocean.com/community/tutorials/http-status-codes)
 - [HTTP/1.1 Status Code Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)

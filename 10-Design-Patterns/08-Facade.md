@@ -1032,4 +1032,4 @@ The Facade pattern is essential for simplifying complex systems and providing un
 
 - [GoF Design Patterns](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
 - [Refactoring Guru: Facade](https://refactoring.guru/design-patterns/facade)
-- [Facade Pattern Examples](https://www.patterns.dev/posts/facade-pattern/)
+- [Facade Pattern Examples](https://www.patterns.dev/blog/facade-pattern/)

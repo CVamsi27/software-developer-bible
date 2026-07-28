@@ -782,4 +782,4 @@ request.geo                   → Geographic info
 
 - [Next.js Docs: Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware)
 - [Middleware API Reference](https://nextjs.org/docs/app/api-reference/functions/next-request)
-- [Edge Runtime](https://nextjs.org/docs/app/building-your-application/rendering/edge-runtime)
+- [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge)

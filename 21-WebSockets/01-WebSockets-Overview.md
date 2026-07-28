@@ -856,4 +856,4 @@ Understanding WebSockets at a deep level demonstrates system design expertise an
 - [WebSocket Protocol Specification](https://www.rfc-editor.org/rfc/rfc6455)
 - [Socket.io Documentation](https://socket.io/docs/)
 - [ws Library Documentation](https://github.com/websockets/ws)
-- [Real-Time Web Application Architecture](https://martinfowler.com/articles/2022-real-time-web-architecture.html)
+- [Real-Time Web Application Architecture](https://martinfowler.com/articles/patterns-of-distributed-systems/reliable-real-time-communication.html)

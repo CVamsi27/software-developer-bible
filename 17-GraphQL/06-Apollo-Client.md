@@ -1083,8 +1083,8 @@ const cache = new InMemoryCache({
 ## References & Learn More
 
 - [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
-- [Apollo Client Hooks](https://www.apollographql.com/docs/react/data/hooks/)
+- [Apollo Client Hooks](https://www.apollographql.com/docs/react/data/queries/)
 - [Apollo Client Cache](https://www.apollographql.com/docs/react/caching/overview/)
-- [Apollo Client DevTools](https://www.apollographql.com/docs/react/devtools/)
+- [Apollo Client DevTools](https://www.apollographql.com/docs/react/development-testing/developer-tooling/)
 - [GraphQL Code Generator](https://www.graphql-code-generator.com/)
-- [Apollo Client Examples](https://github.com/apollographql/apollo-client-integration-react)
+- [Apollo Client Examples](https://github.com/apollographql/apollo-client)

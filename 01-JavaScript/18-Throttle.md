@@ -651,6 +651,6 @@ TESTING:
 ## References & Learn More
 
 - [Lodash: throttle()](https://lodash.com/docs/4.17.15#throttle)
-- [MDN: throttling](https://developer.mozilla.org/en-US/docs/Glossary/Throttling)
-- [CSS-Tricks: Throttle and Debounce in JavaScript](https://css-tricks.com/throttle-and-debounce-in-javascript/)
+- [MDN: throttling](https://developer.mozilla.org/en-US/docs/Glossary/Throttle)
+- [CSS-Tricks: Throttle and Debounce in JavaScript](https://css-tricks.com/debouncing-throttling-explained-examples/)
 - [GeeksforGeeks: Throttle vs Debounce](https://www.geeksforgeeks.org/throttle-in-javascript/)

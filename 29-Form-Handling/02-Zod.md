@@ -493,6 +493,6 @@ Zod provides a powerful, type-safe approach to schema validation in TypeScript. 
 
 - [Zod Documentation](https://zod.dev/)
 - [Zod GitHub](https://github.com/colinhacks/zod)
-- [React Hook Form Integration](https://react-hook-form.com/docs/useform/resolver#zod)
+- [React Hook Form Integration](https://react-hook-form.com/docs/useform/resolver)
 - [tRPC with Zod](https://trpc.io/docs/)
 - [Zod Examples](https://github.com/colinhacks/zod#examples)

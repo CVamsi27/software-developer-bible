@@ -661,4 +661,4 @@ Relationships:
 
 - [React Docs: Suspense](https://react.dev/reference/react/Suspense)
 - [React Docs: Lazy Loading](https://react.dev/reference/react/lazy)
-- [React Suspense Guide](https://www.freecodecamp.org/news/suspense-in-react/)
+- [React Suspense Guide](https://www.freecodecamp.org/news/react-suspense-and-error-boundaries/)

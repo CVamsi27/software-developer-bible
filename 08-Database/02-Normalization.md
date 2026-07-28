@@ -553,6 +553,6 @@ Normalization eliminates redundancy and anomalies through a series of normal for
 
 - [Database Normalization Basics - Microsoft](https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description)
 - [Normalization and De-normalization - GeeksforGeeks](https://www.geeksforgeeks.org/normalization-and-de-normalization/)
-- [Database Normal Forms Explained - Vertabelo](https://www.vertabelo.com/blog/database-normalization-explained/)
-- [1NF, 2NF, 3NF, BCNF with Examples - Simplilearn](https://www.simplilearn.com/database-normalization-article)
+- [Database Normal Forms Explained - Vertabelo](https://www.vertabelo.com/blog/database-normalization/)
+- [1NF, 2NF, 3NF, BCNF with Examples - Simplilearn](https://www.simplilearn.com/tutorials/sql-tutorial/database-normalization)
 - [Database Design for Mere Mortals - Michael Hernandez](https://www.pearson.com/en-us/subject-catalog/p/database-design-for-mere-mortals/P200000003063)

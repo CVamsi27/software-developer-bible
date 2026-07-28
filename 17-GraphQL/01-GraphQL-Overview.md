@@ -910,6 +910,6 @@ const resolvers = {
 - [Apollo Server Documentation](https://www.apollographql.com/docs/apollo-server/)
 - [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
 - [How to GraphQL](https://www.howtographql.com/)
-- [Prisma GraphQL Guides](https://www.prisma.io/docs/graphql)
+- [Prisma GraphQL Guides](https://www.prisma.io/docs/orm/prisma-client)
 - [GraphQL Best Practices](https://graphql.org/learn/best-practices/)
 - [Relay Documentation](https://relay.dev/)

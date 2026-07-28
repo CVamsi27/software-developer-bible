@@ -239,6 +239,6 @@ Performance Optimization:
 ## References & Learn More
 
 - [React Docs: Optimizing Performance](https://react.dev/learn/rendering-lists)
-- [React Dev Tools Profiler](https://react.dev/learn/reference-devtools-profiler)
-- [Optimizing React Performance](https://www.freecodecamp.org/news/optimize-react-performance/)
+- [React Dev Tools Profiler](https://react.dev/learn/profiling-react-performance)
+- [Optimizing React Performance](https://www.freecodecamp.org/news/optimize-react-app-performance/)
 - [React Performance Optimization](https://www.joshwcomeau.com/react/performance/)

@@ -744,4 +744,4 @@ DEBUGGING:
 - [MDN: Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 - [JavaScript.info: Hoisting](https://javascript.info/closure)
 - [BitBucket Blog: JavaScript Hoisting](https://blog.bitsrc.io/understanding-hoisting-in-javascript-1e74a48f4a96)
-- [FreeCodeCamp: JavaScript Hoisting](https://www.freecodecamp.org/news/understanding-hoisting-in-javascript-1e74a48f4a96/)
+- [FreeCodeCamp: JavaScript Hoisting](https://www.freecodecamp.org/news/understanding-hoisting-in-javascript/)

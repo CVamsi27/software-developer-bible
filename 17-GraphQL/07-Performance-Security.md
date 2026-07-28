@@ -924,9 +924,9 @@ Cache Layers:
 
 ## References & Learn More
 
-- [GraphQL Security Best Practices](https://www.apollographql.com/blog/graphql-security/5-ways-to-secure-your-graphql-api/)
+- [GraphQL Security Best Practices](https://www.apollographql.com/blog/graphql/security/5-ways-to-secure-your-graphql-api/)
 - [Query Complexity Analysis](https://github.com/slicknode/graphql-query-complexity)
-- [Depth Limiting](https://github.com/stems/graphql-depth-limit)
-- [Apollo Server Security](https://www.apollographql.com/docs/apollo-server/security/security-probest/)
-- [GraphQL Rate Limiting](https://github.com/ravener/graphql-rate-limit)
+- [Depth Limiting](https://github.com/Shopify/graphql-tools-web/tree/main/packages/graphql-depth-limit)
+- [Apollo Server Security](https://www.apollographql.com/docs/apollo-server/security/)
+- [GraphQL Rate Limiting](https://github.com/davidyaha/graphql-rate-limit)
 - [OWASP GraphQL Security](https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html)

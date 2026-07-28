@@ -821,4 +821,4 @@ Performance:
 
 - [React Docs: useEffect](https://react.dev/reference/react/useEffect)
 - [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
-- [React useEffect: Complete Guide](https://www.freecodecamp.org/news/useeffect-hook-explained/)
+- [React useEffect: Complete Guide](https://www.freecodecamp.org/news/useeffect-hook-in-react/)

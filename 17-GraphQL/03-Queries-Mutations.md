@@ -1251,6 +1251,6 @@ const resolvers = {
 
 - [GraphQL Queries and Mutations](https://graphql.org/learn/queries/)
 - [Apollo Client Mutations](https://www.apollographql.com/docs/react/data/mutations/)
-- [Relay Mutations](https://relay.dev/docs/guided-tutorial/mutations/)
+- [Relay Mutations](https://relay.dev/docs/tutorial/mutations/)
 - [GraphQL Error Handling](https://www.apollographql.com/docs/apollo-server/data/errors/)
-- [Best Practices for GraphQL Mutations](https://blog.apollographql.com/graphql-basics-the-top-5-ways-to-use-mutations-efd51395cac3)
+- [Best Practices for GraphQL Mutations](https://www.apollographql.com/blog/graphql/basics/the-top-5-ways-to-use-mutations/)

@@ -491,5 +491,5 @@ BEST PRACTICES:
 
 - [MDN: Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 - [MDN: structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
-- [JavaScript.info: Copying by Reference](https://javascript.info/copying-by-reference)
+- [JavaScript.info: Copying by Reference](https://javascript.info/object-copy)
 - [MDN: Spread Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)

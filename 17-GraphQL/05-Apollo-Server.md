@@ -946,6 +946,6 @@ const server = new ApolloServer({
 - [Apollo Server Documentation](https://www.apollographql.com/docs/apollo-server/)
 - [Apollo Server Plugins](https://www.apollographql.com/docs/apollo-server/integrations/plugins/)
 - [Apollo Federation](https://www.apollographql.com/docs/federation/)
-- [Apollo Studio](https://www.apollographql.com/studio/)
+- [Apollo Studio](https://www.apollographql.com/docs/studio/)
 - [GraphQL Upload Spec](https://github.com/jaydenseric/graphql-multipart-request-spec)
 - [WebSocket Subscriptions](https://www.apollographql.com/docs/apollo-server/data/subscriptions/)

@@ -1247,7 +1247,7 @@ type Post {
 
 - [GraphQL Schema Design](https://graphql.org/learn/schema/)
 - [Relay Connection Specification](https://relay.dev/graphql/connections.htm)
-- [Apollo Schema Design](https://www.apollographql.com/docs/federation/schema-design/)
+- [Apollo Schema Design](https://www.apollographql.com/docs/federation/federated-schemas/)
 - [Prisma Schema Design](https://www.prisma.io/docs/concepts/components/prisma-schema)
 - [GraphQL Best Practices](https://graphql.org/learn/best-practices/)
 - [GraphQL Schema Stitching](https://www.graphql-tools.com/docs/schema-stitching/)

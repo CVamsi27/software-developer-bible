@@ -406,6 +406,6 @@ Edge functions provide a powerful way to reduce latency and improve performance 
 
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Vercel Edge Functions](https://vercel.com/docs/functions/edge-functions)
-- [Edge Computing Fundamentals](https://web.dev/edge-computing/)
+- [Edge Computing Fundamentals](https://web.dev/articles/edge-computing)
 - [Cloudflare KV](https://developers.cloudflare.com/workers/learning/how-kv-works/)
 - [Durable Objects](https://developers.cloudflare.com/durable-objects/)

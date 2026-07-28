@@ -695,6 +695,6 @@ TESTING:
 ## References & Learn More
 
 - [Lodash: debounce()](https://lodash.com/docs/4.17.15#debounce)
-- [JavaScript.info: Task Throttle & Debounce](https://javascript.info/task-throttle-debounce)
-- [FreeCodeCamp: Debounce vs Throttle](https://www.freecodecamp.org/news/debounce-and-throttle-in-javascript/)
+- [JavaScript.info: Task Throttle & Debounce](https://javascript.info/settimeout-setinterval)
+- [FreeCodeCamp: Debounce vs Throttle](https://www.freecodecamp.org/news/debouncing-and-throttling-in-javascript/)
 - [CSS-Tricks: Debouncing and Throttling](https://css-tricks.com/debouncing-throttling-explained/)

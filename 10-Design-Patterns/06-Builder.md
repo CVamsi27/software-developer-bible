@@ -1058,4 +1058,4 @@ The Builder pattern is essential for creating complex objects with many optional
 
 - [GoF Design Patterns](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
 - [Refactoring Guru: Builder](https://refactoring.guru/design-patterns/builder)
-- [Builder Pattern in TypeScript](https://www.patterns.dev/posts/builder-pattern/)
+- [Builder Pattern in TypeScript](https://www.patterns.dev/blog/builder-pattern/)

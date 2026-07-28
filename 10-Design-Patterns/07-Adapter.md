@@ -1144,4 +1144,4 @@ The Adapter pattern is essential for integrating incompatible interfaces. It all
 
 - [GoF Design Patterns](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
 - [Refactoring Guru: Adapter](https://refactoring.guru/design-patterns/adapter)
-- [Adapter Pattern Examples](https://www.patterns.dev/posts/adapter-pattern/)
+- [Adapter Pattern Examples](https://www.patterns.dev/blog/adapter-pattern/)

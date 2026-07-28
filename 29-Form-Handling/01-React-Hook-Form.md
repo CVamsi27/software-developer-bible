@@ -551,6 +551,6 @@ React Hook Form provides a performant, developer-friendly approach to form manag
 
 - [React Hook Form Documentation](https://react-hook-form.com/)
 - [React Hook Form GitHub](https://github.com/react-hook-form/react-hook-form)
-- [Zod Integration](https://react-hook-form.com/docs/useform/resolver#zod)
+- [Zod Integration](https://react-hook-form.com/docs/useform/resolver)
 - [useFieldArray](https://react-hook-form.com/docs/usefieldarray)
 - [Controller](https://react-hook-form.com/docs/usecontroller)

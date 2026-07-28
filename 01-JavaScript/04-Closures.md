@@ -853,6 +853,6 @@ INTERVIEW TIPS:
 
 - [MDN: Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [JavaScript.info: Closures](https://javascript.info/closure)
-- [Wikipedia: Closures (computer science)](https://en.wikipedia.org/wiki/Closure_(computer_programming))
+- [Wikipedia: Closures (computer science)](https://en.wikipedia.org/wiki/Closure_(computer_programming)))
 - [Eloquent JavaScript: Closures](https://eloquentjavascript.net/3rd_edition/chapter5.html)
-- [FreeCodeCamp: Closures](https://www.freecodecamp.org/news/lets-learn-about-closures-2d716ea1f5e1/)
+- [FreeCodeCamp: Closures](https://www.freecodecamp.org/news/lets-learn-javascript-closures/)

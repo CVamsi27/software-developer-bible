@@ -573,5 +573,5 @@ BEST PRACTICES:
 
 - [Wikipedia: Memoization](https://en.wikipedia.org/wiki/Memoization)
 - [JavaScript.info: Memoize](https://javascript.info/function-basics)
-- [FreeCodeCamp: Memoize Function](https://www.freecodecamp.org/news/memoize-function-javascript/)
+- [FreeCodeCamp: Memoize Function](https://www.freecodecamp.org/news/javascript-memoization/)
 - [Lodash: memoize()](https://lodash.com/docs/4.17.15#memoize)

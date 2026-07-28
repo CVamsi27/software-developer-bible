@@ -123,4 +123,4 @@ esbuild.buildSync({
 
 - [ESBuild Documentation](https://esbuild.github.io/)
 - [SWC Documentation](https://swc.rs/docs/)
-- [ESBuild vs SWC Comparison](https://blog.logrocket.com/esbuild-vs-swc-comparison/)
+- [ESBuild vs SWC Comparison](https://blog.logrocket.com/esbuild-vs-swc-bundler-comparison/)

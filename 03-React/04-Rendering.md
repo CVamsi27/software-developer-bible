@@ -805,6 +805,6 @@ Common Pitfalls:
 
 ## References & Learn More
 
-- [React Docs: Rendering](https://react.dev/learn/react-dom-server-rendering)
+- [React Docs: Rendering](https://react.dev/reference/react-dom/server)
 - [A Comprehensive Guide to React Rendering Behavior](https://blog.savut.se/2021/03/a-comprehensive-guide-to-react-rendering-behavior/)
 - [React Rendering](https://www.reactjs.org/docs/rendering-elements.html)

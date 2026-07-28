@@ -1012,4 +1012,4 @@ Key considerations:
 - [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)
 - [HTML5 SSE Specification](https://html.spec.whatwg.org/multipage/server-sent-events.html)
 - [SSE vs WebSockets](https://blog.dreamfactory.com/websockets-vs-server-sent-events/)
-- [Node.js SSE Implementation](https://nodejs.org/en/docs/guides/getting-started-guide/)
+- [Node.js SSE Implementation](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs/)

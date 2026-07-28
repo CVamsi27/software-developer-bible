@@ -908,7 +908,7 @@ The Node.js event loop is the foundation of its non-blocking I/O architecture. U
 
 ## References & Learn More
 
-- [Node.js Event Loop Docs](https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-loop)
+- [Node.js Event Loop Docs](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
 - [Node.js Event Loop Phases](https://docs.libuv.org/en/latest/guide/design.html)
 - [libuv Documentation](https://docs.libuv.org/)
 - [Node.js Timers Docs](https://nodejs.org/api/timers.html)

@@ -800,5 +800,5 @@ Performance:
 ## References & Learn More
 
 - [React Docs: useRef](https://react.dev/reference/react/useRef)
-- [React useRef Guide](https://www.freecodecamp.org/news/useref-hook-explained/)
+- [React useRef Guide](https://www.freecodecamp.org/news/useref-hook-in-react/)
 - [useRef vs useState](https://dmitripavlutin.com/useref-vs-usestate/)

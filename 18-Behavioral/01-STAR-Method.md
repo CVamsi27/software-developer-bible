@@ -522,7 +522,7 @@ Remember: the interviewer is evaluating not just what you did, but how you think
 ## References & Learn More
 
 - [Cracking the PM Interview](https://www.amazon.com/Cracking-PM-Interview-Product-Management/dp/098478280X)
-- [The STAR Method Explained](https://www.indeed.com/career-advice/interviewing/star-method)
+- [The STAR Method Explained](https://www.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-technique)
 - [Behavioral Interview Questions](https://www.themuse.com/advice/behavioral-interview-questions-answers)
-- [STAR Method Examples](https://www.biginterview.com/blog/use-the-star-method-to-ace-the-job-interview/)
+- [STAR Method Examples](https://www.biginterview.com/blog/star-method-interview/)
 - [Amazon Leadership Principles](https://www.amazon.jobs/content/en/our-workplace/leadership-principles)

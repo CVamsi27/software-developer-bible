@@ -471,7 +471,7 @@ BEST PRACTICES:
 
 ## References & Learn More
 
-- [InterviewBit: JavaScript Interview Questions](https://www.interviewbit.com/javascript-interview-questions/)
+- [InterviewBit: JavaScript Interview Questions](https://www.interviewbit.com/javascript-interview-questions-and-answers/)
 - [JS The Right Way](https://www.jstherightway.org/)
 - [33 JavaScript Concepts Every Developer Should Know](https://github.com/leonardomso/33-js-concepts)
 - [Eloquent JavaScript](https://eloquentjavascript.net/)

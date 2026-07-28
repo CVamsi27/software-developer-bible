@@ -500,4 +500,4 @@ withRetry(fn, { maxRetries: 3, baseDelay: 1000 });
 - [MDN: Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 - [MDN: try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 - [Node.js Error Handling Best Practices](https://www.joyent.com/node-js/production/design/errors)
-- [You Don't Know JS: Async & Performance](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/async-performance)
+- [You Don't Know JS: Async & Performance](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/async-performance/README.md)

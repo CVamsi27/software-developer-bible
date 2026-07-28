@@ -361,7 +361,7 @@ JWT is a powerful stateless authentication mechanism that enables scalable, deco
 
 - [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519)
 - [JWT.io - Introduction to JSON Web Tokens](https://jwt.io/introduction/)
-- [OWASP JSON Web Token Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html)
+- [OWASP JSON Web Token Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_Cheat_Sheet_for_Java.html)
 - [Auth0 JWT Documentation](https://auth0.com/docs/secure/tokens/json-web-tokens)
 - [RFC 7517 - JSON Web Key (JWK)](https://datatracker.ietf.org/doc/html/rfc7517)
-- [Understanding JWT Security - Auth0 Blog](https://auth0.com/blog/json-web-token-security-what-you-need-to-know/)
+- [Understanding JWT Security - Auth0 Blog](https://auth0.com/blog/json-web-tokens-and-security/)

@@ -444,5 +444,5 @@ PATH MODULE:
 
 - [Node.js fs Documentation](https://nodejs.org/api/fs.html)
 - [Node.js path Documentation](https://nodejs.org/api/path.html)
-- [Node.js Streams Guide](https://nodejs.org/en/learn/manipulating-files/working-with-file-streams)
-- [Node.js File System Guide](https://nodejs.org/en/learn/manipulating-files/reading-files-with-node-js)
+- [Node.js Streams Guide](https://nodejs.org/en/learn/manipulating-files/working-with-file-streams-in-nodejs)
+- [Node.js File System Guide](https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs)

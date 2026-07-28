@@ -1145,5 +1145,5 @@ Master Jest by understanding its core concepts, practicing mock patterns, and im
 
 - [Jest Official Documentation](https://jestjs.io/docs/getting-started)
 - [Jest GitHub Repository](https://github.com/jestjs/jest)
-- [Testing JavaScript with Jest - Udemy](https://www.udemy.com/course/testing-javascript-with-jest/)
+- [Testing JavaScript with Jest - Udemy](https://www.udemy.com/course/jest-first-step/)
 - [Jest Cheat Sheet](https://github.com/sapegin/jest-cheat-sheet)

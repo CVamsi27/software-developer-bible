@@ -371,4 +371,4 @@ type DeepUnwrap<T> = T extends Promise<infer U> ? DeepUnwrap<U> : T;
 
 - [TypeScript Handbook: infer](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/conditional-types)
-- [TypeScript infer keyword explained](https://dev.to/nicolo-ribaudo/using-infer-in-typescript-3c90)
+- [TypeScript infer keyword explained](https://dev.to/nicolo-ribaudo/understanding-infer-in-typescript-3c90)

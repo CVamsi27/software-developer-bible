@@ -675,4 +675,4 @@ COMMON ISSUES:
 - [MDN: Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
 - [V8 Blog: Trash Talk - The Orinoco Garbage Collector](https://v8.dev/blog/trash-talk)
 - [V8 Blog: Orinoco Project](https://v8.dev/blog/orinoco)
-- [FreeCodeCamp: Garbage Collection in JavaScript](https://www.freecodecamp.org/news/how-to-understand-garbage-collection-in-javascript/)
+- [FreeCodeCamp: Garbage Collection in JavaScript](https://www.freecodecamp.org/news/javascript-garbage-collection/)

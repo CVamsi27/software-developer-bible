@@ -405,4 +405,4 @@ CONSTRAINTS:
 - [Node.js child_process Docs](https://nodejs.org/api/child_process.html)
 - [Node.js worker_threads Docs](https://nodejs.org/api/worker_threads.html)
 - [Node.js: Don't Block the Event Loop](https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop)
-- [Node.js: Worker Threads Guide](https://nodejs.org/en/learn/asynchronous-work/worker-threads)
+- [Node.js: Worker Threads Guide](https://nodejs.org/api/worker_threads.html)

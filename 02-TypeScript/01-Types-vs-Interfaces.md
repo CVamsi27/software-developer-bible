@@ -448,7 +448,7 @@ const b: typeof a = { name: "Dog" }; // Works with both type and interface
 
 ## References & Learn More
 
-- [TypeScript: Interfaces vs Types](https://www.typescriptlang.org/docs/handbook/2/types-vs-interfaces.html)
-- [MDN: TypeScript](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_tooling/TypeScript)
+- [TypeScript: Interfaces vs Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+- [MDN: TypeScript](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client_side_tooling/TypeScript)
 - [TypeScript Handbook: Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 - [When to Use Interfaces vs Types in TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces-vs-type-aliases)

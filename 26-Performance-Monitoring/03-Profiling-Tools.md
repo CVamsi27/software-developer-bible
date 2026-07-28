@@ -547,5 +547,5 @@ Profiling tools are essential for identifying and fixing performance issues. Mas
 - [Chrome DevTools Performance](https://developer.chrome.com/docs/devtools/performance/)
 - [Lighthouse Documentation](https://developer.chrome.com/docs/lighthouse/overview/)
 - [WebPageTest](https://www.webtest.org/)
-- [React DevTools](https://react.dev/learn/react-devtools)
+- [React DevTools](https://react.dev/learn/react-developer-tools)
 - [Web Performance Fundamentals](https://web.dev/performance/)

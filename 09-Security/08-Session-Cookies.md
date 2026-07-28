@@ -473,4 +473,4 @@ Sessions and cookies are fundamental to maintaining state in web applications. K
 - [MDN Set-Cookie Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie)
 - [SameSite Cookies Explained - web.dev](https://web.dev/samesite-cookies-explained/)
 - [Redis Session Store Best Practices](https://redis.io/docs/manual/patterns/)
-- [OWASP Cookie Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cookie-Based_Session_Management_Cheat_Sheet.html)
+- [OWASP Cookie Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)

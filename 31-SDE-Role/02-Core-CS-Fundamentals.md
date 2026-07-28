@@ -331,7 +331,7 @@ void combinations(int n, int k, int start, List<Integer> current, List<List<Inte
 ### Resources for Math
 
 - 📘 **Book:** *Competitive Programming* by Steven Halim — math chapter
-- 🌐 **Website:** [CP-Algorithms](https://cp-algorithms.com/algebra/) — algebra and number theory
+- 🌐 **Website:** [CP-Algorithms](https://cp-algorithms.com/) — algebra and number theory
 - 🌐 **Website:** [Brilliant.org](https://brilliant.org/) — interactive math courses
 
 ---

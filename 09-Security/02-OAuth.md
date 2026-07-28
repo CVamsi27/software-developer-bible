@@ -508,4 +508,4 @@ OAuth 2.0 is the standard framework for delegated authorization, enabling secure
 - [OAuth 2.0 for Browser-Based Apps](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps)
 - [OpenID Connect Specification](https://openid.net/specs/openid-connect-core-1_0.html)
 - [OAuth 2.0 Simplified - Aaron Parecki](https://aaronparecki.com/oauth-2-simplified/)
-- [Auth0 OAuth Documentation](https://auth0.com/docs/get-started/auth0-overview/oauth)
+- [Auth0 OAuth Documentation](https://auth0.com/docs/authenticate/protocols/oauth)

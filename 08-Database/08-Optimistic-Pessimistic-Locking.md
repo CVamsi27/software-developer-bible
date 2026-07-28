@@ -600,7 +600,7 @@ SET lock_timeout = '5s';
 ## References & Learn More
 
 - [PostgreSQL Explicit Locking Documentation](https://www.postgresql.org/docs/current/explicit-locking.html)
-- [Optimistic vs Pessimistic Locking - Baeldung](https://www.baeldung.com/cs/optimistic-vs-pessimistic-locking)
+- [Optimistic vs Pessimistic Locking - Baeldung](https://www.baeldung.com/cs/optimistic-locking-vs-pessimistic-locking)
 - [Pessimistic vs Optimistic Concurrency Control - GeeksforGeeks](https://www.geeksforgeeks.org/pessimistic-vs-optimistic-concurrency-control/)
 - [SKIP LOCKED - PostgreSQL Docs](https://www.postgresql.org/docs/current/sql-select.html)
 - [SELECT FOR UPDATE - PostgreSQL Docs](https://www.postgresql.org/docs/current/sql-select.html)

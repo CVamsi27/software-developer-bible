@@ -718,5 +718,5 @@ Performance:
 ## References & Learn More
 
 - [React Docs: Error Boundaries](https://react.dev/reference/react/Component#componentdidcatch)
-- [Error Handling in React](https://www.freecodecamp.org/news/error-handling-in-react/)
-- [React Error Boundary Guide](https://blog.logrocket.com/complete-guide-error-handling-react/)
+- [Error Handling in React](https://www.freecodecamp.org/news/error-handling-react/)
+- [React Error Boundary Guide](https://blog.logrocket.com/error-handling-react/)

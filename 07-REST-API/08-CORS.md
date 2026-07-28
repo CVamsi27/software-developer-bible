@@ -595,5 +595,5 @@ CORS is essential for secure cross-origin communication. Always specify allowed 
 - [CORS - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - [Cross-Origin Resource Sharing (CORS) - W3C](https://www.w3.org/TR/cors/)
 - [How to Use CORS in Express.js](https://expressjs.com/en/resources/middleware/cors.html)
-- [CORS - A Practical Guide - DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-cors)
+- [CORS - A Practical Guide - DigitalOcean](https://www.digitalocean.com/community/tutorials/a-practical-guide-to-cors)
 - [Can I Use CORS?](https://caniuse.com/cors)

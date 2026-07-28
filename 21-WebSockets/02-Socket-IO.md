@@ -1103,7 +1103,7 @@ Key best practices:
 
 - [Socket.io Official Documentation](https://socket.io/docs/)
 - [Socket.io GitHub Repository](https://github.com/socketio/socket.io)
-- [Socket.io Client API](https://socket.io/docs/client-api/)
-- [Socket.io Server API](https://socket.io/docs/server-api/)
-- [Socket.io Redis Adapter](https://socket.io/docs/redis-adapter/)
-- [Socket.io Rooms and Namespaces](https://socket.io/docs/rooms-and-namespaces/)
+- [Socket.io Client API](https://socket.io/docs/v4/client-api/)
+- [Socket.io Server API](https://socket.io/docs/v4/server-api/)
+- [Socket.io Redis Adapter](https://socket.io/docs/v4/redis-adapter/)
+- [Socket.io Rooms and Namespaces](https://socket.io/docs/v4/rooms/)

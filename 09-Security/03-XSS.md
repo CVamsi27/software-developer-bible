@@ -334,7 +334,7 @@ XSS is a critical web security vulnerability that allows attackers to inject mal
 
 ## References & Learn More
 
-- [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Scripting_Prevention_Cheat_Sheet.html)
+- [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 - [OWASP Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
 - [DOMPurify - HTML Sanitizer](https://github.com/cure53/DOMPurify)
 - [Content Security Policy (CSP) - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)

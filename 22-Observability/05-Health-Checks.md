@@ -519,6 +519,6 @@ Health checks are the foundation of service reliability. Implement liveness (pro
 - [Kubernetes Health Check Guide](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 - [Spring Boot Health Checks](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
 - [AWS ALB Health Checks](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html)
-- [Istio Health Checks](https://istio.io/latest/docs/ops/configuration/traffic-management/health-checks/)
+- [Istio Health Checks](https://istio.io/latest/docs/tasks/traffic-management/health-checks/)
 - [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck)
 - [Microservices Patterns - Health Check](https://microservices.io/patterns/observability/health-check-api.html)

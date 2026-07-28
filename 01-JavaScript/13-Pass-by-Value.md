@@ -671,5 +671,5 @@ SECURITY:
 
 - [MDN: Passing Arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function)
 - [JavaScript.info: Copying by Reference](https://javascript.info/object-copy)
-- [FreeCodeCamp: Pass by Value vs Pass by Reference](https://www.freecodecamp.org/news/js-pass-by-value-or-reference-explained/)
+- [FreeCodeCamp: Pass by Value vs Pass by Reference](https://www.freecodecamp.org/news/javascript-pass-by-value-and-pass-by-reference/)
 - [ECMAScript Specification: Copy Data Blocks](https://tc39.es/ecma262/#sec-copydatablockbytes)

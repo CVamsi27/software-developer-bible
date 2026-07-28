@@ -553,7 +553,7 @@ RBAC is a scalable and manageable approach to access control that assigns permis
 
 ## References & Learn More
 
-- [NIST RBAC - RBAC Explained](https://csrc.nist.gov/CSRC/media/Projects/access-control-policy-database/documents/sandhu-ferraiolo-kuhn-00.pdf)
+- [NIST RBAC - RBAC Explained](https://csrc.nist.gov/pubs/legacy/ir/1992/sandhu-ferraiolo-kuhn-rbac.pdf)
 - [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [RBAC vs ABAC - Comparison](https://www.pingidentity.com/en/company/blog/posts/posts/2023/role-based-access-control-vs-attribute-based-access-control.html)
 - [AWS IAM - RBAC Example](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)

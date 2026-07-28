@@ -957,4 +957,4 @@ if (complexity > 1000) {
 - [DataLoader](https://github.com/graphql/dataloader)
 - [Apollo Server Resolvers](https://www.apollographql.com/docs/apollo-server/data/resolvers/)
 - [GraphQL Execution](https://spec.graphql.org/#sec-Execution)
-- [N+1 Problem Solutions](https://blog.apollographql.com/fixing-the-n-1-problem-in-graphql-763e44d89572)
+- [N+1 Problem Solutions](https://www.apollographql.com/blog/graphql/caching/fixing-the-n-1-problem-in-graphql/)

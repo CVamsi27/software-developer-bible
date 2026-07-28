@@ -1027,4 +1027,4 @@ The Strategy pattern is powerful for encapsulating algorithms and making them in
 
 - [GoF Design Patterns](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
 - [Refactoring Guru: Strategy](https://refactoring.guru/design-patterns/strategy)
-- [Strategy Pattern in TypeScript](https://www.patterns.dev/posts/strategy-pattern/)
+- [Strategy Pattern in TypeScript](https://www.patterns.dev/blog/strategy-pattern/)

@@ -854,6 +854,6 @@ DEBUGGING:
 ## References & Learn More
 
 - [MDN: this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-- [JavaScript.info: Binding Functions](https://javascript.info/bind-apply-call)
+- [JavaScript.info: Binding Functions](https://javascript.info/call-apply-decorators)
 - [FreeCodeCamp: Understand the this Keyword](https://www.freecodecamp.org/news/what-is-this-in-javascript/)
 - [JavaScript.info: Arrow Functions & this](https://javascript.info/arrow-functions)

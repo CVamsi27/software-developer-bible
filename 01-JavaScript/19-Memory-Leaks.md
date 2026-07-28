@@ -689,5 +689,5 @@ BEST PRACTICES:
 
 - [MDN: Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
 - [Chrome DevTools: Memory Profiling](https://developer.chrome.com/docs/devtools/memory-problems/)
-- [Auth0: Understanding and Fixing Memory Leaks](https://auth0.com/blog/four-types-of-leaks-in-web-applications-and-how-to-get-rid-of-them/)
+- [Auth0: Understanding and Fixing Memory Leaks](https://auth0.com/blog/four-types-of-memory-leaks-and-how-to-avoid-them/)
 - [V8 Blog: Trash Talk - The Orinoco Garbage Collector](https://v8.dev/blog/trash-talk)

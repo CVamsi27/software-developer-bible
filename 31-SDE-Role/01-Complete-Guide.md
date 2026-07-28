@@ -3304,7 +3304,7 @@ boolean isBipartite(int[][] graph) {
 ### Resources for Graphs
 
 - 📘 **Book:** *Introduction to Algorithms* (CLRS) — Graph chapters
-- 🌐 **Website:** [CP-Algorithms](https://cp-algorithms.com/graph/) — comprehensive graph algorithms
+- 🌐 **Website:** [CP-Algorithms](https://cp-algorithms.com/) — comprehensive graph algorithms
 - 🌐 **Website:** [Visualgo](https://visualgo.net/en/dfsbfs) — visual graph algorithm animations
 - 🎥 **YouTube:** [William Fiset](https://www.youtube.com/@WilliamFiset-videos) — graph theory playlist
 

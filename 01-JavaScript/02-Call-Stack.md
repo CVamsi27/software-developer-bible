@@ -846,7 +846,7 @@ PERFORMANCE:
 
 ## References & Learn More
 
-- [MDN: Call Stack](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Call_Stack)
-- [JavaScript.info: Call Stack](https://javascript.info/call-stack)
-- [FreeCodeCamp: Understanding the JavaScript Call Stack](https://www.freecodecamp.org/news/understanding-the-javascript-call-stack-861e46ae2fcd/)
+- [MDN: Call Stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
+- [JavaScript.info: Call Stack](https://javascript.info/recursion)
+- [FreeCodeCamp: Understanding the JavaScript Call Stack](https://www.freecodecamp.org/news/understanding-the-javascript-call-stack/)
 - [V8 Blog: V8 JavaScript Engine](https://v8.dev/)

@@ -526,6 +526,6 @@ Common Pitfalls:
 ## References & Learn More
 
 - [React Docs: Virtual DOM](https://react.dev/learn/keeping-components-pure)
-- [React Docs: React without JSX](https://react.dev/learn/react-without-jsx)
-- [How the Virtual DOM works in React](https://www.freecodecamp.org/news/the-virtual-dom-explained/)
+- [React Docs: React without JSX](https://react.dev/learn/writing-markup-with-jsx)
+- [How the Virtual DOM works in React](https://www.freecodecamp.org/news/what-is-the-virtual-dom-in-react/)
 - [React Reconciliation: The New Algorithm](https://react.dev/learn/you-might-not-need-an-effect)

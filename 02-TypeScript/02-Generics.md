@@ -474,4 +474,4 @@ function merge<T extends object, U extends object>(a: T, b: U): T & U {
 
 - [TypeScript Handbook: Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 - [TypeScript Generics Tutorial](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
-- [Generic Types in TypeScript](https://www.digitalocean.com/community/tutorials/typescript-generics)
+- [Generic Types in TypeScript](https://www.digitalocean.com/community/tutorials/typescript-generics-types)

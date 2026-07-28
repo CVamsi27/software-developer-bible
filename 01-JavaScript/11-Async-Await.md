@@ -787,4 +787,4 @@ DEBUGGING:
 - [MDN: await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 - [JavaScript.info: Async/Await](https://javascript.info/async-await)
 - [V8 Blog: Top-level await](https://v8.dev/features/top-level-await)
-- [FreeCodeCamp: Async/Await Explained](https://www.freecodecamp.org/news/learn-async-await-in-20-minutes/)
+- [FreeCodeCamp: Async/Await Explained](https://www.freecodecamp.org/news/async-await-in-javascript/)

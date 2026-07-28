@@ -961,7 +961,7 @@ Key considerations:
 
 - [Designing Data-Intensive Applications](https://dataintensive.net/)
 - [Building Microservices](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/)
-- [Real-Time Web Application Architecture](https://martinfowler.com/articles/2022-real-time-web-architecture.html)
+- [Real-Time Web Application Architecture](https://martinfowler.com/articles/patterns-of-distributed-systems/reliable-real-time-communication.html)
 - [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
 - [CQRS](https://martinfowler.com/bliki/CQRS.html)
 - [The Log: What every software engineer should know](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying)

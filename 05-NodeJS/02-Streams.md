@@ -1260,4 +1260,4 @@ Streams are essential for processing large data efficiently in Node.js. Key take
 - [Node.js Streams Docs](https://nodejs.org/api/stream.html)
 - [The Stream Handbook by Substack](https://github.com/substack/stream-handbook)
 - [Node.js Stream冒险游戏](https://github.com/substack/stream-adventure)
-- [Stream Consumption Patterns](https://nodejs.org/en/learn/asynchronous-work/continuous-processing-of-readable-streams)
+- [Stream Consumption Patterns](https://nodejs.org/en/learn/asynchronous-work/streams)

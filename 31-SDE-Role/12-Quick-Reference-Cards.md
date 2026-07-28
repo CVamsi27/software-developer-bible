@@ -554,18 +554,9 @@ tags: [quick-reference]
 | [Progress Tracker](08-Progress-Tracker.md) | Track your readiness |
 ---
 
-
 ## Summary
 
 These quick reference cards provide single-page summaries of essential interview topics, including arrays, trees, graphs, dynamic programming, system design, and data structure cheat sheets for rapid review.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -574,3 +565,11 @@ These quick reference cards provide single-page summaries of essential interview
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

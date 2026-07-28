@@ -361,24 +361,14 @@ Logistics:
 | [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
 | [Progress Tracker](08-Progress-Tracker.md) | Track your weekly progress |
 | [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (Coding + SD + Behavioral) |
-| [Google Guide](17-Google-Interview-Guide.md) | Google-specific interview prep |
 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
 
-
 ## Summary
 
 This guide covers Google's interview process, including coding expectations, googleyness and leadership assessment, system design focus areas, and strategies for navigating Google's unique hiring bar.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -387,3 +377,11 @@ This guide covers Google's interview process, including coding expectations, goo
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

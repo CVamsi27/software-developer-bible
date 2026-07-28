@@ -668,18 +668,9 @@ Each guess tells you 'higher' or 'lower' until you find it."
 > **Pro Tip:** After mastering a topic, teach it to someone else (friend, family, rubber duck). If you can teach it clearly, you truly understand it!
 ---
 
-
 ## Summary
 
 This learning guarantee system provides a structured framework for mastering interview topics through active recall, spaced repetition, practice testing, and self-assessment to ensure thorough preparation.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -688,3 +679,11 @@ This learning guarantee system provides a structured framework for mastering int
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

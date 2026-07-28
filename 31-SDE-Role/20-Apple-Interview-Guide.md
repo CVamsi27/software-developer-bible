@@ -380,21 +380,11 @@ Logistics:
 | [Google Guide](17-Google-Interview-Guide.md) | Google-specific interview prep |
 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta-specific interview prep |
-| [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
-
 
 ## Summary
 
 This guide covers Apple's interview process, including the unique cross-functional approach, domain-specific deep dives, and strategies for demonstrating craftsmanship and attention to detail in your responses.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -403,3 +393,11 @@ This guide covers Apple's interview process, including the unique cross-function
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

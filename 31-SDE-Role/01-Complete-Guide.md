@@ -3469,7 +3469,6 @@ TreeNode deserialize(String data) {
 
 | File | Description |
 |------|-------------|
-| [Complete Guide](01-Complete-Guide.md) | Phases 1-8: Java, DSA, Algorithms |
 | [Core CS Fundamentals](02-Core-CS-Fundamentals.md) | Phases 9-16: CS Fundamentals, NoSQL |
 | [System Design & APIs](03-System-Design-APIs-Security.md) | Phases 17-20: System Design, REST, Security |
 | [DevOps & Career](04-DevOps-Behavioral-Career.md) | Phases 21-28: Git, Linux, Behavioral, Cloud |
@@ -3485,18 +3484,9 @@ TreeNode deserialize(String data) {
 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
 
-
 ## Summary
 
 This comprehensive guide covers all essential topics for senior full-stack engineer interviews, from core CS fundamentals to system design, behavioral preparation, and career strategy. Master these concepts to demonstrate breadth and depth across the full engineering spectrum.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -3505,3 +3495,11 @@ This comprehensive guide covers all essential topics for senior full-stack engin
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

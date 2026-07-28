@@ -363,81 +363,105 @@ tags: [study-plan]
 > **Note:** Weeks 5-12 follow the same daily structure (4-6 hours/day). Below is the condensed version with problem counts and focus areas. Refer to the detailed format above for the full daily breakdown.
 
 ### Week 5: Linked Lists + Stacks (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | Linked List Basics | Reverse, Merge, Cycle (6 problems) |
-| Tue | Linked List Medium | Remove Nth, Intersection, Add Numbers (6 problems) |
-| Wed | Linked List Hard | Swap Pairs, k-Group, Reorder (6 problems) |
-| Thu | Stack Basics | Valid Parens, Min Stack, Queue via Stacks (6 problems) |
-| Fri | Monotonic Stack | Next Greater, Daily Temperatures, Largest Rectangle (6 problems) |
+
+> **Related patterns:** [Two Pointers](https://leetcode.com/problem-list/two-pointers/) · [Stack](https://leetcode.com/problem-list/stack/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | Linked List Basics | [206. Reverse LL](https://leetcode.com/problems/reverse-linked-list/), [21. Merge Two](https://leetcode.com/problems/merge-two-sorted-lists/), [141. Cycle](https://leetcode.com/problems/linked-list-cycle/), [160. Intersection](https://leetcode.com/problems/intersection-of-two-linked-lists/), [234. Palindrome](https://leetcode.com/problems/palindrome-linked-list/), [203. Remove Elements](https://leetcode.com/problems/remove-linked-list-elements/) |
+| Tue | Linked List Medium | [19. Remove Nth](https://leetcode.com/problems/remove-nth-node-from-end-of-list/), [24. Swap Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/), [142. Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/), [82. Remove Duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/), [148. Sort List](https://leetcode.com/problems/sort-list/), [61. Rotate List](https://leetcode.com/problems/rotate-list/) |
+| Wed | Linked List Hard | [25. k-Group Reverse](https://leetcode.com/problems/reverse-nodes-in-k-group/), [23. Merge K Lists](https://leetcode.com/problems/merge-k-sorted-lists/), [138. Copy Random](https://leetcode.com/problems/copy-list-with-random-pointer/), [143. Reorder List](https://leetcode.com/problems/reorder-list/), [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/), [430. Flatten Multi-Level](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/) |
+| Thu | Stack Basics | [20. Valid Parens](https://leetcode.com/problems/valid-parentheses/), [155. Min Stack](https://leetcode.com/problems/min-stack/), [232. Queue via Stacks](https://leetcode.com/problems/implement-queue-using-stacks/), [225. Stack via Queues](https://leetcode.com/problems/implement-stack-using-queues/), [682. Baseball Game](https://leetcode.com/problems/baseball-game/), [844. Backspace Compare](https://leetcode.com/problems/backspace-string-compare/) |
+| Fri | Monotonic Stack | [739. Daily Temps](https://leetcode.com/problems/daily-temperatures/), [496. Next Greater I](https://leetcode.com/problems/next-greater-element-i/), [503. Next Greater II](https://leetcode.com/problems/next-greater-element-ii/), [84. Largest Rectangle](https://leetcode.com/problems/largest-rectangle-in-histogram/), [85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/), [901. Online Stock Span](https://leetcode.com/problems/online-stock-span/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 6: Trees - Traversal & BST (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | DFS Traversal | Max Depth, Same Tree, Symmetric (6 problems) |
-| Tue | BFS Traversal | Level Order, Zigzag, Right Side View (6 problems) |
-| Wed | Path Problems | Path Sum, LCA, Diameter (6 problems) |
-| Thu | BST Basics | Validate, Search, Kth Smallest (6 problems) |
-| Fri | BST Advanced | Iterator, Construct, Flatten (6 problems) |
+
+> **Related patterns:** [Binary Tree](https://leetcode.com/problem-list/binary-tree/) · [BST](https://leetcode.com/problem-list/binary-search-tree/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | DFS Traversal | [104. Max Depth](https://leetcode.com/problems/maximum-depth-of-binary-tree/), [100. Same Tree](https://leetcode.com/problems/same-tree/), [101. Symmetric](https://leetcode.com/problems/symmetric-tree/), [110. Balanced](https://leetcode.com/problems/balanced-binary-tree/), [226. Invert](https://leetcode.com/problems/invert-binary-tree/), [572. Subtree](https://leetcode.com/problems/subtree-of-another-tree/) |
+| Tue | BFS Traversal | [102. Level Order](https://leetcode.com/problems/binary-tree-level-order-traversal/), [103. Zigzag](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/), [107. Level Order II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/), [199. Right Side](https://leetcode.com/problems/binary-tree-right-side-view/), [637. Avg Levels](https://leetcode.com/problems/average-of-levels-in-binary-tree/), [429. N-ary Order](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) |
+| Wed | Path Problems | [112. Path Sum](https://leetcode.com/problems/path-sum/), [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/), [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/), [236. LCA](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/), [543. Diameter](https://leetcode.com/problems/diameter-of-binary-tree/), [124. Max Path](https://leetcode.com/problems/binary-tree-maximum-path-sum/) |
+| Thu | BST Basics | [98. Validate BST](https://leetcode.com/problems/validate-binary-search-tree/), [700. Search](https://leetcode.com/problems/search-in-a-binary-search-tree/), [701. Insert](https://leetcode.com/problems/insert-into-a-binary-search-tree/), [450. Delete](https://leetcode.com/problems/delete-node-in-a-bst/), [230. Kth Smallest](https://leetcode.com/problems/kth-smallest-element-in-a-bst/), [108. Sorted Array to BST](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) |
+| Fri | BST Advanced | [173. BST Iterator](https://leetcode.com/problems/binary-search-tree-iterator/), [105. Construct Pre/In](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/), [106. Construct In/Post](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/), [114. Flatten](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/), [116. Populate Right](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/), [235. LCA BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 7: Trees - Advanced + Heaps (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | Trie | Implement Trie, Word Search II (6 problems) |
-| Tue | Serialization | Serialize/Deserialize, Codec (6 problems) |
-| Wed | Heap Basics | Kth Largest, Last Stone, Task Scheduler (6 problems) |
-| Thu | Two Heaps | Find Median, Sliding Window Median (6 problems) |
-| Fri | Merge K | Merge K Lists, K Pairs with Smallest Sums (6 problems) |
+
+> **Related patterns:** [Trie](https://leetcode.com/problem-list/trie/) · [Heap](https://leetcode.com/problem-list/heap-priority-queue/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | Trie | [208. Implement Trie](https://leetcode.com/problems/implement-trie-prefix-tree/), [211. Add/Search](https://leetcode.com/problems/design-add-and-search-words-data-structure/), [212. Word Search II](https://leetcode.com/problems/word-search-ii/), [677. Map Sum](https://leetcode.com/problems/map-sum-pairs/), [648. Replace Words](https://leetcode.com/problems/replace-words/), [720. Longest Word](https://leetcode.com/problems/longest-word-in-dictionary/) |
+| Tue | Serialization | [297. Serialize/Deserialize](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/), [449. BST Codec](https://leetcode.com/problems/serialize-and-deserialize-bst/), [428. N-ary Codec](https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/), [606. Tree String](https://leetcode.com/problems/construct-string-from-binary-tree/), [536. Tree from String](https://leetcode.com/problems/construct-binary-tree-from-string/), [652. Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/) |
+| Wed | Heap Basics | [215. Kth Largest](https://leetcode.com/problems/kth-largest-element-in-an-array/), [703. Kth Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/), [1046. Last Stone](https://leetcode.com/problems/last-stone-weight/), [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/), [347. Top K Freq](https://leetcode.com/problems/top-k-frequent-elements/), [692. Top K Words](https://leetcode.com/problems/top-k-frequent-words/) |
+| Thu | Two Heaps | [295. Median Stream](https://leetcode.com/problems/find-median-from-data-stream/), [480. Sliding Median](https://leetcode.com/problems/sliding-window-median/), [502. IPO](https://leetcode.com/problems/ipo/), [436. Right Interval](https://leetcode.com/problems/find-right-interval/), [857. Min Cost](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/), [1834. Single Thread](https://leetcode.com/problems/single-threaded-cpu/) |
+| Fri | Merge K | [23. Merge K Lists](https://leetcode.com/problems/merge-k-sorted-lists/), [373. K Pairs](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/), [378. Kth Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/), [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/), [313. Super Ugly](https://leetcode.com/problems/super-ugly-number/), [355. Design Twitter](https://leetcode.com/problems/design-twitter/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 8: Graphs - BFS/DFS (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | Island Problems | Number of Islands, Max Area, Flood Fill (6 problems) |
-| Tue | Course Schedule | Course Schedule I & II, Topological Sort (6 problems) |
-| Wed | BFS Problems | Rotting Oranges, Word Ladder, Open the Lock (6 problems) |
-| Thu | DFS Problems | Pacific Atlantic, Surrounded Regions, Bipartite (6 problems) |
-| Fri | Clone/Union-Find | Clone Graph, Number of Provinces, Accounts Merge (6 problems) |
+
+> **Related patterns:** [Graph](https://leetcode.com/problem-list/graph/) · [DFS](https://leetcode.com/problem-list/depth-first-search/) · [BFS](https://leetcode.com/problem-list/breadth-first-search/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | Island Problems | [200. Islands](https://leetcode.com/problems/number-of-islands/), [695. Max Area](https://leetcode.com/problems/max-area-of-island/), [733. Flood Fill](https://leetcode.com/problems/flood-fill/), [463. Island Perimeter](https://leetcode.com/problems/island-perimeter/), [130. Surrounded](https://leetcode.com/problems/surrounded-regions/), [1905. Count Sub](https://leetcode.com/problems/count-sub-islands/) |
+| Tue | Course Schedule | [207. Course I](https://leetcode.com/problems/course-schedule/), [210. Course II](https://leetcode.com/problems/course-schedule-ii/), [269. Alien Dict](https://leetcode.com/problems/alien-dictionary/), [802. Eventual](https://leetcode.com/problems/find-eventual-safe-states/), [1857. Colors](https://leetcode.com/problems/largest-color-value-in-a-directed-graph/), [1203. Sort Items](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/) |
+| Wed | BFS Problems | [994. Rotting](https://leetcode.com/problems/rotting-oranges/), [127. Word Ladder](https://leetcode.com/problems/word-ladder/), [752. Open Lock](https://leetcode.com/problems/open-the-lock/), [909. Snakes](https://leetcode.com/problems/snakes-and-ladders/), [286. Walls](https://leetcode.com/problems/walls-and-gates/), [417. Pacific](https://leetcode.com/problems/pacific-atlantic-water-flow/) |
+| Thu | DFS Problems | [417. Pacific Atlantic](https://leetcode.com/problems/pacific-atlantic-water-flow/), [130. Surrounded](https://leetcode.com/problems/surrounded-regions/), [785. Bipartite](https://leetcode.com/problems/is-graph-bipartite/), [886. Possible](https://leetcode.com/problems/possible-bipartition/), [133. Clone Graph](https://leetcode.com/problems/clone-graph/), [329. Longest Path](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) |
+| Fri | Clone/Union-Find | [133. Clone Graph](https://leetcode.com/problems/clone-graph/), [547. Provinces](https://leetcode.com/problems/number-of-provinces/), [721. Accounts](https://leetcode.com/problems/accounts-merge/), [684. Redundant](https://leetcode.com/problems/redundant-connection/), [261. Valid Tree](https://leetcode.com/problems/graph-valid-tree/), [323. Components](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 9: Graphs - Advanced (25 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | Dijkstra | Network Delay, Cheapest Flights, Path with Max Probability (6 problems) |
-| Tue | Bellman-Ford | Word Ladder II, Cheapest Flights with K Stops (5 problems) |
-| Wed | Union-Find | Redundant Connection, Graph Valid Tree, Make Network Connected (6 problems) |
-| Thu | Topological Sort | Alien Dictionary, Minimum Height Trees, Course Schedule III (6 problems) |
-| Fri | Advanced | Critical Connections, Reconstruct Itinerary, Word Ladder II (6 problems) |
+
+> **Related patterns:** [Shortest Path](https://leetcode.com/problem-list/shortest-path/) · [Union Find](https://leetcode.com/problem-list/union-find/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | Dijkstra | [743. Network Delay](https://leetcode.com/problems/network-delay-time/), [787. Cheapest](https://leetcode.com/problems/cheapest-flights-within-k-stops/), [1514. Max Prob](https://leetcode.com/problems/path-with-maximum-probability/), [1631. Min Effort](https://leetcode.com/problems/path-with-minimum-effort/), [778. Swim](https://leetcode.com/problems/swim-in-rising-water/), [505. Maze II](https://leetcode.com/problems/the-maze-ii/) |
+| Tue | Bellman-Ford / Floyd | [743. Network Delay](https://leetcode.com/problems/network-delay-time/), [787. Cheapest K](https://leetcode.com/problems/cheapest-flights-within-k-stops/), [399. Eval Div](https://leetcode.com/problems/evaluate-division/), [1334. Threshold](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/), [1462. Courses](https://leetcode.com/problems/course-schedule-iv/) |
+| Wed | Union-Find | [684. Redundant](https://leetcode.com/problems/redundant-connection/), [685. Redundant II](https://leetcode.com/problems/redundant-connection-ii/), [261. Valid Tree](https://leetcode.com/problems/graph-valid-tree/), [1319. Network](https://leetcode.com/problems/number-of-operations-to-make-network-connected/), [399. Eval Div](https://leetcode.com/problems/evaluate-division/), [721. Accounts](https://leetcode.com/problems/accounts-merge/) |
+| Thu | Topological Sort | [269. Alien Dict](https://leetcode.com/problems/alien-dictionary/), [210. Course II](https://leetcode.com/problems/course-schedule-ii/), [310. Min Trees](https://leetcode.com/problems/minimum-height-trees/), [329. Longest Path](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/), [802. Eventual](https://leetcode.com/problems/find-eventual-safe-states/), [1203. Sort Items](https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/) |
+| Fri | Advanced | [1192. Critical](https://leetcode.com/problems/critical-connections-in-a-network/), [332. Itinerary](https://leetcode.com/problems/reconstruct-itinerary/), [126. Word Ladder II](https://leetcode.com/problems/word-ladder-ii/), [847. Shortest Path](https://leetcode.com/problems/shortest-path-visiting-all-nodes/), [980. Unique Paths III](https://leetcode.com/problems/unique-paths-iii/), [1136. Parallel](https://leetcode.com/problems/parallel-courses/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 10: Dynamic Programming - Basics (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | 1D DP | Climbing Stairs, House Robber, Min Cost Climbing (6 problems) |
-| Tue | Coin Change | Coin Change, Coin Change 2, Perfect Squares (6 problems) |
-| Wed | LIS | Longest Increasing Subsequence, Word Break (6 problems) |
-| Thu | Grid DP | Unique Paths, Minimum Path Sum, Triangle (6 problems) |
-| Fri | String DP | Decode Ways, Word Break, Palindromic Substring (6 problems) |
+
+> **Related patterns:** [DP](https://leetcode.com/problem-list/dynamic-programming/) · [Fibonacci Style](https://leetcode.com/problem-list/fibonacci-style/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | 1D DP | [70. Climbing](https://leetcode.com/problems/climbing-stairs/), [198. House Robber](https://leetcode.com/problems/house-robber/), [746. Min Cost](https://leetcode.com/problems/min-cost-climbing-stairs/), [213. House Robber II](https://leetcode.com/problems/house-robber-ii/), [91. Decode Ways](https://leetcode.com/problems/decode-ways/), [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/) |
+| Tue | Coin Change | [322. Coin Change](https://leetcode.com/problems/coin-change/), [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/), [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/), [983. Min Cost](https://leetcode.com/problems/minimum-cost-for-tickets/), [650. 2 Keys](https://leetcode.com/problems/2-keys-keyboard/), [1230. Toss](https://leetcode.com/problems/toss-strange-coins/) |
+| Wed | LIS | [300. LIS](https://leetcode.com/problems/longest-increasing-subsequence/), [334. Increasing Triplet](https://leetcode.com/problems/increasing-triplet-subsequence/), [354. Russian Dolls](https://leetcode.com/problems/russian-doll-envelopes/), [673. LIS Count](https://leetcode.com/problems/number-of-longest-increasing-subsequence/), [646. Max Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/), [139. Word Break](https://leetcode.com/problems/word-break/) |
+| Thu | Grid DP | [62. Unique Paths](https://leetcode.com/problems/unique-paths/), [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/), [64. Min Path Sum](https://leetcode.com/problems/minimum-path-sum/), [120. Triangle](https://leetcode.com/problems/triangle/), [931. Min Falling](https://leetcode.com/problems/minimum-falling-path-sum/), [221. Max Square](https://leetcode.com/problems/maximal-square/) |
+| Fri | String DP | [91. Decode Ways](https://leetcode.com/problems/decode-ways/), [139. Word Break](https://leetcode.com/problems/word-break/), [140. Word Break II](https://leetcode.com/problems/word-break-ii/), [647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/), [516. Longest Palindromic](https://leetcode.com/problems/longest-palindromic-subsequence/), [5. Longest Palindromic](https://leetcode.com/problems/longest-palindromic-substring/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 11: Dynamic Programming - Advanced + Backtracking (28 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | 2D DP | Edit Distance, Interleaving String, Distinct Subsequences (6 problems) |
-| Tue | Knapsack | Partition Equal Subset Sum, Target Sum, Ones and Zeroes (6 problems) |
-| Wed | Interval DP | Burst Balloons, Longest Palindromic Subsequence (6 problems) |
-| Thu | Backtracking | Combinations, Permutations, N-Queens (6 problems) |
-| Fri | Greedy | Jump Game, Candy, Non-overlapping Intervals (6 problems) |
+
+> **Related patterns:** [2D DP](https://leetcode.com/problem-list/2d-dynamic-programming/) · [Backtracking](https://leetcode.com/problem-list/backtracking/)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | 2D DP | [72. Edit Distance](https://leetcode.com/problems/edit-distance/), [97. Interleaving](https://leetcode.com/problems/interleaving-string/), [115. Distinct Subseq](https://leetcode.com/problems/distinct-subsequences/), [10. Regex](https://leetcode.com/problems/regular-expression-matching/), [44. Wildcard](https://leetcode.com/problems/wildcard-matching/), [1143. LCS](https://leetcode.com/problems/longest-common-subsequence/) |
+| Tue | Knapsack | [416. Partition](https://leetcode.com/problems/partition-equal-subset-sum/), [494. Target Sum](https://leetcode.com/problems/target-sum/), [474. Ones/Zeros](https://leetcode.com/problems/ones-and-zeroes/), [1049. Last Stone II](https://leetcode.com/problems/last-stone-weight-ii/), [322. Coin Change](https://leetcode.com/problems/coin-change/), [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/) |
+| Wed | Interval DP | [312. Burst Balloons](https://leetcode.com/problems/burst-balloons/), [516. Longest Palindromic](https://leetcode.com/problems/longest-palindromic-subsequence/), [647. Palindromic Substr](https://leetcode.com/problems/palindromic-substrings/), [87. Scramble](https://leetcode.com/problems/scramble-string/), [546. Remove Boxes](https://leetcode.com/problems/remove-boxes/), [1246. Palindrome Removal](https://leetcode.com/problems/palindrome-removal/) |
+| Thu | Backtracking | [78. Subsets](https://leetcode.com/problems/subsets/), [90. Subsets II](https://leetcode.com/problems/subsets-ii/), [46. Permutations](https://leetcode.com/problems/permutations/), [47. Permutations II](https://leetcode.com/problems/permutations-ii/), [77. Combinations](https://leetcode.com/problems/combinations/), [39. Combination Sum](https://leetcode.com/problems/combination-sum/) |
+| Fri | Greedy | [55. Jump Game](https://leetcode.com/problems/jump-game/), [45. Jump II](https://leetcode.com/problems/jump-game-ii/), [135. Candy](https://leetcode.com/problems/candy/), [435. Intervals](https://leetcode.com/problems/non-overlapping-intervals/), [452. Min Arrows](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/), [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/) |
 | Sat | Review & Practice | Re-solve weak problems |
 
 ### Week 12: Hard Problems + Mock Interviews (30 Problems)
-| Day | Focus | Problems |
-|-----|-------|----------|
-| Mon | Hard Mixed 1 | Median Two Arrays, Merge K Lists, Trapping Rain Water (6 problems) |
-| Tue | Hard Mixed 2 | Serialize Tree, Find Median, Burst Balloons (6 problems) |
-| Wed | Hard Mixed 3 | Sliding Puzzle, Regex Matching, Longest Valid Parens (6 problems) |
+
+> **Related patterns:** [Hard Collection](https://leetcode.com/problem-list/top-hard/) · [Mock Interviews](https://leetcode.com/problemset/all/?difficulty=HARD)
+
+| Day | Focus | Key Problems |
+|-----|-------|--------------|
+| Mon | Hard Mixed 1 | [4. Median](https://leetcode.com/problems/median-of-two-sorted-arrays/), [23. Merge K](https://leetcode.com/problems/merge-k-sorted-lists/), [42. Rain Water](https://leetcode.com/problems/trapping-rain-water/), [239. Sliding Max](https://leetcode.com/problems/sliding-window-maximum/), [297. Serialize](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/), [295. Median Stream](https://leetcode.com/problems/find-median-from-data-stream/) |
+| Tue | Hard Mixed 2 | [297. Serialize Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/), [295. Find Median](https://leetcode.com/problems/find-median-from-data-stream/), [312. Burst Balloons](https://leetcode.com/problems/burst-balloons/), [76. Min Window](https://leetcode.com/problems/minimum-window-substring/), [84. Largest Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/), [72. Edit Distance](https://leetcode.com/problems/edit-distance/) |
+| Wed | Hard Mixed 3 | [773. Sliding Puzzle](https://leetcode.com/problems/sliding-puzzle/), [10. Regex](https://leetcode.com/problems/regular-expression-matching/), [32. Longest Valid](https://leetcode.com/problems/longest-valid-parentheses/), [124. Max Path](https://leetcode.com/problems/binary-tree-maximum-path-sum/), [127. Word Ladder](https://leetcode.com/problems/word-ladder/), [212. Word Search II](https://leetcode.com/problems/word-search-ii/) |
 | Thu | Mock Interview 1 | 2 problems in 45 min (plain text editor) |
 | Fri | Mock Interview 2 | 2 problems in 45 min + system design |
 | Sat | Final Review | Weak areas, behavioral prep |
@@ -605,7 +629,6 @@ For each problem, record:
 | [System Design & APIs](03-System-Design-APIs-Security.md) | Phases 17-20: System Design, REST, Security |
 | [DevOps & Career](04-DevOps-Behavioral-Career.md) | Phases 21-28: Git, Linux, Behavioral, Cloud |
 | [Advanced Topics](05-Advanced-Topics.md) | Segment Tree, DI, Repository, MVC |
-| [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive study plan |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
 | [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
 | [Progress Tracker](08-Progress-Tracker.md) | Track your weekly progress |
@@ -616,18 +639,9 @@ For each problem, record:
 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
 
-
 ## Summary
 
 This guide provides a structured LeetCode study plan organized by topic and difficulty, with recommended problem sets for arrays, strings, trees, graphs, dynamic programming, and system design practice to build interview confidence.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -636,3 +650,11 @@ This guide provides a structured LeetCode study plan organized by topic and diff
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

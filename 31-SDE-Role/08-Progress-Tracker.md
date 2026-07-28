@@ -582,20 +582,12 @@ tags: [tool]
 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive study plan |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
 | [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
-| [Progress Tracker](08-Progress-Tracker.md) | Track your weekly progress |
 | [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (Coding + SD + Behavioral) |
 | [Google Guide](17-Google-Interview-Guide.md) | Google-specific interview prep |
 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta-specific interview prep |
 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
-
-
-## References & Learn More
-
-- [Official Documentation](https://developer.mozilla.org/en-US/)
-- [LeetCode](https://leetcode.com/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -604,3 +596,9 @@ tags: [tool]
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [Official Documentation](https://developer.mozilla.org/en-US/)
+- [LeetCode](https://leetcode.com/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)

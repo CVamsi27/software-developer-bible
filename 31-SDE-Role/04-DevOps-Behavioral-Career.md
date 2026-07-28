@@ -1984,7 +1984,6 @@ Courses:
 | [Complete Guide](01-Complete-Guide.md) | Phases 1-8: Java, DSA, Algorithms |
 | [Core CS Fundamentals](02-Core-CS-Fundamentals.md) | Phases 9-16: CS Fundamentals, NoSQL |
 | [System Design & APIs](03-System-Design-APIs-Security.md) | Phases 17-20: System Design, REST, Security |
-| [DevOps & Career](04-DevOps-Behavioral-Career.md) | Phases 21-28: Git, Linux, Behavioral, Cloud |
 | [Advanced Topics](05-Advanced-Topics.md) | Segment Tree, DI, Repository, MVC |
 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive study plan |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
@@ -1997,18 +1996,9 @@ Courses:
 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
 
-
 ## Summary
 
 This guide covers DevOps practices, behavioral interview preparation, and career growth strategies. Topics include CI/CD pipelines, containerization, monitoring, the STAR method, and navigating the senior engineering career path.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -2017,3 +2007,11 @@ This guide covers DevOps practices, behavioral interview preparation, and career
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

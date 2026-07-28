@@ -393,18 +393,9 @@ Example:
 > **Pro Tip:** Track your pomodoros for 2 weeks, then analyze the data. You'll discover your most productive times of day, optimal session lengths, and topics that need more attention.
 ---
 
-
 ## Summary
 
 This daily study timer provides a structured approach to managing your interview preparation time, with Pomodoro-based sessions, topic rotation, and progress tracking templates.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -413,3 +404,11 @@ This daily study timer provides a structured approach to managing your interview
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

@@ -728,18 +728,9 @@ Test mode: Simulate exam conditions
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
 ---
 
-
 ## Summary
 
 These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, covering core CS concepts, design patterns, system design, behavioral questions, and more to support active recall study.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -748,3 +739,11 @@ These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, c
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

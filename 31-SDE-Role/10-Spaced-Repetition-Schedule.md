@@ -368,18 +368,9 @@ Evening (1-1.5 hours):
 > **Pro Tip:** Combine spaced repetition with interleaving — mix different topics in your practice sessions rather than focusing on one topic for hours. This improves your ability to identify which pattern to apply!
 ---
 
-
 ## Summary
 
 This schedule provides a structured 12-week spaced repetition plan for interview preparation, balancing topic review, problem-solving practice, and mock interviews to maximize long-term retention.
-
-## References & Learn More
-
-- [LeetCode](https://leetcode.com/)
-- [NeetCode](https://neetcode.io/)
-- [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
@@ -388,3 +379,11 @@ This schedule provides a structured 12-week spaced repetition plan for interview
 - [System Design](../11-System-Design/)
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
+
+## References & Learn More
+
+- [LeetCode](https://leetcode.com/)
+- [NeetCode](https://neetcode.io/)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Levels.fyi](https://www.levels.fyi/)
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

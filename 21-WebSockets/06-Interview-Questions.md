@@ -1687,7 +1687,7 @@ class RegionalServer {
 ## References & Learn More
 
 - [MDN WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
-- [Socket.io Documentation](https://socket.io/docs/)
+- [Socket.io Documentation](https://socket.io/docs/v4/)
 - [NestJS WebSockets](https://docs.nestjs.com/websockets)
 - [Designing Data-Intensive Applications](https://dataintensive.net/)
 - [System Design Interview](https://www.amazon.com/System-Design-Interview-insiders-Second/dpB08CMF2PY)

@@ -380,4 +380,4 @@ const memoizedRecursive = memoize(
 - [MDN: Recursion](https://developer.mozilla.org/en-US/docs/Glossary/Recursion)
 - [ECMAScript Tail Call Proposal](https://github.com/tc39/proposal-ptc-syntax)
 - [V8 Blog: TCO Removal](https://v8.dev/blog/modern-javascript#proper-tail-calls)
-- [JavaScript Info: Recursion](https://javascript.info/recursion)
+- [JavaScript Info: Recursion](https://web.archive.org/web/20240701000000/https://javascript.info/call-stack)

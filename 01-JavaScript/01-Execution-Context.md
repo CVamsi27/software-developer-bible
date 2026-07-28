@@ -581,6 +581,6 @@ BEST PRACTICES:
 ## References & Learn More
 
 - [MDN: Execution Context](https://developer.mozilla.org/en-US/docs/Glossary/Execution_context)
-- [JavaScript.info: Execution Context](https://javascript.info/closure)
+- [JavaScript.info: Execution Context](https://web.archive.org/web/20240701000000/https://javascript.info/execution-context)
 - [V8 Blog: How V8 Optimizes JavaScript](https://v8.dev/blog)
 - [Jake Archibald: Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)

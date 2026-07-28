@@ -1101,7 +1101,7 @@ Key best practices:
 
 ## References & Learn More
 
-- [Socket.io Official Documentation](https://socket.io/docs/)
+- [Socket.io Official Documentation](https://socket.io/docs/v4/)
 - [Socket.io GitHub Repository](https://github.com/socketio/socket.io)
 - [Socket.io Client API](https://socket.io/docs/v4/client-api/)
 - [Socket.io Server API](https://socket.io/docs/v4/server-api/)

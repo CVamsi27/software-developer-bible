@@ -30,18 +30,18 @@ This guide covers **everything** you need to prepare for SDE interviews at Micro
 |---|------|---------|-------------|
 | 6 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive plan (4-6 hrs/day) | Daily study schedule |
 | 7 | [Cheat Sheet](07-Cheat-Sheet.md) | Quick reference for all 28 phases | Last-minute review |
-| 9 | [Progress Tracker](09-Progress-Tracker.md) | Weekly tracking with readiness scores | Track your progress |
-| 10 | [Mock Interview Bank](10-Mock-Interview-Question-Bank.md) | 90 questions (50 Coding + 20 SD + 20 Behavioral) | Mock interview practice |
+| 9 | [Progress Tracker](08-Progress-Tracker.md) | Weekly tracking with readiness scores | Track your progress |
+| 10 | [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (50 Coding + 20 SD + 20 Behavioral) | Mock interview practice |
 
 ### Company-Specific Guides
 
 | # | File | Company | Unique Focus |
 |---|------|---------|--------------|
-| 8 | [Microsoft Guide](08-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure | Growth Mindset, Azure Services, Plain Text Editor |
-| 11 | [Google Guide](11-Google-Interview-Guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
-| 12 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS Services |
-| 13 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
-| 14 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
+| 8 | [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure | Growth Mindset, Azure Services, Plain Text Editor |
+| 11 | [Google Guide](17-Google-Interview-Guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
+| 12 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS Services |
+| 13 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
+| 14 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
 
 ---
 
@@ -68,13 +68,13 @@ Week 5-6: System Design & CS
 
 Week 7-8: Career & Company Prep
 ├── 04-DevOps-Behavioral-Career.md (Phases 21-28)
-├── 08-Microsoft-Azure-Interview-Guide.md (or your target company)
+├── 16-Microsoft-Azure-Interview-Guide.md (or your target company)
 └── 06-LeetCode-Study-Plan.md (Continue Weeks 7-8)
 
 Week 9-12: Final Preparation
 ├── 05-Advanced-Topics.md (Supplementary topics)
-├── 09-Progress-Tracker.md (Track readiness)
-├── 10-Mock-Interview-Question-Bank.md (Practice mocks)
+├── 08-Progress-Tracker.md (Track readiness)
+├── 09-Mock-Interview-Question-Bank.md (Practice mocks)
 ├── 06-LeetCode-Study-Plan.md (Complete Weeks 9-12)
 └── Company-specific guide (Final review)
 
@@ -96,14 +96,14 @@ Week 2-4: Deep Dive on Weak Areas
 
 Week 5-8: Company-Specific Prep
 ├── Company-specific guide (08, 11, 12, 13, or 14)
-├── 10-Mock-Interview-Question-Bank.md (Practice 90 questions)
-└── 09-Progress-Tracker.md (Track readiness)
+├── 09-Mock-Interview-Question-Bank.md (Practice 90 questions)
+└── 08-Progress-Tracker.md (Track readiness)
 
 Week 9-12: Final Polish
 ├── 04-DevOps-Behavioral-Career.md (Behavioral, Resume)
 ├── 05-Advanced-Topics.md (Fill remaining gaps)
 ├── 06-LeetCode-Study-Plan.md (Complete remaining weeks)
-└── Mock interviews (Use 10-Mock-Interview-Question-Bank.md)
+└── Mock interviews (Use 09-Mock-Interview-Question-Bank.md)
 
 ```
 
@@ -112,13 +112,13 @@ Week 9-12: Final Polish
 ```text
 
 Priority Order:
-1. 08-Microsoft-Azure-Interview-Guide.md (Company-specific prep)
+1. 16-Microsoft-Azure-Interview-Guide.md (Company-specific prep)
 2. 01-Complete-Guide.md (Phases 1-8: DSA)
 3. 03-System-Design-APIs-Security.md (Phase 17: System Design)
 4. 07-Cheat-Sheet.md (Last-minute review)
 5. 06-LeetCode-Study-Plan.md (12-week schedule)
-6. 10-Mock-Interview-Question-Bank.md (Practice questions)
-7. 09-Progress-Tracker.md (Track progress)
+6. 09-Mock-Interview-Question-Bank.md (Practice questions)
+7. 08-Progress-Tracker.md (Track progress)
 
 ```
 

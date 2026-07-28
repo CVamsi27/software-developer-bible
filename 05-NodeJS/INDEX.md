@@ -12,12 +12,12 @@
 | 02 | [Streams](02-Streams.md) | Readable, writable, transform, backpressure, pipeline |
 | 03 | [Buffers](03-Buffers.md) | Buffer creation, encoding, allocation, TypedArray |
 | 04 | [Clustering](04-Clustering.md) | Cluster module, worker processes, IPC, load balancing |
-| 05 | [File System](06-File-System.md) | fs module, read/write, streams, file watching, permissions |
-| 06 | [HTTP Module](07-HTTP-Module.md) | createServer, routing, streaming, client requests, reverse proxy |
-| 07 | [Child Processes & Workers](08-Child-Processes-Workers.md) | spawn/fork/exec, worker_threads, SharedArrayBuffer, thread pool |
-| 08 | [Process & Environment](09-Process-Environment.md) | process.env, argv, lifecycle, signals, graceful shutdown |
-| 09 | [Node.js Security](10-Node-Security.md) | Input validation, Helmet.js, rate limiting, prototype pollution |
-| 10 | [Interview Questions](11-Interview-Questions.md) | 50+ curated questions with answers |
+| 05 | [File System](05-File-System.md) | fs module, read/write, streams, file watching, permissions |
+| 06 | [HTTP Module](06-HTTP-Module.md) | createServer, routing, streaming, client requests, reverse proxy |
+| 07 | [Child Processes & Workers](07-Child-Processes-Workers.md) | spawn/fork/exec, worker_threads, SharedArrayBuffer, thread pool |
+| 08 | [Process & Environment](08-Process-Environment.md) | process.env, argv, lifecycle, signals, graceful shutdown |
+| 09 | [Node.js Security](09-Node-Security.md) | Input validation, Helmet.js, rate limiting, prototype pollution |
+| 10 | [Interview Questions](10-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

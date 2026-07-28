@@ -77,7 +77,7 @@
 |---|---------|------:|--------|
 | 18 | [Behavioral](18-Behavioral/) | 3 | STAR Method, HR Questions, Leadership Questions |
 | 19 | [Coding Patterns](19-Coding-Patterns/) | 12 | Sliding Window, Two Pointers, Binary Search, DFS/BFS, Backtracking, DP, Heap, Trie, Union Find, Topological Sort, Intervals, Greedy/Prefix Sum |
-| 31 | [SDE Role](31-SDE-Role/) | 21 | Complete Guide, CS Fundamentals, System Design, DevOps, Advanced Topics, LeetCode Study Plan, Company Guides, Progress Tracker, Flashcards, Resume & Negotiation |
+| 31 | [SDE Role](31-SDE-Role/) | 21 | Complete Guide, CS Fundamentals, System Design, DevOps, Advanced Topics + Study Tools (06-15) + Company Guides (16-20) |
 
 ## Quick Reference
 

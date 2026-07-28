@@ -1552,13 +1552,13 @@ class UserController {
 | [Advanced Topics](05-Advanced-Topics.md) | Segment Tree, DI, Repository, MVC |
 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive study plan |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
-| [Microsoft Guide](08-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
-| [Progress Tracker](09-Progress-Tracker.md) | Track your weekly progress |
-| [Mock Interview Bank](10-Mock-Interview-Question-Bank.md) | 90 questions (Coding + SD + Behavioral) |
-| [Google Guide](11-Google-Interview-Guide.md) | Google-specific interview prep |
-| [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
-| [Meta Guide](13-Meta-Interview-Guide.md) | Meta-specific interview prep |
-| [Apple Guide](14-Apple-Interview-Guide.md) | Apple-specific interview prep |
+| [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
+| [Progress Tracker](08-Progress-Tracker.md) | Track your weekly progress |
+| [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (Coding + SD + Behavioral) |
+| [Google Guide](17-Google-Interview-Guide.md) | Google-specific interview prep |
+| [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
+| [Meta Guide](19-Meta-Interview-Guide.md) | Meta-specific interview prep |
+| [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
 ---
 
 

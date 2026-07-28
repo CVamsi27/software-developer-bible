@@ -550,8 +550,8 @@ tags: [quick-reference]
 | [Complete Guide](01-Complete-Guide.md) | Full coverage of all patterns |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Quick reference for all 28 phases |
 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week study schedule |
-| [Mock Interview Bank](10-Mock-Interview-Question-Bank.md) | 90 practice questions |
-| [Progress Tracker](09-Progress-Tracker.md) | Track your readiness |
+| [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 practice questions |
+| [Progress Tracker](08-Progress-Tracker.md) | Track your readiness |
 ---
 
 

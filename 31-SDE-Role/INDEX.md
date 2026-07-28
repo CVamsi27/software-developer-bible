@@ -22,24 +22,24 @@
 |---|------|---------|
 | 06 | [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week intensive plan (4-6 hrs/day) |
 | 07 | [Cheat Sheet](07-Cheat-Sheet.md) | Quick reference for all 28 phases |
-| 09 | [Progress Tracker](09-Progress-Tracker.md) | Weekly tracking with readiness scores |
-| 10 | [Mock Interview Bank](10-Mock-Interview-Question-Bank.md) | 90 questions (50 Coding + 20 SD + 20 Behavioral) |
-| 15 | [Spaced Repetition Schedule](15-Spaced-Repetition-Schedule.md) | 12-week review calendar with mastery tracking |
-| 16 | [Daily Study Timer](16-Daily-Study-Timer.md) | Pomodoro tracking, productive vs review time |
-| 17 | [Quick Reference Cards](17-Quick-Reference-Cards.md) | One-page cards for Arrays, Trees, Graphs, DP, etc. |
-| 18 | [Learning Guarantee System](18-Learning-Guarantee-System.md) | Active recall, mastery criteria, practice testing |
-| 19 | [Flashcard Decks](19-Flashcard-Decks.md) | 240+ cards across 8 topics for Anki/Quizlet |
-| 20 | [Resume & Negotiation](20-Resume-Negotiation.md) | Resume ATS optimization, STAR bullets, offer negotiation, comp breakdown |
+| 08 | [Progress Tracker](08-Progress-Tracker.md) | Weekly tracking with readiness scores |
+| 09 | [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (50 Coding + 20 SD + 20 Behavioral) |
+| 10 | [Spaced Repetition Schedule](10-Spaced-Repetition-Schedule.md) | 12-week review calendar with mastery tracking |
+| 11 | [Daily Study Timer](11-Daily-Study-Timer.md) | Pomodoro tracking, productive vs review time |
+| 12 | [Quick Reference Cards](12-Quick-Reference-Cards.md) | One-page cards for Arrays, Trees, Graphs, DP, etc. |
+| 13 | [Learning Guarantee System](13-Learning-Guarantee-System.md) | Active recall, mastery criteria, practice testing |
+| 14 | [Flashcard Decks](14-Flashcard-Decks.md) | 240+ cards across 8 topics for Anki/Quizlet |
+| 15 | [Resume & Negotiation](15-Resume-Negotiation.md) | Resume ATS optimization, STAR bullets, offer negotiation, comp breakdown |
 
 ## Company-Specific Guides
 
 | # | File | Company | Focus |
 |---|------|---------|-------|
-| 08 | [Microsoft Azure Guide](08-Microsoft-Azure-Interview-Guide.md) | Microsoft | Growth Mindset, Azure, Plain Text Editor |
-| 11 | [Google Guide](11-Google-Interview-Guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
-| 12 | [Amazon Guide](12-Amazon-Interview-Guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS |
-| 13 | [Meta Guide](13-Meta-Interview-Guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
-| 14 | [Apple Guide](14-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
+| 16 | [Microsoft Azure Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft | Growth Mindset, Azure, Plain Text Editor |
+| 17 | [Google Guide](17-Google-Interview-Guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
+| 18 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS |
+| 19 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
+| 20 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
 
 ---
 

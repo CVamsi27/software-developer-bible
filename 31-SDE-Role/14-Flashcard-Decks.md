@@ -722,9 +722,9 @@ Test mode: Simulate exam conditions
 
 | File | Description |
 |------|-------------|
-| [Quick Reference Cards](17-Quick-Reference-Cards.md) | One-page summaries for each topic |
-| [Spaced Repetition Schedule](15-Spaced-Repetition-Schedule.md) | Review intervals for optimal retention |
-| [Learning Guarantee System](18-Learning-Guarantee-System.md) | Active recall and mastery criteria |
+| [Quick Reference Cards](12-Quick-Reference-Cards.md) | One-page summaries for each topic |
+| [Spaced Repetition Schedule](10-Spaced-Repetition-Schedule.md) | Review intervals for optimal retention |
+| [Learning Guarantee System](13-Learning-Guarantee-System.md) | Active recall and mastery criteria |
 | [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
 ---
 

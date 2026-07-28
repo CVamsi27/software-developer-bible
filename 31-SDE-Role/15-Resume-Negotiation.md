@@ -280,7 +280,7 @@ ACCEPTANCE SIGNALS:
 - [Interview Strategy](../../00-Interview-Strategy/)
 - [Behavioral Questions](../../18-Behavioral/)
 - [LeetCode Study Plan](../06-LeetCode-Study-Plan.md)
-- [Mock Interview Questions](../10-Mock-Interview-Question-Bank.md)
+- [Mock Interview Questions](../09-Mock-Interview-Question-Bank.md)
 
 ### References
 

@@ -757,6 +757,8 @@ A well-tested codebase is maintainable, reliable, and enables teams to ship feat
 ---
 
 ## See Also
+- [Vitest](../10-Vitest.md)
+- [Performance & Load Testing](../11-Performance-Load-Testing.md)
 - [React](../03-React/)
 - [NestJS](../06-NestJS/)
 - [CI/CD](../15-CI-CD/)

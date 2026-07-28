@@ -51,6 +51,8 @@ tags: [concept]
 - [Core Web Vitals](../01-Core-Web-Vitals.md)
 - [Performance APIs](../02-Performance-APIs.md)
 - [Bundle Analysis](../06-Bundle-Analysis.md)
+- [Interview Questions](../04-Interview-Questions.md)
+- [Profiling Tools](../03-Profiling-Tools.md)
 
 ### References
 

@@ -55,6 +55,8 @@ describe('Math operations', () => {
 - [Jest](../02-Jest.md)
 - [Testing Overview](../01-Testing-Overview.md)
 - [Vite](../../23-Build-Tools/02-Vite.md)
+- [Interview Questions](../09-Interview-Questions.md)
+- [React Testing Library](../03-React-Testing-Library.md)
 
 ### References
 

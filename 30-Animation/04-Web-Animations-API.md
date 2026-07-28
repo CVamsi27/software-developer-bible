@@ -54,6 +54,8 @@ await animation.finished;
 - [CSS Animations](../02-CSS-Animations.md)
 - [Framer Motion](../01-Framer-Motion.md)
 - [Performance Monitoring](../../26-Performance-Monitoring/)
+- [Interview Questions](../03-Interview-Questions.md)
+- [React Spring](../06-React-Spring.md)
 
 ### References
 

@@ -51,6 +51,8 @@ gsap.from('.reveal', {
 - [Framer Motion](../01-Framer-Motion.md)
 - [Web Animations API](../04-Web-Animations-API.md)
 - [CSS Animations](../02-CSS-Animations.md)
+- [Interview Questions](../03-Interview-Questions.md)
+- [React Spring](../06-React-Spring.md)
 
 ### References
 

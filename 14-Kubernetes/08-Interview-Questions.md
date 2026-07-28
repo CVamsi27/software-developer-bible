@@ -786,6 +786,9 @@ kubectl top nodes
 ---
 
 ## See Also
+- [StatefulSets & DaemonSets](../09-StatefulSets-DaemonSets.md)
+- [Jobs & CronJobs](../10-Jobs-CronJobs.md)
+- [RBAC & Network Policies](../11-RBAC-Network-Policies.md)
 - [Docker](../13-Docker/)
 - [CI/CD](../15-CI-CD/)
 - [Observability](../22-Observability/)

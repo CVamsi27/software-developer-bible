@@ -23,7 +23,7 @@
 
 ---
 
-**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/)
+**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices (gRPC, Service Mesh)](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/)
 ---
 
 ## Navigation

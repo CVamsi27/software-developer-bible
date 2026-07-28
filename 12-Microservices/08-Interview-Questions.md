@@ -1903,6 +1903,9 @@ Microservices architecture requires understanding of distributed systems, commun
 ---
 
 ## See Also
+- [gRPC](../09-gRPC.md)
+- [Service Mesh](../10-Service-Mesh.md)
+- [Distributed Transactions](../11-Distributed-Transactions.md)
 - [NestJS](../06-NestJS/)
 - [System Design](../11-System-Design/)
 - [Docker](../13-Docker/)

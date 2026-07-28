@@ -35,6 +35,8 @@ tags: [concept]
 - [Serverless Overview](../01-Serverless-Overview.md)
 - [Edge Functions](../02-Edge-Functions.md)
 - [Serverless Patterns](../03-Serverless-Patterns.md)
+- [Interview Questions](../04-Interview-Questions.md)
+- [Next.js Deployment](../../04-NextJS/)
 
 ### References
 

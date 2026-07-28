@@ -26,7 +26,7 @@
 
 ---
 
-**Cross-references:** [Virtual DOM](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL)](../16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation](../30-Animation/)
+**Cross-references:** [Virtual DOM](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL, Vitest)](../16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation (Framer, GSAP, React Spring)](../30-Animation/)
 ---
 
 ## Navigation

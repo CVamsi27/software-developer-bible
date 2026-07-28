@@ -405,6 +405,8 @@ Build optimization is crucial for delivering fast, efficient web applications. K
 ---
 
 ## See Also
+- [Bundle Analysis](../../26-Performance-Monitoring/06-Bundle-Analysis.md)
+- [Lighthouse CI](../../26-Performance-Monitoring/05-Lighthouse-CI.md)
 - [React](../03-React/)
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

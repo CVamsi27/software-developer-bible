@@ -98,7 +98,9 @@ spec:
 
 - [Deployments](../02-Deployments.md)
 - [Pods & ReplicaSets](../01-Pods-ReplicaSets.md)
-- [Persistent Volumes](../12-Persistent-Volumes.md)
+- [ConfigMaps & Secrets](../04-ConfigMaps-Secrets.md)
+- [Interview Questions](../08-Interview-Questions.md)
+- [HPA & Scaling](../05-HPA-Scaling.md)
 
 ### References
 

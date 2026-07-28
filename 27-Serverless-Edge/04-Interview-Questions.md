@@ -278,6 +278,8 @@ Serverless and edge computing are modern cloud paradigms that enable building sc
 ---
 
 ## See Also
+- [AWS Lambda](../05-AWS-Lambda.md)
+- [Vercel Deployments](../06-Vercel-Deployments.md)
 - [Next.js](../04-NextJS/)
 - [Docker](../13-Docker/)
 - [Observability](../22-Observability/)

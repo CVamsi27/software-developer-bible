@@ -34,6 +34,8 @@ tags: [concept]
 - [Next.js Deployment](../../04-NextJS/)
 - [Edge Functions](../02-Edge-Functions.md)
 - [AWS Lambda](../05-AWS-Lambda.md)
+- [Interview Questions](../04-Interview-Questions.md)
+- [Serverless Patterns](../03-Serverless-Patterns.md)
 
 ### References
 

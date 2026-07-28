@@ -44,6 +44,8 @@ A **Service Mesh** is a dedicated infrastructure layer for handling service-to-s
 - [gRPC](../09-gRPC.md)
 - [API Gateway](../../07-REST-API/09-API-Gateway.md)
 - [Distributed Transactions](../11-Distributed-Transactions.md)
+- [Interview Questions](../08-Interview-Questions.md)
+- [Circuit Breaker](../04-Circuit-Breaker.md)
 
 ### References
 

@@ -402,7 +402,7 @@ spec:
 ```bash
 # Attempt to create a pod that exceeds quota
 kubectl apply -f big-pod.yaml
-# Error: 
+# Error:
 #   Error from server (Forbidden): error when creating "big-pod.yaml":
 #   pods "big-pod" is forbidden: exceeded quota:
 #   team-quota, requested: requests.cpu=4,

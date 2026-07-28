@@ -70,11 +70,11 @@ server.bindAsync('0.0.0.0:50051',
 
 ### See Also
 
+- [API Gateway](../02-API-Gateway.md)
+- [Interview Questions](../08-Interview-Questions.md)
+- [Kafka](../05-Kafka.md)
 - [REST APIs](../../07-REST-API/)
 - [Service Mesh](../10-Service-Mesh.md)
-- [Kafka](../05-Kafka.md)
-- [Interview Questions](../08-Interview-Questions.md)
-- [API Gateway](../02-API-Gateway.md)
 
 ### References
 

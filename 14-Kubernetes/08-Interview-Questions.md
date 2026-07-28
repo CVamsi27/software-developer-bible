@@ -786,13 +786,13 @@ kubectl top nodes
 ---
 
 ## See Also
-- [StatefulSets & DaemonSets](../09-StatefulSets-DaemonSets.md)
-- [Jobs & CronJobs](../10-Jobs-CronJobs.md)
-- [RBAC & Network Policies](../11-RBAC-Network-Policies.md)
-- [Docker](../13-Docker/)
 - [CI/CD](../15-CI-CD/)
+- [Docker](../13-Docker/)
+- [Jobs & CronJobs](../10-Jobs-CronJobs.md)
 - [Observability](../22-Observability/)
+- [RBAC & Network Policies](../11-RBAC-Network-Policies.md)
 - [Serverless & Edge](../27-Serverless-Edge/)
+- [StatefulSets & DaemonSets](../09-StatefulSets-DaemonSets.md)
 
 ## References & Learn More
 

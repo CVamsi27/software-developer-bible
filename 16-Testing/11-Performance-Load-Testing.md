@@ -59,11 +59,11 @@ export default function () {
 
 ### See Also
 
-- [Testing Overview](../01-Testing-Overview.md)
-- [Performance Monitoring](../../26-Performance-Monitoring/)
 - [Core Web Vitals](../../26-Performance-Monitoring/01-Core-Web-Vitals.md)
 - [Interview Questions](../09-Interview-Questions.md)
 - [Jest](../02-Jest.md)
+- [Performance Monitoring](../../26-Performance-Monitoring/)
+- [Testing Overview](../01-Testing-Overview.md)
 
 ### References
 

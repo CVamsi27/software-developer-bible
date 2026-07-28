@@ -392,6 +392,38 @@ Edge functions provide a powerful way to reduce latency and improve performance 
 
 ---
 
+## Cheat Sheet
+```text
+EDGE FUNCTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Cloudflare Worker Lifecycle:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
+  │  │  Fetch   │ ──▶ │  Parse   │ ──▶ │ Execute  │ ──▶ │ Response │ │
+  │  │  Event   │    │  Request │    │  Handler │    │          │ │
+```
+```
+  import { NextRequest, NextResponse } from 'next/server';
+  export const config = {
+    runtime: 'edge',
+  };
+  export default async function handler(request: NextRequest) {
+    const { searchParams } = new URL(request.url);
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Docker](../13-Docker/)
 - [Next.js](../04-NextJS/)

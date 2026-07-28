@@ -583,6 +583,30 @@ CSS animations provide a performant, declarative way to create smooth animations
 
 ---
 
+## Cheat Sheet
+```text
+CSS ANIMATIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  1. **Animating non-transform properties**: width, height, margin cause reflows
+  2. **Missing will-change**: Can cause performance issues
+  3. **Overusing will-change**: Can consume GPU memory
+  4. **Ignoring reduced motion**: Accessibility concern
+  5. **Not using transform**: Missing hardware acceleration
+  1. **Use transform properties**: translate, scale, rotate, opacity
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

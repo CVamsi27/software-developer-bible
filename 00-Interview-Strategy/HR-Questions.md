@@ -739,6 +739,38 @@ The HR round is a strategic evaluation opportunity, not a formality. This guide 
 - [Behavioral](../18-Behavioral/)
 - [SDE Role](../31-SDE-Role/)
 
+---
+
+## Cheat Sheet
+```text
+HR ROUND STRATEGY FOR SENIOR FULL STACK ENGINEERS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  □ What does the company do? (One sentence)
+  □ Who are their customers/users?
+  □ What's their business model?
+  □ Who are their competitors?
+  □ What's their engineering stack? (Check job postings, GitHub, blog)
+  □ Recent news (funding, launches, acquisitions)
+```
+```
+  1. Current Role & Impact (30 seconds)
+     "I'm a senior full stack engineer at [Company] where I lead the
+     frontend platform team, serving 2M+ users across 3 products."
+  2. Career Journey (45 seconds)
+     "I started in backend development, then moved to full stack because
+     I wanted to own the complete user experience. Over the past 8 years,
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks

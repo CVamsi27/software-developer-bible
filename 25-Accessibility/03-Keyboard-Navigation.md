@@ -484,6 +484,30 @@ Keyboard navigation is essential for accessibility. Use semantic HTML, proper ta
 
 ---
 
+## Cheat Sheet
+```text
+KEYBOARD NAVIGATION CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    Keyboard Navigation Flow                      │
+  ├─────────────────────────────────────────────────────────────────┤
+  │                                                                 │
+  │  Tab/Shift+Tab         Arrow Keys           Enter/Space         │
+  │  ┌─────────────┐      ┌─────────────┐      ┌─────────────┐     │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

@@ -492,6 +492,38 @@ Performance APIs provide powerful tools for measuring and optimizing web applica
 
 ---
 
+## Cheat Sheet
+```text
+PERFORMANCE APIS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  function trackABTestPerformance(
+    testId: string,
+    variant: string
+  ): void {
+    const metrics = collectPerformanceMetrics();
+    fetch('/api/ab-test-performance', {
+```
+```
+  API Performance Impact:
+  ┌─────────────────────────────────────────────────────────────┐
+  │  Low Impact:                                               │
+  │  • performance.now()                                       │
+  │  • performance.getEntriesByType()                          │
+  │  • performance.mark()                                      │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)

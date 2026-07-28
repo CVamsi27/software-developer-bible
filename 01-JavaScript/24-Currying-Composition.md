@@ -269,14 +269,9 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 | Lodash curry | `_.curry(fn)` | `_.curry(sum)(1)(2)(3)` |
 | Ramda compose | `R.compose(f, g)` | `R.compose(R.toUpper, R.trim)` |
 
----
-
-### See Also
-
-- [Closures](04-Closures.md) — how currying leverages closure scope
-- [Scope](05-Scope.md) — lexical environment and variable resolution
-- [Generators](23-Generators.md) — another way to model sequences
-- [Memoization](22-Memoization.md) — caching in composed pipelines
+## See Also
+- [Closures](04-Closures.md)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

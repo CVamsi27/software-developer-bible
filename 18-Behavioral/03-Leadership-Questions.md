@@ -514,6 +514,20 @@ Remember: senior leadership isn't about having all the answers. It's about creat
 
 ---
 
+## Cheat Sheet
+```text
+LEADERSHIP & SENIOR-LEVEL BEHAVIORAL QUESTIONS: 20 STAR-FORMATTED ANSWERS CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Interview Strategy](../00-Interview-Strategy/)
 - [SDE Role](../31-SDE-Role/)

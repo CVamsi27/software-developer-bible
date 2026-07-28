@@ -838,6 +838,38 @@ Understanding WebSockets at a deep level demonstrates system design expertise an
 
 ---
 
+## Cheat Sheet
+```text
+WEBSOCKETS OVERVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  HTTP Long Polling:                    WebSockets:
+  Client     Server                     Client     Server
+    |----req---->|                        |          |
+    |     (wait) |                        |   TCP    |
+    |<---resp----|                        | Upgrade  |
+    |----req---->|                        |==CONNECTED|
+```
+```
+  1. Client sends HTTP Upgrade request:
+     GET /chat HTTP/1.1
+     Host: server.example.com
+     Upgrade: websocket
+     Connection: Upgrade
+     Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

@@ -388,6 +388,38 @@ Accessibility is essential for creating inclusive web experiences. Understanding
 
 ---
 
+## Cheat Sheet
+```text
+ACCESSIBILITY INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  It matters because:
+  - Screen readers understand page structure
+  - Better SEO
+  - Easier maintenance
+  - Accessibility by default
+  **Answer:**
+```
+```
+  Use it for:
+  - Informative images
+  - Images with text
+  - Charts and graphs
+  - Complex images
+  **Answer:**
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

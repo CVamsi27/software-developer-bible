@@ -399,6 +399,38 @@ Build optimization is crucial for delivering fast, efficient web applications. K
 
 ---
 
+## Cheat Sheet
+```text
+BUILD OPTIMIZATION CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │  Source     │───▶│  Analysis   │───▶│  Transform  │───▶│  Optimize   │
+  │  Code       │    │  Bundle     │    │  Modules    │    │  Output     │
+  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+         │                  │                  │                  │
+         ▼                  ▼                  ▼                  ▼
+```
+```
+  export function add(a, b) { return a + b; }
+  export function subtract(a, b) { return a - b; }
+  export function multiply(a, b) { return a * b; }
+  import { add } from './utils.js';
+  {
+    "sideEffects": false
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Bundle Analysis](../26-Performance-Monitoring/06-Bundle-Analysis.md)
 - [Lighthouse CI](../26-Performance-Monitoring/05-Lighthouse-CI.md)

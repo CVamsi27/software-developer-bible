@@ -237,6 +237,38 @@ Rebase and cherry-pick are powerful Git operations for managing history and appl
 
 ---
 
+## Cheat Sheet
+```text
+REBASE & CHERRY-PICK CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Before Rebase:
+  main:      A---B---C---D
+                    \
+  feature:           E---F---G
+  After Rebase:
+  main:      A---B---C---D
+```
+```
+  Before Cherry-Pick:
+  main:      A---B---C---D
+                    \
+  feature:           E---F---G
+  After Cherry-Pick (commit E to main):
+  main:      A---B---C---D---E'
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Monorepo](../28-Monorepo/)

@@ -479,6 +479,38 @@ Zod provides a powerful, type-safe approach to schema validation in TypeScript. 
 
 ---
 
+## Cheat Sheet
+```text
+ZOD CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Form Schema:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  Registration Form                                              │
+  │  ├── email: z.string().email()                                 │
+  │  ├── password: z.string().min(8).max(100)                      │
+  │  ├── confirmPassword: z.string()                               │
+```
+```
+  API Schema:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  POST /api/users                                                │
+  │  Request: CreateUserRequestSchema                               │
+  │  Response: UserResponseSchema | ErrorResponseSchema            │
+  │                                                                 │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Design Patterns](../10-Design-Patterns/)
 - [React](../03-React/)

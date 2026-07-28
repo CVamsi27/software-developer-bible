@@ -393,6 +393,38 @@ Accessibility testing combines automated tools, manual testing, and real user fe
 
 ---
 
+## Cheat Sheet
+```text
+TESTING ACCESSIBILITY CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    Accessibility Testing Strategy                 │
+  ├─────────────────────────────────────────────────────────────────┤
+  │                                                                 │
+  │  Automated Testing         Manual Testing        User Testing   │
+  │  ┌─────────────┐          ┌─────────────┐       ┌─────────────┐ │
+```
+```
+  npm install -g lighthouse
+  lighthouse https://example.com --only-categories=accessibility --output=json
+  const lighthouse = require('lighthouse');
+  async function runLighthouse(url) {
+    const result = await lighthouse(url, {
+      onlyCategories: ['accessibility'],
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

@@ -1088,6 +1088,38 @@ Key best practices:
 
 ---
 
+## Cheat Sheet
+```text
+SOCKET.IO CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Socket.io Transport Selection:
+  1. Try WebSocket (fastest)
+     ↓ (if fails)
+  2. Try HTTP Long Polling
+     ↓ (if fails)
+  3. Try HTTP Streaming
+```
+```
+  +-----------+     +-----------+     +-----------+     +-----------+
+  | CONNECTING| --> | CONNECTED | --> | RECONNECT | --> | DISCONNECT|
+  +-----------+     +-----------+     +-----------+     +-----------+
+        |                |                 |                 |
+        | Transport      | Events flow     | Auto-retry     | Max attempts
+        | negotiation    | both ways       | with backoff   | reached
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

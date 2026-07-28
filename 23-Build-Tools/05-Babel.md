@@ -76,12 +76,21 @@ Animal.prototype.speak = function() { console.log(this._name + ' speaks'); };
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+BABEL CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [Build Optimization](04-Build-Optimization.md)
-- [ESBuild & SWC](06-ESBuild-SWC.md)
-- [Vite](02-Vite.md)
-- [Webpack](01-Webpack.md)
+- [Next.js](../04-NextJS/)
 
 ## References & Learn More
 

@@ -1069,6 +1069,33 @@ const cache = new InMemoryCache({
 
 ---
 
+## Cheat Sheet
+```text
+APOLLO CLIENT CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Apollo Client = GraphQL Client + Normalized Cache + React Hooks + DevTools
+```
+```
+  import { ApolloProvider } from '@apollo/client';
+  import { ApolloClient, InMemoryCache } from '@apollo/client';
+  import App from './App';
+  const client = new ApolloClient({
+    uri: 'http://localhost:4000/graphql',
+    cache: new InMemoryCache(),
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

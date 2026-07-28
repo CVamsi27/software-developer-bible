@@ -439,6 +439,38 @@ Monorepo provides a unified approach to managing multiple projects with shared c
 
 ---
 
+## Cheat Sheet
+```text
+MONOREPO OVERVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Comparison:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    │ Monorepo              │ Polyrepo            │
+  ├────────────────────┼───────────────────────┼─────────────────────┤
+  │ Code Sharing       │ Easy (same repo)      │ Complex (npm/pip)   │
+  │ Atomic Changes     │ Yes                   │ No                  │
+```
+```
+  1. **Too many packages**: Over-modularizing leads to complexity
+  2. **Circular dependencies**: Packages depending on each other
+  3. **Inconsistent versions**: Different packages using different versions
+  4. **Slow builds**: Not optimizing build pipelines
+  5. **Poor tooling**: Not using appropriate monorepo tools
+  1. **Start simple**: Begin with fewer packages, split when needed
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Build Tools](../23-Build-Tools/)
 - [CI/CD](../15-CI-CD/)

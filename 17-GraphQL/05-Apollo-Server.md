@@ -930,6 +930,33 @@ const server = new ApolloServer({
 
 ---
 
+## Cheat Sheet
+```text
+APOLLO SERVER CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio
+```
+```
+  import Fastify from 'fastify';
+  import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
+  import { ApolloServer } from '@apollo/server';
+  import { fastifyApolloDrainPlugin } from '@as-integrations/fastify';
+  const app = Fastify();
+  const server = new ApolloServer({
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

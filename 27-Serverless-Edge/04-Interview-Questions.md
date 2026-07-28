@@ -272,6 +272,37 @@ Serverless and edge computing are modern cloud paradigms that enable building sc
 
 ---
 
+## Cheat Sheet
+```text
+SERVERLESS/EDGE INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Interview Question Categories:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
+  │  │  Fundamentals│  │   Patterns  │  │      System Design      │ │
+  │  │             │  │             │  │                         │ │
+```
+```
+  1. Definition (1-2 sentences)
+  2. How it works (2-3 sentences)
+  3. Use cases (when to use)
+  4. Trade-offs (benefits vs limitations)
+  5. Code example (if applicable)
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [AWS Lambda](05-AWS-Lambda.md)
 - [Docker](../13-Docker/)

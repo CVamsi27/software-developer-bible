@@ -483,14 +483,9 @@ PROTOTYPE POLLUTION:
   Avoid deep merge without checks
 ```
 
----
-
-### See Also
-
-- [Web Security](../09-Security/) — browser-side security
-- [HTTP Module](06-HTTP-Module.md) — secure HTTP configuration
-- [Process & Environment](08-Process-Environment.md) — environment variables
-- [REST API Authentication](../07-REST-API/06-Authentication.md)
+## See Also
+- [Docker](../13-Docker/)
+- [Web Security](../09-Security/)
 
 ## References & Learn More
 

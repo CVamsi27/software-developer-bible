@@ -1692,6 +1692,35 @@ These 40 questions cover the essential testing knowledge for senior full-stack i
 
 ---
 
+## Cheat Sheet
+```text
+TESTING INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+          /\
+         /  \        E2E Tests (10%)
+        /    \       • Complete workflows
+       /------\      • Slow, expensive
+      /        \
+     / Integration\  Integration Tests (20%)
+```
+```
+  it("should add two numbers", () => {
+    expect(add(2, 3)).toBe(5);
+  });
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

@@ -59,13 +59,21 @@ export default function () {
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+PERFORMANCE & LOAD TESTING CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [Core Web Vitals](../26-Performance-Monitoring/01-Core-Web-Vitals.md)
-- [Interview Questions](09-Interview-Questions.md)
-- [Jest](02-Jest.md)
-- [Performance Monitoring](../26-Performance-Monitoring/)
-- [Testing Overview](01-Testing-Overview.md)
 
 ## References & Learn More
 

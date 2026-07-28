@@ -1469,6 +1469,37 @@ This guide covers system design concepts, API design principles, and security fu
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+SYSTEM DESIGN, APIS & SECURITY (PHASES 16–19) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Client → Load Balancer → Web Server → Cache → Database
+                                  ↓
+                            URL Generation Service
+                                  ↓
+                            Hash/Encode Service
+```
+```
+  CREATE TABLE urls (
+      id SERIAL PRIMARY KEY,
+      short_code VARCHAR(10) UNIQUE NOT NULL,
+      original_url TEXT NOT NULL,
+      user_id INTEGER,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

@@ -382,6 +382,38 @@ This guide covers Amazon's interview process with a focus on Amazon's Leadership
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🟠 AMAZON (AWS) — INTERVIEW GUIDE (2025–2026) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Situation: Set the context (when, where, what was the challenge)
+  Task:      What was YOUR responsibility? (not the team's)
+  Action:    What did YOU do? Be specific, use "I" not "we"
+  Result:    What was the outcome? QUANTIFY everything
+  Amazon-specific tips:
+  - Use "I" not "we" — they want YOUR contribution
+```
+```
+  ✅ DO:
+    • Talk through your approach BEFORE coding
+    • Start with brute force, then optimize
+    • Handle edge cases explicitly (null, empty, single element)
+    • Write clean, testable code
+    • Ask clarifying questions about constraints
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

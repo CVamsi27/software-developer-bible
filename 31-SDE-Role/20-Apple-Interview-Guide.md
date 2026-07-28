@@ -388,6 +388,38 @@ This guide covers Apple's interview process, including the unique cross-function
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🍎 APPLE — INTERVIEW GUIDE (2025–2026) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ✅ DO:
+    • Talk through your approach BEFORE coding
+    • Focus on memory efficiency and performance
+    • Handle edge cases explicitly
+    • Write clean, production-ready code
+    • Discuss time/space complexity
+```
+```
+  Q: Explain Swift concurrency (async/await, Actors).
+  A:
+  - async/await: Modern async code (replaces completion handlers)
+  - Task: Lightweight concurrent unit
+  - Actor: Thread-safe class (isolates state)
+  - structuredConcurrency: Automatic cancellation propagation
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

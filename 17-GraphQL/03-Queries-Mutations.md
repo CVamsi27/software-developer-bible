@@ -1236,6 +1236,29 @@ const resolvers = {
 
 ---
 
+## Cheat Sheet
+```text
+QUERIES & MUTATIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Query   → Read operations (idempotent, side-effect free)
+  Mutation → Write operations (sequential execution, side effects allowed)
+```
+```
+  ---
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

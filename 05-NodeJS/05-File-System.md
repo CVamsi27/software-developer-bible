@@ -426,15 +426,9 @@ PATH MODULE:
   path.parse(path)                      // All parts
 ```
 
----
-
-### See Also
-
-- [Streams](02-Streams.md) — streaming file processing
-- [Buffers](03-Buffers.md) — binary data handling
-- [Child Processes & Workers](07-Child-Processes-Workers.md) — spawning I/O in subprocesses
-- [Process & Environment](08-Process-Environment.md) — process lifecycle
-- [Error Handling](../01-JavaScript/12-Error-Handling.md) — error patterns
+## See Also
+- [Docker](../13-Docker/)
+- [Streams](02-Streams.md)
 
 ## References & Learn More
 

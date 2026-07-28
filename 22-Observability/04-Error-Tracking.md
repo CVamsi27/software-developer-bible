@@ -541,6 +541,30 @@ Error tracking transforms raw exceptions into actionable, grouped issues with co
 
 ---
 
+## Cheat Sheet
+```text
+ERROR TRACKING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  npx tsc --sourceMap
+  npx webpack --mode production --devtool source-map
+  npx @sentry/cli releases files "$RELEASE" upload-sourcemaps ./dist \
+    --url-prefix "~/dist" \
+    --validate
+  npx @sentry/cli releases deploys "$RELEASE" new \
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

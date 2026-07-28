@@ -1284,6 +1284,38 @@ A strong unit test suite enables confident refactoring, faster development, and 
 
 ---
 
+## Cheat Sheet
+```text
+UNIT TESTING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────┐
+  │                     Unit Testing                            │
+  ├─────────────────────────────────────────────────────────────┤
+  │                                                             │
+  │  Input ──────▶ [Unit Under Test] ──────▶ Expected Output   │
+  │                    │                                        │
+```
+```
+  it("should do everything", () => {
+    const result = complexFunction();
+    expect(result.a).toBe(1);
+    expect(result.b).toBe(2);
+    expect(result.c).toBe(3);
+    expect(result.d).toBe(4);
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

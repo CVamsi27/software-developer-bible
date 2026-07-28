@@ -642,6 +642,33 @@ Advanced Git commands are essential for complex development workflows. Master bi
 
 ---
 
+## Cheat Sheet
+```text
+GIT ADVANCED INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  git checkout main
+  git merge feature
+  git checkout feature
+  git rebase main
+```
+```
+  git stash push -m "Work in progress"
+  git stash list
+  git stash pop
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Monorepo](../28-Monorepo/)

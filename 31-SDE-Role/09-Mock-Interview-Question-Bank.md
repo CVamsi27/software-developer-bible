@@ -507,6 +507,38 @@ This question bank provides a comprehensive collection of mock interview questio
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🎯 MOCK INTERVIEW QUESTION BANK CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Question: Tell me about a time you made a mistake.
+  Situation: "In my previous role, I deployed a database migration to production
+  without proper testing, which caused a 30-minute outage."
+  Task: "I needed to fix the issue immediately and prevent it from happening again."
+  Action:
+  1. "I immediately rolled back the migration"
+```
+```
+  Question: Why Microsoft?
+  Answer: "Three reasons:
+  1. Impact at Scale: Azure serves millions of customers globally, from startups
+  to enterprises. I want to work on systems that power this scale. Specifically,
+  the Azure Compute team's work on serverless computing fascinates me because
+  it's democratizing access to cloud resources.
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

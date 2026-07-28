@@ -229,6 +229,38 @@ Branching strategies are essential for managing code changes in teams. Choose a 
 
 ---
 
+## Cheat Sheet
+```text
+BRANCHING STRATEGIES CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    Branching Strategy Flow                       │
+  ├─────────────────────────────────────────────────────────────────┤
+  │                                                                 │
+  │  main (production)                                              │
+  │  ────────────────────────────────────────────────────────────── │
+```
+```
+  git checkout main
+  git checkout -b feature/add-shopping-cart
+  git add .
+  git commit -m "feat: implement shopping cart"
+  git push origin feature/add-shopping-cart
+  git checkout main
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Monorepo](../28-Monorepo/)

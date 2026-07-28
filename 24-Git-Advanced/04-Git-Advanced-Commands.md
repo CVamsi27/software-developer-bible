@@ -367,6 +367,38 @@ Git advanced commands provide powerful tools for debugging, recovery, and comple
 
 ---
 
+## Cheat Sheet
+```text
+GIT ADVANCED COMMANDS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    Git Advanced Commands                         │
+  ├─────────────────────────────────────────────────────────────────┤
+  │                                                                 │
+  │  Debugging          History           Repository                │
+  │  ┌─────────────┐    ┌─────────────┐   ┌─────────────────────┐  │
+```
+```
+  git bisect start
+  git bisect bad
+  git bisect good abc1234
+  git bisect good  # or
+  git bisect bad
+  git bisect reset
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Monorepo](../28-Monorepo/)

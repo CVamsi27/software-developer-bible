@@ -54,13 +54,21 @@ function Trail({ items }) {
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+REACT SPRING CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [CSS Animations](02-CSS-Animations.md)
-- [Framer Motion](01-Framer-Motion.md)
-- [GSAP](05-GSAP.md)
-- [Interview Questions](03-Interview-Questions.md)
-- [Web Animations API](04-Web-Animations-API.md)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 
 ## References & Learn More
 

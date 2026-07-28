@@ -399,6 +399,38 @@ This daily study timer provides a structured approach to managing your interview
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+⏱️ DAILY STUDY TIMER TEMPLATE CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────┐
+  │  POMODORO CYCLE                                         │
+  ├─────────────────────────────────────────────────────────┤
+  │  🍅 Work Session: 25 minutes (no distractions)         │
+  │  ☕ Short Break: 5 minutes (stand up, stretch)         │
+  │  🍅 Work Session: 25 minutes                           │
+```
+```
+  Total Study Time: ___h ___m
+  Total Pomodoros Completed: ___
+  Productive Time: ___h ___m (___%)
+  Review Time: ___h ___m (___%)
+  Break Time: ___h ___m (___%)
+  Problems Solved: ___
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

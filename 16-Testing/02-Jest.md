@@ -1129,6 +1129,36 @@ Master Jest by understanding its core concepts, practicing mock patterns, and im
 
 ---
 
+## Cheat Sheet
+```text
+JEST CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  jest.mock("./api");
+  const mockFetch = fetch as jest.Mock;
+  jest.mock("./api");
+  const mockFetch = jest.mocked(fetch);
+```
+```
+  it("should fetch data", () => {
+    fetchData().then((data) => {
+      expect(data).toBeDefined();
+    });
+  });
+  it("should fetch data", async () => {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

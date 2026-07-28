@@ -41,13 +41,31 @@ e-to-service communication in microservices. It offloads traffic management, obs
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+SERVICE MESH CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────┐
+  │                      SERVICE MESH (ISTIO)                     │
+  ├─────────────────────────────────────────────────────────────┤
+  │                                                              │
+  │  Control Plane (istiod)                                      │
+  │  ├── Pilot: Service discovery, traffic config               │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [API Gateway](../07-REST-API/09-API-Gateway.md)
-- [Circuit Breaker](04-Circuit-Breaker.md)
-- [Distributed Transactions](11-Distributed-Transactions.md)
-- [gRPC](09-gRPC.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Strangler Fig](12-Strangler-Fig.md)
+- [CQRS](13-CQRS.md)
 
 ## References & Learn More
 

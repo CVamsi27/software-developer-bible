@@ -1271,6 +1271,36 @@ Key takeaways:
 
 ---
 
+## Cheat Sheet
+```text
+REACT TESTING LIBRARY CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  User Interaction Flow:
+  ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
+  │  Render  │────▶│  Find    │────▶│  Interact│────▶│  Assert  │
+  │  Component│    │  Elements│     │  (user   │     │  Results │
+  │          │     │  (queries)│    │   Event) │     │          │
+  └──────────┘     └──────────┘     └──────────┘     └──────────┘
+```
+```
+  <div data-testid="user-name">John</div>
+  expect(screen.getByTestId("user-name")).toHaveTextContent("John");
+  <div role="heading" aria-level={2}>John</div>
+  expect(screen.getByRole("heading", { name: /john/i })).toBeInTheDocument();
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

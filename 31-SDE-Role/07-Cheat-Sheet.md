@@ -524,6 +524,38 @@ This cheat sheet provides a quick reference for essential interview concepts acr
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+📋 SDE INTERVIEW CHEAT SHEET — LAST-MINUTE REVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Collections: ArrayList, HashMap, HashSet, LinkedList, TreeMap, PriorityQueue
+  Streams:     filter(), map(), flatMap(), reduce(), collect(), sorted()
+  Lambdas:     (x, y) -> x + y  |  Function<T,R>  |  Predicate<T>
+  Optional:    of(), empty(), isPresent(), orElse(), map(), flatMap()
+  Concurrency: synchronized, volatile, ReentrantLock, CountDownLatch
+  Async:       ExecutorService.submit(), CompletableFuture.supplyAsync().thenApply()
+```
+```
+  HashMap     → Two sum, frequency, grouping
+  Two Pointers → Pair problems, sorted arrays, palindrome
+  Sliding Window → Substring/subarray problems
+  Prefix Sum  → Range sum queries
+  Binary Search → Sorted/rotated arrays, search on answer
+  Stack       → Parentheses, monotonic, evaluate expressions
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

@@ -31,13 +31,21 @@ meworks (Next.js, SvelteKit, Nuxt). It provides global edge network, serverless 
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+VERCEL DEPLOYMENTS CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [AWS Lambda](05-AWS-Lambda.md)
-- [Edge Functions](02-Edge-Functions.md)
-- [Interview Questions](04-Interview-Questions.md)
-- [Next.js Deployment](../04-NextJS/)
-- [Serverless Patterns](03-Serverless-Patterns.md)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

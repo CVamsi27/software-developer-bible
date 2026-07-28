@@ -1568,6 +1568,38 @@ This guide covers advanced topics for staff+ engineering interviews, including d
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+ADVANCED TOPICS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Segment Tree: Binary tree where each node represents a range of the array
+  - Leaf nodes: individual elements
+  - Internal nodes: result of combining children (sum, min, max)
+  - Height: O(log n)
+  - Space: O(4n) or O(2n)
+  Use Cases:
+```
+```
+  Fenwick Tree: Array-based data structure for prefix sum queries
+  - Space: O(n)
+  - Update: O(log n)
+  - Query: O(log n)
+  - Simpler to implement than Segment Tree
+  Key Idea: Use binary representation to determine which elements to update/query
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

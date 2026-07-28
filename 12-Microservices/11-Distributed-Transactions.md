@@ -43,15 +43,31 @@ COMMIT;
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+DISTRIBUTED TRANSACTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  -- Write to outbox table in same DB transaction
+  BEGIN;
+    INSERT INTO orders (id, amount) VALUES (?, ?);
+    INSERT INTO outbox (event_type, payload, created_at)
+      VALUES ('order.created', '{"id": ...}', NOW());
+  COMMIT;
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [API Gateway](02-API-Gateway.md)
-- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
 - [CQRS](13-CQRS.md)
-- [Event Sourcing](07-Event-Sourcing.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Saga Pattern](03-Saga-Pattern.md)
-- [Service Mesh](10-Service-Mesh.md)
-- [Strangler Fig](12-Strangler-Fig.md)
 
 ## References & Learn More
 

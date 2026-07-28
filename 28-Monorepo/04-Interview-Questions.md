@@ -297,6 +297,37 @@ Monorepo provides a unified approach to managing multiple projects with shared c
 
 ---
 
+## Cheat Sheet
+```text
+MONOREPO INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Interview Question Categories:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
+  │  │  Fundamentals│  │   Tooling   │  │      System Design      │ │
+  │  │             │  │             │  │                         │ │
+```
+```
+  1. Definition (1-2 sentences)
+  2. Benefits (2-3 bullet points)
+  3. Challenges (2-3 bullet points)
+  4. Implementation (tools and patterns)
+  5. Trade-offs (what we gain vs lose)
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Build Tools](../23-Build-Tools/)
 - [CI/CD](../15-CI-CD/)

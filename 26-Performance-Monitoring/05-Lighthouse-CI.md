@@ -48,13 +48,21 @@ O, and best-practice audits in CI/CD pipelines. It tracks scores over time, sets
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+LIGHTHOUSE CI CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [Accessibility](../25-Accessibility/)
 - [Bundle Analysis](06-Bundle-Analysis.md)
-- [Core Web Vitals](01-Core-Web-Vitals.md)
-- [Interview Questions](04-Interview-Questions.md)
-- [Performance APIs](02-Performance-APIs.md)
-- [Profiling Tools](03-Profiling-Tools.md)
 
 ## References & Learn More
 

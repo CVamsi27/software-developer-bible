@@ -167,12 +167,21 @@ docker-build:
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+GITLAB CI/CD CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [ArgoCD](06-ArgoCD.md)
-- [Docker Build & Deploy](02-Docker-Build-Deploy.md)
-- [GitHub Actions](01-GitHub-Actions.md)
-- [Jenkins](04-Jenkins.md)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

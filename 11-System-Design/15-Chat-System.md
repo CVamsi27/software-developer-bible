@@ -1152,6 +1152,30 @@ This design handles 1B+ users with 100B+ messages/day while maintaining < 100ms 
 
 ---
 
+## Cheat Sheet
+```text
+CHAT SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | WebSocket server crash | Client auto-reconnects to next available server |
+  | Kafka broker failure | Replication factor 3, ISR with min.in-sync.replicas=2 |
+  | Database node down | Automatic failover to replica in < 30 seconds |
+  | Redis cluster down | Fall back to direct DB reads for history, disable real-time |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

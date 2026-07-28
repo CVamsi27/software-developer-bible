@@ -535,6 +535,37 @@ This design can handle 1B+ daily redirects while maintaining sub-10ms latency an
 
 ---
 
+## Cheat Sheet
+```text
+URL SHORTENER SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Storage Estimates:
+  - 100M new URLs/day = ~1.16K URLs/second
+  - 1B redirects/day = ~11.6K requests/second
+  - Each URL record: ~500 bytes
+  - 100M URLs/day × 365 days × 5 years = ~182.5B URLs
+  - Storage: 182.5B × 500 bytes = ~91.25 TB
+```
+```
+  - Write-through for new URL creation
+  - TTL-based expiration aligned with URL expiration
+  - Cache-aside pattern for reads
+  - Background refresh for hot keys
+  - Event-driven invalidation via Kafka for analytics updates
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

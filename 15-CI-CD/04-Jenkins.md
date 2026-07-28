@@ -214,12 +214,21 @@ buildNodeApp(nodeVersion: '20')
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+JENKINS CI/CD CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [ArgoCD](06-ArgoCD.md)
-- [Docker Build & Deploy](02-Docker-Build-Deploy.md)
-- [GitHub Actions](01-GitHub-Actions.md)
-- [GitLab CI](05-GitLab-CI.md)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

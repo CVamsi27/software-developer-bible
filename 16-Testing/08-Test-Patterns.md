@@ -1285,6 +1285,30 @@ Choose patterns that fit your team's needs and codebase complexity.
 
 ---
 
+## Cheat Sheet
+```text
+TEST PATTERNS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  describe("Shopping Cart", () => {
+    let cart: ShoppingCart;
+    let product: Product;
+    beforeEach(async () => {
+      cart = new ShoppingCart();
+      product = await productFixture.create({ price: 10 });
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

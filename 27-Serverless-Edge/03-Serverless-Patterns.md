@@ -558,6 +558,38 @@ Serverless patterns provide proven solutions for common architectural challenges
 
 ---
 
+## Cheat Sheet
+```text
+SERVERLESS PATTERNS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Order Flow:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  Order Placed → SQS → Lambda (Validate) → Lambda (Payment)    │
+  │                              │                                   │
+  │                              ▼                                   │
+  │                     Lambda (Inventory) → Lambda (Ship)          │
+```
+```
+  Data Pipeline:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  Kinesis → Lambda (Transform) → DynamoDB → Lambda (Aggregate)  │
+  │                                        │                        │
+  │                                        ▼                        │
+  │                               S3 (Data Lake)                    │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Docker](../13-Docker/)
 - [Next.js](../04-NextJS/)

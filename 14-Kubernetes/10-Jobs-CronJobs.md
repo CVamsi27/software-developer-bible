@@ -66,12 +66,21 @@ spec:
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+JOBS & CRONJOBS CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [Deployments](02-Deployments.md)
-- [Health Checks](06-Health-Checks.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md)
 
 ## References & Learn More
 

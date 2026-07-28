@@ -972,6 +972,38 @@ This design supports 1B+ files with 10M concurrent sync operations while maintai
 
 ---
 
+## Cheat Sheet
+```text
+GOOGLE DRIVE SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Storage Estimates:
+  - 1B files × 1 MB average = 1 PB
+  - With versions: 1 PB × 10 versions = 10 PB
+  - Metadata: 1B × 1 KB = 1 TB
+  - Total: ~11 PB
+  Bandwidth Estimates:
+```
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Storage node down | Replication ensures availability |
+  | Database failover | Read from replica |
+  | Sync service down | Queue operations, retry later |
+  | Network partition | Store locally, sync when reconnected |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

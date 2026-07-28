@@ -674,6 +674,34 @@ This learning guarantee system provides a structured framework for mastering int
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🎯 LEARNING GUARANTEE SYSTEM CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  1. Read the concept/pattern
+  2. Understand the WHY, not just the HOW
+  3. Write down the key idea in your own words
+  4. Create a mental model or analogy
+```
+```
+  1. Solve 3-5 problems using the pattern
+  2. Time yourself (target: 20 min for Medium)
+  3. If stuck > 30 min, look at solution
+  4. Re-solve from memory immediately after
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

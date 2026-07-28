@@ -876,6 +876,33 @@ This design handles 10M+ requests/second with < 1ms added latency per rate limit
 
 ---
 
+## Cheat Sheet
+```text
+RATE LIMITER SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Request Estimates:
+  - 10M API requests/second at peak
+  - 100M distinct rate limit keys (users/IPS)
+  - Each rate limit entry: ~100 bytes
+  - Memory: 100M × 100 bytes = ~10 GB (Redis)
+  - Works within a single Redis cluster
+```
+```
+  Rate limiters are in-memory systems. No traditional database is used. However, for persistence and configuration:
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

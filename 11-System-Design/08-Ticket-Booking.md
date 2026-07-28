@@ -1001,6 +1001,30 @@ This design supports 100K+ concurrent users with strong consistency for seat boo
 
 ---
 
+## Cheat Sheet
+```text
+TICKET BOOKING SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Redis down | Fall back to database locks |
+  | Payment fails | Release reserved seats |
+  | Database failover | Read from replica |
+  | Network partition | Queue operations locally |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

@@ -531,6 +531,30 @@ Profiling tools are essential for identifying and fixing performance issues. Mas
 
 ---
 
+## Cheat Sheet
+```text
+PROFILING TOOLS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  async function startProfiling(duration: number = 5000): Promise<void> {
+    const entries: PerformanceEntry[] = [];
+    const observer = new PerformanceObserver((list) => {
+      entries.push(...list.getEntries());
+    });
+    observer.observe({
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)

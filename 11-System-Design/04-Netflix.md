@@ -910,6 +910,38 @@ This design supports 200M+ subscribers with 15M concurrent streams while maintai
 
 ---
 
+## Cheat Sheet
+```text
+NETFLIX SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Storage Estimates:
+  - 15M concurrent streams × 5 Mbps = 75 Tbps bandwidth
+  - 200M users × 2 hours/day × 100 MB/hour = 40 PB/month viewing
+  - Content library: 100K hours × 1 GB/hour = 100 TB raw
+  - With multiple qualities: 100 TB × 10 = 1 PB
+  Bandwidth Estimates:
+```
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | CDN node failure | Automatic failover to next closest edge |
+  | Origin server down | Serve from regional cache |
+  | DRM service unavailable | Temporary offline license |
+  | Database failover | Read from replica |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

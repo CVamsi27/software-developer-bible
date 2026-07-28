@@ -1728,6 +1728,38 @@ Key metrics:
 
 ---
 
+## Cheat Sheet
+```text
+GRAPHQL INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  GraphQL Interview Focus Areas:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  1. Core Concepts    → Schema, types, queries, mutations        │
+  │  2. Design Patterns  → Schema-first, pagination, error handling│
+  │  3. Performance      → N+1, DataLoader, caching, complexity    │
+  │  4. Security         → Auth, authorization, query validation   │
+```
+```
+  ---
+  **Answer:**
+  | Aspect | GraphQL | REST |
+  |--------|---------|------|
+  | **Endpoints** | Single `/graphql` | Multiple `/users`, `/posts` |
+  | **Data Fetching** | Client specifies | Server determines |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

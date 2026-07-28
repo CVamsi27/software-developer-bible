@@ -374,6 +374,37 @@ This schedule provides a structured 12-week spaced repetition plan for interview
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🔄 SPACED REPETITION SCHEDULE CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Day 0:  Learn new material
+  Day 1:  First review (1 day later)
+  Day 3:  Second review (3 days later)
+  Day 7:  Third review (1 week later)
+  Day 14: Fourth review (2 weeks later)
+  Day 30: Fifth review (1 month later)
+```
+```
+  New:      Can't solve without help
+  Learning: Can solve with hints, takes >30 min
+  Familiar: Can solve independently, 20-30 min
+  Mastered: Can solve quickly, <20 min, explain clearly
+  Expert:   Can solve in <15 min, can teach, know variations
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

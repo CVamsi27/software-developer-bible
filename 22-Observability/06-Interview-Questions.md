@@ -1273,6 +1273,26 @@ Success in observability interviews requires understanding both the technical im
 
 ---
 
+## Cheat Sheet
+```text
+OBSERVABILITY INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  "2024-01-15 10:30:45 ERROR User 12345 failed login from 192.168.1.1"
+  {"timestamp":"2024-01-15T10:30:45Z","level":"error","message":"Login failed","userId":"12345","ip":"192.168.1.1"}
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

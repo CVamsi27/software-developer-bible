@@ -946,6 +946,38 @@ Key considerations:
 
 ---
 
+## Cheat Sheet
+```text
+REAL-TIME ARCHITECTURE CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Chat Applications         -> WebSocket + Pub/Sub
+  Live Notifications        -> SSE + Message Queue
+  Multiplayer Games         -> WebSocket + State Sync
+  Collaborative Editing     -> CRDT + Operational Transform
+  Financial Tickers         -> WebSocket + Redis Streams
+  IoT Sensor Data           -> MQTT + Kafka
+```
+```
+  socket.on('message', async (data) => {
+    await db.messages.insert(data); // Blocks, doesn't scale
+    io.to(data.roomId).emit('new-message', data);
+  });
+  socket.on('message', async (data) => {
+    await messageQueue.publish('chat:message', data); // Non-blocking
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

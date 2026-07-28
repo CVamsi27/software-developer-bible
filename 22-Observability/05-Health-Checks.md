@@ -503,6 +503,20 @@ Health checks are the foundation of service reliability. Implement liveness (pro
 
 ---
 
+## Cheat Sheet
+```text
+HEALTH CHECKS CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

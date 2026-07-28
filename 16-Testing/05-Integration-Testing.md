@@ -1230,6 +1230,38 @@ A well-designed integration test suite catches issues that unit tests miss while
 
 ---
 
+## Cheat Sheet
+```text
+INTEGRATION TESTING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  it("should call repository method", async () => {
+    const spy = jest.spyOn(userRepository, "create");
+    await service.createUser(data);
+    expect(spy).toHaveBeenCalled();
+  });
+  it("should create user in database", async () => {
+```
+```
+  beforeAll(async () => {
+    await db.connect();
+  });
+  beforeEach(async () => {
+    await db.clear();
+  });
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

@@ -1673,6 +1673,34 @@ class RegionalServer {
 
 ---
 
+## Cheat Sheet
+```text
+WEBSOCKETS & REAL-TIME INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Beginner (1-10):     Fundamentals, basic concepts
+  Intermediate (11-20): Architecture, implementation details
+  Senior (21-30):      System design, scaling, trade-offs
+```
+```
+  const response = await fetch('/api/data');
+  const data = await response.json();
+  const ws = new WebSocket('wss://example.com');
+  ws.onmessage = (event) => console.log('Received:', event.data);
+  ws.send('Hello Server'); // Client can send anytime
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

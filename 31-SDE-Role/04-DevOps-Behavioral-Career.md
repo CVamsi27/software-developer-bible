@@ -2000,6 +2000,38 @@ This guide covers DevOps practices, behavioral interview preparation, and career
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+DEVOPS, BEHAVIORAL & CAREER PREPARATION (PHASES 20–28) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Merge:
+  - Creates merge commit
+  - Preserves history
+  - Safe for shared branches
+  - Use when: collaborating on feature branches
+  Rebase:
+```
+```
+  npm run lint
+  npm run test
+  commit_msg=$(cat "$1")
+  if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|test|chore):"; then
+      echo "Commit message must follow conventional commits format"
+      exit 1
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

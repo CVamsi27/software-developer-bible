@@ -96,13 +96,21 @@ spec:
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+STATEFULSETS & DAEMONSETS CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)
-- [Deployments](02-Deployments.md)
-- [HPA & Scaling](05-HPA-Scaling.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md)
-- [Pods & ReplicaSets](01-Pods-ReplicaSets.md)
 
 ## References & Learn More
 

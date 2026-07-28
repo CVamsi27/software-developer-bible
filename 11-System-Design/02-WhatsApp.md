@@ -801,6 +801,38 @@ This design handles 500M DAU with 100B messages/day while maintaining < 100ms de
 
 ---
 
+## Cheat Sheet
+```text
+WHATSAPP SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Storage Estimates:
+  - 500M DAU × 40 messages/day = 20B messages/day
+  - Average message: 100 bytes
+  - Daily storage: 20B × 100 bytes = 2 TB/day
+  - Yearly storage: 2 TB × 365 = 730 TB
+  - Media storage: 10x messages = 7.3 PB/year
+```
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | WebSocket server crash | Client auto-reconnects, message queue preserves order |
+  | Kafka broker failure | Replication factor 3, ISR required |
+  | Database node failure | Automatic failover to replica |
+  | Redis failure | Fall back to database for presence |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

@@ -750,6 +750,38 @@ A well-tested codebase is maintainable, reliable, and enables teams to ship feat
 
 ---
 
+## Cheat Sheet
+```text
+TESTING OVERVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+                      /\
+                     /  \
+                    / E2E \          Few in number, slow, expensive
+                   /--------\
+                  /Integration\      Moderate number, moderate speed
+                 /--------------\
+```
+```
+  +------------------+------------+----------+---------+----------------+
+  | Type             | Speed      | Cost     | Scope   | Confidence     |
+  +------------------+------------+----------+---------+----------------+
+  | Unit             | Very Fast  | Low      | Single  | Low-Medium     |
+  | Integration      | Medium     | Medium   | Multiple| Medium-High    |
+  | E2E              | Slow       | High     | Full    | High           |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

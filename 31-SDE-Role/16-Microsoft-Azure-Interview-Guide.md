@@ -642,6 +642,35 @@ This guide covers the Microsoft and Azure interview process, including coding ex
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🏢 MICROSOFT AZURE TEAM — INTERVIEW GUIDE (2025–2026) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  What it means: Learn from mistakes, embrace feedback, stay curious
+  What interviewers look for: Admitting what you don't know, asking questions,
+                              incorporating hints during coding rounds
+  Example answer structure:
+  "I didn't know X at first, but I [took specific action to learn].
+   After applying it, I [measurable result]. This taught me [lesson]."
+```
+```
+  - Focus on end-user impact in your stories
+  - Mention how your technical decisions improved user experience
+  - Reference metrics: latency reduction, uptime improvement, cost savings
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

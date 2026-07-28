@@ -311,6 +311,38 @@ Performance monitoring interviews test your understanding of web performance met
 
 ---
 
+## Cheat Sheet
+```text
+PERFORMANCE MONITORING INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Interview Question Categories:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
+  │  │  Fundamentals│  │   Practical │  │      System Design      │ │
+  │  │             │  │             │  │                         │ │
+```
+```
+  function answerPattern(question: string): string {
+    return `
+      1. Definition: What ${question} is
+      2. Explanation: How it works and why it matters
+      3. Code Example: Practical implementation
+      4. Real-world: Production use case
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)

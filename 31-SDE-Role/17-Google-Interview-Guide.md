@@ -372,6 +372,38 @@ This guide covers Google's interview process, including coding expectations, goo
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🔵 GOOGLE (ALPHABET) — INTERVIEW GUIDE (2025–2026) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  1. Impact at Scale: "Google serves billions of users daily. I want to work on
+     systems that impact people worldwide — from Search to Maps to Cloud."
+  2. Technical Innovation: "Google pushes boundaries in AI, distributed systems,
+     and infrastructure. I want to solve problems at this scale."
+  3. Learning Culture: "Google's 20% time, internal talks, and engineering
+     culture emphasize continuous learning."
+```
+```
+  ✅ DO:
+    • Talk through your approach BEFORE coding
+    • Start with brute force, then optimize
+    • Handle edge cases explicitly (null, empty, single element)
+    • Write clean, readable code in Google Docs
+    • Ask clarifying questions about constraints
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

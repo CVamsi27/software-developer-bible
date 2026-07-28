@@ -982,6 +982,38 @@ This design supports 20M DAU with < 30 second matching latency and 99.99% availa
 
 ---
 
+## Cheat Sheet
+```text
+UBER SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Storage Estimates:
+  - 20M DAU × 2 rides/day = 40M rides/day
+  - Average ride data: 5 KB
+  - Daily storage: 40M × 5 KB = 200 GB/day
+  - Location updates: 1M drivers × 4 sec = 250K updates/sec
+  - Location storage: 250K × 200 bytes = 50 MB/sec
+```
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Location service down | Use cached locations, degrade ETA accuracy |
+  | Matching service down | Queue requests, process when recovered |
+  | Payment service down | Allow cash rides, process cards later |
+  | Driver GPS failure | Use cell tower triangulation as fallback |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

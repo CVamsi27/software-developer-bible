@@ -52,13 +52,31 @@ describe('Math operations', () => {
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+VITEST CHEAT SHEET
+============================================================
 
+COMMON PATTERNS:
+```
+  import { describe, it, expect, vi, beforeEach } from 'vitest';
+  describe('Math operations', () => {
+    it('should add numbers', () => {
+      expect(1 + 2).toBe(3);
+    });
+    it('should handle async', async () => {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [Interview Questions](09-Interview-Questions.md)
-- [Jest](02-Jest.md)
-- [React Testing Library](03-React-Testing-Library.md)
-- [Testing Overview](01-Testing-Overview.md)
-- [Vite](../23-Build-Tools/02-Vite.md)
 
 ## References & Learn More
 

@@ -42,13 +42,30 @@ module.exports = [
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+BUNDLE ANALYSIS CHEAT SHEET
+============================================================
 
+COMMON PATTERNS:
+```
+  module.exports = [
+    { path: 'dist/main.js', limit: '150 KB' },
+    { path: 'dist/vendor.js', limit: '200 KB' },
+    { path: 'dist/*.js', limit: '50 KB' },
+  ];
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [Accessibility](../25-Accessibility/)
 - [Build Optimization](../23-Build-Tools/04-Build-Optimization.md)
-- [Interview Questions](04-Interview-Questions.md)
-- [Lighthouse CI](05-Lighthouse-CI.md)
-- [Performance APIs](02-Performance-APIs.md)
-- [Profiling Tools](03-Profiling-Tools.md)
 
 ## References & Learn More
 

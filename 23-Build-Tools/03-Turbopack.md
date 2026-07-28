@@ -253,6 +253,38 @@ Turbopack represents the future of frontend bundling, offering unprecedented per
 
 ---
 
+## Cheat Sheet
+```text
+TURBOPACK CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                    Turbopack Architecture                        │
+  ├─────────────────────────────────────────────────────────────────┤
+  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐  │
+  │  │  File       │───▶│  Module     │───▶│  Chunk              │  │
+  │  │  System     │    │  Graph      │    │  Generation         │  │
+```
+```
+  Initial Build:
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │  All Files  │───▶│  Full Build │───▶│  Output     │
+  │  Processed  │    │  Cache      │    │  Bundles    │
+  └─────────────┘    └─────────────┘    └─────────────┘
+  After File Change:
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

@@ -149,12 +149,21 @@ argocd app rollback my-app 3
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+ARGOCD (GITOPS) CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [Blue-Green & Canary](03-Blue-Green-Canary.md)
-- [Docker Build & Deploy](02-Docker-Build-Deploy.md)
-- [GitHub Actions](01-GitHub-Actions.md)
-- [Kubernetes Deployments](../14-Kubernetes/02-Deployments.md)
+- [Docker](../13-Docker/)
 
 ## References & Learn More
 

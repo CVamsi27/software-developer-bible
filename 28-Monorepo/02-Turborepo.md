@@ -432,6 +432,30 @@ Turborepo provides a high-performance build system for monorepos with intelligen
 
 ---
 
+## Cheat Sheet
+```text
+TURBOREPO CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  1. **Incorrect outputs**: Not specifying build outputs correctly
+  2. **Missing dependencies**: Not declaring task dependencies
+  3. **Ignoring global dependencies**: Forgetting env files or configs
+  4. **Over-caching**: Caching tasks that shouldn't be cached
+  5. **Not using remote caching**: Missing out on team-wide cache
+  1. **Define clear outputs**: Specify exactly what each task produces
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Build Tools](../23-Build-Tools/)
 - [CI/CD](../15-CI-CD/)

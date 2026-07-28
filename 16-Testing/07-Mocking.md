@@ -1218,6 +1218,38 @@ A well-designed mocking strategy makes tests reliable, fast, and maintainable.
 
 ---
 
+## Cheat Sheet
+```text
+MOCKING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  const mockFn = jest.fn();
+  mockFn("arg1", "arg2");
+  expect(mockFn).toHaveBeenCalledTimes(1);
+  expect(mockFn).toHaveBeenCalledWith("arg1", "arg2");
+  const mockFnWithReturn = jest.fn().mockReturnValue(42);
+  expect(mockFnWithReturn()).toBe(42);
+```
+```
+  jest.mock("./user");
+  jest.mock("./email");
+  jest.mock("./database");
+  jest.mock("./utils");
+  it("should do something simple", async () => {
+  });
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

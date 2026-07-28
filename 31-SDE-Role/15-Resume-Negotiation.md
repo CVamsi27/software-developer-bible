@@ -277,12 +277,38 @@ ACCEPTANCE SIGNALS:
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+RESUME & NEGOTIATION GUIDE CHEAT SHEET
+============================================================
 
-- [Behavioral Questions](../18-Behavioral/)
-- [Interview Strategy](../00-Interview-Strategy/)
-- [LeetCode Study Plan](06-LeetCode-Study-Plan.md)
-- [Mock Interview Questions](09-Mock-Interview-Question-Bank.md)
+COMMON PATTERNS:
+```
+  ❌ Weak: "Responsible for API development"
+  ✅ Strong: "Designed and built RESTful API layer processing 50K req/s,
+              reducing p99 latency by 40% through Redis caching layer"
+  ❌ Weak: "Worked on frontend features"
+  ✅ Strong: "Led migration of legacy jQuery codebase to React,
+              improving page load time by 60% and reducing bug rate by 35%"
+```
+```
+  ATS (Applicant Tracking System) Tips:
+  ═══════════════════════════════════════
+  1. Use standard section headers: Experience, Education, Skills
+  2. Include keywords from the job description naturally
+  3. Use .docx or PDF (NOT .png, .jpeg, or proprietary formats)
+  4. Avoid tables, columns, infographics — ATS can't parse them
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [Behavioral](../18-Behavioral/)
 
 ## References & Learn More
 

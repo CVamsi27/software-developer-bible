@@ -186,13 +186,9 @@ LABEL org.opencontainers.image.version="1.0.0"
 CMD ["node", "app/main.js"]
 ```
 
----
-
-### See Also
-
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [Docker Security](../09-Security/)
-- [Images & Containers](01-Images-Containers.md)
-- [Multi-Stage Builds](04-Multi-Stage-Builds.md)
 
 ## References & Learn More
 

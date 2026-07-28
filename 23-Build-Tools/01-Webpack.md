@@ -245,6 +245,38 @@ Webpack is a powerful, flexible module bundler essential for modern web developm
 
 ---
 
+## Cheat Sheet
+```text
+WEBPACK CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │  Entry      │───▶│  Resolve    │───▶│  Loaders    │───▶│  Plugins    │
+  │  Points     │    │  Modules    │    │  Transform  │    │  Optimize   │
+  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+         │                                                       │
+         ▼                                                       ▼
+```
+```
+  module.exports = {
+    entry: {
+      main: './src/index.js',
+      admin: './src/admin/index.js'
+    },
+    output: {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

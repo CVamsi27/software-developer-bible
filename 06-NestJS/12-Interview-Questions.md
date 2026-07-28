@@ -1063,6 +1063,38 @@ These 40 questions cover NestJS from beginner to FAANG-level complexity. Key are
 
 ---
 
+## Cheat Sheet
+```text
+NESTJS INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  @Injectable()
+  export class UserService {
+    constructor(
+      private readonly userRepo: UserRepository, // Injected
+      private readonly cacheService: CacheService, // Injected
+    ) {}
+```
+```
+  @Injectable() // Class is injectable
+  export class UserService {}
+  constructor(
+    @Inject('CUSTOM_TOKEN') // Custom token injection
+    private custom: any,
+  ) {}
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Design Patterns](../10-Design-Patterns/)
 - [Microservices](../12-Microservices/)

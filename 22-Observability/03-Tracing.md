@@ -461,6 +461,30 @@ Distributed tracing is essential for understanding request flow in microservices
 
 ---
 
+## Cheat Sheet
+```text
+DISTRIBUTED TRACING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  import { context, propagation, baggage } from "@opentelemetry/api";
+  const entry = baggage.createEntry("user.tier", "premium");
+  const currentBaggage = propagation.getBaggage(context.active()) || baggage.createBaggage();
+  const newBaggage = currentBaggage.setEntry("user.tier", entry);
+  const ctxWithBaggage = propagation.setBaggage(context.active(), newBaggage);
+  context.with(ctxWithBaggage, () => {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

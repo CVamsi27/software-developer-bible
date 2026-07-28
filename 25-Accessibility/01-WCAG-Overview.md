@@ -351,6 +351,20 @@ WCAG provides guidelines for making web content accessible. Follow POUR principl
 
 ---
 
+## Cheat Sheet
+```text
+WCAG OVERVIEW CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

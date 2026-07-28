@@ -1004,6 +1004,30 @@ This design supports 100M+ users with 1B+ notifications per day while maintainin
 
 ---
 
+## Cheat Sheet
+```text
+NOTIFICATION SERVICE SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | FCM/APNs down | Retry with exponential backoff |
+  | SendGrid down | Fallback to SES |
+  | Twilio down | Fallback to Nexmo |
+  | Database down | Queue notifications in Redis |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

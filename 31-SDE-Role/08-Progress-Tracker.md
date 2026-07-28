@@ -591,6 +591,20 @@ eekly to stay on top of your preparation.
 
 ---
 
+## Cheat Sheet
+```text
+📊 SDE INTERVIEW PREP — PROGRESS TRACKER CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)

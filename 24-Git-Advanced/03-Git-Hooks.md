@@ -346,6 +346,38 @@ Git hooks are powerful for automating workflows and enforcing standards. Use Hus
 
 ---
 
+## Cheat Sheet
+```text
+GIT HOOKS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  echo "Running linter..."
+  npm run lint
+  if [ $? -ne 0 ]; then
+    echo "Linting failed. Commit aborted."
+    exit 1
+  fi
+```
+```
+  commit_msg=$(cat "$1")
+  pattern="^(feat|fix|docs|style|refactor|test|chore|ci|build|perf)(\(.+\))?: .{1,72}"
+  if ! echo "$commit_msg" | grep -qE "$pattern"; then
+    echo "ERROR: Commit message does not follow Conventional Commits format."
+    echo "Expected: type(scope): description"
+    echo "Example: feat(auth): add login functionality"
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Monorepo](../28-Monorepo/)

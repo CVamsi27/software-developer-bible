@@ -392,6 +392,38 @@ Serverless computing provides a powerful model for building scalable, cost-effec
 
 ---
 
+## Cheat Sheet
+```text
+SERVERLESS OVERVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Lambda Function Lifecycle:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
+  │  │  Cold    │ ──▶ │  Init    │ ──▶ │  Invoke  │ ──▶ │ Shutdown │ │
+  │  │  Start   │    │  Phase   │    │  Phase   │    │ (if idle)│ │
+```
+```
+  Use Case: RESTful API for mobile app
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  Client → API Gateway → Lambda → DynamoDB                       │
+  │                                                                 │
+  │  Benefits:                                                      │
+  │  • Auto-scaling for traffic spikes                              │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Docker](../13-Docker/)
 - [Next.js](../04-NextJS/)

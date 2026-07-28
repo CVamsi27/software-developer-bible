@@ -1051,6 +1051,30 @@ This design supports 100K+ patients with 10K+ appointments per day while maintai
 
 ---
 
+## Cheat Sheet
+```text
+HOSPITAL MANAGEMENT SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Database failover | Read from replica |
+  | Redis down | Fall back to database |
+  | Notification service down | Queue notifications |
+  | Encryption service down | Use cached keys |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

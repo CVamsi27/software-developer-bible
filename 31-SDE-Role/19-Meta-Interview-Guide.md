@@ -346,6 +346,38 @@ This guide covers Meta's interview process, including coding expectations, syste
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🔷 META (FACEBOOK) — INTERVIEW GUIDE (2025–2026) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  ✅ DO:
+    • Talk through your approach BEFORE coding
+    • Start with brute force, then optimize
+    • Handle edge cases explicitly
+    • Write clean, readable code
+    • Test your code mentally or with print statements
+```
+```
+  System Design (Infrastructure teams):
+  - Focus: Backend architecture, distributed systems
+  - Example: Design a distributed cache, Design a message queue
+  - Emphasis: Scalability, fault tolerance, throughput
+  Product Architecture (Product teams):
+  - Focus: Client-server interaction, user-facing workflows
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

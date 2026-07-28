@@ -552,6 +552,20 @@ For HR behavioral questions:
 
 ---
 
+## Cheat Sheet
+```text
+HR & BEHAVIORAL INTERVIEW QUESTIONS: 25 STAR-FORMATTED ANSWERS CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Interview Strategy](../00-Interview-Strategy/)
 - [SDE Role](../31-SDE-Role/)

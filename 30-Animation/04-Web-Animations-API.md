@@ -51,13 +51,21 @@ await animation.finished;
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+WEB ANIMATIONS API CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [CSS Animations](02-CSS-Animations.md)
-- [Framer Motion](01-Framer-Motion.md)
-- [Interview Questions](03-Interview-Questions.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
-- [React Spring](06-React-Spring.md)
 
 ## References & Learn More
 

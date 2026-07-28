@@ -878,6 +878,37 @@ Key benefits:
 
 ---
 
+## Cheat Sheet
+```text
+NESTJS WEBSOCKETS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  +------------------+     +------------------+     +------------------+
+  |     Client       |     |   WebSocket      |     |    NestJS        |
+  |    (Browser)     | --> |   Gateway        | --> |   Application    |
+  +------------------+     +------------------+     +------------------+
+                                |                         |
+                                | Guards                  | Services
+```
+```
+  +-----------+     +-----------+     +-----------+     +-----------+
+  |  Module   | --> |  Gateway  | --> |  Handle   | --> |  Cleanup  |
+  |  Init     |     |  Listen   |     |  Events   |     |  OnModule |
+  |           |     |           |     |           |     |  Destroy  |
+  +-----------+     +-----------+     +-----------+     +-----------+
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

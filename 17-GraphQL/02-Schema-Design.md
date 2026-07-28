@@ -1232,6 +1232,28 @@ type Post {
 
 ---
 
+## Cheat Sheet
+```text
+SCHEMA DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Schema = Type Definitions + Type Relationships + Operations + Directives
+```
+```
+  ---
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

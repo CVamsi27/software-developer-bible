@@ -114,12 +114,21 @@ esbuild.buildSync({
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+ESBUILD & SWC CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [Babel](05-Babel.md)
-- [Build Optimization](04-Build-Optimization.md)
-- [Vite](02-Vite.md)
-- [Webpack](01-Webpack.md)
+- [Next.js](../04-NextJS/)
 
 ## References & Learn More
 

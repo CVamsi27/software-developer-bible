@@ -995,6 +995,38 @@ Key considerations:
 
 ---
 
+## Cheat Sheet
+```text
+SERVER-SENT EVENTS (SSE) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Use SSE when:                    Use WebSockets when:
+  - Server pushes updates          - Bidirectional communication needed
+  - No client → server messages    - Client sends frequent messages
+  - Simple implementation needed   - Binary data transfer required
+  - HTTP infrastructure available  - Low-latency critical
+  - Auto-reconnection needed       - Custom protocol needed
+```
+```
+  +-----------+     +-----------+     +-----------+     +-----------+
+  | CONNECTING| --> |   OPEN    | --> | CONNECTING| --> |   OPEN    |
+  +-----------+     +-----------+     +-----------+     +-----------+
+        |                |                 |                 |
+        | HTTP Request   | Receive data    | Auto-reconnect  | Resume
+        | sent           | from server     | on disconnect   | from last
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [Observability](../22-Observability/)

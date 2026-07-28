@@ -316,6 +316,38 @@ Animation is a critical skill for creating engaging user experiences. Master CSS
 
 ---
 
+## Cheat Sheet
+```text
+ANIMATION INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Interview Question Categories:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
+  │  │    CSS      │  │  React      │  │      Advanced           │ │
+  │  │             │  │             │  │                         │ │
+```
+```
+  function answerPattern(concept: string): string {
+    return `
+      1. Concept: What ${concept} is
+      2. Implementation: How to do it
+      3. Performance: Optimization tips
+      4. Accessibility: Considerations
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [GSAP](05-GSAP.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)

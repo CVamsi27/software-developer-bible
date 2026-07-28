@@ -734,6 +734,36 @@ These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, c
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+🃏 INTERACTIVE FLASHCARD DECKS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  1. Copy the Anki-formatted cards below
+  2. Open Anki → File → Import
+  3. Paste into a text file with tab separation
+  4. Import as "Text File"
+  5. Study daily using Anki's spaced repetition
+```
+```
+  1. Copy the Quizlet-formatted cards below
+  2. Go to Quizlet.com → Create → Import
+  3. Paste the cards (term | definition format)
+  4. Save as a study set
+  5. Use Quizlet's Learn mode for spaced repetition
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

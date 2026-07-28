@@ -2058,6 +2058,38 @@ This guide covers the core computer science fundamentals required for technical 
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+CORE COMPUTER SCIENCE FUNDAMENTALS (PHASES 9–15) CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  5 & 3 = 1     // 0101 & 0011 = 0001
+  5 | 3 = 7     // 0101 | 0011 = 0111
+  5 ^ 3 = 6     // 0101 ^ 0011 = 0110
+  ~5 = -6       // ~0101 = ...11111010 (two's complement)
+  5 << 1 = 10   // 0101 << 1 = 1010
+  5 << 2 = 20   // 0101 << 2 = 10100
+```
+```
+  void generateSubsets(int[] nums) {
+      int n = nums.length;
+      for (int mask = 0; mask < (1 << n); mask++) {
+          List<Integer> subset = new ArrayList<>();
+          for (int i = 0; i < n; i++) {
+              if ((mask & (1 << i)) != 0) {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

@@ -1060,6 +1060,38 @@ A well-designed E2E test suite provides high confidence while remaining maintain
 
 ---
 
+## Cheat Sheet
+```text
+E2E TESTING CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  test("should call API endpoint", async ({ page }) => {
+    const responsePromise = page.waitForResponse("**/api/data");
+    await page.click('[data-testid="button"]');
+    const response = await responsePromise;
+    expect(response.url()).toContain("/api/data");
+  });
+```
+```
+  test("bad example", async ({ page }) => {
+    await page.click('[data-testid="button"]');
+    await page.waitForTimeout(5000); // Hardcoded wait!
+    await expect(page.locator('[data-testid="result"]')).toBeVisible();
+  });
+  test("good example", async ({ page }) => {
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)

@@ -32,13 +32,21 @@ rm that runs code in response to events without provisioning servers. It support
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+AWS LAMBDA CHEAT SHEET
+============================================================
 
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [Docker](../13-Docker/)
 - [Edge Functions](02-Edge-Functions.md)
-- [Interview Questions](04-Interview-Questions.md)
-- [Next.js Deployment](../04-NextJS/)
-- [Serverless Overview](01-Serverless-Overview.md)
-- [Serverless Patterns](03-Serverless-Patterns.md)
 
 ## References & Learn More
 

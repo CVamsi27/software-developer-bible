@@ -911,6 +911,29 @@ Cache Layers:
 
 ---
 
+## Cheat Sheet
+```text
+PERFORMANCE & SECURITY CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Performance = Query Optimization + Caching + Rate Limiting + Monitoring
+  Security    = Authentication + Authorization + Input Validation + Attack Prevention
+```
+```
+  ---
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

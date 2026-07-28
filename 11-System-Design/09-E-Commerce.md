@@ -1195,6 +1195,30 @@ This design supports 100K+ concurrent users with 10K+ orders per minute.
 
 ---
 
+## Cheat Sheet
+```text
+E-COMMERCE SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Database failover | Read from replica |
+  | Redis down | Fall back to database |
+  | Payment fails | Release inventory |
+  | Inventory service down | Queue operations |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

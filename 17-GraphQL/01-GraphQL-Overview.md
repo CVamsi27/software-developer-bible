@@ -892,6 +892,33 @@ const resolvers = {
 
 ---
 
+## Cheat Sheet
+```text
+GRAPHQL OVERVIEW CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  GraphQL = Query Language + Type System + Execution Engine + Introspection
+```
+```
+  REST Pain Points:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  1. Over-fetching    → Getting more data than needed            │
+  │  2. Under-fetching   → Needing multiple requests for one view   │
+  │  3. Multiple endpoints → /users, /users/:id/posts, /posts/:id  │
+  │  4. Versioning pain  → /api/v1/, /api/v2/                      │
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

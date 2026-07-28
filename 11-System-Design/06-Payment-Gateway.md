@@ -1081,6 +1081,30 @@ This design supports 100K+ transactions per second with 99.999% availability and
 
 ---
 
+## Cheat Sheet
+```text
+PAYMENT GATEWAY SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Payment processor down | Failover to backup processor |
+  | Database failover | Read from replica, queue writes |
+  | Redis down | Fall back to database for idempotency |
+  | Kafka down | Buffer events locally |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

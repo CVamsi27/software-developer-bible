@@ -647,6 +647,41 @@ This guide provides a structured LeetCode study plan organized by topic and diff
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+---
+
+## Cheat Sheet
+```text
+📅 WEEKLY STUDY PLAN — INTENSIVE TRACK (4-6 HOURS/DAY) CHEAT SHEET
+============================================================
+
+KEY CONCEPTS:
+  - Pattern:
+
+COMMON PATTERNS:
+```
+  - **Pattern:** [Pattern name]
+  - **Time:** [How long it took]
+  - **Attempts:** [Number of attempts]
+  - **Key Insight:** [What you learned]
+  - **Mistakes:** [What to avoid next time]
+  - **Related:** [Similar problems]
+```
+```
+  - Total: XX
+  - Easy: XX
+  - Medium: XX
+  - Hard: XX
+  - Problem Solving: XX hours
+  - Pattern Learning: XX hours
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
 ## References & Learn More
 
 - [LeetCode](https://leetcode.com/)

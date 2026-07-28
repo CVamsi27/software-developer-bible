@@ -713,6 +713,38 @@ Understanding these concepts is essential for modern frontend development and te
 
 ---
 
+## Cheat Sheet
+```text
+BUILD TOOLS INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  import React, { lazy, Suspense } from 'react';
+  const Home = lazy(() => import('./pages/Home'));
+  const About = lazy(() => import('./pages/About'));
+  function App() {
+    return (
+      <Suspense fallback={<Loading />}>
+```
+```
+  const { DefinePlugin } = require('webpack');
+  module.exports = {
+    plugins: [
+      new DefinePlugin({
+        'process.env.API_URL': JSON.stringify(process.env.API_URL),
+        'process.env.NODE_ENV': JSON.stringify('production')
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Next.js](../04-NextJS/)
 - [Performance Monitoring](../26-Performance-Monitoring/)

@@ -81,13 +81,21 @@ spec:
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+RBAC & NETWORK POLICIES CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
+- [CI/CD](../15-CI-CD/)
 - [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [PodPresets](13-PodPresets.md)
-- [Resource Quotas](14-Resource-Quotas.md)
-- [Security Contexts](01-Pods-ReplicaSets.md)
-- [Services & Ingress](03-Services-Ingress.md)
 
 ## References & Learn More
 

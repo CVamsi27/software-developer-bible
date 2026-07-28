@@ -405,6 +405,37 @@ Core Web Vitals are essential metrics for measuring and improving user experienc
 
 ---
 
+## Cheat Sheet
+```text
+CORE WEB VITALS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Timeline: LCP Measurement
+  ├── 0ms: Navigation starts
+  ├── TTFB: First byte received
+  ├── Resource Load: Images, fonts, CSS loaded
+  └── LCP Element Rendered ✓ (Target: ≤ 2.5s)
+```
+```
+  User Interaction Flow:
+  ┌──────────┐     ┌──────────────┐     ┌─────────────┐     ┌────────────┐
+  │  Input   │ ──▶ │   Processing │ ──▶ │   Main      │ ──▶ │  Paint     │
+  │  Event   │     │   Delay      │     │   Thread    │     │  Response  │
+  └──────────┘     └──────────────┘     └─────────────┘     └────────────┘
+                    (INP = Total Latency)
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)

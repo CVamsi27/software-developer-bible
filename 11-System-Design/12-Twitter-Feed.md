@@ -850,6 +850,33 @@ This design handles 500M DAU with 10K tweets/second and sub-200ms timeline loadi
 
 ---
 
+## Cheat Sheet
+```text
+TWITTER FEED SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  The core challenge is efficiently distributing tweets to followers. Two approaches are used depending on user type:
+```
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | Redis timeline cache down | Fall back to DB timeline, serve slightly stale data |
+  | Kafka broker failure | Buffer tweets locally, replay when available |
+  | Database primary down | Promote read replica, read-only mode during failover |
+  | Search cluster degraded | Return tweets sorted by time as fallback |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

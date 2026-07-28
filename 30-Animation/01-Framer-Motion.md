@@ -515,6 +515,30 @@ Framer Motion provides a powerful, declarative API for creating performant anima
 
 ---
 
+## Cheat Sheet
+```text
+FRAMER MOTION CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  import { motion } from 'framer-motion';
+  function LoadingSpinner() {
+    return (
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)

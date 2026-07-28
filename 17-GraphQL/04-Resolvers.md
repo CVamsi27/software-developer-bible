@@ -940,6 +940,33 @@ if (complexity > 1000) {
 
 ---
 
+## Cheat Sheet
+```text
+RESOLVERS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Resolver = Function(Schema Field) → Data Source
+```
+```
+  Without Resolvers:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  Schema defines WHAT data is available                          │
+  │  But HOW to fetch it?  ← No mechanism defined                  │
+  └─────────────────────────────────────────────────────────────────┘
+  With Resolvers:
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [NestJS](../06-NestJS/)
 - [React](../03-React/)

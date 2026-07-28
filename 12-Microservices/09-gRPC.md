@@ -70,14 +70,21 @@ server.bindAsync('0.0.0.0:50051',
 
 ---
 
-### See Also
+## Cheat Sheet
+```text
+GRPC CHEAT SHEET
+============================================================
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+## See Also
 - [API Gateway](02-API-Gateway.md)
-- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
 - [CQRS](13-CQRS.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Kafka](05-Kafka.md)
-- [REST APIs](../07-REST-API/)
-- [Service Mesh](10-Service-Mesh.md)
 
 ## References & Learn More
 

@@ -1717,6 +1717,35 @@ This comprehensive guide covers the most common system design interview question
 
 ---
 
+## Cheat Sheet
+```text
+SYSTEM DESIGN INTERVIEW QUESTIONS CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  Client → Load Balancer → App Server → Cache (Redis) → Database (PostgreSQL)
+                                  ↓
+                          Analytics Service (Kafka)
+```
+```
+  CREATE TABLE urls (
+      id BIGSERIAL PRIMARY KEY,
+      short_code VARCHAR(10) UNIQUE NOT NULL,
+      long_url TEXT NOT NULL,
+      user_id BIGINT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

@@ -1114,6 +1114,30 @@ This design crawls 10B+ pages per month with thousands of distributed workers wh
 
 ---
 
+## Cheat Sheet
+```text
+WEB CRAWLER SYSTEM DESIGN CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+```
+  | Failure | Mitigation |
+  |---------|------------|
+  | DNS resolution failure | Retry with exponential backoff, skip after 3 attempts |
+  | HTTP timeout | Reduce timeout, mark URL for retry |
+  | Server returns 5xx | Retry with backoff, skip persistent errors |
+  | Crawler node crash | Other nodes pick up URLs from the shared frontier |
+```
+
+INTERVIEW TIPS:
+  - Understand the core concepts and trade-offs
+  - Be ready to explain with real-world examples
+  - Discuss performance implications and best practices
+  - Show awareness of common pitfalls
+
+```
+---
+
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)

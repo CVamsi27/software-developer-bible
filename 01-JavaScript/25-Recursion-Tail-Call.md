@@ -361,15 +361,9 @@ const memoizedRecursive = memoize(
 );
 ```
 
----
-
-### See Also
-
-- [Call Stack](02-Call-Stack.md) — how recursion uses the stack
-- [Closures](04-Closures.md) — how recursive closures capture scope
-- [Memoization](22-Memoization.md) — optimization technique for recursion
-- [Generators](23-Generators.md) — iterative alternative to recursion
-- [Dynamic Programming](../19-Coding-Patterns/06-Dynamic-Programming.md) — recursion with overlapping subproblems
+## See Also
+- [Call Stack](02-Call-Stack.md)
+- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

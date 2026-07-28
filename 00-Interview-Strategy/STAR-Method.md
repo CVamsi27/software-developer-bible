@@ -913,7 +913,7 @@ After each practice session, evaluate:
 
 ---
 
-## Quick Reference Card
+## Cheat Sheet Card
 
 ```text
 STAR STRUCTURE AT A GLANCE:

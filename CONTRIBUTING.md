@@ -276,7 +276,7 @@ Concept files typically use **numbered lists** or **bullet lists** for these sec
 
 Either format is acceptable — choose the one that best suits the content.
 
-### Cheat Sheet Format
+## Cheat Sheet Format
 
 Two formats are used depending on content:
 
@@ -549,7 +549,7 @@ A: A closure is...
 
 ## Summary
 
-## Quick Reference
+## Cheat Sheet
 
 ```text
 ...
@@ -565,7 +565,7 @@ A: A closure is...
 ```
 
 - Uses `## See Also` and `## References & Learn More` like concept files
-- **Bottom section**: Uses either `## Quick Reference` (preferred, 2 files) or `## Cheat Sheet` (also accepted, 11 files). Both are valid.
+- **Bottom section**: Uses `## Cheat Sheet` as the bottom section (standardized project-wide). Both `## Quick Reference` and `### Quick Reference` have been migrated.
 - Questions are grouped by difficulty level with H3 headings
 
 ### System Design Case Studies
@@ -768,7 +768,7 @@ After making changes, verify the following:
 - [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
 
 **Interview Questions files** (`NN-Interview-Questions.md`):
-- [ ] Uses `## Quick Reference` (preferred) or `## Cheat Sheet` (accepted) as bottom section
+- [ ] Uses `## Cheat Sheet` as the bottom section (standardized project-wide)
 - [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
 - [ ] Has `## N Most Asked [Section] Interview Questions` as first section
 

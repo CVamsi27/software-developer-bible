@@ -439,7 +439,7 @@ For each story, prepare:
 
 ---
 
-## Quick Reference: STAR Cheat Sheet
+## Cheat Sheet: STAR Cheat Sheet
 
 ```text
 STAR Answer Template:

@@ -414,7 +414,7 @@ This comprehensive guide covers 50 essential JavaScript interview questions acro
 
 Understanding these topics thoroughly will help you ace any JavaScript interview.
 
-## Quick Reference
+## Cheat Sheet
 
 ```text
 JAVASCRIPT INTERVIEW QUICK REFERENCE

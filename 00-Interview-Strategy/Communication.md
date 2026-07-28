@@ -844,7 +844,7 @@ Scenarios:
 
 ---
 
-## Quick Reference
+## Cheat Sheet
 
 ```text
 COMMUNICATION CHECKLIST FOR INTERVIEWS:

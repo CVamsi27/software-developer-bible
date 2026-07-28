@@ -1450,7 +1450,7 @@ export function middleware(request) {
 | FAANG | Scale, distributed systems, real-time, microservices |
 | Follow-ups | Trade-offs, debugging, monitoring, edge cases |
 
-## Quick Reference
+## Cheat Sheet
 
 ```text
 Key Concepts:

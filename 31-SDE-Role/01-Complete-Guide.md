@@ -1162,7 +1162,7 @@ void traverseBalanced(TreeNode node) {
 
 ```
 
-### Quick Reference: When to Use What
+## Cheat Sheet: When to Use What
 
 | Situation | Complexity | Algorithm |
 |-----------|-----------|-----------|

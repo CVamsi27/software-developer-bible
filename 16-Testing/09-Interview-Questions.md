@@ -1702,9 +1702,9 @@ These 40 questions cover the essential testing knowledge for senior full-stack i
 - [CI/CD](../15-CI-CD/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [NestJS](../06-NestJS/)
-- [Performance & Load Testing](../11-Performance-Load-Testing.md)
+- [Performance & Load Testing](11-Performance-Load-Testing.md)
 - [React](../03-React/)
-- [Vitest](../10-Vitest.md)
+- [Vitest](10-Vitest.md)
 
 ## References & Learn More
 

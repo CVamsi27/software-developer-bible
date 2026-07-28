@@ -277,10 +277,10 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 
 ### See Also
 
-- [Closures](../04-Closures.md) — how currying leverages closure scope
-- [Scope](../05-Scope.md) — lexical environment and variable resolution
-- [Generators](../23-Generators.md) — another way to model sequences
-- [Memoization](../22-Memoization.md) — caching in composed pipelines
+- [Closures](04-Closures.md) — how currying leverages closure scope
+- [Scope](05-Scope.md) — lexical environment and variable resolution
+- [Generators](23-Generators.md) — another way to model sequences
+- [Memoization](22-Memoization.md) — caching in composed pipelines
 
 ### References
 

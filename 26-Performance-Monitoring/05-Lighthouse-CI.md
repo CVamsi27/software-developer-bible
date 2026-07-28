@@ -48,11 +48,11 @@ tags: [concept]
 
 ### See Also
 
-- [Bundle Analysis](../06-Bundle-Analysis.md)
-- [Core Web Vitals](../01-Core-Web-Vitals.md)
-- [Interview Questions](../04-Interview-Questions.md)
-- [Performance APIs](../02-Performance-APIs.md)
-- [Profiling Tools](../03-Profiling-Tools.md)
+- [Bundle Analysis](06-Bundle-Analysis.md)
+- [Core Web Vitals](01-Core-Web-Vitals.md)
+- [Interview Questions](04-Interview-Questions.md)
+- [Performance APIs](02-Performance-APIs.md)
+- [Profiling Tools](03-Profiling-Tools.md)
 
 ### References
 

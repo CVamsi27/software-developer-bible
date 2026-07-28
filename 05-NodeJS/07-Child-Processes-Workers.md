@@ -396,9 +396,9 @@ CONSTRAINTS:
 
 ### See Also
 
-- [Clustering](../04-Clustering.md) — multi-process web serving
-- [Event Loop](../01-Event-Loop.md) — how async I/O works
-- [Process & Environment](../09-Process-Environment.md) — process lifecycle
+- [Clustering](04-Clustering.md) — multi-process web serving
+- [Event Loop](01-Event-Loop.md) — how async I/O works
+- [Process & Environment](08-Process-Environment.md) — process lifecycle
 
 ### References
 

@@ -43,11 +43,11 @@ COMMIT;
 
 ### See Also
 
-- [API Gateway](../02-API-Gateway.md)
-- [Event Sourcing](../07-Event-Sourcing.md)
-- [Interview Questions](../08-Interview-Questions.md)
-- [Saga Pattern](../03-Saga-Pattern.md)
-- [Service Mesh](../10-Service-Mesh.md)
+- [API Gateway](02-API-Gateway.md)
+- [Event Sourcing](07-Event-Sourcing.md)
+- [Interview Questions](08-Interview-Questions.md)
+- [Saga Pattern](03-Saga-Pattern.md)
+- [Service Mesh](10-Service-Mesh.md)
 
 ### References
 

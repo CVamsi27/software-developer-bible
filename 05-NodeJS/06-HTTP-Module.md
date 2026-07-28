@@ -489,11 +489,11 @@ TIMEOUTS:
 
 ### See Also
 
-- [Express / NestJS](../../06-NestJS/) — higher-level frameworks
-- [Event Loop](../01-Event-Loop.md) — how HTTP is processed
-- [Streams](../02-Streams.md) — streaming request/response
-- [WebSockets](../../21-WebSockets/) — upgrade from HTTP
-- [REST APIs](../../07-REST-API/) — API design principles
+- [Express / NestJS](../06-NestJS/) — higher-level frameworks
+- [Event Loop](01-Event-Loop.md) — how HTTP is processed
+- [Streams](02-Streams.md) — streaming request/response
+- [WebSockets](../21-WebSockets/) — upgrade from HTTP
+- [REST APIs](../07-REST-API/) — API design principles
 
 ### References
 

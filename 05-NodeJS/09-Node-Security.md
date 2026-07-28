@@ -491,10 +491,10 @@ PROTOTYPE POLLUTION:
 
 ### See Also
 
-- [Web Security](../../09-Security/) — browser-side security
-- [HTTP Module](../07-HTTP-Module.md) — secure HTTP configuration
-- [Process & Environment](../09-Process-Environment.md) — environment variables
-- [REST API Authentication](../../07-REST-API/06-Authentication.md)
+- [Web Security](../09-Security/) — browser-side security
+- [HTTP Module](06-HTTP-Module.md) — secure HTTP configuration
+- [Process & Environment](08-Process-Environment.md) — environment variables
+- [REST API Authentication](../07-REST-API/06-Authentication.md)
 
 ### References
 

@@ -66,10 +66,10 @@ spec:
 
 ### See Also
 
-- [Deployments](../02-Deployments.md)
-- [Health Checks](../06-Health-Checks.md)
-- [Interview Questions](../08-Interview-Questions.md)
-- [StatefulSets & DaemonSets](../09-StatefulSets-DaemonSets.md)
+- [Deployments](02-Deployments.md)
+- [Health Checks](06-Health-Checks.md)
+- [Interview Questions](08-Interview-Questions.md)
+- [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md)
 
 ### References
 

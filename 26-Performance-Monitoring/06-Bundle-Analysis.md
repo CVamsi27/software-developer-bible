@@ -42,11 +42,11 @@ module.exports = [
 
 ### See Also
 
-- [Build Optimization](../../23-Build-Tools/04-Build-Optimization.md)
-- [Interview Questions](../04-Interview-Questions.md)
-- [Lighthouse CI](../05-Lighthouse-CI.md)
-- [Performance APIs](../02-Performance-APIs.md)
-- [Profiling Tools](../03-Profiling-Tools.md)
+- [Build Optimization](../23-Build-Tools/04-Build-Optimization.md)
+- [Interview Questions](04-Interview-Questions.md)
+- [Lighthouse CI](05-Lighthouse-CI.md)
+- [Performance APIs](02-Performance-APIs.md)
+- [Profiling Tools](03-Profiling-Tools.md)
 
 ### References
 

@@ -54,11 +54,11 @@ function Trail({ items }) {
 
 ### See Also
 
-- [CSS Animations](../02-CSS-Animations.md)
-- [Framer Motion](../01-Framer-Motion.md)
-- [GSAP](../05-GSAP.md)
-- [Interview Questions](../03-Interview-Questions.md)
-- [Web Animations API](../04-Web-Animations-API.md)
+- [CSS Animations](02-CSS-Animations.md)
+- [Framer Motion](01-Framer-Motion.md)
+- [GSAP](05-GSAP.md)
+- [Interview Questions](03-Interview-Questions.md)
+- [Web Animations API](04-Web-Animations-API.md)
 
 ### References
 

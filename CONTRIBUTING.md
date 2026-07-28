@@ -337,7 +337,7 @@ Every section has an `INDEX.md` file. Format:
 
 ## Navigation
 
-[← Previous: Section Name](../xx-Section/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Section Name →](../yy-Section/INDEX.md)
+← Previous: `../xx-Section/INDEX.md` · [🏠 Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
 ```
 
 ### INDEX.md Rules
@@ -450,9 +450,9 @@ else:
 
 ```markdown
 ## See Also
-- [Coding Patterns](../19-Coding-Patterns/)
-- [JavaScript](../01-JavaScript/)
-- [TypeScript](../02-TypeScript/)
+- [Coding Patterns](19-Coding-Patterns/)
+- [JavaScript](01-JavaScript/)
+- [TypeScript](02-TypeScript/)
 ```
 
 #### Rules
@@ -468,9 +468,9 @@ else:
 
 | Variant | Example | Usage |
 |---------|---------|-------|
-| Section directory | `- [React](../03-React/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](../02-Jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](../../07-REST-API/)` | Cross-section from subdirectories |
+| Section directory | `- [React](03-React/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](07-REST-API/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -489,7 +489,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```markdown
-**Cross-references:** [JavaScript](../01-JavaScript/) | [TypeScript](../02-TypeScript/) | [Coding Patterns](../19-Coding-Patterns/)
+**Cross-references:** [JavaScript](01-JavaScript/) | [TypeScript](02-TypeScript/) | [Coding Patterns](19-Coding-Patterns/)
 ```
 
 - Pipe-separated links
@@ -501,7 +501,7 @@ else:
 ```markdown
 ## Navigation
 
-[← Previous: Section Name](../xx-Section/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Section Name →](../yy-Section/INDEX.md)
+← Previous: `../xx-Section/INDEX.md` · [🏠 Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
 ```
 
 - Three links: Previous (left arrow), Home (house icon), Next (right arrow)

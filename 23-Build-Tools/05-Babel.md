@@ -76,10 +76,10 @@ Animal.prototype.speak = function() { console.log(this._name + ' speaks'); };
 
 ### See Also
 
-- [Build Optimization](../04-Build-Optimization.md)
-- [ESBuild & SWC](../06-ESBuild-SWC.md)
-- [Vite](../02-Vite.md)
-- [Webpack](../01-Webpack.md)
+- [Build Optimization](04-Build-Optimization.md)
+- [ESBuild & SWC](06-ESBuild-SWC.md)
+- [Vite](02-Vite.md)
+- [Webpack](01-Webpack.md)
 
 ### References
 

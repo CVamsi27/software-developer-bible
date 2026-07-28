@@ -114,10 +114,10 @@ esbuild.buildSync({
 
 ### See Also
 
-- [Babel](../05-Babel.md)
-- [Build Optimization](../04-Build-Optimization.md)
-- [Vite](../02-Vite.md)
-- [Webpack](../01-Webpack.md)
+- [Babel](05-Babel.md)
+- [Build Optimization](04-Build-Optimization.md)
+- [Vite](02-Vite.md)
+- [Webpack](01-Webpack.md)
 
 ### References
 

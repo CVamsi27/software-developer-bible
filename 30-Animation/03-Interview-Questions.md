@@ -322,11 +322,11 @@ Animation is a critical skill for creating engaging user experiences. Master CSS
 ---
 
 ## See Also
-- [GSAP](../05-GSAP.md)
+- [GSAP](05-GSAP.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
-- [React Spring](../06-React-Spring.md)
-- [Web Animations API](../04-Web-Animations-API.md)
+- [React Spring](06-React-Spring.md)
+- [Web Animations API](04-Web-Animations-API.md)
 
 ## References & Learn More
 

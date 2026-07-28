@@ -32,11 +32,11 @@ tags: [concept]
 
 ### See Also
 
-- [Edge Functions](../02-Edge-Functions.md)
-- [Interview Questions](../04-Interview-Questions.md)
-- [Next.js Deployment](../../04-NextJS/)
-- [Serverless Overview](../01-Serverless-Overview.md)
-- [Serverless Patterns](../03-Serverless-Patterns.md)
+- [Edge Functions](02-Edge-Functions.md)
+- [Interview Questions](04-Interview-Questions.md)
+- [Next.js Deployment](../04-NextJS/)
+- [Serverless Overview](01-Serverless-Overview.md)
+- [Serverless Patterns](03-Serverless-Patterns.md)
 
 ### References
 

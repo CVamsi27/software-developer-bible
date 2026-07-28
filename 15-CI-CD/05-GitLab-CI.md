@@ -167,10 +167,10 @@ docker-build:
 
 ### See Also
 
-- [ArgoCD](../06-ArgoCD.md)
-- [Docker Build & Deploy](../02-Docker-Build-Deploy.md)
-- [GitHub Actions](../01-GitHub-Actions.md)
-- [Jenkins](../04-Jenkins.md)
+- [ArgoCD](06-ArgoCD.md)
+- [Docker Build & Deploy](02-Docker-Build-Deploy.md)
+- [GitHub Actions](01-GitHub-Actions.md)
+- [Jenkins](04-Jenkins.md)
 
 ### References
 

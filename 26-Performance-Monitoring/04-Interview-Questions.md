@@ -319,8 +319,8 @@ Performance monitoring interviews test your understanding of web performance met
 ## See Also
 - [Accessibility](../25-Accessibility/)
 - [Build Tools](../23-Build-Tools/)
-- [Bundle Analysis](../06-Bundle-Analysis.md)
-- [Lighthouse CI](../05-Lighthouse-CI.md)
+- [Bundle Analysis](06-Bundle-Analysis.md)
+- [Lighthouse CI](05-Lighthouse-CI.md)
 - [Observability](../22-Observability/)
 - [React](../03-React/)
 

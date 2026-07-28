@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Advanced Generics
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Advanced generics** encompass complex generic patterns that go beyond basic type parameters. They include higher-kinded types simulation, variadic generics, conditional generic types, and sophisticated constraint patterns.
+go beyond basic type parameters. They include higher-kinded types simulation, variadic generics, conditional generic types, and sophisticated constraint patterns.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

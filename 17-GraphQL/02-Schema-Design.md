@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Schema Design
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-GraphQL Schema Design is the process of defining the **type system**, **operations**, and **relationships** that form your API contract. A well-designed schema serves as documentation, enables tooling, and ensures type safety across your entire stack.
+em**, **operations**, and **relationships** that form your API contract. A well-designed schema serves as documentation, enables tooling, and ensures type safety across your entire stack.
 
 ```text
 Schema = Type Definitions + Type Relationships + Operations + Directives

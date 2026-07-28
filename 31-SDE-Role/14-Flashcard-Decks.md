@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 🃏 Interactive Flashcard Decks
 
-> **Ready-to-import flashcards for Anki and Quizlet**
->
-> Use these for daily active recall practice. Each card tests one key concept.
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+e recall practice. Each card tests one key concept.
 
 ---
 

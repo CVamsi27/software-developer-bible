@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # REST Principles
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-REST (Representational State Transfer) is an architectural style for designing networked applications, introduced by Roy Fielding in his 2000 doctoral dissertation. It provides a set of constraints and principles that emphasize scalability, simplicity, modifiability, and visibility.
+ for designing networked applications, introduced by Roy Fielding in his 2000 doctoral dissertation. It provides a set of constraints and principles that emphasize scalability, simplicity, modifiability, and visibility.
 
 REST is not a protocol or standard—it's an architectural pattern that leverages existing HTTP/HTTPS protocols to build web services that are:
 

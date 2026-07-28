@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Union-Find
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-Union-Find (also called Disjoint Set Union or DSU) is a data structure that tracks a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It supports two operations: `find` (determine which set an element belongs to) and `union` (merge two sets into one).
+re that tracks a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It supports two operations: `find` (determine which set an element belongs to) and `union` (merge two sets into one).
 
 ## When to Use
 

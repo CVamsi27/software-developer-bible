@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Hospital Management System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Patient registration and profiles
-- Appointment scheduling
+tment scheduling
 - Doctor management
 - Medical records (EHR)
 - Prescription management

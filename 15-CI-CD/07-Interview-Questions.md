@@ -1,12 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # CI/CD Interview Questions
 
-## 30 Most Asked CI/CD Interview Questions with Detailed Answers
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
----
-
-### Question 1: What is CI/CD and why is it important?
+estion 1: What is CI/CD and why is it important?
 
 **Answer:**
 

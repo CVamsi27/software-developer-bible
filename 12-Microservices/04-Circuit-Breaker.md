@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Circuit Breaker
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-Circuit Breaker is a design pattern that prevents an application from repeatedly trying to execute an operation that's likely to fail. It wraps calls to external services and monitors for failures, opening the circuit to stop requests when failures exceed a threshold, and allowing limited requests through to test recovery.
+atedly trying to execute an operation that's likely to fail. It wraps calls to external services and monitors for failures, opening the circuit to stop requests when failures exceed a threshold, and allowing limited requests through to test recovery.
 
 ## Why Do We Need It?
 

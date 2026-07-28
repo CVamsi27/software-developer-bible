@@ -1,11 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Rate Limiter System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Limit requests based on user ID, IP address, or API key
+s, or API key
 - Support multiple rate limiting algorithms (Token Bucket, Leaky Bucket, Sliding Window)
 - Configurable limits per client (e.g., 100 requests/hour, 10 requests/minute)
 - Block requests that exceed the limit with 429 Too Many Requests

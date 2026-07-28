@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Garbage Collection
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Garbage Collection (GC)** is the automatic memory management process that reclaims memory occupied by objects that are no longer in use. JavaScript engines use various algorithms to identify and free unused memory, eliminating the need for manual memory management.
+ process that reclaims memory occupied by objects that are no longer in use. JavaScript engines use various algorithms to identify and free unused memory, eliminating the need for manual memory management.
 
 ## Why Do We Need It?
 

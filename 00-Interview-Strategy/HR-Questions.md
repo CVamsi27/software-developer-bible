@@ -1,10 +1,6 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # HR Round Strategy for Senior Full Stack Engineers
 
-## Table of Contents
-
-1. [Understanding the HR Round](#understanding-the-hr-round)
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 2. [How to Approach HR Rounds](#how-to-approach-hr-rounds)
 

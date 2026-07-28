@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Leadership & Senior-Level Behavioral Questions: 20 STAR-Formatted Answers
 
-## Table of Contents
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-- [What Interviewers Expect from Senior Leaders](#what-interviewers-expect-from-senior-leaders)
+iewers-expect-from-senior-leaders)
 - [Questions 1-20 with STAR Answers](#questions)
 - [Leadership Competency Framework](#leadership-competency-framework)
 - [Building Your Leadership Narrative](#building-your-leadership-narrative)

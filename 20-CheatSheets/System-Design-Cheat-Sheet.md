@@ -1,11 +1,8 @@
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
-
 # System Design Cheat Sheet
 
-## Quick Reference Table
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-| Concept | Key Point | Code/Example |
-|---------|-----------|--------------|
+----|--------------|
 | Load Balancer | Distributes traffic across servers; L4 (TCP) or L7 (HTTP) | NGINX, HAProxy, AWS ALB/NLB |
 | Round Robin | Equal distribution; no consideration of server load | Simple but ignores server health |
 | Least Connections | Route to server with fewest active connections | Better for uneven request durations |

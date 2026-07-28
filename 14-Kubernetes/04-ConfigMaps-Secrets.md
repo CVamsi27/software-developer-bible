@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Kubernetes ConfigMaps & Secrets
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**ConfigMaps** store non-sensitive configuration data as key-value pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.
+alue pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.
 
 Key concepts:
 

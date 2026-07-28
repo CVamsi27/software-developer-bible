@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # JavaScript Interview Questions
 
-## 50 Most Asked JavaScript Interview Questions
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-### Beginner Level (10 Questions)
+ions)
 
 **Q1: What is JavaScript?**
 

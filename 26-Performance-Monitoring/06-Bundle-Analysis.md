@@ -1,10 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # Bundle Analysis
 
-## Definition
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-**Bundle Analysis** examines JavaScript bundle composition to identify optimization opportunities — duplicate dependencies, large modules, unused exports, and code-splitting candidates. Tools like `webpack-bundle-analyzer`, `vite-bundle-visualizer`, and `Bundlephobia` visualize bundle contents.
+y optimization opportunities — duplicate dependencies, large modules, unused exports, and code-splitting candidates. Tools like `webpack-bundle-analyzer`, `vite-bundle-visualizer`, and `Bundlephobia` visualize bundle contents.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Node.js Clustering
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Clustering** is a Node.js module that allows you to create multiple worker processes that share a single port. It enables you to utilize multiple CPU cores by forking the main process into multiple worker processes, each running its own instance of the Node.js event loop. The cluster module uses the `child_process.fork()` method internally to create workers.
+tiple worker processes that share a single port. It enables you to utilize multiple CPU cores by forking the main process into multiple worker processes, each running its own instance of the Node.js event loop. The cluster module uses the `child_process.fork()` method internally to create workers.
 
 ## Why Do We Need It?
 

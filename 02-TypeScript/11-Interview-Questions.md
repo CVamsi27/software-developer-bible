@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # TypeScript Interview Questions
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-This comprehensive guide covers the most frequently asked TypeScript interview questions, categorized by difficulty level. Master these questions to ace your next TypeScript interview.
+Script interview questions, categorized by difficulty level. Master these questions to ace your next TypeScript interview.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

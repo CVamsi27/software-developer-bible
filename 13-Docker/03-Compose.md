@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Docker Compose
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Docker Compose** is a tool for defining and running multi-container Docker applications using a declarative YAML file. It manages services, networks, and volumes as a single unit, enabling local development environments and multi-service architectures.
+ntainer Docker applications using a declarative YAML file. It manages services, networks, and volumes as a single unit, enabling local development environments and multi-service architectures.
 
 Key concepts:
 

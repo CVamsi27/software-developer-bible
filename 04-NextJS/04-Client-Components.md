@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Client Components in Next.js
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**Client Components** are React components that render on the client side with full interactivity. They use the `'use client'` directive at the top of the file and can access React hooks, browser APIs, and event handlers. They are hydrated after the server-rendered HTML is sent to the browser.
+nt side with full interactivity. They use the `'use client'` directive at the top of the file and can access React hooks, browser APIs, and event handlers. They are hydrated after the server-rendered HTML is sent to the browser.
 
 ## Why Do We Need It?
 

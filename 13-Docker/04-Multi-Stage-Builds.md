@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Docker Multi-Stage Builds
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Multi-stage builds** allow you to use multiple `FROM` statements in a single Dockerfile. Each `FROM` begins a new stage. Artifacts from earlier stages can be selectively copied to later stages using `COPY --from=<stage>`. The final image contains only what is needed for production, dramatically reducing size.
+ents in a single Dockerfile. Each `FROM` begins a new stage. Artifacts from earlier stages can be selectively copied to later stages using `COPY --from=<stage>`. The final image contains only what is needed for production, dramatically reducing size.
 
 Key concepts:
 

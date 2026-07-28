@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Context API
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-React Context API is a mechanism for passing data through the component tree without having to pass props down manually at every level. It provides a way to share values (like themes, authentication status, or language preferences) between components that are "connected" — that is, don't need to be direct parent-child relationships.
+onent tree without having to pass props down manually at every level. It provides a way to share values (like themes, authentication status, or language preferences) between components that are "connected" — that is, don't need to be direct parent-child relationships.
 
 Context consists of three parts:
 

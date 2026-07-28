@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Custom Hooks
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**Custom Hooks** are JavaScript functions that reuse stateful logic across React components. They start with `use` by convention, call other React Hooks inside them, and return a value, an array, or an object. Custom Hooks let you extract component logic into reusable functions — enabling composition, separation of concerns, and sharing of stateful behavior without higher-order components or render props.
+c across React components. They start with `use` by convention, call other React Hooks inside them, and return a value, an array, or an object. Custom Hooks let you extract component logic into reusable functions — enabling composition, separation of concerns, and sharing of stateful behavior without higher-order components or render props.
 
 ## Why Do We Need It?
 

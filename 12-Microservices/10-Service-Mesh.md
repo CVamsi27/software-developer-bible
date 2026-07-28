@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Service Mesh
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-A **Service Mesh** is a dedicated infrastructure layer for handling service-to-service communication in microservices. It offloads traffic management, observability, and security from application code to a sidecar proxy (typically Envoy). **Istio** and **Linkerd** are the most popular implementations.
+e-to-service communication in microservices. It offloads traffic management, observability, and security from application code to a sidecar proxy (typically Envoy). **Istio** and **Linkerd** are the most popular implementations.
 
 ## Why Do We Need It?
 

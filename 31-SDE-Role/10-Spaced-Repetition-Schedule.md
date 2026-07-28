@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 🔄 Spaced Repetition Schedule
 
-> **Maximize retention with scientifically-backed review intervals**
->
-> Based on the Ebbinghaus forgetting curve — review just before you forget!
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+he Ebbinghaus forgetting curve — review just before you forget!
 
 ---
 

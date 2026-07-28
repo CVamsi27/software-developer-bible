@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Binary Search
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-Binary search is a search algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates the half where the target cannot exist.
+get value within a sorted array by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates the half where the target cannot exist.
 
 ## When to Use
 

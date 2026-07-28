@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Pod Disruption Budgets
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-A **PodDisruptionBudget (PDB)** is a Kubernetes resource that limits the number of pods that can be unavailable simultaneously during **voluntary disruptions** — intentional actions like node maintenance, cluster upgrades, autoscaling down, or draining nodes for repairs. PDBs ensure that a minimum number or percentage of pods remain available during these operations, protecting application availability.
+limits the number of pods that can be unavailable simultaneously during **voluntary disruptions** — intentional actions like node maintenance, cluster upgrades, autoscaling down, or draining nodes for repairs. PDBs ensure that a minimum number or percentage of pods remain available during these operations, protecting application availability.
 
 ## Why Do We Need It?
 

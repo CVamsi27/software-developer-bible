@@ -1,9 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # System Design Interview Questions
 
-## Overview
-This file contains 30 most asked system design interview questions with detailed answers, categorized by difficulty level. Each answer includes architecture, key components, trade-offs, and scaling considerations.
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+
+led answers, categorized by difficulty level. Each answer includes architecture, key components, trade-offs, and scaling considerations.
 
 ---
 

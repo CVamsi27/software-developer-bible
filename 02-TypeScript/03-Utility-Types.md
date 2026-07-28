@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Utility Types
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Utility types** are built-in TypeScript types that provide common type transformations. They allow you to manipulate and transform types without writing complex type logic from scratch.
+ommon type transformations. They allow you to manipulate and transform types without writing complex type logic from scratch.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

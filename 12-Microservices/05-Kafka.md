@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Apache Kafka
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-Apache Kafka is a distributed event streaming platform designed for high-throughput, fault-tolerant, and scalable data streaming. It publishes, subscribes to, stores, and processes records (messages) in real-time, making it ideal for microservices communication and data pipelines.
+hroughput, fault-tolerant, and scalable data streaming. It publishes, subscribes to, stores, and processes records (messages) in real-time, making it ideal for microservices communication and data pipelines.
 
 ## Why Do We Need It?
 

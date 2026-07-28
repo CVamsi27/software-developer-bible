@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Hoisting
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Hoisting** is JavaScript's behavior of moving declarations to the top of their containing scope during the creation phase of the execution context. This means variables and functions can be used before they are declared in the code. However, only the declarations are hoisted, not the initializations.
+o the top of their containing scope during the creation phase of the execution context. This means variables and functions can be used before they are declared in the code. However, only the declarations are hoisted, not the initializations.
 
 ## Why Do We Need It?
 

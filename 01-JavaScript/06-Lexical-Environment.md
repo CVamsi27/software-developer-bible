@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Lexical Environment
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-A **Lexical Environment** is a specification type defined by the ECMAScript standard that associates a scope (the set of variable bindings) with a specific location in source code. It consists of an **Environment Record** (which stores the actual variable and function bindings) and an optional reference to an **outer lexical environment** (which enables the scope chain). Every time a function is called, a new lexical environment is created.
+he ECMAScript standard that associates a scope (the set of variable bindings) with a specific location in source code. It consists of an **Environment Record** (which stores the actual variable and function bindings) and an optional reference to an **outer lexical environment** (which enables the scope chain). Every time a function is called, a new lexical environment is created.
 
 Think of it as the engine's internal data structure that maps identifiers to their values within a specific scope, along with the ability to look up identifiers in parent scopes.
 

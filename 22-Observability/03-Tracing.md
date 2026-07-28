@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Distributed Tracing
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-Distributed tracing is a method of tracking the flow of a request as it travels through multiple services in a distributed system. Each unit of work is recorded as a **span**, and all spans from a single request form a **trace**. Tracing answers the question: *"Where did time go for this request?"*
+est as it travels through multiple services in a distributed system. Each unit of work is recorded as a **span**, and all spans from a single request form a **trace**. Tracing answers the question: *"Where did time go for this request?"*
 
 A **trace** is a directed acyclic graph (DAG) of spans representing the causal relationships between operations. A **span** is a named, timed operation with metadata (attributes), events, and a parent-child relationship to other spans.
 

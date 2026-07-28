@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 🔷 Meta (Facebook) — Interview Guide (2025–2026)
 
-> **Target Role:** E3 (Junior) / E4 (Mid) / E5 (Senior) Software Engineer
->
-> **Teams to Consider:** Instagram, WhatsApp, Messenger, Reality Labs (Quest), AI/ML, Infrastructure
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+ms to Consider:** Instagram, WhatsApp, Messenger, Reality Labs (Quest), AI/ML, Infrastructure
 
 ---
 

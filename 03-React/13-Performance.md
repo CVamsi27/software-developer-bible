@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # React Performance Optimization
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-React performance optimization is the practice of improving the speed, responsiveness, and efficiency of React applications. It involves reducing unnecessary re-renders, minimizing bundle size, optimizing rendering cycles, and improving user experience metrics like First Contentful Paint (FCP) and Time to Interactive (TTI).
+eed, responsiveness, and efficiency of React applications. It involves reducing unnecessary re-renders, minimizing bundle size, optimizing rendering cycles, and improving user experience metrics like First Contentful Paint (FCP) and Time to Interactive (TTI).
 
 ## Why Do We Need It?
 

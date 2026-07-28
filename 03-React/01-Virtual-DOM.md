@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Virtual DOM
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-The Virtual DOM (VDOM) is a lightweight, in-memory JavaScript representation of the real Document Object Model (DOM). It is a programming concept where an ideal, or "virtual," representation of a UI is kept in memory and synced with the real DOM by a library such as React. This process is called **reconciliation**.
+esentation of the real Document Object Model (DOM). It is a programming concept where an ideal, or "virtual," representation of a UI is kept in memory and synced with the real DOM by a library such as React. This process is called **reconciliation**.
 
 The Virtual DOM was popularized by React in 2013, though the concept predates React (e.g., Ember's HTMLBars, Mithril.js). It provides a declarative API where developers describe *what* the UI should look like for a given state, and React figures out *how* to update the DOM efficiently.
 

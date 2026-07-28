@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Live Betting System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Real-time odds updates
-- Place bets on live events
+e events
 - Cash out before event ends
 - Multiple bet types (single, accumulator, system)
 - Live event tracking

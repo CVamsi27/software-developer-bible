@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Error Handling
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Error handling** is the process of anticipating, detecting, and responding to exceptional conditions that occur during program execution. In JavaScript, errors are represented by `Error` objects and can be caught and managed using `try/catch/finally` blocks, propagated via the call stack, or handled asynchronously through Promise rejection handlers. Proper error handling distinguishes robust, production-ready code from fragile scripts.
+and responding to exceptional conditions that occur during program execution. In JavaScript, errors are represented by `Error` objects and can be caught and managed using `try/catch/finally` blocks, propagated via the call stack, or handled asynchronously through Promise rejection handlers. Proper error handling distinguishes robust, production-ready code from fragile scripts.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 🔵 Google (Alphabet) — Interview Guide (2025–2026)
 
-> **Target Role:** L3 (Junior) / L4 (Mid) / L5 (Senior) Software Engineer
->
-> **Teams to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+ms to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML
 
 ---
 

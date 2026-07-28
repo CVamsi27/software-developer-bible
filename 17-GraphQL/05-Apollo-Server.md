@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Apollo Server
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Apollo Server** is the reference implementation of a GraphQL server in JavaScript/TypeScript. It's a production-ready, spec-compliant GraphQL server that integrates with any Node.js HTTP framework (Express, Fastify, Koa, etc.) or runs standalone. It provides built-in features for query validation, execution, error handling, caching, and monitoring.
+erver in JavaScript/TypeScript. It's a production-ready, spec-compliant GraphQL server that integrates with any Node.js HTTP framework (Express, Fastify, Koa, etc.) or runs standalone. It provides built-in features for query validation, execution, error handling, caching, and monitoring.
 
 ```text
 Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio

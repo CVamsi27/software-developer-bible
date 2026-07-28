@@ -1,8 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Advanced Topics
 
-> **Appendix:** Additional topics covering Segment Trees, Fenwick Trees, AVL Trees, distributed systems, design patterns, and concurrency for staff+ engineering interviews.
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+ distributed systems, design patterns, and concurrency for staff+ engineering interviews.
 
 ---
 

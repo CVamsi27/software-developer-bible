@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Shallow Copy vs Deep Copy
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-A **Shallow Copy** creates a new object with the same property values, but nested objects are still referenced. A **Deep Copy** creates a new object with completely independent copies of all nested objects.
+ values, but nested objects are still referenced. A **Deep Copy** creates a new object with completely independent copies of all nested objects.
 
 ## Why Do We Need It?
 

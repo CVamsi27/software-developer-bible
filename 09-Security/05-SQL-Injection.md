@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # SQL Injection
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-SQL Injection (SQLi) is a code injection technique that exploits security vulnerabilities in an application's database layer. It occurs when user input is incorrectly filtered or not properly parameterized and is placed into an SQL query. SQL injection allows attackers to execute arbitrary SQL code, potentially accessing, modifying, or deleting data. It consistently ranks in the OWASP Top 10 as one of the most critical web application security risks.
+vulnerabilities in an application's database layer. It occurs when user input is incorrectly filtered or not properly parameterized and is placed into an SQL query. SQL injection allows attackers to execute arbitrary SQL code, potentially accessing, modifying, or deleting data. It consistently ranks in the OWASP Top 10 as one of the most critical web application security risks.
 
 ## Why Do We Need It?
 

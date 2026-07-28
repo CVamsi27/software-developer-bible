@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # CQRS (Command Query Responsibility Segregation)
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**CQRS (Command Query Responsibility Segregation)** is an architectural pattern that separates read and write operations into different models. **Commands** change state (create, update, delete) and **Queries** return data without modifying state. In NestJS, CQRS is implemented through the `@nestjs/cqrs` library, which provides decorators, buses, and handlers for commands, queries, and events.
+ectural pattern that separates read and write operations into different models. **Commands** change state (create, update, delete) and **Queries** return data without modifying state. In NestJS, CQRS is implemented through the `@nestjs/cqrs` library, which provides decorators, buses, and handlers for commands, queries, and events.
 
 ## Why Do We Need It?
 

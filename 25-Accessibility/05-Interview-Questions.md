@@ -1,10 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # Accessibility Interview Questions
 
-## Comprehensive Interview Guide
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-This chapter contains 25 carefully curated interview questions covering accessibility concepts, WCAG guidelines, ARIA, testing, and implementation. Questions are organized by difficulty level and include detailed answers.
+ew questions covering accessibility concepts, WCAG guidelines, ARIA, testing, and implementation. Questions are organized by difficulty level and include detailed answers.
 
 ---
 

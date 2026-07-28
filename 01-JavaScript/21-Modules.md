@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Modules
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Modules** are reusable pieces of code that encapsulate functionality and can be imported/exported between files. They provide code organization, encapsulation, and dependency management in JavaScript applications.
+ionality and can be imported/exported between files. They provide code organization, encapsulation, and dependency management in JavaScript applications.
 
 ## Why Do We Need It?
 

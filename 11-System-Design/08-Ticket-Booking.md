@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Ticket Booking System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Browse available events/shows
-- View seating charts
+ng charts
 - Select seats
 - Reserve seats temporarily
 - Process payments

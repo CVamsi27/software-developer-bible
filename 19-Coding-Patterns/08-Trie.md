@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Trie
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-A Trie (also called a prefix tree or digital tree) is a tree-like data structure used to store a dynamic set of strings, where each node represents a character. It's particularly efficient for prefix-based operations like autocomplete, spell checking, and word search.
+ta structure used to store a dynamic set of strings, where each node represents a character. It's particularly efficient for prefix-based operations like autocomplete, spell checking, and word search.
 
 ## When to Use
 

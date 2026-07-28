@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Communication Skills for Senior Engineer Interviews
 
-## Table of Contents
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-1. [Why Communication Matters](#why-communication-matters)
-
-2. [The Communication Framework](#the-communication-framework)
+. [The Communication Framework](#the-communication-framework)
 
 3. [Technical Explanation Style](#technical-explanation-style)
 

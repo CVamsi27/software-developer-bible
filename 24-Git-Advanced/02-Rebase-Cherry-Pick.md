@@ -1,10 +1,8 @@
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
-
 # Rebase & Cherry-Pick
 
-## Definition
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-- **Rebase**: A Git operation that reapplies commits on top of another base tip, creating a linear history
+er base tip, creating a linear history
 - **Cherry-pick**: A Git operation that applies a specific commit from one branch to another
 
 ## Why Do We Need Them?

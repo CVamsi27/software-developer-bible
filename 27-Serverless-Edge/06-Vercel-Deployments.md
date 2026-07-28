@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Vercel Deployments
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Vercel** is a deployment platform optimized for frontend frameworks (Next.js, SvelteKit, Nuxt). It provides global edge network, serverless functions, automatic HTTPS, preview deployments, and Git integration. Vercel pioneered the **Edge Runtime** and **Serverless Functions** for Jamstack applications.
+meworks (Next.js, SvelteKit, Nuxt). It provides global edge network, serverless functions, automatic HTTPS, preview deployments, and Git integration. Vercel pioneered the **Edge Runtime** and **Serverless Functions** for Jamstack applications.
 
 ## Why Do We Need It?
 

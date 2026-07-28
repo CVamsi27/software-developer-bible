@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # GSAP (GreenSock Animation Platform)
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**GSAP** is a professional-grade JavaScript animation library for creating high-performance, complex animations. It supports timelines, easing functions, scroll triggers, morphing, and works across all major browsers including legacy IE. GSAP is used by 50%+ of the top 10,000 websites for animation.
+creating high-performance, complex animations. It supports timelines, easing functions, scroll triggers, morphing, and works across all major browsers including legacy IE. GSAP is used by 50%+ of the top 10,000 websites for animation.
 
 ## Why Do We Need It?
 

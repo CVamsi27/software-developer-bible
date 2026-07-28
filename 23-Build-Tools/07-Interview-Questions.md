@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Build Tools Interview Questions
 
-## Comprehensive Interview Guide
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-This chapter contains 30 carefully curated interview questions covering build tools, bundling, optimization, and modern frontend tooling. Questions are organized by difficulty level and include detailed answers.
+interview questions covering build tools, bundling, optimization, and modern frontend tooling. Questions are organized by difficulty level and include detailed answers.
 
 ---
 

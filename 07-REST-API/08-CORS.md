@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # CORS (Cross-Origin Resource Sharing)
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-CORS (Cross-Origin Resource Sharing) is a security mechanism implemented in web browsers that restricts how web pages from one origin can request resources from a different origin. It allows servers to specify who can access their resources and how, using HTTP headers.
+lemented in web browsers that restricts how web pages from one origin can request resources from a different origin. It allows servers to specify who can access their resources and how, using HTTP headers.
 
 ## Why Do We Need It?
 

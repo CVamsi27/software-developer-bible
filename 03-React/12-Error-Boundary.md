@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Error Boundary
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. They work like a `try-catch` block for React components.
+ anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. They work like a `try-catch` block for React components.
 
 Error Boundaries must be **class components** with either `componentDidCatch` or `getDerivedStateFromError` methods. They catch errors during:
 

@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Docker Images & Containers
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-A **Docker image** is a read-only template containing instructions for creating a container. It consists of layered filesystem changes. A **Docker container** is a runnable instance of an image—lightweight, isolated, and ephemeral. Images are built from a **Dockerfile**, a declarative script of build instructions.
+ions for creating a container. It consists of layered filesystem changes. A **Docker container** is a runnable instance of an image—lightweight, isolated, and ephemeral. Images are built from a **Dockerfile**, a declarative script of build instructions.
 
 Key terms:
 

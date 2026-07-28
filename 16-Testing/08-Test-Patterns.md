@@ -1,10 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # Test Patterns
 
-## Definition
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-Test patterns are established, reusable solutions to common problems encountered when writing tests. They provide structure, consistency, and maintainability to test suites. These patterns have evolved through years of practice and help teams write better, more readable, and more maintainable tests.
+encountered when writing tests. They provide structure, consistency, and maintainability to test suites. These patterns have evolved through years of practice and help teams write better, more readable, and more maintainable tests.
 
 **Key Patterns:**
 

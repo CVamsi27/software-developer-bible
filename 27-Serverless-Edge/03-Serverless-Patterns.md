@@ -1,9 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Serverless Patterns
 
-## Definition
-Serverless patterns are reusable architectural designs for building serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+
+ding serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
 
 ## Why Do We Need It?
 

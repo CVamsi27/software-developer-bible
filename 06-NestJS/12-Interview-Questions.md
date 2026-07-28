@@ -1,12 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # NestJS Interview Questions
 
-## 40 Most Asked NestJS Interview Questions with Detailed Answers
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
----
-
-## Beginner Level (Questions 1-10)
+nner Level (Questions 1-10)
 
 ### Q1: What is NestJS and why would you use it?
 

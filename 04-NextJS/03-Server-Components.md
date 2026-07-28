@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Server Components in Next.js
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**Server Components** are React components that render on the server and send only the HTML (and minimal JavaScript) to the client. They cannot use React hooks like `useState`, `useEffect`, or browser APIs. In Next.js App Router, all components are Server Components by default.
+er and send only the HTML (and minimal JavaScript) to the client. They cannot use React hooks like `useState`, `useEffect`, or browser APIs. In Next.js App Router, all components are Server Components by default.
 
 ## Why Do We Need It?
 

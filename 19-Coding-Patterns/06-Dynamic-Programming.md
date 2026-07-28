@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Dynamic Programming
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-Dynamic Programming (DP) is an algorithmic technique for solving optimization problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid redundant computations. It's applicable when the problem has overlapping subproblems and optimal substructure.
+imization problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid redundant computations. It's applicable when the problem has overlapping subproblems and optimal substructure.
 
 ## When to Use
 

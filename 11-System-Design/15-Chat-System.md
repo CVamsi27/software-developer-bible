@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Chat System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- 1:1 direct messaging between users
-- Group messaging (up to 10,000 members)
+ messaging (up to 10,000 members)
 - Media sharing (images, videos, files, voice messages)
 - Read receipts and delivery status
 - Online/offline presence indicators

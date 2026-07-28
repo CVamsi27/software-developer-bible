@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Sessions and Cookies
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-**Sessions** are server-side storage mechanisms that maintain user state across multiple HTTP requests. A session stores user data on the server and associates it with a unique session ID sent to the client.
+cross multiple HTTP requests. A session stores user data on the server and associates it with a unique session ID sent to the client.
 
 **Cookies** are small pieces of data stored on the client side (browser) that are sent with every HTTP request to the server. They can store session IDs, user preferences, authentication tokens, and other state information.
 

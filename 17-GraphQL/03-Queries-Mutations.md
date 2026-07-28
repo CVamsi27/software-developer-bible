@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Queries & Mutations
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Queries** and **Mutations** are the two primary read and write operations in GraphQL. Queries retrieve data without side effects, while mutations modify data and return the updated state. Both follow the same syntax rules but differ in execution guarantees.
+ operations in GraphQL. Queries retrieve data without side effects, while mutations modify data and return the updated state. Both follow the same syntax rules but differ in execution guarantees.
 
 ```text
 Query   → Read operations (idempotent, side-effect free)

@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Dockerfile Best Practices & Security
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Dockerfile Best Practices** encompass the patterns, optimizations, and security measures for creating efficient, secure, and maintainable container images. Key principles include minimizing image size, leveraging layer caching, running with least privilege, and eliminating vulnerabilities.
+tions, and security measures for creating efficient, secure, and maintainable container images. Key principles include minimizing image size, leveraging layer caching, running with least privilege, and eliminating vulnerabilities.
 
 ## Why Do We Need It?
 

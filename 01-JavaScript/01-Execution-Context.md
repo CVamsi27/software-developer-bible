@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Execution Context
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-An **Execution Context** is the environment in which JavaScript code is evaluated and executed. It contains all the necessary information for the JS engine to run a specific piece of code, including variable declarations, function declarations, scope chain, and the `this` binding.
+t code is evaluated and executed. It contains all the necessary information for the JS engine to run a specific piece of code, including variable declarations, function declarations, scope chain, and the `this` binding.
 
 Think of it as a container that holds everything the JavaScript engine needs to execute a specific block of code.
 

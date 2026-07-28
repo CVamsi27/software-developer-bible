@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # useState
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-`useState` is a React Hook that lets you add state to function components. It returns a stateful value and a function to update it. When the state updater is called, React re-renders the component with the new state value.
+ponents. It returns a stateful value and a function to update it. When the state updater is called, React re-renders the component with the new state value.
 
 `useState` is the most fundamental hook in React — it's the building block for all state management in function components. It was introduced in React 16.8 to enable function components to have their own state.
 

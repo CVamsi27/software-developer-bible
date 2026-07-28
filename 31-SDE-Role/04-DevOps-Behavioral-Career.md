@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # DevOps, Behavioral & Career Preparation (Phases 20–28)
 
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-# Phase 20: Git & Version Control
-
-> **Why It Matters:** Git is the industry standard for version control. Interviewers expect you to know branching strategies, conflict resolution, and advanced commands.
+tandard for version control. Interviewers expect you to know branching strategies, conflict resolution, and advanced commands.
 
 ## Essential Git Commands
 

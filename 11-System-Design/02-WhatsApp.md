@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # WhatsApp System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- 1:1 text messaging between users
-- Group messaging (up to 1024 members)
+essaging (up to 1024 members)
 - Media sharing (images, videos, documents)
 - Online/offline presence indicators
 - Read receipts (blue ticks)

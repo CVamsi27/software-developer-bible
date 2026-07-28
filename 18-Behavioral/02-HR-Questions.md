@@ -1,11 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
 
-## Table of Contents
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-- [How to Use This Guide](#how-to-use-this-guide)
-- [Questions 1-25 with STAR Answers](#questions)
+s 1-25 with STAR Answers](#questions)
 - [Follow-Up Questions to Prepare For](#follow-up-questions)
 - [Common Red Flags HR Looks For](#common-red-flags)
 

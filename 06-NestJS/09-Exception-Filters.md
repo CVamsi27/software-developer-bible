@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Exception Filters
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Exception Filters** in NestJS are classes that implement the `ExceptionFilter` interface. They are responsible for catching exceptions thrown during request handling and transforming them into appropriate HTTP responses. Exception filters provide a centralized way to handle errors consistently across the application.
+ExceptionFilter` interface. They are responsible for catching exceptions thrown during request handling and transforming them into appropriate HTTP responses. Exception filters provide a centralized way to handle errors consistently across the application.
 
 NestJS has a built-in `ExceptionsFilter` (default exception filter) that handles `HttpException` and returns standard HTTP error responses. Custom exception filters extend this behavior for application-specific error handling.
 

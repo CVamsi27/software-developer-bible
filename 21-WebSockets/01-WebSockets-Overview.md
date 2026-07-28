@@ -1,10 +1,8 @@
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
-
 # WebSockets Overview
 
-## Definition
+[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
-WebSockets provide a **full-duplex, bidirectional communication protocol** over a single TCP connection. Unlike HTTP's request-response model, WebSockets allow both client and server to send messages independently at any time without the overhead of repeated HTTP handshakes.
+col** over a single TCP connection. Unlike HTTP's request-response model, WebSockets allow both client and server to send messages independently at any time without the overhead of repeated HTTP handshakes.
 
 A WebSocket connection starts as an HTTP request and then **upgrades** to a persistent TCP connection using the `Upgrade` header, enabling real-time data exchange with minimal latency.
 

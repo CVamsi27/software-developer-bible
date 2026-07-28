@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # NestJS Modules
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-A **Module** in NestJS is a class decorated with `@Module()` that organizes closely related set of capabilities. Modules are the fundamental building blocks of a NestJS application's architecture, providing a way to encapsulate providers (services, repositories, etc.) and manage their scope, dependencies, and exposure to other parts of the application.
+t organizes closely related set of capabilities. Modules are the fundamental building blocks of a NestJS application's architecture, providing a way to encapsulate providers (services, repositories, etc.) and manage their scope, dependencies, and exposure to other parts of the application.
 
 Every NestJS application has at least one module — the **root module** (`AppModule`) — which serves as the entry point for the framework's dependency injection system and determines which components are available for injection across the entire application.
 

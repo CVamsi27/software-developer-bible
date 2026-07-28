@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Debounce
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Debouncing** is a technique that delays the execution of a function until after a specified period of inactivity. Each time the function is called, the timer resets. The function only executes when there's a pause in calls.
+unction until after a specified period of inactivity. Each time the function is called, the timer resets. The function only executes when there's a pause in calls.
 
 ## Why Do We Need It?
 

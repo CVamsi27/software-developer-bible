@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Guards
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Guards** in NestJS are classes that implement the `CanActivate` interface. They are responsible for determining whether a request should be handled by the route handler or rejected. Guards execute after middleware but before interceptors and pipes, making them ideal for authorization, authentication, and access control logic.
+` interface. They are responsible for determining whether a request should be handled by the route handler or rejected. Guards execute after middleware but before interceptors and pipes, making them ideal for authorization, authentication, and access control logic.
 
 Guards have access to the execution context, which provides information about the current request, including the handler, class, and args.
 

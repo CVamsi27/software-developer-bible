@@ -1,8 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # The Ultimate SDE Interview Preparation Guide
 
-> **Target Roles:** SDE II / SDE III at Microsoft, Google, Amazon, Meta, Apple, Netflix, and top product-based companies.
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+flix, and top product-based companies.
 > **Experience Level:** 3–7 years of software development experience.
 > **Last Updated:** July 2026
 

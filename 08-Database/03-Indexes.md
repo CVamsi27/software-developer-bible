@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Database Indexes
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-A database index is a data structure that improves the speed of data retrieval operations at the cost of additional storage and write overhead. Indexes create an ordered reference to rows in a table, allowing the database engine to find data without scanning every row (full table scan).
+data retrieval operations at the cost of additional storage and write overhead. Indexes create an ordered reference to rows in a table, allowing the database engine to find data without scanning every row (full table scan).
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # API Versioning
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-API versioning is the practice of managing changes to an API by creating multiple versions that can coexist. It allows API providers to evolve their APIs without breaking existing clients, enabling backward compatibility while introducing new features or modifying existing behavior.
+creating multiple versions that can coexist. It allows API providers to evolve their APIs without breaking existing clients, enabling backward compatibility while introducing new features or modifying existing behavior.
 
 ## Why Do We Need It?
 

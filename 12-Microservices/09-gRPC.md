@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # gRPC
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-**gRPC** is a high-performance, language-agnostic RPC framework developed by Google. It uses Protocol Buffers (protobuf) for serialization and HTTP/2 for transport, enabling bidirectional streaming, flow control, and multiplexing. gRPC is widely adopted for microservice-to-microservice communication where performance matters.
+by Google. It uses Protocol Buffers (protobuf) for serialization and HTTP/2 for transport, enabling bidirectional streaming, flow control, and multiplexing. gRPC is widely adopted for microservice-to-microservice communication where performance matters.
 
 ## Why Do We Need It?
 

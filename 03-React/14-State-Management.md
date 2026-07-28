@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # State Management
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-State management in React refers to how application state (data that changes over time) is stored, updated, and shared across components. It ranges from local component state (`useState`) to global state management solutions (Redux, Zustand, Jotai) and server state management (React Query/TanStack Query).
+at changes over time) is stored, updated, and shared across components. It ranges from local component state (`useState`) to global state management solutions (Redux, Zustand, Jotai) and server state management (React Query/TanStack Query).
 
 ## Why Do We Need It?
 

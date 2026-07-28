@@ -1,9 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Webpack
 
-## Definition
-Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then bundles every module your project needs into one or more bundles (usually JavaScript files) to be used by a browser.
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+
+ations. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then bundles every module your project needs into one or more bundles (usually JavaScript files) to be used by a browser.
 
 ## Why Do We Need It?
 In modern web development, applications are composed of many modules, assets (images, fonts, CSS), and dependencies. Browsers cannot natively understand most of these modules (ES modules, CommonJS, CSS, images). Webpack solves this by:

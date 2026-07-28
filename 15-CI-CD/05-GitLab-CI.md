@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # GitLab CI/CD
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**GitLab CI/CD** is GitLab's built-in continuous integration and continuous delivery platform. Pipelines are defined in a `.gitlab-ci.yml` file in the repository root. It features auto-scaling runners, container registry, built-in container scanning, and integrated deployment environments with review apps.
+nd continuous delivery platform. Pipelines are defined in a `.gitlab-ci.yml` file in the repository root. It features auto-scaling runners, container registry, built-in container scanning, and integrated deployment environments with review apps.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Prototypes
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-A **Prototype** is an object from which other objects inherit properties and methods. In JavaScript, every object has a hidden `[[Prototype]]` property that references another object. This creates a **prototype chain** that enables inheritance and property sharing.
+properties and methods. In JavaScript, every object has a hidden `[[Prototype]]` property that references another object. This creates a **prototype chain** that enables inheritance and property sharing.
 
 ## Why Do We Need It?
 

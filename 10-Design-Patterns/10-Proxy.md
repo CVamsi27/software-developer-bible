@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Proxy Pattern
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-The Proxy pattern is a structural design pattern that provides a surrogate or placeholder for another object to control access to it. It creates a representative object that controls access to the original object, adding a layer of indirection.
+ or placeholder for another object to control access to it. It creates a representative object that controls access to the original object, adding a layer of indirection.
 
 The pattern is particularly useful for lazy loading, access control, logging, caching, and remote resource management.
 

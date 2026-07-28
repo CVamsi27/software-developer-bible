@@ -1,8 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 
-> **Goal:** Solve 360+ problems, master all patterns, nail system design, and ace behavioral rounds.
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+ehavioral rounds.
 >
 > **Daily Commitment:** 4-6 hours/day, 6 days/week (rest on Sunday)
 >

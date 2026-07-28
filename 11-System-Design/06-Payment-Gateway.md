@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Payment Gateway System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Process credit/debit card payments
-- Support multiple payment methods (cards, wallets, bank transfers)
+rt multiple payment methods (cards, wallets, bank transfers)
 - Handle refunds and chargebacks
 - Idempotent payment operations
 - Webhook notifications for payment events

@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Branded Types
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Branded types** (also called **nominal types** or **opaque types**) are a TypeScript pattern that creates distinct types from structurally identical primitives by adding a unique "brand" property. Since TypeScript uses structural typing (duck typing), two types with the same shape are interchangeable — which can lead to bugs. Branded types add a phantom property that makes structurally identical types distinct at compile time, catching errors like passing a UserId where an OrderId is expected.
+ypes**) are a TypeScript pattern that creates distinct types from structurally identical primitives by adding a unique "brand" property. Since TypeScript uses structural typing (duck typing), two types with the same shape are interchangeable — which can lead to bugs. Branded types add a phantom property that makes structurally identical types distinct at compile time, catching errors like passing a UserId where an OrderId is expected.
 
 ## Why Do We Need It?
 

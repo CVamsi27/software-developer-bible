@@ -1,9 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Form Handling Interview Questions
 
-## Definition
-This comprehensive guide covers 25 interview questions on form handling in React, from fundamentals to advanced system design.
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+
+ling in React, from fundamentals to advanced system design.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
-
 # NestJS WebSockets
 
-## Definition
+[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
-NestJS provides first-class support for WebSockets through its **WebSocket Gateway** system. Built on top of Socket.io, NestJS WebSockets integrate seamlessly with the NestJS ecosystem, supporting **decorators, dependency injection, guards, interceptors, pipes, and filters** just like HTTP controllers.
+ocket Gateway** system. Built on top of Socket.io, NestJS WebSockets integrate seamlessly with the NestJS ecosystem, supporting **decorators, dependency injection, guards, interceptors, pipes, and filters** just like HTTP controllers.
 
 The WebSocket Gateway acts as a bridge between clients and the NestJS application, enabling real-time bidirectional communication while maintaining the modular, testable architecture NestJS is known for.
 

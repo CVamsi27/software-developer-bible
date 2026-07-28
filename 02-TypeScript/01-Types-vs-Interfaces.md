@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Types vs Interfaces
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Type aliases (`type`)** and **interfaces (`interface`)** are TypeScript constructs that describe the shape of objects and other data structures. While they overlap significantly in functionality, they have distinct features and use cases.
+ TypeScript constructs that describe the shape of objects and other data structures. While they overlap significantly in functionality, they have distinct features and use cases.
 
 - **`type`**: A type alias that can represent any TypeScript type — primitives, unions, intersections, tuples, functions, and more.
 - **`interface`**: A named contract for object shapes that supports declaration merging, extension via `extends`, and is specifically designed for object-oriented patterns.

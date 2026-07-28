@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Decorators
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Decorators** are a stage 3 ECMAScript feature (and TypeScript experimental feature) that provide a way to add annotations and metadata to classes, methods, properties, and parameters. They enable metaprogramming and aspect-oriented programming patterns.
+t experimental feature) that provide a way to add annotations and metadata to classes, methods, properties, and parameters. They enable metaprogramming and aspect-oriented programming patterns.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

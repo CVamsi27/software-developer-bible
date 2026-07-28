@@ -1,11 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Twitter Feed System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Users can post new tweets (140-280 characters)
+ers)
 - Users can follow/unfollow other users
 - Users see a timeline of tweets from followed users
 - Timeline should show most recent tweets first (reverse chronological)

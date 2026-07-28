@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # This
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-The **`this`** keyword in JavaScript refers to the object that is currently executing the code. Its value depends on how a function is called (execution context), not where it's defined. This is called **dynamic binding** or **dynamic scoping** of `this`.
+ is currently executing the code. Its value depends on how a function is called (execution context), not where it's defined. This is called **dynamic binding** or **dynamic scoping** of `this`.
 
 ## Why Do We Need It?
 

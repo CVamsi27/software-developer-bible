@@ -1,11 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Uber System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Request a ride from current location to destination
+stination
 - Match riders with nearby drivers
 - Real-time driver tracking on map
 - ETA calculation for pickup and dropoff

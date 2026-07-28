@@ -1,8 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Recursion & Tail Call Optimization
 
-Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller, identical sub-problems. Tail Call Optimization (TCO) is a compiler technique that optimizes recursive functions to prevent stack overflow.
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+
+ problem by breaking it into smaller, identical sub-problems. Tail Call Optimization (TCO) is a compiler technique that optimizes recursive functions to prevent stack overflow.
 
 ## Definition
 

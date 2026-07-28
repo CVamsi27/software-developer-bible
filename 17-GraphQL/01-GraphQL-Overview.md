@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # GraphQL Overview
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-GraphQL is a **query language for APIs** and a **runtime for executing those queries** against your data. Developed by Facebook in 2012 and open-sourced in 2015, it provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need—nothing more, nothing less.
+cuting those queries** against your data. Developed by Facebook in 2012 and open-sourced in 2015, it provides a complete and understandable description of the data in your API, giving clients the power to ask for exactly what they need—nothing more, nothing less.
 
 ```text
 GraphQL = Query Language + Type System + Execution Engine + Introspection

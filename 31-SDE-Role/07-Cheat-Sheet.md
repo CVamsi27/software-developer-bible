@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 📋 SDE Interview Cheat Sheet — Last-Minute Review
 
-> **Print this. Read it the night before and morning of your interview.**
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
----
-
-## ⚡ Phase 1: Java Fundamentals
+⚡ Phase 1: Java Fundamentals
 
 ```text
 

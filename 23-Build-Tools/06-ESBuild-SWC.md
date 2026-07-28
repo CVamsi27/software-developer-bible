@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # ESBuild & SWC
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**ESBuild** and **SWC** are next-generation JavaScript/TypeScript bundlers and compilers written in Go and Rust respectively. They offer 10-100x faster performance than traditional tools like Babel and Webpack by leveraging native code and parallel processing.
+ipt bundlers and compilers written in Go and Rust respectively. They offer 10-100x faster performance than traditional tools like Babel and Webpack by leveraging native code and parallel processing.
 
 | Feature | ESBuild | SWC |
 |---------|:-------:|:---:|

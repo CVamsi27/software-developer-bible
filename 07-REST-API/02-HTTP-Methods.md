@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # HTTP Methods
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-HTTP methods (also called HTTP verbs) define the action to be performed on a resource. Each method has specific semantics regarding safety, idempotency, and whether it allows a request body. Understanding these properties is crucial for designing correct and predictable REST APIs.
+rformed on a resource. Each method has specific semantics regarding safety, idempotency, and whether it allows a request body. Understanding these properties is crucial for designing correct and predictable REST APIs.
 
 ## Why Do We Need It?
 

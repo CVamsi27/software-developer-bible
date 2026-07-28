@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # CQRS & Dependency Injection Patterns
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-### CQRS (Command Query Responsibility Segregation)
-
-CQRS is an architectural pattern that separates read and write operations into different models. Commands update the state and return void, while Queries return data without modifying state. This separation allows for independent optimization, scaling, and evolution of read and write sides.
+ral pattern that separates read and write operations into different models. Commands update the state and return void, while Queries return data without modifying state. This separation allows for independent optimization, scaling, and evolution of read and write sides.
 
 ### Dependency Injection (DI)
 

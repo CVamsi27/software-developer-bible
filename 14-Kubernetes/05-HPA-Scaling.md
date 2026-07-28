@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Kubernetes HPA & Scaling
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Horizontal Pod Autoscaler (HPA)** automatically scales the number of Pod replicas based on observed metrics (CPU, memory, custom). **Vertical Pod Autoscaler (VPA)** adjusts resource requests/limits. Together, they enable dynamic capacity management.
+umber of Pod replicas based on observed metrics (CPU, memory, custom). **Vertical Pod Autoscaler (VPA)** adjusts resource requests/limits. Together, they enable dynamic capacity management.
 
 Key concepts:
 

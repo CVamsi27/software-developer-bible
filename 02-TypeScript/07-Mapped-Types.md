@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Mapped Types
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Mapped types** are types that transform existing types by iterating over their keys using `[K in keyof T]` syntax. They allow you to create new types by mapping over every property in a type.
+erating over their keys using `[K in keyof T]` syntax. They allow you to create new types by mapping over every property in a type.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

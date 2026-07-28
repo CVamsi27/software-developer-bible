@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Incremental Static Regeneration (ISR)
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**Incremental Static Regeneration (ISR)** is a rendering strategy in Next.js that combines the performance of static generation with the freshness of server-side rendering. ISR generates static pages at build time, then **revalidates** them in the background after deployment — updating the cached HTML without rebuilding the entire application. Pages are served from the cache until the revalidation triggers, at which point Next.js regenerates the page in the background while serving the stale version. This creates a **stale-while-revalidate** caching pattern at the framework level.
+in Next.js that combines the performance of static generation with the freshness of server-side rendering. ISR generates static pages at build time, then **revalidates** them in the background after deployment — updating the cached HTML without rebuilding the entire application. Pages are served from the cache until the revalidation triggers, at which point Next.js regenerates the page in the background while serving the stale version. This creates a **stale-while-revalidate** caching pattern at the framework level.
 
 ## Why Do We Need It?
 

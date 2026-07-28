@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Core Computer Science Fundamentals (Phases 9–15)
 
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-# Phase 9: Bit Manipulation
-
-> **Why It Matters:** Bit manipulation questions appear frequently in interviews because they test your understanding of binary representation and low-level operations. They're often the key to O(1) space solutions.
+appear frequently in interviews because they test your understanding of binary representation and low-level operations. They're often the key to O(1) space solutions.
 
 ## Core Concepts
 

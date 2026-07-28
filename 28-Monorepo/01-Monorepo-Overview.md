@@ -1,9 +1,8 @@
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
-
 # Monorepo Overview
 
-## Definition
-A monorepo (monolithic repository) is a software development strategy where code for multiple projects is stored in a single repository. It provides a unified approach to managing multiple packages, applications, or services with shared dependencies and configurations.
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+
+ where code for multiple projects is stored in a single repository. It provides a unified approach to managing multiple packages, applications, or services with shared dependencies and configurations.
 
 ## Why Do We Need It?
 

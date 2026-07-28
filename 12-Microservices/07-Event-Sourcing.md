@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Event Sourcing
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-Event Sourcing is a design pattern where state changes are stored as an immutable sequence of events. Instead of storing current state, you store all events that led to that state. The current state is derived by replaying events. Events are facts that happened in the system and cannot be modified or deleted.
+mutable sequence of events. Instead of storing current state, you store all events that led to that state. The current state is derived by replaying events. Events are facts that happened in the system and cannot be modified or deleted.
 
 ## Why Do We Need It?
 

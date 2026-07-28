@@ -1,9 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Framer Motion
 
-## Definition
-Framer Motion is a production-ready React animation library that provides a simple, declarative API for creating smooth, performant animations. It handles complex animation logic while maintaining excellent performance through hardware acceleration.
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+
+ovides a simple, declarative API for creating smooth, performant animations. It handles complex animation logic while maintaining excellent performance through hardware acceleration.
 
 ## Why Do We Need It?
 

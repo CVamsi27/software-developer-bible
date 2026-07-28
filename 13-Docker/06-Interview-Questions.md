@@ -1,12 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Docker Interview Questions
 
-## 30 Most Asked Docker Interview Questions with Detailed Answers
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
----
-
-### Question 1: What is Docker and how does it differ from a virtual machine?
+uestion 1: What is Docker and how does it differ from a virtual machine?
 
 **Answer:**
 

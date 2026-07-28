@@ -1,10 +1,8 @@
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
-
 # Git Advanced Interview Questions
 
-## Comprehensive Interview Guide
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-This chapter contains 30 carefully curated interview questions covering advanced Git concepts, workflows, and commands. Questions are organized by difficulty level and include detailed answers.
+iew questions covering advanced Git concepts, workflows, and commands. Questions are organized by difficulty level and include detailed answers.
 
 ---
 

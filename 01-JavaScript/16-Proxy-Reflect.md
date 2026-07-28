@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Proxy & Reflect
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Proxy** and **Reflect** are ES6 (ECMAScript 2015) APIs for metaprogramming. A `Proxy` wraps an object and intercepts fundamental operations (property access, assignment, function invocation, etc.) via customizable **handler traps**. The `Reflect` API provides methods that correspond to each Proxy trap, enabling default behavior to be invoked programmatically. Together, they allow you to intercept, modify, and extend the behavior of objects without modifying the original object.
+etaprogramming. A `Proxy` wraps an object and intercepts fundamental operations (property access, assignment, function invocation, etc.) via customizable **handler traps**. The `Reflect` API provides methods that correspond to each Proxy trap, enabling default behavior to be invoked programmatically. Together, they allow you to intercept, modify, and extend the behavior of objects without modifying the original object.
 
 ## Why Do We Need It?
 

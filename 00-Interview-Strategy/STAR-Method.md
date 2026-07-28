@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # STAR Method: Complete Guide for Senior Engineers
 
-## Table of Contents
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-1. [What is the STAR Method?](#what-is-the-star-method)
-
-2. [Why STAR Works for Engineers](#why-star-works-for-engineers)
+Why STAR Works for Engineers](#why-star-works-for-engineers)
 
 3. [The Four Components](#the-four-components)
 

@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Resource Quotas
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**ResourceQuota** is a Kubernetes resource that provides constraints on aggregate resource consumption per namespace — limiting total CPU, memory, storage, and object counts (pods, services, configmaps, etc.) that can be used by all pods in a namespace. **LimitRange** complements ResourceQuota by setting default resource requests/limits and enforcing min/max constraints at the container level. Together they implement resource governance and multi-tenant isolation on a shared cluster.
+raints on aggregate resource consumption per namespace — limiting total CPU, memory, storage, and object counts (pods, services, configmaps, etc.) that can be used by all pods in a namespace. **LimitRange** complements ResourceQuota by setting default resource requests/limits and enforcing min/max constraints at the container level. Together they implement resource governance and multi-tenant isolation on a shared cluster.
 
 ## Why Do We Need It?
 

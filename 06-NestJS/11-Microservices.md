@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Microservices
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**NestJS Microservices** are lightweight, independently deployable services that communicate over the network using various transport layers. NestJS provides a microservices architecture mode with built-in support for multiple transport protocols (TCP, Redis, Kafka, RabbitMQ, NATS, gRPC, MQTT) and communication patterns (request-response, event-based).
+le services that communicate over the network using various transport layers. NestJS provides a microservices architecture mode with built-in support for multiple transport protocols (TCP, Redis, Kafka, RabbitMQ, NATS, gRPC, MQTT) and communication patterns (request-response, event-based).
 
 Each microservice is a complete NestJS application with its own controllers, services, and modules, communicating through message brokers.
 

@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Node.js Streams
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Streams** are one of the most powerful concepts in Node.js. They are instances of `Stream` class that allow you to read or write data sequentially, piece by piece (in chunks), rather than loading the entire data into memory at once. Streams implement the `EventEmitter` interface, making them event-driven and easy to use.
+ey are instances of `Stream` class that allow you to read or write data sequentially, piece by piece (in chunks), rather than loading the entire data into memory at once. Streams implement the `EventEmitter` interface, making them event-driven and easy to use.
 
 ## Why Do We Need It?
 

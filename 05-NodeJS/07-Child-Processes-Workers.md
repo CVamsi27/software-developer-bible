@@ -1,8 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Child Processes & Worker Threads
 
-Node.js provides two mechanisms for parallel execution: **child processes** (spawning separate OS processes) and **worker threads** (lightweight threads within the same process). Both enable CPU-intensive operations without blocking the event loop, but they serve different use cases.
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+
+awning separate OS processes) and **worker threads** (lightweight threads within the same process). Both enable CPU-intensive operations without blocking the event loop, but they serve different use cases.
 
 ## Definition
 

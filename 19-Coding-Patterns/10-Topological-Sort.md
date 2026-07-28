@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Topological Sort
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-Topological Sort is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. It's used to determine the order of tasks with dependencies.
+lic Graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. It's used to determine the order of tasks with dependencies.
 
 ## When to Use
 

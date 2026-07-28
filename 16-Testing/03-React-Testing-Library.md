@@ -1,10 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # React Testing Library
 
-## Definition
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-React Testing Library (RTL) is a testing utility library for React that encourages testing components from the user's perspective rather than testing implementation details. Created by Kent C. Dodds, it provides a set of query methods and utilities that simulate how users interact with components.
+at encourages testing components from the user's perspective rather than testing implementation details. Created by Kent C. Dodds, it provides a set of query methods and utilities that simulate how users interact with components.
 
 **Core Philosophy**: "The more your tests resemble the way your software is used, the more confidence they can give you."
 

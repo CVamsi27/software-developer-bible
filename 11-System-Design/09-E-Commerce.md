@@ -1,11 +1,7 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # E-Commerce System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Product catalog with search and filtering
 - Shopping cart management
 - Checkout process
 - Inventory management

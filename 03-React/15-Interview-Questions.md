@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # React Interview Questions
 
-## 60 Most Asked React Interview Questions
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-### Category 1: Fundamentals (Questions 1-15)
+ns 1-15)
 
 **Q1: What is React?**
 A: React is a JavaScript library for building user interfaces, maintained by Meta. It uses a declarative, component-based architecture with a Virtual DOM for efficient UI updates.

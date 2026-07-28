@@ -1,11 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Web Crawler System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Crawl web pages starting from a seed set of URLs
+f URLs
 - Extract and follow links to discover new pages
 - Store crawled pages for indexing and analysis
 - Respect robots.txt and crawl-delay directives

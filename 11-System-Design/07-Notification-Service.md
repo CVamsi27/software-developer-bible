@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Notification Service System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Send push notifications (iOS, Android)
-- Send email notifications
+end email notifications
 - Send SMS notifications
 - Support in-app notifications
 - Template-based notifications

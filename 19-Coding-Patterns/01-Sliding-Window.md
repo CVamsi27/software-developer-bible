@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # Sliding Window
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-The sliding window pattern is a technique that uses a "window" (a subset of elements) that slides over a data structure to solve problems involving contiguous sequences. It maintains a window of elements and adjusts the window boundaries as it traverses the input, avoiding redundant recalculations.
+bset of elements) that slides over a data structure to solve problems involving contiguous sequences. It maintains a window of elements and adjusts the window boundaries as it traverses the input, avoiding redundant recalculations.
 
 ## When to Use
 

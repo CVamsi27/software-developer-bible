@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Netflix System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Stream video content on demand
-- Personalized content recommendations
+zed content recommendations
 - Multiple user profiles per account
 - Watch history and resume playback
 - Content search and browsing

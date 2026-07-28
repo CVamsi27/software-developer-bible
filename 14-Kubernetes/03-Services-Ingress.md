@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Kubernetes Services & Ingress
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Services** provide stable networking for a set of Pods. They load-balance traffic across Pods and provide DNS-based service discovery. **Ingress** manages external HTTP/HTTPS access to Services, providing routing, TLS termination, and virtual hosting.
+ load-balance traffic across Pods and provide DNS-based service discovery. **Ingress** manages external HTTP/HTTPS access to Services, providing routing, TLS termination, and virtual hosting.
 
 Key concepts:
 

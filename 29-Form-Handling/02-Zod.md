@@ -1,9 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Zod
 
-## Definition
-Zod is a TypeScript-first schema declaration and validation library. It provides a concise, expressive syntax for defining data schemas and validating data at runtime, with automatic TypeScript type inference.
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+
+. It provides a concise, expressive syntax for defining data schemas and validating data at runtime, with automatic TypeScript type inference.
 
 ## Why Do We Need It?
 

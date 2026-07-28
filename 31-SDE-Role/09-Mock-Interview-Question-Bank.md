@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # 🎯 Mock Interview Question Bank
 
-> **90 curated questions** for coding, system design, and behavioral rounds.
->
-> **How to Use:** Pick 2-3 questions per mock session. Time yourself. Practice explaining your thought process out loud.
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+
+How to Use:** Pick 2-3 questions per mock session. Time yourself. Practice explaining your thought process out loud.
 
 ---
 

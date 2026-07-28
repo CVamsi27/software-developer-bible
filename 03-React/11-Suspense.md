@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Suspense
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-React Suspense is a feature that lets you "suspend" rendering of a component tree until some condition is met (like data loading or code loading). It provides a declarative way to handle loading states in React applications. Suspense works by catching a "promise" thrown by a child component and showing a fallback UI until the promise resolves.
+ component tree until some condition is met (like data loading or code loading). It provides a declarative way to handle loading states in React applications. Suspense works by catching a "promise" thrown by a child component and showing a fallback UI until the promise resolves.
 
 Suspense is the foundation for several React features:
 

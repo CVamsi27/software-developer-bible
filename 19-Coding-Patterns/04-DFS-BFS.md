@@ -1,10 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # DFS & BFS
 
-## Definition
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-**Depth-First Search (DFS)**: A traversal algorithm that explores as far as possible along each branch before backtracking. Uses a stack (explicit or call stack).
+ far as possible along each branch before backtracking. Uses a stack (explicit or call stack).
 
 **Breadth-First Search (BFS)**: A traversal algorithm that explores all nodes at the present depth before moving to nodes at the next depth level. Uses a queue.
 

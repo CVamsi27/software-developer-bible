@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Map, Set, WeakMap, WeakSet
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Map**, **Set**, **WeakMap**, and **WeakSet** are ES6 (ECMAScript 2015) collection data structures that provide specialized ways to store and manage data. `Map` stores key-value pairs with any value type as keys, `Set` stores unique values of any type, and their "Weak" counterparts (`WeakMap`, `WeakSet`) hold weak references that don't prevent garbage collection, enabling memory-efficient caches and metadata storage.
+ript 2015) collection data structures that provide specialized ways to store and manage data. `Map` stores key-value pairs with any value type as keys, `Set` stores unique values of any type, and their "Weak" counterparts (`WeakMap`, `WeakSet`) hold weak references that don't prevent garbage collection, enabling memory-efficient caches and metadata storage.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Chain of Responsibility Pattern
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-The Chain of Responsibility pattern is a behavioral design pattern that allows passing requests along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
+lows passing requests along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
 
 The pattern is particularly useful for processing pipelines, middleware chains, and when you want to give multiple objects a chance to handle a request without coupling the sender to specific receivers.
 

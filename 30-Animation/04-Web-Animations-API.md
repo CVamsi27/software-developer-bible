@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Web Animations API
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-The **Web Animations API (WAAPI)** provides a native JavaScript interface for creating smooth, performant animations in the browser. It combines CSS animation power with JavaScript control, enabling timeline-based animations that run on the compositor thread for 60fps performance.
+terface for creating smooth, performant animations in the browser. It combines CSS animation power with JavaScript control, enabling timeline-based animations that run on the compositor thread for 60fps performance.
 
 ## Why Do We Need It?
 

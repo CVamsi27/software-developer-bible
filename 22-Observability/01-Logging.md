@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Logging
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-Logging is the practice of recording discrete events that occur during software execution. Logs provide a chronological record of what happened in a system, serving as the foundation of observability. They capture context about requests, errors, state changes, and business events in a format that humans and machines can parse.
+r during software execution. Logs provide a chronological record of what happened in a system, serving as the foundation of observability. They capture context about requests, errors, state changes, and business events in a format that humans and machines can parse.
 
 A **log entry** is a timestamped, immutable record of a single event. When collected, aggregated, and indexed, logs become a powerful tool for debugging, auditing, security analysis, and understanding system behavior over time.
 

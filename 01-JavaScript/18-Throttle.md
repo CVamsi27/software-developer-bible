@@ -1,10 +1,8 @@
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
-
 # Throttle
 
-## Definition
+[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-**Throttling** is a technique that limits how often a function can execute. It ensures a function is called at most once in a specified time period, regardless of how many times it's triggered.
+ can execute. It ensures a function is called at most once in a specified time period, regardless of how many times it's triggered.
 
 ## Why Do We Need It?
 

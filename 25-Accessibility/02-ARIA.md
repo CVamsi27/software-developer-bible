@@ -1,9 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # ARIA (Accessible Rich Internet Applications)
 
-## Definition
-ARIA (Accessible Rich Internet Applications) is a set of attributes that define ways to make web content and web applications more accessible to people with disabilities. It provides additional semantics for dynamic content and complex UI components.
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+
+at define ways to make web content and web applications more accessible to people with disabilities. It provides additional semantics for dynamic content and complex UI components.
 
 ## Why Do We Need It?
 

@@ -1,12 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Google Drive System Design
 
-## Requirements
-### Functional Requirements
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-- Upload and download files
-- File synchronization across devices
+zation across devices
 - Real-time collaboration on documents
 - File sharing with permissions (view, edit, comment)
 - Version history and rollback

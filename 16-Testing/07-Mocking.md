@@ -1,10 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # Mocking
 
-## Definition
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-Mocking is a testing technique where you replace real objects, functions, or modules with simulated versions (test doubles) that mimic the behavior of the real implementations. Mocking allows you to isolate the code under test and control the test environment by providing predictable responses and verifying interactions.
+ons, or modules with simulated versions (test doubles) that mimic the behavior of the real implementations. Mocking allows you to isolate the code under test and control the test environment by providing predictable responses and verifying interactions.
 
 **Key Concepts:**
 

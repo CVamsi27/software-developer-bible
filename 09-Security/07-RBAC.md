@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Role-Based Access Control (RBAC)
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-Role-Based Access Control (RBAC) is a method of regulating access to resources based on the roles of individual users. In RBAC, permissions are assigned to roles, and users are assigned to roles. Users inherit the permissions of their assigned roles. RBAC simplifies access management by providing a structured approach to assigning and managing permissions across an organization.
+rces based on the roles of individual users. In RBAC, permissions are assigned to roles, and users are assigned to roles. Users inherit the permissions of their assigned roles. RBAC simplifies access management by providing a structured approach to assigning and managing permissions across an organization.
 
 RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications, cloud platforms, and security-critical systems.
 

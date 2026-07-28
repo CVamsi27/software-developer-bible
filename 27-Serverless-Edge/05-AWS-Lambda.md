@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # AWS Lambda
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**AWS Lambda** is Amazon's Function-as-a-Service (FaaS) platform that runs code in response to events without provisioning servers. It supports multiple runtimes (Node.js, Python, Java, Go) and integrates with 200+ AWS services as event sources.
+rm that runs code in response to events without provisioning servers. It supports multiple runtimes (Node.js, Python, Java, Go) and integrates with 200+ AWS services as event sources.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # useEffect
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-`useEffect` is a React Hook that lets you synchronize a component with an external system. It runs side effects after React has committed changes to the DOM. Side effects include data fetching, subscriptions, manually changing the DOM, and any other operations that can't be done during rendering.
+with an external system. It runs side effects after React has committed changes to the DOM. Side effects include data fetching, subscriptions, manually changing the DOM, and any other operations that can't be done during rendering.
 
 `useEffect` replaces lifecycle methods from class components (`componentDidMount`, `componentDidUpdate`, `componentWillUnmount`) with a single, unified API.
 

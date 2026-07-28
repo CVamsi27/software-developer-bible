@@ -1,9 +1,8 @@
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
-
 # Performance Monitoring Interview Questions
 
-## Definition
-This comprehensive guide covers 25+ interview questions on performance monitoring, ranging from Core Web Vitals fundamentals to advanced real-user monitoring system design.
+[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+
+ monitoring, ranging from Core Web Vitals fundamentals to advanced real-user monitoring system design.
 
 ## Why Do We Need It?
 

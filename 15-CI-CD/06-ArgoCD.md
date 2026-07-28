@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # ArgoCD (GitOps)
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**ArgoCD** is a declarative, GitOps continuous delivery tool for Kubernetes. It automates application deployment and lifecycle management by synchronizing a Git repository's desired state with the actual cluster state. Applications, configurations, and environments are all defined in Git, with ArgoCD ensuring the cluster matches the repository.
+or Kubernetes. It automates application deployment and lifecycle management by synchronizing a Git repository's desired state with the actual cluster state. Applications, configurations, and environments are all defined in Git, with ArgoCD ensuring the cluster matches the repository.
 
 ## Why Do We Need It?
 

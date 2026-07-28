@@ -1,10 +1,8 @@
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
-
 # Encryption
 
-## Definition
+[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-Encryption is the process of converting plaintext into ciphertext using an algorithm and a key, making the data unreadable without the corresponding decryption key. It is a fundamental security mechanism that protects data confidentiality and integrity. Encryption can be symmetric (same key for encryption and decryption) or asymmetric (different keys for encryption and decryption).
+ algorithm and a key, making the data unreadable without the corresponding decryption key. It is a fundamental security mechanism that protects data confidentiality and integrity. Encryption can be symmetric (same key for encryption and decryption) or asymmetric (different keys for encryption and decryption).
 
 In web development, encryption is used for protecting data in transit (HTTPS/TLS), data at rest (database encryption), password storage (hashing), and secure communication between services.
 

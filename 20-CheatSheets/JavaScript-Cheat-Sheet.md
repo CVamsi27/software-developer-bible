@@ -1,11 +1,8 @@
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
-
 # JavaScript Cheat Sheet
 
-## Quick Reference Table
+[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-| Concept | Key Point | Code/Example |
-|---------|-----------|--------------|
+----|--------------|
 | Execution Context | Global + Function + Eval. Created in 2 phases: Creation (hoisting) then Execution | `this` is set during creation phase |
 | Lexical Environment | Scope chain; each context has a reference to its outer environment | Inner functions access outer vars via [[Environment]] |
 | Hoisting | `var` → undefined; `function` → fully hoisted; `let`/`const` → TDZ | `console.log(a); var a = 5;` → `undefined` |

@@ -1,12 +1,8 @@
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
-
 # System Design, APIs & Security (Phases 16–19)
 
----
+[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-# Phase 16: System Design
-
-> **Why It Matters:** System design is the most important interview round for SDE II+ roles. It tests your ability to architect scalable, reliable, and maintainable systems. You'll typically have 45 minutes to design a complex system from scratch.
+ortant interview round for SDE II+ roles. It tests your ability to architect scalable, reliable, and maintainable systems. You'll typically have 45 minutes to design a complex system from scratch.
 
 ## System Design Framework
 

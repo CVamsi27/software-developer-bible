@@ -1,10 +1,8 @@
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
-
 # Interceptors
 
-## Definition
+[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-**Interceptors** in NestJS are classes that implement the `NestInterceptor` interface. They have the ability to bind extra logic before/after route handler execution, transform responses, handle errors, and extend function behavior using RxJS Observable streams.
+nterceptor` interface. They have the ability to bind extra logic before/after route handler execution, transform responses, handle errors, and extend function behavior using RxJS Observable streams.
 
 ## Why Do We Need It?
 

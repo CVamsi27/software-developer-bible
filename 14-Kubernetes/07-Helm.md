@@ -1,10 +1,8 @@
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-
 # Kubernetes Helm
 
-## Definition
+[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-**Helm** is the package manager for Kubernetes. It packages Kubernetes manifests into reusable units called **charts**, manages releases, and enables templating and configuration management. Helm simplifies deployment, updates, and rollbacks of complex applications.
+bernetes manifests into reusable units called **charts**, manages releases, and enables templating and configuration management. Helm simplifies deployment, updates, and rollbacks of complex applications.
 
 Key concepts:
 

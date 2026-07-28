@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Portals
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-**Portals** are a first-class React mechanism for rendering a component's children into a different DOM subtree outside of the parent component's DOM hierarchy. While the portal content renders elsewhere in the DOM, it remains within the React component tree — meaning context, props, and event bubbling behave as if the portal were still a child of the parent component. Portals are created using `ReactDOM.createPortal(child, container)`.
+onent's children into a different DOM subtree outside of the parent component's DOM hierarchy. While the portal content renders elsewhere in the DOM, it remains within the React component tree — meaning context, props, and event bubbling behave as if the portal were still a child of the parent component. Portals are created using `ReactDOM.createPortal(child, container)`.
 
 ## Why Do We Need It?
 

@@ -1,10 +1,8 @@
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-
 # Reconciliation
 
-## Definition
+[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-Reconciliation is the process by which React determines which parts of the Virtual DOM need to be created, updated, or destroyed when state or props change. It's the algorithm that compares the new Virtual DOM tree with the previous one and computes the minimal set of changes needed to update the real DOM. Reconciliation is also commonly called "diffing."
+s of the Virtual DOM need to be created, updated, or destroyed when state or props change. It's the algorithm that compares the new Virtual DOM tree with the previous one and computes the minimal set of changes needed to update the real DOM. Reconciliation is also commonly called "diffing."
 
 Reconciliation is central to React's performance model. Without it, every state change would require re-rendering the entire application from scratch, which would be prohibitively slow.
 

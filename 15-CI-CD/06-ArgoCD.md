@@ -154,7 +154,7 @@ argocd app rollback my-app 3
 - [GitHub Actions](01-GitHub-Actions.md)
 - [Kubernetes Deployments](../14-Kubernetes/02-Deployments.md)
 
-### References
+## References & Learn More
 
 - [ArgoCD Documentation](https://argo-cd.readthedocs.io/)
 - [ArgoCD Best Practices](https://argo-cd.readthedocs.io/en/stable/user-guide/best_practices/)

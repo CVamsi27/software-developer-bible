@@ -54,7 +54,7 @@ tags: [concept]
 - [Performance APIs](02-Performance-APIs.md)
 - [Profiling Tools](03-Profiling-Tools.md)
 
-### References
+## References & Learn More
 
 - [Lighthouse CI Documentation](https://github.com/GoogleChrome/lighthouse-ci)
 - [Lighthouse GitHub Action](https://github.com/treosh/lighthouse-ci-action)

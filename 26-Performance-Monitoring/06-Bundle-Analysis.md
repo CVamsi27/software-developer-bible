@@ -48,7 +48,7 @@ module.exports = [
 - [Performance APIs](02-Performance-APIs.md)
 - [Profiling Tools](03-Profiling-Tools.md)
 
-### References
+## References & Learn More
 
 - [Bundlephobia](https://bundlephobia.com/)
 - [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)

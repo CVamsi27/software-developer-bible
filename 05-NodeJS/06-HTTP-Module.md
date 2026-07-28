@@ -495,7 +495,7 @@ TIMEOUTS:
 - [WebSockets](../21-WebSockets/) — upgrade from HTTP
 - [REST APIs](../07-REST-API/) — API design principles
 
-### References
+## References & Learn More
 
 - [Node.js http Documentation](https://nodejs.org/api/http.html)
 - [Node.js https Documentation](https://nodejs.org/api/https.html)

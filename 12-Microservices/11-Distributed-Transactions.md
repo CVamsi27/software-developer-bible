@@ -49,7 +49,7 @@ COMMIT;
 - [Saga Pattern](03-Saga-Pattern.md)
 - [Service Mesh](10-Service-Mesh.md)
 
-### References
+## References & Learn More
 
 - [Microservices.io: Saga](https://microservices.io/patterns/data/saga.html)
 - [Outbox Pattern](https://microservices.io/patterns/data/transactional-outbox.html)

@@ -57,7 +57,7 @@ await animation.finished;
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React Spring](06-React-Spring.md)
 
-### References
+## References & Learn More
 
 - [MDN: Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
 - [WAAPI Concepts](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Web_Animations_API_Concepts)

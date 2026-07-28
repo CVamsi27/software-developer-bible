@@ -60,7 +60,7 @@ function Trail({ items }) {
 - [Interview Questions](03-Interview-Questions.md)
 - [Web Animations API](04-Web-Animations-API.md)
 
-### References
+## References & Learn More
 
 - [React Spring Documentation](https://www.react-spring.dev/)
 - [React Spring Hooks API](https://www.react-spring.dev/docs/props/hooks)

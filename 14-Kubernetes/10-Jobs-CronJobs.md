@@ -71,7 +71,7 @@ spec:
 - [Interview Questions](08-Interview-Questions.md)
 - [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md)
 
-### References
+## References & Learn More
 
 - [Kubernetes Jobs Docs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 - [Kubernetes CronJob Docs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)

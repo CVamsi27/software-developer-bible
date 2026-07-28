@@ -400,7 +400,7 @@ CONSTRAINTS:
 - [Event Loop](01-Event-Loop.md) — how async I/O works
 - [Process & Environment](08-Process-Environment.md) — process lifecycle
 
-### References
+## References & Learn More
 
 - [Node.js child_process Docs](https://nodejs.org/api/child_process.html)
 - [Node.js worker_threads Docs](https://nodejs.org/api/worker_threads.html)

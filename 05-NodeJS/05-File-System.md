@@ -440,7 +440,7 @@ PATH MODULE:
 - [Process & Environment](08-Process-Environment.md) — process lifecycle
 - [Error Handling](../01-JavaScript/12-Error-Handling.md) — error patterns
 
-### References
+## References & Learn More
 
 - [Node.js fs Documentation](https://nodejs.org/api/fs.html)
 - [Node.js path Documentation](https://nodejs.org/api/path.html)

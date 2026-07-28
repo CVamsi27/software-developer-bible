@@ -375,7 +375,7 @@ const memoizedRecursive = memoize(
 - [Generators](23-Generators.md) — iterative alternative to recursion
 - [Dynamic Programming](../19-Coding-Patterns/06-Dynamic-Programming.md) — recursion with overlapping subproblems
 
-### References
+## References & Learn More
 
 - [MDN: Recursion](https://developer.mozilla.org/en-US/docs/Glossary/Recursion)
 - [ECMAScript Tail Call Proposal](https://github.com/tc39/proposal-ptc-syntax)

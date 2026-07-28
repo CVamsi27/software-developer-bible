@@ -119,7 +119,7 @@ esbuild.buildSync({
 - [Vite](02-Vite.md)
 - [Webpack](01-Webpack.md)
 
-### References
+## References & Learn More
 
 - [ESBuild Documentation](https://esbuild.github.io/)
 - [SWC Documentation](https://swc.rs/docs/)

@@ -172,7 +172,7 @@ docker-build:
 - [GitHub Actions](01-GitHub-Actions.md)
 - [Jenkins](04-Jenkins.md)
 
-### References
+## References & Learn More
 
 - [GitLab CI/CD Documentation](https://docs.gitlab.com/ee/ci/)
 - [GitLab CI YAML Reference](https://docs.gitlab.com/ee/ci/yaml/)

@@ -65,7 +65,7 @@ export default function () {
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [Testing Overview](01-Testing-Overview.md)
 
-### References
+## References & Learn More
 
 - [k6 Documentation](https://k6.io/docs/)
 - [Artillery Documentation](https://www.artillery.io/docs)

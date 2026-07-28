@@ -282,7 +282,7 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 - [Generators](23-Generators.md) — another way to model sequences
 - [Memoization](22-Memoization.md) — caching in composed pipelines
 
-### References
+## References & Learn More
 
 - [MDN: Currying](https://developer.mozilla.org/en-US/docs/Glossary/Currying)
 - [JavaScript Functional Programming Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_composition)

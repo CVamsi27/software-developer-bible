@@ -496,7 +496,7 @@ PROTOTYPE POLLUTION:
 - [Process & Environment](08-Process-Environment.md) — environment variables
 - [REST API Authentication](../07-REST-API/06-Authentication.md)
 
-### References
+## References & Learn More
 
 - [OWASP Node.js Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html)
 - [Node.js Security Guide](https://nodejs.org/en/learn/getting-started/security-best-practices)

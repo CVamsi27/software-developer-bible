@@ -282,7 +282,7 @@ ACCEPTANCE SIGNALS:
 - [LeetCode Study Plan](06-LeetCode-Study-Plan.md)
 - [Mock Interview Questions](09-Mock-Interview-Question-Bank.md)
 
-### References
+## References & Learn More
 
 - [Levels.fyi — Compensation Data](https://www.levels.fyi)
 - [Blind — Anonymous Reviews](https://www.teamblind.com)

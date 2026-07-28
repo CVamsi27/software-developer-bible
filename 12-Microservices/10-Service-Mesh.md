@@ -47,7 +47,7 @@ A **Service Mesh** is a dedicated infrastructure layer for handling service-to-s
 - [gRPC](09-gRPC.md)
 - [Interview Questions](08-Interview-Questions.md)
 
-### References
+## References & Learn More
 
 - [Istio Documentation](https://istio.io/latest/docs/)
 - [Linkerd Documentation](https://linkerd.io/2.15/overview/)

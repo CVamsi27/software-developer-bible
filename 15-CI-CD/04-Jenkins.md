@@ -219,7 +219,7 @@ buildNodeApp(nodeVersion: '20')
 - [GitHub Actions](01-GitHub-Actions.md)
 - [GitLab CI](05-GitLab-CI.md)
 
-### References
+## References & Learn More
 
 - [Jenkins Documentation](https://www.jenkins.io/doc/)
 - [Jenkins Pipeline Syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)

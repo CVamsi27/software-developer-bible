@@ -81,7 +81,7 @@ Animal.prototype.speak = function() { console.log(this._name + ' speaks'); };
 - [Vite](02-Vite.md)
 - [Webpack](01-Webpack.md)
 
-### References
+## References & Learn More
 
 - [Babel Documentation](https://babeljs.io/docs/)
 - [Babel Preset Env](https://babeljs.io/docs/babel-preset-env)

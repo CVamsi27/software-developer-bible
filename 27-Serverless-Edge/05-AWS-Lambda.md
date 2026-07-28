@@ -38,7 +38,7 @@ tags: [concept]
 - [Serverless Overview](01-Serverless-Overview.md)
 - [Serverless Patterns](03-Serverless-Patterns.md)
 
-### References
+## References & Learn More
 
 - [AWS Lambda Documentation](https://docs.aws.amazon.com/lambda/)
 - [Lambda Best Practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html)

@@ -102,7 +102,7 @@ spec:
 - [Interview Questions](08-Interview-Questions.md)
 - [Pods & ReplicaSets](01-Pods-ReplicaSets.md)
 
-### References
+## References & Learn More
 
 - [Kubernetes StatefulSet Docs](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 - [Kubernetes DaemonSet Docs](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)

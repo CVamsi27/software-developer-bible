@@ -58,7 +58,7 @@ describe('Math operations', () => {
 - [Testing Overview](01-Testing-Overview.md)
 - [Vite](../23-Build-Tools/02-Vite.md)
 
-### References
+## References & Learn More
 
 - [Vitest Documentation](https://vitest.dev/)
 - [Vitest Config Reference](https://vitest.dev/config/)

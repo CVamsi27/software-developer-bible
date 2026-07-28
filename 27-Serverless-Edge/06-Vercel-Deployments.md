@@ -37,7 +37,7 @@ tags: [concept]
 - [Next.js Deployment](../04-NextJS/)
 - [Serverless Patterns](03-Serverless-Patterns.md)
 
-### References
+## References & Learn More
 
 - [Vercel Documentation](https://vercel.com/docs)
 - [Vercel Edge Runtime](https://vercel.com/docs/functions/edge-functions)

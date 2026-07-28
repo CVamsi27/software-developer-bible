@@ -76,7 +76,7 @@ server.bindAsync('0.0.0.0:50051',
 - [REST APIs](../07-REST-API/)
 - [Service Mesh](10-Service-Mesh.md)
 
-### References
+## References & Learn More
 
 - [gRPC Documentation](https://grpc.io/docs/)
 - [gRPC Node.js](https://grpc.io/docs/languages/node/)

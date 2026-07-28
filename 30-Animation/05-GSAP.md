@@ -54,7 +54,7 @@ gsap.from('.reveal', {
 - [React Spring](06-React-Spring.md)
 - [Web Animations API](04-Web-Animations-API.md)
 
-### References
+## References & Learn More
 
 - [GSAP Documentation](https://gsap.com/docs/)
 - [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)

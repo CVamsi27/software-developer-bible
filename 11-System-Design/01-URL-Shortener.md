@@ -9,7 +9,7 @@ iven a short URL, redirect to original URL
 - Support both authenticated and unauthenticated users
 - API for URL creation, retrieval, and analytics
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.99% uptime)
 - Low latency redirect (< 10ms)

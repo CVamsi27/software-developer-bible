@@ -12,7 +12,7 @@ zed content recommendations
 - Subtitles and audio tracks
 - 4K/HDR streaming support
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.99%)
 - Global content delivery (< 50ms latency)

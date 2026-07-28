@@ -11,7 +11,7 @@ s, or API key
 - Whitelist/blacklist specific clients
 - Support burst allowance for short traffic spikes
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Extremely low latency (< 1ms added per request)
 - High throughput (millions of requests per second)

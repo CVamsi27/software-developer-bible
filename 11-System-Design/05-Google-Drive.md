@@ -12,7 +12,7 @@ zation across devices
 - Trash and recovery
 - Storage quota management
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Strong consistency for file operations
 - High availability (99.99%)

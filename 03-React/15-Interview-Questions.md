@@ -51,7 +51,7 @@ A: Fragments (`<React.Fragment>` or `<>...</>`) let you group multiple elements 
 
 ---
 
-### Category 2: Hooks (Questions 16-30)
+## Category 2: Hooks (Questions 16-30)
 
 **Q16: What are hooks?**
 A: Hooks are functions that let you use state and lifecycle features in function components. They were introduced in React 16.8.
@@ -100,7 +100,7 @@ A: `useTransition` marks state updates as non-urgent, allowing React to defer th
 
 ---
 
-### Category 3: Advanced Concepts (Questions 31-45)
+## Category 3: Advanced Concepts (Questions 31-45)
 
 **Q31: What is React.memo?**
 A: `React.memo` is a higher-order component that prevents re-rendering when props haven't changed (shallow comparison).
@@ -149,7 +149,7 @@ A: React has first-class TypeScript support. TypeScript provides type safety for
 
 ---
 
-### Category 4: Performance (Questions 46-55)
+## Category 4: Performance (Questions 46-55)
 
 **Q46: How do you optimize React performance?**
 A: Use React.memo, useMemo, useCallback, virtualization, code splitting, concurrent features, and state colocation.
@@ -183,7 +183,7 @@ A: Profile first, memoize expensive components, virtualize lists, code split rou
 
 ---
 
-### Category 5: Architecture and Patterns (Questions 56-60)
+## Category 5: Architecture and Patterns (Questions 56-60)
 
 **Q56: What are the common React design patterns?**
 A: Container/Presentational, Higher-Order Components, Render Props, Compound Components, Custom Hooks.

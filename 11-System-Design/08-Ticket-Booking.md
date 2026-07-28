@@ -12,7 +12,7 @@ ng charts
 - Send booking confirmations
 - Support for different event types (movies, concerts, sports)
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.99%)
 - Strong consistency for seat reservations

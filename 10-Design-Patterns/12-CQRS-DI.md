@@ -4,7 +4,7 @@
 
 ral pattern that separates read and write operations into different models. Commands update the state and return void, while Queries return data without modifying state. This separation allows for independent optimization, scaling, and evolution of read and write sides.
 
-### Dependency Injection (DI)
+## Dependency Injection (DI)
 
 Dependency Injection is a design pattern where an object receives its dependencies from external sources rather than creating them itself. It's a form of Inversion of Control (IoC) that promotes loose coupling and testability.
 

@@ -13,7 +13,7 @@ stination
 - Trip history and receipts
 - Driver availability management
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Low latency matching (< 30 seconds)
 - High availability (99.99%)

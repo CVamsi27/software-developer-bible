@@ -12,7 +12,7 @@ rt multiple payment methods (cards, wallets, bank transfers)
 - Multi-currency support
 - Fraud detection
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.999% - five nines)
 - PCI DSS Level 1 compliance

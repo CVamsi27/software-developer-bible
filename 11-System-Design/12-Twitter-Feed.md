@@ -13,7 +13,7 @@ ers)
 - Trending topics based on tweet velocity
 - Notifications for interactions
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Low latency timeline loading (< 200ms)
 - High availability (99.99%)
@@ -878,11 +878,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
+- [Coding Patterns](../19-Coding-Patterns/)
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)
 - [REST APIs](../07-REST-API/)
 - [WebSockets](../21-WebSockets/)
-- [Coding Patterns](../19-Coding-Patterns/)
 
 ## References & Learn More
 

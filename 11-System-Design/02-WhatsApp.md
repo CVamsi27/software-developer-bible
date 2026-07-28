@@ -12,7 +12,7 @@ essaging (up to 1024 members)
 - Voice and video calls (simplified)
 - User profile management
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Low latency message delivery (< 100ms)
 - High availability (99.99%)

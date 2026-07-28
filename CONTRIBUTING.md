@@ -229,9 +229,8 @@ Either a `text` code block with `═══════` headers and `•` bullet
 ---
 
 ## See Also
-
-- [Related Section](../xx-Section/)
 - [Another Section](../yy-Section/)
+- [Related Section](../xx-Section/)
 
 ## References & Learn More
 

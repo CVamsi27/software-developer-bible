@@ -14,7 +14,7 @@
 - End-to-end encryption for private conversations
 - Message history with infinite scroll
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Real-time delivery with < 100ms latency
 - High availability (99.99%)
@@ -1179,8 +1179,8 @@ INTERVIEW TIPS:
 ## See Also
 - [Database](../08-Database/)
 - [Microservices](../12-Microservices/)
-- [WebSockets](../21-WebSockets/)
 - [System Design - WhatsApp](../11-System-Design/02-WhatsApp.md)
+- [WebSockets](../21-WebSockets/)
 
 ## References & Learn More
 

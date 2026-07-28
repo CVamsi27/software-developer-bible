@@ -48,7 +48,7 @@ A: Synchronous code executes immediately and blocks further execution. Asynchron
 
 A: A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected.
 
-### Intermediate Level (10 Questions)
+## Intermediate Level (10 Questions)
 
 **Q11: Explain the difference between primitive and reference types.**
 
@@ -94,7 +94,7 @@ A: Event delegation is a technique where a single event listener is attached to 
 
 A: `undefined` means a variable has been declared but not assigned. `null` is an intentional assignment of "no value".
 
-### Senior Level (15 Questions)
+## Senior Level (15 Questions)
 
 **Q21: Explain the execution context and scope chain.**
 
@@ -160,7 +160,7 @@ A: Currying transforms a function with multiple arguments into a series of funct
 
 A: Microtasks (Promises, queueMicrotask) run after current task, before next macrotask. Macrotasks (setTimeout, I/O) run one per event loop iteration.
 
-### FAANG-style (10 Questions)
+## FAANG-style (10 Questions)
 
 **Q36: Design a debounce function from scratch.**
 
@@ -314,7 +314,7 @@ A: Use sliding window or token bucket algorithm. Track request timestamps per us
 
 A: Use Map for registrations, resolve dependencies recursively, handle circular dependencies.
 
-### Follow-up Questions (5 Questions)
+## Follow-up Questions (5 Questions)
 
 **Q46: How would you optimize a React application that's re-rendering too much?**
 

@@ -12,7 +12,7 @@ e events
 - Multi-sport support
 - Live streaming integration
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - Ultra-low latency (< 100ms for odds updates)
 - High availability (99.99%)

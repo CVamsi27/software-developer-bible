@@ -13,7 +13,7 @@ tment scheduling
 - Role-based access control
 - Telemedicine support
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - HIPAA compliance
 - High availability (99.99%)

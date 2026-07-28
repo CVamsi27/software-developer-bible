@@ -13,7 +13,7 @@
 - Wishlist functionality
 - Promotions and discounts
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.99%)
 - Support 100K+ concurrent users

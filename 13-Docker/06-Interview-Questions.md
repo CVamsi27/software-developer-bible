@@ -67,7 +67,7 @@ Docker Architecture:
 
 ---
 
-### Question 2: What is a Docker image and how is it structured?
+## Question 2: What is a Docker image and how is it structured?
 
 **Answer:**
 
@@ -102,7 +102,7 @@ Each layer is content-addressable (SHA256 hash). Layers are cached and shared ac
 
 ---
 
-### Question 3: What is the difference between COPY and ADD in Dockerfile?
+## Question 3: What is the difference between COPY and ADD in Dockerfile?
 
 **Answer:**
 
@@ -128,7 +128,7 @@ ADD https://example.com/file.txt /app/
 
 ---
 
-### Question 4: Explain Docker layer caching and how to optimize it.
+## Question 4: Explain Docker layer caching and how to optimize it.
 
 **Answer:**
 
@@ -160,7 +160,7 @@ COPY . .
 
 ---
 
-### Question 5: What is a multi-stage build and why use it?
+## Question 5: What is a multi-stage build and why use it?
 
 **Answer:**
 
@@ -188,7 +188,7 @@ CMD ["node", "dist/server.js"]
 
 ---
 
-### Question 6: How do you handle secrets in Docker?
+## Question 6: How do you handle secrets in Docker?
 
 **Answer:**
 
@@ -222,7 +222,7 @@ COPY secrets.json /app/
 
 ---
 
-### Question 7: What is Docker Compose and when would you use it?
+## Question 7: What is Docker Compose and when would you use it?
 
 **Answer:**
 
@@ -258,7 +258,7 @@ volumes:
 
 ---
 
-### Question 8: What are Docker networks and their types?
+## Question 8: What are Docker networks and their types?
 
 **Answer:**
 
@@ -287,7 +287,7 @@ docker run --network mynet --name db postgres
 
 ---
 
-### Question 9: How do you reduce Docker image size?
+## Question 9: How do you reduce Docker image size?
 
 **Answer:**
 
@@ -320,7 +320,7 @@ USER node
 
 ---
 
-### Question 10: What is the difference between CMD and ENTRYPOINT?
+## Question 10: What is the difference between CMD and ENTRYPOINT?
 
 **Answer:**
 
@@ -344,7 +344,7 @@ CMD ["server.js"]
 
 ---
 
-### Question 11: Explain Docker volume types.
+## Question 11: Explain Docker volume types.
 
 **Answer:**
 
@@ -371,7 +371,7 @@ docker run -v /data:/app/data:ro myapp
 
 ---
 
-### Question 12: How do you debug a container that keeps crashing?
+## Question 12: How do you debug a container that keeps crashing?
 
 **Answer:**
 
@@ -399,7 +399,7 @@ docker stats <container>
 
 ---
 
-### Question 13: What is a .dockerignore file?
+## Question 13: What is a .dockerignore file?
 
 **Answer:**
 
@@ -426,7 +426,7 @@ coverage
 
 ---
 
-### Question 14: How do you handle database migrations in Docker?
+## Question 14: How do you handle database migrations in Docker?
 
 **Answer:**
 
@@ -466,7 +466,7 @@ Use a Job resource that runs migrations before the Deployment.
 
 ---
 
-### Question 15: What is Docker BuildKit?
+## Question 15: What is Docker BuildKit?
 
 **Answer:**
 
@@ -495,7 +495,7 @@ RUN --mount=type=ssh ssh git@github.com
 
 ---
 
-### Question 16: Explain Docker health checks.
+## Question 16: Explain Docker health checks.
 
 **Answer:**
 
@@ -518,7 +518,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 
 ---
 
-### Question 17: How do you manage Docker in production?
+## Question 17: How do you manage Docker in production?
 
 **Answer:**
 
@@ -544,7 +544,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 
 ---
 
-### Question 18: What is the difference between docker stop and docker kill?
+## Question 18: What is the difference between docker stop and docker kill?
 
 **Answer:**
 
@@ -567,7 +567,7 @@ docker stop $(docker ps -q)
 
 ---
 
-### Question 19: How do you copy files between host and container?
+## Question 19: How do you copy files between host and container?
 
 **Answer:**
 
@@ -588,7 +588,7 @@ docker run -v $(pwd)/config:/app/config myapp
 
 ---
 
-### Question 20: What is the difference between docker-compose up and docker-compose run?
+## Question 20: What is the difference between docker-compose up and docker-compose run?
 
 **Answer:**
 
@@ -611,7 +611,7 @@ docker compose run --rm -e DEBUG=true app sh
 
 ---
 
-### Question 21: How do you handle different environments (dev/staging/prod)?
+## Question 21: How do you handle different environments (dev/staging/prod)?
 
 **Answer:**
 
@@ -649,7 +649,7 @@ DATABASE_URL=postgres://prod-db/prod
 
 ---
 
-### Question 22: What is the difference between an image and a container?
+## Question 22: What is the difference between an image and a container?
 
 **Answer:**
 
@@ -665,7 +665,7 @@ An image is a template. A container is a running instance of that image with add
 
 ---
 
-### Question 23: How do you implement logging in Docker containers?
+## Question 23: How do you implement logging in Docker containers?
 
 **Answer:**
 
@@ -707,7 +707,7 @@ services:
 
 ---
 
-### Question 24: What is Docker context?
+## Question 24: What is Docker context?
 
 **Answer:**
 
@@ -730,7 +730,7 @@ docker ps
 
 ---
 
-### Question 25: How do you handle resource limits in Docker?
+## Question 25: How do you handle resource limits in Docker?
 
 **Answer:**
 
@@ -767,7 +767,7 @@ services:
 
 ---
 
-### Question 26: What is a Docker registry and how does it work?
+## Question 26: What is a Docker registry and how does it work?
 
 **Answer:**
 
@@ -793,7 +793,7 @@ docker pull registry.example.com/myapp:1.0.0
 
 ---
 
-### Question 27: How do you secure Docker containers?
+## Question 27: How do you secure Docker containers?
 
 **Answer:**
 
@@ -831,7 +831,7 @@ docker run \
 
 ---
 
-### Question 28: What is the difference between docker-compose and Kubernetes?
+## Question 28: What is the difference between docker-compose and Kubernetes?
 
 **Answer:**
 
@@ -849,7 +849,7 @@ docker run \
 
 ---
 
-### Question 29: How do you handle persistent data in Docker?
+## Question 29: How do you handle persistent data in Docker?
 
 **Answer:**
 
@@ -873,7 +873,7 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
 
 ---
 
-### Question 30: What are the best practices for writing Dockerfiles?
+## Question 30: What are the best practices for writing Dockerfiles?
 
 **Answer:**
 

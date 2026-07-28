@@ -12,7 +12,7 @@ end email notifications
 - Rate limiting per user
 - A/B testing for notifications
 
-### Non-Functional Requirements
+## Non-Functional Requirements
 
 - High availability (99.99%)
 - Delivery latency < 5 seconds for push

@@ -27,6 +27,14 @@ tags: [concept]
 | Image Optimization | Automatic WebP/AVIF, CDN-cached |
 | Analytics | Real-time Web Vitals, usage insights |
 
+## Summary
+
+- Vercel provides serverless deployment for frontend frameworks with automatic HTTPS and CDN distribution
+- Edge Functions run at the network edge for sub-50ms response times using the V8 runtime
+- Serverless Functions (Node.js, Python, Go, Ruby) auto-scale and support region selection for data locality
+- Preview deployments for every git branch enable instant collaboration and review environments
+- Analytics dashboard provides real-time insights into performance, bandwidth, and error rates
+
 ---
 
 ### See Also

@@ -55,6 +55,14 @@ export default function () {
 | Error rate | % failed requests | < 1% |
 | Memory/CPU | Resource utilization | < 80% |
 
+## Summary
+
+- Performance testing validates system behavior under expected and peak load conditions
+- k6 provides developer-friendly load testing with JavaScript scripting and CLI execution
+- Artillery offers declarative YAML-based load testing with built-in HTTP, WebSocket, and Socket.io support
+- Key metrics include response time percentiles, throughput, error rate, and resource utilization
+- Load testing should cover smoke, spike, stress, soak, and endurance test scenarios
+
 ---
 
 ### See Also

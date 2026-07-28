@@ -37,6 +37,14 @@ A **Service Mesh** is a dedicated infrastructure layer for handling service-to-s
 └─────────────────────────────────────────────────────────────┘
 ```
 
+## Summary
+
+- Service mesh abstracts service-to-service communication into a dedicated infrastructure layer
+- Sidecar proxies (Envoy) handle traffic management, observability, and security transparently
+- Istio and Linkerd are the leading service mesh implementations for Kubernetes
+- Provides mTLS encryption, circuit breaking, traffic splitting, and distributed tracing out of the box
+- Operational overhead of sidecar injection and resource consumption are key trade-offs to evaluate
+
 ---
 
 ### See Also

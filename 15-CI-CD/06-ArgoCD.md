@@ -145,6 +145,14 @@ argocd app rollback my-app 3
 6. **Separate ArgoCD config** from application config in Git
 7. **Configure notifications** for sync failures (Slack, email)
 
+## Summary
+
+- ArgoCD is a GitOps tool that synchronizes Kubernetes cluster state with Git repositories
+- Applications are defined declaratively in Git and ArgoCD automatically reconciles drift
+- Sync strategies include automated sync with prun, manual sync, and sync waves for ordered deployments
+- SSO integration (OIDC, Dex) provides role-based access for multi-team environments
+- Health checks, rollback capabilities, and sync hooks provide deployment safety guarantees
+
 ---
 
 ### See Also

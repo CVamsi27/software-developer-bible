@@ -38,6 +38,14 @@ module.exports = [
 ];
 ```
 
+## Summary
+
+- Bundle analysis tools visualize JavaScript bundle composition to identify optimization opportunities
+- webpack-bundle-analyzer produces interactive treemaps of module sizes and dependencies
+- Bundlephobia provides npm package size insights including dependency weight and tree-shaking analysis
+- Source map analysis enables deep inspection of bundled code origins and duplicate dependencies
+- CI integration of bundle analysis prevents size regressions with automated threshold checks
+
 ---
 
 ### See Also

@@ -163,6 +163,14 @@ docker-build:
 6. **Use GitLab Container Registry** for storing Docker images
 7. **Implement protected environments** for production deployments
 
+## Summary
+
+- GitLab CI/CD is integrated directly into GitLab for a unified DevOps lifecycle
+- Pipelines are defined in .gitlab-ci.yml with stages, jobs, and parallel execution
+- GitLab Runners execute jobs and can be shared, specific, or auto-scaled on cloud providers
+- Built-in container registry, artifact management, and environment management simplify deployments
+- Auto DevOps provides automated CI/CD pipelines with review apps and continuous deployment
+
 ---
 
 ### See Also

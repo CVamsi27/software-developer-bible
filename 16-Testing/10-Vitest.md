@@ -48,6 +48,14 @@ describe('Math operations', () => {
 | Worker threads | ✅ (default) | ⚠️ (experimental) |
 | Snapshot | ✅ | ✅ |
 
+## Summary
+
+- Vitest is a Vite-native testing framework with Jest-compatible API and TypeScript support out of the box
+- Native ESM support, HMR for tests, and Vite plugin ecosystem integration for zero-config setup
+- Compatible with Jest expect, describe, it patterns with additional features like snapshot testing
+- Multi-threaded test execution via Worker threads for significantly faster test runs
+- Built-in code coverage via c8/istanbul with V8 native coverage support
+
 ---
 
 ### See Also

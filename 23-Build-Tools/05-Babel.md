@@ -72,6 +72,14 @@ Animal.prototype.speak = function() { console.log(this._name + ' speaks'); };
 4. **Use `@babel/plugin-transform-runtime`** to avoid helper duplication
 5. **Cache Babel output** (`babel-loader` cacheDirectory in webpack)
 
+## Summary
+
+- Babel is a JavaScript compiler that transforms modern JS/TS code into backwards-compatible versions
+- Presets (@babel/preset-env, @babel/preset-react, @babel/preset-typescript) configure transformation rules
+- Plugins enable fine-grained control over specific syntax transformations and optimizations
+- Polyfilling via core-js and @babel/polyfill adds runtime support for missing browser features
+- Babel integrates with Webpack, Vite, and other bundlers through loader/plugin interfaces
+
 ---
 
 ### See Also

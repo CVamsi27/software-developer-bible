@@ -50,6 +50,14 @@ function Trail({ items }) {
 }
 ```
 
+## Summary
+
+- React Spring is a spring-physics based animation library for React with declarative hooks API
+- Spring-based animations produce natural, fluid motion that automatically adapts to velocity and interrupts
+- useSpring, useTrail, useChain, and useTransition hooks cover single, sequenced, and mount/unmount animations
+- Native animation support delegates to browser compositor for jank-free 60fps rendering
+- TypeScript support with typed animated components and gesture interaction via react-use-gesture
+
 ---
 
 ### See Also

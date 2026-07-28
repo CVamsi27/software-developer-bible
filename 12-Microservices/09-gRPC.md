@@ -66,6 +66,14 @@ server.bindAsync('0.0.0.0:50051',
 | Code gen | Manual SDK | Auto-generated |
 | Browser | Native | Requires gRPC-Web |
 
+## Summary
+
+- gRPC uses Protocol Buffers for efficient binary serialization and HTTP/2 for multiplexed streaming
+- Four communication patterns: Unary, Server Streaming, Client Streaming, and Bidirectional Streaming
+- Language-agnostic with auto-generated client/server stubs from .proto files
+- Superior performance to REST/JSON for internal service-to-service communication
+- Best suited for microservices, real-time streaming, and polyglot environments
+
 ---
 
 ### See Also

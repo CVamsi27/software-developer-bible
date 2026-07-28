@@ -28,6 +28,14 @@ tags: [concept]
 | **Concurrency** | 1000 (default) per region, can be increased |
 | **Lambda@Edge** | Run at CloudFront edge locations for low latency |
 
+## Summary
+
+- AWS Lambda is a serverless compute service that runs code in response to events without provisioning servers
+- Event sources include API Gateway, S3, DynamoDB Streams, SQS, SNS, and CloudWatch Events
+- Cold starts impact latency — mitigated by provisioned concurrency, warmers, and smaller deployment packages
+- Lambda@Edge runs functions at CloudFront edge locations for low-latency request/response modification
+- Best practices include stateless design, environment variables for config, and Dead Letter Queues for failures
+
 ---
 
 ### See Also

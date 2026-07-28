@@ -92,6 +92,14 @@ spec:
 | Scaling | Ordered | By node count | Arbitrary |
 | Update strategy | Rolling/Custom | RollingOnDelete | Rolling/Rollback |
 
+## Summary
+
+- StatefulSets manage stateful applications with stable network identities and persistent storage
+- DaemonSets ensure exactly one pod runs on each node, ideal for logging, monitoring, and networking agents
+- StatefulSets provide ordered deployment, scaling, and rolling updates for databases and message queues
+- DaemonSets automatically schedule pods on new nodes as they join the cluster
+- Headless Services are typically used with StatefulSets for stable DNS names per pod
+
 ---
 
 ### See Also

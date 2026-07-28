@@ -273,6 +273,14 @@ ACCEPTANCE SIGNALS:
 | Not having competing offers | Stagger interview timelines to overlap |
 | Revealing current salary | Redirect: "I'm targeting roles in the $X-Y range" |
 
+## Summary
+
+- Resume optimization focuses on quantifiable impact metrics and STAR-format achievement descriptions
+- Negotiation leverages competitive offers, market research (Levels.fyi, Blind), and timing strategy
+- Total compensation includes base salary, equity/RSUs, sign-on bonus, and annual performance bonus
+- Interview timing between competing offers creates leverage for maximizing compensation packages
+- Professional brand building through GitHub, LinkedIn, and personal projects strengthens candidate positioning
+
 ---
 
 ### See Also

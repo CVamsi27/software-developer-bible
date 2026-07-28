@@ -39,6 +39,14 @@ COMMIT;
 -- Relay process reads and publishes outbox events
 ```
 
+## Summary
+
+- Distributed transactions span multiple services and require coordination across independent data stores
+- Two-Phase Commit (2PC) provides ACID guarantees but has blocking and scalability limitations
+- Saga pattern breaks long-lived transactions into a sequence of local transactions with compensating actions
+- Choreography-based sagas use event-driven coordination; orchestration-based sagas use a central coordinator
+- Transactional Outbox pattern ensures reliable event publishing by storing events in the same database as business data
+
 ---
 
 ### See Also

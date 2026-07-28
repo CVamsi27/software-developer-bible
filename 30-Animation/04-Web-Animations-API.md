@@ -47,6 +47,14 @@ animation.currentTime = 500;
 await animation.finished;
 ```
 
+## Summary
+
+- Web Animations API (WAAPI) provides native browser animations with JavaScript control and CSS performance
+- Keyframe animations support compositing, easing, iteration, and direction properties like CSS
+- Animation timeline control enables play, pause, reverse, seek, and playback rate manipulation
+- Performance benefits from running on the compositor thread rather than the main thread
+- Element.getAnimations() and document.getAnimations() provide global animation inspection and control
+
 ---
 
 ### See Also

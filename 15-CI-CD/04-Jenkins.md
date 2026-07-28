@@ -210,6 +210,14 @@ buildNodeApp(nodeVersion: '20')
 6. **Use when conditions** to skip unnecessary stages
 7. **Implement approval gates** for production deployments
 
+## Summary
+
+- Jenkins is a self-hosted automation server for building, testing, and deploying software
+- Pipeline as Code (Jenkinsfile) defines CI/CD workflows using Declarative or Scripted pipeline syntax
+- Master-agent architecture distributes build workloads across multiple worker nodes
+- Extensive plugin ecosystem integrates with SCM, build tools, test frameworks, and cloud providers
+- Blue Ocean provides a modern UI for pipeline visualization and monitoring
+
 ---
 
 ### See Also

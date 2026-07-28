@@ -77,6 +77,14 @@ spec:
       port: 5432
 ```
 
+## Summary
+
+- RBAC controls access to Kubernetes API resources through Roles, ClusterRoles, RoleBindings, and ClusterRoleBindings
+- Network Policies define firewall rules at the pod level using label selectors and namespace selectors
+- RBAC follows least-privilege principles with verbs (get, list, create, update, delete) on API resources
+- Network Policies are enforced by CNI plugins like Calico, Cilium, and Weave Net
+- ServiceAccounts should use dedicated RBAC permissions rather than the default namespace token
+
 ---
 
 ### See Also

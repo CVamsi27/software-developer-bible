@@ -44,6 +44,14 @@ tags: [concept]
 }
 ```
 
+## Summary
+
+- Lighthouse CI automates Lighthouse audits in CI/CD pipelines for performance regression detection
+- Assertion-based testing enforces performance budgets on metrics like LCP, TBT, and CLS
+- Historical trend tracking visualizes performance changes across builds and deployments
+- Built-in GitHub Action and Node.js API support for easy integration into existing workflows
+- Multi-budget configuration allows different thresholds for mobile, desktop, and critical pages
+
 ---
 
 ### See Also

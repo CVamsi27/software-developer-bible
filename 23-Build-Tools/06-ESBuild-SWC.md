@@ -110,6 +110,14 @@ esbuild.buildSync({
 4. **Combine with Webpack** for complex code-splitting needs
 5. **Use ESBuild for one-off builds** (CLI tools, server bundles)
 
+## Summary
+
+- ESBuild is an extremely fast JavaScript bundler and minifier written in Go (10-100x faster than Webpack)
+- SWC is a Rust-based platform for compilation, bundling, and minification with Babel-compatible plugins
+- Both tools are designed as drop-in replacements for Babel and Webpack in modern build pipelines
+- ESBuild excels at single-file bundling and is used internally by Vite for dependency pre-bundling
+- SWC powers Next.js and Parcel, offering TypeScript compilation and minification in a single binary
+
 ---
 
 ### See Also

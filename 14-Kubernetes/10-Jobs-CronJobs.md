@@ -62,6 +62,14 @@ spec:
           restartPolicy: Never
 ```
 
+## Summary
+
+- Jobs manage batch processing tasks that run to completion, with retry and parallelism controls
+- CronJobs schedule Jobs on a time-based schedule using standard cron syntax
+- Jobs support parallel execution via completions and parallelism parameters for distributed processing
+- Failed Jobs automatically retry based on the backoffLimit and restartPolicy configuration
+- CronJob concurrency policies (Allow, Forbid, Replace) control overlapping execution behavior
+
 ---
 
 ### See Also

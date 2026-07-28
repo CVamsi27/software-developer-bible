@@ -497,5 +497,5 @@ KEY FACTS:
 
 - [ECMAScript Spec: Lexical Environments](https://tc39.es/ecma262/#sec-lexical-environments)
 - [MDN: Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-- [JavaScript.info: Variable scope, closures](https://web.archive.org/web/20240701000000/https://javascript.info/execution-context)
+- [JavaScript.info: Variable scope, closures](https://javascript.info/closure)
 - [You Don't Know JS: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/scope-closures)

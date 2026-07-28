@@ -820,6 +820,6 @@ SECURITY:
 ## References & Learn More
 
 - [MDN: Scope](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#block_scoping)
-- [JavaScript.info: Scope & Closures](https://web.archive.org/web/20240701000000/https://javascript.info/execution-context)
+- [JavaScript.info: Scope & Closures](https://javascript.info/closure)
 - [DigitalOcean: Understanding Scope and Closures in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-scope-and-closures-in-javascript-tutorial)
 - [Dev.to: JavaScript Scope Explained](https://dev.to/boywithnohorns/understanding-javascript-scope-1h83)

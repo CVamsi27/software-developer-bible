@@ -852,7 +852,7 @@ INTERVIEW TIPS:
 ## References & Learn More
 
 - [MDN: Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-- [JavaScript.info: Closures](https://web.archive.org/web/20240701000000/https://javascript.info/execution-context)
+- [JavaScript.info: Closures](https://javascript.info/closure)
 - [Wikipedia: Closures (computer science)](https://en.wikipedia.org/wiki/Closure_(computer_programming)))
 - [Eloquent JavaScript: Closures](https://eloquentjavascript.net/3rd_edition/chapter5.html)
 - [FreeCodeCamp: Closures](https://www.freecodecamp.org/news/lets-learn-javascript-closures/)

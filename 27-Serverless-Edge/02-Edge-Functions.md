@@ -391,7 +391,6 @@ Edge vs Serverless Comparison:
 
 ```
 
-
 ## Summary
 
 Edge functions provide a powerful way to reduce latency and improve performance by executing code at CDN edge locations. They are ideal for latency-sensitive tasks but have computational limitations compared to traditional serverless functions.

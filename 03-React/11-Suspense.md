@@ -591,7 +591,6 @@ const Chart = lazy(() => import('./Chart')); // 50KB - worth it!
 | Small utilities | ❌ | Overhead not worth it |
 | Critical components | ❌ | Need immediately |
 
-
 ## Summary
 
 React Suspense is a powerful feature for handling loading states declaratively. It works by catching promises thrown by child components and showing fallback UI. Combined with `React.lazy`, it enables code splitting for better performance. Suspense is the foundation for modern React features like data fetching and server components.

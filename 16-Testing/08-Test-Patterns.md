@@ -1274,7 +1274,6 @@ afterEach(async () => {
 
 ```
 
-
 ## Summary
 
 Test patterns provide structure and consistency to test suites. Key patterns:

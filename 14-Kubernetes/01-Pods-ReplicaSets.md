@@ -539,7 +539,6 @@ kubectl get pods --all-namespaces -o wide | awk '{print $8}' | sort | uniq -c
 
 ```
 
-
 ## Summary
 
 Pods are Kubernetes' atomic units. ReplicaSets ensure desired replica count. Mastering Pod lifecycle, multi-container patterns, scheduling constraints, and resource management is essential for Kubernetes operations.

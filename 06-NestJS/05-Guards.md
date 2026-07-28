@@ -636,7 +636,6 @@ export class ProperGuard implements CanActivate {
 
 5. **Guard Ordering**: Order guards by likelihood of rejection (cheapest first).
 
-
 ## Summary
 
 Guards are NestJS's authorization mechanism that determines whether requests should be allowed or rejected. They implement the `CanActivate` interface and have access to the execution context for making authorization decisions. Guards work with decorators and Reflector for metadata-driven authorization patterns.

@@ -484,12 +484,12 @@ Before sending your resume, verify:
 
 Your resume's job is simple: get you the interview. This guide covers quantifying achievements with metrics, ATS optimization, senior-level professional summary writing, and common formatting mistakes to avoid.
 
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
+
 ## References & Learn More
 
 - [Official Documentation](https://developer.mozilla.org/en-US/)
 - [LeetCode](https://leetcode.com/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)

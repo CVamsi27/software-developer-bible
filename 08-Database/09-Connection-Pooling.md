@@ -457,7 +457,6 @@ process.on('SIGTERM', async () => {
 
 ```
 
-
 ## Summary
 
 Connection pooling is essential for database performance. Use PgBouncer for production PostgreSQL. Configure pool size based on workload. Monitor pool health and handle connection failures. Prisma manages connection pooling internally.

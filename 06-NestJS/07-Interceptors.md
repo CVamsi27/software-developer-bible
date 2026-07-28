@@ -447,7 +447,6 @@ intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
 
 5. **Async Work**: Avoid heavy async operations — use message queues instead.
 
-
 ## Summary
 
 Interceptors are NestJS's powerful mechanism for cross-cutting concerns that need access to both request and response. They leverage RxJS for composable transformations, enabling logging, caching, transformation, timeout, and error handling in a clean, functional style.

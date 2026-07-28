@@ -404,7 +404,6 @@ Optimization Priority Matrix:
 
 ```
 
-
 ## Summary
 
 Core Web Vitals are essential metrics for measuring and improving user experience. Focus on LCP (loading), INP (interactivity), and CLS (visual stability) to ensure your website provides a good user experience and ranks well in search results.

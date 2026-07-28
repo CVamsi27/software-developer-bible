@@ -541,7 +541,6 @@ Sentry.addBreadcrumb({
 - **Before send filtering** — filter client-side to reduce network calls to Sentry
 - **Queue buffering** — SDK buffers events before sending; flush on process exit
 
-
 ## Summary
 
 Error tracking transforms raw exceptions into actionable, grouped issues with context, ownership, and workflow. Sentry is the industry standard, but the principles apply to any tool: capture errors with context, group intelligently, upload source maps, track releases, and review trends regularly.

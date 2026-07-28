@@ -608,7 +608,6 @@ WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
 
 ```
 
-
 ## Summary
 
 PostgreSQL is the most feature-rich open-source relational database. Its key strengths include MVCC for concurrency, JSONB for flexibility, extensibility, and standards compliance. Understanding its architecture (process model, shared memory, WAL) is essential for performance tuning and debugging. Use appropriate indexes, connection pooling, and query optimization for production workloads.

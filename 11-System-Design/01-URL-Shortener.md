@@ -515,7 +515,6 @@ alerts:
 | Redirect Type | 301 (permanent, cached) | 302 (temporary, always check) | 302 (respect expiration) |
 | Analytics | Synchronous | Async (Kafka) | Async (non-blocking) |
 
-
 ## Summary
 
 The URL Shortener system design covers:

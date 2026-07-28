@@ -542,7 +542,6 @@ docker compose up --scale worker=3
 
 ```
 
-
 ## Summary
 
 Docker Compose simplifies multi-container application management through declarative YAML configuration. It provides service discovery, network management, volume orchestration, and environment variable handling. Essential for local development, testing, and simple deployments.

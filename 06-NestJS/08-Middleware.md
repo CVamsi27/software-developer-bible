@@ -496,7 +496,6 @@ use(req: Request, res: Response, next: NextFunction): void {
 
 5. **Caching**: Cache middleware results when possible.
 
-
 ## Summary
 
 Middleware in NestJS provides a way to execute logic before route handlers, similar to Express middleware. They handle cross-cutting concerns like logging, authentication, and CORS. NestJS middleware can be class-based (with DI support) or function-based, and are configured through the `MiddlewareConsumer`.

@@ -728,7 +728,6 @@ const GoodComponent = () => {
 | `[dep1, dep2]` | When deps change | Conditional effects |
 | No array | Every render | Rarely used |
 
-
 ## Summary
 
 The component lifecycle in React manages the series of events from mounting to unmounting. Class components use lifecycle methods (`componentDidMount`, `componentDidUpdate`, `componentWillUnmount`). Function components use `useEffect` and `useLayoutEffect`. Understanding lifecycle is crucial for managing side effects, subscriptions, and resource cleanup.

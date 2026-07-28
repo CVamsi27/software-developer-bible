@@ -301,7 +301,6 @@ const generateNonce = (): string => {
 | Input Validation | Minimal overhead for most validators |
 | Sanitization Libraries | Lightweight libraries have minimal impact |
 
-
 ## Summary
 
 XSS is a critical web security vulnerability that allows attackers to inject malicious scripts. Key takeaways:

@@ -748,7 +748,6 @@ useEffect(() => {
 | `[]` | Once on mount | Initial setup |
 | `[dep1, dep2]` | When deps change | Conditional effects |
 
-
 ## Summary
 
 `useEffect` is the primary hook for performing side effects in React function components. It runs after the browser paints, making it ideal for data fetching, subscriptions, and DOM manipulation. Proper use of dependency arrays and cleanup functions is essential for correctness and performance.

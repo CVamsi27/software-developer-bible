@@ -816,7 +816,6 @@ const Component = () => {
 | Shopping cart | ✅ | ✅ (Redux/Zustand) |
 | Complex app state | ❌ | ✅ (Redux/Zustand) |
 
-
 ## Summary
 
 Context API is React's built-in solution for sharing data across the component tree without prop drilling. It's ideal for global data like themes, authentication, and language. Performance can be optimized by memoizing context values and splitting contexts by concern.

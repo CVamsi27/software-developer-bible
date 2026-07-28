@@ -685,7 +685,6 @@ ISR:  Same as SSG, with periodic regeneration
 
 ```
 
-
 ## Summary
 
 | Feature | CSR | SSR | SSG | ISR |

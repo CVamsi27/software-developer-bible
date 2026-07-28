@@ -508,7 +508,6 @@ class GatewayWithCircuitBreaker {
 - **CDN integration** - Cache static responses at edge
 - **Load balancing** - Distribute across gateway instances
 
-
 ## Summary
 
 API Gateway is essential for microservices architecture, providing a unified entry point with centralized cross-cutting concerns. Key features include routing, authentication, rate limiting, and request transformation. Proper implementation ensures security, performance, and maintainability.

@@ -792,7 +792,6 @@ router.put('/api/users/:id', async (req, res) => {
 - **Compression** - Enable gzip for GET responses
 - **Pagination** - Always paginate large collections
 
-
 ## Summary
 
 HTTP methods are the foundation of REST API design. Each method has specific properties—safe, idempotent, cacheable—that determine how it should be used. Understanding these properties is crucial for building reliable, fault-tolerant APIs. Always use the correct method for the operation, implement idempotency for critical operations, and return appropriate status codes.

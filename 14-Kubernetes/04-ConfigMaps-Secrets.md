@@ -485,7 +485,6 @@ kubectl delete configmap myconfig
 
 ```
 
-
 ## Summary
 
 ConfigMaps and Secrets separate configuration from code. ConfigMaps store non-sensitive data; Secrets store sensitive data. Use volume mounts for automatic updates, environment variables for simplicity, and external secret management for production security.

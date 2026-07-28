@@ -541,7 +541,6 @@ export default { add, multiply };
 
 ```
 
-
 ## Summary
 
 Modules are essential for modern JavaScript:

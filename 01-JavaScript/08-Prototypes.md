@@ -824,7 +824,6 @@ PersonFixed.prototype.greet = function() {  // Shared by all instances
 
 ```
 
-
 ## Summary
 
 Prototypes are fundamental to JavaScript:

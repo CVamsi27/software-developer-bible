@@ -393,7 +393,6 @@ describe('Accessibility', () => {
 - **Screen reader testing**: Requires setup and expertise
 - **Regression testing**: Important for maintenance
 
-
 ## Summary
 Accessibility testing combines automated tools, manual testing, and real user feedback. Use axe-core and Lighthouse for automated testing, test keyboard navigation manually, and validate with screen readers. Include accessibility in your development workflow and test early and often.
 

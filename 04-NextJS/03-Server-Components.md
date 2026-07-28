@@ -702,7 +702,6 @@ Client Component Rendering:
 
 ```
 
-
 ## Summary
 
 | Aspect | Server Component | Client Component |

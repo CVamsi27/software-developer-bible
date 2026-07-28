@@ -899,7 +899,6 @@ Cache Layers:
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

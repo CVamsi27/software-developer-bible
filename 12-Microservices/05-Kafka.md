@@ -596,7 +596,6 @@ class KafkaStreamProcessor {
 - **Partition count**: Based on consumer parallelism needs
 - **Consumer fetch size**: Balance latency vs throughput
 
-
 ## Summary
 
 Apache Kafka is essential for building event-driven microservices. It provides high-throughput, fault-tolerant data streaming with exactly-once delivery semantics. Key concepts include topics, partitions, consumer groups, and offsets.

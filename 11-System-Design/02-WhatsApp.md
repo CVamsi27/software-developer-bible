@@ -781,7 +781,6 @@ alerts:
 | Ordering | Per-conversation | Global | Per-conversation |
 | Delivery | At-most-once | At-least-once | At-least-once |
 
-
 ## Summary
 
 The WhatsApp system design covers:

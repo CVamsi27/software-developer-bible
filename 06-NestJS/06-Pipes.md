@@ -668,7 +668,6 @@ export class TrimPipe implements PipeTransform {
 
 5. **Batch Validation**: Validate arrays efficiently with `{ each: true }`.
 
-
 ## Summary
 
 Pipes are NestJS's data transformation and validation mechanism. They ensure incoming data is valid and properly typed before reaching route handlers. Built-in pipes handle common cases, while custom pipes implement specific validation logic. Integration with class-validator and class-transformer provides powerful DTO-based validation.

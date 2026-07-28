@@ -921,7 +921,6 @@ const server = new ApolloServer({
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

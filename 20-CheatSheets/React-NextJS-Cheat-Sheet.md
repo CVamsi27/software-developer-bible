@@ -390,7 +390,6 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
 ---
 
-
 ## Summary
 
 This cheat sheet provides a concise reference to core React NextJS concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.

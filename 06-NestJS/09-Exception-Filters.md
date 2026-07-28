@@ -566,7 +566,6 @@ app.useGlobalFilters(new HttpExceptionFilter());
 
 4. **Monitoring**: Send errors to monitoring services asynchronously.
 
-
 ## Summary
 
 Exception Filters are NestJS's centralized error handling mechanism. They catch exceptions thrown during request processing and transform them into appropriate HTTP responses. Built-in filters handle basic cases, while custom filters provide application-specific error handling with logging, monitoring, and consistent error response formats.

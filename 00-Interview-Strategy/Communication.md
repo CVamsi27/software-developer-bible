@@ -889,17 +889,16 @@ SENIOR communicates:  "I analyzed the problem, considered alternatives A
 *Communication is the multiplier for technical skill. The best solution poorly communicated loses to a good solution well communicated.*
 ---
 
-
 ## Summary
 
 Effective communication is the multiplier for technical skill. This guide covers the CLEAR communication framework, technical explanation techniques, whiteboard strategies, and common pitfalls. Master these skills to demonstrate senior-level thinking during interviews.
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 
 - [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
 - [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
 - [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
-
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)

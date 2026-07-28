@@ -790,7 +790,6 @@ app.use('/api/users', createProxyMiddleware({
 - **Async processing** - Non-blocking I/O
 - **Connection limits** - Prevent connection exhaustion
 
-
 ## Summary
 
 An API Gateway is essential for microservices architectures. It provides a single entry point, centralizes cross-cutting concerns, and simplifies client interactions. Key features include routing, authentication, rate limiting, circuit breaking, and request transformation. Always implement monitoring, health checks, and graceful degradation.

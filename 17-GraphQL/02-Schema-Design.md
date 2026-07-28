@@ -1223,7 +1223,6 @@ type Post {
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

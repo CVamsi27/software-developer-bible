@@ -435,7 +435,6 @@ app.post("/transfer", (req, res) => {
 | Session Data | Keep minimal for performance |
 | Serialization | Use efficient formats (JSON, MessagePack) |
 
-
 ## Summary
 
 Sessions and cookies are fundamental to maintaining state in web applications. Key takeaways:

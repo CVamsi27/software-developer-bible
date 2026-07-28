@@ -530,7 +530,6 @@ Tool Selection Guide:
 
 ```
 
-
 ## Summary
 
 Profiling tools are essential for identifying and fixing performance issues. Master Chrome DevTools, Lighthouse, WebPageTest, and React DevTools to build comprehensive performance analysis workflows.

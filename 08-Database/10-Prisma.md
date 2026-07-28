@@ -707,7 +707,6 @@ const result = await prisma.$queryRaw`
 
 ```
 
-
 ## Summary
 
 Prisma provides a type-safe, schema-first approach to database access. Use schema.prisma to define models, generate a TypeScript client, and manage migrations. Leverage transactions, include/select, and raw queries for complex operations. Handle N+1 queries with eager loading and optimize with proper indexes.

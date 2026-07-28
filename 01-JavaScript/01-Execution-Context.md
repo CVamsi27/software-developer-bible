@@ -499,7 +499,6 @@ function betterApproach(n) {
 
 ```
 
-
 ## Summary
 
 Execution contexts are fundamental to understanding how JavaScript works. Key takeaways:

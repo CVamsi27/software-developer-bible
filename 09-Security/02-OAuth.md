@@ -467,7 +467,6 @@ app.get("/auth/github/callback", async (req, res) => {
 | PKCE | Slight overhead for challenge generation, negligible |
 | Refresh Flow | Additional network request when tokens expire |
 
-
 ## Summary
 
 OAuth 2.0 is the standard framework for delegated authorization, enabling secure third-party access without sharing credentials. Key takeaways:

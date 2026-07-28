@@ -346,7 +346,6 @@ fi
 - **Async operations**: Consider background processing
 - **Caching**: Cache results for repeated operations
 
-
 ## Summary
 Git hooks are powerful for automating workflows and enforcing standards. Use Husky for easy management, lint-staged for performance, and commitlint for message validation. Keep hooks fast, provide clear feedback, and document their purpose for team adoption.
 

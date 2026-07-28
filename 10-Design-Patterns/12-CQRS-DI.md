@@ -1298,7 +1298,6 @@ function configureDI(): Container {
 
 5. **Lazy Loading**: Consider lazy loading for expensive dependencies.
 
-
 ## Summary
 
 CQRS and DI are essential architectural patterns for complex applications. CQRS separates read and write operations for independent optimization, while DI promotes loose coupling and testability. Use them when complexity warrants the added overhead.

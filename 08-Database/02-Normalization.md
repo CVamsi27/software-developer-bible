@@ -516,7 +516,6 @@ CREATE TABLE order_summaries (
 
 ```
 
-
 ## Summary
 
 Normalization eliminates redundancy and anomalies through a series of normal forms (1NF→2NF→3NF→BCNF). Start with 3NF for most applications. Denormalize selectively for performance in read-heavy workloads. Use materialized views and triggers to maintain consistency when denormalizing. The key trade-off is between write efficiency (normalized) and read performance (denormalized).

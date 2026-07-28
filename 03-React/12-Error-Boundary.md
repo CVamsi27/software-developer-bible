@@ -640,7 +640,6 @@ class ErrorBoundary extends Component {
 | Entire app | ⚠️ | Last resort |
 | Event handlers | ❌ | Use try-catch |
 
-
 ## Summary
 
 Error Boundaries are React class components that catch errors in their child component tree and display fallback UI. They use `getDerivedStateFromError` for state updates and `componentDidCatch` for error logging. Error Boundaries are essential for building resilient React applications that don't crash on errors.

@@ -939,7 +939,6 @@ class LoggingProxy implements Subject {
 
 5. **Async Operations**: Consider async proxies for non-blocking operations.
 
-
 ## Summary
 
 The Proxy pattern is essential for controlling access to objects. It enables lazy loading, access control, logging, caching, and remote resource management. Use it to add a layer of indirection without modifying the real subject.

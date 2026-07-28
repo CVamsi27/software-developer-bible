@@ -491,7 +491,6 @@ API Performance Impact:
 
 ```
 
-
 ## Summary
 
 Performance APIs provide powerful tools for measuring and optimizing web application performance. Master Navigation Timing, Resource Timing, User Timing, and PerformanceObserver to build comprehensive monitoring solutions.

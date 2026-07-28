@@ -675,7 +675,6 @@ Fiber adds memory overhead compared to the stack reconciler:
 - **Simple state updates**: `startTransition` adds unnecessary complexity
 - **Synchronous requirements**: Some updates must be immediate
 
-
 ## Summary
 
 React Fiber is the internal architecture that powers React's reconciliation and scheduling. It represents each component as a fiber node in a linked list tree, enabling incremental rendering, prioritization, and concurrent features. Fiber replaced the stack reconciler to solve the problem of main thread blocking, enabling React to keep UIs responsive during heavy renders.

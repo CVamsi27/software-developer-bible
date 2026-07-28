@@ -989,7 +989,6 @@ class CachedUserRepository implements UserRepository {
 
 5. **Lazy Loading**: Consider lazy loading for related entities when appropriate.
 
-
 ## Summary
 
 The Repository pattern is essential for clean architecture and domain-driven design. It provides an abstraction over data access, making it easier to test, maintain, and switch between different data stores. Use it to separate business logic from persistence concerns.

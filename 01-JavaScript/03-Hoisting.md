@@ -656,7 +656,6 @@ const expensiveOperationExpr = function() {
 
 ```
 
-
 ## Summary
 
 Hoisting is a fundamental JavaScript concept:

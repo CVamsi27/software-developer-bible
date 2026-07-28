@@ -271,7 +271,6 @@ const validated = (obj, schema) => new Proxy(obj, {
 
 ---
 
-
 ## Summary
 
 This cheat sheet provides a concise reference to core JavaScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.

@@ -238,7 +238,6 @@ git rebase --abort
 - **Conflict resolution**: Can be time-consuming
 - **Large repositories**: Consider shallow clones
 
-
 ## Summary
 Rebase and cherry-pick are powerful Git operations for managing history and applying specific changes. Rebase creates clean, linear history while cherry-pick allows selective commit application. Use them carefully, especially on shared branches, and always test after applying these operations.
 

@@ -801,7 +801,6 @@ res.status(429).json({ error: 'Rate limited', retryAfter: 60 });
 - **Caching** - 2xx responses with cache headers improve performance
 - **Compression** - 200 responses benefit from gzip
 
-
 ## Summary
 
 HTTP status codes are essential for communicating request outcomes between client and server. Using appropriate status codes makes APIs predictable, debuggable, and standards-compliant. Always use the correct class (2xx for success, 4xx for client errors, 5xx for server errors) and include relevant headers like Location, Retry-After, and Allow.

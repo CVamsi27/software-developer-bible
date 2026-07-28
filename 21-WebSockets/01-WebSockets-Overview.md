@@ -830,7 +830,6 @@ Message Rate (messages/second):
 
 ```
 
-
 ## Summary
 
 WebSockets are essential for building real-time applications that require bidirectional communication. Key takeaways:

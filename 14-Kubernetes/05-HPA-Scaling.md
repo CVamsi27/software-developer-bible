@@ -562,7 +562,6 @@ kubectl run load-test --image=busybox --rm -it -- \
 
 ```
 
-
 ## Summary
 
 HPA enables automatic scaling based on metrics. VPA optimizes resource requests. Combined with Cluster Autoscaler, they provide full-stack auto-scaling. Proper resource requests, scaling policies, and stabilization windows are essential for reliable scaling.

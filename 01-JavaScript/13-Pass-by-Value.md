@@ -579,7 +579,6 @@ const updated = original.set('c', 3);
 
 ```
 
-
 ## Summary
 
 Understanding pass by value vs reference is crucial:

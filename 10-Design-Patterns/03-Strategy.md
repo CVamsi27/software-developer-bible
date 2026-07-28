@@ -974,7 +974,6 @@ class StrategyFactory {
 
 5. **Garbage Collection**: Stateless strategies don't create GC pressure.
 
-
 ## Summary
 
 The Strategy pattern is powerful for encapsulating algorithms and making them interchangeable. It promotes the Open/Closed Principle, improves testability, and allows runtime flexibility. Use it when you have multiple algorithms for a task and want to switch between them dynamically.

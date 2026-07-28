@@ -617,7 +617,6 @@ async function processBatched() {
 
 ```
 
-
 ## Summary
 
 Promises are essential for async JavaScript:

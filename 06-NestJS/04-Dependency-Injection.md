@@ -661,7 +661,6 @@ export class UserService {
 
 6. **Factory Execution**: Factory providers run at module initialization.
 
-
 ## Summary
 
 Dependency Injection is NestJS's core mechanism for managing component dependencies. The IoC container handles instantiation, resolution, and lifecycle management automatically. Understanding DI patterns — constructor injection, injection tokens, provider scopes, and circular dependency resolution — is essential for building scalable, testable NestJS applications.

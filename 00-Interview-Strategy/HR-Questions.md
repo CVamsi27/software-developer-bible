@@ -739,17 +739,16 @@ growing others is a key part of senior engineering."
 > The HR round is where technical ability meets human connection. Show them both.
 ---
 
-
 ## Summary
 
 The HR round is a strategic evaluation opportunity, not a formality. This guide covers company research frameworks, salary negotiation tactics, cultural fit signals, and the key questions to ask to make a strong impression.
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 
 - [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
 - [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
 - [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
-
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)

@@ -343,7 +343,6 @@ const useToggleTodo = () => {
 
 7. **Colocate state**: Keep state near where it's used
 
-
 ## Summary
 
 State management ranges from local useState to global Redux/Zustand and server state React Query. Choose based on complexity: local state for component data, Context for global data, Redux/Zustand for complex logic, React Query for server data.

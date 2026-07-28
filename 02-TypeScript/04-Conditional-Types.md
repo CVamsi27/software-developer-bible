@@ -300,7 +300,6 @@ type Resolve<T> = T extends Promise<infer U> ? Resolve<U> : T;
 - **Caching**: TypeScript caches conditional type results
 - **Infinite recursion**: Guard against infinite type recursion
 
-
 ## Summary
 
 Conditional types are powerful for creating computed types. They enable type-level programming and are essential for advanced TypeScript patterns. Master `infer` and distribution to unlock the full potential of TypeScript's type system.

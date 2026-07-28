@@ -1119,7 +1119,6 @@ describe("Database", () => {
 
 ```
 
-
 ## Summary
 
 Jest is a comprehensive JavaScript testing framework that provides everything needed for modern application testing. Key takeaways:

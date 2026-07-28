@@ -626,7 +626,6 @@ class CircuitBreakerHealthCheck {
 - **Success threshold** - Number of successes before closing circuit
 - **Jitter** - Prevent thundering herd when circuit closes
 
-
 ## Summary
 
 Circuit Breaker is essential for building resilient microservices. It prevents cascade failures by stopping requests to failing services and providing fallback behavior. Key aspects include state management, threshold configuration, and monitoring.

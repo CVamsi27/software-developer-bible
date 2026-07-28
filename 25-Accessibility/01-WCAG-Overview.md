@@ -351,7 +351,6 @@ Robust - Content must be robust for assistive technologies
 - **Skip links**: No performance impact
 - **Focus management**: Important for SPA performance
 
-
 ## Summary
 WCAG provides guidelines for making web content accessible. Follow POUR principles, aim for Level AA compliance, use semantic HTML, and test with assistive technology. Accessibility is not just legal compliance but ethical responsibility and good business.
 

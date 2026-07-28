@@ -845,7 +845,6 @@ function getMemoryUsage() {
 
 ```
 
-
 ## Summary
 
 The Node.js event loop is the foundation of its non-blocking I/O architecture. Understanding the phases, microtasks, and how to avoid blocking is crucial for building performant applications. Key takeaways:

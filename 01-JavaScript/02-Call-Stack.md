@@ -769,7 +769,6 @@ function measureRecursion(): void {
 
 ```
 
-
 ## Summary
 
 The call stack is fundamental to JavaScript execution:

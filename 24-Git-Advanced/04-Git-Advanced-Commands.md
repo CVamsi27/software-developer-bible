@@ -367,7 +367,6 @@ git blame --date=short path/to/file
 - **Submodule**: Can be slow to update
 - **Sparse checkout**: Reduces disk usage
 
-
 ## Summary
 Git advanced commands provide powerful tools for debugging, recovery, and complex workflows. Master bisect for debugging, reflog for recovery, worktree for parallel work, and understand when to use revert vs reset. Practice these commands in safe environments before using in production.
 

@@ -788,7 +788,6 @@ class TemporalQueryService {
 - **Event compaction**: Remove old events or merge similar events
 - **Indexing**: Index events for efficient querying
 
-
 ## Summary
 
 Event Sourcing provides complete audit trails and temporal queries by storing immutable events. Combined with CQRS, it enables scalable read and write models. Key considerations include event design, versioning, and performance optimization.

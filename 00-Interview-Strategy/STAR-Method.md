@@ -941,17 +941,16 @@ RULES:
 *The STAR method transforms vague anecdotes into compelling evidence of your capabilities. Master it, and you'll ace every behavioral interview.*
 ---
 
-
 ## Summary
 
 The STAR method transforms vague anecdotes into compelling evidence of your capabilities. This guide covers the four components (Situation, Task, Action, Result), story bank strategies, technical templates, and common mistakes to avoid.
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
 
 ## References & Learn More
 
 - [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks
 - [Glassdoor](https://www.glassdoor.com/) — Company reviews and interview insights
 - [LeetCode Discuss](https://leetcode.com/discuss/) — Interview experiences
-
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)

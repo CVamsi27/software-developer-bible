@@ -360,7 +360,6 @@ ARIA has three main categories: Roles, States, and Properties:
 - **Dynamic updates**: Frequent updates can be overwhelming
 - **Caching**: Screen readers cache page structure
 
-
 ## Summary
 ARIA enhances accessibility for complex web applications. Use it when native HTML is insufficient, follow established patterns, and test with screen readers. Remember: first rule of ARIA is don't use ARIA if you can use native HTML.
 

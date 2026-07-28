@@ -559,7 +559,6 @@ gh run rerun <run-id>
 
 ```
 
-
 ## Summary
 
 GitHub Actions provides a powerful, integrated CI/CD platform. Workflows are defined in YAML, triggered by events, and executed on runners. Key features include matrix builds, caching, secrets management, and reusable workflows.

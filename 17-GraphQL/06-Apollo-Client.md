@@ -1060,7 +1060,6 @@ const cache = new InMemoryCache({
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

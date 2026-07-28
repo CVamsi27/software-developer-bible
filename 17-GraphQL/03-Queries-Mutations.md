@@ -1227,7 +1227,6 @@ const resolvers = {
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

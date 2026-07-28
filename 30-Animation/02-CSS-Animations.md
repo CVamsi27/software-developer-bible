@@ -582,7 +582,6 @@ CSS Animation Performance:
 
 ```
 
-
 ## Summary
 
 CSS animations provide a performant, declarative way to create smooth animations. Master transitions, keyframes, transforms, and performance optimization for excellent user experiences.

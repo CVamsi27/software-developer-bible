@@ -984,7 +984,6 @@ alerts:
 | Caching | Redis | Memcached | Redis (rich data) |
 | Delivery | Synchronous | Async | Async (scalability) |
 
-
 ## Summary
 
 The Notification Service system design covers:

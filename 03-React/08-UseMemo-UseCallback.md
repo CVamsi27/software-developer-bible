@@ -680,7 +680,6 @@ const Parent = () => {
 | Function in useEffect deps | ❌ | ✅ |
 | Simple computation | ❌ | ❌ |
 
-
 ## Summary
 
 `useMemo` and `useCallback` are performance optimization hooks that memoize computed values and functions. They prevent unnecessary re-computations and re-creations, which can prevent child re-renders when combined with `React.memo`. Use them for expensive computations and functions passed to memoized children.

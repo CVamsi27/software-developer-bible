@@ -514,7 +514,6 @@ Animation Performance:
 
 ```
 
-
 ## Summary
 
 Framer Motion provides a powerful, declarative API for creating performant animations in React. Master its components, gestures, and layout animations to build delightful user experiences.

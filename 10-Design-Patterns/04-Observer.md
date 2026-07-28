@@ -886,7 +886,6 @@ class ConcreteObserver implements Observer {
 
 5. **Priority Ordering**: If observers have priorities, use a priority queue.
 
-
 ## Summary
 
 The Observer pattern is essential for event-driven programming and reactive systems. It provides loose coupling between subjects and observers, automatic notifications, and dynamic relationships. Use it for UI updates, event handling, notifications, and real-time data synchronization.

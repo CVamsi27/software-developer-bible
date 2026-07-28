@@ -627,7 +627,6 @@ check() {
 
 5. **Load Balancing**: Distribute messages across service instances.
 
-
 ## Summary
 
 NestJS Microservices provide a complete framework for building distributed systems with multiple transport layers. They enable independent scaling, deployment, and technology choices. Key concepts include message/event patterns, transport selection, service discovery, and fault tolerance. Microservices are best suited for complex domains with clear service boundaries.

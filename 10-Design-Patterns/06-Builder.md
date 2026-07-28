@@ -1005,7 +1005,6 @@ class ServerBuilder implements Builder<ServerConfig> { ... }
 
 5. **Validation**: Validate in build method to catch errors early.
 
-
 ## Summary
 
 The Builder pattern is essential for creating complex objects with many optional parameters. It improves readability, flexibility, and testability. Use it when you need step-by-step construction, immutable objects, or many configuration options.

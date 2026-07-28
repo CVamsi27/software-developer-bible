@@ -979,7 +979,6 @@ class DatabaseFacade {
 
 5. **Lazy Initialization**: Initialize subsystems only when needed.
 
-
 ## Summary
 
 The Facade pattern is essential for simplifying complex systems and providing unified interfaces. It improves readability, reduces coupling, and makes systems easier to use. Use it to hide subsystem complexity, layer your system, or provide simplified APIs.

@@ -1188,7 +1188,6 @@ class GoodTransform extends Transform {
 
 ```
 
-
 ## Summary
 
 Streams are essential for processing large data efficiently in Node.js. Key takeaways:

@@ -520,7 +520,6 @@ const hasPermission = async (
 | Cache Invalidation | Invalidate cache on role/permission changes |
 | Real-time Updates | Use pub/sub for permission changes |
 
-
 ## Summary
 
 RBAC is a scalable and manageable approach to access control that assigns permissions to roles and users to roles. Key takeaways:

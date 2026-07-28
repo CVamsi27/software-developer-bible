@@ -586,7 +586,6 @@ if ('memory' in performance) {
 
 ```
 
-
 ## Summary
 
 Garbage collection is essential for JavaScript:

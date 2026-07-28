@@ -482,7 +482,6 @@ For simple, static UIs, the Virtual DOM adds overhead compared to no updates at 
 - **Selective updates**: When only a small part of the UI changes
 - **Cross-browser**: Consistent behavior across different browsers
 
-
 ## Summary
 
 The Virtual DOM is React's core innovation that enables declarative UI development with acceptable performance. It creates an in-memory representation of the UI, diffs it efficiently with O(n) complexity, and applies minimal batched updates to the real DOM. While it adds overhead compared to direct manipulation, it dramatically simplifies UI development and provides consistent performance across complex applications.

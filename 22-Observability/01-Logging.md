@@ -431,7 +431,6 @@ export default rotatedLogger;
 - **Set max log size** and rotation to prevent disk exhaustion
 - **Lazy serialization** — only serialize objects when log level is enabled (`logger.debug({ expensive: computeExpensive() })` won't serialize if debug is disabled)
 
-
 ## Summary
 
 Logging is the most fundamental pillar of observability. Structured JSON logging with correlation IDs, appropriate log levels, and centralized aggregation gives teams the ability to debug production issues, audit compliance, and understand system behavior. Choose Pino for performance, Winston for features, and always redact sensitive data at the logger layer.

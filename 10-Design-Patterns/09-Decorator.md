@@ -996,7 +996,6 @@ const decorated = new CachingDecorator(
 
 5. **Batch Operations**: Implement batch operations in decorators for better performance.
 
-
 ## Summary
 
 The Decorator pattern is essential for adding behavior to objects dynamically. It promotes the Open/Closed Principle, enables flexible composition, and avoids class explosion. Use it for cross-cutting concerns, middleware, and extending functionality without modifying existing code.

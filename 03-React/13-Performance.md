@@ -208,7 +208,6 @@ const SearchApp = () => {
 | Time to Interactive | < 3.8s | Lighthouse |
 | Cumulative Layout Shift | < 0.1 | Lighthouse |
 
-
 ## Summary
 
 React performance optimization involves memoization, virtualization, code splitting, and concurrent features. Profile before optimizing, focus on actual bottlenecks, and balance performance with code maintainability.

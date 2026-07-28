@@ -725,7 +725,6 @@ const UserForm = () => {
 | Complex update logic | ❌ | ✅ |
 | Testing | ✅ | ✅ |
 
-
 ## Summary
 
 `useState` is the fundamental React Hook for adding state to function components. It provides a stateful value and a setter function. Key features include functional updates, lazy initialization, and automatic batching. Understanding `useState` is crucial for building interactive React applications.

@@ -1049,7 +1049,6 @@ jobs:
 
 ```
 
-
 ## Summary
 
 E2E testing is essential for verifying complete user workflows. Key principles:

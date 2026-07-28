@@ -961,7 +961,6 @@ alerts:
 | Surge Pricing | Static rules | ML-based dynamic | Static rules (simpler, predictable) |
 | ETA Calculation | Direct API call | Cached + real-time hybrid | Hybrid for accuracy + speed |
 
-
 ## Summary
 
 The Uber system design covers:

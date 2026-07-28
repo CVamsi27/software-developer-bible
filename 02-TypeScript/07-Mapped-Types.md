@@ -468,7 +468,6 @@ type NullableKeys<T> = {
 - **IDE**: Complex mapped types may affect IDE performance
 - **Caching**: TypeScript caches mapped type results
 
-
 ## Summary
 
 Mapped types are essential for type transformation in TypeScript. They enable bulk operations on object properties and are the foundation for many utility types. Master them to create flexible, type-safe code.

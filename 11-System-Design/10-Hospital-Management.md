@@ -1031,7 +1031,6 @@ alerts:
 | Audit | Synchronous | Asynchronous | Synchronous (HIPAA) |
 | Scheduling | Optimistic | Pessimistic | Pessimistic |
 
-
 ## Summary
 
 The Hospital Management system design covers:

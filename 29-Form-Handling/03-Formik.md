@@ -588,7 +588,6 @@ Formik Performance:
 
 ```
 
-
 ## Summary
 
 Formik provides a comprehensive solution for form management in React. While it offers excellent developer experience, consider React Hook Form for better performance in large forms.

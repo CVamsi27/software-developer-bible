@@ -370,7 +370,6 @@ function TransferForm() {
 | Network Overhead | Extra header per request |
 | Memory Usage | Token storage is minimal |
 
-
 ## Summary
 
 CSRF is a serious web security vulnerability that exploits the trust between a user's browser and web application. Key takeaways:

@@ -677,7 +677,6 @@ kubectl rollout history deployment/myapp
 
 ```
 
-
 ## Summary
 
 Deployments are the standard way to manage stateless applications in Kubernetes. They provide rolling updates, rollbacks, and self-healing. Proper probe configuration, resource limits, and update strategies are essential for production reliability.

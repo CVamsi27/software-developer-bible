@@ -365,7 +365,6 @@ docker images myapp
 
 ```
 
-
 ## Summary
 
 Multi-stage builds separate build-time and run-time concerns, producing minimal, secure production images. They improve caching, reduce image sizes, and enable consistent dev/prod environments using a single Dockerfile with different target stages.

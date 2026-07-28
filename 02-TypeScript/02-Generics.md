@@ -429,7 +429,6 @@ function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
 - **Union types**: Generic constraints with unions can cause type explosion
 - **Conditional types**: Deep conditional generics can cause slow type checking
 
-
 ## Summary
 
 Generics are essential for writing reusable, type-safe TypeScript code. They allow you to create flexible functions, classes, and interfaces that work with multiple types while preserving type information. Use constraints to ensure type safety, and leverage TypeScript's type inference to minimize explicit type annotations.

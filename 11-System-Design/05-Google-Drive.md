@@ -952,7 +952,6 @@ alerts:
 | Consistency | Strong | Eventual | Strong for metadata |
 | Versioning | Full copies | Deltas | Full copies (simpler) |
 
-
 ## Summary
 
 The Google Drive system design covers:

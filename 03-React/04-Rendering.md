@@ -741,7 +741,6 @@ const Parent = () => {
 
 8. ✅ Lazy load heavy components
 
-
 ## Summary
 
 Rendering in React is the process of calling component functions to produce a Virtual DOM tree. It has two phases: render (interruptible, no side effects) and commit (synchronous, applies DOM changes). Understanding rendering is crucial for performance optimization, debugging, and using concurrent features effectively.

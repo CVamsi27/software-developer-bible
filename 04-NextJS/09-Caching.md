@@ -595,7 +595,6 @@ Optimization:
 
 ```
 
-
 ## Summary
 
 | Cache Layer | Location | Purpose | Revalidation |

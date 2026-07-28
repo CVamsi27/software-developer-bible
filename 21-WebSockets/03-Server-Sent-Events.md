@@ -981,7 +981,6 @@ SSE provides good latency for server-push use cases
 
 ```
 
-
 ## Summary
 
 SSE is ideal for server-to-client streaming with:

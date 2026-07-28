@@ -1219,7 +1219,6 @@ module.exports = {
 
 ```
 
-
 ## Summary
 
 Integration testing is essential for verifying that components work together correctly. Key principles:

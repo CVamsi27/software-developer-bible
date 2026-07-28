@@ -598,7 +598,6 @@ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 
 ```
 
-
 ## Summary
 
 Services provide stable networking for Pods. Ingress manages external HTTP/HTTPS access. Together, they enable service discovery, load balancing, and external traffic management in Kubernetes.

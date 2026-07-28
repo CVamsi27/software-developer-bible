@@ -684,7 +684,6 @@ class ExpensiveService {
 
 5. **Testing Impact**: Singletons make unit testing harder as they maintain state between tests.
 
-
 ## Summary
 
 The Singleton pattern is a powerful tool for ensuring a single instance and global access, but it should be used judiciously. Modern applications often prefer dependency injection and module patterns for better testability and flexibility. Use Singleton when you genuinely need exactly one instance and understand the trade-offs.

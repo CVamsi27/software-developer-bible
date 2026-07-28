@@ -647,7 +647,6 @@ function* fibonacciMemo(): Generator<number> {
 
 ```
 
-
 ## Summary
 
 Generators are powerful for lazy evaluation:

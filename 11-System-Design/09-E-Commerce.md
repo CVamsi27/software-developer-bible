@@ -1175,7 +1175,6 @@ alerts:
 | Order Processing | Sync | Async | Async (Kafka) |
 | Product Cache | Write-through | Cache-aside | Cache-aside |
 
-
 ## Summary
 
 The E-Commerce system design covers:

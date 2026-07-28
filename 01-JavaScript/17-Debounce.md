@@ -608,7 +608,6 @@ const Component = () => {
 
 ```
 
-
 ## Summary
 
 Debouncing is essential for performance:

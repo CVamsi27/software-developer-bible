@@ -670,7 +670,6 @@ Core Web Vitals Impact:
 
 ```
 
-
 ## Summary
 
 | Feature | Next.js Image |

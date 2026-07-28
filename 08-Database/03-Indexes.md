@@ -449,7 +449,6 @@ CREATE INDEX idx_active ON users(email) WHERE is_active = true;
 
 ```
 
-
 ## Summary
 
 Indexes are essential for query performance but come with write overhead. B-tree is the default and most versatile type. Use composite indexes with proper column ordering. Partial and covering indexes optimize specific queries. Always use EXPLAIN ANALYZE to verify index usage. Monitor index health and remove unused indexes.

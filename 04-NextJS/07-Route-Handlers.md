@@ -719,7 +719,6 @@ Optimization:
 
 ```
 
-
 ## Summary
 
 | Feature | Route Handlers |

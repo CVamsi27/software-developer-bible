@@ -754,7 +754,6 @@ Optimization:
 
 ```
 
-
 ## Summary
 
 | Feature | Server Actions |

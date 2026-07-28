@@ -566,7 +566,6 @@ GROUP BY mode;
 
 ```
 
-
 ## Summary
 
 Choose optimistic locking for low-contention scenarios; use pessimistic locking for high contention. Optimistic uses version columns and checks at commit time; pessimistic uses SELECT FOR UPDATE. Always implement retry logic for optimistic locking. Use consistent lock ordering to prevent deadlocks with pessimistic locking.

@@ -326,7 +326,6 @@ END;
 | Query Caching | Parameterized queries enable query plan caching |
 | Index Usage | Proper parameterization preserves index usage |
 
-
 ## Summary
 
 SQL Injection is a critical vulnerability that can lead to complete data compromise. Key takeaways:

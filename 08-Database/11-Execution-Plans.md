@@ -416,7 +416,6 @@ SET work_mem = '256MB';  -- Increase for complex queries
 
 ```
 
-
 ## Summary
 
 EXPLAIN ANALYZE is essential for query optimization. Understand scan types (Seq Scan, Index Scan, Index Only Scan), join algorithms (Nested Loop, Hash Join, Merge Join), and cost estimates. Always check buffers for I/O impact. Update statistics regularly and verify index usage.

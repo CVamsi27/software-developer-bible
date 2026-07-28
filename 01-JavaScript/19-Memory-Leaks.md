@@ -595,7 +595,6 @@ function processItems(items: any[]) {
 
 ```
 
-
 ## Summary
 
 Memory leaks are critical to prevent:

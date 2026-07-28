@@ -534,7 +534,6 @@ app.post("/xml-data", express.text({ type: "application/xml" }), (req, res) => {
 | Security Headers | Negligible performance impact |
 | SSRF Prevention | DNS resolution adds latency |
 
-
 ## Summary
 
 Web security is a comprehensive approach to protecting web applications from attacks. Key takeaways:

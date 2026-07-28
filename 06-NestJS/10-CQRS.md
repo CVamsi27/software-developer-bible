@@ -526,7 +526,6 @@ export class GetUserHandler {
 
 5. **Scaling**: Commands and queries can scale independently.
 
-
 ## Summary
 
 CQRS separates read and write operations into different models, enabling independent optimization, scalability, and event-driven architectures. In NestJS, the `@nestjs/cqrs` library provides command/query buses, handlers, and events. CQRS is most valuable in complex domains with different read/write requirements.

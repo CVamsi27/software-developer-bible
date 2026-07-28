@@ -804,7 +804,6 @@ res.status(429).json({
 - **Connection pooling** - Reuse Redis connections
 - **Async processing** - Don't block on rate limit checks
 
-
 ## Summary
 
 Rate limiting is essential for API protection and fair usage. Token bucket is the most flexible algorithm, allowing bursts while maintaining average rates. Always include rate limit headers and Retry-After on 429 responses. Use distributed storage for multi-server setups and consider tiered limits for different user plans.

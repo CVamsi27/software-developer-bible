@@ -489,7 +489,6 @@ kubectl get pod myapp -o jsonpath='{.spec.containers[*].livenessProbe}'
 
 ```
 
-
 ## Summary
 
 Health checks enable self-healing and traffic management. Startup probes handle initialization, liveness probes ensure ongoing health, and readiness probes control traffic routing. Proper probe configuration is essential for production reliability.

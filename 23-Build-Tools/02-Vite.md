@@ -271,7 +271,6 @@ export default defineConfig({
 - **Pre-bundling**: Dependencies are pre-bundled with esbuild (10-100x faster than Webpack)
 - **Source maps**: Use `hidden` for production to reduce bundle size
 
-
 ## Summary
 Vite represents a paradigm shift in frontend tooling, offering instant development servers and optimized production builds. Its use of native ES modules for development and Rollup for production makes it fast, simple, and powerful. While it has some limitations, its benefits in developer experience and performance make it an excellent choice for modern web applications.
 

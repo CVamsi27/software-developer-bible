@@ -403,7 +403,6 @@ type InternalState = {
 - **Circular references**: Both handle circular references, but interfaces handle them more gracefully
 - **IDE experience**: Interfaces often provide better error messages and autocomplete
 
-
 ## Summary
 
 | Feature | Type | Interface |

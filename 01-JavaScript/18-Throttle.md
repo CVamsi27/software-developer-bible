@@ -561,7 +561,6 @@ const Component = () => {
 
 ```
 
-
 ## Summary
 
 Throttling is essential for performance:

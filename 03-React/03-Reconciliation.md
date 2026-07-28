@@ -675,7 +675,6 @@ const Parent = () => {
 - Deep component hierarchies
 - Many different component types changing
 
-
 ## Summary
 
 Reconciliation is React's core algorithm that determines how to efficiently update the UI. By comparing Virtual DOM trees with O(n) complexity using heuristics (type comparison and keys), React minimizes expensive DOM operations. Understanding reconciliation is crucial for writing performant React applications.

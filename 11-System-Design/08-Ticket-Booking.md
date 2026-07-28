@@ -981,7 +981,6 @@ alerts:
 | Ticket Storage | PDF | QR Code | QR Code (mobile-friendly) |
 | Flash Sale | Queue-based | Lock-based | Lock-based (simpler) |
 
-
 ## Summary
 
 The Ticket Booking system design covers:

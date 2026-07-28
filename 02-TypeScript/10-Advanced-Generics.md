@@ -502,7 +502,6 @@ const result = identity("hello"); // T is inferred as string
 - **Memory**: Large generic types consume more memory
 - **Caching**: TypeScript caches generic type results
 
-
 ## Summary
 
 Advanced generics enable sophisticated type-level programming in TypeScript. They're essential for building type-safe libraries, frameworks, and complex applications. Master constraints, conditional types, and variadic generics for maximum type safety.

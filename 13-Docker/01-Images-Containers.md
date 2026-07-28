@@ -351,7 +351,6 @@ docker scout cves myapp:1.0.0
 
 ```
 
-
 ## Summary
 
 Docker images are immutable, layered templates. Containers are ephemeral runtime instances. Mastering Dockerfiles, layer caching, multi-stage builds, and security practices is essential for any senior engineer. Images should be minimal, scanned, non-root, and reproducible.

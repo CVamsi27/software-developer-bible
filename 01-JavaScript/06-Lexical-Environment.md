@@ -441,7 +441,6 @@ console.log(c2()); // 1 — separate environment!
 - **Memory**: Closures that capture large scopes can cause memory pressure
 - **Debugging**: Deeply nested environments are harder to debug in DevTools
 
-
 ## Summary
 
 Lexical environments are the internal mechanism that implements JavaScript's scoping rules. They consist of an environment record (storing variable bindings) and a reference to an outer environment (forming the scope chain). Understanding lexical environments is essential for mastering closures, hoisting, block scoping, and the module pattern.

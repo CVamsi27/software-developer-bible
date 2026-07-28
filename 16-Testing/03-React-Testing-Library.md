@@ -1257,7 +1257,6 @@ await waitFor(() => {});
 
 ```
 
-
 ## Summary
 
 React Testing Library is the standard for testing React applications because it:

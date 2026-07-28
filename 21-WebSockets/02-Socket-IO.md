@@ -1072,7 +1072,6 @@ const io = new Server(httpServer, {
 
 ```
 
-
 ## Summary
 
 Socket.io simplifies real-time communication with:

@@ -389,7 +389,6 @@ const regular = new Map();
 
 \* `Object.keys(obj).length` requires enumerating all keys
 
-
 ## Summary
 
 Map, Set, WeakMap, and WeakSet are essential ES6 collections. Map provides better key-value storage than plain objects for most use cases. Set efficiently enforces uniqueness. WeakMap and WeakSet enable memory-safe metadata and tracking without preventing garbage collection. Choose the right collection based on your key types, iteration needs, and memory requirements.

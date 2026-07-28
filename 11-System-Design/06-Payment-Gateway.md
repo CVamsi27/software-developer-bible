@@ -1061,7 +1061,6 @@ alerts:
 | Webhooks | Synchronous | Async with retry | Async with retry |
 | Reconciliation | Real-time | Batch | Batch (daily) |
 
-
 ## Summary
 
 The Payment Gateway system design covers:

@@ -651,7 +651,6 @@ Performance Costs:
 
 ```
 
-
 ## Summary
 
 | Feature | Pages Router | App Router |

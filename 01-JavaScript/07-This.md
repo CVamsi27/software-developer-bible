@@ -755,7 +755,6 @@ const obj = {
 
 ```
 
-
 ## Summary
 
 `this` is a powerful but confusing JavaScript feature:

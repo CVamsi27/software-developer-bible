@@ -546,7 +546,6 @@ kubectl patch svc myapp -p '{"spec":{"selector":{"version":"blue"}}}'
 
 ```
 
-
 ## Summary
 
 Blue-green provides instant traffic switching and rollback. Canary enables gradual rollout with validation. Feature flags decouple deployment from release. Choose based on risk tolerance, rollback needs, and validation requirements.

@@ -1225,7 +1225,6 @@ class CacheLayer {
 
 ---
 
-
 ## Summary
 
 This guide covers the essential concepts, code examples, and best practices for this topic. Use it as a comprehensive reference for interview preparation and day-to-day development.

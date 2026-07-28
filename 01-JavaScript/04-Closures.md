@@ -742,7 +742,6 @@ function createClosureWithCleanup() {
 
 ```
 
-
 ## Summary
 
 Closures are a powerful JavaScript feature:

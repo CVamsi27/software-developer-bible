@@ -1207,7 +1207,6 @@ beforeEach(() => {
 
 ```
 
-
 ## Summary
 
 Mocking is essential for isolating tests and controlling the test environment. Key principles:

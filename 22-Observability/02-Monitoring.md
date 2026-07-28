@@ -468,7 +468,6 @@ setInterval(() => {
 - **Scrape interval** — 15s is standard; shorter intervals increase storage without proportional value
 - **Retention** — Prometheus stores ~15 days by default; use Thanos/Mimir for long-term storage
 
-
 ## Summary
 
 Monitoring transforms raw metrics into actionable visibility. Use the RED/USE/Four Golden Signals frameworks to ensure comprehensive coverage. Instrument with Prometheus, visualize with Grafana, and alert with SLO-based burn rates. Control label cardinality, version dashboards, and maintain alert hygiene to keep the system useful.

@@ -1054,7 +1054,6 @@ class StatelessHandler extends BaseHandler {
 
 5. **Lazy Initialization**: Initialize handlers only when needed.
 
-
 ## Summary
 
 The Chain of Responsibility pattern is essential for processing pipelines and middleware. It enables flexible request handling, loose coupling, and single responsibility. Use it for validation, authentication, logging, and any scenario where requests need to pass through multiple handlers.

@@ -840,7 +840,6 @@ const token = jwt.sign({ sub: user.id }, JWT_SECRET, { expiresIn: '1h' });
 - **Certificate caching** - Cache JWKS for RSA tokens
 - **Connection pooling** - Reuse database connections
 
-
 ## Summary
 
 API authentication is critical for security. JWT is the most common choice for modern APIs due to its stateless nature. Always use HTTPS, implement token rotation, and handle expiration properly. For complex systems, consider OAuth 2.0 and multi-factor authentication. Regular security audits and monitoring are essential.

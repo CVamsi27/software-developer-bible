@@ -467,7 +467,6 @@ GROUP BY mode;
 
 ```
 
-
 ## Summary
 
 Deadlocks occur when transactions wait for each other in a circular pattern. PostgreSQL detects and resolves them automatically. Prevent deadlocks with consistent lock ordering, short transactions, and appropriate lock modes. Use optimistic locking for read-heavy workloads and SKIP LOCKED for task queues.

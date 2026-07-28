@@ -986,7 +986,6 @@ const pool = require('generic-pool').createPool({
 
 ```
 
-
 ## Summary
 
 Clustering is essential for scaling Node.js applications across multiple CPU cores. Key takeaways:

@@ -820,7 +820,6 @@ Factory.register('sms', () => new SMSNotification());
 
 5. **Compilation Time**: TypeScript generics and interfaces add compile-time safety with no runtime cost.
 
-
 ## Summary
 
 The Factory pattern is essential for creating objects without specifying concrete classes. It promotes loose coupling, improves testability, and makes code more maintainable. Use Simple Factory for basic creation, Factory Method for subclass-based creation, and Abstract Factory for creating families of related objects.

@@ -566,7 +566,6 @@ app.use(cors({
 - **Avoid wildcard** - More processing for origin validation
 - **Async origin checking** - Don't block on origin validation
 
-
 ## Summary
 
 CORS is essential for secure cross-origin communication. Always specify allowed origins instead of using wildcards, handle preflight requests, and set appropriate maxAge for caching. Test CORS thoroughly and monitor for issues. Remember that CORS is a browser mechanism; server-to-server requests don't have CORS restrictions.

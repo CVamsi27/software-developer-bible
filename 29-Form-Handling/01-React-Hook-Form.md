@@ -536,7 +536,6 @@ React Hook Form Performance:
 
 ```
 
-
 ## Summary
 
 React Hook Form provides a performant, developer-friendly approach to form management in React. Master its API, validation integration, and best practices for building excellent forms.

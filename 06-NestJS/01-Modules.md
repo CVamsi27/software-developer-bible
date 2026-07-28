@@ -583,7 +583,6 @@ export class AppModule {}
 
 6. **Module Caching**: NestJS caches module metadata. Restart the application if module structure changes in development.
 
-
 ## Summary
 
 Modules are NestJS's fundamental organizational unit that encapsulate related functionality, manage dependencies, and provide clear boundaries between different parts of an application. They enable modular architecture, dependency injection, code reuse, and testability. Understanding modules — including dynamic modules, module scoping, and best practices — is essential for building scalable NestJS applications.

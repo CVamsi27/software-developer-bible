@@ -829,7 +829,6 @@ class TaskScheduler {
 
 ```
 
-
 ## Summary
 
 The event loop is fundamental to JavaScript:

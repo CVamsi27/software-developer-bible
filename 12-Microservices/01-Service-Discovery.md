@@ -358,7 +358,6 @@ class DnsServiceDiscovery {
 - **DNS TTL**: 30-60 seconds for service records
 - **Connection pooling**: Reuse connections to discovered instances
 
-
 ## Summary
 
 Service Discovery is fundamental to microservices architecture, enabling dynamic service location without hardcoded addresses. Key concepts include client-side vs server-side discovery, health checks, and caching strategies. Modern implementations often use service meshes and integrate with container orchestration platforms.

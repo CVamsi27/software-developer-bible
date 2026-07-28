@@ -536,7 +536,6 @@ function Cache(
 - **Tree shaking**: Decorators may prevent tree shaking
 - **Debugging**: Decorators can make debugging harder
 
-
 ## Summary
 
 Decorators enable metaprogramming in TypeScript, allowing you to add behavior to classes and methods declaratively. They're essential for frameworks like Angular and NestJS. Understand both experimental and stage 3 decorator APIs.

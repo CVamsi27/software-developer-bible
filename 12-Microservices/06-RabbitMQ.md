@@ -710,7 +710,6 @@ class RabbitMQRequestReply {
 - **Connection pooling**: Reuse connections across consumers
 - **Batch publishing**: Increase throughput with batch sends
 
-
 ## Summary
 
 RabbitMQ is a versatile message broker ideal for microservices communication. It provides flexible routing, reliable delivery, and multiple messaging patterns. Key concepts include exchanges, queues, bindings, and acknowledgments.

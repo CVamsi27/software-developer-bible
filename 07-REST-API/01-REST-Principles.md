@@ -502,7 +502,6 @@ res.status(404).json({ error: 'Not found' });
 - Use connection pooling
 - Consider GraphQL for complex data requirements
 
-
 ## Summary
 
 REST is a powerful architectural style that leverages HTTP's existing features to create scalable, maintainable web services. Understanding its six constraints—client-server, stateless, cacheable, uniform interface, layered system, and code on demand—is essential for designing robust APIs. Following best practices like proper URI design, correct HTTP methods, appropriate status codes, and consistent response formats ensures your API is intuitive and maintainable.

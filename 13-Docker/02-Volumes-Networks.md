@@ -403,7 +403,6 @@ docker run --rm --network mynet alpine \
 
 ```
 
-
 ## Summary
 
 Volumes provide persistent storage for containers. Networks enable service discovery and isolation. Named volumes with health checks, internal networks with proper DNS, and secrets management are essential for production Docker deployments.

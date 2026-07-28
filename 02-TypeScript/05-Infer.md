@@ -331,7 +331,6 @@ type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H
 - **Distribution**: Infer interacts with distribution in conditional types
 - **Recursion**: Recursive infer can cause infinite type recursion
 
-
 ## Summary
 
 The `infer` keyword is essential for extracting types from complex type structures. It enables powerful type-level programming and is crucial for building type-safe libraries and frameworks. Master infer to unlock advanced TypeScript patterns.

@@ -514,7 +514,6 @@ type Handler = (...args: Parameters<typeof originalHandler>) => void;
 - **IDE**: Complex utility types may affect IDE performance
 - **Tree shaking**: No impact on bundle size
 
-
 ## Summary
 
 Utility types are essential tools for type transformation in TypeScript. Master them to write cleaner, more maintainable code. They're especially useful for creating DTOs, API responses, and React component props.

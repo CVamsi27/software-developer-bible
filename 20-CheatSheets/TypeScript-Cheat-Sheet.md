@@ -300,7 +300,6 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 
 ---
 
-
 ## Summary
 
 This cheat sheet provides a concise reference to core TypeScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.

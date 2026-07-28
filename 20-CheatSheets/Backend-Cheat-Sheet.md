@@ -425,7 +425,6 @@ async transfer(fromId: string, toId: string, amount: number) {
 
 ---
 
-
 ## Summary
 
 This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.

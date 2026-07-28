@@ -470,7 +470,6 @@ SET lock_timeout = '10s';
 
 ```
 
-
 ## Summary
 
 Transactions ensure data consistency through ACID properties. PostgreSQL defaults to Read Committed isolation. Use FOR UPDATE for read-modify-write patterns. Keep transactions short to minimize lock duration. Handle deadlocks and serialization failures with retry logic. Understand MVCC for proper concurrency control.

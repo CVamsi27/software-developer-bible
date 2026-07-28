@@ -890,7 +890,6 @@ alerts:
 | Encoding | H.264 (compatible) | H.265 (efficient) | Both (device support) |
 | Recommendations | Collaborative filtering | Content-based | Hybrid approach |
 
-
 ## Summary
 
 The Netflix system design covers:

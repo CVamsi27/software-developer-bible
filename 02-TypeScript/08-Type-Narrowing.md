@@ -476,7 +476,6 @@ function assertNever(x: never): never {
 - **Bundle size**: No impact on bundle size
 - **Debugging**: Narrowed types improve debugging experience
 
-
 ## Summary
 
 Type narrowing is essential for writing safe TypeScript code. It allows you to work with specific types within conditional blocks and catch type errors at compile time. Master discriminated unions, type guards, and exhaustive checking for robust type-safe code.

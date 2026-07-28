@@ -654,7 +654,6 @@ async function fetchWithFallback() {
 
 ```
 
-
 ## Summary
 
 Async/await is the modern way to handle asynchronous JavaScript:

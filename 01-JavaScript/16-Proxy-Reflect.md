@@ -430,7 +430,6 @@ const good = new Proxy({}, {
 - **Memory**: Proxy creates a new wrapper object; the target remains unmodified
 - **V8 optimization**: Proxies can prevent V8's inline caching optimizations
 
-
 ## Summary
 
 Proxy and Reflect are powerful metaprogramming tools in JavaScript. Proxy wraps an object to intercept operations via handler traps, while Reflect provides default implementations for those traps. Used together, they enable validation, reactivity, logging, access control, and virtualization patterns. Use them judiciously — they add flexibility but incur performance overhead.

@@ -484,7 +484,6 @@ menu.addEventListener('keydown', (e) => {
 - **Skip links**: No performance impact
 - **Keyboard shortcuts**: Consider performance impact
 
-
 ## Summary
 Keyboard navigation is essential for accessibility. Use semantic HTML, proper tabindex, skip links, and support arrow keys for composite widgets. Test with keyboard only and follow established patterns. Remember: if you can't reach it with Tab, it's not accessible.
 

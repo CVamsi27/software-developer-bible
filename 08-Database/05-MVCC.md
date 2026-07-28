@@ -457,7 +457,6 @@ WHERE relname = 'accounts';
 
 ```
 
-
 ## Summary
 
 MVCC enables high concurrency by maintaining multiple versions of data. Each transaction sees a consistent snapshot without blocking others. Understanding xmin/xmax, vacuum, and transaction ID lifecycle is crucial. Keep transactions short to prevent bloat. Monitor dead tuples and xid age regularly.

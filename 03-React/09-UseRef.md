@@ -729,7 +729,6 @@ const Component = () => {
 - **Direct DOM access**: Faster than state-driven updates
 - **Memory efficient**: Single object persisted across renders
 
-
 ## Summary
 
 `useRef` is a versatile React Hook for DOM access and persistent values. It creates a mutable reference object that persists across renders without triggering re-renders. Key features include DOM ref assignment, `forwardRef` for child component access, and `useImperativeHandle` for limiting exposed methods.

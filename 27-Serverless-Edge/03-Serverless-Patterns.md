@@ -557,7 +557,6 @@ Pattern Selection Guide:
 
 ```
 
-
 ## Summary
 
 Serverless patterns provide proven solutions for common architectural challenges. Understand when to use each pattern, how to implement them correctly, and how to handle failures gracefully.

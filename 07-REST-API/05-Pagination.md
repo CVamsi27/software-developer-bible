@@ -744,7 +744,6 @@ res.json({
 - **Count queries** - Can be expensive; consider caching
 - **Partial responses** - Use field selection to reduce payload
 
-
 ## Summary
 
 Pagination is essential for efficient API design. Offset-based pagination is simple but can be inefficient for large datasets. Cursor-based pagination is more performant for large datasets and real-time data. Always include pagination metadata, navigation links, and validate inputs. Choose the pagination strategy based on your data size, access patterns, and consistency requirements.

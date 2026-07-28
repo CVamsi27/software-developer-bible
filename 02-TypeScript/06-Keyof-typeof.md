@@ -395,7 +395,6 @@ type Optional<T> = {
 - **Large objects**: typeof on large objects can create complex types
 - **Union size**: keyof on large types creates large unions
 
-
 ## Summary
 
 `keyof` and `typeof` are fundamental TypeScript operators for type-safe property access and type inference. They enable powerful patterns like type-safe object manipulation, enum-like objects, and generic constraints. Master them to write more robust TypeScript code.

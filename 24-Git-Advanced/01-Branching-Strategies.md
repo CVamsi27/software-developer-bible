@@ -229,7 +229,6 @@ git merge feature/new-checkout-flow
 - **Repository size**: Avoid large binary files in branches
 - **Pull request size**: Keep small for easier reviews
 
-
 ## Summary
 Branching strategies are essential for managing code changes in teams. Choose a strategy based on your team size, release cadence, and deployment process. Common strategies include Git Flow, GitHub Flow, and trunk-based development. The key is consistency and team alignment.
 

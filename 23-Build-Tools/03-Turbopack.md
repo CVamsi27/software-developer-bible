@@ -253,7 +253,6 @@ npx turbo run dev --watch
 - **Rust Performance**: Native code for maximum speed
 - **Parallel Processing**: Multi-core utilization
 
-
 ## Summary
 Turbopack represents the future of frontend bundling, offering unprecedented performance through incremental computation and Rust implementation. While still in development, it shows immense potential for large-scale applications and monorepos. Its integration with Next.js and Turborepo makes it a compelling choice for modern web development.
 

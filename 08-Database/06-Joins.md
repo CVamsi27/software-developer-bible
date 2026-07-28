@@ -508,7 +508,6 @@ INCLUDE (total, created_at);
 
 ```
 
-
 ## Summary
 
 Joins combine data from multiple tables. INNER JOIN returns only matches; LEFT/RIGHT/FULL JOIN include non-matches. LATERAL JOIN enables correlated subqueries. Always index join columns and use EXPLAIN ANALYZE to verify performance. Choose the right join type based on your data requirements.

@@ -931,7 +931,6 @@ if (complexity > 1000) {
 
 ---
 
-
 ## Summary
 
 | Aspect | Key Takeaway |

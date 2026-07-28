@@ -649,7 +649,6 @@ export class OrderSagaService {
 - **Caching** - Cache frequently accessed data
 - **Connection pooling** - Reuse connections to services
 
-
 ## Summary
 
 Saga Pattern enables distributed transactions in microservices using local transactions and compensation. Choose choreography for simple, decoupled flows or orchestration for complex business logic. Key considerations include idempotency, compensation design, and monitoring.

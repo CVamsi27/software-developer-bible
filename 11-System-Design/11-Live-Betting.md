@@ -1066,7 +1066,6 @@ alerts:
 | Settlement | Real-time | Batch | Real-time for UX |
 | Cash Out | Pre-calculated | On-demand | On-demand |
 
-
 ## Summary
 
 The Live Betting system design covers:

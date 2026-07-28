@@ -516,7 +516,6 @@ helm install myrelease ./mychart -f values-prod.yaml
 
 ```
 
-
 ## Summary
 
 Helm simplifies Kubernetes application management through charts, templating, and release management. It enables versioned deployments, rollbacks, and configuration management. Essential for managing complex applications in production.

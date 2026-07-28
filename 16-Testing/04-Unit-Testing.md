@@ -1273,7 +1273,6 @@ module.exports = {
 
 ```
 
-
 ## Summary
 
 Unit testing is the foundation of a robust test suite. Key principles:

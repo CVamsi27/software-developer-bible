@@ -626,7 +626,6 @@ export class UserService {
 
 6. **Connection Pooling**: Reuse database connections through singleton repositories.
 
-
 ## Summary
 
 Providers are NestJS's core building blocks that implement business logic, data access, and utility functions. They leverage dependency injection for automatic instantiation and dependency resolution. Understanding provider types (class, factory, value, existing), scopes (singleton, transient, request), and patterns is essential for building well-architected NestJS applications.

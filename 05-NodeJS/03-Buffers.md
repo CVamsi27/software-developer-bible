@@ -938,7 +938,6 @@ const buffer = Buffer.from(int32Array.buffer);
 
 ```
 
-
 ## Summary
 
 Buffers are essential for binary data handling in Node.js. Key takeaways:

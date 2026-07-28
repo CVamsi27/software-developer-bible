@@ -503,7 +503,6 @@ CMD ["node", "dist/server.js"]
 - **Timeout per check** — set 2-3s max per dependency to prevent health check hangs
 - **Startup probe interval** — set longer intervals (5-10s) to avoid flooding during startup
 
-
 ## Summary
 
 Health checks are the foundation of service reliability. Implement liveness (process state), readiness (dependency state), and startup (initialization) probes. Keep liveness independent of external services. Monitor health check failure rates and include dependency status in responses.

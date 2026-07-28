@@ -746,7 +746,6 @@ async findOne(@Param('id') id: string) {
 
 6. **Connection Pooling**: Use connection pooling for database operations.
 
-
 ## Summary
 
 Controllers are NestJS's HTTP handling layer that define routes, validate input, and delegate business logic to services. They provide decorator-based route definition, built-in validation support, and seamless integration with guards, interceptors, and pipes. Proper controller design follows thin controller principles, uses DTOs for validation, and returns appropriate HTTP responses.

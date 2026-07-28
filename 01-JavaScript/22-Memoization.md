@@ -481,7 +481,6 @@ function memoizeWithStats<T extends (...args: any[]) => any>(fn: T) {
 
 ```
 
-
 ## Summary
 
 Memoization is a powerful optimization:

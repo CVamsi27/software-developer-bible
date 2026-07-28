@@ -391,7 +391,6 @@ Cold Start Optimization:
 
 ```
 
-
 ## Summary
 
 Serverless computing provides a powerful model for building scalable, cost-effective applications without managing infrastructure. Understand Lambda's execution model, cold start optimization, and best practices for production deployments.

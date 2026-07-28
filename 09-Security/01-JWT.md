@@ -325,7 +325,6 @@ const isTokenBlacklisted = async (token: string): Promise<boolean> => {
 | Memory Usage | Stateless tokens reduce server memory vs session stores |
 | Network Overhead | Tokens in every request add ~500-1000 bytes per request |
 
-
 ## Summary
 
 JWT is a powerful stateless authentication mechanism that enables scalable, decoupled authorization across distributed systems. Key takeaways:

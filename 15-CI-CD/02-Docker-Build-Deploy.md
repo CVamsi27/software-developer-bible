@@ -466,7 +466,6 @@ docker push myapp:latest
 
 ```
 
-
 ## Summary
 
 A Docker build pipeline automates image creation, testing, and deployment. Key components include CI/CD workflows, container registries, image tagging, and deployment strategies. Proper implementation ensures consistent, secure, and efficient deployments.

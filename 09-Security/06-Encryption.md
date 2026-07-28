@@ -388,7 +388,6 @@ prisma.$use(async (params, next) => {
 | Argon2 | Memory-hard, slower but more secure |
 | TLS Overhead | Minimal with modern hardware (< 1ms) |
 
-
 ## Summary
 
 Encryption is fundamental to protecting data confidentiality, integrity, and authentication. Key takeaways:

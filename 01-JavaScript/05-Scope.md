@@ -733,7 +733,6 @@ function level4Optimized(a: number, b: number, c: number) {
 
 ```
 
-
 ## Summary
 
 Scope is fundamental to JavaScript:

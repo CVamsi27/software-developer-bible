@@ -932,7 +932,6 @@ Per Connection Memory:
 
 ```
 
-
 ## Summary
 
 Real-time architecture encompasses:

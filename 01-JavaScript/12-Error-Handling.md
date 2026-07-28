@@ -432,7 +432,6 @@ try {
 - **Nested try/catch** — minimal overhead, but readability suffers
 - **Promise rejection handling** — .catch() is preferred over try/catch in promise chains for performance
 
-
 ## Summary
 
 Error handling in JavaScript is built on `try/catch/finally` blocks with a hierarchy of built-in Error types. Key practices include extending Error for domain-specific errors, catching at system boundaries, always logging errors, and never using exceptions for normal control flow. Proper error handling transforms fragile code into robust, production-ready applications.

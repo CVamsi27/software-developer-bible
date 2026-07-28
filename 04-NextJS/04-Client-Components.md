@@ -870,7 +870,6 @@ Slow hydration:
 
 ```
 
-
 ## Summary
 
 | Aspect | Client Component |

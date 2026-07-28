@@ -862,7 +862,6 @@ export class AdminGateway {}
 
 ```
 
-
 ## Summary
 
 NestJS WebSockets provide:

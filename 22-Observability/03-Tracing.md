@@ -461,7 +461,6 @@ const parentBasedSampler = new ParentBasedSampler({
 - **Exporter batching** — OTel SDK batches spans before export to reduce network overhead
 - **Collector as sidecar** — deploy the OTel Collector as a sidecar in Kubernetes to avoid network hops
 
-
 ## Summary
 
 Distributed tracing is essential for understanding request flow in microservices. OpenTelemetry provides the vendor-neutral standard for instrumentation. Focus on propagating context at every service boundary, sampling intelligently, and correlating traces with logs for complete observability.

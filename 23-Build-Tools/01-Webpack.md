@@ -245,7 +245,6 @@ optimization: {
 - **Source maps**: Use appropriate devtool settings for dev vs prod
 - **Parallel processing**: Use thread-loader for heavy tasks
 
-
 ## Summary
 Webpack is a powerful, flexible module bundler essential for modern web development. It handles complex dependency graphs, transforms various file types, and optimizes output for production. Understanding entry/output, loaders, plugins, code splitting, and optimization techniques is crucial for building performant applications.
 

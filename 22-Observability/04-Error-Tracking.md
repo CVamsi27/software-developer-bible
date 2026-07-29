@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-izing, and alerting on application errors across all environments. Unlike logging (which records events), error tracking focuses specifically on exceptions, crashes, and failures — grouping them by stack trace and root cause to help teams fix the most impactful issues first.
+## Definition
+
+Error tracking is the practice of capturing, grouping, prioritizing, and alerting on application errors across all environments. Unlike logging (which records events), error tracking focuses specifically on exceptions, crashes, and failures — grouping them by stack trace and root cause to help teams fix the most impactful issues first.
 
 An **error tracking system** ingests error reports, deduplicates them via fingerprinting, enriches them with context (user, device, release), and provides workflows for resolution.
 

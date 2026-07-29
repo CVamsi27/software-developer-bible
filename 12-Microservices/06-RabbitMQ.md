@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-sage Queuing Protocol (AMQP). It provides reliable, flexible messaging between services with features like routing, acknowledgment, dead letter queues, and multiple messaging patterns (pub/sub, work queues, request/reply).
+## Definition
+
+RabbitMQ is an open-source message broker that implements the Advanced Message Queuing Protocol (AMQP). It provides reliable, flexible messaging between services with features like routing, acknowledgment, dead letter queues, and multiple messaging patterns (pub/sub, work queues, request/reply).
 
 ## Why Do We Need It?
 

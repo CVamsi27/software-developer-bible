@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-e management system (ORDBMS) with over 30 years of active development. It extends SQL with features like custom data types, functions, operators, and index methods. PostgreSQL is ACID-compliant, supports MVCC (Multi-Version Concurrency Control), and is known for its reliability, feature robustness, and performance.
+## Definition
+
+PostgreSQL is a powerful, open-source, object-relational database management system (ORDBMS) with over 30 years of active development. It extends SQL with features like custom data types, functions, operators, and index methods. PostgreSQL is ACID-compliant, supports MVCC (Multi-Version Concurrency Control), and is known for its reliability, feature robustness, and performance.
 
 ## Why Do We Need It?
 

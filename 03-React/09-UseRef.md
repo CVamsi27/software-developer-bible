@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-ith a `.current` property. It serves two primary purposes:
+## Definition
+
+`useRef` is a React Hook that creates a mutable reference object with a `.current` property. It serves two primary purposes:
 
 1. **DOM Access**: Accessing and manipulating DOM elements directly
 

@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-s designed as a drop-in replacement for Jest with native ESM support, instant hot-module reload, and built-in TypeScript/JSX handling. Vitest shares the same Vite config and transform pipeline, eliminating configuration duplication.
+## Definition
+
+**Vitest** is a blazing-fast unit test framework powered by Vite. It's designed as a drop-in replacement for Jest with native ESM support, instant hot-module reload, and built-in TypeScript/JSX handling. Vitest shares the same Vite config and transform pipeline, eliminating configuration duplication.
 
 ## Why Do We Need It?
 

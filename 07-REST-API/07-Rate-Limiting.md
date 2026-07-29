@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-sts a client can make to an API within a specified time period. It protects APIs from abuse, ensures fair usage, prevents resource exhaustion, and maintains service availability for all users.
+## Definition
+
+Rate limiting is a technique used to control the number of requests a client can make to an API within a specified time period. It protects APIs from abuse, ensures fair usage, prevents resource exhaustion, and maintains service availability for all users.
 
 ## Why Do We Need It?
 

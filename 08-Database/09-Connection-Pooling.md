@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-base connections for reuse by applications. Instead of creating a new connection for each request, the application borrows a connection from the pool, uses it, and returns it. This reduces the overhead of establishing connections and improves application performance.
+## Definition
+
+Connection pooling is a technique that maintains a cache of database connections for reuse by applications. Instead of creating a new connection for each request, the application borrows a connection from the pool, uses it, and returns it. This reduces the overhead of establishing connections and improves application performance.
 
 ## Why Do We Need It?
 

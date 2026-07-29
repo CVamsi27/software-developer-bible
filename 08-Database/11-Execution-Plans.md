@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-uery. It shows how the database will retrieve and process data, including which indexes to use, how to join tables, and the estimated cost of each operation. Understanding execution plans is essential for query optimization and performance tuning.
+## Definition
+
+An execution plan is PostgreSQL's strategy for executing a SQL query. It shows how the database will retrieve and process data, including which indexes to use, how to join tables, and the estimated cost of each operation. Understanding execution plans is essential for query optimization and performance tuning.
 
 ## Why Do We Need It?
 

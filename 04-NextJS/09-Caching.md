@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-rformance by storing and reusing rendered results, data fetches, and static assets. The caching system includes **Data Cache**, **Full Route Cache**, **Router Cache**, and **Request Memoization**.
+## Definition
+
+Next.js implements a multi-layered caching system that improves performance by storing and reusing rendered results, data fetches, and static assets. The caching system includes **Data Cache**, **Full Route Cache**, **Router Cache**, and **Request Memoization**.
 
 ## Why Do We Need It?
 

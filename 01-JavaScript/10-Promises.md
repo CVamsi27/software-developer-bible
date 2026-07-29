@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-n or failure of an asynchronous operation. It's a container for a future value that allows you to chain asynchronous operations and handle their results or errors in a clean, readable way.
+## Definition
+
+A **Promise** is an object representing the eventual completion or failure of an asynchronous operation. It's a container for a future value that allows you to chain asynchronous operations and handle their results or errors in a clean, readable way.
 
 ## Why Do We Need It?
 

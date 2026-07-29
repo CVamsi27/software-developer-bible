@@ -2,7 +2,8 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
- occur (commit, push, merge, etc.). They allow you to enforce policies, automate tasks, and integrate with other tools.
+## Definition
+Git hooks are scripts that run automatically when specific Git events occur (commit, push, merge, etc.). They allow you to enforce policies, automate tasks, and integrate with other tools.
 
 ## Why Do We Need It?
 

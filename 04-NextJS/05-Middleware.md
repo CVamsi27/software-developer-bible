@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-s completed. It executes on the Edge Runtime, allowing you to modify the request/response, redirect, rewrite URLs, set headers, and implement authentication — all before the page renders.
+## Definition
+
+**Middleware** in Next.js is code that runs **before** a request is completed. It executes on the Edge Runtime, allowing you to modify the request/response, redirect, rewrite URLs, set headers, and implement authentication — all before the page renders.
 
 ## Why Do We Need It?
 

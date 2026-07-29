@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-many dependency between objects so that when one object (the subject) changes state, all its dependents (observers) are notified and updated automatically.
+## Definition
+
+The Observer pattern is a behavioral design pattern that defines a one-to-many dependency between objects so that when one object (the subject) changes state, all its dependents (observers) are notified and updated automatically.
 
 Also known as Publish-Subscribe (Pub/Sub) pattern, it's one of the most widely used patterns in event-driven programming, UI frameworks, and real-time applications.
 

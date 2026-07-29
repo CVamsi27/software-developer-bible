@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-terview questions, categorized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you ace your senior full-stack developer interview.
+## Definition
+
+This comprehensive guide covers 30+ most frequently asked microservices interview questions, categorized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you ace your senior full-stack developer interview.
 
 ## Why Do We Need It?
 

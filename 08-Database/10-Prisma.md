@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-elational Mapping) that provides a type-safe database client, schema management, and migration tooling. It replaces traditional ORMs with a schema-first approach, generating a fully typed client from your database schema.
+## Definition
+
+Prisma is a next-generation Node.js and TypeScript ORM (Object-Relational Mapping) that provides a type-safe database client, schema management, and migration tooling. It replaces traditional ORMs with a schema-first approach, generating a fully typed client from your database schema.
 
 ## Why Do We Need It?
 

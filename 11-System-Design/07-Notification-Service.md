@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-end email notifications
+## Requirements
+### Functional Requirements
+
+- Send push notifications (iOS, Android)
+- Send email notifications
 - Send SMS notifications
 - Support in-app notifications
 - Template-based notifications
@@ -12,7 +16,7 @@ end email notifications
 - Rate limiting per user
 - A/B testing for notifications
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.99%)
 - Delivery latency < 5 seconds for push

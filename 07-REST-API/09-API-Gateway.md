@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
- all client requests to a backend system. It handles routing, authentication, rate limiting, load balancing, request/response transformation, and other cross-cutting concerns, simplifying client interactions with microservices.
+## Definition
+
+An API Gateway is a server that acts as a single entry point for all client requests to a backend system. It handles routing, authentication, rate limiting, load balancing, request/response transformation, and other cross-cutting concerns, simplifying client interactions with microservices.
 
 ## Why Do We Need It?
 

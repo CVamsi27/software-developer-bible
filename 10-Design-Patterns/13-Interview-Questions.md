@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-s interview questions, categorized by difficulty level. Each question includes a detailed answer, code examples where applicable, and follow-up points.
+## Overview
+
+This comprehensive guide covers 40 of the most commonly asked design patterns interview questions, categorized by difficulty level. Each question includes a detailed answer, code examples where applicable, and follow-up points.
 
 ---
 

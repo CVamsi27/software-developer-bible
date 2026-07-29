@@ -2,7 +2,8 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-anagement, validation, and submission. It provides a set of components and hooks for building forms with React, focusing on simplicity and developer experience.
+## Definition
+Formik is a popular React form library that helps with form state management, validation, and submission. It provides a set of components and hooks for building forms with React, focusing on simplicity and developer experience.
 
 ## Why Do We Need It?
 

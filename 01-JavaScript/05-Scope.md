@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ime of variables and functions. It defines where variables are declared and where they can be accessed. JavaScript has three main types of scope: global scope, function scope, and block scope.
+## Definition
+
+**Scope** in JavaScript determines the accessibility and lifetime of variables and functions. It defines where variables are declared and where they can be accessed. JavaScript has three main types of scope: global scope, function scope, and block scope.
 
 ## Why Do We Need It?
 

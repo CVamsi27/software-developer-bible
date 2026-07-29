@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-e configuration (environment variables, secrets, volumes, volume mounts) into pods at admission time — without modifying the pod template or deployment spec. PodPresets match pods by label selector and automatically add specified configuration before the pod is created. This decouples configuration from pod/Deployment definitions, enabling platform teams to enforce standards (sidecars, proxy settings, monitoring agents) without application team involvement.
+## Definition
+
+**PodPreset** is a Kubernetes API resource that injects runtime configuration (environment variables, secrets, volumes, volume mounts) into pods at admission time — without modifying the pod template or deployment spec. PodPresets match pods by label selector and automatically add specified configuration before the pod is created. This decouples configuration from pod/Deployment definitions, enabling platform teams to enforce standards (sidecars, proxy settings, monitoring agents) without application team involvement.
 
 > **Note:** PodPresets were introduced as an alpha feature in Kubernetes 1.6 and are **not enabled by default** in most clusters. They remain in alpha as of recent Kubernetes versions. For production use, consider alternatives like **Admission Webhooks** (MutatingAdmissionWebhook), **OPA/Gatekeeper**, or **Kyverno**.
 

@@ -2,7 +2,8 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-s analyze, debug, and optimize web application performance by providing detailed insights into rendering, JavaScript execution, memory usage, and network activity.
+## Definition
+Profiling tools are browser and external utilities that help developers analyze, debug, and optimize web application performance by providing detailed insights into rendering, JavaScript execution, memory usage, and network activity.
 
 ## Why Do We Need It?
 

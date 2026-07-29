@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ces an authenticated user to execute unwanted actions on a web application in which they're authenticated. Unlike XSS, which injects malicious scripts, CSRF tricks the user's browser into making unintended requests using the user's existing session. The attacker exploits the trust that a site has in the user's browser.
+## Definition
+
+Cross-Site Request Forgery (CSRF) is a web security vulnerability that forces an authenticated user to execute unwanted actions on a web application in which they're authenticated. Unlike XSS, which injects malicious scripts, CSRF tricks the user's browser into making unintended requests using the user's existing session. The attacker exploits the trust that a site has in the user's browser.
 
 CSRF attacks target state-changing operations (not data retrieval) and rely on the fact that browsers automatically include credentials (cookies, HTTP auth) with cross-origin requests.
 

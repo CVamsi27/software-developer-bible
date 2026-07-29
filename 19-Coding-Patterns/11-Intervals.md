@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-nd points (e.g., [start, end]). They typically require merging, inserting, or checking overlaps between intervals. Common operations include merging overlapping intervals, inserting new intervals, and finding non-overlapping intervals.
+## Definition
+
+Interval problems involve working with ranges defined by start and end points (e.g., [start, end]). They typically require merging, inserting, or checking overlaps between intervals. Common operations include merging overlapping intervals, inserting new intervals, and finding non-overlapping intervals.
 
 ## When to Use
 

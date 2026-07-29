@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-r()` that handle incoming HTTP requests and return responses. They act as the presentation layer of the application, receiving requests from clients, processing them (often by delegating to services), and returning appropriate responses.
+## Definition
+
+**Controllers** in NestJS are classes decorated with `@Controller()` that handle incoming HTTP requests and return responses. They act as the presentation layer of the application, receiving requests from clients, processing them (often by delegating to services), and returning appropriate responses.
 
 Controllers are responsible for:
 

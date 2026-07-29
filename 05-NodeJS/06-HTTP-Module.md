@@ -2,7 +2,7 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-requests. It's the foundation for web frameworks like Express, NestJS, and Fastify, and provides low-level control over the HTTP protocol.
+The Node.js `http` module enables creating HTTP servers and making HTTP client requests. It's the foundation for web frameworks like Express, NestJS, and Fastify, and provides low-level control over the HTTP protocol.
 
 ## Definition
 

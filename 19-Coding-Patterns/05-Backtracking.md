@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-ively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem. It explores all possible solutions and backtracks when it finds a dead end.
+## Definition
+
+Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem. It explores all possible solutions and backtracks when it finds a dead end.
 
 ## When to Use
 

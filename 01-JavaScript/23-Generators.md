@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-sumed. They use `function*` syntax and `yield` keyword to produce a sequence of values lazily (on-demand), implementing the iterator protocol.
+## Definition
+
+**Generators** are special functions that can be paused and resumed. They use `function*` syntax and `yield` keyword to produce a sequence of values lazily (on-demand), implementing the iterator protocol.
 
 ## Why Do We Need It?
 

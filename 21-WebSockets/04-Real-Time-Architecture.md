@@ -2,7 +2,9 @@
 
 [![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
-pplications to process and deliver data with minimal latency, providing immediate updates to users as events occur. It encompasses patterns, protocols, and infrastructure for building responsive, event-driven systems.
+## Definition
+
+Real-time architecture is a **system design approach** that enables applications to process and deliver data with minimal latency, providing immediate updates to users as events occur. It encompasses patterns, protocols, and infrastructure for building responsive, event-driven systems.
 
 Real-time systems prioritize **low latency, high availability, and horizontal scalability** to handle thousands or millions of concurrent connections while maintaining data consistency.
 

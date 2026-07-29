@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-tach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors. It provides an alternative to subclassing for extending functionality.
+## Definition
+
+The Decorator pattern is a structural design pattern that allows you to attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors. It provides an alternative to subclassing for extending functionality.
 
 The pattern is particularly useful when you need to add responsibilities to objects dynamically, when extending functionality through subclassing is impractical, or when you want to combine multiple behaviors.
 

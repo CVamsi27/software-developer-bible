@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-perform non-blocking operations despite being single-threaded. It continuously checks the call stack and callback queues, executing tasks when the stack is empty. The event loop is the heart of JavaScript's asynchronous behavior.
+## Definition
+
+The **Event Loop** is the mechanism that allows JavaScript to perform non-blocking operations despite being single-threaded. It continuously checks the call stack and callback queues, executing tasks when the stack is empty. The event loop is the heart of JavaScript's asynchronous behavior.
 
 ## Why Do We Need It?
 

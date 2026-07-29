@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-chniques to optimize query execution, prevent abuse, protect against attacks, and ensure reliable operation of GraphQL APIs in production environments.
+## Definition
+
+**GraphQL Performance & Security** encompasses strategies and techniques to optimize query execution, prevent abuse, protect against attacks, and ensure reliable operation of GraphQL APIs in production environments.
 
 ```text
 Performance = Query Optimization + Caching + Rate Limiting + Monitoring

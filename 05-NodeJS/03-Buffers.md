@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-inary data in Node.js. Since JavaScript was originally designed to work with text, Buffers provide a way to manipulate binary data directly. Buffers represent sequences of octets (bytes) and are allocated outside the V8 heap, making them ideal for handling large amounts of binary data.
+## Definition
+
+A **Buffer** is a fixed-size block of memory used to store raw binary data in Node.js. Since JavaScript was originally designed to work with text, Buffers provide a way to manipulate binary data directly. Buffers represent sequences of octets (bytes) and are allocated outside the V8 heap, making them ideal for handling large amounts of binary data.
 
 ## Why Do We Need It?
 

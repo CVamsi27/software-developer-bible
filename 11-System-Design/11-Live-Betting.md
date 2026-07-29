@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-e events
+## Requirements
+### Functional Requirements
+
+- Real-time odds updates
+- Place bets on live events
 - Cash out before event ends
 - Multiple bet types (single, accumulator, system)
 - Live event tracking
@@ -12,7 +16,7 @@ e events
 - Multi-sport support
 - Live streaming integration
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Ultra-low latency (< 100ms for odds updates)
 - High availability (99.99%)

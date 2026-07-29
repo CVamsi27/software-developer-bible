@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ynchronous code look and feel synchronous. An `async` function always returns a Promise, and `await` pauses execution until a Promise settles, making asynchronous code more readable and maintainable.
+## Definition
+
+**Async/Await** is syntactic sugar over Promises that makes asynchronous code look and feel synchronous. An `async` function always returns a Promise, and `await` pauses execution until a Promise settles, making asynchronous code more readable and maintainable.
 
 ## Why Do We Need It?
 

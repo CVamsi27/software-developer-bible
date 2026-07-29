@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- provider dynamically manages the allocation and provisioning of servers. Developers write and deploy code without worrying about the underlying infrastructure, paying only for actual compute time consumed.
+## Definition
+Serverless computing is a cloud execution model where the cloud provider dynamically manages the allocation and provisioning of servers. Developers write and deploy code without worrying about the underlying infrastructure, paying only for actual compute time consumed.
 
 ## Why Do We Need It?
 

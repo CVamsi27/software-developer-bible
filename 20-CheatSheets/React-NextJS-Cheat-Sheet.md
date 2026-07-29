@@ -2,7 +2,10 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-----|--------------|
+## Quick Reference Table
+
+| Concept | Key Point | Code/Example |
+|---------|-----------|--------------|
 | Component | Function that returns JSX; re-renders on state/prop change | `function Button({ label }) { return <button>{label}</button>; }` |
 | JSX | Syntax extension; compiles to `createElement` calls | `<div className="x">` → `createElement('div', {className: 'x'})` |
 | Virtual DOM | In-memory representation; diffing compares old vs new trees | Enables efficient DOM updates |

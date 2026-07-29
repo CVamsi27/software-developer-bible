@@ -2,7 +2,7 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-nabling file read/write, directory operations, file metadata inspection, and file watching. It offers three API styles: promise-based (`fs.promises`), callback-based, and synchronous.
+The Node.js `fs` module provides an API for interacting with the file system, enabling file read/write, directory operations, file metadata inspection, and file watching. It offers three API styles: promise-based (`fs.promises`), callback-based, and synchronous.
 
 ## Definition
 

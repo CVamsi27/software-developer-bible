@@ -2,7 +2,9 @@
 
 [![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
-ables bidirectional communication between clients and servers. Built on top of WebSockets, it provides automatic fallbacks to HTTP long-polling and other transports, ensuring connectivity across different network environments.
+## Definition
+
+Socket.io is a **real-time, event-driven JavaScript library** that enables bidirectional communication between clients and servers. Built on top of WebSockets, it provides automatic fallbacks to HTTP long-polling and other transports, ensuring connectivity across different network environments.
 
 Socket.io abstracts the complexity of WebSockets, offering features like **rooms, namespaces, automatic reconnection, multiplexing, and broadcasting** out of the box.
 

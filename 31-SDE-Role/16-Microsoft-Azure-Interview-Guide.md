@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-nsider:** Azure Compute, Azure Storage, Azure Networking, Azure AI/Data, Azure DevOps, Azure Security, Azure Cosmos DB, Azure Kubernetes Service
+> **Target Role:** SDE II (L62) / Senior SDE (L63) on Azure Teams
+>
+> **Teams to Consider:** Azure Compute, Azure Storage, Azure Networking, Azure AI/Data, Azure DevOps, Azure Security, Azure Cosmos DB, Azure Kubernetes Service
 
 ---
 

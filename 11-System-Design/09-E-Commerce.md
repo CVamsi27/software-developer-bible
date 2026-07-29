@@ -2,6 +2,10 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
+## Requirements
+### Functional Requirements
+
+- Product catalog with search and filtering
 - Shopping cart management
 - Checkout process
 - Inventory management
@@ -13,7 +17,7 @@
 - Wishlist functionality
 - Promotions and discounts
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.99%)
 - Support 100K+ concurrent users

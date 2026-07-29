@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-licaSets. It manages the desired state of your application, enabling rolling updates, rollbacks, scaling, and self-healing. Deployments are the most common way to run stateless applications in Kubernetes.
+## Definition
+
+A **Deployment** provides declarative updates for Pods and ReplicaSets. It manages the desired state of your application, enabling rolling updates, rollbacks, scaling, and self-healing. Deployments are the most common way to run stateless applications in Kubernetes.
 
 Key concepts:
 

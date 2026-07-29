@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-ms to Consider:** Instagram, WhatsApp, Messenger, Reality Labs (Quest), AI/ML, Infrastructure
+> **Target Role:** E3 (Junior) / E4 (Mid) / E5 (Senior) Software Engineer
+>
+> **Teams to Consider:** Instagram, WhatsApp, Messenger, Reality Labs (Quest), AI/ML, Infrastructure
 
 ---
 

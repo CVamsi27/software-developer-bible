@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-ates a fully static version of your application as HTML, CSS, and JS files — with no Node.js server required. The output can be served from any static file server, CDN, or hosting provider (S3, Nginx, GitHub Pages, Netlify). All pages are pre-rendered at build time, and any dynamic features (API routes, server actions, middleware) are either executed at build time or disabled.
+## Definition
+
+**Static Exports** (`next export`) is a Next.js feature that generates a fully static version of your application as HTML, CSS, and JS files — with no Node.js server required. The output can be served from any static file server, CDN, or hosting provider (S3, Nginx, GitHub Pages, Netlify). All pages are pre-rendered at build time, and any dynamic features (API routes, server actions, middleware) are either executed at build time or disabled.
 
 ## Why Do We Need It?
 

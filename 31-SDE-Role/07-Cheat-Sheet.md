@@ -2,7 +2,11 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-⚡ Phase 1: Java Fundamentals
+> **Print this. Read it the night before and morning of your interview.**
+
+---
+
+## ⚡ Phase 1: Java Fundamentals
 
 ```text
 

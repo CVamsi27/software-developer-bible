@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ures within a system by partitioning resources into separate pools (bulkheads). Named after the watertight compartments on ships that prevent flooding from sinking the entire vessel, the pattern ensures that a failure in one part of the system does not cascade to other parts. In microservices, bulkheads can be implemented at various levels: thread pools, connection pools, semaphores, queues, and even physical infrastructure.
+## Definition
+
+The **Bulkhead Pattern** is a resilience design pattern that isolates failures within a system by partitioning resources into separate pools (bulkheads). Named after the watertight compartments on ships that prevent flooding from sinking the entire vessel, the pattern ensures that a failure in one part of the system does not cascade to other parts. In microservices, bulkheads can be implemented at various levels: thread pools, connection pools, semaphores, queues, and even physical infrastructure.
 
 ## Why Do We Need It?
 

@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- testing, and deploying Docker images. It includes image building, registry storage, versioning, and deployment strategies. The pipeline ensures consistent, reproducible deployments across environments.
+## Definition
+
+A **Docker build pipeline** automates the process of building, testing, and deploying Docker images. It includes image building, registry storage, versioning, and deployment strategies. The pipeline ensures consistent, reproducible deployments across environments.
 
 Key concepts:
 

@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-zation across devices
+## Requirements
+### Functional Requirements
+
+- Upload and download files
+- File synchronization across devices
 - Real-time collaboration on documents
 - File sharing with permissions (view, edit, comment)
 - Version history and rollback
@@ -12,7 +16,7 @@ zation across devices
 - Trash and recovery
 - Storage quota management
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Strong consistency for file operations
 - High availability (99.99%)

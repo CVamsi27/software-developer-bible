@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-oservices while maintaining data consistency. Traditional ACID transactions don't span service boundaries, so distributed patterns like the **Saga pattern** (choreography/orchestration), **Two-Phase Commit (2PC)**, and **Outbox pattern** are used.
+## Definition
+
+**Distributed Transactions** coordinate state changes across multiple microservices while maintaining data consistency. Traditional ACID transactions don't span service boundaries, so distributed patterns like the **Saga pattern** (choreography/orchestration), **Two-Phase Commit (2PC)**, and **Outbox pattern** are used.
 
 ## Why Do We Need It?
 

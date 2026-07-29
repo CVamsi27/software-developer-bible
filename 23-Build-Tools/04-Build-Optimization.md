@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-rmance, size, and efficiency of web application bundles through various techniques like code splitting, tree shaking, compression, and minification.
+## Definition
+Build optimization refers to the process of improving the performance, size, and efficiency of web application bundles through various techniques like code splitting, tree shaking, compression, and minification.
 
 ## Why Do We Need It?
 Unoptimized builds lead to:

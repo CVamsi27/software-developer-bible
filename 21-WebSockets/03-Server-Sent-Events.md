@@ -2,7 +2,9 @@
 
 [![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
- servers to push data to clients over HTTP in real-time. Unlike WebSockets, SSE provides **unidirectional communication** from server to client, making it ideal for scenarios where the client only needs to receive updates (news feeds, live scores, notifications).
+## Definition
+
+Server-Sent Events (SSE) is a **standardized technology** that allows servers to push data to clients over HTTP in real-time. Unlike WebSockets, SSE provides **unidirectional communication** from server to client, making it ideal for scenarios where the client only needs to receive updates (news feeds, live scores, notifications).
 
 SSE uses the `EventSource` API on the client and standard HTTP on the server, providing automatic reconnection, event IDs, and last-event-id tracking.
 

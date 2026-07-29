@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-tment scheduling
+## Requirements
+### Functional Requirements
+
+- Patient registration and profiles
+- Appointment scheduling
 - Doctor management
 - Medical records (EHR)
 - Prescription management
@@ -13,7 +17,7 @@ tment scheduling
 - Role-based access control
 - Telemedicine support
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - HIPAA compliance
 - High availability (99.99%)

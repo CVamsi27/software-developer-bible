@@ -2,7 +2,8 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-eloped by W3C (World Wide Web Consortium) to make web content more accessible to people with disabilities. It provides standards for creating accessible web content.
+## Definition
+WCAG (Web Content Accessibility Guidelines) is a set of guidelines developed by W3C (World Wide Web Consortium) to make web content more accessible to people with disabilities. It provides standards for creating accessible web content.
 
 ## Why Do We Need It?
 

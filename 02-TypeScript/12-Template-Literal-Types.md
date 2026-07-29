@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ring literal types with template literal syntax (backticks). They allow you to manipulate strings at the type level — concatenating, splitting, and transforming literal types into new literal types. Introduced in TypeScript 4.1, they enable type-safe string operations, CSS property typing, event name systems, and sophisticated type transformations through `infer` and recursive conditional types.
+## Definition
+
+**Template literal types** are TypeScript types built using string literal types with template literal syntax (backticks). They allow you to manipulate strings at the type level — concatenating, splitting, and transforming literal types into new literal types. Introduced in TypeScript 4.1, they enable type-safe string operations, CSS property typing, event name systems, and sophisticated type transformations through `infer` and recursive conditional types.
 
 ## Why Do We Need It?
 

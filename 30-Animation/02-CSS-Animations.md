@@ -2,7 +2,8 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-s using only CSS, without JavaScript. They include transitions for simple state changes and keyframe animations for complex sequences.
+## Definition
+CSS animations provide a way to create smooth, performant animations using only CSS, without JavaScript. They include transitions for simple state changes and keyframe animations for complex sequences.
 
 ## Why Do We Need It?
 

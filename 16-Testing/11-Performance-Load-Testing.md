@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-calability requirements under expected and peak loads. Load testing simulates real-world traffic patterns to identify bottlenecks, while stress testing pushes beyond normal limits to find breaking points.
+## Definition
+
+Performance testing ensures applications meet speed, stability, and scalability requirements under expected and peak loads. Load testing simulates real-world traffic patterns to identify bottlenecks, while stress testing pushes beyond normal limits to find breaking points.
 
 ## Tools
 

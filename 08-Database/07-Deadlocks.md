@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-cked forever, each waiting for the other to release a lock. In PostgreSQL, deadlocks are detected automatically and resolved by aborting one of the transactions (the victim).
+## Definition
+
+A deadlock is a situation where two or more transactions are blocked forever, each waiting for the other to release a lock. In PostgreSQL, deadlocks are detected automatically and resolved by aborting one of the transactions (the victim).
 
 ## Why Do We Need It?
 

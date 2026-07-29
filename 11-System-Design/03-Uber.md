@@ -2,7 +2,10 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-stination
+## Requirements
+### Functional Requirements
+
+- Request a ride from current location to destination
 - Match riders with nearby drivers
 - Real-time driver tracking on map
 - ETA calculation for pickup and dropoff
@@ -13,7 +16,7 @@ stination
 - Trip history and receipts
 - Driver availability management
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Low latency matching (< 30 seconds)
 - High availability (99.99%)

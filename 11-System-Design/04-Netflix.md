@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-zed content recommendations
+## Requirements
+### Functional Requirements
+
+- Stream video content on demand
+- Personalized content recommendations
 - Multiple user profiles per account
 - Watch history and resume playback
 - Content search and browsing
@@ -12,7 +16,7 @@ zed content recommendations
 - Subtitles and audio tracks
 - 4K/HDR streaming support
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.99%)
 - Global content delivery (< 50ms latency)

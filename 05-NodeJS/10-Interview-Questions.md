@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-erview questions** with detailed answers, categorized by difficulty level. Each question includes explanations, code examples, and common follow-ups to help you prepare for technical interviews at various levels.
+## Definition
+
+This chapter contains the **40 most frequently asked Node.js interview questions** with detailed answers, categorized by difficulty level. Each question includes explanations, code examples, and common follow-ups to help you prepare for technical interviews at various levels.
 
 ## Why Do We Need It?
 

@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
- **Teams to Consider:** iOS/macOS Frameworks, Siri/AI, Cloud Services, Hardware-Software Integration, Apple Music, Maps
+> **Target Role:** ICT2 (Junior) / ICT3 (Mid) / ICT4 (Senior) Software Engineer
+>
+> **Teams to Consider:** iOS/macOS Frameworks, Siri/AI, Cloud Services, Hardware-Software Integration, Apple Music, Maps
 
 ---
 

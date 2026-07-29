@@ -2,7 +2,8 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
- in web development, from CSS basics to advanced React animation patterns.
+## Definition
+This comprehensive guide covers 20 interview questions on animation in web development, from CSS basics to advanced React animation patterns.
 
 ## Why Do We Need It?
 

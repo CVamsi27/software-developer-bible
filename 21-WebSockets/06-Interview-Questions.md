@@ -2,7 +2,9 @@
 
 [![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
 
-ons** about WebSockets, real-time communication, and related technologies. Each question includes a detailed answer, code examples, and follow-up points to help you ace your next interview.
+## Definition
+
+This chapter contains the **30 most frequently asked interview questions** about WebSockets, real-time communication, and related technologies. Each question includes a detailed answer, code examples, and follow-up points to help you ace your next interview.
 
 ## Why Do We Need It?
 

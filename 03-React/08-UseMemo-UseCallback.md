@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-zation through memoization. `useMemo` memoizes a **computed value** — it returns a cached result of an expensive computation. `useCallback` memoizes a **function** — it returns a cached reference to a function between re-renders.
+## Definition
+
+`useMemo` and `useCallback` are React Hooks for performance optimization through memoization. `useMemo` memoizes a **computed value** — it returns a cached result of an expensive computation. `useCallback` memoizes a **function** — it returns a cached reference to a function between re-renders.
 
 Both hooks accept a dependency array and only re-compute/re-create when dependencies change.
 

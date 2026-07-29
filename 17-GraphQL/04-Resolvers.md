@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-d in your GraphQL schema. They are the execution layer that connects your schema to your data sources (databases, APIs, microservices, etc.). Each field in the schema can have a corresponding resolver that determines how that field's value is computed.
+## Definition
+
+**Resolvers** are functions that populate the data for each field in your GraphQL schema. They are the execution layer that connects your schema to your data sources (databases, APIs, microservices, etc.). Each field in the schema can have a corresponding resolver that determines how that field's value is computed.
 
 ```text
 Resolver = Function(Schema Field) → Data Source

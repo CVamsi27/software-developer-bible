@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ble, type-safe code that works with multiple types while preserving type information. They act as placeholders for types that are specified when the code is used.
+## Definition
+
+**Generics** are type parameters that allow you to write reusable, type-safe code that works with multiple types while preserving type information. They act as placeholders for types that are specified when the code is used.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

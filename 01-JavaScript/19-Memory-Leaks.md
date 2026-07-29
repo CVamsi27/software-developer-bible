@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ails to release it when no longer needed. In JavaScript, this happens when objects are no longer used but still have references, preventing garbage collection.
+## Definition
+
+A **Memory Leak** occurs when a program allocates memory but fails to release it when no longer needed. In JavaScript, this happens when objects are no longer used but still have references, preventing garbage collection.
 
 ## Why Do We Need It?
 

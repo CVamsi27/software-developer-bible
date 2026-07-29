@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-automates software workflows. It uses YAML-based **workflows** triggered by events (push, PR, schedule) to execute **jobs** containing **steps** (commands or actions).
+## Definition
+
+**GitHub Actions** is a CI/CD platform built into GitHub that automates software workflows. It uses YAML-based **workflows** triggered by events (push, PR, schedule) to execute **jobs** containing **steps** (commands or actions).
 
 Key concepts:
 

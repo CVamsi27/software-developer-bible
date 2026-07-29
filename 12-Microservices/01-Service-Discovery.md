@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ate with each other dynamically in a microservices architecture. Instead of hardcoding network locations, services register themselves with a discovery server and look up other services through it.
+## Definition
+
+Service Discovery is a mechanism that allows services to find and communicate with each other dynamically in a microservices architecture. Instead of hardcoding network locations, services register themselves with a discovery server and look up other services through it.
 
 ## Why Do We Need It?
 

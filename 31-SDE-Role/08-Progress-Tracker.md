@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-eekly to stay on top of your preparation.
+> **Track your journey to landing your dream job!**
+>
+> Update this tracker daily/weekly to stay on top of your preparation.
 
 ---
 

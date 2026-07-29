@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ables from its outer (lexical) scope, even after the outer function has finished executing and its execution context has been removed from the call stack. Closures are created every time a function is created, at function creation time.
+## Definition
+
+A **Closure** is a function that remembers and can access variables from its outer (lexical) scope, even after the outer function has finished executing and its execution context has been removed from the call stack. Closures are created every time a function is created, at function creation time.
 
 ## Why Do We Need It?
 

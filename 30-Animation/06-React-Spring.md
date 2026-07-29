@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-eact. Unlike CSS transitions or GSAP timelines, it uses natural spring physics (mass, tension, friction) to create fluid, natural-feeling motion. It supports animated components, interpolations, gesture-based animations, and shared-element transitions.
+## Definition
+
+**React Spring** is a spring-physics-based animation library for React. Unlike CSS transitions or GSAP timelines, it uses natural spring physics (mass, tension, friction) to create fluid, natural-feeling motion. It supports animated components, interpolations, gesture-based animations, and shared-element transitions.
 
 ## Why Do We Need It?
 

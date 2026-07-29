@@ -2,7 +2,11 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-. [Resume Formatting & Structure](#resume-formatting--structure)
+## Table of Contents
+
+1. [The Senior Resume Mindset](#the-senior-resume-mindset)
+
+2. [Resume Formatting & Structure](#resume-formatting--structure)
 
 3. [Professional Summary](#professional-summary)
 

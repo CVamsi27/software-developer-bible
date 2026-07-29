@@ -2,7 +2,11 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-estion 1: What is CI/CD and why is it important?
+## 30 Most Asked CI/CD Interview Questions with Detailed Answers
+
+---
+
+### Question 1: What is CI/CD and why is it important?
 
 **Answer:**
 
@@ -20,7 +24,7 @@ estion 1: What is CI/CD and why is it important?
 
 ---
 
-## Question 2: What is the difference between Continuous Delivery and Continuous Deployment?
+### Question 2: What is the difference between Continuous Delivery and Continuous Deployment?
 
 **Answer:**
 
@@ -33,7 +37,7 @@ estion 1: What is CI/CD and why is it important?
 
 ---
 
-## Question 3: What are the stages of a CI/CD pipeline?
+### Question 3: What are the stages of a CI/CD pipeline?
 
 **Answer:**
 
@@ -57,7 +61,7 @@ estion 1: What is CI/CD and why is it important?
 
 ---
 
-## Question 4: What is a Dockerfile and why use it?
+### Question 4: What is a Dockerfile and why use it?
 
 **Answer:**
 
@@ -83,7 +87,7 @@ CMD ["node", "server.js"]
 
 ---
 
-## Question 5: What is the difference between a Docker image and a container?
+### Question 5: What is the difference between a Docker image and a container?
 
 **Answer:**
 
@@ -96,7 +100,7 @@ CMD ["node", "server.js"]
 
 ---
 
-## Question 6: What is Kubernetes and why use it?
+### Question 6: What is Kubernetes and why use it?
 
 **Answer:**
 
@@ -112,7 +116,7 @@ Kubernetes is a container orchestration platform that automates deployment, scal
 
 ---
 
-## Question 7: What is a Kubernetes Deployment?
+### Question 7: What is a Kubernetes Deployment?
 
 **Answer:**
 
@@ -144,7 +148,7 @@ spec:
 
 ---
 
-## Question 8: What is Infrastructure as Code (IaC)?
+### Question 8: What is Infrastructure as Code (IaC)?
 
 **Answer:**
 
@@ -166,7 +170,7 @@ Managing infrastructure through code instead of manual processes.
 
 ---
 
-## Question 9: What is a CI/CD pipeline?
+### Question 9: What is a CI/CD pipeline?
 
 **Answer:**
 
@@ -191,7 +195,7 @@ jobs:
 
 ---
 
-## Question 10: What is version control and why is it important?
+### Question 10: What is version control and why is it important?
 
 **Answer:**
 
@@ -214,7 +218,7 @@ Version control tracks changes to code over time.
 
 ---
 
-## Question 11: What is a microservices architecture?
+### Question 11: What is a microservices architecture?
 
 **Answer:**
 
@@ -235,7 +239,7 @@ An architecture style where applications are built as small, independent service
 
 ---
 
-## Question 12: What is a container registry?
+### Question 12: What is a container registry?
 
 **Answer:**
 
@@ -251,7 +255,7 @@ A storage system for Docker images.
 
 ---
 
-## Question 13: What is the difference between `docker build` and `docker compose`?
+### Question 13: What is the difference between `docker build` and `docker compose`?
 
 **Answer:**
 
@@ -263,7 +267,7 @@ A storage system for Docker images.
 
 ---
 
-## Question 14: What is a Kubernetes Service?
+### Question 14: What is a Kubernetes Service?
 
 **Answer:**
 
@@ -277,7 +281,7 @@ A Service provides stable networking for Pods.
 
 ---
 
-## Question 15: What is Helm?
+### Question 15: What is Helm?
 
 **Answer:**
 
@@ -292,7 +296,7 @@ The package manager for Kubernetes.
 
 ---
 
-## Question 16: What is a webhook in CI/CD?
+### Question 16: What is a webhook in CI/CD?
 
 **Answer:**
 
@@ -300,7 +304,7 @@ A webhook triggers a CI/CD pipeline when an event occurs (e.g., code push, PR cr
 
 ---
 
-## Question 17: What is the difference between a build and a release?
+### Question 17: What is the difference between a build and a release?
 
 **Answer:**
 
@@ -312,7 +316,7 @@ A webhook triggers a CI/CD pipeline when an event occurs (e.g., code push, PR cr
 
 ---
 
-## Question 18: What is a staging environment?
+### Question 18: What is a staging environment?
 
 **Answer:**
 
@@ -327,7 +331,7 @@ A production-like environment used for testing before deployment.
 
 ---
 
-## Question 19: What is a canary deployment?
+### Question 19: What is a canary deployment?
 
 **Answer:**
 
@@ -341,7 +345,7 @@ Gradually rolling out changes to a small subset of users.
 
 ---
 
-## Question 20: What is blue-green deployment?
+### Question 20: What is blue-green deployment?
 
 **Answer:**
 
@@ -355,7 +359,7 @@ Maintaining two identical environments and switching traffic between them.
 
 ---
 
-## Question 21: What is feature flagging?
+### Question 21: What is feature flagging?
 
 **Answer:**
 
@@ -376,7 +380,7 @@ if (featureFlags.newCheckout) {
 
 ---
 
-## Question 22: What is observability in CI/CD?
+### Question 22: What is observability in CI/CD?
 
 **Answer:**
 
@@ -390,7 +394,7 @@ Monitoring and understanding system state through logs, metrics, and traces.
 
 ---
 
-## Question 23: What is GitOps?
+### Question 23: What is GitOps?
 
 **Answer:**
 
@@ -410,7 +414,7 @@ A Git-centric approach to infrastructure and deployment.
 
 ---
 
-## Question 24: What is a pipeline as code?
+### Question 24: What is a pipeline as code?
 
 **Answer:**
 
@@ -424,7 +428,7 @@ Defining CI/CD pipelines in version-controlled files.
 
 ---
 
-## Question 25: What is artifact management?
+### Question 25: What is artifact management?
 
 **Answer:**
 
@@ -439,7 +443,7 @@ Storing and versioning build artifacts.
 
 ---
 
-## Question 26: What is the difference between a build agent and a runner?
+### Question 26: What is the difference between a build agent and a runner?
 
 **Answer:**
 
@@ -451,7 +455,7 @@ Storing and versioning build artifacts.
 
 ---
 
-## Question 27: What is a secrets manager?
+### Question 27: What is a secrets manager?
 
 **Answer:**
 
@@ -466,7 +470,7 @@ A tool for securely storing and accessing secrets.
 
 ---
 
-## Question 28: What is a Kubernetes Ingress?
+### Question 28: What is a Kubernetes Ingress?
 
 **Answer:**
 
@@ -480,7 +484,7 @@ Manages external HTTP/HTTPS access to Services.
 
 ---
 
-## Question 29: What is a service mesh?
+### Question 29: What is a service mesh?
 
 **Answer:**
 
@@ -500,7 +504,7 @@ An infrastructure layer for service communication.
 
 ---
 
-## Question 30: What are the best practices for CI/CD?
+### Question 30: What are the best practices for CI/CD?
 
 **Answer:**
 

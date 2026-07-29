@@ -2,7 +2,10 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-----|--------------|
+## Quick Reference Table
+
+| Concept | Key Point | Code/Example |
+|---------|-----------|--------------|
 | NestJS Module | `@Module({})` — organizes code by feature; imports/exports providers | `@Module({ imports: [TypeOrmModule.forFeature([User])], controllers: [UserController], providers: [UserService] })` |
 | NestJS Controller | `@Controller('prefix')` — handles HTTP requests; defines routes | `@Controller('users') export class UserController { @Get() findAll() {} }` |
 | NestJS Provider | Injectable services; DI container manages lifecycle | `@Injectable() export class UserService { constructor(private prisma: PrismaService) {} }` |

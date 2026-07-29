@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ject type as a union of string literal types
+## Definition
+
+- **`keyof`**: A type operator that extracts the keys of an object type as a union of string literal types
 - **`typeof`**: A type operator that extracts the type of a value/expression
 
 ```text

@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-etion. **CronJobs** create Jobs on a time-based schedule. Both are essential for ETL pipelines, database migrations, backups, report generation, and cleanup tasks in Kubernetes.
+## Definition
+
+**Jobs** manage short-lived, batch workloads that run to completion. **CronJobs** create Jobs on a time-based schedule. Both are essential for ETL pipelines, database migrations, backups, report generation, and cleanup tasks in Kubernetes.
 
 ## Why Do We Need It?
 

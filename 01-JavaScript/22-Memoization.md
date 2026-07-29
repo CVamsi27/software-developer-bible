@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-esults of expensive function calls and returns the cached result when the same inputs occur again. It trades memory for computation time.
+## Definition
+
+**Memoization** is an optimization technique that caches the results of expensive function calls and returns the cached result when the same inputs occur again. It trades memory for computation time.
 
 ## Why Do We Need It?
 

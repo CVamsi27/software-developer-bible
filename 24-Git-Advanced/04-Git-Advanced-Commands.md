@@ -2,7 +2,8 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-ulation, and repository management. They go beyond basic add/commit/push operations to provide sophisticated workflows.
+## Definition
+Git advanced commands are powerful tools for debugging, history manipulation, and repository management. They go beyond basic add/commit/push operations to provide sophisticated workflows.
 
 ## Why Do We Need Them?
 

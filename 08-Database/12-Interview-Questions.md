@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-reSQL interview questions, categorized by difficulty level. Each question includes a detailed answer to help you understand the concept and articulate it clearly in interviews.
+## Definition
+
+This guide contains 40 of the most commonly asked database/PostgreSQL interview questions, categorized by difficulty level. Each question includes a detailed answer to help you understand the concept and articulate it clearly in interviews.
 
 ## Why Do We Need It?
 

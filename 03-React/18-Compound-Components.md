@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-ts work together implicitly by sharing implicit state through React Context or `React.Children` utilities. A parent component manages shared state and exposes child components that automatically wire into that state — similar to HTML `<select>` and `<option>` elements. Popular examples include `<Tabs.Tab />`, `<Accordion.Panel />`, and `<Menu.Item />`.
+## Definition
+
+**Compound Components** is a React pattern where a set of components work together implicitly by sharing implicit state through React Context or `React.Children` utilities. A parent component manages shared state and exposes child components that automatically wire into that state — similar to HTML `<select>` and `<option>` elements. Popular examples include `<Tabs.Tab />`, `<Accordion.Panel />`, and `<Menu.Item />`.
 
 ## Why Do We Need It?
 

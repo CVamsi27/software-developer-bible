@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ategy for incrementally migrating a legacy monolithic application to a modern architecture — typically microservices. Named after strangler fig vines that gradually envelop a host tree, the pattern works by creating a new system alongside the old one, routing functionality to the new system piece by piece, and eventually retiring the legacy system entirely when the migration is complete.
+## Definition
+
+The **Strangler Fig Pattern** (also called the Strangler Pattern) is a strategy for incrementally migrating a legacy monolithic application to a modern architecture — typically microservices. Named after strangler fig vines that gradually envelop a host tree, the pattern works by creating a new system alongside the old one, routing functionality to the new system piece by piece, and eventually retiring the legacy system entirely when the migration is complete.
 
 ## Why Do We Need It?
 

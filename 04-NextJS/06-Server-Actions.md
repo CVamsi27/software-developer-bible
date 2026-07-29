@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-er and can be called from Client Components or Server Components. They use the `'use server'` directive and enable form handling, data mutations, and progressive enhancement without creating API routes.
+## Definition
+
+**Server Actions** are asynchronous functions that run on the server and can be called from Client Components or Server Components. They use the `'use server'` directive and enable form handling, data mutations, and progressive enhancement without creating API routes.
 
 ## Why Do We Need It?
 

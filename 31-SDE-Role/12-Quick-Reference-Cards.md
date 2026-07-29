@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-sk. Review before mock interviews.
+> **One-page summaries for each major topic**
+>
+> Print these. Keep them on your desk. Review before mock interviews.
 
 ---
 

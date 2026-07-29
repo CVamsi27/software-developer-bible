@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-oss multiple microservices. Instead of using a single ACID transaction, sagas break the transaction into a sequence of local transactions, each publishing events that trigger the next step. If any step fails, compensating transactions are executed to undo previous work.
+## Definition
+
+Saga Pattern is a design pattern for managing distributed transactions across multiple microservices. Instead of using a single ACID transaction, sagas break the transaction into a sequence of local transactions, each publishing events that trigger the next step. If any step fails, compensating transactions are executed to undo previous work.
 
 ## Why Do We Need It?
 

@@ -2,7 +2,11 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-Why STAR Works for Engineers](#why-star-works-for-engineers)
+## Table of Contents
+
+1. [What is the STAR Method?](#what-is-the-star-method)
+
+2. [Why STAR Works for Engineers](#why-star-works-for-engineers)
 
 3. [The Four Components](#the-four-components)
 

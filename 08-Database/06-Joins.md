@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-bles based on a related column between them. Joins allow you to query data from multiple tables in a single result set, enabling relationships between entities to be traversed efficiently.
+## Definition
+
+A JOIN is a SQL operation that combines rows from two or more tables based on a related column between them. Joins allow you to query data from multiple tables in a single result set, enabling relationships between entities to be traversed efficiently.
 
 ## Why Do We Need It?
 

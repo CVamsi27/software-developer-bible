@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-r components of software are tested in isolation to verify that each unit functions correctly. A "unit" is the smallest testable part of an application—typically a function, method, class, or module.
+## Definition
+
+Unit testing is a software testing technique where individual units or components of software are tested in isolation to verify that each unit functions correctly. A "unit" is the smallest testable part of an application—typically a function, method, class, or module.
 
 **Key Characteristics:**
 

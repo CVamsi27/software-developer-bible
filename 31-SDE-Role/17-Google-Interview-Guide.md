@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-ms to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML
+> **Target Role:** L3 (Junior) / L4 (Mid) / L5 (Senior) Software Engineer
+>
+> **Teams to Consider:** Google Cloud, Search, YouTube, Android, Maps, Ads, AI/ML
 
 ---
 

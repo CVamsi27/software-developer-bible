@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-testing, and deploying software. It supports declarative and scripted pipelines, distributed builds, extensive plugin ecosystem, and integration with virtually all DevOps tools. Jenkins pipelines are defined in a `Jenkinsfile` using Groovy-based DSL.
+## Definition
+
+**Jenkins** is an open-source automation server for building, testing, and deploying software. It supports declarative and scripted pipelines, distributed builds, extensive plugin ecosystem, and integration with virtually all DevOps tools. Jenkins pipelines are defined in a `Jenkinsfile` using Groovy-based DSL.
 
 ## Why Do We Need It?
 

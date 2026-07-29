@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-ning correctly. There are three types: **startup probes** (initialization), **liveness probes** (ongoing health), and **readiness probes** (traffic readiness). They enable self-healing and traffic management.
+## Definition
+
+**Health checks** in Kubernetes verify that containers are running correctly. There are three types: **startup probes** (initialization), **liveness probes** (ongoing health), and **readiness probes** (traffic readiness). They enable self-healing and traffic management.
 
 Key concepts:
 

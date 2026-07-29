@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ased on conditions, similar to the ternary operator (`? :`) in JavaScript. They enable creating types that depend on type relationships.
+## Definition
+
+**Conditional types** are TypeScript types that select types based on conditions, similar to the ternary operator (`? :`) in JavaScript. They enable creating types that depend on type relationships.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

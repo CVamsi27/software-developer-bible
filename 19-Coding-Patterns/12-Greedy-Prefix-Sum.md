@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-ice at each step with the hope of finding a global optimum. It builds a solution piece by piece, always choosing the next piece that offers the most immediate benefit.
+## Definition
+
+**Greedy Algorithm**: A technique that makes the locally optimal choice at each step with the hope of finding a global optimum. It builds a solution piece by piece, always choosing the next piece that offers the most immediate benefit.
 
 **Prefix Sum**: A technique where you precompute cumulative sums to answer range sum queries efficiently. PrefixSum[i] = sum of all elements from index 0 to i-1.
 

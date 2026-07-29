@@ -2,7 +2,11 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-. [The Communication Framework](#the-communication-framework)
+## Table of Contents
+
+1. [Why Communication Matters](#why-communication-matters)
+
+2. [The Communication Framework](#the-communication-framework)
 
 3. [Technical Explanation Style](#technical-explanation-style)
 

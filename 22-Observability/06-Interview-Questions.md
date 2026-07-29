@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-rview questions with detailed answers, covering logging, monitoring, tracing, error tracking, and health checks. Questions are organized by difficulty level.
+## Overview
+
+This file contains the 30 most commonly asked observability interview questions with detailed answers, covering logging, monitoring, tracing, error tracking, and health checks. Questions are organized by difficulty level.
 
 ## Beginner (10 Questions)
 

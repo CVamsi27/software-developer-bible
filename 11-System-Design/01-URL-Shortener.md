@@ -2,14 +2,18 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-iven a short URL, redirect to original URL
+## Requirements
+### Functional Requirements
+
+- Given a long URL, generate a short URL
+- Given a short URL, redirect to original URL
 - Users can create custom aliases for short URLs
 - URLs can have expiration dates
 - Track click analytics (count, timestamp, location, device)
 - Support both authenticated and unauthenticated users
 - API for URL creation, retrieval, and analytics
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.99% uptime)
 - Low latency redirect (< 10ms)

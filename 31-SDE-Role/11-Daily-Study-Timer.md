@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-5 min focused work + 5 min break
+> **Track every minute of your preparation**
+>
+> Based on the Pomodoro Technique: 25 min focused work + 5 min break
 
 ---
 

@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
- messaging (up to 10,000 members)
+## Requirements
+### Functional Requirements
+
+- 1:1 direct messaging between users
+- Group messaging (up to 10,000 members)
 - Media sharing (images, videos, files, voice messages)
 - Read receipts and delivery status
 - Online/offline presence indicators
@@ -14,7 +18,7 @@
 - End-to-end encryption for private conversations
 - Message history with infinite scroll
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Real-time delivery with < 100ms latency
 - High availability (99.99%)

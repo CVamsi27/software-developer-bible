@@ -2,7 +2,8 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
- usable by people with disabilities. It involves automated tools, manual testing, and assistive technology testing to ensure compliance with WCAG guidelines.
+## Definition
+Accessibility testing is the practice of verifying that web content is usable by people with disabilities. It involves automated tools, manual testing, and assistive technology testing to ensure compliance with WCAG guidelines.
 
 ## Why Do We Need It?
 

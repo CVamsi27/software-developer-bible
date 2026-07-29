@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-dle business logic, data access, and utility functions. They are classes decorated with `@Injectable()` that can be injected as dependencies into other providers, controllers, or other components. Providers are the "brains" of the application — they process data, interact with databases, call external APIs, and implement business rules.
+## Definition
+
+**Providers** in NestJS are fundamental building blocks that handle business logic, data access, and utility functions. They are classes decorated with `@Injectable()` that can be injected as dependencies into other providers, controllers, or other components. Providers are the "brains" of the application — they process data, interact with databases, call external APIs, and implement business rules.
 
 NestJS manages providers through its powerful **Dependency Injection (DI)** system, which handles instantiation, lifetime management, and dependency resolution automatically.
 

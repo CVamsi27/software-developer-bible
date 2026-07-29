@@ -2,7 +2,10 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-s 1-25 with STAR Answers](#questions)
+## Table of Contents
+
+- [How to Use This Guide](#how-to-use-this-guide)
+- [Questions 1-25 with STAR Answers](#questions)
 - [Follow-Up Questions to Prepare For](#follow-up-questions)
 - [Common Red Flags HR Looks For](#common-red-flags)
 

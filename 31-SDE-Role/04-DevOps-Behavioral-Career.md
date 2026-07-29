@@ -2,7 +2,11 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-tandard for version control. Interviewers expect you to know branching strategies, conflict resolution, and advanced commands.
+---
+
+# Phase 20: Git & Version Control
+
+> **Why It Matters:** Git is the industry standard for version control. Interviewers expect you to know branching strategies, conflict resolution, and advanced commands.
 
 ## Essential Git Commands
 

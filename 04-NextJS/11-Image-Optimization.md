@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-tically optimizes images through lazy loading, format conversion (WebP/AVIF), responsive sizing, and blur placeholders. It prevents layout shift and improves Core Web Vitals.
+## Definition
+
+Next.js provides an **Image component** (`next/image`) that automatically optimizes images through lazy loading, format conversion (WebP/AVIF), responsive sizing, and blur placeholders. It prevents layout shift and improves Core Web Vitals.
 
 ## Why Do We Need It?
 

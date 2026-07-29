@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-nd HTML from the server to the client. Instead of waiting for all data to load before rendering, the server sends the page shell immediately and streams in slower components as they become ready.
+## Definition
+
+**Streaming** in Next.js allows you to progressively render and send HTML from the server to the client. Instead of waiting for all data to load before rendering, the server sends the page shell immediately and streams in slower components as they become ready.
 
 ## Why Do We Need It?
 

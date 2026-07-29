@@ -2,7 +2,7 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-e current Node.js process and control over its execution. It gives access to environment variables, command-line arguments, process lifecycle events, system information, and process control methods.
+The `process` object is a global Node.js API that provides information about the current Node.js process and control over its execution. It gives access to environment variables, command-line arguments, process lifecycle events, system information, and process control methods.
 
 ## Definition
 

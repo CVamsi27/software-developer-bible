@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-gh a data structure, typically from different positions or at different speeds. It's used to solve problems involving pairs, comparisons, or when you need to examine relationships between elements at different positions.
+## Definition
+
+Two pointers is a technique that uses two variables to iterate through a data structure, typically from different positions or at different speeds. It's used to solve problems involving pairs, comparisons, or when you need to examine relationships between elements at different positions.
 
 ## When to Use
 

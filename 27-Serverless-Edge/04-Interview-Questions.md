@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-erless and edge computing, from fundamentals to advanced system design.
+## Definition
+This comprehensive guide covers 25+ interview questions on serverless and edge computing, from fundamentals to advanced system design.
 
 ## Why Do We Need It?
 

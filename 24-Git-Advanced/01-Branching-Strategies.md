@@ -2,7 +2,8 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-ated, named, merged, and deleted in a version control system. It provides a structured approach to managing parallel development, releases, and collaboration.
+## Definition
+A branching strategy is a framework that defines how branches are created, named, merged, and deleted in a version control system. It provides a structured approach to managing parallel development, releases, and collaboration.
 
 ## Why Do We Need It?
 Without a branching strategy:

@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ed interface to a library, a framework, or any other complex set of classes. It hides the complexity of the subsystem and provides a unified interface to the client.
+## Definition
+
+The Facade pattern is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes. It hides the complexity of the subsystem and provides a unified interface to the client.
 
 The pattern is particularly useful when you need to provide a simple interface to a complex subsystem, when you want to layer your subsystems, or when you need to define entry points to each level of a layered software.
 

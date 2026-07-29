@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
- managing access to protected resources across different rendering strategies (SSR, SSG, CSR, ISR). Next.js supports authentication through middleware for edge-based route protection, server components for server-side session validation, client components for client-side auth state, and API route handlers for token issuance and verification.
+## Definition
+
+**Authentication** in Next.js involves verifying user identity and managing access to protected resources across different rendering strategies (SSR, SSG, CSR, ISR). Next.js supports authentication through middleware for edge-based route protection, server components for server-side session validation, client components for client-side auth state, and API route handlers for token issuance and verification.
 
 ## Why Do We Need It?
 

@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-traction over the data access layer, separating the business logic from the persistence logic. It acts as a collection-like interface for accessing domain objects, hiding the details of data storage and retrieval.
+## Definition
+
+The Repository pattern is a structural design pattern that provides an abstraction over the data access layer, separating the business logic from the persistence logic. It acts as a collection-like interface for accessing domain objects, hiding the details of data storage and retrieval.
 
 The pattern is particularly useful in Domain-Driven Design (DDD) and Clean Architecture, where it mediates between the domain and data mapping layers.
 

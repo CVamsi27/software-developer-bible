@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-er, manageable chunks (pages) that can be retrieved incrementally. It's essential for REST APIs to avoid returning excessive data, improve performance, reduce memory usage, and provide a better user experience.
+## Definition
+
+Pagination is the practice of dividing large datasets into smaller, manageable chunks (pages) that can be retrieved incrementally. It's essential for REST APIs to avoid returning excessive data, improve performance, reduce memory usage, and provide a better user experience.
 
 ## Why Do We Need It?
 

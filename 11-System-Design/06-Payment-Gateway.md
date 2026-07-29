@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-rt multiple payment methods (cards, wallets, bank transfers)
+## Requirements
+### Functional Requirements
+
+- Process credit/debit card payments
+- Support multiple payment methods (cards, wallets, bank transfers)
 - Handle refunds and chargebacks
 - Idempotent payment operations
 - Webhook notifications for payment events
@@ -12,7 +16,7 @@ rt multiple payment methods (cards, wallets, bank transfers)
 - Multi-currency support
 - Fraud detection
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.999% - five nines)
 - PCI DSS Level 1 compliance

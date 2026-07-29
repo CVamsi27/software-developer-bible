@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-alue pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.
+## Definition
+
+**ConfigMaps** store non-sensitive configuration data as key-value pairs. **Secrets** store sensitive data (passwords, tokens, certificates). Both can be consumed as environment variables or mounted as files in Pods.
 
 Key concepts:
 

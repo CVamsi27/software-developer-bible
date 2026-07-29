@@ -2,7 +2,10 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-s, or API key
+## Requirements
+### Functional Requirements
+
+- Limit requests based on user ID, IP address, or API key
 - Support multiple rate limiting algorithms (Token Bucket, Leaky Bucket, Sliding Window)
 - Configurable limits per client (e.g., 100 requests/hour, 10 requests/minute)
 - Block requests that exceed the limit with 429 Too Many Requests
@@ -11,7 +14,7 @@ s, or API key
 - Whitelist/blacklist specific clients
 - Support burst allowance for short traffic spikes
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Extremely low latency (< 1ms added per request)
 - High throughput (millions of requests per second)

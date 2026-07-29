@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-quest, response, and next function in the application's request-response cycle. Middleware executes before route handlers and can execute any code, end the request-response cycle, modify the request/response objects, or call the next middleware function in the stack.
+## Definition
+
+**Middleware** in NestJS is a function that has access to the request, response, and next function in the application's request-response cycle. Middleware executes before route handlers and can execute any code, end the request-response cycle, modify the request/response objects, or call the next middleware function in the stack.
 
 NestJS middleware is similar to Express middleware and can be implemented as a function or a class implementing the `NestMiddleware` interface.
 

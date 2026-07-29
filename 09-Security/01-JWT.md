@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
- to be transferred between two parties. JWTs are defined by the RFC 7519 standard and consist of a JSON-encoded payload signed with a cryptographic algorithm. They are self-contained tokens that carry all the information needed for authentication and authorization, eliminating the need for server-side session storage.
+## Definition
+
+A JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. JWTs are defined by the RFC 7519 standard and consist of a JSON-encoded payload signed with a cryptographic algorithm. They are self-contained tokens that carry all the information needed for authentication and authorization, eliminating the need for server-side session storage.
 
 A JWT is essentially a digitally signed token that proves identity and carries authorized claims between systems.
 

@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- a network, close to end users, rather than in a centralized data center. They execute on CDN nodes (Points of Presence) to reduce latency and improve performance for user-facing operations.
+## Definition
+Edge functions are serverless functions that run at the edge of a network, close to end users, rather than in a centralized data center. They execute on CDN nodes (Points of Presence) to reduce latency and improve performance for user-facing operations.
 
 ## Why Do We Need It?
 

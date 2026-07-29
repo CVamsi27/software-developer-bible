@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-n to identify defects, verify that requirements are met, and ensure the system behaves as expected under various conditions. In modern software development, testing is not merely a phase but an integral practice woven throughout the entire development lifecycle.
+## Definition
+
+Testing is the systematic process of evaluating a software application to identify defects, verify that requirements are met, and ensure the system behaves as expected under various conditions. In modern software development, testing is not merely a phase but an integral practice woven throughout the entire development lifecycle.
 
 **Testing Pyramid** is a strategic model proposed by Mike Cohn that guides teams on how to distribute their testing efforts across different levels. It recommends having a large base of unit tests, a moderate layer of integration tests, and a small top layer of end-to-end (E2E) tests.
 

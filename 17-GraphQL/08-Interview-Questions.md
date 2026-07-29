@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-raphQL interview questions** with detailed answers, code examples, and explanations. Questions range from beginner to FAANG-level and cover schema design, resolvers, performance, security, and architecture.
+## Definition
+
+This comprehensive guide covers the **30 most frequently asked GraphQL interview questions** with detailed answers, code examples, and explanations. Questions range from beginner to FAANG-level and cover schema design, resolvers, performance, security, and architecture.
 
 ---
 

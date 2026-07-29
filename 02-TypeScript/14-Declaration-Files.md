@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ribe the shape of JavaScript code — types, interfaces, functions, classes, and modules — without containing any implementation. They provide type information for plain JavaScript libraries, ambient modules, global variables, and custom type definitions. Declaration files enable TypeScript to understand and type-check JavaScript code, including third-party libraries that don't ship their own TypeScript types.
+## Definition
+
+**Declaration files** (`.d.ts`) are TypeScript files that describe the shape of JavaScript code — types, interfaces, functions, classes, and modules — without containing any implementation. They provide type information for plain JavaScript libraries, ambient modules, global variables, and custom type definitions. Declaration files enable TypeScript to understand and type-check JavaScript code, including third-party libraries that don't ship their own TypeScript types.
 
 ## Why Do We Need It?
 

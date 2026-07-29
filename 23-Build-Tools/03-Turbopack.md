@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-d TypeScript, built in Rust by Vercel. It's designed as a successor to Webpack, focusing on performance through incremental computation and caching.
+## Definition
+Turbopack is an incremental bundler optimized for JavaScript and TypeScript, built in Rust by Vercel. It's designed as a successor to Webpack, focusing on performance through incremental computation and caching.
 
 ## Why Do We Need It?
 Traditional bundlers rebuild entire dependency graphs on changes, causing slow development cycles in large applications. Turbopack addresses this by:

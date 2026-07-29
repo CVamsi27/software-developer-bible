@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
- in response to a client's request. They indicate whether the request was successful, redirected, or encountered an error. Status codes are grouped into five classes based on their first digit: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error), and 5xx (server error).
+## Definition
+
+HTTP status codes are three-digit numbers returned by the server in response to a client's request. They indicate whether the request was successful, redirected, or encountered an error. Status codes are grouped into five classes based on their first digit: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client error), and 5xx (server error).
 
 ## Why Do We Need It?
 

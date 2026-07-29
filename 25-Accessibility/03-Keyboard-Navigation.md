@@ -2,7 +2,8 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-site functionality using only a keyboard, without requiring a mouse. It's essential for users with motor disabilities, power users, and screen reader users.
+## Definition
+Keyboard navigation is the ability to access and interact with all website functionality using only a keyboard, without requiring a mouse. It's essential for users with motor disabilities, power users, and screen reader users.
 
 ## Why Do We Need It?
 

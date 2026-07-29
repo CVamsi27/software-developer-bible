@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-t requests in a microservices architecture. It handles cross-cutting concerns like routing, authentication, rate limiting, and request transformation before forwarding requests to appropriate backend services.
+## Definition
+
+An API Gateway is a server that acts as a single entry point for all client requests in a microservices architecture. It handles cross-cutting concerns like routing, authentication, rate limiting, and request transformation before forwarding requests to appropriate backend services.
 
 ## Why Do We Need It?
 

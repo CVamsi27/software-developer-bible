@@ -2,7 +2,10 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ers)
+## Requirements
+### Functional Requirements
+
+- Users can post new tweets (140-280 characters)
 - Users can follow/unfollow other users
 - Users see a timeline of tweets from followed users
 - Timeline should show most recent tweets first (reverse chronological)
@@ -13,7 +16,7 @@ ers)
 - Trending topics based on tweet velocity
 - Notifications for interactions
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Low latency timeline loading (< 200ms)
 - High availability (99.99%)

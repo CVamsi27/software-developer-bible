@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-PI interview questions, organized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you prepare for senior full-stack developer interviews.
+## Definition
+
+This comprehensive guide covers the most frequently asked REST API interview questions, organized by difficulty level. Each question includes detailed answers, code examples, and follow-up questions to help you prepare for senior full-stack developer interviews.
 
 ## Why Do We Need It?
 

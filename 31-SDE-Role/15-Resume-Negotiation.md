@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-g offer compensation negotiations. Covers resume optimization for ATS systems, achievement quantification, cover letter strategies, and multi-offer negotiation tactics.
+## Definition
+
+A comprehensive guide to crafting a FAANG-level resume and navigating offer compensation negotiations. Covers resume optimization for ATS systems, achievement quantification, cover letter strategies, and multi-offer negotiation tactics.
 
 ## Resume Best Practices
 

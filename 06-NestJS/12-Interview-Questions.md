@@ -2,9 +2,13 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-nner Level (Questions 1-10)
+## 40 Most Asked NestJS Interview Questions with Detailed Answers
 
-## Q1: What is NestJS and why would you use it?
+---
+
+## Beginner Level (Questions 1-10)
+
+### Q1: What is NestJS and why would you use it?
 
 **Answer:** NestJS is a progressive Node.js framework for building efficient, scalable server-side applications. It uses TypeScript and combines OOP (Object-Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).
 
@@ -18,7 +22,7 @@ nner Level (Questions 1-10)
 - Wide ecosystem (TypeORM, GraphQL, WebSockets)
 - Strong community and documentation
 
-## Q2: What are the main components of a NestJS application?
+### Q2: What are the main components of a NestJS application?
 
 **Answer:**
 
@@ -31,7 +35,7 @@ nner Level (Questions 1-10)
 - **Pipes**: Data validation and transformation
 - **Exception Filters**: Error handling
 
-## Q3: What is the difference between NestJS and Express?
+### Q3: What is the difference between NestJS and Express?
 
 **Answer:**
 
@@ -46,7 +50,7 @@ nner Level (Questions 1-10)
 
 NestJS uses Express (or Fastify) under the hood but adds structure and features.
 
-## Q4: What is a module in NestJS?
+### Q4: What is a module in NestJS?
 
 **Answer:** A module is a class decorated with `@Module()` that organizes closely related set of capabilities. Every NestJS app has at least one module (root module).
 
@@ -57,7 +61,7 @@ Properties:
 - `imports`: Other modules whose exports are needed
 - `exports`: Providers available to importing modules
 
-## Q5: What is dependency injection in NestJS?
+### Q5: What is dependency injection in NestJS?
 
 **Answer:** DI is a design pattern where NestJS's IoC container manages and injects dependencies into components through constructor parameters.
 
@@ -74,7 +78,7 @@ export class UserService {
 
 Benefits: Loose coupling, testability, reusability.
 
-## Q6: What is the difference between `@Injectable()` and `@Inject()`?
+### Q6: What is the difference between `@Injectable()` and `@Inject()`?
 
 **Answer:**
 
@@ -92,7 +96,7 @@ constructor(
 
 ```
 
-## Q7: What are the different HTTP method decorators in NestJS?
+### Q7: What are the different HTTP method decorators in NestJS?
 
 **Answer:**
 
@@ -105,7 +109,7 @@ constructor(
 - `@Head()` - HEAD requests
 - `@All()` - All HTTP methods
 
-## Q8: How do you validate request data in NestJS?
+### Q8: How do you validate request data in NestJS?
 
 **Answer:** Use DTOs with class-validator and the global ValidationPipe:
 
@@ -133,7 +137,7 @@ create(@Body() dto: CreateUserDto) {
 
 ```
 
-## Q9: What is the purpose of `@Controller()` decorator?
+### Q9: What is the purpose of `@Controller()` decorator?
 
 **Answer:** `@Controller()` marks a class as a controller that handles HTTP requests. It accepts an optional route prefix:
 
@@ -149,7 +153,7 @@ export class UserController {
 
 ```
 
-## Q10: How do you run a NestJS application?
+### Q10: How do you run a NestJS application?
 
 **Answer:**
 

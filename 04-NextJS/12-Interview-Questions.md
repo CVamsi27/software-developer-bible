@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-estions, categorized by difficulty level from Beginner to FAANG-style. Each answer includes explanations, code examples, and real-world context.
+## Overview
+
+This guide covers 40 of the most commonly asked Next.js interview questions, categorized by difficulty level from Beginner to FAANG-style. Each answer includes explanations, code examples, and real-world context.
 
 ---
 

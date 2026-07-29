@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-n Next.js 13, built on top of React Server Components. It uses a file-system based router within the `app/` directory with enhanced features like nested layouts, loading states, error handling, and parallel routes.
+## Definition
+
+The **App Router** is Next.js's modern routing system introduced in Next.js 13, built on top of React Server Components. It uses a file-system based router within the `app/` directory with enhanced features like nested layouts, loading states, error handling, and parallel routes.
 
 ## Why Do We Need It?
 

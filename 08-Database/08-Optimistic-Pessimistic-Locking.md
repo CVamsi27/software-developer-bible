@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
- conflicts only at commit time, typically using a version column. **Pessimistic Locking** assumes conflicts are likely and acquires locks before modifying data, preventing other transactions from accessing the same rows until the lock is released.
+## Definition
+
+**Optimistic Locking** assumes conflicts are rare and checks for conflicts only at commit time, typically using a version column. **Pessimistic Locking** assumes conflicts are likely and acquires locks before modifying data, preventing other transactions from accessing the same rows until the lock is released.
 
 ## Why Do We Need It?
 

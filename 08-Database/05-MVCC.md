@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-cy control technique that maintains multiple versions of data objects. Each transaction sees a consistent snapshot of the database at a particular point in time, without blocking other transactions from reading or writing. This allows readers and writers to operate concurrently without conflicting.
+## Definition
+
+MVCC (Multi-Version Concurrency Control) is a database concurrency control technique that maintains multiple versions of data objects. Each transaction sees a consistent snapshot of the database at a particular point in time, without blocking other transactions from reading or writing. This allows readers and writers to operate concurrently without conflicting.
 
 ## Why Do We Need It?
 

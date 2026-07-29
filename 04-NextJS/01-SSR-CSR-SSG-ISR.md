@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-ere** and **when** your pages are rendered:
+## Definition
+
+Next.js supports multiple rendering strategies that determine **where** and **when** your pages are rendered:
 
 | Strategy | Full Name | Renders On | When |
 |----------|-----------|------------|------|

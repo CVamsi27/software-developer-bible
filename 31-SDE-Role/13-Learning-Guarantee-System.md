@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-earn and retain everything through active recall, practice testing, and mastery-based progression.
+> **Don't just study — MASTER the material**
+>
+> This system ensures you actually learn and retain everything through active recall, practice testing, and mastery-based progression.
 
 ---
 

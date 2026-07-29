@@ -2,7 +2,10 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
- Four Components](#the-four-components)
+## Table of Contents
+
+- [What is the STAR Method?](#what-is-the-star-method)
+- [The Four Components](#the-four-components)
 - [S - Situation](#s---situation)
 - [T - Task](#t---task)
 - [A - Action](#a---action)

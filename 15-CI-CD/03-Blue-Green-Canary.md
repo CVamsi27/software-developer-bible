@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- (blue and green). One serves production traffic while the other is updated. Traffic switches instantly after validation. **Canary Deployment** gradually rolls out changes to a small subset of users before full deployment.
+## Definition
+
+**Blue-Green Deployment** maintains two identical environments (blue and green). One serves production traffic while the other is updated. Traffic switches instantly after validation. **Canary Deployment** gradually rolls out changes to a small subset of users before full deployment.
 
 Key concepts:
 

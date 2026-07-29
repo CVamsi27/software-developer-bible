@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ttern that separates read operations (queries) from write operations (commands) into distinct models, services, and often databases. Instead of a single model that handles both reads and writes, CQRS uses separate **command models** for mutations (create, update, delete) and **query models** for reads (select, list, search). This separation allows each side to be optimized independently for its specific workload.
+## Definition
+
+**CQRS (Command Query Responsibility Segregation)** is an architectural pattern that separates read operations (queries) from write operations (commands) into distinct models, services, and often databases. Instead of a single model that handles both reads and writes, CQRS uses separate **command models** for mutations (create, update, delete) and **query models** for reads (select, list, search). This separation allows each side to be optimized independently for its specific workload.
 
 ## Why Do We Need It?
 

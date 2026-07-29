@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-he Kubernetes API and what actions they can perform. **Network Policies** control how pods communicate with each other and external services. Both are fundamental to Kubernetes security.
+## Definition
+
+**RBAC (Role-Based Access Control)** controls who can access the Kubernetes API and what actions they can perform. **Network Policies** control how pods communicate with each other and external services. Both are fundamental to Kubernetes security.
 
 ## Why Do We Need It?
 

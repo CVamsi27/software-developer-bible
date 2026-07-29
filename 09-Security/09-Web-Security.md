@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-d to protect web applications and their users from security threats. It includes a wide range of defenses such as Content Security Policy (CSP), HTTP Strict Transport Security (HSTS), Cross-Origin Resource Sharing (CORS), and various security headers. Web security aims to prevent attacks like XSS, CSRF, clickjacking, open redirects, SSRF, and XXE.
+## Definition
+
+Web security encompasses the practices, technologies, and policies designed to protect web applications and their users from security threats. It includes a wide range of defenses such as Content Security Policy (CSP), HTTP Strict Transport Security (HSTS), Cross-Origin Resource Sharing (CORS), and various security headers. Web security aims to prevent attacks like XSS, CSRF, clickjacking, open redirects, SSRF, and XXE.
 
 ## Why Do We Need It?
 

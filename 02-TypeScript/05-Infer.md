@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-and name a type within a type position. It allows you to "infer" or "capture" a type from another type for reuse.
+## Definition
+
+**`infer`** is a keyword used in conditional types to extract and name a type within a type position. It allows you to "infer" or "capture" a type from another type for reuse.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐

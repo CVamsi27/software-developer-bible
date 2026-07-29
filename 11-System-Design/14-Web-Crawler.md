@@ -2,7 +2,10 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-f URLs
+## Requirements
+### Functional Requirements
+
+- Crawl web pages starting from a seed set of URLs
 - Extract and follow links to discover new pages
 - Store crawled pages for indexing and analysis
 - Respect robots.txt and crawl-delay directives
@@ -13,7 +16,7 @@ f URLs
 - Support politeness policy (not overwhelm servers)
 - Provide crawl statistics and monitoring
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Crawl 10B+ pages per month
 - Scalable to thousands of crawling nodes

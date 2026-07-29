@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-essaging (up to 1024 members)
+## Requirements
+### Functional Requirements
+
+- 1:1 text messaging between users
+- Group messaging (up to 1024 members)
 - Media sharing (images, videos, documents)
 - Online/offline presence indicators
 - Read receipts (blue ticks)
@@ -12,7 +16,7 @@ essaging (up to 1024 members)
 - Voice and video calls (simplified)
 - User profile management
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - Low latency message delivery (< 100ms)
 - High availability (99.99%)

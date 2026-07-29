@@ -2,7 +2,9 @@
 
 [![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 
-the Pages Router. They allow you to create API endpoints within the `app/` directory, handling HTTP requests with full access to Web APIs like Request and Response objects.
+## Definition
+
+**Route Handlers** are the App Router equivalent of API Routes in the Pages Router. They allow you to create API endpoints within the `app/` directory, handling HTTP requests with full access to Web APIs like Request and Response objects.
 
 ## Why Do We Need It?
 

@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-e SQL statements. Transactions ensure that all operations within them are completed successfully (committed) or none of them take effect (rolled back), maintaining database consistency even in the face of errors or failures.
+## Definition
+
+A transaction is a logical unit of work that contains one or more SQL statements. Transactions ensure that all operations within them are completed successfully (committed) or none of them take effect (rolled back), maintaining database consistency even in the face of errors or failures.
 
 ## Why Do We Need It?
 

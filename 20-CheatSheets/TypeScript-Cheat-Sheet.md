@@ -2,7 +2,10 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-----|--------------|
+## Quick Reference Table
+
+| Concept | Key Point | Code/Example |
+|---------|-----------|--------------|
 | Interface vs Type | Interface: extendable, declaration merging, supports `implements`. Type: union, intersection, mapped, conditional | `interface A { x: number }` / `type B = { x: number }` |
 | Union Types | `A \| B` — value can be A or B | `type ID = string \| number` |
 | Intersection Types | `A & B` — value must satisfy both A and B | `type Combined = A & B` |

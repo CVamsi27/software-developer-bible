@@ -2,7 +2,8 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-ntend build tool that provides an extremely fast development experience and optimized production builds. It leverages native ES modules in development and Rollup for production bundling.
+## Definition
+Vite (French word for "fast", pronounced /vit/) is a modern frontend build tool that provides an extremely fast development experience and optimized production builds. It leverages native ES modules in development and Rollup for production bundling.
 
 ## Why Do We Need It?
 Traditional bundlers like Webpack process the entire application before serving, causing slow startup times in large projects. Vite addresses this by:

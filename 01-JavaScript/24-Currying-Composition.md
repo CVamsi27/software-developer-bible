@@ -2,7 +2,7 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-ted functions, each taking a single argument. Function composition combines multiple functions to produce a new function that applies them in sequence.
+Currying transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument. Function composition combines multiple functions to produce a new function that applies them in sequence.
 
 ## Definition
 

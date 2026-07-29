@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-rs to inject malicious client-side scripts into web pages viewed by other users. When a victim views the affected page, the malicious script executes in their browser, enabling the attacker to steal data, hijack sessions, or perform actions on behalf of the user. XSS is one of the most common web vulnerabilities, consistently appearing in the OWASP Top 10.
+## Definition
+
+Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious client-side scripts into web pages viewed by other users. When a victim views the affected page, the malicious script executes in their browser, enabling the attacker to steal data, hijack sessions, or perform actions on behalf of the user. XSS is one of the most common web vulnerabilities, consistently appearing in the OWASP Top 10.
 
 ## Why Do We Need It?
 

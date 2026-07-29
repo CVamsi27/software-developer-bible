@@ -2,7 +2,8 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-formance data about web pages, resources, and user interactions. They enable developers to measure and optimize application performance with precise, low-level timing information.
+## Definition
+Performance APIs are browser APIs that provide detailed timing and performance data about web pages, resources, and user interactions. They enable developers to measure and optimize application performance with precise, low-level timing information.
 
 ## Why Do We Need It?
 

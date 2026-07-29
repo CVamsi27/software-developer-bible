@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
- values, but nested objects are still referenced. A **Deep Copy** creates a new object with completely independent copies of all nested objects.
+## Definition
+
+A **Shallow Copy** creates a new object with the same property values, but nested objects are still referenced. A **Deep Copy** creates a new object with completely independent copies of all nested objects.
 
 ## Why Do We Need It?
 

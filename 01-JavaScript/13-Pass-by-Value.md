@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
- when passing objects, the "value" being passed is a reference to the object, not the object itself. This creates the illusion of pass by reference, but it's actually pass by value of the reference.
+## Definition
+
+JavaScript uses **pass by value** for all parameters. However, when passing objects, the "value" being passed is a reference to the object, not the object itself. This creates the illusion of pass by reference, but it's actually pass by value of the reference.
 
 ## Why Do We Need It?
 

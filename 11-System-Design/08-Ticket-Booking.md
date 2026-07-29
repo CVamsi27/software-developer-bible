@@ -2,7 +2,11 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ng charts
+## Requirements
+### Functional Requirements
+
+- Browse available events/shows
+- View seating charts
 - Select seats
 - Reserve seats temporarily
 - Process payments
@@ -12,7 +16,7 @@ ng charts
 - Send booking confirmations
 - Support for different event types (movies, concerts, sports)
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 
 - High availability (99.99%)
 - Strong consistency for seat reservations

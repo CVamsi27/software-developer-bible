@@ -2,7 +2,9 @@
 
 [![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
 
-ace for creating objects without specifying their concrete classes. It encapsulates object creation logic, allowing subclasses or methods to decide which class to instantiate.
+## Definition
+
+The Factory pattern is a creational design pattern that provides an interface for creating objects without specifying their concrete classes. It encapsulates object creation logic, allowing subclasses or methods to decide which class to instantiate.
 
 The pattern is particularly useful when the creation process is complex, involves multiple steps, or when the system needs to be independent from how its objects are created.
 

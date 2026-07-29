@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-estions with detailed answers, covering everything from basic concepts to advanced FAANG-level scenarios. Each question includes a comprehensive answer, code examples where applicable, and follow-up considerations.
+## Definition
+
+This chapter contains the 40 most commonly asked testing interview questions with detailed answers, covering everything from basic concepts to advanced FAANG-level scenarios. Each question includes a comprehensive answer, code examples where applicable, and follow-up considerations.
 
 ## Why Do We Need It?
 

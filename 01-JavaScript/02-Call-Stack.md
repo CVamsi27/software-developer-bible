@@ -2,7 +2,9 @@
 
 [![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
 
-re that JavaScript uses to keep track of function execution. When a function is called, it's pushed onto the top of the stack; when the function returns, it's popped off. The call stack ensures that code runs in the correct order and that we know where we are in the execution.
+## Definition
+
+The **Call Stack** is a LIFO (Last In, First Out) data structure that JavaScript uses to keep track of function execution. When a function is called, it's pushed onto the top of the stack; when the function returns, it's popped off. The call stack ensures that code runs in the correct order and that we know where we are in the execution.
 
 ## Why Do We Need It?
 

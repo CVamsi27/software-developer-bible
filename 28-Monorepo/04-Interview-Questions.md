@@ -2,7 +2,8 @@
 
 [![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
 
-chitecture, from fundamentals to advanced system design.
+## Definition
+This comprehensive guide covers 20 interview questions on monorepo architecture, from fundamentals to advanced system design.
 
 ## Why Do We Need It?
 

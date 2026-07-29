@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-nits or components are combined and tested as a group. The goal is to verify that different modules work correctly together when integrated, exposing defects in the interactions between components.
+## Definition
+
+Integration testing is a level of software testing where individual units or components are combined and tested as a group. The goal is to verify that different modules work correctly together when integrated, exposing defects in the interactions between components.
 
 **Key Characteristics:**
 

@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- on metrics (numeric measurements) to understand system health, performance, and behavior over time. While logging tells you *what happened*, monitoring tells you *how your system is performing* right now and whether it has deviated from expected behavior.
+## Definition
+
+Monitoring is the process of collecting, analyzing, and acting on metrics (numeric measurements) to understand system health, performance, and behavior over time. While logging tells you *what happened*, monitoring tells you *how your system is performing* right now and whether it has deviated from expected behavior.
 
 A **monitoring system** scrapes or receives metrics at regular intervals, stores them in a time-series database, visualizes them on dashboards, and fires alerts when predefined thresholds are breached.
 

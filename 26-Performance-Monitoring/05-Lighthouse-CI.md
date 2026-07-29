@@ -2,7 +2,9 @@
 
 [![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
 
-O, and best-practice audits in CI/CD pipelines. It tracks scores over time, sets budgets to prevent regressions, and integrates with GitHub Actions for PR-level performance checks.
+## Definition
+
+**Lighthouse CI** automates Lighthouse performance, accessibility, SEO, and best-practice audits in CI/CD pipelines. It tracks scores over time, sets budgets to prevent regressions, and integrates with GitHub Actions for PR-level performance checks.
 
 ## Why Do We Need It?
 

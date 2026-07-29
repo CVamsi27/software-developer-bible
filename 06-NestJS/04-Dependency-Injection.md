@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
-t receives its dependencies from an external source rather than creating them itself. NestJS has a built-in **IoC (Inversion of Control) container** that manages the entire dependency graph of an application — creating, resolving, and injecting dependencies automatically.
+## Definition
+
+**Dependency Injection (DI)** is a design pattern where an object receives its dependencies from an external source rather than creating them itself. NestJS has a built-in **IoC (Inversion of Control) container** that manages the entire dependency graph of an application — creating, resolving, and injecting dependencies automatically.
 
 In NestJS, DI works through constructor injection: you declare dependencies as constructor parameters, and the framework resolves and injects them at runtime.
 

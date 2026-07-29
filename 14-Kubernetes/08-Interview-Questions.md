@@ -2,7 +2,11 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-## Question 1: What is Kubernetes and why is it used?
+## 30 Most Asked Kubernetes Interview Questions with Detailed Answers
+
+---
+
+### Question 1: What is Kubernetes and why is it used?
 
 **Answer:**
 

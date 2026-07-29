@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
- code into backward-compatible JavaScript for older browsers. It processes syntax transformation (arrow functions, optional chaining), polyfills (Promise, Array.flatMap), and is extensible via plugins and presets.
+## Definition
+
+**Babel** is a JavaScript compiler that transforms modern ES6+ code into backward-compatible JavaScript for older browsers. It processes syntax transformation (arrow functions, optional chaining), polyfills (Promise, Array.flatMap), and is extensible via plugins and presets.
 
 ## Why Do We Need It?
 

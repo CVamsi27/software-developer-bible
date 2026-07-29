@@ -2,7 +2,9 @@
 
 [![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 
-a service is alive and able to handle requests. They are the most basic form of observability — a binary signal (healthy/unhealthy) that load balancers, orchestrators, and monitoring systems use to route traffic and manage service lifecycle.
+## Definition
+
+Health checks are endpoints or mechanisms that report whether a service is alive and able to handle requests. They are the most basic form of observability — a binary signal (healthy/unhealthy) that load balancers, orchestrators, and monitoring systems use to route traffic and manage service lifecycle.
 
 There are two distinct types:
 

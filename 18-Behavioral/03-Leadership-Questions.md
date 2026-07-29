@@ -2,7 +2,9 @@
 
 [![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
-iewers-expect-from-senior-leaders)
+## Table of Contents
+
+- [What Interviewers Expect from Senior Leaders](#what-interviewers-expect-from-senior-leaders)
 - [Questions 1-20 with STAR Answers](#questions)
 - [Leadership Competency Framework](#leadership-competency-framework)
 - [Building Your Leadership Narrative](#building-your-leadership-narrative)

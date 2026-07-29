@@ -2,7 +2,9 @@
 
 [![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
 
- client making requests to an API. It ensures that only authorized users and applications can access protected resources. Authentication answers "Who are you?" while authorization answers "What can you do?"
+## Definition
+
+API authentication is the process of verifying the identity of a client making requests to an API. It ensures that only authorized users and applications can access protected resources. Authentication answers "Who are you?" while authorization answers "What can you do?"
 
 ## Why Do We Need It?
 

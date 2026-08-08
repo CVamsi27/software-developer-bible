@@ -782,8 +782,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)
+- [Behavioral](../70-Interview-Toolkit/18-Behavioral/)
+- [SDE Role](../80-Interview-Lanes/81-Indian-SDE-FAANG/)
 
 ## References & Learn More
 

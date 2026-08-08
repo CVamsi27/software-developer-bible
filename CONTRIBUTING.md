@@ -34,25 +34,67 @@ Before contributing, review the existing files in the relevant section to unders
 ```
 .
 ├── README.md                  # Project overview
-├── INDEX.md                   # Central navigation hub
+├── INDEX.md                   # Central navigation hub (pick your lane)
 ├── CONTRIBUTING.md            # This file
 ├── PROJECT-STATS.md           # Auto-generated statistics report
-├── 00-Interview-Strategy/     # Numbered section directories
-│   ├── INDEX.md               # Section index with badges & navigation
-│   ├── Communication.md       # Content files (numbered)
-│   ├── Resume-Tips.md
-│   └── ...
-├── 01-JavaScript/
+│
+├── 00-Interview-Strategy/                # LANE 0 — Cross-lane (everyone)
 │   ├── INDEX.md
-│   ├── 01-Execution-Context.md
+│   ├── Communication.md
 │   └── ...
-└── 31-SDE-Role/
-    ├── INDEX.md
-    ├── README.md               # Some sections may have their own README
-    └── ...
+│
+├── 10-Frontend-Stack/                    # STACK 1 — Frontend
+│   ├── 01-JavaScript/
+│   ├── 02-TypeScript/
+│   ├── 03-React/
+│   ├── 04-NextJS/
+│   ├── 29-Form-Handling/
+│   └── 30-Animation/
+│
+├── 20-Backend-Stack/                     # STACK 2 — Backend
+│   ├── 05-NodeJS/
+│   ├── 06-NestJS/
+│   ├── 07-REST-API/
+│   ├── 08-Database/
+│   ├── 09-Security/
+│   ├── 10-Design-Patterns/
+│   ├── 12-Microservices/
+│   └── 17-GraphQL/
+│
+├── 30-Architecture-Stack/                # STACK 3 — Architecture
+│   └── 11-System-Design/                 # 22 case studies
+│
+├── 40-Platform-Stack/                    # STACK 4 — DevOps / Platform
+│   ├── 13-Docker/
+│   ├── 14-Kubernetes/
+│   ├── 15-CI-CD/
+│   ├── 22-Observability/
+│   ├── 23-Build-Tools/
+│   ├── 24-Git-Advanced/
+│   ├── 27-Serverless-Edge/
+│   └── 28-Monorepo/
+│
+├── 50-Quality-Stack/                     # STACK 5 — Quality
+│   ├── 16-Testing/
+│   ├── 25-Accessibility/
+│   └── 26-Performance-Monitoring/
+│
+├── 60-Real-Time-Stack/                   # STACK 6 — Real-time
+│   └── 21-WebSockets/
+│
+├── 70-Interview-Toolkit/                 # STACK 7 — Interview prep toolkit
+│   ├── 18-Behavioral/
+│   ├── 19-Coding-Patterns/               # 18 pattern files
+│   └── 20-CheatSheets/
+│
+└── 80-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
+    ├── 81-Indian-SDE-FAANG/              # DSA-heavy, 8-week
+    └── 82-Abroad-Full-Stack/             # Take-home + system design, 4-week
 ```
 
-- Section directories are numbered `00-` through `31-`
+- **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
+- **The 3 lanes** (`00-`, `81-`, `82-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
+- Stack directories are numbered `10-` through `70-` to make it easy to slot new sections in (e.g. `11-` next to `10-Frontend-Stack/` if you add a Frontend-Stack-adjacent section).
 - Each section has an `INDEX.md` file
 - Content files are numbered within their section (`01-`, `02-`, etc.)
 
@@ -464,9 +506,9 @@ else:
 
 ```text
 ## See Also
-- [Coding Patterns](19-Coding-Patterns/)
-- [JavaScript](01-JavaScript/)
-- [TypeScript](02-TypeScript/)
+- [Coding Patterns](70-Interview-Toolkit/19-Coding-Patterns/)
+- [JavaScript](10-Frontend-Stack/01-JavaScript/)
+- [TypeScript](10-Frontend-Stack/02-TypeScript/)
 ```
 
 #### Rules
@@ -482,9 +524,9 @@ else:
 
 | Variant | Example | Usage |
 |---------|---------|-------|
-| Section directory | `- [React](03-React/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](07-REST-API/)` | Cross-section from subdirectories |
+| Section directory | `- [React](10-Frontend-Stack/03-React/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](50-Quality-Stack/16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](20-Backend-Stack/07-REST-API/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -503,7 +545,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```text
-**Cross-references:** [JavaScript](01-JavaScript/) | [TypeScript](02-TypeScript/) | [Coding Patterns](19-Coding-Patterns/)
+**Cross-references:** [JavaScript](10-Frontend-Stack/01-JavaScript/) | [TypeScript](10-Frontend-Stack/02-TypeScript/) | [Coding Patterns](70-Interview-Toolkit/19-Coding-Patterns/)
 ```
 
 - Pipe-separated links

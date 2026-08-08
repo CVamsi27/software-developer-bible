@@ -1,0 +1,371 @@
+# Abroad Full-Stack Lane — The Complete Reference
+
+> **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
+
+[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+---
+
+## Table of Contents
+
+| # | Section | Purpose |
+|---|---------|---------|
+| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with ✅/❌ per company type) |
+| 2 | [Reference Topics — What You Need to Know](#reference-topics--what-you-need-to-know) | The checklist — what you need to know (3 tiers: mandatory / common / differentiator + skip list). This is the "perfect reference" part. |
+| 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
+| 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (5 country tiers), visa strategy (8 countries) |
+| 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
+| 6 | [Cross-references to Core Sections (10-70 + 00)](#cross-references-to-core-sections-00-30) | Where to study (the 8 themed groups) |
+| 7 | [FAQ](#faq) | Common questions |
+| 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
+
+---
+
+## Lane Decision — Is This the Right Lane for You?
+
+| If you are targeting... | Use this lane (82)? | Or use Indian SDE (81)? |
+|--------------------------|:-------------------:|:----------------------:|
+| **EU / non-Indian mid-stage startups** (n8n, SumUp, Scalable, sennder, THRYVE, Peter Park, Hostaway, GoGlobal) | ✅ **primary** | — |
+| **Remote-first US companies** (Stripe, Linear, Vercel, Supabase, Resend, Clerk) | ✅ **primary** | — |
+| **EU Big Tech** (Booking.com, Spotify, Klarna, Truecaller) | ✅ **primary + secondary** | use 81 too for the DSA signal |
+| **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | secondary | ✅ **primary** |
+| **Indian in-country** (in Bengaluru, Hyderabad, etc.) | — | ✅ **primary** |
+| **US FAANG on-site** (Google MTV, Meta Menlo Park) | — | ✅ **primary** |
+| **Junior roles (under 3 YoE)** | — | start with `01-JavaScript/` and `02-TypeScript/` fundamentals first |
+
+**Quick heuristic:** if you need **visa sponsorship to work in the target country** AND the company is **mid-stage (Series A–D, 50-1000 people)**, you're in this lane. If you're targeting a US-based company from India without needing US visa, you're also in this lane. Everything else → 31.
+
+**The "both" case:** European companies like Booking.com and Spotify run FAANG-style loops (DSA + system design + behavioral). For them, **use both lanes** — start with 31 for the FAANG-DSA signal, then layer 32's family/visa/relocation overlay.
+
+---
+
+## Reference Topics — What You Need to Know
+
+This is a **reference checklist** of every topic a senior abroad full-stack candidate should be able to discuss confidently. It is **non-duplicative** with the core stacks 10-70 + 00 (which contain the actual deep-dive content). This is the **what to be ready for**; the core sections are **where to study it**.
+
+### Tier 1 — Mandatory, will be asked in 90%+ of interviews
+
+| Topic | What you need to demonstrate | Where to study |
+|-------|------------------------------|----------------|
+| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [02-TypeScript/](../../10-Frontend-Stack/02-TypeScript/) |
+| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [03-React/](../../10-Frontend-Stack/03-React/) |
+| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [04-NextJS/](../../10-Frontend-Stack/04-NextJS/) |
+| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [05-NodeJS/](../../20-Backend-Stack/05-NodeJS/) |
+| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [06-NestJS/](../../20-Backend-Stack/06-NestJS/) |
+| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [07-REST-API/](../../20-Backend-Stack/07-REST-API/), [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/) |
+| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [08-Database/](../../20-Backend-Stack/08-Database/) |
+| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [09-Security/](../../20-Backend-Stack/09-Security/) |
+| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) |
+| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
+| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [13-Docker/](../../40-Platform-Stack/13-Docker/), [15-CI-CD/](../../40-Platform-Stack/15-CI-CD) |
+| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [16-Testing/](../../50-Quality-Stack/16-Testing/) |
+| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [22-Observability/](../../40-Platform-Stack/22-Observability/) |
+| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) + your own [story-bank.md](story-bank.md) |
+
+### Tier 2 — Asked in 50-70% of interviews (mid-stage senior)
+
+| Topic | What you need to demonstrate | Where to study |
+|-------|------------------------------|----------------|
+| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) |
+| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/) |
+| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [25-Accessibility/](../../50-Quality-Stack/25-Accessibility/) |
+| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) |
+| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/) |
+| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [27-Serverless-Edge/](../../40-Platform-Stack/27-Serverless-Edge/) |
+| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) |
+| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) |
+| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) |
+
+### Tier 3 — Differentiator (asked 20-30%, distinguishes senior from staff)
+
+| Topic | What you need to demonstrate | Where to study |
+|-------|------------------------------|----------------|
+| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [03-React/](../../10-Frontend-Stack/03-React/) + [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) |
+| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
+| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [09-Security/](../../20-Backend-Stack/09-Security/) |
+| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [13-Docker/](../../40-Platform-Stack/13-Docker/), [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) |
+| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) |
+| **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [22-Compensation-Benchmarking.md](../81-Indian-SDE-FAANG/22-Compensation-Benchmarking.md) |
+
+### Topics to SKIP (overkill for this lane)
+
+- Hard DP (2D, bitmask, interval)
+- Segment tree, BIT, union-find, KMP/Rabin-Karp
+- Bit manipulation
+- Monotonic stack, queue, sliding window maximum (LeetCode hard)
+- FAANG-style Bar Raiser rounds
+- Onsite whiteboard (n8n / SumUp / Scalable don't do this — they use take-homes)
+- Multi-round LP grind (5+ rounds is FAANG; mid-stage EU is usually 3-4 rounds)
+
+---
+
+## Interview Process — Round-by-Round
+
+The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-home at the front. Compared to FAANG's 5-6 rounds of LeetCode + system design + behavioral, this is shorter, faster, and more focused on shipping-production-code signal.
+
+### Round 0: Recruiter Screen (15-30 min)
+
+| Who | What they test | What they ask |
+|------|----------------|----------------|
+| Internal recruiter or talent partner | Basic fit: years of experience, stack, visa, location, comp expectation, motivation. | "Tell me about your current role." "Why are you looking?" "Are you open to relocation to [Berlin / Amsterdam]?" "Do you require visa sponsorship?" "What's your comp expectation?" |
+
+**How to prep:** Know your CV cold. Have a 60-second "tell me about yourself" answer. Have your comp range in EUR (see compensation section in [story-bank.md](story-bank.md)). Know your visa status (Blue Card eligibility, Skilled Worker visa path, 30% ruling for NL).
+
+### Round 1: Take-Home Project (4-8 hours of your time, 1-2 weeks to complete)
+
+| Format | What they test | Typical scope |
+|--------|----------------|----------------|
+| **Async take-home** (most common at mid-stage) | Can you ship a small full-stack feature production-quality? | A small app: REST endpoint + DB schema + minimal frontend, OR a workflow engine, OR a CLI tool, OR a frontend feature with a small backend. Usually 4-8 hours of work. |
+| **Pair-programming take-home** (less common, more senior) | Same as above, but in a live coding session. | 60-90 min live build, often on a Zoom with a senior engineer. |
+
+**What they actually evaluate (in order of importance):**
+1. **Code quality** — clean structure, type-safe, readable, tests where they matter
+2. **Product sense** — did you think about edge cases, UX, error states?
+3. **System thinking** — schema design, API design, observability hooks, security basics
+4. **Commit hygiene** — meaningful commit messages, logical PR structure
+5. **Documentation** — README that explains design decisions and how to run
+
+**What gets you REJECTED on a take-home:**
+- No tests
+- No README
+- `any` everywhere in TypeScript
+- Hardcoded credentials
+- No error handling
+- `git push --force` history
+- "I'll add tests later" comments
+- Looks AI-generated without modification
+
+**How to ship a strong take-home:**
+- Plan for 5-6 hours minimum, even if the brief says "2 hours"
+- Lead with: schema design, then backend, then frontend, then tests, then README
+- Use the bible's [06-NestJS/](../../20-Backend-Stack/06-NestJS/) + [08-Database/](../../20-Backend-Stack/08-Database/) + [09-Security/](../../20-Backend-Stack/09-Security/) sections as your reference
+- Include a short Loom video walkthrough if the brief allows
+- Have a "what I'd do with 24 more hours" note in the README
+
+### Round 2: Technical Screen (60-90 min)
+
+| Format | What they test | Typical structure |
+|--------|----------------|-------------------|
+| **Live coding on a small problem** (most common) | Can you think through a coding problem in real-time? | 1-2 mediums (HashMap, sliding window, two pointers, simple BFS/DFS). 25-30 min per problem. **Not LeetCode hard.** |
+| **Take-home review** (less common) | Can you defend your design decisions? | 30-45 min walk-through of your take-home code, 15-20 min deep-dive on a specific choice. |
+| **System design lite** (sometimes combined) | Can you sketch an architecture for a small system? | 20-30 min on a focused problem (e.g., "design a URL shortener" at 1/3 the depth of a full SD round). |
+
+**The DSA bar for this round is "1-2 mediums in 30 min each."** You're not expected to solve LeetCode hards. You're expected to demonstrate clear thinking, code that compiles, edge cases handled.
+
+**What gets you REJECTED on a tech screen:**
+- Cannot solve a 2-sum variant in 25 min
+- Cannot debug a small bug in your own code when prompted
+- No questions asked back
+- Silent for 5+ minutes when stuck
+
+**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) has the patterns.
+
+### Round 3: System Design (45-60 min)
+
+| Format | What they test | What they ask |
+|--------|----------------|---------------|
+| **Whiteboard / shared doc** (most common) | Can you design a system end-to-end under ambiguity? | 1 system design problem, often company-adjacent. For n8n: workflow engine / event-driven system. For SumUp: payment gateway. For sennder: event-driven microservices. |
+| **Architecture review of your take-home** (sometimes) | Can you scale your design? | "How would you scale this to 1M users?" "What breaks first?" |
+
+**The 4-phase framework (use this every time):**
+1. **Clarify** (5 min) — Functional requirements, non-functional requirements, scale estimates, out-of-scope. Ask questions. Don't start drawing.
+2. **Estimate** (2 min) — QPS, storage, bandwidth. Just rough numbers. "10K DAU, 100 req/s peak, 1GB/day storage."
+3. **High-level design** (10 min) — Boxes and arrows. Client → CDN → API gateway → service → DB. Don't dive deep yet.
+4. **Deep-dive** (20 min) — Pick 2-3 critical components and go deep. Database schema, indexing, caching, queue, consistency. Be ready to discuss trade-offs (CAP, eventual consistency, idempotency).
+
+**What gets you REJECTED on system design:**
+- Start drawing boxes before clarifying
+- No estimates (QPS, storage, bandwidth)
+- Single point of failure everywhere
+- "I'll just add Redis" without explaining what for
+- Cannot discuss trade-offs (always picks "scale" or "consistency" without nuance)
+- No observability / no failure modes
+
+**The system design case studies the bible has:**
+- [URL Shortener](../../30-Architecture-Stack/11-System-Design/01-URL-Shortener.md) — classic
+- [Notification Service](../../30-Architecture-Stack/11-System-Design/07-Notification-Service.md) — retry, DLQ, fanout
+- [Ticket Booking](../../30-Architecture-Stack/11-System-Design/08-Ticket-Booking.md) — consistency, "two users grab the last seat"
+- [Hospital Management](../../30-Architecture-Stack/11-System-Design/10-Hospital-Management.md) — domain fit for healthcare
+- [Payment Gateway](../../30-Architecture-Stack/11-System-Design/06-Payment-Gateway.md) — SumUp / fintech
+- [Rate Limiter](../../30-Architecture-Stack/11-System-Design/13-Rate-Limiter.md) — n8n workflow throttling
+- [Distributed Counter](../../30-Architecture-Stack/11-System-Design/22-Distributed-Counter.md) — hot-key sharding
+- [Lyft](../../30-Architecture-Stack/11-System-Design/21-Lyft.md) — geo indexing
+- [How to Approach](../../30-Architecture-Stack/11-System-Design/17-How-to-Approach.md) — read this first
+
+**Practice 5 of these with a timer + recording.** 45 min each, then review the recording.
+
+### Round 4: Behavioral + Culture (30-60 min, often combined with system design or async)
+
+| Format | What they test | What they ask |
+|--------|----------------|---------------|
+| **Async written questions** (common at EU mid-stage) | Reflection, async communication, English fluency. | "Tell me about a time you had a hard technical disagreement." "Why [company]?" "What would you do in your first 90 days?" |
+| **Live behavioral** (less common) | Same. | Same questions but verbal. |
+| **Founder / hiring manager call** (common for senior+) | Vision, ownership, long-term fit. | "What's your 3-year plan?" "How do you stay current?" "Why us specifically?" |
+
+**The 8 STAR stories you should have ready** (in your own [story-bank.md](story-bank.md)):
+1. **0→1 founding at Docita** — sole engineer shipped production multi-tenant SaaS
+2. **30% API latency reduction at MAQ** — query tuning + indexing + caching
+3. **25% faster delivery at MAQ** — refactoring around reusable TS patterns
+4. **4 engineers mentored, 20% better sprint predictability**
+5. **Microservices platform at Cognizant** — Spring Boot + Eureka + Zuul
+6. **RBAC + audit logging for healthcare compliance**
+7. **85% test coverage, 15% fewer production incidents**
+8. **Production observability + incident response**
+
+**The "Why this company?" answer (60 sec, specific, not generic):**
+- Mention 1 product feature or engineering blog post that excited you
+- Mention 1 specific person/team you'd learn from
+- Mention 1 thing about the company culture that aligns with how you work
+- Close with "and I'm particularly excited about [specific recent product/launch]"
+
+---
+
+## Strategy — How to Prep, What to Skip, When to Apply
+
+### The 4-week prep plan (50-55 hours, ~2-3h/day)
+
+| Week | Focus | Hours | Deliverable |
+|------|-------|------:|-------------|
+| **Week 1** | Foundation + behavioral + company mapping | ~12-14h | All 8 STAR stories practiced out loud, recorded. "Tell me about yourself" at 90 sec. Mock 1 scheduled. |
+| **Week 2** | Take-home project + DSA + first mock | ~14-16h | Working take-home (public GitHub, demo). 8-10 DSA mediums solved. Mock 1 done. |
+| **Week 3** | System design + frontend deep-dive + DSA | ~14-16h | 4 system designs explained with timer + recording. 14-18 DSA mediums. 1-pager on Next.js 15. Mock 2 done. |
+| **Week 4** | Mocks + final polish + applications | ~12-14h | 3-4 mocks completed. 4-6 applications sent. CV polished. |
+
+Full plan in [study-plan.md](study-plan.md).
+
+### The 80/20 — what to skip if time is short
+
+If you have **less than 4 weeks**, drop in this order:
+1. **Skip the DSA pattern practice entirely** (Tier 1 mid-stage companies don't ask hard algo, only 1-2 mediums at most)
+2. **Skip advanced system design cases** (URL shortener + 1 company-adjacent case is enough)
+3. **Skip the 6-pattern DSA exposure** (replace with 5 HashMap + 5 Sliding Window = 10 problems, 2 days)
+4. **Skip the flashcard / spaced repetition work** (low-ROI for short timelines)
+5. **Skip the 8-week FAANG schedule** (in 81-SDE-Role, not for you)
+
+**The non-negotiable 1-week MVP:**
+- 8 STAR stories practiced out loud
+- 1 system design case (URL shortener) explained cold
+- 1 take-home project shipped (any TS full-stack)
+- 2 mock interviews done
+
+If you can ship those, you're ready to apply. Real interview feedback is more useful than any prep.
+
+### When to start applying
+
+| Trigger | Apply now |
+|---------|-----------|
+| Stories practiced cold (8 stories) | ✅ after Week 1 |
+| 1 take-home shipped OR strong portfolio of personal projects | ✅ after Week 1-2 |
+| 1 system design case explained cold | ✅ after Week 1-2 |
+| 1 mock interview done | ✅ after Week 1-2 |
+
+**Rule of thumb:** Send 2-3 applications in Week 1 (n8n, SumUp, etc.) while still prepping. Real interview feedback is more useful than any prep. Don't wait until "perfect."
+
+### Comp strategy
+
+| Tier | City | Base (senior, 5+ YoE) | Equity | Notes |
+|------|------|----------------------:|--------|-------|
+| Tier 1 | Amsterdam, Berlin, Munich | EUR 75K-100K | 0.05-0.5% | Senior at mid-stage startup |
+| Tier 2 | Helsinki, Stockholm, Copenhagen | EUR 65K-90K | 0.05-0.3% | Slightly tighter market |
+| Tier 3 | Vienna, Lisbon, Warsaw, remote-EU | EUR 60K-85K | 0.05-0.3% | Lower cost of living, decent comp |
+| Tier 4 | Paris, Madrid, Rome | EUR 70K-100K | 0.05-0.3% | Bigger cities, similar comp |
+| Premium | London, Zurich | GBP 90K-130K / CHF 120K-160K | 0.05-0.2% | Higher cost of living, higher gross |
+
+**EU Blue Card minimum (2024-25):** ~EUR 48,300/year gross (lower threshold for shortage occupations; IT usually qualifies). All Tier 1-4 base salaries above this.
+
+**Netherlands 30% ruling:** For 5 years, 30% of your salary is tax-free. Strong comp negotiation tool.
+
+**Family comp:** When comparing offers, factor in: spouse's Pega market in the city (Tier 1 Pega hubs: Amsterdam, London, Berlin), international school costs (EUR 15-30K/year per child), housing (Munich > Berlin > Amsterdam > Helsinki for cost).
+
+### Visa strategy
+
+| Country | Visa | Process time | Family |
+|---------|------|--------------|--------|
+| **Netherlands** | Highly Skilled Migrant (kennismigrant) | 2-4 weeks | Spouse auto-work-permit. 30% ruling. |
+| **Germany** | EU Blue Card | 6-12 weeks | Spouse work permit included. |
+| **Ireland** | Critical Skills Employment Permit | 4-8 weeks | Spouse Stamp (auto work permit). |
+| **Sweden** | Work Permit | 8-16 weeks | Spouse work permit included. |
+| **Finland** | EU Blue Card / Residence Permit | 6-12 weeks | Spouse work permit included. |
+| **UK** | Skilled Worker visa | 4-8 weeks | Spouse Dependant visa (work allowed). Minimum salary GBP 41,700. |
+| **Switzerland** | B Permit | 8-12 weeks | Spouse work permit included. Quota applies. |
+| **Austria** | Red-White-Red Card | 8-12 weeks | Spouse work permit included. |
+
+**For all countries: employer typically pays visa costs + relocation package.** This is a negotiation lever, not something you pay for.
+
+---
+
+## Files in This Lane
+
+| # | File | Purpose | Personal example |
+|---|------|---------|------------------|
+| 01 | [Personal Story Bank](story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
+| 02 | [EU Mid-Stage Preparation Plan](study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
+
+---
+
+## Cross-references to Core Sections (10-70 + 00)
+
+These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
+
+**Core fundamentals:** [00-Interview-Strategy/](../../00-Interview-Strategy/) · [01-JavaScript/](../../10-Frontend-Stack/01-JavaScript/) · [02-TypeScript/](../../10-Frontend-Stack/02-TypeScript/) · [03-React/](../../10-Frontend-Stack/03-React/) · [04-NextJS/](../../10-Frontend-Stack/04-NextJS/)
+
+**Backend, API & Data:** [05-NodeJS/](../../20-Backend-Stack/05-NodeJS/) · [06-NestJS/](../../20-Backend-Stack/06-NestJS/) · [07-REST-API/](../../20-Backend-Stack/07-REST-API/) · [08-Database/](../../20-Backend-Stack/08-Database/) · [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/)
+
+**Architecture & Design:** [09-Security/](../../20-Backend-Stack/09-Security/) · [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) · [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) · [12-Microservices/](../../20-Backend-Stack/12-Microservices/)
+
+**DevOps, Observability & Tooling:** [13-Docker/](../../40-Platform-Stack/13-Docker/) · [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) · [15-CI-CD/](../../40-Platform-Stack/15-CI-CD) · [22-Observability/](../../40-Platform-Stack/22-Observability/) · [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) · [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) · [27-Serverless-Edge/](../../40-Platform-Stack/27-Serverless-Edge/)
+
+**Testing & Quality:** [16-Testing/](../../50-Quality-Stack/16-Testing/) · [25-Accessibility/](../../50-Quality-Stack/25-Accessibility/) · [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/)
+
+**Real-time:** [21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/)
+
+**Interview prep:** [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) · [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/)
+
+**Reference & quick-look:** [20-CheatSheets/](../../70-Interview-Toolkit/20-CheatSheets/) · [28-Monorepo/](../../40-Platform-Stack/28-Monorepo/) · [29-Form-Handling/](../../10-Frontend-Stack/29-Form-Handling/) · [30-Animation/](../../10-Frontend-Stack/30-Animation/)
+
+---
+
+## FAQ
+
+**Q: I want to apply to Booking.com (Amsterdam) AND Microsoft (Dublin). Which lane?**
+A: Both. Use `81-Indian-SDE-FAANG/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `82-Abroad-Full-Stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
+
+**Q: I'm a frontend specialist. Do I still need the take-home?**
+A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [06-NestJS/](../../20-Backend-Stack/06-NestJS/), [08-Database/](../../20-Backend-Stack/08-Database/), and [09-Security/](../../20-Backend-Stack/09-Security/) sections are the prep.
+
+**Q: I'm targeting remote-first US companies (Stripe, Linear, Vercel) from India. Which lane?**
+A: Primarily this lane (English-only, take-home + system design, visa not needed). The remote-first US market is closer to EU mid-stage than to FAANG. Adjust the comp expectations up ($130-180K TC) but the prep structure is the same.
+
+**Q: How long should I prep?**
+A: 4 weeks is the realistic minimum at 2-3 hrs/day. 6 weeks if you have more time and want a slower ramp. The plan is designed to be flexible.
+
+**Q: When should I start applying?**
+A: After Week 1 of the plan. Send 2-3 applications in Week 1 (n8n, SumUp, etc.) while still prepping — the actual application feedback is more useful than any prep. Real applications > perfect prep.
+
+**Q: I have a non-TS stack (Java / Python / Go). Do I still fit?**
+A: Yes, but the bible's bias is TypeScript. Adjust the take-home project to your stack. Most of the system design, security, and observability content is stack-agnostic.
+
+**Q: How many applications should I send?**
+A: 10-15 well-targeted over 4-6 weeks. Below 5 = low offer probability. Above 25 = preparation dilution. The 3 application packages ready (n8n, SumUp, Scalable Capital) cover Tier 1.
+
+**Q: My wife is in a different field (Pega, healthcare, etc.). How does the country choice work?**
+A: Tier 1 Pega market: Netherlands (Rabobank, ING, ABN AMRO), UK (HSBC, Barclays), Germany (T-Systems, Allianz). For healthcare: Germany (largest EU market), UK, France. For consulting: all Tier 1 cities. **This is why the family/relocation question is part of the country tier list** — the country that maximizes both your job and your spouse's job is the right one.
+
+---
+
+## When to add to this lane
+
+This lane is a living scaffold. As you go through interviews, add:
+
+- **New company profiles** — for each Tier 1 company, add a 1-pager in `interview-prep/{company}-research.md`
+- **New system design case studies** — once you solve a case interview well, add the case + your answer framework
+- **New take-home projects** — once you ship one, link it here as a reference build
+- **Post-interview retrospectives** — what worked, what didn't, what to adjust
+
+---
+
+## Navigation
+
+[← Previous: Animation](../../10-Frontend-Stack/30-Animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../81-Indian-SDE-FAANG/INDEX.md)

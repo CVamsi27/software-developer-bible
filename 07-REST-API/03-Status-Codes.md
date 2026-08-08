@@ -1,6 +1,6 @@
 ---
 section: REST API
-category: Backend
+category: API
 tags: [concept]
 ---
 

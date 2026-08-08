@@ -3,7 +3,7 @@
 > **8 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
+[![Category](https://img.shields.io/badge/category-API-%23ff6b35)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

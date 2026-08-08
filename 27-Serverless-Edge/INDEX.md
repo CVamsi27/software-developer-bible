@@ -3,7 +3,7 @@
 > **7 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-informational)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

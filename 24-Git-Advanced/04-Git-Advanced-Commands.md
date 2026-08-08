@@ -1,6 +1,6 @@
 ---
 section: Git Advanced
-category: Reference
+category: Tooling
 tags: [concept, reference]
 ---
 

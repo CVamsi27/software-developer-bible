@@ -3,7 +3,7 @@
 > **8 files** — Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Real--Time-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

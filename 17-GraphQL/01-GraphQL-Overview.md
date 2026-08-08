@@ -1,6 +1,6 @@
 ---
 section: GraphQL
-category: Backend
+category: API
 tags: [concept, overview]
 ---
 

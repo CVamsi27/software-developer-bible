@@ -3,7 +3,7 @@
 > **11 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, mocking, test patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Quality-ffd700)](.)
+[![Category](https://img.shields.io/badge/category-Quality-green)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

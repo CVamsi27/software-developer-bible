@@ -1,6 +1,6 @@
 ---
 section: Build Tools
-category: DevOps
+category: Tooling
 tags: [interview-questions, practice]
 ---
 

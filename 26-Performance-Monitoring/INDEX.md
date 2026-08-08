@@ -3,7 +3,7 @@
 > **8 files** — Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Quality-ffd700)](.)
+[![Category](https://img.shields.io/badge/category-Quality-green)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

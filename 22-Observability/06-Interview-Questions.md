@@ -1,6 +1,6 @@
 ---
 section: Observability
-category: DevOps
+category: Observability
 tags: [interview-questions, practice]
 ---
 

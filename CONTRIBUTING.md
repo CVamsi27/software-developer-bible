@@ -98,13 +98,19 @@ tags: [concept]            # Valid tags: concept, interview-questions, cheat-she
 |----------|----------|
 | `Core` | JavaScript, TypeScript |
 | `Frontend` | React, Next.js, Animation, Form Handling |
-| `Backend` | Node.js, NestJS, REST APIs, Database, GraphQL |
+| `Backend` | Node.js, NestJS |
+| `API` | REST APIs, GraphQL |
+| `Data` | Database |
 | `Architecture` | System Design, Microservices, Security, Design Patterns |
-| `DevOps` | Docker, Kubernetes, CI/CD, Observability, Build Tools, Serverless |
+| `DevOps` | Docker, Kubernetes, CI/CD, Serverless |
+| `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting) |
+| `Tooling` | Build Tools, Git Advanced |
 | `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role |
-| `Reference` | CheatSheets, Git Advanced, Monorepo |
+| `Reference` | CheatSheets, Monorepo |
 | `Quality` | Testing, Accessibility, Performance Monitoring |
 | `Real-Time` | WebSockets |
+
+> **13 categories** total. Newer additions (split from overloaded categories): `API` (REST + GraphQL), `Data` (Database), `Observability` (logs/metrics/traces), `Tooling` (build + Git).
 
 ---
 
@@ -139,12 +145,16 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 | Color | Usage | Section Examples |
 |-------|-------|------------------|
 | `blueviolet` | Core sections | JavaScript, TypeScript |
-| `success` | Backend sections | Node.js, REST APIs, Security |
-| `green` | Backend sections | Database |
-| `red` | Interview sections | Behavioral, Interview Strategy |
+| `success` | Backend sections | Node.js, NestJS |
+| `#ff6b35` | API sections | REST APIs, GraphQL |
+| `#8b5cf6` | Data sections | Database |
+| `green` | Quality sections | Testing, Accessibility, Performance Monitoring |
+| `red` | Interview sections | Behavioral, Interview Strategy, Coding Patterns |
 | `orange` | Practice/Questions | Interview Questions |
-| `lightgrey` | Reference sections | CheatSheets, Build Tools |
-| `informational` | Type badges, file counts | All files |
+| `lightgrey` | Reference sections | CheatSheets, Monorepo |
+| `informational` | DevOps type badges, file counts | Docker, Kubernetes, CI/CD, Serverless |
+| `#0ea5e9` | Observability sections | Observability |
+| `#64748b` | Tooling sections | Build Tools, Git Advanced |
 | `blue` | Type badges, file counts | Some sections |
 | `brightgreen` | Status: complete | All files |
 | `#800080` | System Design | 11-System-Design |

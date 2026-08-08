@@ -3,7 +3,7 @@
 > **7 files** — Web accessibility from WCAG and ARIA to keyboard navigation, testing, color & contrast, forms, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Quality-ffd700)](.)
+[![Category](https://img.shields.io/badge/category-Quality-green)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

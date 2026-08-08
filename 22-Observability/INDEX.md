@@ -3,7 +3,7 @@
 > **8 files** — Observability fundamentals from logging and monitoring to distributed tracing, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

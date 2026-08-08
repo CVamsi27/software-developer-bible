@@ -1,6 +1,6 @@
 ---
 section: Database
-category: Backend
+category: Data
 tags: [concept]
 ---
 

@@ -3,7 +3,7 @@
 > **14 files** — REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
 | # | File | Topics |

@@ -1,6 +1,10 @@
-# Accessibility Interview Questions
+---
+section: Accessibility
+category: Quality
+tags: [interview-questions, practice]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Accessibility Interview Questions
 
 ## Comprehensive Interview Guide
 
@@ -395,30 +399,23 @@ Accessibility is essential for creating inclusive web experiences. Understanding
 ACCESSIBILITY INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  It matters because:
-  - Screen readers understand page structure
-  - Better SEO
-  - Easier maintenance
-  - Accessibility by default
-  **Answer:**
-```
-```
-  Use it for:
-  - Informative images
-  - Images with text
-  - Charts and graphs
-  - Complex images
-  **Answer:**
-```
+QUESTION CATEGORIES:
+  • Fundamentals:   POUR, WCAG levels, legal landscape
+  • Implementation: ARIA, semantic HTML, keyboard nav
+  • Testing:        axe-core, screen readers, manual audit
+  • Framework:      React/Next.js a11y patterns
+
+MUST-KNOW ANSWERS:
+  • POUR: Perceivable, Operable, Understandable, Robust
+  • Native HTML first; ARIA only when needed
+  • Contrast 4.5:1 normal text, 3:1 large (WCAG AA)
+  • Automated tools catch ~30% of issues
+  • Don't disable focus outlines
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Always mention "test with real assistive technology"
+  • Discuss trade-offs of ARIA vs semantic HTML
+  • Show how to use jest-axe in unit tests
 ```
 ---
 

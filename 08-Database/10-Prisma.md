@@ -1,6 +1,14 @@
-# Prisma
+---
+section: Database
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Prisma ORM
+
+> **TL;DR:** Prisma is a TypeScript-first ORM that generates a type-safe client from a schema file, with migrations, raw SQL escape hatches, and middleware. The senior test is understanding the N+1 problem, the query engine, transaction semantics, and when to drop down to raw SQL for hot paths.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

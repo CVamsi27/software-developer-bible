@@ -1,6 +1,10 @@
-# Git Advanced Commands
+---
+section: Git Advanced
+category: Reference
+tags: [concept, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Git Advanced Commands
 
 ## Definition
 Git advanced commands are powerful tools for debugging, history manipulation, and repository management. They go beyond basic add/commit/push operations to provide sophisticated workflows.
@@ -373,30 +377,39 @@ Git advanced commands provide powerful tools for debugging, recovery, and comple
 GIT ADVANCED COMMANDS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    Git Advanced Commands                         │
-  ├─────────────────────────────────────────────────────────────────┤
-  │                                                                 │
-  │  Debugging          History           Repository                │
-  │  ┌─────────────┐    ┌─────────────┐   ┌─────────────────────┐  │
-```
-```
-  git bisect start
-  git bisect bad
-  git bisect good abc1234
-  git bisect good  # or
-  git bisect bad
-  git bisect reset
-```
+DEBUGGING:
+  git bisect start              # find bad commit via binary search
+  git bisect bad / good <sha>   # mark commits
+  git bisect run <script>       # automated bisect
+  git bisect reset              # end session
+  git blame -L 10,20 file.ts    # who changed lines 10-20
+  git log -S 'string' --oneline # find when string was added
+  git log --author='name'       # filter by author
+
+RECOVERY:
+  git reflog                    # all HEAD movements (90 days)
+  git reset --hard <sha>        # restore from reflog
+  git fsck --lost-found         # find dangling objects
+  git stash list / pop / drop   # temporary saves
+  git worktree add <path> <br>  # multiple working dirs
+
+REWRITING:
+  git rebase -i HEAD~N          # edit last N commits
+  git commit --amend            # modify last commit
+  git filter-repo --path file   # remove file from history
+  git filter-branch             # older, slower alternative
+
+INSPECTION:
+  git log --oneline --graph     # visual history
+  git log --stat                # file change stats
+  git show <sha>                # commit details
+  git diff <a>..<b>             # compare commits
+  git shortlog -sn              # commits per author
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain how reflog can save you from "lost" commits
+  • Discuss bisect run for automated test-based debugging
+  • Show how worktrees enable parallel branch work
 ```
 ---
 

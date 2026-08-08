@@ -1,6 +1,10 @@
-# Logging
+---
+section: Observability
+category: DevOps
+tags: [concept, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Logging
 
 ## Definition
 
@@ -438,12 +442,49 @@ Logging is the most fundamental pillar of observability. Structured JSON logging
 LOGGING CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+LOG LEVELS (syslog / RFC 5424):
+  0  emerg    - system unusable
+  1  alert    - immediate action required
+  2  crit     - critical conditions
+  3  err      - error conditions
+  4  warning  - warning conditions
+  5  notice   - normal but significant
+  6  info     - informational messages
+  7  debug    - debug-level messages
 
+STRUCTURED LOGGING (JSON):
+  - timestamp (ISO 8601, UTC)
+  - level (string, not number)
+  - message (human-readable, no PII)
+  - service, env, version
+  - trace_id, span_id (correlation)
+  - user_id (anonymized), session_id
+  - request_id, route, status_code
+
+CORRELATION PATTERNS:
+  - Generate request_id at edge (API gateway)
+  - Propagate via header: X-Request-Id
+  - Include in every log line for the request
+  - Inject into trace context (W3C traceparent)
+
+CENTRALIZED STACKS:
+  - ELK: Elasticsearch + Logstash + Kibana
+  - EFK: Elasticsearch + Fluentd + Kibana
+  - Loki + Grafana (label-based, like Prometheus)
+  - Datadog, Splunk, New Relic (SaaS)
+
+LOG ANTI-PATTERNS:
+  - console.log in production
+  - PII in logs (email, password, token, credit card)
+  - Unstructured strings (parse with regex = pain)
+  - Logging in tight loops (use sampling)
+  - Synchronous writes blocking event loop
+
+INTERVIEW TIPS:
+  - Explain structured vs unstructured trade-offs
+  - Discuss sampling rate vs full fidelity
+  - Show how to debug a request across 5 services
+  - Mention log retention and cost (S3 + Glacier)
 ```
 ---
 

@@ -1,6 +1,10 @@
-# Profiling Tools
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept, reference, tool]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Profiling Tools
 
 ## Definition
 Profiling tools are browser and external utilities that help developers analyze, debug, and optimize web application performance by providing detailed insights into rendering, JavaScript execution, memory usage, and network activity.
@@ -537,22 +541,36 @@ Profiling tools are essential for identifying and fixing performance issues. Mas
 PROFILING TOOLS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  async function startProfiling(duration: number = 5000): Promise<void> {
-    const entries: PerformanceEntry[] = [];
-    const observer = new PerformanceObserver((list) => {
-      entries.push(...list.getEntries());
-    });
-    observer.observe({
-```
+CHROME DEVTOOLS:
+  • Performance tab: flame chart, main thread, network
+  • Memory tab: heap snapshots, allocation timeline
+  • Coverage tab: unused JS/CSS (with source maps)
+  • Network tab: waterfall, throttling simulation
+  • React DevTools: Profiler tab, "why did this render"
+
+READING A FLAME CHAME:
+  • X axis: time, Y axis: call stack depth
+  • Width of bar: time spent
+  • Yellow: scripting, Purple: rendering, Green: painting
+  • Red triangle: long task (>50ms)
+
+REACT PROFILER:
+  import { Profiler } from 'react';
+  <Profiler id="Sidebar" onRender={(id, phase, actualDuration) => {
+    console.log({ id, phase, actualDuration });
+  }}>
+
+EXTERNAL TOOLS:
+  • Lighthouse: lab test (perf, a11y, SEO, best-practices)
+  • WebPageTest: multi-location, video capture
+  • PageSpeed Insights: combines lab + CrUX field
+  • Bundlephobia: package size before install
+  • Sentry/Highlight: session replay + perf
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Walk through a flame chart and identify the bottleneck
+  • Explain layout thrashing and how to fix
+  • Discuss how to measure RUM vs synthetic
 ```
 ---
 

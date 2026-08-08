@@ -1,6 +1,14 @@
-# Guards
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Guards
+
+> **TL;DR:** Guards are `CanActivate` classes that decide whether a request should be handled — almost always for authentication and authorization. They run after middleware and before interceptors, and they have access to the full `ExecutionContext` (HTTP, RPC, WS).
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

@@ -1,6 +1,10 @@
-# Real-Time Architecture
+---
+section: WebSockets
+category: Real-Time
+tags: [concept, guide, reference]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# Real-Time Architecture
 
 ## Definition
 
@@ -953,30 +957,40 @@ Key considerations:
 REAL-TIME ARCHITECTURE CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Chat Applications         -> WebSocket + Pub/Sub
-  Live Notifications        -> SSE + Message Queue
-  Multiplayer Games         -> WebSocket + State Sync
-  Collaborative Editing     -> CRDT + Operational Transform
-  Financial Tickers         -> WebSocket + Redis Streams
-  IoT Sensor Data           -> MQTT + Kafka
-```
-```
-  socket.on('message', async (data) => {
-    await db.messages.insert(data); // Blocks, doesn't scale
-    io.to(data.roomId).emit('new-message', data);
-  });
-  socket.on('message', async (data) => {
-    await messageQueue.publish('chat:message', data); // Non-blocking
-```
+PROTOCOL BY USE CASE:
+  • Chat applications    -> WebSocket + Pub/Sub
+  • Live notifications   -> SSE + Message Queue
+  • Multiplayer games    -> WebSocket + State Sync
+  • Collaborative edit   -> CRDT + Operational Transform
+  • Financial tickers    -> WebSocket + Redis Streams
+  • IoT sensor data      -> MQTT + Kafka
+
+SCALING PATTERNS:
+  • Sticky sessions: WS pinned to one node (load balancer)
+  • Redis Pub/Sub: cross-server message fanout
+  • Sharded sockets: hash(uid) -> node, broadcast to all
+  • Edge fanout: terminate at CDN, push to origin
+  • Backpressure: drop slow clients, monitor bufferedAmount
+
+DATA CONSISTENCY:
+  • Event Sourcing: append-only log, replay to rebuild state
+  • CQRS: separate write (commands) and read (queries) models
+  • CRDT: conflict-free replicated data types
+  • Vector clocks: causal ordering across nodes
+
+BROKER COMPARISON:
+  • Redis Pub/Sub  : 100k-500k msg/s, 1-5ms latency, no persistence
+  • Redis Streams  : persistent log, consumer groups, replay
+  • Kafka          : 100k-2M msg/s, 5-15ms, durable, ordered partitions
+  • RabbitMQ       : 20k-50k msg/s, 1-10ms, complex routing
+  • NATS           : 100k-1M msg/s, 1-5ms, lightweight, JetStream
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Draw the architecture for a chat app at 1M DAU
+  • Explain how to scale WebSockets across regions
+  • Discuss trade-offs: WS vs SSE vs Long Polling vs MQTT
+  • Know when to use event sourcing vs traditional CRUD
+  • Mention dead-letter queues and idempotent consumers
 ```
 ---
 

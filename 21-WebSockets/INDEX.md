@@ -1,8 +1,8 @@
 # WebSockets — Index
 
-> **6 files** — Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture patterns, NestJS WebSockets, and interview questions.
+> **8 files** — Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, WebTransport, scaling patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-brightgreen)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -14,10 +14,12 @@
 | 04 | [Real-Time Architecture](04-Real-Time-Architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync |
 | 05 | [NestJS WebSockets](05-NestJS-WebSockets.md) | Gateways, adapters, guards, pipes, exception filters |
 | 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
+| 07 | [WebTransport](07-WebTransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket |
+| 08 | [Scaling Patterns](08-Scaling-Patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms |
 
 ---
 
-**Cross-references:** [System Design (WhatsApp)](../11-System-Design/02-WhatsApp.md) | [NestJS](../06-NestJS/) | [Observability](../22-Observability/)
+**Cross-references:** [NestJS](../06-NestJS/) | [Observability](../22-Observability/) | [System Design (WhatsApp)](../11-System-Design/02-WhatsApp.md)
 ---
 
 ## Navigation

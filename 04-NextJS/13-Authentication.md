@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Authentication in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Next.js authentication spans middleware (edge auth checks), Server Components (server-side session validation), Client Components (auth state), and Route Handlers (token endpoints). Use sessions (server-stored) for web apps, JWTs for cross-domain APIs.
+
+## Why It Matters
+
+Senior engineers design auth that works across SSR, RSC, and CSR. They use middleware for redirects, server components for protected data fetching, and libraries like Auth.js (NextAuth), Clerk, or custom JWT. They know to never trust client-side auth checks and to use HTTP-only cookies for sessions.
 
 ## Definition
 

@@ -1,8 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # HTTP Module
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
 
-The Node.js `http` module enables creating HTTP servers and making HTTP client requests. It's the foundation for web frameworks like Express, NestJS, and Fastify, and provides low-level control over the HTTP protocol.
+Node's built-in `http` module is the foundation for Express, Fastify, NestJS, etc. `createServer((req, res) => ...)` creates a server, `req` is an IncomingMessage stream, `res` is a ServerResponse. Real apps use a framework on top, but knowing the underlying module is essential for debugging and edge cases.
+
+## Why It Matters
+
+Senior engineers know when to drop down to the raw `http` module: custom proxies, low-overhead services, WebSocket servers, or when the framework overhead matters. They understand request lifecycle, chunked transfer encoding, and how reverse proxies (nginx, ALB) forward traffic to Node.
 
 ## Definition
 
@@ -480,6 +490,8 @@ TIMEOUTS:
   req.setTimeout(ms)
   res.setTimeout(ms)
 ```
+
+---
 
 ## See Also
 - [Docker](../13-Docker/)

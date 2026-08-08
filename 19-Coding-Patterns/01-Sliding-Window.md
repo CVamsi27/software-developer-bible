@@ -1,10 +1,22 @@
-# Sliding Window
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Sliding Window
 
 ## Definition
 
 The sliding window pattern is a technique that uses a "window" (a subset of elements) that slides over a data structure to solve problems involving contiguous sequences. It maintains a window of elements and adjusts the window boundaries as it traverses the input, avoiding redundant recalculations.
+
+## TL;DR
+
+The sliding window pattern maintains a **contiguous range `[left, right]`** over a sequence and adjusts the boundaries as you traverse, turning O(n²) "recompute for every subarray" into O(n) by reusing state. Two flavors: **fixed-size** (window length is given — sliding averages, max-sum subarrays) and **variable-size** (window grows when a condition is unmet, shrinks when met — longest substring with at most K distinct chars). It's the right pattern when the problem involves "contiguous subarray / substring" with a sum, count, or distinct-element constraint.
+
+## Why it matters
+
+Sliding window is the **highest-frequency pattern** in real interviews at FAANG and most senior loops — it appears in ~15-20% of all coding questions, including the "longest substring without repeating characters" classics. The senior-level question is **state management**: what do you track in the window? When do you move left vs. right? What data structure (Map, Set, array, count) gives you O(1) updates? Weak candidates reach for nested loops; strong candidates recognize the "contiguous + stateful" signature in 30 seconds and code the O(n) solution.
 
 ## When to Use
 

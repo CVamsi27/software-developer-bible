@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Caching in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Next.js (App Router) has four caches: Request Memoization (per-request dedup of `fetch`), Data Cache (cross-request `fetch` cache), Full Route Cache (HTML+RSC cache), and Router Cache (client-side navigation cache). Each is configured independently.
+
+## Why It Matters
+
+Senior engineers reason about each cache separately: opt out of Data Cache with `cache: 'no-store'`, use `revalidate` for time-based ISR, use `revalidateTag`/`revalidatePath` from Server Actions for on-demand invalidation. The interview signal is knowing which cache to invalidate when data changes.
 
 ## Definition
 

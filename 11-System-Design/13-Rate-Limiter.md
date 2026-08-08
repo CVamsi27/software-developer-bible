@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Rate Limiter System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a distributed rate-limiting service supporting token bucket, fixed window, and sliding window algorithms with consistent enforcement across nodes.
+
+**Why it matters:** Foundational building block behind every public API. Tests algorithm trade-offs (memory, burst tolerance), Redis vs in-memory, fail-open vs fail-closed, and per-tenant vs per-IP limiting.
 
 ## Requirements
 ### Functional Requirements
@@ -578,7 +588,6 @@ class DistributedRateLimiter:
 
         return allowed, headers
 
-
 class ConsistentHashRing:
     """Consistent hashing for distributing rate limit keys across Redis nodes."""
 
@@ -874,8 +883,6 @@ Key takeaways:
 5. Monitor block rates to detect abuse and DDoS attacks
 
 This design handles 10M+ requests/second with < 1ms added latency per rate limit check.
-
----
 
 ---
 

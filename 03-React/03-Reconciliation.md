@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Reconciliation
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Reconciliation is React's diff algorithm: comparing old vs. new fiber trees to find the minimal set of DOM mutations. It uses two heuristics — element types determine tree branches, and stable keys identify children across renders.
+
+## Why It Matters
+
+Reconciliation is the heart of why React's render is fast. The interview signal is understanding both heuristics and their failure modes: switching element types (e.g., `<div>` to `<span>`) causes a full subtree rebuild, and unstable keys cause unnecessary remounts and lost state.
 
 ## Definition
 

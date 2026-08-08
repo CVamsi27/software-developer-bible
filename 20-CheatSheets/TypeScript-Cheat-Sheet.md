@@ -1,6 +1,10 @@
-# TypeScript Cheat Sheet
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# TypeScript Cheat Sheet
 
 ## Quick Reference Table
 
@@ -302,8 +306,8 @@ This cheat sheet provides a concise reference to core TypeScript concepts, patte
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
+- [NestJS](../06-NestJS/)
 - [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
 ## References & Learn More

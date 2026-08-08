@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Singleton Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Singleton guarantees a class has exactly one instance and a global access point — but in modern TypeScript it is mostly replaced by DI containers and module-scoped state. Use it only when the object is genuinely shared, expensive, and stateless.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

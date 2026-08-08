@@ -1,6 +1,10 @@
-# Vite
+---
+section: Build Tools
+category: DevOps
+tags: [concept, reference, tool]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Vite
 
 ## Definition
 Vite (French word for "fast", pronounced /vit/) is a modern frontend build tool that provides an extremely fast development experience and optimized production builds. It leverages native ES modules in development and Rollup for production bundling.
@@ -277,30 +281,37 @@ Vite represents a paradigm shift in frontend tooling, offering instant developme
 VITE CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-  │  Browser        │───▶│  Vite Dev       │───▶│  Native ES      │
-  │  Request        │    │  Server         │    │  Modules        │
-  └─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │
-                                ▼
-```
-```
-  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-  │  Source Code    │───▶│  Rollup         │───▶│  Optimized      │
-  │  (ES Modules)   │    │  Bundler        │    │  Bundles        │
-  └─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │
-                                ▼
-```
+DEV SERVER:
+  • Serves native ESM directly to browser (no bundling in dev)
+  • esbuild for pre-bundling node_modules (CJS -> ESM)
+  • HMR via WebSocket (esbuild for transform)
+  • On-demand file serving (only imports are processed)
+  • Cold start ~300ms regardless of app size
+
+PRODUCTION BUILD:
+  • Uses Rollup (mature, optimized output)
+  • Tree shaking, code splitting, asset hashing
+  • CSS code splitting (automatic)
+  • Legacy browser support via @vitejs/plugin-legacy
+
+PLUGIN ECOSYSTEM:
+  • @vitejs/plugin-react    -> React + Fast Refresh
+  • @vitejs/plugin-vue      -> SFC + HMR
+  • @vitejs/plugin-svelte   -> Svelte + HMR
+  • vite-plugin-pwa         -> service worker
+  • vite-plugin-svgr        -> SVG as React components
+
+VS WEBPACK:
+  • Faster dev start (no bundling)
+  • Less configuration out of the box
+  • Smaller plugin ecosystem
+  • Production builds slower than esbuild-only
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain why dev server skips bundling
+  • Discuss esbuild pre-bundling for CJS deps
+  • Show how to configure Rollup options for build
+  • Mention ssrLoadModule for SSR
 ```
 ---
 

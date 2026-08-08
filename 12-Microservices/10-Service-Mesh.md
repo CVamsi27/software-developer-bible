@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Service Mesh
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A sidecar-proxy infrastructure layer (Istio, Linkerd) that handles mTLS, retries, traffic shifting, and observability without app changes.
+
+**Why it matters:** Tests when to add a mesh (multi-language, mTLS, canary at L7) vs when it's overkill. Sidecar overhead, control-plane HA, and ambient mesh trade-offs.
 
 ## Definition
 
@@ -65,6 +75,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [API Gateway](../07-REST-API/09-API-Gateway.md)
 - [CQRS](13-CQRS.md)

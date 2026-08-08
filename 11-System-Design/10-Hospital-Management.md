@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Hospital Management System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a HIPAA-compliant hospital information system covering patient registration, EHR, appointment scheduling, billing, and interoperability (HL7/FHIR).
+
+**Why it matters:** Tests regulated-domain design: audit logging, fine-grained RBAC, encryption at rest/in-transit, and standards-based data exchange. Less common but shows breadth when asked.
 
 ## Requirements
 ### Functional Requirements
@@ -1050,8 +1060,6 @@ Key takeaways:
 5. Design for multi-tenancy with hospital isolation
 
 This design supports 100K+ patients with 10K+ appointments per day while maintaining HIPAA compliance.
-
----
 
 ---
 

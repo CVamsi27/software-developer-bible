@@ -1,6 +1,10 @@
-# Unit Testing
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Unit Testing
 
 ## Definition
 
@@ -30,6 +34,14 @@ Unit testing is a software testing technique where individual units or component
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+## TL;DR
+
+Unit tests verify the smallest testable behavior — a function, class method, or pure module — **in isolation**, with all collaborators replaced by test doubles (Dummy, Stub, Spy, Mock, Fake). The structure follows **Arrange-Act-Assert** (AAA): set up state, exercise one behavior, assert one outcome. The trade-off vs. integration tests: unit tests are **fast and pinpoint failures**, but they cannot catch contract drift between modules — which is exactly what integration tests exist for.
+
+## Why it matters
+
+Senior interviews separate "knows what a unit test is" from "knows when *not* to write one." You'll be asked about **test boundaries** — should you unit-test a 5-line helper, or is that over-testing? Should you mock the database in a repository test, or is that an integration test? Strong candidates discuss **FIRST** principles (Fast, Isolated, Repeatable, Self-validating, Timely), when to use dependency injection for testability, and the **mocking spectrum** (Dummy → Stub → Spy → Mock → Fake) — each with a different intent. Pure-function-first design and avoiding global state are recurring themes.
 
 ## Why Do We Need It?
 

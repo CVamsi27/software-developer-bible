@@ -1,10 +1,22 @@
-# Dynamic Programming
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Dynamic Programming
 
 ## Definition
 
 Dynamic Programming (DP) is an algorithmic technique for solving optimization problems by breaking them down into simpler subproblems and storing the results of subproblems to avoid redundant computations. It's applicable when the problem has overlapping subproblems and optimal substructure.
+
+## TL;DR
+
+Dynamic programming solves optimization problems by **storing the answers to subproblems** to avoid recomputation. Two conditions: **optimal substructure** (the optimal answer for the whole is built from optimal answers for parts) and **overlapping subproblems** (the same subproblem is solved many times in a naive recursive approach). Two implementations: **top-down (memoization)** with a recursive function + cache, or **bottom-up (tabulation)** with a table iterated from base case to answer. The pattern is identified by "find min/max/count/feasibility" with a choice that branches the problem.
+
+## Why it matters
+
+DP is the **most-feared pattern** and the senior-signal pattern: it requires 5-10 minutes of thinking to derive the recurrence, then 5 minutes to code. The bar: derive the **state**, the **recurrence**, the **base cases**, and the **answer location** before writing any code. Common variants: 1D (climbing stairs, house robber), 2D (grid paths, edit distance, LCS), knapsack (subset sum, coin change), and DP on strings (palindromes). The senior trick: always start with **"what does dp[i] (or dp[i][j]) mean?"** before writing recurrence.
 
 ## When to Use
 

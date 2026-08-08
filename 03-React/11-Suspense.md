@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Suspense
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Suspense lets components 'wait' for something before rendering, showing a fallback. Originally for `React.lazy` (code splitting), now extended to data fetching with React Query, Relay, and the experimental `use(promise)` API. `<Suspense boundary>` catches the wait and shows fallback.
+
+## Why It Matters
+
+Senior engineers use Suspense to: split code with `React.lazy` + fallback UI, integrate with data-fetching libraries (React Query's `suspense: true`), and orchestrate loading states. In React 19, `use(promise)` is the new way to read resources, and Suspense boundaries can be nested for granular loading.
 
 ## Definition
 

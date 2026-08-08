@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Observer Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Observer decouples publishers from subscribers via a one-to-many dependency. The senior test is choosing between plain observer, event emitter, pub/sub via broker, and reactive streams, and knowing the tradeoffs of synchronous in-process vs. async cross-service events.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

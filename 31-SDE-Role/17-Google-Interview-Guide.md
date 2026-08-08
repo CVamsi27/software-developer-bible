@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # 🔵 Google (Alphabet) — Interview Guide (2025–2026)
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Target Role:** L3 (Junior) / L4 (Mid) / L5 (Senior) Software Engineer
 >
@@ -367,6 +372,8 @@ Logistics:
 This guide covers Google's interview process, including coding expectations, googleyness and leadership assessment, system design focus areas, and strategies for navigating Google's unique hiring bar.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -374,7 +381,6 @@ This guide covers Google's interview process, including coding expectations, goo
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -408,8 +414,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

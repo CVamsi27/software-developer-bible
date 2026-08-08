@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # GitLab CI/CD
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Built-in CI/CD for GitLab repos using `.gitlab-ci.yml` with stages, runners, and Auto DevOps templates.
+
+**Why it matters:** Tests multi-project pipelines, parent-child pipelines, container registry integration, and GitLab's SAST/DAST security stages.
 
 ## Definition
 
@@ -181,6 +191,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [ArgoCD](06-ArgoCD.md)
 - [Docker](../13-Docker/)

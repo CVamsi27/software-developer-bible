@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Mapped Types
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Mapped types transform each property of an existing type: `{ [K in keyof T]: ... }`. Modifiers (`readonly`, `?`, `-readonly`, `-?`) and key remapping (`as`) let you build new types from old. They are the basis of all built-in utility types.
+
+## Why It Matters
+
+Senior engineers use mapped types to build project-specific utilities: `Getters<T>` (turn values into functions), `Nullable<T>` (make all properties nullable for PATCH endpoints), `DeepReadonly<T>` (recursive immutability). The interview signal is being able to author a custom mapped type from scratch.
 
 ## Definition
 

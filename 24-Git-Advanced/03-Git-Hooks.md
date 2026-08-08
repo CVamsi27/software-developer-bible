@@ -1,6 +1,10 @@
-# Git Hooks
+---
+section: Git Advanced
+category: Reference
+tags: [concept, reference, tool]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Git Hooks
 
 ## Definition
 Git hooks are scripts that run automatically when specific Git events occur (commit, push, merge, etc.). They allow you to enforce policies, automate tasks, and integrate with other tools.
@@ -352,30 +356,34 @@ Git hooks are powerful for automating workflows and enforcing standards. Use Hus
 GIT HOOKS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  echo "Running linter..."
-  npm run lint
-  if [ $? -ne 0 ]; then
-    echo "Linting failed. Commit aborted."
-    exit 1
-  fi
-```
-```
-  commit_msg=$(cat "$1")
-  pattern="^(feat|fix|docs|style|refactor|test|chore|ci|build|perf)(\(.+\))?: .{1,72}"
-  if ! echo "$commit_msg" | grep -qE "$pattern"; then
-    echo "ERROR: Commit message does not follow Conventional Commits format."
-    echo "Expected: type(scope): description"
-    echo "Example: feat(auth): add login functionality"
-```
+CLIENT-SIDE HOOKS:
+  pre-commit       - before commit message editor
+  prepare-commit-msg - before commit message editor opens
+  commit-msg       - after message set, can reject
+  post-commit      - after commit completes
+  pre-push         - before push (run tests)
+  pre-rebase       - before rebase (often exit if not on branch)
+
+SERVER-SIDE HOOKS:
+  pre-receive      - before refs updated (can reject push)
+  update           - per-branch, deprecated in favor of pre-receive
+  post-receive     - after refs updated (deploy, notify)
+
+MANAGEMENT TOOLS:
+  • Husky        - popular, .husky/ directory
+  • lint-staged  - run linters on staged files only
+  • commitlint   - enforce commit message format
+  • pre-commit   - Python-based, multi-language
+
+COMMIT MSG CONVENTIONAL FORMAT:
+  <type>(<scope>): <description>
+  Types: feat, fix, docs, style, refactor, test, chore, ci, build, perf
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Discuss Husky + lint-staged + commitlint stack
+  • Explain pre-commit vs commit-msg difference
+  • Mention that hooks are NOT shared via git (manual install)
+  • Show how to skip hooks with --no-verify (use sparingly)
 ```
 ---
 

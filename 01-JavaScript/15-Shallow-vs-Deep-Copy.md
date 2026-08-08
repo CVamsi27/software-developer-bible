@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Shallow Copy vs Deep Copy
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Shallow copy duplicates the top level only (`Object.assign`, `{...obj}`, `Array.from`). Deep copy recursively duplicates nested structures. Modern JS uses `structuredClone` (handles Date, Map, Set, ArrayBuffer, cycles) — `JSON.parse(JSON.stringify(x))` is lossy and unsafe.
+
+## Why It Matters
+
+Senior engineers never use `JSON.parse(JSON.stringify(...))` (loses Date, Map, functions, undefined, throws on cycles). The standard answer for deep copy is `structuredClone(obj)`. For nested mutation in React/Redux, immer or hand-rolled spread are preferred for immutability + tracking.
 
 ## Definition
 

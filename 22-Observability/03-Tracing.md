@@ -1,6 +1,10 @@
-# Distributed Tracing
+---
+section: Observability
+category: DevOps
+tags: [concept, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Distributed Tracing
 
 ## Definition
 
@@ -468,22 +472,36 @@ Distributed tracing is essential for understanding request flow in microservices
 DISTRIBUTED TRACING CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  import { context, propagation, baggage } from "@opentelemetry/api";
-  const entry = baggage.createEntry("user.tier", "premium");
-  const currentBaggage = propagation.getBaggage(context.active()) || baggage.createBaggage();
-  const newBaggage = currentBaggage.setEntry("user.tier", entry);
-  const ctxWithBaggage = propagation.setBaggage(context.active(), newBaggage);
-  context.with(ctxWithBaggage, () => {
-```
+CORE CONCEPTS:
+  - Trace:  end-to-end journey of one request
+  - Span:   single unit of work (named, timed operation)
+  - SpanContext: trace_id, span_id, trace_flags
+  - Parent-Child: spans nest to show causality
+  - Baggage: key-value context propagated across services
+
+W3C TRACEPARENT HEADER:
+  00-<trace_id 32hex>-<span_id 16hex>-<flags 2hex>
+  example: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+
+OPENTELEMETRY (OTel):
+  - Vendor-neutral API + SDK
+  - Auto-instrumentation for HTTP, DB, gRPC, etc.
+  - Manual spans via tracer.startSpan(name)
+  - Exporters: OTLP, Jaeger, Zipkin, Datadog
+  - SDKs: JS, Python, Java, Go, .NET, Rust
+
+SAMPLING STRATEGIES:
+  - AlwaysOn / AlwaysOff
+  - ProbabilitySampler (e.g., 1% of traces)
+  - ParentBased (respect upstream decision)
+  - Tail-based (after-the-fact, Jaeger/Tempo only)
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  - Draw a trace waterfall for a 5-service request
+  - Explain how trace_id flows via headers
+  - Discuss sampling trade-offs (cost vs visibility)
+  - Know difference between OpenTelemetry and OpenTracing
+  - Mention span attributes, events, and links
 ```
 ---
 

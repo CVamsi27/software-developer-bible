@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Error Boundary
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Error boundaries are class components (or the new `useErrorBoundary` hook in React 19) that catch rendering errors in their child tree. They receive `componentDidCatch(error, info)` and can render a fallback UI. Hooks don't catch errors — you need a boundary.
+
+## Why It Matters
+
+Senior engineers wrap top-level routes, async data boundaries, and third-party widgets in error boundaries so one failure doesn't crash the whole app. They log to Sentry/Datadog with the component stack and user context. In React 19, the new `use` API + `error.tsx` files make this more ergonomic.
 
 ## Definition
 

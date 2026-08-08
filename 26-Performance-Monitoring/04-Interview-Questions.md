@@ -1,6 +1,10 @@
-# Performance Monitoring Interview Questions
+---
+section: Performance Monitoring
+category: Quality
+tags: [interview-questions, practice]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Performance Monitoring Interview Questions
 
 ## Definition
 This comprehensive guide covers 25+ interview questions on performance monitoring, ranging from Core Web Vitals fundamentals to advanced real-user monitoring system design.
@@ -317,30 +321,23 @@ Performance monitoring interviews test your understanding of web performance met
 PERFORMANCE MONITORING INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Interview Question Categories:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                                                                 │
-  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
-  │  │  Fundamentals│  │   Practical │  │      System Design      │ │
-  │  │             │  │             │  │                         │ │
-```
-```
-  function answerPattern(question: string): string {
-    return `
-      1. Definition: What ${question} is
-      2. Explanation: How it works and why it matters
-      3. Code Example: Practical implementation
-      4. Real-world: Production use case
-```
+QUESTION CATEGORIES:
+  • Fundamentals (Q1-Q10):   Core Web Vitals, performance APIs
+  • Practical (Q11-Q20):     profiling, debugging workflows
+  • System Design (Q21-Q25): RUM architecture, alerting
+
+MUST-KNOW ANSWERS:
+  • LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1 (p75, field)
+  • INP replaced FID in Feb 2024 (all interactions, full latency)
+  • Lab = synthetic, Field = real users (CrUX, RUM)
+  • Long task = main thread blocked > 50ms
+  • Use web-vitals JS library for production monitoring
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Always distinguish lab from field data
+  • Discuss trade-offs: sampling rate, bundle size, privacy
+  • Show how to debug a poor LCP from CrUX to flame chart
+  • Mention SLO design for INP (e.g., 75% of users < 200ms)
 ```
 ---
 

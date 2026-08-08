@@ -1,6 +1,14 @@
-# Controllers
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Controllers
+
+> **TL;DR:** Controllers handle HTTP concerns: routing, request parsing, response shaping, and validation orchestration. They are the thin presentation layer — they should not contain business logic and they should never reach into the database directly.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

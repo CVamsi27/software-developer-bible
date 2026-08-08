@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [interview-questions]
+---
+
 # Microservices Interview Questions
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+30+ senior-level microservices interview questions covering decomposition, communication, data, transactions, observability, and failure handling.
+
+**Why it matters:** Practice set to drill the format. Each question is structured to be answered in 30–45 minutes with trade-off discussion and an architecture diagram.
 
 ## Definition
 
@@ -1893,8 +1903,6 @@ Microservices architecture requires understanding of distributed systems, commun
 └─────────────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

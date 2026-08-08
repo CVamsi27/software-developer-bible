@@ -1,6 +1,14 @@
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
+
 # API Authentication
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Authentication answers "who is this caller" — via Basic auth, API keys, JWT bearer tokens, OAuth2/OIDC, or sessions. Senior engineers choose based on threat model, token lifecycle, revocation needs, and whether the client is first-party or third-party.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

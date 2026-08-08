@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Image Optimization in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`next/image` provides automatic image optimization: format conversion (WebP/AVIF), responsive sizing, lazy loading, blur placeholders, and quality adjustment. Backed by the Image Optimization API or a custom loader.
+
+## Why It Matters
+
+Senior engineers use `next/image` for LCP wins. They set `priority` on above-the-fold images, use `sizes` for responsive images, configure `remotePatterns` for external CDNs, and customize the loader for non-Next-image backends. The interview question is: how does Next.js decide image dimensions? Answer: `width`/`height` props or parent's `fill`.
 
 ## Definition
 

@@ -1,8 +1,8 @@
 # React — Index
 
-> **18 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, portals, compound components, performance, and interview questions.
+> **19 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, portals, compound components, React 18/19 concurrent APIs, performance, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-18-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-19-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -22,10 +22,11 @@
 | 12 | [Error Boundary](12-Error-Boundary.md) | Error boundaries, error recovery, logging |
 | 13 | [Performance](13-Performance.md) | Profiling, React.memo, virtualization, bailout |
 | 14 | [State Management](14-State-Management.md) | Redux, Zustand, Jotai, Context vs external state |
-| 15 | [Interview Questions](15-Interview-Questions.md) | 50+ curated questions with answers |
+| 15 | [Interview Questions](15-Interview-Questions.md) | 60+ curated questions with answers |
 | 16 | [Custom Hooks](16-Custom-Hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices |
 | 17 | [Portals](17-Portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety |
 | 18 | [Compound Components](18-Compound-Components.md) | Context-based pattern, tabs, accordion, select, form fields, generics |
+| 19 | [Modern Hooks (React 18/19)](19-Modern-Hooks-React18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions |
 
 ---
 

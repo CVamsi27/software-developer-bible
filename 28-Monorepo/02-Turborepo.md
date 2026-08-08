@@ -1,17 +1,24 @@
+---
+section: Monorepo
+category: Reference
+tags: [concept, tool, reference]
+---
+
 # Turborepo
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+> Turborepo is a high-performance build system for JavaScript and TypeScript monorepos. It provides intelligent caching, parallelization, and task scheduling to dramatically speed up builds and development workflows.
 
 ## Definition
-Turborepo is a high-performance build system for JavaScript and TypeScript codebases, designed for scaling monorepos. It provides intelligent caching, parallelization, and task scheduling to dramatically speed up builds and development workflows.
 
-## Why Do We Need It?
+Turborepo is an incremental bundler and task runner from Vercel that builds a dependency graph of workspace tasks, runs them in topological order, parallelizes independent work, and caches every output locally and (optionally) remotely. It's the de-facto choice for new JS/TS monorepos in 2026.
 
-- **Build Speed**: Intelligent caching reduces build times by 85%+
-- **Parallelization**: Run tasks in parallel across packages
-- **Remote Sharing**: Share cache across team and CI/CD
-- **Zero Configuration**: Works with existing npm/yarn/pnpm setups
-- **Incremental Builds**: Only rebuild what changed
+## Why It Matters (TL;DR)
+
+- **Build speed** — content-hash caching reduces build times by 70-95%
+- **Parallelization** — runs independent tasks concurrently across packages
+- **Remote cache** — share cache across team and CI, so CI almost never re-does work
+- **Zero config** — works with existing npm/yarn/pnpm setups
+- **Incremental** — only rebuilds what changed, downstream, and what's affected
 
 ## How It Works
 
@@ -23,17 +30,17 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                    turbo.json (Pipeline)                     │   │
 │  │  • Define task dependencies                                 │   │
-│  │  • Configure caching                                        │   │
-│  │  • Set inputs/outputs                                       │   │
+│  │  • Configure caching (inputs/outputs)                        │   │
+│  │  • Set environment variables that affect the hash           │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                              │                                      │
 │                              ▼                                      │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                   Task Scheduler                             │   │
-│  │  • Analyze dependency graph                                 │   │
-│  │  • Determine execution order                                │   │
+│  │  • Analyze workspace dependency graph                       │   │
+│  │  • Determine execution order (topological)                  │   │
 │  │  • Parallelize independent tasks                            │   │
-│  │  • Apply caching strategy                                   │   │
+│  │  • Check cache before running                               │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                              │                                      │
 │         ┌────────────────────┼────────────────────┐                │
@@ -41,431 +48,320 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐            │
 │  │   Package   │    │   Package   │    │   Package   │            │
 │  │     A       │    │     B       │    │     C       │            │
-│  │  (Cached)   │    │  (Build)    │    │  (Pending)  │            │
+│  │  (cached)   │    │  (build)    │    │  (pending)  │            │
 │  └─────────────┘    └─────────────┘    └─────────────┘            │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                    Cache Layer                               │   │
 │  │  • Local cache (node_modules/.cache/turbo)                  │   │
 │  │  • Remote cache (Vercel, self-hosted)                       │   │
-│  │  • Content-based hashing                                    │   │
+│  │  • Content-hash based (inputs + env + deps)                 │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
-## Pipeline Configuration
-
-### turbo.json Structure
+## Pipeline Configuration (Turborepo 2.x)
 
 ```json
+// turbo.json
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [".env.*"],
-  "globalEnv": ["NODE_ENV"],
-  "pipeline": {
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["NODE_ENV", "CI"],
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "inputs": ["src/**", "package.json", "tsconfig.json"]
+      "inputs": ["src/**", "package.json", "tsconfig.json", "vite.config.ts"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "lint": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": []
     },
     "test": {
       "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
+      "outputs": ["coverage/**"],
+      "env": ["NODE_ENV", "TEST_DATABASE_URL"]
     },
     "typecheck": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": []
     },
     "clean": {
       "cache": false
     }
   }
 }
-
 ```
 
 ## Code Examples
 
-### 1. Basic Turborepo Setup
+### 1. Basic Pipeline (Build, Test, Lint)
 
 ```json
-// turbo.json
+// turbo.json (minimal)
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "outputs": []
-    }
-  }
-}
-
-```
-
-```json
-// package.json
-{
-  "name": "my-monorepo",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "clean": "turbo run clean"
-  },
-  "devDependencies": {
-    "turbo": "^1.10.0"
-  }
-}
-
-```
-
-### 2. Task Dependencies
-
-```json
-{
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
     },
     "test": {
       "dependsOn": ["build"],
       "outputs": ["coverage/**"]
     },
-    "lint": {
-      "dependsOn": ["build"],
-      "outputs": []
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "typecheck": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    }
+    "lint": { "outputs": [] },
+    "dev": { "cache": false, "persistent": true }
   }
 }
-
 ```
 
-### 3. Package-Specific Configuration
+```json
+// Root package.json
+{
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
+  }
+}
+```
+
+### 2. Filter (Run on Affected Packages)
+
+```bash
+# Only run build for @myorg/web and its dependencies
+turbo run build --filter=@myorg/web...
+
+# Only run if the package changed since main
+turbo run build --filter=...[origin/main]
+
+# Run on a specific package
+turbo run test --filter=@myorg/utils
+
+# All packages with a given tag
+turbo run build --filter=...#canary
+```
+
+### 3. Remote Caching (Vercel / Self-Hosted)
+
+```bash
+# Login to Vercel for remote caching
+npx turbo login
+
+# Link the repo
+npx turbo link
+
+# Or use self-hosted / custom
+export TURBO_TOKEN=your-token
+export TURBO_TEAM=your-team
+```
 
 ```json
-// packages/ui/package.json
+// turbo.json — enable remote cache signing
+{
+  "remoteCache": {
+    "signature": true
+  }
+}
+```
+
+```yaml
+# .github/workflows/ci.yml — pass the cache credentials
+jobs:
+  build:
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm turbo build test lint
+```
+
+### 4. Docker Layer Caching with Turborepo
+
+```dockerfile
+# Dockerfile (multi-stage)
+FROM node:20-alpine AS base
+RUN corepack enable
+
+# 1. Deps layer — only rebuilds when package.json files change
+FROM base AS deps
+WORKDIR /app
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY packages/ui/package.json ./packages/ui/
+COPY packages/utils/package.json ./packages/utils/
+COPY apps/web/package.json ./apps/web/
+RUN pnpm install --frozen-lockfile
+
+# 2. Build layer — uses Turborepo's hash to skip when unchanged
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app /app
+COPY . .
+RUN pnpm turbo build --filter=@myorg/web
+
+# 3. Runtime — minimal final image
+FROM base AS runner
+WORKDIR /app
+COPY --from=builder /app/apps/web/dist ./dist
+COPY --from=builder /app/apps/web/node_modules ./node_modules
+EXPOSE 3000
+CMD ["node", "dist/server.js"]
+```
+
+### 5. Per-Package Overrides
+
+```json
+// packages/ui/package.json — package-specific turbo config
 {
   "name": "@myorg/ui",
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite build --watch",
     "lint": "eslint src --ext .ts,.tsx",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "test": "vitest run"
   },
   "turbo": {
-    "build": {
-      "outputs": ["dist/**"]
+    "extends": ["//"],
+    "tasks": {
+      "build": { "outputs": ["dist/**"] }
     }
   }
 }
-
 ```
 
-### 4. Remote Caching Setup
+### 6. With Changesets for Versioning
 
 ```bash
-# Login to Vercel for remote caching
-npx turbo login
-
-# Link your repository
-npx turbo link
-
-# Or use self-hosted remote cache
-export TURBO_TOKEN=your-token
-export TURBO_TEAM=your-team
-
+# .changeset workflow
+pnpm changeset              # write a changeset describing the change
+pnpm changeset version      # bump versions, update CHANGELOG
+pnpm changeset publish      # publish to npm
 ```
 
-```json
-// turbo.json with remote cache
-{
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "env": ["NODE_ENV"]
-    }
-  },
-  "remoteCache": {
-    "signature": true
-  }
-}
-
-```
-
-### 5. Custom Turborepo Tasks
-
-```typescript
-// scripts/turbo-tasks.ts
-import { execSync } from 'child_process';
-import { readFileSync, writeFileSync } from 'fs';
-import { join } from 'path';
-
-// Custom task to generate API types
-export function generateApiTypes() {
-  const packages = ['packages/api-client', 'packages/web'];
-
-  packages.forEach((pkg) => {
-    const configPath = join(pkg, 'turbo.json');
-    const config = JSON.parse(readFileSync(configPath, 'utf-8'));
-
-    // Add custom task
-    config.pipeline['generate:types'] = {
-      dependsOn: ['^build'],
-      outputs: ['src/types/**'],
-    };
-
-    writeFileSync(configPath, JSON.stringify(config, null, 2));
-  });
-}
-
-// Custom task to update dependencies
-export function updateDependencies() {
-  execSync('pnpm update -r', { stdio: 'inherit' });
-  execSync('turbo run build', { stdio: 'inherit' });
-}
-
-```
-
-### 6. Turborepo with Docker
-
-```dockerfile
-# Dockerfile for monorepo
-FROM node:18-alpine AS base
-RUN npm install -g turbo
-
-# Copy dependency files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY packages/ui/package.json ./packages/ui/
-COPY packages/utils/package.json ./packages/utils/
-COPY apps/web/package.json ./apps/web/
-
-# Install dependencies
-RUN pnpm install --frozen-lockfile
-
-# Copy source code
-COPY . .
-
-# Build with turbo
-RUN turbo run build --filter=@myorg/web
-
-# Production stage
-FROM node:18-alpine AS production
-WORKDIR /app
-
-COPY --from=base /app/apps/web/dist ./dist
-COPY --from=base /app/node_modules ./node_modules
-
-EXPOSE 3000
-CMD ["node", "dist/server.js"]
-
-```
-
-### 7. Turborepo CI/CD Configuration
-
-```yaml
-# .github/workflows/ci.yml
-name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm turbo build --cache-dir=.turbo
-
-      - name: Lint
-        run: pnpm turbo lint
-
-      - name: Test
-        run: pnpm turbo test
-
-```
-
-### 8. Turborepo with Changesets
-
-```json
-// .changeset/config.json
-{
-  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
-  "commit": false,
-  "fixed": [],
-  "linked": [],
-  "access": "restricted",
-  "baseBranch": "main",
-  "updateInternalDependencies": "patch",
-  "ignore": []
-}
-
-```
-
-```bash
-# Create a changeset
-pnpm changeset
-
-# Version packages
-pnpm changeset version
-
-# Publish packages
-pnpm changeset publish
-
-```
-
-## Real-World Use Cases
-
-### Large-Scale Application
+## Real-World Use Case: Large-Scale Application
 
 ```text
-Monorepo Structure:
+Monorepo Structure (1 app + 6 packages):
 ┌─────────────────────────────────────────────────────────────────┐
 │  Apps:                                                          │
-│  • web (Next.js) - Build: 45s → 3s (cached)                   │
-│  • admin (React) - Build: 30s → 2s (cached)                    │
-│  • api (Node.js) - Build: 20s → 1s (cached)                    │
+│  • web (Next.js) — Build: 45s → 3s (cached)                   │
+│  • admin (React) — Build: 30s → 2s (cached)                    │
+│  • api (Node.js) — Build: 20s → 1s (cached)                    │
 │                                                                 │
 │  Packages:                                                      │
-│  • ui - Build: 15s → 1s (cached)                               │
-│  • utils - Build: 5s → 0.5s (cached)                           │
-│  • config - Build: 2s → 0.2s (cached)                          │
+│  • ui — Build: 15s → 1s (cached)                               │
+│  • utils — Build: 5s → 0.5s (cached)                           │
+│  • config — Build: 2s → 0.2s (cached)                          │
 │                                                                 │
 │  Total Build Time: 117s → 7.7s (93% faster)                    │
+│  Remote cache hit rate: ~85% on CI, ~95% locally                │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Common Mistakes
 
-1. **Incorrect outputs**: Not specifying build outputs correctly
-
-2. **Missing dependencies**: Not declaring task dependencies
-
-3. **Ignoring global dependencies**: Forgetting env files or configs
-
-4. **Over-caching**: Caching tasks that shouldn't be cached
-
-5. **Not using remote caching**: Missing out on team-wide cache
+| Mistake | Fix |
+|---------|-----|
+| Missing `outputs` declaration | Specify every file the task produces — Turborepo can't cache what it doesn't know about |
+| Wrong `dependsOn` (missing `^`) | Use `^build` for upstream (npm dependency) builds; `build` for same-package prerequisites |
+| Caching non-deterministic tasks (e.g., deploy) | Set `cache: false` for tasks with side effects |
+| Forgetting to set `globalEnv` | Env vars (NODE_ENV, secrets) affect the cache hash — declare them explicitly |
+| Not using remote cache in CI | Set `TURBO_TOKEN` and `TURBO_TEAM`; without them, CI redoes work your laptop already did |
+| Pinning `turbo` to `^1` | Turborepo 2.x changed `pipeline` → `tasks` and added `tasks`; upgrade for the modern config |
 
 ## Best Practices
 
-1. **Define clear outputs**: Specify exactly what each task produces
-
-2. **Use content hashing**: Let Turborepo determine when to rebuild
-
-3. **Leverage remote caching**: Share cache across team and CI/CD
-
-4. **Monitor cache hit rates**: Track and optimize cache effectiveness
-
-5. **Use affected commands**: Only run tasks for changed packages
+1. **Define `outputs` precisely** — every file the task produces should be in the outputs list
+2. **Use content hashing** — let Turborepo determine cache validity from inputs
+3. **Leverage remote caching in CI** — share cache across team and CI
+4. **Monitor cache hit rate** — `turbo run build --summarize` writes a JSON report
+5. **Use `filter` for affected builds** — only build what changed since main
+6. **Cache Docker layers with Turborepo** — see example above
+7. **Use `env` for secrets** — declare env vars that affect the cache hash
 
 ## Performance Considerations
 
 ```text
 Cache Hit Rate Optimization:
 ┌─────────────────────────────────────────────────────────────────┐
-│  High Cache Hit Rate (>80%):                                    │
+│  High Hit Rate (>80%):                                          │
 │  • Clear task outputs                                          │
 │  • Stable dependencies                                         │
-│  • Consistent environment                                      │
+│  • Consistent environment across dev / CI                      │
+│  • Pin tool versions                                            │
 │                                                                 │
-│  Low Cache Hit Rate (<50%):                                     │
-│  • Check for unnecessary input changes                         │
-│  • Review global dependencies                                  │
+│  Low Hit Rate (<50%):                                           │
+│  • Check for unnecessary input changes (e.g., timestamps)      │
+│  • Review globalDependencies / globalEnv                       │
 │  • Verify environment variables                                │
 │  • Check for non-deterministic builds                          │
+│  • Look for missing outputs (cache misses silently)             │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Summary
 
-Turborepo provides a high-performance build system for monorepos with intelligent caching, parallelization, and remote cache sharing. Master its configuration and best practices to dramatically improve build times.
+- Turborepo is a build orchestrator that runs tasks in dependency order, parallelizes where possible, and caches everything
+- Configure with `turbo.json` — declare `tasks`, `inputs`, `outputs`, `dependsOn`, and `env`
+- Remote cache (`TURBO_TOKEN` + `TURBO_TEAM`) is the killer feature — shared across team and CI
+- Use `filter` to build only what changed; `--filter=...<base>` for affected changes
+- Common pitfalls: missing outputs, missing env declarations, caching non-deterministic tasks
 
 ---
 
 ## Cheat Sheet
+
 ```text
 TURBOREPO CHEAT SHEET
-============================================================
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  1. **Incorrect outputs**: Not specifying build outputs correctly
-  2. **Missing dependencies**: Not declaring task dependencies
-  3. **Ignoring global dependencies**: Forgetting env files or configs
-  4. **Over-caching**: Caching tasks that shouldn't be cached
-  5. **Not using remote caching**: Missing out on team-wide cache
-  1. **Define clear outputs**: Specify exactly what each task produces
+PIPELINE ANATOMY:
+  dependsOn: ["^build"]  → build upstream deps first
+  outputs:   ["dist/**"] → what to cache
+  inputs:    ["src/**"]  → what affects the cache hash
+  env:       ["API_URL"] → env vars that affect the hash
+  cache:     false       → skip caching
+  persistent: true       → long-running (dev servers)
+
+KEY COMMANDS:
+  turbo run build                       # all packages
+  turbo run build --filter=@myorg/web   # one package
+  turbo run build --filter=...[main]    # affected since main
+  turbo run build --summarize           # cache hit report
+
+INTERVIEW ANSWER:
+  1. What problem Turborepo solves (build time, cache)
+  2. How the cache key is computed (inputs + env + deps)
+  3. Why remote cache matters (CI / team share)
+  4. How you handle non-deterministic tasks
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
+
 - [Build Tools](../23-Build-Tools/)
 - [CI/CD](../15-CI-CD/)
 - [Git Advanced](../24-Git-Advanced/)
+- [Monorepo Overview](01-Monorepo-Overview.md)
+- [Monorepo Tools Deep-Dive](05-Monorepo-Tools.md)
+- [Nx](03-Nx.md)
+
 
 ## References & Learn More
 
-- [Turborepo Documentation](https://turborepo.org/docs)
-- [Turborepo GitHub](https://github.com/vercel/turborepo)
+- [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching)
+- [Task Configuration Reference](https://turbo.build/reference/configuration)
+- [Turborepo Documentation](https://turbo.build/)
 - [Turborepo Examples](https://github.com/vercel/turborepo/tree/main/examples)
-- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Task Configuration](https://turbo.build/reference/configuration)
+- [Turborepo GitHub](https://github.com/vercel/turborepo)

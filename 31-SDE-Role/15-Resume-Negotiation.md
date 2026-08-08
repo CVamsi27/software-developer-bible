@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [guide]
+---
+
 # Resume & Negotiation Guide
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 ## Definition
 
@@ -310,11 +315,13 @@ INTERVIEW TIPS:
 
 ```
 ## See Also
+
 - [Behavioral](../18-Behavioral/)
+
 
 ## References & Learn More
 
-- [Levels.fyi — Compensation Data](https://www.levels.fyi)
 - [Blind — Anonymous Reviews](https://www.teamblind.com)
-- [Tech Interview Handbook — Resume](https://www.techinterviewhandbook.org/resume/)
 - [Haseeb Qureshi — How to Negotiate](https://haseebq.com/how-not-to-bomb-your-offer-negotiation/)
+- [Levels.fyi — Compensation Data](https://www.levels.fyi)
+- [Tech Interview Handbook — Resume](https://www.techinterviewhandbook.org/resume/)

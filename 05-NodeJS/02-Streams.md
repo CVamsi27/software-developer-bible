@@ -1,6 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Streams
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
+
+Streams are Node's abstraction for handling data piece-by-piece without loading it all into memory. Four types: Readable, Writable, Transform, Duplex. Backpressure occurs when a writable can't keep up with a readable. `pipeline()` is the safe way to compose streams.
+
+## Why It Matters
+
+Senior engineers use streams for: large file processing, HTTP request/response bodies, real-time data pipelines. They know to use `pipeline()` (which cleans up on error) over `.pipe()` (which leaks), and to handle backpressure with `drain` events or async iteration.
 
 ## Definition
 

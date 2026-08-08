@@ -1,6 +1,10 @@
-# JavaScript Cheat Sheet
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# JavaScript Cheat Sheet
 
 ## Quick Reference Table
 
@@ -272,9 +276,9 @@ const validated = (obj, schema) => new Proxy(obj, {
 This cheat sheet provides a concise reference to core JavaScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
+- [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
-- [React](../03-React/)
-- [System Design](../11-System-Design/)
+- [Node.js](../05-NodeJS/)
 - [TypeScript](../02-TypeScript/)
 
 ## References & Learn More

@@ -1,6 +1,14 @@
-# Pipes
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Pipes
+
+> **TL;DR:** Pipes transform and validate input data flowing into a route handler. They run during request parameter parsing, support synchronous and async transforms, and `ValidationPipe` + class-validator is the canonical request-DTO validation pipeline.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # API Gateway
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A single edge entry point that routes, aggregates, authenticates, rate-limits, and transforms requests across downstream microservices.
+
+**Why it matters:** Tests cross-cutting concerns (auth, CORS, rate limiting, observability) and the BFF pattern. Critical for any external-facing microservices deployment.
 
 ## Definition
 
@@ -538,8 +548,6 @@ API Gateway is essential for microservices architecture, providing a unified ent
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

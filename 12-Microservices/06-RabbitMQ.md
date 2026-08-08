@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # RabbitMQ
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A traditional AMQP broker with rich routing (exchanges, bindings, dead-letter queues) and per-message acknowledgments for task distribution.
+
+**Why it matters:** Pitted against Kafka. Tests when RabbitMQ wins (per-message ack, complex routing, low-latency RPC) vs when Kafka does (high throughput, replay, stream processing).
 
 ## Definition
 
@@ -745,8 +755,6 @@ RabbitMQ is a versatile message broker ideal for microservices communication. It
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

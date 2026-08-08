@@ -1,6 +1,10 @@
-# Keyboard Navigation
+---
+section: Accessibility
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Keyboard Navigation
 
 ## Definition
 Keyboard navigation is the ability to access and interact with all website functionality using only a keyboard, without requiring a mouse. It's essential for users with motor disabilities, power users, and screen reader users.
@@ -490,22 +494,37 @@ Keyboard navigation is essential for accessibility. Use semantic HTML, proper ta
 KEYBOARD NAVIGATION CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    Keyboard Navigation Flow                      │
-  ├─────────────────────────────────────────────────────────────────┤
-  │                                                                 │
-  │  Tab/Shift+Tab         Arrow Keys           Enter/Space         │
-  │  ┌─────────────┐      ┌─────────────┐      ┌─────────────┐     │
-```
+KEYS:
+  • Tab / Shift+Tab - move forward/backward between focusable
+  • Enter / Space    - activate button/link
+  • Arrow keys       - navigate within composite widgets
+  • Escape           - close modal/menu/popup
+  • Home / End       - first/last item in list/menu
+
+FOCUS ORDER:
+  • DOM order by default
+  • tabindex="0"     - make non-focusable focusable, in tab order
+  • tabindex="-1"    - programmatically focusable, NOT in tab order
+  • tabindex="1+"    - AVOID (positive values break natural order)
+
+FOCUS MANAGEMENT:
+  • Trap focus in modals (cycle Tab within)
+  • Return focus to trigger on close
+  • Skip links for "skip to main content"
+  • Roving tabindex for toolbars/menus (only one tabindex=0)
+
+FOCUS STYLES (NEVER REMOVE):
+  :focus-visible { outline: 2px solid #4A90E2; outline-offset: 2px; }
+  /* :focus-visible shows only for keyboard, not mouse clicks */
+
+SKIP LINK PATTERN:
+  <a href="#main" class="skip-link">Skip to main content</a>
+  .skip-link:not(:focus) { position: absolute; left: -9999px; }
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Discuss focus trap implementation for modals
+  • Explain difference between :focus and :focus-visible
+  • Mention roving tabindex pattern
 ```
 ---
 

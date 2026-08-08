@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Prototypes
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Every JS object has an internal `[[Prototype]]` linking to another object (or null). Property access walks the prototype chain until found or `undefined` is returned. This is the basis of inheritance, `instanceof`, and the `class` keyword (which is syntactic sugar).
+
+## Why It Matters
+
+Senior engineers must understand why `hasOwnProperty` matters, how to set prototypes safely with `Object.create` vs `Object.setPrototypeOf`, and why prototype pollution is a security concern. The chain also explains why `Array.prototype.push.call(objLikeArray)` works.
 
 ## Definition
 

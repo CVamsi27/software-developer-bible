@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [interview-questions]
+---
+
 # CI/CD Interview Questions
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+30+ CI/CD questions covering pipeline stages, deployment strategies, secret management, observability, and platform engineering.
+
+**Why it matters:** Practice set covering the full CD maturity ladder — from "what is CI?" to multi-cluster progressive delivery.
 
 ## 30 Most Asked CI/CD Interview Questions with Detailed Answers
 
@@ -565,8 +575,6 @@ helm upgrade myrelease ./mychart
 helm rollback myrelease 1
 
 ```
-
----
 
 ---
 

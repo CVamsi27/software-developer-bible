@@ -1,6 +1,14 @@
-# Exception Filters
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Exception Filters
+
+> **TL;DR:** Exception filters catch thrown exceptions across the app and shape the HTTP response. Use `@Catch()` for typed exception handling and a global filter to ensure a consistent error envelope, RFC 7807 problem details, and never-leak-stack-traces policy.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

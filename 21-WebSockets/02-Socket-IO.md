@@ -1,6 +1,10 @@
-# Socket.io
+---
+section: WebSockets
+category: Real-Time
+tags: [concept, reference, tool]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# Socket.io
 
 ## Definition
 
@@ -1095,30 +1099,37 @@ Key best practices:
 SOCKET.IO CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Socket.io Transport Selection:
-  1. Try WebSocket (fastest)
-     ↓ (if fails)
-  2. Try HTTP Long Polling
-     ↓ (if fails)
-  3. Try HTTP Streaming
-```
-```
-  +-----------+     +-----------+     +-----------+     +-----------+
-  | CONNECTING| --> | CONNECTED | --> | RECONNECT | --> | DISCONNECT|
-  +-----------+     +-----------+     +-----------+     +-----------+
-        |                |                 |                 |
-        | Transport      | Events flow     | Auto-retry     | Max attempts
-        | negotiation    | both ways       | with backoff   | reached
-```
+TRANSPORT FALLBACK ORDER:
+  1. WebSocket (fastest, full-duplex)
+  2. HTTP Long Polling (universal compatibility)
+  3. HTTP Streaming (legacy fallback)
+  Result: best available transport selected automatically
+
+KEY CONCEPTS:
+  • Rooms:   subset of sockets, broadcast via .to(roomId)
+  • Namespaces: separate connection multiplex (/chat, /admin)
+  • ACKs:    callback in emit for delivery confirmation
+  • Middleware: io.use((socket, next) => { ... })
+
+RECONNECTION:
+  • reconnectionAttempts: 5 (default Infinity)
+  • reconnectionDelay: 1000ms initial
+  • reconnectionDelayMax: 5000ms cap
+  • randomizationFactor: 0.5 (jitter to avoid thundering herd)
+  • 'io server disconnect' requires manual socket.connect()
+
+SCALING WITH REDIS ADAPTER:
+  • io.adapter(createAdapter(redis, redisSub))
+  • Cross-node broadcast: io.emit works across all nodes
+  • Sticky sessions still required at LB for WebSocket upgrade
+  • Use perMessageDeflate for compression
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain transport upgrade from polling -> WebSocket
+  • Show how to scale Socket.io horizontally with Redis
+  • Know the difference between socket.broadcast and io.emit
+  • Discuss typed events with TypeScript generics
+  • Mention perMessageDeflate and binary frame support
 ```
 ---
 

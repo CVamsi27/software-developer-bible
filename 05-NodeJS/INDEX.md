@@ -1,8 +1,8 @@
 # Node.js — Index
 
-> **10 files** — Event loop internals, streams, buffers, file system, HTTP servers, parallel processing, process management, security, and interview questions.
+> **11 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, the built-in test runner, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -18,6 +18,7 @@
 | 08 | [Process & Environment](08-Process-Environment.md) | process.env, argv, lifecycle, signals, graceful shutdown |
 | 09 | [Node.js Security](09-Node-Security.md) | Input validation, Helmet.js, rate limiting, prototype pollution |
 | 10 | [Interview Questions](10-Interview-Questions.md) | 50+ curated questions with answers |
+| 11 | [Web Streams & Test Runner](11-Web-Streams-and-Test-Runner.md) | ReadableStream/WritableStream/TransformStream, node:test, mocking, watch mode, TAP output |
 
 ---
 

@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Custom Hooks
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Custom hooks are reusable functions that call other hooks (`useState`, `useEffect`, etc.). They extract component logic into composable units, enabling reuse without HOCs or render props. Naming convention: `use*` (e.g., `useDebounce`, `useLocalStorage`, `useFetch`).
+
+## Why It Matters
+
+Senior engineers extract every reusable side-effect, subscription, or stateful computation into a custom hook. They know hooks compose (`useDebounce(useLocalStorage(...))`), and they encapsulate complex logic (`useAuth`, `usePagination`) so components stay declarative.
 
 ## Definition
 

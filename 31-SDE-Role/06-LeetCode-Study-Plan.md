@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [study-plan]
+---
+
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Goal:** Solve 360+ problems, master all patterns, nail system design, and ace behavioral rounds.
 >
@@ -640,6 +645,8 @@ For each problem, record:
 This guide provides a structured LeetCode study plan organized by topic and difficulty, with recommended problem sets for arrays, strings, trees, graphs, dynamic programming, and system design practice to build interview confidence.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -647,7 +654,6 @@ This guide provides a structured LeetCode study plan organized by topic and diff
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -684,8 +690,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

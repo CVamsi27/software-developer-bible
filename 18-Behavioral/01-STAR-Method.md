@@ -1,6 +1,18 @@
+---
+section: Behavioral
+category: Interview
+tags: [guide, study-plan]
+---
+
 # The STAR Method: Mastering Behavioral Interview Answers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+The **STAR framework** (Situation, Task, Action, Result) is the canonical structure for behavioral answers: 15-20s context → 10-15s your responsibility → 50-70s what *you* specifically did → 15-25s quantified outcome. For senior roles, extend it to **STAR-C** (add **Challenges/Complications**) or **STAR+A** (add **Alternative considered**) to show trade-off thinking. The biggest mistake: describing team actions instead of **your** specific contribution.
+
+## Why it matters
+
+Behavioral interviews are **40-50%** of the senior full-stack interview loop at most companies. Interviewers use past behavior to predict future behavior — they're not interested in what you'd *hypothetically* do. Strong candidates prepare a **bank of 8-12 stories** that can be remixed across questions (leadership, conflict, failure, technical decision). Each story should have **3 quantified metrics** ready (e.g., reduced p95 latency by 40%, mentored 3 juniors, saved $200K/year). Without a story bank, you'll give generic answers and lose.
 
 ## Table of Contents
 

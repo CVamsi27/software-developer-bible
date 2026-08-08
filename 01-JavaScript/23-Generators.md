@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Generators
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Generators (`function*`) are pausable functions that yield values one at a time, returning an iterator. Async generators (`async function*`) combine with Promises for streaming async data. They enable lazy evaluation and cooperative cancellation.
+
+## Why It Matters
+
+Senior engineers use generators for: paginated API consumption, infinite scroll, middleware pipelines (Koa, redux-saga), and lazy data processing. Async iteration (`for await (const x of stream)`) is the standard way to consume Node streams and Web Streams in modern code.
 
 ## Definition
 

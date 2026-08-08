@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Compound Components
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Compound components are a set of components that share implicit state via Context, exposing a clean declarative API like `<Tabs><TabList>...<TabPanel>...</Tabs>`. The pattern is inspired by native HTML (`<select><option>`) and provides flexibility while keeping related components grouped.
+
+## Why It Matters
+
+Senior engineers use compound components for: tabs, accordions, dropdowns, select menus, form fields, and any UI where multiple sub-components coordinate. The pattern enables flexible layout (consumers control the structure) while keeping state management centralized in the parent.
 
 ## Definition
 

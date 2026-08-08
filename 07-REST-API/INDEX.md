@@ -1,8 +1,8 @@
 # REST APIs — Index
 
-> **10 files** — REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, and interview questions.
+> **14 files** — REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -17,7 +17,10 @@
 | 07 | [Rate Limiting](07-Rate-Limiting.md) | Token bucket, leaky bucket, sliding window, distributed rate limiting |
 | 08 | [CORS](08-CORS.md) | Preflight, headers, credentials, wildcard origins, proxy solutions |
 | 09 | [API Gateway](09-API-Gateway.md) | Gateway patterns, aggregation, routing, authentication, throttling |
-| 10 | [Interview Questions](10-Interview-Questions.md) | 50+ curated questions with answers |
+| 11 | [OpenAPI / Swagger](11-OpenAPI-Swagger.md) | OpenAPI spec, Swagger UI, client gen, contract testing, @nestjs/swagger |
+| 12 | [Error Handling & Response Design](12-Error-Handling-Design.md) | RFC 7807 problem details, error envelopes, requestId, retry-after |
+| 13 | [HTTP Caching](13-HTTP-Caching.md) | Cache-Control, ETag, Last-Modified, Vary, stale-while-revalidate |
+| 14 | [Interview Questions](14-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

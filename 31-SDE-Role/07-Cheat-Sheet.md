@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [cheat-sheet]
+---
+
 # 📋 SDE Interview Cheat Sheet — Last-Minute Review
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Print this. Read it the night before and morning of your interview.**
 
@@ -521,6 +526,8 @@ Result:    What was the outcome? (metrics, impact)
 This cheat sheet provides a quick reference for essential interview concepts across all topics, including time complexities, common algorithms, data structure operations, and system design building blocks for rapid review.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -528,7 +535,6 @@ This cheat sheet provides a quick reference for essential interview concepts acr
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -562,8 +568,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Call Stack
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+The call stack is a LIFO structure that tracks active function invocations. Each call pushes a frame, each return pops one. Stack overflow happens when frames exceed the engine limit (typically ~10K-25K frames).
+
+## Why It Matters
+
+Debugging recursion, async ordering, and uncaught exceptions all require reading the stack. Senior engineers use stack traces to identify recursion depth, async chain breaks, and the actual call path through higher-order functions.
 
 ## Definition
 

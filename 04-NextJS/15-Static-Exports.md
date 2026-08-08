@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Static Exports in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Static export (`output: 'export'`) pre-renders all routes to static HTML at build time. No Node server needed — deploy to any static host (S3, Cloudflare Pages, GitHub Pages). Dynamic routes must use `generateStaticParams` to be enumerated at build.
+
+## Why It Matters
+
+Senior engineers use static exports for: documentation sites, marketing pages, portfolios, and any content that doesn't need per-request server logic. They know the limitations: no API routes (use a separate API), no ISR, no Server Actions, no middleware. It's the simplest deployment model but also the most restrictive.
 
 ## Definition
 

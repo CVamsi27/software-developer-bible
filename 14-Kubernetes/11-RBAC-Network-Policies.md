@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # RBAC & Network Policies
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+RBAC controls who can do what in the API. NetworkPolicies micro-segment Pod-to-Pod traffic at L3/L4.
+
+**Why it matters:** Foundational for multi-tenant clusters. Tests Role/ClusterRole binding, least-privilege, default-deny policies, and ingress/egress rules.
 
 ## Definition
 
@@ -95,6 +105,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)

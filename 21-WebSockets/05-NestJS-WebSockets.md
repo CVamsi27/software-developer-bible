@@ -1,6 +1,10 @@
-# NestJS WebSockets
+---
+section: WebSockets
+category: Real-Time
+tags: [concept, reference]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# NestJS WebSockets
 
 ## Definition
 
@@ -885,29 +889,35 @@ Key benefits:
 NESTJS WEBSOCKETS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  +------------------+     +------------------+     +------------------+
-  |     Client       |     |   WebSocket      |     |    NestJS        |
-  |    (Browser)     | --> |   Gateway        | --> |   Application    |
-  +------------------+     +------------------+     +------------------+
-                                |                         |
-                                | Guards                  | Services
-```
-```
-  +-----------+     +-----------+     +-----------+     +-----------+
-  |  Module   | --> |  Gateway  | --> |  Handle   | --> |  Cleanup  |
-  |  Init     |     |  Listen   |     |  Events   |     |  OnModule |
-  |           |     |           |     |           |     |  Destroy  |
-  +-----------+     +-----------+     +-----------+     +-----------+
-```
+DECORATORS:
+  • @WebSocketGateway(port, options)  -> declare gateway class
+  • @WebSocketServer()                 -> inject server instance
+  • @SubscribeMessage('event')         -> handle client event
+  • @ConnectedSocket()                 -> inject client socket
+  • @MessageBody()                     -> extract payload
+  • @MessageBody(validationPipe)       -> validate payload
+
+GATEWAY LIFECYCLE:
+  • afterInit(server)               -> server created
+  • handleConnection(client)        -> per-client connect
+  • handleDisconnect(client)        -> per-client disconnect
+  • beforeApplicationShutdown       -> graceful close
+
+ADAPTERS:
+  • IoAdapter (default, in-memory, single node)
+  • RedisIoAdapter (multi-node, horizontal scaling)
+  • KafkaAdapter (event sourcing integration)
+  • Custom: extend WebSocketAdapter interface
+
+REQUEST PIPELINE:
+  Middleware -> Guards -> Interceptors -> Pipes -> Handler -> Filters
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Compare IoAdapter vs RedisIoAdapter trade-offs
+  • Explain how DI in gateways works (constructor injection)
+  • Show how to share auth guard between HTTP and WS
+  • Discuss namespace + room pattern in NestJS context
+  • Mention WsException for typed error responses
 ```
 ---
 

@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Decorator Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Decorator attaches extra behavior to an object at runtime by wrapping it — and in TypeScript it is also a class-level metaprogramming feature. The senior test is choosing decorator vs. higher-order function vs. interceptor, and avoiding the open/closed temptation.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

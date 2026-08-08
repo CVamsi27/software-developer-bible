@@ -1,6 +1,10 @@
-# Testing Accessibility
+---
+section: Accessibility
+category: Quality
+tags: [concept, guide, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Testing Accessibility
 
 ## Definition
 Accessibility testing is the practice of verifying that web content is usable by people with disabilities. It involves automated tools, manual testing, and assistive technology testing to ensure compliance with WCAG guidelines.
@@ -399,30 +403,33 @@ Accessibility testing combines automated tools, manual testing, and real user fe
 TESTING ACCESSIBILITY CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    Accessibility Testing Strategy                 │
-  ├─────────────────────────────────────────────────────────────────┤
-  │                                                                 │
-  │  Automated Testing         Manual Testing        User Testing   │
-  │  ┌─────────────┐          ┌─────────────┐       ┌─────────────┐ │
-```
-```
-  npm install -g lighthouse
-  lighthouse https://example.com --only-categories=accessibility --output=json
-  const lighthouse = require('lighthouse');
-  async function runLighthouse(url) {
-    const result = await lighthouse(url, {
-      onlyCategories: ['accessibility'],
-```
+TESTING PYRAMID:
+  • Unit tests:    jest-axe on isolated components
+  • Integration:   Cypress + cypress-axe on pages
+  • E2E a11y:      Pa11y on critical user flows in CI
+  • Manual:        keyboard-only navigation, screen reader pass
+  • User testing:  actual users with disabilities
+
+AUTOMATED TOOLS (catch ~30% of issues):
+  • axe-core / @axe-core/react (de facto standard)
+  • Lighthouse (a11y category)
+  • Pa11y CI (CI integration)
+  • WAVE (visual feedback)
+  • ESLint plugins: eslint-plugin-jsx-a11y
+
+MANUAL TESTING CHECKLIST:
+  ☐ Tab through whole page - logical order?
+  ☐ All interactive elements reachable
+  ☐ Focus visible at all times
+  ☐ Modals trap focus, restore on close
+  ☐ Screen reader: NVDA (Win, free), VoiceOver (Mac/iOS), JAWS (Win)
+  ☐ 200% zoom - layout still works?
+  ☐ Color contrast 4.5:1 (text), 3:1 (UI)
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Acknowledge that automated tools catch only ~30% of issues
+  • Recommend testing with real screen readers
+  • Discuss shift-left: jest-axe in unit tests
 ```
 ---
 

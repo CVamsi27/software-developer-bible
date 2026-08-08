@@ -1,17 +1,24 @@
+---
+section: Serverless & Edge
+category: DevOps
+tags: [concept, reference]
+---
+
 # Edge Functions
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+> Edge functions are serverless functions that run at the edge of a network, close to end users, rather than in a centralized data center. They execute on CDN Points of Presence (PoPs) to reduce latency and improve performance for user-facing operations.
 
 ## Definition
-Edge functions are serverless functions that run at the edge of a network, close to end users, rather than in a centralized data center. They execute on CDN nodes (Points of Presence) to reduce latency and improve performance for user-facing operations.
 
-## Why Do We Need It?
+An edge function is a serverless compute unit that runs in a CDN edge location (Point of Presence) rather than a centralized cloud region. Most edge runtimes use V8 isolates rather than full containers, giving sub-5ms cold starts but limited APIs and short CPU budgets.
 
-- **Reduced Latency**: Execute code physically closer to users
-- **Better Performance**: Faster response times for dynamic content
-- **Global Distribution**: Code runs in multiple regions simultaneously
-- **Real-time Processing**: Handle requests at the network edge
-- **Cost Efficiency**: Reduce origin server load
+## Why It Matters (TL;DR)
+
+- **Reduced latency** — code runs physically close to users
+- **Better performance** — no origin round-trip for personalization, auth, or routing
+- **Global distribution** — code runs in 200+ locations simultaneously
+- **Real-time processing** — handle requests at the network edge
+- **Cost efficiency** — reduce origin server load
 
 ## How It Works
 
@@ -38,204 +45,139 @@ Edge functions are serverless functions that run at the edge of a network, close
 │  • Request hits nearest CDN edge                                   │
 │  • Edge function executes (no round-trip to origin)                │
 │  • Response cached or passed through                               │
-│  • Only misses go to origin server                                 │
+│  • Only cache misses go to origin server                           │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
-## Cloudflare Workers
+## Edge Runtimes: Cloudflare Workers vs Vercel Edge vs Lambda@Edge
 
-### Worker Execution Model
-
-```text
-Cloudflare Worker Lifecycle:
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
-│  │  Fetch   │ ──▶ │  Parse   │ ──▶ │ Execute  │ ──▶ │ Response │ │
-│  │  Event   │    │  Request │    │  Handler │    │          │ │
-│  └──────────┘    └──────────┘    └──────────┘    └──────────┘ │
-│                                                                 │
-│  Isolate Model:                                                 │
-│  • Each Worker runs in isolated V8 isolate                     │
-│  • No shared memory between Workers                            │
-│  • Cold start < 5ms (V8 isolates)                              │
-│  • CPU time limit: 10ms (free), 30s (paid)                     │
-│  • Memory limit: 128MB                                         │
-└─────────────────────────────────────────────────────────────────┘
-
-```
+| Feature | Cloudflare Workers | Vercel Edge | Lambda@Edge |
+|---------|-------------------|-------------|-------------|
+| Runtime | V8 isolates | V8 isolates | Node.js / Python in sandboxed container |
+| Cold start | < 5 ms | < 5 ms | 50–200 ms |
+| CPU time | 10 ms (free) / 30 s (paid) | 25 s | 5 s (viewer) / 30 s (origin) |
+| Memory | 128 MB | 256 MB (configurable) | 128–3,008 MB |
+| State | KV, Durable Objects, D1 | Edge Config, in-memory | None persistent |
+| Web Standard APIs | Full | Full | Partial |
+| Node.js APIs | None (use `node:` polyfills) | None | Yes |
+| Best for | High-QPS auth, A/B, geolocation | Next.js middleware, personalization | CloudFront request/response modification |
 
 ## Code Examples
 
-### 1. Basic Cloudflare Worker
+### 1. Cloudflare Worker (Basic)
 
 ```typescript
 // worker.ts
 interface Env {
   API_KEY: string;
-  DATABASE_URL: string;
 }
 
 export default {
-  async fetch(
-    request: Request,
-    env: Env,
-    ctx: ExecutionContext
-  ): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    // Handle different routes
     if (url.pathname === '/api/hello') {
-      return new Response(
-        JSON.stringify({ message: 'Hello from the edge!' }),
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-        }
-      );
-    }
-
-    if (url.pathname === '/api/echo') {
-      const body = await request.text();
-      return new Response(body, {
-        headers: { 'Content-Type': 'text/plain' },
-      });
+      return Response.json({ message: 'Hello from the edge!' });
     }
 
     // Proxy to origin with edge caching
+    const cache = caches.default;
+    const cached = await cache.match(request);
+    if (cached) return cached;
+
     const response = await fetch(request);
     const newResponse = new Response(response.body, response);
-
-    // Add custom headers
-    newResponse.headers.set('X-Edge-Location', request.cf?.colo || 'unknown');
-
+    newResponse.headers.set('X-Edge-Location', request.cf?.colo ?? 'unknown');
+    ctx.waitUntil(cache.put(request, newResponse.clone()));
     return newResponse;
   },
 };
-
 ```
 
-### 2. Vercel Edge Function
+### 2. Vercel Edge Function (Next.js App Router)
 
 ```typescript
-// api/edge-hello.ts
+// app/api/edge/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = 'edge';
+export const preferredRegion = ['iad1', 'fra1']; // optional region pinning
 
-export default async function handler(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const name = searchParams.get('name') || 'World';
-
-  // Edge-compatible operations
-  const response = {
-    message: `Hello, ${name}!`,
-    timestamp: Date.now(),
-    region: request.geo?.country || 'unknown',
-  };
-
-  return NextResponse.json(response);
+export async function GET(request: NextRequest) {
+  return NextResponse.json({
+    message: 'Hello from the edge',
+    region: request.geo?.region ?? 'unknown',
+    country: request.geo?.country ?? 'unknown',
+  });
 }
-
 ```
 
-### 3. Edge Middleware (Next.js)
+### 3. Next.js Edge Middleware (Auth, A/B, Geo)
 
 ```typescript
 // middleware.ts
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
+
+export const config = {
+  matcher: ['/dashboard/:path*', '/api/protected/:path*'],
+};
 
 export function middleware(request: NextRequest) {
-  // Run at the edge before page rendering
-
-  // 1. Authentication check
-  const token = request.cookies.get('auth-token');
-
+  // 1. Auth check
+  const token = request.cookies.get('session')?.value;
   if (!token && request.nextUrl.pathname.startsWith('/dashboard')) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 
-  // 2. A/B Testing
-  const bucket = Math.random() < 0.5 ? 'control' : 'variant';
-  const response = NextResponse.next();
-  response.cookies.set('ab-test', bucket);
-
-  // 3. Geolocation-based routing
-  const country = request.geo?.country;
-  if (country === 'DE') {
-    response.headers.set('X-Language', 'de');
+  // 2. A/B test bucketing (sticky via cookie)
+  let bucket = request.cookies.get('ab-bucket')?.value;
+  if (!bucket) {
+    bucket = Math.random() < 0.5 ? 'control' : 'variant';
   }
+  const response = NextResponse.next();
+  response.cookies.set('ab-bucket', bucket, { maxAge: 60 * 60 * 24 * 30 });
 
-  // 4. Rate limiting (basic)
-  const ip = request.ip;
-  // In production, use KV store for rate limiting
+  // 3. Geolocation-based headers
+  const country = request.geo?.country;
+  if (country === 'DE') response.headers.set('X-Language', 'de');
 
   return response;
 }
-
-export const config = {
-  matcher: ['/dashboard/:path*', '/api/:path*'],
-};
-
 ```
 
-### 4. Edge with KV Storage
+### 4. Cloudflare Worker with KV Caching
 
 ```typescript
-// Cloudflare Worker with KV
 interface Env {
   CACHE_KV: KVNamespace;
   API_SECRET: string;
 }
 
 export default {
-  async fetch(
-    request: Request,
-    env: Env,
-    ctx: ExecutionContext
-  ): Promise<Response> {
-    const cacheKey = new URL(request.url).pathname;
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const key = new URL(request.url).pathname;
 
-    // Check cache first
-    const cached = await env.CACHE_KV.get(cacheKey, 'json');
-    if (cached) {
-      return new Response(JSON.stringify(cached), {
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
+    const cached = await env.CACHE_KV.get(key, 'json');
+    if (cached) return Response.json(cached);
 
-    // Fetch from origin
-    const response = await fetch(`https://api.origin.com${cacheKey}`, {
+    const upstream = await fetch(`https://api.origin.com${key}`, {
       headers: { Authorization: `Bearer ${env.API_SECRET}` },
     });
+    const data = await upstream.json();
 
-    const data = await response.json();
-
-    // Cache in KV (with TTL)
+    // Edge-cache with TTL — survives across requests
     ctx.waitUntil(
-      env.CACHE_KV.put(cacheKey, JSON.stringify(data), {
-        expirationTtl: 3600, // 1 hour
-      })
+      env.CACHE_KV.put(key, JSON.stringify(data), { expirationTtl: 3600 })
     );
 
-    return new Response(JSON.stringify(data), {
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return Response.json(data, { headers: { 'Cache-Control': 'public, max-age=60' } });
   },
 };
-
 ```
 
-### 5. Edge Authentication
+### 5. Edge JWT Verification (Sub-50ms Auth)
 
 ```typescript
-// Edge JWT verification
 import { verify } from '@tsndr/cloudflare-worker-jwt';
 
 interface Env {
@@ -243,69 +185,55 @@ interface Env {
 }
 
 export default {
-  async fetch(
-    request: Request,
-    env: Env,
-    ctx: ExecutionContext
-  ): Promise<Response> {
-    const authHeader = request.headers.get('Authorization');
-
-    if (!authHeader?.startsWith('Bearer ')) {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const auth = request.headers.get('Authorization');
+    if (!auth?.startsWith('Bearer ')) {
       return new Response('Unauthorized', { status: 401 });
     }
-
-    const token = authHeader.substring(7);
+    const token = auth.substring(7);
 
     try {
       const isValid = await verify(token, env.JWT_SECRET);
-
-      if (!isValid) {
-        return new Response('Invalid token', { status: 401 });
-      }
-
-      // Token is valid, proceed
-      return fetch(request);
-    } catch (error) {
+      if (!isValid) return new Response('Invalid token', { status: 401 });
+      return fetch(request); // pass through
+    } catch {
       return new Response('Token verification failed', { status: 401 });
     }
   },
 };
-
 ```
 
-### 6. Edge Image Optimization
+### 6. Durable Objects (Stateful Edge Compute)
 
 ```typescript
-// Cloudflare Worker for image optimization
-export default {
+// Counter Durable Object — a single instance per room
+export class Counter {
+  state: DurableObjectState;
+  count: number = 0;
+
+  constructor(state: DurableObjectState) {
+    this.state = state;
+    this.state.blockConcurrencyWhile(async () => {
+      this.count = (await this.state.storage.get<number>('count')) ?? 0;
+    });
+  }
+
   async fetch(request: Request): Promise<Response> {
     const url = new URL(request.url);
-
-    // Parse image parameters
-    const width = parseInt(url.searchParams.get('w') || '800');
-    const quality = parseInt(url.searchParams.get('q') || '80');
-    const format = url.searchParams.get('f') || 'auto';
-
-    // Fetch original image
-    const response = await fetch(request);
-
-    // Use Cloudflare Image Resizing
-    const resizedResponse = new Response(response.body, {
-      headers: {
-        ...Object.fromEntries(response.headers),
-        'cf-resized-json': JSON.stringify({ width, quality, format }),
-      },
+    if (url.pathname === '/increment') {
+      this.count++;
+      await this.state.storage.put('count', this.count);
+    }
+    return new Response(JSON.stringify({ count: this.count }), {
+      headers: { 'Content-Type': 'application/json' },
     });
-
-    return resizedResponse;
-  },
-};
-
+  }
+}
 ```
 
 ## Real-World Use Cases
 
-### A/B Testing at the Edge
+### 1. A/B Testing at the Edge
 
 ```text
 Use Case: Personalized content delivery
@@ -322,10 +250,9 @@ Use Case: Personalized content delivery
 │  • Instant response (no round-trip)                             │
 │  • Consistent experience (same user gets same variant)          │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
-### API Gateway with Edge Authentication
+### 2. API Gateway with Edge Authentication
 
 ```text
 Use Case: Centralized auth at the edge
@@ -342,98 +269,104 @@ Use Case: Centralized auth at the edge
 │  • Consistent auth logic                                        │
 │  • Lower latency for auth checks                                │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Common Mistakes
 
-1. **Using Node.js APIs**: Edge runtimes have limited Node.js API support
-
-2. **Heavy computation**: Edge functions have CPU time limits
-
-3. **Large dependencies**: Bundle size affects cold start time
-
-4. **State assumptions**: Each request is stateless
-
-5. **Ignoring limits**: CPU time, memory, and subrequest limits
+| Mistake | Fix |
+|---------|-----|
+| Using Node.js APIs (`fs`, `child_process`) in edge runtime | Use Web Standard APIs (Fetch, Streams, URL) or pin runtime to `nodejs` |
+| Heavy computation (image processing, ML) at the edge | Move to Lambda or Cloud Run; edge has 10ms–30s CPU budget |
+| Large dependencies bundled (100KB+ on first load) | Use tree-shakeable libs, dynamic imports, or split into multiple smaller workers |
+| Assuming state between invocations | Edge is stateless; use KV / Durable Objects / Edge Config |
+| Ignoring subrequest limits (Cloudflare: 50/req free, 1000 paid) | Batch upstream calls, cache aggressively |
 
 ## Best Practices
 
-1. **Keep functions small**: Focus on edge-appropriate tasks
-
-2. **Use streaming**: For better performance with large responses
-
-3. **Leverage caching**: Use KV/Durable Objects for state
-
-4. **Handle errors gracefully**: Edge functions can fail
-
-5. **Monitor performance**: Track latency and error rates
+1. **Keep functions small and edge-appropriate** — auth, A/B, redirects, geolocation, header manipulation
+2. **Use streaming** — `ReadableStream` responses for large payloads
+3. **Leverage caching** — `Cache-Control` + KV / Edge Config for state
+4. **Handle errors gracefully** — edge failures fall back to origin or 5xx; design the fallback
+5. **Monitor performance** — track TTFB, origin requests avoided (cache hit ratio)
+6. **Respect subrequest and CPU limits** — design for the worst-case budget
+7. **Use Durable Objects for stateful edge logic** — coordination, locks, real-time counters
 
 ## Performance Considerations
 
 ```text
 Edge vs Serverless Comparison:
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────┬───────────────────┬──────────────────────┐
 │                      │ Edge Functions    │ Serverless (Lambda)  │
 ├──────────────────────┼───────────────────┼──────────────────────┤
-│ Cold Start           │ < 5ms             │ 100ms - 2s           │
-│ Execution Location   │ CDN edge          │ Single region        │
-│ CPU Time Limit       │ 10ms - 30s        │ 15 minutes           │
-│ Memory Limit         │ 128MB             │ 10GB                 │
-│ Use Case             │ Latency-sensitive │ Heavy computation    │
-│ Best For             │ Auth, routing     │ Data processing      │
-│ State Management     │ KV, Durable Obj   │ External DB          │
-└─────────────────────────────────────────────────────────────────┘
-
+│ Cold Start           │ < 5 ms            │ 100 ms – 2 s         │
+│ Execution Location   │ CDN edge PoP      │ Single region        │
+│ CPU Time Limit       │ 10 ms – 30 s      │ 15 minutes           │
+│ Memory Limit         │ 128 – 256 MB      │ 10 GB                │
+│ Node.js APIs         │ None              │ Full                 │
+│ Best for             │ Latency-sensitive │ Heavy computation    │
+│                      │ Auth, routing     │ Data processing      │
+│ State Management     │ KV, DO, Edge Config│ External DB         │
+│ Subrequest Limit     │ 50–1000           │ Unlimited            │
+└──────────────────────┴───────────────────┴──────────────────────┘
 ```
 
 ## Summary
 
-Edge functions provide a powerful way to reduce latency and improve performance by executing code at CDN edge locations. They are ideal for latency-sensitive tasks but have computational limitations compared to traditional serverless functions.
+- Edge functions run in CDN PoPs close to users, cutting latency for auth, routing, and personalization
+- Cloudflare Workers, Vercel Edge, and Lambda@Edge differ in runtime (V8 vs Node), CPU budget, and state options
+- Sub-5ms cold starts come from V8 isolates; the trade-off is limited APIs and small CPU/memory budgets
+- Use edge for: auth verification, A/B routing, geolocation, header transformation, KV-backed personalization
+- Use serverless/containers for: heavy compute, large dependencies, Node.js-specific APIs, stateful work
 
 ---
 
 ## Cheat Sheet
+
 ```text
 EDGE FUNCTIONS CHEAT SHEET
-============================================================
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  Cloudflare Worker Lifecycle:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                                                                 │
-  │  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
-  │  │  Fetch   │ ──▶ │  Parse   │ ──▶ │ Execute  │ ──▶ │ Response │ │
-  │  │  Event   │    │  Request │    │  Handler │    │          │ │
-```
-```
-  import { NextRequest, NextResponse } from 'next/server';
-  export const config = {
-    runtime: 'edge',
-  };
-  export default async function handler(request: NextRequest) {
-    const { searchParams } = new URL(request.url);
+WHEN TO USE EDGE:
+  • Latency-critical auth / personalization
+  • A/B testing, geo-redirects, header manipulation
+  • Caching layer in front of origin
+  • Sub-50ms p99 requirement
+
+WHEN TO AVOID EDGE:
+  • Heavy compute (image processing, ML)
+  • Node.js-specific APIs (fs, child_process)
+  • Long-running jobs (>30s)
+  • Large dependency bundles
+
+STATE STORAGE:
+  • Cloudflare: KV, Durable Objects, D1
+  • Vercel:    Edge Config (read-only KV)
+  • Lambda@Edge: none (use DynamoDB / ElastiCache)
+
+INTERVIEW ANSWER:
+  1. Edge = V8 isolate at CDN PoP, sub-5ms cold start
+  2. Trade-off: limited CPU/memory vs proximity to user
+  3. Best for auth, A/B, personalization — not heavy compute
+  4. Real example: Vercel middleware doing geo-redirects in <30ms
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
+
+- [AWS Lambda](05-AWS-Lambda.md)
 - [Docker](../13-Docker/)
 - [Next.js](../04-NextJS/)
 - [Observability](../22-Observability/)
+- [Serverless Overview](01-Serverless-Overview.md)
+- [Vercel Deployments](06-Vercel-Deployments.md)
+
 
 ## References & Learn More
 
-- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
-- [Vercel Edge Functions](https://vercel.com/docs/functions/edge-functions)
-- [Edge Computing Fundamentals](https://web.dev/articles/edge-computing)
 - [Cloudflare KV](https://developers.cloudflare.com/workers/learning/how-kv-works/)
+- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Durable Objects](https://developers.cloudflare.com/durable-objects/)
+- [Edge Computing Fundamentals (web.dev)](https://web.dev/articles/edge-computing)
+- [Vercel Edge Functions](https://vercel.com/docs/functions/edge-functions)
+- [Workers V8 Isolates](https://developers.cloudflare.com/workers/reference/how-workers-works/)

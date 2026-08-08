@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Promises
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+A Promise is a state machine (pending → fulfilled/rejected) representing an async value. Combinators (`all`, `allSettled`, `race`, `any`) cover most fan-in/fan-out patterns. Unhandled rejections crash Node and warn in browsers.
+
+## Why It Matters
+
+Senior engineers use `Promise.allSettled` over `Promise.all` when partial failures are acceptable, know the fail-fast semantics of `Promise.race` (first to settle wins, including rejections), and understand why `Promise.all` is preferred over sequential `await` for independent operations (concurrency, not just parallelism).
 
 ## Definition
 

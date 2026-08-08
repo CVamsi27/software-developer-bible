@@ -1,6 +1,10 @@
-# Performance APIs
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Performance APIs
 
 ## Definition
 Performance APIs are browser APIs that provide detailed timing and performance data about web pages, resources, and user interactions. They enable developers to measure and optimize application performance with precise, low-level timing information.
@@ -498,30 +502,38 @@ Performance APIs provide powerful tools for measuring and optimizing web applica
 PERFORMANCE APIS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  function trackABTestPerformance(
-    testId: string,
-    variant: string
-  ): void {
-    const metrics = collectPerformanceMetrics();
-    fetch('/api/ab-test-performance', {
-```
-```
-  API Performance Impact:
-  ┌─────────────────────────────────────────────────────────────┐
-  │  Low Impact:                                               │
-  │  • performance.now()                                       │
-  │  • performance.getEntriesByType()                          │
-  │  • performance.mark()                                      │
-```
+HIGH-RESOLUTION TIME:
+  • performance.now()             -> ms with 5μs precision
+  • performance.timeOrigin        -> epoch when page started
+  • Date.now()                    -> ms, 1ms precision, can jump
+
+NAVIGATION TIMING:
+  performance.getEntriesByType('navigation')[0]
+  - domContentLoadedEventEnd
+  - loadEventEnd
+  - domInteractive, responseEnd
+
+PERFORMANCE OBSERVER:
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) console.log(entry);
+  });
+  po.observe({ type: 'largest-contentful-paint', buffered: true });
+  Types: paint, largest-contentful-paint, layout-shift, longtask, resource
+
+USER TIMING API:
+  performance.mark('cart-opened');
+  performance.measure('cart-to-checkout', 'cart-opened', 'checkout-clicked');
+  performance.getEntriesByType('measure');
+
+WEB VITALS JS LIBRARY (Google):
+  import { onLCP, onINP, onCLS } from 'web-vitals';
+  onLCP(console.log); onINP(console.log); onCLS(console.log);
+  Sends to analytics endpoint on page hide
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Know difference between performance.now() and Date.now()
+  • Discuss buffered: true for late observers
+  • Mention longtask (>50ms blocks main thread)
 ```
 ---
 

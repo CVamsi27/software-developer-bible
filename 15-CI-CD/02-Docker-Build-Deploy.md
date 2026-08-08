@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # Docker Build & Deploy Pipeline
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Build, scan, sign, and push Docker images in CI; deploy via kubectl, Helm, or ArgoCD from a registry.
+
+**Why it matters:** Tests BuildKit cache mounts, multi-arch builds, registry auth, and the line between CI (build) and CD (deploy) responsibilities.
 
 ## Definition
 
@@ -490,8 +500,6 @@ docker compose up -d
 docker compose down
 
 ```
-
----
 
 ---
 

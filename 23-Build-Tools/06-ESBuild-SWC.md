@@ -1,6 +1,10 @@
-# ESBuild & SWC
+---
+section: Build Tools
+category: DevOps
+tags: [concept, reference, tool]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# ESBuild & SWC
 
 ## Definition
 
@@ -121,13 +125,32 @@ esbuild.buildSync({
 ESBUILD & SWC CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+ESBUILD (Go):
+  • Bundler + minifier + dev server in one
+  • 10-100x faster than Babel+webpack
+  • Used internally by Vite (pre-bundling)
+  • Plugin API in JavaScript
+  • Limitation: no type-checking (use tsc separately)
 
+SWC (Rust):
+  • Standalone compiler (transforms TS/JSX)
+  • 20x faster than Babel
+  • Used by Next.js 13+ (replaces Babel for app router)
+  • Plugin API in Rust or WASM
+  • spack (experimental bundler, in development)
+
+CHOOSING BETWEEN:
+  • Use SWC when:  Next.js, large monorepo, transform-only
+  • Use ESBuild when: small/medium apps, Vite, CLI bundling
+  • Use Babel when:  complex plugin ecosystem needed, stage-3+
+
+INTERVIEW TIPS:
+  • Explain why Go/Rust is faster than JS (parallelism, no GC pauses)
+  • Discuss how Vite uses esbuild (dev pre-bundle, prod Rollup)
+  • Show swc config in Next.js 13+
+  • Mention esbuild's --metafile for bundle analysis
 ```
+---
 ## See Also
 - [Babel](05-Babel.md)
 - [Next.js](../04-NextJS/)

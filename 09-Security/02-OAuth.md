@@ -1,6 +1,14 @@
-# OAuth 2.0
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# OAuth 2.0 & OpenID Connect
+
+> **TL;DR:** OAuth 2.0 is the delegated authorization framework, and OpenID Connect is its identity layer on top. Senior engineers know the four grant types, when to use PKCE, how to store refresh tokens safely, and the difference between authorization and authentication.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

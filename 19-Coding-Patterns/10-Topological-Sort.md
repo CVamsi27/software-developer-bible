@@ -1,10 +1,22 @@
-# Topological Sort
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Topological Sort
 
 ## Definition
 
 Topological Sort is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. It's used to determine the order of tasks with dependencies.
+
+## TL;DR
+
+Topological sort produces a **linear ordering of vertices in a DAG** such that for every edge (u, v), u comes before v. Two algorithms: **Kahn's algorithm** (BFS — repeatedly remove nodes with in-degree 0) and **DFS-based** (push to stack as you finish, reverse at the end). The pattern is identified by "given dependencies, find a valid order" or "is this graph a DAG?".
+
+## Why it matters
+
+Topological sort is the canonical pattern for **dependency resolution, build systems, course scheduling, package managers, and SQL query plans**. The senior-level question: detecting **cycles** (impossible to sort → return empty/throw), handling **multiple valid orderings** (any is correct), and choosing **Kahn vs. DFS** (Kahn gives you natural cycle detection via in-degree; DFS gives you the order with one final pass). Production examples: npm/yarn dependency resolution, Kubernetes pod scheduling, and SQL JOIN ordering. Interview classics: course schedule, alien dictionary, minimum height trees, sequence reconstruction.
 
 ## When to Use
 

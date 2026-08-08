@@ -1,6 +1,10 @@
-# Health Checks
+---
+section: Observability
+category: DevOps
+tags: [concept, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Health Checks
 
 ## Definition
 
@@ -510,12 +514,33 @@ Health checks are the foundation of service reliability. Implement liveness (pro
 HEALTH CHECKS CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+PROBE TYPES (Kubernetes):
+  - Liveness:  is the process alive? (restart on fail)
+  - Readiness: can it serve traffic? (remove from LB on fail)
+  - Startup:   slow-startup container, disables liveness until ready
 
+HTTP ENDPOINT PATTERNS:
+  - GET /health/live   -> 200 OK always (process check)
+  - GET /health/ready  -> 200 OK if dependencies healthy
+  - GET /health/startup-> 200 OK when warm-up complete
+
+CHECK FREQUENCIES:
+  - Liveness:  every 10s, timeout 1s, failureThreshold 3
+  - Readiness: every 5s,  timeout 1s, failureThreshold 2
+  - Startup:   every 10s, timeout 1s, failureThreshold 30
+
+DEPENDENCY CHECKS:
+  - Database:  SELECT 1 with 500ms timeout
+  - Cache:     PING redis
+  - Queue:     connection.status
+  - External:  skip (use circuit breaker instead)
+  - Critical only in readiness, NOT liveness
+
+INTERVIEW TIPS:
+  - Explain why liveness must NOT check dependencies
+  - Discuss graceful shutdown with preStop hook
+  - Show how to add custom readiness signal
+  - Mention chaos engineering to validate probes
 ```
 ---
 

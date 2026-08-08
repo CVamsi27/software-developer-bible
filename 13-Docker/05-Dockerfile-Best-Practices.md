@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Dockerfile Best Practices & Security
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Layer ordering, pinned versions, non-root users, distroless/slim bases, .dockerignore, image scanning, and HEALTHCHECK — the production Dockerfile checklist.
+
+**Why it matters:** A senior candidate can defend every line of a Dockerfile. Tests CVE management, supply chain, init systems, and image-build performance trade-offs.
 
 ## Definition
 
@@ -187,6 +197,8 @@ HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://localhost:3000/heal
 LABEL org.opencontainers.image.version="1.0.0"
 CMD ["node", "app/main.js"]
 ```
+
+---
 
 ## See Also
 - [CI/CD](../15-CI-CD/)

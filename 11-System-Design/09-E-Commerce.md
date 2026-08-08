@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # E-Commerce System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a full-stack e-commerce platform with catalog, search, cart, checkout, inventory, and order management — covering the read path (browse) and the write path (order).
+
+**Why it matters:** End-to-end design test: catalog search (Elasticsearch), inventory consistency, cart state, payment, fulfillment, and post-order state machines. Catches a candidate who can't keep breadth and depth in balance.
 
 ## Requirements
 ### Functional Requirements
@@ -1194,8 +1204,6 @@ Key takeaways:
 5. Design for flash sales with pre-warmed caches
 
 This design supports 100K+ concurrent users with 10K+ orders per minute.
-
----
 
 ---
 

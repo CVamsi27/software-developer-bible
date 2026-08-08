@@ -1,6 +1,10 @@
-# Integration Testing
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Integration Testing
 
 ## Definition
 
@@ -36,6 +40,14 @@ Integration testing is a level of software testing where individual units or com
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+## TL;DR
+
+Integration tests verify that **multiple units work together** — service + database, controller + service, React component + API client. They use **real or in-memory implementations** of dependencies (Testcontainers, SQLite, MSW) rather than mocks, so they catch contract mismatches, schema drift, and serialization bugs that unit tests miss. The trade-off vs. unit tests: integration tests are **slower, flakier, and harder to debug**, but they catch the bugs that actually break production.
+
+## Why it matters
+
+Senior interviews explore the **"mock or real?"** decision at the integration boundary: should you spin up a real Postgres in Docker, or stub the repository layer? Strong answers reference the **integration test pyramid** — most integration tests should hit the **database boundary** (where most contract bugs live) without going all the way to the HTTP boundary (which belongs in E2E). Be ready to discuss **test data strategies** (factories, fixtures, seed scripts), **isolation** (truncate vs. transaction rollback), and **flakiness** (network timeouts, ordering). Tools like **Testcontainers, MSW, and Prisma's test client** are common topics.
 
 ## Why Do We Need It?
 

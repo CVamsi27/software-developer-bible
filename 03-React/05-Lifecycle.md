@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Lifecycle
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+React lifecycle is the sequence of phases a component goes through: mount, update, unmount. Class components have `componentDidMount/Update/WillUnmount`. Function components use `useEffect` (after commit) and `useLayoutEffect` (after DOM mutations, before paint) to hook into these phases.
+
+## Why It Matters
+
+Senior engineers know that `useEffect` runs AFTER paint, making it the wrong tool for measurements that need to happen before paint (use `useLayoutEffect` for that). They also know the strict-mode double-invocation behavior and the new React 19 cleanup-on-remount semantics.
 
 ## Definition
 

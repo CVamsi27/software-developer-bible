@@ -1,6 +1,10 @@
-# Monitoring
+---
+section: Observability
+category: DevOps
+tags: [concept, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Monitoring
 
 ## Definition
 
@@ -475,12 +479,36 @@ Monitoring transforms raw metrics into actionable visibility. Use the RED/USE/Fo
 MONITORING CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+METRIC TYPES (Prometheus):
+  - Counter:   monotonically increasing (requests_total)
+  - Gauge:     point-in-time value (memory_used_bytes)
+  - Histogram: bucketed observations (request_duration_seconds)
+  - Summary:   quantiles calculated client-side
+  Prefer Histogram over Summary for aggregation across instances.
 
+USE THE FOUR GOLDEN SIGNALS:
+  - Latency:    p50, p95, p99 response time
+  - Traffic:    requests/second by endpoint
+  - Errors:     4xx, 5xx rate (not just count)
+  - Saturation: CPU, memory, queue depth, connection pool
+
+SLO / SLA / SLI:
+  - SLI: indicator (e.g., p99 latency)
+  - SLO: objective (e.g., p99 < 200ms for 99.9% of requests)
+  - SLA: agreement with consequence (refund if violated)
+  Error budget = 1 - SLO target (e.g., 0.1% of requests)
+
+ALERTING:
+  - Page on symptoms (user-facing), not causes
+  - Burn rate alerts: 1h fast burn, 6h slow burn
+  - Multi-window: 5min of 1h + 30min of 6h
+  - Avoid alert fatigue: high signal-to-noise
+
+INTERVIEW TIPS:
+  - Explain difference between metrics, logs, and traces
+  - Design SLOs for a checkout API
+  - Discuss Prometheus vs Datadog vs CloudWatch trade-offs
+  - Show how to set up burn-rate alerts
 ```
 ---
 

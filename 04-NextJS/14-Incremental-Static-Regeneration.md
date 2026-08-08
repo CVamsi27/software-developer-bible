@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Incremental Static Regeneration (ISR)
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+ISR combines static generation with on-demand revalidation. Pages are pre-rendered at build, served from cache, and regenerated in the background when stale (time-based) or explicitly invalidated (`revalidatePath`/`revalidateTag`). The user always gets a fast cached page; the next request gets the new version.
+
+## Why It Matters
+
+Senior engineers use ISR for: large content sites (e-commerce catalogs, blogs), pages with mostly-static data, and reducing origin load. They know the failure modes: stale data between revalidations, build-time fetch errors blocking deploys, and the need for cache tags for fine-grained invalidation.
 
 ## Definition
 

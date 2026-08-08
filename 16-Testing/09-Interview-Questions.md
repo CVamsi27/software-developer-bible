@@ -1,10 +1,22 @@
-# Testing Interview Questions
+---
+section: Testing
+category: Quality
+tags: [interview-questions]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Testing Interview Questions
 
 ## Definition
 
 This chapter contains the 40 most commonly asked testing interview questions with detailed answers, covering everything from basic concepts to advanced FAANG-level scenarios. Each question includes a comprehensive answer, code examples where applicable, and follow-up considerations.
+
+## TL;DR
+
+This file collects the **most frequently asked Testing interview questions** for senior full-stack roles, grouped by difficulty. Coverage spans testing pyramid/TDD strategy, Jest/Vitest internals, RTL accessibility queries, mocking strategy, integration vs. E2E trade-offs, contract testing, and CI-flake debugging. Each question is paired with a **senior-level answer** that includes trade-offs, anti-patterns, and a follow-up the interviewer may push on.
+
+## Why it matters
+
+Senior testing interviews go beyond "explain the testing pyramid" — interviewers want to see you **defend a testing strategy** under pressure: what do you cut when deadline hits? How do you debug a flaky E2E suite? When do you skip a unit test? This file consolidates the **mid-to-senior level** questions you should be ready to answer in 60-90 seconds each, with the depth and trade-off awareness a 5+ YoE engineer is expected to demonstrate.
 
 ## Why Do We Need It?
 

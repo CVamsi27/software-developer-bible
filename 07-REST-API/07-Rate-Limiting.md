@@ -1,6 +1,14 @@
-# Rate Limiting
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# API Rate Limiting
+
+> **TL;DR:** Rate limiting protects your API from abuse and noisy neighbors using token bucket, leaky bucket, fixed window, or sliding window algorithms. Distributed rate limiting needs a shared store (Redis) and you need to decide what to limit (IP, user, API key, route).
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

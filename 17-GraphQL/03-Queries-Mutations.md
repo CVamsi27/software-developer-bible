@@ -1,6 +1,10 @@
-# Queries & Mutations
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Queries & Mutations
 
 ## Definition
 
@@ -13,6 +17,14 @@ Mutation → Write operations (sequential execution, side effects allowed)
 ```
 
 ---
+
+## TL;DR
+
+**Queries** are read-only operations, **mutations** are write operations that may return updated state, and **subscriptions** are long-lived server-push streams over WebSockets/SSE. All three share the same syntax (selection sets, variables, fragments, directives like `@include`/`@skip`/`@deprecated`). Best practice: **input types for mutation arguments**, **typed payloads** for both query and mutation results, and **idempotency keys** for mutations that touch money or state.
+
+## Why it matters
+
+Senior interviews test the **query-vs-mutation semantics** in depth: mutations aren't atomic by default — you implement transactions in resolvers. You'll be asked about **N+1 prevention** (DataLoader), **mutation ordering** (serial vs. parallel), **optimistic responses** (`User { id, optimisticName }`), and **persisted queries** (send a hash, not a giant document). Strong candidates also discuss **@defer/@stream** (Apollo) for incremental delivery and **operation limits** (cost, depth) to prevent abuse.
 
 ## Why Do We Need It?
 

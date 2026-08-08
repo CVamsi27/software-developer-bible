@@ -1,6 +1,18 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept, guide]
+---
+
 # HR Round Strategy for Senior Full Stack Engineers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+The HR round is a strategic evaluation, not a formality — it's where offers are often decided against. Senior engineers should treat HR as a partnership: research the company, prepare STAR stories, anchor salary on data, and ask Tier-3 differentiating questions.
+
+## Why It Matters
+
+HR rounds filter out candidates who would be a poor team fit, who have misaligned expectations, or who can't articulate motivation. At the senior level, this is also where the recruiter gauges your long-term retention risk and growth trajectory. Losing this round = no offer, regardless of technical performance.
 
 ## Table of Contents
 
@@ -733,48 +745,46 @@ growing others is a key part of senior engineering."
 6. **Remember: you're interviewing them too** — This is a two-way street
 
 > The HR round is where technical ability meets human connection. Show them both.
----
 
 ## Summary
 
 The HR round is a strategic evaluation opportunity, not a formality. This guide covers company research frameworks, salary negotiation tactics, cultural fit signals, and the key questions to ask to make a strong impression.
 
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)
-
----
-
 ## Cheat Sheet
+
 ```text
 HR ROUND STRATEGY FOR SENIOR FULL STACK ENGINEERS CHEAT SHEET
 ============================================================
 
 COMMON PATTERNS:
-```
   □ What does the company do? (One sentence)
   □ Who are their customers/users?
   □ What's their business model?
   □ Who are their competitors?
   □ What's their engineering stack? (Check job postings, GitHub, blog)
   □ Recent news (funding, launches, acquisitions)
-```
-```
+
   1. Current Role & Impact (30 seconds)
      "I'm a senior full stack engineer at [Company] where I lead the
      frontend platform team, serving 2M+ users across 3 products."
   2. Career Journey (45 seconds)
      "I started in backend development, then moved to full stack because
      I wanted to own the complete user experience. Over the past 8 years,
-```
+     I've specialized in building high-performance fintech applications..."
 
 INTERVIEW TIPS:
   - Understand the core concepts and trade-offs
   - Be ready to explain with real-world examples
   - Discuss performance implications and best practices
   - Show awareness of common pitfalls
-
 ```
+
+---
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
+
 ## References & Learn More
 
 - [Levels.fyi](https://www.levels.fyi/) — Salary benchmarks

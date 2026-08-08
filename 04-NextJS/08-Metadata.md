@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Metadata API in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Next.js Metadata API lets you define `<title>`, `<meta>`, `<link>`, and Open Graph tags via a `metadata` export or `generateMetadata` function. Static metadata is hoisted; dynamic metadata is generated per-request. Works for SEO, social sharing, and PWA.
+
+## Why It Matters
+
+Senior engineers use `generateMetadata` for dynamic titles/descriptions based on route params (e.g., product pages). They know the precedence rules: layout metadata merges down, page metadata overrides, and `metadataBase` sets the canonical URL for absolute-path OG images.
 
 ## Definition
 

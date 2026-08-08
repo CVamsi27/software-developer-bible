@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useEffect
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`useEffect` runs side effects after commit. The dependency array controls when it re-runs. Cleanup runs before the next effect and on unmount. Strict Mode in dev invokes effects twice (mount → unmount → mount) to surface bugs.
+
+## Why It Matters
+
+Senior engineers know: missing dependencies cause stale closures, including every used value is the safe default, and effects run after paint so they're not for layout measurements (use `useLayoutEffect`). They also know when to NOT use effects: derived state, event handlers, and one-off computations belong outside effects.
 
 ## Definition
 

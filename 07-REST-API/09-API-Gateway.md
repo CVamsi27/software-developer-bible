@@ -1,6 +1,14 @@
-# API Gateway
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# API Gateway Pattern
+
+> **TL;DR:** An API gateway is a single entry point that routes, aggregates, authenticates, throttles, and transforms requests to downstream services. Senior engineers know when a gateway pays off (cross-cutting concerns, BFF, multi-protocol fan-out) and when it is unnecessary indirection.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

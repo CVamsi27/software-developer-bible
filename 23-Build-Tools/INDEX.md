@@ -1,8 +1,8 @@
 # Build Tools — Index
 
-> **7 files** — Frontend build tooling from Webpack, Vite, and Turbopack to Babel, ESBuild, SWC, build optimization, and interview questions.
+> **9 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, tool comparison, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-9-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -15,10 +15,12 @@
 | 05 | [Babel](05-Babel.md) | Compilation, presets, plugins, polyfills, browserslist |
 | 06 | [ESBuild & SWC](06-ESBuild-SWC.md) | Go/Rust bundlers, performance, config, use cases |
 | 07 | [Interview Questions](07-Interview-Questions.md) | 50+ curated questions with answers |
+| 08 | [Rspack](08-Rspack.md) | Rust-based Webpack-compatible bundler, federation |
+| 09 | [Build Tool Comparison](09-Build-Tool-Comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs |
 
 ---
 
-**Cross-references:** [React](../03-React/) | [Next.js](../04-NextJS/) | [Performance Monitoring](../26-Performance-Monitoring/)
+**Cross-references:** [Next.js](../04-NextJS/) | [Performance Monitoring](../26-Performance-Monitoring/) | [React](../03-React/)
 ---
 
 ## Navigation

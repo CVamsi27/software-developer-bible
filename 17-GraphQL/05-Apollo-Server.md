@@ -1,6 +1,10 @@
-# Apollo Server
+---
+section: GraphQL
+category: Backend
+tags: [concept, reference]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Apollo Server
 
 ## Definition
 
@@ -12,6 +16,14 @@ Apollo Server = GraphQL Spec + HTTP Transport + Middleware + Tooling + Studio
 ```
 
 ---
+
+## TL;DR
+
+Apollo Server is the **de-facto Node.js GraphQL server**, with a plugin model for auth, caching, tracing, and error formatting. It plugs into Express, Fastify, Koa, AWS Lambda, or runs standalone. v4+ has **explicit plugin composition** (`ApolloServerPluginUsageReporting`, `ApolloServerPluginLandingPageDisabled`), native **landing page** with sandboxed Explorer, and built-in **CSRF prevention**. Alternatives: **GraphQL Yoga** (more flexible, modern), **Mercurius** (Fastify-first), **graphql-helix** (low-level, streaming-first).
+
+## Why it matters
+
+Senior interviews focus on **Apollo Server's plugin system** — most production features (auth, metrics, error masking, persisted queries, response caching) are implemented as plugins. Strong candidates discuss **request lifecycle hooks** (`requestDidStart`, `didResolveOperation`, `willSendResponse`), the **error formatting** plugin for hiding internal stack traces, **federation** (`@apollo/subgraph`), and **streaming responses** with `ExecuteOperationMessage` for `@defer`/`@stream`. Be ready to compare with **GraphQL Yoga** for new projects — Yoga has better DX, native subscriptions, and a cleaner error model.
 
 ## Why Do We Need It?
 

@@ -1,6 +1,18 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept, guide]
+---
+
 # Resume Tips for Senior Full Stack Engineers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+A senior resume is a 6-8 second sales document, not a job description. Lead with a quantified professional summary, write 3-4 impact bullets per role (not task lists), group tech stack by category, mirror the JD's keywords for ATS, and aim for 1 page under 10 YoE / 2 pages otherwise.
+
+## Why It Matters
+
+Recruiters spend 6-8 seconds on initial resume scan. ATS systems filter 75% of resumes before a human sees them. A senior resume that quantifies impact, mirrors JD keywords, and demonstrates leadership gets you to the phone screen — everything else is downstream of that.
 
 ## Table of Contents
 
@@ -480,38 +492,36 @@ Before sending your resume, verify:
 
 Your resume's job is simple: get you the interview. This guide covers quantifying achievements with metrics, ATS optimization, senior-level professional summary writing, and common formatting mistakes to avoid.
 
-## See Also
-- [Behavioral](../18-Behavioral/)
-- [SDE Role](../31-SDE-Role/)
-
----
-
 ## Cheat Sheet
+
 ```text
 RESUME TIPS FOR SENIOR FULL STACK ENGINEERS CHEAT SHEET
 ============================================================
 
 COMMON PATTERNS:
-```
-  Experienced software engineer with 8+ years of experience in full stack
-  development. Proficient in JavaScript, React, Node.js. Passionate about
-  building great software. Team player with strong communication skills.
-```
-```
-  Senior Full Stack Engineer with 8 years building scalable fintech platforms
-  serving 2M+ users. Led migration from monolith to microservices, reducing
-  deployment time by 75%. Architected real-time payment processing system
-  handling $50M+ annual volume. Experienced in mentoring 12+ engineers and
-  driving engineering practices across 3 product teams.
-```
+  ❌ Experienced software engineer with 8+ years of experience in full stack
+     development. Proficient in JavaScript, React, Node.js. Passionate about
+     building great software. Team player with strong communication skills.
+
+  ✅ Senior Full Stack Engineer with 8 years building scalable fintech platforms
+     serving 2M+ users. Led migration from monolith to microservices, reducing
+     deployment time by 75%. Architected real-time payment processing system
+     handling $50M+ annual volume. Experienced in mentoring 12+ engineers and
+     driving engineering practices across 3 product teams.
 
 INTERVIEW TIPS:
   - Understand the core concepts and trade-offs
   - Be ready to explain with real-world examples
   - Discuss performance implications and best practices
   - Show awareness of common pitfalls
-
 ```
+
+---
+
+## See Also
+- [Behavioral](../18-Behavioral/)
+- [SDE Role](../31-SDE-Role/)
+
 ## References & Learn More
 
 - [Official Documentation](https://developer.mozilla.org/en-US/)

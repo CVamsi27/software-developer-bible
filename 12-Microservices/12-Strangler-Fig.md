@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Strangler Fig Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Incrementally replace a legacy monolith by routing traffic to new services piece by piece until the monolith can be decommissioned.
+
+**Why it matters:** Most real migrations are strangler, not rewrite. Tests facade/router design, dual-write consistency, parallel-run validation, and feature-flag-driven cutover.
 
 ## Definition
 

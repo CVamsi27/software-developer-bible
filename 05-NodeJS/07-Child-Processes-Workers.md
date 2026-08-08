@@ -1,8 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Child Processes & Worker Threads
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
 
-Node.js provides two mechanisms for parallel execution: **child processes** (spawning separate OS processes) and **worker threads** (lightweight threads within the same process). Both enable CPU-intensive operations without blocking the event loop, but they serve different use cases.
+Node provides two ways to run code in parallel: child processes (separate OS processes via `spawn`/`exec`/`fork`) and worker threads (lightweight threads in the same process via `worker_threads`). Use child processes for CPU-bound work or isolation; use worker threads for shared-memory parallelism (SharedArrayBuffer, Atomics).
+
+## Why It Matters
+
+Senior engineers know the tradeoff: child processes have full isolation and overhead, worker threads share memory but can't share the event loop. They reach for `piscina` for worker pool management, and they use `cluster` for HTTP server scaling. The interview signal is knowing when each is appropriate.
 
 ## Definition
 
@@ -387,6 +397,8 @@ CONSTRAINTS:
   SharedArrayBuffer → zero-copy transfer
   Transferable → ArrayBuffer, MessagePort
 ```
+
+---
 
 ## See Also
 - [Clustering](04-Clustering.md)

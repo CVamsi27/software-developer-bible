@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # Core Computer Science Fundamentals (Phases 9–15)
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 ---
 
@@ -2055,6 +2060,8 @@ db.users.createIndex({ "address.city": 1 });
 This guide covers the core computer science fundamentals required for technical interviews, including bit manipulation, mathematics, sorting algorithms, data structures, dynamic programming, and graph algorithms with Java implementations.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -2062,7 +2069,6 @@ This guide covers the core computer science fundamentals required for technical 
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -2096,8 +2102,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

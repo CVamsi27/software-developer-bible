@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # CQRS (Command Query Responsibility Segregation)
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Split read and write models so each can be scaled, optimized, and even stored differently — frequently combined with event sourcing.
+
+**Why it matters:** Tests when CQRS pays off (asymmetric read/write, complex queries) vs when it adds accidental complexity. Read-model projection lag and consistency expectations.
 
 ## Definition
 

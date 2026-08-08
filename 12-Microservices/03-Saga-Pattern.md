@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Saga Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A pattern for maintaining data consistency across microservices using a sequence of local transactions with compensating actions on failure.
+
+**Why it matters:** Replaces 2PC/XA in distributed systems. Tests choreography vs orchestration, idempotent compensations, and observability of long-running business transactions.
 
 ## Definition
 
@@ -680,8 +690,6 @@ Saga Pattern enables distributed transactions in microservices using local trans
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

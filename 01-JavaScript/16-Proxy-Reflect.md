@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Proxy & Reflect
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`Proxy` wraps a target object and intercepts 13 trap operations (get, set, has, deleteProperty, etc.). `Reflect` provides the default operation as a function, mirroring Proxy traps. Together they enable metaprogramming: validation, reactivity, mocks, and schema enforcement.
+
+## Why It Matters
+
+Senior engineers use Proxy for: form validation (intercept set), Vue 3 reactivity, Jest mock implementations, ORM field access, and building DSLs. Performance gotcha: every trapped operation has overhead — don't Proxy hot paths in tight loops.
 
 ## Definition
 

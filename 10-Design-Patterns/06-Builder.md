@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Builder Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Builder constructs complex objects step-by-step, especially when the object has many optional fields or invariants. The senior test is fluent builders for test data, validation at build time, and immutable construction for value objects.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

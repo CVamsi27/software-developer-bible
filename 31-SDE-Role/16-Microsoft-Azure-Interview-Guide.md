@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # 🏢 Microsoft Azure Team — Interview Guide (2025–2026)
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Target Role:** SDE II (L62) / Senior SDE (L63) on Azure Teams
 >
@@ -637,6 +642,8 @@ Logistics:
 This guide covers the Microsoft and Azure interview process, including coding expectations, system design focus areas, behavioral questions, and tips specific to Microsoft's culture and hiring bar.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -644,7 +651,6 @@ This guide covers the Microsoft and Azure interview process, including coding ex
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -675,8 +681,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

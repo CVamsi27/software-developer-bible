@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Streaming in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Streaming SSR sends HTML to the browser in chunks as it's rendered. Each `<Suspense>` boundary becomes a streaming unit — the boundary's fallback is sent first, then its content streams in when ready. Used with React Server Components for fast TTFB on slow-data pages.
+
+## Why It Matters
+
+Senior engineers use streaming to: ship the page shell immediately while slow data loads, parallelize independent data fetches, and improve perceived performance. They structure pages with multiple Suspense boundaries to maximize parallelism, and pair streaming with loading.tsx for route-level fallbacks.
 
 ## Definition
 

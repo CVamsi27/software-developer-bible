@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Bulkhead Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Partition resources (thread pools, semaphores, connections) so a failure in one dependency cannot exhaust resources for others.
+
+**Why it matters:** Pillar of resilience alongside circuit breaker. Tests connection-pool sizing, tenant isolation, and integration with retries and timeouts in the same call chain.
 
 ## Definition
 

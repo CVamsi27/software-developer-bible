@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Resource Quotas
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+ResourceQuota caps aggregate CPU/memory/object counts per namespace. LimitRange sets default/min/max per container.
+
+**Why it matters:** Multi-tenancy and cost-control backbone. Tests quota scopes (BestEffort/NotBestEffort/Terminating), priority classes, and how quotas interact with HPA.
 
 ## Definition
 

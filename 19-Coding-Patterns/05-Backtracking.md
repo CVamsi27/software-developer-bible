@@ -1,10 +1,22 @@
-# Backtracking
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Backtracking
 
 ## Definition
 
 Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem. It explores all possible solutions and backtracks when it finds a dead end.
+
+## TL;DR
+
+Backtracking is **DFS with pruning**: build a solution incrementally, and when a partial assignment cannot lead to a valid solution, **undo the last choice** and try the next. The 3-step template: (1) **choose** an option, (2) **explore** with that option added, (3) **un-choose** (undo) before returning. Use it for **constraint satisfaction problems**: permutations, combinations, subsets, N-queens, Sudoku, and word search. The "magic" is recognizing that many branches can be **pruned early** by checking constraints before recursing.
+
+## Why it matters
+
+Backtracking problems look intimidating because they explode combinatorially (N! permutations, 2^N subsets), but the senior-level question is **pruning strategy** — what's the constraint that lets you cut a branch? Strong candidates discuss **time complexity in terms of pruning**: a tight constraint check turns N! into 10⁶ operations instead of 10⁹. Classic problems: permutations, combinations, subset sum, N-queens, Sudoku, word search, restore IP addresses, and the "expression add operators" problems. The trade-off vs. DP: DP stores results, backtracking explores all valid paths.
 
 ## When to Use
 

@@ -1,6 +1,10 @@
-# Turbopack
+---
+section: Build Tools
+category: DevOps
+tags: [concept, reference, tool]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Turbopack
 
 ## Definition
 Turbopack is an incremental bundler optimized for JavaScript and TypeScript, built in Rust by Vercel. It's designed as a successor to Webpack, focusing on performance through incremental computation and caching.
@@ -259,30 +263,29 @@ Turbopack represents the future of frontend bundling, offering unprecedented per
 TURBOPACK CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    Turbopack Architecture                        │
-  ├─────────────────────────────────────────────────────────────────┤
-  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐  │
-  │  │  File       │───▶│  Module     │───▶│  Chunk              │  │
-  │  │  System     │    │  Graph      │    │  Generation         │  │
-```
-```
-  Initial Build:
-  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-  │  All Files  │───▶│  Full Build │───▶│  Output     │
-  │  Processed  │    │  Cache      │    │  Bundles    │
-  └─────────────┘    └─────────────┘    └─────────────┘
-  After File Change:
-```
+POSITIONING:
+  • Successor to Webpack, written in Rust
+  • Built by Vercel, used in Next.js (--turbo flag)
+  • Alpha: dev server only, no production builds yet
+  • 10x faster Webpack, ~700x faster Vite (cold start large apps)
+
+INCREMENTAL COMPUTATION:
+  • Content-addressable storage (cache by file hash)
+  • Dependency tracking at module level (not file level)
+  • Recomputes only the changed subtree
+  • Persistent cache survives dev server restarts
+
+NEXT.JS USAGE:
+  • next dev --turbo       (enable Turbopack)
+  • next build --turbo     (production, beta)
+  • Supported: pages/app router, CSS modules, images
+  • Limitations: some webpack plugins, Storybook
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain incremental computation vs full rebuild
+  • Discuss Rust vs Go vs Node for bundlers
+  • Compare Turbopack vs Rspack vs Vite
+  • Know Turbopack is dev-first, Webpack still prod-stable
 ```
 ---
 

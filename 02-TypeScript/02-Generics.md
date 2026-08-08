@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Generics
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Generics parameterize types with type variables, enabling reusable, type-safe code. Constraints (`T extends X`) restrict the parameter, defaults (`T = DefaultType`) provide fallbacks. They underpin utility types, React component types, and library APIs.
+
+## Why It Matters
+
+Generics are how you write reusable, type-safe abstractions. Senior engineers use them for: collection types (`Array<T>`, `Map<K, V>`), React component props (`ComponentProps<typeof X>`), and API response wrappers (`ApiResponse<T>`). The interview signal is understanding inference vs. explicit type arguments.
 
 ## Definition
 

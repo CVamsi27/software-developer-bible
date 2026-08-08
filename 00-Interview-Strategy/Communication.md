@@ -1,6 +1,18 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept, guide]
+---
+
 # Communication Skills for Senior Engineer Interviews
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+At the senior level, technical skill is table stakes. Communication is the differentiator — your ability to clarify, structure, narrate, and defend your thinking determines whether you get the offer. Master the CLEAR model, the 3-part answer structure, and the pushback response framework.
+
+## Why It Matters
+
+Interviewers rank communication as the #1 differentiator between a "strong no-hire" and a "strong hire" at the senior level. Two candidates with similar technical depth produce dramatically different outcomes based on how they explain their thinking, handle pushback, and adapt to the audience.
 
 ## Table of Contents
 
@@ -888,6 +900,8 @@ SENIOR communicates:  "I analyzed the problem, considered alternatives A
 ## Summary
 
 Effective communication is the multiplier for technical skill. This guide covers the CLEAR communication framework, technical explanation techniques, whiteboard strategies, and common pitfalls. Master these skills to demonstrate senior-level thinking during interviews.
+
+---
 
 ## See Also
 - [Behavioral](../18-Behavioral/)

@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Event Sourcing
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Persist all state changes as an immutable sequence of events; rebuild current state by replaying them, often paired with CQRS.
+
+**Why it matters:** Tests event store design, snapshotting, projection rebuilds, and the trade-offs (audit trail + time travel vs schema evolution headaches).
 
 ## Definition
 
@@ -826,8 +836,6 @@ Event Sourcing provides complete audit trails and temporal queries by storing im
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

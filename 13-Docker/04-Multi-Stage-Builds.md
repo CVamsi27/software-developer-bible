@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Multi-Stage Builds
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Use multiple `FROM` stages in one Dockerfile so build-time dependencies never reach the final image — slimmer, safer, faster.
+
+**Why it matters:** Tests why this matters (supply-chain attack surface, image size, registry cost) and how to structure builder vs runtime stages for Node, Go, Java, and Python.
 
 ## Definition
 
@@ -390,8 +400,6 @@ docker images myapp
 docker scout quickview myapp:latest
 
 ```
-
----
 
 ---
 

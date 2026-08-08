@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes ConfigMaps & Secrets
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+ConfigMaps hold non-sensitive config; Secrets hold sensitive data. Mount as env vars or files; encrypt at rest with KMS.
+
+**Why it matters:** Tests the 12-factor split, secret rotation, External Secrets Operator, and the rookie mistake of committing Secrets to git.
 
 ## Definition
 
@@ -507,8 +517,6 @@ kubectl delete configmap myconfig
 kubectl delete secret mysecret
 
 ```
-
----
 
 ---
 

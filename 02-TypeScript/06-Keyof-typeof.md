@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Keyof & Typeof
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`keyof T` produces a union of all string-literal property names of `T`. `typeof x` produces the type of a runtime value. Together they enable indexed types, type-safe object access, and const-asserted enum-like patterns.
+
+## Why It Matters
+
+Senior engineers use `keyof` to write type-safe property accessors (`function get<T, K extends keyof T>(obj: T, key: K): T[K]`). `typeof` is how you turn a runtime constant into a type (e.g., `const STATUSES = ['open', 'closed'] as const; type Status = typeof STATUSES[number]`).
 
 ## Definition
 

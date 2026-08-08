@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Context API
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Context provides a way to pass data through the component tree without prop drilling. `createContext` makes a context, `<Provider>` sets the value, `useContext` reads it. Every Provider value change re-renders all consumers — so don't put fast-changing values in context.
+
+## Why It Matters
+
+Senior engineers know Context is for low-frequency, app-wide data (theme, auth, locale) — not for state that changes on every keystroke. For high-frequency updates, use external state (Zustand, Jotai, Redux). They also know to split contexts by update frequency to limit re-render scope.
 
 ## Definition
 

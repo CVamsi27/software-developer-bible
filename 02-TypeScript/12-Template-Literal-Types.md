@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Template Literal Types
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Template literal types (e.g., `` `hello ${World}` ``) operate on string-literal types at the type level. Combined with `infer`, they enable type-safe route builders, CSS-in-TS validators, and string-manipulation utilities — all checked at compile time.
+
+## Why It Matters
+
+Senior engineers use template literal types for: extracting path params from URL patterns (`/users/:id` → `{ id: string }`), validating event names, building typed SQL query builders, and enforcing naming conventions. The interview signal is being able to author a type that parses or transforms strings.
 
 ## Definition
 

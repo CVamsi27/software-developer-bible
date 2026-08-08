@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Async/Await
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Async/await is syntactic sugar over Promises + generators. An `async` function always returns a Promise; `await` suspends execution and yields to the microtask queue. Sequential `await` blocks concurrency; `Promise.all` parallelizes independent work.
+
+## Why It Matters
+
+The most common senior-level async bug is the `for...of await` loop that serializes work that should be parallel. The fix is `Promise.all(items.map(asyncFn))`. Interviewers also test error handling: `try/catch` only catches awaited rejections, not unhandled ones in detached Promises.
 
 ## Definition
 

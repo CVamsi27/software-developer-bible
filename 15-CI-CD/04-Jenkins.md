@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # Jenkins CI/CD
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Mature self-hosted automation server with declarative/scripted Groovy pipelines, distributed agents, and a vast plugin ecosystem.
+
+**Why it matters:** Still dominant in enterprise. Tests Jenkinsfile syntax, shared libraries, agent provisioning, and why most new teams choose GitHub Actions / GitLab CI instead.
 
 ## Definition
 
@@ -228,6 +238,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [ArgoCD](06-ArgoCD.md)
 - [Docker](../13-Docker/)

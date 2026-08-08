@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # React Interview Questions
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+60 React interview questions grouped by difficulty (Beginner, Intermediate, Senior, FAANG-style). Use as a self-test. Focus on Senior and FAANG-style questions — that's where the bar is for 5+ YoE candidates.
+
+## Why It Matters
+
+Senior React interviews test mental models: reconciliation, hooks dependencies, render vs. commit, why keys matter, when to use external state. Surface knowledge of JSX/syntax doesn't pass — you need to reason about React's behavior at runtime.
 
 ## 60 Most Asked React Interview Questions
 

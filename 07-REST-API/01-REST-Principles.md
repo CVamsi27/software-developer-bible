@@ -1,6 +1,14 @@
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
+
 # REST Principles
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** REST is a set of architectural constraints (client–server, stateless, cacheable, uniform interface, layered system, code-on-demand) that produces a scalable, evolvable HTTP API. The senior-level test is whether you can defend tradeoffs vs. RPC, GraphQL, and gRPC, not whether you can recite the constraints.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

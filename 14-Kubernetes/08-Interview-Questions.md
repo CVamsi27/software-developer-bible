@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [interview-questions]
+---
+
 # Kubernetes Interview Questions
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+30+ K8s interview questions covering architecture, scheduling, networking, storage, security, operators, and troubleshooting.
+
+**Why it matters:** Practice set with depth-graded Q&A — junior through staff-level. Mirrors the kinds of questions asked at Google, Shopify, and Capital One.
 
 ## 30 Most Asked Kubernetes Interview Questions with Detailed Answers
 
@@ -776,8 +786,6 @@ kubectl top pods
 kubectl top nodes
 
 ```
-
----
 
 ---
 

@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # React Fiber
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Fiber is React's internal data structure and reconciliation engine (since React 16). Each component instance is a fiber node, and the work loop processes them in priority order, allowing pause-and-resume rendering for concurrent features like `useTransition` and Suspense.
+
+## Why It Matters
+
+Fiber is what enables concurrent rendering, time-slicing, and Suspense for data fetching. Senior engineers understand why a state update can be 'interrupted' (low-priority re-render yields to user input) and how that affects `useEffect` timing and stale closures.
 
 ## Definition
 

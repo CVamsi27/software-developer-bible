@@ -1,8 +1,8 @@
 # JavaScript — Index
 
-> **26 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, and interview questions.
+> **27 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-26-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -34,6 +34,7 @@
 | 24 | [Currying & Composition](24-Currying-Composition.md) | Currying, partial application, pipe, compose, functional patterns |
 | 25 | [Recursion & Tail Call](25-Recursion-Tail-Call.md) | Recursive patterns, tail call optimization, trampolining, memoization |
 | 26 | [Interview Questions](26-Interview-Questions.md) | 50+ curated questions with answers |
+| 27 | [ES2024+ Features](27-ES2024-Features.md) | structuredClone, toSorted, Object.groupBy, Promise.withResolvers, ArrayBuffer.transfer |
 
 ---
 

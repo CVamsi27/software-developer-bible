@@ -1,19 +1,26 @@
+---
+section: Serverless & Edge
+category: DevOps
+tags: [concept, reference]
+---
+
 # Serverless Patterns
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+> Serverless patterns are reusable architectural designs for building serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
 
 ## Definition
-Serverless patterns are reusable architectural designs for building serverless applications that address common challenges like API design, event processing, data streaming, and workflow orchestration.
 
-## Why Do We Need It?
+Serverless patterns are proven architectural templates — combinations of triggers, functions, queues, and managed services — that solve recurring problems like fan-out, async processing, orchestration, and event-driven decoupling. They reduce bespoke integration work and let teams ship faster with battle-tested designs.
 
-- **Proven Solutions**: Battle-tested approaches to common problems
-- **Best Practices**: Established patterns for reliability and scalability
-- **Reduced Complexity**: Simplified architecture decisions
-- **Faster Development**: Ready-to-implement solutions
-- **Cost Optimization**: Patterns designed for serverless economics
+## Why It Matters (TL;DR)
 
-## How It Works
+- **Proven solutions** — battle-tested approaches to common problems
+- **Best practices baked in** — patterns account for failure modes, retries, and idempotency
+- **Reduced complexity** — fewer bespoke integration decisions
+- **Faster development** — ready-to-implement reference designs
+- **Cost optimization** — patterns respect serverless economics (per-request, GB-second)
+
+## Pattern Taxonomy
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -29,16 +36,16 @@ Serverless patterns are reusable architectural designs for building serverless a
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                 Event-Driven Patterns                        │   │
-│  │  • SQS + Lambda                                             │   │
-│  │  • SNS + Lambda                                             │   │
-│  │  • EventBridge + Lambda                                     │   │
-│  │  • DynamoDB Streams + Lambda                                 │   │
+│  │  • SQS + Lambda (point-to-point)                            │   │
+│  │  • SNS + Lambda (pub/sub)                                   │   │
+│  │  • EventBridge (event bus + rules)                          │   │
+│  │  • DynamoDB Streams + Lambda (CDC)                          │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │              Orchestration Patterns                         │   │
 │  │  • Step Functions                                           │   │
-│  │  • Saga Pattern                                             │   │
+│  │  • Saga Pattern (compensating transactions)                  │   │
 │  │  • Choreography vs Orchestration                            │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
@@ -46,68 +53,50 @@ Serverless patterns are reusable architectural designs for building serverless a
 │  │                  Data Patterns                              │   │
 │  │  • CQRS (Command Query Responsibility Segregation)          │   │
 │  │  • Event Sourcing                                           │   │
-│  │  • Data Lake                                                │   │
+│  │  • Data Lake (S3 + Athena)                                  │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Code Examples
 
-### 1. API Gateway + Lambda Pattern
+### 1. API Gateway + Lambda (SAM Template)
 
-```typescript
-// serverless.yml
-service: my-api
+```yaml
+# template.yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
 
-provider:
-  name: aws
-  runtime: nodejs18.x
-  region: us-east-1
-  environment:
-    TABLE_NAME: ${self:service}-table
+Resources:
+  UsersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "${AWS::StackName}-users"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
 
-functions:
-  createUser:
-    handler: src/handlers/users.create
-    events:
-
-      - httpApi:
-          path: /users
-          method: POST
-
-  getUser:
-    handler: src/handlers/users.get
-    events:
-
-      - httpApi:
-          path: /users/{id}
-          method: GET
-
-  updateUser:
-    handler: src/handlers/users.update
-    events:
-
-      - httpApi:
-          path: /users/{id}
-          method: PUT
-
-resources:
-  Resources:
-    UsersTable:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: ${self:service}-table
-        BillingMode: PAY_PER_REQUEST
-        AttributeDefinitions:
-
-          - AttributeName: id
-            AttributeType: S
-        KeySchema:
-
-          - AttributeName: id
-            KeyType: HASH
-
+  CreateUserFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/users.create
+      Runtime: nodejs20.x
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref UsersTable
+      Events:
+        CreateApi:
+          Type: HttpApi
+          Properties:
+            Path: /users
+            Method: POST
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UsersTable
 ```
 
 ```typescript
@@ -116,172 +105,89 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, PutCommand, GetCommand } from '@aws-sdk/lib-dynamodb';
 
-const client = new DynamoDBClient({});
-const docClient = DynamoDBDocumentClient.from(client);
+const docClient = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const TABLE_NAME = process.env.TABLE_NAME!;
 
-export const create = async (
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> => {
-  const body = JSON.parse(event.body || '{}');
-  const item = {
-    id: crypto.randomUUID(),
-    ...body,
-    createdAt: new Date().toISOString(),
-  };
-
-  await docClient.send(
-    new PutCommand({
-      TableName: TABLE_NAME,
-      Item: item,
-    })
-  );
-
-  return {
-    statusCode: 201,
-    body: JSON.stringify(item),
-  };
+export const create = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+  const body = JSON.parse(event.body ?? '{}');
+  const item = { id: crypto.randomUUID(), ...body, createdAt: new Date().toISOString() };
+  await docClient.send(new PutCommand({ TableName: TABLE_NAME, Item: item }));
+  return { statusCode: 201, body: JSON.stringify(item) };
 };
 
-export const get = async (
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> => {
-  const { id } = event.pathParameters || {};
-
+export const get = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const result = await docClient.send(
-    new GetCommand({
-      TableName: TABLE_NAME,
-      Key: { id },
-    })
+    new GetCommand({ TableName: TABLE_NAME, Key: { id: event.pathParameters?.id } })
   );
-
-  if (!result.Item) {
-    return {
-      statusCode: 404,
-      body: JSON.stringify({ error: 'Not found' }),
-    };
-  }
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify(result.Item),
-  };
+  return { statusCode: result.Item ? 200 : 404, body: JSON.stringify(result.Item ?? { error: 'Not found' }) };
 };
-
 ```
 
-### 2. SQS + Lambda Pattern (Async Processing)
+### 2. SQS + Lambda (Async Processing with Batch Failure Reporting)
 
 ```typescript
-// producer.ts - Send message to SQS
+// producer.ts
 import { SQSClient, SendMessageCommand } from '@aws-sdk/client-sqs';
 
-const sqsClient = new SQSClient({});
-const QUEUE_URL = process.env.QUEUE_URL!;
+const sqs = new SQSClient({});
 
-export async function processOrder(order: Order) {
-  // Validate order
-  await validateOrder(order);
-
-  // Send to SQS for async processing
-  await sqsClient.send(
-    new SendMessageCommand({
-      QueueUrl: QUEUE_URL,
-      MessageBody: JSON.stringify(order),
-      MessageAttributes: {
-        orderType: {
-          DataType: 'String',
-          StringValue: order.type,
-        },
-      },
-    })
-  );
-
-  return { orderId: order.id, status: 'queued' };
+export async function enqueueOrder(order: Order) {
+  await sqs.send(new SendMessageCommand({
+    QueueUrl: process.env.QUEUE_URL!,
+    MessageBody: JSON.stringify(order),
+    MessageDeduplicationId: order.id,
+    MessageGroupId: order.id,
+  }));
 }
 
-// consumer.ts - Process SQS messages
+// consumer.ts — partial batch failure handling
 import { SQSEvent, SQSBatchResponse } from 'aws-lambda';
 
 export const handler = async (event: SQSEvent): Promise<SQSBatchResponse> => {
   const batchItemFailures: { itemIdentifier: string }[] = [];
-
   for (const record of event.Records) {
     try {
-      const order = JSON.parse(record.body);
-      await processOrder(order);
-    } catch (error) {
-      console.error('Error processing message:', error);
+      await processOrder(JSON.parse(record.body));
+    } catch (err) {
+      console.error('Failed:', record.messageId, err);
       batchItemFailures.push({ itemIdentifier: record.messageId });
     }
   }
-
-  return { batchItemFailures };
+  return { batchItemFailures }; // failed messages re-appear, successful ones don't
 };
-
-async function processOrder(order: Order) {
-  // Process order: update inventory, send confirmation, etc.
-  console.log('Processing order:', order.id);
-}
-
 ```
 
-### 3. EventBridge Pattern (Event Bus)
+### 3. EventBridge (Cross-Service Event Bus)
 
 ```typescript
-// Event publisher
 import { EventBridgeClient, PutEventsCommand } from '@aws-sdk/client-eventbridge';
-
-const eventBridgeClient = new EventBridgeClient({});
-
-export async function publishOrderEvent(order: Order) {
-  await eventBridgeClient.send(
-    new PutEventsCommand({
-      Entries: [
-        {
-          Source: 'my-app.orders',
-          DetailType: 'OrderCreated',
-          Detail: JSON.stringify(order),
-          EventBusName: 'default',
-        },
-      ],
-    })
-  );
-}
-
-// Event consumer
 import { EventBridgeEvent } from 'aws-lambda';
 
-export const handler = async (
-  event: EventBridgeEvent<'OrderCreated', Order>
-) => {
-  const order = event.detail;
+const eb = new EventBridgeClient({});
 
-  // Handle different event types
-  switch (event['detail-type']) {
-    case 'OrderCreated':
-      await handleOrderCreated(order);
-      break;
-    case 'OrderUpdated':
-      await handleOrderUpdated(order);
-      break;
-    case 'OrderCancelled':
-      await handleOrderCancelled(order);
-      break;
-  }
-};
-
-async function handleOrderCreated(order: Order) {
-  // Send confirmation email, update inventory, etc.
-  console.log('Order created:', order.id);
+export async function publishOrderEvent(order: Order) {
+  await eb.send(new PutEventsCommand({
+    Entries: [{
+      Source: 'my-app.orders',
+      DetailType: 'OrderCreated',
+      Detail: JSON.stringify(order),
+      EventBusName: 'default',
+    }],
+  }));
 }
 
+export const handler = async (event: EventBridgeEvent<'OrderCreated', Order>) => {
+  switch (event['detail-type']) {
+    case 'OrderCreated':   return handleCreated(event.detail);
+    case 'OrderUpdated':   return handleUpdated(event.detail);
+    case 'OrderCancelled': return handleCancelled(event.detail);
+  }
+};
 ```
 
-### 4. Step Functions Pattern (Workflow Orchestration)
+### 4. Step Functions (Workflow Orchestration)
 
-```typescript
-// step-function-definition.asl.json
+```json
 {
   "Comment": "Order Processing Workflow",
   "StartAt": "ValidateOrder",
@@ -290,24 +196,13 @@ async function handleOrderCreated(order: Order) {
       "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:123456789012:function:validate-order",
       "Next": "ProcessPayment",
-      "Catch": [
-        {
-          "ErrorEquals": ["States.ALL"],
-          "Next": "OrderFailed"
-        }
-      ]
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "Next": "OrderFailed" }]
     },
     "ProcessPayment": {
       "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:123456789012:function:process-payment",
       "Next": "UpdateInventory",
-      "Catch": [
-        {
-          "ErrorEquals": ["PaymentFailed"],
-          "Next": "RefundPayment",
-          "ResultPath": "$.error"
-        }
-      ]
+      "Catch": [{ "ErrorEquals": ["PaymentFailed"], "Next": "RefundPayment" }]
     },
     "UpdateInventory": {
       "Type": "Task",
@@ -317,175 +212,92 @@ async function handleOrderCreated(order: Order) {
     "SendConfirmation": {
       "Type": "Task",
       "Resource": "arn:aws:lambda:us-east-1:123456789012:function:send-confirmation",
-      "Next": "OrderComplete"
+      "End": true
     },
-    "OrderComplete": {
-      "Type": "Succeed"
-    },
-    "RefundPayment": {
-      "Type": "Task",
-      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:refund-payment",
-      "Next": "OrderFailed"
-    },
-    "OrderFailed": {
-      "Type": "Fail",
-      "Cause": "Order processing failed"
-    }
+    "RefundPayment": { "Type": "Task", "Resource": "...", "Next": "OrderFailed" },
+    "OrderFailed":   { "Type": "Fail", "Cause": "Order processing failed" }
   }
 }
-
 ```
 
-```typescript
-// Lambda handlers for Step Functions
-export const validateOrder = async (event: any) => {
-  const { order } = event;
-
-  if (!order.items || order.items.length === 0) {
-    throw new Error('Order has no items');
-  }
-
-  return { order, validated: true };
-};
-
-export const processPayment = async (event: any) => {
-  const { order } = event;
-
-  // Process payment logic
-  const paymentResult = {
-    transactionId: 'txn_' + crypto.randomUUID(),
-    status: 'success',
-  };
-
-  return { order, payment: paymentResult };
-};
-
-export const updateInventory = async (event: any) => {
-  const { order } = event;
-
-  // Update inventory logic
-  for (const item of order.items) {
-    await decreaseInventory(item.productId, item.quantity);
-  }
-
-  return { order, inventoryUpdated: true };
-};
-
-```
-
-### 5. CQRS Pattern (Command Query Responsibility Segregation)
+### 5. Saga Pattern (Compensating Transactions)
 
 ```typescript
-// Command side - Write operations
-export async function createOrder(command: CreateOrderCommand) {
-  const order = {
-    id: crypto.randomUUID(),
-    ...command,
-    status: 'created',
-    createdAt: new Date().toISOString(),
-  };
-
-  // Save to write database
-  await saveOrder(order);
-
-  // Publish event
-  await publishEvent({
-    type: 'OrderCreated',
-    payload: order,
-  });
-
-  return order;
-}
-
-// Query side - Read operations
-export async function getOrder(orderId: string): Promise<OrderView> {
-  // Read from read-optimized database
-  const order = await getOrderFromReadStore(orderId);
-
-  if (!order) {
-    throw new Error('Order not found');
-  }
-
-  return order;
-}
-
-export async function listOrders(userId: string): Promise<OrderView[]> {
-  // Read from read-optimized database with pagination
-  return await getOrdersFromReadStore(userId);
-}
-
-```
-
-### 6. Saga Pattern (Distributed Transactions)
-
-```typescript
-// Saga orchestrator
+// Saga orchestrator — runs compensating actions in reverse on failure
 interface SagaStep {
   name: string;
-  execute: (context: SagaContext) => Promise<void>;
-  compensate: (context: SagaContext) => Promise<void>;
+  execute: (ctx: SagaContext) => Promise<void>;
+  compensate: (ctx: SagaContext) => Promise<void>;
 }
 
 class OrderSaga {
-  private steps: SagaStep[] = [
-    {
-      name: 'ReserveInventory',
-      execute: async (ctx) => {
-        ctx.inventoryReservation = await reserveInventory(ctx.order);
-      },
-      compensate: async (ctx) => {
-        await releaseInventory(ctx.inventoryReservation);
-      },
-    },
-    {
-      name: 'ProcessPayment',
-      execute: async (ctx) => {
-        ctx.payment = await processPayment(ctx.order);
-      },
-      compensate: async (ctx) => {
-        await refundPayment(ctx.payment);
-      },
-    },
-    {
-      name: 'ShipOrder',
-      execute: async (ctx) => {
-        ctx.shipment = await shipOrder(ctx.order);
-      },
-      compensate: async (ctx) => {
-        await cancelShipment(ctx.shipment);
-      },
-    },
-  ];
+  constructor(private steps: SagaStep[]) {}
 
   async execute(order: Order): Promise<SagaResult> {
-    const context: SagaContext = { order, completedSteps: [] };
-
+    const ctx: SagaContext = { order, completed: [] };
     try {
       for (const step of this.steps) {
-        await step.execute(context);
-        context.completedSteps.push(step.name);
+        await step.execute(ctx);
+        ctx.completed.push(step);
       }
-
-      return { success: true, context };
-    } catch (error) {
+      return { success: true };
+    } catch (err) {
       // Compensate in reverse order
-      for (const stepName of context.completedSteps.reverse()) {
-        const step = this.steps.find((s) => s.name === stepName);
-        if (step) {
-          await step.compensate(context);
-        }
+      for (const step of [...ctx.completed].reverse()) {
+        await step.compensate(ctx).catch(console.error);
       }
-
-      return { success: false, error: error as Error };
+      return { success: false, error: err as Error };
     }
   }
 }
 
+// Usage
+const saga = new OrderSaga([
+  { name: 'Reserve',  execute: reserveInventory, compensate: releaseInventory },
+  { name: 'Charge',   execute: chargePayment,    compensate: refundPayment },
+  { name: 'Ship',     execute: shipOrder,        compensate: cancelShipment },
+]);
+await saga.execute(order);
+```
+
+### 6. CQRS (Command Query Responsibility Segregation)
+
+```typescript
+// Write side — command
+export async function createOrder(cmd: CreateOrderCommand) {
+  const order = { id: crypto.randomUUID(), ...cmd, status: 'created', createdAt: new Date().toISOString() };
+  await saveToWriteStore(order);
+  await publishEvent({ type: 'OrderCreated', payload: order });
+  return order;
+}
+
+// Read side — query (denormalized view, eventually consistent)
+export async function listOrdersByUser(userId: string): Promise<OrderView[]> {
+  return getOrdersFromReadStore(userId); // read-optimized schema
+}
+// A separate consumer projects OrderCreated → read store
+```
+
+### 7. Fan-Out / Fan-In (S3 to Parallel Lambdas)
+
+```text
+Pattern: 1 trigger → N parallel workers → 1 aggregator
+┌──────────────────────────────────────────────────────────────────┐
+│  S3 Event → SNS Topic → Lambda (chunker) → SQS                  │
+│                                          ↓                       │
+│                              ┌───────────┼───────────┐           │
+│                              ▼           ▼           ▼           │
+│                          Lambda x100 (parallel workers)          │
+│                              │           │           │           │
+│                              └───────────┼───────────┘           │
+│                                          ▼                       │
+│                              Lambda (aggregator) → DynamoDB     │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ## Real-World Use Cases
 
-### E-Commerce Order Processing
+### 1. E-Commerce Order Pipeline
 
 ```text
 Order Flow:
@@ -498,10 +310,9 @@ Order Flow:
 │                              ▼                                   │
 │                     Lambda (Email) → Order Complete              │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
-### Real-time Data Processing
+### 2. Real-Time Data Pipeline
 
 ```text
 Data Pipeline:
@@ -511,95 +322,98 @@ Data Pipeline:
 │                                        ▼                        │
 │                               S3 (Data Lake)                    │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Common Mistakes
 
-1. **Not handling failures**: Missing retry logic and dead letter queues
-
-2. **Over-orchestration**: Using Step Functions for simple workflows
-
-3. **Ignoring idempotency**: Not handling duplicate events
-
-4. **Tight coupling**: Functions too dependent on each other
-
-5. **Missing monitoring**: No visibility into async processes
+| Mistake | Fix |
+|---------|-----|
+| No retry / DLQ for async invocations | Configure SQS DLQ; alert on DLQ depth |
+| Over-orchestrating simple workflows with Step Functions | Use direct Lambda → SQS → Lambda for 2-3 step flows |
+| Ignoring idempotency for at-least-once event sources | Use event ID or deterministic key for DB writes |
+| Tight coupling (Lambda A calls Lambda B synchronously) | Decouple with SQS/SNS; let failures retry independently |
+| Missing observability for async flows | Use X-Ray for distributed tracing across SQS → Lambda → DynamoDB |
 
 ## Best Practices
 
-1. **Design for failure**: Implement retries, dead letter queues, circuit breakers
-
-2. **Keep functions small**: Single responsibility principle
-
-3. **Use idempotency**: Handle duplicate events gracefully
-
-4. **Monitor everything**: Track all async operations
-
-5. **Document patterns**: Create reusable pattern libraries
+1. **Design for failure** — retries, DLQs, circuit breakers, idempotency
+2. **Single-responsibility functions** — one trigger, one purpose
+3. **Idempotent handlers** — duplicate events are a guarantee, not a possibility
+4. **Decouple with queues** — never chain synchronous Lambda → Lambda
+5. **Orchestrate with Step Functions** for multi-step workflows with branching / humans-in-the-loop
+6. **Monitor everything** — CloudWatch metrics, X-Ray traces, structured logs
 
 ## Performance Considerations
 
 ```text
 Pattern Selection Guide:
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │  Simple API:              API Gateway + Lambda                   │
-│  Async Processing:        SQS + Lambda                          │
-│  Event-Driven:            EventBridge + Lambda                  │
+│  Async Processing:        SQS + Lambda (with partial batch)     │
+│  Pub/Sub fan-out:         SNS → multiple Lambdas                │
+│  Event bus:               EventBridge + targets                 │
 │  Complex Workflow:        Step Functions                        │
 │  Real-time:               WebSocket API + DynamoDB              │
-│  Data Streaming:          Kinesis + Lambda                      │
-└─────────────────────────────────────────────────────────────────┘
-
+│  Data Streaming:          Kinesis → Lambda                      │
+│  Fan-out / fan-in:        SNS → SQS → workers → aggregator     │
+│  CDC:                     DynamoDB Streams / Kinesis → Lambda  │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ## Summary
 
-Serverless patterns provide proven solutions for common architectural challenges. Understand when to use each pattern, how to implement them correctly, and how to handle failures gracefully.
+- Serverless patterns are battle-tested templates for common architectures: API, event-driven, orchestration, and data
+- Always decouple async work with SQS or SNS — never chain synchronous Lambda → Lambda
+- Use Step Functions for multi-step workflows with retries, parallelism, and human-in-the-loop steps
+- Make every handler idempotent — at-least-once delivery is a guarantee from SQS, Streams, and EventBridge
+- Monitor distributed async flows with X-Ray; alert on DLQ depth
 
 ---
 
 ## Cheat Sheet
+
 ```text
 SERVERLESS PATTERNS CHEAT SHEET
-============================================================
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  Order Flow:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │  Order Placed → SQS → Lambda (Validate) → Lambda (Payment)    │
-  │                              │                                   │
-  │                              ▼                                   │
-  │                     Lambda (Inventory) → Lambda (Ship)          │
-```
-```
-  Data Pipeline:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │  Kinesis → Lambda (Transform) → DynamoDB → Lambda (Aggregate)  │
-  │                                        │                        │
-  │                                        ▼                        │
-  │                               S3 (Data Lake)                    │
+CHOOSE BY WORKFLOW SHAPE:
+  • 1 trigger → 1 sync response   API Gateway + Lambda
+  • 1 trigger → 1 async result   SQS + Lambda
+  • 1 trigger → N consumers       SNS fan-out
+  • Multi-domain events           EventBridge bus
+  • Multi-step workflow           Step Functions
+  • State + coordinating logic    Step Functions + Lambda
+  • Real-time bidirectional       WebSocket API + DynamoDB
+
+IDEMPOTENCY CHEAT:
+  • SQS / Streams: at-least-once   → use event ID as DB key
+  • SNS: at-least-once             → same
+  • EventBridge: at-least-once     → use idempotency key field
+  • API Gateway: at-most-once      → still design for client retries
+
+INTERVIEW ANSWER:
+  1. What problem the pattern solves
+  2. Failure modes (DLQ, retries, idempotency)
+  3. Cost / performance trade-off
+  4. Real production example
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
-- [Docker](../13-Docker/)
-- [Next.js](../04-NextJS/)
+
+- [AWS Lambda](05-AWS-Lambda.md)
+- [Edge Functions](02-Edge-Functions.md)
+- [Microservices](../12-Microservices/)
 - [Observability](../22-Observability/)
+- [Serverless Overview](01-Serverless-Overview.md)
+- [Vercel Deployments](06-Vercel-Deployments.md)
+
 
 ## References & Learn More
 
 - [AWS Serverless Patterns](https://serverlessland.com/patterns)
-- [Serverless Framework Patterns](https://www.serverless.com/framework/docs/)
 - [AWS Step Functions](https://docs.aws.amazon.com/step-functions/)
-- [Event-Driven Architecture](https://aws.amazon.com/event-driven-architecture/)
-- [Serverless Best Practices](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html)
+- [Event-Driven Architecture on AWS](https://aws.amazon.com/event-driven-architecture/)
+- [Serverless Best Practices (AWS)](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html)
+- [Serverless Framework Patterns](https://www.serverless.com/framework/docs/)

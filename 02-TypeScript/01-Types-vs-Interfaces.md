@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Types vs Interfaces
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`type` aliases represent any type (unions, intersections, tuples, mapped); `interface` declares object shapes with declaration merging and `extends` support. For object literals, either works; for unions/intersections/mapped, use `type`; for library extension and OOP, use `interface`.
+
+## Why It Matters
+
+Senior engineers must know when each shines: declaration merging is interface-only, so library authors use interfaces to allow extension. Unions and mapped types are type-only. The rule of thumb: `interface` for public object APIs (extension-friendly), `type` for everything else.
 
 ## Definition
 

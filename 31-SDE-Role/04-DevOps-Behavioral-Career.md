@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # DevOps, Behavioral & Career Preparation (Phases 20–28)
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 ---
 
@@ -1997,6 +2002,8 @@ Courses:
 This guide covers DevOps practices, behavioral interview preparation, and career growth strategies. Topics include CI/CD pipelines, containerization, monitoring, the STAR method, and navigating the senior engineering career path.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -2004,7 +2011,6 @@ This guide covers DevOps practices, behavioral interview preparation, and career
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -2038,8 +2044,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

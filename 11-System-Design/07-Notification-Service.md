@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Notification Service System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a multi-channel notification platform (push, email, SMS, in-app) with templating, user preferences, delivery guarantees, and analytics across providers.
+
+**Why it matters:** Tests fan-out architecture, retry/backoff with provider rate limits, third-party reliability, and template rendering pipelines. Common in any consumer-facing app and a frequent FAANG round.
 
 ## Requirements
 ### Functional Requirements
@@ -1003,8 +1013,6 @@ Key takeaways:
 5. Design for graceful degradation
 
 This design supports 100M+ users with 1B+ notifications per day while maintaining 99.99% availability.
-
----
 
 ---
 

@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [interview-questions]
+---
+
 # System Design Interview Questions
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Curated set of 30+ senior-level system-design questions (URL shortener through distributed counter) with high-level architectures, capacity estimates, and follow-up drills.
+
+**Why it matters:** Practice set to drill the format before live interviews. Each question mirrors a real FAANG/staff prompt and is structured to be answered in 30–45 minutes with discussion.
 
 ## Overview
 This file contains 30 most asked system design interview questions with detailed answers, categorized by difficulty level. Each answer includes architecture, key components, trade-offs, and scaling considerations.
@@ -1713,8 +1723,6 @@ Payer → Payer Bank → Payment Network → Payee Bank → Payee
 7. **Monitoring**: Mention observability
 
 This comprehensive guide covers the most common system design interview questions with detailed answers and scaling considerations.
-
----
 
 ---
 

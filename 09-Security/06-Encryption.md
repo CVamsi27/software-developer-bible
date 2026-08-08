@@ -1,6 +1,14 @@
-# Encryption
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# Encryption, Hashing & TLS
+
+> **TL;DR:** Encryption is the cryptographic core of web security — symmetric (AES-GCM) for bulk data, asymmetric (RSA/ECDSA) for key exchange and signatures, and hashing (Argon2/bcrypt) for passwords. Senior engineers know TLS 1.2 vs 1.3, perfect forward secrecy, and how to keep keys out of code.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

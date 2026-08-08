@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # Advanced Topics
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Appendix:** Additional topics covering Segment Trees, Fenwick Trees, AVL Trees, distributed systems, design patterns, and concurrency for staff+ engineering interviews.
 
@@ -1561,6 +1566,8 @@ class UserController {
 This guide covers advanced topics for staff+ engineering interviews, including distributed systems consistency models, advanced concurrency patterns, performance optimization techniques, and architectural decision-making frameworks.
 
 ## See Also
+
+---
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -1568,7 +1575,6 @@ This guide covers advanced topics for staff+ engineering interviews, including d
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
----
 
 ## Cheat Sheet
 ```text
@@ -1602,8 +1608,8 @@ INTERVIEW TIPS:
 ```
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

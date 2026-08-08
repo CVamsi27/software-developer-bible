@@ -1,6 +1,10 @@
-# Observability Interview Questions
+---
+section: Observability
+category: DevOps
+tags: [interview-questions, practice]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Observability Interview Questions
 
 ## Overview
 
@@ -1280,18 +1284,24 @@ Success in observability interviews requires understanding both the technical im
 OBSERVABILITY INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  "2024-01-15 10:30:45 ERROR User 12345 failed login from 192.168.1.1"
-  {"timestamp":"2024-01-15T10:30:45Z","level":"error","message":"Login failed","userId":"12345","ip":"192.168.1.1"}
-```
+QUESTION CATEGORIES:
+  - Beginner (Q1-Q10):     logs, metrics, traces definition
+  - Intermediate (Q11-Q20): Prometheus, SLOs, error tracking
+  - Senior (Q21-Q30):      SRE practices, alerting philosophy
+  - System Design:         observability stack for K8s cluster
+
+MUST-KNOW ANSWERS:
+  - Logs: discrete events, structured JSON preferred
+  - Metrics: numeric time series, four golden signals
+  - Traces: causal DAG of spans for one request
+  - SLI/SLO/SLA: indicator / objective / agreement
+  - Burn rate: error budget consumption velocity
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  - Explain three pillars with concrete examples
+  - Design alerting for a 99.9% SLO service
+  - Discuss cardinality explosion in Prometheus
+  - Show how to debug a slow request across services
 ```
 ---
 

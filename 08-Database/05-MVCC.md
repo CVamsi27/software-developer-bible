@@ -1,6 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # MVCC (Multi-Version Concurrency Control)
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** MVCC is the technique PostgreSQL, MySQL InnoDB, and Oracle use to give readers a consistent snapshot without blocking writers. The senior test is understanding tuple visibility, the xmin/xmax fields, the connection between MVCC and vacuum/autovacuum, and how it interacts with isolation levels.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

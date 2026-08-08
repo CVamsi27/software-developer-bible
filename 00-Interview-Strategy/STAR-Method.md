@@ -1,6 +1,18 @@
+---
+section: Interview Strategy
+category: Interview
+tags: [concept, guide]
+---
+
 # STAR Method: Complete Guide for Senior Engineers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+STAR (Situation, Task, Action, Result) is the structured framework for behavioral interview answers. Senior engineers should spend 50-60% of the answer on Action (use "I", not "we"), quantify every Result, and keep answers under 2 minutes. Build a story bank of 8-12 versatile stories.
+
+## Why It Matters
+
+At senior level, "tell me about a time when..." questions are scored on specificity, ownership, and impact. Vague answers kill offers even when the candidate has the experience. STAR makes your stories undeniable evidence rather than forgettable anecdotes.
 
 ## Table of Contents
 
@@ -940,6 +952,8 @@ RULES:
 ## Summary
 
 The STAR method transforms vague anecdotes into compelling evidence of your capabilities. This guide covers the four components (Situation, Task, Action, Result), story bank strategies, technical templates, and common mistakes to avoid.
+
+---
 
 ## See Also
 - [Behavioral](../18-Behavioral/)

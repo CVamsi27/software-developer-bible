@@ -1,6 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Connection Pooling
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Connection pooling amortizes the cost of TCP+TLS+auth handshakes across many requests — PgBouncer, application-level pools, and driver-level pools each have different isolation, transaction, and prepared-statement semantics. Senior engineers size pools to the database’s max connections × cores.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

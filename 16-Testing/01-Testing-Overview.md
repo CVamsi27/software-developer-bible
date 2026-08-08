@@ -1,6 +1,10 @@
-# Testing Overview
+---
+section: Testing
+category: Quality
+tags: [concept, overview]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Testing Overview
 
 ## Definition
 
@@ -11,6 +15,14 @@ Testing is the systematic process of evaluating a software application to identi
 **Test-Driven Development (TDD)** is a software development approach where tests are written before the actual code. The developer writes a failing test, writes minimal code to pass the test, and then refactors the code while keeping tests green.
 
 **Behavior-Driven Development (BDD)** extends TDD by writing test cases in natural language that non-technical stakeholders can understand. It focuses on the behavior of the application from the user's perspective using Given-When-Then syntax.
+
+## TL;DR
+
+The **testing pyramid** stratifies effort across unit, integration, and E2E layers — many fast unit tests, fewer moderate integration tests, and a small, high-confidence E2E top. Pair it with **TDD (Red-Green-Refactor)** to drive design and **coverage** to measure execution, not lines. Senior engineers choose test boundaries that match the **blast radius** of a change, not the framework's defaults.
+
+## Why it matters
+
+In senior interviews, "we have tests" is not the answer — interviewers want to know **which** tests, **why**, and **what you'd cut** under deadline pressure. The pyramid guides that conversation: unit tests catch logic bugs in milliseconds, integration tests catch contract drift, and E2E tests catch user-flow regressions but cost minutes to run. Mis-balanced suites (all-E2E or all-unit) signal weak engineering judgment. Knowing when to use TDD, BDD, or exploratory testing, and how to interpret coverage as a *risk signal* rather than a quality gate, separates senior from mid-level candidates.
 
 ## Why Do We Need It?
 

@@ -1,6 +1,10 @@
-# WebSockets & Real-Time Interview Questions
+---
+section: WebSockets
+category: Real-Time
+tags: [interview-questions, practice]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# WebSockets & Real-Time Interview Questions
 
 ## Definition
 
@@ -1680,26 +1684,26 @@ class RegionalServer {
 WEBSOCKETS & REAL-TIME INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Beginner (1-10):     Fundamentals, basic concepts
-  Intermediate (11-20): Architecture, implementation details
-  Senior (21-30):      System design, scaling, trade-offs
-```
-```
-  const response = await fetch('/api/data');
-  const data = await response.json();
-  const ws = new WebSocket('wss://example.com');
-  ws.onmessage = (event) => console.log('Received:', event.data);
-  ws.send('Hello Server'); // Client can send anytime
-```
+QUESTION CATEGORIES:
+  • Beginner (Q1-Q10):     fundamentals, handshake, lifecycle
+  • Intermediate (Q11-Q20): Socket.IO, SSE, reconnection
+  • Senior (Q21-Q35):      scaling, architecture, pub/sub
+  • FAANG (Q36-Q45):       system design (WhatsApp, Slack, Uber)
+  • Follow-up (Q46-Q50):   edge cases, trade-offs
+
+MUST-KNOW ANSWERS:
+  • Handshake: HTTP Upgrade with Sec-WebSocket-Key
+  • Lifecycle: CONNECTING -> OPEN -> CLOSING -> CLOSED
+  • Reconnection: exponential backoff with jitter
+  • Backpressure: monitor bufferedAmount, drop or slow
+  • Scaling: sticky sessions + Redis Pub/Sub adapter
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Draw the upgrade handshake in 60 seconds
+  • Compare WS vs SSE vs Long Polling with latency numbers
+  • Design a chat system for 1M concurrent users
+  • Discuss event ordering, exactly-once delivery, idempotency
+  • Explain how you'd handle a multi-region deployment
 ```
 ---
 

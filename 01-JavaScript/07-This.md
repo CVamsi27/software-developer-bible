@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # This
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`this` is determined by how a function is called, not where it's defined. The four binding rules (default, implicit, explicit, `new`) cover all cases, with arrow functions as a lexical exception that inherits `this` from the enclosing scope.
+
+## Why It Matters
+
+Lost `this` in callbacks, the difference between class methods and arrow class fields, and `bind` vs `call` vs `apply` are staple interview questions. Senior engineers also know the gotcha: extracted methods lose their receiver (`const fn = obj.method; fn();` → `this` is undefined in strict mode).
 
 ## Definition
 

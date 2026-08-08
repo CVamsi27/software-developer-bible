@@ -1,6 +1,14 @@
-# Chain of Responsibility Pattern
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# Chain of Responsibility
+
+> **TL;DR:** Chain of Responsibility passes a request along a chain of handlers until one handles it. The senior test is knowing this is the shape behind Express/Koa middleware, NestJS interceptor/filter chains, and BullMQ job processors.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

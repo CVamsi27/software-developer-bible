@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Debounce
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Debounce delays execution until N ms after the last call. Use for: search input, resize handlers, autosave. Leading/trailing variants control whether the first or last call fires.
+
+## Why It Matters
+
+Senior engineers know: debounce is per-call, not shared (each component instance has its own timer), and `useDebouncedValue` patterns in React are just `useEffect` + `setTimeout`. Common interview gotcha: using `setTimeout` directly in render — must be in `useEffect`.
 
 ## Definition
 

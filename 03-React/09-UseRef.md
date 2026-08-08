@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useRef
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`useRef` returns a `{ current }` object that persists across renders without triggering re-renders when mutated. Two uses: holding DOM references (`ref={myRef}`) and storing mutable values (timers, previous values, imperative handles).
+
+## Why It Matters
+
+Senior engineers know `useRef` is the escape hatch for imperative DOM access and mutable state that shouldn't trigger re-renders. They know `forwardRef` is no longer needed in React 19 (refs are regular props now), and they use `useImperativeHandle` to expose a limited imperative API from a component.
 
 ## Definition
 

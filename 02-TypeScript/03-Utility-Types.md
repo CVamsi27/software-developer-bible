@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Utility Types
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Built-in types like `Partial<T>`, `Required<T>`, `Pick<T, K>`, `Omit<T, K>`, `Record<K, V>`, `Exclude<T, U>`, `Extract<T, U>`, `NonNullable<T>`, `ReturnType<T>` transform existing types without redeclaring. They are the standard toolkit for type manipulation.
+
+## Why It Matters
+
+Senior engineers reach for `Pick`/`Omit` to derive DTOs from larger models, `Partial<>` for update endpoints (PATCH), `Readonly<>` for immutable views, and `ReturnType<typeof fn>` to extract function return types without re-declaring. They are the daily vocabulary of typed code.
 
 ## Definition
 

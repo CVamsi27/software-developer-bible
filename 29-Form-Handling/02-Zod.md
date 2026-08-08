@@ -1,17 +1,24 @@
+---
+section: Form Handling
+category: Frontend
+tags: [concept, reference]
+---
+
 # Zod
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+> Zod is a TypeScript-first schema declaration and validation library. It provides a concise, expressive syntax for defining data schemas, validating data at runtime, and inferring TypeScript types automatically.
 
 ## Definition
-Zod is a TypeScript-first schema declaration and validation library. It provides a concise, expressive syntax for defining data schemas and validating data at runtime, with automatic TypeScript type inference.
 
-## Why Do We Need It?
+Zod is a runtime validator and static type generator. You declare a schema (the shape of valid data) and Zod provides: (1) `.parse()` to validate untrusted input, (2) `z.infer<typeof Schema>` to get a TypeScript type that matches the schema. One source of truth for both runtime and compile-time safety.
 
-- **Type Safety**: TypeScript-first with automatic type inference
-- **Runtime Validation**: Validate data at runtime with clear error messages
-- **Expressive API**: Concise, readable schema definitions
-- **Integration**: Works with React Hook Form, tRPC, and more
-- **Performance**: Fast validation with minimal overhead
+## Why It Matters (TL;DR)
+
+- **Type safety** — `z.infer` produces a TypeScript type from the schema
+- **Runtime validation** — validate API responses, form input, env vars
+- **Composable** — schemas compose with `.merge`, `.extend`, `.pick`, `.omit`, `.partial`
+- **Great errors** — structured `ZodError` with paths and codes
+- **Transforms** — `.transform()` to normalize data on parse
 
 ## How It Works
 
@@ -22,30 +29,29 @@ Zod is a TypeScript-first schema declaration and validation library. It provides
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                    Schema Definition                         │   │
-│  │  • Define shape of data                                     │   │
-│  │  • Specify validation rules                                 │   │
-│  │  • Set default values                                       │   │
-│  │  • Create transformations                                   │   │
+│  │  • Define shape of valid data                                │   │
+│  │  • Specify validation rules (min, max, regex, refine)       │   │
+│  │  • Set default values (z.optional().default(...))           │   │
+│  │  • Transformations (z.string().transform(toLowerCase))      │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                              │                                      │
 │                              ▼                                      │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                    Validation Engine                         │   │
-│  │  • Parse input data                                         │   │
-│  │  • Apply validation rules                                   │   │
-│  │  • Generate detailed errors                                 │   │
+│  │  • Parse input data                                          │   │
+│  │  • Apply rules in order, short-circuit on first failure     │   │
+│  │  • Generate detailed, structured errors                     │   │
 │  │  • Return typed result                                      │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                              │                                      │
 │         ┌────────────────────┼────────────────────┐                │
 │         ▼                    ▼                    ▼                │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐            │
-│  │  Safe Parse │    │   Parse     │    │  Type       │            │
-│  │  (Result)   │    │  (Throw)    │    │  Inference  │            │
+│  │  .safeParse │    │   .parse    │    │  z.infer<…> │            │
+│  │  returns    │    │  throws on  │    │  TS type    │            │
+│  │  Result     │    │  error      │    │  from schema│            │
 │  └─────────────┘    └─────────────┘    └─────────────┘            │
-│                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Code Examples
@@ -55,144 +61,86 @@ Zod is a TypeScript-first schema declaration and validation library. It provides
 ```typescript
 import { z } from 'zod';
 
-// Primitive types
-const stringSchema = z.string();
-const numberSchema = z.number();
-const booleanSchema = z.boolean();
-const dateSchema = z.date();
+// Primitives
+const name = z.string();
+const age = z.number().int().positive();
+const isActive = z.boolean();
 
-// String validations
-const emailSchema = z.string().email();
-const urlSchema = z.string().url();
-const uuidSchema = z.string().uuid();
-const minLengthSchema = z.string().min(3);
-const maxLengthSchema = z.string().max(100);
-const patternSchema = z.string().regex(/^[A-Z]+$/);
-
-// Number validations
-const positiveSchema = z.number().positive();
-const rangeSchema = z.number().min(0).max(100);
-const intSchema = z.number().int();
+// String validators
+const email = z.string().email();
+const url = z.string().url();
+const uuid = z.string().uuid();
+const slug = z.string().regex(/^[a-z0-9-]+$/);
 
 // Object schema
 const userSchema = z.object({
   id: z.string().uuid(),
-  name: z.string().min(1),
+  name: z.string().min(1).max(100),
   email: z.string().email(),
-  age: z.number().int().positive().optional(),
-  createdAt: z.date().default(() => new Date()),
+  age: z.number().int().min(0).max(150).optional(),
+  role: z.enum(['admin', 'user', 'guest']).default('user'),
+  createdAt: z.date(),
 });
 
-// Type inference
+// Type inference — single source of truth
 type User = z.infer<typeof userSchema>;
-// Result: { id: string; name: string; email: string; age?: number; createdAt: Date }
-
+// → { id: string; name: string; email: string; age?: number; role: 'admin' | 'user' | 'guest'; createdAt: Date }
 ```
 
-### 2. Complex Schemas
+### 2. Complex Compositions
 
 ```typescript
-import { z } from 'zod';
-
 // Nested objects
 const addressSchema = z.object({
   street: z.string(),
   city: z.string(),
   state: z.string().length(2),
-  zipCode: z.string().regex(/^\d{5}(-\d{4})?$/),
+  zip: z.string().regex(/^\d{5}(-\d{4})?$/),
   country: z.string().default('US'),
 });
 
-const userWithAddressSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  address: addressSchema,
-});
+// Arrays with constraints
+const tagsSchema = z.array(z.string().min(1)).min(1).max(10);
 
-// Arrays
-const tagsSchema = z.array(z.string());
-const numbersSchema = z.array(z.number()).min(1).max(10);
+// Tuples
+const coordSchema = z.tuple([z.number(), z.number()]);
 
-// Objects with arrays
-const postSchema = z.object({
-  id: z.string().uuid(),
-  title: z.string().min(1).max(200),
-  content: z.string(),
-  tags: z.array(z.string()),
-  author: z.object({
-    id: z.string(),
-    name: z.string(),
-  }),
-  publishedAt: z.date().nullable(),
-});
-
-// Record (object with dynamic keys)
-const metadataSchema = z.record(z.string(), z.string());
-
-// Tuple
-const coordinateSchema = z.tuple([z.number(), z.number()]);
-
-// Union
-const statusSchema = z.union([
-  z.literal('active'),
-  z.literal('inactive'),
-  z.literal('pending'),
-]);
-
-// Enum
-const roleSchema = z.enum(['admin', 'user', 'guest']);
-
-// Discriminated union
+// Discriminated unions (great for API responses)
 const eventSchema = z.discriminatedUnion('type', [
-  z.object({
-    type: z.literal('click'),
-    x: z.number(),
-    y: z.number(),
-  }),
-  z.object({
-    type: z.literal('keypress'),
-    key: z.string(),
-    code: z.number(),
-  }),
+  z.object({ type: z.literal('click'), x: z.number(), y: z.number() }),
+  z.object({ type: z.literal('keypress'), key: z.string() }),
+  z.object({ type: z.literal('scroll'), offset: z.number() }),
 ]);
 
+// Records
+const metadataSchema = z.record(z.string(), z.union([z.string(), z.number()]));
 ```
 
-### 3. Transformations
+### 3. Transforms and Preprocess
 
 ```typescript
-import { z } from 'zod';
-
-// Transform data
-const userInputSchema = z.object({
-  email: z.string().transform((val) => val.toLowerCase().trim()),
-  age: z.string().transform((val) => parseInt(val, 10)),
-  birthday: z.string().transform((val) => new Date(val)),
+// Transform: normalize on parse
+const formSchema = z.object({
+  email: z.string().transform((v) => v.toLowerCase().trim()),
+  age: z.string().transform((v) => parseInt(v, 10)),
+  birthday: z.string().transform((v) => new Date(v)),
 });
 
-// Preprocess (for raw input)
-const numberInputSchema = z.preprocess(
-  (val) => (typeof val === 'string' ? parseInt(val, 10) : val),
+// Preprocess: accept multiple input shapes
+const numberFromAnything = z.preprocess(
+  (v) => (typeof v === 'string' ? parseFloat(v) : v),
   z.number()
 );
 
-// Refine (add custom validation)
-const passwordSchema = z
-  .string()
-  .min(8)
-  .refine(
-    (val) => /[A-Z]/.test(val),
-    'Password must contain at least one uppercase letter'
-  )
-  .refine(
-    (val) => /[0-9]/.test(val),
-    'Password must contain at least one number'
-  );
+// Coercion (built-in shortcut)
+const numberFromForm = z.coerce.number();   // string → number
+```
 
-// SuperRefine (complex validation)
-const registrationSchema = z
+### 4. Cross-Field Validation with `superRefine`
+
+```typescript
+const passwordSchema = z
   .object({
-    email: z.string().email(),
     password: z.string().min(8),
     confirmPassword: z.string(),
   })
@@ -206,9 +154,16 @@ const registrationSchema = z
     }
   });
 
+// Alternative: .refine (single-condition, single-path)
+const sameAs = z
+  .object({ password: z.string(), confirm: z.string() })
+  .refine((d) => d.password === d.confirm, {
+    message: 'Passwords do not match',
+    path: ['confirm'],
+  });
 ```
 
-### 4. React Hook Form Integration
+### 5. React Hook Form Integration
 
 ```typescript
 import { useForm } from 'react-hook-form';
@@ -216,240 +171,146 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
 const loginSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
+  email: z.string().email('Invalid email'),
+  password: z.string().min(8, 'Min 8 characters'),
 });
 
 type LoginFormData = z.infer<typeof loginSchema>;
 
 function LoginForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormData>({
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
-    mode: 'onChange',
+    mode: 'onBlur',
   });
 
-  const onSubmit = async (data: LoginFormData) => {
-    // Data is typed as LoginFormData
-    console.log(data.email, data.password);
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          {...register('email')}
-        />
-        {errors.email && <span>{errors.email.message}</span>}
-      </div>
-
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          {...register('password')}
-        />
-        {errors.password && <span>{errors.password.message}</span>}
-      </div>
-
+    <form onSubmit={handleSubmit(console.log)}>
+      <input type="email" {...register('email')} />
+      {errors.email?.message && <span>{errors.email.message}</span>}
+      <input type="password" {...register('password')} />
+      {errors.password?.message && <span>{errors.password.message}</span>}
       <button type="submit">Login</button>
     </form>
   );
 }
-
 ```
 
-### 5. Error Handling
+### 6. API Boundary Validation (tRPC / Server Actions / REST)
 
 ```typescript
-import { z } from 'zod';
+// Server-side: validate untrusted input
+export async function POST(request: Request) {
+  const body = await request.json();
+  const parsed = CreateUserSchema.safeParse(body);
 
-const userSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email('Invalid email'),
-  age: z.number().min(18, 'Must be at least 18'),
-});
-
-// Safe parse (returns result object)
-const result = userSchema.safeParse({
-  name: '',
-  email: 'invalid',
-  age: 15,
-});
-
-if (result.success) {
-  console.log('Valid:', result.data);
-} else {
-  console.log('Errors:', result.error.errors);
-  // Output:
-  // [
-  //   { code: 'too_small', path: ['name'], message: 'Name is required' },
-  //   { code: 'invalid_string', path: ['email'], message: 'Invalid email' },
-  //   { code: 'too_small', path: ['age'], message: 'Must be at least 18' }
-  // ]
-}
-
-// Parse (throws on error)
-try {
-  const user = userSchema.parse(invalidData);
-} catch (error) {
-  if (error instanceof z.ZodError) {
-    console.log(error.errors);
-  }
-}
-
-// Format errors for display
-function formatErrors(error: z.ZodError): Record<string, string> {
-  const formatted: Record<string, string> = {};
-
-  for (const issue of error.errors) {
-    const path = issue.path.join('.');
-    formatted[path] = issue.message;
+  if (!parsed.success) {
+    return Response.json({ errors: parsed.error.flatten() }, { status: 400 });
   }
 
-  return formatted;
+  // parsed.data is fully typed
+  const user = await db.user.create({ data: parsed.data });
+  return Response.json(user);
 }
 
-```
-
-### 6. API Validation
-
-```typescript
-import { z } from 'zod';
-
-// API request schemas
-const CreateUserRequestSchema = z.object({
-  name: z.string().min(1).max(100),
-  email: z.string().email(),
-  role: z.enum(['admin', 'user']),
-});
-
-const UpdateUserRequestSchema = CreateUserRequestSchema.partial();
-
-// API response schemas
-const UserResponseSchema = z.object({
+// Client-side: validate API response
+const userResponseSchema = z.object({
   id: z.string().uuid(),
   name: z.string(),
   email: z.string().email(),
-  role: z.enum(['admin', 'user']),
   createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
 });
 
-const ErrorResponseSchema = z.object({
-  error: z.object({
-    code: z.string(),
-    message: z.string(),
-    details: z.record(z.string()).optional(),
-  }),
+export async function fetchUser(id: string) {
+  const res = await fetch(`/api/users/${id}`);
+  const data = userResponseSchema.parse(await res.json());
+  return data;  // typed as User
+}
+```
+
+### 7. Environment Variable Validation
+
+```typescript
+// env.ts — run on app start, fail fast
+import { z } from 'zod';
+
+const envSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']),
+  DATABASE_URL: z.string().url(),
+  API_KEY: z.string().min(1),
+  PORT: z.coerce.number().int().positive().default(3000),
 });
 
-// Validate API responses
-async function fetchUser(id: string) {
-  const response = await fetch(`/api/users/${id}`);
-  const data = await response.json();
-
-  // Validate response
-  const result = UserResponseSchema.safeParse(data);
-
-  if (!result.success) {
-    throw new Error('Invalid API response');
-  }
-
-  return result.data;
-}
-
-// Validate API requests
-function validateCreateUserRequest(body: unknown) {
-  const result = CreateUserRequestSchema.safeParse(body);
-
-  if (!result.success) {
-    return {
-      success: false,
-      error: result.error.format(),
-    };
-  }
-
-  return {
-    success: true,
-    data: result.data,
-  };
-}
-
+export const env = envSchema.parse(process.env);
 ```
 
 ## Real-World Use Cases
 
-### Form Validation
+### Form Validation Pipeline
 
 ```text
-Form Schema:
-┌─────────────────────────────────────────────────────────────────┐
-│  Registration Form                                              │
-│  ├── email: z.string().email()                                 │
-│  ├── password: z.string().min(8).max(100)                      │
-│  ├── confirmPassword: z.string()                               │
-│  ├── name: z.string().min(1).max(50)                           │
-│  ├── age: z.number().int().min(13).max(150)                    │
-│  └── terms: z.literal(true)                                    │
-│                                                                 │
-│  Cross-field validation:                                        │
-│  └── password === confirmPassword                              │
-└─────────────────────────────────────────────────────────────────┘
+Client Form:
+  • Zod schema defines the valid shape
+  • React Hook Form uses zodResolver to validate
+  • TypeScript infers form data type from `z.infer<typeof schema>`
+  • On submit, the data is guaranteed to match the schema
 
+API Request:
+  • Client sends the validated data
+  • Server re-validates with the same schema (shared types package)
+  • 400 on validation failure with structured errors
+  • 200 with the typed response
+
+API Response:
+  • Server returns data matching the response schema
+  • Client validates on receive (catches contract drift)
+  • Throws or returns typed data
 ```
 
-### API Contract Validation
+### End-to-End Type Safety (tRPC + Zod)
 
-```text
-API Schema:
-┌─────────────────────────────────────────────────────────────────┐
-│  POST /api/users                                                │
-│  Request: CreateUserRequestSchema                               │
-│  Response: UserResponseSchema | ErrorResponseSchema            │
-│                                                                 │
-│  GET /api/users/:id                                            │
-│  Response: UserResponseSchema | ErrorResponseSchema            │
-│                                                                 │
-│  Benefits:                                                      │
-│  • Type-safe API calls                                         │
-│  • Runtime validation                                          │
-│  • Clear error messages                                        │
-│  • Auto-generated documentation                                │
-└─────────────────────────────────────────────────────────────────┘
+```typescript
+// Server router — input schema, output schema
+import { z } from 'zod';
+import { publicProcedure, router } from './trpc';
 
+export const userRouter = router({
+  getById: publicProcedure
+    .input(z.object({ id: z.string().uuid() }))
+    .output(z.object({
+      id: z.string().uuid(),
+      name: z.string(),
+      email: z.string().email(),
+    }))
+    .query(({ input, ctx }) => {
+      return ctx.db.user.findUniqueOrThrow({ where: { id: input.id } });
+    }),
+});
+
+// Client — fully typed, no manual DTOs
+const user = await trpc.user.getById.query({ id: '...' });
+//    ^? { id: string; name: string; email: string }
 ```
 
 ## Common Mistakes
 
-1. **Not inferring types**: Manually defining types instead of using `z.infer`
-
-2. **Over-validating**: Adding unnecessary validations
-
-3. **Missing defaults**: Not setting default values
-
-4. **Ignoring transforms**: Not using transforms for data normalization
-
-5. **Poor error messages**: Not customizing error messages
+| Mistake | Fix |
+|---------|-----|
+| Manually defining types instead of `z.infer` | Always use `z.infer<typeof Schema>` — one source of truth |
+| Over-validating | Don't validate internal data; only validate at boundaries (forms, API, env) |
+| Not using `.safeParse` for expected failures | Use `.safeParse` (returns result) for user input; `.parse` (throws) for trusted internal data |
+| Missing `z.coerce` for query params / form data | `?page=1` arrives as a string — use `z.coerce.number()` |
+| No defaults | Use `.default()` for optional fields with a sensible default; safer than `undefined` |
+| Using `z.any()` | Avoid — defeats the purpose. Use `z.unknown()` and refine if needed |
 
 ## Best Practices
 
-1. **Use `z.infer`**: Always infer TypeScript types from schemas
-
-2. **Compose schemas**: Build complex schemas from simple ones
-
-3. **Custom error messages**: Provide clear, user-friendly error messages
-
-4. **Use transforms**: Normalize data at validation time
-
-5. **Validate at boundaries**: Validate API requests/responses
+1. **Use `z.infer` everywhere** — no separate TS interfaces for validated data
+2. **Validate at boundaries** — forms, API requests, API responses, env vars
+3. **Compose schemas** — `UserSchema.pick({ email: true })` for partial validation
+4. **Custom error messages** — `.email('Please enter a valid email')`
+5. **Use `safeParse` for user input** — handle the result, don't catch throws
+6. **Centralize shared schemas** — `packages/contracts` for cross-bundle schemas
+7. **Use `.brand()` for nominal types** — `z.string().uuid().brand<'UserId'>()` for type-safe IDs
 
 ## Performance Considerations
 
@@ -457,70 +318,89 @@ API Schema:
 Zod Performance:
 ┌─────────────────────────────────────────────────────────────────┐
 │  Fast Validation:                                                │
-│  • Optimized validation engine                                  │
-│  • Minimal allocations                                          │
-│  • Short-circuit evaluation                                     │
+│  • Optimized engine — short-circuit on first error              │
+│  • No reflection or codegen                                       │
+│  • Minimal allocations                                           │
 │                                                                 │
 │  Bundle Size:                                                    │
-│  • ~14KB gzipped                                                │
-│  • Tree-shakeable                                               │
-│  • No dependencies                                              │
+│  • ~14 KB gzipped (full)                                         │
+│  • ~3 KB for z.coerce / z.lazy modules                          │
+│  • Tree-shakeable — only import what you use                     │
 │                                                                 │
-│  Caching:                                                        │
-│  • Schemas are reusable                                         │
-│  • Compiled validators                                          │
-│  • Memoized transforms                                          │
+│  Validation Cost:                                                │
+│  • Object with 10 fields: ~50µs typical                         │
+│  • Array of 100 items: ~500µs typical                           │
+│  • Negligible for typical API/form payloads                      │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Summary
 
-Zod provides a powerful, type-safe approach to schema validation in TypeScript. Master its API, integration patterns, and best practices for building robust validation systems.
+- Zod is the de-facto TypeScript validation library — one schema = runtime validator + TypeScript type
+- Compose with `.merge`, `.extend`, `.pick`, `.partial`, `.refine`, `.superRefine`
+- Use `z.infer<typeof Schema>` to derive TS types — no manual interfaces
+- Validate at boundaries: forms, API requests, API responses, environment variables
+- `safeParse` for user input (returns result); `parse` for trusted internal data (throws)
 
 ---
 
 ## Cheat Sheet
+
 ```text
 ZOD CHEAT SHEET
-============================================================
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  Form Schema:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │  Registration Form                                              │
-  │  ├── email: z.string().email()                                 │
-  │  ├── password: z.string().min(8).max(100)                      │
-  │  ├── confirmPassword: z.string()                               │
-```
-```
-  API Schema:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │  POST /api/users                                                │
-  │  Request: CreateUserRequestSchema                               │
-  │  Response: UserResponseSchema | ErrorResponseSchema            │
-  │                                                                 │
+CORE API:
+  z.string() / z.number() / z.boolean() / z.date()
+  z.string().min(n).max(n).email().url().uuid().regex(rx)
+  z.number().int().positive().min(0).max(100)
+  z.array(item).min(1).max(10)
+  z.object({ field: z.string() })
+  z.enum(['a', 'b', 'c'])
+  z.union([a, b])
+  z.discriminatedUnion('type', [a, b])    // tagged union
+  z.literal('exact')                       // exact value
+  z.tuple([a, b])
+  z.record(key, value)                     // Record<K, V>
+  z.coerce.number()                        // string → number
+
+TRANSFORM:
+  z.string().transform(v => v.toLowerCase())
+  z.preprocess(v => parseInt(v), z.number())
+
+INFERENCE:
+  type T = z.infer<typeof Schema>          // type from schema
+  type Input = z.input<typeof Schema>      // pre-transform input
+  type Output = z.output<typeof Schema>    // post-transform output
+
+VALIDATION:
+  Schema.parse(data)        // throws on error
+  Schema.safeParse(data)    // returns { success, data | error }
+
+INTERVIEW ANSWER:
+  1. Single source of truth (schema = type + validator)
+  2. Validate at boundaries (form, API, env)
+  3. Composable with refine / superRefine
+  4. Pairs with RHF via zodResolver
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
+
 - [Design Patterns](../10-Design-Patterns/)
+- [Formik](03-Formik.md)
 - [React](../03-React/)
+- [React Hook Form](01-React-Hook-Form.md)
+- [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md)
+- [TanStack Form](05-TanStack-Form.md)
 - [TypeScript](../02-TypeScript/)
+
 
 ## References & Learn More
 
+- [React Hook Form Resolvers](https://github.com/react-hook-form/resolvers)
+- [tRPC + Zod](https://trpc.io/docs/)
 - [Zod Documentation](https://zod.dev/)
 - [Zod GitHub](https://github.com/colinhacks/zod)
-- [React Hook Form Integration](https://react-hook-form.com/docs/useform/resolver)
-- [tRPC with Zod](https://trpc.io/docs/)
-- [Zod Examples](https://github.com/colinhacks/zod#examples)
+- [Zod Mini (smaller bundle)](https://zod.dev/packages/mini)

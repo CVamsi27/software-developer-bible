@@ -1,6 +1,18 @@
+---
+section: Behavioral
+category: Interview
+tags: [interview-questions, practice]
+---
+
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+This file covers the **25 most-asked HR/behavioral questions** for senior full-stack roles, with full STAR-formatted sample answers. Categories: introductory (Tell me about yourself, walk me through your resume), motivation (why this company, why this role), growth (biggest weakness, where do you see yourself in 5 years), and culture (work style, conflict, failure). Each answer emphasizes **specifics over generalities** and **quantified outcomes** — the senior signal.
+
+## Why it matters
+
+HR screens at FAANG and most mid-large companies filter on **these exact questions** before you reach the technical loop. The "Tell me about yourself" opener alone sets the tone for the entire 60-minute loop. Strong candidates craft a **90-second pitch** (Present → Past → Future) and rehearse 8-12 stories that flex across HR, leadership, and technical questions. Generic answers ("I'm a hard worker who loves teamwork") are immediate reject signals at senior level.
 
 ## Table of Contents
 

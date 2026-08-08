@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Adapter Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Adapter translates one interface to another — it is how you integrate with a third-party API whose contract you cannot change. The senior test is knowing when to wrap, when to replace, and how to keep the adapter thin and the test surface small.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # App Router in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+The App Router (Next.js 13+) uses file-based routing with `app/` directory. Each route is a folder with a `page.tsx` (UI), `layout.tsx` (shared UI), `loading.tsx` (Suspense fallback), `error.tsx` (error boundary), and `route.ts` (API endpoint). All components are Server Components by default.
+
+## Why It Matters
+
+Senior engineers structure apps around the App Router's nested layouts, parallel routes, and intercepting routes. They know `page.tsx` defaults to server, `'use client'` is a leaf-level escape hatch, and `layout.tsx` re-renders on navigation but preserves state across re-renders of children.
 
 ## Definition
 

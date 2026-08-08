@@ -1,6 +1,10 @@
-# Build Optimization
+---
+section: Build Tools
+category: DevOps
+tags: [concept, guide, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Build Optimization
 
 ## Definition
 Build optimization refers to the process of improving the performance, size, and efficiency of web application bundles through various techniques like code splitting, tree shaking, compression, and minification.
@@ -405,30 +409,42 @@ Build optimization is crucial for delivering fast, efficient web applications. K
 BUILD OPTIMIZATION CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-  │  Source     │───▶│  Analysis   │───▶│  Transform  │───▶│  Optimize   │
-  │  Code       │    │  Bundle     │    │  Modules    │    │  Output     │
-  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
-         │                  │                  │                  │
-         ▼                  ▼                  ▼                  ▼
-```
-```
-  export function add(a, b) { return a + b; }
-  export function subtract(a, b) { return a - b; }
-  export function multiply(a, b) { return a * b; }
-  import { add } from './utils.js';
-  {
-    "sideEffects": false
-```
+TREE SHAKING:
+  • ESM-only: requires static import/export
+  • package.json: "sideEffects": false (or array of files with side effects)
+  • Re-exports: export { x } from './x' (preserved, not shaken)
+  • Minifiers: Terser, esbuild, swc remove dead code
+
+CODE SPLITTING:
+  • Dynamic import: const m = await import('./heavy')
+  • React.lazy: lazy(() => import('./Page'))
+  • Route-based: split by page
+  • Vendor split: splitChunks.cacheGroups in webpack
+  • Initial bundle target: < 200KB gzipped
+
+MINIFICATION:
+  • Whitespace, comments, identifier shortening
+  • Dead code elimination (DCE)
+  • Constant folding and inlining
+  • Mangling only in production (not dev for stack traces)
+
+CACHING:
+  • Browser: Cache-Control, ETags, Service Worker
+  • Build: persistent cache (webpack filesystem, Vite)
+  • CDN: hashed filenames for immutable caching
+  • Module-level: contenthash for long-term caching
+
+BUNDLE BUDGETS:
+  • size-limit in CI: { path, limit }
+  • webpack-bundle-analyzer / vite-bundle-visualizer
+  • Bundlephobia to check npm cost before adding
+  • PR comments with bundle size diff
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain tree shaking failure modes (CJS, side effects)
+  • Discuss route-based vs component-based splitting
+  • Show how to set up size-limit in CI
+  • Know the cost of polyfills (core-js)
 ```
 ---
 

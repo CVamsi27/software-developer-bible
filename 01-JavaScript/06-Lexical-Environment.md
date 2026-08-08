@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Lexical Environment
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+A lexical environment is the internal spec primitive holding an Environment Record (the actual bindings) and an `[[OuterEnv]]` reference to the parent environment. The scope chain is the linked list of these outer references.
+
+## Why It Matters
+
+Understanding lexical environments is the difference between knowing closures work and knowing why they work. The spec-level view explains how `with`, `try/catch`, and `eval` create new environments, and how TDZ is enforced at lookup time.
 
 ## Definition
 

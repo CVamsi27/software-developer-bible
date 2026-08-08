@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Jobs & CronJobs
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Jobs run a workload to completion. CronJobs schedule Jobs on a cron expression. Both support parallelism, backoff, and history limits.
+
+**Why it matters:** Tests completion semantics, retries with exponential backoff, concurrency policies, and the common mistake of using a Deployment for a one-shot task.
 
 ## Definition
 
@@ -80,6 +90,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [Deployments](02-Deployments.md)

@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # React Performance Optimization
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+React performance optimization involves: profiling with React DevTools (find what actually re-renders), memoization (`React.memo`, `useMemo`, `useCallback`), virtualization for long lists (`react-window`, `react-virtuoso`), code splitting (`React.lazy`, `Suspense`), and avoiding reconciliation thrash with stable keys.
+
+## Why It Matters
+
+Senior engineers measure before optimizing: `Profiler` API in production, `why-did-you-render` in dev. They know that `React.memo` is wasted work if the component re-renders for other reasons, and that `useMemo` doesn't memoize across component instances. The biggest perf wins usually come from reducing work, not memoizing existing work.
 
 ## Definition
 

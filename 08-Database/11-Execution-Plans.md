@@ -1,6 +1,14 @@
-# Execution Plans
+---
+section: Database
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Execution Plans & Query Optimization
+
+> **TL;DR:** Execution plans are the planner’s chosen strategy for executing a query — `EXPLAIN ANALYZE` shows both estimated and actual costs, row counts, and node types. The senior test is reading plans, spotting the seq scan, fixing it with an index, and verifying the planner actually uses your index.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

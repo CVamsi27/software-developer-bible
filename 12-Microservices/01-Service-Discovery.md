@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Service Discovery
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A registry + health-check mechanism that lets services find each other without hardcoded hostnames, supporting dynamic scale-up/down and rolling deploys.
+
+**Why it matters:** Underpins every microservice. Tests DNS vs client-side vs server-side, registry HA, and how Kubernetes/Consul/Eureka fit in. The wrong choice cascades into outages.
 
 ## Definition
 
@@ -383,8 +393,6 @@ Service Discovery is fundamental to microservices architecture, enabling dynamic
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

@@ -1,6 +1,14 @@
-# Middleware
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Middleware
+
+> **TL;DR:** Middleware is the Express-style `req → next → req` chain that runs before guards. It is the right hook for low-level concerns (request ID, body parsing, CORS preflight) but it has no awareness of NestJS context, so prefer guards/interceptors for anything DI-aware.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

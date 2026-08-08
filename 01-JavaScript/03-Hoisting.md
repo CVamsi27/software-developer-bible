@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Hoisting
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Hoisting is the engine's creation-phase behavior: `var` declarations are initialized to `undefined`, `let`/`const` enter the Temporal Dead Zone (TDZ), and function declarations are fully hoisted. Only declarations are hoisted, not initializations.
+
+## Why It Matters
+
+TDZ errors (`Cannot access 'x' before initialization`) are a common senior-interview gotcha. Knowing the difference between `var` hoisting, function declaration hoisting, and class hoisting is essential for debugging initialization-order bugs in ESM modules and circular dependencies.
 
 ## Definition
 

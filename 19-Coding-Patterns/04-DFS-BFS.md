@@ -1,12 +1,24 @@
-# DFS & BFS
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# DFS & BFS
 
 ## Definition
 
 **Depth-First Search (DFS)**: A traversal algorithm that explores as far as possible along each branch before backtracking. Uses a stack (explicit or call stack).
 
 **Breadth-First Search (BFS)**: A traversal algorithm that explores all nodes at the present depth before moving to nodes at the next depth level. Uses a queue.
+
+## TL;DR
+
+**DFS** uses a stack (or recursion) to go as deep as possible before backtracking — great for **path finding, cycle detection, topological sort (variant), and exhaustive enumeration**. **BFS** uses a queue to explore level by level — great for **shortest path in unweighted graphs, level-order tree traversal, and connected components**. The same graph can be traversed both ways; the choice depends on the *shape* of the answer (path vs. shortest path) and the *shape* of the data (deep tree vs. wide tree).
+
+## Why it matters
+
+DFS/BFS appear in ~25% of interview problems — tree traversals, graph validations, shortest paths, and island-counting variants. The senior signal is **recognizing the graph hidden in the problem** (matrix as graph, words as graph nodes, dependencies as DAG) and **choosing DFS vs. BFS based on the answer shape** (DFS for "does a path exist?" / BFS for "what's the shortest path?"). You'll also be asked about iterative DFS with an explicit stack (avoid stack overflow on deep trees), BFS with bidirectional search (2x speedup for word ladders), and the "visited set" trick to avoid infinite loops on cycles.
 
 ## When to Use
 

@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Execution Context
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+An execution context is the JS engine's per-call environment containing the variable/lexical environment, scope chain, and `this` binding. Every function call creates a new context, pushed onto the call stack in LIFO order. Without this model, hoisting, closures, and `this` are magic.
+
+## Why It Matters
+
+Most senior interview bugs (TDZ errors, lost `this`, closure confusion) trace back to misunderstanding how contexts are created and destroyed. The 2-phase lifecycle (Creation → Execution) and the GEC/FEC split are the foundation that makes async, classes, and modules coherent.
 
 ## Definition
 

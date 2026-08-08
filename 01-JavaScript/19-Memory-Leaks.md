@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Memory Leaks
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Common JS memory leaks: detached DOM nodes held by closures, forgotten timers/intervals, growing arrays/maps in long-lived scopes, event listeners never removed, and accidental globals. Detect with Chrome DevTools heap snapshots or `process.memoryUsage()` in Node.
+
+## Why It Matters
+
+Senior engineers audit for leaks in: SPA route changes (listeners on document/window), Node servers (growing Map keyed by request ID without eviction), and React effects (subscriptions in useEffect without cleanup). The pattern is always: every acquisition has a paired release.
 
 ## Definition
 

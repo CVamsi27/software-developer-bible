@@ -1,6 +1,18 @@
+---
+section: Behavioral
+category: Interview
+tags: [interview-questions, practice]
+---
+
 # Leadership & Senior-Level Behavioral Questions: 20 STAR-Formatted Answers
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+## TL;DR
+
+This file covers the **20 most-asked leadership & senior-level behavioral questions**, mapped to five core competencies: Technical Leadership, People Leadership, Strategic Thinking, Communication, and Execution. Strong answers show **trade-off judgment, quantified impact, and growth from experience** — not just "I led a team of N." The senior signal is **scope and ambiguity**: how did you operate when the goal was unclear, the data was missing, or the team disagreed?
+
+## Why it matters
+
+Senior loops at Staff/Principal-adjacent levels spend **30-40%** of interview time on leadership behavioral questions — they want to know if you can **lead without authority**, navigate ambiguity, and make hard trade-offs. Amazon's Leadership Principles interview is the canonical example: each LP is probed with 2-3 behavioral questions, and the bar is "consistently exceeds bar." Strong candidates pre-map each story to specific competencies (mentorship, conflict resolution, prioritization) so they can flex answers to the question asked.
 
 ## Table of Contents
 

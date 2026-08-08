@@ -1,12 +1,12 @@
 # SDE Role — Index
 
-> **20 files** — Complete SDE interview preparation guide with core fundamentals, system design, DevOps, behavioral prep, LeetCode study plans, company-specific guides, progress trackers, study tools, and a comprehensive README.
+> **22 files** — Complete SDE interview preparation guide with core fundamentals, system design, DevOps, behavioral prep, LeetCode study plans, company-specific guides, an 8-week schedule, compensation benchmarking, and progress trackers.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
-## Core Knowledge
+## Core Knowledge (Phases 1-28)
 
 | # | File | Phases | Topics |
 |---|------|--------|--------|
@@ -30,6 +30,8 @@
 | 13 | [Learning Guarantee System](13-Learning-Guarantee-System.md) | Active recall, mastery criteria, practice testing |
 | 14 | [Flashcard Decks](14-Flashcard-Decks.md) | 240+ cards across 8 topics for Anki/Quizlet |
 | 15 | [Resume & Negotiation](15-Resume-Negotiation.md) | Resume ATS optimization, STAR bullets, offer negotiation, comp breakdown |
+| 21 | [8-Week Study Schedule](21-8-Week-Study-Schedule.md) | Day-by-day 8-week plan with daily checklist + mastery trackers |
+| 22 | [Compensation Benchmarking](22-Compensation-Benchmarking.md) | Level mapping, RSU mechanics, sign-on negotiation, real scripts |
 
 ## Company-Specific Guides
 
@@ -39,11 +41,12 @@
 | 17 | [Google Guide](17-Google-Interview-Guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
 | 18 | [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS |
 | 19 | [Meta Guide](19-Meta-Interview-Guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
-| 20 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
+| 20 | [Apple Guide](20-Apple-Interview-Guide.md) | Apple | Privacy-First, On-Demand Processing, Domain Expertise |
 
 ---
 
-**Cross-references:** [JavaScript](../01-JavaScript/) | [TypeScript](../02-TypeScript/) | [React](../03-React/) | [System Design](../11-System-Design/) | [Behavioral](../18-Behavioral/) | [Coding Patterns](../19-Coding-Patterns/)
+**Cross-references:** [Behavioral](../18-Behavioral/) | [Cheat Sheets](../20-CheatSheets/) | [Coding Patterns](../19-Coding-Patterns/) | [Git Advanced](../24-Git-Advanced/) | [JavaScript](../01-JavaScript/) | [React](../03-React/) | [System Design](../11-System-Design/) | [TypeScript](../02-TypeScript/)
+
 ---
 
 ## Navigation

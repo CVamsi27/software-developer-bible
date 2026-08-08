@@ -1,8 +1,8 @@
 # NestJS — Index
 
-> **12 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, and interview questions.
+> **15 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -19,11 +19,13 @@
 | 09 | [Exception Filters](09-Exception-Filters.md) | Built-in exceptions, custom exception filters, catch-all filters |
 | 10 | [CQRS](10-CQRS.md) | Commands, queries, events, sagas, command/query buses |
 | 11 | [Microservices](11-Microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports |
-| 12 | [Interview Questions](12-Interview-Questions.md) | 50+ curated questions with answers |
+| 13 | [Testing](13-Testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit |
+| 14 | [Configuration & Validation](14-Configuration-Validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs |
+| 15 | [Interview Questions](15-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 
-**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices (gRPC, Service Mesh)](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/)
+**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices (gRPC, Service Mesh)](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/) | [Testing](../16-Testing/)
 ---
 
 ## Navigation

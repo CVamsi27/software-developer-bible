@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Health Checks
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Liveness (kill if dead), readiness (in the LB pool?), and startup (slow booters) probes — each with a distinct purpose.
+
+**Why it matters:** Tests probe parameter tuning (failureThreshold × periodSeconds vs startup time), the cost of a bad probe, and graceful shutdown.
 
 ## Definition
 
@@ -508,8 +518,6 @@ kubectl delete pod myapp
 kubectl exec -it myapp -- curl http://localhost:8080/health
 
 ```
-
----
 
 ---
 

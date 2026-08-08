@@ -1,6 +1,14 @@
-# Microservices
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Microservices
+
+> **TL;DR:** NestJS microservices are independently deployable Node processes that communicate via transport-agnostic message patterns (request/response, event-based) over TCP, Redis, Kafka, RabbitMQ, NATS, gRPC, or MQTT. Pick the transport based on durability, throughput, and operational complexity.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

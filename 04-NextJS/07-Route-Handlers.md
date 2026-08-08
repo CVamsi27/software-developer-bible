@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Route Handlers in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Route Handlers are the App Router equivalent of API routes. Defined via `route.ts` files exporting HTTP method handlers (`GET`, `POST`, etc.). They run on Node or Edge runtime, can read/write data, and return standard `Response` objects.
+
+## Why It Matters
+
+Senior engineers use Route Handlers for: webhooks, REST API endpoints, third-party integrations, OAuth callbacks. They know Route Handlers are full HTTP endpoints (vs. Server Actions which are mutations), and they configure the runtime (`export const runtime = 'edge' | 'nodejs'`) based on latency/feature needs.
 
 ## Definition
 

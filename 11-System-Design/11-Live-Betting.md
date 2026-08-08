@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Live Betting System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a real-time sports betting platform handling 100K+ odds updates per second, in-play wager placement, and settlement with strong consistency on bet acceptance.
+
+**Why it matters:** Tests low-latency event streams (Kafka), idempotent bet placement, in-memory state for hot markets, settlement pipelines, and regulatory concerns (KYC, responsible gambling).
 
 ## Requirements
 ### Functional Requirements
@@ -1085,8 +1095,6 @@ Key takeaways:
 5. Detect fraud with pattern analysis
 
 This design supports 100K+ concurrent users with < 100ms odds updates and 10K+ bets per second.
-
----
 
 ---
 

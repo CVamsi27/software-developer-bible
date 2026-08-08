@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # ArgoCD (GitOps)
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Pull-based GitOps controller that syncs Kubernetes cluster state to a Git repository with drift detection and self-heal.
+
+**Why it matters:** De-facto GitOps for K8s. Tests Application vs ApplicationSet, sync waves, sync policies, and how it coexists with image-updater bots.
 
 ## Definition
 
@@ -163,6 +173,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [Blue-Green & Canary](03-Blue-Green-Canary.md)
 - [Docker](../13-Docker/)

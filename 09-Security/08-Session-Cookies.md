@@ -1,6 +1,14 @@
-# Sessions and Cookies
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# Sessions & Cookies
+
+> **TL;DR:** Session management keeps the server-side state and the client-side cookie in sync — the cookie is just an opaque session ID. Senior engineers know the cookie flags (Secure, HttpOnly, SameSite, Path, Domain), session ID rotation, idle/absolute timeouts, and CSRF interactions.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

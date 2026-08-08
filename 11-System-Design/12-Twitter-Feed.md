@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Twitter Feed System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a home timeline and tweet-publishing system serving fan-out writes and reads at hundreds of millions of users, with celebrity handling and trending topics.
+
+**Why it matters:** Canonical fan-out service problem (push vs pull vs hybrid). Tests timeline materialization, celebrity skew handling, ranked feed models, and search/indexing for hashtags and trends.
 
 ## Requirements
 ### Functional Requirements
@@ -848,8 +858,6 @@ Key takeaways:
 5. Implement graceful degradation for timeline serving
 
 This design handles 500M DAU with 10K tweets/second and sub-200ms timeline loading.
-
----
 
 ---
 

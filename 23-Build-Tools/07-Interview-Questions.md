@@ -1,6 +1,10 @@
-# Build Tools Interview Questions
+---
+section: Build Tools
+category: DevOps
+tags: [interview-questions, practice]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Build Tools Interview Questions
 
 ## Comprehensive Interview Guide
 
@@ -720,30 +724,23 @@ Understanding these concepts is essential for modern frontend development and te
 BUILD TOOLS INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  import React, { lazy, Suspense } from 'react';
-  const Home = lazy(() => import('./pages/Home'));
-  const About = lazy(() => import('./pages/About'));
-  function App() {
-    return (
-      <Suspense fallback={<Loading />}>
-```
-```
-  const { DefinePlugin } = require('webpack');
-  module.exports = {
-    plugins: [
-      new DefinePlugin({
-        'process.env.API_URL': JSON.stringify(process.env.API_URL),
-        'process.env.NODE_ENV': JSON.stringify('production')
-```
+QUESTION CATEGORIES:
+  • Fundamentals:   bundlers, loaders, plugins, modes
+  • Optimization:   tree shaking, code splitting, caching
+  • Tooling:        Webpack vs Vite vs Turbopack vs Rspack
+  • System Design:  monorepo build, CI build optimization
+
+MUST-KNOW ANSWERS:
+  • Tree shaking: ESM + sideEffects: false
+  • Code splitting: dynamic import, route-based
+  • HMR: WebSocket + module replacement (not full reload)
+  • Source maps: dev = eval, prod = hidden source maps
+  • Bundle budgets: size-limit in CI
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Compare Webpack/Vite/Turbopack/Rspack for a 100k LOC app
+  • Explain why production builds need different config than dev
+  • Discuss monorepo build caching (Turborepo, Nx)
 ```
 ---
 

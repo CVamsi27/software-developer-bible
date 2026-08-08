@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Portals
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`createPortal(child, container)` renders `child` into a DOM node outside the parent component's hierarchy. Used for modals, tooltips, dropdowns — anything that needs to escape `overflow: hidden` or `z-index` stacking contexts. Event bubbling still goes through the React tree, not the DOM tree.
+
+## Why It Matters
+
+Senior engineers know portals preserve React's event model — a click inside a portaled modal still bubbles to its React parent for event delegation. They use portals for modals, context menus, tooltips, and any UI that must visually escape its container while staying logically nested.
 
 ## Definition
 

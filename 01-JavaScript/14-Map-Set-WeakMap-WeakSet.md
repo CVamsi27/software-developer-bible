@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Map, Set, WeakMap, WeakSet
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`Map` and `Set` are ordered key collections with O(1) lookup. `WeakMap`/`WeakSet` hold keys weakly, allowing garbage collection of entries when the key object is no longer referenced elsewhere — ideal for caches and private state.
+
+## Why It Matters
+
+Senior engineers choose `Map` over plain objects for dynamic keys (any type, ordered insertion, no prototype pollution), and `WeakMap` for object-keyed caches (memoization, storing private data on instances) where weak references prevent memory leaks.
 
 ## Definition
 

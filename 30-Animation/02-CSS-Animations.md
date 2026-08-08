@@ -1,17 +1,24 @@
+---
+section: Animation
+category: Frontend
+tags: [concept, reference]
+---
+
 # CSS Animations
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+> CSS animations provide a way to create smooth, performant animations using only CSS — without JavaScript. They include transitions for simple state changes and `@keyframes` animations for complex sequences. Always hardware-accelerated when you stay on `transform` and `opacity`.
 
 ## Definition
-CSS animations provide a way to create smooth, performant animations using only CSS, without JavaScript. They include transitions for simple state changes and keyframe animations for complex sequences.
 
-## Why Do We Need It?
+CSS animations are declarative, browser-native animations. **Transitions** interpolate a property from a start to an end value when state changes (e.g., `:hover`). **`@keyframes`** define multi-step animations that can loop, delay, and play independently of any state change. Both run on the compositor thread for 60fps.
 
-- **Performance**: Hardware-accelerated, runs on GPU
-- **Simplicity**: No JavaScript required for basic animations
-- **Declarative**: Define animations in CSS
-- **Maintainability**: Separate animation concerns from logic
-- **Accessibility**: Can be disabled with `prefers-reduced-motion`
+## Why It Matters (TL;DR)
+
+- **Performance** — hardware-accelerated, runs on the GPU
+- **No JavaScript** — pure CSS, smallest possible runtime cost
+- **Declarative** — describe the end state, the browser handles the interpolation
+- **Accessibility** — `prefers-reduced-motion` lets you disable for sensitive users
+- **Maintainability** — animation logic separate from app logic
 
 ## How It Works
 
@@ -24,16 +31,16 @@ CSS animations provide a way to create smooth, performant animations using only 
 │  │                    Transitions                               │   │
 │  │  • Smooth state changes                                      │   │
 │  │  • Two states (from → to)                                   │   │
-│  │  • Triggered by pseudo-classes or class changes             │   │
-│  │  • Properties: transition-property, transition-duration     │   │
+│  │  • Triggered by pseudo-classes, class changes, or JS        │   │
+│  │  • Properties: transition-property, -duration, -timing, …   │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │                    Keyframe Animations                       │   │
-│  │  • Complex animation sequences                              │   │
-│  │  • Multiple states                                          │   │
-│  │  • Can loop, delay, and have complex timing                 │   │
-│  │  • Defined with @keyframes rule                             │   │
+│  │  • Complex multi-step sequences                              │   │
+│  │  • Loop, delay, direction                                   │   │
+│  │  • Triggered by class or auto-playing                       │   │
+│  │  • Defined with @keyframes rule                              │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐   │
@@ -42,10 +49,9 @@ CSS animations provide a way to create smooth, performant animations using only 
 │  │  • scale (size)                                              │   │
 │  │  • rotate (rotation)                                         │   │
 │  │  • skew (distortion)                                         │   │
+│  │  • All GPU-accelerated                                      │   │
 │  └─────────────────────────────────────────────────────────────┘   │
-│                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Code Examples
@@ -53,7 +59,6 @@ CSS animations provide a way to create smooth, performant animations using only 
 ### 1. CSS Transitions
 
 ```css
-/* Basic transition */
 .button {
   background-color: blue;
   color: white;
@@ -61,6 +66,7 @@ CSS animations provide a way to create smooth, performant animations using only 
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  /* transition: <property> <duration> <timing-function> <delay> */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -72,307 +78,101 @@ CSS animations provide a way to create smooth, performant animations using only 
 .button:active {
   transform: translateY(0);
 }
-
-/* Multiple properties */
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-4px);
-  border-color: #007bff;
-}
-
-/* Transition timing functions */
-.ease {
-  transition-timing-function: ease;
-}
-
-.ease-in {
-  transition-timing-function: ease-in;
-}
-
-.ease-out {
-  transition-timing-function: ease-out;
-}
-
-.ease-in-out {
-  transition-timing-function: ease-in-out;
-}
-
-.cubic-bezier {
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
 ```
 
-### 2. CSS Keyframe Animations
+### 2. Timing Functions
 
 ```css
-/* Basic keyframe animation */
+.ease          { transition-timing-function: ease; }
+.ease-in       { transition-timing-function: ease-in; }
+.ease-out      { transition-timing-function: ease-out; }
+.ease-in-out   { transition-timing-function: ease-in-out; }
+.linear        { transition-timing-function: linear; }
+.bounce        { transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+/* Material Design easing */
+.material      { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+```
+
+### 3. `@keyframes` Animations
+
+```css
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Multiple steps */
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateX(10%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.slide-in {
-  animation: slideIn 0.8s ease-out forwards;
-}
-
-/* Infinite animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spinner {
-  animation: spin 1s linear infinite;
-}
-
-/* Complex animation */
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.1); opacity: 0.8; }
 }
 
 .pulse {
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* Bounce animation */
-@keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    transform: translate3d(0, -30px, 0);
-  }
-  70% {
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    transform: translate3d(0, -15px, 0);
-  }
-  90% {
-    transform: translate3d(0, -4px, 0);
-  }
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
 
-.bounce {
-  animation: bounce 1s ease-in-out;
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
-
 ```
 
-### 3. Transform Properties
+### 4. Animation Properties (Shorthand + Longhand)
 
 ```css
-/* Translate */
-.translate {
-  transform: translateX(50px);
-  transition: transform 0.3s ease;
-}
-
-.translate:hover {
-  transform: translateX(100px);
-}
-
-/* Scale */
-.scale {
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
-.scale:hover {
-  transform: scale(1.2);
-}
-
-/* Rotate */
-.rotate {
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
-}
-
-.rotate:hover {
-  transform: rotate(45deg);
-}
-
-/* Skew */
-.skew {
-  transform: skew(0deg);
-  transition: transform 0.3s ease;
-}
-
-.skew:hover {
-  transform: skew(10deg);
-}
-
-/* Combined transforms */
-.combined {
-  transform: translate(0, 0) scale(1) rotate(0deg);
-  transition: transform 0.3s ease;
-}
-
-.combined:hover {
-  transform: translate(20px, -20px) scale(1.1) rotate(5deg);
-}
-
-/* Transform origin */
-.origin-center {
-  transform-origin: center;
-}
-
-.origin-top-left {
-  transform-origin: top left;
-}
-
-.origin-custom {
-  transform-origin: 30% 70%;
-}
-
-```
-
-### 4. Animation Properties
-
-```css
-/* Animation shorthand */
+/* Shorthand: name duration timing-function delay iteration-count direction fill-mode play-state */
 .animated {
-  animation: slideIn 0.5s ease-out 0.2s forwards;
+  animation: slideIn 0.5s ease-out 0.2s 1 normal forwards;
 }
 
-/* Individual properties */
+/* Longhand */
 .animated {
   animation-name: slideIn;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-delay: 0.2s;
   animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
+  animation-direction: normal;        /* normal | reverse | alternate | alternate-reverse */
+  animation-fill-mode: forwards;       /* none | forwards | backwards | both */
+  animation-play-state: running;       /* running | paused */
 }
-
-/* Animation direction */
-.alternate {
-  animation-direction: alternate;
-}
-
-.reverse {
-  animation-direction: reverse;
-}
-
-.alternate-reverse {
-  animation-direction: alternate-reverse;
-}
-
-/* Animation fill mode */
-.forwards {
-  animation-fill-mode: forwards;
-}
-
-.backwards {
-  animation-fill-mode: backwards;
-}
-
-.both {
-  animation-fill-mode: both;
-}
-
-/* Animation play state */
-.paused {
-  animation-play-state: paused;
-}
-
-.running {
-  animation-play-state: running;
-}
-
 ```
 
-### 5. Performance Optimization
+### 5. Performance — `will-change` and GPU Acceleration
 
 ```css
-/* GPU acceleration */
-.gpu-accelerated {
+/* Hint to the browser to promote the element to its own compositor layer */
+.animated {
+  will-change: transform, opacity;
+}
+
+/* Remove the hint after the animation completes */
+.animated.done {
+  will-change: auto;
+}
+
+/* Trigger hardware acceleration with a 3D transform */
+.accelerated {
   transform: translateZ(0);
-  will-change: transform;
-}
-
-/* Will-change (use sparingly) */
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-opacity {
-  will-change: opacity;
-}
-
-/* Hardware acceleration */
-.hardware-accelerated {
   backface-visibility: hidden;
   perspective: 1000px;
 }
-
-/* Avoid animating these properties */
-/* width, height, top, left, right, bottom, margin, padding */
-
-/* Use transform instead */
-.transform-position {
-  transform: translateX(100px); /* Good */
-}
-
-.bad-position {
-  left: 100px; /* Bad for performance */
-}
-
 ```
 
-### 6. Responsive Animations
+### 6. Accessibility — `prefers-reduced-motion`
 
 ```css
-/* Reduced motion */
+/* Disable animations for users who request reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -380,174 +180,115 @@ CSS animations provide a way to create smooth, performant animations using only 
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* Mobile animations */
-@media (max-width: 768px) {
-  .mobile-animation {
-    animation-duration: 0.3s;
-  }
+/* Provide a non-animated fallback */
+.no-motion {
+  animation: none;
+  transition: none;
 }
-
-/* Desktop animations */
-@media (min-width: 769px) {
-  .desktop-animation {
-    animation-duration: 0.5s;
-  }
-}
-
 ```
 
 ### 7. CSS Variables in Animations
 
 ```css
 :root {
-  --animation-duration: 0.3s;
-  --animation-timing: ease-out;
-  --primary-color: #007bff;
+  --duration: 0.3s;
+  --easing: ease-out;
 }
 
 .animated {
-  animation: fadeIn var(--animation-duration) var(--animation-timing);
-  background-color: var(--primary-color);
+  animation: fadeIn var(--duration) var(--easing);
+  transition: transform var(--duration) var(--easing);
 }
 
-/* Dynamic animations */
-.dynamic {
-  --scale: 1;
-  transform: scale(var(--scale));
-  transition: transform 0.3s ease;
+/* Per-instance override */
+.card.featured {
+  --duration: 0.6s;
 }
-
-.dynamic:hover {
-  --scale: 1.2;
-}
-
 ```
 
-## Real-World Use Cases
-
-### Button Hover Effects
+### 8. Real-World Patterns
 
 ```css
-.button {
-  background: linear-gradient(45deg, #007bff, #0056b3);
-  border: none;
-  padding: 12px 24px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
-}
-
-.button:hover::before {
-  left: 100%;
-}
-
-```
-
-### Loading Skeleton
-
-```css
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
+/* Skeleton loader */
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 25%,
-    #e0e0e0 50%,
-    #f0f0f0 75%
-  );
+  background: linear-gradient(90deg, #eee 0%, #f5f5f5 50%, #eee 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 4px;
 }
 
+/* Hover lift effect */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Shimmering button */
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.button:hover::after {
+  transform: translateX(100%);
+}
+
+/* Page transition (for SPAs that allow CSS-only routing) */
+.page-enter   { animation: fadeIn 0.3s ease-out forwards; }
+.page-exit    { animation: fadeOut 0.2s ease-in forwards; }
 ```
 
-### Page Transition
+## GPU-Accelerated vs CPU-Heavy Properties
 
-```css
-.page {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: pageIn 0.5s ease-out forwards;
-}
-
-@keyframes pageIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.page-exit {
-  animation: pageOut 0.3s ease-in forwards;
-}
-
-@keyframes pageOut {
-  to {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-}
-
-```
+| GPU-Accelerated ✅ | CPU-Heavy ❌ |
+|--------------------|--------------|
+| `transform: translate/scale/rotate/skew` | `width`, `height` |
+| `opacity` | `top`, `left`, `right`, `bottom` |
+| `filter` (some) | `margin`, `padding` |
+| `clip-path` | `border-width` |
+| `background-position` (sometimes) | `box-shadow` with blur |
+| | `font-size`, `line-height` |
+| | `background-color` (acceptable but not free) |
 
 ## Common Mistakes
 
-1. **Animating non-transform properties**: width, height, margin cause reflows
-
-2. **Missing will-change**: Can cause performance issues
-
-3. **Overusing will-change**: Can consume GPU memory
-
-4. **Ignoring reduced motion**: Accessibility concern
-
-5. **Not using transform**: Missing hardware acceleration
+| Mistake | Fix |
+|---------|-----|
+| Animating `width` / `height` | Use `transform: scale()` instead — GPU-accelerated |
+| Animating `top` / `left` | Use `transform: translate()` instead |
+| Adding `will-change` to everything | Use sparingly — it consumes GPU memory; remove after animation |
+| Forgetting `prefers-reduced-motion` | Add the `@media` block to disable animations for sensitive users |
+| No `forwards` fill mode | Element snaps back to the start state after animation ends |
+| Using `transition: all` | List specific properties for predictability and perf |
 
 ## Best Practices
 
-1. **Use transform properties**: translate, scale, rotate, opacity
-
-2. **Add will-change**: For complex animations
-
-3. **Respect reduced motion**: Check prefers-reduced-motion
-
-4. **Keep animations subtle**: Enhance, don't distract
-
-5. **Use CSS variables**: For dynamic values
+1. **Animate `transform` and `opacity` only** for best performance
+2. **Use `prefers-reduced-motion`** to respect user preferences
+3. **List specific properties in `transition`** — avoid `transition: all`
+4. **Use `will-change` sparingly** — add before animation, remove after
+5. **Use `forwards` fill mode** if the end state should persist
+6. **Use `cubic-bezier()` for custom easing** — fine-grained control
+7. **Avoid animating during heavy JS work** — animation competes for main thread
 
 ## Performance Considerations
 
@@ -563,7 +304,7 @@ CSS Animation Performance:
 │  • width, height                                                │
 │  • top, left, right, bottom                                     │
 │  • margin, padding                                              │
-│  • box-shadow                                                   │
+│  • box-shadow with blur                                         │
 │                                                                 │
 │  will-change Usage:                                              │
 │  • Add for complex animations                                   │
@@ -575,47 +316,71 @@ CSS Animation Performance:
 │  • Use ease-in for exiting                                      │
 │  • Use ease-in-out for UI state changes                         │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ## Summary
 
-CSS animations provide a performant, declarative way to create smooth animations. Master transitions, keyframes, transforms, and performance optimization for excellent user experiences.
+- CSS animations and transitions are the most performant option — browser-native, GPU-accelerated
+- Animate `transform` and `opacity` for 60fps; avoid `width`/`height`/`top`/`left`
+- Use `@keyframes` for multi-step animations, `transition` for two-state changes
+- Always respect `prefers-reduced-motion` for accessibility
+- Use `will-change` sparingly; remove after the animation
 
 ---
 
 ## Cheat Sheet
+
 ```text
 CSS ANIMATIONS CHEAT SHEET
-============================================================
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  1. **Animating non-transform properties**: width, height, margin cause reflows
-  2. **Missing will-change**: Can cause performance issues
-  3. **Overusing will-change**: Can consume GPU memory
-  4. **Ignoring reduced motion**: Accessibility concern
-  5. **Not using transform**: Missing hardware acceleration
-  1. **Use transform properties**: translate, scale, rotate, opacity
+WHEN TO USE:
+  • Two-state changes           → transition
+  • Multi-step sequences         → @keyframes
+  • Hover / focus / active       → transition
+  • Loading spinners / skeletons → @keyframes
+  • Page enter / exit            → @keyframes
+
+PERFORMANCE RULES:
+  • Animate transform / opacity only
+  • Use will-change sparingly
+  • Avoid animating layout properties
+  • Respect prefers-reduced-motion
+
+SYNTAX:
+  transition: <property> <duration> <timing> <delay>
+  animation: <name> <duration> <timing> <delay> <iter> <dir> <fill> <state>
+
+TIMING FUNCTIONS:
+  ease, ease-in, ease-out, ease-in-out, linear
+  cubic-bezier(0.4, 0, 0.2, 1)   /* Material */
+  cubic-bezier(0.68, -0.55, 0.265, 1.55)  /* back */
+
+INTERVIEW ANSWER:
+  1. CSS animations are GPU-accelerated for transform/opacity
+  2. transitions = 2 states; @keyframes = multi-step
+  3. will-change is a hint, not a free pass
+  4. Always handle prefers-reduced-motion
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
+
+- [Framer Motion](01-Framer-Motion.md)
+- [GSAP](05-GSAP.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
+- [React Spring](06-React-Spring.md)
+- [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
+- [Web Animations API](04-Web-Animations-API.md)
+
 
 ## References & Learn More
 
-- [MDN CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
-- [MDN CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions)
-- [CSS Triggers](https://csstriggers.com/)
-- [Will-change MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change)
-- [Reduced Motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [CSS Triggers (what triggers layout/paint/composite)](https://csstriggers.com/)
+- [MDN: CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
+- [MDN: CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions)
+- [MDN: will-change](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change)
+- [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [web.dev: Animations Guide](https://web.dev/animations/)

@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Throttle
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Throttle limits execution to at most once per N ms. Use for: scroll handlers, mousemove, rate-limiting API calls, animation frames. `requestAnimationFrame` is the throttled-by-browser variant for 60fps work.
+
+## Why It Matters
+
+Senior engineers distinguish debounce (trailing) from throttle (leading+trailing). For scroll/resize tied to rendering, use rAF throttling; for input-driven search, use debounce. Throttle is what you reach for when you need consistent execution rate, not just delay.
 
 ## Definition
 

@@ -1,6 +1,14 @@
-# Cross-Site Request Forgery (CSRF)
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# CSRF (Cross-Site Request Forgery)
+
+> **TL;DR:** CSRF tricks a logged-in user’s browser into making a state-changing request to a site they’re authenticated against. Defense is SameSite=Lax/Strict cookies + double-submit CSRF tokens (or origin/referer check) — and only for cookie-based auth, never for bearer tokens.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

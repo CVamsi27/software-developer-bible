@@ -1,6 +1,10 @@
-# Performance & Security
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Performance & Security
 
 ## Definition
 
@@ -13,6 +17,14 @@ Security    = Authentication + Authorization + Input Validation + Attack Prevent
 ```
 
 ---
+
+## TL;DR
+
+GraphQL's flexibility is also its **attack surface**: a single nested query can request `users.posts.comments.author` 10 levels deep × 1,000 records = millions of rows. Defenses stack: **query depth limits** (≤5-7 levels), **query complexity/cost analysis** (`graphql-query-complexity`), **persisted queries** (only allow pre-registered hashes), **rate limiting per operation**, **DataLoader** for N+1, **APQ caching**, and **response caching** (full-query caching at CDN for read-heavy queries). Security: introspection disabled in prod, field-level auth, and **CSRF protection** (Apollo v4 has it built-in).
+
+## Why it matters
+
+Senior interviews stress-test the **"GraphQL is the new SQL injection"** angle — because clients write the query, a malicious actor can craft recursive or expensive operations. Strong candidates discuss **cost-based limits** (assign field weights, sum per query, reject above threshold), **persisted queries as a security feature** (clients send a hash, server pre-validates), **DataLoader** for batching, and **schema directives** for auth (`@auth(requires: ADMIN)`). Also: **HTTP caching doesn't apply to GraphQL POST** by default — use APQs and CDN caching for read-heavy public APIs.
 
 ## Why Do We Need It?
 

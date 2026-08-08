@@ -1,6 +1,14 @@
-# Providers
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# NestJS Providers
+
+> **TL;DR:** Providers are the injectable classes (services, repositories, factories, helpers) that hold business logic. Anything registered in the `providers` array of a module becomes available to that module’s DI container and (if exported) to importing modules.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

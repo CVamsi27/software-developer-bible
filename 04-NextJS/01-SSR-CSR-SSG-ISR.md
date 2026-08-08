@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # SSR, CSR, SSG, and ISR in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Next.js supports four rendering strategies: SSR (render on every request, fresh data), CSR (render in browser), SSG (render at build time, cached), and ISR (SSG + background regeneration). Each has tradeoffs in freshness, performance, and infrastructure cost.
+
+## Why It Matters
+
+Senior engineers choose strategy per page based on data freshness, traffic, and personalization. Default to SSG/ISR for static content (marketing, docs), SSR for personalized/dynamic (dashboards, account pages), CSR for highly interactive client-only views. The interview question is: when is ISR better than SSR? Answer: when the page is mostly static but occasionally needs updates without a redeploy.
 
 ## Definition
 

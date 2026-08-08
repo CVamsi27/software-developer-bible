@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Volumes & Networks
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Volumes persist data outside the container filesystem; networks give containers predictable IPs and isolation across bridge, host, and overlay drivers.
+
+**Why it matters:** Tests the statelessness contract of containers and how stateful services (Postgres, Redis) survive restarts. Also drives multi-host networking in swarm/Kubernetes.
 
 ## Definition
 
@@ -437,8 +447,6 @@ docker run --rm -v mydata:/data -v $(pwd):/backup \
   alpine tar xzf /backup/vol-backup.tar.gz -C /data
 
 ```
-
----
 
 ---
 

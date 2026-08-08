@@ -1,10 +1,22 @@
-# Binary Search
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Binary Search
 
 ## Definition
 
 Binary search is a search algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half. It compares the target value to the middle element of the array and eliminates the half where the target cannot exist.
+
+## TL;DR
+
+Binary search finds a target in a **sorted (or monovariant) space** in O(log n) by repeatedly halving the search interval. The pattern extends far beyond arrays: **search on the answer** (find the smallest X satisfying a predicate), **rotated arrays** (find pivot then binary search), and **monovariant spaces** (any problem where the answer space can be split into "yes" and "no" halves — Koko eating bananas, ship packages in D days). The hardest part isn't the search — it's the **boundary conditions** (`<` vs. `<=`, when to return `left` vs. `right`).
+
+## Why it matters
+
+Binary search is the most-asked "pattern" because it appears in 4+ disguises: classic sorted-array search, search-on-answer (parametric search), 2D matrix search, and rotated array. Senior interviews test **invariant reasoning** — what property holds true at every step? Strong candidates can derive the `left + (right - left) / 2` formula (vs. the buggy `(left + right) / 2`), handle **overflow** in typed languages, and know when to use the "exclusive right" vs. "inclusive right" boundary convention. The "first bad version" / "find minimum in rotated sorted array" problems are canaries.
 
 ## When to Use
 

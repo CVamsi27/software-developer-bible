@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Images & Containers
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Images are immutable layered templates; containers are their running instances. Layer caching, registry pulls, and the container lifecycle underpin every Docker workflow.
+
+**Why it matters:** Foundation for everything else in DevOps. Misunderstanding layers kills build speed, image size, and reproducibility — three things every senior interview will probe.
 
 ## Definition
 
@@ -382,8 +392,6 @@ COPY --from=stage1 /app/dist ./dist
 RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 
 ```
-
----
 
 ---
 

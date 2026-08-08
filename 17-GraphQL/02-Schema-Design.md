@@ -1,6 +1,10 @@
-# Schema Design
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Schema Design
 
 ## Definition
 
@@ -14,6 +18,14 @@ Schema = Type Definitions + Type Relationships + Operations + Directives
 The schema is written in the **Schema Definition Language (SDL)**, a declarative syntax that describes what operations are possible and what data can be returned.
 
 ---
+
+## TL;DR
+
+The GraphQL **schema** is the contract: a typed hierarchy of `Object`, `Interface`, `Union`, `Enum`, `Input`, and `Scalar` types, plus `Query`, `Mutation`, and `Subscription` roots. Good design favors **nullability, naming clarity, connection patterns (Relay)**, and **input types for mutations** to keep fields forward-compatible. The schema is the **single source of truth** for both client and server, so schema evolution is a versioned, deprecation-aware process.
+
+## Why it matters
+
+Senior interviews explore the **"schema is the API"** philosophy — design choices ripple through every client. Strong candidates discuss **Relay Connection spec** (cursors, edges, pageInfo) for stable pagination, when to use `Interface` vs. `Union` (shared fields vs. disjoint variants), and **input types vs. inline args** for forward-compatibility. The big traps: **n+1 via nested fields**, **exposing internal IDs**, **mutable lists** (always paginate), and **schema-first vs. code-first** (SDL keeps humans and codegen tools in sync; code-first wins for type-driven teams).
 
 ## Why Do We Need It?
 

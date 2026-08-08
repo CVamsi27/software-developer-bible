@@ -1,6 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # JWT (JSON Web Tokens)
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** JWT is a compact, signed token format (header.payload.signature) used for stateless authentication across services. Senior engineers know the alg=none footgun, the difference between access and refresh tokens, JTI-based revocation, and why JWTs should never hold sensitive PII.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

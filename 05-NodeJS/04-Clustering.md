@@ -1,6 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Clustering
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
+
+Clustering forks the Node process into N workers, each running the same code, sharing a server socket via the OS. The primary process manages workers; workers handle requests. Modern alternative: use the OS process manager (PM2, systemd) and scale horizontally. In containers, run one process per container and scale with Kubernetes.
+
+## Why It Matters
+
+Senior engineers know when clustering helps (multi-core utilization on a single host) and when it doesn't (containerized apps scale by replica count, not cluster). They also know the worker IPC pattern for sharing state (jobs queue, sessions) and graceful restart for zero-downtime deploys.
 
 ## Definition
 

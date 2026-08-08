@@ -1,6 +1,10 @@
-# Mocking
+---
+section: Testing
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Mocking
 
 ## Definition
 
@@ -43,6 +47,14 @@ Mocking is a testing technique where you replace real objects, functions, or mod
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+## TL;DR
+
+Mocking replaces real collaborators with controllable test doubles so unit tests stay fast and deterministic. The spectrum: **Dummy** (unused filler), **Stub** (returns canned values), **Spy** (records calls), **Mock** (verifies interactions), **Fake** (working simplified impl like in-memory DB). Modern JS/TS code prefers **dependency injection + interface seams** to make code mockable without monkey-patching. Tools: `jest.fn/spyOn/mock`, `vi.fn`, MSW for network, `@sinonjs`, and DI frameworks.
+
+## Why it matters
+
+Senior interviews probe **mocking discipline** — when to mock, when NOT to mock, and how to avoid mocks that lie. Common traps: mocking what you don't own (e.g., `fetch`) leads to tests that pass but the real integration is broken; over-mocking creates a test that mirrors the implementation rather than the behavior. Strong candidates discuss **mock boundaries** (mock at the *seam*, not deep in the call stack), **contract testing** (Pact) for cross-team mocks, and the rise of **MSW (Mock Service Worker)** for intercepting real `fetch`/`axios` calls at the network layer. Know the difference between `mockResolvedValue` (Promise), `mockImplementation` (custom fn), and `mockReturnValueOnce` (one-shot).
 
 ## Why Do We Need It?
 

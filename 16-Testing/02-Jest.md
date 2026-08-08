@@ -1,6 +1,10 @@
-# Jest
+---
+section: Testing
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Jest
 
 ## Definition
 
@@ -15,6 +19,14 @@ Jest is a JavaScript testing framework developed by Facebook (Meta) that provide
 - **Code Coverage**: Built-in coverage reporting with Istanbul
 - **Watch Mode**: Interactive test runner that re-runs tests on changes
 - **Rich API**: Comprehensive set of matchers and utilities
+
+## TL;DR
+
+Jest is a zero-config JS/TS test runner with a built-in assertion library, mocking primitives (`jest.fn`, `jest.mock`, `jest.spyOn`), snapshot testing, and Istanbul-based coverage. Each test file runs in an **isolated sandboxed worker** with a fresh module registry, so global state doesn't leak between files. The trade-off vs. Vitest is **speed** — Jest uses a custom transformer (Babel/ts-jest), so cold runs are slower than Vite's native ESM transform.
+
+## Why it matters
+
+Most enterprise codebases still ship Jest, and senior interviews will probe the **mocking model**: how `jest.mock` is hoisted, the difference between `jest.fn` and `jest.spyOn`, when to use `mockReset` vs `mockClear` vs `mockRestore`, and how to mock ESM modules (a known sharp edge). Interviewers also ask about **test isolation** — how Jest's `testEnvironment`, `setupFiles`, and worker sandboxes prevent cross-test pollution. Know Jest's quirks: parallel worker limit, slow `ts-jest` startup, and why snapshot tests are controversial in long-lived codebases.
 
 ## Why Do We Need It?
 

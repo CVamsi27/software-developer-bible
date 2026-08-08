@@ -1,6 +1,10 @@
-# Babel
+---
+section: Build Tools
+category: DevOps
+tags: [concept, reference, tool]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Babel
 
 ## Definition
 
@@ -83,13 +87,41 @@ Animal.prototype.speak = function() { console.log(this._name + ' speaks'); };
 BABEL CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+PURPOSE:
+  • Transform modern JS/TS to backward-compatible JS
+  • No type-checking (use tsc for that)
+  • No bundling (use webpack/vite/rollup)
+  • Polyfill missing runtime features (core-js)
 
+PRESETS (composable plugin bundles):
+  • @babel/preset-env        -> ES20XX down-level per browserslist
+  • @babel/preset-react      -> JSX -> React.createElement
+  • @babel/preset-typescript -> strip TS types
+  • @babel/preset-flow       -> strip Flow types
+
+PLUGINS (single transformations):
+  • @babel/plugin-transform-runtime (avoid helper duplication)
+  • @babel/plugin-proposal-* (stage 0-3 proposals)
+  • @babel/plugin-transform-class-properties
+
+CONFIG FILES:
+  • babel.config.json  -> project-wide, monorepo root
+  • .babelrc          -> file-relative, single package
+  • babel.config.js   -> programmatic config
+
+POLYFILLS:
+  • core-js + @babel/preset-env useBuiltIns: 'usage' (auto)
+  • 'entry' (full set) vs 'usage' (minimal)
+  • @babel/polyfill (deprecated, use core-js directly)
+  • Modern: prefer browser polyfills over heavy babel-runtime
+
+INTERVIEW TIPS:
+  • Explain why Babel doesn't do bundling
+  • Discuss why SWC replaced Babel in Next.js
+  • Show how to debug with --debug or babel --verbose
+  • Mention useBuiltIns: 'usage' for size optimization
 ```
+---
 ## See Also
 - [Build Optimization](04-Build-Optimization.md)
 - [Next.js](../04-NextJS/)

@@ -1,6 +1,14 @@
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
+
 # HTTP Methods
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** HTTP methods are the verbs of REST — GET (safe/idempotent), POST (create), PUT (replace), PATCH (partial update), DELETE. The senior-level test is understanding safety vs. idempotency, where the spec allows non-idempotency, and how proxies and clients cache.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

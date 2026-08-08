@@ -1,6 +1,10 @@
-# Resolvers
+---
+section: GraphQL
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Resolvers
 
 ## Definition
 
@@ -12,6 +16,14 @@ Resolver = Function(Schema Field) → Data Source
 ```
 
 ---
+
+## TL;DR
+
+Resolvers are the functions that turn a query into data. Each field can have a resolver; if it doesn't, the default resolver walks the parent object. The four resolver args: `(parent, args, context, info)`. The biggest production trap is **N+1** — Apollo's `executeQuery` walks the tree serially, and `user.posts` × 100 users = 101 DB calls. The fix is **DataLoader**, which batches and caches per-request. Resolvers also handle **errors** (throw `GraphQLError` with `extensions.code` for client categorization).
+
+## Why it matters
+
+Senior interviews dig into the **execution model** — resolvers are NOT called top-down; they run depth-first, parents before children, and a single missing field blocks the whole query. Strong candidates discuss **DataLoader's three behaviors** (batching, caching, request-scoped), how to structure resolvers for **observability** (per-resolver timing via Apollo Studio / OpenTelemetry), and **context injection** for auth, dataloaders, and per-request state. The most common production bug: returning **mutable objects** from resolvers, which Apollo's cache normalizes incorrectly.
 
 ## Why Do We Need It?
 

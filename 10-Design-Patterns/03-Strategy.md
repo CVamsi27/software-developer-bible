@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Strategy Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Strategy swaps the algorithm behind an interface at runtime — replaces conditionals with polymorphism. The senior test is using it for payment providers, tax calculators, sorting strategies, and pricing rules, and knowing when a discriminated union or a function is a lighter alternative.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

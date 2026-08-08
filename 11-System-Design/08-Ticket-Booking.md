@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Ticket Booking System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a high-concurrency ticket reservation system (concerts, flights, trains) that prevents overselling under flash-sale load while maintaining sub-second response times.
+
+**Why it matters:** Tests pessimistic vs optimistic locking, queue-based admission, virtual waiting rooms, two-phase commit between seat-hold and payment, and inventory partitioning strategies.
 
 ## Requirements
 ### Functional Requirements
@@ -1000,8 +1010,6 @@ Key takeaways:
 5. Generate QR codes for mobile tickets
 
 This design supports 100K+ concurrent users with strong consistency for seat bookings.
-
----
 
 ---
 

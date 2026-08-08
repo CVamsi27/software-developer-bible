@@ -1,6 +1,14 @@
-# CQRS (Command Query Responsibility Segregation)
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# CQRS in NestJS
+
+> **TL;DR:** CQRS in NestJS splits reads and writes into separate command and query handlers wired through buses, with events for cross-aggregate side effects. It is the right tool when read and write models diverge or you need auditable workflows with sagas.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

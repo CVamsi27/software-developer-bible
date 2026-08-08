@@ -1,8 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Recursion & Tail Call Optimization
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
 
-Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller, identical sub-problems. Tail Call Optimization (TCO) is a compiler technique that optimizes recursive functions to prevent stack overflow.
+Recursion solves problems by self-reference, trading stack frames for clarity. Tail call optimization reuses the same frame when the recursive call is the last operation. ES2015 mandated TCO but no engine implements it; modern code uses trampolining or iteration instead.
+
+## Why It Matters
+
+Senior engineers convert deep recursion to iteration to avoid stack overflow, use memoization for overlapping subproblems (dynamic programming), and recognize when recursion is clearer (tree/graph traversal) vs. when iteration is faster. Tail call is theoretical in JS — use generators or loops.
 
 ## Definition
 
@@ -360,6 +370,8 @@ const memoizedRecursive = memoize(
   (n) => n <= 1 ? n : memoizedRecursive(n - 1) + memoizedRecursive(n - 2)
 );
 ```
+
+---
 
 ## See Also
 - [Call Stack](02-Call-Stack.md)

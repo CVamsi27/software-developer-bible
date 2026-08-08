@@ -1,6 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [interview-questions]
+---
+
 # Security Interview Questions
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** A curated set of senior-level security interview questions with model answers, follow-ups, and tradeoffs. The interview test is not knowing the right answer — it is showing your reasoning, naming tradeoffs, and connecting the topic to a real production system you have shipped.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

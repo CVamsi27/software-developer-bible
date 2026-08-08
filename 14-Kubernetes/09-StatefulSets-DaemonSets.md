@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # StatefulSets & DaemonSets
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+StatefulSets give Pods stable network IDs and persistent storage per replica. DaemonSets run one Pod per node (logging, agents, CNI).
+
+**Why it matters:** Tests the difference between stateless and stateful workloads, headless services, PVC templates, and node-level workloads (Fluentd, Node Exporter).
 
 ## Definition
 
@@ -110,6 +120,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [CI/CD](../15-CI-CD/)
 - [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)

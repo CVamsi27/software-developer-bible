@@ -1,6 +1,10 @@
-# Backend Cheat Sheet
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Backend Cheat Sheet
 
 ## Quick Reference Table
 
@@ -426,10 +430,14 @@ async transfer(fromId: string, toId: string, amount: number) {
 This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [React](../03-React/)
+- [Database](../08-Database/)
+- [GraphQL](../17-GraphQL/)
+- [Microservices](../12-Microservices/)
+- [NestJS](../06-NestJS/)
+- [Node.js](../05-NodeJS/)
+- [REST APIs](../07-REST-API/)
+- [Security](../09-Security/)
 - [System Design](../11-System-Design/)
-- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

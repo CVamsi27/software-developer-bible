@@ -1,6 +1,14 @@
-# Database Joins
+---
+section: Database
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# SQL Joins
+
+> **TL;DR:** Joins combine rows from two or more tables — INNER, LEFT, RIGHT, FULL, CROSS, LATERAL — and the planner chooses between nested loop, hash, and merge join strategies. The senior test is understanding the planner’s cost model, join ordering, and when a denormalized read model beats an expensive join.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

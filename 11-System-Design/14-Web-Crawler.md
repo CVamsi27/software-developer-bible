@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Web Crawler System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a scalable web crawler that fetches billions of pages politely, deduplicates content, respects robots.txt, and feeds a search index.
+
+**Why it matters:** Tests frontier queue design, politeness/robots, URL dedup, content fingerprinting (simhash/Minhash), and storage of crawl state. Maps to Googlebot, Bingbot, and the architecture used by Elastic's crawler.
 
 ## Requirements
 ### Functional Requirements
@@ -654,7 +664,6 @@ class LinkExtractor:
         tag = soup.find('link', rel='canonical')
         return tag['href'][:500] if tag and tag.get('href') else ''
 
-
 class URLFilter:
     """Filter URLs based on crawl policies."""
 
@@ -1112,8 +1121,6 @@ Key takeaways:
 5. Process crawl asynchronously with checkpointing for failure recovery
 
 This design crawls 10B+ pages per month with thousands of distributed workers while respecting website crawling policies.
-
----
 
 ---
 

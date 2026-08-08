@@ -1,10 +1,22 @@
-# Union-Find
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Union-Find
 
 ## Definition
 
 Union-Find (also called Disjoint Set Union or DSU) is a data structure that tracks a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It supports two operations: `find` (determine which set an element belongs to) and `union` (merge two sets into one).
+
+## TL;DR
+
+**Union-Find** (Disjoint Set Union / DSU) tracks a partition of elements into disjoint sets with two operations: `find(x)` returns the set representative; `union(x, y)` merges two sets. With **path compression** (in `find`) and **union by rank/size** (in `union`), both operations are amortized **α(n)** — effectively O(1). The pattern is identified by "are these two elements connected?", "how many groups exist?", or "is there a cycle?".
+
+## Why it matters
+
+Union-Find appears in **~8% of interview problems**, often as a hidden optimization. The senior-level question: when to use union-find vs. DFS/BFS to count connected components. **DFS visits each edge once, union-find is amortized O(α(n)) per operation** — but DFS gives you the actual component, while union-find only tells you connectivity. The killer feature: **offline connectivity queries** (process all unions, then answer all finds) — Kruskal's MST, accounts-merge, friend-circles, redundant-connection. Strong candidates know both implementations (with rank and with size) and the path-compression one-liner.
 
 ## When to Use
 

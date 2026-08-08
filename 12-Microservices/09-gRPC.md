@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # gRPC
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A high-performance RPC framework using HTTP/2, protobuf, and bidirectional streaming for strongly-typed inter-service communication.
+
+**Why it matters:** Tests contract-first design, streaming patterns, interceptor chains, and load balancing over long-lived HTTP/2 connections. Common in service-mesh and polyglot stacks.
 
 ## Definition
 
@@ -84,6 +94,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [API Gateway](02-API-Gateway.md)
 - [CQRS](13-CQRS.md)

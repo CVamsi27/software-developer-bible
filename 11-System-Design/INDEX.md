@@ -1,8 +1,8 @@
 # System Design — Index
 
-> **16 files** — Real-world system design case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter Feed, Rate Limiter, Chat System, and interview questions.
+> **22 files** — Real-world system design case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter Feed, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, a meta-guide on how to approach any system-design problem, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -24,6 +24,12 @@
 | 14 | [Web Crawler](14-Web-Crawler.md) | URL frontier, politeness, content dedup, robots.txt, simhash |
 | 15 | [Chat System](15-Chat-System.md) | WebSocket messaging, presence, typing indicators, offline sync |
 | 16 | [Interview Questions](16-Interview-Questions.md) | 50+ curated questions with answers |
+| 17 | [How to Approach](17-How-to-Approach.md) | 4-phase framework: clarify, estimate, high-level, deep-dive |
+| 18 | [Instagram](18-Instagram.md) | Photo/video sharing, fan-out feed, media pipeline, social graph |
+| 19 | [YouTube](19-YouTube.md) | Video transcoding ladder, HLS/DASH streaming, CDN economics, recommendations |
+| 20 | [Dropbox](20-Dropbox.md) | Block-level sync, content-addressable storage, conflict resolution, cursors |
+| 21 | [Lyft](21-Lyft.md) | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing |
+| 22 | [Distributed Counter](22-Distributed-Counter.md) | Hot-key sharding, G-Counter CRDT, local pre-aggregation, tiered storage |
 
 ---
 

@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [concept]
+---
+
 # Docker Compose
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Declarative YAML for running multi-container local stacks with shared networks, volumes, and dependency ordering.
+
+**Why it matters:** The dev-loop workhorse. Tests depends_on, healthchecks, env_file, profiles, and the line where Compose ends and Kubernetes begins.
 
 ## Definition
 
@@ -577,8 +587,6 @@ docker compose --profile debug up
 docker compose config  # validate and view resolved config
 
 ```
-
----
 
 ---
 

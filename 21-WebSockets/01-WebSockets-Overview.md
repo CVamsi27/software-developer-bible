@@ -1,6 +1,10 @@
-# WebSockets Overview
+---
+section: WebSockets
+category: Real-Time
+tags: [concept, reference]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# WebSockets Overview
 
 ## Definition
 
@@ -845,30 +849,31 @@ Understanding WebSockets at a deep level demonstrates system design expertise an
 WEBSOCKETS OVERVIEW CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  HTTP Long Polling:                    WebSockets:
-  Client     Server                     Client     Server
-    |----req---->|                        |          |
-    |     (wait) |                        |   TCP    |
-    |<---resp----|                        | Upgrade  |
-    |----req---->|                        |==CONNECTED|
-```
-```
-  1. Client sends HTTP Upgrade request:
-     GET /chat HTTP/1.1
-     Host: server.example.com
-     Upgrade: websocket
-     Connection: Upgrade
-     Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
-```
+PROTOCOL BASICS:
+  • Full-duplex over single TCP connection
+  • Starts as HTTP, upgrades via Upgrade: websocket
+  • Frames: 2-14 bytes overhead vs HTTP headers (~500 bytes)
+  • Close codes: 1000 normal, 1001 going away, 4001-4999 app
+  • Sub-protocols via Sec-WebSocket-Protocol header
+
+READYSTATE VALUES:
+  • CONNECTING (0) - handshake in progress
+  • OPEN (1)       - ready to send/receive
+  • CLOSING (2)    - close handshake initiated
+  • CLOSED (3)     - fully closed
+
+CONNECTION LIMITS:
+  • Per-origin: ~6 concurrent (HTTP/1.1), unlimited (HTTP/2)
+  • Per-server: depends on file descriptors + memory
+  • Heartbeat: ping every 30s, timeout 10s typical
+  • Backpressure: check bufferedAmount before send
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain upgrade handshake in 30 seconds
+  • Know frame format (FIN, opcode, MASK, payload length)
+  • Discuss scaling: sticky sessions, Redis adapter, sharding
+  • Mention binary vs text frames and perMessageDeflate
+  • Heartbeat patterns and zombie connection detection
 ```
 ---
 

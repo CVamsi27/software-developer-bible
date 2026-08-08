@@ -1,6 +1,14 @@
+---
+section: REST API
+category: Backend
+tags: [concept]
+---
+
 # API Versioning
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** API versioning is how you evolve a public contract without breaking existing clients — URI path (`/v1/`), header (`Accept` / `X-API-Version`), or media-type (`application/vnd.api+json`). Senior picks URI for external APIs and header for internal ones, and plans deprecation with a sunset date.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

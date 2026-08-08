@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Client Components in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Client Components are the traditional React components — they hydrate in the browser and can use state, effects, and event handlers. Marked with `'use client'` directive at the top of the file. They are the leaves of the Server Component tree, imported from a Server Component.
+
+## Why It Matters
+
+Senior engineers know the boundary semantics: `'use client'` is a one-way door (all imports from that file are client). They push the boundary as low as possible (only the interactive widget, not the whole page) to minimize client JS. They use the `children` prop pattern to pass server-rendered content through client components.
 
 ## Definition
 

@@ -1,6 +1,14 @@
+---
+section: REST API
+category: Backend
+tags: [interview-questions]
+---
+
 # REST API Interview Questions
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** A curated set of senior-level REST API interview questions with model answers, follow-ups, and tradeoffs. The interview test is not knowing the right answer — it is showing your reasoning, naming tradeoffs, and connecting the topic to a real production system you have shipped.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

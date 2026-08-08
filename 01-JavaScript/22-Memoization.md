@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Memoization
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Memoization caches function results by argument tuple. Use for: expensive pure functions, recursive computations, React `useMemo`/`useCallback` (memoize value/function reference). Cache keys must cover all inputs that affect output.
+
+## Why It Matters
+
+Senior engineers know when NOT to memoize: trivial functions, components that always re-render, or inputs that change every render. They use `useMemo` to stabilize referential equality (deps in effect arrays, props in memoized children) — not for performance in isolation.
 
 ## Definition
 

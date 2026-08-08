@@ -1,6 +1,14 @@
-# Role-Based Access Control (RBAC)
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# RBAC (Role-Based Access Control)
+
+> **TL;DR:** RBAC assigns permissions to roles and roles to users — simple, but coarse. ABAC adds attributes (time, IP, resource owner) for finer-grained policy. The senior test is whether you can model a real org chart, separate policy from mechanism, and audit every access decision.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

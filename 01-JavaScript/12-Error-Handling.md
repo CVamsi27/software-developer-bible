@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Error Handling
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+JS error handling uses `try/catch/finally` for sync code, `.catch()` for Promises, and `try { await } catch` for async/await. Custom error subclasses (`extends Error`) enable typed error handling. Unhandled rejections are process-fatal in Node.
+
+## Why It Matters
+
+Senior engineers design error hierarchies (ValidationError, NetworkError, AuthError), distinguish operational from programmer errors, and know when to use global handlers (`window.onerror`, `process.on('unhandledRejection')`) vs per-call handling. Always log with context (stack, request ID, user ID).
 
 ## Definition
 

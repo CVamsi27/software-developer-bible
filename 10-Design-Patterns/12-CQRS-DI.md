@@ -1,6 +1,14 @@
-# CQRS & Dependency Injection Patterns
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# CQRS & Dependency Injection
+
+> **TL;DR:** CQRS separates read and write models for performance, security, and clarity; DI inverts control so dependencies are injected, not constructed. The senior test is the connection between them — using a DI container to wire command/query handlers, and knowing when CQRS is overkill.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Deployments
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Deployments manage ReplicaSets and add declarative rolling updates, rollbacks, and pause/resume semantics for safe rollouts.
+
+**Why it matters:** Tests RollingUpdate vs Recreate, maxSurge/maxUnavailable, rollback, and the difference between Deployment-level and Pod-level concerns.
 
 ## Definition
 
@@ -705,8 +715,6 @@ kubectl rollout resume deployment/myapp
 kubectl rollout restart deployment/myapp
 
 ```
-
----
 
 ---
 

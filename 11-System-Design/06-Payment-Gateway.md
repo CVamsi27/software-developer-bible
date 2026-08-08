@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Payment Gateway System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a PCI-compliant payment processing service handling authorization, capture, refunds, reconciliation, and fraud detection with strict idempotency and consistency guarantees.
+
+**Why it matters:** Tests double-entry bookkeeping, two-phase commit with external PSPs, idempotency keys, webhook reliability, and money-handling precision. Money bugs are reputation-ending; correctness is non-negotiable.
 
 ## Requirements
 ### Functional Requirements
@@ -1080,8 +1090,6 @@ Key takeaways:
 5. Reconcile daily to catch discrepancies
 
 This design supports 100K+ transactions per second with 99.999% availability and full PCI compliance.
-
----
 
 ---
 

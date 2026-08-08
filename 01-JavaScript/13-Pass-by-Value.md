@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Pass by Value vs Pass by Reference
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+JS is pass-by-value-of-the-reference: primitives are copied, objects are copied by reference (the pointer is copied, not the object). Reassigning a parameter never affects the caller, but mutating an object via the reference does.
+
+## Why It Matters
+
+This distinction is the root of bugs in React (mutating state directly) and Node (mutating shared config). Senior engineers know to clone before mutating (`structuredClone`, spread), and that `===` on objects compares references, not values.
 
 ## Definition
 

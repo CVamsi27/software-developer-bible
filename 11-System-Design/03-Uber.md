@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Uber System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a real-time ride-hailing platform that matches riders to drivers using geospatial indexing, computes ETAs, and updates trip state through an event-driven pipeline.
+
+**Why it matters:** Tests geohashing / S2 / quadtree trade-offs, dispatch algorithms, location-update frequency, and consistency during trip state transitions. Spans matching, pricing, and tracking subsystems.
 
 ## Requirements
 ### Functional Requirements
@@ -980,8 +990,6 @@ Key takeaways:
 5. Design for failure with graceful degradation
 
 This design supports 20M DAU with < 30 second matching latency and 99.99% availability.
-
----
 
 ---
 

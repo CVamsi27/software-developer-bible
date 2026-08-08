@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Middleware in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Middleware runs before a request is completed. In Next.js, it runs on the Edge Runtime, can rewrite/redirect/respond, and is configured via `middleware.ts` at the project root. Used for: auth checks, A/B testing, geo-routing, bot detection, header rewriting.
+
+## Why It Matters
+
+Senior engineers use middleware for: auth gates (redirect to login), feature flags, locale routing, rate limiting, and security headers. They know it runs on the Edge (limited Node APIs, no `fs`), and that heavy logic should move to a Server Component or Route Handler.
 
 ## Definition
 

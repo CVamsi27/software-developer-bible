@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Closures
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+A closure is a function bundled with references to its lexical environment. The inner function retains access to outer-scope variables even after the outer function returns, enabling data privacy, partial application, and factory patterns.
+
+## Why It Matters
+
+Closures power nearly every JS pattern: debounce/throttle, React hooks, module privacy, currying, and memoization. Senior engineers must reason about closure memory cost (each closure holds its scope alive) and use them deliberately to avoid leaks in long-lived processes.
 
 ## Definition
 

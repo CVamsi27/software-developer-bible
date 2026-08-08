@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Decorators
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Decorators are functions prefixed with `@` that wrap classes, methods, accessors, properties, or parameters to add metadata, validation, or behavior. TC39 Stage 3 syntax is now supported in TS 5+. They are widely used in NestJS, TypeORM, and class-validator.
+
+## Why It Matters
+
+Senior engineers see decorators in: NestJS (`@Controller`, `@Get`, `@Injectable`), TypeORM (`@Entity`, `@Column`), class-validator (`@IsEmail`, `@MinLength`). The interview signal is understanding the decorator factory pattern, metadata reflection, and the difference between legacy experimental and Stage 3 syntax.
 
 ## Definition
 

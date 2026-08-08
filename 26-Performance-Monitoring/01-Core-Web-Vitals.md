@@ -1,6 +1,10 @@
-# Core Web Vitals
+---
+section: Performance Monitoring
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Core Web Vitals
 
 ## Definition
 Core Web Vitals are a set of standardized metrics from Google that measure real-world user experience for loading performance, interactivity, and visual stability of web pages. They are part of Google's Page Experience signals and directly impact SEO rankings.
@@ -411,29 +415,32 @@ Core Web Vitals are essential metrics for measuring and improving user experienc
 CORE WEB VITALS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Timeline: LCP Measurement
-  ├── 0ms: Navigation starts
-  ├── TTFB: First byte received
-  ├── Resource Load: Images, fonts, CSS loaded
-  └── LCP Element Rendered ✓ (Target: ≤ 2.5s)
-```
-```
-  User Interaction Flow:
-  ┌──────────┐     ┌──────────────┐     ┌─────────────┐     ┌────────────┐
-  │  Input   │ ──▶ │   Processing │ ──▶ │   Main      │ ──▶ │  Paint     │
-  │  Event   │     │   Delay      │     │   Thread    │     │  Response  │
-  └──────────┘     └──────────────┘     └─────────────┘     └────────────┘
-                    (INP = Total Latency)
-```
+CURRENT VITAL TRIO (2024+):
+  • LCP (Largest Contentful Paint) - loading performance
+  • INP (Interaction to Next Paint)   - interactivity (replaced FID)
+  • CLS (Cumulative Layout Shift)     - visual stability
+
+THRESHOLDS (75th percentile, p75):
+  Metric       Good         Needs Improvement   Poor
+  LCP          ≤ 2.5s       2.5s - 4.0s         > 4.0s
+  INP          ≤ 200ms      200ms - 500ms       > 500ms
+  CLS          ≤ 0.1        0.1 - 0.25          > 0.25
+
+INP REPLACED FID (Feb 2024):
+  • FID: only first input, only input delay
+  • INP: ALL interactions, full duration (input -> next paint)
+  • INP measures: input delay + processing + presentation delay
+  • Worst interaction in session (or 98th percentile for some)
+
+LAB vs FIELD:
+  • Lab: synthetic test (Lighthouse, WebPageTest) - reproducible
+  • Field: real users (CrUX, RUM) - what users actually see
+  Google uses field data (CrUX) for ranking
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain why INP replaced FID
+  • Discuss LCP element candidates (img, video, block-level text)
+  • Mention how to debug with web-vitals JS library
 ```
 ---
 

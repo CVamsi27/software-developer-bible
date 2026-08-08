@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Apache Kafka
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A distributed, partitioned, durable commit-log broker for high-throughput event streams with exactly-once semantics and replayable history.
+
+**Why it matters:** De-facto event backbone. Tests partition keys, consumer groups, ordering, delivery guarantees, and operational concerns (rebalancing, lag, retention).
 
 ## Definition
 
@@ -633,8 +643,6 @@ Apache Kafka is essential for building event-driven microservices. It provides h
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

@@ -1,6 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Indexes
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Indexes turn full table scans into bounded lookups — B-tree for range/equality, hash for equality, GIN for full-text/JSONB, GiST for geospatial. The senior test is knowing composite index column order, partial indexes, covering indexes, and the cost of indexes on writes.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

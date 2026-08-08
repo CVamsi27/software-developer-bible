@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useMemo & useCallback
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`useMemo` memoizes a computed value; `useCallback` memoizes a function reference. Both recompute only when dependencies change. They are NOT automatic performance boosters — they have overhead and are most useful for referential stability passed to memoized children or effect deps.
+
+## Why It Matters
+
+Senior engineers know when NOT to memoize: trivial computations, values used locally, or components that always re-render anyway. The right use is to stabilize referential equality (callbacks passed to `React.memo`-wrapped children, deps in `useEffect`). Premature memoization is a frequent anti-pattern.
 
 ## Definition
 

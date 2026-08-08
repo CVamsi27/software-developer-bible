@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Server Actions in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+Server Actions are async functions that run on the server, callable from Client or Server Components. Marked with `'use server'`. They integrate with forms (`<form action={action}>`), enable mutations without API routes, and support progressive enhancement.
+
+## Why It Matters
+
+Senior engineers use Server Actions for: form submissions, mutations from client components, revalidation triggers. They know the security model (always re-validate auth server-side), the `revalidatePath`/`revalidateTag` integration, and the difference between Server Actions and Route Handlers (Actions are mutations, Handlers are full HTTP endpoints).
 
 ## Definition
 

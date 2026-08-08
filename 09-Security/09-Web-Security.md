@@ -1,6 +1,14 @@
-# Web Security
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# Web Security Headers & HTTPS
+
+> **TL;DR:** Web security is a layered system — HTTPS, HSTS, CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy, and the OWASP Top 10 / API Security Top 10. The senior test is knowing which header does what, the right values in 2024+, and how to roll them out without breaking the app.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

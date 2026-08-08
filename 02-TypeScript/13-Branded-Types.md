@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Branded Types
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Branded (or nominal) types are a TypeScript pattern that adds a phantom property to a primitive to create a distinct type. They prevent mixing `UserId` and `OrderId` even though both are strings at runtime. The pattern uses intersection with `{ __brand: 'UserId' }`.
+
+## Why It Matters
+
+Senior engineers use branded types to: prevent mixing IDs (`UserId` vs `OrderId`), enforce units (`Meters` vs `Feet`), and validate external data at the type boundary. They are the standard way to get nominal typing in TypeScript's structural type system.
 
 ## Definition
 

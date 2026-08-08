@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Pod Disruption Budgets
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+A PDB caps the number of Pods that can be simultaneously down during voluntary disruptions (drains, autoscaler, upgrades).
+
+**Why it matters:** Tests voluntary vs involuntary disruption, minAvailable vs maxUnavailable, and the interplay with HPA + node upgrades during a deploy.
 
 ## Definition
 

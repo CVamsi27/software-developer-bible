@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Event Loop
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+The event loop is the runtime mechanism that drains the call stack, then processes microtasks (Promise reactions, `queueMicrotask`), then macrotasks (timers, I/O). Microtasks always run to completion before the next macrotask.
+
+## Why It Matters
+
+Understanding the event loop is required to reason about `setTimeout` ordering, why `await` yields to microtasks, and how to avoid UI jank. Interviewers test this with code-tracing questions like the famous `console.log` order puzzles (e.g., async vs Promise.resolve().then).
 
 ## Definition
 

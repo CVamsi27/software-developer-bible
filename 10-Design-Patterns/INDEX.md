@@ -1,8 +1,8 @@
 # Design Patterns — Index
 
-> **13 files** — Classic GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, and interview questions.
+> **16 files** — Classic GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-13-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -20,7 +20,9 @@
 | 10 | [Proxy](10-Proxy.md) | Virtual proxy, protection proxy, caching proxy, lazy loading |
 | 11 | [Chain of Responsibility](11-Chain-of-Responsibility.md) | Middleware chains, request processing, handler pipelines |
 | 12 | [CQRS & DI](12-CQRS-DI.md) | Command/query separation, dependency injection containers |
-| 13 | [Interview Questions](13-Interview-Questions.md) | 50+ curated questions with answers |
+| 14 | [Module Pattern](14-Module-Pattern.md) | ES modules, IIFE, revealing module, tree-shaking, barrels |
+| 15 | [State Pattern & State Machines](15-State-Pattern.md) | Discriminated unions, XState, statecharts, transition functions |
+| 16 | [Interview Questions](16-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 

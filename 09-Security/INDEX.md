@@ -1,8 +1,8 @@
 # Security — Index
 
-> **10 files** — Web security fundamentals from JWT and OAuth to XSS, CSRF, SQL injection, encryption, RBAC, session management, and interview questions.
+> **14 files** — Web security fundamentals from JWT and OAuth to XSS, CSRF, SQL injection, encryption, RBAC, session management, threat modeling, secrets management, API security, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -17,11 +17,14 @@
 | 07 | [RBAC](07-RBAC.md) | Role-based access control, permissions, attribute-based access (ABAC) |
 | 08 | [Session & Cookies](08-Session-Cookies.md) | Session management, cookie attributes, secure flags, session fixation |
 | 09 | [Web Security](09-Web-Security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 |
-| 10 | [Interview Questions](10-Interview-Questions.md) | 50+ curated questions with answers |
+| 11 | [Threat Modeling — STRIDE](11-Threat-Modeling-STRIDE.md) | STRIDE, data flow diagrams, trust boundaries, attack trees |
+| 12 | [Secrets Management](12-Secrets-Management.md) | Vault, AWS Secrets Manager, dynamic credentials, rotation, KMS |
+| 13 | [API Security Best Practices](13-API-Security-Best-Practices.md) | OWASP API Top 10, BOLA, BFLA, mass assignment, SSRF, helmet |
+| 14 | [Interview Questions](14-Interview-Questions.md) | 50+ curated questions with answers |
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../11-System-Design/) | [Authentication (REST)](../07-REST-API/06-Authentication.md)
+**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../11-System-Design/) | [Authentication (REST)](../07-REST-API/06-Authentication.md) | [Microservices (mTLS, service mesh)](../12-Microservices/)
 ---
 
 ## Navigation

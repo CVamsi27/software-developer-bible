@@ -1,6 +1,10 @@
-# Branching Strategies
+---
+section: Git Advanced
+category: Reference
+tags: [concept, reference, guide]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Branching Strategies
 
 ## Definition
 A branching strategy is a framework that defines how branches are created, named, merged, and deleted in a version control system. It provides a structured approach to managing parallel development, releases, and collaboration.
@@ -235,30 +239,41 @@ Branching strategies are essential for managing code changes in teams. Choose a 
 BRANCHING STRATEGIES CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    Branching Strategy Flow                       │
-  ├─────────────────────────────────────────────────────────────────┤
-  │                                                                 │
-  │  main (production)                                              │
-  │  ────────────────────────────────────────────────────────────── │
-```
-```
-  git checkout main
-  git checkout -b feature/add-shopping-cart
-  git add .
-  git commit -m "feat: implement shopping cart"
-  git push origin feature/add-shopping-cart
-  git checkout main
-```
+GIT FLOW:
+  • main         - production code
+  • develop      - integration branch
+  • feature/*    - new features (from develop)
+  • release/*    - preparing a release (from develop)
+  • hotfix/*     - urgent production fixes (from main)
+  Best for: scheduled releases, mobile apps, versioned software
+
+GITHUB FLOW:
+  • main         - always deployable
+  • feature/*    - all changes go through PR
+  • deploy on merge to main
+  Best for: SaaS, continuous deployment, web apps
+
+TRUNK-BASED DEVELOPMENT:
+  • main         - single trunk, short-lived branches (< 1 day)
+  • feature flags for incomplete work
+  • release branches for stabilization
+  Best for: high-performing teams, CI/CD, monorepos
+
+BRANCH NAMING:
+  • Conventional: type/scope-description
+  • Types: feat, fix, chore, docs, refactor, test
+  • Example: feat/user-authentication
+
+PROTECTION RULES:
+  • Require PR reviews (1-2 approvers)
+  • Require status checks (CI, lint, type-check)
+  • Require linear history (no merge commits)
+  • Restrict who can push to main
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Discuss trade-offs: Git Flow complexity vs trunk simplicity
+  • Explain when to choose release branches
+  • Show how feature flags enable trunk-based dev
 ```
 ---
 

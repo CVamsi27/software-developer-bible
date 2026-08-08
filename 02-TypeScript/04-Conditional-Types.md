@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Conditional Types
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Conditional types (`T extends U ? X : Y`) choose a type based on a type-level test. They are distributive over unions by default (each union member is tested independently). `infer` extracts types from generic positions. They power most advanced utility types.
+
+## Why It Matters
+
+Senior engineers use conditional types to build type-level functions: discriminating payload shapes, extracting Promise inner types, mapping API responses to UI models. The mental model is: `T extends U ? X : Y` is type-level `if/else`. Distributive behavior over unions is the key gotcha.
 
 ## Definition
 

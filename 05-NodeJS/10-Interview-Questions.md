@@ -1,6 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Interview Questions
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
+
+50 Node.js interview questions covering the event loop, streams, buffers, clustering, child processes, and security. Use as a self-test for the full Node.js stack. Focus on Senior questions for 5+ YoE interviews.
+
+## Why It Matters
+
+Senior Node.js interviews test the runtime model: event loop phases, microtask vs. macrotask, blocking vs. non-blocking, child processes vs. worker threads. Knowing `setImmediate` runs before `setTimeout(0)` in I/O callbacks is a typical gotcha question.
 
 ## Definition
 

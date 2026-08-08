@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Distributed Transactions
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Patterns for atomicity across services: 2PC, Saga, outbox, and idempotent consumers — and why distributed locks are usually the wrong tool.
+
+**Why it matters:** Tests CAP/PACELC reasoning and the outbox pattern for reliable event publication. Most "impossible" bugs in microservices come from skipping this thinking.
 
 ## Definition
 
@@ -67,6 +77,9 @@ INTERVIEW TIPS:
   - Show awareness of common pitfalls
 
 ```
+
+---
+
 ## See Also
 - [API Gateway](02-API-Gateway.md)
 - [CQRS](13-CQRS.md)

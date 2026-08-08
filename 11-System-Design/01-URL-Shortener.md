@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # URL Shortener System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a service that converts long URLs into short, shareable codes and redirects clicks back to the original target at sub-10ms latency at billion-redirect scale.
+
+**Why it matters:** Canonical "warm-up" system-design question. Tests whether you can reason about read/write asymmetry, base-N ID generation, cache strategy, and 301 vs 302 redirects. Mirrors how bit.ly, t.co, and TinyURL are actually built.
 
 ## Requirements
 ### Functional Requirements
@@ -537,29 +547,24 @@ This design can handle 1B+ daily redirects while maintaining sub-10ms latency an
 
 ---
 
----
-
 ## Cheat Sheet
 ```text
 URL SHORTENER SYSTEM DESIGN CHEAT SHEET
 ============================================================
 
 COMMON PATTERNS:
-```
-  Storage Estimates:
-  - 100M new URLs/day = ~1.16K URLs/second
-  - 1B redirects/day = ~11.6K requests/second
-  - Each URL record: ~500 bytes
-  - 100M URLs/day × 365 days × 5 years = ~182.5B URLs
-  - Storage: 182.5B × 500 bytes = ~91.25 TB
-```
-```
   - Write-through for new URL creation
   - TTL-based expiration aligned with URL expiration
   - Cache-aside pattern for reads
   - Background refresh for hot keys
   - Event-driven invalidation via Kafka for analytics updates
-```
+
+STORAGE ESTIMATES:
+  - 100M new URLs/day = ~1.16K URLs/second
+  - 1B redirects/day = ~11.6K requests/second
+  - Each URL record: ~500 bytes
+  - 100M URLs/day × 365 days × 5 years = ~182.5B URLs
+  - Storage: 182.5B × 500 bytes = ~91.25 TB
 
 INTERVIEW TIPS:
   - Understand the core concepts and trade-offs

@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # GitHub Actions
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+YAML-defined workflows triggered by GitHub events, executed on runners, composing marketplace actions and shell steps.
+
+**Why it matters:** Most common CI for open source and startups. Tests reusable workflows, OIDC auth to cloud, concurrency, and self-hosted runners.
 
 ## Definition
 
@@ -117,7 +127,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -144,7 +154,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [16, 18, 20]
+        node-version: [20, 22]
 
     steps:
 
@@ -329,7 +339,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - run: npm ci
       - run: npm run lint
@@ -342,7 +352,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - run: npm ci
       - run: npm test
@@ -424,13 +434,14 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          name: Release ${{ github.ref }}
           body: ${{ steps.changelog.outputs.changelog }}
+          fail_on_unmatched_files: true
 
 ```
 
@@ -494,7 +505,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - run: npm ci
@@ -580,7 +591,7 @@ ${{ secrets.MY_SECRET }}
 # Matrix
 strategy:
   matrix:
-    node: [16, 18, 20]
+    node: [20, 22]
 
 # Artifacts
 
@@ -594,8 +605,6 @@ on:
   workflow_call:
 
 ```
-
----
 
 ---
 

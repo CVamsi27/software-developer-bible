@@ -1,10 +1,22 @@
-# Two Pointers
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Two Pointers
 
 ## Definition
 
 Two pointers is a technique that uses two variables to iterate through a data structure, typically from different positions or at different speeds. It's used to solve problems involving pairs, comparisons, or when you need to examine relationships between elements at different positions.
+
+## TL;DR
+
+Two pointers uses **two index variables** that traverse a sequence, typically at different speeds or from different ends, to solve pair/sum/comparison problems in O(n) instead of O(n²). Three flavors: **opposite-ends** (left=0, right=n-1 — for sorted arrays, two-sum, palindrome check), **same-direction** (both moving forward — fast/slow for cycle detection, deduplication), and **sliding window variant** (a special case). The pattern is most powerful on **sorted input** where moving a pointer strictly eliminates half the remaining candidates.
+
+## Why it matters
+
+Two pointers is the **second-most common pattern** in interviews after sliding window, and it's foundational for the trickier patterns (3-sum, 4-sum, container-with-most-water). The senior signal is **knowing when input is sortable** (sometimes you sort first, losing O(n log n) but gaining O(n) traversal), and **handling duplicates** without infinite-looping. You'll be asked to derive 3-sum, container-with-most-water, and "sort colors" on the spot — and to explain why the slow/fast pointer trick detects cycles in O(1) space.
 
 ## When to Use
 

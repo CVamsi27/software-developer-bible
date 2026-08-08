@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Chat System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a 1:1 and group chat service (Slack/Discord style) with channels, threads, presence, history search, and read receipts.
+
+**Why it matters:** Tests real-time fan-out, message ordering per channel, history pagination, search indexing, and push delivery to offline users. Heavy on storage and consistency design.
 
 ## Requirements
 ### Functional Requirements
@@ -1151,8 +1161,6 @@ Key takeaways:
 5. Use Kafka for async persistence and decoupling of services
 
 This design handles 1B+ users with 100B+ messages/day while maintaining < 100ms delivery latency.
-
----
 
 ---
 

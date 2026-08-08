@@ -1,6 +1,10 @@
-# WCAG Overview
+---
+section: Accessibility
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# WCAG Overview
 
 ## Definition
 WCAG (Web Content Accessibility Guidelines) is a set of guidelines developed by W3C (World Wide Web Consortium) to make web content more accessible to people with disabilities. It provides standards for creating accessible web content.
@@ -357,12 +361,34 @@ WCAG provides guidelines for making web content accessible. Follow POUR principl
 WCAG OVERVIEW CHEAT SHEET
 ============================================================
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
+POUR PRINCIPLES:
+  • Perceivable   - text alternatives, captions, adaptable layout
+  • Operable      - keyboard accessible, enough time, no seizures
+  • Understandable - readable, predictable, input assistance
+  • Robust        - compatible with assistive tech (now and future)
 
+CONFORMANCE LEVELS:
+  • Level A    - minimum (must do)
+  • Level AA   - standard (most regulations require this)
+  • Level AAA  - enhanced (gold standard, not always achievable)
+
+CURRENT VERSION:
+  • WCAG 2.2 (October 2023) - latest stable
+  • WCAG 3.0 - in draft, new scoring model
+  • Most laws cite WCAG 2.0 or 2.1
+
+KEY SUCCESS CRITERIA (Level AA):
+  • 1.4.3 Contrast (Minimum) - 4.5:1 normal, 3:1 large text
+  • 1.4.11 Non-text Contrast - 3:1 for UI components
+  • 2.1.1 Keyboard - all functionality via keyboard
+  • 2.4.7 Focus Visible - clear focus indicator
+  • 2.5.5 Target Size - 44x44px minimum (WCAG 2.2)
+  • 4.1.2 Name, Role, Value - programmatic access
+
+INTERVIEW TIPS:
+  • Always mention POUR for "what is WCAG" questions
+  • Know that most laws require AA, not AAA
+  • Discuss WCAG 2.2 vs 3.0 briefly
 ```
 ---
 

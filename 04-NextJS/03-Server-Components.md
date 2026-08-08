@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Server Components in Next.js
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+React Server Components (RSC) render on the server, ship only the resulting HTML + a serialized component tree (RSC payload), and never include the component code in the JS bundle. They can `await` data directly, access backend resources, and reduce client JS.
+
+## Why It Matters
+
+Senior engineers use RSC to: fetch data close to the source (no API roundtrip), keep large deps (date libs, markdown parsers) off the client, and reduce bundle size. They know the rules: no `useState`/`useEffect`/event handlers, no browser APIs, no client-only libraries. Client Components are leaves in the RSC tree.
 
 ## Definition
 

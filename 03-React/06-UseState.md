@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # useState
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+`useState` holds local component state across renders. Returns `[value, setter]`. Initial value can be a value or a lazy initializer function (avoids re-creation). Setter can take a value or a function (functional update). React batches multiple setState calls within the same event.
+
+## Why It Matters
+
+Senior engineers know: setter identity is stable (so it's safe in dependency arrays), state updates are batched and async (don't read state right after setting), and functional updates are required when new state depends on old state (otherwise stale-state bugs in callbacks and effects).
 
 ## Definition
 

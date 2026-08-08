@@ -1,6 +1,16 @@
+---
+section: Docker
+category: DevOps
+tags: [interview-questions]
+---
+
 # Docker Interview Questions
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+30+ Docker interview questions covering images vs VMs, layer caching, networking, security, Compose vs K8s, and troubleshooting.
+
+**Why it matters:** Practice set to drill the format. Each question targets a misconception or a real production decision a senior engineer has to make.
 
 ## 30 Most Asked Docker Interview Questions with Detailed Answers
 
@@ -968,8 +978,6 @@ FROM builder AS stage1
 COPY --from=stage1 /app/dist ./dist
 
 ```
-
----
 
 ---
 

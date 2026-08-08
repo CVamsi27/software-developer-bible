@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Helm
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Helm packages Kubernetes manifests into versioned, parameterizable charts — the de-facto package manager for K8s.
+
+**Why it matters:** Tests chart structure, values merging, templating pitfalls, OCI registry helm, and the post-Helm-3 security model (no Tiller).
 
 ## Definition
 
@@ -547,8 +557,6 @@ helm repo update
 helm search repo nginx
 
 ```
-
----
 
 ---
 

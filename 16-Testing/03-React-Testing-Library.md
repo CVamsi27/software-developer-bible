@@ -1,6 +1,10 @@
-# React Testing Library
+---
+section: Testing
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# React Testing Library
 
 ## Definition
 
@@ -15,6 +19,14 @@ React Testing Library (RTL) is a testing utility library for React that encourag
 - Use `userEvent` over `fireEvent` for realistic user interactions
 - Focus on behavior, not implementation details
 - Test accessibility by default
+
+## TL;DR
+
+React Testing Library (RTL) tests components the way a user experiences them — by querying the rendered DOM via **accessible roles and labels** (`getByRole`, `getByLabelText`) rather than implementation details like `data-testid` or component state. The guiding principle: *"The more your tests resemble the way your software is used, the more confidence they give you."* — Kent C. Dodds. Pair with `@testing-library/user-event` for realistic interaction simulation and `jest.mock` / MSW for async network mocking.
+
+## Why it matters
+
+Senior interviews probe **why** RTL discourages `data-testid` and snapshot tests: both lock tests to current implementation, so a harmless refactor (renaming a class, restructuring JSX) breaks the suite without any actual user-facing change. Interviewers want to see you reach for `screen.getByRole('button', { name: /submit/i })` and `await user.click()` patterns. You'll also be asked about **async testing** pitfalls — `findBy` queries vs. `waitFor`, why `getBy` throws but `queryBy` returns null, and how to handle React 18 concurrent features (transitions, Suspense) under RTL.
 
 ## Why Do We Need It?
 

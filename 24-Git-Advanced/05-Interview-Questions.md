@@ -1,6 +1,10 @@
-# Git Advanced Interview Questions
+---
+section: Git Advanced
+category: Reference
+tags: [interview-questions, practice]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Git Advanced Interview Questions
 
 ## Comprehensive Interview Guide
 
@@ -649,25 +653,24 @@ Advanced Git commands are essential for complex development workflows. Master bi
 GIT ADVANCED INTERVIEW QUESTIONS CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  git checkout main
-  git merge feature
-  git checkout feature
-  git rebase main
-```
-```
-  git stash push -m "Work in progress"
-  git stash list
-  git stash pop
-```
+QUESTION CATEGORIES:
+  • Beginner (Q1-Q10):     merge vs rebase, branches, commits
+  • Intermediate (Q11-Q20): reflog, bisect, stash, hooks
+  • Senior (Q21-Q30):      workflow design, recovery, history rewrite
+
+MUST-KNOW ANSWERS:
+  • Merge: preserves history, creates merge commit
+  • Rebase: linear history, rewrites SHAs
+  • Cherry-pick: copy specific commit to another branch
+  • Bisect: binary search for regression-introducing commit
+  • Reflog: local log of HEAD movements, recovery lifeline
+  • Hooks: client-side (pre-commit) vs server-side (pre-receive)
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Always mention "never rebase shared branches"
+  • Know when to use git worktree for parallel work
+  • Discuss how to recover a "deleted" branch via reflog
+  • Show how bisect run automates regression finding
 ```
 ---
 

@@ -1,6 +1,14 @@
-# Optimistic vs Pessimistic Locking
+---
+section: Database
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Optimistic & Pessimistic Locking
+
+> **TL;DR:** Optimistic locking assumes no conflict and uses a version column to detect lost updates at commit; pessimistic locking uses `SELECT ... FOR UPDATE` to serialize access up front. Pick based on contention, latency, and how catastrophic a lost update would be.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

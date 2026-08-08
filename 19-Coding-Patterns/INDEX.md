@@ -1,10 +1,12 @@
 # Coding Patterns — Index
 
-> **12 files** — Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, graphs, tries, union find, and topological sort.
+> **18 files** — Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), and streaming algorithms (reservoir sampling).
 
-[![Files](https://img.shields.io/badge/files-12-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Files](https://img.shields.io/badge/files-18-blue)](INDEX.md)
+[![Category](https://img.shields.io/badge/category-Interview-ffd700)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+## Core Patterns (01-12)
 
 | # | File | Topics |
 |---|------|--------|
@@ -21,11 +23,23 @@
 | 11 | [Intervals](11-Intervals.md) | Merge intervals, insert interval, overlapping, meeting rooms |
 | 12 | [Greedy & Prefix Sum](12-Greedy-Prefix-Sum.md) | Greedy choice, prefix sum, range queries, difference arrays |
 
+## Advanced Patterns (13-18)
+
+| # | File | Topics |
+|---|------|--------|
+| 13 | [Monotonic Stack](13-Monotonic-Stack.md) | Next greater/smaller, largest rectangle, stock span |
+| 14 | [Segment Tree & BIT](14-Segment-Tree.md) | Range queries, lazy propagation, Fenwick tree, coordinate compression |
+| 15 | [Bit Manipulation](15-Bit-Manipulation.md) | XOR tricks, bitmask, popcount, subsets, Brian Kernighan |
+| 16 | [String Search — KMP & Rabin-Karp](16-String-Search-KMP-Rabin-Karp.md) | Failure function, LPS array, rolling hash, multi-pattern |
+| 17 | [Quick Select & Reservoir Sampling](17-Quick-Select-Reservoir-Sampling.md) | K-th element, top-K, streaming sample, weighted reservoir |
+| 18 | [Stack & Queue Patterns](18-Stack-Queue-Patterns.md) | LRU cache, sliding window max, BFS, monotonic deque, min stack |
+
 ---
 
 **Cross-references:** [JavaScript](../01-JavaScript/) | [System Design](../11-System-Design/) | [SDE Role](../31-SDE-Role/)
+
 ---
 
 ## Navigation
 
-[← Previous: Behavioral](../18-Behavioral/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: CheatSheets →](../20-CheatSheets/INDEX.md)
+← Previous: [Behavioral](../18-Behavioral/INDEX.md) · [🏠 Back to Index](../INDEX.md) · Next: [CheatSheets →](../20-CheatSheets/INDEX.md)

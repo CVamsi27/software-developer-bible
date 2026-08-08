@@ -1,6 +1,10 @@
-# System Design Cheat Sheet
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# System Design Cheat Sheet
 
 ## Quick Reference Table
 
@@ -425,10 +429,11 @@ for message in consumer:
 This cheat sheet provides a concise reference to core System Design concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [React](../03-React/)
+- [Database](../08-Database/)
+- [Microservices](../12-Microservices/)
+- [Observability](../22-Observability/)
+- [Security](../09-Security/)
 - [System Design](../11-System-Design/)
-- [TypeScript](../02-TypeScript/)
 
 ## References & Learn More
 

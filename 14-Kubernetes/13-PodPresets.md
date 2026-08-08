@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # PodPresets
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+A (now-deprecated) alpha API for admission-time injection of env, secrets, and volumes into Pods. Largely superseded by Kyverno/OPA Gatekeeper.
+
+**Why it matters:** Tests the older injection pattern and the modern policy engines that replaced it. Often asked as a "what was this and what replaced it?" question.
 
 ## Definition
 

@@ -1,6 +1,10 @@
-# Test Patterns
+---
+section: Testing
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# Test Patterns
 
 ## Definition
 
@@ -47,6 +51,14 @@ Test patterns are established, reusable solutions to common problems encountered
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+## TL;DR
+
+Test patterns are **recurring recipes** that keep test suites maintainable: **AAA / Given-When-Then** for structure, **Object Mother / Builder / Factory** for test data, **Page Object Model** for E2E, **Test Doubles** (Dummy/Stub/Spy/Mock/Fake) for isolation, **Arrange-Act-Assert-Per-Example** for clarity, and **contract tests** for cross-service boundaries. Pick the pattern based on **what's under test**, not personal preference — different layers of the pyramid call for different patterns.
+
+## Why it matters
+
+Senior interviews test whether you can keep a 5,000-test codebase **maintainable** — a test that nobody can update is worse than no test. Strong candidates discuss **factories over fixtures** (avoid copy-paste), **builders for complex objects**, **Page Object Model for E2E** (encapsulate selectors, separate "what" from "how"), and **property-based testing** (fast-check) for finding edge cases humans miss. Also: **mutation testing** (Stryker) as a meta-test that checks whether your tests would catch injected bugs — a true signal of suite quality beyond line coverage.
 
 ## Why Do We Need It?
 

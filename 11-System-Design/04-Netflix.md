@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Netflix System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a global video-on-demand streaming platform that delivers personalized content over CDN with adaptive bitrate, offline downloads, and 200M+ subscribers.
+
+**Why it matters:** Classic CDN-heavy problem. Tests encoding ladder design, ABR (HLS/DASH), Open Connect architecture, recommendation pipelines, and the cost/latency trade-off of edge vs origin.
 
 ## Requirements
 ### Functional Requirements
@@ -909,8 +919,6 @@ Key takeaways:
 5. Ensure content protection with DRM
 
 This design supports 200M+ subscribers with 15M concurrent streams while maintaining < 1% rebuffer rate.
-
----
 
 ---
 

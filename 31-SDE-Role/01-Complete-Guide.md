@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [study-plan]
+---
+
 # The Ultimate SDE Interview Preparation Guide
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Target Roles:** SDE II / SDE III at Microsoft, Google, Amazon, Meta, Apple, Netflix, and top product-based companies.
 > **Experience Level:** 3–7 years of software development experience.
@@ -3485,6 +3490,7 @@ TreeNode deserialize(String data) {
 This comprehensive guide covers all essential topics for senior full-stack engineer interviews, from core CS fundamentals to system design, behavioral preparation, and career strategy. Master these concepts to demonstrate breadth and depth across the full engineering spectrum.
 
 ## See Also
+
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -3492,10 +3498,11 @@ This comprehensive guide covers all essential topics for senior full-stack engin
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+
 ## References & Learn More
 
+- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
 - [LeetCode](https://leetcode.com/)
+- [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [Levels.fyi](https://www.levels.fyi/)
-- [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)

@@ -1,12 +1,24 @@
-# Greedy & Prefix Sum
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Greedy & Prefix Sum
 
 ## Definition
 
 **Greedy Algorithm**: A technique that makes the locally optimal choice at each step with the hope of finding a global optimum. It builds a solution piece by piece, always choosing the next piece that offers the most immediate benefit.
 
 **Prefix Sum**: A technique where you precompute cumulative sums to answer range sum queries efficiently. PrefixSum[i] = sum of all elements from index 0 to i-1.
+
+## TL;DR
+
+**Greedy** makes the **locally optimal choice** at each step, hoping it leads to a global optimum — when the problem has **optimal substructure** AND the greedy choice property (the local choice doesn't block future optimal choices), greedy is optimal. **Prefix sum** precomputes cumulative sums so range queries (`sum(i, j)`) are O(1) instead of O(j-i) — pair with a **hashmap** to answer "subarray sum equals K" in O(n). Greedy is hard to recognize; prefix sum is easy once you see "range sum query" or "subarray sum = K".
+
+## Why it matters
+
+Greedy is the **most-overused pattern** in interviews — candidates slap it on every "find min/max" problem and fail when the local choice blocks the global optimum. The senior signal: **proving greedy correctness** (exchange argument) or **recognizing when DP is needed** instead. Prefix sum is mechanical and high-yield: **subarray-sum-equals-K**, **product-except-self** (a clever variant), and **range sum queries** are common. Strong candidates also know **difference array** (the inverse of prefix sum) for **range updates** — add 5 to indices [2, 5] in O(1) per range, then O(n) to materialize.
 
 ## When to Use
 

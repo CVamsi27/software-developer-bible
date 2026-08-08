@@ -1,6 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Deadlocks
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Deadlocks are circular wait chains that the database detects and resolves by aborting one transaction. The senior test is preventing them via consistent lock ordering, short transactions, and lower isolation, and recovering via retry with exponential backoff and jitter.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

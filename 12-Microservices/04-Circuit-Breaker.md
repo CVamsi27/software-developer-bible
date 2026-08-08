@@ -1,6 +1,16 @@
+---
+section: Microservices
+category: Architecture
+tags: [concept]
+---
+
 # Circuit Breaker
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+A defensive state machine (closed → open → half-open) that short-circuits calls to a failing dependency to prevent cascade failures.
+
+**Why it matters:** Mandatory when calling external services. Tests threshold tuning, fallback strategies, half-open probing, and integration with retries/timeouts/bulkheads.
 
 ## Definition
 
@@ -662,8 +672,6 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 └─────────────────────────────────────────────────────────┘
 
 ```
-
----
 
 ---
 

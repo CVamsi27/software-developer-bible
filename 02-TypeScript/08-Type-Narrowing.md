@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Type Narrowing
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Type narrowing is the process of refining a type based on control flow: `typeof` guards, `instanceof` checks, `in` operator, discriminated unions, type predicates (`x is T`), and assertion functions. It is what makes TypeScript feel like a runtime-checked language.
+
+## Why It Matters
+
+Senior engineers design discriminated unions (`type Shape = { kind: 'circle'; r: number } | { kind: 'square'; s: number }`) to enable exhaustive narrowing with `switch`/`never`. They write type predicates (`function isUser(x: unknown): x is User`) to validate external data (API responses, JSON.parse).
 
 ## Definition
 

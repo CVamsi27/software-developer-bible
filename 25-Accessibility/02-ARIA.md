@@ -1,6 +1,10 @@
-# ARIA (Accessible Rich Internet Applications)
+---
+section: Accessibility
+category: Quality
+tags: [concept, reference]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# ARIA (Accessible Rich Internet Applications)
 
 ## Definition
 ARIA (Accessible Rich Internet Applications) is a set of attributes that define ways to make web content and web applications more accessible to people with disabilities. It provides additional semantics for dynamic content and complex UI components.
@@ -363,25 +367,34 @@ ARIA enhances accessibility for complex web applications. Use it when native HTM
 
 ## Cheat Sheet
 ```text
-ARIA (ACCESSIBLE RICH INTERNET APPLICATIONS) CHEAT SHEET
+ARIA CHEAT SHEET
 ============================================================
 
+FIVE RULES OF ARIA:
+  1. Prefer native HTML (button over <div role="button">)
+  2. Don't change native semantics unless necessary
+  3. All interactive ARIA controls must be keyboard accessible
+  4. Don't hide focusable elements from screen readers
+  5. All interactive elements must have an accessible name
+
+CATEGORIES:
+  • Roles:      what is it? (button, dialog, navigation, alert)
+  • States:     current state? (aria-expanded, aria-checked, aria-disabled)
+  • Properties: extra info (aria-label, aria-labelledby, aria-describedby)
+  • Live regions: aria-live (polite/assertive), aria-atomic
+
 COMMON PATTERNS:
-```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                    ARIA Categories                               │
-  ├─────────────────────────────────────────────────────────────────┤
-  │                                                                 │
-  │  Roles              States             Properties               │
-  │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐ │
-```
+  • Modal:      role="dialog" aria-modal="true" aria-labelledby="title-id"
+  • Tabs:       role="tablist" / role="tab" / role="tabpanel"
+  • Menu:       role="menu" / role="menuitem" (NOT nav menu)
+  • Tooltip:    role="tooltip" + aria-describedby on trigger
+  • Alert:      role="alert" or aria-live="assertive"
+  • Status:     role="status" or aria-live="polite"
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Always cite "prefer native HTML first"
+  • Know when role="presentation" / "none" is appropriate
+  • Discuss aria-live politeness levels
 ```
 ---
 

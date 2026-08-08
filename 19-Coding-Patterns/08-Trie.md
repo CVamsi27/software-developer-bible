@@ -1,10 +1,22 @@
-# Trie
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Trie
 
 ## Definition
 
 A Trie (also called a prefix tree or digital tree) is a tree-like data structure used to store a dynamic set of strings, where each node represents a character. It's particularly efficient for prefix-based operations like autocomplete, spell checking, and word search.
+
+## TL;DR
+
+A **Trie** (prefix tree) is a tree where each edge represents a character, each node represents a prefix, and the path from root to a node spells out a prefix. Inserts and lookups are O(L) where L is the word length — independent of how many words are stored. Use it for **autocomplete, spell-check, IP routing, and word search** (e.g., Boggle). For prefix queries or longest-prefix matching, trie beats hashmap because it exposes the **prefix structure**.
+
+## Why it matters
+
+Tries show up in ~5% of interviews but are a senior-signal pattern because implementing one cleanly (with a `TrieNode` class, character index, and `isEnd` flag) tests data-structure fundamentals. The senior-level question: when to use a trie vs. a hashmap (trie for prefix queries, hashmap for exact-match), and **memory trade-offs** (trie uses O(26^L) nodes in the worst case for English — 26x blowup). Production alternatives: **compressed trie** (radix/patricia tree), **double-array trie** (DAWG), or **DAFSA** (directed acyclic word graph) for compactness. Interview classics: implement trie, word search II, replace words, longest word in dictionary.
 
 ## When to Use
 

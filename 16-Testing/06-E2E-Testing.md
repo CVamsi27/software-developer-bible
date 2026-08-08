@@ -1,6 +1,10 @@
-# E2E Testing
+---
+section: Testing
+category: Quality
+tags: [concept]
+---
 
-[![Category: Quality](https://img.shields.io/badge/category-Quality-brightgreen)](.)
+# E2E Testing
 
 ## Definition
 
@@ -39,6 +43,14 @@ End-to-End (E2E) testing is a software testing technique that validates the enti
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+## TL;DR
+
+E2E (end-to-end) tests drive a real browser through complete user journeys — login, checkout, onboarding — exercising the full stack: UI, API, database, third-party services. **Playwright** and **Cypress** are the dominant 2024+ tools, with Playwright pulling ahead for cross-browser support, auto-waiting, and parallelization. E2E tests live at the **top of the testing pyramid** — few in number, slow, expensive, but unmatched in catching real-user regressions.
+
+## Why it matters
+
+Senior interviews test whether you understand the **cost/benefit asymmetry** of E2E: a single E2E failure can take 5 minutes to debug because the stack is so deep. Strong candidates discuss **the testing trophy** (Kent C. Dodds' revision of the pyramid), where most confidence should come from integration tests, with E2E reserved for **critical user paths** (3-10 per app). Be ready to discuss **flaky test triage** (root cause vs. re-run), **trace-based debugging**, **visual regression** (Percy, Playwright snapshots), and **CI strategies** (sharded parallel runs, retry-on-fail with rate limits).
 
 ## Why Do We Need It?
 

@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes HPA & Scaling
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Horizontal Pod Autoscaler scales replica count on CPU, memory, or custom metrics. VPA adjusts resource requests. Cluster Autoscaler adds nodes.
+
+**Why it matters:** Tests HPA formula, behavior during rolling updates, custom + external metrics, and the three-layer scaling stack (Pod → Node → Cluster).
 
 ## Definition
 
@@ -586,8 +596,6 @@ kubectl get nodes
 kubectl describe node <name>
 
 ```
-
----
 
 ---
 

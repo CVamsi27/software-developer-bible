@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # TypeScript Interview Questions
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+This file collects 50+ TypeScript interview questions grouped by difficulty. Use it as a self-test before flipping to the answer. Focus on Senior and FAANG-style questions — that's where the bar is.
+
+## Why It Matters
+
+Senior TypeScript interviews test type-system fluency: `infer`, mapped types, conditional distribution, discriminated unions. Surface-level knowledge won't pass; you need to reason about type behavior at the compiler level.
 
 ## Definition
 

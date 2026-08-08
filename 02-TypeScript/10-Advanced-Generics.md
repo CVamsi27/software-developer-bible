@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Advanced Generics
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Advanced generics combine constraints, conditional types, `infer`, mapped types, and template literals to build expressive type-level programs. Recursive types, variadic tuples, and conditional chaining enable library-quality type APIs.
+
+## Why It Matters
+
+Senior engineers use these for: type-safe API client builders (turning URL templates into typed responses), form libraries (inferring field types from schema), and ORM-style entity types. The interview signal is comfort with multi-step type inference and recursive type definitions.
 
 ## Definition
 

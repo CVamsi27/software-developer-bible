@@ -1,8 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # File System (fs)
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
 
-The Node.js `fs` module provides an API for interacting with the file system, enabling file read/write, directory operations, file metadata inspection, and file watching. It offers three API styles: promise-based (`fs.promises`), callback-based, and synchronous.
+Node's `fs` module provides file system APIs in three flavors: callback (`fs.readFile`), promise (`fs.promises.readFile`), and sync (`fs.readFileSync`). Use the promise API for new code. Always handle errors — file operations fail in production.
+
+## Why It Matters
+
+Senior engineers use streams for large files (`createReadStream` > `readFile`), use `fs.promises` over callbacks, set up file watchers with `fs.watch`/`chokidar`, and respect file permissions and locks. They know not to use sync APIs in request handlers (blocks the event loop).
 
 ## Definition
 
@@ -425,6 +435,8 @@ PATH MODULE:
   path.basename/path.dirname/path.extname
   path.parse(path)                      // All parts
 ```
+
+---
 
 ## See Also
 - [Docker](../13-Docker/)

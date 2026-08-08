@@ -1,12 +1,24 @@
-# GraphQL Interview Questions
+---
+section: GraphQL
+category: Backend
+tags: [interview-questions]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# GraphQL Interview Questions
 
 ## Definition
 
 This comprehensive guide covers the **30 most frequently asked GraphQL interview questions** with detailed answers, code examples, and explanations. Questions range from beginner to FAANG-level and cover schema design, resolvers, performance, security, and architecture.
 
 ---
+
+## TL;DR
+
+This file collects the **most frequently asked GraphQL interview questions** for senior full-stack roles, grouped by difficulty. Coverage spans schema design, queries/mutations/subscriptions, resolvers & DataLoader, Apollo Server plugins, Apollo Client cache, performance & N+1, security (depth/complexity limits, persisted queries, CSRF), and federation. Each answer is framed at **senior depth**: trade-offs, anti-patterns, and the follow-up question the interviewer may push on.
+
+## Why it matters
+
+Senior GraphQL interviews rarely ask "what is GraphQL?" — they ask **"how would you defend against a 10K-depth query?", "how do you solve N+1 in production?", "when would you choose federation over a monolith schema?"** This file consolidates the **mid-to-senior level** questions with the depth and trade-off awareness a 5+ YoE engineer is expected to demonstrate. Be ready to **draw the resolver tree, the DataLoader batching window, and the federation gateway** on a whiteboard.
 
 ## Why Do We Need It?
 

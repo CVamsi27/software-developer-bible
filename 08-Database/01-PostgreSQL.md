@@ -1,6 +1,14 @@
-# PostgreSQL
+---
+section: Database
+category: Backend
+tags: [concept]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# PostgreSQL for Backend Engineers
+
+> **TL;DR:** PostgreSQL is a battle-tested, MVCC-based relational database that powers a huge fraction of the modern web. Senior-level knowledge means understanding WAL, vacuum, the planner, the locking model, and how to tune for read-heavy, write-heavy, and mixed workloads.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

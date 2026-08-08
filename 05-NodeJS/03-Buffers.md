@@ -1,6 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Buffers
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
+
+Buffer is Node's fixed-size, mutable byte array for handling binary data directly. It maps to V8's ArrayBuffer. Use when working with: file system, network protocols, image processing, crypto, or any TCP/UDP stream. `Buffer.allocUnsafe()` is faster but exposes memory; `Buffer.from()` is the safe choice.
+
+## Why It Matters
+
+Senior engineers reach for Buffer when: parsing binary protocols, processing uploaded files, working with streams, or interfacing with native modules. They know the encoding defaults (utf8) and the global Buffer security implications (deprecated `new Buffer()` constructor).
 
 ## Definition
 

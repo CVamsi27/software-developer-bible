@@ -1,6 +1,14 @@
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
+
 # SQL Injection
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** SQL injection is the canonical injection attack — untrusted input concatenated into a SQL string. The defense is parameterized queries / prepared statements, plus least-privilege DB accounts, allowlist input validation, and an ORM as a structural default.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

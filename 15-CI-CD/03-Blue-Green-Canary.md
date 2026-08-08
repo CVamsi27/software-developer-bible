@@ -1,6 +1,16 @@
+---
+section: CI/CD
+category: DevOps
+tags: [concept]
+---
+
 # Blue-Green & Canary Deployments
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Blue/Green swaps traffic between two environments. Canary shifts a percentage of traffic to a new version to detect regressions.
+
+**Why it matters:** Zero-downtime deployments are table stakes. Tests how to implement with Kubernetes Services, Istio, or AWS CodeDeploy, and rollback semantics.
 
 ## Definition
 
@@ -568,8 +578,6 @@ kubectl logs -l track=canary -f
 export FEATURE_NEW_CHECKOUT=true
 
 ```
-
----
 
 ---
 

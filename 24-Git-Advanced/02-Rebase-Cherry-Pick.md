@@ -1,6 +1,10 @@
-# Rebase & Cherry-Pick
+---
+section: Git Advanced
+category: Reference
+tags: [concept, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# Rebase & Cherry-Pick
 
 ## Definition
 
@@ -244,30 +248,41 @@ Rebase and cherry-pick are powerful Git operations for managing history and appl
 REBASE & CHERRY-PICK CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Before Rebase:
-  main:      A---B---C---D
-                    \
-  feature:           E---F---G
-  After Rebase:
-  main:      A---B---C---D
-```
-```
-  Before Cherry-Pick:
-  main:      A---B---C---D
-                    \
-  feature:           E---F---G
-  After Cherry-Pick (commit E to main):
-  main:      A---B---C---D---E'
-```
+REBASE:
+  git rebase main             # replay feature onto main
+  git rebase -i HEAD~5        # interactive rebase
+  git rebase --onto main feat bugfix  # rebase subset
+  git rebase --continue       # after resolving conflicts
+  git rebase --abort          # bail out safely
+
+GOLDEN RULE:
+  Never rebase commits that have been pushed and shared
+  Rewrites history (new SHAs) -> breaks other clones
+
+INTERACTIVE REBASE VERBS:
+  pick   = use commit as-is
+  reword = change commit message
+  edit   = stop to amend
+  squash = meld into previous commit
+  fixup  = like squash, discard message
+  drop   = remove commit
+  exec   = run shell command
+
+CHERRY-PICK:
+  git cherry-pick <sha>        # apply one commit
+  git cherry-pick <sha1>..<sha2>  # apply range
+  git cherry-pick -x <sha>     # record origin
+  git cherry-pick --continue   # after conflicts
+
+USE CHERRY-PICK FOR:
+  - Backporting fixes to release branches
+  - Selecting specific commits from another branch
+  - Reverting a single change without full merge
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain the difference between merge and rebase visually
+  • Discuss the "golden rule" of rebasing
+  • Show how to use fixup commits during code review
 ```
 ---
 

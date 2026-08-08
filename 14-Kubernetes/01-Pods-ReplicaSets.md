@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Pods & ReplicaSets
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Pods are the smallest deployable unit (one or more co-scheduled containers). ReplicaSets keep N copies alive and replace failed ones.
+
+**Why it matters:** Foundation of the K8s data model. Tests init containers, sidecars, multi-container patterns, and why you never deploy bare Pods.
 
 ## Definition
 
@@ -567,8 +577,6 @@ kubectl apply -f pod.yaml
 kubectl diff -f pod.yaml
 
 ```
-
----
 
 ---
 

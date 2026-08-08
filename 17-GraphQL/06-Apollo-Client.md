@@ -1,6 +1,10 @@
-# Apollo Client
+---
+section: GraphQL
+category: Backend
+tags: [concept, reference]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# Apollo Client
 
 ## Definition
 
@@ -12,6 +16,14 @@ Apollo Client = GraphQL Client + Normalized Cache + React Hooks + DevTools
 ```
 
 ---
+
+## TL;DR
+
+Apollo Client is a **normalized cache + reactive subscription** model for GraphQL on the client. It uses `InMemoryCache` to dedupe and re-render by `__typename:id`, so two queries that touch the same `User:42` share a single source of truth. Hooks (`useQuery`, `useMutation`, `useSubscription`) are the React API; **optimistic responses** ship UI updates before the server confirms. Alternatives: **urql** (smaller, more modular), **Relay** (compiler-driven, large-scale), **TanStack Query + graphql-request** (DIY, no normalized cache).
+
+## Why it matters
+
+Senior interviews probe the **cache model** — when does Apollo's cache help vs. hurt? Normalization by `__typename:id` works for entity-style data, but **server-driven responses with no `id`** (e.g., search results) need `keyFields` config. Strong candidates discuss **cache policies** (`merge`, `read`, `keyArgs`), **pagination with `fetchMore` and `relayStylePagination`**, **local-only fields** (`@client`), and **type policies** for non-default caching. Common pitfall: **stale data after mutation** when the mutation response doesn't include the fields the query cached — fix with `refetchQueries` or `update` callbacks.
 
 ## Why Do We Need It?
 

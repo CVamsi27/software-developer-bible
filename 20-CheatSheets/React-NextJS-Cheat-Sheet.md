@@ -1,6 +1,10 @@
-# React & Next.js Cheat Sheet
+---
+section: CheatSheets
+category: Reference
+tags: [cheat-sheet, reference]
+---
 
-[![Category: Reference](https://img.shields.io/badge/category-Reference-808080)](.)
+# React & Next.js Cheat Sheet
 
 ## Quick Reference Table
 
@@ -391,9 +395,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 This cheat sheet provides a concise reference to core React NextJS concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
+- [Animation](../30-Animation/)
+- [Build Tools](../23-Build-Tools/)
+- [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
+- [Next.js](../04-NextJS/)
+- [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
-- [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
 ## References & Learn More

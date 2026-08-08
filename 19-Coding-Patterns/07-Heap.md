@@ -1,10 +1,22 @@
-# Heap
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Heap
 
 ## Definition
 
 A heap is a specialized tree-based data structure that satisfies the heap property: in a max-heap, for any given node, its value is greater than or equal to the values of its children; in a min-heap, its value is less than or equal to its children. It's commonly used to implement priority queues.
+
+## TL;DR
+
+A heap is a **complete binary tree** with the heap property (min-heap: parent ≤ children; max-heap: parent ≥ children) that supports `insert`, `extract-min/max`, and `peek` in O(log n). It's the data structure behind **priority queues**, and it's the right tool when the problem asks for the "top K", "K-th largest", "running median", or "merge K sorted streams". A min-heap of size K can maintain the K largest elements in O(n log K), beating sorting for large n.
+
+## Why it matters
+
+Heaps appear in **~10% of interview questions** and most scheduling/simulation problems. The senior-level question: when to use **two heaps** (a min-heap + max-heap to track the median in O(log n) per operation — the "median finder" pattern), **K-way merge** (merge K sorted lists in O(n log K)), and **lazy deletion** (mark-as-deleted instead of physically removing). Common interview problems: top-K frequent elements, K-th largest in a stream, merge K sorted lists, task scheduler, and find median from data stream. Strong candidates know `heapq` in Python, `PriorityQueue` in Java, and the JS equivalent.
 
 ## When to Use
 

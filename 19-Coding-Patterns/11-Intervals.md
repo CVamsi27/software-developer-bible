@@ -1,10 +1,22 @@
-# Intervals
+---
+section: Coding Patterns
+category: Interview
+tags: [concept, practice]
+---
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
+# Intervals
 
 ## Definition
 
 Interval problems involve working with ranges defined by start and end points (e.g., [start, end]). They typically require merging, inserting, or checking overlaps between intervals. Common operations include merging overlapping intervals, inserting new intervals, and finding non-overlapping intervals.
+
+## TL;DR
+
+Interval problems work with **ranges** `[start, end]` and ask you to **merge overlapping intervals, find non-overlapping intervals, or detect conflicts**. The universal first step: **sort by start time** (or end time, depending on the variant) — this turns the problem into a linear sweep. The second step: maintain a `current` interval and merge when the next one starts before `current.end`. Pattern signature: input is a list of pairs `(start, end)`, output is some aggregation or a single-pass sweep.
+
+## Why it matters
+
+Interval problems appear in **~7% of interviews** and test whether you think in terms of **sorting + sweep** vs. nested loops. The senior-level question: when to sort by **start** (merge intervals) vs. **end** (activity selection / meeting rooms) — the choice is subtle and changes the algorithm. Strong candidates discuss **edge cases**: empty input, single interval, intervals that touch (`[1,2]` and `[2,3]` — touching is overlap or not, depending on the problem), and **off-by-one** boundaries. Production: calendar scheduling, time-series compression, and resource allocation.
 
 ## When to Use
 

@@ -1,6 +1,10 @@
-# Error Tracking
+---
+section: Observability
+category: DevOps
+tags: [concept, reference]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Error Tracking
 
 ## Definition
 
@@ -548,22 +552,40 @@ Error tracking transforms raw exceptions into actionable, grouped issues with co
 ERROR TRACKING CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  npx tsc --sourceMap
-  npx webpack --mode production --devtool source-map
-  npx @sentry/cli releases files "$RELEASE" upload-sourcemaps ./dist \
-    --url-prefix "~/dist" \
-    --validate
-  npx @sentry/cli releases deploys "$RELEASE" new \
-```
+TOOLING:
+  - Sentry      (errors + perf, OSS core)
+  - Bugsnag     (errors, mobile-first)
+  - Rollbar     (errors, real-time)
+  - Datadog APM (errors + traces + metrics)
+  - GlitchTip   (self-hosted Sentry alternative)
+  - Highlight.io (errors + session replay)
+
+KEY FEATURES:
+  - Stack trace grouping by fingerprint
+  - Source map upload for minified code
+  - Release tracking (commits, deploys)
+  - User context (id, email, plan)
+  - Breadcrumbs (events leading to error)
+  - Alerts via Slack, PagerDuty, email
+
+SOURCE MAPS:
+  - Generate in build: --source-map
+  - Upload to Sentry: @sentry/cli releases files $RELEASE upload-sourcemaps ./dist
+  - DO NOT serve source maps to public (security)
+  - Use Sentry release artifact bundling
+  - Validate uploads with --validate flag
+
+PII HANDLING:
+  - Strip in beforeSend hook
+  - Use allowUrls/denyUrls for sensitive endpoints
+  - Hash user identifiers, not raw email
+  - Configure dataScrubbing for credit cards, tokens
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  - Explain source map workflow from build to dashboard
+  - Discuss fingerprinting to group similar errors
+  - Show how to integrate with GitHub releases
+  - Talk about noise reduction (sampling, dedup)
 ```
 ---
 

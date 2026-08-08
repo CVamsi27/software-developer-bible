@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # Google Drive System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a cloud file storage and sync service supporting upload/download, real-time collaboration, version history, and offline edits across web, mobile, and desktop.
+
+**Why it matters:** Tests chunked uploads, dedup, sync conflict resolution (CRDT vs OT), block storage layout, and metadata sharding. Highlights the difference between file sync (Dropbox) and collaborative editing (Drive/Notion).
 
 ## Requirements
 ### Functional Requirements
@@ -971,8 +981,6 @@ Key takeaways:
 5. Implement conflict resolution for concurrent edits
 
 This design supports 1B+ files with 10M concurrent sync operations while maintaining strong consistency for metadata.
-
----
 
 ---
 

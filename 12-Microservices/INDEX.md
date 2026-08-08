@@ -15,10 +15,10 @@
 | 05 | [Kafka](05-Kafka.md) | Topics, partitions, producers, consumers, consumer groups, exactly-once |
 | 06 | [RabbitMQ](06-RabbitMQ.md) | Exchanges, queues, bindings, routing, message durability |
 | 07 | [Event Sourcing](07-Event-Sourcing.md) | Event store, rebuilding state, CQRS integration, snapshots |
-| 08 | [gRPC](09-gRPC.md) | Protobuf, HTTP/2, bidirectional streaming, code generation |
-| 09 | [Service Mesh](10-Service-Mesh.md) | Istio, Linkerd, Envoy, mTLS, traffic management, observability |
-| 10 | [Distributed Transactions](11-Distributed-Transactions.md) | Saga choreography/orchestration, outbox pattern, 2PC |
-| 11 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
+| 08 | [Interview Questions](08-Interview-Questions.md) | 50+ curated questions with answers |
+| 09 | [gRPC](09-gRPC.md) | Protobuf, HTTP/2, bidirectional streaming, code generation |
+| 10 | [Service Mesh](10-Service-Mesh.md) | Istio, Linkerd, Envoy, mTLS, traffic management, observability |
+| 11 | [Distributed Transactions](11-Distributed-Transactions.md) | Saga choreography/orchestration, outbox pattern, 2PC |
 | 12 | [Strangler Fig](12-Strangler-Fig.md) | Legacy migration, strangler facade, parallel run, feature flags, dual-write |
 | 13 | [CQRS](13-CQRS.md) | Command/query separation, event sourcing integration, mediator pattern, read/write models, eventual consistency |
 | 14 | [Bulkhead Pattern](14-Bulkhead-Pattern.md) | Thread pool isolation, semaphore, circuit breaker integration, tenant isolation, resilience |

@@ -1,6 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Event Loop
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
+
+Node.js's event loop (libuv) has 6 phases: timers, pending callbacks, idle/prepare, poll, check, close. Microtasks (`process.nextTick`, Promise reactions) run between phases. `setImmediate` runs in check phase, `setTimeout` in timers.
+
+## Why It Matters
+
+Senior Node.js engineers reason about the event loop to debug async ordering, write non-blocking code, and prevent CPU-bound work from starving I/O. They know `process.nextTick` runs before any I/O (starvation risk), and that unhandled rejections will crash the process in recent Node versions.
 
 ## Definition
 

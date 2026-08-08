@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # State Management
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+State management is choosing where state lives: local (useState), context (low-frequency shared), external store (Zustand, Jotai, Redux Toolkit, Recoil), or server state (React Query, SWR, RSC). The right choice depends on update frequency, scope, and persistence needs.
+
+## Why It Matters
+
+Senior engineers distinguish client state (UI, forms) from server state (data fetched from APIs). They use React Query/SWR for server state (caching, refetching, mutations) and a small client store (Zustand/Jotai) for cross-component client state. They avoid Context for high-frequency updates and avoid Redux for simple apps.
 
 ## Definition
 

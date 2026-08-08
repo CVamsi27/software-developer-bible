@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Scope
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Scope is the set of rules that govern where identifiers (variables, functions, parameters) are accessible. JavaScript uses lexical (static) scoping with three levels: global, function (var), and block (let/const).
+
+## Why It Matters
+
+Scope determines variable lifetime and visibility, which directly affects memory, bugs, and refactoring safety. Senior engineers use scope to reason about shadowing, IIFE module patterns, and the implications of `var` vs `let` in loops with async callbacks.
 
 ## Definition
 

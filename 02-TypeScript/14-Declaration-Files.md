@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Declaration Files (.d.ts)
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Declaration files (`.d.ts`) describe the shape of JavaScript code without implementation. They enable TypeScript to type-check plain JS libraries, ambient globals, and module augmentations. Most npm packages ship them via `@types/*` or bundled `types` field.
+
+## Why It Matters
+
+Senior engineers write declaration files for: untyped JS dependencies (creating a `types/foo.d.ts`), extending third-party types (module augmentation for Express `Request`), and publishing typed libraries (`tsc --declaration`). They are also expected to read and understand DefinitelyTyped contribution patterns.
 
 ## Definition
 

@@ -1,8 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Currying & Function Composition
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
 
-Currying transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument. Function composition combines multiple functions to produce a new function that applies them in sequence.
+Currying transforms a function of N args into a chain of N unary functions. Composition (`pipe`, `compose`) chains functions so the output of one is the input of the next. Both are the foundation of point-free functional style.
+
+## Why It Matters
+
+Senior engineers recognize currying in: `add(1)(2)(3)`, `_.get('a.b.c')(obj)`, React render-prop factories, and Redux middleware. They reach for composition when a pipeline is clearer than nested calls, and know to keep functions pure to make composition safe.
 
 ## Definition
 
@@ -268,6 +278,8 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 | Pipe (L→R) | `pipe(f, g)(x)` ≡ `g(f(x))` | `pipe(trim, toUpper)(' hello ')` |
 | Lodash curry | `_.curry(fn)` | `_.curry(sum)(1)(2)(3)` |
 | Ramda compose | `R.compose(f, g)` | `R.compose(R.toUpper, R.trim)` |
+
+---
 
 ## See Also
 - [Closures](04-Closures.md)

@@ -1,8 +1,8 @@
 # Observability — Index
 
-> **6 files** — Observability fundamentals from logging and monitoring to distributed tracing, error tracking, health checks, and interview questions.
+> **8 files** — Observability fundamentals from logging and monitoring to distributed tracing, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -14,6 +14,8 @@
 | 04 | [Error Tracking](04-Error-Tracking.md) | Error aggregation, Sentry, source maps, alerting |
 | 05 | [Health Checks](05-Health-Checks.md) | Liveness/readiness probes, health endpoints, dependency checks |
 | 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
+| 07 | [SLI / SLO / SLA](07-SLI-SLO-SLA.md) | Reliability targets, error budgets, multi-window burn rate |
+| 08 | [Alerting](08-Alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks |
 
 ---
 

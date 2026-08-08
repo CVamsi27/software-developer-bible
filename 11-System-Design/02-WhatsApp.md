@@ -1,6 +1,16 @@
+---
+section: System Design
+category: Architecture
+tags: [concept]
+---
+
 # WhatsApp System Design
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+## TL;DR
+
+Design a global real-time messaging system supporting 1:1 and group chats, end-to-end encryption, presence/typing indicators, and offline message delivery over WebSockets and persistent connections.
+
+**Why it matters:** Tests mobile-first design, connection management at scale (Erlang-style millions of sockets per node), message ordering, and the trade-offs between push (APNs/FCM) and long-poll sockets.
 
 ## Requirements
 ### Functional Requirements
@@ -800,8 +810,6 @@ Key takeaways:
 5. Scale geographically with data residency compliance
 
 This design handles 500M DAU with 100B messages/day while maintaining < 100ms delivery latency.
-
----
 
 ---
 

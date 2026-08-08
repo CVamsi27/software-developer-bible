@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Rendering
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+React rendering has two phases: Render (React calls components, builds VDOM, runs diff) and Commit (DOM mutations, refs assigned, effects scheduled). Bailing out (returning the same element) skips re-rendering. Concurrent mode adds a third 'pre-commit' interruptible phase.
+
+## Why It Matters
+
+Senior engineers distinguish 'render' (calling function components) from 'commit' (touching the DOM). The render phase is pure, no side effects allowed. The commit phase runs effects (`useLayoutEffect` synchronously, `useEffect` asynchronously). This is why you can put side effects in effects, not render.
 
 ## Definition
 

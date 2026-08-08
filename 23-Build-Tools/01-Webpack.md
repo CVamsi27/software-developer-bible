@@ -1,6 +1,10 @@
-# Webpack
+---
+section: Build Tools
+category: DevOps
+tags: [concept, reference, tool]
+---
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+# Webpack
 
 ## Definition
 Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then bundles every module your project needs into one or more bundles (usually JavaScript files) to be used by a browser.
@@ -251,30 +255,36 @@ Webpack is a powerful, flexible module bundler essential for modern web developm
 WEBPACK CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-  │  Entry      │───▶│  Resolve    │───▶│  Loaders    │───▶│  Plugins    │
-  │  Points     │    │  Modules    │    │  Transform  │    │  Optimize   │
-  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
-         │                                                       │
-         ▼                                                       ▼
-```
-```
-  module.exports = {
-    entry: {
-      main: './src/index.js',
-      admin: './src/admin/index.js'
-    },
-    output: {
-```
+CORE CONCEPTS:
+  • Entry:   starting point (./src/index.js)
+  • Output:  where bundles are emitted (./dist)
+  • Loaders: transform non-JS (babel-loader, css-loader)
+  • Plugins: broader build tasks (HtmlWebpackPlugin, MiniCssExtractPlugin)
+  • Mode:    development | production | none
+
+CODE SPLITTING:
+  • Entry points:    multi-entry builds
+  • Dynamic import:  import() returns Promise
+  • SplitChunks:     extract common deps to vendor chunk
+  • Route-based:     lazy load page components
+
+OPTIMIZATION:
+  • Tree shaking:    ESM only, "sideEffects": false in package.json
+  • Minification:    TerserPlugin (default in prod)
+  • Content hashing: output filename [contenthash]
+  • Compression:     CompressionPlugin (gzip/brotli)
+
+PERFORMANCE:
+  • cache: { type: 'filesystem' } for persistent cache
+  • thread-loader or swc-loader for parallel transforms
+  • splitChunks to avoid huge main bundle
+  • bundle-analyzer plugin to visualize
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Draw the dependency graph from entry to output
+  • Explain loader vs plugin responsibilities
+  • Discuss tree shaking limitations (CJS, side effects)
+  • Show how to configure code splitting by route
 ```
 ---
 

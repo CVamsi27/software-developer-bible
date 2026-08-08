@@ -1,6 +1,16 @@
+---
+section: Kubernetes
+category: DevOps
+tags: [concept]
+---
+
 # Kubernetes Services & Ingress
 
-[![Category: DevOps](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+## TL;DR
+
+Services provide stable virtual IPs and DNS for a set of Pods. Ingress exposes HTTP(S) routes with TLS, host/path matching, and traffic splitting.
+
+**Why it matters:** Tests ClusterIP vs NodePort vs LoadBalancer, headless services, session affinity, and Ingress controller choice (nginx, Traefik, Gateway API).
 
 ## Definition
 
@@ -618,8 +628,6 @@ kubectl run test --image=curlimages/curl --rm -it -- curl http://myapp:80
 kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 
 ```
-
----
 
 ---
 

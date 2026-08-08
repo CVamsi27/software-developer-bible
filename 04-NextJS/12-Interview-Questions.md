@@ -1,6 +1,18 @@
+---
+section: Next.js
+category: Frontend
+tags: [concept]
+---
+
 # Next.js Interview Questions — Comprehensive Guide
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+60 Next.js interview questions covering App Router, Server Components, Server Actions, caching, and deployment. Use as a self-test for the full Next.js 13+/14+ stack. Focus on Senior and FAANG-style questions.
+
+## Why It Matters
+
+Senior Next.js interviews test the modern App Router stack, not Pages Router. Know the difference between Server and Client Components, when streaming helps, and how the four caches interact. Surface knowledge of getServerSideProps (Pages Router) is no longer enough.
 
 ## Overview
 

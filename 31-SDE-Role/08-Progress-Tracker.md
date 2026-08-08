@@ -1,6 +1,11 @@
+---
+section: SDE Role
+category: Interview
+tags: [reference]
+---
+
 # 📊 SDE Interview Prep — Progress Tracker
 
-[![Category: Interview](https://img.shields.io/badge/category-Interview-1f7a8a)](.)
 
 > **Track your journey to landing your dream job!**
 >
@@ -608,6 +613,7 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
+
 - [Behavioral](../18-Behavioral/)
 - [Coding Patterns](../19-Coding-Patterns/)
 - [JavaScript](../01-JavaScript/)
@@ -615,8 +621,9 @@ INTERVIEW TIPS:
 - [System Design](../11-System-Design/)
 - [TypeScript](../02-TypeScript/)
 
+
 ## References & Learn More
 
-- [Official Documentation](https://developer.mozilla.org/en-US/)
 - [LeetCode](https://leetcode.com/)
+- [Official Documentation](https://developer.mozilla.org/en-US/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)

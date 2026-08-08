@@ -1,8 +1,8 @@
 # TypeScript — Index
 
-> **14 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, decorators, and interview questions.
+> **15 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, decorators, the `satisfies` operator, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -22,6 +22,7 @@
 | 12 | [Template Literal Types](12-Template-Literal-Types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types |
 | 13 | [Branded Types](13-Branded-Types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions |
 | 14 | [Declaration Files](14-Declaration-Files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives |
+| 15 | [The `satisfies` Operator](15-satisfies-Operator.md) | Type validation without widening, literal preservation, config objects, route tables |
 
 ---
 

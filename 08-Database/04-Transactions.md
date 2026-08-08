@@ -1,6 +1,14 @@
+---
+section: Database
+category: Backend
+tags: [concept]
+---
+
 # Database Transactions
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Transactions bundle multiple statements into a single ACID unit (atomic, consistent, isolated, durable). The senior test is choosing the right isolation level (read committed vs. repeatable read vs. serializable), using savepoints for partial rollback, and understanding 2PC limits.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

@@ -1,6 +1,14 @@
+---
+section: Design Patterns
+category: Architecture
+tags: [concept]
+---
+
 # Repository Pattern
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+> **TL;DR:** Repository abstracts data access behind a collection-like interface, so the domain layer never knows about SQL/ORM. The senior test is whether you can mock it in unit tests, swap the underlying store, and keep the domain free of `PrismaClient` / `EntityManager` leaks.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

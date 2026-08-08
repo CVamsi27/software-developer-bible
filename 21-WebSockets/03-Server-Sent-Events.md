@@ -1,6 +1,10 @@
-# Server-Sent Events (SSE)
+---
+section: WebSockets
+category: Real-Time
+tags: [concept, reference]
+---
 
-[![Category: Real-Time](https://img.shields.io/badge/category-Real--Time-4fc3f7)](.)
+# Server-Sent Events (SSE)
 
 ## Definition
 
@@ -1002,30 +1006,39 @@ Key considerations:
 SERVER-SENT EVENTS (SSE) CHEAT SHEET
 ============================================================
 
-COMMON PATTERNS:
-```
-  Use SSE when:                    Use WebSockets when:
-  - Server pushes updates          - Bidirectional communication needed
-  - No client → server messages    - Client sends frequent messages
-  - Simple implementation needed   - Binary data transfer required
-  - HTTP infrastructure available  - Low-latency critical
-  - Auto-reconnection needed       - Custom protocol needed
-```
-```
-  +-----------+     +-----------+     +-----------+     +-----------+
-  | CONNECTING| --> |   OPEN    | --> | CONNECTING| --> |   OPEN    |
-  +-----------+     +-----------+     +-----------+     +-----------+
-        |                |                 |                 |
-        | HTTP Request   | Receive data    | Auto-reconnect  | Resume
-        | sent           | from server     | on disconnect   | from last
-```
+PROTOCOL FORMAT:
+  • Content-Type: text/event-stream
+  • Cache-Control: no-cache, Connection: keep-alive
+  • X-Accel-Buffering: no (disables nginx buffering)
+  • Event format:  "id: <id>\nevent: <name>\ndata: <json>\n\n"
+  • Last-Event-ID header on reconnect for resumption
+
+BROWSER API:
+  • new EventSource(url)  -> opens connection
+  • .onmessage            -> default event handler
+  • .addEventListener('name', fn)  -> custom events
+  • .close()              -> terminate
+  • readyState: CONNECTING(0), OPEN(1), CLOSED(2)
+
+CHOOSE SSE WHEN:
+  • Server -> Client only (no client writes needed)
+  • HTTP infrastructure (proxies, CDNs) is sufficient
+  • Auto-reconnect with last-event-id is desired
+  • Text-only payloads (UTF-8)
+  • Simpler than WebSocket, plays well with HTTP/2
+
+CHOOSE WEBSOCKETS WHEN:
+  • Bidirectional communication required
+  • Binary data (ArrayBuffer, Blob)
+  • Sub-10ms latency needed
+  • Frequent client -> server messages
 
 INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
+  • Explain text/event-stream content type and message format
+  • Know the Last-Event-ID resumption pattern
+  • Discuss browser connection limits (6 per origin HTTP/1.1)
+  • Mention HTTP/2 multiplexing as an alternative
+  • Note nginx buffering and X-Accel-Buffering workaround
 ```
 ---
 

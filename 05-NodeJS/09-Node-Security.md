@@ -1,8 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Node.js Security
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
 
-Node.js applications face unique security challenges due to their asynchronous nature, event-driven architecture, and ecosystem of third-party packages. This covers authentication, input validation, secure configuration, dependency management, and common vulnerability prevention.
+Node security covers: input validation (Zod, Joi), injection prevention (parameterized queries, not string concat), authentication (bcrypt/argon2 for passwords, JWT for sessions), security headers (Helmet), rate limiting (express-rate-limit), dependency scanning (npm audit, Snyk), prototype pollution prevention, and CSRF protection.
+
+## Why It Matters
+
+Senior engineers treat security as a first-class concern: validate all input at the boundary, never trust client data, use parameterized queries (not template strings), set CSP headers, rate-limit public endpoints, and keep dependencies updated. They run `npm audit` in CI and use `npm ci` for reproducible installs.
 
 ## Definition
 
@@ -482,6 +492,8 @@ PROTOTYPE POLLUTION:
   Object.create(null)  // No prototype
   Avoid deep merge without checks
 ```
+
+---
 
 ## See Also
 - [Docker](../13-Docker/)

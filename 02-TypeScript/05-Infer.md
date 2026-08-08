@@ -1,6 +1,18 @@
+---
+section: TypeScript
+category: Core
+tags: [concept]
+---
+
 # Infer
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+`infer` declares a type variable to be extracted within the `true` branch of a conditional type. It captures a type from a generic position (e.g., the inner type of a Promise, the parameter types of a function). Powers `ReturnType`, `Parameters`, `Awaited`.
+
+## Why It Matters
+
+Senior engineers use `infer` for: custom `ReturnType`-like helpers, extracting types from complex generics (e.g., the value type of a deeply-nested Map), and building type-level parsers. The interview signal is being able to write a custom utility type using `infer`.
 
 ## Definition
 

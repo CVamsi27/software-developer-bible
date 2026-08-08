@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Garbage Collection
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+Modern JS engines (V8, SpiderMonkey) use generational GC: a small young generation collected frequently with minor GCs, and a large old generation collected less often with mark-and-sweep/mark-and-compact. V8's Orinoco uses parallel, incremental, and concurrent techniques to minimize pause times.
+
+## Why It Matters
+
+Senior engineers reason about allocation rate (allocations per second triggers minor GC), short-lived vs long-lived objects (young vs old gen), and use `WeakRef`/`FinalizationRegistry` for caches that shouldn't pin objects. Knowing why long-running servers need occasional restarts informs architecture.
 
 ## Definition
 

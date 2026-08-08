@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [concept]
+---
+
 # Modules
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+ESM (`import`/`export`) is the standard, static-analyzable module system. CommonJS (`require`/`module.exports`) is the legacy Node format. ESM supports tree-shaking, top-level await, and is async to load. CJS is sync, dynamic, and bundles naturally with Node.
+
+## Why It Matters
+
+Senior engineers know: ESM is stricter (top-level `this` is undefined, hoisting differs, circular imports can return undefined exports), and dual-package projects need `package.json` `exports` field, `.mjs`/`.cjs` extensions, and careful handling of `__dirname` (undefined in ESM).
 
 ## Definition
 

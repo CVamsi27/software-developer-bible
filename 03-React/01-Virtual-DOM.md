@@ -1,6 +1,18 @@
+---
+section: React
+category: Frontend
+tags: [concept]
+---
+
 # Virtual DOM
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+## TL;DR
+
+The Virtual DOM is an in-memory JS representation of the UI. React diffs new vs. old VDOM trees, computes minimal mutations, and applies them to the real DOM in a single commit. It's a reconciliation layer that turns O(n³) naive diffing into O(n) heuristic diffing.
+
+## Why It Matters
+
+Senior engineers know VDOM is not magic — it's a tradeoff. The diff algorithm relies on heuristics (type matching, stable keys) that fail when you violate them. Common interview question: why do keys matter, and what happens when you use array indices as keys?
 
 ## Definition
 

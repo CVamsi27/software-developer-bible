@@ -1,6 +1,10 @@
-# GraphQL Overview
+---
+section: GraphQL
+category: Backend
+tags: [concept, overview]
+---
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+# GraphQL Overview
 
 ## Definition
 
@@ -14,6 +18,14 @@ GraphQL = Query Language + Type System + Execution Engine + Introspection
 Unlike REST, which exposes data through multiple endpoints with fixed response structures, GraphQL exposes a **single endpoint** where clients specify exactly what data they want.
 
 ---
+
+## TL;DR
+
+GraphQL is a **typed query language + server runtime** where the client specifies the exact shape of data it needs in a single request. The server validates the query against a **strongly-typed schema** and returns only the requested fields. Compared to REST, it eliminates over-fetching, under-fetching, and the need for multiple round-trips. The trade-off: GraphQL shifts complexity to the server (resolver chains, N+1, query depth control) and demands a coherent **schema governance** strategy.
+
+## Why it matters
+
+Senior interviews test whether you understand **when NOT to use GraphQL** — it's not a REST replacement for every API. Strong candidates discuss the **"GraphQL honeymoon" trap**: easy to adopt, hard to scale (N+1, query cost, caching) and hard to govern (schema drift, breaking changes). You should know the **Apollo / Relay / urql** server/client landscape, the **schema-first vs. code-first** trade-off, **federation** for splitting monoliths, and the persistent **caching** problem (REST has HTTP caching; GraphQL mostly relies on normalized client caches like Apollo).
 
 ## Why Do We Need It?
 

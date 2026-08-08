@@ -1,8 +1,18 @@
+---
+section: Node.js
+category: Backend
+tags: [concept]
+---
+
 # Process & Environment
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+## TL;DR
 
-The `process` object is a global Node.js API that provides information about the current Node.js process and control over its execution. It gives access to environment variables, command-line arguments, process lifecycle events, system information, and process control methods.
+The `process` global provides runtime control: `process.env` (env vars), `process.argv` (CLI args), `process.cwd()` (working dir), `process.exit()` (termination), `process.on(signal)` (graceful shutdown). Env vars are how 12-factor apps receive config.
+
+## Why It Matters
+
+Senior engineers use `process.on('SIGTERM')` for graceful shutdown (finish in-flight requests, close DB pool, exit), validate required env vars at startup, use `.env` files for local dev with `dotenv`, and never log secrets. They know the difference between `process.exit(0)` (clean) and `process.exit(1)` (error).
 
 ## Definition
 
@@ -492,6 +502,8 @@ CONTROL:
   process.title                 // Process name
   process.hrtime.bigint()       // High-res time
 ```
+
+---
 
 ## See Also
 - [Docker](../13-Docker/)

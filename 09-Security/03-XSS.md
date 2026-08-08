@@ -1,6 +1,14 @@
-# Cross-Site Scripting (XSS)
+---
+section: Security
+category: Architecture
+tags: [concept]
+---
 
-[![Category: Architecture](https://img.shields.io/badge/category-Architecture-800080)](.)
+# XSS (Cross-Site Scripting)
+
+> **TL;DR:** XSS is the injection of untrusted script into a page — stored (persisted in DB), reflected (in URL), or DOM-based (client-side only). Defense is layered: contextual output encoding, CSP, HttpOnly cookies, and framework auto-escaping as a baseline.
+>
+> **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

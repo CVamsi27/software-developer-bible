@@ -1,365 +1,330 @@
+---
+section: Animation
+category: Frontend
+tags: [interview-questions, practice]
+---
+
 # Animation Interview Questions
 
-[![Category: Frontend](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
+> 30+ curated questions on animation in web development — from CSS basics to React animation patterns, performance, and accessibility.
 
 ## Definition
-This comprehensive guide covers 20 interview questions on animation in web development, from CSS basics to advanced React animation patterns.
 
-## Why Do We Need It?
+This guide covers the questions a senior full-stack engineer should be able to answer about web animation — CSS transitions/keyframes, Web Animations API, React animation libraries, performance, and accessibility. Grouped by difficulty.
 
-- **Technical Interviews**: Animation is a key UX skill
-- **Performance**: Animations impact user experience
-- **Accessibility**: Animations must be inclusive
-- **Libraries**: Understanding tool options
+## Why It Matters (TL;DR)
 
-## How It Works
+- **UX skill** — animation is a key differentiator in product quality
+- **Performance** — animations impact perceived and actual performance
+- **Accessibility** — must be inclusive (vestibular disorders, screen readers)
+- **Library fluency** — interviewers expect knowledge of Framer Motion, GSAP, etc.
+
+## Answer Framework
 
 ```text
-Interview Question Categories:
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
-│  │    CSS      │  │  React      │  │      Advanced           │ │
-│  │             │  │             │  │                         │ │
-│  │ • Transitions│  │ • Framer    │  │ • Performance           │ │
-│  │ • Keyframes │  │ • React     │  │ • Accessibility         │ │
-│  │ • Transforms│  │   Spring    │  │ • Architecture          │ │
-│  └─────────────┘  └─────────────┘  └─────────────────────────┘ │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-
+ANSWER STRUCTURE:
+  1. Definition        (CSS / WAAPI / library)
+  2. How it works      (compositor, transform/opacity)
+  3. Implementation    (code example)
+  4. Performance       (GPU vs CPU, jank, will-change)
+  5. Accessibility     (prefers-reduced-motion, focus)
 ```
 
-## Code Examples
+## Beginner
 
-### Common Interview Answer Patterns
+**Q1: What is the difference between CSS transitions and `@keyframes` animations?**
 
-```typescript
-// Pattern 1: Concept → Implementation → Performance
-function answerPattern(concept: string): string {
-  return `
+A: A **transition** animates between two states (start → end) when something changes (e.g., `:hover`, class change, JS). A **`@keyframes`** animation is multi-step, can loop, delay, and play without any state change. Transitions are for two-state reactions; `@keyframes` are for declarative sequences.
 
-    1. Concept: What ${concept} is
+**Q2: What is the `transform` property and which values are GPU-accelerated?**
 
-    2. Implementation: How to do it
+A: `transform` applies 2D/3D transformations to an element: `translate`, `scale`, `rotate`, `skew`, `matrix`. All `transform` values are GPU-accelerated — animated on the compositor thread, no layout, no paint. This is the foundation of performant web animation.
 
-    3. Performance: Optimization tips
+**Q3: How do you create a hover effect?**
 
-    4. Accessibility: Considerations
-  `;
-}
-
-// Pattern 2: Problem → Solution → Trade-offs
-function solutionPattern(problem: string): string {
-  return `
-
-    1. Problem: ${problem}
-
-    2. Solution: Approach taken
-
-    3. Trade-offs: Benefits vs limitations
-  `;
-}
-
-```
-
-## Interview Questions
-
-### Beginner (5)
-
-**Q1: What is the difference between CSS transitions and keyframe animations?**
-
-- **Answer**: Transitions animate between two states (from → to) with limited control. Keyframe animations can have multiple states, loop, delay, and have more control over the animation sequence.
-
-**Q2: What is the transform property in CSS?**
-
-- **Answer**: A CSS property for 2D/3D transformations including translate (position), scale (size), rotate (rotation), and skew (distortion). It's GPU-accelerated for better performance.
-
-**Q3: How do you create a simple hover effect?**
-
-- **Answer**: Use CSS transition with :hover pseudo-class:
+A: Use `transition` to interpolate a property and change it on `:hover`:
 
 ```css
 .button {
-  transition: transform 0.3s ease;
+  background: blue;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 .button:hover {
+  background: darkblue;
   transform: translateY(-2px);
 }
-
 ```
 
 **Q4: What is hardware acceleration?**
 
-- **Answer**: Using the GPU for animations instead of CPU. Achieved by animating transform and opacity properties, which are composited on the GPU.
+A: Using the GPU instead of the CPU for rendering. Achieved by animating `transform` and `opacity` (composited on the GPU) instead of layout-triggering properties (`width`, `top`, `margin`). The result: smoother animations, less main-thread work.
 
-**Q5: What is the will-change property?**
+**Q5: What is `will-change`?**
 
-- **Answer**: A CSS property that hints to the browser about upcoming animations, allowing it to optimize. Use sparingly as it can consume GPU memory.
+A: A CSS hint that tells the browser which properties will animate, so it can pre-optimize (create a compositor layer, allocate GPU memory). Use sparingly — overuse consumes GPU memory and slows down the page. Remove after the animation completes.
 
-### Intermediate (5)
+**Q6: What are CSS animation properties?**
 
-**Q6: How do you create a CSS keyframe animation?**
+A: `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, `animation-play-state`. Combined into the shorthand: `animation: name duration timing delay iter dir fill state`.
 
-- **Answer**: Use @keyframes rule to define animation states, then apply with animation property:
+## Intermediate
+
+**Q7: How do you create a CSS keyframe animation?**
+
+A: Define keyframes with `@keyframes`, then apply via `animation` property:
 
 ```css
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
-.animated {
-  animation: fadeIn 0.5s ease-out;
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
-
 ```
 
-**Q7: What is the animation-fill-mode property?**
+**Q8: What is `animation-fill-mode`?**
 
-- **Answer**: Defines how styles apply before and after animation:
-- `forwards`: Retains final state
-- `backwards`: Applies initial state during delay
-- `both`: Applies both
+A: Defines how styles apply before and after the animation:
+- `none` — element reverts to its base state when not animating
+- `forwards` — element retains the final state after the animation
+- `backwards` — element gets the first keyframe styles during delay
+- `both` — applies both forwards and backwards
 
-**Q8: How do you optimize CSS animations for performance?**
+**Q9: How do you optimize CSS animations for performance?**
 
-- **Answer**:
-  - Use transform/opacity properties
-  - Add will-change for complex animations
-  - Avoid animating layout properties (width, height, margin)
-  - Respect prefers-reduced-motion
+A: (1) Animate `transform` and `opacity` only (GPU). (2) Use `will-change` sparingly. (3) Avoid animating layout-triggering properties (`width`, `height`, `top`, `left`, `margin`, `padding`, `box-shadow`). (4) Use `contain: layout` or `contain: paint` to scope the reflow. (5) Respect `prefers-reduced-motion`.
 
-**Q9: What is the FLIP technique?**
+**Q10: What is the FLIP technique?**
 
-- **Answer**: First, Last, Invert, Play technique for smooth layout animations. Capture initial/final states, invert to initial, then animate to final.
+A: First, Last, Invert, Play — a technique for animating between two layout states smoothly: (1) capture initial position (`First`), (2) apply the new layout, capture final position (`Last`), (3) compute the delta, apply `transform: translate(dx, dy)` to revert to the initial position (`Invert`), (4) remove the transform with a transition to animate to the natural position (`Play`). Framer Motion's `layout` prop does this automatically.
 
-**Q10: How do you handle animations in responsive design?**
+**Q11: How do you handle animations in responsive design?**
 
-- **Answer**: Use media queries to adjust animations for different screen sizes, and respect prefers-reduced-motion for accessibility.
+A: (1) Use `clamp()` for fluid sizing in keyframes. (2) Use media queries to reduce animation distance/duration on small screens. (3) Always respect `prefers-reduced-motion`. (4) Test on touch devices — gestures change animation needs.
 
-### Senior (10)
+**Q12: What is the Web Animations API (WAAPI)?**
 
-**Q11: What is Framer Motion and why use it?**
+A: A browser-native JavaScript API for controlling animations: `element.animate(keyframes, options)` returns an `Animation` object with `.play()`, `.pause()`, `.reverse()`, `.cancel()`, `.finish()`, `.currentTime`. Combines the power of CSS animations with JS control, runs on the compositor thread for 60fps.
 
-- **Answer**: A React animation library with declarative API, gestures, layout animations, and AnimatePresence. Use for complex React animations with good performance.
+## Senior
 
-**Q12: How does Framer Motion optimize performance?**
+**Q13: What is Framer Motion and when do you reach for it?**
 
-- **Answer**: Uses GPU acceleration (transform/opacity), automatic will-change, batch updates, and optimized re-renders with minimal React overhead.
+A: A React animation library with declarative API (`<motion.div>`), built-in gestures (`whileHover`, `whileTap`, `drag`), `<AnimatePresence>` for exit animations, `layout` prop for FLIP transitions, `useScroll` for scroll-linked animations. Reach for it when: React app, complex state-driven animations, gesture support needed, layout transitions, or scroll-linked motion.
 
-**Q13: What are the differences between Framer Motion and React Spring?**
+**Q14: How does Framer Motion achieve good performance?**
 
-- **Answer**: Both are animation libraries; Framer Motion has simpler API, better gesture support, and layout animations. React Spring is more physics-based with spring animations.
+A: (1) Animates `transform` and `opacity` by default — GPU-accelerated. (2) Style projection — only the changed style updates, no React re-render. (3) `useMotionValue` lets you read values without re-rendering. (4) Hardware acceleration with `will-change` applied automatically. (5) RAF batching for smooth updates.
 
-**Q14: How do you create page transitions in React?**
+**Q15: Framer Motion vs React Spring?**
 
-- **Answer**: Use AnimatePresence with route changes:
+A:
+- **Framer Motion** — simpler API, layout animations, gestures, declarative. Good default for React.
+- **React Spring** — physics-based springs, more natural motion, supports React Native. Better for organic motion; harder to learn.
+
+**Q16: How do you implement page transitions in React?**
+
+A: Use `<AnimatePresence mode="wait">` with a `key` on the route element:
 
 ```typescript
 <AnimatePresence mode="wait">
   <motion.div
-    key={location.pathname}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
+    key={pathname}
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: 20 }}
+    transition={{ duration: 0.25 }}
   >
     {children}
   </motion.div>
 </AnimatePresence>
-
 ```
 
-**Q15: How do you handle animation accessibility?**
+In Next.js App Router, wrap in a client component and place in the root layout. With view transitions (modern browsers), you can also use the View Transitions API.
 
-- **Answer**:
-  - Check prefers-reduced-motion
-  - Provide alternatives for vestibular disorders
-  - Avoid flashing content
-  - Allow users to disable animations
+**Q17: How do you make animations accessible?**
 
-**Q16: What causes animation jank and how do you fix it?**
+A: (1) Respect `prefers-reduced-motion: reduce` — disable or shorten animations. (2) Don't animate essential UI (focus rings, form validation feedback). (3) Avoid flashing > 3 times per second (photosensitive epilepsy). (4) Provide a way to pause long animations. (5) Keep transitions short (< 400ms for UI). (6) Ensure animations don't trap focus or block keyboard nav.
 
-- **Answer**:
-  - Animating layout properties → Use transform/opacity
-  - Heavy JavaScript → Offload to Web Workers
-  - Excessive DOM manipulation → Batch updates
-  - Main thread blocking → Optimize code
+**Q18: What causes animation jank and how do you fix it?**
 
-**Q17: How do you create scroll-triggered animations?**
+A: **Causes**: (1) Animating layout-triggering properties. (2) Long-running JS competing for main thread. (3) Excessive DOM manipulation. (4) Large images / videos. **Fixes**: (1) Animate transform/opacity only. (2) Use `requestAnimationFrame` or offload to Web Workers. (3) Virtualize long lists. (4) Use `content-visibility: auto` for off-screen content. (5) Reduce animation count.
 
-- **Answer**: Use Intersection Observer API, or animation libraries like Framer Motion with whileInView prop.
+**Q19: How do you create scroll-triggered animations?**
 
-**Q18: How do you test animations?**
+A: Three options: (1) **Intersection Observer** — observe an element, animate when it enters the viewport. (2) **Scroll event + `requestAnimationFrame`** — manual, throttled. (3) **CSS Scroll-Driven Animations** — `@keyframes` tied to `scroll()` / `view()` progress. (4) **Framer Motion** `useScroll` + `useTransform` — declarative scroll-linked values. (5) **GSAP ScrollTrigger** — full-featured, pin / scrub / batch.
 
-- **Answer**:
-  - Visual regression testing
-  - Manual testing with real devices
-  - Automation with Playwright/Cypress
-  - Performance measurement
+**Q20: How do you test animations?**
 
-**Q19: How do you handle animations in SSR?**
+A: (1) Visual regression — Playwright screenshots before/after. (2) Frame rate measurement — `requestAnimationFrame` counter, `Performance API`. (3) Manual testing on real devices (especially low-end Android). (4) E2E test: assert on final state. (5) Storybook for visual review. (6) Performance budget in CI (Lighthouse).
 
-- **Answer**: CSS animations work in SSR. JavaScript animations (Framer Motion) need client-side hydration with useEffect or dynamic imports.
+**Q21: How do you handle animations in SSR (Next.js, Remix)?**
 
-**Q20: How do you create complex animation sequences?**
+A: (1) CSS animations work in SSR — they're just styles. (2) JS animation libraries (Framer Motion) need client-side hydration — use `'use client'` directive. (3) Use `dynamic()` to lazy-load heavy animation code. (4) The View Transitions API is browser-native — works in SSR-rendered pages. (5) Disable initial animations for users with `prefers-reduced-motion`.
 
-- **Answer**: Use animation-delay, JavaScript animation libraries (Framer Motion, GSAP), or the FLIP technique for layout animations.
+**Q22: How do you animate complex sequences?**
 
-### FAANG-style (5)
+A: Three options: (1) **`@keyframes` with `animation-delay`** — declarative, no JS. (2) **Framer Motion variants + `staggerChildren`** — declarative for React. (3) **GSAP timeline** — imperative, very flexible, scrub / pause / reverse / pin. (4) **Web Animations API** — `animation.commitStyles()` for sequenced triggers.
 
-**Q21: Design an animation system for a design system**
+## FAANG-style
 
-- **Answer**:
-  - Animation tokens (duration, easing)
-  - Transition utilities
-  - Keyframe library
-  - Performance budgets
-  - Accessibility compliance
-  - Documentation
+**Q23: Design an animation system for a design system.**
 
-**Q22: How would you optimize animations for low-end devices?**
+A:
+- **Tokens** — durations (instant, fast, normal, slow), easings (ease-out, ease-in-out), distances (small, medium, large) as CSS variables
+- **Primitives** — `<Transition>` component, `<Fade>`, `<Slide>`, `<Scale>` wrappers
+- **Variants** — defined states (idle, hover, focus, active, disabled) per component
+- **Utilities** — `useReducedMotion()` hook, `useAnimate()` for imperative
+- **Performance budgets** — max 200ms for UI, 400ms for page transitions
+- **Accessibility** — `prefers-reduced-motion` always respected
+- **Documentation** — Storybook for each state
+- **Testing** — visual regression + performance monitoring
 
-- **Answer**:
-  - Simplify animations
-  - Reduce DOM changes
-  - Use will-change sparingly
-  - Provide fallbacks
-  - Test on real devices
+**Q24: How would you optimize animations for low-end devices?**
 
-**Q23: Explain animation performance monitoring**
+A: (1) Detect via `navigator.hardwareConcurrency` (≤ 2 cores = low-end) or `navigator.deviceMemory` (≤ 2GB). (2) Reduce animation count and duration. (3) Replace `box-shadow` with `border` or `outline`. (4) Skip `filter` effects. (5) Use `content-visibility: auto` for off-screen. (6) Disable parallax and complex transforms. (7) Test on a $200 Android with throttled CPU.
 
-- **Answer**:
-  - Frame rate measurement (requestAnimationFrame)
-  - Layout thrashing detection
-  - GPU usage monitoring
-  - User experience metrics (First Paint, First Contentful Paint)
+**Q25: Explain animation performance monitoring.**
 
-**Q24: How do you handle animations in micro-frontends?**
+A:
+- **Frame rate** — measure with `requestAnimationFrame` loop; target 60fps (16.6ms per frame). Tools: Chrome DevTools Performance panel, `PerformanceObserver` API.
+- **Long Tasks** — `PerformanceObserver({ entryTypes: ['longtask'] })` catches tasks > 50ms.
+- **Core Web Vitals** — INP (Interaction to Next Paint) measures responsiveness, including animation delays.
+- **Frame budget** — 16.6ms total per frame for 60fps. Animation work + JS work must fit.
+- **Lighthouse** — measures animation-heavy pages, flags jank.
 
-- **Answer**:
-  - Consistent animation tokens
-  - Performance budgets
-  - Shared animation library
-  - Independent animation systems
+**Q26: How do you handle animations in micro-frontends?**
 
-**Q25: Design a page transition system**
+A: (1) **Consistent animation tokens** — share CSS variables across micro-frontends. (2) **Shared animation library** — single dependency to avoid bundle bloat and version conflicts. (3) **Module Federation** — load the animation library once, share. (4) **Style isolation** — scoped CSS or shadow DOM to prevent animation leakage. (5) **Performance budget** — per micro-frontend; total page must stay under budget.
 
-- **Answer**:
-  - Route-based transitions
-  - Loading states
-  - Error states
-  - Accessibility
-  - Performance optimization
+**Q27: Design a page transition system for a multi-page app.**
 
-### Follow-ups (5)
+A:
+- **Trigger** — `usePathname()` or router event
+- **Library** — Framer Motion `<AnimatePresence>` (React), View Transitions API (vanilla)
+- **Modes** — `wait` (one at a time), `popLayout`, `sync`
+- **Variants** — `initial`, `animate`, `exit` per page
+- **Loading state** — animate a skeleton between route changes
+- **Error boundary** — cancel transition, show error inline
+- **Reduced motion** — instant transition, no animation
+- **A11y** — `aria-live="polite"` on the transition region so screen readers announce the change
 
-**Q26: How do you handle animations in React Server Components?**
+## Follow-ups
 
-- **Answer**: CSS animations work in RSC. JavaScript animations need client components with 'use client' directive.
+**Q28: How do you handle animations in React Server Components?**
 
-**Q27: How do you handle animations with third-party libraries?**
+A: (1) CSS animations work in RSC — they're just CSS. (2) JS animation libraries (Framer Motion) need client components (`'use client'`). (3) Wrap motion components in a client component and import into the server tree. (4) Initial state can be passed from server; runtime animations are client-side.
 
-- **Answer**: Use CSS-in-JS libraries that support animations, or use animation libraries like Framer Motion for React integration.
+**Q29: How do you handle animations with third-party libraries?**
 
-**Q28: How do you handle animation performance at scale?**
+A: (1) Check if they expose `data-` attributes or CSS classes for animation hooks. (2) Wrap them in a client component with Framer Motion. (3) Use `useReducedMotion` to disable for accessibility. (4) Test that the library's internal animations also respect the motion preference (not all do).
 
-- **Answer**: Automated testing, performance budgets, monitoring, and optimization with metrics.
+**Q30: How do you handle animation performance at scale?**
 
-**Q29: How do you handle animations in different browsers?**
+A: (1) **Performance budgets** in CI (Lighthouse CI) — fail the build if budgets exceeded. (2) **Real User Monitoring** (RUM) — track INP, frame rate, jank in production. (3) **Animation inventory** — document all animations with rationale and performance impact. (4) **Code review checklist** — every animation PR must show: GPU-only properties, will-change usage, reduced-motion fallback, performance test.
 
-- **Answer**: Use vendor prefixes, feature detection, and fallbacks. Test in multiple browsers.
+**Q31: How do you handle animations in different browsers?**
 
-**Q30: How do you handle animations with content changes?**
+A: (1) Vendor prefixes (rarely needed in 2026 — Autoprefixer handles it). (2) Feature detect with `@supports`. (3) Fallback to `transition` for browsers without `@keyframes`. (4) Test in Safari, Firefox, Chrome, Edge. (5) Use `autoprefixer` PostCSS plugin in your build.
 
-- **Answer**: Use layout animations, FLIP technique, or animation libraries for smooth transitions.
+**Q32: How do you handle animations with content changes?**
 
-## Best Practices for Interview Answers
+A: (1) Use `layout` (Framer Motion) for FLIP-style layout transitions. (2) Use `useTransition` (React 19) to keep the old UI while the new renders. (3) Animate list reorders with `LayoutGroup`. (4) Use `key` changes to trigger AnimatePresence exit/enter. (5) View Transitions API for cross-document transitions.
 
-### Structure Your Answer
-
-```text
-
-1. Definition (1-2 sentences)
-
-2. How it works (2-3 sentences)
-
-3. Implementation (code example)
-
-4. Performance considerations
-
-5. Accessibility considerations
-
-```
-
-### Key Concepts to Master
+## Key Concepts to Master
 
 | Concept | Key Points |
 |---------|------------|
-| CSS Transitions | Two-state animations, simple API |
-| Keyframe Animations | Multiple states, complex sequences |
-| Transform | GPU-accelerated properties |
-| will-change | Browser optimization hint |
-| Framer Motion | React animation library |
-| Reduced Motion | Accessibility consideration |
-| Performance | GPU acceleration, avoid layout thrashing |
+| CSS Transitions | Two-state, triggered by class / pseudo / JS |
+| `@keyframes` | Multi-step, loops, delays |
+| Transform / Opacity | GPU-accelerated; always prefer |
+| `will-change` | Hint, not a free pass; use sparingly |
+| `prefers-reduced-motion` | Accessibility — always handle |
+| Framer Motion | React declarative; `AnimatePresence`, `layout`, `useScroll` |
+| GSAP | Imperative timelines, ScrollTrigger, robust |
+| React Spring | Physics-based, natural motion |
+| Web Animations API | Native JS API, compositor-thread |
+| View Transitions API | Cross-document transitions (modern) |
+| Scroll-Driven Animations | CSS-only, `animation-timeline: scroll()` |
 
-### Common Follow-up Questions
+## Common Follow-up Questions
 
 - "How would you implement this in production?"
 - "What are the performance implications?"
 - "How do you handle accessibility?"
 - "What are the alternatives?"
 - "How do you test this?"
+- "How do you handle reduced motion?"
 
 ## Summary
 
-Animation is a critical skill for creating engaging user experiences. Master CSS animations, React animation libraries, performance optimization, and accessibility considerations.
+- Animation is a senior-level UX skill — know CSS, JS APIs, and React libraries
+- Always animate `transform` and `opacity` for 60fps
+- Respect `prefers-reduced-motion` for accessibility
+- Modern stack: Framer Motion for React, GSAP for complex sequences, View Transitions for native cross-page
+- Test on low-end devices, monitor INP in production
 
 ---
 
 ## Cheat Sheet
+
 ```text
-ANIMATION INTERVIEW QUESTIONS CHEAT SHEET
-============================================================
+ANIMATION INTERVIEW CHEAT SHEET
+═══════════════════════════════════════════════════════════════
 
-COMMON PATTERNS:
-```
-  Interview Question Categories:
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                                                                 │
-  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐ │
-  │  │    CSS      │  │  React      │  │      Advanced           │ │
-  │  │             │  │             │  │                         │ │
-```
-```
-  function answerPattern(concept: string): string {
-    return `
-      1. Concept: What ${concept} is
-      2. Implementation: How to do it
-      3. Performance: Optimization tips
-      4. Accessibility: Considerations
+ANSWER FRAMEWORK:
+  1. CSS / WAAPI / library
+  2. Compositor / transform / opacity
+  3. Implementation (CSS or code)
+  4. Performance (GPU, will-change, jank)
+  5. Accessibility (prefers-reduced-motion)
+
+CHOOSE BY USE CASE:
+  Hover / focus / simple state    → CSS transition
+  Multi-step sequence             → @keyframes
+  Gestures (drag, swipe)          → Framer Motion / GSAP
+  Layout changes                  → Framer Motion layout (FLIP)
+  Page transitions                → AnimatePresence / View Transitions
+  Scroll-linked                   → useScroll / ScrollTrigger / @scroll-timeline
+  Physics-based                   → React Spring
+
+PERFORMANCE RULES:
+  • Animate transform / opacity only
+  • will-change sparingly, remove after
+  • Respect prefers-reduced-motion
+  • Avoid animating during heavy JS
+
+INTERVIEW WINNERS:
+  - Mention FLIP technique (Framer Motion's `layout` prop)
+  - Bring up View Transitions API for cross-document
+  - Discuss prefers-reduced-motion handling
+  - Reference CSS scroll-driven animations (animation-timeline)
+  - Talk about GPU vs CPU properties
 ```
 
-INTERVIEW TIPS:
-  - Understand the core concepts and trade-offs
-  - Be ready to explain with real-world examples
-  - Discuss performance implications and best practices
-  - Show awareness of common pitfalls
-
-```
 ---
 
 ## See Also
+
+- [Accessibility](../25-Accessibility/)
+- [CSS Animations](02-CSS-Animations.md)
+- [Framer Motion](01-Framer-Motion.md)
 - [GSAP](05-GSAP.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
 - [React](../03-React/)
 - [React Spring](06-React-Spring.md)
+- [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
 - [Web Animations API](04-Web-Animations-API.md)
+
 
 ## References & Learn More
 
-- [MDN CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Spring](https://www.react-spring.io/)
 - [CSS Triggers](https://csstriggers.com/)
-- [Animation Performance](https://web.dev/animations/)
+- [Framer Motion](https://motion.dev/)
+- [GSAP](https://gsap.com/)
+- [MDN CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
+- [MDN CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions)
+- [MDN Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
+- [View Transitions API (Chrome)](https://developer.chrome.com/docs/web-platform/view-transitions/)
+- [web.dev Animations Guide](https://web.dev/animations/)

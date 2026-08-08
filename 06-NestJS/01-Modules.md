@@ -1,6 +1,14 @@
+---
+section: NestJS
+category: Backend
+tags: [concept]
+---
+
 # NestJS Modules
 
-[![Category: Backend](https://img.shields.io/badge/category-Backend-2ea44f)](.)
+> **TL;DR:** Modules are the unit of organization in NestJS — they group providers, controllers, and exports behind a clear boundary. Use them to enforce encapsulation, manage DI scope, and split a large app into independently testable, lazy-loadable feature slices.
+>
+> **Why it matters:** This is a Backend interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
 
 ## Definition
 

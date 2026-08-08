@@ -1,8 +1,8 @@
 # Next.js — Index
 
-> **15 files** — App Router, rendering strategies, server components, caching, streaming, ISR, authentication, static exports, and interview questions.
+> **16 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -19,10 +19,11 @@
 | 09 | [Caching](09-Caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate |
 | 10 | [Streaming](10-Streaming.md) | Streaming SSR, Suspense boundaries, loading UI |
 | 11 | [Image Optimization](11-Image-Optimization.md) | next/image, lazy loading, responsive images |
-| 12 | [Interview Questions](12-Interview-Questions.md) | 50+ curated questions with answers |
+| 12 | [Interview Questions](12-Interview-Questions.md) | 60+ curated questions with answers |
 | 13 | [Authentication](13-Authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC |
 | 14 | [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md) | Stale-while-revalidate, on-demand revalidation, cache tags, generateStaticParams, fallback strategies |
 | 15 | [Static Exports](15-Static-Exports.md) | Static export config, generateStaticParams, client-side data, deployment, hosting comparison |
+| 16 | [Data Fetching Patterns](16-Data-Fetching-Patterns.md) | Server Component fetch, unstable_cache, Server Actions, React Query, Suspense, parallel fetches |
 
 ---
 

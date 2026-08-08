@@ -1,6 +1,18 @@
+---
+section: JavaScript
+category: Core
+tags: [interview-questions, reference]
+---
+
 # JavaScript Interview Questions
 
-[![Category: Core](https://img.shields.io/badge/category-Core-blueviolet)](.)
+## TL;DR
+
+This file collects 50+ JavaScript interview questions grouped by difficulty (Beginner, Intermediate, Senior, FAANG-style). Use it as a self-test: cover the answer to each before flipping the card. Focus on Senior and FAANG-style questions — that's where the bar is.
+
+## Why It Matters
+
+Senior JavaScript interviews test deep understanding, not surface recall. Knowing the difference between "this is a closure" and being able to trace the call stack, predict the output of async code, or explain why `Promise.all` is preferred over sequential awaits is what separates senior from mid-level.
 
 ## 50 Most Asked JavaScript Interview Questions
 

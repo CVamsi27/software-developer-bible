@@ -1,0 +1,255 @@
+---
+section: Abroad Full-Stack Lane
+category: Interview
+tags: [patterns, dsa, defensive, reference]
+---
+
+# Tech Screen Patterns — Defensive DSA for EU Mid-Stage
+
+> **You do NOT need 500 LeetCode problems for this lane.** 30-40 mediums across 6 patterns is enough. The phone screen at n8n / SumUp / Scalable / sennder is 1-2 mediums in 30 min each, not 4 FAANG-hards in 45 min. This file is the cheat sheet for what to drill.
+
+## TL;DR
+
+- **6 patterns, 30-40 problems, 2 weeks at 1-2 problems/day = done**
+- **No hard DP, no segment trees, no bitmask, no monotonic stack** — those are FAANG, not EU mid-stage
+- **You need to:** think out loud, debug your own code, ask questions, handle edge cases
+- **Time budget per problem:** 25-30 min, then look at the answer
+
+The bible's [70-Interview-Toolkit/19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
+
+---
+
+## Why it matters
+
+At FAANG, the phone screen is a hard algo problem and you have 45 min. At EU mid-stage, the phone screen is **1-2 mediums in 30 min each** — more about clear thinking than algorithm optimization.
+
+The 6 patterns below cover 90%+ of EU mid-stage phone screens. Skip the rest.
+
+---
+
+## The 6 Patterns (drill these)
+
+### 1. HashMap / HashSet (8-10 problems)
+
+**What it tests:** Can you use the right data structure for O(1) lookup?
+
+**Signature problems:**
+- Two Sum (and 3-Sum, 4-Sum variants)
+- Longest substring without repeating characters
+- Group anagrams
+- Top K frequent elements
+- Valid anagram / palindrome permutations
+- Subarray sum equals K
+
+**Drill:** 30 min per problem, 8-10 problems, 4-5 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../70-Interview-Toolkit/19-Coding-Patterns/INDEX.md)
+
+---
+
+### 2. Sliding Window (6-8 problems)
+
+**What it tests:** Can you maintain a window of contiguous elements efficiently?
+
+**Signature problems:**
+- Maximum sum subarray of size K
+- Longest substring with K distinct characters
+- Minimum window substring
+- Permutation in string
+- Best time to buy/sell stock
+- Longest repeating character replacement
+
+**Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../70-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md)
+
+---
+
+### 3. Two Pointers (5-7 problems)
+
+**What it tests:** Can you use two indices to traverse an array efficiently?
+
+**Signature problems:**
+- Two Sum II (sorted input)
+- 3-Sum, 3-Sum Closest
+- Container with most water
+- Trapping rain water
+- Remove duplicates from sorted array
+- Valid palindrome
+
+**Drill:** 30 min per problem, 5-7 problems, 2-3 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../70-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md)
+
+---
+
+### 4. BFS / DFS on Trees and Graphs (6-8 problems)
+
+**What it tests:** Can you traverse a graph and find a path?
+
+**Signature problems:**
+- Binary tree level order traversal
+- Number of islands
+- Word ladder
+- Course schedule (topological sort)
+- Rotting oranges (multi-source BFS)
+- Tree path sum
+- Connected components
+- Clone graph
+
+**Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../70-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md) and [10-Topological-Sort.md](../../70-Interview-Toolkit/19-Coding-Patterns/10-Topological-Sort.md)
+
+---
+
+### 5. 1D Dynamic Programming (4-6 problems)
+
+**What it tests:** Can you recognize and apply DP on linear problems?
+
+**Signature problems:**
+- Climbing stairs
+- House robber
+- Coin change
+- Longest increasing subsequence
+- Word break
+- Decode ways
+
+**Skip:** 2D DP, knapsack variants, interval DP — those are FAANG.
+
+**Drill:** 30-40 min per problem, 4-6 problems, 3-4 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](../../70-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md)
+
+---
+
+### 6. Stack / Queue (3-5 problems)
+
+**What it tests:** Can you use stack/queue for non-obvious use cases?
+
+**Signature problems:**
+- Valid parentheses
+- Min stack
+- Daily temperatures
+- Next greater element
+- Binary tree level order (BFS with queue)
+- Implement queue with stacks
+
+**Drill:** 30 min per problem, 3-5 problems, 2-3 hours total.
+
+See: [../../70-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md](../../70-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md)
+
+---
+
+## What to SKIP for this lane
+
+- Hard DP (2D, bitmask, interval)
+- Segment tree, BIT, union-find, KMP/Rabin-Karp
+- Bit manipulation
+- Monotonic stack, queue, sliding window maximum (LeetCode hard)
+- FAANG-style Bar Raiser rounds
+- Onsite whiteboard (n8n / SumUp / Scalable don't do this — they use take-homes)
+- Multi-round LP grind (5+ rounds is FAANG; mid-stage EU is usually 3-4 rounds)
+
+If you only have 1 week, the **non-negotiable MVP** is:
+
+- 8 STAR stories practiced out loud (see [story-bank.md](story-bank.md))
+- 1 system design case explained cold (URL shortener or workflow engine)
+- 1 take-home shipped (any TS full-stack, see [01-Take-Home-Playbook.md](01-Take-Home-Playbook.md))
+- 2 mock interviews done
+
+That alone gets you through 70%+ of mid-stage loops.
+
+---
+
+## The 30-40 problem recommended set
+
+A curated set of exactly 35 problems covering all 6 patterns:
+
+**HashMap (10):**
+1. Two Sum
+2. Group Anagrams
+3. Longest Substring Without Repeating Characters
+4. Top K Frequent Elements
+5. Subarray Sum Equals K
+6. Valid Anagram
+7. Product of Array Except Self
+8. Encode and Decode Strings
+9. Longest Consecutive Sequence
+10. Minimum Window Substring (sliding window + hashmap)
+
+**Sliding Window (6):**
+11. Maximum Sum Subarray of Size K
+12. Best Time to Buy and Sell Stock
+13. Longest Substring with K Distinct Characters
+14. Permutation in String
+15. Fruit Into Baskets
+16. Sliding Window Maximum (this one is hard, optional)
+
+**Two Pointers (6):**
+17. Two Sum II
+18. 3Sum
+19. Container With Most Water
+20. Trapping Rain Water
+21. Remove Duplicates from Sorted Array
+22. Valid Palindrome
+
+**BFS/DFS (8):**
+23. Number of Islands
+24. Binary Tree Level Order Traversal
+25. Rotting Oranges
+26. Course Schedule
+27. Word Ladder
+28. Clone Graph
+29. Path Sum (tree)
+30. Connected Components in undirected graph
+
+**1D DP (4):**
+31. Climbing Stairs
+32. House Robber
+33. Coin Change
+34. Longest Increasing Subsequence
+
+**Stack/Queue (3):**
+35. Valid Parentheses
+36. Min Stack
+37. Daily Temperatures
+
+**Total: ~37 problems.** 25-30 min each = 15-18 hours of focused practice over 1-2 weeks.
+
+---
+
+## The actual interview day
+
+In a 60-90 min tech screen at n8n / SumUp / Scalable, expect:
+
+| Time | What happens |
+|------|--------------|
+| 0-5 min | Intro, "tell me about a recent project" |
+| 5-10 min | Problem statement read aloud by interviewer |
+| 10-15 min | **You ask clarifying questions.** Do not start coding. |
+| 15-20 min | You explain your approach out loud. Get sign-off. |
+| 20-45 min | Code the solution |
+| 45-55 min | Test with examples, walk through edge cases |
+| 55-60 min | Discuss complexity, alternative approaches, follow-ups |
+
+The clarifying-questions + explain-approach phase is **30% of the interview**. Don't skip it.
+
+**If you're stuck for 5+ min:** say "I'm going to think out loud for a minute" and walk through what you're considering. Silence is death.
+
+**If you finish early:** run through edge cases, discuss complexity, ask if there's a follow-up. Don't just sit there.
+
+---
+
+## TL;DR action plan
+
+1. **Day 1-3:** Drill 8 HashMap problems, 30 min each, then look at solution
+2. **Day 4-5:** Drill 6 Sliding Window + 6 Two Pointers
+3. **Day 6-8:** Drill 8 BFS/DFS (mix of trees + grids + graphs)
+4. **Day 9-10:** Drill 4 1D DP + 3 Stack/Queue
+5. **Day 11-14:** 2 mock interviews (Pramp, interviewing.io, or a friend)
+6. **Day 14+:** Start applying
+
+Total: 14 days, 1-2 hrs/day, ~20 hours of practice. That's all you need for this lane's tech screen.
+
+For the FAANG lane's much heavier DSA prep, see [../81-Indian-SDE-FAANG/19-Coding-Patterns.md](../81-Indian-SDE-FAANG/INDEX.md).

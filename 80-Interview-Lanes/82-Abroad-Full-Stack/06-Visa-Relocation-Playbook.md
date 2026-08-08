@@ -1,0 +1,271 @@
+---
+section: Abroad Full-Stack Lane
+category: Reference
+tags: [visa, relocation, eu, playbook, family]
+---
+
+# Visa & Relocation Playbook — 8 EU Countries
+
+> **Visa is rarely the blocker — getting the offer is.** Once you have an offer, the visa process is well-trodden. The trick is knowing which country to target based on your family's situation, not just the company. This file is the 8-country visa matrix + the family-driven decision framework.
+
+## TL;DR
+
+- **8 EU countries have clear tech-visa paths for senior engineers.** All process in 4-12 weeks.
+- **Employer typically pays visa costs + relocation.** This is a negotiation lever, not something you pay for.
+- **Family inclusion is standard in EU Blue Card / work permit schemes.** Spouse gets work permit, kids get residency + school.
+- **Pick the country that maximizes BOTH your job AND your spouse's job.** This is the family-driven framework.
+
+The bible's [09-Security/](../../20-Backend-Stack/09-Security/) covers general compliance, this file is the **immigration-specific** playbook.
+
+---
+
+## The 8-Country Visa Matrix
+
+### Netherlands 🇳🇱 — Best for Pega + Tech + English
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | Highly Skilled Migrant (Kennismigrant) |
+| **Process time** | 2-4 weeks (fastest in EU) |
+| **Minimum salary** | EUR 5,331/month (2024) |
+| **Family** | Spouse auto work permit. Kids residency + school. |
+| **30% ruling** | Yes — 30% tax-free for 5 years (huge benefit) |
+| **Path to PR** | 5 years → permanent residency |
+| **Path to citizenship** | 5 years → Dutch citizenship (requires civic integration) |
+| **English in workplace** | Very high, 90%+ of tech companies operate in English |
+| **International school** | Excellent, multiple options in Amsterdam |
+| **Pega market** | Strong: ING, Rabobank, ABN AMRO, KLM, Aegon |
+| **Notes** | **Best overall choice for senior engineer + Pega spouse + school-age kid** |
+
+**Why choose NL:** Fastest visa, English everywhere, 30% ruling, Pega hub, international schools.
+
+### Germany 🇩🇪 — Best for Big Tech + Spouse Tech
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | EU Blue Card |
+| **Process time** | 6-12 weeks |
+| **Minimum salary** | EUR 48,300/year (IT shortage occupation, lower threshold) |
+| **Family** | Spouse work permit included. Kids residency + school. |
+| **Path to PR** | 21 months with B1 German, 33 months otherwise |
+| **Path to citizenship** | 6-8 years (requires B1 German + civic test) |
+| **English in workplace** | High in tech, but German preferred outside Berlin/Munich |
+| **International school** | Excellent in Berlin, Munich, Frankfurt |
+| **Pega market** | Strong: T-Systems, Allianz, Deutsche Bank, Siemens |
+| **Notes** | Big tech hub, large market. Munich highest cost, Berlin most affordable. |
+
+**Why choose DE:** Largest EU economy, big tech, strong job market for both spouses.
+
+### Ireland 🇮🇪 — Best for US Company EU Hub
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | Critical Skills Employment Permit |
+| **Process time** | 4-8 weeks |
+| **Minimum salary** | EUR 38,000+ (varies) |
+| **Family** | Spouse Stamp (auto work permit). Kids residency. |
+| **Path to PR** | 2 years (Critical Skills) → Stamp 4 → 5 years → citizenship |
+| **English in workplace** | Native English-speaking country, no language barrier |
+| **International school** | Limited but growing in Dublin |
+| **Pega market** | Moderate: large financial services presence |
+| **Notes** | All US Big Tech (Google, Meta, Microsoft, Apple) have EU HQs in Dublin. **Best if targeting US companies with EU roles.** |
+
+**Why choose IE:** English-native, fast PR, US tech companies.
+
+### Sweden 🇸🇪 — Best for Quality of Life + Spouse Work
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | Work Permit |
+| **Process time** | 8-16 weeks (longer than others) |
+| **Minimum salary** | SEK 13,000/month (varies, no formal minimum) |
+| **Family** | Spouse work permit included. Kids residency + school. |
+| **Path to PR** | 4 years |
+| **Path to citizenship** | 5 years (requires A2 Swedish + civic test) |
+| **English in workplace** | Very high, 90%+ of tech in English |
+| **International school** | Good in Stockholm, Gothenburg |
+| **Pega market** | Moderate |
+| **Notes** | Best for work-life balance, excellent for families. |
+
+**Why choose SE:** Quality of life, family-friendly, English in tech.
+
+### Finland 🇫🇮 — Best for School + Quiet Life
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | EU Blue Card / Residence Permit |
+| **Process time** | 6-12 weeks |
+| **Minimum salary** | EUR 4,025/month (Blue Card) |
+| **Family** | Spouse work permit included. Kids residency + school. |
+| **Path to PR** | 4 years (continuous A permit) |
+| **Path to citizenship** | 5 years (requires B1 Finnish/Swedish) |
+| **English in workplace** | High in tech, lower outside |
+| **International school** | Limited (IB schools in Helsinki only) |
+| **Pega market** | Small |
+| **Notes** | Best schools in EU, very safe, quiet life. Helsinki is the only real tech hub. |
+
+**Why choose FI:** Education system is world-class, safe, English-friendly in tech.
+
+### UK 🇬🇧 — Best for Salary + English
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | Skilled Worker visa |
+| **Process time** | 4-8 weeks |
+| **Minimum salary** | GBP 41,700 (general) or GBP 33,000 (shortage occupation, includes IT) |
+| **Family** | Spouse Dependant visa (work allowed). Kids residency + school. |
+| **Path to PR** | 5 years → ILR (Indefinite Leave to Remain) |
+| **Path to citizenship** | 1 year after ILR |
+| **English in workplace** | Native English |
+| **International school** | Excellent in London |
+| **Pega market** | Strong: HSBC, Barclays, Lloyds, NatWest |
+| **Notes** | **Highest EU/UK gross salary, but post-Brexit (separate visa scheme).** |
+
+**Why choose UK:** Highest gross, English, Pega hub, but separate from EU Blue Card.
+
+### Switzerland 🇨🇭 — Best for Gross Salary + Quality
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | B Permit (5-year) |
+| **Process time** | 8-12 weeks |
+| **Minimum salary** | CHF 95,000+ (varies by canton) |
+| **Family** | Spouse work permit included (B permit). Kids residency. |
+| **Path to PR** | 10 years (5 for US/Canada/etc. nationals) |
+| **Path to citizenship** | 10 years |
+| **English in workplace** | Moderate (German/French in Zürich/Basel) |
+| **International school** | Excellent, multiple options |
+| **Pega market** | Strong: UBS, Credit Suisse (now UBS), major banks |
+| **Notes** | **Highest EU gross salary.** Outside EU but in Schengen. |
+
+**Why choose CH:** Highest gross, quality, but expensive and outside EU.
+
+### Austria 🇦🇹 — Best for Lower Cost + Quality
+
+| Aspect | Details |
+|--------|---------|
+| **Visa name** | Red-White-Red Card |
+| **Process time** | 8-12 weeks |
+| **Minimum salary** | EUR 3,483/month (2024) |
+| **Family** | Spouse work permit included. Kids residency + school. |
+| **Path to PR** | 5 years (with B1 German) |
+| **Path to citizenship** | 10 years |
+| **English in workplace** | Moderate (German required outside tech) |
+| **International school** | Good in Vienna |
+| **Pega market** | Moderate |
+| **Notes** | Lower cost than DACH neighbors, good for families. |
+
+**Why choose AT:** Lower cost than DACH, quality of life, family-friendly.
+
+---
+
+## The Family-Driven Decision Framework
+
+When your spouse has a career and you have a school-age kid, the question isn't "where's the best tech job" — it's "where can BOTH of us have careers AND the kid has good schooling?"
+
+### Step 1: Map your spouse's industry to the city
+
+| Spouse's field | Best cities |
+|----------------|-------------|
+| **Pega / BPM consulting** | Amsterdam, London, Berlin (T-Systems/Allianz), Munich |
+| **Finance / Banking** | London, Zürich, Amsterdam, Frankfurt, Dublin |
+| **Healthcare / Pharma** | Germany (largest EU market), UK, France, Switzerland |
+| **Consulting (general)** | All Tier 1 cities, especially London, Amsterdam, Munich |
+| **Tech / Engineering** | Amsterdam, Berlin, London, Stockholm, Dublin |
+| **Education / Teaching** | UK, Netherlands, Germany (IB schools hire from abroad) |
+| **Marketing / Creative** | London, Amsterdam, Berlin |
+
+### Step 2: Map your kid's age to the school need
+
+| Kid's age | School need |
+|-----------|-------------|
+| **3-5 (preschool)** | Kindergarten, mostly free in EU. Daycare subsidized. |
+| **6-10 (primary)** | International school (IB Primary) — EUR 10-20K/year |
+| **11-15 (middle)** | International school (IB MYP) — EUR 15-25K/year |
+| **16-18 (high school)** | International school (IB DP) or local school with English track — EUR 15-30K/year |
+
+**IB schools are in:** Amsterdam (many), Berlin (several), Munich (several), London (many), Zürich (many), Stockholm (some), Helsinki (limited), Dublin (limited).
+
+### Step 3: Apply the country filter
+
+The country that maximizes (your job market) × (spouse's job market) × (school options) × (visa speed) is the right one.
+
+**Decision matrix example (Pega spouse + school-age kid + 5+ YoE engineer):**
+
+| City | Your job | Spouse job | School | Visa | TOTAL |
+|------|----------|------------|--------|------|-------|
+| Amsterdam | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **25/25** |
+| Berlin | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 21/25 |
+| Munich | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 21/25 |
+| London | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 23/25 |
+| Dublin | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 18/25 |
+
+**Conclusion:** Amsterdam is the highest-scoring overall.
+
+---
+
+## Relocation Package — What to Negotiate
+
+The standard EU relocation package includes:
+
+| Item | Typical coverage |
+|------|------------------|
+| **Visa + work permit fees** | Fully paid by employer |
+| **Flight for you + family** | 1-4 business class tickets |
+| **Temporary housing** | 2-8 weeks in a serviced apartment |
+| **Shipping allowance** | EUR 2,10K for household goods |
+| **Language classes** | Free German/Dutch/Finnish for 6-12 months |
+| **Spouse career support** | Resume help, job placement, networking events |
+| **Tax advice** | First-year tax filing help (especially for 30% ruling) |
+| **Kids' school search** | Help with international school applications |
+| **Relocation bonus** | EUR 5-20K lump sum, taxable |
+
+**Negotiate for more if:**
+
+- You have a large family (more flights, more housing)
+- You have pets (some companies won't cover)
+- You need to ship a car (very expensive, often not covered)
+- Your spouse also needs a visa (some countries process separately)
+- You want to bridge a gap (loss on home sale, etc.)
+
+---
+
+## Common Pitfalls
+
+- **Don't apply to a country where your spouse has no job market.** It's the #1 reason couples return to home country within 2 years.
+- **Don't pick a city based on salary alone.** Munich pays more than Berlin but costs 30% more for housing.
+- **Don't underestimate language barriers.** Even in tech hubs, daily life (school, doctor, government) requires local language.
+- **Don't skip the 30% ruling for NL.** It's worth EUR 50K+ over 5 years. Companies sometimes build it into the offer without telling you.
+- **Don't accept a "relocation package" that doesn't include family.** If they only cover you, push back.
+- **Don't sign before the visa is approved.** If they want you to sign before, ask for a clause: "subject to visa approval."
+
+---
+
+## The 90-Day Relocation Timeline
+
+| Days | Action |
+|------|--------|
+| **0-7** | Accept offer, sign contract, share documents for visa |
+| **7-30** | Visa processing. Use this time to: research schools, find housing, sell/lease home, ship belongings |
+| **30-45** | Visa approved, book flights, confirm temporary housing |
+| **45-60** | Arrive, settle into temp housing, register at local municipality (required in DE/NL/AT) |
+| **60-75** | Get residence permit (separate from visa in some countries), open bank account, register kids in school |
+| **75-90** | Move into permanent housing, spouse work permit, settle into daily life |
+
+**Total: 90 days from offer to fully settled.** Most companies expect this.
+
+---
+
+## TL;DR
+
+- **8 EU countries have clear tech-visa paths.** All 4-12 weeks.
+- **NL is best overall** for tech + Pega + international school + 30% ruling.
+- **DE is best for big tech + dual-career couples.**
+- **IE is best for English + US Big Tech EU hubs.**
+- **CH is highest gross but outside EU.**
+- **UK is separate from EU (post-Brexit).**
+- **Pick the country that maximizes BOTH your job AND your spouse's job.**
+- **Always negotiate the relocation package.** Family + pets + car shipping + language classes.
+
+For the city comp tables, see [05-Comp-EU-Benchmarking.md](05-Comp-EU-Benchmarking.md).
+For the country tier decision matrix, see [story-bank.md](story-bank.md) (in the Family/relocation question section).

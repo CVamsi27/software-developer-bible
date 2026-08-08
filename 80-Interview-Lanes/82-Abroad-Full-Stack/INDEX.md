@@ -298,10 +298,28 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 ## Files in This Lane
 
+### Playbooks & Reference
+
 | # | File | Purpose | Personal example |
 |---|------|---------|------------------|
-| 01 | [Personal Story Bank](story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
-| 02 | [EU Mid-Stage Preparation Plan](study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
+| 01 | [Take-Home Playbook](01-Take-Home-Playbook.md) | How to ship a winning take-home: 4-phase framework, 6-phase build, README template, what gets you rejected. The single highest-leverage file in this lane. | 5-6 hour take-home for a workflow engine, Loom walkthrough, full README |
+| 02 | [Tech Screen Patterns](02-Tech-Screen-Patterns.md) | Defensive DSA: 6 patterns, 30-40 problem set, what to skip. The bar is 1-2 mediums in 30 min, not 4 FAANG-hards. | The 35-problem recommended set across HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue |
+| 03 | [System Design — EU Patterns](03-System-Design-EU-Patterns.md) | The 4-phase framework + 6 EU-specific cases (payment gateway, workflow engine, multi-tenant SaaS, real-time booking, event-driven microservices, notification service). | Workflow engine with state machine, queue, idempotency, retries, DLQ |
+| 04 | [Behavioral — EU Style](04-Behavioral-EU-Style.md) | STAR+R framework, 15 common questions with answer skeletons, EU-specific cultural fit, async written questions. | "Why this company?" 60-sec answer for n8n / SumUp / Scalable |
+| 05 | [Comp — EU Benchmarking](05-Comp-EU-Benchmarking.md) | 5 city tiers, NL 30% ruling, EU Blue Card, family comp considerations, negotiation scripts, company-by-company ranges. | Tier 1 (Amsterdam, Berlin, Munich, London): EUR 75-100K base + 0.05-0.5% equity |
+| 06 | [Visa & Relocation Playbook](06-Visa-Relocation-Playbook.md) | 8 EU countries with visa matrix, family-driven country decision framework, relocation package negotiation, 90-day timeline. | NL Highly Skilled Migrant: 2-4 weeks, 30% ruling, family inclusion |
+| 07 | [Company Profiles](07-Company-Profiles.md) | 1-pager per Tier 1/2 company: stack, interview process, comp, who to follow, recent news. The 30-min pre-interview research recipe. | n8n: TS + Vue + NestJS, EUR 80-100K + 0.05-0.2% equity, 4-day workweek |
+| 08 | [System Design Case Bank](08-System-Design-Case-Bank.md) | 5 EU cases to practice: workflow engine, payment gateway, multi-tenant SaaS, real-time booking, event-driven microservices. Each with framework + sample answer + trade-offs. | Workflow engine: queue + worker + state DB + idempotency, 100K executions/day at scale |
+| 09 | [Quick Reference Cards](09-Quick-Reference-Cards.md) | 10 one-page cheat sheets: STAR prompts, system design framework, take-home checklist, comp negotiation, country tier matrix, common DSA patterns, red flags. Print and use. | 4 highest-value cards: STAR, system design, take-home, country tier |
+| 10 | [Weekly Tracker](10-Weekly-Tracker.md) | 4-week prep tracker: daily breakdown, deliverable checklist, readiness scoring, cumulative tracker. | Week 1: stories + company mapping. Week 2: take-home + DSA. Week 3: system design + DSA. Week 4: mocks + applications. |
+| 11 | [Mock Interview Bank](11-Mock-Interview-Bank.md) | 20 curated mock questions: 8 behavioral + 7 technical + 5 system design. 90-min mock structure. | Q1: "Tell me about yourself" 60-90 sec. Q16: "Design a workflow engine." |
+
+### Personal Stories & Plan
+
+| # | File | Purpose | Personal example |
+|---|------|---------|------------------|
+| 12 | [Personal Story Bank](story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
+| 13 | [EU Mid-Stage Preparation Plan](study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
 
 ---
 

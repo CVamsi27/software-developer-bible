@@ -10,14 +10,16 @@
 
 ## Table of Contents
 
-- [Lane Decision](#lane-decision--is-this-the-right-lane-for-you)
-- [Reference Topics — What You Need to Know](#reference-topics--what-you-need-to-know)
-- [Interview Process — Round-by-Round](#interview-process--round-by-round)
-- [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply)
-- [Files in This Lane](#files-in-this-lane)
-- [Cross-references to Core Sections (00-30)](#cross-references-to-core-sections-00-30)
-- [FAQ](#faq)
-- [Navigation](#navigation)
+| # | Section | Purpose |
+|---|---------|---------|
+| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with ✅/❌ per company type) |
+| 2 | [Reference Topics — What You Need to Know](#reference-topics--what-you-need-to-know) | The checklist — what you need to know (3 tiers: mandatory / common / differentiator + skip list). This is the "perfect reference" part. |
+| 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
+| 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (5 country tiers), visa strategy (8 countries) |
+| 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
+| 6 | [Cross-references to Core Sections (00-30)](#cross-references-to-core-sections-00-30) | Where to study (the 8 themed groups) |
+| 7 | [FAQ](#faq) | Common questions |
+| 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
 
 ---
 

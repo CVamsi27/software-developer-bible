@@ -1,7 +1,7 @@
 <!-- section: Security | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Security-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Security-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # OAuth 2.0 & OpenID Connect
 
@@ -501,8 +501,8 @@ OAuth 2.0 is the standard framework for delegated authorization, enabling secure
 ---
 
 ## See Also
-- [REST APIs](../rest-api/)
-- [System Design](../../architecture/system-design/)
+- [REST APIs](../rest-api/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

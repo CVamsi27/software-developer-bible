@@ -1,7 +1,7 @@
 <!-- section: Security | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Security-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Security-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # API Security Best Practices & OWASP API Top 10
 
@@ -312,9 +312,9 @@ snyk test
 ---
 
 ## See Also
-- [Microservices](../microservices/) (mTLS in service mesh)
-- [REST APIs](../rest-api/) (rate limiting, CORS, error handling)
-- [System Design](../../architecture/system-design/) (security in design)
+- [Microservices](../microservices/INDEX.md) (mTLS in service mesh)
+- [REST APIs](../rest-api/INDEX.md) (rate limiting, CORS, error handling)
+- [System Design](../../architecture/system-design/INDEX.md) (security in design)
 - [Threat Modeling](./threat-modeling-stride.md) (per-system enumeration)
 - [Web Security](./web-security.md) (HTTPS, headers, OWASP Top 10)
 

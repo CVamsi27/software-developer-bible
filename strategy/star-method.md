@@ -1,7 +1,7 @@
 <!-- section: Interview Strategy | category: Interview | tags: concept, guide -->
-[![Section](https://img.shields.io/badge/section-Interview%20Strategy-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](#)
 
 # STAR Method: Complete Guide for Senior Engineers
 
@@ -955,8 +955,8 @@ The STAR method transforms vague anecdotes into compelling evidence of your capa
 ---
 
 ## See Also
-- [Behavioral](../interview-toolkit/behavioral/)
-- [SDE Role](../lanes/indian-sde-faang/)
+- [Behavioral](../interview-toolkit/behavioral/INDEX.md)
+- [SDE Role](../lanes/indian-sde-faang/INDEX.md)
 
 ## References & Learn More
 

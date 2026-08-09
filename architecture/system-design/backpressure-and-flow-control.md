@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept, scaling, async, theory -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20scaling%20%C2%B7%20async%20%C2%B7%20theory-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20scaling%20%C2%B7%20async%20%C2%B7%20theory-lightgrey)](#)
 
 # Backpressure & Flow Control
 

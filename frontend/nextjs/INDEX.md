@@ -3,8 +3,8 @@
 > **16 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -27,7 +27,7 @@
 
 ---
 
-**Cross-references:** [React](../react/) | [Serverless & Edge](../../platform/serverless-edge/) | [Performance Monitoring](../../quality/performance-monitoring/)
+**Cross-references:** [React](../react/INDEX.md) | [Serverless & Edge](../../platform/serverless-edge/INDEX.md) | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
 ---
 
 ## Navigation

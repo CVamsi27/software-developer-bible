@@ -1,7 +1,7 @@
 <!-- section: NestJS | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-NestJS-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # NestJS Interceptors
 
@@ -473,10 +473,10 @@ Interceptors are NestJS's powerful mechanism for cross-cutting concerns that nee
 ---
 
 ## See Also
-- [Design Patterns](../design-patterns/)
-- [Microservices](../microservices/)
-- [Node.js](../nodejs/)
-- [REST APIs](../rest-api/)
+- [Design Patterns](../design-patterns/INDEX.md)
+- [Microservices](../microservices/INDEX.md)
+- [Node.js](../nodejs/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
 
 ## References & Learn More
 

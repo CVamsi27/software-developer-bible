@@ -1,7 +1,7 @@
 <!-- section: SDE Role | category: Interview | tags: guide -->
-[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-guide-lightgrey)](#)
 
 # Resume & Negotiation Guide
 
@@ -314,7 +314,7 @@ INTERVIEW TIPS:
 ```
 ## See Also
 
-- [Behavioral](../../interview-toolkit/behavioral/)
+- [Behavioral](../../interview-toolkit/behavioral/INDEX.md)
 
 ## References & Learn More
 

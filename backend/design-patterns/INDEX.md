@@ -3,8 +3,8 @@
 > **20 files** — 4 foundational theory files (SOLID, DRY/KISS/YAGNI, OOP concepts, UML basics) + 16 GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 **Read the theory first.** The 4 `00-*` files below cover the principles and concepts you need to know. Then read the GoF patterns for applied examples.
 
@@ -43,7 +43,7 @@
 
 ---
 
-**Cross-references:** [NestJS (DI)](../../backend/) | [JavaScript](../../frontend/javascript/) | [System Design](../../architecture/system-design/) | [Coding Patterns](../../interview-toolkit/coding-patterns/)
+**Cross-references:** [NestJS (DI)](../../backend/INDEX.md) | [JavaScript](../../frontend/javascript/INDEX.md) | [System Design](../../architecture/system-design/INDEX.md) | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 ---
 
 ## Navigation

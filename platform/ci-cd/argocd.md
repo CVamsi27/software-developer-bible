@@ -1,7 +1,7 @@
 <!-- section: CI/CD | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-CI/CD-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CI/CD-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # ArgoCD (GitOps)
 
@@ -177,7 +177,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Blue-Green & Canary](blue-green-canary.md)
-- [Docker](../docker/)
+- [Docker](../docker/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: Testing | category: Quality | tags: concept, overview -->
-[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20overview-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Testing-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20overview-lightgrey)](#)
 
 # Testing Overview
 
@@ -797,10 +797,10 @@ INTERVIEW TIPS:
 
 ## See Also
 - [CI/CD](../../platform/ci-cd)
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [NestJS](../../backend/nestjs/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [NestJS](../../backend/nestjs/INDEX.md)
 - [Performance & Load Testing](performance-load-testing.md)
-- [React](../../frontend/react/)
+- [React](../../frontend/react/INDEX.md)
 - [Vitest](vitest.md)
 
 ## References & Learn More

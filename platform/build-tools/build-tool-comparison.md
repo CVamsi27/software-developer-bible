@@ -1,7 +1,7 @@
 <!-- section: Build Tools | category: Tooling | tags: concept, guide, reference -->
-[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](#)
 
 # Build Tool Comparison
 
@@ -381,8 +381,8 @@ INTERVIEW TIPS:
 - [Babel](babel.md)
 - [Build Optimization](build-optimization.md)
 - [ESBuild & SWC](esbuild-swc.md)
-- [Next.js](../../frontend/nextjs/)
-- [Performance Monitoring](../../quality/performance-monitoring/)
+- [Next.js](../../frontend/nextjs/INDEX.md)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
 - [Rspack](rspack.md)
 - [Turbopack](turbopack.md)
 - [Vite](vite.md)

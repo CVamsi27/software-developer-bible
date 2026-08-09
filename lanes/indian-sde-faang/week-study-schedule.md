@@ -1,7 +1,7 @@
 <!-- section: SDE Role | category: Interview | tags: study-plan -->
-[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-study-plan-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-study-plan-lightgrey)](#)
 
 # 8-Week SDE Interview Study Schedule
 

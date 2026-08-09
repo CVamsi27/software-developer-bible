@@ -1,7 +1,7 @@
 <!-- section: Accessibility | category: Quality | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Accessibility-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Accessibility-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Keyboard Navigation
 
@@ -528,9 +528,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Performance Monitoring](../performance-monitoring/)
-- [React](../../frontend/react/)
-- [Testing](../testing/)
+- [Performance Monitoring](../performance-monitoring/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [Testing](../testing/INDEX.md)
 
 ## References & Learn More
 

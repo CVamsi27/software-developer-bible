@@ -1,7 +1,7 @@
 <!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
-[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](#)
 
 # Backend Cheat Sheet
 
@@ -429,14 +429,14 @@ async transfer(fromId: string, toId: string, amount: number) {
 This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../backend/database/)
-- [GraphQL](../../backend/graphql/)
-- [Microservices](../../backend/microservices/)
-- [NestJS](../../backend/nestjs/)
-- [Node.js](../../backend/nodejs/)
-- [REST APIs](../../backend/rest-api/)
-- [Security](../../backend/security/)
-- [System Design](../../architecture/system-design/)
+- [Database](../../backend/database/INDEX.md)
+- [GraphQL](../../backend/graphql/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [Node.js](../../backend/nodejs/INDEX.md)
+- [REST APIs](../../backend/rest-api/INDEX.md)
+- [Security](../../backend/security/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

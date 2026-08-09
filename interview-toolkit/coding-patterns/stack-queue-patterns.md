@@ -1,7 +1,7 @@
 <!-- section: Coding Patterns | category: Interview | tags: concept, practice -->
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](#)
 
 # Stack & Queue Patterns
 
@@ -498,7 +498,7 @@ while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
 
 ## See Also
 - [BFS & DFS](dfs-bfs.md)
-- [Coding Patterns](./)
+- [Coding Patterns](#)
 - [Dynamic Programming](dynamic-programming.md)
 - [Heap](heap.md)
 - [Monotonic Stack](monotonic-stack.md)

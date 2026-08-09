@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Reference | tags: mock, practice, questions, bank -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-mock%20%C2%B7%20practice%20%C2%B7%20questions%20%C2%B7%20bank-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-mock%20%C2%B7%20practice%20%C2%B7%20questions%20%C2%B7%20bank-lightgrey)](#)
 
 # Mock Interview Bank — 20 Curated Questions for EU Mid-Stage
 

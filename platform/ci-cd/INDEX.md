@@ -3,8 +3,8 @@
 > **7 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, blue-green/canary deployments, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -18,7 +18,7 @@
 
 ---
 
-**Cross-references:** [Docker](../docker/) | [Kubernetes](../kubernetes/) | [Git Advanced](../git-advanced/)
+**Cross-references:** [Docker](../docker/INDEX.md) | [Kubernetes](../kubernetes/INDEX.md) | [Git Advanced](../git-advanced/INDEX.md)
 ---
 
 ## Navigation

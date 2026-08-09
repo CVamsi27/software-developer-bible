@@ -2,7 +2,7 @@
 
 > **Pick your lane first.** The bible is organized into **3 interview lanes** that draw from **7 shared study stacks**. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
 
-[![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/)
+[![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
 [![Files](https://img.shields.io/badge/files-400%2B-orange)](#-the-7-study-stacks-shared-by-both-lanes)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
@@ -13,9 +13,9 @@
 
 | Lane | Folder | For | Style |
 |------|--------|-----|-------|
-| **Cross-Lane** (everyone starts here) | [Interview Strategy](strategy/) | Communication, resume, STAR method, HR questions | Universal — applies to all lanes |
-| **Indian SDE / FAANG** | [Indian SDE / FAANG](lanes/indian-sde-faang/) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
-| **Abroad Full-Stack** | [Abroad Full-Stack](lanes/abroad-full-stack/) | EU / non-Indian mid-stage startups (n8n, SumUp, Scalable, sennder) | Take-home + system design, 4-week plan, EUR 70-110K + visa |
+| **Cross-Lane** (everyone starts here) | [Interview Strategy](strategy/INDEX.md) | Communication, resume, STAR method, HR questions | Universal — applies to all lanes |
+| **Indian SDE / FAANG** | [Indian SDE / FAANG](lanes/indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
+| **Abroad Full-Stack** | [Abroad Full-Stack](lanes/abroad-full-stack/INDEX.md) | EU / non-Indian mid-stage startups (n8n, SumUp, Scalable, sennder) | Take-home + system design, 4-week plan, EUR 70-110K + visa |
 
 **Not sure?** Read the [lane decision matrix in abroad-full-stack](lanes/abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes — start with `indian-sde-faang/` for the FAANG-DSA signal, then `abroad-full-stack/` for the EU-specific family/visa overlay.
 
@@ -29,66 +29,66 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [JavaScript](frontend/javascript/) | 27 | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
-| [TypeScript](frontend/typescript/) | 15 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
-| [React](frontend/react/) | 19 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
-| [Next.js](frontend/nextjs/) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
-| [Form Handling](frontend/form-handling/) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
-| [Animation](frontend/animation/) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
+| [JavaScript](frontend/javascript/INDEX.md) | 27 | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
+| [TypeScript](frontend/typescript/INDEX.md) | 15 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
+| [React](frontend/react/INDEX.md) | 19 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
+| [Next.js](frontend/nextjs/INDEX.md) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
+| [Form Handling](frontend/form-handling/INDEX.md) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
+| [Animation](frontend/animation/INDEX.md) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
 
 ### Backend (107 files in 8 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [Node.js](backend/nodejs/) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
-| [NestJS](backend/nestjs/) | 14 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| [REST APIs](backend/rest-api/) | 13 | HTTP methods, status codes, versioning, pagination, auth, OpenAPI, caching |
-| [Database](backend/database/) | 14 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations |
-| [Security](backend/security/) | 13 | JWT, OAuth, XSS, CSRF, RBAC, threat modeling, secrets management |
-| [Design Patterns](backend/design-patterns/) | 15 | Singleton, Factory, Strategy, Repository, CQRS, Module, State |
-| [Microservices](backend/microservices/) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
-| [GraphQL](backend/graphql/) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
+| [Node.js](backend/nodejs/INDEX.md) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
+| [NestJS](backend/nestjs/INDEX.md) | 14 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| [REST APIs](backend/rest-api/INDEX.md) | 13 | HTTP methods, status codes, versioning, pagination, auth, OpenAPI, caching |
+| [Database](backend/database/INDEX.md) | 14 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations |
+| [Security](backend/security/INDEX.md) | 13 | JWT, OAuth, XSS, CSRF, RBAC, threat modeling, secrets management |
+| [Design Patterns](backend/design-patterns/INDEX.md) | 15 | Singleton, Factory, Strategy, Repository, CQRS, Module, State |
+| [Microservices](backend/microservices/INDEX.md) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
+| [GraphQL](backend/graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 
 ### Architecture (36 files)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [System Design](architecture/system-design/) | 36 | URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking + 14 theory files (CAP, sharding, caching, queues, consensus, ...) |
+| [System Design](architecture/system-design/INDEX.md) | 36 | URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking + 14 theory files (CAP, sharding, caching, queues, consensus, ...) |
 
 ### Platform (63 files in 8 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [Docker](platform/docker/) | 6 | Images, containers, volumes, networks, compose, multi-stage builds |
-| [Kubernetes](platform/kubernetes/) | 14 | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC |
-| [CI/CD](platform/ci-cd/) | 7 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
-| [Observability](platform/observability/) | 8 | Logging, monitoring, tracing, error tracking, SLI/SLO/SLA, alerting |
-| [Build Tools](platform/build-tools/) | 9 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
-| [Git Advanced](platform/git-advanced/) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
-| [Serverless & Edge](platform/serverless-edge/) | 7 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST |
-| [Monorepo](platform/monorepo/) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
+| [Docker](platform/docker/INDEX.md) | 6 | Images, containers, volumes, networks, compose, multi-stage builds |
+| [Kubernetes](platform/kubernetes/INDEX.md) | 14 | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC |
+| [CI/CD](platform/ci-cd/INDEX.md) | 7 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
+| [Observability](platform/observability/INDEX.md) | 8 | Logging, monitoring, tracing, error tracking, SLI/SLO/SLA, alerting |
+| [Build Tools](platform/build-tools/INDEX.md) | 9 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
+| [Git Advanced](platform/git-advanced/INDEX.md) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
+| [Serverless & Edge](platform/serverless-edge/INDEX.md) | 7 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST |
+| [Monorepo](platform/monorepo/INDEX.md) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
 
 ### Quality (26 files in 3 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [Testing](quality/testing/) | 11 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing |
-| [Accessibility](quality/accessibility/) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
-| [Performance Monitoring](quality/performance-monitoring/) | 8 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
+| [Testing](quality/testing/INDEX.md) | 11 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing |
+| [Accessibility](quality/accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
+| [Performance Monitoring](quality/performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
 
 ### Real-Time (8 files)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [WebSockets](realtime/websockets/) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
+| [WebSockets](realtime/websockets/INDEX.md) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
 ### Interview Toolkit (27 files in 3 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [Behavioral](interview-toolkit/behavioral/) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
-| [Coding Patterns](interview-toolkit/coding-patterns/) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
-| [Cheat Sheets](interview-toolkit/cheatsheets/) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
+| [Behavioral](interview-toolkit/behavioral/INDEX.md) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
+| [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
+| [Cheat Sheets](interview-toolkit/cheatsheets/INDEX.md) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
 
 ---
 
@@ -116,14 +116,14 @@ Lane overlay  → Indian SDE / FAANG (8-week plan) OR Abroad Full-Stack (4-week 
 
 | Stack | Depends on | Used by |
 |-------|-----------|---------|
-| [Frontend](frontend/) | — | Both lanes |
-| [Backend](backend/) | — | Both lanes |
-| [Architecture](architecture/) | — | Both lanes |
-| [Platform](platform/) | — | Both lanes |
-| [Quality](quality/) | — | Both lanes |
-| [Real-Time](realtime/) | — | Abroad Full-Stack (occasionally) |
-| [Interview Toolkit](interview-toolkit/) | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
-| [Interview Lanes](lanes/) | All stacks | Terminal phase |
+| [Frontend](frontend/INDEX.md) | — | Both lanes |
+| [Backend](backend/INDEX.md) | — | Both lanes |
+| [Architecture](architecture/INDEX.md) | — | Both lanes |
+| [Platform](platform/INDEX.md) | — | Both lanes |
+| [Quality](quality/INDEX.md) | — | Both lanes |
+| [Real-Time](realtime/INDEX.md) | — | Abroad Full-Stack (occasionally) |
+| [Interview Toolkit](interview-toolkit/INDEX.md) | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
+| [Interview Lanes](lanes/INDEX.md) | All stacks | Terminal phase |
 
 ---
 

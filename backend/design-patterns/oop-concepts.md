@@ -1,7 +1,7 @@
 <!-- section: Design Patterns | category: Architecture | tags: concept, lld, oop, theory -->
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20lld%20%C2%B7%20oop%20%C2%B7%20theory-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20lld%20%C2%B7%20oop%20%C2%B7%20theory-lightgrey)](#)
 
 # OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction
 

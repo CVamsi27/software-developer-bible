@@ -1,7 +1,7 @@
 <!-- section: GraphQL | category: API | tags: concept -->
-[![Section](https://img.shields.io/badge/section-GraphQL-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Resolvers
 
@@ -981,9 +981,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../nestjs/)
-- [React](../../frontend/react/)
-- [REST APIs](../rest-api/)
+- [NestJS](../nestjs/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
 
 ## References & Learn More
 

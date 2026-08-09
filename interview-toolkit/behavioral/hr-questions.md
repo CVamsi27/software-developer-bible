@@ -1,7 +1,7 @@
 <!-- section: Behavioral | category: Interview | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Behavioral-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Behavioral-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # HR & Behavioral Interview Questions: 25 STAR-Formatted Answers
 
@@ -581,8 +581,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Interview Strategy](../../strategy/)
-- [SDE Role](../../lanes/indian-sde-faang/)
+- [Interview Strategy](../../strategy/INDEX.md)
+- [SDE Role](../../lanes/indian-sde-faang/INDEX.md)
 
 ## References & Learn More
 

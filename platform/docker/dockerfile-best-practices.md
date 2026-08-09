@@ -1,7 +1,7 @@
 <!-- section: Docker | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Docker-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Dockerfile Best Practices & Security
 
@@ -201,7 +201,7 @@ CMD ["node", "app/main.js"]
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Docker Security](../../backend/security/)
+- [Docker Security](../../backend/security/INDEX.md)
 
 ## References & Learn More
 

@@ -3,8 +3,8 @@
 > **11 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, the built-in test runner, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -22,7 +22,7 @@
 
 ---
 
-**Cross-references:** [JavaScript Event Loop](../../frontend/javascript/event-loop.md) | [NestJS](../nestjs/) | [Docker](../../platform/docker/)
+**Cross-references:** [JavaScript Event Loop](../../frontend/javascript/event-loop.md) | [NestJS](../nestjs/INDEX.md) | [Docker](../../platform/docker/INDEX.md)
 ---
 
 ## Navigation

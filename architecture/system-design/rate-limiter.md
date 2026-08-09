@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Rate Limiter System Design
 
@@ -913,10 +913,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
-- [REST APIs](../../backend/rest-api/)
-- [Security](../../backend/security/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [REST APIs](../../backend/rest-api/INDEX.md)
+- [Security](../../backend/security/INDEX.md)
 
 ## References & Learn More
 

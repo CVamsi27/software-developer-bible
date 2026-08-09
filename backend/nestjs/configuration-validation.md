@@ -1,7 +1,7 @@
 <!-- section: NestJS | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-NestJS-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Configuration & Validation in NestJS
 
@@ -297,10 +297,10 @@ export function IsStrongPassword(opts?: ValidationOptions) {
 ---
 
 ## See Also
-- [Design Patterns](../design-patterns/) (DI for ConfigService)
-- [Microservices](../microservices/) (config across services)
-- [Node.js](../nodejs/) (env, dotenv, process management)
-- [REST APIs](../rest-api/) (validating API request bodies)
+- [Design Patterns](../design-patterns/INDEX.md) (DI for ConfigService)
+- [Microservices](../microservices/INDEX.md) (config across services)
+- [Node.js](../nodejs/INDEX.md) (env, dotenv, process management)
+- [REST APIs](../rest-api/INDEX.md) (validating API request bodies)
 
 ## References & Learn More
 

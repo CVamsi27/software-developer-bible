@@ -3,8 +3,8 @@
 > **15 files** — API design patterns (REST vs GraphQL vs gRPC vs WebSocket vs Webhook) + REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 **Start with API design patterns** to pick the right API style for your use case, then dive into the REST-specific deep-dives.
 
@@ -27,7 +27,7 @@
 
 ---
 
-**Cross-references:** [NestJS](../nestjs/) | [Security (JWT/OAuth)](../../backend/) | [System Design](../../architecture/system-design/) | [Microservices (API Gateway)](../../backend/)
+**Cross-references:** [NestJS](../nestjs/INDEX.md) | [Security (JWT/OAuth)](../../backend/INDEX.md) | [System Design](../../architecture/system-design/INDEX.md) | [Microservices (API Gateway)](../../backend/INDEX.md)
 ---
 
 ## Navigation

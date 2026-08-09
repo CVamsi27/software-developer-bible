@@ -1,7 +1,7 @@
 <!-- section: Database | category: Data | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Database-blue)](.)
-[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Database-blue)](#)
+[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Connection Pooling
 
@@ -503,9 +503,9 @@ SHOW POOLS;  -- PgBouncer
 ---
 
 ## See Also
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [REST APIs](../rest-api/)
-- [System Design](../../architecture/system-design/)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

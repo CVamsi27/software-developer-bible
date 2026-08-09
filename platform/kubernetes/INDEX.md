@@ -3,8 +3,8 @@
 > **14 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [Docker](../docker/) | [CI/CD](../ci-cd) | [Observability](../observability/) | [Serverless & Edge](../serverless-edge/)
+**Cross-references:** [Docker](../docker/INDEX.md) | [CI/CD](../ci-cd) | [Observability](../observability/INDEX.md) | [Serverless & Edge](../serverless-edge/INDEX.md)
 ---
 
 ## Navigation

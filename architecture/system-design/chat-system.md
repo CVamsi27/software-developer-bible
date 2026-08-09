@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Chat System Design
 
@@ -1188,10 +1188,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 - [System Design - WhatsApp](./whatsapp.md)
-- [WebSockets](../../realtime/websockets/)
+- [WebSockets](../../realtime/websockets/INDEX.md)
 
 ## References & Learn More
 

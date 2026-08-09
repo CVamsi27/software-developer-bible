@@ -1,7 +1,7 @@
 <!-- section: JavaScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Async/Await
 
@@ -784,9 +784,9 @@ DEBUGGING:
 ---
 
 ## See Also
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [Node.js](../../backend/nodejs/)
-- [TypeScript](../typescript/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [Node.js](../../backend/nodejs/INDEX.md)
+- [TypeScript](../typescript/INDEX.md)
 
 ## References & Learn More
 

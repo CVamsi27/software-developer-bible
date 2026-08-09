@@ -1,7 +1,7 @@
 <!-- section: SDE Role | category: Interview | tags: reference -->
-[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-reference-lightgrey)](#)
 
 # Advanced Topics
 
@@ -1566,12 +1566,12 @@ This guide covers advanced topics for staff+ engineering interviews, including d
 ## See Also
 
 ---
-- [Behavioral](../../interview-toolkit/behavioral/)
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [JavaScript](../../frontend/javascript/)
-- [React](../../frontend/react/)
-- [System Design](../../architecture/system-design/)
-- [TypeScript](../../frontend/typescript/)
+- [Behavioral](../../interview-toolkit/behavioral/INDEX.md)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
+- [TypeScript](../../frontend/typescript/INDEX.md)
 
 ## Cheat Sheet
 ```text

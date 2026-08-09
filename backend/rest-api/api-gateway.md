@@ -1,7 +1,7 @@
 <!-- section: REST API | category: API | tags: concept -->
-[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # API Gateway Pattern
 
@@ -813,10 +813,10 @@ An API Gateway is essential for microservices architectures. It provides a singl
 ---
 
 ## See Also
-- [Microservices](../microservices/)
-- [NestJS](../nestjs/)
-- [Security](../security/)
-- [System Design](../../architecture/system-design/)
+- [Microservices](../microservices/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
+- [Security](../security/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

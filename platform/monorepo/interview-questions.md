@@ -1,7 +1,7 @@
 <!-- section: Monorepo | category: Reference | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Monorepo-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Monorepo-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Monorepo Interview Questions
 
@@ -269,9 +269,9 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [Build Tools](../build-tools/)
+- [Build Tools](../build-tools/INDEX.md)
 - [CI/CD](../ci-cd)
-- [Git Advanced](../git-advanced/)
+- [Git Advanced](../git-advanced/INDEX.md)
 - [Monorepo Overview](monorepo-overview.md)
 - [Monorepo Tools Deep-Dive](monorepo-tools.md)
 - [Nx](nx.md)

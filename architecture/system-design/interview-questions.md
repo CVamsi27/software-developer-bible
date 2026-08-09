@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # System Design Interview Questions
 
@@ -1755,10 +1755,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
-- [REST APIs](../../backend/rest-api/)
-- [WebSockets](../../realtime/websockets/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [REST APIs](../../backend/rest-api/INDEX.md)
+- [WebSockets](../../realtime/websockets/INDEX.md)
 
 ## References & Learn More
 

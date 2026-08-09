@@ -3,8 +3,8 @@
 > **7 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -18,7 +18,7 @@
 
 ---
 
-**Cross-references:** [Accessibility](../../quality/accessibility/) | [Next.js](../nextjs/) | [Performance Monitoring](../../quality/performance-monitoring/) | [React](../react/)
+**Cross-references:** [Accessibility](../../quality/accessibility/INDEX.md) | [Next.js](../nextjs/INDEX.md) | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) | [React](../react/INDEX.md)
 
 ---
 

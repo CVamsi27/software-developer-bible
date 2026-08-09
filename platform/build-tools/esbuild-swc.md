@@ -1,7 +1,7 @@
 <!-- section: Build Tools | category: Tooling | tags: concept, reference, tool -->
-[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](#)
 
 # ESBuild & SWC
 
@@ -152,7 +152,7 @@ INTERVIEW TIPS:
 ---
 ## See Also
 - [Babel](babel.md)
-- [Next.js](../../frontend/nextjs/)
+- [Next.js](../../frontend/nextjs/INDEX.md)
 
 ## References & Learn More
 

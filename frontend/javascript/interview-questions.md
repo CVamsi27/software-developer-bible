@@ -1,7 +1,7 @@
 <!-- section: JavaScript | category: Core | tags: interview-questions, reference -->
-[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20reference-lightgrey)](#)
 
 # JavaScript Interview Questions
 
@@ -472,9 +472,9 @@ BEST PRACTICES:
 ---
 
 ## See Also
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [Node.js](../../backend/nodejs/)
-- [TypeScript](../typescript/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [Node.js](../../backend/nodejs/INDEX.md)
+- [TypeScript](../typescript/INDEX.md)
 
 ## References & Learn More
 

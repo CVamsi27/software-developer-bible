@@ -3,8 +3,8 @@
 > **36 files** — 14 foundational theory files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks), 22 case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and a meta-guide on how to approach any system-design problem.
 
 [![Files](https://img.shields.io/badge/files-36-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 **Read the theory first.** The 14 `00-*` files below cover the foundational concepts. Then read the case studies for applied examples.
 
@@ -62,7 +62,7 @@ These are the concepts you need to know BEFORE doing any case study. Every syste
 
 ---
 
-**Cross-references:** [Microservices](../../backend/microservices/) | [Database](../../backend/database/) | [REST APIs](../../backend/rest-api/) | [WebSockets](../../realtime/websockets/)
+**Cross-references:** [Microservices](../../backend/microservices/INDEX.md) | [Database](../../backend/database/INDEX.md) | [REST APIs](../../backend/rest-api/INDEX.md) | [WebSockets](../../realtime/websockets/INDEX.md)
 
 ---
 

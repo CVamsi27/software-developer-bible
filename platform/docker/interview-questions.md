@@ -1,7 +1,7 @@
 <!-- section: Docker | category: DevOps | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Docker-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # Docker Interview Questions
 
@@ -982,8 +982,8 @@ COPY --from=stage1 /app/dist ./dist
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Kubernetes](../kubernetes/)
-- [Microservices](../../backend/microservices/)
+- [Kubernetes](../kubernetes/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: GraphQL | category: API | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-GraphQL-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # GraphQL Interview Questions
 
@@ -1774,9 +1774,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../nestjs/)
-- [React](../../frontend/react/)
-- [REST APIs](../rest-api/)
+- [NestJS](../nestjs/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: Behavioral | category: Interview | tags: guide, study-plan -->
-[![Section](https://img.shields.io/badge/section-Behavioral-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-guide%20%C2%B7%20study-plan-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Behavioral-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-guide%20%C2%B7%20study-plan-lightgrey)](#)
 
 # The STAR Method: Mastering Behavioral Interview Answers
 
@@ -523,8 +523,8 @@ Remember: the interviewer is evaluating not just what you did, but how you think
 ---
 
 ## See Also
-- [Interview Strategy](../../strategy/)
-- [SDE Role](../../lanes/indian-sde-faang/)
+- [Interview Strategy](../../strategy/INDEX.md)
+- [SDE Role](../../lanes/indian-sde-faang/INDEX.md)
 
 ## References & Learn More
 

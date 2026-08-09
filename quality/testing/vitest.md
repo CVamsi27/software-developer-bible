@@ -1,7 +1,7 @@
 <!-- section: Testing | category: Quality | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Testing-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Vitest
 
@@ -355,12 +355,12 @@ test: { pool: "forks" }
 
 ## See Also
 - [CI/CD](../../platform/ci-cd)
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 - [E2E Testing](e2e-testing.md)
 - [Integration Testing](integration-testing.md)
 - [Jest](jest.md)
 - [Mocking](mocking.md)
-- [React](../../frontend/react/)
+- [React](../../frontend/react/INDEX.md)
 - [Unit Testing](unit-testing.md)
 
 ## References & Learn More

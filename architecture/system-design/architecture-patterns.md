@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept, architecture, patterns, theory -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20architecture%20%C2%B7%20patterns%20%C2%B7%20theory-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20architecture%20%C2%B7%20patterns%20%C2%B7%20theory-lightgrey)](#)
 
 # Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal
 
@@ -454,7 +454,7 @@ The senior signal: name the pattern, justify the choice, know the trade-offs.
 - [Queues And Async](queues-and-async.md) — async is the foundation of EDA
 - [Distributed Transactions](distributed-transactions.md) — saga for cross-service
 - [Cap Theorem](cap-theorem.md) — microservices force trade-offs
-- [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/) — full microservices reference
+- [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/INDEX.md) — full microservices reference
 - [../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md](../../backend/design-patterns/solid-principles.md) — apply to your architecture
 
 ---

@@ -1,7 +1,7 @@
 <!-- section: Microservices | category: Architecture | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # Microservices Interview Questions
 
@@ -1909,13 +1909,13 @@ Microservices architecture requires understanding of distributed systems, commun
 - [Bulkhead Pattern](bulkhead-pattern.md)
 - [CQRS](cqrs.md)
 - [Distributed Transactions](distributed-transactions.md)
-- [Docker](../../platform/docker/)
+- [Docker](../../platform/docker/INDEX.md)
 - [gRPC](grpc.md)
-- [Kubernetes](../../platform/kubernetes/)
-- [NestJS](../nestjs/)
+- [Kubernetes](../../platform/kubernetes/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
 - [Service Mesh](service-mesh.md)
 - [Strangler Fig](strangler-fig.md)
-- [System Design](../../architecture/system-design/)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

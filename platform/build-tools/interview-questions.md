@@ -1,7 +1,7 @@
 <!-- section: Build Tools | category: Tooling | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Build Tools Interview Questions
 
@@ -744,9 +744,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Next.js](../../frontend/nextjs/)
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [React](../../frontend/react/)
+- [Next.js](../../frontend/nextjs/INDEX.md)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
 
 ## References & Learn More
 

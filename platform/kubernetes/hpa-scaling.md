@@ -1,7 +1,7 @@
 <!-- section: Kubernetes | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Kubernetes HPA & Scaling
 
@@ -600,11 +600,11 @@ kubectl describe node <name>
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Docker](../docker/)
-- [Observability](../observability/)
+- [Docker](../docker/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [Pod Disruption Budgets](pod-disruption-budgets.md)
 - [Resource Quotas](resource-quotas.md)
-- [Serverless & Edge](../serverless-edge/)
+- [Serverless & Edge](../serverless-edge/INDEX.md)
 
 ## References & Learn More
 

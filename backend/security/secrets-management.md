@@ -1,7 +1,7 @@
 <!-- section: Security | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Security-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Security-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Secrets Management
 
@@ -303,9 +303,9 @@ jwt.sign(payload, out.Signature, { algorithm: 'RS256' });
 ---
 
 ## See Also
-- [Microservices](../microservices/) (per-service credentials)
-- [REST APIs](../rest-api/) (API key storage)
-- [System Design](../../architecture/system-design/) (secrets in system design)
+- [Microservices](../microservices/INDEX.md) (per-service credentials)
+- [REST APIs](../rest-api/INDEX.md) (API key storage)
+- [System Design](../../architecture/system-design/INDEX.md) (secrets in system design)
 - [Web Security](./web-security.md) (HTTPS, TLS in production)
 
 ## References & Learn More

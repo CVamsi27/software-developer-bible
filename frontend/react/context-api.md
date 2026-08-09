@@ -1,7 +1,7 @@
 <!-- section: React | category: Frontend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-React-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-React-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Context API
 
@@ -883,13 +883,13 @@ Relationships:
 ---
 
 ## See Also
-- [Animation](../animation/)
+- [Animation](../animation/INDEX.md)
 - [Compound Components](compound-components.md)
-- [Form Handling](../form-handling/)
-- [JavaScript](../javascript/)
-- [Next.js](../nextjs/)
+- [Form Handling](../form-handling/INDEX.md)
+- [JavaScript](../javascript/INDEX.md)
+- [Next.js](../nextjs/INDEX.md)
 - [Portals](portals.md)
-- [Testing](../../quality/testing/)
+- [Testing](../../quality/testing/INDEX.md)
 
 ## References & Learn More
 

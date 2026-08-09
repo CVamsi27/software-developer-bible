@@ -3,8 +3,8 @@
 > **8 files** — Observability fundamentals from logging and monitoring to distributed tracing, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -19,7 +19,7 @@
 
 ---
 
-**Cross-references:** [Kubernetes (Health Checks)](../../platform/) | [Performance Monitoring](../../quality/performance-monitoring/) | [Serverless & Edge](../serverless-edge/)
+**Cross-references:** [Kubernetes (Health Checks)](../../platform/INDEX.md) | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) | [Serverless & Edge](../serverless-edge/INDEX.md)
 ---
 
 ## Navigation

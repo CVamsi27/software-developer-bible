@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept, distributed-systems, reliability, theory -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed-systems%20%C2%B7%20reliability%20%C2%B7%20theory-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed-systems%20%C2%B7%20reliability%20%C2%B7%20theory-lightgrey)](#)
 
 # Failure Modes
 
@@ -381,8 +381,8 @@ For every component, ask "what if it fails?" and explain the mitigation.
 - [Cap Theorem](cap-theorem.md) — partitions are inevitable
 - [Consensus And Leader Election](consensus-and-leader-election.md) — how to elect a leader
 - [Distributed Transactions](distributed-transactions.md) — saga for multi-service
-- [../../4-Platform-Stack/22-Observability/](../../platform/observability/) — observability
-- [../../4-Platform-Stack/14-Kubernetes/](../../platform/kubernetes/) — K8s failure handling
+- [../../4-Platform-Stack/22-Observability/](../../platform/observability/INDEX.md) — observability
+- [../../4-Platform-Stack/14-Kubernetes/](../../platform/kubernetes/INDEX.md) — K8s failure handling
 
 ---
 

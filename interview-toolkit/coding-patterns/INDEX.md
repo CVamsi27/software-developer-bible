@@ -3,8 +3,8 @@
 > **18 files** — Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), and streaming algorithms (reservoir sampling).
 
 [![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ## Core Patterns (01-12)
 
@@ -36,7 +36,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../../frontend/javascript/) | [System Design](../../architecture/system-design/) | [SDE Role](../../lanes/indian-sde-faang/)
+**Cross-references:** [JavaScript](../../frontend/javascript/INDEX.md) | [System Design](../../architecture/system-design/INDEX.md) | [SDE Role](../../lanes/indian-sde-faang/INDEX.md)
 
 ---
 

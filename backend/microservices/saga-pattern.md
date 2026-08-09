@@ -1,7 +1,7 @@
 <!-- section: Microservices | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Saga Pattern
 
@@ -693,10 +693,10 @@ Saga Pattern enables distributed transactions in microservices using local trans
 ---
 
 ## See Also
-- [Docker](../../platform/docker/)
-- [Kubernetes](../../platform/kubernetes/)
-- [NestJS](../nestjs/)
-- [System Design](../../architecture/system-design/)
+- [Docker](../../platform/docker/INDEX.md)
+- [Kubernetes](../../platform/kubernetes/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

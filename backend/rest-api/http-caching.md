@@ -1,7 +1,7 @@
 <!-- section: REST API | category: API | tags: concept -->
-[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # HTTP Caching Strategies
 
@@ -244,10 +244,10 @@ async update(
 ---
 
 ## See Also
-- [Microservices](../microservices/) (per-service cache invalidation)
-- [NestJS](../nestjs/) (interceptors for caching responses)
-- [Security](../security/) (don't cache sensitive data)
-- [System Design](../../architecture/system-design/) (caching in API design)
+- [Microservices](../microservices/INDEX.md) (per-service cache invalidation)
+- [NestJS](../nestjs/INDEX.md) (interceptors for caching responses)
+- [Security](../security/INDEX.md) (don't cache sensitive data)
+- [System Design](../../architecture/system-design/INDEX.md) (caching in API design)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: Database | category: Data | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Database-blue)](.)
-[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Database-blue)](#)
+[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Database Migrations & Zero-Downtime Schema Changes
 
@@ -277,10 +277,10 @@ export class BackfillOrdersJob {
 ---
 
 ## See Also
-- [Microservices](../microservices/) (migrations across services)
-- [REST APIs](../rest-api/) (API versioning pairs with DB versioning)
-- [System Design](../../architecture/system-design/) (migrations in zero-downtime deploys)
-- [Performance Monitoring](../../quality/performance-monitoring/) (migration performance impact)
+- [Microservices](../microservices/INDEX.md) (migrations across services)
+- [REST APIs](../rest-api/INDEX.md) (API versioning pairs with DB versioning)
+- [System Design](../../architecture/system-design/INDEX.md) (migrations in zero-downtime deploys)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) (migration performance impact)
 
 ## References & Learn More
 

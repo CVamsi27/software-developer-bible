@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: study-plan, personal -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-study-plan%20%C2%B7%20personal-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-study-plan%20%C2%B7%20personal-lightgrey)](#)
 
 # 4-Week Senior Full-Stack Interview Prep Plan — Vamsi Krishna Chandaluri (Revised: v2 — take-home + DSA-lite)
 

@@ -3,8 +3,8 @@
 > **6 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, best practices, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -17,7 +17,7 @@
 
 ---
 
-**Cross-references:** [Kubernetes](../kubernetes/) | [CI/CD](../ci-cd) | [Microservices](../../backend/microservices/)
+**Cross-references:** [Kubernetes](../kubernetes/INDEX.md) | [CI/CD](../ci-cd) | [Microservices](../../backend/microservices/INDEX.md)
 ---
 
 ## Navigation

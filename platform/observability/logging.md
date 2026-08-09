@@ -1,7 +1,7 @@
 <!-- section: Observability | category: Observability | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
-[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Observability-blue)](#)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Logging
 
@@ -488,9 +488,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Kubernetes](../kubernetes/)
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [Serverless & Edge](../serverless-edge/)
+- [Kubernetes](../kubernetes/INDEX.md)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [Serverless & Edge](../serverless-edge/INDEX.md)
 
 ## References & Learn More
 

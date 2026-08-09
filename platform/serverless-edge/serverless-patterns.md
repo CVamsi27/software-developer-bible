@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Serverless Patterns
 
@@ -403,8 +403,8 @@ INTERVIEW ANSWER:
 
 - [AWS Lambda](aws-lambda.md)
 - [Edge Functions](edge-functions.md)
-- [Microservices](../../backend/microservices/)
-- [Observability](../observability/)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [Serverless Overview](serverless-overview.md)
 - [Vercel Deployments](vercel-deployments.md)
 

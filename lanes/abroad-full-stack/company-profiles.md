@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Reference | tags: companies, profiles, tier-1, reference -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-companies%20%C2%B7%20profiles%20%C2%B7%20tier-1%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-companies%20%C2%B7%20profiles%20%C2%B7%20tier-1%20%C2%B7%20reference-lightgrey)](#)
 
 # Company Profiles — Tier 1 & 2 EU Mid-Stage
 

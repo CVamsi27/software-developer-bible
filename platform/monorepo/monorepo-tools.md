@@ -1,7 +1,7 @@
 <!-- section: Monorepo | category: Reference | tags: concept, reference, tool -->
-[![Section](https://img.shields.io/badge/section-Monorepo-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Monorepo-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](#)
 
 # Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)
 
@@ -227,9 +227,9 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Build Tools](../build-tools/)
+- [Build Tools](../build-tools/INDEX.md)
 - [CI/CD](../ci-cd)
-- [Git Advanced](../git-advanced/)
+- [Git Advanced](../git-advanced/INDEX.md)
 - [Monorepo Overview](monorepo-overview.md)
 - [Nx](nx.md)
 - [Turborepo](turborepo.md)

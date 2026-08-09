@@ -1,7 +1,7 @@
 <!-- section: Database | category: Data | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Database-blue)](.)
-[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Database-blue)](#)
+[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # SQL vs NoSQL — Choosing the Right Database
 
@@ -218,10 +218,10 @@ LIMIT 10;
 ---
 
 ## See Also
-- [Microservices](../microservices/) (database per service)
-- [REST APIs](../rest-api/) (REST over various stores)
-- [System Design](../../architecture/system-design/) (polyglot persistence in designs)
-- [Performance Monitoring](../../quality/performance-monitoring/) (query performance)
+- [Microservices](../microservices/INDEX.md) (database per service)
+- [REST APIs](../rest-api/INDEX.md) (REST over various stores)
+- [System Design](../../architecture/system-design/INDEX.md) (polyglot persistence in designs)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) (query performance)
 
 ## References & Learn More
 

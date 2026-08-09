@@ -1,7 +1,7 @@
 <!-- section: REST API | category: API | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # REST API Interview Questions
 
@@ -835,10 +835,10 @@ REST API design is fundamental for full-stack development. Master HTTP methods, 
 ---
 
 ## See Also
-- [Microservices](../microservices/)
-- [NestJS](../nestjs/)
-- [Security](../security/)
-- [System Design](../../architecture/system-design/)
+- [Microservices](../microservices/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
+- [Security](../security/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

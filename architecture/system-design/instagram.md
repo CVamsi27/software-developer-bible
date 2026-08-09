@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Instagram System Design
 
@@ -325,9 +325,9 @@ Alerts: feed load p99 > 1s, image pipeline lag > 5 min, fan-out lag > 1 min, Red
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
-- [Object Storage & CDN](../../backend/database/) (database section)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [Object Storage & CDN](../../backend/database/INDEX.md) (database section)
 - [System Design Interview Questions](interview-questions.md)
 - [Twitter Feed](twitter-feed.md)
 - [URL Shortener](url-shortener.md)

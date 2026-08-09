@@ -1,7 +1,7 @@
 <!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
-[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](#)
 
 # System Design Cheat Sheet
 
@@ -428,11 +428,11 @@ for message in consumer:
 This cheat sheet provides a concise reference to core System Design concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
-- [Observability](../../platform/observability/)
-- [Security](../../backend/security/)
-- [System Design](../../architecture/system-design/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [Observability](../../platform/observability/INDEX.md)
+- [Security](../../backend/security/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

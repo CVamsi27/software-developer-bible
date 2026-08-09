@@ -1,7 +1,7 @@
 <!-- section: CI/CD | category: DevOps | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-CI/CD-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CI/CD-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # CI/CD Interview Questions
 
@@ -578,9 +578,9 @@ helm rollback myrelease 1
 ---
 
 ## See Also
-- [Docker](../docker/)
-- [Git Advanced](../git-advanced/)
-- [Kubernetes](../kubernetes/)
+- [Docker](../docker/INDEX.md)
+- [Git Advanced](../git-advanced/INDEX.md)
+- [Kubernetes](../kubernetes/INDEX.md)
 
 ## References & Learn More
 

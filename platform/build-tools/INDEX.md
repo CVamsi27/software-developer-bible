@@ -3,8 +3,8 @@
 > **9 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, tool comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -20,7 +20,7 @@
 
 ---
 
-**Cross-references:** [Next.js](../../frontend/nextjs/) | [Performance Monitoring](../../quality/performance-monitoring/) | [React](../../frontend/react/)
+**Cross-references:** [Next.js](../../frontend/nextjs/INDEX.md) | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) | [React](../../frontend/react/INDEX.md)
 ---
 
 ## Navigation

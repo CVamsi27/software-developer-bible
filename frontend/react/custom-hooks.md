@@ -1,7 +1,7 @@
 <!-- section: React | category: Frontend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-React-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-React-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Custom Hooks
 
@@ -1118,11 +1118,11 @@ Performance:
 
 ## See Also
 - [Compound Components](compound-components.md)
-- [Form Handling (React Hook Form, Formik)](../../frontend/)
-- [JavaScript](../javascript/)
-- [Next.js](../nextjs/)
+- [Form Handling (React Hook Form, Formik)](../../frontend/INDEX.md)
+- [JavaScript](../javascript/INDEX.md)
+- [Next.js](../nextjs/INDEX.md)
 - [Performance](performance.md)
-- [Testing](../../quality/testing/)
+- [Testing](../../quality/testing/INDEX.md)
 - [useEffect](useeffect.md)
 - [useMemo / useCallback](usememo-usecallback.md)
 - [useRef](useref.md)

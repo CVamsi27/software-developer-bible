@@ -3,8 +3,8 @@
 > **11 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, mocking, test patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Quality-green)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Quality-green)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -22,7 +22,7 @@
 
 ---
 
-**Cross-references:** [React](../../frontend/react/) | [NestJS](../../backend/nestjs/) | [CI/CD](../../platform/ci-cd) | [Coding Patterns](../../interview-toolkit/coding-patterns/)
+**Cross-references:** [React](../../frontend/react/INDEX.md) | [NestJS](../../backend/nestjs/INDEX.md) | [CI/CD](../../platform/ci-cd) | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 ---
 
 ## Navigation

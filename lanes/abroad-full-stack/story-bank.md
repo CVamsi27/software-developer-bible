@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: story-bank, personal -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-story-bank%20%C2%B7%20personal-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-story-bank%20%C2%B7%20personal-lightgrey)](#)
 
 # Story Bank — Master STAR+R Stories
 

@@ -1,7 +1,7 @@
 <!-- section: REST API | category: API | tags: concept -->
-[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # OpenAPI / Swagger Documentation
 
@@ -228,10 +228,10 @@ schemathesis run http://localhost:3000/api-json --checks all
 ---
 
 ## See Also
-- [Microservices](../microservices/) (per-service specs, developer portals)
-- [NestJS](../nestjs/) (where `@nestjs/swagger` lives)
-- [Security](../security/) (security schemes in the spec)
-- [System Design](../../architecture/system-design/) (public API contracts)
+- [Microservices](../microservices/INDEX.md) (per-service specs, developer portals)
+- [NestJS](../nestjs/INDEX.md) (where `@nestjs/swagger` lives)
+- [Security](../security/INDEX.md) (security schemes in the spec)
+- [System Design](../../architecture/system-design/INDEX.md) (public API contracts)
 
 ## References & Learn More
 

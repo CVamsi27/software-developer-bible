@@ -1,7 +1,7 @@
 <!-- section: Coding Patterns | category: Interview | tags: concept, practice -->
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](#)
 
 # String Search — KMP & Rabin-Karp
 
@@ -394,7 +394,7 @@ function kmpSearch(text, pattern) { /* ... */ }
 
 ## See Also
 - [Binary Search](binary-search.md)
-- [Coding Patterns](./)
+- [Coding Patterns](#)
 - [Dynamic Programming](dynamic-programming.md)
 - [Sliding Window](sliding-window.md)
 - [Trie](trie.md)

@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: guide -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-guide-lightgrey)](#)
 
 # How to Approach Any System Design Problem
 
@@ -202,8 +202,8 @@ SENIOR SIGNALS:
 
 ## See Also
 - [API Gateway](../../backend/microservices/api-gateway.md)
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 - [System Design Interview Questions](interview-questions.md)
 - [URL Shortener](url-shortener.md)
 

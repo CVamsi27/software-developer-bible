@@ -1,7 +1,7 @@
 <!-- section: Form Handling | category: Frontend | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Formik
 
@@ -383,12 +383,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Design Patterns](../../backend/design-patterns/)
-- [React](../react/)
+- [Design Patterns](../../backend/design-patterns/INDEX.md)
+- [React](../react/INDEX.md)
 - [React Hook Form](react-hook-form.md)
 - [Server Actions & Form Patterns](server-actions-and-form-patterns.md)
 - [TanStack Form](tanstack-form.md)
-- [TypeScript](../typescript/)
+- [TypeScript](../typescript/INDEX.md)
 - [Zod](zod.md)
 
 ## References & Learn More

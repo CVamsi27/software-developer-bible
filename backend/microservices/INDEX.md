@@ -3,8 +3,8 @@
 > **14 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, CQRS, bulkhead, strangler fig, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [NestJS Microservices](../../backend/) | [System Design](../../architecture/system-design/) | [Docker](../../platform/docker/) | [Kubernetes](../../platform/kubernetes/)
+**Cross-references:** [NestJS Microservices](../../backend/INDEX.md) | [System Design](../../architecture/system-design/INDEX.md) | [Docker](../../platform/docker/INDEX.md) | [Kubernetes](../../platform/kubernetes/INDEX.md)
 ---
 
 ## Navigation

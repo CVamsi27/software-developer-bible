@@ -1,7 +1,7 @@
 <!-- section: WebSockets | category: Real-Time | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-WebSockets-blue)](.)
-[![Category](https://img.shields.io/badge/category-Real-Time-f59e0b)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-WebSockets-blue)](#)
+[![Category](https://img.shields.io/badge/category-Real-Time-f59e0b)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # NestJS WebSockets
 
@@ -921,9 +921,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../backend/nestjs/)
-- [Observability](../../platform/observability/)
-- [System Design](../../architecture/system-design/)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [Observability](../../platform/observability/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

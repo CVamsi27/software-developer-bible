@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Lyft / Ride-Sharing System Design
 
@@ -392,11 +392,11 @@ Alerts: match latency p99 > 30s, location stream lag > 10s, surge spike across >
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 - [System Design Interview Questions](interview-questions.md)
 - [Uber](uber.md) (sister problem with different framing)
-- [WebSockets](../../realtime/websockets/)
+- [WebSockets](../../realtime/websockets/INDEX.md)
 
 ## References & Learn More
 

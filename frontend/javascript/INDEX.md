@@ -3,8 +3,8 @@
 > **27 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -38,7 +38,7 @@
 
 ---
 
-**Cross-references:** [TypeScript](../typescript/) | [Node.js](../../backend/nodejs/) | [Coding Patterns](../../interview-toolkit/coding-patterns/)
+**Cross-references:** [TypeScript](../typescript/INDEX.md) | [Node.js](../../backend/nodejs/INDEX.md) | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 ---
 
 ## Navigation

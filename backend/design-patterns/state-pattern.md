@@ -1,7 +1,7 @@
 <!-- section: Design Patterns | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # State Pattern & State Machines
 
@@ -285,10 +285,10 @@ paid: {
 ---
 
 ## See Also
-- [Coding Patterns](../../interview-toolkit/coding-patterns/) (state in algorithms)
-- [JavaScript](../../frontend/javascript/) (state in functional vs OO styles)
-- [NestJS](../nestjs/) (lifecycle states, sagas in microservices)
-- [System Design](../../architecture/system-design/) (workflows in design)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) (state in algorithms)
+- [JavaScript](../../frontend/javascript/INDEX.md) (state in functional vs OO styles)
+- [NestJS](../nestjs/INDEX.md) (lifecycle states, sagas in microservices)
+- [System Design](../../architecture/system-design/INDEX.md) (workflows in design)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: system-design, patterns, reference -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-system-design%20%C2%B7%20patterns%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-system-design%20%C2%B7%20patterns%20%C2%B7%20reference-lightgrey)](#)
 
 # System Design for EU Mid-Stage — Patterns and Cases
 
@@ -14,7 +14,7 @@
 - **Depth over breadth:** pick 2-3 critical components, go deep. Don't try to cover 8 services shallowly.
 - **Always discuss trade-offs:** CAP, eventual consistency, idempotency, exactly-once, cost.
 
-The bible's [Architecture Stack/11 System Design](../../architecture/system-design/) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
+The bible's [Architecture Stack/11 System Design](../../architecture/system-design/INDEX.md) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
 
 ---
 
@@ -145,7 +145,7 @@ See: [../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../ar
 - **DLQ** — poison message handling
 - **Replay** — keep topics for 7 days, support re-processing
 
-See: [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/) for the full microservices reference.
+See: [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/INDEX.md) for the full microservices reference.
 
 ### 6. Notification Service (every company has one)
 
@@ -190,7 +190,7 @@ Pick 5 of the cases above. Set a 45-min timer. Record yourself (Loom or Zoom). T
 
 After 5 rounds of this, you'll be sharper than 90% of candidates.
 
-For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/).
+For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/INDEX.md).
 
 For "How to approach any system design problem" framework, see [../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md](../../architecture/system-design/how-to-approach.md).
 

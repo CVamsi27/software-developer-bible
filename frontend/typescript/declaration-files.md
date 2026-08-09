@@ -1,7 +1,7 @@
 <!-- section: TypeScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Declaration Files (.d.ts)
 
@@ -648,7 +648,7 @@ declare class Parser {
 - [Advanced Generics](advanced-generics.md)
 - [Branded Types](branded-types.md)
 - [Infer](infer.md)
-- [JavaScript](../javascript/)
+- [JavaScript](../javascript/INDEX.md)
 - [Mapped Types](mapped-types.md)
 - [Template Literal Types](template-literal-types.md)
 - [Type Narrowing](type-narrowing.md)

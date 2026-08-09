@@ -1,7 +1,7 @@
 <!-- section: Design Patterns | category: Architecture | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # Design Patterns Interview Questions
 
@@ -1233,10 +1233,10 @@ class CacheLayer {
 This guide covers the essential concepts, code examples, and best practices for this topic. Use it as a comprehensive reference for interview preparation and day-to-day development.
 
 ## See Also
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [JavaScript](../../frontend/javascript/)
-- [NestJS](../nestjs/)
-- [System Design](../../architecture/system-design/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

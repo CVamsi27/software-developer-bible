@@ -1,7 +1,7 @@
 <!-- section: Animation | category: Frontend | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Animation-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Animation-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # GSAP (GreenSock Animation Platform)
 
@@ -352,7 +352,7 @@ INTERVIEW ANSWER:
 
 - [CSS Animations](css-animations.md)
 - [Framer Motion](framer-motion.md)
-- [Performance Monitoring](../../quality/performance-monitoring/)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
 - [React Spring](react-spring.md)
 - [View Transitions & Scroll-Driven Animations](view-transitions-and-scroll-driven-animations.md)
 - [Web Animations API](web-animations-api.md)

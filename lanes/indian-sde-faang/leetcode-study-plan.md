@@ -1,7 +1,7 @@
 <!-- section: SDE Role | category: Interview | tags: study-plan -->
-[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-study-plan-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-study-plan-lightgrey)](#)
 
 # 📅 Weekly Study Plan — Intensive Track (4-6 Hours/Day)
 
@@ -645,12 +645,12 @@ This guide provides a structured LeetCode study plan organized by topic and diff
 ## See Also
 
 ---
-- [Behavioral](../../interview-toolkit/behavioral/)
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [JavaScript](../../frontend/javascript/)
-- [React](../../frontend/react/)
-- [System Design](../../architecture/system-design/)
-- [TypeScript](../../frontend/typescript/)
+- [Behavioral](../../interview-toolkit/behavioral/INDEX.md)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
+- [TypeScript](../../frontend/typescript/INDEX.md)
 
 ## Cheat Sheet
 ```text

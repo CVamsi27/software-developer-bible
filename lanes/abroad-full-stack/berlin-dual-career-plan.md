@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Execution | tags: berlin, dual-career, family, cssa, pegs, relocation, eu-blue-card, vamsi -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Execution-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-berlin%20%C2%B7%20dual-career%20%C2%B7%20family%20%C2%B7%20cssa%20%C2%B7%20pegs%20%C2%B7%20relocation%20%C2%B7%20eu-blue-card%20%C2%B7%20vamsi-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Execution-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-berlin%20%C2%B7%20dual-career%20%C2%B7%20family%20%C2%B7%20cssa%20%C2%B7%20pegs%20%C2%B7%20relocation%20%C2%B7%20eu-blue-card%20%C2%B7%20vamsi-lightgrey)](#)
 
 # Berlin Dual-Career Plan — Vamsi + Wife (CSSA), Newborn
 

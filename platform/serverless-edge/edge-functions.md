@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Edge Functions
 
@@ -354,9 +354,9 @@ INTERVIEW ANSWER:
 ## See Also
 
 - [AWS Lambda](aws-lambda.md)
-- [Docker](../docker/)
-- [Next.js](../../frontend/nextjs/)
-- [Observability](../observability/)
+- [Docker](../docker/INDEX.md)
+- [Next.js](../../frontend/nextjs/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [Serverless Overview](serverless-overview.md)
 - [Vercel Deployments](vercel-deployments.md)
 

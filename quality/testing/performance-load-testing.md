@@ -1,7 +1,7 @@
 <!-- section: Testing | category: Quality | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Testing-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Performance & Load Testing
 
@@ -471,10 +471,10 @@ Client-side latency p95 = 500ms doesn't mean much if the **DB CPU is at 95%** or
 ## See Also
 - [CI/CD](../../platform/ci-cd)
 - [Core Web Vitals](../performance-monitoring/core-web-vitals.md)
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
-- [Observability](../../platform/observability/)
-- [System Design](../../architecture/system-design/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [Observability](../../platform/observability/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

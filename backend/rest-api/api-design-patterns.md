@@ -1,7 +1,7 @@
 <!-- section: REST APIs | category: API | tags: concept, api-design, theory -->
-[![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20api-design%20%C2%B7%20theory-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20api-design%20%C2%B7%20theory-lightgrey)](#)
 
 # API Design Patterns — REST, GraphQL, gRPC, Webhooks
 
@@ -241,7 +241,7 @@ Connection: Upgrade
 - Request-response (use REST)
 - High-throughput service-to-service (use gRPC)
 
-**See:** [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/) for the full deep-dive.
+**See:** [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/INDEX.md) for the full deep-dive.
 
 **In interviews:** "We use WebSocket for the chat feature. Each user maintains a persistent connection to the chat server. The chat server publishes to a Kafka topic; other chat servers consume and forward to their connected users."
 
@@ -474,7 +474,7 @@ Use standard HTTP status codes. Return a structured error body.
 
 - [Caching Patterns](../../architecture/system-design/caching-patterns.md) — API responses can be cached
 - [Queues And Async](../../architecture/system-design/queues-and-async.md) — async pattern behind webhooks
-- [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/) — full WebSocket deep-dive
+- [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/INDEX.md) — full WebSocket deep-dive
 - [Rest Principles](rest-principles.md) through [Openapi Swagger](openapi-swagger.md) — full REST deep-dive
 
 ---
@@ -490,4 +490,4 @@ Use standard HTTP status codes. Return a structured error body.
 - **Pick per use case.** Not one-size-fits-all.
 - **In interviews: name the style, justify the choice, mention the trade-offs.**
 
-For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [WebSockets](../../realtime/websockets/).
+For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [WebSockets](../../realtime/websockets/INDEX.md).

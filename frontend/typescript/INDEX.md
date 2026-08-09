@@ -3,8 +3,8 @@
 > **15 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -26,7 +26,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../javascript/) | [React](../react/) | [NestJS](../../backend/nestjs/)
+**Cross-references:** [JavaScript](../javascript/INDEX.md) | [React](../react/INDEX.md) | [NestJS](../../backend/nestjs/INDEX.md)
 ---
 
 ## Navigation

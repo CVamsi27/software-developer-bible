@@ -1,7 +1,7 @@
 <!-- section: Observability | category: Observability | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
-[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Observability-blue)](#)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Observability Interview Questions
 
@@ -1305,9 +1305,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Kubernetes](../kubernetes/)
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [Serverless & Edge](../serverless-edge/)
+- [Kubernetes](../kubernetes/INDEX.md)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [Serverless & Edge](../serverless-edge/INDEX.md)
 
 ## References & Learn More
 

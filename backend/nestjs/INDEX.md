@@ -3,8 +3,8 @@
 > **15 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [Node.js](../nodejs/) | [REST APIs](../rest-api/) | [Microservices (gRPC, Service Mesh)](../../backend/) | [Design Patterns (CQRS)](../../backend/) | [Testing](../../quality/testing/)
+**Cross-references:** [Node.js](../nodejs/INDEX.md) | [REST APIs](../rest-api/INDEX.md) | [Microservices (gRPC, Service Mesh)](../../backend/INDEX.md) | [Design Patterns (CQRS)](../../backend/INDEX.md) | [Testing](../../quality/testing/INDEX.md)
 ---
 
 ## Navigation

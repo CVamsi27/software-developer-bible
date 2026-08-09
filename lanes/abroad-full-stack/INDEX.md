@@ -3,8 +3,8 @@
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
@@ -49,44 +49,44 @@ This is a **reference checklist** of every topic a senior abroad full-stack cand
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [TypeScript](../../frontend/typescript/) |
-| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [React](../../frontend/react/) |
-| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [Next.js](../../frontend/nextjs/) |
-| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [Node.js](../../backend/nodejs/) |
-| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [NestJS](../../backend/nestjs/) |
-| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [REST API](../../backend/rest-api/), [GraphQL](../../backend/graphql/) |
-| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [Database](../../backend/database/) |
-| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [Security](../../backend/security/) |
-| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [System Design](../../architecture/system-design/) |
-| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [Microservices](../../backend/microservices/) |
-| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [Docker](../../platform/docker/), [CI/CD](../../platform/ci-cd) |
-| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [Testing](../../quality/testing/) |
-| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [Observability](../../platform/observability/) |
-| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [Behavioral](../../interview-toolkit/behavioral/) + your own [story-bank.md](story-bank.md) |
+| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [TypeScript](../../frontend/typescript/INDEX.md) |
+| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [React](../../frontend/react/INDEX.md) |
+| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [Next.js](../../frontend/nextjs/INDEX.md) |
+| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [Node.js](../../backend/nodejs/INDEX.md) |
+| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [NestJS](../../backend/nestjs/INDEX.md) |
+| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [REST API](../../backend/rest-api/INDEX.md), [GraphQL](../../backend/graphql/INDEX.md) |
+| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [Database](../../backend/database/INDEX.md) |
+| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [Security](../../backend/security/INDEX.md) |
+| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [System Design](../../architecture/system-design/INDEX.md) |
+| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [Microservices](../../backend/microservices/INDEX.md) |
+| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [Docker](../../platform/docker/INDEX.md), [CI/CD](../../platform/ci-cd) |
+| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [Testing](../../quality/testing/INDEX.md) |
+| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [Observability](../../platform/observability/INDEX.md) |
+| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) + your own [story-bank.md](story-bank.md) |
 
 ### Tier 2 — Asked in 50-70% of interviews (mid-stage senior)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [Kubernetes](../../platform/kubernetes/) |
-| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [Performance Monitoring](../../quality/performance-monitoring/) |
-| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [Accessibility](../../quality/accessibility/) |
-| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [Build Tools](../../platform/build-tools/) |
-| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [WebSockets](../../realtime/websockets/) |
-| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [Serverless & Edge](../../platform/serverless-edge/) |
-| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [Design Patterns](../../backend/design-patterns/) |
-| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [Git Advanced](../../platform/git-advanced/) |
-| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [Coding Patterns](../../interview-toolkit/coding-patterns/) |
+| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [Kubernetes](../../platform/kubernetes/INDEX.md) |
+| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) |
+| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [Accessibility](../../quality/accessibility/INDEX.md) |
+| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [Build Tools](../../platform/build-tools/INDEX.md) |
+| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [WebSockets](../../realtime/websockets/INDEX.md) |
+| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [Serverless & Edge](../../platform/serverless-edge/INDEX.md) |
+| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [Design Patterns](../../backend/design-patterns/INDEX.md) |
+| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [Git Advanced](../../platform/git-advanced/INDEX.md) |
+| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) |
 
 ### Tier 3 — Differentiator (asked 20-30%, distinguishes senior from staff)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [React](../../frontend/react/) + [Build Tools](../../platform/build-tools/) |
-| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [Microservices](../../backend/microservices/) |
-| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [Security](../../backend/security/) |
-| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [Docker](../../platform/docker/), [Kubernetes](../../platform/kubernetes/) |
-| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [Behavioral](../../interview-toolkit/behavioral/) |
+| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [React](../../frontend/react/INDEX.md) + [Build Tools](../../platform/build-tools/INDEX.md) |
+| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [Microservices](../../backend/microservices/INDEX.md) |
+| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [Security](../../backend/security/INDEX.md) |
+| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [Docker](../../platform/docker/INDEX.md), [Kubernetes](../../platform/kubernetes/INDEX.md) |
+| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) |
 | **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [Compensation Benchmarking](../indian-sde-faang/compensation-benchmarking.md) |
 
 ### Topics to SKIP (overkill for this lane)
@@ -140,7 +140,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 **How to ship a strong take-home:**
 - Plan for 5-6 hours minimum, even if the brief says "2 hours"
 - Lead with: schema design, then backend, then frontend, then tests, then README
-- Use the bible's [NestJS](../../backend/nestjs/) + [Database](../../backend/database/) + [Security](../../backend/security/) sections as your reference
+- Use the bible's [NestJS](../../backend/nestjs/INDEX.md) + [Database](../../backend/database/INDEX.md) + [Security](../../backend/security/INDEX.md) sections as your reference
 - Include a short Loom video walkthrough if the brief allows
 - Have a "what I'd do with 24 more hours" note in the README
 
@@ -160,7 +160,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No questions asked back
 - Silent for 5+ minutes when stuck
 
-**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [Coding Patterns](../../interview-toolkit/coding-patterns/) has the patterns.
+**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) has the patterns.
 
 ### Round 3: System Design (45-60 min)
 
@@ -327,21 +327,21 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 
-**Core fundamentals:** [Interview Strategy](../../strategy/) · [JavaScript](../../frontend/javascript/) · [TypeScript](../../frontend/typescript/) · [React](../../frontend/react/) · [Next.js](../../frontend/nextjs/)
+**Core fundamentals:** [Interview Strategy](../../strategy/INDEX.md) · [JavaScript](../../frontend/javascript/INDEX.md) · [TypeScript](../../frontend/typescript/INDEX.md) · [React](../../frontend/react/INDEX.md) · [Next.js](../../frontend/nextjs/INDEX.md)
 
-**Backend, API & Data:** [Node.js](../../backend/nodejs/) · [NestJS](../../backend/nestjs/) · [REST API](../../backend/rest-api/) · [Database](../../backend/database/) · [GraphQL](../../backend/graphql/)
+**Backend, API & Data:** [Node.js](../../backend/nodejs/INDEX.md) · [NestJS](../../backend/nestjs/INDEX.md) · [REST API](../../backend/rest-api/INDEX.md) · [Database](../../backend/database/INDEX.md) · [GraphQL](../../backend/graphql/INDEX.md)
 
-**Architecture & Design:** [Security](../../backend/security/) · [Design Patterns](../../backend/design-patterns/) · [System Design](../../architecture/system-design/) · [Microservices](../../backend/microservices/)
+**Architecture & Design:** [Security](../../backend/security/INDEX.md) · [Design Patterns](../../backend/design-patterns/INDEX.md) · [System Design](../../architecture/system-design/INDEX.md) · [Microservices](../../backend/microservices/INDEX.md)
 
-**DevOps, Observability & Tooling:** [Docker](../../platform/docker/) · [Kubernetes](../../platform/kubernetes/) · [CI/CD](../../platform/ci-cd) · [Observability](../../platform/observability/) · [Build Tools](../../platform/build-tools/) · [Git Advanced](../../platform/git-advanced/) · [Serverless & Edge](../../platform/serverless-edge/)
+**DevOps, Observability & Tooling:** [Docker](../../platform/docker/INDEX.md) · [Kubernetes](../../platform/kubernetes/INDEX.md) · [CI/CD](../../platform/ci-cd) · [Observability](../../platform/observability/INDEX.md) · [Build Tools](../../platform/build-tools/INDEX.md) · [Git Advanced](../../platform/git-advanced/INDEX.md) · [Serverless & Edge](../../platform/serverless-edge/INDEX.md)
 
-**Testing & Quality:** [Testing](../../quality/testing/) · [Accessibility](../../quality/accessibility/) · [Performance Monitoring](../../quality/performance-monitoring/)
+**Testing & Quality:** [Testing](../../quality/testing/INDEX.md) · [Accessibility](../../quality/accessibility/INDEX.md) · [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
 
-**Real-time:** [WebSockets](../../realtime/websockets/)
+**Real-time:** [WebSockets](../../realtime/websockets/INDEX.md)
 
-**Interview prep:** [Behavioral](../../interview-toolkit/behavioral/) · [Coding Patterns](../../interview-toolkit/coding-patterns/)
+**Interview prep:** [Behavioral](../../interview-toolkit/behavioral/INDEX.md) · [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 
-**Reference & quick-look:** [Cheat Sheets](../../interview-toolkit/cheatsheets/) · [Monorepo](../../platform/monorepo/) · [Form Handling](../../frontend/form-handling/) · [Animation](../../frontend/animation/)
+**Reference & quick-look:** [Cheat Sheets](../../interview-toolkit/cheatsheets/INDEX.md) · [Monorepo](../../platform/monorepo/INDEX.md) · [Form Handling](../../frontend/form-handling/INDEX.md) · [Animation](../../frontend/animation/INDEX.md)
 
 ---
 
@@ -351,7 +351,7 @@ These are the **where to study** sections. The reference topics above are the **
 A: Both. Use `indian-sde-faang/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `abroad-full-stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
 
 **Q: I'm a frontend specialist. Do I still need the take-home?**
-A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [NestJS](../../backend/nestjs/), [Database](../../backend/database/), and [Security](../../backend/security/) sections are the prep.
+A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [NestJS](../../backend/nestjs/INDEX.md), [Database](../../backend/database/INDEX.md), and [Security](../../backend/security/INDEX.md) sections are the prep.
 
 **Q: I'm targeting remote-first US companies (Stripe, Linear, Vercel) from India. Which lane?**
 A: Primarily this lane (English-only, take-home + system design, visa not needed). The remote-first US market is closer to EU mid-stage than to FAANG. Adjust the comp expectations up ($130-180K TC) but the prep structure is the same.

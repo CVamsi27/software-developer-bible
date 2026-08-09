@@ -1,7 +1,7 @@
 <!-- section: Coding Patterns | category: Interview | tags: concept, practice -->
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](#)
 
 # Backtracking
 
@@ -444,9 +444,9 @@ Pruning techniques:
 ---
 
 ## See Also
-- [JavaScript](../../frontend/javascript/)
-- [SDE Role](../../lanes/indian-sde-faang/)
-- [System Design](../../architecture/system-design/)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [SDE Role](../../lanes/indian-sde-faang/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

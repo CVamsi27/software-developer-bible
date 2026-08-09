@@ -3,8 +3,8 @@
 > **5 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, and System Design for rapid interview review.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -16,7 +16,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../../frontend/javascript/) | [TypeScript](../../frontend/typescript/) | [React](../../frontend/react/) | [System Design](../../architecture/system-design/)
+**Cross-references:** [JavaScript](../../frontend/javascript/INDEX.md) | [TypeScript](../../frontend/typescript/INDEX.md) | [React](../../frontend/react/INDEX.md) | [System Design](../../architecture/system-design/INDEX.md)
 ---
 
 ## Navigation

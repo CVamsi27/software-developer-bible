@@ -1,7 +1,7 @@
 <!-- section: Node.js | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Node.js Buffers
 
@@ -1023,9 +1023,9 @@ Buffers are essential for binary data handling in Node.js. Key takeaways:
 ---
 
 ## See Also
-- [Docker](../../platform/docker/)
-- [JavaScript](../../frontend/javascript/)
-- [NestJS](../nestjs/)
+- [Docker](../../platform/docker/INDEX.md)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
 
 ## References & Learn More
 

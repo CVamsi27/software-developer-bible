@@ -1,7 +1,7 @@
 <!-- section: JavaScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Error Handling
 
@@ -500,7 +500,7 @@ withRetry(fn, { maxRetries: 3, baseDelay: 1000 });
 ## See Also
 - [Async/Await](async-await.md)
 - [Promises](promises.md)
-- [TypeScript](../typescript/)
+- [TypeScript](../typescript/INDEX.md)
 
 ## References & Learn More
 

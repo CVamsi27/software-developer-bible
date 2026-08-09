@@ -1,7 +1,7 @@
 <!-- section: Database | category: Data | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-Database-blue)](.)
-[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Database-blue)](#)
+[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # Database Interview Questions
 
@@ -895,9 +895,9 @@ Best Practices:
 ---
 
 ## See Also
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [REST APIs](../rest-api/)
-- [System Design](../../architecture/system-design/)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

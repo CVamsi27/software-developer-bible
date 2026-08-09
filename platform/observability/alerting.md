@@ -1,7 +1,7 @@
 <!-- section: Observability | category: Observability | tags: concept, reference, guide -->
-[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
-[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Observability-blue)](#)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](#)
 
 # Alerting
 
@@ -404,11 +404,11 @@ INTERVIEW TIPS:
 ## See Also
 - [Error Tracking](error-tracking.md)
 - [Health Checks](health-checks.md)
-- [Kubernetes](../kubernetes/)
+- [Kubernetes](../kubernetes/INDEX.md)
 - [Logging](logging.md)
 - [Monitoring](monitoring.md)
 - [SLI / SLO / SLA](sli-slo-sla.md)
-- [System Design](../../architecture/system-design/)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

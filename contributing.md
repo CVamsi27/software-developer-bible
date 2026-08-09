@@ -531,9 +531,9 @@ else:
 
 ```text
 ## See Also
-- [Coding Patterns](interview-toolkit/coding-patterns/)
-- [JavaScript](frontend/javascript/)
-- [TypeScript](frontend/typescript/)
+- [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md)
+- [JavaScript](frontend/javascript/INDEX.md)
+- [TypeScript](frontend/typescript/INDEX.md)
 ```
 
 #### Rules
@@ -570,7 +570,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```text
-**Cross-references:** [JavaScript](frontend/javascript/) | [TypeScript](frontend/typescript/) | [Coding Patterns](interview-toolkit/coding-patterns/)
+**Cross-references:** [JavaScript](frontend/javascript/INDEX.md) | [TypeScript](frontend/typescript/INDEX.md) | [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md)
 ```
 
 - Pipe-separated links

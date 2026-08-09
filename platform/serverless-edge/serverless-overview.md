@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: concept, overview -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20overview-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20overview-lightgrey)](#)
 
 # Serverless Overview
 
@@ -311,10 +311,10 @@ INTERVIEW ANSWER FRAMEWORK:
 ## See Also
 
 - [AWS Lambda](aws-lambda.md)
-- [Docker](../docker/)
+- [Docker](../docker/INDEX.md)
 - [Edge Functions](edge-functions.md)
-- [Next.js](../../frontend/nextjs/)
-- [Observability](../observability/)
+- [Next.js](../../frontend/nextjs/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [Serverless Patterns](serverless-patterns.md)
 - [Vercel Deployments](vercel-deployments.md)
 

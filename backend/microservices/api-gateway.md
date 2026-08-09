@@ -1,7 +1,7 @@
 <!-- section: Microservices | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # API Gateway
 
@@ -552,11 +552,11 @@ API Gateway is essential for microservices architecture, providing a unified ent
 
 ## See Also
 - [Bulkhead Pattern](bulkhead-pattern.md)
-- [Docker](../../platform/docker/)
-- [Kubernetes](../../platform/kubernetes/)
-- [NestJS](../nestjs/)
+- [Docker](../../platform/docker/INDEX.md)
+- [Kubernetes](../../platform/kubernetes/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
 - [Strangler Fig](strangler-fig.md)
-- [System Design](../../architecture/system-design/)
+- [System Design](../../architecture/system-design/INDEX.md)
 
 ## References & Learn More
 

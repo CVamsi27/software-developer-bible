@@ -1,7 +1,7 @@
 <!-- section: JavaScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Proxy & Reflect
 
@@ -484,7 +484,7 @@ revoke(); // Disables all proxy operations
 ## See Also
 - [Generators](generators.md)
 - [Shallow vs Deep Copy](shallow-vs-deep-copy.md)
-- [TypeScript](../typescript/)
+- [TypeScript](../typescript/INDEX.md)
 
 ## References & Learn More
 

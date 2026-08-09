@@ -1,7 +1,7 @@
 <!-- section: Form Handling | category: Frontend | tags: concept, reference, tool -->
-[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](#)
 
 # TanStack Form
 
@@ -288,12 +288,12 @@ WHEN TO USE:
 
 ## See Also
 
-- [Design Patterns](../../backend/design-patterns/)
+- [Design Patterns](../../backend/design-patterns/INDEX.md)
 - [Formik](formik.md)
-- [React](../react/)
+- [React](../react/INDEX.md)
 - [React Hook Form](react-hook-form.md)
 - [Server Actions & Form Patterns](server-actions-and-form-patterns.md)
-- [TypeScript](../typescript/)
+- [TypeScript](../typescript/INDEX.md)
 - [Zod](zod.md)
 
 ## References & Learn More

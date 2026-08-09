@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: playbook, take-home, reference, guide -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-playbook%20%C2%B7%20take-home%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-playbook%20%C2%B7%20take-home%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](#)
 
 # Take-Home Playbook — How to Ship a Winning One
 
@@ -160,7 +160,7 @@ Default to the stack the company uses. If you don't know, use:
 
 If the brief specifies a stack, **use that stack.** Don't argue. They want to see if you can be productive in their world, not yours.
 
-The bible's [Backend Stack/06 Nestjs](../../backend/nestjs/), [Backend Stack/08 Database](../../backend/database/), [Backend Stack/09 Security](../../backend/security/) are your reference.
+The bible's [Backend Stack/06 Nestjs](../../backend/nestjs/INDEX.md), [Backend Stack/08 Database](../../backend/database/INDEX.md), [Backend Stack/09 Security](../../backend/security/INDEX.md) are your reference.
 
 ---
 

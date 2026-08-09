@@ -1,7 +1,7 @@
 <!-- section: Git Advanced | category: Tooling | tags: concept, reference, tool -->
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](#)
 
 # Git Hooks
 
@@ -388,7 +388,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Monorepo](../monorepo/)
+- [Monorepo](../monorepo/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
-[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](#)
 
 # TypeScript Cheat Sheet
 
@@ -304,10 +304,10 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 This cheat sheet provides a concise reference to core TypeScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [JavaScript](../../frontend/javascript/)
-- [NestJS](../../backend/nestjs/)
-- [React](../../frontend/react/)
-- [TypeScript](../../frontend/typescript/)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [TypeScript](../../frontend/typescript/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: NestJS | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-NestJS-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Testing NestJS Applications
 
@@ -283,10 +283,10 @@ const moduleRef = await Test.createTestingModule({
 ---
 
 ## See Also
-- [Design Patterns](../design-patterns/) (Repository, Dependency Injection)
-- [Microservices](../microservices/) (testing message-driven services)
-- [Node.js](../nodejs/) (Jest configuration, async testing)
-- [REST APIs](../rest-api/) (API contract testing)
+- [Design Patterns](../design-patterns/INDEX.md) (Repository, Dependency Injection)
+- [Microservices](../microservices/INDEX.md) (testing message-driven services)
+- [Node.js](../nodejs/INDEX.md) (Jest configuration, async testing)
+- [REST APIs](../rest-api/INDEX.md) (API contract testing)
 
 ## References & Learn More
 

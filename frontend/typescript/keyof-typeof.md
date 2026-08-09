@@ -1,7 +1,7 @@
 <!-- section: TypeScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Keyof & Typeof
 
@@ -435,9 +435,9 @@ type Route = keyof typeof routes;
 ---
 
 ## See Also
-- [JavaScript](../javascript/)
-- [NestJS](../../backend/nestjs/)
-- [React](../react/)
+- [JavaScript](../javascript/INDEX.md)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [React](../react/INDEX.md)
 - [Template Literal Types](template-literal-types.md)
 
 ## References & Learn More

@@ -1,7 +1,7 @@
 <!-- section: Testing | category: Quality | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Testing-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Unit Testing
 
@@ -1331,9 +1331,9 @@ INTERVIEW TIPS:
 
 ## See Also
 - [CI/CD](../../platform/ci-cd)
-- [Coding Patterns](../../interview-toolkit/coding-patterns/)
-- [NestJS](../../backend/nestjs/)
-- [React](../../frontend/react/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
 
 ## References & Learn More
 

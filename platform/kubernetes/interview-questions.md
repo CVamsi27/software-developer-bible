@@ -1,7 +1,7 @@
 <!-- section: Kubernetes | category: DevOps | tags: interview-questions -->
-[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](#)
 
 # Kubernetes Interview Questions
 
@@ -790,14 +790,14 @@ kubectl top nodes
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Docker](../docker/)
+- [Docker](../docker/INDEX.md)
 - [Jobs & CronJobs](jobs-cronjobs.md)
-- [Observability](../observability/)
+- [Observability](../observability/INDEX.md)
 - [Pod Disruption Budgets](pod-disruption-budgets.md)
 - [PodPresets](podpresets.md)
 - [RBAC & Network Policies](rbac-network-policies.md)
 - [Resource Quotas](resource-quotas.md)
-- [Serverless & Edge](../serverless-edge/)
+- [Serverless & Edge](../serverless-edge/INDEX.md)
 - [StatefulSets & DaemonSets](statefulsets-daemonsets.md)
 
 ## References & Learn More

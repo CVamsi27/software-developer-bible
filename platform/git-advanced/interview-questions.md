@@ -1,7 +1,7 @@
 <!-- section: Git Advanced | category: Tooling | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Git Advanced Interview Questions
 
@@ -675,7 +675,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Monorepo](../monorepo/)
+- [Monorepo](../monorepo/INDEX.md)
 
 ## References & Learn More
 

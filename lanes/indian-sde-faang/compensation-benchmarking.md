@@ -1,7 +1,7 @@
 <!-- section: SDE Role | category: Interview | tags: reference, guide -->
-[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-reference%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-reference%20%C2%B7%20guide-lightgrey)](#)
 
 # Compensation Benchmarking & Negotiation Scripts
 

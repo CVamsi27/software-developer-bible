@@ -3,8 +3,8 @@
 > **5 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -16,7 +16,7 @@
 
 ---
 
-**Cross-references:** [Build Tools](../build-tools/) | [CI/CD](../ci-cd) | [Git Advanced](../git-advanced/)
+**Cross-references:** [Build Tools](../build-tools/INDEX.md) | [CI/CD](../ci-cd) | [Git Advanced](../git-advanced/INDEX.md)
 
 ---
 

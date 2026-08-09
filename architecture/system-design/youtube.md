@@ -1,7 +1,7 @@
 <!-- section: System Design | category: Architecture | tags: concept -->
-[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
-[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # YouTube System Design
 
@@ -338,8 +338,8 @@ Alerts: transcode lag > 5 min, CDN origin offload < 80%, rebuffer ratio > 1%, up
 ---
 
 ## See Also
-- [Database](../../backend/database/)
-- [Microservices](../../backend/microservices/)
+- [Database](../../backend/database/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 - [Netflix](netflix.md) (similar CDN + streaming focus)
 - [System Design Interview Questions](interview-questions.md)
 - [URL Shortener](url-shortener.md)

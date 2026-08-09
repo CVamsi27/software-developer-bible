@@ -1,7 +1,7 @@
 <!-- section: GraphQL | category: API | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-GraphQL-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Apollo Server
 
@@ -971,9 +971,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../nestjs/)
-- [React](../../frontend/react/)
-- [REST APIs](../rest-api/)
+- [NestJS](../nestjs/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
+- [REST APIs](../rest-api/INDEX.md)
 
 ## References & Learn More
 

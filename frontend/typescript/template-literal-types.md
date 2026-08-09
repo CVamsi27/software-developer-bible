@@ -1,7 +1,7 @@
 <!-- section: TypeScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Template Literal Types
 
@@ -787,11 +787,11 @@ type ReplaceAll<S, F extends string, T extends string> =
 - [Conditional Types](conditional-types.md)
 - [Declaration Files](declaration-files.md)
 - [Infer](infer.md)
-- [JavaScript](../javascript/)
+- [JavaScript](../javascript/INDEX.md)
 - [keyof / typeof](keyof-typeof.md)
 - [Mapped Types](mapped-types.md)
-- [NestJS](../../backend/nestjs/)
-- [React](../react/)
+- [NestJS](../../backend/nestjs/INDEX.md)
+- [React](../react/INDEX.md)
 
 ## References & Learn More
 

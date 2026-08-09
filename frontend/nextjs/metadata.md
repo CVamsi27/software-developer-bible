@@ -1,7 +1,7 @@
 <!-- section: Next.js | category: Frontend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Next.js-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Metadata API in Next.js
 
@@ -776,9 +776,9 @@ export default function robots(): MetadataRoute.Robots { [...] }
 
 ## See Also
 - [Incremental Static Regeneration](incremental-static-regeneration.md)
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [React](../react/)
-- [Serverless & Edge](../../platform/serverless-edge/)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [React](../react/INDEX.md)
+- [Serverless & Edge](../../platform/serverless-edge/INDEX.md)
 
 ## References & Learn More
 

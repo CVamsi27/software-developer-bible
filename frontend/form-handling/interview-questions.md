@@ -1,7 +1,7 @@
 <!-- section: Form Handling | category: Frontend | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Form Handling Interview Questions
 
@@ -270,14 +270,14 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [Accessibility](../../quality/accessibility/)
-- [Design Patterns](../../backend/design-patterns/)
+- [Accessibility](../../quality/accessibility/INDEX.md)
+- [Design Patterns](../../backend/design-patterns/INDEX.md)
 - [Formik](formik.md)
-- [React](../react/)
+- [React](../react/INDEX.md)
 - [React Hook Form](react-hook-form.md)
 - [Server Actions & Form Patterns](server-actions-and-form-patterns.md)
 - [TanStack Form](tanstack-form.md)
-- [TypeScript](../typescript/)
+- [TypeScript](../typescript/INDEX.md)
 - [Zod](zod.md)
 
 ## References & Learn More

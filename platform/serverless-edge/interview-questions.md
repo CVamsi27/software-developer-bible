@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Serverless & Edge Interview Questions
 
@@ -263,8 +263,8 @@ INTERVIEW WINNERS:
 
 - [AWS Lambda](aws-lambda.md)
 - [Edge Functions](edge-functions.md)
-- [Microservices](../../backend/microservices/)
-- [Observability](../observability/)
+- [Microservices](../../backend/microservices/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [Serverless Overview](serverless-overview.md)
 - [Serverless Patterns](serverless-patterns.md)
 - [Vercel Deployments](vercel-deployments.md)

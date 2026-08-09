@@ -3,8 +3,8 @@
 > **6 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -17,7 +17,7 @@
 
 ---
 
-**Cross-references:** [Accessibility](../../quality/accessibility/) | [Design Patterns](../../backend/design-patterns/) | [Next.js](../nextjs/) | [React](../react/) | [TypeScript](../typescript/)
+**Cross-references:** [Accessibility](../../quality/accessibility/INDEX.md) | [Design Patterns](../../backend/design-patterns/INDEX.md) | [Next.js](../nextjs/INDEX.md) | [React](../react/INDEX.md) | [TypeScript](../typescript/INDEX.md)
 
 ---
 

@@ -3,8 +3,8 @@
 > **8 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-API-%23ff6b35)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-API-%23ff6b35)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -19,7 +19,7 @@
 
 ---
 
-**Cross-references:** [REST APIs](../rest-api/) | [React](../../frontend/react/) | [NestJS](../nestjs/)
+**Cross-references:** [REST APIs](../rest-api/INDEX.md) | [React](../../frontend/react/INDEX.md) | [NestJS](../nestjs/INDEX.md)
 ---
 
 ## Navigation

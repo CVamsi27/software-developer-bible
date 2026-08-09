@@ -1,7 +1,7 @@
 <!-- section: Node.js | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Node.js Security
 
@@ -495,8 +495,8 @@ PROTOTYPE POLLUTION:
 ---
 
 ## See Also
-- [Docker](../../platform/docker/)
-- [Web Security](../../backend/)
+- [Docker](../../platform/docker/INDEX.md)
+- [Web Security](../../backend/INDEX.md)
 
 ## References & Learn More
 

@@ -1,7 +1,7 @@
 <!-- section: Docker | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Docker-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Docker Images & Containers
 
@@ -396,10 +396,10 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Kubernetes](../kubernetes/)
+- [Kubernetes](../kubernetes/INDEX.md)
 - [Kubernetes Jobs](../kubernetes/jobs-cronjobs.md)
 - [Kubernetes StatefulSets](../kubernetes/statefulsets-daemonsets.md)
-- [Microservices](../../backend/microservices/)
+- [Microservices](../../backend/microservices/INDEX.md)
 
 ## References & Learn More
 

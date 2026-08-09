@@ -3,8 +3,8 @@
 > **For senior engineers (5+ YoE) targeting Indian SDE roles AND FAANG / Big Tech positions** — Microsoft, Google, Amazon, Meta, Apple, Adobe, in-country India product companies, and US-based roles with H1B/STEM-OPT sponsorship. **DSA-heavy**, 8-12 week intensive prep, 4-6 hrs/day. The bar is LeetCode mediums to hards on the phone screen.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
@@ -51,52 +51,52 @@ This is a **reference checklist** of every topic a senior Indian SDE / FAANG can
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Data Structures & Algorithms** | Arrays, Strings, HashMaps, Trees (BST + balanced), Graphs (BFS/DFS/Union-Find), Linked Lists, Stacks, Queues, Heaps. Implement from scratch in your strongest language. | [Coding Patterns](../../interview-toolkit/coding-patterns/) |
-| **Dynamic Programming** | 1D and 2D DP, knapsack, LCS/edit distance, coin change, climbing stairs, house robber, longest increasing subsequence. **This is the FAANG bar.** | [Coding Patterns/06 Dynamic Programming](../../interview-toolkit/coding-patterns/) |
-| **Graphs** | BFS, DFS, topological sort, Dijkstra, Union-Find, MST (Kruskal/Prim). Code on whiteboard in 20 min. | [Coding Patterns](../../interview-toolkit/coding-patterns/) + [Complete Guide](complete-guide.md) |
-| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [Design Patterns](../../backend/design-patterns/) + [Core Cs Fundamentals](core-cs-fundamentals.md) |
-| **System Design at 45 min** | URL shortener, WhatsApp, Instagram, Twitter timeline, Uber, Netflix, Dropbox. With back-of-envelope estimates. | [System Design](../../architecture/system-design/) |
+| **Data Structures & Algorithms** | Arrays, Strings, HashMaps, Trees (BST + balanced), Graphs (BFS/DFS/Union-Find), Linked Lists, Stacks, Queues, Heaps. Implement from scratch in your strongest language. | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Dynamic Programming** | 1D and 2D DP, knapsack, LCS/edit distance, coin change, climbing stairs, house robber, longest increasing subsequence. **This is the FAANG bar.** | [Coding Patterns/06 Dynamic Programming](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Graphs** | BFS, DFS, topological sort, Dijkstra, Union-Find, MST (Kruskal/Prim). Code on whiteboard in 20 min. | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) + [Complete Guide](complete-guide.md) |
+| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [Design Patterns](../../backend/design-patterns/INDEX.md) + [Core Cs Fundamentals](core-cs-fundamentals.md) |
+| **System Design at 45 min** | URL shortener, WhatsApp, Instagram, Twitter timeline, Uber, Netflix, Dropbox. With back-of-envelope estimates. | [System Design](../../architecture/system-design/INDEX.md) |
 | **Concurrency & multithreading** | Threads, locks, deadlocks, semaphores, producer-consumer, dining philosophers, rate limiters. **Asked at Meta, Google, Amazon.** | [Core Cs Fundamentals](core-cs-fundamentals.md) |
 | **Operating Systems** | Process vs thread, virtual memory, paging, context switching, scheduling, file systems, IPC. | [Core Cs Fundamentals](core-cs-fundamentals.md) |
-| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [Database](../../backend/database/) + [Complete Guide](complete-guide.md) |
-| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [Core Cs Fundamentals](core-cs-fundamentals.md) + [REST API](../../backend/rest-api/) |
+| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [Database](../../backend/database/INDEX.md) + [Complete Guide](complete-guide.md) |
+| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [Core Cs Fundamentals](core-cs-fundamentals.md) + [REST API](../../backend/rest-api/INDEX.md) |
 | **Coding on whiteboard / shared doc** | Can write a working solution with clear variable names, edge cases, and complexity analysis in 25-30 min. **No IDE, no autocomplete.** | Practice with timer |
-| **Behavioral — STAR + company values** | 5-8 stories, lead with result, Amazon LP or Googleyness or similar. | [Behavioral](../../interview-toolkit/behavioral/) + your own story bank |
+| **Behavioral — STAR + company values** | 5-8 stories, lead with result, Amazon LP or Googleyness or similar. | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) + your own story bank |
 
 ### Tier 2 — Asked in 60-80% of FAANG interviews (mid-senior to senior)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [Core Cs Fundamentals](core-cs-fundamentals.md) + [Coding Patterns/15 Bit Manipulation](../../interview-toolkit/coding-patterns/) |
+| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [Core Cs Fundamentals](core-cs-fundamentals.md) + [Coding Patterns/15 Bit Manipulation](../../interview-toolkit/coding-patterns/INDEX.md) |
 | **Segment Tree / Fenwick / BIT** | Range queries with updates. Asked at Google, occasionally Meta. Skip for Amazon/Microsoft. | [Advanced Topics](advanced-topics.md) |
-| **Backtracking** | N-queens, sudoku, word search, permutations. Classic. | [Coding Patterns/05 Backtracking](../../interview-toolkit/coding-patterns/) |
-| **Greedy algorithms** | Interval scheduling, jump game, activity selection. | [Coding Patterns/12 Greedy Prefix Sum](../../interview-toolkit/coding-patterns/) |
-| **Tries** | Word search, autocomplete. Asked at Google. | [Coding Patterns/08 Trie](../../interview-toolkit/coding-patterns/) |
-| **Union-Find** | Connected components, account merge, redundant connection. | [Coding Patterns/09 Union Find](../../interview-toolkit/coding-patterns/) |
-| **Monotonic Stack** | Next greater element, largest rectangle. Asked at Amazon. | [Coding Patterns/13 Monotonic Stack](../../interview-toolkit/coding-patterns/) |
-| **Topological Sort** | Course schedule, alien dictionary, sequence reconstruction. | [Coding Patterns/10 Topological Sort](../../interview-toolkit/coding-patterns/) |
-| **System Design depth** | Distributed systems, CAP theorem, sharding strategies, consistent hashing, idempotency, exactly-once semantics. | [System Design](../../architecture/system-design/) + [Microservices](../../backend/microservices/) |
-| **API design** | REST, GraphQL, gRPC, versioning, pagination, auth. | [REST API](../../backend/rest-api/) + [GraphQL](../../backend/graphql/) |
-| **Security basics** | XSS, CSRF, SQL injection, JWT, OAuth, RBAC. | [Security](../../backend/security/) |
-| **Containerization** | Docker basics, multi-stage builds. | [Docker](../../platform/docker/) |
+| **Backtracking** | N-queens, sudoku, word search, permutations. Classic. | [Coding Patterns/05 Backtracking](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Greedy algorithms** | Interval scheduling, jump game, activity selection. | [Coding Patterns/12 Greedy Prefix Sum](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Tries** | Word search, autocomplete. Asked at Google. | [Coding Patterns/08 Trie](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Union-Find** | Connected components, account merge, redundant connection. | [Coding Patterns/09 Union Find](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Monotonic Stack** | Next greater element, largest rectangle. Asked at Amazon. | [Coding Patterns/13 Monotonic Stack](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **Topological Sort** | Course schedule, alien dictionary, sequence reconstruction. | [Coding Patterns/10 Topological Sort](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **System Design depth** | Distributed systems, CAP theorem, sharding strategies, consistent hashing, idempotency, exactly-once semantics. | [System Design](../../architecture/system-design/INDEX.md) + [Microservices](../../backend/microservices/INDEX.md) |
+| **API design** | REST, GraphQL, gRPC, versioning, pagination, auth. | [REST API](../../backend/rest-api/INDEX.md) + [GraphQL](../../backend/graphql/INDEX.md) |
+| **Security basics** | XSS, CSRF, SQL injection, JWT, OAuth, RBAC. | [Security](../../backend/security/INDEX.md) |
+| **Containerization** | Docker basics, multi-stage builds. | [Docker](../../platform/docker/INDEX.md) |
 | **Cloud basics** | AWS / GCP core services: EC2/Compute Engine, S3/Cloud Storage, RDS/Cloud SQL, Lambda/Cloud Functions, SQS/Pub-Sub. | [Devops Behavioral Career](devops-behavioral-career.md) |
-| **Git workflow** | Branching strategies, rebase, merge, conflict resolution. | [Git Advanced](../../platform/git-advanced/) |
-| **Testing strategy** | Unit, integration, E2E. When to mock vs not. | [Testing](../../quality/testing/) |
-| **Performance + observability** | Profiling, debugging, SLI/SLO. | [Performance Monitoring](../../quality/performance-monitoring/) + [Observability](../../platform/observability/) |
+| **Git workflow** | Branching strategies, rebase, merge, conflict resolution. | [Git Advanced](../../platform/git-advanced/INDEX.md) |
+| **Testing strategy** | Unit, integration, E2E. When to mock vs not. | [Testing](../../quality/testing/INDEX.md) |
+| **Performance + observability** | Profiling, debugging, SLI/SLO. | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) + [Observability](../../platform/observability/INDEX.md) |
 
 ### Tier 3 — Differentiator (asked 20-40%, distinguishes senior from staff)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Distributed systems** | Raft, Paxos, distributed locks, leader election, consensus. | [Microservices](../../backend/microservices/) |
+| **Distributed systems** | Raft, Paxos, distributed locks, leader election, consensus. | [Microservices](../../backend/microservices/INDEX.md) |
 | **Cost optimization at scale** | AWS cost levers, multi-region trade-offs, data egress, spot instances. | Practical experience |
-| **Mentorship & influence** | How you've grown engineers, RFC process, code review as teaching. | [Behavioral](../../interview-toolkit/behavioral/) |
-| **Engineering culture** | Postmortem culture, blameless retros, RFC templates. | [Behavioral](../../interview-toolkit/behavioral/) |
+| **Mentorship & influence** | How you've grown engineers, RFC process, code review as teaching. | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) |
+| **Engineering culture** | Postmortem culture, blameless retros, RFC templates. | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) |
 | **Compensation negotiation** | Base vs RSU trade-offs, sign-on vs equity, level mapping, real offer scripts. | [Compensation Benchmarking](compensation-benchmarking.md) |
-| **Architecture trade-offs** | Microservices vs monolith, when to break up, when to consolidate. | [Design Patterns](../../backend/design-patterns/) + [Microservices](../../backend/microservices/) |
-| **Threat modeling** | STRIDE, attack trees, secrets management. | [Security](../../backend/security/) |
-| **Engineering productivity** | Build vs buy, internal tooling, dev experience. | Practical experience + [Build Tools](../../platform/build-tools/) |
-| **Capacity planning** | QPS estimates, storage, bandwidth, cost at scale. | [System Design](../../architecture/system-design/) |
+| **Architecture trade-offs** | Microservices vs monolith, when to break up, when to consolidate. | [Design Patterns](../../backend/design-patterns/INDEX.md) + [Microservices](../../backend/microservices/INDEX.md) |
+| **Threat modeling** | STRIDE, attack trees, secrets management. | [Security](../../backend/security/INDEX.md) |
+| **Engineering productivity** | Build vs buy, internal tooling, dev experience. | Practical experience + [Build Tools](../../platform/build-tools/INDEX.md) |
+| **Capacity planning** | QPS estimates, storage, bandwidth, cost at scale. | [System Design](../../architecture/system-design/INDEX.md) |
 
 ### Topics to SKIP for mid-tier Indian product companies (Adobe, Flipkart, Razorpay, etc.)
 
@@ -313,21 +313,21 @@ If you can ship those, you can pass 70%+ of mid-tier loops.
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 
-**Core fundamentals:** [Interview Strategy](../../strategy/) · [JavaScript](../../frontend/javascript/) · [TypeScript](../../frontend/typescript/) · [React](../../frontend/react/) · [Next.js](../../frontend/nextjs/)
+**Core fundamentals:** [Interview Strategy](../../strategy/INDEX.md) · [JavaScript](../../frontend/javascript/INDEX.md) · [TypeScript](../../frontend/typescript/INDEX.md) · [React](../../frontend/react/INDEX.md) · [Next.js](../../frontend/nextjs/INDEX.md)
 
-**Backend, API & Data:** [Node.js](../../backend/nodejs/) · [NestJS](../../backend/nestjs/) · [REST API](../../backend/rest-api/) · [Database](../../backend/database/) · [GraphQL](../../backend/graphql/)
+**Backend, API & Data:** [Node.js](../../backend/nodejs/INDEX.md) · [NestJS](../../backend/nestjs/INDEX.md) · [REST API](../../backend/rest-api/INDEX.md) · [Database](../../backend/database/INDEX.md) · [GraphQL](../../backend/graphql/INDEX.md)
 
-**Architecture & Design:** [Security](../../backend/security/) · [Design Patterns](../../backend/design-patterns/) · [System Design](../../architecture/system-design/) · [Microservices](../../backend/microservices/)
+**Architecture & Design:** [Security](../../backend/security/INDEX.md) · [Design Patterns](../../backend/design-patterns/INDEX.md) · [System Design](../../architecture/system-design/INDEX.md) · [Microservices](../../backend/microservices/INDEX.md)
 
-**DevOps, Observability & Tooling:** [Docker](../../platform/docker/) · [Kubernetes](../../platform/kubernetes/) · [CI/CD](../../platform/ci-cd) · [Observability](../../platform/observability/) · [Build Tools](../../platform/build-tools/) · [Git Advanced](../../platform/git-advanced/) · [Serverless & Edge](../../platform/serverless-edge/)
+**DevOps, Observability & Tooling:** [Docker](../../platform/docker/INDEX.md) · [Kubernetes](../../platform/kubernetes/INDEX.md) · [CI/CD](../../platform/ci-cd) · [Observability](../../platform/observability/INDEX.md) · [Build Tools](../../platform/build-tools/INDEX.md) · [Git Advanced](../../platform/git-advanced/INDEX.md) · [Serverless & Edge](../../platform/serverless-edge/INDEX.md)
 
-**Testing & Quality:** [Testing](../../quality/testing/) · [Accessibility](../../quality/accessibility/) · [Performance Monitoring](../../quality/performance-monitoring/)
+**Testing & Quality:** [Testing](../../quality/testing/INDEX.md) · [Accessibility](../../quality/accessibility/INDEX.md) · [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
 
-**Real-time:** [WebSockets](../../realtime/websockets/)
+**Real-time:** [WebSockets](../../realtime/websockets/INDEX.md)
 
-**Interview prep:** [Behavioral](../../interview-toolkit/behavioral/) · [Coding Patterns](../../interview-toolkit/coding-patterns/)
+**Interview prep:** [Behavioral](../../interview-toolkit/behavioral/INDEX.md) · [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
 
-**Reference & quick-look:** [Cheat Sheets](../../interview-toolkit/cheatsheets/) · [Monorepo](../../platform/monorepo/) · [Form Handling](../../frontend/form-handling/) · [Animation](../../frontend/animation/)
+**Reference & quick-look:** [Cheat Sheets](../../interview-toolkit/cheatsheets/INDEX.md) · [Monorepo](../../platform/monorepo/INDEX.md) · [Form Handling](../../frontend/form-handling/INDEX.md) · [Animation](../../frontend/animation/INDEX.md)
 
 ---
 

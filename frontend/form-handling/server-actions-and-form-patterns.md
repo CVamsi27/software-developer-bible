@@ -1,7 +1,7 @@
 <!-- section: Form Handling | category: Frontend | tags: concept, guide -->
-[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](#)
 
 # Server Actions & Modern Form Patterns
 
@@ -396,9 +396,9 @@ INTERVIEW ANSWER:
 ## See Also
 
 - [Formik](formik.md)
-- [Next.js Server Actions](../../frontend/)
+- [Next.js Server Actions](../../frontend/INDEX.md)
 - [React Hook Form](react-hook-form.md)
-- [REST APIs](../../backend/rest-api/)
+- [REST APIs](../../backend/rest-api/INDEX.md)
 - [TanStack Form](tanstack-form.md)
 - [Zod](zod.md)
 

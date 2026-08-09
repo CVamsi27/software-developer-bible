@@ -1,7 +1,7 @@
 <!-- section: React | category: Frontend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-React-blue)](.)
-[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-React-blue)](#)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # useEffect
 
@@ -818,12 +818,12 @@ Performance:
 ---
 
 ## See Also
-- [Animation](../animation/)
+- [Animation](../animation/INDEX.md)
 - [Custom Hooks](custom-hooks.md)
-- [Form Handling](../form-handling/)
-- [JavaScript](../javascript/)
-- [Next.js](../nextjs/)
-- [Testing](../../quality/testing/)
+- [Form Handling](../form-handling/INDEX.md)
+- [JavaScript](../javascript/INDEX.md)
+- [Next.js](../nextjs/INDEX.md)
+- [Testing](../../quality/testing/INDEX.md)
 
 ## References & Learn More
 

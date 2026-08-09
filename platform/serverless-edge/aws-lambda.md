@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # AWS Lambda
 
@@ -268,7 +268,7 @@ INTERVIEW TIPS:
 ## See Also
 
 - [Edge Functions](edge-functions.md)
-- [Observability](../observability/)
+- [Observability](../observability/INDEX.md)
 - [Serverless Overview](serverless-overview.md)
 - [Serverless Patterns](serverless-patterns.md)
 - [Vercel Deployments](vercel-deployments.md)

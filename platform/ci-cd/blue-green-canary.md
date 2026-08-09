@@ -1,7 +1,7 @@
 <!-- section: CI/CD | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-CI/CD-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-CI/CD-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Blue-Green & Canary Deployments
 
@@ -581,9 +581,9 @@ export FEATURE_NEW_CHECKOUT=true
 ---
 
 ## See Also
-- [Docker](../docker/)
-- [Git Advanced](../git-advanced/)
-- [Kubernetes](../kubernetes/)
+- [Docker](../docker/INDEX.md)
+- [Git Advanced](../git-advanced/INDEX.md)
+- [Kubernetes](../kubernetes/INDEX.md)
 
 ## References & Learn More
 

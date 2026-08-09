@@ -3,8 +3,8 @@
 > **7 files** — Advanced Git operations from branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, and code archaeology to interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -18,7 +18,7 @@
 
 ---
 
-**Cross-references:** [CI/CD](../ci-cd) | [Monorepo](../monorepo/)
+**Cross-references:** [CI/CD](../ci-cd) | [Monorepo](../monorepo/INDEX.md)
 ---
 
 ## Navigation

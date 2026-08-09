@@ -1,7 +1,7 @@
 <!-- section: Coding Patterns | category: Interview | tags: concept, practice -->
-[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](#)
 
 # Monotonic Stack
 
@@ -316,7 +316,7 @@ The amortized O(n) bound comes from the fact that each element is pushed exactly
 
 ## See Also
 - [Backtracking](backtracking.md)
-- [Coding Patterns](./)
+- [Coding Patterns](#)
 - [DFS & BFS](dfs-bfs.md)
 - [Dynamic Programming](dynamic-programming.md)
 - [Heap](heap.md)

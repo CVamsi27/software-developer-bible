@@ -3,8 +3,8 @@
 > **8 files** — Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Quality-green)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Quality-green)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -19,7 +19,7 @@
 
 ---
 
-**Cross-references:** [Accessibility](../accessibility/) | [Build Tools](../../platform/build-tools/) | [Observability](../../platform/observability/) | [React Performance](../../frontend/react/)
+**Cross-references:** [Accessibility](../accessibility/INDEX.md) | [Build Tools](../../platform/build-tools/INDEX.md) | [Observability](../../platform/observability/INDEX.md) | [React Performance](../../frontend/react/INDEX.md)
 ---
 
 ## Navigation

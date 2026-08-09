@@ -1,7 +1,7 @@
 <!-- section: Performance Monitoring | category: Quality | tags: concept, reference, guide -->
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](#)
 
 # Performance Budgets
 
@@ -410,15 +410,15 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../accessibility/)
-- [Build Tools](../../platform/build-tools/)
+- [Accessibility](../accessibility/INDEX.md)
+- [Build Tools](../../platform/build-tools/INDEX.md)
 - [Bundle Analysis](bundle-analysis.md)
 - [Core Web Vitals](core-web-vitals.md)
 - [Lighthouse CI](lighthouse-ci.md)
-- [Observability](../../platform/observability/)
+- [Observability](../../platform/observability/INDEX.md)
 - [Performance APIs](performance-apis.md)
 - [Profiling Tools](profiling-tools.md)
-- [React](../../frontend/react/)
+- [React](../../frontend/react/INDEX.md)
 - [Real User Monitoring](real-user-monitoring.md)
 
 ## References & Learn More

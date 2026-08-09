@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: patterns, dsa, defensive, reference -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-patterns%20%C2%B7%20dsa%20%C2%B7%20defensive%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-patterns%20%C2%B7%20dsa%20%C2%B7%20defensive%20%C2%B7%20reference-lightgrey)](#)
 
 # Tech Screen Patterns — Defensive DSA for EU Mid-Stage
 
@@ -14,7 +14,7 @@
 - **You need to:** think out loud, debug your own code, ask questions, handle edge cases
 - **Time budget per problem:** 25-30 min, then look at the answer
 
-The bible's [Interview Toolkit/19 Coding Patterns](../../interview-toolkit/coding-patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
+The bible's [Interview Toolkit/19 Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) has the canonical pattern deep-dives. This file is the **what to drill** subset.
 
 ---
 

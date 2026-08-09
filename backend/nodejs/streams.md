@@ -1,7 +1,7 @@
 <!-- section: Node.js | category: Backend | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
-[![Category](https://img.shields.io/badge/category-Backend-success)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](#)
+[![Category](https://img.shields.io/badge/category-Backend-success)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Node.js Streams
 
@@ -1258,9 +1258,9 @@ Streams are essential for processing large data efficiently in Node.js. Key take
 ---
 
 ## See Also
-- [Docker](../../platform/docker/)
-- [JavaScript](../../frontend/javascript/)
-- [NestJS](../nestjs/)
+- [Docker](../../platform/docker/INDEX.md)
+- [JavaScript](../../frontend/javascript/INDEX.md)
+- [NestJS](../nestjs/INDEX.md)
 
 ## References & Learn More
 

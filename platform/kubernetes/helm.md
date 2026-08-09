@@ -1,7 +1,7 @@
 <!-- section: Kubernetes | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Kubernetes Helm
 
@@ -561,10 +561,10 @@ helm search repo nginx
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Docker](../docker/)
-- [Observability](../observability/)
+- [Docker](../docker/INDEX.md)
+- [Observability](../observability/INDEX.md)
 - [PodPresets](podpresets.md)
-- [Serverless & Edge](../serverless-edge/)
+- [Serverless & Edge](../serverless-edge/INDEX.md)
 
 ## References & Learn More
 

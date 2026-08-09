@@ -1,7 +1,7 @@
 <!-- section: Performance Monitoring | category: Quality | tags: concept, reference -->
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](#)
 
 # Core Web Vitals
 
@@ -444,10 +444,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../accessibility/)
-- [Build Tools](../../platform/build-tools/)
-- [Observability](../../platform/observability/)
-- [React](../../frontend/react/)
+- [Accessibility](../accessibility/INDEX.md)
+- [Build Tools](../../platform/build-tools/INDEX.md)
+- [Observability](../../platform/observability/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
 
 ## References & Learn More
 

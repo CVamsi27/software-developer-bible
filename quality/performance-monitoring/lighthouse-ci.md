@@ -1,7 +1,7 @@
 <!-- section: Performance Monitoring | category: Quality | tags: concept, tool, guide -->
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20tool%20%C2%B7%20guide-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20tool%20%C2%B7%20guide-lightgrey)](#)
 
 # Lighthouse CI
 
@@ -298,7 +298,7 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../accessibility/)
+- [Accessibility](../accessibility/INDEX.md)
 - [Bundle Analysis](bundle-analysis.md)
 - [Core Web Vitals](core-web-vitals.md)
 - [Profiling Tools](profiling-tools.md)

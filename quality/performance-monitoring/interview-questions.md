@@ -1,7 +1,7 @@
 <!-- section: Performance Monitoring | category: Quality | tags: interview-questions, practice -->
-[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
-[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
-[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](#)
 
 # Performance Monitoring Interview Questions
 
@@ -341,12 +341,12 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../accessibility/)
-- [Build Tools](../../platform/build-tools/)
+- [Accessibility](../accessibility/INDEX.md)
+- [Build Tools](../../platform/build-tools/INDEX.md)
 - [Bundle Analysis](bundle-analysis.md)
 - [Lighthouse CI](lighthouse-ci.md)
-- [Observability](../../platform/observability/)
-- [React](../../frontend/react/)
+- [Observability](../../platform/observability/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
 
 ## References & Learn More
 

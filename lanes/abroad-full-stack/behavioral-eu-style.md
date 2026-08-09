@@ -1,7 +1,7 @@
 <!-- section: Abroad Full-Stack Lane | category: Interview | tags: behavioral, eu, culture, reference -->
-[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Tags](https://img.shields.io/badge/tags-behavioral%20%C2%B7%20eu%20%C2%B7%20culture%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-behavioral%20%C2%B7%20eu%20%C2%B7%20culture%20%C2%B7%20reference-lightgrey)](#)
 
 # Behavioral — EU Mid-Stage Style
 

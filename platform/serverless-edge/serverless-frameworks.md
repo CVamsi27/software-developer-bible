@@ -1,7 +1,7 @@
 <!-- section: Serverless & Edge | category: DevOps | tags: concept, reference, tool -->
-[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](#)
 
 # Serverless Frameworks (SAM, CDK, SST, Serverless Framework)
 
@@ -322,7 +322,7 @@ INTERVIEW ANSWER:
 
 - [AWS Lambda](aws-lambda.md)
 - [CI/CD](../ci-cd)
-- [Docker](../docker/)
+- [Docker](../docker/INDEX.md)
 - [Edge Functions](edge-functions.md)
 - [Serverless Overview](serverless-overview.md)
 - [Serverless Patterns](serverless-patterns.md)

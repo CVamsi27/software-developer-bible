@@ -1,7 +1,7 @@
 <!-- section: Docker | category: DevOps | tags: concept -->
-[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
-[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Docker-blue)](#)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # Docker Compose
 
@@ -591,8 +591,8 @@ docker compose config  # validate and view resolved config
 
 ## See Also
 - [CI/CD](../ci-cd)
-- [Kubernetes](../kubernetes/)
-- [Microservices](../../backend/microservices/)
+- [Kubernetes](../kubernetes/INDEX.md)
+- [Microservices](../../backend/microservices/INDEX.md)
 
 ## References & Learn More
 

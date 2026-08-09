@@ -3,8 +3,8 @@
 > **19 files** — React internals from Virtual DOM to rendering, hooks, patterns, custom hooks, portals, compound components, React 18/19 concurrent APIs, performance, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -30,7 +30,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../javascript/) | [Next.js](../nextjs/) | [Testing (RTL, Vitest)](../../quality/testing/) | [Form Handling](../form-handling/) | [Animation (Framer, GSAP, React Spring)](../../frontend/)
+**Cross-references:** [JavaScript](../javascript/INDEX.md) | [Next.js](../nextjs/INDEX.md) | [Testing (RTL, Vitest)](../../quality/testing/INDEX.md) | [Form Handling](../form-handling/INDEX.md) | [Animation (Framer, GSAP, React Spring)](../../frontend/INDEX.md)
 ---
 
 ## Navigation

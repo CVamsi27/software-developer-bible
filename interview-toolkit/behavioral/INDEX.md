@@ -3,8 +3,8 @@
 > **4 files** — Behavioral interview preparation covering STAR method, HR questions, leadership questions, and system-design behavioral questions for senior full-stack roles.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Interview-red)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 | # | File | Topics |
 |---|------|--------|
@@ -15,7 +15,7 @@
 
 ---
 
-**Cross-references:** [Interview Strategy](../../strategy/) | [SDE Role Guide](../../lanes/indian-sde-faang/)
+**Cross-references:** [Interview Strategy](../../strategy/INDEX.md) | [SDE Role Guide](../../lanes/indian-sde-faang/INDEX.md)
 ---
 
 ## Navigation

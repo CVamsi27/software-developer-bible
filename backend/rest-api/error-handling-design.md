@@ -1,7 +1,7 @@
 <!-- section: REST API | category: API | tags: concept -->
-[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](#)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # API Error Handling & Response Design
 
@@ -277,10 +277,10 @@ async heavy(@Res({ passthrough: true }) res: Response) {
 ---
 
 ## See Also
-- [Microservices](../microservices/) (consistent envelopes across services)
-- [NestJS](../nestjs/) (ExceptionFilter in NestJS)
-- [Security](../security/) (don't leak info via error messages)
-- [System Design](../../architecture/system-design/) (error envelopes in API contracts)
+- [Microservices](../microservices/INDEX.md) (consistent envelopes across services)
+- [NestJS](../nestjs/INDEX.md) (ExceptionFilter in NestJS)
+- [Security](../security/INDEX.md) (don't leak info via error messages)
+- [System Design](../../architecture/system-design/INDEX.md) (error envelopes in API contracts)
 
 ## References & Learn More
 

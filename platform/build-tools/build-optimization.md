@@ -1,7 +1,7 @@
 <!-- section: Build Tools | category: Tooling | tags: concept, guide, reference -->
-[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
-[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
-[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](#)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](#)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](#)
 
 # Build Optimization
 
@@ -450,9 +450,9 @@ INTERVIEW TIPS:
 ## See Also
 - [Bundle Analysis](../../quality/performance-monitoring/bundle-analysis.md)
 - [Lighthouse CI](../../quality/performance-monitoring/lighthouse-ci.md)
-- [Next.js](../../frontend/nextjs/)
-- [Performance Monitoring](../../quality/performance-monitoring/)
-- [React](../../frontend/react/)
+- [Next.js](../../frontend/nextjs/INDEX.md)
+- [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+- [React](../../frontend/react/INDEX.md)
 
 ## References & Learn More
 

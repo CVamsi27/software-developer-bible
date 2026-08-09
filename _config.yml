@@ -12,3 +12,14 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Content files are copied as static .md pages (fast, URL-stable builds).
+# Disable GitHub Pages' auto-transform plugins so 400+ markdown files stay
+# verbatim copies instead of Liquid-rendered pages: keeps .md URLs working,
+# avoids Liquid syntax breakage on code samples ({{ }}), and keeps builds
+# well under the Pages time limit.
+github: [metadata: false]
+optional_front_matter: { enabled: false }
+relative_links: { enabled: false }
+titles_from_headings: { enabled: false }
+readme_index: { enabled: false }

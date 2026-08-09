@@ -1,0 +1,307 @@
+---
+section: System Design
+category: Architecture
+tags: [concept, distributed-systems, theory]
+---
+
+# Consensus & Leader Election
+
+> **How do you get multiple computers to agree on something?** This is the bedrock of every distributed system that has a single leader (Postgres, Kafka, etcd, ZooKeeper). Know Paxos, Raft, and Zab — and when to use which.
+
+## TL;DR
+
+- **Consensus** = getting N nodes to agree on a value, even if some nodes fail.
+- **Paxos** = the original, famously hard to understand.
+- **Raft** = designed to be understandable. The default choice.
+- **Zab** = ZooKeeper's protocol. Older but battle-tested.
+- **Leader election** = picking one node to be the "boss" for a while. Heartbeat-based.
+- **Split brain** = two nodes think they're the leader. Consensus prevents this.
+- **In interviews: name the protocol, mention the failure modes (network partition, node failure).**
+
+---
+
+## Why it matters
+
+Consensus is the foundation of:
+- Single-leader databases (Postgres, MongoDB replica set, Kafka controller)
+- Coordination services (etcd, ZooKeeper, Consul)
+- Distributed locks (Redlock uses Raft-like consensus)
+- Strongly-consistent systems (Spanner, CockroachDB)
+
+If you can't explain consensus, you can't explain how etcd works, why Kafka has a controller quorum, or how Spanner stays consistent globally.
+
+---
+
+## The Problem
+
+You have N nodes. Some may fail (crash, network partition). You need them to agree on a value. Examples:
+
+- "What is the current leader of the cluster?"
+- "Is this transaction committed?"
+- "What's the value of this key?"
+
+Properties needed:
+- **Agreement:** all non-faulty nodes agree on the same value
+- **Validity:** the agreed value was proposed by some node
+- **Termination:** eventually, agreement is reached (if enough nodes are up)
+
+This is the **consensus problem**.
+
+---
+
+## Paxos (the original, by Leslie Lamport, 1989)
+
+**Two phases:**
+
+### Phase 1: Prepare
+
+- Proposer picks a unique proposal number N
+- Sends "prepare(N)" to all acceptors
+- Acceptors respond with the highest-numbered proposal they've already accepted, if any
+- If a majority responds, proposer goes to Phase 2
+
+### Phase 2: Accept
+
+- Proposer sends "accept(N, value)" to all acceptors
+- If a majority accepts, the value is chosen
+- Acceptors persist the chosen value
+
+**Pros:** Theoretically sound, proven correct.
+
+**Cons:** Famously hard to understand. Hard to implement correctly. Many subtle failure cases.
+
+**Used by:** Google Chubby, some academic systems. Most modern systems use Raft instead.
+
+---
+
+## Raft (designed to be understandable, 2014)
+
+Raft decomposes consensus into 3 sub-problems:
+
+### 1. Leader election
+
+- Each node is in one of 3 states: Follower, Candidate, Leader
+- All nodes start as Followers
+- If a Follower doesn't hear from a Leader within a timeout, it becomes a Candidate
+- Candidate votes for itself, asks others for votes
+- If a Candidate gets votes from a majority, it becomes the Leader
+- Leader sends heartbeats to maintain authority
+
+### 2. Log replication
+
+- Client sends command to Leader
+- Leader appends to its log
+- Leader sends "AppendEntries" to Followers
+- Followers append to their log and reply
+- When a majority has appended, the entry is "committed"
+- Leader notifies Followers of commit, applies to state machine
+
+### 3. Safety
+
+- Only leaders with the most up-to-date log can win an election
+- Committed entries are never lost
+- Properties: state machine safety, leader completeness, log matching
+
+**Visualization:**
+
+```
+    Client
+       │
+       ▼
+   [Leader]  ─── heartbeat ──→  [Follower 1]
+       │  ─── heartbeat ──→  [Follower 2]
+       │  ─── heartbeat ──→  [Follower 3]
+       │
+   (Leader has the log, replicates to Followers)
+```
+
+**Pros:** Designed to be understandable. Implementable. Most modern systems use Raft.
+
+**Cons:** Not as theoretically elegant as Paxos. Still has edge cases.
+
+**Used by:** etcd, Consul, CockroachDB, TiKV, many modern systems.
+
+---
+
+## Zab (ZooKeeper Atomic Broadcast)
+
+ZooKeeper's protocol, similar to Paxos but optimized for the use case of "atomic broadcast" (all nodes see the same sequence of updates).
+
+**Phases:**
+- **Discovery:** Followers sync with the Leader, learn the latest epoch
+- **Synchronization:** Leader sends missing transactions to Followers
+- **Broadcast:** Normal operation, Leader proposes, Followers ack
+
+**Used by:** Apache ZooKeeper, Apache HBase, Apache Kafka (older versions used it for controller quorum)
+
+---
+
+## Comparison
+
+| Property | Paxos | Raft | Zab |
+|----------|-------|------|-----|
+| Understandable | No | Yes | Medium |
+| Implementation complexity | Very high | Medium | High |
+| Used in | Google Chubby, academic | etcd, CockroachDB, TiKV | ZooKeeper, HBase |
+| Production track record | Long | Growing fast | Long |
+
+**In interviews:** say Raft. It's the default, easiest to explain, most widely used.
+
+---
+
+## Leader Election in Detail
+
+Most distributed systems use a "leader + followers" pattern. The leader is the "boss" for a while, then steps down (or dies, gets replaced).
+
+### Heartbeat-based
+
+- Leader sends a heartbeat every T ms (e.g., 100ms)
+- Followers expect a heartbeat within 2T (e.g., 200ms)
+- If no heartbeat, Follower assumes Leader is dead, starts an election
+
+### Election
+
+- Candidate increments its term number
+- Sends "RequestVote" to all peers
+- Peers vote for the candidate if their log is at least as up-to-date
+- If a candidate gets a majority of votes, it becomes the new Leader
+- If a split vote, retry with a randomized timeout
+
+### Term-based (Raft)
+
+- Each term has at most one Leader
+- A new term starts on each election
+- Stale leaders (from old terms) are recognized and step down
+
+```
+Term 1: Leader A
+  (A dies)
+Term 2: Election
+  (split vote, retry)
+Term 3: Election
+  Leader B
+  (B dies)
+Term 4: Election
+  Leader C
+```
+
+### Failure modes
+
+- **Network partition:** two halves each think the other is dead, each elects a leader → **split brain**
+- **Slow GC pause:** leader pauses for 30 seconds, followers think it's dead, elect new leader, old leader comes back
+- **Clock skew:** relies on timeouts, can be confused by clock issues
+
+### Split brain prevention
+
+- **Quorum:** only the side with a majority can elect a leader
+- **Fencing tokens:** old leader's writes are invalidated when new leader takes over
+- **Lease-based:** leader's authority has a time limit, must be renewed
+
+---
+
+## When to use consensus
+
+**Use when:**
+- You have a single-leader database (Postgres, MongoDB, Kafka)
+- You need a coordination service (etcd, ZooKeeper, Consul)
+- You need distributed locks
+- You need strong consistency (Spanner, CockroachDB)
+- You need service discovery (Consul uses Raft)
+
+**Don't use when:**
+- You can tolerate eventual consistency (most caches, feeds, counters)
+- You have a single-node system (just run it directly)
+- Performance is critical and you can accept weaker consistency (use eventual)
+
+---
+
+## Distributed Locks
+
+Consensus enables distributed locks. One node can be the "lock holder" for a shared resource.
+
+### Redlock (Redis-based)
+
+- N independent Redis masters (N=5 typical)
+- To acquire: set key in majority of Redises with TTL
+- To release: delete key in all Redises
+- Pros: fast
+- Cons: complex, clock-drift sensitive, debatable correctness (Martin Kleppmann's critique)
+
+### etcd-based locks
+
+- Use etcd's lease + lock primitives
+- Raft-backed, strong consistency
+- Used by Kubernetes for leader election
+
+### ZooKeeper-based locks
+
+- Use sequential ephemeral znodes
+- The lowest-numbered znode holds the lock
+- Released automatically on session expiry
+
+---
+
+## Specific Technologies
+
+| Tech | Protocol | Use case |
+|------|----------|----------|
+| **etcd** | Raft | Kubernetes, distributed locks, config |
+| **Consul** | Raft | Service discovery, config, health checks |
+| **ZooKeeper** | Zab | Hadoop, Kafka, HBase |
+| **CockroachDB** | Raft | Distributed SQL |
+| **TiKV** | Raft | Distributed KV store |
+| **Consul** | Raft | Service mesh |
+| **MongoDB replica set** | Custom | MongoDB HA |
+| **Postgres** | Custom (replication) | Postgres HA |
+| **Kafka** | KRaft (Raft) | Distributed log |
+| **Redis Sentinel** | Custom (gossip) | Redis HA |
+
+---
+
+## When to discuss in interviews
+
+When a system has a single-leader database, mention the consensus protocol:
+
+- "The Postgres primary uses synchronous replication with 2 standbys. If the primary fails, the standbys use Raft-like consensus to elect a new primary."
+- "We use etcd for service discovery. etcd uses Raft to maintain consistency across nodes."
+- "Kafka's controller quorum uses Raft (since Kafka 2.8+). The controller is the single source of truth for cluster metadata."
+
+When asked "what if the leader dies?":
+
+- "Followers detect the leader is down via heartbeat timeout. They start an election. The candidate with the most up-to-date log wins. New leader takes over in a few hundred ms."
+
+When asked "what if the network partitions?":
+
+- "Only one side has a quorum, so only that side elects a leader. The other side has no leader and can't accept writes. When the partition heals, the old leader steps down."
+
+---
+
+## Anti-patterns
+
+- **Using consensus when eventual consistency would do.** Performance cost is high.
+- **Implementing Paxos/Raft yourself.** Use a battle-tested library. The failure modes are subtle.
+- **Quorum of 2.** Use 3 or 5. With 2, you can lose 1 node and have a majority of 1, which is the same as no quorum.
+- **No fencing.** Old leader can still write if it doesn't know it was replaced.
+- **Long leader elections.** If election takes 30 seconds, you have 30 seconds of unavailability.
+
+---
+
+## Related concepts
+
+- [00-CAP-Theorem.md](00-CAP-Theorem.md) — consensus is CP
+- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — single-leader uses consensus
+- [00-Failure-Modes.md](00-Failure-Modes.md) — network partition, split brain
+- [../../20-Backend-Stack/12-Microservices/01-Service-Discovery.md](../../20-Backend-Stack/12-Microservices/01-Service-Discovery.md) — service discovery often uses consensus
+
+---
+
+## TL;DR
+
+- **Consensus = multiple nodes agree on a value** even with failures.
+- **Paxos** = the original, theoretically sound, hard to implement.
+- **Raft** = designed to be understandable. The default. Used by etcd, CockroachDB, TiKV, Kafka (KRaft).
+- **Zab** = ZooKeeper's protocol. Older but battle-tested.
+- **Leader election** = heartbeat-based, with majority quorum. Prevents split brain.
+- **In interviews: name Raft, mention the failure modes, mention the timeout.**
+
+For case studies, see [22-Distributed-Counter.md](22-Distributed-Counter.md) (consensus for hot keys), [11-Live-Betting.md](11-Live-Betting.md) (consensus for odds), [20-Dropbox.md](20-Dropbox.md) (eventual consistency vs consensus trade-off).

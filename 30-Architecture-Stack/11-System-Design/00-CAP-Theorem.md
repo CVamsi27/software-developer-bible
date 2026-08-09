@@ -1,0 +1,203 @@
+---
+section: System Design
+category: Architecture
+tags: [concept, distributed-systems, theory]
+---
+
+# CAP Theorem & PACELC
+
+> **The single most important concept in distributed systems.** If you don't deeply understand CAP, you can't reason about trade-offs in any system design interview. This is the foundation.
+
+## TL;DR
+
+- **CAP = Consistency, Availability, Partition tolerance.** You can have at most 2 of 3 in a distributed system.
+- **In practice, partition tolerance is mandatory** (networks fail). So you're choosing between **CP** (consistency) and **AP** (availability).
+- **PACELC** extends CAP: even when there's no partition, you trade **latency** vs **consistency**.
+- **You don't pick "C" or "A" globally** — you pick per-operation, per-data-type. The "CA" choice doesn't exist in real distributed systems.
+
+---
+
+## What it matters
+
+Every system design interview you'll ever do will hit the CAP/PACELC trade-off:
+
+- "Should we use strong consistency here?" → CAP says: if you want strong consistency, you sacrifice availability during a partition.
+- "Can we have low latency AND strong consistency?" → PACELC says: even without a partition, you trade latency vs consistency.
+- "What about multi-region?" → CAP forces you to pick. Most multi-region systems are AP (eventual consistency).
+- "Postgres vs Cassandra vs DynamoDB?" → Different CAP trade-offs. The right answer depends on your use case.
+
+You cannot bluff your way through a system design interview without understanding CAP. The interviewer will ask.
+
+---
+
+## The 3 Properties
+
+### C — Consistency (Linearizability)
+
+**All clients see the same data at the same time.** After a write, all subsequent reads see that write (or a later one).
+
+- Equivalent to: a single copy of the data
+- Implementation: read returns the most recent acknowledged write
+- Cost: requires coordination across replicas → latency
+- Example: bank account balance. After "withdraw EUR 100", every read sees the new balance.
+
+### A — Availability
+
+**Every request gets a response (non-error)**, even if some nodes are down.
+
+- No request can be rejected or timeout due to node failures
+- Every client can read/write regardless of which node it talks to
+- Cost: can return stale data during partitions
+- Example: social media feed. Better to show old posts than to error out.
+
+### P — Partition tolerance
+
+**The system continues to operate despite network partitions** (some nodes can't talk to others).
+
+- Networks fail. Switches fail. Datacenters lose connectivity. This is inevitable.
+- A partition is when nodes can't reach each other, but the system as a whole is still "up" in some sense.
+- In modern distributed systems, partitions are a fact of life, not a corner case.
+- **This is the one you don't get to choose** — you must handle partitions.
+
+---
+
+## The Trade-off
+
+If you have a partition (P), you must choose:
+
+- **CP** (Consistency + Partition tolerance): reject requests on the side that can't reach the leader. Example: traditional RDBMS with synchronous replication (HBase, MongoDB with majority write concern, ZooKeeper).
+- **AP** (Availability + Partition tolerance): accept requests on both sides, reconcile later. Example: Cassandra, DynamoDB, CouchDB, Riak.
+
+**There is no "CA" in real distributed systems.** CA means "no partition tolerance" which means a single-node system. The moment you have multiple nodes that can fail independently, partitions are possible.
+
+```
+                P (mandatory)
+                  │
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+       CP                  AP
+   (rejects some        (serves all
+    requests during     requests, may
+    partition)          return stale)
+        │                   │
+   Examples:           Examples:
+   - ZooKeeper         - Cassandra
+   - etcd              - DynamoDB
+   - HBase             - CouchDB
+   - MongoDB (majority)- Riak
+   - Spanner (sync)    - Bigtable
+```
+
+---
+
+## Concrete examples
+
+### Example 1: Bank transfer (CP)
+
+You transfer EUR 100 from Account A to Account B. Account A now has EUR 100 less, Account B has EUR 100 more.
+
+**Strong consistency required:** if you read Account A's balance right after, you must see the new balance. If you read Account B, you must see the new balance.
+
+**CP system:** Postgres + synchronous replication. If the replica is unreachable, the write fails. You don't get the EUR 100, but you don't see stale data either.
+
+**Trade-off:** if the network is partitioned, the system rejects writes until the partition heals. Better than double-charging.
+
+### Example 2: Social media post (AP)
+
+You post "I had pizza for dinner." Your friend in another region sees it 200ms later (eventual consistency).
+
+**AP system:** Cassandra or DynamoDB. Writes succeed even if some replicas are unreachable. Reads might return slightly old data.
+
+**Trade-off:** the system stays up, but the comment count might be slightly wrong for a few seconds. Acceptable for social media.
+
+### Example 3: DNS (AP)
+
+DNS is a globally distributed, eventually consistent database. When you update your domain's IP, it takes minutes to propagate.
+
+**Why AP:** DNS must always respond, even if some DNS servers are down. Stale is fine for minutes.
+
+---
+
+## PACELC — the extension
+
+CAP only talks about behavior **during a partition**. PACELC adds: **what about when there is no partition?**
+
+**PACELC: If there is a Partition (P), trade off Availability vs Consistency (A vs C). Else (E), trade off Latency vs Consistency (L vs C).**
+
+| System | PACELC | Trade-off |
+|--------|--------|-----------|
+| **Postgres (sync)** | PC/EC | Strong consistency always. Higher latency for writes (wait for replicas). |
+| **DynamoDB (default)** | PA/EL | High availability. Low latency reads. Eventual consistency. |
+| **Cassandra (default)** | PA/EL | High availability. Low latency. Eventual consistency. |
+| **Spanner** | PC/EC | Strong consistency globally. Higher latency (waiting for TrueTime). |
+| **CockroachDB** | PC/EL | Strong consistency. Optimized latency. |
+| **MongoDB (default)** | PA/EL | High availability. Low latency. Eventual consistency. |
+| **Redis Cluster** | PA/EL | High availability. Low latency. Eventual consistency. |
+| **ZooKeeper** | PC/EC | Strong consistency. Higher latency for writes. |
+
+**Why this matters:** even when there's no partition, every system has to make a choice. Most modern distributed databases pick EL (low latency) by default, with options to upgrade to EC for stronger consistency.
+
+---
+
+## When to use CP vs AP in a system design interview
+
+| Use case | Pick | Why |
+|----------|------|-----|
+| **Bank account balance** | CP | Wrong balance = lost money |
+| **Inventory count** | CP | Overselling = angry customers |
+| **Payment processing** | CP | Double-charge = chargebacks |
+| **User authentication** | CP | Stale auth = security hole |
+| **Order placement** | CP | Duplicate order = angry customer |
+| **Likes/comments count** | AP | Slightly wrong count is fine |
+| **News feed** | AP | Slightly stale is fine |
+| **Product catalog** | AP | Slightly stale pricing is usually OK |
+| **Analytics** | AP | Slightly stale is fine |
+| **DNS** | AP | Stale is fine for minutes |
+| **Session storage** | AP | Logging in again is OK |
+| **Caching** | AP | Stale is the point |
+
+**Most production systems are a mix:** CP for the critical path (auth, money, inventory), AP for everything else (feeds, counts, analytics).
+
+---
+
+## Anti-patterns
+
+- **Saying "we want all 3"** in an interview. You can't. Be specific about trade-offs.
+- **Saying "we're AP" for the whole system.** Most real systems are CP for some operations and AP for others.
+- **Ignoring the latency trade-off** in PACELC. Even without a partition, consistency has cost.
+- **Choosing CP for everything.** You'll have terrible availability.
+- **Not mentioning partition tolerance** in the discussion. Network will fail. Plan for it.
+- **Confusing CAP consistency with ACID consistency.** They're related but not the same. CAP-C is linearizability. ACID-C is much broader.
+
+---
+
+## Interview sound bites
+
+When asked "How would you design X?" bring up CAP explicitly:
+
+1. "This is a CP system because [money / inventory / auth]. We accept that during a partition, some requests will be rejected, but we won't show stale data."
+2. "This part is AP because [social feed / likes / analytics]. We prioritize availability; users can tolerate slightly stale data."
+3. "Even when there's no partition, we're trading latency for consistency [PACELC], so we use [CockroachDB / Spanner / DynamoDB]."
+
+---
+
+## Related concepts
+
+- [00-Consistency-Models.md](00-Consistency-Models.md) — linearizability, eventual, causal
+- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — how to actually scale
+- [00-Failure-Modes.md](00-Failure-Modes.md) — network partitions, split brain, Byzantine
+- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — Paxos, Raft, when to use
+
+---
+
+## TL;DR
+
+- **CAP = choose 2 of 3. P is mandatory. So you choose CP or AP.**
+- **PACELC = even without partition, you trade latency vs consistency.**
+- **CP** = strong consistency, reject requests during partition (banks, inventory, auth)
+- **AP** = available always, return stale during partition (feeds, counts, analytics)
+- **Most real systems are mixed** — CP for critical path, AP for everything else.
+- **In interviews: name the trade-off explicitly, per operation, per data type.**
+
+For the case studies where CAP comes up, see [01-URL-Shortener.md](01-URL-Shortener.md), [06-Payment-Gateway.md](06-Payment-Gateway.md), [08-Ticket-Booking.md](08-Ticket-Booking.md), [11-Live-Betting.md](11-Live-Betting.md), [15-Chat-System.md](15-Chat-System.md).

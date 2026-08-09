@@ -1,0 +1,443 @@
+---
+section: System Design
+category: Architecture
+tags: [concept, performance, theory]
+---
+
+# Caching Patterns
+
+> **Caching is the single biggest lever for performance.** Every system design that touches scale needs a cache. But there are 6 patterns, 5 eviction policies, and many ways to get it wrong (cache stampede, stale data, thundering herd).
+
+## TL;DR
+
+- **6 patterns:** cache-aside, read-through, write-through, write-behind, refresh-ahead, write-around.
+- **Cache-aside** is the most common. The application manages the cache.
+- **Read-through / write-through** delegate cache management to the cache layer.
+- **Write-behind** is async — fast but possible data loss.
+- **Eviction policies:** LRU, LFU, FIFO, TTL. Most caches use LRU + TTL.
+- **Anti-patterns:** cache stampede, stale data, thundering herd, cache poisoning.
+- **In interviews: name the pattern, the eviction policy, the TTL, the invalidation strategy.**
+
+---
+
+## Why it matters
+
+Caching is the #1 thing you can do to make a system faster. A good cache can reduce:
+- Latency by 10-100x (Redis vs Postgres: 1ms vs 10ms)
+- Database load by 90%+
+- Cost (less DB capacity needed)
+
+But a bad cache can:
+- Return stale data (user sees old price, double-charges, etc.)
+- Cause cache stampede (thundering herd when cache expires)
+- Lose data on restart (if write-behind without persistence)
+
+You need to know the patterns to get it right.
+
+---
+
+## The 6 Caching Patterns
+
+### 1. Cache-Aside (Lazy Loading) — most common
+
+**Pattern:** Application checks cache first. If miss, reads from DB, populates cache, returns.
+
+```
+GET /user/123
+  → Cache: GET user:123 → miss
+  → DB: SELECT * FROM users WHERE id = 123
+  → Cache: SET user:123 = result, TTL 1h
+  → Return result
+```
+
+**Write:**
+```
+POST /user/123 (update)
+  → DB: UPDATE users SET ... WHERE id = 123
+  → Cache: DEL user:123 (invalidate)
+```
+
+**Pros:**
+- Simple, application-controlled
+- Cache only contains what's actually read
+- Works with any cache (Redis, Memcached, in-process)
+
+**Cons:**
+- Cache miss penalty (read DB, then populate cache — adds latency to first request)
+- Stale data possible (if write doesn't invalidate cache)
+- Application code has cache logic mixed in
+
+**Used by:** Most web applications. Default choice.
+
+**In interview:** "We use cache-aside for the user profile. The API checks Redis first; on miss, reads from Postgres, populates cache, returns. Writes invalidate the cache key."
+
+---
+
+### 2. Read-Through
+
+**Pattern:** The cache itself is the source of truth for reads. The cache library/cluster knows how to load from the DB on miss.
+
+```
+GET /user/123
+  → Cache: GET user:123 → cache knows to load from DB on miss
+  → Cache: load from DB, store, return
+```
+
+**Difference from cache-aside:** the application doesn't talk to the DB. The cache does.
+
+**Pros:**
+- Application code is simpler
+- Cache layer encapsulates the load logic
+
+**Cons:**
+- Cache library must know about the DB (coupling)
+- Less control over what gets cached
+- Cache-aside is more common in practice
+
+**Used by:** Some ORM-integrated caches (e.g., Hibernate L2 cache), some custom caching layers.
+
+---
+
+### 3. Write-Through
+
+**Pattern:** Every write goes to the cache AND the DB synchronously.
+
+```
+POST /user/123 (update)
+  → Cache: SET user:123 = new_value
+  → DB: UPDATE users SET ...
+  → Return success
+```
+
+**Pros:**
+- Cache and DB always in sync (no stale reads)
+- Simpler invalidation (just write the new value)
+
+**Cons:**
+- Higher write latency (two writes instead of one)
+- If DB write fails, cache has wrong data
+- More complex error handling
+
+**Used by:** When reads dominate and you want strong consistency between cache and DB.
+
+---
+
+### 4. Write-Behind (Write-Back)
+
+**Pattern:** Write to cache, return success. Cache asynchronously writes to DB in the background.
+
+```
+POST /user/123 (update)
+  → Cache: SET user:123 = new_value
+  → Return success (very fast!)
+  → [Background] Cache: persist to DB (eventually)
+```
+
+**Pros:**
+- Lowest write latency (no DB hit on the request path)
+- Can batch writes to DB (more efficient)
+
+**Cons:**
+- **Data loss risk** — if cache dies before persisting, data is lost
+- Complex (needs write queue, retry logic, durability)
+- Hard to debug (writes happen async)
+
+**Used by:** Counters, analytics, anything where eventual persistence is OK and you need low write latency.
+
+**In interview:** "For the like count, we use write-behind to Redis. Writes are O(1) and we batch-flush to Postgres every 5 seconds. We accept the data loss risk because losing 5 seconds of likes is OK."
+
+---
+
+### 5. Refresh-Ahead
+
+**Pattern:** Cache proactively refreshes entries before they expire.
+
+```
+At t=55min (TTL is 60min): cache async refreshes from DB
+At t=60min: cache still has fresh data
+```
+
+**Pros:**
+- No cache miss for the application (cache stays fresh)
+- Lower latency for reads
+
+**Cons:**
+- More complex
+- Wasted refreshes for keys that aren't read
+- Race conditions on refresh
+
+**Used by:** High-traffic keys that are read constantly. E.g., a popular product page, the homepage.
+
+---
+
+### 6. Write-Around
+
+**Pattern:** Write goes to DB only. Cache is populated only on read.
+
+```
+POST /user/123 (update)
+  → DB: UPDATE users SET ...
+  → [No cache update]
+
+GET /user/123
+  → Cache: miss
+  → DB: SELECT ...
+  → Cache: SET user:123 = result
+```
+
+**Pros:**
+- Simple
+
+**Cons:**
+- Cache will be stale until next read
+- Read latency penalty on first read after write
+
+**Used by:** When writes are rare and you don't want to populate cache for keys that may never be read. Logs, analytics writes, anything write-heavy + read-rare.
+
+---
+
+## Eviction Policies
+
+When the cache is full, what do you remove?
+
+### LRU (Least Recently Used)
+
+**Algorithm:** Remove the entry that hasn't been accessed for the longest time.
+
+**Pros:** Adapts to access patterns. Recent = likely to be needed again.
+
+**Cons:** Doesn't account for frequency (a key accessed 1000 times then never again stays forever).
+
+**Used by:** Redis (default with `allkeys-lru`), Memcached, most caches.
+
+### LFU (Least Frequently Used)
+
+**Algorithm:** Remove the entry with the fewest accesses.
+
+**Pros:** Good for skewed access (some keys are very hot).
+
+**Cons:** Doesn't forget old popular keys (a viral post from 6 months ago stays forever).
+
+**Used by:** Redis (`allkeys-lfu`), some specialized caches.
+
+### FIFO (First In, First Out)
+
+**Algorithm:** Remove the oldest entry.
+
+**Pros:** Simple, predictable.
+
+**Cons:** Doesn't account for access pattern. A new key that's accessed constantly could be evicted.
+
+**Used by:** Some specialized caches.
+
+### TTL (Time-To-Live)
+
+**Algorithm:** Remove entries after a fixed time, regardless of access.
+
+**Pros:** Bounded staleness, predictable.
+
+**Cons:** Can evict hot keys if TTL is too short.
+
+**Used by:** All caches (TTL is always combined with another policy).
+
+### Random
+
+**Algorithm:** Remove a random entry.
+
+**Pros:** Surprisingly competitive in some workloads. No metadata overhead.
+
+**Cons:** Can evict hot keys.
+
+**Used by:** Some theoretical/paper algorithms.
+
+**In practice:** Most caches use LRU + TTL. Redis default is `allkeys-lru` (LRU eviction) with per-key TTL.
+
+---
+
+## Cache Invalidation Strategies
+
+The hardest problem in caching. "There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton
+
+### 1. TTL (Time-to-Live)
+
+**Pattern:** Each cache entry has an expiry. After expiry, cache miss, read from DB, populate.
+
+**Pros:** Simple, bounded staleness.
+
+**Cons:** Can serve stale data up to TTL. Cache miss penalty.
+
+**When to use:** Default. Almost everything.
+
+### 2. Explicit invalidation on write
+
+**Pattern:** When you write to the DB, also `DEL` the cache key.
+
+**Pros:** Cache stays fresh. No stale reads (after the write).
+
+**Cons:** Race condition possible (write to DB and DEL cache can be reordered). Need to be careful.
+
+**When to use:** When stale data would be very bad (e.g., user just changed their email, must not see the old one).
+
+### 3. Write-through (covered above)
+
+Cache and DB written together, always in sync.
+
+### 4. Pub/Sub invalidation
+
+**Pattern:** When data changes, publish to a topic. All cache nodes subscribe and invalidate their local copy.
+
+**Pros:** Works for multi-node caches.
+
+**Cons:** Eventual consistency (small window of stale data).
+
+**When to use:** Distributed caches (Redis Cluster, Memcached).
+
+### 5. Version-based invalidation
+
+**Pattern:** Cache entry includes a version. On read, check if version is still current. If not, refresh.
+
+**Pros:** Strong consistency, no race conditions.
+
+**Cons:** More memory (need to store version), more complex.
+
+---
+
+## Cache Anti-Patterns
+
+### 1. Cache Stampede (Thundering Herd)
+
+**Problem:** Cache key expires. 1000 concurrent requests all miss, all hit the DB.
+
+```
+t=0: cache key expires
+t=1ms: 1000 requests arrive, all miss
+t=2ms: 1000 requests hit the DB simultaneously
+t=2ms: DB overloaded
+```
+
+**Solutions:**
+- **Lock around the cache load:** only one request loads, others wait
+- **Probabilistic early refresh:** some requests refresh before expiry
+- **Background refresh:** cache refreshes before expiry (refresh-ahead pattern)
+- **Stale-while-revalidate:** serve stale data while one request refreshes
+
+### 2. Stale data after write
+
+**Problem:** Write to DB, but cache still has old value.
+
+**Solutions:**
+- Write-through cache (always sync)
+- Explicit invalidation on write (DEL the cache key)
+- Shorter TTL (faster recovery, but more cache misses)
+
+### 3. Cache Poisoning
+
+**Problem:** Bad data ends up in cache, served forever (or until TTL).
+
+**Solutions:**
+- Validate cache values on read
+- Use a schema for cache entries
+- Short TTL for high-risk keys
+
+### 4. Hot Key
+
+**Problem:** One cache key gets 90% of traffic. That one Redis node becomes the bottleneck.
+
+**Solutions:**
+- Replicate the key across multiple cache nodes
+- Read from multiple replicas (load balance within the cache)
+- In-process cache (L1) for that specific key
+
+### 5. Memory bloat
+
+**Problem:** Cache grows unbounded.
+
+**Solutions:**
+- Max memory policy (LRU, LFU)
+- TTL on every key
+- Monitor memory usage
+
+### 6. Cache as source of truth
+
+**Problem:** Treating cache as the DB. If cache loses data, you lose data.
+
+**Solutions:**
+- Cache is never the source of truth (except in rare cases)
+- Always have a way to rebuild the cache from the DB
+- For write-behind, use a persistent cache (AOF, RDB for Redis)
+
+---
+
+## Multi-level Caching
+
+Real systems have multiple cache levels:
+
+```
+Request
+  │
+  ▼
+L1: In-process cache (Caffeine, Guava)  ~0.1ms, very small
+  │ miss
+  ▼
+L2: Distributed cache (Redis, Memcached)  ~1ms, GB-scale
+  │ miss
+  ▼
+L3: DB query cache (Postgres shared_buffers)  ~5ms
+  │ miss
+  ▼
+DB: Postgres, MongoDB, etc.  ~10-100ms
+```
+
+Each level is bigger and slower. The closer to the application, the smaller and faster.
+
+---
+
+## Specific Technologies
+
+| Tech | Pattern | Eviction | Use case |
+|------|---------|----------|----------|
+| **Caffeine** (Java) | Cache-aside, in-process | LRU + TTL | L1 cache |
+| **Guava Cache** (Java) | Cache-aside, in-process | LRU + TTL | L1 cache |
+| **Redis** | All 6 patterns | LRU / LFU / TTL | L2 cache, primary cache |
+| **Memcached** | Cache-aside only | LRU | L2 cache, simple use case |
+| **AWS ElastiCache** | Redis or Memcached | (inherited) | Managed cache |
+| **Cloudflare Cache** | Write-around (CDN) | LRU + TTL | Static content, edge |
+| **Varnish** | Write-around (CDN) | LRU + TTL | HTTP caching, edge |
+| **Hazelcast** | Distributed cache | LRU | In-memory data grid |
+| **Apache Ignite** | Distributed cache | LRU | In-memory data grid |
+
+---
+
+## When to use which pattern in an interview
+
+| Scenario | Pattern | Why |
+|----------|---------|-----|
+| **User profile, read-heavy** | Cache-aside | Simple, fits the use case |
+| **Product catalog, read-heavy** | Cache-aside + refresh-ahead | Read-heavy, want fresh data |
+| **Like/view counter, write-heavy** | Write-behind | Need low write latency, can lose some |
+| **Session storage** | Read-through / write-through | Strong consistency matters |
+| **Auth token validation** | Cache-aside with explicit invalidation | Must be fresh after rotation |
+| **Search results** | Write-around (CDN-like) | Write once, read many times, but no cache pollution |
+| **CDN static content** | Write-around | Long TTL, served from edge |
+| **GraphQL response cache** | Cache-aside per query | Per-query invalidation |
+
+---
+
+## Related concepts
+
+- [00-Load-Balancing.md](00-Load-Balancing.md) — caches + LBs go together
+- [00-CAP-Theorem.md](00-CAP-Theorem.md) — caches are AP (eventual consistency)
+- [00-Consistency-Models.md](00-Consistency-Models.md) — caching = eventual consistency
+
+---
+
+## TL;DR
+
+- **6 patterns:** cache-aside (most common), read-through, write-through, write-behind, refresh-ahead, write-around.
+- **Eviction:** LRU + TTL is the default. LFU for skewed access.
+- **Invalidation:** TTL is the floor, explicit DEL on write for critical keys, write-through for strong consistency.
+- **Anti-patterns:** cache stampede, stale data, hot key, cache poisoning, memory bloat.
+- **Multi-level:** L1 (in-process) + L2 (Redis) + DB.
+- **In interviews: name the pattern, eviction, TTL, invalidation strategy.**
+
+For case studies, see [01-URL-Shortener.md](01-URL-Shortener.md) (cache-aside for short → long URL), [04-Netflix.md](04-Netflix.md) (multi-level caching), [12-Twitter-Feed.md](12-Twitter-Feed.md) (cache-aside for timeline), [18-Instagram.md](18-Instagram.md) (Redis for hot data).

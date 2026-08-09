@@ -1,13 +1,16 @@
 # REST APIs — Index
 
-> **14 files** — REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, and interview questions.
+> **15 files** — API design patterns (REST vs GraphQL vs gRPC vs WebSocket vs Webhook) + REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
+**Start with API design patterns** to pick the right API style for your use case, then dive into the REST-specific deep-dives.
+
 | # | File | Topics |
 |---|------|--------|
+| 00 | [API Design Patterns](00-API-Design-Patterns.md) | REST, GraphQL, gRPC, WebSocket, Webhook, SSE — when to use which, trade-offs |
 | 01 | [REST Principles](01-REST-Principles.md) | Resource-oriented design, HATEOAS, statelessness, idempotency |
 | 02 | [HTTP Methods](02-HTTP-Methods.md) | GET, POST, PUT, PATCH, DELETE, safe vs unsafe, idempotent methods |
 | 03 | [Status Codes](03-Status-Codes.md) | 2xx success, 3xx redirection, 4xx client errors, 5xx server errors |

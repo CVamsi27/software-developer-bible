@@ -1,10 +1,27 @@
 # Design Patterns — Index
 
-> **16 files** — Classic GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
+> **20 files** — 4 foundational theory files (SOLID, DRY/KISS/YAGNI, OOP concepts, UML basics) + 16 GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+**Read the theory first.** The 4 `00-*` files below cover the principles and concepts you need to know. Then read the GoF patterns for applied examples.
+
+---
+
+## Foundational Theory (read these first)
+
+| # | File | Concepts covered | Why it matters |
+|---|------|------------------|----------------|
+| 00 | [SOLID Principles](00-SOLID-Principles.md) | SRP, OCP, LSP, ISP, DIP — the 5 principles every OOP design should follow | Foundation of every GoF pattern. Most LLD questions test these. |
+| 00 | [DRY, KISS, YAGNI & More](00-DRY-KISS-YAGNI.md) | DRY, KISS, YAGNI, Rule of Three, Composition over Inheritance, POLA, SoC | The other 6 principles that show up in code reviews and LLD. |
+| 00 | [OOP Concepts](00-OOP-Concepts.md) | Encapsulation, inheritance, polymorphism, abstraction, association, aggregation, composition | The 4 pillars. Plus the "has-a" relationships that come up in class diagrams. |
+| 00 | [UML Basics](00-UML-Basics.md) | Class diagram, sequence diagram, relationships, multiplicities | Visualize your design. LLD interviews expect you to draw these on a whiteboard. |
+
+---
+
+## GoF and Enterprise Patterns
 
 | # | File | Topics |
 |---|------|--------|

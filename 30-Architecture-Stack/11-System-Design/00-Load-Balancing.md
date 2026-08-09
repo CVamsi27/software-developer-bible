@@ -1,0 +1,261 @@
+---
+section: System Design
+category: Architecture
+tags: [concept, scaling, theory]
+---
+
+# Load Balancing
+
+> **The traffic cop of every distributed system.** Routes requests across multiple servers to spread load, increase availability, and scale horizontally. Pick the wrong algorithm and one server melts while the others sit idle.
+
+## TL;DR
+
+- **L4 (transport layer)** = routes by IP/port. Fast, simple, no protocol awareness.
+- **L7 (application layer)** = routes by HTTP headers, URL path, cookies. Slower but smart.
+- **Algorithms:** round-robin, weighted round-robin, least connections, least response time, consistent hashing, IP-hash.
+- **Health checks** are mandatory. A load balancer without health checks is a single point of failure amplifier.
+- **In interviews: name the LB layer (L4 or L7), the algorithm, and the health check strategy.**
+
+---
+
+## Why it matters
+
+Every "how do you scale" question touches load balancing. If you can't explain L4 vs L7, the difference between round-robin and consistent hashing, and why health checks matter, you can't pass a system design round.
+
+---
+
+## L4 vs L7
+
+### L4 — Transport Layer
+
+**What it routes by:** IP address, port, protocol (TCP/UDP)
+
+**How it works:** Looks at the packet headers (source IP, dest IP, source port, dest port) and routes based on rules. Doesn't look inside the payload.
+
+**Pros:**
+- Very fast (just header lookups)
+- Protocol-agnostic (works for TCP, UDP, gRPC, anything)
+- Lower latency (no payload inspection)
+
+**Cons:**
+- Can't make smart routing decisions (no URL-based routing, no header-based routing)
+- All traffic to a given IP:port goes to the same backend
+
+**Examples:** AWS NLB (Network Load Balancer), HAProxy TCP mode, Linux Virtual Server (LVS)
+
+**When to use:** High-throughput, low-latency. Non-HTTP traffic. TCP-only services. Microservices that need L4 speed.
+
+### L7 — Application Layer
+
+**What it routes by:** HTTP headers, URL path, cookies, body content, gRPC method, etc.
+
+**How it works:** Terminates the HTTP connection, parses the request, makes a routing decision based on content.
+
+**Pros:**
+- Smart routing ("/api/*" → API servers, "/static/*" → CDN origin, "/admin/*" → admin servers)
+- Can do A/B testing by cookie
+- Can do path-based or host-based routing
+- Can rewrite URLs, inject headers
+
+**Cons:**
+- Slower (terminates connection, parses HTTP)
+- More CPU/memory
+- Single point for DDoS if not protected
+
+**Examples:** AWS ALB (Application Load Balancer), HAProxy HTTP mode, Nginx, Envoy, Traefik
+
+**When to use:** Web traffic, microservices, A/B testing, canary deployments, blue-green.
+
+---
+
+## Load Balancing Algorithms
+
+### 1. Round Robin
+
+**Algorithm:** Distribute requests evenly across servers, in order. Server 1, 2, 3, 1, 2, 3, ...
+
+```
+Req 1 → Server 1
+Req 2 → Server 2
+Req 3 → Server 3
+Req 4 → Server 1
+```
+
+**Pros:** Simple, fair.
+
+**Cons:** Doesn't account for server capacity. A small server and a large server get equal load.
+
+**When to use:** Homogeneous servers (same capacity).
+
+### 2. Weighted Round Robin
+
+**Algorithm:** Like round-robin, but with weights. Server 1 gets 2x as many requests as Server 2 if weighted 2:1.
+
+**When to use:** Heterogeneous servers (different capacities). e.g., 1 large + 2 small.
+
+### 3. Least Connections
+
+**Algorithm:** Route to the server with the fewest active connections.
+
+**Pros:** Better than round-robin for long-lived connections (WebSocket, streaming).
+
+**Cons:** Doesn't account for request cost (a "light" request counts the same as a "heavy" one).
+
+**When to use:** WebSocket, gRPC streaming, any long-lived connection.
+
+### 4. Least Response Time
+
+**Algorithm:** Route to the server with the lowest average response time (over a window).
+
+**Pros:** Adapts to server load and request cost.
+
+**Cons:** Requires measuring response times, more complex.
+
+**When to use:** When you have varying request costs and want to optimize for latency.
+
+### 5. IP Hash
+
+**Algorithm:** `server = hash(client_ip) % num_servers`
+
+**Pros:** Same client always goes to same server. Useful for caching (session affinity).
+
+**Cons:** Uneven distribution (one client with lots of traffic → that server is hot).
+
+**When to use:** Session affinity without explicit cookies. Or to ensure a user always sees cached data.
+
+### 6. Consistent Hashing (most important for sharded systems)
+
+**Algorithm:** Both servers and keys are hashed onto a ring. A key is routed to the next server clockwise on the ring. Adding/removing a server only moves `1/N` of keys.
+
+```
+Ring:
+ 0 ────────── 360°
+   Server A at 0°
+   Server B at 120°
+   Server C at 240°
+
+Key X at 50° → Server B (next clockwise)
+Key Y at 200° → Server C (next clockwise)
+Key Z at 300° → Server A (next clockwise, wrapping)
+```
+
+**Pros:** Minimal disruption when adding/removing servers. Standard for distributed caches (Memcached, Redis Cluster), CDNs, sharded databases.
+
+**Cons:** More complex than simple hashing. Can have hot spots if keys are skewed (mitigated with **virtual nodes** — each server owns multiple positions on the ring).
+
+**When to use:** Distributed caching, sharded databases, CDN routing, any system where keys map to nodes and you want minimal disruption when nodes come and go.
+
+---
+
+## Health Checks
+
+**Mandatory.** A load balancer without health checks just routes traffic to broken servers.
+
+**Types:**
+- **Active:** LB sends a request (e.g., GET /health) to each server periodically. If the server doesn't respond (or responds with 5xx), mark as unhealthy.
+- **Passive:** LB watches real traffic. If a server returns 5xx N times in a row, mark as unhealthy.
+- **TCP check:** LB opens a TCP connection. If it fails, mark as unhealthy. Cheaper than HTTP check but less informative.
+- **Deep check:** LB sends a request that exercises the full stack (DB queries, downstream calls). More expensive but more accurate.
+
+**What to do with unhealthy servers:**
+- **Remove from rotation:** no new requests, but in-flight requests complete.
+- **Drain:** finish in-flight requests, then remove.
+- **Retry:** retry on another server.
+
+---
+
+## Layered Load Balancing
+
+In real systems, you don't have just one LB. You have multiple layers:
+
+```
+                    Client
+                      │
+                      ▼
+                  DNS (geographic routing)
+                      │
+                      ▼
+              Global Load Balancer (anycast IP, AWS CloudFront)
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+    Edge LB (L7)  Edge LB (L7)  Edge LB (L7)
+    US-East       EU-West       APAC
+        │             │             │
+        ▼             ▼             ▼
+    Service LB   Service LB   Service LB
+    (L7 path-based routing)
+        │             │             │
+        ▼             ▼             ▼
+   App servers   App servers   App servers
+```
+
+**Geographic LB** (DNS-based, AWS Route 53): routes users to the nearest region.
+**Edge LB** (CloudFront, Fastly): SSL termination, DDoS protection, static caching.
+**Service LB** (Envoy, Istio): routes to specific microservices based on path/header.
+
+---
+
+## Specific Technologies
+
+| Tech | Layer | Use case |
+|------|-------|----------|
+| **AWS NLB** | L4 | High-throughput, low-latency TCP/UDP |
+| **AWS ALB** | L7 | HTTP/HTTPS, path-based routing |
+| **AWS CloudFront** | L7 + CDN | Global caching, edge |
+| **HAProxy** | L4/L7 | Production-grade, very fast |
+| **Nginx** | L7 | Web server + reverse proxy |
+| **Envoy** | L7 | Service mesh, modern microservices |
+| **Traefik** | L7 | Kubernetes-native, automatic config |
+| **Istio** | L7 | Service mesh (built on Envoy) |
+| **Consul** | L7 | Service discovery + health checks |
+| **Linux Virtual Server (LVS)** | L4 | Linux kernel-level, very fast |
+| **Google Cloud Load Balancer** | L4/L7 | GCP equivalent of AWS |
+
+---
+
+## When to discuss in interviews
+
+| Mention load balancing when... | What to say |
+|-------------------------------|-------------|
+| You have multiple app servers | "Round-robin LB in front of the API servers" |
+| You have long-lived connections | "Least-connections LB for WebSocket servers" |
+| You have session state | "IP-hash LB for session affinity" or "Redis-backed sessions, no LB stickiness needed" |
+| You have multi-region | "DNS-based geographic LB routes to nearest region" |
+| You have microservices | "Service mesh with Envoy for L7 routing" |
+| You have a cache | "Consistent hashing for the cache so adding nodes doesn't reshuffle" |
+| You have health concerns | "Active HTTP health checks every 5s, 3 failures = unhealthy" |
+| You have varying capacity | "Weighted round-robin to account for different server sizes" |
+
+---
+
+## Anti-patterns
+
+- **No health checks.** Single point of failure that just routes to dead servers.
+- **Sticky sessions by default.** Causes uneven load. Prefer stateless services.
+- **Layer 7 when L4 would do.** Adds latency. Use L7 only when you need smart routing.
+- **In-memory session storage with no LB awareness.** User A's request goes to server 1, server 1 has the session. Next request goes to server 2, no session. Solution: shared session store (Redis).
+- **No retry logic.** A failed request should retry on another server, not return an error to the user.
+- **DNS as the only LB.** DNS doesn't fail over fast, doesn't do health checks, and clients cache it.
+- **Synchronous LB only.** Need async queues in front of slow services to absorb spikes.
+
+---
+
+## Related concepts
+
+- [00-Caching-Patterns.md](00-Caching-Patterns.md) — caches and LB go together
+- [00-Rate-Limiting.md](00-Rate-Limiting.md) — protect the LB from overload
+- [00-CAP-Theorem.md](00-CAP-Theorem.md) — LB doesn't solve CAP, but it does solve availability at the request level
+
+---
+
+## TL;DR
+
+- **L4** (transport, IP/port) = fast, simple, protocol-agnostic. For TCP/UDP.
+- **L7** (application, HTTP) = smart routing. For web traffic, microservices.
+- **Algorithms:** round-robin (default), least-connections (long-lived), consistent hashing (cached), IP-hash (sticky).
+- **Health checks mandatory.** Active + passive.
+- **Layered:** DNS → edge LB → service LB → app servers.
+- **In interviews: name the LB layer, the algorithm, and the health check strategy.**
+
+For case studies, see [01-URL-Shortener.md](01-URL-Shortener.md) (consistent hashing for cache), [02-WhatsApp.md](02-WhatsApp.md) (L4 LB for connection servers), [03-Uber.md](03-Uber.md) (geographic LB for dispatchers), [12-Twitter-Feed.md](12-Twitter-Feed.md) (LB in front of fanout workers).

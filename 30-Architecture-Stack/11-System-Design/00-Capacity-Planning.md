@@ -1,0 +1,393 @@
+---
+section: System Design
+category: Architecture
+tags: [concept, scaling, theory]
+---
+
+# Capacity Planning & Back-of-Envelope Estimation
+
+> **"How many servers do I need?"** Every system design question ends here. You need to estimate QPS, storage, bandwidth, and CPU from first principles. This is the skill that turns a vague answer into a concrete plan.
+
+## TL;DR
+
+- **Estimate QPS** from DAU × requests/day / 86,400 (seconds in a day). Then peak QPS = average × 2-5x.
+- **Estimate storage** from write rate × size × retention period.
+- **Estimate bandwidth** from QPS × response size.
+- **Little's Law:** L = λ × W (concurrency = arrival rate × wait time).
+- **Use powers of 10** for round numbers. 1M, 10M, 100M, not 1.7M.
+- **Always state your assumptions.** "Assuming 10M DAU, 10 actions per day..."
+- **In interviews: estimate in 2-5 minutes. Show your math.**
+
+---
+
+## Why it matters
+
+Estimation is the difference between:
+
+- Junior: "We'll need a lot of servers."
+- Senior: "We'll need ~50 API servers, 5 database replicas, 200GB of cache, 10TB of storage. Cost: ~$15K/month."
+
+The senior answer is concrete. The junior answer is hand-wavy.
+
+You also need it to know when to scale. "When we hit 1M DAU, we need to shard the DB." Knowing how to get to that number is the skill.
+
+---
+
+## The 4 estimates you always need
+
+### 1. QPS (Queries Per Second)
+
+**How many requests per second does your system handle?**
+
+```
+DAU = Daily Active Users
+requests_per_user_per_day = typical user action count
+QPS_avg = DAU × requests_per_user_per_day / 86,400
+QPS_peak = QPS_avg × peak_factor  (usually 2-5x)
+```
+
+**Example:**
+```
+DAU = 10M
+requests_per_user_per_day = 100 (browse, search, click, etc.)
+QPS_avg = 10M × 100 / 86,400 = ~11,500 QPS
+QPS_peak = 11,500 × 3 = ~35,000 QPS
+```
+
+**Tip:** Use round numbers. 10K, 50K, 100K, 1M. Not 11,574.
+
+### 2. Storage
+
+**How much data does your system store?**
+
+```
+write_rate_per_day = QPS_write × 86,400 / 1,000,000  (in millions)
+size_per_record = KB
+storage_per_day = write_rate_per_day × size_per_record
+total_storage = storage_per_day × retention_period
+```
+
+**Example:**
+```
+DAU = 10M
+actions_per_user_per_day = 100
+fraction_written = 0.1  (only 10% of actions are writes, rest are reads)
+writes_per_day = 10M × 100 × 0.1 = 100M writes/day
+size_per_record = 1 KB
+storage_per_day = 100M × 1 KB = 100 GB/day
+retention = 365 days
+total_storage = 100 GB × 365 = 36,500 GB = ~36 TB
+```
+
+**Don't forget replicas:**
+```
+With 3x replication: 36 TB × 3 = 108 TB
+```
+
+### 3. Bandwidth
+
+**How much network traffic?**
+
+```
+ingress_per_sec = QPS × request_size
+egress_per_sec = QPS × response_size
+total_per_sec = ingress + egress
+```
+
+**Example:**
+```
+QPS = 35,000
+request_size = 1 KB (typical REST request)
+response_size = 10 KB (typical REST response)
+ingress = 35,000 × 1 KB = 35 MB/s
+egress = 35,000 × 10 KB = 350 MB/s
+total = ~400 MB/s
+```
+
+**Tip:** CDN handles most of the egress. API servers handle less.
+
+### 4. Memory / Cache
+
+**How much memory for in-memory cache?**
+
+```
+cache_size = working_set × per_item_size
+```
+
+**Example:**
+```
+DAU = 10M
+DAU_peak_concurrent = 10M × 0.1 = 1M (10% concurrent at peak)
+items_per_user = 50 (user profile, settings, recent activity, etc.)
+size_per_item = 10 KB
+cache_size = 1M × 50 × 10 KB = 500 GB
+```
+
+**Tip:** Cache the hot 20%, not everything. Use the 80/20 rule.
+
+### 5. CPU
+
+**How many CPU cores?**
+
+```
+cpu_cores = (QPS × cpu_time_per_request) / cpu_utilization_target
+```
+
+**Example:**
+```
+QPS = 35,000
+cpu_time_per_request = 10 ms = 0.01 sec
+cpu_utilization_target = 0.5 (don't run at 100%)
+cpu_cores = 35,000 × 0.01 / 0.5 = 700 cores
+```
+
+**Tip:** Spread across N machines. 700 cores / 8 cores per machine = ~90 machines.
+
+---
+
+## Little's Law
+
+**L = λ × W**
+
+- **L** = number of items in the system (concurrent requests)
+- **λ** = arrival rate (items per second)
+- **W** = wait time (seconds per item)
+
+**Example:** 1000 requests/sec arrive. Each request takes 100ms. How many are in the system at once?
+- L = 1000 × 0.1 = 100 concurrent requests
+
+**Useful for:** Sizing thread pools, sizing connection pools, sizing queues.
+
+**If your server has 100 threads and average request is 100ms, you can handle 1000 QPS. Beyond that, requests queue up.**
+
+---
+
+## Common interview scenarios
+
+### Scenario 1: Twitter (timeline + tweet)
+
+**Assumptions:**
+- 200M DAU
+- Each user tweets 2x/day, browses timeline 100x/day
+- Each tweet ~300 bytes
+- Each timeline page ~50 tweets × 300 bytes = 15 KB
+- 5 year retention
+
+**QPS:**
+- Tweets: 200M × 2 / 86,400 = ~4,600 writes/sec
+- Timeline reads: 200M × 100 / 86,400 = ~230,000 reads/sec
+
+**Storage:**
+- Tweets: 200M × 2 × 300 bytes = 120 GB/day
+- 5 years: 120 × 365 × 5 = 219 TB
+- With replication: 657 TB
+
+**Bandwidth:**
+- Tweets in: 4,600 × 300 B = 1.4 MB/s
+- Timeline out: 230,000 × 15 KB = 3.5 GB/s
+- A lot. Needs CDN.
+
+### Scenario 2: Uber (ride matching)
+
+**Assumptions:**
+- 50M DAU
+- 1M drivers
+- Each user requests 5 rides/day
+- Each ride: 100 driver locations × 1 KB = 100 KB
+
+**QPS:**
+- Ride requests: 50M × 5 / 86,400 = ~2,900 QPS
+- Driver location updates: 1M drivers × 1 update / 30 sec = ~33,000 QPS
+
+**Storage:**
+- Ride records: 50M × 5 × 1 KB = 250 GB/day
+- 1 year: 91 TB
+- Driver locations: 1M × 2,880 (per day) × 1 KB = 2.7 TB/day, 30-day retention = 81 TB
+
+**Real-time:** Geo queries are the bottleneck. Need geospatial index.
+
+### Scenario 3: WhatsApp (messaging)
+
+**Assumptions:**
+- 2B users
+- Each user sends 50 messages/day
+- Each message ~1 KB (text only)
+- Group messages broadcast to N members
+
+**QPS:**
+- Messages: 2B × 50 / 86,400 = ~1.2M QPS
+- With group broadcasting (avg group 10): 12M message deliveries/sec
+
+**Storage:**
+- Messages: 2B × 50 × 1 KB = 100 TB/day
+- 30-day retention: 3 PB
+
+**Real-time:** WebSocket connections, fan-out, presence.
+
+### Scenario 4: Netflix (video streaming)
+
+**Assumptions:**
+- 200M subscribers
+- Each watches 2 hours/day
+- Average bitrate 5 Mbps
+- 80% from CDN, 20% from origin
+
+**Bandwidth:**
+- 200M × 2 hours × 5 Mbps / 86,400 = 23 Tbps (CDN handles most)
+
+**Storage:**
+- Catalog: 10,000 titles × 50 GB (4K) = 500 TB
+- Per user data: viewing history, preferences = small
+
+**Real-time:** Recommendations, encoding pipeline.
+
+---
+
+## Common numbers to memorize
+
+```
+1 KB = 1,000 bytes (or 1,024 in binary)
+1 MB = 1,000 KB
+1 GB = 1,000 MB
+1 TB = 1,000 GB
+1 PB = 1,000 TB
+
+1 day = 86,400 seconds
+1 month = ~30 days = 2.6M seconds
+1 year = ~365 days = 31.5M seconds
+
+Powers of 2:
+2^10 = 1,024
+2^20 = ~1M
+2^30 = ~1B
+2^40 = ~1T
+```
+
+**Latency numbers (Jeff Dean, "Numbers Every Programmer Should Know"):**
+```
+L1 cache: 1 ns
+L2 cache: 4 ns
+Main memory: 100 ns
+SSD: 100,000 ns (100 µs)
+HDD: 10,000,000 ns (10 ms)
+Network (same datacenter): 500,000 ns (500 µs)
+Network (cross-continent): 50,000,000 ns (50 ms)
+```
+
+**Throughput:**
+```
+HDD: 100-200 MB/s
+SSD: 500 MB/s - 3 GB/s
+Network (1 Gbps): 125 MB/s
+Network (10 Gbps): 1.25 GB/s
+Memory: 10-50 GB/s
+```
+
+---
+
+## Estimation framework for interviews
+
+**Step 1: State your assumptions (10 sec)**
+"Assuming 10M DAU, 100 actions per user per day, 10% writes..."
+
+**Step 2: Estimate QPS (30 sec)**
+"QPS_avg = 10M × 100 / 86,400 = ~12K. Peak = ~36K."
+
+**Step 3: Estimate storage (30 sec)**
+"100M writes/day × 1 KB = 100 GB/day. 1 year = 36 TB. With 3x replication: 108 TB."
+
+**Step 4: Estimate bandwidth (30 sec)**
+"12K QPS × 10 KB response = 120 MB/s."
+
+**Step 5: Estimate infrastructure (30 sec)**
+"12K QPS / 1K QPS per server = 12 servers. With redundancy: 20."
+
+**Total: 2-3 minutes.**
+
+---
+
+## Sanity check the answer
+
+Always sanity-check:
+
+- **QPS is reasonable.** 1M QPS is "big" for a single service, "small" for Google. 1B QPS is "huge."
+- **Storage fits on disk.** 100 TB is fine. 1 PB needs serious hardware. 1 EB needs a data center.
+- **Bandwidth fits on network.** 1 Gbps is a small server. 10 Gbps is a switch uplink. 100 Gbps is datacenter.
+- **Numbers are right magnitude.** 10x error is fine, 1000x is wrong.
+
+**If your answer is 1M machines, you made a math error. If it's 1 machine for 100M users, you forgot something.**
+
+---
+
+## Common mistakes
+
+- **No assumptions stated.** "How many servers?" — "I don't know, depends." Bad.
+- **Off by 1000x.** 10K vs 10M. Sanity check.
+- **Ignoring peak.** Average is fine for sizing, peak is what you actually need.
+- **Ignoring replication.** Need 3x for HA. Need backups.
+- **Forgetting the read/write ratio.** Different QPS for reads vs writes.
+- **Not accounting for cache hit rate.** With 90% cache hit, you only hit the DB 10% of the time.
+
+---
+
+## Server sizing cheat sheet
+
+| Workload | vCPUs | RAM | Disk | Network |
+|----------|------:|----:|-----:|--------:|
+| Light API server | 2 | 4 GB | 20 GB SSD | 1 Gbps |
+| Medium API server | 4-8 | 8-16 GB | 50 GB SSD | 1-10 Gbps |
+| Heavy API server | 16-32 | 32-64 GB | 100 GB SSD | 10 Gbps |
+| DB server | 16-64 | 64-256 GB | 1-10 TB SSD | 10 Gbps |
+| Cache server | 8-16 | 16-64 GB | 50 GB SSD | 10 Gbps |
+| Worker server | 4-8 | 8-16 GB | 20 GB SSD | 1 Gbps |
+
+**These are rough.** Always measure your actual workload.
+
+---
+
+## Cost estimation
+
+For a sense of cost (AWS, 2024):
+- t3.medium (2 vCPU, 4 GB): ~$30/month
+- m5.large (2 vCPU, 8 GB): ~$70/month
+- m5.xlarge (4 vCPU, 16 GB): ~$140/month
+- m5.2xlarge (8 vCPU, 32 GB): ~$280/month
+- m5.4xlarge (16 vCPU, 64 GB): ~$560/month
+- db.r5.xlarge (4 vCPU, 32 GB, 100 GB SSD): ~$500/month
+- ElastiCache (cache.r5.large): ~$200/month
+- 1 TB EBS gp3: ~$100/month
+
+**Example:** 20 m5.xlarge + 3 db.r5.xlarge + 5 cache = $2,800 + $1,500 + $1,000 = $5,300/month.
+
+---
+
+## When to use this in interviews
+
+**Always.** Any "how do you scale this" question needs an estimate:
+
+- "We have 10M DAU. Each user does 100 actions/day. That's 12K QPS average, 36K peak. We need 20-30 API servers, 3 DB replicas, 200 GB of cache."
+
+**The estimate comes FIRST, then the design.** Without the estimate, you don't know if your design is reasonable.
+
+---
+
+## Related concepts
+
+- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — sizing the DB
+- [00-Caching-Patterns.md](00-Caching-Patterns.md) — cache size estimation
+- [00-Load-Balancing.md](00-Load-Balancing.md) — distributing the load
+- [00-Failure-Modes.md](00-Failure-Modes.md) — capacity for failures (N+1, N+2)
+
+---
+
+## TL;DR
+
+- **4 estimates:** QPS, storage, bandwidth, memory.
+- **Use round numbers.** 10K, 100K, 1M.
+- **State assumptions.** "Assuming 10M DAU, 100 actions/day..."
+- **Show your math.** "10M × 100 / 86,400 = 12K QPS."
+- **Sanity check.** 1M machines = error. 1 machine for 100M users = forgot something.
+- **Little's Law:** L = λ × W. Concurrent = rate × wait.
+- **In interviews: estimate in 2-3 minutes BEFORE designing.**
+
+For capacity-related failure modes, see [00-Failure-Modes.md](00-Failure-Modes.md).

@@ -1,10 +1,39 @@
 # System Design — Index
 
-> **22 files** — Real-world system design case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter Feed, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, a meta-guide on how to approach any system-design problem, and interview questions.
+> **37 files** — 14 foundational theory files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks), 22 case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and a meta-guide on how to approach any system-design problem.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-37-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+
+**Read the theory first.** The 14 `00-*` files below cover the foundational concepts. Then read the case studies for applied examples.
+
+---
+
+## Foundational Theory (read these first)
+
+These are the concepts you need to know BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+
+| # | File | Concepts covered | Why it matters |
+|---|------|------------------|----------------|
+| 00 | [CAP Theorem & PACELC](00-CAP-Theorem.md) | Consistency, Availability, Partition tolerance, CP vs AP trade-offs, PACELC extension | The single most important distributed systems concept. Pick CP or AP for every operation. |
+| 00 | [Data Consistency Models](00-Consistency-Models.md) | Linearizability, eventual, causal, read-your-writes, monotonic reads | Pick per operation, not per system. Most real systems are a mix. |
+| 00 | [Sharding & Replication](00-Sharding-and-Replication.md) | Hash/range/directory sharding, single-leader/multi-leader/leaderless replication | How to actually scale a database. Both are needed. |
+| 00 | [Load Balancing](00-Load-Balancing.md) | L4 vs L7, round-robin/least-connections/consistent-hashing/IP-hash, health checks | Traffic distribution. Pick the wrong algorithm and one server melts. |
+| 00 | [Caching Patterns](00-Caching-Patterns.md) | Cache-aside, read-through, write-through, write-behind, refresh-ahead, write-around + LRU/LFU/TTL eviction | The #1 lever for performance. Know all 6 patterns. |
+| 00 | [Queues & Async](00-Queues-and-Async.md) | Point-to-point vs pub/sub, at-least-once vs exactly-once, idempotency, DLQ, ordering | Async is the backbone of scalable systems. Know delivery guarantees. |
+| 00 | [Distributed Transactions](00-Distributed-Transactions.md) | 2PC, 3PC, Saga (choreography + orchestration) | Atomicity across services. Saga is the production answer. |
+| 00 | [Rate Limiting](00-Rate-Limiting.md) | Fixed/sliding window, token bucket, leaky bucket, Redis-based distributed | Protect from abuse. Token bucket is the default. |
+| 00 | [Consensus & Leader Election](00-Consensus-and-Leader-Election.md) | Paxos, Raft, Zab, leader election, split brain, distributed locks | How databases agree on who's leader. Raft is the default. |
+| 00 | [Failure Modes](00-Failure-Modes.md) | Hardware, software, network, human failures, retries, circuit breakers, bulkheads | Everything fails. Plan for it. |
+| 00 | [Architecture Patterns](00-Architecture-Patterns.md) | Monolith, modular monolith, microservices, event-driven, hexagonal, clean, microkernel | Pick the right architecture for the team and domain. |
+| 00 | [Capacity Planning](00-Capacity-Planning.md) | QPS, storage, bandwidth, memory, Little's Law | Estimate first, design second. Numbers, not vibes. |
+| 00 | [Backpressure & Flow Control](00-Backpressure-and-Flow-Control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. |
+| 00 | [Distributed Locks](00-Distributed-Locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. |
+
+---
+
+## Case Studies (apply the theory)
 
 | # | File | Topics |
 |---|------|--------|

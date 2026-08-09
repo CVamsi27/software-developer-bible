@@ -1,0 +1,14 @@
+title: Software Developer Bible
+tagline: Senior Full Stack Interview Bible
+description: >-
+  A lane-first, stack-deep reference for senior full-stack engineers (5+ YoE)
+  prepping for product-based companies, FAANG/Big Tech, and EU mid-stage startups.
+author: CVamsi27
+theme: minima
+minima:
+  skin: auto
+show_excerpts: false
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock

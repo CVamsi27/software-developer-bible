@@ -645,13 +645,13 @@ declare class Parser {
 
 ## See Also
 
-- [Advanced Generics](10-Advanced-Generics.md)
-- [Branded Types](13-Branded-Types.md)
-- [Infer](05-Infer.md)
-- [JavaScript](../01-JavaScript/)
-- [Mapped Types](07-Mapped-Types.md)
-- [Template Literal Types](12-Template-Literal-Types.md)
-- [Type Narrowing](08-Type-Narrowing.md)
+- [Advanced Generics](advanced-generics.md)
+- [Branded Types](branded-types.md)
+- [Infer](infer.md)
+- [JavaScript](../javascript/)
+- [Mapped Types](mapped-types.md)
+- [Template Literal Types](template-literal-types.md)
+- [Type Narrowing](type-narrowing.md)
 
 ## References & Learn More
 

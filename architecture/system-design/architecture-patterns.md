@@ -222,7 +222,7 @@ The senior signal: name the pattern, justify the choice, know the trade-offs.
 
 **In interviews:** "We use event-driven for cross-service workflows. Order service emits `order_created`, inventory consumes and reserves, payment consumes and charges, all async. If any step fails, we run compensating actions in reverse (saga)."
 
-**See also:** [00-Queues-and-Async.md](00-Queues-and-Async.md), [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md), [../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md](../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md)
+**See also:** [Queues And Async](queues-and-async.md), [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../backend/microservices/saga-pattern.md), [../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md](../../backend/microservices/event-sourcing.md)
 
 ---
 
@@ -451,11 +451,11 @@ The senior signal: name the pattern, justify the choice, know the trade-offs.
 
 ## Related concepts
 
-- [00-Queues-and-Async.md](00-Queues-and-Async.md) — async is the foundation of EDA
-- [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — saga for cross-service
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — microservices force trade-offs
-- [../../2-Backend-Stack/12-Microservices/](../../2-Backend-Stack/12-Microservices/) — full microservices reference
-- [../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md](../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md) — apply to your architecture
+- [Queues And Async](queues-and-async.md) — async is the foundation of EDA
+- [Distributed Transactions](distributed-transactions.md) — saga for cross-service
+- [Cap Theorem](cap-theorem.md) — microservices force trade-offs
+- [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/) — full microservices reference
+- [../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md](../../backend/design-patterns/solid-principles.md) — apply to your architecture
 
 ---
 

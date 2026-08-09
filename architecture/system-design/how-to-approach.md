@@ -201,11 +201,11 @@ SENIOR SIGNALS:
 ---
 
 ## See Also
-- [API Gateway](../../2-Backend-Stack/12-Microservices/02-API-Gateway.md)
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [System Design Interview Questions](16-Interview-Questions.md)
-- [URL Shortener](01-URL-Shortener.md)
+- [API Gateway](../../backend/microservices/api-gateway.md)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [System Design Interview Questions](interview-questions.md)
+- [URL Shortener](url-shortener.md)
 
 ## References & Learn More
 

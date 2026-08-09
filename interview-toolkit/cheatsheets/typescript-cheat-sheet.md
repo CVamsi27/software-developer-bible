@@ -304,10 +304,10 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 This cheat sheet provides a concise reference to core TypeScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [JavaScript](../../frontend/javascript/)
+- [NestJS](../../backend/nestjs/)
+- [React](../../frontend/react/)
+- [TypeScript](../../frontend/typescript/)
 
 ## References & Learn More
 

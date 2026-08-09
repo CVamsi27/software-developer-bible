@@ -277,10 +277,10 @@ async heavy(@Res({ passthrough: true }) res: Response) {
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (consistent envelopes across services)
-- [NestJS](../06-NestJS/) (ExceptionFilter in NestJS)
-- [Security](../09-Security/) (don't leak info via error messages)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (error envelopes in API contracts)
+- [Microservices](../microservices/) (consistent envelopes across services)
+- [NestJS](../nestjs/) (ExceptionFilter in NestJS)
+- [Security](../security/) (don't leak info via error messages)
+- [System Design](../../architecture/system-design/) (error envelopes in API contracts)
 
 ## References & Learn More
 

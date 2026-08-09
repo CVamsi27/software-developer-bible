@@ -542,13 +542,13 @@ PodPreset Key Points:
 
 ## See Also
 
-- [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)
-- [Deployments](02-Deployments.md)
-- [Health Checks](06-Health-Checks.md)
-- [Helm](07-Helm.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Pods & ReplicaSets](01-Pods-ReplicaSets.md)
-- [RBAC & Network Policies](11-RBAC-Network-Policies.md)
+- [ConfigMaps & Secrets](configmaps-secrets.md)
+- [Deployments](deployments.md)
+- [Health Checks](health-checks.md)
+- [Helm](helm.md)
+- [Interview Questions](interview-questions.md)
+- [Pods & ReplicaSets](pods-replicasets.md)
+- [RBAC & Network Policies](rbac-network-policies.md)
 
 ## References & Learn More
 

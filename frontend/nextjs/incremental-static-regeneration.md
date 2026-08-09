@@ -730,13 +730,13 @@ ISR Key Points:
 
 ## See Also
 
-- [Caching in Next.js](09-Caching.md)
-- [Client Components](04-Client-Components.md)
-- [Image Optimization](11-Image-Optimization.md)
-- [Metadata](08-Metadata.md)
-- [Server Components](03-Server-Components.md)
-- [SSR / CSR / SSG / ISR](01-SSR-CSR-SSG-ISR.md)
-- [Streaming](10-Streaming.md)
+- [Caching in Next.js](caching.md)
+- [Client Components](client-components.md)
+- [Image Optimization](image-optimization.md)
+- [Metadata](metadata.md)
+- [Server Components](server-components.md)
+- [SSR / CSR / SSG / ISR](ssr-csr-ssg-isr.md)
+- [Streaming](streaming.md)
 
 ## References & Learn More
 

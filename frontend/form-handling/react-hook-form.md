@@ -429,13 +429,13 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/)
-- [Formik](03-Formik.md)
-- [React](../03-React/)
-- [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md)
-- [TanStack Form](05-TanStack-Form.md)
-- [TypeScript](../02-TypeScript/)
-- [Zod](02-Zod.md)
+- [Design Patterns](../../backend/design-patterns/)
+- [Formik](formik.md)
+- [React](../react/)
+- [Server Actions & Form Patterns](server-actions-and-form-patterns.md)
+- [TanStack Form](tanstack-form.md)
+- [TypeScript](../typescript/)
+- [Zod](zod.md)
 
 ## References & Learn More
 

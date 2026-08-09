@@ -315,14 +315,14 @@ The amortized O(n) bound comes from the fact that each element is pushed exactly
 ---
 
 ## See Also
-- [Backtracking](05-Backtracking.md)
+- [Backtracking](backtracking.md)
 - [Coding Patterns](./)
-- [DFS & BFS](04-DFS-BFS.md)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Heap](07-Heap.md)
-- [Sliding Window](01-Sliding-Window.md)
-- [Stack & Queue Patterns](18-Stack-Queue-Patterns.md)
-- [Two Pointers](02-Two-Pointers.md)
+- [DFS & BFS](dfs-bfs.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Heap](heap.md)
+- [Sliding Window](sliding-window.md)
+- [Stack & Queue Patterns](stack-queue-patterns.md)
+- [Two Pointers](two-pointers.md)
 
 ## References & Learn More
 

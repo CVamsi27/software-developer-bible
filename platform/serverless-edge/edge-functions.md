@@ -353,12 +353,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [AWS Lambda](05-AWS-Lambda.md)
-- [Docker](../13-Docker/)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Observability](../22-Observability/)
-- [Serverless Overview](01-Serverless-Overview.md)
-- [Vercel Deployments](06-Vercel-Deployments.md)
+- [AWS Lambda](aws-lambda.md)
+- [Docker](../docker/)
+- [Next.js](../../frontend/nextjs/)
+- [Observability](../observability/)
+- [Serverless Overview](serverless-overview.md)
+- [Vercel Deployments](vercel-deployments.md)
 
 ## References & Learn More
 

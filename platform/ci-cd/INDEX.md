@@ -8,19 +8,19 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [GitHub Actions](01-GitHub-Actions.md) | Workflows, actions, runners, matrix builds, caching |
-| 02 | [Docker Build & Deploy](02-Docker-Build-Deploy.md) | Docker build pipelines, registry, deployment strategies |
-| 03 | [Blue-Green & Canary](03-Blue-Green-Canary.md) | Zero-downtime deployments, traffic shifting, rollback |
-| 04 | [Jenkins CI/CD](04-Jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins |
-| 05 | [GitLab CI/CD](05-GitLab-CI.md) | .gitlab-ci.yml, multi-project pipelines, Auto DevOps |
-| 06 | [ArgoCD (GitOps)](06-ArgoCD.md) | GitOps, ApplicationSets, sync policies, rollback |
-| 07 | [Interview Questions](07-Interview-Questions.md) | 50+ curated questions with answers |
+| 01 | [GitHub Actions](github-actions.md) | Workflows, actions, runners, matrix builds, caching |
+| 02 | [Docker Build & Deploy](docker-build-deploy.md) | Docker build pipelines, registry, deployment strategies |
+| 03 | [Blue-Green & Canary](blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback |
+| 04 | [Jenkins CI/CD](jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins |
+| 05 | [GitLab CI/CD](gitlab-ci.md) | .gitlab-ci.yml, multi-project pipelines, Auto DevOps |
+| 06 | [ArgoCD (GitOps)](argocd.md) | GitOps, ApplicationSets, sync policies, rollback |
+| 07 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
 
 ---
 
-**Cross-references:** [Docker](../13-Docker/) | [Kubernetes](../14-Kubernetes/) | [Git Advanced](../24-Git-Advanced/)
+**Cross-references:** [Docker](../docker/) | [Kubernetes](../kubernetes/) | [Git Advanced](../git-advanced/)
 ---
 
 ## Navigation
 
-[← Previous: Kubernetes](../14-Kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Testing →](../../5-Quality-Stack/16-Testing/INDEX.md)
+[← Previous: Kubernetes](../kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Testing →](../../quality/testing/INDEX.md)

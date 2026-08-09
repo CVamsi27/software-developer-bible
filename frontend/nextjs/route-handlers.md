@@ -772,10 +772,10 @@ export const dynamic = 'force-dynamic'
 ---
 
 ## See Also
-- [Authentication](13-Authentication.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../03-React/)
-- [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/)
+- [Authentication](authentication.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../react/)
+- [Serverless & Edge](../../platform/serverless-edge/)
 
 ## References & Learn More
 

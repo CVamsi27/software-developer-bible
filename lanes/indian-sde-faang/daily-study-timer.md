@@ -399,12 +399,12 @@ This daily study timer provides a structured approach to managing your interview
 ## See Also
 
 ---
-- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Behavioral](../../interview-toolkit/behavioral/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [React](../../frontend/react/)
+- [System Design](../../architecture/system-design/)
+- [TypeScript](../../frontend/typescript/)
 
 ## Cheat Sheet
 ```text

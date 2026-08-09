@@ -482,9 +482,9 @@ revoke(); // Disables all proxy operations
 ---
 
 ## See Also
-- [Generators](23-Generators.md)
-- [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md)
-- [TypeScript](../02-TypeScript/)
+- [Generators](generators.md)
+- [Shallow vs Deep Copy](shallow-vs-deep-copy.md)
+- [TypeScript](../typescript/)
 
 ## References & Learn More
 

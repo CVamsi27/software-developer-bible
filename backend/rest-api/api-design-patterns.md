@@ -75,7 +75,7 @@ DELETE /users/123       → delete user
 - Use ETags for caching
 - Document with OpenAPI
 
-**See:** [01-REST-Principles.md](01-REST-Principles.md), [06-Authentication.md](06-Authentication.md), [05-Pagination.md](05-Pagination.md), [11-OpenAPI-Swagger.md](11-OpenAPI-Swagger.md) in this section for the deep dive.
+**See:** [Rest Principles](rest-principles.md), [Authentication](authentication.md), [Pagination](pagination.md), [Openapi Swagger](openapi-swagger.md) in this section for the deep dive.
 
 ---
 
@@ -241,7 +241,7 @@ Connection: Upgrade
 - Request-response (use REST)
 - High-throughput service-to-service (use gRPC)
 
-**See:** [../../6-Real-Time-Stack/21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/) for the full deep-dive.
+**See:** [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/) for the full deep-dive.
 
 **In interviews:** "We use WebSocket for the chat feature. Each user maintains a persistent connection to the chat server. The chat server publishes to a Kafka topic; other chat servers consume and forward to their connected users."
 
@@ -409,7 +409,7 @@ For large lists, paginate. Common patterns:
 - **Cursor:** `?cursor=xyz&limit=20` (efficient, but no "jump to page 5")
 - **Keyset:** `?after_id=123&limit=20` (efficient for time-series)
 
-**See:** [05-Pagination.md](05-Pagination.md) for the full deep-dive.
+**See:** [Pagination](pagination.md) for the full deep-dive.
 
 ### 6. Error handling
 
@@ -472,10 +472,10 @@ Use standard HTTP status codes. Return a structured error body.
 
 ## Related concepts
 
-- [00-Caching-Patterns.md](../../3-Architecture-Stack/11-System-Design/00-Caching-Patterns.md) — API responses can be cached
-- [00-Queues-and-Async.md](../../3-Architecture-Stack/11-System-Design/00-Queues-and-Async.md) — async pattern behind webhooks
-- [../../6-Real-Time-Stack/21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/) — full WebSocket deep-dive
-- [01-REST-Principles.md](01-REST-Principles.md) through [11-OpenAPI-Swagger.md](11-OpenAPI-Swagger.md) — full REST deep-dive
+- [Caching Patterns](../../architecture/system-design/caching-patterns.md) — API responses can be cached
+- [Queues And Async](../../architecture/system-design/queues-and-async.md) — async pattern behind webhooks
+- [../../6-Real-Time-Stack/21-WebSockets/](../../realtime/websockets/) — full WebSocket deep-dive
+- [Rest Principles](rest-principles.md) through [Openapi Swagger](openapi-swagger.md) — full REST deep-dive
 
 ---
 
@@ -490,4 +490,4 @@ Use standard HTTP status codes. Return a structured error body.
 - **Pick per use case.** Not one-size-fits-all.
 - **In interviews: name the style, justify the choice, mention the trade-offs.**
 
-For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [21-WebSockets](../../6-Real-Time-Stack/21-WebSockets/).
+For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [WebSockets](../../realtime/websockets/).

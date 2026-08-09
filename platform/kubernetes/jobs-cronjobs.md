@@ -93,8 +93,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Deployments](02-Deployments.md)
+- [CI/CD](../ci-cd)
+- [Deployments](deployments.md)
 
 ## References & Learn More
 

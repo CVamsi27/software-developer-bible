@@ -12,7 +12,7 @@
 - **20 questions:** 8 behavioral + 7 technical + 5 system design
 - **Each question has:** the question itself, what they're testing, a 60-second answer skeleton
 - **Practice 2-3 per mock interview.** A 90-min mock covers 1 behavioral + 1 technical + 1 system design.
-- **For full stories:** see [story-bank.md](story-bank.md). For full case frameworks: see [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md).
+- **For full stories:** see [story-bank.md](story-bank.md). For full case frameworks: see [System Design Case Bank](system-design-case-bank.md).
 
 ---
 
@@ -48,7 +48,7 @@
 3. 1 cultural alignment point
 4. 1 recent product/launch
 
-See [04-Behavioral-EU-Style.md](04-Behavioral-EU-Style.md) for templates per company.
+See [Behavioral Eu Style](behavioral-eu-style.md) for templates per company.
 
 ---
 
@@ -187,7 +187,7 @@ class RateLimiter {
 2. Implement: POST /shorten (returns short code), GET /{code} (302 redirect)
 3. Discuss: scale (10K URLs/day → 1B), caching, rate limiting
 
-For full answer, see [../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md](../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md).
+For full answer, see [../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md](../../architecture/system-design/url-shortener.md).
 
 ---
 
@@ -304,7 +304,7 @@ function hasCycle(head: ListNode | null): boolean {
 
 ### Q16: "Design a workflow engine like n8n"
 
-**Use the 4-phase framework.** See [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md) Case 1 for the full answer.
+**Use the 4-phase framework.** See [System Design Case Bank](system-design-case-bank.md) Case 1 for the full answer.
 
 **Key points:** state machine for execution, queue for triggers, idempotency per step, retries with DLQ, persistence for every state transition.
 
@@ -312,7 +312,7 @@ function hasCycle(head: ListNode | null): boolean {
 
 ### Q17: "Design a payment gateway"
 
-**Use the 4-phase framework.** See [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md) Case 2.
+**Use the 4-phase framework.** See [System Design Case Bank](system-design-case-bank.md) Case 2.
 
 **Key points:** idempotency keys (always!), two-phase saga, reconciliation batch, PCI compliance (no card storage), fraud detection.
 
@@ -320,7 +320,7 @@ function hasCycle(head: ListNode | null): boolean {
 
 ### Q18: "Design a multi-tenant SaaS for property management"
 
-**Use the 4-phase framework.** See [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md) Case 3.
+**Use the 4-phase framework.** See [System Design Case Bank](system-design-case-bank.md) Case 3.
 
 **Key points:** row-level security in Postgres, per-tenant rate limiting, RBAC, audit logging, cross-tenant analytics in separate DB, schema evolution strategy.
 
@@ -328,7 +328,7 @@ function hasCycle(head: ListNode | null): boolean {
 
 ### Q19: "Design a real-time parking booking system"
 
-**Use the 4-phase framework.** See [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md) Case 4.
+**Use the 4-phase framework.** See [System Design Case Bank](system-design-case-bank.md) Case 4.
 
 **Key points:** pessimistic vs optimistic locking for the "two users grab the last spot" problem, hold/release pattern with TTL, saga for hold → charge → confirm, idempotency.
 
@@ -336,7 +336,7 @@ function hasCycle(head: ListNode | null): boolean {
 
 ### Q20: "Design an event-driven microservice for logistics"
 
-**Use the 4-phase framework.** See [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md) Case 5.
+**Use the 4-phase framework.** See [System Design Case Bank](system-design-case-bank.md) Case 5.
 
 **Key points:** Kafka topic design (one per event type), schema evolution with Avro/Protobuf + schema registry, partitioning by aggregate ID, consumer-side idempotency, DLQ for poison messages, replay capability.
 
@@ -361,4 +361,4 @@ function hasCycle(head: ListNode | null): boolean {
 - **20 questions:** 8 behavioral + 7 technical + 5 system design
 - **90-min mock structure** above
 - **Practice 4 mocks total.** Pramp (free), interviewing.io (paid, with FAANG engineers), or a friend.
-- **For full stories + frameworks:** see [story-bank.md](story-bank.md), [02-Tech-Screen-Patterns.md](02-Tech-Screen-Patterns.md), [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md).
+- **For full stories + frameworks:** see [story-bank.md](story-bank.md), [Tech Screen Patterns](tech-screen-patterns.md), [System Design Case Bank](system-design-case-bank.md).

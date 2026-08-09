@@ -200,8 +200,8 @@ CMD ["node", "app/main.js"]
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Docker Security](../../2-Backend-Stack/09-Security/)
+- [CI/CD](../ci-cd)
+- [Docker Security](../../backend/security/)
 
 ## References & Learn More
 

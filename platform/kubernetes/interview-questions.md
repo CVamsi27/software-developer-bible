@@ -789,16 +789,16 @@ kubectl top nodes
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Docker](../13-Docker/)
-- [Jobs & CronJobs](10-Jobs-CronJobs.md)
-- [Observability](../22-Observability/)
-- [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md)
-- [PodPresets](13-PodPresets.md)
-- [RBAC & Network Policies](11-RBAC-Network-Policies.md)
-- [Resource Quotas](14-Resource-Quotas.md)
-- [Serverless & Edge](../27-Serverless-Edge/)
-- [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md)
+- [CI/CD](../ci-cd)
+- [Docker](../docker/)
+- [Jobs & CronJobs](jobs-cronjobs.md)
+- [Observability](../observability/)
+- [Pod Disruption Budgets](pod-disruption-budgets.md)
+- [PodPresets](podpresets.md)
+- [RBAC & Network Policies](rbac-network-policies.md)
+- [Resource Quotas](resource-quotas.md)
+- [Serverless & Edge](../serverless-edge/)
+- [StatefulSets & DaemonSets](statefulsets-daemonsets.md)
 
 ## References & Learn More
 

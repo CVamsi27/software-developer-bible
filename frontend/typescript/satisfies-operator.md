@@ -262,11 +262,11 @@ The `satisfies` operator (TS 4.9+) validates an expression against a type while 
 ---
 
 ## See Also
-- [Advanced Generics](10-Advanced-Generics.md)
-- [Mapped Types](07-Mapped-Types.md)
-- [Type Narrowing](08-Type-Narrowing.md)
-- [Types vs Interfaces](01-Types-vs-Interfaces.md)
-- [Utility Types](03-Utility-Types.md)
+- [Advanced Generics](advanced-generics.md)
+- [Mapped Types](mapped-types.md)
+- [Type Narrowing](type-narrowing.md)
+- [Types vs Interfaces](types-vs-interfaces.md)
+- [Utility Types](utility-types.md)
 
 ## References & Learn More
 

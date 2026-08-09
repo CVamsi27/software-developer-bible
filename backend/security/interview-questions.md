@@ -1935,8 +1935,8 @@ Mastering security interview questions requires understanding:
 ---
 
 ## See Also
-- [REST APIs](../07-REST-API/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [REST APIs](../rest-api/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

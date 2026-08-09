@@ -8,20 +8,20 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Core Web Vitals](01-Core-Web-Vitals.md) | LCP, INP, CLS, measurement, optimization strategies (INP replaced FID in 2024) |
-| 02 | [Performance APIs](02-Performance-APIs.md) | Performance API, Navigation Timing, Resource Timing, observers |
-| 03 | [Profiling Tools](03-Profiling-Tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler |
-| 04 | [Interview Questions](04-Interview-Questions.md) | 25+ curated questions with answers |
-| 05 | [Lighthouse CI](05-Lighthouse-CI.md) | Automated audits, budgets, score tracking, CI/CD integration |
-| 06 | [Bundle Analysis](06-Bundle-Analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia |
-| 07 | [Real User Monitoring](07-Real-User-Monitoring.md) | RUM, web-vitals, sendBeacon, CrUX, segmentation |
-| 08 | [Performance Budgets](08-Performance-Budgets.md) | size-limit, per-chunk budgets, CI enforcement, budgeting tiers |
+| 01 | [Core Web Vitals](core-web-vitals.md) | LCP, INP, CLS, measurement, optimization strategies (INP replaced FID in 2024) |
+| 02 | [Performance APIs](performance-apis.md) | Performance API, Navigation Timing, Resource Timing, observers |
+| 03 | [Profiling Tools](profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler |
+| 04 | [Interview Questions](interview-questions.md) | 25+ curated questions with answers |
+| 05 | [Lighthouse CI](lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration |
+| 06 | [Bundle Analysis](bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia |
+| 07 | [Real User Monitoring](real-user-monitoring.md) | RUM, web-vitals, sendBeacon, CrUX, segmentation |
+| 08 | [Performance Budgets](performance-budgets.md) | size-limit, per-chunk budgets, CI enforcement, budgeting tiers |
 
 ---
 
-**Cross-references:** [Accessibility](../25-Accessibility/) | [Build Tools](../../4-Platform-Stack/23-Build-Tools/) | [Observability](../../4-Platform-Stack/22-Observability/) | [React Performance](../../1-Frontend-Stack/03-React/)
+**Cross-references:** [Accessibility](../accessibility/) | [Build Tools](../../platform/build-tools/) | [Observability](../../platform/observability/) | [React Performance](../../frontend/react/)
 ---
 
 ## Navigation
 
-[← Previous: Accessibility](../25-Accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../../4-Platform-Stack/27-Serverless-Edge/INDEX.md)
+[← Previous: Accessibility](../accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../../platform/serverless-edge/INDEX.md)

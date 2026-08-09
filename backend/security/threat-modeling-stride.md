@@ -227,10 +227,10 @@ export class OrdersBffController {
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (trust boundaries in service mesh)
-- [REST APIs](../07-REST-API/) (API threat catalog)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (security in system design)
-- [Web Security](./09-Web-Security.md) (OWASP Top 10)
+- [Microservices](../microservices/) (trust boundaries in service mesh)
+- [REST APIs](../rest-api/) (API threat catalog)
+- [System Design](../../architecture/system-design/) (security in system design)
+- [Web Security](./web-security.md) (OWASP Top 10)
 
 ## References & Learn More
 

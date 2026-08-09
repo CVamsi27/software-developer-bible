@@ -393,11 +393,11 @@ function kmpSearch(text, pattern) { /* ... */ }
 ---
 
 ## See Also
-- [Binary Search](03-Binary-Search.md)
+- [Binary Search](binary-search.md)
 - [Coding Patterns](./)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Sliding Window](01-Sliding-Window.md)
-- [Trie](08-Trie.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Sliding Window](sliding-window.md)
+- [Trie](trie.md)
 
 ## References & Learn More
 

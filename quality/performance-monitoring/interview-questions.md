@@ -341,12 +341,12 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../25-Accessibility/)
-- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
-- [Bundle Analysis](06-Bundle-Analysis.md)
-- [Lighthouse CI](05-Lighthouse-CI.md)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [React](../../1-Frontend-Stack/03-React/)
+- [Accessibility](../accessibility/)
+- [Build Tools](../../platform/build-tools/)
+- [Bundle Analysis](bundle-analysis.md)
+- [Lighthouse CI](lighthouse-ci.md)
+- [Observability](../../platform/observability/)
+- [React](../../frontend/react/)
 
 ## References & Learn More
 

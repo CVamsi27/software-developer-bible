@@ -357,8 +357,8 @@ JWT is a powerful stateless authentication mechanism that enables scalable, deco
 ---
 
 ## See Also
-- [REST APIs](../07-REST-API/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [REST APIs](../rest-api/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

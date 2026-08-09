@@ -818,12 +818,12 @@ Performance:
 ---
 
 ## See Also
-- [Animation](../30-Animation/)
-- [Custom Hooks](16-Custom-Hooks.md)
-- [Form Handling](../29-Form-Handling/)
-- [JavaScript](../01-JavaScript/)
-- [Next.js](../04-NextJS/)
-- [Testing](../../5-Quality-Stack/16-Testing/)
+- [Animation](../animation/)
+- [Custom Hooks](custom-hooks.md)
+- [Form Handling](../form-handling/)
+- [JavaScript](../javascript/)
+- [Next.js](../nextjs/)
+- [Testing](../../quality/testing/)
 
 ## References & Learn More
 

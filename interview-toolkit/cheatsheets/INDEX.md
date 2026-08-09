@@ -8,17 +8,17 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [JavaScript Cheat Sheet](JavaScript-Cheat-Sheet.md) | ES6+, promises, async/await, closures, event loop |
-| 02 | [TypeScript Cheat Sheet](TypeScript-Cheat-Sheet.md) | Types, generics, utility types, decorators, configuration |
-| 03 | [React & Next.js Cheat Sheet](React-NextJS-Cheat-Sheet.md) | Hooks, component patterns, App Router, server components |
-| 04 | [Backend Cheat Sheet](Backend-Cheat-Sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs |
-| 05 | [System Design Cheat Sheet](System-Design-Cheat-Sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN |
+| 01 | [JavaScript Cheat Sheet](javascript-cheat-sheet.md) | ES6+, promises, async/await, closures, event loop |
+| 02 | [TypeScript Cheat Sheet](typescript-cheat-sheet.md) | Types, generics, utility types, decorators, configuration |
+| 03 | [React & Next.js Cheat Sheet](react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components |
+| 04 | [Backend Cheat Sheet](backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs |
+| 05 | [System Design Cheat Sheet](system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN |
 
 ---
 
-**Cross-references:** [JavaScript](../../1-Frontend-Stack/01-JavaScript/) | [TypeScript](../../1-Frontend-Stack/02-TypeScript/) | [React](../../1-Frontend-Stack/03-React/) | [System Design](../../3-Architecture-Stack/11-System-Design/)
+**Cross-references:** [JavaScript](../../frontend/javascript/) | [TypeScript](../../frontend/typescript/) | [React](../../frontend/react/) | [System Design](../../architecture/system-design/)
 ---
 
 ## Navigation
 
-[← Previous: Coding Patterns](../19-Coding-Patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../6-Real-Time-Stack/21-WebSockets/INDEX.md)
+[← Previous: Coding Patterns](../coding-patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../realtime/websockets/INDEX.md)

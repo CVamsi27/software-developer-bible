@@ -275,10 +275,10 @@ const validated = (obj, schema) => new Proxy(obj, {
 This cheat sheet provides a concise reference to core JavaScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Coding Patterns](../19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [Node.js](../../2-Backend-Stack/05-NodeJS/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Coding Patterns](../coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [Node.js](../../backend/nodejs/)
+- [TypeScript](../../frontend/typescript/)
 
 ## References & Learn More
 

@@ -868,10 +868,10 @@ The Factory pattern is essential for creating objects without specifying concret
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [NestJS](../06-NestJS/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [NestJS](../nestjs/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

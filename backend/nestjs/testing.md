@@ -283,10 +283,10 @@ const moduleRef = await Test.createTestingModule({
 ---
 
 ## See Also
-- [Design Patterns](../10-Design-Patterns/) (Repository, Dependency Injection)
-- [Microservices](../12-Microservices/) (testing message-driven services)
-- [Node.js](../05-NodeJS/) (Jest configuration, async testing)
-- [REST APIs](../07-REST-API/) (API contract testing)
+- [Design Patterns](../design-patterns/) (Repository, Dependency Injection)
+- [Microservices](../microservices/) (testing message-driven services)
+- [Node.js](../nodejs/) (Jest configuration, async testing)
+- [REST APIs](../rest-api/) (API contract testing)
 
 ## References & Learn More
 

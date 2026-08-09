@@ -373,12 +373,12 @@ Next.js App Router data fetching is pattern-based, not framework-magic. Use Serv
 ---
 
 ## See Also
-- [App Router](02-App-Router.md)
-- [Caching](09-Caching.md)
-- [React State Management](../03-React/14-State-Management.md)
-- [Server Actions](06-Server-Actions.md)
-- [Server Components](03-Server-Components.md)
-- [Streaming](10-Streaming.md)
+- [App Router](app-router.md)
+- [Caching](caching.md)
+- [React State Management](../react/state-management.md)
+- [Server Actions](server-actions.md)
+- [Server Components](server-components.md)
+- [Streaming](streaming.md)
 
 ## References & Learn More
 

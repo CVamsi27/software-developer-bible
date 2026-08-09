@@ -223,4 +223,4 @@ When you decline (keep the door open):
 - **Family: factor in spouse job, international school, housing, healthcare.**
 - **Always counter. Always ask about the 30% ruling if NL.**
 
-For the full visa strategy, see [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md).
+For the full visa strategy, see [Visa Relocation Playbook](visa-relocation-playbook.md).

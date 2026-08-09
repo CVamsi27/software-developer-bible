@@ -277,10 +277,10 @@ export class BackfillOrdersJob {
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (migrations across services)
-- [REST APIs](../07-REST-API/) (API versioning pairs with DB versioning)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (migrations in zero-downtime deploys)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) (migration performance impact)
+- [Microservices](../microservices/) (migrations across services)
+- [REST APIs](../rest-api/) (API versioning pairs with DB versioning)
+- [System Design](../../architecture/system-design/) (migrations in zero-downtime deploys)
+- [Performance Monitoring](../../quality/performance-monitoring/) (migration performance impact)
 
 ## References & Learn More
 

@@ -325,12 +325,12 @@ Alerts: feed load p99 > 1s, image pipeline lag > 5 min, fan-out lag > 1 min, Red
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [Object Storage & CDN](../../2-Backend-Stack/08-Database/) (database section)
-- [System Design Interview Questions](16-Interview-Questions.md)
-- [Twitter Feed](12-Twitter-Feed.md)
-- [URL Shortener](01-URL-Shortener.md)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [Object Storage & CDN](../../backend/database/) (database section)
+- [System Design Interview Questions](interview-questions.md)
+- [Twitter Feed](twitter-feed.md)
+- [URL Shortener](url-shortener.md)
 
 ## References & Learn More
 

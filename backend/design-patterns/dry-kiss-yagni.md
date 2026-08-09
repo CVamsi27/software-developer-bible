@@ -470,10 +470,10 @@ For APIs: accept various input formats, but always return the canonical format. 
 
 ## Related concepts
 
-- [00-SOLID-Principles.md](00-SOLID-Principles.md) — the foundational 5
-- [00-OOP-Concepts.md](00-OOP-Concepts.md) — the foundation
-- [00-UML-Basics.md](00-UML-Basics.md) — visualizing designs
-- [01-Singleton.md](01-Singleton.md) through [15-State-Pattern.md](15-State-Pattern.md) — GoF patterns
+- [Solid Principles](solid-principles.md) — the foundational 5
+- [Oop Concepts](oop-concepts.md) — the foundation
+- [Uml Basics](uml-basics.md) — visualizing designs
+- [Singleton](singleton.md) through [State Pattern](state-pattern.md) — GoF patterns
 
 ---
 

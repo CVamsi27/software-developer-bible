@@ -567,12 +567,12 @@ Bulkhead Key Points:
 
 ## See Also
 
-- [API Gateway](02-API-Gateway.md)
-- [Circuit Breaker](04-Circuit-Breaker.md)
-- [Distributed Transactions](11-Distributed-Transactions.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Rate Limiting](../07-REST-API/07-Rate-Limiting.md)
-- [Resilience Patterns](09-gRPC.md)
+- [API Gateway](api-gateway.md)
+- [Circuit Breaker](circuit-breaker.md)
+- [Distributed Transactions](distributed-transactions.md)
+- [Interview Questions](interview-questions.md)
+- [Rate Limiting](../rest-api/rate-limiting.md)
+- [Resilience Patterns](grpc.md)
 
 ## References & Learn More
 

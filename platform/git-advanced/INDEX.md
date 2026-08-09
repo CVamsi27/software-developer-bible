@@ -8,19 +8,19 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Branching Strategies](01-Branching-Strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches |
-| 02 | [Rebase & Cherry-Pick](02-Rebase-Cherry-Pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows |
-| 03 | [Git Hooks](03-Git-Hooks.md) | Client/server hooks, pre-commit, Husky, commitlint |
-| 04 | [Advanced Commands](04-Git-Advanced-Commands.md) | Bisect, reflog, worktree, submodule, filter-branch |
-| 05 | [Interview Questions](05-Interview-Questions.md) | 50+ curated questions with answers |
-| 06 | [Patch & Bundle](06-Patch-and-Bundle.md) | format-patch, am, send-email, bundles, OSS contribution |
-| 07 | [Code Archaeology](07-Code-Archaeology.md) | blame, log -S, bisect, reflog, history investigation |
+| 01 | [Branching Strategies](branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches |
+| 02 | [Rebase & Cherry-Pick](rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows |
+| 03 | [Git Hooks](git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint |
+| 04 | [Advanced Commands](git-advanced-commands.md) | Bisect, reflog, worktree, submodule, filter-branch |
+| 05 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 06 | [Patch & Bundle](patch-and-bundle.md) | format-patch, am, send-email, bundles, OSS contribution |
+| 07 | [Code Archaeology](code-archaeology.md) | blame, log -S, bisect, reflog, history investigation |
 
 ---
 
-**Cross-references:** [CI/CD](../15-CI-CD) | [Monorepo](../28-Monorepo/)
+**Cross-references:** [CI/CD](../ci-cd) | [Monorepo](../monorepo/)
 ---
 
 ## Navigation
 
-[← Previous: Build Tools](../23-Build-Tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../../5-Quality-Stack/25-Accessibility/INDEX.md)
+[← Previous: Build Tools](../build-tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../../quality/accessibility/INDEX.md)

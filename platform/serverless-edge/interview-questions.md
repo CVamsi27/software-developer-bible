@@ -261,13 +261,13 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [AWS Lambda](05-AWS-Lambda.md)
-- [Edge Functions](02-Edge-Functions.md)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [Observability](../22-Observability/)
-- [Serverless Overview](01-Serverless-Overview.md)
-- [Serverless Patterns](03-Serverless-Patterns.md)
-- [Vercel Deployments](06-Vercel-Deployments.md)
+- [AWS Lambda](aws-lambda.md)
+- [Edge Functions](edge-functions.md)
+- [Microservices](../../backend/microservices/)
+- [Observability](../observability/)
+- [Serverless Overview](serverless-overview.md)
+- [Serverless Patterns](serverless-patterns.md)
+- [Vercel Deployments](vercel-deployments.md)
 
 ## References & Learn More
 

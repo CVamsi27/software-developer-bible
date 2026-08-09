@@ -420,10 +420,10 @@ See the rest of the bible's design patterns for how each implements SOLID.
 
 ## Related concepts
 
-- [00-OOP-Concepts.md](00-OOP-Concepts.md) — the foundation
-- [00-DRY-KISS-YAGNI.md](00-DRY-KISS-YAGNI.md) — other design principles
-- [01-Singleton.md](01-Singleton.md) through [15-State-Pattern.md](15-State-Pattern.md) — GoF patterns
-- [00-UML-Basics.md](00-UML-Basics.md) — visualizing designs
+- [Oop Concepts](oop-concepts.md) — the foundation
+- [Dry Kiss Yagni](dry-kiss-yagni.md) — other design principles
+- [Singleton](singleton.md) through [State Pattern](state-pattern.md) — GoF patterns
+- [Uml Basics](uml-basics.md) — visualizing designs
 
 ---
 
@@ -436,4 +436,4 @@ See the rest of the bible's design patterns for how each implements SOLID.
 - **D** — Depend on abstractions, not concretes. Use injection.
 - **In interviews: name the principle, give a code example, show the fix.**
 
-For LLD interview prep with SOLID in action, see [00-OOP-Concepts.md](00-OOP-Concepts.md) and the 16-Interview-Questions.md in this section.
+For LLD interview prep with SOLID in action, see [Oop Concepts](oop-concepts.md) and the 16-Interview-Questions.md in this section.

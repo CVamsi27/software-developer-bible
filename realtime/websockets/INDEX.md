@@ -8,20 +8,20 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [WebSockets Overview](01-WebSockets-Overview.md) | Protocol, handshake, frames, vs HTTP, use cases |
-| 02 | [Socket.IO](02-Socket-IO.md) | Client/server setup, rooms, namespaces, events, fallback |
-| 03 | [Server-Sent Events](03-Server-Sent-Events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases |
-| 04 | [Real-Time Architecture](04-Real-Time-Architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync |
-| 05 | [NestJS WebSockets](05-NestJS-WebSockets.md) | Gateways, adapters, guards, pipes, exception filters |
-| 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
-| 07 | [WebTransport](07-WebTransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket |
-| 08 | [Scaling Patterns](08-Scaling-Patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms |
+| 01 | [WebSockets Overview](websockets-overview.md) | Protocol, handshake, frames, vs HTTP, use cases |
+| 02 | [Socket.IO](socket-io.md) | Client/server setup, rooms, namespaces, events, fallback |
+| 03 | [Server-Sent Events](server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases |
+| 04 | [Real-Time Architecture](real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync |
+| 05 | [NestJS WebSockets](nestjs-websockets.md) | Gateways, adapters, guards, pipes, exception filters |
+| 06 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 07 | [WebTransport](webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket |
+| 08 | [Scaling Patterns](scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms |
 
 ---
 
-**Cross-references:** [NestJS](../../2-Backend-Stack/06-NestJS/) | [Observability](../../4-Platform-Stack/22-Observability/) | [System Design (WhatsApp)](../../3-Architecture-Stack/11-System-Design/02-WhatsApp.md)
+**Cross-references:** [NestJS](../../backend/nestjs/) | [Observability](../../platform/observability/) | [System Design (WhatsApp)](../../architecture/system-design/whatsapp.md)
 ---
 
 ## Navigation
 
-[← Previous: CheatSheets](../../7-Interview-Toolkit/20-CheatSheets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../../4-Platform-Stack/22-Observability/INDEX.md)
+[← Previous: CheatSheets](../../interview-toolkit/cheatsheets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../../platform/observability/INDEX.md)

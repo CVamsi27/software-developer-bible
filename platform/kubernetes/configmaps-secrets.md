@@ -520,12 +520,12 @@ kubectl delete secret mysecret
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Docker](../13-Docker/)
-- [Observability](../22-Observability/)
-- [PodPresets](13-PodPresets.md)
-- [Resource Quotas](14-Resource-Quotas.md)
-- [Serverless & Edge](../27-Serverless-Edge/)
+- [CI/CD](../ci-cd)
+- [Docker](../docker/)
+- [Observability](../observability/)
+- [PodPresets](podpresets.md)
+- [Resource Quotas](resource-quotas.md)
+- [Serverless & Edge](../serverless-edge/)
 
 ## References & Learn More
 

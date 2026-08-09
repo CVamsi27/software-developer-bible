@@ -264,10 +264,10 @@ import { User } from '@/domain/user';
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/) (module-level organization)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/) (ES modules, CommonJS, dynamic import)
-- [NestJS](../06-NestJS/) (modules as DI containers)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (bounded contexts as modules)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/) (module-level organization)
+- [JavaScript](../../frontend/javascript/) (ES modules, CommonJS, dynamic import)
+- [NestJS](../nestjs/) (modules as DI containers)
+- [System Design](../../architecture/system-design/) (bounded contexts as modules)
 
 ## References & Learn More
 

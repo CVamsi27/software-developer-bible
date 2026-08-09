@@ -14,7 +14,7 @@
 - **Depth over breadth:** pick 2-3 critical components, go deep. Don't try to cover 8 services shallowly.
 - **Always discuss trade-offs:** CAP, eventual consistency, idempotency, exactly-once, cost.
 
-The bible's [3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
+The bible's [Architecture Stack/11 System Design](../../architecture/system-design/) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
 
 ---
 
@@ -85,7 +85,7 @@ This is asked at virtually every EU fintech. The 4-phase answer:
 - **PCI compliance** — never store card numbers, tokenize via PSP
 - **Fraud detection** — rule engine + ML, sync in request path
 
-See: [../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md](../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md)
+See: [../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md](../../architecture/system-design/payment-gateway.md)
 
 ### 2. Workflow Engine (n8n, sennder, Hostaway, GoGlobal)
 
@@ -130,7 +130,7 @@ The "two users grab the last slot" problem.
 - **Saga** — hold → charge → confirm, with compensating actions
 - **Cache** — slot availability in Redis with short TTL
 
-See: [../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md)
+See: [../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../architecture/system-design/ticket-booking.md)
 
 ### 5. Event-Driven Microservice (sennder, THRYVE, any data platform)
 
@@ -145,7 +145,7 @@ See: [../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../3-
 - **DLQ** — poison message handling
 - **Replay** — keep topics for 7 days, support re-processing
 
-See: [../../2-Backend-Stack/12-Microservices/](../../2-Backend-Stack/12-Microservices/) for the full microservices reference.
+See: [../../2-Backend-Stack/12-Microservices/](../../backend/microservices/) for the full microservices reference.
 
 ### 6. Notification Service (every company has one)
 
@@ -161,7 +161,7 @@ The "push, email, SMS, in-app" problem.
 - **Rate limiting** — per-channel, per-user
 - **Retry** — exponential backoff, max 5 attempts, then DLQ
 
-See: [../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md](../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md)
+See: [../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md](../../architecture/system-design/notification-service.md)
 
 ---
 
@@ -190,9 +190,9 @@ Pick 5 of the cases above. Set a 45-min timer. Record yourself (Loom or Zoom). T
 
 After 5 rounds of this, you'll be sharper than 90% of candidates.
 
-For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/).
+For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/).
 
-For "How to approach any system design problem" framework, see [../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md](../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md).
+For "How to approach any system design problem" framework, see [../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md](../../architecture/system-design/how-to-approach.md).
 
 ---
 

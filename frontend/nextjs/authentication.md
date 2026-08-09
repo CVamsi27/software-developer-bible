@@ -820,13 +820,13 @@ Common Patterns:
 ---
 
 ## See Also
-- [Caching in Next.js](09-Caching.md)
-- [Client Components](04-Client-Components.md)
-- [Middleware](05-Middleware.md)
-- [Route Handlers](07-Route-Handlers.md)
-- [Server Actions](06-Server-Actions.md)
-- [Server Components](03-Server-Components.md)
-- [Static Exports](15-Static-Exports.md)
+- [Caching in Next.js](caching.md)
+- [Client Components](client-components.md)
+- [Middleware](middleware.md)
+- [Route Handlers](route-handlers.md)
+- [Server Actions](server-actions.md)
+- [Server Components](server-components.md)
+- [Static Exports](static-exports.md)
 
 ## References & Learn More
 

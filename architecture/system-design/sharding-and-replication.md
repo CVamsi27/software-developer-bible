@@ -334,10 +334,10 @@ That's the senior signal. Not "we use Postgres" — "we use sharded + replicated
 
 ## Related concepts
 
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — the trade-off framework
-- [00-Consistency-Models.md](00-Consistency-Models.md) — strong vs eventual vs causal
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — how to elect a leader
-- [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — when you need to update multiple shards atomically
+- [Cap Theorem](cap-theorem.md) — the trade-off framework
+- [Consistency Models](consistency-models.md) — strong vs eventual vs causal
+- [Consensus And Leader Election](consensus-and-leader-election.md) — how to elect a leader
+- [Distributed Transactions](distributed-transactions.md) — when you need to update multiple shards atomically
 
 ---
 
@@ -349,4 +349,4 @@ That's the senior signal. Not "we use Postgres" — "we use sharded + replicated
 - **Most systems use both** — sharded AND replicated.
 - **In interviews: name the sharding strategy, shard key, replication strategy, RF, consistency model, and rebalancing plan.**
 
-For case studies, see [01-URL-Shortener.md](01-URL-Shortener.md) (range sharding), [02-WhatsApp.md](02-WhatsApp.md) (hash sharding by user_id), [18-Instagram.md](18-Instagram.md) (sharded by user_id), [22-Distributed-Counter.md](22-Distributed-Counter.md) (hot shard mitigation).
+For case studies, see [Url Shortener](url-shortener.md) (range sharding), [Whatsapp](whatsapp.md) (hash sharding by user_id), [Instagram](instagram.md) (sharded by user_id), [Distributed Counter](distributed-counter.md) (hot shard mitigation).

@@ -495,10 +495,10 @@ KEY FACTS:
 ---
 
 ## See Also
-- [Closures](04-Closures.md)
-- [Execution Context](01-Execution-Context.md)
-- [Hoisting](03-Hoisting.md)
-- [Scope](05-Scope.md)
+- [Closures](closures.md)
+- [Execution Context](execution-context.md)
+- [Hoisting](hoisting.md)
+- [Scope](scope.md)
 
 ## References & Learn More
 

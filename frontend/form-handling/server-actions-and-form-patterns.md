@@ -395,12 +395,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Formik](03-Formik.md)
-- [Next.js Server Actions](../04-NextJS/)
-- [React Hook Form](01-React-Hook-Form.md)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [TanStack Form](05-TanStack-Form.md)
-- [Zod](02-Zod.md)
+- [Formik](formik.md)
+- [Next.js Server Actions](../../frontend/)
+- [React Hook Form](react-hook-form.md)
+- [REST APIs](../../backend/rest-api/)
+- [TanStack Form](tanstack-form.md)
+- [Zod](zod.md)
 
 ## References & Learn More
 

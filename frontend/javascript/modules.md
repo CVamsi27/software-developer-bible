@@ -623,9 +623,9 @@ TOOLS:
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [Node.js](../../2-Backend-Stack/05-NodeJS/)
-- [TypeScript](../02-TypeScript/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [Node.js](../../backend/nodejs/)
+- [TypeScript](../typescript/)
 
 ## References & Learn More
 

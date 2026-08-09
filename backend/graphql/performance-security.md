@@ -948,9 +948,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../06-NestJS/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [REST APIs](../07-REST-API/)
+- [NestJS](../nestjs/)
+- [React](../../frontend/react/)
+- [REST APIs](../rest-api/)
 
 ## References & Learn More
 

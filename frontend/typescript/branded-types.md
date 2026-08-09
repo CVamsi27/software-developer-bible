@@ -706,14 +706,14 @@ Don't Use:
 ---
 
 ## See Also
-- [Advanced Generics](10-Advanced-Generics.md)
-- [Conditional Types](04-Conditional-Types.md)
-- [Declaration Files](14-Declaration-Files.md)
-- [Infer](05-Infer.md)
-- [JavaScript](../01-JavaScript/)
-- [Mapped Types](07-Mapped-Types.md)
-- [Template Literal Types](12-Template-Literal-Types.md)
-- [Type Narrowing](08-Type-Narrowing.md)
+- [Advanced Generics](advanced-generics.md)
+- [Conditional Types](conditional-types.md)
+- [Declaration Files](declaration-files.md)
+- [Infer](infer.md)
+- [JavaScript](../javascript/)
+- [Mapped Types](mapped-types.md)
+- [Template Literal Types](template-literal-types.md)
+- [Type Narrowing](type-narrowing.md)
 
 ## References & Learn More
 

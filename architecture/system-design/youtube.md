@@ -338,11 +338,11 @@ Alerts: transcode lag > 5 min, CDN origin offload < 80%, rebuffer ratio > 1%, up
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [Netflix](04-Netflix.md) (similar CDN + streaming focus)
-- [System Design Interview Questions](16-Interview-Questions.md)
-- [URL Shortener](01-URL-Shortener.md)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [Netflix](netflix.md) (similar CDN + streaming focus)
+- [System Design Interview Questions](interview-questions.md)
+- [URL Shortener](url-shortener.md)
 
 ## References & Learn More
 

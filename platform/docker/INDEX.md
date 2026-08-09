@@ -8,18 +8,18 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Images & Containers](01-Images-Containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle |
-| 02 | [Volumes & Networks](02-Volumes-Networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks |
-| 03 | [Compose](03-Compose.md) | Docker Compose, multi-container apps, service configuration |
-| 04 | [Multi-Stage Builds](04-Multi-Stage-Builds.md) | Build stages, dependency caching, image size optimization |
-| 05 | [Best Practices & Security](05-Dockerfile-Best-Practices.md) | Layer caching, non-root, distroless, scanning, labels |
-| 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
+| 01 | [Images & Containers](images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle |
+| 02 | [Volumes & Networks](volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks |
+| 03 | [Compose](compose.md) | Docker Compose, multi-container apps, service configuration |
+| 04 | [Multi-Stage Builds](multi-stage-builds.md) | Build stages, dependency caching, image size optimization |
+| 05 | [Best Practices & Security](dockerfile-best-practices.md) | Layer caching, non-root, distroless, scanning, labels |
+| 06 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
 
 ---
 
-**Cross-references:** [Kubernetes](../14-Kubernetes/) | [CI/CD](../15-CI-CD) | [Microservices](../../2-Backend-Stack/12-Microservices/)
+**Cross-references:** [Kubernetes](../kubernetes/) | [CI/CD](../ci-cd) | [Microservices](../../backend/microservices/)
 ---
 
 ## Navigation
 
-[← Previous: Microservices](../../2-Backend-Stack/12-Microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Kubernetes →](../14-Kubernetes/INDEX.md)
+[← Previous: Microservices](../../backend/microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Kubernetes →](../kubernetes/INDEX.md)

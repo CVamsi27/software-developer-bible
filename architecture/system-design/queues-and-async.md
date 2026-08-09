@@ -300,7 +300,7 @@ If any step fails → compensating actions in reverse:
 Inventory Service → consumes "payment_failed", releases stock
 ```
 
-See [12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md).
+See [Microservices/03 Saga Pattern](../../backend/microservices/saga-pattern.md).
 
 ### Event Sourcing
 
@@ -314,7 +314,7 @@ Withdraw $30 → balance=$70
 
 To get current state, replay all events. Auditable, time-travel debug.
 
-See [12-Microservices/07-Event-Sourcing.md](../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md).
+See [Microservices/07 Event Sourcing](../../backend/microservices/event-sourcing.md).
 
 ### CQRS (Command Query Responsibility Segregation)
 
@@ -327,7 +327,7 @@ Read model: optimized for reads (Elasticsearch, Redis, denormalized)
 Write → publish event → read model subscribes and updates
 ```
 
-See [12-Microservices/13-CQRS.md](../../2-Backend-Stack/12-Microservices/13-CQRS.md).
+See [Microservices/13 Cqrs](../../backend/microservices/cqrs.md).
 
 ---
 
@@ -378,12 +378,12 @@ See [12-Microservices/13-CQRS.md](../../2-Backend-Stack/12-Microservices/13-CQRS
 
 ## Related concepts
 
-- [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — 2PC, 3PC, saga
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — how to elect a leader
-- [00-Backpressure-and-Flow-Control.md](00-Backpressure-and-Flow-Control.md) — handling flow control
-- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md)
-- [../../2-Backend-Stack/12-Microservices/05-Kafka.md](../../2-Backend-Stack/12-Microservices/05-Kafka.md)
-- [../../2-Backend-Stack/12-Microservices/06-RabbitMQ.md](../../2-Backend-Stack/12-Microservices/06-RabbitMQ.md)
+- [Distributed Transactions](distributed-transactions.md) — 2PC, 3PC, saga
+- [Consensus And Leader Election](consensus-and-leader-election.md) — how to elect a leader
+- [Backpressure And Flow Control](backpressure-and-flow-control.md) — handling flow control
+- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../backend/microservices/saga-pattern.md)
+- [../../2-Backend-Stack/12-Microservices/05-Kafka.md](../../backend/microservices/kafka.md)
+- [../../2-Backend-Stack/12-Microservices/06-RabbitMQ.md](../../backend/microservices/rabbitmq.md)
 
 ---
 
@@ -397,4 +397,4 @@ See [12-Microservices/13-CQRS.md](../../2-Backend-Stack/12-Microservices/13-CQRS
 - **Per-aggregate ordering** (partition by key), not global.
 - **In interviews: name the queue type, delivery guarantee, idempotency strategy, retry strategy.**
 
-For case studies, see [02-WhatsApp.md](02-WhatsApp.md) (message queue for delivery), [06-Payment-Gateway.md](06-Payment-Gateway.md) (idempotency for payments), [07-Notification-Service.md](07-Notification-Service.md) (multi-channel delivery), [08-Ticket-Booking.md](08-Ticket-Booking.md) (booking + payment saga).
+For case studies, see [Whatsapp](whatsapp.md) (message queue for delivery), [Payment Gateway](payment-gateway.md) (idempotency for payments), [Notification Service](notification-service.md) (multi-channel delivery), [Ticket Booking](ticket-booking.md) (booking + payment saga).

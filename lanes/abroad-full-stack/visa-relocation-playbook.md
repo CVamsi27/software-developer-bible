@@ -14,7 +14,7 @@
 - **Family inclusion is standard in EU Blue Card / work permit schemes.** Spouse gets work permit, kids get residency + school.
 - **Pick the country that maximizes BOTH your job AND your spouse's job.** This is the family-driven framework.
 
-The bible's [09-Security/](../../2-Backend-Stack/09-Security/) covers general compliance, this file is the **immigration-specific** playbook.
+The bible's [Security](../../backend/security/) covers general compliance, this file is the **immigration-specific** playbook.
 
 ---
 
@@ -266,5 +266,5 @@ The standard EU relocation package includes:
 - **Pick the country that maximizes BOTH your job AND your spouse's job.**
 - **Always negotiate the relocation package.** Family + pets + car shipping + language classes.
 
-For the city comp tables, see [05-Comp-EU-Benchmarking.md](05-Comp-EU-Benchmarking.md).
+For the city comp tables, see [Comp Eu Benchmarking](comp-eu-benchmarking.md).
 For the country tier decision matrix, see [story-bank.md](story-bank.md) (in the Family/relocation question section).

@@ -1148,10 +1148,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [System Design - Google Drive](./05-Google-Drive.md)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [REST APIs](../../backend/rest-api/)
+- [System Design - Google Drive](./google-drive.md)
 
 ## References & Learn More
 

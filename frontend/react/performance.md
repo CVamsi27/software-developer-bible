@@ -237,14 +237,14 @@ Performance Optimization:
 ---
 
 ## See Also
-- [Animation](../30-Animation/)
-- [Compound Components](18-Compound-Components.md)
-- [Custom Hooks](16-Custom-Hooks.md)
-- [Form Handling](../29-Form-Handling/)
-- [JavaScript](../01-JavaScript/)
-- [Next.js](../04-NextJS/)
-- [Portals](17-Portals.md)
-- [Testing](../../5-Quality-Stack/16-Testing/)
+- [Animation](../animation/)
+- [Compound Components](compound-components.md)
+- [Custom Hooks](custom-hooks.md)
+- [Form Handling](../form-handling/)
+- [JavaScript](../javascript/)
+- [Next.js](../nextjs/)
+- [Portals](portals.md)
+- [Testing](../../quality/testing/)
 
 ## References & Learn More
 

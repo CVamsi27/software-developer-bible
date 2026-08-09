@@ -508,11 +508,11 @@ Commands:
 
 ## See Also
 
-- [Authentication](13-Authentication.md)
-- [Caching in Next.js](09-Caching.md)
-- [Server Components](03-Server-Components.md)
-- [SSR / CSR / SSG / ISR](01-SSR-CSR-SSG-ISR.md)
-- [Streaming](10-Streaming.md)
+- [Authentication](authentication.md)
+- [Caching in Next.js](caching.md)
+- [Server Components](server-components.md)
+- [SSR / CSR / SSG / ISR](ssr-csr-ssg-isr.md)
+- [Streaming](streaming.md)
 
 ## References & Learn More
 

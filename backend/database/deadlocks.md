@@ -502,9 +502,9 @@ SET deadlock_timeout = '500ms';
 ---
 
 ## See Also
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [REST APIs](../07-REST-API/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [REST APIs](../rest-api/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

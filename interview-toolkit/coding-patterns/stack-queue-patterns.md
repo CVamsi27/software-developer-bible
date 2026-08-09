@@ -9,7 +9,7 @@
 
 **Stacks** (LIFO) and **queues** (FIFO) are the simplest non-trivial data structures, but they power a surprising number of interview problems. Beyond basic push/pop, the senior-level interview pattern is to use a stack or queue to **maintain state** (next greater, balanced brackets, sliding-window max) or to **simulate a process** (BFS traversal, task scheduling, rate limiting). Common variants:
 
-- **Monotonic stack/deque**: maintain elements in sorted order — covered in [Monotonic Stack](13-Monotonic-Stack.md)
+- **Monotonic stack/deque**: maintain elements in sorted order — covered in [Monotonic Stack](monotonic-stack.md)
 - **Two-stack queue**: implement a queue using two stacks (O(1) amortized)
 - **Sliding window with deque**: maintain max/min over a window in O(n)
 - **BFS with queue**: shortest path in unweighted graphs
@@ -28,14 +28,14 @@ Stacks and queues appear in **~15-20% of interview questions** (often as the und
 
 - **Balanced brackets** (matching `()`, `[]`, `{}`): push opening, pop on closing
 - **Expression evaluation** (infix → postfix, calculator): push operands and operators
-- **Next greater/smaller element**: see [Monotonic Stack](13-Monotonic-Stack.md)
+- **Next greater/smaller element**: see [Monotonic Stack](monotonic-stack.md)
 - **Iterative DFS**: simulate recursion with explicit stack (avoid stack overflow)
 - **Undo/redo**: stack of operations
 - **Function call stack**: implicit; sometimes you need to simulate it
 
 ### Queue (and Deque)
 
-- **BFS** (shortest path, level-order): see [DFS & BFS](04-DFS-BFS.md)
+- **BFS** (shortest path, level-order): see [DFS & BFS](dfs-bfs.md)
 - **Sliding window max/min**: monotonic deque
 - **Producer-consumer**: queue between threads/processes
 - **Rate limiting**: token bucket, leaky bucket
@@ -497,12 +497,12 @@ while (deque.length > 0 && nums[deque[deque.length - 1]] < nums[i]) {
 ---
 
 ## See Also
-- [BFS & DFS](04-DFS-BFS.md)
+- [BFS & DFS](dfs-bfs.md)
 - [Coding Patterns](./)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Heap](07-Heap.md)
-- [Monotonic Stack](13-Monotonic-Stack.md)
-- [Sliding Window](01-Sliding-Window.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Heap](heap.md)
+- [Monotonic Stack](monotonic-stack.md)
+- [Sliding Window](sliding-window.md)
 
 ## References & Learn More
 

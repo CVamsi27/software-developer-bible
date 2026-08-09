@@ -244,10 +244,10 @@ async update(
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (per-service cache invalidation)
-- [NestJS](../06-NestJS/) (interceptors for caching responses)
-- [Security](../09-Security/) (don't cache sensitive data)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (caching in API design)
+- [Microservices](../microservices/) (per-service cache invalidation)
+- [NestJS](../nestjs/) (interceptors for caching responses)
+- [Security](../security/) (don't cache sensitive data)
+- [System Design](../../architecture/system-design/) (caching in API design)
 
 ## References & Learn More
 

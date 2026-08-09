@@ -251,11 +251,11 @@ ES2022+ added the modern APIs senior engineers reach for daily: `structuredClone
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [Map, Set, WeakMap, WeakSet](14-Map-Set-WeakMap-WeakSet.md)
-- [Promises](10-Promises.md)
-- [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md)
-- [TypeScript](../02-TypeScript/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [Map, Set, WeakMap, WeakSet](map-set-weakmap-weakset.md)
+- [Promises](promises.md)
+- [Shallow vs Deep Copy](shallow-vs-deep-copy.md)
+- [TypeScript](../typescript/)
 
 ## References & Learn More
 

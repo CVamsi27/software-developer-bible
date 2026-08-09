@@ -349,12 +349,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Build Tools](../23-Build-Tools/)
-- [CI/CD](../15-CI-CD)
-- [Git Advanced](../24-Git-Advanced/)
-- [Monorepo Overview](01-Monorepo-Overview.md)
-- [Monorepo Tools Deep-Dive](05-Monorepo-Tools.md)
-- [Nx](03-Nx.md)
+- [Build Tools](../build-tools/)
+- [CI/CD](../ci-cd)
+- [Git Advanced](../git-advanced/)
+- [Monorepo Overview](monorepo-overview.md)
+- [Monorepo Tools Deep-Dive](monorepo-tools.md)
+- [Nx](nx.md)
 
 ## References & Learn More
 

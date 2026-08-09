@@ -586,9 +586,9 @@ function Sealed(constructor: Function) {
 ---
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../03-React/)
+- [JavaScript](../javascript/)
+- [NestJS](../../backend/nestjs/)
+- [React](../react/)
 
 ## References & Learn More
 

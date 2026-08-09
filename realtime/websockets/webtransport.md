@@ -302,11 +302,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [Real-Time Architecture](04-Real-Time-Architecture.md)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
-- [WebSockets Overview](01-WebSockets-Overview.md)
+- [NestJS](../../backend/nestjs/)
+- [Observability](../../platform/observability/)
+- [Real-Time Architecture](real-time-architecture.md)
+- [System Design](../../architecture/system-design/)
+- [WebSockets Overview](websockets-overview.md)
 
 ## References & Learn More
 

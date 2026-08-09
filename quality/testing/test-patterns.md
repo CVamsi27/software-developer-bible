@@ -1323,10 +1323,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../../4-Platform-Stack/15-CI-CD)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../../1-Frontend-Stack/03-React/)
+- [CI/CD](../../platform/ci-cd)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [NestJS](../../backend/nestjs/)
+- [React](../../frontend/react/)
 
 ## References & Learn More
 

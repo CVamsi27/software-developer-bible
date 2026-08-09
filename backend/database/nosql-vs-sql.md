@@ -218,10 +218,10 @@ LIMIT 10;
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (database per service)
-- [REST APIs](../07-REST-API/) (REST over various stores)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (polyglot persistence in designs)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) (query performance)
+- [Microservices](../microservices/) (database per service)
+- [REST APIs](../rest-api/) (REST over various stores)
+- [System Design](../../architecture/system-design/) (polyglot persistence in designs)
+- [Performance Monitoring](../../quality/performance-monitoring/) (query performance)
 
 ## References & Learn More
 

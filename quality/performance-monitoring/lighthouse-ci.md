@@ -298,10 +298,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../25-Accessibility/)
-- [Bundle Analysis](06-Bundle-Analysis.md)
-- [Core Web Vitals](01-Core-Web-Vitals.md)
-- [Profiling Tools](03-Profiling-Tools.md)
+- [Accessibility](../accessibility/)
+- [Bundle Analysis](bundle-analysis.md)
+- [Core Web Vitals](core-web-vitals.md)
+- [Profiling Tools](profiling-tools.md)
 
 ## References & Learn More
 

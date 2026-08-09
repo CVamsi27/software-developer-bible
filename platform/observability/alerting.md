@@ -402,13 +402,13 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Error Tracking](04-Error-Tracking.md)
-- [Health Checks](05-Health-Checks.md)
-- [Kubernetes](../14-Kubernetes/)
-- [Logging](01-Logging.md)
-- [Monitoring](02-Monitoring.md)
-- [SLI / SLO / SLA](07-SLI-SLO-SLA.md)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Error Tracking](error-tracking.md)
+- [Health Checks](health-checks.md)
+- [Kubernetes](../kubernetes/)
+- [Logging](logging.md)
+- [Monitoring](monitoring.md)
+- [SLI / SLO / SLA](sli-slo-sla.md)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

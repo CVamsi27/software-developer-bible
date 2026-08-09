@@ -97,8 +97,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [API Gateway](02-API-Gateway.md)
-- [CQRS](13-CQRS.md)
+- [API Gateway](api-gateway.md)
+- [CQRS](cqrs.md)
 
 ## References & Learn More
 

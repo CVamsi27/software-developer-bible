@@ -469,12 +469,12 @@ Client-side latency p95 = 500ms doesn't mean much if the **DB CPU is at 95%** or
 ---
 
 ## See Also
-- [CI/CD](../../4-Platform-Stack/15-CI-CD)
-- [Core Web Vitals](../26-Performance-Monitoring/01-Core-Web-Vitals.md)
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [CI/CD](../../platform/ci-cd)
+- [Core Web Vitals](../performance-monitoring/core-web-vitals.md)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [Observability](../../platform/observability/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

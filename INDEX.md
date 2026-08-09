@@ -2,10 +2,10 @@
 
 > **Pick your lane first.** The bible is organized into **3 interview lanes** that draw from **7 shared study stacks**. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
 
-[![Lanes](https://img.shields.io/badge/lanes-3-blue)](INDEX.md)
-[![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-400%2B-orange)](INDEX.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](INDEX.md)
+[![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/)
+[![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Files](https://img.shields.io/badge/files-400%2B-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
 
@@ -13,11 +13,11 @@
 
 | Lane | Folder | For | Style |
 |------|--------|-----|-------|
-| **Cross-Lane** (everyone starts here) | [0-Interview-Strategy/](0-Interview-Strategy/) | Communication, resume, STAR method, HR questions | Universal — applies to all lanes |
-| **Indian SDE / FAANG** | [8-Interview-Lanes/1-Indian-SDE-FAANG/](8-Interview-Lanes/1-Indian-SDE-FAANG/) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
-| **Abroad Full-Stack** | [8-Interview-Lanes/2-Abroad-Full-Stack/](8-Interview-Lanes/2-Abroad-Full-Stack/) | EU / non-Indian mid-stage startups (n8n, SumUp, Scalable, sennder) | Take-home + system design, 4-week plan, EUR 70-110K + visa |
+| **Cross-Lane** (everyone starts here) | [Interview Strategy](strategy/) | Communication, resume, STAR method, HR questions | Universal — applies to all lanes |
+| **Indian SDE / FAANG** | [Indian SDE / FAANG](lanes/indian-sde-faang/) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
+| **Abroad Full-Stack** | [Abroad Full-Stack](lanes/abroad-full-stack/) | EU / non-Indian mid-stage startups (n8n, SumUp, Scalable, sennder) | Take-home + system design, 4-week plan, EUR 70-110K + visa |
 
-**Not sure?** Read the [lane decision matrix in 2-Abroad-Full-Stack](8-Interview-Lanes/2-Abroad-Full-Stack/INDEX.md). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes — start with `1-Indian-SDE-FAANG/` for the FAANG-DSA signal, then `2-Abroad-Full-Stack/` for the EU-specific family/visa overlay.
+**Not sure?** Read the [lane decision matrix in abroad-full-stack](lanes/abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes — start with `indian-sde-faang/` for the FAANG-DSA signal, then `abroad-full-stack/` for the EU-specific family/visa overlay.
 
 ---
 
@@ -25,92 +25,90 @@
 
 The technical material is grouped by **what you're studying**, not by which interview you're prepping for. Both lanes pull from the same stacks.
 
-### Frontend Stack — [1-Frontend-Stack/](1-Frontend-Stack/)
+### Frontend (90 files in 6 sub-stacks)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 01 | [JavaScript](1-Frontend-Stack/01-JavaScript/) | 27 | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
-| 02 | [TypeScript](1-Frontend-Stack/02-TypeScript/) | 15 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
-| 03 | [React](1-Frontend-Stack/03-React/) | 19 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
-| 04 | [Next.js](1-Frontend-Stack/04-NextJS/) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
-| 29 | [Form Handling](1-Frontend-Stack/29-Form-Handling/) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
-| 30 | [Animation](1-Frontend-Stack/30-Animation/) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [JavaScript](frontend/javascript/) | 27 | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
+| [TypeScript](frontend/typescript/) | 15 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
+| [React](frontend/react/) | 19 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
+| [Next.js](frontend/nextjs/) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
+| [Form Handling](frontend/form-handling/) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
+| [Animation](frontend/animation/) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
 
-### Backend Stack — [2-Backend-Stack/](2-Backend-Stack/)
+### Backend (107 files in 8 sub-stacks)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 05 | [Node.js](2-Backend-Stack/05-NodeJS/) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
-| 06 | [NestJS](2-Backend-Stack/06-NestJS/) | 14 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 07 | [REST APIs](2-Backend-Stack/07-REST-API/) | 13 | HTTP methods, status codes, versioning, pagination, auth, OpenAPI, caching |
-| 08 | [Database](2-Backend-Stack/08-Database/) | 14 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations |
-| 09 | [Security](2-Backend-Stack/09-Security/) | 13 | JWT, OAuth, XSS, CSRF, RBAC, threat modeling, secrets management |
-| 10 | [Design Patterns](2-Backend-Stack/10-Design-Patterns/) | 15 | Singleton, Factory, Strategy, Repository, CQRS, Module, State |
-| 12 | [Microservices](2-Backend-Stack/12-Microservices/) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
-| 17 | [GraphQL](2-Backend-Stack/17-GraphQL/) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [Node.js](backend/nodejs/) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
+| [NestJS](backend/nestjs/) | 14 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| [REST APIs](backend/rest-api/) | 13 | HTTP methods, status codes, versioning, pagination, auth, OpenAPI, caching |
+| [Database](backend/database/) | 14 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations |
+| [Security](backend/security/) | 13 | JWT, OAuth, XSS, CSRF, RBAC, threat modeling, secrets management |
+| [Design Patterns](backend/design-patterns/) | 15 | Singleton, Factory, Strategy, Repository, CQRS, Module, State |
+| [Microservices](backend/microservices/) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
+| [GraphQL](backend/graphql/) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 
-### Architecture Stack — [3-Architecture-Stack/](3-Architecture-Stack/)
+### Architecture (36 files)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 11 | [System Design](3-Architecture-Stack/11-System-Design/) | 22 | URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, 17 case studies |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [System Design](architecture/system-design/) | 36 | URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking + 14 theory files (CAP, sharding, caching, queues, consensus, ...) |
 
-### Platform Stack — [4-Platform-Stack/](4-Platform-Stack/)
+### Platform (63 files in 8 sub-stacks)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 13 | [Docker](4-Platform-Stack/13-Docker/) | 6 | Images, containers, volumes, networks, compose, multi-stage builds |
-| 14 | [Kubernetes](4-Platform-Stack/14-Kubernetes/) | 14 | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC |
-| 15 | [CI/CD](4-Platform-Stack/15-CI-CD/) | 7 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
-| 22 | [Observability](4-Platform-Stack/22-Observability/) | 8 | Logging, monitoring, tracing, error tracking, SLI/SLO/SLA, alerting |
-| 23 | [Build Tools](4-Platform-Stack/23-Build-Tools/) | 9 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
-| 24 | [Git Advanced](4-Platform-Stack/24-Git-Advanced/) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
-| 27 | [Serverless & Edge](4-Platform-Stack/27-Serverless-Edge/) | 7 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST |
-| 28 | [Monorepo](4-Platform-Stack/28-Monorepo/) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [Docker](platform/docker/) | 6 | Images, containers, volumes, networks, compose, multi-stage builds |
+| [Kubernetes](platform/kubernetes/) | 14 | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC |
+| [CI/CD](platform/ci-cd/) | 7 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
+| [Observability](platform/observability/) | 8 | Logging, monitoring, tracing, error tracking, SLI/SLO/SLA, alerting |
+| [Build Tools](platform/build-tools/) | 9 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
+| [Git Advanced](platform/git-advanced/) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
+| [Serverless & Edge](platform/serverless-edge/) | 7 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST |
+| [Monorepo](platform/monorepo/) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
 
-### Quality Stack — [5-Quality-Stack/](5-Quality-Stack/)
+### Quality (26 files in 3 sub-stacks)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 16 | [Testing](5-Quality-Stack/16-Testing/) | 11 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing |
-| 25 | [Accessibility](5-Quality-Stack/25-Accessibility/) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
-| 26 | [Performance Monitoring](5-Quality-Stack/26-Performance-Monitoring/) | 8 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [Testing](quality/testing/) | 11 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing |
+| [Accessibility](quality/accessibility/) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
+| [Performance Monitoring](quality/performance-monitoring/) | 8 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
 
-### Real-Time Stack — [6-Real-Time-Stack/](6-Real-Time-Stack/)
+### Real-Time (8 files)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 21 | [WebSockets](6-Real-Time-Stack/21-WebSockets/) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [WebSockets](realtime/websockets/) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
-### Interview Toolkit — [7-Interview-Toolkit/](7-Interview-Toolkit/)
+### Interview Toolkit (27 files in 3 sub-stacks)
 
-| # | Section | Files | Topics |
-|---|---------|------:|--------|
-| 18 | [Behavioral](7-Interview-Toolkit/18-Behavioral/) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
-| 19 | [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
-| 20 | [Cheat Sheets](7-Interview-Toolkit/20-CheatSheets/) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
+| Sub-stack | Files | Topics |
+|-----------|------:|--------|
+| [Behavioral](interview-toolkit/behavioral/) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
+| [Coding Patterns](interview-toolkit/coding-patterns/) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
+| [Cheat Sheets](interview-toolkit/cheatsheets/) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
 
 ---
 
 ## 🛣️ Recommended Study Path
 
-After you pick your lane (above), the two lanes share Phases 1-7 (the 7 study stacks). They diverge at Phase 8 (Interview Prep).
+After you pick your lane (above), the two lanes share all 7 study stacks. They diverge in the final interview-prep phase.
 
 ```text
-Phase 1 — Frontend Stack:      1-Frontend-Stack/01-JavaScript → 02-TypeScript → 03-React → 04-NextJS → 29-Form-Handling → 30-Animation
-Phase 2 — Backend Stack:       2-Backend-Stack/05-NodeJS → 06-NestJS → 07-REST-API → 08-Database → 17-GraphQL → 09-Security → 10-Design-Patterns → 12-Microservices
-Phase 3 — Architecture Stack:  3-Architecture-Stack/11-System-Design
-Phase 4 — Platform Stack:      4-Platform-Stack/13-Docker → 14-Kubernetes → 15-CI-CD → 22-Observability → 23-Build-Tools → 24-Git-Advanced → 27-Serverless-Edge → 28-Monorepo
-Phase 5 — Quality Stack:       5-Quality-Stack/16-Testing → 25-Accessibility → 26-Performance-Monitoring
-Phase 6 — Real-Time Stack:     6-Real-Time-Stack/21-WebSockets
-Phase 7 — Cross-Lane:          0-Interview-Strategy + 7-Interview-Toolkit/18-Behavioral
-Phase 8 — Lane-Specific Prep:
-  → Indian SDE / FAANG:        7-Interview-Toolkit/19-Coding-Patterns + 8-Interview-Lanes/1-Indian-SDE-FAANG (8-week plan)
-  → Abroad Full-Stack:         7-Interview-Toolkit/20-CheatSheets + 8-Interview-Lanes/2-Abroad-Full-Stack (4-week plan)
+Frontend      → JavaScript → TypeScript → React → Next.js → Form Handling → Animation
+Backend       → Node.js → NestJS → REST API → Database → Security → Design Patterns → Microservices → GraphQL
+Architecture  → System Design (case studies + theory: CAP, sharding, caching, queues, ...)
+Platform      → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
+Quality       → Testing → Accessibility → Performance Monitoring
+Real-Time     → WebSockets
+Toolkit       → Behavioral → Coding Patterns → Cheat Sheets
+Lane overlay  → Indian SDE / FAANG (8-week plan) OR Abroad Full-Stack (4-week plan)
 ```
 
-**For Lane 81 (FAANG):** Phase 8 is heavy on `19-Coding-Patterns/` (18 files, all patterns). 8-12 week intensive, 4-6 hrs/day.
-**For Lane 82 (EU):** Phase 8 is light on coding patterns (30-40 mediums, 6 patterns), heavy on system design + take-home prep. 4-week realistic, 2-3 hrs/day.
+**For Indian SDE / FAANG:** Coding Patterns is the priority (18 files, all patterns). 8-12 week intensive, 4-6 hrs/day.
+**For Abroad Full-Stack:** Coding Patterns is light (30-40 mediums across 6 patterns only). Heavy on System Design + take-home prep. 4-week realistic, 2-3 hrs/day.
 
 ---
 
@@ -118,14 +116,14 @@ Phase 8 — Lane-Specific Prep:
 
 | Stack | Depends on | Used by |
 |-------|-----------|---------|
-| [10-Frontend](1-Frontend-Stack/) | — | 81, 82 |
-| [20-Backend](2-Backend-Stack/) | 10 | 81, 82 |
-| [30-Architecture](3-Architecture-Stack/) | 20 | 81, 82 |
-| [40-Platform](4-Platform-Stack/) | 20 | 81, 82 |
-| [50-Quality](5-Quality-Stack/) | 10, 20 | 81, 82 |
-| [60-Real-Time](6-Real-Time-Stack/) | 20 | 82 (occasionally) |
-| [7-Interview-Toolkit](7-Interview-Toolkit/) | All stacks | 81 (heavy), 82 (light) |
-| [8-Interview-Lanes](8-Interview-Lanes/) | All stacks | (terminal phase) |
+| [Frontend](frontend/) | — | Both lanes |
+| [Backend](backend/) | — | Both lanes |
+| [Architecture](architecture/) | — | Both lanes |
+| [Platform](platform/) | — | Both lanes |
+| [Quality](quality/) | — | Both lanes |
+| [Real-Time](realtime/) | — | Abroad Full-Stack (occasionally) |
+| [Interview Toolkit](interview-toolkit/) | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
+| [Interview Lanes](lanes/) | All stacks | Terminal phase |
 
 ---
 
@@ -133,20 +131,20 @@ Phase 8 — Lane-Specific Prep:
 
 **Lanes:**
 
-- [0-Interview-Strategy/INDEX.md](0-Interview-Strategy/INDEX.md) — Cross-lane strategy
-- [8-Interview-Lanes/1-Indian-SDE-FAANG/INDEX.md](8-Interview-Lanes/1-Indian-SDE-FAANG/INDEX.md) — Indian SDE / FAANG lane
-- [8-Interview-Lanes/2-Abroad-Full-Stack/INDEX.md](8-Interview-Lanes/2-Abroad-Full-Stack/INDEX.md) — Abroad full-stack lane
+- [Interview Strategy/index](strategy/INDEX.md) — Cross-lane strategy
+- [Indian SDE / FAANG/index](lanes/indian-sde-faang/INDEX.md) — Indian SDE / FAANG lane
+- [Abroad Full-Stack/index](lanes/abroad-full-stack/INDEX.md) — Abroad Full-Stack lane
 
 **Stacks:**
 
-- [1-Frontend-Stack/01-JavaScript/INDEX.md](1-Frontend-Stack/01-JavaScript/INDEX.md) · [02-TypeScript](1-Frontend-Stack/02-TypeScript/INDEX.md) · [03-React](1-Frontend-Stack/03-React/INDEX.md) · [04-NextJS](1-Frontend-Stack/04-NextJS/INDEX.md) · [29-Form-Handling](1-Frontend-Stack/29-Form-Handling/INDEX.md) · [30-Animation](1-Frontend-Stack/30-Animation/INDEX.md)
-- [2-Backend-Stack/05-NodeJS/INDEX.md](2-Backend-Stack/05-NodeJS/INDEX.md) · [06-NestJS](2-Backend-Stack/06-NestJS/INDEX.md) · [07-REST-API](2-Backend-Stack/07-REST-API/INDEX.md) · [08-Database](2-Backend-Stack/08-Database/INDEX.md) · [09-Security](2-Backend-Stack/09-Security/INDEX.md) · [10-Design-Patterns](2-Backend-Stack/10-Design-Patterns/INDEX.md) · [12-Microservices](2-Backend-Stack/12-Microservices/INDEX.md) · [17-GraphQL](2-Backend-Stack/17-GraphQL/INDEX.md)
-- [3-Architecture-Stack/11-System-Design/INDEX.md](3-Architecture-Stack/11-System-Design/INDEX.md)
-- [4-Platform-Stack/13-Docker/INDEX.md](4-Platform-Stack/13-Docker/INDEX.md) · [14-Kubernetes](4-Platform-Stack/14-Kubernetes/INDEX.md) · [15-CI-CD](4-Platform-Stack/15-CI-CD/INDEX.md) · [22-Observability](4-Platform-Stack/22-Observability/INDEX.md) · [23-Build-Tools](4-Platform-Stack/23-Build-Tools/INDEX.md) · [24-Git-Advanced](4-Platform-Stack/24-Git-Advanced/INDEX.md) · [27-Serverless-Edge](4-Platform-Stack/27-Serverless-Edge/INDEX.md) · [28-Monorepo](4-Platform-Stack/28-Monorepo/INDEX.md)
-- [5-Quality-Stack/16-Testing/INDEX.md](5-Quality-Stack/16-Testing/INDEX.md) · [25-Accessibility](5-Quality-Stack/25-Accessibility/INDEX.md) · [26-Performance-Monitoring](5-Quality-Stack/26-Performance-Monitoring/INDEX.md)
-- [6-Real-Time-Stack/21-WebSockets/INDEX.md](6-Real-Time-Stack/21-WebSockets/INDEX.md)
-- [7-Interview-Toolkit/18-Behavioral/INDEX.md](7-Interview-Toolkit/18-Behavioral/INDEX.md) · [19-Coding-Patterns](7-Interview-Toolkit/19-Coding-Patterns/INDEX.md) · [20-CheatSheets](7-Interview-Toolkit/20-CheatSheets/INDEX.md)
+- **Frontend** — [JavaScript](frontend/javascript/INDEX.md) · [TypeScript](frontend/typescript/INDEX.md) · [React](frontend/react/INDEX.md) · [Next.js](frontend/nextjs/INDEX.md) · [Form Handling](frontend/form-handling/INDEX.md) · [Animation](frontend/animation/INDEX.md)
+- **Backend** — [Node.js](backend/nodejs/INDEX.md) · [NestJS](backend/nestjs/INDEX.md) · [REST APIs](backend/rest-api/INDEX.md) · [Database](backend/database/INDEX.md) · [Security](backend/security/INDEX.md) · [Design Patterns](backend/design-patterns/INDEX.md) · [Microservices](backend/microservices/INDEX.md) · [GraphQL](backend/graphql/INDEX.md)
+- **Architecture** — [System Design](architecture/system-design/INDEX.md)
+- **Platform** — [Docker](platform/docker/INDEX.md) · [Kubernetes](platform/kubernetes/INDEX.md) · [CI/CD](platform/ci-cd/INDEX.md) · [Observability](platform/observability/INDEX.md) · [Build Tools](platform/build-tools/INDEX.md) · [Git Advanced](platform/git-advanced/INDEX.md) · [Serverless & Edge](platform/serverless-edge/INDEX.md) · [Monorepo](platform/monorepo/INDEX.md)
+- **Quality** — [Testing](quality/testing/INDEX.md) · [Accessibility](quality/accessibility/INDEX.md) · [Performance Monitoring](quality/performance-monitoring/INDEX.md)
+- **Real-Time** — [WebSockets](realtime/websockets/INDEX.md)
+- **Interview Toolkit** — [Behavioral](interview-toolkit/behavioral/INDEX.md) · [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md) · [Cheat Sheets](interview-toolkit/cheatsheets/INDEX.md)
 
 ---
 
-*Last updated: August 2026 — 3 lanes, 7 stacks, 400+ files, 33 INDEX.md files*
+*Last updated: August 2026 — 3 lanes, 7 stacks, 400+ files, 0 broken links*

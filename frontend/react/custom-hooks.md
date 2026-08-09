@@ -1117,16 +1117,16 @@ Performance:
 ---
 
 ## See Also
-- [Compound Components](18-Compound-Components.md)
-- [Form Handling (React Hook Form, Formik)](../29-Form-Handling/)
-- [JavaScript](../01-JavaScript/)
-- [Next.js](../04-NextJS/)
-- [Performance](13-Performance.md)
-- [Testing](../../5-Quality-Stack/16-Testing/)
-- [useEffect](07-UseEffect.md)
-- [useMemo / useCallback](08-UseMemo-UseCallback.md)
-- [useRef](09-UseRef.md)
-- [useState](06-UseState.md)
+- [Compound Components](compound-components.md)
+- [Form Handling (React Hook Form, Formik)](../../frontend/)
+- [JavaScript](../javascript/)
+- [Next.js](../nextjs/)
+- [Performance](performance.md)
+- [Testing](../../quality/testing/)
+- [useEffect](useeffect.md)
+- [useMemo / useCallback](usememo-usecallback.md)
+- [useRef](useref.md)
+- [useState](usestate.md)
 
 ## References & Learn More
 

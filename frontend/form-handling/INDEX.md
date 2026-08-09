@@ -8,19 +8,19 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [React Hook Form](01-React-Hook-Form.md) | Uncontrolled inputs, register, Zod resolver, useFieldArray, FormProvider |
-| 02 | [Zod](02-Zod.md) | Schemas, z.infer, transforms, refines, API boundary validation, env validation |
-| 03 | [Formik](03-Formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 |
-| 04 | [Interview Questions](04-Interview-Questions.md) | 30+ curated questions covering all form libraries and patterns |
-| 05 | [TanStack Form](05-TanStack-Form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema |
-| 06 | [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md) | useActionState, useFormStatus, useOptimistic, progressive enhancement |
+| 01 | [React Hook Form](react-hook-form.md) | Uncontrolled inputs, register, Zod resolver, useFieldArray, FormProvider |
+| 02 | [Zod](zod.md) | Schemas, z.infer, transforms, refines, API boundary validation, env validation |
+| 03 | [Formik](formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 |
+| 04 | [Interview Questions](interview-questions.md) | 30+ curated questions covering all form libraries and patterns |
+| 05 | [TanStack Form](tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema |
+| 06 | [Server Actions & Form Patterns](server-actions-and-form-patterns.md) | useActionState, useFormStatus, useOptimistic, progressive enhancement |
 
 ---
 
-**Cross-references:** [Accessibility](../../5-Quality-Stack/25-Accessibility/) | [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/) | [Next.js](../04-NextJS/) | [React](../03-React/) | [TypeScript](../02-TypeScript/)
+**Cross-references:** [Accessibility](../../quality/accessibility/) | [Design Patterns](../../backend/design-patterns/) | [Next.js](../nextjs/) | [React](../react/) | [TypeScript](../typescript/)
 
 ---
 
 ## Navigation
 
-[← Previous: Monorepo](../../4-Platform-Stack/28-Monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../30-Animation/INDEX.md)
+[← Previous: Monorepo](../../platform/monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../animation/INDEX.md)

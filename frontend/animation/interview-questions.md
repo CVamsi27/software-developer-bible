@@ -306,15 +306,15 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [Accessibility](../../5-Quality-Stack/25-Accessibility/)
-- [CSS Animations](02-CSS-Animations.md)
-- [Framer Motion](01-Framer-Motion.md)
-- [GSAP](05-GSAP.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../03-React/)
-- [React Spring](06-React-Spring.md)
-- [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
-- [Web Animations API](04-Web-Animations-API.md)
+- [Accessibility](../../quality/accessibility/)
+- [CSS Animations](css-animations.md)
+- [Framer Motion](framer-motion.md)
+- [GSAP](gsap.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../react/)
+- [React Spring](react-spring.md)
+- [View Transitions & Scroll-Driven Animations](view-transitions-and-scroll-driven-animations.md)
+- [Web Animations API](web-animations-api.md)
 
 ## References & Learn More
 

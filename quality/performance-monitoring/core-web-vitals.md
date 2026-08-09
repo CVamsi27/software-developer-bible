@@ -444,10 +444,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../25-Accessibility/)
-- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [React](../../1-Frontend-Stack/03-React/)
+- [Accessibility](../accessibility/)
+- [Build Tools](../../platform/build-tools/)
+- [Observability](../../platform/observability/)
+- [React](../../frontend/react/)
 
 ## References & Learn More
 

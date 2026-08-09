@@ -446,10 +446,10 @@ KEY DIFFERENCES:
 ---
 
 ## See Also
-- [Garbage Collection](20-Garbage-Collection.md)
-- [Memory Leaks](19-Memory-Leaks.md)
-- [Pass by Value](13-Pass-by-Value.md)
-- [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md)
+- [Garbage Collection](garbage-collection.md)
+- [Memory Leaks](memory-leaks.md)
+- [Pass by Value](pass-by-value.md)
+- [Shallow vs Deep Copy](shallow-vs-deep-copy.md)
 
 ## References & Learn More
 

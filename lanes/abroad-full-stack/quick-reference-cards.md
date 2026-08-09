@@ -64,7 +64,7 @@ See [story-bank.md](story-bank.md) for the full 8 stories with delivery scripts.
 └────────────────────────────────────────────┘
 ```
 
-For 5 cases to practice, see [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md).
+For 5 cases to practice, see [System Design Case Bank](system-design-case-bank.md).
 
 ---
 
@@ -84,7 +84,7 @@ For 5 cases to practice, see [08-System-Design-Case-Bank.md](08-System-Design-Ca
 - [ ] Optional: 2-3 min Loom walkthrough
 - [ ] 1-paragraph cover note explaining your approach
 
-For the full playbook, see [01-Take-Home-Playbook.md](01-Take-Home-Playbook.md).
+For the full playbook, see [Take Home Playbook](take-home-playbook.md).
 
 ---
 
@@ -139,7 +139,7 @@ When asked: "What are your salary expectations?"
 When they make an offer, always counter:
 "Thank you for the offer — I'm very excited about [specific thing]. Based on my research and competing opportunities, I'd like to discuss the base salary. I was thinking [X% higher] or [higher absolute number]. I'm also interested in [more equity / signing bonus / relocation package]. Can we discuss?"
 
-For full comp tables, see [05-Comp-EU-Benchmarking.md](05-Comp-EU-Benchmarking.md).
+For full comp tables, see [Comp Eu Benchmarking](comp-eu-benchmarking.md).
 
 ---
 
@@ -157,7 +157,7 @@ When you have a Pega/consulting spouse + school-age kid + 5+ YoE engineer:
 
 **Pick the highest total.** For most Pega families, that's **Amsterdam**.
 
-For the full visa playbook, see [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md).
+For the full visa playbook, see [Visa Relocation Playbook](visa-relocation-playbook.md).
 
 ---
 
@@ -174,7 +174,7 @@ For the full visa playbook, see [06-Visa-Relocation-Playbook.md](06-Visa-Relocat
 
 **Skip for this lane:** hard DP, segment tree, bitmask, monotonic stack, KMP, union-find.
 
-For the full 30-40 problem set, see [02-Tech-Screen-Patterns.md](02-Tech-Screen-Patterns.md).
+For the full 30-40 problem set, see [Tech Screen Patterns](tech-screen-patterns.md).
 
 ---
 

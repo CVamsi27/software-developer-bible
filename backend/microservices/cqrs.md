@@ -768,13 +768,13 @@ CQRS Key Points:
 
 ## See Also
 
-- [Distributed Transactions](11-Distributed-Transactions.md)
-- [Event Sourcing](07-Event-Sourcing.md)
-- [gRPC](09-gRPC.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Kafka](05-Kafka.md)
-- [RabbitMQ](06-RabbitMQ.md)
-- [Service Discovery](01-Service-Discovery.md)
+- [Distributed Transactions](distributed-transactions.md)
+- [Event Sourcing](event-sourcing.md)
+- [gRPC](grpc.md)
+- [Interview Questions](interview-questions.md)
+- [Kafka](kafka.md)
+- [RabbitMQ](rabbitmq.md)
+- [Service Discovery](service-discovery.md)
 
 ## References & Learn More
 

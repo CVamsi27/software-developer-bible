@@ -590,9 +590,9 @@ docker compose config  # validate and view resolved config
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Kubernetes](../14-Kubernetes/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [CI/CD](../ci-cd)
+- [Kubernetes](../kubernetes/)
+- [Microservices](../../backend/microservices/)
 
 ## References & Learn More
 

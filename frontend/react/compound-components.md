@@ -720,10 +720,10 @@ Parent.Child = Child;
 
 ## See Also
 
-- [Context API](10-Context-API.md)
-- [Custom Hooks](16-Custom-Hooks.md)
-- [Performance](13-Performance.md)
-- [State Management](14-State-Management.md)
+- [Context API](context-api.md)
+- [Custom Hooks](custom-hooks.md)
+- [Performance](performance.md)
+- [State Management](state-management.md)
 
 ## References & Learn More
 

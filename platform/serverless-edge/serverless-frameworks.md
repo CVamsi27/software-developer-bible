@@ -320,12 +320,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [AWS Lambda](05-AWS-Lambda.md)
-- [CI/CD](../15-CI-CD)
-- [Docker](../13-Docker/)
-- [Edge Functions](02-Edge-Functions.md)
-- [Serverless Overview](01-Serverless-Overview.md)
-- [Serverless Patterns](03-Serverless-Patterns.md)
+- [AWS Lambda](aws-lambda.md)
+- [CI/CD](../ci-cd)
+- [Docker](../docker/)
+- [Edge Functions](edge-functions.md)
+- [Serverless Overview](serverless-overview.md)
+- [Serverless Patterns](serverless-patterns.md)
 
 ## References & Learn More
 

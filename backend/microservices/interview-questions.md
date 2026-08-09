@@ -1906,16 +1906,16 @@ Microservices architecture requires understanding of distributed systems, commun
 ---
 
 ## See Also
-- [Bulkhead Pattern](14-Bulkhead-Pattern.md)
-- [CQRS](13-CQRS.md)
-- [Distributed Transactions](11-Distributed-Transactions.md)
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [gRPC](09-gRPC.md)
-- [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
-- [NestJS](../06-NestJS/)
-- [Service Mesh](10-Service-Mesh.md)
-- [Strangler Fig](12-Strangler-Fig.md)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Bulkhead Pattern](bulkhead-pattern.md)
+- [CQRS](cqrs.md)
+- [Distributed Transactions](distributed-transactions.md)
+- [Docker](../../platform/docker/)
+- [gRPC](grpc.md)
+- [Kubernetes](../../platform/kubernetes/)
+- [NestJS](../nestjs/)
+- [Service Mesh](service-mesh.md)
+- [Strangler Fig](strangler-fig.md)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

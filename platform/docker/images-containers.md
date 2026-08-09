@@ -395,11 +395,11 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Kubernetes](../14-Kubernetes/)
-- [Kubernetes Jobs](../14-Kubernetes/10-Jobs-CronJobs.md)
-- [Kubernetes StatefulSets](../14-Kubernetes/09-StatefulSets-DaemonSets.md)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [CI/CD](../ci-cd)
+- [Kubernetes](../kubernetes/)
+- [Kubernetes Jobs](../kubernetes/jobs-cronjobs.md)
+- [Kubernetes StatefulSets](../kubernetes/statefulsets-daemonsets.md)
+- [Microservices](../../backend/microservices/)
 
 ## References & Learn More
 

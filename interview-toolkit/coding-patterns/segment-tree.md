@@ -396,12 +396,12 @@ class BIT {
 ---
 
 ## See Also
-- [Binary Search](03-Binary-Search.md)
+- [Binary Search](binary-search.md)
 - [Coding Patterns](./)
-- [DFS & BFS](04-DFS-BFS.md)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Heap](07-Heap.md)
-- [Monotonic Stack](13-Monotonic-Stack.md)
+- [DFS & BFS](dfs-bfs.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Heap](heap.md)
+- [Monotonic Stack](monotonic-stack.md)
 
 ## References & Learn More
 

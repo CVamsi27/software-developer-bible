@@ -394,14 +394,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 This cheat sheet provides a concise reference to core React NextJS concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Animation](../../1-Frontend-Stack/30-Animation/)
-- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
-- [Form Handling](../../1-Frontend-Stack/29-Form-Handling/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Animation](../../frontend/animation/)
+- [Build Tools](../../platform/build-tools/)
+- [Form Handling](../../frontend/form-handling/)
+- [JavaScript](../../frontend/javascript/)
+- [Next.js](../../frontend/nextjs/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../../frontend/react/)
+- [TypeScript](../../frontend/typescript/)
 
 ## References & Learn More
 

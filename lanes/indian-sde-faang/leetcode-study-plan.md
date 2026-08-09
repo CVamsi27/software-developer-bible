@@ -623,19 +623,19 @@ For each problem, record:
 
 | File | Description |
 |------|-------------|
-| [Complete Guide](01-Complete-Guide.md) | Phases 1-8: Java, DSA, Algorithms |
-| [Core CS Fundamentals](02-Core-CS-Fundamentals.md) | Phases 9-16: CS Fundamentals, NoSQL |
-| [System Design & APIs](03-System-Design-APIs-Security.md) | Phases 17-20: System Design, REST, Security |
-| [DevOps & Career](04-DevOps-Behavioral-Career.md) | Phases 21-28: Git, Linux, Behavioral, Cloud |
-| [Advanced Topics](05-Advanced-Topics.md) | Segment Tree, DI, Repository, MVC |
-| [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
-| [Microsoft Guide](16-Microsoft-Azure-Interview-Guide.md) | Microsoft Azure team-specific prep |
-| [Progress Tracker](08-Progress-Tracker.md) | Track your weekly progress |
-| [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 questions (Coding + SD + Behavioral) |
-| [Google Guide](17-Google-Interview-Guide.md) | Google-specific interview prep |
-| [Amazon Guide](18-Amazon-Interview-Guide.md) | Amazon Leadership Principles prep |
-| [Meta Guide](19-Meta-Interview-Guide.md) | Meta-specific interview prep |
-| [Apple Guide](20-Apple-Interview-Guide.md) | Apple-specific interview prep |
+| [Complete Guide](complete-guide.md) | Phases 1-8: Java, DSA, Algorithms |
+| [Core CS Fundamentals](core-cs-fundamentals.md) | Phases 9-16: CS Fundamentals, NoSQL |
+| [System Design & APIs](system-design-apis-security.md) | Phases 17-20: System Design, REST, Security |
+| [DevOps & Career](devops-behavioral-career.md) | Phases 21-28: Git, Linux, Behavioral, Cloud |
+| [Advanced Topics](advanced-topics.md) | Segment Tree, DI, Repository, MVC |
+| [Cheat Sheet](cheat-sheet.md) | Last-minute review for all 28 phases |
+| [Microsoft Guide](microsoft-azure-interview-guide.md) | Microsoft Azure team-specific prep |
+| [Progress Tracker](progress-tracker.md) | Track your weekly progress |
+| [Mock Interview Bank](mock-interview-question-bank.md) | 90 questions (Coding + SD + Behavioral) |
+| [Google Guide](google-interview-guide.md) | Google-specific interview prep |
+| [Amazon Guide](amazon-interview-guide.md) | Amazon Leadership Principles prep |
+| [Meta Guide](meta-interview-guide.md) | Meta-specific interview prep |
+| [Apple Guide](apple-interview-guide.md) | Apple-specific interview prep |
 ---
 
 ## Summary
@@ -645,12 +645,12 @@ This guide provides a structured LeetCode study plan organized by topic and diff
 ## See Also
 
 ---
-- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Behavioral](../../interview-toolkit/behavioral/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [React](../../frontend/react/)
+- [System Design](../../architecture/system-design/)
+- [TypeScript](../../frontend/typescript/)
 
 ## Cheat Sheet
 ```text

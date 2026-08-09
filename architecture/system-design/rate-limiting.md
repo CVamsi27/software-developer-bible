@@ -319,10 +319,10 @@ Sustained: 100 req/sec average
 
 ## Related concepts
 
-- [00-Load-Balancing.md](00-Load-Balancing.md) — rate limit at the LB or behind it
-- [00-Queues-and-Async.md](00-Queues-and-Async.md) — rate limit + queue = backpressure
-- [00-Backpressure-and-Flow-Control.md](00-Backpressure-and-Flow-Control.md) — flow control
-- [13-Rate-Limiter.md](13-Rate-Limiter.md) — case study
+- [Load Balancing](load-balancing.md) — rate limit at the LB or behind it
+- [Queues And Async](queues-and-async.md) — rate limit + queue = backpressure
+- [Backpressure And Flow Control](backpressure-and-flow-control.md) — flow control
+- [Rate Limiter](rate-limiter.md) — case study
 
 ---
 
@@ -334,4 +334,4 @@ Sustained: 100 req/sec average
 - **Return 429 with Retry-After header.**
 - **In interviews: name the algorithm, the key, the limit, what happens on limit.**
 
-For the case study, see [13-Rate-Limiter.md](13-Rate-Limiter.md) for the full system design with code examples and trade-offs.
+For the case study, see [Rate Limiter](rate-limiter.md) for the full system design with code examples and trade-offs.

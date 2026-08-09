@@ -8,23 +8,23 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Event Loop](01-Event-Loop.md) | Phases, timers, I/O callbacks, setImmediate, nextTick |
-| 02 | [Streams](02-Streams.md) | Readable, writable, transform, backpressure, pipeline |
-| 03 | [Buffers](03-Buffers.md) | Buffer creation, encoding, allocation, TypedArray |
-| 04 | [Clustering](04-Clustering.md) | Cluster module, worker processes, IPC, load balancing |
-| 05 | [File System](05-File-System.md) | fs module, read/write, streams, file watching, permissions |
-| 06 | [HTTP Module](06-HTTP-Module.md) | createServer, routing, streaming, client requests, reverse proxy |
-| 07 | [Child Processes & Workers](07-Child-Processes-Workers.md) | spawn/fork/exec, worker_threads, SharedArrayBuffer, thread pool |
-| 08 | [Process & Environment](08-Process-Environment.md) | process.env, argv, lifecycle, signals, graceful shutdown |
-| 09 | [Node.js Security](09-Node-Security.md) | Input validation, Helmet.js, rate limiting, prototype pollution |
-| 10 | [Interview Questions](10-Interview-Questions.md) | 50+ curated questions with answers |
-| 11 | [Web Streams & Test Runner](11-Web-Streams-and-Test-Runner.md) | ReadableStream/WritableStream/TransformStream, node:test, mocking, watch mode, TAP output |
+| 01 | [Event Loop](event-loop.md) | Phases, timers, I/O callbacks, setImmediate, nextTick |
+| 02 | [Streams](streams.md) | Readable, writable, transform, backpressure, pipeline |
+| 03 | [Buffers](buffers.md) | Buffer creation, encoding, allocation, TypedArray |
+| 04 | [Clustering](clustering.md) | Cluster module, worker processes, IPC, load balancing |
+| 05 | [File System](file-system.md) | fs module, read/write, streams, file watching, permissions |
+| 06 | [HTTP Module](http-module.md) | createServer, routing, streaming, client requests, reverse proxy |
+| 07 | [Child Processes & Workers](child-processes-workers.md) | spawn/fork/exec, worker_threads, SharedArrayBuffer, thread pool |
+| 08 | [Process & Environment](process-environment.md) | process.env, argv, lifecycle, signals, graceful shutdown |
+| 09 | [Node.js Security](node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution |
+| 10 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 11 | [Web Streams & Test Runner](web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, node:test, mocking, watch mode, TAP output |
 
 ---
 
-**Cross-references:** [JavaScript Event Loop](../../1-Frontend-Stack/01-JavaScript/09-Event-Loop.md) | [NestJS](../06-NestJS/) | [Docker](../../4-Platform-Stack/13-Docker/)
+**Cross-references:** [JavaScript Event Loop](../../frontend/javascript/event-loop.md) | [NestJS](../nestjs/) | [Docker](../../platform/docker/)
 ---
 
 ## Navigation
 
-[← Previous: Next.js](../../1-Frontend-Stack/04-NextJS/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: NestJS →](../06-NestJS/INDEX.md)
+[← Previous: Next.js](../../frontend/nextjs/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: NestJS →](../nestjs/INDEX.md)

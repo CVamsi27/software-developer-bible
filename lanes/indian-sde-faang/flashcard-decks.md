@@ -721,10 +721,10 @@ Test mode: Simulate exam conditions
 
 | File | Description |
 |------|-------------|
-| [Quick Reference Cards](12-Quick-Reference-Cards.md) | One-page summaries for each topic |
-| [Spaced Repetition Schedule](10-Spaced-Repetition-Schedule.md) | Review intervals for optimal retention |
-| [Learning Guarantee System](13-Learning-Guarantee-System.md) | Active recall and mastery criteria |
-| [Cheat Sheet](07-Cheat-Sheet.md) | Last-minute review for all 28 phases |
+| [Quick Reference Cards](quick-reference-cards.md) | One-page summaries for each topic |
+| [Spaced Repetition Schedule](spaced-repetition-schedule.md) | Review intervals for optimal retention |
+| [Learning Guarantee System](learning-guarantee-system.md) | Active recall and mastery criteria |
+| [Cheat Sheet](cheat-sheet.md) | Last-minute review for all 28 phases |
 ---
 
 ## Summary
@@ -734,12 +734,12 @@ These flashcard decks provide 240+ cards across 8 topics for Anki and Quizlet, c
 ## See Also
 
 ---
-- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Behavioral](../../interview-toolkit/behavioral/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [React](../../frontend/react/)
+- [System Design](../../architecture/system-design/)
+- [TypeScript](../../frontend/typescript/)
 
 ## Cheat Sheet
 ```text

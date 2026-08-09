@@ -438,8 +438,8 @@ PATH MODULE:
 ---
 
 ## See Also
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [Streams](02-Streams.md)
+- [Docker](../../platform/docker/)
+- [Streams](streams.md)
 
 ## References & Learn More
 

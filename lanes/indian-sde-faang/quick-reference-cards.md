@@ -546,11 +546,11 @@
 
 | File | Description |
 |------|-------------|
-| [Complete Guide](01-Complete-Guide.md) | Full coverage of all patterns |
-| [Cheat Sheet](07-Cheat-Sheet.md) | Quick reference for all 28 phases |
-| [LeetCode Study Plan](06-LeetCode-Study-Plan.md) | 12-week study schedule |
-| [Mock Interview Bank](09-Mock-Interview-Question-Bank.md) | 90 practice questions |
-| [Progress Tracker](08-Progress-Tracker.md) | Track your readiness |
+| [Complete Guide](complete-guide.md) | Full coverage of all patterns |
+| [Cheat Sheet](cheat-sheet.md) | Quick reference for all 28 phases |
+| [LeetCode Study Plan](leetcode-study-plan.md) | 12-week study schedule |
+| [Mock Interview Bank](mock-interview-question-bank.md) | 90 practice questions |
+| [Progress Tracker](progress-tracker.md) | Track your readiness |
 ---
 
 ## Summary
@@ -560,12 +560,12 @@ These quick reference cards provide single-page summaries of essential interview
 ## See Also
 
 ---
-- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
-- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
+- [Behavioral](../../interview-toolkit/behavioral/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [JavaScript](../../frontend/javascript/)
+- [React](../../frontend/react/)
+- [System Design](../../architecture/system-design/)
+- [TypeScript](../../frontend/typescript/)
 
 ## Cheat Sheet
 ```text

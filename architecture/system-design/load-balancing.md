@@ -242,9 +242,9 @@ In real systems, you don't have just one LB. You have multiple layers:
 
 ## Related concepts
 
-- [00-Caching-Patterns.md](00-Caching-Patterns.md) — caches and LB go together
-- [00-Rate-Limiting.md](00-Rate-Limiting.md) — protect the LB from overload
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — LB doesn't solve CAP, but it does solve availability at the request level
+- [Caching Patterns](caching-patterns.md) — caches and LB go together
+- [Rate Limiting](rate-limiting.md) — protect the LB from overload
+- [Cap Theorem](cap-theorem.md) — LB doesn't solve CAP, but it does solve availability at the request level
 
 ---
 
@@ -257,4 +257,4 @@ In real systems, you don't have just one LB. You have multiple layers:
 - **Layered:** DNS → edge LB → service LB → app servers.
 - **In interviews: name the LB layer, the algorithm, and the health check strategy.**
 
-For case studies, see [01-URL-Shortener.md](01-URL-Shortener.md) (consistent hashing for cache), [02-WhatsApp.md](02-WhatsApp.md) (L4 LB for connection servers), [03-Uber.md](03-Uber.md) (geographic LB for dispatchers), [12-Twitter-Feed.md](12-Twitter-Feed.md) (LB in front of fanout workers).
+For case studies, see [Url Shortener](url-shortener.md) (consistent hashing for cache), [Whatsapp](whatsapp.md) (L4 LB for connection servers), [Uber](uber.md) (geographic LB for dispatchers), [Twitter Feed](twitter-feed.md) (LB in front of fanout workers).

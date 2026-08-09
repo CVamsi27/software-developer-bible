@@ -631,13 +631,13 @@ Common Patterns:
 ---
 
 ## See Also
-- [Deployments](02-Deployments.md)
-- [Health Checks](06-Health-Checks.md)
-- [HPA & Scaling](05-HPA-Scaling.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Pods & ReplicaSets](01-Pods-ReplicaSets.md)
-- [Services & Ingress](03-Services-Ingress.md)
-- [StatefulSets & DaemonSets](09-StatefulSets-DaemonSets.md)
+- [Deployments](deployments.md)
+- [Health Checks](health-checks.md)
+- [HPA & Scaling](hpa-scaling.md)
+- [Interview Questions](interview-questions.md)
+- [Pods & ReplicaSets](pods-replicasets.md)
+- [Services & Ingress](services-ingress.md)
+- [StatefulSets & DaemonSets](statefulsets-daemonsets.md)
 
 ## References & Learn More
 

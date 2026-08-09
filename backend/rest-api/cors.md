@@ -588,10 +588,10 @@ CORS is essential for secure cross-origin communication. Always specify allowed 
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/)
-- [NestJS](../06-NestJS/)
-- [Security](../09-Security/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Microservices](../microservices/)
+- [NestJS](../nestjs/)
+- [Security](../security/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

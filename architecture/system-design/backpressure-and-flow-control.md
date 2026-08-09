@@ -311,7 +311,7 @@ When a downstream service is slow or failing, stop calling it. Return immediatel
 
 **Libraries:** Hystrix (deprecated), Resilience4j, Polly (.NET), Istio.
 
-**See:** [12-Microservices/04-Circuit-Breaker.md](../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) for the full deep-dive.
+**See:** [Microservices/04 Circuit Breaker](../../backend/microservices/circuit-breaker.md) for the full deep-dive.
 
 ### 2. Bulkhead (isolation)
 
@@ -325,7 +325,7 @@ Thread pool for /user/profile: 100 threads
 If /search hangs, only its 50 threads are exhausted. The other 50 are safe.
 ```
 
-**See:** [12-Microservices/14-Bulkhead-Pattern.md](../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md).
+**See:** [Microservices/14 Bulkhead Pattern](../../backend/microservices/bulkhead-pattern.md).
 
 ### 3. Timeout everywhere
 
@@ -350,7 +350,7 @@ User C: 1000 req/min
 Even if User A is malicious, they can't use 100% of capacity.
 ```
 
-**See:** [00-Rate-Limiting.md](00-Rate-Limiting.md).
+**See:** [Rate Limiting](rate-limiting.md).
 
 ### 5. Health checks + auto-scaling
 
@@ -424,11 +424,11 @@ When you're designing any async system, queue, or pipeline:
 
 ## Related concepts
 
-- [00-Queues-and-Async.md](00-Queues-and-Async.md) — backpressure in queues
-- [00-Rate-Limiting.md](00-Rate-Limiting.md) — rate limiting as backpressure
-- [00-Failure-Modes.md](00-Failure-Modes.md) — cascading failure
-- [../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md](../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) — circuit breaker deep-dive
-- [../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md](../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md) — bulkhead deep-dive
+- [Queues And Async](queues-and-async.md) — backpressure in queues
+- [Rate Limiting](rate-limiting.md) — rate limiting as backpressure
+- [Failure Modes](failure-modes.md) — cascading failure
+- [../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md](../../backend/microservices/circuit-breaker.md) — circuit breaker deep-dive
+- [../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md](../../backend/microservices/bulkhead-pattern.md) — bulkhead deep-dive
 
 ---
 

@@ -350,12 +350,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [CSS Animations](02-CSS-Animations.md)
-- [Framer Motion](01-Framer-Motion.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React Spring](06-React-Spring.md)
-- [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
-- [Web Animations API](04-Web-Animations-API.md)
+- [CSS Animations](css-animations.md)
+- [Framer Motion](framer-motion.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React Spring](react-spring.md)
+- [View Transitions & Scroll-Driven Animations](view-transitions-and-scroll-driven-animations.md)
+- [Web Animations API](web-animations-api.md)
 
 ## References & Learn More
 

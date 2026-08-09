@@ -1188,10 +1188,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [System Design - WhatsApp](./02-WhatsApp.md)
-- [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [System Design - WhatsApp](./whatsapp.md)
+- [WebSockets](../../realtime/websockets/)
 
 ## References & Learn More
 

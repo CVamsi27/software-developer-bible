@@ -386,11 +386,11 @@ Web Streams are the modern, cross-runtime stream API; the Node.js Test Runner is
 ---
 
 ## See Also
-- [Event Loop](01-Event-Loop.md)
-- [File System](05-File-System.md)
-- [HTTP Module](06-HTTP-Module.md)
-- [Process & Environment](08-Process-Environment.md)
-- [Streams](02-Streams.md)
+- [Event Loop](event-loop.md)
+- [File System](file-system.md)
+- [HTTP Module](http-module.md)
+- [Process & Environment](process-environment.md)
+- [Streams](streams.md)
 
 ## References & Learn More
 

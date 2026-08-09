@@ -796,12 +796,12 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../../4-Platform-Stack/15-CI-CD)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [Performance & Load Testing](11-Performance-Load-Testing.md)
-- [React](../../1-Frontend-Stack/03-React/)
-- [Vitest](10-Vitest.md)
+- [CI/CD](../../platform/ci-cd)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [NestJS](../../backend/nestjs/)
+- [Performance & Load Testing](performance-load-testing.md)
+- [React](../../frontend/react/)
+- [Vitest](vitest.md)
 
 ## References & Learn More
 

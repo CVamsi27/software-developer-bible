@@ -160,7 +160,7 @@ Default to the stack the company uses. If you don't know, use:
 
 If the brief specifies a stack, **use that stack.** Don't argue. They want to see if you can be productive in their world, not yours.
 
-The bible's [2-Backend-Stack/06-NestJS/](../../2-Backend-Stack/06-NestJS/), [2-Backend-Stack/08-Database/](../../2-Backend-Stack/08-Database/), [2-Backend-Stack/09-Security/](../../2-Backend-Stack/09-Security/) are your reference.
+The bible's [Backend Stack/06 Nestjs](../../backend/nestjs/), [Backend Stack/08 Database](../../backend/database/), [Backend Stack/09 Security](../../backend/security/) are your reference.
 
 ---
 
@@ -224,7 +224,7 @@ workflow-engine/
 | **Hostaway** | Multi-tenant SaaS feature | Tenant isolation, RBAC, audit logging |
 | **GoGlobal** | Workflow / document processing | State machines, error recovery, audit trail |
 
-For system design cases that come up AFTER the take-home, see [08-System-Design-Case-Bank.md](08-System-Design-Case-Bank.md).
+For system design cases that come up AFTER the take-home, see [System Design Case Bank](system-design-case-bank.md).
 
 ---
 

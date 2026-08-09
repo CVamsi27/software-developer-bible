@@ -31,7 +31,7 @@ A local lock doesn't work — the lock has to be visible across machines. That's
 
 ## Use cases
 
-1. **Leader election** — only one node is the leader. (See [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md).)
+1. **Leader election** — only one node is the leader. (See [Consensus And Leader Election](consensus-and-leader-election.md).)
 2. **Exclusive access to a resource** — only one process can update a critical resource at a time.
 3. **Prevent duplicate work** — only one cron job runs the "process pending records" task.
 4. **Distributed coordination** — services need to coordinate on a shared state.
@@ -391,12 +391,12 @@ When discussing:
 
 ## Related concepts
 
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — leader election
-- [00-Consistency-Models.md](00-Consistency-Models.md) — strong consistency for locks
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — locks are CP
-- [00-Backpressure-and-Flow-Control.md](00-Backpressure-and-Flow-Control.md) — backpressure as flow control
-- [00-Queues-and-Async.md](00-Queues-and-Async.md) — at-least-once + idempotency
-- [00-Failure-Modes.md](00-Failure-Modes.md) — lock holder crashes
+- [Consensus And Leader Election](consensus-and-leader-election.md) — leader election
+- [Consistency Models](consistency-models.md) — strong consistency for locks
+- [Cap Theorem](cap-theorem.md) — locks are CP
+- [Backpressure And Flow Control](backpressure-and-flow-control.md) — backpressure as flow control
+- [Queues And Async](queues-and-async.md) — at-least-once + idempotency
+- [Failure Modes](failure-modes.md) — lock holder crashes
 
 ---
 

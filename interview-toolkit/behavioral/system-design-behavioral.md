@@ -598,11 +598,11 @@ Practice each story to **3-4 minutes**, with a clear arc and 2-3 quantified outc
 
 ## See Also
 - [Behavioral](./)
-- [Coding Patterns](../19-Coding-Patterns/)
-- [HR Questions](02-HR-Questions.md)
-- [Leadership Questions](03-Leadership-Questions.md)
-- [STAR Method](01-STAR-Method.md)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Coding Patterns](../coding-patterns/)
+- [HR Questions](hr-questions.md)
+- [Leadership Questions](leadership-questions.md)
+- [STAR Method](star-method.md)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

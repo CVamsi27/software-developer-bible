@@ -75,7 +75,7 @@ Rate yourself:
 - [ ] Take-home project shipped to public GitHub
 - [ ] Loom walkthrough recorded
 - [ ] 12 DSA mediums solved across HashMap + Sliding Window + Two Pointers
-- [ ] Take-home archive link in [../2-Abroad-Full-Stack/](../2-Abroad-Full-Stack/) folder (so you can reference it in applications)
+- [ ] Take-home archive link in [../abroad-full-stack/](../abroad-full-stack/) folder (so you can reference it in applications)
 
 ### Week 2 readiness (out of 10)
 

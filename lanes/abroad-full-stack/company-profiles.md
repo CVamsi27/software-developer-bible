@@ -238,4 +238,4 @@ For each company you apply to, write a 60-second answer to "Why [company]?" that
 - **30 min of company research before each interview.** 6 steps above.
 - **Write a 60-sec "Why this company?" answer per target.** Adapt the template above.
 
-For the city tier matrix and family-driven country decision, see [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md).
+For the city tier matrix and family-driven country decision, see [Visa Relocation Playbook](visa-relocation-playbook.md).

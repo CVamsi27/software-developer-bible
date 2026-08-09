@@ -227,12 +227,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Build Tools](../23-Build-Tools/)
-- [CI/CD](../15-CI-CD)
-- [Git Advanced](../24-Git-Advanced/)
-- [Monorepo Overview](01-Monorepo-Overview.md)
-- [Nx](03-Nx.md)
-- [Turborepo](02-Turborepo.md)
+- [Build Tools](../build-tools/)
+- [CI/CD](../ci-cd)
+- [Git Advanced](../git-advanced/)
+- [Monorepo Overview](monorepo-overview.md)
+- [Nx](nx.md)
+- [Turborepo](turborepo.md)
 
 ## References & Learn More
 

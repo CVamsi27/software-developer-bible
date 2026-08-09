@@ -435,10 +435,10 @@ type Route = keyof typeof routes;
 ---
 
 ## See Also
-- [JavaScript](../01-JavaScript/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../03-React/)
-- [Template Literal Types](12-Template-Literal-Types.md)
+- [JavaScript](../javascript/)
+- [NestJS](../../backend/nestjs/)
+- [React](../react/)
+- [Template Literal Types](template-literal-types.md)
 
 ## References & Learn More
 

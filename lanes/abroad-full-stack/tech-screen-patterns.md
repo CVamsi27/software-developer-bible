@@ -14,7 +14,7 @@
 - **You need to:** think out loud, debug your own code, ask questions, handle edge cases
 - **Time budget per problem:** 25-30 min, then look at the answer
 
-The bible's [7-Interview-Toolkit/19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
+The bible's [Interview Toolkit/19 Coding Patterns](../../interview-toolkit/coding-patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
 
 ---
 
@@ -42,7 +42,7 @@ The 6 patterns below cover 90%+ of EU mid-stage phone screens. Skip the rest.
 
 **Drill:** 30 min per problem, 8-10 problems, 4-5 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../interview-toolkit/coding-patterns/INDEX.md)
 
 ---
 
@@ -60,7 +60,7 @@ See: [../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../7-Interview-T
 
 **Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../interview-toolkit/coding-patterns/sliding-window.md)
 
 ---
 
@@ -78,7 +78,7 @@ See: [../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../7
 
 **Drill:** 30 min per problem, 5-7 problems, 2-3 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../interview-toolkit/coding-patterns/two-pointers.md)
 
 ---
 
@@ -98,7 +98,7 @@ See: [../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../7-I
 
 **Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md) and [10-Topological-Sort.md](../../7-Interview-Toolkit/19-Coding-Patterns/10-Topological-Sort.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../interview-toolkit/coding-patterns/dfs-bfs.md) and [Topological Sort](../../interview-toolkit/coding-patterns/topological-sort.md)
 
 ---
 
@@ -118,7 +118,7 @@ See: [../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../7-Interv
 
 **Drill:** 30-40 min per problem, 4-6 problems, 3-4 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](../../interview-toolkit/coding-patterns/dynamic-programming.md)
 
 ---
 
@@ -136,7 +136,7 @@ See: [../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](..
 
 **Drill:** 30 min per problem, 3-5 problems, 2-3 hours total.
 
-See: [../../7-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md](../../7-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md](../../interview-toolkit/coding-patterns/stack-queue-patterns.md)
 
 ---
 
@@ -154,7 +154,7 @@ If you only have 1 week, the **non-negotiable MVP** is:
 
 - 8 STAR stories practiced out loud (see [story-bank.md](story-bank.md))
 - 1 system design case explained cold (URL shortener or workflow engine)
-- 1 take-home shipped (any TS full-stack, see [01-Take-Home-Playbook.md](01-Take-Home-Playbook.md))
+- 1 take-home shipped (any TS full-stack, see [Take Home Playbook](take-home-playbook.md))
 - 2 mock interviews done
 
 That alone gets you through 70%+ of mid-stage loops.
@@ -251,4 +251,4 @@ The clarifying-questions + explain-approach phase is **30% of the interview**. D
 
 Total: 14 days, 1-2 hrs/day, ~20 hours of practice. That's all you need for this lane's tech screen.
 
-For the FAANG lane's much heavier DSA prep, see [../1-Indian-SDE-FAANG/19-Coding-Patterns.md](../1-Indian-SDE-FAANG/INDEX.md).
+For the FAANG lane's much heavier DSA prep, see [../indian-sde-faang/19-Coding-Patterns.md](../indian-sde-faang/INDEX.md).

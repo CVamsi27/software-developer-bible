@@ -372,10 +372,10 @@ For a sense of cost (AWS, 2024):
 
 ## Related concepts
 
-- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — sizing the DB
-- [00-Caching-Patterns.md](00-Caching-Patterns.md) — cache size estimation
-- [00-Load-Balancing.md](00-Load-Balancing.md) — distributing the load
-- [00-Failure-Modes.md](00-Failure-Modes.md) — capacity for failures (N+1, N+2)
+- [Sharding And Replication](sharding-and-replication.md) — sizing the DB
+- [Caching Patterns](caching-patterns.md) — cache size estimation
+- [Load Balancing](load-balancing.md) — distributing the load
+- [Failure Modes](failure-modes.md) — capacity for failures (N+1, N+2)
 
 ---
 
@@ -389,4 +389,4 @@ For a sense of cost (AWS, 2024):
 - **Little's Law:** L = λ × W. Concurrent = rate × wait.
 - **In interviews: estimate in 2-3 minutes BEFORE designing.**
 
-For capacity-related failure modes, see [00-Failure-Modes.md](00-Failure-Modes.md).
+For capacity-related failure modes, see [Failure Modes](failure-modes.md).

@@ -314,12 +314,12 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [CSS Animations](02-CSS-Animations.md)
-- [Framer Motion](01-Framer-Motion.md)
-- [GSAP](05-GSAP.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React Spring](06-React-Spring.md)
-- [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
+- [CSS Animations](css-animations.md)
+- [Framer Motion](framer-motion.md)
+- [GSAP](gsap.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React Spring](react-spring.md)
+- [View Transitions & Scroll-Driven Animations](view-transitions-and-scroll-driven-animations.md)
 
 ## References & Learn More
 

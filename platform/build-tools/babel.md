@@ -122,8 +122,8 @@ INTERVIEW TIPS:
 ```
 ---
 ## See Also
-- [Build Optimization](04-Build-Optimization.md)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
+- [Build Optimization](build-optimization.md)
+- [Next.js](../../frontend/nextjs/)
 
 ## References & Learn More
 

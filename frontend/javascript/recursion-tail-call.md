@@ -373,8 +373,8 @@ const memoizedRecursive = memoize(
 ---
 
 ## See Also
-- [Call Stack](02-Call-Stack.md)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [Call Stack](call-stack.md)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
 
 ## References & Learn More
 

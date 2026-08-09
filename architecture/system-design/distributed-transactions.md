@@ -262,11 +262,11 @@ If 2 fails: compensate 1 (A.balance += X)
 
 ## Related concepts
 
-- [00-Queues-and-Async.md](00-Queues-and-Async.md) — async is the foundation
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — 2PC is CP, Saga is AP (eventual)
-- [00-Consistency-Models.md](00-Consistency-Models.md) — saga is eventually consistent
-- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md) — full saga deep-dive
-- [../../2-Backend-Stack/12-Microservices/11-Distributed-Transactions.md](../../2-Backend-Stack/12-Microservices/11-Distributed-Transactions.md)
+- [Queues And Async](queues-and-async.md) — async is the foundation
+- [Cap Theorem](cap-theorem.md) — 2PC is CP, Saga is AP (eventual)
+- [Consistency Models](consistency-models.md) — saga is eventually consistent
+- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../backend/microservices/saga-pattern.md) — full saga deep-dive
+- [../../2-Backend-Stack/12-Microservices/11-Distributed-Transactions.md](../../backend/microservices/distributed-transactions.md)
 
 ---
 
@@ -279,4 +279,4 @@ If 2 fails: compensate 1 (A.balance += X)
 - **Orchestration** = central orchestrator coordinates the steps.
 - **In interviews: name the saga type, the compensating actions, the timeout, the idempotency strategy.**
 
-For case studies, see [06-Payment-Gateway.md](06-Payment-Gateway.md) (saga for charge + ledger), [08-Ticket-Booking.md](08-Ticket-Booking.md) (saga for hold + charge + confirm), [11-Live-Betting.md](11-Live-Betting.md) (saga for bet placement + settlement).
+For case studies, see [Payment Gateway](payment-gateway.md) (saga for charge + ledger), [Ticket Booking](ticket-booking.md) (saga for hold + charge + confirm), [Live Betting](live-betting.md) (saga for bet placement + settlement).

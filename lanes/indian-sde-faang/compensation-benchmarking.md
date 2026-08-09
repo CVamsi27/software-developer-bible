@@ -251,7 +251,7 @@ RULES:
 
 ## References & Learn More
 
-- [15-Resume-Negotiation.md](15-Resume-Negotiation.md) — full resume + offer negotiation chapter
+- [Resume Negotiation](resume-negotiation.md) — full resume + offer negotiation chapter
 - [Blind (anonymous tech forum)](https://www.teamblind.com/)
 - [Comprehensive Guide to Engineering Levels (Medium)](https://blog.usejournal.com/comprehensive-guide-to-engineering-Levels-at-big-tech-9a0e9efd645e)
 - [Glassdoor Salaries](https://www.glassdoor.com/Salaries/index.htm)

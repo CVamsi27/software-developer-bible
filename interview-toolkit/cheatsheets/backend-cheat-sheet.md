@@ -429,14 +429,14 @@ async transfer(fromId: string, toId: string, amount: number) {
 This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [GraphQL](../../2-Backend-Stack/17-GraphQL/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [Node.js](../../2-Backend-Stack/05-NodeJS/)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [Security](../../2-Backend-Stack/09-Security/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Database](../../backend/database/)
+- [GraphQL](../../backend/graphql/)
+- [Microservices](../../backend/microservices/)
+- [NestJS](../../backend/nestjs/)
+- [Node.js](../../backend/nodejs/)
+- [REST APIs](../../backend/rest-api/)
+- [Security](../../backend/security/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

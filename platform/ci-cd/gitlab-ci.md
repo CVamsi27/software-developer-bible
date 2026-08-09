@@ -194,8 +194,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [ArgoCD](06-ArgoCD.md)
-- [Docker](../13-Docker/)
+- [ArgoCD](argocd.md)
+- [Docker](../docker/)
 
 ## References & Learn More
 

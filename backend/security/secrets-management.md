@@ -303,10 +303,10 @@ jwt.sign(payload, out.Signature, { algorithm: 'RS256' });
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (per-service credentials)
-- [REST APIs](../07-REST-API/) (API key storage)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (secrets in system design)
-- [Web Security](./09-Web-Security.md) (HTTPS, TLS in production)
+- [Microservices](../microservices/) (per-service credentials)
+- [REST APIs](../rest-api/) (API key storage)
+- [System Design](../../architecture/system-design/) (secrets in system design)
+- [Web Security](./web-security.md) (HTTPS, TLS in production)
 
 ## References & Learn More
 

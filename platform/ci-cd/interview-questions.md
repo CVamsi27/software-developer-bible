@@ -578,9 +578,9 @@ helm rollback myrelease 1
 ---
 
 ## See Also
-- [Docker](../13-Docker/)
-- [Git Advanced](../24-Git-Advanced/)
-- [Kubernetes](../14-Kubernetes/)
+- [Docker](../docker/)
+- [Git Advanced](../git-advanced/)
+- [Kubernetes](../kubernetes/)
 
 ## References & Learn More
 

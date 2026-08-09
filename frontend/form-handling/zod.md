@@ -387,13 +387,13 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/)
-- [Formik](03-Formik.md)
-- [React](../03-React/)
-- [React Hook Form](01-React-Hook-Form.md)
-- [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md)
-- [TanStack Form](05-TanStack-Form.md)
-- [TypeScript](../02-TypeScript/)
+- [Design Patterns](../../backend/design-patterns/)
+- [Formik](formik.md)
+- [React](../react/)
+- [React Hook Form](react-hook-form.md)
+- [Server Actions & Form Patterns](server-actions-and-form-patterns.md)
+- [TanStack Form](tanstack-form.md)
+- [TypeScript](../typescript/)
 
 ## References & Learn More
 

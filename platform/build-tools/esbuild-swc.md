@@ -151,8 +151,8 @@ INTERVIEW TIPS:
 ```
 ---
 ## See Also
-- [Babel](05-Babel.md)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
+- [Babel](babel.md)
+- [Next.js](../../frontend/nextjs/)
 
 ## References & Learn More
 

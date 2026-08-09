@@ -462,10 +462,10 @@ Driver     ParkingLot     Level     ParkingSpot     Vehicle     Ticket
 
 ## Related concepts
 
-- [00-SOLID-Principles.md](00-SOLID-Principles.md) — apply to your UML design
-- [00-OOP-Concepts.md](00-OOP-Concepts.md) — what the UML is showing
-- [00-DRY-KISS-YAGNI.md](00-DRY-KISS-YAGNI.md) — when to add complexity
-- [01-Singleton.md](01-Singleton.md) through [15-State-Pattern.md](15-State-Pattern.md) — GoF patterns
+- [Solid Principles](solid-principles.md) — apply to your UML design
+- [Oop Concepts](oop-concepts.md) — what the UML is showing
+- [Dry Kiss Yagni](dry-kiss-yagni.md) — when to add complexity
+- [Singleton](singleton.md) through [State Pattern](state-pattern.md) — GoF patterns
 
 ---
 

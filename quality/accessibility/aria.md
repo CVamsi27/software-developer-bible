@@ -398,9 +398,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Performance Monitoring](../26-Performance-Monitoring/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [Testing](../16-Testing/)
+- [Performance Monitoring](../performance-monitoring/)
+- [React](../../frontend/react/)
+- [Testing](../testing/)
 
 ## References & Learn More
 

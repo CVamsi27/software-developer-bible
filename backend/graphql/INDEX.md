@@ -8,20 +8,20 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [GraphQL Overview](01-GraphQL-Overview.md) | Schema, queries, mutations, subscriptions, vs REST |
-| 02 | [Schema Design](02-Schema-Design.md) | Types, fields, arguments, enums, unions, interfaces |
-| 03 | [Queries & Mutations](03-Queries-Mutations.md) | Query structure, variables, directives, input types |
-| 04 | [Resolvers](04-Resolvers.md) | Resolver chain, DataLoader, context, error handling |
-| 05 | [Apollo Server](05-Apollo-Server.md) | Server setup, plugins, federation, subscriptions |
-| 06 | [Apollo Client](06-Apollo-Client.md) | Client setup, queries, mutations, normalized cache, fragments |
-| 07 | [Performance & Security](07-Performance-Security.md) | N+1, DataLoader, query depth, complexity, APQs, CSRF |
-| 08 | [GraphQL Interview Questions](08-Interview-Questions.md) | 30+ curated questions with answers |
+| 01 | [GraphQL Overview](graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST |
+| 02 | [Schema Design](schema-design.md) | Types, fields, arguments, enums, unions, interfaces |
+| 03 | [Queries & Mutations](queries-mutations.md) | Query structure, variables, directives, input types |
+| 04 | [Resolvers](resolvers.md) | Resolver chain, DataLoader, context, error handling |
+| 05 | [Apollo Server](apollo-server.md) | Server setup, plugins, federation, subscriptions |
+| 06 | [Apollo Client](apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments |
+| 07 | [Performance & Security](performance-security.md) | N+1, DataLoader, query depth, complexity, APQs, CSRF |
+| 08 | [GraphQL Interview Questions](interview-questions.md) | 30+ curated questions with answers |
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [React](../../1-Frontend-Stack/03-React/) | [NestJS](../06-NestJS/)
+**Cross-references:** [REST APIs](../rest-api/) | [React](../../frontend/react/) | [NestJS](../nestjs/)
 ---
 
 ## Navigation
 
-[← Previous: Testing](../../5-Quality-Stack/16-Testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../7-Interview-Toolkit/18-Behavioral/INDEX.md)
+[← Previous: Testing](../../quality/testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../interview-toolkit/behavioral/INDEX.md)

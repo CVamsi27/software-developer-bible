@@ -288,9 +288,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../../1-Frontend-Stack/03-React/)
+- [Next.js](../../frontend/nextjs/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../../frontend/react/)
 
 ## References & Learn More
 

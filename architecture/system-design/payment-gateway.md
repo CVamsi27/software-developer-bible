@@ -1117,10 +1117,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [REST APIs](../../backend/rest-api/)
+- [WebSockets](../../realtime/websockets/)
 
 ## References & Learn More
 

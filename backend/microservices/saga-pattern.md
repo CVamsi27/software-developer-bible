@@ -693,10 +693,10 @@ Saga Pattern enables distributed transactions in microservices using local trans
 ---
 
 ## See Also
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
-- [NestJS](../06-NestJS/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Docker](../../platform/docker/)
+- [Kubernetes](../../platform/kubernetes/)
+- [NestJS](../nestjs/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

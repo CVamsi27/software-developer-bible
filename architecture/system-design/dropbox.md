@@ -325,11 +325,11 @@ Alerts: sync p99 > 30s, long-poll fleet saturation, dedup ratio dropping, GC bac
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Google Drive](05-Google-Drive.md) (related but different: collaborative editing model)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [System Design Interview Questions](16-Interview-Questions.md)
-- [WhatsApp](02-WhatsApp.md)
+- [Database](../../backend/database/)
+- [Google Drive](google-drive.md) (related but different: collaborative editing model)
+- [Microservices](../../backend/microservices/)
+- [System Design Interview Questions](interview-questions.md)
+- [WhatsApp](whatsapp.md)
 
 ## References & Learn More
 

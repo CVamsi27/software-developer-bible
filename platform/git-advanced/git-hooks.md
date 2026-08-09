@@ -387,8 +387,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Monorepo](../28-Monorepo/)
+- [CI/CD](../ci-cd)
+- [Monorepo](../monorepo/)
 
 ## References & Learn More
 

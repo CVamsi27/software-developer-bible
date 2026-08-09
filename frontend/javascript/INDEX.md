@@ -8,39 +8,39 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Execution Context](01-Execution-Context.md) | GEC vs FEC, creation/execution phases, scope chain |
-| 02 | [Call Stack](02-Call-Stack.md) | LIFO, stack frames, stack overflow, maximum call stack |
-| 03 | [Hoisting](03-Hoisting.md) | var/let/const hoisting, temporal dead zone, function hoisting |
-| 04 | [Closures](04-Closures.md) | Lexical scoping, closure lifecycle, module pattern |
-| 05 | [Scope](05-Scope.md) | Global, function, block scope, scope chain, lexical environment |
-| 06 | [Lexical Environment](06-Lexical-Environment.md) | Environment records, outer reference, scope chain internals |
-| 07 | [`this` Keyword](07-This.md) | Implicit/explicit binding, arrow functions, call/apply/bind |
-| 08 | [Prototypes](08-Prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance |
-| 09 | [Event Loop](09-Event-Loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline |
-| 10 | [Promises](10-Promises.md) | Promise states, chaining, error handling, `Promise.all/race/allSettled/any` |
-| 11 | [Async/Await](11-Async-Await.md) | Async functions, error handling, concurrency, sequential vs parallel |
-| 12 | [Error Handling](12-Error-Handling.md) | try/catch/finally, custom errors, error propagation, async error handling |
-| 13 | [Pass by Value](13-Pass-by-Value.md) | Primitive vs reference, value/reference semantics |
-| 14 | [Map, Set, WeakMap, WeakSet](14-Map-Set-WeakMap-WeakSet.md) | Keyed collections, weak references, memory-efficient lookups |
-| 15 | [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods |
-| 16 | [Proxy & Reflect](16-Proxy-Reflect.md) | Metaprogramming, traps, validation, reactive patterns |
-| 17 | [Debounce](17-Debounce.md) | Implementation, leading/trailing, real-world use cases |
-| 18 | [Throttle](18-Throttle.md) | Implementation, vs debounce, animation frame throttling |
-| 19 | [Memory Leaks](19-Memory-Leaks.md) | Detached DOM, closures, circular references, detection |
-| 20 | [Garbage Collection](20-Garbage-Collection.md) | Mark-and-sweep, generational collection, V8 Orinoco |
-| 21 | [Modules](21-Modules.md) | ESM vs CommonJS, dynamic imports, tree shaking |
-| 22 | [Memoization](22-Memoization.md) | Caching, `_.memoize`, React.memo, optimization |
-| 23 | [Generators](23-Generators.md) | `function*`, yield, iterators, async generators |
-| 24 | [Currying & Composition](24-Currying-Composition.md) | Currying, partial application, pipe, compose, functional patterns |
-| 25 | [Recursion & Tail Call](25-Recursion-Tail-Call.md) | Recursive patterns, tail call optimization, trampolining, memoization |
-| 26 | [Interview Questions](26-Interview-Questions.md) | 50+ curated questions with answers |
-| 27 | [ES2024+ Features](27-ES2024-Features.md) | structuredClone, toSorted, Object.groupBy, Promise.withResolvers, ArrayBuffer.transfer |
+| 01 | [Execution Context](execution-context.md) | GEC vs FEC, creation/execution phases, scope chain |
+| 02 | [Call Stack](call-stack.md) | LIFO, stack frames, stack overflow, maximum call stack |
+| 03 | [Hoisting](hoisting.md) | var/let/const hoisting, temporal dead zone, function hoisting |
+| 04 | [Closures](closures.md) | Lexical scoping, closure lifecycle, module pattern |
+| 05 | [Scope](scope.md) | Global, function, block scope, scope chain, lexical environment |
+| 06 | [Lexical Environment](lexical-environment.md) | Environment records, outer reference, scope chain internals |
+| 07 | [`this` Keyword](this.md) | Implicit/explicit binding, arrow functions, call/apply/bind |
+| 08 | [Prototypes](prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance |
+| 09 | [Event Loop](event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline |
+| 10 | [Promises](promises.md) | Promise states, chaining, error handling, `Promise.all/race/allSettled/any` |
+| 11 | [Async/Await](async-await.md) | Async functions, error handling, concurrency, sequential vs parallel |
+| 12 | [Error Handling](error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling |
+| 13 | [Pass by Value](pass-by-value.md) | Primitive vs reference, value/reference semantics |
+| 14 | [Map, Set, WeakMap, WeakSet](map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups |
+| 15 | [Shallow vs Deep Copy](shallow-vs-deep-copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods |
+| 16 | [Proxy & Reflect](proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns |
+| 17 | [Debounce](debounce.md) | Implementation, leading/trailing, real-world use cases |
+| 18 | [Throttle](throttle.md) | Implementation, vs debounce, animation frame throttling |
+| 19 | [Memory Leaks](memory-leaks.md) | Detached DOM, closures, circular references, detection |
+| 20 | [Garbage Collection](garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco |
+| 21 | [Modules](modules.md) | ESM vs CommonJS, dynamic imports, tree shaking |
+| 22 | [Memoization](memoization.md) | Caching, `_.memoize`, React.memo, optimization |
+| 23 | [Generators](generators.md) | `function*`, yield, iterators, async generators |
+| 24 | [Currying & Composition](currying-composition.md) | Currying, partial application, pipe, compose, functional patterns |
+| 25 | [Recursion & Tail Call](recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoization |
+| 26 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 27 | [ES2024+ Features](es2024-features.md) | structuredClone, toSorted, Object.groupBy, Promise.withResolvers, ArrayBuffer.transfer |
 
 ---
 
-**Cross-references:** [TypeScript](../02-TypeScript/) | [Node.js](../../2-Backend-Stack/05-NodeJS/) | [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [TypeScript](../typescript/) | [Node.js](../../backend/nodejs/) | [Coding Patterns](../../interview-toolkit/coding-patterns/)
 ---
 
 ## Navigation
 
-[← Previous: Interview Strategy](../../0-Interview-Strategy/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: TypeScript →](../02-TypeScript/INDEX.md)
+[← Previous: Interview Strategy](../../strategy/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: TypeScript →](../typescript/INDEX.md)

@@ -507,9 +507,9 @@ When to use which?
 ---
 
 ## See Also
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
-- [SDE Role](../../8-Interview-Lanes/1-Indian-SDE-FAANG/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [JavaScript](../../frontend/javascript/)
+- [SDE Role](../../lanes/indian-sde-faang/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

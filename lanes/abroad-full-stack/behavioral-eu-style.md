@@ -119,7 +119,7 @@ See [story-bank.md](story-bank.md) for the 8 STAR+R stories you should have read
 
 ### 12. "What are your salary expectations?" (often written + verbal)
 
-**See:** [05-Comp-EU-Benchmarking.md](05-Comp-EU-Benchmarking.md) for full comp strategy.
+**See:** [Comp Eu Benchmarking](comp-eu-benchmarking.md) for full comp strategy.
 
 **TL;DR:** Give a range in EUR, based on the city's tier. Don't go first if you can avoid it. "Based on my research, senior full-stack roles in Berlin are EUR 75-100K base + 0.05-0.3% equity. I'm flexible based on the full package."
 

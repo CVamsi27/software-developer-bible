@@ -8,19 +8,19 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [WCAG Overview](01-WCAG-Overview.md) | POUR principles, conformance levels A/AA/AAA, success criteria |
-| 02 | [ARIA](02-ARIA.md) | Roles, states, properties, ARIA patterns, best practices |
-| 03 | [Keyboard Navigation](03-Keyboard-Navigation.md) | Tab order, focus management, skip links, keyboard shortcuts |
-| 04 | [Testing A11y](04-Testing-A11y.md) | Automated tools, manual testing, screen readers, axe-core |
-| 05 | [Interview Questions](05-Interview-Questions.md) | 50+ curated questions with answers |
-| 06 | [Color & Contrast](06-Color-and-Contrast.md) | WCAG 1.4.3, contrast ratios, CVD-safe palettes, forced-colors |
-| 07 | [Forms & Labels](07-Forms-and-Labels.md) | Label association, validation, fieldset, autocomplete, error handling |
+| 01 | [WCAG Overview](wcag-overview.md) | POUR principles, conformance levels A/AA/AAA, success criteria |
+| 02 | [ARIA](aria.md) | Roles, states, properties, ARIA patterns, best practices |
+| 03 | [Keyboard Navigation](keyboard-navigation.md) | Tab order, focus management, skip links, keyboard shortcuts |
+| 04 | [Testing A11y](testing-a11y.md) | Automated tools, manual testing, screen readers, axe-core |
+| 05 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 06 | [Color & Contrast](color-and-contrast.md) | WCAG 1.4.3, contrast ratios, CVD-safe palettes, forced-colors |
+| 07 | [Forms & Labels](forms-and-labels.md) | Label association, validation, fieldset, autocomplete, error handling |
 
 ---
 
-**Cross-references:** [Performance Monitoring](../26-Performance-Monitoring/) | [React (ARIA)](../../1-Frontend-Stack/03-React/) | [Testing (RTL)](../16-Testing/)
+**Cross-references:** [Performance Monitoring](../performance-monitoring/) | [React (ARIA)](../../frontend/react/) | [Testing (RTL)](../../quality/)
 ---
 
 ## Navigation
 
-[← Previous: Git Advanced](../../4-Platform-Stack/24-Git-Advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../26-Performance-Monitoring/INDEX.md)
+[← Previous: Git Advanced](../../platform/git-advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../performance-monitoring/INDEX.md)

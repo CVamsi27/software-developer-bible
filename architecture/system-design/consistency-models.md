@@ -264,10 +264,10 @@ The senior signal: name the model, explain the trade-off, justify the choice.
 
 ## Related concepts
 
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — the trade-off framework
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — how to actually achieve strong consistency
-- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — replication strategies
-- [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — 2PC, 3PC, saga
+- [Cap Theorem](cap-theorem.md) — the trade-off framework
+- [Consensus And Leader Election](consensus-and-leader-election.md) — how to actually achieve strong consistency
+- [Sharding And Replication](sharding-and-replication.md) — replication strategies
+- [Distributed Transactions](distributed-transactions.md) — 2PC, 3PC, saga
 
 ---
 
@@ -279,4 +279,4 @@ The senior signal: name the model, explain the trade-off, justify the choice.
 - **Weakest (eventual) = fastest, most available.** Use for feeds, counts, analytics.
 - **In interviews: name the model, explain the trade-off, justify the choice.**
 
-For case studies where consistency models come up, see [06-Payment-Gateway.md](06-Payment-Gateway.md) (linearizable for money), [11-Live-Betting.md](11-Live-Betting.md) (causal for odds), [15-Chat-System.md](15-Chat-System.md) (causal for message order), [22-Distributed-Counter.md](22-Distributed-Counter.md) (eventual for counts).
+For case studies where consistency models come up, see [Payment Gateway](payment-gateway.md) (linearizable for money), [Live Betting](live-betting.md) (causal for odds), [Chat System](chat-system.md) (causal for message order), [Distributed Counter](distributed-counter.md) (eventual for counts).

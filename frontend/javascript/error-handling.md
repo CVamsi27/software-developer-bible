@@ -498,9 +498,9 @@ withRetry(fn, { maxRetries: 3, baseDelay: 1000 });
 ---
 
 ## See Also
-- [Async/Await](11-Async-Await.md)
-- [Promises](10-Promises.md)
-- [TypeScript](../02-TypeScript/)
+- [Async/Await](async-await.md)
+- [Promises](promises.md)
+- [TypeScript](../typescript/)
 
 ## References & Learn More
 

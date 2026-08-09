@@ -310,14 +310,14 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Babel](05-Babel.md)
-- [Build Optimization](04-Build-Optimization.md)
-- [ESBuild & SWC](06-ESBuild-SWC.md)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [Turbopack](03-Turbopack.md)
-- [Vite](02-Vite.md)
-- [Webpack](01-Webpack.md)
+- [Babel](babel.md)
+- [Build Optimization](build-optimization.md)
+- [ESBuild & SWC](esbuild-swc.md)
+- [Next.js](../../frontend/nextjs/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [Turbopack](turbopack.md)
+- [Vite](vite.md)
+- [Webpack](webpack.md)
 
 ## References & Learn More
 

@@ -297,10 +297,10 @@ export function IsStrongPassword(opts?: ValidationOptions) {
 ---
 
 ## See Also
-- [Design Patterns](../10-Design-Patterns/) (DI for ConfigService)
-- [Microservices](../12-Microservices/) (config across services)
-- [Node.js](../05-NodeJS/) (env, dotenv, process management)
-- [REST APIs](../07-REST-API/) (validating API request bodies)
+- [Design Patterns](../design-patterns/) (DI for ConfigService)
+- [Microservices](../microservices/) (config across services)
+- [Node.js](../nodejs/) (env, dotenv, process management)
+- [REST APIs](../rest-api/) (validating API request bodies)
 
 ## References & Learn More
 
@@ -309,4 +309,4 @@ export function IsStrongPassword(opts?: ValidationOptions) {
 - [class-validator](https://github.com/typestack/class-validator)
 - [class-transformer](https://github.com/typestack/class-transformer)
 - [Joi](https://joi.dev/)
-- [12-Factor App: Config](https://12factor.net/config)
+- [Factor app: config](https://12factor.net/config)

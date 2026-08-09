@@ -822,11 +822,11 @@ Rate limiting is essential for API protection and fair usage. Token bucket is th
 ---
 
 ## See Also
-- [Bulkhead Pattern](../12-Microservices/14-Bulkhead-Pattern.md)
-- [Microservices](../12-Microservices/)
-- [NestJS](../06-NestJS/)
-- [Security](../09-Security/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Bulkhead Pattern](../microservices/bulkhead-pattern.md)
+- [Microservices](../microservices/)
+- [NestJS](../nestjs/)
+- [Security](../security/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

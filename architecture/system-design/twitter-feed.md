@@ -888,11 +888,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [REST APIs](../../backend/rest-api/)
+- [WebSockets](../../realtime/websockets/)
 
 ## References & Learn More
 

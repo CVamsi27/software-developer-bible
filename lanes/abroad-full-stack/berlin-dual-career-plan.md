@@ -5,12 +5,12 @@
 
 # Berlin Dual-Career Plan — Vamsi + Wife (CSSA), Newborn
 
-> **The bible's [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md) is a generic 8-country matrix. This file is the **specific execution plan** for one concrete case: Vamsi (Senior Full Stack, 5+ yrs, React/TS/Node/NestJS) + wife (Pega CSSA, LSA in progress) + newborn, targeting Berlin via EU Blue Card with wife on family reunification. Includes actual companies, actual timelines, actual comp, actual savings math. Created 2026-08-09.**
+> **The bible's [Visa Relocation Playbook](visa-relocation-playbook.md) is a generic 8-country matrix. This file is the **specific execution plan** for one concrete case: Vamsi (Senior Full Stack, 5+ yrs, React/TS/Node/NestJS) + wife (Pega CSSA, LSA in progress) + newborn, targeting Berlin via EU Blue Card with wife on family reunification. Includes actual companies, actual timelines, actual comp, actual savings math. Created 2026-08-09.**
 
 **Companion files:**
-- [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md) — general visa matrix
-- [07-Company-Profiles.md](07-Company-Profiles.md) — company deep dives
-- [10-Weekly-Tracker.md](10-Weekly-Tracker.md) — 4-week prep plan
+- [Visa Relocation Playbook](visa-relocation-playbook.md) — general visa matrix
+- [Company Profiles](company-profiles.md) — company deep dives
+- [Weekly Tracker](weekly-tracker.md) — 4-week prep plan
 - [story-bank.md](story-bank.md) — STAR stories
 - [study-plan.md](study-plan.md) — daily prep breakdown
 
@@ -88,7 +88,7 @@
 - Volkswagen (Java/Kotlin heavy)
 - Any role that lists Java as primary stack
 
-**See [07-Company-Profiles.md](07-Company-Profiles.md) for company deep dives. Below is the Vamsi-specific addendum.**
+**See [Company Profiles](company-profiles.md) for company deep dives. Below is the Vamsi-specific addendum.**
 
 ---
 
@@ -218,11 +218,11 @@
 - [ ] Wife: schedule LSA exam (Dec 2026 / Jan 2027)
 - [ ] Wife: apply to 7 English-friendly CSSA employers (Tier 1 above)
 
-**See [10-Weekly-Tracker.md](10-Weekly-Tracker.md) for the 4-week prep structure that runs in parallel.**
+**See [Weekly Tracker](weekly-tracker.md) for the 4-week prep structure that runs in parallel.**
 
 ### Month 1 (Sep 2026) — Prep sprint
 
-- 4-week prep plan from [10-Weekly-Tracker.md](10-Weekly-Tracker.md): stories, mock interviews, company mapping
+- 4-week prep plan from [Weekly Tracker](weekly-tracker.md): stories, mock interviews, company mapping
 - 8 STAR+R stories practiced (use [story-bank.md](story-bank.md))
 - 3 "Why this company?" answers
 - 1 mock interview done
@@ -430,7 +430,7 @@ File annual tax return (Steuererklärung) via ELSTER or with a Steuerberater (�
 
 ### Month 1 (Sep 2026)
 
-- [ ] 4-week prep plan per [10-Weekly-Tracker.md](10-Weekly-Tracker.md)
+- [ ] 4-week prep plan per [Weekly Tracker](weekly-tracker.md)
 - [ ] 8 STAR+R stories practiced
 - [ ] 3 "Why this company?" answers
 - [ ] 1 mock interview done
@@ -440,13 +440,13 @@ File annual tax return (Steuererklärung) via ELSTER or with a Steuerberater (�
 
 ## Cross-references
 
-- [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md) — General 8-country visa matrix
-- [07-Company-Profiles.md](07-Company-Profiles.md) — Tier 1/2 company deep dives
-- [10-Weekly-Tracker.md](10-Weekly-Tracker.md) — 4-week prep plan
+- [Visa Relocation Playbook](visa-relocation-playbook.md) — General 8-country visa matrix
+- [Company Profiles](company-profiles.md) — Tier 1/2 company deep dives
+- [Weekly Tracker](weekly-tracker.md) — 4-week prep plan
 - [study-plan.md](study-plan.md) — Daily prep breakdown
 - [story-bank.md](story-bank.md) — STAR stories
-- [0-Interview-Strategy/Resume-Tips.md](../../0-Interview-Strategy/Resume-Tips.md) — CV writing
-- [0-Interview-Strategy/STAR-Method.md](../../0-Interview-Strategy/STAR-Method.md) — STAR stories
+- [Interview Strategy/resume Tips](../../strategy/resume-tips.md) — CV writing
+- [Interview Strategy/star Method](../../strategy/star-method.md) — STAR stories
 
 ---
 
@@ -469,4 +469,4 @@ File annual tax return (Steuererklärung) via ELSTER or with a Steuerberater (�
 
 **Last updated:** 2026-08-09
 **Owner:** Vamsi
-**Companion to:** [06-Visa-Relocation-Playbook.md](06-Visa-Relocation-Playbook.md) (general 8-country matrix)
+**Companion to:** [Visa Relocation Playbook](visa-relocation-playbook.md) (general 8-country matrix)

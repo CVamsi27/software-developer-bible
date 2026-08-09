@@ -289,11 +289,11 @@ INTERVIEW TIPS:
 
 ## See Also
 
-- [AWS Lambda](05-AWS-Lambda.md)
-- [Docker](../13-Docker/)
-- [Edge Functions](02-Edge-Functions.md)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Observability](../22-Observability/)
+- [AWS Lambda](aws-lambda.md)
+- [Docker](../docker/)
+- [Edge Functions](edge-functions.md)
+- [Next.js](../../frontend/nextjs/)
+- [Observability](../observability/)
 
 ## References & Learn More
 

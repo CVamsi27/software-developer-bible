@@ -424,9 +424,9 @@ Each level is bigger and slower. The closer to the application, the smaller and 
 
 ## Related concepts
 
-- [00-Load-Balancing.md](00-Load-Balancing.md) — caches + LBs go together
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — caches are AP (eventual consistency)
-- [00-Consistency-Models.md](00-Consistency-Models.md) — caching = eventual consistency
+- [Load Balancing](load-balancing.md) — caches + LBs go together
+- [Cap Theorem](cap-theorem.md) — caches are AP (eventual consistency)
+- [Consistency Models](consistency-models.md) — caching = eventual consistency
 
 ---
 
@@ -439,4 +439,4 @@ Each level is bigger and slower. The closer to the application, the smaller and 
 - **Multi-level:** L1 (in-process) + L2 (Redis) + DB.
 - **In interviews: name the pattern, eviction, TTL, invalidation strategy.**
 
-For case studies, see [01-URL-Shortener.md](01-URL-Shortener.md) (cache-aside for short → long URL), [04-Netflix.md](04-Netflix.md) (multi-level caching), [12-Twitter-Feed.md](12-Twitter-Feed.md) (cache-aside for timeline), [18-Instagram.md](18-Instagram.md) (Redis for hot data).
+For case studies, see [Url Shortener](url-shortener.md) (cache-aside for short → long URL), [Netflix](netflix.md) (multi-level caching), [Twitter Feed](twitter-feed.md) (cache-aside for timeline), [Instagram](instagram.md) (Redis for hot data).

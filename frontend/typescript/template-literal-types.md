@@ -782,16 +782,16 @@ type ReplaceAll<S, F extends string, T extends string> =
 ---
 
 ## See Also
-- [Advanced Generics](10-Advanced-Generics.md)
-- [Branded Types](13-Branded-Types.md)
-- [Conditional Types](04-Conditional-Types.md)
-- [Declaration Files](14-Declaration-Files.md)
-- [Infer](05-Infer.md)
-- [JavaScript](../01-JavaScript/)
-- [keyof / typeof](06-Keyof-typeof.md)
-- [Mapped Types](07-Mapped-Types.md)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../03-React/)
+- [Advanced Generics](advanced-generics.md)
+- [Branded Types](branded-types.md)
+- [Conditional Types](conditional-types.md)
+- [Declaration Files](declaration-files.md)
+- [Infer](infer.md)
+- [JavaScript](../javascript/)
+- [keyof / typeof](keyof-typeof.md)
+- [Mapped Types](mapped-types.md)
+- [NestJS](../../backend/nestjs/)
+- [React](../react/)
 
 ## References & Learn More
 

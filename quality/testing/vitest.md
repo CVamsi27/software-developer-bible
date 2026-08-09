@@ -354,14 +354,14 @@ test: { pool: "forks" }
 ---
 
 ## See Also
-- [CI/CD](../../4-Platform-Stack/15-CI-CD)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
-- [E2E Testing](06-E2E-Testing.md)
-- [Integration Testing](05-Integration-Testing.md)
-- [Jest](02-Jest.md)
-- [Mocking](07-Mocking.md)
-- [React](../../1-Frontend-Stack/03-React/)
-- [Unit Testing](04-Unit-Testing.md)
+- [CI/CD](../../platform/ci-cd)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
+- [E2E Testing](e2e-testing.md)
+- [Integration Testing](integration-testing.md)
+- [Jest](jest.md)
+- [Mocking](mocking.md)
+- [React](../../frontend/react/)
+- [Unit Testing](unit-testing.md)
 
 ## References & Learn More
 

@@ -304,8 +304,8 @@ Pick 2-3 mediums per pattern, 25 min timer, ~30-40 problems total. **Stick to th
 
 ### Reference (skim, don't deep-read)
 - `software-developer-bible/0-Interview-Strategy/` — for the "communication" overlay
-- `software-developer-bible/1-Indian-SDE-FAANG/01-Complete-Guide.md` — orientation only, this is for FAANG
-- `software-developer-bible/1-Indian-SDE-FAANG/21-8-Week-Study-Schedule.md` — used to compare/contrast (this plan is the EU-mid-stage version, not the FAANG version)
+- `software-developer-bible/indian-sde-faang/01-Complete-Guide.md` — orientation only, this is for FAANG
+- `software-developer-bible/indian-sde-faang/21-8-Week-Study-Schedule.md` — used to compare/contrast (this plan is the EU-mid-stage version, not the FAANG version)
 - `software-developer-bible/20-CheatSheets/04-System-Design.md` — last-week review, not for learning
 
 ---

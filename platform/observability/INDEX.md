@@ -8,20 +8,20 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Logging](01-Logging.md) | Structured logging, log levels, centralized logging, ELK stack |
-| 02 | [Monitoring](02-Monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs/SLOs |
-| 03 | [Tracing](03-Tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger |
-| 04 | [Error Tracking](04-Error-Tracking.md) | Error aggregation, Sentry, source maps, alerting |
-| 05 | [Health Checks](05-Health-Checks.md) | Liveness/readiness probes, health endpoints, dependency checks |
-| 06 | [Interview Questions](06-Interview-Questions.md) | 50+ curated questions with answers |
-| 07 | [SLI / SLO / SLA](07-SLI-SLO-SLA.md) | Reliability targets, error budgets, multi-window burn rate |
-| 08 | [Alerting](08-Alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks |
+| 01 | [Logging](logging.md) | Structured logging, log levels, centralized logging, ELK stack |
+| 02 | [Monitoring](monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs/SLOs |
+| 03 | [Tracing](tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger |
+| 04 | [Error Tracking](error-tracking.md) | Error aggregation, Sentry, source maps, alerting |
+| 05 | [Health Checks](health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks |
+| 06 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
+| 07 | [SLI / SLO / SLA](sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate |
+| 08 | [Alerting](alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks |
 
 ---
 
-**Cross-references:** [Kubernetes (Health Checks)](../14-Kubernetes/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) | [Serverless & Edge](../27-Serverless-Edge/)
+**Cross-references:** [Kubernetes (Health Checks)](../../platform/) | [Performance Monitoring](../../quality/performance-monitoring/) | [Serverless & Edge](../serverless-edge/)
 ---
 
 ## Navigation
 
-[← Previous: WebSockets](../../6-Real-Time-Stack/21-WebSockets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../23-Build-Tools/INDEX.md)
+[← Previous: WebSockets](../../realtime/websockets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../build-tools/INDEX.md)

@@ -580,13 +580,13 @@ kubectl diff -f pod.yaml
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [Docker](../13-Docker/)
-- [Observability](../22-Observability/)
-- [Pod Disruption Budgets](12-Pod-Disruption-Budgets.md)
-- [PodPresets](13-PodPresets.md)
-- [Resource Quotas](14-Resource-Quotas.md)
-- [Serverless & Edge](../27-Serverless-Edge/)
+- [CI/CD](../ci-cd)
+- [Docker](../docker/)
+- [Observability](../observability/)
+- [Pod Disruption Budgets](pod-disruption-budgets.md)
+- [PodPresets](podpresets.md)
+- [Resource Quotas](resource-quotas.md)
+- [Serverless & Edge](../serverless-edge/)
 
 ## References & Learn More
 

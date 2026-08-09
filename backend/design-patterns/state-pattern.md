@@ -285,10 +285,10 @@ paid: {
 ---
 
 ## See Also
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/) (state in algorithms)
-- [JavaScript](../../1-Frontend-Stack/01-JavaScript/) (state in functional vs OO styles)
-- [NestJS](../06-NestJS/) (lifecycle states, sagas in microservices)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (workflows in design)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/) (state in algorithms)
+- [JavaScript](../../frontend/javascript/) (state in functional vs OO styles)
+- [NestJS](../nestjs/) (lifecycle states, sagas in microservices)
+- [System Design](../../architecture/system-design/) (workflows in design)
 
 ## References & Learn More
 

@@ -495,8 +495,8 @@ PROTOTYPE POLLUTION:
 ---
 
 ## See Also
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [Web Security](../09-Security/)
+- [Docker](../../platform/docker/)
+- [Web Security](../../backend/)
 
 ## References & Learn More
 

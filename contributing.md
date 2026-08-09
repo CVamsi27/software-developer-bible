@@ -88,8 +88,8 @@ Before contributing, review the existing files in the relevant section to unders
 │   └── 20-CheatSheets/
 │
 └── 8-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
-    ├── 1-Indian-SDE-FAANG/              # DSA-heavy, 8-week
-    └── 2-Abroad-Full-Stack/             # Take-home + system design, 4-week
+    ├── indian-sde-faang/              # DSA-heavy, 8-week
+    └── abroad-full-stack/             # Take-home + system design, 4-week
 ```
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
@@ -531,9 +531,9 @@ else:
 
 ```text
 ## See Also
-- [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](1-Frontend-Stack/01-JavaScript/)
-- [TypeScript](1-Frontend-Stack/02-TypeScript/)
+- [Coding Patterns](interview-toolkit/coding-patterns/)
+- [JavaScript](frontend/javascript/)
+- [TypeScript](frontend/typescript/)
 ```
 
 #### Rules
@@ -549,9 +549,9 @@ else:
 
 | Variant | Example | Usage |
 |---------|---------|-------|
-| Section directory | `- [React](1-Frontend-Stack/03-React/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](5-Quality-Stack/16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](2-Backend-Stack/07-REST-API/)` | Cross-section from subdirectories |
+| Section directory | `- [React](frontend/react/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](quality/testing/jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](backend/rest-api/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -570,7 +570,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```text
-**Cross-references:** [JavaScript](1-Frontend-Stack/01-JavaScript/) | [TypeScript](1-Frontend-Stack/02-TypeScript/) | [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [JavaScript](frontend/javascript/) | [TypeScript](frontend/typescript/) | [Coding Patterns](interview-toolkit/coding-patterns/)
 ```
 
 - Pipe-separated links

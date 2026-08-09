@@ -392,11 +392,11 @@ Alerts: match latency p99 > 30s, location stream lag > 10s, surge spike across >
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [System Design Interview Questions](16-Interview-Questions.md)
-- [Uber](03-Uber.md) (sister problem with different framing)
-- [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [System Design Interview Questions](interview-questions.md)
+- [Uber](uber.md) (sister problem with different framing)
+- [WebSockets](../../realtime/websockets/)
 
 ## References & Learn More
 

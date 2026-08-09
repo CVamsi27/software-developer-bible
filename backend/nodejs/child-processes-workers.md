@@ -400,8 +400,8 @@ CONSTRAINTS:
 ---
 
 ## See Also
-- [Clustering](04-Clustering.md)
-- [Docker](../../4-Platform-Stack/13-Docker/)
+- [Clustering](clustering.md)
+- [Docker](../../platform/docker/)
 
 ## References & Learn More
 

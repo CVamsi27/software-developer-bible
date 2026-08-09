@@ -467,12 +467,12 @@ function kthLargest(nums, k) {
 ---
 
 ## See Also
-- [Binary Search](03-Binary-Search.md)
+- [Binary Search](binary-search.md)
 - [Coding Patterns](./)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Heap](07-Heap.md)
-- [Monotonic Stack](13-Monotonic-Stack.md)
-- [String Search — KMP & Rabin-Karp](16-String-Search-KMP-Rabin-Karp.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Heap](heap.md)
+- [Monotonic Stack](monotonic-stack.md)
+- [String Search — KMP & Rabin-Karp](string-search-kmp-rabin-karp.md)
 
 ## References & Learn More
 

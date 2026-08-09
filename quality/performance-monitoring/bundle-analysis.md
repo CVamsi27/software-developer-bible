@@ -325,10 +325,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../25-Accessibility/)
-- [Build Optimization](../../4-Platform-Stack/23-Build-Tools/04-Build-Optimization.md)
-- [Core Web Vitals](01-Core-Web-Vitals.md)
-- [Lighthouse CI](05-Lighthouse-CI.md)
+- [Accessibility](../accessibility/)
+- [Build Optimization](../../platform/build-tools/build-optimization.md)
+- [Core Web Vitals](core-web-vitals.md)
+- [Lighthouse CI](lighthouse-ci.md)
 
 ## References & Learn More
 

@@ -542,8 +542,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Interview Strategy](../../0-Interview-Strategy/)
-- [SDE Role](../../8-Interview-Lanes/1-Indian-SDE-FAANG/)
+- [Interview Strategy](../../strategy/)
+- [SDE Role](../../lanes/indian-sde-faang/)
 
 ## References & Learn More
 

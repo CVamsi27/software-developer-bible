@@ -336,11 +336,11 @@ React 18's concurrent hooks (`useTransition`, `useDeferredValue`) and React 19's
 ---
 
 ## See Also
-- [Fiber](02-Fiber.md)
-- [Performance](13-Performance.md)
-- [Reconciliation](03-Reconciliation.md)
-- [State Management](14-State-Management.md)
-- [Suspense](11-Suspense.md)
+- [Fiber](fiber.md)
+- [Performance](performance.md)
+- [Reconciliation](reconciliation.md)
+- [State Management](state-management.md)
+- [Suspense](suspense.md)
 
 ## References & Learn More
 

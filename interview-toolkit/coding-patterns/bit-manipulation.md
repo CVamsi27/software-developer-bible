@@ -376,11 +376,11 @@ const FLAG_VISIBLE = 1 << 1;  // bit 1
 
 ## See Also
 - [Coding Patterns](./)
-- [Dynamic Programming](06-Dynamic-Programming.md)
-- [Heap](07-Heap.md)
-- [Monotonic Stack](13-Monotonic-Stack.md)
-- [Trie](08-Trie.md)
-- [Two Pointers](02-Two-Pointers.md)
+- [Dynamic Programming](dynamic-programming.md)
+- [Heap](heap.md)
+- [Monotonic Stack](monotonic-stack.md)
+- [Trie](trie.md)
+- [Two Pointers](two-pointers.md)
 
 ## References & Learn More
 

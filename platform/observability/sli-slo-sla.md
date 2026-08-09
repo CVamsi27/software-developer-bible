@@ -298,12 +298,12 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Error Tracking](04-Error-Tracking.md)
-- [Kubernetes](../14-Kubernetes/)
-- [Logging](01-Logging.md)
-- [Monitoring](02-Monitoring.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Error Tracking](error-tracking.md)
+- [Kubernetes](../kubernetes/)
+- [Logging](logging.md)
+- [Monitoring](monitoring.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

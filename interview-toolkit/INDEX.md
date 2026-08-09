@@ -1,13 +1,13 @@
 # Interview Toolkit
 
-> **Behavioral, coding patterns, cheat sheets** — shared by both the [1-Indian-SDE-FAANG lane](../8-Interview-Lanes/1-Indian-SDE-FAANG/) and the [2-Abroad-Full-Stack lane](../8-Interview-Lanes/2-Abroad-Full-Stack/).
+> **Behavioral, coding patterns, cheat sheets** — shared by both the [indian-sde-faang lane](../lanes/indian-sde-faang/) and the [abroad-full-stack lane](../lanes/abroad-full-stack/).
 
 | Section | Files | Topics |
 |---------|------:|--------|
-| [18-Behavioral](18-Behavioral/) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
-| [19-Coding-Patterns](19-Coding-Patterns/) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
-| [20-CheatSheets](20-CheatSheets/) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
+| [Behavioral](behavioral/) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
+| [Coding-Patterns](coding-patterns/) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
+| [CheatSheets](cheatsheets/) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
 
 ---
 
-**Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [8-Interview-Lanes/](../8-Interview-Lanes/) — the stacks stay stack-pure.
+**Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [Interview Lanes](../lanes/) — the stacks stay stack-pure.

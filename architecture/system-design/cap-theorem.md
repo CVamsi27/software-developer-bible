@@ -183,10 +183,10 @@ When asked "How would you design X?" bring up CAP explicitly:
 
 ## Related concepts
 
-- [00-Consistency-Models.md](00-Consistency-Models.md) — linearizability, eventual, causal
-- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — how to actually scale
-- [00-Failure-Modes.md](00-Failure-Modes.md) — network partitions, split brain, Byzantine
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — Paxos, Raft, when to use
+- [Consistency Models](consistency-models.md) — linearizability, eventual, causal
+- [Sharding And Replication](sharding-and-replication.md) — how to actually scale
+- [Failure Modes](failure-modes.md) — network partitions, split brain, Byzantine
+- [Consensus And Leader Election](consensus-and-leader-election.md) — Paxos, Raft, when to use
 
 ---
 
@@ -199,4 +199,4 @@ When asked "How would you design X?" bring up CAP explicitly:
 - **Most real systems are mixed** — CP for critical path, AP for everything else.
 - **In interviews: name the trade-off explicitly, per operation, per data type.**
 
-For the case studies where CAP comes up, see [01-URL-Shortener.md](01-URL-Shortener.md), [06-Payment-Gateway.md](06-Payment-Gateway.md), [08-Ticket-Booking.md](08-Ticket-Booking.md), [11-Live-Betting.md](11-Live-Betting.md), [15-Chat-System.md](15-Chat-System.md).
+For the case studies where CAP comes up, see [Url Shortener](url-shortener.md), [Payment Gateway](payment-gateway.md), [Ticket Booking](ticket-booking.md), [Live Betting](live-betting.md), [Chat System](chat-system.md).

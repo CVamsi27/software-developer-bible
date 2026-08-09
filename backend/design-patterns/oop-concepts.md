@@ -130,7 +130,7 @@ console.log(dog.speak());  // "Rex barks."
 
 **LSP (Liskov Substitution Principle):** Subclass must be substitutable for parent. If you have to check the type, LSP is violated.
 
-See [00-SOLID-Principles.md](00-SOLID-Principles.md) for the L (LSP) section.
+See [Solid Principles](solid-principles.md) for the L (LSP) section.
 
 **In interviews:** "I considered inheritance but used composition because the relationship is 'has-a' (a Car has-a Engine), not 'is-a' (a Car is-a Vehicle)."
 
@@ -477,10 +477,10 @@ console.log(dog.speak());  // "woof" — calls Dog's makeSound through this
 
 ## Related concepts
 
-- [00-SOLID-Principles.md](00-SOLID-Principles.md) — applies the 4 pillars
-- [00-DRY-KISS-YAGNI.md](00-DRY-KISS-YAGNI.md) — other design principles
-- [00-UML-Basics.md](00-UML-Basics.md) — visualizing OOP designs
-- [01-Singleton.md](01-Singleton.md) through [15-State-Pattern.md](15-State-Pattern.md) — GoF patterns
+- [Solid Principles](solid-principles.md) — applies the 4 pillars
+- [Dry Kiss Yagni](dry-kiss-yagni.md) — other design principles
+- [Uml Basics](uml-basics.md) — visualizing OOP designs
+- [Singleton](singleton.md) through [State Pattern](state-pattern.md) — GoF patterns
 
 ---
 

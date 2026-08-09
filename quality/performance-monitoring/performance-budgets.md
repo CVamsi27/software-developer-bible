@@ -410,16 +410,16 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Accessibility](../25-Accessibility/)
-- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
-- [Bundle Analysis](06-Bundle-Analysis.md)
-- [Core Web Vitals](01-Core-Web-Vitals.md)
-- [Lighthouse CI](05-Lighthouse-CI.md)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [Performance APIs](02-Performance-APIs.md)
-- [Profiling Tools](03-Profiling-Tools.md)
-- [React](../../1-Frontend-Stack/03-React/)
-- [Real User Monitoring](07-Real-User-Monitoring.md)
+- [Accessibility](../accessibility/)
+- [Build Tools](../../platform/build-tools/)
+- [Bundle Analysis](bundle-analysis.md)
+- [Core Web Vitals](core-web-vitals.md)
+- [Lighthouse CI](lighthouse-ci.md)
+- [Observability](../../platform/observability/)
+- [Performance APIs](performance-apis.md)
+- [Profiling Tools](profiling-tools.md)
+- [React](../../frontend/react/)
+- [Real User Monitoring](real-user-monitoring.md)
 
 ## References & Learn More
 

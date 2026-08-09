@@ -312,11 +312,11 @@ snyk test
 ---
 
 ## See Also
-- [Microservices](../12-Microservices/) (mTLS in service mesh)
-- [REST APIs](../07-REST-API/) (rate limiting, CORS, error handling)
-- [System Design](../../3-Architecture-Stack/11-System-Design/) (security in design)
-- [Threat Modeling](./11-Threat-Modeling-STRIDE.md) (per-system enumeration)
-- [Web Security](./09-Web-Security.md) (HTTPS, headers, OWASP Top 10)
+- [Microservices](../microservices/) (mTLS in service mesh)
+- [REST APIs](../rest-api/) (rate limiting, CORS, error handling)
+- [System Design](../../architecture/system-design/) (security in design)
+- [Threat Modeling](./threat-modeling-stride.md) (per-system enumeration)
+- [Web Security](./web-security.md) (HTTPS, headers, OWASP Top 10)
 
 ## References & Learn More
 

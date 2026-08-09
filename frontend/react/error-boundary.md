@@ -716,12 +716,12 @@ Performance:
 ---
 
 ## See Also
-- [Animation](../30-Animation/)
-- [Form Handling](../29-Form-Handling/)
-- [JavaScript](../01-JavaScript/)
-- [Next.js](../04-NextJS/)
-- [Portals](17-Portals.md)
-- [Testing](../../5-Quality-Stack/16-Testing/)
+- [Animation](../animation/)
+- [Form Handling](../form-handling/)
+- [JavaScript](../javascript/)
+- [Next.js](../nextjs/)
+- [Portals](portals.md)
+- [Testing](../../quality/testing/)
 
 ## References & Learn More
 

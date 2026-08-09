@@ -448,11 +448,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Bundle Analysis](../../5-Quality-Stack/26-Performance-Monitoring/06-Bundle-Analysis.md)
-- [Lighthouse CI](../../5-Quality-Stack/26-Performance-Monitoring/05-Lighthouse-CI.md)
-- [Next.js](../../1-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../../1-Frontend-Stack/03-React/)
+- [Bundle Analysis](../../quality/performance-monitoring/bundle-analysis.md)
+- [Lighthouse CI](../../quality/performance-monitoring/lighthouse-ci.md)
+- [Next.js](../../frontend/nextjs/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../../frontend/react/)
 
 ## References & Learn More
 

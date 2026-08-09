@@ -493,8 +493,8 @@ TIMEOUTS:
 ---
 
 ## See Also
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [Express / NestJS](../06-NestJS/)
+- [Docker](../../platform/docker/)
+- [Express / NestJS](../../backend/)
 
 ## References & Learn More
 

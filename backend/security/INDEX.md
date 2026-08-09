@@ -8,25 +8,25 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [JWT](01-JWT.md) | Token structure, signing, verification, refresh tokens, best practices |
-| 02 | [OAuth](02-OAuth.md) | OAuth 2.0 flows, grant types, scopes, PKCE, social login |
-| 03 | [XSS](03-XSS.md) | Stored, reflected, DOM-based XSS, CSP, encoding, sanitization |
-| 04 | [CSRF](04-CSRF.md) | SameSite cookies, CSRF tokens, double-submit cookies, origin checking |
-| 05 | [SQL Injection](05-SQL-Injection.md) | Parameterized queries, ORM protection, input validation, WAF |
-| 06 | [Encryption](06-Encryption.md) | Symmetric vs asymmetric, hashing, salting, TLS, AES, RSA |
-| 07 | [RBAC](07-RBAC.md) | Role-based access control, permissions, attribute-based access (ABAC) |
-| 08 | [Session & Cookies](08-Session-Cookies.md) | Session management, cookie attributes, secure flags, session fixation |
-| 09 | [Web Security](09-Web-Security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 |
-| 11 | [Threat Modeling — STRIDE](11-Threat-Modeling-STRIDE.md) | STRIDE, data flow diagrams, trust boundaries, attack trees |
-| 12 | [Secrets Management](12-Secrets-Management.md) | Vault, AWS Secrets Manager, dynamic credentials, rotation, KMS |
-| 13 | [API Security Best Practices](13-API-Security-Best-Practices.md) | OWASP API Top 10, BOLA, BFLA, mass assignment, SSRF, helmet |
-| 14 | [Interview Questions](14-Interview-Questions.md) | 50+ curated questions with answers |
+| 01 | [JWT](jwt.md) | Token structure, signing, verification, refresh tokens, best practices |
+| 02 | [OAuth](oauth.md) | OAuth 2.0 flows, grant types, scopes, PKCE, social login |
+| 03 | [XSS](xss.md) | Stored, reflected, DOM-based XSS, CSP, encoding, sanitization |
+| 04 | [CSRF](csrf.md) | SameSite cookies, CSRF tokens, double-submit cookies, origin checking |
+| 05 | [SQL Injection](sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF |
+| 06 | [Encryption](encryption.md) | Symmetric vs asymmetric, hashing, salting, TLS, AES, RSA |
+| 07 | [RBAC](rbac.md) | Role-based access control, permissions, attribute-based access (ABAC) |
+| 08 | [Session & Cookies](session-cookies.md) | Session management, cookie attributes, secure flags, session fixation |
+| 09 | [Web Security](web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 |
+| 11 | [Threat Modeling — STRIDE](threat-modeling-stride.md) | STRIDE, data flow diagrams, trust boundaries, attack trees |
+| 12 | [Secrets Management](secrets-management.md) | Vault, AWS Secrets Manager, dynamic credentials, rotation, KMS |
+| 13 | [API Security Best Practices](api-security-best-practices.md) | OWASP API Top 10, BOLA, BFLA, mass assignment, SSRF, helmet |
+| 14 | [Interview Questions](interview-questions.md) | 50+ curated questions with answers |
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [Authentication (REST)](../07-REST-API/06-Authentication.md) | [Microservices (mTLS, service mesh)](../12-Microservices/)
+**Cross-references:** [REST APIs](../rest-api/) | [System Design](../../architecture/system-design/) | [Authentication (REST)](../rest-api/authentication.md) | [Microservices (mTLS, service mesh)](../../backend/)
 ---
 
 ## Navigation
 
-[← Previous: Database](../08-Database/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../10-Design-Patterns/INDEX.md)
+[← Previous: Database](../database/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../design-patterns/INDEX.md)

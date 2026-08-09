@@ -176,8 +176,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Blue-Green & Canary](03-Blue-Green-Canary.md)
-- [Docker](../13-Docker/)
+- [Blue-Green & Canary](blue-green-canary.md)
+- [Docker](../docker/)
 
 ## References & Learn More
 

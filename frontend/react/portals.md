@@ -832,11 +832,11 @@ const usePortal = (id = 'portal-root') => {
 
 ## See Also
 
-- [Context API](10-Context-API.md)
-- [Error Boundary](12-Error-Boundary.md)
-- [Performance](13-Performance.md)
-- [Reconciliation](03-Reconciliation.md)
-- [useRef](09-UseRef.md)
+- [Context API](context-api.md)
+- [Error Boundary](error-boundary.md)
+- [Performance](performance.md)
+- [Reconciliation](reconciliation.md)
+- [useRef](useref.md)
 
 ## References & Learn More
 

@@ -926,11 +926,11 @@ Optimization:
 ---
 
 ## See Also
-- [Authentication](13-Authentication.md)
-- [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [React](../03-React/)
-- [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/)
+- [Authentication](authentication.md)
+- [Incremental Static Regeneration](incremental-static-regeneration.md)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [React](../react/)
+- [Serverless & Edge](../../platform/serverless-edge/)
 
 ## References & Learn More
 

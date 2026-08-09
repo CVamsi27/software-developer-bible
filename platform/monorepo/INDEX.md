@@ -8,18 +8,18 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Monorepo Overview](01-Monorepo-Overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol |
-| 02 | [Turborepo](02-Turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching |
-| 03 | [Nx](03-Nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud |
-| 04 | [Interview Questions](04-Interview-Questions.md) | 30+ curated questions with answers |
-| 05 | [Monorepo Tools Deep-Dive](05-Monorepo-Tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins |
+| 01 | [Monorepo Overview](monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol |
+| 02 | [Turborepo](turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching |
+| 03 | [Nx](nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud |
+| 04 | [Interview Questions](interview-questions.md) | 30+ curated questions with answers |
+| 05 | [Monorepo Tools Deep-Dive](monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins |
 
 ---
 
-**Cross-references:** [Build Tools](../23-Build-Tools/) | [CI/CD](../15-CI-CD) | [Git Advanced](../24-Git-Advanced/)
+**Cross-references:** [Build Tools](../build-tools/) | [CI/CD](../ci-cd) | [Git Advanced](../git-advanced/)
 
 ---
 
 ## Navigation
 
-[← Previous: Serverless & Edge](../27-Serverless-Edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../../1-Frontend-Stack/29-Form-Handling/INDEX.md)
+[← Previous: Serverless & Edge](../serverless-edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../../frontend/form-handling/INDEX.md)

@@ -523,11 +523,11 @@ function process(shape: Shape): number {
 ---
 
 ## See Also
-- [Branded Types](13-Branded-Types.md)
-- [Declaration Files](14-Declaration-Files.md)
-- [JavaScript](../01-JavaScript/)
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [React](../03-React/)
+- [Branded Types](branded-types.md)
+- [Declaration Files](declaration-files.md)
+- [JavaScript](../javascript/)
+- [NestJS](../../backend/nestjs/)
+- [React](../react/)
 
 ## References & Learn More
 

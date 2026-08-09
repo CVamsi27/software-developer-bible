@@ -123,8 +123,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../15-CI-CD)
-- [ConfigMaps & Secrets](04-ConfigMaps-Secrets.md)
+- [CI/CD](../ci-cd)
+- [ConfigMaps & Secrets](configmaps-secrets.md)
 
 ## References & Learn More
 

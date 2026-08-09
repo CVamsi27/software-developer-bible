@@ -314,7 +314,7 @@ INTERVIEW TIPS:
 ```
 ## See Also
 
-- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
+- [Behavioral](../../interview-toolkit/behavioral/)
 
 ## References & Learn More
 

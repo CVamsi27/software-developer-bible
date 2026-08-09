@@ -267,11 +267,11 @@ INTERVIEW TIPS:
 
 ## See Also
 
-- [Edge Functions](02-Edge-Functions.md)
-- [Observability](../22-Observability/)
-- [Serverless Overview](01-Serverless-Overview.md)
-- [Serverless Patterns](03-Serverless-Patterns.md)
-- [Vercel Deployments](06-Vercel-Deployments.md)
+- [Edge Functions](edge-functions.md)
+- [Observability](../observability/)
+- [Serverless Overview](serverless-overview.md)
+- [Serverless Patterns](serverless-patterns.md)
+- [Vercel Deployments](vercel-deployments.md)
 
 ## References & Learn More
 

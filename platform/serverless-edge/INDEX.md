@@ -8,20 +8,20 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Serverless Overview](01-Serverless-Overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers |
-| 02 | [Edge Functions](02-Edge-Functions.md) | Edge runtimes (Cloudflare, Vercel, Lambda@Edge), V8 isolates, state storage |
-| 03 | [Serverless Patterns](03-Serverless-Patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS |
-| 04 | [Interview Questions](04-Interview-Questions.md) | 30+ curated questions from beginner to FAANG-style |
-| 05 | [AWS Lambda](05-AWS-Lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge |
-| 06 | [Vercel Deployments](06-Vercel-Deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute |
-| 07 | [Serverless Frameworks](07-Serverless-Frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless |
+| 01 | [Serverless Overview](serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers |
+| 02 | [Edge Functions](edge-functions.md) | Edge runtimes (Cloudflare, Vercel, Lambda@Edge), V8 isolates, state storage |
+| 03 | [Serverless Patterns](serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS |
+| 04 | [Interview Questions](interview-questions.md) | 30+ curated questions from beginner to FAANG-style |
+| 05 | [AWS Lambda](aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge |
+| 06 | [Vercel Deployments](vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute |
+| 07 | [Serverless Frameworks](serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless |
 
 ---
 
-**Cross-references:** [CI/CD](../15-CI-CD) | [Docker](../13-Docker/) | [Next.js (Edge Middleware)](../../1-Frontend-Stack/04-NextJS/) | [Observability](../22-Observability/)
+**Cross-references:** [CI/CD](../ci-cd) | [Docker](../docker/) | [Next.js (Edge Middleware)](../../frontend/nextjs/) | [Observability](../observability/)
 
 ---
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../28-Monorepo/INDEX.md)
+[← Previous: Performance Monitoring](../../quality/performance-monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../monorepo/INDEX.md)

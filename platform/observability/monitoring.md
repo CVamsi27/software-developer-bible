@@ -512,9 +512,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Kubernetes](../14-Kubernetes/)
-- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
-- [Serverless & Edge](../27-Serverless-Edge/)
+- [Kubernetes](../kubernetes/)
+- [Performance Monitoring](../../quality/performance-monitoring/)
+- [Serverless & Edge](../serverless-edge/)
 
 ## References & Learn More
 

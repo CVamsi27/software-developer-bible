@@ -287,10 +287,10 @@ When asked "what if the network partitions?":
 
 ## Related concepts
 
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — consensus is CP
-- [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — single-leader uses consensus
-- [00-Failure-Modes.md](00-Failure-Modes.md) — network partition, split brain
-- [../../2-Backend-Stack/12-Microservices/01-Service-Discovery.md](../../2-Backend-Stack/12-Microservices/01-Service-Discovery.md) — service discovery often uses consensus
+- [Cap Theorem](cap-theorem.md) — consensus is CP
+- [Sharding And Replication](sharding-and-replication.md) — single-leader uses consensus
+- [Failure Modes](failure-modes.md) — network partition, split brain
+- [../../2-Backend-Stack/12-Microservices/01-Service-Discovery.md](../../backend/microservices/service-discovery.md) — service discovery often uses consensus
 
 ---
 
@@ -303,4 +303,4 @@ When asked "what if the network partitions?":
 - **Leader election** = heartbeat-based, with majority quorum. Prevents split brain.
 - **In interviews: name Raft, mention the failure modes, mention the timeout.**
 
-For case studies, see [22-Distributed-Counter.md](22-Distributed-Counter.md) (consensus for hot keys), [11-Live-Betting.md](11-Live-Betting.md) (consensus for odds), [20-Dropbox.md](20-Dropbox.md) (eventual consistency vs consensus trade-off).
+For case studies, see [Distributed Counter](distributed-counter.md) (consensus for hot keys), [Live Betting](live-betting.md) (consensus for odds), [Dropbox](dropbox.md) (eventual consistency vs consensus trade-off).

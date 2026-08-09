@@ -12,9 +12,9 @@
 - **5 cases:** workflow engine, payment gateway, multi-tenant SaaS, real-time booking, event-driven microservices
 - **Each:** framework + sample answer + trade-off discussion + what gets you rejected
 - **Practice order:** start with URL shortener (universal), then your target company's most-likely case
-- **For 17 more cases (canonical set):** see [../../3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/)
+- **For 17 more cases (canonical set):** see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/)
 
-The bible's [3-Architecture-Stack/](../../3-Architecture-Stack/) has the full case library. This file is the **5 must-practice for this lane** subset.
+The bible's [Architecture Stack](../../architecture/) has the full case library. This file is the **5 must-practice for this lane** subset.
 
 ---
 
@@ -404,7 +404,7 @@ WHERE id = ? AND version = ? AND status = 'available';
 
 That's enough to be sharp on system design for this lane.
 
-For 17 more cases (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/).
+For 17 more cases (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/).
 
 ---
 
@@ -413,4 +413,4 @@ For 17 more cases (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-A
 - **5 cases to practice:** workflow engine, payment gateway, multi-tenant SaaS, real-time booking, event-driven microservices
 - **Each case:** framework + sample answer + trade-offs + what gets you rejected
 - **Practice 4 reps per case with 45-min timer + recording.** 15 hours total.
-- **For 17 more cases:** see [../../3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/)
+- **For 17 more cases:** see [../../3-Architecture-Stack/11-System-Design/](../../architecture/system-design/)

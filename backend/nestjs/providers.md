@@ -652,10 +652,10 @@ Providers are NestJS's core building blocks that implement business logic, data 
 ---
 
 ## See Also
-- [Design Patterns](../10-Design-Patterns/)
-- [Microservices](../12-Microservices/)
-- [Node.js](../05-NodeJS/)
-- [REST APIs](../07-REST-API/)
+- [Design Patterns](../design-patterns/)
+- [Microservices](../microservices/)
+- [Node.js](../nodejs/)
+- [REST APIs](../rest-api/)
 
 ## References & Learn More
 

@@ -428,11 +428,11 @@ for message in consumer:
 This cheat sheet provides a concise reference to core System Design concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [Security](../../2-Backend-Stack/09-Security/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [Observability](../../platform/observability/)
+- [Security](../../backend/security/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

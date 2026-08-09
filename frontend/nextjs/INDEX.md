@@ -8,28 +8,28 @@
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [SSR / CSR / SSG / ISR](01-SSR-CSR-SSG-ISR.md) | Rendering strategies comparison, when to use each |
-| 02 | [App Router](02-App-Router.md) | Layouts, nested routes, loading states, error handling |
-| 03 | [Server Components](03-Server-Components.md) | RSC architecture, server rendering, serialization |
-| 04 | [Client Components](04-Client-Components.md) | 'use client', interleaving, client boundaries |
-| 05 | [Middleware](05-Middleware.md) | Edge middleware, matchers, redirects, rewrite |
-| 06 | [Server Actions](06-Server-Actions.md) | Mutations, revalidation, progressive enhancement |
-| 07 | [Route Handlers](07-Route-Handlers.md) | API routes, request/response, caching |
-| 08 | [Metadata](08-Metadata.md) | Static/dynamic metadata, SEO, Open Graph |
-| 09 | [Caching](09-Caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate |
-| 10 | [Streaming](10-Streaming.md) | Streaming SSR, Suspense boundaries, loading UI |
-| 11 | [Image Optimization](11-Image-Optimization.md) | next/image, lazy loading, responsive images |
-| 12 | [Interview Questions](12-Interview-Questions.md) | 60+ curated questions with answers |
-| 13 | [Authentication](13-Authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC |
-| 14 | [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md) | Stale-while-revalidate, on-demand revalidation, cache tags, generateStaticParams, fallback strategies |
-| 15 | [Static Exports](15-Static-Exports.md) | Static export config, generateStaticParams, client-side data, deployment, hosting comparison |
-| 16 | [Data Fetching Patterns](16-Data-Fetching-Patterns.md) | Server Component fetch, unstable_cache, Server Actions, React Query, Suspense, parallel fetches |
+| 01 | [SSR / CSR / SSG / ISR](ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each |
+| 02 | [App Router](app-router.md) | Layouts, nested routes, loading states, error handling |
+| 03 | [Server Components](server-components.md) | RSC architecture, server rendering, serialization |
+| 04 | [Client Components](client-components.md) | 'use client', interleaving, client boundaries |
+| 05 | [Middleware](middleware.md) | Edge middleware, matchers, redirects, rewrite |
+| 06 | [Server Actions](server-actions.md) | Mutations, revalidation, progressive enhancement |
+| 07 | [Route Handlers](route-handlers.md) | API routes, request/response, caching |
+| 08 | [Metadata](metadata.md) | Static/dynamic metadata, SEO, Open Graph |
+| 09 | [Caching](caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate |
+| 10 | [Streaming](streaming.md) | Streaming SSR, Suspense boundaries, loading UI |
+| 11 | [Image Optimization](image-optimization.md) | next/image, lazy loading, responsive images |
+| 12 | [Interview Questions](interview-questions.md) | 60+ curated questions with answers |
+| 13 | [Authentication](authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC |
+| 14 | [Incremental Static Regeneration](incremental-static-regeneration.md) | Stale-while-revalidate, on-demand revalidation, cache tags, generateStaticParams, fallback strategies |
+| 15 | [Static Exports](static-exports.md) | Static export config, generateStaticParams, client-side data, deployment, hosting comparison |
+| 16 | [Data Fetching Patterns](data-fetching-patterns.md) | Server Component fetch, unstable_cache, Server Actions, React Query, Suspense, parallel fetches |
 
 ---
 
-**Cross-references:** [React](../03-React/) | [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
+**Cross-references:** [React](../react/) | [Serverless & Edge](../../platform/serverless-edge/) | [Performance Monitoring](../../quality/performance-monitoring/)
 ---
 
 ## Navigation
 
-[← Previous: React](../03-React/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Node.js →](../../2-Backend-Stack/05-NodeJS/INDEX.md)
+[← Previous: React](../react/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Node.js →](../../backend/nodejs/INDEX.md)

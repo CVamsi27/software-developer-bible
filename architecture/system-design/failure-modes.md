@@ -378,11 +378,11 @@ For every component, ask "what if it fails?" and explain the mitigation.
 
 ## Related concepts
 
-- [00-CAP-Theorem.md](00-CAP-Theorem.md) — partitions are inevitable
-- [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — how to elect a leader
-- [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — saga for multi-service
-- [../../4-Platform-Stack/22-Observability/](../../4-Platform-Stack/22-Observability/) — observability
-- [../../4-Platform-Stack/14-Kubernetes/](../../4-Platform-Stack/14-Kubernetes/) — K8s failure handling
+- [Cap Theorem](cap-theorem.md) — partitions are inevitable
+- [Consensus And Leader Election](consensus-and-leader-election.md) — how to elect a leader
+- [Distributed Transactions](distributed-transactions.md) — saga for multi-service
+- [../../4-Platform-Stack/22-Observability/](../../platform/observability/) — observability
+- [../../4-Platform-Stack/14-Kubernetes/](../../platform/kubernetes/) — K8s failure handling
 
 ---
 
@@ -395,4 +395,4 @@ For every component, ask "what if it fails?" and explain the mitigation.
 - **Test your failure handling:** chaos engineering, game days, fire drills.
 - **In interviews: name specific failure modes, name specific mitigations.**
 
-For case studies, see [02-WhatsApp.md](02-WhatsApp.md) (message delivery failure handling), [06-Payment-Gateway.md](06-Payment-Gateway.md) (payment provider failure), [15-Chat-System.md](15-Chat-System.md) (WebSocket failure handling), [22-Distributed-Counter.md](22-Distributed-Counter.md) (consensus for hot keys).
+For case studies, see [Whatsapp](whatsapp.md) (message delivery failure handling), [Payment Gateway](payment-gateway.md) (payment provider failure), [Chat System](chat-system.md) (WebSocket failure handling), [Distributed Counter](distributed-counter.md) (consensus for hot keys).

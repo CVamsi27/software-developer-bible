@@ -483,14 +483,14 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [ARIA](02-ARIA.md)
-- [Color & Contrast](06-Color-and-Contrast.md)
-- [Keyboard Navigation](03-Keyboard-Navigation.md)
-- [Performance Monitoring](../26-Performance-Monitoring/)
-- [React](../../1-Frontend-Stack/03-React/)
-- [Testing](../16-Testing/)
-- [Testing Accessibility](04-Testing-A11y.md)
-- [WCAG Overview](01-WCAG-Overview.md)
+- [ARIA](aria.md)
+- [Color & Contrast](color-and-contrast.md)
+- [Keyboard Navigation](keyboard-navigation.md)
+- [Performance Monitoring](../performance-monitoring/)
+- [React](../../frontend/react/)
+- [Testing](../testing/)
+- [Testing Accessibility](testing-a11y.md)
+- [WCAG Overview](wcag-overview.md)
 
 ## References & Learn More
 

@@ -78,8 +78,8 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [API Gateway](../07-REST-API/09-API-Gateway.md)
-- [CQRS](13-CQRS.md)
+- [API Gateway](../rest-api/api-gateway.md)
+- [CQRS](cqrs.md)
 
 ## References & Learn More
 

@@ -646,13 +646,13 @@ Best Practices:
 
 ## See Also
 
-- [API Gateway](02-API-Gateway.md)
-- [Circuit Breaker](04-Circuit-Breaker.md)
-- [Distributed Transactions](11-Distributed-Transactions.md)
-- [Event Sourcing](07-Event-Sourcing.md)
-- [Interview Questions](08-Interview-Questions.md)
-- [Service Discovery](01-Service-Discovery.md)
-- [Service Mesh](10-Service-Mesh.md)
+- [API Gateway](api-gateway.md)
+- [Circuit Breaker](circuit-breaker.md)
+- [Distributed Transactions](distributed-transactions.md)
+- [Event Sourcing](event-sourcing.md)
+- [Interview Questions](interview-questions.md)
+- [Service Discovery](service-discovery.md)
+- [Service Mesh](service-mesh.md)
 
 ## References & Learn More
 

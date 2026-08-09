@@ -994,9 +994,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../2-Backend-Stack/06-NestJS/)
-- [Observability](../../4-Platform-Stack/22-Observability/)
-- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [NestJS](../../backend/nestjs/)
+- [Observability](../../platform/observability/)
+- [System Design](../../architecture/system-design/)
 
 ## References & Learn More
 

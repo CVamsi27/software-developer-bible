@@ -376,11 +376,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Branching Strategies](01-Branching-Strategies.md)
-- [CI/CD](../15-CI-CD)
-- [Git Advanced Commands](04-Git-Advanced-Commands.md)
-- [Monorepo](../28-Monorepo/)
-- [Rebase & Cherry-Pick](02-Rebase-Cherry-Pick.md)
+- [Branching Strategies](branching-strategies.md)
+- [CI/CD](../ci-cd)
+- [Git Advanced Commands](git-advanced-commands.md)
+- [Monorepo](../monorepo/)
+- [Rebase & Cherry-Pick](rebase-cherry-pick.md)
 
 ## References & Learn More
 

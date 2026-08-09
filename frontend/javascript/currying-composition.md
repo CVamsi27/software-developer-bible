@@ -281,8 +281,8 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 ---
 
 ## See Also
-- [Closures](04-Closures.md)
-- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [Closures](closures.md)
+- [Coding Patterns](../../interview-toolkit/coding-patterns/)
 
 ## References & Learn More
 

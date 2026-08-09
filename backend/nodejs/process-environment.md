@@ -505,12 +505,12 @@ CONTROL:
 ---
 
 ## See Also
-- [Docker](../../4-Platform-Stack/13-Docker/)
-- [Event Loop](01-Event-Loop.md)
+- [Docker](../../platform/docker/)
+- [Event Loop](event-loop.md)
 
 ## References & Learn More
 
 - [Node.js Process Documentation](https://nodejs.org/api/process.html)
 - [Node.js CLI Documentation](https://nodejs.org/api/cli.html)
 - [Node.js: Environment Variables](https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs)
-- [12-Factor App: Config](https://12factor.net/config)
+- [Factor app: config](https://12factor.net/config)

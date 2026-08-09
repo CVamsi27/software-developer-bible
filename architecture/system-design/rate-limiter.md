@@ -913,10 +913,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../2-Backend-Stack/08-Database/)
-- [Microservices](../../2-Backend-Stack/12-Microservices/)
-- [REST APIs](../../2-Backend-Stack/07-REST-API/)
-- [Security](../../2-Backend-Stack/09-Security/)
+- [Database](../../backend/database/)
+- [Microservices](../../backend/microservices/)
+- [REST APIs](../../backend/rest-api/)
+- [Security](../../backend/security/)
 
 ## References & Learn More
 

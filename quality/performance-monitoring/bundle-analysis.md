@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Performance Monitoring | category: Quality | tags: concept, tool, guide -->
 [![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -338,3 +339,5 @@ INTERVIEW TIPS:
 - [size-limit](https://github.com/ai/size-limit)
 - [Why 170 KB?](https://hpbn.co/building-blocks-of-tcp/#optimizing-for-tcp)
 - [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
+
+{% endraw %}

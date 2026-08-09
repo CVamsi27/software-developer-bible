@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -896,3 +897,5 @@ Relationships:
 - [React Docs: Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [React Context API Guide](https://www.freecodecamp.org/news/context-api-in-react/)
 - [When to Use Context API vs Redux](https://www.robinwieruch.de/react-context-redis/)
+
+{% endraw %}

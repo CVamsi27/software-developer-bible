@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -815,3 +816,5 @@ Common Pitfalls:
 - [React Docs: Rendering](https://react.dev/reference/react-dom/server)
 - [A Comprehensive Guide to React Rendering Behavior](https://blog.savut.se/2021/03/a-comprehensive-guide-to-react-rendering-behavior/)
 - [React Rendering](https://www.reactjs.org/docs/rendering-elements.html)
+
+{% endraw %}

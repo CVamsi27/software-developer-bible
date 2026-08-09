@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Design Patterns | category: Architecture | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
@@ -1358,3 +1359,5 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 - [Martin Fowler: CQRS](https://martinfowler.com/bliki/CQRS.html)
 - [NestJS CQRS](https://docs.nestjs.com/recipes/cqrs)
 - [Dependency Injection in TypeScript](https://inversify.io/)
+
+{% endraw %}

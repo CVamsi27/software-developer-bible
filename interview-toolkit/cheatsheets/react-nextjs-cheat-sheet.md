@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
 [![Section](https://img.shields.io/badge/section-CheatSheets-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
@@ -410,3 +411,5 @@ This cheat sheet provides a concise reference to core React NextJS concepts, pat
 - [LeetCode](https://leetcode.com/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -536,3 +537,5 @@ Common Pitfalls:
 - [React Docs: React without JSX](https://react.dev/learn/writing-markup-with-jsx)
 - [How the Virtual DOM works in React](https://www.freecodecamp.org/news/what-is-the-virtual-dom-in-react/)
 - [React Reconciliation: The New Algorithm](https://react.dev/learn/you-might-not-need-an-effect)
+
+{% endraw %}

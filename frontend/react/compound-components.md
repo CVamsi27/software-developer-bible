@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -731,3 +732,5 @@ Parent.Child = Child;
 - [Patterns.dev: Compound Components](https://www.patterns.dev/react/compound-pattern/)
 - [Kent C. Dodds: Compound Components](https://kentcdodds.com/blog/compound-components-with-react-hooks)
 - [React Context to the Rescue](https://www.robinwieruch.de/react-context/)
+
+{% endraw %}

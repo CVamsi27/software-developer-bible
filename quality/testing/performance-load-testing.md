@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Testing | category: Quality | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Testing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -486,3 +487,5 @@ Client-side latency p95 = 500ms doesn't mean much if the **DB CPU is at 95%** or
 - [Google SRE Book — Ch. 6: Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/)
 - [Little's Law: Concurrency = Throughput × Latency](https://en.wikipedia.org/wiki/Little%27s_law)
 - [The Four Golden Signals](https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals)
+
+{% endraw %}

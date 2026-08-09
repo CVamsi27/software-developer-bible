@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Kubernetes | category: DevOps | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
@@ -573,3 +574,5 @@ helm search repo nginx
 - [Learn Kubernetes The Easy Way](https://learnk8s.io/)
 - [Kubernetes Patterns by Bilgin Ibryam](https://www.amazon.com/Kubernetes-Patterns-Cloud-Native-Applications/dp/1492050288)
 - [CNCF Landscape](https://landscape.cncf.io/)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Security | category: Architecture | tags: interview-questions -->
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
@@ -1946,3 +1947,5 @@ Mastering security interview questions requires understanding:
 - [PortSwigger Web Security Academy](https://portswigger.net/web-security)
 - [HackTheBox - Cybersecurity Training](https://www.hackthebox.com/)
 - [Cybrary - Free Cybersecurity Training](https://www.cybrary.it/)
+
+{% endraw %}

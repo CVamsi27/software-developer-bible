@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -1136,3 +1137,5 @@ Performance:
 - [Testing Library: renderHook](https://testing-library.com/docs/react-testing-library/api/#renderhook)
 - [useHooks: Collection of Custom Hooks](https://usehooks.com/)
 - [React Custom Hooks Patterns](https://www.robinwieruch.de/react-custom-hook/)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -520,3 +521,5 @@ Commands:
 - [Next.js Docs: Static Export Configuration](https://nextjs.org/docs/app/api-reference/next-config-js/output)
 - [Next.js: generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
 - [Vercel: Deploying Static Sites](https://vercel.com/docs/deployments/static-deployments)
+
+{% endraw %}

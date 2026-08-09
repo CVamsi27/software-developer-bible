@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Observability | category: Observability | tags: concept, reference, guide -->
 [![Section](https://img.shields.io/badge/section-Observability-blue)](#)
 [![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](#)
@@ -418,3 +419,5 @@ INTERVIEW TIPS:
 - [Alertmanager Configuration](https://prometheus.io/docs/alerting/latest/configuration/)
 - [Sloth - SLO generator](https://github.com/slok/sloth)
 - [Robust Perception - Alerts Best Practices](https://www.robustperception.io/)
+
+{% endraw %}

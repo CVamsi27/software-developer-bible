@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Observability | category: Observability | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Observability-blue)](#)
 [![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](#)
@@ -525,3 +526,5 @@ INTERVIEW TIPS:
 - [The RED Method](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/)
 - [PromQL for Humans](https://timber.io/blog/promql-for-humans/)
 - [Alerting Best Practices](https://sre.google/workbook/alerting-on-slos/)
+
+{% endraw %}

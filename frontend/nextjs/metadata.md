@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -785,3 +786,5 @@ export default function robots(): MetadataRoute.Robots { [...] }
 - [Next.js Docs: Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
 - [generateMetadata API](https://nextjs.org/docs/app/api-reference/functions/generate-metadata)
 - [OpenGraph and Twitter Cards](https://nextjs.org/docs/app/building-your-application/optimizing/metadata#open-graph-and-twitter-cards)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -350,3 +351,5 @@ React 18's concurrent hooks (`useTransition`, `useDeferredValue`) and React 19's
 - [React 19 Blog Post](https://react.dev/blog/2024/12/05/react-19)
 - [React Docs: use (React 19)](https://react.dev/reference/react/use)
 - [Patterns.dev: Concurrent UI Patterns](https://www.patterns.dev/react/concurrent-patterns)
+
+{% endraw %}

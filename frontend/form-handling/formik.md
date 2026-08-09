@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Form Handling | category: Frontend | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -398,3 +399,5 @@ INTERVIEW ANSWER:
 - [Formik vs React Hook Form](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
 - [Yup Documentation](https://github.com/jquense/yup)
 - [zod-formik-adapter](https://github.com/robertLichtnow/zod-formik-adapter)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -836,3 +837,5 @@ Common Patterns:
 - [JWT Best Practices](https://datatracker.ietf.org/doc/html/rfc7519)
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 - [Clerk Documentation](https://clerk.com/docs)
+
+{% endraw %}

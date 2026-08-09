@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Security | category: Architecture | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
@@ -318,3 +319,5 @@ jwt.sign(payload, out.Signature, { algorithm: 'RS256' });
 - [trufflehog](https://github.com/trufflehog/trufflehog)
 - [Vault Dynamic Secrets for Postgres](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql)
 - [OWASP — Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)
+
+{% endraw %}

@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Animation | category: Frontend | tags: interview-questions, practice -->
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -326,3 +327,5 @@ INTERVIEW WINNERS:
 - [MDN Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
 - [View Transitions API (Chrome)](https://developer.chrome.com/docs/web-platform/view-transitions/)
 - [web.dev Animations Guide](https://web.dev/animations/)
+
+{% endraw %}

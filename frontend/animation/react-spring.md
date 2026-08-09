@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Animation | category: Frontend | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -337,3 +338,5 @@ INTERVIEW ANSWER:
 - [React Spring Hooks API](https://www.react-spring.dev/docs/props/hooks)
 - [react-use-gesture](https://github.com/pmndrs/use-gesture)
 - [Spring Physics (Daniel Callander)](https://danielcwilson.com/blog/2018/02/spring-physics-with-javascript/)
+
+{% endraw %}

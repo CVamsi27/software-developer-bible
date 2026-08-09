@@ -14,13 +14,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-# Content files are copied as static .md pages (fast, URL-stable builds).
-# Disable GitHub Pages' auto-transform plugins so 400+ markdown files stay
-# verbatim copies instead of Liquid-rendered pages: keeps .md URLs working,
-# avoids Liquid syntax breakage on code samples ({{ }}), and keeps builds
-# well under the Pages time limit.
+# Content pages are rendered with the Minima theme (like the homepage).
+# github-metadata is disabled: it made every page's seo/social render hit
+# the GitHub API and stretched builds to ~19 min in the cloud.
 github: [metadata: false]
-optional_front_matter: { enabled: false }
-relative_links: { enabled: false }
-titles_from_headings: { enabled: false }
 readme_index: { enabled: false }

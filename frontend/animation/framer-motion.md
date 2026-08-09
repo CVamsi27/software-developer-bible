@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Animation | category: Frontend | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -411,3 +412,5 @@ INTERVIEW ANSWER:
 - [Layout Animations](https://motion.dev/docs/react-layout-animations)
 - [Motion (Framer Motion GitHub)](https://github.com/framer/motion)
 - [useScroll](https://motion.dev/docs/react-use-scroll)
+
+{% endraw %}

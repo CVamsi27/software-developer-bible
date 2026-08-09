@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -845,3 +846,5 @@ const usePortal = (id = 'portal-root') => {
 - [React Portals: Event Bubbling](https://react.dev/reference/react-dom/createPortal#event-bubbling-through-portals)
 - [A Complete Guide to React Portals](https://blog.logrocket.com/learn-react-portals-by-example/)
 - [Using Portals in React](https://css-tricks.com/using-react-portals/)
+
+{% endraw %}

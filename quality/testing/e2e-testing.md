@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Testing | category: Quality | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Testing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -1117,3 +1118,5 @@ INTERVIEW TIPS:
 - [Cypress Documentation](https://docs.cypress.io/)
 - "Testing Node Applications" by Marc Harter
 - "Cypress: End-to-End Testing for Web Applications"
+
+{% endraw %}

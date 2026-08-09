@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -746,3 +747,5 @@ ISR Key Points:
 - [Next.js Docs: generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
 - [Vercel: ISR on Vercel](https://vercel.com/docs/deployments/isr)
 - [Web Vitals: Stale-While-Revalidate](https://web.dev/stale-while-revalidate/)
+
+{% endraw %}

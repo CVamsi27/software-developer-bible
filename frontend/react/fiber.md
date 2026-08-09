@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -744,3 +745,5 @@ Common Pitfalls:
 - [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
 - [A Complete Guide to React Fiber](https://blog.bitsrc.io/react-fiber-an-in-depth-explanation-of-changes-in-react-16-fc63e88e1d8e)
 - [React 16 Fiber Architecture](https://medium.com/react-in-depth/the-fiber-reconciler-changed-in-react-16-90074b96e017)
+
+{% endraw %}

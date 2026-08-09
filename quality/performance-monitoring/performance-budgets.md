@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Performance Monitoring | category: Quality | tags: concept, reference, guide -->
 [![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -429,3 +430,5 @@ INTERVIEW TIPS:
 - [Bundlephobia](https://bundlephobia.com/)
 - [Tim Kadlec - Implementing a Performance Budget](https://timkadlec.com/remembers/2018-08-09-implementing-a-performance-budget/)
 - [Lighthouse CI Budgets](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/budgets.md)
+
+{% endraw %}

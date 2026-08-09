@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -1498,3 +1499,5 @@ Best Practices:
 - [Next.js Learn Course](https://nextjs.org/learn)
 - [Next.js GitHub](https://github.com/vercel/next.js)
 - [Next.js Discord](https://discord.gg/bUG2bvbtHy)
+
+{% endraw %}

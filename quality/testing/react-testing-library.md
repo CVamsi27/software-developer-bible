@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Testing | category: Quality | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Testing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -1326,3 +1327,5 @@ INTERVIEW TIPS:
 - [Testing Library Query Priority](https://testing-library.com/docs/queries/about#priority)
 - [Kent C. Dodds' Blog](https://kentcdodds.com/blog/)
 - [Testing JavaScript Course](https://testingjavascript.com/)
+
+{% endraw %}

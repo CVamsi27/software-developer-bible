@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Performance Monitoring | category: Quality | tags: concept, tool, guide -->
 [![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
 [![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](#)
@@ -310,3 +311,5 @@ INTERVIEW TIPS:
 - [Lighthouse Performance Scoring](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring)
 - [Web Vitals Reference](https://web.dev/articles/vitals)
 - [Lighthouse CI Server (self-hosted)](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md#the-lighthouse-ci-server)
+
+{% endraw %}

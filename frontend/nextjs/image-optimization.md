@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -732,3 +733,5 @@ next.config.js → images.deviceSizes, imageSizes, formats
 - [Next.js Docs: Image](https://nextjs.org/docs/app/building-your-application/optimizing/images)
 - [Image Optimization Guide](https://nextjs.org/docs/app/building-your-application/optimizing/images)
 - [Web Performance: Image Optimization](https://web.dev/fast/#optimize-your-images)
+
+{% endraw %}

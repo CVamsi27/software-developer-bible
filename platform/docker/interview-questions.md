@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Docker | category: DevOps | tags: interview-questions -->
 [![Section](https://img.shields.io/badge/section-Docker-blue)](#)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
@@ -992,3 +993,5 @@ COPY --from=stage1 /app/dist ./dist
 - [Docker Deep Dive by Nigel Poulton](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235)
 - [Docker Curriculum](https://docker-curriculum.com/)
 - [Play with Docker](https://labs.play-with-docker.com/)
+
+{% endraw %}

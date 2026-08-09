@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Monorepo | category: Reference | tags: concept, tool, reference -->
 [![Section](https://img.shields.io/badge/section-Monorepo-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
@@ -363,3 +364,5 @@ INTERVIEW ANSWER:
 - [Turborepo Documentation](https://turbo.build/)
 - [Turborepo Examples](https://github.com/vercel/turborepo/tree/main/examples)
 - [Turborepo GitHub](https://github.com/vercel/turborepo)
+
+{% endraw %}

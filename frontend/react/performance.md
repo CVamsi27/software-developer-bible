@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -252,3 +253,5 @@ Performance Optimization:
 - [React Dev Tools Profiler](https://react.dev/learn/profiling-react-performance)
 - [Optimizing React Performance](https://www.freecodecamp.org/news/optimize-react-app-performance/)
 - [React Performance Optimization](https://www.joshwcomeau.com/react/performance/)
+
+{% endraw %}

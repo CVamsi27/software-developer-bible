@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Form Handling | category: Frontend | tags: concept, reference -->
 [![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -444,3 +445,5 @@ INTERVIEW ANSWER:
 - [RHF Performance Guide](https://react-hook-form.com/advanced-usage#PerformanceOptimization)
 - [useFieldArray](https://react-hook-form.com/docs/usefieldarray)
 - [Zod Resolver](https://github.com/react-hook-form/resolvers)
+
+{% endraw %}

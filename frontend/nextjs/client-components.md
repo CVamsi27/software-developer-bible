@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Next.js | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -937,3 +938,5 @@ Optimization:
 - [Next.js: Client Components](https://nextjs.org/docs/app/building-your-application/rendering/client-components)
 - [Next.js: Server and Client Components](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
 - [use client Directive](https://react.dev/reference/react/use-client)
+
+{% endraw %}

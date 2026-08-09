@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: CI/CD | category: DevOps | tags: concept -->
 [![Section](https://img.shields.io/badge/section-CI/CD-blue)](#)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
@@ -619,3 +620,5 @@ on:
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [CI/CD Pipeline Design Patterns](https://martinfowler.com/articles/continuousIntegration.html)
 - [The Phoenix Project](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0991538429)
+
+{% endraw %}

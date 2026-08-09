@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: React | category: Frontend | tags: concept -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -811,3 +812,5 @@ Performance:
 - [React Docs: useRef](https://react.dev/reference/react/useRef)
 - [React useRef Guide](https://www.freecodecamp.org/news/useref-hook-in-react/)
 - [useRef vs useState](https://dmitripavlutin.com/useref-vs-usestate/)
+
+{% endraw %}

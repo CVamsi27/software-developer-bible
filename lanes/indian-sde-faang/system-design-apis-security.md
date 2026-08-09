@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: SDE Role | category: Interview | tags: reference -->
 [![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](#)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
@@ -1514,3 +1515,5 @@ INTERVIEW TIPS:
 - [Levels.fyi](https://www.levels.fyi/)
 - [NeetCode](https://neetcode.io/)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+{% endraw %}

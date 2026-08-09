@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: TypeScript | category: Core | tags: concept -->
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Core-blue)](#)
@@ -799,3 +800,5 @@ type ReplaceAll<S, F extends string, T extends string> =
 - [TypeScript 4.1 Release Notes](https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#template-literal-types)
 - [TypeScript Deep Dive: Template Literal Types](https://basarat.gitbook.io/typescript/type-system/template-literal-types)
 - [Type Challenges: Template Literal Type Exercises](https://github.com/type-challenges/type-challenges)
+
+{% endraw %}

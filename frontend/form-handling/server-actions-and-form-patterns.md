@@ -1,3 +1,4 @@
+{% raw %}
 <!-- section: Form Handling | category: Frontend | tags: concept, guide -->
 [![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](#)
 [![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](#)
@@ -409,3 +410,5 @@ INTERVIEW ANSWER:
 - [React 19 useActionState](https://react.dev/reference/react/useActionState)
 - [React 19 useOptimistic](https://react.dev/reference/react/useOptimistic)
 - [Remix Forms](https://remix.run/docs/en/main/guides/forms)
+
+{% endraw %}

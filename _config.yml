@@ -6,6 +6,17 @@ description: >-
 author: CVamsi27
 url: https://study.buildora.work
 theme: minima
+header_pages:
+  - INDEX.md
+  - strategy/INDEX.md
+  - lanes/INDEX.md
+  - frontend/INDEX.md
+  - backend/INDEX.md
+  - architecture/INDEX.md
+  - platform/INDEX.md
+  - quality/INDEX.md
+  - realtime/INDEX.md
+  - interview-toolkit/INDEX.md
 minima:
   skin: auto
 show_excerpts: false

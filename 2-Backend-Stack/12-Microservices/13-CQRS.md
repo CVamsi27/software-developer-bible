@@ -1,8 +1,7 @@
----
-section: Microservices
-category: Architecture
-tags: [concept]
----
+<!-- section: Microservices | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # CQRS (Command Query Responsibility Segregation)
 

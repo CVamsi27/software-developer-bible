@@ -1,8 +1,7 @@
----
-section: REST API
-category: API
-tags: [concept]
----
+<!-- section: REST API | category: API | tags: concept -->
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # HTTP Caching Strategies
 
@@ -248,7 +247,7 @@ async update(
 - [Microservices](../12-Microservices/) (per-service cache invalidation)
 - [NestJS](../06-NestJS/) (interceptors for caching responses)
 - [Security](../09-Security/) (don't cache sensitive data)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (caching in API design)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (caching in API design)
 
 ## References & Learn More
 

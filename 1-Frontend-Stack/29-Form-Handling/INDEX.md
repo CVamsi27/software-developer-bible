@@ -17,10 +17,10 @@
 
 ---
 
-**Cross-references:** [Accessibility](../../50-Quality-Stack/25-Accessibility/) | [Design Patterns](../../20-Backend-Stack/10-Design-Patterns/) | [Next.js](../04-NextJS/) | [React](../03-React/) | [TypeScript](../02-TypeScript/)
+**Cross-references:** [Accessibility](../../5-Quality-Stack/25-Accessibility/) | [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/) | [Next.js](../04-NextJS/) | [React](../03-React/) | [TypeScript](../02-TypeScript/)
 
 ---
 
 ## Navigation
 
-[← Previous: Monorepo](../../40-Platform-Stack/28-Monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../30-Animation/INDEX.md)
+[← Previous: Monorepo](../../4-Platform-Stack/28-Monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../30-Animation/INDEX.md)

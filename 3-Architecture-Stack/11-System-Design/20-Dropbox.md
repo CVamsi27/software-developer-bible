@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept]
----
+<!-- section: System Design | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Dropbox System Design
 
@@ -326,9 +325,9 @@ Alerts: sync p99 > 30s, long-poll fleet saturation, dedup ratio dropping, GC bac
 ---
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
+- [Database](../../2-Backend-Stack/08-Database/)
 - [Google Drive](05-Google-Drive.md) (related but different: collaborative editing model)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 - [System Design Interview Questions](16-Interview-Questions.md)
 - [WhatsApp](02-WhatsApp.md)
 

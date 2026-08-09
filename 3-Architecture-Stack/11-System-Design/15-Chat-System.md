@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept]
----
+<!-- section: System Design | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Chat System Design
 
@@ -1189,10 +1188,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 - [System Design - WhatsApp](./02-WhatsApp.md)
-- [WebSockets](../../60-Real-Time-Stack/21-WebSockets/)
+- [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
 
 ## References & Learn More
 

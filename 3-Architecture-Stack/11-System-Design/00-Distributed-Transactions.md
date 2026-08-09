@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, transactions, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, transactions, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20transactions%20%C2%B7%20theory-lightgrey)](.)
 
 # Distributed Transactions
 
@@ -266,8 +265,8 @@ If 2 fails: compensate 1 (A.balance += X)
 - [00-Queues-and-Async.md](00-Queues-and-Async.md) — async is the foundation
 - [00-CAP-Theorem.md](00-CAP-Theorem.md) — 2PC is CP, Saga is AP (eventual)
 - [00-Consistency-Models.md](00-Consistency-Models.md) — saga is eventually consistent
-- [../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md) — full saga deep-dive
-- [../../20-Backend-Stack/12-Microservices/11-Distributed-Transactions.md](../../20-Backend-Stack/12-Microservices/11-Distributed-Transactions.md)
+- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md) — full saga deep-dive
+- [../../2-Backend-Stack/12-Microservices/11-Distributed-Transactions.md](../../2-Backend-Stack/12-Microservices/11-Distributed-Transactions.md)
 
 ---
 

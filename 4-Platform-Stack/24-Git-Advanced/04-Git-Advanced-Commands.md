@@ -1,8 +1,7 @@
----
-section: Git Advanced
-category: Tooling
-tags: [concept, reference]
----
+<!-- section: Git Advanced | category: Tooling | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Git Advanced Commands
 

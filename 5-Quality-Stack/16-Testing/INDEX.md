@@ -22,9 +22,9 @@
 
 ---
 
-**Cross-references:** [React](../../10-Frontend-Stack/03-React/) | [NestJS](../../20-Backend-Stack/06-NestJS/) | [CI/CD](../../40-Platform-Stack/15-CI-CD) | [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [React](../../1-Frontend-Stack/03-React/) | [NestJS](../../2-Backend-Stack/06-NestJS/) | [CI/CD](../../4-Platform-Stack/15-CI-CD) | [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 ---
 
 ## Navigation
 
-[← Previous: CI/CD](../../40-Platform-Stack/15-CI-CD/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: GraphQL →](../../20-Backend-Stack/17-GraphQL/INDEX.md)
+[← Previous: CI/CD](../../4-Platform-Stack/15-CI-CD/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: GraphQL →](../../2-Backend-Stack/17-GraphQL/INDEX.md)

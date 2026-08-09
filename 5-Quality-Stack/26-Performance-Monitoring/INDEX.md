@@ -19,9 +19,9 @@
 
 ---
 
-**Cross-references:** [Accessibility](../25-Accessibility/) | [Build Tools](../../40-Platform-Stack/23-Build-Tools/) | [Observability](../../40-Platform-Stack/22-Observability/) | [React Performance](../../10-Frontend-Stack/03-React/)
+**Cross-references:** [Accessibility](../25-Accessibility/) | [Build Tools](../../4-Platform-Stack/23-Build-Tools/) | [Observability](../../4-Platform-Stack/22-Observability/) | [React Performance](../../1-Frontend-Stack/03-React/)
 ---
 
 ## Navigation
 
-[← Previous: Accessibility](../25-Accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../../40-Platform-Stack/27-Serverless-Edge/INDEX.md)
+[← Previous: Accessibility](../25-Accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../../4-Platform-Stack/27-Serverless-Edge/INDEX.md)

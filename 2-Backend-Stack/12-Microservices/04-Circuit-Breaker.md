@@ -1,8 +1,7 @@
----
-section: Microservices
-category: Architecture
-tags: [concept]
----
+<!-- section: Microservices | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Circuit Breaker
 
@@ -677,11 +676,11 @@ Circuit Breaker is essential for building resilient microservices. It prevents c
 
 ## See Also
 - [Bulkhead Pattern](14-Bulkhead-Pattern.md)
-- [Docker](../../40-Platform-Stack/13-Docker/)
-- [Kubernetes](../../40-Platform-Stack/14-Kubernetes/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
+- [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
 - [NestJS](../06-NestJS/)
 - [Strangler Fig](12-Strangler-Fig.md)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

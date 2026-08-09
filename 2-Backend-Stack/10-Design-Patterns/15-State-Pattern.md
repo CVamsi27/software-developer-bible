@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # State Pattern & State Machines
 
@@ -286,10 +285,10 @@ paid: {
 ---
 
 ## See Also
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/) (state in algorithms)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/) (state in functional vs OO styles)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/) (state in algorithms)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/) (state in functional vs OO styles)
 - [NestJS](../06-NestJS/) (lifecycle states, sagas in microservices)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (workflows in design)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (workflows in design)
 
 ## References & Learn More
 

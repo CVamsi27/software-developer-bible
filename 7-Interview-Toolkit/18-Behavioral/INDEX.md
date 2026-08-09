@@ -15,9 +15,9 @@
 
 ---
 
-**Cross-references:** [Interview Strategy](../../00-Interview-Strategy/) | [SDE Role Guide](../../80-Interview-Lanes/81-Indian-SDE-FAANG/)
+**Cross-references:** [Interview Strategy](../../0-Interview-Strategy/) | [SDE Role Guide](../../8-Interview-Lanes/1-Indian-SDE-FAANG/)
 ---
 
 ## Navigation
 
-[← Previous: GraphQL](../../20-Backend-Stack/17-GraphQL/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Coding Patterns →](../19-Coding-Patterns/INDEX.md)
+[← Previous: GraphQL](../../2-Backend-Stack/17-GraphQL/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Coding Patterns →](../19-Coding-Patterns/INDEX.md)

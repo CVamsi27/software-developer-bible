@@ -18,10 +18,10 @@
 
 ---
 
-**Cross-references:** [CI/CD](../15-CI-CD) | [Docker](../13-Docker/) | [Next.js (Edge Middleware)](../../10-Frontend-Stack/04-NextJS/) | [Observability](../22-Observability/)
+**Cross-references:** [CI/CD](../15-CI-CD) | [Docker](../13-Docker/) | [Next.js (Edge Middleware)](../../1-Frontend-Stack/04-NextJS/) | [Observability](../22-Observability/)
 
 ---
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../28-Monorepo/INDEX.md)
+[← Previous: Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../28-Monorepo/INDEX.md)

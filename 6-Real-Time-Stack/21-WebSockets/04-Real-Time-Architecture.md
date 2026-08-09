@@ -1,8 +1,7 @@
----
-section: WebSockets
-category: Real-Time
-tags: [concept, guide, reference]
----
+<!-- section: WebSockets | category: Real-Time | tags: concept, guide, reference -->
+[![Section](https://img.shields.io/badge/section-WebSockets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Real-Time-f59e0b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](.)
 
 # Real-Time Architecture
 
@@ -995,9 +994,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: Next.js
-category: Frontend
-tags: [concept]
----
+<!-- section: Next.js | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Next.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # SSR, CSR, SSG, and ISR in Next.js
 
@@ -726,9 +725,9 @@ no-cache        → Revalidate every time
 
 ## See Also
 - [Incremental Static Regeneration](14-Incremental-Static-Regeneration.md)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [React](../03-React/)
-- [Serverless & Edge](../../40-Platform-Stack/27-Serverless-Edge/)
+- [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/)
 - [Static Exports](15-Static-Exports.md)
 
 ## References & Learn More

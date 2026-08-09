@@ -26,7 +26,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../01-JavaScript/) | [React](../03-React/) | [NestJS](../../20-Backend-Stack/06-NestJS/)
+**Cross-references:** [JavaScript](../01-JavaScript/) | [React](../03-React/) | [NestJS](../../2-Backend-Stack/06-NestJS/)
 ---
 
 ## Navigation

@@ -1,8 +1,7 @@
----
-section: Kubernetes
-category: DevOps
-tags: [concept]
----
+<!-- section: Kubernetes | category: DevOps | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Kubernetes-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # PodPresets
 

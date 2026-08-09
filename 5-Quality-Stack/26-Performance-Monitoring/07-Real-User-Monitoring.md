@@ -1,8 +1,7 @@
----
-section: Performance Monitoring
-category: Quality
-tags: [concept, reference, guide]
----
+<!-- section: Performance Monitoring | category: Quality | tags: concept, reference, guide -->
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
 
 # Real User Monitoring (RUM)
 
@@ -426,13 +425,13 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Accessibility](../25-Accessibility/)
-- [Build Tools](../../40-Platform-Stack/23-Build-Tools/)
+- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
 - [Core Web Vitals](01-Core-Web-Vitals.md)
 - [Lighthouse CI](05-Lighthouse-CI.md)
-- [Observability](../../40-Platform-Stack/22-Observability/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
 - [Performance APIs](02-Performance-APIs.md)
 - [Profiling Tools](03-Profiling-Tools.md)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 
 ## References & Learn More
 

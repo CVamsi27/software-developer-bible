@@ -1,8 +1,7 @@
----
-section: Animation
-category: Frontend
-tags: [concept, reference]
----
+<!-- section: Animation | category: Frontend | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Animation-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # View Transitions API & CSS Scroll-Driven Animations
 
@@ -473,14 +472,13 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Accessibility](../../50-Quality-Stack/25-Accessibility/)
+- [Accessibility](../../5-Quality-Stack/25-Accessibility/)
 - [CSS Animations](02-CSS-Animations.md)
 - [Framer Motion](01-Framer-Motion.md)
 - [GSAP](05-GSAP.md)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [React Spring](06-React-Spring.md)
 - [Web Animations API](04-Web-Animations-API.md)
-
 
 ## References & Learn More
 

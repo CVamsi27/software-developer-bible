@@ -1,8 +1,7 @@
----
-section: Security
-category: Architecture
-tags: [concept]
----
+<!-- section: Security | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Security-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Secrets Management
 
@@ -306,7 +305,7 @@ jwt.sign(payload, out.Signature, { algorithm: 'RS256' });
 ## See Also
 - [Microservices](../12-Microservices/) (per-service credentials)
 - [REST APIs](../07-REST-API/) (API key storage)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (secrets in system design)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (secrets in system design)
 - [Web Security](./09-Web-Security.md) (HTTPS, TLS in production)
 
 ## References & Learn More

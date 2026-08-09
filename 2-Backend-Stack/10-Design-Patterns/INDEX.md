@@ -2,7 +2,7 @@
 
 > **20 files** — 4 foundational theory files (SOLID, DRY/KISS/YAGNI, OOP concepts, UML basics) + 16 GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -43,9 +43,9 @@
 
 ---
 
-**Cross-references:** [NestJS (DI)](../06-NestJS/) | [JavaScript](../../10-Frontend-Stack/01-JavaScript/) | [System Design](../../30-Architecture-Stack/11-System-Design/) | [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [NestJS (DI)](../06-NestJS/) | [JavaScript](../../1-Frontend-Stack/01-JavaScript/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 ---
 
 ## Navigation
 
-[← Previous: Security](../09-Security/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: System Design →](../../30-Architecture-Stack/11-System-Design/INDEX.md)
+[← Previous: Security](../09-Security/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: System Design →](../../3-Architecture-Stack/11-System-Design/INDEX.md)

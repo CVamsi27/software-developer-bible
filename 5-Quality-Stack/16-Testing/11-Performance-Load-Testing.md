@@ -1,8 +1,7 @@
----
-section: Testing
-category: Quality
-tags: [concept, reference]
----
+<!-- section: Testing | category: Quality | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Performance & Load Testing
 
@@ -470,12 +469,12 @@ Client-side latency p95 = 500ms doesn't mean much if the **DB CPU is at 95%** or
 ---
 
 ## See Also
-- [CI/CD](../../40-Platform-Stack/15-CI-CD)
+- [CI/CD](../../4-Platform-Stack/15-CI-CD)
 - [Core Web Vitals](../26-Performance-Monitoring/01-Core-Web-Vitals.md)
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

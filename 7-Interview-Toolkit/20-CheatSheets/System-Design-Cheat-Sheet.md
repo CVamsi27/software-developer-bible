@@ -1,8 +1,7 @@
----
-section: CheatSheets
-category: Reference
-tags: [cheat-sheet, reference]
----
+<!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
 
 # System Design Cheat Sheet
 
@@ -429,11 +428,11 @@ for message in consumer:
 This cheat sheet provides a concise reference to core System Design concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
-- [Security](../../20-Backend-Stack/09-Security/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
+- [Security](../../2-Backend-Stack/09-Security/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

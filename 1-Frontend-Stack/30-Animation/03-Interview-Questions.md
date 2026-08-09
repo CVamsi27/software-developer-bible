@@ -1,8 +1,7 @@
----
-section: Animation
-category: Frontend
-tags: [interview-questions, practice]
----
+<!-- section: Animation | category: Frontend | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-Animation-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # Animation Interview Questions
 
@@ -307,16 +306,15 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [Accessibility](../../50-Quality-Stack/25-Accessibility/)
+- [Accessibility](../../5-Quality-Stack/25-Accessibility/)
 - [CSS Animations](02-CSS-Animations.md)
 - [Framer Motion](01-Framer-Motion.md)
 - [GSAP](05-GSAP.md)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [React](../03-React/)
 - [React Spring](06-React-Spring.md)
 - [View Transitions & Scroll-Driven Animations](07-View-Transitions-and-Scroll-Driven-Animations.md)
 - [Web Animations API](04-Web-Animations-API.md)
-
 
 ## References & Learn More
 

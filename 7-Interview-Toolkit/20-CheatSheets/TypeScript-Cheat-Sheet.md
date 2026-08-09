@@ -1,8 +1,7 @@
----
-section: CheatSheets
-category: Reference
-tags: [cheat-sheet, reference]
----
+<!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
 
 # TypeScript Cheat Sheet
 
@@ -305,10 +304,10 @@ function setStorage<K extends keyof StorageSchema>(key: K, value: StorageSchema[
 This cheat sheet provides a concise reference to core TypeScript concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
-- [React](../../10-Frontend-Stack/03-React/)
-- [TypeScript](../../10-Frontend-Stack/02-TypeScript/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
+- [React](../../1-Frontend-Stack/03-React/)
+- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
 
 ## References & Learn More
 

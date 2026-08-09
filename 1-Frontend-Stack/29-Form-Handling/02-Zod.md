@@ -1,8 +1,7 @@
----
-section: Form Handling
-category: Frontend
-tags: [concept, reference]
----
+<!-- section: Form Handling | category: Frontend | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Zod
 
@@ -388,14 +387,13 @@ INTERVIEW ANSWER:
 
 ## See Also
 
-- [Design Patterns](../../20-Backend-Stack/10-Design-Patterns/)
+- [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/)
 - [Formik](03-Formik.md)
 - [React](../03-React/)
 - [React Hook Form](01-React-Hook-Form.md)
 - [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md)
 - [TanStack Form](05-TanStack-Form.md)
 - [TypeScript](../02-TypeScript/)
-
 
 ## References & Learn More
 

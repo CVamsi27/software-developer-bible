@@ -1,8 +1,7 @@
----
-section: Node.js
-category: Backend
-tags: [concept]
----
+<!-- section: Node.js | category: Backend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Backend-success)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Child Processes & Worker Threads
 
@@ -402,7 +401,7 @@ CONSTRAINTS:
 
 ## See Also
 - [Clustering](04-Clustering.md)
-- [Docker](../../40-Platform-Stack/13-Docker/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
 
 ## References & Learn More
 

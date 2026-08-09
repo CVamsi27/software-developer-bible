@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Interview
-tags: [patterns, dsa, defensive, reference]
----
+<!-- section: Abroad Full-Stack Lane | category: Interview | tags: patterns, dsa, defensive, reference -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-patterns%20%C2%B7%20dsa%20%C2%B7%20defensive%20%C2%B7%20reference-lightgrey)](.)
 
 # Tech Screen Patterns — Defensive DSA for EU Mid-Stage
 
@@ -15,7 +14,7 @@ tags: [patterns, dsa, defensive, reference]
 - **You need to:** think out loud, debug your own code, ask questions, handle edge cases
 - **Time budget per problem:** 25-30 min, then look at the answer
 
-The bible's [70-Interview-Toolkit/19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
+The bible's [7-Interview-Toolkit/19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) has the canonical pattern deep-dives. This file is the **what to drill** subset.
 
 ---
 
@@ -43,7 +42,7 @@ The 6 patterns below cover 90%+ of EU mid-stage phone screens. Skip the rest.
 
 **Drill:** 30 min per problem, 8-10 problems, 4-5 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../70-Interview-Toolkit/19-Coding-Patterns/INDEX.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../7-Interview-Toolkit/19-Coding-Patterns/INDEX.md)
 
 ---
 
@@ -61,7 +60,7 @@ See: [../../70-Interview-Toolkit/19-Coding-Patterns/INDEX.md](../../70-Interview
 
 **Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../70-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../7-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md)
 
 ---
 
@@ -79,7 +78,7 @@ See: [../../70-Interview-Toolkit/19-Coding-Patterns/01-Sliding-Window.md](../../
 
 **Drill:** 30 min per problem, 5-7 problems, 2-3 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../70-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../7-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md)
 
 ---
 
@@ -99,7 +98,7 @@ See: [../../70-Interview-Toolkit/19-Coding-Patterns/02-Two-Pointers.md](../../70
 
 **Drill:** 30 min per problem, 6-8 problems, 3-4 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../70-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md) and [10-Topological-Sort.md](../../70-Interview-Toolkit/19-Coding-Patterns/10-Topological-Sort.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../7-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md) and [10-Topological-Sort.md](../../7-Interview-Toolkit/19-Coding-Patterns/10-Topological-Sort.md)
 
 ---
 
@@ -119,7 +118,7 @@ See: [../../70-Interview-Toolkit/19-Coding-Patterns/04-DFS-BFS.md](../../70-Inte
 
 **Drill:** 30-40 min per problem, 4-6 problems, 3-4 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](../../70-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](../../7-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md)
 
 ---
 
@@ -137,7 +136,7 @@ See: [../../70-Interview-Toolkit/19-Coding-Patterns/06-Dynamic-Programming.md](.
 
 **Drill:** 30 min per problem, 3-5 problems, 2-3 hours total.
 
-See: [../../70-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md](../../70-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md)
+See: [../../7-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md](../../7-Interview-Toolkit/19-Coding-Patterns/18-Stack-Queue-Patterns.md)
 
 ---
 
@@ -252,4 +251,4 @@ The clarifying-questions + explain-approach phase is **30% of the interview**. D
 
 Total: 14 days, 1-2 hrs/day, ~20 hours of practice. That's all you need for this lane's tech screen.
 
-For the FAANG lane's much heavier DSA prep, see [../81-Indian-SDE-FAANG/19-Coding-Patterns.md](../81-Indian-SDE-FAANG/INDEX.md).
+For the FAANG lane's much heavier DSA prep, see [../1-Indian-SDE-FAANG/19-Coding-Patterns.md](../1-Indian-SDE-FAANG/INDEX.md).

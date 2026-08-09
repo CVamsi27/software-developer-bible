@@ -1,8 +1,7 @@
----
-section: JavaScript
-category: Core
-tags: [concept]
----
+<!-- section: JavaScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Currying & Function Composition
 
@@ -283,7 +282,7 @@ Currying transforms multi-argument functions into sequences of unary functions, 
 
 ## See Also
 - [Closures](04-Closures.md)
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: REST APIs
-category: API
-tags: [concept, api-design, theory]
----
+<!-- section: REST APIs | category: API | tags: concept, api-design, theory -->
+[![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20api-design%20%C2%B7%20theory-lightgrey)](.)
 
 # API Design Patterns — REST, GraphQL, gRPC, Webhooks
 
@@ -242,7 +241,7 @@ Connection: Upgrade
 - Request-response (use REST)
 - High-throughput service-to-service (use gRPC)
 
-**See:** [../../60-Real-Time-Stack/21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/) for the full deep-dive.
+**See:** [../../6-Real-Time-Stack/21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/) for the full deep-dive.
 
 **In interviews:** "We use WebSocket for the chat feature. Each user maintains a persistent connection to the chat server. The chat server publishes to a Kafka topic; other chat servers consume and forward to their connected users."
 
@@ -473,9 +472,9 @@ Use standard HTTP status codes. Return a structured error body.
 
 ## Related concepts
 
-- [00-Caching-Patterns.md](../../30-Architecture-Stack/11-System-Design/00-Caching-Patterns.md) — API responses can be cached
-- [00-Queues-and-Async.md](../../30-Architecture-Stack/11-System-Design/00-Queues-and-Async.md) — async pattern behind webhooks
-- [../../60-Real-Time-Stack/21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/) — full WebSocket deep-dive
+- [00-Caching-Patterns.md](../../3-Architecture-Stack/11-System-Design/00-Caching-Patterns.md) — API responses can be cached
+- [00-Queues-and-Async.md](../../3-Architecture-Stack/11-System-Design/00-Queues-and-Async.md) — async pattern behind webhooks
+- [../../6-Real-Time-Stack/21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/) — full WebSocket deep-dive
 - [01-REST-Principles.md](01-REST-Principles.md) through [11-OpenAPI-Swagger.md](11-OpenAPI-Swagger.md) — full REST deep-dive
 
 ---
@@ -491,4 +490,4 @@ Use standard HTTP status codes. Return a structured error body.
 - **Pick per use case.** Not one-size-fits-all.
 - **In interviews: name the style, justify the choice, mention the trade-offs.**
 
-For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [21-WebSockets](../../60-Real-Time-Stack/21-WebSockets/).
+For the full REST deep-dive, see the other 13 files in this section. For WebSocket, see [21-WebSockets](../../6-Real-Time-Stack/21-WebSockets/).

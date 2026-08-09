@@ -28,38 +28,38 @@
 
 | # | Section | Files | Focus |
 |---|---------|------:|-------|
-| 00 | [Interview Strategy](00-Interview-Strategy/) | 4 | Resume, HR, STAR, Communication |
-| 01 | [JavaScript](10-Frontend-Stack/01-JavaScript/) | 26 | Core JS, Event Loop, Closures, Async, Functional Patterns |
-| 02 | [TypeScript](10-Frontend-Stack/02-TypeScript/) | 11 | Types, Generics, Utility Types, Advanced |
-| 03 | [React](10-Frontend-Stack/03-React/) | 15 | Hooks, Fiber, Rendering, Performance |
-| 04 | [Next.js](10-Frontend-Stack/04-NextJS/) | 12 | App Router, RSC, Caching, Streaming |
-| 05 | [Node.js](20-Backend-Stack/05-NodeJS/) | 11 | Event Loop, Streams, File System, HTTP, Workers |
-| 06 | [NestJS](20-Backend-Stack/06-NestJS/) | 12 | DI, Guards, Pipes, CQRS, Microservices |
-| 07 | [REST APIs](20-Backend-Stack/07-REST-API/) | 10 | Principles, Status Codes, Auth, CORS |
-| 08 | [Database](20-Backend-Stack/08-Database/) | 12 | PostgreSQL, Indexes, Transactions, Prisma |
-| 09 | [Security](20-Backend-Stack/09-Security/) | 10 | JWT, OAuth, XSS, CSRF, RBAC |
-| 10 | [Design Patterns](20-Backend-Stack/10-Design-Patterns/) | 13 | Singleton, Factory, Strategy, CQRS |
-| 11 | [System Design](30-Architecture-Stack/11-System-Design/) | 12 | WhatsApp, Uber, Netflix, Payment Gateway |
-| 12 | [Microservices](20-Backend-Stack/12-Microservices/) | 8 | Saga, Circuit Breaker, Kafka, RabbitMQ |
-| 13 | [Docker](40-Platform-Stack/13-Docker/) | 6 | Images, Containers, Compose, Best Practices |
-| 14 | [Kubernetes](40-Platform-Stack/14-Kubernetes/) | 8 | Pods, Deployments, HPA, Helm |
-| 15 | [CI/CD](40-Platform-Stack/15-CI-CD/) | 7 | GitHub Actions, Jenkins, GitLab CI, ArgoCD |
-| 16 | [Testing](50-Quality-Stack/16-Testing/) | 9 | Jest, RTL, Unit, Integration, E2E, Mocking |
-| 17 | [GraphQL](20-Backend-Stack/17-GraphQL/) | 8 | Schema, Resolvers, Apollo, Performance |
-| 18 | [Behavioral](70-Interview-Toolkit/18-Behavioral/) | 3 | STAR Method, 40+ Questions |
-| 19 | [Coding Patterns](70-Interview-Toolkit/19-Coding-Patterns/) | 12 | Sliding Window, DP, Graphs, Trie |
-| 20 | [Cheat Sheets](70-Interview-Toolkit/20-CheatSheets/) | 5 | Quick Reference Cards |
-| 21 | [WebSockets](60-Real-Time-Stack/21-WebSockets/) | 6 | Socket.io, SSE, Real-time Architecture |
-| 22 | [Observability](40-Platform-Stack/22-Observability/) | 6 | Logging, Monitoring, Tracing, Sentry |
-| 23 | [Build Tools](40-Platform-Stack/23-Build-Tools/) | 7 | Webpack, Vite, Babel, ESBuild, SWC |
-| 24 | [Git Advanced](40-Platform-Stack/24-Git-Advanced/) | 5 | Branching, Rebase, Hooks, Commands |
-| 25 | [Accessibility](50-Quality-Stack/25-Accessibility/) | 5 | WCAG, ARIA, Keyboard Navigation, Testing |
-| 26 | [Performance Monitoring](50-Quality-Stack/26-Performance-Monitoring/) | 4 | Core Web Vitals, APIs, Profiling |
-| 27 | [Serverless & Edge](40-Platform-Stack/27-Serverless-Edge/) | 4 | Lambda, Edge Functions, Patterns |
-| 28 | [Monorepo](40-Platform-Stack/28-Monorepo/) | 4 | Turborepo, Nx, Workspaces |
-| 29 | [Form Handling](10-Frontend-Stack/29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
-| 30 | [Animation](10-Frontend-Stack/30-Animation/) | 3 | Framer Motion, CSS Animations |
-| 31 | [SDE Interview Guide](80-Interview-Lanes/81-Indian-SDE-FAANG/) | 21 | Complete SDE Interview Prep (28 Phases) |
+| 00 | [Interview Strategy](0-Interview-Strategy/) | 4 | Resume, HR, STAR, Communication |
+| 01 | [JavaScript](1-Frontend-Stack/01-JavaScript/) | 26 | Core JS, Event Loop, Closures, Async, Functional Patterns |
+| 02 | [TypeScript](1-Frontend-Stack/02-TypeScript/) | 11 | Types, Generics, Utility Types, Advanced |
+| 03 | [React](1-Frontend-Stack/03-React/) | 15 | Hooks, Fiber, Rendering, Performance |
+| 04 | [Next.js](1-Frontend-Stack/04-NextJS/) | 12 | App Router, RSC, Caching, Streaming |
+| 05 | [Node.js](2-Backend-Stack/05-NodeJS/) | 11 | Event Loop, Streams, File System, HTTP, Workers |
+| 06 | [NestJS](2-Backend-Stack/06-NestJS/) | 12 | DI, Guards, Pipes, CQRS, Microservices |
+| 07 | [REST APIs](2-Backend-Stack/07-REST-API/) | 10 | Principles, Status Codes, Auth, CORS |
+| 08 | [Database](2-Backend-Stack/08-Database/) | 12 | PostgreSQL, Indexes, Transactions, Prisma |
+| 09 | [Security](2-Backend-Stack/09-Security/) | 10 | JWT, OAuth, XSS, CSRF, RBAC |
+| 10 | [Design Patterns](2-Backend-Stack/10-Design-Patterns/) | 13 | Singleton, Factory, Strategy, CQRS |
+| 11 | [System Design](3-Architecture-Stack/11-System-Design/) | 12 | WhatsApp, Uber, Netflix, Payment Gateway |
+| 12 | [Microservices](2-Backend-Stack/12-Microservices/) | 8 | Saga, Circuit Breaker, Kafka, RabbitMQ |
+| 13 | [Docker](4-Platform-Stack/13-Docker/) | 6 | Images, Containers, Compose, Best Practices |
+| 14 | [Kubernetes](4-Platform-Stack/14-Kubernetes/) | 8 | Pods, Deployments, HPA, Helm |
+| 15 | [CI/CD](4-Platform-Stack/15-CI-CD/) | 7 | GitHub Actions, Jenkins, GitLab CI, ArgoCD |
+| 16 | [Testing](5-Quality-Stack/16-Testing/) | 9 | Jest, RTL, Unit, Integration, E2E, Mocking |
+| 17 | [GraphQL](2-Backend-Stack/17-GraphQL/) | 8 | Schema, Resolvers, Apollo, Performance |
+| 18 | [Behavioral](7-Interview-Toolkit/18-Behavioral/) | 3 | STAR Method, 40+ Questions |
+| 19 | [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/) | 12 | Sliding Window, DP, Graphs, Trie |
+| 20 | [Cheat Sheets](7-Interview-Toolkit/20-CheatSheets/) | 5 | Quick Reference Cards |
+| 21 | [WebSockets](6-Real-Time-Stack/21-WebSockets/) | 6 | Socket.io, SSE, Real-time Architecture |
+| 22 | [Observability](4-Platform-Stack/22-Observability/) | 6 | Logging, Monitoring, Tracing, Sentry |
+| 23 | [Build Tools](4-Platform-Stack/23-Build-Tools/) | 7 | Webpack, Vite, Babel, ESBuild, SWC |
+| 24 | [Git Advanced](4-Platform-Stack/24-Git-Advanced/) | 5 | Branching, Rebase, Hooks, Commands |
+| 25 | [Accessibility](5-Quality-Stack/25-Accessibility/) | 5 | WCAG, ARIA, Keyboard Navigation, Testing |
+| 26 | [Performance Monitoring](5-Quality-Stack/26-Performance-Monitoring/) | 4 | Core Web Vitals, APIs, Profiling |
+| 27 | [Serverless & Edge](4-Platform-Stack/27-Serverless-Edge/) | 4 | Lambda, Edge Functions, Patterns |
+| 28 | [Monorepo](4-Platform-Stack/28-Monorepo/) | 4 | Turborepo, Nx, Workspaces |
+| 29 | [Form Handling](1-Frontend-Stack/29-Form-Handling/) | 4 | React Hook Form, Zod, Formik |
+| 30 | [Animation](1-Frontend-Stack/30-Animation/) | 3 | Framer Motion, CSS Animations |
+| 31 | [SDE Interview Guide](8-Interview-Lanes/1-Indian-SDE-FAANG/) | 21 | Complete SDE Interview Prep (28 Phases) |
 
 **Total: ~310 files** (including section INDEX.md files)
 
@@ -148,9 +148,9 @@ Every chapter follows a consistent structure for easy scanning and deep dives:
 
 ## 🏆 SDE Interview Guide (Complete Resource)
 
-For a **comprehensive SDE interview preparation guide** targeting top product-based companies (Microsoft, Google, Amazon, Meta, Apple), see the [81-Indian-SDE-FAANG lane](80-Interview-Lanes/81-Indian-SDE-FAANG/).
+For a **comprehensive SDE interview preparation guide** targeting top product-based companies (Microsoft, Google, Amazon, Meta, Apple), see the [1-Indian-SDE-FAANG lane](8-Interview-Lanes/1-Indian-SDE-FAANG/).
 
-For **EU / non-Indian mid-stage startup roles** (n8n, SumUp, Scalable, sennder, THRYVE), see the [82-Abroad-Full-Stack lane](80-Interview-Lanes/82-Abroad-Full-Stack/) — take-home + system design, no LeetCode grinding.
+For **EU / non-Indian mid-stage startup roles** (n8n, SumUp, Scalable, sennder, THRYVE), see the [2-Abroad-Full-Stack lane](8-Interview-Lanes/2-Abroad-Full-Stack/) — take-home + system design, no LeetCode grinding.
 
 This guide covers **28 phases** with full explanations, code examples, LeetCode problems, and resources:
 
@@ -187,7 +187,7 @@ This guide covers **28 phases** with full explanations, code examples, LeetCode 
 
 **Total Study Time: ~640 hours (~16-32 weeks)**
 
-📖 [Explore the SDE Interview Guide →](80-Interview-Lanes/81-Indian-SDE-FAANG/INDEX.md)
+📖 [Explore the SDE Interview Guide →](8-Interview-Lanes/1-Indian-SDE-FAANG/INDEX.md)
 
 ---
 

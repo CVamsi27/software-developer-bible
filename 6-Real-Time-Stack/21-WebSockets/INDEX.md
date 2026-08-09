@@ -19,9 +19,9 @@
 
 ---
 
-**Cross-references:** [NestJS](../../20-Backend-Stack/06-NestJS/) | [Observability](../../40-Platform-Stack/22-Observability/) | [System Design (WhatsApp)](../../30-Architecture-Stack/11-System-Design/02-WhatsApp.md)
+**Cross-references:** [NestJS](../../2-Backend-Stack/06-NestJS/) | [Observability](../../4-Platform-Stack/22-Observability/) | [System Design (WhatsApp)](../../3-Architecture-Stack/11-System-Design/02-WhatsApp.md)
 ---
 
 ## Navigation
 
-[← Previous: CheatSheets](../../70-Interview-Toolkit/20-CheatSheets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../../40-Platform-Stack/22-Observability/INDEX.md)
+[← Previous: CheatSheets](../../7-Interview-Toolkit/20-CheatSheets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../../4-Platform-Stack/22-Observability/INDEX.md)

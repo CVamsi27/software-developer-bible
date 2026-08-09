@@ -1,8 +1,7 @@
----
-section: React
-category: Frontend
-tags: [concept]
----
+<!-- section: React | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-React-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic, and React 19 APIs
 

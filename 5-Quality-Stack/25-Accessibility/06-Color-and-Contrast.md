@@ -1,8 +1,7 @@
----
-section: Accessibility
-category: Quality
-tags: [concept, reference, guide]
----
+<!-- section: Accessibility | category: Quality | tags: concept, reference, guide -->
+[![Section](https://img.shields.io/badge/section-Accessibility-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
 
 # Color & Contrast
 
@@ -378,7 +377,7 @@ INTERVIEW TIPS:
 - [ARIA](02-ARIA.md)
 - [Keyboard Navigation](03-Keyboard-Navigation.md)
 - [Performance Monitoring](../26-Performance-Monitoring/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [Testing](../16-Testing/)
 - [Testing Accessibility](04-Testing-A11y.md)
 - [WCAG Overview](01-WCAG-Overview.md)

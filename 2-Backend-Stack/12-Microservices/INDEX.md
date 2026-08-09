@@ -25,9 +25,9 @@
 
 ---
 
-**Cross-references:** [NestJS Microservices](../06-NestJS/) | [System Design](../../30-Architecture-Stack/11-System-Design/) | [Docker](../../40-Platform-Stack/13-Docker/) | [Kubernetes](../../40-Platform-Stack/14-Kubernetes/)
+**Cross-references:** [NestJS Microservices](../06-NestJS/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [Docker](../../4-Platform-Stack/13-Docker/) | [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
 ---
 
 ## Navigation
 
-[← Previous: System Design](../../30-Architecture-Stack/11-System-Design/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Docker →](../../40-Platform-Stack/13-Docker/INDEX.md)
+[← Previous: System Design](../../3-Architecture-Stack/11-System-Design/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Docker →](../../4-Platform-Stack/13-Docker/INDEX.md)

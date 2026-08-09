@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Interview
-tags: [study-plan, personal]
----
+<!-- section: Abroad Full-Stack Lane | category: Interview | tags: study-plan, personal -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-study-plan%20%C2%B7%20personal-lightgrey)](.)
 
 # 4-Week Senior Full-Stack Interview Prep Plan — Vamsi Krishna Chandaluri (Revised: v2 — take-home + DSA-lite)
 
@@ -304,9 +303,9 @@ Pick 2-3 mediums per pattern, 25 min timer, ~30-40 problems total. **Stick to th
 - Don't use "Blind 75" — too FAANG-heavy
 
 ### Reference (skim, don't deep-read)
-- `software-developer-bible/00-Interview-Strategy/` — for the "communication" overlay
-- `software-developer-bible/81-Indian-SDE-FAANG/01-Complete-Guide.md` — orientation only, this is for FAANG
-- `software-developer-bible/81-Indian-SDE-FAANG/21-8-Week-Study-Schedule.md` — used to compare/contrast (this plan is the EU-mid-stage version, not the FAANG version)
+- `software-developer-bible/0-Interview-Strategy/` — for the "communication" overlay
+- `software-developer-bible/1-Indian-SDE-FAANG/01-Complete-Guide.md` — orientation only, this is for FAANG
+- `software-developer-bible/1-Indian-SDE-FAANG/21-8-Week-Study-Schedule.md` — used to compare/contrast (this plan is the EU-mid-stage version, not the FAANG version)
 - `software-developer-bible/20-CheatSheets/04-System-Design.md` — last-week review, not for learning
 
 ---

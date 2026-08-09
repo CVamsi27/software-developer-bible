@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept, lld, principles, theory]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept, lld, principles, theory -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20lld%20%C2%B7%20principles%20%C2%B7%20theory-lightgrey)](.)
 
 # DRY, KISS, YAGNI & Other Design Principles
 
@@ -90,9 +89,9 @@ function calculateItemsTotal(items: Item[]): number {
 
 ```typescript
 // Over-engineered solution for a simple problem
-abstract class AbstractDataProcessor<T extends BaseEntity> 
+abstract class AbstractDataProcessor<T extends BaseEntity>
   implements IDataProcessor<T>, IValidatable, ILoggable {
-  
+
   private readonly strategyFactory: IStrategyFactory<T>;
   private readonly validatorChain: IValidator<T>[];
   private readonly logger: ILogger;
@@ -100,14 +99,14 @@ abstract class AbstractDataProcessor<T extends BaseEntity>
   private readonly cacheManager: ICacheManager;
   private readonly eventBus: IEventBus;
   private readonly retryPolicy: IRetryPolicy;
-  
+
   constructor(
     strategyFactory: IStrategyFactory<T>,
     @Inject('validatorChain') validatorChain: IValidator<T>[],
     @Inject('logger') logger: ILogger,
     // ... 8 more dependencies
   ) { /* ... */ }
-  
+
   async process(data: T): Promise<ProcessedResult<T>> {
     // 200 lines of orchestration
   }
@@ -142,16 +141,16 @@ function processOrder(order: Order): ProcessedOrder {
 // Adding "future-proof" features that may never be used
 class UserService {
   createUser(data: UserData): User { /* ... */ }
-  
+
   // Just in case we need to export users to CSV someday
   exportUsersToCsv(users: User[]): string { /* ... */ }
-  
+
   // Just in case we need to import users from XML
   importUsersFromXml(xml: string): User[] { /* ... */ }
-  
+
   // Just in case we need a webhook when a user is created
   triggerUserCreatedWebhook(user: User): void { /* ... */ }
-  
+
   // Just in case we need to sync with LDAP
   syncWithLdap(): void { /* ... */ }
 }
@@ -162,7 +161,7 @@ class UserService {
 ```typescript
 class UserService {
   createUser(data: UserData): User { /* ... */ }
-  
+
   // That's it. Add more when actually needed.
 }
 ```

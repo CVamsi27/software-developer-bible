@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Reference
-tags: [quick-reference, cheat-sheets, cards, practice]
----
+<!-- section: Abroad Full-Stack Lane | category: Reference | tags: quick-reference, cheat-sheets, cards, practice -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-quick-reference%20%C2%B7%20cheat-sheets%20%C2%B7%20cards%20%C2%B7%20practice-lightgrey)](.)
 
 # Quick Reference Cards — Print and Use
 

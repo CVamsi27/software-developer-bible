@@ -1,8 +1,7 @@
----
-section: JavaScript
-category: Core
-tags: [concept, reference]
----
+<!-- section: JavaScript | category: Core | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # ES2024+ Modern JavaScript Features
 
@@ -252,7 +251,7 @@ ES2022+ added the modern APIs senior engineers reach for daily: `structuredClone
 ---
 
 ## See Also
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 - [Map, Set, WeakMap, WeakSet](14-Map-Set-WeakMap-WeakSet.md)
 - [Promises](10-Promises.md)
 - [Shallow vs Deep Copy](15-Shallow-vs-Deep-Copy.md)

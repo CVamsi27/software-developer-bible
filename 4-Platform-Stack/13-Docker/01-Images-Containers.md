@@ -1,8 +1,7 @@
----
-section: Docker
-category: DevOps
-tags: [concept]
----
+<!-- section: Docker | category: DevOps | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Docker Images & Containers
 
@@ -400,7 +399,7 @@ RUN --mount=type=secret,id=npmrc,target=/root/.npmrc npm ci
 - [Kubernetes](../14-Kubernetes/)
 - [Kubernetes Jobs](../14-Kubernetes/10-Jobs-CronJobs.md)
 - [Kubernetes StatefulSets](../14-Kubernetes/09-StatefulSets-DaemonSets.md)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: Behavioral
-category: Interview
-tags: [interview-questions, practice]
----
+<!-- section: Behavioral | category: Interview | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-Behavioral-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # System Design & Technical Decision-Making: 15 STAR-Formatted Answers
 
@@ -603,7 +602,7 @@ Practice each story to **3-4 minutes**, with a clear arc and 2-3 quantified outc
 - [HR Questions](02-HR-Questions.md)
 - [Leadership Questions](03-Leadership-Questions.md)
 - [STAR Method](01-STAR-Method.md)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

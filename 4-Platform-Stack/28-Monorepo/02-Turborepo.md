@@ -1,8 +1,7 @@
----
-section: Monorepo
-category: Reference
-tags: [concept, tool, reference]
----
+<!-- section: Monorepo | category: Reference | tags: concept, tool, reference -->
+[![Section](https://img.shields.io/badge/section-Monorepo-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20tool%20%C2%B7%20reference-lightgrey)](.)
 
 # Turborepo
 
@@ -356,7 +355,6 @@ INTERVIEW ANSWER:
 - [Monorepo Overview](01-Monorepo-Overview.md)
 - [Monorepo Tools Deep-Dive](05-Monorepo-Tools.md)
 - [Nx](03-Nx.md)
-
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: Build Tools
-category: Tooling
-tags: [concept, guide, reference]
----
+<!-- section: Build Tools | category: Tooling | tags: concept, guide, reference -->
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide%20%C2%B7%20reference-lightgrey)](.)
 
 # Build Optimization
 
@@ -449,11 +448,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Bundle Analysis](../../50-Quality-Stack/26-Performance-Monitoring/06-Bundle-Analysis.md)
-- [Lighthouse CI](../../50-Quality-Stack/26-Performance-Monitoring/05-Lighthouse-CI.md)
-- [Next.js](../../10-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [Bundle Analysis](../../5-Quality-Stack/26-Performance-Monitoring/06-Bundle-Analysis.md)
+- [Lighthouse CI](../../5-Quality-Stack/26-Performance-Monitoring/05-Lighthouse-CI.md)
+- [Next.js](../../1-Frontend-Stack/04-NextJS/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
+- [React](../../1-Frontend-Stack/03-React/)
 
 ## References & Learn More
 

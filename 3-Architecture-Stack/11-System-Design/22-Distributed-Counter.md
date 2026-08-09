@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept]
----
+<!-- section: System Design | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Distributed Counter / Metrics Aggregation System Design
 
@@ -353,8 +352,8 @@ Alerts: any key > 50K writes/sec, Redis memory > 80%, aggregator lag > 5s, dashb
 ---
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 - [Rate Limiter](13-Rate-Limiter.md) (similar token-bucket math)
 - [System Design Interview Questions](16-Interview-Questions.md)
 - [Twitter Feed](12-Twitter-Feed.md) (counters for like/retweet counts)

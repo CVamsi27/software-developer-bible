@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept, lld, oop, theory]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept, lld, oop, theory -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20lld%20%C2%B7%20oop%20%C2%B7%20theory-lightgrey)](.)
 
 # OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction
 
@@ -60,23 +59,23 @@ account.balance = 999999999;  // No validation.
 ```typescript
 class BankAccount {
   private balance: number = 0;  // Private, can only be modified via methods
-  
+
   constructor(initialBalance: number) {
     if (initialBalance < 0) throw new Error("Initial balance cannot be negative");
     this.balance = initialBalance;
   }
-  
+
   deposit(amount: number): void {
     if (amount <= 0) throw new Error("Deposit must be positive");
     this.balance += amount;
   }
-  
+
   withdraw(amount: number): void {
     if (amount <= 0) throw new Error("Withdrawal must be positive");
     if (amount > this.balance) throw new Error("Insufficient funds");
     this.balance -= amount;
   }
-  
+
   getBalance(): number {
     return this.balance;
   }
@@ -225,7 +224,7 @@ public class Calculator {
 abstract class PaymentProcessor {
   // Abstract method: subclasses must implement
   abstract processPayment(amount: number, currency: string): Promise<PaymentResult>;
-  
+
   // Concrete method: shared by all subclasses
   validateAmount(amount: number): boolean {
     return amount > 0 && amount < 1000000;
@@ -298,7 +297,7 @@ class Student {
 ```typescript
 class Department {
   professors: Professor[] = [];
-  
+
   addProfessor(p: Professor): void { this.professors.push(p); }
 }
 
@@ -318,7 +317,7 @@ class Professor {
 ```typescript
 class House {
   private rooms: Room[];
-  
+
   constructor() {
     // Rooms are created with the house
     this.rooms = [new Room("kitchen"), new Room("bedroom")];
@@ -406,7 +405,7 @@ order.place();
 ```typescript
 class Animal {
   speak(): string { return this.makeSound(); }
-  
+
   protected makeSound(): string { return "..."; }
 }
 

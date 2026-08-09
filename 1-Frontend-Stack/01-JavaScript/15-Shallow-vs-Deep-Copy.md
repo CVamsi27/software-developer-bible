@@ -1,8 +1,7 @@
----
-section: JavaScript
-category: Core
-tags: [concept]
----
+<!-- section: JavaScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Shallow Copy vs Deep Copy
 
@@ -491,8 +490,8 @@ BEST PRACTICES:
 ---
 
 ## See Also
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
-- [Node.js](../../20-Backend-Stack/05-NodeJS/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [Node.js](../../2-Backend-Stack/05-NodeJS/)
 - [TypeScript](../02-TypeScript/)
 
 ## References & Learn More

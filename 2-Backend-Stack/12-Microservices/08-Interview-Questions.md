@@ -1,8 +1,7 @@
----
-section: Microservices
-category: Architecture
-tags: [interview-questions]
----
+<!-- section: Microservices | category: Architecture | tags: interview-questions -->
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
 
 # Microservices Interview Questions
 
@@ -1910,13 +1909,13 @@ Microservices architecture requires understanding of distributed systems, commun
 - [Bulkhead Pattern](14-Bulkhead-Pattern.md)
 - [CQRS](13-CQRS.md)
 - [Distributed Transactions](11-Distributed-Transactions.md)
-- [Docker](../../40-Platform-Stack/13-Docker/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
 - [gRPC](09-gRPC.md)
-- [Kubernetes](../../40-Platform-Stack/14-Kubernetes/)
+- [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
 - [NestJS](../06-NestJS/)
 - [Service Mesh](10-Service-Mesh.md)
 - [Strangler Fig](12-Strangler-Fig.md)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

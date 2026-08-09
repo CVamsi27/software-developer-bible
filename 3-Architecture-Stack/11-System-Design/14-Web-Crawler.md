@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept]
----
+<!-- section: System Design | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Web Crawler System Design
 
@@ -1149,9 +1148,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
-- [REST APIs](../../20-Backend-Stack/07-REST-API/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [REST APIs](../../2-Backend-Stack/07-REST-API/)
 - [System Design - Google Drive](./05-Google-Drive.md)
 
 ## References & Learn More

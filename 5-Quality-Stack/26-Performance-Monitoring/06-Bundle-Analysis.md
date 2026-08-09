@@ -1,8 +1,7 @@
----
-section: Performance Monitoring
-category: Quality
-tags: [concept, tool, guide]
----
+<!-- section: Performance Monitoring | category: Quality | tags: concept, tool, guide -->
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20tool%20%C2%B7%20guide-lightgrey)](.)
 
 # Bundle Analysis
 
@@ -327,7 +326,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Accessibility](../25-Accessibility/)
-- [Build Optimization](../../40-Platform-Stack/23-Build-Tools/04-Build-Optimization.md)
+- [Build Optimization](../../4-Platform-Stack/23-Build-Tools/04-Build-Optimization.md)
 - [Core Web Vitals](01-Core-Web-Vitals.md)
 - [Lighthouse CI](05-Lighthouse-CI.md)
 

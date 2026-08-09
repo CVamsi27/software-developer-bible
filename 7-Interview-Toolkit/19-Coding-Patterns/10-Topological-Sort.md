@@ -1,8 +1,7 @@
----
-section: Coding Patterns
-category: Interview
-tags: [concept, practice]
----
+<!-- section: Coding Patterns | category: Interview | tags: concept, practice -->
+[![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20practice-lightgrey)](.)
 
 # Topological Sort
 
@@ -516,9 +515,9 @@ When to use:
 ---
 
 ## See Also
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
-- [SDE Role](../../80-Interview-Lanes/81-Indian-SDE-FAANG/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
+- [SDE Role](../../8-Interview-Lanes/1-Indian-SDE-FAANG/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

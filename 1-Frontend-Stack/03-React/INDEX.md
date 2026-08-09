@@ -30,7 +30,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL, Vitest)](../../50-Quality-Stack/16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation (Framer, GSAP, React Spring)](../30-Animation/)
+**Cross-references:** [JavaScript](../01-JavaScript/) | [Next.js](../04-NextJS/) | [Testing (RTL, Vitest)](../../5-Quality-Stack/16-Testing/) | [Form Handling](../29-Form-Handling/) | [Animation (Framer, GSAP, React Spring)](../30-Animation/)
 ---
 
 ## Navigation

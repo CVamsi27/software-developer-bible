@@ -1,8 +1,7 @@
----
-section: CI/CD
-category: DevOps
-tags: [concept]
----
+<!-- section: CI/CD | category: DevOps | tags: concept -->
+[![Section](https://img.shields.io/badge/section-CI/CD-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # GitLab CI/CD
 

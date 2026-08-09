@@ -19,9 +19,9 @@
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [React](../../10-Frontend-Stack/03-React/) | [NestJS](../06-NestJS/)
+**Cross-references:** [REST APIs](../07-REST-API/) | [React](../../1-Frontend-Stack/03-React/) | [NestJS](../06-NestJS/)
 ---
 
 ## Navigation
 
-[← Previous: Testing](../../50-Quality-Stack/16-Testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-Interview-Toolkit/18-Behavioral/INDEX.md)
+[← Previous: Testing](../../5-Quality-Stack/16-Testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../7-Interview-Toolkit/18-Behavioral/INDEX.md)

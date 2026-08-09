@@ -36,7 +36,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../../10-Frontend-Stack/01-JavaScript/) | [System Design](../../30-Architecture-Stack/11-System-Design/) | [SDE Role](../../80-Interview-Lanes/81-Indian-SDE-FAANG/)
+**Cross-references:** [JavaScript](../../1-Frontend-Stack/01-JavaScript/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [SDE Role](../../8-Interview-Lanes/1-Indian-SDE-FAANG/)
 
 ---
 

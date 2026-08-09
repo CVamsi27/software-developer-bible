@@ -1,8 +1,7 @@
----
-section: Next.js
-category: Frontend
-tags: [concept]
----
+<!-- section: Next.js | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Next.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Middleware in Next.js
 
@@ -783,9 +782,9 @@ request.geo                   → Geographic info
 
 ## See Also
 - [Authentication](13-Authentication.md)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [React](../03-React/)
-- [Serverless & Edge](../../40-Platform-Stack/27-Serverless-Edge/)
+- [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/)
 
 ## References & Learn More
 

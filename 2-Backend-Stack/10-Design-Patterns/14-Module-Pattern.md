@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Module Pattern
 
@@ -265,10 +264,10 @@ import { User } from '@/domain/user';
 ---
 
 ## See Also
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/) (module-level organization)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/) (ES modules, CommonJS, dynamic import)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/) (module-level organization)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/) (ES modules, CommonJS, dynamic import)
 - [NestJS](../06-NestJS/) (modules as DI containers)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (bounded contexts as modules)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (bounded contexts as modules)
 
 ## References & Learn More
 

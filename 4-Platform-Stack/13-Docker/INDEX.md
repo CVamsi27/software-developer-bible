@@ -17,9 +17,9 @@
 
 ---
 
-**Cross-references:** [Kubernetes](../14-Kubernetes/) | [CI/CD](../15-CI-CD) | [Microservices](../../20-Backend-Stack/12-Microservices/)
+**Cross-references:** [Kubernetes](../14-Kubernetes/) | [CI/CD](../15-CI-CD) | [Microservices](../../2-Backend-Stack/12-Microservices/)
 ---
 
 ## Navigation
 
-[← Previous: Microservices](../../20-Backend-Stack/12-Microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Kubernetes →](../14-Kubernetes/INDEX.md)
+[← Previous: Microservices](../../2-Backend-Stack/12-Microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Kubernetes →](../14-Kubernetes/INDEX.md)

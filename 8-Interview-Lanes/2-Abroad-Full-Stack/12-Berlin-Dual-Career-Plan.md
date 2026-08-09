@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Execution
-tags: [berlin, dual-career, family, cssa, pegs, relocation, eu-blue-card, vamsi]
----
+<!-- section: Abroad Full-Stack Lane | category: Execution | tags: berlin, dual-career, family, cssa, pegs, relocation, eu-blue-card, vamsi -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Execution-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-berlin%20%C2%B7%20dual-career%20%C2%B7%20family%20%C2%B7%20cssa%20%C2%B7%20pegs%20%C2%B7%20relocation%20%C2%B7%20eu-blue-card%20%C2%B7%20vamsi-lightgrey)](.)
 
 # Berlin Dual-Career Plan — Vamsi + Wife (CSSA), Newborn
 
@@ -446,8 +445,8 @@ File annual tax return (Steuererklärung) via ELSTER or with a Steuerberater (�
 - [10-Weekly-Tracker.md](10-Weekly-Tracker.md) — 4-week prep plan
 - [study-plan.md](study-plan.md) — Daily prep breakdown
 - [story-bank.md](story-bank.md) — STAR stories
-- [00-Interview-Strategy/Resume-Tips.md](../../00-Interview-Strategy/Resume-Tips.md) — CV writing
-- [00-Interview-Strategy/STAR-Method.md](../../00-Interview-Strategy/STAR-Method.md) — STAR stories
+- [0-Interview-Strategy/Resume-Tips.md](../../0-Interview-Strategy/Resume-Tips.md) — CV writing
+- [0-Interview-Strategy/STAR-Method.md](../../0-Interview-Strategy/STAR-Method.md) — STAR stories
 
 ---
 

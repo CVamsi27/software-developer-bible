@@ -23,7 +23,7 @@
 
 ## Getting Started
 
-This repository documents senior full-stack engineering interview topics across 32 sections. All content is written in **GitHub Flavored Markdown** (`.md`).
+This repository documents senior full-stack engineering interview topics across 33 sections in a 3-lane + 7-stack layout. All content is written in **GitHub Flavored Markdown** (`.md`).
 
 Before contributing, review the existing files in the relevant section to understand the established conventions before creating or modifying content.
 
@@ -38,12 +38,12 @@ Before contributing, review the existing files in the relevant section to unders
 ├── CONTRIBUTING.md            # This file
 ├── PROJECT-STATS.md           # Auto-generated statistics report
 │
-├── 00-Interview-Strategy/                # LANE 0 — Cross-lane (everyone)
+├── 0-Interview-Strategy/                # LANE 0 — Cross-lane (everyone)
 │   ├── INDEX.md
 │   ├── Communication.md
 │   └── ...
 │
-├── 10-Frontend-Stack/                    # STACK 1 — Frontend
+├── 1-Frontend-Stack/                    # STACK 1 — Frontend
 │   ├── 01-JavaScript/
 │   ├── 02-TypeScript/
 │   ├── 03-React/
@@ -51,7 +51,7 @@ Before contributing, review the existing files in the relevant section to unders
 │   ├── 29-Form-Handling/
 │   └── 30-Animation/
 │
-├── 20-Backend-Stack/                     # STACK 2 — Backend
+├── 2-Backend-Stack/                     # STACK 2 — Backend
 │   ├── 05-NodeJS/
 │   ├── 06-NestJS/
 │   ├── 07-REST-API/
@@ -61,10 +61,10 @@ Before contributing, review the existing files in the relevant section to unders
 │   ├── 12-Microservices/
 │   └── 17-GraphQL/
 │
-├── 30-Architecture-Stack/                # STACK 3 — Architecture
+├── 3-Architecture-Stack/                # STACK 3 — Architecture
 │   └── 11-System-Design/                 # 22 case studies
 │
-├── 40-Platform-Stack/                    # STACK 4 — DevOps / Platform
+├── 4-Platform-Stack/                    # STACK 4 — DevOps / Platform
 │   ├── 13-Docker/
 │   ├── 14-Kubernetes/
 │   ├── 15-CI-CD/
@@ -74,27 +74,27 @@ Before contributing, review the existing files in the relevant section to unders
 │   ├── 27-Serverless-Edge/
 │   └── 28-Monorepo/
 │
-├── 50-Quality-Stack/                     # STACK 5 — Quality
+├── 5-Quality-Stack/                     # STACK 5 — Quality
 │   ├── 16-Testing/
 │   ├── 25-Accessibility/
 │   └── 26-Performance-Monitoring/
 │
-├── 60-Real-Time-Stack/                   # STACK 6 — Real-time
+├── 6-Real-Time-Stack/                   # STACK 6 — Real-time
 │   └── 21-WebSockets/
 │
-├── 70-Interview-Toolkit/                 # STACK 7 — Interview prep toolkit
+├── 7-Interview-Toolkit/                 # STACK 7 — Interview prep toolkit
 │   ├── 18-Behavioral/
 │   ├── 19-Coding-Patterns/               # 18 pattern files
 │   └── 20-CheatSheets/
 │
-└── 80-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
-    ├── 81-Indian-SDE-FAANG/              # DSA-heavy, 8-week
-    └── 82-Abroad-Full-Stack/             # Take-home + system design, 4-week
+└── 8-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
+    ├── 1-Indian-SDE-FAANG/              # DSA-heavy, 8-week
+    └── 2-Abroad-Full-Stack/             # Take-home + system design, 4-week
 ```
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **The 3 lanes** (`00-`, `81-`, `82-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
-- Stack directories are numbered `10-` through `70-` to make it easy to slot new sections in (e.g. `11-` next to `10-Frontend-Stack/` if you add a Frontend-Stack-adjacent section).
+- Stack directories are numbered `1-` through `7-` to make it easy to slot new sections in (e.g. `8-` if you add a 9th top-level lane).
 - Each section has an `INDEX.md` file
 - Content files are numbered within their section (`01-`, `02-`, etc.)
 
@@ -114,25 +114,50 @@ Before contributing, review the existing files in the relevant section to unders
 
 ---
 
-## YAML Frontmatter
+## File Metadata (HTML comment + shields.io badges)
 
-Every content file **must** begin with YAML frontmatter between `---` delimiters:
+Every content file **must** begin with metadata in two forms:
 
-```yaml
----
-section: JavaScript        # Section name (matches directory topic)
-category: Core             # See valid categories below
-tags: [concept]            # Valid tags: concept, interview-questions, cheat-sheet,
-                           #   reference, guide, overview, tool, study-plan, practice
----
+1. **HTML comment** (preserved for tooling, hidden in markdown renderers)
+2. **shields.io badges** (visual metadata that renders as colored pills)
+
+```markdown
+<!-- section: JavaScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+
+# File Title
 ```
 
 ### Rules
 
 - **Required fields**: `section`, `category`, `tags`
-- `tags` is a YAML list: `[concept]` or `[interview-questions, reference]`
-- Frontmatter must be separated from content by a blank line after the closing `---`
-- INDEX.md and README.md files do **not** use frontmatter
+- `tags` is a comma-separated list: `concept, lld, principles, theory`
+- Metadata line goes BEFORE the title (H1)
+- INDEX.md and README.md files do **not** have the HTML comment, but they have badges
+- Badges are clickable — they link to the section root (`.`)
+
+### Category Values
+
+| Category | Used For | Badge color |
+|----------|----------|-------------|
+| `Core` | JavaScript, TypeScript | blue |
+| `Frontend` | React, Next.js, Animation, Form Handling | ff6b35 (orange) |
+| `Backend` | Node.js, NestJS | success (green) |
+| `API` | REST APIs, GraphQL | ff6b35 (orange) |
+| `Data` | Database | 8b5cf6 (purple) |
+| `Architecture` | System Design, Microservices, Security, Design Patterns | 800080 (dark purple) |
+| `DevOps` | Docker, Kubernetes, CI/CD, Serverless | ff7f00 (devops orange) |
+| `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting) | 0ea5e9 (sky) |
+| `Tooling` | Build Tools, Git Advanced | 64748b (slate) |
+| `Quality` | Testing, Accessibility, Performance Monitoring | 8b5cf6 (purple) |
+| `Real-Time` | WebSockets | f59e0b (amber) |
+| `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role, lanes | red |
+| `Reference` | CheatSheets, Monorepo | lightgrey |
+| `Execution` | Personal execution plans (e.g., Berlin plan) | ff6b35 (orange) |
+
+> **14 categories** total. The `Execution` category is for personalized plans tied to a specific user.
 
 ### Category Values
 
@@ -506,9 +531,9 @@ else:
 
 ```text
 ## See Also
-- [Coding Patterns](70-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](10-Frontend-Stack/01-JavaScript/)
-- [TypeScript](10-Frontend-Stack/02-TypeScript/)
+- [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/)
+- [JavaScript](1-Frontend-Stack/01-JavaScript/)
+- [TypeScript](1-Frontend-Stack/02-TypeScript/)
 ```
 
 #### Rules
@@ -524,9 +549,9 @@ else:
 
 | Variant | Example | Usage |
 |---------|---------|-------|
-| Section directory | `- [React](10-Frontend-Stack/03-React/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](50-Quality-Stack/16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](20-Backend-Stack/07-REST-API/)` | Cross-section from subdirectories |
+| Section directory | `- [React](1-Frontend-Stack/03-React/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](5-Quality-Stack/16-Testing/02-Jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](2-Backend-Stack/07-REST-API/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -545,7 +570,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```text
-**Cross-references:** [JavaScript](10-Frontend-Stack/01-JavaScript/) | [TypeScript](10-Frontend-Stack/02-TypeScript/) | [Coding Patterns](70-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [JavaScript](1-Frontend-Stack/01-JavaScript/) | [TypeScript](1-Frontend-Stack/02-TypeScript/) | [Coding Patterns](7-Interview-Toolkit/19-Coding-Patterns/)
 ```
 
 - Pipe-separated links

@@ -1,8 +1,7 @@
----
-section: CheatSheets
-category: Reference
-tags: [cheat-sheet, reference]
----
+<!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
 
 # JavaScript Cheat Sheet
 
@@ -277,9 +276,9 @@ This cheat sheet provides a concise reference to core JavaScript concepts, patte
 
 ## See Also
 - [Coding Patterns](../19-Coding-Patterns/)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
-- [Node.js](../../20-Backend-Stack/05-NodeJS/)
-- [TypeScript](../../10-Frontend-Stack/02-TypeScript/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
+- [Node.js](../../2-Backend-Stack/05-NodeJS/)
+- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
 
 ## References & Learn More
 

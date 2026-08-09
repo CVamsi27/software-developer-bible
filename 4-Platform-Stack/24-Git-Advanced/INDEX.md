@@ -23,4 +23,4 @@
 
 ## Navigation
 
-[← Previous: Build Tools](../23-Build-Tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../../50-Quality-Stack/25-Accessibility/INDEX.md)
+[← Previous: Build Tools](../23-Build-Tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../../5-Quality-Stack/25-Accessibility/INDEX.md)

@@ -22,9 +22,9 @@
 
 ---
 
-**Cross-references:** [JavaScript Event Loop](../../10-Frontend-Stack/01-JavaScript/09-Event-Loop.md) | [NestJS](../06-NestJS/) | [Docker](../../40-Platform-Stack/13-Docker/)
+**Cross-references:** [JavaScript Event Loop](../../1-Frontend-Stack/01-JavaScript/09-Event-Loop.md) | [NestJS](../06-NestJS/) | [Docker](../../4-Platform-Stack/13-Docker/)
 ---
 
 ## Navigation
 
-[← Previous: Next.js](../../10-Frontend-Stack/04-NextJS/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: NestJS →](../06-NestJS/INDEX.md)
+[← Previous: Next.js](../../1-Frontend-Stack/04-NextJS/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: NestJS →](../06-NestJS/INDEX.md)

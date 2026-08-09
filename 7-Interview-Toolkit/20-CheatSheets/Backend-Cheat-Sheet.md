@@ -1,8 +1,7 @@
----
-section: CheatSheets
-category: Reference
-tags: [cheat-sheet, reference]
----
+<!-- section: CheatSheets | category: Reference | tags: cheat-sheet, reference -->
+[![Section](https://img.shields.io/badge/section-CheatSheets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-cheat-sheet%20%C2%B7%20reference-lightgrey)](.)
 
 # Backend Cheat Sheet
 
@@ -430,14 +429,14 @@ async transfer(fromId: string, toId: string, amount: number) {
 This cheat sheet provides a concise reference to core Backend concepts, patterns, and best practices. Use it as a quick review before technical interviews or as a day-to-day reference for common patterns and syntax.
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [GraphQL](../../20-Backend-Stack/17-GraphQL/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
-- [Node.js](../../20-Backend-Stack/05-NodeJS/)
-- [REST APIs](../../20-Backend-Stack/07-REST-API/)
-- [Security](../../20-Backend-Stack/09-Security/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [GraphQL](../../2-Backend-Stack/17-GraphQL/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
+- [Node.js](../../2-Backend-Stack/05-NodeJS/)
+- [REST APIs](../../2-Backend-Stack/07-REST-API/)
+- [Security](../../2-Backend-Stack/09-Security/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, distributed-systems, coordination, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, distributed-systems, coordination, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed-systems%20%C2%B7%20coordination%20%C2%B7%20theory-lightgrey)](.)
 
 # Distributed Locks & Coordination
 
@@ -239,12 +238,12 @@ Make sure only one of N machines runs the daily job.
 async function runDailyJob() {
   const lockKey = 'lock:daily-job';
   const acquired = await redis.set(lockKey, instanceId, 'NX', 'EX', 86400);
-  
+
   if (!acquired) {
     log('Another instance is running the daily job');
     return;
   }
-  
+
   try {
     await doDailyWork();
   } finally {
@@ -262,12 +261,12 @@ Make sure each message is processed by exactly one worker.
 async function processMessage(msg: Message) {
   const lockKey = `lock:msg:${msg.id}`;
   const acquired = await redis.set(lockKey, instanceId, 'NX', 'EX', 300);
-  
+
   if (!acquired) {
     log('Another worker is processing this message');
     return;
   }
-  
+
   try {
     await process(msg);
     await db.updateMessageStatus(msg.id, 'done');
@@ -289,16 +288,16 @@ When a cache key expires, only one process should regenerate it.
 async function getValue(key: string) {
   const value = await cache.get(key);
   if (value) return value;
-  
+
   const lockKey = `lock:regen:${key}`;
   const acquired = await redis.set(lockKey, instanceId, 'NX', 'EX', 30);
-  
+
   if (!acquired) {
     // Another process is regenerating. Wait and retry.
     await sleep(100);
     return getValue(key);
   }
-  
+
   try {
     const fresh = await db.get(key);
     await cache.set(key, fresh, 3600);

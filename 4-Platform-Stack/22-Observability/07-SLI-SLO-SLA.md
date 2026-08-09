@@ -1,8 +1,7 @@
----
-section: Observability
-category: Observability
-tags: [concept, reference, guide]
----
+<!-- section: Observability | category: Observability | tags: concept, reference, guide -->
+[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20guide-lightgrey)](.)
 
 # SLI, SLO & SLA
 
@@ -303,8 +302,8 @@ INTERVIEW TIPS:
 - [Kubernetes](../14-Kubernetes/)
 - [Logging](01-Logging.md)
 - [Monitoring](02-Monitoring.md)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

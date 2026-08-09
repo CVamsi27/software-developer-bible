@@ -2,7 +2,7 @@
 
 > **15 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../../30-Architecture-Stack/11-System-Design/) | [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/) | [Microservices (polyglot persistence)](../12-Microservices/)
+**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) | [Microservices (polyglot persistence)](../12-Microservices/)
 ---
 
 ## Navigation

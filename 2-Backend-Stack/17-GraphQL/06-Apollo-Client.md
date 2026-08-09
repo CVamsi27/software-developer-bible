@@ -1,8 +1,7 @@
----
-section: GraphQL
-category: API
-tags: [concept, reference]
----
+<!-- section: GraphQL | category: API | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-GraphQL-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Apollo Client
 
@@ -1112,7 +1111,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [NestJS](../06-NestJS/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [REST APIs](../07-REST-API/)
 
 ## References & Learn More

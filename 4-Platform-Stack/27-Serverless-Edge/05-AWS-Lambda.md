@@ -1,8 +1,7 @@
----
-section: Serverless & Edge
-category: DevOps
-tags: [concept, reference]
----
+<!-- section: Serverless & Edge | category: DevOps | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # AWS Lambda
 
@@ -273,7 +272,6 @@ INTERVIEW TIPS:
 - [Serverless Overview](01-Serverless-Overview.md)
 - [Serverless Patterns](03-Serverless-Patterns.md)
 - [Vercel Deployments](06-Vercel-Deployments.md)
-
 
 ## References & Learn More
 

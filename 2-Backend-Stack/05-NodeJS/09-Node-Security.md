@@ -1,8 +1,7 @@
----
-section: Node.js
-category: Backend
-tags: [concept]
----
+<!-- section: Node.js | category: Backend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Backend-success)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Node.js Security
 
@@ -496,7 +495,7 @@ PROTOTYPE POLLUTION:
 ---
 
 ## See Also
-- [Docker](../../40-Platform-Stack/13-Docker/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
 - [Web Security](../09-Security/)
 
 ## References & Learn More

@@ -19,9 +19,9 @@
 
 ---
 
-**Cross-references:** [Kubernetes (Health Checks)](../14-Kubernetes/) | [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/) | [Serverless & Edge](../27-Serverless-Edge/)
+**Cross-references:** [Kubernetes (Health Checks)](../14-Kubernetes/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) | [Serverless & Edge](../27-Serverless-Edge/)
 ---
 
 ## Navigation
 
-[← Previous: WebSockets](../../60-Real-Time-Stack/21-WebSockets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../23-Build-Tools/INDEX.md)
+[← Previous: WebSockets](../../6-Real-Time-Stack/21-WebSockets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../23-Build-Tools/INDEX.md)

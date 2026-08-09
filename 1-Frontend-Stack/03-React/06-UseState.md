@@ -1,8 +1,7 @@
----
-section: React
-category: Frontend
-tags: [concept]
----
+<!-- section: React | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-React-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # useState
 
@@ -788,7 +787,7 @@ When to Use useState vs useReducer:
 - [Form Handling](../29-Form-Handling/)
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)
-- [Testing](../../50-Quality-Stack/16-Testing/)
+- [Testing](../../5-Quality-Stack/16-Testing/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: Accessibility
-category: Quality
-tags: [concept, reference]
----
+<!-- section: Accessibility | category: Quality | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Accessibility-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # ARIA (Accessible Rich Internet Applications)
 
@@ -400,7 +399,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Performance Monitoring](../26-Performance-Monitoring/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [Testing](../16-Testing/)
 
 ## References & Learn More

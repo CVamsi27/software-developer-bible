@@ -1,8 +1,7 @@
----
-section: Testing
-category: Quality
-tags: [concept, overview]
----
+<!-- section: Testing | category: Quality | tags: concept, overview -->
+[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20overview-lightgrey)](.)
 
 # Testing Overview
 
@@ -797,11 +796,11 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [CI/CD](../../40-Platform-Stack/15-CI-CD)
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
+- [CI/CD](../../4-Platform-Stack/15-CI-CD)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
 - [Performance & Load Testing](11-Performance-Load-Testing.md)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [Vitest](10-Vitest.md)
 
 ## References & Learn More

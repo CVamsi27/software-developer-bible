@@ -1,8 +1,7 @@
----
-section: Microservices
-category: Architecture
-tags: [concept]
----
+<!-- section: Microservices | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Microservices-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # RabbitMQ
 
@@ -760,10 +759,10 @@ RabbitMQ is a versatile message broker ideal for microservices communication. It
 
 ## See Also
 - [CQRS](13-CQRS.md)
-- [Docker](../../40-Platform-Stack/13-Docker/)
-- [Kubernetes](../../40-Platform-Stack/14-Kubernetes/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
+- [Kubernetes](../../4-Platform-Stack/14-Kubernetes/)
 - [NestJS](../06-NestJS/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

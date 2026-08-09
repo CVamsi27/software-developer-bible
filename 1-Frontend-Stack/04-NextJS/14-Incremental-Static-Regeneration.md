@@ -1,8 +1,7 @@
----
-section: Next.js
-category: Frontend
-tags: [concept]
----
+<!-- section: Next.js | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Next.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Incremental Static Regeneration (ISR)
 

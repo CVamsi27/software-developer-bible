@@ -1,8 +1,7 @@
----
-section: Security
-category: Architecture
-tags: [concept]
----
+<!-- section: Security | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Security-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # CSRF (Cross-Site Request Forgery)
 
@@ -402,7 +401,7 @@ CSRF is a serious web security vulnerability that exploits the trust between a u
 
 ## See Also
 - [REST APIs](../07-REST-API/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

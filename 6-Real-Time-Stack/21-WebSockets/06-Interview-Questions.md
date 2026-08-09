@@ -1,8 +1,7 @@
----
-section: WebSockets
-category: Real-Time
-tags: [interview-questions, practice]
----
+<!-- section: WebSockets | category: Real-Time | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-WebSockets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Real-Time-f59e0b)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # WebSockets & Real-Time Interview Questions
 
@@ -1708,9 +1707,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

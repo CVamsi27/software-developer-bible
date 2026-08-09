@@ -1,8 +1,7 @@
----
-section: Docker
-category: DevOps
-tags: [concept]
----
+<!-- section: Docker | category: DevOps | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Docker Multi-Stage Builds
 
@@ -406,7 +405,7 @@ docker scout quickview myapp:latest
 ## See Also
 - [CI/CD](../15-CI-CD)
 - [Kubernetes](../14-Kubernetes/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 
 ## References & Learn More
 

@@ -22,4 +22,4 @@
 
 ## Navigation
 
-[← Previous: Serverless & Edge](../27-Serverless-Edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../../10-Frontend-Stack/29-Form-Handling/INDEX.md)
+[← Previous: Serverless & Edge](../27-Serverless-Edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../../1-Frontend-Stack/29-Form-Handling/INDEX.md)

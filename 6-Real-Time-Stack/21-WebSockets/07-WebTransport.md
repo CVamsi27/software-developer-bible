@@ -1,8 +1,7 @@
----
-section: WebSockets
-category: Real-Time
-tags: [concept, reference]
----
+<!-- section: WebSockets | category: Real-Time | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-WebSockets-blue)](.)
+[![Category](https://img.shields.io/badge/category-Real-Time-f59e0b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # WebTransport
 
@@ -303,10 +302,10 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
 - [Real-Time Architecture](04-Real-Time-Architecture.md)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 - [WebSockets Overview](01-WebSockets-Overview.md)
 
 ## References & Learn More

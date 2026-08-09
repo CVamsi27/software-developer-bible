@@ -2,7 +2,7 @@
 
 > **14 files** — Web security fundamentals from JWT and OAuth to XSS, CSRF, SQL injection, encryption, RBAC, session management, threat modeling, secrets management, API security, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -24,7 +24,7 @@
 
 ---
 
-**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../../30-Architecture-Stack/11-System-Design/) | [Authentication (REST)](../07-REST-API/06-Authentication.md) | [Microservices (mTLS, service mesh)](../12-Microservices/)
+**Cross-references:** [REST APIs](../07-REST-API/) | [System Design](../../3-Architecture-Stack/11-System-Design/) | [Authentication (REST)](../07-REST-API/06-Authentication.md) | [Microservices (mTLS, service mesh)](../12-Microservices/)
 ---
 
 ## Navigation

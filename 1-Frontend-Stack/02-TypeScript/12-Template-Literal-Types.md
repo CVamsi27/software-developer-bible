@@ -1,8 +1,7 @@
----
-section: TypeScript
-category: Core
-tags: [concept]
----
+<!-- section: TypeScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Template Literal Types
 
@@ -791,7 +790,7 @@ type ReplaceAll<S, F extends string, T extends string> =
 - [JavaScript](../01-JavaScript/)
 - [keyof / typeof](06-Keyof-typeof.md)
 - [Mapped Types](07-Mapped-Types.md)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
 - [React](../03-React/)
 
 ## References & Learn More

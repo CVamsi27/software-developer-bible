@@ -1,8 +1,7 @@
----
-section: Observability
-category: Observability
-tags: [concept, reference]
----
+<!-- section: Observability | category: Observability | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Distributed Tracing
 
@@ -507,7 +506,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More

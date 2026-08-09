@@ -1,6 +1,6 @@
 # Backend Stack
 
-> **Node.js, NestJS, REST APIs, Database, Security, Design Patterns, Microservices, GraphQL** — shared by both the [81-Indian-SDE-FAANG lane](../80-Interview-Lanes/81-Indian-SDE-FAANG/) and the [82-Abroad-Full-Stack lane](../80-Interview-Lanes/82-Abroad-Full-Stack/).
+> **Node.js, NestJS, REST APIs, Database, Security, Design Patterns, Microservices, GraphQL** — shared by both the [1-Indian-SDE-FAANG lane](../8-Interview-Lanes/1-Indian-SDE-FAANG/) and the [2-Abroad-Full-Stack lane](../8-Interview-Lanes/2-Abroad-Full-Stack/).
 
 | Section | Files | Topics |
 |---------|------:|--------|
@@ -15,4 +15,4 @@
 
 ---
 
-**Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [80-Interview-Lanes/](../80-Interview-Lanes/) — the stacks stay stack-pure.
+**Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [8-Interview-Lanes/](../8-Interview-Lanes/) — the stacks stay stack-pure.

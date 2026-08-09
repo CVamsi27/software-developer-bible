@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, architecture, patterns, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, architecture, patterns, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20architecture%20%C2%B7%20patterns%20%C2%B7%20theory-lightgrey)](.)
 
 # Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal
 
@@ -223,7 +222,7 @@ The senior signal: name the pattern, justify the choice, know the trade-offs.
 
 **In interviews:** "We use event-driven for cross-service workflows. Order service emits `order_created`, inventory consumes and reserves, payment consumes and charges, all async. If any step fails, we run compensating actions in reverse (saga)."
 
-**See also:** [00-Queues-and-Async.md](00-Queues-and-Async.md), [../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md), [../../20-Backend-Stack/12-Microservices/07-Event-Sourcing.md](../../20-Backend-Stack/12-Microservices/07-Event-Sourcing.md)
+**See also:** [00-Queues-and-Async.md](00-Queues-and-Async.md), [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md), [../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md](../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md)
 
 ---
 
@@ -455,8 +454,8 @@ The senior signal: name the pattern, justify the choice, know the trade-offs.
 - [00-Queues-and-Async.md](00-Queues-and-Async.md) — async is the foundation of EDA
 - [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — saga for cross-service
 - [00-CAP-Theorem.md](00-CAP-Theorem.md) — microservices force trade-offs
-- [../../20-Backend-Stack/12-Microservices/](../../20-Backend-Stack/12-Microservices/) — full microservices reference
-- [../../20-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md](../../20-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md) — apply to your architecture
+- [../../2-Backend-Stack/12-Microservices/](../../2-Backend-Stack/12-Microservices/) — full microservices reference
+- [../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md](../../2-Backend-Stack/10-Design-Patterns/00-SOLID-Principles.md) — apply to your architecture
 
 ---
 

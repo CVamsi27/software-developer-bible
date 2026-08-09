@@ -1,8 +1,7 @@
----
-section: React
-category: Frontend
-tags: [concept]
----
+<!-- section: React | category: Frontend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-React-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Custom Hooks
 
@@ -1123,7 +1122,7 @@ Performance:
 - [JavaScript](../01-JavaScript/)
 - [Next.js](../04-NextJS/)
 - [Performance](13-Performance.md)
-- [Testing](../../50-Quality-Stack/16-Testing/)
+- [Testing](../../5-Quality-Stack/16-Testing/)
 - [useEffect](07-UseEffect.md)
 - [useMemo / useCallback](08-UseMemo-UseCallback.md)
 - [useRef](09-UseRef.md)

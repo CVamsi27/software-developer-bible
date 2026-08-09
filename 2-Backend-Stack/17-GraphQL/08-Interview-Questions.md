@@ -1,8 +1,7 @@
----
-section: GraphQL
-category: API
-tags: [interview-questions]
----
+<!-- section: GraphQL | category: API | tags: interview-questions -->
+[![Section](https://img.shields.io/badge/section-GraphQL-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
 
 # GraphQL Interview Questions
 
@@ -1776,7 +1775,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [NestJS](../06-NestJS/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [REST APIs](../07-REST-API/)
 
 ## References & Learn More

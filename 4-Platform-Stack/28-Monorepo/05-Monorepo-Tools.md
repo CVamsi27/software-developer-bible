@@ -1,8 +1,7 @@
----
-section: Monorepo
-category: Reference
-tags: [concept, reference, tool]
----
+<!-- section: Monorepo | category: Reference | tags: concept, reference, tool -->
+[![Section](https://img.shields.io/badge/section-Monorepo-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
 
 # Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)
 
@@ -234,7 +233,6 @@ INTERVIEW ANSWER:
 - [Monorepo Overview](01-Monorepo-Overview.md)
 - [Nx](03-Nx.md)
 - [Turborepo](02-Turborepo.md)
-
 
 ## References & Learn More
 

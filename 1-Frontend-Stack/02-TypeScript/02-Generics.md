@@ -1,8 +1,7 @@
----
-section: TypeScript
-category: Core
-tags: [concept]
----
+<!-- section: TypeScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Generics
 
@@ -475,7 +474,7 @@ function merge<T extends object, U extends object>(a: T, b: U): T & U {
 
 ## See Also
 - [JavaScript](../01-JavaScript/)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
 - [React](../03-React/)
 
 ## References & Learn More

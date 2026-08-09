@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -17,7 +17,7 @@
 | 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
 | 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (5 country tiers), visa strategy (8 countries) |
 | 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
-| 6 | [Cross-references to Core Sections (10-70 + 00)](#cross-references-to-core-sections-00-30) | Where to study (the 8 themed groups) |
+| 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections-1-7 + 0) | Where to study (the 8 themed groups) |
 | 7 | [FAQ](#faq) | Common questions |
 | 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
 
@@ -43,51 +43,51 @@
 
 ## Reference Topics — What You Need to Know
 
-This is a **reference checklist** of every topic a senior abroad full-stack candidate should be able to discuss confidently. It is **non-duplicative** with the core stacks 10-70 + 00 (which contain the actual deep-dive content). This is the **what to be ready for**; the core sections are **where to study it**.
+This is a **reference checklist** of every topic a senior abroad full-stack candidate should be able to discuss confidently. It is **non-duplicative** with the core stacks 1-7 + 0 (which contain the actual deep-dive content). This is the **what to be ready for**; the core sections are **where to study it**.
 
 ### Tier 1 — Mandatory, will be asked in 90%+ of interviews
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [02-TypeScript/](../../10-Frontend-Stack/02-TypeScript/) |
-| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [03-React/](../../10-Frontend-Stack/03-React/) |
-| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [04-NextJS/](../../10-Frontend-Stack/04-NextJS/) |
-| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [05-NodeJS/](../../20-Backend-Stack/05-NodeJS/) |
-| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [06-NestJS/](../../20-Backend-Stack/06-NestJS/) |
-| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [07-REST-API/](../../20-Backend-Stack/07-REST-API/), [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/) |
-| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [08-Database/](../../20-Backend-Stack/08-Database/) |
-| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [09-Security/](../../20-Backend-Stack/09-Security/) |
-| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) |
-| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
-| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [13-Docker/](../../40-Platform-Stack/13-Docker/), [15-CI-CD/](../../40-Platform-Stack/15-CI-CD) |
-| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [16-Testing/](../../50-Quality-Stack/16-Testing/) |
-| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [22-Observability/](../../40-Platform-Stack/22-Observability/) |
-| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) + your own [story-bank.md](story-bank.md) |
+| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [02-TypeScript/](../../1-Frontend-Stack/02-TypeScript/) |
+| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [03-React/](../../1-Frontend-Stack/03-React/) |
+| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [04-NextJS/](../../1-Frontend-Stack/04-NextJS/) |
+| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [05-NodeJS/](../../2-Backend-Stack/05-NodeJS/) |
+| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [06-NestJS/](../../2-Backend-Stack/06-NestJS/) |
+| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [07-REST-API/](../../2-Backend-Stack/07-REST-API/), [17-GraphQL/](../../2-Backend-Stack/17-GraphQL/) |
+| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [08-Database/](../../2-Backend-Stack/08-Database/) |
+| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [09-Security/](../../2-Backend-Stack/09-Security/) |
+| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) |
+| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [12-Microservices/](../../2-Backend-Stack/12-Microservices/) |
+| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [13-Docker/](../../4-Platform-Stack/13-Docker/), [15-CI-CD/](../../4-Platform-Stack/15-CI-CD) |
+| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [16-Testing/](../../5-Quality-Stack/16-Testing/) |
+| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [22-Observability/](../../4-Platform-Stack/22-Observability/) |
+| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) + your own [story-bank.md](story-bank.md) |
 
 ### Tier 2 — Asked in 50-70% of interviews (mid-stage senior)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) |
-| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/) |
-| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [25-Accessibility/](../../50-Quality-Stack/25-Accessibility/) |
-| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) |
-| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/) |
-| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [27-Serverless-Edge/](../../40-Platform-Stack/27-Serverless-Edge/) |
-| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) |
-| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) |
-| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) |
+| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [14-Kubernetes/](../../4-Platform-Stack/14-Kubernetes/) |
+| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [26-Performance-Monitoring/](../../5-Quality-Stack/26-Performance-Monitoring/) |
+| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [25-Accessibility/](../../5-Quality-Stack/25-Accessibility/) |
+| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [23-Build-Tools/](../../4-Platform-Stack/23-Build-Tools/) |
+| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/) |
+| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [27-Serverless-Edge/](../../4-Platform-Stack/27-Serverless-Edge/) |
+| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [10-Design-Patterns/](../../2-Backend-Stack/10-Design-Patterns/) |
+| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [24-Git-Advanced/](../../4-Platform-Stack/24-Git-Advanced/) |
+| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) |
 
 ### Tier 3 — Differentiator (asked 20-30%, distinguishes senior from staff)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [03-React/](../../10-Frontend-Stack/03-React/) + [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) |
-| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
-| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [09-Security/](../../20-Backend-Stack/09-Security/) |
-| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [13-Docker/](../../40-Platform-Stack/13-Docker/), [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) |
-| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) |
-| **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [22-Compensation-Benchmarking.md](../81-Indian-SDE-FAANG/22-Compensation-Benchmarking.md) |
+| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [03-React/](../../1-Frontend-Stack/03-React/) + [23-Build-Tools/](../../4-Platform-Stack/23-Build-Tools/) |
+| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [12-Microservices/](../../2-Backend-Stack/12-Microservices/) |
+| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [09-Security/](../../2-Backend-Stack/09-Security/) |
+| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [13-Docker/](../../4-Platform-Stack/13-Docker/), [14-Kubernetes/](../../4-Platform-Stack/14-Kubernetes/) |
+| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) |
+| **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [22-Compensation-Benchmarking.md](../1-Indian-SDE-FAANG/22-Compensation-Benchmarking.md) |
 
 ### Topics to SKIP (overkill for this lane)
 
@@ -140,7 +140,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 **How to ship a strong take-home:**
 - Plan for 5-6 hours minimum, even if the brief says "2 hours"
 - Lead with: schema design, then backend, then frontend, then tests, then README
-- Use the bible's [06-NestJS/](../../20-Backend-Stack/06-NestJS/) + [08-Database/](../../20-Backend-Stack/08-Database/) + [09-Security/](../../20-Backend-Stack/09-Security/) sections as your reference
+- Use the bible's [06-NestJS/](../../2-Backend-Stack/06-NestJS/) + [08-Database/](../../2-Backend-Stack/08-Database/) + [09-Security/](../../2-Backend-Stack/09-Security/) sections as your reference
 - Include a short Loom video walkthrough if the brief allows
 - Have a "what I'd do with 24 more hours" note in the README
 
@@ -160,7 +160,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No questions asked back
 - Silent for 5+ minutes when stuck
 
-**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) has the patterns.
+**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) has the patterns.
 
 ### Round 3: System Design (45-60 min)
 
@@ -184,15 +184,15 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No observability / no failure modes
 
 **The system design case studies the bible has:**
-- [URL Shortener](../../30-Architecture-Stack/11-System-Design/01-URL-Shortener.md) — classic
-- [Notification Service](../../30-Architecture-Stack/11-System-Design/07-Notification-Service.md) — retry, DLQ, fanout
-- [Ticket Booking](../../30-Architecture-Stack/11-System-Design/08-Ticket-Booking.md) — consistency, "two users grab the last seat"
-- [Hospital Management](../../30-Architecture-Stack/11-System-Design/10-Hospital-Management.md) — domain fit for healthcare
-- [Payment Gateway](../../30-Architecture-Stack/11-System-Design/06-Payment-Gateway.md) — SumUp / fintech
-- [Rate Limiter](../../30-Architecture-Stack/11-System-Design/13-Rate-Limiter.md) — n8n workflow throttling
-- [Distributed Counter](../../30-Architecture-Stack/11-System-Design/22-Distributed-Counter.md) — hot-key sharding
-- [Lyft](../../30-Architecture-Stack/11-System-Design/21-Lyft.md) — geo indexing
-- [How to Approach](../../30-Architecture-Stack/11-System-Design/17-How-to-Approach.md) — read this first
+- [URL Shortener](../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md) — classic
+- [Notification Service](../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md) — retry, DLQ, fanout
+- [Ticket Booking](../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md) — consistency, "two users grab the last seat"
+- [Hospital Management](../../3-Architecture-Stack/11-System-Design/10-Hospital-Management.md) — domain fit for healthcare
+- [Payment Gateway](../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md) — SumUp / fintech
+- [Rate Limiter](../../3-Architecture-Stack/11-System-Design/13-Rate-Limiter.md) — n8n workflow throttling
+- [Distributed Counter](../../3-Architecture-Stack/11-System-Design/22-Distributed-Counter.md) — hot-key sharding
+- [Lyft](../../3-Architecture-Stack/11-System-Design/21-Lyft.md) — geo indexing
+- [How to Approach](../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md) — read this first
 
 **Practice 5 of these with a timer + recording.** 45 min each, then review the recording.
 
@@ -323,35 +323,35 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 ---
 
-## Cross-references to Core Sections (10-70 + 00)
+## Cross-references to Core Sections (1-7 + 0)
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 
-**Core fundamentals:** [00-Interview-Strategy/](../../00-Interview-Strategy/) · [01-JavaScript/](../../10-Frontend-Stack/01-JavaScript/) · [02-TypeScript/](../../10-Frontend-Stack/02-TypeScript/) · [03-React/](../../10-Frontend-Stack/03-React/) · [04-NextJS/](../../10-Frontend-Stack/04-NextJS/)
+**Core fundamentals:** [0-Interview-Strategy/](../../0-Interview-Strategy/) · [01-JavaScript/](../../1-Frontend-Stack/01-JavaScript/) · [02-TypeScript/](../../1-Frontend-Stack/02-TypeScript/) · [03-React/](../../1-Frontend-Stack/03-React/) · [04-NextJS/](../../1-Frontend-Stack/04-NextJS/)
 
-**Backend, API & Data:** [05-NodeJS/](../../20-Backend-Stack/05-NodeJS/) · [06-NestJS/](../../20-Backend-Stack/06-NestJS/) · [07-REST-API/](../../20-Backend-Stack/07-REST-API/) · [08-Database/](../../20-Backend-Stack/08-Database/) · [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/)
+**Backend, API & Data:** [05-NodeJS/](../../2-Backend-Stack/05-NodeJS/) · [06-NestJS/](../../2-Backend-Stack/06-NestJS/) · [07-REST-API/](../../2-Backend-Stack/07-REST-API/) · [08-Database/](../../2-Backend-Stack/08-Database/) · [17-GraphQL/](../../2-Backend-Stack/17-GraphQL/)
 
-**Architecture & Design:** [09-Security/](../../20-Backend-Stack/09-Security/) · [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) · [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) · [12-Microservices/](../../20-Backend-Stack/12-Microservices/)
+**Architecture & Design:** [09-Security/](../../2-Backend-Stack/09-Security/) · [10-Design-Patterns/](../../2-Backend-Stack/10-Design-Patterns/) · [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) · [12-Microservices/](../../2-Backend-Stack/12-Microservices/)
 
-**DevOps, Observability & Tooling:** [13-Docker/](../../40-Platform-Stack/13-Docker/) · [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) · [15-CI-CD/](../../40-Platform-Stack/15-CI-CD) · [22-Observability/](../../40-Platform-Stack/22-Observability/) · [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) · [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) · [27-Serverless-Edge/](../../40-Platform-Stack/27-Serverless-Edge/)
+**DevOps, Observability & Tooling:** [13-Docker/](../../4-Platform-Stack/13-Docker/) · [14-Kubernetes/](../../4-Platform-Stack/14-Kubernetes/) · [15-CI-CD/](../../4-Platform-Stack/15-CI-CD) · [22-Observability/](../../4-Platform-Stack/22-Observability/) · [23-Build-Tools/](../../4-Platform-Stack/23-Build-Tools/) · [24-Git-Advanced/](../../4-Platform-Stack/24-Git-Advanced/) · [27-Serverless-Edge/](../../4-Platform-Stack/27-Serverless-Edge/)
 
-**Testing & Quality:** [16-Testing/](../../50-Quality-Stack/16-Testing/) · [25-Accessibility/](../../50-Quality-Stack/25-Accessibility/) · [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/)
+**Testing & Quality:** [16-Testing/](../../5-Quality-Stack/16-Testing/) · [25-Accessibility/](../../5-Quality-Stack/25-Accessibility/) · [26-Performance-Monitoring/](../../5-Quality-Stack/26-Performance-Monitoring/)
 
-**Real-time:** [21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/)
+**Real-time:** [21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/)
 
-**Interview prep:** [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) · [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/)
+**Interview prep:** [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) · [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/)
 
-**Reference & quick-look:** [20-CheatSheets/](../../70-Interview-Toolkit/20-CheatSheets/) · [28-Monorepo/](../../40-Platform-Stack/28-Monorepo/) · [29-Form-Handling/](../../10-Frontend-Stack/29-Form-Handling/) · [30-Animation/](../../10-Frontend-Stack/30-Animation/)
+**Reference & quick-look:** [20-CheatSheets/](../../7-Interview-Toolkit/20-CheatSheets/) · [28-Monorepo/](../../4-Platform-Stack/28-Monorepo/) · [29-Form-Handling/](../../1-Frontend-Stack/29-Form-Handling/) · [30-Animation/](../../1-Frontend-Stack/30-Animation/)
 
 ---
 
 ## FAQ
 
 **Q: I want to apply to Booking.com (Amsterdam) AND Microsoft (Dublin). Which lane?**
-A: Both. Use `81-Indian-SDE-FAANG/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `82-Abroad-Full-Stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
+A: Both. Use `1-Indian-SDE-FAANG/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `2-Abroad-Full-Stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
 
 **Q: I'm a frontend specialist. Do I still need the take-home?**
-A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [06-NestJS/](../../20-Backend-Stack/06-NestJS/), [08-Database/](../../20-Backend-Stack/08-Database/), and [09-Security/](../../20-Backend-Stack/09-Security/) sections are the prep.
+A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [06-NestJS/](../../2-Backend-Stack/06-NestJS/), [08-Database/](../../2-Backend-Stack/08-Database/), and [09-Security/](../../2-Backend-Stack/09-Security/) sections are the prep.
 
 **Q: I'm targeting remote-first US companies (Stripe, Linear, Vercel) from India. Which lane?**
 A: Primarily this lane (English-only, take-home + system design, visa not needed). The remote-first US market is closer to EU mid-stage than to FAANG. Adjust the comp expectations up ($130-180K TC) but the prep structure is the same.
@@ -386,4 +386,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../../10-Frontend-Stack/30-Animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../81-Indian-SDE-FAANG/INDEX.md)
+[← Previous: Animation](../../1-Frontend-Stack/30-Animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../1-Indian-SDE-FAANG/INDEX.md)

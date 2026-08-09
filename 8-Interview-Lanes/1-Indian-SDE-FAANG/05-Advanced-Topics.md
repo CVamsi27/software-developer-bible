@@ -1,11 +1,9 @@
----
-section: SDE Role
-category: Interview
-tags: [reference]
----
+<!-- section: SDE Role | category: Interview | tags: reference -->
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-reference-lightgrey)](.)
 
 # Advanced Topics
-
 
 > **Appendix:** Additional topics covering Segment Trees, Fenwick Trees, AVL Trees, distributed systems, design patterns, and concurrency for staff+ engineering interviews.
 
@@ -1568,13 +1566,12 @@ This guide covers advanced topics for staff+ engineering interviews, including d
 ## See Also
 
 ---
-- [Behavioral](../../70-Interview-Toolkit/18-Behavioral/)
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
-- [React](../../10-Frontend-Stack/03-React/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
-- [TypeScript](../../10-Frontend-Stack/02-TypeScript/)
-
+- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
+- [React](../../1-Frontend-Stack/03-React/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
+- [TypeScript](../../1-Frontend-Stack/02-TypeScript/)
 
 ## Cheat Sheet
 ```text

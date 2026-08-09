@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Reference
-tags: [visa, relocation, eu, playbook, family]
----
+<!-- section: Abroad Full-Stack Lane | category: Reference | tags: visa, relocation, eu, playbook, family -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-visa%20%C2%B7%20relocation%20%C2%B7%20eu%20%C2%B7%20playbook%20%C2%B7%20family-lightgrey)](.)
 
 # Visa & Relocation Playbook — 8 EU Countries
 
@@ -15,7 +14,7 @@ tags: [visa, relocation, eu, playbook, family]
 - **Family inclusion is standard in EU Blue Card / work permit schemes.** Spouse gets work permit, kids get residency + school.
 - **Pick the country that maximizes BOTH your job AND your spouse's job.** This is the family-driven framework.
 
-The bible's [09-Security/](../../20-Backend-Stack/09-Security/) covers general compliance, this file is the **immigration-specific** playbook.
+The bible's [09-Security/](../../2-Backend-Stack/09-Security/) covers general compliance, this file is the **immigration-specific** playbook.
 
 ---
 

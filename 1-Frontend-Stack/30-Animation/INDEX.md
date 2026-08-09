@@ -18,10 +18,10 @@
 
 ---
 
-**Cross-references:** [Accessibility](../../50-Quality-Stack/25-Accessibility/) | [Next.js](../04-NextJS/) | [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/) | [React](../03-React/)
+**Cross-references:** [Accessibility](../../5-Quality-Stack/25-Accessibility/) | [Next.js](../04-NextJS/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) | [React](../03-React/)
 
 ---
 
 ## Navigation
 
-[← Previous: Form Handling](../29-Form-Handling/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: SDE Role →](../../80-Interview-Lanes/81-Indian-SDE-FAANG/INDEX.md)
+[← Previous: Form Handling](../29-Form-Handling/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: SDE Role →](../../8-Interview-Lanes/1-Indian-SDE-FAANG/INDEX.md)

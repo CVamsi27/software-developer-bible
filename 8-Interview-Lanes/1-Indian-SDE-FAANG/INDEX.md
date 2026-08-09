@@ -17,7 +17,7 @@
 | 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
 | 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (US FAANG + India in-country), visa strategy (H1B / Blue Card) |
 | 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
-| 6 | [Cross-references to Core Sections (10-70 + 00)](#cross-references-to-core-sections-00-30) | Where to study (the 8 themed groups) |
+| 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections-1-7 + 0) | Where to study (the 8 themed groups) |
 | 7 | [FAQ](#faq) | Common questions |
 | 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
 
@@ -45,58 +45,58 @@
 
 ## Reference Topics — What You Need to Know
 
-This is a **reference checklist** of every topic a senior Indian SDE / FAANG candidate should be ready for. It is **non-duplicative** with the core stacks 10-70 + 00 (which contain the actual deep-dive content). This is the **what to be ready for**; the core sections are **where to study it**.
+This is a **reference checklist** of every topic a senior Indian SDE / FAANG candidate should be ready for. It is **non-duplicative** with the core stacks 1-7 + 0 (which contain the actual deep-dive content). This is the **what to be ready for**; the core sections are **where to study it**.
 
 ### Tier 1 — Mandatory, will be asked in 90%+ of FAANG interviews
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Data Structures & Algorithms** | Arrays, Strings, HashMaps, Trees (BST + balanced), Graphs (BFS/DFS/Union-Find), Linked Lists, Stacks, Queues, Heaps. Implement from scratch in your strongest language. | [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Dynamic Programming** | 1D and 2D DP, knapsack, LCS/edit distance, coin change, climbing stairs, house robber, longest increasing subsequence. **This is the FAANG bar.** | [19-Coding-Patterns/06-Dynamic-Programming.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Graphs** | BFS, DFS, topological sort, Dijkstra, Union-Find, MST (Kruskal/Prim). Code on whiteboard in 20 min. | [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/) + [01-Complete-Guide.md](01-Complete-Guide.md) |
-| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) + [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) |
-| **System Design at 45 min** | URL shortener, WhatsApp, Instagram, Twitter timeline, Uber, Netflix, Dropbox. With back-of-envelope estimates. | [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) |
+| **Data Structures & Algorithms** | Arrays, Strings, HashMaps, Trees (BST + balanced), Graphs (BFS/DFS/Union-Find), Linked Lists, Stacks, Queues, Heaps. Implement from scratch in your strongest language. | [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Dynamic Programming** | 1D and 2D DP, knapsack, LCS/edit distance, coin change, climbing stairs, house robber, longest increasing subsequence. **This is the FAANG bar.** | [19-Coding-Patterns/06-Dynamic-Programming.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Graphs** | BFS, DFS, topological sort, Dijkstra, Union-Find, MST (Kruskal/Prim). Code on whiteboard in 20 min. | [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/) + [01-Complete-Guide.md](01-Complete-Guide.md) |
+| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [10-Design-Patterns/](../../2-Backend-Stack/10-Design-Patterns/) + [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) |
+| **System Design at 45 min** | URL shortener, WhatsApp, Instagram, Twitter timeline, Uber, Netflix, Dropbox. With back-of-envelope estimates. | [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) |
 | **Concurrency & multithreading** | Threads, locks, deadlocks, semaphores, producer-consumer, dining philosophers, rate limiters. **Asked at Meta, Google, Amazon.** | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) |
 | **Operating Systems** | Process vs thread, virtual memory, paging, context switching, scheduling, file systems, IPC. | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) |
-| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [08-Database/](../../20-Backend-Stack/08-Database/) + [01-Complete-Guide.md](01-Complete-Guide.md) |
-| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) + [07-REST-API/](../../20-Backend-Stack/07-REST-API/) |
+| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [08-Database/](../../2-Backend-Stack/08-Database/) + [01-Complete-Guide.md](01-Complete-Guide.md) |
+| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) + [07-REST-API/](../../2-Backend-Stack/07-REST-API/) |
 | **Coding on whiteboard / shared doc** | Can write a working solution with clear variable names, edge cases, and complexity analysis in 25-30 min. **No IDE, no autocomplete.** | Practice with timer |
-| **Behavioral — STAR + company values** | 5-8 stories, lead with result, Amazon LP or Googleyness or similar. | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) + your own story bank |
+| **Behavioral — STAR + company values** | 5-8 stories, lead with result, Amazon LP or Googleyness or similar. | [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) + your own story bank |
 
 ### Tier 2 — Asked in 60-80% of FAANG interviews (mid-senior to senior)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) + [19-Coding-Patterns/15-Bit-Manipulation.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
+| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [02-Core-CS-Fundamentals.md](02-Core-CS-Fundamentals.md) + [19-Coding-Patterns/15-Bit-Manipulation.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
 | **Segment Tree / Fenwick / BIT** | Range queries with updates. Asked at Google, occasionally Meta. Skip for Amazon/Microsoft. | [05-Advanced-Topics.md](05-Advanced-Topics.md) |
-| **Backtracking** | N-queens, sudoku, word search, permutations. Classic. | [19-Coding-Patterns/05-Backtracking.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Greedy algorithms** | Interval scheduling, jump game, activity selection. | [19-Coding-Patterns/12-Greedy-Prefix-Sum.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Tries** | Word search, autocomplete. Asked at Google. | [19-Coding-Patterns/08-Trie.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Union-Find** | Connected components, account merge, redundant connection. | [19-Coding-Patterns/09-Union-Find.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Monotonic Stack** | Next greater element, largest rectangle. Asked at Amazon. | [19-Coding-Patterns/13-Monotonic-Stack.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **Topological Sort** | Course schedule, alien dictionary, sequence reconstruction. | [19-Coding-Patterns/10-Topological-Sort.md](../../70-Interview-Toolkit/19-Coding-Patterns/) |
-| **System Design depth** | Distributed systems, CAP theorem, sharding strategies, consistent hashing, idempotency, exactly-once semantics. | [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) + [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
-| **API design** | REST, GraphQL, gRPC, versioning, pagination, auth. | [07-REST-API/](../../20-Backend-Stack/07-REST-API/) + [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/) |
-| **Security basics** | XSS, CSRF, SQL injection, JWT, OAuth, RBAC. | [09-Security/](../../20-Backend-Stack/09-Security/) |
-| **Containerization** | Docker basics, multi-stage builds. | [13-Docker/](../../40-Platform-Stack/13-Docker/) |
+| **Backtracking** | N-queens, sudoku, word search, permutations. Classic. | [19-Coding-Patterns/05-Backtracking.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Greedy algorithms** | Interval scheduling, jump game, activity selection. | [19-Coding-Patterns/12-Greedy-Prefix-Sum.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Tries** | Word search, autocomplete. Asked at Google. | [19-Coding-Patterns/08-Trie.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Union-Find** | Connected components, account merge, redundant connection. | [19-Coding-Patterns/09-Union-Find.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Monotonic Stack** | Next greater element, largest rectangle. Asked at Amazon. | [19-Coding-Patterns/13-Monotonic-Stack.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **Topological Sort** | Course schedule, alien dictionary, sequence reconstruction. | [19-Coding-Patterns/10-Topological-Sort.md](../../7-Interview-Toolkit/19-Coding-Patterns/) |
+| **System Design depth** | Distributed systems, CAP theorem, sharding strategies, consistent hashing, idempotency, exactly-once semantics. | [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) + [12-Microservices/](../../2-Backend-Stack/12-Microservices/) |
+| **API design** | REST, GraphQL, gRPC, versioning, pagination, auth. | [07-REST-API/](../../2-Backend-Stack/07-REST-API/) + [17-GraphQL/](../../2-Backend-Stack/17-GraphQL/) |
+| **Security basics** | XSS, CSRF, SQL injection, JWT, OAuth, RBAC. | [09-Security/](../../2-Backend-Stack/09-Security/) |
+| **Containerization** | Docker basics, multi-stage builds. | [13-Docker/](../../4-Platform-Stack/13-Docker/) |
 | **Cloud basics** | AWS / GCP core services: EC2/Compute Engine, S3/Cloud Storage, RDS/Cloud SQL, Lambda/Cloud Functions, SQS/Pub-Sub. | [04-DevOps-Behavioral-Career.md](04-DevOps-Behavioral-Career.md) |
-| **Git workflow** | Branching strategies, rebase, merge, conflict resolution. | [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) |
-| **Testing strategy** | Unit, integration, E2E. When to mock vs not. | [16-Testing/](../../50-Quality-Stack/16-Testing/) |
-| **Performance + observability** | Profiling, debugging, SLI/SLO. | [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/) + [22-Observability/](../../40-Platform-Stack/22-Observability/) |
+| **Git workflow** | Branching strategies, rebase, merge, conflict resolution. | [24-Git-Advanced/](../../4-Platform-Stack/24-Git-Advanced/) |
+| **Testing strategy** | Unit, integration, E2E. When to mock vs not. | [16-Testing/](../../5-Quality-Stack/16-Testing/) |
+| **Performance + observability** | Profiling, debugging, SLI/SLO. | [26-Performance-Monitoring/](../../5-Quality-Stack/26-Performance-Monitoring/) + [22-Observability/](../../4-Platform-Stack/22-Observability/) |
 
 ### Tier 3 — Differentiator (asked 20-40%, distinguishes senior from staff)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Distributed systems** | Raft, Paxos, distributed locks, leader election, consensus. | [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
+| **Distributed systems** | Raft, Paxos, distributed locks, leader election, consensus. | [12-Microservices/](../../2-Backend-Stack/12-Microservices/) |
 | **Cost optimization at scale** | AWS cost levers, multi-region trade-offs, data egress, spot instances. | Practical experience |
-| **Mentorship & influence** | How you've grown engineers, RFC process, code review as teaching. | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) |
-| **Engineering culture** | Postmortem culture, blameless retros, RFC templates. | [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) |
+| **Mentorship & influence** | How you've grown engineers, RFC process, code review as teaching. | [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) |
+| **Engineering culture** | Postmortem culture, blameless retros, RFC templates. | [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) |
 | **Compensation negotiation** | Base vs RSU trade-offs, sign-on vs equity, level mapping, real offer scripts. | [22-Compensation-Benchmarking.md](22-Compensation-Benchmarking.md) |
-| **Architecture trade-offs** | Microservices vs monolith, when to break up, when to consolidate. | [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) + [12-Microservices/](../../20-Backend-Stack/12-Microservices/) |
-| **Threat modeling** | STRIDE, attack trees, secrets management. | [09-Security/](../../20-Backend-Stack/09-Security/) |
-| **Engineering productivity** | Build vs buy, internal tooling, dev experience. | Practical experience + [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) |
-| **Capacity planning** | QPS estimates, storage, bandwidth, cost at scale. | [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) |
+| **Architecture trade-offs** | Microservices vs monolith, when to break up, when to consolidate. | [10-Design-Patterns/](../../2-Backend-Stack/10-Design-Patterns/) + [12-Microservices/](../../2-Backend-Stack/12-Microservices/) |
+| **Threat modeling** | STRIDE, attack trees, secrets management. | [09-Security/](../../2-Backend-Stack/09-Security/) |
+| **Engineering productivity** | Build vs buy, internal tooling, dev experience. | Practical experience + [23-Build-Tools/](../../4-Platform-Stack/23-Build-Tools/) |
+| **Capacity planning** | QPS estimates, storage, bandwidth, cost at scale. | [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) |
 
 ### Topics to SKIP for mid-tier Indian product companies (Adobe, Flipkart, Razorpay, etc.)
 
@@ -309,25 +309,25 @@ If you can ship those, you can pass 70%+ of mid-tier loops.
 
 ---
 
-## Cross-references to Core Sections (10-70 + 00)
+## Cross-references to Core Sections (1-7 + 0)
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 
-**Core fundamentals:** [00-Interview-Strategy/](../../00-Interview-Strategy/) · [01-JavaScript/](../../10-Frontend-Stack/01-JavaScript/) · [02-TypeScript/](../../10-Frontend-Stack/02-TypeScript/) · [03-React/](../../10-Frontend-Stack/03-React/) · [04-NextJS/](../../10-Frontend-Stack/04-NextJS/)
+**Core fundamentals:** [0-Interview-Strategy/](../../0-Interview-Strategy/) · [01-JavaScript/](../../1-Frontend-Stack/01-JavaScript/) · [02-TypeScript/](../../1-Frontend-Stack/02-TypeScript/) · [03-React/](../../1-Frontend-Stack/03-React/) · [04-NextJS/](../../1-Frontend-Stack/04-NextJS/)
 
-**Backend, API & Data:** [05-NodeJS/](../../20-Backend-Stack/05-NodeJS/) · [06-NestJS/](../../20-Backend-Stack/06-NestJS/) · [07-REST-API/](../../20-Backend-Stack/07-REST-API/) · [08-Database/](../../20-Backend-Stack/08-Database/) · [17-GraphQL/](../../20-Backend-Stack/17-GraphQL/)
+**Backend, API & Data:** [05-NodeJS/](../../2-Backend-Stack/05-NodeJS/) · [06-NestJS/](../../2-Backend-Stack/06-NestJS/) · [07-REST-API/](../../2-Backend-Stack/07-REST-API/) · [08-Database/](../../2-Backend-Stack/08-Database/) · [17-GraphQL/](../../2-Backend-Stack/17-GraphQL/)
 
-**Architecture & Design:** [09-Security/](../../20-Backend-Stack/09-Security/) · [10-Design-Patterns/](../../20-Backend-Stack/10-Design-Patterns/) · [11-System-Design/](../../30-Architecture-Stack/11-System-Design/) · [12-Microservices/](../../20-Backend-Stack/12-Microservices/)
+**Architecture & Design:** [09-Security/](../../2-Backend-Stack/09-Security/) · [10-Design-Patterns/](../../2-Backend-Stack/10-Design-Patterns/) · [11-System-Design/](../../3-Architecture-Stack/11-System-Design/) · [12-Microservices/](../../2-Backend-Stack/12-Microservices/)
 
-**DevOps, Observability & Tooling:** [13-Docker/](../../40-Platform-Stack/13-Docker/) · [14-Kubernetes/](../../40-Platform-Stack/14-Kubernetes/) · [15-CI-CD/](../../40-Platform-Stack/15-CI-CD) · [22-Observability/](../../40-Platform-Stack/22-Observability/) · [23-Build-Tools/](../../40-Platform-Stack/23-Build-Tools/) · [24-Git-Advanced/](../../40-Platform-Stack/24-Git-Advanced/) · [27-Serverless-Edge/](../../40-Platform-Stack/27-Serverless-Edge/)
+**DevOps, Observability & Tooling:** [13-Docker/](../../4-Platform-Stack/13-Docker/) · [14-Kubernetes/](../../4-Platform-Stack/14-Kubernetes/) · [15-CI-CD/](../../4-Platform-Stack/15-CI-CD) · [22-Observability/](../../4-Platform-Stack/22-Observability/) · [23-Build-Tools/](../../4-Platform-Stack/23-Build-Tools/) · [24-Git-Advanced/](../../4-Platform-Stack/24-Git-Advanced/) · [27-Serverless-Edge/](../../4-Platform-Stack/27-Serverless-Edge/)
 
-**Testing & Quality:** [16-Testing/](../../50-Quality-Stack/16-Testing/) · [25-Accessibility/](../../50-Quality-Stack/25-Accessibility/) · [26-Performance-Monitoring/](../../50-Quality-Stack/26-Performance-Monitoring/)
+**Testing & Quality:** [16-Testing/](../../5-Quality-Stack/16-Testing/) · [25-Accessibility/](../../5-Quality-Stack/25-Accessibility/) · [26-Performance-Monitoring/](../../5-Quality-Stack/26-Performance-Monitoring/)
 
-**Real-time:** [21-WebSockets/](../../60-Real-Time-Stack/21-WebSockets/)
+**Real-time:** [21-WebSockets/](../../6-Real-Time-Stack/21-WebSockets/)
 
-**Interview prep:** [18-Behavioral/](../../70-Interview-Toolkit/18-Behavioral/) · [19-Coding-Patterns/](../../70-Interview-Toolkit/19-Coding-Patterns/)
+**Interview prep:** [18-Behavioral/](../../7-Interview-Toolkit/18-Behavioral/) · [19-Coding-Patterns/](../../7-Interview-Toolkit/19-Coding-Patterns/)
 
-**Reference & quick-look:** [20-CheatSheets/](../../70-Interview-Toolkit/20-CheatSheets/) · [28-Monorepo/](../../40-Platform-Stack/28-Monorepo/) · [29-Form-Handling/](../../10-Frontend-Stack/29-Form-Handling/) · [30-Animation/](../../10-Frontend-Stack/30-Animation/)
+**Reference & quick-look:** [20-CheatSheets/](../../7-Interview-Toolkit/20-CheatSheets/) · [28-Monorepo/](../../4-Platform-Stack/28-Monorepo/) · [29-Form-Handling/](../../1-Frontend-Stack/29-Form-Handling/) · [30-Animation/](../../1-Frontend-Stack/30-Animation/)
 
 ---
 
@@ -369,4 +369,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../../10-Frontend-Stack/30-Animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Abroad Full-Stack (82) →](../82-Abroad-Full-Stack/INDEX.md)
+[← Previous: Animation](../../1-Frontend-Stack/30-Animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Abroad Full-Stack (82) →](../2-Abroad-Full-Stack/INDEX.md)

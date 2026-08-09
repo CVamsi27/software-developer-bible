@@ -1,8 +1,7 @@
----
-section: Performance Monitoring
-category: Quality
-tags: [concept, reference]
----
+<!-- section: Performance Monitoring | category: Quality | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Core Web Vitals
 
@@ -446,9 +445,9 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Accessibility](../25-Accessibility/)
-- [Build Tools](../../40-Platform-Stack/23-Build-Tools/)
-- [Observability](../../40-Platform-Stack/22-Observability/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [Build Tools](../../4-Platform-Stack/23-Build-Tools/)
+- [Observability](../../4-Platform-Stack/22-Observability/)
+- [React](../../1-Frontend-Stack/03-React/)
 
 ## References & Learn More
 

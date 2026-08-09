@@ -1,8 +1,7 @@
----
-section: Form Handling
-category: Frontend
-tags: [concept, reference, tool]
----
+<!-- section: Form Handling | category: Frontend | tags: concept, reference, tool -->
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
 
 # TanStack Form
 
@@ -289,14 +288,13 @@ WHEN TO USE:
 
 ## See Also
 
-- [Design Patterns](../../20-Backend-Stack/10-Design-Patterns/)
+- [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/)
 - [Formik](03-Formik.md)
 - [React](../03-React/)
 - [React Hook Form](01-React-Hook-Form.md)
 - [Server Actions & Form Patterns](06-Server-Actions-and-Form-Patterns.md)
 - [TypeScript](../02-TypeScript/)
 - [Zod](02-Zod.md)
-
 
 ## References & Learn More
 

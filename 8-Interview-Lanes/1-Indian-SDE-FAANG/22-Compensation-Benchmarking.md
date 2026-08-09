@@ -1,8 +1,7 @@
----
-section: SDE Role
-category: Interview
-tags: [reference, guide]
----
+<!-- section: SDE Role | category: Interview | tags: reference, guide -->
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-reference%20%C2%B7%20guide-lightgrey)](.)
 
 # Compensation Benchmarking & Negotiation Scripts
 
@@ -206,7 +205,6 @@ HIDDEN LEVERS:
 - 09-Mock-Interview-Bank — full-length mocks
 - 15-Resume-Negotiation — resume, STAR stories, full negotiation chapter
 - 18-Behavioral — STAR method, leadership stories
-
 
 ## Summary
 

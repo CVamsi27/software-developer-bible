@@ -2,7 +2,7 @@
 
 > **15 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices (gRPC, Service Mesh)](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/) | [Testing](../../50-Quality-Stack/16-Testing/)
+**Cross-references:** [Node.js](../05-NodeJS/) | [REST APIs](../07-REST-API/) | [Microservices (gRPC, Service Mesh)](../12-Microservices/) | [Design Patterns (CQRS)](../10-Design-Patterns/) | [Testing](../../5-Quality-Stack/16-Testing/)
 ---
 
 ## Navigation

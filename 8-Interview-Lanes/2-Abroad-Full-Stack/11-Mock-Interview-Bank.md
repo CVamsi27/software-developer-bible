@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Reference
-tags: [mock, practice, questions, bank]
----
+<!-- section: Abroad Full-Stack Lane | category: Reference | tags: mock, practice, questions, bank -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-mock%20%C2%B7%20practice%20%C2%B7%20questions%20%C2%B7%20bank-lightgrey)](.)
 
 # Mock Interview Bank — 20 Curated Questions for EU Mid-Stage
 
@@ -137,12 +136,12 @@ See [04-Behavioral-EU-Style.md](04-Behavioral-EU-Style.md) for templates per com
 ```typescript
 class RateLimiter {
   private buckets = new Map<string, TokenBucket>();
-  
+
   constructor(
     private capacity: number,
     private refillRate: number  // tokens per second
   ) {}
-  
+
   allow(key: string): boolean {
     const now = Date.now();
     let bucket = this.buckets.get(key);
@@ -188,7 +187,7 @@ class RateLimiter {
 2. Implement: POST /shorten (returns short code), GET /{code} (302 redirect)
 3. Discuss: scale (10K URLs/day → 1B), caching, rate limiting
 
-For full answer, see [../../30-Architecture-Stack/11-System-Design/01-URL-Shortener.md](../../30-Architecture-Stack/11-System-Design/01-URL-Shortener.md).
+For full answer, see [../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md](../../3-Architecture-Stack/11-System-Design/01-URL-Shortener.md).
 
 ---
 
@@ -209,7 +208,7 @@ function mergeKLists(lists: ListNode[]): ListNode {
     if (list) heap.push([list.val, list]);
   }
   heap.sort((a, b) => a[0] - b[0]);  // simplified, use real heap in prod
-  
+
   const dummy = new ListNode(0);
   let tail = dummy;
   while (heap.length > 0) {

@@ -1,8 +1,7 @@
----
-section: REST API
-category: API
-tags: [concept]
----
+<!-- section: REST API | category: API | tags: concept -->
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # REST Principles
 
@@ -530,7 +529,7 @@ REST is a powerful architectural style that leverages HTTP's existing features t
 - [Microservices](../12-Microservices/)
 - [NestJS](../06-NestJS/)
 - [Security](../09-Security/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

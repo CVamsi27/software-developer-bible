@@ -1,8 +1,7 @@
----
-section: Build Tools
-category: Tooling
-tags: [concept, reference, tool]
----
+<!-- section: Build Tools | category: Tooling | tags: concept, reference, tool -->
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
 
 # Rspack
 
@@ -314,8 +313,8 @@ INTERVIEW TIPS:
 - [Babel](05-Babel.md)
 - [Build Optimization](04-Build-Optimization.md)
 - [ESBuild & SWC](06-ESBuild-SWC.md)
-- [Next.js](../../10-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Next.js](../../1-Frontend-Stack/04-NextJS/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [Turbopack](03-Turbopack.md)
 - [Vite](02-Vite.md)
 - [Webpack](01-Webpack.md)

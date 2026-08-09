@@ -1,8 +1,7 @@
----
-section: TypeScript
-category: Core
-tags: [concept]
----
+<!-- section: TypeScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-TypeScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Conditional Types
 
@@ -341,7 +340,7 @@ type DeepReadonly<T> =
 ## See Also
 - [Branded Types](13-Branded-Types.md)
 - [JavaScript](../01-JavaScript/)
-- [NestJS](../../20-Backend-Stack/06-NestJS/)
+- [NestJS](../../2-Backend-Stack/06-NestJS/)
 - [React](../03-React/)
 - [Template Literal Types](12-Template-Literal-Types.md)
 

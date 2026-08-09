@@ -1,8 +1,7 @@
----
-section: Form Handling
-category: Frontend
-tags: [concept, guide]
----
+<!-- section: Form Handling | category: Frontend | tags: concept, guide -->
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](.)
 
 # Server Actions & Modern Form Patterns
 
@@ -399,10 +398,9 @@ INTERVIEW ANSWER:
 - [Formik](03-Formik.md)
 - [Next.js Server Actions](../04-NextJS/)
 - [React Hook Form](01-React-Hook-Form.md)
-- [REST APIs](../../20-Backend-Stack/07-REST-API/)
+- [REST APIs](../../2-Backend-Stack/07-REST-API/)
 - [TanStack Form](05-TanStack-Form.md)
 - [Zod](02-Zod.md)
-
 
 ## References & Learn More
 

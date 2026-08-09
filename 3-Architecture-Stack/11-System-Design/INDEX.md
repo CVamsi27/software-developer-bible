@@ -1,8 +1,8 @@
 # System Design — Index
 
-> **37 files** — 14 foundational theory files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks), 22 case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and a meta-guide on how to approach any system-design problem.
+> **36 files** — 14 foundational theory files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks), 22 case studies from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and a meta-guide on how to approach any system-design problem.
 
-[![Files](https://img.shields.io/badge/files-37-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-36-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
@@ -62,10 +62,10 @@ These are the concepts you need to know BEFORE doing any case study. Every syste
 
 ---
 
-**Cross-references:** [Microservices](../../20-Backend-Stack/12-Microservices/) | [Database](../../20-Backend-Stack/08-Database/) | [REST APIs](../../20-Backend-Stack/07-REST-API/) | [WebSockets](../../60-Real-Time-Stack/21-WebSockets/)
+**Cross-references:** [Microservices](../../2-Backend-Stack/12-Microservices/) | [Database](../../2-Backend-Stack/08-Database/) | [REST APIs](../../2-Backend-Stack/07-REST-API/) | [WebSockets](../../6-Real-Time-Stack/21-WebSockets/)
 
 ---
 
 ## Navigation
 
-[← Previous: Design Patterns](../../20-Backend-Stack/10-Design-Patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Microservices →](../../20-Backend-Stack/12-Microservices/INDEX.md)
+[← Previous: Design Patterns](../../2-Backend-Stack/10-Design-Patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Microservices →](../../2-Backend-Stack/12-Microservices/INDEX.md)

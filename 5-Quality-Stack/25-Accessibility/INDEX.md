@@ -18,9 +18,9 @@
 
 ---
 
-**Cross-references:** [Performance Monitoring](../26-Performance-Monitoring/) | [React (ARIA)](../../10-Frontend-Stack/03-React/) | [Testing (RTL)](../16-Testing/)
+**Cross-references:** [Performance Monitoring](../26-Performance-Monitoring/) | [React (ARIA)](../../1-Frontend-Stack/03-React/) | [Testing (RTL)](../16-Testing/)
 ---
 
 ## Navigation
 
-[← Previous: Git Advanced](../../40-Platform-Stack/24-Git-Advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../26-Performance-Monitoring/INDEX.md)
+[← Previous: Git Advanced](../../4-Platform-Stack/24-Git-Advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../26-Performance-Monitoring/INDEX.md)

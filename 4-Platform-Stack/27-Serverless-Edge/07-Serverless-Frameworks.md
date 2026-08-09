@@ -1,8 +1,7 @@
----
-section: Serverless & Edge
-category: DevOps
-tags: [concept, reference, tool]
----
+<!-- section: Serverless & Edge | category: DevOps | tags: concept, reference, tool -->
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
 
 # Serverless Frameworks (SAM, CDK, SST, Serverless Framework)
 
@@ -327,7 +326,6 @@ INTERVIEW ANSWER:
 - [Edge Functions](02-Edge-Functions.md)
 - [Serverless Overview](01-Serverless-Overview.md)
 - [Serverless Patterns](03-Serverless-Patterns.md)
-
 
 ## References & Learn More
 

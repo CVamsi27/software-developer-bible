@@ -38,9 +38,9 @@
 
 ---
 
-**Cross-references:** [TypeScript](../02-TypeScript/) | [Node.js](../../20-Backend-Stack/05-NodeJS/) | [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+**Cross-references:** [TypeScript](../02-TypeScript/) | [Node.js](../../2-Backend-Stack/05-NodeJS/) | [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 ---
 
 ## Navigation
 
-[← Previous: Interview Strategy](../../00-Interview-Strategy/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: TypeScript →](../02-TypeScript/INDEX.md)
+[← Previous: Interview Strategy](../../0-Interview-Strategy/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: TypeScript →](../02-TypeScript/INDEX.md)

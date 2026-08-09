@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Interview
-tags: [system-design, patterns, reference]
----
+<!-- section: Abroad Full-Stack Lane | category: Interview | tags: system-design, patterns, reference -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-system-design%20%C2%B7%20patterns%20%C2%B7%20reference-lightgrey)](.)
 
 # System Design for EU Mid-Stage — Patterns and Cases
 
@@ -15,7 +14,7 @@ tags: [system-design, patterns, reference]
 - **Depth over breadth:** pick 2-3 critical components, go deep. Don't try to cover 8 services shallowly.
 - **Always discuss trade-offs:** CAP, eventual consistency, idempotency, exactly-once, cost.
 
-The bible's [30-Architecture-Stack/11-System-Design/](../../30-Architecture-Stack/11-System-Design/) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
+The bible's [3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/) has 22 case studies. This file is the **what to drill for EU mid-stage** subset + framework.
 
 ---
 
@@ -86,7 +85,7 @@ This is asked at virtually every EU fintech. The 4-phase answer:
 - **PCI compliance** — never store card numbers, tokenize via PSP
 - **Fraud detection** — rule engine + ML, sync in request path
 
-See: [../../30-Architecture-Stack/11-System-Design/06-Payment-Gateway.md](../../30-Architecture-Stack/11-System-Design/06-Payment-Gateway.md)
+See: [../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md](../../3-Architecture-Stack/11-System-Design/06-Payment-Gateway.md)
 
 ### 2. Workflow Engine (n8n, sennder, Hostaway, GoGlobal)
 
@@ -131,7 +130,7 @@ The "two users grab the last slot" problem.
 - **Saga** — hold → charge → confirm, with compensating actions
 - **Cache** — slot availability in Redis with short TTL
 
-See: [../../30-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../30-Architecture-Stack/11-System-Design/08-Ticket-Booking.md)
+See: [../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../3-Architecture-Stack/11-System-Design/08-Ticket-Booking.md)
 
 ### 5. Event-Driven Microservice (sennder, THRYVE, any data platform)
 
@@ -146,7 +145,7 @@ See: [../../30-Architecture-Stack/11-System-Design/08-Ticket-Booking.md](../../3
 - **DLQ** — poison message handling
 - **Replay** — keep topics for 7 days, support re-processing
 
-See: [../../20-Backend-Stack/12-Microservices/](../../20-Backend-Stack/12-Microservices/) for the full microservices reference.
+See: [../../2-Backend-Stack/12-Microservices/](../../2-Backend-Stack/12-Microservices/) for the full microservices reference.
 
 ### 6. Notification Service (every company has one)
 
@@ -162,7 +161,7 @@ The "push, email, SMS, in-app" problem.
 - **Rate limiting** — per-channel, per-user
 - **Retry** — exponential backoff, max 5 attempts, then DLQ
 
-See: [../../30-Architecture-Stack/11-System-Design/07-Notification-Service.md](../../30-Architecture-Stack/11-System-Design/07-Notification-Service.md)
+See: [../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md](../../3-Architecture-Stack/11-System-Design/07-Notification-Service.md)
 
 ---
 
@@ -191,9 +190,9 @@ Pick 5 of the cases above. Set a 45-min timer. Record yourself (Loom or Zoom). T
 
 After 5 rounds of this, you'll be sharper than 90% of candidates.
 
-For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../30-Architecture-Stack/11-System-Design/](../../30-Architecture-Stack/11-System-Design/).
+For the canonical 17 case studies (URL shortener, WhatsApp, Uber, Netflix, etc.), see [../../3-Architecture-Stack/11-System-Design/](../../3-Architecture-Stack/11-System-Design/).
 
-For "How to approach any system design problem" framework, see [../../30-Architecture-Stack/11-System-Design/17-How-to-Approach.md](../../30-Architecture-Stack/11-System-Design/17-How-to-Approach.md).
+For "How to approach any system design problem" framework, see [../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md](../../3-Architecture-Stack/11-System-Design/17-How-to-Approach.md).
 
 ---
 

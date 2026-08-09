@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # CQRS & Dependency Injection
 
@@ -1349,10 +1348,10 @@ CQRS and DI are essential architectural patterns for complex applications. CQRS 
 ---
 
 ## See Also
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
 - [NestJS](../06-NestJS/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, scaling, async, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, scaling, async, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20scaling%20%C2%B7%20async%20%C2%B7%20theory-lightgrey)](.)
 
 # Backpressure & Flow Control
 
@@ -102,11 +101,11 @@ class BoundedQueue<T> {
   private items: T[] = [];
   private maxSize: number;
   private resolvers: ((value: T | null) => void)[] = [];
-  
+
   constructor(maxSize: number) {
     this.maxSize = maxSize;
   }
-  
+
   async enqueue(item: T): Promise<void> {
     if (this.items.length >= this.maxSize) {
       // Queue full, wait until there's space
@@ -116,7 +115,7 @@ class BoundedQueue<T> {
     }
     this.items.push(item);
   }
-  
+
   async dequeue(): Promise<T | null> {
     if (this.items.length === 0) return null;
     const item = this.items.shift()!;
@@ -164,11 +163,11 @@ class DropOnFullQueue<T> {
   private items: T[] = [];
   private maxSize: number;
   private dropped = 0;
-  
+
   constructor(maxSize: number) {
     this.maxSize = maxSize;
   }
-  
+
   enqueue(item: T): boolean {
     if (this.items.length >= this.maxSize) {
       this.dropped++;
@@ -217,17 +216,17 @@ class PriorityQueue<T extends { priority: number }> {
   private items: T[] = [];
   private maxSize: number;
   private rejected = 0;
-  
+
   constructor(maxSize: number) {
     this.maxSize = maxSize;
   }
-  
+
   enqueue(item: T): boolean {
     if (this.items.length < this.maxSize) {
       this.items.push(item);
       return true;
     }
-    
+
     // Queue full. Try to evict a low-priority item.
     const lowestPriorityIdx = this.findLowestPriorityIndex();
     if (item.priority > this.items[lowestPriorityIdx].priority) {
@@ -235,7 +234,7 @@ class PriorityQueue<T extends { priority: number }> {
       this.items[lowestPriorityIdx] = item;
       return true;
     }
-    
+
     // Reject this item (it's lower priority)
     this.rejected++;
     return false;
@@ -312,7 +311,7 @@ When a downstream service is slow or failing, stop calling it. Return immediatel
 
 **Libraries:** Hystrix (deprecated), Resilience4j, Polly (.NET), Istio.
 
-**See:** [12-Microservices/04-Circuit-Breaker.md](../../20-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) for the full deep-dive.
+**See:** [12-Microservices/04-Circuit-Breaker.md](../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) for the full deep-dive.
 
 ### 2. Bulkhead (isolation)
 
@@ -326,7 +325,7 @@ Thread pool for /user/profile: 100 threads
 If /search hangs, only its 50 threads are exhausted. The other 50 are safe.
 ```
 
-**See:** [12-Microservices/14-Bulkhead-Pattern.md](../../20-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md).
+**See:** [12-Microservices/14-Bulkhead-Pattern.md](../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md).
 
 ### 3. Timeout everywhere
 
@@ -428,8 +427,8 @@ When you're designing any async system, queue, or pipeline:
 - [00-Queues-and-Async.md](00-Queues-and-Async.md) — backpressure in queues
 - [00-Rate-Limiting.md](00-Rate-Limiting.md) — rate limiting as backpressure
 - [00-Failure-Modes.md](00-Failure-Modes.md) — cascading failure
-- [../../20-Backend-Stack/12-Microservices/04-Circuit-Breaker.md](../../20-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) — circuit breaker deep-dive
-- [../../20-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md](../../20-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md) — bulkhead deep-dive
+- [../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md](../../2-Backend-Stack/12-Microservices/04-Circuit-Breaker.md) — circuit breaker deep-dive
+- [../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md](../../2-Backend-Stack/12-Microservices/14-Bulkhead-Pattern.md) — bulkhead deep-dive
 
 ---
 

@@ -27,9 +27,9 @@
 
 ---
 
-**Cross-references:** [React](../03-React/) | [Serverless & Edge](../../40-Platform-Stack/27-Serverless-Edge/) | [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+**Cross-references:** [React](../03-React/) | [Serverless & Edge](../../4-Platform-Stack/27-Serverless-Edge/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 ---
 
 ## Navigation
 
-[← Previous: React](../03-React/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Node.js →](../../20-Backend-Stack/05-NodeJS/INDEX.md)
+[← Previous: React](../03-React/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Node.js →](../../2-Backend-Stack/05-NodeJS/INDEX.md)

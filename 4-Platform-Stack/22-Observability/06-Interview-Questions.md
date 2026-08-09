@@ -1,8 +1,7 @@
----
-section: Observability
-category: Observability
-tags: [interview-questions, practice]
----
+<!-- section: Observability | category: Observability | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-Observability-blue)](.)
+[![Category](https://img.shields.io/badge/category-Observability-0ea5e9)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # Observability Interview Questions
 
@@ -1307,7 +1306,7 @@ INTERVIEW TIPS:
 
 ## See Also
 - [Kubernetes](../14-Kubernetes/)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [Serverless & Edge](../27-Serverless-Edge/)
 
 ## References & Learn More

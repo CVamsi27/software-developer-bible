@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, async, messaging, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, async, messaging, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20async%20%C2%B7%20messaging%20%C2%B7%20theory-lightgrey)](.)
 
 # Message Queues & Async Patterns
 
@@ -301,7 +300,7 @@ If any step fails → compensating actions in reverse:
 Inventory Service → consumes "payment_failed", releases stock
 ```
 
-See [12-Microservices/03-Saga-Pattern.md](../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md).
+See [12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md).
 
 ### Event Sourcing
 
@@ -315,7 +314,7 @@ Withdraw $30 → balance=$70
 
 To get current state, replay all events. Auditable, time-travel debug.
 
-See [12-Microservices/07-Event-Sourcing.md](../../20-Backend-Stack/12-Microservices/07-Event-Sourcing.md).
+See [12-Microservices/07-Event-Sourcing.md](../../2-Backend-Stack/12-Microservices/07-Event-Sourcing.md).
 
 ### CQRS (Command Query Responsibility Segregation)
 
@@ -328,7 +327,7 @@ Read model: optimized for reads (Elasticsearch, Redis, denormalized)
 Write → publish event → read model subscribes and updates
 ```
 
-See [12-Microservices/13-CQRS.md](../../20-Backend-Stack/12-Microservices/13-CQRS.md).
+See [12-Microservices/13-CQRS.md](../../2-Backend-Stack/12-Microservices/13-CQRS.md).
 
 ---
 
@@ -382,9 +381,9 @@ See [12-Microservices/13-CQRS.md](../../20-Backend-Stack/12-Microservices/13-CQR
 - [00-Distributed-Transactions.md](00-Distributed-Transactions.md) — 2PC, 3PC, saga
 - [00-Consensus-and-Leader-Election.md](00-Consensus-and-Leader-Election.md) — how to elect a leader
 - [00-Backpressure-and-Flow-Control.md](00-Backpressure-and-Flow-Control.md) — handling flow control
-- [../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../20-Backend-Stack/12-Microservices/03-Saga-Pattern.md)
-- [../../20-Backend-Stack/12-Microservices/05-Kafka.md](../../20-Backend-Stack/12-Microservices/05-Kafka.md)
-- [../../20-Backend-Stack/12-Microservices/06-RabbitMQ.md](../../20-Backend-Stack/12-Microservices/06-RabbitMQ.md)
+- [../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md](../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md)
+- [../../2-Backend-Stack/12-Microservices/05-Kafka.md](../../2-Backend-Stack/12-Microservices/05-Kafka.md)
+- [../../2-Backend-Stack/12-Microservices/06-RabbitMQ.md](../../2-Backend-Stack/12-Microservices/06-RabbitMQ.md)
 
 ---
 

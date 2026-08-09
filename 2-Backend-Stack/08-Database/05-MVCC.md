@@ -1,8 +1,7 @@
----
-section: Database
-category: Data
-tags: [concept]
----
+<!-- section: Database | category: Data | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Database-blue)](.)
+[![Category](https://img.shields.io/badge/category-Data-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # MVCC (Multi-Version Concurrency Control)
 
@@ -494,9 +493,9 @@ ALTER TABLE table SET (autovacuum_vacuum_scale_factor = 0.01);
 ---
 
 ## See Also
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
 - [REST APIs](../07-REST-API/)
-- [System Design](../../30-Architecture-Stack/11-System-Design/)
+- [System Design](../../3-Architecture-Stack/11-System-Design/)
 
 ## References & Learn More
 

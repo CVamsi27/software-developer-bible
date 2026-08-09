@@ -1,8 +1,7 @@
----
-section: SDE Role
-category: Interview
-tags: [study-plan]
----
+<!-- section: SDE Role | category: Interview | tags: study-plan -->
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-study-plan-lightgrey)](.)
 
 # 8-Week SDE Interview Study Schedule
 
@@ -279,7 +278,6 @@ Plan to fix: __________
 - 13-Learning-Guarantee-System — mastery criteria
 - 14-Flashcard-Decks — Anki/Quizlet decks
 - 15-Resume-Negotiation — resume + offer negotiation
-
 
 ## Summary
 

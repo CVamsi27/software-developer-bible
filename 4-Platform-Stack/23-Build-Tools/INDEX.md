@@ -20,7 +20,7 @@
 
 ---
 
-**Cross-references:** [Next.js](../../10-Frontend-Stack/04-NextJS/) | [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/) | [React](../../10-Frontend-Stack/03-React/)
+**Cross-references:** [Next.js](../../1-Frontend-Stack/04-NextJS/) | [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/) | [React](../../1-Frontend-Stack/03-React/)
 ---
 
 ## Navigation

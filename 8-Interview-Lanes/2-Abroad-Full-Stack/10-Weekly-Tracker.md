@@ -1,8 +1,7 @@
----
-section: Abroad Full-Stack Lane
-category: Reference
-tags: [tracker, weekly, progress, planning]
----
+<!-- section: Abroad Full-Stack Lane | category: Reference | tags: tracker, weekly, progress, planning -->
+[![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](.)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](.)
+[![Tags](https://img.shields.io/badge/tags-tracker%20%C2%B7%20weekly%20%C2%B7%20progress%20%C2%B7%20planning-lightgrey)](.)
 
 # Weekly Tracker — 4-Week Prep Plan
 
@@ -76,7 +75,7 @@ Rate yourself:
 - [ ] Take-home project shipped to public GitHub
 - [ ] Loom walkthrough recorded
 - [ ] 12 DSA mediums solved across HashMap + Sliding Window + Two Pointers
-- [ ] Take-home archive link in [../82-Abroad-Full-Stack/](../82-Abroad-Full-Stack/) folder (so you can reference it in applications)
+- [ ] Take-home archive link in [../2-Abroad-Full-Stack/](../2-Abroad-Full-Stack/) folder (so you can reference it in applications)
 
 ### Week 2 readiness (out of 10)
 

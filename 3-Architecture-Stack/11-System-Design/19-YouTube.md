@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept]
----
+<!-- section: System Design | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # YouTube System Design
 
@@ -339,8 +338,8 @@ Alerts: transcode lag > 5 min, CDN origin offload < 80%, rebuffer ratio > 1%, up
 ---
 
 ## See Also
-- [Database](../../20-Backend-Stack/08-Database/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Database](../../2-Backend-Stack/08-Database/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 - [Netflix](04-Netflix.md) (similar CDN + streaming focus)
 - [System Design Interview Questions](16-Interview-Questions.md)
 - [URL Shortener](01-URL-Shortener.md)

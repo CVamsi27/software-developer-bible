@@ -1,8 +1,7 @@
----
-section: Build Tools
-category: Tooling
-tags: [concept, reference, tool]
----
+<!-- section: Build Tools | category: Tooling | tags: concept, reference, tool -->
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference%20%C2%B7%20tool-lightgrey)](.)
 
 # ESBuild & SWC
 
@@ -153,7 +152,7 @@ INTERVIEW TIPS:
 ---
 ## See Also
 - [Babel](05-Babel.md)
-- [Next.js](../../10-Frontend-Stack/04-NextJS/)
+- [Next.js](../../1-Frontend-Stack/04-NextJS/)
 
 ## References & Learn More
 

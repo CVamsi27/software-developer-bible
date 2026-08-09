@@ -1,8 +1,7 @@
----
-section: Build Tools
-category: Tooling
-tags: [interview-questions, practice]
----
+<!-- section: Build Tools | category: Tooling | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](.)
+[![Category](https://img.shields.io/badge/category-Tooling-64748b)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # Build Tools Interview Questions
 
@@ -745,9 +744,9 @@ INTERVIEW TIPS:
 ---
 
 ## See Also
-- [Next.js](../../10-Frontend-Stack/04-NextJS/)
-- [Performance Monitoring](../../50-Quality-Stack/26-Performance-Monitoring/)
-- [React](../../10-Frontend-Stack/03-React/)
+- [Next.js](../../1-Frontend-Stack/04-NextJS/)
+- [Performance Monitoring](../../5-Quality-Stack/26-Performance-Monitoring/)
+- [React](../../1-Frontend-Stack/03-React/)
 
 ## References & Learn More
 

@@ -16,9 +16,9 @@
 
 ---
 
-**Cross-references:** [JavaScript](../../10-Frontend-Stack/01-JavaScript/) | [TypeScript](../../10-Frontend-Stack/02-TypeScript/) | [React](../../10-Frontend-Stack/03-React/) | [System Design](../../30-Architecture-Stack/11-System-Design/)
+**Cross-references:** [JavaScript](../../1-Frontend-Stack/01-JavaScript/) | [TypeScript](../../1-Frontend-Stack/02-TypeScript/) | [React](../../1-Frontend-Stack/03-React/) | [System Design](../../3-Architecture-Stack/11-System-Design/)
 ---
 
 ## Navigation
 
-[← Previous: Coding Patterns](../19-Coding-Patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-Real-Time-Stack/21-WebSockets/INDEX.md)
+[← Previous: Coding Patterns](../19-Coding-Patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../6-Real-Time-Stack/21-WebSockets/INDEX.md)

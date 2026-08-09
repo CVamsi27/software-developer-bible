@@ -1,8 +1,7 @@
----
-section: Testing
-category: Quality
-tags: [concept, reference]
----
+<!-- section: Testing | category: Quality | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Testing-blue)](.)
+[![Category](https://img.shields.io/badge/category-Quality-8b5cf6)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Vitest
 
@@ -355,13 +354,13 @@ test: { pool: "forks" }
 ---
 
 ## See Also
-- [CI/CD](../../40-Platform-Stack/15-CI-CD)
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+- [CI/CD](../../4-Platform-Stack/15-CI-CD)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 - [E2E Testing](06-E2E-Testing.md)
 - [Integration Testing](05-Integration-Testing.md)
 - [Jest](02-Jest.md)
 - [Mocking](07-Mocking.md)
-- [React](../../10-Frontend-Stack/03-React/)
+- [React](../../1-Frontend-Stack/03-React/)
 - [Unit Testing](04-Unit-Testing.md)
 
 ## References & Learn More

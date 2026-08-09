@@ -1,8 +1,7 @@
----
-section: System Design
-category: Architecture
-tags: [concept, distributed-systems, theory]
----
+<!-- section: System Design | category: Architecture | tags: concept, distributed-systems, theory -->
+[![Section](https://img.shields.io/badge/section-System%20Design-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed-systems%20%C2%B7%20theory-lightgrey)](.)
 
 # Consensus & Leader Election
 
@@ -291,7 +290,7 @@ When asked "what if the network partitions?":
 - [00-CAP-Theorem.md](00-CAP-Theorem.md) — consensus is CP
 - [00-Sharding-and-Replication.md](00-Sharding-and-Replication.md) — single-leader uses consensus
 - [00-Failure-Modes.md](00-Failure-Modes.md) — network partition, split brain
-- [../../20-Backend-Stack/12-Microservices/01-Service-Discovery.md](../../20-Backend-Stack/12-Microservices/01-Service-Discovery.md) — service discovery often uses consensus
+- [../../2-Backend-Stack/12-Microservices/01-Service-Discovery.md](../../2-Backend-Stack/12-Microservices/01-Service-Discovery.md) — service discovery often uses consensus
 
 ---
 

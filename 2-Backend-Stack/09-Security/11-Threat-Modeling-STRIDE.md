@@ -1,8 +1,7 @@
----
-section: Security
-category: Architecture
-tags: [concept]
----
+<!-- section: Security | category: Architecture | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Security-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Threat Modeling — STRIDE & Attack Surfaces
 
@@ -230,7 +229,7 @@ export class OrdersBffController {
 ## See Also
 - [Microservices](../12-Microservices/) (trust boundaries in service mesh)
 - [REST APIs](../07-REST-API/) (API threat catalog)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (security in system design)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (security in system design)
 - [Web Security](./09-Web-Security.md) (OWASP Top 10)
 
 ## References & Learn More

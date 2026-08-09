@@ -1,11 +1,9 @@
----
-section: SDE Role
-category: Interview
-tags: [guide]
----
+<!-- section: SDE Role | category: Interview | tags: guide -->
+[![Section](https://img.shields.io/badge/section-SDE%20Role-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-guide-lightgrey)](.)
 
 # Resume & Negotiation Guide
-
 
 ## Definition
 
@@ -316,8 +314,7 @@ INTERVIEW TIPS:
 ```
 ## See Also
 
-- [Behavioral](../../70-Interview-Toolkit/18-Behavioral/)
-
+- [Behavioral](../../7-Interview-Toolkit/18-Behavioral/)
 
 ## References & Learn More
 

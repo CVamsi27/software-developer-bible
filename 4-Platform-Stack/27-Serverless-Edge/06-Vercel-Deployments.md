@@ -1,8 +1,7 @@
----
-section: Serverless & Edge
-category: DevOps
-tags: [concept, reference]
----
+<!-- section: Serverless & Edge | category: DevOps | tags: concept, reference -->
+[![Section](https://img.shields.io/badge/section-Serverless%20&%20Edge-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20reference-lightgrey)](.)
 
 # Vercel Deployments
 
@@ -293,9 +292,8 @@ INTERVIEW TIPS:
 - [AWS Lambda](05-AWS-Lambda.md)
 - [Docker](../13-Docker/)
 - [Edge Functions](02-Edge-Functions.md)
-- [Next.js](../../10-Frontend-Stack/04-NextJS/)
+- [Next.js](../../1-Frontend-Stack/04-NextJS/)
 - [Observability](../22-Observability/)
-
 
 ## References & Learn More
 

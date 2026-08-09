@@ -1,8 +1,7 @@
----
-section: Docker
-category: DevOps
-tags: [interview-questions]
----
+<!-- section: Docker | category: DevOps | tags: interview-questions -->
+[![Section](https://img.shields.io/badge/section-Docker-blue)](.)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions-lightgrey)](.)
 
 # Docker Interview Questions
 
@@ -984,7 +983,7 @@ COPY --from=stage1 /app/dist ./dist
 ## See Also
 - [CI/CD](../15-CI-CD)
 - [Kubernetes](../14-Kubernetes/)
-- [Microservices](../../20-Backend-Stack/12-Microservices/)
+- [Microservices](../../2-Backend-Stack/12-Microservices/)
 
 ## References & Learn More
 

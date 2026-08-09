@@ -1,8 +1,7 @@
----
-section: Design Patterns
-category: Architecture
-tags: [concept, lld, principles, theory]
----
+<!-- section: Design Patterns | category: Architecture | tags: concept, lld, principles, theory -->
+[![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](.)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20lld%20%C2%B7%20principles%20%C2%B7%20theory-lightgrey)](.)
 
 # SOLID Principles
 
@@ -145,7 +144,7 @@ class DiscountCalculator {
 ```typescript
 class Rectangle {
   constructor(protected width: number, protected height: number) {}
-  
+
   setWidth(width: number): void { this.width = width; }
   setHeight(height: number): void { this.height = height; }
   area(): number { return this.width * this.height; }
@@ -271,7 +270,7 @@ class EmailSender {
 
 class NotificationService {
   private emailSender = new EmailSender();  // Tight coupling!
-  
+
   notifyUser(userId: string, message: string): void {
     // ...
     this.emailSender.send(user, "Alert", message);
@@ -301,7 +300,7 @@ class SmsSender implements MessageSender {
 
 class NotificationService {
   constructor(private sender: MessageSender) {}  // Injected dependency
-  
+
   async notifyUser(userId: string, message: string): Promise<void> {
     // ...
     await this.sender.send(user, "Alert", message);

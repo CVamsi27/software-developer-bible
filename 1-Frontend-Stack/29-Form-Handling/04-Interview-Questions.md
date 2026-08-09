@@ -1,8 +1,7 @@
----
-section: Form Handling
-category: Frontend
-tags: [interview-questions, practice]
----
+<!-- section: Form Handling | category: Frontend | tags: interview-questions, practice -->
+[![Section](https://img.shields.io/badge/section-Form%20Handling-blue)](.)
+[![Category](https://img.shields.io/badge/category-Frontend-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-interview-questions%20%C2%B7%20practice-lightgrey)](.)
 
 # Form Handling Interview Questions
 
@@ -271,8 +270,8 @@ INTERVIEW WINNERS:
 
 ## See Also
 
-- [Accessibility](../../50-Quality-Stack/25-Accessibility/)
-- [Design Patterns](../../20-Backend-Stack/10-Design-Patterns/)
+- [Accessibility](../../5-Quality-Stack/25-Accessibility/)
+- [Design Patterns](../../2-Backend-Stack/10-Design-Patterns/)
 - [Formik](03-Formik.md)
 - [React](../03-React/)
 - [React Hook Form](01-React-Hook-Form.md)
@@ -280,7 +279,6 @@ INTERVIEW WINNERS:
 - [TanStack Form](05-TanStack-Form.md)
 - [TypeScript](../02-TypeScript/)
 - [Zod](02-Zod.md)
-
 
 ## References & Learn More
 

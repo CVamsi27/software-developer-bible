@@ -1,8 +1,7 @@
----
-section: JavaScript
-category: Core
-tags: [concept]
----
+<!-- section: JavaScript | category: Core | tags: concept -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
+[![Category](https://img.shields.io/badge/category-Core-blue)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Recursion & Tail Call Optimization
 
@@ -375,7 +374,7 @@ const memoizedRecursive = memoize(
 
 ## See Also
 - [Call Stack](02-Call-Stack.md)
-- [Coding Patterns](../../70-Interview-Toolkit/19-Coding-Patterns/)
+- [Coding Patterns](../../7-Interview-Toolkit/19-Coding-Patterns/)
 
 ## References & Learn More
 

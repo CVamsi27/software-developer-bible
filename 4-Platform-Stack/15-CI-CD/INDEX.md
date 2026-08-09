@@ -23,4 +23,4 @@
 
 ## Navigation
 
-[← Previous: Kubernetes](../14-Kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Testing →](../../50-Quality-Stack/16-Testing/INDEX.md)
+[← Previous: Kubernetes](../14-Kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Testing →](../../5-Quality-Stack/16-Testing/INDEX.md)

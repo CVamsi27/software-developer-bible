@@ -1,8 +1,7 @@
----
-section: Node.js
-category: Backend
-tags: [concept]
----
+<!-- section: Node.js | category: Backend | tags: concept -->
+[![Section](https://img.shields.io/badge/section-Node.js-blue)](.)
+[![Category](https://img.shields.io/badge/category-Backend-success)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # Node.js Interview Questions
 
@@ -2848,8 +2847,8 @@ These 40 questions cover the most important Node.js concepts for technical inter
 ---
 
 ## See Also
-- [Docker](../../40-Platform-Stack/13-Docker/)
-- [JavaScript](../../10-Frontend-Stack/01-JavaScript/)
+- [Docker](../../4-Platform-Stack/13-Docker/)
+- [JavaScript](../../1-Frontend-Stack/01-JavaScript/)
 - [NestJS](../06-NestJS/)
 
 ## References & Learn More

@@ -1,8 +1,7 @@
----
-section: Interview Strategy
-category: Interview
-tags: [concept, guide]
----
+<!-- section: Interview Strategy | category: Interview | tags: concept, guide -->
+[![Section](https://img.shields.io/badge/section-Interview%20Strategy-blue)](.)
+[![Category](https://img.shields.io/badge/category-Interview-red)](.)
+[![Tags](https://img.shields.io/badge/tags-concept%20%C2%B7%20guide-lightgrey)](.)
 
 # Communication Skills for Senior Engineer Interviews
 
@@ -904,8 +903,8 @@ Effective communication is the multiplier for technical skill. This guide covers
 ---
 
 ## See Also
-- [Behavioral](../70-Interview-Toolkit/18-Behavioral/)
-- [SDE Role](../80-Interview-Lanes/81-Indian-SDE-FAANG/)
+- [Behavioral](../7-Interview-Toolkit/18-Behavioral/)
+- [SDE Role](../8-Interview-Lanes/1-Indian-SDE-FAANG/)
 
 ## References & Learn More
 

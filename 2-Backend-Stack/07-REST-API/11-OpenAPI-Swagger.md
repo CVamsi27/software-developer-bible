@@ -1,8 +1,7 @@
----
-section: REST API
-category: API
-tags: [concept]
----
+<!-- section: REST API | category: API | tags: concept -->
+[![Section](https://img.shields.io/badge/section-REST%20API-blue)](.)
+[![Category](https://img.shields.io/badge/category-API-ff6b35)](.)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
 
 # OpenAPI / Swagger Documentation
 
@@ -232,7 +231,7 @@ schemathesis run http://localhost:3000/api-json --checks all
 - [Microservices](../12-Microservices/) (per-service specs, developer portals)
 - [NestJS](../06-NestJS/) (where `@nestjs/swagger` lives)
 - [Security](../09-Security/) (security schemes in the spec)
-- [System Design](../../30-Architecture-Stack/11-System-Design/) (public API contracts)
+- [System Design](../../3-Architecture-Stack/11-System-Design/) (public API contracts)
 
 ## References & Learn More
 

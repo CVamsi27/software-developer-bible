@@ -82,7 +82,7 @@ function Bounce() {
       friction: 20,   // higher = less bounce
     },
   });
-  return <animated.div style={{ ...styles, transform: styles.scale.to((s) => `scale(${s})`) }} />;
+  return <animated.div style={ { ...styles, transform: styles.scale.to((s) => `scale(${s})`) } } />;
 }
 ```
 

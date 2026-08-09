@@ -116,7 +116,7 @@ const VirtualList = ({ items }: { items: Item[] }) => {
     <div ref={parentRef} style={{ height: '600px', overflow: 'auto' }}>
       <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
         {virtualizer.getVirtualItems().map(virtualRow => (
-          <div key={virtualRow.key} style={{
+          <div key={virtualRow.key} style={ {
             position: 'absolute', top: 0, left: 0, width: '100%',
             height: virtualRow.size, transform: `translateY(${virtualRow.start}px)`,
           }}>

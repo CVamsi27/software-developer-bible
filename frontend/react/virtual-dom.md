@@ -378,7 +378,7 @@ const AnimatedBox = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   // ❌ Bad: State-driven animation (causes re-renders)
-  // return <div style={{ transform: `translate(${x}px, ${y}px)` }} />;
+  // return <div style={ { transform: `translate(${x}px, ${y}px)` } } />;
 
   // ✅ Good: Direct DOM manipulation for animations
   useEffect(() => {

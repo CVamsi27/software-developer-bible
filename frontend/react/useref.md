@@ -530,7 +530,7 @@ const ScrollProgress = () => {
 
   return (
     <div
-      style={{
+      style={ {
         position: 'fixed',
         top: 0,
         left: 0,

@@ -90,7 +90,7 @@ String[] names = {"Alice", "Bob", "Charlie"};
 
 // 2D Arrays
 int[][] matrix = new int[3][3];
-int[][] grid = {{1, 2, 3}, {4, 5, 6}};
+int[][] grid = { {1, 2, 3}, {4, 5, 6} };
 
 ```
 
@@ -1798,7 +1798,7 @@ weightedGraph.computeIfAbsent(u, k -> new ArrayList<>()).add(new int[]{v, weight
 // 2D Grid representation
 int[][] grid = new int[m][n];
 // Cell (i,j) neighbors: (i-1,j), (i+1,j), (i,j-1), (i,j+1)
-int[][] dirs = {{-1,0}, {1,0}, {0,-1}, {0,1}};
+int[][] dirs = { {-1,0}, {1,0}, {0,-1}, {0,1} };
 
 ```
 
@@ -2444,7 +2444,7 @@ int orangesRotting(int[][] grid) {
     }
     if (fresh == 0) return 0;
 
-    int[][] dirs = {{-1,0},{1,0},{0,-1},{0,1}};
+    int[][] dirs = { {-1,0},{1,0},{0,-1},{0,1} };
     int minutes = 0;
     while (!queue.isEmpty()) {
         int size = queue.size();

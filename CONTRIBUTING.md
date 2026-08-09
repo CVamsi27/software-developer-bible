@@ -798,7 +798,6 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 ```text
 ...
 ```
-```
 
 - Uses `## When to Use` instead of `## Why Do We Need It?`
 - Has a `## Template` section (unique to Coding Pattern files)

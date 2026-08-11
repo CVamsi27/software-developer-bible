@@ -1,0 +1,51 @@
+# System Design — Foundational Theory
+
+> **16 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+
+[![Files](https://img.shields.io/badge/files-16-blue)](../../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+
+**Read all 14 foundational files first**, then the 2 meta guides. After this, move to [../10-case-studies/](../10-case-studies/INDEX.md).
+
+---
+
+## Foundational concepts (read in order)
+
+These 14 are the building blocks. Read in this order — each builds on the previous.
+
+| # | File | Concepts | Why it matters |
+|---|------|----------|----------------|
+| 1 | [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md) | Consistency, Availability, Partition tolerance, CP vs AP trade-offs, PACELC extension | The single most important distributed systems concept. Pick CP or AP for every operation. |
+| 2 | [Data Consistency Models](30.2.1.02-consistency-models.md) | Linearizability, eventual, causal, read-your-writes, monotonic reads | Pick per operation, not per system. Most real systems are a mix. |
+| 3 | [Sharding & Replication](30.2.1.03-sharding-and-replication.md) | Hash/range/directory sharding, single-leader/multi-leader/leaderless replication | How to actually scale a database. Both are needed. |
+| 4 | [Load Balancing](30.2.1.04-load-balancing.md) | L4 vs L7, round-robin/least-connections/consistent-hashing/IP-hash, health checks | Traffic distribution. Pick the wrong algorithm and one server melts. |
+| 5 | [Caching Patterns](30.2.1.05-caching-patterns.md) | Cache-aside, read-through, write-through, write-behind, refresh-ahead, write-around + LRU/LFU/TTL eviction | The #1 lever for performance. Know all 6 patterns. |
+| 6 | [Queues & Async](30.2.1.06-queues-and-async.md) | Point-to-point vs pub/sub, at-least-once vs exactly-once, idempotency, DLQ, ordering | Async is the backbone of scalable systems. Know delivery guarantees. |
+| 7 | [Distributed Transactions](30.2.1.07-distributed-transactions.md) | 2PC, 3PC, Saga (choreography + orchestration) | Atomicity across services. Saga is the production answer. |
+| 8 | [Rate Limiting](30.2.1.08-rate-limiting.md) | Fixed/sliding window, token bucket, leaky bucket, Redis-based distributed | Protect from abuse. Token bucket is the default. |
+| 9 | [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md) | Paxos, Raft, Zab, leader election, split brain, distributed locks | How databases agree on who's leader. Raft is the default. |
+| 10 | [Failure Modes](30.2.1.10-failure-modes.md) | Hardware, software, network, human failures, retries, circuit breakers, bulkheads | Everything fails. Plan for it. |
+| 11 | [Architecture Patterns](30.2.1.11-architecture-patterns.md) | Monolith, modular monolith, microservices, event-driven, hexagonal, clean, microkernel | Pick the right architecture for the team and domain. |
+| 12 | [Capacity Planning](30.2.1.12-capacity-planning.md) | QPS, storage, bandwidth, memory, Little's Law | Estimate first, design second. Numbers, not vibes. |
+| 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. |
+| 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. |
+
+## Meta guides (read after the 14)
+
+| # | File | What it covers |
+|---|------|----------------|
+| 15 | [How to Approach](30.2.1.15-how-to-approach.md) | 4-phase framework: clarify → estimate → high-level → deep-dive. The structure to use in every interview. |
+| 16 | [Interview Questions](30.2.1.16-interview-questions.md) | 50+ curated system design questions with answers, organized by difficulty. |
+
+---
+
+**Next:** [Case studies →](../10-case-studies/INDEX.md)
+
+**Cross-references:** [Design Patterns](../../30.1-design-patterns/INDEX.md) | [Microservices](../../../20-backend/20.6-microservices/INDEX.md) | [Database](../../../20-backend/20.4-database/INDEX.md) | [REST APIs](../../../20-backend/20.3-rest-apis/INDEX.md) | [WebSockets](../../../60-realtime/60.1-websockets/INDEX.md)
+
+---
+
+## Navigation
+
+[← Previous: System Design Index](../INDEX.md) · [🏠 Back to System Design Index](../INDEX.md) · [Next: Case Studies →](../10-case-studies/INDEX.md)

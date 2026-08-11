@@ -15,13 +15,13 @@ The bible is split into **3 lanes**. The stacks are the technical material they 
 
 | Lane | Folder | Audience | Bar | Time |
 |------|--------|----------|-----|------|
-| **Cross-Lane** — universal interview strategy | [strategy/](strategy/INDEX.md) | Everyone starts here | Resume, STAR, communication | Read in 1-2 days |
-| **Indian SDE / FAANG** | [indian-sde-faang/](lanes/indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode medium-to-hard, 5-6 rounds | 8-12 weeks @ 4-6 hrs/day |
-| **Abroad Full-Stack** | [abroad-full-stack/](lanes/abroad-full-stack/INDEX.md) | EU mid-stage startups (n8n, SumUp, Scalable, sennder, THRYVE, Peter Park) + remote-first US | Take-home + system design, 3-4 rounds | 4-6 weeks @ 2-3 hrs/day |
+| **Cross-Lane** — universal interview strategy | [00-strategy/](00-strategy/INDEX.md) | Everyone starts here | Resume, STAR, communication | Read in 1-2 days |
+| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode medium-to-hard, 5-6 rounds | 8-12 weeks @ 4-6 hrs/day |
+| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage startups (n8n, SumUp, Scalable, sennder, THRYVE, Peter Park) + remote-first US | Take-home + system design, 3-4 rounds | 4-6 weeks @ 2-3 hrs/day |
 
 **Quick heuristic:** If the phone screen has a LeetCode medium-to-hard → Indian SDE / FAANG. If the company is mid-stage and uses take-homes → Abroad Full-Stack. Many EU Big Tech (Booking, Spotify) run FAANG-style loops → use both.
 
-👉 Full decision matrix: [abroad-full-stack/INDEX.md → Lane Decision](lanes/abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you)
+👉 Full decision matrix: [80-lanes-abroad-full-stack/INDEX.md → Lane Decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you)
 
 ---
 
@@ -31,13 +31,13 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 
 | Stack | Folder | What's in it | Files |
 |-------|--------|--------------|------:|
-| **Frontend** | [frontend/](frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation | 90 |
-| **Backend** | [backend/](backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, Security, Patterns, Microservices | 107 |
-| **Architecture** | [architecture/](architecture/INDEX.md) | System design, CAP, consistency, sharding, queues, 30+ case studies | 36 |
-| **Platform** | [platform/](platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo | 63 |
-| **Quality** | [quality/](quality/INDEX.md) | Testing (Jest/RTL/Playwright), Accessibility, Performance | 26 |
-| **Real-Time** | [realtime/](realtime/INDEX.md) | WebSockets, SSE, real-time architecture | 8 |
-| **Interview Toolkit** | [interview-toolkit/](interview-toolkit/INDEX.md) | Behavioral, Coding Patterns, Cheat Sheets | 27 |
+| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation | 90 |
+| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, Security, Patterns, Microservices | 107 |
+| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design, CAP, consistency, sharding, queues, 30+ case studies | 36 |
+| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo | 63 |
+| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright), Accessibility, Performance | 26 |
+| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, real-time architecture | 8 |
+| **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns, Cheat Sheets | 27 |
 
 👉 Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#-the-7-study-stacks-shared-by-both-lanes)
 
@@ -48,9 +48,9 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 | If you want to… | Go to |
 |------------------|-------|
 | See all files in one place | [INDEX.md](INDEX.md) |
-| Start with universal interview prep | [strategy/](strategy/INDEX.md) |
-| Prep for FAANG / Indian SDE roles | [lanes/indian-sde-faang/](lanes/indian-sde-faang/INDEX.md) |
-| Prep for EU mid-stage / remote-first US | [lanes/abroad-full-stack/](lanes/abroad-full-stack/INDEX.md) |
+| Start with universal interview prep | [00-strategy/](00-strategy/INDEX.md) |
+| Prep for FAANG / Indian SDE roles | [81-lanes-indian-sde-faang/](81-lanes-indian-sde-faang/INDEX.md) |
+| Prep for EU mid-stage / remote-first US | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) |
 | Learn how to contribute | [contributing.md](contributing.md) |
 
 ---
@@ -98,7 +98,7 @@ Every chapter follows a consistent structure:
 |------|----------|
 | **New to a topic** | Start with the definition and "Why" sections |
 | **Preparing for an interview** | Follow your lane's 4-week or 8-week prep plan; the lane tells you which stack files to read in what order |
-| **Quick review** | Use the Cheat Sheet at the bottom of each chapter, or the [interview-toolkit/cheatsheets/](interview-toolkit/cheatsheets/INDEX.md) stack |
+| **Quick review** | Use the Cheat Sheet at the bottom of each chapter, or the [70-interview-toolkit/70.3-cheatsheets/](70-interview-toolkit/70.3-cheatsheets/INDEX.md) stack |
 | **Deep dive** | Read through internal working and code examples |
 | **Cross-reference** | Each stack folder has an `INDEX.md` listing all files with file counts |
 
@@ -110,13 +110,13 @@ Every chapter follows a consistent structure:
 
 DSA-heavy. The bar is **1-2 mediums in 30-45 min, plus 1 system design, plus 1-2 behavioral, plus a Bar Raiser (Amazon) or values round**. 5-6 rounds, 8-12 weeks. US FAANG comp: USD 260-580K (E4-E5). Indian in-country: INR 30-120 L (SDE-2 to SDE-3).
 
-→ [Indian SDE / FAANG lane →](lanes/indian-sde-faang/INDEX.md)
+→ [Indian SDE / FAANG lane →](81-lanes-indian-sde-faang/INDEX.md)
 
 ### 🇪🇺 Abroad Full-Stack (14 files in lane)
 
 Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 system design at 45 min, 1 behavioral round**. 3-4 rounds, 4-6 weeks. EU Tier 1 comp: EUR 75-110K base + 0.05-0.5% equity. Family-driven geography (NL 30% ruling, EU Blue Card, schools).
 
-→ [Abroad Full-Stack lane →](lanes/abroad-full-stack/INDEX.md)
+→ [Abroad Full-Stack lane →](80-lanes-abroad-full-stack/INDEX.md)
 
 ---
 

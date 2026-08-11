@@ -88,8 +88,8 @@ Before contributing, review the existing files in the relevant section to unders
 │   └── 20-CheatSheets/
 │
 └── 8-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
-    ├── indian-sde-faang/              # DSA-heavy, 8-week
-    └── abroad-full-stack/             # Take-home + system design, 4-week
+    ├── 81-lanes-indian-sde-faang/              # DSA-heavy, 8-week
+    └── 80-lanes-abroad-full-stack/             # Take-home + system design, 4-week
 ```
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
@@ -531,9 +531,9 @@ else:
 
 ```text
 ## See Also
-- [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md)
-- [JavaScript](frontend/javascript/INDEX.md)
-- [TypeScript](frontend/typescript/INDEX.md)
+- [Coding Patterns](70-interview-toolkit/70.2-coding-patterns/INDEX.md)
+- [JavaScript](10-frontend/10.1-javascript/INDEX.md)
+- [TypeScript](10-frontend/10.2-typescript/INDEX.md)
 ```
 
 #### Rules
@@ -549,9 +549,9 @@ else:
 
 | Variant | Example | Usage |
 |---------|---------|-------|
-| Section directory | `- [React](frontend/react/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](quality/testing/jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](backend/rest-api/)` | Cross-section from subdirectories |
+| Section directory | `- [React](10-frontend/10.3-react/)` | Cross-section links (88% of links) |
+| Specific file | `- [Jest](50-quality/50.1-testing/50.1.02-jest.md)` | Intra-section links (12% of links) |
+| Nested path | `- [REST APIs](20-backend/20.3-rest-apis/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -570,7 +570,7 @@ else:
 ### In INDEX.md (`**Cross-references:**`)
 
 ```text
-**Cross-references:** [JavaScript](frontend/javascript/INDEX.md) | [TypeScript](frontend/typescript/INDEX.md) | [Coding Patterns](interview-toolkit/coding-patterns/INDEX.md)
+**Cross-references:** [JavaScript](10-frontend/10.1-javascript/INDEX.md) | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | [Coding Patterns](70-interview-toolkit/70.2-coding-patterns/INDEX.md)
 ```
 
 - Pipe-separated links

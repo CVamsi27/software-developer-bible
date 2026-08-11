@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -33,7 +33,7 @@
 | **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | secondary | ✅ **primary** |
 | **Indian in-country** (in Bengaluru, Hyderabad, etc.) | — | ✅ **primary** |
 | **US FAANG on-site** (Google MTV, Meta Menlo Park) | — | ✅ **primary** |
-| **Junior roles (under 3 YoE)** | — | start with `01-JavaScript/` and `02-TypeScript/` fundamentals first |
+| **Junior roles (under 3 YoE)** | — | start with `10-frontend/10.1-javascript/` and `10-frontend/10.2-typescript/` fundamentals first |
 
 **Quick heuristic:** if you need **visa sponsorship to work in the target country** AND the company is **mid-stage (Series A–D, 50-1000 people)**, you're in this lane. If you're targeting a US-based company from India without needing US visa, you're also in this lane. Everything else → 31.
 
@@ -49,45 +49,45 @@ This is a **reference checklist** of every topic a senior abroad full-stack cand
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [TypeScript](../../frontend/typescript/INDEX.md) |
-| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [React](../../frontend/react/INDEX.md) |
-| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [Next.js](../../frontend/nextjs/INDEX.md) |
-| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [Node.js](../../backend/nodejs/INDEX.md) |
-| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [NestJS](../../backend/nestjs/INDEX.md) |
-| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [REST API](../../backend/rest-api/INDEX.md), [GraphQL](../../backend/graphql/INDEX.md) |
-| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [Database](../../backend/database/INDEX.md) |
-| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [Security](../../backend/security/INDEX.md) |
-| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [System Design](../../architecture/system-design/INDEX.md) |
-| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [Microservices](../../backend/microservices/INDEX.md) |
-| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [Docker](../../platform/docker/INDEX.md), [CI/CD](../../platform/ci-cd) |
-| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [Testing](../../quality/testing/INDEX.md) |
-| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [Observability](../../platform/observability/INDEX.md) |
-| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) + your own [story-bank.md](story-bank.md) |
+| **TypeScript at senior level** | Generics, conditional types, `satisfies` operator, narrowing, mapped types, declaration files. Can read and write type-safe APIs without `any`. | [TypeScript](../10-frontend/10.2-typescript/INDEX.md) |
+| **React 18-19 + hooks** | `useTransition`, `useDeferredValue`, `use(promise)`, `useOptimistic`, ref-as-prop, Suspense + Error Boundary, Server Components understanding. | [React](../10-frontend/10.3-react/INDEX.md) |
+| **Next.js 15 App Router** | Server Components vs Client Components, Server Actions, Middleware, Route Handlers, streaming, image optimization, caching. | [Next.js](../10-frontend/10.4-next.js/INDEX.md) |
+| **Node.js runtime** | Event loop, streams, child processes, clustering, file system, web streams API, test runner. Can debug a memory leak or event loop stall. | [Node.js](../20-backend/20.1-node.js/INDEX.md) |
+| **NestJS or similar backend framework** | Modules, DI, guards, pipes, interceptors, exception filters, middleware. Comfortable with a TS-first backend. | [NestJS](../20-backend/20.2-nestjs/INDEX.md) |
+| **REST or GraphQL API design** | Status codes, versioning, pagination, auth flows, OpenAPI spec, error handling, HTTP caching. | [REST API](../20-backend/20.3-rest-apis/INDEX.md), [GraphQL](../20-backend/20.7-graphql/INDEX.md) |
+| **PostgreSQL** | Schema design, normalization, indexes (B-tree, partial, covering), transactions + MVCC, query planning, connection pooling, migrations. | [Database](../20-backend/20.4-database/INDEX.md) |
+| **Auth + security** | JWT vs session, RBAC, audit logging for regulated domains, OWASP API Top 10 (BOLA, BFLA, mass assignment, SSRF), secrets management. | [Security](../20-backend/20.5-security/INDEX.md) |
+| **System design at 45 min** | URL shortener, notification service, ticket booking, hospital mgmt, payment gateway, rate limiter, message broker. 4-phase approach: clarify → estimate → high-level → deep-dive. | [System Design](../30-architecture/30.2-system-design/INDEX.md) |
+| **Microservices patterns** | Service discovery, API gateway, saga, circuit breaker, event sourcing, idempotency, distributed transactions. | [Microservices](../20-backend/20.6-microservices/INDEX.md) |
+| **CI/CD + Docker** | GitHub Actions, multi-stage Dockerfiles, blue-green/canary, observability integration. | [Docker](../40-platform/40.1-docker/INDEX.md), [CI/CD](../40-platform/40.3-ci-cd) |
+| **Testing strategy** | Unit + integration + E2E layering, mocking patterns, when to use Testcontainers, coverage gates, Playwright for E2E. | [Testing](../50-quality/50.1-testing/INDEX.md) |
+| **Observability basics** | Structured logging, request IDs, alerting, SLI/SLO, on-call etiquette. You don't have to be an SRE but you should know what good looks like. | [Observability](../40-platform/40.4-observability/INDEX.md) |
+| **Behavioral — STAR stories** | 5-8 stories mapped to common questions, punchline-first, with Reflection. Senior signal = "what would you do differently." | [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) + your own [story-bank.md](80.12-story-bank.md) |
 
 ### Tier 2 — Asked in 50-70% of interviews (mid-stage senior)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [Kubernetes](../../platform/kubernetes/INDEX.md) |
-| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [Performance Monitoring](../../quality/performance-monitoring/INDEX.md) |
-| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [Accessibility](../../quality/accessibility/INDEX.md) |
-| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [Build Tools](../../platform/build-tools/INDEX.md) |
-| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [WebSockets](../../realtime/websockets/INDEX.md) |
-| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [Serverless & Edge](../../platform/serverless-edge/INDEX.md) |
-| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [Design Patterns](../../backend/design-patterns/INDEX.md) |
-| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [Git Advanced](../../platform/git-advanced/INDEX.md) |
-| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) |
+| **K8s basics** | Pods, deployments, services, ingress, ConfigMaps, HPA, health checks. You don't have to be a K8s admin, but you should know what a Deployment does. | [Kubernetes](../40-platform/40.2-kubernetes/INDEX.md) |
+| **Performance + Core Web Vitals** | LCP / INP / CLS, RUM, Lighthouse CI, bundle analysis, performance budgets. | [Performance Monitoring](../50-quality/50.3-performance-monitoring/INDEX.md) |
+| **Accessibility (a11y)** | WCAG 2.1 AA basics, ARIA, keyboard navigation, color contrast, form labels. | [Accessibility](../50-quality/50.2-accessibility/INDEX.md) |
+| **Build tooling** | Webpack vs Vite vs Turbopack vs Rspack — when to use which. SWC vs Babel. Module federation. | [Build Tools](../40-platform/40.5-build-tools/INDEX.md) |
+| **WebSockets / real-time** | When to use WS vs SSE vs polling, Socket.IO patterns, scaling. | [WebSockets](../60-realtime/60.1-websockets/INDEX.md) |
+| **Serverless / Edge** | When to use Lambda/Vercel Edge vs containers, cold starts, edge functions. | [Serverless & Edge](../40-platform/40.7-serverless-edge/INDEX.md) |
+| **Design patterns** | Repository, Strategy, Observer, DI, CQRS, Module, State. Don't memorize — apply when relevant. | [Design Patterns](../30-architecture/30.1-design-patterns/INDEX.md) |
+| **Git beyond basics** | Rebase vs merge, cherry-pick, reflog, hooks, patch workflow. | [Git Advanced](../40-platform/40.6-git-advanced/INDEX.md) |
+| **DSA — defensive (light)** | HashMap, Sliding Window, Two Pointers, BFS/DFS, basic DP, Stack/Queue. 30-40 mediums across these 6 patterns. **Not 100+ problems.** | [Coding Patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
 
 ### Tier 3 — Differentiator (asked 20-30%, distinguishes senior from staff)
 
 | Topic | What you need to demonstrate | Where to study |
 |-------|------------------------------|----------------|
-| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [React](../../frontend/react/INDEX.md) + [Build Tools](../../platform/build-tools/INDEX.md) |
-| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [Microservices](../../backend/microservices/INDEX.md) |
-| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [Security](../../backend/security/INDEX.md) |
-| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [Docker](../../platform/docker/INDEX.md), [Kubernetes](../../platform/kubernetes/INDEX.md) |
-| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [Behavioral](../../interview-toolkit/behavioral/INDEX.md) |
-| **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [Compensation Benchmarking](../indian-sde-faang/compensation-benchmarking.md) |
+| **Frontend architecture** | State management strategy, design system, micro-frontends, performance optimization at scale. | [React](../10-frontend/10.3-react/INDEX.md) + [Build Tools](../40-platform/40.5-build-tools/INDEX.md) |
+| **Distributed systems trade-offs** | CAP, eventual consistency, idempotency keys, exactly-once semantics, distributed locks. | [Microservices](../20-backend/20.6-microservices/INDEX.md) |
+| **Threat modeling** | STRIDE, attack trees, secrets management at scale. | [Security](../20-backend/20.5-security/INDEX.md) |
+| **Cost optimization** | AWS/GCP cost levers, multi-region trade-offs, data egress. | [Docker](../40-platform/40.1-docker/INDEX.md), [Kubernetes](../40-platform/40.2-kubernetes/INDEX.md) |
+| **Engineering culture** | Mentorship, code review as teaching, RFC process, postmortem culture. | [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) |
+| **Compensation negotiation** | Base vs RSU trade-offs, EU 30% ruling (NL), EU Blue Card salary thresholds, sign-on vs equity. | [Compensation Benchmarking](../81-lanes-indian-sde-faang/81.22-compensation-benchmarking.md) |
 
 ### Topics to SKIP (overkill for this lane)
 
@@ -111,7 +111,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 |------|----------------|----------------|
 | Internal recruiter or talent partner | Basic fit: years of experience, stack, visa, location, comp expectation, motivation. | "Tell me about your current role." "Why are you looking?" "Are you open to relocation to [Berlin / Amsterdam]?" "Do you require visa sponsorship?" "What's your comp expectation?" |
 
-**How to prep:** Know your CV cold. Have a 60-second "tell me about yourself" answer. Have your comp range in EUR (see compensation section in [story-bank.md](story-bank.md)). Know your visa status (Blue Card eligibility, Skilled Worker visa path, 30% ruling for NL).
+**How to prep:** Know your CV cold. Have a 60-second "tell me about yourself" answer. Have your comp range in EUR (see compensation section in [story-bank.md](80.12-story-bank.md)). Know your visa status (Blue Card eligibility, Skilled Worker visa path, 30% ruling for NL).
 
 ### Round 1: Take-Home Project (4-8 hours of your time, 1-2 weeks to complete)
 
@@ -140,7 +140,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 **How to ship a strong take-home:**
 - Plan for 5-6 hours minimum, even if the brief says "2 hours"
 - Lead with: schema design, then backend, then frontend, then tests, then README
-- Use the bible's [NestJS](../../backend/nestjs/INDEX.md) + [Database](../../backend/database/INDEX.md) + [Security](../../backend/security/INDEX.md) sections as your reference
+- Use the bible's [NestJS](../20-backend/20.2-nestjs/INDEX.md) + [Database](../20-backend/20.4-database/INDEX.md) + [Security](../20-backend/20.5-security/INDEX.md) sections as your reference
 - Include a short Loom video walkthrough if the brief allows
 - Have a "what I'd do with 24 more hours" note in the README
 
@@ -160,7 +160,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No questions asked back
 - Silent for 5+ minutes when stuck
 
-**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md) has the patterns.
+**How to prep:** Practice 30-40 mediums across 6 patterns (HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue). Time-boxed at 25-30 min each. The bible's [Coding Patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) has the patterns.
 
 ### Round 3: System Design (45-60 min)
 
@@ -184,15 +184,15 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No observability / no failure modes
 
 **The system design case studies the bible has:**
-- [URL Shortener](../../architecture/system-design/url-shortener.md) — classic
-- [Notification Service](../../architecture/system-design/notification-service.md) — retry, DLQ, fanout
-- [Ticket Booking](../../architecture/system-design/ticket-booking.md) — consistency, "two users grab the last seat"
-- [Hospital Management](../../architecture/system-design/hospital-management.md) — domain fit for healthcare
-- [Payment Gateway](../../architecture/system-design/payment-gateway.md) — SumUp / fintech
-- [Rate Limiter](../../architecture/system-design/rate-limiter.md) — n8n workflow throttling
-- [Distributed Counter](../../architecture/system-design/distributed-counter.md) — hot-key sharding
-- [Lyft](../../architecture/system-design/lyft.md) — geo indexing
-- [How to Approach](../../architecture/system-design/how-to-approach.md) — read this first
+- [URL Shortener](../30-architecture/30.2-system-design/10-case-studies/30.2.2.01-url-shortener.md) — classic
+- [Notification Service](../30-architecture/30.2-system-design/10-case-studies/30.2.2.07-notification-service.md) — retry, DLQ, fanout
+- [Ticket Booking](../30-architecture/30.2-system-design/10-case-studies/30.2.2.08-ticket-booking.md) — consistency, "two users grab the last seat"
+- [Hospital Management](../30-architecture/30.2-system-design/10-case-studies/30.2.2.10-hospital-management.md) — domain fit for healthcare
+- [Payment Gateway](../30-architecture/30.2-system-design/10-case-studies/30.2.2.06-payment-gateway.md) — SumUp / fintech
+- [Rate Limiter](../30-architecture/30.2-system-design/10-case-studies/30.2.2.13-rate-limiter.md) — n8n workflow throttling
+- [Distributed Counter](../30-architecture/30.2-system-design/10-case-studies/30.2.2.20-distributed-counter.md) — hot-key sharding
+- [Lyft](../30-architecture/30.2-system-design/10-case-studies/30.2.2.19-lyft.md) — geo indexing
+- [How to Approach](../30-architecture/30.2-system-design/00-theory/30.2.1.15-how-to-approach.md) — read this first
 
 **Practice 5 of these with a timer + recording.** 45 min each, then review the recording.
 
@@ -204,7 +204,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 | **Live behavioral** (less common) | Same. | Same questions but verbal. |
 | **Founder / hiring manager call** (common for senior+) | Vision, ownership, long-term fit. | "What's your 3-year plan?" "How do you stay current?" "Why us specifically?" |
 
-**The 8 STAR stories you should have ready** (in your own [story-bank.md](story-bank.md)):
+**The 8 STAR stories you should have ready** (in your own [story-bank.md](80.12-story-bank.md)):
 1. **0→1 founding at Docita** — sole engineer shipped production multi-tenant SaaS
 2. **30% API latency reduction at MAQ** — query tuning + indexing + caching
 3. **25% faster delivery at MAQ** — refactoring around reusable TS patterns
@@ -233,7 +233,7 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 | **Week 3** | System design + frontend deep-dive + DSA | ~14-16h | 4 system designs explained with timer + recording. 14-18 DSA mediums. 1-pager on Next.js 15. Mock 2 done. |
 | **Week 4** | Mocks + final polish + applications | ~12-14h | 3-4 mocks completed. 4-6 applications sent. CV polished. |
 
-Full plan in [study-plan.md](study-plan.md).
+Full plan in [study-plan.md](80.13-study-plan.md).
 
 ### The 80/20 — what to skip if time is short
 
@@ -302,24 +302,24 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 | # | File | Purpose | Personal example |
 |---|------|---------|------------------|
-| 01 | [Take-Home Playbook](take-home-playbook.md) | How to ship a winning take-home: 4-phase framework, 6-phase build, README template, what gets you rejected. The single highest-leverage file in this lane. | 5-6 hour take-home for a workflow engine, Loom walkthrough, full README |
-| 02 | [Tech Screen Patterns](tech-screen-patterns.md) | Defensive DSA: 6 patterns, 30-40 problem set, what to skip. The bar is 1-2 mediums in 30 min, not 4 FAANG-hards. | The 35-problem recommended set across HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue |
-| 03 | [System Design — EU Patterns](system-design-eu-patterns.md) | The 4-phase framework + 6 EU-specific cases (payment gateway, workflow engine, multi-tenant SaaS, real-time booking, event-driven microservices, notification service). | Workflow engine with state machine, queue, idempotency, retries, DLQ |
-| 04 | [Behavioral — EU Style](behavioral-eu-style.md) | STAR+R framework, 15 common questions with answer skeletons, EU-specific cultural fit, async written questions. | "Why this company?" 60-sec answer for n8n / SumUp / Scalable |
-| 05 | [Comp — EU Benchmarking](comp-eu-benchmarking.md) | 5 city tiers, NL 30% ruling, EU Blue Card, family comp considerations, negotiation scripts, company-by-company ranges. | Tier 1 (Amsterdam, Berlin, Munich, London): EUR 75-100K base + 0.05-0.5% equity |
-| 06 | [Visa & Relocation Playbook](visa-relocation-playbook.md) | 8 EU countries with visa matrix, family-driven country decision framework, relocation package negotiation, 90-day timeline. | NL Highly Skilled Migrant: 2-4 weeks, 30% ruling, family inclusion |
-| 07 | [Company Profiles](company-profiles.md) | 1-pager per Tier 1/2 company: stack, interview process, comp, who to follow, recent news. The 30-min pre-interview research recipe. | n8n: TS + Vue + NestJS, EUR 80-100K + 0.05-0.2% equity, 4-day workweek |
-| 08 | [System Design Case Bank](system-design-case-bank.md) | 5 EU cases to practice: workflow engine, payment gateway, multi-tenant SaaS, real-time booking, event-driven microservices. Each with framework + sample answer + trade-offs. | Workflow engine: queue + worker + state DB + idempotency, 100K executions/day at scale |
-| 09 | [Quick Reference Cards](quick-reference-cards.md) | 10 one-page cheat sheets: STAR prompts, system design framework, take-home checklist, comp negotiation, country tier matrix, common DSA patterns, red flags. Print and use. | 4 highest-value cards: STAR, system design, take-home, country tier |
-| 10 | [Weekly Tracker](weekly-tracker.md) | 4-week prep tracker: daily breakdown, deliverable checklist, readiness scoring, cumulative tracker. | Week 1: stories + company mapping. Week 2: take-home + DSA. Week 3: system design + DSA. Week 4: mocks + applications. |
-| 11 | [Mock Interview Bank](mock-interview-bank.md) | 20 curated mock questions: 8 behavioral + 7 technical + 5 system design. 90-min mock structure. | Q1: "Tell me about yourself" 60-90 sec. Q16: "Design a workflow engine." |
+| 01 | [Take-Home Playbook](80.01-take-home-playbook.md) | How to ship a winning take-home: 4-phase framework, 6-phase build, README template, what gets you rejected. The single highest-leverage file in this lane. | 5-6 hour take-home for a workflow engine, Loom walkthrough, full README |
+| 02 | [Tech Screen Patterns](80.02-tech-screen-patterns.md) | Defensive DSA: 6 patterns, 30-40 problem set, what to skip. The bar is 1-2 mediums in 30 min, not 4 FAANG-hards. | The 35-problem recommended set across HashMap, Sliding Window, Two Pointers, BFS/DFS, 1D DP, Stack/Queue |
+| 03 | [System Design — EU Patterns](80.03-system-design-eu-patterns.md) | The 4-phase framework + 6 EU-specific cases (payment gateway, workflow engine, multi-tenant SaaS, real-time booking, event-driven microservices, notification service). | Workflow engine with state machine, queue, idempotency, retries, DLQ |
+| 04 | [Behavioral — EU Style](80.04-behavioral-eu-style.md) | STAR+R framework, 15 common questions with answer skeletons, EU-specific cultural fit, async written questions. | "Why this company?" 60-sec answer for n8n / SumUp / Scalable |
+| 05 | [Comp — EU Benchmarking](80.05-comp-eu-benchmarking.md) | 5 city tiers, NL 30% ruling, EU Blue Card, family comp considerations, negotiation scripts, company-by-company ranges. | Tier 1 (Amsterdam, Berlin, Munich, London): EUR 75-100K base + 0.05-0.5% equity |
+| 06 | [Visa & Relocation Playbook](80.06-visa-relocation-playbook.md) | 8 EU countries with visa matrix, family-driven country decision framework, relocation package negotiation, 90-day timeline. | NL Highly Skilled Migrant: 2-4 weeks, 30% ruling, family inclusion |
+| 07 | [Company Profiles](80.07-company-profiles.md) | 1-pager per Tier 1/2 company: stack, interview process, comp, who to follow, recent news. The 30-min pre-interview research recipe. | n8n: TS + Vue + NestJS, EUR 80-100K + 0.05-0.2% equity, 4-day workweek |
+| 08 | [System Design Case Bank](80.08-system-design-case-bank.md) | 5 EU cases to practice: workflow engine, payment gateway, multi-tenant SaaS, real-time booking, event-driven microservices. Each with framework + sample answer + trade-offs. | Workflow engine: queue + worker + state DB + idempotency, 100K executions/day at scale |
+| 09 | [Quick Reference Cards](80.09-quick-reference-cards.md) | 10 one-page cheat sheets: STAR prompts, system design framework, take-home checklist, comp negotiation, country tier matrix, common DSA patterns, red flags. Print and use. | 4 highest-value cards: STAR, system design, take-home, country tier |
+| 10 | [Weekly Tracker](80.10-weekly-tracker.md) | 4-week prep tracker: daily breakdown, deliverable checklist, readiness scoring, cumulative tracker. | Week 1: stories + company mapping. Week 2: take-home + DSA. Week 3: system design + DSA. Week 4: mocks + applications. |
+| 11 | [Mock Interview Bank](80.11-mock-interview-bank.md) | 20 curated mock questions: 8 behavioral + 7 technical + 5 system design. 90-min mock structure. | Q1: "Tell me about yourself" 60-90 sec. Q16: "Design a workflow engine." |
 
 ### Personal Stories & Plan
 
 | # | File | Purpose | Personal example |
 |---|------|---------|------------------|
-| 12 | [Personal Story Bank](story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
-| 13 | [EU Mid-Stage Preparation Plan](study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
+| 12 | [Personal Story Bank](80.12-story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
+| 13 | [EU Mid-Stage Preparation Plan](80.13-study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
 
 ---
 
@@ -327,31 +327,31 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 
-**Core fundamentals:** [Interview Strategy](../../strategy/INDEX.md) · [JavaScript](../../frontend/javascript/INDEX.md) · [TypeScript](../../frontend/typescript/INDEX.md) · [React](../../frontend/react/INDEX.md) · [Next.js](../../frontend/nextjs/INDEX.md)
+**Core fundamentals:** [Interview Strategy](../00-strategy/INDEX.md) · [JavaScript](../10-frontend/10.1-javascript/INDEX.md) · [TypeScript](../10-frontend/10.2-typescript/INDEX.md) · [React](../10-frontend/10.3-react/INDEX.md) · [Next.js](../10-frontend/10.4-next.js/INDEX.md)
 
-**Backend, API & Data:** [Node.js](../../backend/nodejs/INDEX.md) · [NestJS](../../backend/nestjs/INDEX.md) · [REST API](../../backend/rest-api/INDEX.md) · [Database](../../backend/database/INDEX.md) · [GraphQL](../../backend/graphql/INDEX.md)
+**Backend, API & Data:** [Node.js](../20-backend/20.1-node.js/INDEX.md) · [NestJS](../20-backend/20.2-nestjs/INDEX.md) · [REST API](../20-backend/20.3-rest-apis/INDEX.md) · [Database](../20-backend/20.4-database/INDEX.md) · [GraphQL](../20-backend/20.7-graphql/INDEX.md)
 
-**Architecture & Design:** [Security](../../backend/security/INDEX.md) · [Design Patterns](../../backend/design-patterns/INDEX.md) · [System Design](../../architecture/system-design/INDEX.md) · [Microservices](../../backend/microservices/INDEX.md)
+**Architecture & Design:** [Security](../20-backend/20.5-security/INDEX.md) · [Design Patterns](../30-architecture/30.1-design-patterns/INDEX.md) · [System Design](../30-architecture/30.2-system-design/INDEX.md) · [Microservices](../20-backend/20.6-microservices/INDEX.md)
 
-**DevOps, Observability & Tooling:** [Docker](../../platform/docker/INDEX.md) · [Kubernetes](../../platform/kubernetes/INDEX.md) · [CI/CD](../../platform/ci-cd) · [Observability](../../platform/observability/INDEX.md) · [Build Tools](../../platform/build-tools/INDEX.md) · [Git Advanced](../../platform/git-advanced/INDEX.md) · [Serverless & Edge](../../platform/serverless-edge/INDEX.md)
+**DevOps, Observability & Tooling:** [Docker](../40-platform/40.1-docker/INDEX.md) · [Kubernetes](../40-platform/40.2-kubernetes/INDEX.md) · [CI/CD](../40-platform/40.3-ci-cd) · [Observability](../40-platform/40.4-observability/INDEX.md) · [Build Tools](../40-platform/40.5-build-tools/INDEX.md) · [Git Advanced](../40-platform/40.6-git-advanced/INDEX.md) · [Serverless & Edge](../40-platform/40.7-serverless-edge/INDEX.md)
 
-**Testing & Quality:** [Testing](../../quality/testing/INDEX.md) · [Accessibility](../../quality/accessibility/INDEX.md) · [Performance Monitoring](../../quality/performance-monitoring/INDEX.md)
+**Testing & Quality:** [Testing](../50-quality/50.1-testing/INDEX.md) · [Accessibility](../50-quality/50.2-accessibility/INDEX.md) · [Performance Monitoring](../50-quality/50.3-performance-monitoring/INDEX.md)
 
-**Real-time:** [WebSockets](../../realtime/websockets/INDEX.md)
+**Real-time:** [WebSockets](../60-realtime/60.1-websockets/INDEX.md)
 
-**Interview prep:** [Behavioral](../../interview-toolkit/behavioral/INDEX.md) · [Coding Patterns](../../interview-toolkit/coding-patterns/INDEX.md)
+**Interview prep:** [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) · [Coding Patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md)
 
-**Reference & quick-look:** [Cheat Sheets](../../interview-toolkit/cheatsheets/INDEX.md) · [Monorepo](../../platform/monorepo/INDEX.md) · [Form Handling](../../frontend/form-handling/INDEX.md) · [Animation](../../frontend/animation/INDEX.md)
+**Reference & quick-look:** [Cheat Sheets](../70-interview-toolkit/70.3-cheatsheets/INDEX.md) · [Monorepo](../40-platform/40.8-monorepo/INDEX.md) · [Form Handling](../10-frontend/10.5-form-handling/INDEX.md) · [Animation](../10-frontend/10.6-animation/INDEX.md)
 
 ---
 
 ## FAQ
 
 **Q: I want to apply to Booking.com (Amsterdam) AND Microsoft (Dublin). Which lane?**
-A: Both. Use `indian-sde-faang/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `abroad-full-stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
+A: Both. Use `81-lanes-indian-sde-faang/` for the Microsoft DSA signal (phone screen, 28-phase LeetCode), `80-lanes-abroad-full-stack/` for the Booking take-home + system design + family/visa overlay. The lanes are complementary, not exclusive.
 
 **Q: I'm a frontend specialist. Do I still need the take-home?**
-A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [NestJS](../../backend/nestjs/INDEX.md), [Database](../../backend/database/INDEX.md), and [Security](../../backend/security/INDEX.md) sections are the prep.
+A: Yes. Even for frontend-heavy roles, the take-home often includes a small backend (NestJS/Express endpoint, JWT auth, Prisma schema). The [NestJS](../20-backend/20.2-nestjs/INDEX.md), [Database](../20-backend/20.4-database/INDEX.md), and [Security](../20-backend/20.5-security/INDEX.md) sections are the prep.
 
 **Q: I'm targeting remote-first US companies (Stripe, Linear, Vercel) from India. Which lane?**
 A: Primarily this lane (English-only, take-home + system design, visa not needed). The remote-first US market is closer to EU mid-stage than to FAANG. Adjust the comp expectations up ($130-180K TC) but the prep structure is the same.
@@ -386,4 +386,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../../frontend/animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../indian-sde-faang/INDEX.md)
+[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../81-lanes-indian-sde-faang/INDEX.md)

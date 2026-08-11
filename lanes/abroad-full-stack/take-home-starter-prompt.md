@@ -1,0 +1,133 @@
+# Take-Home Starter — Workflow Engine
+
+> **Purpose:** a 4-6h starter project on NestJS + Prisma + Next.js 15 that maps to the EU mid-stage take-home scope (n8n, SumUp, Scalable, Personio, LiveEO). Build this Saturday-Sunday, push to a private GitHub, then add the real link to your resume + cover letter.
+>
+> **Why:** EU mid-stage startups test for shipping speed + code quality + thinking under pressure, not LeetCode. A polished take-home artefact in your GitHub is the strongest differentiator you can ship in a weekend.
+
+## The Brief (paste this into Cursor/Copilot as the starting prompt)
+
+> Build a small workflow engine — n8n-shaped — for my take-home portfolio. Tech: NestJS + Prisma + PostgreSQL + Next.js 15 + Tailwind + shadcn/ui. Scope below. Production-quality, 4-6h, ship Sunday night.
+>
+> ## What to build
+>
+> ### Backend (NestJS, in `apps/api` or `apps/backend`)
+>
+> **Entities (Prisma schema):**
+> - `Workflow` — id (cuid), name, description, createdAt, updatedAt, ownerId
+> - `WorkflowStep` — id, workflowId, order, type (`http_get` | `set` | `log`), config (Json), createdAt
+> - `WorkflowRun` — id, workflowId, status (`pending` | `running` | `succeeded` | `failed`), input (Json), output (Json), startedAt, finishedAt
+> - `StepRun` — id, runId, stepId, order, status (`pending` | `running` | `succeeded` | `failed`), input (Json), output (Json), attempts (Int), error (String?), startedAt, finishedAt
+>
+> **Endpoints (REST, NestJS controllers):**
+> - `POST /api/workflows` — create workflow with steps
+> - `GET /api/workflows` — list workflows
+> - `GET /api/workflows/:id` — get workflow with steps
+> - `POST /api/workflows/:id/run` — execute workflow, returns run id (use `Idempotency-Key` header to dedupe)
+> - `GET /api/runs/:id` — get run with all step runs
+> - `GET /api/runs` — list runs (filter by workflowId, status)
+>
+> **Step executors (in `apps/api/src/executor`):**
+> - `http_get` — calls external URL, stores response in step output
+> - `set` — assigns a variable in run context from a value (e.g. `{"var": "userId", "value": "{{steps.0.output.id}}"}`)
+> - `log` — appends a message to run log
+>
+> **Differentiator (what makes this stand out):**
+> - **Retry on failure:** 3 attempts, exponential backoff (1s, 2s, 4s)
+> - **Idempotency keys** on POST endpoints — same `Idempotency-Key` returns same response
+> - **Concurrency-safe step execution** — transaction with row lock on run
+> - **Structured logging** with runId + stepId context
+> - **Tests** on retry + idempotency logic (Jest)
+>
+> ### Frontend (Next.js 15, in `apps/web`)
+>
+> **Pages:**
+> - `/` — list workflows, button to create new
+> - `/workflows/new` — create workflow form (name + steps with type selector + config)
+> - `/workflows/:id` — view workflow + button to "Run" + run history
+> - `/runs/:id` — view run with each step's status, input, output, attempts
+>
+> **Components:** shadcn/ui, Tailwind, Server Components by default, Client Components only where needed (forms, run polling).
+>
+> ### Repo structure
+>
+> ```
+> take-home-starter/
+>   apps/
+>     api/                    # NestJS
+>       src/
+>         workflows/
+>         runs/
+>         executor/
+>         common/             # guards, interceptors, exception filter
+>         main.ts
+>     web/                    # Next.js 15
+>       app/
+>         workflows/
+>         runs/
+>         page.tsx
+>       components/
+>       lib/
+>   packages/
+>     db/                     # Prisma schema + generated client
+>   docker-compose.yml        # postgres + apps
+>   README.md
+>   .env.example
+> ```
+>
+> ### Quality bar
+>
+> - **Tests:** Jest unit tests on executor (retry, idempotency, error handling) — minimum 6 tests
+> - **README:** architecture diagram (ASCII or mermaid), how to run, design trade-offs, "what I'd do with 24h more"
+> - **Docker Compose:** reviewer can `docker compose up` and have everything running on `localhost:3000` (web) and `localhost:3001` (api) in under 2 minutes
+> - **TypeScript strict mode**, no `any`
+> - **No TODO comments** — finish what you start
+> - **2 clean commits per major piece** (schema, executor, UI) — readable git history
+> - **Sample workflow** seeded via `prisma/seed.ts` so reviewer can run a real workflow on first try
+
+## Build Schedule (this weekend)
+
+| Block | Time | What to build |
+|---|---|---|
+| **Sat 09:00–12:00** (3h) | Monorepo + Prisma schema + NestJS modules | `pnpm` workspace, Prisma entities, Workflow + Run + Step controllers/services, basic CRUD |
+| **Sat 13:00–15:00** (2h) | Executor + retries + idempotency | Step execution engine, retry with backoff, idempotency middleware, tests |
+| **Sun 09:00–11:00** (2h) | Next.js 15 UI | shadcn/ui setup, 4 pages (list, create, view, run), Server Components + Client Components split |
+| **Sun 11:00–13:00** (2h) | Docker Compose + seed + tests | docker-compose.yml, prisma seed with sample workflow, run full test suite |
+| **Sun 14:00–16:00** (2h) | README + final polish | Architecture diagram, design trade-offs, "what I'd do with 24h more", commit hygiene, push to private GitHub |
+
+**Total: ~10h over the weekend. Stop at 6h if you need to — the working version is more important than polish.**
+
+## How to start
+
+1. **Create repo:** `gh repo create take-home-starter --private --clone`
+2. **Init pnpm workspace:** `pnpm init` at root, add `apps/api`, `apps/web`, `packages/db`
+3. **Add Prisma:** `pnpm --filter db prisma init` (in `packages/db`)
+4. **Add NestJS:** `pnpm --filter api add @nestjs/core @nestjs/common @nestjs/platform-express prisma @prisma/client zod class-validator class-transformer`
+5. **Add Next.js 15:** `pnpm create next-app@latest web` (in `apps/`)
+6. **Copy the Brief above** into Cursor (Cmd+I) — it'll scaffold the whole monorepo
+7. **Build incrementally** — commit after each major piece
+
+## Resume update (after the build)
+
+Replace this line in the resume:
+> Comfortable with take-homes, system design, and async-first interview loops.
+
+With:
+> Take-home ready. Built a workflow engine on NestJS + Prisma + Next.js 15 (workflow + step execution + retry + idempotency + tests) — github.com/CVamsi27/take-home-starter (private, available on request).
+
+And add to the Selected Projects section:
+> **Take-home Starter — Workflow Engine** | Self-built · 6h · github.com/CVamsi27/take-home-starter
+> - Workflow execution engine on NestJS + Prisma + PostgreSQL with 3 step types (`http_get`, `set`, `log`), 3-attempt retry with exponential backoff, idempotency keys on POSTs, and Jest tests on the retry + idempotency logic.
+> - Next.js 15 UI to create, run, and inspect workflows; Server Components by default, Client Components for forms and run polling.
+> - Docker Compose so reviewers can `docker compose up` and have a working system in 2 minutes.
+
+## Cover letter line (after the build)
+
+> GitHub: github.com/CVamsi27 · Portfolio: buildora.work · Take-home starter (private, available on request): workflow engine on NestJS + Prisma + Next.js 15 with retry + idempotency + tests.
+
+## Why this beats other take-home starters
+
+- **Scope is realistic** — 4-6h, not 40h. EU mid-stage startups respect your time.
+- **Differentiators are real** — retry + idempotency + transactions are what they actually test for.
+- **Stack matches the JDs** — NestJS + Prisma + Next.js 15 is the Berlin / EU mid-stage default.
+- **Production-quality** — Docker, tests, seed data, README with trade-offs.
+- **Private repo** — you control who sees it, ask for the link only when relevant.

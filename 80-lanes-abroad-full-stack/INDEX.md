@@ -320,6 +320,9 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 |---|------|---------|------------------|
 | 12 | [Personal Story Bank](80.12-story-bank.md) | 5-8 STAR+R stories using your real projects, ready to deliver out loud in interviews. Library, not a script — adapt to each question. | **Vamsi's 8 stories** (Docita founding, MAQ perf wins, Cognizant microservices, RBAC + audit, etc.) |
 | 13 | [EU Mid-Stage Preparation Plan](80.13-study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
+| 14 | [Berlin Dual-Career Plan](80.14-berlin-dual-career-plan.md) | Vamsi + wife relocation playbook: visa, schools, neighborhoods, comp, child education, 6-week job-search plan. | 21 sections covering K-12, university, budget, sports/extracurriculars |
+| 15 | [Take-Home Starter Prompt](80.15-take-home-starter-prompt.md) | Workflow engine on NestJS + Prisma + Next.js 15 — the canonical EU mid-stage take-home build. | 5-6 hour build with state machine, queue, idempotency, retries, DLQ |
+| 16 | [Docita Resume Defense](80.16-docita-resume-defense.md) | 70+ interview Q&A anchored to Vamsi's real Docita project. Every resume claim (scale, why PG, why Vite, why queue, why caching, security, perf) defended with evidence from the repo. Read before any call. | All 11 sections: project, architecture, backend, frontend, security, perf, DevOps, MAQ, Cognizant, EU motivation, fence-sit Q |
 
 ---
 

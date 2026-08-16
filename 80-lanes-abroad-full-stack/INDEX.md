@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-18-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -322,7 +322,9 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 13 | [EU Mid-Stage Preparation Plan](80.13-study-plan.md) | 4-week, 50-55 hour plan: foundation week, take-home week, system design week, mocks + applications week. Drops LeetCode grinding in favor of take-home + system design reps. | **Vamsi's 4-week plan** with n8n / SumUp / Scalable / sennder / THRYVE targets |
 | 14 | [Berlin Dual-Career Plan](80.14-berlin-dual-career-plan.md) | Vamsi + wife relocation playbook: visa, schools, neighborhoods, comp, child education, 6-week job-search plan. | 21 sections covering K-12, university, budget, sports/extracurriculars |
 | 15 | [Take-Home Starter Prompt](80.15-take-home-starter-prompt.md) | Workflow engine on NestJS + Prisma + Next.js 15 — the canonical EU mid-stage take-home build. | 5-6 hour build with state machine, queue, idempotency, retries, DLQ |
-| 16 | [Docita Resume Defense](80.16-docita-resume-defense.md) | 70+ interview Q&A anchored to Vamsi's real Docita project. Every resume claim (scale, why PG, why Vite, why queue, why caching, security, perf) defended with evidence from the repo. Read before any call. | All 11 sections: project, architecture, backend, frontend, security, perf, DevOps, MAQ, Cognizant, EU motivation, fence-sit Q |
+| 16 | [Docita Resume Defense](80.16-docita-resume-defense.md) | 74 fact-bounded interview questions anchored to Vamsi's current Docita code. It separates code-confirmed controls from product metrics and operational claims, and covers architecture, backend, frontend, security, reliability, delivery, and role fit. Read before any call. | 9 sections: product, architecture, NestJS/Prisma, React, healthcare security, reliability, delivery, ownership, recruiter/AI questions |
+| 17 | [Docita Interview Evidence Pack](80.17-docita-interview-evidence-pack.md) | Fast pre-interview refresh: approved metrics, 60-second pitch, source-grounded technical answers, trade-offs, and a safe evidence map. | 25+ clinics, 1,000+ appointments/month, ABAC, RLS, outbox, idempotency, safe performance-answer rules |
+| 18 | [Resume Claim Crosswalk](80.18-resume-claim-crosswalk.md) | Claim-by-claim Docita evidence ledger plus coverage map for resume skills, role questions, proof packet, and explicit exclusions. | 149-model schema, five-application topology, React Router v8, ABAC/RLS/audit evidence, analytics-only metrics |
 
 ---
 

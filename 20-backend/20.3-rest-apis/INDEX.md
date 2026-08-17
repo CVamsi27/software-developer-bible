@@ -1,8 +1,8 @@
 # REST APIs — Index
 
-> **15 files** — API design patterns (REST vs GraphQL vs gRPC vs WebSocket vs Webhook) + REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, webhooks deep-dive, and interview questions.
+> **16 files** — API design patterns (REST vs GraphQL vs gRPC vs WebSocket vs Webhook) + REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, webhooks deep-dive, BFF (Backend for Frontend), and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -25,6 +25,7 @@
 | 13 | [HTTP Caching](20.3.13-http-caching.md) | Cache-Control, ETag, Last-Modified, Vary, stale-while-revalidate |
 | 14 | [Interview Questions](20.3.14-interview-questions.md) | 50+ curated questions with answers |
 | 15 | [Webhooks](20.3.15-webhooks.md) | HMAC signature, idempotency, retry with exponential backoff, async processing, delivery dashboards, per-endpoint secrets |
+| 16 | [BFF (Backend for Frontend)](20.3.16-bff.md) | Per-client API service, payload shaping, aggregation, client-specific auth, GraphQL as BFF, what does NOT go in a BFF |
 
 ---
 

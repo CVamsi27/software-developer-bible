@@ -1,8 +1,8 @@
 # Database — Index
 
-> **14 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, and interview questions.
+> **15 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -21,7 +21,8 @@
 | 11 | [Execution Plans](20.4.11-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation |
 | 13 | [SQL vs NoSQL](20.4.12-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence |
 | 14 | [Migration Strategies](20.4.13-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime |
-| 15 | [Interview Questions](20.4.14-interview-questions.md) | 50+ curated questions with answers |
+| 14 | [Interview Questions](20.4.14-interview-questions.md) | 50+ curated questions with answers |
+| 15 | [Soft Delete & Tombstones](20.4.15-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention |
 
 ---
 

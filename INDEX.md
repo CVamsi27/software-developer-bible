@@ -67,7 +67,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.5 | [Form Handling](10-frontend/10.5-form-handling/INDEX.md) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | 10.6 | [Animation](10-frontend/10.6-animation/INDEX.md) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
 
-### 📁 20-backend — Backend (93 files in 7 sub-stacks)
+### 📁 20-backend — Backend (95 files in 7 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -79,7 +79,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.6 | [Microservices](20-backend/20.6-microservices/INDEX.md) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 
-### 📁 30-architecture — Architecture (57 files in 2 sub-stacks)
+### 📁 30-architecture — Architecture (58 files in 2 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -100,7 +100,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | [Monorepo](40-platform/40.8-monorepo/INDEX.md) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
 | [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 1 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
 
-### Quality (26 files in 3 sub-stacks)
+### Quality (27 files in 3 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|

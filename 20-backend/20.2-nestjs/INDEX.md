@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **15 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, and interview questions.
+> **14 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)

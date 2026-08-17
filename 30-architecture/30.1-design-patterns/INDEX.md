@@ -1,6 +1,6 @@
 # Design Patterns — Index
 
-> **20 files** — 4 foundational theory files (SOLID, DRY/KISS/YAGNI, OOP concepts, UML basics) + 16 GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
+> **19 files** — 4 foundational theory files (SOLID, DRY/KISS/YAGNI, OOP concepts, UML basics) + 15 GoF and enterprise design patterns from Singleton and Factory to CQRS, dependency injection, module, state machines, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)

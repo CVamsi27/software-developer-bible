@@ -84,7 +84,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
 | 30.1 | [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) | 19 | SOLID, GoF patterns (Singleton, Factory, Strategy, Repository, CQRS, DI, Module, State, etc.) |
-| 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 37 | 16 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
+| 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 39 | 19 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
 
 ### Platform (63 files in 8 sub-stacks)
 

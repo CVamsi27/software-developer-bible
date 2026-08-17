@@ -1,6 +1,6 @@
 # Security — Index
 
-> **14 files** — Web security fundamentals from JWT and OAuth to XSS, CSRF, SQL injection, encryption, RBAC, session management, threat modeling, secrets management, API security, and interview questions.
+> **13 files** — Web security fundamentals from JWT and OAuth to XSS, CSRF, SQL injection, encryption, RBAC, session management, threat modeling, secrets management, API security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)

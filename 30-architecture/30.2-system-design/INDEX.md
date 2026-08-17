@@ -1,8 +1,8 @@
 # System Design — Index
 
-> **36 files** — Split into **theory** (16 foundational files) and **case studies** (20 applied examples). The theory sub-folder contains the 14 foundational files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) plus 2 meta guides (how-to-approach, interview-questions). The case-studies sub-folder contains 20 applied examples from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and more.
+> **39 files** — Split into **theory** (19 foundational files) and **case studies** (20 applied examples). The theory sub-folder contains the 14 foundational files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) plus 5 meta guides (how-to-approach, interview-questions, probabilistic data structures, outbox & CDC, resilience patterns deep-dive). The case-studies sub-folder contains 20 applied examples from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and more.
 
-[![Files](https://img.shields.io/badge/files-36-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-39-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,7 +16,7 @@
 
 | Folder | Files | What it is | When to read |
 |--------|------:|-----------|--------------|
-| [00-theory/](00-theory/INDEX.md) | 16 | Foundational theory: CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, plus 2 meta guides (how-to-approach, interview-questions) | **Read first** — these are the concepts every case study depends on |
+| [00-theory/](00-theory/INDEX.md) | 19 | Foundational theory: CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, plus 5 meta guides (how-to-approach, interview-questions, probabilistic data structures, outbox & CDC, resilience patterns) | **Read first** — these are the concepts every case study depends on |
 | [10-case-studies/](10-case-studies/INDEX.md) | 20 | Applied examples: URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, Twitter, Instagram, YouTube, Dropbox, Lyft, distributed counter, hospital management, live betting, e-commerce, notification service, chat system, web crawler, rate limiter, Google Drive | After theory — pick the case study that matches the JD's domain |
 
 For the full list of files in each sub-folder, open the sub-folder's INDEX.

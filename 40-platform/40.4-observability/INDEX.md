@@ -1,8 +1,8 @@
 # Observability — Index
 
-> **8 files** — Observability fundamentals from logging and monitoring to distributed tracing, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
+> **9 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,6 +16,7 @@
 | 06 | [Interview Questions](40.4.06-interview-questions.md) | 50+ curated questions with answers |
 | 07 | [SLI / SLO / SLA](40.4.07-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate |
 | 08 | [Alerting](40.4.08-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks |
+| 09 | [OpenTelemetry](40.4.09-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline |
 
 ---
 

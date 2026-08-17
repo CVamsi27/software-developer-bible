@@ -1,12 +1,12 @@
 # System Design — Foundational Theory
 
-> **19 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+> **20 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
-[![Files](https://img.shields.io/badge/files-19-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-20-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Read all 14 foundational files first**, then the 5 meta guides. After this, move to [../10-case-studies/](../10-case-studies/INDEX.md).
+**Read all 14 foundational files first**, then the 6 meta guides. After this, move to [../10-case-studies/](../10-case-studies/INDEX.md).
 
 ---
 
@@ -40,6 +40,7 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch, Cuckoo filter, Merkle tree — fixed-memory, bounded-error answers to "seen?", "how many unique?", "how often?" |
 | 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit |
+| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO |
 
 ---
 

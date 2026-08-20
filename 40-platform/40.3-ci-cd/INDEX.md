@@ -23,4 +23,4 @@
 
 ## Navigation
 
-[← Previous: Kubernetes](../40.2-kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Testing →](../../50-quality/50.1-testing/INDEX.md)
+[← Previous: Kubernetes](../40.2-kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../40.4-observability/INDEX.md)

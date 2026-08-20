@@ -30,7 +30,7 @@
 
 ---
 
-**Cross-references:** [JavaScript](../10.1-javascript/INDEX.md) | [Next.js](../10.4-next.js/INDEX.md) | [Testing (RTL, Vitest)](../../50-quality/50.1-testing/INDEX.md) | [Form Handling](../10.5-form-handling/INDEX.md) | [Animation (Framer, GSAP, React Spring)](../INDEX.md)
+**Cross-references:** [JavaScript](../10.1-javascript/INDEX.md) | [Next.js](../10.4-next.js/INDEX.md) | [Testing (RTL, Vitest)](../../50-quality/50.1-testing/INDEX.md) | [Form Handling](../10.5-form-handling/INDEX.md) | [Animation (Framer, GSAP, React Spring)](../10.6-animation/INDEX.md)
 ---
 
 ## Navigation

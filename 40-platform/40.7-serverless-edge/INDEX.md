@@ -18,10 +18,10 @@
 
 ---
 
-**Cross-references:** [CI/CD](../40.3-ci-cd) | [Docker](../40.1-docker/INDEX.md) | [Next.js (Edge Middleware)](../../10-frontend/10.4-next.js/INDEX.md) | [Observability](../40.4-observability/INDEX.md)
+**Cross-references:** [CI/CD](../40.3-ci-cd/INDEX.md) | [Docker](../40.1-docker/INDEX.md) | [Next.js (Edge Middleware)](../../10-frontend/10.4-next.js/INDEX.md) | [Observability](../40.4-observability/INDEX.md)
 
 ---
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../40.8-monorepo/INDEX.md)
+[← Previous: Git Advanced](../40.6-git-advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../40.8-monorepo/INDEX.md)

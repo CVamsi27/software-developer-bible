@@ -15,7 +15,7 @@
 
 ---
 
-**Cross-references:** [Interview Strategy](../../00-strategy/INDEX.md) | [SDE Role Guide](../../81-lanes-indian-sde-faang/INDEX.md)
+**Cross-references:** [Interview Strategy](../../00-strategy/INDEX.md) | [Abroad Full-Stack Lane](../../80-lanes-abroad-full-stack/INDEX.md) | [SDE / FAANG Lane](../../81-lanes-indian-sde-faang/INDEX.md)
 ---
 
 ## Navigation

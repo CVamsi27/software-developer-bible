@@ -6,7 +6,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
-[![Files](https://img.shields.io/badge/files-400%2B-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Files](https://img.shields.io/badge/files-466-orange)](#-the-7-study-stacks-shared-by-both-lanes)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -67,16 +67,16 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.5 | [Form Handling](10-frontend/10.5-form-handling/INDEX.md) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | 10.6 | [Animation](10-frontend/10.6-animation/INDEX.md) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
 
-### 📁 20-backend — Backend (95 files in 7 sub-stacks)
+### 📁 20-backend — Backend (100 files in 7 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
 | 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
 | 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 14 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
 | 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 13 | HTTP methods, status codes, versioning, pagination, auth, OpenAPI, caching |
-| 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 14 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations |
+| 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 18 | PostgreSQL, indexes, transactions, MVCC, Prisma, query planning, migrations, Redis, window functions, JSONB |
 | 20.5 | [Security](20-backend/20.5-security/INDEX.md) | 13 | JWT, OAuth, XSS, CSRF, RBAC, threat modeling, secrets management |
-| 20.6 | [Microservices](20-backend/20.6-microservices/INDEX.md) | 14 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
+| 20.6 | [Microservices](20-backend/20.6-microservices/INDEX.md) | 15 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh, message brokers |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 
 ### 📁 30-architecture — Architecture (58 files in 2 sub-stacks)
@@ -182,4 +182,4 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-*Last updated: August 2026 — 3 lanes, 7 stacks, 400+ files, 0 broken links — folders numbered for study order*
+*Last updated: August 2026 — 466 files, 263K+ lines, 0 broken links — folders numbered for study order*

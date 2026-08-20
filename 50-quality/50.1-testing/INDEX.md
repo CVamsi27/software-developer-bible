@@ -23,9 +23,9 @@
 
 ---
 
-**Cross-references:** [React](../../10-frontend/10.3-react/INDEX.md) | [NestJS](../../20-backend/20.2-nestjs/INDEX.md) | [CI/CD](../../40-platform/40.3-ci-cd) | [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md)
+**Cross-references:** [React](../../10-frontend/10.3-react/INDEX.md) | [NestJS](../../20-backend/20.2-nestjs/INDEX.md) | [CI/CD](../../40-platform/40.3-ci-cd/INDEX.md) | [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md)
 ---
 
 ## Navigation
 
-[← Previous: CI/CD](../../40-platform/40.3-ci-cd/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: GraphQL →](../../20-backend/20.7-graphql/INDEX.md)
+[← Previous: Twelve-Factor App](../../40-platform/40.9-twelve-factor/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../50.2-accessibility/INDEX.md)

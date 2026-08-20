@@ -17,7 +17,7 @@
 
 ---
 
-**Cross-references:** [Kubernetes](../40.2-kubernetes/INDEX.md) | [CI/CD](../40.3-ci-cd) | [Microservices](../../20-backend/20.6-microservices/INDEX.md)
+**Cross-references:** [Kubernetes](../40.2-kubernetes/INDEX.md) | [CI/CD](../40.3-ci-cd/INDEX.md) | [Microservices](../../20-backend/20.6-microservices/INDEX.md)
 ---
 
 ## Navigation

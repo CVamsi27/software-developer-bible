@@ -29,7 +29,7 @@
 
 ---
 
-**Cross-references:** [NestJS](../20.2-nestjs/INDEX.md) | [Security (JWT/OAuth)](../INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Microservices (API Gateway)](../INDEX.md)
+**Cross-references:** [NestJS](../20.2-nestjs/INDEX.md) | [Security (JWT/OAuth)](../20.5-security/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Microservices (API Gateway)](../20.6-microservices/INDEX.md)
 ---
 
 ## Navigation

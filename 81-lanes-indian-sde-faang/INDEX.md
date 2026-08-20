@@ -25,7 +25,7 @@
 
 ## Lane Decision — Is This the Right Lane for You?
 
-| If you are targeting... | Use this lane (81)? | Or use Abroad Full-Stack (82)? |
+| If you are targeting... | Use this lane (81)? | Or use Abroad Full-Stack (80)? |
 |--------------------------|:-------------------:|:------------------------------:|
 | **FAANG in the US** (Google MTV, Meta Menlo Park, Apple Cupertino) | ✅ **primary** | — |
 | **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | ✅ **primary** | secondary (for family/visa overlay) |
@@ -37,7 +37,7 @@
 | **Remote-first US startups** (Stripe, Linear, Vercel) | secondary | ✅ **primary** |
 | **Junior roles (under 3 YoE)** | — | start with fundamentals first |
 
-**Quick heuristic:** if the company's **phone screen has a LeetCode medium-to-hard problem**, you're in this lane. If the company is **mid-stage and uses take-homes instead**, you're in 82.
+**Quick heuristic:** if the company's **phone screen has a LeetCode medium-to-hard problem**, you're in this lane. If the company is **mid-stage and uses take-homes instead**, you're in 80.
 
 **The "both" case:** European companies like Booking.com and Spotify run FAANG-style loops. For them, **use both lanes** — start with 31 for the FAANG-DSA signal, then layer 32's family/visa/relocation overlay.
 
@@ -369,4 +369,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Sibling Lane: Abroad Full-Stack (82) →](../80-lanes-abroad-full-stack/INDEX.md)
+[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Sibling Lane: Abroad Full-Stack (80) →](../80-lanes-abroad-full-stack/INDEX.md)

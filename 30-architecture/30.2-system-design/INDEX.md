@@ -29,4 +29,4 @@ For the full list of files in each sub-folder, open the sub-folder's INDEX.
 
 ## Navigation
 
-[← Previous: Architecture Index](../INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../30.1-design-patterns/INDEX.md)
+[← Previous: Design Patterns](../30.1-design-patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)

@@ -23,4 +23,4 @@
 
 ## Navigation
 
-[← Previous: Monorepo](../../40-platform/40.8-monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)
+[← Previous: Next.js](../10.4-next.js/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)

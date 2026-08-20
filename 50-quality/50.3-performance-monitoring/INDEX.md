@@ -24,4 +24,4 @@
 
 ## Navigation
 
-[← Previous: Accessibility](../50.2-accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../../40-platform/40.7-serverless-edge/INDEX.md)
+[← Previous: Accessibility](../50.2-accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)

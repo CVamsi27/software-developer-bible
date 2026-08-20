@@ -24,9 +24,9 @@
 
 ---
 
-**Cross-references:** [REST APIs](../20.3-rest-apis/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Authentication (REST)](../20.3-rest-apis/20.3.07-authentication.md) | [Microservices (mTLS, service mesh)](../INDEX.md)
+**Cross-references:** [REST APIs](../20.3-rest-apis/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Authentication (REST)](../20.3-rest-apis/20.3.07-authentication.md) | [Microservices (mTLS, service mesh)](../20.6-microservices/INDEX.md)
 ---
 
 ## Navigation
 
-[← Previous: Database](../20.4-database/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)
+[← Previous: Database](../20.4-database/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)

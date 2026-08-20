@@ -1,8 +1,8 @@
 # Database — Index
 
-> **15 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, and interview questions.
+> **18 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, Redis, window functions, JSONB, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -23,10 +23,13 @@
 | 14 | [Migration Strategies](20.4.13-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime |
 | 14 | [Interview Questions](20.4.14-interview-questions.md) | 50+ curated questions with answers |
 | 15 | [Soft Delete & Tombstones](20.4.15-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention |
+| 16 | [Redis](20.4.16-redis.md) | Data structures, caching patterns, rate limiting, distributed locks, pub/sub |
+| 17 | [Window Functions](20.4.17-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages |
+| 18 | [JSONB](20.4.18-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns |
 
 ---
 
-**Cross-references:** [REST APIs](../20.3-rest-apis/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) | [Microservices (polyglot persistence)](../INDEX.md)
+**Cross-references:** [REST APIs](../20.3-rest-apis/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) | [Microservices (polyglot persistence)](../20.6-microservices/INDEX.md)
 ---
 
 ## Navigation

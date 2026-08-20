@@ -16,10 +16,10 @@
 
 ---
 
-**Cross-references:** [Build Tools](../40.5-build-tools/INDEX.md) | [CI/CD](../40.3-ci-cd) | [Git Advanced](../40.6-git-advanced/INDEX.md)
+**Cross-references:** [Build Tools](../40.5-build-tools/INDEX.md) | [CI/CD](../40.3-ci-cd/INDEX.md) | [Git Advanced](../40.6-git-advanced/INDEX.md)
 
 ---
 
 ## Navigation
 
-[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../../10-frontend/10.5-form-handling/INDEX.md)
+[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)

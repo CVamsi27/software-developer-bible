@@ -21,4 +21,4 @@
 
 ## Navigation
 
-[← Previous: Coding Patterns](../70.2-coding-patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)
+[← Previous: Coding Patterns](../70.2-coding-patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Abroad Full-Stack Lane →](../../80-lanes-abroad-full-stack/INDEX.md)

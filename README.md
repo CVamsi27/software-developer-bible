@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-400%2B-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-462-orange)](INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -31,13 +31,13 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 
 | Stack | Folder | What's in it | Files |
 |-------|--------|--------------|------:|
-| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation | 90 |
-| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, Security, Patterns, Microservices | 107 |
-| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design, CAP, consistency, sharding, queues, 30+ case studies | 36 |
-| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo | 63 |
-| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright), Accessibility, Performance | 26 |
-| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, real-time architecture | 8 |
-| **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns, Cheat Sheets | 27 |
+| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation | 97 |
+| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, Security, Microservices | 99 |
+| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 20 case studies, Design Patterns | 64 |
+| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 75 |
+| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 31 |
+| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 10 |
+| **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 31 |
 
 👉 Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#-the-7-study-stacks-shared-by-both-lanes)
 
@@ -57,38 +57,27 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 
 ## 📝 Chapter Template
 
-Every chapter follows a consistent structure:
+Every content file follows a consistent structure:
 
 ```text
 # Topic
 
-## Definition
-
-## Why Do We Need It?
-
-## How It Works (with diagrams)
-
-## Code Examples (TypeScript)
-
-## Real-World Use Cases
-
-## Common Mistakes
-
-## Best Practices
-
-## Performance Considerations
-
-## Interview Questions
-  ### Beginner (10)
-  ### Intermediate (10)
-  ### Senior (20)
-  ### FAANG-style (10)
-  ### Follow-ups (10)
-
-## Summary
-
-## References & Learn More
+## TL;DR                     ← 3-5 bullet summary at the top
+## Definition                ← What it is
+## Why Do We Need It?        ← When to use it
+## How It Works              ← Internals with diagrams
+## Code Examples             ← TypeScript/SQL/Docker examples
+## Real-World Use Cases      ← Production patterns
+## Common Mistakes           ← Anti-patterns to avoid
+## Best Practices            ← Do this, not that
+## Performance Considerations ← Latency, memory, scaling
+## Summary                   ← Key takeaways
+## Cheat Sheet               ← Quick-reference box
+## See Also                  ← Cross-references to related files
+## References & Learn More   ← External links
 ```
+
+Interview questions live in dedicated `*-interview-questions.md` files (27 files across all stacks).
 
 ---
 
@@ -106,13 +95,13 @@ Every chapter follows a consistent structure:
 
 ## 🏆 Quick Lane Summary
 
-### 🇮🇳 Indian SDE / FAANG (23 files in lane)
+### 🇮🇳 Indian SDE / FAANG (24 files in lane)
 
 DSA-heavy. The bar is **1-2 mediums in 30-45 min, plus 1 system design, plus 1-2 behavioral, plus a Bar Raiser (Amazon) or values round**. 5-6 rounds, 8-12 weeks. US FAANG comp: USD 260-580K (E4-E5). Indian in-country: INR 30-120 L (SDE-2 to SDE-3).
 
 → [Indian SDE / FAANG lane →](81-lanes-indian-sde-faang/INDEX.md)
 
-### 🇪🇺 Abroad Full-Stack (14 files in lane)
+### 🇪🇺 Abroad Full-Stack (19 files in lane)
 
 Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 system design at 45 min, 1 behavioral round**. 3-4 rounds, 4-6 weeks. EU Tier 1 comp: EUR 75-110K base + 0.05-0.5% equity. Family-driven geography (NL 30% ruling, EU Blue Card, schools).
 
@@ -120,4 +109,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: August 2026 — 3 lanes, 7 stacks, 400+ files, 0 broken links*
+*Last updated: August 2026 — 462 files, 263K+ lines, 0 broken links*

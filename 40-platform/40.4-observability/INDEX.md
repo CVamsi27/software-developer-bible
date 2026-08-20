@@ -20,9 +20,9 @@
 
 ---
 
-**Cross-references:** [Kubernetes (Health Checks)](../INDEX.md) | [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) | [Serverless & Edge](../40.7-serverless-edge/INDEX.md)
+**Cross-references:** [Kubernetes (Health Checks)](../40.2-kubernetes/INDEX.md) | [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) | [Serverless & Edge](../40.7-serverless-edge/INDEX.md)
 ---
 
 ## Navigation
 
-[← Previous: WebSockets](../../60-realtime/60.1-websockets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../40.5-build-tools/INDEX.md)
+[← Previous: CI/CD](../40.3-ci-cd/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../40.5-build-tools/INDEX.md)

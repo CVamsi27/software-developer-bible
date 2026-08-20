@@ -24,4 +24,4 @@
 
 ## Navigation
 
-[← Previous: Testing](../../50-quality/50.1-testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)
+[← Previous: Microservices](../20.6-microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)

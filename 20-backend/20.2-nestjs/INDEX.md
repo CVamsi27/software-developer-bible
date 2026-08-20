@@ -25,7 +25,7 @@
 
 ---
 
-**Cross-references:** [Node.js](../20.1-node.js/INDEX.md) | [REST APIs](../20.3-rest-apis/INDEX.md) | [Microservices (gRPC, Service Mesh)](../INDEX.md) | [Design Patterns (CQRS)](../INDEX.md) | [Testing](../../50-quality/50.1-testing/INDEX.md)
+**Cross-references:** [Node.js](../20.1-node.js/INDEX.md) | [REST APIs](../20.3-rest-apis/INDEX.md) | [Microservices (gRPC, Service Mesh)](../20.6-microservices/INDEX.md) | [Design Patterns (CQRS)](../../30-architecture/30.1-design-patterns/INDEX.md) | [Testing](../../50-quality/50.1-testing/INDEX.md)
 ---
 
 ## Navigation

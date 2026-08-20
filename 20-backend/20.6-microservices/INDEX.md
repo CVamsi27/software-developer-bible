@@ -1,8 +1,8 @@
 # Microservices — Index
 
-> **14 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, CQRS, bulkhead, strangler fig, and interview questions.
+> **15 files** — Microservices architecture patterns from service discovery and API gateways to saga pattern, circuit breakers, messaging, gRPC, service mesh, CQRS, bulkhead, strangler fig, message brokers, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -22,12 +22,13 @@
 | 12 | [Strangler Fig](20.6.12-strangler-fig.md) | Legacy migration, strangler facade, parallel run, feature flags, dual-write |
 | 13 | [CQRS](20.6.13-cqrs.md) | Command/query separation, event sourcing integration, mediator pattern, read/write models, eventual consistency |
 | 14 | [Bulkhead Pattern](20.6.14-bulkhead-pattern.md) | Thread pool isolation, semaphore, circuit breaker integration, tenant isolation, resilience |
+| 15 | [Message Brokers](20.6.15-message-brokers.md) | Kafka vs RabbitMQ comparison, event sourcing, saga pattern, dead letter queues |
 
 ---
 
-**Cross-references:** [NestJS Microservices](../INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Docker](../../40-platform/40.1-docker/INDEX.md) | [Kubernetes](../../40-platform/40.2-kubernetes/INDEX.md)
+**Cross-references:** [NestJS Microservices](../20.2-nestjs/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Docker](../../40-platform/40.1-docker/INDEX.md) | [Kubernetes](../../40-platform/40.2-kubernetes/INDEX.md)
 ---
 
 ## Navigation
 
-[← Previous: System Design](../../30-architecture/30.2-system-design/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)
+[← Previous: Security](../20.5-security/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: GraphQL →](../20.7-graphql/INDEX.md)

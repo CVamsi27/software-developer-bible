@@ -24,4 +24,4 @@
 
 ## Navigation
 
-[← Previous: CheatSheets](../../70-interview-toolkit/70.3-cheatsheets/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../../40-platform/40.4-observability/INDEX.md)
+[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)

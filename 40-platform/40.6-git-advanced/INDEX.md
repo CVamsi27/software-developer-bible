@@ -18,9 +18,9 @@
 
 ---
 
-**Cross-references:** [CI/CD](../40.3-ci-cd) | [Monorepo](../40.8-monorepo/INDEX.md)
+**Cross-references:** [CI/CD](../40.3-ci-cd/INDEX.md) | [Monorepo](../40.8-monorepo/INDEX.md)
 ---
 
 ## Navigation
 
-[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../../50-quality/50.2-accessibility/INDEX.md)
+[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)

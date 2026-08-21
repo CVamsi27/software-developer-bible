@@ -7,6 +7,7 @@
 | [Testing](50.1-testing/INDEX.md) | 11 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing |
 | [Accessibility](50.2-accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
 | [Performance-Monitoring](50.3-performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
+| [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, postmortems, chaos engineering, SLI/SLO/error budgets |
 
 ---
 

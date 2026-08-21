@@ -33,68 +33,76 @@ Before contributing, review the existing files in the relevant section to unders
 
 ```
 .
-├── README.md                  # Project overview
-├── INDEX.md                   # Central navigation hub (pick your lane)
-├── CONTRIBUTING.md            # This file
-├── PROJECT-STATS.md           # Auto-generated statistics report
+├── README.md                          # Project overview
+├── INDEX.md                           # Central navigation hub (pick your lane)
+├── contributing.md                    # This file
+├── project-stats.md                   # Auto-generated statistics report
 │
-├── 0-Interview-Strategy/                # LANE 0 — Cross-lane (everyone)
+├── 00-strategy/                       # Cross-lane (everyone starts here)
 │   ├── INDEX.md
-│   ├── Communication.md
-│   └── ...
+│   ├── 00.01-communication.md
+│   ├── 00.02-resume-tips.md
+│   ├── 00.03-star-method.md
+│   └── 00.04-hr-questions.md
 │
-├── 1-Frontend-Stack/                    # STACK 1 — Frontend
-│   ├── 01-JavaScript/
-│   ├── 02-TypeScript/
-│   ├── 03-React/
-│   ├── 04-NextJS/
-│   ├── 29-Form-Handling/
-│   └── 30-Animation/
+├── 10-frontend/                       # Frontend (JS → TS → React → Next.js)
+│   ├── 10.1-javascript/
+│   ├── 10.2-typescript/
+│   ├── 10.3-react/
+│   ├── 10.4-next.js/
+│   ├── 10.5-form-handling/
+│   └── 10.6-animation/
 │
-├── 2-Backend-Stack/                     # STACK 2 — Backend
-│   ├── 05-NodeJS/
-│   ├── 06-NestJS/
-│   ├── 07-REST-API/
-│   ├── 08-Database/
-│   ├── 09-Security/
-│   ├── 10-Design-Patterns/
-│   ├── 12-Microservices/
-│   └── 17-GraphQL/
+├── 20-backend/                        # Backend (Node → NestJS → REST → DB → Security)
+│   ├── 20.1-node.js/
+│   ├── 20.2-nestjs/
+│   ├── 20.3-rest-apis/
+│   ├── 20.4-database/
+│   ├── 20.5-security/
+│   ├── 20.6-microservices/
+│   └── 20.7-graphql/
 │
-├── 3-Architecture-Stack/                # STACK 3 — Architecture
-│   └── 11-System-Design/                 # 22 case studies
+├── 30-architecture/                   # Architecture (design patterns + system design)
+│   ├── 30.1-design-patterns/
+│   └── 30.2-system-design/
 │
-├── 4-Platform-Stack/                    # STACK 4 — DevOps / Platform
-│   ├── 13-Docker/
-│   ├── 14-Kubernetes/
-│   ├── 15-CI-CD/
-│   ├── 22-Observability/
-│   ├── 23-Build-Tools/
-│   ├── 24-Git-Advanced/
-│   ├── 27-Serverless-Edge/
-│   └── 28-Monorepo/
+├── 40-platform/                       # DevOps / Platform
+│   ├── 40.1-docker/
+│   ├── 40.2-kubernetes/
+│   ├── 40.3-ci-cd/
+│   ├── 40.4-observability/
+│   ├── 40.5-build-tools/
+│   ├── 40.6-git-advanced/
+│   ├── 40.7-serverless-edge/
+│   ├── 40.8-monorepo/
+│   └── 40.9-twelve-factor/
 │
-├── 5-Quality-Stack/                     # STACK 5 — Quality
-│   ├── 16-Testing/
-│   ├── 25-Accessibility/
-│   └── 26-Performance-Monitoring/
+├── 50-quality/                        # Quality (testing, a11y, performance)
+│   ├── 50.1-testing/
+│   ├── 50.2-accessibility/
+│   └── 50.3-performance-monitoring/
 │
-├── 6-Real-Time-Stack/                   # STACK 6 — Real-time
-│   └── 21-WebSockets/
+├── 60-realtime/                       # Real-time (WebSockets)
+│   └── 60.1-websockets/
 │
-├── 7-Interview-Toolkit/                 # STACK 7 — Interview prep toolkit
-│   ├── 18-Behavioral/
-│   ├── 19-Coding-Patterns/               # 18 pattern files
-│   └── 20-CheatSheets/
+├── 70-interview-toolkit/              # Interview toolkit (behavioral, coding patterns, cheatsheets)
+│   ├── 70.1-behavioral/
+│   ├── 70.2-coding-patterns/
+│   └── 70.3-cheatsheets/
 │
-└── 8-Interview-Lanes/                   # LANE 2 & 3 — Peer interview lanes
-    ├── 81-lanes-indian-sde-faang/              # DSA-heavy, 8-week
-    └── 80-lanes-abroad-full-stack/             # Take-home + system design, 4-week
+├── lanes/                             # Lane overview (indexes into 80/81)
+│   └── INDEX.md
+│
+├── 80-lanes-abroad-full-stack/        # Abroad Full-Stack lane (EU/remote, 4-week)
+│   └── INDEX.md + 18 files
+│
+└── 81-lanes-indian-sde-faang/         # Indian SDE / FAANG lane (DSA-heavy, 8-week)
+    └── INDEX.md + 23 files
 ```
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
-- **The 3 lanes** (`00-`, `81-`, `82-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
-- Stack directories are numbered `1-` through `7-` to make it easy to slot new sections in (e.g. `8-` if you add a 9th top-level lane).
+- **The 3 lanes** (`00-`, `80-`, `81-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
+- Stack directories are numbered `00-` through `81-` to make it easy to slot new sections in.
 - Each section has an `INDEX.md` file
 - Content files are numbered within their section (`01-`, `02-`, etc.)
 

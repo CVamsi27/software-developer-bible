@@ -22,6 +22,7 @@
 | 13 | [Testing](20.2.12-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit |
 | 14 | [Configuration & Validation](20.2.13-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs |
 | 15 | [Interview Questions](20.2.14-interview-questions.md) | 50+ curated questions with answers |
+| 16 | [Custom Decorators](20.2.15-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition |
 
 ---
 

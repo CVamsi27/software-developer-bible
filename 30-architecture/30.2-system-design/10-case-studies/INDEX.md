@@ -34,6 +34,8 @@
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage | Block-level sync, content-addressable storage, conflict resolution, cursors |
 | 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing |
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web | Hot-key sharding, G-Counter CRDT, local pre-aggregation, tiered storage |
+| 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | DAG execution, state machine, BullMQ workers, idempotency, retry strategy |
+| 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Productivity | OT vs CRDT, WebSocket protocol, Redis Pub/Sub, version history, offline support |
 
 ---
 

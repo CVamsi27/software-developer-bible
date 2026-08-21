@@ -27,6 +27,7 @@
 | 17 | [Window Functions](20.4.17-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages |
 | 18 | [JSONB](20.4.18-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns |
 | 19 | [Prisma Advanced](20.4.19-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns (soft delete, audit trail, versioning) |
+| 20 | [PostgreSQL Performance](20.4.20-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, index optimization, VACUUM, partitioning, monitoring queries |
 
 ---
 

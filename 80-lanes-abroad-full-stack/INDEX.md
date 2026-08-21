@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -329,6 +329,11 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 20 | [Germany Visa-Sponsoring Companies](80.20-germany-visa-sponsoring-companies.md) | 100+ German tech companies that sponsor EU Blue Card visas. Tier 1-4 company lists, visa timeline, anabin degree check, how to find sponsors. | EU Blue Card EUR 48,300 threshold, 60-90 day timeline, Berlin/Munich/Hamburg hubs |
 | 21 | [Google-Level Docita Prep](80.21-docita-google-level-prep.md) | 225+ senior/staff-level questions across 20 sections: PostgreSQL internals, distributed systems, caching, message queues, API design, observability, security, performance, system design, Docita-specific deep dives, Google-style behavioral. | MVCC, WAL, VACUUM, CAP theorem, saga vs 2PC, cache stampede, Kafka partitions, SLI/SLO, OAuth 2.0, chaos engineering |
 | 22 | [Docita × Tech Topic Mapping](80.22-docita-tech-topic-mapping.md) | Maps every system design, architecture, and production engineering topic to a specific Docita use case. 13 sections covering database scaling, resilience patterns, leader election, event-driven architecture, production engineering, caching, zero-downtime deployments, data pipelines, technical debt, WebSockets, security, observability, and system design. | Partitioning appointments by month, circuit breaker on SendGrid, outbox pattern for notifications, SLI/SLO on booking API, cache stampede at clinic opening hours |
+| 23 | [German Companies Database](80.23-german-companies-database.md) | 50+ German product companies with stack, comp, interview process, visa support. Tier 1-3 classification. Best companies by category (fintech, SaaS, e-commerce, data, remote-first). | Scalable Capital EUR 90-110K, n8n 4-day workweek, SumUp profitable payments, Celonis process mining, Trade Republic EUR 85-110K |
+| 24 | [EU Regulatory Compliance](80.24-eu-regulatory-compliance.md) | GDPR principles and implementation, BaFin fintech requirements (KYC/AML/PSD2), EU AI Act risk categories, Digital Services Act, DORA. Includes DPIA template and compliance checklist. | GDPR data subject rights, BaFin KYC/AML implementation, EU AI Act healthcare classification, incident response within 72 hours |
+| 25 | [German Workplace Culture](80.25-german-workplace-culture.md) | German engineering culture (Gründlichkeit, Ordnung, Pünktlichkeit), interview etiquette, communication style, work-life balance, probation period, salary negotiation, red flags. | Punctuality, directness, 25-30 days vacation, 37.5-40h/week, Probezeit 6 months |
+| 26 | [Take-Home Masterclass](80.26-take-home-masterclass.md) | 6-phase take-home process, 4 common patterns (CRUD, workflow, multi-tenant, real-time), what separates good from great, README template, time management, common mistakes. | Architecture first, tests as you go, RFC 7807 errors, Docker Compose, 'what I'd do with 24 more hours' section |
+| 27 | [German System Design Patterns](80.27-german-system-design-patterns.md) | Company-adjacent system design for fintech (payment processing, trading, portfolio), logistics (freight matching, real-time tracking), healthtech (appointment scheduling, PHI), SaaS (multi-tenant, workflow engine). | Idempotent payments, PostGIS freight matching, concurrent booking with SELECT FOR UPDATE, DAG workflow execution |
 
 ---
 

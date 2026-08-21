@@ -14,6 +14,7 @@
 | 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization |
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root, distroless, scanning, labels |
 | 06 | [Interview Questions](40.1.06-interview-questions.md) | 50+ curated questions with answers |
+| 07 | [Production Patterns](40.1.07-production-patterns.md) | Multi-stage builds, security best practices, Docker Compose production, image optimization, container security checklist |
 
 ---
 

@@ -15,6 +15,7 @@
 | 05 | [GitLab CI/CD](40.3.05-gitlab-ci.md) | .gitlab-ci.yml, multi-project pipelines, Auto DevOps |
 | 06 | [ArgoCD (GitOps)](40.3.06-argocd.md) | GitOps, ApplicationSets, sync policies, rollback |
 | 07 | [Interview Questions](40.3.07-interview-questions.md) | 50+ curated questions with answers |
+| 08 | [Pipeline Patterns](40.3.08-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) |
 
 ---
 

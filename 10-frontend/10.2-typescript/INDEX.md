@@ -23,6 +23,7 @@
 | 13 | [Branded Types](10.2.13-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions |
 | 14 | [Declaration Files](10.2.14-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives |
 | 15 | [The `satisfies` Operator](10.2.15-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables |
+| 16 | [Advanced Patterns](10.2.16-advanced-patterns.md) | Class decorators, parameter decorators, typed event emitter, conditional types, mapped types, template literal types, branded types, utility type combinations |
 
 ---
 

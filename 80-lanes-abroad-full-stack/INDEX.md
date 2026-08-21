@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-21-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -328,6 +328,7 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 19 | [Langfuse Interview Prep](80.19-langfuse-interview-prep.md) | 130+ Q&As for Langfuse: Turborepo, tRPC, Next.js App Router, Prisma, Shadcn/UI, OpenTelemetry, AWS ECS, ClickHouse, Redis, Terraform, SDK development, LLM observability, system design. | Full TypeScript monorepo stack, tRPC type safety, ClickHouse OLAP schema, OpenTelemetry instrumentation |
 | 20 | [Germany Visa-Sponsoring Companies](80.20-germany-visa-sponsoring-companies.md) | 100+ German tech companies that sponsor EU Blue Card visas. Tier 1-4 company lists, visa timeline, anabin degree check, how to find sponsors. | EU Blue Card EUR 48,300 threshold, 60-90 day timeline, Berlin/Munich/Hamburg hubs |
 | 21 | [Google-Level Docita Prep](80.21-docita-google-level-prep.md) | 225+ senior/staff-level questions across 20 sections: PostgreSQL internals, distributed systems, caching, message queues, API design, observability, security, performance, system design, Docita-specific deep dives, Google-style behavioral. | MVCC, WAL, VACUUM, CAP theorem, saga vs 2PC, cache stampede, Kafka partitions, SLI/SLO, OAuth 2.0, chaos engineering |
+| 22 | [Docita × Tech Topic Mapping](80.22-docita-tech-topic-mapping.md) | Maps every system design, architecture, and production engineering topic to a specific Docita use case. 13 sections covering database scaling, resilience patterns, leader election, event-driven architecture, production engineering, caching, zero-downtime deployments, data pipelines, technical debt, WebSockets, security, observability, and system design. | Partitioning appointments by month, circuit breaker on SendGrid, outbox pattern for notifications, SLI/SLO on booking API, cache stampede at clinic opening hours |
 
 ---
 

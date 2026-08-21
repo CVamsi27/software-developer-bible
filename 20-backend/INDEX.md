@@ -15,6 +15,7 @@
 | [Caching](20.8-caching/INDEX.md) | 1 | Redis deep-dive, cache patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention |
 | [WebSockets](20.9-websockets/INDEX.md) | 1 | Connection lifecycle, Socket.IO, scaling with Redis adapter, failure modes |
 | [Event-Driven](20.11-event-driven/INDEX.md) | 1 | Kafka architecture, event sourcing, CQRS, dead letter queues |
+| [API Design](20.10-api-design/INDEX.md) | 5 | REST maturity model, rate limiting algorithms, RFC 7807 error handling, cursor/offset pagination, webhook delivery & verification |
 
 ---
 

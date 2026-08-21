@@ -10,6 +10,7 @@
 | [30.3.04-technical-debt.md](30.3.04-technical-debt.md) | Debt types and prioritization, strangler fig pattern, branch by abstraction, test coverage strategy, ADRs |
 | [30.3.05-zero-downtime-deployments.md](30.3.05-zero-downtime-deployments.md) | Rolling, blue-green, canary deployments, feature flags, expand-contract migrations, rollback strategies |
 | [30.3.06-data-pipelines.md](30.3.06-data-pipelines.md) | Batch ETL, stream processing, data lake architecture (bronze/silver/gold), data quality, backfill strategies |
+| [30.3.07-cdn-architecture.md](30.3.07-cdn-architecture.md) | CDN caching strategies, cache invalidation, edge computing (Cloudflare Workers, Vercel Edge), healthcare PHI considerations |
 
 ---
 

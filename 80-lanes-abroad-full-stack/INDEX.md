@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-28-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-29-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -335,6 +335,7 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 26 | [Take-Home Masterclass](80.26-take-home-masterclass.md) | 6-phase take-home process, 4 common patterns (CRUD, workflow, multi-tenant, real-time), what separates good from great, README template, time management, common mistakes. | Architecture first, tests as you go, RFC 7807 errors, Docker Compose, 'what I'd do with 24 more hours' section |
 | 27 | [German System Design Patterns](80.27-german-system-design-patterns.md) | Company-adjacent system design for fintech (payment processing, trading, portfolio), logistics (freight matching, real-time tracking), healthtech (appointment scheduling, PHI), SaaS (multi-tenant, workflow engine). | Idempotent payments, PostGIS freight matching, concurrent booking with SELECT FOR UPDATE, DAG workflow execution |
 | 28 | [Interview Prep Roadmap](80.28-interview-prep-roadmap.md) | 4-week plan: Week 1 (stories + foundation), Week 2 (system design + take-home), Week 3 (deep-dives + company research), Week 4 (mocks + applications). Daily tasks with checkboxes, progress tracker, 1-week emergency plan. | 512 files, 281K lines, 340 Q&As, 22 SD cases, 8 STAR stories |
+| 29 | [Topic Brushup Roadmap](80.29-topic-brushup-roadmap.md) | 30-day systematic brushup of every section: Week 1 (Frontend), Week 2 (Backend), Week 3 (Architecture + Platform), Week 4 (Quality + Toolkit). 165+ files, daily checkboxes, progress tracker. | Covers all 512 files across 7 sections (10-frontend through 80-lanes) |
 
 ---
 

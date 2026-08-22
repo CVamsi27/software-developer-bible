@@ -27,6 +27,7 @@
 | 17 | [Portals](10.3.17-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety |
 | 18 | [Compound Components](10.3.18-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics |
 | 19 | [Modern Hooks (React 18/19)](10.3.19-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions |
+| 20 | [Web Components](10.3.11-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React |
 
 ---
 

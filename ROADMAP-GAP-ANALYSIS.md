@@ -41,25 +41,22 @@
 
 | Topic | Bible File | Gap |
 |-------|------------|-----|
-| **PWA** | 10.7.03-pwa.md | ⚠️ 94 lines — needs more on service workers, caching strategies |
-| **Web Components** | ❌ Missing | ⚠️ Not covered — add custom elements, shadow DOM |
+| **PWA** | 10.7.03-pwa.md | ✅ Expanded to 250+ lines with deep-dive |
+| **Web Components** | 10.3.11-web-components.md | ✅ Added — custom elements, Shadow DOM, slots |
 | **Web Animations** | 10.6-animation/ | ⚠️ Basic coverage — add Framer Motion, GSAP patterns |
 | **Storybook** | ❌ Missing | ⚠️ Not covered — add component documentation |
 | **Micro-Frontends** | ❌ Missing | ⚠️ Not covered — add Module Federation, single-spa |
-| **Web Vitals** | 10-frontend/ | ⚠️ Mentioned but not deep — add LCP, FID, CLS optimization |
+| **Web Vitals** | 10.7.04-seo.md | ✅ Expanded — LCP, INP, CLS deep-dive with optimization strategies |
 
 ### ❌ Missing Topics
 
 | Topic | Priority | Notes |
 |-------|----------|-------|
-| **Web Components** | Medium | Custom elements, Shadow DOM, slots |
 | **Micro-Frontends** | Medium | Module Federation, single-spa, qiankun |
 | **WebAssembly** | Low | Basic concepts, use cases |
-| **Web Workers** | Medium | Dedicated/Shared workers, OffscreenCanvas |
 | **Broadcast Channel** | Low | Cross-tab communication |
 | **Intersection Observer** | Medium | Lazy loading, infinite scroll |
 | **Mutation Observer** | Low | DOM change detection |
-| **Performance API** | Medium | Navigation Timing, Resource Timing |
 
 ---
 
@@ -116,10 +113,10 @@
 
 | Topic | Priority | Notes |
 |-------|----------|-------|
-| **Web Workers** | Medium | Dedicated/Shared workers, OffscreenCanvas |
-| **Server-Sent Events** | Medium | SSE vs WebSocket comparison |
-| **gRPC Streaming** | Medium | Server/client/bidirectional streaming |
-| **Protocol Buffers** | Medium | .proto files, serialization |
+| **Web Workers** | Medium | Dedicated/Shared workers, OffscreenCanvas | ✅ Added |
+| **Server-Sent Events** | Medium | SSE vs WebSocket comparison | ✅ Added |
+| **gRPC Streaming** | Medium | Server/client/bidirectional streaming | ✅ Added |
+| **Protocol Buffers** | Medium | .proto files, serialization | ✅ Covered in gRPC |
 | **Message Queue Patterns** | High | Dead letter queues, retry, idempotency |
 | **API Gateway** | High | Kong, AWS API Gateway, rate limiting |
 | **Service Discovery** | Medium | Consul, etcd, DNS-based |
@@ -135,15 +132,15 @@
 | **API Versioning** | High | URL, header, additive-only |
 | **Health Checks** | High | Liveness, readiness probes |
 | **Graceful Shutdown** | High | SIGTERM handling, drain connections |
-| **Connection Pooling** | High | PgBouncer, HikariCP |
-| **Query Optimization** | High | EXPLAIN ANALYZE, index strategies |
-| **Database Replication** | High | Primary-replica, read replicas |
-| **Database Sharding** | Medium | Horizontal partitioning |
-| **Distributed Transactions** | High | 2PC, Saga, TCC |
-| **Consensus Algorithms** | Medium | Raft, Paxos basics |
-| **Service Mesh** | Medium | Istio, Linkerd, sidecar proxy |
-| **API Gateway** | High | Kong, rate limiting, authentication |
-| **Service Discovery** | Medium | Consul, etcd, DNS |
+| **Connection Pooling** | High | PgBouncer, HikariCP | ✅ Added |
+| **Query Optimization** | High | EXPLAIN ANALYZE, index strategies | ✅ Added |
+| **Database Replication** | High | Primary-replica, read replicas | ✅ Added |
+| **Database Sharding** | Medium | Horizontal partitioning | ❌ Missing |
+| **Distributed Transactions** | High | 2PC, Saga, TCC | ✅ Added |
+| **Consensus Algorithms** | Medium | Raft, Paxos basics | ❌ Missing |
+| **Service Mesh** | Medium | Istio, Linkerd, sidecar proxy | ❌ Missing |
+| **API Gateway** | High | Kong, rate limiting, authentication | ✅ Added |
+| **Service Discovery** | Medium | Consul, etcd, DNS | ✅ Added |
 | **Distributed Tracing** | High | Jaeger, Zipkin, OpenTelemetry |
 | **Centralized Logging** | High | ELK Stack, Loki |
 | **Metrics Collection** | High | Prometheus, Grafana |
@@ -217,7 +214,7 @@
 9. ✅ **Retry Patterns** — 30.3.13-retry-patterns.md
 10. ✅ **Idempotency Keys** — 30.3.14-idempotency-keys.md
 
-### MEDIUM PRIORITY (Add Next) ✅ PARTIALLY DONE
+### MEDIUM PRIORITY (Add Next) ✅ MOSTLY DONE
 
 11. ✅ **Web Workers** — 10.1.12-web-workers.md
 12. ✅ **Server-Sent Events** — 20.9.02-server-sent-events.md
@@ -245,10 +242,10 @@
 
 | Roadmap | Total Topics | Covered | Partial | Missing | Coverage |
 |---------|-------------|---------|---------|---------|----------|
-| **Frontend** | 45 | 27 | 5 | 13 | 60% |
-| **Backend** | 60 | 39 | 4 | 17 | 65% |
-| **System Design** | 35 | 20 | 2 | 13 | 57% |
-| **Total** | 140 | 86 | 11 | 43 | 61% |
+| **Frontend** | 45 | 30 | 3 | 12 | 67% |
+| **Backend** | 60 | 44 | 3 | 13 | 73% |
+| **System Design** | 35 | 22 | 2 | 11 | 63% |
+| **Total** | 140 | 96 | 8 | 36 | 69% |
 
 ---
 

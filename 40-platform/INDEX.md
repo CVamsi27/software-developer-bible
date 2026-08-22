@@ -12,6 +12,7 @@
 | [Git-Advanced](40.6-git-advanced/INDEX.md) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 7 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST |
 | [Monorepo](40.8-monorepo/INDEX.md) | 5 | Turborepo, Nx, pnpm, Rush, Bazel |
+| [CDN & Edge Computing](40.9-cdn/INDEX.md) | 1 | CDN caching, cache invalidation, edge functions, healthcare PHI considerations |
 | [Twelve-Factor App](40.9-twelve-factor/INDEX.md) | 1 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
 
 ---

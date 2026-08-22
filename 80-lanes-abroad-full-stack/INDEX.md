@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-29-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-32-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -336,6 +336,9 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 27 | [German System Design Patterns](80.27-german-system-design-patterns.md) | Company-adjacent system design for fintech (payment processing, trading, portfolio), logistics (freight matching, real-time tracking), healthtech (appointment scheduling, PHI), SaaS (multi-tenant, workflow engine). | Idempotent payments, PostGIS freight matching, concurrent booking with SELECT FOR UPDATE, DAG workflow execution |
 | 28 | [Interview Prep Roadmap](80.28-interview-prep-roadmap.md) | 4-week plan: Week 1 (stories + foundation), Week 2 (system design + take-home), Week 3 (deep-dives + company research), Week 4 (mocks + applications). Daily tasks with checkboxes, progress tracker, 1-week emergency plan. | 512 files, 281K lines, 340 Q&As, 22 SD cases, 8 STAR stories |
 | 29 | [Topic Brushup Roadmap](80.29-topic-brushup-roadmap.md) | 30-day systematic brushup of every section: Week 1 (Frontend), Week 2 (Backend), Week 3 (Architecture + Platform), Week 4 (Quality + Toolkit). 165+ files, daily checkboxes, progress tracker. | Covers all 512 files across 7 sections (10-frontend through 80-lanes) |
+| 30 | [Mock Interview Script](80.30-mock-interview-script.md) | 10 high-impact questions with timing, scoring rubric, and follow-up probes. Covers system design, PostgreSQL, caching, Kafka, security, API design, observability, testing, and behavioral. | Record yourself, score 1-5, retake until 45/50 |
+| 31 | [Salary Negotiation Guide](80.31-salary-negotiation-guide.md) | German tech salary ranges by tier, Blue Card thresholds, total comp breakdown, counter-offer scripts, relocation negotiation, contract tips. | €80K-€130K senior range, 10-20% above first offer, negotiate via phone |
+| 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep for top 5 targets: Redcare, MVST, LiveEO, Tanso, n8n. Stack, likely questions, talking points, questions to ask. | Read before each interview, know their stack and challenges |
 
 ---
 

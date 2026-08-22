@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **12 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, and interview questions.
+> **13 files** — Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -20,6 +20,7 @@
 | 10 | [Vitest](50.1.10-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads |
 | 11 | [Performance & Load Testing](50.1.11-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak |
 | 12 | [Chaos Engineering & Game Days](50.1.12-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus, top 10 failure modes, game day format |
+| 13 | [Testing Frameworks Comparison](50.1.13-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, testing pyramid, choosing the right framework |
 
 ---
 

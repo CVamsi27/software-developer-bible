@@ -16,6 +16,11 @@
 | [30.3.10-api-gateway-patterns.md](30.3.10-api-gateway-patterns.md) | Gateway roles, rate limiting, auth, routing, BFF, aggregation, circuit breaking |
 | [30.3.11-health-checks-graceful-shutdown.md](30.3.11-health-checks-graceful-shutdown.md) | Liveness vs readiness probes, drain connections, in-flight request handling, Kubernetes integration |
 | [30.3.12-distributed-transactions.md](30.3.12-distributed-transactions.md) | 2PC, 3PC, Saga, TCC, outbox pattern, eventual consistency vs strong consistency |
+| [30.3.13-retry-patterns.md](30.3.13-retry-patterns.md) | Exponential backoff, jitter, retry budgets, when not to retry |
+| [30.3.14-idempotency-keys.md](30.3.14-idempotency-keys.md) | Idempotency keys, deduplication, exactly-once semantics, outbox + idempotency |
+| [30.3.15-service-discovery.md](30.3.15-service-discovery.md) | Client-side, DNS-based, Consul, etcd, Kubernetes service discovery, health checks |
+| [30.3.16-bulkhead-pattern.md](30.3.16-bulkhead-pattern.md) | Resource isolation, thread pools, semaphore bulkhead, bulkhead + circuit breaker combo |
+| [30.3.17-strangler-fig-migration.md](30.3.17-strangler-fig-migration.md) | Incremental monolith-to-microservices migration, proxy routing, dual-write, data sync |
 
 ---
 
@@ -30,4 +35,8 @@
 8. API gateway patterns
 9. Health checks and graceful shutdown
 10. Distributed transactions (2PC, Saga, TCC)
-11. Technical debt management
+12. Retry patterns (exponential backoff, jitter)
+13. Idempotency keys (deduplication, exactly-once)
+14. Service discovery (Consul, etcd, DNS)
+15. Bulkhead pattern (resource isolation)
+16. Strangler fig migration (monolith → microservices)

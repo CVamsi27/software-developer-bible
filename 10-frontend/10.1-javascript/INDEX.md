@@ -35,6 +35,7 @@
 | 25 | [Recursion & Tail Call](10.1.25-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoization |
 | 26 | [Interview Questions](10.1.26-interview-questions.md) | 50+ curated questions with answers |
 | 27 | [ES2024+ Features](10.1.27-es2024-features.md) | structuredClone, toSorted, Object.groupBy, Promise.withResolvers, ArrayBuffer.transfer |
+| 28 | [Web Workers](10.1.12-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, React hooks for workers |
 
 ---
 

@@ -204,28 +204,28 @@
 
 ## Priority Actions
 
-### HIGH PRIORITY (Add These First)
+### HIGH PRIORITY (Add These First) ✅ ALL DONE
 
-1. **Event Sourcing & CQRS** — Critical for system design interviews
-2. **Saga Pattern** — Orchestration vs choreography
-3. **API Gateway** — Kong, rate limiting, authentication
-4. **Health Checks** — Liveness, readiness, startup probes
-5. **Graceful Shutdown** — SIGTERM handling, connection draining
-6. **Connection Pooling** — PgBouncer, HikariCP
-7. **Database Replication** — Primary-replica, read replicas
-8. **Distributed Transactions** — 2PC, Saga, TCC
-9. **Retry Patterns** — Exponential backoff, jitter
-10. **Idempotency Keys** — Deduplication, exactly-once
+1. ✅ **Event Sourcing & CQRS** — 30.3.08-event-sourcing-cqrs.md
+2. ✅ **Saga Pattern** — 30.3.09-saga-pattern.md
+3. ✅ **API Gateway** — 30.3.10-api-gateway-patterns.md
+4. ✅ **Health Checks** — 30.3.11-health-checks-graceful-shutdown.md
+5. ✅ **Graceful Shutdown** — 30.3.11-health-checks-graceful-shutdown.md
+6. ✅ **Connection Pooling** — 20.4.21-connection-pooling.md
+7. ✅ **Database Replication** — 20.4.22-database-replication.md
+8. ✅ **Distributed Transactions** — 30.3.12-distributed-transactions.md
+9. ✅ **Retry Patterns** — 30.3.13-retry-patterns.md
+10. ✅ **Idempotency Keys** — 30.3.14-idempotency-keys.md
 
-### MEDIUM PRIORITY (Add Next)
+### MEDIUM PRIORITY (Add Next) ✅ PARTIALLY DONE
 
-11. **Web Workers** — Dedicated/Shared workers
-12. **Server-Sent Events** — SSE vs WebSocket
-13. **gRPC Streaming** — Server/client/bidirectional
-14. **Service Discovery** — Consul, etcd, DNS
-15. **Circuit Breaker** — Hystrix, resilience4j
-16. **Bulkhead Pattern** — Isolation, thread pools
-17. **Strangler Fig** — Migration pattern
+11. ✅ **Web Workers** — 10.1.12-web-workers.md
+12. ✅ **Server-Sent Events** — 20.9.02-server-sent-events.md
+13. ✅ **gRPC Streaming** — 20.10.08-grpc-streaming.md
+14. ✅ **Service Discovery** — 30.3.15-service-discovery.md
+15. ✅ **Circuit Breaker** — 30.3.02-resilience-patterns.md
+16. ✅ **Bulkhead Pattern** — 30.3.16-bulkhead-pattern.md
+17. ✅ **Strangler Fig** — 30.3.17-strangler-fig-migration.md
 18. **Database Sharding** — Horizontal partitioning
 19. **Consensus Algorithms** — Raft, Paxos basics
 20. **Service Mesh** — Istio, Linkerd
@@ -245,10 +245,10 @@
 
 | Roadmap | Total Topics | Covered | Partial | Missing | Coverage |
 |---------|-------------|---------|---------|---------|----------|
-| **Frontend** | 45 | 26 | 6 | 13 | 58% |
-| **Backend** | 60 | 32 | 5 | 23 | 53% |
-| **System Design** | 35 | 13 | 4 | 18 | 37% |
-| **Total** | 140 | 71 | 15 | 54 | 51% |
+| **Frontend** | 45 | 27 | 5 | 13 | 60% |
+| **Backend** | 60 | 39 | 4 | 17 | 65% |
+| **System Design** | 35 | 20 | 2 | 13 | 57% |
+| **Total** | 140 | 86 | 11 | 43 | 61% |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-32-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-33-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -339,6 +339,7 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 30 | [Mock Interview Script](80.30-mock-interview-script.md) | 10 high-impact questions with timing, scoring rubric, and follow-up probes. Covers system design, PostgreSQL, caching, Kafka, security, API design, observability, testing, and behavioral. | Record yourself, score 1-5, retake until 45/50 |
 | 31 | [Salary Negotiation Guide](80.31-salary-negotiation-guide.md) | German tech salary ranges by tier, Blue Card thresholds, total comp breakdown, counter-offer scripts, relocation negotiation, contract tips. | €80K-€130K senior range, 10-20% above first offer, negotiate via phone |
 | 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep for top 5 targets: Redcare, MVST, LiveEO, Tanso, n8n. Stack, likely questions, talking points, questions to ask. | Read before each interview, know their stack and challenges |
+| 33 | [Weekly Study Tracker](80.33-weekly-study-tracker.md) | 4-week daily checklist with time tracking, progress metrics, mock interview scores, story practice, and company applications. | Print and check off daily, review progress every Sunday |
 
 ---
 

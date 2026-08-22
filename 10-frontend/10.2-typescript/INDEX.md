@@ -24,6 +24,7 @@
 | 14 | [Declaration Files](10.2.14-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives |
 | 15 | [The `satisfies` Operator](10.2.15-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables |
 | 16 | [Advanced Patterns](10.2.16-advanced-patterns.md) | Class decorators, parameter decorators, typed event emitter, conditional types, mapped types, template literal types, branded types, utility type combinations |
+| 17 | [Advanced Generics](10.2.17-advanced-generics.md) | Conditional types deep-dive, mapped types with key remapping, template literal types, type inference with infer, practical examples (type-safe API client, builder pattern) |
 
 ---
 

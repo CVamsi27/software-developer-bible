@@ -17,7 +17,7 @@ Need it behind serverless/edge?      → managed pub/sub + polling fallback firs
 Scaling beyond one node?             → Redis adapter / sticky sessions → pub/sub backbone
 ```
 
-**Cross-references:** [Backend WebSockets](../20-backend/20.9-websockets/INDEX.md) · [Event-driven](../20-backend/20.11-event-driven/INDEX.md) · [NestJS](../20-backend/20.2-nestjs/INDEX.md)
+**Cross-references:** [Microservices & event-driven patterns](../20-backend/20.6-microservices/INDEX.md) · [NestJS](../20-backend/20.2-nestjs/INDEX.md)
 
 ---
 

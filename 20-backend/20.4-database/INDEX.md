@@ -1,8 +1,8 @@
 # Database — Index
 
-> **21 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, Redis, window functions, JSONB, replication, and interview questions.
+> **20 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, window functions, JSONB, replication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -23,7 +23,6 @@
 | 14 | [Migration Strategies](20.4.13-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime |
 | 14 | [Interview Questions](20.4.14-interview-questions.md) | 50+ curated questions with answers |
 | 15 | [Soft Delete & Tombstones](20.4.15-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention |
-| 16 | [Redis](20.4.16-redis.md) | Data structures, caching patterns, rate limiting, distributed locks, pub/sub |
 | 17 | [Window Functions](20.4.17-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages |
 | 18 | [JSONB](20.4.18-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns |
 | 19 | [Prisma Advanced](20.4.19-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns (soft delete, audit trail, versioning) |

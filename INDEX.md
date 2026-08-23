@@ -71,22 +71,19 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 5 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 1 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA |
 
-### 📁 20-backend — Backend (110 files in 12 sub-stacks)
+### 📁 20-backend — Backend (111 files in 9 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
 | 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
 | 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 15 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 16 | HTTP methods, status codes, versioning, pagination, authentication, OpenAPI |
-| 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 21 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication, Redis |
+| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 17 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 20 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication |
 | 20.5 | [Auth & Security](20-backend/20.5-security/INDEX.md) | 16 | **[auth track](20-backend/20.5-security/auth/INDEX.md):** fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
-| 20.6 | [Microservices](20-backend/20.6-microservices/INDEX.md) | 15 | Service discovery, saga, circuit breaker, event sourcing, gRPC, service mesh |
+| 20.6 | [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) | 17 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
-| 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 2 | Cache patterns, invalidation, stampede prevention, advanced Redis |
-| 20.9 | [WebSockets](20-backend/20.9-websockets/INDEX.md) | 2 | Socket.IO, SSE, scaling patterns |
-| 20.10 | [API Design](20-backend/20.10-api-design/INDEX.md) | 6 | REST maturity, rate limiting algorithms, RFC 7807, webhooks, gRPC streaming |
-| 20.11 | [Event-Driven](20-backend/20.11-event-driven/INDEX.md) | 1 | Kafka, event sourcing, CQRS, DLQ |
-| 20.12 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
+| 20.9 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
 ### 📁 30-architecture — Architecture (58 files in 2 sub-stacks)
 
@@ -142,7 +139,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 ```text
 00-strategy   → Communication → Resume Tips → STAR Method → HR Questions
 10-frontend   → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
-20-backend    → Node.js → NestJS → REST API → Database → Caching → Auth & Security track → Microservices → Event-Driven → AI Engineering → GraphQL
+20-backend    → Node.js → NestJS → REST APIs → Database → Caching → Auth & Security track → Microservices & Distributed Patterns → AI Engineering → GraphQL
 30-architecture → Design Patterns (SOLID, GoF) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform   → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
 50-quality    → Testing → Accessibility → Performance Monitoring
@@ -184,7 +181,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 - **00-strategy** — [Communication](00-strategy/00.01-communication.md) · [Resume Tips](00-strategy/00.02-resume-tips.md) · [STAR Method](00-strategy/00.03-star-method.md) · [HR Questions](00-strategy/00.04-hr-questions.md)
 - **10-frontend** — [JavaScript](10-frontend/10.1-javascript/INDEX.md) · [TypeScript](10-frontend/10.2-typescript/INDEX.md) · [React](10-frontend/10.3-react/INDEX.md) · [Next.js](10-frontend/10.4-next.js/INDEX.md) · [Form Handling](10-frontend/10.5-form-handling/INDEX.md) · [Animation](10-frontend/10.6-animation/INDEX.md)
-- **20-backend** — [Node.js](20-backend/20.1-node.js/INDEX.md) · [NestJS](20-backend/20.2-nestjs/INDEX.md) · [REST APIs](20-backend/20.3-rest-apis/INDEX.md) · [Database](20-backend/20.4-database/INDEX.md) · [Auth & Security](20-backend/20.5-security/INDEX.md) · [Caching](20-backend/20.8-caching/INDEX.md) · [API Design](20-backend/20.10-api-design/INDEX.md) · [Microservices](20-backend/20.6-microservices/INDEX.md) · [GraphQL](20-backend/20.7-graphql/INDEX.md)
+- **20-backend** — [Node.js](20-backend/20.1-node.js/INDEX.md) · [NestJS](20-backend/20.2-nestjs/INDEX.md) · [REST APIs](20-backend/20.3-rest-apis/INDEX.md) · [Database](20-backend/20.4-database/INDEX.md) · [Auth & Security](20-backend/20.5-security/INDEX.md) · [Caching](20-backend/20.8-caching/INDEX.md) · [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) · [GraphQL](20-backend/20.7-graphql/INDEX.md)
 - **30-architecture** — [System Design](30-architecture/30.2-system-design/INDEX.md) · [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md)
 - **40-platform** — [Docker](40-platform/40.1-docker/INDEX.md) · [Kubernetes](40-platform/40.2-kubernetes/INDEX.md) · [CI/CD](40-platform/40.3-ci-cd/INDEX.md) · [Observability](40-platform/40.4-observability/INDEX.md) · [Build Tools](40-platform/40.5-build-tools/INDEX.md) · [Git Advanced](40-platform/40.6-git-advanced/INDEX.md) · [Serverless & Edge](40-platform/40.7-serverless-edge/INDEX.md) · [Monorepo](40-platform/40.8-monorepo/INDEX.md)
 - **50-quality** — [Testing](50-quality/50.1-testing/INDEX.md) · [Accessibility](50-quality/50.2-accessibility/INDEX.md) · [Performance Monitoring](50-quality/50.3-performance-monitoring/INDEX.md)

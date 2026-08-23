@@ -72,7 +72,7 @@ Main topic flow — each sub-stack builds on the previous:
 | Order | Topic | Flow inside |
 |---|---|---|
 | 2.2.1 | [REST fundamentals](20-backend/20.3-rest-apis/INDEX.md) | principles → methods/status codes → versioning → pagination → error handling → caching |
-| 2.2.2 | [API design advanced](20-backend/20.10-api-design/INDEX.md) | maturity model → rate limiting algorithms → RFC 7807 → webhooks → gRPC streaming |
+| 2.2.2 | [API design advanced](20-backend/20.3-rest-apis/INDEX.md) *(in REST APIs stack)* | maturity model → rate limiting algorithms → RFC 7807 → webhooks → gRPC streaming ([microservices](20-backend/20.6-microservices/20.6.16-grpc-streaming.md)) |
 | 2.2.3 | [GraphQL](20-backend/20.7-graphql/INDEX.md) *(if JD asks)* | schema design → resolvers → N+1/DataLoader → security |
 
 ### 2.3 Data
@@ -80,7 +80,7 @@ Main topic flow — each sub-stack builds on the previous:
 |---|---|---|
 | 2.3.1 | [PostgreSQL core](20-backend/20.4-database/INDEX.md) | normalization → indexes → transactions/MVCC → joins → execution plans → deadlocks |
 | 2.3.2 | [Postgres at scale](20-backend/20.4-database/INDEX.md) | connection pooling → replication → partitioning/sharding theory ([30.2 theory](30-architecture/30.2-system-design/00-theory/INDEX.md)) → performance |
-| 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/20.4.10-prisma.md) → [Prisma advanced](20-backend/20.4-database/20.4.19-prisma-advanced.md) → [Redis patterns](20-backend/20.4-database/20.4.16-redis.md) |
+| 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/20.4.10-prisma.md) → [Prisma advanced](20-backend/20.4-database/20.4.19-prisma-advanced.md) → [Redis fundamentals](20-backend/20.8-caching/20.8.03-redis-fundamentals.md) |
 | 2.3.4 | [Caching](20-backend/20.8-caching/INDEX.md) | cache-aside/write-through/write-behind → invalidation → stampede defense → advanced Redis |
 
 ### 2.4 🔐 Auth & Security — *the dedicated learning track*
@@ -101,7 +101,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | Order | Topic | Flow inside |
 |---|---|---|
 | 2.5.1 | [Microservices patterns](20-backend/20.6-microservices/INDEX.md) | gateway → discovery → saga → circuit breaker → Kafka/RabbitMQ → event sourcing/CQRS → idempotency |
-| 2.5.2 | [Event-driven](20-backend/20.11-event-driven/INDEX.md) | when events beat requests; outbox pattern; DLQ discipline |
+| 2.5.2 | [Event-driven & distributed patterns](20-backend/20.6-microservices/INDEX.md) | saga, circuit breaker, brokers, event-driven architecture, outbox/DLQ discipline |
 | 2.5.3 | [Infra patterns mirror](30-architecture/30.3-infra-patterns/INDEX.md) | retry/backoff, bulkhead, strangler fig, health checks, graceful shutdown |
 | 2.5.4 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WS vs SSE vs polling → scaling with pub/sub → presence |
 | 2.5.5 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) *(2025+ differentiator)* | LLM architecture (RAG/streaming/structured output) → prompts & evals → safety/cost governance — anchor with your Docita AI-kill-switch story |

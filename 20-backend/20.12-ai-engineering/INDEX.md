@@ -46,4 +46,4 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
 
 ## Navigation
 
-[← Previous: Event-Driven](../20.11-event-driven/INDEX.md) · [🏠 Back to Index](../../INDEX.md)
+[← Previous: Microservices](../20.6-microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md)

@@ -1,35 +1,47 @@
 # REST APIs — Index
 
-> **16 files** — API design patterns (REST vs GraphQL vs gRPC vs WebSocket vs Webhook) + REST API design principles, HTTP methods, status codes, versioning, pagination, authentication, rate limiting, CORS, API gateways, OpenAPI, error envelopes, HTTP caching, webhooks deep-dive, BFF (Backend for Frontend), and interview questions.
+> **18 files — everything HTTP/API, fundamentals through production.** Study in three passes: **I. Fundamentals** (principles → methods → status codes) → **II. Production concerns** (pagination, errors, rate limiting, webhooks, caching) → **III. Advanced** (maturity model, gateways, BFF, auth in context).
+>
+> Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 7807), pagination and webhooks live here once, at full depth.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-API-ff6b35)](#)
+[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Start with API design patterns** to pick the right API style for your use case, then dive into the REST-specific deep-dives.
+## The Flow
 
-| # | File | Topics |
-|---|------|--------|
-| 00 | [API Design Patterns](20.3.01-api-design-patterns.md) | REST, GraphQL, gRPC, WebSocket, Webhook, SSE — when to use which, trade-offs |
-| 01 | [REST Principles](20.3.02-rest-principles.md) | Resource-oriented design, HATEOAS, statelessness, idempotency |
-| 02 | [HTTP Methods](20.3.03-http-methods.md) | GET, POST, PUT, PATCH, DELETE, safe vs unsafe, idempotent methods |
-| 03 | [Status Codes](20.3.04-status-codes.md) | 2xx success, 3xx redirection, 4xx client errors, 5xx server errors |
-| 04 | [Versioning](20.3.05-versioning.md) | URI versioning, header versioning, content negotiation, best practices |
-| 05 | [Pagination](20.3.06-pagination.md) | Offset vs cursor pagination, page size, metadata, performance |
-| 06 | [Authentication](20.3.07-authentication.md) | Basic auth, API keys, JWT, OAuth2, session-based auth |
-| 07 | [Rate Limiting](20.3.08-rate-limiting.md) | Token bucket, leaky bucket, sliding window, distributed rate limiting |
-| 08 | [CORS](20.3.09-cors.md) | Preflight, headers, credentials, wildcard origins, proxy solutions |
-| 09 | [API Gateway](20.3.10-api-gateway.md) | Gateway patterns, aggregation, routing, authentication, throttling |
-| 11 | [OpenAPI / Swagger](20.3.11-openapi-swagger.md) | OpenAPI spec, Swagger UI, client gen, contract testing, @nestjs/swagger |
-| 12 | [Error Handling & Response Design](20.3.12-error-handling-design.md) | RFC 7807 problem details, error envelopes, requestId, retry-after |
-| 13 | [HTTP Caching](20.3.13-http-caching.md) | Cache-Control, ETag, Last-Modified, Vary, stale-while-revalidate |
-| 14 | [Interview Questions](20.3.14-interview-questions.md) | 50+ curated questions with answers |
-| 15 | [Webhooks](20.3.15-webhooks.md) | HMAC signature, idempotency, retry with exponential backoff, async processing, delivery dashboards, per-endpoint secrets |
-| 16 | [BFF (Backend for Frontend)](20.3.16-bff.md) | Per-client API service, payload shaping, aggregation, client-specific auth, GraphQL as BFF, what does NOT go in a BFF |
+```text
+PASS I — FUNDAMENTALS              PASS II — PRODUCTION                PASS III — ADVANCED
+02 principles  →  03 methods  →    06 pagination    →  08 rate limiting  →   17 maturity model
+04 status codes                    12 error handling     13 HTTP caching       10 API gateway
+01 design patterns                 15 webhooks           09 CORS               16 BFF
+                                   11 OpenAPI                                  07 authentication
+```
+
+| Pass | # | File | Topics |
+|---|---|------|--------|
+| I | 01 | [API Design Patterns](20.3.01-api-design-patterns.md) | Resource naming, consistency, evolution |
+| I | 02 | [REST Principles](20.3.02-rest-principles.md) | Stateless, uniform interface, constraints |
+| I | 03 | [HTTP Methods](20.3.03-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency |
+| I | 04 | [Status Codes](20.3.04-status-codes.md) | 2xx/4xx/5xx families, when to use which |
+| I | 05 | [Versioning](20.3.05-versioning.md) | URL vs header vs query, deprecation policy |
+| II | 06 | [Pagination](20.3.06-pagination.md) | Offset vs cursor vs keyset — deep dive |
+| II | 07 | [Authentication](20.3.07-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/auth/INDEX.md) |
+| II | 08 | [Rate Limiting](20.3.08-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits |
+| II | 09 | [CORS](20.3.09-cors.md) | Preflight, headers, credentials |
+| II | 10 | [Error Handling Design](20.3.12-error-handling-design.md) | RFC 7807 problem details, validation errors |
+| II | 11 | [Webhooks](20.3.15-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency |
+| II | 12 | [HTTP Caching](20.3.13-http-caching.md) | ETags, Cache-Control, revalidation |
+| III | 13 | [REST Maturity Model](20.3.17-rest-maturity-model.md) | Richardson L0–L3, HATEOAS |
+| III | 14 | [OpenAPI / Swagger](20.3.11-openapi-swagger.md) | Spec-first design, codegen |
+| III | 15 | [API Gateway](20.3.10-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) |
+| III | 16 | [BFF](20.3.16-bff.md) | Backend-for-frontend pattern |
+| 🎤 | 17 | [Interview Questions](20.3.14-interview-questions.md) | Curated Q&A |
 
 ---
 
-**Cross-references:** [NestJS](../20.2-nestjs/INDEX.md) | [Security (JWT/OAuth)](../20.5-security/INDEX.md) | [System Design](../../30-architecture/30.2-system-design/INDEX.md) | [Microservices (API Gateway)](../20.6-microservices/INDEX.md)
+**Cross-references:** [Auth track](../20.5-security/auth/INDEX.md) · [Microservices & distributed patterns](../20.6-microservices/INDEX.md) · [Caching](../20.8-caching/INDEX.md)
+
 ---
 
 ## Navigation

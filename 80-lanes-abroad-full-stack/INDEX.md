@@ -2,7 +2,7 @@
 
 > **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like LiveEO, Snke, MVST, n8n, SumUp, Scalable Capital, Tanso. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
-[![Files](https://img.shields.io/badge/files-33-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-35-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -341,6 +341,7 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep ordered by current target priority: **LiveEO** (satellite analytics — verified stack/process), **Snke** (Brainlab-spin-off hospital platform), **MVST** (digital product studio — corrected profile), plus Redcare, Tanso, n8n. Verified talking points, likely questions, questions-to-ask per company. | Read before each interview; pair with the domain primer |
 | 33 | [Weekly Study Tracker](80.33-weekly-study-tracker.md) | 4-week daily checklist with time tracking, progress metrics, mock interview scores, story practice, and company applications. | Print and check off daily, review progress every Sunday |
 | 34 | [Germany Target Domain Primer](80.34-germany-target-domain-primer.md) | Domain fluency for the target cluster: healthtech (MDR vs certified, FHIR/DICOM/HL7, gematik/TI/ePA, hospital IT landscape) and geospatial (PostGIS patterns, COG/STAC/tiles, change-detection pipeline drill) — plus a Docita→domain mapping table and night-before glossary. | Study alongside company sheets for LiveEO/Snke/MVST interviews |
+| 35 | [Germany Target Engine](80.35-germany-target-engine.md) | Status-aware Munich-first (+Berlin) pipeline: ATS auto-rejection diagnosis + fixes shipped to the resume, new English-speaking targets (NavVis ⭐, Konux, DeepOpinion, Helsing…), weekly operating loop with career-ops, DM skeletons, and funnel metrics. | Review every Sunday; update status tables |
 
 ---
 

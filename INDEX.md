@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
-[![Files](https://img.shields.io/badge/files-550-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Files](https://img.shields.io/badge/files-532-orange)](#-the-7-study-stacks-shared-by-both-lanes)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -122,11 +122,11 @@ The technical material is grouped by **what you're studying**, not by which inte
 |-----------|------:|--------|
 | [WebSockets](60-realtime/60.1-websockets/INDEX.md) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
-### Interview Toolkit (27 files in 3 sub-stacks)
+### Interview Toolkit (25 files in 3 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
-| [Behavioral](70-interview-toolkit/70.1-behavioral/INDEX.md) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
+| [Behavioral](70-interview-toolkit/70.1-behavioral/INDEX.md) | 2 | Leadership questions, system-design behavioral (STAR + HR basics live in [00-strategy](00-strategy/INDEX.md)) |
 | [Coding Patterns](70-interview-toolkit/70.2-coding-patterns/INDEX.md) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
 | [Cheat Sheets](70-interview-toolkit/70.3-cheatsheets/INDEX.md) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
 

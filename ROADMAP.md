@@ -97,14 +97,13 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 🛡️ | Hardening: [headers/CSP](20-backend/20.5-security/20.5.09-web-security.md) · [STRIDE](20-backend/20.5-security/20.5.10-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/20.5.11-secrets-management.md) | threat-model any feature in 5 min |
 | 🎤 | Drill: [auth Q&A](20-backend/20.5-security/auth/interview-questions.md) + [full bank](20-backend/20.5-security/20.5.13-interview-questions.md) | survive the follow-up traps |
 
-### 2.5 Distributed backend
+### 2.5 Distributed backend & ops patterns
 | Order | Topic | Flow inside |
 |---|---|---|
-| 2.5.1 | [Microservices patterns](20-backend/20.6-microservices/INDEX.md) | gateway → discovery → saga → circuit breaker → Kafka/RabbitMQ → event sourcing/CQRS → idempotency |
-| 2.5.2 | [Event-driven & distributed patterns](20-backend/20.6-microservices/INDEX.md) | saga, circuit breaker, brokers, event-driven architecture, outbox/DLQ discipline |
-| 2.5.3 | [Infra patterns mirror](30-architecture/30.3-infra-patterns/INDEX.md) | retry/backoff, bulkhead, strangler fig, health checks, graceful shutdown |
-| 2.5.4 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WS vs SSE vs polling → scaling with pub/sub → presence |
-| 2.5.5 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) *(2025+ differentiator)* | LLM architecture (RAG/streaming/structured output) → prompts & evals → safety/cost governance — anchor with your Docita AI-kill-switch story |
+| 2.5.1 | [Microservices & distributed patterns](20-backend/20.6-microservices/INDEX.md) | foundations (discovery/gateway/gRPC) → data patterns (event sourcing/CQRS/saga/distributed txns) → resilience (circuit breaker/bulkhead/mesh) → messaging (Kafka/RabbitMQ/DLQ/event-driven architecture) |
+| 2.5.2 | [Ops patterns](30-architecture/30.3-infra-patterns/INDEX.md) | retries/backoff → idempotency keys → health checks/graceful shutdown → leader election → zero-downtime deploys |
+| 2.5.3 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WS vs SSE vs polling → scaling with pub/sub → presence |
+| 2.5.4 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) *(2025+ differentiator)* | LLM architecture (RAG/streaming/structured output) → prompts & evals → safety/cost governance — anchor with your Docita AI-kill-switch story |
 
 **Checkpoint 2:** Whiteboard "design the auth for a multi-tenant SaaS" in 10 min using only the trade-off tables; explain MVCC + one deadlock you've debugged; pick pagination strategy for a cursor-per-feed and defend it.
 
@@ -171,8 +170,9 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 1. [Take-home playbook](80-lanes-abroad-full-stack/80.01-take-home-playbook.md) → ship one practice build ([starter prompt](80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md))
 2. [System design EU patterns](80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md) + [case bank](80-lanes-abroad-full-stack/80.08-system-design-case-bank.md)
 3. **Target cluster (Germany): LiveEO · Snke · MVST** → [company prep sheets](80-lanes-abroad-full-stack/80.32-company-prep-sheets.md) + [domain primer: healthtech & geospatial](80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md)
-4. Target-company packs: **Docita** → [resume defense](80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) · [evidence pack](80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) · [Google-level bank](80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) · [topic mapping](80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md)
-5. Logistics: [comp benchmarking](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md) · [visa playbook](80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md)
+4. **Weekly operating loop + application pipeline** → [Germany Target Engine](80-lanes-abroad-full-stack/80.35-germany-target-engine.md)
+5. Target-company packs: **Docita** → [resume defense](80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) · [evidence pack](80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) · [Google-level bank](80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) · [topic mapping](80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md)
+6. Logistics: [comp benchmarking](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md) · [visa playbook](80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md)
 
 ### FAANG lane → [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md)
 1. [Complete guide](81-lanes-indian-sde-faang/81.01-complete-guide.md) → [LeetCode study plan](81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md) (daily, from Week 3 onward really)
@@ -231,8 +231,40 @@ Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-s
 
 ---
 
+## Where Everything Lives (final structure)
+
+```text
+software-developer-bible/
+├── ROADMAP.md                  ← you are here
+├── INDEX.md                    ← every file, one list
+├── 00-strategy/                ← resume · STAR · HR · communication
+├── 10-frontend/                ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
+├── 20-backend/                 ← 9 sub-stacks, zero duplication:
+│   ├── 20.1-node.js              runtime internals
+│   ├── 20.2-nestjs               framework
+│   ├── 20.3-rest-apis            ALL of HTTP/APIs (fundamentals → production → advanced)
+│   ├── 20.4-database             Postgres + Prisma (Redis lives in caching)
+│   ├── 20.5-security/auth/       ★ the auth learning track
+│   ├── 20.6-microservices        ★ single home for distributed patterns (+ event-driven, gRPC streaming)
+│   ├── 20.7-graphql
+│   ├── 20.8-caching              cache patterns + Redis fundamentals + advanced Redis
+│   └── 20.12-ai-engineering      LLM architecture · evals · governance
+├── 30-architecture/
+│   ├── 30.1-design-patterns
+│   ├── 30.2-system-design/       00-theory + 10-case-studies
+│   └── 30.3-infra-patterns/      ops-only: retries, idempotency, health checks…
+├── 40-platform/                ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
+├── 50-quality/                 ← testing · a11y · performance · production engineering
+├── 60-realtime/                ← WebSockets/SSE (the only realtime home)
+├── 70-interview-toolkit/       ← coding patterns (18) · behavioral depth · cheat sheets
+├── 80-lanes-abroad-full-stack/ ← EU lane: playbooks · Docita pack · Germany cluster
+└── 81-lanes-indian-sde-faang/  ← FAANG lane
+```
+
+---
+
 ## Navigation
 
 [🏠 INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG](81-lanes-indian-sde-faang/INDEX.md)
 
-*Last updated: August 2026*
+*Last updated: August 2026 — post-deduplication: every topic lives in exactly one place.*

@@ -4,7 +4,7 @@
 
 | Section | Files | Topics |
 |---------|------:|--------|
-| [Behavioral](70.1-behavioral/INDEX.md) | 4 | STAR method, HR questions, leadership questions, system design behavioral |
+| [Behavioral](70.1-behavioral/INDEX.md) | 2 | Leadership questions, system-design behavioral (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
 | [Coding-Patterns](70.2-coding-patterns/INDEX.md) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
 | [CheatSheets](70.3-cheatsheets/INDEX.md) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
 

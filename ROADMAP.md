@@ -169,7 +169,7 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 ### Abroad/EU lane → [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md)
 1. [Take-home playbook](80-lanes-abroad-full-stack/80.01-take-home-playbook.md) → ship one practice build ([starter prompt](80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md))
 2. [System design EU patterns](80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md) + [case bank](80-lanes-abroad-full-stack/80.08-system-design-case-bank.md)
-3. Company prep: [profiles](80-lanes-abroad-full-stack/80.07-company-profiles.md) · [prep sheets](80-lanes-abroad-full-stack/80.32-company-prep-sheets.md)
+3. **Target cluster (Germany): LiveEO · Snke · MVST** → [company prep sheets](80-lanes-abroad-full-stack/80.32-company-prep-sheets.md) + [domain primer: healthtech & geospatial](80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md)
 4. Target-company packs: **Docita** → [resume defense](80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) · [evidence pack](80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) · [Google-level bank](80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) · [topic mapping](80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md)
 5. Logistics: [comp benchmarking](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md) · [visa playbook](80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md)
 

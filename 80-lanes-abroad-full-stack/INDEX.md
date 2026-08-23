@@ -1,6 +1,6 @@
 # Abroad Full-Stack Lane — The Complete Reference
 
-> **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like n8n, SumUp, Scalable Capital, sennder, THRYVE, Langfuse, Peter Park, Hostaway, GoGlobal. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
+> **For senior full-stack engineers (5+ YoE) targeting mid-stage EU / non-Indian startups** — companies like LiveEO, Snke, MVST, n8n, SumUp, Scalable Capital, Tanso. Take-home + system design + behavioral heavy. **No LeetCode grinding.** 4-6 week realistic prep, 50-55 hours total.
 
 [![Files](https://img.shields.io/badge/files-33-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
@@ -27,7 +27,7 @@
 
 | If you are targeting... | Use this lane (80)? | Or use Indian SDE (81)? |
 |--------------------------|:-------------------:|:----------------------:|
-| **EU / non-Indian mid-stage startups** (n8n, SumUp, Scalable, sennder, THRYVE, Peter Park, Hostaway, GoGlobal) | ✅ **primary** | — |
+| **EU / non-Indian mid-stage startups** (LiveEO, Snke, MVST, n8n, SumUp, Scalable, Tanso) | ✅ **primary** | — |
 | **Remote-first US companies** (Stripe, Linear, Vercel, Supabase, Resend, Clerk) | ✅ **primary** | — |
 | **EU Big Tech** (Booking.com, Spotify, Klarna, Truecaller) | ✅ **primary + secondary** | use 81 too for the DSA signal |
 | **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | secondary | ✅ **primary** |
@@ -338,8 +338,9 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 29 | [Topic Brushup Roadmap](80.29-topic-brushup-roadmap.md) | 30-day systematic brushup of every section: Week 1 (Frontend), Week 2 (Backend), Week 3 (Architecture + Platform), Week 4 (Quality + Toolkit). 165+ files, daily checkboxes, progress tracker. | Covers all 512 files across 7 sections (10-frontend through 80-lanes) |
 | 30 | [Mock Interview Script](80.30-mock-interview-script.md) | 10 high-impact questions with timing, scoring rubric, and follow-up probes. Covers system design, PostgreSQL, caching, Kafka, security, API design, observability, testing, and behavioral. | Record yourself, score 1-5, retake until 45/50 |
 | 31 | [Salary Negotiation Guide](80.31-salary-negotiation-guide.md) | German tech salary ranges by tier, Blue Card thresholds, total comp breakdown, counter-offer scripts, relocation negotiation, contract tips. | €80K-€130K senior range, 10-20% above first offer, negotiate via phone |
-| 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep for top 5 targets: Redcare, MVST, LiveEO, Tanso, n8n. Stack, likely questions, talking points, questions to ask. | Read before each interview, know their stack and challenges |
+| 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep ordered by current target priority: **LiveEO** (satellite analytics — verified stack/process), **Snke** (Brainlab-spin-off hospital platform), **MVST** (digital product studio — corrected profile), plus Redcare, Tanso, n8n. Verified talking points, likely questions, questions-to-ask per company. | Read before each interview; pair with the domain primer |
 | 33 | [Weekly Study Tracker](80.33-weekly-study-tracker.md) | 4-week daily checklist with time tracking, progress metrics, mock interview scores, story practice, and company applications. | Print and check off daily, review progress every Sunday |
+| 34 | [Germany Target Domain Primer](80.34-germany-target-domain-primer.md) | Domain fluency for the target cluster: healthtech (MDR vs certified, FHIR/DICOM/HL7, gematik/TI/ePA, hospital IT landscape) and geospatial (PostGIS patterns, COG/STAC/tiles, change-detection pipeline drill) — plus a Docita→domain mapping table and night-before glossary. | Study alongside company sheets for LiveEO/Snke/MVST interviews |
 
 ---
 

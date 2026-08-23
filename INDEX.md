@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
-[![Files](https://img.shields.io/badge/files-540+-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Files](https://img.shields.io/badge/files-550-orange)](#-the-7-study-stacks-shared-by-both-lanes)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---

@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-542-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-550-orange)](INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -110,4 +110,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: August 2026 — 542 files, 287K+ lines, 0 broken links*
+*Last updated: August 2026 — 550 files, 289K+ lines, 0 broken links*

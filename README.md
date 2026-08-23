@@ -78,7 +78,7 @@ Every content file follows a consistent structure:
 ## References & Learn More   ← External links
 ```
 
-Interview questions live in dedicated `*-interview-questions.md` files (27 files across all stacks).
+Interview questions live in dedicated `*-interview-questions.md` files (29 across all stacks).
 
 ---
 

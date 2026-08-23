@@ -9,7 +9,7 @@
 | [20.10.03-error-handling.md](20.10.03-error-handling.md) | RFC 7807 problem details, NestJS exception filter, validation errors, PHI-safe error messages, batch operation errors |
 | [20.10.04-pagination.md](20.10.04-pagination.md) | Offset vs cursor vs keyset pagination, infinite scroll with React Query, virtual scrolling |
 | [20.10.05-webhooks.md](20.10.05-webhooks.md) | Webhook registration, delivery, HMAC signature verification, retry with backoff, DLQ, idempotency |
-| [20.10.08-grpc-streaming.md](20.10.08-grpc-streaming.md) | gRPC streaming modes, Protocol Buffers, gRPC-Web, when to use gRPC vs REST |
+| [20.10.06-grpc-streaming.md](20.10.06-grpc-streaming.md) | gRPC streaming modes, Protocol Buffers, gRPC-Web, when to use gRPC vs REST |
 
 ---
 

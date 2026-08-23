@@ -5,6 +5,8 @@
 
 # OAuth 2.0 & OpenID Connect
 
+> 📍 Stage 3 of the [Auth Learning Track](INDEX.md) — prev: [JWT](jwt.md) · next: [RBAC/ABAC](rbac-abac.md)
+
 > **TL;DR:** OAuth 2.0 is the delegated authorization framework, and OpenID Connect is its identity layer on top. Senior engineers know the four grant types, when to use PKCE, how to store refresh tokens safely, and the difference between authorization and authentication.
 >
 > **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
@@ -501,8 +503,8 @@ OAuth 2.0 is the standard framework for delegated authorization, enabling secure
 ---
 
 ## See Also
-- [REST APIs](../20.3-rest-apis/INDEX.md)
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- [REST APIs](../../20.3-rest-apis/INDEX.md)
+- [System Design](../../../30-architecture/30.2-system-design/INDEX.md)
 
 ## References & Learn More
 

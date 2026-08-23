@@ -5,6 +5,8 @@
 
 # JWT (JSON Web Tokens)
 
+> 📍 Stage 2 of the [Auth Learning Track](INDEX.md) — prev: [Sessions & Cookies](sessions-cookies.md) · next: [OAuth2/OIDC](oauth2-oidc.md)
+
 > **TL;DR:** JWT is a compact, signed token format (header.payload.signature) used for stateless authentication across services. Senior engineers know the alg=none footgun, the difference between access and refresh tokens, JTI-based revocation, and why JWTs should never hold sensitive PII.
 >
 > **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
@@ -357,8 +359,8 @@ JWT is a powerful stateless authentication mechanism that enables scalable, deco
 ---
 
 ## See Also
-- [REST APIs](../20.3-rest-apis/INDEX.md)
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- [REST APIs](../../20.3-rest-apis/INDEX.md)
+- [System Design](../../../30-architecture/30.2-system-design/INDEX.md)
 
 ## References & Learn More
 

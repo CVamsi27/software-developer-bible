@@ -1,0 +1,290 @@
+<!-- section: Security/Auth | category: Interview | tags: interview-questions -->
+[![Section](https://img.shields.io/badge/section-Auth-blue)](INDEX.md)
+[![Category](https://img.shields.io/badge/category-Interview-red)](#)
+[![Tags](https://img.shields.io/badge/tags-interview--questions-orange)](#)
+
+# Auth Interview Questions — 40+ With Follow-Up Traps
+
+> **Format:** Question → 30-second answer → ⚡ follow-up traps interviewers actually fire. Ordered by [auth track stage](INDEX.md). Survive the traps = senior-ready on auth.
+>
+> Full security bank (attacks, headers, OWASP API Top 10): [20.5.13-interview-questions.md](../20.5.13-interview-questions.md)
+
+---
+
+## Stage 0 — Fundamentals
+
+### Q1. "What's the difference between authentication and authorization?"
+
+**30-sec:** Authentication proves identity ("who are you"); authorization decides permissions ("what may you do"). They fail differently: AuthN failures → 401, AuthZ failures → 403. In code they live in different layers — credential verification at login vs policy checks per request.
+
+⚡ *Traps:* "Where does a JWT fit?" (an AuthN artifact whose claims feed AuthZ). "Can you have AuthZ without AuthN?" (anonymous roles = implicit identity; still deny-by-default).
+
+### Q2. "Why bcrypt/Argon2 over SHA-256 for passwords?"
+
+**30-sec:** SHA-256 is designed to be fast; password storage needs slow. GPUs compute billions of SHA-256 hashes/sec, so leaked fast-hashes crack offline in hours. Argon2id/bcrypt add configurable memory/time cost, dropping attacker throughput by ~6 orders of magnitude.
+
+⚡ *Traps:* "Which parameters do you tune?" (Argon2id: memory≈64MB, time≈3 — benchmark to ~250ms on your hardware). "Upgrade params without resetting passwords?" (store params beside hash; rehash-on-login).
+
+### Q3. "Pick the primitive: password storage / PHI columns / webhook payload."
+
+**30-sec:** Passwords → hashing (verify-only). PHI at rest → encryption (AES-GCM; need plaintext back). Webhooks → signing (HMAC-SHA256 over raw body; receiver verifies origin + integrity).
+
+⚡ *Traps:* "Why GCM over CBC?" (authenticated encryption — tamper detection built-in). "Why sign the raw body?" (framework re-serialization changes bytes → signature mismatch or bypass).
+
+---
+
+## Stage 1 — Sessions
+
+### Q4. "Walk me through session-based auth end-to-end."
+
+**30-sec:** Login verifies credentials → server stores session (Redis/DB) keyed by random 256-bit ID → `Set-Cookie: sid=…; HttpOnly; Secure; SameSite=Lax` → each request carries cookie → middleware loads session → logout deletes record so the ID dies instantly.
+
+⚡ *Traps:* "Redis restarts — what happens?" (persist sessions or accept re-login wave; never silently drop). "Sticky sessions vs shared store?" (shared store for horizontal scale; sticky is a smell).
+
+### Q5. "Explain every cookie flag and the attack it stops."
+
+**30-sec:** `HttpOnly` blocks JS reads (XSS theft); `Secure` HTTPS-only (MITM sniffing); `SameSite=Strict/Lax` governs cross-site sending (CSRF); `Domain/Path` scope (subdomain injection); `Max-Age` lifetime (long-lived stolen cookies).
+
+⚡ *Traps:* "Does SameSite=Lax stop all CSRF?" (No — top-level GET navigations still send it; state-changing GETs remain dangerous). "Strict downsides?" (breaks OAuth redirects/email links — pair with anti-CSRF tokens instead).
+
+### Q6. "How do you prevent session fixation and hijacking?"
+
+**30-sec:** Fixation — attacker plants a known session ID pre-login: rotate the ID at login, only accept server-issued IDs. Hijacking — stolen cookie: HttpOnly+Secure, idle + absolute timeouts, re-auth for sensitive ops, device/IP change signals.
+
+⚡ *Traps:* "Users complain about daily logouts — what do you trade?" (idle timeout length vs risk; sliding expiration).
+
+### Q7. "Sessions vs JWT — when do you choose which?"
+
+**30-sec:** Sessions when instant revocation matters (banking/admin) and requests hit your backend anyway. Stateless JWTs when scale-out beats revocation (M2M, public APIs) — zero store lookups. Default modern answer: hybrid — short access JWT + rotating refresh token.
+
+⚡ *Traps:* "Compromised account stays valid 14 minutes — options?" (denylist w/ short TTL ≈ reintroducing state; very short access TTL; refresh-family revocation; JWKS rotation kill-switch).
+
+---
+
+## Stage 2 — Tokens / JWT
+
+### Q8. "Anatomy of a JWT?"
+
+**30-sec:** Three base64url segments: header (`alg`, `kid`), payload (registered claims `iss/sub/aud/exp/iat/nbf/jti` + custom), signature over `header.payload`. Payload is encoded, not encrypted — anyone can read it. Any tamper breaks the signature.
+
+⚡ *Traps:* "`alg:none` attack?" (verifier pins allowed algorithms; never trust the header). "HS256 vs RS256?" (shared secret OK single-service; RS256+JWKS for many verifiers/rotation). "Sensitive claims?" (no — JWE or server-side references).
+
+### Q9. "JWTs can't be revoked — mitigations?"
+
+**30-sec:** Design around it: short expiry bounds blast radius; refresh rotation with family revocation kills stolen chains; `jti` denylist only as bounded emergency brake; `tokenVersion` claim checked on sensitive routes; JWKS rotation for catastrophe.
+
+⚡ *Traps:* "Isn't a denylist just sessions again?" (yes-ish — lookup only on sensitive paths, TTL bounded by expiry, happy path stays stateless).
+
+### Q10. "Design refresh-token rotation. What breaks without reuse detection?"
+
+**30-sec:** Refresh tokens are single-use: issue new pair, store `SHA256(new)` as `replacedBy` on old, atomic conditional update wins races. Presenting an already-rotated token = replay of a stolen chain → revoke the entire token family from that login.
+
+⚡ *Traps:* "Why store hash not raw?" (DB leak ≠ usable tokens). "Two tabs race the refresh?" (conditional update counting rows; loser gets 409 and retries with the winner's token). "SPA vs mobile storage?" (httpOnly same-site cookie vs secure keystore).
+
+### Q11. "Where do tokens live in a browser?"
+
+**30-sec:** Access token: memory (XSS exposure window minimized) or HttpOnly cookie. Refresh: HttpOnly Secure SameSite cookie scoped to the refresh endpoint path. Never localStorage for refresh — one XSS exfiltrates its whole lifetime.
+
+⚡ *Traps:* "Cookie brings CSRF back?" (SameSite + double-submit CSRF tokens; or same-origin proxy so the browser never speaks cross-origin to the API). "Silent refresh across reloads?"
+
+---
+
+## Stage 3 — OAuth2 / OIDC
+
+### Q12. "OAuth 2.0 vs OpenID Connect — one sentence each."
+
+**30-sec:** OAuth 2.0 delegates *authorization* — an app gets limited access to resources without credentials. OIDC layers *identity* on top — adds a signed ID token + `/userinfo` so clients learn who logged in.
+
+⚡ *Traps:* "'Login with Google' uses which?" (OIDC — identity is required). "Can OAuth alone authenticate?" (pseudo-auth hacks deprecated; that's why OIDC exists).
+
+### Q13. "Name the grants and when each is legal."
+
+**30-sec:** Authorization Code (+PKCE): user-facing web/mobile — the default. Client Credentials: M2M, no user. Resource Owner Password: legacy, discouraged. Implicit: dead (tokens in fragment); replaced by code+PKCE. Device Code: TVs/consoles.
+
+⚡ *Traps:* "Why did Implicit die?" (tokens exposed in history/referrer; no refresh; no PKCE). "BFF pattern?" (backend holds tokens; browser sees opaque session cookie).
+
+### Q14. "What does PKCE actually solve?"
+
+**30-sec:** Public clients can't keep secrets, so an intercepted authorization *code* could be exchanged by anyone. PKCE binds exchange to requestor: send `code_challenge` upfront, exchange needs the original random `code_verifier`. Stolen code alone is useless.
+
+⚡ *Traps:* "Confidential clients too?" (recommended everywhere now — defense against redirect/code interception). "`state` parameter role?" (CSRF protection of the redirect itself).
+
+### Q15. "Design 'Sign in with X' end-to-end."
+
+**30-sec:** Redirect to IdP `/authorize` with state+PKCE → callback gets code → server exchanges it (secret never leaves server) → validate ID token (JWKS signature, `iss`, `aud`, `exp`, `nonce`) → find-or-create user by stable `sub` → issue own session/tokens. Never key accounts off unverified email alone.
+
+⚡ *Traps:* "Account-linking attack via attacker's verified email?" (link only after re-auth/verification). "IdP outage?" (cached JWKS, graceful degradation, secondary provider).
+
+### Q16. "Enterprise wants SSO with their Azure AD — what changes?"
+
+**30-sec:** Same OIDC flow plus: tenant-scoped issuer validation, group/role claims mapped into RBAC, possibly SAML for legacy, SCIM for provisioning/deprovisioning lifecycle, per-tenant IdP config stored server-side.
+
+⚡ *Traps:* "Offboarding delay risk?" (SCIM deprovisioning, short session lifetimes, token versioning). "SAML vs OIDC when both offered?" (prefer OIDC; SAML only for compat).
+
+### Q17. "Passkeys/WebAuthn — how do they work and will they replace passwords?"
+
+**30-sec:** Asymmetric key pairs bound to origin: server stores public key; login is a challenge signed inside the platform authenticator. Phishing-resistant because browsers enforce origin binding. Reality: hybrid era — passkeys primary, passwords fallback; recovery design is the hard part.
+
+⚡ *Traps:* "Multi-device?" (cloud keychain sync). "Lost device recovery?" (recovery codes + support re-enrollment with identity proofing).
+
+---
+
+## Stage 4 — Authorization
+
+### Q18. "RBAC vs ABAC vs ReBAC — pick for a hospital system."
+
+**30-sec:** RBAC maps role→permissions (coarse). ABAC evaluates subject/resource/environment attributes (fine-grained: doctor views patient *if assigned*, same clinic). ReBAC models relationship graphs (Zanzibar-style). Hospital answer: RBAC base + ABAC layer for assignment & tenancy — what regulated multi-tenant systems converge on.
+
+⚡ *Traps:* "Role explosion example?" (region×product×env matrix → hundreds of roles → switch dimensionality to attributes). "Where are policies evaluated?" (central engine/guard, deny-by-default, unit-tested like code).
+
+### Q19. "Scopes vs roles vs permissions — untangle them."
+
+**30-sec:** Scopes: what the client app may do on behalf of users (delegated/OAuth world). Roles: coarse grouping within your system. Permissions: atomic actions (`patient:write`) that roles bundle. Enforce on permissions/policies, not just role names; keep tokens minimal.
+
+⚡ *Traps:* "Embed full permission array in the JWT?" (bloat + staleness between issues; carry role+version, expand server-side).
+
+### Q20. "A receptionist replays an API call touching another clinic's patient. Which layers catch it?"
+
+**30-sec:** Defense in depth: route guard authenticates → role guard confirms staff → policy guard compares resource clinic vs token clinic → deny → even if app logic bugs exist, data-layer tenant scoping (interceptor/RLS) makes the row invisible. Audit log records it either way.
+
+⚡ *Traps:* "Keep only one layer — which?" (data-level tenancy: last line of defense). "How tested?" (seeded two-clinic E2E asserting cross-denial).
+
+### Q21. "Design authorization across 200 microservices."
+
+**30-sec:** Centralize decision, distribute enforcement: policy decision point with versioned policies; PEP SDK/guard in every service caches decisions; signed-JWT identity propagation; deny-by-default; audited break-glass; policies tested in CI like code.
+
+⚡ *Traps:* "Central check latency?" (cache decisions keyed on policy version; invalidate on deploy). "Policy ownership?" (teams author, security reviews, platform tooling).
+
+---
+
+## Cross-Cutting & System-Design Variants
+
+### Q22. "Design auth for a multi-tenant SaaS from scratch." *(whiteboard, 10 min)*
+
+**Skeleton:** Shared DB with `tenant_id` → login resolves user+tenant → JWT carries `tenantId`/role → per-request tenant context (interceptor + AsyncLocalStorage) → every query auto-scoped → Postgres RLS as database backstop → admin cross-tenant access only via explicit audited elevation → MFA + append-only audit for regulated verticals.
+
+⚡ *Traps:* "Token says tenant A, URL says tenant B?" (trust the token; 403 on mismatch — confused-deputy defense). "Cross-tenant cache poisoning?" (cache keys include tenant; never share object keys).
+
+### Q23. "Add MFA to an existing password system with zero downtime."
+
+**30-sec:** Opt-in TOTP enrollment → step-up challenges on risk signals (new device/IP/sensitive action) instead of forcing everyone day one → encrypted secret storage, hashed recovery codes → ratchet rollout: announce → require at next login → enforce.
+
+⚡ *Traps:* "TOTP vs SMS?" (SIM-swap kills SMS; prefer TOTP/WebAuthn). "Lost device?" (hashed recovery codes; support re-enrollment with identity proofing).
+
+### Q24. "API keys vs JWT vs OAuth — third-party devs want programmatic access."
+
+**30-sec:** Trusted server-to-server: API keys (hashed at rest, scoped, rotatable) or client-credentials OAuth when semantics matter. Acting on behalf of *their users*: authorization-code flow. Keys = simple revocation, no user attribution — choose by attribution needs.
+
+⚡ *Traps:* "Key leaks to GitHub?" (secret scanning, immediate rotation story, scopes+rate limits bound the blast radius).
+
+### Q25. "p99 login latency spiked after a marketing campaign. Debug it."
+
+**30-sec:** Login is uniquely expensive — Argon2 is CPU-bound by design. Suspects: login storm saturating CPU → throttle/queue + dedicated pool; external breached-password check latency → timeout+cache; lockout-write contention; cold pools. Instrument per-phase histograms (verify / external / session write).
+
+⚡ *Traps:* "Lower Argon2 cost?" (never to fix perf — scale horizontally or queue; security budget is non-negotiable).
+
+### Q26. "`POST /login` millisecond by millisecond?"
+
+**Skeleton:** TLS termination → rate-limit gate → indexed user lookup → Argon2 verify (~100–300ms deliberate) → MFA check → optional breach-list check → issue session/token pair (+rotation record) → audit append → Set-Cookie. Name each control's layer and failure mode.
+
+### Q27. "What's wrong with `localStorage.setItem('jwt', token)` in an SPA?"
+
+**30-sec:** Any XSS reads it and exfiltrates — full takeover beyond page lifetime. Prefer httpOnly cookie transport (accepting CSRF work) or memory-only access + silent refresh. Bonus problems: no expiry handling, devtools exposure, no rotation.
+
+⚡ *Traps:* "Backend is separate-origin — cookies 'won't work'?" (same-origin proxy/BFF; or SameSite=None+Secure with strict CORS allowlist + CSRF tokens).
+
+### Q28. "401 vs 403 — precisely."
+
+**30-sec:** 401 Unauthenticated: who are you? (missing/invalid/expired credentials; include `WWW-Authenticate`). 403 Forbidden: I know you; you can't do that. To hide a resource's existence from enumeration, return 404 instead of 403.
+
+⚡ *Traps:* "Expired-but-validly-signed token?" (401; discuss clock-skew tolerance policy).
+
+### Q29. "How do you test auth?"
+
+**30-sec:** Policy functions exhaustively unit-tested (role × action × state matrix). Pipeline integration tests: valid/invalid/expired/tampered tokens, cross-tenant denial, refresh replay → family revocation. E2E browser flows incl. MFA step-up. Load-test expensive crypto path. Security regression suite in CI with injected fake clock for exp/nbf windows.
+
+### Q30. "Login rate limiting vs global API rate limiting — differences?"
+
+**30-sec:** Two dimensions: per-IP (botnets rotate IPs — add CAPTCHA/MFA step-up) and per-account (protect the victim regardless of source). Exponential backoff with jitter; constant-time generic errors prevent username enumeration.
+
+⚡ *Traps:* "Deliberate lockout DoS of victims?" (progressive throttling over hard lockout; out-of-band victim notification).
+
+### Q31. "What goes into an authorization-failure audit log?"
+
+**30-sec:** Structured event at guard/policy layer: actor id, tenant, resource type/id, action, decision + reason code, request id — append-only, compliance-retained. Never tokens/passwords/PHI values. Feeds alerting (spikes = probing or bug) and forensics.
+
+⚡ *Traps:* "PHI in URLs reaches access logs anyway?" (keep identifiers out of URLs where feasible; scrubbers in log pipeline).
+
+### Q32. "Build vs buy: Auth0/Cognito/Keycloak vs rolling your own?"
+
+**30-sec:** Buy for standard OIDC/SAML/MFA/social/SSO velocity. Build (on proven libraries) for deep domain coupling — healthcare step-up rules, tenant-specific policy, data residency/cost. Middle path: library OIDC + own policy engine; never hand-roll protocol crypto.
+
+⚡ *Traps:* "Lock-in mitigation?" (standard protocols behind a thin identity abstraction; user-export strategy up front).
+
+### Q33. "Is a token ever acceptable in a URL?"
+
+**30-sec:** Almost never — URLs leak via logs/history/referrers. Narrow exceptions with compensating controls: single-use short-TTL magic links, OAuth device handoffs; even then prefer POST bodies and tiny windows.
+
+⚡ *Traps:* "Browser WebSocket API can't set auth headers?" (one-time ticket pattern: fetch short-lived ticket authenticated, exchange at WS connect).
+
+### Q34. "Sessions meet load balancers and rolling deploys?"
+
+**30-sec:** Shared store means any instance serves any request; drains make deploys safe. Sticky sessions are an optimization smell, not correctness. For Redis maintenance: replica promotion or brief re-login wave — design the blast radius consciously.
+
+### Q35. "Design 'logout everywhere' with hybrid tokens."
+
+**30-sec:** Sessions: delete all store records. Hybrid: bump user's `tokenVersion` → all outstanding access JWTs fail sensitive-route checks immediately; refresh families revoked server-side; devices get 401 on next refresh and must re-login. Audit the event and notify the account owner.
+
+### Q36. "A junior suggests storing role in the session AND the JWT. Concerns?"
+
+**30-sec:** Two sources of truth drift — privilege changes take effect at different times per path. Pick one authority (DB-backed role resolved into short-lived tokens, or session), invalidate coherently, and document which path sees changes within what SLA.
+
+### Q37. "How does auth differ for first-party web app vs public API platform vs internal tool?"
+
+**30-sec table:**
+
+| Surface | Default choice | Extra concerns |
+|---|---|---|
+| First-party web | Session cookie or hybrid tokens | CSRF, cookie flags |
+| Public API platform | OAuth2 (auth-code+PKCE, client-credentials) | Developer UX, key rotation, scopes |
+| Internal tool | SSO/OIDC behind corporate IdP | Offboarding speed, group→role mapping |
+
+### Q38. "Where does authorization belong — gateway, service, or both?"
+
+**30-sec:** Both, different questions: gateway authenticates and enforces coarse route/scope checks cheaply once; services enforce object-level policy (they own domain state). Never rely solely on the perimeter — internal callers bypassing the gateway is a classic breach path.
+
+### Q39. "Explain audience (`aud`) and issuer (`iss`) validation failures you've seen."
+
+**30-sec:** Token minted for API A replayed at API B because B skipped `aud` checking; staging token valid in prod because `iss` unchecked. Validate every claim every time; environment-scoped secrets so stage tokens can't verify in prod.
+
+### Q40. "Final: give me your auth architecture in 60 seconds." *(elevator pitch)*
+
+**Pitch template:** "Hybrid token model — 15-minute RS256 access JWT verified at the edge via JWKS, rotating refresh family in httpOnly same-site cookies with reuse-triggered family revocation, RBAC baseline with ABAC policies evaluated deny-by-default per request, tenant scoping enforced again at the data layer with RLS as backstop, everything security-relevant landing in an append-only audit trail. Every control has a tested failure mode."
+
+---
+
+## Score Yourself
+
+| Score | Meaning |
+|-------|---------|
+| 35+ traps survived | Interview-ready on auth |
+| 25–34 | Re-read [jwt.md](jwt.md) + [rbac-abac.md](rbac-abac.md) trade-off sections |
+| <25 | Walk the full [track](INDEX.md) from Stage 0 |
+
+---
+
+## See Also
+
+Track: [INDEX](INDEX.md) · [fundamentals](auth-fundamentals.md) · [sessions](sessions-cookies.md) · [jwt](jwt.md) · [oauth2-oidc](oauth2-oidc.md) · [rbac-abac](rbac-abac.md)
+Full bank: [Security interview questions](../20.5.13-interview-questions.md)
+
+---
+
+## References & Learn More
+
+- [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- [OWASP Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
+- [OAuth 2.0 Security Best Current Practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics)
+- [Auth0 — Refresh Token Rotation](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation)
+- [RFC 9106 — Argon2](https://datatracker.ietf.org/doc/html/rfc9106)
+- [web.dev — Passkeys](https://web.dev/articles/passkey-registration)

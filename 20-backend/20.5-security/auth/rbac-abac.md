@@ -5,6 +5,8 @@
 
 # RBAC (Role-Based Access Control)
 
+> 📍 Stage 4 of the [Auth Learning Track](INDEX.md) — prev: [OAuth2/OIDC](oauth2-oidc.md) · next: [Interview Drills](interview-questions.md)
+
 > **TL;DR:** RBAC assigns permissions to roles and roles to users — simple, but coarse. ABAC adds attributes (time, IP, resource owner) for finer-grained policy. The senior test is whether you can model a real org chart, separate policy from mechanism, and audit every access decision.
 >
 > **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
@@ -551,8 +553,8 @@ RBAC is a scalable and manageable approach to access control that assigns permis
 ---
 
 ## See Also
-- [REST APIs](../20.3-rest-apis/INDEX.md)
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- [REST APIs](../../20.3-rest-apis/INDEX.md)
+- [System Design](../../../30-architecture/30.2-system-design/INDEX.md)
 
 ## References & Learn More
 

@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-462-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-542-orange)](INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -32,7 +32,7 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 | Stack | Folder | What's in it | Files |
 |-------|--------|--------------|------:|
 | **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation | 97 |
-| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, Security, Microservices | 99 |
+| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices | 105 |
 | **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 20 case studies, Design Patterns | 64 |
 | **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 75 |
 | **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 31 |
@@ -47,6 +47,7 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 
 | If you want to… | Go to |
 |------------------|-------|
+| **Follow the study path** | [ROADMAP.md](ROADMAP.md) — phases, checkpoints, weekly schedule |
 | See all files in one place | [INDEX.md](INDEX.md) |
 | Start with universal interview prep | [00-strategy/](00-strategy/INDEX.md) |
 | Prep for FAANG / Indian SDE roles | [81-lanes-indian-sde-faang/](81-lanes-indian-sde-faang/INDEX.md) |
@@ -109,4 +110,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: August 2026 — 462 files, 263K+ lines, 0 broken links*
+*Last updated: August 2026 — 542 files, 287K+ lines, 0 broken links*

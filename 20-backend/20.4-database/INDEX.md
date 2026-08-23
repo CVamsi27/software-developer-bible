@@ -1,8 +1,8 @@
 # Database — Index
 
-> **22 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, Redis, window functions, JSONB, replication, and interview questions.
+> **21 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, Redis, window functions, JSONB, replication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -28,8 +28,9 @@
 | 18 | [JSONB](20.4.18-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns |
 | 19 | [Prisma Advanced](20.4.19-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns (soft delete, audit trail, versioning) |
 | 20 | [PostgreSQL Performance](20.4.20-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, index optimization, VACUUM, partitioning, monitoring queries |
-| 21 | [Connection Pooling](20.4.21-connection-pooling.md) | PgBouncer modes, pool sizing, Prisma pool management, monitoring |
-| 22 | [Database Replication](20.4.22-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag |
+| 21 | [Database Replication](20.4.22-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag |
+
+> Note: the old `20.4.21-connection-pooling.md` was a duplicate of [20.4.09](20.4.09-connection-pooling.md) and has been removed; replication keeps its historical file number (20.4.22).
 
 ---
 

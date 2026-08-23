@@ -9,7 +9,7 @@
 | [10.7.03-pwa.md](10.7.03-pwa.md) | Service workers, caching strategies, background sync, push notifications, install prompt |
 | [10.7.04-seo.md](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data, meta tags, SSR vs CSR for SEO |
 | [10.7.05-browser-rendering.md](10.7.05-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration |
-| [10.7.06-accessibility.md](10.7.06-accessibility.md) | WCAG, ARIA roles, keyboard navigation, screen readers, focus management |
+| [Accessibility (in Quality)](../../50-quality/50.2-accessibility/INDEX.md) | WCAG, ARIA roles, keyboard navigation, screen readers, focus management |
 
 ---
 

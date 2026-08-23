@@ -36,7 +36,6 @@ Before contributing, review the existing files in the relevant section to unders
 ├── README.md                          # Project overview
 ├── INDEX.md                           # Central navigation hub (pick your lane)
 ├── contributing.md                    # This file
-├── project-stats.md                   # Auto-generated statistics report
 │
 ├── 00-strategy/                       # Cross-lane (everyone starts here)
 │   ├── INDEX.md

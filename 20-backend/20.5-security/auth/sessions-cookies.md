@@ -5,6 +5,8 @@
 
 # Sessions & Cookies
 
+> 📍 Stage 1 of the [Auth Learning Track](INDEX.md) — prev: [Fundamentals](auth-fundamentals.md) · next: [JWT](jwt.md)
+
 > **TL;DR:** Session management keeps the server-side state and the client-side cookie in sync — the cookie is just an opaque session ID. Senior engineers know the cookie flags (Secure, HttpOnly, SameSite, Path, Domain), session ID rotation, idle/absolute timeouts, and CSRF interactions.
 >
 > **Why it matters:** This is an Architecture interview topic you will be asked about at the senior level (5+ YoE) — not for definition recall, but for tradeoffs, production failure modes, and the ability to compare it against alternatives.
@@ -466,8 +468,8 @@ Sessions and cookies are fundamental to maintaining state in web applications. K
 ---
 
 ## See Also
-- [REST APIs](../20.3-rest-apis/INDEX.md)
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- [REST APIs](../../20.3-rest-apis/INDEX.md)
+- [System Design](../../../30-architecture/30.2-system-design/INDEX.md)
 
 ## References & Learn More
 

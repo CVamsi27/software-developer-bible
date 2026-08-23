@@ -58,7 +58,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 📁 10-frontend — Frontend (90 files in 6 sub-stacks)
+### 📁 10-frontend — Frontend (96 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -68,8 +68,10 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
 | 10.5 | [Form Handling](10-frontend/10.5-form-handling/INDEX.md) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | 10.6 | [Animation](10-frontend/10.6-animation/INDEX.md) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
+| 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 5 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
+| 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 1 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA |
 
-### 📁 20-backend — Backend (105 files in 11 sub-stacks)
+### 📁 20-backend — Backend (110 files in 12 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -84,6 +86,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.9 | [WebSockets](20-backend/20.9-websockets/INDEX.md) | 2 | Socket.IO, SSE, scaling patterns |
 | 20.10 | [API Design](20-backend/20.10-api-design/INDEX.md) | 6 | REST maturity, rate limiting algorithms, RFC 7807, webhooks, gRPC streaming |
 | 20.11 | [Event-Driven](20-backend/20.11-event-driven/INDEX.md) | 1 | Kafka, event sourcing, CQRS, DLQ |
+| 20.12 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
 ### 📁 30-architecture — Architecture (58 files in 2 sub-stacks)
 
@@ -138,8 +141,8 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ```text
 00-strategy   → Communication → Resume Tips → STAR Method → HR Questions
-10-frontend   → JavaScript → TypeScript → React → Next.js → Form Handling → Animation
-20-backend    → Node.js → NestJS → REST API → Database → Caching → Auth & Security track → Microservices → Event-Driven → GraphQL
+10-frontend   → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
+20-backend    → Node.js → NestJS → REST API → Database → Caching → Auth & Security track → Microservices → Event-Driven → AI Engineering → GraphQL
 30-architecture → Design Patterns (SOLID, GoF) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform   → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
 50-quality    → Testing → Accessibility → Performance Monitoring

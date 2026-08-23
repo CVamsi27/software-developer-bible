@@ -34,3 +34,11 @@ This section (.) is **cross-lane** — it applies to every interview. After you 
 ## Navigation
 
 ← Previous: *(start of series)* · [🏠 Back to Index](../INDEX.md) · [Next: JavaScript →](../10-frontend/10.1-javascript/INDEX.md)
+
+---
+
+## References & Learn More
+
+- [Tech Interview Handbook — Behavioral](https://www.techinterviewhandbook.org/behavioral-interview/)
+- [STAR method — MIT Career Advising](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/)
+- [Google Tech Dev Guide — interview prep](https://techdevguide.withgoogle.com/)

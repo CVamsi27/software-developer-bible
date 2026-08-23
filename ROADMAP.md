@@ -54,7 +54,7 @@ Main topic flow — each sub-stack builds on the previous:
 | 1.4 | **React** | Reconciliation/Fiber → hooks (incl. 18/19) → Suspense → state management → performance | [10.3-react](10-frontend/10.3-react/INDEX.md) |
 | 1.5 | **Next.js** | App Router → RSC → Server Actions → caching layers → streaming | [10.4-next.js](10-frontend/10.4-next.js/INDEX.md) |
 
-*Skip-until-needed:* forms ([10.5](10-frontend/10.5-form-handling/INDEX.md)), animation ([10.6](10-frontend/10.6-animation/INDEX.md)), HTML/CSS ([10.7](10-frontend/10.7-html-css/INDEX.md)).
+*Skip-until-needed:* forms ([10.5](10-frontend/10.5-form-handling/INDEX.md)), animation ([10.6](10-frontend/10.6-animation/INDEX.md)), HTML/CSS ([10.7](10-frontend/10.7-html-css/INDEX.md)), mobile/RN primer ([10.8](10-frontend/10.8-mobile/INDEX.md) — read before studio interviews like MVST).
 
 **Checkpoint 1:** Explain the event loop with a printed-output ordering puzzle; write a typed generic utility live; explain when RSC beats client components. Mock questions: [10.1.26-interview-questions](10-frontend/10.1-javascript/10.1.26-interview-questions.md).
 
@@ -104,6 +104,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 2.5.2 | [Event-driven](20-backend/20.11-event-driven/INDEX.md) | when events beat requests; outbox pattern; DLQ discipline |
 | 2.5.3 | [Infra patterns mirror](30-architecture/30.3-infra-patterns/INDEX.md) | retry/backoff, bulkhead, strangler fig, health checks, graceful shutdown |
 | 2.5.4 | [Real-time](60-realtime/60.1-websockets/INDEX.md) *(JD-dependent)* | WS vs SSE vs polling → scaling with pub/sub → presence |
+| 2.5.5 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) *(2025+ differentiator)* | LLM architecture (RAG/streaming/structured output) → prompts & evals → safety/cost governance — anchor with your Docita AI-kill-switch story |
 
 **Checkpoint 2:** Whiteboard "design the auth for a multi-tenant SaaS" in 10 min using only the trade-off tables; explain MVCC + one deadlock you've debugged; pick pagination strategy for a cursor-per-feed and defend it.
 

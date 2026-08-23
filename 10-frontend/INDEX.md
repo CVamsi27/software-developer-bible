@@ -1,6 +1,6 @@
 # Frontend Stack
 
-> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 
 | Section | Files | Topics |
 |---------|------:|--------|
@@ -10,6 +10,8 @@
 | [Next.js](10.4-next.js/INDEX.md) | 16 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
 | [Form-Handling](10.5-form-handling/INDEX.md) | 6 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | [Animation](10.6-animation/INDEX.md) | 7 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
+| [HTML/CSS & PWA](10.7-html-css/INDEX.md) | 5 | Semantic HTML, CSS layout/responsive, PWA/service workers, SEO, browser rendering |
+| [Mobile & Cross-Platform](10.8-mobile/INDEX.md) | 1 | React Native architecture (JSI/Fabric), Expo decision, RN vs native vs PWA matrix |
 
 ---
 

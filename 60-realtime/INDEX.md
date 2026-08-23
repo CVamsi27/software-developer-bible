@@ -1,10 +1,23 @@
 # Real-Time Stack
 
-> **WebSockets, SSE, real-time architecture** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **WebSockets, SSE, real-time architecture** — optional stack, study when a JD demands it. Shared by both lanes.
+
+[![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)
 
 | Section | Files | Topics |
 |---------|------:|--------|
-| [WebSockets](60.1-websockets/INDEX.md) | 8 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
+| [WebSockets](60.1-websockets/INDEX.md) | 8 | Protocol deep-dive, Socket.IO, SSE, real-time architecture, NestJS gateways, WebTransport, scaling patterns, interview questions |
+
+## The 60-Second Orientation
+
+```text
+Need server→client push only?        → SSE (auto-reconnect, Last-Event-ID)
+Need bidirectional (chat/collab)?    → WebSockets (Socket.IO for rooms/fallbacks)
+Need it behind serverless/edge?      → managed pub/sub + polling fallback first
+Scaling beyond one node?             → Redis adapter / sticky sessions → pub/sub backbone
+```
+
+**Cross-references:** [Backend WebSockets](../20-backend/20.9-websockets/INDEX.md) · [Event-driven](../20-backend/20.11-event-driven/INDEX.md) · [NestJS](../20-backend/20.2-nestjs/INDEX.md)
 
 ---
 

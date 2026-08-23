@@ -15,9 +15,10 @@
 | [WebSockets](20.9-websockets/INDEX.md) | 2 | Connection lifecycle, Socket.IO, SSE, scaling patterns |
 | [API Design](20.10-api-design/INDEX.md) | 6 | REST maturity model, rate limiting algorithms, RFC 7807 errors, cursor/offset pagination, webhooks, gRPC streaming |
 | [Event-Driven](20.11-event-driven/INDEX.md) | 1 | Kafka architecture, event sourcing, CQRS, dead letter queues |
+| [AI Engineering](20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG, streaming, structured output), prompts & evals, safety/cost governance, interview Q&A |
 | Design Patterns *(lives in architecture)* | 19 | [30.1-design-patterns](../30-architecture/30.1-design-patterns/INDEX.md) — SOLID, GoF applied |
 
-**Recommended reading order:** Node → NestJS → REST APIs → Database → **Caching** → **Auth & Security track** → Microservices → Event-Driven → GraphQL → API Design polish.
+**Recommended reading order:** Node → NestJS → REST APIs → Database → **Caching** → **Auth & Security track** → Microservices → Event-Driven → **AI Engineering** → GraphQL → API Design polish.
 
 ---
 

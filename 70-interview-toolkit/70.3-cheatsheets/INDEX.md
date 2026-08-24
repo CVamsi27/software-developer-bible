@@ -10,6 +10,18 @@
 
 ---
 
+## 🗂️ Topic Categories
+
+The 5 cheat sheets classify into 3 conceptual categories — pick by interview type, not by order.
+
+| Category | Files | When to use |
+|----------|------:|-------------|
+| **Language** | 2 | JavaScript (any JS role), TypeScript (when the JD names TS) — fundamentals rounds |
+| **Framework & Full-Stack** | 2 | React/Next.js (frontend loops), Backend (Node/NestJS/DB/API loops) |
+| **Architecture** | 1 | System design rounds — every senior loop |
+
+---
+
 ## 📄 The 5 Cheat Sheets
 
 | # | File | What it covers | When to use | Read time |

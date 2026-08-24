@@ -10,6 +10,20 @@
 
 ---
 
+## 🗂️ Factor Categories
+
+The 12 (+3) factors classify into 4 conceptual families — the way to *recall* them under pressure.
+
+| Category | Factors | The principle in one line |
+|----------|---------|---------------------------|
+| [Build & Ship](#-factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One repo → deterministic build → immutable release |
+| [Config & Bindings](#-factor-categories) | 3 Config · 4 Backing services | Config lives in env; backing services are swappable attached resources |
+| [Runtime Model](#-factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
+| [Operational Parity](#-factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Same environments everywhere; logs are event streams; admin = one-off processes |
+| *(15-factor extension)* | API first · Telemetry · Auth | The modern add-ons for API + observability + security concerns |
+
+---
+
 ## 📚 The 12 Factors (memorize the names)
 
 | # | Factor | One-line description |

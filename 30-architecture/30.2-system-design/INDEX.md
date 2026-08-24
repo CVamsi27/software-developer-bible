@@ -1,14 +1,45 @@
 # System Design — Index
 
-> **40 files** — Split into **theory** (20 foundational files) and **case studies** (20 applied examples). The theory sub-folder contains the 14 foundational files (CAP, consistency models, sharding, replication, load balancing, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) plus 6 meta guides (how-to-approach, interview-questions, probabilistic data structures, outbox & CDC, resilience patterns deep-dive, multi-region deployment). The case-studies sub-folder contains 20 applied examples from URL shorteners to Netflix, WhatsApp, Uber, payment gateways, Twitter, Rate Limiter, Chat System, Instagram, YouTube, Dropbox, Lyft, distributed counters, and more.
+> **42 files** — split into **theory** (20 foundational files in [00-theory/](00-theory/INDEX.md)) and **case studies** (22 applied examples in [10-case-studies/](10-case-studies/INDEX.md)).
+>
+> Study in three passes: **I. Theory** (CAP → consistency → scaling levers) → **II. The method** (how-to-approach framework) → **III. Case studies** (pick by JD domain).
 
-[![Files](https://img.shields.io/badge/files-40-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Read the theory first.** Open [`00-theory/`](00-theory/INDEX.md) for the foundational concepts, then move to [`10-case-studies/`](10-case-studies/INDEX.md) for applied examples.
+---
 
-**Study order:** theory → how-to-approach → case studies (in any order).
+## 🗂️ Topic Categories
+
+The two sub-folders classify into 6 conceptual categories — the "GoF classification" of system design.
+
+| Category | Where | Files | Why it matters |
+|----------|-------|------:|----------------|
+| **Data & Consistency Theory** | [00-theory/](00-theory/INDEX.md) | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, locks, consensus |
+| **Traffic, Scale & Capacity** | [00-theory/](00-theory/INDEX.md) | 4 | Load balancing, rate limiting, backpressure, capacity planning |
+| **Performance & Delivery** | [00-theory/](00-theory/INDEX.md) | 3 | Caching patterns, queues & async, outbox & CDC |
+| **Reliability & Topology** | [00-theory/](00-theory/INDEX.md) | 4 | Failure modes, resilience deep-dive, multi-region, architecture patterns |
+| **The Method + Drills** | [00-theory/](00-theory/INDEX.md) | 3 | How-to-approach framework, interview questions, probabilistic data structures |
+| **Applied Case Studies** | [10-case-studies/](10-case-studies/INDEX.md) | 22 | URL shortener → Netflix, Uber, WhatsApp, payment gateway — classified by domain |
+
+---
+
+## 🛣️ The Track — Read In This Order
+
+```text
+Pass I — THEORY (in order)           Pass II — METHOD              Pass III — CASE STUDIES
+CAP → consistency models             how-to-approach               pick by JD domain:
+→ sharding & replication             (4-phase framework:            · feed/social    → Twitter
+→ load balancing → caching            clarify → estimate →          · chat/realtime  → WhatsApp
+→ queues → distributed txns           high-level → deep-dive)       · geo/dispatch   → Uber / Lyft
+→ rate limiting → consensus                                        · fintech        → Payment Gateway
+→ failure modes → capacity        interview questions              · storage/sync   → Google Drive
+   ↓                              (50+ drills)                     · media/streaming→ Netflix
+INTERVIEW DRILLS ←────────────────────────────────────────────────· foundational    → URL shortener
+```
+
+**Total time:** theory ~14 hrs, case studies ~2 hrs each. Do Pass I once; recycle case studies per application.
 
 ---
 
@@ -16,10 +47,8 @@
 
 | Folder | Files | What it is | When to read |
 |--------|------:|-----------|--------------|
-| [00-theory/](00-theory/INDEX.md) | 20 | Foundational theory: CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, plus 6 meta guides (how-to-approach, interview-questions, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) | **Read first** — these are the concepts every case study depends on |
-| [10-case-studies/](10-case-studies/INDEX.md) | 20 | Applied examples: URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, Twitter, Instagram, YouTube, Dropbox, Lyft, distributed counter, hospital management, live betting, e-commerce, notification service, chat system, web crawler, rate limiter, Google Drive | After theory — pick the case study that matches the JD's domain |
-
-For the full list of files in each sub-folder, open the sub-folder's INDEX.
+| [00-theory/](00-theory/INDEX.md) | 20 | Foundational concepts (14, in order) + meta guides (6): approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region | **Read first** — every case study depends on these |
+| [10-case-studies/](10-case-studies/INDEX.md) | 22 | Applied examples across 10 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation | After theory — match the JD's domain |
 
 ---
 

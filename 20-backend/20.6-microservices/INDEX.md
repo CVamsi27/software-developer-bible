@@ -8,6 +8,22 @@
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+---
+
+## 🗂️ Topic Categories
+
+The 16 content files classify into 5 conceptual categories — the "GoF classification" of distributed systems.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| **Service Topology** | 4 | Service discovery, API gateway, service mesh, strangler fig — how services find each other and evolve safely |
+| **Communication & Messaging** | 5 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
+| **Data Consistency Patterns** | 4 | Saga, distributed transactions, event sourcing, CQRS — atomicity and truth across service boundaries |
+| **Resilience Patterns** | 2 | Circuit breaker, bulkhead — surviving partial failure |
+| **Interview Drills** | 1 | 50+ curated Q&A |
+
+---
+
 ## The Flow
 
 ```text

@@ -6,6 +6,21 @@
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+---
+
+## 🗂️ Topic Categories
+
+The 4 content files classify into 3 conceptual categories + drills — the "GoF classification" of AI engineering.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| **Architecture** | 1 | LLM app architecture — RAG vs fine-tuning vs prompting, streaming, function calling |
+| **Quality** | 1 | Prompts, context budgeting, evals — how you *prove* the thing works |
+| **Governance** | 1 | Safety, cost, PII, kill-switches — the regulated-domain story |
+| **Interview Drills** | 1 | 25+ Q&A with follow-up traps |
+
+---
+
 ## Study Order
 
 | # | File | You can defend… |

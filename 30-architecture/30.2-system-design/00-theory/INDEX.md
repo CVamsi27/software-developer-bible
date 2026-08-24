@@ -10,6 +10,21 @@
 
 ---
 
+## 🗂️ Topic Categories
+
+The 20 files classify into 6 conceptual categories — the "GoF classification" of distributed systems theory.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| **Data & Consistency** | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, consensus & leader election, distributed locks |
+| **Traffic & Scale** | 4 | Load balancing, rate limiting, backpressure & flow control, capacity planning |
+| **Performance & Delivery** | 3 | Caching patterns, queues & async, outbox & CDC |
+| **Reliability & Topology** | 4 | Failure modes, resilience deep-dive, multi-region deployment, architecture patterns |
+| **The Method + Drills** | 2 | How-to-approach framework, 50+ interview questions |
+| **Senior Toolkit** | 1 | Probabilistic data structures — bounded-memory answers at scale |
+
+---
+
 ## Foundational concepts (read in order)
 
 These 14 are the building blocks. Read in this order — each builds on the previous.

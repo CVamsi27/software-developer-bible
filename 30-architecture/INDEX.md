@@ -14,8 +14,8 @@
 | Section | Files | Topics |
 |---------|------:|--------|
 | [Design Patterns](30.1-design-patterns/INDEX.md) | 30+ | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
-| [System Design](30.2-system-design/INDEX.md) | 40+ | 14 foundational theory files (CAP, consistency, sharding, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) + 2 meta guides + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
-| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 6+ | Database scaling (partitioning, replication, connection pooling), resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, technical debt management, zero-downtime deployments, data pipelines |
+| [System Design](30.2-system-design/INDEX.md) | 42 | 14 foundational theory files (CAP, consistency, sharding, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) + 6 meta guides (approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region) + 22 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
+| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 10 | Database scaling (partitioning, replication, connection pooling), resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, technical debt management, zero-downtime deployments, data pipelines, health checks & graceful shutdown, retry patterns, idempotency keys, CDN architecture |
 
 ---
 

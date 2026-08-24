@@ -1,12 +1,25 @@
 # System Design — Case Studies
 
-> **20 files** — Applied examples of system design interviews. Read [../00-theory/](../00-theory/INDEX.md) first, then work through these in any order.
+> **22 files** — Applied examples of system design interviews. Read [../00-theory/](../00-theory/INDEX.md) first, then work through these in any order.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 **Pick the case study that matches the JD's domain.** For an Uber-style role, do Uber. For a payment role, do Payment Gateway. For a chat/messaging role, do WhatsApp + Chat System. For a feed/social role, do Twitter + Instagram.
+
+---
+
+## 🗂️ Topic Categories — by Difficulty Tier
+
+The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the others.
+
+| Tier | Case studies | Why this tier |
+|------|--------------|---------------|
+| **Tier 1 — Foundational** (always asked) | URL Shortener, Rate Limiter, Distributed Counter, Notification Service | Small enough to fully design in 40 min; exercises IDs, caching, limits, delivery guarantees |
+| **Tier 2 — Core domains** (pick 2-3 by JD) | WhatsApp, Chat System, Twitter Feed, Instagram, Netflix, YouTube, Uber, Lyft, Google Drive, Dropbox | The classic senior-loop prompts; each stresses one hard subsystem (fan-out, geo-indexing, sync, transcoding) |
+| **Tier 3 — Consistency-critical** (fintech/regulated) | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management | Idempotency, locking, reconciliation, audit — where correctness beats scale in the rubric |
+| **Tier X — Senior differentiators** | Web Crawler, Workflow Engine, Real-Time Collaboration | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT |
 
 ---
 

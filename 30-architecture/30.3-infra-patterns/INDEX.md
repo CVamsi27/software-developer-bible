@@ -1,12 +1,28 @@
 # Infra & Ops Patterns — Index
 
-> **9 files — operations-level patterns that sit *around* your services**: retries, idempotency, health checks, graceful shutdown, leader election, zero-downtime deploys, data pipelines, technical debt management.
+> **10 files — operations-level patterns that sit *around* your services**: retries, idempotency, health checks, graceful shutdown, leader election, zero-downtime deploys, data pipelines, technical debt management.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
 
-[![Files](https://img.shields.io/badge/files-9-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+
+---
+
+## 🗂️ Topic Categories
+
+The 10 files classify into 5 conceptual categories — the "GoF classification" of infra/ops patterns.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| **Liveness & Lifecycle** | 1 | Health checks + graceful shutdown — the contract between your app and the orchestrator |
+| **Failure Recovery** | 2 | Retry patterns, idempotency keys — surviving transient failure without side effects |
+| **Coordination** | 1 | Leader election & consensus — who runs the cron, fencing tokens |
+| **Shipping & Evolution** | 2 | Zero-downtime deployments, technical debt management — change without breakage |
+| **Data at Scale** | 4 | Database scaling, data pipelines, CDN architecture, resilience overview |
+
+---
 
 ## The Flow
 

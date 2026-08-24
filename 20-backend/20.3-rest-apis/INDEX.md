@@ -8,6 +8,23 @@
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+---
+
+## 🗂️ Topic Categories
+
+The 17 content files classify into 6 conceptual categories — the "GoF classification" of API design.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| **Design & Contract** | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
+| **HTTP Mechanics** | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
+| **Payloads & Errors** | 2 | Pagination, error handling (RFC 7807) — the contract details clients feel daily |
+| **Edge, Scale & Integration** | 4 | Rate limiting, API gateway, BFF, webhooks — surviving traffic and integrating systems |
+| **Security** | 1 | Authentication schemes; pairs with the [auth track](../20.5-security/auth/INDEX.md) |
+| **Interview Drills** | 1 | Curated Q&A |
+
+---
+
 ## The Flow
 
 ```text

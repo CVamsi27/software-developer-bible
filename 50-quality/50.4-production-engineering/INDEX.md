@@ -10,17 +10,17 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | File | Why it matters |
 |----------|------|----------------|
-| [Reliability Targets](#-reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
-| [Incident Response](#-incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
-| [Proactive Resilience](#-proactive-resilience) | [Chaos Engineering](50.4.03-chaos-engineering.md) | Find weaknesses before they find you |
+| [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
+| [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
+| [Proactive Resilience](#proactive-resilience) | [Chaos Engineering](50.4.03-chaos-engineering.md) | Find weaknesses before they find you |
 
 ---
 
-## 🎯 Reliability Targets
+## Reliability Targets
 
 The SRE framework.
 
@@ -35,7 +35,7 @@ The SRE framework.
 
 ---
 
-## 🚨 Incident Response
+## Incident Response
 
 When things break (and they will).
 
@@ -51,7 +51,7 @@ When things break (and they will).
 
 ---
 
-## 🧪 Proactive Resilience
+## Proactive Resilience
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -66,7 +66,7 @@ When things break (and they will).
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **SLI/SLO/Error Budgets** — the foundation
 2. **Incident Response** — what to do when SLOs are violated
@@ -74,7 +74,7 @@ When things break (and they will).
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "What's an SLO? How do you set one?"
 - "How do you use error budgets to make decisions?"
@@ -84,7 +84,7 @@ When things break (and they will).
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — the 3 pillars of observability feed SLOs
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — resilience patterns (circuit breaker, etc.)
@@ -94,4 +94,4 @@ When things break (and they will).
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../50.3-performance-monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)
+[← Previous: Performance Monitoring](../50.3-performance-monitoring/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)

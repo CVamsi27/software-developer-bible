@@ -10,16 +10,16 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | File | When to use |
 |----------|------|-------------|
-| [Leadership](#-leadership) | [Leadership Questions](70.1.03-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
-| [System Design Behavioral](#-system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" |
+| [Leadership](#leadership) | [Leadership Questions](70.1.03-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
+| [System Design Behavioral](#system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" |
 
 ---
 
-## 🧭 Leadership
+## Leadership
 
 Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
@@ -37,7 +37,7 @@ Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
 ---
 
-## 🏛️ System Design Behavioral
+## System Design Behavioral
 
 How to talk about your past design decisions in interviews.
 
@@ -53,12 +53,12 @@ How to talk about your past design decisions in interviews.
 
 ---
 
-## 🛣️ The Flow
+## The Flow
 
 ```text
-00-strategy (basics)              here (depth)                     your material
-STAR framework        →   leadership questions          →   story-bank.md
-HR + resume               system-design behavioral           (lane folder: 80.12)
+00-strategy (basics) here (depth) your material
+STAR framework → leadership questions → story-bank.md
+HR + resume system-design behavioral (lane folder: 80.12)
 ```
 
 1. **00-strategy** — STAR, HR, resume (read first)
@@ -67,7 +67,7 @@ HR + resume               system-design behavioral           (lane folder: 80.12
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Tell me about a time you disagreed with your manager."
 - "Tell me about a time you failed."
@@ -77,7 +77,7 @@ HR + resume               system-design behavioral           (lane folder: 80.12
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [00-strategy](../../00-strategy/INDEX.md) — STAR framework, HR questions, resume
 - [Story bank](../../80-lanes-abroad-full-stack/80.12-story-bank.md) — pre-written STAR stories
@@ -87,4 +87,4 @@ HR + resume               system-design behavioral           (lane folder: 80.12
 
 ## Navigation
 
-[← Previous: Strategy](../../00-strategy/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Coding Patterns →](../70.2-coding-patterns/INDEX.md)
+[← Previous: Strategy](../../00-strategy/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Coding Patterns →](../70.2-coding-patterns/INDEX.md)

@@ -10,17 +10,17 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | File | Why it matters |
 |----------|------|----------------|
-| [Patterns & Strategy](#-patterns--strategy) | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention |
-| [Redis Fundamentals](#-redis-fundamentals) | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
-| [Advanced Redis](#-advanced-redis) | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
+| Patterns & Strategy | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention |
+| Redis Fundamentals | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
+| Advanced Redis | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
 
 ---
 
-## 📐 The Decision Table (memorize this)
+## The Decision Table (memorize this)
 
 | Read/write profile | Pattern | Why |
 |---|---|---|
@@ -32,7 +32,7 @@
 
 ---
 
-## 🗂️ Pattern Selection
+## Pattern Selection
 
 ```text
 Need to cache data?
@@ -52,7 +52,7 @@ Need to cache data?
 
 ---
 
-## 📚 File Index
+## File Index
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -62,7 +62,7 @@ Need to cache data?
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Caching Deep Dive** — must know, the patterns
 2. **Redis Fundamentals** — the most common caching store
@@ -70,7 +70,7 @@ Need to cache data?
 
 ---
 
-## 🎤 Interview questions to expect
+## Interview questions to expect
 
 - "How do you decide what to cache?"
 - "Cache-aside vs write-through vs write-behind — when to use which?"
@@ -80,7 +80,7 @@ Need to cache data?
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [HTTP Caching](../20.3-rest-apis/20.3.13-http-caching.md) — cache headers (Cache-Control, ETag)
 - [System Design — Caching theory](../../30-architecture/30.2-system-design/00-theory/30.2.1.05-caching-patterns.md) — caching in system design
@@ -90,4 +90,4 @@ Need to cache data?
 
 ## Navigation
 
-[← Previous: GraphQL](../20.7-graphql/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Real-Time stack →](../../60-realtime/60.1-websockets/INDEX.md)
+[← Previous: GraphQL](../20.7-graphql/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Real-Time stack →](../../60-realtime/60.1-websockets/INDEX.md)

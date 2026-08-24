@@ -10,26 +10,26 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 8 files organize into 4 conceptual categories — the "GoF classification" of real-time systems. Read in order within each.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Transport Protocols](#-transport-protocols) | 3 | WebSockets vs SSE vs WebTransport — pick the right pipe before writing code |
-| [Framework Implementation](#-framework-implementation) | 2 | Socket.IO semantics, NestJS gateways — where code actually gets written |
-| [Architecture & Scale](#-architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
-| [Interview Drills](#-interview-drills) | 1 | Curated Q&A with follow-up traps |
+| [Transport Protocols](#transport-protocols) | 3 | WebSockets vs SSE vs WebTransport — pick the right pipe before writing code |
+| [Framework Implementation](#framework-implementation) | 2 | Socket.IO semantics, NestJS gateways — where code actually gets written |
+| [Architecture & Scale](#architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
+| [Interview Drills](#interview-drills) | 1 | Curated Q&A with follow-up traps |
 
 ---
 
-## 🛣️ The Track — Read In This Order
+## The Track — Read In This Order
 
 ```text
-Pass I — PROTOCOLS                Pass II — IMPLEMENTATION        Pass III — ARCHITECTURE & SCALE
-01 overview (WebSockets)     →    02 Socket.IO               →    04 real-time architecture
-03 SSE (server→client only)       05 NestJS gateways              08 scaling patterns
-07 WebTransport (HTTP/3)                                          ↓
+Pass I — PROTOCOLS Pass II — IMPLEMENTATION Pass III — ARCHITECTURE & SCALE
+01 overview (WebSockets) → 02 Socket.IO → 04 real-time architecture
+03 SSE (server→client only) 05 NestJS gateways 08 scaling patterns
+07 WebTransport (HTTP/3) ↓
                                                               INTERVIEW DRILLS
                                                                    06 interview questions
 ```
@@ -38,7 +38,7 @@ Pass I — PROTOCOLS                Pass II — IMPLEMENTATION        Pass III �
 
 ---
 
-## 📡 Transport Protocols
+## Transport Protocols
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
@@ -46,21 +46,21 @@ Pass I — PROTOCOLS                Pass II — IMPLEMENTATION        Pass III �
 | 2 | [Server-Sent Events](60.1-websockets/60.1.03-server-sent-events.md) | Auto-reconnect, `Last-Event-ID`, one-way push over plain HTTP | 30 min |
 | 3 | [WebTransport](60.1-websockets/60.1.07-webtransport.md) | HTTP/3, QUIC streams, unidirectional/bidirectional/datagram | 30 min |
 
-## 🧩 Framework Implementation
+## Framework Implementation
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
 | 4 | [Socket.IO](60.1-websockets/60.1.02-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | 45 min |
 | 5 | [NestJS WebSockets](60.1-websockets/60.1.05-nestjs-websockets.md) | Gateways, decorators, lifecycle hooks — production wiring | 40 min |
 
-## 🏗️ Architecture & Scale
+## Architecture & Scale
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
 | 6 | [Real-Time Architecture](60.1-websockets/60.1.04-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | 40 min |
 | 7 | [Scaling Patterns](60.1-websockets/60.1.08-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | 45 min |
 
-## 🎤 Interview Drills
+## Interview Drills
 
 | File | Contents |
 |------|----------|
@@ -71,13 +71,13 @@ Pass I — PROTOCOLS                Pass II — IMPLEMENTATION        Pass III �
 ## The 60-Second Orientation
 
 ```text
-Need server→client push only?        → SSE (auto-reconnect, Last-Event-ID)
-Need bidirectional (chat/collab)?    → WebSockets (Socket.IO for rooms/fallbacks)
-Need it behind serverless/edge?      → managed pub/sub + polling fallback first
-Scaling beyond one node?             → Redis adapter / sticky sessions → pub/sub backbone
+Need server→client push only? → SSE (auto-reconnect, Last-Event-ID)
+Need bidirectional (chat/collab)? → WebSockets (Socket.IO for rooms/fallbacks)
+Need it behind serverless/edge? → managed pub/sub + polling fallback first
+Scaling beyond one node? → Redis adapter / sticky sessions → pub/sub backbone
 ```
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "WebSocket vs SSE vs long-polling — when would you use each?"
 - "How do you scale Socket.IO beyond one node?"
@@ -93,7 +93,7 @@ Scaling beyond one node?             → Redis adapter / sticky sessions → pub
 
 ## Navigation
 
-[← Previous: Quality](../50-quality/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Interview Toolkit →](../70-interview-toolkit/INDEX.md)
+[← Previous: Quality](../50-quality/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Interview Toolkit →](../70-interview-toolkit/INDEX.md)
 
 ---
 

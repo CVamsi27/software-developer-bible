@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [HTML](#-html) | 1 | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs |
-| [CSS](#-css) | 1 | Flexbox, Grid, responsive design, CSS variables, modern CSS |
-| [Browser Internals](#-browser-internals) | 1 | Critical rendering path, reflow vs repaint, GPU acceleration |
-| [PWA & SEO](#-pwa--seo) | 2 | Service workers, offline support, Core Web Vitals, structured data |
+| [HTML](#html) | 1 | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs |
+| [CSS](#css) | 1 | Flexbox, Grid, responsive design, CSS variables, modern CSS |
+| [Browser Internals](#browser-internals) | 1 | Critical rendering path, reflow vs repaint, GPU acceleration |
+| [PWA & SEO](#pwa--seo) | 2 | Service workers, offline support, Core Web Vitals, structured data |
 
 ---
 
-## 📄 HTML
+## HTML
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -29,7 +29,7 @@
 
 ---
 
-## 🎨 CSS
+## CSS
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -37,7 +37,7 @@
 
 ---
 
-## 🖥️ Browser Internals
+## Browser Internals
 
 How the browser turns HTML/CSS/JS into pixels.
 
@@ -47,7 +47,7 @@ How the browser turns HTML/CSS/JS into pixels.
 
 ---
 
-## 📦 PWA & SEO
+## PWA & SEO
 
 Production concerns.
 
@@ -58,7 +58,7 @@ Production concerns.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **HTML Fundamentals** (30 min) — semantic HTML is the foundation
 2. **CSS Fundamentals** (45 min) — Flexbox + Grid for layout
@@ -68,7 +68,7 @@ Production concerns.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Draw a layout for X" (Flexbox/Grid)
 - "What's the difference between LCP and INP?" (Core Web Vitals)
@@ -79,7 +79,7 @@ Production concerns.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — the deep-dive on WCAG, ARIA, screen readers
 - [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) — Core Web Vitals measurement
@@ -91,4 +91,4 @@ Production concerns.
 
 ## Navigation
 
-[← Previous: Animation](../10.6-animation/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Mobile →](../10.8-mobile/INDEX.md)
+[← Previous: Animation](../10.6-animation/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Mobile →](../10.8-mobile/INDEX.md)

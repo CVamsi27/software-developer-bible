@@ -2,7 +2,7 @@
 
 > This file governs any AI CLI (Claude Code, Codex, OpenCode, …) working in this repository.
 
-## 🔴 Hard rules
+## Hard rules
 
 1. **NEVER commit or push in `~/repos/career-ops`.** It is an external fork (`santifer/career-ops`) used purely as a *tool*. All personal data there is gitignored and now **symlinked into this bible** — committing there is both wrong and unnecessary. If changes seem needed in career-ops:
    - data/content changes → they already land in `80-lanes-abroad-full-stack/personal/` (symlinks). Commit them HERE.
@@ -12,12 +12,12 @@
 
 3. **Never commit secrets or PII outside this private repo** (phone numbers, family details live only under `personal/`).
 
-## ✅ Expected workflow
+## Expected workflow
 
 ```bash
 # after running career-ops tools (scan / contacto / tracker / pdf):
-bash 80-lanes-abroad-full-stack/personal/doctor.sh   # verify symlinks + flag new dated artifacts
-git add -A && git commit -m "…"                      # in THIS repo only
+bash 80-lanes-abroad-full-stack/personal/doctor.sh # verify symlinks + flag new dated artifacts
+git add -A && git commit -m "…" # in THIS repo only
 ```
 
 ## Repo conventions

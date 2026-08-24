@@ -1,11 +1,11 @@
-# 🗺️ The Senior Engineer Roadmap
+# The Senior Engineer Roadmap
 
 > **One page. One path. Zero ambiguity.** This is the canonical order to work through the bible for a senior full-stack interview (5+ YoE). Every box links to its folder; every phase ends with a checkpoint you must pass before moving on.
 >
-> Pick your lane first (2 min): [Lane Decision](#phase-0--pick-your-lane-day-1) · Full index: [INDEX.md](INDEX.md)
+> Pick your lane first (2 min): [Lane Decision](#phase-0--pick-your-lane-day-1-2-hours) · Full index: [INDEX.md](INDEX.md)
 
 [![Full path](https://img.shields.io/badge/duration-8_weeks_full_|_4_weeks_fast-blue)](#two-speeds-full-vs-fast)
-[![Checkpoints](https://img.shields.io/badge/checkpoints-8-green)](#checkpoints-do-not-skip)
+[![Checkpoints](https://img.shields.io/badge/checkpoints-8-green)](#checkpoints--do-not-skip)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -13,17 +13,17 @@
 ## The Path at a Glance
 
 ```text
- PHASE 0        PHASE 1          PHASE 2          PHASE 3           PHASE 4         PHASE 5         PHASE 6       PHASE 7
- Strategy   →   Language    →    Backend     →    Architecture →    Platform   →    Quality    →   Toolkit   →   LANE EXECUTION
- (2 days)       & Frontend       Core              & System Design   & Delivery      & Testing       & mocks      (your target market)
-                (2 wks)          (3 wks)           (2 wks)           (1 wk)          (1 wk)          (ongoing)    (final 1-2 wks)
-   │               │                │                 │                 │               │               │             │
-   ├─ resume       ├─ JS core       ├─ Node.js        ├─ design         ├─ Docker       ├─ testing      ├─ 18 coding  ├─ lane plan
-   ├─ STAR         ├─ TS deep       ├─ NestJS         │  patterns       ├─ K8s basics   ├─ a11y         │  patterns   ├─ take-home
-   ├─ comms        ├─ React         ├─ API design     ├─ SD theory      ├─ CI/CD        ├─ performance  ├─ behavioral ├─ system design
-   └─ HR qs        └─ Next.js       ├─ databases      └─ 20 case        ├─ observability└─ production   │  + stories  └─ company sheets
-                                    ├─ AUTH track ←     studies            git, serverless   engineering
-                                    └─ microservices                                         drills
+ PHASE 0 PHASE 1 PHASE 2 PHASE 3 PHASE 4 PHASE 5 PHASE 6 PHASE 7
+ Strategy → Language → Backend → Architecture → Platform → Quality → Toolkit → LANE EXECUTION
+ (2 days) & Frontend Core & System Design & Delivery & Testing & mocks (your target market)
+                (2 wks) (3 wks) (2 wks) (1 wk) (1 wk) (ongoing) (final 1-2 wks)
+   │ │ │ │ │ │ │ │
+   ├─ resume ├─ JS core ├─ Node.js ├─ design ├─ Docker ├─ testing ├─ 18 coding ├─ lane plan
+   ├─ STAR ├─ TS deep ├─ NestJS │ patterns ├─ K8s basics ├─ a11y │ patterns ├─ take-home
+   ├─ comms ├─ React ├─ API design ├─ SD theory ├─ CI/CD ├─ performance ├─ behavioral ├─ system design
+   └─ HR qs └─ Next.js ├─ databases └─ 20 case ├─ observability└─ production │ + stories └─ company sheets
+                                    ├─ AUTH track ← studies git, serverless engineering
+                                    └─ microservices drills
 ```
 
 **Total: 8–12 weeks from cold · 4–6 weeks if strong on most stacks.** Two speeds below.
@@ -83,7 +83,7 @@ Main topic flow — each sub-stack builds on the previous:
 | 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/20.4.10-prisma.md) → [Prisma advanced](20-backend/20.4-database/20.4.19-prisma-advanced.md) → [Redis fundamentals](20-backend/20.8-caching/20.8.03-redis-fundamentals.md) |
 | 2.3.4 | [Caching](20-backend/20.8-caching/INDEX.md) | cache-aside/write-through/write-behind → invalidation → stampede defense → advanced Redis |
 
-### 2.4 🔐 Auth & Security — *the dedicated learning track*
+### 2.4 Auth & Security — *the dedicated learning track*
 Study as one connected story, not isolated files → **[20-backend/20.5-security/auth/INDEX.md](20-backend/20.5-security/auth/INDEX.md)**
 
 | Stage | Topic | Trade-off you must be able to defend |
@@ -93,9 +93,9 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 2 | [JWT](20-backend/20.5-security/auth/jwt.md) | statelessness vs revocation; HS256 vs RS256; storage XSS/CSRF matrix |
 | 3 | [OAuth2/OIDC](20-backend/20.5-security/auth/oauth2-oidc.md) | delegation flows; PKCE; scopes vs roles |
 | 4 | [RBAC/ABAC](20-backend/20.5-security/auth/rbac-abac.md) | coarse vs fine-grained authz; policy engines |
-| ⚔️ | Attacks: [XSS](20-backend/20.5-security/20.5.03-xss.md) · [CSRF](20-backend/20.5-security/20.5.04-csrf.md) · [SQLi](20-backend/20.5-security/20.5.05-sql-injection.md) · [API Top 10](20-backend/20.5-security/20.5.12-api-security-best-practices.md) | each attack ↔ its exact defense |
-| 🛡️ | Hardening: [headers/CSP](20-backend/20.5-security/20.5.09-web-security.md) · [STRIDE](20-backend/20.5-security/20.5.10-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/20.5.11-secrets-management.md) | threat-model any feature in 5 min |
-| 🎤 | Drill: [auth Q&A](20-backend/20.5-security/auth/interview-questions.md) + [full bank](20-backend/20.5-security/20.5.13-interview-questions.md) | survive the follow-up traps |
+| | Attacks: [XSS](20-backend/20.5-security/20.5.03-xss.md) · [CSRF](20-backend/20.5-security/20.5.04-csrf.md) · [SQLi](20-backend/20.5-security/20.5.05-sql-injection.md) · [API Top 10](20-backend/20.5-security/20.5.12-api-security-best-practices.md) | each attack ↔ its exact defense |
+| | Hardening: [headers/CSP](20-backend/20.5-security/20.5.09-web-security.md) · [STRIDE](20-backend/20.5-security/20.5.10-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/20.5.11-secrets-management.md) | threat-model any feature in 5 min |
+| | Drill: [auth Q&A](20-backend/20.5-security/auth/interview-questions.md) + [full bank](20-backend/20.5-security/20.5.13-interview-questions.md) | survive the follow-up traps |
 
 ### 2.5 Distributed backend & ops patterns
 | Order | Topic | Flow inside |
@@ -185,10 +185,10 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 
 ## Two Speeds: Full vs Fast
 
-### 🐢 Full speed — 9–10 weeks (~3 h/day)
+### Full speed — 9–10 weeks (~3 h/day)
 Follow phases 0→7 in order exactly as laid out. Best if switching stacks or rustier than you admit.
 
-### 🐇 Fast speed — 4 weeks (~2–3 h/day), for the currently-employed-and-sharp
+### Fast speed — 4 weeks (~2–3 h/day), for the currently-employed-and-sharp
 | Week | Do | Skip |
 |---|---|---|
 | 1 | Phase 0 + Phase 1 (skim 1.1–1.2, full 1.3–1.5) + 8 STAR stories | animation, HTML/CSS |
@@ -196,7 +196,7 @@ Follow phases 0→7 in order exactly as laid out. Best if switching stacks or ru
 | 3 | Phase 2.5 (microservices skim) + Phase 3 (method + 5 cases) + take-home OR DSA block | K8s depth, a11y |
 | 4 | Phase 4 skim (Docker/CI/observability) + Phase 6 drills + Phase 7 lane execution + apply | monorepo, CDN, chaos |
 
-### 🚨 Emergency — 1 week
+### Emergency — 1 week
 Non-negotiables only: 8 STAR stories · URL shortener + 1 domain case cold · auth trade-off table memorized · take-home template ready · 2 mocks (details in the [lane 80 index](80-lanes-abroad-full-stack/INDEX.md)).
 
 ---
@@ -235,36 +235,36 @@ Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-s
 
 ```text
 software-developer-bible/
-├── ROADMAP.md                  ← you are here
-├── INDEX.md                    ← every file, one list
-├── 00-strategy/                ← resume · STAR · HR · communication
-├── 10-frontend/                ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
-├── 20-backend/                 ← 9 sub-stacks, zero duplication:
-│   ├── 20.1-node.js              runtime internals
-│   ├── 20.2-nestjs               framework
-│   ├── 20.3-rest-apis            ALL of HTTP/APIs (fundamentals → production → advanced)
-│   ├── 20.4-database             Postgres + Prisma (Redis lives in caching)
-│   ├── 20.5-security/auth/       ★ the auth learning track
-│   ├── 20.6-microservices        ★ single home for distributed patterns (+ event-driven, gRPC streaming)
-│   ├── 20.7-graphql
-│   ├── 20.8-caching              cache patterns + Redis fundamentals + advanced Redis
-│   └── 20.12-ai-engineering      LLM architecture · evals · governance
+├── ROADMAP.md ← you are here
+├── INDEX.md ← every file, one list
+├── 00-strategy/ ← resume · STAR · HR · communication
+├── 10-frontend/ ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
+├── 20-backend/ ← 9 sub-stacks, zero duplication:
+│ ├── 20.1-node.js runtime internals
+│ ├── 20.2-nestjs framework
+│ ├── 20.3-rest-apis ALL of HTTP/APIs (fundamentals → production → advanced)
+│ ├── 20.4-database Postgres + Prisma (Redis lives in caching)
+│ ├── 20.5-security/auth/ the auth learning track
+│ ├── 20.6-microservices single home for distributed patterns (+ event-driven, gRPC streaming)
+│ ├── 20.7-graphql
+│ ├── 20.8-caching cache patterns + Redis fundamentals + advanced Redis
+│ └── 20.12-ai-engineering LLM architecture · evals · governance
 ├── 30-architecture/
-│   ├── 30.1-design-patterns
-│   ├── 30.2-system-design/       00-theory + 10-case-studies
-│   └── 30.3-infra-patterns/      ops-only: retries, idempotency, health checks…
-├── 40-platform/                ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
-├── 50-quality/                 ← testing · a11y · performance · production engineering
-├── 60-realtime/                ← WebSockets/SSE (the only realtime home)
-├── 70-interview-toolkit/       ← coding patterns (18) · behavioral depth · cheat sheets
+│ ├── 30.1-design-patterns
+│ ├── 30.2-system-design/ 00-theory + 10-case-studies
+│ └── 30.3-infra-patterns/ ops-only: retries, idempotency, health checks…
+├── 40-platform/ ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
+├── 50-quality/ ← testing · a11y · performance · production engineering
+├── 60-realtime/ ← WebSockets/SSE (the only realtime home)
+├── 70-interview-toolkit/ ← coding patterns (18) · behavioral depth · cheat sheets
 ├── 80-lanes-abroad-full-stack/ ← EU lane: playbooks · Docita pack · Germany cluster
-└── 81-lanes-indian-sde-faang/  ← FAANG lane
+└── 81-lanes-indian-sde-faang/ ← FAANG lane
 ```
 
 ---
 
 ## Navigation
 
-[🏠 INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG](81-lanes-indian-sde-faang/INDEX.md)
+[ INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG](81-lanes-indian-sde-faang/INDEX.md)
 
 *Last updated: August 2026 — post-deduplication: every topic lives in exactly one place.*

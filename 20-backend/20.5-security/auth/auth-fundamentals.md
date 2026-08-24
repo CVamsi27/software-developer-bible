@@ -50,10 +50,10 @@
 ### 1. The three primitives
 
 ```text
-HASHING (one-way)                ENCRYPTION (two-way)             SIGNING (integrity)
-password ──► argon2 ──► digest   plaintext ──AES-GCM──► ciphertext  payload ──hash──► h
-login attempt ──► argon2 ──► compare          │key                  h ──sign(priv)──► sig
-                          match? ✔            └──decryption──► plaintext    pub verifies(sig,h)
+HASHING (one-way) ENCRYPTION (two-way) SIGNING (integrity)
+password ──► argon2 ──► digest plaintext ──AES-GCM──► ciphertext payload ──hash──► h
+login attempt ──► argon2 ──► compare │key h ──sign(priv)──► sig
+                          match? └──decryption──► plaintext pub verifies(sig,h)
 Use: passwords, integrity checks Use: data at rest, PHI, secrets Use: JWTs, webhooks, TLS
 ```
 
@@ -61,7 +61,7 @@ Use: passwords, integrity checks Use: data at rest, PHI, secrets Use: JWTs, webh
 
 ```text
 password ──► Argon2id(password, salt, memory=64MB, iterations=3) ──► store(digest + params)
-login    ──► recompute with SAME params ──► timing-safe compare
+login ──► recompute with SAME params ──► timing-safe compare
 ```
 
 Why slow hashes: a fast hash (SHA-256) does billions of guesses/sec on commodity GPUs; Argon2id/bcrypt are deliberately memory/time-hard, dropping that to thousands/sec.
@@ -116,10 +116,10 @@ Everything above is moot without TLS in transit: it gives confidentiality, integ
 ### Timing-safe comparison (why it exists)
 
 ```typescript
-// ❌ Leaks information via early exit (timing side channel)
+// Leaks information via early exit (timing side channel)
 if (userInputHash === storedHash) { ... }
 
-// ✅ Constant-time
+// Constant-time
 import { timingSafeEqual } from 'node:crypto';
 const a = Buffer.from(userInputHash);
 const b = Buffer.from(storedHash);
@@ -154,7 +154,7 @@ if (a.length === b.length && timingSafeEqual(a, b)) { ... }
 
 ## Common Mistakes
 
-| ❌ Mistake | Why it fails | ✅ Instead |
+| Mistake | Why it fails | Instead |
 |-----------|--------------|-----------|
 | SHA-256 for passwords | Too fast → brute-forceable | Argon2id / bcrypt / scrypt |
 | Salt = username or constant | Rainbow tables per-app | Unique random salt per password |
@@ -196,14 +196,14 @@ if (a.length === b.length && timingSafeEqual(a, b)) { ... }
 ## Cheat Sheet
 
 ```text
-PASSWORDS   → Argon2id (m=64MB,t=3) · unique salt · rehash-on-login upgrade
-TOKENS      → randomBytes(32) · CSPRNG only
-INTEGRITY   → HMAC (shared trust) · ES256/RS256 (distributed trust)
-CONFIDENT.  → AES-256-GCM · envelope encryption for regulated fields
-TRANSPORT   → TLS everywhere · mTLS service-to-service
-COMPARE     → timingSafeEqual
-LOGIN       → rate limit + backoff + breach check + MFA step-up
-NEVER       → Math.random() for tokens · fast-hash passwords · homegrown crypto
+PASSWORDS → Argon2id (m=64MB,t=3) · unique salt · rehash-on-login upgrade
+TOKENS → randomBytes(32) · CSPRNG only
+INTEGRITY → HMAC (shared trust) · ES256/RS256 (distributed trust)
+CONFIDENT. → AES-256-GCM · envelope encryption for regulated fields
+TRANSPORT → TLS everywhere · mTLS service-to-service
+COMPARE → timingSafeEqual
+LOGIN → rate limit + backoff + breach check + MFA step-up
+NEVER → Math.random() for tokens · fast-hash passwords · homegrown crypto
 ```
 
 ---

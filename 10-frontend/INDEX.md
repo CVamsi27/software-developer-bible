@@ -5,12 +5,12 @@
 > 100+ files across 8 sub-stacks, organized by what you need to know in what order.
 
 [![Files](https://img.shields.io/badge/files-100%2B-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#-the-8-sub-stacks)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## 🎯 Why this stack matters
+## Why this stack matters
 
 Every senior full-stack interview tests frontend fundamentals. Even if you specialize in backend, you must be able to:
 - Explain how the JS event loop works
@@ -22,7 +22,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 📁 The 8 Sub-Stacks (in study order)
+## The 8 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Categories | Topics |
 |------:|-----------|------:|------------|--------|
@@ -37,19 +37,19 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 🗺️ Category Map (high-level)
+## Category Map (high-level)
 
 The frontend stack is large. Here's the topic map so you know what to read in what order.
 
-### 🟦 Fundamentals (read first)
+### Fundamentals (read first)
 - **JavaScript** — execution, scope, async, prototypes, `this` — every interview tests these
 - **TypeScript** — generics, conditional types, narrowing — type system fluency
 
-### 🟩 Frameworks (read second)
+### Frameworks (read second)
 - **React** — internals, hooks, patterns, modern (18/19) APIs
 - **Next.js** — App Router, RSC, caching, streaming, Server Actions
 
-### 🟨 Specialized (read as needed by JD)
+### Specialized (read as needed by JD)
 - **Form Handling** — React Hook Form, Zod, Server Actions
 - **Animation** — Framer Motion, GSAP, React Spring
 - **HTML/CSS & PWA** — semantic HTML, responsive, PWA
@@ -57,7 +57,7 @@ The frontend stack is large. Here's the topic map so you know what to read in wh
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Full-stack senior prepping for mid-stage (1-2 weeks)
 1. **JavaScript TL;DR + Async & Concurrency** (1.5 hrs) — must know
@@ -81,7 +81,7 @@ The frontend stack is large. Here's the topic map so you know what to read in wh
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — for full-stack interviews
 - [System Design](../INDEX.md) — frontend-side system design (CDN, edge, caching)

@@ -5,12 +5,12 @@
 > 31 files across 4 sub-stacks.
 
 [![Files](https://img.shields.io/badge/files-31-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-4-green)](#-the-4-sub-stacks)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-4-green)](#the-4-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## 🎯 Why this stack matters
+## Why this stack matters
 
 Quality is what separates a senior engineer from a mid-level one. Every senior interview (especially at FAANG) tests:
 - **Testing** — unit, integration, E2E, mocking, test pyramid, coverage trade-offs
@@ -22,7 +22,7 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ---
 
-## 📁 The 4 Sub-Stacks (in study order)
+## The 4 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
@@ -33,18 +33,18 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ---
 
-## 🗺️ Category Map
+## Category Map
 
 | Category | What it covers | When to read |
 |----------|----------------|--------------|
-| 🟦 **Testing** | Unit, integration, E2E, mocking, load testing | First — asked in every loop |
-| 🟩 **Performance** | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific |
-| 🟨 **Production Engineering** | Incidents, SLO, error budgets, chaos engineering | Third — senior differentiator |
-| 🟪 **Accessibility** | WCAG, ARIA, keyboard, screen readers | Fourth — JD-dependent depth |
+| **Testing** | Unit, integration, E2E, mocking, load testing | First — asked in every loop |
+| **Performance** | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific |
+| **Production Engineering** | Incidents, SLO, error budgets, chaos engineering | Third — senior differentiator |
+| **Accessibility** | WCAG, ARIA, keyboard, screen readers | Fourth — JD-dependent depth |
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Testing pyramid** → frameworks → E2E *(asked in every loop)*
 2. **Performance**: CWV thresholds + profiling workflow
@@ -53,7 +53,7 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ---
 
-## 🎤 Interview questions to expect
+## Interview questions to expect
 
 - "How do you decide what to test?"
 - "Walk me through a Core Web Vitals issue you debugged."
@@ -64,7 +64,7 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Frontend Stack](../10-frontend/INDEX.md) — testing React components (RTL)
 - [Backend Stack](../20-backend/INDEX.md) — integration tests, load testing
@@ -75,4 +75,4 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ## Navigation
 
-[← Previous: Platform](../40-platform/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Real-Time →](../60-realtime/INDEX.md)
+[← Previous: Platform](../40-platform/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Real-Time →](../60-realtime/INDEX.md)

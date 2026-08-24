@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories — by Difficulty Tier
+## Topic Categories — by Difficulty Tier
 
 The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the others.
 
@@ -23,7 +23,7 @@ The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the ot
 
 ---
 
-## 🗂️ Case Studies by Domain
+## Case Studies by Domain
 
 | Domain | Case Studies | When to read |
 |--------|--------------|--------------|
@@ -75,4 +75,4 @@ The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the ot
 
 ## Navigation
 
-[← Previous: Theory](../00-theory/INDEX.md) · [🏠 Back to System Design Index](../INDEX.md) · [Next: Microservices →](../../../20-backend/20.6-microservices/INDEX.md)
+[← Previous: Theory](../00-theory/INDEX.md) · [ Back to System Design Index](../INDEX.md) · [Next: Microservices →](../../../20-backend/20.6-microservices/INDEX.md)

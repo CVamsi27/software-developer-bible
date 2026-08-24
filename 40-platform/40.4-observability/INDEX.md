@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 3 pillars of observability + the SLO/error-budget framework.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [The 3 Pillars](#-the-3-pillars) | 3 | Logs, metrics, traces — the foundation |
-| [Errors & Health](#-errors--health) | 2 | Error tracking, health checks — runtime quality |
-| [Reliability Targets](#-reliability-targets) | 2 | SLI/SLO/SLA, alerting — SRE framework |
-| [OpenTelemetry](#-opentelemetry) | 1 | The vendor-neutral standard |
-| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+| [The 3 Pillars](#the-3-pillars) | 3 | Logs, metrics, traces — the foundation |
+| [Errors & Health](#errors--health) | 2 | Error tracking, health checks — runtime quality |
+| [Reliability Targets](#reliability-targets) | 2 | SLI/SLO/SLA, alerting — SRE framework |
+| [OpenTelemetry](#opentelemetry) | 1 | The vendor-neutral standard |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
-## 📊 The 3 Pillars
+## The 3 Pillars
 
 Logs, metrics, traces — the foundation of observability.
 
@@ -41,7 +41,7 @@ Logs, metrics, traces — the foundation of observability.
 
 ---
 
-## 🐛 Errors & Health
+## Errors & Health
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -50,7 +50,7 @@ Logs, metrics, traces — the foundation of observability.
 
 ---
 
-## 🎯 Reliability Targets
+## Reliability Targets
 
 The SRE framework.
 
@@ -66,7 +66,7 @@ The SRE framework.
 
 ---
 
-## 🌐 OpenTelemetry
+## OpenTelemetry
 
 The vendor-neutral standard.
 
@@ -76,7 +76,7 @@ The vendor-neutral standard.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -84,7 +84,7 @@ The vendor-neutral standard.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Logging + Monitoring** — the basics
 2. **Tracing** — the senior differentiator
@@ -95,7 +95,7 @@ The vendor-neutral standard.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Kubernetes (Health Checks)](../40.2-kubernetes/INDEX.md) — K8s probe configuration
 - [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) — frontend observability
@@ -106,4 +106,4 @@ The vendor-neutral standard.
 
 ## Navigation
 
-[← Previous: CI/CD](../40.3-ci-cd/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Build Tools →](../40.5-build-tools/INDEX.md)
+[← Previous: CI/CD](../40.3-ci-cd/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Build Tools →](../40.5-build-tools/INDEX.md)

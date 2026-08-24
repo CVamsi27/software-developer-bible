@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Core Concepts](#-core-concepts) | 2 | Images, containers, Dockerfile — the foundation |
-| [Storage & Networking](#-storage--networking) | 1 | Volumes, networks — the runtime side |
-| [Multi-Container & Build](#-multi-container--build) | 2 | Compose, multi-stage builds — production patterns |
-| [Production & Security](#-production--security) | 2 | Best practices, production patterns, image hardening |
+| [Core Concepts](#core-concepts) | 2 | Images, containers, Dockerfile — the foundation |
+| [Storage & Networking](#storage--networking) | 1 | Volumes, networks — the runtime side |
+| [Multi-Container & Build](#multi-container--build) | 2 | Compose, multi-stage builds — production patterns |
+| [Production & Security](#production--security) | 2 | Best practices, production patterns, image hardening |
 
 ---
 
-## 🏗️ Core Concepts
+## Core Concepts
 
 What Docker is and how it works.
 
@@ -32,7 +32,7 @@ What Docker is and how it works.
 
 ---
 
-## 💾 Storage & Networking
+## Storage & Networking
 
 Persistent data and inter-container communication.
 
@@ -42,7 +42,7 @@ Persistent data and inter-container communication.
 
 ---
 
-## 🧩 Multi-Container & Build
+## Multi-Container & Build
 
 Production patterns.
 
@@ -53,7 +53,7 @@ Production patterns.
 
 ---
 
-## 🚀 Production & Security
+## Production & Security
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -63,7 +63,7 @@ Production patterns.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Images & Containers** — must know
 2. **Volumes & Networks** — must know
@@ -75,7 +75,7 @@ Production patterns.
 
 ---
 
-## 🎯 Key Patterns (memorize)
+## Key Patterns (memorize)
 
 ### The Multi-Stage Dockerfile (the standard)
 
@@ -125,7 +125,7 @@ volumes:
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Kubernetes](../40.2-kubernetes/INDEX.md) — orchestrates Docker containers
 - [CI/CD](../40.3-ci-cd/INDEX.md) — Docker build/deploy pipelines
@@ -135,4 +135,4 @@ volumes:
 
 ## Navigation
 
-[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
+[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)

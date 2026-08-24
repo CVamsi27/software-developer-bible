@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Bundlers](#-bundlers) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
-| [Compilers & Transpilers](#-compilers--transpilers) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
-| [Build Optimization](#-build-optimization) | 1 | Tree shaking, code splitting, bundle analysis |
-| [Tool Comparison & Interview](#-tool-comparison--interview) | 2 | When to use what, 50+ Qs |
+| [Bundlers](#bundlers) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
+| [Compilers & Transpilers](#compilers--transpilers) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
+| [Build Optimization](#build-optimization) | 1 | Tree shaking, code splitting, bundle analysis |
+| [Tool Comparison & Interview](#tool-comparison--interview) | 2 | When to use what, 50+ Qs |
 
 ---
 
-## 📦 Bundlers
+## Bundlers
 
 The main bundlers — pick based on project needs.
 
@@ -44,7 +44,7 @@ New project?
 
 ---
 
-## 🔄 Compilers & Transpilers
+## Compilers & Transpilers
 
 How TS/JSX become browser-compatible JS.
 
@@ -55,7 +55,7 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## ⚡ Build Optimization
+## Build Optimization
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -63,7 +63,7 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## 🎯 Tool Comparison & Interview
+## Tool Comparison & Interview
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -72,7 +72,7 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Webpack + Vite** — the two main ones
 2. **Build Optimization** — tree shaking, code splitting
@@ -83,7 +83,7 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "What's tree shaking? How does it work?"
 - "Difference between code splitting at route vs component level?"
@@ -93,7 +93,7 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Next.js](../../10-frontend/10.4-next.js/INDEX.md) — uses Turbopack
 - [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) — measuring bundle perf
@@ -104,4 +104,4 @@ How TS/JSX become browser-compatible JS.
 
 ## Navigation
 
-[← Previous: Observability](../40.4-observability/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Git Advanced →](../40.6-git-advanced/INDEX.md)
+[← Previous: Observability](../40.4-observability/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Git Advanced →](../40.6-git-advanced/INDEX.md)

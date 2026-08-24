@@ -10,20 +10,20 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 11 files are organized into 4 conceptual categories.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Runtime & Async](#-runtime--async) | 2 | The Node.js event loop — every senior interview tests this |
-| [I/O & Data Handling](#-io--data-handling) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
-| [Process & Concurrency](#-process--concurrency) | 3 | Clustering, child processes, lifecycle — production concerns |
-| [Security & Testing](#-security--testing) | 2 | Node-specific security, the built-in test runner |
+| [Runtime & Async](#runtime--async) | 2 | The Node.js event loop — every senior interview tests this |
+| [I/O & Data Handling](#io--data-handling) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
+| [Process & Concurrency](#process--concurrency) | 3 | Clustering, child processes, lifecycle — production concerns |
+| [Security & Testing](#security--testing) | 2 | Node-specific security, the built-in test runner |
 
 ---
 
-## ⚙️ Runtime & Async
+## Runtime & Async
 
 How Node.js actually runs JavaScript. The event loop is the most-asked topic in Node interviews.
 
@@ -34,7 +34,7 @@ How Node.js actually runs JavaScript. The event loop is the most-asked topic in 
 
 ---
 
-## 💾 I/O & Data Handling
+## I/O & Data Handling
 
 The I/O primitives — every backend service uses these.
 
@@ -47,7 +47,7 @@ The I/O primitives — every backend service uses these.
 
 ---
 
-## 🧵 Process & Concurrency
+## Process & Concurrency
 
 Production concerns — making Node.js scale and stay healthy.
 
@@ -59,7 +59,7 @@ Production concerns — making Node.js scale and stay healthy.
 
 ---
 
-## 🔐 Security & Testing
+## Security & Testing
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -68,7 +68,7 @@ Production concerns — making Node.js scale and stay healthy.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Event Loop** — must know, asked in every loop
 2. **Streams** — production I/O, asked at senior level
@@ -82,7 +82,7 @@ Production concerns — making Node.js scale and stay healthy.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [JavaScript Event Loop](../../10-frontend/10.1-javascript/10.1.09-event-loop.md) — the JS-level event loop (Node extends this)
 - [NestJS](../20.2-nestjs/INDEX.md) — the most common Node.js framework
@@ -93,4 +93,4 @@ Production concerns — making Node.js scale and stay healthy.
 
 ## Navigation
 
-[← Previous: Next.js](../../10-frontend/10.4-next.js/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: NestJS →](../20.2-nestjs/INDEX.md)
+[← Previous: Next.js](../../10-frontend/10.4-next.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: NestJS →](../20.2-nestjs/INDEX.md)

@@ -11,7 +11,7 @@
 
 ---
 
-## 🗂️ Classification
+## Classification
 
 Design patterns are classified into **3 GoF categories** (creational, structural, behavioral) + **foundations** (principles you need first) + **architectural** (modern patterns for distributed systems) + **interview prep**.
 
@@ -26,7 +26,7 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 
 ---
 
-## 🧭 How to Navigate
+## How to Navigate
 
 ### If you're new to design patterns
 
@@ -54,7 +54,7 @@ Use this decision cheat sheet (full version in each category INDEX):
 
 ---
 
-## 📁 Sub-Index Links
+## Sub-Index Links
 
 ### [00 — Foundations](30.1.0-foundations/INDEX.md)
 SOLID, OOP concepts, UML diagrams, DRY/KISS/YAGNI. Read these before any pattern.
@@ -108,7 +108,7 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ---
 
-## 🗺️ Pattern Map (one-glance cheat sheet)
+## Pattern Map (one-glance cheat sheet)
 
 | Pattern | Category | Intent | Use when | Avoid when |
 |---------|----------|--------|----------|------------|
@@ -143,7 +143,7 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [System Design](../../INDEX.md) — many system design patterns build on these (circuit breaker → proxy, pub/sub → observer, …)
 - [Coding Patterns](../../INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
@@ -154,4 +154,4 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ## Navigation
 
-[← Back: Architecture](../INDEX.md) · [🏠 Bible Index](../../INDEX.md) · [Next: System Design →](../../INDEX.md)
+[← Back: Architecture](../INDEX.md) · [ Bible Index](../../INDEX.md) · [Next: System Design →](../../INDEX.md)

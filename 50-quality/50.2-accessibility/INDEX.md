@@ -10,19 +10,19 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Standards](#-standards) | 1 | WCAG (POUR, levels) — the rule book |
-| [Semantic HTML & ARIA](#-semantic-html--aria) | 1 | ARIA roles, states, properties — extending semantics |
+| [Standards](#standards) | 1 | WCAG (POUR, levels) — the rule book |
+| [Semantic HTML & ARIA](#semantic-html--aria) | 1 | ARIA roles, states, properties — extending semantics |
 | [Interaction](#-interaction) | 2 | Keyboard navigation, forms — how users interact |
-| [Visual Design](#-visual-design) | 1 | Color, contrast, CVD-safe palettes — the visual side |
-| [Testing & Interview](#-testing--interview) | 2 | A11y testing, 50+ Qs |
+| [Visual Design](#visual-design) | 1 | Color, contrast, CVD-safe palettes — the visual side |
+| [Testing & Interview](#testing--interview) | 2 | A11y testing, 50+ Qs |
 
 ---
 
-## 📋 Standards
+## Standards
 
 The rule book.
 
@@ -38,7 +38,7 @@ The rule book.
 
 ---
 
-## 🏗️ Semantic HTML & ARIA
+## Semantic HTML & ARIA
 
 The foundation — semantic HTML is 90% of accessibility.
 
@@ -50,7 +50,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## ⌨️ Interaction
+## ⌨ Interaction
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -59,7 +59,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## 🎨 Visual Design
+## Visual Design
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -67,7 +67,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## 🧪 Testing & Interview
+## Testing & Interview
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -76,7 +76,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **WCAG Overview** — must know the framework
 2. **ARIA** — the most-asked a11y topic
@@ -88,7 +88,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "What is WCAG? What are the POUR principles?"
 - "What's the difference between ARIA roles and HTML semantics?"
@@ -99,7 +99,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Performance Monitoring](../50.3-performance-monitoring/INDEX.md) — Lighthouse a11y audits
 - [React (ARIA)](../../10-frontend/10.3-react/INDEX.md) — ARIA patterns in React
@@ -110,4 +110,4 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ## Navigation
 
-[← Previous: Testing](../50.1-testing/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../50.3-performance-monitoring/INDEX.md)
+[← Previous: Testing](../50.1-testing/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../50.3-performance-monitoring/INDEX.md)

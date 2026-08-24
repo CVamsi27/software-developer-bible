@@ -7,7 +7,7 @@
 
 ---
 
-## 🗂️ Concept Categories (within the chapter)
+## Concept Categories (within the chapter)
 
 One primer file, but the concepts inside classify into 4 groups — the way to recall them in a "would you pick RN or native?" question.
 
@@ -27,10 +27,10 @@ One primer file, but the concepts inside classify into 4 groups — the way to r
 ## The 30-Second Version
 
 ```text
-Web team shipping mobile fast, mostly-standard UI?   → React Native (Expo first)
-Deep platform APIs / perf-critical animations?       → Native (Swift/Kotlin) or RN + native modules
-Content/product surface needing reach + instant use?  → PWA
-Already a TS monorepo?                                → RN maximizes shared types/logic/hooks
+Web team shipping mobile fast, mostly-standard UI? → React Native (Expo first)
+Deep platform APIs / perf-critical animations? → Native (Swift/Kotlin) or RN + native modules
+Content/product surface needing reach + instant use? → PWA
+Already a TS monorepo? → RN maximizes shared types/logic/hooks
 ```
 
 ---
@@ -41,4 +41,4 @@ Already a TS monorepo?                                → RN maximizes shared ty
 
 ## Navigation
 
-[← Previous: HTML/CSS & PWA](../10.7-html-css/INDEX.md) · [🏠 Back to Index](../../INDEX.md)
+[← Previous: HTML/CSS & PWA](../10.7-html-css/INDEX.md) · [ Back to Index](../../INDEX.md)

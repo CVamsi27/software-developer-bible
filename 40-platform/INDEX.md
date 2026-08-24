@@ -5,12 +5,12 @@
 > 75+ files across 10 sub-stacks — the "how it runs" layer of the bible.
 
 [![Files](https://img.shields.io/badge/files-75%2B-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#-the-10-sub-stacks)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## 🎯 Why this stack matters
+## Why this stack matters
 
 Senior interviews test platform knowledge. Even for "full-stack" roles, you must:
 - Containerize an app with Docker (write a `Dockerfile`, use multi-stage builds)
@@ -24,7 +24,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 📁 The 10 Sub-Stacks (in study order)
+## The 10 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
@@ -41,31 +41,31 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 🗺️ Category Map (high-level)
+## Category Map (high-level)
 
 The platform stack is organized into 4 conceptual layers. Read in this order.
 
-### 🟦 Containers & Orchestration (read first)
+### Containers & Orchestration (read first)
 - **Docker** — the unit of deployment
 - **Kubernetes** — the orchestrator (if JD requires)
 
-### 🟩 Delivery & Operations (read second)
+### Delivery & Operations (read second)
 - **CI/CD** — build, test, deploy pipelines
 - **Observability** — logs, metrics, traces, errors
 - **Serverless & Edge** — alternative deployment models
 - **CDN** — caching at the edge
 
-### 🟨 Development Workflow (read third)
+### Development Workflow (read third)
 - **Build Tools** — bundlers, compilers, transpilers
 - **Git Advanced** — branching, history rewriting, archaeology
 - **Monorepo** — multi-package repos
 
-### 🟪 Methodology (skim)
+### Methodology (skim)
 - **Twelve-Factor App** — the canonical cloud-native principles
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Full-stack senior, 1-week prep
 1. **Docker TL;DR + Dockerfile + Compose** (1.5 hrs) — must know
@@ -91,7 +91,7 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — services that run on this platform
 - [System Design](../INDEX.md) — architecture decisions involving platform
@@ -101,4 +101,4 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 
 ## Navigation
 
-[← Previous: Backend](../20-backend/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Quality →](../50-quality/INDEX.md)
+[← Previous: Backend](../20-backend/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Quality →](../50-quality/INDEX.md)

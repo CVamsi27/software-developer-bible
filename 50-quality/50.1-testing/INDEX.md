@@ -10,20 +10,20 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Fundamentals](#-fundamentals) | 1 | Test types, testing pyramid, TDD vs BDD, coverage |
-| [Test Frameworks](#-test-frameworks) | 3 | Jest, Vitest, RTL — the main tools |
-| [Test Levels](#-test-levels) | 3 | Unit, integration, E2E — the test pyramid |
-| [Mocking & Patterns](#-mocking--patterns) | 2 | Mocking, test patterns (Arrange-Act-Assert, factories) |
-| [Advanced Testing](#-advanced-testing) | 3 | Performance/load, chaos engineering, framework comparison |
-| [Interview Prep](#-interview-prep) | 1 | 40+ Qs |
+| [Fundamentals](#fundamentals) | 1 | Test types, testing pyramid, TDD vs BDD, coverage |
+| [Test Frameworks](#test-frameworks) | 3 | Jest, Vitest, RTL — the main tools |
+| [Test Levels](#test-levels) | 3 | Unit, integration, E2E — the test pyramid |
+| [Mocking & Patterns](#mocking--patterns) | 2 | Mocking, test patterns (Arrange-Act-Assert, factories) |
+| [Advanced Testing](#advanced-testing) | 3 | Performance/load, chaos engineering, framework comparison |
+| [Interview Prep](#interview-prep) | 1 | 40+ Qs |
 
 ---
 
-## 🧱 Fundamentals
+## Fundamentals
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ Test Frameworks
+## Test Frameworks
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
@@ -41,7 +41,7 @@
 
 ---
 
-## 📐 Test Levels
+## Test Levels
 
 The test pyramid in practice.
 
@@ -55,11 +55,11 @@ The test pyramid in practice.
 
 ```text
        /\
-      /  \         E2E (slow, expensive, high confidence)
+      / \ E2E (slow, expensive, high confidence)
      /────\
-    /      \       Integration (medium speed, medium confidence)
+    / \ Integration (medium speed, medium confidence)
    /────────\
-  /          \     Unit (fast, cheap, narrow confidence)
+  / \ Unit (fast, cheap, narrow confidence)
 /────────────\
 ```
 
@@ -67,7 +67,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🎭 Mocking & Patterns
+## Mocking & Patterns
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -76,7 +76,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🚀 Advanced Testing
+## Advanced Testing
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
@@ -86,7 +86,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -94,7 +94,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Testing Overview** — must know the pyramid
 2. **Jest or Vitest** — the framework your team uses
@@ -107,7 +107,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "What's your testing strategy? Why?"
 - "Unit vs integration vs E2E — when to use which?"
@@ -118,7 +118,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [React](../../10-frontend/10.3-react/INDEX.md) — RTL for component tests
 - [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — NestJS testing module
@@ -129,4 +129,4 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ## Navigation
 
-[← Previous: Twelve-Factor App](../../40-platform/40.9-twelve-factor/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Accessibility →](../50.2-accessibility/INDEX.md)
+[← Previous: Twelve-Factor App](../../40-platform/40.9-twelve-factor/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Accessibility →](../50.2-accessibility/INDEX.md)

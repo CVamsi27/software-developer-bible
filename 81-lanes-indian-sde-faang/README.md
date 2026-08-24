@@ -1,4 +1,4 @@
-# 🎯 SDE Interview Preparation Guide
+# SDE Interview Preparation Guide
 
 > **Your complete roadmap to landing a job at top product-based companies**
 >
@@ -6,13 +6,13 @@
 
 ---
 
-## 📋 What's Inside
+## What's Inside
 
 This guide covers **everything** you need to prepare for SDE interviews at Microsoft, Google, Amazon, Meta, Apple, and other top companies. From data structures and algorithms to system design, behavioral questions, and company-specific preparation.
 
 ---
 
-## 📚 Guide Files
+## Guide Files
 
 ### Core Knowledge (Phases 1-28)
 
@@ -45,7 +45,7 @@ This guide covers **everything** you need to prepare for SDE interviews at Micro
 
 ---
 
-## 📖 Recommended Reading Order
+## Recommended Reading Order
 
 ### For Beginners (New to Interview Prep)
 
@@ -124,7 +124,7 @@ Priority Order:
 
 ---
 
-## 🎯 Quick Start Guide
+## Quick Start Guide
 
 ### If You Have 4-6 Weeks
 
@@ -158,7 +158,7 @@ Time: 4-6 hours/day
 
 ---
 
-## 📊 Study Plan Overview
+## Study Plan Overview
 
 | Week | Focus | Problems | System Design | Behavioral |
 |------|-------|----------|---------------|------------|
@@ -178,7 +178,7 @@ Time: 4-6 hours/day
 
 ---
 
-## 🎯 Readiness Checklist
+## Readiness Checklist
 
 ### Technical Skills
 - [ ] Can solve Medium problems in 20-25 minutes
@@ -210,7 +210,7 @@ Time: 4-6 hours/day
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Books
 - [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) - Classic problem book
@@ -230,7 +230,7 @@ Time: 4-6 hours/day
 
 ---
 
-## 💡 Tips for Success
+## Tips for Success
 
 1. **Consistency > Intensity** — 4 hours daily for 12 weeks beats 12 hours daily for 4 weeks
 2. **Practice Explaining** — Interviewers care about HOW you think, not just WHAT you know
@@ -242,7 +242,7 @@ Time: 4-6 hours/day
 
 ---
 
-## 🏆 Final Milestone Checklist
+## Final Milestone Checklist
 
 Before scheduling your interviews, you should be able to:
 
@@ -257,7 +257,7 @@ Before scheduling your interviews, you should be able to:
 
 ---
 
-> **Good luck! You've got this. 💪**
+> **Good luck! You've got this. **
 
 > **Remember:** This guide is designed to prepare you not just for one company, but for interviews at ANY top tech company. The foundation you build here will serve you throughout your career.
 

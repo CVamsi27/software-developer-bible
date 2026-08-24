@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 16 files are organized into 5 categories — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Rendering Fundamentals](#-rendering-fundamentals) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
-| [App Router & Routing](#-app-router--routing) | 4 | The modern routing model: layouts, nested routes, middleware, route handlers |
-| [Data, Caching & Streaming](#-data-caching--streaming) | 4 | The hardest part of Next.js — server actions, caching, streaming, ISR |
-| [Auth, SEO & Optimization](#-auth-seo--optimization) | 3 | Authentication, metadata, image optimization |
-| [Interview Prep](#-interview-prep) | 1 | 60+ interview Qs |
+| [Rendering Fundamentals](#rendering-fundamentals) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
+| [App Router & Routing](#app-router--routing) | 4 | The modern routing model: layouts, nested routes, middleware, route handlers |
+| [Data, Caching & Streaming](#data-caching--streaming) | 4 | The hardest part of Next.js — server actions, caching, streaming, ISR |
+| [Auth, SEO & Optimization](#auth-seo--optimization) | 3 | Authentication, metadata, image optimization |
+| [Interview Prep](#interview-prep) | 1 | 60+ interview Qs |
 
 ---
 
-## 🖼️ Rendering Fundamentals
+## Rendering Fundamentals
 
 The mental model for choosing the right rendering strategy.
 
@@ -37,7 +37,7 @@ The mental model for choosing the right rendering strategy.
 
 ---
 
-## 🛣️ App Router & Routing
+## App Router & Routing
 
 The modern App Router model — every Next.js interview tests this.
 
@@ -50,7 +50,7 @@ The modern App Router model — every Next.js interview tests this.
 
 ---
 
-## 💾 Data, Caching & Streaming
+## Data, Caching & Streaming
 
 The hardest part of Next.js — the 4 files every senior engineer must own.
 
@@ -65,7 +65,7 @@ The hardest part of Next.js — the 4 files every senior engineer must own.
 
 ---
 
-## 🔐 Auth, SEO & Optimization
+## Auth, SEO & Optimization
 
 Production concerns.
 
@@ -76,7 +76,7 @@ Production concerns.
 
 ---
 
-## 📝 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -84,7 +84,7 @@ Production concerns.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Coming from Pages Router (3-5 days)
 1. Rendering Fundamentals (4 files, ~2 hrs)
@@ -106,7 +106,7 @@ Production concerns.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [React](../10.3-react/INDEX.md) — Next.js builds on React; React Server Components are a Next.js feature
 - [Serverless & Edge](../../40-platform/40.7-serverless-edge/INDEX.md) — Next.js middleware runs on the Edge
@@ -117,4 +117,4 @@ Production concerns.
 
 ## Navigation
 
-[← Previous: React](../10.3-react/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Form Handling →](../10.5-form-handling/INDEX.md)
+[← Previous: React](../10.3-react/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Form Handling →](../10.5-form-handling/INDEX.md)

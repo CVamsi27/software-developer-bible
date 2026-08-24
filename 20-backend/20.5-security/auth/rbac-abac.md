@@ -5,7 +5,7 @@
 
 # RBAC (Role-Based Access Control)
 
-> 📍 Stage 4 of the [Auth Learning Track](INDEX.md) — prev: [OAuth2/OIDC](oauth2-oidc.md) · next: [Interview Drills](interview-questions.md)
+> Stage 4 of the [Auth Learning Track](INDEX.md) — prev: [OAuth2/OIDC](oauth2-oidc.md) · next: [Interview Drills](interview-questions.md)
 
 > **TL;DR:** RBAC assigns permissions to roles and roles to users — simple, but coarse. ABAC adds attributes (time, IP, resource owner) for finer-grained policy. The senior test is whether you can model a real org chart, separate policy from mechanism, and audit every access decision.
 >
@@ -32,22 +32,22 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
-│                    RBAC Components                               │
+│ RBAC Components │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Users ──────> Roles ──────> Permissions                        │
-│                                                                 │
-│  ┌──────────┐      ┌──────────┐      ┌──────────┐              │
-│  │  Alice   │─────>│  Admin   │─────>│ create   │              │
-│  │  Bob     │─────>│  Editor  │─────>│ read     │              │
-│  │  Charlie │─────>│  Viewer  │─────>│ update   │              │
-│  │  Diana   │─────>│          │─────>│ delete   │              │
-│  └──────────┘      └──────────┘      └──────────┘              │
-│                                                                 │
-│  Hierarchy:                                                     │
-│  Admin > Editor > Viewer                                        │
-│  (Inherits all lower-level permissions)                         │
-│                                                                 │
+│ │
+│ Users ──────> Roles ──────> Permissions │
+│ │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
+│ │ Alice │─────>│ Admin │─────>│ create │ │
+│ │ Bob │─────>│ Editor │─────>│ read │ │
+│ │ Charlie │─────>│ Viewer │─────>│ update │ │
+│ │ Diana │─────>│ │─────>│ delete │ │
+│ └──────────┘ └──────────┘ └──────────┘ │
+│ │
+│ Hierarchy: │
+│ Admin > Editor > Viewer │
+│ (Inherits all lower-level permissions) │
+│ │
 └─────────────────────────────────────────────────────────────────┘
 
 ```
@@ -55,13 +55,13 @@ RBAC is defined by NIST SP 800-162 and is widely used in enterprise applications
 ### RBAC Flow
 
 ```text
-┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐
-│  User    │─────>│  Check   │─────>│  Check   │─────>│  Grant/  │
-│  Request │      │  Role    │      │  Perm    │      │  Deny    │
-└──────────┘      └──────────┘      └──────────┘      └──────────┘
-     │                │                 │                 │
-     │           Get user's        Check role has      Return
-     │           assigned roles    required perm       response
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
+│ User │─────>│ Check │─────>│ Check │─────>│ Grant/ │
+│ Request │ │ Role │ │ Perm │ │ Deny │
+└──────────┘ └──────────┘ └──────────┘ └──────────┘
+     │ │ │ │
+     │ Get user's Check role has Return
+     │ assigned roles required perm response
 
 ```
 
@@ -356,47 +356,47 @@ export class UsersController {
 
 ```text
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  roles     UserRole[]
+  id String @id @default(cuid())
+  email String @unique
+  roles UserRole[]
 
   @@map("users")
 }
 
 model Role {
-  id          String       @id @default(cuid())
-  name        String       @unique
+  id String @id @default(cuid())
+  name String @unique
   permissions RolePermission[]
-  users       UserRole[]
+  users UserRole[]
 
   @@map("roles")
 }
 
 model Permission {
-  id     String   @id @default(cuid())
+  id String @id @default(cuid())
   resource String
-  action   String
-  roles  RolePermission[]
+  action String
+  roles RolePermission[]
 
   @@unique([resource, action])
   @@map("permissions")
 }
 
 model UserRole {
-  userId   String
-  roleId   String
-  user     User     @relation(fields: [userId], references: [id])
-  role     Role     @relation(fields: [roleId], references: [id])
+  userId String
+  roleId String
+  user User @relation(fields: [userId], references: [id])
+  role Role @relation(fields: [roleId], references: [id])
 
   @@id([userId, roleId])
   @@map("user_roles")
 }
 
 model RolePermission {
-  roleId       String
+  roleId String
   permissionId String
-  role         Role       @relation(fields: [roleId], references: [id])
-  permission   Permission @relation(fields: [permissionId], references: [id])
+  role Role @relation(fields: [roleId], references: [id])
+  permission Permission @relation(fields: [permissionId], references: [id])
 
   @@id([roleId, permissionId])
   @@map("role_permissions")

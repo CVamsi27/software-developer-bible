@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 17 content files classify into 6 conceptual categories — the "GoF classification" of API design.
 
@@ -28,11 +28,11 @@ The 17 content files classify into 6 conceptual categories — the "GoF classifi
 ## The Flow
 
 ```text
-PASS I — FUNDAMENTALS              PASS II — PRODUCTION                PASS III — ADVANCED
-02 principles  →  03 methods  →    06 pagination    →  08 rate limiting  →   17 maturity model
-04 status codes                    12 error handling     13 HTTP caching       10 API gateway
-01 design patterns                 15 webhooks           09 CORS               16 BFF
-                                   11 OpenAPI                                  07 authentication
+PASS I — FUNDAMENTALS PASS II — PRODUCTION PASS III — ADVANCED
+02 principles → 03 methods → 06 pagination → 08 rate limiting → 17 maturity model
+04 status codes 12 error handling 13 HTTP caching 10 API gateway
+01 design patterns 15 webhooks 09 CORS 16 BFF
+                                   11 OpenAPI 07 authentication
 ```
 
 | Pass | # | File | Topics |
@@ -53,7 +53,7 @@ PASS I — FUNDAMENTALS              PASS II — PRODUCTION                PASS 
 | III | 14 | [OpenAPI / Swagger](20.3.11-openapi-swagger.md) | Spec-first design, codegen |
 | III | 15 | [API Gateway](20.3.10-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) |
 | III | 16 | [BFF](20.3.16-bff.md) | Backend-for-frontend pattern |
-| 🎤 | 17 | [Interview Questions](20.3.14-interview-questions.md) | Curated Q&A |
+| | 17 | [Interview Questions](20.3.14-interview-questions.md) | Curated Q&A |
 
 ---
 
@@ -63,4 +63,4 @@ PASS I — FUNDAMENTALS              PASS II — PRODUCTION                PASS 
 
 ## Navigation
 
-[← Previous: NestJS](../20.2-nestjs/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Database →](../20.4-database/INDEX.md)
+[← Previous: NestJS](../20.2-nestjs/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Database →](../20.4-database/INDEX.md)

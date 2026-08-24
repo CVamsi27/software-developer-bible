@@ -8,7 +8,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 4 content files classify into 3 conceptual categories + drills — the "GoF classification" of AI engineering.
 
@@ -33,21 +33,21 @@ The 4 content files classify into 3 conceptual categories + drills — the "GoF 
 ## The Decision Map (memorize)
 
 ```text
-Task needs world knowledge you don't have?   → RAG (retrieval + grounding)
-Task is narrow/repetitive/format-fixed?      → Prompting + structured output
-Task needs a behavior/style no model has?    → Fine-tune LAST (data + cost + ops burden)
-Output feeds code/DB/UI?                     → JSON schema / function calling — never parse prose
-Regulated data involved?                     → Governance layer FIRST (see file 3)
+Task needs world knowledge you don't have? → RAG (retrieval + grounding)
+Task is narrow/repetitive/format-fixed? → Prompting + structured output
+Task needs a behavior/style no model has? → Fine-tune LAST (data + cost + ops burden)
+Output feeds code/DB/UI? → JSON schema / function calling — never parse prose
+Regulated data involved? → Governance layer FIRST (see file 3)
 ```
 
 ## The Production Stack in One Diagram
 
 ```text
 Client ──► API gateway ──► AI service layer ──► provider SDK (streaming)
-                │                │  ├── prompt assembly (+RAG context)
-                │                │  ├── guardrails: PII gate · cost meter · rate limit
-                │                │  └── fallback: cached response → smaller model → degrade gracefully
-                │                └── observability: token/cost/latency metrics, trace per completion
+                │ │ ├── prompt assembly (+RAG context)
+                │ │ ├── guardrails: PII gate · cost meter · rate limit
+                │ │ └── fallback: cached response → smaller model → degrade gracefully
+                │ └── observability: token/cost/latency metrics, trace per completion
                 └── feature flag / KILL SWITCH (default-off for regulated data)
 ```
 
@@ -61,4 +61,4 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
 
 ## Navigation
 
-[← Previous: Microservices](../20.6-microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md)
+[← Previous: Microservices](../20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md)

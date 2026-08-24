@@ -5,11 +5,11 @@
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
 
 [![Files](https://img.shields.io/badge/files-70%2B-blue)](INDEX.md)
-[![Stacks](https://img.shields.io/badge/stacks-3-green)](#-study-order)
+[![Stacks](https://img.shields.io/badge/stacks-3-green)](#study-order)
 
 ---
 
-## 📁 Sections (in study order)
+## Sections (in study order)
 
 | Section | Files | Topics |
 |---------|------:|--------|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🗂️ Design Patterns — Category Map
+## Design Patterns — Category Map
 
 The Design Patterns section is now organized by the **Gang of Four classification** + modern architectural patterns. Each category has its own INDEX with detailed descriptions, decision flowcharts, and comparisons.
 
@@ -32,11 +32,11 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 | Architectural | [30.1.4-architectural](30.1-design-patterns/30.1.4-architectural/INDEX.md) | 4+ patterns | Modern distributed systems |
 | Interview Prep | [30.1.5-interview-prep](30.1-design-patterns/30.1.5-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
 
-👉 **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and decision cheat sheet.
+ **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and decision cheat sheet.
 
 ---
 
-## 🛣️ Study Order
+## Study Order
 
 1. **Design Patterns first**
    - [Foundations](30.1-design-patterns/30.1.0-foundations/INDEX.md) — SOLID, OOP, UML (1.5 hrs)

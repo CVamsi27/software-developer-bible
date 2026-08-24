@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | When to use | Read time |
 |----------|------:|-------------|----------:|
-| [CSS-Native](#-css-native) | 1 | Simple transitions, @keyframes, hover effects | 25 min |
-| [JS Libraries](#-js-libraries) | 4 | Complex animations, spring physics, timeline sequences | 2 hrs |
-| [Platform APIs](#-platform-apis) | 2 | Native browser animation control, view transitions | 1 hr |
-| [Interview Prep](#-interview-prep) | 1 | 30+ Qs | 2 hrs |
+| [CSS-Native](#css-native) | 1 | Simple transitions, @keyframes, hover effects | 25 min |
+| [JS Libraries](#js-libraries) | 4 | Complex animations, spring physics, timeline sequences | 2 hrs |
+| [Platform APIs](#platform-apis) | 2 | Native browser animation control, view transitions | 1 hr |
+| [Interview Prep](#interview-prep) | 1 | 30+ Qs | 2 hrs |
 
 ---
 
-## 🎨 CSS-Native
+## CSS-Native
 
 The fastest, cheapest animation. Use this first.
 
@@ -33,7 +33,7 @@ The fastest, cheapest animation. Use this first.
 
 ---
 
-## 📚 JS Libraries
+## JS Libraries
 
 For complex animations.
 
@@ -59,7 +59,7 @@ Need animation?
 
 ---
 
-## 🌐 Platform APIs
+## Platform APIs
 
 Newer browser-native capabilities.
 
@@ -69,7 +69,7 @@ Newer browser-native capabilities.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -77,7 +77,7 @@ Newer browser-native capabilities.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **CSS Animations** (25 min) — the foundation
 2. **Framer Motion** (45 min) — the React default
@@ -88,7 +88,7 @@ Newer browser-native capabilities.
 
 ---
 
-## 🎯 Performance & Accessibility
+## Performance & Accessibility
 
 Animation has two non-negotiable constraints:
 
@@ -112,7 +112,7 @@ const animateProps = prefersReducedMotion ? {} : { scale: 1.1 };
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — `prefers-reduced-motion`
 - [Next.js](../10.4-next.js/INDEX.md) — View Transitions API
@@ -123,4 +123,4 @@ const animateProps = prefersReducedMotion ? {} : { scale: 1.1 };
 
 ## Navigation
 
-[← Previous: Form Handling](../10.5-form-handling/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Node.js →](../../20-backend/20.1-node.js/INDEX.md)
+[← Previous: Form Handling](../10.5-form-handling/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Node.js →](../../20-backend/20.1-node.js/INDEX.md)

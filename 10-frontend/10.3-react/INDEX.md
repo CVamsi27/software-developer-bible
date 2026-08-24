@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 20 files are organized into 5 conceptual categories — read in order within a category.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [React Internals](#-react-internals) | 5 | How React actually renders — the mental model that distinguishes senior engineers |
-| [Core Hooks](#-core-hooks) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
-| [Advanced Hooks & Patterns](#-advanced-hooks--patterns) | 5 | Suspense, Error Boundary, Performance, State Management, Custom Hooks |
-| [React 18/19 Modern APIs](#-react-1819-modern-apis) | 2 | Concurrent rendering, transitions, server components, `use(promise)` |
-| [Patterns & Interview Prep](#-patterns--interview-prep) | 3 | Portals, compound components, 60+ Qs |
+| [React Internals](#react-internals) | 5 | How React actually renders — the mental model that distinguishes senior engineers |
+| [Core Hooks](#core-hooks) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
+| [Advanced Hooks & Patterns](#advanced-hooks--patterns) | 5 | Suspense, Error Boundary, Performance, State Management, Custom Hooks |
+| [React 18/19 Modern APIs](#react-1819-modern-apis) | 2 | Concurrent rendering, transitions, server components, `use(promise)` |
+| [Patterns & Interview Prep](#patterns--interview-prep) | 3 | Portals, compound components, 60+ Qs |
 
 ---
 
-## ⚙️ React Internals
+## React Internals
 
 How React actually works under the hood. The mental model that distinguishes a senior engineer from someone who only knows the API.
 
@@ -40,7 +40,7 @@ How React actually works under the hood. The mental model that distinguishes a s
 
 ---
 
-## 🪝 Core Hooks
+## Core Hooks
 
 The 5 essential hooks. Used in 95% of React code.
 
@@ -54,7 +54,7 @@ The 5 essential hooks. Used in 95% of React code.
 
 ---
 
-## 🚀 Advanced Hooks & Patterns
+## Advanced Hooks & Patterns
 
 The patterns that solve real problems in production code.
 
@@ -68,7 +68,7 @@ The patterns that solve real problems in production code.
 
 ---
 
-## 🆕 React 18/19 Modern APIs
+## React 18/19 Modern APIs
 
 The newest features — what changed in concurrent React and what you need to know for interviews.
 
@@ -79,7 +79,7 @@ The newest features — what changed in concurrent React and what you need to kn
 
 ---
 
-## 🧩 Patterns & Interview Prep
+## Patterns & Interview Prep
 
 Reusable component patterns + 60+ interview Qs.
 
@@ -91,7 +91,7 @@ Reusable component patterns + 60+ interview Qs.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Coming from another framework (1 week)
 1. React Internals (5 files, ~2 hrs)
@@ -114,7 +114,7 @@ Reusable component patterns + 60+ interview Qs.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [JavaScript](../10.1-javascript/INDEX.md) — closures, `this`, prototypes
 - [Next.js](../10.4-next.js/INDEX.md) — React Server Components, streaming
@@ -127,4 +127,4 @@ Reusable component patterns + 60+ interview Qs.
 
 ## Navigation
 
-[← Previous: TypeScript](../10.2-typescript/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Next.js →](../10.4-next.js/INDEX.md)
+[← Previous: TypeScript](../10.2-typescript/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Next.js →](../10.4-next.js/INDEX.md)

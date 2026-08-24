@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 10 files classify into 5 conceptual categories — the "GoF classification" of infra/ops patterns.
 
@@ -27,12 +27,12 @@ The 10 files classify into 5 conceptual categories — the "GoF classification" 
 ## The Flow
 
 ```text
-KEEP ALIVE            RECOVER              SHIP SAFELY           RUN CLEAN
-03 health checks  →   02 resilience   →    05 zero-downtime →    06 data pipelines
-   (graceful shutdown)  overview +         deployments          04 technical debt
-                        pointers                                01 database scaling
-RETRY & DEDUPE        COORDINATE                                 07 CDN architecture
-14 idempotency keys   13 retry patterns      16 leader election &
+KEEP ALIVE RECOVER SHIP SAFELY RUN CLEAN
+03 health checks → 02 resilience → 05 zero-downtime → 06 data pipelines
+   (graceful shutdown) overview + deployments 04 technical debt
+                        pointers 01 database scaling
+RETRY & DEDUPE COORDINATE 07 CDN architecture
+14 idempotency keys 13 retry patterns 16 leader election &
                                              consensus
 ```
 
@@ -70,4 +70,4 @@ RETRY & DEDUPE        COORDINATE                                 07 CDN architec
 
 ## Navigation
 
-[← Previous: System Design](../30.2-system-design/INDEX.md) · [🏠 Back to Index](../INDEX.md)
+[← Previous: System Design](../30.2-system-design/INDEX.md) · [ Back to Index](../INDEX.md)

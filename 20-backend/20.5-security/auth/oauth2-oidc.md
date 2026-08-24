@@ -5,7 +5,7 @@
 
 # OAuth 2.0 & OpenID Connect
 
-> 📍 Stage 3 of the [Auth Learning Track](INDEX.md) — prev: [JWT](jwt.md) · next: [RBAC/ABAC](rbac-abac.md)
+> Stage 3 of the [Auth Learning Track](INDEX.md) — prev: [JWT](jwt.md) · next: [RBAC/ABAC](rbac-abac.md)
 
 > **TL;DR:** OAuth 2.0 is the delegated authorization framework, and OpenID Connect is its identity layer on top. Senior engineers know the four grant types, when to use PKCE, how to store refresh tokens safely, and the difference between authorization and authentication.
 >
@@ -32,16 +32,16 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                    OAuth 2.0 Roles                          │
+│ OAuth 2.0 Roles │
 ├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Resource Owner ──────> Client ──────> Authorization Server │
-│  (User)           (App)              (Issues Tokens)        │
-│                        │                                     │
-│                        v                                     │
-│                  Resource Server                             │
-│                  (Stores Resources)                          │
-│                                                             │
+│ │
+│ Resource Owner ──────> Client ──────> Authorization Server │
+│ (User) (App) (Issues Tokens) │
+│ │ │
+│ v │
+│ Resource Server │
+│ (Stores Resources) │
+│ │
 └─────────────────────────────────────────────────────────────┘
 
 ```
@@ -49,74 +49,74 @@ OAuth 2.0 is NOT an authentication protocol — it's an authorization protocol. 
 ### Authorization Code Flow
 
 ```text
-┌──────────┐          ┌──────────┐          ┌──────────────────┐
-│  User    │          │  Client  │          │ Authorization    │
-│  (RO)    │          │  (App)   │          │ Server           │
-└────┬─────┘          └────┬─────┘          └────────┬─────────┘
-     │                     │                         │
-     │  1. Click "Login    │                         │
-     │     with Provider"  │                         │
-     │────────────────────>│                         │
-     │                     │                         │
-     │                     │  2. Redirect to         │
-     │                     │     authorization       │
-     │                     │     endpoint            │
-     │  3. Login &         │                         │
-     │     consent screen  │                         │
+┌──────────┐ ┌──────────┐ ┌──────────────────┐
+│ User │ │ Client │ │ Authorization │
+│ (RO) │ │ (App) │ │ Server │
+└────┬─────┘ └────┬─────┘ └────────┬─────────┘
+     │ │ │
+     │ 1. Click "Login │ │
+     │ with Provider" │ │
+     │────────────────────>│ │
+     │ │ │
+     │ │ 2. Redirect to │
+     │ │ authorization │
+     │ │ endpoint │
+     │ 3. Login & │ │
+     │ consent screen │ │
      │<────────────────────│────────────────────────>│
-     │                     │                         │
-     │  4. User approves   │                         │
+     │ │ │
+     │ 4. User approves │ │
      │──────────────────────────────────────────────>│
-     │                     │                         │
-     │                     │  5. Authorization code  │
-     │                     │     returned            │
-     │                     │<────────────────────────│
-     │                     │                         │
-     │                     │  6. Exchange code for   │
-     │                     │     tokens              │
-     │                     │────────────────────────>│
-     │                     │                         │
-     │                     │  7. Access + Refresh    │
-     │                     │     tokens              │
-     │                     │<────────────────────────│
-     │                     │                         │
-     │                     │  8. Use token to        │
-     │                     │     access resource     │
-     │                     │────────────────────>│
-     │                     │                    │
-     │                     │  9. Protected      │
-     │                     │     resource       │
-     │                     │<───────────────────│
+     │ │ │
+     │ │ 5. Authorization code │
+     │ │ returned │
+     │ │<────────────────────────│
+     │ │ │
+     │ │ 6. Exchange code for │
+     │ │ tokens │
+     │ │────────────────────────>│
+     │ │ │
+     │ │ 7. Access + Refresh │
+     │ │ tokens │
+     │ │<────────────────────────│
+     │ │ │
+     │ │ 8. Use token to │
+     │ │ access resource │
+     │ │────────────────────>│
+     │ │ │
+     │ │ 9. Protected │
+     │ │ resource │
+     │ │<───────────────────│
 
 ```
 
 ### PKCE Flow (for Public Clients)
 
 ```text
-┌──────────┐          ┌──────────┐          ┌──────────────────┐
-│  User    │          │  Client  │          │ Authorization    │
-│          │          │  (SPA)   │          │ Server           │
-└────┬─────┘          └────┬─────┘          └────────┬─────────┘
-     │                     │                         │
-     │                     │  1. Generate code_verifier
-     │                     │     & code_challenge     │
-     │                     │                         │
-     │                     │  2. /authorize?          │
-     │                     │     code_challenge=xxx   │
-     │                     │     code_challenge_      │
-     │                     │     method=S256          │
-     │                     │────────────────────────>│
-     │                     │                         │
-     │                     │  3. Authorization code   │
-     │                     │<────────────────────────│
-     │                     │                         │
-     │                     │  4. /token               │
-     │                     │     code=xxx             │
-     │                     │     code_verifier=yyy    │
-     │                     │────────────────────────>│
-     │                     │                         │
-     │                     │  5. Access token         │
-     │                     │<────────────────────────│
+┌──────────┐ ┌──────────┐ ┌──────────────────┐
+│ User │ │ Client │ │ Authorization │
+│ │ │ (SPA) │ │ Server │
+└────┬─────┘ └────┬─────┘ └────────┬─────────┘
+     │ │ │
+     │ │ 1. Generate code_verifier
+     │ │ & code_challenge │
+     │ │ │
+     │ │ 2. /authorize? │
+     │ │ code_challenge=xxx │
+     │ │ code_challenge_ │
+     │ │ method=S256 │
+     │ │────────────────────────>│
+     │ │ │
+     │ │ 3. Authorization code │
+     │ │<────────────────────────│
+     │ │ │
+     │ │ 4. /token │
+     │ │ code=xxx │
+     │ │ code_verifier=yyy │
+     │ │────────────────────────>│
+     │ │ │
+     │ │ 5. Access token │
+     │ │<────────────────────────│
 
 ```
 

@@ -5,12 +5,12 @@
 > 110+ files across 9 sub-stacks, organized by what you need to know in what order.
 
 [![Files](https://img.shields.io/badge/files-110%2B-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#-the-9-sub-stacks)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#the-9-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## 🎯 Why this stack matters
+## Why this stack matters
 
 Backend is the deepest stack in the bible. Every senior full-stack interview tests:
 - Node.js event loop, streams, async patterns
@@ -24,7 +24,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 📁 The 9 Sub-Stacks (in study order)
+## The 9 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
@@ -40,32 +40,32 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## 🗺️ Category Map (high-level)
+## Category Map (high-level)
 
 The backend stack is organized into 5 conceptual layers. Read in this order.
 
-### 🟦 Runtime & Language (read first)
+### Runtime & Language (read first)
 - **Node.js** — the runtime; event loop, streams, async patterns
 - **NestJS** — the most common framework; modules, DI, guards (read after Node.js)
 
-### 🟩 API Layer (read second)
+### API Layer (read second)
 - **REST APIs** — the canonical web API style; status codes, pagination, errors
 - **GraphQL** — alternative to REST; schema-first design
 - **Caching** — patterns every API needs
 
-### 🟨 Data Layer (read third)
+### Data Layer (read third)
 - **Database** — PostgreSQL internals, Prisma ORM, performance
 
-### 🟥 Cross-Cutting (read fourth)
+### Cross-Cutting (read fourth)
 - **Auth & Security** — JWT, OAuth, RBAC, OWASP, threat modeling
 
-### 🟪 Distributed (read last)
+### Distributed (read last)
 - **Microservices** — saga, CQRS, event sourcing, service mesh
 - **AI Engineering** — RAG, evals, cost governance (if JD requires)
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Full-stack senior, 4-week prep (most lanes)
 1. Node.js TL;DR + Event Loop (1 hr)
@@ -96,7 +96,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Frontend Stack](../10-frontend/INDEX.md) — for full-stack interviews
 - [System Design](../INDEX.md) — backend patterns at scale
@@ -107,4 +107,4 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 
 ## Navigation
 
-[← Previous: Frontend](../10-frontend/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Architecture →](../30-architecture/INDEX.md)
+[← Previous: Frontend](../10-frontend/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Architecture →](../30-architecture/INDEX.md)

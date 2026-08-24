@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 15 files are organized into 5 categories.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Core Architecture](#-core-architecture) | 4 | Modules, Controllers, Providers, DI — the foundation |
-| [Request Lifecycle](#-request-lifecycle) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
-| [Patterns & Architecture](#-patterns--architecture) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
-| [Quality & Configuration](#-quality--configuration) | 3 | Testing, Validation, Config — production hygiene |
-| [Advanced & Interview](#-advanced--interview) | 2 | Custom decorators, 50+ interview Qs |
+| [Core Architecture](#core-architecture) | 4 | Modules, Controllers, Providers, DI — the foundation |
+| [Request Lifecycle](#request-lifecycle) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
+| [Patterns & Architecture](#patterns--architecture) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
+| [Quality & Configuration](#quality--configuration) | 3 | Testing, Validation, Config — production hygiene |
+| [Advanced & Interview](#advanced--interview) | 2 | Custom decorators, 50+ interview Qs |
 
 ---
 
-## 🏗️ Core Architecture
+## Core Architecture
 
 How NestJS apps are structured. Read these first.
 
@@ -37,7 +37,7 @@ How NestJS apps are structured. Read these first.
 
 ---
 
-## 🔁 Request Lifecycle
+## Request Lifecycle
 
 The order of execution for every request — **every NestJS interview tests this**. Read in order.
 
@@ -53,7 +53,7 @@ The order of execution for every request — **every NestJS interview tests this
 
 ---
 
-## 🏛️ Patterns & Architecture
+## Patterns & Architecture
 
 The patterns NestJS supports out of the box.
 
@@ -64,7 +64,7 @@ The patterns NestJS supports out of the box.
 
 ---
 
-## ✅ Quality & Configuration
+## Quality & Configuration
 
 Production hygiene.
 
@@ -75,7 +75,7 @@ Production hygiene.
 
 ---
 
-## 🆕 Advanced & Interview
+## Advanced & Interview
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -84,7 +84,7 @@ Production hygiene.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Core Architecture** (4 files, ~2 hrs) — must know
 2. **Request Lifecycle** (5 files, ~2 hrs) — must know, the most-asked cluster
@@ -95,7 +95,7 @@ Production hygiene.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Node.js](../20.1-node.js/INDEX.md) — the runtime NestJS sits on
 - [REST APIs](../20.3-rest-apis/INDEX.md) — NestJS controllers map to REST routes
@@ -107,4 +107,4 @@ Production hygiene.
 
 ## Navigation
 
-[← Previous: Node.js](../20.1-node.js/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: REST APIs →](../20.3-rest-apis/INDEX.md)
+[← Previous: Node.js](../20.1-node.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: REST APIs →](../20.3-rest-apis/INDEX.md)

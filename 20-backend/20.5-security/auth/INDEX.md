@@ -13,16 +13,16 @@
 ## The Flow — Read Top to Bottom
 
 ```text
-Stage 0                Stage 1                 Stage 2                Stage 3              Stage 4               Stage 5
-FOUNDATIONS     →      SESSIONS           →    TOKENS            →    FEDERATED       →    AUTHORIZATION    →    INTERVIEW
-Who are you?           Server remembers        Stateless proof         Identity from         Who may do what?      Drills & war stories
-(hashing, TLS)         you (cookies)           (JWT, refresh)          others (OAuth/OIDC)   (RBAC/ABAC/ReBAC)     rehearsal
-│                      │                       │                       │                     │                     │
-├─ hashing/salting     ├─ cookie flags         ├─ JWT anatomy          ├─ OAuth 2.0 grants   ├─ RBAC               ├─ 40+ Q&A
-├─ bcrypt/argon2       ├─ session stores       ├─ signing: HS256       ├─ OIDC layers ID     │  vs ABAC vs ReBAC   ├─ trade-off traps
-├─ symmetric/asym      ├─ fixation/hijacking   │  vs RS256             │  token on top       ├─ scopes vs roles    └─ system-design
-└─ TLS/mTLS            └─ timeouts/rotation    ├─ storage: cookie      ├─ PKCE, SAML, SSO      vs policies             variants
-                                                 vs localStorage      └─ passkeys future    └─ policy engines
+Stage 0 Stage 1 Stage 2 Stage 3 Stage 4 Stage 5
+FOUNDATIONS → SESSIONS → TOKENS → FEDERATED → AUTHORIZATION → INTERVIEW
+Who are you? Server remembers Stateless proof Identity from Who may do what? Drills & war stories
+(hashing, TLS) you (cookies) (JWT, refresh) others (OAuth/OIDC) (RBAC/ABAC/ReBAC) rehearsal
+│ │ │ │ │ │
+├─ hashing/salting ├─ cookie flags ├─ JWT anatomy ├─ OAuth 2.0 grants ├─ RBAC ├─ 40+ Q&A
+├─ bcrypt/argon2 ├─ session stores ├─ signing: HS256 ├─ OIDC layers ID │ vs ABAC vs ReBAC ├─ trade-off traps
+├─ symmetric/asym ├─ fixation/hijacking │ vs RS256 │ token on top ├─ scopes vs roles └─ system-design
+└─ TLS/mTLS └─ timeouts/rotation ├─ storage: cookie ├─ PKCE, SAML, SSO vs policies variants
+                                                 vs localStorage └─ passkeys future └─ policy engines
                                                └─ rotation + family
                                                   revocation
 ```
@@ -60,10 +60,10 @@ Every senior auth interview is a variation of one question: **"which model, and 
 
 | Storage | XSS-safe | CSRF-safe | Notes |
 |---------|-----------|-----------|-------|
-| `localStorage` | ❌ any XSS steals it | ✅ not auto-sent | Never for refresh tokens |
-| JS-readable cookie | ❌ | ❌ | Worst of both |
-| `HttpOnly; Secure; SameSite` cookie | ✅ | ⚠️ needs SameSite/token | Default for browser apps |
-| Memory only (SPA) | ✅ (lost on refresh) | ✅ | Pair with silent refresh |
+| `localStorage` | any XSS steals it | not auto-sent | Never for refresh tokens |
+| JS-readable cookie | | | Worst of both |
+| `HttpOnly; Secure; SameSite` cookie | | needs SameSite/token | Default for browser apps |
+| Memory only (SPA) | (lost on refresh) | | Pair with silent refresh |
 
 ### Authorization models
 
@@ -82,7 +82,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ```text
 Browser-only app?
 ├── Yes → Session cookie (HttpOnly, Secure, SameSite=Lax) or hybrid w/ refresh rotation
-│         └── Regulated data (health/fintech)? → add MFA, audit log, absolute session timeout
+│ └── Regulated data (health/fintech)? → add MFA, audit log, absolute session timeout
 └── SPA / mobile / API consumers?
     ├── First-party only → access JWT (15 min) + rotating refresh (httpOnly cookie), family revocation
     ├── "Login with Google/GitHub"? → OAuth 2.0 + PKCE via OIDC provider; never roll your own

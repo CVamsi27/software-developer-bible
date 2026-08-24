@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Foundations](#-foundations) | 1 | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces |
-| [Build Orchestrators](#-build-orchestrators) | 2 | Turborepo, Nx — the two main options |
-| [Tools & Deep-Dive](#-tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
-| [Interview Prep](#-interview-prep) | 1 | 30+ Qs |
+| [Foundations](#foundations) | 1 | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces |
+| [Build Orchestrators](#build-orchestrators) | 2 | Turborepo, Nx — the two main options |
+| [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
+| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
 
 ---
 
-## 🧱 Foundations
+## Foundations
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -29,7 +29,7 @@
 
 ---
 
-## 🏗️ Build Orchestrators
+## Build Orchestrators
 
 The two main build/cache systems for monorepos.
 
@@ -50,7 +50,7 @@ Monorepo tool?
 
 ---
 
-## 🔧 Tools & Deep-Dive
+## Tools & Deep-Dive
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -58,7 +58,7 @@ Monorepo tool?
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -66,7 +66,7 @@ Monorepo tool?
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Monorepo Overview** — must know
 2. **Turborepo** or **Nx** — for the JD's stack
@@ -75,7 +75,7 @@ Monorepo tool?
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Monorepo vs polyrepo — when to use which?"
 - "How does Turborepo's content-hash caching work?"
@@ -85,7 +85,7 @@ Monorepo tool?
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Build Tools](../40.5-build-tools/INDEX.md) — bundlers for monorepos
 - [CI/CD](../40.3-ci-cd/INDEX.md) — CI in monorepos (affected-only builds)
@@ -95,4 +95,4 @@ Monorepo tool?
 
 ## Navigation
 
-[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)
+[← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)

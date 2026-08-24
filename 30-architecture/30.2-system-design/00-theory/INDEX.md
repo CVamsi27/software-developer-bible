@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 20 files classify into 6 conceptual categories — the "GoF classification" of distributed systems theory.
 
@@ -67,4 +67,4 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 
 ## Navigation
 
-[← Previous: System Design Index](../INDEX.md) · [🏠 Back to System Design Index](../INDEX.md) · [Next: Case Studies →](../10-case-studies/INDEX.md)
+[← Previous: System Design Index](../INDEX.md) · [ Back to System Design Index](../INDEX.md) · [Next: Case Studies →](../10-case-studies/INDEX.md)

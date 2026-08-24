@@ -11,18 +11,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | File | Why it matters |
 |----------|------|----------------|
-| [Resume](#-resume) | [Resume Tips](00.02-resume-tips.md) | The first impression — your resume is your interview ticket |
-| [Communication](#-communication) | [Communication](00.01-communication.md) | How you explain, structure, and story-tell during the interview |
-| [Behavioral Stories](#-behavioral-stories) | [STAR Method](00.03-star-method.md) | The framework every behavioral answer uses |
-| [HR & Logistics](#-hr--logistics) | [HR Questions](00.04-hr-questions.md) | Salary, motivations, red flags, logistics |
+| [Resume](#resume) | [Resume Tips](00.02-resume-tips.md) | The first impression — your resume is your interview ticket |
+| [Communication](#communication) | [Communication](00.01-communication.md) | How you explain, structure, and story-tell during the interview |
+| [Behavioral Stories](#behavioral-stories) | [STAR Method](00.03-star-method.md) | The framework every behavioral answer uses |
+| [HR & Logistics](#hr--logistics) | [HR Questions](00.04-hr-questions.md) | Salary, motivations, red flags, logistics |
 
 ---
 
-## 📄 Resume
+## Resume
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -32,7 +32,7 @@
 
 ---
 
-## 💬 Communication
+## Communication
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -42,7 +42,7 @@
 
 ---
 
-## 🎤 Behavioral Stories
+## Behavioral Stories
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -52,7 +52,7 @@
 
 ---
 
-## 🤝 HR & Logistics
+## HR & Logistics
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -62,7 +62,7 @@
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Resume Tips** (30 min) — fix your resume before sending more applications
 2. **Communication** (30 min) — practice the structure of every answer
@@ -73,7 +73,7 @@
 
 ---
 
-## 🛣️ After This Section
+## After This Section
 
 This section is **cross-lane** — it applies to every interview. After you finish here, pick the lane that matches your target job market:
 
@@ -86,7 +86,7 @@ This section is **cross-lane** — it applies to every interview. After you fini
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) — deeper behavioral questions
 - [SDE Role — Indian / FAANG Lane](../81-lanes-indian-sde-faang/INDEX.md)
@@ -96,7 +96,7 @@ This section is **cross-lane** — it applies to every interview. After you fini
 
 ## Navigation
 
-← Previous: *(start of series)* · [🏠 Back to Index](../INDEX.md) · [Next: JavaScript →](../10-frontend/10.1-javascript/INDEX.md)
+← Previous: *(start of series)* · [ Back to Index](../INDEX.md) · [Next: JavaScript →](../10-frontend/10.1-javascript/INDEX.md)
 
 ---
 

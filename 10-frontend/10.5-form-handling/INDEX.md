@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Form Libraries](#-form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
-| [Validation](#-validation) | 1 | Zod — the standard for runtime + type-safe validation |
-| [Server-Side Patterns](#-server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
-| [Interview Prep](#-interview-prep) | 1 | 30+ form-specific Qs |
+| [Form Libraries](#form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
+| [Validation](#validation) | 1 | Zod — the standard for runtime + type-safe validation |
+| [Server-Side Patterns](#server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
+| [Interview Prep](#interview-prep) | 1 | 30+ form-specific Qs |
 
 ---
 
-## 📝 Form Libraries
+## Form Libraries
 
 Three main form libraries — pick the right one for the job.
 
@@ -42,7 +42,7 @@ Building a new React form?
 
 ---
 
-## ✅ Validation
+## Validation
 
 Zod is the standard for runtime validation with TypeScript inference.
 
@@ -54,7 +54,7 @@ Zod is the standard for runtime validation with TypeScript inference.
 
 ---
 
-## 🖥️ Server-Side Patterns
+## Server-Side Patterns
 
 Modern Next.js form patterns with Server Actions.
 
@@ -64,7 +64,7 @@ Modern Next.js form patterns with Server Actions.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -72,7 +72,7 @@ Modern Next.js form patterns with Server Actions.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **React Hook Form** (30 min) — the default
 2. **Zod** (30 min) — the validator
@@ -83,7 +83,7 @@ Modern Next.js form patterns with Server Actions.
 
 ---
 
-## 🎯 The Modern Form Stack
+## The Modern Form Stack
 
 ```typescript
 // 1. Define the schema (Zod)
@@ -110,7 +110,7 @@ This is the standard pattern for modern full-stack forms.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — accessible form patterns
 - [Next.js](../10.4-next.js/INDEX.md) — Server Actions, form components
@@ -121,4 +121,4 @@ This is the standard pattern for modern full-stack forms.
 
 ## Navigation
 
-[← Previous: Next.js](../10.4-next.js/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)
+[← Previous: Next.js](../10.4-next.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)

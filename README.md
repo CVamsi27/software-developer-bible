@@ -1,4 +1,4 @@
-# 📚 Senior Full Stack Interview Bible
+# Senior Full Stack Interview Bible
 
 > **A lane-first, stack-deep reference for senior full-stack engineers (5+ YoE)** prepping for product-based companies, FAANG/Big Tech, and EU mid-stage startups. Pick your lane, drill the stacks.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## 🛣️ Pick Your Lane
+## Pick Your Lane
 
 The bible is split into **3 lanes**. The stacks are the technical material they share; the lanes are the strategy, prep plan, and behavioral overlay for a specific job-market.
 
@@ -22,11 +22,11 @@ The bible is split into **3 lanes**. The stacks are the technical material they 
 
 **Quick heuristic:** If the phone screen has a LeetCode medium-to-hard → Indian SDE / FAANG. If the company is mid-stage and uses take-homes → Abroad Full-Stack. Many EU Big Tech (Booking, Spotify) run FAANG-style loops → use both.
 
-👉 Full decision matrix: [80-lanes-abroad-full-stack/INDEX.md → Lane Decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you)
+ Full decision matrix: [80-lanes-abroad-full-stack/INDEX.md → Lane Decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you)
 
 ---
 
-## 📚 The 7 Study Stacks
+## The 7 Study Stacks
 
 Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack. Lanes never reference each other — only the stacks.
 
@@ -40,11 +40,11 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 | **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 10 |
 | **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 31 |
 
-👉 Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#-the-7-study-stacks-shared-by-both-lanes)
+ Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#the-7-study-stacks-numbered-for-study-order)
 
 ---
 
-## 🗺️ Navigation
+## Navigation
 
 | If you want to… | Go to |
 |------------------|-------|
@@ -57,33 +57,33 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 
 ---
 
-## 📝 Chapter Template
+## Chapter Template
 
 Every content file follows a consistent structure:
 
 ```text
 # Topic
 
-## TL;DR                     ← 3-5 bullet summary at the top
-## Definition                ← What it is
-## Why Do We Need It?        ← When to use it
-## How It Works              ← Internals with diagrams
-## Code Examples             ← TypeScript/SQL/Docker examples
-## Real-World Use Cases      ← Production patterns
-## Common Mistakes           ← Anti-patterns to avoid
-## Best Practices            ← Do this, not that
+## TL;DR ← 3-5 bullet summary at the top
+## Definition ← What it is
+## Why Do We Need It? ← When to use it
+## How It Works ← Internals with diagrams
+## Code Examples ← TypeScript/SQL/Docker examples
+## Real-World Use Cases ← Production patterns
+## Common Mistakes ← Anti-patterns to avoid
+## Best Practices ← Do this, not that
 ## Performance Considerations ← Latency, memory, scaling
-## Summary                   ← Key takeaways
-## Cheat Sheet               ← Quick-reference box
-## See Also                  ← Cross-references to related files
-## References & Learn More   ← External links
+## Summary ← Key takeaways
+## Cheat Sheet ← Quick-reference box
+## See Also ← Cross-references to related files
+## References & Learn More ← External links
 ```
 
 Interview questions live in dedicated `*-interview-questions.md` files (29 across all stacks).
 
 ---
 
-## 💡 How to Use
+## How to Use
 
 | Goal | Approach |
 |------|----------|
@@ -95,15 +95,15 @@ Interview questions live in dedicated `*-interview-questions.md` files (29 acros
 
 ---
 
-## 🏆 Quick Lane Summary
+## Quick Lane Summary
 
-### 🇮🇳 Indian SDE / FAANG (24 files in lane)
+### Indian SDE / FAANG (24 files in lane)
 
 DSA-heavy. The bar is **1-2 mediums in 30-45 min, plus 1 system design, plus 1-2 behavioral, plus a Bar Raiser (Amazon) or values round**. 5-6 rounds, 8-12 weeks. US FAANG comp: USD 260-580K (E4-E5). Indian in-country: INR 30-120 L (SDE-2 to SDE-3).
 
 → [Indian SDE / FAANG lane →](81-lanes-indian-sde-faang/INDEX.md)
 
-### 🇪🇺 Abroad Full-Stack (19 files in lane)
+### Abroad Full-Stack (19 files in lane)
 
 Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 system design at 45 min, 1 behavioral round**. 3-4 rounds, 4-6 weeks. EU Tier 1 comp: EUR 75-110K base + 0.05-0.5% equity. Family-driven geography (NL 30% ruling, EU Blue Card, schools).
 

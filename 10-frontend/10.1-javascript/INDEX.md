@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 28 files are organized into 6 conceptual categories. Files in the same category build on each other — read them in order within a category, then move on.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Execution & Scope](#-execution--scope) | 6 | The "how JS runs" fundamentals — every interview tests these |
-| [Objects, Prototypes & `this`](#-objects-prototypes--this) | 3 | The OOP model of JavaScript — different from class-based languages |
-| [Async & Concurrency](#-async--concurrency) | 4 | The hardest topic in JS — the event loop, promises, async/await |
-| [Data Structures & Memory](#-data-structures--memory) | 7 | Choosing the right collection, avoiding memory leaks, understanding GC |
-| [Functional Patterns](#-functional-patterns) | 4 | The patterns you'll use daily: currying, composition, memoization, generators |
-| [Modern JS (ES2022+) & Interview Prep](#-modern-js--interview-prep) | 4 | The newest features, Web Workers, and 50+ interview Qs |
+| [Objects, Prototypes & `this`](#objects-prototypes--this) | 3 | The OOP model of JavaScript — different from class-based languages |
+| [Async & Concurrency](#async--concurrency) | 4 | The hardest topic in JS — the event loop, promises, async/await |
+| [Data Structures & Memory](#data-structures--memory) | 7 | Choosing the right collection, avoiding memory leaks, understanding GC |
+| [Functional Patterns](#functional-patterns) | 4 | The patterns you'll use daily: currying, composition, memoization, generators |
+| [Modern JS (ES2022+) & Interview Prep](#modern-js--interview-prep) | 4 | The newest features, Web Workers, and 50+ interview Qs |
 
 ---
 
@@ -42,7 +42,7 @@ How JavaScript actually runs. These 6 files are the foundation — every other c
 
 ---
 
-## 🧬 Objects, Prototypes & `this`
+## Objects, Prototypes & `this`
 
 JavaScript's object model is prototype-based, not class-based. `this` binding is one of the most-confused topics in JS.
 
@@ -54,7 +54,7 @@ JavaScript's object model is prototype-based, not class-based. `this` binding is
 
 ---
 
-## ⚡ Async & Concurrency
+## Async & Concurrency
 
 The most-asked topic in senior JS interviews. JavaScript is single-threaded; understanding how it handles concurrency is essential.
 
@@ -69,7 +69,7 @@ The most-asked topic in senior JS interviews. JavaScript is single-threaded; und
 
 ---
 
-## 📦 Data Structures & Memory
+## Data Structures & Memory
 
 Choosing the right collection and avoiding memory leaks.
 
@@ -85,7 +85,7 @@ Choosing the right collection and avoiding memory leaks.
 
 ---
 
-## 🧮 Functional Patterns
+## Functional Patterns
 
 The patterns you'll use daily as a senior engineer.
 
@@ -99,7 +99,7 @@ The patterns you'll use daily as a senior engineer.
 
 ---
 
-## 🆕 Modern JS & Interview Prep
+## Modern JS & Interview Prep
 
 The newest features + the interview Q&A bank.
 
@@ -111,7 +111,7 @@ The newest features + the interview Q&A bank.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — New to JS (1-2 weeks)
 1. Execution & Scope (all 6 files, ~2 hrs)
@@ -134,7 +134,7 @@ The newest features + the interview Q&A bank.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [TypeScript](../10.2-typescript/INDEX.md) — type system builds on JS fundamentals
 - [Node.js](../../20-backend/20.1-node.js/INDEX.md) — event loop, async patterns
@@ -145,4 +145,4 @@ The newest features + the interview Q&A bank.
 
 ## Navigation
 
-[← Previous: Interview Strategy](../../00-strategy/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: TypeScript →](../10.2-typescript/INDEX.md)
+[← Previous: Interview Strategy](../../00-strategy/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: TypeScript →](../10.2-typescript/INDEX.md)

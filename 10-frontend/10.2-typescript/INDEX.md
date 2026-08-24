@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 15 files are organized into 5 categories — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Foundations](#-foundations) | 3 | Types vs interfaces, keyof/typeof, type narrowing — every interview starts here |
-| [Generics & Inference](#-generics--inference) | 3 | Generics, infer, advanced generics — the heart of reusable TS code |
-| [Type System Tools](#-type-system-tools) | 4 | Utility types, conditional types, mapped types — composable type operations |
-| [Advanced Patterns](#-advanced-patterns) | 4 | Decorators, template literals, branded types, declaration files, satisfies — the senior toolkit |
-| [Interview Prep](#-interview-prep) | 1 | 50+ curated Q&A |
+| [Foundations](#foundations) | 3 | Types vs interfaces, keyof/typeof, type narrowing — every interview starts here |
+| [Generics & Inference](#generics--inference) | 3 | Generics, infer, advanced generics — the heart of reusable TS code |
+| [Type System Tools](#type-system-tools) | 4 | Utility types, conditional types, mapped types — composable type operations |
+| [Advanced Patterns](#advanced-patterns) | 4 | Decorators, template literals, branded types, declaration files, satisfies — the senior toolkit |
+| [Interview Prep](#interview-prep) | 1 | 50+ curated Q&A |
 
 ---
 
-## 🧱 Foundations
+## Foundations
 
 How TypeScript represents types.
 
@@ -36,7 +36,7 @@ How TypeScript represents types.
 
 ---
 
-## 🔁 Generics & Inference
+## Generics & Inference
 
 Reusable type operations.
 
@@ -48,7 +48,7 @@ Reusable type operations.
 
 ---
 
-## 🛠️ Type System Tools
+## Type System Tools
 
 The composable operations that make TS powerful.
 
@@ -61,7 +61,7 @@ The composable operations that make TS powerful.
 
 ---
 
-## 🚀 Advanced Patterns
+## Advanced Patterns
 
 Senior-level TS — types as a design tool.
 
@@ -75,7 +75,7 @@ Senior-level TS — types as a design tool.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -83,7 +83,7 @@ Senior-level TS — types as a design tool.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Foundations** (3 files, ~1.5 hrs) — must know
 2. **Generics & Inference** (3 files, ~1.5 hrs) — must know
@@ -93,7 +93,7 @@ Senior-level TS — types as a design tool.
 
 ---
 
-## 🎯 The Senior Pattern
+## The Senior Pattern
 
 ```typescript
 // TypeScript lets you model "this is a validated email" not just "this is a string"
@@ -111,7 +111,7 @@ If you can read and write these patterns cold, you are ready for any senior TS i
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [JavaScript](../10.1-javascript/INDEX.md) — TS builds on JS fundamentals
 - [React](../10.3-react/INDEX.md) — TS for component props, hooks
@@ -121,4 +121,4 @@ If you can read and write these patterns cold, you are ready for any senior TS i
 
 ## Navigation
 
-[← Previous: JavaScript](../10.1-javascript/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: React →](../10.3-react/INDEX.md)
+[← Previous: JavaScript](../10.1-javascript/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: React →](../10.3-react/INDEX.md)

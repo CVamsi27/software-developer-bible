@@ -13,38 +13,38 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 16 files are organized into 4 conceptual categories. Read in order within each.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Authentication (the deep-dive)](#-authentication-the-deep-dive) | 5 + 1 interview | JWT, OAuth, sessions, RBAC — the core of every app |
-| [Cryptography Primer](#-cryptography-primer) | 1 | Encryption, hashing, TLS — the foundation for auth |
-| [Attacks & Defense](#-attacks--defense) | 5 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
-| [Hardening & Operations](#-hardening--operations) | 3 | Headers, threat modeling, secrets — production hygiene |
-| [Interview Drills](#-interview-drills) | 2 | 90+ curated Q&A across auth + general security |
+| [Authentication (the deep-dive)](#authentication-the-deep-dive) | 5 + 1 interview | JWT, OAuth, sessions, RBAC — the core of every app |
+| [Cryptography Primer](#cryptography-primer) | 1 | Encryption, hashing, TLS — the foundation for auth |
+| [Attacks & Defense](#attacks--defense) | 5 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
+| [Hardening & Operations](#hardening--operations) | 3 | Headers, threat modeling, secrets — production hygiene |
+| [Interview Drills](#interview-drills) | 2 | 90+ curated Q&A across auth + general security |
 
 ---
 
-## 🛣️ The Track — Read In This Order
+## The Track — Read In This Order
 
 ```text
-Pass I — AUTH (start here)          Pass II — ATTACKS          Pass III — HARDENING & OPS
-auth/INDEX.md                       XSS                        Web Security (headers, CSP)
- └─ fundamentals                    CSRF                       Threat Modeling (STRIDE)
-    → sessions & cookies            SQL Injection              Secrets Management
-      → JWT                         API Security (Top 10)           ↓
-        → OAuth2 / OIDC                  ↓                  INTERVIEW DRILLS
-          → RBAC / ABAC             Encryption & Hashing     auth/interview-questions.md
-                                    (prerequisite primer)         20.5.13-interview-questions.md
+Pass I — AUTH (start here) Pass II — ATTACKS Pass III — HARDENING & OPS
+auth/INDEX.md XSS Web Security (headers, CSP)
+ └─ fundamentals CSRF Threat Modeling (STRIDE)
+    → sessions & cookies SQL Injection Secrets Management
+      → JWT API Security (Top 10) ↓
+        → OAuth2 / OIDC ↓ INTERVIEW DRILLS
+          → RBAC / ABAC Encryption & Hashing auth/interview-questions.md
+                                    (prerequisite primer) 20.5.13-interview-questions.md
 ```
 
 **Total time: ~10-12 hours** if you read all files. Skip the encryption primer if you already know TLS + hashing.
 
 ---
 
-## 🔐 Authentication (the deep-dive)
+## Authentication (the deep-dive)
 
 A standalone track in [auth/](auth/INDEX.md). Read these in order — each builds on the previous.
 
@@ -58,7 +58,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🔒 Cryptography Primer
+## Cryptography Primer
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
@@ -66,7 +66,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## ⚔️ Attacks & Defense
+## Attacks & Defense
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
@@ -77,7 +77,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🛡️ Hardening & Operations
+## Hardening & Operations
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
@@ -87,7 +87,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🎤 Interview Drills
+## Interview Drills
 
 | File | Contents |
 |------|----------|
@@ -96,7 +96,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Mid-stage startup (1-2 days)
 1. **Auth Fundamentals + Sessions + JWT** (2.5 hrs) — must know
@@ -119,7 +119,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Sessions vs JWT — when to use which?"
 - "Where do you store JWTs? Why not localStorage?"
@@ -131,7 +131,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - **Authentication in REST context:** [REST — Authentication](../20.3-rest-apis/20.3.07-authentication.md)
 - **Enforcement in NestJS:** [Guards](../20.2-nestjs/20.2.05-guards.md) · [Interceptors](../20.2-nestjs/20.2.07-interceptors.md)
@@ -142,4 +142,4 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ## Navigation
 
-[← Previous: Database](../20.4-database/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)
+[← Previous: Database](../20.4-database/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)

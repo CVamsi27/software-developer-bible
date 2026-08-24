@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Concepts](#-concepts) | 2 | Overview, edge functions — the mental model |
-| [Providers](#-providers) | 2 | AWS Lambda, Vercel — the main platforms |
-| [Patterns & IaC](#-patterns--iac) | 2 | Serverless patterns, IaC frameworks (SAM/CDK/SST) |
-| [Interview Prep](#-interview-prep) | 1 | 30+ Qs |
+| [Concepts](#concepts) | 2 | Overview, edge functions — the mental model |
+| [Providers](#providers) | 2 | AWS Lambda, Vercel — the main platforms |
+| [Patterns & IaC](#patterns--iac) | 2 | Serverless patterns, IaC frameworks (SAM/CDK/SST) |
+| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
 
 ---
 
-## 🧠 Concepts
+## Concepts
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -40,7 +40,7 @@ Deploy choice?
 
 ---
 
-## 🏗️ Providers
+## Providers
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
@@ -49,7 +49,7 @@ Deploy choice?
 
 ---
 
-## 🧩 Patterns & IaC
+## Patterns & IaC
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -58,7 +58,7 @@ Deploy choice?
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -66,7 +66,7 @@ Deploy choice?
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Serverless Overview** — must know the trade-offs
 2. **Edge Functions** — for modern web apps
@@ -77,7 +77,7 @@ Deploy choice?
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "When to use Lambda vs ECS vs K8s?"
 - "What is a cold start? How do you mitigate it?"
@@ -87,7 +87,7 @@ Deploy choice?
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [CI/CD](../40.3-ci-cd/INDEX.md) — deploying serverless
 - [Docker](../40.1-docker/INDEX.md) — containers vs serverless trade-offs
@@ -99,4 +99,4 @@ Deploy choice?
 
 ## Navigation
 
-[← Previous: Git Advanced](../40.6-git-advanced/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Monorepo →](../40.8-monorepo/INDEX.md)
+[← Previous: Git Advanced](../40.6-git-advanced/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Monorepo →](../40.8-monorepo/INDEX.md)

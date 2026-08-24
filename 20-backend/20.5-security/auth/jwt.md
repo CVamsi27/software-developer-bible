@@ -5,7 +5,7 @@
 
 # JWT (JSON Web Tokens)
 
-> 📍 Stage 2 of the [Auth Learning Track](INDEX.md) — prev: [Sessions & Cookies](sessions-cookies.md) · next: [OAuth2/OIDC](oauth2-oidc.md)
+> Stage 2 of the [Auth Learning Track](INDEX.md) — prev: [Sessions & Cookies](sessions-cookies.md) · next: [OAuth2/OIDC](oauth2-oidc.md)
 
 > **TL;DR:** JWT is a compact, signed token format (header.payload.signature) used for stateless authentication across services. Senior engineers know the alg=none footgun, the difference between access and refresh tokens, JTI-based revocation, and why JWTs should never hold sensitive PII.
 >
@@ -35,9 +35,9 @@ A JWT consists of three Base64URL-encoded parts separated by dots:
 ```text
 xxxxx.yyyyy.zzzzz
 
-|       |       |
+| | |
 
-Header  Payload Signature
+Header Payload Signature
 
 ```
 
@@ -48,30 +48,30 @@ Header  Payload Signature
 ### Authentication Flow
 
 ```text
-┌─────────────┐                                    ┌─────────────┐
-│   Client    │                                    │   Server    │
-└──────┬──────┘                                    └──────┬──────┘
-       │                                                   │
-       │  1. POST /login {email, password}                 │
+┌─────────────┐ ┌─────────────┐
+│ Client │ │ Server │
+└──────┬──────┘ └──────┬──────┘
+       │ │
+       │ 1. POST /login {email, password} │
        │──────────────────────────────────────────────────>│
-       │                                                   │
-       │                    2. Validate credentials         │
-       │                    3. Generate JWT                 │
-       │                    4. Sign with secret/key         │
-       │                                                   │
-       │  5. Return { accessToken, refreshToken }          │
+       │ │
+       │ 2. Validate credentials │
+       │ 3. Generate JWT │
+       │ 4. Sign with secret/key │
+       │ │
+       │ 5. Return { accessToken, refreshToken } │
        │<──────────────────────────────────────────────────│
-       │                                                   │
-       │  6. GET /resource                                 │
-       │     Authorization: Bearer <jwt>                   │
+       │ │
+       │ 6. GET /resource │
+       │ Authorization: Bearer <jwt> │
        │──────────────────────────────────────────────────>│
-       │                                                   │
-       │                    7. Verify signature             │
-       │                    8. Check expiration             │
-       │                    9. Extract claims               │
-       │                    10. Return resource             │
-       │                                                   │
-       │  11. Response with data                           │
+       │ │
+       │ 7. Verify signature │
+       │ 8. Check expiration │
+       │ 9. Extract claims │
+       │ 10. Return resource │
+       │ │
+       │ 11. Response with data │
        │<──────────────────────────────────────────────────│
 
 ```
@@ -79,20 +79,20 @@ Header  Payload Signature
 ### Token Expiration and Refresh Flow
 
 ```text
-┌─────────────┐                              ┌─────────────┐
-│   Client    │                              │   Server    │
-└──────┬──────┘                              └──────┬──────┘
-       │                                             │
-       │  Access token expires (15 min)              │
-       │                                             │
-       │  POST /refresh { refreshToken }             │
+┌─────────────┐ ┌─────────────┐
+│ Client │ │ Server │
+└──────┬──────┘ └──────┬──────┘
+       │ │
+       │ Access token expires (15 min) │
+       │ │
+       │ POST /refresh { refreshToken } │
        │────────────────────────────────────────────>│
-       │                                             │
-       │              Validate refresh token         │
-       │              Check if revoked               │
-       │              Generate new pair              │
-       │                                             │
-       │  Return { accessToken, refreshToken }       │
+       │ │
+       │ Validate refresh token │
+       │ Check if revoked │
+       │ Generate new pair │
+       │ │
+       │ Return { accessToken, refreshToken } │
        │<────────────────────────────────────────────│
 
 ```

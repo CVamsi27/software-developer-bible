@@ -4,12 +4,12 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Getting Started](#getting-started)
 - [Directory Structure](#directory-structure)
 - [File Naming](#file-naming)
-- [YAML Frontmatter](#yaml-frontmatter)
+- [File Metadata](#file-metadata-html-comment--shieldsiobadges)
 - [Badges](#badges)
 - [Content Structure](#content-structure)
 - [INDEX.md Format](#indexmd-format)
@@ -33,69 +33,69 @@ Before contributing, review the existing files in the relevant section to unders
 
 ```
 .
-├── README.md                          # Project overview
-├── INDEX.md                           # Central navigation hub (pick your lane)
-├── contributing.md                    # This file
+├── README.md # Project overview
+├── INDEX.md # Central navigation hub (pick your lane)
+├── contributing.md # This file
 │
-├── 00-strategy/                       # Cross-lane (everyone starts here)
-│   ├── INDEX.md
-│   ├── 00.01-communication.md
-│   ├── 00.02-resume-tips.md
-│   ├── 00.03-star-method.md
-│   └── 00.04-hr-questions.md
+├── 00-strategy/ # Cross-lane (everyone starts here)
+│ ├── INDEX.md
+│ ├── 00.01-communication.md
+│ ├── 00.02-resume-tips.md
+│ ├── 00.03-star-method.md
+│ └── 00.04-hr-questions.md
 │
-├── 10-frontend/                       # Frontend (JS → TS → React → Next.js)
-│   ├── 10.1-javascript/
-│   ├── 10.2-typescript/
-│   ├── 10.3-react/
-│   ├── 10.4-next.js/
-│   ├── 10.5-form-handling/
-│   └── 10.6-animation/
+├── 10-frontend/ # Frontend (JS → TS → React → Next.js)
+│ ├── 10.1-javascript/
+│ ├── 10.2-typescript/
+│ ├── 10.3-react/
+│ ├── 10.4-next.js/
+│ ├── 10.5-form-handling/
+│ └── 10.6-animation/
 │
-├── 20-backend/                        # Backend (Node → NestJS → REST → DB → Security)
-│   ├── 20.1-node.js/
-│   ├── 20.2-nestjs/
-│   ├── 20.3-rest-apis/
-│   ├── 20.4-database/
-│   ├── 20.5-security/
-│   ├── 20.6-microservices/
-│   └── 20.7-graphql/
+├── 20-backend/ # Backend (Node → NestJS → REST → DB → Security)
+│ ├── 20.1-node.js/
+│ ├── 20.2-nestjs/
+│ ├── 20.3-rest-apis/
+│ ├── 20.4-database/
+│ ├── 20.5-security/
+│ ├── 20.6-microservices/
+│ └── 20.7-graphql/
 │
-├── 30-architecture/                   # Architecture (design patterns + system design)
-│   ├── 30.1-design-patterns/
-│   └── 30.2-system-design/
+├── 30-architecture/ # Architecture (design patterns + system design)
+│ ├── 30.1-design-patterns/
+│ └── 30.2-system-design/
 │
-├── 40-platform/                       # DevOps / Platform
-│   ├── 40.1-docker/
-│   ├── 40.2-kubernetes/
-│   ├── 40.3-ci-cd/
-│   ├── 40.4-observability/
-│   ├── 40.5-build-tools/
-│   ├── 40.6-git-advanced/
-│   ├── 40.7-serverless-edge/
-│   ├── 40.8-monorepo/
-│   └── 40.9-twelve-factor/
+├── 40-platform/ # DevOps / Platform
+│ ├── 40.1-docker/
+│ ├── 40.2-kubernetes/
+│ ├── 40.3-ci-cd/
+│ ├── 40.4-observability/
+│ ├── 40.5-build-tools/
+│ ├── 40.6-git-advanced/
+│ ├── 40.7-serverless-edge/
+│ ├── 40.8-monorepo/
+│ └── 40.9-twelve-factor/
 │
-├── 50-quality/                        # Quality (testing, a11y, performance)
-│   ├── 50.1-testing/
-│   ├── 50.2-accessibility/
-│   └── 50.3-performance-monitoring/
+├── 50-quality/ # Quality (testing, a11y, performance)
+│ ├── 50.1-testing/
+│ ├── 50.2-accessibility/
+│ └── 50.3-performance-monitoring/
 │
-├── 60-realtime/                       # Real-time (WebSockets)
-│   └── 60.1-websockets/
+├── 60-realtime/ # Real-time (WebSockets)
+│ └── 60.1-websockets/
 │
-├── 70-interview-toolkit/              # Interview toolkit (behavioral, coding patterns, cheatsheets)
-│   ├── 70.1-behavioral/
-│   ├── 70.2-coding-patterns/
-│   └── 70.3-cheatsheets/
+├── 70-interview-toolkit/ # Interview toolkit (behavioral, coding patterns, cheatsheets)
+│ ├── 70.1-behavioral/
+│ ├── 70.2-coding-patterns/
+│ └── 70.3-cheatsheets/
 │
-├── lanes/                             # Lane overview (indexes into 80/81)
-│   └── INDEX.md
+├── lanes/ # Lane overview (indexes into 80/81)
+│ └── INDEX.md
 │
-├── 80-lanes-abroad-full-stack/        # Abroad Full-Stack lane (EU/remote, 4-week)
-│   └── INDEX.md + 18 files
+├── 80-lanes-abroad-full-stack/ # Abroad Full-Stack lane (EU/remote, 4-week)
+│ └── INDEX.md + 18 files
 │
-└── 81-lanes-indian-sde-faang/         # Indian SDE / FAANG lane (DSA-heavy, 8-week)
+└── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy, 8-week)
     └── INDEX.md + 23 files
 ```
 
@@ -292,7 +292,7 @@ Practical TypeScript code examples demonstrating the concept. Use `typescript` l
 
 ## Common Mistakes
 
-4-6 common mistakes with code examples showing the ❌ bad and ✅ good patterns.
+4-6 common mistakes with code examples showing the bad and good patterns.
 
 ## Best Practices
 
@@ -420,7 +420,7 @@ Every section has an `INDEX.md` file. Format:
 
 ## Navigation
 
-← Previous: `../xx-Section/INDEX.md` · [🏠 Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
+← Previous: `../xx-Section/INDEX.md` · [ Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
 ```
 
 ### INDEX.md Rules
@@ -439,7 +439,7 @@ Every section has an `INDEX.md` file. Format:
 
 All opening code blocks **must** have a language tag. Use the **full, official** tag name:
 
-| ✅ Correct | ❌ Incorrect |
+| Correct | Incorrect |
 |------------|--------------|
 | `typescript` | `ts` |
 | `javascript` | `js` |
@@ -484,13 +484,13 @@ Use `text` code blocks for ASCII art diagrams:
 ````text
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│                  COMPONENT NAME                              │
+│ COMPONENT NAME │
 ├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │  Sub-component                                     │    │
-│  └─────────────────────────────────────────────────────┘    │
-│                                                              │
+│ │
+│ ┌─────────────────────────────────────────────────────┐ │
+│ │ Sub-component │ │
+│ └─────────────────────────────────────────────────────┘ │
+│ │
 └─────────────────────────────────────────────────────────────┘
 ```
 ````
@@ -517,16 +517,16 @@ for root, dirs, files in os.walk('.'):
             content = fh.read()
         for i, line in enumerate(content.split(b'\\n'), 1):
             if line != line.rstrip(b' \\t'):
-                issues.append(f'  {fp}:{i} trailing whitespace')
+                issues.append(f' {fp}:{i} trailing whitespace')
         if len(content) > 1 and content[-1:] != b'\\n':
-            issues.append(f'  {fp}: missing final newline')
+            issues.append(f' {fp}: missing final newline')
         elif len(content) > 2 and content[-2:-1] == b'\\n' and content[-3:-2] == b'\\n':
-            issues.append(f'  {fp}: double trailing newline')
+            issues.append(f' {fp}: double trailing newline')
 if issues:
     print('Issues found:')
     for i in issues: print(i)
 else:
-    print('✅ All 299 files clean')
+    print(' All 299 files clean')
 "
 ```
 
@@ -589,7 +589,7 @@ else:
 ```text
 ## Navigation
 
-← Previous: `../xx-Section/INDEX.md` · [🏠 Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
+← Previous: `../xx-Section/INDEX.md` · [ Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
 ```
 
 - Three links: Previous (left arrow), Home (house icon), Next (right arrow)
@@ -784,8 +784,8 @@ Table format showing complexity for different problem variants:
 
 | Complexity | Variant A | Variant B |
 |------------|-----------|-----------|
-| Time       | O(n)      | O(n²)     |
-| Space      | O(1)      | O(n)      |
+| Time | O(n) | O(n²) |
+| Space | O(1) | O(n) |
 
 ## Interview Problems
 
@@ -924,15 +924,15 @@ for root, dirs, files in os.walk('.'):
             content = fh.read()
         for i, line in enumerate(content.split(b'\\n'), 1):
             if line != line.rstrip(b' \\t'):
-                issues.append(f'  {fp}:{i} trailing whitespace')
+                issues.append(f' {fp}:{i} trailing whitespace')
         if len(content) > 1 and content[-1:] != b'\\n':
-            issues.append(f'  {fp}: missing final newline')
+            issues.append(f' {fp}: missing final newline')
         elif len(content) > 2 and content[-2:-1] == b'\\n' and content[-3:-2] == b'\\n':
-            issues.append(f'  {fp}: double trailing newline')
+            issues.append(f' {fp}: double trailing newline')
 if issues:
     for i in issues: print(i)
 else:
-    print('✅ All files clean')
+    print(' All files clean')
 "
 
 # Regenerate project statistics report

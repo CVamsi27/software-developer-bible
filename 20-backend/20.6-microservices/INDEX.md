@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 16 content files classify into 5 conceptual categories — the "GoF classification" of distributed systems.
 
@@ -27,12 +27,12 @@ The 16 content files classify into 5 conceptual categories — the "GoF classifi
 ## The Flow
 
 ```text
-PASS I — FOUNDATIONS        PASS II — DATA PATTERNS       PASS III — RESILIENCE       PASS IV — MESSAGING
-01 service discovery   →    07 event sourcing        →    04 circuit breaker     →    05 Kafka
-02 API gateway              13 CQRS                       14 bulkhead                 06 RabbitMQ
-09 gRPC (+16 streaming)     11 distributed transactions   (overview:                  15 message brokers
-                            03 saga pattern                30.3 resilience)           17 event-driven architecture
-                                                           10 service mesh             12 strangler fig
+PASS I — FOUNDATIONS PASS II — DATA PATTERNS PASS III — RESILIENCE PASS IV — MESSAGING
+01 service discovery → 07 event sourcing → 04 circuit breaker → 05 Kafka
+02 API gateway 13 CQRS 14 bulkhead 06 RabbitMQ
+09 gRPC (+16 streaming) 11 distributed transactions (overview: 15 message brokers
+                            03 saga pattern 30.3 resilience) 17 event-driven architecture
+                                                           10 service mesh 12 strangler fig
 ```
 
 | Pass | # | File | Topics |
@@ -53,7 +53,7 @@ PASS I — FOUNDATIONS        PASS II — DATA PATTERNS       PASS III — RESIL
 | IV | 14 | [Event-Driven Architecture](20.6.17-event-driven-architecture.md) | When events beat requests; producer/consumer, reprocessing |
 | IV | 15 | [Strangler Fig](20.6.12-strangler-fig.md) | Legacy migration, parallel run, dual-write |
 | V | 16 | [gRPC Streaming](20.6.16-grpc-streaming.md) | Streaming modes, gRPC-Web, when gRPC beats REST |
-| 🎤 | 17 | [Interview Questions](20.6.08-interview-questions.md) | 50+ curated Q&A |
+| | 17 | [Interview Questions](20.6.08-interview-questions.md) | 50+ curated Q&A |
 
 ---
 
@@ -63,4 +63,4 @@ PASS I — FOUNDATIONS        PASS II — DATA PATTERNS       PASS III — RESIL
 
 ## Navigation
 
-[← Previous: Security (Auth track)](../20.5-security/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: GraphQL →](../20.7-graphql/INDEX.md)
+[← Previous: Security (Auth track)](../20.5-security/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: GraphQL →](../20.7-graphql/INDEX.md)

@@ -10,22 +10,22 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Workloads](#-workloads) | 4 | Pods, ReplicaSets, Deployments, StatefulSets, DaemonSets — what runs |
-| [Networking](#-networking) | 1 | Services, Ingress — how traffic gets in |
-| [Configuration & Scaling](#-configuration--scaling) | 3 | ConfigMaps, Secrets, HPA — how to configure and scale |
-| [Reliability](#-reliability) | 2 | Health checks, PDBs — keeping the system healthy |
-| [Batch & Scheduling](#-batch--scheduling) | 1 | Jobs, CronJobs — batch workloads |
-| [Security & Multi-tenancy](#-security--multi-tenancy) | 2 | RBAC, Network Policies, Resource Quotas — production concerns |
-| [Packaging](#-packaging) | 1 | Helm — the K8s package manager |
-| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+| [Workloads](#workloads) | 4 | Pods, ReplicaSets, Deployments, StatefulSets, DaemonSets — what runs |
+| [Networking](#networking) | 1 | Services, Ingress — how traffic gets in |
+| [Configuration & Scaling](#configuration--scaling) | 3 | ConfigMaps, Secrets, HPA — how to configure and scale |
+| [Reliability](#reliability) | 2 | Health checks, PDBs — keeping the system healthy |
+| Batch & Scheduling (see Workloads) | 1 | Jobs, CronJobs — batch workloads |
+| [Security & Multi-tenancy](#security--multi-tenancy) | 2 | RBAC, Network Policies, Resource Quotas — production concerns |
+| [Packaging](#packaging) | 1 | Helm — the K8s package manager |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
-## ⚙️ Workloads
+## Workloads
 
 What runs in K8s. Read these first.
 
@@ -38,7 +38,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🌐 Networking
+## Networking
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -46,7 +46,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## ⚙️ Configuration & Scaling
+## Configuration & Scaling
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -56,7 +56,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🛡️ Reliability
+## Reliability
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -65,7 +65,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🔐 Security & Multi-tenancy
+## Security & Multi-tenancy
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -74,7 +74,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 📦 Packaging
+## Packaging
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -82,7 +82,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -90,7 +90,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Workloads** (Pods, Deployments) — must know
 2. **Networking** (Services, Ingress) — must know
@@ -103,7 +103,7 @@ What runs in K8s. Read these first.
 
 ---
 
-## 🎯 The Standard Production Manifest (memorize)
+## The Standard Production Manifest (memorize)
 
 ```yaml
 apiVersion: apps/v1
@@ -139,7 +139,7 @@ spec:
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Docker](../40.1-docker/INDEX.md) — K8s runs containers
 - [CI/CD](../40.3-ci-cd/INDEX.md) — deploys to K8s
@@ -150,4 +150,4 @@ spec:
 
 ## Navigation
 
-[← Previous: Docker](../40.1-docker/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: CI/CD →](../40.3-ci-cd/INDEX.md)
+[← Previous: Docker](../40.1-docker/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: CI/CD →](../40.3-ci-cd/INDEX.md)

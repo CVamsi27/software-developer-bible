@@ -10,20 +10,20 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 8 files are organized into 4 categories.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Fundamentals](#-fundamentals) | 2 | Schema design, queries, mutations, vs REST |
-| [Execution](#-execution) | 2 | Resolvers, Apollo Server — the runtime side |
-| [Client & Production](#-client--production) | 2 | Apollo Client, performance, security |
-| [Interview Prep](#-interview-prep) | 2 | Performance/security deep-dive, 30+ Qs |
+| [Fundamentals](#fundamentals) | 2 | Schema design, queries, mutations, vs REST |
+| [Execution](#execution) | 2 | Resolvers, Apollo Server — the runtime side |
+| [Client & Production](#client--production) | 2 | Apollo Client, performance, security |
+| [Interview Prep](#interview-prep) | 2 | Performance/security deep-dive, 30+ Qs |
 
 ---
 
-## 📐 Fundamentals
+## Fundamentals
 
 The mental model — schema-first design.
 
@@ -35,7 +35,7 @@ The mental model — schema-first design.
 
 ---
 
-## ⚙️ Execution
+## Execution
 
 How the server resolves queries.
 
@@ -46,7 +46,7 @@ How the server resolves queries.
 
 ---
 
-## 🖥️ Client & Production
+## Client & Production
 
 The client-side and the production concerns.
 
@@ -57,7 +57,7 @@ The client-side and the production concerns.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -65,7 +65,7 @@ The client-side and the production concerns.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Overview + Schema Design** (50 min) — must know
 2. **Queries & Mutations** (20 min) — must know
@@ -77,7 +77,7 @@ The client-side and the production concerns.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [REST APIs](../20.3-rest-apis/INDEX.md) — the alternative; most senior interviews cover REST first
 - [React](../../10-frontend/10.3-react/INDEX.md) — Apollo Client + React
@@ -88,4 +88,4 @@ The client-side and the production concerns.
 
 ## Navigation
 
-[← Previous: Microservices](../20.6-microservices/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)
+[← Previous: Microservices](../20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)

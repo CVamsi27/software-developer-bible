@@ -12,14 +12,14 @@
 
 | # | Section | Purpose |
 |---|---------|---------|
-| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with ✅/❌ per company type) |
+| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with / per company type) |
 | 2 | [Reference Topics — What You Need to Know](#reference-topics--what-you-need-to-know) | The checklist — what you need to know (3 tiers: mandatory / common / differentiator + skip list). This is the "perfect reference" part. |
 | 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
 | 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (US FAANG + India in-country), visa strategy (H1B / Blue Card) |
 | 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
 | 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections-1-7 + 0) | Where to study (the 8 themed groups) |
 | 7 | [FAQ](#faq) | Common questions |
-| 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
+| 8 | [Navigation](#navigation) | ← Previous · Home · Sibling Lane → |
 
 ---
 
@@ -27,14 +27,14 @@
 
 | If you are targeting... | Use this lane (81)? | Or use Abroad Full-Stack (80)? |
 |--------------------------|:-------------------:|:------------------------------:|
-| **FAANG in the US** (Google MTV, Meta Menlo Park, Apple Cupertino) | ✅ **primary** | — |
-| **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | ✅ **primary** | secondary (for family/visa overlay) |
-| **Big Tech EU** (Booking.com, Spotify, Klarna) | secondary | ✅ **primary** |
-| **US Big Tech via H1B / STEM-OPT** | ✅ **primary** | secondary |
-| **Indian in-country** (Bangalore, Hyderabad, NCR product companies) | ✅ **primary** | — |
-| **Adobe, Oracle, Cisco, VMware, Salesforce** (India + US) | ✅ **primary** | — |
-| **EU / non-Indian mid-stage startups** (n8n, SumUp, sennder, THRYVE) | secondary | ✅ **primary** |
-| **Remote-first US startups** (Stripe, Linear, Vercel) | secondary | ✅ **primary** |
+| **FAANG in the US** (Google MTV, Meta Menlo Park, Apple Cupertino) | **primary** | — |
+| **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | **primary** | secondary (for family/visa overlay) |
+| **Big Tech EU** (Booking.com, Spotify, Klarna) | secondary | **primary** |
+| **US Big Tech via H1B / STEM-OPT** | **primary** | secondary |
+| **Indian in-country** (Bangalore, Hyderabad, NCR product companies) | **primary** | — |
+| **Adobe, Oracle, Cisco, VMware, Salesforce** (India + US) | **primary** | — |
+| **EU / non-Indian mid-stage startups** (n8n, SumUp, sennder, THRYVE) | secondary | **primary** |
+| **Remote-first US startups** (Stripe, Linear, Vercel) | secondary | **primary** |
 | **Junior roles (under 3 YoE)** | — | start with fundamentals first |
 
 **Quick heuristic:** if the company's **phone screen has a LeetCode medium-to-hard problem**, you're in this lane. If the company is **mid-stage and uses take-homes instead**, you're in 80.
@@ -226,10 +226,10 @@ If you can ship those, you can pass 70%+ of mid-tier loops.
 
 | Trigger | Apply now |
 |---------|-----------|
-| 50+ problems solved (across 6 patterns) | ✅ after Week 4 |
-| 1 system design case explained cold | ✅ after Week 5 |
-| 5 STAR stories practiced | ✅ after Week 7 |
-| 2 mock interviews done | ✅ after Week 8 |
+| 50+ problems solved (across 6 patterns) | after Week 4 |
+| 1 system design case explained cold | after Week 5 |
+| 5 STAR stories practiced | after Week 7 |
+| 2 mock interviews done | after Week 8 |
 
 **Rule of thumb:** Apply 2-3 weeks before you feel "ready." Real interview feedback is more useful than any prep.
 
@@ -369,4 +369,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Sibling Lane: Abroad Full-Stack (80) →](../80-lanes-abroad-full-stack/INDEX.md)
+[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [ Back to Index](../INDEX.md) · [Sibling Lane: Abroad Full-Stack (80) →](../80-lanes-abroad-full-stack/INDEX.md)

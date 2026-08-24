@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The two sub-folders classify into 6 conceptual categories — the "GoF classification" of system design.
 
@@ -25,25 +25,25 @@ The two sub-folders classify into 6 conceptual categories — the "GoF classific
 
 ---
 
-## 🛣️ The Track — Read In This Order
+## The Track — Read In This Order
 
 ```text
-Pass I — THEORY (in order)           Pass II — METHOD              Pass III — CASE STUDIES
-CAP → consistency models             how-to-approach               pick by JD domain:
-→ sharding & replication             (4-phase framework:            · feed/social    → Twitter
-→ load balancing → caching            clarify → estimate →          · chat/realtime  → WhatsApp
-→ queues → distributed txns           high-level → deep-dive)       · geo/dispatch   → Uber / Lyft
-→ rate limiting → consensus                                        · fintech        → Payment Gateway
-→ failure modes → capacity        interview questions              · storage/sync   → Google Drive
-   ↓                              (50+ drills)                     · media/streaming→ Netflix
-INTERVIEW DRILLS ←────────────────────────────────────────────────· foundational    → URL shortener
+Pass I — THEORY (in order) Pass II — METHOD Pass III — CASE STUDIES
+CAP → consistency models how-to-approach pick by JD domain:
+→ sharding & replication (4-phase framework: · feed/social → Twitter
+→ load balancing → caching clarify → estimate → · chat/realtime → WhatsApp
+→ queues → distributed txns high-level → deep-dive) · geo/dispatch → Uber / Lyft
+→ rate limiting → consensus · fintech → Payment Gateway
+→ failure modes → capacity interview questions · storage/sync → Google Drive
+   ↓ (50+ drills) · media/streaming→ Netflix
+INTERVIEW DRILLS ←────────────────────────────────────────────────· foundational → URL shortener
 ```
 
 **Total time:** theory ~14 hrs, case studies ~2 hrs each. Do Pass I once; recycle case studies per application.
 
 ---
 
-## 📁 Sub-folders
+## Sub-folders
 
 | Folder | Files | What it is | When to read |
 |--------|------:|-----------|--------------|
@@ -58,4 +58,4 @@ INTERVIEW DRILLS ←────────────────────
 
 ## Navigation
 
-[← Previous: Design Patterns](../30.1-design-patterns/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)
+[← Previous: Design Patterns](../30.1-design-patterns/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)

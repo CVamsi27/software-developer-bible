@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Concept Categories (within the chapter)
+## Concept Categories (within the chapter)
 
 | Category | What it covers | The one-line exam answer |
 |----------|----------------|--------------------------|
@@ -21,7 +21,7 @@
 
 ---
 
-## 📄 The File
+## The File
 
 | File | Topics | Read time |
 |------|--------|----------:|
@@ -38,12 +38,12 @@
 
 ---
 
-## 🛣️ When to read
+## When to read
 
 - **Before any system-design interview with a "global users" angle** — pairs with [HTTP caching](../../20-backend/20.3-rest-apis/20.3.13-http-caching.md)
 - 45 min read; skim the provider comparison if pressed for time
 
-## 🎯 Common interview questions
+## Common interview questions
 
 - "How does a CDN know what to cache for an API response?"
 - "A deploy just shipped — how do users get the new JS bundle without stale chunks?"
@@ -60,4 +60,4 @@
 
 ## Navigation
 
-[← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
+[← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)

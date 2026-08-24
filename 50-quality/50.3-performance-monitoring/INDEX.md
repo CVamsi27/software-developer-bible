@@ -10,20 +10,20 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Core Metrics](#-core-metrics) | 1 | LCP, INP, CLS — the three pillars |
-| [Measurement](#-measurement) | 2 | Performance APIs, profiling tools |
-| [Lab Testing](#-lab-testing) | 1 | Lighthouse CI — automated audits |
-| [Real-User Monitoring](#-real-user-monitoring) | 1 | RUM, CrUX — what users actually see |
-| [Optimization](#-optimization) | 2 | Bundle analysis, performance budgets |
-| [Interview Prep](#-interview-prep) | 1 | 25+ Qs |
+| [Core Metrics](#core-metrics) | 1 | LCP, INP, CLS — the three pillars |
+| [Measurement](#measurement) | 2 | Performance APIs, profiling tools |
+| [Lab Testing](#lab-testing) | 1 | Lighthouse CI — automated audits |
+| [Real-User Monitoring](#real-user-monitoring) | 1 | RUM, CrUX — what users actually see |
+| [Optimization](#optimization) | 2 | Bundle analysis, performance budgets |
+| [Interview Prep](#interview-prep) | 1 | 25+ Qs |
 
 ---
 
-## 📊 Core Metrics
+## Core Metrics
 
 The 3 Core Web Vitals — every senior frontend interview starts here.
 
@@ -38,7 +38,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🔬 Measurement
+## Measurement
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -47,7 +47,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🧪 Lab Testing
+## Lab Testing
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -55,7 +55,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 📈 Real-User Monitoring
+## Real-User Monitoring
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -63,7 +63,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## ⚡ Optimization
+## Optimization
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -72,7 +72,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -80,7 +80,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Core Web Vitals** — must know (every frontend interview)
 2. **Performance APIs + Profiling Tools** — must know
@@ -91,7 +91,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "What are Core Web Vitals? What are the thresholds?"
 - "How do you measure LCP? How do you improve it?"
@@ -102,7 +102,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Accessibility](../50.2-accessibility/INDEX.md) — Lighthouse a11y audits
 - [Build Tools](../../40-platform/40.5-build-tools/INDEX.md) — bundle size from bundlers
@@ -113,4 +113,4 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ## Navigation
 
-[← Previous: Accessibility](../50.2-accessibility/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)
+[← Previous: Accessibility](../50.2-accessibility/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)

@@ -1,6 +1,6 @@
 # Interview Lanes
 
-> **Two peer interview preparation lanes** that draw from the [7 study stacks (numbered: 00-strategy → 10-frontend → 20-backend → 30-architecture → 40-platform → 50-quality → 60-realtime → 70-interview-toolkit)](../INDEX.md#-the-7-study-stacks-shared-by-both-lanes). Pick yours before diving in.
+> **Two peer interview preparation lanes** that draw from the [7 study stacks (numbered: 00-strategy → 10-frontend → 20-backend → 30-architecture → 40-platform → 50-quality → 60-realtime → 70-interview-toolkit)](../INDEX.md#the-7-study-stacks-numbered-for-study-order). Pick yours before diving in.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](.)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](../INDEX.md)
@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 The Two Lanes
+## The Two Lanes
 
 | Lane | Folder | For | Style | Files |
 |------|--------|-----|-------|------:|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🗂️ Lane vs Stack — the mental model
+## Lane vs Stack — the mental model
 
 The bible is split into two layers:
 
@@ -31,29 +31,29 @@ The bible is split into two layers:
 ```text
                  Interview Lanes (this folder)
        ┌────────────────────────────────────────────────┐
-       │                                                │
-       │  81-indian-sde-faang     80-abroad-full-stack  │
-       │  ┌─────────────┐         ┌─────────────┐       │
-       │  │ 22 files    │         │ 35 files    │       │
-       │  │ 8-week plan │         │ 4-week plan │       │
-       │  │ 5 co. guides│         │ 8 STARs     │       │
-       │  │ leetcode    │         │ take-home   │       │
-       │  │ comp        │         │ EU visa     │       │
-       │  └──────┬──────┘         └──────┬──────┘       │
-       │         └──────────┬─────────────┘             │
-       │                    ▼                            │
-       │  ┌──────────────────────────────────────┐     │
-       │  │  7 Study Stacks                       │     │
-       │  │  Frontend · Backend · Architecture    │     │
-       │  │  Platform · Quality · Real-Time ·     │     │
-       │  │  Interview Toolkit                    │     │
-       │  └──────────────────────────────────────┘     │
+       │ │
+       │ 81-indian-sde-faang 80-abroad-full-stack │
+       │ ┌─────────────┐ ┌─────────────┐ │
+       │ │ 22 files │ │ 35 files │ │
+       │ │ 8-week plan │ │ 4-week plan │ │
+       │ │ 5 co. guides│ │ 8 STARs │ │
+       │ │ leetcode │ │ take-home │ │
+       │ │ comp │ │ EU visa │ │
+       │ └──────┬──────┘ └──────┬──────┘ │
+       │ └──────────┬─────────────┘ │
+       │ ▼ │
+       │ ┌──────────────────────────────────────┐ │
+       │ │ 7 Study Stacks │ │
+       │ │ Frontend · Backend · Architecture │ │
+       │ │ Platform · Quality · Real-Time · │ │
+       │ │ Interview Toolkit │ │
+       │ └──────────────────────────────────────┘ │
        └────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚦 How to pick a lane
+## How to pick a lane
 
 ### Pick **Indian SDE / FAANG** if:
 - You're targeting Microsoft, Google, Amazon, Meta, Apple, or in-country India product companies
@@ -75,7 +75,7 @@ The bible is split into two layers:
 
 ---
 
-## 📁 Lanes are terminal
+## Lanes are terminal
 
 Lanes are **terminal** — they reference the stacks, never the other way around. The 7 study stacks (numbered: `00-strategy` → `10-frontend` → `20-backend` → `30-architecture` → `40-platform` → `50-quality` → `60-realtime` → `70-interview-toolkit`) contain no lane-specific content; personalization goes in the lane.
 

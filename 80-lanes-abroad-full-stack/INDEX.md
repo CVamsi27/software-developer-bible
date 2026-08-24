@@ -12,14 +12,14 @@
 
 | # | Section | Purpose |
 |---|---------|---------|
-| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with ✅/❌ per company type) |
+| 1 | [Lane Decision](#lane-decision--is-this-the-right-lane-for-you) | When to use this lane (decision matrix with / per company type) |
 | 2 | [Reference Topics — What You Need to Know](#reference-topics--what-you-need-to-know) | The checklist — what you need to know (3 tiers: mandatory / common / differentiator + skip list). This is the "perfect reference" part. |
 | 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
 | 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (5 country tiers), visa strategy (8 countries) |
 | 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
 | 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections-1-7 + 0) | Where to study (the 8 themed groups) |
 | 7 | [FAQ](#faq) | Common questions |
-| 8 | [Navigation](#navigation) | ← Previous · 🏠 Home · Sibling Lane → |
+| 8 | [Navigation](#navigation) | ← Previous · Home · Sibling Lane → |
 
 ---
 
@@ -27,12 +27,12 @@
 
 | If you are targeting... | Use this lane (80)? | Or use Indian SDE (81)? |
 |--------------------------|:-------------------:|:----------------------:|
-| **EU / non-Indian mid-stage startups** (LiveEO, Snke, MVST, n8n, SumUp, Scalable, Tanso) | ✅ **primary** | — |
-| **Remote-first US companies** (Stripe, Linear, Vercel, Supabase, Resend, Clerk) | ✅ **primary** | — |
-| **EU Big Tech** (Booking.com, Spotify, Klarna, Truecaller) | ✅ **primary + secondary** | use 81 too for the DSA signal |
-| **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | secondary | ✅ **primary** |
-| **Indian in-country** (in Bengaluru, Hyderabad, etc.) | — | ✅ **primary** |
-| **US FAANG on-site** (Google MTV, Meta Menlo Park) | — | ✅ **primary** |
+| **EU / non-Indian mid-stage startups** (LiveEO, Snke, MVST, n8n, SumUp, Scalable, Tanso) | **primary** | — |
+| **Remote-first US companies** (Stripe, Linear, Vercel, Supabase, Resend, Clerk) | **primary** | — |
+| **EU Big Tech** (Booking.com, Spotify, Klarna, Truecaller) | **primary + secondary** | use 81 too for the DSA signal |
+| **FAANG in EU** (Google Zürich, Meta London, Microsoft Dublin, Apple Cork) | secondary | **primary** |
+| **Indian in-country** (in Bengaluru, Hyderabad, etc.) | — | **primary** |
+| **US FAANG on-site** (Google MTV, Meta Menlo Park) | — | **primary** |
 | **Junior roles (under 3 YoE)** | — | start with `10-frontend/10.1-javascript/` and `10-frontend/10.2-typescript/` fundamentals first |
 
 **Quick heuristic:** if you need **visa sponsorship to work in the target country** AND the company is **mid-stage (Series A–D, 50-1000 people)**, you're in this lane. If you're targeting a US-based company from India without needing US visa, you're also in this lane. Everything else → 31.
@@ -256,10 +256,10 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 
 | Trigger | Apply now |
 |---------|-----------|
-| Stories practiced cold (8 stories) | ✅ after Week 1 |
-| 1 take-home shipped OR strong portfolio of personal projects | ✅ after Week 1-2 |
-| 1 system design case explained cold | ✅ after Week 1-2 |
-| 1 mock interview done | ✅ after Week 1-2 |
+| Stories practiced cold (8 stories) | after Week 1 |
+| 1 take-home shipped OR strong portfolio of personal projects | after Week 1-2 |
+| 1 system design case explained cold | after Week 1-2 |
+| 1 mock interview done | after Week 1-2 |
 
 **Rule of thumb:** Send 2-3 applications in Week 1 (n8n, SumUp, etc.) while still prepping. Real interview feedback is more useful than any prep. Don't wait until "perfect."
 
@@ -341,7 +341,7 @@ If you can ship those, you're ready to apply. Real interview feedback is more us
 | 32 | [Company Prep Sheets](80.32-company-prep-sheets.md) | Deep-dive prep ordered by current target priority: **LiveEO** (satellite analytics — verified stack/process), **Snke** (Brainlab-spin-off hospital platform), **MVST** (digital product studio — corrected profile), plus Redcare, Tanso, n8n. Verified talking points, likely questions, questions-to-ask per company. | Read before each interview; pair with the domain primer |
 | 33 | [Weekly Study Tracker](80.33-weekly-study-tracker.md) | 4-week daily checklist with time tracking, progress metrics, mock interview scores, story practice, and company applications. | Print and check off daily, review progress every Sunday |
 | 34 | [Germany Target Domain Primer](80.34-germany-target-domain-primer.md) | Domain fluency for the target cluster: healthtech (MDR vs certified, FHIR/DICOM/HL7, gematik/TI/ePA, hospital IT landscape) and geospatial (PostGIS patterns, COG/STAC/tiles, change-detection pipeline drill) — plus a Docita→domain mapping table and night-before glossary. | Study alongside company sheets for LiveEO/Snke/MVST interviews |
-| 35 | [Germany Target Engine](80.35-germany-target-engine.md) | Status-aware Munich-first (+Berlin) pipeline: ATS auto-rejection diagnosis + fixes shipped to the resume, new English-speaking targets (NavVis ⭐, Konux, DeepOpinion, Helsing…), weekly operating loop with career-ops, DM skeletons, and funnel metrics. | Review every Sunday; update status tables |
+| 35 | [Germany Target Engine](80.35-germany-target-engine.md) | Status-aware Munich-first (+Berlin) pipeline: ATS auto-rejection diagnosis + fixes shipped to the resume, new English-speaking targets (NavVis , Konux, DeepOpinion, Helsing…), weekly operating loop with career-ops, DM skeletons, and funnel metrics. | Review every Sunday; update status tables |
 | — | [Personal workspace](personal/README.md) | Single source of truth for personal data — CV, portals config, profile, **live** application tracker, [outreach playbook with recruiter DMs](personal/outreach-playbook.md), targets, relocation bible. career-ops accesses these via symlinks; `doctor.sh` verifies the wiring. | Edit freely here · run doctor.sh after tool runs · commit = backup |
 
 ---
@@ -409,4 +409,4 @@ This lane is a living scaffold. As you go through interviews, add:
 
 ## Navigation
 
-[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../81-lanes-indian-sde-faang/INDEX.md)
+[← Previous: Animation](../10-frontend/10.6-animation/INDEX.md) · [ Back to Index](../INDEX.md) · [Sibling Lane: Indian SDE / FAANG (81) →](../81-lanes-indian-sde-faang/INDEX.md)

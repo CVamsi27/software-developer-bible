@@ -5,12 +5,12 @@
 > 25 files across 3 sub-stacks.
 
 [![Files](https://img.shields.io/badge/files-25-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-3-green)](#-the-3-sub-stacks)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-3-green)](#the-3-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## 🎯 Why this stack matters
+## Why this stack matters
 
 The toolkit is the **synthesis** layer:
 - All the stacks (10-60) build knowledge
@@ -21,7 +21,7 @@ If you only have 1 week before an interview, this is where to focus.
 
 ---
 
-## 📁 The 3 Sub-Stacks (in study order)
+## The 3 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
@@ -31,17 +31,17 @@ If you only have 1 week before an interview, this is where to focus.
 
 ---
 
-## 🗺️ Category Map
+## Category Map
 
 | Category | What it covers | When to use |
 |----------|----------------|-------------|
-| 🟦 **Behavioral** | STAR answers, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
-| 🟩 **Coding Patterns** | 18 algorithm patterns — sliding window, DP, BFS/DFS, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
-| 🟨 **Cheat Sheets** | One-page reference for each major stack | Last-minute review the morning of |
+| **Behavioral** | STAR answers, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
+| **Coding Patterns** | 18 algorithm patterns — sliding window, DP, BFS/DFS, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
+| **Cheat Sheets** | One-page reference for each major stack | Last-minute review the morning of |
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Abroad Full-Stack (1-2 days)
 1. Skim [Coding Patterns](70.2-coding-patterns/INDEX.md) — focus on Sliding Window, Two Pointers, BFS/DFS, Hash Map (the 6-7 most-tested patterns)
@@ -60,7 +60,7 @@ If you only have 1 week before an interview, this is where to focus.
 
 ---
 
-## 🎤 Quick reminders
+## Quick reminders
 
 - **STAR** = Situation, Task, Action, Result. Every behavioral answer needs all four.
 - **Coding pattern recognition** — if you can name the pattern in <30 sec, you can solve the problem.
@@ -68,7 +68,7 @@ If you only have 1 week before an interview, this is where to focus.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [00 — Strategy](../00-strategy/INDEX.md) — STAR method, communication, resume (do this first)
 - [Coding Patterns INDEX](70.2-coding-patterns/INDEX.md) — 18 patterns
@@ -79,4 +79,4 @@ If you only have 1 week before an interview, this is where to focus.
 
 ## Navigation
 
-[← Previous: Quality](../50-quality/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Abroad Full-Stack Lane →](../80-lanes-abroad-full-stack/INDEX.md)
+[← Previous: Quality](../50-quality/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Abroad Full-Stack Lane →](../80-lanes-abroad-full-stack/INDEX.md)

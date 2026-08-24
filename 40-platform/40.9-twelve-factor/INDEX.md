@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Factor Categories
+## Factor Categories
 
 The 12 (+3) factors classify into 4 conceptual families — the way to *recall* them under pressure.
 
 | Category | Factors | The principle in one line |
 |----------|---------|---------------------------|
-| [Build & Ship](#-factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One repo → deterministic build → immutable release |
-| [Config & Bindings](#-factor-categories) | 3 Config · 4 Backing services | Config lives in env; backing services are swappable attached resources |
-| [Runtime Model](#-factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
-| [Operational Parity](#-factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Same environments everywhere; logs are event streams; admin = one-off processes |
+| [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One repo → deterministic build → immutable release |
+| [Config & Bindings](#factor-categories) | 3 Config · 4 Backing services | Config lives in env; backing services are swappable attached resources |
+| [Runtime Model](#factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
+| [Operational Parity](#factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Same environments everywhere; logs are event streams; admin = one-off processes |
 | *(15-factor extension)* | API first · Telemetry · Auth | The modern add-ons for API + observability + security concerns |
 
 ---
 
-## 📚 The 12 Factors (memorize the names)
+## The 12 Factors (memorize the names)
 
 | # | Factor | One-line description |
 |--:|--------|---------------------|
@@ -48,7 +48,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ---
 
-## 📄 The File
+## The File
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -56,7 +56,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ---
 
-## 🛣️ When to read
+## When to read
 
 - **Always** — once, before any cloud-native interview
 - 60 min read
@@ -64,7 +64,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ---
 
-## 🎯 Common interview questions
+## Common interview questions
 
 - "Walk me through the 12 factors. Which ones does your app violate?"
 - "How do you handle config in your app?" (Factor 3)
@@ -74,7 +74,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Docker](../40.1-docker/INDEX.md) — Factor 2 (dependencies), Factor 6 (processes)
 - [Kubernetes](../40.2-kubernetes/INDEX.md) — Factor 6 (processes), Factor 8 (concurrency)
@@ -86,4 +86,4 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ## Navigation
 
-[← Previous: Monorepo](../40.8-monorepo/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
+[← Previous: Monorepo](../40.8-monorepo/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)

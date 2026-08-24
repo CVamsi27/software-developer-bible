@@ -5,7 +5,7 @@
 
 # Sessions & Cookies
 
-> 📍 Stage 1 of the [Auth Learning Track](INDEX.md) — prev: [Fundamentals](auth-fundamentals.md) · next: [JWT](jwt.md)
+> Stage 1 of the [Auth Learning Track](INDEX.md) — prev: [Fundamentals](auth-fundamentals.md) · next: [JWT](jwt.md)
 
 > **TL;DR:** Session management keeps the server-side state and the client-side cookie in sync — the cookie is just an opaque session ID. Senior engineers know the cookie flags (Secure, HttpOnly, SameSite, Path, Domain), session ID rotation, idle/absolute timeouts, and CSRF interactions.
 >
@@ -33,33 +33,33 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 ### Session Flow
 
 ```text
-┌──────────┐                    ┌──────────┐
-│  Client  │                    │  Server  │
-└────┬─────┘                    └────┬─────┘
-     │                               │
-     │  1. POST /login               │
-     │     {email, password}         │
+┌──────────┐ ┌──────────┐
+│ Client │ │ Server │
+└────┬─────┘ └────┬─────┘
+     │ │
+     │ 1. POST /login │
+     │ {email, password} │
      │──────────────────────────────>│
-     │                               │
-     │                    2. Validate credentials
-     │                    3. Create session
-     │                    4. Generate session ID
-     │                    5. Store session data
-     │                               │
-     │  6. Set-Cookie:               │
-     │     sessionId=abc123;         │
-     │     HttpOnly; Secure;         │
-     │     SameSite=Strict           │
+     │ │
+     │ 2. Validate credentials
+     │ 3. Create session
+     │ 4. Generate session ID
+     │ 5. Store session data
+     │ │
+     │ 6. Set-Cookie: │
+     │ sessionId=abc123; │
+     │ HttpOnly; Secure; │
+     │ SameSite=Strict │
      │<──────────────────────────────│
-     │                               │
-     │  7. GET /dashboard            │
-     │     Cookie: sessionId=abc123  │
+     │ │
+     │ 7. GET /dashboard │
+     │ Cookie: sessionId=abc123 │
      │──────────────────────────────>│
-     │                               │
-     │                    8. Lookup session
-     │                    9. Return user data
-     │                               │
-     │  10. Response with dashboard  │
+     │ │
+     │ 8. Lookup session
+     │ 9. Return user data
+     │ │
+     │ 10. Response with dashboard │
      │<──────────────────────────────│
 
 ```
@@ -68,26 +68,26 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Cookie Attributes                             │
+│ Cookie Attributes │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Set-Cookie: sessionId=abc123;                                 │
-│              Domain=.example.com;                               │
-│              Path=/;                                            │
-│              Expires=Thu, 01 Jan 2025 00:00:00 GMT;             │
-│              Max-Age=3600;                                      │
-│              Secure;                                            │
-│              HttpOnly;                                          │
-│              SameSite=Strict                                    │
-│                                                                 │
-│  Attributes:                                                    │
-│  - Domain: Which domain can access the cookie                   │
-│  - Path: Which paths can access the cookie                      │
-│  - Expires/Max-Age: When the cookie expires                     │
-│  - Secure: Only send over HTTPS                                 │
-│  - HttpOnly: Not accessible via JavaScript                      │
-│  - SameSite: Control cross-site cookie sending                  │
-│                                                                 │
+│ │
+│ Set-Cookie: sessionId=abc123; │
+│ Domain=.example.com; │
+│ Path=/; │
+│ Expires=Thu, 01 Jan 2025 00:00:00 GMT; │
+│ Max-Age=3600; │
+│ Secure; │
+│ HttpOnly; │
+│ SameSite=Strict │
+│ │
+│ Attributes: │
+│ - Domain: Which domain can access the cookie │
+│ - Path: Which paths can access the cookie │
+│ - Expires/Max-Age: When the cookie expires │
+│ - Secure: Only send over HTTPS │
+│ - HttpOnly: Not accessible via JavaScript │
+│ - SameSite: Control cross-site cookie sending │
+│ │
 └─────────────────────────────────────────────────────────────────┘
 
 ```
@@ -96,29 +96,29 @@ Sessions and cookies work together: cookies typically store the session ID, whil
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
-│              Session vs JWT Comparison                           │
+│ Session vs JWT Comparison │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  SESSION-BASED:                                                 │
-│  ┌──────────┐      ┌──────────┐      ┌──────────┐              │
-│  │  Client  │─────>│  Server  │─────>│ Session  │              │
-│  │ (Cookie) │      │          │      │  Store   │              │
-│  └──────────┘      └──────────┘      └──────────┘              │
-│  - Server-side storage                                         │
-│  - Session ID in cookie                                        │
-│  - Easy to revoke                                              │
-│  - Scalability challenge                                       │
-│                                                                 │
-│  JWT-BASED:                                                     │
-│  ┌──────────┐      ┌──────────┐      ┌──────────┐              │
-│  │  Client  │─────>│  Server  │─────>│  Token   │              │
-│  │ (Token)  │      │          │      │(Self-contained)         │
-│  └──────────┘      └──────────┘      └──────────┘              │
-│  - Client-side storage                                         │
-│  - Self-contained token                                        │
-│  - Harder to revoke                                            │
-│  - Highly scalable                                             │
-│                                                                 │
+│ │
+│ SESSION-BASED: │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
+│ │ Client │─────>│ Server │─────>│ Session │ │
+│ │ (Cookie) │ │ │ │ Store │ │
+│ └──────────┘ └──────────┘ └──────────┘ │
+│ - Server-side storage │
+│ - Session ID in cookie │
+│ - Easy to revoke │
+│ - Scalability challenge │
+│ │
+│ JWT-BASED: │
+│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
+│ │ Client │─────>│ Server │─────>│ Token │ │
+│ │ (Token) │ │ │ │(Self-contained) │
+│ └──────────┘ └──────────┘ └──────────┘ │
+│ - Client-side storage │
+│ - Self-contained token │
+│ - Harder to revoke │
+│ - Highly scalable │
+│ │
 └─────────────────────────────────────────────────────────────────┘
 
 ```

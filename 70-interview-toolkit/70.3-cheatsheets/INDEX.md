@@ -10,7 +10,7 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 5 cheat sheets classify into 3 conceptual categories — pick by interview type, not by order.
 
@@ -22,7 +22,7 @@ The 5 cheat sheets classify into 3 conceptual categories — pick by interview t
 
 ---
 
-## 📄 The 5 Cheat Sheets
+## The 5 Cheat Sheets
 
 | # | File | What it covers | When to use | Read time |
 |--:|------|----------------|-------------|----------:|
@@ -34,7 +34,7 @@ The 5 cheat sheets classify into 3 conceptual categories — pick by interview t
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 **Don't read these until you have studied the underlying stack.** Cheat sheets compress; they don't teach.
 
@@ -45,7 +45,7 @@ The 5 cheat sheets classify into 3 conceptual categories — pick by interview t
 
 ---
 
-## 🎯 Cheat Sheet Format
+## Cheat Sheet Format
 
 Each cheat sheet follows the same structure:
 
@@ -57,7 +57,7 @@ Each cheat sheet follows the same structure:
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [JavaScript](../../10-frontend/10.1-javascript/INDEX.md)
 - [TypeScript](../../10-frontend/10.2-typescript/INDEX.md)
@@ -69,4 +69,4 @@ Each cheat sheet follows the same structure:
 
 ## Navigation
 
-[← Previous: Coding Patterns](../70.2-coding-patterns/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Abroad Full-Stack Lane →](../../80-lanes-abroad-full-stack/INDEX.md)
+[← Previous: Coding Patterns](../70.2-coding-patterns/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Abroad Full-Stack Lane →](../../80-lanes-abroad-full-stack/INDEX.md)

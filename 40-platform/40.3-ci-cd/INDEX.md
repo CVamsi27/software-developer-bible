@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [CI Tools](#-ci-tools) | 4 | GitHub Actions, Jenkins, GitLab CI, ArgoCD — pick the one your company uses |
-| [Build & Deploy](#-build--deploy) | 2 | Docker build/deploy, pipeline patterns — the runtime |
-| [Deployment Strategies](#-deployment-strategies) | 1 | Blue-green, canary, rolling — the senior-level patterns |
-| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+| [CI Tools](#ci-tools) | 4 | GitHub Actions, Jenkins, GitLab CI, ArgoCD — pick the one your company uses |
+| [Build & Deploy](#build--deploy) | 2 | Docker build/deploy, pipeline patterns — the runtime |
+| [Deployment Strategies](#deployment-strategies) | 1 | Blue-green, canary, rolling — the senior-level patterns |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
-## 🛠️ CI Tools
+## CI Tools
 
 Pick the one your company uses — the patterns are similar.
 
@@ -34,7 +34,7 @@ Pick the one your company uses — the patterns are similar.
 
 ---
 
-## 🏗️ Build & Deploy
+## Build & Deploy
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -43,7 +43,7 @@ Pick the one your company uses — the patterns are similar.
 
 ---
 
-## 🚀 Deployment Strategies
+## Deployment Strategies
 
 Senior-level patterns for zero-downtime deploys.
 
@@ -63,7 +63,7 @@ Need zero-downtime deployment?
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -71,7 +71,7 @@ Need zero-downtime deployment?
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **GitHub Actions** (or GitLab CI if your JD requires) — must know
 2. **Docker Build & Deploy** — must know
@@ -82,7 +82,7 @@ Need zero-downtime deployment?
 
 ---
 
-## 🎯 The Standard Pipeline (memorize)
+## The Standard Pipeline (memorize)
 
 ```yaml
 # .github/workflows/ci.yml
@@ -121,7 +121,7 @@ jobs:
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [Docker](../40.1-docker/INDEX.md) — what CI/CD builds and deploys
 - [Kubernetes](../40.2-kubernetes/INDEX.md) — common deploy target
@@ -131,4 +131,4 @@ jobs:
 
 ## Navigation
 
-[← Previous: Kubernetes](../40.2-kubernetes/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Observability →](../40.4-observability/INDEX.md)
+[← Previous: Kubernetes](../40.2-kubernetes/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Observability →](../40.4-observability/INDEX.md)

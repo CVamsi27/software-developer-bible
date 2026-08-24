@@ -10,21 +10,21 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 The 20 files are organized into 5 categories.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [PostgreSQL Fundamentals](#-postgresql-fundamentals) | 5 | How Postgres works under the hood — every backend interview starts here |
-| [Querying & Optimization](#-querying--optimization) | 3 | Indexes, joins, execution plans — the day-to-day performance work |
-| [Concurrency & Transactions](#-concurrency--transactions) | 4 | MVCC, transactions, locking, deadlocks — the hard part |
-| [Operations & Scaling](#-operations--scaling) | 4 | Connection pooling, replication, migrations, pooling/observability |
-| [ORM & Specialized Features](#-orm--specialized-features) | 4 | Prisma, JSONB, window functions, soft delete — production patterns |
+| [PostgreSQL Fundamentals](#postgresql-fundamentals) | 5 | How Postgres works under the hood — every backend interview starts here |
+| [Querying & Optimization](#querying--optimization) | 3 | Indexes, joins, execution plans — the day-to-day performance work |
+| [Concurrency & Transactions](#concurrency--transactions) | 4 | MVCC, transactions, locking, deadlocks — the hard part |
+| [Operations & Scaling](#operations--scaling) | 4 | Connection pooling, replication, migrations, pooling/observability |
+| [ORM & Specialized Features](#orm--specialized-features) | 4 | Prisma, JSONB, window functions, soft delete — production patterns |
 
 ---
 
-## 🐘 PostgreSQL Fundamentals
+## PostgreSQL Fundamentals
 
 How Postgres actually works. Every backend interview starts here.
 
@@ -38,7 +38,7 @@ How Postgres actually works. Every backend interview starts here.
 
 ---
 
-## 🔍 Querying & Optimization
+## Querying & Optimization
 
 Making queries fast.
 
@@ -50,7 +50,7 @@ Making queries fast.
 
 ---
 
-## 🔐 Concurrency & Transactions
+## Concurrency & Transactions
 
 The hard part — how Postgres handles concurrent access.
 
@@ -63,7 +63,7 @@ The hard part — how Postgres handles concurrent access.
 
 ---
 
-## ⚙️ Operations & Scaling
+## Operations & Scaling
 
 Production concerns — keeping the database healthy at scale.
 
@@ -76,7 +76,7 @@ Production concerns — keeping the database healthy at scale.
 
 ---
 
-## 🛠️ ORM & Specialized Features
+## ORM & Specialized Features
 
 Prisma + Postgres-specific features.
 
@@ -89,7 +89,7 @@ Prisma + Postgres-specific features.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Backend new, prepping for senior (2-3 weeks)
 1. PostgreSQL Fundamentals (5 files, ~2.5 hrs)
@@ -114,7 +114,7 @@ Prisma + Postgres-specific features.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [REST APIs](../20.3-rest-apis/INDEX.md) — pagination, error handling
 - [System Design](../../30-architecture/30.2-system-design/INDEX.md) — CAP, sharding, replication
@@ -125,4 +125,4 @@ Prisma + Postgres-specific features.
 
 ## Navigation
 
-[← Previous: REST APIs](../20.3-rest-apis/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Security →](../20.5-security/INDEX.md)
+[← Previous: REST APIs](../20.3-rest-apis/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Security →](../20.5-security/INDEX.md)

@@ -7,14 +7,14 @@
 > **Folders are numbered for the recommended study order.** `00-` is everyone starts here. `10-` through `60-` are the 7 technical stacks in dependency order. `70-` is interview toolkit. `80-` and `81-` are the two lanes.
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
-[![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
-[![Files](https://img.shields.io/badge/files-545%2B-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-545%2B-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
 
-## 🎯 Pick Your Lane
+## Pick Your Lane
 
 | Lane | Folder | For | Style |
 |------|--------|-----|-------|
@@ -26,7 +26,7 @@
 
 ---
 
-## 📚 The 7 Study Stacks (numbered for study order)
+## The 7 Study Stacks (numbered for study order)
 
 The technical material is grouped by **what you're studying**, not by which interview you're prepping for. Both lanes pull from the same stacks. **The number prefix tells you the recommended study order.**
 
@@ -48,7 +48,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 📁 00-strategy — Interview strategy (everyone starts here)
+### 00-strategy — Interview strategy (everyone starts here)
 
 > 4 files. Cross-lane. Universal — applies to all interviews regardless of company or lane.
 
@@ -59,7 +59,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 📁 10-frontend — Frontend (96 files in 8 sub-stacks)
+### 10-frontend — Frontend (96 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -72,7 +72,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 5 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 1 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA |
 
-### 📁 20-backend — Backend (111 files in 9 sub-stacks)
+### 20-backend — Backend (111 files in 9 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -86,7 +86,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 20.9 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
-### 📁 30-architecture — Architecture (75+ files in 3 sub-stacks)
+### 30-architecture — Architecture (75+ files in 3 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -134,18 +134,18 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-## 🛣️ Recommended Study Path
+## Recommended Study Path
 
 After you pick your lane (above), the two lanes share all 7 study stacks. They diverge in the final interview-prep phase.
 
 ```text
-00-strategy   → Communication → Resume Tips → STAR Method → HR Questions
-10-frontend   → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
-20-backend    → Node.js → NestJS → REST APIs → Database → Caching → Auth & Security track → Microservices & Distributed Patterns → AI Engineering → GraphQL
+00-strategy → Communication → Resume Tips → STAR Method → HR Questions
+10-frontend → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
+20-backend → Node.js → NestJS → REST APIs → Database → Caching → Auth & Security track → Microservices & Distributed Patterns → AI Engineering → GraphQL
 30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
-40-platform   → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
-50-quality    → Testing → Accessibility → Performance Monitoring
-60-realtime   → WebSockets
+40-platform → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
+50-quality → Testing → Accessibility → Performance Monitoring
+60-realtime → WebSockets
 70-interview-toolkit → Behavioral → Coding Patterns → Cheat Sheets
 80-lanes-abroad-full-stack OR 81-lanes-indian-sde-faang (terminal phase)
 ```
@@ -155,7 +155,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-## 🔗 Cross-Reference Map
+## Cross-Reference Map
 
 | Stack | Depends on | Used by |
 |-------|-----------|---------|
@@ -171,7 +171,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-## 📂 Direct Indexes
+## Direct Indexes
 
 **Lanes:**
 

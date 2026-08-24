@@ -10,19 +10,19 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Branching & History](#-branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
-| [Automation](#-automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
-| [Advanced Commands](#-advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
-| [Investigation](#-investigation) | 1 | Code archaeology — finding who/when/why |
-| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+| [Branching & History](#branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
+| [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
+| [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
+| [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
-## 🌿 Branching & History
+## Branching & History
 
 How your team organizes work.
 
@@ -43,7 +43,7 @@ What branching model?
 
 ---
 
-## ⚙️ Automation
+## Automation
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -51,7 +51,7 @@ What branching model?
 
 ---
 
-## 🔧 Advanced Commands
+## Advanced Commands
 
 The power tools.
 
@@ -62,7 +62,7 @@ The power tools.
 
 ---
 
-## 🔍 Investigation
+## Investigation
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -70,7 +70,7 @@ The power tools.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -78,7 +78,7 @@ The power tools.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **Branching Strategies** — must know (you'll be asked what your team uses)
 2. **Rebase & Cherry-Pick** — must know
@@ -90,7 +90,7 @@ The power tools.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Rebase vs merge — when to use which?"
 - "How do you find which commit introduced a bug?" (bisect)
@@ -101,7 +101,7 @@ The power tools.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [CI/CD](../40.3-ci-cd/INDEX.md) — pipelines run on branches
 - [Monorepo](../40.8-monorepo/INDEX.md) — branching for monorepos
@@ -111,4 +111,4 @@ The power tools.
 
 ## Navigation
 
-[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)
+[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)

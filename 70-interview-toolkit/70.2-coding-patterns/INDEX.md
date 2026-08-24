@@ -10,16 +10,16 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Coverage | Difficulty |
 |----------|------:|----------|------------|
-| [Core Patterns](#-core-patterns) | 12 | ~80% of interview problems | Easy-Medium |
-| [Advanced Patterns](#-advanced-patterns) | 6 | The harder FAANG questions | Hard |
+| [Core Patterns](#core-patterns-01-12) | 12 | ~80% of interview problems | Easy-Medium |
+| [Advanced Patterns](#advanced-patterns-13-18) | 6 | The harder FAANG questions | Hard |
 
 ---
 
-## 🧩 Core Patterns (01-12)
+## Core Patterns (01-12)
 
 The 12 patterns that cover most LeetCode problems. **Master these first.**
 
@@ -57,7 +57,7 @@ The 12 patterns that cover most LeetCode problems. **Master these first.**
 
 ---
 
-## 🚀 Advanced Patterns (13-18)
+## Advanced Patterns (13-18)
 
 For staff/principal FAANG questions.
 
@@ -72,7 +72,7 @@ For staff/principal FAANG questions.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 ### Path A — Abroad Full-Stack (1-2 days)
 Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Search, Backtracking. Do 5-8 problems per pattern.
@@ -87,7 +87,7 @@ Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Sea
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "Given X, recognize the pattern in 30 seconds."
 - "Implement X in 30 minutes with O(...) time/space."
@@ -96,7 +96,7 @@ Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Sea
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [JavaScript](../../10-frontend/10.1-javascript/INDEX.md) — implement patterns in JS
 - [System Design](../../30-architecture/30.2-system-design/INDEX.md) — patterns at scale
@@ -107,4 +107,4 @@ Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Sea
 
 ## Navigation
 
-← Previous: [Behavioral](../70.1-behavioral/INDEX.md) · [🏠 Back to Index](../INDEX.md) · Next: [CheatSheets →](../70.3-cheatsheets/INDEX.md)
+← Previous: [Behavioral](../70.1-behavioral/INDEX.md) · [ Back to Index](../INDEX.md) · Next: [CheatSheets →](../70.3-cheatsheets/INDEX.md)

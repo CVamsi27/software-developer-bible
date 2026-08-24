@@ -10,18 +10,18 @@
 
 ---
 
-## 🗂️ Topic Categories
+## Topic Categories
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Transports](#-transports) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
-| [Architecture & Scaling](#-architecture--scaling) | 2 | Real-time architecture, scaling patterns |
-| [Frameworks](#-frameworks) | 1 | NestJS WebSockets — the production framework |
-| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+| [Transports](#transports) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
+| [Architecture & Scaling](#architecture--scaling) | 2 | Real-time architecture, scaling patterns |
+| [Frameworks](#frameworks) | 1 | NestJS WebSockets — the production framework |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
-## 🌐 Transports
+## Transports
 
 The 4 main real-time transports.
 
@@ -45,7 +45,7 @@ Need real-time communication?
 
 ---
 
-## 🏗️ Architecture & Scaling
+## Architecture & Scaling
 
 The hard part — making it work at scale.
 
@@ -56,7 +56,7 @@ The hard part — making it work at scale.
 
 ---
 
-## ⚙️ Frameworks
+## Frameworks
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -64,7 +64,7 @@ The hard part — making it work at scale.
 
 ---
 
-## 🎤 Interview Prep
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -72,7 +72,7 @@ The hard part — making it work at scale.
 
 ---
 
-## 🛣️ Suggested Study Order
+## Suggested Study Order
 
 1. **WebSockets Overview** — the protocol
 2. **SSE** — the simpler alternative
@@ -85,7 +85,7 @@ The hard part — making it work at scale.
 
 ---
 
-## 🎯 Common interview topics
+## Common interview topics
 
 - "WebSocket vs SSE — when to use which?"
 - "How do you scale WebSockets across multiple servers?"
@@ -95,7 +95,7 @@ The hard part — making it work at scale.
 
 ---
 
-## 🔗 Cross-References
+## Cross-References
 
 - [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — NestJS WebSockets gateways
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — monitoring real-time
@@ -105,4 +105,4 @@ The hard part — making it work at scale.
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [🏠 Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)
+[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)

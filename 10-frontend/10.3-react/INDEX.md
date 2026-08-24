@@ -75,7 +75,7 @@ The newest features — what changed in concurrent React and what you need to kn
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 19 | [Modern Hooks (React 18/19)](10.3.19-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | 30 min |
-| 20 | [Web Components](10.3.11-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | 20 min |
+| 20 | [Web Components](10.3.20-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | 20 min |
 
 ---
 

@@ -26,3 +26,4 @@ git add -A && git commit -m "…"                      # in THIS repo only
 - Every stack INDEX is a learning-flow doc (passes/stages), not just a file list.
 - Content follows the chapter template: TL;DR → Definition → Why → How → Code → Real-world → Mistakes → Best practices → Summary → Cheat sheet → See Also → References.
 - Run the link check before pushing (see contributing.md).
+- **Design Patterns subfolders** — `30-architecture/30.1-design-patterns/` is organized by GoF category: `30.1.0-foundations/`, `30.1.1-creational/`, `30.1.2-structural/`, `30.1.3-behavioral/`, `30.1.4-architectural/`, `30.1.5-interview-prep/`. File numbering: `30.1.[category-digit][pattern-digit]-[name].md` (e.g., `30.1.11-singleton.md` for creational pattern 1).

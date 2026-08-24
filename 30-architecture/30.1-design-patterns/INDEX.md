@@ -145,13 +145,13 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ## 🔗 Cross-References
 
-- [System Design](../30.2-system-design/INDEX.md) — many system design patterns build on these (circuit breaker → proxy, pub/sub → observer, …)
-- [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
-- [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — uses Module, DI, Repository, CQRS, Observer extensively
-- [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Saga, Event Sourcing, Outbox, CQRS
+- [System Design](../../INDEX.md) — many system design patterns build on these (circuit breaker → proxy, pub/sub → observer, …)
+- [Coding Patterns](../../INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
+- [NestJS](../../INDEX.md) — uses Module, DI, Repository, CQRS, Observer extensively
+- [Microservices](../../INDEX.md) — Saga, Event Sourcing, Outbox, CQRS
 
 ---
 
 ## Navigation
 
-[← Back: Architecture](../INDEX.md) · [🏠 Bible Index](../../INDEX.md) · [Next: System Design →](../30.2-system-design/INDEX.md)
+[← Back: Architecture](../INDEX.md) · [🏠 Bible Index](../../INDEX.md) · [Next: System Design →](../../INDEX.md)

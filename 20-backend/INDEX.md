@@ -99,9 +99,9 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 ## 🔗 Cross-References
 
 - [Frontend Stack](../10-frontend/INDEX.md) — for full-stack interviews
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — backend patterns at scale
-- [Platform Stack](../../40-platform/INDEX.md) — deployment, observability
-- [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md) — Repository, Saga, CQRS, Event Sourcing, DI
+- [System Design](../INDEX.md) — backend patterns at scale
+- [Platform Stack](../INDEX.md) — deployment, observability
+- [Design Patterns](../INDEX.md) — Repository, Saga, CQRS, Event Sourcing, DI
 
 ---
 

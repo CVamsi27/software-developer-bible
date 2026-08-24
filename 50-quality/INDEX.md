@@ -69,7 +69,7 @@ This is the stack where you prove you can ship software that doesn't break.
 - [Frontend Stack](../10-frontend/INDEX.md) — testing React components (RTL)
 - [Backend Stack](../20-backend/INDEX.md) — integration tests, load testing
 - [Platform Stack — Observability](../40-platform/40.4-observability/INDEX.md) — production monitoring
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — performance at scale
+- [System Design](../INDEX.md) — performance at scale
 
 ---
 

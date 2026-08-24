@@ -135,9 +135,9 @@ If a junior engineer is proposing CQRS + Event Sourcing for a CRUD blog, that is
 
 ## Cross-References
 
-- [Microservices & Distributed Patterns](../../20-backend/20.6-microservices/INDEX.md) — Saga, Outbox, Event Sourcing are covered in depth there
-- [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — DI, CQRS modules, Repository pattern
-- [System Design](../30.2-system-design/INDEX.md) — event-driven architecture, eventual consistency
+- [Microservices & Distributed Patterns](../../../20-backend/20.6-microservices/INDEX.md) — Saga, Outbox, Event Sourcing are covered in depth there
+- [NestJS](../../../20-backend/20.2-nestjs/INDEX.md) — DI, CQRS modules, Repository pattern
+- [System Design](../../30.2-system-design/INDEX.md) — event-driven architecture, eventual consistency
 
 ---
 

@@ -84,9 +84,9 @@ The frontend stack is large. Here's the topic map so you know what to read in wh
 ## 🔗 Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — for full-stack interviews
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — frontend-side system design (CDN, edge, caching)
-- [Quality Stack](../../50-quality/INDEX.md) — testing, a11y, performance
-- [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithm patterns in JS/TS
+- [System Design](../INDEX.md) — frontend-side system design (CDN, edge, caching)
+- [Quality Stack](../INDEX.md) — testing, a11y, performance
+- [Coding Patterns](../INDEX.md) — algorithm patterns in JS/TS
 
 ---
 

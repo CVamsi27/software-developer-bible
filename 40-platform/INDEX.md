@@ -94,8 +94,8 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 ## 🔗 Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — services that run on this platform
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — architecture decisions involving platform
-- [Quality Stack](../../50-quality/INDEX.md) — testing, performance, production engineering
+- [System Design](../INDEX.md) — architecture decisions involving platform
+- [Quality Stack](../INDEX.md) — testing, performance, production engineering
 
 ---
 

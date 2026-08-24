@@ -6,19 +6,94 @@
 [![Category](https://img.shields.io/badge/category-DevOps-informational)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-| # | File | Topics |
-|---|------|--------|
-| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers |
-| 02 | [Edge Functions](40.7.02-edge-functions.md) | Edge runtimes (Cloudflare, Vercel, Lambda@Edge), V8 isolates, state storage |
-| 03 | [Serverless Patterns](40.7.03-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS |
-| 04 | [Interview Questions](40.7.04-interview-questions.md) | 30+ curated questions from beginner to FAANG-style |
-| 05 | [AWS Lambda](40.7.05-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge |
-| 06 | [Vercel Deployments](40.7.06-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute |
-| 07 | [Serverless Frameworks](40.7.07-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless |
+**Why serverless:** Many mid-stage startups and most AWS deployments use Lambda, Step Functions, or event-driven architectures. Edge functions (Cloudflare Workers, Vercel Edge) are increasingly common for low-latency APIs. Senior interviews test when to use serverless vs containers vs VMs — and the cold start / cost / state trade-offs.
 
 ---
 
-**Cross-references:** [CI/CD](../40.3-ci-cd/INDEX.md) | [Docker](../40.1-docker/INDEX.md) | [Next.js (Edge Middleware)](../../10-frontend/10.4-next.js/INDEX.md) | [Observability](../40.4-observability/INDEX.md)
+## 🗂️ Topic Categories
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| [Concepts](#-concepts) | 2 | Overview, edge functions — the mental model |
+| [Providers](#-providers) | 2 | AWS Lambda, Vercel — the main platforms |
+| [Patterns & IaC](#-patterns--iac) | 2 | Serverless patterns, IaC frameworks (SAM/CDK/SST) |
+| [Interview Prep](#-interview-prep) | 1 | 30+ Qs |
+
+---
+
+## 🧠 Concepts
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 30 min |
+| 02 | [Edge Functions](40.7.02-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 25 min |
+
+**Decision tree:**
+
+```text
+Deploy choice?
+├── Bursty / event-driven / pay-per-use? ──→ Serverless (Lambda, Cloud Functions)
+├── Low-latency global API? ──→ Edge functions (Cloudflare Workers)
+├── Long-running / stateful? ──→ Containers (ECS, K8s)
+└── Predictable high load? ──→ VMs or containers (cheaper at scale)
+```
+
+---
+
+## 🏗️ Providers
+
+| # | File | Topics | When to use | Read time |
+|--:|------|--------|-------------|----------:|
+| 05 | [AWS Lambda](40.7.05-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
+| 06 | [Vercel Deployments](40.7.06-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
+
+---
+
+## 🧩 Patterns & IaC
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 03 | [Serverless Patterns](40.7.03-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
+| 07 | [Serverless Frameworks](40.7.07-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
+
+---
+
+## 🎤 Interview Prep
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 04 | [Interview Questions](40.7.04-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **Serverless Overview** — must know the trade-offs
+2. **Edge Functions** — for modern web apps
+3. **AWS Lambda** or **Vercel Deployments** — for the JD's stack
+4. **Serverless Patterns** — for senior roles
+5. **Serverless Frameworks** — for IaC-heavy roles
+6. **Interview Questions** — final review
+
+---
+
+## 🎯 Common interview topics
+
+- "When to use Lambda vs ECS vs K8s?"
+- "What is a cold start? How do you mitigate it?"
+- "Edge functions vs Lambda — when to use which?"
+- "How do you handle state in serverless?"
+- "What is the Saga pattern? How does it relate to Step Functions?"
+
+---
+
+## 🔗 Cross-References
+
+- [CI/CD](../40.3-ci-cd/INDEX.md) — deploying serverless
+- [Docker](../40.1-docker/INDEX.md) — containers vs serverless trade-offs
+- [Next.js (Edge Middleware)](../../10-frontend/10.4-next.js/INDEX.md) — Vercel Edge
+- [Observability](../40.4-observability/INDEX.md) — distributed tracing for serverless
+- [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Saga, CQRS in serverless
 
 ---
 

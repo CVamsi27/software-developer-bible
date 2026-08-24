@@ -6,20 +6,101 @@
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-| # | File | Topics |
-|---|------|--------|
-| 01 | [WebSockets Overview](60.1.01-websockets-overview.md) | Protocol, handshake, frames, vs HTTP, use cases |
-| 02 | [Socket.IO](60.1.02-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback |
-| 03 | [Server-Sent Events](60.1.03-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases |
-| 04 | [Real-Time Architecture](60.1.04-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync |
-| 05 | [NestJS WebSockets](60.1.05-nestjs-websockets.md) | Gateways, adapters, guards, pipes, exception filters |
-| 06 | [Interview Questions](60.1.06-interview-questions.md) | 50+ curated questions with answers |
-| 07 | [WebTransport](60.1.07-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket |
-| 08 | [Scaling Patterns](60.1.08-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms |
+**Why real-time:** Mid-stage startups increasingly build chat, collaboration, or live-tracking features. Senior interviews test WebSocket protocol knowledge, scaling patterns (sticky sessions, Redis adapter), and the choice between SSE / WebSocket / WebTransport / polling. Read this section when the JD requires it.
 
 ---
 
-**Cross-references:** [NestJS](../../20-backend/20.2-nestjs/INDEX.md) | [Observability](../../40-platform/40.4-observability/INDEX.md) | [System Design (WhatsApp)](../../30-architecture/30.2-system-design/10-case-studies/30.2.2.02-whatsapp.md)
+## 🗂️ Topic Categories
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| [Transports](#-transports) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
+| [Architecture & Scaling](#-architecture--scaling) | 2 | Real-time architecture, scaling patterns |
+| [Frameworks](#-frameworks) | 1 | NestJS WebSockets — the production framework |
+| [Interview Prep](#-interview-prep) | 1 | 50+ Qs |
+
+---
+
+## 🌐 Transports
+
+The 4 main real-time transports.
+
+| # | File | Topics | When to use | Read time |
+|--:|------|--------|-------------|----------:|
+| 01 | [WebSockets Overview](60.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | 30 min |
+| 03 | [Server-Sent Events](60.1.03-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
+| 02 | [Socket.IO](60.1.02-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
+| 07 | [WebTransport](60.1.07-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery | 25 min |
+
+**Decision tree:**
+
+```text
+Need real-time communication?
+├── Server → client only? ──→ SSE (simple, auto-reconnect)
+├── Bidirectional, simple? ──→ WebSocket (raw)
+├── Bidirectional, rich features, fallback? ──→ Socket.IO
+├── Low-latency, unreliable, datagrams? ──→ WebTransport (modern)
+└── Just initial load? ──→ Polling (or HTTP/2 push)
+```
+
+---
+
+## 🏗️ Architecture & Scaling
+
+The hard part — making it work at scale.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 04 | [Real-Time Architecture](60.1.04-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
+| 08 | [Scaling Patterns](60.1.08-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
+
+---
+
+## ⚙️ Frameworks
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 05 | [NestJS WebSockets](60.1.05-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
+
+---
+
+## 🎤 Interview Prep
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 06 | [Interview Questions](60.1.06-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **WebSockets Overview** — the protocol
+2. **SSE** — the simpler alternative
+3. **Real-Time Architecture** — pub/sub, scaling
+4. **Socket.IO** — most common production lib
+5. **Scaling Patterns** — for senior roles
+6. **NestJS WebSockets** — if NestJS stack
+7. **WebTransport** — modern, optional
+8. **Interview Questions** — final review
+
+---
+
+## 🎯 Common interview topics
+
+- "WebSocket vs SSE — when to use which?"
+- "How do you scale WebSockets across multiple servers?"
+- "How do you authenticate WebSocket connections?"
+- "What's the difference between Socket.IO and raw WebSockets?"
+- "How do you handle reconnection and message ordering?"
+
+---
+
+## 🔗 Cross-References
+
+- [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — NestJS WebSockets gateways
+- [Observability](../../40-platform/40.4-observability/INDEX.md) — monitoring real-time
+- [System Design (WhatsApp, Chat System)](../../30-architecture/30.2-system-design/10-case-studies/INDEX.md) — real-time case studies
+
 ---
 
 ## Navigation

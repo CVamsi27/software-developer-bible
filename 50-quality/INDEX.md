@@ -1,23 +1,78 @@
 # Quality Stack
 
 > **Testing, accessibility, performance monitoring, production engineering** — the "senior judgment" stack. Shared by both lanes.
+>
+> 31 files across 4 sub-stacks.
 
 [![Files](https://img.shields.io/badge/files-31-blue)](../INDEX.md)
-
-| Section | Files | Topics |
-|---------|------:|--------|
-| [Testing](50.1-testing/INDEX.md) | 13 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, load testing, chaos engineering |
-| [Accessibility](50.2-accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
-| [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, performance budgets |
-| [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, SLI/SLO/error budgets, chaos engineering |
-
-## Reading Order
-
-1. Testing pyramid → frameworks → E2E *(asked in every loop)*
-2. Performance: CWV thresholds + profiling workflow
-3. Production engineering: incident story + SLO vocabulary *(senior differentiator)*
-4. Accessibility: WCAG basics *(cheap points; JD-dependent depth)*
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-4-green)](#-the-4-sub-stacks)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-**Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [Interview Lanes](../80-lanes-abroad-full-stack/INDEX.md) — the stacks stay stack-pure.
+## 🎯 Why this stack matters
+
+Quality is what separates a senior engineer from a mid-level one. Every senior interview (especially at FAANG) tests:
+- **Testing** — unit, integration, E2E, mocking, test pyramid, coverage trade-offs
+- **Performance** — Core Web Vitals, profiling, bundle analysis, performance budgets
+- **Production Engineering** — incident response, SLI/SLO/error budgets, blameless postmortems
+- **Accessibility** — WCAG, ARIA, keyboard navigation (often overlooked, cheap interview points)
+
+This is the stack where you prove you can ship software that doesn't break.
+
+---
+
+## 📁 The 4 Sub-Stacks (in study order)
+
+| Order | Sub-stack | Files | Topics |
+|------:|-----------|------:|--------|
+| 1 | [Testing](50.1-testing/INDEX.md) | 13 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, load testing, chaos engineering |
+| 2 | [Accessibility](50.2-accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
+| 3 | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, performance budgets |
+| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, SLI/SLO/error budgets, chaos engineering, on-call |
+
+---
+
+## 🗺️ Category Map
+
+| Category | What it covers | When to read |
+|----------|----------------|--------------|
+| 🟦 **Testing** | Unit, integration, E2E, mocking, load testing | First — asked in every loop |
+| 🟩 **Performance** | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific |
+| 🟨 **Production Engineering** | Incidents, SLO, error budgets, chaos engineering | Third — senior differentiator |
+| 🟪 **Accessibility** | WCAG, ARIA, keyboard, screen readers | Fourth — JD-dependent depth |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **Testing pyramid** → frameworks → E2E *(asked in every loop)*
+2. **Performance**: CWV thresholds + profiling workflow
+3. **Production engineering**: incident story + SLO vocabulary *(senior differentiator)*
+4. **Accessibility**: WCAG basics *(cheap points; JD-dependent depth)*
+
+---
+
+## 🎤 Interview questions to expect
+
+- "How do you decide what to test?"
+- "Walk me through a Core Web Vitals issue you debugged."
+- "Tell me about a production incident. What was the timeline? How did you resolve?"
+- "What's the difference between SLI, SLO, and SLA? How do you set error budgets?"
+- "How do you test accessibility? Walk me through a screen reader session."
+- "What's your team's testing strategy? How do you balance speed vs coverage?"
+
+---
+
+## 🔗 Cross-References
+
+- [Frontend Stack](../10-frontend/INDEX.md) — testing React components (RTL)
+- [Backend Stack](../20-backend/INDEX.md) — integration tests, load testing
+- [Platform Stack — Observability](../40-platform/40.4-observability/INDEX.md) — production monitoring
+- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — performance at scale
+
+---
+
+## Navigation
+
+[← Previous: Platform](../40-platform/INDEX.md) · [🏠 Back to Index](../INDEX.md) · [Next: Real-Time →](../60-realtime/INDEX.md)

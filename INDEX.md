@@ -8,7 +8,8 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#-the-7-study-stacks-shared-by-both-lanes)
-[![Files](https://img.shields.io/badge/files-532-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Files](https://img.shields.io/badge/files-545%2B-orange)](#-the-7-study-stacks-shared-by-both-lanes)
+[![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -85,12 +86,13 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 20.9 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
-### 📁 30-architecture — Architecture (58 files in 2 sub-stacks)
+### 📁 30-architecture — Architecture (75+ files in 3 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
-| 30.1 | [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) | 19 | SOLID, GoF patterns (Singleton, Factory, Strategy, Repository, CQRS, DI, Module, State, etc.) |
+| 30.1 | [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) | 30+ | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory Method, Abstract Factory, Builder, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. **All 23 GoF patterns** + modern patterns, organized by category. |
 | 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 40 | 20 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
+| 30.3 | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 6+ | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, zero-downtime deployments, data pipelines |
 
 ### Platform (64 files in 9 sub-stacks)
 
@@ -140,7 +142,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 00-strategy   → Communication → Resume Tips → STAR Method → HR Questions
 10-frontend   → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
 20-backend    → Node.js → NestJS → REST APIs → Database → Caching → Auth & Security track → Microservices & Distributed Patterns → AI Engineering → GraphQL
-30-architecture → Design Patterns (SOLID, GoF) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
+30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform   → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo
 50-quality    → Testing → Accessibility → Performance Monitoring
 60-realtime   → WebSockets
@@ -182,7 +184,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 - **00-strategy** — [Communication](00-strategy/00.01-communication.md) · [Resume Tips](00-strategy/00.02-resume-tips.md) · [STAR Method](00-strategy/00.03-star-method.md) · [HR Questions](00-strategy/00.04-hr-questions.md)
 - **10-frontend** — [JavaScript](10-frontend/10.1-javascript/INDEX.md) · [TypeScript](10-frontend/10.2-typescript/INDEX.md) · [React](10-frontend/10.3-react/INDEX.md) · [Next.js](10-frontend/10.4-next.js/INDEX.md) · [Form Handling](10-frontend/10.5-form-handling/INDEX.md) · [Animation](10-frontend/10.6-animation/INDEX.md)
 - **20-backend** — [Node.js](20-backend/20.1-node.js/INDEX.md) · [NestJS](20-backend/20.2-nestjs/INDEX.md) · [REST APIs](20-backend/20.3-rest-apis/INDEX.md) · [Database](20-backend/20.4-database/INDEX.md) · [Auth & Security](20-backend/20.5-security/INDEX.md) · [Caching](20-backend/20.8-caching/INDEX.md) · [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) · [GraphQL](20-backend/20.7-graphql/INDEX.md)
-- **30-architecture** — [System Design](30-architecture/30.2-system-design/INDEX.md) · [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md)
+- **30-architecture** — [System Design](30-architecture/30.2-system-design/INDEX.md) · [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) (categorized: [Foundations](30-architecture/30.1-design-patterns/30.1.0-foundations/INDEX.md) · [Creational](30-architecture/30.1-design-patterns/30.1.1-creational/INDEX.md) · [Structural](30-architecture/30.1-design-patterns/30.1.2-structural/INDEX.md) · [Behavioral](30-architecture/30.1-design-patterns/30.1.3-behavioral/INDEX.md) · [Architectural](30-architecture/30.1-design-patterns/30.1.4-architectural/INDEX.md) · [Interview Prep](30-architecture/30.1-design-patterns/30.1.5-interview-prep/INDEX.md))
 - **40-platform** — [Docker](40-platform/40.1-docker/INDEX.md) · [Kubernetes](40-platform/40.2-kubernetes/INDEX.md) · [CI/CD](40-platform/40.3-ci-cd/INDEX.md) · [Observability](40-platform/40.4-observability/INDEX.md) · [Build Tools](40-platform/40.5-build-tools/INDEX.md) · [Git Advanced](40-platform/40.6-git-advanced/INDEX.md) · [Serverless & Edge](40-platform/40.7-serverless-edge/INDEX.md) · [Monorepo](40-platform/40.8-monorepo/INDEX.md)
 - **50-quality** — [Testing](50-quality/50.1-testing/INDEX.md) · [Accessibility](50-quality/50.2-accessibility/INDEX.md) · [Performance Monitoring](50-quality/50.3-performance-monitoring/INDEX.md)
 - **60-realtime** — [WebSockets](60-realtime/60.1-websockets/INDEX.md)
@@ -190,4 +192,4 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-*Last updated: August 2026 — 540+ files, 287K+ lines, 0 broken links — folders numbered for study order*
+*Last updated: August 2026 — 545+ files, 300K+ lines, 0 broken links — folders numbered for study order. Design Patterns now organized by GoF category (creational/structural/behavioral/architectural) with all 23 GoF patterns covered.*

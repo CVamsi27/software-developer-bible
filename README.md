@@ -4,7 +4,8 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-532-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-545%2B-orange)](INDEX.md)
+[![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
 ---
@@ -33,7 +34,7 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 |-------|--------|--------------|------:|
 | **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML/CSS/PWA, Mobile | 96 |
 | **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, **AI Engineering** | 110 |
-| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 20 case studies, Design Patterns | 64 |
+| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 20 case studies, Design Patterns (categorized: Foundations/Creational/Structural/Behavioral/Architectural — all 23 GoF + modern) | 75+ |
 | **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 75 |
 | **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 31 |
 | **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 10 |
@@ -110,4 +111,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: August 2026 — 532 files · every topic in one place, 0 broken links*
+*Last updated: August 2026 — 545+ files · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*

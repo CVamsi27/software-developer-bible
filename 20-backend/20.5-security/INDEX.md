@@ -7,10 +7,27 @@
 [![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+[![Read time](https://img.shields.io/badge/read%20time-10%2B%20hrs-blueviolet)](#)
+
+**Why security:** Every senior interview (especially at healthcare/fintech) tests security knowledge. Auth (JWT vs sessions vs OAuth), attacks (XSS, CSRF, SQLi), and the security framework (OWASP, STRIDE, secrets management) are table stakes. Plus, real production bugs are usually security bugs.
 
 ---
 
-## The Track — Read In This Order
+## 🗂️ Topic Categories
+
+The 16 files are organized into 4 conceptual categories. Read in order within each.
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| [Authentication (the deep-dive)](#-authentication-the-deep-dive) | 5 + 1 interview | JWT, OAuth, sessions, RBAC — the core of every app |
+| [Cryptography Primer](#-cryptography-primer) | 1 | Encryption, hashing, TLS — the foundation for auth |
+| [Attacks & Defense](#-attacks--defense) | 5 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
+| [Hardening & Operations](#-hardening--operations) | 3 | Headers, threat modeling, secrets — production hygiene |
+| [Interview Drills](#-interview-drills) | 2 | 90+ curated Q&A across auth + general security |
+
+---
+
+## 🛣️ The Track — Read In This Order
 
 ```text
 Pass I — AUTH (start here)          Pass II — ATTACKS          Pass III — HARDENING & OPS
@@ -23,35 +40,54 @@ auth/INDEX.md                       XSS                        Web Security (hea
                                     (prerequisite primer)         20.5.13-interview-questions.md
 ```
 
-### Pass I — Auth ([dedicated index →](auth/INDEX.md))
+**Total time: ~10-12 hours** if you read all files. Skip the encryption primer if you already know TLS + hashing.
 
-| Order | File | Topics |
-|---|------|--------|
-| 0 | [Auth Fundamentals](auth/auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS |
-| 1 | [Sessions & Cookies](auth/sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts |
-| 2 | [JWT](auth/jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation |
-| 3 | [OAuth2 / OIDC](auth/oauth2-oidc.md) | Grants, PKCE, scopes, social login, SSO/SAML, passkeys |
-| 4 | [RBAC / ABAC](auth/rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default |
+---
 
-### Pass II — Attacks & Defense
+## 🔐 Authentication (the deep-dive)
 
-| Order | File | Topics |
-|---|------|--------|
-| 5 | [Encryption, Hashing & TLS](20.5.06-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(primer for Pass I)* |
-| 6 | [XSS](20.5.03-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization |
-| 7 | [CSRF](20.5.04-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking |
-| 8 | [SQL Injection](20.5.05-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF |
-| 9 | [API Security Best Practices](20.5.12-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet |
+A standalone track in [auth/](auth/INDEX.md). Read these in order — each builds on the previous.
 
-### Pass III — Hardening & Operations
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 0 | [Auth Fundamentals](auth/auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | 45 min |
+| 1 | [Sessions & Cookies](auth/sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | 45 min |
+| 2 | [JWT](auth/jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | 60 min |
+| 3 | [OAuth2 / OIDC](auth/oauth2-oidc.md) | Grants, PKCE, scopes, social login, SSO/SAML, passkeys | 60 min |
+| 4 | [RBAC / ABAC](auth/rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default | 45 min |
 
-| Order | File | Topics |
-|---|------|--------|
-| 10 | [Web Security](20.5.09-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 |
-| 11 | [Threat Modeling — STRIDE](20.5.10-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees |
-| 12 | [Secrets Management](20.5.11-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials |
+---
 
-### Interview Drills
+## 🔒 Cryptography Primer
+
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 5 | [Encryption, Hashing & TLS](20.5.06-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | 45 min |
+
+---
+
+## ⚔️ Attacks & Defense
+
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 6 | [XSS](20.5.03-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 30 min |
+| 7 | [CSRF](20.5.04-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min |
+| 8 | [SQL Injection](20.5.05-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 30 min |
+| 9 | [API Security Best Practices](20.5.12-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 30 min |
+
+---
+
+## 🛡️ Hardening & Operations
+
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 10 | [Web Security](20.5.09-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | 30 min |
+| 11 | [Threat Modeling — STRIDE](20.5.10-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | 30 min |
+| 12 | [Secrets Management](20.5.11-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | 25 min |
+
+---
+
+## 🎤 Interview Drills
 
 | File | Contents |
 |------|----------|
@@ -60,11 +96,47 @@ auth/INDEX.md                       XSS                        Web Security (hea
 
 ---
 
-## Cross-References
+## 🛣️ Suggested Study Order
 
-- Authentication in REST context: [REST — Authentication](../20.3-rest-apis/20.3.07-authentication.md)
-- Enforcement in NestJS: [Guards](../20.2-nestjs/20.2.05-guards.md) · [Interceptors](../20.2-nestjs/20.2.07-interceptors.md)
-- System-level isolation: [Microservices (mTLS, mesh)](../20.6-microservices/INDEX.md) · [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+### Path A — Mid-stage startup (1-2 days)
+1. **Auth Fundamentals + Sessions + JWT** (2.5 hrs) — must know
+2. **XSS + CSRF + SQLi** (1.5 hrs) — the most-asked attacks
+3. **Web Security + Secrets** (1 hr) — production basics
+4. **Auth interview questions** (1.5 hrs)
+
+### Path B — Healthcare / Fintech (3-4 days)
+1. **All Auth files** (5 hrs)
+2. **Encryption** (45 min)
+3. **All Attacks** (2 hrs)
+4. **Threat Modeling + STRIDE** (1 hr)
+5. **API Security** (1 hr)
+6. **Both interview banks** (3 hrs)
+
+### Path C — Interview tomorrow
+- Skim all TL;DR boxes
+- Re-read JWT + Sessions (the most-tested)
+- Re-read the 20 hardest Auth + Security interview Qs
+
+---
+
+## 🎯 Common interview topics
+
+- "Sessions vs JWT — when to use which?"
+- "Where do you store JWTs? Why not localStorage?"
+- "How do you prevent CSRF?"
+- "Walk me through an OAuth login flow."
+- "What's the difference between RBAC and ABAC?"
+- "How do you manage secrets in production?"
+- "Walk me through a STRIDE threat model for X."
+
+---
+
+## 🔗 Cross-References
+
+- **Authentication in REST context:** [REST — Authentication](../20.3-rest-apis/20.3.07-authentication.md)
+- **Enforcement in NestJS:** [Guards](../20.2-nestjs/20.2.05-guards.md) · [Interceptors](../20.2-nestjs/20.2.07-interceptors.md)
+- **System-level isolation:** [Microservices (mTLS, mesh)](../20.6-microservices/INDEX.md) · [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- **AI safety & PII:** [AI Engineering — Safety & Cost](../20.12-ai-engineering/20.12.03-safety-cost-governance.md)
 
 ---
 

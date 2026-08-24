@@ -1,20 +1,26 @@
 # Caching — Index
 
-> **Redis, cache patterns, invalidation strategies** — the biggest latency lever and the classic senior-interview topic.
+> **3 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-## Study Order
+**Why caching:** A 10ms database query × 1000 RPS = 10 CPU seconds/second. Caching turns that into a 1ms Redis hit × 1000 RPS = 1 CPU second/second. The difference between a junior and senior engineer is often the ability to identify what to cache, how to invalidate it, and how to prevent stampedes.
 
-| # | File | Topics |
-|---|------|--------|
-| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching |
-| 2 | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures, caching patterns with Redis, rate limiting, distributed locks, pub/sub *(moved from Database stack)* |
-| 3 | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices |
+---
 
-## The Decision Table (memorize)
+## 🗂️ Topic Categories
+
+| Category | File | Why it matters |
+|----------|------|----------------|
+| [Patterns & Strategy](#-patterns--strategy) | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention |
+| [Redis Fundamentals](#-redis-fundamentals) | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
+| [Advanced Redis](#-advanced-redis) | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
+
+---
+
+## 📐 The Decision Table (memorize this)
 
 | Read/write profile | Pattern | Why |
 |---|---|---|
@@ -24,7 +30,61 @@
 | Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
 | Cross-instance coordination | Redlock (with caveats) / DB lease | Correctness > availability of lock |
 
-**Related HTTP-level caching:** [HTTP caching](../20.3-rest-apis/20.3.13-http-caching.md) · **System-design view:** [caching theory](../../30-architecture/30.2-system-design/00-theory/INDEX.md)
+---
+
+## 🗂️ Pattern Selection
+
+```text
+Need to cache data?
+│
+├─ Read-heavy, eventual consistency OK? ──→ Cache-aside + TTL (default)
+│
+├─ Read must reflect writes immediately? ──→ Write-through (latency cost)
+│
+├─ Writes are huge, reads are rare? ──→ Write-behind (consistency risk)
+│
+├─ Cache miss stampede risk? ──→ Single-flight + early refresh
+│
+├─ Multi-instance mutex? ──→ Redlock (with fencing token)
+│
+└─ Just count / dedupe / queue? ──→ Specialized data structures (HLL, Bloom, Streams)
+```
+
+---
+
+## 📚 File Index
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 45 min |
+| 2 | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min |
+| 3 | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 30 min |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **Caching Deep Dive** — must know, the patterns
+2. **Redis Fundamentals** — the most common caching store
+3. **Advanced Redis** — for senior/Distributed-systems roles
+
+---
+
+## 🎤 Interview questions to expect
+
+- "How do you decide what to cache?"
+- "Cache-aside vs write-through vs write-behind — when to use which?"
+- "How do you prevent cache stampedes?"
+- "How do you invalidate a distributed cache?"
+- "Walk me through Redlock. What are the failure modes?"
+
+---
+
+## 🔗 Cross-References
+
+- [HTTP Caching](../20.3-rest-apis/20.3.13-http-caching.md) — cache headers (Cache-Control, ETag)
+- [System Design — Caching theory](../../30-architecture/30.2-system-design/00-theory/30.2.1.05-caching-patterns.md) — caching in system design
+- [Database — Performance tuning](../20.4-database/20.4.20-postgresql-performance.md) — DB-level caching
 
 ---
 

@@ -6,18 +6,116 @@
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-| # | File | Topics |
-|---|------|--------|
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, register, Zod resolver, useFieldArray, FormProvider |
-| 02 | [Zod](10.5.02-zod.md) | Schemas, z.infer, transforms, refines, API boundary validation, env validation |
-| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 |
-| 04 | [Interview Questions](10.5.04-interview-questions.md) | 30+ curated questions covering all form libraries and patterns |
-| 05 | [TanStack Form](10.5.05-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema |
-| 06 | [Server Actions & Form Patterns](10.5.06-server-actions-and-form-patterns.md) | useActionState, useFormStatus, useOptimistic, progressive enhancement |
+**Why forms matter:** Every product has forms. Sign-up, login, settings, checkout, search. Senior interviews test form state management, validation, accessibility, and progressive enhancement. Form libraries (React Hook Form, TanStack Form) and validation (Zod) are now standard tooling.
 
 ---
 
-**Cross-references:** [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) | [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md) | [Next.js](../10.4-next.js/INDEX.md) | [React](../10.3-react/INDEX.md) | [TypeScript](../10.2-typescript/INDEX.md)
+## 🗂️ Topic Categories
+
+| Category | Files | Why it matters |
+|----------|------:|----------------|
+| [Form Libraries](#-form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
+| [Validation](#-validation) | 1 | Zod — the standard for runtime + type-safe validation |
+| [Server-Side Patterns](#-server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
+| [Interview Prep](#-interview-prep) | 1 | 30+ form-specific Qs |
+
+---
+
+## 📝 Form Libraries
+
+Three main form libraries — pick the right one for the job.
+
+| # | File | Topics | When to use | Read time |
+|--:|------|--------|-------------|----------:|
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 30 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 | Legacy codebases; new projects should use RHF | 20 min |
+| 05 | [TanStack Form](10.5.05-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 25 min |
+
+**Decision:**
+
+```text
+Building a new React form?
+├── Yes, standard React 18+ app → React Hook Form (RHF)
+├── Yes, need framework-agnostic or fine-grained reactivity → TanStack Form
+└── No, maintaining legacy → Formik (don't start new projects with it)
+```
+
+---
+
+## ✅ Validation
+
+Zod is the standard for runtime validation with TypeScript inference.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | 30 min |
+
+**The killer feature:** `z.infer<typeof Schema>` gives you the TypeScript type from your Zod schema. One source of truth for both runtime validation and compile-time types.
+
+---
+
+## 🖥️ Server-Side Patterns
+
+Modern Next.js form patterns with Server Actions.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 06 | [Server Actions & Form Patterns](10.5.06-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 30 min |
+
+---
+
+## 🎤 Interview Prep
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 04 | [Interview Questions](10.5.04-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **React Hook Form** (30 min) — the default
+2. **Zod** (30 min) — the validator
+3. **Server Actions** (30 min) — modern Next.js
+4. **TanStack Form** (25 min) — alternative if needed
+5. **Formik** (skim, 10 min) — for legacy
+6. **Interview Questions** (2 hrs)
+
+---
+
+## 🎯 The Modern Form Stack
+
+```typescript
+// 1. Define the schema (Zod)
+const signupSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+});
+
+// 2. Infer the type
+type SignupInput = z.infer<typeof signupSchema>;
+
+// 3. Use it in React Hook Form
+const { register, handleSubmit, formState: { errors } } = useForm<SignupInput>({
+  resolver: zodResolver(signupSchema),
+});
+
+// 4. Submit to a Next.js Server Action
+async function onSubmit(data: SignupInput) {
+  await signupAction(data);
+}
+```
+
+This is the standard pattern for modern full-stack forms.
+
+---
+
+## 🔗 Cross-References
+
+- [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — accessible form patterns
+- [Next.js](../10.4-next.js/INDEX.md) — Server Actions, form components
+- [React](../10.3-react/INDEX.md) — useState/useReducer for form state
+- [TypeScript](../10.2-typescript/INDEX.md) — `z.infer` for type-safe schemas
 
 ---
 

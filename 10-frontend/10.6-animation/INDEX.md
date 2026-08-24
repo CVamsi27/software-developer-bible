@@ -6,19 +6,118 @@
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-| # | File | Topics |
-|---|------|--------|
-| 01 | [Framer Motion](10.6.01-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures |
-| 02 | [CSS Animations](10.6.02-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion |
-| 03 | [Interview Questions](10.6.03-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y |
-| 04 | [Web Animations API](10.6.04-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations |
-| 05 | [GSAP](10.6.05-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) |
-| 06 | [React Spring](10.6.06-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* |
-| 07 | [View Transitions & Scroll-Driven](10.6.07-view-transitions-and-scroll-driven-animations.md) | startViewTransition, view-transition-name, animation-timeline: scroll()/view() |
+**Why animation:** Senior frontend interviews increasingly include animation questions (micro-interactions, transitions, performance). Modern apps use animation to communicate state, guide attention, and provide feedback. Pick the right tool: CSS for simple, Framer Motion for React, GSAP for complex sequences, Web Animations API for imperative control.
 
 ---
 
-**Cross-references:** [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) | [Next.js](../10.4-next.js/INDEX.md) | [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) | [React](../10.3-react/INDEX.md)
+## 🗂️ Topic Categories
+
+| Category | Files | When to use | Read time |
+|----------|------:|-------------|----------:|
+| [CSS-Native](#-css-native) | 1 | Simple transitions, @keyframes, hover effects | 25 min |
+| [JS Libraries](#-js-libraries) | 4 | Complex animations, spring physics, timeline sequences | 2 hrs |
+| [Platform APIs](#-platform-apis) | 2 | Native browser animation control, view transitions | 1 hr |
+| [Interview Prep](#-interview-prep) | 1 | 30+ Qs | 2 hrs |
+
+---
+
+## 🎨 CSS-Native
+
+The fastest, cheapest animation. Use this first.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 02 | [CSS Animations](10.6.02-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion | 25 min |
+
+**When to use:** Hover effects, simple state transitions, loading spinners. No JS needed; GPU-accelerated; respects `prefers-reduced-motion` for free.
+
+---
+
+## 📚 JS Libraries
+
+For complex animations.
+
+| # | File | Topics | When to use | Read time |
+|--:|------|--------|-------------|----------:|
+| 01 | [Framer Motion](10.6.01-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures | React 18+, default for component animations | 45 min |
+| 05 | [GSAP](10.6.05-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) | Complex sequences, scroll-driven, marketing sites | 30 min |
+| 06 | [React Spring](10.6.06-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* | Physics-based animations (when spring > easing) | 25 min |
+| 04 | [Web Animations API](10.6.04-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations | Imperative control, fine-grained timeline control | 30 min |
+
+**Decision tree:**
+
+```text
+Need animation?
+├── Simple hover/state change? ──→ CSS transitions
+├── Loop / auto-play? ──→ CSS @keyframes (or WAAPI)
+├── React component entering/leaving/animating layout? ──→ Framer Motion
+├── Spring physics (natural-feeling bounce)? ──→ React Spring
+├── Marketing site with complex timelines? ──→ GSAP
+├── Need imperative control, not React? ──→ WAAPI
+└── Multi-page transition (Next.js)? ──→ View Transitions API
+```
+
+---
+
+## 🌐 Platform APIs
+
+Newer browser-native capabilities.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 07 | [View Transitions & Scroll-Driven](10.6.07-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 30 min |
+
+---
+
+## 🎤 Interview Prep
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 03 | [Interview Questions](10.6.03-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 2 hrs |
+
+---
+
+## 🛣️ Suggested Study Order
+
+1. **CSS Animations** (25 min) — the foundation
+2. **Framer Motion** (45 min) — the React default
+3. **Web Animations API** (30 min) — for the interview "what's under the hood"
+4. **View Transitions** (30 min) — modern Next.js
+5. **GSAP + React Spring** — as needed
+6. **Interview Questions** (2 hrs)
+
+---
+
+## 🎯 Performance & Accessibility
+
+Animation has two non-negotiable constraints:
+
+1. **Performance** — animate `transform` and `opacity` only (GPU-accelerated). Avoid animating `top`, `left`, `width`, `height` (triggers layout).
+2. **Accessibility** — always respect `prefers-reduced-motion: reduce`. Disable or reduce non-essential animations.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+```typescript
+// Framer Motion
+const prefersReducedMotion = useReducedMotion();
+const animateProps = prefersReducedMotion ? {} : { scale: 1.1 };
+```
+
+---
+
+## 🔗 Cross-References
+
+- [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — `prefers-reduced-motion`
+- [Next.js](../10.4-next.js/INDEX.md) — View Transitions API
+- [Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) — animation perf
+- [React](../10.3-react/INDEX.md) — Framer Motion is React-native
 
 ---
 

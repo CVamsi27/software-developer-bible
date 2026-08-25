@@ -10,14 +10,14 @@
 
 ---
 
-## Topic Categories
+## Category Map
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [Bundlers](#bundlers) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
-| [Compilers & Transpilers](#compilers--transpilers) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
-| [Build Optimization](#build-optimization) | 1 | Tree shaking, code splitting, bundle analysis |
-| [Tool Comparison & Interview](#tool-comparison--interview) | 2 | When to use what, 50+ Qs |
+| Category | Folder | Files | What it covers |
+|----------|--------|------:|----------------|
+| Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
+| Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
+| Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 2 | Build optimization, tool comparison — fast builds, small bundles |
+| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
 
@@ -30,7 +30,7 @@ The main bundlers — pick based on project needs.
 | 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | 30 min |
 | 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | 30 min |
 | 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 25 min |
-| 08 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 20 min |
+| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 20 min |
 
 **Decision tree:**
 
@@ -44,7 +44,7 @@ New project?
 
 ---
 
-## Compilers & Transpilers
+## Compilers
 
 How TS/JSX become browser-compatible JS.
 
@@ -55,20 +55,22 @@ How TS/JSX become browser-compatible JS.
 
 ---
 
-## Build Optimization
+## Optimization & Comparison
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 30 min |
+| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 30 min |
+| 08 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 20 min |
+
+*Slot reserved: `40.5.3.02` asset pipelines for CSS/images/fonts (upcoming chapter — no link yet).*
 
 ---
 
-## Tool Comparison & Interview
+## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 20 min |
-| 07 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 09 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

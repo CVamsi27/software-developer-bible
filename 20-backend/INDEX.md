@@ -2,9 +2,9 @@
 
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 110+ files across 9 sub-stacks, organized by what you need to know in what order.
+> 110 files across 9 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-110%2B-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-110-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#the-9-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -32,7 +32,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 2 | [NestJS](20.2-nestjs/INDEX.md) | 15 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
 | 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 17 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
 | 4 | [Database](20.4-database/INDEX.md) | 20 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
-| 5 | [Auth & Security](20.5-security/INDEX.md) | 16 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
+| 5 | [Auth & Security](20.5-security/INDEX.md) | 15 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
 | 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 17 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 7 | [GraphQL](20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |

@@ -19,6 +19,8 @@
 | [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
 | [Interview Prep](#interview-prep) | 1 | 30+ Qs |
 
+*Slot `40.8.05` is reserved for an upcoming chapter (versioning & publishing strategies) — no link yet.*
+
 ---
 
 ## Foundations
@@ -54,7 +56,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
 
 ---
 
@@ -62,7 +64,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 05 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
 
 ---
 

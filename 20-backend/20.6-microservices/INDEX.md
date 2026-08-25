@@ -12,28 +12,32 @@
 
 ## Topic Categories
 
-The 16 content files classify into 5 conceptual categories — the "GoF classification" of distributed systems.
+The 17 content files classify into 5 categories, each with its own INDEX — the "GoF classification" of distributed systems.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| **Service Topology** | 4 | Service discovery, API gateway, service mesh, strangler fig — how services find each other and evolve safely |
-| **Communication & Messaging** | 5 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
-| **Data Consistency Patterns** | 4 | Saga, distributed transactions, event sourcing, CQRS — atomicity and truth across service boundaries |
-| **Resilience Patterns** | 2 | Circuit breaker, bulkhead — surviving partial failure |
-| **Interview Drills** | 1 | 50+ curated Q&A |
+| [Service Topology](01-service-topology/INDEX.md) | 4 | Service discovery, API gateway, service mesh, strangler fig — how services find each other and evolve safely |
+| [Communication & Messaging](02-communication-and-messaging/INDEX.md) | 6 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
+| [Data & Consistency](03-data-and-consistency/INDEX.md) | 4 | Saga, distributed transactions, event sourcing, CQRS — atomicity and truth across service boundaries |
+| [Resilience](04-resilience/INDEX.md) | 2 | Circuit breaker, bulkhead — surviving partial failure |
+| [Interview Drills](05-interview-drills/INDEX.md) | 1 | 50+ curated Q&A |
 
 ---
 
 ## The Flow
 
 ```text
-PASS I — FOUNDATIONS PASS II — DATA PATTERNS PASS III — RESILIENCE PASS IV — MESSAGING
-01 service discovery → 07 event sourcing → 04 circuit breaker → 05 Kafka
-02 API gateway 13 CQRS 14 bulkhead 06 RabbitMQ
-09 gRPC (+16 streaming) 11 distributed transactions (overview: 15 message brokers
-                            03 saga pattern 30.3 resilience) 17 event-driven architecture
-                                                           10 service mesh 12 strangler fig
+PASS I — FOUNDATIONS       PASS II — DATA PATTERNS     PASS III — RESILIENCE    PASS IV — MESSAGING
+01-service-topology     →  03-data-and-consistency  →  04-resilience         →  02-communication
+service discovery          event sourcing              circuit breaker           kafka / rabbitmq
+api gateway                cqrs                        bulkhead                  message brokers
+grpc (+streaming)          saga                        (overview: 30.3           event-driven arch
+service mesh               distributed transactions    resilience)               strangler fig
 ```
+
+---
+
+## The Study Order
 
 | Pass | # | File | Topics |
 |---|---|------|--------|

@@ -12,21 +12,36 @@
 
 ## Topic Categories
 
-The 15 files are organized into 5 categories.
+The 15 files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Core Architecture](#core-architecture) | 4 | Modules, Controllers, Providers, DI — the foundation |
-| [Request Lifecycle](#request-lifecycle) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
-| [Patterns & Architecture](#patterns--architecture) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
-| [Quality & Configuration](#quality--configuration) | 3 | Testing, Validation, Config — production hygiene |
-| [Advanced & Interview](#advanced--interview) | 2 | Custom decorators, 50+ interview Qs |
+| [Core Architecture](01-core-architecture/INDEX.md) | 4 | Modules, Controllers, Providers, DI — the foundation |
+| [Request Lifecycle](02-request-lifecycle/INDEX.md) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
+| [Patterns](03-patterns/INDEX.md) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
+| [Quality & Operations](04-quality-and-operations/INDEX.md) | 2 | Testing, Configuration & Validation — production hygiene |
+| [Advanced & Interview](05-advanced-and-interview/INDEX.md) | 2 | Custom decorators, 50+ interview Qs |
+
+---
+
+## The Flow
+
+```text
+01 CORE ARCHITECTURE ──→ 02 REQUEST LIFECYCLE ──→ 03 PATTERNS ──→ 04 QUALITY & OPS ──→ 05 ADVANCED
+modules                  middleware                CQRS           configuration       custom decorators
+controllers              guards                    microservices  testing             interview Qs
+providers                pipes
+DI                       interceptors
+                         exception filters
+```
+
+**Lifecycle order:** Middleware → Guards → Pipes → Controller → Interceptors (rxjs pipeline) → Exception Filters.
 
 ---
 
 ## Core Architecture
 
-How NestJS apps are structured. Read these first.
+How NestJS apps are structured. Read these first. Category INDEX: [Core Architecture](01-core-architecture/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -39,48 +54,48 @@ How NestJS apps are structured. Read these first.
 
 ## Request Lifecycle
 
-The order of execution for every request — **every NestJS interview tests this**. Read in order.
+The order of execution for every request — **every NestJS interview tests this**. Read in order. Category INDEX: [Request Lifecycle](02-request-lifecycle/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 08 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
-| 05 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
-| 06 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
-| 07 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 25 min |
-| 09 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
-
-**Lifecycle order:** Middleware → Guards → Pipes → Controller → Interceptors (rxjs pipeline) → Exception Filters.
+| 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
+| 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
+| 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
+| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 25 min |
+| 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
 
 ---
 
-## Patterns & Architecture
+## Patterns
 
-The patterns NestJS supports out of the box.
+The patterns NestJS supports out of the box. Category INDEX: [Patterns](03-patterns/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 10 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
-| 11 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
+| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
+| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
 
 ---
 
-## Quality & Configuration
+## Quality & Operations
 
-Production hygiene.
+Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operations/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 13 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
-| 14 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
+| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
 
 ---
 
 ## Advanced & Interview
 
+Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
+
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 16 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min |
-| 15 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min |
+| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -89,7 +104,7 @@ Production hygiene.
 1. **Core Architecture** (4 files, ~2 hrs) — must know
 2. **Request Lifecycle** (5 files, ~2 hrs) — must know, the most-asked cluster
 3. **Patterns** (CQRS + Microservices) — for senior/DDD roles
-4. **Quality & Configuration** — production hygiene
+4. **Quality & Operations** (2 files) — production hygiene
 5. **Custom Decorators** — senior-level
 6. **Interview Questions** — final review
 

@@ -6,6 +6,8 @@
 [![Category](https://img.shields.io/badge/category-Interview-red)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+Reserved slots for upcoming chapters: **Stakeholder Management Stories** `70.1.01`, **Judgment Calls & Ambiguity** `70.1.03`, **Behavioral Anti-Patterns Checklist** `70.1.05`.
+
 **Why this section:** Senior interviews don't just test technical skill — they test leadership, communication, and decision-making. Behavioral rounds at FAANG (Amazon LPs, Google Googliness) and EU companies (system design behavioral, leadership stories) are make-or-break. Read 00-strategy first for STAR, then come here for the senior-signal material.
 
 ---
@@ -56,9 +58,10 @@ How to talk about your past design decisions in interviews.
 ## The Flow
 
 ```text
-00-strategy (basics) here (depth) your material
-STAR framework → leadership questions → story-bank.md
-HR + resume system-design behavioral (lane folder: 80.12)
+00-strategy          this folder              your lane folder
+(basics)             (interview depth)        (personal material)
+STAR framework   →   leadership questions →   story-bank.md
+HR + resume          system-design behavioral
 ```
 
 1. **00-strategy** — STAR, HR, resume (read first)

@@ -6,6 +6,8 @@
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+Planned additions: **Accessible Charts & Data Viz** will fill slot `50.2.06`, **Accessibility Design Systems** slot `50.2.07`.
+
 **Why accessibility:** Legal requirement in many jurisdictions (ADA, EAA, Section 508), ethical imperative, and increasingly tested in senior interviews. ~15% of users have some form of disability. WCAG 2.1 AA is the standard most companies aim for. The basics are quick to learn and high-leverage in interviews.
 
 ---
@@ -16,7 +18,7 @@
 |----------|------:|----------------|
 | [Standards](#standards) | 1 | WCAG (POUR, levels) — the rule book |
 | [Semantic HTML & ARIA](#semantic-html--aria) | 1 | ARIA roles, states, properties — extending semantics |
-| [Interaction](#-interaction) | 2 | Keyboard navigation, forms — how users interact |
+| [Interaction](#interaction) | 2 | Keyboard navigation, forms — how users interact |
 | [Visual Design](#visual-design) | 1 | Color, contrast, CVD-safe palettes — the visual side |
 | [Testing & Interview](#testing--interview) | 2 | A11y testing, 50+ Qs |
 
@@ -50,12 +52,12 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
-## ⌨ Interaction
+## Interaction
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | 25 min |
-| 07 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | 25 min |
+| 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | 25 min |
 
 ---
 
@@ -63,7 +65,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | 25 min |
+| 04 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | 25 min |
 
 ---
 
@@ -71,8 +73,8 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | 25 min |
-| 05 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | 25 min |
+| 09 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

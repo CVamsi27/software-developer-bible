@@ -12,28 +12,33 @@
 
 ## Topic Categories
 
-The 17 content files classify into 6 conceptual categories — the "GoF classification" of API design.
+The 17 content files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| **Design & Contract** | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
-| **HTTP Mechanics** | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
-| **Payloads & Errors** | 2 | Pagination, error handling (RFC 7807) — the contract details clients feel daily |
-| **Edge, Scale & Integration** | 4 | Rate limiting, API gateway, BFF, webhooks — surviving traffic and integrating systems |
-| **Security** | 1 | Authentication schemes; pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
-| **Interview Drills** | 1 | Curated Q&A |
+| [Design & Contract](01-design-and-contract/INDEX.md) | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
+| [HTTP Mechanics](02-http-mechanics/INDEX.md) | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
+| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 3 | Pagination, error handling (RFC 7807), webhooks — the contract details clients feel daily |
+| [Edge & Scale](04-edge-and-scale/INDEX.md) | 4 | Rate limiting, API gateway, BFF, authentication — surviving traffic; auth pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
+| [Interview Drills](05-interview-drills/INDEX.md) | 1 | Curated Q&A |
 
 ---
 
 ## The Flow
 
 ```text
-PASS I — FUNDAMENTALS PASS II — PRODUCTION PASS III — ADVANCED
-02 principles → 03 methods → 06 pagination → 08 rate limiting → 17 maturity model
-04 status codes 12 error handling 13 HTTP caching 10 API gateway
-01 design patterns 15 webhooks 09 CORS 16 BFF
-                                   11 OpenAPI 07 authentication
+PASS I — FUNDAMENTALS      PASS II — PRODUCTION       PASS III — ADVANCED
+01-design-and-contract  →  03-payloads-errors      →  04-edge-and-scale
+02-http-mechanics          04-edge-and-scale (auth)    05-interview-drills
+
+principles → methods    pagination → error design   rate limiting → gateway
+→ status codes          → webhooks                  → BFF → maturity model
+→ versioning            → CORS + HTTP caching       → OpenAPI → drills
 ```
+
+---
+
+## The Study Order
 
 | Pass | # | File | Topics |
 |---|---|------|--------|

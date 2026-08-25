@@ -1,0 +1,37 @@
+# Core Workloads
+
+> **4 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
+
+[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Category](https://img.shields.io/badge/category-Workloads-blue)](../INDEX.md)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+
+---
+
+## Why this category exists
+
+Every Kubernetes object you will ever touch is either one of these workload types or configures one of them. Interviews start here: "what's a pod?", "Deployment vs StatefulSet?", "how do you run something nightly?". Fluent answers to those questions are table stakes for any K8s JD.
+
+---
+
+## File Index
+
+| Order | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | 30 min |
+| 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | 30 min |
+| 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 25 min |
+| 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | 25 min |
+
+---
+
+## Cross-References
+
+- [Networking & Config](../02-networking-and-config/INDEX.md) — how traffic reaches these workloads
+- [Production Hardening](../04-production-hardening/INDEX.md) — keeping them healthy under disruption
+
+---
+
+## Navigation
+
+[↑ Kubernetes Home](../INDEX.md) · [Next: Networking & Config →](../02-networking-and-config/INDEX.md)

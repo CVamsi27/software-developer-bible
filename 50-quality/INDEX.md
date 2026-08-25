@@ -29,7 +29,7 @@ This is the stack where you prove you can ship software that doesn't break.
 | 1 | [Testing](50.1-testing/INDEX.md) | 13 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, load testing, chaos engineering |
 | 2 | [Accessibility](50.2-accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
 | 3 | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, performance budgets |
-| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, SLI/SLO/error budgets, chaos engineering, on-call |
+| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, SLI/SLO/error budgets, chaos engineering |
 
 ---
 

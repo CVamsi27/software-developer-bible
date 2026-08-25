@@ -12,59 +12,73 @@
 
 ## Topic Categories
 
-The 11 files are organized into 4 conceptual categories.
+The 11 files are organized into 4 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Runtime & Async](#runtime--async) | 2 | The Node.js event loop — every senior interview tests this |
-| [I/O & Data Handling](#io--data-handling) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
-| [Process & Concurrency](#process--concurrency) | 3 | Clustering, child processes, lifecycle — production concerns |
-| [Security & Testing](#security--testing) | 2 | Node-specific security, the built-in test runner |
+| [Runtime & Async](01-runtime-and-async/INDEX.md) | 2 | The event loop + Web Streams/test runner — every senior interview tests this |
+| [I/O & Data](02-io-and-data/INDEX.md) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
+| [Processes & Concurrency](03-processes-and-concurrency/INDEX.md) | 3 | Clustering, child processes/worker threads, lifecycle — production concerns |
+| [Security & Operations](04-security-and-operations/INDEX.md) | 2 | Node-specific security + the full-stack self-test |
+
+---
+
+## The Flow
+
+```text
+01 RUNTIME & ASYNC ──→ 02 I/O & DATA ──→ 03 PROCESSES ──→ 04 SECURITY & OPS
+event loop              streams            clustering        node security
+web streams/test runner buffers             child processes   interview Qs
+                        file system         process env
+                        http module
+```
 
 ---
 
 ## Runtime & Async
 
-How Node.js actually runs JavaScript. The event loop is the most-asked topic in Node interviews.
+How Node.js actually runs JavaScript. The event loop is the most-asked topic in Node interviews. Category INDEX: [Runtime & Async](01-runtime-and-async/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Event Loop](01-runtime-and-async/20.1.1.01-event-loop.md) | Phases (timers, I/O callbacks, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | 30 min |
-| 11 | [Web Streams & Test Runner](01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | 30 min |
+| 01 | [Event Loop](01-runtime-and-async/20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle/prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | 30 min |
+| 02 | [Web Streams & Test Runner](01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | 30 min |
 
 ---
 
-## I/O & Data Handling
+## I/O & Data
 
-The I/O primitives — every backend service uses these.
+The I/O primitives — every backend service uses these. Category INDEX: [I/O & Data](02-io-and-data/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 30 min |
-| 03 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | 20 min |
-| 05 | [File System](02-io-and-data/20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | 25 min |
-| 06 | [HTTP Module](02-io-and-data/20.1.2.04-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | 30 min |
+| 01 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 30 min |
+| 02 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | 20 min |
+| 03 | [File System](02-io-and-data/20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | 25 min |
+| 04 | [HTTP Module](02-io-and-data/20.1.2.04-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | 30 min |
 
 ---
 
-## Process & Concurrency
+## Processes & Concurrency
 
-Production concerns — making Node.js scale and stay healthy.
+Production concerns — making Node.js scale and stay healthy. Category INDEX: [Processes & Concurrency](03-processes-and-concurrency/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | 25 min |
-| 07 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | 30 min |
-| 08 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | 20 min |
+| 01 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | 25 min |
+| 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | 30 min |
+| 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | 20 min |
 
 ---
 
-## Security & Testing
+## Security & Operations
+
+Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 25 min |
-| 10 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 01 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 25 min |
+| 02 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 

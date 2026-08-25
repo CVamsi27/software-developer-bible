@@ -1,8 +1,8 @@
 # Architectural Patterns
 
-> **4+ files.** Modern, distributed-systems patterns. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, and domain-driven design.
+> **4 files** (more planned). Modern, distributed-systems patterns. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, and domain-driven design.
 
-[![Files](https://img.shields.io/badge/files-4%2B-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architectural-red)](#)
 [![Status](https://img.shields.io/badge/status-growing-yellow)](#)
 

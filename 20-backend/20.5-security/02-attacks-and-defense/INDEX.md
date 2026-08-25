@@ -1,0 +1,21 @@
+# Attacks & Defense - Security
+
+> **4 files.** What can go wrong and how to stop it: XSS, CSRF, SQL injection, and the OWASP API Top 10 — the most-asked attack questions in senior interviews.
+
+[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Attacks%20%26%20Defense-blue)](../INDEX.md)
+
+---
+
+## Files
+
+| Order | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 30 min |
+| 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min |
+| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 30 min |
+| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 30 min |
+
+---
+
+[← Back to Security](../INDEX.md)

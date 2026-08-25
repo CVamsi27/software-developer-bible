@@ -17,12 +17,12 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 
 | Category | Purpose | Subfolder | # Patterns |
 |----------|---------|-----------|-----------:|
-| **Foundations** | Principles, OOP, UML — read first | [30.1.0-foundations](01-foundations/INDEX.md) | 4 theory files |
-| **Creational** | Object creation mechanisms (decoupling construction from use) | [30.1.1-creational](02-creational/INDEX.md) | 5 patterns |
-| **Structural** | Class/object composition (assemble larger structures from parts) | [30.1.2-structural](03-structural/INDEX.md) | 7 patterns |
-| **Behavioral** | Object collaboration and responsibility distribution | [30.1.3-behavioral](04-behavioral/INDEX.md) | 11 patterns |
-| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [30.1.4-architectural](05-architectural/INDEX.md) | 4+ patterns |
-| **Interview Prep** | Curated question bank, mock interview scenarios | [30.1.5-interview-prep](06-interview-prep/INDEX.md) | 1 file (50+ Qs) |
+| **Foundations** | Principles, OOP, UML — read first | [01-foundations](01-foundations/INDEX.md) | 4 theory files |
+| **Creational** | Object creation mechanisms (decoupling construction from use) | [02-creational](02-creational/INDEX.md) | 5 patterns |
+| **Structural** | Class/object composition (assemble larger structures from parts) | [03-structural](03-structural/INDEX.md) | 8 patterns |
+| **Behavioral** | Object collaboration and responsibility distribution | [04-behavioral](04-behavioral/INDEX.md) | 11 patterns |
+| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [05-architectural](05-architectural/INDEX.md) | 4 patterns |
+| **Interview Prep** | Curated question bank, mock interview scenarios | [06-interview-prep](06-interview-prep/INDEX.md) | 1 file (50+ Qs) |
 
 ---
 
@@ -37,7 +37,7 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 ### If you're prepping for an interview
 
 1. Skim the [category overview](01-foundations/INDEX.md) (5 min).
-2. Read **all 5 creational** + **7 structural** + **11 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
+2. Read **all 5 creational** + **8 structural** + **11 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
 3. Deep-dive on 3-4 patterns you don't know cold.
 4. Hit [Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) for 50+ curated questions.
 
@@ -56,10 +56,10 @@ Use this decision cheat sheet (full version in each category INDEX):
 
 ## Sub-Index Links
 
-### [00 — Foundations](01-foundations/INDEX.md)
+### [01 — Foundations](01-foundations/INDEX.md)
 SOLID, OOP concepts, UML diagrams, DRY/KISS/YAGNI. Read these before any pattern.
 
-### [01 — Creational Patterns](02-creational/INDEX.md) (5 files)
+### [02 — Creational Patterns](02-creational/INDEX.md) (5 files)
 Object creation. Decouple "how to construct" from "what to do with the constructed thing."
 
 - [Singleton](02-creational/30.1.2.01-singleton.md) — one global instance
@@ -68,7 +68,7 @@ Object creation. Decouple "how to construct" from "what to do with the construct
 - [Abstract Factory](02-creational/30.1.2.04-abstract-factory.md) — families of related objects
 - [Prototype](02-creational/30.1.2.05-prototype.md) — clone instead of construct
 
-### [02 — Structural Patterns](03-structural/INDEX.md) (7 files)
+### [03 — Structural Patterns](03-structural/INDEX.md) (8 files)
 Class/object composition. Combine small pieces into larger structures while keeping them flexible.
 
 - [Adapter](03-structural/30.1.3.01-adapter.md) — bridge incompatible interfaces
@@ -80,7 +80,7 @@ Class/object composition. Combine small pieces into larger structures while keep
 - [Bridge](03-structural/30.1.3.07-bridge.md) — decouple abstraction from implementation
 - [Flyweight](03-structural/30.1.3.08-flyweight.md) — share state to support many fine-grained objects
 
-### [03 — Behavioral Patterns](04-behavioral/INDEX.md) (11 files)
+### [04 — Behavioral Patterns](04-behavioral/INDEX.md) (11 files)
 Object collaboration. Manage algorithms, responsibilities, and communication between objects.
 
 - [Strategy](04-behavioral/30.1.4.01-strategy.md) — swap algorithms at runtime
@@ -95,7 +95,7 @@ Object collaboration. Manage algorithms, responsibilities, and communication bet
 - [Visitor](04-behavioral/30.1.4.10-visitor.md) — add operations without modifying classes
 - [Interpreter](04-behavioral/30.1.4.11-interpreter.md) — grammar + interpreter for a DSL
 
-### [04 — Architectural Patterns](05-architectural/INDEX.md) (4+ files)
+### [05 — Architectural Patterns](05-architectural/INDEX.md) (4 files)
 Modern, distributed-systems patterns. Cross-cutting; not part of the original GoF set.
 
 - [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
@@ -103,7 +103,7 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 - [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — store events, not state
 - [Saga](05-architectural/30.1.5.04-saga.md) — distributed transactions
 
-### [05 — Interview Prep](06-interview-prep/INDEX.md) (1 file, 50+ Qs)
+### [06 — Interview Prep](06-interview-prep/INDEX.md) (1 file, 50+ Qs)
 - [Design Pattern Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) — 50+ curated Qs with answers
 
 ---
@@ -145,13 +145,13 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ## Cross-References
 
-- [System Design](../../INDEX.md) — many system design patterns build on these (circuit breaker → proxy, pub/sub → observer, …)
-- [Coding Patterns](../../INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
-- [NestJS](../../INDEX.md) — uses Module, DI, Repository, CQRS, Observer extensively
-- [Microservices](../../INDEX.md) — Saga, Event Sourcing, Outbox, CQRS
+- [System Design](../30.2-system-design/INDEX.md) — many system design patterns build on these (circuit breaker → proxy, pub/sub → observer, …)
+- [Coding Patterns](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithm patterns (sliding window, DP), unrelated but interview-adjacent
+- [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — uses Module, DI, Repository, CQRS, Observer extensively
+- [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Saga, Event Sourcing, Outbox, CQRS
 
 ---
 
 ## Navigation
 
-[← Back: Architecture](../INDEX.md) · [ Bible Index](../../INDEX.md) · [Next: System Design →](../../INDEX.md)
+[← Back: Architecture](../INDEX.md) · [ Bible Index](../../INDEX.md) · [Next: System Design →](../30.2-system-design/INDEX.md)

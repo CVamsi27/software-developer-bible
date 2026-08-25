@@ -10,17 +10,17 @@
 
 ---
 
-## Topic Categories
+## Category Map
 
 The 3 pillars of observability + the SLO/error-budget framework.
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [The 3 Pillars](#the-3-pillars) | 3 | Logs, metrics, traces — the foundation |
-| [Errors & Health](#errors--health) | 2 | Error tracking, health checks — runtime quality |
-| [Reliability Targets](#reliability-targets) | 2 | SLI/SLO/SLA, alerting — SRE framework |
-| [OpenTelemetry](#opentelemetry) | 1 | The vendor-neutral standard |
-| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
+| Category | Folder | Files | What it covers |
+|----------|--------|------:|----------------|
+| The 3 Pillars | [01-pillars/](01-pillars/INDEX.md) | 3 | Logs, metrics, traces — the foundation |
+| Errors & Health | [02-errors-and-health/](02-errors-and-health/INDEX.md) | 2 | Error tracking, health checks — runtime quality |
+| SRE Targets | [03-sre-targets/](03-sre-targets/INDEX.md) | 2 | SLI/SLO/SLA, alerting — the SRE framework |
+| Advanced Telemetry | [04-advanced-telemetry/](04-advanced-telemetry/INDEX.md) | 1 | OpenTelemetry — the vendor-neutral standard |
+| Interview Prep | [05-interview-prep/](05-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
 
@@ -50,14 +50,14 @@ Logs, metrics, traces — the foundation of observability.
 
 ---
 
-## Reliability Targets
+## SRE Targets
 
 The SRE framework.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 30 min |
-| 08 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 25 min |
+| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 30 min |
+| 07 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 25 min |
 
 **Quick distinction:**
 - **SLI** = Service Level Indicator (the metric, e.g., "99.5% of requests succeed")
@@ -66,13 +66,15 @@ The SRE framework.
 
 ---
 
-## OpenTelemetry
+## Advanced Telemetry
 
 The vendor-neutral standard.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
+| 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
+
+*Slots reserved: `40.4.4.02` continuous profiling, `40.4.4.03` eBPF observability (upcoming chapters — no links yet).*
 
 ---
 
@@ -80,7 +82,7 @@ The vendor-neutral standard.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 09 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

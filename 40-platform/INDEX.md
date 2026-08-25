@@ -28,9 +28,9 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
-| 1 | [Docker](40.1-docker/INDEX.md) | 6 | Images, containers, volumes, networks, compose, multi-stage builds |
+| 1 | [Docker](40.1-docker/INDEX.md) | 7 | Images, containers, volumes, networks, compose, multi-stage builds, production patterns |
 | 2 | [Kubernetes](40.2-kubernetes/INDEX.md) | 14 | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC |
-| 3 | [CI/CD](40.3-ci-cd/INDEX.md) | 7 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
+| 3 | [CI/CD](40.3-ci-cd/INDEX.md) | 8 | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD |
 | 4 | [Observability](40.4-observability/INDEX.md) | 9 | Logging, monitoring, tracing, OpenTelemetry, error tracking, SLI/SLO/SLA, alerting |
 | 5 | [Build Tools](40.5-build-tools/INDEX.md) | 9 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
 | 6 | [Git Advanced](40.6-git-advanced/INDEX.md) | 7 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
@@ -94,8 +94,8 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 ## Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — services that run on this platform
-- [System Design](../INDEX.md) — architecture decisions involving platform
-- [Quality Stack](../INDEX.md) — testing, performance, production engineering
+- [Architecture Stack](../30-architecture/INDEX.md) — architecture decisions involving platform
+- [Quality Stack](../50-quality/INDEX.md) — testing, performance, production engineering
 
 ---
 

@@ -14,16 +14,16 @@
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Core Concepts](#core-concepts) | 2 | Images, containers, Dockerfile — the foundation |
-| [Storage & Networking](#storage--networking) | 1 | Volumes, networks — the runtime side |
-| [Multi-Container & Build](#multi-container--build) | 2 | Compose, multi-stage builds — production patterns |
-| [Production & Security](#production--security) | 2 | Best practices, production patterns, image hardening |
+| [Core Concepts](#core-concepts) | 2 | Images, containers, volumes, networks — the foundation |
+| [Multi-Container & Build](#multi-container--build) | 2 | Compose, multi-stage builds — production workflows |
+| [Production & Security](#production--security) | 2 | Best practices + production patterns — hardening |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
 ## Core Concepts
 
-What Docker is and how it works.
+What Docker is and how it runs.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -32,19 +32,9 @@ What Docker is and how it works.
 
 ---
 
-## Storage & Networking
-
-Persistent data and inter-container communication.
-
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | (See above) | 25 min |
-
----
-
 ## Multi-Container & Build
 
-Production patterns.
+Production workflows.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -58,8 +48,17 @@ Production patterns.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | 25 min |
-| 07 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 30 min |
-| 06 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 30 min |
+
+*Slots reserved: `40.1.07`-`40.1.09` runtime internals, image signing/supply chain, rootless runtimes (upcoming chapters — no links yet).*
+
+---
+
+## Interview Prep
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 07 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

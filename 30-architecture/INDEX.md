@@ -13,9 +13,9 @@
 
 | Section | Files | Topics |
 |---------|------:|--------|
-| [Design Patterns](30.1-design-patterns/INDEX.md) | 30+ | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
+| [Design Patterns](30.1-design-patterns/INDEX.md) | 33 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
 | [System Design](30.2-system-design/INDEX.md) | 42 | 14 foundational theory files (CAP, consistency, sharding, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) + 6 meta guides (approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region) + 22 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
-| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 10 | Database scaling (partitioning, replication, connection pooling), resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, technical debt management, zero-downtime deployments, data pipelines, health checks & graceful shutdown, retry patterns, idempotency keys, CDN architecture |
+| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 10 | Health checks & graceful shutdown, resilience overview, retry patterns, idempotency keys, leader election & consensus, database scaling, data pipelines, CDN architecture, zero-downtime deployments, technical debt management — organized into 5 categories (liveness/lifecycle, failure/recovery, coordination, data-at-scale, shipping/evolution) |
 
 ---
 
@@ -25,12 +25,12 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 
 | Category | Subfolder | Count | Purpose |
 |----------|-----------|------:|---------|
-| Foundations | [30.1.0-foundations](30.1-design-patterns/01-foundations/INDEX.md) | 4 files | SOLID, OOP, UML — read these first |
-| Creational | [30.1.1-creational](30.1-design-patterns/02-creational/INDEX.md) | 5 patterns | Object creation mechanisms |
-| Structural | [30.1.2-structural](30.1-design-patterns/03-structural/INDEX.md) | 8 patterns | Class/object composition |
-| Behavioral | [30.1.3-behavioral](30.1-design-patterns/04-behavioral/INDEX.md) | 11 patterns | Object collaboration & responsibility |
-| Architectural | [30.1.4-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 4+ patterns | Modern distributed systems |
-| Interview Prep | [30.1.5-interview-prep](30.1-design-patterns/06-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
+| Foundations | [01-foundations](30.1-design-patterns/01-foundations/INDEX.md) | 4 files | SOLID, OOP, UML — read these first |
+| Creational | [02-creational](30.1-design-patterns/02-creational/INDEX.md) | 5 patterns | Object creation mechanisms |
+| Structural | [03-structural](30.1-design-patterns/03-structural/INDEX.md) | 8 patterns | Class/object composition |
+| Behavioral | [04-behavioral](30.1-design-patterns/04-behavioral/INDEX.md) | 11 patterns | Object collaboration & responsibility |
+| Architectural | [05-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 4 patterns | Modern distributed systems |
+| Interview Prep | [06-interview-prep](30.1-design-patterns/06-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
 
  **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and decision cheat sheet.
 

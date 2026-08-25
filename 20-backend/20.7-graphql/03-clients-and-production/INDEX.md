@@ -1,0 +1,19 @@
+# Clients & Production - GraphQL
+
+> **2 files.** The client side (normalized cache, optimistic UI) and production defenses (query depth limits, complexity analysis, persisted queries, field-level auth).
+
+[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Clients%20%26%20Production-%23ff6b35)](../INDEX.md)
+
+---
+
+## Files
+
+| Order | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 01 | [Apollo Client](20.7.3.01-apollo-client.md) | `InMemoryCache` normalization by `__typename:id`, useQuery/useMutation/useSubscription, optimistic UI; urql/Relay alternatives | 25 min |
+| 02 | [Performance & Security](20.7.3.02-performance-security.md) | N+1, query depth limits, complexity/cost analysis, persisted queries (APQ), per-operation rate limiting, introspection off in prod, field-level auth, CSRF | 30 min |
+
+---
+
+[← Back to GraphQL](../INDEX.md)

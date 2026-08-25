@@ -1,40 +1,43 @@
-# Auth — Authentication & Authorization Learning Track
+# Auth - Security
 
-> **The complete auth flow for senior interviews.** Study the 6 stages below **in order** — each stage builds on the previous one and ends with the trade-offs interviewers probe. Stage files: fundamentals → sessions → tokens → federation → authorization → interview drills.
+> **The complete authentication & authorization learning track — planned as a 10-stage flow.** Six stages exist today (read them **in order**, each builds on the previous); four planned chapters complete the video-parity arc and are noted without links until they land.
 >
-> Part of [Security](../INDEX.md) · Prerequisites: [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md)
+> Part of [Security](../INDEX.md) · Prerequisite: [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md)
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files-in-this-track)
-[![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+[![Category](https://img.shields.io/badge/category-Auth-blue)](../INDEX.md)
 
 ---
 
 ## The Flow — Read Top to Bottom
 
 ```text
-Stage 0 Stage 1 Stage 2 Stage 3 Stage 4 Stage 5
-FOUNDATIONS → SESSIONS → TOKENS → FEDERATED → AUTHORIZATION → INTERVIEW
-Who are you? Server remembers Stateless proof Identity from Who may do what? Drills & war stories
-(hashing, TLS) you (cookies) (JWT, refresh) others (OAuth/OIDC) (RBAC/ABAC/ReBAC) rehearsal
-│ │ │ │ │ │
-├─ hashing/salting ├─ cookie flags ├─ JWT anatomy ├─ OAuth 2.0 grants ├─ RBAC ├─ 40+ Q&A
-├─ bcrypt/argon2 ├─ session stores ├─ signing: HS256 ├─ OIDC layers ID │ vs ABAC vs ReBAC ├─ trade-off traps
-├─ symmetric/asym ├─ fixation/hijacking │ vs RS256 │ token on top ├─ scopes vs roles └─ system-design
-└─ TLS/mTLS └─ timeouts/rotation ├─ storage: cookie ├─ PKCE, SAML, SSO vs policies variants
-                                                 vs localStorage └─ passkeys future └─ policy engines
-                                               └─ rotation + family
-                                                  revocation
+Stage 0            Stage 3            Stage 4            Stage 5            Stage 8            Stage 9
+FOUNDATIONS   →    SESSIONS      →    TOKENS        →    FEDERATED     →    AUTHORIZATION →    INTERVIEW
+Who are you?       Server remembers   Stateless proof    Identity from      Who may do what?   Drills & war stories
+(hashing, TLS)     you (cookies)      (JWT, refresh)     others (OAuth/OIDC) (RBAC/ABAC/ReBAC) rehearsal
 ```
 
-| # | Stage | File | Time | You can defend… |
-|---|-------|------|------|-----------------|
-| 0 | Foundations | [auth-fundamentals.md](../01-auth/20.5.1.01-auth-fundamentals.md) | 45 min | Hashing vs encryption, password storage, why TLS before anything else |
-| 1 | Sessions | [sessions-cookies.md](../01-auth/20.5.1.04-sessions-cookies.md) | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts |
-| 2 | Tokens | [jwt.md](../01-auth/20.5.1.05-jwt.md) | 60 min | JWT anatomy, HS256 vs RS256, storage trade-offs, revocation |
-| 3 | Federation | [oauth2-oidc.md](../01-auth/20.5.1.06-oauth2-oidc.md) | 60 min | All OAuth grants, PKCE, OIDC vs OAuth, social login, SSO/SAML |
-| 4 | Authorization | [rbac-abac.md](../01-auth/20.5.1.09-rbac-abac.md) | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default |
-| 5 | Drills | [interview-questions.md](../01-auth/20.5.1.10-interview-questions.md) | 45 min | Every classic trap question + follow-ups |
+Planned stages 1-2 (Basic/Digest, API Keys), 6-7 (SSO/SAML, MFA/Passkeys) slot into the sequence above once authored.
+
+---
+
+## The 10-Stage Auth Track
+
+Stage numbers match the final file IDs `20.5.1.01` … `20.5.1.10`. Stages marked *planned* have no file yet — do not link to them.
+
+| Stage | Topic | File | Time | You can defend… |
+|------:|-------|------|------|------------------|
+| 0 | Foundations | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, why TLS before anything else |
+| 1 | HTTP Basic & Digest Auth | *planned — coming soon* | — | Authorization header mechanics, Base64-over-TLS, Digest challenge-response, when Basic is still OK |
+| 2 | API Keys | *planned — coming soon* | — | Key generation with CSPRNG, hashing at rest, prefix schemes, rotation, per-key scopes |
+| 3 | Sessions & Cookies | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md) | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts |
+| 4 | Tokens (JWT) | [20.5.1.05-jwt.md](20.5.1.05-jwt.md) | 60 min | JWT anatomy, HS256 vs RS256, storage trade-offs, refresh rotation + family revocation |
+| 5 | Federation (OAuth2 / OIDC) | [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md) | 60 min | All OAuth grants, PKCE, OIDC vs OAuth, scopes, social login |
+| 6 | SSO / SAML / Federation | *planned — coming soon* | — | SAML 2.0 flows (SP-/IdP-initiated), assertions & signing, SAML vs OIDC, SCIM provisioning |
+| 7 | MFA / Passkeys / WebAuthn | *planned — coming soon* | — | TOTP/HOTP, WebAuthn ceremonies, passkey sync, assurance levels, recovery as weakest link |
+| 8 | Authorization (RBAC / ABAC) | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md) | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default |
+| 9 | Interview Drills | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md) | 45 min | Every classic trap question + follow-ups |
 
 ---
 
@@ -68,7 +71,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ### Authorization models
 
 | Model | Question it answers | Example | Cost |
-|-------|--------------------|---------|-----| 
+|-------|--------------------|---------|-----|
 | **RBAC** | "What is your role?" | Nurse can edit charts | Coarse; role explosion at scale |
 | **ABAC** | "What is true about you, the resource, and the environment?" | Doctor may read patient X *if assigned*, during shift | Fine-grained; needs policy engine + tests |
 | **ReBAC** | "What is your relationship to the resource?" | Alice is editor of doc 42 (Google Zanzibar style) | Powerful; heavy infra (SpiceDB/OpenFGA) |
@@ -82,7 +85,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ```text
 Browser-only app?
 ├── Yes → Session cookie (HttpOnly, Secure, SameSite=Lax) or hybrid w/ refresh rotation
-│ └── Regulated data (health/fintech)? → add MFA, audit log, absolute session timeout
+│         └── Regulated data (health/fintech)? → add MFA, audit log, absolute session timeout
 └── SPA / mobile / API consumers?
     ├── First-party only → access JWT (15 min) + rotating refresh (httpOnly cookie), family revocation
     ├── "Login with Google/GitHub"? → OAuth 2.0 + PKCE via OIDC provider; never roll your own
@@ -100,13 +103,13 @@ The concepts above map to concrete guards/pipes. In interviews, name the enforce
 
 | Concept | Enforcement point | File to study |
 |---------|-------------------|---------------|
-| Credential check + hash verify | AuthService.login (bcrypt.compare) | [fundamentals](../01-auth/20.5.1.01-auth-fundamentals.md) |
-| Session issue/rotate | Session middleware + store TTL | [sessions](../01-auth/20.5.1.04-sessions-cookies.md) |
-| Token sign/verify | JwtStrategy (Passport), RS256 via JWKS | [JWT](../01-auth/20.5.1.05-jwt.md) |
-| Refresh rotation + reuse detection | Refresh endpoint; `replacedBy = sha256(new)`; family revoke on replay | [JWT](../01-auth/20.5.1.05-jwt.md) |
-| Social login | Passport Google strategy, auth-code + PKCE | [OAuth2/OIDC](../01-auth/20.5.1.06-oauth2-oidc.md) |
-| Role gate | `@Roles('admin')` + RolesGuard | [RBAC/ABAC](../01-auth/20.5.1.09-rbac-abac.md) |
-| Policy gate | `@RequirePolicy(resource, action)` + PolicyGuard (deny-by-default) | [RBAC/ABAC](../01-auth/20.5.1.09-rbac-abac.md) |
+| Credential check + hash verify | AuthService.login (bcrypt.compare) | [fundamentals](20.5.1.01-auth-fundamentals.md) |
+| Session issue/rotate | Session middleware + store TTL | [sessions](20.5.1.04-sessions-cookies.md) |
+| Token sign/verify | JwtStrategy (Passport), RS256 via JWKS | [JWT](20.5.1.05-jwt.md) |
+| Refresh rotation + reuse detection | Refresh endpoint; `replacedBy = sha256(new)`; family revoke on replay | [JWT](20.5.1.05-jwt.md) |
+| Social login | Passport Google strategy, auth-code + PKCE | [OAuth2/OIDC](20.5.1.06-oauth2-oidc.md) |
+| Role gate | `@Roles('admin')` + RolesGuard | [RBAC/ABAC](20.5.1.09-rbac-abac.md) |
+| Policy gate | `@RequirePolicy(resource, action)` + PolicyGuard (deny-by-default) | [RBAC/ABAC](20.5.1.09-rbac-abac.md) |
 | Tenant isolation | Tenant interceptor sets context every request; DB-level RLS as backstop | [API security](../02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) |
 
 > **Senior signal:** say where each control lives *in the request pipeline* (middleware → guard → interceptor → service → query layer) and which layer catches what a previous layer missed (defense in depth).
@@ -118,13 +121,13 @@ The concepts above map to concrete guards/pipes. In interviews, name the enforce
 | Attack | Defended in stage | Key controls |
 |--------|-------------------|--------------|
 | Password cracking / credential stuffing | 0 Fundamentals | Argon2id/bcrypt, rate limiting, breach-password checks |
-| Session hijacking / fixation | 1 Sessions | Rotate ID on login, Secure/HttpOnly, timeouts |
-| Token theft via XSS | 2 Tokens | HttpOnly cookies, CSP, short access TTL |
-| Token theft via CSRF | 1–2 | SameSite=Strict/Lax, double-submit token |
-| Replay of old refresh token | 2 Tokens | Rotation + token-family revocation |
-| Malicious redirect / code interception | 3 OAuth | Allow-list redirect URIs, PKCE |
-| Privilege escalation / IDOR | 4 Authorization | Deny-by-default policies, object-level checks, tenant scoping |
-| Confused deputy (third-party abuse) | 3–4 | Scopes, consent, audience restriction |
+| Session hijacking / fixation | 3 Sessions | Rotate ID on login, Secure/HttpOnly, timeouts |
+| Token theft via XSS | 4 Tokens | HttpOnly cookies, CSP, short access TTL |
+| Token theft via CSRF | 3–4 | SameSite=Strict/Lax, double-submit token |
+| Replay of old refresh token | 4 Tokens | Rotation + token-family revocation |
+| Malicious redirect / code interception | 5 OAuth | Allow-list redirect URIs, PKCE |
+| Privilege escalation / IDOR | 8 Authorization | Deny-by-default policies, object-level checks, tenant scoping |
+| Confused deputy (third-party abuse) | 5, 8 | Scopes, consent, audience restriction |
 
 Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md) · [CSRF](../02-attacks-and-defense/20.5.2.02-csrf.md) · [SQL Injection](../02-attacks-and-defense/20.5.2.03-sql-injection.md) · [API Security Top 10](../02-attacks-and-defense/20.5.2.04-api-security-best-practices.md)
 
@@ -134,13 +137,14 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 
 | File | Lines of study | Type |
 |------|----------------|------|
-| [auth-fundamentals.md](../01-auth/20.5.1.01-auth-fundamentals.md) | Identity, credentials, crypto primitives for auth | Core concept |
-| [sessions-cookies.md](../01-auth/20.5.1.04-sessions-cookies.md) | Server-side state model | Core concept |
-| [jwt.md](../01-auth/20.5.1.05-jwt.md) | Stateless tokens done right | Core concept |
-| [oauth2-oidc.md](../01-auth/20.5.1.06-oauth2-oidc.md) | Delegated identity & access | Core concept |
-| [rbac-abac.md](../01-auth/20.5.1.09-rbac-abac.md) | Authorization models | Core concept |
-| [interview-questions.md](../01-auth/20.5.1.10-interview-questions.md) | 40+ questions with follow-up traps | Drill |
-| [../20.5.13-interview-questions.md](../04-interview-drills/20.5.4.01-interview-questions.md) | Full security bank (50+) | Drill |
+| [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | Identity, credentials, crypto primitives for auth | Core concept |
+| [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md) | Server-side state model | Core concept |
+| [20.5.1.05-jwt.md](20.5.1.05-jwt.md) | Stateless tokens done right | Core concept |
+| [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md) | Delegated identity & access | Core concept |
+| [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md) | Authorization models | Core concept |
+| [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md) | 40+ questions with follow-up traps | Drill |
+
+Planned additions (no files yet): `20.5.1.02-http-basic-digest-auth`, `20.5.1.03-api-keys`, `20.5.1.07-sso-saml-federation`, `20.5.1.08-mfa-passkeys-webauthn`.
 
 ---
 
@@ -161,4 +165,4 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 
 ## Navigation
 
-[← Back to Security Index](../INDEX.md) · [Next: Attacks — XSS →](../02-attacks-and-defense/20.5.2.01-xss.md)
+[← Back to Security](../INDEX.md) · [Next: Attacks — XSS →](../02-attacks-and-defense/20.5.2.01-xss.md)

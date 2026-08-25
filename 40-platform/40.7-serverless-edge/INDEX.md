@@ -19,6 +19,8 @@
 | [Patterns & IaC](#patterns--iac) | 2 | Serverless patterns, IaC frameworks (SAM/CDK/SST) |
 | [Interview Prep](#interview-prep) | 1 | 30+ Qs |
 
+*Slot `40.7.07` is reserved for an upcoming chapter (durable execution with Temporal/Inngest) — no link yet.*
+
 ---
 
 ## Concepts
@@ -44,8 +46,8 @@ Deploy choice?
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 05 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
-| 06 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
+| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
+| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
 
 ---
 
@@ -53,8 +55,8 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
-| 07 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
+| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
 
 ---
 
@@ -62,7 +64,7 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+| 07 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
 
 ---
 

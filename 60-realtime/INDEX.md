@@ -26,12 +26,13 @@ The 8 files organize into 4 conceptual categories — the "GoF classification" o
 ## The Track — Read In This Order
 
 ```text
-Pass I — PROTOCOLS Pass II — IMPLEMENTATION Pass III — ARCHITECTURE & SCALE
-01 overview (WebSockets) → 02 Socket.IO → 04 real-time architecture
-03 SSE (server→client only) 05 NestJS gateways 08 scaling patterns
-07 WebTransport (HTTP/3) ↓
-                                                              INTERVIEW DRILLS
-                                                                   06 interview questions
+Pass I — TRANSPORTS           Pass II — ARCHITECTURE & SCALE    Pass III — DRILLS
+websockets-overview     ──┐   real-time-architecture      ──┐   interview-questions
+server-sent-events        ├→  scaling-patterns              ├→
+socket-io                 │                                 │
+webtransport            ──┘                                 ┘
+
+NestJS gateways: read alongside Pass II when wiring production code.
 ```
 
 **Total time: ~6 hours.** Skip WebTransport if interviewing before next week; it's a bonus-point topic.

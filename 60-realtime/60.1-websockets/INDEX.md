@@ -1,6 +1,6 @@
 # WebSockets — Index
 
-> **8 files** — Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, WebTransport, scaling patterns, and interview questions.
+> **8 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
@@ -10,14 +10,16 @@
 
 ---
 
-## Topic Categories
+## The 4 Categories (in study order)
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [Transports](#transports) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
-| [Architecture & Scaling](#architecture--scaling) | 2 | Real-time architecture, scaling patterns |
-| [Frameworks](#frameworks) | 1 | NestJS WebSockets — the production framework |
-| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
+| Category | Files | Purpose |
+|----------|------:|---------|
+| [01 — Transports](01-transports/INDEX.md) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
+| [02 — Architecture & Scaling](02-architecture-and-scaling/INDEX.md) | 2 | Real-time architecture, scaling patterns |
+| [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 1 | NestJS WebSockets — the production framework |
+| [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
+
+Planned additions in Frameworks & Paradigms: **GraphQL Subscriptions & Live Queries** (`60.1.3.02`), **WebRTC Peer-to-Peer** (`60.1.3.03`), **Testing Real-Time Systems** (`60.1.3.04`).
 
 ---
 
@@ -28,9 +30,9 @@ The 4 main real-time transports.
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
 | 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | 30 min |
-| 03 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
-| 02 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
-| 07 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery | 25 min |
+| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
+| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
+| 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery OK | 25 min |
 
 **Decision tree:**
 
@@ -51,24 +53,24 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
-| 08 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
+| 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
+| 02 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
 
 ---
 
-## Frameworks
+## Frameworks & Paradigms
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
+| 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
 
 ---
 
 ## Interview Prep
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 06 | [Interview Questions](04-interview-prep/60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| # | File | Contents | Time |
+|--:|------|----------|------|
+| 01 | [Interview Questions](04-interview-prep/60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

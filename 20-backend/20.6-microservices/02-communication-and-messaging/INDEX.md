@@ -1,0 +1,23 @@
+# Communication & Messaging - Microservices
+
+> **6 files.** How services talk: gRPC (+ streaming) for typed RPC over HTTP/2, Kafka and RabbitMQ for messaging, broker selection discipline, and event-driven architecture.
+
+[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Communication%20%26%20Messaging-blue)](../INDEX.md)
+
+---
+
+## Files
+
+| Order | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | 10 min |
+| 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | 10 min |
+| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | 20 min |
+| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | 20 min |
+| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | 20 min |
+| 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | 15 min |
+
+---
+
+[← Back to Microservices](../INDEX.md)

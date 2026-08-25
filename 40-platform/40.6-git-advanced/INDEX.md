@@ -20,6 +20,8 @@
 | [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
 | [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
+*Slots `40.6.01`, `40.6.08`, `40.6.09` are reserved for upcoming chapters (git internals, git at scale/LFS, signed commits/repository security) — no links yet.*
+
 ---
 
 ## Branching & History
@@ -58,7 +60,7 @@ The power tools.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 04 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
-| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
+| 05 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
 
 ---
 
@@ -66,7 +68,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min |
+| 06 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min |
 
 ---
 
@@ -74,7 +76,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 07 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

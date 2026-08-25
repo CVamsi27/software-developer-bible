@@ -34,3 +34,19 @@ Instrumenting once per vendor does not survive the second vendor swap. OpenTelem
 ## Navigation
 
 [← SRE Targets](../03-sre-targets/INDEX.md) · [↑ Observability Home](../INDEX.md) · [Next: Interview Prep →](../05-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet_ for OpenTelemetry/eBPF — tracing is Sentry-based. What docita does have is the surrounding discipline:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Correlation IDs | `request-id.interceptor.ts` + `request-logging.interceptor.ts` thread context through every request |
+| Log scrubbing gates | `phi-redactor.ts`; CI checks `check-sensitive-logging.mjs`, `check-sentry-scrubbing.mjs`, `check-sentry-scrubber-parity.mjs` |
+| Metrics aggregation & cardinality care | `metrics-aggregation.service.ts`, business metrics separated from API-request metrics |
+| RUM telemetry | `web-vitals-metrics.service.ts` + RUM controller |
+| Continuous profiling | Sentry profiling integration exists (`SENTRY_PROFILING`), kept off by default on Alpine |

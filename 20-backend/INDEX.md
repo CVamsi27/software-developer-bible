@@ -8,6 +8,8 @@
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#the-9-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
+> **Real-world anchor:** every category INDEX below ends with a **Docita Anchor** table mapping its chapters to production code in [docita](https://github.com/CVamsi27/docita) — a healthcare platform (NestJS + Prisma + Postgres, modular monolith with a separate worker deployable). Read the chapter, then read the file that ships it. Where docita has no counterpart (GraphQL, Redis-backed caching, Kafka/gRPC), the anchor says so honestly instead of pretending.
+
 ---
 
 ## Why this stack matters

@@ -25,6 +25,18 @@ Utility Types → Conditional Types → Mapped Types → Template Literal Types.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Mapped/indexed access (`Record`) | `packages/types/src/shared/users/roles.ts` - `Record<DayOfWeek, string>` label and index maps |
+| Conditional types in practice | `packages/ui/src/lib/rhf-path.ts` - guarded boundary around RHF's deferred conditional `Path<T>` |
+| Utility types on props | `packages/ui/src/components/form/debounced-search-input.tsx` - `Omit<React.ComponentProps<typeof Input>, …>` prop derivation |
+
+---
+
 ## Navigation
 
 [← Back to TypeScript](../INDEX.md)

@@ -34,3 +34,16 @@ Pillars tell you what the system did; errors and health tell you whether what it
 ## Navigation
 
 [← The 3 Pillars](../01-pillars/INDEX.md) · [↑ Observability Home](../INDEX.md) · [Next: SRE Targets →](../03-sre-targets/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — tracks errors and health for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Error tracking (Sentry) | `instrument.ts` bootstrap with `createSentryBeforeSend` scrubbing (`error-handling/sentry.utils.ts`); optional profiling behind `SENTRY_PROFILING` |
+| Error service layer | `monitoring/services/error-tracking.service.ts` wraps reporting for the app |
+| Ops alerts | `ops-alert.service.ts` + `listeners/ops-alert.listener.ts` react to domain events |
+| Health checks | `health-check.controller.ts`, `monitoring/health/prisma.health.ts`, `health-check.service.ts`; Fly probes `/api/health/live` |

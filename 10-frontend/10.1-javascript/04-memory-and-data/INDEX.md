@@ -28,6 +28,19 @@ Pass by Value → Shallow vs Deep Copy → Map/Set/WeakMap/WeakSet → Debounce 
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Map as an ordered collection | `apps/api/src/shared/common/utils/lru-cache.ts` - `Map` insertion order drives LRU eviction with TTL expiry |
+| WeakMap for cycle-safe data | `packages/utils/src/monitoring/phi-scrubber.ts` - deep PHI redaction that survives circular references |
+| Debounce implementation | `packages/hooks/src/use-debounce.ts` - trailing-edge debounce built on refs and a subscriber set |
+| Cleanup to avoid leaks | `packages/hooks/src/use-click-outside.ts` - removes document listeners on unmount/deps change |
+
+---
+
 ## Navigation
 
 [← Back to JavaScript](../INDEX.md)

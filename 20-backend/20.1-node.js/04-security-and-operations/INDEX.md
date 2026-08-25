@@ -19,3 +19,19 @@
 ---
 
 [← Back to Node.js](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Input validation at the boundary | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - Zod schemas validate every controller payload |
+| Security headers & edge hygiene | `apps/api/src/main.ts` - helmet() CSP headers, CORS allow-list, Sentry wired before first request |
+| Express middleware chain | `apps/api/src/app.module.ts` - global APP_GUARD / APP_INTERCEPTOR registrations show the exact chain order |
+| Runtime observability | `apps/api/src/shared/common/interceptors/request-logging.interceptor.ts` - structured request logs beside slow-query logging |
+| Rate limiting | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - cache-backed per-route limits next to IP/user guards |
+
+_Debugging/profiling internals (`--inspect`, heap snapshots): no direct docita implementation yet._ Observability is pino + Sentry + Prometheus rather than V8 diagnostics tooling.

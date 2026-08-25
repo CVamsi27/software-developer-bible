@@ -56,3 +56,16 @@ The full decision matrix lives in the [comparison chapter](50.1.2.04-testing-fra
 ## Navigation
 
 [← Foundations](../01-foundations/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Test Levels →](../03-test-levels/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Shared Vitest runner config | `vitest.shared.config.ts` (workspace-wide base config) |
+| Playwright as E2E runner | `apps/app/playwright.config.ts`, `apps/internal/playwright.config.ts`, `apps/landing/playwright.config.ts` |
+| Component tests (RTL-style) | 27 `*.test.tsx` under `packages/ui` |
+| Visual regression | `packages/ui/tests/visual/status-badge.spec.ts` |

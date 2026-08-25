@@ -33,3 +33,16 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 ## Navigation
 
 [← Bundlers](../01-bundlers/INDEX.md) · [↑ Build Tools Home](../INDEX.md) · [Next: Optimization & Comparison →](../03-optimization-and-comparison/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — compiles TypeScript for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Shared TS config as a package | `packages/typescript-config` centralizes compiler options; apps/projects extend it |
+| Type-check as a build gate | Turbo `check-types` task with dependency ordering; Vite builds depend on it passing |
+| Astro check | Landing app type-checks via `astro check` in its own pipeline |
+| Babel / SWC specifics | Not hand-configured — they arrive embedded inside Vite/Astro toolchains |

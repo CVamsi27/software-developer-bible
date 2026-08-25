@@ -29,3 +29,11 @@ A question bank spanning everything in this stack: workload semantics, networkin
 ## Navigation
 
 [← Packaging & Extensibility](../05-packaging-and-extensibility/INDEX.md) · [↑ Kubernetes Home](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet._ Docita runs on Fly.io, so K8s answers here can't cite production war stories from it. The honest interview move: use docita's Fly.io mechanics as working analogs — health-gated deploys ≈ readiness gating, suspend-to-zero + scheduled scaling ≈ HPA outcomes, RLS + ABAC ≈ namespace/quota isolation — and say plainly that the cluster experience is theoretical.

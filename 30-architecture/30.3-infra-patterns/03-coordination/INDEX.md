@@ -32,3 +32,18 @@ Scale out to 5 replicas and suddenly scheduled jobs run 5 times, background work
 ## Navigation
 
 [← Failure & Recovery](../02-failure-and-recovery/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md) · [Next: Data at Scale →](../04-data-at-scale/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — keeps scheduled work single-flight for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Distributed locks (Postgres advisory) | `shared/common/utils/postgres-advisory-lock.ts` |
+| Single-cron leader election | `shared/modules/schedule/cron-heartbeat.ts` — heartbeat + advisory locks so exactly one instance runs each cron |
+| Process-level coordination | API ships `ENABLE_SCHEDULERS=false`; crons live in the dedicated worker app |
+| Transactional outbox | `shared/modules/outbox/outbox-relay.scheduler.ts` + ADR 0010; CI gate `check-event-emit-via-outbox.mjs` |
+
+_Fencing tokens / Raft-style consensus: no direct docita implementation yet._

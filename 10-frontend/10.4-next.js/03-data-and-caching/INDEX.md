@@ -27,6 +27,19 @@ Data Fetching Patterns → Server Actions → Caching → Streaming → ISR → 
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| React Query data layer | `apps/app/src/providers/react-query-provider.tsx` - QueryClient with `staleTime`/retry defaults |
+| Stale-while-revalidate policy | `packages/data-access/src/core/stale-time.ts` - per-key-prefix staleTime + garbage-collection windows |
+
+_No Next data cache / RSC fetch / ISR in docita yet — the above are its client-side caching counterparts._
+
+---
+
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)

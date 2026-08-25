@@ -47,3 +47,16 @@ Budget tiers to remember: initial JS, per-route chunks, total CSS, third-party s
 ## Navigation
 
 [← Measurement](../02-measurement/INDEX.md) · [↑ Performance Home](../INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Route budgets as config, not folklore | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
+| Budget enforcement scripts (perf / vitals / a11y) | `check-perf-budget.mjs`, `check-web-vitals-budget.mjs`, `check-a11y-budget.mjs` under `scripts/perf/` |
+| Breach alerting | `apps/api/src/shared/modules/monitoring/monitoring/listeners/ops-alert.listener.ts` + `ops-alert.service.ts` |
+| SLOs written down | `docs/operations/SLOS.md` |

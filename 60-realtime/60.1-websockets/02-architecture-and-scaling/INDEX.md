@@ -46,3 +46,16 @@ Interview favorite: "How do you broadcast to a room whose members are spread acr
 ## Navigation
 
 [← Transports](../01-transports/INDEX.md) · [↑ WebSockets Home](../INDEX.md) · [Next: Frameworks & Paradigms →](../03-frameworks-and-paradigms/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Tenant-scoped rooms | `apps/api/src/websockets/notifications.gateway.ts` joins `clinic:{clinicId}` / `user:{sub}` rooms |
+| Connection auth | `ws-jwt-auth.guard.ts` (in `shared/modules/auth/auth/`) + base-gateway handshake verification |
+| Per-connection rate limiting | `base-websocket.gateway.ts` rate-limit map + error envelope |
+| Scaling honesty | `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary documented; **no Redis pub/sub adapter yet** — sticky sessions alone called out as insufficient, adoption deferred until a second replica is real |

@@ -25,6 +25,18 @@ Types vs Interfaces → keyof / typeof → Type Narrowing → tsconfig & Compile
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| tsconfig & compiler options | `packages/typescript-config/base.json` - shared strict config: `strict`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `NodeNext` |
+| Per-target config presets | `packages/typescript-config/react-library.json` - thin `extends` of base for JSX packages |
+| Schemas → types (typeof/infer) | `packages/types/src/shared/users/roles.ts` - zod enums with `z.infer` plus `Record<DayOfWeek, string>` maps |
+
+---
+
 ## Navigation
 
 [← Back to TypeScript](../INDEX.md)

@@ -54,3 +54,16 @@ Interview trap: "Why not just write E2E tests for everything?" — feedback loop
 ## Navigation
 
 [← Frameworks](../02-frameworks/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Mocking & Patterns →](../04-mocking-and-patterns/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Unit/integration level | co-located `*.spec.ts` files throughout `apps/api/src` (482 total) |
+| Component level | `*.test.tsx` files under `packages/ui` |
+| E2E critical flows | `apps/app/e2e/critical-flows.spec.ts` plus per-feature specs (`auth`, `appointments`, `invoices`, …) |
+| Multi-app E2E suites | `apps/app/e2e/`, `apps/internal/e2e/`, `apps/landing/e2e/` |

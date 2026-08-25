@@ -24,6 +24,18 @@ Modern Hooks (React 18/19) → Web Components → React Router.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| React Router routes & guards | `apps/app/src/App.tsx` - ~108 `<Route>` declarations across layout groups with protected/public route wrappers and Suspense |
+| useDeferredValue | `apps/app/src/features/medical-coding/components/CodingQueuePageContent.tsx` - deferred search value over debounced input |
+| Router-agnostic history provider | `packages/hooks/src/create-navigation-history-provider.ts` - factory decoupled from react-router via injected pathname hook |
+
+---
+
 ## Navigation
 
 [← Back to React](../INDEX.md)

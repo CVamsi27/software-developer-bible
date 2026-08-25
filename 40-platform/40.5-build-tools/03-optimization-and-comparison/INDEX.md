@@ -34,3 +34,17 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 ## Navigation
 
 [← Compilers](../02-compilers/INDEX.md) · [↑ Build Tools Home](../INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — keeps builds fast for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Build caching | Turbo caches `build`/`test` outputs (`dist/**`, empty test outputs) keyed by scoped env allowlists |
+| Dead-code elimination as a gate | `knip.json` + knip-clean requirement recorded in release evidence |
+| Duplication budget | `check:duplication` (jscpd, zero clones) in pre-push and release evidence |
+| Size budgets | `scripts/checks/check-file-size-budget.mjs` and `check-worker-size.mjs` |
+| Tree-shaking / bundle analysis | Not separately configured beyond toolchain defaults |

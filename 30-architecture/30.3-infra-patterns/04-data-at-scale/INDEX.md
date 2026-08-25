@@ -35,3 +35,17 @@ Vertical scaling buys you months, not years. At real scale you need to know whic
 ## Navigation
 
 [← Coordination](../03-coordination/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md) · [Next: Shipping & Evolution →](../05-shipping-and-evolution/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — manages data growth for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Backups | `shared/modules/database/database-backup.service.ts` (+ spec) |
+| Retention & archival | `compliance/data-retention.scheduler.ts` (+ spec); DPDP compliance docs in `docs/compliance/*` |
+| Query hygiene at scale | `slow-query-logging.service.ts`, `database-index-optimization.service.ts`, connection pooling service |
+| Scaling posture | Deliberate single-region Postgres (ADR 0006) + read-base repositories (`prisma-read-base.ts`) |
+| Sharding / pipelines / replicas | _No direct docita implementation yet._ |

@@ -103,3 +103,16 @@ Deploy choice?
 ## Navigation
 
 [← Previous: Git Advanced](../40.6-git-advanced/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Monorepo →](../40.8-monorepo/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets serverless — the honest answer is **split**:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Serverless: YES (landing/edge) | `apps/landing` is Astro deployed to Cloudflare Workers — `deploy:cloudflare` runs `wrangler deploy` with a `_worker.js` entry; `@astrojs/cloudflare` adapter |
+| Serverless: NO (core API, deliberately) | The NestJS API and worker are long-running Fly.io machines; ADR 0011 chose suspend/resume (`auto_stop_machines='suspend'`) over scale-to-zero functions for cold-start control |
+| Edge caching | Cloudflare in front of the API with origin protection (ADR 0014); `DOCITA_CLOUDFLARE` build flag switches landing to CF mode |
+| Durable Objects / edge compute in the hot path | _No direct docita implementation yet._ |

@@ -35,3 +35,18 @@ Every Kubernetes object you will ever touch is either one of these workload type
 ## Navigation
 
 [↑ Kubernetes Home](../INDEX.md) · [Next: Networking & Config →](../02-networking-and-config/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet_ — the API runs as long-running Fly.io machines, not Kubernetes. Honest analogs only:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Machine ≈ pod replica | `fly.toml [[vm]]` — one 2GB machine, `min_machines_running` floor instead of a ReplicaSet |
+| Deployment-like rollout | CI-driven deploys (`.github/workflows/deploy.yml`) against `apps/api/Dockerfile` with health-gated grace period |
+| CronJob analog | Nest `@Cron` schedulers in the worker app, gated by `cron-heartbeat.ts` so only one instance fires |
+| StatefulSet / DaemonSet | _No direct docita implementation yet._ |

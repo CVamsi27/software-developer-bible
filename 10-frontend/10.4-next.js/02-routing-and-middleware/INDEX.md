@@ -24,6 +24,10 @@ Middleware → Route Handlers → Metadata.
 
 ---
 
+_No direct docita implementation yet._ (Docita has no Next.js layer — its routing is react-router inside a Vite SPA and NestJS controllers on the API.)
+
+---
+
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)

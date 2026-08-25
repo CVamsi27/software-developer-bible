@@ -10,6 +10,12 @@
 
 ---
 
+## Docita Anchor
+
+The toolkit converts knowledge into stories, and [docita](https://github.com/CVamsi27/docita) supplies the raw material: 15 numbered ADRs (including reversals and deferrals) as decision-writing evidence, runbooks and incident playbooks as incident-response narratives, and — honestly — almost no algorithmic hot spots, so coding-pattern claims stay grounded in the one `lru-cache.ts` utility. Sub-stack INDEXes carry their own **Docita Anchor** notes where genuine counterparts exist.
+
+---
+
 ## Why this stack matters
 
 The toolkit is the **synthesis** layer:

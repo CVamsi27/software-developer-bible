@@ -51,3 +51,16 @@ Need real-time communication?
 ## Navigation
 
 [↑ WebSockets Home](../INDEX.md) · [Next: Architecture & Scaling →](../02-architecture-and-scaling/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Socket.IO as chosen transport | `socket.io ^4.8.3` in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
+| SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
+| Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
+| Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

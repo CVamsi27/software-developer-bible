@@ -20,3 +20,18 @@
 ---
 
 [← Back to Microservices](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Transactional outbox | `apps/api/src/shared/modules/outbox/outbox.service.ts` - append() inside the same business transaction (ADR-0010) |
+| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` - cron drain, attempt escalation, processedAt marking |
+| Idempotent consumers | `apps/api/src/shared/modules/idempotency/idempotency.service.ts` - stored keys make handlers replay-safe |
+| DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification gates auto-replay |
+
+Saga orchestration and event sourcing not used — cross-module consistency currently rides the outbox + idempotency + DLQ trio above.

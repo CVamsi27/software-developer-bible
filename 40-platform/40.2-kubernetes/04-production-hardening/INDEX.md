@@ -36,3 +36,18 @@ Out of the box, a Deployment is fragile and insecure: no probes (traffic hits un
 ## Navigation
 
 [← Scaling](../03-scaling/INDEX.md) · [↑ Kubernetes Home](../INDEX.md) · [Next: Packaging & Extensibility →](../05-packaging-and-extensibility/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet_ — no probes/PDBs/RBAC objects; hardening happens at app + platform edges:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Health checks (probe analog) | Fly `[checks.health]` on `/api/health/live` (15s interval, 240s grace); app-side `health-check.controller.ts`, `prisma.health.ts` |
+| Image/container scanning | `.github/workflows/container-scan.yml` |
+| Tenant isolation (quota analog) | App-level: Postgres RLS (`shared/modules/rls/*`), ABAC authorization, tenant rate limiting — not cluster quotas |
+| PDB / NetworkPolicy equivalents | _No direct docita implementation yet._ |

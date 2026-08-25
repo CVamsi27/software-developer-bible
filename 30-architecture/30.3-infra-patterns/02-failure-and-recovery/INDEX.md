@@ -40,3 +40,17 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 ## Navigation
 
 [← Liveness & Lifecycle](../01-liveness-lifecycle/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md) · [Next: Coordination →](../03-coordination/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — survives failure for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Idempotency keys | Full module: `shared/modules/idempotency/*` (interceptor + service + repository + `@RequiresIdempotency` decorator); CI gate `check-job-idempotency.mjs` |
+| Retries | `shared/common/interceptors/prisma-retry.interceptor.ts` |
+| Circuit breaker | `shared/common/utils/circuit-breaker.registry.ts` + `circuit-breaker.ts` |
+| DLQ & recovery | `queue/dlq-replay.scheduler.ts` + `dlq.controller.ts` behind the Postgres queue |
+| Incident playbooks | `docs/operations/playbooks/*`: razorpay-outage, db-connection-exhaustion, openai-rate-limit, pdf-queue-backlog, cloudflare-upstream-timeout |

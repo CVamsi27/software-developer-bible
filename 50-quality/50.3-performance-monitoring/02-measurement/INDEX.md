@@ -56,3 +56,16 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 ## Navigation
 
 [← Core Metrics](../01-core-metrics/INDEX.md) · [↑ Performance Home](../INDEX.md) · [Next: Optimization & Governance →](../03-optimization-and-governance/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Server-side measurement endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts` |
+| Slow-query telemetry (RUM for the DB) | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` |
+| Query-cost guard at the data layer | `apps/api/src/shared/common/extensions/query-budget.extension.ts` |
+| Lab baseline tooling | `scripts/perf/perf-baseline.mjs` |

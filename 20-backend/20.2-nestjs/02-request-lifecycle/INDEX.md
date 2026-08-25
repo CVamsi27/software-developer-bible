@@ -21,4 +21,18 @@ Lifecycle order: Middleware → Guards → Pipes → Controller → Interceptors
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` - AsyncLocalStorage carries clinicId/user for the whole request |
+| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts` - JWT gate ahead of roles/policy/tenant/rate-limit guards |
+| Pipes | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - Zod transform+validate before handlers run |
+| Interceptors | `apps/api/src/shared/common/interceptors/` - eight siblings: logging, request-id, timeout, cache, CSRF, rate-limit, safe-zod serializer, Prisma retry |
+| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` - catch-all mapping domain errors to status codes + Sentry |
+
+---
+
 [← Back to NestJS](../INDEX.md)

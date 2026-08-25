@@ -87,3 +87,18 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 ## Navigation
 
 [← Previous: Monorepo](../40.8-monorepo/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — lives the factors.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| III. Config in env | `shared/modules/config/env-schema.ts` validates env; turbo `globalEnv` allowlists exactly which vars bust caches |
+| IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (fly.toml) |
+| VI. Processes | Stateless API + separate worker app; suspend/resume via `auto_stop_machines` proves disposability |
+| V. Build/release/run | Turbo build → CI deploy workflow → migration gate (`db-migrations.yml`) before rollout |
+| XI. Logs | Pino structured logs to stdout; PHI redaction before emit |
+| X. Dev/prod parity | `docker-compose.yml` Postgres locally mirrors managed prod Postgres |

@@ -53,3 +53,9 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 ---
 
 **Lane-specific overlays:** Add interview strategy context, behavioral stories, and prep plans in [Interview Lanes](../80-lanes-abroad-full-stack/INDEX.md) — the stacks stay stack-pure.
+
+---
+
+## Docita Anchor
+
+Every category INDEX in this stack ends with a **Docita Anchor** section mapping its topics to [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo). In short: design patterns are real there (strategy registries, FHIR builders, template-method PDF pipeline, facades, repository + DI, hexagonal ports/adapters, an ACL domain around India's ABDM API); system-design theory is real (tenant rate limiting, Postgres queue with DLQ, advisory-lock leader election, transactional outbox); and the hospital-management case study is not an analogy — it is the product itself. Where docita has no counterpart (event sourcing, saga, capacity planning), the anchors say so plainly instead of pretending.

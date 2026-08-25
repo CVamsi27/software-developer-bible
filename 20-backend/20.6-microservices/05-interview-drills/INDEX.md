@@ -16,3 +16,15 @@
 ---
 
 [← Back to Microservices](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the drills, then cite real answers:
+
+| Drill | Docita evidence |
+|-------|-----------------|
+| Saga / outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` - a production outbox you can walk through |
+| Circuit-breaker drill | `apps/api/src/shared/common/utils/circuit-breaker.ts` - thresholds and state transitions in one small class |
+| "Split the monolith" drill | `apps/api/src/app.module.ts` - module seams are the future service boundaries |

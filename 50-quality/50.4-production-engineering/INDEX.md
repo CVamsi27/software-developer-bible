@@ -115,3 +115,18 @@ Prevention before the incident; sustainability after it.
 ## Navigation
 
 [← Previous: Performance Monitoring](../50.3-performance-monitoring/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: WebSockets →](../../60-realtime/60.1-websockets/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Runbooks | `docs/runbooks/` (`abdm-onboarding.md`, `abdm-sandbox-setup.md`) |
+| Incident playbooks | `docs/operations/playbooks/` (`db-connection-exhaustion.md`, `razorpay-outage.md`, `pdf-queue-backlog.md`, …) |
+| Release evidence practice | `docs/operations/releases/2026-08-06-p5-closure.md` + `RELEASE_EVIDENCE_CHECKLIST.md` |
+| Audits | `docs/audits/2026-08-19-comprehensive-audit.md` (+ evidence dir) |
+| ADR process as review gate | `docs/architecture/decisions/` — 15 numbered records incl. reversals (`0009-vercel-retired.md`) |
+| Compliance automation | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts`; ops alerting via `ops-alert.listener.ts` |

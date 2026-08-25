@@ -10,6 +10,12 @@
 
 ---
 
+## Docita Anchor
+
+Everything in this stack is practiced — not just studied — in [docita](https://github.com/CVamsi27/docita), the companion production repo: 482 co-located spec files and Playwright E2E suites back the testing topics, `scripts/perf/` budget gates back performance governance, and `docs/runbooks/`, `docs/operations/playbooks/`, and 15 numbered ADRs back production engineering. Each sub-stack INDEX carries its own **Docita Anchor** table with verified file paths; chaos engineering is honestly flagged there as having no direct docita implementation yet.
+
+---
+
 ## Why this stack matters
 
 Quality is what separates a senior engineer from a mid-level one. Every senior interview (especially at FAANG) tests:

@@ -126,3 +126,16 @@ Where accessibility scales (or dies): dashboards and shared components.
 ## Navigation
 
 [← Previous: Testing](../50.1-testing/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Performance Monitoring →](../50.3-performance-monitoring/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Automated a11y audit script | `scripts/perf/accessibility-audit.ts` + `run-app-accessibility-audit.mjs` |
+| A11y budget gate (CI-style) | `scripts/perf/check-a11y-budget.mjs` + `sync-a11y-baseline.mjs` |
+| A11y E2E coverage | `apps/app/e2e/accessibility.spec.ts` |
+| Keyboard focus styling | `focus-visible` rules in `packages/ui/src/styles/globals.css` and form components (`switch.tsx`, `radio-group.tsx`, …) |

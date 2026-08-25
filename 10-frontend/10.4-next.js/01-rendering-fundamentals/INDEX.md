@@ -25,6 +25,19 @@ SSR / CSR / SSG / ISR → App Router → Server Components → Client Components
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| CSR corner of the matrix | `apps/app/src/main.tsx` - pure client-side rendered SPA shell via `createRoot` |
+| Server-rendered marketing site | `apps/landing/astro.config.mjs` - Astro server-output build (Cloudflare adapter) alongside the CSR app |
+
+_No direct docita Next.js implementation (App Router / RSC / `"use client"`) yet._
+
+---
+
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)

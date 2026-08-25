@@ -77,3 +77,9 @@ Each cheat sheet follows the same structure:
 ## Navigation
 
 [← Previous: Coding Patterns](../70.2-coding-patterns/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Abroad Full-Stack Lane →](../../80-lanes-abroad-full-stack/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Cheat sheets are print-outs, not anchors — they summarize knowledge rather than map to a codebase. Docita itself lives at [github.com/CVamsi27/docita](https://github.com/CVamsi27/docita).

@@ -16,6 +16,10 @@
 
 ---
 
+_No direct docita implementation yet._ (The question bank is Next.js-specific; docita ships no Next.js app to anchor against.)
+
+---
+
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)

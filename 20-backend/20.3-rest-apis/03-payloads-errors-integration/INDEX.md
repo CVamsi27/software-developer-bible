@@ -20,3 +20,18 @@
 ---
 
 [← Back to REST APIs](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Pagination | `apps/api/src/shared/common/pagination.helper.ts` - `paginateWithCursor()` keyset helper feeding repositories |
+| Error design | `apps/api/src/shared/common/errors/forbidden-problem.ts` - problem-details-style payloads reused across guards and filters |
+| Long-running operations | `apps/api/src/shared/modules/queue/pdf-job.service.ts` - enqueue-then-poll PDF jobs with status + signed URL |
+| File upload APIs | `apps/api/src/shared/common/utils/upload.utils.ts` - multer disk storage staged behind MIME/extension checks |
+| Webhooks (ingress) | `apps/api/src/shared/modules/webhooks/razorpay-webhook-verification.helper.ts` - HMAC signature check + replay dedupe |
+| Webhooks (egress) | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - HMAC-signed deliveries with 5s→300s backoff cap |

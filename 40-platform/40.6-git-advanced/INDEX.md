@@ -140,3 +140,16 @@ Keeping large repositories fast and history trustworthy.
 ## Navigation
 
 [← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — automates Git for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Husky pre-commit | `.husky/pre-commit` — fast lint pass on staged changes only (heavy checks deferred) |
+| Husky pre-push as a gate | `.husky/pre-push` runs ~12 cheap standard gates with `--enforce` (jscpd clones, i18n coverage, zod parity, error-boundary coverage…) so bad pushes die before wasting CI; full `verify:standard` stays the merge gate |
+| Bypass escape hatch | Both hooks documented for `--no-verify` hotfixes — pragmatism over dogma |
+| Workflow hygiene | `workflow-staleness.yml` + `check-workflow-script-refs.mjs` keep CI configs from rotting |

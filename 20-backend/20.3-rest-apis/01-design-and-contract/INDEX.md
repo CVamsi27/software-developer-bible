@@ -20,3 +20,19 @@
 ---
 
 [← Back to REST APIs](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+Docita is deliberately REST-first: no GraphQL or gRPC dependency exists — URI-versioned REST documented with OpenAPI.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Versioning | `apps/api/src/main.ts` - `enableVersioning({ type: VersioningType.URI })` |
+| Resource-oriented controllers | `apps/api/src/domains/appointments/presentation/controllers/appointments-schedule.controller.ts` - noun-scoped routes split by concern |
+| OpenAPI contract | `apps/api/src/main.ts` - SwaggerModule spec generated from Zod-typed DTOs |
+
+The maturity model sits at Richardson L2 — resources + verbs + status codes, no HATEOAS.

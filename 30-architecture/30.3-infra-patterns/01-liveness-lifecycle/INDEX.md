@@ -32,3 +32,17 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 ## Navigation
 
 [↑ Infra & Ops Patterns Home](../INDEX.md) · [Next: Failure & Recovery →](../02-failure-and-recovery/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — proves liveness for real (on Fly.io, not Kubernetes).
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Health endpoints | `shared/common/controllers/health-check.controller.ts` + `monitoring/health.service.ts`, `monitoring/health/prisma.health.ts` |
+| Orchestrator probes | Fly `[checks.health]` hits `/api/health/live` every 15s with a 240s deploy grace period (`fly.toml`) |
+| Liveness vs DB readiness | Live probe kept separate from the Prisma health indicator so a DB blip doesn't kill the machine |
+| Scheduler lifecycle | `ENABLE_SCHEDULERS=false` on the API + `cron-heartbeat.ts` in the worker prevent double-running jobs |
+| Suspend/resume lifecycle | ADR 0011: `auto_stop_machines='suspend'` off-hours, auto-start on request |

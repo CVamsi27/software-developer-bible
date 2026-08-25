@@ -10,6 +10,12 @@
 
 ---
 
+## Docita Anchor
+
+Real-time here is not theoretical: [docita](https://github.com/CVamsi27/docita) runs Socket.IO (`^4.8.3`) with two authenticated NestJS gateways sharing a `BaseWebSocketGateway` base class, `clinic:{id}` tenant-scoped rooms, per-connection rate limits, and one deliberate SSE use (AI streaming). Its scaling story is honestly documented in `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary, no Redis pub/sub adapter yet. Category INDEXes under `60.1-websockets/` carry verified **Docita Anchor** tables.
+
+---
+
 ## Topic Categories
 
 The 11 files organize into 5 conceptual categories — the "GoF classification" of real-time systems. Read in order within each.

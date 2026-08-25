@@ -139,3 +139,16 @@ volumes:
 ## Navigation
 
 [← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — uses Docker for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Dockerfile in production | `apps/api/Dockerfile` — the image Fly builds and runs (`fly.toml [build]`) |
+| Compose for local/e2e | `docker-compose.yml`: API service + `postgres:15-alpine`; E2E tests run against this Postgres (`docita_test`) |
+| Image scanning | `.github/workflows/container-scan.yml` scans the built API image |
+| Rootless/runtimes/signing | Not configured — standard Docker runtime, no cosign/SBOM gates |

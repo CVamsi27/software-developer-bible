@@ -20,3 +20,18 @@
 ---
 
 [← Back to Database](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Indexes | `packages/db/prisma/schema.prisma` - composite `@@index([clinicId])` and friends on every tenanted model |
+| Index ROI analysis | `apps/api/src/shared/modules/database/database-index-optimization.service.ts` - pg_stat scan/tuple counts flag dead indexes |
+| Full-text / trigram support | `apps/api/src/shared/modules/search/search-full-text-support.service.ts` - runtime probe of Postgres FTS capability per entity |
+| JSONB boundaries | `apps/api/src/shared/common/json/to-prisma-input-json-value.ts` - typed writer for JSONB columns |
+
+_No EXPLAIN harness or window-function showcase yet_ — plan inspection is manual psql work today.

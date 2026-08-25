@@ -81,3 +81,17 @@ The visual language of software design. LLD interviews expect you to sketch thes
 ## Navigation
 
 [← Design Patterns Home](../INDEX.md) · [Next: Creational Patterns →](../02-creational/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — exercises these foundations in real code.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| DIP / Dependency Inversion | Constructor injection throughout; repositories bound to DI tokens and enforced by `scripts/checks/check-repository-di-tokens.mjs` |
+| OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — new behavior is registered, not edited in |
+| SRP | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
+| ISP | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts` |
+| SoC / module boundaries | Domain layout enforced in CI by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |

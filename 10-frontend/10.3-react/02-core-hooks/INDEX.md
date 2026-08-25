@@ -26,6 +26,19 @@ useState → useEffect → useMemo / useCallback → useRef → Context API.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| useState & functional updates | `packages/hooks/src/use-toggle.ts` - `setState(prev => !prev)` tuple-return hook |
+| useEffect sync & cleanup | `packages/hooks/src/use-local-storage.ts` - state synced both ways with `localStorage` inside effects |
+| useRef for DOM/mutable values | `packages/hooks/src/use-click-outside.ts` - ref containment check against outside pointer events |
+| Context API | `apps/app/src/lib/auth/auth-context-inner.ts` - `createContext<AuthContextType \| undefined>` split from its provider file |
+
+---
+
 ## Navigation
 
 [← Back to React](../INDEX.md)

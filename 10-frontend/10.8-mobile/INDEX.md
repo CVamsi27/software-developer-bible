@@ -46,6 +46,19 @@ Already a TS monorepo? → RN maximizes shared types/logic/hooks
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Web/mobile code sharing (TS monorepo) | `pnpm-workspace.yaml` - `apps/*` + `packages/*` workspace sharing types/hooks/utils across all frontends |
+| PWA as the cross-platform route | `apps/app/public/sw.js` - offline app-shell service worker behind `apps/app/src/components/pwa/pwa-register.tsx` |
+
+_React Native, Expo, deep linking/universal links, and RN-specific testing: no direct docita implementation yet._
+
+---
+
 ## Navigation
 
 [← Previous: HTML/CSS & PWA](../10.7-html-css/INDEX.md) · [ Back to Index](../../INDEX.md)

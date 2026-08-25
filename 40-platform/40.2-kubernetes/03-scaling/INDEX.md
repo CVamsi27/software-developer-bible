@@ -33,3 +33,18 @@ Kubernetes' core promise is elastic scale — but HPA does nothing until the met
 ## Navigation
 
 [← Networking & Config](../02-networking-and-config/INDEX.md) · [↑ Kubernetes Home](../INDEX.md) · [Next: Production Hardening →](../04-production-hardening/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet_ — no HPA/Karpenter; scaling is deliberate Fly.io mechanics:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| HPA analog (per-machine concurrency) | `fly.toml [http_service.concurrency]` — soft 60 / hard 100 requests per machine |
+| Scheduled scaling | `.github/workflows/scale-api-hours.yml` grows/shrinks machines with IST business hours |
+| Scale-to-zero | ADR 0011: `auto_stop_machines='suspend'`, auto-start on request |
+| Node autoscaling / VPA / Karpenter | _No direct docita implementation yet._ |

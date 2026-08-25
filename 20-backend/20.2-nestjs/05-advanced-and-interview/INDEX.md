@@ -17,3 +17,17 @@
 ---
 
 [← Back to NestJS](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Custom method decorators | `apps/api/src/shared/modules/auth/decorators/require-policy.decorator.ts` - @RequirePolicy metadata consumed by PolicyGuard |
+| Route metadata decorators | `apps/api/src/shared/modules/idempotency/requires-idempotency.decorator.ts` - marker drives IdempotencyInterceptor |
+| Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard |
+
+Every interview question about decorators/lifecycle is answerable from these files — walk `app.module.ts` registrations to narrate the chain end-to-end.

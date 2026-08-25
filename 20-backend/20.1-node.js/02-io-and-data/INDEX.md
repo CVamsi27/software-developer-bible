@@ -19,3 +19,18 @@
 ---
 
 [← Back to Node.js](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Buffers | `apps/api/src/shared/modules/document-generation/pdf/pdf-generator.service.ts` - PDFKit document assembled chunk-by-chunk into a returned `Buffer` |
+| File system | `apps/api/src/shared/modules/database/database-backup.service.ts` - spawns `pg_dump`, writes dump files under a retention policy |
+| File uploads | `apps/api/src/shared/common/utils/upload.utils.ts` - multer `diskStorage` temp dir gated by a MIME allow-list |
+| HTTP module / server | `apps/api/src/main.ts` - Express bootstrap: CORS allow-list, helmet, URI versioning, Sentry instrumentation |
+
+_Raw `stream.pipeline()` wiring: no direct docita implementation yet._ Streaming happens inside libraries; uploads stage to disk instead of piping through transforms.

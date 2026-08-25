@@ -127,3 +127,17 @@ HR + resume          leadership questions
 ## Navigation
 
 [← Previous: Strategy](../../00-strategy/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Coding Patterns →](../70.2-coding-patterns/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — its artifacts are raw material for your behavioral stories.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Judgment / decision-writing (how you think, on record) | `docs/architecture/decisions/` — 15 numbered ADRs incl. honest reversals (`0009-vercel-retired.md`, `0012-replace-nextjs-with-vite-spa.md`) and deferrals (`0004-rls-rollout-deferred.md`) |
+| Incident-response practice (STAR story fuel) | `docs/runbooks/` + `docs/operations/playbooks/` (`razorpay-outage.md`, `db-connection-exhaustion.md`) |
+| Ownership beyond code (compliance ops) | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts` |
+
+Frame these as *your* decision and incident narratives: an ADR you authored, a playbook you executed, a retention policy you shipped — the repo proves the practice exists.

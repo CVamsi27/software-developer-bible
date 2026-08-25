@@ -46,3 +46,16 @@
 ## Navigation
 
 [← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [< Back to Platform](../INDEX.md) · [Next: CDN & Edge →](../40.10-cdn/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets reverse proxies — plainly: **no self-managed nginx exists**; the proxy is consumed, not operated.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| TLS termination (managed) | Twice: Cloudflare edge, then Fly's router (`http_service.force_https = true`) — zero nginx config owned by me |
+| Trusting the proxy layer | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client IPs from CF headers; ADR 0014 restricts ingress to CF ranges |
+| Proxy behaviors I still own | Timeouts/budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed |
+| nginx/HAProxy/Envoy ops stories | _No direct docita implementation yet._ |

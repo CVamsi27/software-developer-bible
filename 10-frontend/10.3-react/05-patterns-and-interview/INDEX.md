@@ -24,6 +24,17 @@ Portals → Compound Components → Interview Questions.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Portals | `packages/ui/src/components/overlay/dialog.tsx` - `DialogPrimitive.Portal` wrapper rendering dialogs outside the DOM tree |
+| Compound components | `packages/ui/src/components/form/form-primitives.tsx` - FormField/FormLabel/FormControl/FormMessage kit backed by context in `packages/ui/src/components/form/form.tsx` |
+
+---
+
 ## Navigation
 
 [← Back to React](../INDEX.md)

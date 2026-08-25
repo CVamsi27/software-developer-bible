@@ -34,3 +34,11 @@ Nobody hand-writes 40 YAML files per release anymore — they install a Helm cha
 ## Navigation
 
 [← Production Hardening](../04-production-hardening/INDEX.md) · [↑ Kubernetes Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet._ No Helm charts, Kustomize overlays, CRDs, or operators exist in the repo — the only packaging artifact is `apps/api/Dockerfile`, deployed by plain CI. [future]: if docita ever outgrows a single Fly app, I'd start with Kustomize-style env overlays before reaching for Helm.

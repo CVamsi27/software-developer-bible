@@ -36,3 +36,18 @@ CI platforms differ in syntax but not in substance: check out, build image, push
 ## Navigation
 
 [← CI Platforms](../01-ci-platforms/INDEX.md) · [↑ CI/CD Home](../INDEX.md) · [Next: Releases & Metrics →](../03-releases-and-metrics/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — builds and deploys for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Docker build in CI | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; scanned by `container-scan.yml` |
+| Deploy pipeline | `deploy.yml` + `scripts/deploy/fly-deploy-in-primary-region.sh` (pins deploys to primary region `sin`) |
+| DB migration gate | `db-migrations.yml` + `verify-db-schema-sync.sh` before rollout |
+| Canary deploy | `scripts/deploy/worker-canary-deploy.sh` for the worker app |
+| Supply-chain checks | `osv-scanner.toml`, `pnpm audit --audit-level=high` gate, workflow script-ref checks |
+| Artifact registries / SLSA attestations | _No direct docita implementation yet._ |

@@ -105,6 +105,20 @@ Production concerns.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Theming & design tokens | `packages/ui/src/styles/globals.css` - oklch semantic token system with dark-variant overrides |
+| Tailwind architecture | `packages/ui/tailwind.config.ts` - CSS-variable color bridge and `darkMode: class + data-theme` |
+| Accessibility auditing | `scripts/perf/accessibility-audit.ts` - Playwright + axe violation reports per app/page |
+| PWA service worker | `apps/app/src/components/pwa/pwa-register.tsx` - prod-only SW registration; precached shell + offline fallback in `apps/app/public/sw.js` |
+| SEO meta tags | `apps/landing/src/layouts/main-layout.astro` - title/description/canonical/OG metadata in the marketing layout |
+
+---
+
 ## Navigation
 
 [← Previous: Animation](../10.6-animation/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Mobile →](../10.8-mobile/INDEX.md)

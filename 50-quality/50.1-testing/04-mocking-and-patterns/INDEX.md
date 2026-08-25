@@ -54,3 +54,16 @@ Interview trap: "Your test mocks half the system — what are you actually verif
 ## Navigation
 
 [← Test Levels](../03-test-levels/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Advanced →](../05-advanced/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Clock mock | `apps/api/src/test-utils/fixed-clock.mock.ts` |
+| Factories / builders | `apps/api/src/test-utils/factories.ts` |
+| Time injection seam (mock at the port, not the call site) | `apps/api/src/shared/common/ports/clock.port.ts` ← `system-clock.service.ts` |
+| Guard-level spec example | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.spec.ts` |

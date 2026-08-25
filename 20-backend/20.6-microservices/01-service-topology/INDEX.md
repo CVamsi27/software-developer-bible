@@ -19,3 +19,19 @@
 ---
 
 [← Back to Microservices](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+Docita is a **modular monolith**: one API deployable plus one worker deployable — no discovery registry, mesh, or gateway product.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Modular monolith topology | `apps/api/src/app.module.ts` - ~20 bounded-context modules in a single deployable |
+| Worker as separate deployable | `apps/worker/src/main.ts` - own Fly.io process (`apps/worker/fly.toml`) for crons and jobs |
+| Incremental cutover lever | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - per-clinic flags enable strangler-style rollout |
+
+Consul/Eureka, Istio/Linkerd, and API-gateway products not used; they would arrive with the second independently deployed service — DNS plus a gateway first, a mesh only when mTLS/traffic-shifting pain is real.

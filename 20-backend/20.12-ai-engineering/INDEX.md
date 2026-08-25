@@ -55,6 +55,22 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
                 └── feature flag / KILL SWITCH (default-off for regulated data)
 ```
 
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Kill-switched provider access | `apps/api/src/shared/modules/ai/openai.service.ts` - `AI_EXTERNAL_ENABLED=false` constructs no client at all; responses cached |
+| Structured clinical output | `apps/api/src/shared/modules/ai/clinical-ai.service.ts` - prescription analysis normalized through typed normalizers |
+| OCR extraction pipeline | `apps/api/src/shared/modules/ai/ocr-extraction.service.ts` - vision-based field extraction with per-field confidence |
+| Cost governance | `apps/api/src/shared/modules/ai/ai-credit-guard.service.ts` - per-clinic credit allotment/exhaustion enforcement |
+| Streaming chat | `apps/api/src/shared/modules/ai/ask-ai.service.ts` - history-aware streamed responses |
+
+RAG/vector retrieval: _no direct docita implementation yet_ — governance-first AI is the pattern this stack teaches.
+
 ## Cross-references
 
 - Your working example: Docita AI module — env kill-switch (`AI_EXTERNAL_ENABLED`), response caching, streaming generators, credit guard ([80.21 §Q22](../../80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md))

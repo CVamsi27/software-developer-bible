@@ -208,3 +208,17 @@ Modern TS: a `module.ts` file often *contains* a Facade.
 ## Navigation
 
 [← Creational Patterns](../02-creational/INDEX.md) · [↑ Design Patterns Home](../INDEX.md) · [Next: Behavioral Patterns →](../04-behavioral/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — wraps and composes for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — delegation enforced by `scripts/checks/check-facade-delegation.mjs` |
+| Adapter | India's ABDM government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
+| Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, CSRF, tenant-context around handlers |
+| Module | ES modules + barrel `index.ts` files at every module boundary |
+| Proxy / Flyweight / Composite / Bridge | _No direct docita implementation yet._ |

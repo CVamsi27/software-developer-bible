@@ -284,3 +284,18 @@ They compose: resolve `Optional` to a real-or-null-object at the boundary, then 
 ## Navigation
 
 [← Structural Patterns](../03-structural/INDEX.md) · [↑ Design Patterns Home](../INDEX.md) · [Next: Architectural Patterns →](../05-architectural/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — collaborates for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Strategy | Import strategies (`imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
+| Template Method | `document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `queue/base-pdf.processor.ts`, `search-strategy.base.ts` |
+| Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, ADR 0010) |
+| Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue/follow-up twins); queue jobs as command objects |
+| Chain of Responsibility | Nest guard→interceptor→pipe request pipeline (tenant-context, CSRF, rate-limit) |
+| Null Object | _No direct docita implementation yet._ |

@@ -19,3 +19,18 @@
 ---
 
 [← Back to Database](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Transactions | `apps/api/src/prisma/transaction-runner.ts` - ITransactionRunner wraps `$transaction` for use cases |
+| Advisory locks | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - `pg_try_advisory_xact_lock` gives scheduled jobs single-flight |
+| Transient-failure retries | `apps/api/src/shared/common/interceptors/prisma-retry.interceptor.ts` - P-coded transient errors retried with backoff |
+| RLS-aware tx propagation | `apps/api/src/shared/modules/rls/active-tx.storage.ts` - AsyncLocalStorage hands the open tx to RLS session setters |
+
+Replication/failover not used — a single managed Postgres instance; read replicas would arrive with reporting load.

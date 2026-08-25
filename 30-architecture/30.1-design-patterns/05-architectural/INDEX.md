@@ -196,3 +196,18 @@ If a junior engineer is proposing CQRS + Event Sourcing for a CRUD blog, that is
 ## Navigation
 
 [← Behavioral Patterns](../04-behavioral/INDEX.md) · [↑ Design Patterns Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — does architecture for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Repository | `shared/common/repositories/base.repository.ts` (+ `prisma-read-base.ts`), per-domain repos bound via DI tokens (CI-enforced) |
+| CQRS & DI | CQRS-lite command/query split in `domains/appointments/application/services/*`; constructor injection wired in every `*.module.ts` |
+| Ports & Adapters (hexagonal) | `domains/*/application/ports/*` + `infrastructure/repositories/*`; cross-domain infrastructure imports blocked by CI checks |
+| Anti-Corruption Layer | The whole `abdm` domain isolates India's ABDM government API behind its own core/application/presentation layers |
+| Service Locator vs DI | Constructor injection chosen everywhere; no locator — registry-style lookups confined to strategy registries |
+| Event Sourcing / Saga / MVC-MVP-MVVM | _No direct docita implementation yet._ (transactional outbox is the closest cousin to event-driven publishing) |

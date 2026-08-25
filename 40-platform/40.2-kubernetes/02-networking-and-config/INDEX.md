@@ -34,3 +34,18 @@ A pod without a Service is unreachable; a Deployment without ConfigMaps/Secrets 
 ## Navigation
 
 [← Core Workloads](../01-core-workloads/INDEX.md) · [↑ Kubernetes Home](../INDEX.md) · [Next: Scaling →](../03-scaling/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets this topic.
+
+_No direct docita implementation yet_ — no Services/Ingress/ConfigMaps; a Fly router + Cloudflare play those roles:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Ingress & TLS termination | Cloudflare edge (origin protection, ADR 0014) → Fly `http_service` with `force_https = true` |
+| ConfigMap-like env config | `fly.toml [env]` block + turbo `globalEnv` allowlist, validated by `shared/modules/config/env-schema.ts` |
+| Secrets handling | Never in-repo; runtime env only (`RAZORPAY_KEY_SECRET`, DB URLs appear solely as env references) |
+| PodPresets / admission injection | _No direct docita implementation yet._ |

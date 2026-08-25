@@ -104,3 +104,9 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 ## Navigation
 
 [← Previous: Backend](../20-backend/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: Quality →](../50-quality/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Every category INDEX and flat stack in this section carries a **Docita Anchor** pointing at [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS monorepo. The platform reality: Docker Compose for local/e2e with one production `apps/api/Dockerfile` on Fly.io (suspend-to-zero machines, no Kubernetes, no self-managed nginx — Cloudflare edge + Fly router terminate TLS); an 11-workflow GitHub Actions suite with canaried deploys, migration gates, latency-SLO budget checks and synthetic monitoring; husky + turbo + knip tooling across 5 apps; Cloudflare Workers hosting the Astro landing; observability via Prom-style metrics, pino logs and Sentry (honestly: no OpenTelemetry). Gaps — Kubernetes, Helm, GitOps, DORA dashboards, multi-CDN — are marked `_No direct docita implementation yet._` rather than faked.

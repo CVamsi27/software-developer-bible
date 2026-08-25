@@ -20,3 +20,17 @@
 ---
 
 [← Back to Database](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Schema as source of truth | `packages/db/prisma/schema.prisma` - canonical 149-model schema, `pg_trgm` extension, clinicId tenancy columns |
+| Connections | `apps/api/src/prisma/prisma.service.ts` - Prisma over a `pg` Pool (@prisma/adapter-pg) with UTC session config |
+| Performance tooling | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` - Prisma query-event listener logs slow statements |
+
+MVCC/vacuum tuning is delegated to managed Postgres; the SQL-vs-NoSQL question is answered — relational all the way for clinical data.

@@ -21,3 +21,18 @@
 ---
 
 [← Back to Microservices](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| In-process event bus | `apps/api/src/shared/common/events/event.service.ts` - typed publish over EventEmitter2 |
+| Event catalog | `apps/api/src/shared/common/events/domain-events.ts` - enum'd appointment/patient/billing/prescription events |
+| Channel abstraction | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` - channel-agnostic notification fan-out |
+| Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` - circuit-broken ZeptoMail behind IEmailProvider |
+
+Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; the outbox relay would republish to a broker the day events cross deployable boundaries.

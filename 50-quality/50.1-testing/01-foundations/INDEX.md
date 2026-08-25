@@ -47,3 +47,17 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 ## Navigation
 
 [↑ Testing Home](../INDEX.md) · [Next: Frameworks →](../02-frameworks/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Testing strategy doc | `docs/testing/TESTING.md` |
+| Co-located unit tests | 482 `*.spec.ts` files beside their source across `apps/api/src` |
+| Deterministic time (injected clock port) | `apps/api/src/shared/common/ports/clock.port.ts` + `apps/api/src/shared/modules/time/system-clock.service.ts` |
+| Test data factories | `apps/api/src/test-utils/factories.ts` |
+| E2E layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |

@@ -42,3 +42,16 @@ Everything downstream (Performance APIs, profiling, RUM, budgets) exists to move
 ## Navigation
 
 [↑ Performance Home](../INDEX.md) · [Next: Measurement →](../02-measurement/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Web Vitals ingestion service | `apps/api/src/shared/modules/monitoring/monitoring/services/web-vitals-metrics.service.ts` |
+| Metrics aggregation | `apps/api/src/shared/modules/monitoring/monitoring/services/metrics-aggregation.service.ts` |
+| Field-data reporting endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts` |
+| Vitals budget check | `scripts/perf/check-web-vitals-budget.mjs` |

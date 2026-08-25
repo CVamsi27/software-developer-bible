@@ -25,6 +25,18 @@ Event Loop → Promises → Async/Await → Error Handling. This is the most-ask
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Promises & concurrency limits | `packages/utils/src/async/map-with-concurrency.ts` - bounded async worker pool resolved via `Promise.all` |
+| Async/await + timers polling | `apps/app/src/hooks/use-phone-signature-polling.ts` - awaited status checks driving an interval-based poll loop |
+| Error handling for async failures | `packages/utils/src/errors/network-error.ts` - `instanceof Error` narrowing to classify fetch/network failures |
+
+---
+
 ## Navigation
 
 [← Back to JavaScript](../INDEX.md)

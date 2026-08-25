@@ -124,6 +124,19 @@ const animateProps = prefersReducedMotion ? {} : { scale: 1.1 };
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| CSS animations (`@keyframes`) | `packages/ui/src/styles/globals.css` - pulse/shimmer/shake/fade-up keyframes with `prefers-reduced-motion` media blocks |
+| `prefers-reduced-motion` in JS | `packages/hooks/src/use-prefers-reduced-motion.ts` - matchMedia hook plus a reduced-motion scroll-behavior helper |
+
+_Framer Motion, GSAP, React Spring, WAAPI, View Transitions, and Canvas/SVG animation: no direct docita implementation yet._
+
+---
+
 ## Navigation
 
 [← Previous: Form Handling](../10.5-form-handling/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Node.js →](../../20-backend/20.1-node.js/INDEX.md)

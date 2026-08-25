@@ -43,3 +43,15 @@ Answer out loud before reading the model answer; the debugging walkthroughs ("LC
 ## Navigation
 
 [← Optimization & Governance](../03-optimization-and-governance/INDEX.md) · [↑ Performance Home](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at story material you can cite in performance rounds.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| "Design a budget" story | `scripts/perf/route-budgets.config.mjs` (per-route budgets, checked in CI) |
+| Debugging-story material | `slow-query-logging.service.ts` + `query-budget.extension.ts` in `apps/api/src/shared/…` |
+| Ops follow-through story | `docs/operations/SLOS.md` + `ops-alert.listener.ts` |

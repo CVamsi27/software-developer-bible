@@ -27,6 +27,17 @@ Execution Context → Scope → Lexical Environment → Hoisting → Closures �
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Closures | `packages/hooks/src/use-interval.ts` - keeps the latest callback in a ref so interval closures never go stale |
+| Closure factories & scope | `packages/hooks/src/create-mount-initializer.ts` - factory returning a component that closes over its `initialize` callback |
+
+---
+
 ## Navigation
 
 [← Back to JavaScript](../INDEX.md)

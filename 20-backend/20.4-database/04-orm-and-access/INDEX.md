@@ -18,3 +18,18 @@
 ---
 
 [← Back to Database](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Client composition | `apps/api/src/prisma/prisma.service.ts` - `$extends` stack: tenant, encryption, audit-immutability, rls-routing, slow-query, query-budget |
+| Multi-tenancy scoping | `apps/api/src/shared/common/extensions/tenant-scope-policy.ts` - per-model rules force clinicId filters |
+| Transparent field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` - encrypt/decrypt on patient fields inside the query pipeline |
+| Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - abstract BaseRepository (pagination + where builders) under every repo |
+
+The ORM landscape decision is made: Prisma everywhere; no Drizzle/TypeORM/Knex in the workspace.

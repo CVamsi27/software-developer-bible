@@ -180,3 +180,20 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 ## Navigation
 
 [← Back to Security](../INDEX.md) · [Next: Attacks — XSS →](../02-attacks-and-defense/20.5.2.01-xss.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the stages, then see them shipped:
+
+| Stage | Docita evidence |
+|-------|-----------------|
+| 4 · Tokens (JWT) | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` - passport-jwt validation with audience separation (staff vs portal vs WS) |
+| 3 · Sessions & Cookies | `apps/api/src/shared/modules/auth/auth/auth-session.service.ts` - server-side sessions with SHA-256-hashed tokens |
+| 2 · API Keys | `apps/api/src/shared/modules/auth/auth/api-key.service.ts` - CSPRNG keys hashed at rest, scoped access |
+| 7 · MFA | `apps/api/src/shared/modules/auth/auth/mfa.service.ts` - otplib TOTP enrollment, QR codes, bcrypt-hashed backup codes |
+| 8 · Authorization (RBAC) | `apps/api/src/shared/modules/auth/auth/roles.guard.ts` - @Roles gate driven by JWT role claims |
+| 8 · Authorization (ABAC) | `apps/api/src/shared/modules/authorization/abac-policy.registry.ts` - per-resource policies resolved by PolicyGuard + resource resolvers |
+
+Stages 5-6 (OAuth2/OIDC social login, SAML/SCIM) and WebAuthn passkeys: _no direct docita implementation yet._

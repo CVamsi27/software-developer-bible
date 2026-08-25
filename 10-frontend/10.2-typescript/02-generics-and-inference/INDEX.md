@@ -25,6 +25,18 @@ Generics → Infer → Advanced Generics → Type Variance.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Generic functions & constraints | `packages/data-access/src/core/use-api-query.ts` - `<T, TError>` query wrapper using `Omit<UseQueryOptions, …>` |
+| Generic component contracts | `packages/ui/src/components/data-display/data-table.types.ts` - `DataTableColumn<T>` with typed `cell`/`sort` callbacks |
+| Two-type-param inference | `packages/utils/src/async/map-with-concurrency.ts` - `<T, R>` inferred end-to-end through the worker pool |
+
+---
+
 ## Navigation
 
 [← Back to TypeScript](../INDEX.md)

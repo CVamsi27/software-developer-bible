@@ -19,3 +19,16 @@
 ---
 
 [← Back to REST APIs](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Method semantics / idempotency | `apps/api/src/shared/modules/idempotency/idempotency.interceptor.ts` - `Idempotency-Key` header replays stored responses |
+| Status codes & error payloads | `apps/api/src/shared/common/errors/domain.errors.ts` - framework-free errors mapped to HTTP statuses by the global filter |
+| CORS | `apps/api/src/main.ts` - `getCorsOrigins()` allow-list (+ WebSocket twin) |
+| HTTP caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET response caching through CACHE_MANAGER |

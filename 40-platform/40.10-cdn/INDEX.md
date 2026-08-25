@@ -72,3 +72,16 @@
 ## Navigation
 
 [← Previous: Twelve-Factor](../40.9-twelve-factor/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Quality →](../../50-quality/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — uses a CDN for real (Cloudflare).
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| CDN in front of origin | Cloudflare sits before the Fly API: `shared/common/http/cloudflare-ips.ts` trusts CF for real client IPs |
+| Origin protection | ADR 0014 locks the API to accept only Cloudflare-sourced traffic — no direct-to-origin bypass |
+| Edge-hosted assets | `apps/landing` builds to Cloudflare Workers (`wrangler deploy`, `_worker.js`) behind the `DOCITA_CLOUDFLARE` build flag |
+| Multi-CDN / media transforms | _No direct docita implementation yet._ |

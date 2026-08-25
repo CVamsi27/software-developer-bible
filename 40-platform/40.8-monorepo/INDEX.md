@@ -106,3 +106,17 @@ Monorepo tool?
 ## Navigation
 
 [← Previous: Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Twelve-Factor App →](../40.9-twelve-factor/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — IS the monorepo case study.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| pnpm workspaces | `pnpm-workspace.yaml`: `apps/*` (api, app, internal, landing, worker) + `packages/*` (ui, auth, data-access, db, types, utils…) |
+| Turborepo task graph | `turbo.json`: `build` depends on `^build` + `check-types` + `lint`; per-app env allowlists scope cache keys |
+| Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config |
+| Dead-code control | Repo-wide `knip.json`; knip-clean enforced in release evidence |
+| Versioning/publishing | Not applicable — private app monorepo, no npm publishing |

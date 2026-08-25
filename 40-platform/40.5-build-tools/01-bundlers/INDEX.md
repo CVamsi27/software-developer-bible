@@ -45,3 +45,16 @@ New project?
 ## Navigation
 
 [↑ Build Tools Home](../INDEX.md) · [Next: Compilers →](../02-compilers/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — bundles for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Vite | The SPA apps (`apps/app`, `apps/internal`) run on Vite — ADR 0012 records replacing Next.js with a Vite SPA |
+| Astro (SSG) | `apps/landing` builds with Astro, deployable to Cloudflare Workers (`build:cloudflare`, wrangler) |
+| Turbopack / Rspack | _No direct docita implementation yet._ |
+| Build orchestration | Turbo task graph wraps every bundle: `build` depends on `^build` + `check-types` + `lint`, outputs `dist/**` for caching |

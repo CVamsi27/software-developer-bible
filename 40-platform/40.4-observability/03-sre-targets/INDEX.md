@@ -38,3 +38,18 @@ Quick distinction:
 ## Navigation
 
 [← Errors & Health](../02-errors-and-health/INDEX.md) · [↑ Observability Home](../INDEX.md) · [Next: Advanced Telemetry →](../04-advanced-telemetry/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — sets targets and alerts for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Latency SLOs as CI gates | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` — budgets enforced, not just graphed |
+| Web-vitals SLOs | `check:web-vitals:enforce` baseline gate (see release evidence doc P5.8) |
+| Alerting | `ops-alert.service.ts` wired to domain events via listener; admin alert channel under `messaging/admin-alerts` |
+| Runbooks for breaches | `docs/operations/playbooks/*` (DB exhaustion, upstream timeouts, queue backlog) |
+| Synthetic probes | `.github/workflows/synthetic-monitoring.yml` |
+| Burn-rate dashboards / PagerDuty | _No direct docita implementation yet._ |

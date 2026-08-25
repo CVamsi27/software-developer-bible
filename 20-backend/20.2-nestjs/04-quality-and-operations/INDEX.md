@@ -20,3 +20,18 @@
 ---
 
 [← Back to NestJS](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Configuration & validation | `apps/api/src/shared/modules/config/env-schema.ts` - Zod env schema parsed fail-fast at boot |
+| Testing | `apps/api/test/seed-contract.parity.e2e-spec.ts` - e2e suite running against seed factories from `src/test-utils/` |
+| Lifecycle hooks & graceful shutdown | `apps/api/src/prisma/prisma.service.ts` - OnModuleInit/OnModuleDestroy around the pg pool; worker drains on SIGTERM |
+| Scheduling | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` - @TrackHeartbeat on every cron; a CI check enforces coverage |
+| Background jobs | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` - Postgres-backed queue with DLQ replay scheduler |
+| Swagger & OpenAPI | `apps/api/src/main.ts` - DocumentBuilder spec generated from Zod-typed DTOs via nestjs-zod |

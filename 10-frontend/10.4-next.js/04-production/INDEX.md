@@ -24,6 +24,19 @@ Authentication → Image Optimization → Deploying Next.js.
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| RBAC permission matrix | `packages/utils/src/access/effective-permissions.ts` - role/tier/plan-mode access checks shared across apps |
+| Multi-stage Docker deploy | `apps/api/Dockerfile` - `deps` → `runtime` stages copying built workspace packages |
+
+_No NextAuth/middleware auth or built-in image optimization pipeline in docita yet._
+
+---
+
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)

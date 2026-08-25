@@ -21,3 +21,19 @@
 ---
 
 [← Back to Database](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Connection pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` - min/max/idle/maxUses pool policy |
+| Migrations | `packages/db/prisma/migrations/` - 165 ordered Prisma migrations |
+| Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` - spawned pg_dump, retention window, Prometheus metrics |
+| Soft delete | `apps/api/src/shared/common/prisma/active-user.filter.ts` - `deletedAt: null` filter keeps tombstoned users out of reads |
+| Search infrastructure | `apps/api/src/shared/modules/search/strategies/search-strategy.base.ts` - strategy-per-entity search on Postgres full-text |
+
+The interview bank above is answerable entirely from these files plus the slow-query logging service.

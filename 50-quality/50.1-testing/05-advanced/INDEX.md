@@ -49,3 +49,16 @@ Both chapters share one principle: measure a **steady-state metric** first (p95 
 ## Navigation
 
 [← Mocking & Patterns](../04-mocking-and-patterns/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Performance budgets as gates | `scripts/perf/check-perf-budget.mjs` + `scripts/perf/perf-baseline.mjs` |
+| Web Vitals field checks | `scripts/perf/check-web-vitals.mjs` + `check-web-vitals-budget.mjs` |
+| Route-level budgets | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
+| Chaos engineering | _No direct docita implementation yet._ |

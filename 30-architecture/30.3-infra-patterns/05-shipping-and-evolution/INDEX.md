@@ -38,3 +38,17 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 ## Navigation
 
 [← Data at Scale](../04-data-at-scale/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — ships and evolves for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `services/feature-flag.service.ts` |
+| Zero-downtime releases | Fly health-gated deploys (`grace_period 240s`), `worker-canary-deploy.sh`, release-evidence docs in `docs/operations/releases/*` |
+| Safe schema evolution | Migration CI workflow + gates: `check-migration-safety.mjs`, `check-migration-reversibility.mjs` |
+| Cost / FinOps | ADR 0011 suspend-to-zero off-hours + scheduled capacity via `scale-api-hours.yml`; single 2GB machine by design |
+| Data retention | `compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md)) |

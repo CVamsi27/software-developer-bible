@@ -159,3 +159,17 @@ If construction is expensive and most new objects look like existing ones, Proto
 ## Navigation
 
 [← Foundations](../01-foundations/INDEX.md) · [↑ Design Patterns Home](../INDEX.md) · [Next: Structural Patterns →](../03-structural/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — builds objects for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Factory Method | FHIR resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
+| Factory families | `payments/infrastructure/factories/payment-gateway.factory.ts`, `monitoring/factories/monitoring.factory.ts` |
+| Builder | FHIR observation builders: `fhir/factories/observations/builders/*.builder.ts` (blood pressure, heart rate, SpO₂…) behind a shared port |
+| Singleton (enforced, not accidental) | One OpenAI client guaranteed by a CI gate: `scripts/checks/check-openai-client-singleton.mjs` over `shared/modules/ai/openai.service.ts` |
+| Abstract Factory / Prototype | _No direct docita implementation yet._ |

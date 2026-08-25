@@ -39,3 +39,16 @@ Subscriptions (02) build on that gateway foundation; WebRTC (03) needs signaling
 ## Navigation
 
 [← Architecture & Scaling](../02-architecture-and-scaling/INDEX.md) · [↑ WebSockets Home](../INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| NestJS gateways | `apps/api/src/websockets/notifications.gateway.ts`, `payment.websocket.gateway.ts` |
+| Shared base class (template-method paradigm) | `apps/api/src/websockets/base-websocket.gateway.ts` — auth + rate-limit plumbing, gateways own room joins |
+| WS auth guard | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.ts` (+ its spec) |
+| Realtime testing reality | only `ws-jwt-auth.guard.spec.ts` exists — no gateway specs yet (_honest gap_) |

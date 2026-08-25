@@ -27,6 +27,19 @@ Suspense → Error Boundary → Custom Hooks → useSyncExternalStore → Perfor
 
 ---
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+
+| Topic in this category | Docita evidence |
+|------------------------|-----------------|
+| Error boundary (+ Sentry hook) | `packages/ui/src/components/feedback/error-boundary.tsx` - class boundary with `onError` capture and reset |
+| Custom hooks library | `packages/hooks/src/index.ts` - 28 reusable hooks (debounce, storage, media query, shortcuts, …) |
+| useSyncExternalStore contract | `apps/app/src/hooks/use-can-go-back.ts` - storage-event-backed store with server snapshot fallback |
+| State management (Zustand) | `apps/app/src/lib/stores/appearance-store.ts` - store with devtools + persist middleware |
+
+---
+
 ## Navigation
 
 [← Back to React](../INDEX.md)

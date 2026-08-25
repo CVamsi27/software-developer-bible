@@ -33,3 +33,18 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 ## Navigation
 
 [← Build & Deploy](../02-build-and-deploy/INDEX.md) · [↑ CI/CD Home](../INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — releases and measures for real.
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Canary | `scripts/deploy/worker-canary-deploy.sh` rolls the worker app gradually |
+| Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, 240s `grace_period` |
+| Release evidence | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, SLO baselines) |
+| Latency SLOs in CI | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` enforce budgets as gates |
+| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` probes the live deployment |
+| DORA dashboards | _No direct docita implementation yet._ |

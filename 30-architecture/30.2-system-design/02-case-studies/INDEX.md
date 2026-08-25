@@ -82,3 +82,17 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 ## Navigation
 
 [← Previous: Theory](../01-theory/INDEX.md) · [ Back to System Design Index](../INDEX.md) · [Next: Microservices →](../../../20-backend/20.6-microservices/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) meets these case studies — plainly: **hospital management is not an analogy, it IS the product I ship.**
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Hospital Management = the product | `apps/api/src/domains/*`: appointments, patients, prescriptions, billing, inventory, IPD, lab-portal, insurance-claims — this case study is my day job |
+| Notification Service | `messaging/notification-orchestrator.service.ts` + `channels/{email,sms,whatsapp}.channel.ts` + reminders domain |
+| Payment Gateway | Razorpay webhook signature verification helper, `payment.websocket.gateway.ts`, internal billing service, `razorpay-outage.md` playbook |
+| Workflow Engine | `imports/bulk-import-orchestrator.service.ts` + job processor/query services + DLQ replay scheduler |
+| URL Shortener, Uber, Twitter, Netflix, etc. | _No direct docita implementation yet._ |

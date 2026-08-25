@@ -38,3 +38,16 @@ Interviews at scale-focused companies open with "compare logs, metrics, and trac
 ## Navigation
 
 [↑ Observability Home](../INDEX.md) · [Next: Errors & Health →](../02-errors-and-health/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — implements the pillars (honestly: no OTel).
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Metrics | `shared/common/utils/prom-metric-factories.ts` + monitoring services (`metrics-recording`, `metrics-aggregation`, `metrics-query`) persisted via a metrics repository |
+| Logs | Pino structured logging via `observability/pino-options.factory.ts`; PHI scrubbed before emit (`phi-redactor.ts`) |
+| Traces / errors | Sentry, bootstrapped in `apps/api/src/instrument.ts` — **not** OpenTelemetry (`@opentelemetry/core` is only a transitive pin) |
+| Client-side pillar | RUM: `web-vitals-metrics.service.ts` + `monitoring-rum.controller.ts` ingest web vitals |

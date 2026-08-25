@@ -18,3 +18,11 @@
 ---
 
 [← Back to GraphQL](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+_No direct docita implementation yet._ Docita is deliberately REST-first — URI-versioned REST documented via OpenAPI (`apps/api/src/main.ts`); `apps/api/package.json` carries no `@nestjs/graphql` or Apollo dependency. If GraphQL ever lands, schemas would start from these same domain modules and repository ports.

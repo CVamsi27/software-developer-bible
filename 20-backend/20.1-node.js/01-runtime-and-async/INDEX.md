@@ -17,3 +17,17 @@
 ---
 
 [← Back to Node.js](../INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| Event loop & non-blocking I/O | `apps/api/src/prisma/prisma.service.ts` - every DB call is a promise over one shared pg pool; nothing blocks the loop |
+| Timeouts instead of blocked workers | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - rxjs `timeout()` fails hung requests so no route stalls the loop |
+| Event-loop pressure guards | `apps/api/src/shared/common/extensions/query-budget.extension.ts` - per-request Prisma query budget surfaces N+1 storms early |
+
+_Web Streams & `node:test`: no direct docita implementation yet._ Streaming lives inside libraries (PDFKit renders to a `Buffer`), and tests run on Jest (`apps/api/jest.config.ts`), not the built-in runner.

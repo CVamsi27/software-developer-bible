@@ -35,3 +35,16 @@ Every senior engineer owns a pipeline, and the pipeline lives on a platform. Job
 ## Navigation
 
 [↑ CI/CD Home](../INDEX.md) · [Next: Build & Deploy →](../02-build-and-deploy/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — runs CI for real (GitHub Actions).
+
+| Topic | Docita evidence |
+|-------|-----------------|
+| GitHub Actions suite | `.github/workflows/ci.yml` + 10 more: `api-e2e`, `db-migrations`, `deploy`, `container-scan`, `frontend-critical-e2e`, `frontend-e2e-weekly`, `synthetic-monitoring`, `scale-api-hours`… |
+| CI hygiene | `workflow-staleness.yml` + `check-workflow-staleness.mjs` keep workflows from rotting |
+| Local pre-CI layer | Husky pre-push runs the cheap subset of standard gates so bad commits die before wasting a CI run |
+| GitLab / Jenkins / ArgoCD | _No direct docita implementation yet._ |

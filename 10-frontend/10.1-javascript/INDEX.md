@@ -1,8 +1,8 @@
 # JavaScript — Index
 
-> **28 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, and interview questions.
+> **30 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, DOM events, cross-tab communication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-30-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,7 +12,7 @@
 
 ## Topic Categories
 
-The 28 files are organized into 6 category folders. Files in the same category build on each other — read them in order within a category, then move on.
+The 30 files are organized into 6 category folders. Files in the same category build on each other — read them in order within a category, then move on.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
@@ -21,7 +21,7 @@ The 28 files are organized into 6 category folders. Files in the same category b
 | [Async & Concurrency](03-async-concurrency/INDEX.md) | 4 | The hardest topic in JS — the event loop, promises, async/await |
 | [Memory & Data](04-memory-and-data/INDEX.md) | 7 | Choosing the right collection, avoiding memory leaks, understanding GC |
 | [Functional Patterns](05-functional-patterns/INDEX.md) | 5 | The patterns you'll use daily: currying, composition, memoization, generators |
-| [Modern JS (ES2022+) & Interview Prep](06-modern-and-interview/INDEX.md) | 3 | The newest features, Web Workers, and 50+ interview Qs |
+| [Modern JS (ES2022+) & Interview Prep](06-modern-and-interview/INDEX.md) | 5 | The newest features, Web Workers, DOM events, cross-tab communication, and 50+ interview Qs |
 
 ---
 
@@ -118,9 +118,9 @@ The newest features + the interview Q&A bank.
 |--:|------|--------|----------:|
 | 26 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, `ArrayBuffer.transfer` | 20 min |
 | 27 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | 25 min |
-| 28 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 50+ curated questions with answers | 3 hrs (review) |
-
-> Planned chapters from the restructure spec: *DOM Events & Delegation* (`10.1.6.03`) and *Cross-Tab Communication* (`10.1.6.04`) land in a later wave.
+| 28 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | 25 min |
+| 29 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min |
+| 30 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 50+ curated questions with answers | 3 hrs (review) |
 
 ---
 

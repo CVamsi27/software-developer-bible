@@ -1,8 +1,8 @@
 # HTML/CSS & PWA — Index
 
-> **5 files** — HTML fundamentals, CSS layout, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
+> **7 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,6 +16,7 @@
 |----------|------:|----------------|
 | [HTML](#html) | 1 | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs |
 | [CSS](#css) | 1 | Flexbox, Grid, responsive design, CSS variables, modern CSS |
+| [CSS Architecture & Theming](#css-architecture--theming) | 2 | Cascade layers, BEM/CUBE/ITCSS, Modules vs CSS-in-JS vs Tailwind, design tokens, dark mode |
 | [Browser Internals](#browser-internals) | 1 | Critical rendering path, reflow vs repaint, GPU acceleration |
 | [PWA & SEO](#pwa--seo) | 2 | Service workers, offline support, Core Web Vitals, structured data |
 
@@ -34,6 +35,17 @@
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 02 | [CSS Fundamentals](10.7.02-css-fundamentals.md) | Flexbox, Grid, responsive design, media queries, container queries, CSS variables, `:has()` | 45 min |
+
+---
+
+## CSS Architecture & Theming
+
+Styling at scale: how you structure, name, and theme.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies | 35 min |
+| 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md) | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 30 min |
 
 ---
 
@@ -56,17 +68,17 @@ Production concerns.
 | 05 | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min |
 | 04 | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO | 30 min |
 
-> Planned chapters from the restructure spec: *CSS Architecture & Styling Approaches* (`10.7.06`) and *Theming & Design Tokens* (`10.7.07`) land in a later wave.
-
 ---
 
 ## Suggested Study Order
 
 1. **HTML Fundamentals** (30 min) — semantic HTML is the foundation
 2. **CSS Fundamentals** (45 min) — Flexbox + Grid for layout
-3. **Browser Rendering** (30 min) — the mental model for performance
-4. **SEO** (30 min) — Core Web Vitals
-5. **PWA** (30 min) — if relevant to the JD
+3. **CSS Architecture & Styling Approaches** (35 min) — scale without specificity wars
+4. **Theming & Design Tokens** (30 min) — dark mode done right
+5. **Browser Rendering** (30 min) — the mental model for performance
+6. **SEO** (30 min) — Core Web Vitals
+7. **PWA** (30 min) — if relevant to the JD
 
 ---
 
@@ -76,6 +88,8 @@ Production concerns.
 - "What's the difference between LCP and INP?" (Core Web Vitals)
 - "How does the browser render a page?" (critical rendering path)
 - "How do you make a site accessible?" (semantic HTML, ARIA, keyboard)
+- "How would you implement dark mode without a theme flash?" (tokens + pre-paint script)
+- "CSS Modules vs Tailwind vs CSS-in-JS — how do you choose?" (runtime cost, SSR/RSC, tokens)
 - "What's a service worker?" (PWA)
 - "How do you optimize for SEO?" (SSR, structured data, meta tags)
 

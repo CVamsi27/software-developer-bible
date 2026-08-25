@@ -1,8 +1,8 @@
 # React — Index
 
-> **20 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, React 18/19 concurrent APIs, performance, state management, and interview questions.
+> **22 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,14 @@
 
 ## Topic Categories
 
-The 20 files are organized into 5 category folders — read in order within a category.
+The 22 files are organized into 5 category folders — read in order within a category.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [React Internals](01-react-internals/INDEX.md) | 5 | How React actually renders — the mental model that distinguishes senior engineers |
 | [Core Hooks](02-core-hooks/INDEX.md) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
-| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 5 | Suspense, Error Boundary, Custom Hooks, Performance, State Management |
-| [Modern React](04-modern-react/INDEX.md) | 2 | Concurrent rendering, transitions, server components, `use(promise)` |
+| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 6 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management |
+| [Modern React](04-modern-react/INDEX.md) | 3 | Concurrent rendering, transitions, server components, `use(promise)`, React Router data routers |
 | [Patterns & Interview Prep](05-patterns-and-interview/INDEX.md) | 3 | Portals, compound components, 60+ Qs |
 
 ---
@@ -74,10 +74,9 @@ The patterns that solve real problems in production code.
 | 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 25 min |
 | 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 15 min |
 | 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 30 min |
-| 14 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 30 min |
-| 15 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 30 min |
-
-> Planned chapter from the restructure spec: *useSyncExternalStore* (`10.3.3.04`) lands in a later wave.
+| 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 25 min |
+| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 30 min |
+| 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 30 min |
 
 ---
 
@@ -87,10 +86,9 @@ The newest features — what changed in concurrent React and what you need to kn
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 16 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | 30 min |
-| 17 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | 20 min |
-
-> Planned chapter from the restructure spec: *React Router* (`10.3.4.03`) lands in a later wave.
+| 17 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | 30 min |
+| 18 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | 20 min |
+| 19 | [React Router](04-modern-react/10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, defer + Await, protected routes, relative routing, RR vs Next.js | 30 min |
 
 ---
 
@@ -100,9 +98,9 @@ Reusable component patterns + 60+ interview Qs.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 18 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 15 min |
-| 19 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 20 min |
-| 20 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
+| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 15 min |
+| 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 20 min |
+| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
 
 ---
 

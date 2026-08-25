@@ -1,10 +1,10 @@
 # Auth - Security
 
-> **The complete authentication & authorization learning track — planned as a 10-stage flow.** Six stages exist today (read them **in order**, each builds on the previous); four planned chapters complete the video-parity arc and are noted without links until they land.
+> **The complete authentication & authorization learning track — all 10 stages.** Read them **in order**, each builds on the previous; finish with the interview drills.
 >
 > Part of [Security](../INDEX.md) · Prerequisite: [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md)
 
-[![Files](https://img.shields.io/badge/files-6-blue)](#files-in-this-track)
+[![Files](https://img.shields.io/badge/files-10-blue)](#files-in-this-track)
 [![Category](https://img.shields.io/badge/category-Auth-blue)](../INDEX.md)
 
 ---
@@ -12,30 +12,33 @@
 ## The Flow — Read Top to Bottom
 
 ```text
-Stage 0            Stage 3            Stage 4            Stage 5            Stage 8            Stage 9
-FOUNDATIONS   →    SESSIONS      →    TOKENS        →    FEDERATED     →    AUTHORIZATION →    INTERVIEW
-Who are you?       Server remembers   Stateless proof    Identity from      Who may do what?   Drills & war stories
-(hashing, TLS)     you (cookies)      (JWT, refresh)     others (OAuth/OIDC) (RBAC/ABAC/ReBAC) rehearsal
-```
+Stage 0          Stage 1            Stage 2           Stage 3           Stage 4
+FOUNDATIONS  →   BASIC & DIGEST →   API KEYS      →   SESSIONS      →   TOKENS (JWT)
+Who are you?     Legacy HTTP        Machine id for    Server remembers  Stateless proof
+(hashing, TLS)   credentials        services          you (cookies)     (+ refresh rotation)
 
-Planned stages 1-2 (Basic/Digest, API Keys), 6-7 (SSO/SAML, MFA/Passkeys) slot into the sequence above once authored.
+Stage 5          Stage 6            Stage 7           Stage 8           Stage 9
+FEDERATED    →   ENTERPRISE SSO →   STRONG AUTH   →   AUTHORIZATION →   INTERVIEW
+IDENTITY         SAML + SCIM        MFA / PASSKEYS    Who may do what?  Drills & war
+(OAuth / OIDC)   workforce trust    WebAuthn          RBAC/ABAC/ReBAC   stories rehearsal
+```
 
 ---
 
 ## The 10-Stage Auth Track
 
-Stage numbers match the final file IDs `20.5.1.01` … `20.5.1.10`. Stages marked *planned* have no file yet — do not link to them.
+Stage numbers are study order (`0`-`9`), not file IDs — read top to bottom.
 
-| Stage | Topic | File | Time | You can defend… |
-|------:|-------|------|------|------------------|
+| # | Stage | File | Time | You can defend… |
+|--:|-------|------|------|------------------|
 | 0 | Foundations | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, why TLS before anything else |
-| 1 | HTTP Basic & Digest Auth | *planned — coming soon* | — | Authorization header mechanics, Base64-over-TLS, Digest challenge-response, when Basic is still OK |
-| 2 | API Keys | *planned — coming soon* | — | Key generation with CSPRNG, hashing at rest, prefix schemes, rotation, per-key scopes |
+| 1 | HTTP Basic & Digest Auth | [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | 30 min | Authorization header mechanics, Base64-over-TLS only, Digest challenge-response and why it died, when Basic is still OK |
+| 2 | API Keys | [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md) | 30 min | Key generation with CSPRNG, hashing keys at rest, prefix schemes (`sk_live_`), rotation grace windows, per-key scopes |
 | 3 | Sessions & Cookies | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md) | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts |
 | 4 | Tokens (JWT) | [20.5.1.05-jwt.md](20.5.1.05-jwt.md) | 60 min | JWT anatomy, HS256 vs RS256, storage trade-offs, refresh rotation + family revocation |
 | 5 | Federation (OAuth2 / OIDC) | [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md) | 60 min | All OAuth grants, PKCE, OIDC vs OAuth, scopes, social login |
-| 6 | SSO / SAML / Federation | *planned — coming soon* | — | SAML 2.0 flows (SP-/IdP-initiated), assertions & signing, SAML vs OIDC, SCIM provisioning |
-| 7 | MFA / Passkeys / WebAuthn | *planned — coming soon* | — | TOTP/HOTP, WebAuthn ceremonies, passkey sync, assurance levels, recovery as weakest link |
+| 6 | SSO / SAML / Federation | [20.5.1.07-sso-saml-federation.md](20.5.1.07-sso-saml-federation.md) | 45 min | One IdP session many SPs, SAML 2.0 flows (SP-/IdP-initiated), assertions & signing certs, SAML vs OIDC, SCIM + JIT provisioning |
+| 7 | MFA / Passkeys / WebAuthn | [20.5.1.08-mfa-passkeys-webauthn.md](20.5.1.08-mfa-passkeys-webauthn.md) | 45 min | TOTP mechanics (RFC 6238), SMS/SIM-swap weakness, WebAuthn ceremonies, passkey sync, AAL levels, recovery as weakest link |
 | 8 | Authorization (RBAC / ABAC) | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md) | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default |
 | 9 | Interview Drills | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md) | 45 min | Every classic trap question + follow-ups |
 
@@ -104,10 +107,14 @@ The concepts above map to concrete guards/pipes. In interviews, name the enforce
 | Concept | Enforcement point | File to study |
 |---------|-------------------|---------------|
 | Credential check + hash verify | AuthService.login (bcrypt.compare) | [fundamentals](20.5.1.01-auth-fundamentals.md) |
+| Static credential gate (Basic) | BasicAuthGuard decodes header + timing-safe compare | [Basic/Digest](20.5.1.02-http-basic-digest-auth.md) |
+| Machine-to-machine identity | ApiKeyGuard: prefix lookup -> SHA-256 compare -> scopes | [API Keys](20.5.1.03-api-keys.md) |
 | Session issue/rotate | Session middleware + store TTL | [sessions](20.5.1.04-sessions-cookies.md) |
 | Token sign/verify | JwtStrategy (Passport), RS256 via JWKS | [JWT](20.5.1.05-jwt.md) |
 | Refresh rotation + reuse detection | Refresh endpoint; `replacedBy = sha256(new)`; family revoke on replay | [JWT](20.5.1.05-jwt.md) |
 | Social login | Passport Google strategy, auth-code + PKCE | [OAuth2/OIDC](20.5.1.06-oauth2-oidc.md) |
+| Enterprise SSO login | SamlStrategy.validate -> JIT provision -> SP session | [SSO/SAML](20.5.1.07-sso-saml-federation.md) |
+| Second factor ceremony | TotpService.verify or @simplewebauthn loginFinish | [MFA/Passkeys](20.5.1.08-mfa-passkeys-webauthn.md) |
 | Role gate | `@Roles('admin')` + RolesGuard | [RBAC/ABAC](20.5.1.09-rbac-abac.md) |
 | Policy gate | `@RequirePolicy(resource, action)` + PolicyGuard (deny-by-default) | [RBAC/ABAC](20.5.1.09-rbac-abac.md) |
 | Tenant isolation | Tenant interceptor sets context every request; DB-level RLS as backstop | [API security](../02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) |
@@ -121,11 +128,15 @@ The concepts above map to concrete guards/pipes. In interviews, name the enforce
 | Attack | Defended in stage | Key controls |
 |--------|-------------------|--------------|
 | Password cracking / credential stuffing | 0 Fundamentals | Argon2id/bcrypt, rate limiting, breach-password checks |
+| Credential interception on plaintext HTTP | 1 Basic/Digest | TLS everywhere, HSTS, proxy basic-auth only over TLS |
+| API key leakage / abuse | 2 API Keys | Hashed at rest, scopes, IP binding, dual-key rotation, leak runbook |
 | Session hijacking / fixation | 3 Sessions | Rotate ID on login, Secure/HttpOnly, timeouts |
 | Token theft via XSS | 4 Tokens | HttpOnly cookies, CSP, short access TTL |
 | Token theft via CSRF | 3–4 | SameSite=Strict/Lax, double-submit token |
 | Replay of old refresh token | 4 Tokens | Rotation + token-family revocation |
 | Malicious redirect / code interception | 5 OAuth | Allow-list redirect URIs, PKCE |
+| Assertion replay / login CSRF | 6 SAML | InResponseTo check, replay cache, pinned IdP certs |
+| Phishing / AiTM account takeover | 7 MFA | Origin-bound passkeys over SMS/TOTP, guarded recovery |
 | Privilege escalation / IDOR | 8 Authorization | Deny-by-default policies, object-level checks, tenant scoping |
 | Confused deputy (third-party abuse) | 5, 8 | Scopes, consent, audience restriction |
 
@@ -138,13 +149,15 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 | File | Lines of study | Type |
 |------|----------------|------|
 | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | Identity, credentials, crypto primitives for auth | Core concept |
+| [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | Legacy HTTP credential schemes and their limits | Core concept |
+| [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md) | Machine-to-machine credentials done right | Core concept |
 | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md) | Server-side state model | Core concept |
 | [20.5.1.05-jwt.md](20.5.1.05-jwt.md) | Stateless tokens done right | Core concept |
 | [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md) | Delegated identity & access | Core concept |
+| [20.5.1.07-sso-saml-federation.md](20.5.1.07-sso-saml-federation.md) | Enterprise federation & provisioning | Core concept |
+| [20.5.1.08-mfa-passkeys-webauthn.md](20.5.1.08-mfa-passkeys-webauthn.md) | Strong authn: TOTP to phishing-resistant passkeys | Core concept |
 | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md) | Authorization models | Core concept |
 | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md) | 40+ questions with follow-up traps | Drill |
-
-Planned additions (no files yet): `20.5.1.02-http-basic-digest-auth`, `20.5.1.03-api-keys`, `20.5.1.07-sso-saml-federation`, `20.5.1.08-mfa-passkeys-webauthn`.
 
 ---
 
@@ -159,6 +172,7 @@ Planned additions (no files yet): `20.5.1.02-http-basic-digest-auth`, `20.5.1.03
 - [Auth0 — Why refresh tokens rotate](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation)
 - [WebAuthn / Passkeys guide — web.dev](https://web.dev/articles/passkey-registration)
 - [Google Zanzibar paper (ReBAC)](https://research.google/pubs/pub48190/)
+- [Hayk Simonyan — Full Auth Course video: Basic, Digest, API Keys, Sessions, JWT, OAuth2, OIDC, SSO, SAML, Authorization](https://www.youtube.com/watch?v=iX8g4LqF8p8)
 - [The NIST RBAC standard](https://csrc.nist.gov/projects/role-based-access-control)
 
 ---

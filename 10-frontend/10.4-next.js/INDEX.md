@@ -1,8 +1,8 @@
 # Next.js — Index
 
-> **16 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, and interview questions.
+> **17 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,14 @@
 
 ## Topic Categories
 
-The 16 files are organized into 5 category folders — read in order.
+The 17 files are organized into 5 category folders — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
 | [Routing & Middleware](02-routing-and-middleware/INDEX.md) | 3 | Edge middleware, route handlers, metadata/SEO tags |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | The hardest part of Next.js — server actions, caching, streaming, ISR |
-| [Production](04-production/INDEX.md) | 2 | Authentication, image optimization |
+| [Production](04-production/INDEX.md) | 3 | Authentication, image optimization, deployment |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 60+ interview Qs |
 
 ---
@@ -83,8 +83,7 @@ Production concerns.
 |--:|------|--------|----------:|
 | 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 30 min |
 | 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 15 min |
-
-> Planned chapter from the restructure spec: *Deploying Next.js* (`10.4.4.03`) lands in a later wave.
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 30 min |
 
 ---
 
@@ -92,7 +91,7 @@ Production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 16 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
+| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
 
 ---
 
@@ -102,7 +101,7 @@ Production concerns.
 1. Rendering Fundamentals (4 files, ~2 hrs)
 2. Middleware + Route Handlers + Metadata (1 hr)
 3. Data & Caching — the core of App Router (2.5-3 hrs)
-4. Auth + Image Optimization (45 min)
+4. Auth + Image Optimization + Deployment (1.25 hrs)
 5. Interview Questions (3-4 hrs)
 
 ### Path B — Already know App Router, prepping for senior (1-2 days)

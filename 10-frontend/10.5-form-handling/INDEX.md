@@ -1,8 +1,8 @@
 # Form Handling — Index
 
-> **6 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, and interview questions.
+> **7 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -17,6 +17,7 @@
 | [Form Libraries](#form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
 | [Validation](#validation) | 1 | Zod — the standard for runtime + type-safe validation |
 | [Server-Side Patterns](#server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
+| [Draft Persistence](#draft-persistence) | 1 | Autosave, localStorage/IndexedDB, dirty guards, conflict resolution |
 | [Interview Prep](#interview-prep) | 1 | 30+ form-specific Qs |
 
 ---
@@ -64,13 +65,21 @@ Modern Next.js form patterns with Server Actions.
 
 ---
 
+## Draft Persistence
+
+Long-form resilience: never lose user input again.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 30 min |
+
+---
+
 ## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs |
-
-> Planned chapter from the restructure spec: *Autosave & Draft Recovery* (`10.5.06`) lands in a later wave.
 
 ---
 
@@ -79,9 +88,10 @@ Modern Next.js form patterns with Server Actions.
 1. **React Hook Form** (30 min) — the default
 2. **Zod** (30 min) — the validator
 3. **Server Actions** (30 min) — modern Next.js
-4. **TanStack Form** (25 min) — alternative if needed
-5. **Formik** (skim, 10 min) — for legacy
-6. **Interview Questions** (2 hrs)
+4. **Autosave & Draft Recovery** (30 min) — production polish for long forms
+5. **TanStack Form** (25 min) — alternative if needed
+6. **Formik** (skim, 10 min) — for legacy
+7. **Interview Questions** (2 hrs)
 
 ---
 

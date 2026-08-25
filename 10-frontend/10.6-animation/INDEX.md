@@ -1,8 +1,8 @@
 # Animation — Index
 
-> **7 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, and curated interview questions.
+> **8 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, Canvas/SVG rendering, and curated interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,7 +16,7 @@
 |----------|------:|-------------|----------:|
 | [CSS-Native](#css-native) | 1 | Simple transitions, @keyframes, hover effects | 25 min |
 | [JS Libraries](#js-libraries) | 4 | Complex animations, spring physics, timeline sequences | 2 hrs |
-| [Platform APIs](#platform-apis) | 2 | Native browser animation control, view transitions | 1 hr |
+| [Platform APIs](#platform-apis) | 3 | Native browser animation control, view transitions, Canvas/SVG | 1.5 hr |
 | [Interview Prep](#interview-prep) | 1 | 30+ Qs | 2 hrs |
 
 ---
@@ -54,7 +54,8 @@ Need animation?
 ├── Spring physics (natural-feeling bounce)? ──→ React Spring
 ├── Marketing site with complex timelines? ──→ GSAP
 ├── Need imperative control, not React? ──→ WAAPI
-└── Multi-page transition (Next.js)? ──→ View Transitions API
+├── Multi-page transition (Next.js)? ──→ View Transitions API
+└── Hundreds+ of elements / pixel work? ──→ Canvas (or SVG below ~500)
 ```
 
 ---
@@ -66,6 +67,7 @@ Newer browser-native capabilities.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 06 | [View Transitions & Scroll-Driven](10.6.06-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 30 min |
+| 07 | [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md) | rAF loop with delta time, canvas 2D + devicePixelRatio, `stroke-dashoffset` draw-on, SMIL deprecation, performance envelope (DOM vs SVG vs Canvas), OffscreenCanvas workers, React rAF cleanup | 35 min |
 
 ---
 
@@ -75,8 +77,6 @@ Newer browser-native capabilities.
 |--:|------|--------|----------:|
 | 08 | [Interview Questions](10.6.08-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 2 hrs |
 
-> Planned chapter from the restructure spec: *Canvas & SVG Animation* (`10.6.07`) lands in a later wave.
-
 ---
 
 ## Suggested Study Order
@@ -85,8 +85,9 @@ Newer browser-native capabilities.
 2. **Framer Motion** (45 min) — the React default
 3. **Web Animations API** (30 min) — for the interview "what's under the hood"
 4. **View Transitions** (30 min) — modern Next.js
-5. **GSAP + React Spring** — as needed
-6. **Interview Questions** (2 hrs)
+5. **Canvas & SVG** (35 min) — when element counts leave the DOM
+6. **GSAP + React Spring** — as needed
+7. **Interview Questions** (2 hrs)
 
 ---
 

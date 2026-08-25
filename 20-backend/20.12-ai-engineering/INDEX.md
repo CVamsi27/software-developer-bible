@@ -2,7 +2,7 @@
 
 > **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Every senior full-stack loop now touches this; your Docita AI-kill-switch story lives here.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

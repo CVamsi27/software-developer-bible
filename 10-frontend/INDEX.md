@@ -2,9 +2,9 @@
 
 > **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 100+ files across 8 sub-stacks, organized by what you need to know in what order.
+> 99 files across 8 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-100%2B-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-99-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

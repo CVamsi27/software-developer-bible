@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](.)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](../INDEX.md)
-[![Files](https://img.shields.io/badge/files-545%2B-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-492-orange)](../INDEX.md)
 
 ---
 

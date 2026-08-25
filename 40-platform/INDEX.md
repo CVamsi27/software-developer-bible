@@ -2,9 +2,9 @@
 
 > **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 75+ files across 10 sub-stacks — the "how it runs" layer of the bible.
+> 68 files across 10 sub-stacks — the "how it runs" layer of the bible.
 
-[![Files](https://img.shields.io/badge/files-75%2B-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-68-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

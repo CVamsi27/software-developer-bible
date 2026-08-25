@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-545%2B-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-492-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
@@ -59,7 +59,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 10-frontend — Frontend (96 files in 8 sub-stacks)
+### 10-frontend — Frontend (99 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -72,7 +72,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 5 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 1 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA |
 
-### 20-backend — Backend (111 files in 9 sub-stacks)
+### 20-backend — Backend (110 files in 10 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -86,7 +86,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 20.9 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
-### 30-architecture — Architecture (75+ files in 3 sub-stacks)
+### 30-architecture — Architecture (85 files in 3 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 |---|---|------:|--------|
@@ -94,7 +94,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 40 | 20 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
 | 30.3 | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 6+ | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, zero-downtime deployments, data pipelines |
 
-### Platform (64 files in 9 sub-stacks)
+### Platform (68 files in 10 sub-stacks)
 
 | Sub-stack | Files | Topics |
 |-----------|------:|--------|
@@ -192,4 +192,4 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-*Last updated: August 2026 — 545+ files, 300K+ lines, 0 broken links — folders numbered for study order. Design Patterns now organized by GoF category (creational/structural/behavioral/architectural) with all 23 GoF patterns covered.*
+*Last updated: August 2026 — 492 files, 300K+ lines, 0 broken links — folders numbered for study order. Design Patterns now organized by GoF category (creational/structural/behavioral/architectural) with all 23 GoF patterns covered.*

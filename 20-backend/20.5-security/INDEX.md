@@ -2,9 +2,9 @@
 
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [auth/](auth/INDEX.md) deep-dive: fundamentals → sessions → tokens → OAuth → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
-> 16 files — from JWT/OAuth to STRIDE, secrets management, and 50+ curated questions.
+> 15 files — from JWT/OAuth to STRIDE, secrets management, and 50+ curated questions.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![Read time](https://img.shields.io/badge/read%20time-10%2B%20hrs-blueviolet)](#)
@@ -15,13 +15,13 @@
 
 ## Topic Categories
 
-The 16 files are organized into 4 conceptual categories. Read in order within each.
+The 15 files are organized into 5 conceptual categories. Read in order within each.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Authentication (the deep-dive)](#authentication-the-deep-dive) | 5 + 1 interview | JWT, OAuth, sessions, RBAC — the core of every app |
 | [Cryptography Primer](#cryptography-primer) | 1 | Encryption, hashing, TLS — the foundation for auth |
-| [Attacks & Defense](#attacks--defense) | 5 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
+| [Attacks & Defense](#attacks--defense) | 4 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
 | [Hardening & Operations](#hardening--operations) | 3 | Headers, threat modeling, secrets — production hygiene |
 | [Interview Drills](#interview-drills) | 2 | 90+ curated Q&A across auth + general security |
 

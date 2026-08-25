@@ -1,8 +1,8 @@
 # TypeScript — Index
 
-> **15 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, decorators, the `satisfies` operator, and interview questions.
+> **16 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, decorators, the `satisfies` operator, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,7 +12,7 @@
 
 ## Topic Categories
 
-The 15 files are organized into 5 categories — read in order.
+The 16 files are organized into 5 categories — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|

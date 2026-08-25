@@ -4,7 +4,7 @@
 >
 > Part of [Security](../INDEX.md) · Prerequisites: [Encryption & Hashing](../20.5.06-encryption.md)
 
-[![Files](https://img.shields.io/badge/files-7-blue)](#files-in-this-track)
+[![Files](https://img.shields.io/badge/files-6-blue)](#files-in-this-track)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

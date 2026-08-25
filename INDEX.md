@@ -80,7 +80,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 15 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
 | 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 17 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
 | 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 20 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication |
-| 20.5 | [Auth & Security](20-backend/20.5-security/INDEX.md) | 16 | **[auth track](20-backend/20.5-security/auth/INDEX.md):** fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
+| 20.5 | [Auth & Security](20-backend/20.5-security/INDEX.md) | 16 | **[auth track](20-backend/20.5-security/01-auth/INDEX.md):** fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
 | 20.6 | [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) | 17 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |

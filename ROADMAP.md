@@ -56,7 +56,7 @@ Main topic flow — each sub-stack builds on the previous:
 
 *Skip-until-needed:* forms ([10.5](10-frontend/10.5-form-handling/INDEX.md)), animation ([10.6](10-frontend/10.6-animation/INDEX.md)), HTML/CSS ([10.7](10-frontend/10.7-html-css/INDEX.md)), mobile/RN primer ([10.8](10-frontend/10.8-mobile/INDEX.md) — read before studio interviews like MVST).
 
-**Checkpoint 1:** Explain the event loop with a printed-output ordering puzzle; write a typed generic utility live; explain when RSC beats client components. Mock questions: [10.1.26-interview-questions](10-frontend/10.1-javascript/10.1.26-interview-questions.md).
+**Checkpoint 1:** Explain the event loop with a printed-output ordering puzzle; write a typed generic utility live; explain when RSC beats client components. Mock questions: [10.1.26-interview-questions](10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md).
 
 ---
 
@@ -72,7 +72,7 @@ Main topic flow — each sub-stack builds on the previous:
 | Order | Topic | Flow inside |
 |---|---|---|
 | 2.2.1 | [REST fundamentals](20-backend/20.3-rest-apis/INDEX.md) | principles → methods/status codes → versioning → pagination → error handling → caching |
-| 2.2.2 | [API design advanced](20-backend/20.3-rest-apis/INDEX.md) *(in REST APIs stack)* | maturity model → rate limiting algorithms → RFC 7807 → webhooks → gRPC streaming ([microservices](20-backend/20.6-microservices/20.6.16-grpc-streaming.md)) |
+| 2.2.2 | [API design advanced](20-backend/20.3-rest-apis/INDEX.md) *(in REST APIs stack)* | maturity model → rate limiting algorithms → RFC 7807 → webhooks → gRPC streaming ([microservices](20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md)) |
 | 2.2.3 | [GraphQL](20-backend/20.7-graphql/INDEX.md) *(if JD asks)* | schema design → resolvers → N+1/DataLoader → security |
 
 ### 2.3 Data
@@ -80,22 +80,22 @@ Main topic flow — each sub-stack builds on the previous:
 |---|---|---|
 | 2.3.1 | [PostgreSQL core](20-backend/20.4-database/INDEX.md) | normalization → indexes → transactions/MVCC → joins → execution plans → deadlocks |
 | 2.3.2 | [Postgres at scale](20-backend/20.4-database/INDEX.md) | connection pooling → replication → partitioning/sharding theory ([30.2 theory](30-architecture/30.2-system-design/00-theory/INDEX.md)) → performance |
-| 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/20.4.10-prisma.md) → [Prisma advanced](20-backend/20.4-database/20.4.19-prisma-advanced.md) → [Redis fundamentals](20-backend/20.8-caching/20.8.03-redis-fundamentals.md) |
+| 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md) → [Prisma advanced](20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md) → [Redis fundamentals](20-backend/20.8-caching/20.8.02-redis-fundamentals.md) |
 | 2.3.4 | [Caching](20-backend/20.8-caching/INDEX.md) | cache-aside/write-through/write-behind → invalidation → stampede defense → advanced Redis |
 
 ### 2.4 Auth & Security — *the dedicated learning track*
-Study as one connected story, not isolated files → **[20-backend/20.5-security/auth/INDEX.md](20-backend/20.5-security/auth/INDEX.md)**
+Study as one connected story, not isolated files → **[20-backend/20.5-security/01-auth/INDEX.md](20-backend/20.5-security/01-auth/INDEX.md)**
 
 | Stage | Topic | Trade-off you must be able to defend |
 |---|---|---|
-| 0 | [Fundamentals](20-backend/20.5-security/auth/auth-fundamentals.md) | hashing vs encryption vs signing; Argon2 params |
-| 1 | [Sessions & cookies](20-backend/20.5-security/auth/sessions-cookies.md) | server state + instant revocation vs scale |
-| 2 | [JWT](20-backend/20.5-security/auth/jwt.md) | statelessness vs revocation; HS256 vs RS256; storage XSS/CSRF matrix |
-| 3 | [OAuth2/OIDC](20-backend/20.5-security/auth/oauth2-oidc.md) | delegation flows; PKCE; scopes vs roles |
-| 4 | [RBAC/ABAC](20-backend/20.5-security/auth/rbac-abac.md) | coarse vs fine-grained authz; policy engines |
-| | Attacks: [XSS](20-backend/20.5-security/20.5.03-xss.md) · [CSRF](20-backend/20.5-security/20.5.04-csrf.md) · [SQLi](20-backend/20.5-security/20.5.05-sql-injection.md) · [API Top 10](20-backend/20.5-security/20.5.12-api-security-best-practices.md) | each attack ↔ its exact defense |
-| | Hardening: [headers/CSP](20-backend/20.5-security/20.5.09-web-security.md) · [STRIDE](20-backend/20.5-security/20.5.10-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/20.5.11-secrets-management.md) | threat-model any feature in 5 min |
-| | Drill: [auth Q&A](20-backend/20.5-security/auth/interview-questions.md) + [full bank](20-backend/20.5-security/20.5.13-interview-questions.md) | survive the follow-up traps |
+| 0 | [Fundamentals](20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md) | hashing vs encryption vs signing; Argon2 params |
+| 1 | [Sessions & cookies](20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md) | server state + instant revocation vs scale |
+| 2 | [JWT](20-backend/20.5-security/01-auth/20.5.1.05-jwt.md) | statelessness vs revocation; HS256 vs RS256; storage XSS/CSRF matrix |
+| 3 | [OAuth2/OIDC](20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md) | delegation flows; PKCE; scopes vs roles |
+| 4 | [RBAC/ABAC](20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md) | coarse vs fine-grained authz; policy engines |
+| | Attacks: [XSS](20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md) · [CSRF](20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md) · [SQLi](20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md) · [API Top 10](20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | each attack ↔ its exact defense |
+| | Hardening: [headers/CSP](20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md) · [STRIDE](20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md) | threat-model any feature in 5 min |
+| | Drill: [auth Q&A](20-backend/20.5-security/01-auth/20.5.1.10-interview-questions.md) + [full bank](20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md) | survive the follow-up traps |
 
 ### 2.5 Distributed backend & ops patterns
 | Order | Topic | Flow inside |
@@ -244,7 +244,7 @@ software-developer-bible/
 │ ├── 20.2-nestjs framework
 │ ├── 20.3-rest-apis ALL of HTTP/APIs (fundamentals → production → advanced)
 │ ├── 20.4-database Postgres + Prisma (Redis lives in caching)
-│ ├── 20.5-security/auth/ the auth learning track
+│ ├── 20.5-security/01-auth/ the auth learning track
 │ ├── 20.6-microservices single home for distributed patterns (+ event-driven, gRPC streaming)
 │ ├── 20.7-graphql
 │ ├── 20.8-caching cache patterns + Redis fundamentals + advanced Redis

@@ -27,8 +27,8 @@ The 4 content files classify into 3 conceptual categories + drills — the "GoF 
 |---|------|-----------------|
 | 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | RAG vs fine-tuning vs prompting; embeddings; streaming; function calling |
 | 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | Prompt structure, context-window budgeting, how to prove quality (evals) |
-| 3 | [Safety, Cost & Governance](20.12.03-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story |
-| 4 | [Interview Questions](20.12.04-interview-questions.md) | 25+ Q&A with follow-up traps |
+| 3 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story |
+| 4 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps |
 
 ## The Decision Map (memorize)
 

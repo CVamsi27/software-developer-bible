@@ -37,23 +37,23 @@ PASS I — FOUNDATIONS PASS II — DATA PATTERNS PASS III — RESILIENCE PASS IV
 
 | Pass | # | File | Topics |
 |---|---|------|--------|
-| I | 01 | [Service Discovery](20.6.01-service-discovery.md) | Client vs server-side, Consul, Eureka, DNS-based |
-| I | 02 | [API Gateway](20.6.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge |
-| I | 03 | [gRPC](20.6.09-grpc.md) | Protobuf, HTTP/2, code generation |
-| II | 04 | [Event Sourcing](20.6.07-event-sourcing.md) | Event store, rebuilding state, snapshots |
-| II | 05 | [CQRS](20.6.13-cqrs.md) | Command/query separation, read models, eventual consistency |
-| II | 06 | [Saga Pattern](20.6.03-saga-pattern.md) | Choreography vs orchestration, compensating transactions |
-| II | 07 | [Distributed Transactions](20.6.11-distributed-transactions.md) | Saga, outbox, 2PC trade-offs |
-| III | 08 | [Circuit Breaker](20.6.04-circuit-breaker.md) | States, fallbacks, resilience wiring |
-| III | 09 | [Bulkhead Pattern](20.6.14-bulkhead-pattern.md) | Pool isolation, tenant isolation |
-| III | 10 | [Service Mesh](20.6.10-service-mesh.md) | Istio, Linkerd, mTLS, traffic management |
-| IV | 11 | [Kafka](20.6.05-kafka.md) | Topics, partitions, consumer groups, exactly-once |
-| IV | 12 | [RabbitMQ](20.6.06-rabbitmq.md) | Exchanges, queues, durability |
-| IV | 13 | [Message Brokers](20.6.15-message-brokers.md) | Kafka vs RabbitMQ, DLQ discipline |
-| IV | 14 | [Event-Driven Architecture](20.6.17-event-driven-architecture.md) | When events beat requests; producer/consumer, reprocessing |
-| IV | 15 | [Strangler Fig](20.6.12-strangler-fig.md) | Legacy migration, parallel run, dual-write |
-| V | 16 | [gRPC Streaming](20.6.16-grpc-streaming.md) | Streaming modes, gRPC-Web, when gRPC beats REST |
-| | 17 | [Interview Questions](20.6.08-interview-questions.md) | 50+ curated Q&A |
+| I | 01 | [Service Discovery](01-service-topology/20.6.1.01-service-discovery.md) | Client vs server-side, Consul, Eureka, DNS-based |
+| I | 02 | [API Gateway](01-service-topology/20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge |
+| I | 03 | [gRPC](02-communication-and-messaging/20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation |
+| II | 04 | [Event Sourcing](03-data-and-consistency/20.6.3.03-event-sourcing.md) | Event store, rebuilding state, snapshots |
+| II | 05 | [CQRS](03-data-and-consistency/20.6.3.04-cqrs.md) | Command/query separation, read models, eventual consistency |
+| II | 06 | [Saga Pattern](03-data-and-consistency/20.6.3.01-saga-pattern.md) | Choreography vs orchestration, compensating transactions |
+| II | 07 | [Distributed Transactions](03-data-and-consistency/20.6.3.02-distributed-transactions.md) | Saga, outbox, 2PC trade-offs |
+| III | 08 | [Circuit Breaker](04-resilience/20.6.4.01-circuit-breaker.md) | States, fallbacks, resilience wiring |
+| III | 09 | [Bulkhead Pattern](04-resilience/20.6.4.02-bulkhead-pattern.md) | Pool isolation, tenant isolation |
+| III | 10 | [Service Mesh](01-service-topology/20.6.1.03-service-mesh.md) | Istio, Linkerd, mTLS, traffic management |
+| IV | 11 | [Kafka](02-communication-and-messaging/20.6.2.03-kafka.md) | Topics, partitions, consumer groups, exactly-once |
+| IV | 12 | [RabbitMQ](02-communication-and-messaging/20.6.2.04-rabbitmq.md) | Exchanges, queues, durability |
+| IV | 13 | [Message Brokers](02-communication-and-messaging/20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ, DLQ discipline |
+| IV | 14 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer, reprocessing |
+| IV | 15 | [Strangler Fig](01-service-topology/20.6.1.04-strangler-fig.md) | Legacy migration, parallel run, dual-write |
+| V | 16 | [gRPC Streaming](02-communication-and-messaging/20.6.2.02-grpc-streaming.md) | Streaming modes, gRPC-Web, when gRPC beats REST |
+| | 17 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 50+ curated Q&A |
 
 ---
 

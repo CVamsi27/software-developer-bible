@@ -20,7 +20,7 @@ The 17 content files classify into 6 conceptual categories — the "GoF classifi
 | **HTTP Mechanics** | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
 | **Payloads & Errors** | 2 | Pagination, error handling (RFC 7807) — the contract details clients feel daily |
 | **Edge, Scale & Integration** | 4 | Rate limiting, API gateway, BFF, webhooks — surviving traffic and integrating systems |
-| **Security** | 1 | Authentication schemes; pairs with the [auth track](../20.5-security/auth/INDEX.md) |
+| **Security** | 1 | Authentication schemes; pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
 | **Interview Drills** | 1 | Curated Q&A |
 
 ---
@@ -43,7 +43,7 @@ PASS I — FUNDAMENTALS PASS II — PRODUCTION PASS III — ADVANCED
 | I | 04 | [Status Codes](02-http-mechanics/20.3.2.02-status-codes.md) | 2xx/4xx/5xx families, when to use which |
 | I | 05 | [Versioning](01-design-and-contract/20.3.1.03-versioning.md) | URL vs header vs query, deprecation policy |
 | II | 06 | [Pagination](03-payloads-errors-integration/20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive |
-| II | 07 | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/auth/INDEX.md) |
+| II | 07 | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/01-auth/INDEX.md) |
 | II | 08 | [Rate Limiting](04-edge-and-scale/20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits |
 | II | 09 | [CORS](02-http-mechanics/20.3.2.03-cors.md) | Preflight, headers, credentials |
 | II | 10 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors |
@@ -57,7 +57,7 @@ PASS I — FUNDAMENTALS PASS II — PRODUCTION PASS III — ADVANCED
 
 ---
 
-**Cross-references:** [Auth track](../20.5-security/auth/INDEX.md) · [Microservices & distributed patterns](../20.6-microservices/INDEX.md) · [Caching](../20.8-caching/INDEX.md)
+**Cross-references:** [Auth track](../20.5-security/01-auth/INDEX.md) · [Microservices & distributed patterns](../20.6-microservices/INDEX.md) · [Caching](../20.8-caching/INDEX.md)
 
 ---
 

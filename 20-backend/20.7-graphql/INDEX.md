@@ -29,9 +29,9 @@ The mental model — schema-first design.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [GraphQL Overview](20.7.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | 20 min |
-| 02 | [Schema Design](20.7.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 30 min |
-| 03 | [Queries & Mutations](20.7.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 20 min |
+| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | 20 min |
+| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 30 min |
+| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 20 min |
 
 ---
 
@@ -41,8 +41,8 @@ How the server resolves queries.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Resolvers](20.7.04-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | 30 min |
-| 05 | [Apollo Server](20.7.05-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | 25 min |
+| 04 | [Resolvers](02-execution/20.7.2.01-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | 30 min |
+| 05 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | 25 min |
 
 ---
 
@@ -52,8 +52,8 @@ The client-side and the production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Apollo Client](20.7.06-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | 25 min |
-| 07 | [Performance & Security](20.7.07-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | 30 min |
+| 06 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | 25 min |
+| 07 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | 30 min |
 
 ---
 
@@ -61,7 +61,7 @@ The client-side and the production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 08 | [GraphQL Interview Questions](20.7.08-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 08 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
 
 ---
 

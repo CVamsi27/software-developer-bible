@@ -15,8 +15,8 @@
 | Category | File | Why it matters |
 |----------|------|----------------|
 | Patterns & Strategy | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention |
-| Redis Fundamentals | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
-| Advanced Redis | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
+| Redis Fundamentals | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
+| Advanced Redis | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
 
 ---
 
@@ -57,8 +57,8 @@ Need to cache data?
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 45 min |
-| 2 | [Redis Fundamentals](20.8.03-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min |
-| 3 | [Advanced Redis Patterns](20.8.06-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 30 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 30 min |
 
 ---
 

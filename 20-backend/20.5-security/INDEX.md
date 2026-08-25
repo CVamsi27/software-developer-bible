@@ -1,6 +1,6 @@
 # Security — Index
 
-> **The senior security learning track.** Study in three passes: **I. Auth** (the [auth/](auth/INDEX.md) deep-dive: fundamentals → sessions → tokens → OAuth → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
+> **The senior security learning track.** Study in three passes: **I. Auth** (the [auth/](01-auth/INDEX.md) deep-dive: fundamentals → sessions → tokens → OAuth → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
 > 15 files — from JWT/OAuth to STRIDE, secrets management, and 50+ curated questions.
 
@@ -46,15 +46,15 @@ auth/INDEX.md XSS Web Security (headers, CSP)
 
 ## Authentication (the deep-dive)
 
-A standalone track in [auth/](auth/INDEX.md). Read these in order — each builds on the previous.
+A standalone track in [auth/](01-auth/INDEX.md). Read these in order — each builds on the previous.
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
-| 0 | [Auth Fundamentals](auth/auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | 45 min |
-| 1 | [Sessions & Cookies](auth/sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | 45 min |
-| 2 | [JWT](auth/jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | 60 min |
-| 3 | [OAuth2 / OIDC](auth/oauth2-oidc.md) | Grants, PKCE, scopes, social login, SSO/SAML, passkeys | 60 min |
-| 4 | [RBAC / ABAC](auth/rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default | 45 min |
+| 0 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | 45 min |
+| 1 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | 45 min |
+| 2 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | 60 min |
+| 3 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, SSO/SAML, passkeys | 60 min |
+| 4 | [RBAC / ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default | 45 min |
 
 ---
 
@@ -62,7 +62,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
-| 5 | [Encryption, Hashing & TLS](20.5.06-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | 45 min |
+| 5 | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | 45 min |
 
 ---
 
@@ -70,10 +70,10 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
-| 6 | [XSS](20.5.03-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 30 min |
-| 7 | [CSRF](20.5.04-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min |
-| 8 | [SQL Injection](20.5.05-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 30 min |
-| 9 | [API Security Best Practices](20.5.12-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 30 min |
+| 6 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 30 min |
+| 7 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min |
+| 8 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 30 min |
+| 9 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 30 min |
 
 ---
 
@@ -81,9 +81,9 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
-| 10 | [Web Security](20.5.09-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | 30 min |
-| 11 | [Threat Modeling — STRIDE](20.5.10-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | 30 min |
-| 12 | [Secrets Management](20.5.11-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | 25 min |
+| 10 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | 30 min |
+| 11 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | 30 min |
+| 12 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | 25 min |
 
 ---
 
@@ -91,8 +91,8 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 | File | Contents |
 |------|----------|
-| [Auth questions](auth/interview-questions.md) | 40 auth-specific Q&A with follow-up traps |
-| [Full security bank](20.5.13-interview-questions.md) | 50+ curated security Q&A with answers |
+| [Auth questions](01-auth/20.5.1.10-interview-questions.md) | 40 auth-specific Q&A with follow-up traps |
+| [Full security bank](04-interview-drills/20.5.4.01-interview-questions.md) | 50+ curated security Q&A with answers |
 
 ---
 
@@ -136,7 +136,7 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 - **Authentication in REST context:** [REST — Authentication](../20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md)
 - **Enforcement in NestJS:** [Guards](../20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md) · [Interceptors](../20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md)
 - **System-level isolation:** [Microservices (mTLS, mesh)](../20.6-microservices/INDEX.md) · [System Design](../../30-architecture/30.2-system-design/INDEX.md)
-- **AI safety & PII:** [AI Engineering — Safety & Cost](../20.12-ai-engineering/20.12.03-safety-cost-governance.md)
+- **AI safety & PII:** [AI Engineering — Safety & Cost](../20.12-ai-engineering/20.12.06-safety-cost-governance.md)
 
 ---
 

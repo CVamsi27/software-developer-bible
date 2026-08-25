@@ -103,7 +103,8 @@ Before contributing, review the existing files in the relevant section to unders
 - **The 3 lanes** (`00-`, `80-`, `81-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
 - Stack directories are numbered `00-` through `81-` to make it easy to slot new sections in.
 - Each section has an `INDEX.md` file
-- Content files are numbered within their section (`01-`, `02-`, etc.)
+- Large stacks are grouped into category subfolders (`01-`, `02-`, ... study order) with a per-category `INDEX.md`; small stacks stay flat
+- Content files carry hierarchical IDs (`<stack>.<cat>.<seq>-slug.md`) or flat IDs (`<stack>.<seq>-slug.md`), always contiguous
 
 ---
 
@@ -111,13 +112,16 @@ Before contributing, review the existing files in the relevant section to unders
 
 | File Type | Pattern | Example |
 |-----------|---------|---------|
-| Section index | `INDEX.md` | `01-JavaScript/INDEX.md` |
-| Content file | `NN-Slug-Name.md` | `01-Execution-Context.md` |
-| Interview questions | `NN-Interview-Questions.md` | `20-Interview-Questions.md` |
+| Stack folder | `NN.N-slug/` | `10.1-javascript/` |
+| Category folder (stacks >= ~8 chapters) | `NN-slug/` (2-digit study order) | `20.5-security/01-auth/` |
+| Category INDEX | `INDEX.md` inside category folder | `01-auth/INDEX.md` |
+| Content file in a category | `<stack>.<cat>.<seq>-slug.md`, seq contiguous from 01 | `20.5.1.04-sessions-cookies.md` (`cat` = folder number without leading zero) |
+| Content file in a flat stack | `<stack>.<seq>-slug.md`, seq contiguous from 01 | `40.1.06-production-patterns.md` |
+| Interview questions file | same rule, always LAST sequence number | `40.1.10-interview-questions.md` |
 
-- Use **PascalCase** for slug names after the number
-- Use **kebab-case** for directory names (e.g., `11-System-Design/`)
-- Keep filenames descriptive but concise
+- Use **kebab-case** for slugs and directory names
+- Numeric IDs are unique repo-wide and sort correctly lexicographically; sequences are contiguous (no gaps)
+- Verify with: `python3 scripts/check_structure.py`
 
 ---
 

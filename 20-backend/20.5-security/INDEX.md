@@ -133,8 +133,8 @@ A standalone track in [auth/](auth/INDEX.md). Read these in order — each build
 
 ## Cross-References
 
-- **Authentication in REST context:** [REST — Authentication](../20.3-rest-apis/20.3.07-authentication.md)
-- **Enforcement in NestJS:** [Guards](../20.2-nestjs/20.2.05-guards.md) · [Interceptors](../20.2-nestjs/20.2.07-interceptors.md)
+- **Authentication in REST context:** [REST — Authentication](../20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md)
+- **Enforcement in NestJS:** [Guards](../20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md) · [Interceptors](../20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md)
 - **System-level isolation:** [Microservices (mTLS, mesh)](../20.6-microservices/INDEX.md) · [System Design](../../30-architecture/30.2-system-design/INDEX.md)
 - **AI safety & PII:** [AI Engineering — Safety & Cost](../20.12-ai-engineering/20.12.03-safety-cost-governance.md)
 

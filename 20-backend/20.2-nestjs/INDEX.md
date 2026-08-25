@@ -30,10 +30,10 @@ How NestJS apps are structured. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Modules](20.2.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 25 min |
-| 02 | [Controllers](20.2.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 20 min |
-| 03 | [Providers](20.2.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 20 min |
-| 04 | [Dependency Injection](20.2.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 30 min |
+| 01 | [Modules](01-core-architecture/20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 25 min |
+| 02 | [Controllers](01-core-architecture/20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 20 min |
+| 03 | [Providers](01-core-architecture/20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 20 min |
+| 04 | [Dependency Injection](01-core-architecture/20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 30 min |
 
 ---
 
@@ -43,11 +43,11 @@ The order of execution for every request — **every NestJS interview tests this
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 08 | [Middleware](20.2.08-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
-| 05 | [Guards](20.2.05-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
-| 06 | [Pipes](20.2.06-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
-| 07 | [Interceptors](20.2.07-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 25 min |
-| 09 | [Exception Filters](20.2.09-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
+| 08 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
+| 05 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
+| 06 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
+| 07 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 25 min |
+| 09 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
 
 **Lifecycle order:** Middleware → Guards → Pipes → Controller → Interceptors (rxjs pipeline) → Exception Filters.
 
@@ -59,8 +59,8 @@ The patterns NestJS supports out of the box.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 10 | [CQRS](20.2.10-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
-| 11 | [Microservices](20.2.11-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
+| 10 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
+| 11 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
 
 ---
 
@@ -70,8 +70,8 @@ Production hygiene.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 13 | [Testing](20.2.12-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
-| 14 | [Configuration & Validation](20.2.13-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
+| 13 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
+| 14 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
 
 ---
 
@@ -79,8 +79,8 @@ Production hygiene.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 16 | [Custom Decorators](20.2.15-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min |
-| 15 | [Interview Questions](20.2.14-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 16 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min |
+| 15 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 

@@ -82,9 +82,9 @@ Need to cache data?
 
 ## Cross-References
 
-- [HTTP Caching](../20.3-rest-apis/20.3.13-http-caching.md) — cache headers (Cache-Control, ETag)
+- [HTTP Caching](../20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md) — cache headers (Cache-Control, ETag)
 - [System Design — Caching theory](../../30-architecture/30.2-system-design/00-theory/30.2.1.05-caching-patterns.md) — caching in system design
-- [Database — Performance tuning](../20.4-database/20.4.20-postgresql-performance.md) — DB-level caching
+- [Database — Performance tuning](../20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md) — DB-level caching
 
 ---
 

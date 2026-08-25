@@ -29,8 +29,8 @@ How Node.js actually runs JavaScript. The event loop is the most-asked topic in 
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Event Loop](20.1.01-event-loop.md) | Phases (timers, I/O callbacks, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | 30 min |
-| 11 | [Web Streams & Test Runner](20.1.11-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | 30 min |
+| 01 | [Event Loop](01-runtime-and-async/20.1.1.01-event-loop.md) | Phases (timers, I/O callbacks, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | 30 min |
+| 11 | [Web Streams & Test Runner](01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | 30 min |
 
 ---
 
@@ -40,10 +40,10 @@ The I/O primitives — every backend service uses these.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [Streams](20.1.02-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 30 min |
-| 03 | [Buffers](20.1.03-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | 20 min |
-| 05 | [File System](20.1.05-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | 25 min |
-| 06 | [HTTP Module](20.1.06-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | 30 min |
+| 02 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 30 min |
+| 03 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | 20 min |
+| 05 | [File System](02-io-and-data/20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | 25 min |
+| 06 | [HTTP Module](02-io-and-data/20.1.2.04-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | 30 min |
 
 ---
 
@@ -53,9 +53,9 @@ Production concerns — making Node.js scale and stay healthy.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Clustering](20.1.04-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | 25 min |
-| 07 | [Child Processes & Workers](20.1.07-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | 30 min |
-| 08 | [Process & Environment](20.1.08-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | 20 min |
+| 04 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | 25 min |
+| 07 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | 30 min |
+| 08 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | 20 min |
 
 ---
 
@@ -63,8 +63,8 @@ Production concerns — making Node.js scale and stay healthy.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Node.js Security](20.1.09-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 25 min |
-| 10 | [Interview Questions](20.1.10-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 09 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 25 min |
+| 10 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -84,7 +84,7 @@ Production concerns — making Node.js scale and stay healthy.
 
 ## Cross-References
 
-- [JavaScript Event Loop](../../10-frontend/10.1-javascript/10.1.09-event-loop.md) — the JS-level event loop (Node extends this)
+- [JavaScript Event Loop](../../10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md) — the JS-level event loop (Node extends this)
 - [NestJS](../20.2-nestjs/INDEX.md) — the most common Node.js framework
 - [Docker](../../40-platform/40.1-docker/INDEX.md) — how Node.js apps are deployed
 - [Security](../20.5-security/INDEX.md) — broader web security

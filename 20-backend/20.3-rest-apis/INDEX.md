@@ -37,23 +37,23 @@ PASS I — FUNDAMENTALS PASS II — PRODUCTION PASS III — ADVANCED
 
 | Pass | # | File | Topics |
 |---|---|------|--------|
-| I | 01 | [API Design Patterns](20.3.01-api-design-patterns.md) | Resource naming, consistency, evolution |
-| I | 02 | [REST Principles](20.3.02-rest-principles.md) | Stateless, uniform interface, constraints |
-| I | 03 | [HTTP Methods](20.3.03-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency |
-| I | 04 | [Status Codes](20.3.04-status-codes.md) | 2xx/4xx/5xx families, when to use which |
-| I | 05 | [Versioning](20.3.05-versioning.md) | URL vs header vs query, deprecation policy |
-| II | 06 | [Pagination](20.3.06-pagination.md) | Offset vs cursor vs keyset — deep dive |
-| II | 07 | [Authentication](20.3.07-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/auth/INDEX.md) |
-| II | 08 | [Rate Limiting](20.3.08-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits |
-| II | 09 | [CORS](20.3.09-cors.md) | Preflight, headers, credentials |
-| II | 10 | [Error Handling Design](20.3.12-error-handling-design.md) | RFC 7807 problem details, validation errors |
-| II | 11 | [Webhooks](20.3.15-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency |
-| II | 12 | [HTTP Caching](20.3.13-http-caching.md) | ETags, Cache-Control, revalidation |
-| III | 13 | [REST Maturity Model](20.3.17-rest-maturity-model.md) | Richardson L0–L3, HATEOAS |
-| III | 14 | [OpenAPI / Swagger](20.3.11-openapi-swagger.md) | Spec-first design, codegen |
-| III | 15 | [API Gateway](20.3.10-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) |
-| III | 16 | [BFF](20.3.16-bff.md) | Backend-for-frontend pattern |
-| | 17 | [Interview Questions](20.3.14-interview-questions.md) | Curated Q&A |
+| I | 01 | [API Design Patterns](01-design-and-contract/20.3.1.01-api-design-patterns.md) | Resource naming, consistency, evolution |
+| I | 02 | [REST Principles](01-design-and-contract/20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints |
+| I | 03 | [HTTP Methods](02-http-mechanics/20.3.2.01-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency |
+| I | 04 | [Status Codes](02-http-mechanics/20.3.2.02-status-codes.md) | 2xx/4xx/5xx families, when to use which |
+| I | 05 | [Versioning](01-design-and-contract/20.3.1.03-versioning.md) | URL vs header vs query, deprecation policy |
+| II | 06 | [Pagination](03-payloads-errors-integration/20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive |
+| II | 07 | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/auth/INDEX.md) |
+| II | 08 | [Rate Limiting](04-edge-and-scale/20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits |
+| II | 09 | [CORS](02-http-mechanics/20.3.2.03-cors.md) | Preflight, headers, credentials |
+| II | 10 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors |
+| II | 11 | [Webhooks](03-payloads-errors-integration/20.3.3.05-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency |
+| II | 12 | [HTTP Caching](02-http-mechanics/20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation |
+| III | 13 | [REST Maturity Model](01-design-and-contract/20.3.1.04-rest-maturity-model.md) | Richardson L0–L3, HATEOAS |
+| III | 14 | [OpenAPI / Swagger](01-design-and-contract/20.3.1.05-openapi-swagger.md) | Spec-first design, codegen |
+| III | 15 | [API Gateway](04-edge-and-scale/20.3.4.02-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) |
+| III | 16 | [BFF](04-edge-and-scale/20.3.4.03-bff.md) | Backend-for-frontend pattern |
+| | 17 | [Interview Questions](05-interview-drills/20.3.5.01-interview-questions.md) | Curated Q&A |
 
 ---
 

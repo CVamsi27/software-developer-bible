@@ -1,23 +1,23 @@
 # System Design — Foundational Theory
 
-> **20 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+> **21 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-21-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Read all 14 foundational files first**, then the 6 meta guides. After this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
+**Read all 14 foundational files first**, then the 6 meta guides and the transport deep-dive. After this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
 
 ---
 
 ## Topic Categories
 
-The 20 files classify into 6 conceptual categories — the "GoF classification" of distributed systems theory.
+The 21 files classify into 6 conceptual categories — the "GoF classification" of distributed systems theory.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | **Data & Consistency** | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, consensus & leader election, distributed locks |
-| **Traffic & Scale** | 4 | Load balancing, rate limiting, backpressure & flow control, capacity planning |
+| **Traffic & Scale** | 5 | Load balancing, TCP/UDP transport fundamentals, rate limiting, backpressure & flow control, capacity planning |
 | **Performance & Delivery** | 3 | Caching patterns, queues & async, outbox & CDC |
 | **Reliability & Topology** | 4 | Failure modes, resilience deep-dive, multi-region deployment, architecture patterns |
 | **The Method + Drills** | 2 | How-to-approach framework, 50+ interview questions |
@@ -46,7 +46,7 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. |
 | 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. |
 
-## Meta guides (read after the 14)
+## Meta guides & transport deep-dive (read after the 14)
 
 | # | File | What it covers |
 |---|------|----------------|
@@ -56,6 +56,7 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit |
 | 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO |
+| 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale |
 
 ---
 

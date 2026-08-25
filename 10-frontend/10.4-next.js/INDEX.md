@@ -12,15 +12,26 @@
 
 ## Topic Categories
 
-The 16 files are organized into 5 categories — read in order.
+The 16 files are organized into 5 category folders — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Rendering Fundamentals](#rendering-fundamentals) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
-| [App Router & Routing](#app-router--routing) | 4 | The modern routing model: layouts, nested routes, middleware, route handlers |
-| [Data, Caching & Streaming](#data-caching--streaming) | 4 | The hardest part of Next.js — server actions, caching, streaming, ISR |
-| [Auth, SEO & Optimization](#auth-seo--optimization) | 3 | Authentication, metadata, image optimization |
-| [Interview Prep](#interview-prep) | 1 | 60+ interview Qs |
+| [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
+| [Routing & Middleware](02-routing-and-middleware/INDEX.md) | 3 | Edge middleware, route handlers, metadata/SEO tags |
+| [Data & Caching](03-data-and-caching/INDEX.md) | 6 | The hardest part of Next.js — server actions, caching, streaming, ISR |
+| [Production](04-production/INDEX.md) | 2 | Authentication, image optimization |
+| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 60+ interview Qs |
+
+---
+
+## Study Flow
+
+Read categories in numeric order — each builds on the previous:
+
+```text
+01-rendering-fundamentals ─▶ 02-routing-and-middleware ─▶ 03-data-and-caching
+    ─▶ 04-production ─▶ 05-interview-prep
+```
 
 ---
 
@@ -30,49 +41,50 @@ The mental model for choosing the right rendering strategy.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [SSR / CSR / SSG / ISR](10.4.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 25 min |
-| 02 | [App Router](10.4.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | 25 min |
-| 03 | [Server Components](10.4.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | 30 min |
-| 04 | [Client Components](10.4.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | 20 min |
+| 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 25 min |
+| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | 25 min |
+| 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | 30 min |
+| 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | 20 min |
 
 ---
 
-## App Router & Routing
+## Routing & Middleware
 
-The modern App Router model — every Next.js interview tests this.
+The request pipeline — every Next.js interview tests this.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [App Router](10.4.02-app-router.md) | Layouts, nested routes, loading states, error handling | 25 min |
-| 05 | [Middleware](10.4.05-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 20 min |
-| 07 | [Route Handlers](10.4.07-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 15 min |
-| 08 | [Metadata](10.4.08-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 15 min |
+| 05 | [Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 20 min |
+| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 15 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 15 min |
 
 ---
 
-## Data, Caching & Streaming
+## Data & Caching
 
-The hardest part of Next.js — the 4 files every senior engineer must own.
+The hardest part of Next.js — the 6 files every senior engineer must own.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Server Actions](10.4.06-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | 25 min |
-| 09 | [Caching](10.4.09-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 30 min |
-| 10 | [Streaming](10.4.10-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 25 min |
-| 14 | [Incremental Static Regeneration](10.4.14-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 20 min |
-| 15 | [Static Exports](10.4.15-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | 20 min |
-| 16 | [Data Fetching Patterns](10.4.16-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 30 min |
+| 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 30 min |
+| 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | 25 min |
+| 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 30 min |
+| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 25 min |
+| 12 | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 20 min |
+| 13 | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | 20 min |
 
 ---
 
-## Auth, SEO & Optimization
+## Production
 
 Production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 11 | [Image Optimization](10.4.11-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 15 min |
-| 13 | [Authentication](10.4.13-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 30 min |
+| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 30 min |
+| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 15 min |
+
+> Planned chapter from the restructure spec: *Deploying Next.js* (`10.4.4.03`) lands in a later wave.
 
 ---
 
@@ -80,7 +92,7 @@ Production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 12 | [Interview Questions](10.4.12-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
+| 16 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
 
 ---
 
@@ -88,9 +100,9 @@ Production concerns.
 
 ### Path A — Coming from Pages Router (3-5 days)
 1. Rendering Fundamentals (4 files, ~2 hrs)
-2. App Router + Middleware + Route Handlers (1.5 hrs)
-3. Data, Caching & Streaming — the core of App Router (4-5 hrs)
-4. Auth + Image + Metadata (1.5 hrs)
+2. Middleware + Route Handlers + Metadata (1 hr)
+3. Data & Caching — the core of App Router (2.5-3 hrs)
+4. Auth + Image Optimization (45 min)
 5. Interview Questions (3-4 hrs)
 
 ### Path B — Already know App Router, prepping for senior (1-2 days)

@@ -12,15 +12,26 @@
 
 ## Topic Categories
 
-The 16 files are organized into 5 categories — read in order.
+The 16 files are organized into 5 category folders — read in order.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
-| [Foundations](#foundations) | 3 | Types vs interfaces, keyof/typeof, type narrowing — every interview starts here |
-| [Generics & Inference](#generics--inference) | 3 | Generics, infer, advanced generics — the heart of reusable TS code |
-| [Type System Tools](#type-system-tools) | 4 | Utility types, conditional types, mapped types — composable type operations |
-| [Advanced Patterns](#advanced-patterns) | 4 | Decorators, template literals, branded types, declaration files, satisfies — the senior toolkit |
-| [Interview Prep](#interview-prep) | 1 | 50+ curated Q&A |
+| [Foundations](01-foundations/INDEX.md) | 3 | Types vs interfaces, keyof/typeof, type narrowing — every interview starts here |
+| [Generics & Inference](02-generics-and-inference/INDEX.md) | 3 | Generics, infer, advanced generics — the heart of reusable TS code |
+| [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |
+| [Advanced Patterns](04-advanced-patterns/INDEX.md) | 5 | Satisfies, branded types, decorators, declaration files — the senior toolkit |
+| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 50+ curated Q&A |
+
+---
+
+## Study Flow
+
+Read categories in numeric order — each builds on the previous:
+
+```text
+01-foundations ─▶ 02-generics-and-inference ─▶ 03-type-transformations
+    ─▶ 04-advanced-patterns ─▶ 05-interview-prep
+```
 
 ---
 
@@ -30,9 +41,11 @@ How TypeScript represents types.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Types vs Interfaces](10.2.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | 20 min |
-| 06 | [keyof / typeof](10.2.06-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | 20 min |
-| 08 | [Type Narrowing](10.2.08-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | 30 min |
+| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | 20 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | 20 min |
+| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | 30 min |
+
+> Planned chapter from the restructure spec: *tsconfig & Compiler Options* (`10.2.1.04`) lands in a later wave.
 
 ---
 
@@ -42,22 +55,24 @@ Reusable type operations.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [Generics](10.2.02-generics.md) | Generic functions, constraints, default type parameters, conditional generics | 25 min |
-| 05 | [Infer](10.2.05-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 25 min |
-| 10 | [Advanced Generics](10.2.10-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | 30 min |
+| 04 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | 25 min |
+| 05 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 25 min |
+| 06 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | 30 min |
+
+> Planned chapter from the restructure spec: *Type Variance* (`10.2.2.04`) lands in a later wave.
 
 ---
 
-## Type System Tools
+## Type Transformations
 
 The composable operations that make TS powerful.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Utility Types](10.2.03-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | 25 min |
-| 04 | [Conditional Types](10.2.04-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | 25 min |
-| 07 | [Mapped Types](10.2.07-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | 25 min |
-| 16 | [Advanced Patterns](10.2.16-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | 30 min |
+| 07 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | 25 min |
+| 08 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | 25 min |
+| 09 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | 25 min |
+| 10 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | 30 min |
 
 ---
 
@@ -67,11 +82,11 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Decorators](10.2.09-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | 25 min |
-| 12 | [Template Literal Types](10.2.12-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | 30 min |
-| 13 | [Branded Types](10.2.13-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | 25 min |
-| 14 | [Declaration Files](10.2.14-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | 25 min |
-| 15 | [The `satisfies` Operator](10.2.15-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | 20 min |
+| 11 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | 20 min |
+| 12 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | 25 min |
+| 13 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | 25 min |
+| 14 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | 25 min |
+| 15 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | 30 min |
 
 ---
 
@@ -79,7 +94,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 11 | [Interview Questions](10.2.11-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 16 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -87,7 +102,7 @@ Senior-level TS — types as a design tool.
 
 1. **Foundations** (3 files, ~1.5 hrs) — must know
 2. **Generics & Inference** (3 files, ~1.5 hrs) — must know
-3. **Type System Tools** (3 files, ~1.5 hrs) — must know
+3. **Type Transformations** (4 files, ~1.5 hrs) — must know
 4. **Advanced Patterns** (5 files, ~2.5 hrs) — senior level
 5. **Interview Questions** (3 hrs)
 

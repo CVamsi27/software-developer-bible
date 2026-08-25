@@ -27,7 +27,7 @@ The fastest, cheapest animation. Use this first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [CSS Animations](10.6.02-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion | 25 min |
+| 01 | [CSS Animations](10.6.01-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion | 25 min |
 
 **When to use:** Hover effects, simple state transitions, loading spinners. No JS needed; GPU-accelerated; respects `prefers-reduced-motion` for free.
 
@@ -39,10 +39,10 @@ For complex animations.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [Framer Motion](10.6.01-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures | React 18+, default for component animations | 45 min |
-| 05 | [GSAP](10.6.05-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) | Complex sequences, scroll-driven, marketing sites | 30 min |
-| 06 | [React Spring](10.6.06-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* | Physics-based animations (when spring > easing) | 25 min |
-| 04 | [Web Animations API](10.6.04-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations | Imperative control, fine-grained timeline control | 30 min |
+| 02 | [Framer Motion](10.6.02-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures | React 18+, default for component animations | 45 min |
+| 03 | [GSAP](10.6.03-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) | Complex sequences, scroll-driven, marketing sites | 30 min |
+| 04 | [React Spring](10.6.04-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* | Physics-based animations (when spring > easing) | 25 min |
+| 05 | [Web Animations API](10.6.05-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations | Imperative control, fine-grained timeline control | 30 min |
 
 **Decision tree:**
 
@@ -65,7 +65,7 @@ Newer browser-native capabilities.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [View Transitions & Scroll-Driven](10.6.07-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 30 min |
+| 06 | [View Transitions & Scroll-Driven](10.6.06-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 30 min |
 
 ---
 
@@ -73,7 +73,9 @@ Newer browser-native capabilities.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Interview Questions](10.6.03-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 2 hrs |
+| 08 | [Interview Questions](10.6.08-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 2 hrs |
+
+> Planned chapter from the restructure spec: *Canvas & SVG Animation* (`10.6.07`) lands in a later wave.
 
 ---
 

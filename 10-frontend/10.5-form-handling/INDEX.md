@@ -29,7 +29,7 @@ Three main form libraries — pick the right one for the job.
 |--:|------|--------|-------------|----------:|
 | 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 30 min |
 | 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 | Legacy codebases; new projects should use RHF | 20 min |
-| 05 | [TanStack Form](10.5.05-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 25 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 25 min |
 
 **Decision:**
 
@@ -60,7 +60,7 @@ Modern Next.js form patterns with Server Actions.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Server Actions & Form Patterns](10.5.06-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 30 min |
+| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 30 min |
 
 ---
 
@@ -68,7 +68,9 @@ Modern Next.js form patterns with Server Actions.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](10.5.04-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs |
+| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs |
+
+> Planned chapter from the restructure spec: *Autosave & Draft Recovery* (`10.5.06`) lands in a later wave.
 
 ---
 

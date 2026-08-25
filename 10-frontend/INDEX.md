@@ -26,10 +26,10 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 | Order | Sub-stack | Files | Categories | Topics |
 |------:|-----------|------:|------------|--------|
-| 1 | [JavaScript](10.1-javascript/INDEX.md) | 28 | 6 categories | [Execution & Scope](#), [Async & Concurrency](#), [Objects/Prototypes/`this`](#), [Data Structures & Memory](#), [Functional Patterns](#), [Modern JS](#) |
-| 2 | [TypeScript](10.2-typescript/INDEX.md) | 15 | 4 categories | Type system fundamentals, generics, utility types, conditional types, narrowing, modern features |
-| 3 | [React](10.3-react/INDEX.md) | 20 | 5 categories | [React Internals](#), [Core Hooks](#), [Advanced Hooks & Patterns](#), [React 18/19 Modern APIs](#), [Patterns & Interview Prep](#) |
-| 4 | [Next.js](10.4-next.js/INDEX.md) | 16 | 5 categories | [Rendering Fundamentals](#), [App Router & Routing](#), [Data/Caching/Streaming](#), [Auth/SEO/Optimization](#), [Interview Prep](#) |
+| 1 | [JavaScript](10.1-javascript/INDEX.md) | 28 | 6 categories | [Execution & Scope](10.1-javascript/01-execution-and-scope/INDEX.md), [Async & Concurrency](10.1-javascript/03-async-concurrency/INDEX.md), [Objects/Prototypes/`this`](10.1-javascript/02-objects-prototypes-this/INDEX.md), [Memory & Data](10.1-javascript/04-memory-and-data/INDEX.md), [Functional Patterns](10.1-javascript/05-functional-patterns/INDEX.md), [Modern JS](10.1-javascript/06-modern-and-interview/INDEX.md) |
+| 2 | [TypeScript](10.2-typescript/INDEX.md) | 16 | 5 categories | [Foundations](10.2-typescript/01-foundations/INDEX.md), [Generics & Inference](10.2-typescript/02-generics-and-inference/INDEX.md), [Type Transformations](10.2-typescript/03-type-transformations/INDEX.md), [Advanced Patterns](10.2-typescript/04-advanced-patterns/INDEX.md), [Interview Prep](10.2-typescript/05-interview-prep/INDEX.md) |
+| 3 | [React](10.3-react/INDEX.md) | 20 | 5 categories | [React Internals](10.3-react/01-react-internals/INDEX.md), [Core Hooks](10.3-react/02-core-hooks/INDEX.md), [Advanced Hooks & Patterns](10.3-react/03-advanced-hooks-and-patterns/INDEX.md), [Modern React](10.3-react/04-modern-react/INDEX.md), [Patterns & Interview Prep](10.3-react/05-patterns-and-interview/INDEX.md) |
+| 4 | [Next.js](10.4-next.js/INDEX.md) | 16 | 5 categories | [Rendering Fundamentals](10.4-next.js/01-rendering-fundamentals/INDEX.md), [Routing & Middleware](10.4-next.js/02-routing-and-middleware/INDEX.md), [Data & Caching](10.4-next.js/03-data-and-caching/INDEX.md), [Production](10.4-next.js/04-production/INDEX.md), [Interview Prep](10.4-next.js/05-interview-prep/INDEX.md) |
 | 5 | [Form Handling](10.5-form-handling/INDEX.md) | 6 | — | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | 6 | [Animation](10.6-animation/INDEX.md) | 7 | — | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
 | 7 | [HTML/CSS & PWA](10.7-html-css/INDEX.md) | 5 | — | Semantic HTML, CSS layout/responsive, PWA/service workers, SEO, browser rendering |
@@ -68,7 +68,7 @@ The frontend stack is large. Here's the topic map so you know what to read in wh
 
 ### Path B — Frontend specialist, deep dive (3-4 weeks)
 1. JavaScript: all 6 categories (6-8 hrs)
-2. TypeScript: all 4 categories (4-5 hrs)
+2. TypeScript: all 5 categories (4-5 hrs)
 3. React: all 5 categories (8-10 hrs)
 4. Next.js: all 5 categories (6-8 hrs)
 5. Specialized topics as relevant

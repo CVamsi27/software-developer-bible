@@ -43,7 +43,7 @@ How the browser turns HTML/CSS/JS into pixels.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Browser Rendering](10.7.05-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 30 min |
+| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 30 min |
 
 ---
 
@@ -53,8 +53,10 @@ Production concerns.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [PWA](10.7.03-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min |
+| 05 | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min |
 | 04 | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO | 30 min |
+
+> Planned chapters from the restructure spec: *CSS Architecture & Styling Approaches* (`10.7.06`) and *Theming & Design Tokens* (`10.7.07`) land in a later wave.
 
 ---
 

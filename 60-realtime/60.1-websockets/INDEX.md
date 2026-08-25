@@ -27,10 +27,10 @@ The 4 main real-time transports.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [WebSockets Overview](60.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | 30 min |
-| 03 | [Server-Sent Events](60.1.03-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
-| 02 | [Socket.IO](60.1.02-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
-| 07 | [WebTransport](60.1.07-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery | 25 min |
+| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | 30 min |
+| 03 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
+| 02 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
+| 07 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery | 25 min |
 
 **Decision tree:**
 
@@ -51,8 +51,8 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Real-Time Architecture](60.1.04-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
-| 08 | [Scaling Patterns](60.1.08-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
+| 04 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
+| 08 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
 
 ---
 
@@ -60,7 +60,7 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [NestJS WebSockets](60.1.05-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
+| 05 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
 
 ---
 
@@ -68,7 +68,7 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Interview Questions](60.1.06-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 06 | [Interview Questions](04-interview-prep/60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

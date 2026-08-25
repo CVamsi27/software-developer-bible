@@ -25,18 +25,18 @@ The 12 patterns that cover most LeetCode problems. **Master these first.**
 
 | # | Pattern | When to recognize | Read time |
 |--:|---------|-------------------|----------:|
-| 01 | [Sliding Window](70.2.01-sliding-window.md) | "Longest/shortest subarray/substring" | 30 min |
-| 02 | [Two Pointers](70.2.02-two-pointers.md) | "Sorted array, find pair/triplet" | 30 min |
-| 03 | [Binary Search](70.2.03-binary-search.md) | "Find first/last position", search in rotated array | 30 min |
-| 04 | [DFS & BFS](70.2.04-dfs-bfs.md) | "Tree/graph traversal", shortest path, connected components | 45 min |
-| 05 | [Backtracking](70.2.05-backtracking.md) | "Generate all permutations/combinations/subsets" | 30 min |
-| 06 | [Dynamic Programming](70.2.06-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence" | 60 min |
-| 07 | [Heap](70.2.07-heap.md) | "Top K, K-way merge, median of stream" | 25 min |
-| 08 | [Trie](70.2.08-trie.md) | "Prefix search, autocomplete, word dictionary" | 20 min |
-| 09 | [Union Find](70.2.09-union-find.md) | "Connected components, redundant connections" | 25 min |
-| 10 | [Topological Sort](70.2.10-topological-sort.md) | "Dependency resolution, course schedule" | 20 min |
-| 11 | [Intervals](70.2.11-intervals.md) | "Merge intervals, meeting rooms, overlapping" | 20 min |
-| 12 | [Greedy & Prefix Sum](70.2.12-greedy-prefix-sum.md) | "Jump game, partition, range sum queries" | 30 min |
+| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md) | "Longest/shortest subarray/substring" | 30 min |
+| 02 | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md) | "Sorted array, find pair/triplet" | 30 min |
+| 03 | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md) | "Find first/last position", search in rotated array | 30 min |
+| 04 | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", shortest path, connected components | 45 min |
+| 05 | [Backtracking](03-recursion-and-optimization/70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets" | 30 min |
+| 06 | [Dynamic Programming](03-recursion-and-optimization/70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence" | 60 min |
+| 07 | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md) | "Top K, K-way merge, median of stream" | 25 min |
+| 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 20 min |
+| 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md) | "Connected components, redundant connections" | 25 min |
+| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule" | 20 min |
+| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | "Merge intervals, meeting rooms, overlapping" | 20 min |
+| 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md) | "Jump game, partition, range sum queries" | 30 min |
 
 **Pattern recognition drill (the first 30 seconds of any problem):**
 
@@ -63,12 +63,12 @@ For staff/principal FAANG questions.
 
 | # | Pattern | When to recognize | Read time |
 |--:|---------|-------------------|----------:|
-| 13 | [Monotonic Stack](70.2.13-monotonic-stack.md) | "Next greater/smaller element, largest rectangle in histogram" | 30 min |
-| 14 | [Segment Tree & BIT](70.2.14-segment-tree.md) | "Range sum/min/max query, point update" | 45 min |
-| 15 | [Bit Manipulation](70.2.15-bit-manipulation.md) | "XOR, bitmask, subset enumeration, popcount" | 25 min |
-| 16 | [String Search — KMP & Rabin-Karp](70.2.16-string-search-kmp-rabin-karp.md) | "Find substring, pattern matching, plagiarism detection" | 30 min |
-| 17 | [Quick Select & Reservoir Sampling](70.2.17-quick-select-reservoir-sampling.md) | "K-th largest, random sample from stream" | 25 min |
-| 18 | [Stack & Queue Patterns](70.2.18-stack-queue-patterns.md) | "LRU cache, sliding window max, min stack" | 30 min |
+| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | "Next greater/smaller element, largest rectangle in histogram" | 30 min |
+| 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md) | "Range sum/min/max query, point update" | 45 min |
+| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | "XOR, bitmask, subset enumeration, popcount" | 25 min |
+| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | "Find substring, pattern matching, plagiarism detection" | 30 min |
+| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | "K-th largest, random sample from stream" | 25 min |
+| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | "LRU cache, sliding window max, min stack" | 30 min |
 
 ---
 

@@ -557,7 +557,7 @@ else:
 | Variant | Example | Usage |
 |---------|---------|-------|
 | Section directory | `- [React](10-frontend/10.3-react/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](50-quality/50.1-testing/50.1.02-jest.md)` | Intra-section links (12% of links) |
+| Specific file | `- [Jest](50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md)` | Intra-section links (12% of links) |
 | Nested path | `- [REST APIs](20-backend/20.3-rest-apis/)` | Cross-section from subdirectories |
 
 ### In Content Files (`## References & Learn More`)

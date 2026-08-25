@@ -30,9 +30,9 @@ Logs, metrics, traces — the foundation of observability.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [Logging](40.4.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | 30 min |
-| 02 | [Monitoring](40.4.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | 30 min |
-| 03 | [Tracing](40.4.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | 30 min |
+| 01 | [Logging](01-pillars/40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | 30 min |
+| 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | 30 min |
+| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | 30 min |
 
 **When to use what:**
 - **Logs** = discrete events ("user X signed up at time T")
@@ -45,8 +45,8 @@ Logs, metrics, traces — the foundation of observability.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Error Tracking](40.4.04-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | 25 min |
-| 05 | [Health Checks](40.4.05-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | 20 min |
+| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | 25 min |
+| 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | 20 min |
 
 ---
 
@@ -56,8 +56,8 @@ The SRE framework.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [SLI / SLO / SLA](40.4.07-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 30 min |
-| 08 | [Alerting](40.4.08-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 25 min |
+| 07 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 30 min |
+| 08 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 25 min |
 
 **Quick distinction:**
 - **SLI** = Service Level Indicator (the metric, e.g., "99.5% of requests succeed")
@@ -72,7 +72,7 @@ The vendor-neutral standard.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [OpenTelemetry](40.4.09-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
+| 09 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
 
 ---
 
@@ -80,7 +80,7 @@ The vendor-neutral standard.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Interview Questions](40.4.06-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 06 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

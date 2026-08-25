@@ -28,8 +28,8 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [Branching Strategies](40.6.01-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 30 min |
-| 02 | [Rebase & Cherry-Pick](40.6.02-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 25 min |
+| 01 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 30 min |
+| 02 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 25 min |
 
 **Decision:**
 
@@ -47,7 +47,7 @@ What branching model?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Git Hooks](40.6.03-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min |
+| 03 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min |
 
 ---
 
@@ -57,7 +57,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Advanced Commands](40.6.04-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
+| 04 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
 | 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
 
 ---
@@ -74,7 +74,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Interview Questions](40.6.05-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 05 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

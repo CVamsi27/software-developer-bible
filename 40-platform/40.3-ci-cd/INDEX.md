@@ -27,10 +27,10 @@ Pick the one your company uses — the patterns are similar.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [GitHub Actions](40.3.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 30 min |
-| 04 | [Jenkins CI/CD](40.3.04-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | 25 min |
-| 05 | [GitLab CI/CD](40.3.05-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | 25 min |
-| 06 | [ArgoCD (GitOps)](40.3.06-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 25 min |
+| 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 30 min |
+| 04 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | 25 min |
+| 05 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | 25 min |
+| 06 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 25 min |
 
 ---
 
@@ -38,8 +38,8 @@ Pick the one your company uses — the patterns are similar.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [Docker Build & Deploy](40.3.02-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | 30 min |
-| 08 | [Pipeline Patterns](40.3.08-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | 30 min |
+| 02 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | 30 min |
+| 08 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | 30 min |
 
 ---
 
@@ -49,7 +49,7 @@ Senior-level patterns for zero-downtime deploys.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Blue-Green & Canary](40.3.03-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 25 min |
+| 03 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 25 min |
 
 **Decision:**
 
@@ -67,7 +67,7 @@ Need zero-downtime deployment?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Interview Questions](40.3.07-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 07 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

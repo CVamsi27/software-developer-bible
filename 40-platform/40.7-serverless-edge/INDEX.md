@@ -26,7 +26,7 @@
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 30 min |
-| 02 | [Edge Functions](40.7.02-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 25 min |
+| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 25 min |
 
 **Decision tree:**
 
@@ -44,8 +44,8 @@ Deploy choice?
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 05 | [AWS Lambda](40.7.05-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
-| 06 | [Vercel Deployments](40.7.06-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
+| 05 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
+| 06 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
 
 ---
 
@@ -53,8 +53,8 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Serverless Patterns](40.7.03-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
-| 07 | [Serverless Frameworks](40.7.07-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
+| 03 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
+| 07 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
 
 ---
 
@@ -62,7 +62,7 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](40.7.04-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+| 04 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
 
 ---
 

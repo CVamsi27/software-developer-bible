@@ -31,10 +31,10 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Pods & ReplicaSets](40.2.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | 30 min |
-| 02 | [Deployments](40.2.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | 30 min |
-| 09 | [StatefulSets & DaemonSets](40.2.09-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | 25 min |
-| 10 | [Jobs & CronJobs](40.2.10-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | 25 min |
+| 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | 30 min |
+| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | 30 min |
+| 09 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | 25 min |
+| 10 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | 25 min |
 
 ---
 
@@ -42,7 +42,7 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Services & Ingress](40.2.03-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, Ingress controllers, TLS, host-based routing | 30 min |
+| 03 | [Services & Ingress](02-networking-and-config/40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, Ingress controllers, TLS, host-based routing | 30 min |
 
 ---
 
@@ -50,9 +50,9 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [ConfigMaps & Secrets](40.2.04-configmaps-secrets.md) | ConfigMaps, Secrets, mounting, env vars, encryption at rest | 25 min |
-| 05 | [HPA & Scaling](40.2.05-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 30 min |
-| 13 | [PodPresets](40.2.13-podpresets.md) | Admission-time injection, env vars, volumes, secrets, label selectors, Kyverno alternatives | 15 min |
+| 04 | [ConfigMaps & Secrets](02-networking-and-config/40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting, env vars, encryption at rest | 25 min |
+| 05 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 30 min |
+| 13 | [PodPresets](02-networking-and-config/40.2.2.03-podpresets.md) | Admission-time injection, env vars, volumes, secrets, label selectors, Kyverno alternatives | 15 min |
 
 ---
 
@@ -60,8 +60,8 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Health Checks](40.2.06-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 25 min |
-| 12 | [Pod Disruption Budgets](40.2.12-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 20 min |
+| 06 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 25 min |
+| 12 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 20 min |
 
 ---
 
@@ -69,8 +69,8 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 11 | [RBAC & Network Policies](40.2.11-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 30 min |
-| 14 | [Resource Quotas](40.2.14-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 25 min |
+| 11 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 30 min |
+| 14 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 25 min |
 
 ---
 
@@ -78,7 +78,7 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Helm](40.2.07-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 30 min |
+| 07 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 30 min |
 
 ---
 
@@ -86,7 +86,7 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 08 | [Interview Questions](40.2.08-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 08 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 

@@ -14,7 +14,7 @@
 
 | Category | File | When to use |
 |----------|------|-------------|
-| [Leadership](#leadership) | [Leadership Questions](70.1.03-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
+| [Leadership](#leadership) | [Leadership Questions](70.1.02-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
 | [System Design Behavioral](#system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" |
 
 ---
@@ -25,7 +25,7 @@ Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 1 | [Leadership Questions](70.1.03-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 45 min |
+| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 45 min |
 
 **Common senior-level questions:**
 - "Tell me about a time you led without authority."

@@ -27,7 +27,7 @@
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Testing Overview](50.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 30 min |
+| 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 30 min |
 
 ---
 
@@ -35,9 +35,9 @@
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 02 | [Jest](50.1.02-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | 30 min |
-| 10 | [Vitest](50.1.10-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | 30 min |
-| 03 | [React Testing Library](50.1.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 30 min |
+| 02 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | 30 min |
+| 10 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | 30 min |
+| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 30 min |
 
 ---
 
@@ -47,9 +47,9 @@ The test pyramid in practice.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 04 | [Unit Testing](50.1.04-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 25 min |
-| 05 | [Integration Testing](50.1.05-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 25 min |
-| 06 | [E2E Testing](50.1.06-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 30 min |
+| 04 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 25 min |
+| 05 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 25 min |
+| 06 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 30 min |
 
 **Test pyramid:**
 
@@ -71,8 +71,8 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Mocking](50.1.07-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | 30 min |
-| 08 | [Test Patterns](50.1.08-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 20 min |
+| 07 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | 30 min |
+| 08 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 20 min |
 
 ---
 
@@ -80,9 +80,9 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 11 | [Performance & Load Testing](50.1.11-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 30 min |
-| 12 | [Chaos Engineering & Game Days](50.1.12-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 30 min |
-| 13 | [Testing Frameworks Comparison](50.1.13-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | 20 min |
+| 11 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 30 min |
+| 12 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 30 min |
+| 13 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | 20 min |
 
 ---
 
@@ -90,7 +90,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Testing Interview Questions](50.1.09-interview-questions.md) | 40+ curated questions grouped by difficulty | 2-3 hrs |
+| 09 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty | 2-3 hrs |
 
 ---
 

@@ -54,7 +54,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Monorepo Tools Deep-Dive](40.8.05-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
+| 05 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
 
 ---
 
@@ -62,7 +62,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](40.8.04-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 04 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
 
 ---
 

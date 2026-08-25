@@ -29,7 +29,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 01 | [Core Web Vitals](50.3.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 30 min |
+| 01 | [Core Web Vitals](01-core-metrics/50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 30 min |
 
 **The 3 metrics (memorize thresholds):**
 - **LCP** (Largest Contentful Paint) — should be **≤ 2.5s**
@@ -42,8 +42,8 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 02 | [Performance APIs](50.3.02-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, observers (PerformanceObserver) | 25 min |
-| 03 | [Profiling Tools](50.3.03-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | 30 min |
+| 02 | [Performance APIs](02-measurement/50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, observers (PerformanceObserver) | 25 min |
+| 03 | [Profiling Tools](02-measurement/50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | 30 min |
 
 ---
 
@@ -51,7 +51,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Lighthouse CI](50.3.05-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | 25 min |
+| 05 | [Lighthouse CI](02-measurement/50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | 25 min |
 
 ---
 
@@ -59,7 +59,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Real User Monitoring](50.3.07-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | 25 min |
+| 07 | [Real User Monitoring](02-measurement/50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | 25 min |
 
 ---
 
@@ -67,8 +67,8 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Bundle Analysis](50.3.06-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 25 min |
-| 08 | [Performance Budgets](50.3.08-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 20 min |
+| 06 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 25 min |
+| 08 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 20 min |
 
 ---
 
@@ -76,7 +76,7 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Interview Questions](50.3.04-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs |
+| 04 | [Interview Questions](04-interview-prep/50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs |
 
 ---
 

@@ -88,7 +88,7 @@ When things break (and they will).
 
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — the 3 pillars of observability feed SLOs
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — resilience patterns (circuit breaker, etc.)
-- [Testing — Chaos](../../50-quality/50.1-testing/50.1.12-chaos-engineering.md) — chaos testing in depth
+- [Testing — Chaos](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md) — chaos testing in depth
 
 ---
 

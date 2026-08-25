@@ -58,8 +58,8 @@ Production patterns.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | 25 min |
-| 07 | [Production Patterns](40.1.07-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 30 min |
-| 06 | [Interview Questions](40.1.06-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 07 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 30 min |
+| 06 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

@@ -55,7 +55,7 @@ The foundation — semantic HTML is 90% of accessibility.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | 25 min |
-| 07 | [Forms & Labels](50.2.07-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | 25 min |
+| 07 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | 25 min |
 
 ---
 
@@ -63,7 +63,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Color & Contrast](50.2.06-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | 25 min |
+| 06 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | 25 min |
 
 ---
 
@@ -71,8 +71,8 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Testing A11y](50.2.04-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | 25 min |
-| 05 | [Interview Questions](50.2.05-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 04 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | 25 min |
+| 05 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

@@ -1,8 +1,8 @@
 # System Design — Case Studies
 
-> **22 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
+> **27 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,14 @@
 
 ## Topic Categories — by Difficulty Tier
 
-The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the others.
+The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the others.
 
 | Tier | Case studies | Why this tier |
 |------|--------------|---------------|
-| **Tier 1 — Foundational** (always asked) | URL Shortener, Rate Limiter, Distributed Counter, Notification Service | Small enough to fully design in 40 min; exercises IDs, caching, limits, delivery guarantees |
+| **Tier 1 — Foundational** (always asked) | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Small enough to fully design in 40 min; exercises IDs, caching, limits, delivery guarantees |
 | **Tier 2 — Core domains** (pick 2-3 by JD) | WhatsApp, Chat System, Twitter Feed, Instagram, Netflix, YouTube, Uber, Lyft, Google Drive, Dropbox | The classic senior-loop prompts; each stresses one hard subsystem (fan-out, geo-indexing, sync, transcoding) |
-| **Tier 3 — Consistency-critical** (fintech/regulated) | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management | Idempotency, locking, reconciliation, audit — where correctness beats scale in the rubric |
-| **Tier X — Senior differentiators** | Web Crawler, Workflow Engine, Real-Time Collaboration | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT |
+| **Tier 3 — Consistency-critical** (fintech/regulated) | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management, Ad Click Aggregator | Idempotency, locking, reconciliation, audit — where correctness beats scale in the rubric |
+| **Tier X — Senior differentiators** | Web Crawler, Workflow Engine, Real-Time Collaboration, Typeahead Autocomplete, Metrics & Monitoring Pipeline, Distributed Job Scheduler | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT, prefix indexes, cardinality control, leases & fairness |
 
 ---
 
@@ -27,7 +27,7 @@ The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the ot
 
 | Domain | Case Studies | When to read |
 |--------|--------------|--------------|
-| **Web (foundational)** | URL Shortener, Rate Limiter, Distributed Counter | Always — easiest, asked at all levels |
+| **Web (foundational)** | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Always — easiest, asked at all levels |
 | **Storage & Sync** | Google Drive, Dropbox | File-storage, collaboration, conflict resolution |
 | **Messaging & Real-Time** | WhatsApp, Chat System, Notification Service, Real-Time Collaboration | Chat apps, notifications, collaborative editing |
 | **Streaming & Media** | Netflix, YouTube | Video platforms, CDN-heavy systems |
@@ -35,8 +35,9 @@ The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the ot
 | **Ride-sharing & Geo** | Uber, Lyft | Location-based, dispatch, geo-indexing |
 | **Commerce & Fintech** | Payment Gateway, E-Commerce, Ticket Booking, Live Betting | Transactions, consistency, concurrency |
 | **Healthcare & Vertical** | Hospital Management | Domain-specific, scheduling, EHR |
-| **Search & Data** | Web Crawler | Crawling, dedup, ranking |
-| **Automation** | Workflow Engine | Background jobs, DAGs, retries |
+| **Search & Data** | Web Crawler, Typeahead Autocomplete | Crawling, dedup, ranking, prefix search |
+| **Automation** | Workflow Engine, Distributed Job Scheduler | Background jobs, DAGs, cron at scale, retries |
+| **Platform & Telemetry** | Metrics Monitoring Pipeline, Ad Click Aggregator | Time-series ingestion, streaming aggregation, billing-grade correctness |
 
 ---
 
@@ -66,6 +67,11 @@ The 22 case studies classify into 3 tiers. Do Tier 1 cold before touching the ot
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Hot-key sharding, G-Counter CRDT, local pre-aggregation, tiered storage |
 | 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | DAG execution, state machine, BullMQ workers, idempotency, retry strategy |
 | 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging & Real-Time | OT vs CRDT, WebSocket protocol, Redis Pub/Sub, version history, offline support |
+| 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/prefix index, offline top-k ranking, geo-sharded indexes, freshness vs latency, personalization |
+| 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion path, downsampling, cardinality explosion control, push vs pull, alert evaluation at scale |
+| 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation |
+| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock skew handling, k-orderability, node-ID coordination, UUIDv7 comparison |
+| 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Streaming ingestion, layered dedup, tumbling windows & watermarks, exactly-once sinks, fraud filtering |
 
 ---
 

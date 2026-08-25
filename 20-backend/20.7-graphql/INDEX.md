@@ -1,8 +1,8 @@
 # GraphQL — Index
 
-> **8 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, performance, security, and interview questions.
+> **9 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-API-%23ff6b35)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,13 +12,13 @@
 
 ## Topic Categories
 
-The 8 files are organized into 4 categories, each with its own INDEX.
+The 9 files are organized into 4 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Fundamentals](01-fundamentals/INDEX.md) | 3 | Overview vs REST, schema design, queries/mutations/subscriptions |
 | [Execution](02-execution/INDEX.md) | 2 | Resolvers + DataLoader, Apollo Server — the runtime side |
-| [Clients & Production](03-clients-and-production/INDEX.md) | 2 | Apollo Client cache, performance & security defenses |
+| [Clients & Production](03-clients-and-production/INDEX.md) | 3 | Apollo Client cache, performance & security defenses, codegen + CI schema checks |
 | [Interview Prep](04-interview-prep/INDEX.md) | 1 | 30+ curated Qs at senior depth |
 
 ---
@@ -29,7 +29,7 @@ The 8 files are organized into 4 categories, each with its own INDEX.
 01 FUNDAMENTALS ──→ 02 EXECUTION ──→ 03 CLIENTS & PRODUCTION ──→ 04 INTERVIEW PREP
 overview            resolvers         apollo client              30+ Q&A
 schema design       apollo server     performance & security
-queries/mutations
+queries/mutations                     codegen + schema CI
 ```
 
 ---
@@ -65,6 +65,7 @@ The client-side and the production concerns. Category INDEX: [Clients & Producti
 |--:|------|--------|----------:|
 | 01 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | 25 min |
 | 02 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | 30 min |
+| 03 | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | 25 min |
 
 ---
 
@@ -86,7 +87,8 @@ Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
 4. **Apollo Server** (25 min) — production runtime
 5. **Apollo Client** (25 min) — if frontend focus
 6. **Performance & Security** (30 min) — senior level
-7. **Interview Questions** (2 hrs)
+7. **Codegen & Schema Safety** (25 min) — tooling maturity signal
+8. **Interview Questions** (2 hrs)
 
 ---
 

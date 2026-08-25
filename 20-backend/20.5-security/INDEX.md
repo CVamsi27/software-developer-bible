@@ -2,9 +2,9 @@
 
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/API keys → sessions → tokens → OAuth → SSO/SAML → MFA/passkeys → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
-> 19 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, and 50+ curated questions.
+> 20 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and 50+ curated questions.
 
-[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![Read time](https://img.shields.io/badge/read%20time-12%2B%20hrs-blueviolet)](#)
@@ -15,13 +15,13 @@
 
 ## Topic Categories
 
-The 19 files are organized into 4 categories, each with its own INDEX. Read in order within each.
+The 20 files are organized into 4 categories, each with its own INDEX. Read in order within each.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Auth (the deep-dive)](01-auth/INDEX.md) | 10 | The complete 10-stage auth track: fundamentals → Basic/API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC/ABAC + drills |
 | [Attacks & Defense](02-attacks-and-defense/INDEX.md) | 4 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
-| [Hardening & Operations](03-hardening-and-operations/INDEX.md) | 4 | Encryption/TLS primer, headers/CSP, STRIDE threat modeling, secrets |
+| [Hardening & Operations](03-hardening-and-operations/INDEX.md) | 5 | Encryption/TLS primer, headers/CSP, STRIDE threat modeling, secrets, vulnerability management |
 | [Interview Drills](04-interview-drills/INDEX.md) | 1 | Full security bank; pairs with the auth-track question set |
 
 ---
@@ -33,12 +33,14 @@ Pass I — AUTH (start here)      Pass II — ATTACKS            Pass III — HA
 01-auth/INDEX.md                XSS                          Web Security (headers, CSP)
  └─ fundamentals                CSRF                         Threat Modeling (STRIDE)
     → basic/digest + api keys   SQL Injection                Secrets Management
-      → sessions & cookies      API Security (Top 10)        ↓ Encryption & Hashing
-        → JWT                                                (prerequisite primer)
+      → sessions & cookies      API Security (Top 10)        Vulnerability Management
+        → JWT                                                (CVE triage, SBOM, patch SLAs)
           → OAuth2 / OIDC           ↓
             → SSO / SAML          INTERVIEW DRILLS
               → MFA / passkeys    20.5.1.10 (auth bank)
                 → RBAC / ABAC     20.5.4.01 (security bank)
+                  ↓ Encryption & Hashing
+                    (prerequisite primer)
 ```
 
 **Total time: ~12 hours** if you read all files. Skip the encryption primer if you already know TLS + hashing.
@@ -84,6 +86,7 @@ Stages 9 = the auth question bank below ([drills](01-auth/20.5.1.10-interview-qu
 | 13 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | 30 min |
 | 14 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | 30 min |
 | 15 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | 25 min |
+| 16 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | 30 min |
 
 ---
 

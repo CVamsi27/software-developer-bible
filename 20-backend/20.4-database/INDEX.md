@@ -1,8 +1,8 @@
 # Database — Index
 
-> **20 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma, execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, window functions, JSONB, replication, and interview questions.
+> **23 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,27 +12,27 @@
 
 ## Topic Categories
 
-The 20 files are organized into 5 categories, each with its own INDEX.
+The 23 files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md) | 5 | How Postgres works under the hood — every backend interview starts here |
 | [Querying & Optimization](02-querying-and-optimization/INDEX.md) | 5 | Indexes, joins, execution plans, window functions, JSONB — the day-to-day performance work |
 | [Transactions & Replication](03-transactions-and-replication/INDEX.md) | 4 | MVCC, transactions, locking, deadlocks — the hard part |
-| [ORM & Access](04-orm-and-access/INDEX.md) | 2 | Prisma fundamentals and advanced patterns |
-| [Operations & Scaling](05-operations-and-scaling/INDEX.md) | 4 | Connection pooling, migrations, soft delete, interview bank |
+| [ORM & Access](04-orm-and-access/INDEX.md) | 3 | Prisma fundamentals and advanced patterns, plus the access-layer decision tree |
+| [Operations & Scaling](05-operations-and-scaling/INDEX.md) | 6 | Connection pooling, migrations, soft delete, backups/PITR, search infra, interview bank |
 
 ---
 
 ## The Flow
 
 ```text
-01 POSTGRES FOUNDATIONS ──→ 02 QUERYING & OPT ──→ 03 TRANSACTIONS ──→ 04 ORM ──→ 05 OPERATIONS
+01 POSTGRES FOUNDATIONS ──→ 02 QUERYING & OPT ──→ 03 TRANSACTIONS ──→ 04 ORM ───────→ 05 OPERATIONS
 architecture/WAL/vacuum     indexes              MVCC                 prisma        connection pooling
 normalization               joins                transactions         prisma adv    migrations
-MVCC                        execution plans      deadlocks                          soft delete
-SQL vs NoSQL                window functions     locking                            interview Qs
-performance                 JSONB                replication
+MVCC                        execution plans      deadlocks            landscape     soft delete
+SQL vs NoSQL                window functions     locking                            backups/PITR
+performance                 JSONB                replication                        search infra
 ```
 
 ---
@@ -86,6 +86,7 @@ Prisma. Category INDEX: [ORM & Access](04-orm-and-access/INDEX.md).
 |--:|------|--------|----------:|
 | 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | 30 min |
 | 02 | [Prisma Advanced](04-orm-and-access/20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | 30 min |
+| 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | 25 min |
 
 ---
 
@@ -98,7 +99,9 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 | 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | 25 min |
 | 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime, blue-green DB | 30 min |
 | 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | 20 min |
-| 04 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | 30 min |
+| 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | 30 min |
+| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -108,8 +111,8 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 1. PostgreSQL Foundations (5 files, ~2.5 hrs)
 2. Querying & Optimization (5 files, ~2 hrs)
 3. Transactions & Replication (4 files, ~2 hrs)
-4. Prisma basics (1.5 hrs)
-5. Operations & Scaling (4 files, ~2 hrs)
+4. ORM landscape + Prisma basics (2 hrs)
+5. Operations & Scaling (6 files, ~2.5 hrs)
 6. Specialized features (JSONB, window functions, soft delete) — as needed
 7. Interview Questions (3 hrs)
 

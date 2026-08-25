@@ -1,8 +1,8 @@
 # NestJS — Index
 
-> **15 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, custom decorators, and interview questions.
+> **18 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,14 @@
 
 ## Topic Categories
 
-The 15 files are organized into 5 categories, each with its own INDEX.
+The 18 files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Core Architecture](01-core-architecture/INDEX.md) | 4 | Modules, Controllers, Providers, DI — the foundation |
 | [Request Lifecycle](02-request-lifecycle/INDEX.md) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
 | [Patterns](03-patterns/INDEX.md) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
-| [Quality & Operations](04-quality-and-operations/INDEX.md) | 2 | Testing, Configuration & Validation — production hygiene |
+| [Quality & Operations](04-quality-and-operations/INDEX.md) | 5 | Config validation, Testing, Lifecycle/shutdown, Scheduling/jobs, OpenAPI docs |
 | [Advanced & Interview](05-advanced-and-interview/INDEX.md) | 2 | Custom decorators, 50+ interview Qs |
 
 ---
@@ -30,9 +30,9 @@ The 15 files are organized into 5 categories, each with its own INDEX.
 01 CORE ARCHITECTURE ──→ 02 REQUEST LIFECYCLE ──→ 03 PATTERNS ──→ 04 QUALITY & OPS ──→ 05 ADVANCED
 modules                  middleware                CQRS           configuration       custom decorators
 controllers              guards                    microservices  testing             interview Qs
-providers                pipes
-DI                       interceptors
-                         exception filters
+providers                pipes                                    lifecycle/shutdown
+DI                       interceptors                             scheduling/jobs
+                         exception filters                        swagger/openapi
 ```
 
 **Lifecycle order:** Middleware → Guards → Pipes → Controller → Interceptors (rxjs pipeline) → Exception Filters.
@@ -85,6 +85,9 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 |--:|------|--------|----------:|
 | 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
 | 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | 25 min |
+| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | 30 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | 25 min |
 
 ---
 
@@ -104,7 +107,7 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 1. **Core Architecture** (4 files, ~2 hrs) — must know
 2. **Request Lifecycle** (5 files, ~2 hrs) — must know, the most-asked cluster
 3. **Patterns** (CQRS + Microservices) — for senior/DDD roles
-4. **Quality & Operations** (2 files) — production hygiene
+4. **Quality & Operations** (5 files) — production hygiene
 5. **Custom Decorators** — senior-level
 6. **Interview Questions** — final review
 

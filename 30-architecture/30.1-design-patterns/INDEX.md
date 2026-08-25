@@ -1,8 +1,8 @@
 # Design Patterns — Index
 
-> **33 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Senior LLD/HLD interviews assume fluent recall of these.
+> **38 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Senior LLD/HLD interviews assume fluent recall of these.
 
-[![Files](https://img.shields.io/badge/files-33-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-38-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![GoF Coverage](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](#)
@@ -20,8 +20,8 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 | **Foundations** | Principles, OOP, UML — read first | [01-foundations](01-foundations/INDEX.md) | 4 theory files |
 | **Creational** | Object creation mechanisms (decoupling construction from use) | [02-creational](02-creational/INDEX.md) | 5 patterns |
 | **Structural** | Class/object composition (assemble larger structures from parts) | [03-structural](03-structural/INDEX.md) | 8 patterns |
-| **Behavioral** | Object collaboration and responsibility distribution | [04-behavioral](04-behavioral/INDEX.md) | 11 patterns |
-| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [05-architectural](05-architectural/INDEX.md) | 4 patterns |
+| **Behavioral** | Object collaboration and responsibility distribution | [04-behavioral](04-behavioral/INDEX.md) | 12 patterns |
+| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [05-architectural](05-architectural/INDEX.md) | 8 patterns |
 | **Interview Prep** | Curated question bank, mock interview scenarios | [06-interview-prep](06-interview-prep/INDEX.md) | 1 file (50+ Qs) |
 
 ---
@@ -37,7 +37,7 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 ### If you're prepping for an interview
 
 1. Skim the [category overview](01-foundations/INDEX.md) (5 min).
-2. Read **all 5 creational** + **8 structural** + **11 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
+2. Read **all 5 creational** + **8 structural** + **12 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
 3. Deep-dive on 3-4 patterns you don't know cold.
 4. Hit [Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) for 50+ curated questions.
 
@@ -49,8 +49,8 @@ Use this decision cheat sheet (full version in each category INDEX):
 |------|----------|-------------|
 | Create objects flexibly | Creational | Factory, Builder, Abstract Factory, Prototype, Singleton |
 | Compose classes into larger structures | Structural | Adapter, Decorator, Facade, Proxy, Composite, Bridge, Module |
-| Manage object interactions | Behavioral | Observer, Strategy, State, Command, Mediator, Chain of Responsibility, Iterator, Visitor, Memento, Template Method, Interpreter |
-| Distributed systems | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, Outbox |
+| Manage object interactions | Behavioral | Observer, Strategy, State, Command, Mediator, Chain of Responsibility, Iterator, Visitor, Memento, Template Method, Interpreter, Null Object |
+| Distributed systems | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC/MVP/MVVM |
 
 ---
 
@@ -80,7 +80,7 @@ Class/object composition. Combine small pieces into larger structures while keep
 - [Bridge](03-structural/30.1.3.07-bridge.md) — decouple abstraction from implementation
 - [Flyweight](03-structural/30.1.3.08-flyweight.md) — share state to support many fine-grained objects
 
-### [04 — Behavioral Patterns](04-behavioral/INDEX.md) (11 files)
+### [04 — Behavioral Patterns](04-behavioral/INDEX.md) (12 files)
 Object collaboration. Manage algorithms, responsibilities, and communication between objects.
 
 - [Strategy](04-behavioral/30.1.4.01-strategy.md) — swap algorithms at runtime
@@ -94,14 +94,19 @@ Object collaboration. Manage algorithms, responsibilities, and communication bet
 - [Command](04-behavioral/30.1.4.09-command.md) — encapsulate a request as an object
 - [Visitor](04-behavioral/30.1.4.10-visitor.md) — add operations without modifying classes
 - [Interpreter](04-behavioral/30.1.4.11-interpreter.md) — grammar + interpreter for a DSL
+- [Null Object](04-behavioral/30.1.4.12-null-object.md) — encapsulated no-op behavior instead of null
 
-### [05 — Architectural Patterns](05-architectural/INDEX.md) (4 files)
+### [05 — Architectural Patterns](05-architectural/INDEX.md) (8 files)
 Modern, distributed-systems patterns. Cross-cutting; not part of the original GoF set.
 
 - [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
 - [CQRS & DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
 - [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — store events, not state
 - [Saga](05-architectural/30.1.5.04-saga.md) — distributed transactions
+- [DDD Tactical Patterns](05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) — entities, value objects, aggregate boundaries
+- [Anti-Corruption Layer](05-architectural/30.1.5.06-anti-corruption-layer.md) — isolate legacy/external models (facade+adapter+translator)
+- [Service Locator vs DI](05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md) — hidden dependencies vs constructor injection
+- [Presentation Patterns MVC/MVP/MVVM](05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) — UI separation strategies and what frameworks really use
 
 ### [06 — Interview Prep](06-interview-prep/INDEX.md) (1 file, 50+ Qs)
 - [Design Pattern Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) — 50+ curated Qs with answers
@@ -136,10 +141,15 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 | **Command** | Behavioral | Request as object | Undo/redo, queueing, macro recording | Simple one-shot operations |
 | **Visitor** | Behavioral | Add ops without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable |
 | **Interpreter** | Behavioral | Grammar + interpreter | DSLs, configuration formats | Performance-critical parsing |
+| **Null Object** | Behavioral | No-op default instead of null | Neutral defaults (guest user, no-op logger), branch-free chains | Silence would hide real bugs |
 | **Repository** | Architectural | Data access abstraction | Domain-driven design, testing | Simple CRUD with one model |
 | **CQRS** | Architectural | Separate read/write models | High-read or high-write asymmetry | Simple CRUD, low scale |
 | **Event Sourcing** | Architectural | State from event log | Audit-required domains, temporal queries | State is ephemeral, no audit |
 | **Saga** | Architectural | Distributed transactions | Microservices, multi-step business flow | Single DB transaction works |
+| **DDD Aggregates & VOs** | Architectural | Consistency boundaries + invariants | Complex domains with business rules | CRUD without real invariants |
+| **Anti-Corruption Layer** | Architectural | Isolate foreign models | Legacy/vendor integration, strangler migration | You own both sides |
+| **Service Locator vs DI** | Architectural | Dependency resolution strategy | Wiring/testability discussions (DI wins) | Runtime-keyed plugin registries (locator ok) |
+| **MVC/MVP/MVVM** | Architectural | UI separation patterns | Frontend architecture, framework fluency | Trivial static UIs |
 
 ---
 

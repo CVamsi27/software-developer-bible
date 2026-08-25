@@ -1,10 +1,10 @@
 # Architectural Patterns
 
-> **4 files** (more planned). Modern, distributed-systems patterns. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, and domain-driven design.
+> **8 files.** Modern, distributed-systems patterns plus DDD tactical design and UI architecture. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, domain-driven design, and rich frontends.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architectural-red)](#)
-[![Status](https://img.shields.io/badge/status-growing-yellow)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
@@ -20,7 +20,7 @@ These show up heavily in:
 
 ---
 
-## The 4+ patterns
+## The 8 patterns
 
 | # | Pattern | Intent | Use when | Avoid when |
 |--:|---------|--------|----------|------------|
@@ -28,6 +28,10 @@ These show up heavily in:
 | 2 | [CQRS & DI](30.1.5.02-cqrs-di.md) | Command/query separation + DI container | Complex domains, asymmetric read/write load | Simple CRUD, low scale |
 | 3 | [Event Sourcing](30.1.5.03-event-sourcing.md) | Store events, derive state | Audit-required domains, temporal queries, debugging | State is ephemeral, no audit needed |
 | 4 | [Saga](30.1.5.04-saga.md) | Distributed transactions | Multi-service business flows | Single DB transaction works |
+| 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) | Entities, value objects, aggregate boundaries | Complex domains with invariants to enforce | CRUD apps without business rules |
+| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | You own both sides of the boundary |
+| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved | Understanding hidden deps, choosing a wiring strategy | (DI is the default; locator only for plugin registries) |
+| 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) | Separating UI state, logic, and rendering | Frontend architecture discussions and refactors | Trivial static UIs |
 
 ---
 
@@ -89,6 +93,48 @@ Manage distributed transactions across multiple services by breaking them into l
 - The business logic is simple enough to fit in one service
 - You can't tolerate eventual consistency
 
+### [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) *(new)*
+Entities (identity over time), Value Objects (immutable, attribute-defined equality), and Aggregates (consistency boundaries with a single root and enforced invariants). Includes the aggregate rules: small boundaries, reference by ID, one transaction per aggregate, domain events for cross-aggregate updates, repository per root.
+
+**When to use:**
+- Complex domains where invariants must hold atomically ("order total is always the sum of valid lines")
+- Business rules keep leaking into controllers/services
+- Write contention or inconsistent state from unbounded object graphs
+
+**When NOT to use:**
+- Simple CRUD with no real invariants
+- Reporting/read-only models
+- Teams without capacity to maintain a rich domain layer
+
+### [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) *(new)*
+An isolation boundary that keeps legacy/external system concepts (status codes, sentinel nulls, alien DTOs) out of your domain model — implemented as Facade + Adapter + Translator, living inside the consuming bounded context.
+
+**When to use:**
+- Integrating a legacy system or third-party vendor whose model conflicts with yours
+- Strangler-fig migrations needing a stable seam
+- Long-lived integrations you don't control
+
+**When NOT to use:**
+- You own both sides (refactor instead)
+- Trivial integration over a clean API
+- Project lifespan shorter than the layer's build time
+
+### [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) *(new)*
+Two strategies for inversion of control over dependency construction. Constructor injection makes dependencies visible, compile-checked, and trivially mockable; a service locator hides them behind runtime registry lookups. Covers IoC containers, the "container-as-locator" anti-pattern, and the narrow legitimate locator case (plugin registries).
+
+**When to read/use:**
+- Choosing or defending a wiring strategy in interviews
+- Refactoring hidden-dependency legacy code toward testability
+- Building plugin/command registries keyed by runtime data
+
+### [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) *(new)*
+Three strategies for splitting UI into model/view/intermediary, differing in who talks to whom and how updates flow. Includes original Smalltalk MVC vs web MVC, MVP's passive view, MVVM's observable view-model, an honest mapping of what React/Vue/Angular/Rails actually do, and the classic interview traps.
+
+**When to read/use:**
+- Frontend architecture interviews ("is React MVC?")
+- Extracting testable UI logic from framework components
+- Choosing a pattern per app/module based on framework grain
+
 ---
 
 ## Decision flowchart
@@ -104,7 +150,11 @@ How is your data accessed / persisted?
 │
 ├─ Transaction spans multiple services? ──→ Saga
 │
-└─ Just want loose coupling + testability? ──→ DI (always)
+├─ Complex domain with invariants to enforce? ──→ DDD Aggregates
+│
+├─ Legacy/vendor model polluting your domain? ──→ Anti-Corruption Layer
+│
+└─ Just want loose coupling + testability? ──→ DI (always, never locator)
 ```
 
 ---
@@ -118,7 +168,9 @@ These patterns are often used together in real systems:
 | **Repository + DI** | Domain code with mocked data access, swappable persistence |
 | **CQRS + Event Sourcing** | Reads are projections of the event log; commands emit events |
 | **CQRS + Saga** | Commands trigger multi-service workflows; queries serve denormalized views |
-| **All four** | Full DDD microservices stack (Axon, EventStore, NestJS CQRS) |
+| **DDD Aggregates + Repository + Domain Events** | Invariant-enforcing boundaries feeding outbox-driven integrations |
+| **ACL + Strangler Fig** | Safe seams for incrementally replacing legacy systems |
+| **All of the above** | Full DDD microservices stack (Axon, EventStore, NestJS CQRS) |
 
 ---
 

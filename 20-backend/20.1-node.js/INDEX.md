@@ -1,8 +1,8 @@
 # Node.js — Index
 
-> **11 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, the built-in test runner, and interview questions.
+> **13 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,14 @@
 
 ## Topic Categories
 
-The 11 files are organized into 4 categories, each with its own INDEX.
+The 13 files are organized into 4 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Runtime & Async](01-runtime-and-async/INDEX.md) | 2 | The event loop + Web Streams/test runner — every senior interview tests this |
 | [I/O & Data](02-io-and-data/INDEX.md) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
 | [Processes & Concurrency](03-processes-and-concurrency/INDEX.md) | 3 | Clustering, child processes/worker threads, lifecycle — production concerns |
-| [Security & Operations](04-security-and-operations/INDEX.md) | 2 | Node-specific security + the full-stack self-test |
+| [Security & Operations](04-security-and-operations/INDEX.md) | 4 | Security, diagnostics (debug/profiling), framework internals, full-stack self-test |
 
 ---
 
@@ -28,9 +28,9 @@ The 11 files are organized into 4 categories, each with its own INDEX.
 ```text
 01 RUNTIME & ASYNC ──→ 02 I/O & DATA ──→ 03 PROCESSES ──→ 04 SECURITY & OPS
 event loop              streams            clustering        node security
-web streams/test runner buffers             child processes   interview Qs
-                        file system         process env
-                        http module
+web streams/test runner buffers             child processes   debug/profiling
+                        file system         process env       express/fastify
+                        http module                           interview Qs
 ```
 
 ---
@@ -78,7 +78,9 @@ Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 25 min |
-| 02 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 02 | [Debugging & Profiling](04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md) | `--inspect` + Chrome DevTools, `--prof` tick logs, heap snapshot comparison, Clinic.js, event-loop lag monitoring, SIGUSR2 diagnostics reports | 30 min |
+| 03 | [Express & Fastify Internals](04-security-and-operations/20.1.4.03-express-fastify-internals.md) | Middleware chain + arity-4 error handlers, mount paths, Fastify hooks + plugin encapsulation, schema serialization, benchmark caveats, migration notes | 25 min |
+| 04 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -91,8 +93,9 @@ Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 5. **Clustering + Child Processes** — production scale
 6. **Process & Environment** — lifecycle, signals
 7. **File System** — I/O operations
-8. **Security + Test Runner** — quality & safety
-9. **Interview Questions** — final review
+8. **Debugging & Profiling + Express/Fastify Internals** — production diagnostics and framework mechanics
+9. **Security** — quality & safety
+10. **Interview Questions** — final review
 
 ---
 

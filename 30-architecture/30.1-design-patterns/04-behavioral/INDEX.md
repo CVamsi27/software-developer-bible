@@ -1,8 +1,8 @@
 # Behavioral Patterns
 
-> **11 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
+> **12 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Behavioral-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -22,7 +22,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 
 ---
 
-## The 11 patterns
+## The 12 patterns
 
 | # | Pattern | Intent | Use when | Avoid when |
 |--:|---------|--------|----------|------------|
@@ -37,6 +37,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations |
 | 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable |
 | 11 | [Interpreter](30.1.4.11-interpreter.md) | Grammar + interpreter for a DSL | DSLs, config formats, regex-like languages | Performance-critical parsing |
+| 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (guest users, no-op loggers), branch-free chains | Absence must surface (silence hides bugs) |
 
 ---
 
@@ -159,6 +160,18 @@ Given a language, define a representation for its grammar along with an interpre
 
 **Real-world examples:** SQL parsers, regex engines, math expression evaluators, search query languages (Lucene), boolean expression trees, configuration formats (HCL, TOML), workflow rules engines.
 
+### [Null Object](30.1.4.12-null-object.md) *(new)*
+Provide a do-nothing object implementing the same interface as a real object, returned in place of `null`. Clients treat every object uniformly — no null checks, no crashes; the meaning of "absence" lives in exactly one class.
+
+**When to use:**
+- Absence has predictable neutral behavior (zero discount, deny-all permissions, discard logs)
+- Many callers would repeat the same null-check-plus-default ritual
+- Building frameworks/libraries where forcing null handling on users is hostile ergonomics
+
+**Real-world examples:** No-op loggers in DI containers, guest/anonymous principals with empty permissions, OpenTelemetry no-op tracers, disabled notification senders, hand-rolled test stubs, optional strategy defaults (gift wrap off, tax-free regions).
+
+**Watch out for:** masking real bugs — a load failure returning `NoDiscount` silently charges customers full price. Reserve for provably-neutral defaults and keep absence inspectable (`isGuest()`) where it matters.
+
 ---
 
 ## Decision flowchart
@@ -186,7 +199,9 @@ Need to manage object interaction / control flow?
 │
 ├─ Add operations without modifying class structure? ──→ Visitor
 │
-└─ Interpret a grammar / DSL? ──→ Interpreter
+├─ Interpret a grammar / DSL? ──→ Interpreter
+│
+└─ Need a harmless default instead of null? ──→ Null Object
 ```
 
 ---
@@ -232,6 +247,13 @@ Both work on composite structures. Iterator is about *movement*, Visitor is abou
 
 Both chain-call. The difference is whether the chain short-circuits (CoR) or composes (Decorator).
 
+### Null Object vs Optional
+
+- **Null Object** encodes *what to do* when absent — the neutral response lives inside the object.
+- **`Optional<T>`** encodes *that* something may be absent — the compiler forces each caller to unwrap and decide.
+
+They compose: resolve `Optional` to a real-or-null-object at the boundary, then keep the domain branch-free. Optional is safer by default; Null Object is cleaner for stable neutral defaults.
+
 ---
 
 ## When NOT to use behavioral patterns
@@ -247,6 +269,7 @@ Both chain-call. The difference is whether the chain short-circuits (CoR) or com
 - **Command** for one-shot operations with no queue/undo.
 - **Visitor** if the object structure changes often (you'll rewrite all visitors).
 - **Interpreter** for complex grammars — use a parser generator (PEG, ANTLR).
+- **Null Object** where silence would hide a bug (money, auth, load failures) — let absence throw or return `Optional` instead.
 
 ---
 

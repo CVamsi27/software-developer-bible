@@ -1,12 +1,10 @@
 # Accessibility — Index
 
-> **7 files** — Web accessibility from WCAG and ARIA to keyboard navigation, testing, color & contrast, forms, and interview questions.
+> **9 files** — Web accessibility from WCAG and ARIA to keyboard navigation, accessible charts, design systems, testing, color & contrast, forms, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
-
-Planned additions: **Accessible Charts & Data Viz** will fill slot `50.2.06`, **Accessibility Design Systems** slot `50.2.07`.
 
 **Why accessibility:** Legal requirement in many jurisdictions (ADA, EAA, Section 508), ethical imperative, and increasingly tested in senior interviews. ~15% of users have some form of disability. WCAG 2.1 AA is the standard most companies aim for. The basics are quick to learn and high-leverage in interviews.
 
@@ -20,6 +18,7 @@ Planned additions: **Accessible Charts & Data Viz** will fill slot `50.2.06`, **
 | [Semantic HTML & ARIA](#semantic-html--aria) | 1 | ARIA roles, states, properties — extending semantics |
 | [Interaction](#interaction) | 2 | Keyboard navigation, forms — how users interact |
 | [Visual Design](#visual-design) | 1 | Color, contrast, CVD-safe palettes — the visual side |
+| [Charts & Design Systems](#charts--design-systems) | 2 | Data viz a11y, primitives + governance — scaling a11y |
 | [Testing & Interview](#testing--interview) | 2 | A11y testing, 50+ Qs |
 
 ---
@@ -69,6 +68,19 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ---
 
+## Charts & Design Systems
+
+Where accessibility scales (or dies): dashboards and shared components.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 06 | [Accessible Charts & Data Viz](50.2.06-accessible-charts-data-viz.md) | SVG chart a11y (`role="img"`, labels), table fallbacks, color independence, sonification, screen-reader testing of dashboards, Recharts/Highcharts gaps | 25 min |
+| 07 | [Accessibility Design Systems](50.2.07-accessibility-design-systems.md) | Radix/React Aria primitives, focus management baked in, contrast tokens, jsx-a11y + CI gates, definition-of-done governance, audit-to-component pipeline | 25 min |
+
+**Rule of thumb:** fix a11y once in the design system — every product inherits it.
+
+---
+
 ## Testing & Interview
 
 | # | File | Topics | Read time |
@@ -85,8 +97,9 @@ The foundation — semantic HTML is 90% of accessibility.
 3. **Keyboard Navigation** — must know
 4. **Forms & Labels** — must know
 5. **Color & Contrast** — quick win
-6. **Testing A11y** — for senior roles
-7. **Interview Questions** — final review
+6. **Accessible Charts / Design Systems** — for senior roles with dashboards or DS ownership
+7. **Testing A11y** — for senior roles
+8. **Interview Questions** — final review
 
 ---
 

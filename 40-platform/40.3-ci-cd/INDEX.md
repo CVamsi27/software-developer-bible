@@ -1,8 +1,8 @@
 # CI/CD — Index
 
-> **8 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, blue-green/canary deployments, pipeline patterns, and interview questions.
+> **11 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -15,8 +15,8 @@
 | Category | Folder | Files | What it covers |
 |----------|--------|------:|----------------|
 | CI Platforms | [01-ci-platforms/](01-ci-platforms/INDEX.md) | 4 | GitHub Actions, GitLab CI, Jenkins, ArgoCD — pick the one your company uses |
-| Build & Deploy | [02-build-and-deploy/](02-build-and-deploy/INDEX.md) | 2 | Docker build/deploy, pipeline patterns — the runtime |
-| Releases & Metrics | [03-releases-and-metrics/](03-releases-and-metrics/INDEX.md) | 1 | Blue-green, canary — the senior-level release patterns |
+| Build & Deploy | [02-build-and-deploy/](02-build-and-deploy/INDEX.md) | 4 | Docker build/deploy, pipeline patterns, artifact registries + promotion, supply-chain security (SLSA) |
+| Releases & Metrics | [03-releases-and-metrics/](03-releases-and-metrics/INDEX.md) | 2 | Blue-green, canary — plus DORA metrics for delivery performance |
 | Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
@@ -40,6 +40,8 @@ Pick the one your company uses — the patterns are similar.
 |--:|------|--------|----------:|
 | 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | 30 min |
 | 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | 30 min |
+| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | 30 min |
+| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | 30 min |
 
 ---
 
@@ -49,9 +51,8 @@ Senior-level patterns for zero-downtime deploys.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 25 min |
-
-*Slot reserved: `40.3.3.02` DORA metrics & delivery performance (upcoming chapter — no link yet).*
+| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 25 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 30 min |
 
 **Decision:**
 
@@ -69,7 +70,7 @@ Need zero-downtime deployment?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 08 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
@@ -78,9 +79,12 @@ Need zero-downtime deployment?
 1. **GitHub Actions** (or GitLab CI if your JD requires) — must know
 2. **Docker Build & Deploy** — must know
 3. **Pipeline Patterns** — senior level
-4. **Blue-Green & Canary** — for senior roles
-5. **Jenkins / ArgoCD** — as relevant
-6. **Interview Questions** — final review
+4. **Artifact Registries & Release Promotion** — senior level
+5. **Pipeline Supply-Chain Security & SLSA** — staff differentiator
+6. **Blue-Green & Canary** — for senior roles
+7. **DORA Metrics & Delivery Performance** — staff/lead conversations
+8. **Jenkins / ArgoCD** — as relevant
+9. **Interview Questions** — final review
 
 ---
 

@@ -1,8 +1,8 @@
 # Build Tools — Index
 
-> **9 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, tool comparison, and interview questions.
+> **10 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,7 +16,7 @@
 |----------|--------|------:|----------------|
 | Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
 | Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
-| Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 2 | Build optimization, tool comparison — fast builds, small bundles |
+| Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3 | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
 | Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
@@ -60,9 +60,8 @@ How TS/JSX become browser-compatible JS.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 30 min |
-| 08 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 20 min |
-
-*Slot reserved: `40.5.3.02` asset pipelines for CSS/images/fonts (upcoming chapter — no link yet).*
+| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 30 min |
+| 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 20 min |
 
 ---
 
@@ -70,7 +69,7 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
@@ -78,10 +77,11 @@ How TS/JSX become browser-compatible JS.
 
 1. **Webpack + Vite** — the two main ones
 2. **Build Optimization** — tree shaking, code splitting
-3. **Babel + ESBuild/SWC** — the transpilers
-4. **Turbopack + Rspack** — the new Rust-based options
-5. **Tool Comparison** — when to use what
-6. **Interview Questions** — final review
+3. **Asset Pipelines** — CSS/images/fonts, where page weight actually lives
+4. **Babel + ESBuild/SWC** — the transpilers
+5. **Turbopack + Rspack** — the new Rust-based options
+6. **Tool Comparison** — when to use what
+7. **Interview Questions** — final review
 
 ---
 

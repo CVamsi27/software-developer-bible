@@ -1,8 +1,8 @@
 # Testing — Index
 
-> **13 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, and interview questions.
+> **14 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -14,14 +14,12 @@
 
 | Category | Files | Purpose |
 |----------|------:|---------|
-| [01 — Foundations](01-foundations/INDEX.md) | 1 | Test types, testing pyramid, TDD vs BDD, coverage — the vocabulary |
+| [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, TDD vs BDD, coverage, test data management — the vocabulary |
 | [02 — Frameworks](02-frameworks/INDEX.md) | 4 | Jest, Vitest, RTL, comparison — the tools |
 | [03 — Test Levels](03-test-levels/INDEX.md) | 3 | Unit, integration, E2E — the pyramid in practice |
 | [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Mocking mechanics + AAA/factories/builders |
 | [05 — Advanced](05-advanced/INDEX.md) | 2 | Performance/load testing, chaos engineering |
 | [06 — Interview Prep](06-interview-prep/INDEX.md) | 1 | 40+ Qs |
-
-Planned addition: **Test Data Management & Anonymization** will fill slot `50.1.1.02` in Foundations.
 
 ---
 
@@ -30,6 +28,7 @@ Planned addition: **Test Data Management & Anonymization** will fill slot `50.1.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 30 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | 30 min |
 
 ---
 

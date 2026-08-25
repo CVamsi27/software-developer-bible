@@ -1,12 +1,12 @@
 # Production Engineering — Index
 
-> **3 files** — Incident response, SLI/SLO/error budgets, chaos engineering — operating systems in production. The senior differentiator stack.
+> **5 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why production engineering:** This is what separates a senior engineer from a staff/principal. Knowing how to design for reliability (SLOs), respond to incidents (postmortems), and proactively find weaknesses (chaos engineering) is the difference between "ships features" and "owns the system".
+**Why production engineering:** This is what separates a senior engineer from a staff/principal. Knowing how to design for reliability (SLOs), respond to incidents (postmortems), proactively find weaknesses (chaos engineering), gate launches (PRRs), and keep humans sustainable on-call is the difference between "ships features" and "owns the system".
 
 ---
 
@@ -17,6 +17,7 @@
 | [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
 | [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
 | [Proactive Resilience](#proactive-resilience) | [Chaos Engineering](50.4.03-chaos-engineering.md) | Find weaknesses before they find you |
+| [Launch Gates & Humans](#launch-gates--humans) | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md), [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Prevent incidents at launch; keep responders healthy |
 
 ---
 
@@ -66,11 +67,28 @@ When things break (and they will).
 
 ---
 
+## Launch Gates & Humans
+
+Prevention before the incident; sustainability after it.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 04 | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant | 30 min |
+| 05 | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | 30 min |
+
+**The two rules:**
+- **PRR**: evidence over assertion — a gate that never defers anything is decoration.
+- **On-call**: page symptoms, ticket causes — pager health is service health.
+
+---
+
 ## Suggested Study Order
 
 1. **SLI/SLO/Error Budgets** — the foundation
 2. **Incident Response** — what to do when SLOs are violated
 3. **Chaos Engineering** — proactively find weaknesses
+4. **Production Readiness Reviews** — stop incidents before they start
+5. **On-Call Without Burnout** — keep the humans running
 
 ---
 
@@ -81,6 +99,8 @@ When things break (and they will).
 - "Walk me through a production incident you handled."
 - "How do you write a blameless postmortem?"
 - "How do you run a chaos experiment?"
+- "How do you make sure a service is production-ready?" (PRR)
+- "How do you keep on-call sustainable?" (rotation design, alert governance)
 
 ---
 

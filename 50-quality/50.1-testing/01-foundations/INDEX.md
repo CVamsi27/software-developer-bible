@@ -1,8 +1,8 @@
 # Testing Foundations
 
-> **1 file.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, and coverage trade-offs. Everything else in the testing stack assumes this vocabulary.
+> **2 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,20 +16,16 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 - **Test types** — unit, integration, E2E, and where contract/smoke tests fit.
 - **TDD vs BDD** — red-green-refactor vs behavior specs as shared language.
 - **Coverage** — what it measures, what it hides, why 100% is not the goal.
+- **Test data** — factories, faker generators, anonymization, golden datasets.
 
 ---
 
-## The file
+## The files
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 30 min |
-
----
-
-## Planned additions
-
-- **50.1.1.02 — Test Data Management & Anonymization** *(upcoming)*: realistic fixtures at scale, PII scrubbing, synthetic data generation. Slot reserved; not yet written.
+| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | 30 min |
 
 ---
 

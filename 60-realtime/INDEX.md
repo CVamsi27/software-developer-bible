@@ -4,7 +4,7 @@
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, pub/sub backbones).
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-RealTime-orange)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,14 +12,15 @@
 
 ## Topic Categories
 
-The 8 files organize into 4 conceptual categories — the "GoF classification" of real-time systems. Read in order within each.
+The 11 files organize into 5 conceptual categories — the "GoF classification" of real-time systems. Read in order within each.
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
 | [Transport Protocols](#transport-protocols) | 3 | WebSockets vs SSE vs WebTransport — pick the right pipe before writing code |
-| [Framework Implementation](#framework-implementation) | 2 | Socket.IO semantics, NestJS gateways — where code actually gets written |
+| [Framework Implementation](#framework-implementation) | 3 | Socket.IO semantics, NestJS gateways, GraphQL subscriptions — where code actually gets written |
+| [Peer-to-Peer & Data Channels](#peer-to-peer--data-channels) | 1 | WebRTC — media without servers |
 | [Architecture & Scale](#architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
-| [Interview Drills](#interview-drills) | 1 | Curated Q&A with follow-up traps |
+| [Testing & Drills](#interview-drills) | 2 | Load/chaos/soak testing realtime systems + curated Q&A |
 
 ---
 
@@ -53,15 +54,26 @@ NestJS gateways: read alongside Pass II when wiring production code.
 |------:|------|--------|----------:|
 | 4 | [Socket.IO](60.1-websockets/01-transports/60.1.1.03-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | 45 min |
 | 5 | [NestJS WebSockets](60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, decorators, lifecycle hooks — production wiring | 40 min |
+| 6 | [GraphQL Subscriptions & Live Queries](60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub fan-out, withFilter authz, over-emitting costs | 30 min |
+
+## Peer-to-Peer & Data Channels
+
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 7 | [WebRTC Peer-to-Peer](60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math | 30 min |
 
 ## Architecture & Scale
 
 | Order | File | Topics | Read time |
 |------:|------|--------|----------:|
-| 6 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | 40 min |
-| 7 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | 45 min |
+| 8 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | 40 min |
+| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | 45 min |
 
-## Interview Drills
+## Testing & Drills
+
+| Order | File | Topics | Read time |
+|------:|------|--------|----------:|
+| 10 | [Testing Real-Time Systems](60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | 30 min |
 
 | File | Contents |
 |------|----------|

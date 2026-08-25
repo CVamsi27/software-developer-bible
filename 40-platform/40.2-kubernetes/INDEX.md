@@ -1,8 +1,8 @@
 # Kubernetes — Index
 
-> **14 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, health checks, Helm, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
+> **17 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,9 +16,9 @@
 |----------|--------|------:|----------------|
 | Core Workloads | [01-core-workloads/](01-core-workloads/INDEX.md) | 4 | Pods, ReplicaSets, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs — what runs |
 | Networking & Config | [02-networking-and-config/](02-networking-and-config/INDEX.md) | 3 | Services, Ingress, ConfigMaps, Secrets, PodPresets — traffic in, config in |
-| Scaling | [03-scaling/](03-scaling/INDEX.md) | 1 | HPA, metrics pipeline, VPA — capacity on demand |
+| Scaling | [03-scaling/](03-scaling/INDEX.md) | 2 | HPA, metrics pipeline, VPA, Cluster Autoscaler, Karpenter — capacity on demand |
 | Production Hardening | [04-production-hardening/](04-production-hardening/INDEX.md) | 4 | Health checks, PDBs, RBAC, NetworkPolicies, quotas — production concerns |
-| Packaging & Extensibility | [05-packaging-and-extensibility/](05-packaging-and-extensibility/INDEX.md) | 1 | Helm charts; CRDs/operators coming |
+| Packaging & Extensibility | [05-packaging-and-extensibility/](05-packaging-and-extensibility/INDEX.md) | 3 | Helm charts, Kustomize overlays, CRDs/operators/controller patterns |
 | Interview Prep | [06-interview-prep/](06-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
@@ -53,6 +53,7 @@ How traffic and configuration get in.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 30 min |
+| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | 30 min |
 
 ---
 
@@ -62,10 +63,10 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 25 min |
-| 10 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 20 min |
-| 11 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 30 min |
-| 12 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 25 min |
+| 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 25 min |
+| 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 20 min |
+| 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 30 min |
+| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 25 min |
 
 ---
 
@@ -73,7 +74,9 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 13 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 30 min |
+| 14 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 30 min |
+| 15 | [Kustomize Overlays](05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, patches (strategic merge, JSON6902), generators, transformers, Helm vs Kustomize, secrets caveat | 25 min |
+| 16 | [CRDs, Operators & Controller Patterns](05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops, operator levels, ownerReferences/GC, when to build an operator, OLM | 35 min |
 
 ---
 
@@ -81,7 +84,7 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 14 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -91,8 +94,8 @@ The senior-level reliability and security layer.
 2. **Networking** (Services, Ingress) — must know
 3. **ConfigMaps & Secrets** — must know
 4. **Health Checks** — must know
-5. **HPA & Scaling** — for production scale
-6. **Helm** — for the package manager
+5. **HPA & Node Autoscaling** — for production scale
+6. **Helm + Kustomize + Operators** — for the packaging/extension layer
 7. **StatefulSets, Jobs, PDBs, RBAC, Resource Quotas** — as relevant to JD
 8. **Interview Questions** — final review
 

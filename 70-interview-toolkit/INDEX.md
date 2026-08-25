@@ -2,9 +2,9 @@
 
 > **Behavioral, coding patterns, cheat sheets** — the "last-mile" stack. Use this in the final 1-2 weeks before any interview. Shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 25 files across 3 sub-stacks.
+> 33 files across 3 sub-stacks.
 
-[![Files](https://img.shields.io/badge/files-25-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-33-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-3-green)](#the-3-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -25,9 +25,9 @@ If you only have 1 week before an interview, this is where to focus.
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
-| 1 | [Behavioral](70.1-behavioral/INDEX.md) | 2 | Leadership questions, system-design behavioral (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
-| 2 | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 18 | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking |
-| 3 | [Cheat Sheets](70.3-cheatsheets/INDEX.md) | 5 | JavaScript, TypeScript, React/Next.js, backend, system design |
+| 1 | [Behavioral](70.1-behavioral/INDEX.md) | 5 | Stakeholder stories, leadership questions, judgment & ambiguity, system-design behavioral, anti-pattern drills (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
+| 2 | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 21 | Sliding window, two pointers, BFS/DFS, shortest paths, DP, heap, trie, union find, backtracking, linked lists, matrix simulation |
+| 3 | [Cheat Sheets](70.3-cheatsheets/INDEX.md) | 7 | JavaScript, TypeScript, React/Next.js, backend, system design, Docker/K8s/CI-CD, SQL/data modeling |
 
 ---
 
@@ -35,9 +35,9 @@ If you only have 1 week before an interview, this is where to focus.
 
 | Category | What it covers | When to use |
 |----------|----------------|-------------|
-| **Behavioral** | STAR answers, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
-| **Coding Patterns** | 18 algorithm patterns — sliding window, DP, BFS/DFS, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
-| **Cheat Sheets** | One-page reference for each major stack | Last-minute review the morning of |
+| **Behavioral** | STAR answers, stakeholder/judgment stories, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
+| **Coding Patterns** | 21 algorithm patterns — sliding window, DP, BFS/DFS, Dijkstra, matrix simulation, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
+| **Cheat Sheets** | One-page reference for each major stack + DevOps and SQL one-pagers | Last-minute review the morning of |
 
 ---
 
@@ -49,7 +49,7 @@ If you only have 1 week before an interview, this is where to focus.
 3. Skim relevant [Cheat Sheets](70.3-cheatsheets/INDEX.md) the morning of the interview
 
 ### Path B — Indian SDE / FAANG (1-2 weeks)
-1. **All 18 [Coding Patterns](70.2-coding-patterns/INDEX.md)** — drill 5-10 problems per pattern
+1. **All 21 [Coding Patterns](70.2-coding-patterns/INDEX.md)** — drill 5-10 problems per pattern
 2. Read [Behavioral](70.1-behavioral/INDEX.md) — Amazon Leadership Principles, Google Googliness
 3. Cheat Sheets as review
 
@@ -71,8 +71,8 @@ If you only have 1 week before an interview, this is where to focus.
 ## Cross-References
 
 - [00 — Strategy](../00-strategy/INDEX.md) — STAR method, communication, resume (do this first)
-- [Coding Patterns INDEX](70.2-coding-patterns/INDEX.md) — 18 patterns
-- [Behavioral INDEX](70.1-behavioral/INDEX.md) — STAR + leadership
+- [Coding Patterns INDEX](70.2-coding-patterns/INDEX.md) — 21 patterns
+- [Behavioral INDEX](70.1-behavioral/INDEX.md) — STAR + leadership + judgment
 - [Cheat Sheets INDEX](70.3-cheatsheets/INDEX.md) — one-pagers for each stack
 
 ---

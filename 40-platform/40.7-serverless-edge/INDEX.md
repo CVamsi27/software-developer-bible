@@ -1,8 +1,8 @@
 # Serverless & Edge — Index
 
-> **7 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, and curated interview questions.
+> **8 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, and curated interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-informational)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,10 +16,8 @@
 |----------|------:|----------------|
 | [Concepts](#concepts) | 2 | Overview, edge functions — the mental model |
 | [Providers](#providers) | 2 | AWS Lambda, Vercel — the main platforms |
-| [Patterns & IaC](#patterns--iac) | 2 | Serverless patterns, IaC frameworks (SAM/CDK/SST) |
+| [Patterns & IaC](#patterns--iac) | 3 | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
 | [Interview Prep](#interview-prep) | 1 | 30+ Qs |
-
-*Slot `40.7.07` is reserved for an upcoming chapter (durable execution with Temporal/Inngest) — no link yet.*
 
 ---
 
@@ -57,6 +55,7 @@ Deploy choice?
 |--:|------|--------|----------:|
 | 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
 | 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
+| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 30 min |
 
 ---
 
@@ -64,7 +63,7 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+| 08 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
 
 ---
 
@@ -75,7 +74,8 @@ Deploy choice?
 3. **AWS Lambda** or **Vercel Deployments** — for the JD's stack
 4. **Serverless Patterns** — for senior roles
 5. **Serverless Frameworks** — for IaC-heavy roles
-6. **Interview Questions** — final review
+6. **Durable Execution** — for orchestration/stateful-flow questions
+7. **Interview Questions** — final review
 
 ---
 
@@ -86,6 +86,7 @@ Deploy choice?
 - "Edge functions vs Lambda — when to use which?"
 - "How do you handle state in serverless?"
 - "What is the Saga pattern? How does it relate to Step Functions?"
+- "How would you run a multi-day approval workflow on serverless?" (durable execution)
 
 ---
 

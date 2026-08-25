@@ -1,8 +1,8 @@
 # Monorepo — Index
 
-> **5 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, and curated interview questions.
+> **6 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -17,9 +17,8 @@
 | [Foundations](#foundations) | 1 | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces |
 | [Build Orchestrators](#build-orchestrators) | 2 | Turborepo, Nx — the two main options |
 | [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
+| [Versioning & Publishing](#versioning--publishing) | 1 | Changesets, fixed vs independent versions, provenance |
 | [Interview Prep](#interview-prep) | 1 | 30+ Qs |
-
-*Slot `40.8.05` is reserved for an upcoming chapter (versioning & publishing strategies) — no link yet.*
 
 ---
 
@@ -60,11 +59,19 @@ Monorepo tool?
 
 ---
 
+## Versioning & Publishing
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 30 min |
+
+---
+
 ## Interview Prep
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 05 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
 
 ---
 
@@ -73,7 +80,8 @@ Monorepo tool?
 1. **Monorepo Overview** — must know
 2. **Turborepo** or **Nx** — for the JD's stack
 3. **Tools Deep-Dive** — for senior roles
-4. **Interview Questions** — final review
+4. **Versioning & Publishing** — "how do you release from a monorepo?"
+5. **Interview Questions** — final review
 
 ---
 

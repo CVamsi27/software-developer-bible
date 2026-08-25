@@ -1,8 +1,8 @@
 # Coding Patterns — Index
 
-> **18 files across 4 categories** (3 slots reserved). Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), and streaming algorithms (reservoir sampling).
+> **21 files across 4 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), and streaming algorithms (reservoir sampling).
 
-[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -14,12 +14,10 @@
 
 | Category | Files | Coverage |
 |----------|------:|----------|
-| [01 — Linear Structures](01-linear-structures/INDEX.md) | 6 | Sliding window, two pointers, binary search, intervals, greedy/prefix sum, string search |
-| [02 — Graphs, Trees & Grids](02-graphs-trees-grids/INDEX.md) | 4 | DFS/BFS, union find, topological sort, trie |
+| [01 — Linear Structures](01-linear-structures/INDEX.md) | 7 | Sliding window, two pointers, binary search, linked list manipulation, intervals, greedy/prefix sum, string search |
+| [02 — Graphs, Trees & Grids](02-graphs-trees-grids/INDEX.md) | 6 | DFS/BFS, shortest paths (Dijkstra/Bellman-Ford), union find, topological sort, trie, matrix traversal/simulation |
 | [03 — Recursion & Optimization](03-recursion-and-optimization/INDEX.md) | 3 | Backtracking, dynamic programming, bit manipulation |
 | [04 — Heaps, Stacks & Selection](04-heaps-stacks-selection/INDEX.md) | 5 | Heap, monotonic stack, stack/queue designs, segment tree, quickselect/reservoir sampling |
-
-Reserved slots (planned, not yet written): **Linked List Manipulation Patterns** `70.2.1.04`, **Shortest Paths: Dijkstra & Bellman-Ford** `70.2.2.02`, **Matrix Traversal & Simulation** `70.2.2.06`.
 
 ---
 
@@ -56,6 +54,9 @@ For staff/principal FAANG questions.
 | 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | 30 min |
 | 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | 25 min |
 | 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | 30 min |
+| 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md) | Linear | "Reverse/reorder list, cycle entry, O(1)-space surgery" | 35 min |
+| 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs | "Weighted shortest path, K stops, negative edges/arbitrage" | 40 min |
+| 21 | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md) | Graphs | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 30 min |
 
 ---
 
@@ -74,6 +75,9 @@ For staff/principal FAANG questions.
 "Course schedule" → Topological Sort
 "Merge intervals" → Intervals
 "Jump game" → Greedy
+"Reverse list between positions m-n" → Linked List Manipulation
+"Cheapest flights within K stops" → Shortest Paths (Bellman-Ford)
+"Spiral order / rotate matrix in place" → Matrix Traversal & Simulation
 ```
 
 ---
@@ -84,7 +88,7 @@ For staff/principal FAANG questions.
 Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Search, Backtracking. Do 5-8 problems per pattern.
 
 ### Path B — Indian SDE / FAANG (1-2 weeks)
-**All 12 core patterns**, then **all 6 advanced patterns**. 10-15 problems per pattern. Practice timed (45 min per medium).
+**All 12 core patterns**, then **all 9 advanced patterns**. 10-15 problems per pattern. Practice timed (45 min per medium).
 
 ### Path C — Interview tomorrow
 - Re-read the cheat sheet for the 3-4 most-tested patterns

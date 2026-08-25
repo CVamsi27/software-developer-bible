@@ -1,8 +1,8 @@
 # Observability — Index
 
-> **9 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
+> **11 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,7 +19,7 @@ The 3 pillars of observability + the SLO/error-budget framework.
 | The 3 Pillars | [01-pillars/](01-pillars/INDEX.md) | 3 | Logs, metrics, traces — the foundation |
 | Errors & Health | [02-errors-and-health/](02-errors-and-health/INDEX.md) | 2 | Error tracking, health checks — runtime quality |
 | SRE Targets | [03-sre-targets/](03-sre-targets/INDEX.md) | 2 | SLI/SLO/SLA, alerting — the SRE framework |
-| Advanced Telemetry | [04-advanced-telemetry/](04-advanced-telemetry/INDEX.md) | 1 | OpenTelemetry — the vendor-neutral standard |
+| Advanced Telemetry | [04-advanced-telemetry/](04-advanced-telemetry/INDEX.md) | 3 | OpenTelemetry, continuous profiling, eBPF — the advanced signals |
 | Interview Prep | [05-interview-prep/](05-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
@@ -68,13 +68,13 @@ The SRE framework.
 
 ## Advanced Telemetry
 
-The vendor-neutral standard.
+The vendor-neutral standard plus the advanced signals.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
-
-*Slots reserved: `40.4.4.02` continuous profiling, `40.4.4.03` eBPF observability (upcoming chapters — no links yet).*
+| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | 30 min |
+| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | 30 min |
 
 ---
 
@@ -82,7 +82,7 @@ The vendor-neutral standard.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 09 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 11 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
@@ -93,7 +93,8 @@ The vendor-neutral standard.
 3. **Error Tracking + Health Checks** — production hygiene
 4. **SLI/SLO/SLA + Alerting** — for SRE/staff roles
 5. **OpenTelemetry** — modern standard
-6. **Interview Questions** — final review
+6. **Continuous Profiling + eBPF** — advanced signals, staff-level
+7. **Interview Questions** — final review
 
 ---
 

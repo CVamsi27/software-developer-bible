@@ -1,8 +1,8 @@
 # Docker — Index
 
-> **7 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, best practices, production patterns, and interview questions.
+> **10 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,7 +16,7 @@
 |----------|------:|----------------|
 | [Core Concepts](#core-concepts) | 2 | Images, containers, volumes, networks — the foundation |
 | [Multi-Container & Build](#multi-container--build) | 2 | Compose, multi-stage builds — production workflows |
-| [Production & Security](#production--security) | 2 | Best practices + production patterns — hardening |
+| [Production & Security](#production--security) | 5 | Best practices, production patterns, runtime internals, supply chain, sandboxed runtimes |
 | [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
@@ -49,8 +49,9 @@ Production workflows.
 |--:|------|--------|----------:|
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | 25 min |
 | 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 30 min |
-
-*Slots reserved: `40.1.07`-`40.1.09` runtime internals, image signing/supply chain, rootless runtimes (upcoming chapters — no links yet).*
+| 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | 30 min |
+| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | 25 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | 25 min |
 
 ---
 
@@ -58,7 +59,7 @@ Production workflows.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 10 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
@@ -70,7 +71,10 @@ Production workflows.
 4. **Multi-Stage Builds** — for production image size
 5. **Best Practices & Security** — non-root, scanning, distroless
 6. **Production Patterns** — senior level
-7. **Interview Questions** — final review
+7. **Container Runtime Internals** — namespaces/cgroups, the "what is a container" answer
+8. **Image Signing & Supply Chain** — cosign, SBOM, SLSA
+9. **Rootless & Sandboxed Runtimes** — gVisor/Kata, multi-tenancy
+10. **Interview Questions** — final review
 
 ---
 

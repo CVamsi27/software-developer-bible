@@ -1,10 +1,10 @@
 # Releases & Metrics
 
-> **1 file.** Shipping safely: blue-green and canary deployments for zero-downtime releases with instant rollback.
+> **2 files.** Shipping safely and measuring delivery: blue-green and canary deployments for zero-downtime releases with instant rollback, plus the four DORA metrics that tell you whether shipping actually got faster AND safer.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Releases-green)](../INDEX.md)
-[![Status](https://img.shields.io/badge/status-in--progress-yellow)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
@@ -19,8 +19,7 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 | Order | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | 25 min |
-
-*Slot reserved: `40.3.3.02` DORA metrics & delivery performance (upcoming chapter — no link yet).*
+| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | 30 min |
 
 ---
 

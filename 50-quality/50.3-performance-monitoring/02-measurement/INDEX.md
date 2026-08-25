@@ -1,8 +1,8 @@
 # Measurement
 
-> **4 files.** How performance is actually measured: browser Performance APIs, profiling tools, Lighthouse CI in the pipeline, and real-user monitoring from production.
+> **5 files.** How performance is actually measured: browser Performance APIs, profiling tools, Lighthouse CI in the pipeline, real-user monitoring from production — and how the underlying protocol (HTTP/2 vs HTTP/3) changes what you should optimize.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -24,7 +24,7 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 
 ---
 
-## The 4 files
+## The 5 files
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
@@ -32,12 +32,7 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 | 02 | [Profiling Tools](50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | 30 min |
 | 03 | [Lighthouse CI](50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | 25 min |
 | 04 | [Real User Monitoring](50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX, segmentation | 25 min |
-
----
-
-## Planned additions
-
-- **50.3.2.05 — HTTP/2 & HTTP/3 Performance Effects** *(upcoming)*: multiplexing, head-of-line blocking, QUIC, and what they change for perf strategy. Slot reserved; not yet written.
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | 30 min |
 
 ---
 
@@ -47,6 +42,7 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 2. **Profiling Tools** — how to turn a slow trace into a root cause
 3. **Lighthouse CI** — gate regressions before deploy
 4. **RUM** — verify reality after deploy
+5. **HTTP/2 & HTTP/3 Effects** — interpret field data through the protocol lens
 
 ---
 

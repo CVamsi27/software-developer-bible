@@ -1,12 +1,12 @@
 # Git Advanced — Index
 
-> **7 files** — Advanced Git operations from branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, and code archaeology to interview questions.
+> **10 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Git:** Every senior engineer must be fluent. Branching strategies affect team velocity. Rebase vs merge decisions affect history. Bisect, reflog, and code archaeology save hours when debugging "who broke this?". This section is short but high-value.
+**Why Git:** Every senior engineer must be fluent. The object model explains every other command. Branching strategies affect team velocity. Rebase vs merge decisions affect history. Bisect, reflog, and code archaeology save hours when debugging "who broke this?". At scale, LFS and partial clones keep big repos usable; signed commits anchor supply-chain security. This section is short but high-value.
 
 ---
 
@@ -14,13 +14,23 @@
 
 | Category | Files | Why it matters |
 |----------|------:|----------------|
+| [Internals](#internals) | 1 | Objects, refs, packfiles — the mental model behind every command |
 | [Branching & History](#branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
 | [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
 | [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
 | [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
+| [Scale & Security](#scale--security) | 2 | LFS, partial clones, signed commits — repos that stay fast and provable |
 | [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
-*Slots `40.6.01`, `40.6.08`, `40.6.09` are reserved for upcoming chapters (git internals, git at scale/LFS, signed commits/repository security) — no links yet.*
+---
+
+## Internals
+
+Understand this once and `reset`, `rebase`, and recovery stop being scary.
+
+| # | File | Topics | When to read | Read time |
+|--:|------|--------|--------------|----------:|
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 30 min |
 
 ---
 
@@ -30,8 +40,8 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Read time |
 |--:|------|--------|-------------|----------:|
-| 01 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 30 min |
-| 02 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 25 min |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 30 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 25 min |
 
 **Decision:**
 
@@ -49,7 +59,7 @@ What branching model?
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 03 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min |
 
 ---
 
@@ -59,8 +69,8 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 04 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
-| 05 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
+| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
 
 ---
 
@@ -68,7 +78,18 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 06 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min |
+
+---
+
+## Scale & Security
+
+Keeping large repositories fast and history trustworthy.
+
+| # | File | Topics | Read time |
+|--:|------|--------|----------:|
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 25 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 20 min |
 
 ---
 
@@ -76,30 +97,35 @@ The power tools.
 
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
-| 07 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
 ## Suggested Study Order
 
-1. **Branching Strategies** — must know (you'll be asked what your team uses)
-2. **Rebase & Cherry-Pick** — must know
-3. **Git Hooks** — for senior roles
-4. **Advanced Commands** — for the "what would you do if…" questions
-5. **Code Archaeology** — for debugging questions
-6. **Patch & Bundle** — for OSS contribution
-7. **Interview Questions** — final review
+1. **Git Internals** — the object model makes everything else click
+2. **Branching Strategies** — must know (you'll be asked what your team uses)
+3. **Rebase & Cherry-Pick** — must know
+4. **Git Hooks** — for senior roles
+5. **Advanced Commands** — for the "what would you do if…" questions
+6. **Code Archaeology** — for debugging questions
+7. **Patch & Bundle** — for OSS contribution
+8. **LFS & Partial Clones** — for platform/scale roles
+9. **Signed Commits** — for security-minded teams
+10. **Interview Questions** — final review
 
 ---
 
 ## Common interview topics
 
+- "What happens when you run `git commit`?" (object model)
 - "Rebase vs merge — when to use which?"
 - "How do you find which commit introduced a bug?" (bisect)
 - "How do you undo a commit? What about an already-pushed commit?"
 - "How do you resolve a merge conflict?"
 - "What does `git reflog` do? How has it saved you?"
 - "Walk me through your team's branching strategy."
+- "How would you keep a multi-GB repository cloneable?" (LFS, partial clones, shallow CI)
 
 ---
 

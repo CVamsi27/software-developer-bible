@@ -1,8 +1,8 @@
 # CheatSheets — Index
 
-> **5 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, and System Design for rapid interview review.
+> **7 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -12,17 +12,19 @@
 
 ## Topic Categories
 
-The 5 cheat sheets classify into 3 conceptual categories — pick by interview type, not by order.
+The 7 cheat sheets classify into 5 conceptual categories — pick by interview type, not by order.
 
 | Category | Files | When to use |
 |----------|------:|-------------|
 | **Language** | 2 | JavaScript (any JS role), TypeScript (when the JD names TS) — fundamentals rounds |
 | **Framework & Full-Stack** | 2 | React/Next.js (frontend loops), Backend (Node/NestJS/DB/API loops) |
 | **Architecture** | 1 | System design rounds — every senior loop |
+| **Platform / DevOps** | 1 | Docker/K8s/CI-CD questions; platform-heavy full-stack loops |
+| **Data** | 1 | SQL/data-modeling deep-dives in backend loops |
 
 ---
 
-## The 5 Cheat Sheets
+## The 7 Cheat Sheets
 
 | # | File | What it covers | When to use | Read time |
 |--:|------|----------------|-------------|----------:|
@@ -31,6 +33,8 @@ The 5 cheat sheets classify into 3 conceptual categories — pick by interview t
 | 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | 15 min |
 | 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | 15 min |
 | 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | 15 min |
+| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | 15 min |
+| 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md) | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 15 min |
 
 ---
 
@@ -64,6 +68,9 @@ Each cheat sheet follows the same structure:
 - [React](../../10-frontend/10.3-react/INDEX.md)
 - [Backend](../../20-backend/INDEX.md)
 - [System Design](../../30-architecture/30.2-system-design/INDEX.md)
+- [Docker](../../40-platform/40.1-docker/INDEX.md)
+- [Kubernetes](../../40-platform/40.2-kubernetes/INDEX.md)
+- [CI/CD](../../40-platform/40.3-ci-cd/INDEX.md)
 
 ---
 

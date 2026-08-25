@@ -1,8 +1,8 @@
 # WebSockets — Index
 
-> **8 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, WebTransport, scaling patterns, and interview questions.
+> **11 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,10 +16,8 @@
 |----------|------:|---------|
 | [01 — Transports](01-transports/INDEX.md) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
 | [02 — Architecture & Scaling](02-architecture-and-scaling/INDEX.md) | 2 | Real-time architecture, scaling patterns |
-| [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 1 | NestJS WebSockets — the production framework |
+| [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 4 | NestJS gateways, GraphQL subscriptions, WebRTC P2P, realtime testing |
 | [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
-
-Planned additions in Frameworks & Paradigms: **GraphQL Subscriptions & Live Queries** (`60.1.3.02`), **WebRTC Peer-to-Peer** (`60.1.3.03`), **Testing Real-Time Systems** (`60.1.3.04`).
 
 ---
 
@@ -63,6 +61,9 @@ The hard part — making it work at scale.
 | # | File | Topics | Read time |
 |--:|------|--------|----------:|
 | 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
+| 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter, live queries, fan-out scaling | 30 min |
+| 03 | [WebRTC Peer-to-Peer](03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia, RTCPeerConnection, RTCDataChannel, ICE/STUN/TURN, mesh vs SFU vs MCU | 30 min |
+| 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | 30 min |
 
 ---
 
@@ -82,8 +83,11 @@ The hard part — making it work at scale.
 4. **Socket.IO** — most common production lib
 5. **Scaling Patterns** — for senior roles
 6. **NestJS WebSockets** — if NestJS stack
-7. **WebTransport** — modern, optional
-8. **Interview Questions** — final review
+7. **GraphQL Subscriptions** — schema-first realtime
+8. **WebRTC Peer-to-Peer** — video/audio/data without servers
+9. **Testing Real-Time Systems** — prove it survives production
+10. **WebTransport** — modern, optional
+11. **Interview Questions** — final review
 
 ---
 

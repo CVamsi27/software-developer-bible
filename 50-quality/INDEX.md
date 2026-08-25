@@ -2,9 +2,9 @@
 
 > **Testing, accessibility, performance monitoring, production engineering** — the "senior judgment" stack. Shared by both lanes.
 >
-> 31 files across 4 sub-stacks.
+> 37 files across 4 sub-stacks.
 
-[![Files](https://img.shields.io/badge/files-31-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-37-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-4-green)](#the-4-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -26,10 +26,10 @@ This is the stack where you prove you can ship software that doesn't break.
 
 | Order | Sub-stack | Files | Topics |
 |------:|-----------|------:|--------|
-| 1 | [Testing](50.1-testing/INDEX.md) | 13 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, load testing, chaos engineering |
-| 2 | [Accessibility](50.2-accessibility/INDEX.md) | 7 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
-| 3 | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 8 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, performance budgets |
-| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 3 | Incident response, SLI/SLO/error budgets, chaos engineering |
+| 1 | [Testing](50.1-testing/INDEX.md) | 14 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, test data management, load testing, chaos engineering |
+| 2 | [Accessibility](50.2-accessibility/INDEX.md) | 9 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels, charts, design systems |
+| 3 | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 9 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, HTTP/2 & HTTP/3, performance budgets |
+| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 5 | Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, on-call |
 
 ---
 

@@ -38,33 +38,33 @@ RETRY & DEDUPE COORDINATE 07 CDN architecture
 
 | # | File | Topics |
 |---|------|--------|
-| 01 | [Database Scaling](30.3.01-database-scaling.md) | Read replicas, partitioning, scaling levers |
-| 02 | [Resilience Patterns — Overview](30.3.02-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) |
-| 03 | [Leader Election & Consensus](30.3.03-leader-election-consensus.md) | Fencing tokens, leases, cron coordination |
-| 04 | [Technical Debt](30.3.04-technical-debt.md) | Quadrants, remediation strategy |
-| 05 | [Zero-Downtime Deployments](30.3.05-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations |
-| 06 | [Data Pipelines](30.3.06-data-pipelines.md) | ETL vs streaming, Bronze/Silver/Gold framing |
-| 07 | [CDN Architecture](30.3.07-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) |
-| 08 | [Health Checks & Graceful Shutdown](30.3.11-health-checks-graceful-shutdown.md) | Liveness/readiness, SIGTERM draining |
-| 09 | [Retry Patterns](30.3.13-retry-patterns.md) | Exponential backoff, jitter, retry budgets |
-| 10 | [Idempotency Keys](30.3.14-idempotency-keys.md) | Exactly-once effects over at-least-once delivery |
+| 01 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read replicas, partitioning, scaling levers |
+| 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) |
+| 03 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination |
+| 04 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy |
+| 05 | [Zero-Downtime Deployments](05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations |
+| 06 | [Data Pipelines](04-data-at-scale/30.3.4.02-data-pipelines.md) | ETL vs streaming, Bronze/Silver/Gold framing |
+| 07 | [CDN Architecture](04-data-at-scale/30.3.4.03-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) |
+| 08 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness, SIGTERM draining |
+| 09 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets |
+| 10 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery |
 
 ## Where did the moved patterns go?
 
 | Pattern (was here) | Now lives at |
 |--------------------|--------------|
-| Saga | [20.6 §Saga](../../20-backend/20.6-microservices/20.6.03-saga-pattern.md) |
-| Circuit breaker / resilience deep-dive | [20.6 §Circuit Breaker](../../20-backend/20.6-microservices/20.6.04-circuit-breaker.md) |
-| Bulkhead | [20.6 §Bulkhead](../../20-backend/20.6-microservices/20.6.14-bulkhead-pattern.md) |
-| API gateway | [20.6 §API Gateway](../../20-backend/20.6-microservices/20.6.02-api-gateway.md) |
-| Service discovery | [20.6 §Service Discovery](../../20-backend/20.6-microservices/20.6.01-service-discovery.md) |
-| Strangler fig | [20.6 §Strangler Fig](../../20-backend/20.6-microservices/20.6.12-strangler-fig.md) |
-| Event sourcing / CQRS | [20.6 §Event Sourcing](../../20-backend/20.6-microservices/20.6.07-event-sourcing.md) · [§CQRS](../../20-backend/20.6-microservices/20.6.13-cqrs.md) |
-| Distributed transactions | [20.6 §Distributed Transactions](../../20-backend/20.6-microservices/20.6.11-distributed-transactions.md) |
+| Saga | [20.6 §Saga](../../20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md) |
+| Circuit breaker / resilience deep-dive | [20.6 §Circuit Breaker](../../20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md) |
+| Bulkhead | [20.6 §Bulkhead](../../20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md) |
+| API gateway | [20.6 §API Gateway](../../20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md) |
+| Service discovery | [20.6 §Service Discovery](../../20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md) |
+| Strangler fig | [20.6 §Strangler Fig](../../20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md) |
+| Event sourcing / CQRS | [20.6 §Event Sourcing](../../20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md) · [§CQRS](../../20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md) |
+| Distributed transactions | [20.6 §Distributed Transactions](../../20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md) |
 
 ---
 
-**Cross-references:** [Microservices stack](../../20-backend/20.6-microservices/INDEX.md) · [System design theory](../30.2-system-design/00-theory/INDEX.md)
+**Cross-references:** [Microservices stack](../../20-backend/20.6-microservices/INDEX.md) · [System design theory](../30.2-system-design/01-theory/INDEX.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # System Design — Index
 
-> **42 files** — split into **theory** (20 foundational files in [00-theory/](00-theory/INDEX.md)) and **case studies** (22 applied examples in [10-case-studies/](10-case-studies/INDEX.md)).
+> **42 files** — split into **theory** (20 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (22 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
 > Study in three passes: **I. Theory** (CAP → consistency → scaling levers) → **II. The method** (how-to-approach framework) → **III. Case studies** (pick by JD domain).
 
@@ -16,12 +16,12 @@ The two sub-folders classify into 6 conceptual categories — the "GoF classific
 
 | Category | Where | Files | Why it matters |
 |----------|-------|------:|----------------|
-| **Data & Consistency Theory** | [00-theory/](00-theory/INDEX.md) | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, locks, consensus |
-| **Traffic, Scale & Capacity** | [00-theory/](00-theory/INDEX.md) | 4 | Load balancing, rate limiting, backpressure, capacity planning |
-| **Performance & Delivery** | [00-theory/](00-theory/INDEX.md) | 3 | Caching patterns, queues & async, outbox & CDC |
-| **Reliability & Topology** | [00-theory/](00-theory/INDEX.md) | 4 | Failure modes, resilience deep-dive, multi-region, architecture patterns |
-| **The Method + Drills** | [00-theory/](00-theory/INDEX.md) | 3 | How-to-approach framework, interview questions, probabilistic data structures |
-| **Applied Case Studies** | [10-case-studies/](10-case-studies/INDEX.md) | 22 | URL shortener → Netflix, Uber, WhatsApp, payment gateway — classified by domain |
+| **Data & Consistency Theory** | [01-theory/](01-theory/INDEX.md) | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, locks, consensus |
+| **Traffic, Scale & Capacity** | [01-theory/](01-theory/INDEX.md) | 4 | Load balancing, rate limiting, backpressure, capacity planning |
+| **Performance & Delivery** | [01-theory/](01-theory/INDEX.md) | 3 | Caching patterns, queues & async, outbox & CDC |
+| **Reliability & Topology** | [01-theory/](01-theory/INDEX.md) | 4 | Failure modes, resilience deep-dive, multi-region, architecture patterns |
+| **The Method + Drills** | [01-theory/](01-theory/INDEX.md) | 3 | How-to-approach framework, interview questions, probabilistic data structures |
+| **Applied Case Studies** | [02-case-studies/](02-case-studies/INDEX.md) | 22 | URL shortener → Netflix, Uber, WhatsApp, payment gateway — classified by domain |
 
 ---
 
@@ -47,8 +47,8 @@ INTERVIEW DRILLS ←────────────────────
 
 | Folder | Files | What it is | When to read |
 |--------|------:|-----------|--------------|
-| [00-theory/](00-theory/INDEX.md) | 20 | Foundational concepts (14, in order) + meta guides (6): approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region | **Read first** — every case study depends on these |
-| [10-case-studies/](10-case-studies/INDEX.md) | 22 | Applied examples across 10 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation | After theory — match the JD's domain |
+| [01-theory/](01-theory/INDEX.md) | 20 | Foundational concepts (14, in order) + meta guides (6): approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region | **Read first** — every case study depends on these |
+| [02-case-studies/](02-case-studies/INDEX.md) | 22 | Applied examples across 10 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation | After theory — match the JD's domain |
 
 ---
 

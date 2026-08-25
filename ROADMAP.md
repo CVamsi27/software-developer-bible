@@ -79,7 +79,7 @@ Main topic flow — each sub-stack builds on the previous:
 | Order | Topic | Flow inside |
 |---|---|---|
 | 2.3.1 | [PostgreSQL core](20-backend/20.4-database/INDEX.md) | normalization → indexes → transactions/MVCC → joins → execution plans → deadlocks |
-| 2.3.2 | [Postgres at scale](20-backend/20.4-database/INDEX.md) | connection pooling → replication → partitioning/sharding theory ([30.2 theory](30-architecture/30.2-system-design/00-theory/INDEX.md)) → performance |
+| 2.3.2 | [Postgres at scale](20-backend/20.4-database/INDEX.md) | connection pooling → replication → partitioning/sharding theory ([30.2 theory](30-architecture/30.2-system-design/01-theory/INDEX.md)) → performance |
 | 2.3.3 | ORM & Redis | [Prisma](20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md) → [Prisma advanced](20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md) → [Redis fundamentals](20-backend/20.8-caching/20.8.02-redis-fundamentals.md) |
 | 2.3.4 | [Caching](20-backend/20.8-caching/INDEX.md) | cache-aside/write-through/write-behind → invalidation → stampede defense → advanced Redis |
 
@@ -114,9 +114,9 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | Order | Topic | Flow inside |
 |---|---|---|
 | 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF applied (Strategy, Repository, Observer, DI…) → CQRS in practice |
-| 3.2 | [SD method](30-architecture/30.2-system-design/00-theory/30.2.1.15-how-to-approach.md) | clarify → estimate → high-level → deep-dive (memorize this skeleton) |
-| 3.3 | [SD theory](30-architecture/30.2-system-design/00-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
-| 3.4 | [Case studies ×20](30-architecture/30.2-system-design/10-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
+| 3.2 | [SD method](30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) | clarify → estimate → high-level → deep-dive (memorize this skeleton) |
+| 3.3 | [SD theory](30-architecture/30.2-system-design/01-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
+| 3.4 | [Case studies ×20](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
 
 **Checkpoint 3:** Record yourself doing URL shortener + ticket booking in 45 min each; review against the 4-phase rubric; no silent minutes.
 

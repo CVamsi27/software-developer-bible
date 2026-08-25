@@ -99,7 +99,7 @@ The hard part — making it work at scale.
 
 - [NestJS](../../20-backend/20.2-nestjs/INDEX.md) — NestJS WebSockets gateways
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — monitoring real-time
-- [System Design (WhatsApp, Chat System)](../../30-architecture/30.2-system-design/10-case-studies/INDEX.md) — real-time case studies
+- [System Design (WhatsApp, Chat System)](../../30-architecture/30.2-system-design/02-case-studies/INDEX.md) — real-time case studies
 
 ---
 

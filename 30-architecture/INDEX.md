@@ -25,12 +25,12 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 
 | Category | Subfolder | Count | Purpose |
 |----------|-----------|------:|---------|
-| Foundations | [30.1.0-foundations](30.1-design-patterns/30.1.0-foundations/INDEX.md) | 4 files | SOLID, OOP, UML — read these first |
-| Creational | [30.1.1-creational](30.1-design-patterns/30.1.1-creational/INDEX.md) | 5 patterns | Object creation mechanisms |
-| Structural | [30.1.2-structural](30.1-design-patterns/30.1.2-structural/INDEX.md) | 8 patterns | Class/object composition |
-| Behavioral | [30.1.3-behavioral](30.1-design-patterns/30.1.3-behavioral/INDEX.md) | 11 patterns | Object collaboration & responsibility |
-| Architectural | [30.1.4-architectural](30.1-design-patterns/30.1.4-architectural/INDEX.md) | 4+ patterns | Modern distributed systems |
-| Interview Prep | [30.1.5-interview-prep](30.1-design-patterns/30.1.5-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
+| Foundations | [30.1.0-foundations](30.1-design-patterns/01-foundations/INDEX.md) | 4 files | SOLID, OOP, UML — read these first |
+| Creational | [30.1.1-creational](30.1-design-patterns/02-creational/INDEX.md) | 5 patterns | Object creation mechanisms |
+| Structural | [30.1.2-structural](30.1-design-patterns/03-structural/INDEX.md) | 8 patterns | Class/object composition |
+| Behavioral | [30.1.3-behavioral](30.1-design-patterns/04-behavioral/INDEX.md) | 11 patterns | Object collaboration & responsibility |
+| Architectural | [30.1.4-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 4+ patterns | Modern distributed systems |
+| Interview Prep | [30.1.5-interview-prep](30.1-design-patterns/06-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
 
  **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and decision cheat sheet.
 
@@ -39,10 +39,10 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 ## Study Order
 
 1. **Design Patterns first**
-   - [Foundations](30.1-design-patterns/30.1.0-foundations/INDEX.md) — SOLID, OOP, UML (1.5 hrs)
+   - [Foundations](30.1-design-patterns/01-foundations/INDEX.md) — SOLID, OOP, UML (1.5 hrs)
    - At least 1 pattern from each category (4-6 hrs)
    - Deep dive on 3-4 patterns you use daily (3-4 hrs)
-   - [Interview Questions](30.1-design-patterns/30.1.5-interview-prep/30.1.51-interview-questions.md) for 50+ Qs (2-3 hrs)
+   - [Interview Questions](30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md) for 50+ Qs (2-3 hrs)
 
 2. **System Design theory** (CAP, consistency, sharding, caching, queues) — concepts.
 

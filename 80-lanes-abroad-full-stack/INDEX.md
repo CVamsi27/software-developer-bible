@@ -184,15 +184,15 @@ The mid-stage EU full-stack interview loop is **3-4 rounds**, with a heavy take-
 - No observability / no failure modes
 
 **The system design case studies the bible has:**
-- [URL Shortener](../30-architecture/30.2-system-design/10-case-studies/30.2.2.01-url-shortener.md) — classic
-- [Notification Service](../30-architecture/30.2-system-design/10-case-studies/30.2.2.07-notification-service.md) — retry, DLQ, fanout
-- [Ticket Booking](../30-architecture/30.2-system-design/10-case-studies/30.2.2.08-ticket-booking.md) — consistency, "two users grab the last seat"
-- [Hospital Management](../30-architecture/30.2-system-design/10-case-studies/30.2.2.10-hospital-management.md) — domain fit for healthcare
-- [Payment Gateway](../30-architecture/30.2-system-design/10-case-studies/30.2.2.06-payment-gateway.md) — SumUp / fintech
-- [Rate Limiter](../30-architecture/30.2-system-design/10-case-studies/30.2.2.13-rate-limiter.md) — n8n workflow throttling
-- [Distributed Counter](../30-architecture/30.2-system-design/10-case-studies/30.2.2.20-distributed-counter.md) — hot-key sharding
-- [Lyft](../30-architecture/30.2-system-design/10-case-studies/30.2.2.19-lyft.md) — geo indexing
-- [How to Approach](../30-architecture/30.2-system-design/00-theory/30.2.1.15-how-to-approach.md) — read this first
+- [URL Shortener](../30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md) — classic
+- [Notification Service](../30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.md) — retry, DLQ, fanout
+- [Ticket Booking](../30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md) — consistency, "two users grab the last seat"
+- [Hospital Management](../30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md) — domain fit for healthcare
+- [Payment Gateway](../30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md) — SumUp / fintech
+- [Rate Limiter](../30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md) — n8n workflow throttling
+- [Distributed Counter](../30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md) — hot-key sharding
+- [Lyft](../30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md) — geo indexing
+- [How to Approach](../30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) — read this first
 
 **Practice 5 of these with a timer + recording.** 45 min each, then review the recording.
 

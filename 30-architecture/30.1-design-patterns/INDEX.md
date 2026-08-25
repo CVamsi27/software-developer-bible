@@ -17,12 +17,12 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 
 | Category | Purpose | Subfolder | # Patterns |
 |----------|---------|-----------|-----------:|
-| **Foundations** | Principles, OOP, UML — read first | [30.1.0-foundations](30.1.0-foundations/INDEX.md) | 4 theory files |
-| **Creational** | Object creation mechanisms (decoupling construction from use) | [30.1.1-creational](30.1.1-creational/INDEX.md) | 5 patterns |
-| **Structural** | Class/object composition (assemble larger structures from parts) | [30.1.2-structural](30.1.2-structural/INDEX.md) | 7 patterns |
-| **Behavioral** | Object collaboration and responsibility distribution | [30.1.3-behavioral](30.1.3-behavioral/INDEX.md) | 11 patterns |
-| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [30.1.4-architectural](30.1.4-architectural/INDEX.md) | 4+ patterns |
-| **Interview Prep** | Curated question bank, mock interview scenarios | [30.1.5-interview-prep](30.1.5-interview-prep/INDEX.md) | 1 file (50+ Qs) |
+| **Foundations** | Principles, OOP, UML — read first | [30.1.0-foundations](01-foundations/INDEX.md) | 4 theory files |
+| **Creational** | Object creation mechanisms (decoupling construction from use) | [30.1.1-creational](02-creational/INDEX.md) | 5 patterns |
+| **Structural** | Class/object composition (assemble larger structures from parts) | [30.1.2-structural](03-structural/INDEX.md) | 7 patterns |
+| **Behavioral** | Object collaboration and responsibility distribution | [30.1.3-behavioral](04-behavioral/INDEX.md) | 11 patterns |
+| **Architectural** | Modern, distributed-systems patterns (not in original GoF) | [30.1.4-architectural](05-architectural/INDEX.md) | 4+ patterns |
+| **Interview Prep** | Curated question bank, mock interview scenarios | [30.1.5-interview-prep](06-interview-prep/INDEX.md) | 1 file (50+ Qs) |
 
 ---
 
@@ -30,16 +30,16 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 
 ### If you're new to design patterns
 
-1. Start with [Foundations](30.1.0-foundations/INDEX.md) — SOLID, OOP, UML. The patterns below are meaningless without these.
+1. Start with [Foundations](01-foundations/INDEX.md) — SOLID, OOP, UML. The patterns below are meaningless without these.
 2. Read one pattern from each category (start with the iconic ones: Singleton, Adapter, Observer).
 3. Then go deep on the patterns that map to your daily work.
 
 ### If you're prepping for an interview
 
-1. Skim the [category overview](30.1.0-foundations/INDEX.md) (5 min).
+1. Skim the [category overview](01-foundations/INDEX.md) (5 min).
 2. Read **all 5 creational** + **7 structural** + **11 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
 3. Deep-dive on 3-4 patterns you don't know cold.
-4. Hit [Interview Questions](30.1.5-interview-prep/30.1.51-interview-questions.md) for 50+ curated questions.
+4. Hit [Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) for 50+ curated questions.
 
 ### If you're picking a pattern for a real problem
 
@@ -56,55 +56,55 @@ Use this decision cheat sheet (full version in each category INDEX):
 
 ## Sub-Index Links
 
-### [00 — Foundations](30.1.0-foundations/INDEX.md)
+### [00 — Foundations](01-foundations/INDEX.md)
 SOLID, OOP concepts, UML diagrams, DRY/KISS/YAGNI. Read these before any pattern.
 
-### [01 — Creational Patterns](30.1.1-creational/INDEX.md) (5 files)
+### [01 — Creational Patterns](02-creational/INDEX.md) (5 files)
 Object creation. Decouple "how to construct" from "what to do with the constructed thing."
 
-- [Singleton](30.1.1-creational/30.1.11-singleton.md) — one global instance
-- [Factory Method](30.1.1-creational/30.1.12-factory-method.md) — subclass decides what to instantiate
-- [Builder](30.1.1-creational/30.1.13-builder.md) — step-by-step construction of complex objects
-- [Abstract Factory](30.1.1-creational/30.1.14-abstract-factory.md) — families of related objects
-- [Prototype](30.1.1-creational/30.1.15-prototype.md) — clone instead of construct
+- [Singleton](02-creational/30.1.2.01-singleton.md) — one global instance
+- [Factory Method](02-creational/30.1.2.02-factory-method.md) — subclass decides what to instantiate
+- [Builder](02-creational/30.1.2.03-builder.md) — step-by-step construction of complex objects
+- [Abstract Factory](02-creational/30.1.2.04-abstract-factory.md) — families of related objects
+- [Prototype](02-creational/30.1.2.05-prototype.md) — clone instead of construct
 
-### [02 — Structural Patterns](30.1.2-structural/INDEX.md) (7 files)
+### [02 — Structural Patterns](03-structural/INDEX.md) (7 files)
 Class/object composition. Combine small pieces into larger structures while keeping them flexible.
 
-- [Adapter](30.1.2-structural/30.1.21-adapter.md) — bridge incompatible interfaces
-- [Facade](30.1.2-structural/30.1.22-facade.md) — simplified front for a complex subsystem
-- [Decorator](30.1.2-structural/30.1.23-decorator.md) — add behavior dynamically without subclassing
-- [Proxy](30.1.2-structural/30.1.24-proxy.md) — controlled access (lazy, protection, remote, caching)
-- [Module Pattern](30.1.2-structural/30.1.25-module-pattern.md) — encapsulation at the file level
-- [Composite](30.1.2-structural/30.1.26-composite.md) — tree structures, treat part-whole uniformly
-- [Bridge](30.1.2-structural/30.1.27-bridge.md) — decouple abstraction from implementation
-- [Flyweight](30.1.2-structural/30.1.28-flyweight.md) — share state to support many fine-grained objects
+- [Adapter](03-structural/30.1.3.01-adapter.md) — bridge incompatible interfaces
+- [Facade](03-structural/30.1.3.02-facade.md) — simplified front for a complex subsystem
+- [Decorator](03-structural/30.1.3.03-decorator.md) — add behavior dynamically without subclassing
+- [Proxy](03-structural/30.1.3.04-proxy.md) — controlled access (lazy, protection, remote, caching)
+- [Module Pattern](03-structural/30.1.3.05-module-pattern.md) — encapsulation at the file level
+- [Composite](03-structural/30.1.3.06-composite.md) — tree structures, treat part-whole uniformly
+- [Bridge](03-structural/30.1.3.07-bridge.md) — decouple abstraction from implementation
+- [Flyweight](03-structural/30.1.3.08-flyweight.md) — share state to support many fine-grained objects
 
-### [03 — Behavioral Patterns](30.1.3-behavioral/INDEX.md) (11 files)
+### [03 — Behavioral Patterns](04-behavioral/INDEX.md) (11 files)
 Object collaboration. Manage algorithms, responsibilities, and communication between objects.
 
-- [Strategy](30.1.3-behavioral/30.1.31-strategy.md) — swap algorithms at runtime
-- [Observer](30.1.3-behavioral/30.1.32-observer.md) — event-driven, pub/sub
-- [Chain of Responsibility](30.1.3-behavioral/30.1.33-chain-of-responsibility.md) — pass request along a chain
-- [State](30.1.3-behavioral/30.1.34-state.md) — behavior changes with internal state
-- [Template Method](30.1.3-behavioral/30.1.35-template-method.md) — skeleton + steps
-- [Iterator](30.1.3-behavioral/30.1.36-iterator.md) — sequential access without exposing internals
-- [Mediator](30.1.3-behavioral/30.1.37-mediator.md) — central authority for object communication
-- [Memento](30.1.3-behavioral/30.1.38-memento.md) — capture/restore internal state
-- [Command](30.1.3-behavioral/30.1.39-command.md) — encapsulate a request as an object
-- [Visitor](30.1.3-behavioral/30.1.40-visitor.md) — add operations without modifying classes
-- [Interpreter](30.1.3-behavioral/30.1.41-interpreter.md) — grammar + interpreter for a DSL
+- [Strategy](04-behavioral/30.1.4.01-strategy.md) — swap algorithms at runtime
+- [Observer](04-behavioral/30.1.4.02-observer.md) — event-driven, pub/sub
+- [Chain of Responsibility](04-behavioral/30.1.4.03-chain-of-responsibility.md) — pass request along a chain
+- [State](04-behavioral/30.1.4.04-state.md) — behavior changes with internal state
+- [Template Method](04-behavioral/30.1.4.05-template-method.md) — skeleton + steps
+- [Iterator](04-behavioral/30.1.4.06-iterator.md) — sequential access without exposing internals
+- [Mediator](04-behavioral/30.1.4.07-mediator.md) — central authority for object communication
+- [Memento](04-behavioral/30.1.4.08-memento.md) — capture/restore internal state
+- [Command](04-behavioral/30.1.4.09-command.md) — encapsulate a request as an object
+- [Visitor](04-behavioral/30.1.4.10-visitor.md) — add operations without modifying classes
+- [Interpreter](04-behavioral/30.1.4.11-interpreter.md) — grammar + interpreter for a DSL
 
-### [04 — Architectural Patterns](30.1.4-architectural/INDEX.md) (4+ files)
+### [04 — Architectural Patterns](05-architectural/INDEX.md) (4+ files)
 Modern, distributed-systems patterns. Cross-cutting; not part of the original GoF set.
 
-- [Repository](30.1.4-architectural/30.1.41-repository.md) — data access abstraction
-- [CQRS & DI](30.1.4-architectural/30.1.42-cqrs-di.md) — command/query separation + dependency injection
-- [Event Sourcing](30.1.4-architectural/30.1.43-event-sourcing.md) — store events, not state
-- [Saga](30.1.4-architectural/30.1.44-saga.md) — distributed transactions
+- [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
+- [CQRS & DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
+- [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — store events, not state
+- [Saga](05-architectural/30.1.5.04-saga.md) — distributed transactions
 
-### [05 — Interview Prep](30.1.5-interview-prep/INDEX.md) (1 file, 50+ Qs)
-- [Design Pattern Interview Questions](30.1.5-interview-prep/30.1.51-interview-questions.md) — 50+ curated Qs with answers
+### [05 — Interview Prep](06-interview-prep/INDEX.md) (1 file, 50+ Qs)
+- [Design Pattern Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) — 50+ curated Qs with answers
 
 ---
 

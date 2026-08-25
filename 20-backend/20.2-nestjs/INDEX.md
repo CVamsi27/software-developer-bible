@@ -100,7 +100,7 @@ Production hygiene.
 - [Node.js](../20.1-node.js/INDEX.md) — the runtime NestJS sits on
 - [REST APIs](../20.3-rest-apis/INDEX.md) — NestJS controllers map to REST routes
 - [Microservices (gRPC, Service Mesh)](../20.6-microservices/INDEX.md) — microservices patterns NestJS implements
-- [Design Patterns (CQRS)](../../30-architecture/30.1-design-patterns/30.1.4-architectural/30.1.42-cqrs-di.md) — CQRS deep-dive
+- [Design Patterns (CQRS)](../../30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md) — CQRS deep-dive
 - [Testing](../../50-quality/50.1-testing/INDEX.md) — testing patterns
 
 ---

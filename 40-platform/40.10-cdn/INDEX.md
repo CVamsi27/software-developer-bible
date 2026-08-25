@@ -40,7 +40,7 @@
 
 ## When to read
 
-- **Before any system-design interview with a "global users" angle** — pairs with [HTTP caching](../../20-backend/20.3-rest-apis/20.3.13-http-caching.md)
+- **Before any system-design interview with a "global users" angle** — pairs with [HTTP caching](../../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md)
 - 45 min read; skim the provider comparison if pressed for time
 
 ## Common interview questions
@@ -54,7 +54,7 @@
 
 ## Cross-references
 
-[Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [HTTP caching](../../20-backend/20.3-rest-apis/20.3.13-http-caching.md) · [Caching stack](../../20-backend/20.8-caching/INDEX.md) · [CDN architecture (system-design view)](../../30-architecture/30.3-infra-patterns/30.3.07-cdn-architecture.md)
+[Serverless & Edge](../40.7-serverless-edge/INDEX.md) · [HTTP caching](../../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md) · [Caching stack](../../20-backend/20.8-caching/INDEX.md) · [CDN architecture (system-design view)](../../30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md)
 
 ---
 

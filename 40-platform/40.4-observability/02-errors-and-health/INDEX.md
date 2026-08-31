@@ -16,10 +16,10 @@ Pillars tell you what the system did; errors and health tell you whether what it
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 25 min |
-| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | 20 min |
+| Order | File                                          | Topics                                                                                            | Read time |
+| --   :  | ------                                          | --------                                                                                            | ----------: |
+| 01    | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 25 min    |
+| 02    | [Health Checks](40.4.2.02-health-checks.md)   | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation     | 20 min    |
 
 ---
 
@@ -41,9 +41,9 @@ Pillars tell you what the system did; errors and health tell you whether what it
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — tracks errors and health for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
+| Topic                   | Docita evidence                                                                                                                                    |
+| -------                   | -----------------                                                                                                                                    |
 | Error tracking (Sentry) | `instrument.ts` bootstrap with `createSentryBeforeSend` scrubbing (`error-handling/sentry.utils.ts`); optional profiling behind `SENTRY_PROFILING` |
-| Error service layer | `monitoring/services/error-tracking.service.ts` wraps reporting for the app |
-| Ops alerts | `ops-alert.service.ts` + `listeners/ops-alert.listener.ts` react to domain events |
-| Health checks | `health-check.controller.ts`, `monitoring/health/prisma.health.ts`, `health-check.service.ts`; Fly probes `/api/health/live` |
+| Error service layer     | `monitoring/services/error-tracking.service.ts` wraps reporting for the app                                                                        |
+| Ops alerts              | `ops-alert.service.ts` + `listeners/ops-alert.listener.ts` react to domain events                                                                  |
+| Health checks           | `health-check.controller.ts`, `monitoring/health/prisma.health.ts`, `health-check.service.ts`; Fly probes `/api/health/live`                       |

@@ -16,12 +16,12 @@ CI platforms differ in syntax but not in substance: check out, build image, push
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | 30 min |
-| 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | 30 min |
-| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | 30 min |
-| 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | 30 min |
+| Order | File                                                                                          | Topics                                                                                                                                                                        | Read time |
+| --   :  | ------                                                                                          | --------                                                                                                                                                                        | ----------: |
+| 01    | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md)                                     | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets                                                                    | 30 min    |
+| 02    | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md)                                           | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags)                                                                  | 30 min    |
+| 03    | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | 30 min    |
+| 04    | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md)     | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection        | 30 min    |
 
 ---
 
@@ -43,11 +43,11 @@ CI platforms differ in syntax but not in substance: check out, build image, push
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — builds and deploys for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Docker build in CI | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; scanned by `container-scan.yml` |
-| Deploy pipeline | `deploy.yml` + `scripts/deploy/fly-deploy-in-primary-region.sh` (pins deploys to primary region `sin`) |
-| DB migration gate | `db-migrations.yml` + `verify-db-schema-sync.sh` before rollout |
-| Canary deploy | `scripts/deploy/worker-canary-deploy.sh` for the worker app |
-| Supply-chain checks | `osv-scanner.toml`, `pnpm audit --audit-level=high` gate, workflow script-ref checks |
-| Artifact registries / SLSA attestations | _No direct docita implementation yet._ |
+| Topic                                   | Docita evidence                                                                                        |
+| -------                                   | -----------------                                                                                        |
+| Docker build in CI                      | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; scanned by `container-scan.yml` |
+| Deploy pipeline                         | `deploy.yml` + `scripts/deploy/fly-deploy-in-primary-region.sh` (pins deploys to primary region `sin`) |
+| DB migration gate                       | `db-migrations.yml` + `verify-db-schema-sync.sh` before rollout                                        |
+| Canary deploy                           | `scripts/deploy/worker-canary-deploy.sh` for the worker app                                            |
+| Supply-chain checks                     | `osv-scanner.toml`, `pnpm audit --audit-level=high` gate, workflow script-ref checks                   |
+| Artifact registries / SLSA attestations | _No direct docita implementation yet._                                                                 |

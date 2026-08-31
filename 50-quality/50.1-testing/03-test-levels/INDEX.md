@@ -26,11 +26,11 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ## The 3 levels
 
-| # | File | Level | Topics | When to use | Read time |
-|--:|------|-------|--------|-------------|----------:|
-| 01 | [Unit Testing](50.1.3.01-unit-testing.md) | Base | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 25 min |
-| 02 | [Integration Testing](50.1.3.02-integration-testing.md) | Middle | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 25 min |
-| 03 | [E2E Testing](50.1.3.03-e2e-testing.md) | Top | Playwright, Cypress, user flows, visual regression | Critical user journeys | 30 min |
+| #  | File                                                    | Level  | Topics                                                                | When to use                     | Read time |
+| --:  | ------                                                    | -------  | --------                                                                | -------------                     | ----------: |
+| 01 | [Unit Testing](50.1.3.01-unit-testing.md)               | Base   | Isolated tests, boundaries, dependency injection, stubs               | Pure functions, business logic  | 25 min    |
+| 02 | [Integration Testing](50.1.3.02-integration-testing.md) | Middle | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 25 min    |
+| 03 | [E2E Testing](50.1.3.03-e2e-testing.md)                 | Top    | Playwright, Cypress, user flows, visual regression                    | Critical user journeys          | 30 min    |
 
 ---
 
@@ -61,9 +61,9 @@ Interview trap: "Why not just write E2E tests for everything?" — feedback loop
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Unit/integration level | co-located `*.spec.ts` files throughout `apps/api/src` (482 total) |
-| Component level | `*.test.tsx` files under `packages/ui` |
-| E2E critical flows | `apps/app/e2e/critical-flows.spec.ts` plus per-feature specs (`auth`, `appointments`, `invoices`, …) |
-| Multi-app E2E suites | `apps/app/e2e/`, `apps/internal/e2e/`, `apps/landing/e2e/` |
+| Topic                  | Docita evidence                                                                                      |
+| -------                  | -----------------                                                                                      |
+| Unit/integration level | co-located `*.spec.ts` files throughout `apps/api/src` (482 total)                                   |
+| Component level        | `*.test.tsx` files under `packages/ui`                                                               |
+| E2E critical flows     | `apps/app/e2e/critical-flows.spec.ts` plus per-feature specs (`auth`, `appointments`, `invoices`, …) |
+| Multi-app E2E suites   | `apps/app/e2e/`, `apps/internal/e2e/`, `apps/landing/e2e/`                                           |

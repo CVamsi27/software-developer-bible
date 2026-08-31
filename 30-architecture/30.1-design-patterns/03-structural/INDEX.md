@@ -23,16 +23,16 @@ Inheritance is rigid (compile-time, locked to a parent class) and often overused
 
 ## The 8 patterns
 
-| # | Pattern | Intent | Use when | Avoid when |
-|--:|---------|--------|----------|------------|
-| 1 | [Adapter](30.1.3.01-adapter.md) | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | You control both sides |
-| 2 | [Facade](30.1.3.02-facade.md) | Simplified front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple |
-| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Many independent dimensions → explosion |
-| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine |
-| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | Always in modern JS/TS | N/A |
-| 6 | [Composite](30.1.3.06-composite.md) | Tree structures, treat part-whole uniformly | File system, UI tree, org chart, AST | Flat structures, no recursion |
-| 7 | [Bridge](30.1.3.07-bridge.md) | Decouple abstraction from implementation | Multiple dimensions of variation (shape × color × renderer) | One dimension, stable axis |
-| 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure |
+| # | Pattern                               | Intent                                                | Use when                                                    | Avoid when                              |
+| --: | ---------                               | --------                                                | ----------                                                    | ------------                              |
+| 1 | [Adapter](30.1.3.01-adapter.md)       | Bridge incompatible interfaces                        | 3rd-party SDK, legacy integration                           | You control both sides                  |
+| 2 | [Facade](30.1.3.02-facade.md)         | Simplified front for complex system                   | Library/SDK, multi-subsystem workflow                       | Single subsystem, already simple        |
+| 3 | [Decorator](30.1.3.03-decorator.md)   | Add behavior dynamically                              | Cross-cutting concerns (logging, auth, caching)             | Many independent dimensions → explosion |
+| 4 | [Proxy](30.1.3.04-proxy.md)           | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs           | Direct access is fine                   |
+| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level                       | Always in modern JS/TS                                      | N/A                                     |
+| 6 | [Composite](30.1.3.06-composite.md)   | Tree structures, treat part-whole uniformly           | File system, UI tree, org chart, AST                        | Flat structures, no recursion           |
+| 7 | [Bridge](30.1.3.07-bridge.md)         | Decouple abstraction from implementation              | Multiple dimensions of variation (shape × color × renderer) | One dimension, stable axis              |
+| 8 | [Flyweight](30.1.3.08-flyweight.md)   | Share state to support many fine-grained objects      | Text rendering (chars), particle systems, glyph caches      | Few objects, no memory pressure         |
 
 ---
 
@@ -153,13 +153,13 @@ Need to combine / wrap / control access to objects?
 
 These three look similar — they all wrap an object — but intent differs:
 
-| | Adapter | Decorator | Proxy |
-|--|---------|-----------|--------|
-| **Intent** | Make incompatible interface work | Add new behavior | Control access |
-| **Interface** | Changes the interface | Keeps or extends the interface | Keeps the interface |
-| **When it intercepts** | Always (it's the only way to call the adaptee) | On every call (to add behavior) | On every call (to gate / cache / lazy-load) |
-| **Knows about clients** | No | No | Usually not, but can (auth proxy) |
-| **Example** | Wrap Stripe API in your `PaymentProvider` | Wrap a service with `@logged()` | Wrap a DB row for lazy loading |
+| Adapter                 | Decorator                                      | Proxy                           |                                             |
+| --                        | ---------                                        | -----------                       | --------                                      |
+| **Intent**              | Make incompatible interface work               | Add new behavior                | Control access                              |
+| **Interface**           | Changes the interface                          | Keeps or extends the interface  | Keeps the interface                         |
+| **When it intercepts**  | Always (it's the only way to call the adaptee) | On every call (to add behavior) | On every call (to gate / cache / lazy-load) |
+| **Knows about clients** | No                                             | No                              | Usually not, but can (auth proxy)           |
+| **Example**             | Wrap Stripe API in your `PaymentProvider`      | Wrap a service with `@logged()` | Wrap a DB row for lazy loading              |
 
 A common interview trap: "What's the difference between Decorator and Proxy?" The answer is **intent** — Decorator wants to add behavior, Proxy wants to control access. In code they can be indistinguishable.
 
@@ -215,10 +215,10 @@ Modern TS: a `module.ts` file often *contains* a Facade.
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — wraps and composes for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — delegation enforced by `scripts/checks/check-facade-delegation.mjs` |
-| Adapter | India's ABDM government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
-| Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, CSRF, tenant-context around handlers |
-| Module | ES modules + barrel `index.ts` files at every module boundary |
-| Proxy / Flyweight / Composite / Bridge | _No direct docita implementation yet._ |
+| Topic                                  | Docita evidence                                                                                                                                                                                                      |
+| -------                                  | -----------------                                                                                                                                                                                                      |
+| Facade                                 | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — delegation enforced by `scripts/checks/check-facade-delegation.mjs` |
+| Adapter                                | India's ABDM government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/`                                                           |
+| Decorator (framework-shaped)           | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, CSRF, tenant-context around handlers                                                                                               |
+| Module                                 | ES modules + barrel `index.ts` files at every module boundary                                                                                                                                                        |
+| Proxy / Flyweight / Composite / Bridge | _No direct docita implementation yet._                                                                                                                                                                               |

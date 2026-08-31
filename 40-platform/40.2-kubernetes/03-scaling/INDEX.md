@@ -16,10 +16,10 @@ Kubernetes' core promise is elastic scale — but HPA does nothing until the met
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | 30 min |
-| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | 30 min |
+| Order | File                                                                                  | Topics                                                                                                                                                           | Read time |
+| --   :  | ------                                                                                  | --------                                                                                                                                                           | ----------: |
+| 01    | [HPA & Scaling](40.2.3.01-hpa-scaling.md)                                             | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison                                                                     | 30 min    |
+| 02    | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | 30 min    |
 
 ---
 
@@ -42,9 +42,9 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
 _No direct docita implementation yet_ — no HPA/Karpenter; scaling is deliberate Fly.io mechanics:
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| HPA analog (per-machine concurrency) | `fly.toml [http_service.concurrency]` — soft 60 / hard 100 requests per machine |
-| Scheduled scaling | `.github/workflows/scale-api-hours.yml` grows/shrinks machines with IST business hours |
-| Scale-to-zero | ADR 0011: `auto_stop_machines='suspend'`, auto-start on request |
-| Node autoscaling / VPA / Karpenter | _No direct docita implementation yet._ |
+| Topic                                | Docita evidence                                                                        |
+| -------                                | -----------------                                                                        |
+| HPA analog (per-machine concurrency) | `fly.toml [http_service.concurrency]` — soft 60 / hard 100 requests per machine        |
+| Scheduled scaling                    | `.github/workflows/scale-api-hours.yml` grows/shrinks machines with IST business hours |
+| Scale-to-zero                        | ADR 0011: `auto_stop_machines='suspend'`, auto-start on request                        |
+| Node autoscaling / VPA / Karpenter   | _No direct docita implementation yet._                                                 |

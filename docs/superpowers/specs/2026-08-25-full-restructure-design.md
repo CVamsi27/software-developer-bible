@@ -14,12 +14,12 @@ Scope: Everything at once - structure, numbering, auth completion, and ~80 new c
 
 ## 2. Unified convention (single source of truth)
 
-| Level | Pattern | Example |
-|---|---|---|
-| Stack | `NN.N-slug/` | `20.5-security/` |
-| Category folder | `NN-slug/` (2-digit study order) | `01-auth/`, `03-hardening-and-operations/` |
-| File in category | `stack.cat.seq-slug.md`, seq contiguous from 01 | `20.5.1.01-auth-fundamentals.md` |
-| Flat-stack file | `stack.seq-slug.md`, seq contiguous from 01, interview-questions LAST | `40.1.10-interview-questions.md` |
+| Level            | Pattern                                                               | Example                                    |
+| ---                | ---                                                                     | ---                                          |
+| Stack            | `NN.N-slug/`                                                          | `20.5-security/`                           |
+| Category folder  | `NN-slug/` (2-digit study order)                                      | `01-auth/`, `03-hardening-and-operations/` |
+| File in category | `stack.cat.seq-slug.md`, seq contiguous from 01                       | `20.5.1.01-auth-fundamentals.md`           |
+| Flat-stack file  | `stack.seq-slug.md`, seq contiguous from 01, interview-questions LAST | `40.1.10-interview-questions.md`           |
 
 - `cat` segment in filenames = folder number without leading zero (folder `02-attacks-and-defense/` holds files `20.5.2.xx-*`).
 - Interview-questions files always sort last within their scope.

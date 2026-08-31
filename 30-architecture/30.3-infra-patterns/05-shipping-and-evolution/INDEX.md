@@ -16,12 +16,12 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths | 30 min |
-| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | 20 min |
-| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | 25 min |
-| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | 25 min |
+| Order | File                                                                | Topics                                                                                                                | Read time |
+| --   :  | ------                                                                | --------                                                                                                                | ----------: |
+| 01    | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths                    | 30 min    |
+| 02    | [Technical Debt](30.3.5.02-technical-debt.md)                       | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders              | 20 min    |
+| 03    | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md)   | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | 25 min    |
+| 04    | [Data Retention & Archival](30.3.5.04-data-retention-archival.md)   | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | 25 min    |
 
 ---
 
@@ -45,10 +45,10 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — ships and evolves for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `services/feature-flag.service.ts` |
-| Zero-downtime releases | Fly health-gated deploys (`grace_period 240s`), `worker-canary-deploy.sh`, release-evidence docs in `docs/operations/releases/*` |
-| Safe schema evolution | Migration CI workflow + gates: `check-migration-safety.mjs`, `check-migration-reversibility.mjs` |
-| Cost / FinOps | ADR 0011 suspend-to-zero off-hours + scheduled capacity via `scale-api-hours.yml`; single 2GB machine by design |
-| Data retention | `compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md)) |
+| Topic                         | Docita evidence                                                                                                                  |
+| -------                         | -----------------                                                                                                                  |
+| Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `services/feature-flag.service.ts`                      |
+| Zero-downtime releases        | Fly health-gated deploys (`grace_period 240s`), `worker-canary-deploy.sh`, release-evidence docs in `docs/operations/releases/*` |
+| Safe schema evolution         | Migration CI workflow + gates: `check-migration-safety.mjs`, `check-migration-reversibility.mjs`                                 |
+| Cost / FinOps                 | ADR 0011 suspend-to-zero off-hours + scheduled capacity via `scale-api-hours.yml`; single 2GB machine by design                  |
+| Data retention                | `compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md))                                |

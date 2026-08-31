@@ -36,10 +36,10 @@ Questions across all four content categories:
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| "Logs vs metrics vs traces?" | Pino JSON logs + Prom-style metric factories + Sentry tracing — and the honest tradeoff of skipping OTel |
-| "Scrubbing PII from telemetry?" (healthcare!) | `phi-redactor.ts` + parity-enforced Sentry scrubbing gates in CI |
-| "How do you set an SLO?" | API-latency and web-vitals budgets enforced as merge gates, not dashboards |
-| "Alert fatigue?" | Symptom-driven ops alerts on domain events + runbook per failure class |
-| OTel collector / eBPF stories | _No direct docita implementation yet._ |
+| Topic                                         | Docita evidence                                                                                          |
+| -------                                         | -----------------                                                                                          |
+| "Logs vs metrics vs traces?"                  | Pino JSON logs + Prom-style metric factories + Sentry tracing — and the honest tradeoff of skipping OTel |
+| "Scrubbing PII from telemetry?" (healthcare!) | `phi-redactor.ts` + parity-enforced Sentry scrubbing gates in CI                                         |
+| "How do you set an SLO?"                      | API-latency and web-vitals budgets enforced as merge gates, not dashboards                               |
+| "Alert fatigue?"                              | Symptom-driven ops alerts on domain events + runbook per failure class                                   |
+| OTel collector / eBPF stories                 | _No direct docita implementation yet._                                                                   |

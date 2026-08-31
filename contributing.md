@@ -110,14 +110,14 @@ Before contributing, review the existing files in the relevant section to unders
 
 ## File Naming
 
-| File Type | Pattern | Example |
-|-----------|---------|---------|
-| Stack folder | `NN.N-slug/` | `10.1-javascript/` |
-| Category folder (stacks >= ~8 chapters) | `NN-slug/` (2-digit study order) | `20.5-security/01-auth/` |
-| Category INDEX | `INDEX.md` inside category folder | `01-auth/INDEX.md` |
-| Content file in a category | `<stack>.<cat>.<seq>-slug.md`, seq contiguous from 01 | `20.5.1.04-sessions-cookies.md` (`cat` = folder number without leading zero) |
-| Content file in a flat stack | `<stack>.<seq>-slug.md`, seq contiguous from 01 | `40.1.06-production-patterns.md` |
-| Interview questions file | same rule, always LAST sequence number | `40.1.10-interview-questions.md` |
+| File Type                               | Pattern                                               | Example                                                                      |
+| -----------                               | ---------                                               | ---------                                                                      |
+| Stack folder                            | `NN.N-slug/`                                          | `10.1-javascript/`                                                           |
+| Category folder (stacks >= ~8 chapters) | `NN-slug/` (2-digit study order)                      | `20.5-security/01-auth/`                                                     |
+| Category INDEX                          | `INDEX.md` inside category folder                     | `01-auth/INDEX.md`                                                           |
+| Content file in a category              | `<stack>.<cat>.<seq>-slug.md`, seq contiguous from 01 | `20.5.1.04-sessions-cookies.md` (`cat` = folder number without leading zero) |
+| Content file in a flat stack            | `<stack>.<seq>-slug.md`, seq contiguous from 01       | `40.1.06-production-patterns.md`                                             |
+| Interview questions file                | same rule, always LAST sequence number                | `40.1.10-interview-questions.md`                                             |
 
 - Use **kebab-case** for slugs and directory names
 - Numeric IDs are unique repo-wide and sort correctly lexicographically; sequences are contiguous (no gaps)
@@ -151,42 +151,42 @@ Every content file **must** begin with metadata in two forms:
 
 ### Category Values
 
-| Category | Used For | Badge color |
-|----------|----------|-------------|
-| `Core` | JavaScript, TypeScript | blue |
-| `Frontend` | React, Next.js, Animation, Form Handling | ff6b35 (orange) |
-| `Backend` | Node.js, NestJS | success (green) |
-| `API` | REST APIs, GraphQL | ff6b35 (orange) |
-| `Data` | Database | 8b5cf6 (purple) |
-| `Architecture` | System Design, Microservices, Security, Design Patterns | 800080 (dark purple) |
-| `DevOps` | Docker, Kubernetes, CI/CD, Serverless | ff7f00 (devops orange) |
-| `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting) | 0ea5e9 (sky) |
-| `Tooling` | Build Tools, Git Advanced | 64748b (slate) |
-| `Quality` | Testing, Accessibility, Performance Monitoring | 8b5cf6 (purple) |
-| `Real-Time` | WebSockets | f59e0b (amber) |
-| `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role, lanes | red |
-| `Reference` | CheatSheets, Monorepo | lightgrey |
-| `Execution` | Personal execution plans (e.g., Berlin plan) | ff6b35 (orange) |
+| Category        | Used For                                                         | Badge color            |
+| ----------        | ----------                                                         | -------------            |
+| `Core`          | JavaScript, TypeScript                                           | blue                   |
+| `Frontend`      | React, Next.js, Animation, Form Handling                         | ff6b35 (orange)        |
+| `Backend`       | Node.js, NestJS                                                  | success (green)        |
+| `API`           | REST APIs, GraphQL                                               | ff6b35 (orange)        |
+| `Data`          | Database                                                         | 8b5cf6 (purple)        |
+| `Architecture`  | System Design, Microservices, Security, Design Patterns          | 800080 (dark purple)   |
+| `DevOps`        | Docker, Kubernetes, CI/CD, Serverless                            | ff7f00 (devops orange) |
+| `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting)  | 0ea5e9 (sky)           |
+| `Tooling`       | Build Tools, Git Advanced                                        | 64748b (slate)         |
+| `Quality`       | Testing, Accessibility, Performance Monitoring                   | 8b5cf6 (purple)        |
+| `Real-Time`     | WebSockets                                                       | f59e0b (amber)         |
+| `Interview`     | Behavioral, Interview Strategy, Coding Patterns, SDE Role, lanes | red                    |
+| `Reference`     | CheatSheets, Monorepo                                            | lightgrey              |
+| `Execution`     | Personal execution plans (e.g., Berlin plan)                     | ff6b35 (orange)        |
 
 > **14 categories** total. The `Execution` category is for personalized plans tied to a specific user.
 
 ### Category Values
 
-| Category | Used For |
-|----------|----------|
-| `Core` | JavaScript, TypeScript |
-| `Frontend` | React, Next.js, Animation, Form Handling |
-| `Backend` | Node.js, NestJS |
-| `API` | REST APIs, GraphQL |
-| `Data` | Database |
-| `Architecture` | System Design, Microservices, Security, Design Patterns |
-| `DevOps` | Docker, Kubernetes, CI/CD, Serverless |
+| Category        | Used For                                                        |
+| ----------        | ----------                                                        |
+| `Core`          | JavaScript, TypeScript                                          |
+| `Frontend`      | React, Next.js, Animation, Form Handling                        |
+| `Backend`       | Node.js, NestJS                                                 |
+| `API`           | REST APIs, GraphQL                                              |
+| `Data`          | Database                                                        |
+| `Architecture`  | System Design, Microservices, Security, Design Patterns         |
+| `DevOps`        | Docker, Kubernetes, CI/CD, Serverless                           |
 | `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting) |
-| `Tooling` | Build Tools, Git Advanced |
-| `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role |
-| `Reference` | CheatSheets, Monorepo |
-| `Quality` | Testing, Accessibility, Performance Monitoring |
-| `Real-Time` | WebSockets |
+| `Tooling`       | Build Tools, Git Advanced                                       |
+| `Interview`     | Behavioral, Interview Strategy, Coding Patterns, SDE Role       |
+| `Reference`     | CheatSheets, Monorepo                                           |
+| `Quality`       | Testing, Accessibility, Performance Monitoring                  |
+| `Real-Time`     | WebSockets                                                      |
 
 > **13 categories** total. Newer additions (split from overloaded categories): `API` (REST + GraphQL), `Data` (Database), `Observability` (logs/metrics/traces), `Tooling` (build + Git).
 
@@ -220,26 +220,26 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 
 ### Standard Badge Colors
 
-| Color | Usage | Section Examples |
-|-------|-------|------------------|
-| `blueviolet` | Core sections | JavaScript, TypeScript |
-| `success` | Backend sections | Node.js, NestJS |
-| `#ff6b35` | API sections | REST APIs, GraphQL |
-| `#8b5cf6` | Data sections | Database |
-| `green` | Quality sections | Testing, Accessibility, Performance Monitoring |
-| `red` | Interview sections | Behavioral, Interview Strategy, Coding Patterns |
-| `orange` | Practice/Questions | Interview Questions |
-| `lightgrey` | Reference sections | CheatSheets, Monorepo |
-| `informational` | DevOps type badges, file counts | Docker, Kubernetes, CI/CD, Serverless |
-| `#0ea5e9` | Observability sections | Observability |
-| `#64748b` | Tooling sections | Build Tools, Git Advanced |
-| `blue` | Type badges, file counts | Some sections |
-| `brightgreen` | Status: complete | All files |
-| `#800080` | System Design | 11-System-Design |
-| `#00b4d8` | React | 03-React |
-| `#ff7f00` | NestJS | 06-NestJS |
-| `#ffd700` | Coding Patterns | 19-Coding-Patterns |
-| `yellow` | Cheat Sheets | 20-CheatSheets |
+| Color           | Usage                           | Section Examples                                |
+| -------           | -------                           | ------------------                                |
+| `blueviolet`    | Core sections                   | JavaScript, TypeScript                          |
+| `success`       | Backend sections                | Node.js, NestJS                                 |
+| `#ff6b35`       | API sections                    | REST APIs, GraphQL                              |
+| `#8b5cf6`       | Data sections                   | Database                                        |
+| `green`         | Quality sections                | Testing, Accessibility, Performance Monitoring  |
+| `red`           | Interview sections              | Behavioral, Interview Strategy, Coding Patterns |
+| `orange`        | Practice/Questions              | Interview Questions                             |
+| `lightgrey`     | Reference sections              | CheatSheets, Monorepo                           |
+| `informational` | DevOps type badges, file counts | Docker, Kubernetes, CI/CD, Serverless           |
+| `#0ea5e9`       | Observability sections          | Observability                                   |
+| `#64748b`       | Tooling sections                | Build Tools, Git Advanced                       |
+| `blue`          | Type badges, file counts        | Some sections                                   |
+| `brightgreen`   | Status: complete                | All files                                       |
+| `#800080`       | System Design                   | 11-System-Design                                |
+| `#00b4d8`       | React                           | 03-React                                        |
+| `#ff7f00`       | NestJS                          | 06-NestJS                                       |
+| `#ffd700`       | Coding Patterns                 | 19-Coding-Patterns                              |
+| `yellow`        | Cheat Sheets                    | 20-CheatSheets                                  |
 
 ### Status Badge Values
 
@@ -249,17 +249,17 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 
 ### Type Badge Values (URL-encoded)
 
-| Display Value | Encoding |
-|---------------|----------|
-| Concept | `Concept` |
+| Display Value       | Encoding                |
+| ---------------       | ----------                |
+| Concept             | `Concept`               |
 | Interview Questions | `Interview%20Questions` |
-| Cheat Sheet | `Cheat%20Sheet` |
-| Overview | `Overview` |
-| Guide | `Guide` |
-| Tool | `Tool` |
-| Reference | `Reference` |
-| Study Plan | `Study%20Plan` |
-| Practice | `Practice` |
+| Cheat Sheet         | `Cheat%20Sheet`         |
+| Overview            | `Overview`              |
+| Guide               | `Guide`                 |
+| Tool                | `Tool`                  |
+| Reference           | `Reference`             |
+| Study Plan          | `Study%20Plan`          |
+| Practice            | `Practice`              |
 
 ---
 
@@ -443,43 +443,43 @@ Every section has an `INDEX.md` file. Format:
 
 All opening code blocks **must** have a language tag. Use the **full, official** tag name:
 
-| Correct | Incorrect |
-|------------|--------------|
-| `typescript` | `ts` |
-| `javascript` | `js` |
-| `python` | `py` |
-| `bash` | `shell` or `sh` |
-| `yaml` | `yml` |
-| `graphql` | `gql` |
+| Correct      | Incorrect       |
+| ------------   | --------------    |
+| `typescript` | `ts`            |
+| `javascript` | `js`            |
+| `python`     | `py`            |
+| `bash`       | `shell` or `sh` |
+| `yaml`       | `yml`           |
+| `graphql`    | `gql`           |
 
 ### Supported Language Tags
 
-| Tag | Usage |
-|-----|-------|
-| `typescript` | TypeScript/JavaScript code examples |
-| `javascript` | Vanilla JS examples |
-| `python` | Python/backend examples |
-| `java` | Java examples (SDE Role section) |
-| `sql` | SQL queries and schema |
-| `bash` | Shell commands |
-| `yaml` | YAML config (Docker, K8s, CI/CD) |
-| `json` | JSON payloads and responses |
-| `text` | ASCII diagrams, plain text output, terminal output |
-| `html` | HTML markup |
-| `css` | CSS styles |
-| `graphql` | GraphQL queries and schemas |
-| `dockerfile` | Dockerfile syntax |
-| `go` | Go examples |
-| `rust` | Rust examples |
-| `ruby` | Ruby examples |
-| `scss` | SCSS styles |
-| `protobuf` | Protocol Buffer definitions |
-| `promql` | Prometheus query language |
-| `groovy` | Groovy/Jenkins pipeline scripts |
-| `ini` | INI configuration files |
-| `markdown` | Markdown formatting examples |
-| `tsx` | TypeScript/React JSX (use `typescript` instead) |
-| `jsx` | JavaScript/React JSX (use `typescript` instead) |
+| Tag          | Usage                                              |
+| -----          | -------                                              |
+| `typescript` | TypeScript/JavaScript code examples                |
+| `javascript` | Vanilla JS examples                                |
+| `python`     | Python/backend examples                            |
+| `java`       | Java examples (SDE Role section)                   |
+| `sql`        | SQL queries and schema                             |
+| `bash`       | Shell commands                                     |
+| `yaml`       | YAML config (Docker, K8s, CI/CD)                   |
+| `json`       | JSON payloads and responses                        |
+| `text`       | ASCII diagrams, plain text output, terminal output |
+| `html`       | HTML markup                                        |
+| `css`        | CSS styles                                         |
+| `graphql`    | GraphQL queries and schemas                        |
+| `dockerfile` | Dockerfile syntax                                  |
+| `go`         | Go examples                                        |
+| `rust`       | Rust examples                                      |
+| `ruby`       | Ruby examples                                      |
+| `scss`       | SCSS styles                                        |
+| `protobuf`   | Protocol Buffer definitions                        |
+| `promql`     | Prometheus query language                          |
+| `groovy`     | Groovy/Jenkins pipeline scripts                    |
+| `ini`        | INI configuration files                            |
+| `markdown`   | Markdown formatting examples                       |
+| `tsx`        | TypeScript/React JSX (use `typescript` instead)    |
+| `jsx`        | JavaScript/React JSX (use `typescript` instead)    |
 
 ### ASCII Diagrams
 
@@ -725,7 +725,7 @@ These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
 ## Quick Reference Table
 
 | Concept | Key Point | Code/Example |
-|---------|-----------|--------------|
+| --------- | ----------- | -------------- |
 ```
 
 - No `## Definition`, `## Why Do We Need It?`, etc.
@@ -787,9 +787,9 @@ ASCII diagram showing the pattern in action, with step-by-step visual walkthroug
 Table format showing complexity for different problem variants:
 
 | Complexity | Variant A | Variant B |
-|------------|-----------|-----------|
-| Time | O(n) | O(n²) |
-| Space | O(1) | O(n) |
+| ------------ | ----------- | ----------- |
+| Time       | O(n)      | O(n²)     |
+| Space      | O(1)      | O(n)      |
 
 ## Interview Problems
 
@@ -948,11 +948,11 @@ python3 /tmp/generate_report.py
 
 ### Quick Troubleshooting
 
-| Issue | Most Likely Cause | Fix |
-|-------|-------------------|-----|
-| Badge displays wrong color | Color value has wrong format or includes extra space | Ensure format: `blueviolet`, `success`, `#800080` (lowercase hex) |
-| `%20` not rendering in badge | URL encoding not applied | Replace literal spaces with `%20` in badge URL value portion |
-| Code block not rendering | Missing closing ` ``` ` | Check that every opening ` ``` ` has a matching closing ` ``` ` |
-| Double newline at end of file | File has 2+ trailing newlines | Use `rstrip(b'\\n') + b'\\n'` to normalize |
-| Broken `## See Also` link | Relative path points to wrong directory | Use `../XX-Section/` format, verify directory exists |
-| Navigation link goes to wrong section | Previous/next links out of sequence | Verify section follows the 00→31 numbering order |
+| Issue                                 | Most Likely Cause                                    | Fix                                                               |
+| -------                                 | -------------------                                    | -----                                                               |
+| Badge displays wrong color            | Color value has wrong format or includes extra space | Ensure format: `blueviolet`, `success`, `#800080` (lowercase hex) |
+| `%20` not rendering in badge          | URL encoding not applied                             | Replace literal spaces with `%20` in badge URL value portion      |
+| Code block not rendering              | Missing closing ` ``` `                              | Check that every opening ` ``` ` has a matching closing ` ``` `   |
+| Double newline at end of file         | File has 2+ trailing newlines                        | Use `rstrip(b'\\n') + b'\\n'` to normalize                        |
+| Broken `## See Also` link             | Relative path points to wrong directory              | Use `../XX-Section/` format, verify directory exists              |
+| Navigation link goes to wrong section | Previous/next links out of sequence                  | Verify section follows the 00→31 numbering order                  |

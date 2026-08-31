@@ -10,8 +10,8 @@
 
 ## The file
 
-| # | File | Contents | Time |
-|--:|------|----------|------|
+| #  | File                                                    | Contents                           | Time    |
+| --:  | ------                                                    | ----------                           | ------    |
 | 01 | [Interview Questions](50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs |
 
 ---
@@ -50,8 +50,8 @@ Answer out loud before reading the model answer; the debugging walkthroughs ("LC
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at story material you can cite in performance rounds.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| "Design a budget" story | `scripts/perf/route-budgets.config.mjs` (per-route budgets, checked in CI) |
+| Topic                    | Docita evidence                                                                          |
+| -------                    | -----------------                                                                          |
+| "Design a budget" story  | `scripts/perf/route-budgets.config.mjs` (per-route budgets, checked in CI)               |
 | Debugging-story material | `slow-query-logging.service.ts` + `query-budget.extension.ts` in `apps/api/src/shared/…` |
-| Ops follow-through story | `docs/operations/SLOS.md` + `ops-alert.listener.ts` |
+| Ops follow-through story | `docs/operations/SLOS.md` + `ops-alert.listener.ts`                                      |

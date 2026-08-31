@@ -14,14 +14,14 @@
 
 The two sub-folders classify into 6 conceptual categories — the "GoF classification" of system design.
 
-| Category | Where | Files | Why it matters |
-|----------|-------|------:|----------------|
-| **Data & Consistency Theory** | [01-theory/](01-theory/INDEX.md) | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, locks, consensus |
-| **Traffic, Scale & Capacity** | [01-theory/](01-theory/INDEX.md) | 5 | Load balancing, TCP/UDP transport, rate limiting, backpressure, capacity planning |
-| **Performance & Delivery** | [01-theory/](01-theory/INDEX.md) | 3 | Caching patterns, queues & async, outbox & CDC |
-| **Reliability & Topology** | [01-theory/](01-theory/INDEX.md) | 4 | Failure modes, resilience deep-dive, multi-region, architecture patterns |
-| **The Method + Drills** | [01-theory/](01-theory/INDEX.md) | 3 | How-to-approach framework, interview questions, probabilistic data structures |
-| **Applied Case Studies** | [02-case-studies/](02-case-studies/INDEX.md) | 27 | URL shortener → Netflix, Uber, WhatsApp, payment gateway, typeahead, metrics pipeline, job scheduler, ID generator — classified by domain |
+| Category                      | Where                                        | Files | Why it matters                                                                                                                            |
+| ----------                      | -------                                        | ------: | ----------------                                                                                                                            |
+| **Data & Consistency Theory** | [01-theory/](01-theory/INDEX.md)             | 6     | CAP/PACELC, consistency models, sharding & replication, distributed transactions, locks, consensus                                        |
+| **Traffic, Scale & Capacity** | [01-theory/](01-theory/INDEX.md)             | 5     | Load balancing, TCP/UDP transport, rate limiting, backpressure, capacity planning                                                         |
+| **Performance & Delivery**    | [01-theory/](01-theory/INDEX.md)             | 3     | Caching patterns, queues & async, outbox & CDC                                                                                            |
+| **Reliability & Topology**    | [01-theory/](01-theory/INDEX.md)             | 4     | Failure modes, resilience deep-dive, multi-region, architecture patterns                                                                  |
+| **The Method + Drills**       | [01-theory/](01-theory/INDEX.md)             | 3     | How-to-approach framework, interview questions, probabilistic data structures                                                             |
+| **Applied Case Studies**      | [02-case-studies/](02-case-studies/INDEX.md) | 27    | URL shortener → Netflix, Uber, WhatsApp, payment gateway, typeahead, metrics pipeline, job scheduler, ID generator — classified by domain |
 
 ---
 
@@ -45,10 +45,10 @@ INTERVIEW DRILLS ←────────────────────
 
 ## Sub-folders
 
-| Folder | Files | What it is | When to read |
-|--------|------:|-----------|--------------|
-| [01-theory/](01-theory/INDEX.md) | 21 | Foundational concepts (14, in order) + meta guides (6) + transport deep-dive: approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region, TCP/UDP fundamentals | **Read first** — every case study depends on these |
-| [02-case-studies/](02-case-studies/INDEX.md) | 27 | Applied examples across 11 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation, platform/telemetry | After theory — match the JD's domain |
+| Folder                                       | Files | What it is                                                                                                                                                                                                       | When to read                                       |
+| --------                                       | ------: | -----------                                                                                                                                                                                                        | --------------                                       |
+| [01-theory/](01-theory/INDEX.md)             | 21    | Foundational concepts (14, in order) + meta guides (6) + transport deep-dive: approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region, TCP/UDP fundamentals | **Read first** — every case study depends on these |
+| [02-case-studies/](02-case-studies/INDEX.md) | 27    | Applied examples across 11 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation, platform/telemetry                                               | After theory — match the JD's domain               |
 
 ---
 

@@ -13,12 +13,12 @@ Every interview question about a design pattern reduces to: "How does this patte
 
 **Read order:** SOLID → OOP → Other principles → UML.
 
-| Order | File | Time | What it unlocks |
-|------:|------|-----:|-----------------|
-| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | The 5 principles every GoF pattern enforces |
-| 2 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review |
-| 3 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships |
-| 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard |
+| Order | File                                                   | Time   | What it unlocks                                    |
+| ------: | ------                                                   | ----- :  | -----------------                                    |
+| 1     | [SOLID Principles](30.1.1.01-solid-principles.md)      | 30 min | The 5 principles every GoF pattern enforces        |
+| 2     | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review |
+| 3     | [OOP Concepts](30.1.1.03-oop-concepts.md)              | 25 min | The 4 pillars + "has-a" relationships              |
+| 4     | [UML Basics](30.1.1.04-uml-basics.md)                  | 25 min | Sketch class & sequence diagrams on a whiteboard   |
 
 **Total: ~1.5 hours** to read all 4 once. After that, treat them as a reference.
 
@@ -66,15 +66,15 @@ The visual language of software design. LLD interviews expect you to sketch thes
 
 ## How foundations map to the rest of the patterns
 
-| Foundation | Patterns it makes possible | Interview question it answers |
-|------------|---------------------------|------------------------------|
-| **SRP** | Facade, Mediator, Module | "Why is this class 2000 lines?" |
-| **OCP** | Strategy, Decorator, Chain of Responsibility | "How do you add a new behavior without breaking existing code?" |
-| **LSP** | Template Method, Composite, Iterator | "Can I substitute subtype X for parent Y?" |
-| **ISP** | Adapter, Proxy | "Why is your interface 30 methods?" |
-| **DIP** | Factory, Abstract Factory, DI, Repository | "How do you make this testable?" |
-| **OOP pillars** | Every pattern | "Is pattern X inheritance or composition?" |
-| **UML** | — | "Draw the class diagram for the parking lot LLD." |
+| Foundation      | Patterns it makes possible                   | Interview question it answers                                   |
+| ------------      | ---------------------------                    | ------------------------------                                    |
+| **SRP**         | Facade, Mediator, Module                     | "Why is this class 2000 lines?"                                 |
+| **OCP**         | Strategy, Decorator, Chain of Responsibility | "How do you add a new behavior without breaking existing code?" |
+| **LSP**         | Template Method, Composite, Iterator         | "Can I substitute subtype X for parent Y?"                      |
+| **ISP**         | Adapter, Proxy                               | "Why is your interface 30 methods?"                             |
+| **DIP**         | Factory, Abstract Factory, DI, Repository    | "How do you make this testable?"                                |
+| **OOP pillars** | Every pattern                                | "Is pattern X inheritance or composition?"                      |
+| **UML**         | —                                            | "Draw the class diagram for the parking lot LLD."               |
 
 ---
 
@@ -88,10 +88,10 @@ The visual language of software design. LLD interviews expect you to sketch thes
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — exercises these foundations in real code.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| DIP / Dependency Inversion | Constructor injection throughout; repositories bound to DI tokens and enforced by `scripts/checks/check-repository-di-tokens.mjs` |
-| OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — new behavior is registered, not edited in |
-| SRP | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
-| ISP | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts` |
-| SoC / module boundaries | Domain layout enforced in CI by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |
+| Topic                      | Docita evidence                                                                                                                     |
+| -------                      | -----------------                                                                                                                     |
+| DIP / Dependency Inversion | Constructor injection throughout; repositories bound to DI tokens and enforced by `scripts/checks/check-repository-di-tokens.mjs`   |
+| OCP                        | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — new behavior is registered, not edited in |
+| SRP                        | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts`                                     |
+| ISP                        | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts`                                       |
+| SoC / module boundaries    | Domain layout enforced in CI by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks                           |

@@ -12,13 +12,13 @@
 
 ## Topic Categories
 
-| Category | File | When to use |
-|----------|------|-------------|
-| [Stakeholder Management](#stakeholder-management-stories) | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Product partnership rounds — scope pushback, deadline negotiation, trade-off communication |
-| [Leadership](#leadership) | [Leadership Questions](70.1.02-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
-| [Judgment & Ambiguity](#judgment-calls--ambiguity) | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Decision-making probes — incomplete data, disagree-and-commit, escalation |
-| [System Design Behavioral](#system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" |
-| [Self-Audit](#behavioral-anti-patterns-checklist) | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Practice phase — find and fix your delivery defects before the loop |
+| Category                                                  | File                                                                                | When to use                                                                                |
+| ----------                                                  | ------                                                                                | -------------                                                                                |
+| [Stakeholder Management](#stakeholder-management-stories) | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md)         | Product partnership rounds — scope pushback, deadline negotiation, trade-off communication |
+| [Leadership](#leadership)                                 | [Leadership Questions](70.1.02-leadership-questions.md)                             | Senior roles — "tell me about a time you led without authority"                            |
+| [Judgment & Ambiguity](#judgment-calls--ambiguity)        | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md)                   | Decision-making probes — incomplete data, disagree-and-commit, escalation                  |
+| [System Design Behavioral](#system-design-behavioral)     | [System Design Behavioral](70.1.04-system-design-behavioral.md)                     | System design rounds — "walk me through a design decision you made"                        |
+| [Self-Audit](#behavioral-anti-patterns-checklist)         | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Practice phase — find and fix your delivery defects before the loop                        |
 
 ---
 
@@ -26,9 +26,9 @@
 
 STAR stories for product partnership: pushing back on scope with evidence, negotiating deadlines with PMs, resolving design conflicts with data, influencing without authority.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, follow-up trap answers | 45 min |
+| # | File                                                                        | Topics                                                                                                                                                                                       | Read time |
+| --: | ------                                                                        | --------                                                                                                                                                                                       | ----------: |
+| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, follow-up trap answers | 45 min    |
 
 ---
 
@@ -36,9 +36,9 @@ STAR stories for product partnership: pushing back on scope with evidence, negot
 
 Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 45 min |
+| # | File                                                    | Topics                                                                                                  | Read time |
+| --: | ------                                                    | --------                                                                                                  | ----------: |
+| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 45 min    |
 
 **Common senior-level questions:**
 - "Tell me about a time you led without authority."
@@ -54,9 +54,9 @@ Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
 Deciding under incomplete data — the Type 1 / Type 2 door framing, the 70% information rule, disagree-and-commit mechanics, and escalation judgment.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, conviction with ~70% info, reversal triggers, disagree-and-commit stories, escalation judgment, grading rubric | 40 min |
+| # | File                                                              | Topics                                                                                                                                                                      | Read time |
+| --: | ------                                                              | --------                                                                                                                                                                      | ----------: |
+| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, conviction with ~70% info, reversal triggers, disagree-and-commit stories, escalation judgment, grading rubric | 40 min    |
 
 ---
 
@@ -64,9 +64,9 @@ Deciding under incomplete data — the Type 1 / Type 2 door framing, the 70% inf
 
 How to talk about your past design decisions in interviews.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | 30 min |
+| # | File                                                            | Topics                                                                                                  | Read time |
+| --: | ------                                                            | --------                                                                                                  | ----------: |
+| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | 30 min    |
 
 **The framework:**
 1. **Context** — what was the system, who used it, what was the constraint?
@@ -80,9 +80,9 @@ How to talk about your past design decisions in interviews.
 
 Self-audit instrument: the eight delivery defects that sink behavioral rounds, red-flag vocabulary, recovery phrases for blanking, and a record-transcribe-grade drill protocol.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Rambling (>90s setups), blame language, metric-free stories, humble-bragging, genericness, no-conflict gaps, red-flag words, recovery phrases, drill + mock-loop protocol | 35 min |
+| # | File                                                                                | Topics                                                                                                                                                                    | Read time |
+| --: | ------                                                                                | --------                                                                                                                                                                    | ----------: |
+| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Rambling (>90s setups), blame language, metric-free stories, humble-bragging, genericness, no-conflict gaps, red-flag words, recovery phrases, drill + mock-loop protocol | 35 min    |
 
 ---
 
@@ -134,10 +134,10 @@ HR + resume          leadership questions
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — its artifacts are raw material for your behavioral stories.
 
-| Topic | Docita evidence |
-|-------|-----------------|
+| Topic                                                  | Docita evidence                                                                                                                                                                            |
+| -------                                                  | -----------------                                                                                                                                                                            |
 | Judgment / decision-writing (how you think, on record) | `docs/architecture/decisions/` — 15 numbered ADRs incl. honest reversals (`0009-vercel-retired.md`, `0012-replace-nextjs-with-vite-spa.md`) and deferrals (`0004-rls-rollout-deferred.md`) |
-| Incident-response practice (STAR story fuel) | `docs/runbooks/` + `docs/operations/playbooks/` (`razorpay-outage.md`, `db-connection-exhaustion.md`) |
-| Ownership beyond code (compliance ops) | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts` |
+| Incident-response practice (STAR story fuel)           | `docs/runbooks/` + `docs/operations/playbooks/` (`razorpay-outage.md`, `db-connection-exhaustion.md`)                                                                                      |
+| Ownership beyond code (compliance ops)                 | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts`                                                                                               |
 
 Frame these as *your* decision and incident narratives: an ADR you authored, a playbook you executed, a retention policy you shipped — the repo proves the practice exists.

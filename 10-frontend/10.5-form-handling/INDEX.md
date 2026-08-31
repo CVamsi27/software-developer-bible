@@ -12,13 +12,13 @@
 
 ## Topic Categories
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [Form Libraries](#form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
-| [Validation](#validation) | 1 | Zod — the standard for runtime + type-safe validation |
-| [Server-Side Patterns](#server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
-| [Draft Persistence](#draft-persistence) | 1 | Autosave, localStorage/IndexedDB, dirty guards, conflict resolution |
-| [Interview Prep](#interview-prep) | 1 | 30+ form-specific Qs |
+| Category                                      | Files | Why it matters                                                        |
+| ----------                                      | ------: | ----------------                                                        |
+| [Form Libraries](#form-libraries)             | 3     | React Hook Form, Formik, TanStack Form — pick the right one           |
+| [Validation](#validation)                     | 1     | Zod — the standard for runtime + type-safe validation                 |
+| [Server-Side Patterns](#server-side-patterns) | 1     | Server Actions, progressive enhancement, modern Next.js form patterns |
+| [Draft Persistence](#draft-persistence)       | 1     | Autosave, localStorage/IndexedDB, dirty guards, conflict resolution   |
+| [Interview Prep](#interview-prep)             | 1     | 30+ form-specific Qs                                                  |
 
 ---
 
@@ -26,11 +26,11 @@
 
 Three main form libraries — pick the right one for the job.
 
-| # | File | Topics | When to use | Read time |
-|--:|------|--------|-------------|----------:|
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 30 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 | Legacy codebases; new projects should use RHF | 20 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 25 min |
+| #  | File                                          | Topics                                                                         | When to use                                                     | Read time |
+| --:  | ------                                          | --------                                                                         | -------------                                                     | ----------: |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms                              | 30 min    |
+| 03 | [Formik](10.5.03-formik.md)                   | Controlled-component + context, Yup-first, maintenance mode in 2026            | Legacy codebases; new projects should use RHF                   | 20 min    |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md)     | Framework-agnostic, type-first, granular subscriptions, Standard Schema        | New projects needing framework-agnostic or fine-grained control | 25 min    |
 
 **Decision:**
 
@@ -47,9 +47,9 @@ Building a new React form?
 
 Zod is the standard for runtime validation with TypeScript inference.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | 30 min |
+| #  | File                  | Topics                                                                                             | Read time |
+| --:  | ------                  | --------                                                                                             | ----------: |
+| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | 30 min    |
 
 **The killer feature:** `z.infer<typeof Schema>` gives you the TypeScript type from your Zod schema. One source of truth for both runtime validation and compile-time types.
 
@@ -59,9 +59,9 @@ Zod is the standard for runtime validation with TypeScript inference.
 
 Modern Next.js form patterns with Server Actions.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 30 min |
+| #  | File                                                                          | Topics                                                                                    | Read time |
+| --:  | ------                                                                          | --------                                                                                    | ----------: |
+| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 30 min    |
 
 ---
 
@@ -69,17 +69,17 @@ Modern Next.js form patterns with Server Actions.
 
 Long-form resilience: never lose user input again.
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 30 min |
+| #  | File                                                            | Topics                                                                                                                                                                                  | Read time |
+| --:  | ------                                                            | --------                                                                                                                                                                                  | ----------: |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 30 min    |
 
 ---
 
 ## Interview Prep
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs |
+| #  | File                                                  | Topics                                                         | Read time |
+| --:  | ------                                                  | --------                                                         | ----------: |
+| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 2 hrs     |
 
 ---
 
@@ -135,13 +135,13 @@ This is the standard pattern for modern full-stack forms.
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
-| Topic in this category | Docita evidence |
-|------------------------|-----------------|
-| React Hook Form primitives | `packages/ui/src/components/form/form-primitives.tsx` - FormField/FormLabel/FormControl/FormMessage kit over RHF context |
-| Zod resolver integration | `apps/app/src/features/patients/components/forms/dialogs/EditPatientDialog.tsx` - `resolver: zodResolver(updatePatientRequestSchema)` |
-| Typed field paths | `packages/ui/src/lib/rhf-path.ts` - guarded escape hatch for RHF's conditional `Path<T>` names |
-| Debounced form input | `packages/ui/src/components/form/debounced-search-input.tsx` - local state + debounced `onChange` for search fields |
-| Autosave & draft recovery | `apps/app/src/features/setup/components/onboarding/forms/use-onboarding-draft.ts` - localStorage draft persistence, resume-step resolution, multi-step restore |
+| Topic in this category     | Docita evidence                                                                                                                                                |
+| ------------------------     | -----------------                                                                                                                                                |
+| React Hook Form primitives | `packages/ui/src/components/form/form-primitives.tsx` - FormField/FormLabel/FormControl/FormMessage kit over RHF context                                       |
+| Zod resolver integration   | `apps/app/src/features/patients/components/forms/dialogs/EditPatientDialog.tsx` - `resolver: zodResolver(updatePatientRequestSchema)`                          |
+| Typed field paths          | `packages/ui/src/lib/rhf-path.ts` - guarded escape hatch for RHF's conditional `Path<T>` names                                                                 |
+| Debounced form input       | `packages/ui/src/components/form/debounced-search-input.tsx` - local state + debounced `onChange` for search fields                                            |
+| Autosave & draft recovery  | `apps/app/src/features/setup/components/onboarding/forms/use-onboarding-draft.ts` - localStorage draft persistence, resume-step resolution, multi-step restore |
 
 _No Server Actions / Formik / TanStack Form implementations in docita yet._
 

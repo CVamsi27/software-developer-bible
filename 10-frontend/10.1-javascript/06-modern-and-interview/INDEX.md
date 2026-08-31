@@ -10,13 +10,13 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [ES2024+ Features](10.1.6.01-es2024-features.md) | `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, `ArrayBuffer.transfer` | 20 min |
-| 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | 25 min |
-| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | 25 min |
-| 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min |
-| 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 50+ curated questions with answers | 3 hrs (review) |
+| Order | File                                                            | Topics                                                                                                                                       | Read time      |
+| --   :  | ------                                                            | --------                                                                                                                                       | ----------    :  |
+| 01    | [ES2024+ Features](10.1.6.01-es2024-features.md)                | `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, `ArrayBuffer.transfer`                                             | 20 min         |
+| 02    | [Web Workers](10.1.6.02-web-workers.md)                         | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers                                                                  | 25 min         |
+| 03    | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)   | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events                  | 25 min         |
+| 04    | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min         |
+| 05    | [Interview Questions](10.1.6.05-interview-questions.md)         | 50+ curated questions with answers                                                                                                           | 3 hrs (review) |
 
 ---
 
@@ -30,10 +30,10 @@ ES2024+ Features → Web Workers → DOM Events & Delegation → Cross-Tab Commu
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
-| Topic in this category | Docita evidence |
-|------------------------|-----------------|
-| DOM events & listeners | `packages/hooks/src/use-keyboard-shortcuts.ts` - document-level keydown handling with `preventDefault`/`stopPropagation` and cleanup |
-| Event target & delegation guards | `packages/hooks/src/keyboard-shortcut-match.ts` - pure predicate composition incl. typing-target suppression |
+| Topic in this category           | Docita evidence                                                                                                                      |
+| ------------------------           | -----------------                                                                                                                      |
+| DOM events & listeners           | `packages/hooks/src/use-keyboard-shortcuts.ts` - document-level keydown handling with `preventDefault`/`stopPropagation` and cleanup |
+| Event target & delegation guards | `packages/hooks/src/keyboard-shortcut-match.ts` - pure predicate composition incl. typing-target suppression                         |
 
 ---
 

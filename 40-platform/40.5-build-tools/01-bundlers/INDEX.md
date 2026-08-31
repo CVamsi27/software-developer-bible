@@ -26,12 +26,12 @@ New project?
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | 30 min |
-| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | 30 min |
-| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | 25 min |
-| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | 20 min |
+| Order | File                                | Topics                                                        | Read time |
+| --   :  | ------                                | --------                                                        | ----------: |
+| 01    | [Webpack](40.5.1.01-webpack.md)     | Configuration, loaders, plugins, code splitting, HMR          | 30 min    |
+| 02    | [Vite](40.5.1.02-vite.md)           | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | 30 min    |
+| 03    | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling         | 25 min    |
+| 04    | [Rspack](40.5.1.04-rspack.md)       | Rust-based Webpack-compatible bundler, module federation      | 20 min    |
 
 ---
 
@@ -52,9 +52,9 @@ New project?
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — bundles for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Vite | The SPA apps (`apps/app`, `apps/internal`) run on Vite — ADR 0012 records replacing Next.js with a Vite SPA |
-| Astro (SSG) | `apps/landing` builds with Astro, deployable to Cloudflare Workers (`build:cloudflare`, wrangler) |
-| Turbopack / Rspack | _No direct docita implementation yet._ |
+| Topic               | Docita evidence                                                                                                          |
+| -------               | -----------------                                                                                                          |
+| Vite                | The SPA apps (`apps/app`, `apps/internal`) run on Vite — ADR 0012 records replacing Next.js with a Vite SPA              |
+| Astro (SSG)         | `apps/landing` builds with Astro, deployable to Cloudflare Workers (`build:cloudflare`, wrangler)                        |
+| Turbopack / Rspack  | _No direct docita implementation yet._                                                                                   |
 | Build orchestration | Turbo task graph wraps every bundle: `build` depends on `^build` + `check-types` + `lint`, outputs `dist/**` for caching |

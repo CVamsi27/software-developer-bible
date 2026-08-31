@@ -29,21 +29,21 @@ If you only have 1 week before an interview, this is where to focus.
 
 ## The 3 Sub-Stacks (in study order)
 
-| Order | Sub-stack | Files | Topics |
-|------:|-----------|------:|--------|
-| 1 | [Behavioral](70.1-behavioral/INDEX.md) | 5 | Stakeholder stories, leadership questions, judgment & ambiguity, system-design behavioral, anti-pattern drills (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
-| 2 | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 21 | Sliding window, two pointers, BFS/DFS, shortest paths, DP, heap, trie, union find, backtracking, linked lists, matrix simulation |
-| 3 | [Cheat Sheets](70.3-cheatsheets/INDEX.md) | 7 | JavaScript, TypeScript, React/Next.js, backend, system design, Docker/K8s/CI-CD, SQL/data modeling |
+| Order | Sub-stack                                        | Files | Topics                                                                                                                                                                      |
+| ------: | -----------                                        | ------: | --------                                                                                                                                                                      |
+| 1     | [Behavioral](70.1-behavioral/INDEX.md)           | 5     | Stakeholder stories, leadership questions, judgment & ambiguity, system-design behavioral, anti-pattern drills (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
+| 2     | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 21    | Sliding window, two pointers, BFS/DFS, shortest paths, DP, heap, trie, union find, backtracking, linked lists, matrix simulation                                            |
+| 3     | [Cheat Sheets](70.3-cheatsheets/INDEX.md)        | 7     | JavaScript, TypeScript, React/Next.js, backend, system design, Docker/K8s/CI-CD, SQL/data modeling                                                                          |
 
 ---
 
 ## Category Map
 
-| Category | What it covers | When to use |
-|----------|----------------|-------------|
-| **Behavioral** | STAR answers, stakeholder/judgment stories, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
-| **Coding Patterns** | 21 algorithm patterns — sliding window, DP, BFS/DFS, Dijkstra, matrix simulation, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
-| **Cheat Sheets** | One-page reference for each major stack + DevOps and SQL one-pagers | Last-minute review the morning of |
+| Category            | What it covers                                                                             | When to use                                                                         |
+| ----------            | ----------------                                                                             | -------------                                                                         |
+| **Behavioral**      | STAR answers, stakeholder/judgment stories, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this                                              |
+| **Coding Patterns** | 21 algorithm patterns — sliding window, DP, BFS/DFS, Dijkstra, matrix simulation, etc.     | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
+| **Cheat Sheets**    | One-page reference for each major stack + DevOps and SQL one-pagers                        | Last-minute review the morning of                                                   |
 
 ---
 

@@ -16,11 +16,11 @@ Nobody hand-writes 40 YAML files per release anymore — they install a Helm cha
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Helm](40.2.5.01-helm.md) | Charts, templates, values overrides, releases, rollback, dependency management, helmfile | 30 min |
-| 02 | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, strategic merge + JSON6902 patches, configMapGenerator hash rollouts, transformers, Helm vs Kustomize decision table, hybrid pipelines, secrets caveat | 25 min |
-| 03 | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops (desired vs observed), operator capability levels, ownerReferences/GC, controller skeletons, when to write an operator, OLM | 35 min |
+| Order | File                                                                                             | Topics                                                                                                                                                                | Read time |
+| --   :  | ------                                                                                             | --------                                                                                                                                                                | ----------: |
+| 01    | [Helm](40.2.5.01-helm.md)                                                                        | Charts, templates, values overrides, releases, rollback, dependency management, helmfile                                                                              | 30 min    |
+| 02    | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, strategic merge + JSON6902 patches, configMapGenerator hash rollouts, transformers, Helm vs Kustomize decision table, hybrid pipelines, secrets caveat | 25 min    |
+| 03    | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md)         | CRD anatomy, reconcile loops (desired vs observed), operator capability levels, ownerReferences/GC, controller skeletons, when to write an operator, OLM              | 35 min    |
 
 ---
 

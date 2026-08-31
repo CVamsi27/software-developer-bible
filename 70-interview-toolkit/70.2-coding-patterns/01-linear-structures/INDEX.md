@@ -10,15 +10,15 @@
 
 ## The 7 patterns
 
-| # | File | When to recognize | Read time |
-|--:|------|-------------------|----------:|
-| 01 | [Sliding Window](70.2.1.01-sliding-window.md) | "Longest/shortest subarray/substring" with a contiguity constraint | 30 min |
-| 02 | [Two Pointers](70.2.1.02-two-pointers.md) | "Sorted array, find pair/triplet", in-place partitioning | 30 min |
-| 03 | [Binary Search](70.2.1.03-binary-search.md) | "Find first/last position", search on answer space, rotated arrays | 30 min |
-| 04 | [Linked List Manipulation Patterns](70.2.1.04-linked-list-manipulation-patterns.md) | "Reverse/reorder list, reverse m..n, cycle entry, O(1)-space pointer surgery" | 35 min |
-| 05 | [Intervals](70.2.1.05-intervals.md) | "Merge intervals, meeting rooms, overlapping ranges" | 20 min |
-| 06 | [Greedy & Prefix Sum](70.2.1.06-greedy-prefix-sum.md) | "Jump game, partition, range sum queries" | 30 min |
-| 07 | [String Search — KMP & Rabin-Karp](70.2.1.07-string-search-kmp-rabin-karp.md) | "Find substring, pattern matching, rolling hash" | 30 min |
+| #  | File                                                                                | When to recognize                                                             | Read time |
+| --:  | ------                                                                                | -------------------                                                             | ----------: |
+| 01 | [Sliding Window](70.2.1.01-sliding-window.md)                                       | "Longest/shortest subarray/substring" with a contiguity constraint            | 30 min    |
+| 02 | [Two Pointers](70.2.1.02-two-pointers.md)                                           | "Sorted array, find pair/triplet", in-place partitioning                      | 30 min    |
+| 03 | [Binary Search](70.2.1.03-binary-search.md)                                         | "Find first/last position", search on answer space, rotated arrays            | 30 min    |
+| 04 | [Linked List Manipulation Patterns](70.2.1.04-linked-list-manipulation-patterns.md) | "Reverse/reorder list, reverse m..n, cycle entry, O(1)-space pointer surgery" | 35 min    |
+| 05 | [Intervals](70.2.1.05-intervals.md)                                                 | "Merge intervals, meeting rooms, overlapping ranges"                          | 20 min    |
+| 06 | [Greedy & Prefix Sum](70.2.1.06-greedy-prefix-sum.md)                               | "Jump game, partition, range sum queries"                                     | 30 min    |
+| 07 | [String Search — KMP & Rabin-Karp](70.2.1.07-string-search-kmp-rabin-karp.md)       | "Find substring, pattern matching, rolling hash"                              | 30 min    |
 
 ---
 
@@ -53,8 +53,8 @@
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to.
 
-| Topic | Docita evidence |
-|-------|-----------------|
+| Topic                                | Docita evidence                                                                   |
+| -------                                | -----------------                                                                   |
 | Hashing + eviction ordering hot spot | `apps/api/src/shared/common/utils/lru-cache.ts` — the closest genuine pattern use |
 
 Honest note: docita's workload is business CRUD dominated; there are no algorithmic hot spots beyond this one utility. The patterns in this category stay interview-only material.

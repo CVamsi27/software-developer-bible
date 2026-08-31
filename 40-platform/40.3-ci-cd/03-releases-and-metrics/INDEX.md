@@ -16,10 +16,10 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 
 ## File Index
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | 25 min |
-| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | 30 min |
+| Order | File                                                                                  | Topics                                                                                                                                                                    | Read time |
+| --   :  | ------                                                                                  | --------                                                                                                                                                                    | ----------: |
+| 01    | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md)                                 | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling                                                                     | 25 min    |
+| 02    | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | 30 min    |
 
 ---
 
@@ -40,11 +40,11 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — releases and measures for real.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Canary | `scripts/deploy/worker-canary-deploy.sh` rolls the worker app gradually |
-| Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, 240s `grace_period` |
-| Release evidence | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, SLO baselines) |
-| Latency SLOs in CI | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` enforce budgets as gates |
-| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` probes the live deployment |
-| DORA dashboards | _No direct docita implementation yet._ |
+| Topic                 | Docita evidence                                                                                                                         |
+| -------                 | -----------------                                                                                                                         |
+| Canary                | `scripts/deploy/worker-canary-deploy.sh` rolls the worker app gradually                                                                 |
+| Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, 240s `grace_period`                                                                        |
+| Release evidence      | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, SLO baselines) |
+| Latency SLOs in CI    | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` enforce budgets as gates                                         |
+| Synthetic monitoring  | `.github/workflows/synthetic-monitoring.yml` probes the live deployment                                                                 |
+| DORA dashboards       | _No direct docita implementation yet._                                                                                                  |

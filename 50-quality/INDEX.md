@@ -30,23 +30,23 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ## The 4 Sub-Stacks (in study order)
 
-| Order | Sub-stack | Files | Topics |
-|------:|-----------|------:|--------|
-| 1 | [Testing](50.1-testing/INDEX.md) | 14 | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, test data management, load testing, chaos engineering |
-| 2 | [Accessibility](50.2-accessibility/INDEX.md) | 9 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels, charts, design systems |
-| 3 | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 9 | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, HTTP/2 & HTTP/3, performance budgets |
-| 4 | [Production Engineering](50.4-production-engineering/INDEX.md) | 5 | Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, on-call |
+| Order | Sub-stack                                                      | Files | Topics                                                                                                                 |
+| ------: | -----------                                                      | ------: | --------                                                                                                                 |
+| 1     | [Testing](50.1-testing/INDEX.md)                               | 14    | Jest, RTL, unit, integration, E2E (Playwright), mocking, Vitest, test data management, load testing, chaos engineering |
+| 2     | [Accessibility](50.2-accessibility/INDEX.md)                   | 9     | WCAG, ARIA, keyboard navigation, color contrast, forms & labels, charts, design systems                                |
+| 3     | [Performance Monitoring](50.3-performance-monitoring/INDEX.md) | 9     | Core Web Vitals, profiling tools, Lighthouse CI, bundle analysis, RUM, HTTP/2 & HTTP/3, performance budgets            |
+| 4     | [Production Engineering](50.4-production-engineering/INDEX.md) | 5     | Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, on-call                     |
 
 ---
 
 ## Category Map
 
-| Category | What it covers | When to read |
-|----------|----------------|--------------|
-| **Testing** | Unit, integration, E2E, mocking, load testing | First — asked in every loop |
-| **Performance** | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific |
-| **Production Engineering** | Incidents, SLO, error budgets, chaos engineering | Third — senior differentiator |
-| **Accessibility** | WCAG, ARIA, keyboard, screen readers | Fourth — JD-dependent depth |
+| Category                   | What it covers                                       | When to read                  |
+| ----------                   | ----------------                                       | --------------                  |
+| **Testing**                | Unit, integration, E2E, mocking, load testing        | First — asked in every loop   |
+| **Performance**            | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific    |
+| **Production Engineering** | Incidents, SLO, error budgets, chaos engineering     | Third — senior differentiator |
+| **Accessibility**          | WCAG, ARIA, keyboard, screen readers                 | Fourth — JD-dependent depth   |
 
 ---
 

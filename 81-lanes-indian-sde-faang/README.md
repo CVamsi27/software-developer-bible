@@ -16,32 +16,32 @@ This guide covers **everything** you need to prepare for SDE interviews at Micro
 
 ### Core Knowledge (Phases 1-28)
 
-| # | File | Phases | Topics | Est. Hours |
-|---|------|--------|--------|------------|
-| 1 | [Complete Guide](81.01-complete-guide.md) | 1-8 | Java, DSA, Algorithms, Patterns, DP, Graphs, Trees | 200+ |
-| 2 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md) | 9-16 | Bit Manipulation, Math, OOP, Design Patterns, OS, Networks, Databases, NoSQL | 100+ |
-| 3 | [System Design & APIs](81.03-system-design-apis-security.md) | 17-20 | System Design, REST APIs, Security, Concurrency | 80+ |
-| 4 | [DevOps & Career](81.04-devops-behavioral-career.md) | 21-28 | Git, Linux, Behavioral, Resume, Testing, Cloud, Frontend | 60+ |
-| 5 | [Advanced Topics](81.05-advanced-topics.md) | - | Segment Tree, Fenwick Tree, AVL, DI, Repository, MVC, Cookies, Sessions | 20+ |
+| # | File                                                         | Phases | Topics                                                                       | Est. Hours |
+| --- | ------                                                         | -------- | --------                                                                       | ------------ |
+| 1 | [Complete Guide](81.01-complete-guide.md)                    | 1-8    | Java, DSA, Algorithms, Patterns, DP, Graphs, Trees                           | 200+       |
+| 2 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md)        | 9-16   | Bit Manipulation, Math, OOP, Design Patterns, OS, Networks, Databases, NoSQL | 100+       |
+| 3 | [System Design & APIs](81.03-system-design-apis-security.md) | 17-20  | System Design, REST APIs, Security, Concurrency                              | 80+        |
+| 4 | [DevOps & Career](81.04-devops-behavioral-career.md)         | 21-28  | Git, Linux, Behavioral, Resume, Testing, Cloud, Frontend                     | 60+        |
+| 5 | [Advanced Topics](81.05-advanced-topics.md)                  | -      | Segment Tree, Fenwick Tree, AVL, DI, Repository, MVC, Cookies, Sessions      | 20+        |
 
 ### Study Tools
 
-| # | File | Purpose | When to Use |
-|---|------|---------|-------------|
-| 6 | [LeetCode Study Plan](81.06-leetcode-study-plan.md) | 12-week intensive plan (4-6 hrs/day) | Daily study schedule |
-| 7 | [Cheat Sheet](81.07-cheat-sheet.md) | Quick reference for all 28 phases | Last-minute review |
-| 9 | [Progress Tracker](81.08-progress-tracker.md) | Weekly tracking with readiness scores | Track your progress |
+| #  | File                                                         | Purpose                                          | When to Use             |
+| ---  | ------                                                         | ---------                                          | -------------             |
+| 6  | [LeetCode Study Plan](81.06-leetcode-study-plan.md)          | 12-week intensive plan (4-6 hrs/day)             | Daily study schedule    |
+| 7  | [Cheat Sheet](81.07-cheat-sheet.md)                          | Quick reference for all 28 phases                | Last-minute review      |
+| 9  | [Progress Tracker](81.08-progress-tracker.md)                | Weekly tracking with readiness scores            | Track your progress     |
 | 10 | [Mock Interview Bank](81.09-mock-interview-question-bank.md) | 90 questions (50 Coding + 20 SD + 20 Behavioral) | Mock interview practice |
 
 ### Company-Specific Guides
 
-| # | File | Company | Unique Focus |
-|---|------|---------|--------------|
-| 8 | [Microsoft Guide](81.16-microsoft-azure-interview-guide.md) | Microsoft Azure | Growth Mindset, Azure Services, Plain Text Editor |
-| 11 | [Google Guide](81.17-google-interview-guide.md) | Google | Googleyness, Google Docs Coding, HC Process |
-| 12 | [Amazon Guide](81.18-amazon-interview-guide.md) | Amazon | Leadership Principles, Bar Raiser, AWS Services |
-| 13 | [Meta Guide](81.19-meta-interview-guide.md) | Meta | Move Fast, CodeSignal OA, Product Architecture |
-| 14 | [Apple Guide](81.20-apple-interview-guide.md) | Apple | Privacy-First, On-Device Processing, Domain Expertise |
+| #  | File                                                        | Company         | Unique Focus                                          |
+| ---  | ------                                                        | ---------         | --------------                                          |
+| 8  | [Microsoft Guide](81.16-microsoft-azure-interview-guide.md) | Microsoft Azure | Growth Mindset, Azure Services, Plain Text Editor     |
+| 11 | [Google Guide](81.17-google-interview-guide.md)             | Google          | Googleyness, Google Docs Coding, HC Process           |
+| 12 | [Amazon Guide](81.18-amazon-interview-guide.md)             | Amazon          | Leadership Principles, Bar Raiser, AWS Services       |
+| 13 | [Meta Guide](81.19-meta-interview-guide.md)                 | Meta            | Move Fast, CodeSignal OA, Product Architecture        |
+| 14 | [Apple Guide](81.20-apple-interview-guide.md)               | Apple           | Privacy-First, On-Device Processing, Domain Expertise |
 
 ---
 
@@ -160,21 +160,21 @@ Time: 4-6 hours/day
 
 ## Study Plan Overview
 
-| Week | Focus | Problems | System Design | Behavioral |
-|------|-------|----------|---------------|------------|
-| 1 | Arrays & Strings | 32 | - | - |
-| 2 | Two Pointers & Sliding Window | 30 | URL Shortener | STAR stories |
-| 3 | Hash Maps & Sets | 30 | Rate Limiter | STAR stories |
-| 4 | Binary Search | 30 | Auto-Complete | Mock Q1 |
-| 5 | Linked Lists + Stacks | 30 | LRU Cache | Mock Q2 |
-| 6 | Trees - Traversal & BST | 30 | Social Feed | Mock Q3 |
-| 7 | Trees - Advanced + Heaps | 30 | Chat System | Mock Q4 |
-| 8 | Graphs - BFS/DFS | 30 | Uber/Maps | Mock Q5 |
-| 9 | Graphs - Advanced | 30 | Distributed Cache | Mock Q6 |
-| 10 | Dynamic Programming - Basics | 30 | Notification System | Mock Q7 |
-| 11 | DP - Advanced + Backtracking | 30 | Netflix | Mock Q8 |
-| 12 | Hard Problems + Mocks | 30 | WhatsApp | Full Mocks |
-| **TOTAL** | | **362** | **12 designs** | **8+ mocks** |
+| Week      | Focus                         | Problems | System Design       | Behavioral   |
+| ------      | -------                         | ---------- | ---------------       | ------------   |
+| 1         | Arrays & Strings              | 32       | -                   | -            |
+| 2         | Two Pointers & Sliding Window | 30       | URL Shortener       | STAR stories |
+| 3         | Hash Maps & Sets              | 30       | Rate Limiter        | STAR stories |
+| 4         | Binary Search                 | 30       | Auto-Complete       | Mock Q1      |
+| 5         | Linked Lists + Stacks         | 30       | LRU Cache           | Mock Q2      |
+| 6         | Trees - Traversal & BST       | 30       | Social Feed         | Mock Q3      |
+| 7         | Trees - Advanced + Heaps      | 30       | Chat System         | Mock Q4      |
+| 8         | Graphs - BFS/DFS              | 30       | Uber/Maps           | Mock Q5      |
+| 9         | Graphs - Advanced             | 30       | Distributed Cache   | Mock Q6      |
+| 10        | Dynamic Programming - Basics  | 30       | Notification System | Mock Q7      |
+| 11        | DP - Advanced + Backtracking  | 30       | Netflix             | Mock Q8      |
+| 12        | Hard Problems + Mocks         | 30       | WhatsApp            | Full Mocks   |
+| **TOTAL** |                               | **362**  | **12 designs**      | **8+ mocks** |
 
 ---
 

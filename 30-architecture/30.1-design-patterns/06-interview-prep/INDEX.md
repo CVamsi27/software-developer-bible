@@ -45,11 +45,11 @@ If you can answer the Hard section cold, you are ready for a senior-level patter
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — gives me true stories for these answers.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| "Design a plugin system" → Strategy + Registry | `search-strategy.registry.ts`, `bulk-import-strategy.registry.ts` with per-entity strategy files |
-| "Builder for complex documents" → Builder | `fhir/factories/observations/builders/*.builder.ts` composing FHIR observations |
-| "Factory families" → Factory Method | `fhir/factories/*`, `analytics/core/factories/*`, `payment-gateway.factory.ts` |
+| Topic                                            | Docita evidence                                                                                                |
+| -------                                            | -----------------                                                                                                |
+| "Design a plugin system" → Strategy + Registry   | `search-strategy.registry.ts`, `bulk-import-strategy.registry.ts` with per-entity strategy files               |
+| "Builder for complex documents" → Builder        | `fhir/factories/observations/builders/*.builder.ts` composing FHIR observations                                |
+| "Factory families" → Factory Method              | `fhir/factories/*`, `analytics/core/factories/*`, `payment-gateway.factory.ts`                                 |
 | "Template Method pipeline" → base-class skeleton | `base-pdf.service.ts` PDF generation, `base-websocket.gateway.ts` realtime, `base-pdf.processor.ts` queue jobs |
-| "Facade over a subsystem" → Facade | `ocr-facade.service.ts` (OCR pipeline), `templates-facade.service.ts` (WhatsApp templates) |
-| "Repository + DI for testability" → Repository | `base.repository.ts` + DI-token binding enforced by `check-repository-di-tokens.mjs` |
+| "Facade over a subsystem" → Facade               | `ocr-facade.service.ts` (OCR pipeline), `templates-facade.service.ts` (WhatsApp templates)                     |
+| "Repository + DI for testability" → Repository   | `base.repository.ts` + DI-token binding enforced by `check-repository-di-tokens.mjs`                           |

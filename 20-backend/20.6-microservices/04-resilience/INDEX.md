@@ -9,10 +9,10 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Circuit Breaker](20.6.4.01-circuit-breaker.md) | Closed/open/half-open states, threshold tuning, fallbacks, integration with retries/timeouts | 20 min |
-| 02 | [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md) | Thread pool/semaphore/connection partitioning, tenant isolation, pool sizing | 20 min |
+| Order | File                                              | Topics                                                                                       | Read time |
+| --   :  | ------                                              | --------                                                                                       | ----------: |
+| 01    | [Circuit Breaker](20.6.4.01-circuit-breaker.md)   | Closed/open/half-open states, threshold tuning, fallbacks, integration with retries/timeouts | 20 min    |
+| 02    | [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md) | Thread pool/semaphore/connection partitioning, tenant isolation, pool sizing                 | 20 min    |
 
 ---
 
@@ -24,9 +24,9 @@
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Circuit breaker | `apps/api/src/shared/common/utils/circuit-breaker.ts` - CLOSED/OPEN/HALF_OPEN state machine with Prometheus metrics, shared via a registry |
-| Request deadlines | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - config-driven per-request timeout |
-| Outbound timeouts | `apps/api/src/shared/common/http/fetch-with-timeout.ts` - abortable fetch wrapper for provider calls |
-| Bulkhead by deployment | `apps/worker/src/main.ts` - job load isolated in its own process so spikes cannot starve the API |
+| Topic                  | Docita evidence                                                                                                                            |
+| -------                  | -----------------                                                                                                                            |
+| Circuit breaker        | `apps/api/src/shared/common/utils/circuit-breaker.ts` - CLOSED/OPEN/HALF_OPEN state machine with Prometheus metrics, shared via a registry |
+| Request deadlines      | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - config-driven per-request timeout                                       |
+| Outbound timeouts      | `apps/api/src/shared/common/http/fetch-with-timeout.ts` - abortable fetch wrapper for provider calls                                       |
+| Bulkhead by deployment | `apps/worker/src/main.ts` - job load isolated in its own process so spikes cannot starve the API                                           |

@@ -36,10 +36,10 @@ Questions spanning all three content categories: platform mechanics (Actions/Git
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| "Design a pipeline" | 11-workflow GitHub Actions suite around a turbo monorepo (`ci.yml`, `api-e2e.yml`, `db-migrations.yml`…) |
-| "Zero-downtime deploy?" | Health-gated Fly deploys + canaried worker rollout + migration-before-deploy ordering |
-| "How do you keep CI fast?" | Pre-push husky subset of gates; full `verify:standard` reserved for merge; turbo task caching |
-| "Release metrics?" | Latency-SLO budgets enforced in CI, synthetic monitoring, filled release-evidence docs |
-| GitOps / ArgoCD stories | _No direct docita implementation yet._ |
+| Topic                      | Docita evidence                                                                                          |
+| -------                      | -----------------                                                                                          |
+| "Design a pipeline"        | 11-workflow GitHub Actions suite around a turbo monorepo (`ci.yml`, `api-e2e.yml`, `db-migrations.yml`…) |
+| "Zero-downtime deploy?"    | Health-gated Fly deploys + canaried worker rollout + migration-before-deploy ordering                    |
+| "How do you keep CI fast?" | Pre-push husky subset of gates; full `verify:standard` reserved for merge; turbo task caching            |
+| "Release metrics?"         | Latency-SLO budgets enforced in CI, synthetic monitoring, filled release-evidence docs                   |
+| GitOps / ArgoCD stories    | _No direct docita implementation yet._                                                                   |

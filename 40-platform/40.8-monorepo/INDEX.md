@@ -12,21 +12,21 @@
 
 ## Topic Categories
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [Foundations](#foundations) | 1 | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces |
-| [Build Orchestrators](#build-orchestrators) | 2 | Turborepo, Nx — the two main options |
-| [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
-| [Versioning & Publishing](#versioning--publishing) | 1 | Changesets, fixed vs independent versions, provenance |
-| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
+| Category                                           | Files | Why it matters                                        |
+| ----------                                           | ------: | ----------------                                        |
+| [Foundations](#foundations)                        | 1     | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces        |
+| [Build Orchestrators](#build-orchestrators)        | 2     | Turborepo, Nx — the two main options                  |
+| [Tools & Deep-Dive](#tools--deep-dive)             | 1     | pnpm, Yarn Berry, Lerna, Rush, Bazel                  |
+| [Versioning & Publishing](#versioning--publishing) | 1     | Changesets, fixed vs independent versions, provenance |
+| [Interview Prep](#interview-prep)                  | 1     | 30+ Qs                                                |
 
 ---
 
 ## Foundations
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 30 min |
+| #  | File                                              | Topics                                                                          | Read time |
+| --:  | ------                                              | --------                                                                          | ----------: |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 30 min    |
 
 ---
 
@@ -34,10 +34,10 @@
 
 The two main build/cache systems for monorepos.
 
-| # | File | Topics | When to use | Read time |
-|--:|------|--------|-------------|----------:|
-| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | 30 min |
-| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 30 min |
+| #  | File                              | Topics                                                                       | When to use                                  | Read time |
+| --:  | ------                              | --------                                                                       | -------------                                  | ----------: |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching   | Vercel ecosystem, JS/TS monorepos            | 30 min    |
+| 03 | [Nx](40.8.03-nx.md)               | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 30 min    |
 
 **Decision:**
 
@@ -53,25 +53,25 @@ Monorepo tool?
 
 ## Tools & Deep-Dive
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
+| #  | File                                                  | Topics                                                | Read time |
+| --:  | ------                                                  | --------                                                | ----------: |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min    |
 
 ---
 
 ## Versioning & Publishing
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 30 min |
+| #  | File                                                                              | Topics                                                                                                                                                                                | Read time |
+| --:  | ------                                                                              | --------                                                                                                                                                                                | ----------: |
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 30 min    |
 
 ---
 
 ## Interview Prep
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| #  | File                                                  | Topics                             | Read time |
+| --:  | ------                                                  | --------                             | ----------: |
+| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs     |
 
 ---
 
@@ -113,10 +113,10 @@ Monorepo tool?
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — IS the monorepo case study.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| pnpm workspaces | `pnpm-workspace.yaml`: `apps/*` (api, app, internal, landing, worker) + `packages/*` (ui, auth, data-access, db, types, utils…) |
-| Turborepo task graph | `turbo.json`: `build` depends on `^build` + `check-types` + `lint`; per-app env allowlists scope cache keys |
-| Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config |
-| Dead-code control | Repo-wide `knip.json`; knip-clean enforced in release evidence |
-| Versioning/publishing | Not applicable — private app monorepo, no npm publishing |
+| Topic                 | Docita evidence                                                                                                                 |
+| -------                 | -----------------                                                                                                                 |
+| pnpm workspaces       | `pnpm-workspace.yaml`: `apps/*` (api, app, internal, landing, worker) + `packages/*` (ui, auth, data-access, db, types, utils…) |
+| Turborepo task graph  | `turbo.json`: `build` depends on `^build` + `check-types` + `lint`; per-app env allowlists scope cache keys                     |
+| Shared tooling        | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config                                           |
+| Dead-code control     | Repo-wide `knip.json`; knip-clean enforced in release evidence                                                                  |
+| Versioning/publishing | Not applicable — private app monorepo, no npm publishing                                                                        |

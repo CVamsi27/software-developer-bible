@@ -10,8 +10,8 @@
 
 ## The file
 
-| # | File | Contents | Time |
-|--:|------|----------|------|
+| #  | File                                                            | Contents                                                        | Time    |
+| --:  | ------                                                            | ----------                                                        | ------    |
 | 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty, with model answers | 2-3 hrs |
 
 ---
@@ -52,8 +52,8 @@
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at story material you can cite in testing rounds.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Written testing strategy | `docs/testing/TESTING.md` |
-| Evidence of audit rigor | `docs/audits/2026-08-19-comprehensive-audit.md` |
+| Topic                                          | Docita evidence                                            |
+| -------                                          | -----------------                                            |
+| Written testing strategy                       | `docs/testing/TESTING.md`                                  |
+| Evidence of audit rigor                        | `docs/audits/2026-08-19-comprehensive-audit.md`            |
 | Trade-off writing ("what we deferred and why") | `docs/architecture/decisions/0004-rls-rollout-deferred.md` |

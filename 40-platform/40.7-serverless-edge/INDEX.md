@@ -12,21 +12,21 @@
 
 ## Topic Categories
 
-| Category | Files | Why it matters |
-|----------|------:|----------------|
-| [Concepts](#concepts) | 2 | Overview, edge functions — the mental model |
-| [Providers](#providers) | 2 | AWS Lambda, Vercel — the main platforms |
-| [Patterns & IaC](#patterns--iac) | 3 | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
-| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
+| Category                          | Files | Why it matters                                                       |
+| ----------                          | ------: | ----------------                                                       |
+| [Concepts](#concepts)             | 2     | Overview, edge functions — the mental model                          |
+| [Providers](#providers)           | 2     | AWS Lambda, Vercel — the main platforms                              |
+| [Patterns & IaC](#patterns--iac)  | 3     | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
+| [Interview Prep](#interview-prep) | 1     | 30+ Qs                                                               |
 
 ---
 
 ## Concepts
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 30 min |
-| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 25 min |
+| #  | File                                                  | Topics                                                                                                           | Read time |
+| --:  | ------                                                  | --------                                                                                                           | ----------: |
+| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 30 min    |
+| 02 | [Edge Functions](40.7.04-edge-functions.md)           | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage                         | 25 min    |
 
 **Decision tree:**
 
@@ -42,28 +42,28 @@ Deploy choice?
 
 ## Providers
 
-| # | File | Topics | When to use | Read time |
-|--:|------|--------|-------------|----------:|
-| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
-| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
+| #  | File                                                | Topics                                                                      | When to use      | Read time |
+| --:  | ------                                                | --------                                                                      | -------------      | ----------: |
+| 03 | [AWS Lambda](40.7.02-aws-lambda.md)                 | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min    |
+| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute          | Next.js apps     | 25 min    |
 
 ---
 
 ## Patterns & IaC
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
-| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
-| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 30 min |
+| #  | File                                                                                   | Topics                                                                                                                                                      | Read time |
+| --:  | ------                                                                                   | --------                                                                                                                                                      | ----------: |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md)                                  | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS                                                                                      | 30 min    |
+| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md)                              | SAM, CDK, Serverless Framework, SST — IaC for serverless                                                                                                    | 25 min    |
+| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 30 min    |
 
 ---
 
 ## Interview Prep
 
-| # | File | Topics | Read time |
-|--:|------|--------|----------:|
-| 08 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+| #  | File                                                  | Topics                                             | Read time |
+| --:  | ------                                                  | --------                                             | ----------: |
+| 08 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs     |
 
 ---
 
@@ -110,9 +110,9 @@ Deploy choice?
 
 Where [docita](https://github.com/CVamsi27/docita) meets serverless — the honest answer is **split**:
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Serverless: YES (landing/edge) | `apps/landing` is Astro deployed to Cloudflare Workers — `deploy:cloudflare` runs `wrangler deploy` with a `_worker.js` entry; `@astrojs/cloudflare` adapter |
-| Serverless: NO (core API, deliberately) | The NestJS API and worker are long-running Fly.io machines; ADR 0011 chose suspend/resume (`auto_stop_machines='suspend'`) over scale-to-zero functions for cold-start control |
-| Edge caching | Cloudflare in front of the API with origin protection (ADR 0014); `DOCITA_CLOUDFLARE` build flag switches landing to CF mode |
-| Durable Objects / edge compute in the hot path | _No direct docita implementation yet._ |
+| Topic                                          | Docita evidence                                                                                                                                                                |
+| -------                                          | -----------------                                                                                                                                                                |
+| Serverless: YES (landing/edge)                 | `apps/landing` is Astro deployed to Cloudflare Workers — `deploy:cloudflare` runs `wrangler deploy` with a `_worker.js` entry; `@astrojs/cloudflare` adapter                   |
+| Serverless: NO (core API, deliberately)        | The NestJS API and worker are long-running Fly.io machines; ADR 0011 chose suspend/resume (`auto_stop_machines='suspend'`) over scale-to-zero functions for cold-start control |
+| Edge caching                                   | Cloudflare in front of the API with origin protection (ADR 0014); `DOCITA_CLOUDFLARE` build flag switches landing to CF mode                                                   |
+| Durable Objects / edge compute in the hot path | _No direct docita implementation yet._                                                                                                                                         |

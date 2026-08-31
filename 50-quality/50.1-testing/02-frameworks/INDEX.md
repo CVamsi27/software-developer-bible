@@ -16,12 +16,12 @@ Picking a framework is a team-level decision with long tail costs (config, plugi
 
 ## The 4 files
 
-| # | File | Topics | When to use | Read time |
-|--:|------|--------|-------------|----------:|
-| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects — the default ecosystem | 30 min |
-| 02 | [Vitest](50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads | Vite-based projects; faster runs | 30 min |
-| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 30 min |
-| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | 20 min |
+| #  | File                                                                        | Topics                                                                               | When to use                                      | Read time |
+| --:  | ------                                                                        | --------                                                                               | -------------                                      | ----------: |
+| 01 | [Jest](50.1.2.01-jest.md)                                                   | Configuration, matchers, snapshots, mocking, code coverage                           | Most React/Node projects — the default ecosystem | 30 min    |
+| 02 | [Vitest](50.1.2.02-vitest.md)                                               | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads               | Vite-based projects; faster runs                 | 30 min    |
+| 03 | [React Testing Library](50.1.2.03-react-testing-library.md)                 | Render, queries, events, async testing, accessibility (testing-library/jest-dom)     | React component tests                            | 30 min    |
+| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions                                  | 20 min    |
 
 ---
 
@@ -63,9 +63,9 @@ The full decision matrix lives in the [comparison chapter](50.1.2.04-testing-fra
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic | Docita evidence |
-|-------|-----------------|
-| Shared Vitest runner config | `vitest.shared.config.ts` (workspace-wide base config) |
-| Playwright as E2E runner | `apps/app/playwright.config.ts`, `apps/internal/playwright.config.ts`, `apps/landing/playwright.config.ts` |
-| Component tests (RTL-style) | 27 `*.test.tsx` under `packages/ui` |
-| Visual regression | `packages/ui/tests/visual/status-badge.spec.ts` |
+| Topic                       | Docita evidence                                                                                            |
+| -------                       | -----------------                                                                                            |
+| Shared Vitest runner config | `vitest.shared.config.ts` (workspace-wide base config)                                                     |
+| Playwright as E2E runner    | `apps/app/playwright.config.ts`, `apps/internal/playwright.config.ts`, `apps/landing/playwright.config.ts` |
+| Component tests (RTL-style) | 27 `*.test.tsx` under `packages/ui`                                                                        |
+| Visual regression           | `packages/ui/tests/visual/status-badge.spec.ts`                                                            |

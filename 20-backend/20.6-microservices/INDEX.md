@@ -1,10 +1,10 @@
 # Microservices & Distributed Patterns — Index
 
-> **18 files — the single home for distributed-systems patterns.** Learn in four passes: **I. Foundations** (how services find and talk to each other) → **II. Data patterns** (consistency across services) → **III. Resilience** (surviving partial failure) → **IV. Messaging & migration** (brokers, evolution) → drills.
+> **19 files — the single home for distributed-systems patterns.** Learn in four passes: **I. Foundations** (how services find and talk to each other) → **II. Data patterns** (consistency across services) → **III. Resilience** (surviving partial failure) → **IV. Messaging & migration** (brokers, evolution) → drills.
 >
 > Canonical source for saga, circuit breaker, bulkhead, strangler fig, service discovery, API gateway, CQRS/event sourcing, monolith database decomposition, gRPC — the thinner twins in `30.3-infra-patterns` were consolidated here.
 
-[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

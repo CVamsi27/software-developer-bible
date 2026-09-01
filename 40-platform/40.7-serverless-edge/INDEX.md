@@ -1,8 +1,8 @@
 # Serverless & Edge — Index
 
-> **8 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, and curated interview questions.
+> **10 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-informational)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -17,7 +17,8 @@
 | [Concepts](#concepts)             | 2     | Overview, edge functions — the mental model                          |
 | [Providers](#providers)           | 2     | AWS Lambda, Vercel — the main platforms                              |
 | [Patterns & IaC](#patterns--iac)  | 3     | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
-| [Interview Prep](#interview-prep) | 1     | 30+ Qs                                                               |
+| [Deployment](#deployment)             | 2     | Fly.io containers, Vite SPA on Cloudflare                             |
+| [Interview Prep](#interview-prep)     | 1     | 30+ Qs                                                               |
 
 ---
 
@@ -59,11 +60,20 @@ Deploy choice?
 
 ---
 
+## Deployment
+
+| #   | File                                                              | Topics                                                                                           | Read time   |
+| --: | ------                                                            | --------                                                                                         | ----------: |
+| 09  | [Fly.io Deployment](40.7.09-flyio-deployment.md)                  | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds    | 25 min      |
+| 10  | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | 25 min      |
+
+---
+
 ## Interview Prep
 
 | #   | File                                                  | Topics                                             | Read time   |
 | --: | ------                                                | --------                                           | ----------: |
-| 08  | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs       |
+| 11  | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs       |
 
 ---
 
@@ -75,7 +85,8 @@ Deploy choice?
 4. **Serverless Patterns** — for senior roles
 5. **Serverless Frameworks** — for IaC-heavy roles
 6. **Durable Execution** — for orchestration/stateful-flow questions
-7. **Interview Questions** — final review
+7. **Fly.io / Vite SPA on Cloudflare** — deployment for your stack
+8. **Interview Questions** — final review
 
 ---
 

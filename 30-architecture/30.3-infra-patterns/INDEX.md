@@ -1,10 +1,10 @@
 # Infra & Ops Patterns — Index
 
-> **14 files across 5 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, leader election, data-at-scale levers, zero-downtime deploys, technical debt management, cost engineering (FinOps), and data retention/archival.
+> **16 files across 5 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), and data retention/archival.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
 
-[![Files](https://img.shields.io/badge/files-14-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-16-blue)](../INDEX.md)
 [![Categories](https://img.shields.io/badge/categories-5-green)](#categories)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

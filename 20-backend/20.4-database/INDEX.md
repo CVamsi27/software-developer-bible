@@ -1,8 +1,8 @@
 # Database — Index
 
-> **23 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, and interview questions.
+> **24 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

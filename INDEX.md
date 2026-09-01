@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-753-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-761-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
@@ -59,7 +59,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 10-frontend — Frontend (99 files in 8 sub-stacks)
+### 10-frontend — Frontend (112 files in 8 sub-stacks)
 
 | Order | Sub-stack                                                   | Files | Topics                                                                             |
 | ----- | ----------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------- |
@@ -72,7 +72,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7  | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md)        | 5     | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering      |
 | 10.8  | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 1     | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA               |
 
-### 20-backend — Backend (110 files in 10 sub-stacks)
+### 20-backend — Backend (133 files in 10 sub-stacks)
 
 | Order | Sub-stack                                                                      | Files | Topics                                                                                                                                                                                     |
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -86,7 +86,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.8  | [Caching](20-backend/20.8-caching/INDEX.md)                                    | 3     | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns                                                                                                  |
 | 20.9  | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md)                     | 4     | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance                                                                                          |
 
-### 30-architecture — Architecture (85 files in 3 sub-stacks)
+### 30-architecture — Architecture (102 files in 3 sub-stacks)
 
 | Order | Sub-stack                                                               | Files | Topics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----- | ----------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -94,7 +94,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 30.2  | [System Design](30-architecture/30.2-system-design/INDEX.md)            | 40    | 20 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...)                                                                                                    |
 | 30.3  | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 16    | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), idempotency-retry deep dive, leader election & consensus, zero-downtime deployments, data pipelines, multi-tenant SaaS                                                                                                                                                                                                                                                                                                                                                              |
 
-### Platform (68 files in 10 sub-stacks)
+### Platform (90 files in 10 sub-stacks)
 
 | Sub-stack                                                      | Files | Topics                                                                                                                                                                                                    |
 | -------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,7 +109,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md)   | 1     | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
 | [CDN & Edge](40-platform/40.10-cdn/INDEX.md)                   | 1     | CDN caching strategies, invalidation, edge functions, PHI-at-edge considerations                                                                                                                          |
 
-### Quality (31 files in 4 sub-stacks)
+### Quality (37 files in 4 sub-stacks)
 
 | Sub-stack                                                                 | Files | Topics                                                                              |
 | ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------- |
@@ -124,7 +124,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | -------------------------------------------------- | ----: | ----------------------------------------------------------------------- |
 | [WebSockets](60-realtime/60.1-websockets/INDEX.md) | 8     | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
-### Interview Toolkit (25 files in 3 sub-stacks)
+### Interview Toolkit (33 files in 3 sub-stacks)
 
 | Sub-stack                                                             | Files | Topics                                                                                                        |
 | --------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------- |
@@ -192,4 +192,4 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ---
 
-*Last updated: August 2026 — 753 files, 400K+ lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; all sequences contiguous.
+*Last updated: August 2026 — 761 files, 400K+ lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; all sequences contiguous.

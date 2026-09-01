@@ -1,8 +1,8 @@
 # JavaScript — Index
 
-> **30 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, DOM events, cross-tab communication, and interview questions.
+> **31 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, DOM events, cross-tab communication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-30-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-31-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,7 +19,7 @@ The 30 files are organized into 6 category folders. Files in the same category b
 | [Execution & Scope](01-execution-and-scope/INDEX.md)                     | 6     | The "how JS runs" fundamentals — every interview tests these                                |
 | [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md)      | 3     | The OOP model of JavaScript — different from class-based languages                          |
 | [Async & Concurrency](03-async-concurrency/INDEX.md)                     | 4     | The hardest topic in JS — the event loop, promises, async/await                             |
-| [Memory & Data](04-memory-and-data/INDEX.md)                             | 7     | Choosing the right collection, avoiding memory leaks, understanding GC                      |
+| [Memory & Data](04-memory-and-data/INDEX.md)                             | 8     | Choosing the right collection, hash table internals, avoiding memory leaks, understanding GC                      |
 | [Functional Patterns](05-functional-patterns/INDEX.md)                   | 5     | The patterns you'll use daily: currying, composition, memoization, generators               |
 | [Modern JS (ES2022+) & Interview Prep](06-modern-and-interview/INDEX.md) | 5     | The newest features, Web Workers, DOM events, cross-tab communication, and 50+ interview Qs |
 
@@ -93,6 +93,7 @@ Choosing the right collection and avoiding memory leaks.
 | 18  | [Throttle](04-memory-and-data/10.1.4.05-throttle.md)                                  | Implementation, vs debounce, animation frame throttling, scroll handlers           | 15 min      |
 | 19  | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md)                          | Detached DOM, closures, circular references, detection, debugging                  | 25 min      |
 | 20  | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md)              | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min      |
+| 21  | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md)       | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 40 min      |
 
 ---
 
@@ -102,11 +103,11 @@ The patterns you'll use daily as a senior engineer.
 
 | #   | File                                                                               | Topics                                                                       | Read time   |
 | --: | ------                                                                             | --------                                                                     | ----------: |
-| 21  | [Modules](05-functional-patterns/10.1.5.01-modules.md)                             | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports               | 20 min      |
-| 22  | [Memoization](05-functional-patterns/10.1.5.02-memoization.md)                     | Caching, `_.memoize`, React.memo, useMemo, when to use                       | 15 min      |
-| 23  | [Generators](05-functional-patterns/10.1.5.03-generators.md)                       | `function*`, yield, iterators, async generators, lazy evaluation             | 25 min      |
-| 24  | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns            | 20 min      |
-| 25  | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md)   | Recursive patterns, tail call optimization, trampolining, memoized recursion | 20 min      |
+| 22  | [Modules](05-functional-patterns/10.1.5.01-modules.md)                             | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports               | 20 min      |
+| 23  | [Memoization](05-functional-patterns/10.1.5.02-memoization.md)                     | Caching, `_.memoize`, React.memo, useMemo, when to use                       | 15 min      |
+| 24  | [Generators](05-functional-patterns/10.1.5.03-generators.md)                       | `function*`, yield, iterators, async generators, lazy evaluation             | 25 min      |
+| 25  | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns            | 20 min      |
+| 26  | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md)   | Recursive patterns, tail call optimization, trampolining, memoized recursion | 20 min      |
 
 ---
 
@@ -116,11 +117,11 @@ The newest features + the interview Q&A bank.
 
 | #   | File                                                                                    | Topics                                                                                                                                       | Read time       |
 | --: | ------                                                                                  | --------                                                                                                                                     | ----------    : |
-| 26  | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md)                | `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, `ArrayBuffer.transfer`                                             | 20 min          |
-| 27  | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md)                         | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers                                                                  | 25 min          |
-| 28  | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md)   | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events                  | 25 min          |
-| 29  | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min          |
-| 30  | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md)         | 50+ curated questions with answers                                                                                                           | 3 hrs (review)  |
+| 27  | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md)                | `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, `ArrayBuffer.transfer`                                             | 20 min          |
+| 28  | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md)                         | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers                                                                  | 25 min          |
+| 29  | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md)   | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events                  | 25 min          |
+| 30  | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min          |
+| 31  | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md)         | 50+ curated questions with answers                                                                                                           | 3 hrs (review)  |
 
 ---
 

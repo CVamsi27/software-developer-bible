@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-761-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-762-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
@@ -59,11 +59,11 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 10-frontend — Frontend (112 files in 8 sub-stacks)
+### 10-frontend — Frontend (113 files in 8 sub-stacks)
 
 | Order | Sub-stack                                                   | Files | Topics                                                                             |
 | ----- | ----------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------- |
-| 10.1  | [JavaScript](10-frontend/10.1-javascript/INDEX.md)          | 27    | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
+| 10.1  | [JavaScript](10-frontend/10.1-javascript/INDEX.md)          | 31    | Execution context, closures, prototypes, event loop, promises, async/await, ES2024, hash tables |
 | 10.2  | [TypeScript](10-frontend/10.2-typescript/INDEX.md)          | 15    | Generics, utility types, conditional types, narrowing, `satisfies` operator        |
 | 10.3  | [React](10-frontend/10.3-react/INDEX.md)                    | 19    | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management         |
 | 10.4  | [Next.js](10-frontend/10.4-next.js/INDEX.md)                | 16    | App Router, Server Components, Server Actions, Middleware, caching, streaming      |

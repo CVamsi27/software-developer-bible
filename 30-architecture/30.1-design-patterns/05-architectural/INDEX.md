@@ -22,16 +22,16 @@ These show up heavily in:
 
 ## The 8 patterns
 
-| # | Pattern                                                                                         | Intent                                          | Use when                                                  | Avoid when                                              |
-| --: | ---------                                                                                         | --------                                          | ----------                                                  | ------------                                              |
-| 1 | [Repository](30.1.5.01-repository.md)                                                           | Data access abstraction                         | DDD, testability, multi-DB support                        | Simple CRUD with one model                              |
-| 2 | [CQRS & DI](30.1.5.02-cqrs-di.md)                                                               | Command/query separation + DI container         | Complex domains, asymmetric read/write load               | Simple CRUD, low scale                                  |
-| 3 | [Event Sourcing](30.1.5.03-event-sourcing.md)                                                   | Store events, derive state                      | Audit-required domains, temporal queries, debugging       | State is ephemeral, no audit needed                     |
-| 4 | [Saga](30.1.5.04-saga.md)                                                                       | Distributed transactions                        | Multi-service business flows                              | Single DB transaction works                             |
-| 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)            | Entities, value objects, aggregate boundaries   | Complex domains with invariants to enforce                | CRUD apps without business rules                        |
-| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md)                                     | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | You own both sides of the boundary                      |
-| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved                   | Understanding hidden deps, choosing a wiring strategy     | (DI is the default; locator only for plugin registries) |
-| 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md)           | Separating UI state, logic, and rendering       | Frontend architecture discussions and refactors           | Trivial static UIs                                      |
+| #   | Pattern                                                                                         | Intent                                          | Use when                                                  | Avoid when                                              |
+| --: | ---------                                                                                       | --------                                        | ----------                                                | ------------                                            |
+| 1   | [Repository](30.1.5.01-repository.md)                                                           | Data access abstraction                         | DDD, testability, multi-DB support                        | Simple CRUD with one model                              |
+| 2   | [CQRS & DI](30.1.5.02-cqrs-di.md)                                                               | Command/query separation + DI container         | Complex domains, asymmetric read/write load               | Simple CRUD, low scale                                  |
+| 3   | [Event Sourcing](30.1.5.03-event-sourcing.md)                                                   | Store events, derive state                      | Audit-required domains, temporal queries, debugging       | State is ephemeral, no audit needed                     |
+| 4   | [Saga](30.1.5.04-saga.md)                                                                       | Distributed transactions                        | Multi-service business flows                              | Single DB transaction works                             |
+| 5   | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)            | Entities, value objects, aggregate boundaries   | Complex domains with invariants to enforce                | CRUD apps without business rules                        |
+| 6   | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md)                                     | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | You own both sides of the boundary                      |
+| 7   | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved                   | Understanding hidden deps, choosing a wiring strategy     | (DI is the default; locator only for plugin registries) |
+| 8   | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md)           | Separating UI state, logic, and rendering       | Frontend architecture discussions and refactors           | Trivial static UIs                                      |
 
 ---
 
@@ -164,7 +164,7 @@ How is your data accessed / persisted?
 These patterns are often used together in real systems:
 
 | Composition                                     | What you get                                                               |
-| -------------                                     | --------------                                                               |
+| ----------------------------------------------- | -------------------------------------------------------------------------- |
 | **Repository + DI**                             | Domain code with mocked data access, swappable persistence                 |
 | **CQRS + Event Sourcing**                       | Reads are projections of the event log; commands emit events               |
 | **CQRS + Saga**                                 | Commands trigger multi-service workflows; queries serve denormalized views |
@@ -204,7 +204,7 @@ If a junior engineer is proposing CQRS + Event Sourcing for a CRUD blog, that is
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — does architecture for real.
 
 | Topic                                | Docita evidence                                                                                                                    |
-| -------                                | -----------------                                                                                                                    |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Repository                           | `shared/common/repositories/base.repository.ts` (+ `prisma-read-base.ts`), per-domain repos bound via DI tokens (CI-enforced)      |
 | CQRS & DI                            | CQRS-lite command/query split in `domains/appointments/application/services/*`; constructor injection wired in every `*.module.ts` |
 | Ports & Adapters (hexagonal)         | `domains/*/application/ports/*` + `infrastructure/repositories/*`; cross-domain infrastructure imports blocked by CI checks        |

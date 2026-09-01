@@ -16,10 +16,10 @@ One-off optimization decays: every sprint adds bytes. Budgets convert "the site 
 
 ## The 2 files
 
-| #  | File                                                    | Topics                                                                       | Read time |
-| --:  | ------                                                    | --------                                                                       | ----------: |
-| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md)         | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 25 min    |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers             | 20 min    |
+| #   | File                                                    | Topics                                                                       | Read time   |
+| --: | ------                                                  | --------                                                                     | ----------: |
+| 01  | [Bundle Analysis](50.3.3.01-bundle-analysis.md)         | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 25 min      |
+| 02  | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers             | 20 min      |
 
 ---
 
@@ -55,7 +55,7 @@ Budget tiers to remember: initial JS, per-route chunks, total CSS, third-party s
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
 | Topic                                             | Docita evidence                                                                                              |
-| -------                                             | -----------------                                                                                              |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Route budgets as config, not folklore             | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs`                                          |
 | Budget enforcement scripts (perf / vitals / a11y) | `check-perf-budget.mjs`, `check-web-vitals-budget.mjs`, `check-a11y-budget.mjs` under `scripts/perf/`        |
 | Breach alerting                                   | `apps/api/src/shared/modules/monitoring/monitoring/listeners/ops-alert.listener.ts` + `ops-alert.service.ts` |

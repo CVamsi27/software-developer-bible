@@ -15,7 +15,7 @@
 The 7 cheat sheets classify into 5 conceptual categories — pick by interview type, not by order.
 
 | Category                   | Files | When to use                                                                       |
-| ----------                   | ------: | -------------                                                                       |
+| -------------------------- | ----: | --------------------------------------------------------------------------------- |
 | **Language**               | 2     | JavaScript (any JS role), TypeScript (when the JD names TS) — fundamentals rounds |
 | **Framework & Full-Stack** | 2     | React/Next.js (frontend loops), Backend (Node/NestJS/DB/API loops)                |
 | **Architecture**           | 1     | System design rounds — every senior loop                                          |
@@ -26,15 +26,15 @@ The 7 cheat sheets classify into 5 conceptual categories — pick by interview t
 
 ## The 7 Cheat Sheets
 
-| #  | File                                                                                    | What it covers                                                                                                                     | When to use                                              | Read time |
-| --:  | ------                                                                                    | ----------------                                                                                                                     | -------------                                              | ----------: |
-| 01 | [JavaScript Cheat Sheet](70.3.01-javascript-cheat-sheet.md)                             | ES6+, promises, async/await, closures, event loop, prototype chain, this binding                                                   | Frontend interview, JS fundamentals round                | 15 min    |
-| 02 | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md)                             | Types, generics, utility types, decorators, configuration, `satisfies`, `infer`                                                    | Frontend interview with TS focus                         | 15 min    |
-| 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md)                      | Hooks, component patterns, App Router, server components, RSC, caching                                                             | React/Next.js interview                                  | 15 min    |
-| 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md)                                   | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices                                                                | Backend interview                                        | 15 min    |
-| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md)                       | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting                                        | System design interview                                  | 15 min    |
-| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync              | DevOps-adjacent and platform-heavy full-stack loops      | 15 min    |
-| 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md)             | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 15 min    |
+| #   | File                                                                                    | What it covers                                                                                                                     | When to use                                              | Read time   |
+| --: | ------                                                                                  | ----------------                                                                                                                   | -------------                                            | ----------: |
+| 01  | [JavaScript Cheat Sheet](70.3.01-javascript-cheat-sheet.md)                             | ES6+, promises, async/await, closures, event loop, prototype chain, this binding                                                   | Frontend interview, JS fundamentals round                | 15 min      |
+| 02  | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md)                             | Types, generics, utility types, decorators, configuration, `satisfies`, `infer`                                                    | Frontend interview with TS focus                         | 15 min      |
+| 03  | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md)                      | Hooks, component patterns, App Router, server components, RSC, caching                                                             | React/Next.js interview                                  | 15 min      |
+| 04  | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md)                                   | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices                                                                | Backend interview                                        | 15 min      |
+| 05  | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md)                       | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting                                        | System design interview                                  | 15 min      |
+| 06  | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync              | DevOps-adjacent and platform-heavy full-stack loops      | 15 min      |
+| 07  | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md)             | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 15 min      |
 
 ---
 

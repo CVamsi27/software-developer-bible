@@ -15,7 +15,7 @@ Scope: Everything at once - structure, numbering, auth completion, and ~80 new c
 ## 2. Unified convention (single source of truth)
 
 | Level            | Pattern                                                               | Example                                    |
-| ---                | ---                                                                     | ---                                          |
+| ---------------- | --------------------------------------------------------------------- | ------------------------------------------ |
 | Stack            | `NN.N-slug/`                                                          | `20.5-security/`                           |
 | Category folder  | `NN-slug/` (2-digit study order)                                      | `01-auth/`, `03-hardening-and-operations/` |
 | File in category | `stack.cat.seq-slug.md`, seq contiguous from 01                       | `20.5.1.01-auth-fundamentals.md`           |

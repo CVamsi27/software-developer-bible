@@ -9,12 +9,12 @@
 
 ## Files
 
-| Order | File                                                                            | Topics                                                                                          | Read time |
-| --   :  | ------                                                                            | --------                                                                                          | ----------: |
-| 01    | [Transactions](20.4.3.01-transactions.md)                                       | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | 30 min    |
-| 02    | [Deadlocks](20.4.3.02-deadlocks.md)                                             | Detection, prevention, timeout-based resolution, retry strategies, lock ordering                | 20 min    |
-| 03    | [Optimistic & Pessimistic Locking](20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE                     | 25 min    |
-| 04    | [Database Replication](20.4.3.04-database-replication.md)                       | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution     | 30 min    |
+| Order  | File                                                                            | Topics                                                                                          | Read time   |
+| --   : | ------                                                                          | --------                                                                                        | ----------: |
+| 01     | [Transactions](20.4.3.01-transactions.md)                                       | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | 30 min      |
+| 02     | [Deadlocks](20.4.3.02-deadlocks.md)                                             | Detection, prevention, timeout-based resolution, retry strategies, lock ordering                | 20 min      |
+| 03     | [Optimistic & Pessimistic Locking](20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE                     | 25 min      |
+| 04     | [Database Replication](20.4.3.04-database-replication.md)                       | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution     | 30 min      |
 
 ---
 
@@ -27,7 +27,7 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 | Topic                     | Docita evidence                                                                                                               |
-| -------                     | -----------------                                                                                                               |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Transactions              | `apps/api/src/prisma/transaction-runner.ts` - ITransactionRunner wraps `$transaction` for use cases                           |
 | Advisory locks            | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - `pg_try_advisory_xact_lock` gives scheduled jobs single-flight |
 | Transient-failure retries | `apps/api/src/shared/common/interceptors/prisma-retry.interceptor.ts` - P-coded transient errors retried with backoff         |

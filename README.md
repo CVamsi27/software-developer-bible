@@ -15,7 +15,7 @@
 The bible is split into **3 lanes**. The stacks are the technical material they share; the lanes are the strategy, prep plan, and behavioral overlay for a specific job-market.
 
 | Lane                                          | Folder                                                             | Audience                                                                                    | Bar                                   | Time                     |
-| ------                                          | --------                                                             | ----------                                                                                    | -----                                   | ------                     |
+| --------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------ |
 | **Cross-Lane** — universal interview strategy | [00-strategy/](00-strategy/INDEX.md)                               | Everyone starts here                                                                        | Resume, STAR, communication           | Read in 1-2 days         |
 | **Indian SDE / FAANG**                        | [81-lanes-indian-sde-faang/](81-lanes-indian-sde-faang/INDEX.md)   | Microsoft, Google, Amazon, Meta, Apple, in-country India                                    | LeetCode medium-to-hard, 5-6 rounds   | 8-12 weeks @ 4-6 hrs/day |
 | **Abroad Full-Stack**                         | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage startups (n8n, SumUp, Scalable, sennder, THRYVE, Peter Park) + remote-first US | Take-home + system design, 3-4 rounds | 4-6 weeks @ 2-3 hrs/day  |
@@ -31,7 +31,7 @@ The bible is split into **3 lanes**. The stacks are the technical material they 
 Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack. Lanes never reference each other — only the stacks.
 
 | Stack                 | Folder                                                 | What's in it                                                                                                                                            | Files |
-| -------                 | --------                                                 | --------------                                                                                                                                            | ------: |
+| --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: |
 | **Frontend**          | [10-frontend/](10-frontend/INDEX.md)                   | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML/CSS/PWA, Mobile                                                                          | 96    |
 | **Backend**           | [20-backend/](20-backend/INDEX.md)                     | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, **AI Engineering**                                                   | 110   |
 | **Architecture**      | [30-architecture/](30-architecture/INDEX.md)           | System design theory + 20 case studies, Design Patterns (categorized: Foundations/Creational/Structural/Behavioral/Architectural — all 23 GoF + modern) | 75+   |
@@ -47,7 +47,7 @@ Both lanes pull from the **same 7 study stacks**. Pick a topic, drill the stack.
 ## Navigation
 
 | If you want to…                         | Go to                                                              |
-| ------------------                        | -------                                                              |
+| --------------------------------------- | ------------------------------------------------------------------ |
 | **Follow the study path**               | [ROADMAP.md](ROADMAP.md) — phases, checkpoints, weekly schedule    |
 | See all files in one place              | [INDEX.md](INDEX.md)                                               |
 | Start with universal interview prep     | [00-strategy/](00-strategy/INDEX.md)                               |
@@ -86,7 +86,7 @@ Interview questions live in dedicated `*-interview-questions.md` files (29 acros
 ## How to Use
 
 | Goal                           | Approach                                                                                                                                                 |
-| ------                           | ----------                                                                                                                                                 |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **New to a topic**             | Start with the definition and "Why" sections                                                                                                             |
 | **Preparing for an interview** | Follow your lane's 4-week or 8-week prep plan; the lane tells you which stack files to read in what order                                                |
 | **Quick review**               | Use the Cheat Sheet at the bottom of each chapter, or the [70-interview-toolkit/70.3-cheatsheets/](70-interview-toolkit/70.3-cheatsheets/INDEX.md) stack |

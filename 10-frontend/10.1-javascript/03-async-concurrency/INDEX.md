@@ -10,12 +10,12 @@
 
 ## Files
 
-| Order | File                                          | Topics                                                                                          | Read time |
-| --   :  | ------                                          | --------                                                                                          | ----------: |
-| 01    | [Event Loop](10.1.3.01-event-loop.md)         | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame`           | 30 min    |
-| 02    | [Promises](10.1.3.02-promises.md)             | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any`               | 30 min    |
-| 03    | [Async/Await](10.1.3.03-async-await.md)       | Async functions, error handling, concurrency, sequential vs parallel, top-level await           | 25 min    |
-| 04    | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 20 min    |
+| Order  | File                                          | Topics                                                                                          | Read time   |
+| --   : | ------                                        | --------                                                                                        | ----------: |
+| 01     | [Event Loop](10.1.3.01-event-loop.md)         | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame`           | 30 min      |
+| 02     | [Promises](10.1.3.02-promises.md)             | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any`               | 30 min      |
+| 03     | [Async/Await](10.1.3.03-async-await.md)       | Async functions, error handling, concurrency, sequential vs parallel, top-level await           | 25 min      |
+| 04     | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 20 min      |
 
 ---
 
@@ -30,7 +30,7 @@ Event Loop → Promises → Async/Await → Error Handling. This is the most-ask
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
 | Topic in this category            | Docita evidence                                                                                                 |
-| ------------------------            | -----------------                                                                                                 |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Promises & concurrency limits     | `packages/utils/src/async/map-with-concurrency.ts` - bounded async worker pool resolved via `Promise.all`       |
 | Async/await + timers polling      | `apps/app/src/hooks/use-phone-signature-polling.ts` - awaited status checks driving an interval-based poll loop |
 | Error handling for async failures | `packages/utils/src/errors/network-error.ts` - `instanceof Error` narrowing to classify fetch/network failures  |

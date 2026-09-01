@@ -29,7 +29,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 ## The 9 Sub-Stacks (in study order)
 
 | Order | Sub-stack                                                           | Files | Topics                                                                                                                                                                      |
-| ------: | -----------                                                           | ------: | --------                                                                                                                                                                      |
+| ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1     | [Node.js](20.1-node.js/INDEX.md)                                    | 11    | Event loop, streams, clustering, web streams, child processes, test runner                                                                                                  |
 | 2     | [NestJS](20.2-nestjs/INDEX.md)                                      | 15    | Modules, DI, guards, pipes, interceptors, CQRS, microservices                                                                                                               |
 | 3     | [REST APIs](20.3-rest-apis/INDEX.md)                                | 17    | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model                                                  |

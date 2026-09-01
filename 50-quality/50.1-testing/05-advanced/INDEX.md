@@ -16,10 +16,10 @@ The pyramid answers "does it work for one user?" Staff/SRE interviews ask "does 
 
 ## The 2 files
 
-| #  | File                                                                | Topics                                                                          | When to use                   | Read time |
-| --:  | ------                                                                | --------                                                                          | -------------                   | ----------: |
-| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak                            | Production-scale services     | 30 min    |
-| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)     | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 30 min    |
+| #   | File                                                                | Topics                                                                          | When to use                   | Read time   |
+| --: | ------                                                              | --------                                                                        | -------------                 | ----------: |
+| 01  | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak                            | Production-scale services     | 30 min      |
+| 02  | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)     | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 30 min      |
 
 ---
 
@@ -57,7 +57,7 @@ Both chapters share one principle: measure a **steady-state metric** first (p95 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
 | Topic                        | Docita evidence                                                         |
-| -------                        | -----------------                                                         |
+| ---------------------------- | ----------------------------------------------------------------------- |
 | Performance budgets as gates | `scripts/perf/check-perf-budget.mjs` + `scripts/perf/perf-baseline.mjs` |
 | Web Vitals field checks      | `scripts/perf/check-web-vitals.mjs` + `check-web-vitals-budget.mjs`     |
 | Route-level budgets          | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs`     |

@@ -13,7 +13,7 @@
 ## The 4 Categories
 
 | Category                                                                | Files | Coverage                                                                                                           |
-| ----------                                                                | ------: | ----------                                                                                                           |
+| ----------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
 | [01 — Linear Structures](01-linear-structures/INDEX.md)                 | 7     | Sliding window, two pointers, binary search, linked list manipulation, intervals, greedy/prefix sum, string search |
 | [02 — Graphs, Trees & Grids](02-graphs-trees-grids/INDEX.md)            | 6     | DFS/BFS, shortest paths (Dijkstra/Bellman-Ford), union find, topological sort, trie, matrix traversal/simulation   |
 | [03 — Recursion & Optimization](03-recursion-and-optimization/INDEX.md) | 3     | Backtracking, dynamic programming, bit manipulation                                                                |
@@ -25,20 +25,20 @@
 
 Master these first.
 
-| #  | Pattern                                                                               | Category  | When to recognize                                 | Read time |
-| --:  | ---------                                                                               | ----------  | -------------------                                 | ----------: |
-| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md)                    | Linear    | "Longest/shortest subarray/substring"             | 30 min    |
-| 02 | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md)                        | Linear    | "Sorted array, find pair/triplet"                 | 30 min    |
-| 03 | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md)                      | Linear    | "Find first/last position", rotated array         | 30 min    |
-| 04 | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md)                               | Graphs    | "Tree/graph traversal", shortest path, components | 45 min    |
-| 05 | [Backtracking](03-recursion-and-optimization/70.2.3.01-backtracking.md)               | Recursion | "Generate all permutations/combinations/subsets"  | 30 min    |
-| 06 | [Dynamic Programming](03-recursion-and-optimization/70.2.3.02-dynamic-programming.md) | Recursion | "Count ways, min/max cost, LCS"                   | 60 min    |
-| 07 | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md)                                   | Selection | "Top K, K-way merge, median of stream"            | 25 min    |
-| 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md)                                       | Graphs    | "Prefix search, autocomplete, word dictionary"    | 20 min    |
-| 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md)                           | Graphs    | "Connected components, redundant connections"     | 25 min    |
-| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md)               | Graphs    | "Dependency resolution, course schedule"          | 20 min    |
-| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md)                              | Linear    | "Merge intervals, meeting rooms, overlapping"     | 20 min    |
-| 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md)            | Linear    | "Jump game, partition, range sum queries"         | 30 min    |
+| #   | Pattern                                                                               | Category   | When to recognize                                 | Read time   |
+| --: | ---------                                                                             | ---------- | -------------------                               | ----------: |
+| 01  | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md)                    | Linear     | "Longest/shortest subarray/substring"             | 30 min      |
+| 02  | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md)                        | Linear     | "Sorted array, find pair/triplet"                 | 30 min      |
+| 03  | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md)                      | Linear     | "Find first/last position", rotated array         | 30 min      |
+| 04  | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md)                               | Graphs     | "Tree/graph traversal", shortest path, components | 45 min      |
+| 05  | [Backtracking](03-recursion-and-optimization/70.2.3.01-backtracking.md)               | Recursion  | "Generate all permutations/combinations/subsets"  | 30 min      |
+| 06  | [Dynamic Programming](03-recursion-and-optimization/70.2.3.02-dynamic-programming.md) | Recursion  | "Count ways, min/max cost, LCS"                   | 60 min      |
+| 07  | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md)                                   | Selection  | "Top K, K-way merge, median of stream"            | 25 min      |
+| 08  | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md)                                       | Graphs     | "Prefix search, autocomplete, word dictionary"    | 20 min      |
+| 09  | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md)                           | Graphs     | "Connected components, redundant connections"     | 25 min      |
+| 10  | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md)               | Graphs     | "Dependency resolution, course schedule"          | 20 min      |
+| 11  | [Intervals](01-linear-structures/70.2.1.05-intervals.md)                              | Linear     | "Merge intervals, meeting rooms, overlapping"     | 20 min      |
+| 12  | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md)            | Linear     | "Jump game, partition, range sum queries"         | 30 min      |
 
 ---
 
@@ -46,17 +46,17 @@ Master these first.
 
 For staff/principal FAANG questions.
 
-| #  | Pattern                                                                                                             | Category     | When to recognize                                           | Read time |
-| --:  | ---------                                                                                                             | ----------     | -------------------                                           | ----------: |
-| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md)                                           | Heaps/Stacks | "Next greater/smaller element, histogram"                   | 30 min    |
-| 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md)                                           | Heaps/Stacks | "Range query + point update"                                | 45 min    |
-| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md)                                     | Recursion    | "XOR, bitmask, subset enumeration, popcount"                | 25 min    |
-| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md)                  | Linear       | "Find substring, pattern matching"                          | 30 min    |
-| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md)         | Heaps/Stacks | "K-th largest, sample from stream"                          | 25 min    |
-| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md)                               | Heaps/Stacks | "LRU cache, sliding window max, min stack"                  | 30 min    |
-| 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md)            | Linear       | "Reverse/reorder list, cycle entry, O(1)-space surgery"     | 35 min    |
-| 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs       | "Weighted shortest path, K stops, negative edges/arbitrage" | 40 min    |
-| 21 | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md)                     | Graphs       | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 30 min    |
+| #   | Pattern                                                                                                             | Category     | When to recognize                                           | Read time   |
+| --: | ---------                                                                                                           | ----------   | -------------------                                         | ----------: |
+| 13  | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md)                                           | Heaps/Stacks | "Next greater/smaller element, histogram"                   | 30 min      |
+| 14  | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md)                                           | Heaps/Stacks | "Range query + point update"                                | 45 min      |
+| 15  | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md)                                     | Recursion    | "XOR, bitmask, subset enumeration, popcount"                | 25 min      |
+| 16  | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md)                  | Linear       | "Find substring, pattern matching"                          | 30 min      |
+| 17  | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md)         | Heaps/Stacks | "K-th largest, sample from stream"                          | 25 min      |
+| 18  | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md)                               | Heaps/Stacks | "LRU cache, sliding window max, min stack"                  | 30 min      |
+| 19  | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md)            | Linear       | "Reverse/reorder list, cycle entry, O(1)-space surgery"     | 35 min      |
+| 20  | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs       | "Weighted shortest path, K stops, negative edges/arbitrage" | 40 min      |
+| 21  | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md)                     | Graphs       | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 30 min      |
 
 ---
 

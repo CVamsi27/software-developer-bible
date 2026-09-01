@@ -15,7 +15,7 @@
 The 12 (+3) factors classify into 4 conceptual families — the way to *recall* them under pressure.
 
 | Category                                 | Factors                                                        | The principle in one line                                                       |
-| ----------                                 | ---------                                                        | ---------------------------                                                       |
+| ---------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | [Build & Ship](#factor-categories)       | 1 Codebase · 2 Dependencies · 5 Build/Release/Run              | One repo → deterministic build → immutable release                              |
 | [Config & Bindings](#factor-categories)  | 3 Config · 4 Backing services                                  | Config lives in env; backing services are swappable attached resources          |
 | [Runtime Model](#factor-categories)      | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully  |
@@ -26,20 +26,20 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ## The 12 Factors (memorize the names)
 
-| #  | Factor                  | One-line description                                      |
-| --:  | --------                  | ---------------------                                       |
-| 1  | **Codebase**            | One codebase tracked in Git, many deploys                 |
-| 2  | **Dependencies**        | Explicitly declare and isolate dependencies               |
-| 3  | **Config**              | Store config in the environment (env vars, not code)      |
-| 4  | **Backing services**    | Treat backing services as attached resources              |
-| 5  | **Build, release, run** | Strictly separate build and run stages                    |
-| 6  | **Processes**           | Execute the app as one or more stateless processes        |
-| 7  | **Port binding**        | Export services via port binding (no embedded web server) |
-| 8  | **Concurrency**         | Scale out via the process model                           |
-| 9  | **Disposability**       | Fast startup, graceful shutdown                           |
-| 10 | **Dev/prod parity**     | Keep dev, staging, and prod as similar as possible        |
-| 11 | **Logs**                | Treat logs as event streams                               |
-| 12 | **Admin processes**     | Run admin/maintenance tasks as one-off processes          |
+| #   | Factor                  | One-line description                                      |
+| --: | --------                | ---------------------                                     |
+| 1   | **Codebase**            | One codebase tracked in Git, many deploys                 |
+| 2   | **Dependencies**        | Explicitly declare and isolate dependencies               |
+| 3   | **Config**              | Store config in the environment (env vars, not code)      |
+| 4   | **Backing services**    | Treat backing services as attached resources              |
+| 5   | **Build, release, run** | Strictly separate build and run stages                    |
+| 6   | **Processes**           | Execute the app as one or more stateless processes        |
+| 7   | **Port binding**        | Export services via port binding (no embedded web server) |
+| 8   | **Concurrency**         | Scale out via the process model                           |
+| 9   | **Disposability**       | Fast startup, graceful shutdown                           |
+| 10  | **Dev/prod parity**     | Keep dev, staging, and prod as similar as possible        |
+| 11  | **Logs**                | Treat logs as event streams                               |
+| 12  | **Admin processes**     | Run admin/maintenance tasks as one-off processes          |
 
 **Plus the unofficial 15-factor extension:**
 - **API first** — design the API contract before implementation
@@ -50,9 +50,9 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ## The File
 
-| #  | File                                                      | Topics                                                                                               | Read time |
-| --:  | ------                                                      | --------                                                                                               | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 60 min    |
+| #   | File                                                      | Topics                                                                                               | Read time   |
+| --: | ------                                                    | --------                                                                                             | ----------: |
+| 01  | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 60 min      |
 
 ---
 
@@ -95,7 +95,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — lives the factors.
 
 | Topic                                      | Docita evidence                                                                                                  |
-| -------                                      | -----------------                                                                                                  |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | III. Config in env                         | `shared/modules/config/env-schema.ts` validates env; turbo `globalEnv` allowlists exactly which vars bust caches |
 | IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (fly.toml)               |
 | VI. Processes                              | Stateless API + separate worker app; suspend/resume via `auto_stop_machines` proves disposability                |

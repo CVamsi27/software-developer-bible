@@ -10,14 +10,14 @@
 
 ## Files
 
-| Order | File                                                      | Topics                                                                                                                               | Read time |
-| --   :  | ------                                                      | --------                                                                                                                               | ----------: |
-| 01    | [Suspense](10.3.3.01-suspense.md)                         | Suspense boundaries, data fetching, useTransition, streaming SSR                                                                     | 25 min    |
-| 02    | [Error Boundary](10.3.3.02-error-boundary.md)             | Error boundaries, error recovery, logging, Sentry integration                                                                        | 15 min    |
-| 03    | [Custom Hooks](10.3.3.03-custom-hooks.md)                 | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices                                                | 30 min    |
-| 04    | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 25 min    |
-| 05    | [Performance](10.3.3.05-performance.md)                   | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers                                                             | 30 min    |
-| 06    | [State Management](10.3.3.06-state-management.md)         | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which                                                          | 30 min    |
+| Order  | File                                                      | Topics                                                                                                                               | Read time   |
+| --   : | ------                                                    | --------                                                                                                                             | ----------: |
+| 01     | [Suspense](10.3.3.01-suspense.md)                         | Suspense boundaries, data fetching, useTransition, streaming SSR                                                                     | 25 min      |
+| 02     | [Error Boundary](10.3.3.02-error-boundary.md)             | Error boundaries, error recovery, logging, Sentry integration                                                                        | 15 min      |
+| 03     | [Custom Hooks](10.3.3.03-custom-hooks.md)                 | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices                                                | 30 min      |
+| 04     | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 25 min      |
+| 05     | [Performance](10.3.3.05-performance.md)                   | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers                                                             | 30 min      |
+| 06     | [State Management](10.3.3.06-state-management.md)         | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which                                                          | 30 min      |
 
 ---
 
@@ -32,7 +32,7 @@ Suspense → Error Boundary → Custom Hooks → useSyncExternalStore → Perfor
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
 | Topic in this category         | Docita evidence                                                                                            |
-| ------------------------         | -----------------                                                                                            |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | Error boundary (+ Sentry hook) | `packages/ui/src/components/feedback/error-boundary.tsx` - class boundary with `onError` capture and reset |
 | Custom hooks library           | `packages/hooks/src/index.ts` - 28 reusable hooks (debounce, storage, media query, shortcuts, …)           |
 | useSyncExternalStore contract  | `apps/app/src/hooks/use-can-go-back.ts` - storage-event-backed store with server snapshot fallback         |

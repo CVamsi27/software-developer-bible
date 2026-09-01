@@ -13,7 +13,7 @@
 ## Category Map
 
 | Category           | Folder                                                       | Files | What it covers                                                                                        |
-| ----------           | --------                                                       | ------: | ----------------                                                                                        |
+| ------------------ | ------------------------------------------------------------ | ----: | ----------------------------------------------------------------------------------------------------- |
 | CI Platforms       | [01-ci-platforms/](01-ci-platforms/INDEX.md)                 | 4     | GitHub Actions, GitLab CI, Jenkins, ArgoCD — pick the one your company uses                           |
 | Build & Deploy     | [02-build-and-deploy/](02-build-and-deploy/INDEX.md)         | 4     | Docker build/deploy, pipeline patterns, artifact registries + promotion, supply-chain security (SLSA) |
 | Releases & Metrics | [03-releases-and-metrics/](03-releases-and-metrics/INDEX.md) | 2     | Blue-green, canary — plus DORA metrics for delivery performance                                       |
@@ -25,23 +25,23 @@
 
 Pick the one your company uses — the patterns are similar.
 
-| #  | File                                                          | Topics                                                       | When to use                | Read time |
-| --:  | ------                                                          | --------                                                       | -------------                | ----------: |
-| 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 30 min    |
-| 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md)        | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps       | GitLab repos               | 25 min    |
-| 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md)         | Declarative/scripted pipelines, shared libraries, plugins    | Legacy enterprise          | 25 min    |
-| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md)        | GitOps, ApplicationSets, sync policies, rollback             | K8s + GitOps               | 25 min    |
+| #   | File                                                          | Topics                                                       | When to use                | Read time   |
+| --: | ------                                                        | --------                                                     | -------------              | ----------: |
+| 01  | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 30 min      |
+| 02  | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md)        | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps       | GitLab repos               | 25 min      |
+| 03  | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md)         | Declarative/scripted pipelines, shared libraries, plugins    | Legacy enterprise          | 25 min      |
+| 04  | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md)        | GitOps, ApplicationSets, sync policies, rollback             | K8s + GitOps               | 25 min      |
 
 ---
 
 ## Build & Deploy
 
-| #  | File                                                                                                              | Topics                                                                                                                                     | Read time |
-| --:  | ------                                                                                                              | --------                                                                                                                                     | ----------: |
-| 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md)                                     | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies                                                                | 30 min    |
-| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md)                                           | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags)                  | 30 min    |
-| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | 30 min    |
-| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md)     | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations            | 30 min    |
+| #   | File                                                                                                              | Topics                                                                                                                                     | Read time   |
+| --: | ------                                                                                                            | --------                                                                                                                                   | ----------: |
+| 05  | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md)                                     | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies                                                                | 30 min      |
+| 06  | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md)                                           | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags)                  | 30 min      |
+| 07  | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | 30 min      |
+| 08  | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md)     | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations            | 30 min      |
 
 ---
 
@@ -49,10 +49,10 @@ Pick the one your company uses — the patterns are similar.
 
 Senior-level patterns for zero-downtime deploys.
 
-| #  | File                                                                                                          | Topics                                                                                                   | Read time |
-| --:  | ------                                                                                                          | --------                                                                                                   | ----------: |
-| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md)                                 | Zero-downtime deployments, traffic shifting, rollback, feature flags                                     | 25 min    |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 30 min    |
+| #   | File                                                                                                          | Topics                                                                                                   | Read time   |
+| --: | ------                                                                                                        | --------                                                                                                 | ----------: |
+| 09  | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md)                                 | Zero-downtime deployments, traffic shifting, rollback, feature flags                                     | 25 min      |
+| 10  | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 30 min      |
 
 **Decision:**
 
@@ -68,9 +68,9 @@ Need zero-downtime deployment?
 
 ## Interview Prep
 
-| #  | File                                                                      | Topics                             | Read time |
-| --:  | ------                                                                      | --------                             | ----------: |
-| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs   |
+| #   | File                                                                      | Topics                             | Read time   |
+| --: | ------                                                                    | --------                           | ----------: |
+| 11  | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs     |
 
 ---
 

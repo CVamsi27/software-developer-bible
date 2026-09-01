@@ -16,12 +16,12 @@ Every Kubernetes object you will ever touch is either one of these workload type
 
 ## File Index
 
-| Order | File                                                              | Topics                                                                                                       | Read time |
-| --   :  | ------                                                              | --------                                                                                                       | ----------: |
-| 01    | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)               | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling                                       | 30 min    |
-| 02    | [Deployments](40.2.1.02-deployments.md)                           | Rolling updates, rollbacks, strategies, revision history, status management                                  | 30 min    |
-| 03    | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 25 min    |
-| 04    | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)                     | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy                      | 25 min    |
+| Order  | File                                                              | Topics                                                                                                       | Read time   |
+| --   : | ------                                                            | --------                                                                                                     | ----------: |
+| 01     | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)               | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling                                       | 30 min      |
+| 02     | [Deployments](40.2.1.02-deployments.md)                           | Rolling updates, rollbacks, strategies, revision history, status management                                  | 30 min      |
+| 03     | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 25 min      |
+| 04     | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)                     | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy                      | 25 min      |
 
 ---
 
@@ -45,7 +45,7 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 _No direct docita implementation yet_ — the API runs as long-running Fly.io machines, not Kubernetes. Honest analogs only:
 
 | Topic                   | Docita evidence                                                                                                 |
-| -------                   | -----------------                                                                                                 |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Machine ≈ pod replica   | `fly.toml [[vm]]` — one 2GB machine, `min_machines_running` floor instead of a ReplicaSet                       |
 | Deployment-like rollout | CI-driven deploys (`.github/workflows/deploy.yml`) against `apps/api/Dockerfile` with health-gated grace period |
 | CronJob analog          | Nest `@Cron` schedulers in the worker app, gated by `cron-heartbeat.ts` so only one instance fires              |

@@ -16,9 +16,9 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 
 ## File Index
 
-| Order | File                                                                              | Topics                                                                                                                 | Read time |
-| --   :  | ------                                                                              | --------                                                                                                                 | ----------: |
-| 01    | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 25 min    |
+| Order  | File                                                                              | Topics                                                                                                                 | Read time   |
+| --   : | ------                                                                            | --------                                                                                                               | ----------: |
+| 01     | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 25 min      |
 
 ---
 
@@ -40,7 +40,7 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — proves liveness for real (on Fly.io, not Kubernetes).
 
 | Topic                    | Docita evidence                                                                                                               |
-| -------                    | -----------------                                                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | Health endpoints         | `shared/common/controllers/health-check.controller.ts` + `monitoring/health.service.ts`, `monitoring/health/prisma.health.ts` |
 | Orchestrator probes      | Fly `[checks.health]` hits `/api/health/live` every 15s with a 240s deploy grace period (`fly.toml`)                          |
 | Liveness vs DB readiness | Live probe kept separate from the Prisma health indicator so a DB blip doesn't kill the machine                               |

@@ -17,7 +17,7 @@
 ## Pick Your Lane
 
 | Lane                                       | Folder                                                            | For                                                                | Style                                                      |
-| ------                                       | --------                                                            | -----                                                                | -------                                                      |
+| ------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------- |
 | **Cross-Lane** (everyone starts here)      | [00-strategy](00-strategy/INDEX.md)                               | Communication, resume, STAR method, HR questions                   | Universal — applies to all lanes                           |
 | **Abroad Full-Stack** (recommended for EU) | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | EU / non-Indian mid-stage startups (n8n, SumUp, Langfuse, sennder) | Take-home + system design, 4-week plan, EUR 70-160K + visa |
 | **Indian SDE / FAANG**                     | [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md)   | Microsoft, Google, Amazon, Meta, Apple, in-country India           | LeetCode-heavy, 8-week intensive, USD 150-400K+            |
@@ -33,7 +33,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### Study order cheat sheet
 
 | Order | Folder                                                                                                                               | Topic                                                   | Time      | When                     |
-| ---     | ---                                                                                                                                    | ---                                                       | ---         | ---                        |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | --------- | ------------------------ |
 | 1     | [00-strategy](00-strategy/INDEX.md)                                                                                                  | Interview strategy (resume, STAR, comm)                 | 1-2 days  | **Always**               |
 | 2     | [10-frontend](10-frontend/INDEX.md)                                                                                                  | Frontend (JS → TS → React → Next.js)                    | 2-3 weeks | Before any senior screen |
 | 3     | [20-backend](20-backend/INDEX.md)                                                                                                    | Backend (Node → NestJS → REST → DB → Security)          | 2-3 weeks | Before any senior screen |
@@ -62,7 +62,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### 10-frontend — Frontend (99 files in 8 sub-stacks)
 
 | Order | Sub-stack                                                   | Files | Topics                                                                             |
-| ---     | ---                                                           | ------: | --------                                                                             |
+| ----- | ----------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------- |
 | 10.1  | [JavaScript](10-frontend/10.1-javascript/INDEX.md)          | 27    | Execution context, closures, prototypes, event loop, promises, async/await, ES2024 |
 | 10.2  | [TypeScript](10-frontend/10.2-typescript/INDEX.md)          | 15    | Generics, utility types, conditional types, narrowing, `satisfies` operator        |
 | 10.3  | [React](10-frontend/10.3-react/INDEX.md)                    | 19    | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management         |
@@ -75,7 +75,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### 20-backend — Backend (110 files in 10 sub-stacks)
 
 | Order | Sub-stack                                                                      | Files | Topics                                                                                                                                                                                     |
-| ---     | ---                                                                              | ------: | --------                                                                                                                                                                                     |
+| ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 20.1  | [Node.js](20-backend/20.1-node.js/INDEX.md)                                    | 11    | Event loop, streams, clustering, web streams, child processes, test runner                                                                                                                 |
 | 20.2  | [NestJS](20-backend/20.2-nestjs/INDEX.md)                                      | 15    | Modules, DI, guards, pipes, interceptors, CQRS, microservices                                                                                                                              |
 | 20.3  | [REST APIs](20-backend/20.3-rest-apis/INDEX.md)                                | 17    | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model                                                                 |
@@ -89,7 +89,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### 30-architecture — Architecture (85 files in 3 sub-stacks)
 
 | Order | Sub-stack                                                               | Files | Topics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ---     | ---                                                                       | ------: | --------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----- | ----------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 30.1  | [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md)        | 30+   | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory Method, Abstract Factory, Builder, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. **All 23 GoF patterns** + modern patterns, organized by category. |
 | 30.2  | [System Design](30-architecture/30.2-system-design/INDEX.md)            | 40    | 20 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 20 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...)                                                                                                    |
 | 30.3  | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 6+    | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), leader election & consensus, zero-downtime deployments, data pipelines                                                                                                                                                                                                                                                                                                                                                              |
@@ -97,7 +97,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### Platform (68 files in 10 sub-stacks)
 
 | Sub-stack                                                      | Files | Topics                                                                                                                                                                                                    |
-| -----------                                                      | ------: | --------                                                                                                                                                                                                    |
+| -------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Docker](40-platform/40.1-docker/INDEX.md)                     | 6     | Images, containers, volumes, networks, compose, multi-stage builds                                                                                                                                        |
 | [Kubernetes](40-platform/40.2-kubernetes/INDEX.md)             | 14    | Pods, deployments, services, ingress, ConfigMaps, HPA, Helm, RBAC                                                                                                                                         |
 | [CI/CD](40-platform/40.3-ci-cd/INDEX.md)                       | 7     | GitHub Actions, Docker build/deploy, blue-green/canary, Jenkins, GitLab CI, ArgoCD                                                                                                                        |
@@ -112,7 +112,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### Quality (31 files in 4 sub-stacks)
 
 | Sub-stack                                                                 | Files | Topics                                                                              |
-| -----------                                                                 | ------: | --------                                                                              |
+| ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------- |
 | [Testing](50-quality/50.1-testing/INDEX.md)                               | 13    | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing, chaos engineering |
 | [Accessibility](50-quality/50.2-accessibility/INDEX.md)                   | 7     | WCAG, ARIA, keyboard navigation, color contrast, forms & labels                     |
 | [Performance Monitoring](50-quality/50.3-performance-monitoring/INDEX.md) | 8     | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM                     |
@@ -121,13 +121,13 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### Real-Time (8 files)
 
 | Sub-stack                                          | Files | Topics                                                                  |
-| -----------                                          | ------: | --------                                                                  |
+| -------------------------------------------------- | ----: | ----------------------------------------------------------------------- |
 | [WebSockets](60-realtime/60.1-websockets/INDEX.md) | 8     | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
 ### Interview Toolkit (25 files in 3 sub-stacks)
 
 | Sub-stack                                                             | Files | Topics                                                                                                        |
-| -----------                                                             | ------: | --------                                                                                                        |
+| --------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------- |
 | [Behavioral](70-interview-toolkit/70.1-behavioral/INDEX.md)           | 2     | Leadership questions, system-design behavioral (STAR + HR basics live in [00-strategy](00-strategy/INDEX.md)) |
 | [Coding Patterns](70-interview-toolkit/70.2-coding-patterns/INDEX.md) | 18    | Sliding window, two pointers, BFS/DFS, DP, heap, trie, union find, backtracking                               |
 | [Cheat Sheets](70-interview-toolkit/70.3-cheatsheets/INDEX.md)        | 5     | JavaScript, TypeScript, React/Next.js, backend, system design                                                 |
@@ -158,7 +158,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 ## Cross-Reference Map
 
 | Stack                                                                                                                                | Depends on | Used by                                                        |
-| -------                                                                                                                                | -----------  | ---------                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ---------- | -------------------------------------------------------------- |
 | [00-strategy](00-strategy/INDEX.md)                                                                                                  | —          | All lanes (everyone starts here)                               |
 | [10-frontend](10-frontend/INDEX.md)                                                                                                  | —          | Both lanes                                                     |
 | [20-backend](20-backend/INDEX.md)                                                                                                    | —          | Both lanes                                                     |

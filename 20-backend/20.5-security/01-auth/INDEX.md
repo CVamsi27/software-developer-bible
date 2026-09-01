@@ -29,18 +29,18 @@ IDENTITY         SAML + SCIM        MFA / PASSKEYS    Who may do what?  Drills &
 
 Stage numbers are study order (`0`-`9`), not file IDs — read top to bottom.
 
-| # | Stage                       | File                                                                       | Time   | You can defend…                                                                                                                 |
-| --: | -------                       | ------                                                                       | ------   | ------------------                                                                                                                |
-| 0 | Foundations                 | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md)           | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, why TLS before anything else                                        |
-| 1 | HTTP Basic & Digest Auth    | [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | 30 min | Authorization header mechanics, Base64-over-TLS only, Digest challenge-response and why it died, when Basic is still OK         |
-| 2 | API Keys                    | [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md)                             | 30 min | Key generation with CSPRNG, hashing keys at rest, prefix schemes (`sk_live_`), rotation grace windows, per-key scopes           |
-| 3 | Sessions & Cookies          | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md)             | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts                                                                   |
-| 4 | Tokens (JWT)                | [20.5.1.05-jwt.md](20.5.1.05-jwt.md)                                       | 60 min | JWT anatomy, HS256 vs RS256, storage trade-offs, refresh rotation + family revocation                                           |
-| 5 | Federation (OAuth2 / OIDC)  | [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md)                       | 60 min | All OAuth grants, PKCE, OIDC vs OAuth, scopes, social login                                                                     |
-| 6 | SSO / SAML / Federation     | [20.5.1.07-sso-saml-federation.md](20.5.1.07-sso-saml-federation.md)       | 45 min | One IdP session many SPs, SAML 2.0 flows (SP-/IdP-initiated), assertions & signing certs, SAML vs OIDC, SCIM + JIT provisioning |
-| 7 | MFA / Passkeys / WebAuthn   | [20.5.1.08-mfa-passkeys-webauthn.md](20.5.1.08-mfa-passkeys-webauthn.md)   | 45 min | TOTP mechanics (RFC 6238), SMS/SIM-swap weakness, WebAuthn ceremonies, passkey sync, AAL levels, recovery as weakest link       |
-| 8 | Authorization (RBAC / ABAC) | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md)                           | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default                                                         |
-| 9 | Interview Drills            | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md)       | 45 min | Every classic trap question + follow-ups                                                                                        |
+| #   | Stage                       | File                                                                       | Time   | You can defend…                                                                                                                 |
+| --: | -------                     | ------                                                                     | ------ | ------------------                                                                                                              |
+| 0   | Foundations                 | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md)           | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, why TLS before anything else                                        |
+| 1   | HTTP Basic & Digest Auth    | [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | 30 min | Authorization header mechanics, Base64-over-TLS only, Digest challenge-response and why it died, when Basic is still OK         |
+| 2   | API Keys                    | [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md)                             | 30 min | Key generation with CSPRNG, hashing keys at rest, prefix schemes (`sk_live_`), rotation grace windows, per-key scopes           |
+| 3   | Sessions & Cookies          | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md)             | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts                                                                   |
+| 4   | Tokens (JWT)                | [20.5.1.05-jwt.md](20.5.1.05-jwt.md)                                       | 60 min | JWT anatomy, HS256 vs RS256, storage trade-offs, refresh rotation + family revocation                                           |
+| 5   | Federation (OAuth2 / OIDC)  | [20.5.1.06-oauth2-oidc.md](20.5.1.06-oauth2-oidc.md)                       | 60 min | All OAuth grants, PKCE, OIDC vs OAuth, scopes, social login                                                                     |
+| 6   | SSO / SAML / Federation     | [20.5.1.07-sso-saml-federation.md](20.5.1.07-sso-saml-federation.md)       | 45 min | One IdP session many SPs, SAML 2.0 flows (SP-/IdP-initiated), assertions & signing certs, SAML vs OIDC, SCIM + JIT provisioning |
+| 7   | MFA / Passkeys / WebAuthn   | [20.5.1.08-mfa-passkeys-webauthn.md](20.5.1.08-mfa-passkeys-webauthn.md)   | 45 min | TOTP mechanics (RFC 6238), SMS/SIM-swap weakness, WebAuthn ceremonies, passkey sync, AAL levels, recovery as weakest link       |
+| 8   | Authorization (RBAC / ABAC) | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md)                           | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default                                                         |
+| 9   | Interview Drills            | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md)       | 45 min | Every classic trap question + follow-ups                                                                                        |
 
 ---
 
@@ -51,7 +51,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ### Sessions vs JWT vs Hybrid
 
 | Dimension         | Server Sessions               | Stateless JWT                        | Hybrid (access JWT + refresh)             |
-| -----------         | ----------------                | ---------------                        | -------------------------------             |
+| ----------------- | ----------------------------- | ------------------------------------ | ----------------------------------------- |
 | State             | Server-side store (Redis/DB)  | None                                 | Refresh tokens stored; access stateless   |
 | Revocation        | Instant (delete session)      | Hard (wait for expiry / denylist)    | Fast-ish (rotate + family revoke)         |
 | Latency           | Store lookup per request      | Zero lookup                          | Zero lookup on access path                |
@@ -65,7 +65,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ### Where do you put the token?
 
 | Storage                             | XSS-safe          | CSRF-safe            | Notes                    |
-| ---------                             | -----------         | -----------            | -------                    |
+| ----------------------------------- | ----------------- | -------------------- | ------------------------ |
 | `localStorage`                      | any XSS steals it | not auto-sent        | Never for refresh tokens |
 | JS-readable cookie                  |                   |                      | Worst of both            |
 | `HttpOnly; Secure; SameSite` cookie |                   | needs SameSite/token | Default for browser apps |
@@ -74,7 +74,7 @@ Every senior auth interview is a variation of one question: **"which model, and 
 ### Authorization models
 
 | Model     | Question it answers                                          | Example                                               | Cost                                      |
-| -------     | --------------------                                           | ---------                                               | -----                                       |
+| --------- | ------------------------------------------------------------ | ----------------------------------------------------- | ----------------------------------------- |
 | **RBAC**  | "What is your role?"                                         | Nurse can edit charts                                 | Coarse; role explosion at scale           |
 | **ABAC**  | "What is true about you, the resource, and the environment?" | Doctor may read patient X *if assigned*, during shift | Fine-grained; needs policy engine + tests |
 | **ReBAC** | "What is your relationship to the resource?"                 | Alice is editor of doc 42 (Google Zanzibar style)     | Powerful; heavy infra (SpiceDB/OpenFGA)   |
@@ -105,7 +105,7 @@ Multi-service backend?
 The concepts above map to concrete guards/pipes. In interviews, name the enforcement point:
 
 | Concept                            | Enforcement point                                                       | File to study                                                                      |
-| ---------                            | -------------------                                                       | ---------------                                                                      |
+| ---------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | Credential check + hash verify     | AuthService.login (bcrypt.compare)                                      | [fundamentals](20.5.1.01-auth-fundamentals.md)                                     |
 | Static credential gate (Basic)     | BasicAuthGuard decodes header + timing-safe compare                     | [Basic/Digest](20.5.1.02-http-basic-digest-auth.md)                                |
 | Machine-to-machine identity        | ApiKeyGuard: prefix lookup -> SHA-256 compare -> scopes                 | [API Keys](20.5.1.03-api-keys.md)                                                  |
@@ -126,7 +126,7 @@ The concepts above map to concrete guards/pipes. In interviews, name the enforce
 ## Attack Surface Checklist (what each stage defends)
 
 | Attack                                    | Defended in stage | Key controls                                                        |
-| --------                                    | ------------------- | --------------                                                        |
+| ----------------------------------------- | ----------------- | ------------------------------------------------------------------- |
 | Password cracking / credential stuffing   | 0 Fundamentals    | Argon2id/bcrypt, rate limiting, breach-password checks              |
 | Credential interception on plaintext HTTP | 1 Basic/Digest    | TLS everywhere, HSTS, proxy basic-auth only over TLS                |
 | API key leakage / abuse                   | 2 API Keys        | Hashed at rest, scopes, IP binding, dual-key rotation, leak runbook |
@@ -147,7 +147,7 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 ## Files in This Track
 
 | File                                                                       | Lines of study                                    | Type         |
-| ------                                                                       | ----------------                                    | ------         |
+| -------------------------------------------------------------------------- | ------------------------------------------------- | ------------ |
 | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md)           | Identity, credentials, crypto primitives for auth | Core concept |
 | [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | Legacy HTTP credential schemes and their limits   | Core concept |
 | [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md)                             | Machine-to-machine credentials done right         | Core concept |
@@ -188,7 +188,7 @@ Cross-reference attack details: [XSS](../02-attacks-and-defense/20.5.2.01-xss.md
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the stages, then see them shipped:
 
 | Stage                    | Docita evidence                                                                                                                          |
-| -------                    | -----------------                                                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 4 · Tokens (JWT)         | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` - passport-jwt validation with audience separation (staff vs portal vs WS)       |
 | 3 · Sessions & Cookies   | `apps/api/src/shared/modules/auth/auth/auth-session.service.ts` - server-side sessions with SHA-256-hashed tokens                        |
 | 2 · API Keys             | `apps/api/src/shared/modules/auth/auth/api-key.service.ts` - CSPRNG keys hashed at rest, scoped access                                   |

@@ -9,10 +9,10 @@
 
 ## Files
 
-| Order | File                                                    | Topics                                                                                                                             | Read time |
-| --   :  | ------                                                    | --------                                                                                                                             | ----------: |
-| 01    | [Custom Decorators](20.2.5.01-custom-decorators.md)     | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min    |
-| 02    | [Interview Questions](20.2.5.02-interview-questions.md) | 50+ curated questions with answers                                                                                                 | 3 hrs     |
+| Order  | File                                                    | Topics                                                                                                                             | Read time   |
+| --   : | ------                                                  | --------                                                                                                                           | ----------: |
+| 01     | [Custom Decorators](20.2.5.01-custom-decorators.md)     | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min      |
+| 02     | [Interview Questions](20.2.5.02-interview-questions.md) | 50+ curated questions with answers                                                                                                 | 3 hrs       |
 
 ---
 
@@ -25,7 +25,7 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 | Topic                     | Docita evidence                                                                                                             |
-| -------                     | -----------------                                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Custom method decorators  | `apps/api/src/shared/modules/auth/decorators/require-policy.decorator.ts` - @RequirePolicy metadata consumed by PolicyGuard |
 | Route metadata decorators | `apps/api/src/shared/modules/idempotency/requires-idempotency.decorator.ts` - marker drives IdempotencyInterceptor          |
 | Role markers              | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard                   |

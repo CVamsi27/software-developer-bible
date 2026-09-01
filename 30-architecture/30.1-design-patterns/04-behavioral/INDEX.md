@@ -24,20 +24,20 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 
 ## The 12 patterns
 
-| #  | Pattern                                                         | Intent                                       | Use when                                                                   | Avoid when                                |
-| --:  | ---------                                                         | --------                                       | ----------                                                                   | ------------                                |
-| 1  | [Strategy](30.1.4.01-strategy.md)                               | Swap algorithms at runtime                   | Multiple ways to do the same thing                                         | Only one algorithm ever                   |
-| 2  | [Observer](30.1.4.02-observer.md)                               | Event-driven notification                    | UI events, pub/sub, reactive streams                                       | Tight coupling is acceptable              |
-| 3  | [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md) | Pass request along a chain                   | Middleware, validation pipelines, exception handling                       | Single handler always                     |
-| 4  | [State](30.1.4.04-state.md)                                     | Behavior depends on state                    | State machines, workflow engines                                           | Few states, no transitions                |
-| 5  | [Template Method](30.1.4.05-template-method.md)                 | Skeleton + customizable steps                | Algorithm with varying steps                                               | Algorithm is fully fixed                  |
-| 6  | [Iterator](30.1.4.06-iterator.md)                               | Sequential access without exposing internals | Collections, lazy sequences                                                | Trivial arrays                            |
-| 7  | [Mediator](30.1.4.07-mediator.md)                               | Central authority for object communication   | Many-to-many object interactions, dialog boxes                             | Few objects, direct refs are fine         |
-| 8  | [Memento](30.1.4.08-memento.md)                                 | Capture/restore internal state               | Undo, snapshots, transactions                                              | No history needed                         |
-| 9  | [Command](30.1.4.09-command.md)                                 | Encapsulate a request as an object           | Undo/redo, queueing, macro recording, transactional ops                    | Simple one-shot operations                |
-| 10 | [Visitor](30.1.4.10-visitor.md)                                 | Add operations without modifying classes     | ASTs, compilers, complex object structures                                 | Class hierarchy is unstable               |
-| 11 | [Interpreter](30.1.4.11-interpreter.md)                         | Grammar + interpreter for a DSL              | DSLs, config formats, regex-like languages                                 | Performance-critical parsing              |
-| 12 | [Null Object](30.1.4.12-null-object.md)                         | Encapsulated no-op behavior instead of null  | Sensible neutral defaults (guest users, no-op loggers), branch-free chains | Absence must surface (silence hides bugs) |
+| #   | Pattern                                                         | Intent                                       | Use when                                                                   | Avoid when                                |
+| --: | ---------                                                       | --------                                     | ----------                                                                 | ------------                              |
+| 1   | [Strategy](30.1.4.01-strategy.md)                               | Swap algorithms at runtime                   | Multiple ways to do the same thing                                         | Only one algorithm ever                   |
+| 2   | [Observer](30.1.4.02-observer.md)                               | Event-driven notification                    | UI events, pub/sub, reactive streams                                       | Tight coupling is acceptable              |
+| 3   | [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md) | Pass request along a chain                   | Middleware, validation pipelines, exception handling                       | Single handler always                     |
+| 4   | [State](30.1.4.04-state.md)                                     | Behavior depends on state                    | State machines, workflow engines                                           | Few states, no transitions                |
+| 5   | [Template Method](30.1.4.05-template-method.md)                 | Skeleton + customizable steps                | Algorithm with varying steps                                               | Algorithm is fully fixed                  |
+| 6   | [Iterator](30.1.4.06-iterator.md)                               | Sequential access without exposing internals | Collections, lazy sequences                                                | Trivial arrays                            |
+| 7   | [Mediator](30.1.4.07-mediator.md)                               | Central authority for object communication   | Many-to-many object interactions, dialog boxes                             | Few objects, direct refs are fine         |
+| 8   | [Memento](30.1.4.08-memento.md)                                 | Capture/restore internal state               | Undo, snapshots, transactions                                              | No history needed                         |
+| 9   | [Command](30.1.4.09-command.md)                                 | Encapsulate a request as an object           | Undo/redo, queueing, macro recording, transactional ops                    | Simple one-shot operations                |
+| 10  | [Visitor](30.1.4.10-visitor.md)                                 | Add operations without modifying classes     | ASTs, compilers, complex object structures                                 | Class hierarchy is unstable               |
+| 11  | [Interpreter](30.1.4.11-interpreter.md)                         | Grammar + interpreter for a DSL              | DSLs, config formats, regex-like languages                                 | Performance-critical parsing              |
+| 12  | [Null Object](30.1.4.12-null-object.md)                         | Encapsulated no-op behavior instead of null  | Sensible neutral defaults (guest users, no-op loggers), branch-free chains | Absence must surface (silence hides bugs) |
 
 ---
 
@@ -211,7 +211,7 @@ Need to manage object interaction / control flow?
 ### Strategy vs State
 
 | Strategy                    | State                                          |                                                  |
-| --                            | ----------                                       | -------                                            |
+| --                          | ----------                                     | -------                                          |
 | **Who chooses**             | Client / context picks strategy                | Object transitions state on its own              |
 | **Number of states**        | Many, often set once at init                   | Often a state machine with transitions           |
 | **Awareness of each other** | Strategies usually don't know about each other | States often trigger transitions to other states |
@@ -292,7 +292,7 @@ They compose: resolve `Optional` to a real-or-null-object at the boundary, then 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — collaborates for real.
 
 | Topic                    | Docita evidence                                                                                                                                         |
-| -------                    | -----------------                                                                                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Strategy                 | Import strategies (`imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
 | Template Method          | `document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `queue/base-pdf.processor.ts`, `search-strategy.base.ts`         |
 | Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, ADR 0010)          |

@@ -11,7 +11,7 @@
 ## The Two Lanes
 
 | Lane                   | Folder                                                                | For                                                                                                          | Style                                                                  | Files |
-| ------                   | --------                                                                | -----                                                                                                          | -------                                                                  | ------: |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ----: |
 | **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](../81-lanes-indian-sde-faang/INDEX.md)   | Microsoft, Google, Amazon, Meta, Apple, in-country India product companies, US H1B/STEM-OPT                  | LeetCode-heavy, 8-12 week intensive, USD 150-400K+                     | 22    |
 | **Abroad Full-Stack**  | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 70-110K + visa sponsorship | 35    |
 
@@ -24,7 +24,7 @@
 The bible is split into two layers:
 
 | Layer                           | What it is                                                | Folders                                                                         | Numbered               | Modifies                 |
-| -------                           | -----------                                                 | ---------                                                                         | ----------               | ---------                  |
+| ------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------- | ------------------------ |
 | **Stacks** (technical material) | JS, React, DB, K8s, design patterns, etc.                 | `00-strategy` → `70-interview-toolkit` (7 folders)                              | Yes (study order)      | Both lanes consume these |
 | **Lanes** (interview prep)      | Resume, take-home, behavioral, comp, visa, company guides | `80-lanes-abroad-full-stack` (35 files), `81-lanes-indian-sde-faang` (22 files) | Yes (in-lane ordering) | Each lane is independent |
 

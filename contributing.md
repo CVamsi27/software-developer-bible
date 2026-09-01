@@ -111,7 +111,7 @@ Before contributing, review the existing files in the relevant section to unders
 ## File Naming
 
 | File Type                               | Pattern                                               | Example                                                                      |
-| -----------                               | ---------                                               | ---------                                                                      |
+| --------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Stack folder                            | `NN.N-slug/`                                          | `10.1-javascript/`                                                           |
 | Category folder (stacks >= ~8 chapters) | `NN-slug/` (2-digit study order)                      | `20.5-security/01-auth/`                                                     |
 | Category INDEX                          | `INDEX.md` inside category folder                     | `01-auth/INDEX.md`                                                           |
@@ -152,7 +152,7 @@ Every content file **must** begin with metadata in two forms:
 ### Category Values
 
 | Category        | Used For                                                         | Badge color            |
-| ----------        | ----------                                                         | -------------            |
+| --------------- | ---------------------------------------------------------------- | ---------------------- |
 | `Core`          | JavaScript, TypeScript                                           | blue                   |
 | `Frontend`      | React, Next.js, Animation, Form Handling                         | ff6b35 (orange)        |
 | `Backend`       | Node.js, NestJS                                                  | success (green)        |
@@ -173,7 +173,7 @@ Every content file **must** begin with metadata in two forms:
 ### Category Values
 
 | Category        | Used For                                                        |
-| ----------        | ----------                                                        |
+| --------------- | --------------------------------------------------------------- |
 | `Core`          | JavaScript, TypeScript                                          |
 | `Frontend`      | React, Next.js, Animation, Form Handling                        |
 | `Backend`       | Node.js, NestJS                                                 |
@@ -221,7 +221,7 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 ### Standard Badge Colors
 
 | Color           | Usage                           | Section Examples                                |
-| -------           | -------                           | ------------------                                |
+| --------------- | ------------------------------- | ----------------------------------------------- |
 | `blueviolet`    | Core sections                   | JavaScript, TypeScript                          |
 | `success`       | Backend sections                | Node.js, NestJS                                 |
 | `#ff6b35`       | API sections                    | REST APIs, GraphQL                              |
@@ -250,7 +250,7 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 ### Type Badge Values (URL-encoded)
 
 | Display Value       | Encoding                |
-| ---------------       | ----------                |
+| ------------------- | ----------------------- |
 | Concept             | `Concept`               |
 | Interview Questions | `Interview%20Questions` |
 | Cheat Sheet         | `Cheat%20Sheet`         |
@@ -345,20 +345,20 @@ Concept files typically use **numbered lists** or **bullet lists** for these sec
 ```text
 ## Why Do We Need It?
 
-| Problem | Solution |
-|---------|----------|
+| Problem               | Solution                          |
+| --------------------- | --------------------------------- |
 | "Works on my machine" | Consistent environment via images |
-| Manual server setup | Declarative configuration |
+| Manual server setup   | Declarative configuration         |
 ```
 
 **Table format for Common Mistakes:**
 ```text
 ## Common Mistakes
 
-| Mistake | Fix |
-|---------|-----|
+| Mistake            | Fix                   |
+| ------------------ | --------------------- |
 | Using `latest` tag | Pin specific versions |
-| Running as root | Use non-root user |
+| Running as root    | Use non-root user     |
 ```
 
 Either format is acceptable — choose the one that best suits the content.
@@ -390,10 +390,10 @@ BEST PRACTICES:
 ```text
 ## Cheat Sheet
 
-| Concept | Description |
-|---------|-------------|
-| Name | Short description |
-| Name | Short description |
+| Concept | Description       |
+| ------- | ----------------- |
+| Name    | Short description |
+| Name    | Short description |
 ```
 
 ---
@@ -411,10 +411,10 @@ Every section has an `INDEX.md` file. Format:
 [![Category](https://img.shields.io/badge/category-Name-color)](.)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 
-| # | File | Topics |
-|---|------|--------|
-| 01 | [File Name](01-File-Name.md) | Topic descriptions |
-| 02 | [File Name](02-File-Name.md) | Topic descriptions |
+| #   | File                         | Topics             |
+| --- | ---------------------------- | ------------------ |
+| 01  | [File Name](01-File-Name.md) | Topic descriptions |
+| 02  | [File Name](02-File-Name.md) | Topic descriptions |
 
 ---
 
@@ -444,7 +444,7 @@ Every section has an `INDEX.md` file. Format:
 All opening code blocks **must** have a language tag. Use the **full, official** tag name:
 
 | Correct      | Incorrect       |
-| ------------   | --------------    |
+| ------------ | --------------- |
 | `typescript` | `ts`            |
 | `javascript` | `js`            |
 | `python`     | `py`            |
@@ -455,7 +455,7 @@ All opening code blocks **must** have a language tag. Use the **full, official**
 ### Supported Language Tags
 
 | Tag          | Usage                                              |
-| -----          | -------                                              |
+| ------------ | -------------------------------------------------- |
 | `typescript` | TypeScript/JavaScript code examples                |
 | `javascript` | Vanilla JS examples                                |
 | `python`     | Python/backend examples                            |
@@ -558,11 +558,11 @@ else:
 
 #### Accepted Link Formats
 
-| Variant | Example | Usage |
-|---------|---------|-------|
-| Section directory | `- [React](10-frontend/10.3-react/)` | Cross-section links (88% of links) |
-| Specific file | `- [Jest](50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md)` | Intra-section links (12% of links) |
-| Nested path | `- [REST APIs](20-backend/20.3-rest-apis/)` | Cross-section from subdirectories |
+| Variant           | Example                                                             | Usage                              |
+| ----------------- | ------------------------------------------------------------------- | ---------------------------------- |
+| Section directory | `- [React](10-frontend/10.3-react/)`                                | Cross-section links (88% of links) |
+| Specific file     | `- [Jest](50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md)` | Intra-section links (12% of links) |
+| Nested path       | `- [REST APIs](20-backend/20.3-rest-apis/)`                         | Cross-section from subdirectories  |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -725,7 +725,7 @@ These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
 ## Quick Reference Table
 
 | Concept | Key Point | Code/Example |
-| --------- | ----------- | -------------- |
+| ------- | --------- | ------------ |
 ```
 
 - No `## Definition`, `## Why Do We Need It?`, etc.
@@ -787,7 +787,7 @@ ASCII diagram showing the pattern in action, with step-by-step visual walkthroug
 Table format showing complexity for different problem variants:
 
 | Complexity | Variant A | Variant B |
-| ------------ | ----------- | ----------- |
+| ---------- | --------- | --------- |
 | Time       | O(n)      | O(n²)     |
 | Space      | O(1)      | O(n)      |
 
@@ -949,7 +949,7 @@ python3 /tmp/generate_report.py
 ### Quick Troubleshooting
 
 | Issue                                 | Most Likely Cause                                    | Fix                                                               |
-| -------                                 | -------------------                                    | -----                                                               |
+| ------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------- |
 | Badge displays wrong color            | Color value has wrong format or includes extra space | Ensure format: `blueviolet`, `success`, `#800080` (lowercase hex) |
 | `%20` not rendering in badge          | URL encoding not applied                             | Replace literal spaces with `%20` in badge URL value portion      |
 | Code block not rendering              | Missing closing ` ``` `                              | Check that every opening ` ``` ` has a matching closing ` ``` `   |

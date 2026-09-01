@@ -9,12 +9,12 @@
 
 ## Files
 
-| Order | File                                          | Topics                                                                                                                     | Read time |
-| --   :  | ------                                          | --------                                                                                                                     | ----------: |
-| 01    | [Rate Limiting](20.3.4.01-rate-limiting.md)   | Algorithms (token bucket, sliding window), distributed limits                                                              | 25 min    |
-| 02    | [API Gateway](20.3.4.02-api-gateway.md)       | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | 20 min    |
-| 03    | [BFF](20.3.4.03-bff.md)                       | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants          | 25 min    |
-| 04    | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md)                                   | 25 min    |
+| Order  | File                                          | Topics                                                                                                                     | Read time   |
+| --   : | ------                                        | --------                                                                                                                   | ----------: |
+| 01     | [Rate Limiting](20.3.4.01-rate-limiting.md)   | Algorithms (token bucket, sliding window), distributed limits                                                              | 25 min      |
+| 02     | [API Gateway](20.3.4.02-api-gateway.md)       | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | 20 min      |
+| 03     | [BFF](20.3.4.03-bff.md)                       | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants          | 25 min      |
+| 04     | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md)                                   | 25 min      |
 
 ---
 
@@ -27,7 +27,7 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 | Topic                      | Docita evidence                                                                                                                          |
-| -------                      | -----------------                                                                                                                          |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Rate limiting algorithms   | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - windowed counters stored in CACHE_MANAGER                          |
 | Distributed limits         | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts` - IP buckets beside user-rate-limit.guard.ts and global ThrottlerModule |
 | Bot protection at the edge | `apps/api/src/shared/modules/turnstile/turnstile-verify.service.ts` - Cloudflare Turnstile gate on public booking routes                 |

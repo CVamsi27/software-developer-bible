@@ -13,7 +13,7 @@
 ## Topic Categories
 
 | Category                                       | File                                                                                                                                   | Why it matters                                       |
-| ----------                                       | ------                                                                                                                                   | ----------------                                       |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | [Reliability Targets](#reliability-targets)    | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md)                                                                              | The SRE framework — every staff interview            |
 | [Incident Response](#incident-response)        | [Incident Response](50.4.01-incident-response.md)                                                                                      | When things break — severity, triage, postmortems    |
 | [Proactive Resilience](#proactive-resilience)  | [Chaos Engineering](50.4.03-chaos-engineering.md)                                                                                      | Find weaknesses before they find you                 |
@@ -25,9 +25,9 @@
 
 The SRE framework.
 
-| #  | File                                                      | Topics                                                                                 | Read time |
-| --:  | ------                                                      | --------                                                                                 | ----------: |
-| 02 | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | 45 min    |
+| #   | File                                                      | Topics                                                                                 | Read time   |
+| --: | ------                                                    | --------                                                                               | ----------: |
+| 02  | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | 45 min      |
 
 **Quick recall:**
 - **SLI** = the metric (e.g., request success rate)
@@ -40,9 +40,9 @@ The SRE framework.
 
 When things break (and they will).
 
-| #  | File                                              | Topics                                                                                              | Read time |
-| --:  | ------                                              | --------                                                                                              | ----------: |
-| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | 45 min    |
+| #   | File                                              | Topics                                                                                              | Read time   |
+| --: | ------                                            | --------                                                                                            | ----------: |
+| 01  | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | 45 min      |
 
 **Severity (typical):**
 - **SEV1** — full outage, customers affected, all-hands
@@ -54,9 +54,9 @@ When things break (and they will).
 
 ## Proactive Resilience
 
-| #  | File                                              | Topics                                                                                                       | Read time |
-| --:  | ------                                              | --------                                                                                                       | ----------: |
-| 03 | [Chaos Engineering](50.4.03-chaos-engineering.md) | Chaos experiments (network, resource, service), game days, Chaos Monkey, Gremlin, Litmus, resilience testing | 30 min    |
+| #   | File                                              | Topics                                                                                                       | Read time   |
+| --: | ------                                            | --------                                                                                                     | ----------: |
+| 03  | [Chaos Engineering](50.4.03-chaos-engineering.md) | Chaos experiments (network, resource, service), game days, Chaos Monkey, Gremlin, Litmus, resilience testing | 30 min      |
 
 **Principles:**
 1. Build a hypothesis around steady-state behavior
@@ -71,10 +71,10 @@ When things break (and they will).
 
 Prevention before the incident; sustainability after it.
 
-| #  | File                                                                    | Topics                                                                                                                                                                       | Read time |
-| --:  | ------                                                                    | --------                                                                                                                                                                       | ----------: |
-| 04 | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant          | 30 min    |
-| 05 | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)           | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | 30 min    |
+| #   | File                                                                    | Topics                                                                                                                                                                       | Read time   |
+| --: | ------                                                                  | --------                                                                                                                                                                     | ----------: |
+| 04  | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant          | 30 min      |
+| 05  | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)           | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | 30 min      |
 
 **The two rules:**
 - **PRR**: evidence over assertion — a gate that never defers anything is decoration.
@@ -123,7 +123,7 @@ Prevention before the incident; sustainability after it.
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
 | Topic                      | Docita evidence                                                                                                                        |
-| -------                      | -----------------                                                                                                                        |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Runbooks                   | `docs/runbooks/` (`abdm-onboarding.md`, `abdm-sandbox-setup.md`)                                                                       |
 | Incident playbooks         | `docs/operations/playbooks/` (`db-connection-exhaustion.md`, `razorpay-outage.md`, `pdf-queue-backlog.md`, …)                          |
 | Release evidence practice  | `docs/operations/releases/2026-08-06-p5-closure.md` + `RELEASE_EVIDENCE_CHECKLIST.md`                                                  |

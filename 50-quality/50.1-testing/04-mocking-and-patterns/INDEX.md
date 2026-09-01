@@ -16,10 +16,10 @@ Isolation without structure produces brittle suites; structure without isolation
 
 ## The 2 files
 
-| #  | File                                        | Topics                                                              | Read time |
-| --:  | ------                                        | --------                                                              | ----------: |
-| 01 | [Mocking](50.1.4.01-mocking.md)             | Mock functions, spies, modules, network requests (MSW), fake timers | 30 min    |
-| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders        | 20 min    |
+| #   | File                                        | Topics                                                              | Read time   |
+| --: | ------                                      | --------                                                            | ----------: |
+| 01  | [Mocking](50.1.4.01-mocking.md)             | Mock functions, spies, modules, network requests (MSW), fake timers | 30 min      |
+| 02  | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders        | 20 min      |
 
 ---
 
@@ -62,7 +62,7 @@ Interview trap: "Your test mocks half the system — what are you actually verif
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
 | Topic                                                     | Docita evidence                                                              |
-| -------                                                     | -----------------                                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | Clock mock                                                | `apps/api/src/test-utils/fixed-clock.mock.ts`                                |
 | Factories / builders                                      | `apps/api/src/test-utils/factories.ts`                                       |
 | Time injection seam (mock at the port, not the call site) | `apps/api/src/shared/common/ports/clock.port.ts` ← `system-clock.service.ts` |

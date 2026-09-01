@@ -21,10 +21,10 @@ Quick distinction:
 
 ## File Index
 
-| Order | File                                        | Topics                                                                           | Read time |
-| --   :  | ------                                        | --------                                                                           | ----------: |
-| 01    | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 30 min    |
-| 02    | [Alerting](40.4.3.02-alerting.md)           | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts     | 25 min    |
+| Order  | File                                        | Topics                                                                           | Read time   |
+| --   : | ------                                      | --------                                                                         | ----------: |
+| 01     | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 30 min      |
+| 02     | [Alerting](40.4.3.02-alerting.md)           | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts     | 25 min      |
 
 ---
 
@@ -46,7 +46,7 @@ Quick distinction:
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — sets targets and alerts for real.
 
 | Topic                            | Docita evidence                                                                                                |
-| -------                            | -----------------                                                                                                |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Latency SLOs as CI gates         | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` — budgets enforced, not just graphed    |
 | Web-vitals SLOs                  | `check:web-vitals:enforce` baseline gate (see release evidence doc P5.8)                                       |
 | Alerting                         | `ops-alert.service.ts` wired to domain events via listener; admin alert channel under `messaging/admin-alerts` |

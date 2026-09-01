@@ -46,7 +46,7 @@ If you can answer the Hard section cold, you are ready for a senior-level patter
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — gives me true stories for these answers.
 
 | Topic                                            | Docita evidence                                                                                                |
-| -------                                            | -----------------                                                                                                |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | "Design a plugin system" → Strategy + Registry   | `search-strategy.registry.ts`, `bulk-import-strategy.registry.ts` with per-entity strategy files               |
 | "Builder for complex documents" → Builder        | `fhir/factories/observations/builders/*.builder.ts` composing FHIR observations                                |
 | "Factory families" → Factory Method              | `fhir/factories/*`, `analytics/core/factories/*`, `payment-gateway.factory.ts`                                 |

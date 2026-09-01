@@ -15,7 +15,7 @@
 The 9 files are organized into 4 categories, each with its own INDEX.
 
 | Category                                                   | Files | Why it matters                                                                   |
-| ----------                                                   | ------: | ----------------                                                                   |
+| ---------------------------------------------------------- | ----: | -------------------------------------------------------------------------------- |
 | [Fundamentals](01-fundamentals/INDEX.md)                   | 3     | Overview vs REST, schema design, queries/mutations/subscriptions                 |
 | [Execution](02-execution/INDEX.md)                         | 2     | Resolvers + DataLoader, Apollo Server — the runtime side                         |
 | [Clients & Production](03-clients-and-production/INDEX.md) | 3     | Apollo Client cache, performance & security defenses, codegen + CI schema checks |
@@ -38,11 +38,11 @@ queries/mutations                     codegen + schema CI
 
 The mental model — schema-first design. Category INDEX: [Fundamentals](01-fundamentals/INDEX.md).
 
-| #  | File                                                                  | Topics                                                                                | Read time |
-| --:  | ------                                                                  | --------                                                                                | ----------: |
-| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md)     | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL               | 20 min    |
-| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md)           | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 30 min    |
-| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias                 | 20 min    |
+| #   | File                                                                  | Topics                                                                                | Read time   |
+| --: | ------                                                                | --------                                                                              | ----------: |
+| 01  | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md)     | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL               | 20 min      |
+| 02  | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md)           | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 30 min      |
+| 03  | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias                 | 20 min      |
 
 ---
 
@@ -50,10 +50,10 @@ The mental model — schema-first design. Category INDEX: [Fundamentals](01-fund
 
 How the server resolves queries. Category INDEX: [Execution](02-execution/INDEX.md).
 
-| #  | File                                                     | Topics                                                               | Read time |
-| --:  | ------                                                     | --------                                                               | ----------: |
-| 01 | [Resolvers](02-execution/20.7.2.01-resolvers.md)         | Resolver chain, DataLoader (N+1 prevention), context, error handling | 30 min    |
-| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching   | 25 min    |
+| #   | File                                                     | Topics                                                               | Read time   |
+| --: | ------                                                   | --------                                                             | ----------: |
+| 01  | [Resolvers](02-execution/20.7.2.01-resolvers.md)         | Resolver chain, DataLoader (N+1 prevention), context, error handling | 30 min      |
+| 02  | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching   | 25 min      |
 
 ---
 
@@ -61,11 +61,11 @@ How the server resolves queries. Category INDEX: [Execution](02-execution/INDEX.
 
 The client-side and the production concerns. Category INDEX: [Clients & Production](03-clients-and-production/INDEX.md).
 
-| #  | File                                                                                             | Topics                                                                                                                        | Read time |
-| --:  | ------                                                                                             | --------                                                                                                                        | ----------: |
-| 01 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md)                            | Client setup, queries, mutations, normalized cache, fragments, optimistic UI                                                  | 25 min    |
-| 02 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md)            | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth                                | 30 min    |
-| 03 | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | 25 min    |
+| #   | File                                                                                             | Topics                                                                                                                        | Read time   |
+| --: | ------                                                                                           | --------                                                                                                                      | ----------: |
+| 01  | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md)                            | Client setup, queries, mutations, normalized cache, fragments, optimistic UI                                                  | 25 min      |
+| 02  | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md)            | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth                                | 30 min      |
+| 03  | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | 25 min      |
 
 ---
 
@@ -73,9 +73,9 @@ The client-side and the production concerns. Category INDEX: [Clients & Producti
 
 Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
 
-| #  | File                                                                              | Topics                             | Read time |
-| --:  | ------                                                                              | --------                             | ----------: |
-| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 2 hrs     |
+| #   | File                                                                              | Topics                             | Read time   |
+| --: | ------                                                                            | --------                           | ----------: |
+| 01  | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 2 hrs       |
 
 ---
 

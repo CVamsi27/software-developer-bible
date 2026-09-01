@@ -16,11 +16,11 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 ## File Index
 
-| Order | File                                                                                   | Topics                                                                                                                                                          | Read time |
-| --   :  | ------                                                                                   | --------                                                                                                                                                          | ----------: |
-| 01    | [Build Optimization](40.5.3.01-build-optimization.md)                                  | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps                                                                                | 30 min    |
-| 02    | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | 30 min    |
-| 03    | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md)                            | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each                                                                            | 20 min    |
+| Order  | File                                                                                   | Topics                                                                                                                                                          | Read time   |
+| --   : | ------                                                                                 | --------                                                                                                                                                        | ----------: |
+| 01     | [Build Optimization](40.5.3.01-build-optimization.md)                                  | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps                                                                                | 30 min      |
+| 02     | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | 30 min      |
+| 03     | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md)                            | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each                                                                            | 20 min      |
 
 ---
 
@@ -42,7 +42,7 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — keeps builds fast for real.
 
 | Topic                           | Docita evidence                                                                                    |
-| -------                           | -----------------                                                                                    |
+| ------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Build caching                   | Turbo caches `build`/`test` outputs (`dist/**`, empty test outputs) keyed by scoped env allowlists |
 | Dead-code elimination as a gate | `knip.json` + knip-clean requirement recorded in release evidence                                  |
 | Duplication budget              | `check:duplication` (jscpd, zero clones) in pre-push and release evidence                          |

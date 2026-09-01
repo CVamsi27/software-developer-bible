@@ -15,7 +15,7 @@
 The 19 content files are organized into 5 categories, each with its own INDEX.
 
 | Category                                                                  | Files | Why it matters                                                                                                                           |
-| ----------                                                                  | ------: | ----------------                                                                                                                           |
+| ------------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [Design & Contract](01-design-and-contract/INDEX.md)                      | 5     | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified                                   |
 | [HTTP Mechanics](02-http-mechanics/INDEX.md)                              | 4     | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake                                                       |
 | [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 5     | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks — the contract details clients feel daily         |
@@ -41,7 +41,7 @@ principles → methods    pagination → error design   rate limiting → gatewa
 ## The Study Order
 
 | Pass | #                                                                           | File                                                                                                   | Topics                                                                                          |
-| ---    | ---                                                                           | ------                                                                                                   | --------                                                                                          |
+| ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | I    | 01                                                                          | [API Design Patterns](01-design-and-contract/20.3.1.01-api-design-patterns.md)                         | Resource naming, consistency, evolution                                                         |
 | I    | 02                                                                          | [REST Principles](01-design-and-contract/20.3.1.02-rest-principles.md)                                 | Stateless, uniform interface, constraints                                                       |
 | I    | 03                                                                          | [HTTP Methods](02-http-mechanics/20.3.2.01-http-methods.md)                                            | GET/POST/PUT/PATCH/DELETE semantics, idempotency                                                |

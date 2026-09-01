@@ -20,11 +20,11 @@ Interviews at scale-focused companies open with "compare logs, metrics, and trac
 
 ## File Index
 
-| Order | File                                  | Topics                                                                             | Read time |
-| --   :  | ------                                  | --------                                                                             | ----------: |
-| 01    | [Logging](40.4.1.01-logging.md)       | Structured logging, log levels, centralized logging, ELK stack, retention and cost | 30 min    |
-| 02    | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality                        | 30 min    |
-| 03    | [Tracing](40.4.1.03-tracing.md)       | Distributed tracing, spans, trace context propagation, OpenTelemetry, Jaeger       | 30 min    |
+| Order  | File                                  | Topics                                                                             | Read time   |
+| --   : | ------                                | --------                                                                           | ----------: |
+| 01     | [Logging](40.4.1.01-logging.md)       | Structured logging, log levels, centralized logging, ELK stack, retention and cost | 30 min      |
+| 02     | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality                        | 30 min      |
+| 03     | [Tracing](40.4.1.03-tracing.md)       | Distributed tracing, spans, trace context propagation, OpenTelemetry, Jaeger       | 30 min      |
 
 ---
 
@@ -46,7 +46,7 @@ Interviews at scale-focused companies open with "compare logs, metrics, and trac
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — implements the pillars (honestly: no OTel).
 
 | Topic              | Docita evidence                                                                                                                                                       |
-| -------              | -----------------                                                                                                                                                       |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Metrics            | `shared/common/utils/prom-metric-factories.ts` + monitoring services (`metrics-recording`, `metrics-aggregation`, `metrics-query`) persisted via a metrics repository |
 | Logs               | Pino structured logging via `observability/pino-options.factory.ts`; PHI scrubbed before emit (`phi-redactor.ts`)                                                     |
 | Traces / errors    | Sentry, bootstrapped in `apps/api/src/instrument.ts` — **not** OpenTelemetry (`@opentelemetry/core` is only a transitive pin)                                         |

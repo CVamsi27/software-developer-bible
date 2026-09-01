@@ -13,7 +13,7 @@
 ## Topic Categories
 
 | Category                                                 | Files | Why it matters                                                                             |
-| ----------                                                 | ------: | ----------------                                                                             |
+| -------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------ |
 | [HTML](#html)                                            | 1     | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs                                      |
 | [CSS](#css)                                              | 1     | Flexbox, Grid, responsive design, CSS variables, modern CSS                                |
 | [CSS Architecture & Theming](#css-architecture--theming) | 2     | Cascade layers, BEM/CUBE/ITCSS, Modules vs CSS-in-JS vs Tailwind, design tokens, dark mode |
@@ -24,17 +24,17 @@
 
 ## HTML
 
-| #  | File                                              | Topics                                                           | Read time |
-| --:  | ------                                              | --------                                                           | ----------: |
-| 01 | [HTML Fundamentals](10.7.01-html-fundamentals.md) | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs, microdata | 30 min    |
+| #   | File                                              | Topics                                                           | Read time   |
+| --: | ------                                            | --------                                                         | ----------: |
+| 01  | [HTML Fundamentals](10.7.01-html-fundamentals.md) | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs, microdata | 30 min      |
 
 ---
 
 ## CSS
 
-| #  | File                                            | Topics                                                                                      | Read time |
-| --:  | ------                                            | --------                                                                                      | ----------: |
-| 02 | [CSS Fundamentals](10.7.02-css-fundamentals.md) | Flexbox, Grid, responsive design, media queries, container queries, CSS variables, `:has()` | 45 min    |
+| #   | File                                            | Topics                                                                                      | Read time   |
+| --: | ------                                          | --------                                                                                    | ----------: |
+| 02  | [CSS Fundamentals](10.7.02-css-fundamentals.md) | Flexbox, Grid, responsive design, media queries, container queries, CSS variables, `:has()` | 45 min      |
 
 ---
 
@@ -42,10 +42,10 @@
 
 Styling at scale: how you structure, name, and theme.
 
-| #  | File                                                                                    | Topics                                                                                                                                                                                             | Read time |
-| --:  | ------                                                                                    | --------                                                                                                                                                                                             | ----------: |
-| 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies                          | 35 min    |
-| 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md)                             | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 30 min    |
+| #   | File                                                                                    | Topics                                                                                                                                                                                             | Read time   |
+| --: | ------                                                                                  | --------                                                                                                                                                                                           | ----------: |
+| 06  | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies                          | 35 min      |
+| 07  | [Theming & Design Tokens](10.7.07-theming-design-tokens.md)                             | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 30 min      |
 
 ---
 
@@ -53,9 +53,9 @@ Styling at scale: how you structure, name, and theme.
 
 How the browser turns HTML/CSS/JS into pixels.
 
-| #  | File                                              | Topics                                                                                              | Read time |
-| --:  | ------                                              | --------                                                                                              | ----------: |
-| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 30 min    |
+| #   | File                                              | Topics                                                                                              | Read time   |
+| --: | ------                                            | --------                                                                                            | ----------: |
+| 03  | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 30 min      |
 
 ---
 
@@ -63,10 +63,10 @@ How the browser turns HTML/CSS/JS into pixels.
 
 Production concerns.
 
-| #  | File                  | Topics                                                                                                                          | Read time |
-| --:  | ------                  | --------                                                                                                                          | ----------: |
-| 05 | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min    |
-| 04 | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO           | 30 min    |
+| #   | File                  | Topics                                                                                                                          | Read time   |
+| --: | ------                | --------                                                                                                                        | ----------: |
+| 05  | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min      |
+| 04  | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO           | 30 min      |
 
 ---
 
@@ -110,7 +110,7 @@ Production concerns.
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
 | Topic in this category  | Docita evidence                                                                                                                           |
-| ------------------------  | -----------------                                                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Theming & design tokens | `packages/ui/src/styles/globals.css` - oklch semantic token system with dark-variant overrides                                            |
 | Tailwind architecture   | `packages/ui/tailwind.config.ts` - CSS-variable color bridge and `darkMode: class + data-theme`                                           |
 | Accessibility auditing  | `scripts/perf/accessibility-audit.ts` - Playwright + axe violation reports per app/page                                                   |

@@ -16,7 +16,7 @@
 Design patterns are classified into **3 GoF categories** (creational, structural, behavioral) + **foundations** (principles you need first) + **architectural** (modern patterns for distributed systems) + **interview prep**.
 
 | Category           | Purpose                                                          | Subfolder                                       | # Patterns      |
-| ----------           | ---------                                                          | -----------                                       | -----------    :  |
+| ------------------ | ---------------------------------------------------------------- | ----------------------------------------------- | --------------: |
 | **Foundations**    | Principles, OOP, UML — read first                                | [01-foundations](01-foundations/INDEX.md)       | 4 theory files  |
 | **Creational**     | Object creation mechanisms (decoupling construction from use)    | [02-creational](02-creational/INDEX.md)         | 5 patterns      |
 | **Structural**     | Class/object composition (assemble larger structures from parts) | [03-structural](03-structural/INDEX.md)         | 8 patterns      |
@@ -46,7 +46,7 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 Use this decision cheat sheet (full version in each category INDEX):
 
 | Need                                   | Category      | Pick one of                                                                                                                                  |
-| ------                                   | ----------      | -------------                                                                                                                                  |
+| -------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Create objects flexibly                | Creational    | Factory, Builder, Abstract Factory, Prototype, Singleton                                                                                     |
 | Compose classes into larger structures | Structural    | Adapter, Decorator, Facade, Proxy, Composite, Bridge, Module                                                                                 |
 | Manage object interactions             | Behavioral    | Observer, Strategy, State, Command, Mediator, Chain of Responsibility, Iterator, Visitor, Memento, Template Method, Interpreter, Null Object |
@@ -116,7 +116,7 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 ## Pattern Map (one-glance cheat sheet)
 
 | Pattern                     | Category      | Intent                              | Use when                                                        | Avoid when                                   |
-| ---------                     | ----------      | --------                              | ----------                                                        | ------------                                   |
+| --------------------------- | ------------- | ----------------------------------- | --------------------------------------------------------------- | -------------------------------------------- |
 | **Singleton**               | Creational    | One global instance                 | Logger, config, connection pool                                 | Testability matters, multiple envs           |
 | **Factory Method**          | Creational    | Defer instantiation to subclass     | Plugin system, multiple impls                                   | Only one type, simple new                    |
 | **Abstract Factory**        | Creational    | Families of related objects         | Cross-platform UI, theme systems                                | Few object types, no family concept          |

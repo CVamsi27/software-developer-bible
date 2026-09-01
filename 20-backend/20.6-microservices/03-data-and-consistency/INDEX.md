@@ -9,13 +9,13 @@
 
 ## Files
 
-| Order | File                                                                            | Topics                                                                                                                                                     | Read time |
-| --   :  | ------                                                                            | --------                                                                                                                                                     | ----------: |
-| 01    | [Saga Pattern](20.6.3.01-saga-pattern.md)                                       | Choreography vs orchestration, compensating transactions, idempotent compensations                                                                         | 20 min    |
-| 02    | [Distributed Transactions](20.6.3.02-distributed-transactions.md)               | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong                                                        | 10 min    |
-| 03    | [Event Sourcing](20.6.3.03-event-sourcing.md)                                   | Event store design, rebuilding state by replay, snapshots, projection rebuilds                                                                             | 20 min    |
-| 04    | [CQRS](20.6.3.04-cqrs.md)                                                       | Command/query separation, read models, eventual consistency, projection lag                                                                                | 25 min    |
-| 05    | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | 30 min    |
+| Order  | File                                                                            | Topics                                                                                                                                                     | Read time   |
+| --   : | ------                                                                          | --------                                                                                                                                                   | ----------: |
+| 01     | [Saga Pattern](20.6.3.01-saga-pattern.md)                                       | Choreography vs orchestration, compensating transactions, idempotent compensations                                                                         | 20 min      |
+| 02     | [Distributed Transactions](20.6.3.02-distributed-transactions.md)               | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong                                                        | 10 min      |
+| 03     | [Event Sourcing](20.6.3.03-event-sourcing.md)                                   | Event store design, rebuilding state by replay, snapshots, projection rebuilds                                                                             | 20 min      |
+| 04     | [CQRS](20.6.3.04-cqrs.md)                                                       | Command/query separation, read models, eventual consistency, projection lag                                                                                | 25 min      |
+| 05     | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | 30 min      |
 
 ---
 
@@ -28,7 +28,7 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 | Topic                | Docita evidence                                                                                                      |
-| -------                | -----------------                                                                                                      |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Transactional outbox | `apps/api/src/shared/modules/outbox/outbox.service.ts` - append() inside the same business transaction (ADR-0010)    |
 | Outbox relay         | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` - cron drain, attempt escalation, processedAt marking |
 | Idempotent consumers | `apps/api/src/shared/modules/idempotency/idempotency.service.ts` - stored keys make handlers replay-safe             |

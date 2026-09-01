@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order | File                                                    | Topics                             | Read time |
-| --   :  | ------                                                    | --------                             | ----------: |
-| 01    | [Interview Questions](10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs   |
+| Order  | File                                                    | Topics                             | Read time   |
+| --   : | ------                                                  | --------                           | ----------: |
+| 01     | [Interview Questions](10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs     |
 
 ---
 

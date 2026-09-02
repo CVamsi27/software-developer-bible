@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **27 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
+> **31 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
@@ -19,7 +19,7 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 | **Tier 1 — Foundational** (always asked)              | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator                                                              | Small enough to fully design in 40 min; exercises IDs, caching, limits, delivery guarantees                          |
 | **Tier 2 — Core domains** (pick 2-3 by JD)            | WhatsApp, Chat System, Twitter Feed, Instagram, Netflix, YouTube, Uber, Lyft, Google Drive, Dropbox                                     | The classic senior-loop prompts; each stresses one hard subsystem (fan-out, geo-indexing, sync, transcoding)         |
 | **Tier 3 — Consistency-critical** (fintech/regulated) | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management, Ad Click Aggregator                                     | Idempotency, locking, reconciliation, audit — where correctness beats scale in the rubric                            |
-| **Tier X — Senior differentiators**                   | Web Crawler, Workflow Engine, Real-Time Collaboration, Typeahead Autocomplete, Metrics & Monitoring Pipeline, Distributed Job Scheduler | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT, prefix indexes, cardinality control, leases & fairness |
+| **Tier X — Senior differentiators**                   | Web Crawler, Workflow Engine, Real-Time Collaboration, Typeahead Autocomplete, Metrics & Monitoring Pipeline, Distributed Job Scheduler, Parking Lot, Distributed Cache, Message Queue, API Gateway | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT, prefix indexes, cardinality control, leases & fairness, LLD classics, infra design |
 
 ---
 
@@ -38,6 +38,7 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 | **Search & Data**         | Web Crawler, Typeahead Autocomplete                                        | Crawling, dedup, ranking, prefix search                                 |
 | **Automation**            | Workflow Engine, Distributed Job Scheduler                                 | Background jobs, DAGs, cron at scale, retries                           |
 | **Platform & Telemetry**  | Metrics Monitoring Pipeline, Ad Click Aggregator                           | Time-series ingestion, streaming aggregation, billing-grade correctness |
+| **Infrastructure & LLD**  | Parking Lot, Distributed Cache, Message Queue, API Gateway                 | OOD modeling, distributed data structures, async messaging, gateway routing |
 
 ---
 
@@ -72,6 +73,10 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 | 25  | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md)     | Automation            | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation           |
 | 26  | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md)       | Web (foundational)    | Snowflake bit layout, clock skew handling, k-orderability, node-ID coordination, UUIDv7 comparison        |
 | 27  | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md)                 | Platform & Telemetry  | Streaming ingestion, layered dedup, tumbling windows & watermarks, exactly-once sinks, fraud filtering    |
+| 28  | [Parking Lot](30.2.2.28-parking-lot.md)                                 | Infrastructure & LLD  | OOP modeling, strategy pattern, real-time state, concurrent access, payment integration                   |
+| 29  | [Distributed Cache](30.2.2.29-distributed-cache.md)                     | Infrastructure & LLD  | Consistent hashing, replication, eviction policies, cache stampede, hot key handling                       |
+| 30  | [Message Queue](30.2.2.30-message-queue.md)                             | Infrastructure & LLD  | WAL, consumer groups, delivery guarantees, backpressure, Kafka vs RabbitMQ comparison                     |
+| 31  | [API Gateway](30.2.2.31-api-gateway.md)                                 | Infrastructure & LLD  | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation                |
 
 ---
 

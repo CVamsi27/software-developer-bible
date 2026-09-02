@@ -73,7 +73,7 @@ RAG/vector retrieval: _no direct docita implementation yet_ — governance-first
 
 ## Cross-references
 
-- Your working example: Docita AI module — env kill-switch (`AI_EXTERNAL_ENABLED`), response caching, streaming generators, credit guard ([80.21 §Q22](../../80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md))
+- Your working example: Docita AI module — env kill-switch (`AI_EXTERNAL_ENABLED`), response caching, streaming generators, credit guard ([80.21 §Q22](../../projects/docita/80.21-docita-google-level-prep.md))
 - [Microservices resilience](../20.6-microservices/INDEX.md) applies directly (circuit breakers around providers)
 - LiveEO angle: GeoAI/optical-SAR fusion is their SPRIND frontier — architecture literacy transfers
 

@@ -43,10 +43,10 @@ Each file follows a consistent structure:
 
 ## Cross-References
 
-- **Interview defense guide:** [80.36-docita-complete-interview-defense.md](../80.36-docita-complete-interview-defense.md)
-- **Resume evidence pack:** [80.17-docita-interview-evidence-pack.md](../80.17-docita-interview-evidence-pack.md)
-- **Tech topic mapping:** [80.22-docita-tech-topic-mapping.md](../80.22-docita-tech-topic-mapping.md)
-- **Google-level prep:** [80.21-docita-google-level-prep.md](../80.21-docita-google-level-prep.md)
+- **Interview defense guide:** [80.36-docita-complete-interview-defense.md](80.36-docita-complete-interview-defense.md)
+- **Resume evidence pack:** [80.17-docita-interview-evidence-pack.md](80.17-docita-interview-evidence-pack.md)
+- **Tech topic mapping:** [80.22-docita-tech-topic-mapping.md](80.22-docita-tech-topic-mapping.md)
+- **Google-level prep:** [80.21-docita-google-level-prep.md](80.21-docita-google-level-prep.md)
 
 ---
 

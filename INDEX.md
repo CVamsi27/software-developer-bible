@@ -43,6 +43,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 7     | [60-realtime](60-realtime/INDEX.md)                                                                                                  | Real-time (WebSockets)                                  | Optional  | Only if JD requires      |
 | 8     | [70-interview-toolkit](70-interview-toolkit/INDEX.md)                                                                                | Behavioral + coding patterns + cheatsheets              | 1 week    | Before any interview     |
 | 9     | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Lane-specific prep                                      | 1-2 weeks | After stacks             |
+| 10    | [projects](projects/INDEX.md)                                                                                                         | Project deep-dives (Docita interview defense)             | As needed | Before project interviews |
 
 **Total: 8-12 weeks if you're starting from zero, 4-6 weeks if you're already strong on most of it.**
 
@@ -148,6 +149,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 60-realtime → WebSockets
 70-interview-toolkit → Behavioral → Coding Patterns → Cheat Sheets
 80-lanes-abroad-full-stack OR 81-lanes-indian-sde-faang (terminal phase)
+projects → Docita architecture deep-dives, interview defense
 ```
 
 **For Indian SDE / FAANG:** Coding Patterns is the priority (18 files, all patterns). 8-12 week intensive, 4-6 hrs/day.
@@ -168,6 +170,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 | [60-realtime](60-realtime/INDEX.md)                                                                                                  | —          | Abroad Full-Stack (occasionally)                               |
 | [70-interview-toolkit](70-interview-toolkit/INDEX.md)                                                                                | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
 | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | All stacks | Terminal phase                                                 |
+| [projects](projects/INDEX.md)                                                                                                        | —          | Project-specific (Docita interview prep)                      |
 
 ---
 
@@ -178,6 +181,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 - [00-strategy/index](00-strategy/INDEX.md) — Cross-lane strategy
 - [80-lanes-abroad-full-stack/index](80-lanes-abroad-full-stack/INDEX.md) — Abroad Full-Stack lane (recommended for EU)
 - [81-lanes-indian-sde-faang/index](81-lanes-indian-sde-faang/INDEX.md) — Indian SDE / FAANG lane
+- [projects/index](projects/INDEX.md) — Project deep-dives (Docita)
 
 **Stacks (in study order):**
 

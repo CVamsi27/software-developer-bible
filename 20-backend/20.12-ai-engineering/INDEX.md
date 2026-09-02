@@ -51,7 +51,7 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
                 │ │ ├── prompt assembly (+RAG context)
                 │ │ ├── guardrails: PII gate · cost meter · rate limit
                 │ │ └── fallback: cached response → smaller model → degrade gracefully
-                │ └── observability: token/cost/latency metrics, trace per completion
+                │ └── observability: token/cost/latency metrics, trace per completion    
                 └── feature flag / KILL SWITCH (default-off for regulated data)
 ```
 

@@ -26,27 +26,27 @@ Each business domain gets its own module with 4 layers:
 ```text
 domains/appointments/
 ├── core/                    → entities, value objects, repository interfaces
-│   ├── entities/
+│   ├── entities/        
 │   │   └── appointment.entity.ts
-│   ├── value-objects/
+│   ├── value-objects/        
 │   │   └── appointment-status.value-object.ts
-│   ├── domain-services/
+│   ├── domain-services/        
 │   │   └── appointment-scheduling-rules.service.ts
-│   └── repositories/
-│       └── appointment.repository.interface.ts
+│   └── repositories/        
+│       └── appointment.repository.interface.ts        
 ├── application/             → use-cases, DTOs, service orchestration
-│   ├── use-cases/
+│   ├── use-cases/        
 │   │   ├── create-appointment.use-case.ts
 │   │   └── start-consultation.use-case.ts
-│   ├── services/
+│   ├── services/        
 │   │   ├── appointment-command.service.ts
 │   │   └── appointment-query.service.ts
-│   └── dto/
+│   └── dto/        
 ├── infrastructure/          → Prisma repositories, external API adapters
-│   ├── persistence/
+│   ├── persistence/        
 │   │   ├── prisma-appointment-read.repository.ts
 │   │   └── prisma-appointment-write.repository.ts
-│   └── mappers/
+│   └── mappers/        
 └── presentation/            → NestJS controllers, guards, interceptors
     └── controllers/
         ├── appointments.controller.access.ts

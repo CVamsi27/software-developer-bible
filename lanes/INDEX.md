@@ -31,17 +31,17 @@ The bible is split into two layers:
 ```text
                  Interview Lanes (this folder)
        ┌────────────────────────────────────────────────┐
-       │ │                                                                                                                           
+       │                                          │                                                                                                                           
        │ 81-indian-sde-faang 80-abroad-full-stack │
-       │ ┌─────────────┐ ┌─────────────┐ │                           
+       │ ┌─────────────┐ ┌─────────────┐          │                           
        │ │ 22 files │ │ 35 files             │    │
        │ │ 8-week plan │ │ 4-week plan       │    │
        │ │ 5 co. guides│ │ 8 STARs           │    │
        │ │ leetcode │ │ take-home            │    │
        │ │ comp │ │ EU visa                  │    │
-       │ └──────┬──────┘ └──────┬──────┘ │                           
-       │ └──────────┬─────────────┘ │                                          
-       │ ▼ │                                                                                                                     
+       │ └──────┬──────┘ └──────┬──────┘          │                           
+       │ └──────────┬─────────────┘               │                                          
+       │ ▼                                        │                                                                                                                     
        │ ┌──────────────────────────────────────┐ │
        │ │ 7 Study Stacks                    │    │
        │ │ Frontend · Backend · Architecture │    │

@@ -27,33 +27,33 @@ A `QueueJob` table in PostgreSQL. Jobs are enqueued in the same transaction as b
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Job Enqueue (same transaction)              │   
-│                                                              │   
-│  prisma.$transaction(async (tx) => {                         │   
-│    await tx.appointment.create({ data: {...} });             │   
-│    await tx.queueJob.create({                                │   
-│      data: {                                                 │   
-│        name: 'prescription.pdf.generate',                    │   
-│        data: { prescriptionId: '...', clinicId: '...' },     │   
-│        status: 'WAITING',                                    │   
-│      },                                                      │   
-│    });                                                       │   
-│  });                                                         │   
+│ Business Write + Job Enqueue (same transaction)               │   
+│                                                               │   
+│  prisma.$transaction(async (tx) => {                          │   
+│    await tx.appointment.create({ data: {...} });              │   
+│    await tx.queueJob.create({                                 │   
+│      data: {                                                  │   
+│        name: 'prescription.pdf.generate',                     │   
+│        data: { prescriptionId: '...', clinicId: '...' },      │   
+│        status: 'WAITING',                                     │   
+│      },                                                       │   
+│    });                                                        │   
+│  });                                                          │   
 │  // Both succeed or both fail — atomic                        │
 └───────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────┐
-│ Worker Process (separate NestJS process)                     │ 
-│                                                              │ 
-│  Polls every 2 seconds:                                      │ 
-│  SELECT ... FROM "QueueJob"                                  │ 
-│  WHERE status = 'WAITING' AND name = $1                     │   
-│  ORDER BY priority DESC, createdAt ASC                       │ 
-│  FOR UPDATE SKIP LOCKED                                      │ 
-│  LIMIT 1                                                     │ 
-│                                                              │ 
-│  → Execute handler                                           │ 
-│  → Mark COMPLETED or DELAYED (retry) or DEAD_LETTERED       │   
+│ Worker Process (separate NestJS process)                     │  
+│                                                              │  
+│  Polls every 2 seconds:                                      │  
+│  SELECT ... FROM "QueueJob"                                  │  
+│  WHERE status = 'WAITING' AND name = $1                      │   
+│  ORDER BY priority DESC, createdAt ASC                       │  
+│  FOR UPDATE SKIP LOCKED                                      │  
+│  LIMIT 1                                                     │  
+│                                                              │  
+│  → Execute handler                                           │  
+│  → Mark COMPLETED or DELAYED (retry) or DEAD_LETTERED        │   
 └───────────────────────────────────────────────────────────────┘
 ```
 
@@ -160,35 +160,35 @@ Domain events are written to an `OutboxEvent` table in the same transaction as t
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Event Emission (same transaction)           │   
-│                                                              │   
-│  prisma.$transaction(async (tx) => {                         │   
-│    await tx.appointment.create({ data: {...} });             │   
-│    await outbox.append(tx, {                                 │   
-│      eventName: 'appointment.created',                       │   
-│      clinicId: appointment.clinicId,                         │   
-│      payload: { appointmentId, patientId, doctorId },        │   
-│      idempotencyKey: `apt-created-${appointment.id}`,       │      
-│    });                                                       │   
-│  });                                                         │   
+│ Business Write + Event Emission (same transaction)            │   
+│                                                               │   
+│  prisma.$transaction(async (tx) => {                          │   
+│    await tx.appointment.create({ data: {...} });              │   
+│    await outbox.append(tx, {                                  │   
+│      eventName: 'appointment.created',                        │   
+│      clinicId: appointment.clinicId,                          │   
+│      payload: { appointmentId, patientId, doctorId },         │   
+│      idempotencyKey: `apt-created-${appointment.id}`,         │      
+│    });                                                        │   
+│  });                                                          │   
 │  // Both succeed or both fail — atomic                        │
 └───────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────┐
-│ Outbox Relay Scheduler (cron, every 2 seconds)               │ 
-│                                                              │ 
-│  WITH claimed AS (                                           │ 
-│    SELECT id FROM "OutboxEvent"                              │ 
-│    WHERE "processedAt" IS NULL AND "attempts" < 8            │ 
-│    ORDER BY "createdAt" ASC                                  │ 
-│    FOR UPDATE SKIP LOCKED LIMIT 200                          │ 
-│  )                                                           │ 
-│  UPDATE "OutboxEvent" SET "attempts" = "attempts" + 1       │   
-│  FROM claimed WHERE o.id = claimed.id                        │ 
-│  RETURNING ...                                               │ 
-│                                                              │ 
-│  → EventEmitter2.emit(eventName, payload)                    │ 
-│  → Mark processedAt                                          │ 
+│ Outbox Relay Scheduler (cron, every 2 seconds)               │  
+│                                                              │  
+│  WITH claimed AS (                                           │  
+│    SELECT id FROM "OutboxEvent"                              │  
+│    WHERE "processedAt" IS NULL AND "attempts" < 8            │  
+│    ORDER BY "createdAt" ASC                                  │  
+│    FOR UPDATE SKIP LOCKED LIMIT 200                          │  
+│  )                                                           │  
+│  UPDATE "OutboxEvent" SET "attempts" = "attempts" + 1        │   
+│  FROM claimed WHERE o.id = claimed.id                        │  
+│  RETURNING ...                                               │  
+│                                                              │  
+│  → EventEmitter2.emit(eventName, payload)                    │  
+│  → Mark processedAt                                          │  
 └───────────────────────────────────────────────────────────────┘
 ```
 

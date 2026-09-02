@@ -43,17 +43,17 @@ A `QueueJob` table in PostgreSQL. Jobs are enqueued in the same transaction as b
 └───────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────┐
-│ Worker Process (separate NestJS process)                     │  
-│                                                              │  
-│  Polls every 2 seconds:                                      │  
-│  SELECT ... FROM "QueueJob"                                  │  
-│  WHERE status = 'WAITING' AND name = $1                      │   
-│  ORDER BY priority DESC, createdAt ASC                       │  
-│  FOR UPDATE SKIP LOCKED                                      │  
-│  LIMIT 1                                                     │  
-│                                                              │  
-│  → Execute handler                                           │  
-│  → Mark COMPLETED or DELAYED (retry) or DEAD_LETTERED        │   
+│ Worker Process (separate NestJS process)                      │
+├──────────────────────────────────────────────────────────────┤
+│  Polls every 2 seconds:                                       │
+│  SELECT ... FROM "QueueJob"                                   │
+│  WHERE status = 'WAITING' AND name = $1                       │
+│  ORDER BY priority DESC, createdAt ASC                        │
+│  FOR UPDATE SKIP LOCKED                                       │
+│  LIMIT 1                                                      │
+├──────────────────────────────────────────────────────────────┤
+│  → Execute handler                                            │
+│  → Mark COMPLETED or DELAYED (retry) or DEAD_LETTERED         │
 └───────────────────────────────────────────────────────────────┘
 ```
 
@@ -175,20 +175,20 @@ Domain events are written to an `OutboxEvent` table in the same transaction as t
 └───────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────┐
-│ Outbox Relay Scheduler (cron, every 2 seconds)               │  
-│                                                              │  
-│  WITH claimed AS (                                           │  
-│    SELECT id FROM "OutboxEvent"                              │  
-│    WHERE "processedAt" IS NULL AND "attempts" < 8            │  
-│    ORDER BY "createdAt" ASC                                  │  
-│    FOR UPDATE SKIP LOCKED LIMIT 200                          │  
-│  )                                                           │  
-│  UPDATE "OutboxEvent" SET "attempts" = "attempts" + 1        │   
-│  FROM claimed WHERE o.id = claimed.id                        │  
-│  RETURNING ...                                               │  
-│                                                              │  
-│  → EventEmitter2.emit(eventName, payload)                    │  
-│  → Mark processedAt                                          │  
+│ Outbox Relay Scheduler (cron, every 2 seconds)                │
+├──────────────────────────────────────────────────────────────┤
+│  WITH claimed AS (                                            │
+│    SELECT id FROM "OutboxEvent"                               │
+│    WHERE "processedAt" IS NULL AND "attempts" < 8             │
+│    ORDER BY "createdAt" ASC                                   │
+│    FOR UPDATE SKIP LOCKED LIMIT 200                           │
+│  )                                                            │
+│  UPDATE "OutboxEvent" SET "attempts" = "attempts" + 1         │
+│  FROM claimed WHERE o.id = claimed.id                         │
+│  RETURNING ...                                                │
+├──────────────────────────────────────────────────────────────┤
+│  → EventEmitter2.emit(eventName, payload)                     │
+│  → Mark processedAt                                           │
 └───────────────────────────────────────────────────────────────┘
 ```
 

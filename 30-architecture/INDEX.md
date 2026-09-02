@@ -4,7 +4,7 @@
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
 
-[![Files](https://img.shields.io/badge/files-85-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-106-blue)](INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-3-green)](#study-order)
 
 ---

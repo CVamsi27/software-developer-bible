@@ -4,7 +4,7 @@
 >
 > 88 files across 11 sub-stacks — the "how it runs" layer of the bible.
 
-[![Files](https://img.shields.io/badge/files-88-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-90-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-11-green)](#the-11-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

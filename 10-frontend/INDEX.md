@@ -6,7 +6,7 @@
 
 **Real-world anchor:** every category page below ends with a [Docita Anchor](https://github.com/CVamsi27/docita) table pointing at the matching production code.
 
-[![Files](https://img.shields.io/badge/files-111-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-113-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

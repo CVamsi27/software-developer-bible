@@ -4,7 +4,7 @@
 >
 > 110 files across 9 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-110-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-133-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#the-9-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

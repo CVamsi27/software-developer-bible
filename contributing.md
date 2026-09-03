@@ -121,13 +121,13 @@ Before contributing, review the existing files in the relevant section to unders
 ## File Naming
 
 | File Type | Pattern | Example |
-| --------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- |
+| --------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Stack folder | `NN.N-slug/` | `10.1-javascript/` |
 | Category folder (stacks >= ~8 chapters) | `NN-slug/` (2-digit study order) | `20.5-security/01-auth/` |
-| Category INDEX | `INDEX.md` inside category folder | `01-auth/INDEX.md` |
-| Content file in a category | `<stack>.<cat>.<seq>-slug.md`, seq contiguous from 01 | `20.5.1.04-sessions-cookies.md` (`cat` = folder number without leading zero) |
-| Content file in a flat stack | `<stack>.<seq>-slug.md`, seq contiguous from 01 | `40.1.06-production-patterns.md` |
-| Interview questions file | same rule, always LAST sequence number | `40.1.10-interview-questions.md` |
+| Category INDEX | `INDEX.md` inside category folder | `20-backend/20.5-security/01-auth/INDEX.md` |
+| Content file in a category | `<stack>.<cat>.<seq>-slug.md`, seq contiguous from 01 | `20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md` (`cat` = folder number without leading zero) |
+| Content file in a flat stack | `<stack>.<seq>-slug.md`, seq contiguous from 01 | `40-platform/40.1-docker/40.1.06-production-patterns.md` |
+| Interview questions file | same rule, always LAST sequence number | `40-platform/40.1-docker/40.1.10-interview-questions.md` |
 
 - Use **kebab-case** for slugs and directory names
 - Numeric IDs are unique repo-wide and sort correctly lexicographically; sequences are contiguous (no gaps)
@@ -146,9 +146,9 @@ Every content file **must** begin with metadata in two forms:
 
 ```markdown
 <!-- section: JavaScript | category: Core | tags: concept -->
-[![Section](https://img.shields.io/badge/section-JavaScript-blue)](.)
-[![Category](https://img.shields.io/badge/category-Core-blue)](.)
-[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](.)
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Core-blue)](#)
+[![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
 
 # File Title
 ```
@@ -159,7 +159,8 @@ Every content file **must** begin with metadata in two forms:
 - `tags` is a comma-separated list: `concept, lld, principles, theory`
 - Metadata line goes BEFORE the title (H1)
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges
-- Badges are clickable — they link to the section root (`.`)
+- Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category/Status link to `#`
+- Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment so GitHub Pages renders them literally (44 files use this today)
 
 ### Category Values
 
@@ -198,40 +199,28 @@ URL-encode%20special characters:
 - Spaces → `%20` (preferred over `_` for readability)
 - `&` → `%26`
 
-> **Note:** Badges are only used on INDEX.md files. Content files do not use badges — their metadata (section, type/category, status) is stored in YAML frontmatter instead.
+> **Note:** Every file type carries badges. Content files carry **Section / Category / Tags** badges (3) below their HTML-comment metadata; INDEX.md files carry **Files / Category / Status** badges (3). There is **no YAML frontmatter anywhere in this repo** — metadata lives in the HTML comment, never in `---` blocks.
 
 ### INDEX.md Badges (3 per file)
 
 ```text
-[![Files](https://img.shields.io/badge/files-20-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Core-blueviolet)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Files](https://img.shields.io/badge/files-10-blue)](../INDEX.md)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 ```
 
-Root-level files (root `INDEX.md` and this guide) also use badges with the same format.
+The Files badge links to the **central INDEX.md** at the repo root (relative path from the file's folder — e.g. `../INDEX.md` from `40-platform/`, `../../INDEX.md` from `40-platform/40.1-docker/`); some category INDEXes link it to an in-file anchor instead. Category and Status badges link to `#`. Root-level `INDEX.md` and this guide use the same format.
 
 ### Standard Badge Colors
 
-| Color | Usage | Section Examples |
-| --------------- | ------------------------------- | ----------------------------------------------- |
-| `blueviolet` | Core sections | JavaScript, TypeScript |
-| `success` | Backend sections | Node.js, NestJS |
-| `#ff6b35` | API sections | REST APIs, GraphQL |
-| `#8b5cf6` | Data sections | Database |
-| `green` | Quality sections | Testing, Accessibility, Performance Monitoring |
-| `red` | Interview sections | Behavioral, Interview Strategy, Coding Patterns |
-| `orange` | Practice/Questions | Interview Questions |
-| `lightgrey` | Reference sections | CheatSheets, Monorepo |
-| `informational` | DevOps type badges, file counts | Docker, Kubernetes, CI/CD, Serverless |
-| `#0ea5e9` | Observability sections | Observability |
-| `#64748b` | Tooling sections | Build Tools, Git Advanced |
-| `blue` | Type badges, file counts | Some sections |
-| `brightgreen` | Status: complete | All files |
-| `#800080` | System Design | `30.2-system-design` |
-| `#00b4d8` | React | `10.3-react` |
-| `#ff7f00` | NestJS | `20.2-nestjs` |
-| `#ffd700` | Coding Patterns | `70.2-coding-patterns` |
-| `yellow` | Cheat Sheets | `70.3-cheatsheets` |
+Category badge colors follow the **Category Values** table above (one color per category, used on both content and INDEX category badges). The fixed labels use these colors:
+
+| Badge label | Color | Notes |
+| ------------------- | -------------------------------------- | ------------------------------------------------------------- |
+| `section` (content) | `blue` | Always blue, whatever the section |
+| `tags` (content) | `lightgrey` | Always lightgrey |
+| `files` (INDEX) | `blue` | Always blue |
+| `status` | `brightgreen` / `yellow` / `lightgrey` | `complete` / `in-progress` / `planned` (see below) |
 
 ### Status Badge Values
 
@@ -239,19 +228,15 @@ Root-level files (root `INDEX.md` and this guide) also use badges with the same 
 - `in-progress` → `yellow` (use when applicable)
 - `planned` → `lightgrey` (use when applicable)
 
-### Type Badge Values (URL-encoded)
+### Tags Badge Values (URL-encoded)
 
-| Display Value | Encoding |
-| ------------------- | ----------------------- |
-| Concept | `Concept` |
-| Interview Questions | `Interview%20Questions` |
-| Cheat Sheet | `Cheat%20Sheet` |
-| Overview | `Overview` |
-| Guide | `Guide` |
-| Tool | `Tool` |
-| Reference | `Reference` |
-| Study Plan | `Study%20Plan` |
-| Practice | `Practice` |
+There is no separate "type" badge — the Tags badge carries the `tags:` values from the HTML comment, kebab-cased and joined with a `·` separator when there is more than one:
+
+| Comment `tags:` | Tags badge URL value |
+| ------------------------------- | ------------------------------------------------- |
+| `concept` | `concept` |
+| `concept, reference` | `concept%20%C2%B7%20reference` |
+| `interview-questions, practice` | `interview-questions%20%C2%B7%20practice` |
 
 ---
 
@@ -265,6 +250,10 @@ Every concept file follows this exact section order. Sections that are not appli
 # Title
 
 [badges]
+
+## TL;DR
+
+1-3 sentences distilling the concept.
 
 ## Definition
 
@@ -309,20 +298,20 @@ Either a `text` code block with `═══════` headers and `•` bullet
 ---
 
 ## See Also
-- [Another Section](../yy-Section/)
-- [Related Section](../xx-Section/)
+- [Kubernetes](../40.2-kubernetes/INDEX.md)
+- [Microservices](../../20-backend/20.6-microservices/INDEX.md)
 
 ## References & Learn More
 
-- [Resource Title](https://example.com/)
-- [Another Resource](https://example.com/)
+- [Docker Documentation](https://docs.docker.com/)
+- [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 ```
 
 ### Section Rules
 
-1. **`## Definition`** — Must be the first content section after badges. Required for all concept files.
+1. **`## TL;DR`** — Optional but standard (most concept files open with it); `## Definition` is required for all concept files and follows `TL;DR` when present.
 2. **`## Summary`** — Required for all content files. Must appear near the end.
-3. **`## Cheat Sheet`** — Present in ~58% of files. Either as a **`text` code block** (detailed content) or a **markdown table** (quick reference pairs).
+3. **`## Cheat Sheet`** — Present in ~78% of content files (measured 2026-09-03). Either as a **`text` code block** (detailed content) or a **markdown table** (quick reference pairs).
 4. **`## See Also`** — Required for all content files. Relative links to related sections.
 5. **`## References & Learn More`** — Required for all content files. External resource links.
 6. **`## Code Examples`** — Required for all concept files. Uses `typescript` (or appropriate) language tag.
@@ -359,7 +348,7 @@ Either format is acceptable — choose the one that best suits the content.
 
 Two formats are used depending on content:
 
-**Code-block format** (122 files) — for detailed textual summaries:
+**Code-block format** (416 files, measured 2026-09-03) — for detailed textual summaries:
 
 ````text
 ## Cheat Sheet
@@ -377,7 +366,7 @@ BEST PRACTICES:
 ```
 ````
 
-**Table format** (31 files) — for structured concept/definition pairs:
+**Table format** (86 files, measured 2026-09-03) — for structured concept/definition pairs:
 
 ```text
 ## Cheat Sheet
@@ -395,37 +384,39 @@ BEST PRACTICES:
 Every section has an `INDEX.md` file. Format:
 
 ```text
-# Section Name — Index
+# Docker — Index
 
-> **N files** — Brief description of the section.
+> **10 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-N-blue)](INDEX.md)
-[![Category](https://img.shields.io/badge/category-Name-color)](.)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
+[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-| #   | File                         | Topics             |
-| --- | ---------------------------- | ------------------ |
-| 01  | [File Name](01-File-Name.md) | Topic descriptions |
-| 02  | [File Name](02-File-Name.md) | Topic descriptions |
+| # | File | Topics | Read time |
+| --: | -------------------------- | ----------------------------------------------------- | --------: |
+| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT | 25 min |
+| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, bridge/host/overlay networks | 25 min |
 
 ---
 
-**Cross-references:** [Related Section](../xx-Section/) | [Another Section](../yy-Section/)
+**Cross-references:** [CI/CD](../40.3-ci-cd) | [Microservices](../../20-backend/20.6-microservices/INDEX.md)
 
 ---
 
 ## Navigation
 
-← Previous: `../xx-Section/INDEX.md` · [ Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
+[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
 ```
+
+> The Files badge links to the **central INDEX.md** at the repo root (relative path from the file's folder, e.g. `../../INDEX.md`); Category/Status link to `#`. File rows link each chapter by its actual `<stack>.<seq>-slug.md` name.
 
 ### INDEX.md Rules
 
-- **Badges**: Always 3 badges: Files (blue), Category (section-specific color), Status (brightgreen)
-- **Table**: 3 columns: `#`, `File` (linked), `Topics` (comma-separated keywords)
+- **Badges**: Always 3 badges: Files (blue, links to the central repo-root INDEX.md), Category (section-specific color), Status (brightgreen)
+- **Table**: 4 columns: `#`, `File` (linked), `Topics` (comma-separated keywords), `Read time` (most stack INDEXes include it; category INDEXes may drop it)
 - **Cross-references**: Bold `**Cross-references:**` with pipe-separated links to related sections
-- **Navigation**: Links to previous section INDEX.md, root INDEX.md, and next section INDEX.md. Use `·` as separator.
-- The first section (00) shows `(start of series)` for previous; the last section shows `(end of series)` for next.
+- **Navigation**: Previous (sibling section), Back to Index, Next (sibling section). Use `·` as separator.
+- The first/last section in a series may show `(start of series)` / `(end of series)` instead of a sibling link.
 
 ---
 
@@ -501,8 +492,11 @@ When doing batch operations on code blocks (e.g., fixing language tags), always 
 
 - **All files must end with a single newline** — no more, no less
 - **No trailing whitespace** on any line
-- Use the project's Python verification script: `python3 -c "
-import os, re
+- Check with: `python3 scripts/check_alignment.py` (whitespace inside code blocks is part of the alignment gate) and a quick newline/trailing-whitespace sweep:
+
+```bash
+python3 - <<'EOF'
+import os
 issues = []
 for root, dirs, files in os.walk('.'):
     if '.git' in root: continue
@@ -511,19 +505,15 @@ for root, dirs, files in os.walk('.'):
         fp = os.path.join(root, f)
         with open(fp, 'rb') as fh:
             content = fh.read()
-        for i, line in enumerate(content.split(b'\\n'), 1):
-            if line != line.rstrip(b' \\t'):
-                issues.append(f' {fp}:{i} trailing whitespace')
-        if len(content) > 1 and content[-1:] != b'\\n':
-            issues.append(f' {fp}: missing final newline')
-        elif len(content) > 2 and content[-2:-1] == b'\\n' and content[-3:-2] == b'\\n':
-            issues.append(f' {fp}: double trailing newline')
-if issues:
-    print('Issues found:')
-    for i in issues: print(i)
-else:
-    print(' All 299 files clean')
-"
+        for i, line in enumerate(content.split(b'\n'), 1):
+            if line != line.rstrip(b' \t'):
+                issues.append(f'{fp}:{i} trailing whitespace')
+        if len(content) > 1 and content[-1:] != b'\n':
+            issues.append(f'{fp}: missing final newline')
+        elif len(content) > 2 and content[-2:-1] == b'\n' and content[-3:-2] == b'\n':
+            issues.append(f'{fp}: double trailing newline')
+print('\n'.join(issues) if issues else 'All md files clean')
+EOF
 ```
 
 ---
@@ -544,17 +534,17 @@ else:
 - **Heading level**: Use `## See Also` (level-2). Some new files use `### See Also` (level-3) — convert to `##` when encountered.
 - **Alphabetization**: Links must be **alphabetized** by link text (case-insensitive). This is enforced project-wide.
 - **Placement**: `## See Also` must come **before** `## References` / `## References & Learn More`.
-- **Path style**: Always use relative paths (e.g., `../xx-Section/`).
-- **Cross-section links**: Link to the section directory (e.g., `../01-JavaScript/`), not a specific file.
-- **Intra-section links**: When linking to another file within the same section, link to the specific file (e.g., `../05-HPA-Scaling.md`). This is acceptable — ~12% of all See Also links are intra-section file references.
+- **Path style**: Always use repo-relative paths from the file's own directory, pointing at the target section's `INDEX.md` (e.g., `../../20-backend/20.6-microservices/INDEX.md`).
+- **Cross-section links**: Point at the target section's `INDEX.md` (e.g., `[Microservices](../../20-backend/20.6-microservices/INDEX.md)`), not a bare directory.
+- **Intra-section links**: When linking to another file within the same section, link to the specific file (e.g., `[HPA Scaling](../03-scaling/40.2.3.01-hpa-scaling.md)`). This is common — ~32% of all See Also links point to specific files (measured 2026-09-03); most of those are intra-section.
 
 #### Accepted Link Formats
 
-| Variant           | Example                                                             | Usage                              |
-| ----------------- | ------------------------------------------------------------------- | ---------------------------------- |
-| Section directory | `- [React](10-frontend/10.3-react/)`                                | Cross-section links (88% of links) |
-| Specific file     | `- [Jest](50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md)` | Intra-section links (12% of links) |
-| Nested path       | `- [REST APIs](20-backend/20.3-rest-apis/)`                         | Cross-section from subdirectories  |
+| Variant | Example | Usage |
+| ----------------- | ------------------------------------------------------------------- | -------------------------------------- |
+| Section INDEX | `- [Microservices](../../20-backend/20.6-microservices/INDEX.md)` | Cross-section links (64% of links) |
+| Specific file | `- [HPA Scaling](../03-scaling/40.2.3.01-hpa-scaling.md)` | Intra-section links (32% of links) |
+| Section directory | `- [CI/CD](../40.3-ci-cd)` | Same-section sibling dir (4% of links) |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -565,8 +555,8 @@ else:
 - [Another Resource](https://example.com/)
 ```
 
-- **Preferred heading**: `## References & Learn More` (used by ~90% of files)
-- **Accepted variant**: `## References` (used by ~10% of files — acceptable when referencing fewer external resources)
+- **Preferred heading**: `## References & Learn More` (used by ~96% of files, measured 2026-09-03)
+- **Accepted variant**: `## References` (~4% of files — acceptable when referencing fewer external resources)
 - Links should point to high-quality, authoritative resources
 - Official documentation, books, and well-known tutorials are preferred
 
@@ -585,14 +575,13 @@ else:
 ```text
 ## Navigation
 
-← Previous: `../xx-Section/INDEX.md` · [ Back to Index](INDEX.md) · Next: `../yy-Section/INDEX.md`
+[← Previous: Microservices](../../20-backend/20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
 ```
 
 - Three links: Previous (left arrow), Home (house icon), Next (right arrow)
 - Use `·` as separator
-- Section order follows the numbering (00 → 01 → 02 → ... → 31)
-- First section: `← Previous: *(start of series)*`
-- Last section: `[Next: → *(end of series)*`
+- Study order follows the numbering (`40.1` → `40.2` → ... → `40.12`)
+- A stack INDEX links to its sibling stacks; a category INDEX links back to its stack (`../INDEX.md`) and on to the next category
 
 ---
 
@@ -600,7 +589,7 @@ else:
 
 ### Interview Questions
 
-These files (e.g., `10.6-animation/10.6.08-interview-questions.md`) follow a different structure:
+These files (e.g., `10-frontend/10.6-animation/10.6.08-interview-questions.md`) follow a different structure:
 
 ```text
 # Section Interview Questions
@@ -810,7 +799,7 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 
 ### SDE Role Guides
 
-These files (in `81-lanes-indian-sde-faang/`, e.g., `81.01-complete-guide.md`) are comprehensive study guides covering multiple topics per file:
+These files (in `81-lanes-indian-sde-faang/`, e.g., `81-lanes-indian-sde-faang/81.01-complete-guide.md`) are comprehensive study guides covering multiple topics per file:
 
 - Use repeated sub-heading patterns (e.g., multiple `## Concept`, `## Implementation` sections)
 - This is intentional — each topic within a file has its own flow
@@ -826,9 +815,9 @@ After making changes, verify the following:
 
 ### Required for All New Files
 
-- [ ] File has YAML frontmatter with `section`, `category`, `tags`
-- [ ] INDEX.md files have 3 badges: Files, Category, Status
-- [ ] Content files do NOT have badges (only frontmatter metadata)
+- [ ] Content file opens with the HTML comment `<!-- section: … | category: … | tags: … -->` (no YAML frontmatter)
+- [ ] Content file carries 3 badges below the comment: Section (blue), Category (per the Category Values table), Tags (lightgrey)
+- [ ] INDEX.md files have 3 badges: Files (blue, links to central repo-root `INDEX.md`), Category, Status
 - [ ] All badge URLs follow shields.io conventions
 - [ ] Badge values URL-encoded properly (spaces → `%20`)
 - [ ] `## Summary` section present (near end of file)
@@ -839,7 +828,7 @@ After making changes, verify the following:
 
 **Standard concept files** (most sections):
 - [ ] Section order: Definition → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary → Cheat Sheet
-- [ ] `## Definition` is the first content section after badges
+- [ ] `## TL;DR` (when present) or `## Definition` is the first content section after metadata/badges
 - [ ] `## Code Examples` uses `typescript` language tag
 - [ ] If `## Cheat Sheet` is present, the `---` separator goes between it and `## See Also`
 
@@ -869,7 +858,7 @@ After making changes, verify the following:
 - [ ] Starts with `## Table of Contents` instead of `## Definition`
 - [ ] Uses narrative/storytelling style
 
-**Lane guides** (`81-lanes-indian-sde-faang/`, `80-lanes-abroad-full-stack/` numbered `81.x` / `80.x` files):
+**Lane guides** (`81-lanes-indian-sde-faang/` and `80-lanes-abroad-full-stack/` numbered `NN.x` files):
 - [ ] Uses `## See Also` and `## References & Learn More` at the end
 - [ ] Code blocks use `java`, `text`, `typescript`, `sql` as appropriate
 
@@ -891,8 +880,8 @@ After making changes, verify the following:
 - [ ] `## See Also` uses level-2 heading (`##`), not level-3 (`###`)
 - [ ] Links are alphabetized by display text (case-insensitive)
 - [ ] `## See Also` comes before `## References` / `## References & Learn More`
-- [ ] Cross-section links use the target stack folder: `../10-frontend/` or `../NN.N-slug/`
-- [ ] Intra-section links may use specific file references: `../NN-File.md`
+- [ ] Cross-section links point at the target section's `INDEX.md` via a repo-relative path (e.g., `../../20-backend/20.6-microservices/INDEX.md`)
+- [ ] Intra-section links may use specific file references (e.g., `../03-scaling/40.2.3.01-hpa-scaling.md`)
 
 ### File Quality
 

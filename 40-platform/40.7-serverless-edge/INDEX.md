@@ -12,13 +12,13 @@
 
 ## Topic Categories
 
-| Category                          | Files | Why it matters                                                       |
-| --------------------------------- | ----: | -------------------------------------------------------------------- |
-| [Concepts](#concepts)             | 2     | Overview, edge functions — the mental model                          |
-| [Providers](#providers)           | 2     | AWS Lambda, Vercel — the main platforms                              |
-| [Patterns & IaC](#patterns--iac)  | 3     | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
+| Category                          | Files | Why it matters                                                            |
+| --------------------------------- | ----: | --------------------------------------------------------------------      |
+| [Concepts](#concepts)             | 2     | Overview, edge functions — the mental model                               |
+| [Providers](#providers)           | 2     | AWS Lambda, Vercel — the main platforms                                   |
+| [Patterns & IaC](#patterns--iac)  | 3     | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution      |
 | [Deployment](#deployment)             | 2     | Fly.io containers, Vite SPA on Cloudflare                             |
-| [Interview Prep](#interview-prep)     | 1     | 30+ Qs                                                               |
+| [Interview Prep](#interview-prep)     | 1     | 30+ Qs                                                                |
 
 ---
 
@@ -65,7 +65,7 @@ Deploy choice?
 | #   | File                                                              | Topics                                                                                           | Read time   |
 | --: | ------                                                            | --------                                                                                         | ----------: |
 | 09  | [Fly.io Deployment](40.7.09-flyio-deployment.md)                  | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds    | 25 min      |
-| 10  | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | 25 min      |
+| 10  | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | 25 min          |
 
 ---
 

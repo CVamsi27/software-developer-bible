@@ -59,14 +59,14 @@ A `QueueJob` table in PostgreSQL. Jobs are enqueued in the same transaction as b
 
 ### Why Postgres (Not Redis)
 
-| Factor | PostgreSQL | Redis + BullMQ |
-|--------|-----------|----------------|
-| **Already paying for** | Yes (AWS RDS HA) | No — extra $50-200/mo |
+| Factor | PostgreSQL | Redis + BullMQ                                                                     |
+|--------|-----------|----------------                                                                     |
+| **Already paying for** | Yes (AWS RDS HA) | No — extra $50-200/mo                                        |
 | **Transactional enqueue** | Yes — same `prisma.$transaction` | No — separate connection, dual-write risk |
-| **Operational overhead** | Zero — same database | Another service to monitor, rotate secrets |
-| **Durability** | WAL-backed, crash-safe | AOF/RDB — configurable, but separate |
-| **Throughput ceiling** | ~1k jobs/sec | ~10k jobs/sec |
-| **Our actual load** | ~0.4 jobs/sec | Overkill |
+| **Operational overhead** | Zero — same database | Another service to monitor, rotate secrets             |
+| **Durability** | WAL-backed, crash-safe | AOF/RDB — configurable, but separate                           |
+| **Throughput ceiling** | ~1k jobs/sec | ~10k jobs/sec                                                    |
+| **Our actual load** | ~0.4 jobs/sec | Overkill                                                           |
 
 **The real reason:** Transactional enqueue. When a prescription is created, the PDF job must be enqueued in the *same transaction*. With Redis, you'd need: (1) write to Postgres, (2) write to Redis. If step 2 fails, the prescription exists but no PDF is generated. With Postgres, both writes are atomic.
 
@@ -226,13 +226,13 @@ async createAppointment(command) {
 
 ### Why Not Kafka/NATS
 
-| Factor | Outbox (chosen) | Kafka | NATS |
-|--------|----------------|-------|------|
+| Factor | Outbox (chosen) | Kafka | NATS                                  |
+|--------|----------------|-------|------                                  |
 | **Infrastructure** | Zero — same Postgres | Extra cluster | Extra server |
-| **Operational cost** | $0 | $100+/mo | $50+/mo |
-| **Latency** | ~2 seconds (poll interval) | ~10ms | ~1ms |
-| **Throughput** | ~100 events/sec | ~100k events/sec | ~1M events/sec |
-| **Our actual load** | ~0.4 events/sec | Overkill | Overkill |
+| **Operational cost** | $0 | $100+/mo | $50+/mo                           |
+| **Latency** | ~2 seconds (poll interval) | ~10ms | ~1ms                  |
+| **Throughput** | ~100 events/sec | ~100k events/sec | ~1M events/sec     |
+| **Our actual load** | ~0.4 events/sec | Overkill | Overkill              |
 
 **The trade-off we accepted:** 2-second relay lag. For appointment reminders, prescription PDFs, and analytics — this is fine. For real-time payment notifications, we use WebSocket directly (not through the outbox).
 
@@ -343,17 +343,17 @@ export interface OutboxAppend {
 
 ## Code Evidence
 
-| Claim | File |
-|-------|------|
-| Postgres queue service | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` |
+| Claim | File                                                                                             |
+|-------|------                                                                                            |
+| Postgres queue service | `apps/api/src/shared/modules/queue/postgres-queue.service.ts`                   |
 | Queue job repository | `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts` |
-| Queue interface | `apps/api/src/shared/modules/queue/queue.interface.ts` |
-| Outbox service | `apps/api/src/shared/modules/outbox/outbox.service.ts` |
-| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` |
-| Outbox interface | `apps/api/src/shared/modules/outbox/outbox.interface.ts` |
-| Worker module | `apps/api/src/worker.module.ts` |
-| PDF job service | `apps/api/src/shared/modules/queue/pdf-job.service.ts` |
-| Worker metrics | `apps/api/src/shared/modules/queue/worker-metrics.service.ts` |
+| Queue interface | `apps/api/src/shared/modules/queue/queue.interface.ts`                                 |
+| Outbox service | `apps/api/src/shared/modules/outbox/outbox.service.ts`                                  |
+| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`                            |
+| Outbox interface | `apps/api/src/shared/modules/outbox/outbox.interface.ts`                              |
+| Worker module | `apps/api/src/worker.module.ts`                                                          |
+| PDF job service | `apps/api/src/shared/modules/queue/pdf-job.service.ts`                                 |
+| Worker metrics | `apps/api/src/shared/modules/queue/worker-metrics.service.ts`                           |
 
 ---
 

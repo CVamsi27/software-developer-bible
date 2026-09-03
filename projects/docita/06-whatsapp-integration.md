@@ -22,20 +22,20 @@ Docita's core value proposition: a clinic owner in India should be able to run t
 
 ### What We Chose
 
-| Mode | Description | Cost | Branding |
-|------|-------------|------|----------|
-| **SHARED** | Meta's shared business number | Free | "via Docita" |
+| Mode | Description | Cost | Branding                                               |
+|------|-------------|------|----------                                              |
+| **SHARED** | Meta's shared business number | Free | "via Docita"                   |
 | **BYO** | Clinic's own WhatsApp Business number | Clinic pays Meta | Clinic's name |
-| **MANAGED** | Docita-managed number | Docita pays Meta | Docita branding |
+| **MANAGED** | Docita-managed number | Docita pays Meta | Docita branding           |
 
 **Why three modes:** Indian clinics have different budgets and branding needs. A small clinic might start with SHARED (free) and upgrade to BYO as they grow.
 
 ### Alternatives Considered
 
-| Option | Pros | Cons |
-|--------|------|------|
-| **Shared only** | Simple, free | No clinic branding, Meta rate limits |
-| **BYO only** | Full branding | Setup complexity, clinic must have Meta Business account |
+| Option | Pros | Cons                                                                            |
+|--------|------|------                                                                           |
+| **Shared only** | Simple, free | No clinic branding, Meta rate limits                           |
+| **BYO only** | Full branding | Setup complexity, clinic must have Meta Business account         |
 | **Three modes (chosen)** | Flexible, caters to all clinic sizes | More code paths, more testing |
 
 ---
@@ -147,15 +147,15 @@ async reconcile() {
 
 ## Code Evidence
 
-| Claim | File |
-|-------|------|
+| Claim | File                                                                                                        |
+|-------|------                                                                                                       |
 | WhatsApp webhook ingress | `apps/api/src/domains/whatsapp/application/services/whatsapp-webhook-ingress.service.ts` |
-| Response handler | `apps/api/src/domains/whatsapp/application/services/response-handler.service.ts` |
-| Response parser | `apps/api/src/domains/whatsapp/application/services/patient-response-parser.helper.ts` |
-| Send message use case | `apps/api/src/domains/whatsapp/application/use-cases/send-message.use-case.ts` |
-| Reconciliation cron | `apps/api/src/domains/whatsapp/whatsapp-reconciliation.cron.ts` |
-| Staff notification | `apps/api/src/domains/whatsapp/application/services/staff-notification.service.ts` |
-| Template resolver | `apps/api/src/domains/whatsapp/core/services/template-resolver.service.ts` |
+| Response handler | `apps/api/src/domains/whatsapp/application/services/response-handler.service.ts`                 |
+| Response parser | `apps/api/src/domains/whatsapp/application/services/patient-response-parser.helper.ts`            |
+| Send message use case | `apps/api/src/domains/whatsapp/application/use-cases/send-message.use-case.ts`              |
+| Reconciliation cron | `apps/api/src/domains/whatsapp/whatsapp-reconciliation.cron.ts`                               |
+| Staff notification | `apps/api/src/domains/whatsapp/application/services/staff-notification.service.ts`             |
+| Template resolver | `apps/api/src/domains/whatsapp/core/services/template-resolver.service.ts`                      |
 
 ---
 

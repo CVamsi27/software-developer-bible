@@ -14,14 +14,14 @@
 
 The 30 files are organized into 6 category folders. Files in the same category build on each other — read them in order within a category, then move on.
 
-| Category                                                                 | Files | Why it matters                                                                              |
-| ------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------- |
-| [Execution & Scope](01-execution-and-scope/INDEX.md)                     | 6     | The "how JS runs" fundamentals — every interview tests these                                |
-| [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md)      | 3     | The OOP model of JavaScript — different from class-based languages                          |
-| [Async & Concurrency](03-async-concurrency/INDEX.md)                     | 4     | The hardest topic in JS — the event loop, promises, async/await                             |
+| Category                                                                 | Files | Why it matters                                                                                                    |
+| ------------------------------------------------------------------------ | ----: | -------------------------------------------------------------------------------------------                       |
+| [Execution & Scope](01-execution-and-scope/INDEX.md)                     | 6     | The "how JS runs" fundamentals — every interview tests these                                                      |
+| [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md)      | 3     | The OOP model of JavaScript — different from class-based languages                                                |
+| [Async & Concurrency](03-async-concurrency/INDEX.md)                     | 4     | The hardest topic in JS — the event loop, promises, async/await                                                   |
 | [Memory & Data](04-memory-and-data/INDEX.md)                             | 8     | Choosing the right collection, hash table internals, avoiding memory leaks, understanding GC                      |
-| [Functional Patterns](05-functional-patterns/INDEX.md)                   | 5     | The patterns you'll use daily: currying, composition, memoization, generators               |
-| [Modern JS (ES2022+) & Interview Prep](06-modern-and-interview/INDEX.md) | 5     | The newest features, Web Workers, DOM events, cross-tab communication, and 50+ interview Qs |
+| [Functional Patterns](05-functional-patterns/INDEX.md)                   | 5     | The patterns you'll use daily: currying, composition, memoization, generators                                     |
+| [Modern JS (ES2022+) & Interview Prep](06-modern-and-interview/INDEX.md) | 5     | The newest features, Web Workers, DOM events, cross-tab communication, and 50+ interview Qs                       |
 
 ---
 
@@ -84,15 +84,15 @@ The most-asked topic in senior JS interviews. JavaScript is single-threaded; und
 
 Choosing the right collection and avoiding memory leaks.
 
-| #   | File                                                                                  | Topics                                                                             | Read time   |
-| --: | ------                                                                                | --------                                                                           | ----------: |
-| 14  | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md)                        | Primitive vs reference, value/reference semantics, mutation gotchas                | 15 min      |
-| 15  | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what     | 20 min      |
-| 16  | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md)          | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls                 | 20 min      |
-| 17  | [Debounce](04-memory-and-data/10.1.4.04-debounce.md)                                  | Implementation, leading/trailing edge, real-world use cases (search input, resize) | 15 min      |
-| 18  | [Throttle](04-memory-and-data/10.1.4.05-throttle.md)                                  | Implementation, vs debounce, animation frame throttling, scroll handlers           | 15 min      |
-| 19  | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md)                          | Detached DOM, closures, circular references, detection, debugging                  | 25 min      |
-| 20  | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md)              | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min      |
+| #   | File                                                                                  | Topics                                                                             | Read time           |
+| --: | ------                                                                                | --------                                                                           | ----------:         |
+| 14  | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md)                        | Primitive vs reference, value/reference semantics, mutation gotchas                | 15 min              |
+| 15  | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what     | 20 min              |
+| 16  | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md)          | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls                 | 20 min              |
+| 17  | [Debounce](04-memory-and-data/10.1.4.04-debounce.md)                                  | Implementation, leading/trailing edge, real-world use cases (search input, resize) | 15 min              |
+| 18  | [Throttle](04-memory-and-data/10.1.4.05-throttle.md)                                  | Implementation, vs debounce, animation frame throttling, scroll handlers           | 15 min              |
+| 19  | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md)                          | Detached DOM, closures, circular references, detection, debugging                  | 25 min              |
+| 20  | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md)              | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min              |
 | 21  | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md)       | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 40 min      |
 
 ---

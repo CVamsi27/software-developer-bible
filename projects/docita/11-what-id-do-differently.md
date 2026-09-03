@@ -285,18 +285,18 @@ it('Clinic A cannot access Clinic B data via direct query', async () => {
 
 ## Priority Matrix
 
-| Improvement | Priority | Effort | Impact |
-|-------------|----------|--------|--------|
-| Event schema versioning | High | Low | Prevents migration bugs |
-| RLS policy testing (pgTAP) | High | Medium | Prevents data leaks |
-| Health check endpoints | High | Low | Faster incident detection |
+| Improvement | Priority | Effort | Impact                             |
+|-------------|----------|--------|--------                            |
+| Event schema versioning | High | Low | Prevents migration bugs       |
+| RLS policy testing (pgTAP) | High | Medium | Prevents data leaks     |
+| Health check endpoints | High | Low | Faster incident detection      |
 | Multi-tenancy integration tests | High | High | Prevents regressions |
-| Event-driven cross-domain | Medium | High | Better decoupling |
-| Build caching (Turborepo) | Medium | Low | Developer experience |
-| Correlation IDs | Medium | Medium | Better debugging |
-| DB connection pool tuning | Medium | Low | Reliability |
-| Payment provider abstraction | Low | Medium | Future-proofing |
-| Frontend form generation | Low | Medium | Less boilerplate |
+| Event-driven cross-domain | Medium | High | Better decoupling        |
+| Build caching (Turborepo) | Medium | Low | Developer experience      |
+| Correlation IDs | Medium | Medium | Better debugging                 |
+| DB connection pool tuning | Medium | Low | Reliability               |
+| Payment provider abstraction | Low | Medium | Future-proofing        |
+| Frontend form generation | Low | Medium | Less boilerplate           |
 
 ---
 

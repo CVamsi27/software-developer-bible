@@ -167,13 +167,13 @@ const row = await this.prisma.runUnrestricted(async () =>
 
 ## Alternatives Considered
 
-| Option | Pros | Cons |
-|--------|------|------|
-| **Separate database per clinic** | Maximum isolation | Operational overhead at 25+ clinics, can't do cross-clinic analytics |
-| **Schema-per-tenant** | Good isolation, shared DB | Migration complexity, schema proliferation |
-| **Shared schema + application filtering** | Simple | One missed filter = data leak |
+| Option | Pros | Cons                                                                                                                        |
+|--------|------|------                                                                                                                       |
+| **Separate database per clinic** | Maximum isolation | Operational overhead at 25+ clinics, can't do cross-clinic analytics                 |
+| **Schema-per-tenant** | Good isolation, shared DB | Migration complexity, schema proliferation                                              |
+| **Shared schema + application filtering** | Simple | One missed filter = data leak                                                          |
 | **Shared schema + RLS (chosen)** | Database-level guarantee, transparent to app | Connection pool complexity, Prisma integration challenges |
-| **Citus (distributed PostgreSQL)** | Horizontal scaling | Overkill at 25 clinics, adds operational complexity |
+| **Citus (distributed PostgreSQL)** | Horizontal scaling | Overkill at 25 clinics, adds operational complexity                               |
 
 ### Why Shared Schema + RLS
 
@@ -209,17 +209,17 @@ const row = await this.prisma.runUnrestricted(async () =>
 
 ## Code Evidence
 
-| Claim | File |
-|-------|------|
-| Tenant middleware (ALS) | `apps/api/src/shared/common/middleware/tenant.middleware.ts` |
+| Claim | File                                                                                         |
+|-------|------                                                                                        |
+| Tenant middleware (ALS) | `apps/api/src/shared/common/middleware/tenant.middleware.ts`               |
 | Tenant context interceptor | `apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts` |
-| RLS scope application | `apps/api/src/shared/modules/rls/apply-rls-scope.ts` |
-| Active TX storage | `apps/api/src/shared/modules/rls/active-tx.storage.ts` |
-| RLS routing extension | `packages/db/prisma/extensions/rls-routing.ts` |
-| Tenant guard | `apps/api/src/shared/modules/auth/guards/tenant.guard.ts` |
-| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` |
-| RLS rollout docs | `docs/compliance/RLS_ROLLOUT.md` |
-| CI boundary check | `scripts/checks/check-prisma-boundary.mjs` |
+| RLS scope application | `apps/api/src/shared/modules/rls/apply-rls-scope.ts`                         |
+| Active TX storage | `apps/api/src/shared/modules/rls/active-tx.storage.ts`                           |
+| RLS routing extension | `packages/db/prisma/extensions/rls-routing.ts`                               |
+| Tenant guard | `apps/api/src/shared/modules/auth/guards/tenant.guard.ts`                             |
+| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts`         |
+| RLS rollout docs | `docs/compliance/RLS_ROLLOUT.md`                                                  |
+| CI boundary check | `scripts/checks/check-prisma-boundary.mjs`                                       |
 
 ---
 

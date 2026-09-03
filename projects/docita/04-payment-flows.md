@@ -73,23 +73,23 @@ Clinics pay Docita for their subscription using a *separate* Razorpay merchant a
 
 **Separation enforcement:**
 
-| Aspect | Flow B (Patient → Clinic) | Flow C (Clinic → Docita) |
-|--------|--------------------------|-------------------------|
+| Aspect | Flow B (Patient → Clinic) | Flow C (Clinic → Docita)                                                    |
+|--------|--------------------------|-------------------------                                                     |
 | **Razorpay keys** | `CLINIC_INVOICE_PAYMENT_LINK_PROVIDER_TOKEN` | `DOCITA_PLATFORM_PAYMENT_LINK_PROVIDER_TOKEN` |
-| **Webhook endpoint** | `/api/billing/webhooks/razorpay` | `/api/subscriptions/webhooks/razorpay` |
-| **Domain** | `billing` | `subscriptions` |
-| **Merchant** | Clinic's Razorpay account | Docita's Razorpay account |
+| **Webhook endpoint** | `/api/billing/webhooks/razorpay` | `/api/subscriptions/webhooks/razorpay`                 |
+| **Domain** | `billing` | `subscriptions`                                                                         |
+| **Merchant** | Clinic's Razorpay account | Docita's Razorpay account                                             |
 
 ---
 
 ## Alternatives Considered
 
-| Option | Pros | Cons |
-|--------|------|------|
-| **Single Razorpay account** | Simple | All payments mixed, can't separate clinic vs Docita revenue |
+| Option | Pros | Cons                                                                                 |
+|--------|------|------                                                                                |
+| **Single Razorpay account** | Simple | All payments mixed, can't separate clinic vs Docita revenue   |
 | **Three separate accounts (chosen)** | Clear separation | More configuration, more webhook endpoints |
-| **Stripe instead of Razorpay** | Better DX, global | Not popular in India, higher fees for INR |
-| **Payment abstraction layer** | Could swap providers | Over-engineering at current scale |
+| **Stripe instead of Razorpay** | Better DX, global | Not popular in India, higher fees for INR       |
+| **Payment abstraction layer** | Could swap providers | Over-engineering at current scale             |
 
 ### Why Razorpay
 
@@ -132,14 +132,14 @@ Clinics pay Docita for their subscription using a *separate* Razorpay merchant a
 
 ## Code Evidence
 
-| Claim | File |
-|-------|------|
+| Claim | File                                                                                                       |
+|-------|------                                                                                                      |
 | Razorpay webhook handler | `apps/api/src/domains/billing/application/services/razorpay-invoice-webhook.service.ts` |
-| Invoice command service | `apps/api/src/domains/billing/application/services/invoices-command.service.ts` |
-| Payment session repository | `apps/api/src/domains/billing/core/repositories/payment-session.repository.ts` |
-| Subscription webhook handlers | `apps/api/src/domains/subscriptions/application/webhooks/razorpay/handlers/` |
-| Payment flow docs | `docs/product/PAYMENT_FLOWS.md` |
-| Payment gateway adapter | `apps/api/src/domains/payments/infrastructure/adapters/razorpay/` |
+| Invoice command service | `apps/api/src/domains/billing/application/services/invoices-command.service.ts`          |
+| Payment session repository | `apps/api/src/domains/billing/core/repositories/payment-session.repository.ts`        |
+| Subscription webhook handlers | `apps/api/src/domains/subscriptions/application/webhooks/razorpay/handlers/`       |
+| Payment flow docs | `docs/product/PAYMENT_FLOWS.md`                                                                |
+| Payment gateway adapter | `apps/api/src/domains/payments/infrastructure/adapters/razorpay/`                        |
 
 ---
 

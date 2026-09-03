@@ -41,7 +41,7 @@ Stage numbers are study order (`0`-`9`), not file IDs — read top to bottom.
 | 7   | MFA / Passkeys / WebAuthn   | [20.5.1.08-mfa-passkeys-webauthn.md](20.5.1.08-mfa-passkeys-webauthn.md)   | 45 min | TOTP mechanics (RFC 6238), SMS/SIM-swap weakness, WebAuthn ceremonies, passkey sync, AAL levels, recovery as weakest link       |
 | 8   | Authorization (RBAC / ABAC) | [20.5.1.09-rbac-abac.md](20.5.1.09-rbac-abac.md)                           | 45 min | RBAC vs ABAC vs ReBAC, scopes vs roles, policy engines, deny-by-default                                                         |
 | 9   | Interview Drills            | [20.5.1.10-interview-questions.md](20.5.1.10-interview-questions.md)       | 45 min | Every classic trap question + follow-ups                                                                                        |
-| 10  | ABAC Deep Dive              | [20.5.1.11-abac-access-control.md](20.5.1.11-abac-access-control.md)     | 35 min | Attribute-based policies, deny-overrides, policy engines, testing ABAC                                                           |
+| 10  | ABAC Deep Dive              | [20.5.1.11-abac-access-control.md](20.5.1.11-abac-access-control.md)     | 35 min | Attribute-based policies, deny-overrides, policy engines, testing ABAC                                                            |
 
 ---
 

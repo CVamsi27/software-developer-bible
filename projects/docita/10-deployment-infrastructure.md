@@ -8,14 +8,14 @@
 
 Docita runs on:
 
-| Component | Technology | Why |
-|-----------|-----------|-----|
-| **API + Worker** | Fly.io (sin region) | Simple deployment, auto-scaling |
+| Component | Technology | Why                                                     |
+|-----------|-----------|-----                                                     |
+| **API + Worker** | Fly.io (sin region) | Simple deployment, auto-scaling         |
 | **Frontend** | Cloudflare Workers (Static Assets) | Global CDN, zero server cost |
-| **Proxy** | Cloudflare Hono Worker | SPA routing + API proxy |
-| **Database** | AWS RDS PostgreSQL (ap-south-1) | Managed, HA, Indian region |
-| **Object Storage** | Cloudflare R2 | S3-compatible, no egress fees |
-| **External** | Razorpay, WhatsApp API, ZeptoMail, Sentry, OpenAI | |
+| **Proxy** | Cloudflare Hono Worker | SPA routing + API proxy                     |
+| **Database** | AWS RDS PostgreSQL (ap-south-1) | Managed, HA, Indian region      |
+| **Object Storage** | Cloudflare R2 | S3-compatible, no egress fees               |
+| **External** | Razorpay, WhatsApp API, ZeptoMail, Sentry, OpenAI |               |
 
 ---
 
@@ -33,13 +33,13 @@ fly.toml (API)                    fly.toml (Worker)
 
 ### Why Fly.io
 
-| Factor | Fly.io | AWS ECS | Railway | Render |
-|--------|--------|---------|---------|--------|
-| **Setup complexity** | Low | High | Low | Low |
-| **Cost (2GB RAM)** | ~$15/mo | ~$30/mo | ~$20/mo | ~$20/mo |
+| Factor | Fly.io | AWS ECS | Railway | Render                        |
+|--------|--------|---------|---------|--------                       |
+| **Setup complexity** | Low | High | Low | Low                       |
+| **Cost (2GB RAM)** | ~$15/mo | ~$30/mo | ~$20/mo | ~$20/mo          |
 | **Indian region** | sin (Singapore) | ap-south-1 (Mumbai) | No | No |
-| **Auto-scaling** | Yes | Yes | Yes | Yes |
-| **Docker support** | Native | Native | Native | Native |
+| **Auto-scaling** | Yes | Yes | Yes | Yes                            |
+| **Docker support** | Native | Native | Native | Native              |
 
 **Why not AWS ECS:** Higher operational complexity for a solo engineer. Fly.io's `fly deploy` is simpler than ECS task definitions, service discovery, and ALB configuration.
 
@@ -75,12 +75,12 @@ apps/app/api/index.ts (Hono proxy)
 
 ### Why Vite (Not Next.js)
 
-| Factor | Vite SPA | Next.js SSR |
-|--------|----------|-------------|
-| **Bundle size** | ~800KB gzip | ~3.5MB gzip |
-| **Cloudflare Free limit** | ✅ Under 3MB | ❌ Over 3MB |
-| **SEO** | Not needed (auth-gated) | Not needed (auth-gated) |
-| **Dev experience** | Sub-second HMR | Fast, but slower than Vite |
+| Factor | Vite SPA | Next.js SSR                                          |
+|--------|----------|-------------                                         |
+| **Bundle size** | ~800KB gzip | ~3.5MB gzip                              |
+| **Cloudflare Free limit** | ✅ Under 3MB | ❌ Over 3MB                     |
+| **SEO** | Not needed (auth-gated) | Not needed (auth-gated)              |
+| **Dev experience** | Sub-second HMR | Fast, but slower than Vite         |
 | **Deployment** | Static assets, zero server | Requires server (OpenNext) |
 
 **The tipping point:** Next.js 16 + OpenNext bundle was ~3.5 MB gzip, over Cloudflare's 3 MB Free limit. Every feature port increased bundle size with framework overhead rather than app code.
@@ -170,13 +170,13 @@ If packages/types/* changed → deploy all (shared types)
 
 ## Code Evidence
 
-| Claim | File |
-|-------|------|
-| Fly.io config | `fly.toml` |
-| Dockerfile | `apps/api/Dockerfile` |
-| Hono proxy | `apps/app/api/index.ts` |
-| GitHub Actions | `.github/workflows/` |
-| Prisma migrations | `packages/db/prisma/migrations/` |
+| Claim | File                                          |
+|-------|------                                         |
+| Fly.io config | `fly.toml`                            |
+| Dockerfile | `apps/api/Dockerfile`                    |
+| Hono proxy | `apps/app/api/index.ts`                  |
+| GitHub Actions | `.github/workflows/`                 |
+| Prisma migrations | `packages/db/prisma/migrations/`  |
 | Verification script | `scripts/verify-migrations.mjs` |
 
 ---

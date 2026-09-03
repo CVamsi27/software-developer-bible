@@ -16,11 +16,11 @@ Vertical scaling buys you months, not years. At real scale you need to know whic
 
 ## File Index
 
-| Order  | File                                              | Topics                                                                                                             | Read time   |
-| --   : | ------                                            | --------                                                                                                           | ----------: |
-| 01     | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, scaling levers in order           | 35 min      |
-| 02     | [Data Pipelines](30.3.4.02-data-pipelines.md)     | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability              | 30 min      |
-| 03     | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge caching strategy, PoPs, cache keys, invalidation (also: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | 30 min      |
+| Order  | File                                              | Topics                                                                                                             | Read time                              |
+| --   : | ------                                            | --------                                                                                                           | ----------:                            |
+| 01     | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, scaling levers in order           | 35 min                                 |
+| 02     | [Data Pipelines](30.3.4.02-data-pipelines.md)     | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability              | 30 min                                 |
+| 03     | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge caching strategy, PoPs, cache keys, invalidation (also: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | 30 min                                 |
 | 04     | [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md) | Shared vs separate schemas, tenant context propagation, RLS defense-in-depth, noise neighbors, per-tenant caching | 35 min      |
 
 ---

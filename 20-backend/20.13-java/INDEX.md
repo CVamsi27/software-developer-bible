@@ -1,8 +1,8 @@
 # Java — Index
 
-> **5 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
+> **6 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -18,13 +18,15 @@
 | OOP & Design | [OOP Principles, Interfaces & SOLID](20.13.02-java-oop-solid.md) | Encapsulation, inheritance, polymorphism, composition, SOLID |
 | Concurrency | [Concurrency & Multithreading](20.13.03-java-concurrency-multithreading.md) | Threads, synchronization, CompletableFuture, parallel streams, starvation |
 | Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 5, Mockito, test data builders, API/integration testing |
-| Interview | [Java Interview Questions](20.13.05-interview-questions.md) | The 20 questions most asked, with model answers |
+| Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | DI, starters, MVC, Spring Data JPA, security filter chain, actuator |
+| Interview | [Java Interview Questions](20.13.06-interview-questions.md) | The 20 questions most asked, with model answers |
+PLACEHOLDER-SHOULD-NOT-MATCH
 
 ---
 
 ## Read order
 
-Language Fundamentals → OOP & SOLID → Concurrency → Testing → Interview Questions. Concurrency builds on the language core (§1.13 multithreading basics) before going deep.
+Language Fundamentals → OOP & SOLID → Concurrency → Testing → **Spring Boot** → Interview Questions. Spring maps 1:1 onto the NestJS architecture (DI container, guards = filter chain, pipes = bean validation), so read it after the framework fundamentals; the interview bank comes last.
 
 ## See Also
 

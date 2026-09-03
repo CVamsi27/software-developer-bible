@@ -95,7 +95,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 4 | [RBAC/ABAC](20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md) | coarse vs fine-grained authz; policy engines |
 | Attacks: [XSS](20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md) · [CSRF](20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md) · [SQLi](20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md) · [API Top 10](20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | each attack ↔ its exact defense |  |
 | Hardening: [headers/CSP](20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md) · [STRIDE](20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) · [secrets](20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md) | threat-model any feature in 5 min |  |
-| Drill: [auth Q&A](20-backend/20.5-security/01-auth/20.5.1.10-interview-questions.md) + [full bank](20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md) | survive the follow-up traps |  |
+| Drill: [auth Q&A](20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md) + [full bank](20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md) | survive the follow-up traps |  |
 
 ### 2.5 Distributed backend & ops patterns
 | Order | Topic | Flow inside |

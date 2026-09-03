@@ -8,7 +8,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-794-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-795-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
@@ -73,7 +73,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 7 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 7 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA, EAS builds, OTA updates, store release, interview questions |
 
-### 20-backend — Backend (138 files in 10 sub-stacks)
+### 20-backend — Backend (139 files in 10 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -198,4 +198,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 794 files, 341K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; all sequences contiguous.
+*Last updated: September 2026 — 795 files, 341K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; all sequences contiguous.

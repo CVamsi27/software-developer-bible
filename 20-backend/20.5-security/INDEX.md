@@ -63,7 +63,7 @@ A complete 10-stage track in [01-auth](01-auth/INDEX.md). Read these in order â€
 | 7 | [MFA / Passkeys / WebAuthn](01-auth/20.5.1.08-mfa-passkeys-webauthn.md) | TOTP mechanics, SMS weaknesses, WebAuthn ceremonies, passkey sync, AAL levels, recovery | 45 min |
 | 8 | [RBAC / ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default | 45 min |
 
-Stages 9 = the auth question bank below ([drills](01-auth/20.5.1.10-interview-questions.md)); full flow table in the [auth INDEX](01-auth/INDEX.md).
+Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-questions.md)); full flow table in the [auth INDEX](01-auth/INDEX.md).
 
 ---
 
@@ -94,7 +94,7 @@ Stages 9 = the auth question bank below ([drills](01-auth/20.5.1.10-interview-qu
 
 | File | Contents |
 | -------------------------------------------------------------------------- | ----------------------------------------- |
-| [Auth questions](01-auth/20.5.1.10-interview-questions.md) | 40 auth-specific Q&A with follow-up traps |
+| [Auth questions](01-auth/20.5.1.11-interview-questions.md) | 40 auth-specific Q&A with follow-up traps |
 | [Full security bank](04-interview-drills/20.5.4.01-interview-questions.md) | 50+ curated security Q&A with answers |
 
 ---

@@ -2,9 +2,9 @@
 
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 138 files across 10 sub-stacks, organized by what you need to know in what order.
+> 139 files across 10 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-138-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-139-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -39,7 +39,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 9 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
-| 10 | [Java](20.13-java/INDEX.md) | 5 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, interview Q&A |
+| 10 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
 
 ---
 

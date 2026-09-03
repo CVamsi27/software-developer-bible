@@ -26,7 +26,7 @@ Each file follows a consistent structure:
 ## Files
 
 | # | File | Topic | Why It Matters |
-| --- | --------------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------ |
+| --- | --------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
 | 01 | [Architecture Decisions](01-architecture-decisions.md) | DDD, Zod-first, NestJS modules, monorepo | Foundation choices that shaped everything |
 | 02 | [Multi-Tenancy & RLS](02-multi-tenancy-rls.md) | 7-layer defense, AsyncLocalStorage, RLS | The hardest problem — data isolation in healthcare |
 | 03 | [Async Processing](03-async-processing.md) | Postgres queue, transactional outbox, worker | How we process jobs without Redis |
@@ -47,6 +47,7 @@ Each file follows a consistent structure:
 | 18 | [ABDM Integration](18-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
 | 19 | [Enterprise Contracts](19-enterprise-contracts.md) | True-up, prepay, member overrides, RLS bypass | Group deals — money at risk, surfaced early |
 | 20 | [Documents & Uploads](20-documents-and-uploads.md) | Storage providers, upload sessions, signed URLs | Every file — PHI-safe, provider-swappable, short TTLs |
+| 21 | [Clinical, Lab & Medical Coding](21-clinical-lab-and-medical-coding.md) | Lab order lifecycle, ICD/CPT sync, code search | The second clinical pillar — results gated by payment, codes that feed claims |
 
 ---
 

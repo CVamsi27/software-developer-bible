@@ -17,7 +17,7 @@
 | 3 | [Interview Process — Round-by-Round](#interview-process--round-by-round) | Round-by-round — what each round tests, format, duration, what gets you rejected, how to prep |
 | 4 | [Strategy — How to Prep, What to Skip, When to Apply](#strategy--how-to-prep-what-to-skip-when-to-apply) | The 80/20 — what to skip, when to start applying, comp strategy (US FAANG + India in-country), visa strategy (H1B / Blue Card) |
 | 5 | [Files in This Lane](#files-in-this-lane) | Current deliverables (with file counts) |
-| 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections-1-7 + 0) | Where to study (the 8 themed groups) |
+| 6 | [Cross-references to Core Sections (1-7 + 0)](#cross-references-to-core-sections) | Where to study (the 8 themed groups) |
 | 7 | [FAQ](#faq) | Common questions |
 | 8 | [Navigation](#navigation) | ← Previous · Home · Sibling Lane → |
 
@@ -309,7 +309,7 @@ If you can ship those, you can pass 70%+ of mid-tier loops.
 
 ---
 
-## Cross-references to Core Sections (1-7 + 0)
+## Cross-references to Core Sections
 
 These are the **where to study** sections. The reference topics above are the **what to be ready for** checklist.
 

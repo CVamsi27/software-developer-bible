@@ -20,7 +20,6 @@
 | Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 5, Mockito, test data builders, API/integration testing |
 | Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | DI, starters, MVC, Spring Data JPA, security filter chain, actuator |
 | Interview | [Java Interview Questions](20.13.06-interview-questions.md) | The 20 questions most asked, with model answers |
-PLACEHOLDER-SHOULD-NOT-MATCH
 
 ---
 

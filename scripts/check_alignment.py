@@ -333,21 +333,78 @@ def fix_tables(text):
 
 
 # ---------------------------------------------------------------------------
+# Strict box-pair verifier (check mode): pairs each box's ┌/└ borders by
+# (left wall, level) and flags trapezoids and content lines that end off the
+# box's wall. Catches drift inside diagrams the guarded fixer cannot touch.
+# ---------------------------------------------------------------------------
+def strict_flags(text):
+    """-> list of (line_no, message); [] when the file is straight."""
+    lines = text.split('\n')
+    issues = []
+    i, n = 0, len(lines)
+    while i < n:
+        if not any(ch in lines[i] for ch in BOXCHARS):
+            i += 1
+            continue
+        j = i
+        while j < n:
+            lj = lines[j]
+            if any(ch in lj for ch in BOXCHARS):
+                j += 1
+            elif lj.strip() == '':
+                k = j + 1
+                while k < n and lines[k].strip() == '':
+                    k += 1
+                j = k
+            else:
+                break
+        group = lines[i:j]
+        # skip side-by-side layouts (tee/grid chars, same-level corners on a line)
+        for l in group:
+            if any(ch in l for ch in SKIPCHARS):
+                break
+            pairs = corner_pairs(l)
+            lvls = [lv for _o, _c, _oc, _cc, lv in pairs]
+            if len(set(lvls)) != len(lvls):
+                break
+        else:
+            stack = {}
+            for idx, l in enumerate(group):
+                for o, c, oc, _cc, lvl in corner_pairs(l):
+                    key = (o, lvl)
+                    if oc == '┌':
+                        stack.setdefault(key, []).append((idx, c))
+                    elif oc == '└' and stack.get(key):
+                        top_idx, top_c = stack[key].pop()
+                        if top_c != c:
+                            issues.append((i + idx + 1,
+                                           f"trapezoid: top wall {top_c}, bottom wall {c}"))
+                        for k in range(top_idx + 1, idx):
+                            lk = group[k]
+                            pk = pipe_positions(lk)
+                            if not pk or len(pk) % 2 == 1 or pk[0] != o:
+                                continue
+                            rightmost = max([m for m, ch in enumerate(lk)
+                                             if ch in '│┐┘┤'], default=-1)
+                            if rightmost > 0 and rightmost != c:
+                                issues.append((i + k + 1,
+                                               f"content ends at {rightmost}, box wall {c}"))
+        i = j
+    return issues
+
+
 def process_file(path, fix):
     with open(path, encoding='utf-8') as f:
         orig = f.read()
     text = orig
-    box_groups = box_files = 0
-    text, g = fix_boxes(text)
-    box_groups += g
-    text, t = fix_tables(text)
-    if text == orig:
-        return 0
-    box_changed = text != orig
-    if fix:
+    text, _g = fix_boxes(text)
+    text, _t = fix_tables(text)
+    if fix and text != orig:
         with open(path, 'w', encoding='utf-8') as f:
             f.write(text)
-    return 1
+    if text != orig:
+        return 1
+    return len(strict_flags(text))  # 0 = clean; >0 = guarded drift (not auto-fixable)
 
 
 def main():
@@ -360,15 +417,26 @@ def main():
                  for r, _, fs in os.walk('.')
                  if '.git' not in r and 'node_modules' not in r
                  for f in fs if f.endswith('.md')]
-    bad = []
+    fixable = []
+    drifted = []
     for p in sorted(paths):
-        if process_file(p, fix):
-            bad.append(p)
-    if not fix:
-        print(f"{len(bad)} file(s) with misaligned boxes/tables"
-              + ("" if not bad else ":\n  " + "\n  ".join(bad)))
-        sys.exit(1 if bad else 0)
-    print(f"{len(bad)} file(s) fixed" if bad else "Nothing to fix — all aligned.")
+        n = process_file(p, fix)
+        if n == 1:
+            fixable.append(p)
+        elif n > 1:
+            drifted.append((p, n))
+    if fix:
+        print(f"{len(fixable)} file(s) fixed" if fixable
+              else "Nothing to fix — all aligned.")
+        if drifted:
+            print(f"\n{len(drifted)} file(s) with guarded drift (not auto-fixed):")
+            for p, n in drifted:
+                print(f"  {n} issue(s)  {p}")
+        return
+    bad = fixable + [p for p, _ in drifted]
+    print(f"{len(bad)} file(s) with misaligned boxes/tables"
+          + ("" if not bad else ":\n  " + "\n  ".join(bad)))
+    sys.exit(1 if bad else 0)
 
 
 if __name__ == '__main__':

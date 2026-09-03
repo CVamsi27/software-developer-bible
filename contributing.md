@@ -122,6 +122,8 @@ Before contributing, review the existing files in the relevant section to unders
 - Use **kebab-case** for slugs and directory names
 - Numeric IDs are unique repo-wide and sort correctly lexicographically; sequences are contiguous (no gaps)
 - Verify with: `python3 scripts/check_structure.py`
+- Verify ASCII diagrams/tables are aligned with: `python3 scripts/check_alignment.py` (exit 1 on drift)
+  — auto-fix with `python3 scripts/check_alignment.py --fix`
 
 ---
 

@@ -26,7 +26,7 @@ Each file follows a consistent structure:
 ## Files
 
 | # | File | Topic | Why It Matters |
-| --- | -------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------- |
+| --- | --------------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------ |
 | 01 | [Architecture Decisions](01-architecture-decisions.md) | DDD, Zod-first, NestJS modules, monorepo | Foundation choices that shaped everything |
 | 02 | [Multi-Tenancy & RLS](02-multi-tenancy-rls.md) | 7-layer defense, AsyncLocalStorage, RLS | The hardest problem — data isolation in healthcare |
 | 03 | [Async Processing](03-async-processing.md) | Postgres queue, transactional outbox, worker | How we process jobs without Redis |
@@ -38,6 +38,13 @@ Each file follows a consistent structure:
 | 09 | [Subscription System](09-subscription-system.md) | Tier gating, overage, referrals | SaaS monetization — how clinics pay Docita |
 | 10 | [Deployment & Infrastructure](10-deployment-infrastructure.md) | Fly.io, Cloudflare, migrations, cold starts | Production reliability at small-team scale |
 | 11 | [What I'd Do Differently](11-what-id-do-differently.md) | Retrospective, tech debt, future improvements | Honest assessment — what's not perfect |
+| 12 | [Insurance Claims](12-insurance-claims.md) | Claim state machine, versioning, readiness gate | Regulated lifecycle — every move audited, no clobbering |
+| 13 | [IPD (Inpatient)](13-ipd-inpatient.md) | Ward/bed management, admit/transfer/discharge | A new resource — beds — whose state must never drift |
+| 14 | [Inventory](14-inventory.md) | Movement ledger, atomic stock decrement | Clinic stock can never go negative or silently diverge |
+| 15 | [Analytics & Dashboards](15-analytics-and-dashboards.md) | Factories, timezone bucketing, snapshots | Reports must be timezone-correct and historically stable |
+| 16 | [Doctors, Verification & Public Booking](16-doctors-verification-and-public-booking.md) | NMC verification, slots, referral funnel | The acquisition loop — regulated doctors, anonymous patients |
+| 17 | [Patient Portal](17-patient-portal.md) | OTP login, patient-scoped reads, adherence | PHI access where the session is the patient |
+| 18 | [ABDM Integration](18-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
 
 ---
 

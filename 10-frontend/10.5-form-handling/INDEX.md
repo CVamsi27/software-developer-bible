@@ -29,7 +29,7 @@ Three main form libraries — pick the right one for the job.
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 30 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode in 2026 | Legacy codebases; new projects should use RHF | 20 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode since 2024 | Legacy codebases; new projects should use RHF | 20 min |
 | 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 25 min |
 
 **Decision:**

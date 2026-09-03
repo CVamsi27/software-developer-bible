@@ -304,7 +304,7 @@ it('Clinic A cannot access Clinic B data via direct query', async () => {
 
 Despite the tech debt, certain decisions aged well:
 
-1. **DDD architecture** — 28 domains without coupling. This would be chaos without clear boundaries.
+1. **DDD architecture** — 29 domains without coupling. This would be chaos without clear boundaries.
 2. **Zod-first types** — zero type drift. Every other approach would have accumulated drift.
 3. **Postgres-as-queue** — zero infrastructure cost, transactional enqueue. Still the right call at our scale.
 4. **7-layer defense** — zero data leaks in production. The depth was worth the complexity.

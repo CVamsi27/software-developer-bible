@@ -57,7 +57,7 @@ domains/appointments/
 
 | Option | Pros | Cons |
 | -------------------------------- | ------------------------------- | -------------------------------------- |
-| **Flat folder structure** | Simple, fast to start | Becomes unmaintainable at 28 domains |
+| **Flat folder structure** | Simple, fast to start | Becomes unmaintainable at 29 domains |
 | **Feature-based (by UI route)** | Co-locates related code | Business logic mixed with presentation |
 | **DDD (chosen)** | Clear boundaries, testable core | More boilerplate per domain |
 | **Hexagonal (ports & adapters)** | Maximum testability | Overkill for our team size |
@@ -85,13 +85,13 @@ domains/appointments/
 
 ### What Worked
 
-- **28 domains without coupling** — each domain can be modified independently
-- **Test coverage** — 705 unit tests, mostly on `core/` logic
+- **29 domains without coupling** — each domain can be modified independently
+- **Test coverage** — ~5,077 non-e2e test cases repo-wide (measured 2026-09-03), API domain suites the largest share
 - **CI enforcement** — boundary violations caught at build time, not code review
 
 ### What Failed
 
-- **NestJS module wiring** — every domain needs a `Module` class that imports all providers. With 28 domains, this is ~500 lines of pure wiring code. We solved it with a `DOMAIN_MODULES` array in `app.module.ts`.
+- **NestJS module wiring** — every domain needs a `Module` class that imports all providers. With 29 domains, this is ~500 lines of pure wiring code. We solved it with a `DOMAIN_MODULES` array in `app.module.ts`.
 
 - **Cross-domain queries** — sometimes you genuinely need data from another domain (e.g., invoice generation needs patient data). We use port interfaces (`PatientPersistencePort`) instead of direct imports. But it's still tempting to shortcut.
 
@@ -114,7 +114,7 @@ domains/appointments/
 
 ### Interview Script (60 seconds)
 
-> "I structured Docita using DDD with 4 layers per domain: core (entities, repository interfaces), application (use-cases, DTOs), infrastructure (Prisma adapters), and presentation (controllers). The key rule: only infrastructure imports PrismaClient. This means business logic is testable without a database — we have 705 unit tests on pure logic. The trade-off is more boilerplate, but at 28 domains, the boundary enforcement pays for itself. A CI check catches any boundary violations at build time."
+> "I structured Docita using DDD with 4 layers per domain: core (entities, repository interfaces), application (use-cases, DTOs), infrastructure (Prisma adapters), and presentation (controllers). The key rule: only infrastructure imports PrismaClient. This means business logic is testable without a database — we have ~5,077 non-e2e test cases repo-wide (measured 2026-09-03). The trade-off is more boilerplate, but at 29 domains, the boundary enforcement pays for itself. A CI check catches any boundary violations at build time."
 
 ---
 

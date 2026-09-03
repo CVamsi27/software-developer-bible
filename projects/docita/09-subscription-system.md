@@ -15,7 +15,7 @@ Docita is a SaaS product. Clinics pay monthly subscriptions based on tier:
 | **Pro** | ₹1,499/mo | WhatsApp, analytics, multi-doctor |
 | **Enterprise** | Custom | API access, custom integrations, SLA |
 
-**The challenge:** Feature gating must be enforced at every API endpoint without duplicating logic across 28 domains.
+**The challenge:** Feature gating must be enforced at every API endpoint without duplicating logic across 29 domains.
 
 ---
 

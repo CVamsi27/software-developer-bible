@@ -11,7 +11,7 @@ Docita serves 25+ clinics from a single PostgreSQL database. Each clinic's data 
 **The scale of the problem:**
 
 - 149 Prisma models, most with a `clinicId` field
-- 95 API routes, each needing tenant scoping
+- 640 API endpoints across 130 controllers, each needing tenant scoping
 - Multiple developer workflows adding new queries daily
 - Background workers running without HTTP request context
 
@@ -57,7 +57,7 @@ export function getClinicIdOrFail(): string {
 }
 ```
 
-**Why AsyncLocalStorage:** The alternative is passing `clinicId` as a parameter to every function. At 28 domains × ~50 repository methods, that's 1,400 places where a missed parameter = data leak. ALS makes it implicit.
+**Why AsyncLocalStorage:** The alternative is passing `clinicId` as a parameter to every function. At 29 domains × ~50 repository methods, that's ~1,450 places where a missed parameter = data leak. ALS makes it implicit.
 
 **The risk:** `setTimeout` loses ALS context. A detached promise running after the request finishes has no tenant context. We have a CI check (`check-detached-promises.mjs`) that flags any `setTimeout` or detached `Promise` in the codebase.
 

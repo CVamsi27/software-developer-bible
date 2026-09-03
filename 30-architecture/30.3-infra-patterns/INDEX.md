@@ -15,9 +15,9 @@
 | Category | Folder | Files | Why it matters |
 | -------------------- | ---------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------ |
 | Liveness & Lifecycle | [01-liveness-lifecycle/](01-liveness-lifecycle/INDEX.md) | 1 | Health checks + graceful shutdown — the contract with your orchestrator |
-| Failure & Recovery | [02-failure-and-recovery/](02-failure-and-recovery/INDEX.md) | 5 | Resilience overview, retry discipline, idempotency keys, feature flags & kill switches, backup strategy & restore drills |
+| Failure & Recovery | [02-failure-and-recovery/](02-failure-and-recovery/INDEX.md) | 6 | Resilience overview, retry discipline, idempotency keys, feature flags & kill switches, backup strategy & restore drills |
 | Coordination | [03-coordination/](03-coordination/INDEX.md) | 1 | Leader election & consensus — who runs the cron |
-| Data at Scale | [04-data-at-scale/](04-data-at-scale/INDEX.md) | 3 | Database scaling, data pipelines, CDN architecture |
+| Data at Scale | [04-data-at-scale/](04-data-at-scale/INDEX.md) | 4 | Database scaling, data pipelines, CDN architecture, multi-tenant SaaS |
 | Shipping & Evolution | [05-shipping-and-evolution/](05-shipping-and-evolution/INDEX.md) | 4 | Zero-downtime deployments, technical debt strategy, cost engineering & FinOps, data retention & archival |
 
 ---

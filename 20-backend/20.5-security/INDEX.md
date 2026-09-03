@@ -2,9 +2,9 @@
 
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/API keys → sessions → tokens → OAuth → SSO/SAML → MFA/passkeys → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
-> 20 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and 50+ curated questions.
+> 21 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and 50+ curated questions.
 
-[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![Read time](https://img.shields.io/badge/read%20time-12%2B%20hrs-blueviolet)](#)
@@ -15,11 +15,11 @@
 
 ## Topic Categories
 
-The 20 files are organized into 4 categories, each with its own INDEX. Read in order within each.
+The 21 files are organized into 4 categories, each with its own INDEX. Read in order within each.
 
 | Category | Files | Why it matters |
 | -------------------------------------------------------------- | ----: | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Auth (the deep-dive)](01-auth/INDEX.md) | 10 | The complete 10-stage auth track: fundamentals → Basic/API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC/ABAC + drills |
+| [Auth (the deep-dive)](01-auth/INDEX.md) | 11 | The complete 11-stage auth track: fundamentals → Basic/API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC/ABAC + drills |
 | [Attacks & Defense](02-attacks-and-defense/INDEX.md) | 4 | XSS, CSRF, SQLi, API Top 10 — what can go wrong |
 | [Hardening & Operations](03-hardening-and-operations/INDEX.md) | 5 | Encryption/TLS primer, headers/CSP, STRIDE threat modeling, secrets, vulnerability management |
 | [Interview Drills](04-interview-drills/INDEX.md) | 1 | Full security bank; pairs with the auth-track question set |

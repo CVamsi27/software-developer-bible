@@ -18,7 +18,7 @@ The 18 content files classify into 5 categories, each with its own INDEX — the
 | -------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | [Service Topology](01-service-topology/INDEX.md) | 4 | Service discovery, API gateway, service mesh, strangler fig — how services find each other and evolve safely |
 | [Communication & Messaging](02-communication-and-messaging/INDEX.md) | 6 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
-| [Data & Consistency](03-data-and-consistency/INDEX.md) | 5 | Saga, distributed transactions, event sourcing, CQRS, database decomposition — atomicity and truth across service boundaries |
+| [Data & Consistency](03-data-and-consistency/INDEX.md) | 6 | Saga, distributed transactions, event sourcing, CQRS, database decomposition — atomicity and truth across service boundaries |
 | [Resilience](04-resilience/INDEX.md) | 2 | Circuit breaker, bulkhead — surviving partial failure |
 | [Interview Drills](05-interview-drills/INDEX.md) | 1 | 50+ curated Q&A |
 

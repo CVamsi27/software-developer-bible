@@ -1,11 +1,11 @@
 # Platform Stack
 
-> **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, Reverse Proxy** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, CDN, Reverse Proxy, IaC** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 88 files across 11 sub-stacks — the "how it runs" layer of the bible.
+> 92 files across 12 sub-stacks — the "how it runs" layer of the bible.
 
-[![Files](https://img.shields.io/badge/files-90-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-11-green)](#the-11-sub-stacks-in-study-order)
+[![Files](https://img.shields.io/badge/files-92-blue)](../INDEX.md)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-12-green)](#the-12-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
@@ -24,7 +24,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## The 11 Sub-Stacks (in study order)
+## The 12 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 | ----: | -------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,11 +34,12 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 4 | [Observability](40.4-observability/INDEX.md) | 11 | Logging, monitoring, tracing, OpenTelemetry, error tracking, SLI/SLO/SLA, alerting |
 | 5 | [Build Tools](40.5-build-tools/INDEX.md) | 10 | Webpack, Vite, Turbopack, Rspack, ESBuild, SWC, Babel |
 | 6 | [Git Advanced](40.6-git-advanced/INDEX.md) | 10 | Internals (objects/refs/packfiles), branching, rebase, hooks, archaeology, LFS/partial clones, signed commits |
-| 7 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 8 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, durable execution (Temporal/Inngest) |
+| 7 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, durable execution (Temporal/Inngest) |
 | 8 | [Monorepo](40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel, versioning & publishing strategies |
 | 9 | [Twelve-Factor App](40.9-twelve-factor/INDEX.md) | 1 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
 | 10 | [CDN & Edge](40.10-cdn/INDEX.md) | 3 | CDN caching strategies, invalidation, edge functions, multi-CDN steering, media optimization at the edge, PHI-at-edge considerations |
 | 11 | [Reverse Proxy](40.11-reverse-proxy/INDEX.md) | 1 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, sendfile vs proxy_pass, upstream LB algorithms, health checks, TLS termination, buffering, rate limiting, proxy_cache, zero-downtime reload, nginx vs HAProxy vs Envoy vs ALB |
+| 12 | [IaC & Terraform](40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, brownfield import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
 
 ---
 
@@ -53,6 +54,7 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 ### Delivery & Operations (read second)
 - **CI/CD** — build, test, deploy pipelines
 - **Observability** — logs, metrics, traces, errors
+- **IaC & Terraform** — how the infrastructure itself is provisioned and changed
 - **Serverless & Edge** — alternative deployment models
 - **CDN** — caching at the edge
 - **Reverse Proxy** — nginx at the front door (TLS, LB, limits)
@@ -75,7 +77,8 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 3. **CI/CD TL;DR + GitHub Actions** (1.5 hrs) — must know
 4. **Observability TL;DR + OTel** (1.5 hrs) — must know
 5. **Git Advanced TL;DR** (1 hr) — must know
-6. Skim: Build Tools, Serverless, Monorepo, 12-Factor
+6. **IaC TL;DR + plan/apply + state** (45 min) — for platform/DevOps-flavored JDs
+7. Skim: Build Tools, Serverless, Monorepo, 12-Factor
 
 ### Path B — DevOps-focused, deep dive (2-3 weeks)
 1. Docker: full (4-5 hrs)

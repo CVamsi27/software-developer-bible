@@ -12,11 +12,11 @@
 
 ## Topic Categories
 
-The 23 files are organized into 5 categories, each with its own INDEX.
+The 24 files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
 | ---------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------ |
-| [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md) | 5 | How Postgres works under the hood — every backend interview starts here |
+| [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md) | 6 | How Postgres works under the hood — every backend interview starts here |
 | [Querying & Optimization](02-querying-and-optimization/INDEX.md) | 5 | Indexes, joins, execution plans, window functions, JSONB — the day-to-day performance work |
 | [Transactions & Replication](03-transactions-and-replication/INDEX.md) | 4 | MVCC, transactions, locking, deadlocks — the hard part |
 | [ORM & Access](04-orm-and-access/INDEX.md) | 3 | Prisma fundamentals and advanced patterns, plus the access-layer decision tree |
@@ -108,7 +108,7 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 ## Suggested Study Order
 
 ### Path A — Backend new, prepping for senior (2-3 weeks)
-1. PostgreSQL Foundations (5 files, ~2.5 hrs)
+1. PostgreSQL Foundations (6 files, ~2.5 hrs)
 2. Querying & Optimization (5 files, ~2 hrs)
 3. Transactions & Replication (4 files, ~2 hrs)
 4. ORM landscape + Prisma basics (2 hrs)

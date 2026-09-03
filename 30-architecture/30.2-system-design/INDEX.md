@@ -1,10 +1,10 @@
 # System Design — Index
 
-> **48 files** — split into **theory** (21 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (27 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
+> **52 files** — split into **theory** (21 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
 > Study in three passes: **I. Theory** (CAP → consistency → scaling levers) → **II. The method** (how-to-approach framework) → **III. Case studies** (pick by JD domain).
 
-[![Files](https://img.shields.io/badge/files-48-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-52-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -21,7 +21,7 @@ The two sub-folders classify into 6 conceptual categories — the "GoF classific
 | **Performance & Delivery** | [01-theory/](01-theory/INDEX.md) | 3 | Caching patterns, queues & async, outbox & CDC |
 | **Reliability & Topology** | [01-theory/](01-theory/INDEX.md) | 4 | Failure modes, resilience deep-dive, multi-region, architecture patterns |
 | **The Method + Drills** | [01-theory/](01-theory/INDEX.md) | 3 | How-to-approach framework, interview questions, probabilistic data structures |
-| **Applied Case Studies** | [02-case-studies/](02-case-studies/INDEX.md) | 27 | URL shortener → Netflix, Uber, WhatsApp, payment gateway, typeahead, metrics pipeline, job scheduler, ID generator — classified by domain |
+| **Applied Case Studies** | [02-case-studies/](02-case-studies/INDEX.md) | 31 | URL shortener → Netflix, Uber, WhatsApp, payment gateway, typeahead, metrics pipeline, job scheduler, ID generator — classified by domain |
 
 ---
 
@@ -48,7 +48,7 @@ INTERVIEW DRILLS ←────────────────────
 | Folder | Files | What it is | When to read |
 | -------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | [01-theory/](01-theory/INDEX.md) | 21 | Foundational concepts (14, in order) + meta guides (6) + transport deep-dive: approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region, TCP/UDP fundamentals | **Read first** — every case study depends on these |
-| [02-case-studies/](02-case-studies/INDEX.md) | 27 | Applied examples across 11 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation, platform/telemetry | After theory — match the JD's domain |
+| [02-case-studies/](02-case-studies/INDEX.md) | 31 | Applied examples across 11 domains: web fundamentals, storage/sync, messaging, streaming, social, geo, fintech, healthcare, search, automation, platform/telemetry | After theory — match the JD's domain |
 
 ---
 

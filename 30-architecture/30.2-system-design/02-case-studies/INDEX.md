@@ -2,7 +2,7 @@
 
 > **31 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
-[![Files](https://img.shields.io/badge/files-27-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-31-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

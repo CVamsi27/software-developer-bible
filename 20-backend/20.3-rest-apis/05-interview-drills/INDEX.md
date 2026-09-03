@@ -9,9 +9,9 @@
 
 ## Files
 
-| Order  | File                                                    | Topics                                                                     | Read time   |
-| --   : | ------                                                  | --------                                                                   | ----------: |
-| 01     | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | 2 hrs       |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | 2 hrs |
 
 ---
 
@@ -23,8 +23,8 @@
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the drills, then cite real answers:
 
-| Drill                          | Docita evidence                                                                                                      |
+| Drill | Docita evidence |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| "Offset vs cursor pagination?" | `apps/api/src/shared/common/pagination.helper.ts` - keyset implementation to walk through                            |
-| "Make POST retries safe"       | `apps/api/src/shared/modules/idempotency/idempotency.interceptor.ts` - header-driven replay window                   |
-| "Design webhook delivery"      | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - signing + retry/backoff in one service |
+| "Offset vs cursor pagination?" | `apps/api/src/shared/common/pagination.helper.ts` - keyset implementation to walk through |
+| "Make POST retries safe" | `apps/api/src/shared/modules/idempotency/idempotency.interceptor.ts` - header-driven replay window |
+| "Design webhook delivery" | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - signing + retry/backoff in one service |

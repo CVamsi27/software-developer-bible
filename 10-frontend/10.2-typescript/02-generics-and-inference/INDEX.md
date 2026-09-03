@@ -10,12 +10,12 @@
 
 ## Files
 
-| Order  | File                                                | Topics                                                                                                                                    | Read time   |
-| --   : | ------                                              | --------                                                                                                                                  | ----------: |
-| 01     | [Generics](10.2.2.01-generics.md)                   | Generic functions, constraints, default type parameters, conditional generics                                                             | 25 min      |
-| 02     | [Infer](10.2.2.02-infer.md)                         | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types                                          | 25 min      |
-| 03     | [Advanced Generics](10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns                                                                | 30 min      |
-| 04     | [Type Variance](10.2.2.04-type-variance.md)         | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | 25 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [Generics](10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | 25 min |
+| 02 | [Infer](10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 25 min |
+| 03 | [Advanced Generics](10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | 30 min |
+| 04 | [Type Variance](10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | 25 min |
 
 ---
 
@@ -29,11 +29,11 @@ Generics → Infer → Advanced Generics → Type Variance.
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
-| Topic in this category          | Docita evidence                                                                                                         |
+| Topic in this category | Docita evidence |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Generic functions & constraints | `packages/data-access/src/core/use-api-query.ts` - `<T, TError>` query wrapper using `Omit<UseQueryOptions, …>`         |
-| Generic component contracts     | `packages/ui/src/components/data-display/data-table.types.ts` - `DataTableColumn<T>` with typed `cell`/`sort` callbacks |
-| Two-type-param inference        | `packages/utils/src/async/map-with-concurrency.ts` - `<T, R>` inferred end-to-end through the worker pool               |
+| Generic functions & constraints | `packages/data-access/src/core/use-api-query.ts` - `<T, TError>` query wrapper using `Omit<UseQueryOptions, …>` |
+| Generic component contracts | `packages/ui/src/components/data-display/data-table.types.ts` - `DataTableColumn<T>` with typed `cell`/`sort` callbacks |
+| Two-type-param inference | `packages/utils/src/async/map-with-concurrency.ts` - `<T, R>` inferred end-to-end through the worker pool |
 
 ---
 

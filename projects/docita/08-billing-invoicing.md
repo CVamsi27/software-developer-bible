@@ -121,15 +121,15 @@ async getCollectionsByMode(clinicId: string, query: CollectionsByModeQuery) {
 
 ## Code Evidence
 
-| Claim | File                                                                                         |
-|-------|------                                                                                        |
-| Invoice service | `apps/api/src/domains/billing/application/services/invoices.service.ts`            |
-| Invoice command | `apps/api/src/domains/billing/application/services/invoices-command.service.ts`    |
-| Tax calculator | `apps/api/src/domains/billing/core/services/tax-calculator.service.ts`              |
-| Invoice entity | `apps/api/src/domains/billing/core/entities/invoice.entity.ts`                      |
+| Claim | File |
+| ----------------- | -------------------------------------------------------------------------------- |
+| Invoice service | `apps/api/src/domains/billing/application/services/invoices.service.ts` |
+| Invoice command | `apps/api/src/domains/billing/application/services/invoices-command.service.ts` |
+| Tax calculator | `apps/api/src/domains/billing/core/services/tax-calculator.service.ts` |
+| Invoice entity | `apps/api/src/domains/billing/core/entities/invoice.entity.ts` |
 | Invoice status VO | `apps/api/src/domains/billing/core/value-objects/invoice-status.value-object.ts` |
-| Invoice PDF | `apps/api/src/domains/billing/application/services/invoice-pdf-document.ts`            |
-| Daybook | `apps/api/src/domains/billing/application/services/invoices-query.service.ts`              |
+| Invoice PDF | `apps/api/src/domains/billing/application/services/invoice-pdf-document.ts` |
+| Daybook | `apps/api/src/domains/billing/application/services/invoices-query.service.ts` |
 
 ---
 

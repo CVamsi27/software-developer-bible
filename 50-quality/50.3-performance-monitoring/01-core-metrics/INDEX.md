@@ -10,19 +10,19 @@
 
 ## The file
 
-| #   | File                                            | Topics                                                                                      | Read time   |
-| --: | ------                                          | --------                                                                                    | ----------: |
-| 01  | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 30 min |
 
 ---
 
 ## Memorize the thresholds
 
-| Metric                              | What it measures                                    | Good    |
+| Metric | What it measures | Good |
 | ----------------------------------- | --------------------------------------------------- | ------- |
-| **LCP** (Largest Contentful Paint)  | Loading — when the main content paints              | ≤ 2.5s  |
+| **LCP** (Largest Contentful Paint) | Loading — when the main content paints | ≤ 2.5s |
 | **INP** (Interaction to Next Paint) | Responsiveness — worst-case interaction delay (p75) | ≤ 200ms |
-| **CLS** (Cumulative Layout Shift)   | Visual stability — unexpected layout movement       | ≤ 0.1   |
+| **CLS** (Cumulative Layout Shift) | Visual stability — unexpected layout movement | ≤ 0.1 |
 
 ---
 
@@ -49,9 +49,9 @@ Everything downstream (Performance APIs, profiling, RUM, budgets) exists to move
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                         | Docita evidence                                                                             |
+| Topic | Docita evidence |
 | ----------------------------- | ------------------------------------------------------------------------------------------- |
-| Web Vitals ingestion service  | `apps/api/src/shared/modules/monitoring/monitoring/services/web-vitals-metrics.service.ts`  |
-| Metrics aggregation           | `apps/api/src/shared/modules/monitoring/monitoring/services/metrics-aggregation.service.ts` |
-| Field-data reporting endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts`                         |
-| Vitals budget check           | `scripts/perf/check-web-vitals-budget.mjs`                                                  |
+| Web Vitals ingestion service | `apps/api/src/shared/modules/monitoring/monitoring/services/web-vitals-metrics.service.ts` |
+| Metrics aggregation | `apps/api/src/shared/modules/monitoring/monitoring/services/metrics-aggregation.service.ts` |
+| Field-data reporting endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts` |
+| Vitals budget check | `scripts/perf/check-web-vitals-budget.mjs` |

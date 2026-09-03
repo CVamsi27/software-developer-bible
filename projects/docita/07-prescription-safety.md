@@ -104,11 +104,11 @@ Doctor creates prescription → Event emitted → Queue job enqueued
 
 ### Alternatives Considered
 
-| Option | Pros | Cons                                                                       |
-|--------|------|------                                                                      |
-| **Synchronous PDF** | Simple, immediate URL | Blocks HTTP, slow UX                         |
+| Option | Pros | Cons |
+| ---------------------------- | ---------------------- | ---------------------------------- |
+| **Synchronous PDF** | Simple, immediate URL | Blocks HTTP, slow UX |
 | **Async via queue (chosen)** | Non-blocking, reliable | 2-3 second delay, WebSocket needed |
-| **Pre-generated templates** | Fast | Can't customize per-prescription                      |
+| **Pre-generated templates** | Fast | Can't customize per-prescription |
 
 ---
 
@@ -136,13 +136,13 @@ Doctor creates prescription → Event emitted → Queue job enqueued
 
 ## Code Evidence
 
-| Claim | File                                                                                                              |
-|-------|------                                                                                                             |
+| Claim | File |
+| ---------------------------- | -------------------------------------------------------------------------------------------------- |
 | Prescription command service | `apps/api/src/domains/prescriptions/application/services/prescriptions-command.service.ts` |
-| PDF orchestrator | `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts`     |
-| PDF processor | `apps/api/src/domains/prescriptions/application/services/prescription-pdf.processor.ts`                   |
-| Prescription entity | `apps/api/src/domains/prescriptions/core/entities/prescription.entity.ts`                           |
-| Template management | `apps/api/src/domains/prescriptions/prescription-templates/`                                        |
+| PDF orchestrator | `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` |
+| PDF processor | `apps/api/src/domains/prescriptions/application/services/prescription-pdf.processor.ts` |
+| Prescription entity | `apps/api/src/domains/prescriptions/core/entities/prescription.entity.ts` |
+| Template management | `apps/api/src/domains/prescriptions/prescription-templates/` |
 
 ---
 

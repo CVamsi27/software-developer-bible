@@ -26,13 +26,13 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 
 ## The 5 files
 
-| #   | File                                                                                | Topics                                                                                                         | Read time   |
-| --: | ------                                                                              | --------                                                                                                       | ----------: |
-| 01  | [Performance APIs](50.3.2.01-performance-apis.md)                                   | `performance` API, Navigation Timing, Resource Timing, PerformanceObserver                                     | 25 min      |
-| 02  | [Profiling Tools](50.3.2.02-profiling-tools.md)                                     | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts                                         | 30 min      |
-| 03  | [Lighthouse CI](50.3.2.03-lighthouse-ci.md)                                         | Automated audits, budgets, score tracking, CI/CD integration                                                   | 25 min      |
-| 04  | [Real User Monitoring](50.3.2.04-real-user-monitoring.md)                           | RUM, `web-vitals` library, `sendBeacon`, CrUX, segmentation                                                    | 25 min      |
-| 05  | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [Performance APIs](50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, PerformanceObserver | 25 min |
+| 02 | [Profiling Tools](50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | 30 min |
+| 03 | [Lighthouse CI](50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | 25 min |
+| 04 | [Real User Monitoring](50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX, segmentation | 25 min |
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | 30 min |
 
 ---
 
@@ -63,9 +63,9 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                                 | Docita evidence                                                      |
+| Topic | Docita evidence |
 | ------------------------------------- | -------------------------------------------------------------------- |
-| Server-side measurement endpoint      | `apps/api/src/shared/modules/performance/performance.controller.ts`  |
+| Server-side measurement endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts` |
 | Slow-query telemetry (RUM for the DB) | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` |
-| Query-cost guard at the data layer    | `apps/api/src/shared/common/extensions/query-budget.extension.ts`    |
-| Lab baseline tooling                  | `scripts/perf/perf-baseline.mjs`                                     |
+| Query-cost guard at the data layer | `apps/api/src/shared/common/extensions/query-budget.extension.ts` |
+| Lab baseline tooling | `scripts/perf/perf-baseline.mjs` |

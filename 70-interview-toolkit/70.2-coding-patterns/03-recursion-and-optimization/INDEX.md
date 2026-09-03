@@ -10,11 +10,11 @@
 
 ## The 3 patterns
 
-| #   | File                                                    | When to recognize                                                  | Read time   |
-| --: | ------                                                  | -------------------                                                | ----------: |
-| 01  | [Backtracking](70.2.3.01-backtracking.md)               | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | 30 min      |
-| 02  | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack"   | 60 min      |
-| 03  | [Bit Manipulation](70.2.3.03-bit-manipulation.md)       | "XOR tricks, bitmask subset enumeration, popcount, single number"  | 25 min      |
+| # | File | When to recognize | Read time |
+| --: | ------ | ------------------- | ----------: |
+| 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | 30 min |
+| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | 60 min |
+| 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "XOR tricks, bitmask subset enumeration, popcount, single number" | 25 min |
 
 ---
 

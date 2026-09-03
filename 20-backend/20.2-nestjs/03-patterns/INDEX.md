@@ -9,10 +9,10 @@
 
 ## Files
 
-| Order  | File                                        | Topics                                                                      | Read time   |
-| --   : | ------                                      | --------                                                                    | ----------: |
-| 01     | [CQRS](20.2.3.01-cqrs.md)                   | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs`       | 30 min      |
-| 02     | [Microservices](20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [CQRS](20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
+| 02 | [Microservices](20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
 
 ---
 
@@ -29,11 +29,11 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 
 Docita ships neither `@nestjs/cqrs` nor `@nestjs/microservices` — both patterns appear in pragmatic form:
 
-| Topic              | Docita evidence                                                                                                                                         |
+| Topic | Docita evidence |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CQRS-lite commands | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts` - command-style use case against repository ports, no cqrs bus |
-| Query / read side  | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` - cached analytics projections act as read models                             |
-| Domain events      | `apps/api/src/shared/common/events/event.service.ts` - typed EventEmitter2 bus stands in for message-pattern transports                                 |
+| Query / read side | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` - cached analytics projections act as read models |
+| Domain events | `apps/api/src/shared/common/events/event.service.ts` - typed EventEmitter2 bus stands in for message-pattern transports |
 
 TCP/Redis/Kafka/gRPC transports not used; would introduce them when a domain extracts into its own deployable — the transactional outbox + Postgres queue already form the async spine.
 

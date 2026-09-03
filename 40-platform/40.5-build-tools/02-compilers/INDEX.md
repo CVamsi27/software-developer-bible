@@ -16,10 +16,10 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 ## File Index
 
-| Order  | File                                      | Topics                                                                               | Read time   |
-| --   : | ------                                    | --------                                                                             | ----------: |
-| 01     | [Babel](40.5.2.01-babel.md)               | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 25 min      |
-| 02     | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded         | 25 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 25 min |
+| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | 25 min |
 
 ---
 
@@ -40,9 +40,9 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — compiles TypeScript for real.
 
-| Topic                         | Docita evidence                                                                     |
+| Topic | Docita evidence |
 | ----------------------------- | ----------------------------------------------------------------------------------- |
-| Shared TS config as a package | `packages/typescript-config` centralizes compiler options; apps/projects extend it  |
-| Type-check as a build gate    | Turbo `check-types` task with dependency ordering; Vite builds depend on it passing |
-| Astro check                   | Landing app type-checks via `astro check` in its own pipeline                       |
-| Babel / SWC specifics         | Not hand-configured — they arrive embedded inside Vite/Astro toolchains             |
+| Shared TS config as a package | `packages/typescript-config` centralizes compiler options; apps/projects extend it |
+| Type-check as a build gate | Turbo `check-types` task with dependency ordering; Vite builds depend on it passing |
+| Astro check | Landing app type-checks via `astro check` in its own pipeline |
+| Babel / SWC specifics | Not hand-configured — they arrive embedded inside Vite/Astro toolchains |

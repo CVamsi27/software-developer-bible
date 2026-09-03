@@ -22,10 +22,10 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 ## The files
 
-| #   | File                                                                                    | Topics                                                                                                                 | Read time   |
-| --: | ------                                                                                  | --------                                                                                                               | ----------: |
-| 01  | [Testing Overview](50.1.1.01-testing-overview.md)                                       | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test                                  | 30 min      |
-| 02  | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 30 min |
+| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | 30 min |
 
 ---
 
@@ -54,10 +54,10 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                                    | Docita evidence                                                                                               |
+| Topic | Docita evidence |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Testing strategy doc                     | `docs/testing/TESTING.md`                                                                                     |
-| Co-located unit tests                    | 482 `*.spec.ts` files beside their source across `apps/api/src`                                               |
+| Testing strategy doc | `docs/testing/TESTING.md` |
+| Co-located unit tests | 482 `*.spec.ts` files beside their source across `apps/api/src` |
 | Deterministic time (injected clock port) | `apps/api/src/shared/common/ports/clock.port.ts` + `apps/api/src/shared/modules/time/system-clock.service.ts` |
-| Test data factories                      | `apps/api/src/test-utils/factories.ts`                                                                        |
-| E2E layer with Playwright                | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`)                      |
+| Test data factories | `apps/api/src/test-utils/factories.ts` |
+| E2E layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |

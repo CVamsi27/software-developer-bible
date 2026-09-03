@@ -43,12 +43,12 @@ export class QueueService {
 
 ### Alternatives Considered
 
-| Option | Pros | Cons                                                                     |
-|--------|------|------                                                                    |
-| **Sequential numbers** | Simple, familiar | Race conditions under concurrent access      |
-| **UUID-based tokens** | Unique | Too long for display (e.g., "a1b2c3d4")                 |
+| Option | Pros | Cons |
+| ------------------------------- | ---------------------------- | --------------------------------------- |
+| **Sequential numbers** | Simple, familiar | Race conditions under concurrent access |
+| **UUID-based tokens** | Unique | Too long for display (e.g., "a1b2c3d4") |
 | **Hash-prefix tokens (chosen)** | Unique, short, deterministic | Slightly less intuitive |
-| **External queue system** | Feature-rich | Extra infrastructure, overkill                |
+| **External queue system** | Feature-rich | Extra infrastructure, overkill |
 
 ---
 
@@ -175,16 +175,16 @@ cancel(id, clinicId)                        // Follow-up cancelled
 
 ## Code Evidence
 
-| Claim | File                                                                                                           |
-|-------|------                                                                                                          |
-| Queue service | `apps/api/src/domains/appointments/application/services/queue.service.ts`                              |
-| Queue command | `apps/api/src/domains/appointments/application/services/queue-command.service.ts`                      |
-| Appointment entity | `apps/api/src/domains/appointments/core/entities/appointment.entity.ts`                           |
-| Scheduling rules | `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts`    |
+| Claim | File |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| Queue service | `apps/api/src/domains/appointments/application/services/queue.service.ts` |
+| Queue command | `apps/api/src/domains/appointments/application/services/queue-command.service.ts` |
+| Appointment entity | `apps/api/src/domains/appointments/core/entities/appointment.entity.ts` |
+| Scheduling rules | `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts` |
 | Create appointment use case | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts` |
 | Start consultation use case | `apps/api/src/domains/appointments/application/use-cases/start-consultation.use-case.ts` |
-| Follow-up service | `apps/api/src/domains/appointments/application/services/follow-up.service.ts`                      |
-| Appointment status VO | `apps/api/src/domains/appointments/core/value-objects/appointment-status.value-object.ts`      |
+| Follow-up service | `apps/api/src/domains/appointments/application/services/follow-up.service.ts` |
+| Appointment status VO | `apps/api/src/domains/appointments/core/value-objects/appointment-status.value-object.ts` |
 
 ---
 

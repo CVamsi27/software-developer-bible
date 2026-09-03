@@ -28,17 +28,17 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ## The 9 Sub-Stacks (in study order)
 
-| Order | Sub-stack                                                           | Files | Topics                                                                                                                                                                      |
+| Order | Sub-stack | Files | Topics |
 | ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1     | [Node.js](20.1-node.js/INDEX.md)                                    | 11    | Event loop, streams, clustering, web streams, child processes, test runner                                                                                                  |
-| 2     | [NestJS](20.2-nestjs/INDEX.md)                                      | 15    | Modules, DI, guards, pipes, interceptors, CQRS, microservices                                                                                                               |
-| 3     | [REST APIs](20.3-rest-apis/INDEX.md)                                | 17    | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model                                                  |
-| 4     | [Database](20.4-database/INDEX.md)                                  | 20    | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories)                                                                                        |
-| 5     | [Auth & Security](20.5-security/INDEX.md)                           | 15    | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
-| 6     | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 17    | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture                             |
-| 7     | [GraphQL](20.7-graphql/INDEX.md)                                    | 8     | Schema design, queries/mutations, Apollo Server, performance, security                                                                                                      |
-| 8     | [Caching](20.8-caching/INDEX.md)                                    | 3     | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns                                                                                   |
-| 9     | [AI Engineering](20.12-ai-engineering/INDEX.md)                     | 4     | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance                                                                           |
+| 1 | [Node.js](20.1-node.js/INDEX.md) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
+| 2 | [NestJS](20.2-nestjs/INDEX.md) | 15 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 17 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 4 | [Database](20.4-database/INDEX.md) | 20 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
+| 5 | [Auth & Security](20.5-security/INDEX.md) | 15 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
+| 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 17 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
+| 7 | [GraphQL](20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
+| 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
+| 9 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 
 ---
 

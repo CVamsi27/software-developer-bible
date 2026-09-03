@@ -10,12 +10,12 @@
 
 ## The files
 
-| #   | File                                                                                    | Topics                                                                                                                                                         | Read time   |
-| --: | ------                                                                                  | --------                                                                                                                                                       | ----------: |
-| 01  | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md)                                     | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters                                                                                          | 25 min      |
-| 02  | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs                          | 30 min      |
-| 03  | [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md)                                 | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math, NAT types                                           | 30 min      |
-| 04  | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md)                      | Artillery WS scenarios (connect rate, churn, throughput), ordering/backpressure assertions, killing Redis mid-stream, soak tests for fd leaks, CI smoke suites | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | 25 min |
+| 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | 30 min |
+| 03 | [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math, NAT types | 30 min |
+| 04 | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios (connect rate, churn, throughput), ordering/backpressure assertions, killing Redis mid-stream, soak tests for fd leaks, CI smoke suites | 30 min |
 
 ---
 
@@ -46,9 +46,9 @@ Subscriptions (02) build on that gateway foundation; WebRTC (03) needs signaling
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                                        | Docita evidence                                                                                           |
+| Topic | Docita evidence |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| NestJS gateways                              | `apps/api/src/websockets/notifications.gateway.ts`, `payment.websocket.gateway.ts`                        |
+| NestJS gateways | `apps/api/src/websockets/notifications.gateway.ts`, `payment.websocket.gateway.ts` |
 | Shared base class (template-method paradigm) | `apps/api/src/websockets/base-websocket.gateway.ts` — auth + rate-limit plumbing, gateways own room joins |
-| WS auth guard                                | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.ts` (+ its spec)                                 |
-| Realtime testing reality                     | only `ws-jwt-auth.guard.spec.ts` exists — no gateway specs yet (_honest gap_)                             |
+| WS auth guard | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.ts` (+ its spec) |
+| Realtime testing reality | only `ws-jwt-auth.guard.spec.ts` exists — no gateway specs yet (_honest gap_) |

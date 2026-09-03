@@ -12,23 +12,23 @@
 
 ## Topic Categories
 
-| Category            | File                                                          | Why it matters                                                       |
+| Category | File | Why it matters |
 | ------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Patterns & Strategy | [Caching Deep Dive](20.8.01-caching-deep-dive.md)             | When to use what — the 6 patterns, invalidation, stampede prevention |
-| Redis Fundamentals  | [Redis Fundamentals](20.8.02-redis-fundamentals.md)           | Data structures, basic patterns, pub/sub                             |
-| Advanced Redis      | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit           |
+| Patterns & Strategy | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention |
+| Redis Fundamentals | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures, basic patterns, pub/sub |
+| Advanced Redis | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit |
 
 ---
 
 ## The Decision Table (memorize this)
 
-| Read/write profile             | Pattern                            | Why                                      |
+| Read/write profile | Pattern | Why |
 | ------------------------------ | ---------------------------------- | ---------------------------------------- |
-| Read-heavy, stale-tolerant     | Cache-aside + TTL + jitter         | Simplest correct default                 |
-| Read-heavy, needs fresh writes | Write-through                      | Cache always consistent; write latency ↑ |
-| Write-heavy analytics          | Write-behind (batch flush)         | Throughput ↑; risk window on crash       |
-| Hot key / thundering herd      | Lock single-flight + early refresh | Stampede defense                         |
-| Cross-instance coordination    | Redlock (with caveats) / DB lease  | Correctness > availability of lock       |
+| Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Simplest correct default |
+| Read-heavy, needs fresh writes | Write-through | Cache always consistent; write latency ↑ |
+| Write-heavy analytics | Write-behind (batch flush) | Throughput ↑; risk window on crash |
+| Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
+| Cross-instance coordination | Redlock (with caveats) / DB lease | Correctness > availability of lock |
 
 ---
 
@@ -54,11 +54,11 @@ Need to cache data?
 
 ## File Index
 
-| #   | File                                                          | Topics                                                                                                                                       | Read time   |
-| --: | ------                                                        | --------                                                                                                                                     | ----------: |
-| 1   | [Caching Deep Dive](20.8.01-caching-deep-dive.md)             | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching     | 45 min      |
-| 2   | [Redis Fundamentals](20.8.02-redis-fundamentals.md)           | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min      |
-| 3   | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices                                                       | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 45 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 30 min |
 
 ---
 
@@ -98,12 +98,12 @@ Need to cache data?
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
-| Topic                  | Docita evidence                                                                                                  |
+| Topic | Docita evidence |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Global cache module    | `apps/api/src/cache/cache.module.ts` - @nestjs/cache-manager registered globally: TTL 300s, max 500 entries      |
+| Global cache module | `apps/api/src/cache/cache.module.ts` - @nestjs/cache-manager registered globally: TTL 300s, max 500 entries |
 | Tag-based invalidation | `apps/api/src/shared/modules/services/tagged-cache.service.ts` - tag→key maps invalidate whole groups atomically |
-| LRU primitive          | `apps/api/src/shared/common/utils/lru-cache.ts` - capacity+TTL in-process LRU for read-heavy lookups             |
-| Response caching       | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET caching through CACHE_MANAGER    |
-| Short-TTL flag cache   | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - 30s resolved-flag TTLs bound staleness    |
+| LRU primitive | `apps/api/src/shared/common/utils/lru-cache.ts` - capacity+TTL in-process LRU for read-heavy lookups |
+| Response caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET caching through CACHE_MANAGER |
+| Short-TTL flag cache | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - 30s resolved-flag TTLs bound staleness |
 
 The backend store is in-memory today (`CACHE_BACKEND=memory`; CI guard `scripts/checks/check-cache-redis-required.mjs` pins the future Redis swap), so Redlock/Lua/Streams chapters: _no direct docita implementation yet._

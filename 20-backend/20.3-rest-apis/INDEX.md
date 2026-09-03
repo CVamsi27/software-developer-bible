@@ -14,13 +14,13 @@
 
 The 19 content files are organized into 5 categories, each with its own INDEX.
 
-| Category                                                                  | Files | Why it matters                                                                                                                           |
+| Category | Files | Why it matters |
 | ------------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [Design & Contract](01-design-and-contract/INDEX.md)                      | 5     | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified                                   |
-| [HTTP Mechanics](02-http-mechanics/INDEX.md)                              | 4     | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake                                                       |
-| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 5     | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks — the contract details clients feel daily         |
-| [Edge & Scale](04-edge-and-scale/INDEX.md)                                | 4     | Rate limiting, API gateway, BFF, authentication — surviving traffic; auth pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
-| [Interview Drills](05-interview-drills/INDEX.md)                          | 1     | Curated Q&A                                                                                                                              |
+| [Design & Contract](01-design-and-contract/INDEX.md) | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
+| [HTTP Mechanics](02-http-mechanics/INDEX.md) | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
+| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 5 | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks — the contract details clients feel daily |
+| [Edge & Scale](04-edge-and-scale/INDEX.md) | 4 | Rate limiting, API gateway, BFF, authentication — surviving traffic; auth pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
+| [Interview Drills](05-interview-drills/INDEX.md) | 1 | Curated Q&A |
 
 ---
 
@@ -40,27 +40,27 @@ principles → methods    pagination → error design   rate limiting → gatewa
 
 ## The Study Order
 
-| Pass | #                                                                           | File                                                                                                   | Topics                                                                                          |
+| Pass | # | File | Topics |
 | ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| I    | 01                                                                          | [API Design Patterns](01-design-and-contract/20.3.1.01-api-design-patterns.md)                         | Resource naming, consistency, evolution                                                         |
-| I    | 02                                                                          | [REST Principles](01-design-and-contract/20.3.1.02-rest-principles.md)                                 | Stateless, uniform interface, constraints                                                       |
-| I    | 03                                                                          | [HTTP Methods](02-http-mechanics/20.3.2.01-http-methods.md)                                            | GET/POST/PUT/PATCH/DELETE semantics, idempotency                                                |
-| I    | 04                                                                          | [Status Codes](02-http-mechanics/20.3.2.02-status-codes.md)                                            | 2xx/4xx/5xx families, when to use which                                                         |
-| I    | 05                                                                          | [Versioning](01-design-and-contract/20.3.1.03-versioning.md)                                           | URL vs header vs query, deprecation policy                                                      |
-| II   | 06                                                                          | [Pagination](03-payloads-errors-integration/20.3.3.01-pagination.md)                                   | Offset vs cursor vs keyset — deep dive                                                          |
-| II   | 07                                                                          | [Long-Running API Operations](03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md) | `202 Accepted`, operation resources, polling vs webhooks, idempotent resubmission, cancellation |
-| II   | 08                                                                          | [File Upload APIs](03-payloads-errors-integration/20.3.3.04-file-upload-apis.md)                       | Multipart streaming vs presigned S3 direct, resumable uploads, virus-scan gates                 |
-| II   | 09                                                                          | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md)                                        | Auth schemes for APIs; pairs with [auth track](../20.5-security/01-auth/INDEX.md)               |
-| II   | 10                                                                          | [Rate Limiting](04-edge-and-scale/20.3.4.01-rate-limiting.md)                                          | Algorithms (token bucket, sliding window), distributed limits                                   |
-| II   | 11                                                                          | [CORS](02-http-mechanics/20.3.2.03-cors.md)                                                            | Preflight, headers, credentials                                                                 |
-| II   | 12                                                                          | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md)             | RFC 7807 problem details, validation errors                                                     |
-| II   | 13                                                                          | [Webhooks](03-payloads-errors-integration/20.3.3.05-webhooks.md)                                       | Delivery, HMAC verification, retry, DLQ, idempotency                                            |
-| II   | 14                                                                          | [HTTP Caching](02-http-mechanics/20.3.2.04-http-caching.md)                                            | ETags, Cache-Control, revalidation                                                              |
-| III  | 15                                                                          | [REST Maturity Model](01-design-and-contract/20.3.1.04-rest-maturity-model.md)                         | Richardson L0–L3, HATEOAS                                                                       |
-| III  | 16                                                                          | [OpenAPI / Swagger](01-design-and-contract/20.3.1.05-openapi-swagger.md)                               | Spec-first design, codegen                                                                      |
-| III  | 17                                                                          | [API Gateway](04-edge-and-scale/20.3.4.02-api-gateway.md)                                              | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md)                 |
-| III  | 18                                                                          | [BFF](04-edge-and-scale/20.3.4.03-bff.md)                                                              | Backend-for-frontend pattern                                                                    |
-| 19   | [Interview Questions](05-interview-drills/20.3.5.01-interview-questions.md) | Curated Q&A                                                                                            |                                                                                                 |
+| I | 01 | [API Design Patterns](01-design-and-contract/20.3.1.01-api-design-patterns.md) | Resource naming, consistency, evolution |
+| I | 02 | [REST Principles](01-design-and-contract/20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints |
+| I | 03 | [HTTP Methods](02-http-mechanics/20.3.2.01-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency |
+| I | 04 | [Status Codes](02-http-mechanics/20.3.2.02-status-codes.md) | 2xx/4xx/5xx families, when to use which |
+| I | 05 | [Versioning](01-design-and-contract/20.3.1.03-versioning.md) | URL vs header vs query, deprecation policy |
+| II | 06 | [Pagination](03-payloads-errors-integration/20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive |
+| II | 07 | [Long-Running API Operations](03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md) | `202 Accepted`, operation resources, polling vs webhooks, idempotent resubmission, cancellation |
+| II | 08 | [File Upload APIs](03-payloads-errors-integration/20.3.3.04-file-upload-apis.md) | Multipart streaming vs presigned S3 direct, resumable uploads, virus-scan gates |
+| II | 09 | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/01-auth/INDEX.md) |
+| II | 10 | [Rate Limiting](04-edge-and-scale/20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits |
+| II | 11 | [CORS](02-http-mechanics/20.3.2.03-cors.md) | Preflight, headers, credentials |
+| II | 12 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors |
+| II | 13 | [Webhooks](03-payloads-errors-integration/20.3.3.05-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency |
+| II | 14 | [HTTP Caching](02-http-mechanics/20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation |
+| III | 15 | [REST Maturity Model](01-design-and-contract/20.3.1.04-rest-maturity-model.md) | Richardson L0–L3, HATEOAS |
+| III | 16 | [OpenAPI / Swagger](01-design-and-contract/20.3.1.05-openapi-swagger.md) | Spec-first design, codegen |
+| III | 17 | [API Gateway](04-edge-and-scale/20.3.4.02-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) |
+| III | 18 | [BFF](04-edge-and-scale/20.3.4.03-bff.md) | Backend-for-frontend pattern |
+| 19 | [Interview Questions](05-interview-drills/20.3.5.01-interview-questions.md) | Curated Q&A |  |
 
 ---
 

@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order  | File                                                    | Topics                             | Read time   |
-| --   : | ------                                                  | --------                           | ----------: |
-| 01     | [Interview Questions](10.2.5.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs       |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [Interview Questions](10.2.5.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
 
 ---
 
@@ -22,11 +22,11 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 
 Practice the question bank against real artifacts:
 
-| Topic in this category                  | Docita evidence                                                                                  |
+| Topic in this category | Docita evidence |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Schema-first typing drills              | `packages/types/src/shared/users/roles.ts` - enums, `z.infer`, and `Record` maps to reason about |
-| `satisfies` / literal narrowing puzzles | `packages/types/src/billing/tier.ts` - const arrays checked against union types                  |
-| Strictness trivia made concrete         | `packages/typescript-config/base.json` - every strict flag from the questions, in a real config  |
+| Schema-first typing drills | `packages/types/src/shared/users/roles.ts` - enums, `z.infer`, and `Record` maps to reason about |
+| `satisfies` / literal narrowing puzzles | `packages/types/src/billing/tier.ts` - const arrays checked against union types |
+| Strictness trivia made concrete | `packages/typescript-config/base.json` - every strict flag from the questions, in a real config |
 
 ---
 

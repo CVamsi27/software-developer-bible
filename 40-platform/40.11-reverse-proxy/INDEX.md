@@ -12,9 +12,9 @@
 
 ## The File
 
-| #   | File                                                                       | Topics                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Read time   |
-| --: | ------                                                                     | --------                                                                                                                                                                                                                                                                                                                                                                                                                                                        | ----------: |
-| 01  | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | 45 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | 45 min |
 
 ---
 
@@ -53,9 +53,9 @@
 
 Where [docita](https://github.com/CVamsi27/docita) meets reverse proxies — plainly: **no self-managed nginx exists**; the proxy is consumed, not operated.
 
-| Topic                           | Docita evidence                                                                                                                          |
+| Topic | Docita evidence |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| TLS termination (managed)       | Twice: Cloudflare edge, then Fly's router (`http_service.force_https = true`) — zero nginx config owned by me                            |
-| Trusting the proxy layer        | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client IPs from CF headers; ADR 0014 restricts ingress to CF ranges |
-| Proxy behaviors I still own     | Timeouts/budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed        |
-| nginx/HAProxy/Envoy ops stories | _No direct docita implementation yet._                                                                                                   |
+| TLS termination (managed) | Twice: Cloudflare edge, then Fly's router (`http_service.force_https = true`) — zero nginx config owned by me |
+| Trusting the proxy layer | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client IPs from CF headers; ADR 0014 restricts ingress to CF ranges |
+| Proxy behaviors I still own | Timeouts/budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed |
+| nginx/HAProxy/Envoy ops stories | _No direct docita implementation yet._ |

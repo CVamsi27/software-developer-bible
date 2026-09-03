@@ -10,13 +10,13 @@
 
 ## The 5 patterns
 
-| #   | File                                                                              | When to recognize                                                                  | Read time   |
-| --: | ------                                                                            | -------------------                                                                | ----------: |
-| 01  | [Heap](70.2.4.01-heap.md)                                                         | "Top K, K-way merge, median of stream, scheduling"                                 | 25 min      |
-| 02  | [Monotonic Stack](70.2.4.02-monotonic-stack.md)                                   | "Next greater/smaller element, largest rectangle in histogram, daily temperatures" | 30 min      |
-| 03  | [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md)                       | "LRU cache, sliding window max (deque), min stack, valid parentheses"              | 30 min      |
-| 04  | [Segment Tree](70.2.4.04-segment-tree.md)                                         | "Range sum/min/max query with point updates"                                       | 45 min      |
-| 05  | [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sampling.md) | "K-th largest without sorting, random sample from a stream"                        | 25 min      |
+| # | File | When to recognize | Read time |
+| --: | ------ | ------------------- | ----------: |
+| 01 | [Heap](70.2.4.01-heap.md) | "Top K, K-way merge, median of stream, scheduling" | 25 min |
+| 02 | [Monotonic Stack](70.2.4.02-monotonic-stack.md) | "Next greater/smaller element, largest rectangle in histogram, daily temperatures" | 30 min |
+| 03 | [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md) | "LRU cache, sliding window max (deque), min stack, valid parentheses" | 30 min |
+| 04 | [Segment Tree](70.2.4.04-segment-tree.md) | "Range sum/min/max query with point updates" | 45 min |
+| 05 | [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sampling.md) | "K-th largest without sorting, random sample from a stream" | 25 min |
 
 ---
 

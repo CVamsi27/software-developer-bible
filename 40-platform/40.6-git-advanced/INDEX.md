@@ -12,15 +12,15 @@
 
 ## Topic Categories
 
-| Category                                   | Files | Why it matters                                                          |
+| Category | Files | Why it matters |
 | ------------------------------------------ | ----: | ----------------------------------------------------------------------- |
-| [Internals](#internals)                    | 1     | Objects, refs, packfiles — the mental model behind every command        |
-| [Branching & History](#branching--history) | 2     | Branching strategies + rebase/cherry-pick — the day-to-day              |
-| [Automation](#automation)                  | 1     | Git hooks, Husky, commitlint — enforce standards                        |
-| [Advanced Commands](#advanced-commands)    | 2     | Bisect, reflog, worktree, patches — the power tools                     |
-| [Investigation](#investigation)            | 1     | Code archaeology — finding who/when/why                                 |
-| [Scale & Security](#scale--security)       | 2     | LFS, partial clones, signed commits — repos that stay fast and provable |
-| [Interview Prep](#interview-prep)          | 1     | 50+ Qs                                                                  |
+| [Internals](#internals) | 1 | Objects, refs, packfiles — the mental model behind every command |
+| [Branching & History](#branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
+| [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
+| [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
+| [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
+| [Scale & Security](#scale--security) | 2 | LFS, partial clones, signed commits — repos that stay fast and provable |
+| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
 
 ---
 
@@ -28,9 +28,9 @@
 
 Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
-| #   | File                                                                                        | Topics                                                                                                                                                                   | When to read                       | Read time   |
-| --: | ------                                                                                      | --------                                                                                                                                                                 | --------------                     | ----------: |
-| 01  | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 30 min      |
+| # | File | Topics | When to read | Read time |
+| --: | ------ | -------- | -------------- | ----------: |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 30 min |
 
 ---
 
@@ -38,10 +38,10 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 How your team organizes work.
 
-| #   | File                                                    | Topics                                                           | When to use                   | Read time   |
-| --: | ------                                                  | --------                                                         | -------------                 | ----------: |
-| 02  | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team  | 30 min      |
-| 03  | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md)   | Interactive rebase, conflict resolution, cherry-pick workflows   | Linear history, porting fixes | 25 min      |
+| # | File | Topics | When to use | Read time |
+| --: | ------ | -------- | ------------- | ----------: |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 30 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 25 min |
 
 **Decision:**
 
@@ -57,9 +57,9 @@ What branching model?
 
 ## Automation
 
-| #   | File                              | Topics                                                          | Read time   |
-| --: | ------                            | --------                                                        | ----------: |
-| 04  | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 25 min |
 
 ---
 
@@ -67,18 +67,18 @@ What branching model?
 
 The power tools.
 
-| #   | File                                                  | Topics                                                                                         | Read time   |
-| --: | ------                                                | --------                                                                                       | ----------: |
-| 05  | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min      |
-| 06  | [Patch & Bundle](40.6.06-patch-and-bundle.md)         | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow                         | 20 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 30 min |
+| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 20 min |
 
 ---
 
 ## Investigation
 
-| #   | File                                            | Topics                                                                       | Read time   |
-| --: | ------                                          | --------                                                                     | ----------: |
-| 07  | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 25 min |
 
 ---
 
@@ -86,18 +86,18 @@ The power tools.
 
 Keeping large repositories fast and history trustworthy.
 
-| #   | File                                                                                  | Topics                                                                                                                                                     | Read time   |
-| --: | ------                                                                                | --------                                                                                                                                                   | ----------: |
-| 08  | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md)      | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 25 min      |
-| 09  | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context            | 20 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 25 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 20 min |
 
 ---
 
 ## Interview Prep
 
-| #   | File                                                  | Topics                             | Read time   |
-| --: | ------                                                | --------                           | ----------: |
-| 10  | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs     |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 
@@ -147,9 +147,9 @@ Keeping large repositories fast and history trustworthy.
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — automates Git for real.
 
-| Topic                    | Docita evidence                                                                                                                                                                                                       |
+| Topic | Docita evidence |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Husky pre-commit         | `.husky/pre-commit` — fast lint pass on staged changes only (heavy checks deferred)                                                                                                                                   |
+| Husky pre-commit | `.husky/pre-commit` — fast lint pass on staged changes only (heavy checks deferred) |
 | Husky pre-push as a gate | `.husky/pre-push` runs ~12 cheap standard gates with `--enforce` (jscpd clones, i18n coverage, zod parity, error-boundary coverage…) so bad pushes die before wasting CI; full `verify:standard` stays the merge gate |
-| Bypass escape hatch      | Both hooks documented for `--no-verify` hotfixes — pragmatism over dogma                                                                                                                                              |
-| Workflow hygiene         | `workflow-staleness.yml` + `check-workflow-script-refs.mjs` keep CI configs from rotting                                                                                                                              |
+| Bypass escape hatch | Both hooks documented for `--no-verify` hotfixes — pragmatism over dogma |
+| Workflow hygiene | `workflow-staleness.yml` + `check-workflow-script-refs.mjs` keep CI configs from rotting |

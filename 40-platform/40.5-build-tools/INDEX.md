@@ -12,12 +12,12 @@
 
 ## Category Map
 
-| Category                  | Folder                                                                     | Files | What it covers                                                                                       |
+| Category | Folder | Files | What it covers |
 | ------------------------- | -------------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------- |
-| Bundlers                  | [01-bundlers/](01-bundlers/INDEX.md)                                       | 4     | Webpack, Vite, Turbopack, Rspack — the main options                                                  |
-| Compilers                 | [02-compilers/](02-compilers/INDEX.md)                                     | 2     | Babel, ESBuild/SWC — how JSX + TS get to JS                                                          |
-| Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3     | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
-| Interview Prep            | [04-interview-prep/](04-interview-prep/INDEX.md)                           | 1     | 50+ Qs                                                                                               |
+| Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
+| Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
+| Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3 | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
+| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
 
 ---
 
@@ -25,12 +25,12 @@
 
 The main bundlers — pick based on project needs.
 
-| #   | File                                            | Topics                                                | When to use                          | Read time   |
-| --: | ------                                          | --------                                              | -------------                        | ----------: |
-| 01  | [Webpack](01-bundlers/40.5.1.01-webpack.md)     | Configuration, loaders, plugins, code splitting, HMR  | Legacy / complex configs             | 30 min      |
-| 02  | [Vite](01-bundlers/40.5.1.02-vite.md)           | Dev server, ESBuild, Rollup, plugins, SSR             | New projects, fastest dev experience | 30 min      |
-| 03  | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps         | 25 min      |
-| 04  | [Rspack](01-bundlers/40.5.1.04-rspack.md)       | Rust-based Webpack-compatible bundler, federation     | Webpack replacement for large apps   | 20 min      |
+| # | File | Topics | When to use | Read time |
+| --: | ------ | -------- | ------------- | ----------: |
+| 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | 30 min |
+| 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | 30 min |
+| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 25 min |
+| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 20 min |
 
 **Decision tree:**
 
@@ -48,28 +48,28 @@ New project?
 
 How TS/JSX become browser-compatible JS.
 
-| #   | File                                                   | Topics                                                 | Read time   |
-| --: | ------                                                 | --------                                               | ----------: |
-| 05  | [Babel](02-compilers/40.5.2.01-babel.md)               | Compilation, presets, plugins, polyfills, browserslist | 25 min      |
-| 06  | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases       | 25 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | 25 min |
+| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | 25 min |
 
 ---
 
 ## Optimization & Comparison
 
-| #   | File                                                                                                                  | Topics                                                                                                                                           | Read time   |
-| --: | ------                                                                                                                | --------                                                                                                                                         | ----------: |
-| 07  | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md)                                  | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps                                                                 | 30 min      |
-| 08  | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 30 min      |
-| 09  | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md)                            | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each                                                                              | 20 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 30 min |
+| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 30 min |
+| 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 20 min |
 
 ---
 
 ## Interview Prep
 
-| #   | File                                                                      | Topics                             | Read time   |
-| --: | ------                                                                    | --------                           | ----------: |
-| 10  | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs     |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
 
 ---
 

@@ -12,37 +12,37 @@
 
 ## Concept Categories (across the chapters)
 
-| Category                      | What it covers                                                        | The one-line exam answer                                                                                      |
+| Category | What it covers | The one-line exam answer |
 | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Edge Caching**              | PoPs, origin shielding, cache keys, TTL/SWR, stale-while-revalidate   | Static + cacheable API responses live at the edge; everything needs a cache key                               |
-| **Invalidation & Versioning** | Tag/purge APIs, content-hashed URLs, deploy-time invalidation         | You can't delete what the CDN already cached — version URLs instead                                           |
-| **Edge Compute**              | Cloudflare Workers, Vercel Edge, compute-light request handling       | Auth-adjacent routing, A/B, rewrites at the edge — never heavy stateful work                                  |
-| **Multi-CDN Steering**        | DNS/GSLB, RUM-based weights, failover health checks, cost arbitration | Steer by measured per-region performance; failover needs warm caches + short TTLs                             |
-| **Media at the Edge**         | Image CDNs, AVIF/WebP negotiation, HLS/DASH ladders, signed URLs      | Transform on the fly; format must be part of the cache key                                                    |
-| **Compliance & PHI**          | Regulated data at the edge, scrubbing, residency                      | Per-request personalized/regulated processing stays at origin unless you have a caching-key + scrubbing story |
+| **Edge Caching** | PoPs, origin shielding, cache keys, TTL/SWR, stale-while-revalidate | Static + cacheable API responses live at the edge; everything needs a cache key |
+| **Invalidation & Versioning** | Tag/purge APIs, content-hashed URLs, deploy-time invalidation | You can't delete what the CDN already cached — version URLs instead |
+| **Edge Compute** | Cloudflare Workers, Vercel Edge, compute-light request handling | Auth-adjacent routing, A/B, rewrites at the edge — never heavy stateful work |
+| **Multi-CDN Steering** | DNS/GSLB, RUM-based weights, failover health checks, cost arbitration | Steer by measured per-region performance; failover needs warm caches + short TTLs |
+| **Media at the Edge** | Image CDNs, AVIF/WebP negotiation, HLS/DASH ladders, signed URLs | Transform on the fly; format must be part of the cache key |
+| **Compliance & PHI** | Regulated data at the edge, scrubbing, residency | Per-request personalized/regulated processing stays at origin unless you have a caching-key + scrubbing story |
 
 ---
 
 ## The Files
 
-| #   | File                                                                                     | Topics                                                                                                                                                                  | Read time   |
-| --: | ------                                                                                   | --------                                                                                                                                                                | ----------: |
-| 01  | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md)                             | CDN caching strategies, cache invalidation, edge computing (Cloudflare Workers, Vercel Edge), healthcare PHI considerations, provider comparison                        | 45 min      |
-| 02  | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md)         | Why multi-CDN, DNS/GSLB vs RUM vs edge-orchestrator steering, failover hazards, cross-CDN invalidation, cost arbitration, measurement infrastructure                    | 30 min      |
-| 03  | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HLS/DASH ABR ladders, origin shields, signed URLs/hotlink protection, transformation cache keys, cost levers | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md) | CDN caching strategies, cache invalidation, edge computing (Cloudflare Workers, Vercel Edge), healthcare PHI considerations, provider comparison | 45 min |
+| 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | Why multi-CDN, DNS/GSLB vs RUM vs edge-orchestrator steering, failover hazards, cross-CDN invalidation, cost arbitration, measurement infrastructure | 30 min |
+| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HLS/DASH ABR ladders, origin shields, signed URLs/hotlink protection, transformation cache keys, cost levers | 30 min |
 
 ---
 
 ## The Interview Answer in One Table
 
-| Question                     | Answer spine                                                                                              |
+| Question | Answer spine |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
-| What belongs at the edge?    | Static assets, cached API responses, auth-adjacent routing — anything compute-light and latency-sensitive |
-| What never goes there?       | Per-request personalized/regulated data processing without a clear caching key and scrubbing story        |
-| How do you invalidate?       | Tag/purge APIs, versioned URLs (`app.[hash].js`), short TTL + SWR for semi-dynamic                        |
-| Why multi-CDN?               | Resilience to provider outages, per-region performance wins, egress cost arbitrage — proven with RUM data |
-| How do you serve media fast? | Edge image transforms + format negotiation; video as CMAF/HLS-DASH ladders behind origin shields          |
-| Real example to cite         | SPA assets on Cloudflare Workers + ~50KB same-origin proxy worker (Docita topology)                       |
+| What belongs at the edge? | Static assets, cached API responses, auth-adjacent routing — anything compute-light and latency-sensitive |
+| What never goes there? | Per-request personalized/regulated data processing without a clear caching key and scrubbing story |
+| How do you invalidate? | Tag/purge APIs, versioned URLs (`app.[hash].js`), short TTL + SWR for semi-dynamic |
+| Why multi-CDN? | Resilience to provider outages, per-region performance wins, egress cost arbitrage — proven with RUM data |
+| How do you serve media fast? | Edge image transforms + format negotiation; video as CMAF/HLS-DASH ladders behind origin shields |
+| Real example to cite | SPA assets on Cloudflare Workers + ~50KB same-origin proxy worker (Docita topology) |
 
 ---
 
@@ -79,9 +79,9 @@
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — uses a CDN for real (Cloudflare).
 
-| Topic                        | Docita evidence                                                                                                         |
+| Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| CDN in front of origin       | Cloudflare sits before the Fly API: `shared/common/http/cloudflare-ips.ts` trusts CF for real client IPs                |
-| Origin protection            | ADR 0014 locks the API to accept only Cloudflare-sourced traffic — no direct-to-origin bypass                           |
-| Edge-hosted assets           | `apps/landing` builds to Cloudflare Workers (`wrangler deploy`, `_worker.js`) behind the `DOCITA_CLOUDFLARE` build flag |
-| Multi-CDN / media transforms | _No direct docita implementation yet._                                                                                  |
+| CDN in front of origin | Cloudflare sits before the Fly API: `shared/common/http/cloudflare-ips.ts` trusts CF for real client IPs |
+| Origin protection | ADR 0014 locks the API to accept only Cloudflare-sourced traffic — no direct-to-origin bypass |
+| Edge-hosted assets | `apps/landing` builds to Cloudflare Workers (`wrangler deploy`, `_worker.js`) behind the `DOCITA_CLOUDFLARE` build flag |
+| Multi-CDN / media transforms | _No direct docita implementation yet._ |

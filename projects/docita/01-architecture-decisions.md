@@ -26,27 +26,27 @@ Each business domain gets its own module with 4 layers:
 ```text
 domains/appointments/
 ├── core/                    → entities, value objects, repository interfaces
-│   ├── entities/        
+│   ├── entities/
 │   │   └── appointment.entity.ts
-│   ├── value-objects/        
+│   ├── value-objects/
 │   │   └── appointment-status.value-object.ts
-│   ├── domain-services/        
+│   ├── domain-services/
 │   │   └── appointment-scheduling-rules.service.ts
-│   └── repositories/        
-│       └── appointment.repository.interface.ts        
+│   └── repositories/
+│       └── appointment.repository.interface.ts
 ├── application/             → use-cases, DTOs, service orchestration
-│   ├── use-cases/        
+│   ├── use-cases/
 │   │   ├── create-appointment.use-case.ts
 │   │   └── start-consultation.use-case.ts
-│   ├── services/        
+│   ├── services/
 │   │   ├── appointment-command.service.ts
 │   │   └── appointment-query.service.ts
-│   └── dto/        
+│   └── dto/
 ├── infrastructure/          → Prisma repositories, external API adapters
-│   ├── persistence/        
+│   ├── persistence/
 │   │   ├── prisma-appointment-read.repository.ts
 │   │   └── prisma-appointment-write.repository.ts
-│   └── mappers/        
+│   └── mappers/
 └── presentation/            → NestJS controllers, guards, interceptors
     └── controllers/
         ├── appointments.controller.access.ts
@@ -55,12 +55,12 @@ domains/appointments/
 
 ### Alternatives Considered
 
-| Option | Pros | Cons                                                                               |
-|--------|------|------                                                                              |
-| **Flat folder structure** | Simple, fast to start | Becomes unmaintainable at 28 domains           |
+| Option | Pros | Cons |
+| -------------------------------- | ------------------------------- | -------------------------------------- |
+| **Flat folder structure** | Simple, fast to start | Becomes unmaintainable at 28 domains |
 | **Feature-based (by UI route)** | Co-locates related code | Business logic mixed with presentation |
-| **DDD (chosen)** | Clear boundaries, testable core | More boilerplate per domain                   |
-| **Hexagonal (ports & adapters)** | Maximum testability | Overkill for our team size                |
+| **DDD (chosen)** | Clear boundaries, testable core | More boilerplate per domain |
+| **Hexagonal (ports & adapters)** | Maximum testability | Overkill for our team size |
 
 ### Why DDD Was Chosen
 
@@ -76,11 +76,11 @@ domains/appointments/
 
 ### Trade-offs
 
-| What We Gained | What We Gave Up                                             |
-|----------------|-----------------                                            |
-| Clear module boundaries | More boilerplate (4 files per domain minimum)      |
-| Testable business logic | Slightly longer initial development                |
-| Safe refactoring within domains | Need discipline to maintain boundaries     |
+| What We Gained | What We Gave Up |
+| ------------------------------------------ | --------------------------------------------- |
+| Clear module boundaries | More boilerplate (4 files per domain minimum) |
+| Testable business logic | Slightly longer initial development |
+| Safe refactoring within domains | Need discipline to maintain boundaries |
 | Easy onboarding (structure is predictable) | NestJS module wiring is verbose |
 
 ### What Worked
@@ -103,14 +103,14 @@ domains/appointments/
 
 ### Code Evidence
 
-| Claim | File                                                                                                             |
-|-------|------                                                                                                            |
-| Appointment entity | `apps/api/src/domains/appointments/core/entities/appointment.entity.ts`                             |
-| Scheduling rules | `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts`      |
-| Repository interface | `apps/api/src/domains/appointments/core/repositories/appointment.repository.interface.ts`         |
-| Use case | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts`                      |
+| Claim | File |
+| -------------------- | ---------------------------------------------------------------------------------------------------- |
+| Appointment entity | `apps/api/src/domains/appointments/core/entities/appointment.entity.ts` |
+| Scheduling rules | `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts` |
+| Repository interface | `apps/api/src/domains/appointments/core/repositories/appointment.repository.interface.ts` |
+| Use case | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts` |
 | Prisma repository | `apps/api/src/domains/appointments/infrastructure/persistence/prisma-appointment-read.repository.ts` |
-| CI boundary check | `scripts/checks/check-prisma-boundary.mjs`                                                           |
+| CI boundary check | `scripts/checks/check-prisma-boundary.mjs` |
 
 ### Interview Script (60 seconds)
 
@@ -142,13 +142,13 @@ export type CreatePatientInput = z.infer<typeof createPatientSchema>;
 
 ### Alternatives Considered
 
-| Option | Pros | Cons                                                                                |
-|--------|------|------                                                                               |
+| Option | Pros | Cons |
+| ------------------------- | -------------------------------------------- | ----------------------------------------------- |
 | **TypeScript interfaces** | Native, no dependency | No runtime validation, can't infer Prisma types |
-| **io-ts** | Functional, composable | Steeper learning curve, less ecosystem                         |
-| **Zod (chosen)** | Great DX, Prisma integration, error messages | Slightly verbose definitions      |
-| **class-validator** | Decorator-based, NestJS native | Tied to class instances, harder to compose   |
-| **JSON Schema** | Language-agnostic | Verbose, less TypeScript integration                          |
+| **io-ts** | Functional, composable | Steeper learning curve, less ecosystem |
+| **Zod (chosen)** | Great DX, Prisma integration, error messages | Slightly verbose definitions |
+| **class-validator** | Decorator-based, NestJS native | Tied to class instances, harder to compose |
+| **JSON Schema** | Language-agnostic | Verbose, less TypeScript integration |
 
 ### Why Zod Was Chosen
 
@@ -158,11 +158,11 @@ export type CreatePatientInput = z.infer<typeof createPatientSchema>;
 
 ### Trade-offs
 
-| What We Gained | What We Gave Up                                                                |
-|----------------|-----------------                                                               |
-| Zero type drift between Prisma, API, and UI | Slightly verbose schema definitions               |
-| Runtime validation with clear error messages | Can't use complex class-based patterns           |
-| Single source of truth | Learning curve for team members unfamiliar with Zod                    |
+| What We Gained | What We Gave Up |
+| ----------------------------------------------- | --------------------------------------------------- |
+| Zero type drift between Prisma, API, and UI | Slightly verbose schema definitions |
+| Runtime validation with clear error messages | Can't use complex class-based patterns |
+| Single source of truth | Learning curve for team members unfamiliar with Zod |
 | Auto-generated API documentation (from schemas) | Schema files are longer than plain interfaces |
 
 ### What Could Be Better
@@ -173,11 +173,11 @@ export type CreatePatientInput = z.infer<typeof createPatientSchema>;
 
 ### Code Evidence
 
-| Claim | File                                       |
-|-------|------                                      |
-| Zod schemas | `packages/types/src/`                |
+| Claim | File |
+| -------------- | ---------------------------------- |
+| Zod schemas | `packages/types/src/` |
 | Prisma models | `packages/db/prisma/schema.prisma` |
-| Type inference | `packages/types/src/patients/`    |
+| Type inference | `packages/types/src/patients/` |
 
 ### Interview Script (60 seconds)
 
@@ -200,12 +200,12 @@ Both import from `apps/api/src/domains/`. The worker has its own `worker.module.
 
 ### Alternatives Considered
 
-| Option | Pros | Cons                                                                              |
-|--------|------|------                                                                             |
-| **Single process** | Simple deployment | Queue processing blocks HTTP requests                    |
-| **Separate repos** | Independent deployment | Code duplication, sync issues                       |
+| Option | Pros | Cons |
+| ---------------------------------- | ------------------------------ | ------------------------------------- |
+| **Single process** | Simple deployment | Queue processing blocks HTTP requests |
+| **Separate repos** | Independent deployment | Code duplication, sync issues |
 | **Monorepo, shared code (chosen)** | Zero duplication, shared types | Must coordinate deployments |
-| **Serverless functions** | Auto-scaling | Cold starts, stateful operations hard                   |
+| **Serverless functions** | Auto-scaling | Cold starts, stateful operations hard |
 
 ### Why Separate Processes Were Chained
 

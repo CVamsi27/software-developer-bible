@@ -10,12 +10,12 @@
 
 ## The 4 transports
 
-| #   | File                                                    | Topics                                                              | When to use                                      | Read time   |
-| --: | ------                                                  | --------                                                            | -------------                                    | ----------: |
-| 01  | [WebSockets Overview](60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases      | Bidirectional real-time                          | 30 min      |
-| 02  | [Server-Sent Events](60.1.1.02-server-sent-events.md)   | EventSource API, auto-reconnect, vs WebSockets, use cases           | Server→client only (notifications, live updates) | 25 min      |
-| 03  | [Socket.IO](60.1.1.03-socket-io.md)                     | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features           | 30 min      |
-| 04  | [WebTransport](60.1.1.04-webtransport.md)               | QUIC-based transport, datagrams, streams, vs WebSocket              | Modern, low-latency, unreliable delivery OK      | 25 min      |
+| # | File | Topics | When to use | Read time |
+| --: | ------ | -------- | ------------- | ----------: |
+| 01 | [WebSockets Overview](60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | 30 min |
+| 02 | [Server-Sent Events](60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | 25 min |
+| 03 | [Socket.IO](60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | 30 min |
+| 04 | [WebTransport](60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery OK | 25 min |
 
 ---
 
@@ -58,9 +58,9 @@ Need real-time communication?
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                             | Docita evidence                                                                                        |
+| Topic | Docita evidence |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Socket.IO as chosen transport     | `socket.io ^4.8.3` in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
-| SSE (one real, narrow use)        | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses         |
-| Transport-choice rationale        | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only                 |
-| Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`)         |
+| Socket.IO as chosen transport | `socket.io ^4.8.3` in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
+| SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
+| Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
+| Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

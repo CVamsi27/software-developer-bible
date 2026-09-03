@@ -12,24 +12,24 @@
 
 The concepts classify into 6 groups across the three files — the way to recall them in a "would you pick RN or native?" or "how does deep linking actually work?" question.
 
-| Category                    | What it covers                                                           | The one-line exam answer                                                               |
+| Category | What it covers | The one-line exam answer |
 | --------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| **RN Architecture**         | Bridge → JSI/Fabric evolution, new renderer, why perf changed            | Old bridge = serialization bottleneck; JSI = direct synchronous calls                  |
-| **Tooling Decision**        | Expo vs bare workflow                                                    | Expo first unless you need native modules day one                                      |
-| **Cross-Platform Choice**   | RN vs native vs PWA decision matrix                                      | Match to team skills + UI customness + platform-API depth                              |
-| **Web/Mobile Code Sharing** | TS monorepo, shared types/logic/hooks                                    | RN maximizes sharing when web is already TypeScript                                    |
-| **Deep Linking**            | URI schemes vs Universal Links vs App Links, deferred linking, fallbacks | https links verified via hosted JSON beat schemes: ownership proof + free web fallback |
-| **Mobile Testing**          | Jest/RNTL units, Detox vs Maestro E2E, mocking native modules, macOS CI  | Same pyramid as web; the mobile deltas are native-module mocks and mac runners         |
+| **RN Architecture** | Bridge → JSI/Fabric evolution, new renderer, why perf changed | Old bridge = serialization bottleneck; JSI = direct synchronous calls |
+| **Tooling Decision** | Expo vs bare workflow | Expo first unless you need native modules day one |
+| **Cross-Platform Choice** | RN vs native vs PWA decision matrix | Match to team skills + UI customness + platform-API depth |
+| **Web/Mobile Code Sharing** | TS monorepo, shared types/logic/hooks | RN maximizes sharing when web is already TypeScript |
+| **Deep Linking** | URI schemes vs Universal Links vs App Links, deferred linking, fallbacks | https links verified via hosted JSON beat schemes: ownership proof + free web fallback |
+| **Mobile Testing** | Jest/RNTL units, Detox vs Maestro E2E, mocking native modules, macOS CI | Same pyramid as web; the mobile deltas are native-module mocks and mac runners |
 
 ---
 
 ## Files
 
-| #   | File                                                                      | Topics                                                                                                                                                                                               |
+| # | File | Topics |
 | --- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [React Native & Cross-Platform](10.8.01-react-native-cross-platform.md)   | RN architecture (bridge → JSI/Fabric), Expo vs bare, RN vs native vs PWA decision matrix, code-sharing with web (your TS monorepo), mobile-specific concerns                                         |
-| 2   | [Deep Linking & Universal Links](10.8.02-deep-linking-universal-links.md) | URI schemes vs Universal Links (AASA) vs App Links (assetlinks.json), cold/warm start capture, deferred deep linking, React Navigation `linking` config, testing with simctl/adb/Detox, web fallback |
-| 3   | [Testing React Native Apps](10.8.03-testing-react-native-apps.md)         | Jest units, React Native Testing Library components, Detox vs Maestro comparison, mocking native modules, device farms + macOS runners in CI, React Native DevTools, visual regression options       |
+| 1 | [React Native & Cross-Platform](10.8.01-react-native-cross-platform.md) | RN architecture (bridge → JSI/Fabric), Expo vs bare, RN vs native vs PWA decision matrix, code-sharing with web (your TS monorepo), mobile-specific concerns |
+| 2 | [Deep Linking & Universal Links](10.8.02-deep-linking-universal-links.md) | URI schemes vs Universal Links (AASA) vs App Links (assetlinks.json), cold/warm start capture, deferred deep linking, React Navigation `linking` config, testing with simctl/adb/Detox, web fallback |
+| 3 | [Testing React Native Apps](10.8.03-testing-react-native-apps.md) | Jest units, React Native Testing Library components, Detox vs Maestro comparison, mocking native modules, device farms + macOS runners in CI, React Native DevTools, visual regression options |
 
 ## The 30-Second Version
 
@@ -50,10 +50,10 @@ Already a TS monorepo? → RN maximizes shared types/logic/hooks
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
-| Topic in this category                | Docita evidence                                                                                                  |
+| Topic in this category | Docita evidence |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Web/mobile code sharing (TS monorepo) | `pnpm-workspace.yaml` - `apps/*` + `packages/*` workspace sharing types/hooks/utils across all frontends         |
-| PWA as the cross-platform route       | `apps/app/public/sw.js` - offline app-shell service worker behind `apps/app/src/components/pwa/pwa-register.tsx` |
+| Web/mobile code sharing (TS monorepo) | `pnpm-workspace.yaml` - `apps/*` + `packages/*` workspace sharing types/hooks/utils across all frontends |
+| PWA as the cross-platform route | `apps/app/public/sw.js` - offline app-shell service worker behind `apps/app/src/components/pwa/pwa-register.tsx` |
 
 _React Native, Expo, deep linking/universal links, and RN-specific testing: no direct docita implementation yet._
 

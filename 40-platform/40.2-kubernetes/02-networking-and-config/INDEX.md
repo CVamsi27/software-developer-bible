@@ -16,11 +16,11 @@ A pod without a Service is unreachable; a Deployment without ConfigMaps/Secrets 
 
 ## File Index
 
-| Order  | File                                                    | Topics                                                                                                 | Read time   |
-| --   : | ------                                                  | --------                                                                                               | ----------: |
-| 01     | [Services & Ingress](40.2.2.01-services-ingress.md)     | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | 30 min      |
-| 02     | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes                  | 25 min      |
-| 03     | [PodPresets](40.2.2.03-podpresets.md)                   | Admission-time injection of env vars, volumes, secrets; label selectors; Kyverno alternatives          | 15 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | 30 min |
+| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | 25 min |
+| 03 | [PodPresets](40.2.2.03-podpresets.md) | Admission-time injection of env vars, volumes, secrets; label selectors; Kyverno alternatives | 15 min |
 
 ---
 
@@ -43,9 +43,9 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
 _No direct docita implementation yet_ — no Services/Ingress/ConfigMaps; a Fly router + Cloudflare play those roles:
 
-| Topic                            | Docita evidence                                                                                          |
+| Topic | Docita evidence |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Ingress & TLS termination        | Cloudflare edge (origin protection, ADR 0014) → Fly `http_service` with `force_https = true`             |
-| ConfigMap-like env config        | `fly.toml [env]` block + turbo `globalEnv` allowlist, validated by `shared/modules/config/env-schema.ts` |
-| Secrets handling                 | Never in-repo; runtime env only (`RAZORPAY_KEY_SECRET`, DB URLs appear solely as env references)         |
-| PodPresets / admission injection | _No direct docita implementation yet._                                                                   |
+| Ingress & TLS termination | Cloudflare edge (origin protection, ADR 0014) → Fly `http_service` with `force_https = true` |
+| ConfigMap-like env config | `fly.toml [env]` block + turbo `globalEnv` allowlist, validated by `shared/modules/config/env-schema.ts` |
+| Secrets handling | Never in-repo; runtime env only (`RAZORPAY_KEY_SECRET`, DB URLs appear solely as env references) |
+| PodPresets / admission injection | _No direct docita implementation yet._ |

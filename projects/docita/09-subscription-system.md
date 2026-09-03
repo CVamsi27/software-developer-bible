@@ -8,12 +8,12 @@
 
 Docita is a SaaS product. Clinics pay monthly subscriptions based on tier:
 
-| Tier | Price | Features                                         |
-|------|-------|----------                                        |
-| **Free** | ₹0 | Basic scheduling, limited patients              |
+| Tier | Price | Features |
+| -------------- | --------- | --------------------------------------- |
+| **Free** | ₹0 | Basic scheduling, limited patients |
 | **Starter** | ₹499/mo | Full scheduling, prescriptions, billing |
-| **Pro** | ₹1,499/mo | WhatsApp, analytics, multi-doctor         |
-| **Enterprise** | Custom | API access, custom integrations, SLA  |
+| **Pro** | ₹1,499/mo | WhatsApp, analytics, multi-doctor |
+| **Enterprise** | Custom | API access, custom integrations, SLA |
 
 **The challenge:** Feature gating must be enforced at every API endpoint without duplicating logic across 28 domains.
 
@@ -153,14 +153,14 @@ Clinics earn credits for referring other clinics:
 
 ## Code Evidence
 
-| Claim | File                                                                                                            |
-|-------|------                                                                                                           |
-| Feature decorator | `apps/api/src/shared/modules/auth/`                                                                 |
-| Usage tracking | `apps/api/src/domains/billing/core/services/usage-tracking.service.ts`                                 |
-| Subscription entity | `apps/api/src/domains/subscriptions/core/entities/subscription.entity.ts`                         |
-| Razorpay webhook handlers | `apps/api/src/domains/subscriptions/application/webhooks/razorpay/handlers/`                |
+| Claim | File |
+| ------------------------- | ------------------------------------------------------------------------------------------- |
+| Feature decorator | `apps/api/src/shared/modules/auth/` |
+| Usage tracking | `apps/api/src/domains/billing/core/services/usage-tracking.service.ts` |
+| Subscription entity | `apps/api/src/domains/subscriptions/core/entities/subscription.entity.ts` |
+| Razorpay webhook handlers | `apps/api/src/domains/subscriptions/application/webhooks/razorpay/handlers/` |
 | Overage billing scheduler | `apps/api/src/domains/subscriptions/infrastructure/schedulers/overage-billing.scheduler.ts` |
-| Referral service | `apps/api/src/domains/subscriptions/core/services/referral.service.ts`                               |
+| Referral service | `apps/api/src/domains/subscriptions/core/services/referral.service.ts` |
 
 ---
 

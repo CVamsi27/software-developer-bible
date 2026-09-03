@@ -14,13 +14,13 @@
 
 The 17 files are organized into 5 category folders — read in order.
 
-| Category                                                     | Files | Why it matters                                                        |
+| Category | Files | Why it matters |
 | ------------------------------------------------------------ | ----: | --------------------------------------------------------------------- |
-| [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4     | The mental model — when to use SSR, CSR, SSG, RSC                     |
-| [Routing & Middleware](02-routing-and-middleware/INDEX.md)   | 3     | Edge middleware, route handlers, metadata/SEO tags                    |
-| [Data & Caching](03-data-and-caching/INDEX.md)               | 6     | The hardest part of Next.js — server actions, caching, streaming, ISR |
-| [Production](04-production/INDEX.md)                         | 3     | Authentication, image optimization, deployment                        |
-| [Interview Prep](05-interview-prep/INDEX.md)                 | 1     | 60+ interview Qs                                                      |
+| [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | The mental model — when to use SSR, CSR, SSG, RSC |
+| [Routing & Middleware](02-routing-and-middleware/INDEX.md) | 3 | Edge middleware, route handlers, metadata/SEO tags |
+| [Data & Caching](03-data-and-caching/INDEX.md) | 6 | The hardest part of Next.js — server actions, caching, streaming, ISR |
+| [Production](04-production/INDEX.md) | 3 | Authentication, image optimization, deployment |
+| [Interview Prep](05-interview-prep/INDEX.md) | 1 | 60+ interview Qs |
 
 ---
 
@@ -39,12 +39,12 @@ Read categories in numeric order — each builds on the previous:
 
 The mental model for choosing the right rendering strategy.
 
-| #   | File                                                                            | Topics                                                                  | Read time   |
-| --: | ------                                                                          | --------                                                                | ----------: |
-| 01  | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 25 min      |
-| 02  | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md)                 | Layouts, nested routes, loading states, error handling, route groups    | 25 min      |
-| 03  | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md)   | RSC architecture, server rendering, serialization, "use server"         | 30 min      |
-| 04  | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md)   | `'use client'`, interleaving, client boundaries, "use client" placement | 20 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 25 min |
+| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | 25 min |
+| 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | 30 min |
+| 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | 20 min |
 
 ---
 
@@ -52,11 +52,11 @@ The mental model for choosing the right rendering strategy.
 
 The request pipeline — every Next.js interview tests this.
 
-| #   | File                                                                    | Topics                                                     | Read time   |
-| --: | ------                                                                  | --------                                                   | ----------: |
-| 05  | [Middleware](02-routing-and-middleware/10.4.2.01-middleware.md)         | Edge middleware, matchers, redirects, rewrite, auth gating | 20 min      |
-| 06  | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static   | 15 min      |
-| 07  | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md)             | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 15 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 05 | [Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 20 min |
+| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 15 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 15 min |
 
 ---
 
@@ -64,14 +64,14 @@ The request pipeline — every Next.js interview tests this.
 
 The hardest part of Next.js — the 6 files every senior engineer must own.
 
-| #   | File                                                                                                | Topics                                                                                            | Read time   |
-| --: | ------                                                                                              | --------                                                                                          | ----------: |
-| 08  | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md)                   | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 30 min      |
-| 09  | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md)                                   | Mutations, revalidation, progressive enhancement, form actions                                    | 25 min      |
-| 10  | [Caching](03-data-and-caching/10.4.3.03-caching.md)                                                 | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags                    | 30 min      |
-| 11  | [Streaming](03-data-and-caching/10.4.3.04-streaming.md)                                             | Streaming SSR, Suspense boundaries, loading UI, parallel routes                                   | 25 min      |
-| 12  | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback                         | 20 min      |
-| 13  | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md)                                   | Static export config, `generateStaticParams`, client-side data, deployment                        | 20 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 30 min |
+| 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | 25 min |
+| 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 30 min |
+| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 25 min |
+| 12 | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 20 min |
+| 13 | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | 20 min |
 
 ---
 
@@ -79,19 +79,19 @@ The hardest part of Next.js — the 6 files every senior engineer must own.
 
 Production concerns.
 
-| #   | File                                                                | Topics                                                                                                                                            | Read time   |
-| --: | ------                                                              | --------                                                                                                                                          | ----------: |
-| 14  | [Authentication](04-production/10.4.4.01-authentication.md)         | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC                                                                                  | 30 min      |
-| 15  | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP                                                                                          | 15 min      |
-| 16  | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md)    | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 30 min |
+| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 15 min |
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 30 min |
 
 ---
 
 ## Interview Prep
 
-| #   | File                                                                      | Topics                             | Read time   |
-| --: | ------                                                                    | --------                           | ----------: |
-| 17  | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs     |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 3-4 hrs |
 
 ---
 

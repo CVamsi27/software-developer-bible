@@ -9,12 +9,12 @@
 
 ## Files
 
-| Order  | File                                                                    | Topics                                                        | Read time   |
-| --   : | ------                                                                  | --------                                                      | ----------: |
-| 01     | [XSS](20.5.2.01-xss.md)                                                 | Stored/reflected/DOM XSS, CSP, encoding, sanitization         | 30 min      |
-| 02     | [CSRF](20.5.2.02-csrf.md)                                               | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min      |
-| 03     | [SQL Injection](20.5.2.03-sql-injection.md)                             | Parameterized queries, ORM protection, input validation, WAF  | 30 min      |
-| 04     | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet    | 30 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 30 min |
+| 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 25 min |
+| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 30 min |
+| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 30 min |
 
 ---
 
@@ -26,10 +26,10 @@
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
-| Topic                    | Docita evidence                                                                                                                     |
+| Topic | Docita evidence |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| CSRF                     | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts` - double-submit cookie/header pair compared timing-safe               |
-| XSS / security headers   | `apps/api/src/main.ts` - helmet() sets CSP and hardening headers on both deployables                                                |
-| SQL injection            | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - even raw SQL goes through parameterized `$queryRaw` tagged templates |
-| BOLA / IDOR defense      | `apps/api/src/shared/common/extensions/tenant.extension.ts` - auto-injects clinicId scoping on every query                          |
-| Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads                       |
+| CSRF | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts` - double-submit cookie/header pair compared timing-safe |
+| XSS / security headers | `apps/api/src/main.ts` - helmet() sets CSP and hardening headers on both deployables |
+| SQL injection | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - even raw SQL goes through parameterized `$queryRaw` tagged templates |
+| BOLA / IDOR defense | `apps/api/src/shared/common/extensions/tenant.extension.ts` - auto-injects clinicId scoping on every query |
+| Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads |

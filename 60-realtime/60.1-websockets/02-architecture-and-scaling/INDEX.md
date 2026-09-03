@@ -16,10 +16,10 @@ Transports are solved problems; scale is where real-time systems die. A single N
 
 ## The 2 files
 
-| #   | File                                                          | Topics                                                                                | Read time   |
-| --: | ------                                                        | --------                                                                              | ----------: |
-| 01  | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence                    | 30 min      |
-| 02  | [Scaling Patterns](60.1.2.02-scaling-patterns.md)             | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min      |
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 30 min |
+| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 30 min |
 
 ---
 
@@ -53,9 +53,9 @@ Interview favorite: "How do you broadcast to a room whose members are spread acr
 
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
-| Topic                        | Docita evidence                                                                                                                                                                                                   |
+| Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Tenant-scoped rooms          | `apps/api/src/websockets/notifications.gateway.ts` joins `clinic:{clinicId}` / `user:{sub}` rooms                                                                                                                 |
-| Connection auth              | `ws-jwt-auth.guard.ts` (in `shared/modules/auth/auth/`) + base-gateway handshake verification                                                                                                                     |
-| Per-connection rate limiting | `base-websocket.gateway.ts` rate-limit map + error envelope                                                                                                                                                       |
-| Scaling honesty              | `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary documented; **no Redis pub/sub adapter yet** — sticky sessions alone called out as insufficient, adoption deferred until a second replica is real |
+| Tenant-scoped rooms | `apps/api/src/websockets/notifications.gateway.ts` joins `clinic:{clinicId}` / `user:{sub}` rooms |
+| Connection auth | `ws-jwt-auth.guard.ts` (in `shared/modules/auth/auth/`) + base-gateway handshake verification |
+| Per-connection rate limiting | `base-websocket.gateway.ts` rate-limit map + error envelope |
+| Scaling honesty | `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary documented; **no Redis pub/sub adapter yet** — sticky sessions alone called out as insufficient, adoption deferred until a second replica is real |

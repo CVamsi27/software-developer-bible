@@ -16,11 +16,11 @@ Instrumenting once per vendor does not survive the second vendor swap. OpenTelem
 
 ## File Index
 
-| Order  | File                                                      | Topics                                                                                                                                        | Read time   |
-| --   : | ------                                                    | --------                                                                                                                                      | ----------: |
-| 01     | [OpenTelemetry](40.4.4.01-opentelemetry.md)               | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline                              | 30 min      |
-| 02     | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 30 min      |
-| 03     | [eBPF Observability](40.4.4.03-ebpf-observability.md)     | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks     | 30 min      |
+| Order | File | Topics | Read time |
+| --   : | ------ | -------- | ----------: |
+| 01 | [OpenTelemetry](40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
+| 02 | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 30 min |
+| 03 | [eBPF Observability](40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks | 30 min |
 
 ---
 
@@ -43,10 +43,10 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
 _No direct docita implementation yet_ for OpenTelemetry/eBPF — tracing is Sentry-based. What docita does have is the surrounding discipline:
 
-| Topic                                  | Docita evidence                                                                                                              |
+| Topic | Docita evidence |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Correlation IDs                        | `request-id.interceptor.ts` + `request-logging.interceptor.ts` thread context through every request                          |
-| Log scrubbing gates                    | `phi-redactor.ts`; CI checks `check-sensitive-logging.mjs`, `check-sentry-scrubbing.mjs`, `check-sentry-scrubber-parity.mjs` |
-| Metrics aggregation & cardinality care | `metrics-aggregation.service.ts`, business metrics separated from API-request metrics                                        |
-| RUM telemetry                          | `web-vitals-metrics.service.ts` + RUM controller                                                                             |
-| Continuous profiling                   | Sentry profiling integration exists (`SENTRY_PROFILING`), kept off by default on Alpine                                      |
+| Correlation IDs | `request-id.interceptor.ts` + `request-logging.interceptor.ts` thread context through every request |
+| Log scrubbing gates | `phi-redactor.ts`; CI checks `check-sensitive-logging.mjs`, `check-sentry-scrubbing.mjs`, `check-sentry-scrubber-parity.mjs` |
+| Metrics aggregation & cardinality care | `metrics-aggregation.service.ts`, business metrics separated from API-request metrics |
+| RUM telemetry | `web-vitals-metrics.service.ts` + RUM controller |
+| Continuous profiling | Sentry profiling integration exists (`SENTRY_PROFILING`), kept off by default on Alpine |

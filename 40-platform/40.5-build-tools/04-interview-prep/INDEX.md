@@ -36,10 +36,10 @@ Questions across all three content categories:
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
 
-| Topic                        | Docita evidence                                                                |
+| Topic | Docita evidence |
 | ---------------------------- | ------------------------------------------------------------------------------ |
-| "Vite vs Webpack?"           | Lived the migration: Next.js → Vite SPA (ADR 0012), with reasons recorded      |
-| "Monorepo build design?"     | Turbo task graph + per-app env scoping + shared vitest config across 5 apps    |
-| "Keeping bundles honest?"    | knip dead-code gate, jscpd zero-clone gate, file-size budget checks in CI      |
-| "Multi-target builds?"       | Same repo ships NestJS API, Vite SPAs, Astro landing to Cloudflare, worker app |
-| Turbopack/Rspack war stories | _No direct docita implementation yet._                                         |
+| "Vite vs Webpack?" | Lived the migration: Next.js → Vite SPA (ADR 0012), with reasons recorded |
+| "Monorepo build design?" | Turbo task graph + per-app env scoping + shared vitest config across 5 apps |
+| "Keeping bundles honest?" | knip dead-code gate, jscpd zero-clone gate, file-size budget checks in CI |
+| "Multi-target builds?" | Same repo ships NestJS API, Vite SPAs, Astro landing to Cloudflare, worker app |
+| Turbopack/Rspack war stories | _No direct docita implementation yet._ |

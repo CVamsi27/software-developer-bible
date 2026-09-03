@@ -17,12 +17,12 @@ This guide covers **everything** you need to prepare for SDE interviews at Micro
 ### Core Knowledge (Phases 1-28)
 
 | # | File | Phases | Topics | Est. Hours |
-| --- | ------------------------------------------------------------ | ------ | ---------------------------------------------------------------------------- | ---------- |
-| 1 | [Complete Guide](81.01-complete-guide.md) | 1-8 | Java, DSA, Algorithms, Patterns, DP, Graphs, Trees | 200+ |
-| 2 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md) | 9-16 | Bit Manipulation, Math, OOP, Design Patterns, OS, Networks, Databases, NoSQL | 100+ |
-| 3 | [System Design & APIs](81.03-system-design-apis-security.md) | 17-20 | System Design, REST APIs, Security, Concurrency | 80+ |
-| 4 | [DevOps & Career](81.04-devops-behavioral-career.md) | 21-28 | Git, Linux, Behavioral, Resume, Testing, Cloud, Frontend | 60+ |
-| 5 | [Advanced Topics](81.05-advanced-topics.md) | - | Segment Tree, Fenwick Tree, AVL, DI, Repository, MVC, Cookies, Sessions | 20+ |
+| --- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------- | ---------- |
+| 1 | [Complete Guide](81.01-complete-guide.md) | 2-8 | DSA, Algorithms, Patterns, DP, Graphs, Trees (Java core moved → [20.13-java](../20-backend/20.13-java/INDEX.md)) | 200+ |
+| 2 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md) | 13-14 | OS + transport networking (OSI, TCP/UDP) — math/OOP/DB moved to shared stacks | 100+ |
+| 3 | [System Design & APIs](81.03-system-design-apis-security.md) | 16-19 | Pointer roadmap → shared stacks (30.2 / 20.3 / 20.5 / 20.13) | 80+ |
+| 4 | [DevOps & Career](81.04-devops-behavioral-career.md) | 20-28 | Git, Linux, Behavioral, Resume, Career + pointers (testing/cloud/frontend → stacks) | 60+ |
+| 5 | [Advanced Topics](81.05-advanced-topics.md) | - | Segment Tree, Fenwick Tree, AVL, OOD drills (Parking Lot) | 20+ |
 
 ### Study Tools
 

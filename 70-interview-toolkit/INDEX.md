@@ -2,9 +2,9 @@
 
 > **Behavioral, coding patterns, cheat sheets** — the "last-mile" stack. Use this in the final 1-2 weeks before any interview. Shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 33 files across 3 sub-stacks.
+> 34 files across 3 sub-stacks.
 
-[![Files](https://img.shields.io/badge/files-33-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-34-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-3-green)](#the-3-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -32,7 +32,7 @@ If you only have 1 week before an interview, this is where to focus.
 | Order | Sub-stack | Files | Topics |
 | ----: | ------------------------------------------------ | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | [Behavioral](70.1-behavioral/INDEX.md) | 5 | Stakeholder stories, leadership questions, judgment & ambiguity, system-design behavioral, anti-pattern drills (STAR + HR basics in [00-strategy](../00-strategy/INDEX.md)) |
-| 2 | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 21 | Sliding window, two pointers, BFS/DFS, shortest paths, DP, heap, trie, union find, backtracking, linked lists, matrix simulation |
+| 2 | [Coding Patterns](70.2-coding-patterns/INDEX.md) | 22 | Sliding window, two pointers, BFS/DFS, shortest paths, DP, heap, trie, union find, backtracking, linked lists, matrix simulation |
 | 3 | [Cheat Sheets](70.3-cheatsheets/INDEX.md) | 7 | JavaScript, TypeScript, React/Next.js, backend, system design, Docker/K8s/CI-CD, SQL/data modeling |
 
 ---

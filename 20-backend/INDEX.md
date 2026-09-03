@@ -1,11 +1,11 @@
 # Backend Stack
 
-> **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 110 files across 9 sub-stacks, organized by what you need to know in what order.
+> 138 files across 10 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-133-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-green)](#the-9-sub-stacks-in-study-order)
+[![Files](https://img.shields.io/badge/files-138-blue)](../INDEX.md)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 > **Real-world anchor:** every category INDEX below ends with a **Docita Anchor** table mapping its chapters to production code in [docita](https://github.com/CVamsi27/docita) — a healthcare platform (NestJS + Prisma + Postgres, modular monolith with a separate worker deployable). Read the chapter, then read the file that ships it. Where docita has no counterpart (GraphQL, Redis-backed caching, Kafka/gRPC), the anchor says so honestly instead of pretending.
@@ -26,19 +26,20 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## The 9 Sub-Stacks (in study order)
+## The 10 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 | ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | [Node.js](20.1-node.js/INDEX.md) | 11 | Event loop, streams, clustering, web streams, child processes, test runner |
-| 2 | [NestJS](20.2-nestjs/INDEX.md) | 15 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 17 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
-| 4 | [Database](20.4-database/INDEX.md) | 20 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
-| 5 | [Auth & Security](20.5-security/INDEX.md) | 15 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
-| 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 17 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
-| 7 | [GraphQL](20.7-graphql/INDEX.md) | 8 | Schema design, queries/mutations, Apollo Server, performance, security |
+| 1 | [Node.js](20.1-node.js/INDEX.md) | 13 | Event loop, streams, clustering, web streams, child processes, test runner |
+| 2 | [NestJS](20.2-nestjs/INDEX.md) | 18 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 19 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 4 | [Database](20.4-database/INDEX.md) | 24 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
+| 5 | [Auth & Security](20.5-security/INDEX.md) | 21 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
+| 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
+| 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
-| 9 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 4 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 9 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 10 | [Java](20.13-java/INDEX.md) | 5 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, interview Q&A |
 
 ---
 
@@ -49,6 +50,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 ### Runtime & Language (read first)
 - **Node.js** — the runtime; event loop, streams, async patterns
 - **NestJS** — the most common framework; modules, DI, guards (read after Node.js)
+- **Java** — language core, OOP/SOLID, concurrency, testing (only if the target role/stack uses Java)
 
 ### API Layer (read second)
 - **REST APIs** — the canonical web API style; status codes, pagination, errors
@@ -78,6 +80,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 6. Caching (45 min)
 7. Microservices (skim, 2 hrs)
 8. GraphQL + AI Engineering — as needed
+9. Java — full (only if role is Java-based, e.g. many EU product companies / the SDE-FAANG lane)
 
 ### Path B — Backend specialist, deep dive (3-4 weeks)
 1. Node.js: full (4-5 hrs)
@@ -87,6 +90,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 5. Auth & Security: full (6-8 hrs)
 6. Microservices: full (8-10 hrs)
 7. GraphQL, Caching, AI Engineering — as needed
+8. Java: full (only if target role is Java-based)
 
 ### Path C — Interview tomorrow
 - Skim all TL;DR boxes

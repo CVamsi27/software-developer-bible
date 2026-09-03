@@ -1,8 +1,8 @@
 # Coding Patterns — Index
 
-> **21 files across 4 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), and streaming algorithms (reservoir sampling).
+> **22 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
-[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -10,7 +10,7 @@
 
 ---
 
-## The 4 Categories
+## The 5 Categories
 
 | Category | Files | Coverage |
 | ----------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
@@ -18,6 +18,7 @@
 | [02 — Graphs, Trees & Grids](02-graphs-trees-grids/INDEX.md) | 6 | DFS/BFS, shortest paths (Dijkstra/Bellman-Ford), union find, topological sort, trie, matrix traversal/simulation |
 | [03 — Recursion & Optimization](03-recursion-and-optimization/INDEX.md) | 3 | Backtracking, dynamic programming, bit manipulation |
 | [04 — Heaps, Stacks & Selection](04-heaps-stacks-selection/INDEX.md) | 5 | Heap, monotonic stack, stack/queue designs, segment tree, quickselect/reservoir sampling |
+| [05 — Math & Number Theory](05-math-and-number-theory/INDEX.md) | 1 | Number theory & combinatorics (primes, GCD/LCM, modular arithmetic, probability) |
 
 ---
 

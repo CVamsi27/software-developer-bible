@@ -50,24 +50,24 @@ This is a **reference checklist** of every topic a senior Indian SDE / FAANG can
 ### Tier 1 — Mandatory, will be asked in 90%+ of FAANG interviews
 
 | Topic | What you need to demonstrate | Where to study |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Data Structures & Algorithms** | Arrays, Strings, HashMaps, Trees (BST + balanced), Graphs (BFS/DFS/Union-Find), Linked Lists, Stacks, Queues, Heaps. Implement from scratch in your strongest language. | [Coding Patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
 | **Dynamic Programming** | 1D and 2D DP, knapsack, LCS/edit distance, coin change, climbing stairs, house robber, longest increasing subsequence. **This is the FAANG bar.** | [Coding Patterns/06 Dynamic Programming](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
 | **Graphs** | BFS, DFS, topological sort, Dijkstra, Union-Find, MST (Kruskal/Prim). Code on whiteboard in 20 min. | [Coding Patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) + [Complete Guide](81.01-complete-guide.md) |
-| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [Design Patterns](../30-architecture/30.1-design-patterns/INDEX.md) + [Core Cs Fundamentals](81.02-core-cs-fundamentals.md) |
+| **Object-Oriented Design** | Design a parking lot, URL shortener, hotel booking, library management. Class diagrams, design patterns applied. | [Design Patterns](../30-architecture/30.1-design-patterns/INDEX.md) + [Java OOP & SOLID](../20-backend/20.13-java/20.13.02-java-oop-solid.md) |
 | **System Design at 45 min** | URL shortener, WhatsApp, Instagram, Twitter timeline, Uber, Netflix, Dropbox. With back-of-envelope estimates. | [System Design](../30-architecture/30.2-system-design/INDEX.md) |
-| **Concurrency & multithreading** | Threads, locks, deadlocks, semaphores, producer-consumer, dining philosophers, rate limiters. **Asked at Meta, Google, Amazon.** | [Core Cs Fundamentals](81.02-core-cs-fundamentals.md) |
+| **Concurrency & multithreading** | Threads, locks, deadlocks, semaphores, producer-consumer, dining philosophers, rate limiters. **Asked at Meta, Google, Amazon.** | [Java Concurrency & Multithreading](../20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md) |
 | **Operating Systems** | Process vs thread, virtual memory, paging, context switching, scheduling, file systems, IPC. | [Core Cs Fundamentals](81.02-core-cs-fundamentals.md) |
-| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [Database](../20-backend/20.4-database/INDEX.md) + [Complete Guide](81.01-complete-guide.md) |
-| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [Core Cs Fundamentals](81.02-core-cs-fundamentals.md) + [REST API](../20-backend/20.3-rest-apis/INDEX.md) |
+| **Database design** | Normalization, indexes, transactions, ACID, query optimization, joins, NoSQL vs SQL trade-offs. | [Database](../20-backend/20.4-database/INDEX.md) |
+| **Networking basics** | HTTP, TCP/IP, DNS, TLS handshake, REST, GraphQL, gRPC. | [OS & Transport (81.02)](81.02-core-cs-fundamentals.md) + [REST API](../20-backend/20.3-rest-apis/INDEX.md) |
 | **Coding on whiteboard / shared doc** | Can write a working solution with clear variable names, edge cases, and complexity analysis in 25-30 min. **No IDE, no autocomplete.** | Practice with timer |
 | **Behavioral — STAR + company values** | 5-8 stories, lead with result, Amazon LP or Googleyness or similar. | [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) + your own story bank |
 
 ### Tier 2 — Asked in 60-80% of FAANG interviews (mid-senior to senior)
 
 | Topic | What you need to demonstrate | Where to study |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [Core Cs Fundamentals](81.02-core-cs-fundamentals.md) + [Coding Patterns/15 Bit Manipulation](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Bit manipulation** | XOR tricks, bitmask DP, popcount. Asked at Meta, Google. | [Bit Manipulation file](../70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) + [Pattern 15 in 81.01](81.01-complete-guide.md) |
 | **Segment Tree / Fenwick / BIT** | Range queries with updates. Asked at Google, occasionally Meta. Skip for Amazon/Microsoft. | [Advanced Topics](81.05-advanced-topics.md) |
 | **Backtracking** | N-queens, sudoku, word search, permutations. Classic. | [Coding Patterns/05 Backtracking](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
 | **Greedy algorithms** | Interval scheduling, jump game, activity selection. | [Coding Patterns/12 Greedy Prefix Sum](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) |
@@ -79,7 +79,7 @@ This is a **reference checklist** of every topic a senior Indian SDE / FAANG can
 | **API design** | REST, GraphQL, gRPC, versioning, pagination, auth. | [REST API](../20-backend/20.3-rest-apis/INDEX.md) + [GraphQL](../20-backend/20.7-graphql/INDEX.md) |
 | **Security basics** | XSS, CSRF, SQL injection, JWT, OAuth, RBAC. | [Security](../20-backend/20.5-security/INDEX.md) |
 | **Containerization** | Docker basics, multi-stage builds. | [Docker](../40-platform/40.1-docker/INDEX.md) |
-| **Cloud basics** | AWS / GCP core services: EC2/Compute Engine, S3/Cloud Storage, RDS/Cloud SQL, Lambda/Cloud Functions, SQS/Pub-Sub. | [Devops Behavioral Career](81.04-devops-behavioral-career.md) |
+| **Cloud basics** | AWS / GCP core services: EC2/Compute Engine, S3/Cloud Storage, RDS/Cloud SQL, Lambda/Cloud Functions, SQS/Pub-Sub. | [Platform stacks](../40-platform/INDEX.md) |
 | **Git workflow** | Branching strategies, rebase, merge, conflict resolution. | [Git Advanced](../40-platform/40.6-git-advanced/INDEX.md) |
 | **Testing strategy** | Unit, integration, E2E. When to mock vs not. | [Testing](../50-quality/50.1-testing/INDEX.md) |
 | **Performance + observability** | Profiling, debugging, SLI/SLO. | [Performance Monitoring](../50-quality/50.3-performance-monitoring/INDEX.md) + [Observability](../40-platform/40.4-observability/INDEX.md) |
@@ -273,12 +273,12 @@ If you can ship those, you can pass 70%+ of mid-tier loops.
 ### Core Knowledge (Phases 1-28)
 
 | # | File | Phases | Topics |
-| --- | ------------------------------------------------------------ | ------ | ---------------------------------------------------- |
-| 01 | [Complete Guide](81.01-complete-guide.md) | 1-8 | Java, DSA, Algorithms, Patterns, DP, Graphs, Trees |
-| 02 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md) | 9-16 | Bit Manipulation, Math, OOP, OS, Networks, Databases |
-| 03 | [System Design & APIs](81.03-system-design-apis-security.md) | 17-20 | System Design, REST APIs, Security, Concurrency |
-| 04 | [DevOps & Career](81.04-devops-behavioral-career.md) | 21-28 | Git, Linux, Behavioral, Resume, Testing, Cloud |
-| 05 | [Advanced Topics](81.05-advanced-topics.md) | — | Segment Tree, Fenwick, AVL, DI, Repository, MVC |
+| --- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------- |
+| 01 | [Complete Guide](81.01-complete-guide.md) | 2-8 | DSA, Algorithms, Patterns, DP, Graphs, Trees (Java core → [20.13-java](../20-backend/20.13-java/INDEX.md)) |
+| 02 | [Core CS Fundamentals](81.02-core-cs-fundamentals.md) | 13-14 | OS + transport networking (OSI, TCP/UDP) — pointers to moved phases |
+| 03 | [System Design & APIs](81.03-system-design-apis-security.md) | 16-19 | Pointer roadmap → 30.2-system-design · 20.3-rest-apis · 20.5-security · 20.13-java |
+| 04 | [DevOps & Career](81.04-devops-behavioral-career.md) | 20-28 | Git, Linux, Behavioral, Resume, Career + pointers (testing/cloud/frontend → stacks) |
+| 05 | [Advanced Topics](81.05-advanced-topics.md) | — | Segment Tree, Fenwick, AVL, OOD drills (Parking Lot) |
 
 ### Study Tools
 

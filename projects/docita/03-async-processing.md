@@ -27,18 +27,18 @@ A `QueueJob` table in PostgreSQL. Jobs are enqueued in the same transaction as b
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Job Enqueue (same transaction)               │   
-│                                                               │   
-│  prisma.$transaction(async (tx) => {                          │   
-│    await tx.appointment.create({ data: {...} });              │   
-│    await tx.queueJob.create({                                 │   
-│      data: {                                                  │   
-│        name: 'prescription.pdf.generate',                     │   
-│        data: { prescriptionId: '...', clinicId: '...' },      │   
-│        status: 'WAITING',                                     │   
-│      },                                                       │   
-│    });                                                        │   
-│  });                                                          │   
+│ Business Write + Job Enqueue (same transaction)               │
+│                                                               │
+│  prisma.$transaction(async (tx) => {                          │
+│    await tx.appointment.create({ data: {...} });              │
+│    await tx.queueJob.create({                                 │
+│      data: {                                                  │
+│        name: 'prescription.pdf.generate',                     │
+│        data: { prescriptionId: '...', clinicId: '...' },      │
+│        status: 'WAITING',                                     │
+│      },                                                       │
+│    });                                                        │
+│  });                                                          │
 │  // Both succeed or both fail — atomic                        │
 └───────────────────────────────────────────────────────────────┘
 
@@ -160,17 +160,17 @@ Domain events are written to an `OutboxEvent` table in the same transaction as t
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Event Emission (same transaction)            │   
-│                                                               │   
-│  prisma.$transaction(async (tx) => {                          │   
-│    await tx.appointment.create({ data: {...} });              │   
-│    await outbox.append(tx, {                                  │   
-│      eventName: 'appointment.created',                        │   
-│      clinicId: appointment.clinicId,                          │   
-│      payload: { appointmentId, patientId, doctorId },         │   
-│      idempotencyKey: `apt-created-${appointment.id}`,         │      
-│    });                                                        │   
-│  });                                                          │   
+│ Business Write + Event Emission (same transaction)            │
+│                                                               │
+│  prisma.$transaction(async (tx) => {                          │
+│    await tx.appointment.create({ data: {...} });              │
+│    await outbox.append(tx, {                                  │
+│      eventName: 'appointment.created',                        │
+│      clinicId: appointment.clinicId,                          │
+│      payload: { appointmentId, patientId, doctorId },         │
+│      idempotencyKey: `apt-created-${appointment.id}`,         │
+│    });                                                        │
+│  });                                                          │
 │  // Both succeed or both fail — atomic                        │
 └───────────────────────────────────────────────────────────────┘
 

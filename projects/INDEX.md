@@ -21,7 +21,7 @@
 **If you have an interview about Docita, read these in order:**
 
 1. [Complete Interview Defense](docita/80.36-docita-complete-interview-defense.md) — the single file to read before any interview
-2. [Architecture Deep Dives](docita/INDEX.md) — 21 files, every decision justified
+2. [Architecture Deep Dives](docita/INDEX.md) — 22 files, every decision justified
 3. [Resume Defense](docita/80.16-docita-resume-defense.md) — 130 fact-bounded questions
 4. [Evidence Pack](docita/80.17-docita-interview-evidence-pack.md) — fast pre-interview refresh
 5. [Google-Level Prep](docita/80.21-docita-google-level-prep.md) — 70+ senior/staff questions

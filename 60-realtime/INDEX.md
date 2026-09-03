@@ -26,7 +26,7 @@ The 11 files organize into 5 conceptual categories — the "GoF classification" 
 | [Framework Implementation](#framework-implementation) | 3 | Socket.IO semantics, NestJS gateways, GraphQL subscriptions — where code actually gets written |
 | [Peer-to-Peer & Data Channels](#peer-to-peer--data-channels) | 1 | WebRTC — media without servers |
 | [Architecture & Scale](#architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
-| [Testing & Drills](#interview-drills) | 2 | Load/chaos/soak testing realtime systems + curated Q&A |
+| [Testing & Drills](#testing--drills) | 2 | Load/chaos/soak testing realtime systems + curated Q&A |
 
 ---
 

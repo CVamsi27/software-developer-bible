@@ -9,7 +9,7 @@
 - [Getting Started](#getting-started)
 - [Directory Structure](#directory-structure)
 - [File Naming](#file-naming)
-- [File Metadata](#file-metadata-html-comment--shieldsiobadges)
+- [File Metadata](#file-metadata-html-comment--shieldsio-badges)
 - [Badges](#badges)
 - [Content Structure](#content-structure)
 - [INDEX.md Format](#indexmd-format)

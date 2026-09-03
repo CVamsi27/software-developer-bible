@@ -67,7 +67,7 @@ Each file follows a consistent structure:
 | --------------- | ------------------------------------------------------------------------- |
 | Active clinics | 25+ |
 | Workflows/month | 1,000+ |
-| Domain modules | 28 |
+| Domain modules | 29 |
 | Prisma models | 149 |
 | ADRs | 14 |
 | Tech stack | TypeScript, React 19, NestJS 11, Prisma 7, PostgreSQL, Fly.io, Cloudflare |

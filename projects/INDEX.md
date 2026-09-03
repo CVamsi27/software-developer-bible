@@ -12,7 +12,7 @@
 
 | # | Folder | Project | Description |
 | --- | -------------------------- | --------- | ------------------------------------------------------------------------------------ |
-| 1 | [docita/](docita/INDEX.md) | Docita | Healthcare SaaS — 25+ clinics, 1,000+ workflows/month, 149 Prisma models, 28 domains |
+| 1 | [docita/](docita/INDEX.md) | Docita | Healthcare SaaS — 25+ clinics, 1,000+ workflows/month, 149 Prisma models, 29 domains |
 
 ---
 

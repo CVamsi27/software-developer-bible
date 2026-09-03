@@ -126,3 +126,22 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 ## Navigation
 
 [← Previous: Node.js](../20.1-node.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: REST APIs →](../20.3-rest-apis/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Modules & DI | `apps/api/src/app.module.ts` composing per-domain feature modules, e.g. `apps/api/src/domains/clinical/clinical.module.ts` - providers wired through the Nest container |
+| Controllers | `apps/api/src/domains/clinical/presentation/controllers/{lab-tests,lab-workflow,medical-coding}.controller.ts` - thin route handlers delegating to services |
+| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` - resolves the active clinic tenant before guards run |
+| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts`, `roles.guard.ts`, `tier.guard.ts` + `auth/guards/` (consent, tenant, policy, subscription-status, rate-limit) - authN/authZ gate the request lifecycle |
+| Pipes (validation) | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - global `ZodValidationPipe` (nestjs-zod) wired in `apps/api/src/main.ts` |
+| Interceptors | `apps/api/src/shared/common/interceptors/` - request-id, request-logging, cache, timeout, tenant-context, csrf, rate-limit, idempotency cross-cutting behavior |
+| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` + `prisma-error.registry.ts` - global filter mapping Prisma/domain errors to HTTP responses |
+| Scheduling | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`, `apps/api/src/domains/clinical/medical-code-sync.cron.ts`, `apps/api/src/domains/reminders/reminders.scheduler.module.ts` - @nestjs/schedule crons |
+| Swagger / OpenAPI | `apps/api/src/main.ts` - SwaggerModule setup + `cleanupOpenApiDoc`; DTOs annotated via nestjs-zod |
+| CQRS / Nest transports | No counterpart - domain flow uses services + outbox events (EventEmitter2), not `@nestjs/cqrs` or Nest microservice transports |

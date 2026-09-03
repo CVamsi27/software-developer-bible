@@ -104,3 +104,17 @@ Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
 ## Navigation
 
 [← Previous: Microservices](../20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). GraphQL has **no docita implementation** - the API is REST + typed DTOs, so this stack is interview knowledge, not shipped code. The closest shipping counterparts:
+
+| Topic | Docita evidence (closest analog) |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typed schema contracts | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` + nestjs-zod DTOs - schema-first discipline without GraphQL's runtime |
+| Data-layer schema | `packages/db/prisma/schema.prisma` - the source of truth the typed API contract is derived from |
+| N+1 prevention (DataLoader) | `apps/api/src/shared/common/select-fragments.ts` + Prisma relation loading - N+1 avoided at the query layer instead |
+| Subscriptions (realtime push) | `apps/api/src/websockets/notifications.gateway.ts` + `payment.websocket.gateway.ts` - the WebSocket analog of GraphQL subscriptions |
+| Federation / gateway / codegen | No counterpart - no GraphQL runtime, federation, or codegen pipeline exists |

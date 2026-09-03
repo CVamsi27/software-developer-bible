@@ -69,3 +69,21 @@ service mesh               distributed transactions    resilience)              
 ## Navigation
 
 [← Previous: Security (Auth track)](../20.5-security/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: GraphQL →](../20.7-graphql/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Transactional outbox | `apps/api/src/shared/modules/outbox/` - `outbox.service.ts` appends events in the business `$transaction`; `outbox-relay.scheduler.ts` drains them |
+| Postgres-backed queue | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `queue.module.ts` + `queue.worker.module.ts` - durable job queue on Postgres rows |
+| In-memory queue (dev) | `apps/api/src/shared/modules/queue/in-memory-queue.service.ts` - same port, no persistence, for tests/CI |
+| DLQ & replay | `apps/api/src/shared/modules/queue/dlq.controller.ts` + `dlq-replay.scheduler.ts` - dead-letter inspection and scheduled replay |
+| Idempotent jobs | `apps/api/src/shared/modules/idempotency/` - idempotency.interceptor/service guarding retried operations |
+| Event-driven flow | `apps/api/src/shared/common/events/` - `event.service.ts` + `domain-events.ts`/`application-events.ts` on EventEmitter2 |
+| Retry on transient errors | `apps/api/src/shared/common/interceptors/prisma-retry.interceptor.ts` - bounded retry for Prisma connection errors |
+| Saga / 2PC | No counterpart - payments use idempotency + webhooks + reconciliation instead of a saga orchestrator |
+| Kafka / RabbitMQ / gRPC / service mesh | No counterpart - the queue is intentionally Postgres-based; the chapters are the interview framing for when a broker earns its keep |

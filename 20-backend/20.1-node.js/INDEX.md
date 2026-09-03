@@ -111,3 +111,19 @@ Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 ## Navigation
 
 [← Previous: Next.js](../../10-frontend/10.4-next.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: NestJS →](../20.2-nestjs/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Graceful shutdown | `apps/api/src/main.ts` - gracefulShutdown closes the HTTP server + Prisma on SIGTERM/SIGINT; the same pattern runs in `apps/worker/src/main.ts` |
+| Process & environment | `apps/api/src/shared/modules/config/app-config.ts` - zod `validateEnv()` fails fast at boot; runtime values served via `app-configuration.service.ts` |
+| Async work off the event loop | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `queue.worker.module.ts` - deferred jobs run in the separate worker deployable (`apps/worker/`), never inline in request handlers |
+| File I/O & uploads | `apps/api/src/domains/documents/infrastructure/storage.provider.ts` with `r2-storage.provider.ts` / `local-storage.provider.ts` - pluggable storage backend for uploads (R2 vs local disk) |
+| Streaming & WebSockets | `apps/api/src/websockets/notifications.gateway.ts` + `payment.websocket.gateway.ts` - async push I/O layered on the API process |
+| Clustering & workers | `apps/worker/src/main.ts` - process-level separation (API vs worker deployable) instead of in-process `cluster`/`worker_threads` |
+| Raw `node:http` server | No counterpart - docita builds on NestJS/Express; this chapter is the foundation NestJS abstracts away |

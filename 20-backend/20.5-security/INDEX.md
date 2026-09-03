@@ -148,3 +148,21 @@ Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-q
 ## Navigation
 
 [← Previous: Database](../20.4-database/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| JWT auth | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` + `jwt-auth.guard.ts` + `staff-jwt-audience.guard.ts` - passport strategy with audience checks |
+| Sessions, API keys & resets | `apps/api/src/shared/modules/auth/auth/auth-session.service.ts`, `api-key.service.ts`, `auth-password.controller.ts`, `auth-email-verification.service.ts`, `auth-mfa-orchestrator.service.ts` |
+| RBAC / ABAC | `apps/api/src/shared/modules/authorization/` - `authorization.service.ts` + `abac-policy.registry.ts` + `role-bridge.ts`; enforced via `roles.guard.ts` / `policy.guard.ts` / `require-policy.decorator.ts` |
+| Tenant isolation | `apps/api/src/shared/common/middleware/tenant.middleware.ts` + `auth/guards/tenant.guard.ts` + `shared/modules/rls/` - clinic scoping at every layer |
+| CSRF & security headers | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts`; `helmet` configured in `apps/api/src/main.ts` |
+| Rate limiting | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts`, `user-rate-limit.guard.ts` + `shared/modules/tenant-rate-limit/` - per-IP/user/clinic quotas |
+| Audit logging | `apps/api/src/shared/modules/audit/audit-logger.service.ts` + `shared/common/interceptors/patient-audit.interceptor.ts` - access events for PHI surfaces |
+| Field-level encryption | `apps/api/src/shared/common/encryption.service.ts` + `encryption-patient-fields.boundary.ts` - sensitive patient fields encrypted before write |
+| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` + `auth/decorators/emergency-access.decorator.ts` - break-glass with audit trail |

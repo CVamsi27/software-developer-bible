@@ -33,3 +33,17 @@ Language Fundamentals → OOP & SOLID → Concurrency → Testing → **Spring B
 - [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md)
 - [Testing — Quality](../../50-quality/50.1-testing/INDEX.md)
 - [Coding Patterns — Interview Toolkit](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Docita is a **TypeScript/NestJS monorepo — there is no Java code to map to**. The Java chapters teach JVM concepts the stack itself doesn't use; the closest conceptual counterparts (not code mappings):
+
+| Java chapter | Closest docita concept |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DI / Spring container | NestJS modules + providers - `apps/api/src/app.module.ts`, `apps/api/src/domains/clinical/clinical.module.ts` |
+| MVC controllers / filter chain | NestJS controllers, guards, pipes - `apps/api/src/domains/clinical/presentation/controllers/`, `shared/modules/auth/guards/` |
+| Concurrency & multithreading | Node's single-thread event loop + process separation - `apps/worker/src/main.ts`, `shared/modules/queue/postgres-queue.service.ts` (jobs never block the API thread) |
+| JUnit & Mockito testing | Colocated Vitest specs (`*.spec.ts`) - e.g. `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` |
+| Actuator / ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |

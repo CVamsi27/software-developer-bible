@@ -71,3 +71,20 @@ principles → methods    pagination → error design   rate limiting → gatewa
 ## Navigation
 
 [← Previous: NestJS](../20.2-nestjs/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Database →](../20.4-database/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| URI versioning | `apps/api/src/main.ts` - `VersioningType.URI` enabled app-wide |
+| Error contracts | `apps/api/src/shared/modules/error-handling/` - global `http-exception.filter.ts` + `prisma-error.registry.ts`; structured problem responses in `shared/common/errors/` (`forbidden-problem.ts`) |
+| Pagination | `apps/api/src/shared/common/pagination.helper.ts` + per-domain list DTOs - cursor/offset helpers for list endpoints |
+| Rate limiting | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` + `shared/modules/tenant-rate-limit/tenant-rate-limit.guard.ts` - per-clinic API quotas |
+| Idempotent writes | `apps/api/src/shared/modules/idempotency/` - `idempotency.interceptor.ts` + `idempotency.service.ts` + `requires-idempotency.decorator.ts` for payment/order-style POSTs |
+| Webhooks | `apps/api/src/domains/webhooks/` + `shared/modules/webhooks/webhook-verifier.ts`, `razorpay-webhook-verification.helper.ts`, `outgoing/` - signed inbound + outbound delivery |
+| Response caching | `apps/api/src/cache/cache.module.ts` + `shared/common/interceptors/cache.interceptor.ts` - Cache-Control headers are not centrally set; see the caching sub-stack anchor |
+| REST maturity / HATEOAS | No counterpart - pragmatic JSON API with typed DTOs; the maturity model is the interview framing |

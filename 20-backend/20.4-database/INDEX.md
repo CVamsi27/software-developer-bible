@@ -142,3 +142,22 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 ## Navigation
 
 [← Previous: REST APIs](../20.3-rest-apis/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Security →](../20.5-security/INDEX.md)
+
+---
+
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Schema & models | `packages/db/prisma/schema.prisma` (workspace package `@workspace/db`) - the full data model with `@@index` declarations |
+| Migrations | `packages/db/prisma/migrations/` - versioned schema migrations |
+| Transactions | `apps/api/src/prisma/transaction-runner.ts` + `shared/common/database-transaction-options.ts`; outbox rows append inside the same `prisma.$transaction` as the business write |
+| Index & query tuning | `apps/api/src/shared/modules/database/database-index-optimization.service.ts` - index suggestions against real query patterns |
+| Pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` - connection pool management for Prisma |
+| Slow queries | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` - logs + surfaces slow statements |
+| Repository pattern | `apps/api/src/shared/common/repositories/` (base.repository.ts) + per-domain `infrastructure/repositories/prisma-*.ts` - DB access behind interfaces |
+| Multi-tenant RLS | `apps/api/src/shared/modules/rls/` - `rls.service.ts` + `apply-rls-scope.ts` scoping every query to the clinic tenant |
+| Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` |
+| Replication / read replicas | No read-replica fan-out - single managed Postgres (see `shared/modules/database/database-rds.service.ts`) |

@@ -1,10 +1,10 @@
 # Interview Lanes
 
-> **Two peer interview preparation lanes** that draw from the [7 study stacks (numbered: 00-strategy → 10-frontend → 20-backend → 30-architecture → 40-platform → 50-quality → 60-realtime → 70-interview-toolkit)](../INDEX.md#the-7-study-stacks-numbered-for-study-order). Pick yours before diving in.
+> **Two peer interview preparation lanes** that draw from the [7 study stacks (numbered: 10-frontend → 20-backend → 30-architecture → 40-platform → 50-quality → 60-realtime → 70-interview-toolkit)](../INDEX.md#the-7-study-stacks-numbered-for-study-order), starting with the shared [00-strategy](../00-strategy/INDEX.md) strategy folder. Pick yours before diving in.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](.)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](../INDEX.md)
-[![Files](https://img.shields.io/badge/files-795-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-806-orange)](../INDEX.md)
 
 ---
 
@@ -25,7 +25,7 @@ The bible is split into two layers:
 
 | Layer | What it is | Folders | Numbered | Modifies |
 | ------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------- | ------------------------ |
-| **Stacks** (technical material) | JS, React, DB, K8s, design patterns, etc. | `00-strategy` → `70-interview-toolkit` (7 folders) | Yes (study order) | Both lanes consume these |
+| **Stacks** (technical material) | JS, React, DB, K8s, design patterns, etc. | `10-frontend` → `70-interview-toolkit` (7 folders) | Yes (study order) | Both lanes consume these |
 | **Lanes** (interview prep) | Resume, take-home, behavioral, comp, visa, company guides | `80-lanes-abroad-full-stack` (31 files), `81-lanes-indian-sde-faang` (22 files) | Yes (in-lane ordering) | Each lane is independent |
 
 ```text
@@ -77,9 +77,9 @@ The bible is split into two layers:
 
 ## Lanes are terminal
 
-Lanes are **terminal** — they reference the stacks, never the other way around. The 7 study stacks (numbered: `00-strategy` → `10-frontend` → `20-backend` → `30-architecture` → `40-platform` → `50-quality` → `60-realtime` → `70-interview-toolkit`) contain no lane-specific content; personalization goes in the lane.
+Lanes are **terminal** — they reference the stacks, never the other way around. The 7 study stacks (numbered: `10-frontend` → `20-backend` → `30-architecture` → `40-platform` → `50-quality` → `60-realtime` → `70-interview-toolkit`) contain no lane-specific content; the [00-strategy](../00-strategy/INDEX.md) folder holds the cross-lane material (resume, STAR, communication) and personalization goes in the lane.
 
-**Rule of thumb:** if you're modifying code in `00-strategy` through `70-interview-toolkit`, ask "does this apply to **both** lanes?" If yes, edit the stack. If no, edit the lane.
+**Rule of thumb:** if you're modifying code in the shared folders (`00-strategy` or any of the 7 stacks), ask "does this apply to **both** lanes?" If yes, edit the stack. If no, edit the lane.
 
 ---
 

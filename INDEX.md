@@ -2,23 +2,24 @@
 
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
-> **Pick your lane first.** The bible is organized into **3 interview lanes** that draw from **7 shared study stacks**. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
+> **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
 >
 > **Folders are numbered for the recommended study order.** `00-` is everyone starts here. `10-` through `60-` are the 7 technical stacks in dependency order. `70-` is interview toolkit. `80-` and `81-` are the two lanes.
 
-[![Lanes](https://img.shields.io/badge/lanes-3-blue)](lanes/INDEX.md)
+[![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-795-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-806-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-September%202026-purple)](#)
 
 ---
 
 ## Pick Your Lane
 
+**Everyone starts with the [00-strategy](00-strategy/INDEX.md) strategy folder** — communication, resume, STAR, HR questions — it is shared by both lanes, not a lane itself. Then pick one of the two lanes:
+
 | Lane | Folder | For | Style |
 | ------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------- |
-| **Cross-Lane** (everyone starts here) | [00-strategy](00-strategy/INDEX.md) | Communication, resume, STAR method, HR questions | Universal — applies to all lanes |
 | **Abroad Full-Stack** (recommended for EU) | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | EU / non-Indian mid-stage startups (n8n, SumUp, Langfuse, sennder) | Take-home + system design, 4-week plan, EUR 70-160K + visa |
 | **Indian SDE / FAANG** | [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
 
@@ -85,7 +86,8 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 20.6 | [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, transactional outbox, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
-| 20.9 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 20.12 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 20.13 | [Java](20-backend/20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
 
 ### 30-architecture — Architecture (106 files in 3 sub-stacks)
 
@@ -144,7 +146,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 ```text
 00-strategy → Communication → Resume Tips → STAR Method → HR Questions
 10-frontend → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
-20-backend → Node.js → NestJS → REST APIs → Database → Caching → Auth & Security track → Microservices & Distributed Patterns → AI Engineering → GraphQL
+20-backend → Node.js → NestJS → REST APIs → Database → Auth & Security track → Microservices & Distributed Patterns → GraphQL → Caching → AI Engineering → Java
 30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo → Twelve-Factor → CDN & Edge → Reverse Proxy → IaC & Terraform
 50-quality → Testing → Accessibility → Performance Monitoring → Production Engineering
@@ -163,7 +165,7 @@ projects → Docita architecture deep-dives, interview defense
 
 | Stack | Depends on | Used by |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ---------- | -------------------------------------------------------------- |
-| [00-strategy](00-strategy/INDEX.md) | — | All lanes (everyone starts here) |
+| [00-strategy](00-strategy/INDEX.md) | — | Both lanes (everyone starts here) |
 | [10-frontend](10-frontend/INDEX.md) | — | Both lanes |
 | [20-backend](20-backend/INDEX.md) | — | Both lanes |
 | [30-architecture](30-architecture/INDEX.md) | — | Both lanes |
@@ -178,7 +180,7 @@ projects → Docita architecture deep-dives, interview defense
 
 ## Direct Indexes
 
-**Lanes:**
+**Strategy & lanes:**
 
 - [00-strategy/index](00-strategy/INDEX.md) — Cross-lane strategy
 - [80-lanes-abroad-full-stack/index](80-lanes-abroad-full-stack/INDEX.md) — Abroad Full-Stack lane (recommended for EU)

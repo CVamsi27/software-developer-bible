@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs the three mechanical checks in order; exits non-zero if any real
+# Runs the four mechanical checks in order; exits non-zero if any real
 # failure is found. Known lane-80.x numbering GAPS are intentional (numbers
 # owned by projects/docita prep docs) and reported as baseline noise, not
 # failures.
@@ -12,7 +12,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/3  check_counts.py — repo-total scale claims vs live disk"
+echo "1/4  check_counts.py — repo-total scale claims vs live disk"
 echo "     python3 scripts/check_counts.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_counts.py; then
@@ -22,7 +22,7 @@ else
 fi
 
 echo ""
-echo "2/3  check_alignment.py — table pipes + ASCII box walls"
+echo "2/4  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +33,7 @@ else
 fi
 
 echo ""
-echo "3/3  check_structure.py — IDs, sequences, interview-last"
+echo "3/4  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -48,6 +48,17 @@ if [ "$CODE" -eq 0 ] || [ -z "$REAL" ]; then
     echo "  PASS (baseline lane-80.x GAPS only)"
 else
     printf '%s\n' "$REAL"
+    FAIL=1
+fi
+
+echo ""
+echo "4/4  check_links.py — fence-aware broken-link scan"
+echo "     python3 scripts/check_links.py"
+echo "------------------------------------------------------------"
+if python3 scripts/check_links.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — fix the reported links (or confirm they are example links)"
     FAIL=1
 fi
 

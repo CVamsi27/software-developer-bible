@@ -12,7 +12,7 @@
 
 ## Topic Categories
 
-The 30 files are organized into 6 category folders. Files in the same category build on each other — read them in order within a category, then move on.
+The 31 files are organized into 6 category folders. Files in the same category build on each other — read them in order within a category, then move on.
 
 | Category | Files | Why it matters |
 | ------------------------------------------------------------------------ | ----: | -------------------------------------------------------------------------------------------- |
@@ -45,9 +45,9 @@ How JavaScript actually runs. These 6 files are the foundation — every other c
 | 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | GEC vs FEC, creation/execution phases, scope chain, hoisting internals | 20 min |
 | 02 | [Call Stack](01-execution-and-scope/10.1.1.02-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | 15 min |
 | 03 | [Hoisting](01-execution-and-scope/10.1.1.03-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 15 min |
-| 04 | [Closures](01-execution-and-scope/10.1.1.04-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | 25 min |
-| 05 | [Scope](01-execution-and-scope/10.1.1.05-scope.md) | Global, function, block scope, scope chain, lexical environment | 20 min |
-| 06 | [Lexical Environment](01-execution-and-scope/10.1.1.06-lexical-environment.md) | Environment records, outer reference, scope chain internals | 15 min |
+| 04 | [Scope](01-execution-and-scope/10.1.1.04-scope.md) | Global, function, block scope, scope chain, lexical environment | 20 min |
+| 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | 15 min |
+| 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | 25 min |
 
 **Read order:** Execution Context → Scope → Lexical Environment → Hoisting → Closures → Call Stack.
 
@@ -130,7 +130,7 @@ The newest features + the interview Q&A bank.
 ### Path A — New to JS (1-2 weeks)
 1. Execution & Scope (all 6 files, ~2 hrs)
 2. Async & Concurrency (4 files, ~2 hrs)
-3. Memory & Data (7 files, ~2.5 hrs)
+3. Memory & Data (8 files, ~2.5 hrs)
 4. Objects, Prototypes & `this` (3 files, ~1.5 hrs)
 5. Functional Patterns (5 files, ~2 hrs)
 6. Interview Questions (review)

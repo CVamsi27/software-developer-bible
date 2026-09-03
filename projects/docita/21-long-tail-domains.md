@@ -174,7 +174,7 @@ if (!user || user.role !== Role.LAB)
 
 ### Trade-offs
 
-- **It's a scaffold, not a portal** — only auth exists; the *rest* of the lab experience (worklist, result upload) still runs through the clinic's lab-workflow controllers (deep-dive 21). The separate login is the trust boundary; the feature surface is the next milestone.
+- **It's a scaffold, not a portal** — only auth exists; the *rest* of the lab experience (worklist, result upload) still runs through the clinic's lab-workflow controllers (deep-dive 20). The separate login is the trust boundary; the feature surface is the next milestone.
 - **A `LAB` role must exist on the user** — provisioning lab users is a separate admin step; nothing self-serves account creation here.
 
 ### What Worked / What Failed
@@ -199,7 +199,7 @@ Worked: role-gating at the login boundary kept the lab surface from accidentally
 
 ### Context
 
-Clinics have staff (receptionists, nurses, doctors) who take leave. The interesting requirement is cross-domain: **when a doctor goes on leave, their appointment slots must disappear** — otherwise patients book into a vacation. Leave therefore isn't just a HR CRUD; approving a doctor's leave must reach the availability/slot system (deep-dive 16).
+Clinics have staff (receptionists, nurses, doctors) who take leave. The interesting requirement is cross-domain: **when a doctor goes on leave, their appointment slots must disappear** — otherwise patients book into a vacation. Leave therefore isn't just a HR CRUD; approving a doctor's leave must reach the availability/slot system (deep-dive 15).
 
 ### Decisions
 
@@ -267,7 +267,7 @@ Docita asks clinics for product feedback (good/bad features, improvement areas, 
 ### Trade-offs
 
 - **`can-submit` logic implies submission windows/permissions** the reviewed slice only partially shows (`GET /feedback/can-submit`, `GET /feedback/my-feedback`) — worth confirming before claiming a throttle exists.
-- **Stats recompute on every call** — no materialized rollup; fine at current volume, will want caching when feedback volume grows (same answer as analytics deep-dive 15).
+- **Stats recompute on every call** — no materialized rollup; fine at current volume, will want caching when feedback volume grows (same answer as analytics deep-dive 14).
 
 ### What Worked / What Failed
 
@@ -332,8 +332,8 @@ Worked: terminal-state stamping fixed the "tour auto-restarts after completion" 
 
 Read together, these seven prove a cultural point worth making in an interview:
 
-1. **Every cron that touches multiple tenants is RLS-bypassed deliberately and processes tenants as isolated batches** (reminders, and deep-dive 16/19's sweeps).
-2. **Every two-write side effect is a transaction** — approve-leave + publish-time-off (leave), and deep-dive 14's ledger, 12's claims.
+1. **Every cron that touches multiple tenants is RLS-bypassed deliberately and processes tenants as isolated batches** (reminders, and deep-dive 15/18's sweeps).
+2. **Every two-write side effect is a transaction** — approve-leave + publish-time-off (leave), and deep-dive 13's ledger, 11's claims.
 3. **Every send/event is deduplicated somewhere** — per-channel reminder rows, webhook replay claims, delivery idempotency keys.
 4. **Every boundary is role/feature/tier-gated** — lab portal role gate, reminders `AUTO_REMINDERS` feature, template/doc access decorators.
 5. **Time is always injected** (clock ports) so even a 670-LOC domain is testable.

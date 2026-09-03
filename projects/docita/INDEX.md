@@ -21,6 +21,8 @@ Each file follows a consistent structure:
 | **Code Evidence** | Exact file paths proving every claim |
 | **Interview Script** | How to explain it in 60 seconds |
 
+**Reading order:** 01–10 = the foundation and product decisions; 11–21 = the per-domain deep dives (insurance claims → long tail); 22 = the retrospective capstone — read it last, it summarizes the whole series.
+
 ---
 
 ## Files
@@ -37,18 +39,18 @@ Each file follows a consistent structure:
 | 08 | [Billing & Invoicing](08-billing-invoicing.md) | GST, tax calculation, invoice lifecycle | Indian healthcare billing complexity |
 | 09 | [Subscription System](09-subscription-system.md) | Tier gating, overage, referrals | SaaS monetization — how clinics pay Docita |
 | 10 | [Deployment & Infrastructure](10-deployment-infrastructure.md) | Fly.io, Cloudflare, migrations, cold starts | Production reliability at small-team scale |
-| 11 | [What I'd Do Differently](11-what-id-do-differently.md) | Retrospective, tech debt, future improvements | Honest assessment — what's not perfect |
-| 12 | [Insurance Claims](12-insurance-claims.md) | Claim state machine, versioning, readiness gate | Regulated lifecycle — every move audited, no clobbering |
-| 13 | [IPD (Inpatient)](13-ipd-inpatient.md) | Ward/bed management, admit/transfer/discharge | A new resource — beds — whose state must never drift |
-| 14 | [Inventory](14-inventory.md) | Movement ledger, atomic stock decrement | Clinic stock can never go negative or silently diverge |
-| 15 | [Analytics & Dashboards](15-analytics-and-dashboards.md) | Factories, timezone bucketing, snapshots | Reports must be timezone-correct and historically stable |
-| 16 | [Doctors, Verification & Public Booking](16-doctors-verification-and-public-booking.md) | NMC verification, slots, referral funnel | The acquisition loop — regulated doctors, anonymous patients |
-| 17 | [Patient Portal](17-patient-portal.md) | OTP login, patient-scoped reads, adherence | PHI access where the session is the patient |
-| 18 | [ABDM Integration](18-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
-| 19 | [Enterprise Contracts](19-enterprise-contracts.md) | True-up, prepay, member overrides, RLS bypass | Group deals — money at risk, surfaced early |
-| 20 | [Documents & Uploads](20-documents-and-uploads.md) | Storage providers, upload sessions, signed URLs | Every file — PHI-safe, provider-swappable, short TTLs |
-| 21 | [Clinical, Lab & Medical Coding](21-clinical-lab-and-medical-coding.md) | Lab order lifecycle, ICD/CPT sync, code search | The second clinical pillar — results gated by payment, codes that feed claims |
-| 22 | [Long Tail: Reminders, Custom Fields, Webhooks & More](22-long-tail-domains.md) | Reminders, custom fields, webhooks, leave, feedback | Small domains, same discipline — dedupe, gating, atomicity at every size |
+| 11 | [Insurance Claims](11-insurance-claims.md) | Claim state machine, versioning, readiness gate | Regulated lifecycle — every move audited, no clobbering |
+| 12 | [IPD (Inpatient)](12-ipd-inpatient.md) | Ward/bed management, admit/transfer/discharge | A new resource — beds — whose state must never drift |
+| 13 | [Inventory](13-inventory.md) | Movement ledger, atomic stock decrement | Clinic stock can never go negative or silently diverge |
+| 14 | [Analytics & Dashboards](14-analytics-and-dashboards.md) | Factories, timezone bucketing, snapshots | Reports must be timezone-correct and historically stable |
+| 15 | [Doctors, Verification & Public Booking](15-doctors-verification-and-public-booking.md) | NMC verification, slots, referral funnel | The acquisition loop — regulated doctors, anonymous patients |
+| 16 | [Patient Portal](16-patient-portal.md) | OTP login, patient-scoped reads, adherence | PHI access where the session is the patient |
+| 17 | [ABDM Integration](17-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
+| 18 | [Enterprise Contracts](18-enterprise-contracts.md) | True-up, prepay, member overrides, RLS bypass | Group deals — money at risk, surfaced early |
+| 19 | [Documents & Uploads](19-documents-and-uploads.md) | Storage providers, upload sessions, signed URLs | Every file — PHI-safe, provider-swappable, short TTLs |
+| 20 | [Clinical, Lab & Medical Coding](20-clinical-lab-and-medical-coding.md) | Lab order lifecycle, ICD/CPT sync, code search | The second clinical pillar — results gated by payment, codes that feed claims |
+| 21 | [Long Tail: Reminders, Custom Fields, Webhooks & More](21-long-tail-domains.md) | Reminders, custom fields, webhooks, leave, feedback | Small domains, same discipline — dedupe, gating, atomicity at every size |
+| 22 | [What I'd Do Differently](22-what-id-do-differently.md) | Retrospective, tech debt, future improvements | Honest assessment — what's not perfect |
 
 ---
 

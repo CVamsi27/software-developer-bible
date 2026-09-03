@@ -1,6 +1,6 @@
 # 21 — Clinical, Lab Orders & Medical Coding
 
-> The second clinical pillar beyond prescriptions: a lab-order lifecycle (order → sample → result → paid → released) whose release gate is *payment AND result*, and an ICD-10/CPT medical-coding layer that syncs the national code catalog in the background, searches it with a circuit-breaker, and feeds the insurance-claims readiness gate from deep-dive 12.
+> The second clinical pillar beyond prescriptions: a lab-order lifecycle (order → sample → result → paid → released) whose release gate is *payment AND result*, and an ICD-10/CPT medical-coding layer that syncs the national code catalog in the background, searches it with a circuit-breaker, and feeds the insurance-claims readiness gate from deep-dive 11.
 
 ---
 
@@ -10,7 +10,7 @@ Deep-dive 07 covered prescriptions — the outpatient Rx side of clinical care. 
 
 **Lab workflow** — clinics order lab tests (internally or to an external lab directory). An order moves through: ORDERED → SAMPLE_COLLECTED → (result uploaded → RESULT_READY) → (payment verified) → COMPLETED, or CANCELLED. The patient receives the result over WhatsApp — *but only after payment*.
 
-**Medical coding** — ICD-10-CM (diagnoses) and CPT/HCPCS (procedures) codes, which Indian billing and insurance claims depend on (deep-dive 12's readiness gate checks "uncoded diagnoses/procedures"). Doctors search the catalog at billing time and mark favorites; the system auto-suggests and syncs a *common codes* subset locally so search works offline of the national API.
+**Medical coding** — ICD-10-CM (diagnoses) and CPT/HCPCS (procedures) codes, which Indian billing and insurance claims depend on (deep-dive 11's readiness gate checks "uncoded diagnoses/procedures"). Doctors search the catalog at billing time and mark favorites; the system auto-suggests and syncs a *common codes* subset locally so search works offline of the national API.
 
 **The problems:** (1) releasing a lab result is a *financial + clinical* gate — a clinic that gives away results before payment loses revenue, but a lab that withholds a result after payment breaches care; (2) the code catalog is huge (ICD-10-CM is ~70k codes) and lives on an *external* API — search must not block on a flaky national service, and the local sync must be incremental and batched; (3) CPT is proprietary (AMA-licensed) while ICD and HCPCS are public (NLM) — one provider abstraction must hide two very different licensing realities; (4) every lab step is PHI-sensitive and clinic-scoped.
 
@@ -71,7 +71,7 @@ async verifyPayment(id, clinicId, data) {
 
 ### What We Chose
 
-On release, the workflow loads a `LabOrderReleaseContext` (order + patient + test name + clinic name), generates a **15-minute signed URL** for the result file when the storage provider supports it (reusing deep-dive 20's `GENERATED_PDF_SIGNED_URL_TTL_SECONDS`), and sends the `lab_result_ready` WhatsApp template with patient name, clinic name, test name, date, and the link:
+On release, the workflow loads a `LabOrderReleaseContext` (order + patient + test name + clinic name), generates a **15-minute signed URL** for the result file when the storage provider supports it (reusing deep-dive 19's `GENERATED_PDF_SIGNED_URL_TTL_SECONDS`), and sends the `lab_result_ready` WhatsApp template with patient name, clinic name, test name, date, and the link:
 
 ```typescript
 // lab-workflow-command.service.ts (releaseResult)
@@ -181,7 +181,7 @@ The cron runs on `CRON_SCHEDULES.MEDICAL_CODE_SYNC`, heartbeat-tracked, disabled
 
 ### What We Chose
 
-`ClinicalSettingsService` reads clinic settings through a strict Zod schema (`medicalCodingEnabled`, `medicalCodingProvider`, `medicalCodingAutoSuggest`, `medicalCodingPreferredSystem`) with sensible defaults (`enabled !== false`, provider `internal`, autoSuggest on, preferred system ICD-10). The medical-coding controller exposes per-clinic ICD/CPT search, **doctor favorites** (add/remove/list per code system), common-code lists, and an **uncoded-visits** endpoint — the same data the claims readiness gate (deep-dive 12) aggregates for `assertClaimReady`.
+`ClinicalSettingsService` reads clinic settings through a strict Zod schema (`medicalCodingEnabled`, `medicalCodingProvider`, `medicalCodingAutoSuggest`, `medicalCodingPreferredSystem`) with sensible defaults (`enabled !== false`, provider `internal`, autoSuggest on, preferred system ICD-10). The medical-coding controller exposes per-clinic ICD/CPT search, **doctor favorites** (add/remove/list per code system), common-code lists, and an **uncoded-visits** endpoint — the same data the claims readiness gate (deep-dive 11) aggregates for `assertClaimReady`.
 
 ### Why This Was Chosen
 
@@ -207,7 +207,7 @@ The cron runs on `CRON_SCHEDULES.MEDICAL_CODE_SYNC`, heartbeat-tracked, disabled
 
 - **First sync attempt tried to fetch the full catalog in one request** — NLM's API caps offsets; the code hit the cap and silently truncated the catalog until prefix-walking replaced single-stream pagination.
 - **A release with an unapproved WhatsApp template wedged the order** — an early version treated template failure as fatal *after* marking released, leaving orders COMPLETED but patients never notified; the `ForbiddenException`-is-a-log branch fixed the state/notification mismatch.
-- **Favorites were initially global** — doctors at different clinics shared favorite lists until favorites became clinic- and doctor-scoped; cross-clinic doctors (deep-dive 16) were the trigger.
+- **Favorites were initially global** — doctors at different clinics shared favorite lists until favorites became clinic- and doctor-scoped; cross-clinic doctors (deep-dive 15) were the trigger.
 
 ## What Could Be Better
 

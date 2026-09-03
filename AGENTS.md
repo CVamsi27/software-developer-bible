@@ -17,6 +17,7 @@
 ```bash
 # after running career-ops tools (scan / contacto / tracker / pdf):
 bash 80-lanes-abroad-full-stack/personal/doctor.sh # verify symlinks + flag new dated artifacts
+bash scripts/verify.sh                            # count + alignment + structure gates (see contributing.md)
 git add -A && git commit -m "…" # in THIS repo only
 ```
 
@@ -26,4 +27,5 @@ git add -A && git commit -m "…" # in THIS repo only
 - Every stack INDEX is a learning-flow doc (passes/stages), not just a file list.
 - Content follows the chapter template: TL;DR → Definition → Why → How → Code → Real-world → Mistakes → Best practices → Summary → Cheat sheet → See Also → References.
 - Run the link check before pushing (see contributing.md).
+- **Run the verification gates before any commit or push**: `bash scripts/verify.sh` (count guard → alignment → structure). The count guard (`scripts/check_counts.py`) exists because repo-scale numbers drifted repeatedly — never hand-edit the "806 files, 343K lines" claims; recompute and restamp them together.
 - **Unified numbering** — every stack folder `NN.N-slug/` holds either category subfolders `NN-slug/` (2-digit study order, each with its own INDEX.md) for larger stacks, or flat numbered files. Files in categories: `<stack>.<cat>.<seq>-slug.md` (cat = folder number sans leading zero, e.g., `20.5-security/01-auth/20.5.1.01-auth-fundamentals.md`). Flat-stack files: `<stack>.<seq>-slug.md`. Sequences contiguous from 01; interview-questions files always last. Verify with `python3 scripts/check_structure.py`.

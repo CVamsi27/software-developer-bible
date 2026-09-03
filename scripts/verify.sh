@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# One-command verification gate for the software-developer-bible repo.
+# Runs the three mechanical checks in order; exits non-zero if any real
+# failure is found. Known lane-80.x numbering GAPS are intentional (numbers
+# owned by projects/docita prep docs) and reported as baseline noise, not
+# failures.
+#
+# Usage:  bash scripts/verify.sh        (from the repo root)
+set -u
+cd "$(dirname "$0")/.." || exit 1
+
+FAIL=0
+
+echo ""
+echo "1/3  check_counts.py — repo-total scale claims vs live disk"
+echo "     python3 scripts/check_counts.py"
+echo "------------------------------------------------------------"
+if python3 scripts/check_counts.py; then
+    echo "  PASS"
+else
+    FAIL=1
+fi
+
+echo ""
+echo "2/3  check_alignment.py — table pipes + ASCII box walls"
+echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
+echo "------------------------------------------------------------"
+if python3 scripts/check_alignment.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — run 'python3 scripts/check_alignment.py --fix' then re-verify"
+    FAIL=1
+fi
+
+echo ""
+echo "3/3  check_structure.py — IDs, sequences, interview-last"
+echo "     python3 scripts/check_structure.py"
+echo "------------------------------------------------------------"
+OUT=$(python3 scripts/check_structure.py 2>&1)
+CODE=$?
+# Known baseline noise: the lane-80.x numbering gaps caused by prep docs
+# living in projects/docita. Everything else is a real failure.
+REAL=$(printf '%s\n' "$OUT" | grep -v "80-lanes-abroad-full-stack prefix 80.x" \
+    | grep -v "projects/docita prefix 80.x" \
+    | grep -v "^OK:" || true)
+if [ "$CODE" -eq 0 ] || [ -z "$REAL" ]; then
+    printf '%s\n' "$OUT" | grep "GAPS" | sed 's/^/  baseline (intentional): /'
+    echo "  PASS (baseline lane-80.x GAPS only)"
+else
+    printf '%s\n' "$REAL"
+    FAIL=1
+fi
+
+echo ""
+if [ "$FAIL" -eq 0 ]; then
+    echo "All checks passed — tree is clean."
+    exit 0
+else
+    echo "One or more checks FAILED — fix the reported issues before pushing."
+    exit 1
+fi

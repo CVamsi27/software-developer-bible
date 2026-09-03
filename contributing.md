@@ -23,7 +23,7 @@
 
 ## Getting Started
 
-This repository documents senior full-stack engineering interview topics across 33 sections in a 3-lane + 7-stack layout. All content is written in **GitHub Flavored Markdown** (`.md`).
+This repository documents senior full-stack engineering interview topics across 7 study stacks (10-70), a strategy folder (00), two terminal interview lanes (80, 81), and project deep-dives (projects/docita). All content is written in **GitHub Flavored Markdown** (`.md`).
 
 Before contributing, review the existing files in the relevant section to understand the established conventions before creating or modifying content.
 
@@ -44,26 +44,32 @@ Before contributing, review the existing files in the relevant section to unders
 │ ├── 00.03-star-method.md
 │ └── 00.04-hr-questions.md
 │
-├── 10-frontend/ # Frontend (JS → TS → React → Next.js)
+├── 10-frontend/ # Frontend (JS → TS → React → Next.js → Mobile)
 │ ├── 10.1-javascript/
 │ ├── 10.2-typescript/
 │ ├── 10.3-react/
 │ ├── 10.4-next.js/
 │ ├── 10.5-form-handling/
-│ └── 10.6-animation/
+│ ├── 10.6-animation/
+│ ├── 10.7-html-css/
+│ └── 10.8-mobile/
 │
-├── 20-backend/ # Backend (Node → NestJS → REST → DB → Security)
+├── 20-backend/ # Backend (Node → NestJS → REST → DB → Security → Distributed → AI → Java)
 │ ├── 20.1-node.js/
 │ ├── 20.2-nestjs/
 │ ├── 20.3-rest-apis/
 │ ├── 20.4-database/
 │ ├── 20.5-security/
 │ ├── 20.6-microservices/
-│ └── 20.7-graphql/
+│ ├── 20.7-graphql/
+│ ├── 20.8-caching/
+│ ├── 20.12-ai-engineering/
+│ └── 20.13-java/
 │
-├── 30-architecture/ # Architecture (design patterns + system design)
+├── 30-architecture/ # Architecture (design patterns + system design + infra patterns)
 │ ├── 30.1-design-patterns/
-│ └── 30.2-system-design/
+│ ├── 30.2-system-design/
+│ └── 30.3-infra-patterns/
 │
 ├── 40-platform/ # DevOps / Platform
 │ ├── 40.1-docker/
@@ -74,12 +80,16 @@ Before contributing, review the existing files in the relevant section to unders
 │ ├── 40.6-git-advanced/
 │ ├── 40.7-serverless-edge/
 │ ├── 40.8-monorepo/
-│ └── 40.9-twelve-factor/
+│ ├── 40.9-twelve-factor/
+│ ├── 40.10-cdn/
+│ ├── 40.11-reverse-proxy/
+│ └── 40.12-iac/
 │
-├── 50-quality/ # Quality (testing, a11y, performance)
+├── 50-quality/ # Quality (testing, a11y, performance, production engineering)
 │ ├── 50.1-testing/
 │ ├── 50.2-accessibility/
-│ └── 50.3-performance-monitoring/
+│ ├── 50.3-performance-monitoring/
+│ └── 50.4-production-engineering/
 │
 ├── 60-realtime/ # Real-time (WebSockets)
 │ └── 60.1-websockets/
@@ -89,18 +99,18 @@ Before contributing, review the existing files in the relevant section to unders
 │ ├── 70.2-coding-patterns/
 │ └── 70.3-cheatsheets/
 │
-├── lanes/ # Lane overview (indexes into 80/81)
-│ └── INDEX.md
+├── projects/ # Project deep-dives
+│ └── docita/ # 22 numbered deep-dives (01-10 foundations, 11-21 domains, 22 retrospective) + 80.x prep docs
 │
-├── 80-lanes-abroad-full-stack/ # Abroad Full-Stack lane (EU/remote, 4-week)
-│ └── INDEX.md + 18 files
+├── 80-lanes-abroad-full-stack/ # Abroad Full-Stack lane (EU/remote) — INDEX.md + numbered 80.x files
 │
-└── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy, 8-week)
-    └── INDEX.md + 23 files
+└── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
+> Repo scale (measured 2026-09-03): **806 `.md` files / 343K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
-- **The 3 lanes** (`00-`, `80-`, `81-`) hold the interview strategy / prep plan. They are **terminal** — they reference into the stacks, never the other way around.
+- **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
 - Stack directories are numbered `00-` through `81-` to make it easy to slot new sections in.
 - Each section has an `INDEX.md` file
 - Large stacks are grouped into category subfolders (`01-`, `02-`, ... study order) with a per-category `INDEX.md`; small stacks stay flat
@@ -170,27 +180,7 @@ Every content file **must** begin with metadata in two forms:
 | `Reference` | CheatSheets, Monorepo | lightgrey |
 | `Execution` | Personal execution plans (e.g., Berlin plan) | ff6b35 (orange) |
 
-> **14 categories** total. The `Execution` category is for personalized plans tied to a specific user.
-
-### Category Values
-
-| Category | Used For |
-| --------------- | --------------------------------------------------------------- |
-| `Core` | JavaScript, TypeScript |
-| `Frontend` | React, Next.js, Animation, Form Handling |
-| `Backend` | Node.js, NestJS |
-| `API` | REST APIs, GraphQL |
-| `Data` | Database |
-| `Architecture` | System Design, Microservices, Security, Design Patterns |
-| `DevOps` | Docker, Kubernetes, CI/CD, Serverless |
-| `Observability` | Observability (logging, monitoring, tracing, SLI/SLO, alerting) |
-| `Tooling` | Build Tools, Git Advanced |
-| `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role |
-| `Reference` | CheatSheets, Monorepo |
-| `Quality` | Testing, Accessibility, Performance Monitoring |
-| `Real-Time` | WebSockets |
-
-> **13 categories** total. Newer additions (split from overloaded categories): `API` (REST + GraphQL), `Data` (Database), `Observability` (logs/metrics/traces), `Tooling` (build + Git).
+> **14 categories** total. `API`, `Data`, `Observability`, and `Tooling` were split out of overloaded categories later (REST+GraphQL, Database, logs/metrics/traces, build+Git) — they are real categories, not sub-values. `Execution` is for personalized plans tied to a specific user. One-off categories (e.g., `Company`, `Infra`, `Mobile`, `Serverless`, `Testing`) appear only in 80-lane planning docs; keep them out of new content files.
 
 ---
 
@@ -218,7 +208,7 @@ URL-encode%20special characters:
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](.)
 ```
 
-Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badges with the same format.
+Root-level files (root `INDEX.md` and this guide) also use badges with the same format.
 
 ### Standard Badge Colors
 
@@ -237,11 +227,11 @@ Root-level files (root `INDEX.md`, `README.md`, `CONTRIBUTING.md`) also use badg
 | `#64748b` | Tooling sections | Build Tools, Git Advanced |
 | `blue` | Type badges, file counts | Some sections |
 | `brightgreen` | Status: complete | All files |
-| `#800080` | System Design | 11-System-Design |
-| `#00b4d8` | React | 03-React |
-| `#ff7f00` | NestJS | 06-NestJS |
-| `#ffd700` | Coding Patterns | 19-Coding-Patterns |
-| `yellow` | Cheat Sheets | 20-CheatSheets |
+| `#800080` | System Design | `30.2-system-design` |
+| `#00b4d8` | React | `10.3-react` |
+| `#ff7f00` | NestJS | `20.2-nestjs` |
+| `#ffd700` | Coding Patterns | `70.2-coding-patterns` |
+| `yellow` | Cheat Sheets | `70.3-cheatsheets` |
 
 ### Status Badge Values
 
@@ -610,7 +600,7 @@ else:
 
 ### Interview Questions
 
-These files (e.g., `20-Interview-Questions.md`) follow a different structure:
+These files (e.g., `10.6-animation/10.6.08-interview-questions.md`) follow a different structure:
 
 ```text
 # Section Interview Questions
@@ -664,7 +654,7 @@ A: A closure is...
 
 ### System Design Case Studies
 
-These files (e.g., `11-System-Design/01-URL-Shortener.md`) follow a case-study structure:
+These files (e.g., `30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md`) follow a case-study structure:
 
 ```text
 # Title System Design
@@ -717,7 +707,7 @@ These files (e.g., `11-System-Design/01-URL-Shortener.md`) follow a case-study s
 
 ### CheatSheet Files
 
-These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
+These files (e.g., `70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md`) start with:
 
 ```text
 # Title Cheat Sheet
@@ -737,7 +727,7 @@ These files (e.g., `20-CheatSheets/System-Design-Cheat-Sheet.md`) start with:
 
 ### Behavioral Guides
 
-These files (in `18-Behavioral/`) start with a `## Table of Contents` rather than `## Definition`:
+These files (in `70-interview-toolkit/70.1-behavioral/`) start with a `## Table of Contents` rather than `## Definition`:
 
 ```text
 # Title
@@ -754,7 +744,7 @@ These files (in `18-Behavioral/`) start with a `## Table of Contents` rather tha
 
 ### Coding Pattern Guides
 
-These files (in `19-Coding-Patterns/`) describe algorithmic patterns for interview preparation. They have a unique structure optimized for problem-solving:
+These files (in `70-interview-toolkit/70.2-coding-patterns/`) describe algorithmic patterns for interview preparation. They have a unique structure optimized for problem-solving:
 
 ```text
 # Pattern Name
@@ -820,7 +810,7 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 
 ### SDE Role Guides
 
-These files (in `31-SDE-Role/`) are comprehensive study guides covering multiple topics per file:
+These files (in `81-lanes-indian-sde-faang/`, e.g., `81.01-complete-guide.md`) are comprehensive study guides covering multiple topics per file:
 
 - Use repeated sub-heading patterns (e.g., multiple `## Concept`, `## Implementation` sections)
 - This is intentional — each topic within a file has its own flow
@@ -853,33 +843,33 @@ After making changes, verify the following:
 - [ ] `## Code Examples` uses `typescript` language tag
 - [ ] If `## Cheat Sheet` is present, the `---` separator goes between it and `## See Also`
 
-**Coding Pattern files** (`19-Coding-Patterns/`):
+**Coding Pattern files** (`70-interview-toolkit/70.2-coding-patterns/`):
 - [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
 - [ ] Has `## Template` section with code skeleton
 - [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary → Cheat Sheet
 - [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
 - [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
 
-**Interview Questions files** (`NN-Interview-Questions.md`):
+**Interview Questions files** (last file in each stack/category, `<stack>.<cat>.<seq>-interview-questions.md`):
 - [ ] Uses `## Cheat Sheet` as the bottom section (standardized project-wide)
 - [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
 - [ ] Has `## N Most Asked [Section] Interview Questions` as first section
 
-**System Design case studies** (`11-System-Design/`):
+**System Design case studies** (`30-architecture/30.2-system-design/02-case-studies/`):
 - [ ] Starts with `## Requirements` (Functional + Non-Functional) instead of `## Definition`
 - [ ] Has `## Capacity Estimation`, `## API Design`, `## Database Design` sections
 - [ ] Architecture diagrams in `text` code blocks
 - [ ] Has `## Trade-offs` section before `## Summary`
 
-**CheatSheet files** (`20-CheatSheets/`):
+**CheatSheet files** (`70-interview-toolkit/70.3-cheatsheets/`):
 - [ ] Starts with `## Quick Reference Table` as first content section
 - [ ] No `## Definition` or `## Why Do We Need It?` sections
 
-**Behavioral guides** (`18-Behavioral/`):
+**Behavioral guides** (`70-interview-toolkit/70.1-behavioral/`):
 - [ ] Starts with `## Table of Contents` instead of `## Definition`
 - [ ] Uses narrative/storytelling style
 
-**SDE Role guides** (`31-SDE-Role/`):
+**Lane guides** (`81-lanes-indian-sde-faang/`, `80-lanes-abroad-full-stack/` numbered `81.x` / `80.x` files):
 - [ ] Uses `## See Also` and `## References & Learn More` at the end
 - [ ] Code blocks use `java`, `text`, `typescript`, `sql` as appropriate
 
@@ -901,7 +891,7 @@ After making changes, verify the following:
 - [ ] `## See Also` uses level-2 heading (`##`), not level-3 (`###`)
 - [ ] Links are alphabetized by display text (case-insensitive)
 - [ ] `## See Also` comes before `## References` / `## References & Learn More`
-- [ ] Cross-section links use section directory format: `../XX-Section/`
+- [ ] Cross-section links use the target stack folder: `../10-frontend/` or `../NN.N-slug/`
 - [ ] Intra-section links may use specific file references: `../NN-File.md`
 
 ### File Quality
@@ -914,39 +904,21 @@ After making changes, verify the following:
 - [ ] INDEX.md has `**Cross-references:**` with related sections
 ### Running Verification
 
-Use the project's Python verification scripts:
+Run the one-command gate from the repo root before pushing:
 
 ```bash
-# Check file endings and trailing whitespace
-python3 -c "
-import os
-issues = []
-for root, dirs, files in os.walk('.'):
-    if '.git' in root: continue
-    for f in files:
-        if not f.endswith('.md'): continue
-        fp = os.path.join(root, f)
-        with open(fp, 'rb') as fh:
-            content = fh.read()
-        for i, line in enumerate(content.split(b'\\n'), 1):
-            if line != line.rstrip(b' \\t'):
-                issues.append(f' {fp}:{i} trailing whitespace')
-        if len(content) > 1 and content[-1:] != b'\\n':
-            issues.append(f' {fp}: missing final newline')
-        elif len(content) > 2 and content[-2:-1] == b'\\n' and content[-3:-2] == b'\\n':
-            issues.append(f' {fp}: double trailing newline')
-if issues:
-    for i in issues: print(i)
-else:
-    print(' All files clean')
-"
-
-# Regenerate project statistics report
-# (requires /tmp/generate_report.py from the session)
-python3 /tmp/generate_report.py
+bash scripts/verify.sh
 ```
 
-> **Note:** The report generator script (`/tmp/generate_report.py`) was created during the formatting standardization session. It scans all 333 `.md` files and produces the `PROJECT-STATS.md` report. If the script is unavailable, you can recreate it by reviewing the existing `PROJECT-STATS.md` for the report structure or re-running the formatting audit scripts.
+It runs, in order, with clear pass/fail output:
+
+| Check | Command | What it verifies |
+| --------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("806 files, 343K lines") match live disk |
+| Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
+| Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last (known lane-80.x GAPS are intentional and reported as baseline) |
+
+Each script also runs standalone; all exit non-zero on failure so they can gate CI.
 
 ### Quick Troubleshooting
 
@@ -956,5 +928,5 @@ python3 /tmp/generate_report.py
 | `%20` not rendering in badge          | URL encoding not applied                             | Replace literal spaces with `%20` in badge URL value portion      |
 | Code block not rendering              | Missing closing ` ``` `                              | Check that every opening ` ``` ` has a matching closing ` ``` `   |
 | Double newline at end of file         | File has 2+ trailing newlines                        | Use `rstrip(b'\\n') + b'\\n'` to normalize                        |
-| Broken `## See Also` link             | Relative path points to wrong directory              | Use `../XX-Section/` format, verify directory exists              |
-| Navigation link goes to wrong section | Previous/next links out of sequence                  | Verify section follows the 00→31 numbering order                  |
+| Broken `## See Also` link             | Relative path points to wrong directory              | Use `../NN.N-slug/` (target stack folder); verify it exists         |
+| Navigation link goes to wrong section | Previous/next links out of sequence                  | Verify section follows the 00→81 numbering order                  |

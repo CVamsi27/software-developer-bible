@@ -45,6 +45,8 @@ Each file follows a consistent structure:
 | 16 | [Doctors, Verification & Public Booking](16-doctors-verification-and-public-booking.md) | NMC verification, slots, referral funnel | The acquisition loop — regulated doctors, anonymous patients |
 | 17 | [Patient Portal](17-patient-portal.md) | OTP login, patient-scoped reads, adherence | PHI access where the session is the patient |
 | 18 | [ABDM Integration](18-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
+| 19 | [Enterprise Contracts](19-enterprise-contracts.md) | True-up, prepay, member overrides, RLS bypass | Group deals — money at risk, surfaced early |
+| 20 | [Documents & Uploads](20-documents-and-uploads.md) | Storage providers, upload sessions, signed URLs | Every file — PHI-safe, provider-swappable, short TTLs |
 
 ---
 

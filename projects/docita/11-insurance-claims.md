@@ -179,5 +179,6 @@ On SUBMITTED with a linked invoice, `transition` first calls `assertClaimReady`.
 ## Interview Script (60 seconds)
 
 > "Insurance claims are a regulated lifecycle, so I modeled the status flow as a pure state machine — a `ClaimStatusVO` holding an explicit transition table, and a domain entity that computes each move's side effects (submitted/responded/settled timestamps, approved amounts). Transitions are optimistic-concurrency writes: the row carries a version, the update is conditional, and a miss returns 409. Every transition also writes an immutable claim-event row in the same transaction, so the audit history is atomic with the state change. Submission is gated through an application port — billing owns the ICD/CPT coding completeness rule and exposes it as `assertClaimReady`, which claims depends on without importing billing internals. Everything is scoped to patient-and-clinic, and creates are idempotency-keyed so network retries can't mint duplicate claims."
-
 ---
+
+[← Previous: Deployment Infrastructure](10-deployment-infrastructure.md) · [ Back to Index](INDEX.md) · [Next: IPD Inpatient →](12-ipd-inpatient.md)

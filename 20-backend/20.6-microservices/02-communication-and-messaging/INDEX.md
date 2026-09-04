@@ -36,3 +36,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` - circuit-broken ZeptoMail behind IEmailProvider |
 
 Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; the outbox relay would republish to a broker the day events cross deployable boundaries.
+---
+
+[← Previous: ../01 Service Topology/index](../01-service-topology/INDEX.md) · [Next: ../03 Data And Consistency/index →](../03-data-and-consistency/INDEX.md)

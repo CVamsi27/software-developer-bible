@@ -167,3 +167,6 @@ Clinics earn credits for referring other clinics:
 ## Interview Script (60 seconds)
 
 > "Docita uses tier-based SaaS pricing with feature gating via a `@Feature()` decorator. Usage is tracked per clinic per billing period across 7 dimensions (WhatsApp, AI credits, patients, appointments, prescriptions, invoices, OCR pages). When usage exceeds tier limits, overage charges are calculated hourly and invoiced. The subscription lifecycle follows a state machine: ACTIVE → PAST_DUE → 7-day grace period → EXPIRED. The grace period prevents involuntary churn from temporary payment failures. A referral system incentivizes word-of-mouth — the primary acquisition channel in India's clinic market."
+---
+
+[← Previous: Billing Invoicing](08-billing-invoicing.md) · [ Back to Index](INDEX.md) · [Next: Deployment Infrastructure →](10-deployment-infrastructure.md)

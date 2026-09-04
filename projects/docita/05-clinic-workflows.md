@@ -191,3 +191,6 @@ cancel(id, clinicId)                        // Follow-up cancelled
 ## Interview Script (60 seconds)
 
 > "Clinic workflows center on the patient journey: check-in → queue → consultation → prescription → payment. The queue system uses hash-prefix tokens (not sequential numbers) to avoid race conditions when multiple front-desk staff check in patients simultaneously. Appointments follow a strict state machine — only the assigned doctor can start consultation, and invalid transitions throw errors. Scheduling conflict detection uses interval arithmetic with a 5-minute buffer between appointments, accounting for clinic-local timezone conversion. We hit a timezone bug early on where IST appointments跨越 UTC midnight were flagged as overlapping — fixed by converting all scheduling to clinic-local time bounds. Follow-ups are a separate domain from appointments because they have different lifecycle rules: created during consultation, pending until booked, linked to the original appointment."
+---
+
+[← Previous: Payment Flows](04-payment-flows.md) · [ Back to Index](INDEX.md) · [Next: Whatsapp Integration →](06-whatsapp-integration.md)

@@ -36,3 +36,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Vulnerability management tooling | `osv-scanner.toml` - dependency scanning config beside CI guardrail scripts (`scripts/checks/*.mjs`) |
 
 A formal STRIDE/threat-model document does not exist in-repo; the tenant-isolation defense chain (middleware → extension → RLS) is the closest living artifact.
+---
+
+[← Previous: ../02 Attacks And Defense/index](../02-attacks-and-defense/INDEX.md) · [Next: ../04 Interview Drills/index →](../04-interview-drills/INDEX.md)

@@ -31,3 +31,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Event-loop pressure guards | `apps/api/src/shared/common/extensions/query-budget.extension.ts` - per-request Prisma query budget surfaces N+1 storms early |
 
 _Web Streams & `node:test`: no direct docita implementation yet._ Streaming lives inside libraries (PDFKit renders to a `Buffer`), and tests run on Jest (`apps/api/jest.config.ts`), not the built-in runner.
+---
+
+[Next: ../02 Io And Data/index →](../02-io-and-data/INDEX.md)

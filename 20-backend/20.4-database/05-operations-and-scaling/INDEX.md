@@ -37,3 +37,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Search infrastructure | `apps/api/src/shared/modules/search/strategies/search-strategy.base.ts` - strategy-per-entity search on Postgres full-text |
 
 The interview bank above is answerable entirely from these files plus the slow-query logging service.
+---
+
+[← Previous: ../04 Orm And Access/index](../04-orm-and-access/INDEX.md)

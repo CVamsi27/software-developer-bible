@@ -226,3 +226,6 @@ const row = await this.prisma.runUnrestricted(async () =>
 ## Interview Script (60 seconds)
 
 > "Multi-tenant data isolation in healthcare required 7 defense layers. The foundation is AsyncLocalStorage carrying the tenant context through every request — no parameter threading. On top of that: RBAC for role-based access, ABAC policies for object-level conditions like 'doctor sees only assigned patients,' Prisma middleware for application-level filtering, and PostgreSQL RLS as the database-level guarantee. The hardest part was RLS — Prisma's connection pool routes queries to different connections, so `SET LOCAL` session variables were silently bypassed. We solved it by routing all queries through a single interactive transaction per request. Background workers use a `runUnrestricted()` escape hatch with careful documentation."
+---
+
+[← Previous: Architecture Decisions](01-architecture-decisions.md) · [ Back to Index](INDEX.md) · [Next: Async Processing →](03-async-processing.md)

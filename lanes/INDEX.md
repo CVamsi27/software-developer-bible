@@ -11,9 +11,9 @@
 ## The Two Lanes
 
 | Lane | Folder | For | Style | Files |
-| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ----: |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----: |
 | **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](../81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India product companies, US H1B/STEM-OPT | LeetCode-heavy, 8-12 week intensive, USD 150-400K+ | 22 |
-| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 70-110K + visa sponsorship | 31 |
+| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa sponsorship | 31 |
 
 **Not sure?** Read the [lane decision matrix in abroad-full-stack](../80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes.
 
@@ -65,7 +65,7 @@ The bible is split into two layers:
 - You're targeting EU mid-stage startups (n8n, SumUp, Scalable, Tanso, LiveEO, Snke, MVST)
 - The interview is take-home heavy
 - You have 4-6 weeks at 2-3 hrs/day
-- Comp target: EUR 70-110K base + 0.05-0.5% equity + visa sponsorship
+- Comp target: EUR 75-100K base + 0.05-0.5% equity + visa sponsorship (canonical ranges: [80.05](../80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md))
 - You have a family (NL 30% ruling, EU Blue Card, schools) — geography matters
 
 ### Use **both lanes** if:

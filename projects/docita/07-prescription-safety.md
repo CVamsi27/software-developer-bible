@@ -149,3 +149,6 @@ Doctor creates prescription → Event emitted → Queue job enqueued
 ## Interview Script (60 seconds)
 
 > "Prescription safety uses three layers. First, doctor compliance — Indian law requires verified registration and digital signature. Second, patient allergy checking — critical allergies block the prescription, mild interactions are logged as warnings. Third, dosage validation and controlled substance verification. Every prescription creation is audited. PDFs are generated asynchronously via the Postgres queue — the doctor creates the prescription, an event is emitted, a worker generates the 2-3 second PDF, stores it in Cloudflare R2, and returns the URL via WebSocket. We've blocked 12+ dangerous allergy combinations in production."
+---
+
+[← Previous: Whatsapp Integration](06-whatsapp-integration.md) · [ Back to Index](INDEX.md) · [Next: Billing Invoicing →](08-billing-invoicing.md)

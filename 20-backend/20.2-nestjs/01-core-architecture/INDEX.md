@@ -33,3 +33,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Controllers | `apps/api/src/domains/appointments/presentation/controllers/appointments-schedule.controller.ts` - thin HTTP surface delegating to use cases |
 | Providers & ports | `apps/api/src/domains/appointments/application/ports/appointment-persistence.port.ts` - interface bound to an infrastructure adapter via DI token |
 | Provider composition | `apps/api/src/prisma/prisma.service.ts` - single PrismaService provider assembled with tenant/encryption/RLS extensions |
+---
+
+[Next: ../02 Request Lifecycle/index →](../02-request-lifecycle/INDEX.md)

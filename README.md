@@ -100,16 +100,16 @@ Interview questions live in dedicated `*-interview-questions.md` files (32 acros
 
 ### Indian SDE / FAANG (22 files in lane)
 
-DSA-heavy. The bar is **1-2 mediums in 30-45 min, plus 1 system design, plus 1-2 behavioral, plus a Bar Raiser (Amazon) or values round**. 5-6 rounds, 8-12 weeks. US FAANG comp: USD 260-580K (E4-E5). Indian in-country: INR 30-120 L (SDE-2 to SDE-3).
+DSA-heavy. The bar is **1-2 mediums in 30-45 min, plus 1 system design, plus 1-2 behavioral, plus a Bar Raiser (Amazon) or values round**. 5-6 rounds, 8-12 weeks. US FAANG total comp: USD 150-400K+ (senior, 2026 est.). Indian in-country: INR 30-120 L (SDE-2 to SDE-3).
 
 → [Indian SDE / FAANG lane →](81-lanes-indian-sde-faang/INDEX.md)
 
 ### Abroad Full-Stack (31 files in lane)
 
-Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 system design at 45 min, 1 behavioral round**. 3-4 rounds, 4-6 weeks. EU Tier 1 comp: EUR 75-110K base + 0.05-0.5% equity. Family-driven geography (NL 30% ruling, EU Blue Card, schools).
+Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 system design at 45 min, 1 behavioral round**. 3-4 rounds, 4-6 weeks. EU Tier 1 comp: EUR 75-100K base + 0.05-0.5% equity (canonical: [80.05](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md)). Family-driven geography (NL 30% ruling, EU Blue Card, schools).
 
 → [Abroad Full-Stack lane →](80-lanes-abroad-full-stack/INDEX.md)
 
 ---
 
-*Last updated: September 2026 — 806 files · 343K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*
+*Last updated: September 2026 — 806 files · 345K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*

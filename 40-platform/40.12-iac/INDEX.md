@@ -60,3 +60,6 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 ## Docita Anchor
 
 Docita runs on Fly.io + Cloudflare with GitHub Actions deploys — no Terraform in production today (see the [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX). Interview framing: *\"the infra is small enough that Fly CLI + Cloudflare dashboard + Actions is honest; the IaC pattern (state, plan/apply, drift) is exactly what I'd adopt the day the environment count or team size grows — the knowledge is in this sub-stack, the discipline is documented in 40.3.\"* Marked `_No direct docita implementation yet._` rather than faked.
+---
+
+[← Previous: ../40.11 Reverse Proxy/index](../40.11-reverse-proxy/INDEX.md) · [Next: ../40.2 Kubernetes/index →](../40.2-kubernetes/INDEX.md)

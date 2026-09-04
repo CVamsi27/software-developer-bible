@@ -36,3 +36,6 @@ Docita is deliberately REST-first: no GraphQL or gRPC dependency exists — URI-
 | OpenAPI contract | `apps/api/src/main.ts` - SwaggerModule spec generated from Zod-typed DTOs |
 
 The maturity model sits at Richardson L2 — resources + verbs + status codes, no HATEOAS.
+---
+
+[Next: ../02 Http Mechanics/index →](../02-http-mechanics/INDEX.md)

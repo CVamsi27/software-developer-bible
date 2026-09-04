@@ -33,3 +33,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Environment & shutdown signals | `apps/api/src/shared/modules/config/env-schema.ts` - Zod-validated env at boot; SIGTERM drains the worker in 15 s |
 
 _No `cluster` module or `worker_threads` yet._ The scale model is one process per container plus the split worker deployable.
+---
+
+[← Previous: ../02 Io And Data/index](../02-io-and-data/INDEX.md) · [Next: ../04 Security And Operations/index →](../04-security-and-operations/INDEX.md)

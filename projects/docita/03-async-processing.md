@@ -360,3 +360,6 @@ export interface OutboxAppend {
 ## Interview Script (60 seconds)
 
 > "I built a PostgreSQL-backed job queue using `SELECT ... FOR UPDATE SKIP LOCKED`. The key advantage over Redis: transactional enqueue. A `prisma.$transaction` covers both the business write AND the job emission — no dual-write problem. For domain events, I implemented the transactional outbox pattern. Events are written to an `OutboxEvent` table in the same transaction as the business write. A relay scheduler polls every 2 seconds, republishes to in-process EventEmitter2, and marks events as processed. Failed events retry with exponential backoff up to 8 attempts, then go to a dead-letter queue. The trade-off is 2-second relay lag — acceptable for our scale of ~0.4 jobs/sec. We chose this over Kafka/NATS because we're single-region single-pod and don't need the infrastructure overhead."
+---
+
+[← Previous: Multi Tenancy Rls](02-multi-tenancy-rls.md) · [ Back to Index](INDEX.md) · [Next: Payment Flows →](04-payment-flows.md)

@@ -188,5 +188,6 @@ The `dashboards` domain stays deliberately tiny: `DashboardService.getStats(clin
 ## Interview Script (60 seconds)
 
 > "Analytics is a read-model split into per-family factories — operational, financial, clinical, and snapshot — all sharing a base that routes to the read replica and a cache manager. The dashboard overview caches for an hour, so one of the most-hit reads barely touches the database. Timezone correctness is handled the hard way: month/day ranges are computed in the clinic's own timezone and rows are bucketed in application code via shared utils, because Prisma can't do per-row timezone conversion — bucketing by UTC would split a clinic's Saturday across two report days. Cross-table breakdowns like revenue-by-CPT use targeted raw SQL with defensive row mappers. History is solved by daily persisted snapshots computed through the same factories the live endpoints use, so growth math never drifts as live data gets corrected. The known gap: snapshot gaps if the daily job is missed — the fix is a reconciliation cron."
-
 ---
+
+[← Previous: Inventory](13-inventory.md) · [ Back to Index](INDEX.md) · [Next: Doctors Verification And Public Booking →](15-doctors-verification-and-public-booking.md)

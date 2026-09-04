@@ -31,3 +31,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard |
 
 Every interview question about decorators/lifecycle is answerable from these files — walk `app.module.ts` registrations to narrate the chain end-to-end.
+---
+
+[← Previous: ../04 Quality And Operations/index](../04-quality-and-operations/INDEX.md)

@@ -35,3 +35,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | JSONB boundaries | `apps/api/src/shared/common/json/to-prisma-input-json-value.ts` - typed writer for JSONB columns |
 
 _No EXPLAIN harness or window-function showcase yet_ — plan inspection is manual psql work today.
+---
+
+[← Previous: ../01 Postgresql Foundations/index](../01-postgresql-foundations/INDEX.md) · [Next: ../03 Transactions And Replication/index →](../03-transactions-and-replication/INDEX.md)

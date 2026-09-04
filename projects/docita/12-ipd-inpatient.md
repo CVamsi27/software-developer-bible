@@ -146,5 +146,6 @@ Transfer also appends a human-readable line to `admission.notes` (`Transferred t
 ## Interview Script (60 seconds)
 
 > "IPD adds a resource we'd never tracked — beds — with a hard invariant: a bed is either available or occupied, and that state must never drift from reality. Every mutation is multi-row — admitting creates the admission *and* occupies the bed; transferring frees one bed and occupies another; discharging closes the admission and frees the bed — so all three are Prisma transactions where the pair of writes is the unit of success. The service layer stays thin and writes a structured audit event after each action — who admitted, which bed, which patient — reusing the shared audit module. Clinic scoping is enforced by walking the bed→room→ward chain in every query. The honest gap I'd fix next: bed availability is read before the transaction opens, so two concurrent admits to the same bed could race — a conditional `updateMany` on status would close it."
-
 ---
+
+[← Previous: Insurance Claims](11-insurance-claims.md) · [ Back to Index](INDEX.md) · [Next: Inventory →](13-inventory.md)

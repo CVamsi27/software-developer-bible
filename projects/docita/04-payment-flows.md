@@ -146,3 +146,6 @@ Clinics pay Docita for their subscription using a *separate* Razorpay merchant a
 ## Interview Script (60 seconds)
 
 > "Docita handles three distinct payment flows that must never mix. Flow B: patients pay clinics using the clinic's own Razorpay credentials. Flow C: clinics pay Docita for subscriptions using Docita's separate Razorpay account. The separation is enforced through naming conventions (`CLINIC_INVOICE_PAYMENT_LINK_PROVIDER_TOKEN` vs `DOCITA_PLATFORM_PAYMENT_LINK_PROVIDER_TOKEN`), separate webhook endpoints, and separate domain modules. The key challenge was idempotency — Razorpay sends webhooks at-least-once, so we check for existing payment records before processing. A payment + invoice transition + outbox event happen in one transaction for atomicity. We hit a production issue where duplicate webhooks double-credited a clinic's wallet — fixed with a unique constraint on `(provider, providerPaymentId)`."
+---
+
+[← Previous: Async Processing](03-async-processing.md) · [ Back to Index](INDEX.md) · [Next: Clinic Workflows →](05-clinic-workflows.md)

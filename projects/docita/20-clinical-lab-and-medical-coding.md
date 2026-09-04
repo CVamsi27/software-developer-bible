@@ -242,5 +242,6 @@ The cron runs on `CRON_SCHEDULES.MEDICAL_CODE_SYNC`, heartbeat-tracked, disabled
 ## Interview Script (60 seconds)
 
 > "The clinical domain has two halves. Lab orders move ORDERED → SAMPLE_COLLECTED → RESULT_READY → COMPLETED, and the release gate is a conjunction encoded in the domain entity: a result goes to the patient only when a result file exists AND payment is verified. Both the upload-result and verify-payment commands end by calling the same `releaseIfReady`, so whichever side arrives last triggers the release — a lab that uploads before payment and a front desk that verifies before the lab uploads converge on the same outcome. On release, the patient gets a WhatsApp message with a 15-minute signed URL, and a template rejection is logged, not fatal. The second half is medical coding: one `CodeCatalogProvider` port hides two licensing realities — public NLM ICD/HCPCS and an API-keyed licensed CPT catalog — chosen by config at runtime. Search has a per-system circuit breaker with a five-minute cooldown so billing never hangs on a flaky national API, and a heartbeat cron streams the catalog in letter-prefixed batches, deduping and upserting into a local common-codes table that feeds both doctor search and the insurance-claims readiness gate."
-
 ---
+
+[← Previous: Documents And Uploads](19-documents-and-uploads.md) · [ Back to Index](INDEX.md) · [Next: Long Tail Domains →](21-long-tail-domains.md)

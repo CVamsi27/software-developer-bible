@@ -36,3 +36,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification gates auto-replay |
 
 Saga orchestration and event sourcing not used — cross-module consistency currently rides the outbox + idempotency + DLQ trio above.
+---
+
+[← Previous: ../02 Communication And Messaging/index](../02-communication-and-messaging/INDEX.md) · [Next: ../04 Resilience/index →](../04-resilience/INDEX.md)

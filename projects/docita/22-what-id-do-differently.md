@@ -315,3 +315,6 @@ Despite the tech debt, certain decisions aged well:
 ## What I'd Tell My Future Self
 
 > "Ship the MVP fast. Add the schema versioning, RLS tests, and health checks before you hit 50 clinics. The payment abstraction can wait. The event-driven architecture can wait. The Turborepo migration can wait. But the schema versioning is a ticking time bomb — fix it before you have outbox events in production that can't be migrated."
+---
+
+[← Previous: Long Tail Domains](21-long-tail-domains.md) · [ Back to Index](INDEX.md) · [Next: Docita Resume Defense →](80.16-docita-resume-defense.md)

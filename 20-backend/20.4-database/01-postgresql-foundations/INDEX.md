@@ -36,3 +36,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Row-Level Security | `apps/api/src/shared/modules/tenant/tenant-context.middleware.ts` - sets `app.current_tenant` session variable for RLS |
 
 MVCC/vacuum tuning is delegated to managed Postgres; the SQL-vs-NoSQL question is answered — relational all the way for clinical data.
+---
+
+[Next: ../02 Querying And Optimization/index →](../02-querying-and-optimization/INDEX.md)

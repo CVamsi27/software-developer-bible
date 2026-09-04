@@ -131,5 +131,6 @@ Of everything a patient could do, the portal allows exactly one class of write: 
 ## Interview Script (60 seconds)
 
 > "The patient portal is passwordless: login is a 6-digit OTP over WhatsApp, bcrypt-hashed at rest, with a 10-minute expiry and a three-attempt cap that's consumed atomically — one conditional update, so concurrent guesses can't all pass the attempts check. The request endpoint is enumeration-safe: it returns the same message whether or not the phone is registered, and requesting a new OTP invalidates old ones. The security property I'm proudest of is that the session *is* the patient: every controller resolves the patient from the authenticated user via one context service, then scopes all queries by that derived patientId — there's no endpoint that accepts another patient's id, so IDOR is structurally impossible rather than merely discouraged. Patients are read-only except for medication adherence, which is the one thing only they know. The gap I'd fix next is request-side OTP rate limiting and per-device session revocation."
-
 ---
+
+[← Previous: Doctors Verification And Public Booking](15-doctors-verification-and-public-booking.md) · [ Back to Index](INDEX.md) · [Next: ABDM Integration →](17-abdm-integration.md)

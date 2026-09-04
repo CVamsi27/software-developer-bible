@@ -147,5 +147,6 @@ This is the same money-handling rule the billing/payments domains follow (never 
 ## Interview Script (60 seconds)
 
 > "Inventory is a ledger, not a CRUD table. The item row carries a live quantity, but every change flows through one transactional method that does a conditional increment — for decrements the WHERE clause requires `quantity >= amount`, so stock can never go negative and two concurrent issues of the last unit can't both succeed — and only on success appends an immutable movement row recording type, user, and reference. Balance and history are written in the same transaction, so they can't drift. Low stock is derived per item against its own `minQuantity` at query time, stats run as parallel read-replica queries, and prices are dual-written with canonical cent columns matching the billing domain. The gap I'd fix first: `updateItem` can still mutate quantity directly, bypassing the ledger — that should become a `STOCK_ADJUST` movement so the invariant 'balance equals sum of movements' always holds."
-
 ---
+
+[← Previous: IPD Inpatient](12-ipd-inpatient.md) · [ Back to Index](INDEX.md) · [Next: Analytics And Dashboards →](14-analytics-and-dashboards.md)

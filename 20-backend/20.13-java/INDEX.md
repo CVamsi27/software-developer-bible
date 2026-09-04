@@ -47,3 +47,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Concurrency & multithreading | Node's single-thread event loop + process separation - `apps/worker/src/main.ts`, `shared/modules/queue/postgres-queue.service.ts` (jobs never block the API thread) |
 | JUnit & Mockito testing | Colocated Vitest specs (`*.spec.ts`) - e.g. `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` |
 | Actuator / ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |
+---
+
+[← Previous: ../20.12 Ai Engineering/index](../20.12-ai-engineering/INDEX.md) · [Next: ../20.2 Nestjs/index →](../20.2-nestjs/INDEX.md)

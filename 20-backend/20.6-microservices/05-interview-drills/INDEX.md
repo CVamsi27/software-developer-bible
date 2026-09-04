@@ -28,3 +28,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Saga / outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` - a production outbox you can walk through |
 | Circuit-breaker drill | `apps/api/src/shared/common/utils/circuit-breaker.ts` - thresholds and state transitions in one small class |
 | "Split the monolith" drill | `apps/api/src/app.module.ts` - module seams are the future service boundaries |
+---
+
+[← Previous: ../04 Resilience/index](../04-resilience/INDEX.md)

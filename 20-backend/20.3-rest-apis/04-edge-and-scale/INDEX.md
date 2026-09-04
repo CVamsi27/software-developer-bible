@@ -34,3 +34,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Authentication schemes | `apps/api/src/shared/modules/auth/auth/api-key.service.ts` - hashed API keys for machines alongside JWT for users |
 
 _No API gateway or BFF yet_ — a single Fly.io-deployed API serves all clients today; per-client shaping would start as dedicated route controllers before any gateway product.
+---
+
+[← Previous: ../03 Payloads Errors Integration/index](../03-payloads-errors-integration/INDEX.md) · [Next: ../05 Interview Drills/index →](../05-interview-drills/INDEX.md)

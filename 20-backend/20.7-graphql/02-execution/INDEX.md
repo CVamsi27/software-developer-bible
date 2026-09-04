@@ -25,3 +25,6 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 _No direct docita implementation yet._ No resolvers, DataLoader, or Apollo server exist — `apps/api/package.json` has no GraphQL dependency (REST-first choice). The closest execution analog is use cases resolving through repository ports: `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts`.
+---
+
+[← Previous: ../01 Fundamentals/index](../01-fundamentals/INDEX.md) · [Next: ../03 Clients And Production/index →](../03-clients-and-production/INDEX.md)

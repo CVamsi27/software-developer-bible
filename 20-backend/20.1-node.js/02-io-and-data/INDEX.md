@@ -34,3 +34,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | HTTP module / server | `apps/api/src/main.ts` - Express bootstrap: CORS allow-list, helmet, URI versioning, Sentry instrumentation |
 
 _Raw `stream.pipeline()` wiring: no direct docita implementation yet._ Streaming happens inside libraries; uploads stage to disk instead of piping through transforms.
+---
+
+[← Previous: ../01 Runtime And Async/index](../01-runtime-and-async/INDEX.md) · [Next: ../03 Processes And Concurrency/index →](../03-processes-and-concurrency/INDEX.md)

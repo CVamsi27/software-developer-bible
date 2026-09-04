@@ -198,5 +198,6 @@ The read surface for patient documents (`documents.controller.ts`) sits behind t
 ## Interview Script (60 seconds)
 
 > "Every file Docita touches goes through one `StorageProvider` port with two implementations — local disk and Cloudflare R2 — chosen by a module factory: non-production always uses local (zero credentials, full-stack dev works), and production uses R2 with a loud fallback if credentials are missing. Uploads don't ride normal auth: we mint single-use upload sessions — a 32-byte secret returned once, only its SHA-256 hash stored, 15-minute expiry — and the upload guard requires the secret in a header, rejects expired or already-used sessions in constant time, then flips the session to `uploaded` so it can never be reused. The DB stores opaque object keys, never URLs, and a resolver turns keys into browser URLs at read time with a centralized TTL policy — generated clinical PDFs get 15-minute signed URLs because they contain PHI, generic uploads get 4 hours, and everything is clamped to a 24-hour max. Patient document views are audited at the controller boundary as PHI events. The gap I'd close next is an orphaned-object GC for uploads that crash between the storage write and the DB persist."
-
 ---
+
+[← Previous: Enterprise Contracts](18-enterprise-contracts.md) · [ Back to Index](INDEX.md) · [Next: Clinical Lab And Medical Coding →](20-clinical-lab-and-medical-coding.md)

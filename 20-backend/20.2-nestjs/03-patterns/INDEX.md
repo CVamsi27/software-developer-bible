@@ -40,3 +40,6 @@ TCP/Redis/Kafka/gRPC transports not used; would introduce them when a domain ext
 ---
 
 [← Back to NestJS](../INDEX.md)
+---
+
+[← Previous: ../02 Request Lifecycle/index](../02-request-lifecycle/INDEX.md) · [Next: ../04 Quality And Operations/index →](../04-quality-and-operations/INDEX.md)

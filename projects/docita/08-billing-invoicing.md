@@ -136,3 +136,6 @@ async getCollectionsByMode(clinicId: string, query: CollectionsByModeQuery) {
 ## Interview Script (60 seconds)
 
 > "Indian healthcare billing involves GST with interstate vs intrastate rules. I implemented immutable tax snapshots — tax is calculated and frozen at invoice creation time. If a clinic updates their GSTIN, historical invoices retain their original calculation. Invoices follow a state machine: DRAFT → ISSUED → PAID/OVERDUE/CANCELLED. Invalid transitions are blocked at the entity level. The daybook feature aggregates daily transactions by payment mode (cash, UPI, card, insurance) for end-of-day reconciliation — critical for Indian clinics that deal heavily in cash."
+---
+
+[← Previous: Prescription Safety](07-prescription-safety.md) · [ Back to Index](INDEX.md) · [Next: Subscription System →](09-subscription-system.md)

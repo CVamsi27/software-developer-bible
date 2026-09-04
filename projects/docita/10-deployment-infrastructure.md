@@ -184,3 +184,6 @@ If packages/types/* changed → deploy all (shared types)
 ## Interview Script (60 seconds)
 
 > "Docita deploys on Fly.io for the API/worker and Cloudflare Workers for the frontend. The API uses Docker with a multi-stage build. Frontend is a Vite SPA deployed as Cloudflare Static Assets — we migrated from Next.js because the 3.5MB bundle exceeded Cloudflare's 3MB Free limit. A Hono proxy Worker routes `/api/*` to Fly.io, avoiding CORS. We hit a cold-start outage because Fly's proxy only waits ~10-15s but NestJS bootstrap takes ~3 minutes. Fix: `min_machines_running = 1`. Database migrations use Prisma Migrate with a verification script that blocks deploys if migrations are pending. Selective deploys via GitHub Actions — only changed apps are deployed."
+---
+
+[← Previous: Subscription System](09-subscription-system.md) · [ Back to Index](INDEX.md) · [Next: Insurance Claims →](11-insurance-claims.md)

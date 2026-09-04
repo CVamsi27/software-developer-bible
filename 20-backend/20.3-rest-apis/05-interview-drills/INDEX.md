@@ -28,3 +28,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | "Offset vs cursor pagination?" | `apps/api/src/shared/common/pagination.helper.ts` - keyset implementation to walk through |
 | "Make POST retries safe" | `apps/api/src/shared/modules/idempotency/idempotency.interceptor.ts` - header-driven replay window |
 | "Design webhook delivery" | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - signing + retry/backoff in one service |
+---
+
+[← Previous: ../04 Edge And Scale/index](../04-edge-and-scale/INDEX.md)

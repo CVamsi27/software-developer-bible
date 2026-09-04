@@ -209,5 +209,6 @@ Doctors belong to a clinic *and* optionally to many clinics via a `doctor-clinic
 ## Interview Script (60 seconds)
 
 > "Three domains form the acquisition loop. First, doctor verification: each doctor's registration is checked against an NMC-backed HTTP provider behind a state machine — UNVERIFIED, PENDING, VERIFIED, REJECTED, FAILED — with the raw registry payload stored for audit, and a heartbeat-tracked cron re-verifies the whole cohort periodically so credentials can't rot. Second, slots: availability is generated from weekly schedules for the requested date in the clinic's timezone — the weekday is resolved in the clinic zone, booked appointments are subtracted through a lookup port, and a fallback chain means clinics with no configured schedule still show bookable days. Third, public booking: the page is addressed by referral code, every handler wraps itself in the same tenant context staff use, so RLS applies to anonymous requests. Submitting for a known phone requires a purpose-bound 15-minute JWT issued only after WhatsApp OTP; new phones need DPDP consent. Submits create an appointment *request* that staff confirm — the funnel never promises a slot it can't hold. The honest gap: my reverification sweep batches 500 doctors with no cursor, so past 500 it re-checks the same ones — it needs a last-checked filter."
-
 ---
+
+[← Previous: Analytics And Dashboards](14-analytics-and-dashboards.md) · [ Back to Index](INDEX.md) · [Next: Patient Portal →](16-patient-portal.md)

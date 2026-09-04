@@ -357,5 +357,6 @@ Read together, these seven prove a cultural point worth making in an interview:
 ## Interview Script (60 seconds — the long tail as one story)
 
 > "Beyond the headline domains, seven smaller ones show the same engineering discipline. Appointment reminders are a push scheduler that scans per clinic with per-channel, per-type dedupe so a clinic's 30-minute WhatsApp nudge is never masked by an hourly email — and every WhatsApp send is gated on tier and the clinic's automation opt-out. Custom fields are a per-clinic definition table whose values ride patient `customData`. Webhooks get the trust treatment on both directions: HMAC verification with a 5-minute timestamp tolerance and replay dedupe inbound, signed deliveries with idempotency keys and retry state outbound. Leave approval is a transaction that publishes doctor time-off so a doctor on vacation stops being bookable. Feedback normalizes every mention into its own row so 'top complaints' is a real aggregate. And even the smallest domains — the lab portal's role-gated login, guided-tour terminal states — get clock-injected time and feature-gated controllers. If there's one theme, it's that side effects are transactional, sends are deduplicated, and every boundary is gated — at every size."
-
 ---
+
+[← Previous: Clinical Lab And Medical Coding](20-clinical-lab-and-medical-coding.md) · [ Back to Index](INDEX.md) · [Next: What Id Do Differently →](22-what-id-do-differently.md)

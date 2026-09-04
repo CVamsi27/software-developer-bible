@@ -35,3 +35,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | File upload APIs | `apps/api/src/shared/common/utils/upload.utils.ts` - multer disk storage staged behind MIME/extension checks |
 | Webhooks (ingress) | `apps/api/src/shared/modules/webhooks/razorpay-webhook-verification.helper.ts` - HMAC signature check + replay dedupe |
 | Webhooks (egress) | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - HMAC-signed deliveries with 5s→300s backoff cap |
+---
+
+[← Previous: ../02 Http Mechanics/index](../02-http-mechanics/INDEX.md) · [Next: ../04 Edge And Scale/index →](../04-edge-and-scale/INDEX.md)

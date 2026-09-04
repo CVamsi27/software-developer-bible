@@ -26,3 +26,6 @@
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 _No direct docita implementation yet._ REST-first choice — no GraphQL dependency anywhere in the workspace. The production-defense counterparts that do exist: response caching (`apps/api/src/shared/common/interceptors/cache.interceptor.ts`) and CSRF protection (`apps/api/src/shared/common/interceptors/csrf.interceptor.ts`).
+---
+
+[← Previous: ../02 Execution/index](../02-execution/INDEX.md) · [Next: ../04 Interview Prep/index →](../04-interview-prep/INDEX.md)

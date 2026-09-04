@@ -198,5 +198,6 @@ The file's own docstring states the split rationale: invoice generation is a syn
 ## Interview Script (60 seconds)
 
 > "Enterprise contracts sit above subscriptions: one commercial agreement covering many member clinics. The key structural decision is that the domain is cross-clinic *by design*, so every access runs through an explicitly named `runUnrestricted` bypass with a comment justifying it — the subject is the contract, and usage aggregation over members can't be done under one-clinic RLS. When a clinic joins a contract, one builder maps contract terms onto its existing subscription row, so members can never drift from their deal; leaving restores prior terms. Money paths are idempotent: prepay invoices are `ENT-PREPAY-{contract}-{year}`, computed as 12× platform fee minus a percentage discount with the gross/discount/net breakdown persisted in metadata, and both the payment and invoice rows upsert so double-firing can't double-bill. True-up is deliberately read-mostly and alert-shaped: a daily cron computes each group's YTD overage plus platform fees against their commit, and when it crosses the threshold it persists one alert per month and emails finance to start a renegotiation — it never auto-bills, because crossing a commit is a commercial event, not a billing one."
-
 ---
+
+[← Previous: ABDM Integration](17-abdm-integration.md) · [ Back to Index](INDEX.md) · [Next: Documents And Uploads →](19-documents-and-uploads.md)

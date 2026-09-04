@@ -157,5 +157,6 @@ Outbound sharing converts Docita records through the shared `FhirService` (`shar
 ## Interview Script (60 seconds)
 
 > "ABDM is an asynchronous, callback-driven national gateway, so I built every interaction on a durable transaction ledger — each care-context creation, link/share/consent request, and callback writes a row with type, direction, status (succeeded/failed/retryable), and a correlation triple. The ops inbox is literally a query over that ledger, so 'did the consent come back?' is a SQL query, not a hunt through logs. Two decisions matter most. First, safe degradation: if the gateway isn't configured, requests still record their ledger row as RETRYABLE instead of throwing, so dev and CI never depend on a live national gateway while production failures stay visible. Second, callbacks are reconciliations, not trusted events: every callback updates an existing ledger row keyed by requestId or care-context reference, raw payloads are stored for audit, and a failed match writes a descriptive FAILED row instead of crashing. The gap I'd close next: automatic retries over RETRYABLE rows and gateway callback signature verification."
-
 ---
+
+[← Previous: Patient Portal](16-patient-portal.md) · [ Back to Index](INDEX.md) · [Next: Enterprise Contracts →](18-enterprise-contracts.md)

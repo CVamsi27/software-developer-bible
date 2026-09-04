@@ -35,3 +35,6 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Scheduling | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` - @TrackHeartbeat on every cron; a CI check enforces coverage |
 | Background jobs | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` - Postgres-backed queue with DLQ replay scheduler |
 | Swagger & OpenAPI | `apps/api/src/main.ts` - DocumentBuilder spec generated from Zod-typed DTOs via nestjs-zod |
+---
+
+[← Previous: ../03 Patterns/index](../03-patterns/INDEX.md) · [Next: ../05 Advanced And Interview/index →](../05-advanced-and-interview/INDEX.md)

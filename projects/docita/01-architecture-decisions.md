@@ -251,3 +251,6 @@ docita/
 
 - **Build caching** — we don't use Turborepo or Nx. Build times are ~3 minutes. Turborepo could cut this to ~30 seconds.
 - **Dependency isolation** — a breaking change in `packages/ui` can break all apps. We need stricter versioning.
+---
+
+[ Back to Index](INDEX.md) · [Next: Multi Tenancy Rls →](02-multi-tenancy-rls.md)

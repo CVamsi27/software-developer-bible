@@ -162,3 +162,6 @@ async reconcile() {
 ## Interview Script (60 seconds)
 
 > "WhatsApp is Docita's primary patient communication channel. We support three sender modes: shared Meta number (free), bring-your-own (clinic's number), and Docita-managed. The challenge was handling patient responses — they reply with free text like 'yes', 'no', 'delay 30 min'. We built a regex-based parser that maps these to appointment actions, with a two-step flow for delays. We hit Meta's rate limits when a clinic sent 100+ reminders simultaneously — fixed with per-clinic rate limiting and exponential backoff. A daily reconciliation job syncs delivery status from Meta's API to catch any missed webhooks. The key design decision: keep it simple. NLP for response parsing was considered but rejected — Indian clinic patients use simple responses that regex handles accurately."
+---
+
+[← Previous: Clinic Workflows](05-clinic-workflows.md) · [ Back to Index](INDEX.md) · [Next: Prescription Safety →](07-prescription-safety.md)

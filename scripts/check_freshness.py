@@ -99,6 +99,21 @@ HEADERS = {
                    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'),
     'Accept': 'text/html,application/xhtml+xml',
 }
+# Second-chance headers for 403/429/503: WAFs (Cloudflare, Akamai) reject
+# requests that lack the full browser fingerprint even with a browser UA.
+# One retry with the standard header set converts most bot-wall false
+# warns into correct LIVE verdicts; hosts that still block (O'Reilly,
+# ACM) are genuinely bot-walled and stay WARN — that is signal, not noise.
+BROWSER_FALLBACK_HEADERS = {
+    **HEADERS,
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+}
 
 
 def collect_external_urls(root: Path):
@@ -128,24 +143,33 @@ def probe(url: str):
 
     GET-first: many sites (PortSwigger, etc.) return 404 for HEAD but
     serve GET fine, so HEAD-first produced mass false DEADs. The body is
-    never read — the connection is closed immediately. A single retry on
-    404 absorbs transient site outages (OWASP/PG docs occasionally 404
-    for a minute mid-deploy).
+    never read — the connection is closed immediately. Retry policy:
+    404/410 is retried as-is once (absorbs transient site outages like
+    OWASP mid-deploy); 403/429/503 is retried once with full browser
+    headers (absorbs WAF fingerprinting), honoring Retry-After on 429.
     """
     last = ('WARN', 'no response')
-    for attempt in range(2):
+    for attempt, headers in enumerate((HEADERS, BROWSER_FALLBACK_HEADERS)):
         try:
-            req = urllib.request.Request(url, headers=HEADERS, method='GET')
+            req = urllib.request.Request(url, headers=headers, method='GET')
             with urllib.request.urlopen(req, timeout=10) as resp:
                 resp.read(1)  # touch the stream; do not download the body
                 return 'LIVE', f'HTTP {resp.status}'
         except urllib.error.HTTPError as e:
-            if e.code in (404, 410):
+            code = e.code
+            if code == 429:
+                ra = e.headers.get('Retry-After') if e.headers else None
+                time.sleep(min(int(ra), 6) if (ra or '').isdigit() else 4)
+                continue
+            if code in (403, 503):
+                time.sleep(0.5)
+                continue
+            if code in (404, 410):
                 if attempt == 0:
                     time.sleep(0.5)
                     continue
-                return 'DEAD', f'HTTP {e.code}'
-            return 'WARN', f'HTTP {e.code} (bot-blocked or rate-limited?)'
+                return 'DEAD', f'HTTP {code}'
+            return 'WARN', f'HTTP {code} (bot-blocked or rate-limited?)'
         except (urllib.error.URLError, TimeoutError, OSError) as e:
             reason = getattr(e, 'reason', e)
             last = ('WARN', f'unreachable: {reason}')

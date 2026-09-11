@@ -96,7 +96,7 @@ def probe_all() -> None:
     urls = sorted(load())
     print(f'probing all {len(urls)} baseline urls...')
     dead, warned, skipped = [], [], 0
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
         for u, (status, detail) in zip(urls, ex.map(probe, urls)):
             if any(s in u for s in KNOWN_404_OK):
                 skipped += 1
@@ -106,6 +106,7 @@ def probe_all() -> None:
                 print(f'  DEAD  {detail:20}  {u}')
             elif status == 'WARN':
                 warned.append((u, detail))
+                print(f'  warn  {detail:20}  {u}')
     print(f'\n{len(dead)} dead, {len(warned)} warn '
           f'(warns are usually bot-walls, not rot), {skipped} by-design, '
           f'{len(urls) - len(dead) - len(warned) - skipped} live')

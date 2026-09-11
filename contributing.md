@@ -904,7 +904,7 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("809 files, 347K lines") match live disk |
+| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("810 files, 347K lines") match live disk |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last (known lane-80.x GAPS are intentional and reported as baseline) |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped) |

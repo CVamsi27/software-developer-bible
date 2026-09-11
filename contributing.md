@@ -904,10 +904,11 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("806 files, 345K lines") match live disk |
+| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("809 files, 347K lines") match live disk |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last (known lane-80.x GAPS are intentional and reported as baseline) |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped) |
+| Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs and dead/dated reference URLs in code fences (fake archive timestamps, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
 
 Each script also runs standalone; all exit non-zero on failure so they can gate CI.
 

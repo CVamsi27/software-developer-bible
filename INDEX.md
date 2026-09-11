@@ -61,11 +61,11 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 10-frontend — Frontend (117 files in 8 sub-stacks)
+### 10-frontend — Frontend (118 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------- |
-| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 31 | Execution context, closures, prototypes, event loop, promises, async/await, ES2024, hash tables |
+| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 32 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
 | 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 18 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
 | 10.3 | [React](10-frontend/10.3-react/INDEX.md) | 22 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 17 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
@@ -200,4 +200,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 806 files, 345K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).
+*Last updated: September 2026 — 809 files, 347K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).

@@ -13,9 +13,9 @@
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
 | 01 | [Execution Context](10.1.1.01-execution-context.md) | GEC vs FEC, creation/execution phases, scope chain, hoisting internals | 20 min |
-| 02 | [Call Stack](10.1.1.02-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | 15 min |
-| 03 | [Hoisting](10.1.1.03-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 15 min |
-| 04 | [Scope](10.1.1.04-scope.md) | Global, function, block scope, scope chain, lexical environment | 20 min |
+| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block scope, scope chain, lexical environment | 20 min |
+| 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | 15 min |
+| 04 | [Hoisting](10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 15 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | 15 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | 25 min |
 
@@ -23,9 +23,9 @@
 
 ## Read order
 
-Execution Context → Call Stack → Hoisting → Scope → Lexical Environment → Closures.
+Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures.
 
-Why this order: **Execution Context** introduces the creation phase (where hoisting happens), **Hoisting** then explains that phase's behavior in isolation, **Scope** defines the *rules* of name resolution, **Lexical Environment** reveals the *mechanism* (environment records + outer reference) that implements those rules, and only then does **Closures** — a function retaining its lexical environment — make sense. Teaching closures before scope/lexical environment (the old order) forced you to trust an unexplained mechanism.
+Why this order: **Execution Context** introduces the creation phase (where hoisting happens), **Scope** defines the *rules* of name resolution before anything else leans on them, **Call Stack** shows where those contexts live at runtime, **Hoisting** then explains the creation phase's observable behavior in isolation, **Lexical Environment** reveals the *mechanism* (environment records + outer reference) that implements the scope rules, and only then does **Closures** — a function retaining its lexical environment — make sense. Teaching closures before scope/lexical environment (the old order) forced you to trust an unexplained mechanism.
 
 ---
 

@@ -1,0 +1,247 @@
+#!/usr/bin/env python3
+"""Freshness gate: flag known stale-API signatures in docs.
+
+Born from the Sept 2026 docs modernization audit. Each rule matches a
+pattern that survived the audit as "outdated content shipped in a
+chapter". The gate exists so these signatures fail verify.sh instead of
+waiting for the next manual audit.
+
+Rules are deliberately scoped (fence-language, file markers, allowlists)
+to avoid false positives on teaching content — e.g. `params: { id: string }`
+is correct for react-router and NestJS, and generateStaticParams RETURNS
+plain param objects. When a Pages Router example is intentionally shown
+in the Next.js stack, keep it inside the allowlisted directory.
+
+Usage:
+  python3 scripts/check_freshness.py                # report; exit 1 on hits
+  python3 scripts/check_freshness.py --check-urls   # also probe a sample of
+                                                    # external links for
+                                                    # liveness (network;
+                                                    # NOT part of verify.sh)
+"""
+import argparse
+import concurrent.futures
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+SKIP_DIRS = {'.git', 'node_modules', '.archive', '.freebuff', '.sass-cache'}
+# The Next.js stack teaches Pages Router side-by-side with App Router
+# (marked "Pages Router"); legacy names are intentional there.
+PAGES_ROUTER_ALLOWED = ('10-frontend/10.4-next.js',)
+# Historical restructure plans are records, not living docs.
+SKIP_SUBSTRINGS = ('/docs/superpowers/',)
+
+FAKE_ARCHIVE_TS = 'web.archive.org/web/20240701000000'
+
+RULES = [
+    ('FAKE-ARCHIVE-TS',
+     'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
+    ('STALE-GOOGLE-WEB-TREE',
+     'developers.google.com/web/ is retired; cite web.dev or developer.chrome.com'),
+    ('LEGACY-PAGES-ROUTER-EXPORT',
+     'getStaticProps/getServerSideProps export outside the Next.js stack; '
+     'move into 10.4-next.js or rewrite with App Router APIs'),
+    ('SYNC-PARAMS',
+     'sync params type in a Next.js context; params/searchParams are Promises '
+     'since Next.js 15 — use Promise<{...}> and await'),
+    ('DEPRECATED-URL-PARSE',
+     'url.parse() is legacy; use new URL() and searchParams'),
+    ('NEW-BUFFER',
+     'new Buffer() is deprecated; use Buffer.from/alloc/allocUnsafe'),
+    ('SETTIMEOUT-CHUNKING',
+     'old setTimeout chunking pattern; prefer scheduler.yield() time-slicing'),
+]
+
+SYNC_PARAMS = re.compile(r'params:\s*\{\s*\w+:\s*string\s*\}\s*\}')
+NEXT_MARKERS = re.compile(
+    r"from 'next|next/navigation|next/headers|generateStaticParams|"
+    r"generateMetadata|use cache|app/\w|'use client'"
+)
+
+MD_LINK_URL = re.compile(r'\]\((https?://[^)\s]+)\)')
+
+
+def repair_url(text: str, m) -> str:
+    """Re-attach trailing ')' belonging to URLs like Wikipedia's
+    ...Closure_(computer_programming) that the regex truncates."""
+    u = m.group(1)
+    end = m.end(1)
+    while u.count('(') > u.count(')') and end < len(text) and text[end] == ')':
+        u += ')'
+        end += 1
+    return u
+# Hosts/domains that are badges or illustrative examples — never probe.
+URL_SKIP = ('img.shields.io', 'example.com', 'example.org', 'example.net',
+            'localhost', '127.0.0.1')
+HEADERS = {
+    'User-Agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+                   'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'),
+    'Accept': 'text/html,application/xhtml+xml',
+}
+
+
+def collect_external_urls(root: Path):
+    urls = set()
+    malformed = set()
+    for p, rel in iter_md_files(root):
+        # Job applications and personal targets are historical records —
+        # expired listings there are expected, not doc rot.
+        if '/personal/' in f'/{rel}':
+            continue
+        text = p.read_text(encoding='utf-8', errors='replace')
+        for m in MD_LINK_URL.finditer(text):
+            u = repair_url(text, m)
+            if any(s in u for s in URL_SKIP):
+                continue
+            if not u.isascii():
+                # Non-ASCII in a URL is invalid (HTTP headers are latin-1);
+                # these are broken doc links, not probe targets.
+                malformed.add(u)
+                continue
+            urls.add(u)
+    return sorted(urls), sorted(malformed)
+
+
+def probe(url: str):
+    """Return (status, detail). Status: LIVE | DEAD | WARN.
+
+    GET-first: many sites (PortSwigger, etc.) return 404 for HEAD but
+    serve GET fine, so HEAD-first produced mass false DEADs. The body is
+    never read — the connection is closed immediately. A single retry on
+    404 absorbs transient site outages (OWASP/PG docs occasionally 404
+    for a minute mid-deploy).
+    """
+    last = ('WARN', 'no response')
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(url, headers=HEADERS, method='GET')
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                resp.read(1)  # touch the stream; do not download the body
+                return 'LIVE', f'HTTP {resp.status}'
+        except urllib.error.HTTPError as e:
+            if e.code in (404, 410):
+                if attempt == 0:
+                    time.sleep(0.5)
+                    continue
+                return 'DEAD', f'HTTP {e.code}'
+            return 'WARN', f'HTTP {e.code} (bot-blocked or rate-limited?)'
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            reason = getattr(e, 'reason', e)
+            last = ('WARN', f'unreachable: {reason}')
+    return last
+
+
+def check_urls(root: Path, sample: int):
+    urls, malformed = collect_external_urls(root)
+    if malformed:
+        print(f'{len(malformed)} malformed (non-ASCII) link(s) — fix in source doc:')
+        for u in malformed:
+            print(f'  MALFORMED  {u}')
+        print()
+    # Deterministic stride sampling — same set every run on the same tree.
+    picked = urls if len(urls) <= sample else urls[:: len(urls) // sample][:sample]
+    print(f'--check-urls: probing {len(picked)} of {len(urls)} external links '
+          f'(deterministic sample)...\n')
+    dead = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        for url, (status, detail) in zip(picked, ex.map(probe, picked)):
+            mark = {'LIVE': 'ok', 'DEAD': 'DEAD', 'WARN': 'warn'}[status]
+            print(f'  {mark:4}  {detail:40}  {url}')
+            if status == 'DEAD':
+                dead.append(url)
+    print()
+    if dead:
+        print(f'{len(dead)} dead link(s) — fix or re-cite in the source doc.')
+        return 1
+    if malformed:
+        print('All sampled links answered, but malformed links must be fixed.')
+        return 1
+    print('All sampled links answered (warnings are usually bot-blocks, not rot).')
+    return 0
+
+
+def iter_md_files(root: Path):
+    for p in sorted(root.rglob('*.md')):
+        rel = p.relative_to(root).as_posix()
+        if any(part in SKIP_DIRS for part in p.parts):
+            continue
+        if any(s in f'/{rel}' for s in SKIP_SUBSTRINGS):
+            continue
+        yield p, rel
+
+
+def check(p: Path, rel: str):
+    hits = []
+    text = p.read_text(encoding='utf-8', errors='replace')
+    in_code = False
+    lang = ''
+    for lineno, line in enumerate(text.splitlines(), 1):
+        stripped = line.lstrip()
+        if stripped.startswith('```'):
+            in_code = not in_code
+            lang = stripped[3:].strip() if in_code else ''
+            continue
+
+        if FAKE_ARCHIVE_TS in line:
+            hits.append((lineno, 'FAKE-ARCHIVE-TS', line.strip()[:100]))
+        if 'developers.google.com/web/' in line:
+            hits.append((lineno, 'STALE-GOOGLE-WEB-TREE', line.strip()[:100]))
+
+        if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
+            # Strip line comments so explanatory notes like
+            # "// url.parse() is deprecated" don't self-trigger.
+            # (?<!:) avoids https://, (?!/) avoids protocol-relative //.
+            code_line = re.sub(r'(?<!:)//(?!/).*$', '', line)
+            is_next_context = rel.startswith(PAGES_ROUTER_ALLOWED) or bool(
+                NEXT_MARKERS.search(text)
+            )
+            if re.search(r'export\s+(async\s+)?(const\s+)?(getStaticProps|getServerSideProps|'
+                         r'GetStaticProps|GetServerSideProps)', code_line):
+                if not rel.startswith(PAGES_ROUTER_ALLOWED):
+                    hits.append((lineno, 'LEGACY-PAGES-ROUTER-EXPORT', line.strip()[:100]))
+            if SYNC_PARAMS.search(code_line) and is_next_context:
+                hits.append((lineno, 'SYNC-PARAMS', line.strip()[:100]))
+            if re.search(r'\burl\.parse\s*\(', code_line):
+                hits.append((lineno, 'DEPRECATED-URL-PARSE', line.strip()[:100]))
+            if re.search(r'new\s+Buffer\s*\(', code_line):
+                hits.append((lineno, 'NEW-BUFFER', line.strip()[:100]))
+            if 'setTimeout(processChunk, 0)' in code_line:
+                hits.append((lineno, 'SETTIMEOUT-CHUNKING', line.strip()[:100]))
+    return hits
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--check-urls', nargs='?', const=15, type=int, metavar='N',
+                        help='probe a deterministic sample of N external links '
+                             '(default 15) for liveness; requires network')
+    args = parser.parse_args()
+
+    root = Path(__file__).resolve().parent.parent
+    if args.check_urls is not None:
+        sys.exit(check_urls(root, args.check_urls))
+
+    all_hits = []
+    n_files = 0
+    for p, rel in iter_md_files(root):
+        n_files += 1
+        for lineno, rule, detail in check(p, rel):
+            all_hits.append(f'STALE {rel}:{lineno} [{rule}] {detail}')
+
+    if all_hits:
+        print(f'{len(all_hits)} freshness violation(s) found:\n')
+        for h in all_hits:
+            print(f'  {h}')
+        print('\nRules: ' + '; '.join(f'{name} — {why}' for name, why in RULES))
+        sys.exit(1)
+
+    print(f'OK — freshness scan clean ({n_files} md files, {len(RULES)} rules).')
+    sys.exit(0)
+
+
+if __name__ == '__main__':
+    main()

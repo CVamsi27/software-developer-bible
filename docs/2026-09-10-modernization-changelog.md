@@ -22,9 +22,13 @@ fixed three classes of rot: **outdated APIs** (`setTimeout` chunking instead of
 timestamps, never-existed URLs, dead site restructures), and **security
 anti-patterns taught uncritically** (JWT in `localStorage`, unsanitized
 `dangerouslySetInnerHTML`, interpolated SQL). The durable outcome is
-`scripts/check_freshness.py` — 7 staleness rules plus an opt-in link-liveness
+`scripts/check_freshness.py` — 8 staleness rules plus an opt-in link-liveness
 mode — wired into `scripts/verify.sh` as gate 5/5, so every class of rot this
-pass fixed now fails verification mechanically.
+pass fixed now fails verification mechanically. The dead-link remediation
+(`docs/superpowers/plans/2026-09-10-dead-link-remediation.md`) added the
+RETIRED-OWASP-CHEATSHEET rule and `scripts/link_baseline.py`, which snapshots
+every cited external URL (`scripts/external-links-baseline.json`, ~2,230) so
+the next audit diffs against known-good state instead of starting cold.
 
 ## 1. Why This Pass Happened
 
@@ -161,7 +165,9 @@ For future maintainers (human or agent):
    string when they drift.
 2. When you fix a staleness class, add a `check_freshness.py` rule for it.
 3. Probe every URL before citing it; never cite an unverified URL, including
-   "obviously fine" ones.
+   "obviously fine" ones. After adding citations, run `python3 scripts/link_baseline.py`
+   — every ADDED url must be probe-verified live — then `--update` and commit
+   the baseline with the doc change.
 4. A HEAD 404 is not evidence of death; check GET before replacing anything.
 5. Run `bash scripts/verify.sh` before every commit — the five gates encode
    everything above mechanically.

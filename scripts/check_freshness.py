@@ -37,9 +37,26 @@ SKIP_SUBSTRINGS = ('/docs/superpowers/',)
 
 FAKE_ARCHIVE_TS = 'web.archive.org/web/20240701000000'
 
+# Retired OWASP cheat-sheet URL forms. OWASP renamed the site's cheat
+# directory from cheat-sheets/ to cheatsheets/ (2026-09), breaking every
+# link written the old way; owasp.org/cheatsheets/ (no subdomain) is a
+# short-host variant that was never a stable citation target either.
+# Discovered during the dead-link remediation sweep; see
+# docs/superpowers/plans/2026-09-10-dead-link-remediation.md.
+RETIRED_OWASP = re.compile(
+    r'cheatsheetseries\.owasp\.org/cheat-sheets/'
+    # The (?<![\w.]) guard keeps this branch from matching INSIDE the good
+    # form: cheatsheetseries.owasp.org/cheatsheets/ contains
+    # owasp.org/cheatsheets/ as a substring, preceded by a dot.
+    r'|(?<![\w.])owasp\.org/cheatsheets/'
+)
+
 RULES = [
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
+    ('RETIRED-OWASP-CHEATSHEET',
+     'retired OWASP cheat-sheet URL form (cheat-sheets/ or short host); '
+     'cite cheatsheetseries.owasp.org/cheatsheets/<Name>.html'),
     ('STALE-GOOGLE-WEB-TREE',
      'developers.google.com/web/ is retired; cite web.dev or developer.chrome.com'),
     ('LEGACY-PAGES-ROUTER-EXPORT',
@@ -188,6 +205,9 @@ def check(p: Path, rel: str):
 
         if FAKE_ARCHIVE_TS in line:
             hits.append((lineno, 'FAKE-ARCHIVE-TS', line.strip()[:100]))
+        m_owasp = RETIRED_OWASP.search(line)
+        if m_owasp:
+            hits.append((lineno, 'RETIRED-OWASP-CHEATSHEET', line.strip()[:100]))
         if 'developers.google.com/web/' in line:
             hits.append((lineno, 'STALE-GOOGLE-WEB-TREE', line.strip()[:100]))
 

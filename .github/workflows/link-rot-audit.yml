@@ -1,0 +1,110 @@
+# Monthly link-rot audit.
+#
+# Runs scripts/link_baseline.py --probe (GET-probe of every external URL
+# cited in the docs) against the committed baseline. The probe step itself
+# never fails the workflow — bot-wall warns are expected noise — instead the
+# dead-count is parsed and an issue is opened (or updated) only when > 0.
+# Baseline updates stay a human step: run --update after verified citation
+# changes, commit the JSON with the doc change (see contributing.md).
+name: link-rot-audit
+
+on:
+  schedule:
+    - cron: '0 6 3 * *' # 06:00 UTC on the 3rd of each month
+  workflow_dispatch: {} # manual run from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe all cited external URLs
+        id: probe
+        run: |
+          set +e
+          python3 scripts/link_baseline.py --probe | tee probe-output.txt
+          echo "exitcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          dead=$(grep -c '^  DEAD' probe-output.txt || true)
+          echo "dead=$dead" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update dead-link issue
+        if: steps.probe.outputs.dead != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const dead = '${{ steps.probe.outputs.dead }}';
+            const output = fs.readFileSync('probe-output.txt', 'utf8');
+            const title = 'Dead external links detected by monthly audit';
+            const body =
+              'The monthly link-rot audit found **' + dead + ' dead URL(s)** ' +
+              'among the citations in the docs baseline.\n\n' +
+              'Fix procedure: probe-verify a replacement for each URL below ' +
+              '(search, never guess; GET 200 before citing), edit the citing ' +
+              'file, then run `python3 scripts/link_baseline.py --update` and ' +
+              'commit the baseline with the doc change. See the maintenance ' +
+              'contract in `docs/2026-09-10-modernization-changelog.md`.\n\n' +
+              '<details><summary>Full probe output</summary>\n\n```\n' +
+              output + '\n```\n</details>\n';
+            const marker = 'link-rot-audit';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'link-rot',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body: marker + '\n' + body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: marker + '\n' + body,
+                labels: ['link-rot'],
+              });
+            }
+
+      - name: Resolve issue when clean
+        if: steps.probe.outputs.dead == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Dead external links detected by monthly audit';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'link-rot',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                state: 'closed',
+              });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body: 'Monthly audit is clean (0 dead); closing.',
+              });
+            }

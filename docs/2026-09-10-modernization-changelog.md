@@ -138,16 +138,18 @@ recompute-and-restamp rule (never hand-edit scale claims) continues to apply.
 
 ## 5. What Deliberately Remains Open
 
-- **~200 dead links in the blog/tutorial long tail** (freecodecamp ×15,
-  patterns.dev, auth0, basarat gitbook, dev.to, logrocket). Each needs a
-  search-verified replacement; URL guessing is explicitly off-limits.
-- **Wayback snapshot pass** for the iconic dead posts (High Scalability's
-  Dropbox/Twitter architecture write-ups, the LinkedIn log paper) — the
-  archive.org availability API was rate-limited after the full sweep; one
-  clean run is owed, and unverified snapshot timestamps will not be written.
+- ~~Dead links in the blog/tutorial long tail~~ — resolved by the plan in
+  `docs/superpowers/plans/2026-09-10-dead-link-remediation.md`: every cluster
+  replaced with probe-verified live URLs or exact-timestamp Wayback snapshots
+  (see git log, `docs:` commits of 2026-09-10/11); bot-walled WARNs (O'Reilly,
+  JFrog) deliberately left as-is.
+- ~~Wayback snapshot pass~~ — done: the iconic dead posts now cite exact-
+  timestamp snapshots verified live at citation time; three fabricated
+  High Scalability slugs were corrected to the real articles in the process.
 - **The private `docita` GitHub repo links** (projects/docita docs cite them)
   404 only for unauthenticated probes; left as-is deliberately.
-- **Commit**: the entire pass remains uncommitted per repo rules.
+- ~~Commit~~ — done: the pass and the dead-link remediation plan are committed
+  as a `docs:` commit series on `main`.
 
 ## 6. The Maintenance Contract
 

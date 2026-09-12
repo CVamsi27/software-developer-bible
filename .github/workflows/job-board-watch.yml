@@ -1,0 +1,95 @@
+# Weekly job-board watch.
+#
+# Runs scripts/job_board_watch.py against the public Greenhouse / Ashby /
+# Personio job-board APIs configured in its WATCHES list (or a --config
+# JSON). Two signal classes:
+#   REOPEN - a watched dead posting title is listed again (apply fast)
+#   GONE   - an applied-to posting vanished while the tracker still says
+#            Applied/Evaluated (ghosting signal: bump the named contact)
+# Exit 1 means actionable signals; the workflow then opens/updates a
+# labeled tracking issue. Fetch failures are warns, never failures.
+name: job-board-watch
+
+on:
+  schedule:
+    - cron: '0 6 1 * *' # 06:00 UTC every Monday
+  workflow_dispatch: {} # manual run from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Probe watched job boards
+        id: watch
+        run: |
+          set +e
+          python3 scripts/job_board_watch.py | tee watch-output.txt
+          echo "exitcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          signals=$(grep -cE '^  (REOPEN|GONE)' watch-output.txt || true)
+          echo "signals=$signals" >> "$GITHUB_OUTPUT"
+
+      - name: Write run summary
+        run: |
+          {
+            echo "## Job-board watch"
+            echo
+            echo "**Signals: ${{ steps.watch.outputs.signals }}**"
+            echo
+            '```'
+            cat watch-output.txt
+            '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update tracking issue on signals
+        if: steps.watch.outputs.exitcode == '1'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('watch-output.txt', 'utf8');
+            const title = 'Job-board watch: actionable signals';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'job-watch',
+            });
+            const body = [
+              'The weekly job-board watch found actionable signals.',
+              '',
+              '```',
+              output,
+              '```',
+              '',
+              'Actions: REOPEN -> apply fast with existing draft answers; ',
+              'GONE -> check spam, bump the named contact per the playbook day-7 rule, or mark Dead in the tracker.',
+            ].join('\n');
+            if (issues.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body,
+              });
+              console.log(`Updated existing issue #${issues[0].number}`);
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                labels: ['job-watch'],
+                body,
+              });
+              console.log('Created new tracking issue');
+            }

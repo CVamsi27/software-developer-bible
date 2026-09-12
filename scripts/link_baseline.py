@@ -159,10 +159,12 @@ def probe_all() -> None:
             elif bucket == 'warned':
                 buckets['warned'].append((u, detail))
                 print(f'  {label:4}  {detail:20}  {u}')
+    live = (len(urls) - len(buckets['dead']) - len(buckets['suspect'])
+            - len(buckets['warned']) - buckets['skipped'])
     print(f'\n{len(buckets["dead"])} dead, {len(buckets["suspect"])} suspect, '
           f'{len(buckets["warned"])} warn '
           f'(warns are usually bot-walls, not rot), {buckets["skipped"]} by-design, '
-          f'{buckets["live"]} live')
+          f'{live} live')
     if buckets['suspect']:
         print('SUSPECT rows: these hosts 404 datacenter IPs on live pages — '
               'verify from a residential vantage before changing anything.')

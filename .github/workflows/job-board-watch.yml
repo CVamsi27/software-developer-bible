@@ -46,9 +46,9 @@ jobs:
             echo
             echo "**Signals: ${{ steps.watch.outputs.signals }}**"
             echo
-            '```'
+            echo '```'
             cat watch-output.txt
-            '```'
+            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Open or update tracking issue on signals

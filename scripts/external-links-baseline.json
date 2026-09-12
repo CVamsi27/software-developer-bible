@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11",
- "url_count": 2230,
+ "generated": "2026-09-12",
+ "url_count": 2229,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -371,6 +371,9 @@
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
    "20-backend/20.5-security/01-auth/INDEX.md"
+  ],
+  "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html": [
+   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md"
@@ -1420,6 +1423,9 @@
   ],
   "https://docs.honeycomb.io/manage-data-volume/sampling/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
+  ],
+  "https://docs.jfrog.com/artifactory/docs/repository-layouts": [
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
   "https://docs.kata-containers.io/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
@@ -2777,6 +2783,12 @@
   "https://itrevolution.com/product/accelerate/": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
+  "https://itrevolution.com/product/the-phoenix-project/": [
+   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
+   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
+   "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
+  ],
   "https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
@@ -2854,9 +2866,6 @@
   ],
   "https://jestjs.io/docs/tutorial-react-native": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
-  ],
-  "https://jfrog.com/help/r/jfrog-artifactory-documentation/repository-layout-reference": [
-   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
   "https://joi.dev/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
@@ -3035,6 +3044,13 @@
   ],
   "https://latentflip.com/loupe/": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
+  ],
+  "https://leanpub.com/dockerdeepdive": [
+   "40-platform/40.1-docker/40.1.01-images-containers.md",
+   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
+   "40-platform/40.1-docker/40.1.03-compose.md",
+   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
+   "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://learn.branch.io/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
@@ -5823,6 +5839,9 @@
   "https://spec.openapis.org/oas/v3.1.0": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
   ],
+  "https://spring.io/blog/2023/10/24/a-use-case-for-transactions-adapting-to-transactional-outbox-pattern": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md"
+  ],
   "https://sql-performance-explained.com/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
   ],
@@ -5954,9 +5973,6 @@
   ],
   "https://systemdesign.one/bloom-filters-explained/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
-  ],
-  "https://tacticaledge.co/practical-threat-modeling/": [
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md"
   ],
   "https://tailwindcss.com/docs": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
@@ -6248,6 +6264,9 @@
   "https://vitest.dev/guide/why.html": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
   ],
+  "https://vladmihalcea.com/optimistic-vs-pessimistic-locking/": [
+   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md"
+  ],
   "https://vuejs.org/guide/extras/reactivity-in-depth.html": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md"
   ],
@@ -6465,13 +6484,6 @@
   "https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md"
   ],
-  "https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1098130235": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md",
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
-   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
-   "40-platform/40.1-docker/40.1.10-interview-questions.md"
-  ],
   "https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md",
    "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md",
@@ -6531,15 +6543,6 @@
   ],
   "https://www.amazon.com/Never-Split-Difference-Negotiating-Depended/dp/0062407805": [
    "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md"
-  ],
-  "https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0991538429": [
-   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
-   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
-   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
-   "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
-  ],
-  "https://www.amazon.com/RabbitMQ-Depth-Software-Gabriel-Brenner/dp/1617292953": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md"
   ],
   "https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6670,17 +6673,8 @@
   "https://www.baeldung.com/": [
    "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
   ],
-  "https://www.baeldung.com/cs/optimistic-locking-vs-pessimistic-locking": [
-   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md"
-  ],
   "https://www.baeldung.com/java-concurrency": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
-  ],
-  "https://www.baeldung.com/sql/transaction-isolation-levels": [
-   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md"
-  ],
-  "https://www.baeldung.com/transactional-outbox-spring": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md"
   ],
   "https://www.bamf.de": [
    "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md"
@@ -7076,6 +7070,9 @@
   ],
   "https://www.manning.com/books/dependency-injection-principles-practices-patterns": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
+  ],
+  "https://www.manning.com/books/rabbitmq-in-depth": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md"
   ],
   "https://www.meilisearch.com/docs": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"

@@ -104,6 +104,18 @@ ADDED) → `--update` → commit baseline JSON with the doc change.
 - **Site-wide renames are rule-worthy**: one rename broke N citations.
   The OWASP rule now fails verify.sh on any regression. When the next
   rename class appears, add its rule the same day (see also AGENTS.md).
+- **Status codes lie in both directions — vantage point matters** (learned
+  from the first live CI run). GitHub runners' datacenter IPs get 404s
+  from IP-reputation WAFs on *live* pages (Topcoder 404'd runners twice
+  while 200ing laptops; Amazon dp/ URLs 404 runners and most bots), while
+  soft-404 shells serve HTTP 200 to residential clients — Topcoder served
+  a "Page not found" HTML body with status 200 to a reader proxy. So:
+  never act on a runner-side DEAD without a residential-vantage check,
+  verify at the *content* level (r.jina.ai fetch and read the body) when
+  statuses disagree, and for hosts that 404 datacenter IPs on live pages,
+  cite a different host rather than accept perpetual audit noise.
+  `link_baseline.py` quarantines known hosts of this class as SUSPECT:
+  reported, summarized in CI, but never failing the run.
 
 ## 6. See also
 

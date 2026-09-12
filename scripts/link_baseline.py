@@ -39,6 +39,31 @@ KNOWN_404_OK = (
     'github.com/CVamsi27/docita',
 )
 
+# Hosts whose WAFs are IP-reputation-based: they 404 datacenter fetchers
+# (GitHub runners) on LIVE pages, so a runner-side DEAD verdict cannot be
+# trusted for these hosts — probe()'s browser-header retry cannot help
+# because the decision is made on the client IP, not the headers. A DEAD
+# on these hosts is reported as SUSPECT: still printed and surfaced in CI
+# summaries, but excluded from the failing exit code and the issue flow,
+# pending manual verification from a residential vantage. Verify at the
+# CONTENT level (e.g. fetch through r.jina.ai and read the body): status
+# codes lie in both directions — Topcoder served HTTP 200 soft-404 shells
+# to a residential client while returning real 404s elsewhere.
+SUSPECT_DEAD_HOSTS = (
+    'topcoder.com',
+)
+
+# Hosts that drop/refuse datacenter-IP probes entirely ('no response')
+# while serving human readers normally — leetcode drops connections from
+# GitHub runners on every page (360 of 434 CI warns). From a runner, real
+# rot there is indistinguishable from the block, so these warns carry no
+# signal: reported as by-design skips (like docita) instead of drowning
+# the warn budget. Rot on these hosts can only be caught from a
+# residential vantage — see the remediation report, lesson 6.
+DATACENTER_BLOCKED_HOSTS = (
+    'leetcode.com',
+)
+
 
 def collect() -> dict:
     """Return {url: sorted [relative citing files]} over living docs.
@@ -92,25 +117,56 @@ def diff() -> None:
         sys.exit(1)
 
 
+def row_for(u: str, status: str) -> tuple[str, str]:
+    """Classify one probe result as (printed label, bucket).
+
+    Buckets: skipped (by-design exclusions: DEAD on private-repo citations,
+    WARN on datacenter-blocked hosts), dead (actionable rot),
+    suspect (datacenter-IP false-dead candidate — never fails the run),
+    warned (bot-wall noise), live.
+    """
+    if status == 'DEAD' and any(s in u for s in KNOWN_404_OK):
+        return 'skip', 'skipped'
+    if status == 'DEAD':
+        if any(h in u for h in SUSPECT_DEAD_HOSTS):
+            return 'SUSPECT', 'suspect'
+        return 'DEAD', 'dead'
+    if status == 'WARN':
+        if any(h in u for h in DATACENTER_BLOCKED_HOSTS):
+            return 'skip', 'skipped'
+        return 'warn', 'warned'
+    return 'ok', 'live'
+
+
 def probe_all() -> None:
     urls = sorted(load())
     print(f'probing all {len(urls)} baseline urls...')
-    dead, warned, skipped = [], [], 0
+    buckets = {'skipped': 0, 'dead': [], 'suspect': [], 'warned': [], 'live': 0}
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
         for u, (status, detail) in zip(urls, ex.map(probe, urls)):
-            if any(s in u for s in KNOWN_404_OK):
-                skipped += 1
-                print(f'  skip  {"(by-design 404)":20}  {u}')
-            elif status == 'DEAD':
-                dead.append((u, detail))
-                print(f'  DEAD  {detail:20}  {u}')
-            elif status == 'WARN':
-                warned.append((u, detail))
-                print(f'  warn  {detail:20}  {u}')
-    print(f'\n{len(dead)} dead, {len(warned)} warn '
-          f'(warns are usually bot-walls, not rot), {skipped} by-design, '
-          f'{len(urls) - len(dead) - len(warned) - skipped} live')
-    sys.exit(1 if dead else 0)
+            label, bucket = row_for(u, status)
+            if bucket == 'skipped':
+                buckets['skipped'] += 1
+                note = ('(by-design 404)' if status == 'DEAD'
+                        else f'(datacenter-blocked: {detail})')
+                print(f'  {label:4}  {note:30}  {u}')
+            elif bucket == 'dead':
+                buckets['dead'].append((u, detail))
+                print(f'  {label:4}  {detail:20}  {u}')
+            elif bucket == 'suspect':
+                buckets['suspect'].append((u, detail))
+                print(f'  {label}  {detail:18}  {u}  (host 404s datacenter IPs — verify manually, see report)')
+            elif bucket == 'warned':
+                buckets['warned'].append((u, detail))
+                print(f'  {label:4}  {detail:20}  {u}')
+    print(f'\n{len(buckets["dead"])} dead, {len(buckets["suspect"])} suspect, '
+          f'{len(buckets["warned"])} warn '
+          f'(warns are usually bot-walls, not rot), {buckets["skipped"]} by-design, '
+          f'{buckets["live"]} live')
+    if buckets['suspect']:
+        print('SUSPECT rows: these hosts 404 datacenter IPs on live pages — '
+              'verify from a residential vantage before changing anything.')
+    sys.exit(1 if buckets['dead'] else 0)
 
 
 def main():

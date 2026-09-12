@@ -12,8 +12,8 @@ name: job-board-watch
 
 on:
   schedule:
-    - cron: '0 6 1 * *' # 06:00 UTC every Monday - full weekly watch
-    - cron: '0 6 2-5 * *' # 06:00 UTC Tue-Fri during active application weeks
+    - cron: '0 6 * * 1' # 06:00 UTC every Monday - full weekly watch
+    - cron: '0 6 * * 2-5' # 06:00 UTC Tue-Fri - daily liveness during active application weeks
   workflow_dispatch: {} # manual run from the Actions tab
 
 permissions:

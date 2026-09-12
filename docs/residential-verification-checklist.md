@@ -5,8 +5,8 @@
 > can only be confirmed by a human on a normal (residential) connection.
 > This doc lists exactly which ones, and what to do with the result.
 
-| | |
-| --- | --- |
+|  |  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **Trigger** | Any CI run reporting SUSPECT > 0; a DEAD you doubt; quarterly warn-list sweep |
 | **Time** | ~15 minutes per pass |
 | **Tools** | A normal browser, `gh`, `python3 scripts/link_baseline.py` |

@@ -908,8 +908,8 @@ It runs, in order, with clear pass/fail output:
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last (known lane-80.x GAPS are intentional and reported as baseline) |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped) |
-| Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs and dead/dated reference URLs in code fences (fake archive timestamps, retired OWASP cheat-sheet URL forms, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
-| Link baseline | `python3 scripts/link_baseline.py` | External-link audit: `--update` snapshots every cited URL into `scripts/external-links-baseline.json`; bare run diffs the tree against it (exit 1 on unverified ADDED urls); `--probe` GET-probes all baseline URLs. Audit tool, not a per-commit gate |
+| Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs and dead/dated reference URLs in code fences (fake archive timestamps, retired OWASP cheat-sheet URL forms, shuttered domains confirmed dead in the 2026-09 remediation, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
+| Link baseline | `python3 scripts/link_baseline.py` | Gate 6/6 (diff mode): every cited external URL must be in `scripts/external-links-baseline.json` — exit 1 on unverified ADDED urls; probe-verify each, then `--update` and commit the JSON with the doc change. `--probe` GET-probes all baseline URLs (audit mode, runs in the monthly CI workflow) |
 
 Each script also runs standalone; all exit non-zero on failure so they can gate CI.
 

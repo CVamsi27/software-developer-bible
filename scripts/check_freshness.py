@@ -51,12 +51,49 @@ RETIRED_OWASP = re.compile(
     r'|(?<![\w.])owasp\.org/cheatsheets/'
 )
 
+# Domains confirmed dead during the Sept 2026 remediation and the CI
+# warn-mining pass (DNS gone, content retired, or a never-correct typo
+# domain). A citation to any of these is rot the day it is written; the
+# rule fails verify.sh so the class can never silently re-enter. Each
+# replacement target used at remediation time is listed in
+# docs/2026-09-11-dead-link-remediation-report.md.
+# The (?<!\w) guard blocks letter-extended hostnames that merely contain a
+# listed domain as a suffix substring — bundlephobia.com contains
+# undlephobia.com after its first letter, notweave.works contains
+# weave.works. Subdomain prefixes (www.weave.works) must still match, so
+# a dot before the domain is allowed — dots are not word characters.
+SHUTTERED_DOMAINS = re.compile(
+    r'(?<!\w)'
+    r'(?:weave\.works'             # Weaveworks shut down (2024)
+    r'|complexityzoo\.net'         # DNS dead (root and wiki paths)
+    r'|jstherightway\.org'
+    r'|dassum\.io'
+    r'|gdprtoday\.com'
+    r'|georgestockera\.com'
+    r'|saaslogy\.com'
+    r'|programminglogs\.com'
+    r'|blog\.rsbuild\.dev'         # Rsbuild blog now at rspack.rs/blog
+    r'|blog\.savut\.se'
+    r'|blog\.usejournal\.com'      # Medium publication retired
+    r'|docs\.kata-containers\.io'  # real domain: katacontainers.io
+    r'|learn\.branch\.io'          # moved to docs.branch.io
+    r'|undlephobia\.com'           # typo of bundlephobia.com
+    r'|bluecard-network\.de'
+    r'|heim\.ifi\.uio\.no'        # UIO personal pages retired (broken SSL)
+    r'|tacticaledge\.co'
+    r')'
+)
+
 RULES = [
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
     ('RETIRED-OWASP-CHEATSHEET',
      'retired OWASP cheat-sheet URL form (cheat-sheets/ or short host); '
      'cite cheatsheetseries.owasp.org/cheatsheets/<Name>.html'),
+    ('SHUTTERED-DOMAIN',
+     'cites a domain confirmed dead in the Sept 2026 remediation; '
+     're-cite a live home (replacements listed in '
+     'docs/2026-09-11-dead-link-remediation-report.md)'),
     ('STALE-GOOGLE-WEB-TREE',
      'developers.google.com/web/ is retired; cite web.dev or developer.chrome.com'),
     ('LEGACY-PAGES-ROUTER-EXPORT',
@@ -232,6 +269,8 @@ def check(p: Path, rel: str):
         m_owasp = RETIRED_OWASP.search(line)
         if m_owasp:
             hits.append((lineno, 'RETIRED-OWASP-CHEATSHEET', line.strip()[:100]))
+        if SHUTTERED_DOMAINS.search(line):
+            hits.append((lineno, 'SHUTTERED-DOMAIN', line.strip()[:100]))
         if 'developers.google.com/web/' in line:
             hits.append((lineno, 'STALE-GOOGLE-WEB-TREE', line.strip()[:100]))
 

@@ -14,7 +14,7 @@ maintainer reads first.
 | **Executed** | 2026-09-10 → 2026-09-11 |
 | **Starting point** | ~200+ dead external citations across the docs |
 | **Final state** | 0 dead · 1,707 live · 522 bot-wall warns · 1 by-design exclusion (2,230 URLs probed) |
-| **Gates** | `bash scripts/verify.sh` 5/5 PASS at every commit |
+| **Gates** | `bash scripts/verify.sh` 6/6 PASS at every commit |
 
 ## 1. Results in numbers
 

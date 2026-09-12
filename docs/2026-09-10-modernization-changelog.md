@@ -23,7 +23,7 @@ timestamps, never-existed URLs, dead site restructures), and **security
 anti-patterns taught uncritically** (JWT in `localStorage`, unsanitized
 `dangerouslySetInnerHTML`, interpolated SQL). The durable outcome is
 `scripts/check_freshness.py` — 8 staleness rules plus an opt-in link-liveness
-mode — wired into `scripts/verify.sh` as gate 5/5, so every class of rot this
+mode — wired into `scripts/verify.sh` as gate 5/6, so every class of rot this
 pass fixed now fails verification mechanically. The dead-link remediation
 (`docs/superpowers/plans/2026-09-10-dead-link-remediation.md`) added the
 RETIRED-OWASP-CHEATSHEET rule and `scripts/link_baseline.py`, which snapshots
@@ -106,7 +106,7 @@ gate in one anecdote.
 
 ## 4. Verification Tooling Added or Hardened
 
-### `scripts/check_freshness.py` (new — verify.sh gate 5/5)
+### `scripts/check_freshness.py` (new — verify.sh gate 5/6)
 
 | Rule | Catches |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -169,17 +169,18 @@ For future maintainers (human or agent):
    — every ADDED url must be probe-verified live — then `--update` and commit
    the baseline with the doc change.
 4. A HEAD 404 is not evidence of death; check GET before replacing anything.
-5. Run `bash scripts/verify.sh` before every commit — the five gates encode
+5. Run `bash scripts/verify.sh` before every commit — the six gates encode
    everything above mechanically.
 
 ## 7. Verification At Close
 
 ```
-1/5 counts      OK — 809 files, 347K lines
-2/5 alignment   PASS
-3/5 structure   PASS (baseline lane-80.x GAPS only)
-4/5 links       OK — 0 broken
-5/5 freshness   OK — 7 rules
+1/6 counts      OK — 809 files, 347K lines
+2/6 alignment   PASS
+3/6 structure   PASS (baseline lane-80.x GAPS only)
+4/6 links       OK — 0 broken
+5/6 freshness   OK — 9 rules
+6/6 baseline    OK — 0 added, 0 removed
 ```
 
 *(This file is itself scanned by gates 1 and 5 — the changelog about the gates

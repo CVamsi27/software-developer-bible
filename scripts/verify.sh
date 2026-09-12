@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs the five mechanical checks in order; exits non-zero if any real
+# Runs the six mechanical checks in order; exits non-zero if any real
 # failure is found. Known lane-80.x numbering GAPS are intentional (numbers
 # owned by projects/docita prep docs) and reported as baseline noise, not
 # failures.
@@ -12,7 +12,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/5  check_counts.py — repo-total scale claims vs live disk"
+echo "1/6  check_counts.py — repo-total scale claims vs live disk"
 echo "     python3 scripts/check_counts.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_counts.py; then
@@ -22,7 +22,7 @@ else
 fi
 
 echo ""
-echo "2/5  check_alignment.py — table pipes + ASCII box walls"
+echo "2/6  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +33,7 @@ else
 fi
 
 echo ""
-echo "3/5  check_structure.py — IDs, sequences, interview-last"
+echo "3/6  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -52,7 +52,7 @@ else
 fi
 
 echo ""
-echo "4/5  check_links.py — fence-aware broken-link scan"
+echo "4/6  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -63,7 +63,7 @@ else
 fi
 
 echo ""
-echo "5/5  check_freshness.py — stale-API signature scan"
+echo "5/6  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -74,7 +74,21 @@ else
 fi
 
 echo ""
-if [ "$FAIL" -eq 0 ]; then
+echo "6/6  link_baseline.py diff — live docs vs committed citation baseline"
+echo "     python3 scripts/link_baseline.py"
+echo "------------------------------------------------------------"
+# Fails when a doc cites an external URL that is not in the committed
+# baseline (and lists REMOVED urls as informational). Every ADDED url
+# must be probe-verified live BEFORE --update; committing the baseline
+# JSON together with the doc change is the verification record.
+if python3 scripts/link_baseline.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — probe-verify each ADDED url, then run: python3 scripts/link_baseline.py --update"
+    FAIL=1
+fi
+
+echo ""
     echo "All checks passed — tree is clean."
     exit 0
 else

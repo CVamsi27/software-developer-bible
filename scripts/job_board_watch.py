@@ -49,10 +49,20 @@ WATCHES = [
 ]
 
 
+class BoardFetchError(Exception):
+    """Board returned a non-200 status (rate-limit, WAF, wrong slug, down)."""
+
+
 def fetch(url: str) -> str:
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            return resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        # Never treat a non-200 as an empty board: Personio 307-redirects bad
+        # slugs to personio.com (429 there), WAFs 403, rate limits 429. An
+        # empty list from such a response would fire false GONE signals.
+        raise BoardFetchError(f"HTTP {exc.code}") from exc
 
 
 def titles_greenhouse(board: str) -> list:
@@ -71,7 +81,12 @@ def titles_ashby(board: str) -> list:
 
 def titles_personio(board: str) -> list:
     xml_text = fetch(f"https://{board}.jobs.personio.com/xml")
-    root = ET.fromstring(xml_text)
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError as exc:
+        # A redirect-to-HTML page parses as garbage: treat as fetch failure
+        # (warn) rather than "0 positions" (false GONE).
+        raise BoardFetchError(f"non-XML response (wrong slug or redirected)") from exc
     return [(pos.findtext("name") or "") for pos in root.iter("position")]
 
 
@@ -88,7 +103,8 @@ def evaluate(watches):
         try:
             titles = FETCHERS[kind](board)
         except Exception as exc:  # noqa: BLE001 - a dead board is a warn, not a crash
-            oks.append(f"warn    {w['board']:<24} fetch failed ({exc.__class__.__name__}) - board may be down")
+            detail = str(exc) or exc.__class__.__name__
+            oks.append(f"warn    {w['board']:<24} fetch failed ({detail}) - treated as unknown, NOT a GONE signal")
             continue
         lowered = [t.lower() for t in titles]
         for term in w.get("reopen", []):

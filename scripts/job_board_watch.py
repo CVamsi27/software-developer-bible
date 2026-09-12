@@ -41,6 +41,11 @@ WATCHES = [
         "reopen": [],
         "gone": ["Senior Full Stack Engineer - TypeScript / Next.js"],
     },
+    {
+        "board": "personio:snke",
+        "reopen": [],
+        "gone": ["Senior Software Engineer (Full-Stack) - Healthcare Applications"],
+    },
 ]
 
 

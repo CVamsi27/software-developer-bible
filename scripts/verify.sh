@@ -38,14 +38,15 @@ echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
 CODE=$?
-# Known baseline noise: the lane-80.x numbering gaps caused by prep docs
-# living in projects/docita. Everything else is a real failure.
+# (2026-09-13: the lane-80.x numbering gaps were FIXED - the five prep docs
+# moved from projects/docita into the lane, sequence 1..36 complete. The old
+# baseline filters below are kept one release as a no-op safety net.)
 REAL=$(printf '%s\n' "$OUT" | grep -v "80-lanes-abroad-full-stack prefix 80.x" \
     | grep -v "projects/docita prefix 80.x" \
     | grep -v "^OK:" || true)
 if [ "$CODE" -eq 0 ] || [ -z "$REAL" ]; then
     printf '%s\n' "$OUT" | grep "GAPS" | sed 's/^/  baseline (intentional): /'
-    echo "  PASS (baseline lane-80.x GAPS only)"
+    echo "  PASS"
 else
     printf '%s\n' "$REAL"
     FAIL=1

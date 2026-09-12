@@ -446,6 +446,9 @@
    "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md",
    "81-lanes-indian-sde-faang/81.01-complete-guide.md"
   ],
+  "https://cp-algorithms.com/data_structures/fenwick.html": [
+   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md"
+  ],
   "https://cp-algorithms.com/data_structures/segment_tree.html": [
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md"
   ],
@@ -7453,9 +7456,6 @@
   ],
   "https://www.techinterviewhandbook.org/resume/": [
    "81-lanes-indian-sde-faang/81.15-resume-negotiation.md"
-  ],
-  "https://www.topcoder.com/thrive/articles/Binary%20Indexed%20Trees": [
-   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md"
   ],
   "https://www.totaltypescript.com/four-essential-typescript-patterns": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"

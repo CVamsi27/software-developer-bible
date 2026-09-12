@@ -51,6 +51,12 @@ KNOWN_404_OK = (
 # to a residential client while returning real 404s elsewhere.
 SUSPECT_DEAD_HOSTS = (
     'topcoder.com',
+    # leetcode: WAF 404s datacenter fetchers on live pages AND on premium
+    # problems (anonymous fetchers always get 404 there); run 6 flagged a
+    # correct-slug premium problem as DEAD. Runner-side verdicts on this
+    # host are never actionable — verify from a residential vantage per
+    # docs/residential-verification-checklist.md.
+    'leetcode.com',
 )
 
 # Hosts that drop/refuse datacenter-IP probes entirely ('no response')

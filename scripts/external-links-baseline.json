@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-12",
- "url_count": 2218,
+ "url_count": 2217,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -4028,13 +4028,13 @@
   "https://leetcode.com/problems/path-sum/": [
    "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md"
   ],
+  "https://leetcode.com/problems/path-with-maximum-minimum-value/": [
+   "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md"
+  ],
   "https://leetcode.com/problems/path-with-maximum-probability/": [
    "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md"
   ],
   "https://leetcode.com/problems/path-with-minimum-effort/": [
-   "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md"
-  ],
-  "https://leetcode.com/problems/path-with-minimum-maximum-value/": [
    "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md"
   ],
   "https://leetcode.com/problems/perfect-squares/": [
@@ -6689,9 +6689,6 @@
   "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/": [
    "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
-  "https://www.cloudflare.com/learning/network-layer/what-is-quic/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
-  ],
   "https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/": [
    "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md"
   ],
@@ -7357,6 +7354,7 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9000.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9113.html": [

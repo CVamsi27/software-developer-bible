@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs the six mechanical checks in order; exits non-zero if any real
+# Runs the seven mechanical checks in order; exits non-zero if any real
 # failure is found. Known lane-80.x numbering GAPS are intentional (numbers
 # owned by projects/docita prep docs) and reported as baseline noise, not
 # failures.
@@ -12,7 +12,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/6  check_counts.py — repo-total scale claims vs live disk"
+echo "1/7  check_counts.py — repo-total scale claims vs live disk"
 echo "     python3 scripts/check_counts.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_counts.py; then
@@ -22,7 +22,7 @@ else
 fi
 
 echo ""
-echo "2/6  check_alignment.py — table pipes + ASCII box walls"
+echo "2/7  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +33,7 @@ else
 fi
 
 echo ""
-echo "3/6  check_structure.py — IDs, sequences, interview-last"
+echo "3/7  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -53,7 +53,7 @@ else
 fi
 
 echo ""
-echo "4/6  check_links.py — fence-aware broken-link scan"
+echo "4/7  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -64,7 +64,7 @@ else
 fi
 
 echo ""
-echo "5/6  check_freshness.py — stale-API signature scan"
+echo "5/7  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -75,7 +75,7 @@ else
 fi
 
 echo ""
-echo "6/6  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/7  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -86,6 +86,22 @@ if python3 scripts/link_baseline.py; then
     echo "  PASS"
 else
     echo "  FAIL — probe-verify each ADDED url, then run: python3 scripts/link_baseline.py --update"
+    FAIL=1
+fi
+
+echo ""
+echo "7/7  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
+echo "     python3 scripts/check_claims.py"
+echo "------------------------------------------------------------"
+# Born from the Sept 2026 cross-repo audits: claim phrases that were
+# purged as unverifiable (Next.js-at-Docita, invented founder bios,
+# unsourceable AI specifics) must never re-enter ACTIVE campaign files.
+# Historical sent-application reports are allowlisted — they record what
+# was actually sent and must stay frozen.
+if python3 scripts/check_claims.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — reword with a source-verified claim, or extend CLAIM_ALLOWLIST if the file is historical"
     FAIL=1
 fi
 

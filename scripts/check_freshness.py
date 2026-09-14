@@ -108,7 +108,19 @@ RULES = [
      'new Buffer() is deprecated; use Buffer.from/alloc/allocUnsafe'),
     ('SETTIMEOUT-CHUNKING',
      'old setTimeout chunking pattern; prefer scheduler.yield() time-slicing'),
+    ('DUPLICATE-FOOTER',
+     'file carries more than one "[ Back to Index]" footer — an old merge '
+     'grafted repeated tails; keep exactly one footer at EOF'),
+    ('STRAY-GRAFT-HEADER',
+     'a "# Phase/Part/Section N" H1 grafted into a chapter file (chapters '
+     'structure with ##; only the 81-lanes guides use # Phase at top level) — '
+     'delete the stray header'),
 ]
+
+FOOTER_LINK = '[ Back to Index](INDEX.md)'
+STRAY_PHASE_HEADER = re.compile(r'^# (Phase|Part|Section) \d', re.M)
+# Whole-document guides legitimately structured as # Phase N sections.
+PHASE_GUIDE_ALLOWED = ('81-lanes-indian-sde-faang',)
 
 SYNC_PARAMS = re.compile(r'params:\s*\{\s*\w+:\s*string\s*\}\s*\}')
 NEXT_MARKERS = re.compile(
@@ -294,6 +306,21 @@ def check(p: Path, rel: str):
                 hits.append((lineno, 'NEW-BUFFER', line.strip()[:100]))
             if 'setTimeout(processChunk, 0)' in code_line:
                 hits.append((lineno, 'SETTIMEOUT-CHUNKING', line.strip()[:100]))
+
+    # Structural grafts (found Sept 2026): an old automated merge pasted
+    # repeated page tails and Phase headers into chapter files.
+    if text.count(FOOTER_LINK) > 1:
+        second = text.find(FOOTER_LINK, text.find(FOOTER_LINK) + 1)
+        ln = text.count('\n', 0, second) + 1
+        hits.append((ln, 'DUPLICATE-FOOTER',
+                     f'{text.count(FOOTER_LINK)} footers; keep exactly one'))
+    if '## Summary' in text and not rel.startswith(PHASE_GUIDE_ALLOWED):
+        m = STRAY_PHASE_HEADER.search(text)
+        if m:
+            ln = text.count('\n', 0, m.start()) + 1
+            hits.append((ln, 'STRAY-GRAFT-HEADER',
+                         text[m.start():m.end()] + ' — top-level Phase header '
+                         'inside a chapter file'))
     return hits
 
 

@@ -90,7 +90,7 @@ else
 fi
 
 echo ""
-echo "gate 6    check_required_sections.py --strict — mandatory sections (Summary/See Also/References)"
+echo "gate 6b   check_required_sections.py --strict — mandatory sections (Summary/See Also/References)"
 echo "     python3 scripts/check_required_sections.py --strict"
 echo "------------------------------------------------------------"
 # Backlog reached zero (Sept 2026): every content file now carries the

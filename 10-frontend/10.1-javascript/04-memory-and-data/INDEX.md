@@ -1,8 +1,8 @@
 # Memory & Data — JavaScript
 
-> **8 files.** Value vs reference semantics, choosing the right collection, hash table internals, copying strategies, debounce/throttle rate limiting, and how garbage collection actually frees memory.
+> **9 files.** Value vs reference semantics, choosing the right collection, hash table internals, copying strategies, equality & coercion rules, debounce/throttle rate limiting, and how garbage collection actually frees memory.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](#files)
+[![Files](https://img.shields.io/badge/files-9-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Memory_and_Data-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -20,12 +20,13 @@
 | 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | 25 min |
 | 07 | [Garbage Collection](10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min |
 | 08 | [Hash Tables & HashMaps](10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 40 min |
+| 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `||`, `Object.is`, deriving the classics | 20 min |
 
 ---
 
 ## Read order
 
-Pass by Value → Shallow vs Deep Copy → Map/Set/WeakMap/WeakSet → **Hash Tables** → Debounce → Throttle → Memory Leaks → Garbage Collection.
+Pass by Value → Shallow vs Deep Copy → Map/Set/WeakMap/WeakSet → **Hash Tables** → Debounce → Throttle → Equality & Coercion → Memory Leaks → Garbage Collection.
 
 ---
 

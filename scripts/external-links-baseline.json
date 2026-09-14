@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12",
- "url_count": 2217,
+ "generated": "2026-09-14",
+ "url_count": 2240,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -708,6 +708,7 @@
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md"
   ],
   "https://developer.chrome.com/docs/devtools/performance": [
+   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://developer.chrome.com/docs/devtools/performance/": [
@@ -731,6 +732,9 @@
    "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md",
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
   ],
+  "https://developer.chrome.com/docs/workbox": [
+   "10-frontend/10.7-html-css/10.7.05-pwa.md"
+  ],
   "https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
   ],
@@ -752,6 +756,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Glossary/Throttle": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
@@ -808,6 +815,9 @@
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API": [
+   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
   ],
@@ -819,6 +829,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API": [
+   "10-frontend/10.7-html-css/10.7.05-pwa.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
@@ -867,6 +880,12 @@
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Web_components": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event": [
    "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md"
   ],
@@ -911,6 +930,9 @@
    "10-frontend/10.6-animation/10.6.01-css-animations.md",
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference": [
+   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties": [
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
@@ -922,6 +944,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/will-change": [
    "10-frontend/10.6-animation/10.6.01-css-animations.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTML/Element": [
+   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#accessibility_concerns": [
    "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
@@ -965,6 +990,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md",
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
@@ -1103,12 +1131,18 @@
   "https://developers.eventstore.com/": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md"
   ],
+  "https://developers.google.com/search/docs": [
+   "10-frontend/10.7-html-css/10.7.04-seo.md"
+  ],
   "https://developers.google.com/search/docs/appearance/core-web-vitals": [
    "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
   ],
   "https://developers.google.com/search/docs/fundamentals/how-search-works": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
+  ],
+  "https://developers.google.com/search/docs/fundamentals/seo-starter-guide": [
+   "10-frontend/10.7-html-css/10.7.04-seo.md"
   ],
   "https://devhints.io/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",
@@ -1460,6 +1494,7 @@
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
   ],
   "https://docs.nestjs.com/custom-decorators": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md"
   ],
   "https://docs.nestjs.com/exception-filters": [
@@ -1679,6 +1714,9 @@
   ],
   "https://dora.dev/research/2023/dora-report/": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
+  ],
+  "https://drafts.csswg.org/": [
+   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
   ],
   "https://dropbox.tech/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
@@ -2112,6 +2150,9 @@
    "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
+  ],
+  "https://github.com/GoogleChromeLabs/comlink": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
   ],
   "https://github.com/GoogleCloudPlatform/fourkeys": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
@@ -2737,6 +2778,9 @@
   "https://hpbn.co/building-blocks-of-tcp/#optimizing-for-tcp": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
   ],
+  "https://html.spec.whatwg.org/": [
+   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
+  ],
   "https://html.spec.whatwg.org/multipage/server-sent-events.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
   ],
@@ -2855,6 +2899,9 @@
   ],
   "https://javascript.info/task/debounce": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md"
+  ],
+  "https://javascript.info/type-conversions": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
   "https://jepsen.io/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md"
@@ -5372,6 +5419,9 @@
   "https://react.dev/reference/react": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
   ],
+  "https://react.dev/reference/react-dom/components#custom-html-elements": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
+  ],
   "https://react.dev/reference/react-dom/createPortal": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md"
   ],
@@ -5675,6 +5725,9 @@
   "https://samnewman.io/books/monolith-to-microservices/": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
+  ],
+  "https://schema.org/": [
+   "10-frontend/10.7-html-css/10.7.04-seo.md"
   ],
   "https://schemathesis.readthedocs.io/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
@@ -5991,6 +6044,9 @@
   "https://tc39.es/ecma262/2024/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
+  "https://tc39.es/ecma262/multipage/abstract-operations.html#sec-abstract-equality-comparison": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
+  ],
   "https://techdevguide.withgoogle.com/": [
    "00-strategy/INDEX.md"
   ],
@@ -6292,6 +6348,7 @@
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
   ],
   "https://web.dev/articles/offscreen-canvas": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
   "https://web.dev/articles/optimize-lcp": [
@@ -6308,8 +6365,14 @@
   "https://web.dev/articles/performance-budgets-101": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
   ],
+  "https://web.dev/articles/rendering-performance": [
+   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md"
+  ],
   "https://web.dev/articles/serve-responsive-images": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  ],
+  "https://web.dev/articles/shadowdom": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
   ],
   "https://web.dev/articles/streams": [
    "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md"
@@ -6323,11 +6386,20 @@
   "https://web.dev/fast/#optimize-your-images": [
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md"
   ],
+  "https://web.dev/learn/css": [
+   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
+  ],
   "https://web.dev/learn/forms/accessibility/": [
    "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
   ],
+  "https://web.dev/learn/html": [
+   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
+  ],
   "https://web.dev/learn/performance/image-performance": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
+  ],
+  "https://web.dev/learn/pwa": [
+   "10-frontend/10.7-html-css/10.7.05-pwa.md"
   ],
   "https://web.dev/performance/": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
@@ -7475,7 +7547,8 @@
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/generics.html": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
@@ -7524,7 +7597,8 @@
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/decorators.html": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/intro.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",

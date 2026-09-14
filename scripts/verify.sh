@@ -90,6 +90,16 @@ else
 fi
 
 echo ""
+echo "advisory  check_required_sections.py — mandatory-section gaps (Summary/See Also/References)"
+echo "     python3 scripts/check_required_sections.py"
+echo "------------------------------------------------------------"
+# Advisory, not blocking: 122+ files predate the section requirements and
+# fixing them is backlog work, not a reason to reject a docs commit. Flip
+# verify.sh to `--strict` once the backlog reaches zero — the gate then
+# guarantees no NEW file ships without the required sections.
+python3 scripts/check_required_sections.py || true
+
+echo ""
     echo "All checks passed — tree is clean."
     exit 0
 else

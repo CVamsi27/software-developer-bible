@@ -90,15 +90,14 @@ else
 fi
 
 echo ""
-echo "advisory  check_required_sections.py — mandatory-section gaps (Summary/See Also/References)"
-echo "     python3 scripts/check_required_sections.py"
+echo "gate 6    check_required_sections.py --strict — mandatory sections (Summary/See Also/References)"
+echo "     python3 scripts/check_required_sections.py --strict"
 echo "------------------------------------------------------------"
-# Advisory, not blocking: 122+ files predate the section requirements and
-# fixing them is backlog work, not a reason to reject a docs commit. Flip
-# verify.sh to `--strict` once the backlog reaches zero — the gate then
-# guarantees no NEW file ships without the required sections.
-python3 scripts/check_required_sections.py || true
-
+# Backlog reached zero (Sept 2026): every content file now carries the
+# required closing sections. Blocking from here on — a new file without
+# Summary/See Also/References fails the build. Run without --strict for
+# the non-blocking advisory view.
+python3 scripts/check_required_sections.py --strict
 echo ""
     echo "All checks passed — tree is clean."
     exit 0

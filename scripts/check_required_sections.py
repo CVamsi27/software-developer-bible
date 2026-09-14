@@ -24,7 +24,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKIP = ("/.git/", "/node_modules/", "/.archive/", "/.freebuff/",
-        "/.sass-cache/", "/personal/", "/docs/superpowers/")
+        "/.sass-cache/", "/personal/", "/docs/superpowers/",
+        # Records and repo meta, not curriculum chapters: interview-lane
+        # playbooks, project interview-defense docs, and repo-level docs.
+        "/80-lanes-abroad-full-stack/", "/81-lanes-indian-sde-faang/",
+        "/projects/", "/docs/")
 
 GUIDE_H1 = re.compile(r"^# (Phase|Part|Section) \d", re.M)
 
@@ -61,6 +65,8 @@ def main() -> int:
     for p in sorted(ROOT.rglob("*.md")):
         rel = "/" + p.relative_to(ROOT).as_posix()
         if any(s in rel for s in SKIP) or p.name == "INDEX.md":
+            continue
+        if p.name in ("README.md", "ROADMAP.md", "AGENTS.md", "contributing.md"):
             continue
         n += 1
         missing = check(p)

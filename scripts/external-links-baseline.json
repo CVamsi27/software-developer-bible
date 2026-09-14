@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-14",
- "url_count": 2240,
+ "url_count": 2313,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -53,6 +53,9 @@
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
+  ],
+  "https://12factor.net/disposability": [
+   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md"
   ],
   "https://12factor.net/logs": [
    "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md"
@@ -144,6 +147,17 @@
   ],
   "https://authjs.dev/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
+  ],
+  "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md"
+  ],
+  "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/": [
+   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
+  ],
+  "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md"
   ],
   "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
@@ -536,6 +550,7 @@
   ],
   "https://dataintensive.net/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
@@ -549,6 +564,7 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
    "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md",
@@ -556,6 +572,9 @@
   ],
   "https://dataprivacylab.org/projects/identifiability/paper1.pdf": [
    "50-quality/50.1-testing/01-foundations/50.1.1.02-test-data-management-anonymization.md"
+  ],
+  "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md"
   ],
   "https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps": [
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
@@ -578,6 +597,7 @@
   "https://datatracker.ietf.org/doc/html/rfc6749": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
    "20-backend/20.5-security/01-auth/INDEX.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc6749#section-3.3": [
@@ -680,6 +700,9 @@
   "https://developer.android.com/training/app-links/verify-site-associations": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
+  "https://developer.apple.com/app-store/review/guidelines/": [
+   "10-frontend/10.8-mobile/10.8.07-interview-questions.md"
+  ],
   "https://developer.apple.com/documentation/appstoreconnectapi": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
@@ -734,6 +757,9 @@
   ],
   "https://developer.chrome.com/docs/workbox": [
    "10-frontend/10.7-html-css/10.7.05-pwa.md"
+  ],
+  "https://developer.hashicorp.com/terraform/docs": [
+   "40-platform/40.12-iac/40.12.02-interview-questions.md"
   ],
   "https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -1088,6 +1114,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Rum-vs-Synthetic": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md"
   ],
@@ -1099,6 +1128,10 @@
   ],
   "https://developercertificate.org/": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
+  ],
+  "https://developers.cloudflare.com/cache/how-to/purge-cache/": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://developers.cloudflare.com/durable-objects/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
@@ -1177,7 +1210,8 @@
    "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview": [
-   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md"
+   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://docs.anthropic.com/en/docs/build-with-claude/tool-use": [
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md"
@@ -1191,6 +1225,13 @@
   "https://docs.astro.build/en/guides/view-transitions/": [
    "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md"
   ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+  ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
@@ -1200,8 +1241,15 @@
   "https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
+  "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
+  ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Management.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html": [
+   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-connections.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md"
@@ -1239,6 +1287,9 @@
   ],
   "https://docs.aws.amazon.com/apigateway/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md"
+  ],
+  "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
   ],
   "https://docs.aws.amazon.com/eks/latest/best-practices/scaling-cluster-services.html": [
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md"
@@ -1310,8 +1361,14 @@
   "https://docs.branch.io/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
+  "https://docs.bullmq.io/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
+  ],
   "https://docs.bullmq.io/guide/flows/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
+  ],
+  "https://docs.camunda.org/manual/latest/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.cilium.io/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
@@ -1342,6 +1399,9 @@
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md",
    "contributing.md"
+  ],
+  "https://docs.docker.com/build/building/best-practices/": [
+   "40-platform/40.1-docker/40.1.06-production-patterns.md"
   ],
   "https://docs.docker.com/build/building/multi-stage/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"
@@ -1390,6 +1450,9 @@
   "https://docs.expo.dev/eas-update/runtime-versions/": [
    "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
   ],
+  "https://docs.expo.dev/eas/": [
+   "10-frontend/10.8-mobile/10.8.07-interview-questions.md"
+  ],
   "https://docs.expo.dev/guides/linking/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
@@ -1399,12 +1462,21 @@
   "https://docs.expo.dev/submit/introduction/": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
+  "https://docs.fastlane.tools/": [
+   "10-frontend/10.8-mobile/10.8.07-interview-questions.md"
+  ],
+  "https://docs.fastly.com/api/purge": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+  ],
   "https://docs.getunleash.io/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md"
   ],
   "https://docs.github.com/en/actions": [
+   "40-platform/40.12-iac/40.12.02-interview-questions.md",
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.02-pipeline-patterns.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"
@@ -1460,6 +1532,9 @@
   "https://docs.jfrog.com/artifactory/docs/repository-layouts": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
+  "https://docs.junit.org/current/user-guide/": [
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
+  ],
   "https://docs.kernel.org/bpf/index.html": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
@@ -1468,6 +1543,9 @@
   ],
   "https://docs.konghq.com/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md"
+  ],
+  "https://docs.konghq.com/gateway/latest/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
   ],
   "https://docs.launchdarkly.com/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md"
@@ -1495,7 +1573,8 @@
   ],
   "https://docs.nestjs.com/custom-decorators": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md"
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md",
+   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://docs.nestjs.com/exception-filters": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
@@ -1522,6 +1601,9 @@
   ],
   "https://docs.nestjs.com/fundamentals/dynamic-modules": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md"
+  ],
+  "https://docs.nestjs.com/fundamentals/execution-context": [
+   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://docs.nestjs.com/fundamentals/injection-scopes": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
@@ -1644,6 +1726,9 @@
   "https://docs.opensearch.org/latest/query-dsl/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
+  "https://docs.oracle.com/en/java/javase/21/": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
+  ],
   "https://docs.oracle.com/javase/tutorial/": [
    "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
   ],
@@ -1652,6 +1737,9 @@
   ],
   "https://docs.powertools.aws.dev/lambda/python/latest/": [
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
+  ],
+  "https://docs.ragas.io/": [
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://docs.renovatebot.com/configuration-options/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
@@ -1684,8 +1772,13 @@
   "https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
+  "https://docs.spring.io/spring-boot/index.html": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md"
+  ],
   "https://docs.stripe.com/api/idempotent_requests": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md",
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md"
   ],
   "https://docs.stripe.com/keys": [
@@ -1700,6 +1793,9 @@
   "https://docs.temporal.io/workflow-definition#determinism-constraints": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
+  "https://docs.temporal.io/workflows": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
+  ],
   "https://docs.tigera.io/calico/latest/about/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md"
   ],
@@ -1707,6 +1803,7 @@
    "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md"
   ],
   "https://dora.dev/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
   "https://dora.dev/guides/dora-metrics-four-keys/": [
@@ -2160,6 +2257,9 @@
   "https://github.com/Microsoft/TypeScript/issues/202#issuecomment-566337388": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
   ],
+  "https://github.com/Netflix/Hystrix/wiki": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
+  ],
   "https://github.com/Netflix/chaosmonkey": [
    "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
@@ -2360,6 +2460,9 @@
   ],
   "https://github.com/gregoryyoung/m-r": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md"
+  ],
+  "https://github.com/grpc/grpc-node": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md"
   ],
   "https://github.com/in-toto/attestation": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
@@ -2705,6 +2808,9 @@
   "https://grow.google/certificates/interview-warmup/": [
    "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.md"
   ],
+  "https://grpc.io/blog/loadbalancing/": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md"
+  ],
   "https://grpc.io/docs/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md"
@@ -2714,6 +2820,9 @@
   ],
   "https://grpc.io/docs/languages/node/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md"
+  ],
+  "https://grpc.io/docs/what-is-grpc/core-concepts/": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md"
   ],
   "https://gsap.com/": [
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
@@ -2788,6 +2897,9 @@
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md"
   ],
+  "https://httpwg.org/specs/rfc9110.html": [
+   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.md"
+  ],
   "https://httpwg.org/specs/rfc9110.html#202": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md"
   ],
@@ -2839,6 +2951,9 @@
   "https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
+  ],
+  "https://java.testcontainers.org/": [
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
   ],
   "https://javabrains.io/": [
    "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
@@ -2903,6 +3018,9 @@
   "https://javascript.info/type-conversions": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
+  "https://jcip.net/": [
+   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
+  ],
   "https://jepsen.io/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md"
   ],
@@ -2910,6 +3028,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
+  ],
+  "https://jestjs.io/": [
+   "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md"
   ],
   "https://jestjs.io/docs/getting-started": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md",
@@ -2944,6 +3065,13 @@
   ],
   "https://kafka.apache.org/documentation/#log_compaction": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
+  ],
+  "https://kafka.apache.org/documentation/#streams": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
+  ],
+  "https://kafka.apache.org/documentation/#theconsumer": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://kafka.js.org/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
@@ -2986,11 +3114,17 @@
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
+  "https://kubernetes.io/docs/concepts/architecture/leases/": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
+  ],
   "https://kubernetes.io/docs/concepts/configuration/": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
   ],
   "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md"
+  ],
+  "https://kubernetes.io/docs/concepts/configuration/overview/": [
+   "40-platform/40.1-docker/40.1.06-production-patterns.md"
   ],
   "https://kubernetes.io/docs/concepts/containers/runtime-class/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
@@ -3022,6 +3156,9 @@
   "https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md"
   ],
+  "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
+  ],
   "https://kubernetes.io/docs/concepts/workloads/controllers/job/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md"
   ],
@@ -3050,6 +3187,7 @@
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md"
   ],
   "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/": [
+   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
   "https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/": [
@@ -3135,6 +3273,9 @@
   ],
   "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead": [
    "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md"
+  ],
+  "https://learn.microsoft.com/en-us/azure/architecture/patterns/category/resiliency": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
   ],
   "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md"
@@ -4606,13 +4747,21 @@
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
   "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
+   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
+  ],
+  "https://martinfowler.com/articles/201701-event-driven.html": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md"
   ],
   "https://martinfowler.com/articles/continuousIntegration.html": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
+  ],
+  "https://martinfowler.com/articles/evodb.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
   ],
   "https://martinfowler.com/articles/feature-toggles.html": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md"
@@ -4627,6 +4776,9 @@
   "https://martinfowler.com/articles/patterns-of-distributed-systems/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
+  ],
+  "https://martinfowler.com/articles/richardsonMaturityModel.html": [
+   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.md"
   ],
   "https://martinfowler.com/bliki/CQRS.html": [
    "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.md",
@@ -4646,7 +4798,11 @@
   ],
   "https://martinfowler.com/bliki/StranglerFigApplication.html": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md",
-   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md"
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md",
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md"
+  ],
+  "https://martinfowler.com/bliki/TechnicalDebtQuadrant.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md"
   ],
   "https://martinfowler.com/bliki/ValueObject.html": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md"
@@ -5149,6 +5305,12 @@
   "https://openid.net/specs/openid-connect-core-1_0.html": [
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
+  "https://openjdk.org/jeps/0": [
+   "20-backend/20.13-java/20.13.06-interview-questions.md"
+  ],
+  "https://openjdk.org/jeps/444": [
+   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
+  ],
   "https://openslo.com/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md"
   ],
@@ -5229,6 +5391,9 @@
   "https://pages.nist.gov/800-63-3/sp800-63b.html": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
   ],
+  "https://patroni.readthedocs.io/": [
+   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
+  ],
   "https://pdos.csail.mit.edu/6.828/": [
    "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md"
   ],
@@ -5237,6 +5402,9 @@
   ],
   "https://performancebudget.io/": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
+  ],
+  "https://pganalyze.com/docs/explain": [
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
   ],
   "https://pgbackrest.org/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md"
@@ -5264,6 +5432,7 @@
    "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md"
   ],
   "https://playwright.dev/": [
+   "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md",
    "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md"
   ],
   "https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf": [
@@ -5305,9 +5474,13 @@
   "https://postgis.net/documentation/": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
+  "https://pragprog.com/titles/mnee2/release-it-second-edition/": [
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
+  ],
   "https://principlesofchaos.org/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
+   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md",
+   "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md"
   ],
   "https://probablydance.com/2017/02/26/i-wrote-the-fastest-hashtable/": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
@@ -5536,6 +5709,15 @@
   "https://redis.io/docs/latest/commands/pfadd/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
+  "https://redis.io/docs/latest/commands/set/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md"
+  ],
+  "https://redis.io/docs/latest/develop/data-types/": [
+   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md"
+  ],
+  "https://redis.io/docs/latest/develop/data-types/streams/": [
+   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md"
+  ],
   "https://redis.io/docs/latest/develop/pubsub/": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
   ],
@@ -5543,6 +5725,7 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md"
   ],
   "https://redis.io/docs/latest/operate/": [
+   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/manual/patterns/": [
@@ -5608,6 +5791,9 @@
   "https://refactoring.guru/design-patterns/iterator": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
   ],
+  "https://refactoring.guru/design-patterns/java": [
+   "20-backend/20.13-java/20.13.02-java-oop-solid.md"
+  ],
   "https://refactoring.guru/design-patterns/mediator": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md"
   ],
@@ -5656,6 +5842,9 @@
   ],
   "https://research.google/pubs/pub36575/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md"
+  ],
+  "https://research.google/pubs/pub43864/": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://research.google/pubs/pub48190/": [
    "20-backend/20.5-security/01-auth/INDEX.md"
@@ -5783,6 +5972,9 @@
   "https://simplewebauthn.dev/docs/packages/server": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
   ],
+  "https://site.mockito.org/": [
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
+  ],
   "https://slsa.dev/": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
@@ -5878,6 +6070,9 @@
   "https://spec.openapis.org/oas/v3.1.0": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
   ],
+  "https://spring.academy/": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md"
+  ],
   "https://spring.io/blog/2023/10/24/a-use-case-for-transactions-adapting-to-transactional-outbox-pattern": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md"
   ],
@@ -5892,19 +6087,28 @@
   ],
   "https://sre.google/sre-book/addressing-cascading-failures/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
    "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
   "https://sre.google/sre-book/being-on-call/": [
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
   "https://sre.google/sre-book/data-integrity/": [
-   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md"
+   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+  ],
+  "https://sre.google/sre-book/handling-overload/": [
+   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md"
   ],
   "https://sre.google/sre-book/load-balancing-datacenter/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
+  "https://sre.google/sre-book/managing-critical-state/": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
+  ],
   "https://sre.google/sre-book/managing-incidents/": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md",
+   "50-quality/50.4-production-engineering/50.4.01-incident-response.md"
   ],
   "https://sre.google/sre-book/monitoring-distributed-systems/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
@@ -5928,8 +6132,15 @@
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
+  "https://sre.google/workbook/canarying-releases/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
+  ],
   "https://sre.google/workbook/implementing-slos/": [
-   "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md"
+   "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md",
+   "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md"
+  ],
+  "https://sre.google/workbook/incident-response/": [
+   "50-quality/50.4-production-engineering/50.4.01-incident-response.md"
   ],
   "https://sst.dev/": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
@@ -5963,6 +6174,7 @@
   ],
   "https://stripe.com/blog/rate-limiters": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md",
+   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md"
   ],
   "https://stripe.com/docs/api/errors": [
@@ -6291,7 +6503,8 @@
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://vitest.dev/": [
-   "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
+   "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
+   "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md"
   ],
   "https://vitest.dev/config/": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
@@ -6310,6 +6523,9 @@
   ],
   "https://w3c.github.io/webtransport/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
+  ],
+  "https://wave-protocol.org/whitepaper.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
   ],
   "https://wave.webaim.org/": [
    "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
@@ -6367,6 +6583,9 @@
   ],
   "https://web.dev/articles/rendering-performance": [
    "10-frontend/10.7-html-css/10.7.03-browser-rendering.md"
+  ],
+  "https://web.dev/articles/samesite-cookies-explained": [
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://web.dev/articles/serve-responsive-images": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
@@ -6730,6 +6949,15 @@
   "https://www.baeldung.com/java-concurrency": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
+  "https://www.baeldung.com/java-interview-questions": [
+   "20-backend/20.13-java/20.13.06-interview-questions.md"
+  ],
+  "https://www.baeldung.com/solid-principles": [
+   "20-backend/20.13-java/20.13.02-java-oop-solid.md"
+  ],
+  "https://www.baeldung.com/spring-boot": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md"
+  ],
   "https://www.bamf.de": [
    "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md"
   ],
@@ -6754,6 +6982,9 @@
   ],
   "https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md"
+  ],
+  "https://www.citusdata.com/blog/": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.cloudflare.com/learning/cdn/glossary/anycast-network/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
@@ -7052,6 +7283,11 @@
   "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md"
   ],
+  "https://www.informit.com/store/effective-java-9780134686097": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
+   "20-backend/20.13-java/20.13.02-java-oop-solid.md",
+   "20-backend/20.13-java/20.13.06-interview-questions.md"
+  ],
   "https://www.infracost.io/docs/": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
@@ -7228,7 +7464,8 @@
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
   ],
   "https://www.pgbouncer.org/": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
   ],
   "https://www.pgbouncer.org/config.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md"
@@ -7275,6 +7512,9 @@
   "https://www.postgresql.org/docs/current/functions-window.html": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
+  "https://www.postgresql.org/docs/current/high-availability.html": [
+   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
+  ],
   "https://www.postgresql.org/docs/current/indexes-examine.html": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
   ],
@@ -7299,7 +7539,8 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
   ],
   "https://www.postgresql.org/docs/current/performance-tips.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
   ],
   "https://www.postgresql.org/docs/current/routine-vacuuming.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
@@ -7331,6 +7572,9 @@
   "https://www.postgresql.org/docs/current/using-explain.html": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
   ],
+  "https://www.postgresql.org/docs/current/view-pg-locks.html": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
   "https://www.postgresqltutorial.com/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
@@ -7351,6 +7595,7 @@
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
   "https://www.prisma.io/docs": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
   ],
   "https://www.prisma.io/docs/": [
@@ -7374,6 +7619,9 @@
   "https://www.prisma.io/docs/orm/prisma-client/queries/raw-database-access": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md"
   ],
+  "https://www.prisma.io/docs/orm/prisma-client/queries/transactions": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
   "https://www.prisma.io/docs/orm/prisma-migrate": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
   ],
@@ -7385,6 +7633,9 @@
   ],
   "https://www.rabbitmq.com/getstarted.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+  ],
+  "https://www.rabbitmq.com/tutorials/tutorial-one-python": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://www.radix-ui.com/primitives/docs/overview/accessibility": [
    "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
@@ -7598,7 +7849,8 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/decorators.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
+   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/intro.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
@@ -7766,6 +8018,9 @@
   "https://yarnpkg.com/features/workspaces": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
    "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+  ],
+  "https://yjs.dev/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
   ],
   "https://zipkin.io/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md"

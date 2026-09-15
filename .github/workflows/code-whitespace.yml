@@ -1,0 +1,66 @@
+# Code-block whitespace hygiene.
+#
+# Runs scripts/check_code_whitespace.py — the gate that fails when
+# trailing whitespace or whole-block paste-shift base indents
+# (>= 4 spaces on EVERY line of a lang-tagged block) re-enter fenced
+# code. Pure stdlib scan of all md files: fast, so it runs on every
+# push/PR touching markdown. Red X = a code block will render with
+# stray whitespace. Fix with the paired fixer:
+#   python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift
+# Pass by design: gofmt go tabs, Anki TSV data fences, ASCII-diagram
+# alignment in text fences, list-nested fence bases.
+#
+# Fallback: paths filters only exist on push/pull_request triggers; the
+# scheduled/dispatch run always executes so the gate cannot silently
+# stop running after a rename.
+name: code-whitespace
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - 'scripts/check_code_whitespace.py'
+      - 'scripts/fix_code_whitespace.py'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'scripts/check_code_whitespace.py'
+      - 'scripts/fix_code_whitespace.py'
+  schedule:
+    - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  whitespace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Code-whitespace gate
+        run: |
+          set +e
+          python3 scripts/check_code_whitespace.py | tee whitespace-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Code-block whitespace gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — no trailing whitespace or paste-shifted blocks in fenced code."
+            else
+              echo "**FAILED** — fix with: \`python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift\`"
+            fi
+            echo
+            echo '```'
+            cat whitespace-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: whitespace

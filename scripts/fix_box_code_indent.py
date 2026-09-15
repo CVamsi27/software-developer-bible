@@ -5,21 +5,27 @@ Box diagrams (rows starting with '│ ') sometimes embed real code. In a
 number of files that code lost its indentation — every row sat flat at
 the box's column 0 — which renders as visibly broken indentation.
 
-Approach: find a contiguous CODE STRETCH inside a box — a maximal run of
-code-like rows (keyword-led or terminator-terminated), where blank rows
-are transparent (a class body may contain blank rows) and ALL-CAPS
-labels, arrow prose, and box-drawing rows end the stretch. Rebase the
-whole stretch from brace depth 0 (2 spaces per level), preserving the
-right box wall column exactly.
+Modes (combinable; default is JS only, which is what the verify/CI gate
+runs):
+  (default)  JS/TS stretches anchored at keyword-led rows
+  --json     JSON object stretches anchored at a flat '{' row
+  --css      CSS rule stretches anchored at a flat 'selector {' row
 
-Safety rules:
+Approach per mode: find a contiguous stretch — blank rows are
+transparent, ALL-CAPS labels, arrow prose, and box-drawing rows end it
+— then rebase the whole stretch from brace depth (2 spaces per level),
+preserving the right box wall column exactly.
+
+Safety rules (all modes):
   * A stretch is processed only if its FIRST row is flat (lead == 0) —
     the defect signature. Pre-indented stretches are never touched.
-  * If ANY row in the stretch is indented MORE than its canonical depth
-    (hand-aligned code), the stretch is skipped entirely — never strip.
-  * Stretches start only at keyword-led rows (function/const/if/return/
-    console./await/class/this. ...), so CSS, JSON, and pseudo-code that
-    never uses those keywords are invisible to this tool.
+  * Non-default modes are strict: EVERY row must conform to the
+    language shape, or the stretch is invisible. One odd row (a TS
+    catch, a prose line) vetoes the stretch.
+  * If ANY row is indented MORE than its canonical depth (hand-aligned
+    code), the stretch is skipped entirely — never strip.
+  * A JSON/CSS stretch must close: depth must return to 0 inside the
+    gathered rows, else the stretch is skipped as incomplete.
   * Idempotent: a fixed file re-checks as zero.
 """
 import re
@@ -33,6 +39,9 @@ KEYWORD = re.compile(
 LABEL = re.compile(r"^[A-Z][A-Z0-9 /&+.'()-]{2,}:$")            # ALL-CAPS label
 PROSE = re.compile(r"[A-Z]{3,}[A-Z0-9 /&+.'-]*:|→|^[A-Z][A-Z0-9]{2,}[\s(:&]")
 TERMINATORS = (";", "{", "}", ")", ",", ">", "(")
+
+STR_LIT = re.compile(r'"(?:[^"\\]|\\.)*"')                       # JSON strings
+CSS_COMMENT = re.compile(r"/\*.*?\*/")
 
 
 def split_row(line):
@@ -49,7 +58,8 @@ def split_row(line):
     return None, wall
 
 
-def code_like(st):
+# --------------------------------------------------------------- JS mode
+def js_code_like(st):
     if LABEL.match(st):
         return False
     if KEYWORD.match(st):
@@ -58,18 +68,74 @@ def code_like(st):
     return bool(body) and body.endswith(TERMINATORS)
 
 
-def canonical_ind(st, depth):
+# -------------------------------------------------------------- JSON mode
+def json_row_ok(st):
+    """Strict: every row must be structurally valid inside pretty JSON."""
+    if KEYWORD.match(st) or PROSE.search(st) or LABEL.match(st):
+        return False
+    s = STR_LIT.sub("S", st).strip()
+    if re.fullmatch(r"\{|\}|\[|\]", s):
+        return True
+    if re.fullmatch(r"[\{\}\[\]]+[\s,]*", s):        # '},' '}}' ...
+        return True
+    if re.fullmatch(r"S\s*:\s*S[\s,]*", s):          # "key": "value",
+        return True
+    if re.fullmatch(r"S\s*:\s*[\{\[]+[\s,]*", s):    # "key": {
+        return True
+    if re.fullmatch(r"S\s*:\s*", s):                 # "key":
+        return True
+    if re.fullmatch(r"S[\s,]*", s):                  # bare array element
+        return True
+    return False
+
+
+# --------------------------------------------------------------- CSS mode
+def css_row_ok(st):
+    """Strict: every row must be a selector line, property, or brace."""
+    if KEYWORD.match(st) or PROSE.search(st) or LABEL.match(st):
+        return False
+    s = CSS_COMMENT.sub("", st).strip()
+    if not s:
+        return True                                   # pure comment row
+    if s == "}":
+        return True
+    if s.endswith("{") and ";" not in s and len(s) > 1:
+        return True                                   # selector opener
+    if re.fullmatch(r"[a-zA-Z-]+\s*:\s*[^;{}]+;", s):  # prop / --var: value;
+        return True
+    return False
+
+
+def canonical_ind(st, depth, skeleton=None):
     starts_close = st.startswith("}")
     ind = max(depth - 1, 0) if starts_close else depth
-    return ind, st.count("{") - st.count("}")
+    if skeleton is not None:
+        delta = skeleton.count("{") - skeleton.count("}")
+    else:
+        delta = st.count("{") - st.count("}")
+    return ind, delta
 
 
-def scan(path, fix=False):
+def apply_planned(lines, planned, changed):
+    """Write planned rows; never break the right wall."""
+    for idx2, ind, st2, wall2 in planned:
+        new = "│ " + " " * (2 * ind) + st2
+        if wall2 is not None:
+            pad = wall2 - len(new)
+            if pad < 1:
+                continue
+            new += " " * pad + "│"
+        if new != lines[idx2]:
+            lines[idx2] = new
+            changed[0] += 1
+
+
+def scan(path, fix=False, modes=("js",)):
     content = open(path, encoding="utf-8").read()
     had_nl = content.endswith("\n")
     lines = content.splitlines()
     fence_in = False
-    changed = 0
+    changed = [0]
     i, n = 0, len(lines)
     while i < n:
         ln = lines[i]
@@ -92,67 +158,156 @@ def scan(path, fix=False):
         if j == i:
             i += 1
             continue
-        # Walk code sub-stretches inside the box interior.
-        k = 0
-        while k < len(stretch):
-            st0 = stretch[k][1].strip()
-            if not st0 or PROSE.search(st0) or LABEL.match(st0) or not KEYWORD.match(st0):
-                k += 1
-                continue
-            # Gather the stretch: blank rows transparent, prose/labels end.
-            sub = []
-            m = k
-            while m < len(stretch):
-                idx2, body2, wall2 = stretch[m]
-                st2 = body2.strip()
-                if not st2:
-                    m += 1
+
+        # ---------------- JS stretches (default mode) ----------------
+        if "js" in modes:
+            k = 0
+            while k < len(stretch):
+                st0 = stretch[k][1].strip()
+                if not st0 or PROSE.search(st0) or LABEL.match(st0) or not KEYWORD.match(st0):
+                    k += 1
                     continue
-                if PROSE.search(st2) or LABEL.match(st2) or st2.startswith(("┌", "└", "├")):
-                    break
-                if not code_like(st2):
-                    break
-                sub.append((idx2, body2, wall2))
-                m += 1
-            # Defect signature: first row flat at the box column.
-            if sub:
-                lead0 = len(sub[0][1]) - len(sub[0][1].lstrip())
-                if lead0 == 0:
-                    depth = 0
+                sub = []
+                m = k
+                while m < len(stretch):
+                    idx2, body2, wall2 = stretch[m]
+                    st2 = body2.strip()
+                    if not st2:
+                        m += 1
+                        continue
+                    if PROSE.search(st2) or LABEL.match(st2) or st2.startswith(("┌", "└", "├")):
+                        break
+                    if not js_code_like(st2):
+                        break
+                    sub.append((idx2, body2, wall2))
+                    m += 1
+                if sub:
+                    lead0 = len(sub[0][1]) - len(sub[0][1].lstrip())
+                    if lead0 == 0:
+                        depth = 0
+                        ok = True
+                        planned = []
+                        for idx2, body2, wall2 in sub:
+                            st2 = body2.strip()
+                            ind, delta = canonical_ind(st2, depth)
+                            depth += delta
+                            cur = len(body2) - len(body2.lstrip())
+                            if cur > ind + 1:      # hand-aligned: veto
+                                ok = False
+                                break
+                            planned.append((idx2, ind, st2, wall2))
+                        if ok:
+                            apply_planned(lines, planned, changed)
+                k = m if m > k else k + 1
+
+        # ---------------- JSON stretches (--json) --------------------
+        if "json" in modes:
+            k = 0
+            while k < len(stretch):
+                idx, _, _ = stretch[k]
+                body = split_row(lines[idx])[0]
+                st = body.strip()
+                flat = (len(body) - len(body.lstrip())) == 0
+                if st != "{" or not flat:
+                    k += 1
+                    continue
+                sub, m, depth, closed = [], k, 0, False
+                while m < len(stretch):
+                    idx2, _, _ = stretch[m]
+                    b2, w2 = split_row(lines[idx2])
+                    st2 = b2.strip()
+                    if not st2:
+                        m += 1
+                        continue
+                    if not json_row_ok(st2):
+                        break
+                    lead2 = len(b2) - len(b2.lstrip())
+                    sub.append((idx2, st2, w2, lead2))
+                    depth += STR_LIT.sub("S", st2).count("{") - STR_LIT.sub("S", st2).count("}")
+                    m += 1
+                    if depth == 0 and st2.startswith("}"):
+                        closed = True
+                        break
+                if closed and len(sub) >= 3 and depth == 0:
+                    d = 0
                     ok = True
                     planned = []
-                    for idx2, body2, wall2 in sub:
-                        st2 = body2.strip()
-                        ind, delta = canonical_ind(st2, depth)
-                        depth += delta
-                        cur = len(body2) - len(body2.lstrip())
-                        # Over-indented row = hand-aligned code: veto whole stretch.
-                        if cur > ind + 1:
+                    for idx2, st2, w2, lead2 in sub:
+                        sk = STR_LIT.sub("S", st2)
+                        ind, delta = canonical_ind(st2, d, skeleton=sk)
+                        d += delta
+                        if lead2 > ind + 1:        # hand-aligned: veto
                             ok = False
                             break
-                        planned.append((idx2, ind, st2, wall2))
+                        planned.append((idx2, ind, st2, w2))
                     if ok:
-                        for idx2, ind, st2, wall2 in planned:
-                            new = "│ " + " " * (2 * ind) + st2
-                            if wall2 is not None:
-                                pad = wall2 - len(new)
-                                if pad < 1:
-                                    continue  # never break the wall
-                                new += " " * pad + "│"
-                            if new != lines[idx2]:
-                                lines[idx2] = new
-                                changed += 1
-            k = m if m > k else k + 1
+                        apply_planned(lines, planned, changed)
+                k = m if m > k else k + 1
+
+        # ---------------- CSS stretches (--css) ----------------------
+        if "css" in modes:
+            k = 0
+            while k < len(stretch):
+                idx, _, _ = stretch[k]
+                body = split_row(lines[idx])[0]
+                st = body.strip()
+                flat = (len(body) - len(body.lstrip())) == 0
+                is_selector = (
+                    flat and st.endswith("{") and ";" not in st
+                    and len(st) > 1 and not KEYWORD.match(st)
+                    and not PROSE.search(st) and not LABEL.match(st)
+                )
+                if not is_selector:
+                    k += 1
+                    continue
+                sub, m, depth, closed = [], k, 0, False
+                while m < len(stretch):
+                    idx2, _, _ = stretch[m]
+                    b2, w2 = split_row(lines[idx2])
+                    st2 = b2.strip()
+                    if not st2:
+                        m += 1
+                        continue
+                    if not css_row_ok(st2):
+                        break
+                    lead2 = len(b2) - len(b2.lstrip())
+                    sub.append((idx2, st2, w2, lead2))
+                    depth += st2.count("{") - st2.count("}")
+                    m += 1
+                    if depth == 0 and st2 == "}":
+                        closed = True
+                        break
+                if closed and len(sub) >= 3 and depth == 0:
+                    d = 0
+                    ok = True
+                    planned = []
+                    for idx2, st2, w2, lead2 in sub:
+                        ind, delta = canonical_ind(st2, d)
+                        d += delta
+                        if lead2 > ind + 1:        # hand-aligned: veto
+                            ok = False
+                            break
+                        planned.append((idx2, ind, st2, w2))
+                    if ok:
+                        apply_planned(lines, planned, changed)
+                k = m if m > k else k + 1
+
         i = j
-    if fix and changed:
+    if fix and changed[0]:
         open(path, "w", encoding="utf-8").write("\n".join(lines) + ("\n" if had_nl else ""))
-    return changed
+    return changed[0]
 
 
 def main():
     import os
 
-    fix = "--fix" in sys.argv
+    argv = sys.argv[1:]
+    fix = "--fix" in argv
+    modes = {"js"}
+    if "--json" in argv:
+        modes.add("json")
+    if "--css" in argv:
+        modes.add("css")
     skip = {".git", "node_modules", ".archive", "personal"}
     files = []
     for root, dirs, fs in os.walk("."):
@@ -163,7 +318,7 @@ def main():
     total = 0
     hits = []
     for p in sorted(files):
-        c = scan(p, fix=fix)
+        c = scan(p, fix=fix, modes=modes)
         if c:
             total += c
             hits.append((p, c))

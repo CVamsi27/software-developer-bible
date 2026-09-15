@@ -10,12 +10,13 @@
 #    Pass by design: gofmt go tabs, Anki TSV data fences, ASCII-diagram
 #    alignment in text fences, list-nested fence bases.
 #
-# 2. fix_box_code_indent.py --check — fails when code embedded inside
-#    ASCII box diagrams sits flat at the box column (de-indented),
-#    which renders as visibly broken code. Keyword-anchored so
-#    CSS/JSON/pseudo-code blocks are invisible; whole-stretch veto
-#    protects hand-aligned blocks. Fix with:
-#      python3 scripts/fix_box_code_indent.py --fix
+# 2. fix_box_code_indent.py --check --json --css — fails when code
+#    embedded inside ASCII box diagrams sits flat at the box column
+#    (de-indented), which renders as visibly broken code. Covers JS
+#    (keyword-anchored), JSON, and CSS stretches; each mode is strict —
+#    one non-conforming row makes a stretch invisible — and the
+#    whole-stretch veto protects hand-aligned blocks. Fix with:
+#      python3 scripts/fix_box_code_indent.py --fix --json --css
 #    (idempotent; review the listed stretches first)
 #
 # Pure stdlib scans of all md files: fast, so they run on every push/PR
@@ -83,15 +84,15 @@ jobs:
         if: always()
         run: |
           set +e
-          python3 scripts/fix_box_code_indent.py --check | tee box-indent-output.txt
+          python3 scripts/fix_box_code_indent.py --check --json --css | tee box-indent-output.txt
           code=${PIPESTATUS[0]}
           {
             echo "## Box-code indentation gate"
             echo
             if [ "$code" -eq 0 ]; then
-              echo "Clean — no de-indented code inside ASCII box diagrams."
+              echo "Clean — no de-indented JS, JSON, or CSS code inside ASCII box diagrams."
             else
-              echo "**FAILED** — review the listed stretches, then fix with: \`python3 scripts/fix_box_code_indent.py --fix\`"
+              echo "**FAILED** — review the listed stretches, then fix with: \`python3 scripts/fix_box_code_indent.py --fix --json --css\`"
             fi
             echo
             echo '```'

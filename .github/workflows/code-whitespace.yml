@@ -1,14 +1,26 @@
 # Code-block whitespace hygiene.
 #
-# Runs scripts/check_code_whitespace.py — the gate that fails when
-# trailing whitespace or whole-block paste-shift base indents
-# (>= 4 spaces on EVERY line of a lang-tagged block) re-enter fenced
-# code. Pure stdlib scan of all md files: fast, so it runs on every
-# push/PR touching markdown. Red X = a code block will render with
-# stray whitespace. Fix with the paired fixer:
-#   python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift
-# Pass by design: gofmt go tabs, Anki TSV data fences, ASCII-diagram
-# alignment in text fences, list-nested fence bases.
+# Two gates:
+#
+# 1. check_code_whitespace.py — fails when trailing whitespace or
+#    whole-block paste-shift base indents (>= 4 spaces on EVERY line of
+#    a lang-tagged block) re-enter fenced code. Fix with the paired
+#    fixer:
+#      python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift
+#    Pass by design: gofmt go tabs, Anki TSV data fences, ASCII-diagram
+#    alignment in text fences, list-nested fence bases.
+#
+# 2. fix_box_code_indent.py --check — fails when code embedded inside
+#    ASCII box diagrams sits flat at the box column (de-indented),
+#    which renders as visibly broken code. Keyword-anchored so
+#    CSS/JSON/pseudo-code blocks are invisible; whole-stretch veto
+#    protects hand-aligned blocks. Fix with:
+#      python3 scripts/fix_box_code_indent.py --fix
+#    (idempotent; review the listed stretches first)
+#
+# Pure stdlib scans of all md files: fast, so they run on every push/PR
+# touching markdown. Red X = code will render with stray whitespace or
+# broken indentation.
 #
 # Fallback: paths filters only exist on push/pull_request triggers; the
 # scheduled/dispatch run always executes so the gate cannot silently
@@ -21,11 +33,13 @@ on:
       - '**/*.md'
       - 'scripts/check_code_whitespace.py'
       - 'scripts/fix_code_whitespace.py'
+      - 'scripts/fix_box_code_indent.py'
   pull_request:
     paths:
       - '**/*.md'
       - 'scripts/check_code_whitespace.py'
       - 'scripts/fix_code_whitespace.py'
+      - 'scripts/fix_box_code_indent.py'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -64,3 +78,25 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: whitespace
+
+      - name: Box-code indentation gate (8b)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/fix_box_code_indent.py --check | tee box-indent-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Box-code indentation gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — no de-indented code inside ASCII box diagrams."
+            else
+              echo "**FAILED** — review the listed stretches, then fix with: \`python3 scripts/fix_box_code_indent.py --fix\`"
+            fi
+            echo
+            echo '```'
+            cat box-indent-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: box-indent

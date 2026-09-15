@@ -17,6 +17,11 @@ rewrites each box at shrink-to-fit width:
 
 --check  exits 1 if any box is wider than its content requires
 --fix    rewrites the shrinkable boxes in place (idempotent)
+--hug    additionally shrinks WRAPPER boxes: boxes that contain nested
+         boxes but whose outer wall is pure padding. Every nested
+         character is preserved (absolute columns unchanged); only the
+         outer wall moves in to hug the content. Boxes where any row
+         has text after the nested structure (annotations) are skipped.
 --report lists boxes that remain > 100 after shrinking (informational)
 """
 import re
@@ -90,7 +95,55 @@ def rewrite_box(block, inner_w):
     return out
 
 
-def process(path, fix=False, report=False):
+def hug_box(block):
+    """Return hug-narrowed rows for a WRAPPER box, or None if unsafe.
+
+    A wrapper is one outer box whose interior rows all keep their own
+    left wall and right wall. The outer walls are stripped, the widest
+    INNER structure (or prose) determines the new width, and rows are
+    re-wrapped at that width. Outer-level dividers (pure dashes after
+    stripping) are regenerated. Rows whose stripped content has text
+    after a nested box (annotations) make the box unsafe → None.
+    Side-by-side layouts (multi-box top border) are rejected earlier
+    by the top/bottom fullmatch."""
+    BOX = set("│┌└├┐┘┤┬┴┼")
+    top = block[0].rstrip()
+    bot = block[-1].rstrip()
+    if not (re.fullmatch(r"┌─+┐", top) and re.fullmatch(r"└─+┘", bot)):
+        return None
+    stripped = []
+    for l in block[1:-1]:
+        s = l.rstrip()
+        if s.endswith("│") and s.startswith("│ "):
+            stripped.append(s[2:-1].rstrip())
+        elif s.startswith("├") and s.endswith("┤"):
+            stripped.append(s[1:-1].rstrip())
+        else:
+            return None  # not shaped like a pure wrapper row
+    r = 0
+    for a in stripped:
+        idx = max((i for i, ch in enumerate(a) if ch in BOX), default=-1)
+        if idx >= 0:
+            if a[idx + 1:].strip():
+                return None  # annotation after nested structure
+            r = max(r, idx)
+        elif re.fullmatch(r"─*", a):
+            continue  # outer divider (regenerated) or blank row
+        else:
+            r = max(r, len(a) - 1)  # prose row drives the width
+    r = max(r, 10)
+    inner = r + 1
+    out = [top[0] + "─" * (inner + 2) + top[-1]]
+    for a in stripped:
+        if re.fullmatch(r"─+", a):
+            out.append("├" + "─" * (inner + 2) + "┤")
+        else:
+            out.append("│ " + a.ljust(inner) + " │")
+    out.append(bot[0] + "─" * (inner + 2) + bot[-1])
+    return out
+
+
+def process(path, fix=False, report=False, hug=False):
     content = open(path, encoding="utf-8").read()
     had_nl = content.endswith("\n")
     lines = content.splitlines()
@@ -114,7 +167,7 @@ def process(path, fix=False, report=False):
             while f_end < n and not FENCE.match(lines[f_end]):
                 f_end += 1
             n_boxes = sum(
-                1 for l in lines[i:f_end] if l.rstrip().startswith("┌")
+                1 for l in lines[i:f_end] if l.startswith("┌")
             )
             if n_boxes != 1:
                 i = f_end
@@ -162,6 +215,15 @@ def process(path, fix=False, report=False):
                 composite = True
                 break
             if composite:
+                if hug and old_w > 3:
+                    hugged = hug_box(block)
+                    if hugged is not None and max(len(x) for x in hugged) < old_w:
+                        if max(len(x) for x in hugged) <= MAX_W or old_w > MAX_W:
+                            if fix:
+                                lines[i:j + 1] = hugged
+                            changed += 1
+                            i = j + 1
+                            continue
                 if report and old_w > MAX_W:
                     remaining.append((i + 1, old_w, old_w))
                 i = j + 1
@@ -201,6 +263,7 @@ def main():
     argv = sys.argv[1:]
     fix = "--fix" in argv
     report = "--report" in argv
+    hug = "--hug" in argv
     skip = {".git", "node_modules", ".archive", "personal"}
     files = []
     for root, dirs, fs in os.walk("."):
@@ -212,7 +275,7 @@ def main():
     hits = []
     all_remaining = []
     for p in sorted(files):
-        c, rem = process(p, fix=fix, report=report)
+        c, rem = process(p, fix=fix, report=report, hug=hug)
         if c:
             total += c
             hits.append((p, c))

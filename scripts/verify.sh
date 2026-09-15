@@ -169,6 +169,22 @@ else
     FAIL=1
 fi
 
+echo "9/8 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "     python3 scripts/check_first_principles.py --diff"
+echo "------------------------------------------------------------"
+# Concept chapters carry a hand-authored ## First Principles section
+# (derivation from unavoidable constraints, per contributing.md). The
+# committed baseline locks per-stack counts: removing sections fails
+# the build; growing coverage updates the baseline with --baseline.
+if python3 scripts/check_first_principles.py --diff >/dev/null 2>&1; then
+    python3 scripts/check_first_principles.py 2>/dev/null | tail -1
+    echo "  PASS"
+else
+    python3 scripts/check_first_principles.py --diff 2>&1 | tail -10
+    echo "  FAIL — restore removed sections or re-baseline deliberately: python3 scripts/check_first_principles.py --baseline"
+    FAIL=1
+fi
+
 echo ""
 if [ "$FAIL" -eq 0 ]; then
     echo "All checks passed — tree is clean."

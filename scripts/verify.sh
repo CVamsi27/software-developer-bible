@@ -136,6 +136,22 @@ else
 fi
 
 echo ""
+echo "8b/8 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "     python3 scripts/fix_box_code_indent.py --check"
+echo "------------------------------------------------------------"
+# Code embedded between ASCII box walls that lost its indentation (every
+# row flat at the box column) renders as visibly broken code. Keyword-
+# anchored so CSS/JSON/pseudo-code blocks are invisible; whole-stretch
+# veto protects hand-aligned blocks. Fix with --fix (idempotent).
+if python3 scripts/fix_box_code_indent.py --check >/dev/null 2>&1; then
+    echo "  PASS"
+else
+    python3 scripts/fix_box_code_indent.py --check 2>&1 | tail -20
+    echo "  FAIL — review the listed stretches, then run: python3 scripts/fix_box_code_indent.py --fix"
+    FAIL=1
+fi
+
+echo ""
 if [ "$FAIL" -eq 0 ]; then
     echo "All checks passed — tree is clean."
     exit 0

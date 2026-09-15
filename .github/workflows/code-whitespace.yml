@@ -35,12 +35,14 @@ on:
       - 'scripts/check_code_whitespace.py'
       - 'scripts/fix_code_whitespace.py'
       - 'scripts/fix_box_code_indent.py'
+      - 'scripts/fix_box_width.py'
   pull_request:
     paths:
       - '**/*.md'
       - 'scripts/check_code_whitespace.py'
       - 'scripts/fix_code_whitespace.py'
       - 'scripts/fix_box_code_indent.py'
+      - 'scripts/fix_box_width.py'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -101,3 +103,25 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: box-indent
+
+      - name: Box width gate (8c)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/fix_box_width.py --check | tee box-width-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Box width gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — no over-padded ASCII boxes (no screen-wrap risk)."
+            else
+              echo "**FAILED** — run: \`python3 scripts/fix_box_width.py --fix && python3 scripts/check_alignment.py --fix\`"
+            fi
+            echo
+            echo '```'
+            cat box-width-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: box-width

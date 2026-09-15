@@ -153,6 +153,23 @@ else
 fi
 
 echo ""
+echo "8c/8 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "     python3 scripts/fix_box_width.py --check"
+echo "------------------------------------------------------------"
+# Boxes whose right wall is pushed far past their content wrap on
+# laptop screens. Shrinks single-box fences to content width (pure
+# single-column rows only; nested/composite/adjacent boxes untouched).
+# Fix with --fix (idempotent; run check_alignment.py --fix afterwards
+# if walls drift).
+if python3 scripts/fix_box_width.py --check >/dev/null 2>&1; then
+    echo "  PASS"
+else
+    python3 scripts/fix_box_width.py --check 2>&1 | tail -20
+    echo "  FAIL — run: python3 scripts/fix_box_width.py --fix && python3 scripts/check_alignment.py --fix"
+    FAIL=1
+fi
+
+echo ""
 if [ "$FAIL" -eq 0 ]; then
     echo "All checks passed — tree is clean."
     exit 0

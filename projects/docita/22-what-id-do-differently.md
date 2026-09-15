@@ -163,8 +163,8 @@ this.logger.log({ action: 'appointment.create', clinicId, patientId });
 Add correlation IDs to every log entry:
 
 ```typescript
-this.logger.log({ 
-  action: 'appointment.create', 
+this.logger.log({
+  action: 'appointment.create',
   clinicId, patientId,
   correlationId: getCurrentCorrelationId(),  // From request context
   traceId: getCurrentTraceId(),              // For distributed tracing

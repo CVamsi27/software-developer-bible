@@ -904,7 +904,7 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("830 files, 349K lines") match live disk |
+| Count guard | `python3 scripts/check_counts.py` | Repo-total scale claims ("838 files, 350K lines") match live disk |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36) |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped) |
@@ -912,6 +912,7 @@ It runs, in order, with clear pass/fail output:
 | Link baseline | `python3 scripts/link_baseline.py` | Gate 6/7 (diff mode): every cited external URL must be in `scripts/external-links-baseline.json` — exit 1 on unverified ADDED urls; probe-verify each, then `--update` and commit the JSON with the doc change. `--probe` GET-probes all baseline URLs (audit mode, runs in the monthly CI workflow) |
 | Claims gate | `python3 scripts/check_claims.py` | Gate 7/7 (since 2026-09-14): campaign-material claims integrity — purged unverifiable claim phrases (Next.js-at-Docita, invented founder bios, unsourceable AI specifics, DEK/KEK envelope encryption, stale n8n reach) must not re-enter active application answers, the playbook, profile, or CV sources. Strips fenced blocks, quoted spans (JD's own words), and the gate's own `Claims audit <date>:` footnotes before matching; historical sent-record reports are frozen. `--scan` for the non-blocking informational view |
 | Required sections | `python3 scripts/check_required_sections.py --strict` | Blocking gate (since Sept 2026, when the pre-existing backlog reached zero): every content file must carry `## Summary`, `## See Also`, and `## References & Learn More`; also flags mislabeled `## Code Examples` blocks inside interview banks. Run without `--strict` for a non-blocking advisory view |
+| Code whitespace | `python3 scripts/check_code_whitespace.py` | Gate 8/8 (since 2026-09-15): code-block indentation hygiene — no trailing whitespace and no whole-block paste-shift base indents (≥4 spaces on every line of a lang-tagged block) inside fenced code. Pass by design: gofmt-style go tabs, Anki TSV data fences, ASCII-diagram alignment in text fences, list-nested fence bases. Bulk-fix with `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` |
 
 Each script also runs standalone; all exit non-zero on failure so they can gate CI.
 

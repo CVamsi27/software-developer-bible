@@ -256,6 +256,10 @@ Every concept file follows this exact section order. Sections that are not appli
 
 1-3 sentences distilling the concept.
 
+## First Principles
+
+*Optional but strongly encouraged for concept chapters.* Derive the topic from its unavoidable starting constraints — the facts that force the design to exist — and show how 2–4 surface features follow from them. Rules: (1) axioms, not benefits; (2) must not restate the Definition or TL;DR; (3) reference sibling chapters with `→ NN.N.N.NN` links instead of re-explaining; (4) 3–5 numbered axioms, each with the consequence it explains. See any `10.1.*` chapter for the calibrated example. Coverage is tracked by `python3 scripts/check_first_principles.py`.
+
 ## Definition
 
 What is this concept? A clear, concise definition in 1-3 sentences. Follow with an ASCII diagram or bullet list for clarity.

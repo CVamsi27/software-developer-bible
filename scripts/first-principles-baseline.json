@@ -1,0 +1,42 @@
+{
+  "00-strategy": {
+    "covered": 0,
+    "total": 4
+  },
+  "10-frontend": {
+    "covered": 32,
+    "total": 112
+  },
+  "20-backend": {
+    "covered": 0,
+    "total": 129
+  },
+  "30-architecture": {
+    "covered": 0,
+    "total": 104
+  },
+  "40-platform": {
+    "covered": 0,
+    "total": 83
+  },
+  "50-quality": {
+    "covered": 0,
+    "total": 34
+  },
+  "60-realtime": {
+    "covered": 0,
+    "total": 10
+  },
+  "70-interview-toolkit": {
+    "covered": 0,
+    "total": 27
+  },
+  "80-lanes-abroad-full-stack": {
+    "covered": 0,
+    "total": 29
+  },
+  "81-lanes-indian-sde-faang": {
+    "covered": 0,
+    "total": 14
+  }
+}

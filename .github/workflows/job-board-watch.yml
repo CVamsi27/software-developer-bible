@@ -54,6 +54,7 @@ jobs:
 
       - name: Open or update tracking issue on signals
         if: steps.watch.outputs.exitcode == '1'
+        continue-on-error: true # this repo has Issues disabled - the run summary above is the canonical signal record
         uses: actions/github-script@v9
         with:
           script: |

@@ -75,6 +75,7 @@ Prevention before the incident; sustainability after it.
 | --: | ------ | -------- | ----------: |
 | 04 | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant | 30 min |
 | 05 | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | 30 min |
+| 06 | [Interview Questions](50.4.06-interview-questions.md) | 6 senior Q&A: incident command, postmortem discipline, SLO governance, chaos experiment design, PRR gates, on-call health | 25 min |
 
 **The two rules:**
 - **PRR**: evidence over assertion — a gate that never defers anything is decoration.

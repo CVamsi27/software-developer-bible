@@ -46,6 +46,7 @@ Styling at scale: how you structure, name, and theme.
 | --: | ------ | -------- | ----------: |
 | 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies | 35 min |
 | 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md) | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 30 min |
+| 08 | [Interview Questions](10.7.08-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 25 min |
 
 ---
 

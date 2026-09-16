@@ -77,6 +77,26 @@ FENCE = re.compile(r'^\s*(```|~~~)')
 LINK = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
 
 
+# Domain words that describe *where* a topic shows up rather than *what* it is.
+# Two chapters sharing only one of these are not twins: `hpa-scaling` and
+# `scaling-patterns` are different subjects, as are `testing-overview` and
+# `testing-a11y`. Requiring a shared token outside this set keeps the gate
+# from demanding links that would mislead a reader.
+WEAK_ANCHORS = {
+    'scaling', 'testing', 'performance', 'monitoring', 'review', 'releases',
+    'deployments', 'tools', 'comparison', 'management', 'data', 'security',
+    'api', 'design', 'state', 'modules', 'rendering', 'streaming',
+}
+
+
+def is_twin(a, b):
+    """Same topic, not just the same word: overlap plus a specific anchor."""
+    shared = a & b
+    if not shared or shared <= WEAK_ANCHORS:
+        return False
+    return len(shared) / max(1, len(a | b)) >= THRESHOLD
+
+
 def topic_tokens(path):
     slug = os.path.basename(path)
     slug = re.sub(r'^(?:\d+\.)*\d+[a-z]?-', '', slug) if re.match(r'^(?:\d+\.)*\d', slug) else slug
@@ -87,7 +107,10 @@ def topic_tokens(path):
 
 def iter_files():
     for root, dirs, files in os.walk(ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        # Sorted so the walk (and therefore every group below) is identical on
+        # macOS and Linux — an unsorted walk made grouping filesystem-order
+        # dependent, which showed up as CI disagreeing with local runs.
+        dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS)
         rel = os.path.relpath(root, ROOT)
         if rel.startswith(EXEMPT_PREFIXES):
             continue
@@ -128,35 +151,39 @@ def analyse():
             groups[frozenset(toks)].append(rel)
 
     # Merge overlapping topic sets into twin groups (Jaccard >= THRESHOLD).
-    keys = [k for k in groups if groups[k]]
-    merged = []
-    for k in keys:
-        placed = False
-        for grp in merged:
-            j = len(k & grp) / max(1, len(k | grp))
-            if j >= THRESHOLD:
-                grp |= set(k)
-                placed = True
-                break
-        if not placed:
-            merged.append(set(k))
+    # Union-find over the *pairs* rather than greedy first-match: greedy was
+    # sensitive to iteration order, so the same corpus produced different
+    # groups on different machines. Determinism here is the whole point of a
+    # gate. Over-merging is harmless because every pair is re-checked against
+    # the threshold before a link is required.
+    keys = sorted(k for k in groups if groups[k])
+    parent = {k: k for k in keys}
+
+    def find(k):
+        while parent[k] != k:
+            parent[k] = parent[parent[k]]
+            k = parent[k]
+        return k
+
+    for i, a in enumerate(keys):
+        for b in keys[i + 1:]:
+            if is_twin(a, b):
+                ra, rb = find(a), find(b)
+                if ra != rb:
+                    parent[max(ra, rb)] = min(ra, rb)
 
     members = defaultdict(list)
     for k in keys:
-        for grp in merged:
-            if len(k & grp) / max(1, len(k | grp)) >= THRESHOLD:
-                members[frozenset(grp)].extend(groups[k])
-                break
+        members[find(k)].extend(groups[k])
 
-    twin_groups = {g: sorted(v) for g, v in members.items() if len(v) > 1}
+    twin_groups = {frozenset(g): sorted(v) for g, v in members.items() if len(v) > 1}
 
     missing = []
     for g, files_in in sorted(twin_groups.items(), key=lambda kv: kv[1][0]):
         if len(files_in) < 2:
             continue
         for a, b in combinations(files_in, 2):
-            la, lb = topics[a], topics[b]
-            if len(la & lb) / max(1, len(la | lb)) < THRESHOLD:
+            if not is_twin(topics[a], topics[b]):
                 continue
             # Siblings inside one category are already presented together by
             # the category INDEX; a mutual link adds nothing. Drift happens

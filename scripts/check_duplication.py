@@ -92,7 +92,7 @@ def shingles(text):
 
 def iter_files():
     for root, dirs, files in os.walk(ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS)
         rel = os.path.relpath(root, ROOT)
         if rel.startswith(EXEMPT_PREFIXES):
             continue

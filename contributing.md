@@ -323,6 +323,36 @@ Either a `text` code block with `═══════` headers and `•` bullet
 7. **`## Interview Questions`** — Optional. Can appear before `## Summary` in concept files that include inline Q&A.
 8. **Separator**: The `---` horizontal rule goes **between** `## Cheat Sheet` and `## See Also`. All content sections (Definition → Cheat Sheet) come before `---`; cross-references and references come after `---`.
 
+### Design Case Studies (`NN.N-system-design/NN-case-studies/`)
+
+Case studies follow the **case-study template**, not the concept template. Their sections are driven by the system being designed, not by a concept to be defined:
+
+```text
+## TL;DR
+## First Principles
+## Requirements            (functional + non-functional)
+## Capacity Estimation     (back-of-envelope math)
+## API Design
+## Database Design         (schema + access patterns)
+## Architecture            (ASCII diagram + component walkthrough)
+## Scaling Strategy / Failure Handling / Monitoring
+## Trade-offs
+## Summary
+## Cheat Sheet
+
+---
+
+## See Also
+## References & Learn More
+```
+
+Rules:
+
+1. A generic `## Definition` is **not** required — the TL;DR already states what the system is, and a Definition paragraph would duplicate it. What *is* required for every case study: `## TL;DR`, `## Summary`, `## See Also`, `## References & Learn More`.
+2. `## First Principles` derives the system from its load/consistency/latency constraints — the axioms that make the design the shape it is.
+3. Keep the study's own domain headings (`Capacity Estimation`, `API Design`, …) rather than renaming them to concept-template names; the shape is the point.
+4. `python3 scripts/check_template.py` enforces this genre separately from concept files.
+
 ### Why and Common Mistakes Variants
 
 Concept files typically use **numbered lists** or **bullet lists** for these sections. However, DevOps-focused files (Docker, Kubernetes, CI/CD) often use **table formats** for clarity:

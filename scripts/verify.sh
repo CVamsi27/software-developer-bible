@@ -193,3 +193,17 @@ else
     echo "One or more checks FAILED — fix the reported issues before pushing."
     exit 1
 fi
+
+echo "------------------------------------------------------------"
+echo "10/8 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "     python3 scripts/check_cross_refs.py"
+echo "------------------------------------------------------------"
+# Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
+# and renumbering can orphan them silently; this fails the build on any
+# ref that no longer resolves (padding-normalized, fence/prose aware).
+if python3 scripts/check_cross_refs.py; then
+    echo "  PASS"
+else
+    echo "  FAIL"
+    FAILURES=$((FAILURES+1))
+fi

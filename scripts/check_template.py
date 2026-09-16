@@ -47,7 +47,7 @@ SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
 EXEMPT_PREFIXES = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang', 'projects', 'docs')
 
 # Canonical order (only checked for the sections a file actually has;
-# files may legitimately omit optional sections like TL;DR/How It Works)
+# files may legitimately omit optional sections like How It Works)
 # The corpus carries two documented Definition orders — Why-first (older
 # stacks) and Definition-first (newer) — both accepted (contributing.md
 # only mandates TL;DR -> Definition).
@@ -111,7 +111,11 @@ VARIANTS = {
     'see also': 'See Also',
 }
 
-REQUIRED_CONCEPT = {'First Principles', 'Definition', 'Summary', 'See Also', 'References & Learn More'}
+# TL;DR is the chapter template's *first* section (AGENTS.md): a concept file
+# that never states its main point forces the reader to derive it from the
+# body. Both documented forms (a `## TL;DR` section or an opening
+# `> **TL;DR:** …` blockquote) satisfy it — see normalisation below.
+REQUIRED_CONCEPT = {'TL;DR', 'First Principles', 'Definition', 'Summary', 'See Also', 'References & Learn More'}
 REQUIRED_INTERVIEW = {'TL;DR', 'First Principles', 'Summary', 'See Also', 'References & Learn More'}
 # Design case studies: domain-driven template, cross-reference contract only.
 REQUIRED_CASE_STUDY = {'TL;DR', 'Summary', 'See Also', 'References & Learn More'}

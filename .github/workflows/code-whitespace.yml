@@ -38,6 +38,8 @@ on:
       - 'scripts/fix_box_width.py'
       - 'scripts/check_cross_refs.py'
       - 'scripts/check_first_principles.py'
+      - 'scripts/check_duplication.py'
+      - 'scripts/check_topic_twins.py'
   pull_request:
     paths:
       - '**/*.md'
@@ -47,6 +49,8 @@ on:
       - 'scripts/fix_box_width.py'
       - 'scripts/check_cross_refs.py'
       - 'scripts/check_first_principles.py'
+      - 'scripts/check_duplication.py'
+      - 'scripts/check_topic_twins.py'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -175,3 +179,47 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: cross-refs
+
+      - name: Duplication gate (11)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/check_duplication.py --strict | tee dup-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Near-duplicate gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — no chapter repeats another chapter's prose."
+            else
+              echo "**FAILED** — merge the overlapping sections into one chapter, or scope the pair apart."
+            fi
+            echo
+            echo '```'
+            tail -40 dup-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: duplication
+
+      - name: Topic-twin gate (12)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/check_topic_twins.py | tee twins-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Topic-twin cross-link gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — every pair of chapters teaching the same topic routes to its counterpart."
+            else
+              echo "**FAILED** — run \`python3 scripts/link_topic_twins.py\` to write the missing links."
+            fi
+            echo
+            echo '```'
+            sed -n '/MISSING TWIN LINKS/,$p' twins-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: twins

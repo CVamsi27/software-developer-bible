@@ -16,7 +16,7 @@
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
 | [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
-| [Proactive Resilience](#proactive-resilience) | [Chaos Engineering](50.4.03-chaos-engineering.md) | Find weaknesses before they find you |
+| [Proactive Resilience](#proactive-resilience) | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Exercise your redundancy before it is tested for real |
 | [Launch Gates & Humans](#launch-gates--humans) | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md), [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Prevent incidents at launch; keep responders healthy |
 
 ---
@@ -56,7 +56,7 @@ When things break (and they will).
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [Chaos Engineering](50.4.03-chaos-engineering.md) | Chaos experiments (network, resource, service), game days, Chaos Monkey, Gremlin, Litmus, resilience testing | 30 min |
+| 03 | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Game-day runbook, production injection policy + guardrails, automated chaos in CI/CD, failover drills, resilience metrics (experiment design lives in [50.1.5.02](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md)) | 25 min |
 
 **Principles:**
 1. Build a hypothesis around steady-state behavior

@@ -36,6 +36,8 @@ on:
       - 'scripts/fix_code_whitespace.py'
       - 'scripts/fix_box_code_indent.py'
       - 'scripts/fix_box_width.py'
+      - 'scripts/check_cross_refs.py'
+      - 'scripts/check_first_principles.py'
   pull_request:
     paths:
       - '**/*.md'
@@ -43,6 +45,8 @@ on:
       - 'scripts/fix_code_whitespace.py'
       - 'scripts/fix_box_code_indent.py'
       - 'scripts/fix_box_width.py'
+      - 'scripts/check_cross_refs.py'
+      - 'scripts/check_first_principles.py'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -125,3 +129,25 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: box-width
+
+      - name: Cross-reference gate (10)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/check_cross_refs.py | tee cross-refs-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Cross-reference gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — every inline → N.N.N ref resolves to a real chapter."
+            else
+              echo "**FAILED** — fix or drop the refs below (they name no existing file ID)."
+            fi
+            echo
+            echo '```'
+            cat cross-refs-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: cross-refs

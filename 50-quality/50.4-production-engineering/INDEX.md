@@ -13,7 +13,7 @@
 ## Topic Categories
 
 | Category | File | Why it matters |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
 | [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
 | [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
 | [Proactive Resilience](#proactive-resilience) | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Exercise your redundancy before it is tested for real |

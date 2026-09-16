@@ -130,6 +130,30 @@ jobs:
           exit "$code"
         id: box-width
 
+      - name: Template-compliance gate (6b)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/check_template.py | tee template-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Template-compliance gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — every chapter carries its genre's required sections in canonical order."
+            else
+              echo "**FAILED** — add the missing sections (or fix the order) in the files below."
+            fi
+            echo
+            echo '```'
+            tail -60 template-output.txt
+            echo '```'
+            echo
+            exit "$code"
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: template-gate
+
       - name: Cross-reference gate (10)
         if: always()
         run: |

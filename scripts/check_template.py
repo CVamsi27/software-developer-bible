@@ -11,7 +11,8 @@ whole corpus to it. This gate keeps it that way:
     Matters after Summary reads as damage, not style).
   - Interview-questions files (per repo convention, last in every
     category) carry a lighter contract: TL;DR, First Principles,
-    Summary, See Also, References.
+    Summary, See Also, References — and must not carry a
+    `## Code Examples` heading (there it is a mislabeled Q&A block).
   - Design case studies (`NN.N-system-design/NN-case-studies/`) follow
     the case-study template (Requirements -> Capacity -> API -> data
     model -> architecture -> trade-offs): a domain-driven shape where a
@@ -19,9 +20,19 @@ whole corpus to it. This gate keeps it that way:
     cross-reference contract instead (TL;DR, Summary, See Also,
     References). Documented in contributing.md.
 
+Known TL;DR styles: the corpus uses both a `## TL;DR` section (328
+files) and an opening `> **TL;DR:** …` blockquote (129 files), so either
+satisfies the requirement.
+
 Known-variant headings (e.g. `## Why It Matters (TL;DR)`) are
 normalized before matching. Files under personal/ and .archive are
-skipped; INDEX.md files have their own conventions.
+skipped; INDEX.md files have their own conventions, and role-guide files
+(multiple `# Phase`/`# Part` H1 sections) are exempt.
+
+This gate supersedes `check_required_sections.py`, which checked only
+Summary/See Also/References plus the interview Code-Examples rule; that
+subset is enforced here as part of the full template, so the repo has
+exactly one template gate.
 """
 import os
 import re
@@ -107,6 +118,8 @@ REQUIRED_CASE_STUDY = {'TL;DR', 'Summary', 'See Also', 'References & Learn More'
 
 FENCE = re.compile(r'^\s*(```|~~~)')
 HEAD = re.compile(r'^## (.+?)\s*$')
+# Blockquote TL;DR style: `> **TL;DR:** …` (or bolded without the quote)
+TLDR_BQ = re.compile(r'^\s*>?\s*\*\*TL;?DR:?\*\*', re.I)
 
 
 def normalize(name: str) -> str:
@@ -116,6 +129,17 @@ def normalize(name: str) -> str:
 
 def is_interview_file(path: str) -> bool:
     return 'interview' in os.path.basename(path).lower()
+
+
+def is_guide_file(text: str) -> bool:
+    """Role-guide convention (contributing.md): multiple `# Phase`/`# Part`
+    H1 sections instead of the chapter template."""
+    phase = 0
+    for line in text.splitlines():
+        if line.startswith('# ') and (line[2:].lstrip().startswith('Phase')
+                                      or line[2:].lstrip().startswith('Part')):
+            phase += 1
+    return phase >= 2
 
 
 def is_case_study(path: str) -> bool:
@@ -148,6 +172,8 @@ def check(path: str):
     """Return list of problem strings for one file."""
     problems = []
     text = open(path, encoding='utf-8').read()
+    if is_guide_file(text):
+        return problems
     in_fence = False
     heads = []
     for line in text.splitlines():
@@ -160,6 +186,13 @@ def check(path: str):
         if m:
             heads.append(normalize(m.group(1)))
 
+    has_blockquote_tldr = any(
+        TLDR_BQ.match(l) for l in text.splitlines()
+    )
+    file_heads = set(heads)
+    if has_blockquote_tldr:
+        file_heads.add('TL;DR')
+
     if is_interview_file(path):
         req = REQUIRED_INTERVIEW
     elif is_case_study(path):
@@ -169,9 +202,16 @@ def check(path: str):
         req = {'Summary', 'See Also', 'References & Learn More'}
     else:
         req = REQUIRED_CONCEPT
-    missing = req - set(heads)
+    missing = req - file_heads
     if missing:
         problems.append(f"missing required sections: {sorted(missing)}")
+
+    # Interview banks must not carry `## Code Examples`: that heading there is
+    # a mislabeled Q&A block (Sept 2026 audit rule, inherited from
+    # check_required_sections.py).
+    if is_interview_file(path) and 'Code Examples' in file_heads:
+        problems.append("interview bank has a `## Code Examples` heading "
+                        "(rename to `## Interview Questions`)")
 
     # order check: accept any of the canonical orders, on the subset present
     sub = [h for h in heads if h in CANON_A]

@@ -12,7 +12,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/8  check_counts.py — repo-total scale claims vs live disk"
+echo "1/13  check_counts.py — repo-total scale claims vs live disk"
 echo "     python3 scripts/check_counts.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_counts.py; then
@@ -22,7 +22,7 @@ else
 fi
 
 echo ""
-echo "2/8  check_alignment.py — table pipes + ASCII box walls"
+echo "2/13  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +33,7 @@ else
 fi
 
 echo ""
-echo "3/8  check_structure.py — IDs, sequences, interview-last"
+echo "3/13  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -53,7 +53,7 @@ else
 fi
 
 echo ""
-echo "4/8  check_links.py — fence-aware broken-link scan"
+echo "4/13  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -64,7 +64,7 @@ else
 fi
 
 echo ""
-echo "5/8  check_freshness.py — stale-API signature scan"
+echo "5/13  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -75,7 +75,7 @@ else
 fi
 
 echo ""
-echo "6/8  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/13  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -90,7 +90,7 @@ else
 fi
 
 echo ""
-echo "7/8  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
+echo "7/13  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
 echo "     python3 scripts/check_claims.py"
 echo "------------------------------------------------------------"
 # Born from the Sept 2026 cross-repo audits: claim phrases that were
@@ -106,22 +106,23 @@ else
 fi
 
 echo ""
-echo "6b/8  check_required_sections.py --strict — mandatory sections (Summary/See Also/References)"
-echo "     python3 scripts/check_required_sections.py --strict"
+echo "6b/13 check_template.py — template compliance (sections, order, genres)"
+echo "     python3 scripts/check_template.py"
 echo "------------------------------------------------------------"
-# Backlog reached zero (Sept 2026): every content file now carries the
-# required closing sections. Blocking from here on — a new file without
-# Summary/See Also/References fails the build. Run without --strict for
-# the non-blocking advisory view.
-if python3 scripts/check_required_sections.py --strict; then
+# Supersedes check_required_sections.py (its Summary/See Also/References and
+# interview-Code-Examples rules are enforced here as part of the full
+# template). Checks required sections per genre (concept / interview /
+# case-study / reference), canonical section order, and the known TL;DR
+# styles. Corpus reached zero violations (Sept 2026), so it blocks.
+if python3 scripts/check_template.py; then
     echo "  PASS"
 else
-    echo "  FAIL — add the missing closing sections"
+    echo "  FAIL — run the reported file list and add the missing sections"
     FAIL=1
 fi
 
 echo ""
-echo "8/8  check_code_whitespace.py — code-block indentation hygiene"
+echo "8/13  check_code_whitespace.py — code-block indentation hygiene"
 echo "     python3 scripts/check_code_whitespace.py"
 echo "------------------------------------------------------------"
 # Trailing whitespace inside fences and whole-block paste-shift base
@@ -136,7 +137,7 @@ else
 fi
 
 echo ""
-echo "8b/8 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "8b/13 fix_box_code_indent.py --check — de-indented code inside box diagrams"
 echo "     python3 scripts/fix_box_code_indent.py --check --json --css"
 echo "------------------------------------------------------------"
 # Code embedded between ASCII box walls that lost its indentation (every
@@ -153,7 +154,7 @@ else
 fi
 
 echo ""
-echo "8c/8 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "8c/13 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
 echo "     python3 scripts/fix_box_width.py --check"
 echo "------------------------------------------------------------"
 # Boxes whose right wall is pushed far past their content wrap on
@@ -169,7 +170,7 @@ else
     FAIL=1
 fi
 
-echo "9/8 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "9/13 check_first_principles.py --diff — First Principles coverage must not regress"
 echo "     python3 scripts/check_first_principles.py --diff"
 echo "------------------------------------------------------------"
 # Concept chapters carry a hand-authored ## First Principles section
@@ -185,17 +186,8 @@ else
     FAIL=1
 fi
 
-echo ""
-if [ "$FAIL" -eq 0 ]; then
-    echo "All checks passed — tree is clean."
-    exit 0
-else
-    echo "One or more checks FAILED — fix the reported issues before pushing."
-    exit 1
-fi
-
 echo "------------------------------------------------------------"
-echo "10/8 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "10/13 check_cross_refs.py — inline → N.N.N refs resolve to real files"
 echo "     python3 scripts/check_cross_refs.py"
 echo "------------------------------------------------------------"
 # Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
@@ -206,4 +198,13 @@ if python3 scripts/check_cross_refs.py; then
 else
     echo "  FAIL"
     FAILURES=$((FAILURES+1))
+fi
+
+echo ""
+if [ "$FAIL" -eq 0 ]; then
+    echo "All checks passed — tree is clean."
+    exit 0
+else
+    echo "One or more checks FAILED — fix the reported issues before pushing."
+    exit 1
 fi

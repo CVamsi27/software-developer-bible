@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-16",
- "url_count": 2325,
+ "url_count": 2345,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -323,6 +323,9 @@
   ],
   "https://cassandra.apache.org/doc/stable/cassandra/developing/data-modeling/index.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
+  ],
+  "https://cbor.io/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
   "https://cdkpatterns.com/": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
@@ -1055,6 +1058,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md"
@@ -1354,6 +1360,9 @@
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
+  "https://docs.aws.amazon.com/ses/latest/dg/send-email.html": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
+  ],
   "https://docs.aws.amazon.com/step-functions/": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
@@ -1380,6 +1389,8 @@
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
   "https://docs.bullmq.io/": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.bullmq.io/guide/flows/": [
@@ -2844,6 +2855,9 @@
   ],
   "https://grpc.io/docs/what-is-grpc/core-concepts/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md"
+  ],
+  "https://grpc.io/docs/what-is-grpc/introduction/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
   "https://gsap.com/": [
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
@@ -4944,6 +4958,9 @@
   "https://motion.dev/docs/react-use-scroll": [
    "10-frontend/10.6-animation/10.6.02-framer-motion.md"
   ],
+  "https://msgpack.org/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
+  ],
   "https://mswjs.io/": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
    "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.01-mocking.md"
@@ -5161,6 +5178,12 @@
   "https://node.testcontainers.org/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
   ],
+  "https://nodejs.org/api/async_context.html": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
+  ],
+  "https://nodejs.org/api/async_hooks.html": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
+  ],
   "https://nodejs.org/api/buffer.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
   ],
@@ -5238,7 +5261,8 @@
   ],
   "https://nodejs.org/api/worker_threads.html": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md",
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
   ],
   "https://nodejs.org/en/docs": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md"
@@ -5277,6 +5301,9 @@
   "https://nodejs.org/learn/modules/how-to-use-streams": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md",
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md"
+  ],
+  "https://nodemailer.com/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
   "https://nvie.com/posts/a-successful-git-branching-model/": [
    "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
@@ -5495,6 +5522,9 @@
   "https://postgis.net/documentation/": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
+  "https://postmarkapp.com/developer": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
+  ],
   "https://pragprog.com/titles/mnee2/release-it-second-edition/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
   ],
@@ -5530,7 +5560,11 @@
   "https://prometheus.io/docs/prometheus/latest/querying/basics/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md"
   ],
+  "https://protobuf.dev/programming-guides/encoding/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
+  ],
   "https://protobuf.dev/programming-guides/proto3/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md"
   ],
   "https://px.dev/": [
@@ -5887,6 +5921,9 @@
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
    "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+  ],
+  "https://resend.com/docs/introduction": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
   "https://resilience4j.readme.io/docs/bulkhead": [
    "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md"
@@ -7655,6 +7692,9 @@
   "https://www.prisma.io/docs/orm/prisma-client": [
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md"
   ],
+  "https://www.prisma.io/docs/orm/prisma-client/client-extensions": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
+  ],
   "https://www.prisma.io/docs/orm/prisma-client/queries/raw-database-access": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md"
   ],
@@ -7700,14 +7740,26 @@
   "https://www.researchgate.net/publication/225076539_Mercator_A_scalable_extensible_web_crawler": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc6376": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc6455": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc7208": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc7489": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc768": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc793": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8259": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc8445": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
@@ -8036,8 +8088,20 @@
   "https://www.youtube.com/playlist?list=PLgZDfOG0dJyMRq1J_0xS2LqF5HgIh0y1z": [
    "81-lanes-indian-sde-faang/81.01-complete-guide.md"
   ],
+  "https://www.youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1": [
+   "docs/reference-coverage-audit.md"
+  ],
+  "https://www.youtube.com/watch?v=-40xErgJIBg": [
+   "docs/reference-coverage-audit.md"
+  ],
+  "https://www.youtube.com/watch?v=2snYdgNcxIg": [
+   "docs/reference-coverage-audit.md"
+  ],
   "https://www.youtube.com/watch?v=PN_C-V4UVXU": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
+  ],
+  "https://www.youtube.com/watch?v=W4EwfEU8CGA": [
+   "docs/reference-coverage-audit.md"
   ],
   "https://www.youtube.com/watch?v=iX8g4LqF8p8": [
    "20-backend/20.5-security/01-auth/INDEX.md"

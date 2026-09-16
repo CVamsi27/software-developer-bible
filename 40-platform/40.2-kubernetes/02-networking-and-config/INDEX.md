@@ -1,5 +1,6 @@
 # Networking & Config
 
+> **Study time:** ≈ 58 min of reading (3 files, ~19 min average).
 > **3 files.** How traffic gets in and how configuration gets in: Services and Ingress for traffic, ConfigMaps and Secrets for configuration, PodPresets for admission-time injection.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -18,9 +19,9 @@ A pod without a Service is unreachable; a Deployment without ConfigMaps/Secrets 
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | 30 min |
-| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | 25 min |
-| 03 | [PodPresets](40.2.2.03-podpresets.md) | Admission-time injection of env vars, volumes, secrets; label selectors; Kyverno alternatives | 15 min |
+| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | 22 min |
+| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | 17 min |
+| 03 | [PodPresets](40.2.2.03-podpresets.md) | Admission-time injection of env vars, volumes, secrets; label selectors; Kyverno alternatives | 19 min |
 
 ---
 

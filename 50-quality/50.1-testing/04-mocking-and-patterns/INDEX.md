@@ -1,5 +1,6 @@
 # Mocking & Test Patterns
 
+> **Study time:** ≈ 1 h 36 m of reading (2 files, ~48 min average).
 > **2 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
@@ -18,8 +19,8 @@ Isolation without structure produces brittle suites; structure without isolation
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | 30 min |
-| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 20 min |
+| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | 47 min |
+| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 49 min |
 
 ---
 

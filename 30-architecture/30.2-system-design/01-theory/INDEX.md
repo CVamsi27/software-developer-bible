@@ -1,5 +1,6 @@
 # System Design — Foundational Theory
 
+> **Study time:** ≈ 5 h 39 m of reading (21 files, ~16 min average).
 > **21 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../../INDEX.md)

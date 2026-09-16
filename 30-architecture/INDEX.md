@@ -1,5 +1,6 @@
 # Architecture Stack
 
+> **Study time:** ≈ 35 h 50 m of reading (106 files, ~20 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).

@@ -1,5 +1,6 @@
 # Coordination
 
+> **Study time:** ≈ 18 min of reading (1 files, ~18 min average).
 > **1 file.** Who runs the cron? Who processes the queue? When multiple instances of a service share work, exactly one must lead — and every instance must agree on who. Leader election and consensus answer that question safely.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -18,7 +19,7 @@ Scale out to 5 replicas and suddenly scheduled jobs run 5 times, background work
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | 30 min |
+| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | 18 min |
 
 ---
 

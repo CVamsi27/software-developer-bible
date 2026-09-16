@@ -40,6 +40,7 @@ on:
       - 'scripts/check_first_principles.py'
       - 'scripts/check_duplication.py'
       - 'scripts/check_topic_twins.py'
+      - 'scripts/read_time.py'
   pull_request:
     paths:
       - '**/*.md'
@@ -51,6 +52,7 @@ on:
       - 'scripts/check_first_principles.py'
       - 'scripts/check_duplication.py'
       - 'scripts/check_topic_twins.py'
+      - 'scripts/read_time.py'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -223,3 +225,25 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: twins
+
+      - name: Read-time gate (13)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/read_time.py --check | tee read-time-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Read-time gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — every INDEX declares the computed study time."
+            else
+              echo "**FAILED** — run \`python3 scripts/read_time.py --write\` and commit the refreshed INDEX files."
+            fi
+            echo
+            echo '```'
+            tail -30 read-time-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: read-time

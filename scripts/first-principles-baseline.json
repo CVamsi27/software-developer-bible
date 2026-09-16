@@ -1,42 +1,42 @@
 {
   "00-strategy": {
-    "covered": 0,
+    "covered": 4,
     "total": 4
   },
   "10-frontend": {
-    "covered": 32,
-    "total": 112
+    "covered": 113,
+    "total": 113
   },
   "20-backend": {
-    "covered": 129,
-    "total": 129
+    "covered": 132,
+    "total": 132
   },
   "30-architecture": {
-    "covered": 0,
+    "covered": 104,
     "total": 104
   },
   "40-platform": {
-    "covered": 0,
+    "covered": 83,
     "total": 83
   },
   "50-quality": {
-    "covered": 0,
+    "covered": 34,
     "total": 34
   },
   "60-realtime": {
-    "covered": 0,
+    "covered": 10,
     "total": 10
   },
   "70-interview-toolkit": {
-    "covered": 0,
+    "covered": 27,
     "total": 27
   },
   "80-lanes-abroad-full-stack": {
-    "covered": 0,
+    "covered": 29,
     "total": 29
   },
   "81-lanes-indian-sde-faang": {
-    "covered": 0,
+    "covered": 14,
     "total": 14
   }
 }

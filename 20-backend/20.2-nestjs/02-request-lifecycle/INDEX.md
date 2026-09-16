@@ -1,8 +1,9 @@
 # Request Lifecycle - NestJS
 
-> **5 files.** What runs in what order for every request: middleware → guards → pipes → interceptors → exception filters. Every NestJS interview tests this order — read the files in sequence.
+> **Study time:** ≈ 1 h 56 m of reading (6 files, ~19 min average).
+> **6 files.** What runs in what order for every request: middleware → guards → pipes → interceptors → exception filters — plus the ambient request context (`AsyncLocalStorage`) that crosses all of those stages. Every NestJS interview tests this order — read the files in sequence.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Request%20Lifecycle-success)](../INDEX.md)
 
 ---
@@ -11,11 +12,12 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Middleware](20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
-| 02 | [Guards](20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
-| 03 | [Pipes](20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
-| 04 | [Interceptors](20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors (rxjs pipeline) | 25 min |
+| 01 | [Middleware](20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 18 min |
+| 02 | [Guards](20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 23 min |
+| 03 | [Pipes](20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 24 min |
+| 04 | [Interceptors](20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors (rxjs pipeline) | 16 min |
 | 05 | [Exception Filters](20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
+| 06 | [Request Context & AsyncLocalStorage](20.2.2.06-request-context-and-async-local-storage.md) | ALS mechanics, trace/tenant/user ids, ALS vs request-scoped DI, transaction propagation, re-entering context in workers, isolation tests | 15 min |
 
 Lifecycle order: Middleware → Guards → Pipes → Controller → Interceptors → Exception Filters.
 

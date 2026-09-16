@@ -1,5 +1,6 @@
 # Graphs, Trees & Grids
 
+> **Study time:** ≈ 1 h 45 m of reading (6 files, ~18 min average).
 > **6 files.** Traversal, connectivity, weighted paths, and grid simulation: DFS/BFS, Dijkstra/Bellman-Ford, union-find, topological sort, tries, and the matrix-index patterns that unlock most grid problems.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -12,12 +13,12 @@
 
 | # | File | When to recognize | Read time |
 | --: | ------ | ------------------- | ----------: |
-| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | 45 min |
-| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | 40 min |
-| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | 25 min |
-| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | 20 min |
-| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 20 min |
-| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | 30 min |
+| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | 18 min |
+| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | 16 min |
+| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | 17 min |
+| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | 18 min |
+| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 21 min |
+| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | 15 min |
 
 ---
 

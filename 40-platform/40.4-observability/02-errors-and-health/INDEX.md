@@ -1,5 +1,6 @@
 # Errors & Health
 
+> **Study time:** ≈ 43 min of reading (2 files, ~22 min average).
 > **2 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -18,8 +19,8 @@ Pillars tell you what the system did; errors and health tell you whether what it
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 25 min |
-| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | 20 min |
+| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 22 min |
+| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | 21 min |
 
 ---
 

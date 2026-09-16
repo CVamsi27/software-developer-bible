@@ -1,5 +1,6 @@
 # Caching — Index
 
+> **Study time:** ≈ 50 min of reading (4 files, ~12 min average).
 > **3 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
@@ -56,10 +57,10 @@ Need to cache data?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 45 min |
-| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 45 min |
-| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 30 min |
-| 4 | [Interview Questions](20.8.04-interview-questions.md) | 8 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | 25 min |
+| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 10 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 22 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 14 min |
+| 4 | [Interview Questions](20.8.04-interview-questions.md) | 8 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | 4 min |
 
 ---
 

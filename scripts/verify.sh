@@ -12,7 +12,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/15  check_counts.py — repo-total scale claims vs live disk"
+echo "1/16  check_counts.py — repo-total scale claims vs live disk"
 echo "     python3 scripts/check_counts.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_counts.py; then
@@ -22,7 +22,7 @@ else
 fi
 
 echo ""
-echo "2/15  check_alignment.py — table pipes + ASCII box walls"
+echo "2/16  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +33,7 @@ else
 fi
 
 echo ""
-echo "3/15  check_structure.py — IDs, sequences, interview-last"
+echo "3/16  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -53,7 +53,7 @@ else
 fi
 
 echo ""
-echo "4/15  check_links.py — fence-aware broken-link scan"
+echo "4/16  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -64,7 +64,7 @@ else
 fi
 
 echo ""
-echo "5/15  check_freshness.py — stale-API signature scan"
+echo "5/16  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -75,7 +75,7 @@ else
 fi
 
 echo ""
-echo "6/15  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/16  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -90,7 +90,7 @@ else
 fi
 
 echo ""
-echo "7/15  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
+echo "7/16  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
 echo "     python3 scripts/check_claims.py"
 echo "------------------------------------------------------------"
 # Born from the Sept 2026 cross-repo audits: claim phrases that were
@@ -106,7 +106,7 @@ else
 fi
 
 echo ""
-echo "6b/15 check_template.py — template compliance (sections, order, genres)"
+echo "6b/16 check_template.py — template compliance (sections, order, genres)"
 echo "     python3 scripts/check_template.py"
 echo "------------------------------------------------------------"
 # Supersedes check_required_sections.py (its Summary/See Also/References and
@@ -122,7 +122,7 @@ else
 fi
 
 echo ""
-echo "8/15  check_code_whitespace.py — code-block indentation hygiene"
+echo "8/16  check_code_whitespace.py — code-block indentation hygiene"
 echo "     python3 scripts/check_code_whitespace.py"
 echo "------------------------------------------------------------"
 # Trailing whitespace inside fences and whole-block paste-shift base
@@ -137,7 +137,7 @@ else
 fi
 
 echo ""
-echo "8b/15 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "8b/16 fix_box_code_indent.py --check — de-indented code inside box diagrams"
 echo "     python3 scripts/fix_box_code_indent.py --check --json --css"
 echo "------------------------------------------------------------"
 # Code embedded between ASCII box walls that lost its indentation (every
@@ -154,7 +154,7 @@ else
 fi
 
 echo ""
-echo "8c/15 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "8c/16 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
 echo "     python3 scripts/fix_box_width.py --check"
 echo "------------------------------------------------------------"
 # Boxes whose right wall is pushed far past their content wrap on
@@ -170,7 +170,7 @@ else
     FAIL=1
 fi
 
-echo "9/15 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "9/16 check_first_principles.py --diff — First Principles coverage must not regress"
 echo "     python3 scripts/check_first_principles.py --diff"
 echo "------------------------------------------------------------"
 # Concept chapters carry a hand-authored ## First Principles section
@@ -187,7 +187,7 @@ else
 fi
 
 echo "------------------------------------------------------------"
-echo "10/15 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "10/16 check_cross_refs.py — inline → N.N.N refs resolve to real files"
 echo "     python3 scripts/check_cross_refs.py"
 echo "------------------------------------------------------------"
 # Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
@@ -201,7 +201,7 @@ else
 fi
 
 echo ""
-echo "11/15 check_duplication.py --strict — no chapter teaches another chapter's prose"
+echo "11/16 check_duplication.py --strict — no chapter teaches another chapter's prose"
 echo "     python3 scripts/check_duplication.py --strict"
 echo "------------------------------------------------------------"
 # The \"every topic lives in exactly ONE place\" rule is only as good as the
@@ -218,7 +218,7 @@ else
 fi
 
 echo ""
-echo "12/15 check_topic_twins.py — twin chapters must cross-link"
+echo "12/16 check_topic_twins.py — twin chapters must cross-link"
 echo "     python3 scripts/check_topic_twins.py"
 echo "------------------------------------------------------------"
 # A pattern chapter, its framework implementation and its case study are a
@@ -231,6 +231,21 @@ if python3 scripts/check_topic_twins.py >/dev/null 2>&1; then
 else
     python3 scripts/check_topic_twins.py 2>&1 | sed -n '/MISSING TWIN LINKS/,$p'
     echo "  FAIL — run: python3 scripts/link_topic_twins.py"
+    FAIL=1
+fi
+
+echo ""
+echo "13/16 read_time.py --check — declared study times vs computed estimates"
+echo "     python3 scripts/read_time.py --check"
+echo "------------------------------------------------------------"
+# Read times were hand-guessed and contradicted each other (2,912 words
+# labelled 15 min beside 2,353 labelled 20 min). They are now computed from
+# one documented model, and every INDEX must agree with it.
+if python3 scripts/read_time.py --check >/dev/null 2>&1; then
+    echo "  PASS"
+else
+    python3 scripts/read_time.py --check 2>&1 | tail -10
+    echo "  FAIL — run: python3 scripts/read_time.py --write"
     FAIL=1
 fi
 

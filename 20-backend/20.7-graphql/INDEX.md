@@ -1,5 +1,6 @@
 # GraphQL — Index
 
+> **Study time:** ≈ 5 h 20 m of reading (9 files, ~36 min average).
 > **9 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -40,9 +41,9 @@ The mental model — schema-first design. Category INDEX: [Fundamentals](01-fund
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | 20 min |
-| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 30 min |
-| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 20 min |
+| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | 31 min |
+| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 46 min |
+| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 45 min |
 
 ---
 
@@ -52,8 +53,8 @@ How the server resolves queries. Category INDEX: [Execution](02-execution/INDEX.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Resolvers](02-execution/20.7.2.01-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | 30 min |
-| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | 25 min |
+| 01 | [Resolvers](02-execution/20.7.2.01-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | 35 min |
+| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | 33 min |
 
 ---
 
@@ -63,9 +64,9 @@ The client-side and the production concerns. Category INDEX: [Clients & Producti
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | 25 min |
-| 02 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | 30 min |
-| 03 | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | 25 min |
+| 01 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | 39 min |
+| 02 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | 32 min |
+| 03 | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | 12 min |
 
 ---
 
@@ -75,7 +76,7 @@ Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 47 min |
 
 ---
 

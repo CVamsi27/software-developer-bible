@@ -1,5 +1,6 @@
 # Creational Patterns
 
+> **Study time:** ≈ 2 h 5 m of reading (5 files, ~25 min average).
 > **5 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)

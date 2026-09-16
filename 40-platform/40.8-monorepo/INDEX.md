@@ -1,5 +1,6 @@
 # Monorepo — Index
 
+> **Study time:** ≈ 1 h 8 m of reading (6 files, ~11 min average).
 > **6 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -26,7 +27,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 30 min |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 13 min |
 
 ---
 
@@ -36,8 +37,8 @@ The two main build/cache systems for monorepos.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | 30 min |
-| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 30 min |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | 12 min |
+| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 12 min |
 
 **Decision:**
 
@@ -55,7 +56,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 25 min |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 8 min |
 
 ---
 
@@ -63,7 +64,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 30 min |
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 15 min |
 
 ---
 
@@ -71,7 +72,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 2 hrs |
+| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 8 min |
 
 ---
 

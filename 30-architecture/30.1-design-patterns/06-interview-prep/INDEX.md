@@ -1,5 +1,6 @@
 # Interview Prep — Design Patterns
 
+> **Study time:** ≈ 26 min of reading (1 files, ~26 min average).
 > **1 file, 50+ curated questions with answers.** The pattern catalog is only useful if you can recall and apply it under pressure. This is the drill.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../../INDEX.md)

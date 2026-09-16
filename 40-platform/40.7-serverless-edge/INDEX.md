@@ -1,5 +1,6 @@
 # Serverless & Edge — Index
 
+> **Study time:** ≈ 1 h 54 m of reading (10 files, ~11 min average).
 > **10 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -26,8 +27,8 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 30 min |
-| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 25 min |
+| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | 11 min |
+| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | 13 min |
 
 **Decision tree:**
 
@@ -45,8 +46,8 @@ Deploy choice?
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 30 min |
-| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 25 min |
+| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | 10 min |
+| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | 11 min |
 
 ---
 
@@ -54,9 +55,9 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 30 min |
-| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 25 min |
-| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 30 min |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 14 min |
+| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 12 min |
+| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 15 min |
 
 ---
 
@@ -64,8 +65,8 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds | 25 min |
-| 10 | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | 25 min |
+| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds | 10 min |
+| 10 | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | 10 min |
 
 ---
 
@@ -73,7 +74,7 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 11 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 2 hrs |
+| 11 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | 8 min |
 
 ---
 

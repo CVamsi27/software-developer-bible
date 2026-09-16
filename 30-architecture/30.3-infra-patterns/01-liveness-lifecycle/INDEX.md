@@ -1,5 +1,6 @@
 # Liveness & Lifecycle
 
+> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
 > **1 file.** The contract between your application and its orchestrator: prove you are alive, prove you are ready, and die gracefully when asked. Get this wrong and Kubernetes restarts healthy pods — or routes traffic to dying ones.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -18,7 +19,7 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 25 min |
+| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 11 min |
 
 ---
 

@@ -1,5 +1,6 @@
 # WebSockets Interview Prep
 
+> **Study time:** ≈ 47 min of reading (1 files, ~47 min average).
 > **1 file.** The curated question bank for real-time rounds — protocol trade-offs, scaling designs, authentication, reconnection semantics, and failure modes.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)

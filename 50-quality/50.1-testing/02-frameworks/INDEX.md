@@ -1,5 +1,6 @@
 # Testing Frameworks
 
+> **Study time:** ≈ 1 h 58 m of reading (4 files, ~30 min average).
 > **4 files.** The runner-tier tools: Jest, Vitest, React Testing Library, and a head-to-head comparison so you can defend a stack choice in an interview.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -18,10 +19,10 @@ Picking a framework is a team-level decision with long tail costs (config, plugi
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects — the default ecosystem | 30 min |
-| 02 | [Vitest](50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads | Vite-based projects; faster runs | 30 min |
-| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 30 min |
-| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | 20 min |
+| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects — the default ecosystem | 43 min |
+| 02 | [Vitest](50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads | Vite-based projects; faster runs | 15 min |
+| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 49 min |
+| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | 11 min |
 
 ---
 

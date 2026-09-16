@@ -1,8 +1,9 @@
 # NestJS — Index
 
+> **Study time:** ≈ 6 h 2 m of reading (19 files, ~19 min average).
 > **18 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -15,9 +16,9 @@
 The 18 files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
-| ---------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------ |
+| ---------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------- |
 | [Core Architecture](01-core-architecture/INDEX.md) | 4 | Modules, Controllers, Providers, DI — the foundation |
-| [Request Lifecycle](02-request-lifecycle/INDEX.md) | 5 | Middleware, Guards, Pipes, Interceptors, Exception Filters — what runs in what order |
+| [Request Lifecycle](02-request-lifecycle/INDEX.md) | 6 | Middleware, Guards, Pipes, Interceptors, Exception Filters, Request Context (ALS) — what runs in what order |
 | [Patterns](03-patterns/INDEX.md) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
 | [Quality & Operations](04-quality-and-operations/INDEX.md) | 5 | Config validation, Testing, Lifecycle/shutdown, Scheduling/jobs, OpenAPI docs |
 | [Advanced & Interview](05-advanced-and-interview/INDEX.md) | 2 | Custom decorators, 50+ interview Qs |
@@ -45,10 +46,10 @@ How NestJS apps are structured. Read these first. Category INDEX: [Core Architec
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Modules](01-core-architecture/20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 25 min |
-| 02 | [Controllers](01-core-architecture/20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 20 min |
-| 03 | [Providers](01-core-architecture/20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 20 min |
-| 04 | [Dependency Injection](01-core-architecture/20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 30 min |
+| 01 | [Modules](01-core-architecture/20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 21 min |
+| 02 | [Controllers](01-core-architecture/20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 27 min |
+| 03 | [Providers](01-core-architecture/20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 22 min |
+| 04 | [Dependency Injection](01-core-architecture/20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 24 min |
 
 ---
 
@@ -58,10 +59,10 @@ The order of execution for every request — **every NestJS interview tests this
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 15 min |
-| 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 25 min |
-| 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 25 min |
-| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 25 min |
+| 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | 18 min |
+| 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | 23 min |
+| 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | 24 min |
+| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | 16 min |
 | 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | 20 min |
 
 ---
@@ -72,8 +73,8 @@ The patterns NestJS supports out of the box. Category INDEX: [Patterns](03-patte
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 30 min |
-| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 30 min |
+| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | 19 min |
+| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | 22 min |
 
 ---
 
@@ -83,11 +84,11 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 25 min |
-| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 30 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | 25 min |
-| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | 30 min |
-| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | 25 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | 12 min |
+| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | 12 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | 14 min |
+| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | 19 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | 15 min |
 
 ---
 
@@ -97,15 +98,15 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 25 min |
-| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 10 min |
+| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 29 min |
 
 ---
 
 ## Suggested Study Order
 
 1. **Core Architecture** (4 files, ~2 hrs) — must know
-2. **Request Lifecycle** (5 files, ~2 hrs) — must know, the most-asked cluster
+2. **Request Lifecycle** (6 files, ~2.5 hrs) — must know, the most-asked cluster
 3. **Patterns** (CQRS + Microservices) — for senior/DDD roles
 4. **Quality & Operations** (5 files) — production hygiene
 5. **Custom Decorators** — senior-level

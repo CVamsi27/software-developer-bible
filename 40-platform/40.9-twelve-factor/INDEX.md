@@ -1,5 +1,6 @@
 # Twelve-Factor App — Index
 
+> **Study time:** ≈ 21 min of reading (1 files, ~21 min average).
 > **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Every Kubernetes, Heroku, Fly, Vercel, and Lambda deployment is built around these 12 factors.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../../INDEX.md)
@@ -52,7 +53,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 60 min |
+| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 21 min |
 
 ---
 

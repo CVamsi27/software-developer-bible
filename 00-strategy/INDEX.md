@@ -1,5 +1,6 @@
 # Interview Strategy — Index
 
+> **Study time:** ≈ 1 h 31 m of reading (4 files, ~23 min average).
 > **4 files** — Essential interview strategy covering resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -26,7 +27,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 02 | [Resume Tips](00.02-resume-tips.md) | Resume structure, action verbs, quantifying impact, ATS optimization, EU vs US formats | 30 min |
+| 02 | [Resume Tips](00.02-resume-tips.md) | Resume structure, action verbs, quantifying impact, ATS optimization, EU vs US formats | 15 min |
 
 **Read this first** — your resume determines whether you get the interview in the first place. The other 3 files don't matter if your resume is weak.
 
@@ -36,7 +37,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Communication](00.01-communication.md) | Clear communication, structured answers, technical storytelling, whiteboarding, asking good questions | 30 min |
+| 01 | [Communication](00.01-communication.md) | Clear communication, structured answers, technical storytelling, whiteboarding, asking good questions | 26 min |
 
 **This is the most underrated skill.** Senior interviews are 50% technical, 50% communication. A senior engineer who can't explain their thinking clearly is a red flag.
 
@@ -46,7 +47,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [STAR Method](00.03-star-method.md) | Situation, Task, Action, Result framework, 8-10 example stories, common pitfalls | 45 min |
+| 03 | [STAR Method](00.03-star-method.md) | Situation, Task, Action, Result framework, 8-10 example stories, common pitfalls | 28 min |
 
 **STAR is the universal behavioral answer format.** Practice it for every story in your story bank. Without STAR, your answers are rambling and forgettable.
 
@@ -56,7 +57,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 04 | [HR Questions](00.04-hr-questions.md) | Common HR questions, salary negotiation, career goals, motivations, visa/work authorization, red flags to avoid | 30 min |
+| 04 | [HR Questions](00.04-hr-questions.md) | Common HR questions, salary negotiation, career goals, motivations, visa/work authorization, red flags to avoid | 22 min |
 
 **Don't wing the HR round.** It's usually the last round and the easiest to pass — but also the easiest to fail by saying something dumb about money or motivations.
 

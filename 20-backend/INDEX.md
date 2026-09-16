@@ -1,5 +1,6 @@
 # Backend Stack
 
+> **Study time:** ≈ 47 h 12 m of reading (143 files, ~20 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 139 files across 10 sub-stacks, organized by what you need to know in what order.
@@ -31,8 +32,8 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | Order | Sub-stack | Files | Topics |
 | ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | [Node.js](20.1-node.js/INDEX.md) | 13 | Event loop, streams, clustering, web streams, child processes, test runner |
-| 2 | [NestJS](20.2-nestjs/INDEX.md) | 18 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 19 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 2 | [NestJS](20.2-nestjs/INDEX.md) | 19 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| 3 | [REST APIs](20.3-rest-apis/INDEX.md) | 21 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
 | 4 | [Database](20.4-database/INDEX.md) | 24 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication (5 categories) |
 | 5 | [Auth & Security](20.5-security/INDEX.md) | 21 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
 | 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |

@@ -1,5 +1,6 @@
 # HTML/CSS & PWA — Index
 
+> **Study time:** ≈ 1 h 25 m of reading (8 files, ~11 min average).
 > **7 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -26,7 +27,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [HTML Fundamentals](10.7.01-html-fundamentals.md) | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs, microdata | 30 min |
+| 01 | [HTML Fundamentals](10.7.01-html-fundamentals.md) | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs, microdata | 7 min |
 
 ---
 
@@ -34,7 +35,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 02 | [CSS Fundamentals](10.7.02-css-fundamentals.md) | Flexbox, Grid, responsive design, media queries, container queries, CSS variables, `:has()` | 45 min |
+| 02 | [CSS Fundamentals](10.7.02-css-fundamentals.md) | Flexbox, Grid, responsive design, media queries, container queries, CSS variables, `:has()` | 9 min |
 
 ---
 
@@ -44,9 +45,9 @@ Styling at scale: how you structure, name, and theme.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies | 35 min |
-| 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md) | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 30 min |
-| 08 | [Interview Questions](10.7.08-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 25 min |
+| 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies | 11 min |
+| 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md) | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 13 min |
+| 08 | [Interview Questions](10.7.08-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 4 min |
 
 ---
 
@@ -56,7 +57,7 @@ How the browser turns HTML/CSS/JS into pixels.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 30 min |
+| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 12 min |
 
 ---
 
@@ -66,8 +67,8 @@ Production concerns.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 30 min |
-| 04 | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO | 30 min |
+| 05 | [PWA](10.7.05-pwa.md) | Service workers, caching strategies (cache-first, network-first), background sync, push notifications, install prompt, manifest | 18 min |
+| 04 | [SEO](10.7.04-seo.md) | Core Web Vitals (LCP/INP/CLS), structured data (JSON-LD), meta tags, OG tags, sitemap, robots.txt, SSR vs CSR for SEO | 11 min |
 
 ---
 

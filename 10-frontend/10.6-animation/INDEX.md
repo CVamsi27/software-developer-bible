@@ -1,5 +1,6 @@
 # Animation — Index
 
+> **Study time:** ≈ 1 h 35 m of reading (8 files, ~12 min average).
 > **8 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, Canvas/SVG rendering, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -27,7 +28,7 @@ The fastest, cheapest animation. Use this first.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [CSS Animations](10.6.01-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion | 25 min |
+| 01 | [CSS Animations](10.6.01-css-animations.md) | Transitions, @keyframes, transform, will-change, prefers-reduced-motion | 13 min |
 
 **When to use:** Hover effects, simple state transitions, loading spinners. No JS needed; GPU-accelerated; respects `prefers-reduced-motion` for free.
 
@@ -39,10 +40,10 @@ For complex animations.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 02 | [Framer Motion](10.6.02-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures | React 18+, default for component animations | 45 min |
-| 03 | [GSAP](10.6.03-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) | Complex sequences, scroll-driven, marketing sites | 30 min |
-| 04 | [React Spring](10.6.04-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* | Physics-based animations (when spring > easing) | 25 min |
-| 05 | [Web Animations API](10.6.05-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations | Imperative control, fine-grained timeline control | 30 min |
+| 02 | [Framer Motion](10.6.02-framer-motion.md) | motion components, AnimatePresence, layout (FLIP), useScroll, gestures | React 18+, default for component animations | 14 min |
+| 03 | [GSAP](10.6.03-gsap.md) | Timelines, ScrollTrigger, easings, plugins (Flip, SplitText, MorphSVG) | Complex sequences, scroll-driven, marketing sites | 12 min |
+| 04 | [React Spring](10.6.04-react-spring.md) | Spring physics, useSpring/useTrail/useTransition/useChain, animated.* | Physics-based animations (when spring > easing) | 11 min |
+| 05 | [Web Animations API](10.6.05-web-animations-api.md) | element.animate, keyframes, play/pause/reverse, finish, getAnimations | Imperative control, fine-grained timeline control | 10 min |
 
 **Decision tree:**
 
@@ -66,8 +67,8 @@ Newer browser-native capabilities.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [View Transitions & Scroll-Driven](10.6.06-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 30 min |
-| 07 | [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md) | rAF loop with delta time, canvas 2D + devicePixelRatio, `stroke-dashoffset` draw-on, SMIL deprecation, performance envelope (DOM vs SVG vs Canvas), OffscreenCanvas workers, React rAF cleanup | 35 min |
+| 06 | [View Transitions & Scroll-Driven](10.6.06-view-transitions-and-scroll-driven-animations.md) | `startViewTransition`, `view-transition-name`, `animation-timeline: scroll()/view()` | 15 min |
+| 07 | [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md) | rAF loop with delta time, canvas 2D + devicePixelRatio, `stroke-dashoffset` draw-on, SMIL deprecation, performance envelope (DOM vs SVG vs Canvas), OffscreenCanvas workers, React rAF cleanup | 12 min |
 
 ---
 
@@ -75,7 +76,7 @@ Newer browser-native capabilities.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 08 | [Interview Questions](10.6.08-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 2 hrs |
+| 08 | [Interview Questions](10.6.08-interview-questions.md) | 30+ questions covering CSS, WAAPI, libraries, perf, a11y | 8 min |
 
 ---
 

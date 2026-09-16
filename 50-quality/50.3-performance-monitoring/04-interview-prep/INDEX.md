@@ -1,5 +1,6 @@
 # Performance Interview Prep
 
+> **Study time:** ≈ 7 min of reading (1 files, ~7 min average).
 > **1 file.** The curated question bank for web performance rounds — Core Web Vitals mechanics, debugging walkthroughs, lab-vs-field judgment, and budget design.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)

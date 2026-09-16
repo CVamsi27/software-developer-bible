@@ -1,5 +1,6 @@
 # Kubernetes — Index
 
+> **Study time:** ≈ 4 h 35 m of reading (17 files, ~16 min average).
 > **17 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -29,10 +30,10 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | 30 min |
-| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | 30 min |
-| 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | 25 min |
-| 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | 25 min |
+| 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | 20 min |
+| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | 25 min |
+| 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | 5 min |
+| 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | 5 min |
 
 ---
 
@@ -42,9 +43,9 @@ How traffic and configuration get in.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Services & Ingress](02-networking-and-config/40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, Ingress controllers, TLS, host-based routing | 30 min |
-| 06 | [ConfigMaps & Secrets](02-networking-and-config/40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting, env vars, encryption at rest | 25 min |
-| 07 | [PodPresets](02-networking-and-config/40.2.2.03-podpresets.md) | Admission-time injection, env vars, volumes, secrets, label selectors, Kyverno alternatives | 15 min |
+| 05 | [Services & Ingress](02-networking-and-config/40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, Ingress controllers, TLS, host-based routing | 22 min |
+| 06 | [ConfigMaps & Secrets](02-networking-and-config/40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting, env vars, encryption at rest | 17 min |
+| 07 | [PodPresets](02-networking-and-config/40.2.2.03-podpresets.md) | Admission-time injection, env vars, volumes, secrets, label selectors, Kyverno alternatives | 19 min |
 
 ---
 
@@ -52,8 +53,8 @@ How traffic and configuration get in.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 30 min |
-| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | 30 min |
+| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 20 min |
+| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | 15 min |
 
 ---
 
@@ -63,10 +64,10 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 25 min |
-| 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 20 min |
-| 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 30 min |
-| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 25 min |
+| 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | 18 min |
+| 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | 21 min |
+| 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | 6 min |
+| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | 21 min |
 
 ---
 
@@ -74,9 +75,9 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 14 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 30 min |
-| 15 | [Kustomize Overlays](05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, patches (strategic merge, JSON6902), generators, transformers, Helm vs Kustomize, secrets caveat | 25 min |
-| 16 | [CRDs, Operators & Controller Patterns](05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops, operator levels, ownerReferences/GC, when to build an operator, OLM | 35 min |
+| 14 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Charts, templates, values, releases, dependency management, helmfile | 19 min |
+| 15 | [Kustomize Overlays](05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, patches (strategic merge, JSON6902), generators, transformers, Helm vs Kustomize, secrets caveat | 12 min |
+| 16 | [CRDs, Operators & Controller Patterns](05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops, operator levels, ownerReferences/GC, when to build an operator, OLM | 15 min |
 
 ---
 
@@ -84,7 +85,7 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 3 hrs |
+| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 15 min |
 
 ---
 

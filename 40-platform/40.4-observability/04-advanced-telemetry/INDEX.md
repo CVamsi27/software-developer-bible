@@ -1,5 +1,6 @@
 # Advanced Telemetry
 
+> **Study time:** ≈ 56 min of reading (3 files, ~19 min average).
 > **3 files.** Beyond the basics: OpenTelemetry as the vendor-neutral instrumentation layer, continuous profiling as the fourth signal, and eBPF for zero-instrumentation kernel-level visibility.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -18,9 +19,9 @@ Instrumenting once per vendor does not survive the second vendor swap. OpenTelem
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [OpenTelemetry](40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 30 min |
-| 02 | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 30 min |
-| 03 | [eBPF Observability](40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks | 30 min |
+| 01 | [OpenTelemetry](40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 26 min |
+| 02 | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 15 min |
+| 03 | [eBPF Observability](40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks | 15 min |
 
 ---
 

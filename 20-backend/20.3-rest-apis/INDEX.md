@@ -1,10 +1,11 @@
 # REST APIs — Index
 
+> **Study time:** ≈ 7 h 6 m of reading (21 files, ~20 min average).
 > **19 files — everything HTTP/API, fundamentals through production.** Study in three passes: **I. Fundamentals** (principles → methods → status codes) → **II. Production concerns** (pagination, errors, long-running operations, file uploads, rate limiting, webhooks, caching) → **III. Advanced** (maturity model, gateways, BFF, auth in context).
 >
 > Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 7807), pagination and webhooks live here once, at full depth.
 
-[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -15,10 +16,10 @@
 The 19 content files are organized into 5 categories, each with its own INDEX.
 
 | Category | Files | Why it matters |
-| ------------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Design & Contract](01-design-and-contract/INDEX.md) | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
 | [HTTP Mechanics](02-http-mechanics/INDEX.md) | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
-| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 5 | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks — the contract details clients feel daily |
+| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 7 | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks, serialization & wire formats, transactional email — the contract details clients feel daily |
 | [Edge & Scale](04-edge-and-scale/INDEX.md) | 4 | Rate limiting, API gateway, BFF, authentication — surviving traffic; auth pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
 | [Interview Drills](05-interview-drills/INDEX.md) | 1 | Curated Q&A |
 

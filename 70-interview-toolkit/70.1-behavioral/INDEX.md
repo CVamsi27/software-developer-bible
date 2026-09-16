@@ -1,5 +1,6 @@
 # Behavioral — Index
 
+> **Study time:** ≈ 1 h 57 m of reading (5 files, ~23 min average).
 > **Interview-depth behavioral prep.** The universal basics (STAR framework, HR questions, resume) live in [00-strategy](../../00-strategy/INDEX.md); this folder holds the deeper material you use once the basics are internalized.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -28,7 +29,7 @@ STAR stories for product partnership: pushing back on scope with evidence, negot
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, follow-up trap answers | 45 min |
+| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, follow-up trap answers | 17 min |
 
 ---
 
@@ -38,7 +39,7 @@ Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 45 min |
+| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 32 min |
 
 **Common senior-level questions:**
 - "Tell me about a time you led without authority."
@@ -56,7 +57,7 @@ Deciding under incomplete data — the Type 1 / Type 2 door framing, the 70% inf
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, conviction with ~70% info, reversal triggers, disagree-and-commit stories, escalation judgment, grading rubric | 40 min |
+| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, conviction with ~70% info, reversal triggers, disagree-and-commit stories, escalation judgment, grading rubric | 18 min |
 
 ---
 
@@ -66,7 +67,7 @@ How to talk about your past design decisions in interviews.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | 30 min |
+| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | 36 min |
 
 **The framework:**
 1. **Context** — what was the system, who used it, what was the constraint?
@@ -82,7 +83,7 @@ Self-audit instrument: the eight delivery defects that sink behavioral rounds, r
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Rambling (>90s setups), blame language, metric-free stories, humble-bragging, genericness, no-conflict gaps, red-flag words, recovery phrases, drill + mock-loop protocol | 35 min |
+| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Rambling (>90s setups), blame language, metric-free stories, humble-bragging, genericness, no-conflict gaps, red-flag words, recovery phrases, drill + mock-loop protocol | 14 min |
 
 ---
 

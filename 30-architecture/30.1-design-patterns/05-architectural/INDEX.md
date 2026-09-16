@@ -1,5 +1,6 @@
 # Architectural Patterns
 
+> **Study time:** ≈ 2 h 48 m of reading (8 files, ~21 min average).
 > **8 files.** Modern, distributed-systems patterns plus DDD tactical design and UI architecture. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, domain-driven design, and rich frontends.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)

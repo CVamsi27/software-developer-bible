@@ -1,5 +1,6 @@
 # Quality Stack
 
+> **Study time:** ≈ 13 h 10 m of reading (38 files, ~21 min average).
 > **Testing, accessibility, performance monitoring, production engineering** — the "senior judgment" stack. Shared by both lanes.
 >
 > 37 files across 4 sub-stacks.

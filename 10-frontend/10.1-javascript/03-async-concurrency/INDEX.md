@@ -17,6 +17,7 @@
 | 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | 25 min |
 | 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 20 min |
 | 05 | [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | 20 min |
+| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, `p-limit` in production | 25 min |
 
 ---
 

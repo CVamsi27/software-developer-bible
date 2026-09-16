@@ -87,15 +87,16 @@ Choosing the right collection and avoiding memory leaks.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 15 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | 15 min |
-| 16 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what | 20 min |
-| 17 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls | 20 min |
-| 18 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Implementation, leading/trailing edge, real-world use cases (search input, resize) | 15 min |
-| 19 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Implementation, vs debounce, animation frame throttling, scroll handlers | 15 min |
-| 20 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | 25 min |
-| 21 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min |
-| 22 | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 40 min |
-| 23 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `||`, `Object.is`, deriving the classics | 20 min |
+| 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Worker pools, fail-fast vs collect-all, AbortSignal threading, p-limit | 25 min |
+| 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | 15 min |
+| 17 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what | 20 min |
+| 18 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls | 20 min |
+| 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Implementation, leading/trailing edge, real-world use cases (search input, resize) | 15 min |
+| 20 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Implementation, vs debounce, animation frame throttling, scroll handlers | 15 min |
+| 21 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | 25 min |
+| 22 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 25 min |
+| 23 | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 40 min |
+| 24 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `||`, `Object.is`, deriving the classics | 20 min |
 
 ---
 
@@ -105,11 +106,11 @@ The patterns you'll use daily as a senior engineer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 24 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | 20 min |
-| 25 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | 15 min |
-| 26 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | 25 min |
-| 27 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | 20 min |
-| 28 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | 20 min |
+| 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | 20 min |
+| 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | 15 min |
+| 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | 25 min |
+| 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | 20 min |
+| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | 20 min |
 
 ---
 
@@ -119,11 +120,11 @@ The newest features + the interview Q&A bank.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------    : |
-| 29 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | 25 min |
-| 30 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | 25 min |
-| 31 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | 25 min |
-| 32 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min |
-| 33 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 55+ curated questions with answers | 3 hrs (review) |
+| 30 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | 25 min |
+| 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | 25 min |
+| 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | 25 min |
+| 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 25 min |
+| 34 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 55+ curated questions with answers | 3 hrs (review) |
 
 ---
 

@@ -41,6 +41,8 @@ on:
       - 'scripts/check_duplication.py'
       - 'scripts/check_topic_twins.py'
       - 'scripts/read_time.py'
+      - 'scripts/gen_master_index.py'
+      - 'search.html'
   pull_request:
     paths:
       - '**/*.md'
@@ -53,6 +55,8 @@ on:
       - 'scripts/check_duplication.py'
       - 'scripts/check_topic_twins.py'
       - 'scripts/read_time.py'
+      - 'scripts/gen_master_index.py'
+      - 'search.html'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
   workflow_dispatch: {}
@@ -247,3 +251,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           exit "$code"
         id: read-time
+
+      - name: Search-page freshness gate (14)
+        if: always()
+        run: python3 scripts/gen_master_index.py --check

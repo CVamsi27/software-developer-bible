@@ -209,7 +209,7 @@ def iter_md():
         if 'personal' in rel.split(os.sep):
             continue
         for f in files:
-            if f.endswith('.md') and f not in ('INDEX.md', 'README.md', 'AGENTS.md', 'contributing.md', 'ROADMAP.md'):
+            if f.endswith('.md') and f not in ('INDEX.md', 'README.md', 'AGENTS.md', 'contributing.md', 'ROADMAP.md', 'search.md'):
                 yield os.path.join(root, f)
 
 

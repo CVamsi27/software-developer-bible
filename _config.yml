@@ -8,6 +8,7 @@ url: https://study.buildora.work
 theme: minima
 header_pages:
   - INDEX.md
+  - search.md
   - 00-strategy/INDEX.md
   - lanes/INDEX.md
   - 10-frontend/INDEX.md

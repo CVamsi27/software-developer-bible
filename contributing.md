@@ -170,6 +170,7 @@ Every content file **must** begin with metadata in two forms:
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges
 - Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category/Status link to `#`
 - Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment so GitHub Pages renders them literally (44 files use this today)
+- **Enforced by gate 6b** (`check_template.py`): the comment must sit at the file top (only `{% raw %}` may precede it), category must be one of the 14 canonical values below, all four badges must be present in the header in canonical order (Section → Category → Tags → Read time)
 
 ### Category Values
 

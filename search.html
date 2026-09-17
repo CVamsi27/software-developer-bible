@@ -55,7 +55,7 @@ function chips(el, values, set) {
     const b = document.createElement('button');
     b.textContent = v;
     b.onclick = () => { set.has(v) ? set.delete(v) : set.add(v);
-                        b.classList.toggle('on'); render(); };
+                        b.classList.toggle('on'); render(); syncUrl(); };
     el.appendChild(b);
   }
 }
@@ -86,10 +86,30 @@ function render() {
     `<td class="m">${fmt(r.m)}</td></tr>`).join('');
 }
 
-$('q').oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); };
+$('q').oninput = e => { state.q = e.target.value.trim().toLowerCase(); render(); syncUrl(); };
 chips($('cats'), ["API", "Architecture", "Backend", "Core", "Data", "DevOps", "Frontend", "Interview", "Observability", "Quality", "Real-Time", "Reference", "Tooling"], state.cats);
 chips($('secs'), ["AI Engineering", "Accessibility", "Animation", "Architecture", "Behavioral", "Build Tools", "CDN & Edge Computing", "CI/CD", "CheatSheets", "Coding Patterns", "Database", "Design Patterns", "Docker", "Form Handling", "Frontend", "Git Advanced", "GraphQL", "HTML/CSS", "IaC", "Infra Patterns", "Interview Strategy", "Java", "JavaScript", "Kubernetes", "Microservices", "Mobile", "Monorepo", "NestJS", "Next.js", "Node.js", "Observability", "Performance", "Performance Monitoring", "Platform", "Production Engineering", "Quality", "REST API", "REST APIs", "React", "Security", "Security/Auth", "Serverless & Edge", "System Design", "Testing", "TypeScript", "WebSockets"], state.secs);
 chips($('tags'), TOP_TAGS, state.tags);
+
+// Deep links: ?q=&cat=&sec=&tag= restore state, every change syncs the URL.
+function syncUrl() {
+  const p = new URLSearchParams();
+  if (state.q) p.set('q', state.q);
+  if (state.cats.size) p.set('cat', [...state.cats].join(','));
+  if (state.secs.size) p.set('sec', [...state.secs].join(','));
+  if (state.tags.size) p.set('tag', [...state.tags].join(','));
+  try { history.replaceState(null, '', p.toString() ? '?' + p : location.pathname); }
+  catch (e) { /* file:// may block replaceState — filtering still works */ }
+}
+
+const params = new URLSearchParams(location.search);
+if (params.get('q')) { state.q = params.get('q').toLowerCase(); $('q').value = params.get('q'); }
+for (const k of (params.get('cat') || '').split(',')) if (k) state.cats.add(k);
+for (const k of (params.get('sec') || '').split(',')) if (k) state.secs.add(k);
+for (const k of (params.get('tag') || '').split(',')) if (k) state.tags.add(k);
+for (const b of document.querySelectorAll('.chips button'))
+  if (state.cats.has(b.textContent) || state.secs.has(b.textContent) ||
+      state.tags.has(b.textContent)) b.classList.add('on');
 render();
 </script>
 </body>

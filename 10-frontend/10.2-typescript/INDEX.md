@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 5 h 32 m of reading (18 files, ~18 min average).
+> **Study time:** ≈ 5 h 38 m of reading (18 files, ~19 min average).
 > **18 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
@@ -85,7 +85,7 @@ Senior-level TS — types as a design tool.
 | 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | 25 min |
 | 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | 22 min |
 | 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | 23 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | 12 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | 18 min |
 
 ---
 

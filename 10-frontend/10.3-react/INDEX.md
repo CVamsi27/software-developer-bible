@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 8 h 15 m of reading (22 files, ~22 min average).
+> **Study time:** ≈ 8 h 25 m of reading (22 files, ~23 min average).
 > **22 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -74,7 +74,7 @@ The patterns that solve real problems in production code.
 | --: | ------ | -------- | ----------: |
 | 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 22 min |
 | 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 25 min |
-| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 41 min |
+| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 42 min |
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 15 min |
 | 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 8 min |
 | 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 13 min |
@@ -101,7 +101,7 @@ Reusable component patterns + 60+ interview Qs.
 | --: | ------ | -------- | ----------: |
 | 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 31 min |
 | 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 27 min |
-| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 5 min |
+| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 14 min |
 
 ---
 

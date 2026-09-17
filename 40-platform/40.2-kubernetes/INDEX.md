@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 4 h 35 m of reading (17 files, ~16 min average).
+> **Study time:** ≈ 4 h 36 m of reading (17 files, ~16 min average).
 > **17 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -53,7 +53,7 @@ How traffic and configuration get in.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 20 min |
+| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | 21 min |
 | 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | 15 min |
 
 ---

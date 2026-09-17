@@ -1,6 +1,6 @@
 # Design & Contract - REST APIs
 
-> **Study time:** ≈ 1 h 19 m of reading (5 files, ~16 min average).
+> **Study time:** ≈ 1 h 20 m of reading (5 files, ~16 min average).
 > **5 files.** How the API is shaped and specified: protocol/design-pattern selection, REST principles, versioning strategy, the maturity model, and the OpenAPI contract.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -15,7 +15,7 @@
 | 01 | [API Design Patterns](20.3.1.01-api-design-patterns.md) | REST vs GraphQL vs gRPC selection, resource naming, consistency, evolution | 17 min |
 | 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | 18 min |
 | 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | 26 min |
-| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | 8 min |
+| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | 9 min |
 | 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | 10 min |
 
 ---

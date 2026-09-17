@@ -1,6 +1,6 @@
 # Behavioral Patterns
 
-> **Study time:** ≈ 4 h 21 m of reading (12 files, ~22 min average).
+> **Study time:** ≈ 4 h 22 m of reading (12 files, ~22 min average).
 > **12 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)

@@ -150,6 +150,7 @@ Every content file **must** begin with metadata in two forms:
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Core-blue)](#)
 [![Tags](https://img.shields.io/badge/tags-concept-lightgrey)](#)
+[![Read time](https://img.shields.io/badge/read--time-28_min-informational)](#)
 
 # File Title
 ```
@@ -157,6 +158,13 @@ Every content file **must** begin with metadata in two forms:
 ### Rules
 
 - **Required fields**: `section`, `category`, `tags`
+- **4th badge — Read time**: every content file also carries a
+  `[![Read time](https://img.shields.io/badge/read--time-N_min-informational)](#)`
+  badge directly under Tags. It is **tool-maintained, never hand-edited**:
+  `python3 scripts/read_time.py --write` refreshes it (and the INDEX
+  Study-time lines) from the computed estimate; `--check` (gate 13) fails on
+  any drift. Insert it after Tags when authoring a new file — the next
+  `--write` snaps the number.
 - `tags` is a comma-separated list: `concept, lld, principles, theory`
 - Metadata line goes BEFORE the title (H1)
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges

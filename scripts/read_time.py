@@ -15,8 +15,14 @@ Model (a *study* estimate, not a skim):
 Usage:
   python3 scripts/read_time.py --file 10-frontend/10.1-javascript/...md
   python3 scripts/read_time.py --all                      # per-stack totals
-  python3 scripts/read_time.py --check                    # gate: INDEX drift
-  python3 scripts/read_time.py --write                    # refresh every INDEX
+  python3 scripts/read_time.py --check                    # gate: INDEX + badge drift
+  python3 scripts/read_time.py --write                    # refresh INDEXes and badges
+
+The same estimate is stamped twice, and the gate holds both:
+  - a `> **Study time:**` line in every INDEX (category/stack/root totals)
+  - a 4th shields badge in every content file's header block:
+        [![Read time](https://img.shields.io/badge/read--time-12_min-informational)](#)
+    (shields renders `_` as a space; `read--time` renders as "read time")
 """
 import argparse
 import os
@@ -33,6 +39,11 @@ FENCE = re.compile(r'^\s*(```|~~~)')
 H1 = re.compile(r'^#\s+(.+?)\s*$', re.M)
 ROW_LINK = re.compile(r'^\|\s*\d+\s*\|\s*\[[^\]]+\]\(([^)]+\.md)\)')
 TIME_LINE = re.compile(r'^> \*\*Study time:\*\* .*$', re.M)
+META = re.compile(r'^<!-- section: (?P<sec>[^|]+) \| category: (?P<cat>[^|]+) \|', re.M)
+
+BADGE_READ = re.compile(r'^\[\!\[Read time\]\(https://img\.shields\.io/badge/read--time-[^)]+\)\]\(#\)[ \t]*$', re.M)
+TAGS_BADGE = re.compile(r'^\[\!\[Tags\]\(https://img\.shields\.io/badge/tags-[^)]+\)\]\(#\)[ \t]*$', re.M)
+CATEGORY_BADGE = re.compile(r'^\[\!\[Category\]\(https://img\.shields\.io/badge/category-[^)]+\)\]\(#\)[ \t]*$', re.M)
 
 PROSE_WPM = 200
 CODE_LPM = 25
@@ -84,6 +95,12 @@ def human(mins):
     if h:
         return f'{h} h'
     return f'{m} min'
+
+
+def badge_line(rel):
+    """The exact Read-time badge line the file's header must carry."""
+    return (f"[![Read time](https://img.shields.io/badge/read--time-"
+            f"{minutes(os.path.join(ROOT, rel))}_min-informational)](#)")
 
 
 def content_files():
@@ -225,6 +242,60 @@ def write_indexes(dry_run=False):
     return changed
 
 
+def write_badge(rel, dry_run=False):
+    """Insert or refresh the 4th (Read time) badge in one content file.
+
+    Returns 1 if the file changed. Position: directly under the Tags badge,
+    keeping the documented header block intact.
+    """
+    p = os.path.join(ROOT, rel)
+    text = open(p, encoding='utf-8').read()
+    want = badge_line(rel)
+    m = BADGE_READ.search(text)
+    if m:
+        if m.group(0).rstrip() == want:
+            return 0
+        new = BADGE_READ.sub(lambda _mm: want, text, count=1)
+    else:
+        # No badge yet: insert after the Tags badge (or Category as fallback).
+        anchor = TAGS_BADGE.search(text) or CATEGORY_BADGE.search(text)
+        if not anchor:
+            return 0  # headerless — count it so the gap is visible
+        nl = text.find('\n', anchor.end())
+        if nl == -1:
+            new = text.rstrip('\n') + '\n' + want + '\n'
+        else:
+            new = text[:nl] + '\n' + want + text[nl:]
+    if not dry_run:
+        open(p, 'w', encoding='utf-8').write(new)
+    return 1
+
+
+def badge_check():
+    """Every content file's Read-time badge must exist and match the estimate."""
+    bad_missing, bad_value = [], []
+    n = 0
+    for rel in content_files():
+        n += 1
+        text = open(os.path.join(ROOT, rel), encoding='utf-8').read()
+        want = badge_line(rel)
+        m = BADGE_READ.search(text)
+        if not m:
+            bad_missing.append(rel)
+        elif m.group(0).rstrip() != want:
+            bad_value.append((rel, m.group(0).strip(), want))
+    if bad_missing or bad_value:
+        print(f"READ-TIME BADGE DRIFT: {len(bad_missing)} missing, {len(bad_value)} stale of {n}")
+        for rel in bad_missing[:10]:
+            print(f"  missing: {rel}")
+        for rel, got, want in bad_value[:10]:
+            print(f"  stale:   {rel}\n    got:    {got}\n    want:   {want}")
+        print("\nFix: python3 scripts/read_time.py --write")
+        return 1
+    print(f"read-time badges consistent on {n} content files")
+    return 0
+
+
 def check():
     """Every INDEX's declared study time must match the computed one."""
     totals = category_totals()
@@ -246,8 +317,10 @@ def check():
             print(f"  {rel}\n    declared: {got}\n    computed: {expect}")
         print("\nFix: python3 scripts/read_time.py --write")
         return 1
-    print(f"read times consistent across {len([t for t in totals.values() if t[1]])} INDEX files")
-    return 0
+    rc = badge_check()
+    if rc == 0:
+        print(f"read times consistent across {len([t for t in totals.values() if t[1]])} INDEX files")
+    return rc
 
 
 def main():
@@ -261,12 +334,14 @@ def main():
 
     if args.file:
         p = os.path.join(ROOT, args.file)
-        print(f"{minutes(p)} min  {args.file}")
+        print(f"{minutes(p)} min  {args.file}\n  badge: {badge_line(args.file)}")
         return 0
     if args.check:
         return check()
     if args.write or args.dry_run:
-        print(f"{write_indexes(args.dry_run)} INDEX file(s) updated")
+        n_idx = write_indexes(args.dry_run)
+        n_badge = sum(write_badge(rel, args.dry_run) for rel in content_files())
+        print(f"{n_idx} INDEX file(s), {n_badge} content badge(s) updated")
         return 0
 
     per_stack = {}

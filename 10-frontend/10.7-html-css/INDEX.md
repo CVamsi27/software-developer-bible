@@ -1,6 +1,6 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 25 m of reading (8 files, ~11 min average).
+> **Study time:** ≈ 1 h 26 m of reading (8 files, ~11 min average).
 > **7 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -57,7 +57,7 @@ How the browser turns HTML/CSS/JS into pixels.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 12 min |
+| 03 | [Browser Rendering](10.7.03-browser-rendering.md) | Critical rendering path, reflow vs repaint vs composite, layout thrashing, GPU acceleration, layers | 13 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 3 h 30 m of reading (16 files, ~13 min average).
+> **Study time:** ≈ 3 h 31 m of reading (16 files, ~13 min average).
 > **16 files across 5 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), and data retention/archival.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.

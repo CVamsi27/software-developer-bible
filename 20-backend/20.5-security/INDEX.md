@@ -1,6 +1,6 @@
 # Security — Index
 
-> **Study time:** ≈ 5 h 35 m of reading (21 files, ~16 min average).
+> **Study time:** ≈ 5 h 36 m of reading (21 files, ~16 min average).
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/API keys → sessions → tokens → OAuth → SSO/SAML → MFA/passkeys → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
 > 21 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and 50+ curated questions.
@@ -72,7 +72,7 @@ Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-q
 
 | Order | File | Topics | Read time |
 | ----: | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | --------: |
-| 9 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 11 min |
+| 9 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | 12 min |
 | 10 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | 14 min |
 | 11 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | 12 min |
 | 12 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | 12 min |

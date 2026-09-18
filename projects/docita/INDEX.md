@@ -2,6 +2,10 @@
 
 > Every major decision in Docita, explained with context, alternatives considered, trade-offs, what worked, what failed, and what could be better.
 
+[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Projects-purple)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+
 ---
 
 ## How to Read This Section

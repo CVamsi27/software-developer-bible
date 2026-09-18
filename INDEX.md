@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 171 h 41 m of reading (550 files, ~19 min average).
+> **Study time:** ≈ 172 h 58 m of reading (553 files, ~19 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-830-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-854-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-September%202026-purple)](#)
 
@@ -62,43 +62,43 @@ The technical material is grouped by **what you're studying**, not by which inte
 
 ---
 
-### 10-frontend — Frontend (118 files in 8 sub-stacks)
+### 10-frontend — Frontend (122 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------- |
-| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 32 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
+| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 34 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
 | 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 18 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
 | 10.3 | [React](10-frontend/10.3-react/INDEX.md) | 22 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 17 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
 | 10.5 | [Form Handling](10-frontend/10.5-form-handling/INDEX.md) | 7 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
 | 10.6 | [Animation](10-frontend/10.6-animation/INDEX.md) | 8 | Framer Motion, CSS Animations, GSAP, React Spring, View Transitions |
-| 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 7 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
+| 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 9 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 7 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA, EAS builds, OTA updates, store release, interview questions |
 
-### 20-backend — Backend (139 files in 10 sub-stacks)
+### 20-backend — Backend (143 files in 10 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 13 | Event loop, streams, clustering, web streams, child processes, test runner |
-| 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 18 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 19 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 19 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
+| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 21 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
 | 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 24 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication, row-level security |
 | 20.5 | [Auth & Security](20-backend/20.5-security/INDEX.md) | 21 | **[auth track](20-backend/20.5-security/01-auth/INDEX.md):** fundamentals → sessions → JWT → OAuth → RBAC → ABAC deep-dive · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) |
 | 20.6 | [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, transactional outbox, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 20.7 | [GraphQL](20-backend/20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
-| 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
+| 20.8 | [Caching](20-backend/20.8-caching/INDEX.md) | 4 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 20.12 | [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 | 20.13 | [Java](20-backend/20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
 
-### 30-architecture — Architecture (106 files in 3 sub-stacks)
+### 30-architecture — Architecture (108 files in 3 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 30.1 | [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) | 38 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory Method, Abstract Factory, Builder, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. **All 23 GoF patterns** + modern patterns, organized by category. |
-| 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 52 | 21 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 31 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
+| 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 54 | 21 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 31 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
 | 30.3 | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 16 | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), idempotency-retry deep dive, leader election & consensus, zero-downtime deployments, data pipelines, multi-tenant SaaS |
 
-### Platform (92 files in 12 sub-stacks)
+### Platform (93 files in 12 sub-stacks)
 
 | Sub-stack | Files | Topics |
 | -------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -111,18 +111,18 @@ The technical material is grouped by **what you're studying**, not by which inte
 | [Serverless & Edge](40-platform/40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, Fly.io, Vite SPA on Cloudflare |
 | [Monorepo](40-platform/40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel |
 | [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 1 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
-| [CDN & Edge](40-platform/40.10-cdn/INDEX.md) | 3 | CDN caching strategies, invalidation, edge functions, PHI-at-edge considerations |
+| [CDN & Edge](40-platform/40.10-cdn/INDEX.md) | 4 | CDN caching strategies, invalidation, edge functions, PHI-at-edge considerations |
 | [Reverse Proxy](40-platform/40.11-reverse-proxy/INDEX.md) | 1 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, upstream LB, TLS termination, buffering, rate limiting, proxy_cache, nginx vs HAProxy vs Envoy |
 | [IaC & Terraform](40-platform/40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
 
-### Quality (37 files in 4 sub-stacks)
+### Quality (38 files in 4 sub-stacks)
 
 | Sub-stack | Files | Topics |
 | ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------- |
 | [Testing](50-quality/50.1-testing/INDEX.md) | 14 | Jest, RTL, unit, integration, E2E, mocking, Vitest, load testing, chaos engineering |
 | [Accessibility](50-quality/50.2-accessibility/INDEX.md) | 9 | WCAG, ARIA, keyboard navigation, color contrast, forms & labels |
 | [Performance Monitoring](50-quality/50.3-performance-monitoring/INDEX.md) | 9 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
-| [Production Engineering](50-quality/50.4-production-engineering/INDEX.md) | 5 | Incident response, SLI/SLO/error budgets, chaos engineering |
+| [Production Engineering](50-quality/50.4-production-engineering/INDEX.md) | 6 | Incident response, SLI/SLO/error budgets, chaos engineering |
 
 ### Real-Time (11 files)
 
@@ -201,4 +201,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 851 files, 361K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).
+*Last updated: September 2026 — 854 files, 362K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).

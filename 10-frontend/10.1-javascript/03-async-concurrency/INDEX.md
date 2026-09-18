@@ -1,9 +1,9 @@
 # Async & Concurrency — JavaScript
 
 > **Study time:** ≈ 2 h 7 m of reading (6 files, ~21 min average).
-> **5 files.** The most-asked topic in senior JS interviews: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
+> **6 files.** The most-asked topic in senior JS interviews: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](#files)
+[![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Async_and_Concurrency-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

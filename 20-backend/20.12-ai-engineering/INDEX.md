@@ -1,6 +1,6 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 19 m of reading (7 files, ~11 min average).
 > **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Every senior full-stack loop now touches this; your Docita AI-kill-switch story lives here.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)

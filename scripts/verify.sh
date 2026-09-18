@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs the eight mechanical checks in order; exits non-zero if any real
-# failure is found. Known lane-80.x numbering GAPS are intentional (numbers
-# owned by projects/docita prep docs) and reported as baseline noise, not
-# failures.
+# Runs all eighteen checks in order; exits non-zero if any real failure is
+# found. Known lane-80.x numbering GAPS are intentional (numbers owned by
+# projects/docita prep docs) and reported as baseline noise, not failures.
+# Gate labels are append-only (8b/8c arrived after 8), so the label order in
+# this file is the gate order a reader should follow.
 #
 # Usage:  bash scripts/verify.sh        (from the repo root)
 set -u
@@ -12,9 +13,13 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/17  check_counts.py — repo-total scale claims vs live disk"
-echo "     python3 scripts/check_counts.py"
+echo "1/18  check_counts.py — every count claim vs live disk"
+echo "     python3 scripts/check_counts.py   (--write restamps them)"
 echo "------------------------------------------------------------"
+# Owns every count in the navigation surface, not just the two repo-scale
+# rows: each INDEX's Files badge, the "N files in M sub-stacks" headers and
+# the Files column of every navigation table. Nothing else measured those,
+# so 15 of 159 badges had drifted away from the folder they point at.
 if python3 scripts/check_counts.py; then
     echo "  PASS"
 else
@@ -22,7 +27,7 @@ else
 fi
 
 echo ""
-echo "2/17  check_alignment.py — table pipes + ASCII box walls"
+echo "2/18  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -33,7 +38,7 @@ else
 fi
 
 echo ""
-echo "3/17  check_structure.py — IDs, sequences, interview-last"
+echo "3/18  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -53,7 +58,7 @@ else
 fi
 
 echo ""
-echo "4/17  check_links.py — fence-aware broken-link scan"
+echo "4/18  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -64,7 +69,7 @@ else
 fi
 
 echo ""
-echo "5/17  check_freshness.py — stale-API signature scan"
+echo "5/18  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -75,7 +80,7 @@ else
 fi
 
 echo ""
-echo "6/17  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/18  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -90,23 +95,7 @@ else
 fi
 
 echo ""
-echo "7/17  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
-echo "     python3 scripts/check_claims.py"
-echo "------------------------------------------------------------"
-# Born from the Sept 2026 cross-repo audits: claim phrases that were
-# purged as unverifiable (Next.js-at-Docita, invented founder bios,
-# unsourceable AI specifics) must never re-enter ACTIVE campaign files.
-# Historical sent-application reports are allowlisted — they record what
-# was actually sent and must stay frozen.
-if python3 scripts/check_claims.py; then
-    echo "  PASS"
-else
-    echo "  FAIL — reword with a source-verified claim, or extend CLAIM_ALLOWLIST if the file is historical"
-    FAIL=1
-fi
-
-echo ""
-echo "6b/17 check_template.py — template compliance (sections, order, genres)"
+echo "6b/18 check_template.py — template compliance (sections, order, genres)"
 echo "     python3 scripts/check_template.py"
 echo "------------------------------------------------------------"
 # Supersedes check_required_sections.py (its Summary/See Also/References and
@@ -122,7 +111,23 @@ else
 fi
 
 echo ""
-echo "8/17  check_code_whitespace.py — code-block indentation hygiene"
+echo "7/18  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
+echo "     python3 scripts/check_claims.py"
+echo "------------------------------------------------------------"
+# Born from the Sept 2026 cross-repo audits: claim phrases that were
+# purged as unverifiable (Next.js-at-Docita, invented founder bios,
+# unsourceable AI specifics) must never re-enter ACTIVE campaign files.
+# Historical sent-application reports are allowlisted — they record what
+# was actually sent and must stay frozen.
+if python3 scripts/check_claims.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — reword with a source-verified claim, or extend CLAIM_ALLOWLIST if the file is historical"
+    FAIL=1
+fi
+
+echo ""
+echo "8/18  check_code_whitespace.py — code-block indentation hygiene"
 echo "     python3 scripts/check_code_whitespace.py"
 echo "------------------------------------------------------------"
 # Trailing whitespace inside fences and whole-block paste-shift base
@@ -137,7 +142,7 @@ else
 fi
 
 echo ""
-echo "8b/17 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "8b/18 fix_box_code_indent.py --check — de-indented code inside box diagrams"
 echo "     python3 scripts/fix_box_code_indent.py --check --json --css"
 echo "------------------------------------------------------------"
 # Code embedded between ASCII box walls that lost its indentation (every
@@ -154,7 +159,7 @@ else
 fi
 
 echo ""
-echo "8c/17 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "8c/18 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
 echo "     python3 scripts/fix_box_width.py --check"
 echo "------------------------------------------------------------"
 # Boxes whose right wall is pushed far past their content wrap on
@@ -170,7 +175,7 @@ else
     FAIL=1
 fi
 
-echo "9/17 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "9/18 check_first_principles.py --diff — First Principles coverage must not regress"
 echo "     python3 scripts/check_first_principles.py --diff"
 echo "------------------------------------------------------------"
 # Concept chapters carry a hand-authored ## First Principles section
@@ -187,7 +192,7 @@ else
 fi
 
 echo "------------------------------------------------------------"
-echo "10/17 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "10/18 check_cross_refs.py — inline → N.N.N refs resolve to real files"
 echo "     python3 scripts/check_cross_refs.py"
 echo "------------------------------------------------------------"
 # Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
@@ -197,11 +202,11 @@ if python3 scripts/check_cross_refs.py; then
     echo "  PASS"
 else
     echo "  FAIL"
-    FAILURES=$((FAILURES+1))
+    FAIL=1
 fi
 
 echo ""
-echo "11/17 check_duplication.py --strict — no chapter teaches another chapter's prose"
+echo "11/18 check_duplication.py --strict — no chapter teaches another chapter's prose"
 echo "     python3 scripts/check_duplication.py --strict"
 echo "------------------------------------------------------------"
 # The \"every topic lives in exactly ONE place\" rule is only as good as the
@@ -218,7 +223,7 @@ else
 fi
 
 echo ""
-echo "12/17 check_topic_twins.py — twin chapters must cross-link"
+echo "12/18 check_topic_twins.py — twin chapters must cross-link"
 echo "     python3 scripts/check_topic_twins.py"
 echo "------------------------------------------------------------"
 # A pattern chapter, its framework implementation and its case study are a
@@ -235,7 +240,7 @@ else
 fi
 
 echo ""
-echo "13/17 read_time.py --check — declared study times vs computed estimates"
+echo "13/18 read_time.py --check — declared study times vs computed estimates"
 echo "     python3 scripts/read_time.py --check"
 echo "------------------------------------------------------------"
 # Read times were hand-guessed and contradicted each other (2,912 words
@@ -250,7 +255,7 @@ else
 fi
 
 echo ""
-echo "14/17 gen_master_index.py --check — generated search page in sync with the corpus"
+echo "14/18 gen_master_index.py --check — generated search page in sync with the corpus"
 echo "     python3 scripts/gen_master_index.py --check"
 echo "------------------------------------------------------------"
 # search.html is generated from the same enforced metadata (gate 6b) and
@@ -261,6 +266,24 @@ if python3 scripts/gen_master_index.py --check >/dev/null 2>&1; then
 else
     python3 scripts/gen_master_index.py --check 2>&1 | tail -3
     echo "  FAIL — run: python3 scripts/gen_master_index.py"
+    FAIL=1
+fi
+
+echo ""
+echo "15/18 check_verify_wiring.py — verify.sh's own wiring + gate-count self-consistency"
+echo "     python3 scripts/check_verify_wiring.py"
+echo "------------------------------------------------------------"
+# The one gate that watches the harness instead of the corpus. Gate 10's
+# failure branch once wrote a variable that nothing else read, so under
+# `set -u` the unbound arithmetic aborted this script BEFORE its trailing
+# `exit $FAIL` was reached: a broken cross-reference printed FAIL, skipped
+# gates 11-14, and still exited 0. Every individual gate script was
+# correct throughout - nothing checked whether verify.sh listened. This
+# also owns the gate count, which was hand-maintained in three files.
+if python3 scripts/check_verify_wiring.py; then
+    echo "  PASS"
+else
+    echo "  FAIL — the harness, not the corpus, is broken: every failure branch must set FAIL=1"
     FAIL=1
 fi
 

@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](.)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](../INDEX.md)
-[![Files](https://img.shields.io/badge/files-806-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-854-orange)](../INDEX.md)
 
 ---
 
@@ -13,7 +13,7 @@
 | Lane | Folder | For | Style | Files |
 | ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----: |
 | **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](../81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India product companies, US H1B/STEM-OPT | LeetCode-heavy, 8-12 week intensive, USD 150-400K+ | 22 |
-| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa sponsorship | 31 |
+| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa sponsorship | 36 |
 
 **Not sure?** Read the [lane decision matrix in abroad-full-stack](../80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes.
 
@@ -26,14 +26,14 @@ The bible is split into two layers:
 | Layer | What it is | Folders | Numbered | Modifies |
 | ------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------- | ------------------------ |
 | **Stacks** (technical material) | JS, React, DB, K8s, design patterns, etc. | `10-frontend` → `70-interview-toolkit` (7 folders) | Yes (study order) | Both lanes consume these |
-| **Lanes** (interview prep) | Resume, take-home, behavioral, comp, visa, company guides | `80-lanes-abroad-full-stack` (31 files), `81-lanes-indian-sde-faang` (22 files) | Yes (in-lane ordering) | Each lane is independent |
+| **Lanes** (interview prep) | Resume, take-home, behavioral, comp, visa, company guides | `80-lanes-abroad-full-stack` (36 files), `81-lanes-indian-sde-faang` (22 files) | Yes (in-lane ordering) | Each lane is independent |
 
 ```text
                     Interview Lanes (this folder)
         ┌───────────────────────────────────────────────────────────────┐
         │  81-indian-sde-faang        80-abroad-full-stack              │
         │ ┌─────────────────────────────┐ ┌──────────────────────────┐  │
-        │ │ 22 files                    │ │ 31 files                 │  │
+        │ │ 22 files                    │ │ 36 files                 │  │
         │ │ 8-week plan                 │ │ 4-week plan              │  │
         │ │ 5 co. guides                │ │ 8 STARs                  │  │
         │ │ leetcode                    │ │ take-home                │  │

@@ -1,11 +1,11 @@
 # System Design — Index
 
-> **Study time:** ≈ 18 h 3 m of reading (52 files, ~21 min average).
-> **52 files** — split into **theory** (21 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
+> **Study time:** ≈ 18 h 45 m of reading (54 files, ~21 min average).
+> **54 files** — split into **theory** (21 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
 > Study in three passes: **I. Theory** (CAP → consistency → scaling levers) → **II. The method** (how-to-approach framework) → **III. Case studies** (pick by JD domain).
 
-[![Files](https://img.shields.io/badge/files-52-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-54-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

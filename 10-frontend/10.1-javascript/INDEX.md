@@ -1,9 +1,9 @@
 # JavaScript — Index
 
 > **Study time:** ≈ 11 h 32 m of reading (34 files, ~20 min average).
-> **33 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
+> **34 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-33-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-34-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

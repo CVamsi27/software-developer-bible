@@ -5,10 +5,10 @@
   "repos/docita"
  ],
  "totals": {
-  "chapters": 550,
+  "chapters": 553,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 10301
+  "read_minutes": 10378
  },
  "chapters": [
   {
@@ -1211,7 +1211,20 @@
    "m": 13
   },
   {
-   "p": "10-frontend/10.7-html-css/10.7.08-interview-questions.html",
+   "p": "10-frontend/10.7-html-css/10.7.08-browser-storage.html",
+   "t": "Browser Storage",
+   "s": "HTML/CSS",
+   "c": "Frontend",
+   "g": [
+    "browser",
+    "concept",
+    "security",
+    "storage"
+   ],
+   "m": 21
+  },
+  {
+   "p": "10-frontend/10.7-html-css/10.7.09-interview-questions.html",
    "t": "HTML/CSS Interview Questions",
    "s": "HTML/CSS",
    "c": "Frontend",
@@ -1435,7 +1448,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 9
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.html",
@@ -1445,7 +1458,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 8
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.html",
@@ -1485,7 +1498,7 @@
    "g": [
     "production"
    ],
-   "m": 4
+   "m": 9
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.html",
@@ -3253,7 +3266,7 @@
     "messaging",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
@@ -3439,6 +3452,33 @@
     "theory"
    ],
    "m": 18
+  },
+  {
+   "p": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.html",
+   "t": "DNS & Name Resolution",
+   "s": "System Design",
+   "c": "Architecture",
+   "g": [
+    "concept",
+    "dns",
+    "networking",
+    "theory"
+   ],
+   "m": 19
+  },
+  {
+   "p": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.html",
+   "t": "TLS, HTTPS & the Certificate Lifecycle",
+   "s": "System Design",
+   "c": "Architecture",
+   "g": [
+    "concept",
+    "networking",
+    "security",
+    "theory",
+    "tls"
+   ],
+   "m": 22
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",

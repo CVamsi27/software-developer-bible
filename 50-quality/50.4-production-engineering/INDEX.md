@@ -1,9 +1,9 @@
 # Production Engineering — Index
 
 > **Study time:** ≈ 57 min of reading (6 files, ~10 min average).
-> **5 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
+> **6 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

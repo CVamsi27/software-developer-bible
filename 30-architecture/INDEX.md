@@ -1,11 +1,11 @@
 # Architecture Stack
 
-> **Study time:** ≈ 35 h 54 m of reading (106 files, ~20 min average).
+> **Study time:** ≈ 36 h 36 m of reading (108 files, ~20 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
 
-[![Files](https://img.shields.io/badge/files-106-blue)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-108-blue)](INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-3-green)](#study-order)
 
 ---

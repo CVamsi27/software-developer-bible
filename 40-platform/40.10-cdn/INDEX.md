@@ -5,7 +5,7 @@
 >
 > Three deep chapters, but the *concepts inside them* classify like a pattern catalog. Learn the concept groups below and you can answer any edge question.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

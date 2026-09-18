@@ -12,6 +12,14 @@ and HTML comments are ignored — they are examples, not navigation. External
 links (http/https/mailto/tel), anchor-only links, and relative targets that
 escape the repo root are reported as skipped, never as broken.
 
+It also checks *display text*: a link whose visible label is a relative path
+(`../../2-Backend-Stack/12-Microservices/03-Saga-Pattern.md`) must point at a
+path that exists. Those are pre-renumbering relics — the target resolves, so a
+target-only checker never sees them, but the reader is shown archaeology from
+a folder layout that no longer exists. A humanized label that happens to
+contain `../` (the generated `← Previous: ../02 Io And Data/index` footers)
+has a space and a capital, so it is not treated as a path.
+
 Heading slugs follow GitHub-style slugging: lowercase, strip punctuation
 (dropping characters like `.` and `+`), each whitespace run becomes a
 hyphen, and duplicate headings within a file get -1, -2 suffixes.
@@ -33,7 +41,11 @@ EXTERNAL_PREFIXES = (
     '//', 'javascript:', '<',
 )
 
-LINK_RE = re.compile(r'\[[^\]\n]*\]\(([^)\n]+)\)')
+# Post-mortem reports quote dead paths as *documentation* of a past defect,
+# so their visible text is deliberately unresolvable. Nothing else is exempt.
+STALE_TEXT_EXEMPT = ('80-lanes-abroad-full-stack/personal/',)
+
+LINK_RE = re.compile(r'\[([^\]\n]*)\]\(([^)\n]+)\)')
 # A fence opener may carry an info string (```js); a closer must be an
 # otherwise-empty line of at least as many of the same marker chars.
 FENCE_OPEN_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})')
@@ -137,6 +149,7 @@ def is_external(target):
 
 def main():
     broken = []
+    stale_text = []
     total = 0
     anchors_ok = 0
     anchors_broken = 0
@@ -173,7 +186,20 @@ def main():
                 line = re.sub(r'`[^`\n]*`', '', line)
 
                 for m in LINK_RE.finditer(line):
-                    raw_target = m.group(1).strip()
+                    label = m.group(1).strip()
+                    # A relative path as *visible text* must resolve. Spaced
+                    # labels are humanized titles (the nav-footer convention),
+                    # not paths, so they are not judged as one.
+                    if not rel.startswith(STALE_TEXT_EXEMPT) \
+                            and label.startswith(('../', './')) \
+                            and ' ' not in label:
+                        as_path = os.path.normpath(
+                            os.path.join(os.path.dirname(path), label))
+                        if not os.path.exists(as_path):
+                            stale_text.append(f'{rel}:{lineno}: link text '
+                                              f'"{label}" is a path that no '
+                                              f'longer exists')
+                    raw_target = m.group(2).strip()
                     # Optional markdown title after whitespace, angle brackets.
                     target = raw_target.split()[0].strip('\'"') \
                         if raw_target.split() else ''
@@ -225,6 +251,13 @@ def main():
                             f'{rel}:{lineno}: anchor #{frag_unq} has no '
                             f'matching heading in {target_rel}')
 
+    if stale_text:
+        print(f'STALE LINK TEXT ({len(stale_text)}) — visible label is a path '
+              f'that no longer exists:')
+        for s in stale_text:
+            print(f'  {s}')
+        print("  fix: rewrite the label as the human title of the target"
+              " (a reader should never see a folder path).\n")
     if broken:
         print(f'BROKEN LINKS ({len(broken)}):')
         for b in broken:
@@ -232,8 +265,10 @@ def main():
         print(f'\n{total} links checked ({anchors_ok} anchors OK), '
               f'{len(broken)} broken ({skipped} external links skipped).')
         sys.exit(1)
+    if stale_text:
+        sys.exit(1)
     print(f'OK — {total} links checked ({anchors_ok} anchors verified), '
-          f'0 broken ({skipped} external links skipped).')
+          f'0 broken, 0 stale labels ({skipped} external links skipped).')
 
 
 if __name__ == '__main__':

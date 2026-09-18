@@ -54,6 +54,14 @@ EXEMPT_PREFIXES = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang', 'p
 META_COMMENT = re.compile(r'^<!--\s*(section:.*?)\s*-->', re.M)
 BADGE_RX = re.compile(
     r'^\[\!\[(Section|Category|Tags|Read time)\]\(https://img\.shields\.io/', re.M)
+# Same badge line, but capturing the link *target* as well. contributing.md
+# ("File Metadata") says badges in content files link to `#`; only INDEX/README
+# badges point at the central INDEX. This gate walks content files only, so `#`
+# is the sole valid target — twelve recently authored chapters had drifted to
+# `INDEX.md` / `../../INDEX.md` because only presence and order were checked.
+BADGE_TARGET_RX = re.compile(
+    r'^\[\!\[(Section|Category|Tags|Read time)\]\(https://img\.shields\.io/[^)]*\)\]'
+    r'\(([^)]*)\)[ \t]*$', re.M)
 BADGE_ORDER = ('Section', 'Category', 'Tags', 'Read time')
 VALID_CATEGORIES = {
     'Core', 'Frontend', 'Backend', 'API', 'Data', 'Architecture', 'DevOps',
@@ -244,7 +252,45 @@ def check_metadata(text: str):
     ranks = [BADGE_ORDER.index(b) for b in found]
     if ranks != sorted(ranks):
         problems.append(f"metadata: badges out of order (got {found})")
+    # Targets: contributing.md — content-file badges must link to `#`.
+    for name, target in BADGE_TARGET_RX.findall(header):
+        if target != '#':
+            problems.append(f"metadata: {name} badge links to {target!r}, "
+                            f"expected '#' (contributing.md 'File Metadata')")
     return problems
+
+
+# An empty section is a heading immediately followed by another heading at the
+# SAME or shallower level: nothing belongs to it, so it renders as a dead entry
+# in the document outline and its apparent children sit beside it instead of
+# under it. The subtlety that made this worth gating carefully: a heading
+# followed by a DEEPER heading is completely normal — it is how every
+# `## How It Works` opens its subsections — so a naive "heading followed by a
+# heading" test fires on 1765 legitimate places. Only same-or-shallower counts.
+HEAD_ANY = re.compile(r'^(#{2,6}) (.+?)\s*$')
+
+
+def empty_sections(text):
+    """-> list of (lineno, level, title) for headings with no content."""
+    lines = text.split('\n')
+    in_fence = False
+    heads = []
+    for i, line in enumerate(lines):
+        if FENCE.match(line):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        m = HEAD_ANY.match(line)
+        if m:
+            heads.append((i + 1, len(m.group(1)), m.group(2)))
+    issues = []
+    for k in range(len(heads) - 1):
+        ln, lvl, title = heads[k]
+        nxt, nlvl, _ = heads[k + 1]
+        if nlvl <= lvl and not [x for x in lines[ln:nxt - 1] if x.strip()]:
+            issues.append((ln, lvl, title))
+    return issues
 
 
 def check(path: str):
@@ -295,6 +341,12 @@ def check(path: str):
                         "(rename to `## Interview Questions`)")
 
     # order check: accept any of the canonical orders, on the subset present
+    # Empty sections (a heading with nothing under it at its own level).
+    for lineno, lvl, title in empty_sections(text):
+        problems.append(f"empty section at line {lineno}: '{'#' * lvl} {title}' has no "
+                        f"content and no deeper heading beneath it (give it content, "
+                        f"or fold it into the section it labels)")
+
     sub = [h for h in heads if h in CANON_A]
     ok = False
     for canon in CANONS:

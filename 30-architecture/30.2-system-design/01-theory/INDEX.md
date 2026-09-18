@@ -1,13 +1,13 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 5 h 39 m of reading (21 files, ~16 min average).
-> **21 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+> **Study time:** ≈ 6 h 21 m of reading (23 files, ~17 min average).
+> **23 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
-[![Files](https://img.shields.io/badge/files-21-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Read all 14 foundational files first**, then the 6 meta guides and the transport deep-dive. After this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
+**Read all 14 foundational files first**, then the 6 meta guides and the network deep-dives (transport, DNS, TLS). After this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
 
 ---
 
@@ -16,9 +16,9 @@
 The 21 files classify into 6 conceptual categories — the "GoF classification" of distributed systems theory.
 
 | Category | Files | Why it matters |
-| -------------------------- | ----: | -------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Data & Consistency** | 6 | CAP/PACELC, consistency models, sharding & replication, distributed transactions, consensus & leader election, distributed locks |
-| **Traffic & Scale** | 5 | Load balancing, TCP/UDP transport fundamentals, rate limiting, backpressure & flow control, capacity planning |
+| **Traffic & Scale** | 7 | Load balancing, TCP/UDP transport fundamentals, the network stack (DNS & name resolution, TLS/HTTPS), rate limiting, backpressure & flow control, capacity planning |
 | **Performance & Delivery** | 3 | Caching patterns, queues & async, outbox & CDC |
 | **Reliability & Topology** | 4 | Failure modes, resilience deep-dive, multi-region deployment, architecture patterns |
 | **The Method + Drills** | 2 | How-to-approach framework, 50+ interview questions |
@@ -47,10 +47,10 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. |
 | 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. |
 
-## Meta guides & transport deep-dive (read after the 14)
+## Meta guides & network deep-dive (read after the 14)
 
 | # | File | What it covers |
-| --- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 15 | [How to Approach](30.2.1.15-how-to-approach.md) | 4-phase framework: clarify → estimate → high-level → deep-dive. The structure to use in every interview. |
 | 16 | [Interview Questions](30.2.1.16-interview-questions.md) | 50+ curated system design questions with answers, organized by difficulty. |
 | 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch, Cuckoo filter, Merkle tree — fixed-memory, bounded-error answers to "seen?", "how many unique?", "how often?" |
@@ -58,6 +58,8 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit |
 | 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO |
 | 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale |
+| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as load balancer (and why failover is minutes), anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps |
+| 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Handshake vs record layer, hybrid crypto (ECDHE + AEAD), certificates and the chain of trust, DV/OV/EV, forward secrecy, resumption and 0-RTT replay risk, revocation/HSTS, termination points and mTLS, ACME automation |
 
 ---
 
@@ -86,4 +88,4 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Backpressure | `extensions/query-budget.extension.ts`; Fly-level concurrency caps (`soft_limit 60 / hard_limit 100`) in `fly.toml` |
 | Failure modes & resilience | `ops-alert.service.ts` + listener; runbooks in `docs/operations/playbooks/*` (razorpay outage, DB exhaustion, queue backlog) |
 
-_Capacity planning and multi-region: no direct docita implementation yet._ The TCP/UDP chapter stays conceptual here — nearest real anchors are `fetch-with-timeout.ts` (every outbound call budgeted) and Cloudflare edge termination in front of the API.
+_Capacity planning and multi-region: no direct docita implementation yet._ The network-stack chapters (TCP/UDP, DNS, TLS) stay conceptual here — nearest real anchors are `fetch-with-timeout.ts` (every outbound call budgeted) and Cloudflare edge termination in front of the API, which is where DNS and TLS actually terminate for docita.

@@ -1,6 +1,18 @@
-# Code-block whitespace hygiene.
+# Verification gates: the fast, stdlib-only text scans that need no network
+# and no services, so they can run on every push/PR touching markdown.
 #
-# Two gates:
+# The steps below run the content gates (whitespace, box geometry, template
+# compliance, cross-references, duplication, topic twins, read time,
+# search-page freshness, harness wiring); gate 7 (claims integrity) lives in
+# claims-integrity.yml. The **final step runs `bash scripts/verify.sh`**,
+# which executes the whole suite — so no gate can be silently absent from CI.
+# That backstop closed a real gap: gates 1-6, 6b and 9 had no CI step at all,
+# leaving count drift, misaligned tables, broken numbering, broken links,
+# stale APIs, unbaselined citations and First-Principles regressions all
+# green in CI.
+#
+# This workflow began as code-block whitespace hygiene, and the two gates it
+# was built around are still documented in full:
 #
 # 1. check_code_whitespace.py — fails when trailing whitespace or
 #    whole-block paste-shift base indents (>= 4 spaces on EVERY line of
@@ -32,30 +44,14 @@ on:
   push:
     paths:
       - '**/*.md'
-      - 'scripts/check_code_whitespace.py'
-      - 'scripts/fix_code_whitespace.py'
-      - 'scripts/fix_box_code_indent.py'
-      - 'scripts/fix_box_width.py'
-      - 'scripts/check_cross_refs.py'
-      - 'scripts/check_first_principles.py'
-      - 'scripts/check_duplication.py'
-      - 'scripts/check_topic_twins.py'
-      - 'scripts/read_time.py'
-      - 'scripts/gen_master_index.py'
+      - 'scripts/**'
+      - '.github/workflows/**'
       - 'search.html'
   pull_request:
     paths:
       - '**/*.md'
-      - 'scripts/check_code_whitespace.py'
-      - 'scripts/fix_code_whitespace.py'
-      - 'scripts/fix_box_code_indent.py'
-      - 'scripts/fix_box_width.py'
-      - 'scripts/check_cross_refs.py'
-      - 'scripts/check_first_principles.py'
-      - 'scripts/check_duplication.py'
-      - 'scripts/check_topic_twins.py'
-      - 'scripts/read_time.py'
-      - 'scripts/gen_master_index.py'
+      - 'scripts/**'
+      - '.github/workflows/**'
       - 'search.html'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
@@ -67,7 +63,8 @@ permissions:
 jobs:
   whitespace:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # Raised from 5: the full-suite step runs every gate in one job.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
 
@@ -255,3 +252,38 @@ jobs:
       - name: Search-page freshness gate (14)
         if: always()
         run: python3 scripts/gen_master_index.py --check
+
+      # Watches the harness rather than the corpus. It belongs in CI precisely
+      # because the defect it guards against produced a *green* build: gate 10
+      # once wrote a variable nothing read, so an unbound-variable abort killed
+      # verify.sh before its `exit $FAIL` and CI reported success on a red tree.
+      - name: Harness-wiring gate (15)
+        if: always()
+        run: |
+          set +e
+          python3 scripts/check_verify_wiring.py | tee wiring-output.txt
+          code=${PIPESTATUS[0]}
+          {
+            echo "## Harness-wiring gate"
+            echo
+            if [ "$code" -eq 0 ]; then
+              echo "Clean — every failure branch reaches the exit code, and the gate count agrees in verify.sh, contributing.md and docs/verification-gates.md."
+            else
+              echo "**FAILED** — a gate whose FAIL output cannot reach the exit code does not block anything. Use \`FAIL=1\` in the failure branch of \`scripts/verify.sh\`; if only the gate count drifted, run \`python3 scripts/check_verify_wiring.py --write\`."
+            fi
+            echo
+            echo '```'
+            tail -30 wiring-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit "$code"
+        id: wiring
+
+      # The backstop. The per-gate steps above exist for their readable
+      # summaries; this one is the guarantee. Running the suite from one place
+      # means CI cannot silently lose a gate, and it makes "a red X means a
+      # gate your local run should have caught" true for *every* gate rather
+      # than only the ones that happened to get their own step.
+      - name: Full suite - every gate via verify.sh
+        if: always()
+        run: bash scripts/verify.sh

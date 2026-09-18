@@ -1,13 +1,13 @@
 # Frontend Stack
 
-> **Study time:** ≈ 38 h 27 m of reading (121 files, ~19 min average).
+> **Study time:** ≈ 38 h 48 m of reading (122 files, ~19 min average).
 > **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 119 files across 8 sub-stacks, organized by what you need to know in what order.
+> 122 files across 8 sub-stacks, organized by what you need to know in what order.
 
 **Real-world anchor:** every category page below ends with a [Docita Anchor](https://github.com/CVamsi27/docita) table pointing at the matching production code.
 
-[![Files](https://img.shields.io/badge/files-118-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-122-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

@@ -393,6 +393,47 @@ def strict_flags(text):
     return issues
 
 
+# ---------------------------------------------------------------------------
+# Headerless tables: a separator row with no header row above it renders with a
+# blank header, so the column labels silently vanish from the page — the reader
+# of a "| Mistake | Fix |" table never learns that column two is the fix. Three
+# chapters shipped that way (a duplicated separator left by one generation
+# pass), because alignment only ever checked *pipe* consistency, never that a
+# header existed. Deliberately not auto-fixable: the header text is content, and
+# inventing it would be worse than failing.
+# ---------------------------------------------------------------------------
+SEP_ROW = re.compile(r'^\s*\|[\s\-:|]*\-[\s\-:|]*\|\s*$')
+TABLE_ROW = re.compile(r'^\s*\|')
+FENCE = re.compile(r'^\s*(```|~~~)')
+
+
+def headerless_tables(text):
+    """-> list of (line_no, message) for separators with no header row above."""
+    lines = text.split('\n')
+    issues = []
+    in_fence = False
+    i = 0
+    while i < len(lines):
+        if FENCE.match(lines[i]):
+            in_fence = not in_fence
+            i += 1
+            continue
+        if not in_fence and SEP_ROW.match(lines[i]):
+            j = i - 1
+            while j >= 0 and lines[j].strip() == '':
+                j -= 1
+            prev = lines[j] if j >= 0 else ''
+            if not (TABLE_ROW.match(prev) and not SEP_ROW.match(prev)):
+                issues.append((i + 1,
+                               'headerless table: separator row with no header row above it'))
+                # A run of separators is one missing header, not several: the
+                # historical defect shipped a duplicated separator row.
+                while i + 1 < len(lines) and SEP_ROW.match(lines[i + 1]):
+                    i += 1
+        i += 1
+    return issues
+
+
 def process_file(path, fix):
     with open(path, encoding='utf-8') as f:
         orig = f.read()
@@ -419,12 +460,16 @@ def main():
                  for f in fs if f.endswith('.md')]
     fixable = []
     drifted = []
+    headerless = []
     for p in sorted(paths):
         n = process_file(p, fix)
         if n == 1:
             fixable.append(p)
         elif n > 1:
             drifted.append((p, n))
+        with open(p, encoding='utf-8') as f:
+            for ln, msg in headerless_tables(f.read()):
+                headerless.append((p, ln, msg))
     if fix:
         print(f"{len(fixable)} file(s) fixed" if fixable
               else "Nothing to fix — all aligned.")
@@ -432,10 +477,21 @@ def main():
             print(f"\n{len(drifted)} file(s) with guarded drift (not auto-fixed):")
             for p, n in drifted:
                 print(f"  {n} issue(s)  {p}")
-        return
+        if headerless:
+            print(f"\n{len(headerless)} headerless table(s) — add a header row by hand "
+                  f"(not auto-fixable):")
+            for p, ln, msg in headerless:
+                print(f"  {p}:{ln}  {msg}")
+        sys.exit(1 if (drifted or headerless) else 0)
     bad = fixable + [p for p, _ in drifted]
+    bad += sorted({p for p, _, _ in headerless})
     print(f"{len(bad)} file(s) with misaligned boxes/tables"
           + ("" if not bad else ":\n  " + "\n  ".join(bad)))
+    if headerless:
+        print(f"\n{len(headerless)} headerless table(s) — add a header row by hand "
+              f"(not auto-fixable):")
+        for p, ln, msg in headerless:
+            print(f"  {p}:{ln}  {msg}")
     sys.exit(1 if bad else 0)
 
 

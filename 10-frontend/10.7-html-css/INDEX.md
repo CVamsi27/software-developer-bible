@@ -1,9 +1,9 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 26 m of reading (8 files, ~11 min average).
-> **7 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
+> **Study time:** ≈ 1 h 47 m of reading (9 files, ~12 min average).
+> **9 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -14,11 +14,12 @@
 ## Topic Categories
 
 | Category | Files | Why it matters |
-| -------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------ |
+| -------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------- |
 | [HTML](#html) | 1 | Semantic HTML, forms, accessibility, ARIA, HTML5 APIs |
 | [CSS](#css) | 1 | Flexbox, Grid, responsive design, CSS variables, modern CSS |
 | [CSS Architecture & Theming](#css-architecture--theming) | 2 | Cascade layers, BEM/CUBE/ITCSS, Modules vs CSS-in-JS vs Tailwind, design tokens, dark mode |
 | [Browser Internals](#browser-internals) | 1 | Critical rendering path, reflow vs repaint, GPU acceleration |
+| [Browser Storage](#browser-storage) | 1 | Cookies vs localStorage vs IndexedDB vs Cache API, quotas and eviction, sync cost, XSS threat model |
 | [PWA & SEO](#pwa--seo) | 2 | Service workers, offline support, Core Web Vitals, structured data |
 
 ---
@@ -47,7 +48,24 @@ Styling at scale: how you structure, name, and theme.
 | --: | ------ | -------- | ----------: |
 | 06 | [CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) | Cascade layers (`@layer`), specificity management, BEM, CUBE CSS, ITCSS, CSS Modules vs CSS-in-JS vs Tailwind decision matrix, stylelint governance, migration strategies | 11 min |
 | 07 | [Theming & Design Tokens](10.7.07-theming-design-tokens.md) | Primitive vs semantic tokens, custom-property theming, `prefers-color-scheme` + manual toggle, FOUC prevention, `data-theme` scoping, token distribution (Tailwind/CSS-in-JS), WCAG contrast recap | 13 min |
-| 08 | [Interview Questions](10.7.08-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 4 min |
+
+---
+
+## Browser Storage
+
+The client-side stores — and the security decision behind choosing one.
+
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 08 | [Browser Storage](10.7.08-browser-storage.md) | Origin boundary and partitioning, cookies (`HttpOnly`/`Secure`/`SameSite`), `localStorage`/`sessionStorage` sync cost, IndexedDB (async, transactions, migrations, upgrade blocking), Cache API + OPFS, quotas and eviction, XSS threat-model matrix | 21 min |
+
+---
+
+## Interview Prep
+
+| # | File | Topics | Read time |
+| --: | ------ | -------- | ----------: |
+| 09 | [Interview Questions](10.7.09-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 4 min |
 
 ---
 
@@ -80,7 +98,8 @@ Production concerns.
 4. **Theming & Design Tokens** (30 min) — dark mode done right
 5. **Browser Rendering** (30 min) — the mental model for performance
 6. **SEO** (30 min) — Core Web Vitals
-7. **PWA** (30 min) — if relevant to the JD
+7. **Browser Storage** (30 min) — cookies vs localStorage vs IndexedDB, and why tokens go in an `HttpOnly` cookie
+8. **PWA** (30 min) — if relevant to the JD
 
 ---
 
@@ -93,6 +112,8 @@ Production concerns.
 - "How would you implement dark mode without a theme flash?" (tokens + pre-paint script)
 - "CSS Modules vs Tailwind vs CSS-in-JS — how do you choose?" (runtime cost, SSR/RSC, tokens)
 - "What's a service worker?" (PWA)
+- "Where do you store a JWT — and why not `localStorage`?" (XSS threat model, `HttpOnly` cookies)
+- "`localStorage` vs cookies vs IndexedDB?" (who can read it, size, sync vs async)
 - "How do you optimize for SEO?" (SSR, structured data, meta tags)
 
 ---
@@ -104,6 +125,7 @@ Production concerns.
 - [React](../10.3-react/INDEX.md) — JSX is just HTML
 - [Next.js](../10.4-next.js/INDEX.md) — SSR/SSG for SEO
 - [Animation](../10.6-animation/INDEX.md) — CSS animations
+- [Security](../../20-backend/20.5-security/INDEX.md) — XSS, CSRF, sessions, and the server half of the storage decision
 
 ---
 

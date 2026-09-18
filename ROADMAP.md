@@ -4,7 +4,7 @@
 >
 > Pick your lane first (2 min): [Lane Decision](#phase-0--pick-your-lane-day-1-2-hours) · Full index: [INDEX.md](INDEX.md)
 
-[![Full path](https://img.shields.io/badge/duration-8_weeks_full_|_4_weeks_fast-blue)](#two-speeds-full-vs-fast)
+[![Full path](https://img.shields.io/badge/duration-9--10_weeks_full_|_4_weeks_fast-blue)](#two-speeds-full-vs-fast)
 [![Checkpoints](https://img.shields.io/badge/checkpoints-8-green)](#checkpoints--do-not-skip)
 [![Last Updated](https://img.shields.io/badge/last%20updated-August%202026-purple)](#)
 
@@ -21,7 +21,7 @@
    ├─ resume ├─ JS core ├─ Node.js ├─ design ├─ Docker ├─ testing ├─ 18 coding ├─ lane plan
    ├─ STAR ├─ TS deep ├─ NestJS │ patterns ├─ K8s basics ├─ a11y │ patterns ├─ take-home
    ├─ comms ├─ React ├─ API design ├─ SD theory ├─ CI/CD ├─ performance ├─ behavioral ├─ system design
-   └─ HR qs └─ Next.js ├─ databases └─ 20 case ├─ observability└─ production │ + stories └─ company sheets
+   └─ HR qs └─ Next.js ├─ databases └─ 31 case ├─ observability└─ production │ + stories └─ company sheets
                                     ├─ AUTH track ← studies git, serverless engineering
                                     └─ microservices drills
 ```
@@ -116,7 +116,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF applied (Strategy, Repository, Observer, DI…) → CQRS in practice |
 | 3.2 | [SD method](30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) | clarify → estimate → high-level → deep-dive (memorize this skeleton) |
 | 3.3 | [SD theory](30-architecture/30.2-system-design/01-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
-| 3.4 | [Case studies ×20](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
+| 3.4 | [Case studies ×31](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
 
 **Checkpoint 3:** Record yourself doing URL shortener + ticket booking in 45 min each; review against the 4-phase rubric; no silent minutes.
 
@@ -239,7 +239,7 @@ software-developer-bible/
 ├── INDEX.md ← every file, one list
 ├── 00-strategy/ ← resume · STAR · HR · communication
 ├── 10-frontend/ ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
-├── 20-backend/ ← 9 sub-stacks, zero duplication:
+├── 20-backend/ ← 10 sub-stacks, zero duplication:
 │ ├── 20.1-node.js runtime internals
 │ ├── 20.2-nestjs framework
 │ ├── 20.3-rest-apis ALL of HTTP/APIs (fundamentals → production → advanced)
@@ -248,10 +248,11 @@ software-developer-bible/
 │ ├── 20.6-microservices single home for distributed patterns (+ event-driven, gRPC streaming)
 │ ├── 20.7-graphql
 │ ├── 20.8-caching cache patterns + Redis fundamentals + advanced Redis
-│ └── 20.12-ai-engineering LLM architecture · evals · governance
+│ ├── 20.12-ai-engineering LLM architecture · evals · governance
+│ └── 20.13-java Java + Spring Boot
 ├── 30-architecture/
 │ ├── 30.1-design-patterns
-│ ├── 30.2-system-design/ 00-theory + 10-case-studies
+│ ├── 30.2-system-design/ 01-theory + 02-case-studies
 │ └── 30.3-infra-patterns/ ops-only: retries, idempotency, health checks…
 ├── 40-platform/ ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
 ├── 50-quality/ ← testing · a11y · performance · production engineering

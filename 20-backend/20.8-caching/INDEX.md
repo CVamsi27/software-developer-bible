@@ -1,9 +1,9 @@
 # Caching — Index
 
 > **Study time:** ≈ 51 min of reading (4 files, ~13 min average).
-> **3 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
+> **4 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

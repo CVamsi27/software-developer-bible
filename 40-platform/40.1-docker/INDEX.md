@@ -108,7 +108,6 @@ This produces a small, secure production image. The build dependencies (TypeScri
 
 ```yaml
 # docker-compose.yml
-version: '3.9'
 services:
   app:
     build: .

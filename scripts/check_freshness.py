@@ -153,6 +153,17 @@ EOL_GITHUB_ACTIONS = {
 }
 USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
 
+# --- Obsolete Compose version: key (2026-09-19) -----------------------------
+# Compose V2 ignores the top-level version field and warns "the attribute
+# version is obsolete" on every run; the Compose Spec removed it. Two guards
+# keep the rule off everything else: the key must sit at column 0 (top-level
+# — Helm chart version: lives nested under the chart root) and the value must
+# match the historical Compose file scheme (bare major 2/3, major.minor, or
+# major.minor.patch — Helm pins like "12.x.x" and app/package versions like
+# "1.0.0" never match the scheme).
+COMPOSE_VERSION_KEY = re.compile(
+    r'^version: ["\']([23](?:\.\d+){0,2})["\']\s*(?:#.*)?$')
+
 RULES = [
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
@@ -190,6 +201,10 @@ RULES = [
     ('EOL-GITHUB-ACTION',
      'GitHub Action major retired upstream (data table EOL_GITHUB_ACTIONS, '
      'compared against today); bump to the current major'),
+    ('OBSOLETE-COMPOSE-VERSION',
+     'top-level version: key in a Compose file (Compose V2 ignores it and '
+     'warns "the attribute version is obsolete"); delete the line — the '
+     'Compose Spec has no version field'),
 ]
 
 FOOTER_LINK = '[ Back to Index](INDEX.md)'
@@ -386,6 +401,9 @@ def check(p: Path, rel: str):
                 hits.append((lineno, 'EOL-GITHUB-ACTION',
                              f'{action}@{vmajor} retired upstream since '
                              f'{eol.isoformat()} — {line.strip()[:60]}'))
+        if COMPOSE_VERSION_KEY.match(line):
+            hits.append((lineno, 'OBSOLETE-COMPOSE-VERSION',
+                         f'obsolete top-level version key — {line.strip()[:70]}'))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like

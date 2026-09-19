@@ -1,9 +1,9 @@
 # Twelve-Factor App — Index
 
-> **Study time:** ≈ 21 min of reading (1 files, ~21 min average).
+> **Study time:** ≈ 26 min of reading (2 files, ~13 min average).
 > **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Every Kubernetes, Heroku, Fly, Vercel, and Lambda deployment is built around these 12 factors.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -54,19 +54,21 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 21 min |
+| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | 5 min |
 
 ---
 
 ## When to read
 
 - **Always** — once, before any cloud-native interview
-- 60 min read
+- 28 min read
 - Then reference back when discussing app architecture
 
 ---
 
 ## Common interview questions
 
+The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-interview-questions.md). The headlines:
 - "Walk me through the 12 factors. Which ones does your app violate?"
 - "How do you handle config in your app?" (Factor 3)
 - "How do you handle database migrations in production?" (Factor 5 + Factor 12)

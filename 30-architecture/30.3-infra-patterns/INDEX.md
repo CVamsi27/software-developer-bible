@@ -1,12 +1,12 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 3 h 31 m of reading (16 files, ~13 min average).
-> **16 files across 5 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), and data retention/archival.
+> **Study time:** ≈ 3 h 37 m of reading (17 files, ~13 min average).
+> **17 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
 
-[![Files](https://img.shields.io/badge/files-16-blue)](../INDEX.md)
-[![Categories](https://img.shields.io/badge/categories-5-green)](#categories)
+[![Files](https://img.shields.io/badge/files-17-blue)](../INDEX.md)
+[![Categories](https://img.shields.io/badge/categories-6-green)](#categories)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
@@ -20,6 +20,7 @@
 | Coordination | [03-coordination/](03-coordination/INDEX.md) | 1 | Leader election & consensus — who runs the cron |
 | Data at Scale | [04-data-at-scale/](04-data-at-scale/INDEX.md) | 4 | Database scaling, data pipelines, CDN architecture, multi-tenant SaaS |
 | Shipping & Evolution | [05-shipping-and-evolution/](05-shipping-and-evolution/INDEX.md) | 4 | Zero-downtime deployments, technical debt strategy, cost engineering & FinOps, data retention & archival |
+| Interview Prep | [06-interview-prep/](06-interview-prep/INDEX.md) | 1 | Senior-depth Q&A over the whole stack — contracts, drills, scaling levers, deploy safety |
 
 ---
 
@@ -34,6 +35,9 @@ STAY ALIVE        SURVIVE FAILURE         SCALE DATA         SHIP SAFELY
 COORDINATE         02 feature flags                        05 data retention
 03 leader election 02 backups & restore                    & archival
    & consensus        drills
+
+DRILL IT
+06 interview prep — the whole stack as Q&A
 ```
 
 ---
@@ -56,6 +60,7 @@ COORDINATE         02 feature flags                        05 data retention
 | 12 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy | 16 min |
 | 13 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | 11 min |
 | 14 | [Data Retention & Archival](05-shipping-and-evolution/30.3.5.04-data-retention-archival.md) | Retention tiers, hot/warm/cold storage, legal hold, right-to-erasure | 11 min |
+| 15 | [Infra & Ops Patterns Interview Questions](06-interview-prep/30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers, blue-green vs canary, scenario drills | 6 min |
 
 ---
 

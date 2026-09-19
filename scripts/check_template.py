@@ -167,6 +167,27 @@ HEAD = re.compile(r'^## (.+?)\s*$')
 # Blockquote TL;DR style: `> **TL;DR:** …` (or bolded without the quote)
 TLDR_BQ = re.compile(r'^\s*>?\s*\*\*TL;?DR:?\*\*', re.I)
 
+# --- Interview-bank question-count claims (2026-09-19) ----------------------
+# A bank's opening blockquote / TL;DR states how many questions it holds;
+# the count must match the question markers actually present. 20.13.06
+# claimed "30 questions" and held 20 — its own Summary advertised a Spring
+# section the bank stopped short of writing. Only overpromises fire (an
+# underclaim like "the first 20 of 50" is legitimate framing), and claims
+# are read ONLY from the intro blockquote and the TL;DR body, so per-section
+# subtotals ("Beginner (10 Questions)") can never fire.
+QMARK = re.compile(
+    r'^\s*(?:\*\*Q\d+|#{2,4}\s+(?:Q\d+|Question\s+\d+|\d+\.))')
+WORDNUM = {
+    'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7,
+    'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13,
+    'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18,
+    'nineteen': 19, 'twenty': 20, 'thirty': 30, 'forty': 40, 'fifty': 50,
+    'sixty': 60, 'seventy': 70, 'eighty': 80, 'ninety': 90, 'hundred': 100,
+}
+CLAIM_DIGIT = re.compile(r'\b(\d{1,3})\+?\s+(?:\w+\s+){0,2}?questions\b', re.I)
+CLAIM_WORD = re.compile(
+    r'\b(' + '|'.join(WORDNUM) + r')\s+(?:\w+\s+){0,2}?questions\b', re.I)
+
 
 def normalize(name: str) -> str:
     name = name.strip()
@@ -303,6 +324,7 @@ def check(path: str):
         return problems
     in_fence = False
     heads = []
+    q_lines = set()
     for line in text.splitlines():
         if FENCE.match(line):
             in_fence = not in_fence
@@ -312,6 +334,8 @@ def check(path: str):
         m = HEAD.match(line)
         if m:
             heads.append(normalize(m.group(1)))
+        if QMARK.match(line):
+            q_lines.add(line.strip())
 
     has_blockquote_tldr = any(
         TLDR_BQ.match(l) for l in text.splitlines()
@@ -339,6 +363,35 @@ def check(path: str):
     if is_interview_file(path) and 'Code Examples' in file_heads:
         problems.append("interview bank has a `## Code Examples` heading "
                         "(rename to `## Interview Questions`)")
+
+    # Interview banks must not promise more questions than they hold. See the
+    # QMARK/CLAIM block comment above for scope and history. Banks with < 5
+    # detected markers are skipped: that means a numbering format the markers
+    # miss, not a thin bank — wire the format into QMARK first.
+    if is_interview_file(path) and len(q_lines) >= 5:
+        lines = text.splitlines()
+        claim_regions = [l for l in lines[:15] if l.lstrip().startswith('>')]
+        in_tldr = False
+        for l in lines:
+            hm = HEAD.match(l)
+            if hm:
+                if in_tldr:
+                    break
+                in_tldr = normalize(hm.group(1)) == 'TL;DR'
+                continue
+            if in_tldr:
+                claim_regions.append(l)
+        claims = []
+        for l in claim_regions:
+            claims += [(int(m.group(1)), m.group(0)) for m in CLAIM_DIGIT.finditer(l)]
+            claims += [(WORDNUM[m.group(1).lower()], m.group(0)) for m in CLAIM_WORD.finditer(l)]
+        over = [c for c in claims if c[0] > len(q_lines)]
+        if over:
+            worst = max(over)
+            problems.append(
+                f"question-count claim '{worst[1]}' exceeds the {len(q_lines)} "
+                f"questions present — the opening/TL;DR must not promise more "
+                f"than the bank holds (add the section or fix the number)")
 
     # order check: accept any of the canonical orders, on the subset present
     # Empty sections (a heading with nothing under it at its own level).

@@ -157,7 +157,7 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 
 ## Summary
 
-The corpus is now 556 study chapters, 39 interview banks, 2363
+The corpus is now 556 study chapters, 39 interview banks, 2367
 probe-verified external links, 14 freshness rules across two date-gated data
 tables, and 18 CI-enforced gates whose harness audits its own wiring. Every
 count a reader can see is recomputed from disk; every product pin ages

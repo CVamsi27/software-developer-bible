@@ -167,9 +167,11 @@ forward against a date table. Fourteen commits, nothing pushed.
 
 ```bash
 bash scripts/verify.sh                    # all 18 gates; exit 1 blocks push
-python3 scripts/check_counts.py --write   # restamp every owned count
+# Restamp order matters when several drift: read_time → gen_master_index →
+# check_counts (it copies the generated JSON totals into the api-contract).
 python3 scripts/read_time.py --write      # restamp read-time badges
 python3 scripts/gen_master_index.py       # regen search + api/index.json
+python3 scripts/check_counts.py --write   # restamp every owned count
 python3 scripts/check_freshness.py        # the 14 staleness rules standalone
 python3 scripts/link_baseline.py --update # after probe-verifying new URLs
 ```

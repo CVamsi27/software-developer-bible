@@ -142,6 +142,19 @@ def interview_bank_count():
                if p.endswith('-interview-questions.md'))
 
 
+def api_totals():
+    """Totals block of the live generated api/index.json (gate 14 byte-locks
+    it to the corpus), so the api-contract example cannot drift from the real
+    artifact. Empty when the file has not been generated yet."""
+    import json
+    p = os.path.join(ROOT, 'api', 'index.json')
+    try:
+        with open(p, encoding='utf-8') as fh:
+            return json.load(fh).get('totals', {})
+    except (OSError, ValueError):
+        return {}
+
+
 def cheat_sheet_formats():
     """Cheat Sheet sections that open with a fence vs. a table."""
     code = table = 0
@@ -208,7 +221,7 @@ def sub_groups(text, rx, values):
 def scale_edits(live):
     """(file, regex) pairs whose two groups are `N files` / `NK lines`."""
     total, k = live['repo_files'], live['repo_k']
-    return [
+    edits = [
         ('INDEX.md', r'(\d+) files, (\d+)K lines', [total, k]),
         ('README.md', r'(\d+) files · (\d+)K lines', [total, k]),
         ('80-lanes-abroad-full-stack/INDEX.md',
@@ -230,7 +243,20 @@ def scale_edits(live):
          [live['cheat_code']]),
         ('contributing.md', r'\*\*Table format\*\* \((\d+) files',
          [live['cheat_table']]),
+        # Doc self-description: the gates page states the walker scope size.
+        ('docs/verification-gates.md', r"today's (\d+) content files",
+         [live['content']]),
     ]
+    # The api-contract example block mirrors the shipped artifact's totals.
+    api = live.get('api') or {}
+    if api.get('chapters'):
+        edits.append((
+            'docs/api-contract.md',
+            r'"chapters": (\d+), "sections": (\d+), "categories": (\d+),\s*'
+            r'"read_minutes": (\d+)',
+            [api.get('chapters'), api.get('sections'),
+             api.get('categories'), api.get('read_minutes')]))
+    return edits
 
 
 def header_edits(live):
@@ -406,6 +432,7 @@ def compute_live():
         'case_studies': case_study_count(),
         'backend_substacks': sub_stack_count('20-backend'),
         'sd_subfolders': sd_subfolder_label(),
+        'api': api_totals(),
     }
 
 
@@ -489,7 +516,7 @@ def main():
         if os.path.basename(rel) in ('INDEX.md', 'README.md'):
             nav.append(rel)
     nav += ['contributing.md', 'docs/verification-gates.md', 'lanes/INDEX.md',
-            'ROADMAP.md']
+            'ROADMAP.md', 'docs/api-contract.md']
     texts = load(sorted(set(nav)))
 
     live = compute_live()

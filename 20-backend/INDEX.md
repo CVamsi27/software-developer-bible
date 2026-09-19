@@ -43,6 +43,8 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 10 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 | 11 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
 
+> IDs 20.10–20.11 are deliberately absent: earlier sessions added stacks there, then renumbered them elsewhere — the *study order* above is contiguous, and gRPC (the usual candidate for a standalone slot) is already taught canonically in [20.6.2](20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md). Don't fill the IDs for cosmetics; add a stack when content demands it.
+
 ---
 
 ## Category Map (high-level)

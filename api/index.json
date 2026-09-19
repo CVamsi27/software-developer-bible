@@ -8,7 +8,7 @@
   "chapters": 556,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 10401
+  "read_minutes": 10400
  },
  "chapters": [
   {
@@ -3994,7 +3994,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 20
   },
   {
    "p": "40-platform/40.1-docker/40.1.04-multi-stage-builds.html",

@@ -1,6 +1,6 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 22 m of reading (10 files, ~14 min average).
+> **Study time:** ≈ 2 h 21 m of reading (10 files, ~14 min average).
 > **10 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -39,7 +39,7 @@ Production workflows.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | 21 min |
+| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | 20 min |
 | 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | 13 min |
 
 ---

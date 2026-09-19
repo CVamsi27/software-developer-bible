@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-19",
- "url_count": 2378,
+ "url_count": 2379,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -3125,6 +3125,9 @@
   ],
   "https://k6.io/docs/using-k6/scenarios/": [
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
+  ],
+  "https://kafka.apache.org/41/operations/consumer-rebalance-protocol/": [
+   "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
   ],
   "https://kafka.apache.org/documentation/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",

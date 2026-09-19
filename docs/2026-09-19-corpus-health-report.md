@@ -33,7 +33,12 @@ total), organized around one
    it is "give the number an owner that recomputes it."
 2. **Sweeps decay; gates don't.** A manual sweep is true the day it runs and
    less true every day after. Converting the sweep's finding into a gate rule
-   converts a point-in-time audit into a standing property.
+   converts a point-in-time audit into a standing property — and the classes a
+   gate cannot own (singletons, context-dependent mentions) decay back
+   silently unless re-probed, which is what the quarterly **drift drill**
+   (`scripts/drift_drill.py` + `.github/workflows/drift-drill.yml`) does:
+   21 STALE classes that open a tracking issue, 10 REVIEW classes listed for
+   human judgment.
 3. **The gate must be calibrated to reality, then proven both ways.** A rule
    that fires on the corpus as it is buries signal; a rule never proven to
    fire may be dead code (one rule here was — unreachable after `return` —

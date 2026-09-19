@@ -93,15 +93,50 @@ SHUTTERED_DOMAINS = re.compile(
 # here and every pin to it starts failing the same day. Date-gated, so
 # adding a future EOL entry early is harmless — it stays silent until the
 # date arrives. Extend the dict with other base images the same way.
+# Keys are version STRINGS: bare major for single-number schemes (node),
+# 'major.minor' for semver schemes (golang, python, rust) — go 1.21 and
+# python 3.11 are different beasts from their bare majors.
 EOL_BASE_IMAGES = {
     'node': {
-        14: date(2023, 4, 30),
-        16: date(2023, 9, 11),
-        18: date(2025, 4, 30),
-        20: date(2026, 4, 30),
+        '14': date(2023, 4, 30),
+        '16': date(2023, 9, 11),
+        '18': date(2025, 4, 30),
+        '20': date(2026, 4, 30),
+    },
+    # Go supports the last two majors; 1.21 lost support when 1.23 shipped
+    # (2024-08-13). The corpus pinned it in the Go distroless examples.
+    'golang': {
+        '1.20': date(2024, 2, 6),
+        '1.21': date(2024, 8, 13),
+        '1.22': date(2025, 8, 12),
+        '1.23': date(2026, 2, 10),
+    },
+    'python': {
+        '3.8': date(2024, 10, 7),
+        '3.9': date(2025, 10, 31),
+        # 3.10 goes EOL 2026-10-31 — deliberately listed; the date gate
+        # keeps it silent until then, which is the table's whole point.
+        '3.10': date(2026, 10, 31),
+    },
+    'rust': {
+        # Rust has no LTS: each minor is supported until the NEXT minor
+        # ships (~6 weeks). Dates here are approximations for illustration
+        # pins only; the real maintenance cost of exact per-minor dates is
+        # not worth it, so rust pins carry a deliberately loose floor.
+        '1.70': date(2024, 1, 1),
+        '1.71': date(2024, 2, 1),
+        '1.72': date(2024, 3, 1),
+    },
+    'ghcr.io/graalvm/native-image': {
+        # GraalVM for JDK 17 reached Oracle Premier end (2026-06) and the
+        # community line moved to JDK 21+; the old ghcr tag family is
+        # effectively unmaintained for new work.
+        '17': date(2026, 6, 1),
     },
 }
-FROM_PIN = re.compile(r'\bFROM\s+node:(\d+)(?:[.\-\s]|$)')
+FROM_PIN = re.compile(
+    r'\bFROM\s+((?:[a-z0-9/_.-]+)?(?:golang|node|python|rust|ghcr\.io/graalvm/native-image))'
+    r':(\d+)(\.(\d+))?(?:[\s-]|$)')
 
 RULES = [
     ('FAKE-ARCHIVE-TS',
@@ -314,11 +349,16 @@ def check(p: Path, rel: str):
         # majors (no entry in the table) stay silent.
         m_pin = FROM_PIN.search(line)
         if m_pin:
-            major = int(m_pin.group(1))
-            eol = EOL_BASE_IMAGES.get('node', {}).get(major)
+            image = m_pin.group(1)
+            # Semver-style images (golang, rust, python) key on MAJOR.MINOR —
+            # go 1.21 and go 1.2 are different releases — so the lookup key
+            # carries the minor when present, the bare major otherwise (node).
+            minor = m_pin.group(4)
+            version = f'{m_pin.group(2)}.{minor}' if minor else m_pin.group(2)
+            eol = EOL_BASE_IMAGES.get(image, {}).get(version)
             if eol and date.today() >= eol:
                 hits.append((lineno, 'EOL-BASE-IMAGE',
-                             f'node:{major} EOL since {eol.isoformat()} — '
+                             f'{image}:{version} EOL since {eol.isoformat()} — '
                              f'{line.strip()[:70]}'))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):

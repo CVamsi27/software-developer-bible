@@ -37,7 +37,7 @@ total), organized around one
    gate cannot own (singletons, context-dependent mentions) decay back
    silently unless re-probed, which is what the quarterly **drift drill**
    (`scripts/drift_drill.py` + `.github/workflows/drift-drill.yml`) does:
-   21 STALE classes that open a tracking issue, 10 REVIEW classes listed for
+   20 STALE classes that open a tracking issue, 11 REVIEW classes listed for
    human judgment.
 3. **The gate must be calibrated to reality, then proven both ways.** A rule
    that fires on the corpus as it is buries signal; a rule never proven to

@@ -167,6 +167,20 @@ def freshness_rule_count():
     return len(mod.RULES)
 
 
+def drill_class_counts():
+    """(stale, review) class counts of drift_drill.py, read from the module's
+    CLASSES table — the health report quotes these, and quoting from memory
+    is how they drifted within an hour of being written."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'drift_drill', os.path.join(ROOT, 'scripts', 'drift_drill.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    stale = sum(1 for c in mod.CLASSES if c[1] == 'STALE')
+    review = sum(1 for c in mod.CLASSES if c[1] == 'REVIEW')
+    return stale, review
+
+
 def cheat_sheet_formats():
     """Cheat Sheet sections that open with a fence vs. a table."""
     code = table = 0
@@ -266,6 +280,9 @@ def scale_edits(live):
         ('docs/2026-09-19-corpus-health-report.md',
          r'(\d+) freshness rules across two date-gated',
          [live['freshness_rules']]),
+        ('docs/2026-09-19-corpus-health-report.md',
+         r'(\d+) STALE classes that open a tracking issue, (\d+) REVIEW classes',
+         [live['drill_stale'], live['drill_review']]),
     ]
     # The api-contract example block mirrors the shipped artifact's totals.
     api = live.get('api') or {}
@@ -454,6 +471,8 @@ def compute_live():
         'sd_subfolders': sd_subfolder_label(),
         'api': api_totals(),
         'freshness_rules': freshness_rule_count(),
+        'drill_stale': drill_class_counts()[0],
+        'drill_review': drill_class_counts()[1],
     }
 
 

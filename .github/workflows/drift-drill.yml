@@ -1,0 +1,145 @@
+# Quarterly drift drill.
+#
+# Runs scripts/drift_drill.py, which re-probes the staleness classes that a
+# gate cannot own: singleton product deaths and context-dependent mentions
+# (Enzyme/AngularJS-style "was…; modern path is…" teaching). STALE hits
+# (dead products, removed APIs) drive exit 1 and open a tracking issue;
+# REVIEW hits are advisory context checks listed in the summary. The drill
+# never fails the workflow red — a scheduled red X for a doc corpus is
+# noise, so this is an advisory audit like link-rot-audit (exempted by name
+# in scripts/check_verify_wiring.py). Classes live in the script's CLASSES
+# table with a fix-path note each; add a row when a sweep finds a new class.
+name: drift-drill
+
+on:
+  schedule:
+    - cron: '0 6 4 */3 *' # 06:00 UTC, first month of each quarter, 4th day
+  workflow_dispatch: {} # manual run from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Run the drift drill
+        id: drill
+        run: |
+          set +e
+          python3 scripts/drift_drill.py | tee drill-output.txt
+          code=${PIPESTATUS[0]}
+          echo "exitcode=$code" >> "$GITHUB_OUTPUT"
+          stale=$(grep -c '^  STALE' drill-output.txt || true)
+          review=$(grep -c '^  REVIEW' drill-output.txt || true)
+          echo "stale=$stale" >> "$GITHUB_OUTPUT"
+          echo "review=$review" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Drift drill"
+            echo
+            echo "**STALE: $stale** · REVIEW (advisory): $review"
+            echo
+            if [ "$stale" -gt 0 ]; then
+              echo '```'
+              grep -A2 '^  STALE' drill-output.txt || true
+              echo '```'
+            else
+              echo "No stale references — every swept class is still absent from the corpus."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit 0 # advisory audit: exitcode captured above, never fails red
+
+      - name: Open or update stale-reference issue
+        if: steps.drill.outputs.stale != '0'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const repoInfo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            if (!repoInfo.data.has_issues) {
+              core.notice('Issues are disabled on this repository — skipping issue tracking. Results are in the run summary.');
+              return;
+            }
+            const fs = require('fs');
+            const stale = '${{ steps.drill.outputs.stale }}';
+            const output = fs.readFileSync('drill-output.txt', 'utf8');
+            const title = 'Stale references detected by quarterly drift drill';
+            const body =
+              'The quarterly drift drill found **' + stale + ' stale reference(s)** ' +
+              'in the corpus (dead products, removed APIs — see class table in ' +
+              'scripts/drift_drill.py).\n\n' +
+              'Fix procedure: verify each hit against live sources, fix the doc, ' +
+              'and re-run the drill. If a class keeps recurring, gate it in ' +
+              'scripts/check_freshness.py instead of re-sweeping.\n\n' +
+              '<details><summary>Full drill output</summary>\n\n```\n' +
+              output + '\n```\n</details>\n';
+            const marker = 'drift-drill';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'drift-drill',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body: marker + '\n' + body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: marker + '\n' + body,
+                labels: ['drift-drill'],
+              });
+            }
+
+      - name: Resolve issue when clean
+        if: steps.drill.outputs.stale == '0'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const repoInfo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            if (!repoInfo.data.has_issues) {
+              return;
+            }
+            const title = 'Stale references detected by quarterly drift drill';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'drift-drill',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                state: 'closed',
+              });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body: 'Quarterly drill is clean (0 STALE); closing.',
+              });
+            }

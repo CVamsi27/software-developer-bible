@@ -83,6 +83,7 @@ SET_PLUS_E_RE = re.compile(r'^\s+set \+e\s*$', re.M)
 ADVISORY_WORKFLOWS = {
     'job-board-watch.yml': 'exit 1 means actionable signals; opens a tracking issue',
     'link-rot-audit.yml': 'the probe never fails the workflow; bot-wall warns are noise',
+    'drift-drill.yml': 'STALE hits open a tracking issue; a scheduled red X for doc staleness is noise',
 }
 
 WORDS = {}

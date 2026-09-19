@@ -1,0 +1,189 @@
+<!-- section: Meta | category: Reference | tags: health-report, verification-gates, session-retrospective -->
+[![Section](https://img.shields.io/badge/section-Meta-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-800080)](#)
+[![Tags](https://img.shields.io/badge/tags-health--report,%20verification--gates,%20session--retrospective-lightgrey)](#)
+
+# Corpus Health Report — September 2026
+
+> **TL;DR:** Fourteen commits of corpus hardening, organized around one
+> recurring method: **measure first, fix what the measurement proves, then
+> gate the class so it cannot regress.** This report is the ledger — what
+> each gate now enforces, which rules caught real defects on their first
+> run, which sweeps came back clean, and what remains unexamined.
+
+## Definition
+
+- **Drift class** — a category of defect that recurs structurally (e.g.
+  "claims outrun content", "newer chapters current, older siblings stale").
+- **Owned claim** — a number in docs/INDEXes that a script restamps from the
+  same computation it checks (`--write`); an unowned claim is a drift waiting
+  to happen.
+- **Date-gated data table** — a freshness-gate table keyed on *dates*, not
+  banned strings: an entry starts failing the day reality changes, with no
+  rule edit needed.
+- **Day-one catch** — a gate rule that found a real corpus defect on its very
+  first baseline run, before any planted test.
+
+## First Principles
+
+1. **A doc is a claim about the world; gates are how claims stay true.**
+   Every drift found this session was a claim (a count, a promise, a pin, a
+   version) whose referent had moved. The fix is never "edit the number" —
+   it is "give the number an owner that recomputes it."
+2. **Sweeps decay; gates don't.** A manual sweep is true the day it runs and
+   less true every day after. Converting the sweep's finding into a gate rule
+   converts a point-in-time audit into a standing property.
+3. **The gate must be calibrated to reality, then proven both ways.** A rule
+   that fires on the corpus as it is buries signal; a rule never proven to
+   fire may be dead code (one rule here was — unreachable after `return` —
+   and only the plant-test exposed it).
+4. **Drift concentrates where content was extended without revisiting
+   siblings.** Four separate finds (node pins, Actions pins, Istio
+   apiVersions, Compose keys) showed newer content current and older content
+   stale *within the same stack*.
+
+## How It Works
+
+### The method, applied
+
+Each round followed the same loop:
+
+1. **Hunt** with a grep/measurement calibrated against its own false
+   positives first (a question counter that couldn't see `### 1.` headings,
+   a regex blind to words between number and noun, a double-quote-only grep
+   — each fixed before trusting its output).
+2. **Verify every hit against the live world** — primary docs, dated
+   secondary sources — before editing. Honest history ("X was…; Y is the
+   modern path") was left alone every time it was actually honest.
+3. **Fix confirmed defects** — bias toward deepening content over shrinking
+   claims (Java bank 20→30 written rather than "30"→"20"; mobile bank
+   19→30).
+4. **Gate the class** so the fix is permanent.
+5. **Prove the gate both ways**: fires on the planted defect, silent on all
+   real files, and *wired* — the failure branch reaches the exit.
+
+### Gate inventory after the session (18 gates, all CI-enforced)
+
+| Gate | Enforces | Session change |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| 1 `check_counts.py` | Every count claim on the nav surface | +2 owned claims: gates-page walker scope, api-contract totals (sourced from the gate-14-locked JSON) |
+| 2 `check_alignment.py` | Table alignment + header rows exist | — |
+| 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last** | +banks-last rule with two documented exemptions |
+| 4 `check_links.py` | Internal links + honest link labels | — |
+| 5 `check_freshness.py` | **14 rules**, incl. two date-gated EOL tables + Compose | +EOL-BASE-IMAGE, +EOL-GITHUB-ACTION, +OBSOLETE-COMPOSE-VERSION |
+| 6 `link_baseline.py` | Cited URLs probe-verified (2367) | +verified SRE URLs |
+| 6b `check_template.py` | Template, metadata, **question-count claims** | +count-claim contract (claims read only from intro blockquote/TL;DR) |
+| 7–15 | Claims, whitespace, first-principles, cross-refs, duplication, twins, read-time, search byte-lock, self-wiring | — (gate 15 enforced throughout) |
+
+### Day-one catch ledger
+
+Three rules found real defects on their first baseline run — the empirical
+argument for the whole method:
+
+| Rule | Caught | Why the manual pass missed it |
+| ---------------------------- | ------------------------------------------------------------ | ---------------------------------------------------- |
+| question-count contract (6b) | mobile bank "30+ curated questions" vs 19 held | sweep regex allowed no words between number and noun |
+| EOL-GITHUB-ACTION | `setup-node@v3`, `upload-artifact@v3`, a stray `checkout@v3` | sweep grepped only the actions it thought of |
+| OBSOLETE-COMPOSE-VERSION | three single-quoted `version:` keys | sweep grep matched double quotes only |
+
+Plus one process catch: the first version of the api-contract count rule was
+unreachable dead code (appended after `return`); the plant-test caught it —
+proof-after-fix is the only proof.
+
+### Fix ledger (defects repaired in the corpus)
+
+- ~55 EOL base-image pins (node:18/20 → 22; golang:1.21 → 1.26 — **two years
+  past EOL**; rust:1.72; graalvm:17 tag family)
+- 7 retired GitHub Action pins (checkout/setup-node/codecov @v3 → v4)
+- 3 more Action pins + 3 single-quoted Compose keys caught by the new rules
+- 11 obsolete Compose `version:` keys across 6 files
+- 2 Istio `v1alpha3` resources (removed in Istio 1.24) → `v1beta1`
+- Java bank +10 Spring questions (its own Summary already promised the arc);
+  mobile bank +11 (crash reporting, storage matrix, push, OTA-crash)
+- CodePush hosted-service shutdown (Mar 31 2025) stated in the OTA chapter
+- Azure AD → Microsoft Entra ID; TypeScript bank "50+" → "50"
+- 226 lane-guide headings re-leveled to one H1 per document
+- Spring Boot chapter deepened 1→7 code blocks
+- 3 new interview banks (nginx, twelve-factor, infra-patterns category) —
+  closing the last stack with zero bank coverage
+- 2 doc-vs-artifact drifts (api-contract totals, walker scope) now owned
+
+### Measured non-actions (the boundary findings)
+
+- **39 interview banks, 741 pairs**: zero true cross-stack duplicates; the
+  similarity was shared *form* (section skeleton, question phrasing). The
+  only genuine overlap is border topics covered once per border.
+- **00-strategy vs lanes**: max shingle overlap J=0.005 — the ownership
+  boundary is real.
+- **Enzyme / `getServerSideProps` / Swarm / `@babel/polyfill` mentions**: all
+  teach the migration *away*; left alone.
+- **Cloud staleness sweep (12 classes)**: Stackdriver, Amazon ES, CodeCommit,
+  SDK v2, `get-login`, dead Lambda runtimes, EC2-Classic, GCE, `--generator`,
+  `helm init`, `template_file`, Ansible `include:` — zero genuine hits.
+- **JS ecosystem sweep (14 classes)**: CRA, moment, node-sass, request,
+  tslint, `ReactDOM.render`, removed lifecycles, Vue 2, Bower,
+  `CommonsChunkPlugin`, `yarn global`, `npm --save`, webpack v4 shapes — zero
+  genuine hits. Two consecutive clean sweeps say the hunt is saturating.
+
+## Real-world Application
+
+Running the equivalent pass on any large doc corpus: inventory the claims,
+sort them into *owned* vs *unowned*, convert the unowned live-count ones to
+restampers first (cheapest, highest yield), then sweep defect classes only
+where a gate can be built from the wreckage. Skip gate rules for singletons
+— a rule needs a recurring class to guard.
+
+## Common Mistakes
+
+- Planting a defect and testing only the script — gate 10's failure branch
+  once wrote the wrong variable name and a red build passed CI. Prove the
+  *suite* fails, not just the tool.
+- Banning strings instead of dates in EOL rules (fires forever on not-yet-EOL
+  versions, goes stale itself later).
+- Hand-editing numbers the restampers own — they will be reverted by the next
+  `--write` run.
+- Trusting a sweep regex before calibrating it against known-answer corpus
+  files.
+
+## Best Practices
+
+- Fix-then-gate in the same session: an unfixed class re-accumulates, an
+  ungated fix decays.
+- Bias content edits toward *deepening* — finish the promise rather than
+  shrink it.
+- When a sweep comes back clean twice, stop sweeping and write the ledger.
+- Keep exemption lists *named and reasoned* inside the gate code, not in a
+  side doc.
+
+## Summary
+
+The corpus is now 556 study chapters, 39 interview banks, 2363
+probe-verified external links, 14 freshness rules across two date-gated data
+tables, and 18 CI-enforced gates whose harness audits its own wiring. Every
+count a reader can see is recomputed from disk; every product pin ages
+forward against a date table. Fourteen commits, nothing pushed.
+
+## Cheat Sheet
+
+```bash
+bash scripts/verify.sh                    # all 18 gates; exit 1 blocks push
+python3 scripts/check_counts.py --write   # restamp every owned count
+python3 scripts/read_time.py --write      # restamp read-time badges
+python3 scripts/gen_master_index.py       # regen search + api/index.json
+python3 scripts/check_freshness.py        # the 14 staleness rules standalone
+python3 scripts/link_baseline.py --update # after probe-verifying new URLs
+```
+
+## See Also
+
+- `docs/verification-gates.md` — the gate map this report summarizes
+- `contributing.md` — repo conventions and the verify workflow
+- `docs/residential-verification-checklist.md` — human-browser verification
+
+## References
+
+- [Docker Docs — version and name top-level elements](https://docs.docker.com/reference/compose-file/version-and-name/)
+- [endoflife.date — Go](https://endoflife.date/go)
+- [endoflife.date — Rust](https://endoflife.date/rust)
+- [Microsoft App Center retirement](https://learn.microsoft.com/en-us/appcenter/retirement)
+- [Istio 1.24 release notes](https://istio.io/latest/news/releases/1.24.x/announcing-1.24/)

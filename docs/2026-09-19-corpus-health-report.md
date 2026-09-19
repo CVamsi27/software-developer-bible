@@ -5,7 +5,8 @@
 
 # Corpus Health Report — September 2026
 
-> **TL;DR:** Fourteen commits of corpus hardening, organized around one
+> **TL;DR:** A multi-commit hardening session (see `git log` for the running
+total), organized around one
 > recurring method: **measure first, fix what the measurement proves, then
 > gate the class so it cannot regress.** This report is the ledger — what
 > each gate now enforces, which rules caught real defects on their first
@@ -71,7 +72,7 @@ Each round followed the same loop:
 | 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last** | +banks-last rule with two documented exemptions |
 | 4 `check_links.py` | Internal links + honest link labels | — |
 | 5 `check_freshness.py` | **14 rules**, incl. two date-gated EOL tables + Compose | +EOL-BASE-IMAGE, +EOL-GITHUB-ACTION, +OBSOLETE-COMPOSE-VERSION |
-| 6 `link_baseline.py` | Cited URLs probe-verified (2367) | +verified SRE URLs |
+| 6 `link_baseline.py` | Cited URLs probe-verified (2379) | +verified SRE/broker URLs |
 | 6b `check_template.py` | Template, metadata, **question-count claims** | +count-claim contract (claims read only from intro blockquote/TL;DR) |
 | 7–15 | Claims, whitespace, first-principles, cross-refs, duplication, twins, read-time, search byte-lock, self-wiring | — (gate 15 enforced throughout) |
 
@@ -107,6 +108,7 @@ proof-after-fix is the only proof.
 - 3 new interview banks (nginx, twelve-factor, infra-patterns category) —
   closing the last stack with zero bank coverage
 - 2 doc-vs-artifact drifts (api-contract totals, walker scope) now owned
+- **new: 20.9-message-brokers stack** — 4 chapters + INDEX in the reserved-but-empty slot; brokers had 50+ example mentions corpus-wide but no canonical home; includes the Docita Anchor whose honest verdict is "zero brokers, deliberately" (the 20.9.01 when-not-to lesson shipped)
 
 ### Measured non-actions (the boundary findings)
 
@@ -157,11 +159,12 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 
 ## Summary
 
-The corpus is now 556 study chapters, 39 interview banks, 2367
+The corpus is now 560 study chapters, 40 interview banks, 2379
 probe-verified external links, 14 freshness rules across two date-gated data
 tables, and 18 CI-enforced gates whose harness audits its own wiring. Every
 count a reader can see is recomputed from disk; every product pin ages
-forward against a date table. Fourteen commits, nothing pushed.
+forward against a date table. Everything below lands as reviewed commits on
+`main`, nothing pushed.
 
 ## Cheat Sheet
 

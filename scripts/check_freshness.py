@@ -138,6 +138,21 @@ FROM_PIN = re.compile(
     r'\bFROM\s+((?:[a-z0-9/_.-]+)?(?:golang|node|python|rust|ghcr\.io/graalvm/native-image))'
     r':(\d+)(\.(\d+))?(?:[\s-]|$)')
 
+# --- EOL GitHub Action pins (2026-09-19) ------------------------------------
+# Same date-gate design as base images: an action major starts failing the
+# day it is retired upstream, not when someone remembers to edit a regex.
+# checkout@v3 rides the retired node16 runtime; codecov@v3 predates the v4
+# token-handling overhaul. Only majors the corpus could plausibly pin are
+# listed — an unlisted major stays silent (unknown, not wrong).
+EOL_GITHUB_ACTIONS = {
+    'actions/checkout': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
+    'actions/setup-node': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
+    'actions/cache': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
+    'actions/upload-artifact': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
+    'codecov/codecov-action': {'v3': date(2024, 8, 1)},
+}
+USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
+
 RULES = [
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
@@ -172,6 +187,9 @@ RULES = [
     ('EOL-BASE-IMAGE',
      'base-image pin past its end-of-life (data table EOL_BASE_IMAGES, '
      'compared against today); bump to a supported LTS major'),
+    ('EOL-GITHUB-ACTION',
+     'GitHub Action major retired upstream (data table EOL_GITHUB_ACTIONS, '
+     'compared against today); bump to the current major'),
 ]
 
 FOOTER_LINK = '[ Back to Index](INDEX.md)'
@@ -360,6 +378,14 @@ def check(p: Path, rel: str):
                 hits.append((lineno, 'EOL-BASE-IMAGE',
                              f'{image}:{version} EOL since {eol.isoformat()} — '
                              f'{line.strip()[:70]}'))
+        m_use = USES_PIN.search(line)
+        if m_use:
+            action, vmajor = m_use.group(1), 'v' + m_use.group(2)
+            eol = EOL_GITHUB_ACTIONS.get(action, {}).get(vmajor)
+            if eol and date.today() >= eol:
+                hits.append((lineno, 'EOL-GITHUB-ACTION',
+                             f'{action}@{vmajor} retired upstream since '
+                             f'{eol.isoformat()} — {line.strip()[:60]}'))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like

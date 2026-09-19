@@ -26,6 +26,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 SKIP_DIRS = {'.git', 'node_modules', '.archive', '.freebuff', '.sass-cache'}
@@ -84,6 +85,24 @@ SHUTTERED_DOMAINS = re.compile(
     r')'
 )
 
+# --- EOL base-image pins (2026-09-19) ---------------------------------------
+# ~55 Dockerfile examples pinned node majors that had passed end-of-life
+# (18 EOL 2025-04, 20 EOL 2026-04); the corpus had even drifted against
+# itself, with newer chapters on 20 and older ones on 18. This is a DATA
+# table, not a regex list: when a pinned major reaches EOL, add its date
+# here and every pin to it starts failing the same day. Date-gated, so
+# adding a future EOL entry early is harmless — it stays silent until the
+# date arrives. Extend the dict with other base images the same way.
+EOL_BASE_IMAGES = {
+    'node': {
+        14: date(2023, 4, 30),
+        16: date(2023, 9, 11),
+        18: date(2025, 4, 30),
+        20: date(2026, 4, 30),
+    },
+}
+FROM_PIN = re.compile(r'\bFROM\s+node:(\d+)(?:[.\-\s]|$)')
+
 RULES = [
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
@@ -115,6 +134,9 @@ RULES = [
      'a "# Phase/Part/Section N" H1 grafted into a chapter file (chapters '
      'structure with ##; only the 81-lanes guides use # Phase at top level) — '
      'delete the stray header'),
+    ('EOL-BASE-IMAGE',
+     'base-image pin past its end-of-life (data table EOL_BASE_IMAGES, '
+     'compared against today); bump to a supported LTS major'),
 ]
 
 FOOTER_LINK = '[ Back to Index](INDEX.md)'
@@ -285,6 +307,19 @@ def check(p: Path, rel: str):
             hits.append((lineno, 'SHUTTERED-DOMAIN', line.strip()[:100]))
         if 'developers.google.com/web/' in line:
             hits.append((lineno, 'STALE-GOOGLE-WEB-TREE', line.strip()[:100]))
+        # EOL base-image pins: date-compared against the data table. The
+        # regex anchors on the FROM instruction and requires a delimiter
+        # after the major (./-/space/EOL), so node:22-alpine matches but
+        # node:2 (a truncated pin) and node:2x never do — and unversioned
+        # majors (no entry in the table) stay silent.
+        m_pin = FROM_PIN.search(line)
+        if m_pin:
+            major = int(m_pin.group(1))
+            eol = EOL_BASE_IMAGES.get('node', {}).get(major)
+            if eol and date.today() >= eol:
+                hits.append((lineno, 'EOL-BASE-IMAGE',
+                             f'node:{major} EOL since {eol.isoformat()} — '
+                             f'{line.strip()[:70]}'))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like

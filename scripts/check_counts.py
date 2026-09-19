@@ -155,6 +155,18 @@ def api_totals():
         return {}
 
 
+def freshness_rule_count():
+    """Number of rules in check_freshness.py, read from the module itself so
+    the doc claim IS the computation (a new rule bumps the count with zero
+    doc edits)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        'check_freshness', os.path.join(ROOT, 'scripts', 'check_freshness.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return len(mod.RULES)
+
+
 def cheat_sheet_formats():
     """Cheat Sheet sections that open with a fence vs. a table."""
     code = table = 0
@@ -246,6 +258,14 @@ def scale_edits(live):
         # Doc self-description: the gates page states the walker scope size.
         ('docs/verification-gates.md', r"today's (\d+) content files",
          [live['content']]),
+        # Health-report live-state claims about the gate system itself,
+        # sourced from the gate modules (a new rule restamps the docs).
+        ('docs/2026-09-19-corpus-health-report.md',
+         r'\*\*(\d+) rules\*\*, incl\. two date-gated',
+         [live['freshness_rules']]),
+        ('docs/2026-09-19-corpus-health-report.md',
+         r'(\d+) freshness rules across two date-gated',
+         [live['freshness_rules']]),
     ]
     # The api-contract example block mirrors the shipped artifact's totals.
     api = live.get('api') or {}
@@ -433,6 +453,7 @@ def compute_live():
         'backend_substacks': sub_stack_count('20-backend'),
         'sd_subfolders': sd_subfolder_label(),
         'api': api_totals(),
+        'freshness_rules': freshness_rule_count(),
     }
 
 
@@ -516,7 +537,8 @@ def main():
         if os.path.basename(rel) in ('INDEX.md', 'README.md'):
             nav.append(rel)
     nav += ['contributing.md', 'docs/verification-gates.md', 'lanes/INDEX.md',
-            'ROADMAP.md', 'docs/api-contract.md']
+            'ROADMAP.md', 'docs/api-contract.md',
+            'docs/2026-09-19-corpus-health-report.md']
     texts = load(sorted(set(nav)))
 
     live = compute_live()

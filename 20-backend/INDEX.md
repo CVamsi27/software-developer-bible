@@ -1,11 +1,11 @@
 # Backend Stack
 
-> **Study time:** ≈ 47 h 34 m of reading (143 files, ~20 min average).
+> **Study time:** ≈ 47 h 59 m of reading (147 files, ~20 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 143 files across 10 sub-stacks, organized by what you need to know in what order.
+> 147 files across 11 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-143-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-147-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -27,7 +27,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## The 10 Sub-Stacks (in study order)
+## The 11 Sub-Stacks (in study order)
 
 | Order | Sub-stack | Files | Topics |
 | ----: | ------------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,8 +39,9 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
 | 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
-| 9 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
-| 10 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
+| 9 | [Message Brokers](20.9-message-brokers/INDEX.md) | 4 | Kafka vs RabbitMQ models, delivery semantics, acks/ISR durability, consumer groups & rebalances, lag SLI, envelopes/schema evolution, DLQs, transactional outbox |
+| 10 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
+| 11 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |
 
 ---
 
@@ -66,6 +67,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 
 ### Distributed (read last)
 - **Microservices** — saga, CQRS, event sourcing, service mesh
+- **Message Brokers** — Kafka/RabbitMQ operations and the event-driven patterns underneath those architectures
 - **AI Engineering** — RAG, evals, cost governance (if JD requires)
 
 ---
@@ -79,7 +81,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 4. Database (4-6 hrs) — must know
 5. Auth (3 hrs) — must know
 6. Caching (45 min)
-7. Microservices (skim, 2 hrs)
+7. Microservices + Message Brokers (skim, 2.5 hrs)
 8. GraphQL + AI Engineering — as needed
 9. Java — full (only if role is Java-based, e.g. many EU product companies / the SDE-FAANG lane)
 
@@ -90,7 +92,8 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 4. Database: full (8-10 hrs)
 5. Auth & Security: full (6-8 hrs)
 6. Microservices: full (8-10 hrs)
-7. GraphQL, Caching, AI Engineering — as needed
+7. Message Brokers: full (2 hrs) — Kafka ops + event patterns
+8. GraphQL, Caching, AI Engineering — as needed
 8. Java: full (only if target role is Java-based)
 
 ### Path C — Interview tomorrow

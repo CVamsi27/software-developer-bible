@@ -5,10 +5,10 @@
   "repos/docita"
  ],
  "totals": {
-  "chapters": 556,
-  "sections": 46,
+  "chapters": 560,
+  "sections": 47,
   "categories": 13,
-  "read_minutes": 10400
+  "read_minutes": 10425
  },
  "chapters": [
   {
@@ -2780,6 +2780,46 @@
     "reference"
    ],
    "m": 4
+  },
+  {
+   "p": "20-backend/20.9-message-brokers/20.9.01-message-brokers.html",
+   "t": "Message Brokers",
+   "s": "Message Brokers",
+   "c": "Backend",
+   "g": [
+    "concept"
+   ],
+   "m": 6
+  },
+  {
+   "p": "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.html",
+   "t": "Kafka Internals & Operations",
+   "s": "Message Brokers",
+   "c": "Backend",
+   "g": [
+    "concept"
+   ],
+   "m": 6
+  },
+  {
+   "p": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.html",
+   "t": "Event-Driven Patterns on a Broker",
+   "s": "Message Brokers",
+   "c": "Backend",
+   "g": [
+    "concept"
+   ],
+   "m": 7
+  },
+  {
+   "p": "20-backend/20.9-message-brokers/20.9.04-interview-questions.html",
+   "t": "Message Brokers Interview Questions",
+   "s": "Message Brokers",
+   "c": "Interview",
+   "g": [
+    "interview-questions"
+   ],
+   "m": 6
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",

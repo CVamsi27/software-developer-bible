@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 173 h 20 m of reading (556 files, ~19 min average).
+> **Study time:** ≈ 173 h 45 m of reading (560 files, ~19 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-859-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-864-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-September%202026-purple)](#)
 
@@ -75,7 +75,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 9 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 7 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA, EAS builds, OTA updates, store release, interview questions |
 
-### 20-backend — Backend (143 files in 10 sub-stacks)
+### 20-backend — Backend (147 files in 11 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -201,4 +201,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 859 files, 363K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).
+*Last updated: September 2026 — 864 files, 364K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).

@@ -239,7 +239,7 @@ software-developer-bible/
 ├── INDEX.md ← every file, one list
 ├── 00-strategy/ ← resume · STAR · HR · communication
 ├── 10-frontend/ ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
-├── 20-backend/ ← 10 sub-stacks, zero duplication:
+├── 20-backend/ ← 11 sub-stacks, zero duplication:
 │ ├── 20.1-node.js runtime internals
 │ ├── 20.2-nestjs framework
 │ ├── 20.3-rest-apis ALL of HTTP/APIs (fundamentals → production → advanced)

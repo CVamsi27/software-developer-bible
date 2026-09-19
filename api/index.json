@@ -5,10 +5,10 @@
   "repos/docita"
  ],
  "totals": {
-  "chapters": 553,
+  "chapters": 556,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 10378
+  "read_minutes": 10401
  },
  "chapters": [
   {
@@ -1308,7 +1308,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 7
+   "m": 9
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
@@ -1558,7 +1558,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 13
   },
   {
    "p": "20-backend/20.13-java/20.13.06-interview-questions.html",
@@ -1569,7 +1569,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 4
+   "m": 6
   },
   {
    "p": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.html",
@@ -3956,6 +3956,17 @@
    "m": 11
   },
   {
+   "p": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.html",
+   "t": "30.3.6.01 — Infra & Ops Patterns Interview Questions",
+   "s": "Infra Patterns",
+   "c": "Architecture",
+   "g": [
+    "interview-questions",
+    "reference"
+   ],
+   "m": 6
+  },
+  {
    "p": "40-platform/40.1-docker/40.1.01-images-containers.html",
    "t": "Docker Images & Containers",
    "s": "Docker",
@@ -4112,6 +4123,17 @@
     "reverse-proxy"
    ],
    "m": 23
+  },
+  {
+   "p": "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.html",
+   "t": "40.11.02 — Nginx Reverse Proxy Interview Questions",
+   "s": "Platform",
+   "c": "DevOps",
+   "g": [
+    "interview-questions",
+    "reference"
+   ],
+   "m": 5
   },
   {
    "p": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.html",
@@ -4993,6 +5015,17 @@
     "reference"
    ],
    "m": 21
+  },
+  {
+   "p": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.html",
+   "t": "40.9.02 — Twelve-Factor App Interview Questions",
+   "s": "Platform",
+   "c": "Architecture",
+   "g": [
+    "interview-questions",
+    "reference"
+   ],
+   "m": 5
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.html",

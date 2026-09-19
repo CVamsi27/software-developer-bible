@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18",
+ "generated": "2026-09-19",
  "url_count": 2362,
  "urls": {
   "http://antirez.com/news/101": [
@@ -47,6 +47,7 @@
   "https://12factor.net/": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://12factor.net/config": [
@@ -249,7 +250,8 @@
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md"
   ],
   "https://blog.nginx.org/blog/inside-nginx-how-we-designed-for-performance-scale": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
   "https://blog.nrwl.io/turborepo-vs-nx-why-you-should-use-nx-for-your-next-monorepo-d04ccb54a2d4": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
@@ -1388,6 +1390,7 @@
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html": [
+   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
    "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
   "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/general-design-principles.html": [
@@ -5176,10 +5179,12 @@
    "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_limit_req_module.html": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_proxy_module.html": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
   "https://nginx.org/en/docs/http/websocket.html": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
@@ -6194,6 +6199,7 @@
    "50-quality/50.4-production-engineering/50.4.01-incident-response.md"
   ],
   "https://sre.google/sre-book/monitoring-distributed-systems/": [
+   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
@@ -6212,6 +6218,7 @@
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md"
   ],
   "https://sre.google/workbook/alerting-on-slos/": [
+   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
@@ -7504,7 +7511,8 @@
    "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md"
   ],
   "https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/": [
-   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
+   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md"
   ],
   "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",

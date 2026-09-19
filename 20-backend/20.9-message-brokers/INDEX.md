@@ -51,6 +51,22 @@ Anything can be poison?      → bounded retries → DLQ → alert → review
 - [Idempotency Keys](../../30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md) — the consumer-side contract
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — lag dashboards, tracing across async hops
 
+## Docita Anchor
+
+Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+
+| Topic | Docita evidence |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - decision matrix: Postgres-as-queue at ~0.4 jobs/sec vs Redis/Kafka ops overhead; the 20.9.01 "when not to add a broker" call, shipped |
+| Transactional enqueue | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` - job enqueued in the same Prisma transaction as the business write |
+| Idempotent enqueue | idempotency-key dedup on submit - recent completed jobs short-circuit duplicates |
+| Bounded retries → DLQ | max 5 attempts with `delayedUntil` backoff → `DEAD_LETTERED` status for manual inspection |
+| Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - each job claimed by one worker replica, no double-processing |
+| Stale-worker recovery | jobs stuck `ACTIVE` >10 min re-queued by the recovery pass - the crash-between-claim-and-ack hole, closed |
+| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit |
+
+Docita ships **zero Kafka/RabbitMQ - deliberately.** The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). If load ever demands a broker, the outbox relay's publish target changes - the contracts (envelope, idempotency keys, DLQ semantics) do not.
+
 ## Navigation
 
 [← Previous: Caching](../20.8-caching/INDEX.md) · [ Back to Index](../INDEX.md) · [Next: AI Engineering →](../20.12-ai-engineering/INDEX.md)

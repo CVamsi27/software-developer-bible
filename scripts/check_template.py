@@ -38,6 +38,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import md_fences
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
 # Campaign/project docs are not concept chapters; they have their own
@@ -220,12 +223,8 @@ def is_guide_file(text: str) -> bool:
     """Role-guide convention (contributing.md): multiple `# Phase`/`# Part`
     H1 sections instead of the chapter template. Fence-aware: `# Phase 2`
     style comments inside code blocks are shell comments, not headings."""
-    in_fence = False
     phase = 0
-    for line in text.splitlines():
-        if FENCE.match(line):
-            in_fence = not in_fence
-            continue
+    for _, line, in_fence, _ in md_fences.walk(text.splitlines()):
         if in_fence:
             continue
         if line.startswith('# ') and (line[2:].lstrip().startswith('Phase')
@@ -312,12 +311,8 @@ HEAD_ANY = re.compile(r'^(#{2,6}) (.+?)\s*$')
 def empty_sections(text):
     """-> list of (lineno, level, title) for headings with no content."""
     lines = text.split('\n')
-    in_fence = False
     heads = []
-    for i, line in enumerate(lines):
-        if FENCE.match(line):
-            in_fence = not in_fence
-            continue
+    for i, line, in_fence, _ in md_fences.walk(lines):
         if in_fence:
             continue
         m = HEAD_ANY.match(line)
@@ -375,13 +370,9 @@ def check(path: str):
     if is_guide_file(text):
         return problems
     problems += fence_problems(text)
-    in_fence = False
     heads = []
     q_lines = set()
-    for line in text.splitlines():
-        if FENCE.match(line):
-            in_fence = not in_fence
-            continue
+    for _, line, in_fence, _ in md_fences.walk(text.splitlines()):
         if in_fence:
             continue
         m = HEAD.match(line)

@@ -74,6 +74,44 @@ DUP_BODY_B = (
     f"## Summary\n\nSame {_DUP_TEXT_B[:200]}\n"
 )
 
+# A fully template-compliant interview bank (metadata, four '#' badges,
+# blockquote TL;DR claim, Q1..Q25 markers, nested-fence example inside a
+# 4-backtick wrapper). The nested example carries a literal '**Q99' line:
+# under the naive fence toggle it was counted as a question, so a claim of
+# 26 looked honest while the bank held 25. Under md_fences the literal is
+# content and the over-claim fires. The clean variant claims 25 and passes.
+_BANK_QS = "\n".join(
+    f"**Q{i}:** Question {i} about databases?\n\nAnswer {i} with enough depth."
+    for i in range(1, 26)
+)
+_BANK_NESTED = (
+    "````markdown\nExample embed:\n\n```text\n"
+    "**Q99: A literal example question, not a real one**\n"
+    "```\n\nEnd of example.\n````\n"
+)
+_BANK_META = (
+    "<!-- section: Backend | category: Interview | tags: interview-questions -->\n"
+    "[![Section](https://img.shields.io/badge/section-Backend-blue)](#)\n"
+    "[![Category](https://img.shields.io/badge/category-Interview-orange)](#)\n"
+    "[![Tags](https://img.shields.io/badge/tags-interview--questions-lightgrey)](#)\n"
+    "[![Read time](https://img.shields.io/badge/read--time-30_min-informational)](#)\n"
+)
+
+def _bank(claim):
+    return (
+        f"{_BANK_META}\n# Database Interview Bank\n\n"
+        f"> {claim} questions on databases, senior depth.\n\n"
+        f"## TL;DR\n\n{claim} questions.\n\n"
+        f"## First Principles\n\nDatabases reward designs that assume failure.\n\n"
+        f"## Interview Questions\n\n"
+        f"{_BANK_QS}\n\n## Summary\n\n{_BANK_NESTED}Covers databases.\n\n"
+        f"## See Also\n\n- [PostgreSQL Foundations](../01-postgresql-foundations/INDEX.md)\n\n"
+        f"## References & Learn More\n\n- None\n"
+    )
+
+BANK_OVER_CLAIM = _bank(26)
+BANK_CLEAN = _bank(25)
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -148,6 +186,18 @@ CASES = [
         "args": [],
         "plant": {"p.md": "x\n"},
         "clean_real": [REAL_CHAPTER],
+    },
+    {
+        "name": "gate 6b question-claim fires through a nested-fence example",
+        "gate": "check_template.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_OVER_CLAIM,
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_CLEAN,
+        },
     },
     {
         "name": "gate 10 cross-refs fires on a dangling → N.N ref",

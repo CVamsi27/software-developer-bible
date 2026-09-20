@@ -195,9 +195,11 @@ python3 scripts/link_baseline.py --update # after probe-verifying new URLs
 
 ## See Also
 
-- `docs/verification-gates.md` — the gate map this report summarizes
-- `contributing.md` — repo conventions and the verify workflow
-- `docs/residential-verification-checklist.md` — human-browser verification
+- [Verification Gates](verification-gates.md) — the gate map this report summarizes
+- [Contributing](../contributing.md) — repo conventions and the verify workflow
+- [Residential Verification Checklist](residential-verification-checklist.md) — human-browser verification
+- [Modernization Changelog 1](2026-09-10-modernization-changelog.md), [Dead-Link Remediation Report](2026-09-11-dead-link-remediation-report.md), [Modernization Changelog 2](2026-09-14-modernization-changelog-2.md) — the passes whose findings this report builds on
+- [Reference Coverage Audit](reference-coverage-audit.md) — the video-reference gap analysis (2026-09-16)
 
 ## References
 

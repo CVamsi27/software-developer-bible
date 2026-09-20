@@ -89,12 +89,13 @@ Interview questions live in dedicated `*-interview-questions.md` files (40 acros
 ## How to Use
 
 | Goal | Approach |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **New to a topic** | Start with the definition and "Why" sections |
 | **Preparing for an interview** | Follow your lane's 4-week or 8-week prep plan; the lane tells you which stack files to read in what order |
 | **Quick review** | Use the Cheat Sheet at the bottom of each chapter, or the [70-interview-toolkit/70.3-cheatsheets/](70-interview-toolkit/70.3-cheatsheets/INDEX.md) stack |
 | **Deep dive** | Read through internal working and code examples |
 | **Cross-reference** | Each stack folder has an `INDEX.md` listing all files with file counts |
+| **Trust the numbers** | 20 verification gates re-check every count, link and claim on each push — see the [Verification Gates](docs/verification-gates.md), the [Scripts Map](docs/scripts-map.md), and the [Corpus Health Report](docs/2026-09-19-corpus-health-report.md) |
 
 ---
 

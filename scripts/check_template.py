@@ -163,6 +163,7 @@ REQUIRED_INTERVIEW = {'TL;DR', 'First Principles', 'Summary', 'See Also', 'Refer
 REQUIRED_CASE_STUDY = {'TL;DR', 'Summary', 'See Also', 'References & Learn More'}
 
 FENCE = re.compile(r'^\s*(```|~~~)')
+FENCE_FULL = re.compile(r'^\s*(`{3,}|~{3,})(.*)$')
 HEAD = re.compile(r'^## (.+?)\s*$')
 # Blockquote TL;DR style: `> **TL;DR:** …` (or bolded without the quote)
 TLDR_BQ = re.compile(r'^\s*>?\s*\*\*TL;?DR:?\*\*', re.I)
@@ -331,6 +332,40 @@ def empty_sections(text):
     return issues
 
 
+def fence_problems(text: str):
+    """CommonMark: a closing fence may not carry an info string, and only a
+    bare fence of the SAME character at >= the opener's length closes a block.
+    A labeled close (` ```yaml ` while a block is open) does NOT close —
+    renderers merge everything up to the next bare fence, swallowing headings
+    into the code block. 38 instances repo-wide (2026-09-20): labeled closes
+    after yaml blocks, and one prose-glued close. Nested-fence documentation
+    (a ``` line inside a ```` block) is correctly treated as content."""
+    problems = []
+    in_fence = False
+    open_char, open_len = '', 0
+    for lineno, line in enumerate(text.splitlines(), 1):
+        m = FENCE_FULL.match(line)
+        if not m:
+            continue
+        marker, rest = m.group(1), m.group(2)
+        if in_fence:
+            if marker[0] == open_char and len(marker) >= open_len:
+                if rest.strip():
+                    problems.append(
+                        f"line {lineno}: closing fence carries an info string — "
+                        f"closing fences must be bare, or renderers merge the "
+                        f"following content into the code block (strip the "
+                        f"label, or move trailing prose to its own line)")
+                    in_fence = False
+                else:
+                    in_fence = False
+            # shorter/other-char fence lines inside a block are content
+        else:
+            in_fence = True
+            open_char, open_len = marker[0], len(marker)
+    return problems
+
+
 def check(path: str):
     """Return list of problem strings for one file."""
     problems = []
@@ -339,6 +374,7 @@ def check(path: str):
     problems += check_metadata(text)
     if is_guide_file(text):
         return problems
+    problems += fence_problems(text)
     in_fence = False
     heads = []
     q_lines = set()

@@ -157,5 +157,32 @@ for p in MD:
             f"one title H1; demote section stubs like `# Phase N:` to ##)"
         )
 
+# INDEX completeness: an INDEX.md must link every numbered subdirectory that has
+# its own INDEX.md (root INDEX -> lanes, lane INDEX -> stacks, stack INDEX ->
+# categories). Prevents invisible sub-stacks — the 20.9-class omission where a
+# computed count said one thing and the navigation said less. A link counts if
+# it targets the subdir itself, anything directly inside it (its INDEX.md, a
+# chapter, a deep page), or the subdir with an anchor.
+for p in MD:
+    if p.name != "INDEX.md":
+        continue
+    if p.parent != ROOT and not re.match(r"\d", p.parent.name):
+        continue
+    linked = set()
+    for m in LINK.finditer(strip_code(p.read_text(encoding="utf-8", errors="replace"))):
+        t = m.group(1)
+        if t.startswith(("http", "mailto:", "#")):
+            continue
+        linked.add((p.parent / t.split("#")[0]).resolve())
+    for sub in sorted(p.parent.iterdir()):
+        if not (sub.is_dir() and re.match(r"\d", sub.name) and (sub / "INDEX.md").exists()):
+            continue
+        sub_res = sub.resolve()
+        if sub_res not in linked and not any(t.parent == sub_res for t in linked):
+            errors.append(
+                f"INDEX GAP {p.relative_to(ROOT)}: numbered subdir {sub.name}/ has an "
+                f"INDEX.md but is not linked from this INDEX (invisible sub-stack)"
+            )
+
 print("\n".join(errors) if errors else f"OK: {len(MD)} md files checked")
 sys.exit(1 if errors else 0)

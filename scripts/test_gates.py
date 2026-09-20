@@ -16,18 +16,22 @@ Sandbox: every script derives its repo root from __file__, so copying
 scripts/ into a temp tree redirects all scanning there. The real corpus is
 never touched.
 
-Honest exclusions — gates that need corpus-scale or git context and thus
+Honest exclusions — gates that need git history or corpus-scale state and
 cannot fire deterministically in a sandbox:
-  - check_cross_refs / check_duplication / check_topic_twins /
-    check_first_principles: need real corpus structure for their
-    thresholds and baselines to mean anything;
-  - check_freshness: its rules anchor to content-file contexts, not bare
-    snippets;
   - link_baseline (diff): needs git history to diff against;
+  - check_topic_twins / check_first_principles: need real corpus baselines
+    (twin maps, coverage floors) to mean anything;
   - read_time / gen_master_index --check / wiring's count restamp: these
     are byte-lock/self-restamp designs — their verify-time run IS the
     plant test (any drift fails);
   - test_md_fences / test_fixers: already suites themselves (gates 16/17).
+
+The corpus-scale gates ARE coverable — but only with realistic plants:
+check_cross_refs, check_freshness and check_duplication all recognize
+chapter-shaped input (real directory structure, template-compliant files,
+fence-anchored rules), and their cases below use exactly that. Naive
+plants (bare snippets) do not fire, which is itself a fact worth having
+pinned: these gates are calibrated against real corpus shape.
 
 Exits 0 when every case passes. Run directly: python3 scripts/test_gates.py
 """
@@ -47,6 +51,27 @@ RUNNER = sys.executable
 # fail this case).
 REAL_CHAPTER = os.path.join(
     ROOT, "40-platform", "40.1-docker", "40.1.05-dockerfile-best-practices.md"
+)
+
+# Template-compliant chapter bodies for the duplication case (metadata + H1
+# + How It Works + Summary are what check_duplication's section scanner
+# recognizes as non-template sections).
+_DUP_TEXT_A = "\n".join(
+    f"Sentence {i} about connection pooling behavior with distinct wording {i}."
+    for i in range(30)
+)
+_DUP_META = "<!-- section: Platform | category: Architecture | tags: concept -->\n"
+DUP_BODY_A = (
+    f"{_DUP_META}\n# Dup Chapter\n\n## How It Works\n\n{_DUP_TEXT_A}\n\n"
+    f"## Summary\n\nSame {_DUP_TEXT_A[:200]}\n"
+)
+_DUP_TEXT_B = "\n".join(
+    f"Alternative {i} covering queue backpressure with different phrasing {i}."
+    for i in range(30)
+)
+DUP_BODY_B = (
+    f"{_DUP_META}\n# Dup Chapter\n\n## How It Works\n\n{_DUP_TEXT_B}\n\n"
+    f"## Summary\n\nSame {_DUP_TEXT_B[:200]}\n"
 )
 
 CASES = [
@@ -124,10 +149,66 @@ CASES = [
         "plant": {"p.md": "x\n"},
         "clean_real": [REAL_CHAPTER],
     },
+    {
+        "name": "gate 10 cross-refs fires on a dangling → N.N ref",
+        "gate": "check_cross_refs.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-t.md": (
+                "# T\n\nDetails at → 20.4.9.\n"
+            )
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-t.md": (
+                "# T\n\nMechanism chapter.\n"
+            ),
+            "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-x.md": (
+                "# X\n\nSee → 20.4.1 for the mechanism.\n"
+            ),
+        },
+        "dirs_clean": [
+            "10-frontend/10.1-javascript/01-execution-and-scope",
+            "20-backend/20.4-database/01-postgresql-foundations",
+        ],
+    },
+    {
+        "name": "gate 5 freshness fires on a stale signature in a real chapter shape",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-f.md": (
+                "text\n\n```js\nconst u = url.parse(req.url);\n```\n"
+            )
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-f.md": (
+                "text\n\n```js\nconst u = new URL(req.url);\n```\n"
+            )
+        },
+    },
+    {
+        "name": "gate 11 duplication fires on identical sections across stacks",
+        "gate": "check_duplication.py",
+        "args": ["--strict"],
+        "dirs": [
+            "10-frontend/10.1-javascript/01-execution-and-scope",
+            "20-backend/20.4-database/01-postgresql-foundations",
+        ],
+        "plant": {
+            "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-d.md": DUP_BODY_A,
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-d.md": DUP_BODY_A,
+        },
+        "clean": {
+            "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-d.md": DUP_BODY_A,
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-d.md": DUP_BODY_B,
+        },
+    },
 ]
 
 
-def build_sandbox(tmp, files, real_copies, dirs=()):
+def build_sandbox(tmp, files, real_copies, dirs=()):  # noqa: ARG001
     scripts = os.path.join(tmp, "scripts")
     os.makedirs(scripts, exist_ok=True)
     for fn in os.listdir(HERE):
@@ -164,7 +245,10 @@ def main() -> int:
 
             clean_files = case.get("clean", {})
             clean_real = case.get("clean_real", [])
-            build_sandbox(clean_tmp, clean_files, clean_real, case.get("dirs", ()))
+            build_sandbox(
+                clean_tmp, clean_files, clean_real,
+                case.get("dirs_clean", case.get("dirs", ())),
+            )
             rc = run_gate(clean_tmp, case["gate"], case["args"])
             clean_ok = rc.returncode == 0
 

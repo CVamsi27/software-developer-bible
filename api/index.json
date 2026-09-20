@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10496
+  "read_minutes": 10502
  },
  "chapters": [
   {
@@ -580,7 +580,7 @@
    "g": [
     "concept"
    ],
-   "m": 38
+   "m": 44
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.html",

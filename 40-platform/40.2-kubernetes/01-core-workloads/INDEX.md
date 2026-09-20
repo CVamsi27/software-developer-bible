@@ -1,6 +1,6 @@
 # Core Workloads
 
-> **Study time:** ≈ 55 min of reading (4 files, ~14 min average).
+> **Study time:** ≈ 1 h 1 m of reading (4 files, ~15 min average).
 > **4 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
@@ -21,8 +21,8 @@ Every Kubernetes object you will ever touch is either one of these workload type
 | --   : | ------ | -------- | ----------: |
 | 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | 20 min |
 | 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | 25 min |
-| 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 5 min |
-| 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | 5 min |
+| 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 8 min |
+| 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | 8 min |
 
 ---
 

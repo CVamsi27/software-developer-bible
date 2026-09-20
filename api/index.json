@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10468
+  "read_minutes": 10477
  },
  "chapters": [
   {
@@ -4224,7 +4224,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.html",
@@ -4234,7 +4234,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.html",
@@ -4384,7 +4384,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 10
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.03-jenkins.html",

@@ -87,15 +87,16 @@ Each round followed the same loop:
 
 ### Day-one catch ledger
 
-Three rules found real defects on their first baseline run — the empirical
+Five rules found real defects on their first baseline run — the empirical
 argument for the whole method:
 
 | Rule | Caught | Why the manual pass missed it |
-| ---------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | question-count contract (6b) | mobile bank "30+ curated questions" vs 19 held | sweep regex allowed no words between number and noun |
 | EOL-GITHUB-ACTION | `setup-node@v3`, `upload-artifact@v3`, a stray `checkout@v3` | sweep grepped only the actions it thought of |
 | OBSOLETE-COMPOSE-VERSION | three single-quoted `version:` keys | sweep grep matched double quotes only |
 | fence grammar (6b) | 38 labeled closes (+1 prose-glued) — renderers merge following headings into the code block | naive greps treat fences as pairs; CommonMark treats only bare same-length fences as closes |
+| INDEX completeness (3) | `60-realtime/INDEX.md` deep-linked all 11 websocket chapters but never linked the `60.1-websockets/` stack INDEX itself | the computed files badge was right; only the hand-written navigation was silent — omission, not a wrong number |
 
 Plus one process catch: the first version of the api-contract count rule was
 unreachable dead code (appended after `return`); the plant-test caught it —
@@ -123,6 +124,8 @@ proof-after-fix is the only proof.
 - 38 closing fences carrying info strings repaired (a fixer sharing the gate's exact parser — one owner, so fixer and gate cannot disagree)
 - fence parsing unified: ten scripts' naive `in_fence` toggles replaced by one `md_fences.walk` owner; the unified parser immediately found **20 over-padded boxes in 17 files** the desyncing old parser had silently skipped
 - **new: 20.9-message-brokers stack** — 4 chapters + INDEX in the reserved-but-empty slot; brokers had 50+ example mentions corpus-wide but no canonical home; includes the Docita Anchor whose honest verdict is "zero brokers, deliberately" (the 20.9.01 when-not-to lesson shipped)
+- **20.9 wired into 31 sites** — See Also links with per-site reason phrases from all 12 system-design case studies, the heavy broker-mention chapters, and both system-design INDEXes; the top INDEX's missing table row restored
+- **docs layer made reachable** — 7 of 10 docs/ files were linked from nowhere; entry points repaired (README, health-report See Also, scripts map) and the property gate-enforced
 
 ### Measured non-actions (the boundary findings)
 
@@ -175,9 +178,10 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 
 The corpus is now 560 study chapters, 40 interview banks — every one at or
 above the 25-question floor the gate now enforces — 2379 probe-verified
-external links, 14 freshness rules across two date-gated data tables, and 18
-CI-enforced gates whose harness audits its own wiring and whose markdown
-parsing has a single fence owner. Every count a reader can see is recomputed
+external links, 14 freshness rules across two date-gated data tables, and 21
+CI-enforced gates whose harness audits its own wiring, whose markdown
+parsing has a single fence owner, and whose detection itself is plant-tested
+every run. Every count a reader can see is recomputed
 from disk; every product pin ages forward against a date table. Everything
 below lands as reviewed commits on `main`, nothing pushed.
 

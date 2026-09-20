@@ -45,7 +45,7 @@
 
 | # | Script | What it owns | Fails when |
 | --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, api-contract) | a claim disagrees with live disk |
+| 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment + ASCII box walls | rows/pipes misaligned vs widest cell |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
 | 4 | `check_links.py` | Internal links resolve, no stale path-as-label links (fence-aware, anchor-verified) | a link is broken or lies about its target |

@@ -39,6 +39,11 @@ verify.sh *listened*. So this checks the harness, not the corpus:
      list is hand-maintained and had already drifted: it named 11 scripts and
      omitted `verify.sh` plus nine gate scripts, so editing the harness did not
      even run the harness check.
+  10. **Every checker/tester is wired somewhere.** The `check_*.py` prefix is
+     a claim of gate-hood; a `check_*.py` or `test_*.py` that no workflow and
+     no `verify.sh` gate invokes is invisible to the suite — the tooling-level
+     twin of the invisible-sub-stack defect. The invisible-thing class is
+     closed at repo, lane, file, docs, and now script level.
 
 `--write` restamps 5 and 6 from the same count this check computes, so the
 number has one owner and cannot drift (the `check_counts.py` / `read_time.py`
@@ -323,6 +328,26 @@ def covered(entry, target):
     return fnmatch.fnmatch(target, entry)
 
 
+def check_unwired(problems):
+    """Rule 10: every check_*/test_* script is invoked by verify.sh or a
+    workflow. The check_ prefix claims gate-hood; an unwired checker is
+    invisible to the suite (the tooling-level invisible-sub-stack)."""
+    verify_text = read(VERIFY)
+    wf_text = ''
+    for path in sorted(glob.glob(os.path.join(WORKFLOW_DIR, '*.yml'))):
+        wf_text += read(path)
+    for path in sorted(glob.glob(os.path.join(ROOT, 'scripts', '*.py'))):
+        name = os.path.basename(path)
+        if not (name.startswith('check_') or name.startswith('test_')):
+            continue
+        if name not in verify_text and name not in wf_text:
+            problems.append(
+                f'scripts/{name} is a checker or test suite but no verify.sh gate '
+                f'and no workflow invokes it — an unwired checker is invisible to '
+                f'the suite; wire it as a gate or rename it'
+            )
+
+
 def check_ci(problems, gate_scripts):
     """Rules 7-9: the CI layer must be able to fail, cover every gate, and
     be triggered by the files those gates read."""
@@ -425,6 +450,7 @@ def main() -> int:
     problems = []
     check(problems, text, lines, gates, stop)
     check_ci(problems, sorted({g['script'] for g in gates}))
+    check_unwired(problems)
     if problems:
         print(f'verify.sh wiring: {len(problems)} problem(s)')
         for p in problems:

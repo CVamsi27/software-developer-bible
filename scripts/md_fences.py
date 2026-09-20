@@ -25,9 +25,13 @@ FENCE_LINE = re.compile(r'^\s*(`{3,}|~{3,})(.*)$')
 def walk(lines):
     """Yield (index, line, in_fence, is_fence_line) for each line.
 
-    `in_fence` is the state AFTER processing the line; `is_fence_line`
-    marks the fence delimiter lines themselves, matching the loop shape
-    every consumer already used:
+    `in_fence` is the state AFTER processing the line; `is_fence_line` is
+    True only on lines that actually open or close a block — a ``` line
+    inside a ```` block is content (in_fence=True, is_fence_line=False),
+    NOT a delimiter. Consumers may trust is_fence_line as 'safe to treat
+    as a delimiter'; pairing it with the naive regex match instead would
+    let fixers misedit nested-fence content — the repair-pass bug class
+    this module exists to prevent:
 
         for i, line, in_fence, is_fence in md_fences.walk(lines):
             if is_fence:
@@ -40,14 +44,16 @@ def walk(lines):
     open_char, open_len = '', 0
     for i, line in enumerate(lines):
         m = FENCE_LINE.match(line)
-        is_fence_line = bool(m)
+        is_fence_line = False
         if m:
             marker = m.group(1)
             if in_fence:
                 if marker[0] == open_char and len(marker) >= open_len:
                     in_fence = False
+                    is_fence_line = True
                 # shorter / other-char fence line inside a block: content
             else:
                 in_fence = True
                 open_char, open_len = marker[0], len(marker)
+                is_fence_line = True
         yield i, line, in_fence, is_fence_line

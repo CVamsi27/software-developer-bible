@@ -1,6 +1,6 @@
 # Production Engineering — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (6 files, ~11 min average).
+> **Study time:** ≈ 1 h 6 m of reading (6 files, ~11 min average).
 > **6 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -43,7 +43,7 @@ When things break (and they will).
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | 11 min |
+| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | 12 min |
 
 **Severity (typical):**
 - **SEV1** — full outage, customers affected, all-hands

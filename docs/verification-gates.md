@@ -9,7 +9,7 @@
 Run everything locally before any commit:
 
 ```bash
-bash scripts/verify.sh          # all 18 gates; exit 1 blocks the push
+bash scripts/verify.sh          # all 19 gates; exit 1 blocks the push
 ```
 
 CI (`.github/workflows/code-whitespace.yml`) runs the same scripts on every
@@ -37,8 +37,7 @@ push/PR — a red X means a gate your local run should have caught.
 | 13 | `read_time.py --check` | Study-time lines (INDEXes) and Read-time badges (chapters) equal the computed estimate. | `python3 scripts/read_time.py --write` (idempotent; second run is a no-op). |
 | 14 | `gen_master_index.py --check` | `search.html` (the site's filterable master index) is byte-identical to what the current corpus generates. | `python3 scripts/gen_master_index.py` |
 | 15 | `check_verify_wiring.py` | **The harness audits itself, and so does CI.** Locally: every gate's failure branch sets the same variable the trailing summary reads; no `X=$((X+1))` on an uninitialized variable (the `set -u` abort); every script a gate invokes exists; gate labels are unique, gap-free and monotonic; and the gate count quoted in `verify.sh`, `contributing.md` and this page all agree. In CI: every workflow step that runs a gate under `set +e` must propagate its exit status (the same false green one level up — `job-board-watch.yml`, `link-rot-audit.yml` and `drift-drill.yml` are exempt **by name, with the reason**, because they are audits that deliberately turn a non-zero exit into a tracking issue); every gate must actually be enforced by CI; and every script a workflow references must be in its `paths:` trigger filter. Born from a real **false green**: gate 10's failure branch wrote `FAILURES` instead of `FAIL`, so under `set -u` the unbound arithmetic aborted `verify.sh` *before* its trailing `exit $FAIL` — a genuinely broken cross-reference printed `FAIL`, skipped gates 11–14 entirely, and still exited **0**, so CI reported success on a red build. Every gate *script* was correct throughout; nothing measured whether the harness listened. | `python3 scripts/check_verify_wiring.py --write` restamps the count from the same computation it checks. Wiring defects (a failure branch that cannot reach the exit, a CI step that drops its status, a gate missing from CI, a trigger filter that omits a script) must be fixed by hand — that is the whole point. |
-
-## Scope: what each gate scans
+| 16 | `test_md_fences.py` | The fence owner's semantics are pinned by characterization tests. `md_fences.walk()` is the single fence parser behind ten gates and fixers — a regression there corrupts link scanning, duplication detection, the box fixers and the structure gate *simultaneously*, and silently, because none of them fence-parse on their own anymore. The suite pins: same character at ≥ the opener's length closes (labeled closes included, per the documented trade-off); shorter/other-character fence lines inside a block are content (what makes documented ```-inside-```` examples parse); `in_fence` is the state after the line; `is_fence_line` is true only on real delimiters — a trustable signal the original code did not actually provide (it flagged regex-matching content lines as delimiters, which a trusting fixer would have edited); indented fences track pairwise; and the no-blockquote-fences limitation is a pinned decision, not a surprise. | `python3 scripts/test_md_fences.py` — if it fails, fix `md_fences.py`, not the expectations: they are the recorded contract. |
 
 Two walks exist, and knowing which is which explains most "why wasn't this
 flagged?" surprises:

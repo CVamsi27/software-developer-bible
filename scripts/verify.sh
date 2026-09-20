@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs all eighteen checks in order; exits non-zero if any real failure is
+# Runs all nineteen checks in order; exits non-zero if any real failure is
 # found. Known lane-80.x numbering GAPS are intentional (numbers owned by
 # projects/docita prep docs) and reported as baseline noise, not failures.
 # Gate labels are append-only (8b/8c arrived after 8), so the label order in
@@ -13,7 +13,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/18  check_counts.py — every count claim vs live disk"
+echo "1/19  check_counts.py — every count claim vs live disk"
 echo "     python3 scripts/check_counts.py   (--write restamps them)"
 echo "------------------------------------------------------------"
 # Owns every count in the navigation surface, not just the two repo-scale
@@ -27,7 +27,7 @@ else
 fi
 
 echo ""
-echo "2/18  check_alignment.py — table pipes + ASCII box walls"
+echo "2/19  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -38,7 +38,7 @@ else
 fi
 
 echo ""
-echo "3/18  check_structure.py — IDs, sequences, interview-last"
+echo "3/19  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -58,7 +58,7 @@ else
 fi
 
 echo ""
-echo "4/18  check_links.py — fence-aware broken-link scan"
+echo "4/19  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -69,7 +69,7 @@ else
 fi
 
 echo ""
-echo "5/18  check_freshness.py — stale-API signature scan"
+echo "5/19  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -80,7 +80,7 @@ else
 fi
 
 echo ""
-echo "6/18  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/19  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -95,7 +95,7 @@ else
 fi
 
 echo ""
-echo "6b/18 check_template.py — template compliance (sections, order, genres)"
+echo "6b/19 check_template.py — template compliance (sections, order, genres)"
 echo "     python3 scripts/check_template.py"
 echo "------------------------------------------------------------"
 # Supersedes check_required_sections.py (its Summary/See Also/References and
@@ -111,7 +111,7 @@ else
 fi
 
 echo ""
-echo "7/18  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
+echo "7/19  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
 echo "     python3 scripts/check_claims.py"
 echo "------------------------------------------------------------"
 # Born from the Sept 2026 cross-repo audits: claim phrases that were
@@ -127,7 +127,7 @@ else
 fi
 
 echo ""
-echo "8/18  check_code_whitespace.py — code-block indentation hygiene"
+echo "8/19  check_code_whitespace.py — code-block indentation hygiene"
 echo "     python3 scripts/check_code_whitespace.py"
 echo "------------------------------------------------------------"
 # Trailing whitespace inside fences and whole-block paste-shift base
@@ -142,7 +142,7 @@ else
 fi
 
 echo ""
-echo "8b/18 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "8b/19 fix_box_code_indent.py --check — de-indented code inside box diagrams"
 echo "     python3 scripts/fix_box_code_indent.py --check --json --css"
 echo "------------------------------------------------------------"
 # Code embedded between ASCII box walls that lost its indentation (every
@@ -159,7 +159,7 @@ else
 fi
 
 echo ""
-echo "8c/18 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "8c/19 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
 echo "     python3 scripts/fix_box_width.py --check"
 echo "------------------------------------------------------------"
 # Boxes whose right wall is pushed far past their content wrap on
@@ -175,7 +175,7 @@ else
     FAIL=1
 fi
 
-echo "9/18 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "9/19 check_first_principles.py --diff — First Principles coverage must not regress"
 echo "     python3 scripts/check_first_principles.py --diff"
 echo "------------------------------------------------------------"
 # Concept chapters carry a hand-authored ## First Principles section
@@ -192,7 +192,7 @@ else
 fi
 
 echo "------------------------------------------------------------"
-echo "10/18 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "10/19 check_cross_refs.py — inline → N.N.N refs resolve to real files"
 echo "     python3 scripts/check_cross_refs.py"
 echo "------------------------------------------------------------"
 # Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
@@ -206,7 +206,7 @@ else
 fi
 
 echo ""
-echo "11/18 check_duplication.py --strict — no chapter teaches another chapter's prose"
+echo "11/19 check_duplication.py --strict — no chapter teaches another chapter's prose"
 echo "     python3 scripts/check_duplication.py --strict"
 echo "------------------------------------------------------------"
 # The \"every topic lives in exactly ONE place\" rule is only as good as the
@@ -223,7 +223,7 @@ else
 fi
 
 echo ""
-echo "12/18 check_topic_twins.py — twin chapters must cross-link"
+echo "12/19 check_topic_twins.py — twin chapters must cross-link"
 echo "     python3 scripts/check_topic_twins.py"
 echo "------------------------------------------------------------"
 # A pattern chapter, its framework implementation and its case study are a
@@ -240,7 +240,7 @@ else
 fi
 
 echo ""
-echo "13/18 read_time.py --check — declared study times vs computed estimates"
+echo "13/19 read_time.py --check — declared study times vs computed estimates"
 echo "     python3 scripts/read_time.py --check"
 echo "------------------------------------------------------------"
 # Read times were hand-guessed and contradicted each other (2,912 words
@@ -255,7 +255,7 @@ else
 fi
 
 echo ""
-echo "14/18 gen_master_index.py --check — generated search page in sync with the corpus"
+echo "14/19 gen_master_index.py --check — generated search page in sync with the corpus"
 echo "     python3 scripts/gen_master_index.py --check"
 echo "------------------------------------------------------------"
 # search.html is generated from the same enforced metadata (gate 6b) and
@@ -270,7 +270,7 @@ else
 fi
 
 echo ""
-echo "15/18 check_verify_wiring.py — verify.sh's own wiring + gate-count self-consistency"
+echo "15/19 check_verify_wiring.py — verify.sh's own wiring + gate-count self-consistency"
 echo "     python3 scripts/check_verify_wiring.py"
 echo "------------------------------------------------------------"
 # The one gate that watches the harness instead of the corpus. Gate 10's
@@ -284,6 +284,24 @@ if python3 scripts/check_verify_wiring.py; then
     echo "  PASS"
 else
     echo "  FAIL — the harness, not the corpus, is broken: every failure branch must set FAIL=1"
+    FAIL=1
+fi
+
+echo ""
+echo "16/19 test_md_fences.py — the fence owner's semantics are pinned"
+echo "     python3 scripts/test_md_fences.py"
+echo "------------------------------------------------------------"
+# md_fences.walk() is the single fence parser behind ten gates and fixers. A
+# regression there corrupts link scanning, duplication detection, the box
+# fixers and the structure gate simultaneously — and silently, because none
+# of them fence-parse on their own anymore. These characterization tests pin
+# the documented semantics (same char >= length closes; nested fences are
+# content; is_fence_line means a real delimiter) so the owner cannot drift.
+if python3 scripts/test_md_fences.py > /dev/null 2>&1; then
+    echo "  PASS"
+else
+    python3 scripts/test_md_fences.py | tail -6
+    echo "  FAIL — md_fences.walk semantics drifted; fix the module, not the expectations"
     FAIL=1
 fi
 

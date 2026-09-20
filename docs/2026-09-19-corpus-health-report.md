@@ -68,7 +68,7 @@ Each round followed the same loop:
 5. **Prove the gate both ways**: fires on the planted defect, silent on all
    real files, and *wired* — the failure branch reaches the exit.
 
-### Gate inventory after the session (19 gates, all CI-enforced)
+### Gate inventory after the session (20 gates, all CI-enforced)
 
 | Gate | Enforces | Session change |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -81,6 +81,7 @@ Each round followed the same loop:
 | 6b `check_template.py` | Template, metadata, **question-count claims**, **bank floor**, **fence grammar** | +count-claim contract (claims read only from intro blockquote/TL;DR); +25-question floor with one named-format exemption; +closing-fence rule with full CommonMark nesting semantics |
 | 7–15 | Claims, whitespace, first-principles, cross-refs, duplication, twins, read-time, search byte-lock, self-wiring | — (gate 15 enforced throughout) |
 | 16 `test_md_fences.py` | The fence owner's semantics, pinned by 16 characterization tests | +gate born from writing the tests: `is_fence_line` flagged regex-matching content lines as delimiters (now true only on real open/close); `read_time` had been silently miscounting nested-fence content as reading text |
+| 17 `test_fixers.py` | The fixers' repair output, pinned by planted-defect round trips (byte-exact, idempotent, no-mangle negative) | +closes the repair-wrongly failure mode the session demonstrated twice — corrupted repair pass, silently-skipping box fixer — by asserting each fixer's recorded contract in a temp-tree sandbox |
 | drift drill | 31 staleness classes, quarterly + issue-tracking | — |
 
 ### Day-one catch ledger
@@ -182,7 +183,7 @@ below lands as reviewed commits on `main`, nothing pushed.
 ## Cheat Sheet
 
 ```bash
-bash scripts/verify.sh                    # all 19 gates; exit 1 blocks push
+bash scripts/verify.sh                    # all 20 gates; exit 1 blocks push
 # Restamp order matters when several drift: read_time → gen_master_index →
 # check_counts (it copies the generated JSON totals into the api-contract).
 python3 scripts/read_time.py --write      # restamp read-time badges

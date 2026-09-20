@@ -1,6 +1,6 @@
 # Interview Drills - Microservices
 
-> **Study time:** ≈ 59 min of reading (1 files, ~59 min average).
+> **Study time:** ≈ 1 h 7 m of reading (1 files, ~67 min average).
 > **1 file.** 30+ senior-level Q&A covering decomposition, communication, data, transactions, observability, and failure handling — each answerable in 30-45 minutes with trade-offs and an architecture diagram.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -12,7 +12,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | 59 min |
+| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | 67 min |
 
 ---
 

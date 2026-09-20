@@ -1,6 +1,6 @@
 # Service Topology - Microservices
 
-> **Study time:** ≈ 1 h 4 m of reading (4 files, ~16 min average).
+> **Study time:** ≈ 1 h 6 m of reading (4 files, ~16 min average).
 > **4 files.** How services find each other and evolve safely: discovery registries, the edge gateway, the sidecar service mesh, and the strangler-fig migration path off a monolith.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -14,7 +14,7 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [Service Discovery](20.6.1.01-service-discovery.md) | Client vs server-side discovery, Consul, Eureka, DNS-based, registry HA, Kubernetes | 14 min |
 | 02 | [API Gateway](20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; cross-cutting concerns and BFF | 21 min |
-| 03 | [Service Mesh](20.6.1.03-service-mesh.md) | Istio, Linkerd, sidecar proxies, mTLS, retries, traffic shifting, observability without app changes | 5 min |
+| 03 | [Service Mesh](20.6.1.03-service-mesh.md) | Istio, Linkerd, sidecar proxies, mTLS, retries, traffic shifting, observability without app changes | 7 min |
 | 04 | [Strangler Fig](20.6.1.04-strangler-fig.md) | Legacy migration, facade/router design, parallel run, dual-write consistency, feature-flag cutover | 24 min |
 
 ---

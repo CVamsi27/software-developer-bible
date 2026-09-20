@@ -249,7 +249,7 @@ def check(problems, text, lines, gates, summary_line):
                 f"{count} gates"
             )
     hdr = re.search(r'^# Runs all (\w+) checks', text, re.M)
-    word = WORDS.get(count)
+    word = WORDS.get(count, str(count))   # same default the write path uses
     if not hdr:
         problems.append('header comment no longer states how many checks run')
     elif hdr.group(1).lower() != word:

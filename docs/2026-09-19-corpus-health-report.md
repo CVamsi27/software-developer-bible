@@ -68,10 +68,10 @@ Each round followed the same loop:
 5. **Prove the gate both ways**: fires on the planted defect, silent on all
    real files, and *wired* — the failure branch reaches the exit.
 
-### Gate inventory after the session (20 gates, all CI-enforced)
+### Gate inventory after the session (21 gates, all CI-enforced)
 
 | Gate | Enforces | Session change |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1 `check_counts.py` | Every count claim on the nav surface | +4 owned claims: gates-page walker scope, api-contract totals (sourced from the gate-14-locked JSON), freshness rule count, drill class counts |
 | 2 `check_alignment.py` | Table alignment + header rows exist | — |
 | 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last**, **INDEX completeness**, **doc reachability** | +banks-last rule with two documented exemptions; +INDEX-completeness (no invisible sub-stacks — caught the 60-realtime omission on first run) and orphan-doc reachability (BFS from entry points; born from the 7-of-10 docs/ orphan scan) |
@@ -82,6 +82,7 @@ Each round followed the same loop:
 | 7–15 | Claims, whitespace, first-principles, cross-refs, duplication, twins, read-time, search byte-lock, self-wiring | — (gate 15 enforced throughout) |
 | 16 `test_md_fences.py` | The fence owner's semantics, pinned by 16 characterization tests | +gate born from writing the tests: `is_fence_line` flagged regex-matching content lines as delimiters (now true only on real open/close); `read_time` had been silently miscounting nested-fence content as reading text |
 | 17 `test_fixers.py` | The fixers' repair output, pinned by planted-defect round trips (byte-exact, idempotent, no-mangle negative) | +closes the repair-wrongly failure mode the session demonstrated twice — corrupted repair pass, silently-skipping box fixer — by asserting each fixer's recorded contract in a temp-tree sandbox |
+| 18 `test_gates.py` | **The suite self-test**: each sandboxable gate's canonical defect planted in a temp tree must still fire; clean content (incl. a real passing chapter) must still pass | +closes the last unwatched layer — detection itself; the two-sided design caught the wiring checker's check/write word-count asymmetry past twenty gates before landing |
 | drift drill | 31 staleness classes, quarterly + issue-tracking | — |
 
 ### Day-one catch ledger
@@ -183,7 +184,7 @@ below lands as reviewed commits on `main`, nothing pushed.
 ## Cheat Sheet
 
 ```bash
-bash scripts/verify.sh                    # all 20 gates; exit 1 blocks push
+bash scripts/verify.sh                    # all 21 gates; exit 1 blocks push
 # Restamp order matters when several drift: read_time → gen_master_index →
 # check_counts (it copies the generated JSON totals into the api-contract).
 python3 scripts/read_time.py --write      # restamp read-time badges

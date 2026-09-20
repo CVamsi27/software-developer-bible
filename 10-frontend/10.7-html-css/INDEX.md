@@ -1,6 +1,6 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 47 m of reading (9 files, ~12 min average).
+> **Study time:** ≈ 1 h 54 m of reading (9 files, ~13 min average).
 > **9 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -65,7 +65,7 @@ The client-side stores — and the security decision behind choosing one.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 09 | [Interview Questions](10.7.09-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 4 min |
+| 09 | [Interview Questions](10.7.09-interview-questions.md) | 6 senior Q&A: margin collapsing, stacking contexts, flex-vs-grid, rendering cost model, semantic a11y, CSS architecture at scale | 11 min |
 
 ---
 

@@ -25,7 +25,8 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from check_template import CANON_A, normalize, HEAD, FENCE  # noqa: E402
+from check_template import CANON_A, normalize, HEAD  # noqa: E402
+import md_fences  # noqa: E402
 
 CANON_INDEX = {name: i for i, name in enumerate(CANON_A)}
 # Optional section that may sit before Summary
@@ -35,11 +36,7 @@ CANON_INDEX.setdefault('Interview Questions', 10)
 def parse(path):
     lines = open(path, encoding='utf-8').read().split('\n')
     heads = []
-    in_fence = False
-    for i, line in enumerate(lines):
-        if FENCE.match(line):
-            in_fence = not in_fence
-            continue
+    for i, line, in_fence, _ in md_fences.walk(lines):
         if in_fence:
             continue
         m = HEAD.match(line)

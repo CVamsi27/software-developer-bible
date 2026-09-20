@@ -216,5 +216,34 @@ for p in MD:
             f"INDEX — link it from an entry point (invisible documentation)"
         )
 
+# Chapter reachability: every non-INDEX file under the study stacks
+# (10-* through 70-*) must be linked from at least one INDEX.md — the
+# file-level twin of INDEX completeness. A chapter written without its
+# INDEX row is invisible to navigation (the 20.9-class defect one level
+# deeper). Lane files (80-*/81-*) are workflow docs with their own
+# structure and are out of scope.
+stack_top = re.compile(r"^[1-7]0-")
+linked = set()
+for idx in MD:
+    if idx.name != "INDEX.md":
+        continue
+    for m in LINK.finditer(strip_code(idx.read_text(encoding="utf-8", errors="replace"))):
+        t = m.group(1)
+        if t.startswith(("http", "mailto:", "#")):
+            continue
+        target = (idx.parent / t.split("#")[0]).resolve()
+        if target.exists() and target.suffix == ".md":
+            linked.add(target)
+for p in MD:
+    rel = p.relative_to(ROOT)
+    top = rel.parts[0] if rel.parts else ""
+    if p.name == "INDEX.md" or not stack_top.match(top):
+        continue
+    if p.resolve() not in linked:
+        errors.append(
+            f"UNLINKED CHAPTER {rel}: not linked from any INDEX.md "
+            f"(invisible chapter — add its row to the stack/category INDEX)"
+        )
+
 print("\n".join(errors) if errors else f"OK: {len(MD)} md files checked")
 sys.exit(1 if errors else 0)

@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10502
+  "read_minutes": 10513
  },
  "chapters": [
   {
@@ -2450,7 +2450,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 60
+   "m": 71
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.html",

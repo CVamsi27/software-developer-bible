@@ -71,10 +71,10 @@ Each round followed the same loop:
 ### Gate inventory after the session (20 gates, all CI-enforced)
 
 | Gate | Enforces | Session change |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1 `check_counts.py` | Every count claim on the nav surface | +4 owned claims: gates-page walker scope, api-contract totals (sourced from the gate-14-locked JSON), freshness rule count, drill class counts |
 | 2 `check_alignment.py` | Table alignment + header rows exist | — |
-| 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last** | +banks-last rule with two documented exemptions |
+| 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last**, **INDEX completeness**, **doc reachability** | +banks-last rule with two documented exemptions; +INDEX-completeness (no invisible sub-stacks — caught the 60-realtime omission on first run) and orphan-doc reachability (BFS from entry points; born from the 7-of-10 docs/ orphan scan) |
 | 4 `check_links.py` | Internal links + honest link labels | — |
 | 5 `check_freshness.py` | **14 rules**, incl. two date-gated EOL tables + Compose | +EOL-BASE-IMAGE, +EOL-GITHUB-ACTION, +OBSOLETE-COMPOSE-VERSION |
 | 6 `link_baseline.py` | Cited URLs probe-verified (2379) | +verified SRE/broker URLs |

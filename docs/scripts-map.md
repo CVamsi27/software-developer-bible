@@ -6,7 +6,7 @@
 
 # Scripts Map — what runs, what owns what, what to reach for
 
-> Every script in `scripts/`, arranged by the job it does inside the 20-gate
+> Every script in `scripts/`, arranged by the job it does inside the 21-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -65,7 +65,7 @@
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
-| 18 | `check_verify_wiring.py --write` (in CI, count restamp path) | Owned gate-count restamps stay consistent | count claims disagree |
+| 18 | `test_gates.py` | **The suite self-test** — each sandboxable gate's canonical defect, planted in a temp tree, must still fire; clean content must still pass | a gate stops detecting its defect |
 
 ### The checker → fixer → restamper recipes
 
@@ -98,7 +98,7 @@ When a gate fails, run the tool it names — never hand-edit a claim it owns:
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
 | `job_board_watch.py` | Weekly JD watch (advisory workflow) |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
-| `test_md_fences.py` / `test_fixers.py` | The tooling's own test suites (gates 16/17) |
+| `test_md_fences.py` / `test_fixers.py` / `test_gates.py` | The tooling's own test suites (gates 16/17/18) |
 | `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
 
 ### Doctrine: adding a script

@@ -170,6 +170,8 @@ it real.
 
 - [Verification Gates](verification-gates.md) — the narrative
   history and full contract of every gate row.
+- [Gate Design Principles](gate-design-principles.md) — why the suite is
+  shaped the way it is: the constraints, the method, and the layer table.
 - [Corpus Health Report](2026-09-19-corpus-health-report.md) — the
   ledger this map summarizes; every defect named here is documented there.
 - [Contributing](../contributing.md) — repo conventions the gates enforce.

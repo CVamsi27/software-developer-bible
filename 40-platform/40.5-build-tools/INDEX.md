@@ -1,6 +1,6 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 1 h 56 m of reading (10 files, ~12 min average).
+> **Study time:** ≈ 2 h of reading (10 files, ~12 min average).
 > **10 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -51,8 +51,8 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | 5 min |
-| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | 6 min |
+| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | 7 min |
+| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | 8 min |
 
 ---
 

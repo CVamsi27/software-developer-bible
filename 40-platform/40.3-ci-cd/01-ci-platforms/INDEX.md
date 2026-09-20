@@ -1,6 +1,6 @@
 # CI Platforms
 
-> **Study time:** ≈ 46 min of reading (4 files, ~12 min average).
+> **Study time:** ≈ 50 min of reading (4 files, ~12 min average).
 > **4 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI, Jenkins, and ArgoCD (GitOps). The concepts transfer; learn one deeply, map the others.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
@@ -21,8 +21,8 @@ Every senior engineer owns a pipeline, and the pipeline lives on a platform. Job
 | --   : | ------ | -------- | ----------: |
 | 01 | [GitHub Actions](40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets, environments | 21 min |
 | 02 | [GitLab CI/CD](40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, stages, multi-project pipelines, Auto DevOps | 10 min |
-| 03 | [Jenkins CI/CD](40.3.1.03-jenkins.md) | Declarative vs scripted pipelines, shared libraries, plugins, controller/agent model | 9 min |
-| 04 | [ArgoCD (GitOps)](40.3.1.04-argocd.md) | GitOps model, Applications and ApplicationSets, sync policies, drift detection, rollback | 6 min |
+| 03 | [Jenkins CI/CD](40.3.1.03-jenkins.md) | Declarative vs scripted pipelines, shared libraries, plugins, controller/agent model | 11 min |
+| 04 | [ArgoCD (GitOps)](40.3.1.04-argocd.md) | GitOps model, Applications and ApplicationSets, sync policies, drift detection, rollback | 8 min |
 
 ---
 

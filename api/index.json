@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10477
+  "read_minutes": 10488
  },
  "chapters": [
   {
@@ -4314,7 +4314,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 9
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
@@ -4394,7 +4394,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.04-argocd.html",
@@ -4404,7 +4404,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.html",
@@ -4675,7 +4675,7 @@
     "reference",
     "tool"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.html",
@@ -4687,7 +4687,7 @@
     "reference",
     "tool"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.html",

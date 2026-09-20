@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10494
+  "read_minutes": 10495
  },
  "chapters": [
   {
@@ -3628,7 +3628,7 @@
    "g": [
     "concept"
    ],
-   "m": 39
+   "m": 40
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.html",

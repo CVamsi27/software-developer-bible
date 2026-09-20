@@ -1,6 +1,6 @@
 # Node.js — Index
 
-> **Study time:** ≈ 6 h 17 m of reading (13 files, ~29 min average).
+> **Study time:** ≈ 6 h 25 m of reading (13 files, ~30 min average).
 > **13 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
@@ -81,7 +81,7 @@ Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 | 01 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | 18 min |
 | 02 | [Debugging & Profiling](04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md) | `--inspect` + Chrome DevTools, `--prof` tick logs, heap snapshot comparison, Clinic.js, event-loop lag monitoring, SIGUSR2 diagnostics reports | 16 min |
 | 03 | [Express & Fastify Internals](04-security-and-operations/20.1.4.03-express-fastify-internals.md) | Middleware chain + arity-4 error handlers, mount paths, Fastify hooks + plugin encapsulation, schema serialization, benchmark caveats, migration notes | 18 min |
-| 04 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 95 min |
+| 04 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 50+ curated questions with answers | 103 min |
 
 ---
 

@@ -188,6 +188,23 @@ CLAIM_DIGIT = re.compile(r'\b(\d{1,3})\+?\s+(?:\w+\s+){0,2}?questions\b', re.I)
 CLAIM_WORD = re.compile(
     r'\b(' + '|'.join(WORDNUM) + r')\s+(?:\w+\s+){0,2}?questions\b', re.I)
 
+# --- Interview-bank question floor (2026-09-20) ------------------------------
+# Every bank in the corpus was completed to 25 questions (the standard the
+# bank-completion rounds established); the claim-vs-actual check above only
+# catches OVER-promising, so a thin bank passed silently. The floor makes the
+# standard enforceable. Exemptions are by name with a reason — same pattern
+# as the advisory-workflow map — because a bank whose FORMAT predates the
+# counted markers is not thin, and forcing the floor there demands a
+# mechanical reformat for no content gain.
+MIN_BANK_QUESTIONS = 25
+BANK_FLOOR_EXEMPTIONS = {
+    # 10 counted deep-dives + a 50-item rapid-fire section in the older
+    # `1. **question**` list format the QMARK regex does not count.
+    '20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md':
+        'mixed format: 10 counted deep-dives plus 50 rapid-fire items in the '
+        'older list format',
+}
+
 
 def normalize(name: str) -> str:
     name = name.strip()
@@ -392,6 +409,15 @@ def check(path: str):
                 f"question-count claim '{worst[1]}' exceeds the {len(q_lines)} "
                 f"questions present — the opening/TL;DR must not promise more "
                 f"than the bank holds (add the section or fix the number)")
+
+        rel_path = os.path.relpath(path, ROOT)
+        if (len(q_lines) < MIN_BANK_QUESTIONS
+                and rel_path not in BANK_FLOOR_EXEMPTIONS):
+            problems.append(
+                f"bank holds {len(q_lines)} questions — the corpus floor is "
+                f"{MIN_BANK_QUESTIONS} (complete the bank to the standard, or "
+                f"add the path to BANK_FLOOR_EXEMPTIONS with a reason if its "
+                f"format predates the counted markers)")
 
     # order check: accept any of the canonical orders, on the subset present
     # Empty sections (a heading with nothing under it at its own level).

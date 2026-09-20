@@ -1,6 +1,6 @@
 # Reverse Proxy — Index
 
-> **Study time:** ≈ 28 min of reading (2 files, ~14 min average).
+> **Study time:** ≈ 31 min of reading (2 files, ~16 min average).
 > **1 file** — Nginx as the production front door: the C10K origin story, the master–worker event-loop model, config context hierarchy, upstream load balancing, TLS termination, buffering, rate limiting, caching, and zero-downtime reloads.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
@@ -16,7 +16,7 @@
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | 23 min |
-| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | 18 senior-depth Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | 5 min |
+| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | 18 senior-depth Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | 8 min |
 
 ---
 

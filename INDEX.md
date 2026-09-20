@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 174 h 17 m of reading (560 files, ~19 min average).
+> **Study time:** ≈ 174 h 28 m of reading (560 files, ~19 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.

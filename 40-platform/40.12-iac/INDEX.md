@@ -1,6 +1,6 @@
 # IaC & Terraform — Index
 
-> **Study time:** ≈ 13 min of reading (2 files, ~6 min average).
+> **Study time:** ≈ 16 min of reading (2 files, ~8 min average).
 > **Infrastructure as Code fundamentals, Terraform state/plan/apply, modules, drift, backends, CI/CD safety, OpenTofu/Pulumi comparisons.**
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
@@ -30,7 +30,7 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | 8 min |
-| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | 5 min |
+| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | 8 min |
 
 ---
 

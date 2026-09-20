@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10457
+  "read_minutes": 10468
  },
  "chapters": [
   {
@@ -4004,7 +4004,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "40-platform/40.1-docker/40.1.01-images-containers.html",
@@ -4173,7 +4173,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.html",
@@ -4194,7 +4194,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.html",
@@ -5065,7 +5065,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.html",

@@ -28,6 +28,7 @@ import argparse
 import os
 import re
 import sys
+import md_fences
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -64,9 +65,8 @@ def style(path):
 def count(path):
     prose = code = rows = 0
     in_fence = False
-    for line in open(path, encoding='utf-8'):
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for _, line, in_fence, is_fence in md_fences.walk(open(path, encoding='utf-8')):
+        if is_fence:
             continue
         if in_fence:
             code += 1

@@ -30,6 +30,7 @@ Safety rules (all modes):
 """
 import re
 import sys
+import md_fences
 
 FENCE = re.compile(r"^```")
 KEYWORD = re.compile(
@@ -135,12 +136,14 @@ def scan(path, fix=False, modes=("js",)):
     had_nl = content.endswith("\n")
     lines = content.splitlines()
     fence_in = False
+    fence_state = {idx: (inf, isf) for idx, _, inf, isf in md_fences.walk(lines)}
     changed = [0]
     i, n = 0, len(lines)
     while i < n:
         ln = lines[i]
-        if FENCE.match(ln):
-            fence_in = not fence_in
+        inf, isf = fence_state[i]
+        if isf:
+            fence_in = inf
             i += 1
             continue
         if not fence_in or not ln.startswith("│"):

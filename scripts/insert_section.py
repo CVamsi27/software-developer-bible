@@ -24,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_template import normalize  # noqa: E402
+import md_fences
 
 HEAD = re.compile(r'^##\s+(.+?)\s*$')
 FENCE = re.compile(r'^\s*(```|~~~)')
@@ -35,9 +36,8 @@ RULE = '---'
 def heading_positions(lines):
     out = []
     in_fence = False
-    for i, line in enumerate(lines):
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for i, line, in_fence, is_fence in md_fences.walk(lines):
+        if is_fence:
             continue
         if in_fence:
             continue

@@ -16,6 +16,7 @@ Skips fences, personal/, .archive.
 import os
 import re
 import sys
+import md_fences
 
 REF = re.compile(r'→\s*((?:\d+\.)*\d+)')
 FENCE = re.compile(r'^\s*(```|~~~)')
@@ -90,9 +91,8 @@ def resolves(parts, stacks, cats, fids):
 
 def strip_fences(text: str):
     in_fence = False
-    for line in text.splitlines():
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for _, line, in_fence, is_fence in md_fences.walk(text.splitlines()):
+        if is_fence:
             continue
         if not in_fence:
             yield line

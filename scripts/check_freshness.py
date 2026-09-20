@@ -28,6 +28,7 @@ import urllib.error
 import urllib.request
 from datetime import date
 from pathlib import Path
+import md_fences
 
 SKIP_DIRS = {'.git', 'node_modules', '.archive', '.freebuff', '.sass-cache'}
 # The Next.js stack teaches Pages Router side-by-side with App Router
@@ -359,11 +360,12 @@ def check(p: Path, rel: str):
     text = p.read_text(encoding='utf-8', errors='replace')
     in_code = False
     lang = ''
-    for lineno, line in enumerate(text.splitlines(), 1):
+    for lineno, line, inf, isf in md_fences.walk(text.splitlines()):
         stripped = line.lstrip()
-        if stripped.startswith('```'):
-            in_code = not in_code
-            lang = stripped[3:].strip() if in_code else ''
+        if isf:
+            # inf is the state after this fence line: True means it opened.
+            in_code = inf
+            lang = stripped.lstrip('`~').strip() if inf else ''
             continue
 
         if FAKE_ARCHIVE_TS in line:

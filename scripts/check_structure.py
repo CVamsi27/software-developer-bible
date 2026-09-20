@@ -9,6 +9,7 @@ Usage:
 import re
 import sys
 from pathlib import Path
+import md_fences
 
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 links_only = "--links-only" in sys.argv
@@ -23,13 +24,8 @@ CODESPAN = re.compile(r"`[^`]*`")
 
 def strip_code(text: str) -> str:
     out = []
-    fence = False
-    for line in text.splitlines():
-        if line.lstrip().startswith("```"):
-            fence = not fence
-            out.append("")
-            continue
-        out.append("" if fence else CODESPAN.sub("", line))
+    for _, line, in_fence, _ in md_fences.walk(text.splitlines()):
+        out.append("" if in_fence else CODESPAN.sub("", line))
     return "\n".join(out)
 
 

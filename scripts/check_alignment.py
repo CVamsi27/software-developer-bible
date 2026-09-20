@@ -19,6 +19,7 @@ Usage:
 import os
 import re
 import sys
+import md_fences
 
 BOXCHARS = set('─│┌┐└┘├┤┬┴┼═━┄┈╭╮╰╯')
 OPENERS = set('┌├└')
@@ -305,10 +306,12 @@ def align_table(rows):
 def fix_tables(text):
     lines = text.split('\n')
     out, i, n, changed, in_code = [], 0, len(lines), 0, False
+    fence_state = {idx: (inf, isf) for idx, _, inf, isf in md_fences.walk(lines)}
     while i < n:
         s = lines[i]
-        if s.strip().startswith('```'):
-            in_code = not in_code
+        inf, isf = fence_state.get(i, (False, False))
+        if isf:
+            in_code = inf
             out.append(s)
             i += 1
             continue
@@ -411,14 +414,14 @@ def headerless_tables(text):
     """-> list of (line_no, message) for separators with no header row above."""
     lines = text.split('\n')
     issues = []
-    in_fence = False
+    fence_state = {idx: (inf, isf) for idx, _, inf, isf in md_fences.walk(lines)}
     i = 0
     while i < len(lines):
-        if FENCE.match(lines[i]):
-            in_fence = not in_fence
+        inf, isf = fence_state[i]
+        if isf:
             i += 1
             continue
-        if not in_fence and SEP_ROW.match(lines[i]):
+        if not inf and SEP_ROW.match(lines[i]):
             j = i - 1
             while j >= 0 and lines[j].strip() == '':
                 j -= 1

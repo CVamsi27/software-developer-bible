@@ -28,6 +28,7 @@ import os
 import re
 import sys
 from collections import defaultdict
+import md_fences
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -64,9 +65,8 @@ def sections(path):
     """Yield (name, prose) for non-template `##` sections."""
     lines = open(path, encoding='utf-8').read().split('\n')
     cur, buf, in_fence, out = None, [], False, []
-    for line in lines:
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for _, line, in_fence, is_fence in md_fences.walk(lines):
+        if is_fence:
             if cur is not None:
                 buf.append('')          # fence content is not prose
             continue

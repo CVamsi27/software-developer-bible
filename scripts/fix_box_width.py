@@ -26,6 +26,7 @@ rewrites each box at shrink-to-fit width:
 """
 import re
 import sys
+import md_fences
 
 FENCE = re.compile(r"^```")
 WALL = "│"
@@ -151,9 +152,21 @@ def process(path, fix=False, report=False, hug=False):
     changed = 0
     remaining = []
     i, n = 0, len(lines)
+    fence_state = {}
+    for idx, _, inf, isf in md_fences.walk(lines):
+        fence_state[idx] = (inf, isf)
+    def find_close(start):
+        """Index of the fence line closing the block opened at `start`
+        (first fence line after whose processing the walk is outside)."""
+        for j in range(start + 1, n):
+            inf, isf = fence_state[j]
+            if isf and not inf:
+                return j
+        return n
     while i < n:
-        if FENCE.match(lines[i]):
-            fence_in = not fence_in
+        inf, isf = fence_state[i]
+        if isf:
+            fence_in = inf
             i += 1
             continue
         if fence_in and lines[i].rstrip().startswith("┌"):
@@ -163,9 +176,7 @@ def process(path, fix=False, report=False, hug=False):
             # aligned as a group by the alignment gate; shrinking one
             # member breaks group alignment (and invites destructive
             # auto-fixing).
-            f_end = i
-            while f_end < n and not FENCE.match(lines[f_end]):
-                f_end += 1
+            f_end = find_close(i - 1)
             n_boxes = sum(
                 1 for l in lines[i:f_end] if l.startswith("┌")
             )
@@ -175,7 +186,7 @@ def process(path, fix=False, report=False, hug=False):
                 continue
             j = i
             block = []
-            while j < n and not FENCE.match(lines[j]):
+            while j < f_end:
                 block.append(lines[j])
                 if lines[j].rstrip().startswith("└"):
                     break

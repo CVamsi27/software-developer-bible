@@ -23,6 +23,7 @@ import re
 import sys
 from collections import defaultdict
 from itertools import combinations
+import md_fences
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -123,9 +124,8 @@ def links(path):
     """Relative link targets mentioned outside fences."""
     out = set()
     in_fence = False
-    for line in open(path, encoding='utf-8'):
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for _, line, in_fence, is_fence in md_fences.walk(open(path, encoding='utf-8')):
+        if is_fence:
             continue
         if in_fence:
             continue

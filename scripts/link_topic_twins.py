@@ -15,6 +15,7 @@ import importlib.util
 import os
 import re
 import sys
+import md_fences
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,9 +61,8 @@ def first_sentence(rel):
     in_fence = False
     for want in ('TL;DR', 'Definition', 'Why It Matters', 'Why Do We Need It?'):
         grab = False
-        for line in lines:
-            if FENCE.match(line):
-                in_fence = not in_fence
+        for _, line, in_fence, is_fence in md_fences.walk(lines):
+            if is_fence:
                 continue
             if in_fence:
                 continue
@@ -88,9 +88,8 @@ def see_also_bounds(text):
     lines = text.split('\n')
     start = end = None
     in_fence = False
-    for i, line in enumerate(lines):
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for i, line, in_fence, is_fence in md_fences.walk(lines):
+        if is_fence:
             continue
         if in_fence:
             continue

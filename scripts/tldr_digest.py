@@ -11,6 +11,7 @@ import os
 import re
 import subprocess
 import sys
+import md_fences
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECTION = re.compile(r'^##\s+(.+?)\s*$')
@@ -36,9 +37,8 @@ def digest(rel, compact=False):
     title = next((l[2:].strip() for l in lines if l.startswith('# ')), rel)
     print(f"\n### {rel}\n  T: {title}")
     in_fence, want, got = False, None, 0
-    for line in lines:
-        if FENCE.match(line):
-            in_fence = not in_fence
+    for _, line, in_fence, is_fence in md_fences.walk(lines):
+        if is_fence:
             continue
         if in_fence:
             continue

@@ -184,5 +184,37 @@ for p in MD:
                 f"INDEX.md but is not linked from this INDEX (invisible sub-stack)"
             )
 
+# Doc reachability: every doc under docs/ (excluding superpowers/ planning
+# material) must be reachable from an entry point — README.md, the root
+# INDEX, contributing.md, any lane/stack INDEX, or another reachable doc.
+# The first-visitor pass found 7 of 10 docs linked from nowhere outside the
+# folder; invisible docs are the documentation equivalent of the invisible
+# sub-stack defect, so this is enforced rather than re-scanned by hand.
+SKIP_DOCS = ROOT / "docs" / "superpowers"
+ENTRY_POINTS = [ROOT / "README.md", ROOT / "INDEX.md", ROOT / "contributing.md"]
+ENTRY_POINTS += [p for p in MD if ("/INDEX.md" in str(p) and "docs" not in p.relative_to(ROOT).parts)]
+REACHABLE = set()
+queue = [p for p in ENTRY_POINTS if p.exists()]
+while queue:
+    cur = queue.pop()
+    if cur in REACHABLE or SKIP_DOCS in cur.parents:
+        continue
+    REACHABLE.add(cur)
+    cur_text = strip_code(cur.read_text(encoding="utf-8", errors="replace"))
+    for m in LINK.finditer(cur_text):
+        t = m.group(1)
+        if t.startswith(("http", "mailto:", "#")):
+            continue
+        target = (cur.parent / t.split("#")[0]).resolve()
+        if target.exists() and target.suffix == ".md":
+            queue.append(target)
+for p in MD:
+    rp = p.relative_to(ROOT)
+    if str(rp).startswith("docs/") and not str(rp).startswith("docs/superpowers/") and p not in REACHABLE:
+        errors.append(
+            f"ORPHAN DOC {rp}: not reachable from README/INDEX/contributing or any "
+            f"INDEX — link it from an entry point (invisible documentation)"
+        )
+
 print("\n".join(errors) if errors else f"OK: {len(MD)} md files checked")
 sys.exit(1 if errors else 0)

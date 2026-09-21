@@ -1,6 +1,6 @@
 # Interview Prep — CI/CD
 
-> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
+> **Study time:** ≈ 12 min of reading (1 files, ~12 min average).
 > **1 file, 50+ curated questions with answers.** From "write a basic workflow" to "design a zero-downtime release process".
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)

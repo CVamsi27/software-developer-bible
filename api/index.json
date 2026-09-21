@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10555
+  "read_minutes": 10560
  },
  "chapters": [
   {
@@ -1762,7 +1762,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 37
+   "m": 38
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.html",
@@ -4104,7 +4104,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "40-platform/40.10-cdn/40.10.01-cdn-architecture.html",
@@ -4364,7 +4364,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 19
+   "m": 21
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.html",
@@ -4485,7 +4485,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.html",

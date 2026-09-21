@@ -255,6 +255,36 @@ CASES = [
             "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-d.md": DUP_BODY_B,
         },
     },
+    {
+        # The table-only defect class the 2026-09-21 probe found: a table
+        # plus one label line reads as zero prose under the depth gate.
+        "name": "gate 19 answer-depth fires on a table-only answer",
+        "gate": "check_answer_depth.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": (
+                "# Interview Bank\n\n"
+                "### Question 1: What is a composite index?\n\n"
+                "**Answer:**\n\n"
+                "| Aspect | Behavior |\n| --- | --- |\n"
+                "| Lookup | Left prefix |\n| Sort | Matches order |\n"
+            )
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": (
+                "# Interview Bank\n\n"
+                "### Question 1: What is a composite index?\n\n"
+                "**Answer:**\n\n"
+                "A composite index orders by its column list, so lookups match the "
+                "leftmost prefix — the mechanism behind the rule. Column order also "
+                "decides whether an ORDER BY avoids a sort node entirely, and whether "
+                "the index can serve the query covering.\n\n"
+                "| Aspect | Behavior |\n| --- | --- |\n"
+                "| Lookup | Left prefix |\n| Sort | Matches order |\n"
+            )
+        },
+    },
 ]
 
 

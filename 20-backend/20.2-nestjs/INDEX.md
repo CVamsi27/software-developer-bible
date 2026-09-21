@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 6 h 10 m of reading (19 files, ~19 min average).
+> **Study time:** ≈ 6 h 11 m of reading (19 files, ~20 min average).
 > **19 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -99,7 +99,7 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 10 min |
-| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 37 min |
+| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 38 min |
 
 ---
 

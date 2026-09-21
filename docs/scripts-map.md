@@ -60,6 +60,7 @@
 | 10 | `check_cross_refs.py` | `→ N.N.N` refs resolve to real files | a ref points nowhere |
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |
 | 12 | `check_topic_twins.py` | Twin chapters cross-link both ways | twins stop linking |
+| 19 | `check_answer_depth.py` | Every interview answer carries ≥25 prose words (fence- and table-aware) | an answer is table-only or one-line prose |
 | 13 | `read_time.py --check` | Declared study/read times equal computed estimates | times drift from word counts |
 | 14 | `gen_master_index.py --check` | search.html + api/index.json byte-identical to corpus | generated files stale |
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |

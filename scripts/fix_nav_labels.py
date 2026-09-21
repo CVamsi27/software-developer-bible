@@ -23,6 +23,19 @@ numbering prefix and trailing parent/genre suffix (`— Index`, `- Node.js`)
 stripped. Deriving beats inventing — the label can never drift from the file
 it points at.
 
+  Rule 3 (slug-humanized labels). The same generator's most common failure:
+a label that is the target's title *with its punctuation and case flattened*
+— `Useeffect` for `useEffect`, `Usesyncexternalstore` for
+`useSyncExternalStore`, `Bff` for `BFF`, `Statefulsets Daemonsets` for
+`StatefulSets & DaemonSets`, `Tanstack Form` for `TanStack Form`,
+`Socket Io` for `Socket.io`, `Graphql` for `GraphQL`, `Async Await` for
+`Async/Await`, `SLI SLO SLA` for `SLI, SLO & SLA`. 132 labels. The signature
+is deliberately tight — the label equals the title once every non-alphanumeric
+character is dropped and case is folded — so a label that merely *shortens* a
+title (`Fiber` for `React Fiber`, `Performance` for `React Performance
+Optimization`) is left alone: shortening is an editorial choice, flattening is
+an artifact. Rule 2's derivation is the repair.
+
 This tool is both the fixer and the gate, matching fix_box_width.py:
 
 --check  exit 1 listing every offending label (either rule)
@@ -91,6 +104,11 @@ def is_nav_footer(line: str) -> bool:
     return 'Previous:' in line or 'Next:' in line
 
 
+def norm_key(s: str) -> str:
+    """Title/label identity key: punctuation- and case-insensitive."""
+    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+
 def human_title(target: str):
     """The target file's own title: H1 minus numbering and suffix, or None."""
     if not os.path.exists(target):
@@ -123,9 +141,9 @@ def fix_line(line: str, base_dir: str, base_rel: str):
     def rewrite(seg: str, target: str):
         arrow = ' →' if seg.rstrip().endswith('→') else ''
         core = seg.rstrip()[:-1].rstrip() if arrow else seg.strip()
+        path = os.path.normpath(os.path.join(base_dir, target.split('#')[0]))
+        title = human_title(path)
         if core.startswith(('./', '../')):
-            path = os.path.normpath(os.path.join(base_dir, target.split('#')[0]))
-            title = human_title(path)
             if title:
                 changed.append(f'label is the path "{core}" — target title is '
                                f'"{title}"')
@@ -133,6 +151,10 @@ def fix_line(line: str, base_dir: str, base_rel: str):
             changed.append(f'label is the path "{core}" and its target has no '
                            f'readable title — fix by hand')
             return seg.lstrip()
+        if title and core != title and norm_key(core) == norm_key(title):
+            changed.append(f'label "{core}" is the slug-humanized form of its '
+                           f'target title "{title}"')
+            return title + arrow
         masked = CODESPAN.sub(lambda m: '\0' * len(m.group(0)), core)
         out, last = [], 0
         for m in TOKEN.finditer(masked):

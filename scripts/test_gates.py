@@ -337,6 +337,22 @@ CASES = [
         "clean": {"p.md": "[Next: MVCC →](x.md)\n"},
     },
     {
+        # Rule 3: the label equals its target's title once punctuation and case
+        # are folded — the slug-humanization artifact. The clean side is a
+        # deliberate *shortening* of the same title, which must be left alone.
+        "name": "gate 21 nav labels fire on a slug-humanized label",
+        "gate": "fix_nav_labels.py",
+        "args": [],
+        "plant": {
+            "d/INDEX.md": "# useMemo & useCallback\n",
+            "p.md": "[Next: Usememo Usecallback](d/INDEX.md)\n",
+        },
+        "clean": {
+            "d/INDEX.md": "# useMemo & useCallback\n",
+            "p.md": "[Next: useMemo](d/INDEX.md)\n",
+        },
+    },
+    {
         # The table-only defect class the 2026-09-21 probe found: a table
         # plus one label line reads as zero prose under the depth gate.
         "name": "gate 19 answer-depth fires on a table-only answer",

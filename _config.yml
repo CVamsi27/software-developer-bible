@@ -27,6 +27,10 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+  # vendor/ is where `bundle install` (CI bundler-cache) puts gems inside the
+  # checkout; Jekyll 3.9's default excludes don't cover it and it would crawl
+  # the jekyll gem's own site_template/_posts and die on its ERB date.
+  - vendor
   # Private career data — never publish (docs/deployment.md). The CI build
   # job in deploy-site.yml asserts these never appear in _site/.
   - 80-lanes-abroad-full-stack/personal

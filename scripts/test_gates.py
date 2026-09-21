@@ -142,6 +142,26 @@ CASES = [
         "clean": {"a.md": "[ok](b.md)\n", "b.md": "target\n"},
     },
     {
+        # The 2026-09-21 sweep: 53 prose code spans named files from three
+        # earlier numbering generations. The clean side proves the rule's scope
+        # — an illustrative path inside the reader's *own* project is not a
+        # repo path, and neither is a format illustration.
+        "name": "gate 4 links fires on a stale inline repo path",
+        "gate": "check_links.py",
+        "args": [],
+        "plant": {
+            "10-frontend/INDEX.md": "# I\n\nRead `10-frontend/10.1-javascript/01-Ghost.md`.\n"
+        },
+        "clean": {
+            "10-frontend/INDEX.md": (
+                "# I\n\nRead `10-frontend/10.1-javascript/01-real.md`, "
+                "add `docs/runbooks/` to your project, and format "
+                "`00-<trace-id>-<flags>`.\n"
+            ),
+            "10-frontend/10.1-javascript/01-real.md": "# Real\n",
+        },
+    },
+    {
         "name": "gate 8 whitespace fires on trailing ws in fences",
         "gate": "check_code_whitespace.py",
         "args": [],
@@ -335,6 +355,22 @@ CASES = [
         "args": [],
         "plant": {"p.md": "[Next: Mvcc →](x.md)\n"},
         "clean": {"p.md": "[Next: MVCC →](x.md)\n"},
+    },
+    {
+        # The rarer footer style puts the marker before the bracket
+        # (`Next: [CheatSheets →](…)`) instead of inside it; a label the
+        # scanner skipped would be a label the gate cannot defend.
+        "name": "gate 21 nav labels fire on the marker-outside footer style",
+        "gate": "fix_nav_labels.py",
+        "args": [],
+        "plant": {
+            "d/INDEX.md": "# Cheat Sheets — Index\n",
+            "p.md": "Next: [CheatSheets →](d/INDEX.md)\n",
+        },
+        "clean": {
+            "d/INDEX.md": "# Cheat Sheets — Index\n",
+            "p.md": "Next: [Cheat Sheets →](d/INDEX.md)\n",
+        },
     },
     {
         # Rule 3: the label equals its target's title once punctuation and case

@@ -1,4 +1,4 @@
-# CheatSheets — Index
+# Cheat Sheets — Index
 
 > **Study time:** ≈ 1 h 18 m of reading (7 files, ~11 min average).
 > **7 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.

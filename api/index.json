@@ -5922,7 +5922,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.html",
    "t": "JavaScript Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5933,7 +5933,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.html",
    "t": "TypeScript Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5944,7 +5944,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.html",
    "t": "React & Next.js Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5955,7 +5955,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.html",
    "t": "Backend Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5966,7 +5966,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",
    "t": "System Design Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5977,7 +5977,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
    "t": "Docker, Kubernetes & CI/CD Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",
@@ -5988,7 +5988,7 @@
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.html",
    "t": "SQL & Data Modeling Cheat Sheet",
-   "s": "CheatSheets",
+   "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
     "cheat-sheet",

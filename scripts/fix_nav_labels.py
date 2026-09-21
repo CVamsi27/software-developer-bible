@@ -93,10 +93,28 @@ CODESPAN = re.compile(r'`[^`]*`')
 
 ANY_H1 = re.compile(r'^#\s+(.+?)\s*$')
 LEAD_NUM = re.compile(r'^\d+(?:\.\d+)*\s*[—–-]\s*')
-# trailing parent/genre suffix: '— Index', ' - Node.js', ' — Database'
-TAIL_SUFFIX = re.compile(r'\s*[—–-]\s*(?:Index|Database|Node\.js|Frontend|Backend'
-                         r'|Platform|Architecture|Realtime|Real-time|Toolkit'
-                         r'|[A-Z][\w.&/ ]*)\s*$')
+# Titles carry an optional trailing "— <suffix>". Two kinds exist in the
+# corpus (measured): the parent stack/genre ("— JavaScript", "— Database",
+# "— Index") and a genuine subtitle ("— KMP & Rabin-Karp", "— Aggregates &
+# Value Objects"). Only the first is not part of the name, and it is derivable
+# from the file's own path rather than guessable from a word list: the ancestor
+# directory names ARE the parent stacks (`10.1-javascript` -> JavaScript).
+# An earlier version stripped any trailing capitalised phrase and silently
+# destroyed real titles ("The Twelve-Factor App" -> "The Twelve"), which also
+# masked 27 label defects by making the identity comparison fail. `index` is
+# included because "<Thing> — Index" is the INDEX genre, not a subtitle.
+GENERIC_SUFFIXES = {'index'}
+NUM_PREFIX = re.compile(r'^\d+(?:\.\d+)*[-_]?')
+
+
+def allowed_suffixes(target: str):
+    """Parent-stack and genre names a title may legitimately end with."""
+    names = set(GENERIC_SUFFIXES)
+    for part in os.path.abspath(target).split(os.sep)[:-1]:
+        base = NUM_PREFIX.sub('', part)
+        if base:
+            names.add(norm_key(base))
+    return names
 
 
 def is_nav_footer(line: str) -> bool:
@@ -110,26 +128,45 @@ def norm_key(s: str) -> str:
 
 
 def human_title(target: str):
-    """The target file's own title: H1 minus numbering and suffix, or None."""
+    """The target file's own title: H1 minus numbering and parent suffix.
+
+    A link may point at a category *directory* (`../40.3-ci-cd`) rather than
+    its INDEX.md; the directory's INDEX carries the title in that layout.
+    """
+    if os.path.isdir(target):
+        target = os.path.join(target, 'INDEX.md')
     if not os.path.exists(target):
         return None
+    allowed = allowed_suffixes(target)
     with open(target, encoding='utf-8') as fh:
         for line in fh:
             m = ANY_H1.match(line.rstrip('\n'))
             if m:
                 title = LEAD_NUM.sub('', m.group(1)).strip()
-                stripped = TAIL_SUFFIX.sub('', title).strip()
-                return stripped or title
+                sm = re.search(r'\s+[—–-]\s+(.+)$', title)
+                if sm and norm_key(sm.group(1)) in allowed:
+                    title = title[:sm.start()].strip()
+                return title or None
     return None
 
 
 def label_spans(line: str):
-    """Yield (label_start, label_end, link_target) for nav links."""
+    """Yield (label_start, label_end, link_target) for nav links.
+
+    Two footer styles exist in the corpus (measured: 1,186 inside, 3 outside):
+    the dominant `[Next: Label](target)` puts the marker inside the brackets,
+    and a rare `Next: [Label](target)` puts it before them. Both are the same
+    generated surface, so both are inspected — a style the scanner skipped
+    would be a label the gate cannot defend.
+    """
     for m in re.finditer(r'\[([^\]]+)\]\(([^)]*)\)', line):
         label = m.group(1)
         nav = re.match(r'^(?:←\s*)?(?:Previous|Next):\s*', label)
         if nav:
             yield m.start(1) + nav.end(), m.start(1) + len(label), m.group(2)
+        elif re.search(r'(?:←\s*)?(?:Previous|Next):\s*$',
+                       line[:m.start()]):
+            yield m.start(1), m.start(1) + len(label), m.group(2)
 
 
 def fix_line(line: str, base_dir: str, base_rel: str):

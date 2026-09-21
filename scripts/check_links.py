@@ -147,9 +147,62 @@ def is_external(target):
     return target.startswith(EXTERNAL_PREFIXES) or os.path.isabs(target)
 
 
+# Inline code spans may name a repo file (`path/to/file.md`), and a stale one
+# sends the reader to a file that isn't there — the 2026-09-21 sweep found 53
+# such relics in the two lane study docs, from three generations of
+# renumbering: the `software-developer-bible/16-Testing/01-Overview.md`
+# layout, then `30.2-system-design/13-Rate-Limiter.md` before the case studies
+# moved under `02-case-studies/`. No markdown link checker can see them: they
+# are not links.
+#
+# Judging *which* spans are repo paths took two calibration rounds. A span is
+# judged only when it claims to be one:
+#   * it ends in `.md` — a file reference is a path by intent; or
+#   * its first segment is a real top-level stack folder; or
+#   * its first segment is legacy stack shape (`16-Testing`, `0-Interview-Strategy`).
+# That keeps plan/design docs' fragments (`01-auth/`, `02-creational/`,
+# `40-frontend-tooling`) and bare names (`check_template.py`, `santifer/career-ops`)
+# out, since a first calibration pass fired on 123 such fragments — a design
+# document listing the folder tree it intends to create is not a broken link.
+# docs/ is exempt wholesale: changelogs and specs are historical records that
+# must keep quoting the paths of their time.
+INLINE_CODE_SPAN = re.compile(r'`([^`\n]+)`')
+LEGACY_STACK = re.compile(r'^\d{1,2}-[A-Z]')
+NUMERIC_RANGE = re.compile(r'^\d[\d.-]*$')
+INLINE_PATH_EXEMPT = ('docs/', '80-lanes-abroad-full-stack/personal/')
+
+
+# Only the numbered *study stacks* are this repo's own structure. A third
+# calibration round taught this: chapter prose legitimately names paths inside
+# the reader's hypothetical project (`scripts/checks/check-prisma-boundary.mjs`,
+# `docs/runbooks/`, `.github/workflows/deploy.yml`) — those are illustrations of
+# a layout to build, and judging them fired on 92 spans.
+STACK_HEAD = re.compile(
+    r'^(?:0\d|10|20|30|40|50|60|70|80|81)-')
+LEGACY_REPO = 'software-developer-bible/'
+
+
+def is_repo_path_token(token):
+    """Does this prose code span claim to be a path inside this repo?"""
+    if not token or ' ' in token or NUMERIC_RANGE.match(token):
+        return False
+    # Format illustrations cannot be paths: a W3C traceparent
+    # (`00-<trace-id>-<parent-span-id>-<flags>`) matched the stack-head shape
+    # until placeholders and globs were excluded.
+    if re.search(r'[<>{}*]', token):
+        return False
+    if token.startswith(LEGACY_REPO):
+        # A bare `software-developer-bible/` names the external tool's layout
+        # (its own repo), not a path into this one.
+        return len(token) > len(LEGACY_REPO)
+    head = token.split('/')[0]
+    return bool(STACK_HEAD.match(head)) or bool(LEGACY_STACK.match(head))
+
+
 def main():
     broken = []
     stale_text = []
+    stale_paths = []
     total = 0
     anchors_ok = 0
     anchors_broken = 0
@@ -181,9 +234,33 @@ def main():
                 broken.append(f'{rel}: unreadable ({exc})')
                 continue
 
-            for _kind, lineno, line in state_lines(lines):
+            for _kind, lineno, raw_line in state_lines(lines):
                 # Strip inline code spans so `[x](y)` examples don't count.
-                line = re.sub(r'`[^`\n]*`', '', line)
+                line = re.sub(r'`[^`\n]*`', '', raw_line)
+
+                # Inline code spans can name a repo file too (`path/to.md`),
+                # and a stale one sends the reader to a file that isn't there —
+                # the 2026-09-21 sweep found 53 such relics in the two lane
+                # study docs, from three generations of renumbering (the
+                # `software-developer-bible/16-Testing/01-Overview.md` layout,
+                # then `30.2-system-design/13-Rate-Limiter.md`). A markdown
+                # link checker can never see them: they are not links. Only
+                # unambiguous repo paths are judged — a token must start with a
+                # `NN-` stack prefix or the legacy repo name. Bare file names
+                # (`check_template.py`), GitHub slugs (`santifer/career-ops`),
+                # template patterns (`NN.N-slug/`) and numeric ranges
+                # (`35-44`) are left alone.
+                if not rel.startswith(INLINE_PATH_EXEMPT):
+                    for cm in INLINE_CODE_SPAN.finditer(raw_line):
+                        token = cm.group(1).strip()
+                        if not is_repo_path_token(token):
+                            continue
+                        cands = (os.path.join(ROOT, token),
+                                 os.path.join(os.path.dirname(path), token))
+                        if not any(os.path.exists(c) for c in cands):
+                            stale_paths.append(
+                                f'{rel}:{lineno}: inline path "{token}" does '
+                                f'not exist in the repo')
 
                 for m in LINK_RE.finditer(line):
                     label = m.group(1).strip()
@@ -251,6 +328,13 @@ def main():
                             f'{rel}:{lineno}: anchor #{frag_unq} has no '
                             f'matching heading in {target_rel}')
 
+    if stale_paths:
+        print(f'STALE INLINE PATHS ({len(stale_paths)}) — a prose code span '
+              f'names a file that does not exist:')
+        for s in stale_paths:
+            print(f'  {s}')
+        print("  fix: point the reference at the current path (renumbering "
+              "moved it) or delete it.\n")
     if stale_text:
         print(f'STALE LINK TEXT ({len(stale_text)}) — visible label is a path '
               f'that no longer exists:')
@@ -258,6 +342,8 @@ def main():
             print(f'  {s}')
         print("  fix: rewrite the label as the human title of the target"
               " (a reader should never see a folder path).\n")
+    if stale_paths:
+        sys.exit(1)
     if broken:
         print(f'BROKEN LINKS ({len(broken)}):')
         for b in broken:
@@ -268,7 +354,8 @@ def main():
     if stale_text:
         sys.exit(1)
     print(f'OK — {total} links checked ({anchors_ok} anchors verified), '
-          f'0 broken, 0 stale labels ({skipped} external links skipped).')
+          f'0 broken, 0 stale labels, 0 stale inline paths '
+          f'({skipped} external links skipped).')
 
 
 if __name__ == '__main__':

@@ -188,7 +188,7 @@ Every content file **must** begin with metadata in two forms:
 | `Quality` | Testing, Accessibility, Performance Monitoring | 8b5cf6 (purple) |
 | `Real-Time` | WebSockets | f59e0b (amber) |
 | `Interview` | Behavioral, Interview Strategy, Coding Patterns, SDE Role, lanes | red |
-| `Reference` | CheatSheets, Monorepo | lightgrey |
+| `Reference` | Cheat Sheets, Monorepo | lightgrey |
 | `Execution` | Personal execution plans (e.g., Berlin plan) | ff6b35 (orange) |
 
 > **14 categories** total. `API`, `Data`, `Observability`, and `Tooling` were split out of overloaded categories later (REST+GraphQL, Database, logs/metrics/traces, build+Git) — they are real categories, not sub-values. `Execution` is for personalized plans tied to a specific user. One-off categories (e.g., `Company`, `Infra`, `Mobile`, `Serverless`, `Testing`) appear only in 80-lane planning docs; keep them out of new content files.

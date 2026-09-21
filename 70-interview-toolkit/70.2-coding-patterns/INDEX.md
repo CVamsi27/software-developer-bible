@@ -119,4 +119,4 @@ Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Sea
 
 ## Navigation
 
-← Previous: [Behavioral](../70.1-behavioral/INDEX.md) · [ Back to Index](../INDEX.md) · Next: [CheatSheets →](../70.3-cheatsheets/INDEX.md)
+← Previous: [Behavioral](../70.1-behavioral/INDEX.md) · [ Back to Index](../INDEX.md) · Next: [Cheat Sheets →](../70.3-cheatsheets/INDEX.md)

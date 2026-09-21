@@ -61,6 +61,7 @@
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |
 | 12 | `check_topic_twins.py` | Twin chapters cross-link both ways | twins stop linking |
 | 19 | `check_answer_depth.py` | Interview answers AND chapter Definitions carry ≥25 prose words (fence- and table-aware); H3-title-plus-code genres deliberately exempt | an answer is table-only or one-line prose; a Definition is a bare table |
+| 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables/fences or drops exclusions |
 | 13 | `read_time.py --check` | Declared study/read times equal computed estimates | times drift from word counts |
 | 14 | `gen_master_index.py --check` | search.html + api/index.json byte-identical to corpus | generated files stale |
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
@@ -87,7 +88,7 @@ When a gate fails, run the tool it names — never hand-edit a claim it owns:
 ### Scripts that serve specific workflows (not gates)
 
 | Script | Job |
-| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
 | `fix_depth.py` | Rewrites relative md links after files move deeper/shallower |
 | `fix_fence_labels.py` | Relabels fences mislabeled as `text`/`plain`/`output`/`console` |
@@ -99,6 +100,7 @@ When a gate fails, run the tool it names — never hand-edit a claim it owns:
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
 | `job_board_watch.py` | Weekly JD watch (advisory workflow) |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
+| `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
 | `test_md_fences.py` / `test_fixers.py` / `test_gates.py` | The tooling's own test suites (gates 16/17/18) |
 | `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
 

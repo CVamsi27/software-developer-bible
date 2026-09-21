@@ -47,7 +47,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import md_fences
+import prose_scan
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
@@ -62,23 +62,15 @@ META_FILENAMES = {'contributing.md', 'readme.md'}
 QUESTION_RX = re.compile(r"^###\s+Q(?:uestion)?\.?\s*\d+", re.I)
 SECTION_RX = re.compile(r"^##\s+")
 
-# Lines that never count as answer prose. Tables are the point (the
-# table-only defect class); badges/comments/quotes are navigation or
-# decoration; `---` is a separator.
-SKIP_PREFIXES = ('|', '#', '>', '---', '<!--', '[!', '![')
+# Classification lives in prose_scan.py — the single owner of
+# "what counts as reasoning prose" (tables/headings/quotes/badges excluded,
+# fence-aware via md_fences). The gate owns only the floors and the
+# question/section topology. Pinned semantics in test_prose_scan.py.
 
 
 def prose_words(segment):
-    """Count prose words in a question segment, fence- and table-aware."""
-    words = 0
-    for _i, line, in_fence, is_fence_line in md_fences.walk(segment):
-        if in_fence or is_fence_line:
-            continue
-        s = line.strip()
-        if not s or s.startswith(SKIP_PREFIXES):
-            continue
-        words += len(s.split())
-    return words
+    """Count prose words in a question segment (classification: prose_scan)."""
+    return prose_scan.prose_words(segment)
 
 
 def check_file(path):

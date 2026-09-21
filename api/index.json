@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10570
+  "read_minutes": 10572
  },
  "chapters": [
   {
@@ -5161,7 +5161,7 @@
    "g": [
     "concept"
    ],
-   "m": 40
+   "m": 41
   },
   {
    "p": "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.01-mocking.html",
@@ -5416,7 +5416,7 @@
     "guide",
     "reference"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.html",

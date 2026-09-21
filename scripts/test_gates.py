@@ -53,6 +53,50 @@ REAL_CHAPTER = os.path.join(
     ROOT, "40-platform", "40.1-docker", "40.1.05-dockerfile-best-practices.md"
 )
 
+# The scope-floor case (gate 23) needs a synthetic verify.sh of its own: the
+# gate derives its table from that file, so the case proves the *rule* without
+# depending on today's gate inventory. Every synthetic gate but one fails
+# honestly on an empty tree; the odd one out lies (exit 0), which is exactly
+# the defect the gate exists to catch. The count must clear
+# check_scope_floor.MIN_GATES — otherwise the case would trip the floor itself.
+_SCOPE_GATES = 20
+
+
+def _scope_floor_sandbox(vacuous_index=None):
+    """{path: content} for a sandbox whose verify.sh wires _SCOPE_GATES gates."""
+    lines = ["#!/usr/bin/env bash", "set -u", "FAIL=0"]
+    files = {}
+    for i in range(1, _SCOPE_GATES + 1):
+        name = f"g{i:02d}"
+        lines += [
+            f'echo "{i}/{_SCOPE_GATES} {name}.py — synthetic gate for the scope-floor case"',
+            f'echo "     python3 scripts/{name}.py"',
+            'echo "------------------------------------------------------------"',
+            f"if python3 scripts/{name}.py; then",
+            '    echo "  PASS"',
+            "else",
+            "    FAIL=1",
+            "fi",
+            "",
+        ]
+        if i == vacuous_index:
+            files[f"scripts/{name}.py"] = (
+                "import sys\n"
+                "print('Code-block whitespace: OK (0 trailing-ws, 0 unbalanced fences)')\n"
+                "sys.exit(0)\n"
+            )
+        else:
+            files[f"scripts/{name}.py"] = (
+                "import sys\n"
+                "print('SCOPE ERROR — 0 markdown files found.')\n"
+                "sys.exit(1)\n"
+            )
+    lines += ['if [ "$FAIL" -eq 0 ]; then',
+              '    echo "All checks passed — tree is clean."',
+              "    exit 0", "fi", "exit 1", ""]
+    files["scripts/verify.sh"] = "\n".join(lines)
+    return files
+
 # Template-compliant chapter bodies for the duplication case (metadata + H1
 # + How It Works + Summary are what check_duplication's section scanner
 # recognizes as non-template sections).
@@ -180,7 +224,14 @@ CASES = [
                 "| File | Why |\n| ---- | --- |\n"
             )
         },
-        "clean": {"note.md": "plain chapter, no nav surface\n"},
+        # Clean side = the live repo, and this is the one case that needs it:
+        # check_counts computes its live values from the real stack skeleton
+        # (20-backend/…, the INDEX tree), so no synthetic temp tree can host a
+        # legitimate clean run — and before the scope floor landed, the *fire*
+        # side passed on a traceback from the same missing directories rather
+        # than on the drifted badge. verify.sh already runs this gate on the
+        # real corpus every push; running it here too makes the assertion local.
+        "clean_in_repo": True,
     },
     {
         "name": "gate 3 structure fires on two H1s",
@@ -443,7 +494,18 @@ CASES = [
                 "stalling. The terms below name the moving parts.\n\n"
                 "| Term | Meaning |\n| --- | --- |\n"
                 "| Snapshot | Query-time view |\n| Version | Row history |\n"
-            )
+            ),
+            # The gate's scope floor (gate 23, scan_scope) requires it to have
+            # read at least one interview bank: a tree with chapters but no
+            # banks would let "every answer >= floor" pass over an empty set.
+            # So the clean side carries both halves of the gate's contract.
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": (
+                "# Interview Bank\n\n### Question 1: What is a composite index?\n\n"
+                "**Answer:**\n\n"
+                "A composite index orders by its column list, so lookups match the "
+                "leftmost prefix — the mechanism behind the rule. Column order also "
+                "decides whether an ORDER BY avoids a sort node entirely.\n"
+            ),
         },
     },
     {
@@ -466,6 +528,19 @@ CASES = [
                 "# Dockerfile\n\n```dockerfile\nFROM node:20-alpine\nRUN npm ci\n```\n"
             )
         },
+    },
+    {
+        # The scope-floor contract: a gate that exits 0 on an empty corpus is
+        # invisible to every other test, because its output is the same
+        # compliance sentence it prints on a real run. Both sides are synthetic
+        # so the case proves the *rule*, not today's gate inventory: a minimal
+        # verify.sh lists one gate, and that gate either lies or names its
+        # empty scope.
+        "name": "gate 23 scope floor fires when a gate passes on an empty corpus",
+        "gate": "check_scope_floor.py",
+        "args": [],
+        "plant": _scope_floor_sandbox(vacuous_index=_SCOPE_GATES),
+        "clean": _scope_floor_sandbox(),
     },
 ]
 
@@ -505,13 +580,18 @@ def main() -> int:
             r = run_gate(fire_tmp, case["gate"], case["args"])
             fire_ok = r.returncode != 0
 
-            clean_files = case.get("clean", {})
-            clean_real = case.get("clean_real", [])
-            build_sandbox(
-                clean_tmp, clean_files, clean_real,
-                case.get("dirs_clean", case.get("dirs", ())),
-            )
-            rc = run_gate(clean_tmp, case["gate"], case["args"])
+            if case.get("clean_in_repo"):
+                # A corpus-scale gate whose live values come from the real
+                # stack skeleton: its clean side IS the live repo.
+                rc = run_gate(ROOT, case["gate"], case["args"])
+            else:
+                clean_files = case.get("clean", {})
+                clean_real = case.get("clean_real", [])
+                build_sandbox(
+                    clean_tmp, clean_files, clean_real,
+                    case.get("dirs_clean", case.get("dirs", ())),
+                )
+                rc = run_gate(clean_tmp, case["gate"], case["args"])
             clean_ok = rc.returncode == 0
 
         if fire_ok and clean_ok:

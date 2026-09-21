@@ -126,6 +126,7 @@ proof-after-fix is the only proof.
 - **new: 20.9-message-brokers stack** — 4 chapters + INDEX in the reserved-but-empty slot; brokers had 50+ example mentions corpus-wide but no canonical home; includes the Docita Anchor whose honest verdict is "zero brokers, deliberately" (the 20.9.01 when-not-to lesson shipped)
 - **20.9 wired into 31 sites** — See Also links with per-site reason phrases from all 12 system-design case studies, the heavy broker-mention chapters, and both system-design INDEXes; the top INDEX's missing table row restored
 - **docs layer made reachable** — 7 of 10 docs/ files were linked from nowhere; entry points repaired (README, health-report See Also, scripts map) and the property gate-enforced
+- **answer-quality arc: 247 answers deepened across 11 banks** — the question-count floor passed banks holding flashcard bullets and code-only answers; a fence-aware, label-agnostic depth scan (all prose between question heading and next heading) found them: TypeScript 29, security 36, NestJS 32, microservices 27, Node.js 31, CI/CD 23, Kubernetes 19, Docker 14, REST 6, auth 5, AI engineering 25 — each a hand-authored senior-depth prose block (mechanism, tradeoff, failure mode) written against the existing content; re-scan verdict: zero answers under 40 words corpus-wide
 
 ### Measured non-actions (the boundary findings)
 
@@ -177,7 +178,9 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 ## Summary
 
 The corpus is now 560 study chapters, 40 interview banks — every one at or
-above the 25-question floor the gate now enforces — 2379 probe-verified
+above the 25-question floor the gate now enforces, and after the
+answer-quality arc, zero answers under the 40-word depth floor the scan
+measures — 2379 probe-verified
 external links, 14 freshness rules across two date-gated data tables, and 21
 CI-enforced gates whose harness audits its own wiring, whose markdown
 parsing has a single fence owner, and whose detection itself is plant-tested

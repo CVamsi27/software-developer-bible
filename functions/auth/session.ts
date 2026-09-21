@@ -1,6 +1,14 @@
 import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, safeNextPath } from "../_lib/study-access.mjs";
 
-type Env = { SUPABASE_URL?: string; SUPABASE_ANON_KEY?: string };
+type Env = {
+  SUPABASE_URL?: string;
+  SUPABASE_ANON_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_URL?: string;
+  SUPABASE_PUBLISHABLE_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
+  SUPABASE_JWKS_URL?: string;
+};
 
 function json(body: unknown, init?: ResponseInit) {
   return new Response(JSON.stringify(body), {

@@ -1,8 +1,13 @@
-import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, isPublicAuthPath, safeNextPath } from "./_lib/study-access.mjs";
+import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, isPagesDevHost, isPublicAuthPath, safeNextPath } from "./_lib/study-access.mjs";
 
 type StudyEnv = {
   SUPABASE_URL?: string;
   SUPABASE_ANON_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_URL?: string;
+  SUPABASE_PUBLISHABLE_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
+  NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
+  SUPABASE_JWKS_URL?: string;
 };
 
 type PagesContext = {
@@ -34,6 +39,10 @@ async function currentEmail(request: Request, env: StudyEnv) {
 
 export const onRequest = async ({ request, env, next }: PagesContext) => {
   const url = new URL(request.url);
+  if (isPagesDevHost(url.hostname)) {
+    const canonical = new URL(`${url.pathname}${url.search}`, "https://study.buildora.work");
+    return redirect(canonical.toString(), 308);
+  }
   if (isPublicAuthPath(url.pathname)) return next();
 
   let email: string | null = null;

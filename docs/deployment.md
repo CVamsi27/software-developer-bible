@@ -83,9 +83,15 @@ Every push to `main` triggers two builds of the same command:
    `liquid 4.0.3` calls `Object#tainted?`, removed in Ruby 3.2, so the
    default 3.4.x image crashes every render. (If the image ever rejects
    the file, set `RUBY_VERSION=3.1` here instead.) Add these **production**
-   variables for the Pages Functions auth gate: `SUPABASE_URL` and
-   `SUPABASE_ANON_KEY`. They are read at request time and are intentionally
-   not committed. In Supabase Auth → URL Configuration, allow the exact
+   variables for the Pages Functions auth gate: `SUPABASE_URL` and either
+   `SUPABASE_ANON_KEY` or `SUPABASE_JWKS_URL`. They are read at request time
+   and are intentionally not committed. With asymmetric Supabase signing,
+   `SUPABASE_JWKS_URL` is sufficient: Study verifies the access token locally
+   and derives the project URL from the JWKS endpoint. The implementation also
+   accepts the personal app's public aliases (`NEXT_PUBLIC_SUPABASE_URL` and
+   `SUPABASE_PUBLISHABLE_KEY`). If the project uses symmetric signing, provide
+   the publishable/anon key instead of JWKS.
+   In Supabase Auth → URL Configuration, allow the exact
    redirect URL `https://study.buildora.work/auth/callback.html` (and the
    Pages preview callback URL when testing a preview deployment).
 4. **No GitHub token needed** — jekyll-github-metadata has no disable
@@ -104,14 +110,18 @@ Every push to `main` triggers two builds of the same command:
 6. **Verify** — push any `.md` change, then:
 
    ```bash
-   curl -sI https://software-developer-bible.pages.dev | head -1   # expect: HTTP/2 200
+   curl -sI https://software-developer-bible.pages.dev | head -1   # expect: HTTP/2 308
    ```
 
 7. **Attach the production domain** — Pages project → *Custom domains* →
    set up `study.buildora.work`. This is the production URL; the
-   `.pages.dev` hostname is only the fallback. (The `CNAME` file in the
-   repo root is a GitHub Pages leftover and does nothing here; the
-   dashboard record is what serves the domain.) If `buildora.work` is a
+   `.pages.dev` hostname is not an access path: the root Pages middleware
+   redirects `software-developer-bible.pages.dev` to the canonical study
+   host before auth/static handling. Also configure the account-level Pages
+   redirect described below so the platform fallback cannot be used as a
+   second public entry point. (The `CNAME` file in the repo root is a GitHub
+   Pages leftover and does nothing here; the dashboard record is what serves
+   the domain.) If `buildora.work` is a
    zone in the same Cloudflare account, the record is added for you;
    otherwise add this record at your DNS provider:
 
@@ -122,8 +132,14 @@ Every push to `main` triggers two builds of the same command:
    Then:
 
    ```bash
-   curl -sI https://study.buildora.work | head -1   # expect: HTTP/2 200
+   curl -sI https://study.buildora.work | head -1   # expect: HTTP/2 302 to /auth/login.html
    ```
+
+   In Cloudflare Pages, add a redirect from the production
+   `software-developer-bible.pages.dev` hostname to
+   `https://study.buildora.work` using the Pages custom-domain redirect flow
+   (or an account-level Bulk Redirect). Verify the fallback returns a 308/301
+   with no chapter content, while the canonical host returns the sign-in flow.
 
 ## 3. Private entry-flow verification
 

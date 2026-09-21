@@ -167,6 +167,86 @@ CLEAN = """# Clean
 ```
 """
 
+# 2026-09-21 — scope boundaries, pinned after a fixed-point probe found two
+# fixers whose scope was WIDER than the gate that declares the corpus clean.
+# A writer that edits what its own checker calls clean is invisible: nothing
+# will ever flag the edit. Both boundaries are pinned in both directions.
+LAYOUT_WS_BEFORE = """mixed
+
+```ts
+const a = 1;   
+```
+
+```text
+row one   
+row two   
+```
+"""
+
+LAYOUT_WS_AFTER = """mixed
+
+```ts
+const a = 1;
+```
+
+```text
+row one   
+row two   
+```
+"""
+
+SHEET_FENCE_BEFORE = """sheet
+
+```text
+JEST CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+  jest.mock("./api");
+  it("works", () => {
+    expect(1).toBe(1);
+  });
+
+INTERVIEW TIPS:
+  - Know snapshot testing
+```
+
+code
+
+```text
+const a = 1;
+function f(): number {
+  return a;
+}
+```
+"""
+
+SHEET_FENCE_AFTER = """sheet
+
+```text
+JEST CHEAT SHEET
+============================================================
+
+COMMON PATTERNS:
+  jest.mock("./api");
+  it("works", () => {
+    expect(1).toBe(1);
+  });
+
+INTERVIEW TIPS:
+  - Know snapshot testing
+```
+
+code
+
+```typescript
+const a = 1;
+function f(): number {
+  return a;
+}
+```
+"""
+
 CASES = [
     {
         "name": "table alignment: separator spacing + row padding",
@@ -209,6 +289,28 @@ CASES = [
         "args": ["--fix"],
         "before": FLAT_BEFORE,
         "after": FLAT_AFTER,
+    },
+    {
+        # Layout fences are content by definition (check_code_whitespace
+        # exempts them; a trailing tab in a csv fence is a FIELD). The fixer
+        # stripped every fence until this contract was pinned.
+        "name": "trailing ws: code fences stripped, layout fences untouched",
+        "fixer": "fix_code_whitespace.py",
+        "args": ["--trailing-ws"],
+        "before": LAYOUT_WS_BEFORE,
+        "after": LAYOUT_WS_AFTER,
+    },
+    {
+        # A cheat sheet mixes a title bar, code snippets and tips prose. It is
+        # not mislabeled code, and relabeling it would render the title and
+        # tips as broken TypeScript — four such sheets were proposed before the
+        # homogeneity requirement (0.9, was 0.6) and the ASCII `===` title rule
+        # were added.
+        "name": "fence labels: mixed cheat sheet kept, pure code relabeled",
+        "fixer": "fix_fence_labels.py",
+        "args": ["--apply"],
+        "before": SHEET_FENCE_BEFORE,
+        "after": SHEET_FENCE_AFTER,
     },
     {
         "name": "negative: canonical content passes through byte-identical",

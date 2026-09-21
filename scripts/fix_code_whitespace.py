@@ -71,10 +71,24 @@ def _iter_fenced_blocks(lines):
 
 
 def strip_trailing_ws(lines):
-    """Strip trailing whitespace inside fenced blocks only."""
+    """Strip trailing whitespace inside *code* fences only.
+
+    Layout fences (`text`, `csv`, `tsv`, `anki`, `diff`, `mermaid`) are
+    exempt, matching check_code_whitespace.py exactly: there, any layout IS
+    content. The exemption is not cosmetic — in a `csv`/`anki` fence a
+    trailing tab is an empty final FIELD, so stripping it changes the data.
+    This function used to strip every fence, which made it rewrite lines the
+    gate declares clean (and that no gate would ever flag): the 2026-09-21
+    fixed-point probe caught it editing one file on the live corpus — a box
+    diagram's padding row. Check and fix must agree on scope, or a writer
+    edits the corpus invisibly.
+    """
     changed = 0
     fenced = set()
     for open_i, close_i, _body in _iter_fenced_blocks(lines):
+        m = FENCE_RE.match(lines[open_i])
+        if m and m.group(3).lower() in LAYOUT_LANGS:
+            continue
         fenced.update(range(open_i, close_i + 1))
     for i in sorted(fenced):
         new = lines[i].rstrip()

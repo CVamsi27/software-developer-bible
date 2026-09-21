@@ -54,13 +54,19 @@ HTTP_LINE = re.compile(
     r'|^(Host|Content-Type|Content-Length|Accept|Authorization|Cache-Control|'
     r'Set-Cookie|Cookie|Location|User-Agent|ETag|X-[A-Za-z-]+): ')
 # Cheat-sheet / Q&A structure: label lines, Q:/A:, numbered lists, ALL-CAPS titles.
+# The ASCII underline matters as much as the box-drawing one: the corpus's
+# sheets rule their titles with `=` (JEST CHEAT SHEET / ======…), and an early
+# version only matched `═`, so a sheet's title bar never counted and four mixed
+# cheat-sheet fences were proposed for relabeling to `typescript` — which would
+# have rendered their title bars and tips prose as broken code.
 SHEET_LINE = re.compile(
     r'^(Q:|A:|\d+\.\s|\d+\)\s)'
     r'|^[A-Z][A-Z0-9 /&+.\'-]{2,}:?\s*$'
     r'|^[A-Z][A-Z0-9 /&+.\'-]{2,}:\s'
     r'|^•'
     r'|^\[!\['
-    r'|^═+\s*$'
+    r'|^[═=]{3,}\s*$'
+    r'|^\s{2,}[-*]\s+\S'
     r'|^[A-Za-z].*:$'
     r'|^\[x?\]\s')
 
@@ -86,7 +92,11 @@ def classify(body):
         if not has_http_marker:
             return None
         return 'http'
-    if code / n < 0.6:
+    # Homogeneity, not a bare majority: a cheat sheet mixes a title bar, code
+    # snippets and tips prose, and at a 0.6 threshold four such sheets cleared
+    # the bar (code lines outnumbered the rest) and were proposed for relabeling.
+    # A fence that is *really* mislabeled code is code all the way down.
+    if code / n < 0.9:
         return None
     joined = '\n'.join(ne)
     ls = [l.strip() for l in ne]

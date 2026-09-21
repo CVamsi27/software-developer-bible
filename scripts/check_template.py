@@ -260,6 +260,24 @@ def iter_md():
                 yield os.path.join(root, f)
 
 
+def iter_rendered_md():
+    """Everything CI's Jekyll build renders — the wrapper check's scope.
+    Wider than the template contract: docs/, contributing.md and lane
+    INDEXes are all rendered verbatim, and a broken wrapper in any of
+    them fails the build (contributing.md + verification-gates.md carry
+    literal tag mentions in prose, so they are wrapped and checked)."""
+    for root, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        rel = os.path.relpath(root, ROOT)
+        if rel.startswith(EXEMPT_PREFIXES):
+            continue
+        if 'personal' in rel.split(os.sep):
+            continue
+        for f in files:
+            if f.endswith('.md') and f not in ('INDEX.md', 'README.md', 'AGENTS.md', 'ROADMAP.md', 'search.md'):
+                yield os.path.join(root, f)
+
+
 def check_metadata(text: str):
     """contributing.md: every content file begins with the meta comment and
     the four badges, comment at the top, badges under it before the title."""
@@ -422,31 +440,33 @@ def fence_problems(text: str):
 
 def check_raw_wrapper(text: str):
     """contributing.md: files containing Liquid-syntax collisions open with
-    {% raw %} on line 1 and close with {% endraw %} as the last non-empty
-    line — exactly one of each. Unclosed wrappers crash the Jekyll render
-    ( Liquid 'raw tag was never closed'); doubled or misplaced closers are
-    equally fatal, and both classes shipped to CI before this check.
-    Files WITHOUT raw are only required to lack a stray {% endraw %}.
-    ({% raw %} occurrences later in the file are inside the raw block, so
-    they are inert prose — not counted.)"""
+    {% raw %} on line 1 and close with a matching endraw tag as the last
+    non-empty line — exactly one closer, at EOF. Unclosed wrappers crash
+    the Jekyll render ('raw tag was never closed'); a literal endraw in
+    prose (this sentence is inside a raw block, so it must never contain
+    one) terminates the block early and makes the rest of the file live
+    Liquid — both classes shipped to CI before this check. A literal
+    {% raw %} mention inside a wrapped file is inert to Liquid and legal
+    (that is how the convention gets documented).
+    Files WITHOUT raw must lack a stray closer."""
     problems = []
     lines = text.splitlines()
-    has_raw = lines and lines[0].strip() == "{% raw %}"
+    has_raw = bool(lines) and lines[0].strip() == "{% raw %}"
+    endraw_n = text.count("{% endraw %}")
     if not has_raw:
         if "{% raw %}" in text:
             problems.append("raw-wrap: {% raw %} found but not on line 1")
-        if "{% endraw %}" in text:
-            problems.append("raw-wrap: {% endraw %} without an opening {% raw %}")
+        if endraw_n:
+            problems.append("raw-wrap: endraw closer without an opening raw tag")
         return problems
-    if text.count("{% raw %}") != 1:
-        # additional opens beyond line 1 are prose inside the raw block only
-        # if the block is intact; count them to catch accidental doubles.
-        problems.append("raw-wrap: more than one {% raw %} occurrence")
+    if endraw_n != 1:
+        problems.append(
+            f"raw-wrap: expected exactly one endraw closer (at EOF), found {endraw_n}")
+        return problems
     tail = [l for l in lines if l.strip()]
-    if not tail or tail[-1].strip() != "{% endraw %}":
-        problems.append("raw-wrap: {% raw %} on line 1 but no {% endraw %} as the last line")
-    elif text.count("{% endraw %}") != 1:
-        problems.append("raw-wrap: more than one {% endraw %} occurrence")
+    if tail[-1].strip() != "{% endraw %}":
+        problems.append(
+            "raw-wrap: endraw closer is not the last non-empty line (block closes early)")
     return problems
 
 
@@ -571,6 +591,15 @@ def main() -> int:
         n_files += 1
         rel = os.path.relpath(path, ROOT)
         problems = check(path)
+        if problems:
+            bad += 1
+            print(f"{rel}")
+            for p in problems:
+                print(f"    - {p}")
+    # Wrapper integrity on EVERY file the site renders (see iter_rendered_md).
+    for path in iter_rendered_md():
+        rel = os.path.relpath(path, ROOT)
+        problems = check_raw_wrapper(open(path, encoding='utf-8').read())
         if problems:
             bad += 1
             print(f"{rel}")

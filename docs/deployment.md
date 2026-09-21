@@ -1,3 +1,4 @@
+{% raw %}
 # Site Deployment — build gate now, publishing on your setup
 
 > **TL;DR:** The Jekyll build runs in CI on every docs push and asserts the
@@ -98,3 +99,4 @@ upload, which is exactly what `wrangler pages deploy` does.
 - [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
 - [wrangler-action](https://github.com/cloudflare/wrangler-action)
 - [wrangler pages deploy](https://developers.cloudflare.com/workers/wrangler/commands/#pages-deploy)
+{% endraw %}

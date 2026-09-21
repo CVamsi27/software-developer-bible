@@ -446,6 +446,27 @@ CASES = [
             )
         },
     },
+    {
+        # The fixed-point contract: a clean tree must be a no-op for every
+        # writer. The plant is a stale file a writer WILL edit (trailing
+        # whitespace inside a code fence — gate 8's canonical defect, present
+        # here precisely because no gate ran over this tree), so the gate has
+        # to fail: something in the corpus is one writer away from changing.
+        # The clean side is the same file already trimmed.
+        "name": "gate 22 fixpoint fires when a writer edits corpus the suite calls clean",
+        "gate": "check_fixpoint.py",
+        "args": [],
+        "plant": {
+            "40-platform/40.1-docker/40.1.01-dockerfile.md": (
+                "# Dockerfile\n\n```dockerfile\nFROM node:20-alpine\nRUN npm ci   \n```\n"
+            )
+        },
+        "clean": {
+            "40-platform/40.1-docker/40.1.01-dockerfile.md": (
+                "# Dockerfile\n\n```dockerfile\nFROM node:20-alpine\nRUN npm ci\n```\n"
+            )
+        },
+    },
 ]
 
 

@@ -57,6 +57,7 @@
 | 8b | `fix_box_code_indent.py --check` | Code embedded in box walls keeps indentation | box code renders flat |
 | 8c | `fix_box_width.py --check` | Boxes stay within screen width | a box wraps on laptop screens |
 | 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
+| 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for all nine repair/restamp writers | a writer edits what its checker calls clean (an edit no gate can flag) |
 | 9 | `check_first_principles.py --diff` | First-Principles coverage must not regress | coverage drops below baseline |
 | 10 | `check_cross_refs.py` | `→ N.N.N` refs resolve to real files | a ref points nowhere |
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |

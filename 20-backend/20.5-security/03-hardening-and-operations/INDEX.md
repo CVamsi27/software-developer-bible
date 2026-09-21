@@ -39,4 +39,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 A formal STRIDE/threat-model document does not exist in-repo; the tenant-isolation defense chain (middleware → extension → RLS) is the closest living artifact.
 ---
 
-[← Previous: ../02 Attacks And Defense/index](../02-attacks-and-defense/INDEX.md) · [Next: ../04 Interview Drills/index →](../04-interview-drills/INDEX.md)
+[← Previous: Attacks & Defense](../02-attacks-and-defense/INDEX.md) · [Next: Interview Drills →](../04-interview-drills/INDEX.md)

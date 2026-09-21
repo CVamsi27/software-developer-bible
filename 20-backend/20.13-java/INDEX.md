@@ -50,4 +50,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Actuator / ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |
 ---
 
-[← Previous: ../20.12 Ai Engineering/index](../20.12-ai-engineering/INDEX.md) · [Next: ../20.2 Nestjs/index →](../20.2-nestjs/INDEX.md)
+[← Previous: AI Engineering](../20.12-ai-engineering/INDEX.md) · [Next: NestJS →](../20.2-nestjs/INDEX.md)

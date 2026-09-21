@@ -37,4 +37,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 Replication/failover not used — a single managed Postgres instance; read replicas would arrive with reporting load.
 ---
 
-[← Previous: ../02 Querying And Optimization/index](../02-querying-and-optimization/INDEX.md) · [Next: ../04 Orm And Access/index →](../04-orm-and-access/INDEX.md)
+[← Previous: Querying & Optimization](../02-querying-and-optimization/INDEX.md) · [Next: ORM & Access →](../04-orm-and-access/INDEX.md)

@@ -40,4 +40,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Webhooks (egress) | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - HMAC-signed deliveries with 5s→300s backoff cap |
 ---
 
-[← Previous: ../02 Http Mechanics/index](../02-http-mechanics/INDEX.md) · [Next: ../04 Edge And Scale/index →](../04-edge-and-scale/INDEX.md)
+[← Previous: HTTP Mechanics](../02-http-mechanics/INDEX.md) · [Next: Edge & Scale →](../04-edge-and-scale/INDEX.md)

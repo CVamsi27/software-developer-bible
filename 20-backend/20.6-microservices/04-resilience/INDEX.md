@@ -33,4 +33,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Bulkhead by deployment | `apps/worker/src/main.ts` - job load isolated in its own process so spikes cannot starve the API |
 ---
 
-[← Previous: ../03 Data And Consistency/index](../03-data-and-consistency/INDEX.md) · [Next: ../05 Interview Drills/index →](../05-interview-drills/INDEX.md)
+[← Previous: Data & Consistency](../03-data-and-consistency/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)

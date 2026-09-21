@@ -36,4 +36,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 The ORM landscape decision is made: Prisma everywhere; no Drizzle/TypeORM/Knex in the workspace.
 ---
 
-[← Previous: ../03 Transactions And Replication/index](../03-transactions-and-replication/INDEX.md) · [Next: ../05 Operations And Scaling/index →](../05-operations-and-scaling/INDEX.md)
+[← Previous: Transactions & Replication](../03-transactions-and-replication/INDEX.md) · [Next: Operations & Scaling →](../05-operations-and-scaling/INDEX.md)

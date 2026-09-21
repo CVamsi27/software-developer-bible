@@ -28,4 +28,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 _No direct docita implementation yet._ No resolvers, DataLoader, or Apollo server exist — `apps/api/package.json` has no GraphQL dependency (REST-first choice). The closest execution analog is use cases resolving through repository ports: `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts`.
 ---
 
-[← Previous: ../01 Fundamentals/index](../01-fundamentals/INDEX.md) · [Next: ../03 Clients And Production/index →](../03-clients-and-production/INDEX.md)
+[← Previous: Fundamentals](../01-fundamentals/INDEX.md) · [Next: Clients & Production →](../03-clients-and-production/INDEX.md)

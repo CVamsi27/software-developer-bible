@@ -39,4 +39,4 @@ Docita is deliberately REST-first: no GraphQL or gRPC dependency exists — URI-
 The maturity model sits at Richardson L2 — resources + verbs + status codes, no HATEOAS.
 ---
 
-[Next: ../02 Http Mechanics/index →](../02-http-mechanics/INDEX.md)
+[Next: HTTP Mechanics →](../02-http-mechanics/INDEX.md)

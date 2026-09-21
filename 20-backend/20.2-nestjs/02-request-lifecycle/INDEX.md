@@ -40,4 +40,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 [← Back to NestJS](../INDEX.md)
 ---
 
-[← Previous: ../01 Core Architecture/index](../01-core-architecture/INDEX.md) · [Next: ../03 Patterns/index →](../03-patterns/INDEX.md)
+[← Previous: Core Architecture](../01-core-architecture/INDEX.md) · [Next: Patterns →](../03-patterns/INDEX.md)

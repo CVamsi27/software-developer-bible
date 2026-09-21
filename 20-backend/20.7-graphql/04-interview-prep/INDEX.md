@@ -27,4 +27,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 _No direct docita implementation yet._ These drills stay fully theoretical in docita (REST-first: versioned REST + OpenAPI in `apps/api/src/main.ts`) — a honest interview answer is "we evaluated GraphQL and stayed REST because our access patterns are resource-shaped."
 ---
 
-[← Previous: ../03 Clients And Production/index](../03-clients-and-production/INDEX.md)
+[← Previous: Clients & Production](../03-clients-and-production/INDEX.md)

@@ -36,4 +36,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads |
 ---
 
-[← Previous: ../01 Auth/index](../01-auth/INDEX.md) · [Next: ../03 Hardening And Operations/index →](../03-hardening-and-operations/INDEX.md)
+[← Previous: Auth](../01-auth/INDEX.md) · [Next: Hardening & Operations →](../03-hardening-and-operations/INDEX.md)

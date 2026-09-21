@@ -38,4 +38,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Swagger & OpenAPI | `apps/api/src/main.ts` - DocumentBuilder spec generated from Zod-typed DTOs via nestjs-zod |
 ---
 
-[← Previous: ../03 Patterns/index](../03-patterns/INDEX.md) · [Next: ../05 Advanced And Interview/index →](../05-advanced-and-interview/INDEX.md)
+[← Previous: Patterns](../03-patterns/INDEX.md) · [Next: Advanced & Interview →](../05-advanced-and-interview/INDEX.md)

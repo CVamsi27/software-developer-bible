@@ -36,4 +36,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Provider composition | `apps/api/src/prisma/prisma.service.ts` - single PrismaService provider assembled with tenant/encryption/RLS extensions |
 ---
 
-[Next: ../02 Request Lifecycle/index →](../02-request-lifecycle/INDEX.md)
+[Next: Request Lifecycle →](../02-request-lifecycle/INDEX.md)

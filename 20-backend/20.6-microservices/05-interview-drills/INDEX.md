@@ -31,4 +31,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | "Split the monolith" drill | `apps/api/src/app.module.ts` - module seams are the future service boundaries |
 ---
 
-[← Previous: ../04 Resilience/index](../04-resilience/INDEX.md)
+[← Previous: Resilience](../04-resilience/INDEX.md)

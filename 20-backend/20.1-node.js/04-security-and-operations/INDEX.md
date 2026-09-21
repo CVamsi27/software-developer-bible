@@ -38,4 +38,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 _Debugging/profiling internals (`--inspect`, heap snapshots): no direct docita implementation yet._ Observability is pino + Sentry + Prometheus rather than V8 diagnostics tooling.
 ---
 
-[← Previous: ../03 Processes And Concurrency/index](../03-processes-and-concurrency/INDEX.md)
+[← Previous: Processes & Concurrency](../03-processes-and-concurrency/INDEX.md)

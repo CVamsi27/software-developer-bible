@@ -39,4 +39,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; the outbox relay would republish to a broker the day events cross deployable boundaries.
 ---
 
-[← Previous: ../01 Service Topology/index](../01-service-topology/INDEX.md) · [Next: ../03 Data And Consistency/index →](../03-data-and-consistency/INDEX.md)
+[← Previous: Service Topology](../01-service-topology/INDEX.md) · [Next: Data & Consistency →](../03-data-and-consistency/INDEX.md)

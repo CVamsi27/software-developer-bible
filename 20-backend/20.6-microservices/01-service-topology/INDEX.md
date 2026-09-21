@@ -38,4 +38,4 @@ Docita is a **modular monolith**: one API deployable plus one worker deployable 
 Consul/Eureka, Istio/Linkerd, and API-gateway products not used; they would arrive with the second independently deployed service — DNS plus a gateway first, a mesh only when mTLS/traffic-shifting pain is real.
 ---
 
-[Next: ../02 Communication And Messaging/index →](../02-communication-and-messaging/INDEX.md)
+[Next: Communication & Messaging →](../02-communication-and-messaging/INDEX.md)

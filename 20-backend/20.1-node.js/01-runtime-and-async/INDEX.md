@@ -34,4 +34,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 _Web Streams & `node:test`: no direct docita implementation yet._ Streaming lives inside libraries (PDFKit renders to a `Buffer`), and tests run on Jest (`apps/api/jest.config.ts`), not the built-in runner.
 ---
 
-[Next: ../02 Io And Data/index →](../02-io-and-data/INDEX.md)
+[Next: I/O & Data →](../02-io-and-data/INDEX.md)

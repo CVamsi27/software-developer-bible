@@ -38,4 +38,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 _No EXPLAIN harness or window-function showcase yet_ — plan inspection is manual psql work today.
 ---
 
-[← Previous: ../01 Postgresql Foundations/index](../01-postgresql-foundations/INDEX.md) · [Next: ../03 Transactions And Replication/index →](../03-transactions-and-replication/INDEX.md)
+[← Previous: PostgreSQL Foundations](../01-postgresql-foundations/INDEX.md) · [Next: Transactions & Replication →](../03-transactions-and-replication/INDEX.md)

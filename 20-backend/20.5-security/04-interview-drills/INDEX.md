@@ -19,4 +19,4 @@
 [← Back to Security](../INDEX.md)
 ---
 
-[← Previous: ../03 Hardening And Operations/index](../03-hardening-and-operations/INDEX.md)
+[← Previous: Hardening & Operations](../03-hardening-and-operations/INDEX.md)

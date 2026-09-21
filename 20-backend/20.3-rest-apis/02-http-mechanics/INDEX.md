@@ -35,4 +35,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | HTTP caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET response caching through CACHE_MANAGER |
 ---
 
-[← Previous: ../01 Design And Contract/index](../01-design-and-contract/INDEX.md) · [Next: ../03 Payloads Errors Integration/index →](../03-payloads-errors-integration/INDEX.md)
+[← Previous: Design & Contract](../01-design-and-contract/INDEX.md) · [Next: Payloads, Errors & Integration →](../03-payloads-errors-integration/INDEX.md)

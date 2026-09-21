@@ -39,4 +39,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 MVCC/vacuum tuning is delegated to managed Postgres; the SQL-vs-NoSQL question is answered — relational all the way for clinical data.
 ---
 
-[Next: ../02 Querying And Optimization/index →](../02-querying-and-optimization/INDEX.md)
+[Next: Querying & Optimization →](../02-querying-and-optimization/INDEX.md)

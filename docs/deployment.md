@@ -6,6 +6,14 @@
 > render/safety gate (`site-build.yml`); there is no deploy job, no API
 > token, and no secret to rotate.
 
+The production host is private by design. Cloudflare Pages Functions run the
+access gate before a static file can be served: Google OAuth is brokered by
+Supabase Auth, and only the case-insensitive exact address
+`cvamsik99@gmail.com` receives a short-lived `HttpOnly` session cookie. An
+unauthenticated visitor sees `/auth/login.html`; a signed-in visitor with a
+different address is sent to `https://personal.buildora.work/?study=access-denied`.
+The gate is server-side, so copying a static file URL does not bypass it.
+
 |  |  |
 | --------------- | --------------------------------------------------------------------- |
 | **Status** | Git integration (Connect to Git) · production branch `main` |
@@ -50,7 +58,7 @@ Every push to `main` triggers two builds of the same command:
 
 > One-way door: a Git-integrated Pages project cannot be switched back to
 > Direct Upload later. (Automatic deployments can still be paused via
-> branch control in §3.)
+> branch control in §4.)
 
 1. **Connect the repo** — Cloudflare dashboard → *Workers & Pages* →
    *Create* → *Pages* → *Connect to Git* → select
@@ -74,7 +82,12 @@ Every push to `main` triggers two builds of the same command:
    file (`3.1`) in the repo root pins the build image — the locked
    `liquid 4.0.3` calls `Object#tainted?`, removed in Ruby 3.2, so the
    default 3.4.x image crashes every render. (If the image ever rejects
-   the file, set `RUBY_VERSION=3.1` here instead.)
+   the file, set `RUBY_VERSION=3.1` here instead.) Add these **production**
+   variables for the Pages Functions auth gate: `SUPABASE_URL` and
+   `SUPABASE_ANON_KEY`. They are read at request time and are intentionally
+   not committed. In Supabase Auth → URL Configuration, allow the exact
+   redirect URL `https://study.buildora.work/auth/callback.html` (and the
+   Pages preview callback URL when testing a preview deployment).
 4. **No GitHub token needed** — jekyll-github-metadata has no disable
    flag, so `_config.yml` neutralizes it by construction instead: `github:`
    is an Array (never merged into an API-backed drop) and
@@ -112,7 +125,27 @@ Every push to `main` triggers two builds of the same command:
    curl -sI https://study.buildora.work | head -1   # expect: HTTP/2 200
    ```
 
-## 3. Conventions
+## 3. Private entry-flow verification
+
+The pure policy gate runs in CI and locally:
+
+```bash
+node --test functions/_lib/study-access.test.mjs
+```
+
+For a deployed smoke check, use a private window and verify that:
+
+1. `https://study.buildora.work/` opens the Google sign-in screen rather than
+   returning a chapter file.
+2. The approved account returns to the requested path after consent.
+3. A different Google account is redirected to Personal Buildora.
+4. Opening a deep link while signed out still lands on login and returns to
+   that deep link after a successful session.
+
+The current scope is an open-app/browser session. There is no background push
+delivery, refresh-token store, or binary upload in this site.
+
+## 4. Conventions
 
 - **Never publish `personal/`.** The `exclude:` entries in `_config.yml`
   and the CI assertions are the mechanism; do not "clean up" either.
@@ -126,7 +159,7 @@ Every push to `main` triggers two builds of the same command:
 - Rollbacks are a dashboard action: Pages project → *Deployments* → select a
   prior deployment → *Rollback*.
 
-## 4. Troubleshooting
+## 5. Troubleshooting
 
 **`Missing entry-point to Worker script` after `npx wrangler deploy`, or
 a *Deploy command* field in the project settings.** The repo was connected
@@ -153,7 +186,7 @@ not "fix" it by upgrading `liquid` — the version is locked by the
 
 **Pages is green but CI (`site-build`) is red.** The deployment is live
 without its safety guards (lane exclusion, Liquid warnings) — treat as
-suspect, fix forward or *Rollback* per §3, then re-push.
+suspect, fix forward or *Rollback* per §4, then re-push.
 
 ## See Also
 

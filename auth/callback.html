@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Signing in // Buildora Study</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #0b1114; color: #f1f7f4; }
+      body { min-height: 100svh; margin: 0; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 90% 0%, #16383a, transparent 42%), #0b1114; }
+      main { width: min(100%, 480px); border: 1px solid #2f5154; padding: 32px; background: #111b1e; }
+      h1 { margin: 0 0 12px; font-size: 32px; letter-spacing: -.04em; }
+      p { color: #a7b9b5; line-height: 1.6; }
+      .error { color: #ffb98a; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Checking access…</h1>
+      <p id="status">Securing your private study session.</p>
+    </main>
+    <script>
+      const query = new URLSearchParams(window.location.search);
+      const next = query.get("next") || query.get("state") || "/";
+      const fragment = new URLSearchParams(window.location.hash.slice(1));
+      const accessToken = fragment.get("access_token");
+      const status = document.getElementById("status");
+      const denied = (message) => {
+        status.className = "error";
+        status.textContent = message;
+        window.setTimeout(() => { window.location.href = "https://personal.buildora.work/?study=access-denied"; }, 900);
+      };
+      if (!accessToken) {
+        denied("No Google session was returned. Redirecting to Personal Buildora.");
+      } else {
+        fetch("/auth/session?next=" + encodeURIComponent(next), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ access_token: accessToken })
+        }).then(async (response) => {
+          const result = await response.json();
+          if (!response.ok || !result.ok) return denied("This Google account is not approved for Study. Redirecting.");
+          window.location.replace(result.next || "/");
+        }).catch(() => denied("The study session could not be secured. Redirecting."));
+      }
+    </script>
+  </body>
+</html>

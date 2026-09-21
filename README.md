@@ -98,6 +98,17 @@ Interview questions live in dedicated `*-interview-questions.md` files (40 acros
 | **Trust the numbers** | 20 verification gates re-check every count, link and claim on each push — see the [Verification Gates](docs/verification-gates.md), the [Scripts Map](docs/scripts-map.md), and the [Corpus Health Report](docs/2026-09-19-corpus-health-report.md) |
 | **Publishing the site** | The Jekyll build + Cloudflare Pages deploy pipeline: what runs automatically, the one-time setup, and how the private lanes stay unpublished — see [Deployment](docs/deployment.md) |
 
+## Private Study Host
+
+This repository publishes to `study.buildora.work`,
+but the production host is not a public mirror. Cloudflare Pages Functions
+protect every static route with Supabase Google OAuth; only the exact
+`cvamsik99@gmail.com` account is admitted. Other Google accounts are softly
+returned to `personal.buildora.work`. The access
+cookie is `HttpOnly`, no token is persisted in browser storage, and the
+configuration lives in Cloudflare Pages environment variables rather than in
+the repository. See [Deployment](docs/deployment.md) for the private entry-flow verification steps.
+
 ---
 
 ## Quick Lane Summary

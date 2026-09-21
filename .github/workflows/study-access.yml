@@ -1,0 +1,26 @@
+name: study-access
+
+on:
+  push: {}
+  pull_request: {}
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Study access policy tests
+        run: node --test functions/_lib/study-access.test.mjs
+      - name: Reject client-side token persistence
+        run: |
+          if grep -RInE 'localStorage.*(access_token|study_access_token)|(access_token|study_access_token).*localStorage' auth functions; then
+            echo 'Study access tokens must stay in the HttpOnly cookie flow.'
+            exit 1
+          fi

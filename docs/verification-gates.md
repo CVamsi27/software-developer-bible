@@ -1,3 +1,4 @@
+{% raw %}
 # Verification Gates — what enforces what
 
 > **TL;DR:** Every integrity claim in this repo is enforced by a script, and

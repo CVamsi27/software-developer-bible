@@ -1,3 +1,4 @@
+{% raw %}
 # CI/CD — Index
 
 > **Study time:** ≈ 2 h 47 m of reading (11 files, ~15 min average).

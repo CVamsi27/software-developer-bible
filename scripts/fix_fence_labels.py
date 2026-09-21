@@ -32,6 +32,8 @@ Usage:
 """
 
 import os
+
+from scan_scope import guard
 import re
 import sys
 
@@ -151,17 +153,23 @@ def process(path, apply):
 def main():
     apply = '--apply' in sys.argv
     total = 0
+    n_files = 0
     for root, dirs, files in os.walk(repo_root):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for fn in files:
             if not fn.endswith('.md'):
                 continue
+            n_files += 1
             p = os.path.join(root, fn)
             for lineno, old, new in process(p, apply):
                 total += 1
                 if not apply or total <= 40:
                     print(f"  {os.path.relpath(p, repo_root)}:{lineno}  {old} -> {new}")
-    print(f"\n{'RELABELED' if apply else 'WOULD RELABEL'}: {total} fence(s)")
+    # A labeler that read no fences has not validated the corpus's labels
+    # (see scan_scope) — 0 relabeled would otherwise read as "all correct".
+    guard(n_files, 'markdown files', repo_root)
+    print(f"\n{'RELABELED' if apply else 'WOULD RELABEL'}: {total} fence(s) "
+          f"across {n_files} files")
     if not apply:
         print("(dry run — add --apply to write)")
 

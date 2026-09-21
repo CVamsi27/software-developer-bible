@@ -39,6 +39,8 @@ import subprocess
 import sys
 import tempfile
 
+from scan_scope import guard
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COPY_SKIP = {'.git', 'node_modules', '.archive', '__pycache__'}
 
@@ -85,6 +87,12 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp:
         work = os.path.join(tmp, 'corpus')
         copy_corpus(work)
+        # The gate's own scope floor (see scan_scope): an empty copy is a
+        # fixed point of everything, so "no writer changed a byte" over zero
+        # files would certify nothing. This gate is not immune to the class
+        # it exists to catch.
+        n_md = sum(1 for _, _, fs in os.walk(work) for f in fs if f.endswith('.md'))
+        guard(n_md, 'markdown files in the corpus copy', work)
         for script, args in WRITERS:
             subprocess.run([sys.executable, os.path.join('scripts', script), *args],
                            cwd=work, capture_output=True, text=True)

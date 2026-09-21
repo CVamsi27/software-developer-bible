@@ -327,6 +327,9 @@ def run_case(case, tmp):
     os.makedirs(scripts, exist_ok=True)
     shutil.copy(os.path.join(HERE, case["fixer"]), scripts)
     shutil.copy(os.path.join(HERE, "md_fences.py"), scripts)
+    # The scope-floor owner every writer now imports (gate 23): without it the
+    # sandbox run dies on import instead of exercising the fixer.
+    shutil.copy(os.path.join(HERE, "scan_scope.py"), scripts)
     target = os.path.join(tmp, "sample.md")
     with open(target, "w", encoding="utf-8") as fh:
         fh.write(case["before"])

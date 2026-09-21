@@ -29,6 +29,7 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 import md_fences
+from scan_scope import guard
 
 SKIP_DIRS = {'.git', 'node_modules', '.archive', '.freebuff', '.sass-cache'}
 # The Next.js stack teaches Pages Router side-by-side with App Router
@@ -462,6 +463,9 @@ def main():
         n_files += 1
         for lineno, rule, detail in check(p, rel):
             all_hits.append(f'STALE {rel}:{lineno} [{rule}] {detail}')
+
+    # A stale-API scan over no files finds no stale APIs (see scan_scope).
+    guard(n_files, 'markdown files', str(root))
 
     if all_hits:
         print(f'{len(all_hits)} freshness violation(s) found:\n')

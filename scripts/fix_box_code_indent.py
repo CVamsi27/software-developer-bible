@@ -31,6 +31,7 @@ Safety rules (all modes):
 import re
 import sys
 import md_fences
+from scan_scope import guard
 
 FENCE = re.compile(r"^```")
 KEYWORD = re.compile(
@@ -318,6 +319,10 @@ def main():
         for f in fs:
             if f.endswith(".md"):
                 files.append(os.path.join(root, f))
+    # A box-code scanner over no files reports 0 de-indented lines
+    # (scan_scope) — the file count is the gate's actual reach.
+    guard(len(files), 'markdown files')
+
     total = 0
     hits = []
     for p in sorted(files):
@@ -328,7 +333,7 @@ def main():
     mode = "fixed" if fix else "de-indented lines found"
     for p, c in hits:
         print(f"  {c:3d}  {p}")
-    print(f"{mode}: {total} lines in {len(hits)} files")
+    print(f"{mode}: {total} lines in {len(hits)} files ({len(files)} scanned)")
     sys.exit(1 if (hits and not fix) else 0)
 
 

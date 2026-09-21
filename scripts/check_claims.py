@@ -21,6 +21,8 @@ import re
 import sys
 from pathlib import Path
 
+from scan_scope import guard
+
 REPO = Path(__file__).resolve().parent.parent
 PERSONAL = REPO / "80-lanes-abroad-full-stack" / "personal"
 
@@ -158,6 +160,8 @@ def scan_files(mode: str) -> list[str]:
                     f"    why: {rule['reason']}\n"
                     f"    fix: {rule['fix']}"
                 )
+    # A claims gate over no documents finds no claims (see scan_scope).
+    guard(scanned, 'active campaign documents')
     if mode == "gate" and not problems:
         print(f"OK — claims gate clean ({scanned} active files, {len(RULES)} rules).")
     elif mode == "scan" and not problems:

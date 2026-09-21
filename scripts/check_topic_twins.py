@@ -24,6 +24,7 @@ import sys
 from collections import defaultdict
 from itertools import combinations
 import md_fences
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -202,6 +203,12 @@ def analyse():
 
 def main() -> int:
     twin_groups, _topics, missing = analyse()
+
+    # The twin registry is not empty in this repo, so 0 groups means the
+    # pattern scan broke — and a broken scan reports zero missing links
+    # (scan_scope).
+    guard(len(twin_groups), 'topic-twin groups')
+
     print(f"topic-twin groups: {len(twin_groups)}")
     for g, files_in in sorted(twin_groups.items(), key=lambda kv: kv[1][0]):
         print(f"\n[{' '.join(sorted(g))}]  {len(files_in)} chapters")

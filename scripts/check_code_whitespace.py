@@ -29,6 +29,8 @@ import os
 import re
 import sys
 
+from scan_scope import guard
+
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'venv', '__pycache__'}
 FENCE_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})([A-Za-z0-9_+-]*)')
 LAYOUT_LANGS = {'', 'text', 'tsv', 'anki', 'csv', 'diff', 'mermaid'}
@@ -136,19 +138,24 @@ def check_file(path):
 
 def main():
     all_issues = {}
+    n_files = 0
     for root, dirs, files in os.walk(repo_root):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for fn in files:
             if not fn.endswith('.md'):
                 continue
+            n_files += 1
             path = os.path.join(root, fn)
             found = check_file(path)
             if found:
                 all_issues[path] = found
 
+    # "0 trailing-ws" means nothing if the walk found no files (scan_scope).
+    guard(n_files, 'markdown files', repo_root)
+
     if not all_issues:
-        print("Code-block whitespace: OK (0 trailing-ws, 0 paste-shifted blocks, "
-              "0 unbalanced fences)")
+        print(f"Code-block whitespace: OK (0 trailing-ws, 0 paste-shifted blocks, "
+              f"0 unbalanced fences across {n_files} files)")
         sys.exit(0)
 
     total = sum(len(v) for v in all_issues.values())

@@ -17,6 +17,7 @@ import os
 import re
 import sys
 import md_fences
+from scan_scope import guard
 
 REF = re.compile(r'→\s*((?:\d+\.)*\d+)')
 FENCE = re.compile(r'^\s*(```|~~~)')
@@ -100,6 +101,11 @@ def strip_fences(text: str):
 
 def main() -> int:
     stacks, cats, fids = build_index()
+
+    # No indexed stacks means the inventory scan itself failed, not that the
+    # corpus is clean — every → N.N.N ref would "resolve" vacuously (scan_scope).
+    guard(len(stacks), 'study stacks', str(ROOT))
+
     broken = []
     for path in iter_md_files():
         rel = os.path.relpath(path, ROOT)

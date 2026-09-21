@@ -56,6 +56,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import md_fences
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', 'scripts'}
@@ -228,7 +229,9 @@ def iter_files():
 def main() -> int:
     fix = '--fix' in sys.argv
     hits, total, files_touched = [], 0, 0
+    scanned = 0
     for path in iter_files():
+        scanned += 1
         with open(path, encoding='utf-8') as fh:
             lines = fh.read().splitlines()
         # Only prose lines can hold a footer (a fenced 'Previous:' is content).
@@ -254,6 +257,9 @@ def main() -> int:
                     fh.write('\n'.join(out) + '\n')
 
     mode = 'fixed' if fix else 'check'
+    # A nav scanner that read no chapters has not checked a single footer
+    # (see scan_scope) — and 0 files touched would have said "all clean".
+    guard(scanned, 'markdown files', ROOT)
     if hits:
         verb = 'repaired' if fix else 'found'
         print(f"nav labels: {verb} {total} non-canonical token(s) in "
@@ -263,8 +269,8 @@ def main() -> int:
         if not fix:
             print("\n  fix: python3 scripts/fix_nav_labels.py --fix")
         return 1 if not fix else 0
-    print(f"nav labels OK — every Previous/Next label is a canonically-cased "
-          f"human title, not a path ({mode})")
+    print(f"nav labels OK — every Previous/Next label in {scanned} files is a "
+          f"canonically-cased human title, not a path ({mode})")
     return 0
 
 

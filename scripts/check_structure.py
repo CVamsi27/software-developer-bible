@@ -10,12 +10,16 @@ import re
 import sys
 from pathlib import Path
 import md_fences
+from scan_scope import guard
 
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 links_only = "--links-only" in sys.argv
 ROOT = Path(args[0] if args else ".").resolve()
 SKIP = ("/.git/", "/node_modules/", "/.archive/", "/.freebuff/", "/.sass-cache/")
 MD = [p for p in sorted(ROOT.rglob("*.md")) if not any(s in str(p) for s in SKIP)]
+
+# A structure gate that finds no files certifies nothing (see scan_scope).
+guard(len(MD), "markdown files", str(ROOT))
 errors = []
 
 LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")

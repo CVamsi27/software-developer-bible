@@ -24,6 +24,8 @@ import json
 import sys
 from pathlib import Path
 
+from scan_scope import guard
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_freshness import (  # noqa: E402
     MD_LINK_URL, URL_SKIP, iter_md_files, probe, repair_url,
@@ -79,7 +81,9 @@ def collect() -> dict:
     see the same link set.
     """
     files = {}
+    n_files = 0
     for p, rel in iter_md_files(ROOT):
+        n_files += 1
         if '/personal/' in f'/{rel}':
             continue
         text = p.read_text(encoding='utf-8', errors='replace')
@@ -90,6 +94,11 @@ def collect() -> dict:
             files.setdefault(u, [])
             if rel not in files[u]:
                 files[u].append(rel)
+    # The citation set is the whole input to both --update and the diff: an
+    # empty tree would otherwise "remove" every baseline URL and exit 0,
+    # and --update would cheerfully write a baseline of zero URLs
+    # (see scan_scope).
+    guard(n_files, 'markdown files', str(ROOT))
     return {u: sorted(fs) for u, fs in sorted(files.items())}
 
 
@@ -110,6 +119,9 @@ def update() -> None:
 
 def diff() -> None:
     base, cur = load(), collect()
+    # Files can be present while the URL regex or the skip rules have broken:
+    # 0 cited URLs would report every baseline entry as REMOVED and pass.
+    guard(len(cur), 'cited external URLs', str(ROOT))
     added = sorted(set(cur) - set(base))
     removed = sorted(set(base) - set(cur))
     for u in added:

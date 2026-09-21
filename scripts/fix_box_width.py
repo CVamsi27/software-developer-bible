@@ -27,6 +27,7 @@ rewrites each box at shrink-to-fit width:
 import re
 import sys
 import md_fences
+from scan_scope import guard
 
 FENCE = re.compile(r"^```")
 WALL = "│"
@@ -282,6 +283,10 @@ def main():
         for f in fs:
             if f.endswith(".md"):
                 files.append(os.path.join(root, f))
+    # A box scanner over no files reports 0 over-padded boxes (scan_scope);
+    # the file count is the gate's actual reach.
+    guard(len(files), 'markdown files')
+
     total = 0
     hits = []
     all_remaining = []
@@ -295,7 +300,7 @@ def main():
     mode = "narrowed" if fix else "over-padded boxes found"
     for p, c in hits:
         print(f"  {c:3d}  {p}")
-    print(f"{mode}: {total} boxes in {len(hits)} files")
+    print(f"{mode}: {total} boxes in {len(hits)} files ({len(files)} scanned)")
     if report:
         print(f"\nboxes remaining over {MAX_W} cols after shrink (irreducible without re-layout):")
         for p, ln, old, new in sorted(all_remaining, key=lambda x: -x[2]):

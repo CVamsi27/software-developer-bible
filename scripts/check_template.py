@@ -40,6 +40,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import md_fences
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
@@ -534,7 +535,9 @@ def check(path: str):
 
 def main() -> int:
     bad = 0
+    n_files = 0
     for path in iter_md():
+        n_files += 1
         rel = os.path.relpath(path, ROOT)
         problems = check(path)
         if problems:
@@ -545,7 +548,9 @@ def main() -> int:
     if bad:
         print(f"\nTEMPLATE VIOLATIONS: {bad} file(s)")
         return 1
-    print("template compliance OK")
+    # A template gate that read no chapters certifies no templates (scan_scope).
+    guard(n_files, 'markdown files')
+    print(f"template compliance OK — {n_files} markdown files read")
     return 0
 
 

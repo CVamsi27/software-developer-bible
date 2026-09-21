@@ -48,6 +48,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import prose_scan
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
@@ -126,11 +127,13 @@ def main():
     problems = []
     checked = 0
     def_checks = 0
+    n_files = 0
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
         for name in filenames:
             if not name.endswith('.md'):
                 continue
+            n_files += 1
             path = os.path.join(dirpath, name)
             rel = os.path.relpath(path, ROOT)
             if 'interview-questions' in name:
@@ -153,6 +156,12 @@ def main():
                         f"    A definition must say what the thing IS before the "
                         f"table enumerates it — add the mechanism prose."
                     )
+
+    # Zero banks means the walk found nothing (see scan_scope): "every answer
+    # >= 25 prose words" over an empty set is a vacuous pass, and a walk that
+    # missed the banks would report exactly that.
+    guard(n_files, 'markdown files', ROOT)
+    guard(checked, 'interview banks', ROOT)
 
     if problems:
         print(f"ANSWER DEPTH FAIL — {len(problems)} problem(s): answers below "

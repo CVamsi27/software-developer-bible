@@ -31,6 +31,7 @@ import os
 import re
 import sys
 import urllib.parse
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive'}
@@ -218,6 +219,10 @@ def main():
             path = os.path.join(dirpath, name)
             rel = os.path.relpath(path, ROOT)
             slugs_map[rel] = heading_slugs(path)
+
+    # A link gate that finds no files certifies nothing (see scan_scope):
+    # "OK — 0 links checked" is what a broken root would print forever.
+    guard(len(slugs_map), 'markdown files', ROOT)
 
     # Pass 2 — link + anchor checks.
     for dirpath, dirnames, filenames in os.walk(ROOT):

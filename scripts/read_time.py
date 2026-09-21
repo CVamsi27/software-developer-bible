@@ -29,6 +29,7 @@ import os
 import re
 import sys
 import md_fences
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -292,6 +293,9 @@ def badge_check():
             print(f"  stale:   {rel}\n    got:    {got}\n    want:   {want}")
         print("\nFix: python3 scripts/read_time.py --write")
         return 1
+    # Same vacuity on the badge half: 0 content files would print the same
+    # sentence as a clean corpus (scan_scope).
+    guard(n, 'content files', str(ROOT))
     print(f"read-time badges consistent on {n} content files")
     return 0
 
@@ -317,9 +321,14 @@ def check():
             print(f"  {rel}\n    declared: {got}\n    computed: {expect}")
         print("\nFix: python3 scripts/read_time.py --write")
         return 1
+    # A study-time gate over no INDEXes and no content files finds nothing to
+    # disagree with (see scan_scope): "consistent across 0 INDEX files" is
+    # what a broken walk prints, identical to a real pass.
+    n_idx = len([t for t in totals.values() if t[1]])
+    guard(n_idx, 'INDEX files', str(ROOT))
     rc = badge_check()
     if rc == 0:
-        print(f"read times consistent across {len([t for t in totals.values() if t[1]])} INDEX files")
+        print(f"read times consistent across {n_idx} INDEX files")
     return rc
 
 

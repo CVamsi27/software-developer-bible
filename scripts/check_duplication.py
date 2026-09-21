@@ -29,6 +29,7 @@ import re
 import sys
 from collections import defaultdict
 import md_fences
+from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
@@ -110,7 +111,9 @@ def main():
 
     index = defaultdict(list)      # shingle -> [(file, section)]
     section_sets = {}              # (file, section) -> set
+    n_files = 0
     for path in iter_files():
+        n_files += 1
         rel = os.path.relpath(path, ROOT)
         for name, prose in sections(path):
             sh, nwords = shingles(prose)
@@ -141,6 +144,11 @@ def main():
         if jac >= args.threshold:
             findings.append((jac, a, b))
     findings.sort(reverse=True)
+
+    # A duplication scan over no files reports no overlap (see scan_scope) —
+    # and zero prose sections is a discovery failure, not a clean corpus.
+    guard(n_files, 'markdown files', ROOT)
+    guard(len(section_sets), 'non-template sections', ROOT)
 
     print(f"scanned {len(section_sets)} non-template sections across "
           f"{len({k[0] for k in section_sets})} files")

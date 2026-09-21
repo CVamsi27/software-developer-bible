@@ -20,6 +20,7 @@ import os
 import re
 import sys
 import md_fences
+from scan_scope import guard
 
 BOXCHARS = set('─│┌┐└┘├┤┬┴┼═━┄┈╭╮╰╯')
 OPENERS = set('┌├└')
@@ -461,6 +462,11 @@ def main():
                  for r, _, fs in os.walk('.')
                  if '.git' not in r and 'node_modules' not in r
                  for f in fs if f.endswith('.md')]
+    # "0 file(s) with misaligned boxes/tables" is what a broken walk prints
+    # too — the count of files actually read is the gate's real reach
+    # (scan_scope). Aligned boxes in no files is not a pass.
+    guard(len(paths), 'markdown files')
+
     fixable = []
     drifted = []
     headerless = []

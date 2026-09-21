@@ -43,6 +43,8 @@ import os
 import re
 import sys
 
+from scan_scope import guard
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SKIP_DIRS = {'.git', 'node_modules', '.archive', '.sass-cache'}
@@ -559,6 +561,11 @@ def main():
             'ROADMAP.md', 'docs/api-contract.md',
             'docs/2026-09-19-corpus-health-report.md']
     texts = load(sorted(set(nav)))
+
+    # A count gate that loaded no documents has verified no claims
+    # (see scan_scope) — and compute_live() itself reads the corpus, so a
+    # broken root used to die in a traceback instead of saying so plainly.
+    guard(len(texts), 'navigation documents', ROOT)
 
     live = compute_live()
     changed, missing = restamp(texts, live)

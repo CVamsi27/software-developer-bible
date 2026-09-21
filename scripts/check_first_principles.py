@@ -17,6 +17,8 @@ import re
 import sys
 from pathlib import Path
 
+from scan_scope import guard
+
 ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".git", "node_modules", ".archive", ".freebuff", "scripts", "docs", "personal"}
 BASELINE = Path(__file__).resolve().parent / "first-principles-baseline.json"
@@ -58,6 +60,11 @@ def main():
     table = coverage()
     cov = sum(v["covered"] for v in table.values())
     tot = sum(v["total"] for v in table.values())
+
+    # Zero concept chapters means the stack walk found nothing (see scan_scope):
+    # "no regressions" over an empty table is a vacuous pass, and --baseline
+    # would then write a baseline of nothing, blinding every future diff.
+    guard(tot, 'concept chapters', str(ROOT))
     width = max((len(k) for k in table), default=0)
     print(f"{'stack'.ljust(width)}  covered/total")
     for k, v in table.items():

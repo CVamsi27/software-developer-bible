@@ -40,6 +40,11 @@ jobs:
         run: bundle exec jekyll build --trace
         env:
           JEKYLL_ENV: production
+          # jekyll-github-metadata calls the GitHub API; unauthenticated it
+          # rate-limits and the failure is fatal in production mode. The
+          # Actions token can read this private repo, so metadata resolves
+          # exactly as on a real GH Pages build.
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Assert the lane trees are not in the built site
         run: |

@@ -108,3 +108,4 @@ perfectly correct and still not block anything.
    `set +e`) and make sure the workflow's `paths:` filter covers the script;
    gate 15 enforces both, so a gate that cannot fail the job and a gate that
    no push can trigger are caught before they ship.
+{% endraw %}

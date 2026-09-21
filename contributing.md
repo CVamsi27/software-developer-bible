@@ -170,7 +170,7 @@ Every content file **must** begin with metadata in two forms:
 - Metadata line goes BEFORE the title (H1)
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges
 - Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category/Status link to `#`
-- Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment so GitHub Pages renders them literally (69 files use this today)
+- Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with `{% raw %}` above the HTML comment and close with `{% endraw %}` at the end of file, so GitHub Pages renders them literally (69 files use this today)
 - **Enforced by gate 6b** (`check_template.py`): the comment must sit at the file top (only `{% raw %}` may precede it), category must be one of the 14 canonical values below, all four badges must be present in the header in canonical order (Section → Category → Tags → Read time)
 
 ### Category Values
@@ -979,3 +979,4 @@ Each script also runs standalone; all exit non-zero on failure so they can gate 
 | Double newline at end of file         | File has 2+ trailing newlines                        | Use `rstrip(b'\\n') + b'\\n'` to normalize                        |
 | Broken `## See Also` link             | Relative path points to wrong directory              | Use `../NN.N-slug/` (target stack folder); verify it exists         |
 | Navigation link goes to wrong section | Previous/next links out of sequence                  | Verify section follows the 00→81 numbering order                  |
+{% endraw %}

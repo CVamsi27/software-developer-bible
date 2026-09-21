@@ -1,6 +1,6 @@
 # Test Levels
 
-> **Study time:** ≈ 2 h 19 m of reading (3 files, ~46 min average).
+> **Study time:** ≈ 2 h 18 m of reading (3 files, ~46 min average).
 > **3 files.** The test pyramid in practice: unit, integration, and E2E — what to test at each level, which tools, and how much confidence each layer buys.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -31,7 +31,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 | --: | ------ | ------- | -------- | ------------- | ----------: |
 | 01 | [Unit Testing](50.1.3.01-unit-testing.md) | Base | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 50 min |
 | 02 | [Integration Testing](50.1.3.02-integration-testing.md) | Middle | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 48 min |
-| 03 | [E2E Testing](50.1.3.03-e2e-testing.md) | Top | Playwright, Cypress, user flows, visual regression | Critical user journeys | 41 min |
+| 03 | [E2E Testing](50.1.3.03-e2e-testing.md) | Top | Playwright, Cypress, user flows, visual regression | Critical user journeys | 40 min |
 
 ---
 

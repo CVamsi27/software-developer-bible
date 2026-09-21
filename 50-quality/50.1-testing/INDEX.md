@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 8 h 5 m of reading (14 files, ~35 min average).
+> **Study time:** ≈ 8 h 4 m of reading (14 files, ~35 min average).
 > **14 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -64,7 +64,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 50 min |
 | 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 48 min |
-| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 41 min |
+| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 40 min |
 
 ---
 

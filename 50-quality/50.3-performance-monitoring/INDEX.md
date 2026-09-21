@@ -1,6 +1,6 @@
 # Performance Monitoring — Index
 
-> **Study time:** ≈ 2 h 7 m of reading (9 files, ~14 min average).
+> **Study time:** ≈ 2 h 6 m of reading (9 files, ~14 min average).
 > **9 files across 4 categories.** Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, HTTP/2 & HTTP/3 protocol effects, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -56,7 +56,7 @@ Lab vs field: APIs, profilers, and Lighthouse are synthetic; RUM is truth from p
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 11 min |
-| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 14 min |
+| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 13 min |
 
 ---
 

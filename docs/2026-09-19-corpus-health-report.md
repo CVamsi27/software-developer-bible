@@ -130,6 +130,7 @@ proof-after-fix is the only proof.
 - **answer-quality arc: 247 answers deepened across 11 banks** — the question-count floor passed banks holding flashcard bullets and code-only answers; a fence-aware, label-agnostic depth scan (all prose between question heading and next heading) found them: TypeScript 29, security 36, NestJS 32, microservices 27, Node.js 31, CI/CD 23, Kubernetes 19, Docker 14, REST 6, auth 5, AI engineering 25 — each a hand-authored senior-depth prose block (mechanism, tradeoff, failure mode) written against the existing content; re-scan verdict: zero answers under 40 words corpus-wide
 - **the probe that falsified the arc's own scanner: 27 table-only answers** — the arc's depth scan counted table words, so a comparison table plus one `**Answer:**` label line read as healthy; a prose-only re-scan (fences, tables, headings, quotes, badges excluded) found Docker 10, K8s 7, CI/CD 5, NestJS 2, REST 1, auth 1, security 1 — every one now carries the mechanism/trade-off prose the table couldn't show, and REST Q10 (pure code, masked by a lax section boundary) was caught by the new gate's stricter scan; verdict: zero answers under 25 prose words corpus-wide
 - **gate 19 `check_answer_depth.py`** — makes that property permanent: ≥25 fence- and table-aware prose words per answer, question headings require the digit (the `### Question Categories` false positive burned the manual scans twice), the suite relabeled 21→22 gates with wiring/contributing/gates-doc restamped from one computation, and the canonical plant (a table-only answer) is pinned two ways in the self-test (12/12)
+- **rule 2, the chapter sweep: the same failure mode in study chapters** — a measured survey of 2028 core sections showed the 0-word Best Practices/How It Works sections are a deliberate H3-title-plus-code genre (explanations live in headings and annotated code; exempt by decision, not omission), but 9 chapter Definitions were table-only or thin (4 bare tables — hash-tables-internals, auth-fundamentals, and two 20.9 chapters written that week — plus a diagram-only and 4 marginal intros); all 9 now carry definitional prose, and gate 19 rule 2 makes chapter Definitions >= 25 prose words permanent, pinned as a second plant (self-test 13/13)
 
 ### Measured non-actions (the boundary findings)
 
@@ -183,7 +184,7 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 The corpus is now 560 study chapters, 40 interview banks — every one at or
 above the 25-question floor the gate now enforces, and after the
 answer-quality arc and the table-only probe that falsified its scanner,
-zero answers under the 25-prose-word floor gate 19 enforces — 2379 probe-verified
+zero answers or chapter Definitions under the 25-prose-word floor gate 19 enforces (its rule 2 measured and deliberately exempted the H3-plus-code genres) — 2379 probe-verified
 external links, 14 freshness rules across two date-gated data tables, and 22
 CI-enforced gates whose harness audits its own wiring, whose markdown
 parsing has a single fence owner, and whose detection itself is plant-tested

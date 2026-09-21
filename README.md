@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-866-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-867-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
@@ -96,6 +96,7 @@ Interview questions live in dedicated `*-interview-questions.md` files (40 acros
 | **Deep dive** | Read through internal working and code examples |
 | **Cross-reference** | Each stack folder has an `INDEX.md` listing all files with file counts |
 | **Trust the numbers** | 20 verification gates re-check every count, link and claim on each push — see the [Verification Gates](docs/verification-gates.md), the [Scripts Map](docs/scripts-map.md), and the [Corpus Health Report](docs/2026-09-19-corpus-health-report.md) |
+| **Publishing the site** | The Jekyll build + Cloudflare Pages deploy pipeline: what runs automatically, the one-time setup, and how the private lanes stay unpublished — see [Deployment](docs/deployment.md) |
 
 ---
 
@@ -115,4 +116,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: September 2026 — 866 files · 366K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*
+*Last updated: September 2026 — 867 files · 366K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*

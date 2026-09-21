@@ -1,0 +1,8 @@
+# Cloudflare Pages project — software-developer-bible
+# One-time setup steps live in docs/deployment.md. Until the CF_API_TOKEN
+# secret and the deploy_site_enabled variable exist in the GitHub repo,
+# the deploy job in .github/workflows/deploy-site.yml is a no-op and this
+# file only documents the project shape.
+name = "bible"
+pages_build_output_dir = "_site"
+compatibility_date = "2026-09-01"

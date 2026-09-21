@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-19",
- "url_count": 2379,
+ "generated": "2026-09-21",
+ "url_count": 2385,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -1179,9 +1179,21 @@
   "https://developers.cloudflare.com/images/": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
   ],
+  "https://developers.cloudflare.com/pages/": [
+   "docs/deployment.md"
+  ],
+  "https://developers.cloudflare.com/pages/configuration/build-configuration/": [
+   "docs/deployment.md"
+  ],
+  "https://developers.cloudflare.com/pages/configuration/custom-domains/": [
+   "docs/deployment.md"
+  ],
   "https://developers.cloudflare.com/workers/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
+  ],
+  "https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/": [
+   "docs/deployment.md"
   ],
   "https://developers.cloudflare.com/workers/examples/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
@@ -1197,6 +1209,9 @@
   ],
   "https://developers.cloudflare.com/workers/vite-plugin/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
+  ],
+  "https://developers.cloudflare.com/workers/wrangler/commands/#pages-deploy": [
+   "docs/deployment.md"
   ],
   "https://developers.eventstore.com/": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md"
@@ -2230,6 +2245,7 @@
    "20-backend/20.7-graphql/04-interview-prep/INDEX.md",
    "20-backend/20.7-graphql/INDEX.md",
    "20-backend/20.8-caching/INDEX.md",
+   "20-backend/20.9-message-brokers/INDEX.md",
    "20-backend/INDEX.md",
    "30-architecture/30.1-design-patterns/01-foundations/INDEX.md",
    "30-architecture/30.1-design-patterns/02-creational/INDEX.md",
@@ -2383,6 +2399,9 @@
   ],
   "https://github.com/changesets/changesets/blob/main/README.md": [
    "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+  ],
+  "https://github.com/cloudflare/wrangler-action": [
+   "docs/deployment.md"
   ],
   "https://github.com/cncf/tag-app-delivery": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"

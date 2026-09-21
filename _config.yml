@@ -27,6 +27,10 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+  # Private career data — never publish (docs/deployment.md). The CI build
+  # job in deploy-site.yml asserts these never appear in _site/.
+  - 80-lanes-abroad-full-stack/personal
+  - 81-lanes-indian-sde-faang
 
 # Content pages are rendered with the Minima theme (like the homepage).
 # github-metadata is disabled: it made every page's seo/social render hit

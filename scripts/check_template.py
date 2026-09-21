@@ -420,12 +420,43 @@ def fence_problems(text: str):
     return problems
 
 
+def check_raw_wrapper(text: str):
+    """contributing.md: files containing Liquid-syntax collisions open with
+    {% raw %} on line 1 and close with {% endraw %} as the last non-empty
+    line — exactly one of each. Unclosed wrappers crash the Jekyll render
+    ( Liquid 'raw tag was never closed'); doubled or misplaced closers are
+    equally fatal, and both classes shipped to CI before this check.
+    Files WITHOUT raw are only required to lack a stray {% endraw %}.
+    ({% raw %} occurrences later in the file are inside the raw block, so
+    they are inert prose — not counted.)"""
+    problems = []
+    lines = text.splitlines()
+    has_raw = lines and lines[0].strip() == "{% raw %}"
+    if not has_raw:
+        if "{% raw %}" in text:
+            problems.append("raw-wrap: {% raw %} found but not on line 1")
+        if "{% endraw %}" in text:
+            problems.append("raw-wrap: {% endraw %} without an opening {% raw %}")
+        return problems
+    if text.count("{% raw %}") != 1:
+        # additional opens beyond line 1 are prose inside the raw block only
+        # if the block is intact; count them to catch accidental doubles.
+        problems.append("raw-wrap: more than one {% raw %} occurrence")
+    tail = [l for l in lines if l.strip()]
+    if not tail or tail[-1].strip() != "{% endraw %}":
+        problems.append("raw-wrap: {% raw %} on line 1 but no {% endraw %} as the last line")
+    elif text.count("{% endraw %}") != 1:
+        problems.append("raw-wrap: more than one {% endraw %} occurrence")
+    return problems
+
+
 def check(path: str):
     """Return list of problem strings for one file."""
     problems = []
     text = open(path, encoding='utf-8').read()
     # Metadata applies to every genre, guides included (contributing.md rule).
     problems += check_metadata(text)
+    problems += check_raw_wrapper(text)
     if is_guide_file(text):
         return problems
     problems += fence_problems(text)

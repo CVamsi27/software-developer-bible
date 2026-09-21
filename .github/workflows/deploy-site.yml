@@ -46,7 +46,9 @@ jobs:
           bundler-cache: true   # runs `bundle install` against Gemfile.lock
 
       - name: Build the site (Jekyll)
-        run: bundle exec jekyll build --trace
+        run: |
+          set -o pipefail
+          bundle exec jekyll build --trace 2>&1 | tee /tmp/jekyll-build.log
         env:
           JEKYLL_ENV: production
           # jekyll-github-metadata calls the GitHub API; unauthenticated it
@@ -57,6 +59,17 @@ jobs:
           # auth, so the plugin's remote fallback is unreliable).
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGES_REPO_NWO: CVamsi27/software-developer-bible
+
+      - name: Fail on Liquid warnings (silent-empty-render guard)
+        run: |
+          # A Liquid WARNING does not fail the build — the template syntax in
+          # a chapter ({{ width: '100%' }}) just renders as empty text and
+          # ships. This gate turns that class fatal.
+          if grep -E "Liquid (Warning|Exception)" /tmp/jekyll-build.log; then
+            echo "::error::Liquid warning above — a chapter's literal {{ }} collided with Liquid. Raw-wrap the file listed ({% raw %} line 1, {% endraw %} EOF)."
+            exit 1
+          fi
+          echo "no Liquid warnings in the render"
 
       - name: Assert the lane trees are not in the built site
         run: |

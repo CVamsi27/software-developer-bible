@@ -26,6 +26,9 @@ workflow triggers:
    test ! -e _site/80-lanes-abroad-full-stack/personal
    test ! -e _site/81-lanes-indian-sde-faang/personal
    test -s _site/index.html && test -s _site/search.html
+   # plus: fails on any Liquid warning (a literal {{ }} that collided and
+   # would otherwise render as empty text and ship silently)
+   grep -E "Liquid (Warning|Exception)" /tmp/jekyll-build.log && exit 1 || true
    ```
 
    The `personal/` tree (CV, applications tracker, outreach playbook) and the

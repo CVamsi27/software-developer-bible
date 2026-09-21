@@ -298,6 +298,13 @@ CASES = [
         },
     },
     {
+        "name": "gate 6b raw-wrap fires on an unclosed wrapper (the CI-shipped bug)",
+        "gate": "check_template.py",
+        "args": [],
+        "plant": {"p.md": "{% raw %}\n{{ width: '100%' }}\n"},
+        "clean_real": [REAL_CHAPTER],
+    },
+    {
         "name": "gate 10 cross-refs fires on a dangling → N.N ref",
         "gate": "check_cross_refs.py",
         "args": [],

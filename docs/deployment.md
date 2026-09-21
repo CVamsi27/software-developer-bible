@@ -56,7 +56,11 @@ Every push to `main` triggers two builds of the same command:
    *Create* → *Pages* → *Connect to Git* → select
    `CVamsi27/software-developer-bible` → name the project exactly
    `software-developer-bible`
-   (must match `wrangler.toml` for manual CLI use).
+   (must match `wrangler.toml` for manual CLI use). It must be a **Pages**
+   project: a Worker project (Workers Builds) shows a *Deploy command*
+   field — typically prefilled with `npx wrangler deploy` — and can never
+   serve this site. If you see that field, delete the project and restart
+   this step.
 2. **Build settings** — framework preset `Jekyll`, then override:
    | Setting | Value |
    | ------------------------- | ---------------------------- |
@@ -71,9 +75,15 @@ Every push to `main` triggers two builds of the same command:
    `liquid 4.0.3` calls `Object#tainted?`, removed in Ruby 3.2, so the
    default 3.4.x image crashes every render. (If the image ever rejects
    the file, set `RUBY_VERSION=3.1` here instead.)
-4. **No GitHub token needed** — `github: [metadata: false]` in
-   `_config.yml` disables jekyll-github-metadata, so the Pages build makes
-   no authenticated API calls.
+4. **No GitHub token needed** — jekyll-github-metadata has no disable
+   flag, so `_config.yml` neutralizes it by construction instead: `github:`
+   is an Array (never merged into an API-backed drop) and
+   url/title/description/baseurl are all set explicitly (so the plugin
+   installs zero lazy Values). The Pages build therefore makes no GitHub
+   API calls — no token, no `PAGES_REPO_NWO`. (The old failure mode was an
+   unset `baseurl`: the plugin installed a lazy baseurl Value whose render
+   died with "No repo name found", because in production builds the git
+   remote is never consulted. See §4.)
 5. **Remove the old Direct Upload wiring** — repo → *Settings* → *Secrets
    and variables* → *Actions*: delete secrets `CF_API_TOKEN` and
    `CF_ACCOUNT_ID` plus variable `DEPLOY_SITE_ENABLED` (the `deploy` job
@@ -118,12 +128,22 @@ Every push to `main` triggers two builds of the same command:
 
 ## 4. Troubleshooting
 
-**`Missing entry-point to Worker script` after `npx wrangler deploy`.**
-Legacy error from the Direct Upload era: the repo was connected as a
-*Worker* (Workers Builds) instead of a *Pages* project, and Workers have
-no `_site` to serve. Fix: delete the Worker project and redo §2 with
+**`Missing entry-point to Worker script` after `npx wrangler deploy`, or
+a *Deploy command* field in the project settings.** The repo was connected
+as a *Worker* (Workers Builds) instead of a *Pages* project, and Workers
+have no `_site` to serve. Fix: delete the Worker project and redo §2 with
 *Pages* → *Connect to Git* — never set a deploy command to
 `npx wrangler deploy` on this repo.
+
+**`No repo name found` from GitHub Metadata during the Pages build.**
+jekyll-github-metadata installed a lazy Value (historically: the unset
+`baseurl`) whose render needs the GitHub API — and production builds never
+consult the git remote, so without `PAGES_REPO_NWO` the render dies. Fixed
+in-repo: `_config.yml` sets `baseurl: ""` plus url/title/description
+explicitly and keeps `github:` an Array, so the plugin installs zero lazy
+Values and makes zero API calls. If this error ever returns, that
+short-circuit regressed — do not "fix" it with a token; restore the
+`_config.yml` shape documented there.
 
 **Pages build fails on Ruby or gems.** Check the build log's Ruby line: it
 must read 3.1.x. The pin is the `.ruby-version` file; if the image ignores

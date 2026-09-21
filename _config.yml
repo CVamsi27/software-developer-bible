@@ -5,6 +5,10 @@ description: >-
   prepping for product-based companies, FAANG/Big Tech, and EU mid-stage startups.
 author: CVamsi27
 url: https://study.buildora.work
+# Served at the domain root. Explicitly empty (not omitted): an unset baseurl
+# lets jekyll-github-metadata install a lazy baseurl Value that needs the
+# GitHub API to render — see the `github:` block below.
+baseurl: ""
 theme: minima
 header_pages:
   - INDEX.md
@@ -46,7 +50,23 @@ exclude:
   - 81-lanes-indian-sde-faang
 
 # Content pages are rendered with the Minima theme (like the homepage).
-# github-metadata is disabled: it made every page's seo/social render hit
-# the GitHub API and stretched builds to ~19 min in the cloud.
+# jekyll-github-metadata (auto-required by the github-pages gem) has NO
+# disable flag — its SiteGitHubMunger always runs. It stays harmless by
+# construction instead, verified against the pinned
+# jekyll-github-metadata 2.13.0 source (re-verify
+# lib/jekyll-github-metadata/site_github_munger.rb if the lockfile ever
+# upgrades the plugin):
+#   * `github:` is an Array, not a Hash, so github_namespace() returns it
+#     untouched and no MetadataDrop (no API object) is ever built. (The
+#     `metadata: false` element is ignored by the plugin; the Array shape
+#     is the load-bearing part. Nothing in this repo reads site.github.)
+#   * url/title/description/baseurl are all set explicitly above, so
+#     munge!() assigns zero lazy Values (every ||= / should_set_baseurl?
+#     check skips). Previously the unset baseurl installed a Value whose
+#     render called the GitHub API and killed token-less builds with
+#     "No repo name found" (in production the git remote is never
+#     consulted — only PAGES_REPO_NWO or `repository` in config count).
+# Net: the plugin never detects a repo and never calls the GitHub API — no
+# token and no PAGES_REPO_NWO needed on Cloudflare Pages.
 github: [metadata: false]
 readme_index: { enabled: false }

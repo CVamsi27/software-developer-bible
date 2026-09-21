@@ -1,6 +1,6 @@
 # GraphQL — Index
 
-> **Study time:** ≈ 5 h 20 m of reading (9 files, ~36 min average).
+> **Study time:** ≈ 5 h 21 m of reading (9 files, ~36 min average).
 > **9 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -76,7 +76,7 @@ Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 47 min |
+| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | 48 min |
 
 ---
 

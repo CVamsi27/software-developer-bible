@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10562
+  "read_minutes": 10565
  },
  "chapters": [
   {
@@ -2737,7 +2737,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 47
+   "m": 48
   },
   {
    "p": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
@@ -3538,7 +3538,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 29
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.html",
@@ -5099,7 +5099,7 @@
     "concept",
     "reference"
    ],
-   "m": 43
+   "m": 44
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.html",

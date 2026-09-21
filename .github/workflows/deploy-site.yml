@@ -43,8 +43,11 @@ jobs:
           # jekyll-github-metadata calls the GitHub API; unauthenticated it
           # rate-limits and the failure is fatal in production mode. The
           # Actions token can read this private repo, so metadata resolves
-          # exactly as on a real GH Pages build.
+          # exactly as on a real GH Pages build. PAGES_REPO_NWO pins the
+          # repo identity (persist-credentials: false leaves no remote
+          # auth, so the plugin's remote fallback is unreliable).
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_REPO_NWO: CVamsi27/software-developer-bible
 
       - name: Assert the lane trees are not in the built site
         run: |

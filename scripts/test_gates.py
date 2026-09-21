@@ -170,6 +170,19 @@ CASES = [
         "clean": {"p.md": "# A\n\nx\n\n## Sub\n\ny\n"},
     },
     {
+        # The 2026-09-21 sweep found exactly one of these on disk (an H2
+        # immediately followed by its own H3 twin); the clean side proves the
+        # rule ignores the legitimate case — the same label at ### under a
+        # different parent, separated by content.
+        "name": "gate 3 structure fires on an adjacent duplicate heading",
+        "gate": "check_structure.py",
+        "args": [],
+        "plant": {"p.md": "# T\n\n## Same\n\n### Same\n\nbody\n"},
+        "clean": {
+            "p.md": "# T\n\n## Same\n\ncontent\n\n### Same\n\nbody\n"
+        },
+    },
+    {
         "name": "gate 8c box width fires on over-padded boxes",
         "gate": "fix_box_width.py",
         "args": ["--check"],

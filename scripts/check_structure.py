@@ -143,6 +143,34 @@ for p in MD:
             f"(section names must be unique — nest repeats as ###)"
         )
 
+# Adjacent duplicate headings (any level >= 2). The dup-H2 rule above catches
+# repeats *anywhere* in a file; this catches the tighter paste artifact the
+# 2026-09-21 corpus sweep found by probing bulk-edit archaeology: a heading
+# immediately followed by its own twin with nothing between them (case:
+# `## Example Answer Format` then `### Example Answer Format` in the security
+# drills bank — a promotion pass that added the H2 and left the H3). It
+# renders as two identical headings in a row and the reader can't tell which
+# owns the content. Deliberately narrower than the slug rule: repeats
+# separated by content at ### are legitimate (same label under a different
+# parent), so only blank-lines-between counts.
+HEADING = re.compile(r"^(#{2,4})\s+(.*\S)\s*$")
+for p in MD:
+    last_slug, only_blanks = None, True
+    for lineno, line in enumerate(strip_code(
+            p.read_text(encoding="utf-8", errors="replace")).splitlines(), 1):
+        h = HEADING.match(line)
+        if h:
+            slug = gh_slug(h.group(2))
+            if slug and last_slug == slug and only_blanks:
+                errors.append(
+                    f"ADJACENT DUPLICATE HEADING {p.relative_to(ROOT)}:{lineno}: "
+                    f"\"{h.group(2)}\" repeats the heading directly above it "
+                    f"(drop one — the reader can't tell which owns the content)"
+                )
+            last_slug, only_blanks = slug, True
+        elif line.strip():
+            only_blanks = False
+
 # Exactly one H1 per document. Exempt: Jekyll front-matter pages (search.md
 # has no heading at all — the layout supplies the title).
 H1 = re.compile(r"^# \S", re.M)

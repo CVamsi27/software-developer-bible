@@ -96,7 +96,7 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 6. Microservices: full (8-10 hrs)
 7. Message Brokers: full (2 hrs) — Kafka ops + event patterns
 8. GraphQL, Caching, AI Engineering — as needed
-8. Java: full (only if target role is Java-based)
+9. Java: full (only if target role is Java-based)
 
 ### Path C — Interview tomorrow
 - Skim all TL;DR boxes

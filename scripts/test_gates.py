@@ -112,6 +112,12 @@ def _bank(claim):
 BANK_OVER_CLAIM = _bank(26)
 BANK_CLEAN = _bank(25)
 
+# The compliant bank plus exactly one defect: an empty fence (opener immediately
+# followed by a closer) — the stray-delimiter fingerprint that collapsed 24
+# cheat sheets on 2026-09-21. Isolates fence rule 3 from all other checks.
+BANK_EMPTY_FENCE = BANK_CLEAN.replace(
+    "25 questions.\n", "25 questions.\n\n```\n```\n", 1)
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -253,6 +259,20 @@ CASES = [
         "clean": {
             "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-d.md": DUP_BODY_A,
             "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-d.md": DUP_BODY_B,
+        },
+    },
+    {
+        # Rule 3: an empty fence renders as a blank code block — the
+        # stray-delimiter fingerprint of the 24-file cheat-sheet collapse.
+        "name": "gate 6b fence grammar fires on an empty fence",
+        "gate": "check_template.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_EMPTY_FENCE,
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_CLEAN,
         },
     },
     {

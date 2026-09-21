@@ -334,13 +334,24 @@ def fence_problems(text: str):
     renderers merge everything up to the next bare fence, swallowing headings
     into the code block. 38 instances repo-wide (2026-09-20): labeled closes
     after yaml blocks, and one prose-glued close. Nested-fence documentation
-    (a ``` line inside a ```` block) is correctly treated as content."""
+    (a ``` line inside a ```` block) is correctly treated as content.
+
+    Rule 3 (2026-09-21): an EMPTY fence — an opener immediately followed by
+    a closer, with no content line between — renders as a blank code block
+    and is the fingerprint of a stray delimiter from a broken tool pass.
+    Found 24 times that day: a stray close+open pair had collapsed 24 cheat
+    sheets, spilling failure tables and code outside their blocks. Blank
+    lines between the delimiters do not count as content (a blank-only
+    fence is the same defect one step removed)."""
     problems = []
     in_fence = False
     open_char, open_len = '', 0
+    saw_content = False
     for lineno, line in enumerate(text.splitlines(), 1):
         m = FENCE_FULL.match(line)
         if not m:
+            if in_fence and line.strip():
+                saw_content = True
             continue
         marker, rest = m.group(1), m.group(2)
         if in_fence:
@@ -353,11 +364,22 @@ def fence_problems(text: str):
                         f"label, or move trailing prose to its own line)")
                     in_fence = False
                 else:
+                    if not saw_content:
+                        problems.append(
+                            f"line {lineno}: empty fence — an opener with no "
+                            f"content line before its closer renders as a blank "
+                            f"code block, the fingerprint of a stray delimiter "
+                            f"from a broken tool pass (see the 24-file cheat-"
+                            f"sheet repair of 2026-09-21). Remove the pair or "
+                            f"restore the missing content")
                     in_fence = False
-            # shorter/other-char fence lines inside a block are content
+            else:
+                # shorter/other-char fence lines inside a block are content
+                saw_content = True
         else:
             in_fence = True
             open_char, open_len = marker[0], len(marker)
+            saw_content = False
     return problems
 
 

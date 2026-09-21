@@ -1,8 +1,11 @@
 # Cloudflare Pages project — software-developer-bible
-# One-time setup steps live in docs/deployment.md. Until the CF_API_TOKEN
-# secret and the deploy_site_enabled variable exist in the GitHub repo,
-# the deploy job in .github/workflows/deploy-site.yml is a no-op and this
-# file only documents the project shape.
-name = "bible"
-pages_build_output_dir = "_site"
+# Git-integrated: Cloudflare pulls this repo directly (Connect to Git) and
+# builds it on every push to main. The dashboard holds the build config
+# (build command `bundle exec jekyll build`, output `_site`,
+# JEKYLL_ENV=production); Ruby 3.1 comes from the `.ruby-version` file.
+# Full setup lives in docs/deployment.md. This file only pins the project
+# name for manual `wrangler pages` CLI use (e.g. `wrangler pages dev`).
+# There is no Worker here — NEVER run `wrangler deploy` (it fails with
+# "Missing entry-point to Worker script").
+name = "software-developer-bible"
 compatibility_date = "2026-09-01"

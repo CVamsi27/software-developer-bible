@@ -1,12 +1,17 @@
-# Site build + Cloudflare Pages deploy.
+# Site build gate for the Cloudflare Pages Git integration.
 #
-# Build job: ALWAYS runs. It is the only executable Jekyll-render gate this
-#   repo has (local Ruby lacks nokogiri; see docs/verification-gates.md).
-#   Publishing safety comes from `jekyll exclude` in _config.yml, not from
-#   this job (it cannot modify the artifact: it does not upload it).
-# Deploy job: guarded on vars.DEPLOY_SITE_ENABLED, so it self-disarms until
-#   the one-time setup in docs/deployment.md. Uses cloudflare/wrangler-action@v3.
-name: deploy-site
+# Publishing path: Cloudflare Pages pulls this repo directly (Connect to
+#   Git, project `software-developer-bible`) and runs `bundle exec jekyll build` itself on
+#   every push to main — so there is intentionally NO deploy job here: no
+#   wrangler step, no token, no secret. The dashboard holds the build
+#   config; `.ruby-version` pins Ruby 3.1 (the locked liquid 4.0.3 calls
+#   Object#tainted?, removed in Ruby 3.2). See docs/deployment.md.
+# This workflow: ALWAYS runs the same render as a safety gate. Pages has
+#   no Liquid-warning or lane-exclusion guards, so this job is the
+#   backstop: if it goes red beside a green Pages build, roll the Pages
+#   deployment back from the Cloudflare dashboard (Deployments → select a
+#   prior deployment → Rollback).
+name: site-build
 
 on:
   push:
@@ -16,8 +21,9 @@ on:
       - "_config.yml"
       - "search.html"
       - "api/**"
-      - ".github/workflows/deploy-site.yml"
+      - ".github/workflows/site-build.yml"
       - "wrangler.toml"
+      - ".ruby-version"
   # Gemfile changes don't match the push paths; dispatch covers those.
   workflow_dispatch:
 
@@ -81,19 +87,6 @@ jobs:
       - name: Assert front page and search rendered
         run: test -s _site/index.html && test -s _site/search.html
 
-      # Deploy stays a no-op until vars.DEPLOY_SITE_ENABLED=true AND the
-      # CF_API_TOKEN + CF_ACCOUNT_ID secrets exist (docs/deployment.md).
-  deploy:
-    needs: build
-    if: ${{ vars.DEPLOY_SITE_ENABLED == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=bible --branch=main --commit-dirty=true
+      # No deploy job by design: Cloudflare Pages builds straight from git
+      # (docs/deployment.md). A red gate beside a green Pages build means
+      # the live deployment skipped these guards — roll it back.

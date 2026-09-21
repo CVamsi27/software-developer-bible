@@ -1,26 +1,28 @@
 {% raw %}
-# Site Deployment — build gate now, publishing on your setup
+# Site Deployment — Cloudflare Pages builds straight from git
 
-> **TL;DR:** The Jekyll build runs in CI on every docs push and asserts the
-> private lanes never enter `_site/`. The deploy step is written but
-> self-disarmed: it activates only when you finish the ~10-minute Cloudflare
-> setup in §2. Until then nothing is published anywhere.
+> **TL;DR:** Cloudflare Pages is connected to this repo and builds +
+> publishes on every push to `main`. GitHub Actions runs only the
+> render/safety gate (`site-build.yml`); there is no deploy job, no API
+> token, and no secret to rotate.
 
 |  |  |
-| -------------- | --------------------------------------------------------------------- |
-| **Status** | Build gate live · deploy armed-off · domain pending §2 |
-| **Build job** | `deploy-site.yml` → `bundle exec jekyll build` + exclusion assertions |
-| **Deploy job** | `cloudflare/wrangler-action@v3`, skipped until vars/secrets exist |
+| --------------- | --------------------------------------------------------------------- |
+| **Status** | Git integration (Connect to Git) · production branch `main` |
+| **Pages build** | `bundle exec jekyll build` → `_site` (Ruby 3.1 via `.ruby-version`) |
+| **CI gate** | `site-build.yml` → same render + lane-exclusion assertions |
 
-## 1. What already runs (no action needed)
+## 1. How publishing works
 
-Every push touching `**.md`, `_config.yml`, `search.html`, `api/**`, or this
-workflow triggers:
+Every push to `main` triggers two builds of the same command:
 
-1. `bundle exec jekyll build --trace` against the locked `Gemfile` — the only
-   executable Jekyll-render gate this repo has (local Ruby lacks the
-   `nokogiri` native gem; see `docs/verification-gates.md`).
-2. **Publish-safety assertions** on the built output:
+1. **Cloudflare Pages** — pulls git, runs `bundle exec jekyll build`,
+   publishes `_site/` to the production domain `study.buildora.work`
+   (`software-developer-bible.pages.dev` stays live as the fallback and
+   verification URL). Other branches get preview deployments built the
+   same way.
+2. **GitHub Actions (`site-build`)** — the safety gate Pages lacks. It
+   renders with the locked `Gemfile`, then asserts:
 
    ```bash
    test -z "$(find _site -path '*personal*' -print -quit)"
@@ -32,71 +34,112 @@ workflow triggers:
    grep -E "Liquid (Warning|Exception)" /tmp/jekyll-build.log && exit 1 || true
    ```
 
-   The `personal/` tree (CV, applications tracker, outreach playbook) and the
-   entire `81-lanes-indian-sde-faang/` tree are excluded from the build via
-   `exclude:` in `_config.yml`. The assertions fail the build if that ever
-   stops being true. Generated artifacts (`search.html`, `api/index.json`)
-   were audited: zero personal strings, zero lane chapters.
+   The `personal/` tree (CV, applications tracker, outreach playbook) and
+   the entire `81-lanes-indian-sde-faang/` tree are excluded from every
+   build via `exclude:` in `_config.yml` — Pages honors it exactly as CI
+   does (same config, same command), and the gate fails if that ever stops
+   being true. Generated artifacts (`search.html`, `api/index.json`) were
+   audited: zero personal strings, zero lane chapters.
+
+   If the gate goes red beside a green Pages build, that deployment is live
+   without its guards — treat it as suspect: fix forward or roll back from
+   the dashboard (Pages project → *Deployments* → select a prior
+   deployment → *Rollback*), then re-push.
 
 ## 2. One-time Cloudflare setup (~10 minutes)
 
-Cloudflare Pages serves static sites free from a private repo via direct
-upload, which is exactly what `wrangler pages deploy` does.
+> One-way door: a Git-integrated Pages project cannot be switched back to
+> Direct Upload later. (Automatic deployments can still be paused via
+> branch control in §3.)
 
-1. **Create the Pages project** — Cloudflare dashboard → *Workers & Pages* →
-   *Create* → *Pages* → *Direct Upload* → name it exactly `bible` (must match
-   `wrangler.toml` and the workflow's `--project-name`). You can upload any
-   dummy file to finish the wizard; the first CI deploy replaces it.
-2. **Create an API token** — dashboard → *My Profile* → *API Tokens* →
-   *Create Token* → use the **"Cloudflare Pages — Edit"** template (scopes the
-   token to Pages edits only).
-3. **Get your Account ID** — dashboard right sidebar on any domain's overview
-   page (or run `npx wrangler whoami` after `npx wrangler login`).
-4. **Feed GitHub Actions** — repo → *Settings* → *Secrets and variables* →
-   *Actions*:
-   - Repository **secret** `CF_API_TOKEN` ← step 2
-   - Repository **secret** `CF_ACCOUNT_ID` ← step 3
-   - Repository **variable** `DEPLOY_SITE_ENABLED` = `true`
-5. **Trigger the deploy** — *Actions* → `deploy-site` → *Run workflow* on
-   `main` (or push any `.md` change).
-6. **Verify** — when the job goes green, the Pages project shows a
-   `bible.pages.dev` URL:
+1. **Connect the repo** — Cloudflare dashboard → *Workers & Pages* →
+   *Create* → *Pages* → *Connect to Git* → select
+   `CVamsi27/software-developer-bible` → name the project exactly
+   `software-developer-bible`
+   (must match `wrangler.toml` for manual CLI use).
+2. **Build settings** — framework preset `Jekyll`, then override:
+   | Setting | Value |
+   | ------------------------- | ---------------------------- |
+   | Build command | `bundle exec jekyll build` |
+   | Build output directory | `_site` |
+   | Production branch | `main` |
+   (The preset's bare `jekyll build` skips bundler; the override builds
+   against the locked `Gemfile`.)
+3. **Environment** — Pages project → *Settings* → *Environment variables*:
+   `JEKYLL_ENV=production`. Ruby needs no variable: the `.ruby-version`
+   file (`3.1`) in the repo root pins the build image — the locked
+   `liquid 4.0.3` calls `Object#tainted?`, removed in Ruby 3.2, so the
+   default 3.4.x image crashes every render. (If the image ever rejects
+   the file, set `RUBY_VERSION=3.1` here instead.)
+4. **No GitHub token needed** — `github: [metadata: false]` in
+   `_config.yml` disables jekyll-github-metadata, so the Pages build makes
+   no authenticated API calls.
+5. **Remove the old Direct Upload wiring** — repo → *Settings* → *Secrets
+   and variables* → *Actions*: delete secrets `CF_API_TOKEN` and
+   `CF_ACCOUNT_ID` plus variable `DEPLOY_SITE_ENABLED` (the `deploy` job
+   that consumed them is gone with `deploy-site.yml`).
+6. **Verify** — push any `.md` change, then:
 
    ```bash
-   curl -sI https://bible.pages.dev | head -1   # expect: HTTP/2 200
+   curl -sI https://software-developer-bible.pages.dev | head -1   # expect: HTTP/2 200
    ```
 
-7. **Attach the custom domain** — Pages project → *Custom domains* → set up
-   `study.buildora.work`. If `buildora.work` is a zone in the same Cloudflare
-   account, the CNAME is added for you; otherwise add this record at your DNS
-   provider:
+7. **Attach the production domain** — Pages project → *Custom domains* →
+   set up `study.buildora.work`. This is the production URL; the
+   `.pages.dev` hostname is only the fallback. (The `CNAME` file in the
+   repo root is a GitHub Pages leftover and does nothing here; the
+   dashboard record is what serves the domain.) If `buildora.work` is a
+   zone in the same Cloudflare account, the record is added for you;
+   otherwise add this record at your DNS provider:
 
    ```text
-   CNAME  study  →  bible.pages.dev
+   CNAME  study  →  software-developer-bible.pages.dev
    ```
 
-8. **De-aspirationalize the config** — once step 6 returns 200, remove the
-   TODO comment above `url:` in `_config.yml` so the config states fact
-   instead of intent.
+   Then:
+
+   ```bash
+   curl -sI https://study.buildora.work | head -1   # expect: HTTP/2 200
+   ```
 
 ## 3. Conventions
 
-- **Never publish `personal/`.** The `exclude:` entries in `_config.yml` and
-  the CI assertions are the mechanism; do not "clean up" either.
-- **The deploy guard is the variable**, not code edits. To pause publishing
-  temporarily, set `DEPLOY_SITE_ENABLED` to anything other than `true` — the
-  build gate keeps running, the deploy job skips.
+- **Never publish `personal/`.** The `exclude:` entries in `_config.yml`
+  and the CI assertions are the mechanism; do not "clean up" either.
+- **The pause switch is branch control**, not a repo variable. To pause
+  publishing temporarily: Pages project → *Settings* → *Builds* → *Branch
+  control* → turn off automatic production-branch deployments. The CI gate
+  keeps running; re-enable to resume.
 - **Local preview** parity with CI is unavailable on this machine (native-gem
-  build failure); the CI build job is the render gate of record.
+  build failure); the CI gate plus Pages preview URLs are the render gates
+  of record.
 - Rollbacks are a dashboard action: Pages project → *Deployments* → select a
   prior deployment → *Rollback*.
+
+## 4. Troubleshooting
+
+**`Missing entry-point to Worker script` after `npx wrangler deploy`.**
+Legacy error from the Direct Upload era: the repo was connected as a
+*Worker* (Workers Builds) instead of a *Pages* project, and Workers have
+no `_site` to serve. Fix: delete the Worker project and redo §2 with
+*Pages* → *Connect to Git* — never set a deploy command to
+`npx wrangler deploy` on this repo.
+
+**Pages build fails on Ruby or gems.** Check the build log's Ruby line: it
+must read 3.1.x. The pin is the `.ruby-version` file; if the image ignores
+it, set `RUBY_VERSION=3.1` under *Settings* → *Environment variables*. Do
+not "fix" it by upgrading `liquid` — the version is locked by the
+`github-pages` gem.
+
+**Pages is green but CI (`site-build`) is red.** The deployment is live
+without its safety guards (lane exclusion, Liquid warnings) — treat as
+suspect, fix forward or *Rollback* per §3, then re-push.
 
 ## See Also
 
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/)
-- [GitHub Actions builds (official guide)](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)
+- [Git integration](https://developers.cloudflare.com/pages/configuration/git-integration/)
 - [Build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/)
+- [Build image (language versions)](https://developers.cloudflare.com/pages/configuration/build-image/)
 - [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
-- [wrangler-action](https://github.com/cloudflare/wrangler-action)
-- [wrangler pages deploy](https://developers.cloudflare.com/workers/wrangler/commands/#pages-deploy)
 {% endraw %}

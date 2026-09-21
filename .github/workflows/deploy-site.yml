@@ -21,6 +21,10 @@ on:
 
 permissions:
   contents: read
+  # jekyll-github-metadata reads GET /repos/{owner}/{repo}/pages; a 404
+  # (no Pages site) is tolerated, but a 403 from missing permission is
+  # re-raised and kills the build.
+  pages: read
 
 jobs:
   build:

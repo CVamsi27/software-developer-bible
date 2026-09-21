@@ -68,10 +68,10 @@ Each round followed the same loop:
 5. **Prove the gate both ways**: fires on the planted defect, silent on all
    real files, and *wired* — the failure branch reaches the exit.
 
-### Gate inventory after the session (21 gates, all CI-enforced)
+### Gate inventory after the session (22 gates, all CI-enforced)
 
 | Gate | Enforces | Session change |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 `check_counts.py` | Every count claim on the nav surface | +4 owned claims: gates-page walker scope, api-contract totals (sourced from the gate-14-locked JSON), freshness rule count, drill class counts |
 | 2 `check_alignment.py` | Table alignment + header rows exist | — |
 | 3 `check_structure.py` | Numbering, single-H1, dup-H2 slugs, **banks-last**, **INDEX completeness**, **doc reachability**, **chapter reachability** | +banks-last rule with two documented exemptions; +INDEX-completeness (no invisible sub-stacks — caught the 60-realtime omission on first run), +orphan-doc reachability (BFS from entry points; born from the 7-of-10 docs/ orphan scan), +chapter reachability (556/556 linked at baseline; a chapter without its INDEX row now fails the build) |
@@ -82,7 +82,8 @@ Each round followed the same loop:
 | 7–15 | Claims, whitespace, first-principles, cross-refs, duplication, twins, read-time, search byte-lock, self-wiring | +gate 15 rule 10: no unwired checkers — a check_*/test_* script nothing invokes is invisible to the suite (the tooling-level invisible-sub-stack) |
 | 16 `test_md_fences.py` | The fence owner's semantics, pinned by 16 characterization tests | +gate born from writing the tests: `is_fence_line` flagged regex-matching content lines as delimiters (now true only on real open/close); `read_time` had been silently miscounting nested-fence content as reading text |
 | 17 `test_fixers.py` | The fixers' repair output, pinned by planted-defect round trips (byte-exact, idempotent, no-mangle negative) | +closes the repair-wrongly failure mode the session demonstrated twice — corrupted repair pass, silently-skipping box fixer — by asserting each fixer's recorded contract in a temp-tree sandbox |
-| 18 `test_gates.py` | **The suite self-test**: each sandboxable gate's canonical defect planted in a temp tree must still fire; clean content (incl. a real passing chapter) must still pass | +closes the last unwatched layer — detection itself; the two-sided design caught the wiring checker's check/write word-count asymmetry past twenty gates before landing |
+| 18 `test_gates.py` | **The suite self-test**: each sandboxable gate's canonical defect planted in a temp tree must still fire; clean content (incl. a real passing chapter) must still pass | +closes the last unwatched layer — detection itself; the two-sided design caught the wiring checker's check/write word-count asymmetry past twenty gates before landing; now 12 gates proven both ways, incl. gate 19's table-only-answer plant |
+| 19 `check_answer_depth.py` | **≥25 prose words per interview answer**, fence- and table-aware — tables and code cannot substitute for reasoning | born from the probe that falsified the arc's own table-counting scanner (27 table-only answers); the `### Question Categories` false positive is designed out by requiring the digit in question headings |
 | drift drill | 31 staleness classes, quarterly + issue-tracking | — |
 
 ### Day-one catch ledger
@@ -127,6 +128,8 @@ proof-after-fix is the only proof.
 - **20.9 wired into 31 sites** — See Also links with per-site reason phrases from all 12 system-design case studies, the heavy broker-mention chapters, and both system-design INDEXes; the top INDEX's missing table row restored
 - **docs layer made reachable** — 7 of 10 docs/ files were linked from nowhere; entry points repaired (README, health-report See Also, scripts map) and the property gate-enforced
 - **answer-quality arc: 247 answers deepened across 11 banks** — the question-count floor passed banks holding flashcard bullets and code-only answers; a fence-aware, label-agnostic depth scan (all prose between question heading and next heading) found them: TypeScript 29, security 36, NestJS 32, microservices 27, Node.js 31, CI/CD 23, Kubernetes 19, Docker 14, REST 6, auth 5, AI engineering 25 — each a hand-authored senior-depth prose block (mechanism, tradeoff, failure mode) written against the existing content; re-scan verdict: zero answers under 40 words corpus-wide
+- **the probe that falsified the arc's own scanner: 27 table-only answers** — the arc's depth scan counted table words, so a comparison table plus one `**Answer:**` label line read as healthy; a prose-only re-scan (fences, tables, headings, quotes, badges excluded) found Docker 10, K8s 7, CI/CD 5, NestJS 2, REST 1, auth 1, security 1 — every one now carries the mechanism/trade-off prose the table couldn't show, and REST Q10 (pure code, masked by a lax section boundary) was caught by the new gate's stricter scan; verdict: zero answers under 25 prose words corpus-wide
+- **gate 19 `check_answer_depth.py`** — makes that property permanent: ≥25 fence- and table-aware prose words per answer, question headings require the digit (the `### Question Categories` false positive burned the manual scans twice), the suite relabeled 21→22 gates with wiring/contributing/gates-doc restamped from one computation, and the canonical plant (a table-only answer) is pinned two ways in the self-test (12/12)
 
 ### Measured non-actions (the boundary findings)
 
@@ -179,9 +182,9 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 
 The corpus is now 560 study chapters, 40 interview banks — every one at or
 above the 25-question floor the gate now enforces, and after the
-answer-quality arc, zero answers under the 40-word depth floor the scan
-measures — 2379 probe-verified
-external links, 14 freshness rules across two date-gated data tables, and 21
+answer-quality arc and the table-only probe that falsified its scanner,
+zero answers under the 25-prose-word floor gate 19 enforces — 2379 probe-verified
+external links, 14 freshness rules across two date-gated data tables, and 22
 CI-enforced gates whose harness audits its own wiring, whose markdown
 parsing has a single fence owner, and whose detection itself is plant-tested
 every run. Every count a reader can see is recomputed
@@ -191,7 +194,7 @@ below lands as reviewed commits on `main`, nothing pushed.
 ## Cheat Sheet
 
 ```bash
-bash scripts/verify.sh                    # all 21 gates; exit 1 blocks push
+bash scripts/verify.sh                    # all 22 gates; exit 1 blocks push
 # Restamp order matters when several drift: read_time → gen_master_index →
 # check_counts (it copies the generated JSON totals into the api-contract).
 python3 scripts/read_time.py --write      # restamp read-time badges

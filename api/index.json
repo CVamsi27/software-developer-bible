@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10566
+  "read_minutes": 10569
  },
  "chapters": [
   {
@@ -5753,7 +5753,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.01-dfs-bfs.html",
@@ -5885,7 +5885,7 @@
     "concept",
     "practice"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.html",
@@ -5907,7 +5907,7 @@
     "concept",
     "practice"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.html",

@@ -327,6 +327,42 @@ def empty_sections(text):
     return issues
 
 
+# A Cheat Sheet whose fence body is essentially only its title bar is the
+# generator-gap sibling of the empty fence: the sheet was added but the
+# content generation failed (30.2.2.20 distributed counter, found 2026-09-21
+# during the Jul–Aug bulk-pass sweep). Exempt by name: README.md's sheet is
+# a deliberate placeholder.
+THIN_SHEET_MIN_LINES = 5
+THIN_SHEET_EXEMPT = {'readme.md'}
+
+
+def thin_sheets(text):
+    """-> [(lineno, content_lines)] for cheat sheets under the floor."""
+    lines = text.split('\n')
+    heads = [(i, m.group(2)) for i, line, in_fence, _ in md_fences.walk(lines)
+             if not in_fence and (m := HEAD_ANY.match(line)) and m.group(2).strip() == 'Cheat Sheet']
+    issues = []
+    for k, (i, _title) in enumerate(heads):
+        end = heads[k + 1][0] if k + 1 < len(heads) else len(lines)
+        events = list(md_fences.walk(lines[i:end]))
+        openers = [j for j, l, inf, isf in events if isf and inf]
+        closes = {j for j, l, inf, isf in events if isf and not inf}
+        # Calibrated (13 false fires on first cut): only the FIRST fence —
+        # the sheet proper — carries the floor. Later small fences in the
+        # section are legitimate supplementary blocks (complexity tables,
+        # mini-diagrams) that a floor would punish.
+        op = openers[0] if openers else None
+        if op is None:
+            continue
+        cl = next((c for c in sorted(closes) if c > op), None)
+        if cl is None:
+            continue
+        content = sum(1 for j in range(op + 1, cl) if lines[i + j].strip())
+        if content < THIN_SHEET_MIN_LINES:
+            issues.append((i + op + 1, content))
+    return issues
+
+
 def fence_problems(text: str):
     """CommonMark: a closing fence may not carry an info string, and only a
     bare fence of the SAME character at >= the opener's length closes a block.
@@ -474,6 +510,14 @@ def check(path: str):
         problems.append(f"empty section at line {lineno}: '{'#' * lvl} {title}' has no "
                         f"content and no deeper heading beneath it (give it content, "
                         f"or fold it into the section it labels)")
+
+    # Title-only cheat sheets: the sheet exists but its content never did.
+    if os.path.basename(path).lower() not in THIN_SHEET_EXEMPT:
+        for lineno, content in thin_sheets(text):
+            problems.append(
+                f"line {lineno}: cheat sheet fence holds only {content} content "
+                f"line(s) — a quick-reference that was never populated (write "
+                f"the sheet from the chapter's own material)")
 
     sub = [h for h in heads if h in CANON_A]
     ok = False

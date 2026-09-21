@@ -1,6 +1,6 @@
 # Coding Patterns — Index
 
-> **Study time:** ≈ 5 h 39 m of reading (22 files, ~15 min average).
+> **Study time:** ≈ 5 h 42 m of reading (22 files, ~16 min average).
 > **22 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -53,9 +53,9 @@ For staff/principal FAANG questions.
 | 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | 13 min |
 | 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md) | Heaps/Stacks | "Range query + point update" | 16 min |
 | 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | 14 min |
-| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | 15 min |
-| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | 17 min |
-| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | 18 min |
+| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | 16 min |
+| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | 18 min |
+| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | 19 min |
 | 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md) | Linear | "Reverse/reorder list, cycle entry, O(1)-space surgery" | 16 min |
 | 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs | "Weighted shortest path, K stops, negative edges/arbitrage" | 16 min |
 | 21 | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md) | Graphs | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 15 min |

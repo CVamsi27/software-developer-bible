@@ -112,6 +112,14 @@ def _bank(claim):
 BANK_OVER_CLAIM = _bank(26)
 BANK_CLEAN = _bank(25)
 
+# Rule 4: a Cheat Sheet fence holding fewer than THIN_SHEET_MIN_LINES content
+# lines is a sheet that was added but never populated (the generator-gap
+# family from 2535a0b4). The compliant bank gains a thin sheet; the clean
+# side is the unmodified bank. Isolates the thin-sheet rule from the rest.
+BANK_THIN_SHEET = BANK_CLEAN.replace(
+    "## See Also",
+    "## Cheat Sheet\n\n```text\nDATABASE BANK QUICK REFERENCE\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n```\n\n## See Also", 1)
+
 # The compliant bank plus exactly one defect: an empty fence (opener immediately
 # followed by a closer) — the stray-delimiter fingerprint that collapsed 24
 # cheat sheets on 2026-09-21. Isolates fence rule 3 from all other checks.
@@ -259,6 +267,20 @@ CASES = [
         "clean": {
             "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-d.md": DUP_BODY_A,
             "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-d.md": DUP_BODY_B,
+        },
+    },
+    {
+        # Rule 4: a title-only cheat sheet — sheet added, content never
+        # generated (the 2535a0b4 family's pure-stub variant).
+        "name": "gate 6b fence grammar fires on a title-only cheat sheet",
+        "gate": "check_template.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_THIN_SHEET,
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-interview-questions.md": BANK_CLEAN,
         },
     },
     {

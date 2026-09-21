@@ -184,8 +184,9 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 The corpus is now 560 study chapters, 40 interview banks — every one at or
 above the 25-question floor the gate now enforces, and after the
 answer-quality arc and the table-only probe that falsified its scanner,
-zero answers or chapter Definitions under the 25-prose-word floor gate 19 enforces (its rule 2 measured and deliberately exempted the H3-plus-code genres) — 2379 probe-verified
-external links, 14 freshness rules across two date-gated data tables, and 22
+zero answers or chapter Definitions under the 25-prose-word floor gate 19 enforces (its rule 2 measured and deliberately exempted the H3-plus-code genres)
+- **one scanner owner: `prose_scan.py` + gate 20** — the reasoning-prose classification that lived as copy-pasted snippets now has a single module (the md_fences move applied to prose), consumed by gate 19 and pinned by a new characterization suite wired as gate 20; read_time keeps its own reading-weight model by recorded decision (weight vs. reasoning are different questions) — 2379 probe-verified
+external links, 14 freshness rules across two date-gated data tables, and 23
 CI-enforced gates whose harness audits its own wiring, whose markdown
 parsing has a single fence owner, and whose detection itself is plant-tested
 every run. Every count a reader can see is recomputed

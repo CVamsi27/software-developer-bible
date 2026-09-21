@@ -285,6 +285,34 @@ CASES = [
             )
         },
     },
+    {
+        # Rule 2: the same table-only failure mode in a study chapter —
+        # a `## Definition` that is a bare comparison table.
+        "name": "gate 19 answer-depth fires on a table-only chapter Definition",
+        "gate": "check_answer_depth.py",
+        "args": [],
+        "dirs": ["20-backend/20.4-database/01-postgresql-foundations"],
+        "plant": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-mvcc.md": (
+                "# MVCC\n\n"
+                "## Definition\n\n"
+                "| Term | Meaning |\n| --- | --- |\n"
+                "| Snapshot | Query-time view |\n| Version | Row history |\n"
+            )
+        },
+        "clean": {
+            "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-mvcc.md": (
+                "# MVCC\n\n"
+                "## Definition\n\n"
+                "Multiversion concurrency control keeps old row versions so readers "
+                "never block writers and writers never block readers — the mechanism "
+                "that lets a long report query run beside hot writes without either "
+                "stalling. The terms below name the moving parts.\n\n"
+                "| Term | Meaning |\n| --- | --- |\n"
+                "| Snapshot | Query-time view |\n| Version | Row history |\n"
+            )
+        },
+    },
 ]
 
 

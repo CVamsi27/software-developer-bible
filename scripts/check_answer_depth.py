@@ -31,6 +31,16 @@ Scanner contract (learned the hard way, twice, in the arc):
 
 Banks whose questions aren't `### Q...` headings (e.g. bold-line formats)
 are out of contract; none exist in the corpus today (checked at gate birth).
+
+Rule 2 (2026-09-21, the chapter sweep): the same table-only failure mode
+exists in study chapters — a `## Definition` that is a bare comparison
+table (four found: hash-tables, auth-fundamentals, and two 20.9 chapters
+written the same week) or a diagram with no definitional prose. Chapters
+(non-bank, non-INDEX files) must carry at least CHAPTER_DEFINITION_FLOOR
+prose words in their Definition section. The H3-title-plus-code genres
+(Best Practices, How It Works internals) are deliberately NOT gated: their
+explanations live in the headings and annotated code — measured and decided
+at rule birth, not silently skipped.
 """
 import os
 import re
@@ -42,6 +52,12 @@ import md_fences
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
 ANSWER_FLOOR = 25  # prose words; tables/code don't count (see module docstring)
+CHAPTER_DEFINITION_FLOOR = 25  # prose words in a chapter's `## Definition`
+# Chapter sweep scope mirrors check_template's exempt prefixes; contributing
+# and readme are meta docs whose Definitions define terms, not topics.
+CHAPTER_EXEMPT_PREFIXES = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang',
+                           'projects', 'docs')
+META_FILENAMES = {'contributing.md', 'readme.md'}
 
 QUESTION_RX = re.compile(r"^###\s+Q(?:uestion)?\.?\s*\d+", re.I)
 SECTION_RX = re.compile(r"^##\s+")
@@ -86,6 +102,30 @@ def check_file(path):
     return fails
 
 
+def check_definition(path, rel):
+    """Return (line_no, words) if a chapter's `## Definition` is sub-floor."""
+    name = os.path.basename(path).lower()
+    if name in META_FILENAMES or name == 'index.md' or 'interview' in name:
+        return None
+    top = os.path.relpath(path, ROOT).replace(os.sep, '/')
+    if top.startswith(CHAPTER_EXEMPT_PREFIXES):
+        return None
+    with open(path, encoding='utf-8') as fh:
+        lines = fh.read().splitlines()
+    for i, l in enumerate(lines):
+        if re.match(r'^##\s+Definition\b', l, re.I):
+            end = len(lines)
+            for j in range(i + 1, len(lines)):
+                if re.match(r'^##\s+', lines[j]):
+                    end = j
+                    break
+            words = prose_words(lines[i + 1:end])
+            if words < CHAPTER_DEFINITION_FLOOR:
+                return (i + 1, words)
+            return None
+    return None
+
+
 def main():
     floor = ANSWER_FLOOR
     if '--floor' in sys.argv:
@@ -93,30 +133,45 @@ def main():
 
     problems = []
     checked = 0
+    def_checks = 0
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
         for name in filenames:
-            if not name.endswith('.md') or 'interview-questions' not in name:
+            if not name.endswith('.md'):
                 continue
             path = os.path.join(dirpath, name)
             rel = os.path.relpath(path, ROOT)
-            checked += 1
-            for line_no, heading, words in check_file(path):
-                problems.append(
-                    f"{rel}:{line_no}: answer has {words} prose words "
-                    f"(floor {floor}) — \"{heading[:70]}\"\n"
-                    f"    Add the why: mechanism, trade-off, or the failure "
-                    f"the table can't show. Tables and code don't count."
-                )
+            if 'interview-questions' in name:
+                checked += 1
+                for line_no, heading, words in check_file(path):
+                    problems.append(
+                        f"{rel}:{line_no}: answer has {words} prose words "
+                        f"(floor {floor}) — \"{heading[:70]}\"\n"
+                        f"    Add the why: mechanism, trade-off, or the failure "
+                        f"the table can't show. Tables and code don't count."
+                    )
+            else:
+                hit = check_definition(path, rel)
+                if hit is not None:
+                    def_checks += 1
+                    line_no, words = hit
+                    problems.append(
+                        f"{rel}:{line_no}: `## Definition` carries only {words} "
+                        f"prose words (floor {CHAPTER_DEFINITION_FLOOR})\n"
+                        f"    A definition must say what the thing IS before the "
+                        f"table enumerates it — add the mechanism prose."
+                    )
 
     if problems:
-        print(f"ANSWER DEPTH FAIL — {len(problems)} answer(s) below "
-              f"{floor} prose words across {checked} interview banks:\n")
+        print(f"ANSWER DEPTH FAIL — {len(problems)} problem(s): answers below "
+              f"{floor} prose words across {checked} interview banks, plus "
+              f"sub-floor chapter Definitions:\n")
         for p in problems:
             print(p)
         return 1
-    print(f"answer depth OK — {checked} interview banks, every answer "
-          f"carries >= {floor} prose words")
+    print(f"answer depth OK — {checked} interview banks (every answer "
+          f">= {floor} prose words) and all chapter Definitions "
+          f">= {CHAPTER_DEFINITION_FLOOR} prose words")
     return 0
 
 

@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10560
+  "read_minutes": 10562
  },
  "chapters": [
   {
@@ -288,7 +288,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 27
+   "m": 28
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",
@@ -4138,7 +4138,7 @@
     "performance",
     "reference"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "40-platform/40.10-cdn/40.10.04-interview-questions.html",

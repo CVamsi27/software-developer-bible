@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 11 h 32 m of reading (34 files, ~20 min average).
+> **Study time:** ≈ 11 h 33 m of reading (34 files, ~20 min average).
 > **34 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-34-blue)](../../INDEX.md)
@@ -96,7 +96,7 @@ Choosing the right collection and avoiding memory leaks.
 | 20 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Implementation, vs debounce, animation frame throttling, scroll handlers | 22 min |
 | 21 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | 23 min |
 | 22 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 23 min |
-| 23 | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 27 min |
+| 23 | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 28 min |
 | 24 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `||`, `Object.is`, deriving the classics | 10 min |
 
 ---

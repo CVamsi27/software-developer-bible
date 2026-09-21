@@ -311,6 +311,32 @@ CASES = [
         },
     },
     {
+        # The 2026-09-21 navigation-surface sweep: one generator humanized
+        # target slugs, leaving acronyms title-cased and 55 labels as raw
+        # paths. Rule 2's repair is derived from the target's own H1, so the
+        # plant carries a target whose title is the expected label.
+        "name": "gate 21 nav labels fire on a path used as the label",
+        "gate": "fix_nav_labels.py",
+        "args": [],
+        "plant": {
+            "d/INDEX.md": "# Human Title\n",
+            "p.md": "[Next: ../d/index](../d/INDEX.md)\n",
+        },
+        "clean": {
+            "d/INDEX.md": "# Human Title\n",
+            "p.md": "[Next: Human Title](../d/INDEX.md)\n",
+        },
+    },
+    {
+        # Rule 1: acronyms and brand names have fixed casing that humanizing a
+        # slug destroys ("Mvcc", "Cqrs Di", "Typescript").
+        "name": "gate 21 nav labels fire on non-canonical acronym casing",
+        "gate": "fix_nav_labels.py",
+        "args": [],
+        "plant": {"p.md": "[Next: Mvcc →](x.md)\n"},
+        "clean": {"p.md": "[Next: MVCC →](x.md)\n"},
+    },
+    {
         # The table-only defect class the 2026-09-21 probe found: a table
         # plus one label line reads as zero prose under the depth gate.
         "name": "gate 19 answer-depth fires on a table-only answer",

@@ -18,6 +18,8 @@ on:
       - "api/**"
       - ".github/workflows/deploy-site.yml"
       - "wrangler.toml"
+  # Gemfile changes don't match the push paths; dispatch covers those.
+  workflow_dispatch:
 
 permissions:
   contents: read

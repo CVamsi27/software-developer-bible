@@ -1,6 +1,6 @@
 # Interview Drills - REST APIs
 
-> **Study time:** ≈ 23 min of reading (1 files, ~23 min average).
+> **Study time:** ≈ 25 min of reading (1 files, ~25 min average).
 > **1 file.** Curated Q&A to close the loop on the full REST/API stack.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -12,7 +12,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | 23 min |
+| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | 25 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # CI/CD — Index
 
-> **Study time:** ≈ 2 h 42 m of reading (11 files, ~15 min average).
+> **Study time:** ≈ 2 h 46 m of reading (11 files, ~15 min average).
 > **11 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -71,7 +71,7 @@ Need zero-downtime deployment?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 7 min |
+| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 11 min |
 
 ---
 

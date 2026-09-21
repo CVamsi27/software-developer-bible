@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 4 h 45 m of reading (17 files, ~17 min average).
+> **Study time:** ≈ 4 h 49 m of reading (17 files, ~17 min average).
 > **17 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -85,7 +85,7 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 15 min |
+| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | 50+ curated questions with answers | 19 min |
 
 ---
 

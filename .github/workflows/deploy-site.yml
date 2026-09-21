@@ -37,7 +37,10 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          # Ruby 3.1, not 3.2: the locked liquid 4.0.3 (pinned by the
+          # github-pages gem) still calls Object#tainted?, which Ruby 3.2
+          # removed — every Liquid render would crash on 3.2.
+          ruby-version: '3.1'
           bundler-cache: true   # runs `bundle install` against Gemfile.lock
 
       - name: Build the site (Jekyll)

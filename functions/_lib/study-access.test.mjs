@@ -30,7 +30,9 @@ test("accepts only local next paths", () => {
 
 test("keeps only auth entry points public", () => {
   assert.equal(isPublicAuthPath("/auth/login.html"), true);
+  assert.equal(isPublicAuthPath("/auth/login"), true);
   assert.equal(isPublicAuthPath("/auth/callback.html"), true);
+  assert.equal(isPublicAuthPath("/auth/callback"), true);
   assert.equal(isPublicAuthPath("/auth/session"), true);
   assert.equal(isPublicAuthPath("/favicon.svg"), true);
   assert.equal(isPublicAuthPath("/00-strategy/INDEX.md"), false);

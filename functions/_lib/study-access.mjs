@@ -2,7 +2,9 @@ const ALLOWED_STUDY_EMAIL = "cvamsik99@gmail.com";
 const PERSONAL_ACCESS_DENIED_URL = "https://personal.buildora.work/?study=access-denied";
 const PUBLIC_AUTH_PATHS = new Set([
   "/auth/login.html",
+  "/auth/login",
   "/auth/callback.html",
+  "/auth/callback",
   "/auth/start",
   "/auth/session",
   "/auth/logout",

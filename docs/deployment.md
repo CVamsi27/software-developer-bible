@@ -149,7 +149,38 @@ The pure policy gate runs in CI and locally:
 node --test functions/_lib/study-access.test.mjs
 ```
 
-For a deployed smoke check, use a private window and verify that:
+### Machine-checked contract
+
+Everything below except the signed-in steps is probed automatically:
+
+```bash
+python3 scripts/check_study_live.py --verbose   # exits 1 on a contract violation
+```
+
+`study-live.yml` runs the same command weekly (Mondays, plus manual
+*Run workflow*). It is scheduled rather than push-triggered because Pages
+builds from git in parallel with this repo's CI: a push-time probe would race
+the deploy it measures and report the previous one. Dispatch it by hand after
+a deploy settles.
+
+The probe encodes the contract in this document, so a deployment that drifts
+from it fails loudly instead of silently:
+
+| Probe | Expectation |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Gating | `/`, `/INDEX.html` and a real chapter path all 302 to `/auth/login.html` with `next` preserved — a deep link returns where it started |
+| No leak | A protected chapter never answers 200, and a missing path answers identically to a real one — gating must not reveal what is on disk |
+| Public surface | Only `/auth/login`, `/auth/callback` and `/favicon.svg` are 200 unauthenticated |
+| Canonical | `software-developer-bible.pages.dev` 308s to `study.buildora.work` (§2.7) |
+| Sign-in | `/auth/start` 302s to the Supabase authorize endpoint — a 503 is a **warning**, not a failure, because it needs a dashboard secret |
+| Logout | `/auth/logout` 302s and clears the session cookie (`Max-Age=0`) |
+| Denial target | `personal.buildora.work` is reachable for a non-owner sign-in |
+
+Warnings never change the exit code: they describe environment state (unset
+Supabase variables, a dead denial host) that only an operator can change.
+Failures mean the live host contradicts this runbook.
+
+For the parts a probe cannot cover, use a private window and verify that:
 
 1. `https://study.buildora.work/` opens the Google sign-in screen rather than
    returning a chapter file.
@@ -203,6 +234,26 @@ not "fix" it by upgrading `liquid` — the version is locked by the
 **Pages is green but CI (`site-build`) is red.** The deployment is live
 without its safety guards (lane exclusion, Liquid warnings) — treat as
 suspect, fix forward or *Rollback* per §4, then re-push.
+
+**`check_study_live.py` reports `FAIL canonical` — `.pages.dev` serves the
+site instead of redirecting to the study host.** The live Functions bundle is
+older than the commit that added the host check, or the account-level
+redirect from §2.7 was never created. Re-run the Pages build first (dashboard
+→ *Deployments* → *Retry deployment*); if the fallback still answers 302 to
+its own login, add the redirect. This is hygiene, not a leak: the fallback is
+gated by the same Functions bundle.
+
+**`check_study_live.py` warns `sign-in is NOT configured` and `/auth/start`
+returns 503.** The Supabase variables are unset in production — §2.3. The
+login page still renders, which is exactly why this is worth a probe: the
+site looks deployed while nobody can sign in.
+
+**A deploy looks correct but the live site behaves like an older commit.**
+Check the Pages deployment list against the pushed commit SHA. When the
+static build succeeds but the Functions bundle fails to compile, Pages can
+publish new assets beside the previously deployed Functions — so a stale gate
+and a fresh site appear together. Re-run the deployment; if it fails again,
+the build log names the offending file under `functions/`.
 
 ## See Also
 

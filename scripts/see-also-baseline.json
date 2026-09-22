@@ -1,0 +1,14 @@
+{
+  "stacks": {
+    "00-strategy": 8,
+    "10-frontend": 415,
+    "20-backend": 416,
+    "30-architecture": 158,
+    "40-platform": 379,
+    "50-quality": 133,
+    "60-realtime": 29,
+    "70-interview-toolkit": 152,
+    "81-lanes-indian-sde-faang": 108,
+    "docs": 5
+  }
+}

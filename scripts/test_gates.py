@@ -798,6 +798,26 @@ CASES = [
             "}\n"
             "```\n")},
     },
+    {
+        # Gate 27 has two rules; the plant fires the baseline-free one (label
+        # echo) so the case needs no sandbox baseline override — an echo is
+        # always a defect, while the bare ceiling depends on which stack the
+        # sandbox file lands in. The clean side is a reason whose content
+        # words go beyond the label — the property the echo rule protects.
+        "name": "gate 27 see_also fires on a label-echo reason",
+        "gate": "check_see_also.py",
+        "args": [],
+        "plant": {"p.md": (
+            "# T\n\n"
+            "## See Also\n\n"
+            "- [Closures](closures.md) — closures\n")},
+        "clean": {"p.md": (
+            "# T\n\n"
+            "## See Also\n\n"
+            "- [Closures](closures.md) — the returned inner function keeps "
+            "the outer scope alive, which is what bounds this chapter's "
+            "cache lifetime\n")},
+    },
 ]
 
 

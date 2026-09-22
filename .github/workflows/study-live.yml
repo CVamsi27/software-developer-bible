@@ -41,6 +41,10 @@ on:
 
 permissions:
   contents: read
+  # A violated contract opens (or refreshes) a tracking issue. The live job is
+  # schedule-only, so a red X here is a signal nobody is looking at — the same
+  # reasoning that made link-rot-audit and drift-drill file an issue instead.
+  issues: write
 
 jobs:
   offline:
@@ -91,3 +95,86 @@ jobs:
             cat live-check.txt 2>/dev/null || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Track a violated contract as an issue
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const repoInfo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            if (!repoInfo.data.has_issues) {
+              core.notice('Issues are disabled — the probe log is in the run summary.');
+              return;
+            }
+            const fs = require('fs');
+            const log = fs.readFileSync('live-check.txt', 'utf8');
+            const title = 'Live study-host contract violated';
+            const body =
+              'A probe of production found the deployment contradicting ' +
+              '`docs/deployment.md` §2/§3.\n\n' +
+              'Fix forward and re-deploy (Pages builds from git on every push ' +
+              'to main), or roll the deployment back from the Cloudflare ' +
+              'dashboard. If the probe itself is wrong, fix the probe — do not ' +
+              'silence it.\n\n<details><summary>Probe log</summary>\n\n```\n' +
+              log + '\n```\n</details>\n';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'deployment-contract',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['deployment-contract'],
+              });
+            }
+
+      - name: Close the issue when the contract holds
+        if: success()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const repoInfo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            if (!repoInfo.data.has_issues) {
+              return;
+            }
+            const title = 'Live study-host contract violated';
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'deployment-contract',
+            });
+            const prior = existing.data.find(i => i.title === title);
+            if (prior) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                state: 'closed',
+              });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prior.number,
+                body: 'The live probe matches the documented contract again; closing.',
+              });
+            }

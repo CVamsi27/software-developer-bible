@@ -81,7 +81,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         path = urllib.parse.urlparse(self.path).path
         if self.role == "pages":
-            return (self.reply(302, f"/auth/login.html?next={quote(path)}")
+            return (self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
                     if "no_canonical" in self.violations
                     else self.reply(308, f"{self.study_origin}{path}"))
         if path == DENIAL_PATH:  # the access-denied landing page
@@ -92,21 +92,21 @@ class Stub(http.server.BaseHTTPRequestHandler):
             # The real route is POST-only, so a GET is a 405 — public, but not a
             # page. Either way it must never answer like a protected path.
             if "session_gated" in self.violations:
-                return self.reply(302, f"/auth/login.html?next={quote(path)}")
+                return self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
             return self.reply(405, body="method not allowed")
         if path == "/auth/start":
             return (self.reply(503, body="sign-in is not configured")
                     if "signin_unconfigured" in self.violations
                     else self.reply(302, AUTHORIZE))
         if path == "/auth/logout":
-            return self.reply(302, "/auth/login.html",
+            return self.reply(302, live.LOGIN_PATH,
                               "" if "logout_no_cookie" in self.violations else CLEARED_COOKIE)
         if "serve_content" in self.violations:
             return self.reply(200, body="CHAPTER")
         cookie = self.headers.get("Cookie") or ""
         if self.probe_token and f"study_access_token={self.probe_token}" in cookie:
             if "probe_rejected" in self.violations:
-                return self.reply(302, f"/auth/login.html?next={quote(path)}")
+                return self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
             if "probe_wrong_body" in self.violations:
                 return self.reply(200, body="<html><h1>Not the chapter</h1></html>")
             if "probe_same_body" in self.violations:
@@ -120,7 +120,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
             # target is a different host in production.
             return self.reply(302, f"{self.denial_origin}/?study=access-denied")
         landed = "/" if "drop_next" in self.violations else path
-        return self.reply(302, f"/auth/login.html?next={quote(landed)}")
+        return self.reply(302, f"{live.LOGIN_PATH}?next={quote(landed)}")
 
 
 def start(role, violations, study_origin="", probe_token="", probe_markers=None):

@@ -1,7 +1,7 @@
 {
   "stacks": {
     "00-strategy": 8,
-    "10-frontend": 415,
+    "10-frontend": 295,
     "20-backend": 416,
     "30-architecture": 158,
     "40-platform": 379,

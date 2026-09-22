@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "081ff47c4ab1c03af0fba9acc4e0a6ef1ee319936887883a5f1264ff04f2a7a5",
+ "corpus_digest": "baaf24e3eadf72972a4f39c718271167e783b87f6f47510a8734dbcee289898d",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10565
+  "read_minutes": 10572
  },
  "chapters": [
   {
@@ -591,7 +591,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.html",
@@ -691,7 +691,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 23
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.html",
@@ -711,7 +711,7 @@
    "g": [
     "concept"
    ],
-   "m": 42
+   "m": 43
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.html",
@@ -721,7 +721,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.html",
@@ -731,7 +731,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.html",
@@ -741,7 +741,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.html",
@@ -751,7 +751,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.html",

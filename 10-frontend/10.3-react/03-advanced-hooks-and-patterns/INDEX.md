@@ -1,6 +1,6 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 2 h 5 m of reading (6 files, ~21 min average).
+> **Study time:** ≈ 2 h 10 m of reading (6 files, ~22 min average).
 > **6 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,12 +13,12 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 22 min |
+| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 23 min |
 | 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 25 min |
-| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 42 min |
-| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 15 min |
-| 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 8 min |
-| 06 | [State Management](10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 13 min |
+| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 43 min |
+| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 16 min |
+| 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 9 min |
+| 06 | [State Management](10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 14 min |
 
 ---
 

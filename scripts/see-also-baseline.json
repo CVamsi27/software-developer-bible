@@ -2,7 +2,7 @@
   "stacks": {
     "00-strategy": 8,
     "10-frontend": 295,
-    "20-backend": 325,
+    "20-backend": 200,
     "30-architecture": 158,
     "40-platform": 379,
     "50-quality": 133,

@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 6 h 44 m of reading (24 files, ~17 min average).
+> **Study time:** ≈ 6 h 46 m of reading (24 files, ~17 min average).
 > **24 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -74,7 +74,7 @@ The hard part — how Postgres handles concurrent access. Category INDEX: [Trans
 | --: | ------ | -------- | ----------: |
 | 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | 18 min |
 | 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | 18 min |
-| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | 21 min |
+| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | 22 min |
 | 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | 14 min |
 
 ---
@@ -87,7 +87,7 @@ Prisma. Category INDEX: [ORM & Access](04-orm-and-access/INDEX.md).
 | --: | ------ | -------- | ----------: |
 | 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | 28 min |
 | 02 | [Prisma Advanced](04-orm-and-access/20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | 14 min |
-| 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | 12 min |
+| 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | 13 min |
 
 ---
 

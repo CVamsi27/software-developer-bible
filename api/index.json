@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "f6d75490dca5d8ea4431d42ed4223f39a2bae04ab06ddbabc63864ba60560f11",
+ "corpus_digest": "7ac2261092e2bd885194249d22f5deaf299c40b4bea6a566d3228253166ff945",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10580
+  "read_minutes": 10584
  },
  "chapters": [
   {
@@ -1580,7 +1580,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 22
   },
   {
    "p": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.html",
@@ -1733,7 +1733,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.html",
@@ -2134,7 +2134,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 22
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.html",
@@ -2174,7 +2174,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.html",

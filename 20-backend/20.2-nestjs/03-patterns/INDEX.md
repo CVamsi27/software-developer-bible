@@ -19,8 +19,8 @@
 
 ## See also
 
-- [CQRS deep-dive (architectural pattern)](../../../30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md)
-- [Microservices & Distributed Patterns stack](../../20.6-microservices/INDEX.md)
+- [CQRS deep-dive (architectural pattern)](../../../30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md) — the architectural theory behind the framework's @nestjs/cqrs implementation
+- [Microservices & Distributed Patterns stack](../../20.6-microservices/INDEX.md) — where the architecture decisions behind Nest's transports are made
 
 ---
 

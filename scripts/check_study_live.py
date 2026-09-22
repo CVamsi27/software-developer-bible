@@ -111,12 +111,12 @@ class Probe:
 
     def __init__(self, scheme=SCHEME, study_host=STUDY_HOST, pages_host=PAGES_HOST,
                  denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25,
-                 probe_token="", probe_chapter="", probe_marker=""):
+                 probe_token=""):
         self.scheme, self.study_host, self.pages_host = scheme, study_host, pages_host
         self.denial_origin, self.denial_target, self.timeout = (
             denial_origin, denial_target, timeout)
         self.probe_token = probe_token
-        self.probe_sample = [(probe_chapter, probe_marker)] if probe_chapter else []
+        self.probe_sample = []  # filled from the API dump by run_checks
         # Browser-shaped headers: Cloudflare's edge fingerprints bare clients.
         self.headers = {
             "User-Agent": (
@@ -170,30 +170,27 @@ def read_prefix(response, limit=20000):
         return ""
 
 
-def chapter_record():
-    """`(rendered path, title)` of a real deep chapter, from the committed dump.
+def dense_records():
+    """The API dump's chapter records, in path order (empty if unreadable).
 
-    Read rather than hard-coded so the probe keeps exercising a file that
-    exists after a restructure. The dump records the *rendered* `.html` path,
-    which is what a browser — and this probe — must request.
+    Read rather than hard-coded so the probe keeps exercising files that exist
+    after a restructure. The dump records the *rendered* `.html` path, which is
+    what a browser — and this probe — must request.
     """
     try:
         with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
             records = json.load(handle).get("chapters") or []
-        deep = [r for r in records
-                if isinstance(r, dict) and "/" in r.get("p", "") and r.get("t")]
-        if not deep:
-            return None
-        record = min(deep, key=lambda r: r["p"])
-        return record["p"], record["t"]
     except Exception:
-        return None
+        return []
+    deep = [r for r in records
+            if isinstance(r, dict) and "/" in r.get("p", "") and r.get("t")]
+    return sorted(deep, key=lambda record: record["p"])
 
 
 def chapter_path():
-    """A real deep chapter path, from the committed API dump."""
-    record = chapter_record()
-    return record[0] if record else None
+    """One real deep chapter path, from the committed API dump."""
+    records = dense_records()
+    return records[0]["p"] if records else None
 
 
 def probe_sample(limit=0):
@@ -205,24 +202,14 @@ def probe_sample(limit=0):
     any stack whose name sorts later — the difference between proving "the edge
     serves a chapter" and "the edge serves this corpus".
     """
-    try:
-        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
-            records = json.load(handle).get("chapters") or []
-    except Exception:
-        return []
     per_stack = {}
-    records = sorted(records, key=lambda r: r.get("p", "") if isinstance(r, dict) else "")
-    for record in records:
-        if not isinstance(record, dict):
-            continue
-        path, title = record.get("p", ""), record.get("t", "")
-        if "/" not in path:
-            continue
-        marker = render_marker(title)
+    for record in dense_records():
+        path = record["p"]
+        marker = render_marker(record["t"])
         if not marker:
             continue
         stack = path.split("/")[0]
-        if stack not in per_stack or path < per_stack[stack][0]:
+        if stack not in per_stack:
             per_stack[stack] = (path, marker)
     sample = [per_stack[stack] for stack in sorted(per_stack)]
     return sample[:limit] if limit else sample
@@ -251,16 +238,6 @@ def render_marker(title):
     return max(candidates, key=len, default="")
 
 
-def signed_in_outcome(probe, chapter, marker):
-    """(response, matched) for one chapter, shared by the probe and its tests."""
-    response = probe.get(probe.study(f"/{chapter}"),
-                         cookie=f"{PROBE_COOKIE}={probe.probe_token}")
-    matched = (response.status == 200
-               and marker in response.body
-               and LOGIN_PATH not in response.body)
-    return response, matched
-
-
 @check("Signed-in",
        "with the probe credential one real chapter per stack answers 200 and "
        "contains that chapter's own title — and without one the check warns, "
@@ -274,11 +251,15 @@ def signed_in_render(probe):
                        f"prove it serves a chapter to a valid session")]
     if not probe.probe_sample:
         return [Result(WARN, "Signed-in", "signed-in render",
-                       "no chapter title to assert on (api/index.json unreadable and "
-                       "no --probe-chapter/--probe-marker given)")]
+                       "no chapter to probe: the API dump is unreadable, so there is "
+                       "no title to assert on")]
     out, bodies = [], {}
     for chapter, marker in probe.probe_sample:
-        response, matched = signed_in_outcome(probe, chapter, marker)
+        response = probe.get(probe.study(f"/{chapter}"),
+                             cookie=f"{PROBE_COOKIE}={probe.probe_token}")
+        matched = (response.status == 200
+                   and marker in response.body
+                   and LOGIN_PATH not in response.body)
         bodies[chapter] = response.body
         out.append(verdict("Signed-in", f"signed-in {chapter}", matched, response,
                            f"expected 200 containing {marker!r} — a valid session must "
@@ -429,26 +410,19 @@ def run_checks(argv=None):
     parser.add_argument("--probe-token", default=os.environ.get(PROBE_TOKEN_ENV, ""),
                         help=f"session credential for the success path (default: "
                              f"${PROBE_TOKEN_ENV})")
-    parser.add_argument("--probe-chapter", default="",
-                        help="chapter path to fetch (default: one per stack, from "
-                             "api/index.json)")
-    parser.add_argument("--probe-marker", default="",
-                        help="text that chapter's page must contain (default: its title)")
     parser.add_argument("--probe-sample", type=int, default=0,
-                        help="cap the sampled chapters (0 = one per stack)")
+                        help="cap the sampled chapters (0 = one per stack) — for a "
+                             "quick manual check of a single render class")
     args = parser.parse_args(argv)
 
     if args.print_contract:
         print("\n".join(f"  {c.label}: {c.expectation}" for c in CHECKS))
         return 0
 
-    record = chapter_record() or (chapter_path() or "", "")
     probe = Probe(args.scheme, args.study_host, args.pages_host,
                   args.denial_origin, args.denial_target, args.timeout,
-                  args.probe_token, args.probe_chapter or "",
-                  args.probe_marker or render_marker(record[1]))
-    if not probe.probe_sample:
-        probe.probe_sample = probe_sample(args.probe_sample)
+                  args.probe_token)
+    probe.probe_sample = probe_sample(args.probe_sample)
     results = [result for function in CHECKS for result in function(probe)]
     failures = [r for r in results if r.kind == FAIL]
     warnings = [r for r in results if r.kind == WARN]

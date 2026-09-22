@@ -174,10 +174,6 @@ probe is deliberately not push-triggered: Pages builds from git in parallel with
 this repo's CI, so a push-time probe would race the deploy it measures and report
 the previous one. Dispatch it by hand once a deploy has settled.
 
-A violation also opens (and a clean run closes) a labeled tracking issue — but
-only when the repository's Issues feature is enabled, which it is not today: the
-workflow's guard makes those steps no-ops, and the run summary holds the probe
-log instead. Every run writes that log regardless.
 
 The probe list is not repeated here: each probe in
 `scripts/check_study_live.py` owns the expectation it enforces, and

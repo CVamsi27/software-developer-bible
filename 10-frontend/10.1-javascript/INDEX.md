@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 11 h 33 m of reading (34 files, ~20 min average).
+> **Study time:** ≈ 11 h 30 m of reading (34 files, ~20 min average).
 > **34 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-34-blue)](../../INDEX.md)
@@ -46,7 +46,7 @@ How JavaScript actually runs. These 6 files are the foundation — every other c
 | 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | GEC vs FEC, creation/execution phases, scope chain, hoisting internals | 20 min |
 | 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Global, function, block scope, scope chain, lexical environment | 28 min |
 | 03 | [Call Stack](01-execution-and-scope/10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | 28 min |
-| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 25 min |
+| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 24 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | 17 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | 29 min |
 
@@ -60,7 +60,7 @@ JavaScript's object model is prototype-based, not class-based. `this` binding is
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | 30 min |
+| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | 29 min |
 | 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | 32 min |
 | 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these!) | 17 min |
 
@@ -108,7 +108,7 @@ The patterns you'll use daily as a senior engineer.
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | 20 min |
-| 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | 19 min |
+| 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | 18 min |
 | 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | 26 min |
 | 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | 10 min |
 | 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | 13 min |

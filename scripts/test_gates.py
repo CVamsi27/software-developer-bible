@@ -751,6 +751,53 @@ CASES = [
             "Backpressure is the complementary control: it slows the caller "
             "instead of failing the request.\n")},
     },
+    {
+        # Gate 26 is a ceiling baseline over cross-file code examples. The
+        # plant adds a second file carrying a raw-identical >=10-line example
+        # that also exists in the first — the "chapter re-teaches another
+        # chapter's code" class. The real baseline is copied into every
+        # sandbox, so the case overwrites it with a zero ceiling: with both
+        # files present the gate must fire (1 pair > 0); with the copy
+        # replaced by a pointer it must pass.
+        "name": "gate 26 code_dup fires on a re-taught code example",
+        "gate": "check_code_dup.py",
+        "args": [],
+        "sandbox": {"scripts/code-dup-baseline.json": "{\"identical\": 0, \"near\": 0}\n"},
+        "plant": {"10-frontend/a.md": (
+            "# T\n\n"
+            "```typescript\n"
+            "export function slugify(input: string): string {\n"
+            "  return input.toLowerCase().trim().replace(/\\s+/g, '-');\n"
+            "}\n\n"
+            "export function unslugify(slug: string): string {\n"
+            "  return slug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');\n"
+            "}\n\n"
+            "export const SEPARATORS = ['-', '_'] as const;\n"
+            "export const MAX_SLUG_LENGTH = 96;\n"
+            "```\n"),
+            "10-frontend/b.md": (
+            "# T2\n\n"
+            "```typescript\n"
+            "export function slugify(input: string): string {\n"
+            "  return input.toLowerCase().trim().replace(/\\s+/g, '-');\n"
+            "}\n\n"
+            "export function unslugify(slug: string): string {\n"
+            "  return slug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');\n"
+            "}\n\n"
+            "export const SEPARATORS = ['-', '_'] as const;\n"
+            "export const MAX_SLUG_LENGTH = 96;\n"
+            "```\n")},
+        "clean": {"10-frontend/b.md": (
+            "# T2\n\n"
+            "The slug helpers are owned by [the canonical chapter](a.md); "
+            "this chapter only consumes them.\n\n"
+            "```typescript\n"
+            "import { slugify } from './a';\n\n"
+            "export function routeFor(title: string): string {\n"
+            "  return `/posts/${slugify(title)}`;\n"
+            "}\n"
+            "```\n")},
+    },
 ]
 
 
@@ -786,6 +833,11 @@ def main() -> int:
     for case in CASES:
         with tempfile.TemporaryDirectory() as fire_tmp, tempfile.TemporaryDirectory() as clean_tmp:
             build_sandbox(fire_tmp, case["plant"], [], case.get("dirs", ()))
+            for rel, content in case.get("sandbox", {}).items():
+                path = os.path.join(fire_tmp, rel)
+                os.makedirs(os.path.dirname(path), exist_ok=True)
+                with open(path, "w", encoding="utf-8") as fh:
+                    fh.write(content)
             r = run_gate(fire_tmp, case["gate"], case["args"])
             fire_ok = r.returncode != 0
 
@@ -800,6 +852,11 @@ def main() -> int:
                     clean_tmp, clean_files, clean_real,
                     case.get("dirs_clean", case.get("dirs", ())),
                 )
+                for rel, content in case.get("sandbox", {}).items():
+                    path = os.path.join(clean_tmp, rel)
+                    os.makedirs(os.path.dirname(path), exist_ok=True)
+                    with open(path, "w", encoding="utf-8") as fh:
+                        fh.write(content)
                 rc = run_gate(clean_tmp, case["gate"], case["args"])
             clean_ok = rc.returncode == 0
 

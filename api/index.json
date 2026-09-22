@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "082a25219beb315a7dc72f99bb0470d95448d6fa10f9f4e3e4c60632763648ac",
+ "corpus_digest": "78ce1f9c38410831efd3c53822e439896f581a08d7331efb9bc92912d29a98d4",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10573
+  "read_minutes": 10565
  },
  "chapters": [
   {
@@ -94,7 +94,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 24
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
@@ -124,7 +124,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 29
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
@@ -319,7 +319,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 18
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.html",
@@ -621,7 +621,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 26
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.html",
@@ -631,7 +631,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 27
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.html",
@@ -811,7 +811,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 24
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -2676,7 +2676,7 @@
    "g": [
     "concept"
    ],
-   "m": 45
+   "m": 44
   },
   {
    "p": "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.html",

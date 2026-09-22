@@ -1,6 +1,6 @@
 # Objects, Prototypes & `this` — JavaScript
 
-> **Study time:** ≈ 1 h 19 m of reading (3 files, ~26 min average).
+> **Study time:** ≈ 1 h 18 m of reading (3 files, ~26 min average).
 > **3 files.** JavaScript's object model: how `this` binding really works, the prototype chain behind every property lookup, and metaprogramming with Proxy and Reflect.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [`this` Keyword](10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind`, the four binding rules | 30 min |
+| 01 | [`this` Keyword](10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind`, the four binding rules | 29 min |
 | 02 | [Prototypes](10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | 32 min |
 | 03 | [Proxy & Reflect](10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these) | 17 min |
 

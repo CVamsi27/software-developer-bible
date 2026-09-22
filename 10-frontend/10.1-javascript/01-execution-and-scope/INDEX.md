@@ -1,6 +1,6 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 2 h 27 m of reading (6 files, ~24 min average).
+> **Study time:** ≈ 2 h 26 m of reading (6 files, ~24 min average).
 > **6 files.** How JavaScript actually runs: execution contexts, the call stack, hoisting, scope, lexical environments, and closures — the foundation every other JS concept builds on.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -16,7 +16,7 @@
 | 01 | [Execution Context](10.1.1.01-execution-context.md) | GEC vs FEC, creation/execution phases, scope chain, hoisting internals | 20 min |
 | 02 | [Scope](10.1.1.02-scope.md) | Global, function, block scope, scope chain, lexical environment | 28 min |
 | 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | 28 min |
-| 04 | [Hoisting](10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 25 min |
+| 04 | [Hoisting](10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | 24 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | 17 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | 29 min |
 

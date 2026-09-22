@@ -1,6 +1,6 @@
 # GraphQL — Index
 
-> **Study time:** ≈ 5 h 21 m of reading (9 files, ~36 min average).
+> **Study time:** ≈ 5 h 20 m of reading (9 files, ~36 min average).
 > **9 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -43,7 +43,7 @@ The mental model — schema-first design. Category INDEX: [Fundamentals](01-fund
 | --: | ------ | -------- | ----------: |
 | 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | 31 min |
 | 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | 46 min |
-| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 45 min |
+| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | 44 min |
 
 ---
 

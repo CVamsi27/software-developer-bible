@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 8 h 25 m of reading (22 files, ~23 min average).
+> **Study time:** ≈ 8 h 22 m of reading (22 files, ~23 min average).
 > **22 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -45,8 +45,8 @@ How React actually works under the hood. The mental model that distinguishes a s
 | 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | 18 min |
 | 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | 26 min |
 | 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | 25 min |
-| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | 28 min |
-| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | 28 min |
+| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | 26 min |
+| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | 27 min |
 
 **Read order:** Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
 

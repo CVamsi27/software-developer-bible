@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 7 h 16 m of reading (17 files, ~26 min average).
+> **Study time:** ≈ 7 h 15 m of reading (17 files, ~26 min average).
 > **17 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -42,7 +42,7 @@ The mental model for choosing the right rendering strategy.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 25 min |
+| 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 24 min |
 | 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | 24 min |
 | 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | 26 min |
 | 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | 33 min |

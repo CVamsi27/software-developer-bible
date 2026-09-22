@@ -8,7 +8,7 @@
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10570
+  "read_minutes": 10573
  },
  "chapters": [
   {
@@ -3269,7 +3269,7 @@
     "scaling",
     "theory"
    ],
-   "m": 13
+   "m": 16
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",

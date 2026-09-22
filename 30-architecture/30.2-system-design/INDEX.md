@@ -1,6 +1,6 @@
 # System Design — Index
 
-> **Study time:** ≈ 18 h 48 m of reading (54 files, ~21 min average).
+> **Study time:** ≈ 18 h 51 m of reading (54 files, ~21 min average).
 > **54 files** — split into **theory** (21 foundational files in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
 > Study in three passes: **I. Theory** (CAP → consistency → scaling levers) → **II. The method** (how-to-approach framework) → **III. Case studies** (pick by JD domain).

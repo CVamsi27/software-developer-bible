@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7ac2261092e2bd885194249d22f5deaf299c40b4bea6a566d3228253166ff945",
+ "corpus_digest": "ec56a4251f9a3ee55e12ef20642800c85b995fa31889188e5aee6a9e8e15034d",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10584
+  "read_minutes": 10589
  },
  "chapters": [
   {
@@ -4205,7 +4205,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 21
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.html",
@@ -4215,7 +4215,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.html",
@@ -4255,7 +4255,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.html",
@@ -4305,7 +4305,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 22
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.html",
@@ -4325,7 +4325,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 22
   },
   {
    "p": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.html",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Prose hygiene — reader-visible defects no other gate owns.
 
-Three classes, all measured before the first line of this tool was written
+Four classes, all measured before the first line of this tool was written
 (2026-09-22 audit over 867 markdown files):
 
   Rule 1 — spelling consistency. The corpus is American-English by an
@@ -27,6 +27,25 @@ splits on `|` *before* inline parsing, so an unescaped pipe inside a code span
 renders with extra columns and the table stops lining up. Two rows, both from
 that exact cause; the fix escapes the pipes inside the span, which GFM renders
 as the literal character.
+
+  Rule 4 — empty discourse filler. A separate pass measured whether the corpus
+dilutes its own points, and the answer was no on every axis: adjacent-sentence
+restatement was **0** at Jaccard >= 0.34 over the 776 chapter files, the partial
+band (0.20-0.34) was **0**, intra-chapter near-duplicate paragraphs were **0**,
+and TL;DR-to-Summary overlap had a **median of 0.00** (no chapter above 0.25) —
+the template's "repeated" sections genuinely carry different content. The one
+residue worth keeping is why that holds: none of the eighteen empty openers
+below appears anywhere in the corpus. They are gated so the property cannot
+regress by accident. Two phrases a naive list would include are deliberately
+NOT listed, because this corpus uses them for real work: `essentially` (10 uses,
+every one a precise comparison — "this is essentially Strategy + a coordinator")
+and `the fact that` (6 uses, every one a causal derivation — "the amortized O(n)
+bound comes from the fact that each element is pushed exactly once"). A rule
+that fired on those would be a rule against technical prose.
+
+Rule 4 is the one finding `--write` cannot repair: deleting a phrase from a
+sentence produces worse prose than the phrase did, so the run reports it and
+exits non-zero for the author to rewrite.
 
 Every rule is prose-only: fenced code, inline code spans, link targets, bare
 URLs, HTML tags and the file-metadata comment are masked before matching, so a
@@ -98,6 +117,18 @@ HTML_TAG = re.compile(r'</?[A-Za-z][A-Za-z0-9-]*(?:\s[^>]*)?/?>')
 
 HEADING_NO_SPACE = re.compile(r'^(#{1,6})([^#\s])')
 
+# Empty register: phrases that assert nothing and carry no technical claim,
+# none of which the corpus uses today (measured 2026-09-22). Cheaper to keep
+# out than to hunt later — and the list stays short and unambiguous on purpose.
+FILLER_OPENERS = [
+    'it is important to note', 'it is important to remember',
+    'it should be noted', 'it is worth noting', 'it is worth mentioning',
+    'needless to say', 'it goes without saying', 'at the end of the day',
+    'as we can see', 'as you can see', "let's dive into", 'let us dive into',
+    'dive deep into', "in today's fast-paced", 'in this day and age',
+    'for all intents and purposes', 'last but not least', 'first and foremost',
+]
+
 
 def mask(line):
     """The same line with every non-prose span blanked, offsets preserved.
@@ -138,6 +169,12 @@ def find_spelling(masked, line):
                 else canonical
             found.append((m.start(), m.end(), match_case(word, stem), evidence))
     return found
+
+
+def find_filler(masked):
+    """Empty discourse phrases in a line of prose. Check-only (see rule 4)."""
+    low = masked.lower()
+    return [phrase for phrase in FILLER_OPENERS if phrase in low]
 
 
 def find_heading(line):
@@ -201,7 +238,7 @@ def main():
     files.sort()
     guard(len(files), 'markdown files')
 
-    findings, repaired = [], 0
+    findings, unfixable, repaired = [], [], 0
     for rel in files:
         path = os.path.join(ROOT, rel)
         with open(path, encoding='utf-8') as handle:
@@ -227,6 +264,11 @@ def main():
                 start, end, replacement, note = head
                 edits.setdefault(i, []).append((start, end, replacement))
                 notes.setdefault(i, []).append(f'heading: {note}')
+            for phrase in find_filler(masked):
+                note = (f'filler: {phrase!r} asserts nothing — state the claim '
+                        f'directly (rule 4 cannot be auto-repaired)')
+                notes.setdefault(i, []).append(note)
+                unfixable.append(f'{rel}:{i + 1}: {note}')
 
         # Rule 3 — table cell counts, measured against each table's own header.
         for header, table in table_rows(lines):
@@ -266,13 +308,21 @@ def main():
             print(f'  {finding}')
     if write:
         print(f'{repaired} file(s) repaired across {len(files)} markdown file(s)')
+        # A writer that cannot repair a finding must still fail the run: an
+        # operator reading "N repaired" would otherwise never learn that a
+        # filler phrase was reported and left in place.
+        if unfixable:
+            print(f'{len(unfixable)} finding(s) need a rewrite by hand — '
+                  f'rule 4 is check-only')
+            return 1
     elif findings:
         print(f'\n{len(findings)} finding(s) in {len(files)} markdown file(s) — '
               f'run: python3 scripts/prose_hygiene.py --write')
         return 1
     else:
         print(f'prose hygiene OK — {len(files)} markdown file(s), '
-              f'{len(VOCAB)} spelling pairs, no findings')
+              f'{len(VOCAB)} spelling pairs, {len(FILLER_OPENERS)} empty openers, '
+              f'no findings')
     return 0
 
 

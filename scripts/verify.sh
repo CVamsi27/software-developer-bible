@@ -431,10 +431,10 @@ else
 fi
 
 echo ""
-echo "24/27  prose_hygiene.py — prose spelling convention + markdown rendering breaks"
+echo "24/27  prose_hygiene.py — spelling convention + rendering breaks + empty-filler register"
 echo "     python3 scripts/prose_hygiene.py   (--write repairs them)"
 echo "------------------------------------------------------------"
-# Three reader-visible classes no other gate owned (measured 2026-09-22):
+# Four reader-visible classes no other gate owned (measured 2026-09-22):
 # 13 spelling pairs carried BOTH forms in a corpus that is American by an
 # 845-to-26 margin (62 instances of the minority form), one ATX heading had
 # no space after its hashes (CommonMark then renders it as literal text and
@@ -444,7 +444,11 @@ echo "------------------------------------------------------------"
 # Spans, link targets, URLs and table cells are masked before matching, so a
 # CSS `color:` or a `colour` inside a URL is never touched; `Sopra Steria
 # Defence`, `Colour Contrast Analyser` and `aria-labelledby` are named
-# exemptions because a word rule cannot know a proper noun.
+# exemptions because a word rule cannot know a proper noun. The fourth class is
+# the corpus's own register: eighteen empty openers, none of which it uses
+# today, gated so that "the prose states claims" cannot regress. That one is the
+# only finding `--write` cannot repair — deleting a phrase leaves worse prose
+# than the phrase did — so the run reports it and exits non-zero for the author.
 if python3 scripts/prose_hygiene.py > /dev/null 2>&1; then
     echo "  PASS"
 else

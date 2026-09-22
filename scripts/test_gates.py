@@ -702,6 +702,20 @@ CASES = [
         "plant": {"p.md": "text\n\n| A | B |\n| --- | --- |\n| one | `??` vs `||` |\n"},
         "clean": {"p.md": "text\n\n| A | B |\n| --- | --- |\n| one | `??` vs `\\|\\|` |\n"},
     },
+    {
+        # Rule 4: empty discourse filler. Check-only, because deleting a phrase
+        # leaves worse prose than the phrase did. The clean side is the reason
+        # the list stays short — `essentially` and `the fact that` are used for
+        # real work in this corpus and a phrase rule must not touch them.
+        "name": "gate 24 prose hygiene fires on empty filler",
+        "gate": "prose_hygiene.py",
+        "args": [],
+        "plant": {"p.md": "text\n\nIt is important to note that the cache is bounded.\n"},
+        "clean": {"p.md": (
+            "text\n\nThe cache is bounded, which is essentially a Strategy + "
+            "coordinator, and the O(n) bound comes from the fact that each "
+            "element is pushed once.\n")},
+    },
 ]
 
 

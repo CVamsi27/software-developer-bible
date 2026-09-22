@@ -162,6 +162,25 @@ proof-after-fix is the only proof.
   tslint, `ReactDOM.render`, removed lifecycles, Vue 2, Bower,
   `CommonsChunkPlugin`, `yarn global`, `npm --save`, webpack v4 shapes — zero
   genuine hits. Two consecutive clean sweeps say the hunt is saturating.
+- **prose dilution, measured four ways and found absent (2026-09-22)**: the
+  recurring reader complaint is that a corpus repeats itself and buries its
+  main point, so the question was measured instead of assumed, over the 776
+  chapter files. Adjacent-sentence restatement (Jaccard ≥ 0.34 on 4-word
+  shingles, both sides ≥ 8 content words): **0**. The partial band a reader
+  would still notice (0.20–0.34): **0**. Intra-chapter near-duplicate
+  paragraphs, 5-word shingles, J ≥ 0.40, at least 20 lines apart: **0**.
+  TL;DR-versus-Summary overlap, the two template sections whose restatement
+  would be designed in rather than accidental: **median 0.00**, and no chapter
+  above 0.25 — the sections summarize different things. What the sweep did
+  surface was a scanner artifact, worth recording so it is not re-hunted: 142
+  "wall-of-text paragraphs" turned out to be consecutive numbered-list and
+  table-of-contents lines, which my run-length heuristic read as one sentence
+  because list items do not end in a period. The one durable residue is the
+  register itself — eighteen empty openers (`it is important to note`,
+  `needless to say`, `at the end of the day`, `let's dive into`, …) of which
+  the corpus uses **zero** — now gated as rule 4 of `prose_hygiene.py`, with
+  `essentially` and `the fact that` deliberately excluded because all 16 of
+  their occurrences do real work.
 
 ## Real-world Application
 

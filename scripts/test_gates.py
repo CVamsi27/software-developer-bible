@@ -217,6 +217,15 @@ def _edge_trigger_sandbox():
         "jobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n"
         "      - name: render\n        run: echo render\n"
     )
+    # The other declared workflow, healthy, so the fire is attributable to the
+    # blind filter rather than to the staleness branch that a missing name
+    # would also trip.
+    plant[".github/workflows/study-live.yml"] = (
+        "name: study-live\n\non:\n  push:\n    paths:\n"
+        "      - 'functions/**'\n      - 'auth/**'\n\n"
+        "jobs:\n  probe:\n    runs-on: ubuntu-latest\n    steps:\n"
+        "      - name: probe\n        run: echo probe\n"
+    )
     return plant
 
 

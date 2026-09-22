@@ -361,6 +361,14 @@ def check_edge_triggers(problems):
     for wf, why in sorted(EDGE_WORKFLOWS.items()):
         path = os.path.join(WORKFLOW_DIR, wf)
         if not os.path.exists(path):
+            # The declaration is the only hand-maintained part of this rule, so
+            # a rename would otherwise disarm it in silence — the drift class
+            # every other rule here exists to prevent.
+            problems.append(
+                f'EDGE_WORKFLOWS names {wf}, which no longer exists — point the '
+                f'declaration at the workflow that replaced it (or drop the entry '
+                f'with the reason); do not leave it matching nothing'
+            )
             continue
         paths = workflow_paths(read(path))
         if not paths:

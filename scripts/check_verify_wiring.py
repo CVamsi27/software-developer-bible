@@ -44,6 +44,18 @@ verify.sh *listened*. So this checks the harness, not the corpus:
      no `verify.sh` gate invokes is invisible to the suite — the tooling-level
      twin of the invisible-sub-stack defect. The invisible-thing class is
      closed at repo, lane, file, docs, and now script level.
+  11. **A workflow is triggered by the trees it verifies, not only by the
+     scripts it runs.** Rule 9 covers the scripts a workflow invokes; it cannot
+     see a workflow whose *subject* is a directory. `functions/` (Cloudflare
+     Pages Functions: `_middleware.ts` plus the auth routes) and `auth/` (the
+     pages they hand back) are the edge half of the artifact, and neither was
+     in the trigger list of the workflow that renders that artifact
+     (`site-build.yml`) or the one that probes it live (`study-live.yml`). So a
+     push that only changed the middleware ran neither: the render backstop,
+     the lane-exclusion assertion and the Liquid-warning guard were all skipped
+     for a change to what the edge serves. A trigger filter is where a blind
+     spot hides — a green build proves the inputs are consistent, not that the
+     output was ever looked at — so the filter is checked, not remembered.
 
 `--write` restamps 5 and 6 from the same count this check computes, so the
 number has one owner and cannot drift (the `check_counts.py` / `read_time.py`
@@ -70,6 +82,15 @@ LABEL_RE = re.compile(r'^(\d+)([a-z]?)$')
 SCRIPT_REF = re.compile(r'scripts/([\w./-]+\.(?:py|sh|json))')
 SELF_INC = re.compile(r'^([A-Za-z_]\w*)=\$\(\(\s*\1\b')
 INIT_RE = r'^\s*%s='
+
+# The edge half of the Pages artifact, and the workflows whose job it is to
+# build, deploy or probe it. Both trees change what production serves, so a
+# push touching either must trigger them (rule 11).
+EDGE_TREES = ('functions', 'auth')
+EDGE_WORKFLOWS = {
+    'site-build.yml': 'it renders and asserts the artifact the edge trees are part of',
+    'study-live.yml': 'it probes the live edge, so the edge trees are its subject',
+}
 
 WORKFLOW_DIR = os.path.join(ROOT, '.github', 'workflows')
 STEP_RE = re.compile(r'^      - (name|uses):')
@@ -328,6 +349,33 @@ def covered(entry, target):
     return fnmatch.fnmatch(target, entry)
 
 
+def check_edge_triggers(problems):
+    """Rule 11: a change to the trees a workflow verifies must run it.
+
+    The filter is checked for the tree's own `_middleware.ts` — the file a push
+    to the edge always touches — so `'functions/**'` covers it and a
+    markdown-only filter does not. A declared tree that is absent from disk is
+    not an edge tree in this checkout and is skipped rather than reported: the
+    sandbox that tests this rule holds no `functions/` at all.
+    """
+    for wf, why in sorted(EDGE_WORKFLOWS.items()):
+        path = os.path.join(WORKFLOW_DIR, wf)
+        if not os.path.exists(path):
+            continue
+        paths = workflow_paths(read(path))
+        if not paths:
+            continue  # no filter: every push already triggers it
+        for tree in EDGE_TREES:
+            if not os.path.exists(os.path.join(ROOT, tree)):
+                continue
+            if any(covered(entry, f'{tree}/_middleware.ts') for entry in paths):
+                continue
+            problems.append(
+                f'{wf}: {tree}/** is not in its `paths:` filter although {why} — a '
+                f'change there would run nothing that looks at it'
+            )
+
+
 def check_unwired(problems):
     """Rule 10: every check_*/test_* script is invoked by verify.sh or a
     workflow. The check_ prefix claims gate-hood; an unwired checker is
@@ -460,6 +508,7 @@ def main() -> int:
     check(problems, text, lines, gates, stop)
     check_ci(problems, sorted({g['script'] for g in gates}))
     check_unwired(problems)
+    check_edge_triggers(problems)
     if problems:
         print(f'verify.sh wiring: {len(problems)} problem(s)')
         for p in problems:

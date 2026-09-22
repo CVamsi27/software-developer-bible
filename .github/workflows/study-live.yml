@@ -28,6 +28,12 @@ on:
     paths:
       - 'scripts/check_study_live.py'
       - 'scripts/test_study_live.py'
+      # The probe's subject. A change to the edge is a change to the contract
+      # this workflow checks, so the hermetic offline job runs on it; the live
+      # job stays scheduled/manual so it can never race the deploy it measures.
+      # Rule 11 of scripts/check_verify_wiring.py checks this list.
+      - 'functions/**'
+      - 'auth/**'
       - '.github/workflows/study-live.yml'
   schedule:
     - cron: '0 7 * * 1' # Mondays 07:00 UTC — a stale deployment cannot outlive a week

@@ -198,6 +198,28 @@ def _wiring_sandbox():
     return plant
 
 
+def _edge_trigger_sandbox():
+    """{path: content} whose only defect is a filter blind to what it verifies.
+
+    The real tooling, the real count claims, and one planted workflow that
+    renders the site — `**.md` only — beside the edge tree it is supposed to
+    cover. Rule 9 cannot see this defect: the workflow runs no gate script, so
+    there is no invocation to check. Rule 11 exists for exactly this shape.
+    """
+    plant = {
+        rel: open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        for rel in ("contributing.md", os.path.join("docs", "verification-gates.md"))
+    }
+    plant["functions/_middleware.ts"] = "export const onRequest = () => new Response(null);\n"
+    plant[".github/workflows/site-build.yml"] = (
+        "name: site-build\n\non:\n  push:\n    paths:\n"
+        "      - '**.md'\n\n"
+        "jobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n"
+        "      - name: render\n        run: echo render\n"
+    )
+    return plant
+
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -590,6 +612,20 @@ CASES = [
         "gate": "check_verify_wiring.py",
         "args": [],
         "plant": _wiring_sandbox(),
+        "clean_in_repo": True,
+    },
+    {
+        # Rule 11 generalizes rule 9 from "the scripts a workflow runs" to "the
+        # trees a workflow verifies". A markdown-only filter on the workflow
+        # that renders the artifact meant a push touching only the edge ran
+        # neither the render backstop nor the live-edge probe. Fire side: the
+        # blind filter in a sandbox. Clean side: the live repo, where both
+        # filters name functions/** and auth/** — which is what regresses the
+        # moment someone narrows one of them back.
+        "name": "gate 15 wiring fires when a workflow filter ignores the tree it verifies",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _edge_trigger_sandbox(),
         "clean_in_repo": True,
     },
 ]

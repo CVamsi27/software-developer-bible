@@ -21,6 +21,14 @@ on:
       - "_config.yml"
       - "search.html"
       - "api/**"
+      # The edge half of the artifact. Cloudflare's Git integration builds on
+      # every push to main regardless of paths, so these files already deploy —
+      # but a push that *only* touched them skipped this backstop (the render,
+      # the lane-exclusion assertion, the Liquid-warning guard) for exactly the
+      # pushes that change what the edge serves. Rule 11 of
+      # scripts/check_verify_wiring.py now checks this list.
+      - "functions/**"
+      - "auth/**"
       - ".github/workflows/site-build.yml"
       - "wrangler.toml"
       - ".ruby-version"

@@ -1,6 +1,6 @@
 # Releases & Metrics
 
-> **Study time:** ≈ 37 min of reading (2 files, ~18 min average).
+> **Study time:** ≈ 38 min of reading (2 files, ~19 min average).
 > **2 files.** Shipping safely and measuring delivery: blue-green and canary deployments for zero-downtime releases with instant rollback, plus the four DORA metrics that tell you whether shipping actually got faster AND safer.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -20,7 +20,7 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
 | 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | 20 min |
-| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | 17 min |
+| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | 18 min |
 
 ---
 

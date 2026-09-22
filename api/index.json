@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ec56a4251f9a3ee55e12ef20642800c85b995fa31889188e5aee6a9e8e15034d",
+ "corpus_digest": "f77b8da42b704f1192fd8fd88d9e5469ae20b840c79c1bc23ab1ed175870e9c1",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10589
+  "read_minutes": 10604
  },
  "chapters": [
   {
@@ -4035,7 +4035,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 21
   },
   {
    "p": "40-platform/40.1-docker/40.1.04-multi-stage-builds.html",
@@ -4105,7 +4105,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "40-platform/40.10-cdn/40.10.01-cdn-architecture.html",
@@ -4476,7 +4476,7 @@
     "dora",
     "metrics"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.html",
@@ -4497,7 +4497,7 @@
     "concept",
     "reference"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.html",
@@ -4508,7 +4508,7 @@
     "concept",
     "reference"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.html",
@@ -4553,7 +4553,7 @@
     "guide",
     "reference"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.html",
@@ -4605,7 +4605,7 @@
     "kernel",
     "network-observability"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.html",
@@ -4700,7 +4700,7 @@
     "guide",
     "reference"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
@@ -4820,7 +4820,7 @@
     "guide",
     "reference"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
@@ -4844,7 +4844,7 @@
     "reference",
     "security"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.10-interview-questions.html",
@@ -4910,7 +4910,7 @@
     "concept",
     "reference"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.html",
@@ -4934,7 +4934,7 @@
     "pattern",
     "reference"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",
@@ -4983,7 +4983,7 @@
     "concept",
     "overview"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.02-turborepo.html",
@@ -4995,7 +4995,7 @@
     "reference",
     "tool"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.03-nx.html",
@@ -5031,7 +5031,7 @@
     "reference",
     "release"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.06-interview-questions.html",

@@ -1,6 +1,6 @@
 # SRE Targets
 
-> **Study time:** ≈ 24 min of reading (2 files, ~12 min average).
+> **Study time:** ≈ 25 min of reading (2 files, ~12 min average).
 > **2 files.** The SRE framework for reliability: define SLIs/SLOs with real error budgets, then alert in a way that pages humans only when it matters.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -24,7 +24,7 @@ Quick distinction:
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 10 min |
+| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 11 min |
 | 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | 14 min |
 
 ---

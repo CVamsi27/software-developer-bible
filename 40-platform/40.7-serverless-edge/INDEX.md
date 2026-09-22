@@ -1,6 +1,6 @@
 # Serverless & Edge — Index
 
-> **Study time:** ≈ 1 h 54 m of reading (10 files, ~11 min average).
+> **Study time:** ≈ 1 h 56 m of reading (10 files, ~12 min average).
 > **10 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -55,9 +55,9 @@ Deploy choice?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 14 min |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | 15 min |
 | 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | 12 min |
-| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 15 min |
+| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | 16 min |
 
 ---
 

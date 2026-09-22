@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 2 h 10 m of reading (10 files, ~13 min average).
+> **Study time:** ≈ 2 h 12 m of reading (10 files, ~13 min average).
 > **10 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -79,7 +79,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 14 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 15 min |
 
 ---
 
@@ -90,7 +90,7 @@ Keeping large repositories fast and history trustworthy.
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 14 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 13 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 14 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Optimization & Comparison
 
-> **Study time:** ≈ 45 min of reading (3 files, ~15 min average).
+> **Study time:** ≈ 46 min of reading (3 files, ~15 min average).
 > **3 files.** Making builds fast and bundles small, shipping assets (CSS/images/fonts) through a real pipeline — then choosing tools with evidence instead of hype.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -19,7 +19,7 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 15 min |
+| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 16 min |
 | 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | 18 min |
 | 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each | 12 min |
 

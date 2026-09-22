@@ -1,6 +1,6 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 2 h of reading (10 files, ~12 min average).
+> **Study time:** ≈ 2 h 1 m of reading (10 files, ~12 min average).
 > **10 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -60,7 +60,7 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 15 min |
+| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 16 min |
 | 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 18 min |
 | 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 12 min |
 

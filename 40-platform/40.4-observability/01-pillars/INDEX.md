@@ -1,6 +1,6 @@
 # The 3 Pillars
 
-> **Study time:** ≈ 56 min of reading (3 files, ~19 min average).
+> **Study time:** ≈ 58 min of reading (3 files, ~19 min average).
 > **3 files.** Logs, metrics, traces — the three data types every observability system is built from. Each answers a different question; senior engineers know which pillar to reach for before opening a dashboard.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -23,8 +23,8 @@ Interviews at scale-focused companies open with "compare logs, metrics, and trac
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Logging](40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, retention and cost | 18 min |
-| 02 | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality | 19 min |
+| 01 | [Logging](40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, retention and cost | 19 min |
+| 02 | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality | 20 min |
 | 03 | [Tracing](40.4.1.03-tracing.md) | Distributed tracing, spans, trace context propagation, OpenTelemetry, Jaeger | 19 min |
 
 ---

@@ -1,7 +1,7 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 2 h 47 m of reading (11 files, ~15 min average).
+> **Study time:** ≈ 2 h 48 m of reading (11 files, ~15 min average).
 > **11 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -54,7 +54,7 @@ Senior-level patterns for zero-downtime deploys.
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 20 min |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 17 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 18 min |
 
 **Decision:**
 

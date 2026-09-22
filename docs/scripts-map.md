@@ -44,7 +44,7 @@
 ### The 20 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment + ASCII box walls | rows/pipes misaligned vs widest cell |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
@@ -57,6 +57,8 @@
 | 8b | `fix_box_code_indent.py --check` | Code embedded in box walls keeps indentation | box code renders flat |
 | 8c | `fix_box_width.py --check` | Boxes stay within screen width | a box wraps on laptop screens |
 | 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
+| 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GFM table cell counts, empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, a table row with a broken cell grid |
+| 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
 | 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair/restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
 | 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from verify.sh) | a gate reports compliance while scanning nothing |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |

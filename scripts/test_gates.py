@@ -716,6 +716,41 @@ CASES = [
             "coordinator, and the O(n) bound comes from the fact that each "
             "element is pushed once.\n")},
     },
+    {
+        # Gate 25 is a ceiling baseline: the plant exceeds it with a paragraph
+        # restated 20+ lines apart — the "same point made twice in one chapter"
+        # class gate 11 cannot see because the files differ. The restatements
+        # must NOT be consecutive rows (an unrelated paragraph sits between),
+        # or the adjacent detector would fire instead of the intra one this
+        # case names; the fence supplies the line distance a real chapter has.
+        # First version of this plant had the restatement 6 lines away — inside
+        # no detector's reach — and the gate correctly refused to fire on it.
+        "name": "gate 25 dilution fires on a chapter restating itself",
+        "gate": "check_dilution.py",
+        "args": [],
+        "plant": {"10-frontend/p.md": (
+            "# T\n\n"
+            "The retry budget must be smaller than the upstream timeout, or "
+            "every attempt doubles the tail latency of the slowest path and "
+            "the caller sees the worst case twice.\n\n"
+            "Cache aside, the read path is independent: a warm cache absorbs "
+            "the burst and the origin never sees it.\n\n"
+            "```js\n"
+            + "".join(f"const step{i} = advance(state{i});\n" for i in range(16))
+            + "```\n\n"
+            "The retry budget has to be smaller than the upstream timeout, or "
+            "each attempt doubles the tail latency of the slowest path and "
+            "the caller observes the worst case two times.\n")},
+        "clean": {"10-frontend/p.md": (
+            "# T\n\n"
+            "The retry budget must be smaller than the upstream timeout, or "
+            "every attempt doubles the tail latency of the slowest path.\n\n"
+            "- retries are bounded by the budget\n"
+            "- the budget is smaller than the timeout\n"
+            "- therefore the caller never waits twice\n\n"
+            "Backpressure is the complementary control: it slows the caller "
+            "instead of failing the request.\n")},
+    },
 ]
 
 

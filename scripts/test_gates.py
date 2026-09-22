@@ -170,6 +170,34 @@ BANK_THIN_SHEET = BANK_CLEAN.replace(
 BANK_EMPTY_FENCE = BANK_CLEAN.replace(
     "25 questions.\n", "25 questions.\n\n```\n```\n", 1)
 
+def _wiring_sandbox():
+    """{path: content} for a sandbox whose only defect is a workflow's trigger paths.
+
+    The tooling is real — build_sandbox copies every script, so verify.sh, its
+    gate inventory and the count claims in contributing.md all agree — and the
+    single planted defect is a workflow whose `paths:` filter omits a gate
+    script it actually runs.
+    """
+    plant = {
+        rel: open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        for rel in ("contributing.md", os.path.join("docs", "verification-gates.md"))
+    }
+    plant[".github/workflows/narrow.yml"] = (
+        "name: narrow\n\non:\n  push:\n    paths:\n"
+        "      - 'scripts/check_links.py'\n"
+        "      - 'scripts/verify.sh'\n\n"
+        "jobs:\n  j:\n    runs-on: ubuntu-latest\n    steps:\n"
+        "      - name: gates\n"
+        "        run: |\n"
+        "          python3 scripts/check_study_live.py --print-contract\n"
+        "          python3 scripts/test_study_live.py\n"
+        "          python3 scripts/check_links.py\n"
+        "          python3 scripts/check_alignment.py\n"
+        "          bash scripts/verify.sh\n"
+    )
+    return plant
+
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -548,6 +576,21 @@ CASES = [
         "args": [],
         "plant": _scope_floor_sandbox(vacuous_index=_SCOPE_GATES),
         "clean": _scope_floor_sandbox(),
+    },
+    {
+        # Rule 9 must scope a workflow's invocations to that workflow. Merging
+        # them with the suite-wide set made THIS repo fail its own gate: the
+        # narrow, deliberate `paths:` filter in study-live.yml was told it fails
+        # to trigger scripts only code-whitespace.yml runs, and the only visible
+        # remedy was widening it to `scripts/**` and losing the point of having
+        # one. The fire side proves the rule still catches an incomplete filter;
+        # the clean side IS the live repo, where the narrow filter is correct —
+        # which is what regresses the moment the two sets are merged again.
+        "name": "gate 15 wiring fires when a paths filter misses a script it runs",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _wiring_sandbox(),
+        "clean_in_repo": True,
     },
 ]
 

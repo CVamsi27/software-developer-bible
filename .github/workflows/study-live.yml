@@ -8,24 +8,27 @@
 #
 # scripts/check_study_live.py probe-verifies the contract in
 # docs/deployment.md: gating on every protected path with deep links preserved,
-# no unauthenticated content, a minimal public auth surface, canonicalization
-# of the `.pages.dev` fallback, a denial redirect for an invalid session, a
-# working sign-in redirect, and a logout that clears the session. Warnings
-# (sign-in not configured, a dead denial host) are dashboard state and never
-# fail the run; only a contract violation does.
+# no unauthenticated content, a minimal public auth surface, canonicalization of
+# the `.pages.dev` fallback, a denial redirect for an invalid session, a working
+# sign-in redirect, and a logout that clears the session. Warnings (sign-in not
+# configured, a dead denial host) are dashboard state and never fail a run; only
+# a contract violation does.
 #
-# Scheduled rather than push-triggered on purpose: Cloudflare Pages builds from
-# git in parallel with this repo's CI, so a push-time probe would race the
-# deploy it measures and report the previous deployment. Dispatch it manually
-# after a deploy settles, or let the weekly run catch drift.
-#
-# The offline step runs first. scripts/test_study_live.py drives the real CLI
-# against stub hosts and asserts the exit code for each failure shape, so a
-# classifier that can only ever report success — or one that goes red on
-# environment state — is caught before it renders a verdict about production.
+# Two jobs, two triggers, because the halves have different needs:
+#   offline — hermetic and fast (stub hosts, no network), so it runs on every
+#     change to its own inputs. A probe whose classification nobody checks at
+#     review time is how a check that can only report success ships.
+#   live — must not race the Pages build it measures (both build from git), so
+#     it is scheduled rather than push-triggered. Dispatch it manually once a
+#     deploy has settled.
 name: study-live
 
 on:
+  push:
+    paths:
+      - 'scripts/check_study_live.py'
+      - 'scripts/test_study_live.py'
+      - '.github/workflows/study-live.yml'
   schedule:
     - cron: '0 7 * * 1' # Mondays 07:00 UTC — a stale deployment cannot outlive a week
   workflow_dispatch: {}
@@ -34,7 +37,7 @@ permissions:
   contents: read
 
 jobs:
-  contract:
+  offline:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -44,8 +47,22 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pin the probe contract (offline, stub hosts)
+      - name: Pin the probe contract (stub hosts, no network)
         run: python3 scripts/test_study_live.py
+
+  live:
+    # Skipped on push: a probe racing the deploy it measures would report the
+    # previous deployment. It still gates the scheduled and manual runs.
+    if: github.event_name != 'push'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
 
       - name: Probe the live study host
         run: |

@@ -157,33 +157,26 @@ Everything below except the signed-in steps is probed automatically:
 python3 scripts/check_study_live.py --verbose   # exits 1 on a contract violation
 ```
 
-`study-live.yml` runs the same command weekly (Mondays, plus manual
-*Run workflow*). It is scheduled rather than push-triggered because Pages
-builds from git in parallel with this repo's CI: a push-time probe would race
-the deploy it measures and report the previous one. Dispatch it by hand after
-a deploy settles.
+`study-live.yml` runs the offline half (`test_study_live.py`, which drives the
+real CLI against stub hosts and pins every exit code) on any change to its own
+inputs, and the live probe weekly (Mondays) plus manual *Run workflow*. The live
+probe is deliberately not push-triggered: Pages builds from git in parallel with
+this repo's CI, so a push-time probe would race the deploy it measures and report
+the previous one. Dispatch it by hand once a deploy has settled.
 
-The probes are not listed here on purpose: `CONTRACT` in
-`scripts/check_study_live.py` is their single owner, `--print-contract` prints
-it, and a probe that the contract does not document fails the offline test. A
-table copied into this runbook would only be a second thing to drift.
-
-What it asserts, in one sentence each: every protected path redirects to login
-with the deep link preserved and the platform fallback canonicalizing; a
-chapter is never served unauthenticated, and a missing path answers exactly like
-a real one; an invalid session goes to the access-denied page; only the auth
-surface is public; sign-in reaches the Supabase authorize endpoint; logout
-clears the session cookie.
+The probe list is not repeated here: each probe in
+`scripts/check_study_live.py` owns the expectation it enforces, and
+`--print-contract` renders the whole set — a copy in this runbook could only
+drift from it.
 
 Warnings never change the exit code: they describe environment state (unset
-Supabase variables, a dead denial host) that only an operator can change.
-Failures mean the live host contradicts this runbook.
+Supabase variables, a dead denial host) that only an operator can change —
+including when that host does not answer at all. Failures mean the live host
+contradicts this runbook.
 
 **The signed-in path is the one thing no probe can reach** — it needs the
-owner's Google account, so the probes above prove the site is *blocked*, not
-that it *renders*. Verify by hand after any auth change:
-
-For the parts a probe cannot cover, use a private window and verify that:
+owner's Google account, so everything above proves the site is *blocked*, not
+that it *renders*. Use a private window and verify by hand after any auth change:
 
 1. `https://study.buildora.work/` opens the Google sign-in screen rather than
    returning a chapter file.

@@ -364,10 +364,19 @@ def check_ci(problems, gate_scripts):
         wf = os.path.basename(path)
         text = read(path)
         blocking = wf not in ADVISORY_WORKFLOWS
+        # Rule 9 asks whether *this* workflow's trigger paths cover the scripts
+        # *it* runs, so its own invocations must be tracked separately from the
+        # suite-wide `invoked` rule 8 needs. Sharing one set made the check read
+        # every other workflow's scripts as this one's, so any workflow with a
+        # narrow paths filter was told it fails to trigger scripts it has never
+        # run — which is why the only remedy looked like widening the filter to
+        # `scripts/**` and losing the point of having one.
+        wf_invoked = set()
         for step in workflow_steps(text):
             cmds = command_lines(step['run'])
             names = SCRIPT_REF.findall(cmds)
             invoked.update(names)
+            wf_invoked.update(names)
             if blocking:
                 enforced.update(names)
             if SUITE_RE.search(cmds):
@@ -384,7 +393,7 @@ def check_ci(problems, gate_scripts):
         # 9. trigger coverage
         paths = workflow_paths(text)
         if paths:
-            needed = {p for p in gate_scripts if p in invoked}
+            needed = {p for p in gate_scripts if p in wf_invoked}
             if SUITE_RE.search(text):
                 needed.add('verify.sh')
             for name in sorted(needed):

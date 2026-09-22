@@ -1,6 +1,7 @@
 const ALLOWED_STUDY_EMAIL = "cvamsik99@gmail.com";
 const PERSONAL_ACCESS_DENIED_URL = "https://personal.buildora.work/?study=access-denied";
 const PRODUCTION_PAGES_HOST = "software-developer-bible.pages.dev";
+export const STUDY_CANONICAL_ORIGIN = "https://study.buildora.work";
 const PUBLIC_AUTH_PATHS = new Set([
   "/auth/login.html",
   "/auth/login",
@@ -119,6 +120,82 @@ export function isPublicAuthPath(pathname) {
 
 export function accessDeniedRedirect() {
   return PERSONAL_ACCESS_DENIED_URL;
+}
+
+/** The session cookie's value, or "" when absent or not decodable. */
+export function readStudyToken(cookieHeader) {
+  const match = (cookieHeader ?? "").match(/(?:^|;\s*)study_access_token=([^;]+)/);
+  if (!match) return "";
+  try {
+    return decodeURIComponent(match[1]);
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * Turn a presented cookie into a session.
+ *
+ * A verification failure is still a *presented* session: the visitor holds a
+ * cookie, so they reach the denial page rather than a login page that would
+ * hand them another one. That rule lives here, not in the adapter, because it
+ * is policy and the adapter's catch block was the only place it could hide.
+ * Without a cookie the verifier is never called.
+ */
+export async function resolveSessionFromToken({ token, verifyToken }) {
+  if (!token) return { email: null, hasToken: false };
+  try {
+    const user = await verifyToken(token);
+    return { email: user && typeof user.email === "string" ? user.email : null, hasToken: true };
+  } catch {
+    return { email: null, hasToken: true };
+  }
+}
+
+/**
+ * The whole gate decision, as data, with the session resolved lazily.
+ *
+ * `_middleware.ts` only turns this into a Response. Keeping the decision out of
+ * the TypeScript adapter is what makes the branch that matters testable: the
+ * one that serves content to a valid session cannot be exercised by a live
+ * probe without the owner's Google account, and it is the branch the site
+ * exists for.
+ *
+ * `resolveSession` is called only when the answer depends on it, so a public
+ * auth path never pays for a token verification round trip.
+ */
+export async function decideAccess({
+  hostname,
+  pathname,
+  search = "",
+  resolveSession,
+  canonicalOrigin = STUDY_CANONICAL_ORIGIN,
+}) {
+  if (isPagesDevHost(hostname)) {
+    return { action: "canonical", status: 308, location: `${canonicalOrigin}${pathname}${search}` };
+  }
+  if (isPublicAuthPath(pathname)) return { action: "public", status: 200, location: "" };
+
+  const { email, hasToken } = await resolveSession();
+  if (email && isAllowedStudyEmail(email)) return { action: "allow", status: 200, location: "" };
+  if (hasToken) return { action: "denied", status: 302, location: accessDeniedRedirect() };
+
+  const next = safeNextPath(`${pathname}${search}`);
+  return { action: "login", status: 302, location: `/auth/login.html?next=${encodeURIComponent(next)}` };
+}
+
+/**
+ * Turn a decision into the Response the edge sends.
+ *
+ * Kept here rather than in the middleware so the mapping is pinned by tests
+ * too — the adapter should be glue, not policy.
+ */
+export function respondTo(decision, next) {
+  if (decision.action === "public" || decision.action === "allow") return next();
+  return new Response(null, {
+    status: decision.status,
+    headers: { Location: decision.location, "Cache-Control": "no-store" },
+  });
 }
 
 export async function fetchSupabaseUser(accessToken, env) {

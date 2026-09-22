@@ -2,14 +2,57 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   accessDeniedRedirect,
+  decideAccess,
   fetchSupabaseUser,
   isAllowedStudyEmail,
   isPagesDevHost,
   isPublicAuthPath,
   normalizeEmail,
+  readStudyToken,
+  resolveSessionFromToken,
   resolveSupabaseConfig,
+  respondTo,
   safeNextPath,
 } from "./study-access.mjs";
+
+const JWKS_URL = "https://example.supabase.co/auth/v1/.well-known/jwks.json";
+const STUDY = { hostname: "study.buildora.work" };
+
+/** A genuinely ES256-signed access token plus the JWKS that verifies it. */
+async function signedToken({ email = "cvamsik99@gmail.com", expiresIn = 3600, kid = "study-key" } = {}) {
+  const { privateKey, publicKey } = await crypto.subtle.generateKey(
+    { name: "ECDSA", namedCurve: "P-256" },
+    true,
+    ["sign", "verify"],
+  );
+  const publicJwk = await crypto.subtle.exportKey("jwk", publicKey);
+  publicJwk.kid = kid;
+  publicJwk.alg = "ES256";
+
+  const encode = (value) => Buffer.from(value).toString("base64url");
+  const header = encode(JSON.stringify({ alg: "ES256", kid, typ: "JWT" }));
+  const payload = encode(JSON.stringify({
+    aud: "authenticated",
+    email,
+    exp: Math.floor(Date.now() / 1000) + expiresIn,
+    iss: "https://example.supabase.co/auth/v1",
+  }));
+  const signingInput = new TextEncoder().encode(`${header}.${payload}`);
+  const signature = await crypto.subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, signingInput);
+
+  return {
+    token: `${header}.${payload}.${Buffer.from(signature).toString("base64url")}`,
+    jwks: { keys: [publicJwk] },
+  };
+}
+
+function stubJwks(jwks) {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify(jwks), { status: 200 });
+  return () => {
+    globalThis.fetch = originalFetch;
+  };
+}
 
 test("allows only the exact study account, case-insensitively", () => {
   assert.equal(isAllowedStudyEmail("cvamsik99@gmail.com"), true);
@@ -60,47 +103,230 @@ test("accepts the public Supabase variable names used by the personal app", () =
     { url: "https://example.supabase.co", anonKey: "public-key", jwksUrl: "" },
   );
   assert.deepEqual(
-    resolveSupabaseConfig({
-      SUPABASE_JWKS_URL: "https://example.supabase.co/auth/v1/.well-known/jwks.json",
-    }),
-    {
-      url: "https://example.supabase.co",
-      anonKey: "",
-      jwksUrl: "https://example.supabase.co/auth/v1/.well-known/jwks.json",
-    },
+    resolveSupabaseConfig({ SUPABASE_JWKS_URL: JWKS_URL }),
+    { url: "https://example.supabase.co", anonKey: "", jwksUrl: JWKS_URL },
   );
 });
 
 test("verifies an asymmetric access token with the configured JWKS endpoint", async () => {
-  const { privateKey, publicKey } = await crypto.subtle.generateKey(
-    { name: "ECDSA", namedCurve: "P-256" },
-    true,
-    ["sign", "verify"],
-  );
-  const publicJwk = await crypto.subtle.exportKey("jwk", publicKey);
-  publicJwk.kid = "study-key";
-  publicJwk.alg = "ES256";
-
-  const encode = (value) => Buffer.from(value).toString("base64url");
-  const header = encode(JSON.stringify({ alg: "ES256", kid: "study-key", typ: "JWT" }));
-  const payload = encode(JSON.stringify({
-    aud: "authenticated",
-    email: "cvamsik99@gmail.com",
-    exp: Math.floor(Date.now() / 1000) + 3600,
-    iss: "https://example.supabase.co/auth/v1",
-  }));
-  const signingInput = new TextEncoder().encode(`${header}.${payload}`);
-  const signature = await crypto.subtle.sign({ name: "ECDSA", hash: "SHA-256" }, privateKey, signingInput);
-  const token = `${header}.${payload}.${Buffer.from(signature).toString("base64url")}`;
-  const originalFetch = globalThis.fetch;
-  globalThis.fetch = async () => new Response(JSON.stringify({ keys: [publicJwk] }), { status: 200 });
-
+  const { token, jwks } = await signedToken();
+  const restore = stubJwks(jwks);
   try {
     assert.deepEqual(
-      await fetchSupabaseUser(token, { SUPABASE_JWKS_URL: "https://example.supabase.co/auth/v1/.well-known/jwks.json" }),
+      await fetchSupabaseUser(token, { SUPABASE_JWKS_URL: JWKS_URL }),
       { email: "cvamsik99@gmail.com" },
     );
   } finally {
-    globalThis.fetch = originalFetch;
+    restore();
+  }
+});
+
+test("rejects an expired access token", async () => {
+  const { token, jwks } = await signedToken({ expiresIn: -60 });
+  const restore = stubJwks(jwks);
+  try {
+    assert.equal(await fetchSupabaseUser(token, { SUPABASE_JWKS_URL: JWKS_URL }), null);
+  } finally {
+    restore();
+  }
+});
+
+test("reads the session cookie out of a cookie header", () => {
+  assert.equal(readStudyToken("study_access_token=abc.def.ghi"), "abc.def.ghi");
+  assert.equal(readStudyToken("other=1; study_access_token=tok; more=2"), "tok");
+  assert.equal(readStudyToken("study_access_token=a%20b"), "a b");
+  assert.equal(readStudyToken("study_access_token=%E0%A4%A"), "");
+  assert.equal(readStudyToken("other=1"), "");
+  assert.equal(readStudyToken(undefined), "");
+});
+
+test("an absent cookie is anonymous and never calls the verifier", async () => {
+  let verifications = 0;
+  const session = await resolveSessionFromToken({
+    token: "",
+    verifyToken: async () => {
+      verifications += 1;
+      return { email: "cvamsik99@gmail.com" };
+    },
+  });
+  assert.deepEqual(session, { email: null, hasToken: false });
+  assert.equal(verifications, 0);
+});
+
+test("forwards the verified account's email", async () => {
+  const session = await resolveSessionFromToken({
+    token: "tok",
+    verifyToken: async () => ({ email: "cvamsik99@gmail.com" }),
+  });
+  assert.deepEqual(session, { email: "cvamsik99@gmail.com", hasToken: true });
+});
+
+test("a rejected token and a thrown verification are both presented sessions", async () => {
+  for (const verifyToken of [
+    async () => null,
+    async () => {
+      throw new Error("supabase unreachable");
+    },
+  ]) {
+    assert.deepEqual(await resolveSessionFromToken({ token: "tok", verifyToken }), {
+      email: null,
+      hasToken: true,
+    });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// The gate decision. These are the branches a live probe cannot reach: the one
+// that serves content needs the owner's Google account, so it is proven here or
+// nowhere.
+// ---------------------------------------------------------------------------
+
+const verified = (email) => async () => ({ email, hasToken: true });
+const anonymous = async () => ({ email: null, hasToken: false });
+
+test("sends the fallback host to the study origin before anything else", async () => {
+  const decision = await decideAccess({
+    hostname: "software-developer-bible.pages.dev",
+    pathname: "/INDEX.html",
+    search: "?q=1",
+    resolveSession: async () => {
+      throw new Error("the fallback host must not resolve a session");
+    },
+  });
+  assert.deepEqual(decision, {
+    action: "canonical",
+    status: 308,
+    location: "https://study.buildora.work/INDEX.html?q=1",
+  });
+});
+
+test("keeps auth entry points public without resolving a session", async () => {
+  let resolutions = 0;
+  for (const pathname of [
+    "/auth/login",
+    "/auth/login.html",
+    "/auth/callback",
+    "/auth/callback.html",
+    "/auth/start",
+    "/auth/session",
+    "/auth/logout",
+    "/favicon.svg",
+  ]) {
+    const decision = await decideAccess({
+      ...STUDY,
+      pathname,
+      resolveSession: async () => {
+        resolutions += 1;
+        return { email: null, hasToken: false };
+      },
+    });
+    assert.equal(decision.action, "public", pathname);
+  }
+  assert.equal(resolutions, 0, "a public path must not pay for a token verification");
+});
+
+test("serves content to a verified session for the approved account", async () => {
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/10-frontend/10.1-javascript/INDEX.html",
+    resolveSession: verified("cvamsik99@gmail.com"),
+  });
+  assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
+});
+
+test("denies a presented session that failed verification", async () => {
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/INDEX.html",
+    resolveSession: verified(null),
+  });
+  assert.deepEqual(decision, {
+    action: "denied",
+    status: 302,
+    location: "https://personal.buildora.work/?study=access-denied",
+  });
+});
+
+test("denies a verified session for a different account", async () => {
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/INDEX.html",
+    resolveSession: verified("someone.else@example.com"),
+  });
+  assert.equal(decision.action, "denied");
+});
+
+test("sends a visitor with no session to login with the deep link preserved", async () => {
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/10-frontend/INDEX.html",
+    search: "?q=cap",
+    resolveSession: anonymous,
+  });
+  assert.deepEqual(decision, {
+    action: "login",
+    status: 302,
+    location: "/auth/login.html?next=%2F10-frontend%2FINDEX.html%3Fq%3Dcap",
+  });
+});
+
+test("never carries an off-site next into the login redirect", async () => {
+  const decision = await decideAccess({ ...STUDY, pathname: "//evil.example", resolveSession: anonymous });
+  assert.equal(decision.location, "/auth/login.html?next=%2F");
+});
+
+test("serves the asset for allow and public, and redirects otherwise", async () => {
+  const next = async () => new Response("CONTENT", { status: 200 });
+  for (const action of ["allow", "public"]) {
+    const response = await respondTo({ action, status: 200, location: "" }, next);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), "CONTENT");
+  }
+  for (const [action, status, location] of [
+    ["canonical", 308, "https://study.buildora.work/INDEX.html"],
+    ["denied", 302, accessDeniedRedirect()],
+    ["login", 302, "/auth/login.html?next=%2F"],
+  ]) {
+    const response = await respondTo({ action, status, location }, next);
+    assert.equal(response.status, status, action);
+    assert.equal(response.headers.get("Location"), location, action);
+    assert.equal(response.headers.get("Cache-Control"), "no-store", action);
+    assert.equal(await response.text(), "", action);
+  }
+});
+
+test("a thrown verification reaches the denial page, not the login page", async () => {
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/10-frontend/INDEX.html",
+    resolveSession: () =>
+      resolveSessionFromToken({
+        token: "presented",
+        verifyToken: async () => {
+          throw new Error("supabase unreachable");
+        },
+      }),
+  });
+  assert.deepEqual(decision, {
+    action: "denied",
+    status: 302,
+    location: accessDeniedRedirect(),
+  });
+});
+
+test("a real signed token for the approved account is allowed end to end", async () => {
+  const { token, jwks } = await signedToken();
+  const restore = stubJwks(jwks);
+  try {
+    // The full path a signed-in visitor takes: cookie -> verification -> decision.
+    const session = await fetchSupabaseUser(token, { SUPABASE_JWKS_URL: JWKS_URL });
+    const decision = await decideAccess({
+      ...STUDY,
+      pathname: "/10-frontend/INDEX.html",
+      resolveSession: async () => ({ email: session?.email ?? null, hasToken: true }),
+    });
+    assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
+  } finally {
+    restore();
   }
 });

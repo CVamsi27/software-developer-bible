@@ -59,6 +59,7 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OK, WARN, FAIL = "PASS", "WARN", "FAIL"
 Result = namedtuple("Result", "kind label name detail")
 CHECKS = []
+_DENSE_RECORDS = None
 
 
 def check(label, expectation):
@@ -111,12 +112,11 @@ class Probe:
 
     def __init__(self, scheme=SCHEME, study_host=STUDY_HOST, pages_host=PAGES_HOST,
                  denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25,
-                 probe_token=""):
+                 probe_token="", probe_sample=()):
         self.scheme, self.study_host, self.pages_host = scheme, study_host, pages_host
         self.denial_origin, self.denial_target, self.timeout = (
             denial_origin, denial_target, timeout)
-        self.probe_token = probe_token
-        self.probe_sample = []  # filled from the API dump by run_checks
+        self.probe_token, self.probe_sample = probe_token, list(probe_sample)
         # Browser-shaped headers: Cloudflare's edge fingerprints bare clients.
         self.headers = {
             "User-Agent": (
@@ -176,15 +176,24 @@ def dense_records():
     Read rather than hard-coded so the probe keeps exercising files that exist
     after a restructure. The dump records the *rendered* `.html` path, which is
     what a browser — and this probe — must request.
+
+    Cached: three probes need it and each call would otherwise re-parse the
+    126 KB dump.
     """
-    try:
-        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
-            records = json.load(handle).get("chapters") or []
-    except Exception:
-        return []
-    deep = [r for r in records
-            if isinstance(r, dict) and "/" in r.get("p", "") and r.get("t")]
-    return sorted(deep, key=lambda record: record["p"])
+    global _DENSE_RECORDS
+    if _DENSE_RECORDS is None:
+        try:
+            with open(os.path.join(REPO_ROOT, "api", "index.json"),
+                      encoding="utf-8") as handle:
+                records = json.load(handle).get("chapters") or []
+            _DENSE_RECORDS = sorted(
+                [r for r in records
+                 if isinstance(r, dict) and "/" in r.get("p", "") and r.get("t")],
+                key=lambda record: record["p"],
+            )
+        except Exception:
+            _DENSE_RECORDS = []
+    return _DENSE_RECORDS
 
 
 def chapter_path():
@@ -421,8 +430,7 @@ def run_checks(argv=None):
 
     probe = Probe(args.scheme, args.study_host, args.pages_host,
                   args.denial_origin, args.denial_target, args.timeout,
-                  args.probe_token)
-    probe.probe_sample = probe_sample(args.probe_sample)
+                  args.probe_token, probe_sample(args.probe_sample))
     results = [result for function in CHECKS for result in function(probe)]
     failures = [r for r in results if r.kind == FAIL]
     warnings = [r for r in results if r.kind == WARN]

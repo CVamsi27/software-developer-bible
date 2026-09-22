@@ -19,6 +19,14 @@ real HTTP in a subprocess, and asserts the exit code:
   - an unconfigured sign-in (503)          -> exit 0 with a warning
   - a denial page that answers 404         -> exit 0 with a warning
   - a denial page that does not answer     -> exit 0 with a warning
+  - a deployment older than HEAD           -> exit 1
+  - a deployment that never catches up     -> exit 1, after the wait expires
+  - a response carrying no digest at all   -> exit 1, on the first read
+
+The last three are the freshness class. Only "an older build is live" is a
+state a deploy in flight can fix, so only that one is waited for: a response
+with no digest is misconfiguration, and the case pins both that it is reported
+as such and that the wait budget is not spent on it.
 
 The last case exists because the contract classifies a dead denial host as
 environment state. The probe once hard-coded FAIL for an unreachable host, which
@@ -37,6 +45,7 @@ import socket
 import subprocess
 import sys
 import threading
+import time
 import urllib.parse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -91,6 +100,10 @@ class Stub(http.server.BaseHTTPRequestHandler):
             # prove the deployment is this checkout rather than an older one.
             # `fresh_after` models a deployment still building: the first N reads
             # answer with the previous commit's digest, then it catches up.
+            if "dump_not_json" in self.violations:
+                # A 200 that is not the dump at all — misconfiguration, not a
+                # build in flight, and the state a probe must not wait on.
+                return self.reply(200, body="<!DOCTYPE html><html><body>Not the dump</body></html>")
             type(self).dump_reads += 1
             body = self.live_dump if type(self).dump_reads > self.fresh_after else self.stale_dump
             return self.reply(200, body=body)
@@ -236,6 +249,11 @@ BEHAVIOURS = [
     # old three-path check never looked at it.
     ("a public path answering as gated exits 1", ("session_gated",), 1,
      ("public /auth/session", "lists as public"), True),
+    # Nothing else here can see the stale-deploy class; this case pins the
+    # failure the wait exists for, so a regression cannot turn the budget
+    # expiring into a pass. Its budget comes from AWAIT_ARGS below.
+    ("a deployment that never lands exits 1", ("stale_deploy",), 1,
+     ("deployed corpus", "older than HEAD", "waited"), True),
     # The stale-deploy class: a site whose whole contract holds but whose corpus
     # is an older commit. Nothing else here can see it.
     ("a deployment older than HEAD exits 1", ("stale_deploy",), 1,
@@ -245,6 +263,13 @@ BEHAVIOURS = [
     ("an unconfigured probe credential warns only", (), 0,
      ("signed-in render", "STUDY_PROBE_TOKEN", "2 warning", "0 failed"), False),
 ]
+
+# Cases that must exercise `--await-fresh` need a budget short enough to keep the
+# suite instant. Every other case is a single read, which is what await_fresh=0
+# means, so the table above stays uniform and the exception lives in one place.
+AWAIT_ARGS = {
+    "a deployment that never lands exits 1": {"await_fresh": 2, "await_interval": 0.2},
+}
 
 
 def case_behaviour(name, violations, want_code, needles, signed_in,
@@ -270,7 +295,8 @@ def case_probes_declare_their_contract():
     return None
 
 
-CASES = [(name, functools.partial(case_behaviour, name, violations, code, needles, signed_in))
+CASES = [(name, functools.partial(case_behaviour, name, violations, code, needles, signed_in,
+                                  **AWAIT_ARGS.get(name, {})))
          for name, violations, code, needles, signed_in in BEHAVIOURS]
 # The reason a push-triggered probe is safe: while a deploy is still building,
 # the check waits for it rather than failing on the previous commit — or worse,
@@ -283,6 +309,33 @@ CASES.append((
                       ("deployed corpus", "waiting for the deployment", "0 failed"), True,
                       await_fresh=2, await_interval=0.2),
 ))
+
+
+def case_misconfigured_dump_fails_fast():
+    """A body that is not the dump is misconfiguration, not a build in flight.
+
+    Pins both halves so neither can regress alone: the verdict names the cause
+    instead of blaming an old commit, and the probe does not spend its whole
+    `--await-fresh` budget on a state that waiting cannot change.
+    """
+    started = time.monotonic()
+    code, output = run_cli("dump_not_json", signed_in=True,
+                           await_fresh=30, await_interval=5)
+    elapsed = time.monotonic() - started
+    if code != 1:
+        return f"expected exit 1, got {code}:\n{output}"
+    gaps = [n for n in ("deployed corpus", "no corpus_digest") if n not in output]
+    if gaps:
+        return f"output is missing {gaps}:\n{output}"
+    if "waiting for the deployment" in output:
+        return f"waited on an unreadable body:\n{output}"
+    if elapsed > 15:
+        return (f"took {elapsed:.1f}s to report a state the first read already "
+                f"settled:\n{output}")
+    return None
+
+
+CASES.append(("a dump that is not JSON fails fast", case_misconfigured_dump_fails_fast))
 CASES.append(("probes declare their contract", case_probes_declare_their_contract))
 
 

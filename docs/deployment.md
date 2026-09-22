@@ -185,10 +185,18 @@ with this repo's CI and a push-time probe would measure the *previous* build.
 That safety cost a week of detection latency, so the probe waits instead: with
 `--await-fresh` it polls the deployed corpus digest until the deploy lands
 (bounded, then it judges). Waiting is what makes the push trigger safe — without
-it the probe would fail on a deployment that is merely in flight. Scheduled runs
-can start hours late (GitHub queues them; this repo's `job-board-watch` has
-fired as late as 11:19 for an 06:00 cron), so the push trigger is the fast path
-and Monday is the backstop.
+it the probe would fail on a deployment that is merely in flight. Only one state
+is waited for, because only one is a build in flight: a **valid digest from an
+older build**. A body that is not the dump at all (`/api/index.json` answering
+an HTML page, or JSON with no `corpus_digest` field) is misconfiguration, cannot
+be waited out, and fails on the first read naming that cause instead of blaming
+an old commit — so the run cannot stall for its whole budget before reporting a
+state the first read already settled. The wait is also cheap when nothing has
+changed: the digest covers content files, so a push touching only `scripts/` or
+`docs/` matches immediately and does not poll. Scheduled runs can start hours
+late (GitHub queues them; this repo's `job-board-watch` has fired as late as
+11:19 for an 06:00 cron), so the push trigger is the fast path and Monday is the
+backstop.
 
 
 The probe list is not repeated here: each probe in

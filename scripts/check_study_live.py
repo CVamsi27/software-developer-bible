@@ -356,6 +356,29 @@ def local_corpus_digest():
         return ""
 
 
+def read_served_digest(response):
+    """`(digest, why_unreadable)` from a served `/api/index.json`.
+
+    Only one state is a deployment in flight: a valid digest from an older
+    build. A response that carries no digest — any status, a body that is not
+    JSON, or JSON without the field — is not this dump at this path, and no
+    amount of waiting turns it into one. Reporting that as "the edge is older
+    than HEAD" would send the operator to re-run a build that was never the
+    problem, so it is named as what it is.
+    """
+    try:
+        payload = json.loads(response.body)
+    except Exception:
+        payload = None
+    digest = payload.get("corpus_digest") if isinstance(payload, dict) else None
+    if not digest:
+        return "", (f"the edge served {response.describe} with no corpus_digest "
+                    f"({response.body[:60]!r}…) — that is not this dump at this "
+                    f"path, so waiting for a build cannot fix it; check that "
+                    f"/api/index.json is deployed and gated rather than shadowed")
+    return digest, ""
+
+
 @check("Freshness",
        "the deployment serves this checkout's corpus — `/api/index.json` carries the "
        "same digest, so an edge left behind HEAD cannot pass as current. With "
@@ -374,25 +397,33 @@ def deployed_corpus_is_current(probe):
                        "python3 scripts/gen_master_index.py")]
     url = probe.study("/api/index.json")
     cookie = f"{PROBE_COOKIE}={probe.probe_token}"
-    deadline = time.monotonic() + probe.await_fresh
+    waited, deadline = 0, time.monotonic() + probe.await_fresh
     while True:
         response = probe.get(url, cookie=cookie, limit=1 << 21)
-        try:
-            served = json.loads(response.body).get("corpus_digest") or ""
-        except Exception:
-            served = ""
-        if served == expected or time.monotonic() >= deadline:
+        served, unreadable = read_served_digest(response)
+        caught_up = served == expected
+        # Wait only on a valid digest from another build — the one state a
+        # deploy in flight produces. An unreadable body is not that state, and
+        # polling it for the full budget would stall the run before reporting
+        # the misconfiguration it could have named on the first read.
+        if caught_up or unreadable or time.monotonic() >= deadline:
             break
+        waited += 1
         print(f"  … waiting for the deployment to reach this corpus "
-              f"(served {served[:12] or 'nothing'}, want {expected[:12]})", flush=True)
+              f"(served {served[:12]}, want {expected[:12]})", flush=True)
         time.sleep(min(probe.await_interval, max(0.0, deadline - time.monotonic())))
+    if caught_up:
+        why = ""
+    elif unreadable:
+        why = f" — {unreadable}"
+    else:
+        why = (f" carrying {served[:12]}… — the edge is older than HEAD"
+               + (f" (waited {waited} time(s) for the deploy to land)" if waited else "")
+               + ", so re-run the Pages build before trusting anything else here")
     return [verdict("Freshness", "deployed corpus",
-                    response.status == 200 and served == expected, response,
+                    response.status == 200 and caught_up, response,
                     f"expected 200 carrying corpus_digest {expected[:12]}… (this "
-                    f"checkout); got {response.describe}"
-                    + (f" carrying {served[:12]}… — the edge is older than HEAD, so "
-                       f"re-run the Pages build before trusting anything else here"
-                       if served and served != expected else ""))]
+                    f"checkout); got {response.describe}" + why)]
 
 
 def gated_paths():

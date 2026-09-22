@@ -100,10 +100,10 @@ Every push to `main` triggers two builds of the same command:
    of the same name (GitHub → Settings → Secrets and variables → Actions),
    which is what `study-live.yml` passes to the probe. A request whose session
    cookie carries it is treated as the approved account, so the live probe can
-   assert a real chapter answers 200 with its own title instead of only proving
-   the site is *blocked*. Leave it unset and the branch is inert: the probe
-   reports a warning, not a failure, and the manual checklist in §3 is the only
-   proof of the signed-in path.
+   fetch one real chapter per stack and assert each answers 200 with its own
+   title, instead of only proving the site is *blocked*. Leave it unset and the
+   branch is inert: the probe reports a warning, not a failure, and the manual
+   checklist in §3 is the only proof of the signed-in path.
 4. **No GitHub token needed** — jekyll-github-metadata has no disable
    flag, so `_config.yml` neutralizes it by construction instead: `github:`
    is an Array (never merged into an API-backed drop) and
@@ -185,12 +185,19 @@ including when that host does not answer at all. Failures mean the live host
 contradicts this runbook.
 
 **The signed-in path** is probed only when `STUDY_PROBE_TOKEN` is set (see
-§2 step 3): the probe then fetches a real chapter with that credential and
-asserts the response is 200 *and* contains that chapter's own title — the two
-halves that no amount of policy testing can join, because the middleware
-letting a valid session through and the edge serving that file are different
-machines. Without the credential the probe says so in a warning, and only the
-policy suite (`node --test`, 27 cases) plus the artifact assertions in
+§2 step 3): the probe then fetches one real chapter per top-level stack with
+that credential and asserts each response is 200 *and* contains that chapter's
+own title — the two halves that no amount of policy testing can join, because
+the middleware letting a valid session through and the edge serving that file
+are different machines. One chapter per stack exists because each stack is its
+own render class; a marker is a full plain-prose run from the chapter's title,
+never a single word, because "Testing" or "WebSockets" appears in the
+navigation of every page in its section and would make the assertion vacuous.
+It also checks that no two chapters return identical bodies, which catches an
+edge serving one cached response for every path.
+
+Without the credential the probe says so in a warning, and only the policy
+suite (`node --test`, 27 cases) plus the artifact assertions in
 `site-build.yml` stand behind that path.
 
 Either way, verify by hand in a private window after any auth change — it is

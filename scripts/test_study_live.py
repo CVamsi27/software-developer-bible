@@ -58,7 +58,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
     """A study host (or the `.pages.dev` fallback) with injectable violations."""
 
     role, violations, study_origin, denial_origin = "study", frozenset(), "", ""
-    probe_token, probe_marker = "", ""
+    probe_token, probe_markers, all_markers_body = "", {}, ""
 
     def log_message(self, *args):  # keep the suite's output readable
         pass
@@ -100,7 +100,12 @@ class Stub(http.server.BaseHTTPRequestHandler):
                 return self.reply(302, f"/auth/login.html?next={quote(path)}")
             if "probe_wrong_body" in self.violations:
                 return self.reply(200, body="<html><h1>Not the chapter</h1></html>")
-            return self.reply(200, body=f"<html><h1>{self.probe_marker}</h1></html>")
+            if "probe_same_body" in self.violations:
+                # Every marker present on every path: each per-chapter assertion
+                # passes and only the distinctness net can catch it.
+                return self.reply(200, body=self.all_markers_body)
+            marker = self.probe_markers.get(path.lstrip("/"), "")
+            return self.reply(200, body=f"<html><h1>{marker}</h1></html>")
         if "study_access_token=" in cookie:
             # Absolute, like the middleware's accessDeniedRedirect(): the denial
             # target is a different host in production.
@@ -109,10 +114,12 @@ class Stub(http.server.BaseHTTPRequestHandler):
         return self.reply(302, f"/auth/login.html?next={quote(landed)}")
 
 
-def start(role, violations, study_origin="", probe_token="", probe_marker=""):
+def start(role, violations, study_origin="", probe_token="", probe_markers=None):
+    markers = dict(probe_markers or {})
     handler = type("Handler", (Stub,), {
         "role": role, "violations": frozenset(violations), "study_origin": study_origin,
-        "probe_token": probe_token, "probe_marker": probe_marker,
+        "probe_token": probe_token, "probe_markers": markers,
+        "all_markers_body": "".join(f"<h1>{marker}</h1>" for marker in markers.values()),
     })
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -135,10 +142,9 @@ def run_cli(*violations, signed_in=False):
     case passes.
     """
     token = PROBE_TOKEN if signed_in else ""
-    chapter, title = live.chapter_record() or ("", "")
-    marker = live.render_marker(title) if signed_in else ""
+    markers = dict(live.probe_sample()) if signed_in else {}
     study, study_origin = start("study", violations,
-                                probe_token=token, probe_marker=marker)
+                                probe_token=token, probe_markers=markers)
     # In production the denial target is a different host; the stub plays both,
     # so it can only learn its own origin once the port is bound.
     study.RequestHandlerClass.denial_origin = study_origin
@@ -152,7 +158,6 @@ def run_cli(*violations, signed_in=False):
             "--pages-host", f"127.0.0.1:{pages.server_address[1]}",
             "--denial-origin", study_origin, "--denial-target", denial,
             "--timeout", "10", "--probe-token", token,
-            "--probe-chapter", chapter, "--probe-marker", marker,
         ]
         done = subprocess.run(command, capture_output=True, text=True, timeout=120,
                               env={**os.environ, "STUDY_PROBE_TOKEN": token})
@@ -189,6 +194,8 @@ BEHAVIOURS = [
      ("signed-in ", "expected 200"), True),
     ("a page without the chapter's title exits 1", ("probe_wrong_body",), 1,
      ("signed-in ", "expected 200"), True),
+    ("one response for every chapter exits 1", ("probe_same_body",), 1,
+     ("distinct pages", "identical bodies"), True),
     ("an unconfigured probe credential warns only", (), 0,
      ("signed-in render", "STUDY_PROBE_TOKEN", "1 warning"), False),
 ]

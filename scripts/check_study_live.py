@@ -115,8 +115,8 @@ class Probe:
         self.scheme, self.study_host, self.pages_host = scheme, study_host, pages_host
         self.denial_origin, self.denial_target, self.timeout = (
             denial_origin, denial_target, timeout)
-        self.probe_token, self.probe_chapter, self.probe_marker = (
-            probe_token, probe_chapter, probe_marker)
+        self.probe_token = probe_token
+        self.probe_sample = [(probe_chapter, probe_marker)] if probe_chapter else []
         # Browser-shaped headers: Cloudflare's edge fingerprints bare clients.
         self.headers = {
             "User-Agent": (
@@ -196,35 +196,75 @@ def chapter_path():
     return record[0] if record else None
 
 
-def render_marker(title):
-    """A plain-text phrase from a chapter title, to look for in the HTML.
+def probe_sample(limit=0):
+    """`(rendered path, title marker)` — deep chapters, at most one per stack.
 
-    Titles in this corpus mix prose with `—`, `:`, `/` and backticks, all of
-    which HTML may escape or the theme may split; a run of bare words survives
-    rendering unchanged, so it is the only honest thing to assert on.
+    One chapter proves the pipeline; one per top-level stack proves it for every
+    *render class* the corpus has (each stack has its own template, badge set and
+    depth). Sampling the first path alphabetically instead would miss a break in
+    any stack whose name sorts later — the difference between proving "the edge
+    serves a chapter" and "the edge serves this corpus".
     """
-    for run in re.split(r"[^A-Za-z0-9 ]+", title or ""):
-        words = run.split()
-        if len(words) >= 3:
-            return " ".join(words[:4])
-    words = [w for w in re.findall(r"[A-Za-z0-9]+", title or "") if len(w) >= 6]
-    return words[0] if words else ""
+    try:
+        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
+            records = json.load(handle).get("chapters") or []
+    except Exception:
+        return []
+    per_stack = {}
+    records = sorted(records, key=lambda r: r.get("p", "") if isinstance(r, dict) else "")
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        path, title = record.get("p", ""), record.get("t", "")
+        if "/" not in path:
+            continue
+        marker = render_marker(title)
+        if not marker:
+            continue
+        stack = path.split("/")[0]
+        if stack not in per_stack or path < per_stack[stack][0]:
+            per_stack[stack] = (path, marker)
+    sample = [per_stack[stack] for stack in sorted(per_stack)]
+    return sample[:limit] if limit else sample
 
 
-def signed_in_outcome(probe):
-    """(matched, expected) for the success path, shared by the probe and its tests."""
-    url = probe.study(f"/{probe.probe_chapter}")
-    response = probe.get(url, cookie=f"{PROBE_COOKIE}={probe.probe_token}")
+def render_marker(title):
+    """A 3+-word plain-prose run from a chapter title, or "" if there is none.
+
+    A marker has to *identify* the page, not merely relate to it. One word is
+    worthless — "Testing" or "WebSockets" appears in the navigation of every
+    page in its section — and two words are weak, because this corpus
+    cross-references chapter titles, so a fragment can appear in some other
+    chapter's prose and a wrong page would pass. Only a full run of plain words
+    (≥3 words, ≥12 characters) is evidence that this particular page was served.
+
+    Punctuated runs are skipped rather than approximated: titles here mix prose
+    with `—`, `:`, `/` and `&`, and matching one would mean reasoning about how
+    the renderer escapes it. A title with no plain-prose run is dropped from the
+    sample instead, so the assertion is never a guess.
+    """
+    candidates = [
+        " ".join(words[:6])
+        for words in (run.split() for run in re.split(r"[^A-Za-z0-9 ]+", title or ""))
+        if len(words) >= 3 and sum(len(word) for word in words) >= 12
+    ]
+    return max(candidates, key=len, default="")
+
+
+def signed_in_outcome(probe, chapter, marker):
+    """(response, matched) for one chapter, shared by the probe and its tests."""
+    response = probe.get(probe.study(f"/{chapter}"),
+                         cookie=f"{PROBE_COOKIE}={probe.probe_token}")
     matched = (response.status == 200
-               and probe.probe_marker in response.body
+               and marker in response.body
                and LOGIN_PATH not in response.body)
-    return url, response, matched
+    return response, matched
 
 
 @check("Signed-in",
-       "with the probe credential a real chapter answers 200 and contains that "
-       "chapter's own title — and without one the check warns, because the "
-       "success path is then verified by unit tests alone")
+       "with the probe credential one real chapter per stack answers 200 and "
+       "contains that chapter's own title — and without one the check warns, "
+       "because the success path is then verified by unit tests alone")
 def signed_in_render(probe):
     if not probe.probe_token:
         return [Result(WARN, "Signed-in", "signed-in render",
@@ -232,15 +272,29 @@ def signed_in_render(probe):
                        f"gate is probed. Set it in Cloudflare Pages → Settings → "
                        f"Environment variables and as a repo secret to have the edge "
                        f"prove it serves a chapter to a valid session")]
-    if not (probe.probe_chapter and probe.probe_marker):
+    if not probe.probe_sample:
         return [Result(WARN, "Signed-in", "signed-in render",
                        "no chapter title to assert on (api/index.json unreadable and "
                        "no --probe-chapter/--probe-marker given)")]
-    _, response, matched = signed_in_outcome(probe)
-    return [verdict("Signed-in", f"signed-in {probe.probe_chapter}", matched, response,
-                    f"expected 200 containing {probe.probe_marker!r} — a valid session "
-                    f"must reach its chapter, and the page must be that chapter rather "
-                    f"than a login page")]
+    out, bodies = [], {}
+    for chapter, marker in probe.probe_sample:
+        response, matched = signed_in_outcome(probe, chapter, marker)
+        bodies[chapter] = response.body
+        out.append(verdict("Signed-in", f"signed-in {chapter}", matched, response,
+                           f"expected 200 containing {marker!r} — a valid session must "
+                           f"reach its chapter, and the page must be that chapter rather "
+                           f"than a login page"))
+    # Per-chapter markers prove each page says the right thing; this proves the
+    # host is reading the path at all. An edge serving one cached response for
+    # every chapter would satisfy a marker check only by coincidence.
+    if len(bodies) > 1:
+        distinct = len(set(bodies.values())) == len(bodies)
+        out.append(Result(OK if distinct else FAIL, "Signed-in", "signed-in distinct pages",
+                          f"{len(bodies)} chapters returned {len(set(bodies.values()))} "
+                          f"distinct responses" if distinct else
+                          f"{len(bodies)} different chapters returned identical bodies — "
+                          f"the edge is not serving the requested path"))
+    return out
 
 
 def gated_paths():
@@ -376,9 +430,12 @@ def run_checks(argv=None):
                         help=f"session credential for the success path (default: "
                              f"${PROBE_TOKEN_ENV})")
     parser.add_argument("--probe-chapter", default="",
-                        help="chapter path to fetch (default: from api/index.json)")
+                        help="chapter path to fetch (default: one per stack, from "
+                             "api/index.json)")
     parser.add_argument("--probe-marker", default="",
                         help="text that chapter's page must contain (default: its title)")
+    parser.add_argument("--probe-sample", type=int, default=0,
+                        help="cap the sampled chapters (0 = one per stack)")
     args = parser.parse_args(argv)
 
     if args.print_contract:
@@ -388,8 +445,10 @@ def run_checks(argv=None):
     record = chapter_record() or (chapter_path() or "", "")
     probe = Probe(args.scheme, args.study_host, args.pages_host,
                   args.denial_origin, args.denial_target, args.timeout,
-                  args.probe_token, args.probe_chapter or record[0],
+                  args.probe_token, args.probe_chapter or "",
                   args.probe_marker or render_marker(record[1]))
+    if not probe.probe_sample:
+        probe.probe_sample = probe_sample(args.probe_sample)
     results = [result for function in CHECKS for result in function(probe)]
     failures = [r for r in results if r.kind == FAIL]
     warnings = [r for r in results if r.kind == WARN]

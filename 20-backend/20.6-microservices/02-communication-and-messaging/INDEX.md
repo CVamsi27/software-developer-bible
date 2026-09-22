@@ -1,6 +1,6 @@
 # Communication & Messaging - Microservices
 
-> **Study time:** ≈ 1 h 48 m of reading (6 files, ~18 min average).
+> **Study time:** ≈ 1 h 51 m of reading (6 files, ~18 min average).
 > **6 files.** How services talk: gRPC (+ streaming) for typed RPC over HTTP/2, Kafka and RabbitMQ for messaging, broker selection discipline, and event-driven architecture.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -14,9 +14,9 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | 7 min |
 | 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | 10 min |
-| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | 23 min |
-| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | 28 min |
-| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | 21 min |
+| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | 24 min |
+| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | 29 min |
+| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | 22 min |
 | 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | 19 min |
 
 ---

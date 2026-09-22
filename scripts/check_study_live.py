@@ -152,7 +152,7 @@ class Probe:
             target += f"?{parsed.query}"
         return self.get(self.study(target), cookie=cookie)
 
-    def get(self, url, cookie=None):
+    def get(self, url, cookie=None, limit=20000):
         headers = dict(self.headers)
         if cookie:
             headers["Cookie"] = cookie
@@ -161,11 +161,11 @@ class Probe:
             with self.opener.open(request, timeout=self.timeout) as response:
                 return Response(response.status, response.headers.get("Location") or "",
                                 response.headers.get("Set-Cookie") or "",
-                                body=read_prefix(response))
+                                body=read_prefix(response, limit))
         except urllib.error.HTTPError as error:
             head = error.headers or {}
             return Response(error.code, head.get("Location") or "",
-                            head.get("Set-Cookie") or "", body=read_prefix(error))
+                            head.get("Set-Cookie") or "", body=read_prefix(error, limit))
         except Exception as error:  # DNS, TLS, timeout, refused
             return Response(error=f"unreachable: {error.__class__.__name__}: {error}")
 
@@ -181,14 +181,15 @@ def verdict(label, name, matched, response, expected, kind=FAIL):
     return Result(kind, label, name, f"{expected} — got {response.describe}")
 
 
-def read_prefix(response):
+def read_prefix(response, limit):
     """The start of a response body, decoded, for content assertions.
 
-    A prefix, not the whole page: every marker asserted on sits well inside
-    this, and a gate redirect page is tiny.
+    Bounded on purpose: every marker asserted on sits well inside a page, and
+    the one body that must be read whole (the corpus dump, ~126 KB) asks for
+    the room explicitly.
     """
     try:
-        return response.read(20000).decode("utf-8", "replace")
+        return response.read(limit).decode("utf-8", "replace")
     except Exception:
         return ""
 
@@ -339,6 +340,45 @@ def signed_in_render(probe):
                           f"{len(bodies)} different chapters returned identical bodies — "
                           f"the edge is not serving the requested path"))
     return out
+
+
+def local_corpus_digest():
+    """The digest this checkout's dump carries — what a current deploy must serve."""
+    try:
+        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
+            return json.load(handle).get("corpus_digest") or ""
+    except Exception:
+        return ""
+
+
+@check("Freshness",
+       "the deployment serves this checkout's corpus — `/api/index.json` carries the "
+       "same digest, so an edge left behind HEAD cannot pass as current")
+def deployed_corpus_is_current(probe):
+    if not probe.probe_token:
+        return [Result(WARN, "Freshness", "deployed corpus",
+                       f"{PROBE_TOKEN_ENV} is not set, so the digest cannot be read "
+                       f"(/api/index.json is gated). Until it is, a deployment behind "
+                       f"HEAD is indistinguishable from a current one — the exact state "
+                       f"production sat in for fifteen hours on 2026-09-22")]
+    expected = local_corpus_digest()
+    if not expected:
+        return [Result(WARN, "Freshness", "deployed corpus",
+                       "api/index.json carries no corpus_digest — regenerate it with "
+                       "python3 scripts/gen_master_index.py")]
+    response = probe.get(probe.study("/api/index.json"),
+                         cookie=f"{PROBE_COOKIE}={probe.probe_token}", limit=1 << 21)
+    try:
+        served = json.loads(response.body).get("corpus_digest") or ""
+    except Exception:
+        served = ""
+    return [verdict("Freshness", "deployed corpus",
+                    response.status == 200 and served == expected, response,
+                    f"expected 200 carrying corpus_digest {expected[:12]}… (this "
+                    f"checkout); got {response.describe}"
+                    + (f" carrying {served[:12]}… — the edge is older than HEAD, so "
+                       f"re-run the Pages build before trusting anything else here"
+                       if served and served != expected else ""))]
 
 
 def gated_paths():

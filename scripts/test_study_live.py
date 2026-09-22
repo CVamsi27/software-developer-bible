@@ -61,7 +61,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
     """A study host (or the `.pages.dev` fallback) with injectable violations."""
 
     role, violations, study_origin, denial_origin = "study", frozenset(), "", ""
-    probe_token, probe_markers, all_markers_body = "", {}, ""
+    probe_token, probe_markers, all_markers_body, api_json = "", {}, "", ""
 
     def log_message(self, *args):  # keep the suite's output readable
         pass
@@ -84,6 +84,10 @@ class Stub(http.server.BaseHTTPRequestHandler):
             return (self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
                     if "no_canonical" in self.violations
                     else self.reply(308, f"{self.study_origin}{path}"))
+        if path == "/api/index.json":
+            # The corpus dump, gated like everything else: what the probe reads to
+            # prove the deployment is this checkout rather than an older one.
+            return self.reply(200, body=self.api_json)
         if path == DENIAL_PATH:  # the access-denied landing page
             return self.reply(404 if "denial_dead" in self.violations else 200, body="personal")
         if path in PUBLIC_STATIC:
@@ -123,12 +127,22 @@ class Stub(http.server.BaseHTTPRequestHandler):
         return self.reply(302, f"{live.LOGIN_PATH}?next={quote(landed)}")
 
 
+def stub_dump(violations):
+    """The local dump's bytes, or a stale-looking copy for the freshness case."""
+    with open(os.path.join(live.REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
+        body = handle.read()
+    if "stale_deploy" in violations:
+        return body.replace(live.local_corpus_digest(), "0" * 64)
+    return body
+
+
 def start(role, violations, study_origin="", probe_token="", probe_markers=None):
     markers = dict(probe_markers or {})
     handler = type("Handler", (Stub,), {
         "role": role, "violations": frozenset(violations), "study_origin": study_origin,
         "probe_token": probe_token, "probe_markers": markers,
         "all_markers_body": "".join(f"<h1>{marker}</h1>" for marker in markers.values()),
+        "api_json": stub_dump(violations),
     })
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -209,8 +223,13 @@ BEHAVIOURS = [
     # old three-path check never looked at it.
     ("a public path answering as gated exits 1", ("session_gated",), 1,
      ("public /auth/session", "lists as public"), True),
+    # The stale-deploy class: a site whose whole contract holds but whose corpus
+    # is an older commit. Nothing else here can see it.
+    ("a deployment older than HEAD exits 1", ("stale_deploy",), 1,
+     ("deployed corpus", "older than HEAD"), True),
+    # Both credential-dependent checks warn; neither may become a failure.
     ("an unconfigured probe credential warns only", (), 0,
-     ("signed-in render", "STUDY_PROBE_TOKEN", "1 warning"), False),
+     ("signed-in render", "STUDY_PROBE_TOKEN", "2 warning", "0 failed"), False),
 ]
 
 

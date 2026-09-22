@@ -202,7 +202,13 @@ own render class; a marker is a full plain-prose run from the chapter's title,
 never a single word, because "Testing" or "WebSockets" appears in the
 navigation of every page in its section and would make the assertion vacuous.
 It also checks that no two chapters return identical bodies, which catches an
-edge serving one cached response for every path.
+edge serving one cached response for every path, and that the deployed
+`api/index.json` carries the same `corpus_digest` as this checkout — the one
+check that separates "the site is up" from "the site is this commit". That
+distinction is not academic: on 2026-09-22 production served a bundle a commit
+behind HEAD for fifteen hours while every gate was green, because a stale
+deployment is still a *working* site. It needs the credential, since
+`/api/index.json` sits behind the gate.
 
 Without the credential the probe says so in a warning, and only the policy
 suite (`node --test`, 27 cases) plus the artifact assertions in

@@ -61,7 +61,9 @@ class Stub(http.server.BaseHTTPRequestHandler):
     """A study host (or the `.pages.dev` fallback) with injectable violations."""
 
     role, violations, study_origin, denial_origin = "study", frozenset(), "", ""
-    probe_token, probe_markers, all_markers_body, api_json = "", {}, "", ""
+    probe_token, probe_markers, all_markers_body = "", {}, ""
+    live_dump, stale_dump = "", ""
+    fresh_after, dump_reads = 0, 0
 
     def log_message(self, *args):  # keep the suite's output readable
         pass
@@ -87,7 +89,11 @@ class Stub(http.server.BaseHTTPRequestHandler):
         if path == "/api/index.json":
             # The corpus dump, gated like everything else: what the probe reads to
             # prove the deployment is this checkout rather than an older one.
-            return self.reply(200, body=self.api_json)
+            # `fresh_after` models a deployment still building: the first N reads
+            # answer with the previous commit's digest, then it catches up.
+            type(self).dump_reads += 1
+            body = self.live_dump if type(self).dump_reads > self.fresh_after else self.stale_dump
+            return self.reply(200, body=body)
         if path == DENIAL_PATH:  # the access-denied landing page
             return self.reply(404 if "denial_dead" in self.violations else 200, body="personal")
         if path in PUBLIC_STATIC:
@@ -131,7 +137,7 @@ def stub_dump(violations):
     """The local dump's bytes, or a stale-looking copy for the freshness case."""
     with open(os.path.join(live.REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
         body = handle.read()
-    if "stale_deploy" in violations:
+    if "stale_deploy" in violations or "catching_up" in violations:
         return body.replace(live.local_corpus_digest(), "0" * 64)
     return body
 
@@ -142,7 +148,13 @@ def start(role, violations, study_origin="", probe_token="", probe_markers=None)
         "role": role, "violations": frozenset(violations), "study_origin": study_origin,
         "probe_token": probe_token, "probe_markers": markers,
         "all_markers_body": "".join(f"<h1>{marker}</h1>" for marker in markers.values()),
-        "api_json": stub_dump(violations),
+        # `fresh_after` is how many reads answer with the previous commit before
+        # the deployment catches up; infinite means it never does.
+        "live_dump": stub_dump([]),
+        "stale_dump": stub_dump(["stale_deploy"]),
+        "fresh_after": (float("inf") if "stale_deploy" in violations
+                        else 1 if "catching_up" in violations else 0),
+        "dump_reads": 0,
     })
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -156,7 +168,7 @@ def closed_port():
         return sock.getsockname()[1]
 
 
-def run_cli(*violations, signed_in=False):
+def run_cli(*violations, signed_in=False, await_fresh=0, await_interval=20):
     """Run the real CLI against stubbed hosts. Returns (exit code, output).
 
     `signed_in` supplies the probe credential, whose absence is itself one of
@@ -181,6 +193,7 @@ def run_cli(*violations, signed_in=False):
             "--pages-host", f"127.0.0.1:{pages.server_address[1]}",
             "--denial-origin", study_origin, "--denial-target", denial,
             "--timeout", "10", "--probe-token", token,
+            "--await-fresh", str(await_fresh), "--await-interval", str(await_interval),
         ]
         done = subprocess.run(command, capture_output=True, text=True, timeout=120,
                               env={**os.environ, "STUDY_PROBE_TOKEN": token})
@@ -227,14 +240,17 @@ BEHAVIOURS = [
     # is an older commit. Nothing else here can see it.
     ("a deployment older than HEAD exits 1", ("stale_deploy",), 1,
      ("deployed corpus", "older than HEAD"), True),
+
     # Both credential-dependent checks warn; neither may become a failure.
     ("an unconfigured probe credential warns only", (), 0,
      ("signed-in render", "STUDY_PROBE_TOKEN", "2 warning", "0 failed"), False),
 ]
 
 
-def case_behaviour(name, violations, want_code, needles, signed_in):
-    code, output = run_cli(*violations, signed_in=signed_in)
+def case_behaviour(name, violations, want_code, needles, signed_in,
+                   await_fresh=0, await_interval=20):
+    code, output = run_cli(*violations, signed_in=signed_in,
+                           await_fresh=await_fresh, await_interval=await_interval)
     if code != want_code:
         return f"expected exit {want_code}, got {code}:\n{output}"
     gaps = [n for n in needles if n not in output]
@@ -256,6 +272,17 @@ def case_probes_declare_their_contract():
 
 CASES = [(name, functools.partial(case_behaviour, name, violations, code, needles, signed_in))
          for name, violations, code, needles, signed_in in BEHAVIOURS]
+# The reason a push-triggered probe is safe: while a deploy is still building,
+# the check waits for it rather than failing on the previous commit — or worse,
+# passing on it. The stub answers the first read with the old digest and the
+# second with this checkout's, which is exactly a deploy landing mid-run.
+CASES.append((
+    "a deployment still catching up is waited for",
+    functools.partial(case_behaviour, "a deployment still catching up is waited for",
+                      ("catching_up",), 0,
+                      ("deployed corpus", "waiting for the deployment", "0 failed"), True,
+                      await_fresh=2, await_interval=0.2),
+))
 CASES.append(("probes declare their contract", case_probes_declare_their_contract))
 
 

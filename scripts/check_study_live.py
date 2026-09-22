@@ -31,6 +31,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -113,11 +114,15 @@ class Probe:
 
     def __init__(self, scheme=SCHEME, study_host=STUDY_HOST, pages_host=PAGES_HOST,
                  denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25,
-                 probe_token="", probe_sample=()):
+                 probe_token="", probe_sample=(), await_fresh=0, await_interval=20):
         self.scheme, self.study_host, self.pages_host = scheme, study_host, pages_host
         self.denial_origin, self.denial_target, self.timeout = (
             denial_origin, denial_target, timeout)
         self.probe_token, self.probe_sample = probe_token, list(probe_sample)
+        # Seconds to wait for a deployment to land before judging its currency:
+        # Pages builds in parallel with CI, so a push-triggered run can arrive
+        # before the deploy it is measuring exists yet.
+        self.await_fresh, self.await_interval = await_fresh, await_interval
         # Browser-shaped headers: Cloudflare's edge fingerprints bare clients.
         self.headers = {
             "User-Agent": (
@@ -353,7 +358,8 @@ def local_corpus_digest():
 
 @check("Freshness",
        "the deployment serves this checkout's corpus — `/api/index.json` carries the "
-       "same digest, so an edge left behind HEAD cannot pass as current")
+       "same digest, so an edge left behind HEAD cannot pass as current. With "
+       "`--await-fresh` it waits for a deploy still in flight instead of failing on it")
 def deployed_corpus_is_current(probe):
     if not probe.probe_token:
         return [Result(WARN, "Freshness", "deployed corpus",
@@ -366,12 +372,20 @@ def deployed_corpus_is_current(probe):
         return [Result(WARN, "Freshness", "deployed corpus",
                        "api/index.json carries no corpus_digest — regenerate it with "
                        "python3 scripts/gen_master_index.py")]
-    response = probe.get(probe.study("/api/index.json"),
-                         cookie=f"{PROBE_COOKIE}={probe.probe_token}", limit=1 << 21)
-    try:
-        served = json.loads(response.body).get("corpus_digest") or ""
-    except Exception:
-        served = ""
+    url = probe.study("/api/index.json")
+    cookie = f"{PROBE_COOKIE}={probe.probe_token}"
+    deadline = time.monotonic() + probe.await_fresh
+    while True:
+        response = probe.get(url, cookie=cookie, limit=1 << 21)
+        try:
+            served = json.loads(response.body).get("corpus_digest") or ""
+        except Exception:
+            served = ""
+        if served == expected or time.monotonic() >= deadline:
+            break
+        print(f"  … waiting for the deployment to reach this corpus "
+              f"(served {served[:12] or 'nothing'}, want {expected[:12]})", flush=True)
+        time.sleep(min(probe.await_interval, max(0.0, deadline - time.monotonic())))
     return [verdict("Freshness", "deployed corpus",
                     response.status == 200 and served == expected, response,
                     f"expected 200 carrying corpus_digest {expected[:12]}… (this "
@@ -539,6 +553,12 @@ def run_checks(argv=None):
     parser.add_argument("--probe-token", default=os.environ.get(PROBE_TOKEN_ENV, ""),
                         help=f"session credential for the success path (default: "
                              f"${PROBE_TOKEN_ENV})")
+    parser.add_argument("--await-fresh", type=float, default=0,
+                        help="seconds to wait for the deployment to reach this "
+                             "checkout's corpus digest before judging it (0 = judge "
+                             "immediately)")
+    parser.add_argument("--await-interval", type=float, default=20,
+                        help="seconds between polls while waiting")
     parser.add_argument("--probe-sample", type=int, default=0,
                         help="cap the sampled chapters (0 = one per stack) — for a "
                              "quick manual check of a single render class")
@@ -550,7 +570,8 @@ def run_checks(argv=None):
 
     probe = Probe(args.scheme, args.study_host, args.pages_host,
                   args.denial_origin, args.denial_target, args.timeout,
-                  args.probe_token, probe_sample(args.probe_sample))
+                  args.probe_token, probe_sample(args.probe_sample),
+                  args.await_fresh, args.await_interval)
     results = [result for function in CHECKS for result in function(probe)]
     failures = [r for r in results if r.kind == FAIL]
     warnings = [r for r in results if r.kind == WARN]

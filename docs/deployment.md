@@ -176,10 +176,19 @@ python3 scripts/check_study_live.py --verbose   # exits 1 on a contract violatio
 
 `study-live.yml` runs the offline half (`test_study_live.py`, which drives the
 real CLI against stub hosts and pins every exit code) on any change to its own
-inputs, and the live probe weekly (Mondays) plus manual *Run workflow*. The live
-probe is deliberately not push-triggered: Pages builds from git in parallel with
-this repo's CI, so a push-time probe would race the deploy it measures and report
-the previous one. Dispatch it by hand once a deploy has settled.
+inputs, and the live probe on anything that changes what production should serve
+(the corpus, `_config.yml`, `api/**`, the edge) as well as weekly on Mondays and
+on manual *Run workflow*.
+
+The probe used to be scheduled-only, because Pages builds from git in parallel
+with this repo's CI and a push-time probe would measure the *previous* build.
+That safety cost a week of detection latency, so the probe waits instead: with
+`--await-fresh` it polls the deployed corpus digest until the deploy lands
+(bounded, then it judges). Waiting is what makes the push trigger safe — without
+it the probe would fail on a deployment that is merely in flight. Scheduled runs
+can start hours late (GitHub queues them; this repo's `job-board-watch` has
+fired as late as 11:19 for an 06:00 cron), so the push trigger is the fast path
+and Monday is the backstop.
 
 
 The probe list is not repeated here: each probe in

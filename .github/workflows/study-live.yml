@@ -96,6 +96,11 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # Needs the repository's Issues feature. It is disabled on this repo today,
+      # so the has_issues guard below turns both issue steps into no-ops and the
+      # run summary is the record of a violation. Enable Issues (Settings →
+      # General → Features) and they become real tracking issues; the guard is
+      # what keeps a disabled feature from turning a working workflow red.
       - name: Track a violated contract as an issue
         if: failure()
         uses: actions/github-script@v9

@@ -18,6 +18,12 @@ jobs:
           node-version: '22'
       - name: Study access policy tests
         run: node --test functions/_lib/study-access.test.mjs
+
+      # The adapter, not just the policy: _middleware.ts is the only file in the
+      # feature that no other suite touches, so a typo in its URL parse or
+      # cookie read used to be invisible until a request hit production.
+      - name: Pages middleware adapter tests
+        run: node --experimental-strip-types --test functions/_middleware.test.mjs
       - name: Reject client-side token persistence
         run: |
           if grep -RInE 'localStorage.*(access_token|study_access_token)|(access_token|study_access_token).*localStorage' auth functions; then

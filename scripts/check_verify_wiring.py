@@ -387,7 +387,13 @@ def check_edge_triggers(problems):
 def check_unwired(problems):
     """Rule 10: every check_*/test_* script is invoked by verify.sh or a
     workflow. The check_ prefix claims gate-hood; an unwired checker is
-    invisible to the suite (the tooling-level invisible-sub-stack)."""
+    invisible to the suite (the tooling-level invisible-sub-stack).
+
+    The same rule one directory over: the Pages Functions suites under
+    `functions/` are run by a workflow step, so a `*.test.mjs` that no workflow
+    invokes is a suite nobody runs — exactly the shape of the checker this rule
+    already catches.
+    """
     verify_text = read(VERIFY)
     wf_text = ''
     for path in sorted(glob.glob(os.path.join(WORKFLOW_DIR, '*.yml'))):
@@ -401,6 +407,14 @@ def check_unwired(problems):
                 f'scripts/{name} is a checker or test suite but no verify.sh gate '
                 f'and no workflow invokes it — an unwired checker is invisible to '
                 f'the suite; wire it as a gate or rename it'
+            )
+    pattern = os.path.join(ROOT, 'functions', '**', '*.test.mjs')
+    for path in sorted(glob.glob(pattern, recursive=True)):
+        rel = os.path.relpath(path, ROOT)
+        if os.path.basename(path) not in wf_text:
+            problems.append(
+                f'{rel} is a test suite but no workflow runs it — an unrun test '
+                f'file rots silently; add it to a workflow step'
             )
 
 

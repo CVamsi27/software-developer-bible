@@ -45,7 +45,10 @@ import check_study_live as live  # noqa: E402
 SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_study_live.py")
 PROBE_TOKEN = "stub-probe-credential"
 AUTHORIZE = "https://proj.supabase.co/auth/v1/authorize?provider=google"
-PUBLIC = ("/auth/login", "/auth/callback", "/favicon.svg")
+# Derived from the middleware, like the probe derives it: a fixture that invents
+# its own public surface could stay green while production's changed.
+PUBLIC_STATIC = live.static_public_pages(live.public_paths())
+SESSION_PATH = "/auth/session"
 DENIAL_PATH = "/personal"
 CLEARED_COOKIE = "study_access_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax"
 
@@ -83,8 +86,14 @@ class Stub(http.server.BaseHTTPRequestHandler):
                     else self.reply(308, f"{self.study_origin}{path}"))
         if path == DENIAL_PATH:  # the access-denied landing page
             return self.reply(404 if "denial_dead" in self.violations else 200, body="personal")
-        if path in PUBLIC:
+        if path in PUBLIC_STATIC:
             return self.reply(200, body="public")
+        if path == SESSION_PATH:
+            # The real route is POST-only, so a GET is a 405 — public, but not a
+            # page. Either way it must never answer like a protected path.
+            if "session_gated" in self.violations:
+                return self.reply(302, f"/auth/login.html?next={quote(path)}")
+            return self.reply(405, body="method not allowed")
         if path == "/auth/start":
             return (self.reply(503, body="sign-in is not configured")
                     if "signin_unconfigured" in self.violations
@@ -196,6 +205,10 @@ BEHAVIOURS = [
      ("signed-in ", "expected 200"), True),
     ("one response for every chapter exits 1", ("probe_same_body",), 1,
      ("distinct pages", "identical bodies"), True),
+    # The path the probe used to skip: it is public in the middleware, and the
+    # old three-path check never looked at it.
+    ("a public path answering as gated exits 1", ("session_gated",), 1,
+     ("public /auth/session", "lists as public"), True),
     ("an unconfigured probe credential warns only", (), 0,
      ("signed-in render", "STUDY_PROBE_TOKEN", "1 warning"), False),
 ]

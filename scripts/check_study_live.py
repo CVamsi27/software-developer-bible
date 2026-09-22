@@ -43,7 +43,6 @@ DENIAL_ORIGIN = "https://personal.buildora.work"
 DENIAL_TARGET = DENIAL_ORIGIN + "/?study=access-denied"
 
 LOGIN_PATH = "/auth/login.html"
-PUBLIC_PATHS = ("/auth/login", "/auth/callback", "/favicon.svg")
 FIXED_GATED_PATHS = ("/", "/INDEX.html")
 # A path that certainly does not exist: the gate must answer it exactly as it
 # answers a real chapter, or its redirect reveals what is on disk.
@@ -56,6 +55,8 @@ PROBE_TOKEN_ENV = "STUDY_PROBE_TOKEN"
 PROBE_COOKIE = "study_access_token"
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MIDDLEWARE_SOURCE = os.path.join(REPO_ROOT, "functions", "_lib", "study-access.mjs")
+PUBLIC_SET_RE = re.compile(r"PUBLIC_AUTH_PATHS = new Set\(\[(.*?)\]\)", re.S)
 OK, WARN, FAIL = "PASS", "WARN", "FAIL"
 Result = namedtuple("Result", "kind label name detail")
 CHECKS = []
@@ -133,6 +134,24 @@ class Probe:
     def pages(self, path):
         return f"{self.scheme}://{self.pages_host}{path}"
 
+    def follow_same_host(self, response, cookie=None):
+        """One same-host redirect hop, for rules about the page finally served.
+
+        Cloudflare Pages answers `/auth/login.html` with a 308 to `/auth/login`,
+        so a canonical-suffix redirect is the platform working, not a routing
+        failure. Returning the first hop's response instead would make this
+        probe demand 200 from a URL the host deliberately never serves.
+        """
+        if response.status not in (301, 302, 307, 308) or not response.location:
+            return response
+        parsed = urllib.parse.urlparse(response.location)
+        if parsed.netloc and parsed.netloc != self.study_host:
+            return response  # off-host: somebody else's service, not our page
+        target = parsed.path or "/"
+        if parsed.query:
+            target += f"?{parsed.query}"
+        return self.get(self.study(target), cookie=cookie)
+
     def get(self, url, cookie=None):
         headers = dict(self.headers)
         if cookie:
@@ -162,10 +181,14 @@ def verdict(label, name, matched, response, expected, kind=FAIL):
     return Result(kind, label, name, f"{expected} — got {response.describe}")
 
 
-def read_prefix(response, limit=20000):
-    """The start of a response body, decoded, for content assertions."""
+def read_prefix(response):
+    """The start of a response body, decoded, for content assertions.
+
+    A prefix, not the whole page: every marker asserted on sits well inside
+    this, and a gate redirect page is tiny.
+    """
     try:
-        return response.read(limit).decode("utf-8", "replace")
+        return response.read(20000).decode("utf-8", "replace")
     except Exception:
         return ""
 
@@ -222,6 +245,37 @@ def probe_sample(limit=0):
             per_stack[stack] = (path, marker)
     sample = [per_stack[stack] for stack in sorted(per_stack)]
     return sample[:limit] if limit else sample
+
+
+def public_paths():
+    """The public surface, derived from the middleware that enforces it.
+
+    A second hard-coded list here was the drift this repo gates against
+    everywhere else and did not gate here: the probe checked three of the eight
+    paths, so a path could lose its public status — or a new one could ship
+    unprobed — with every check green. Read from the gate itself, so the list
+    cannot be right in one place and wrong in the other.
+    """
+    try:
+        with open(MIDDLEWARE_SOURCE, encoding="utf-8") as handle:
+            block = PUBLIC_SET_RE.search(handle.read()).group(1)
+        return tuple(re.findall(r'"([^"]+)"', block))
+    except Exception:
+        return ()
+
+
+def static_public_pages(paths):
+    """Public paths served by a file, so they must answer 200 rather than redirect.
+
+    Pages resolves `/auth/login` to `auth/login.html`, so both spellings count.
+    """
+    served = []
+    for path in paths:
+        rel = path.lstrip("/")
+        if (os.path.isfile(os.path.join(REPO_ROOT, rel))
+                or os.path.isfile(os.path.join(REPO_ROOT, rel + ".html"))):
+            served.append(path)
+    return tuple(served)
 
 
 def render_marker(title):
@@ -351,13 +405,39 @@ def invalid_session_goes_to_denial(probe):
 
 
 @check("Public surface",
-       "only `/auth/login`, `/auth/callback` and `/favicon.svg` answer 200 unauthenticated")
+       "every path the middleware lists as public answers as public — the static "
+       "entry pages with 200, the rest with anything but the gated redirect")
 def public_auth_surface(probe):
+    paths = public_paths()
+    if not paths:
+        return [Result(WARN, "Public surface", "public surface source",
+                       "could not read PUBLIC_AUTH_PATHS from "
+                       "functions/_lib/study-access.mjs, so the public surface is "
+                       "unverified — check the middleware source is where this probe "
+                       "expects it")]
+    static = static_public_pages(paths)
     out = []
-    for path in PUBLIC_PATHS:
+    for path in paths:
         response = probe.get(probe.study(path))
-        out.append(verdict("Public surface", f"public {path}", response.status == 200,
-                           response, "expected 200; the sign-in flow is unreachable"))
+        # A public path answers like a protected one only if the gate hands back
+        # the login redirect that names *this* path as the deep link to return to.
+        gated = (response.status == 302 and response.location.startswith(LOGIN_PATH)
+                 and response.next_param() == path)
+        if gated:
+            out.append(Result(FAIL, "Public surface", f"public {path}",
+                              f"{response.describe} — the gate is treating a path the "
+                              f"middleware lists as public like a protected one, which "
+                              f"breaks the flow that path belongs to"))
+        elif path in static:
+            settled = probe.follow_same_host(response)
+            detail = (f"{response.describe} -> {settled.describe}"
+                      if settled is not response else response.describe)
+            out.append(Result(OK if settled.status == 200 else FAIL,
+                              "Public surface", f"public {path}",
+                              f"served ({detail})" if settled.status == 200 else
+                              f"a static entry page must reach 200 — got {detail}"))
+        else:
+            out.append(Result(OK, "Public surface", f"public {path}", response.describe))
     return out
 
 

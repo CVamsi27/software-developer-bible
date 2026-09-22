@@ -157,7 +157,14 @@ The pure policy gate runs in CI and locally:
 
 ```bash
 node --test functions/_lib/study-access.test.mjs
+node --experimental-strip-types --test functions/_middleware.test.mjs
 ```
+
+The first is the policy (who may read, and under what session); the second is
+the Pages adapter that turns that policy into a Response — URL parse, cookie
+read, `next()` hand-off. The adapter had no coverage anywhere until it did: it
+was exercised only by requests to production, where a broken `Location` header
+looks exactly like a working one from the dashboard.
 
 ### Machine-checked contract
 

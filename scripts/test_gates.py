@@ -229,6 +229,25 @@ def _edge_trigger_sandbox():
     return plant
 
 
+def _unwired_suite_sandbox():
+    """{path: content} whose only defect is a Functions suite no workflow runs.
+
+    The tooling is real and the tree is otherwise coherent, so the single
+    planted defect is a `functions/*.test.mjs` that no workflow step invokes.
+    """
+    plant = {
+        rel: open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        for rel in ("contributing.md", os.path.join("docs", "verification-gates.md"))
+    }
+    plant["functions/orphan.test.mjs"] = "import test from 'node:test';\n"
+    plant[".github/workflows/only.yml"] = (
+        "name: only\n\non:\n  push: {}\n\njobs:\n  j:\n    runs-on: ubuntu-latest\n"
+        "    steps:\n      - name: policy\n"
+        "        run: node --test functions/_lib/study-access.test.mjs\n"
+    )
+    return plant
+
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -635,6 +654,18 @@ CASES = [
         "gate": "check_verify_wiring.py",
         "args": [],
         "plant": _edge_trigger_sandbox(),
+        "clean_in_repo": True,
+    },
+    {
+        # The unwired-checker rule, one directory over: a Functions suite that
+        # no workflow invokes is a suite nobody runs. Fire side: an orphan test
+        # file beside a workflow that runs a different one. Clean side: the live
+        # repo, where both suites are wired — which is what regresses the moment
+        # someone adds a test file and forgets the workflow step.
+        "name": "gate 15 wiring fires on a Functions suite no workflow runs",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _unwired_suite_sandbox(),
         "clean_in_repo": True,
     },
 ]

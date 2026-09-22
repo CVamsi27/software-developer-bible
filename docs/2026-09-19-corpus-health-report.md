@@ -162,6 +162,23 @@ proof-after-fix is the only proof.
   tslint, `ReactDOM.render`, removed lifecycles, Vue 2, Bower,
   `CommonsChunkPlugin`, `yarn global`, `npm --save`, webpack v4 shapes — zero
   genuine hits. Two consecutive clean sweeps say the hunt is saturating.
+- **See Also reasons: the 72% bare-entry class measured, and deliberately
+  NOT mass-repaired (2026-09-22)** — 2727 See Also entries, 1958 bare, 438
+  files: a class whose shape (uniform, large, mechanical) matched the nav-label
+  and collapsed-sheet defects, so the derivation was drafted before any
+  bulk edit. The draft settled it: of 1888 entries a title-derivation could
+  reach (1098 INDEX targets, 786 chapter targets; 14 unresolved are `#`
+  placeholders and two stale contributing paths), 1874 collapse into four
+  templates — "the X topic index" ×1098, "derives X from first principles"
+  ×776 — where X is the target's own title. That is not a reason phrase; it
+  is the bare link with extra words, repeated hundreds of times, and it would
+  be the fourth uniform-and-wrong signature this corpus has had to repair —
+  minted this time by the repair pass itself. The honest statement: a reason
+  is a per-link judgment that can be *assisted* (derivation proposes, human
+  disposes), *hygiene-checked* (resolves, not a label duplicate, not
+  boilerplate-identical to its siblings) and *progressively* improved, but
+  1958 judgments do not compress into a template. No fix arc; the constraint
+  is written down in `gate-design-principles.md` under Common Mistakes.
 - **prose dilution, measured four ways and found absent (2026-09-22)**: the
   recurring reader complaint is that a corpus repeats itself and buries its
   main point, so the question was measured instead of assumed, over the 776

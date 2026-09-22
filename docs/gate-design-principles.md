@@ -138,6 +138,19 @@ it is what converts "we added checks" into "we know the checks work."
 
 ## Common Mistakes
 
+- **Mass-applying a derivation because the numbers look large.** The See
+  Also surface measured 1958 bare entries (72%) — a big, uniform-looking
+  class, and exactly the shape the nav-label and cheat-sheet defects had. But
+  drafting the derivation before applying it showed what readers would
+  actually get: 1874 of the 1888 derivable entries collapse into four
+  boilerplate templates ("the X topic index", "derives X from first
+  principles") repeated hundreds of times each — the bare link with extra
+  words, and a new uniform-and-wrong signature minted by the fix itself. A
+  reason phrase is a judgment about *why this link helps this reader here*;
+  it can be assisted, checked for hygiene (resolves, not a duplicate of the
+  label), and progressively improved — but not mass-generated. The measured
+  non-action and its numbers are recorded in the health-report ledger.
+
 | Mistake | Why it bites | Instead |
 | ---------------------------------------------- | -------------------------------------------------------------------- | --------------------------- |
 | Hand-editing an owned number | Reverted by the next restamp, or worse, gates and prose disagree | Run the owner's `--write` |

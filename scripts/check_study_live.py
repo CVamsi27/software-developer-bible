@@ -4,38 +4,30 @@
 `scripts/verify.sh` gates the corpus *offline*; `site-build.yml` gates the
 *local* render. Neither looks at what is actually served, so a deployment can
 sit stale, mis-canonicalized, or signed-out indefinitely while every gate
-stays green. That is not hypothetical: on 2026-09-22 the live host was serving
-the middleware from one commit *before* HEAD (the canonical-host redirect
-added in `8dc0604d` had never reached production) and `/auth/start` answered
-503 because the Supabase variables were never set in the Cloudflare dashboard.
-Both were invisible to 26 green gates.
+stays green. That is not hypothetical: on 2026-09-22 production served a
+Functions bundle from one commit before HEAD, so the `.pages.dev` fallback
+never canonicalized and `/auth/start` answered 503 — through 26 green gates
+and a green Pages build.
 
-This check encodes the contract in docs/deployment.md as executable probes:
+`CONTRACT` below is the single owner of what this probes and what the runbook
+promises — `docs/deployment.md` describes the probe set in prose and points
+here rather than repeating it, so there is nothing to drift. Each probe claims
+a contract label, and `scripts/test_study_live.py` fails if a probe exists that
+the contract does not document (or vice versa).
 
-  1. GATE            every protected path 302s to `/auth/login.html?next=…`
-                     with the requested path preserved — deep links included.
-  2. NO-LEAK         a protected chapter path never returns 200 + body, and
-                     the answer is identical for a path that exists and one
-                     that does not (gating must not reveal what is on disk).
-  3. PUBLIC-AUTH     `/auth/login`, `/auth/callback`, `/favicon.svg` are the
-                     only unauthenticated 200s.
-  4. CANONICAL       `software-developer-bible.pages.dev` 308s to
-                     `study.buildora.work` (docs/deployment.md §2.7) — the
-                     platform fallback must not be a second entry point.
-  5. SIGN-IN         `/auth/start` 302s to the Supabase authorize endpoint.
-                     A 503 means "not configured": reported as a WARNING with
-                     the exact dashboard fix, because it depends on a secret
-                     only the operator can set.
-  6. LOGOUT          `/auth/logout` clears the session cookie (Max-Age=0).
-  7. DENIAL-TARGET   the access-denied landing page is reachable.
+Every probe is a pure function returning Result tuples, so the whole run can be
+staged against a local stub server — which is how the failure path is proven
+rather than assumed.
 
 Exit 0 = every probe matched. Exit 1 = at least one contract violation.
-Warnings never change the exit code; they are environment state, not defects.
+Warnings never change the exit code: they are environment state (a secret
+nobody has set, a host someone else owns), not defects in this repo.
 
 Usage:
 
-    python3 scripts/check_study_live.py            # probe production
-    python3 scripts/check_study_live.py --verbose  # print every probe
+    python3 scripts/check_study_live.py                 # probe production
+    python3 scripts/check_study_live.py --verbose       # list passing probes too
+    python3 scripts/check_study_live.py --print-contract
 """
 
 import argparse
@@ -45,85 +37,160 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import namedtuple
 
+SCHEME = "https"
 STUDY_HOST = "study.buildora.work"
 PAGES_HOST = "software-developer-bible.pages.dev"
-DENIAL_TARGET = "https://personal.buildora.work/"
+DENIAL_ORIGIN = "https://personal.buildora.work"
+DENIAL_TARGET = DENIAL_ORIGIN + "/?study=access-denied"
 
 LOGIN_PATH = "/auth/login.html"
 PUBLIC_PATHS = ("/auth/login", "/auth/callback", "/favicon.svg")
 FIXED_GATED_PATHS = ("/", "/INDEX.html")
 # A path that certainly does not exist: the gate must answer it exactly as it
-# answers a real chapter, or the redirect reveals what is on disk.
+# answers a real chapter, or its redirect reveals what is on disk.
 MISSING_PATH = "definitely/not/a/real/page.html"
+BOGUS_TOKEN = "not-a-real-session-token"
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Browser-shaped headers: the Pages gate sits behind Cloudflare's edge, which
-# fingerprints bare clients. See scripts/link_baseline.py for the same policy.
-UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+OK, WARN, FAIL = "PASS", "WARN", "FAIL"
+Result = namedtuple("Result", "kind label name detail")
+
+# The documented contract. `label` is what a probe must claim; the expectation
+# is prose for a human, and both are printed and written into the runbook.
+CONTRACT = (
+    ("Gating",
+     "`/`, `/INDEX.html` and a real chapter path all 302 to `/auth/login.html` "
+     "with `next` preserved, so a deep link returns where it started"),
+    ("No leak",
+     "A protected chapter never answers 200, and a missing path answers "
+     "identically to a real one — the gate must not reveal what is on disk"),
+    ("Denial",
+     "A present-but-invalid session cookie is redirected to the access-denied "
+     "page, which is itself reachable; content is never served"),
+    ("Public surface",
+     "Only `/auth/login`, `/auth/callback` and `/favicon.svg` answer 200 "
+     "unauthenticated"),
+    ("Canonical",
+     "`software-developer-bible.pages.dev` 308s to `study.buildora.work` "
+     "(§2.7) — the platform fallback is not a second entry point"),
+    ("Sign-in",
+     "`/auth/start` 302s to the Supabase authorize endpoint; a 503 is a "
+     "**warning**, not a failure, because it needs a dashboard secret"),
+    ("Logout",
+     "`/auth/logout` 302s and clears the session cookie (`Max-Age=0`)"),
 )
+
+CHECKS = []
+
+
+def check(label):
+    """Register a probe and pin the contract label it answers to."""
+    def register(function):
+        function.label = label
+        CHECKS.append(function)
+        return function
+    return register
+
+
+# --------------------------------------------------------------------- HTTP
+
 HEADERS = {
-    "User-Agent": UA,
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
-TIMEOUT = 25
-
-OK, WARN, FAIL = "PASS", "WARN", "FAIL"
-RESULTS = []
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     """Return the 3xx itself — the redirect target *is* the contract here."""
 
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
+    def redirect_request(self, request, fp, code, msg, headers, newurl):
         return None
 
 
-OPENER = urllib.request.build_opener(NoRedirect)
+class Response:
+    __slots__ = ("status", "location", "set_cookie", "error")
+
+    def __init__(self, status=None, location="", set_cookie="", error=""):
+        self.status = status
+        self.location = location
+        self.set_cookie = set_cookie
+        self.error = error
+
+    @property
+    def ok(self):
+        return self.status is not None
+
+    @property
+    def describe(self):
+        if self.error:
+            return self.error
+        return f"{self.status} -> {self.location}" if self.location else str(self.status)
+
+    def next_param(self):
+        """The `next` a login redirect carries back to the requested path."""
+        query = urllib.parse.urlparse(self.location).query
+        return (urllib.parse.parse_qs(query).get("next") or [None])[0]
 
 
-def record(kind, name, detail):
-    RESULTS.append((kind, name, detail))
+class Probe:
+    """Host and transport configuration, so the same probes can drive a stub."""
+
+    def __init__(self, scheme=SCHEME, study_host=STUDY_HOST, pages_host=PAGES_HOST,
+                 denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25):
+        self.scheme = scheme
+        self.study_host = study_host
+        self.pages_host = pages_host
+        self.denial_origin = denial_origin
+        self.denial_target = denial_target
+        self.timeout = timeout
+        self.opener = urllib.request.build_opener(NoRedirect)
+
+    def study(self, path):
+        return f"{self.scheme}://{self.study_host}{path}"
+
+    def pages(self, path):
+        return f"{self.scheme}://{self.pages_host}{path}"
+
+    def get(self, url, cookie=None):
+        headers = dict(HEADERS)
+        if cookie:
+            headers["Cookie"] = cookie
+        request = urllib.request.Request(url, headers=headers)
+        try:
+            with self.opener.open(request, timeout=self.timeout) as response:
+                return Response(response.status, response.headers.get("Location") or "",
+                                response.headers.get("Set-Cookie") or "")
+        except urllib.error.HTTPError as error:
+            head = error.headers or {}
+            return Response(error.code, head.get("Location") or "",
+                            head.get("Set-Cookie") or "")
+        except Exception as error:  # DNS, TLS, timeout
+            return Response(error=f"unreachable: {error.__class__.__name__}: {error}")
 
 
-def probe(url):
-    """GET without following redirects. Returns (status, headers)."""
-    request = urllib.request.Request(url, headers=HEADERS)
-    try:
-        with OPENER.open(request, timeout=TIMEOUT) as response:
-            return response.status, response.headers
-    except urllib.error.HTTPError as error:
-        return error.code, error.headers
-    except Exception as error:  # DNS, TLS, timeout — reported as unreachable
-        record(FAIL, url, f"unreachable: {error.__class__.__name__}: {error}")
-        return None, None
-
-
-def location_of(headers):
-    return (headers.get("Location") or "") if headers is not None else ""
-
-
-def next_param(location):
-    """The `next` value a login redirect carries back to the requested path."""
-    query = urllib.parse.urlparse(location).query
-    values = urllib.parse.parse_qs(query).get("next") or []
-    return values[0] if values else None
+def verdict(label, name, matched, response, expectation, kind=FAIL):
+    if not response.ok:
+        return Result(FAIL, label, name, response.error)
+    if matched:
+        return Result(OK, label, name, response.describe)
+    return Result(kind, label, name, f"{expectation} — got {response.describe}")
 
 
 def chapter_path():
-    """A real deep chapter path, read from the committed API dump.
+    """A real deep chapter path, from the committed API dump.
 
     Read rather than hard-coded so the probe keeps exercising a file that
-    actually exists after a restructure. Returns None if the dump is
-    unreadable, in which case the gated-path set falls back to the fixed two.
+    exists after a restructure; None if the dump is unreadable.
     """
-    api = os.path.join(REPO_ROOT, "api", "index.json")
     try:
-        with open(api, encoding="utf-8") as handle:
+        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
             records = json.load(handle).get("chapters") or []
         deep = [r["p"] for r in records if isinstance(r, dict) and "/" in r.get("p", "")]
         return sorted(deep)[0] if deep else None
@@ -133,236 +200,170 @@ def chapter_path():
 
 def gated_paths():
     """Protected paths the gate must intercept: the root, INDEX, a chapter."""
-    paths = list(FIXED_GATED_PATHS)
+    paths = [f"/{p.lstrip('/')}" for p in FIXED_GATED_PATHS]
     chapter = chapter_path()
-    if chapter and chapter not in paths:
-        paths.append(chapter)
+    if chapter and f"/{chapter}" not in paths:
+        paths.append(f"/{chapter}")
     return tuple(paths)
 
 
-# ---------------------------------------------------------------- 1. gating
+# ------------------------------------------------------------------- probes
 
-
-def check_gate_preserves_deep_link():
+@check("Gating")
+def gate_preserves_deep_link(probe):
+    out = []
     for path in gated_paths():
-        url = f"https://{STUDY_HOST}/{path.lstrip('/')}"
-        status, headers = probe(url)
-        if status is None:
-            continue
-        location = location_of(headers)
-        if status != 302:
-            record(FAIL, f"gate {path}", f"expected 302 to login, got {status}")
-            continue
-        if not location.startswith(LOGIN_PATH):
-            record(FAIL, f"gate {path}", f"302 landed on {location or '(no Location)'}")
-            continue
-        wanted = "/" + path.lstrip("/")
-        if next_param(location) != wanted:
-            record(
-                FAIL,
-                f"gate {path}",
-                f"`next` is {next_param(location)!r}, not {wanted!r} — a deep link "
-                f"would not return to where it started",
-            )
-            continue
-        record(OK, f"gate {path}", f"302 -> {location}")
+        response = probe.get(probe.study(path))
+        matched = (response.status == 302
+                   and response.location.startswith(LOGIN_PATH)
+                   and response.next_param() == path)
+        out.append(verdict("Gating", f"gate {path}", matched, response,
+                           f"expected 302 -> {LOGIN_PATH}?next={path}"))
+    return out
 
 
-# ------------------------------------------------------------- 2. no leaking
-
-
-def check_no_unauthenticated_content():
-    """A protected chapter must not be served, and existence must not leak."""
+@check("No leak")
+def protected_paths_never_serve_content(probe):
     chapter = chapter_path()
     if not chapter:
-        record(WARN, "no-leak", "could not read a chapter path from api/index.json")
-        return
-
-    probed = {chapter: None, MISSING_PATH: None}
-    for path in probed:
-        status, headers = probe(f"https://{STUDY_HOST}/{path}")
-        probed[path] = status
-        if status is None:
-            continue
-        if status == 200:
-            record(
-                FAIL,
-                f"no-leak {path}",
-                "served unauthenticated with 200 — static asset reachable "
-                "without the access gate",
-            )
-        elif status in (302, 308):
-            record(OK, f"no-leak {path}", f"{status} -> {location_of(headers)}")
-        else:
-            record(FAIL, f"no-leak {path}", f"unexpected status {status}")
-
-    real, fake = probed[chapter], probed[MISSING_PATH]
-    if real is not None and fake is not None and real != fake:
-        record(
-            FAIL,
-            "no-leak existence",
-            f"a real chapter answers {real} while a missing path answers {fake} "
-            f"— the gate reveals what exists on disk",
-        )
+        return [Result(WARN, "No leak", "chapter discovery",
+                       "could not read a chapter path from api/index.json")]
+    responses = {p: probe.get(probe.study(f"/{p}")) for p in (chapter, MISSING_PATH)}
+    out = [verdict("No leak", f"no-leak {path}", r.ok and r.status in (302, 308), r,
+                   "expected a redirect, never chapter content")
+           for path, r in responses.items()]
+    real, missing = responses[chapter], responses[MISSING_PATH]
+    if not (real.ok and missing.ok):
+        return out
+    if real.status == missing.status:
+        out.append(Result(OK, "No leak", "no-leak existence",
+                          f"a real chapter and a missing path both answer {real.status}"))
+    else:
+        out.append(Result(FAIL, "No leak", "no-leak existence",
+                          f"a real chapter answers {real.status} while a missing path "
+                          f"answers {missing.status} — the gate reveals what exists on disk"))
+    return out
 
 
-# ---------------------------------------------------------- 3. public surface
+@check("Denial")
+def invalid_session_goes_to_denial(probe):
+    response = probe.get(probe.study("/"),
+                         cookie=f"study_access_token={BOGUS_TOKEN}")
+    matched = response.status == 302 and response.location.startswith(probe.denial_origin)
+    out = [verdict("Denial", "denial branch", matched, response,
+                   f"a present-but-invalid session cookie must redirect to "
+                   f"{probe.denial_origin}, never serve content or bounce to login")]
+    target = probe.get(probe.denial_target)
+    out.append(verdict("Denial", "denial target reachable",
+                       target.ok and 200 <= (target.status or 0) < 400, target,
+                       f"{probe.denial_target} does not answer — a non-owner who "
+                       f"signs in with a Google account lands on a dead page",
+                       kind=WARN))
+    return out
 
 
-def check_public_auth_surface():
+@check("Public surface")
+def public_auth_surface(probe):
+    out = []
     for path in PUBLIC_PATHS:
-        status, headers = probe(f"https://{STUDY_HOST}{path}")
-        if status is None:
-            continue
-        if status == 200:
-            record(OK, f"public {path}", "200")
-        else:
-            record(
-                FAIL,
-                f"public {path}",
-                f"expected 200, got {status} -> {location_of(headers)} "
-                f"(the sign-in flow is unreachable)",
-            )
+        response = probe.get(probe.study(path))
+        out.append(verdict("Public surface", f"public {path}", response.status == 200,
+                           response, "expected 200; the sign-in flow is unreachable"))
+    return out
 
 
-# -------------------------------------------------------------- 4. canonical
+@check("Canonical")
+def canonical_host(probe):
+    out = []
+    for path in FIXED_GATED_PATHS:
+        expected = probe.study(path)
+        response = probe.get(probe.pages(path))
+        matched = response.status in (301, 308) and response.location == expected
+        out.append(verdict("Canonical", f"canonical {path}", matched, response,
+                           f"expected 308 -> {expected}; the platform fallback serves "
+                           f"the gated site instead of canonicalizing — either the "
+                           f"Pages deployment is older than the middleware host check "
+                           f"(re-run the build) or the account-level redirect is "
+                           f"missing (§2.7)"))
+    return out
 
 
-def check_canonical_host():
-    for path in ("/", "/INDEX.html"):
-        status, headers = probe(f"https://{PAGES_HOST}{path}")
-        if status is None:
-            continue
-        location = location_of(headers)
-        expected = f"https://{STUDY_HOST}{'' if path == '/' else path}"
-        if status == 308 and location == expected:
-            record(OK, f"canonical {path}", f"308 -> {location}")
-        elif status in (301, 308) and location.startswith(f"https://{STUDY_HOST}"):
-            record(OK, f"canonical {path}", f"{status} -> {location}")
-        else:
-            record(
-                FAIL,
-                f"canonical {path}",
-                f"expected 308 -> {expected}, got {status} -> {location or '(none)'} — "
-                f"the platform fallback serves the gated site instead of "
-                f"canonicalizing. Either the Pages production deployment predates "
-                f"the middleware host check (re-run the Pages build) or the "
-                f"account-level redirect is missing (docs/deployment.md §2.7).",
-            )
+@check("Sign-in")
+def signin_readiness(probe):
+    response = probe.get(probe.study("/auth/start"))
+    if response.status == 503:
+        return [Result(WARN, "Sign-in", "sign-in /auth/start",
+                       "503 — sign-in is NOT configured. Set SUPABASE_URL and either "
+                       "SUPABASE_ANON_KEY or SUPABASE_JWKS_URL in Cloudflare Pages → "
+                       "Settings → Environment variables (production), then re-deploy "
+                       "(§2.3)")]
+    matched = (response.status == 302
+               and "/auth/v1/authorize" in response.location
+               and "provider=google" in response.location)
+    return [verdict("Sign-in", "sign-in /auth/start", matched, response,
+                    "expected 302 to the Supabase authorize endpoint")]
 
 
-# --------------------------------------------------------------- 5. sign-in
+@check("Logout")
+def logout_clears_session(probe):
+    response = probe.get(probe.study("/auth/logout"))
+    cleared = "study_access_token=" in response.set_cookie and "Max-Age=0" in response.set_cookie
+    return [verdict("Logout", "logout /auth/logout",
+                    response.status == 302 and cleared, response,
+                    "expected 302 with the session cookie cleared "
+                    f"(Set-Cookie: {response.set_cookie or 'none'})")]
 
 
-def check_signin_readiness():
-    status, headers = probe(f"https://{STUDY_HOST}/auth/start")
-    if status is None:
-        return
-    location = location_of(headers)
-    if status == 302 and "/auth/v1/authorize" in location and "provider=google" in location:
-        record(OK, "sign-in /auth/start", f"302 -> {urllib.parse.urlparse(location).netloc}")
-    elif status == 503:
-        record(
-            WARN,
-            "sign-in /auth/start",
-            "503 — sign-in is NOT configured. Set SUPABASE_URL and either "
-            "SUPABASE_ANON_KEY or SUPABASE_JWKS_URL in Cloudflare Pages → "
-            "Settings → Environment variables (production), then re-deploy "
-            "(docs/deployment.md §2.3)",
-        )
-    else:
-        record(
-            FAIL,
-            "sign-in /auth/start",
-            f"expected 302 to the Supabase authorize endpoint, got {status} -> "
-            f"{location or '(none)'}",
-        )
-
-
-# ---------------------------------------------------------------- 6. logout
-
-
-def check_logout_clears_session():
-    status, headers = probe(f"https://{STUDY_HOST}/auth/logout")
-    if status is None:
-        return
-    cookie = (headers.get("Set-Cookie") or "") if headers is not None else ""
-    if status != 302:
-        record(FAIL, "logout /auth/logout", f"expected 302, got {status}")
-    elif "study_access_token=" not in cookie or "Max-Age=0" not in cookie:
-        record(
-            FAIL,
-            "logout /auth/logout",
-            f"302 but the session cookie is not cleared (Set-Cookie: {cookie or '(none)'})",
-        )
-    else:
-        record(OK, "logout /auth/logout", "302 + session cookie cleared")
-
-
-# ---------------------------------------------------------- 7. denial target
-
-
-def check_denial_target():
-    status, headers = probe(DENIAL_TARGET)
-    if status is None:
-        return
-    if 200 <= status < 400:
-        record(OK, "denial target", f"{DENIAL_TARGET} -> {status}")
-    else:
-        record(
-            WARN,
-            "denial target",
-            f"{DENIAL_TARGET} -> {status}; a non-owner who signs in with a "
-            f"Google account lands on a dead page",
-        )
-
-
-def main() -> int:
+def run_checks(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--verbose", action="store_true",
-                        help="print passing probes too (they are summarised otherwise)")
-    args = parser.parse_args()
+                        help="list passing probes too")
+    parser.add_argument("--print-contract", action="store_true",
+                        help="print the documented contract and exit")
+    parser.add_argument("--scheme", default=SCHEME,
+                        help="http scheme to probe (tests use http + a stub)")
+    parser.add_argument("--study-host", default=STUDY_HOST)
+    parser.add_argument("--pages-host", default=PAGES_HOST)
+    parser.add_argument("--denial-origin", default=DENIAL_ORIGIN)
+    parser.add_argument("--denial-target", default=DENIAL_TARGET)
+    parser.add_argument("--timeout", type=float, default=25)
+    args = parser.parse_args(argv)
 
-    for check in (
-        check_gate_preserves_deep_link,
-        check_no_unauthenticated_content,
-        check_public_auth_surface,
-        check_canonical_host,
-        check_signin_readiness,
-        check_logout_clears_session,
-        check_denial_target,
-    ):
-        check()
+    if args.print_contract:
+        print("\n".join(f"  {label}: {expectation}" for label, expectation in CONTRACT))
+        return 0
 
-    if not RESULTS:
-        print("Study live check: no probe produced a result — is the host reachable?")
-        return 1
+    probe = Probe(args.scheme, args.study_host, args.pages_host,
+                  args.denial_origin, args.denial_target, args.timeout)
+    results = [result for function in CHECKS for result in function(probe)]
 
-    failures = [r for r in RESULTS if r[0] == FAIL]
-    warnings = [r for r in RESULTS if r[0] == WARN]
-    passes = [r for r in RESULTS if r[0] == OK]
+    failures = [r for r in results if r.kind == FAIL]
+    warnings = [r for r in results if r.kind == WARN]
+    passes = [r for r in results if r.kind == OK]
 
-    print(f"Study live check — https://{STUDY_HOST}\n")
-    for kind, name, detail in RESULTS:
-        if kind == OK and not args.verbose:
+    print(f"Study live check — {probe.scheme}://{probe.study_host}\n")
+    for result in results:
+        if result.kind == OK and not args.verbose:
             continue
-        print(f"  {kind}  {name}: {detail}")
+        print(f"  {result.kind}  {result.name}: {result.detail}")
     if passes and not args.verbose:
         print(f"\n  ({len(passes)} probe(s) passed; --verbose lists them)")
 
-    print(
-        f"\n{len(passes)} passed · {len(warnings)} warning(s) · {len(failures)} failed"
-    )
+    print(f"\n{len(passes)} passed · {len(warnings)} warning(s) · {len(failures)} failed")
     if warnings:
         print("\nWarnings are environment state, not defects — they need dashboard "
               "action, so they do not fail the check.")
     if failures:
         print("\nThe deployment does not match its documented contract "
-              "(docs/deployment.md §2/§3). Fix forward and re-deploy, or "
-              "roll back from the Pages dashboard.")
+              "(docs/deployment.md §2/§3). Fix forward and re-deploy, or roll "
+              "back from the Pages dashboard.")
         return 1
-    print("\nEvery probed contract matches the live deployment.")
+    print("\nEvery probed contract matches.")
     return 0
+
+
+def main(argv=None):
+    return run_checks(argv)
 
 
 if __name__ == "__main__":

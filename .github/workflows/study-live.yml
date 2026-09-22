@@ -2,27 +2,27 @@
 #
 # Every other gate looks at the corpus or the local render; none looks at what
 # Cloudflare actually serves. That blind spot is not theoretical: on
-# 2026-09-22 the production deployment was a commit behind HEAD (the
-# canonical-host redirect never reached it) and `/auth/start` returned 503
-# because the Supabase variables were never set — through 26 green gates and a
-# green Pages build.
+# 2026-09-22 production was a commit behind HEAD (the canonical-host redirect
+# never reached it) and `/auth/start` answered 503, through 26 green gates and
+# a green Pages build.
 #
 # scripts/check_study_live.py probe-verifies the contract in
-# docs/deployment.md: gating on every protected path (with deep links
-# preserved), no unauthenticated content, a minimal public auth surface,
-# canonicalization of the `.pages.dev` fallback, a working sign-in redirect,
-# and a logout that clears the session. Warnings (sign-in not configured, a
-# dead denial target) are dashboard state and never fail the run; only a
-# contract violation does.
+# docs/deployment.md: gating on every protected path with deep links preserved,
+# no unauthenticated content, a minimal public auth surface, canonicalization
+# of the `.pages.dev` fallback, a denial redirect for an invalid session, a
+# working sign-in redirect, and a logout that clears the session. Warnings
+# (sign-in not configured, a dead denial host) are dashboard state and never
+# fail the run; only a contract violation does.
 #
-# Scheduled rather than push-triggered on purpose: Cloudflare Pages builds
-# from git in parallel with this repo's CI, so a push-time probe would race
-# the deploy it is measuring and report the previous deployment. Dispatch it
-# manually after a deploy settles, or let the weekly run catch drift.
+# Scheduled rather than push-triggered on purpose: Cloudflare Pages builds from
+# git in parallel with this repo's CI, so a push-time probe would race the
+# deploy it measures and report the previous deployment. Dispatch it manually
+# after a deploy settles, or let the weekly run catch drift.
 #
-# The offline step runs first: scripts/test_study_live.py pins what the probe
-# calls a pass, a warning and a failure, so a broken classifier is caught
-# before it renders a verdict about production.
+# The offline step runs first. scripts/test_study_live.py drives the real CLI
+# against stub hosts and asserts the exit code for each failure shape, so a
+# classifier that can only ever report success — or one that goes red on
+# environment state — is caught before it renders a verdict about production.
 name: study-live
 
 on:
@@ -44,27 +44,21 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pin the probe's classification (offline)
+      - name: Pin the probe contract (offline, stub hosts)
         run: python3 scripts/test_study_live.py
 
       - name: Probe the live study host
-        id: probe
         run: |
-          set +e
+          set -o pipefail
           python3 scripts/check_study_live.py --verbose | tee live-check.txt
-          code=${PIPESTATUS[0]}
-          echo "exitcode=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Attach the probe log to the run summary
+        if: always()
+        run: |
           {
             echo "## Live study-host contract"
             echo
             echo '```'
-            cat live-check.txt
+            cat live-check.txt 2>/dev/null || true
             echo '```'
-            echo
-            echo "Remediation: docs/deployment.md §2 (dashboard setup) and §3 " \
-                 "(verification). Sign-in warnings mean the Supabase variables " \
-                 "are unset; a canonical failure means the Pages deployment " \
-                 "predates the middleware host check or the account-level " \
-                 "redirect is missing."
           } >> "$GITHUB_STEP_SUMMARY"
-          exit "$code"

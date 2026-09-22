@@ -163,22 +163,25 @@ builds from git in parallel with this repo's CI: a push-time probe would race
 the deploy it measures and report the previous one. Dispatch it by hand after
 a deploy settles.
 
-The probe encodes the contract in this document, so a deployment that drifts
-from it fails loudly instead of silently:
+The probes are not listed here on purpose: `CONTRACT` in
+`scripts/check_study_live.py` is their single owner, `--print-contract` prints
+it, and a probe that the contract does not document fails the offline test. A
+table copied into this runbook would only be a second thing to drift.
 
-| Probe | Expectation |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Gating | `/`, `/INDEX.html` and a real chapter path all 302 to `/auth/login.html` with `next` preserved — a deep link returns where it started |
-| No leak | A protected chapter never answers 200, and a missing path answers identically to a real one — gating must not reveal what is on disk |
-| Public surface | Only `/auth/login`, `/auth/callback` and `/favicon.svg` are 200 unauthenticated |
-| Canonical | `software-developer-bible.pages.dev` 308s to `study.buildora.work` (§2.7) |
-| Sign-in | `/auth/start` 302s to the Supabase authorize endpoint — a 503 is a **warning**, not a failure, because it needs a dashboard secret |
-| Logout | `/auth/logout` 302s and clears the session cookie (`Max-Age=0`) |
-| Denial target | `personal.buildora.work` is reachable for a non-owner sign-in |
+What it asserts, in one sentence each: every protected path redirects to login
+with the deep link preserved and the platform fallback canonicalizing; a
+chapter is never served unauthenticated, and a missing path answers exactly like
+a real one; an invalid session goes to the access-denied page; only the auth
+surface is public; sign-in reaches the Supabase authorize endpoint; logout
+clears the session cookie.
 
 Warnings never change the exit code: they describe environment state (unset
 Supabase variables, a dead denial host) that only an operator can change.
 Failures mean the live host contradicts this runbook.
+
+**The signed-in path is the one thing no probe can reach** — it needs the
+owner's Google account, so the probes above prove the site is *blocked*, not
+that it *renders*. Verify by hand after any auth change:
 
 For the parts a probe cannot cover, use a private window and verify that:
 

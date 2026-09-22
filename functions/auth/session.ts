@@ -1,14 +1,5 @@
 import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, safeNextPath } from "../_lib/study-access.mjs";
-
-type Env = {
-  SUPABASE_URL?: string;
-  SUPABASE_ANON_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_URL?: string;
-  SUPABASE_PUBLISHABLE_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
-  SUPABASE_JWKS_URL?: string;
-};
+import type { StudyEnv } from "../_lib/env.ts";
 
 function json(body: unknown, init?: ResponseInit) {
   return new Response(JSON.stringify(body), {
@@ -17,7 +8,7 @@ function json(body: unknown, init?: ResponseInit) {
   });
 }
 
-export const onRequestPost = async ({ request, env }: { request: Request; env: Env }) => {
+export const onRequestPost = async ({ request, env }: { request: Request; env: StudyEnv }) => {
   let payload: { access_token?: unknown };
   try {
     payload = await request.json() as { access_token?: unknown };

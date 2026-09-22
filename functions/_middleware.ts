@@ -6,17 +6,7 @@ import {
   resolveSessionFromToken,
   respondTo,
 } from "./_lib/study-access.mjs";
-
-type StudyEnv = {
-  SUPABASE_URL?: string;
-  SUPABASE_ANON_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_URL?: string;
-  SUPABASE_PUBLISHABLE_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
-  NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
-  SUPABASE_JWKS_URL?: string;
-  STUDY_PROBE_TOKEN?: string;
-};
+import type { StudyEnv } from "./_lib/env.ts";
 
 type PagesContext = {
   request: Request;

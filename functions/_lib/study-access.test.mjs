@@ -8,6 +8,7 @@ import {
   isPagesDevHost,
   isPublicAuthPath,
   normalizeEmail,
+  probeTokenSession,
   readStudyToken,
   resolveSessionFromToken,
   resolveSupabaseConfig,
@@ -176,6 +177,48 @@ test("a rejected token and a thrown verification are both presented sessions", a
 });
 
 // ---------------------------------------------------------------------------
+// The probe credential: the one thing that lets the *success* path be verified
+// against the real edge instead of only here. It must be inert when unset.
+// ---------------------------------------------------------------------------
+
+const PROBE = "a-long-random-probe-secret-value";
+
+test("an unset probe credential grants nothing", () => {
+  for (const env of [{}, { STUDY_PROBE_TOKEN: "" }, null]) {
+    assert.equal(probeTokenSession(PROBE, env), null);
+  }
+});
+
+test("the probe credential admits only an exact match", () => {
+  assert.deepEqual(probeTokenSession(PROBE, { STUDY_PROBE_TOKEN: PROBE }), {
+    email: "cvamsik99@gmail.com",
+  });
+  for (const wrong of [
+    "",
+    "a-long-random-probe-secret-valu",
+    "a-long-random-probe-secret-value-",
+    "A-LONG-RANDOM-PROBE-SECRET-VALUE",
+    "a-long-random-probe-secret-valueX",
+  ]) {
+    assert.equal(probeTokenSession(wrong, { STUDY_PROBE_TOKEN: PROBE }), null, wrong);
+  }
+});
+
+test("a cookie that is not the probe credential still goes to Supabase", async () => {
+  const calls = [];
+  const session = await resolveSessionFromToken({
+    token: "an-ordinary-session-cookie",
+    verifyToken: async (token) => {
+      calls.push(token);
+      return probeTokenSession(token, { STUDY_PROBE_TOKEN: PROBE })
+        ?? { email: "cvamsik99@gmail.com" };
+    },
+  });
+  assert.deepEqual(calls, ["an-ordinary-session-cookie"]);
+  assert.deepEqual(session, { email: "cvamsik99@gmail.com", hasToken: true });
+});
+
+// ---------------------------------------------------------------------------
 // The gate decision. These are the branches a live probe cannot reach: the one
 // that serves content needs the owner's Google account, so it is proven here or
 // nowhere.
@@ -293,6 +336,19 @@ test("serves the asset for allow and public, and redirects otherwise", async () 
     assert.equal(response.headers.get("Cache-Control"), "no-store", action);
     assert.equal(await response.text(), "", action);
   }
+});
+
+test("the probe credential serves content to the live probe's session", async () => {
+  const session = await resolveSessionFromToken({
+    token: PROBE,
+    verifyToken: (token) => probeTokenSession(token, { STUDY_PROBE_TOKEN: PROBE }),
+  });
+  const decision = await decideAccess({
+    ...STUDY,
+    pathname: "/00-strategy/00.01-communication.html",
+    resolveSession: async () => session,
+  });
+  assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
 });
 
 test("a thrown verification reaches the denial page, not the login page", async () => {

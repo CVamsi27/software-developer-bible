@@ -1,6 +1,7 @@
 import {
   decideAccess,
   fetchSupabaseUser,
+  probeTokenSession,
   readStudyToken,
   resolveSessionFromToken,
   respondTo,
@@ -14,6 +15,7 @@ type StudyEnv = {
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
   NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
   SUPABASE_JWKS_URL?: string;
+  STUDY_PROBE_TOKEN?: string;
 };
 
 type PagesContext = {
@@ -40,7 +42,10 @@ export const onRequest = async ({ request, env, next }: PagesContext) => {
     resolveSession: () =>
       resolveSessionFromToken({
         token: readStudyToken(request.headers.get("Cookie")),
-        verifyToken: (token) => fetchSupabaseUser(token, env),
+        // The probe credential is checked first and only exists when the
+        // operator sets it; otherwise this is the ordinary Supabase path.
+        verifyToken: (token) =>
+          probeTokenSession(token, env) ?? fetchSupabaseUser(token, env),
       }),
   });
 

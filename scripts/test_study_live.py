@@ -43,6 +43,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import check_study_live as live  # noqa: E402
 
 SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_study_live.py")
+PROBE_TOKEN = "stub-probe-credential"
 AUTHORIZE = "https://proj.supabase.co/auth/v1/authorize?provider=google"
 PUBLIC = ("/auth/login", "/auth/callback", "/favicon.svg")
 DENIAL_PATH = "/personal"
@@ -57,6 +58,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
     """A study host (or the `.pages.dev` fallback) with injectable violations."""
 
     role, violations, study_origin, denial_origin = "study", frozenset(), "", ""
+    probe_token, probe_marker = "", ""
 
     def log_message(self, *args):  # keep the suite's output readable
         pass
@@ -92,7 +94,14 @@ class Stub(http.server.BaseHTTPRequestHandler):
                               "" if "logout_no_cookie" in self.violations else CLEARED_COOKIE)
         if "serve_content" in self.violations:
             return self.reply(200, body="CHAPTER")
-        if "study_access_token=" in (self.headers.get("Cookie") or ""):
+        cookie = self.headers.get("Cookie") or ""
+        if self.probe_token and f"study_access_token={self.probe_token}" in cookie:
+            if "probe_rejected" in self.violations:
+                return self.reply(302, f"/auth/login.html?next={quote(path)}")
+            if "probe_wrong_body" in self.violations:
+                return self.reply(200, body="<html><h1>Not the chapter</h1></html>")
+            return self.reply(200, body=f"<html><h1>{self.probe_marker}</h1></html>")
+        if "study_access_token=" in cookie:
             # Absolute, like the middleware's accessDeniedRedirect(): the denial
             # target is a different host in production.
             return self.reply(302, f"{self.denial_origin}/?study=access-denied")
@@ -100,9 +109,10 @@ class Stub(http.server.BaseHTTPRequestHandler):
         return self.reply(302, f"/auth/login.html?next={quote(landed)}")
 
 
-def start(role, violations, study_origin=""):
+def start(role, violations, study_origin="", probe_token="", probe_marker=""):
     handler = type("Handler", (Stub,), {
         "role": role, "violations": frozenset(violations), "study_origin": study_origin,
+        "probe_token": probe_token, "probe_marker": probe_marker,
     })
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -116,9 +126,19 @@ def closed_port():
         return sock.getsockname()[1]
 
 
-def run_cli(*violations):
-    """Run the real CLI against stubbed hosts. Returns (exit code, output)."""
-    study, study_origin = start("study", violations)
+def run_cli(*violations, signed_in=False):
+    """Run the real CLI against stubbed hosts. Returns (exit code, output).
+
+    `signed_in` supplies the probe credential, whose absence is itself one of
+    the classifications under test. The child's environment is pinned rather
+    than inherited, so a developer's own STUDY_PROBE_TOKEN cannot decide which
+    case passes.
+    """
+    token = PROBE_TOKEN if signed_in else ""
+    chapter, title = live.chapter_record() or ("", "")
+    marker = live.render_marker(title) if signed_in else ""
+    study, study_origin = start("study", violations,
+                                probe_token=token, probe_marker=marker)
     # In production the denial target is a different host; the stub plays both,
     # so it can only learn its own origin once the port is bound.
     study.RequestHandlerClass.denial_origin = study_origin
@@ -131,9 +151,11 @@ def run_cli(*violations):
             "--study-host", f"127.0.0.1:{study.server_address[1]}",
             "--pages-host", f"127.0.0.1:{pages.server_address[1]}",
             "--denial-origin", study_origin, "--denial-target", denial,
-            "--timeout", "10",
+            "--timeout", "10", "--probe-token", token,
+            "--probe-chapter", chapter, "--probe-marker", marker,
         ]
-        done = subprocess.run(command, capture_output=True, text=True, timeout=120)
+        done = subprocess.run(command, capture_output=True, text=True, timeout=120,
+                              env={**os.environ, "STUDY_PROBE_TOKEN": token})
         return done.returncode, done.stdout + done.stderr
     finally:
         study.shutdown()
@@ -145,26 +167,35 @@ def run_cli(*violations):
 # free prose from the message body: rewording an explanation must not break the
 # suite, but losing the named probe it belongs to must.
 BEHAVIOURS = [
-    ("a satisfied contract exits 0", (), 0, ("0 failed", "0 warning")),
+    ("a satisfied contract exits 0", (), 0, ("0 failed", "0 warning"), True),
     ("a served chapter exits 1", ("serve_content",), 1,
-     ("no-leak", "expected a redirect")),
+     ("no-leak", "expected a redirect"), True),
     ("a non-canonical fallback exits 1", ("no_canonical",), 1,
-     ("canonical /", "expected 308")),
+     ("canonical /", "expected 308"), True),
     ("a dropped deep-link `next` exits 1", ("drop_next",), 1,
-     ("gate /INDEX.html", "next=/INDEX.html")),
+     ("gate /INDEX.html", "next=/INDEX.html"), True),
     ("an uncleared logout exits 1", ("logout_no_cookie",), 1,
-     ("logout /auth/logout", "session cookie")),
+     ("logout /auth/logout", "session cookie"), True),
     ("an unconfigured sign-in warns only", ("signin_unconfigured",), 0,
-     ("sign-in /auth/start", "NOT configured", "1 warning")),
+     ("sign-in /auth/start", "NOT configured", "1 warning"), True),
     ("a denial page answering 404 warns only", ("denial_dead",), 0,
-     ("denial target reachable", "1 warning")),
+     ("denial target reachable", "1 warning"), True),
     ("a denial page that does not answer warns only", ("denial_offline",), 0,
-     ("denial target reachable", "unreachable", "1 warning")),
+     ("denial target reachable", "unreachable", "1 warning"), True),
+    # The success path. With a credential the probe asserts a real chapter is
+    # served *and that it is that chapter*; without one it must warn, because
+    # the join it covers is then unverified.
+    ("a rejected probe credential exits 1", ("probe_rejected",), 1,
+     ("signed-in ", "expected 200"), True),
+    ("a page without the chapter's title exits 1", ("probe_wrong_body",), 1,
+     ("signed-in ", "expected 200"), True),
+    ("an unconfigured probe credential warns only", (), 0,
+     ("signed-in render", "STUDY_PROBE_TOKEN", "1 warning"), False),
 ]
 
 
-def case_behaviour(name, violations, want_code, needles):
-    code, output = run_cli(*violations)
+def case_behaviour(name, violations, want_code, needles, signed_in):
+    code, output = run_cli(*violations, signed_in=signed_in)
     if code != want_code:
         return f"expected exit {want_code}, got {code}:\n{output}"
     gaps = [n for n in needles if n not in output]
@@ -184,8 +215,8 @@ def case_probes_declare_their_contract():
     return None
 
 
-CASES = [(name, functools.partial(case_behaviour, name, violations, code, needles))
-         for name, violations, code, needles in BEHAVIOURS]
+CASES = [(name, functools.partial(case_behaviour, name, violations, code, needles, signed_in))
+         for name, violations, code, needles, signed_in in BEHAVIOURS]
 CASES.append(("probes declare their contract", case_probes_declare_their_contract))
 
 

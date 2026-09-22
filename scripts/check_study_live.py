@@ -29,6 +29,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -48,6 +49,11 @@ FIXED_GATED_PATHS = ("/", "/INDEX.html")
 # answers a real chapter, or its redirect reveals what is on disk.
 MISSING_PATH = "definitely/not/a/real/page.html"
 BOGUS_TOKEN = "not-a-real-session-token"
+# The probe's own credential, if the operator has set one: with it the success
+# path — the half of the gate that serves a chapter — stops being the one thing
+# nobody can exercise. Read from the environment, never committed.
+PROBE_TOKEN_ENV = "STUDY_PROBE_TOKEN"
+PROBE_COOKIE = "study_access_token"
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OK, WARN, FAIL = "PASS", "WARN", "FAIL"
@@ -73,15 +79,16 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 class Response:
-    """A status plus the two headers this contract cares about."""
+    """A status, the two headers this contract cares about, and a body prefix."""
 
-    __slots__ = ("status", "location", "set_cookie", "error")
+    __slots__ = ("status", "location", "set_cookie", "error", "body")
 
-    def __init__(self, status=None, location="", set_cookie="", error=""):
+    def __init__(self, status=None, location="", set_cookie="", error="", body=""):
         self.status = status
         self.location = location
         self.set_cookie = set_cookie
         self.error = error
+        self.body = body
 
     @property
     def ok(self):
@@ -103,10 +110,13 @@ class Probe:
     """Host and transport configuration, so the same probes can drive a stub."""
 
     def __init__(self, scheme=SCHEME, study_host=STUDY_HOST, pages_host=PAGES_HOST,
-                 denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25):
+                 denial_origin=DENIAL_ORIGIN, denial_target=DENIAL_TARGET, timeout=25,
+                 probe_token="", probe_chapter="", probe_marker=""):
         self.scheme, self.study_host, self.pages_host = scheme, study_host, pages_host
         self.denial_origin, self.denial_target, self.timeout = (
             denial_origin, denial_target, timeout)
+        self.probe_token, self.probe_chapter, self.probe_marker = (
+            probe_token, probe_chapter, probe_marker)
         # Browser-shaped headers: Cloudflare's edge fingerprints bare clients.
         self.headers = {
             "User-Agent": (
@@ -131,11 +141,12 @@ class Probe:
         try:
             with self.opener.open(request, timeout=self.timeout) as response:
                 return Response(response.status, response.headers.get("Location") or "",
-                                response.headers.get("Set-Cookie") or "")
+                                response.headers.get("Set-Cookie") or "",
+                                body=read_prefix(response))
         except urllib.error.HTTPError as error:
             head = error.headers or {}
             return Response(error.code, head.get("Location") or "",
-                            head.get("Set-Cookie") or "")
+                            head.get("Set-Cookie") or "", body=read_prefix(error))
         except Exception as error:  # DNS, TLS, timeout, refused
             return Response(error=f"unreachable: {error.__class__.__name__}: {error}")
 
@@ -151,19 +162,85 @@ def verdict(label, name, matched, response, expected, kind=FAIL):
     return Result(kind, label, name, f"{expected} — got {response.describe}")
 
 
-def chapter_path():
-    """A real deep chapter path, from the committed API dump.
+def read_prefix(response, limit=20000):
+    """The start of a response body, decoded, for content assertions."""
+    try:
+        return response.read(limit).decode("utf-8", "replace")
+    except Exception:
+        return ""
+
+
+def chapter_record():
+    """`(rendered path, title)` of a real deep chapter, from the committed dump.
 
     Read rather than hard-coded so the probe keeps exercising a file that
-    exists after a restructure; None if the dump is unreadable.
+    exists after a restructure. The dump records the *rendered* `.html` path,
+    which is what a browser — and this probe — must request.
     """
     try:
         with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
             records = json.load(handle).get("chapters") or []
-        deep = [r["p"] for r in records if isinstance(r, dict) and "/" in r.get("p", "")]
-        return sorted(deep)[0] if deep else None
+        deep = [r for r in records
+                if isinstance(r, dict) and "/" in r.get("p", "") and r.get("t")]
+        if not deep:
+            return None
+        record = min(deep, key=lambda r: r["p"])
+        return record["p"], record["t"]
     except Exception:
         return None
+
+
+def chapter_path():
+    """A real deep chapter path, from the committed API dump."""
+    record = chapter_record()
+    return record[0] if record else None
+
+
+def render_marker(title):
+    """A plain-text phrase from a chapter title, to look for in the HTML.
+
+    Titles in this corpus mix prose with `—`, `:`, `/` and backticks, all of
+    which HTML may escape or the theme may split; a run of bare words survives
+    rendering unchanged, so it is the only honest thing to assert on.
+    """
+    for run in re.split(r"[^A-Za-z0-9 ]+", title or ""):
+        words = run.split()
+        if len(words) >= 3:
+            return " ".join(words[:4])
+    words = [w for w in re.findall(r"[A-Za-z0-9]+", title or "") if len(w) >= 6]
+    return words[0] if words else ""
+
+
+def signed_in_outcome(probe):
+    """(matched, expected) for the success path, shared by the probe and its tests."""
+    url = probe.study(f"/{probe.probe_chapter}")
+    response = probe.get(url, cookie=f"{PROBE_COOKIE}={probe.probe_token}")
+    matched = (response.status == 200
+               and probe.probe_marker in response.body
+               and LOGIN_PATH not in response.body)
+    return url, response, matched
+
+
+@check("Signed-in",
+       "with the probe credential a real chapter answers 200 and contains that "
+       "chapter's own title — and without one the check warns, because the "
+       "success path is then verified by unit tests alone")
+def signed_in_render(probe):
+    if not probe.probe_token:
+        return [Result(WARN, "Signed-in", "signed-in render",
+                       f"{PROBE_TOKEN_ENV} is not set, so only the blocked half of the "
+                       f"gate is probed. Set it in Cloudflare Pages → Settings → "
+                       f"Environment variables and as a repo secret to have the edge "
+                       f"prove it serves a chapter to a valid session")]
+    if not (probe.probe_chapter and probe.probe_marker):
+        return [Result(WARN, "Signed-in", "signed-in render",
+                       "no chapter title to assert on (api/index.json unreadable and "
+                       "no --probe-chapter/--probe-marker given)")]
+    _, response, matched = signed_in_outcome(probe)
+    return [verdict("Signed-in", f"signed-in {probe.probe_chapter}", matched, response,
+                    f"expected 200 containing {probe.probe_marker!r} — a valid session "
+                    f"must reach its chapter, and the page must be that chapter rather "
+                    f"than a login page")]
 
 
 def gated_paths():
@@ -295,14 +372,24 @@ def run_checks(argv=None):
     parser.add_argument("--denial-origin", default=DENIAL_ORIGIN)
     parser.add_argument("--denial-target", default=DENIAL_TARGET)
     parser.add_argument("--timeout", type=float, default=25)
+    parser.add_argument("--probe-token", default=os.environ.get(PROBE_TOKEN_ENV, ""),
+                        help=f"session credential for the success path (default: "
+                             f"${PROBE_TOKEN_ENV})")
+    parser.add_argument("--probe-chapter", default="",
+                        help="chapter path to fetch (default: from api/index.json)")
+    parser.add_argument("--probe-marker", default="",
+                        help="text that chapter's page must contain (default: its title)")
     args = parser.parse_args(argv)
 
     if args.print_contract:
         print("\n".join(f"  {c.label}: {c.expectation}" for c in CHECKS))
         return 0
 
+    record = chapter_record() or (chapter_path() or "", "")
     probe = Probe(args.scheme, args.study_host, args.pages_host,
-                  args.denial_origin, args.denial_target, args.timeout)
+                  args.denial_origin, args.denial_target, args.timeout,
+                  args.probe_token, args.probe_chapter or record[0],
+                  args.probe_marker or render_marker(record[1]))
     results = [result for function in CHECKS for result in function(probe)]
     failures = [r for r in results if r.kind == FAIL]
     warnings = [r for r in results if r.kind == WARN]

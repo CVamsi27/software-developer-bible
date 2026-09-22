@@ -71,6 +71,12 @@ jobs:
           python-version: '3.12'
 
       - name: Probe the live study host
+        # STUDY_PROBE_TOKEN (repo secret, mirrored in the Pages project) is
+        # what lets this assert the success path: a real chapter, served to a
+        # valid session. Unset, the probe warns instead of failing, because an
+        # absent secret is operator state, not a contract violation.
+        env:
+          STUDY_PROBE_TOKEN: ${{ secrets.STUDY_PROBE_TOKEN }}
         run: |
           set -o pipefail
           python3 scripts/check_study_live.py --verbose | tee live-check.txt

@@ -94,6 +94,16 @@ Every push to `main` triggers two builds of the same command:
    In Supabase Auth → URL Configuration, allow the exact
    redirect URL `https://study.buildora.work/auth/callback.html` (and the
    Pages preview callback URL when testing a preview deployment).
+   **Optional, and the only way to cover the success path:** add
+   `STUDY_PROBE_TOKEN` (generate with `openssl rand -hex 32`) as a
+   **production** variable here, and the same value as a **repository secret**
+   of the same name (GitHub → Settings → Secrets and variables → Actions),
+   which is what `study-live.yml` passes to the probe. A request whose session
+   cookie carries it is treated as the approved account, so the live probe can
+   assert a real chapter answers 200 with its own title instead of only proving
+   the site is *blocked*. Leave it unset and the branch is inert: the probe
+   reports a warning, not a failure, and the manual checklist in §3 is the only
+   proof of the signed-in path.
 4. **No GitHub token needed** — jekyll-github-metadata has no disable
    flag, so `_config.yml` neutralizes it by construction instead: `github:`
    is an Array (never merged into an API-backed drop) and
@@ -174,9 +184,17 @@ Supabase variables, a dead denial host) that only an operator can change —
 including when that host does not answer at all. Failures mean the live host
 contradicts this runbook.
 
-**The signed-in path is the one thing no probe can reach** — it needs the
-owner's Google account, so everything above proves the site is *blocked*, not
-that it *renders*. Use a private window and verify by hand after any auth change:
+**The signed-in path** is probed only when `STUDY_PROBE_TOKEN` is set (see
+§2 step 3): the probe then fetches a real chapter with that credential and
+asserts the response is 200 *and* contains that chapter's own title — the two
+halves that no amount of policy testing can join, because the middleware
+letting a valid session through and the edge serving that file are different
+machines. Without the credential the probe says so in a warning, and only the
+policy suite (`node --test`, 27 cases) plus the artifact assertions in
+`site-build.yml` stand behind that path.
+
+Either way, verify by hand in a private window after any auth change — it is
+the only check that also exercises Google's consent screen and the callback:
 
 1. `https://study.buildora.work/` opens the Google sign-in screen rather than
    returning a chapter file.

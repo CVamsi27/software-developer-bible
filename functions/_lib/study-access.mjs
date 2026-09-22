@@ -134,6 +134,43 @@ export function readStudyToken(cookieHeader) {
 }
 
 /**
+ * The optional probe credential: a machine-checkable identity for the success
+ * path.
+ *
+ * Every other probe in `scripts/check_study_live.py` proves the site is
+ * correctly *blocked*; the branch that serves a chapter needs the owner's
+ * Google session, so it was verified by unit tests alone — which leaves the
+ * join (the middleware letting a valid session through and the edge serving
+ * that file) unprobed, and that join is the only reason the site exists.
+ *
+ * With `STUDY_PROBE_TOKEN` set, a request whose cookie matches it is the
+ * approved identity, so the live probe can assert 200 + the chapter's own
+ * title in CI. Unset, this returns null for every input: the branch is inert
+ * until an operator opts in, so shipping it changes no behaviour.
+ *
+ * The comparison is constant-time over padded byte arrays, length difference
+ * included, because a secret compared with `===` leaks its prefix to timing.
+ */
+export function probeTokenSession(token, env) {
+  const expected = env?.STUDY_PROBE_TOKEN;
+  if (typeof expected !== "string" || expected.length === 0) return null;
+  if (typeof token !== "string" || token.length === 0) return null;
+  if (!matchesSecret(token, expected)) return null;
+  return { email: ALLOWED_STUDY_EMAIL };
+}
+
+function matchesSecret(presented, expected) {
+  const left = new TextEncoder().encode(presented);
+  const right = new TextEncoder().encode(expected);
+  let diff = left.length ^ right.length;
+  const width = Math.max(left.length, right.length);
+  for (let index = 0; index < width; index += 1) {
+    diff |= (left[index] ?? 0) ^ (right[index] ?? 0);
+  }
+  return diff === 0;
+}
+
+/**
  * Turn a presented cookie into a session.
  *
  * A verification failure is still a *presented* session: the visitor holds a

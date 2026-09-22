@@ -1,0 +1,280 @@
+#!/usr/bin/env python3
+"""Prose hygiene — reader-visible defects no other gate owns.
+
+Three classes, all measured before the first line of this tool was written
+(2026-09-22 audit over 867 markdown files):
+
+  Rule 1 — spelling consistency. The corpus is American-English by an
+overwhelming margin: `behavior` 845 occurrences against `behaviour` 26,
+`optimize` 197 against 0 `optimise`, `while` 403 against 0 `whilst`. Thirteen
+pairs still carried *both* forms, so a reader met `behaviour` in one chapter
+and `behavior` in the next — 62 instances of the minority form. Pairs where the
+corpus is internally consistent (`cancelled` 25 / `canceled` 0) or genuinely
+split (`grey` 3 / `gray` 4, both settled jargon in their own literature) are
+deliberately NOT covered: a rule may only enforce a convention the corpus
+already follows, or it fires on the corpus as it is and buries its signal.
+
+  Rule 2 — an ATX heading with no space after the hashes. CommonMark requires
+the space, so `##管道和重定向` is not a heading at all: it renders as literal
+text and the section it was meant to introduce loses its structure. Exactly one
+instance existed, and it is a *rendering break* rather than a style preference,
+which is why it is gated despite being a singleton class — the rule cannot
+false-positive on a real heading.
+
+  Rule 3 — a GFM table row whose cell count differs from its header's. GFM
+splits on `|` *before* inline parsing, so an unescaped pipe inside a code span
+(`| `==` vs `===`, `??` vs `||` |`) silently breaks the cell grid: the row
+renders with extra columns and the table stops lining up. Two rows, both from
+that exact cause; the fix escapes the pipes inside the span, which GFM renders
+as the literal character.
+
+Every rule is prose-only: fenced code, inline code spans, link targets, bare
+URLs, HTML tags and the file-metadata comment are masked before matching, so a
+CSS `color:` or a `colour` inside a URL is never touched. Masking preserves
+character offsets, so a match can be repaired in place.
+
+This tool is both the fixer and the gate, matching fix_nav_labels.py:
+
+--check  exit 1 listing every finding (the gate; a clean corpus prints one OK)
+--write  repair in place (idempotent; prose words only)
+
+Scope excludes `personal/` at any depth by recorded decision: that tree is
+canonical personal data and campaign copy, not a chapter a reader studies.
+"""
+import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import md_fences
+from scan_scope import guard
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SKIP_DIRS = {'.git', 'node_modules', '.archive', 'api', '_site', '__pycache__',
+             '.jekyll-cache', 'scripts', 'node_modules'}
+EXCLUDE_PATH = re.compile(r'(^|/)personal/')
+
+# ---------------------------------------------------------------------------
+# Rule 1: the spelling convention the corpus already follows.
+#
+# Every pair is (minority form, canonical form, the measured evidence). The
+# list is closed: a new pair is a new defect and fails until someone records
+# why the direction is what it is. The canonical side is never the one the
+# corpus uses less — `cancelled`, used 25 times with zero `canceled`, is
+# consistent and therefore absent, not wrong.
+# ---------------------------------------------------------------------------
+VOCAB = [
+    ('behaviour', 'behavior', 'behavior 845 / behaviour 26'),
+    ('defence', 'defense', 'defense 138 / defence 7'),
+    ('colour', 'color', 'color 117 / colour 5'),
+    ('modelling', 'modeling', 'modeling 126 / modelling 8'),
+    ('serialise', 'serialize', 'serialize 79 / serialise 4'),
+    ('recognise', 'recognize', 'recognize 35 / recognise 5'),
+    ('acknowledgement', 'acknowledgment', 'acknowledgment 18 / acknowledgement 4'),
+    ('labelled', 'labeled', 'labeled 15 / labelled 2'),
+    ('catalogue', 'catalog', 'catalog 86 / catalogue 1'),
+    ('judgement', 'judgment', 'judgment 95 / judgement 1'),
+]
+
+# Terms that contain a minority spelling but must not be "corrected", each with
+# the reason. A blanket word rule cannot know these; naming them is the point.
+EXEMPT_TERMS = [
+    (re.compile(r'Colour Contrast Analyser'),
+     'the TPGi tool\'s registered name (tpgi.com/color-contrast-checker)'),
+    (re.compile(r'aria-labelledby'),
+     'an HTML attribute identifier — "labeledby" would name nothing'),
+    (re.compile(r'IT Consultant Defence'),
+     'a company\'s own role title (Materna Berlin)'),
+    (re.compile(r'Sopra Steria Defence'),
+     'that division\'s own name (Sopra Steria Defence & Security)'),
+]
+
+META_LINE = re.compile(r'^\s*<!--\s*section:')
+HTML_COMMENT = re.compile(r'<!--.*?-->', re.S)
+CODE_SPAN = re.compile(r'(`+)(.+?)\1', re.S)
+LINK_TARGET = re.compile(r'\]\(\s*[^)]*\)')
+BARE_URL = re.compile(r'<?https?://[^\s)>]+')
+HTML_TAG = re.compile(r'</?[A-Za-z][A-Za-z0-9-]*(?:\s[^>]*)?/?>')
+
+HEADING_NO_SPACE = re.compile(r'^(#{1,6})([^#\s])')
+
+
+def mask(line):
+    """The same line with every non-prose span blanked, offsets preserved.
+
+    Replacing spans with equal-length runs of spaces (never deleting them) is
+    what lets a rule match on the masked text and repair on the real one.
+    """
+    if META_LINE.match(line):
+        return ' ' * len(line)
+    out = line
+    for pattern in (HTML_COMMENT, CODE_SPAN, LINK_TARGET, BARE_URL, HTML_TAG):
+        out = pattern.sub(lambda m: ' ' * (m.end() - m.start()), out)
+    return out
+
+
+def match_case(source, replacement):
+    """`Behaviour` -> `Behavior`, `BEHAVIOUR` -> `BEHAVIOR`."""
+    if source.isupper() and len(source) > 1:
+        return replacement.upper()
+    if source[0].isupper():
+        return replacement[0].upper() + replacement[1:]
+    return replacement
+
+
+def find_spelling(masked, line):
+    """(start, end, replacement, note) for every minority-form occurrence."""
+    found = []
+    for variant, canonical, evidence in VOCAB:
+        pattern = re.compile(rf'\b{variant}\w*', re.I)
+        for m in pattern.finditer(masked):
+            if any(x.search(line, max(0, m.start() - 40), m.end() + 40)
+                   for x, _ in EXEMPT_TERMS):
+                continue
+            # Swap the stem only, so inflections follow: behaviours ->
+            # behaviors, recognised -> recognized, serialises -> serializes.
+            word = m.group(0)
+            stem = canonical + word[len(variant):] if word.lower().startswith(variant) \
+                else canonical
+            found.append((m.start(), m.end(), match_case(word, stem), evidence))
+    return found
+
+
+def find_heading(line):
+    """Insert the missing space *between* the hashes and the text.
+
+    Anchoring on the matched text instead (m.end()) put the space after its
+    first character — `##管道` became `##管 道` — and left the line still
+    matching, so every `--write` run added another space. Insertion at the
+    boundary is what makes the repair idempotent, which gate 22 requires.
+    """
+    m = HEADING_NO_SPACE.match(line)
+    if not m:
+        return None
+    return (m.start(2), m.start(2), ' ', 'an ATX heading needs a space before its text')
+
+
+def table_rows(lines):
+    """(index, header_cells, [(line_index, cells, unescaped_pipes)]) per table."""
+    tables, block = [], []
+    for i, line, in_fence, is_fence in md_fences.walk(lines):
+        if in_fence or is_fence:
+            if block:
+                tables.append(block)
+                block = []
+            continue
+        stripped = re.sub(r'^\s*>?\s*', '', line)
+        if stripped.startswith('|') and stripped.rstrip().endswith('|'):
+            block.append((i, line))
+        elif block:
+            tables.append(block)
+            block = []
+    if block:
+        tables.append(block)
+    for table in tables:
+        if len(table) < 2:
+            continue
+        _, header = table[0]
+        yield header, table
+
+
+def cells(line):
+    """Cell count the way GFM counts them: split on every unescaped pipe."""
+    stripped = re.sub(r'^\s*>?\s*', '', line)
+    body = stripped.strip()
+    if not body.startswith('|'):
+        return 0, []
+    pipes = [m.start() for m in re.finditer(r'(?<!\\)\|', body)]
+    return len(pipes) - 1, pipes
+
+
+def main():
+    write = '--write' in sys.argv
+    files = []
+    for base, dirs, names in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in names:
+            if name.endswith('.md'):
+                rel = os.path.relpath(os.path.join(base, name), ROOT)
+                if not EXCLUDE_PATH.search(rel):
+                    files.append(rel)
+    files.sort()
+    guard(len(files), 'markdown files')
+
+    findings, repaired = [], 0
+    for rel in files:
+        path = os.path.join(ROOT, rel)
+        with open(path, encoding='utf-8') as handle:
+            lines = handle.read().split('\n')
+        edits = {}          # line index -> list of (start, end, replacement)
+        notes = {}          # line index -> list of notes
+        in_fence_state = [False] * len(lines)
+        for i, line, in_fence, is_fence in md_fences.walk(lines):
+            in_fence_state[i] = in_fence or is_fence
+
+        for i, line in enumerate(lines):
+            if in_fence_state[i]:
+                continue
+            if line.lstrip().startswith('|') or re.match(r'^\s*>\s*\|', line):
+                continue                      # tables: rule 3 owns them
+            masked = mask(line)
+            for start, end, replacement, note in find_spelling(masked, line):
+                edits.setdefault(i, []).append((start, end, replacement))
+                notes.setdefault(i, []).append(f'spelling: {line[start:end]} -> '
+                                               f'{replacement}  ({note})')
+            head = find_heading(line)
+            if head:
+                start, end, replacement, note = head
+                edits.setdefault(i, []).append((start, end, replacement))
+                notes.setdefault(i, []).append(f'heading: {note}')
+
+        # Rule 3 — table cell counts, measured against each table's own header.
+        for header, table in table_rows(lines):
+            want, _ = cells(header)
+            if want < 2:
+                continue
+            for i, line in table[1:]:
+                if re.match(r'^\s*>?\s*\|[\s:|-]+\|\s*$', line):
+                    continue                  # the |---|---| separator row
+                got, _ = cells(line)
+                if got != want:
+                    notes.setdefault(i, []).append(
+                        f'table: {got} cells against a {want}-cell header '
+                        f'(an unescaped `|` inside a cell splits it in GFM)')
+                    # Repair: escape the pipes that sit inside inline code spans.
+                    for m in CODE_SPAN.finditer(line):
+                        for pipe in re.finditer(r'(?<!\\)\|', m.group(2)):
+                            index = m.start(2) + pipe.start()
+                            edits.setdefault(i, []).append((index, index, '\\'))
+
+        if notes:
+            for i in sorted(notes):
+                for note in notes[i]:
+                    findings.append(f'{rel}:{i + 1}: {note}')
+        if write and edits:
+            for i, spans in edits.items():
+                line = lines[i]
+                for start, end, replacement in sorted(spans, reverse=True):
+                    line = line[:start] + replacement + line[end:]
+                lines[i] = line
+            with open(path, 'w', encoding='utf-8') as handle:
+                handle.write('\n'.join(lines))
+            repaired += 1
+
+    if findings:
+        for finding in findings:
+            print(f'  {finding}')
+    if write:
+        print(f'{repaired} file(s) repaired across {len(files)} markdown file(s)')
+    elif findings:
+        print(f'\n{len(findings)} finding(s) in {len(files)} markdown file(s) — '
+              f'run: python3 scripts/prose_hygiene.py --write')
+        return 1
+    else:
+        print(f'prose hygiene OK — {len(files)} markdown file(s), '
+              f'{len(VOCAB)} spelling pairs, no findings')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

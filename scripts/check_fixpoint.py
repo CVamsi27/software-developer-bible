@@ -55,6 +55,7 @@ WRITERS = [
     ('fix_box_code_indent.py', ['--fix']),
     ('fix_code_whitespace.py', ['--trailing-ws', '--paste-shift']),
     ('fix_fence_labels.py', ['--apply']),
+    ('prose_hygiene.py', ['--write']),
 ]
 
 

@@ -668,6 +668,40 @@ CASES = [
         "plant": _unwired_suite_sandbox(),
         "clean_in_repo": True,
     },
+    {
+        # Rule 1: the corpus keeps one spelling convention (behavior 845 /
+        # behaviour 26). The clean side is the scope proof — a proper noun that
+        # contains the minority form must not be reported, which is the whole
+        # reason the exemption list is named rather than a blanket word rule.
+        "name": "gate 24 prose hygiene fires on a minority spelling",
+        "gate": "prose_hygiene.py",
+        "args": [],
+        "plant": {"p.md": "text\n\nThe behaviour is deterministic.\n"},
+        "clean": {"p.md": (
+            "text\n\nThe behavior is deterministic, and the Colour Contrast "
+            "Analyser is the tool's own registered name.\n")},
+    },
+    {
+        # Rule 2: CommonMark needs the space, so a glued heading renders as
+        # literal text and the section loses its structure. The clean side pins
+        # the scope that matters — a real heading, and a `#` inside a fence
+        # (a shebang) that is not a heading at all.
+        "name": "gate 24 prose hygiene fires on a heading with no space",
+        "gate": "prose_hygiene.py",
+        "args": [],
+        "plant": {"p.md": "text\n\n##Glued heading\n"},
+        "clean": {"p.md": "text\n\n## Real heading\n\n```bash\n#!/bin/sh\n```\n"},
+    },
+    {
+        # Rule 3: GFM splits on `|` before inline parsing, so an unescaped pipe
+        # inside a code span silently breaks the cell grid and the table stops
+        # lining up. The clean side is the repair this gate proposes.
+        "name": "gate 24 prose hygiene fires on an unescaped pipe in a cell",
+        "gate": "prose_hygiene.py",
+        "args": [],
+        "plant": {"p.md": "text\n\n| A | B |\n| --- | --- |\n| one | `??` vs `||` |\n"},
+        "clean": {"p.md": "text\n\n| A | B |\n| --- | --- |\n| one | `??` vs `\\|\\|` |\n"},
+    },
 ]
 
 

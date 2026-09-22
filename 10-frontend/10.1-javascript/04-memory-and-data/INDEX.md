@@ -21,7 +21,7 @@
 | 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | 23 min |
 | 07 | [Garbage Collection](10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | 23 min |
 | 08 | [Hash Tables & HashMaps](10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | 28 min |
-| 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `||`, `Object.is`, deriving the classics | 10 min |
+| 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | `==` vs `===`, ToNumber/ToPrimitive/truthiness, `??` vs `\|\|`, `Object.is`, deriving the classics | 10 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 2 h 1 m of reading (10 files, ~12 min average).
+> **Study time:** ≈ 1 h 59 m of reading (10 files, ~12 min average).
 > **10 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -30,7 +30,7 @@ The main bundlers — pick based on project needs.
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | 11 min |
 | 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | 11 min |
-| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 10 min |
+| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 8 min |
 | 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 11 min |
 
 **Decision tree:**

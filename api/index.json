@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "71bcfee2d2ca63786b5b3cc16ef83eb72a0a4d1f7a3a7303e80c0d438463cdec",
+ "corpus_digest": "cb4a60cd0c0d0d54e3303184b48e03e7c0a38de84b707b5ad6be4ee3551ad57c",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10660
+  "read_minutes": 10672
  },
  "chapters": [
   {
@@ -1243,7 +1243,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 11
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.html",
@@ -1449,7 +1449,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.html",
@@ -1499,7 +1499,7 @@
    "g": [
     "production"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.html",
@@ -2501,7 +2501,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 12
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.html",
@@ -4652,7 +4652,7 @@
     "reference",
     "tool"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.html",

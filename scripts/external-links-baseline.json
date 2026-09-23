@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-21",
- "url_count": 2384,
+ "generated": "2026-09-23",
+ "url_count": 2385,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -1523,9 +1523,6 @@
   "https://docs.expo.dev/guides/linking/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
-  "https://docs.expo.dev/router/introduction/": [
-   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
-  ],
   "https://docs.expo.dev/submit/introduction/": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
@@ -1850,6 +1847,9 @@
   ],
   "https://docs.stripe.com/keys": [
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
+  ],
+  "https://docs.swmansion.com/react-native-reanimated/": [
+   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
   "https://docs.temporal.io/": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
@@ -5804,14 +5804,14 @@
   "https://reactnative.dev/architecture/overview": [
    "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
+  "https://reactnative.dev/docs/getting-started": [
+   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
+  ],
   "https://reactnative.dev/docs/publishing-to-app-store": [
    "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
   ],
   "https://reactnative.dev/docs/react-native-devtools": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
-  ],
-  "https://reactnative.directory/": [
-   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
   "https://reactnavigation.org/docs/deep-linking/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
@@ -6102,6 +6102,9 @@
   ],
   "https://shopify.dev/docs/apps/webhooks": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
+  ],
+  "https://shopify.github.io/flash-list/": [
+   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
   "https://shostack.org/books/threat-modeling-book": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md"

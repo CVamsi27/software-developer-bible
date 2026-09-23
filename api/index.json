@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "cb4a60cd0c0d0d54e3303184b48e03e7c0a38de84b707b5ad6be4ee3551ad57c",
+ "corpus_digest": "0c7ddf91c4fc78439a82585e37ebc244a73ac2a74012868fc9379abf3b83c6f0",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10672
+  "read_minutes": 10685
  },
  "chapters": [
   {
@@ -731,7 +731,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.html",
@@ -1549,7 +1549,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 15
   },
   {
    "p": "20-backend/20.13-java/20.13.05-spring-boot.html",
@@ -2572,7 +2572,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 13
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.html",
@@ -4405,7 +4405,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 12
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.html",
@@ -4676,7 +4676,7 @@
     "reference",
     "tool"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.html",

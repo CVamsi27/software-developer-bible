@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 8 h 29 m of reading (22 files, ~23 min average).
+> **Study time:** ≈ 8 h 31 m of reading (22 files, ~23 min average).
 > **22 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -76,7 +76,7 @@ The patterns that solve real problems in production code.
 | 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 25 min |
 | 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 43 min |
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 16 min |
-| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 9 min |
+| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 11 min |
 | 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 14 min |
 
 ---

@@ -1,6 +1,6 @@
 # Microservices & Distributed Patterns — Index
 
-> **Study time:** ≈ 7 h of reading (19 files, ~22 min average).
+> **Study time:** ≈ 7 h 4 m of reading (19 files, ~22 min average).
 > **19 files — the single home for distributed-systems patterns.** Learn in four passes: **I. Foundations** (how services find and talk to each other) → **II. Data patterns** (consistency across services) → **III. Resilience** (surviving partial failure) → **IV. Messaging & migration** (brokers, evolution) → drills.
 >
 > Canonical source for saga, circuit breaker, bulkhead, strangler fig, service discovery, API gateway, CQRS/event sourcing, monolith database decomposition, gRPC — the thinner twins in `30.3-infra-patterns` were consolidated here.

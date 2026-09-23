@@ -1,7 +1,7 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 2 h 48 m of reading (11 files, ~15 min average).
+> **Study time:** ≈ 2 h 52 m of reading (11 files, ~16 min average).
 > **11 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -32,7 +32,7 @@ Pick the one your company uses — the patterns are similar.
 | 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 21 min |
 | 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | 10 min |
 | 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | 11 min |
-| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 8 min |
+| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 12 min |
 
 ---
 

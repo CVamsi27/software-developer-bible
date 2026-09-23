@@ -1,6 +1,6 @@
 # Compilers
 
-> **Study time:** ≈ 15 min of reading (2 files, ~8 min average).
+> **Study time:** ≈ 16 min of reading (2 files, ~8 min average).
 > **2 files.** How TS/JSX become browser-compatible JS: Babel (the extensible classic) and the Go/Rust speed tier (ESBuild, SWC).
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -19,7 +19,7 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 7 min |
+| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 8 min |
 | 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | 8 min |
 
 ---

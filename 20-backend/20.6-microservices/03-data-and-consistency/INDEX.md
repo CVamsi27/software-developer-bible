@@ -1,6 +1,6 @@
 # Data & Consistency - Microservices
 
-> **Study time:** ≈ 2 h 4 m of reading (6 files, ~21 min average).
+> **Study time:** ≈ 2 h 8 m of reading (6 files, ~21 min average).
 > **6 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -13,7 +13,7 @@
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
 | 01 | [Saga Pattern](20.6.3.01-saga-pattern.md) | Choreography vs orchestration, compensating transactions, idempotent compensations | 27 min |
-| 02 | [Distributed Transactions](20.6.3.02-distributed-transactions.md) | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong | 9 min |
+| 02 | [Distributed Transactions](20.6.3.02-distributed-transactions.md) | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong | 13 min |
 | 03 | [Event Sourcing](20.6.3.03-event-sourcing.md) | Event store design, rebuilding state by replay, snapshots, projection rebuilds | 32 min |
 | 04 | [CQRS](20.6.3.04-cqrs.md) | Command/query separation, read models, eventual consistency, projection lag | 30 min |
 | 05 | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | 13 min |

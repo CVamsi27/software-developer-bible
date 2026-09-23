@@ -19,6 +19,7 @@ on:
     paths:
       - "**.md"
       - "_config.yml"
+      - "_includes/**"
       - "search.html"
       - "api/**"
       # The edge half of the artifact. Cloudflare's Git integration builds on

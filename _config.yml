@@ -13,17 +13,9 @@ theme: minima
 header_pages:
   - INDEX.md
   - search.md
-  - 00-strategy/INDEX.md
+  - ROADMAP.md
   - lanes/INDEX.md
-  - 10-frontend/INDEX.md
-  - 20-backend/INDEX.md
-  - 30-architecture/INDEX.md
-  - 40-platform/INDEX.md
-  - 50-quality/INDEX.md
-  - 60-realtime/INDEX.md
-  - 70-interview-toolkit/INDEX.md
-  - 80-lanes-abroad-full-stack/INDEX.md
-  - 81-lanes-indian-sde-faang/INDEX.md
+  - 00-strategy/INDEX.md
 minima:
   skin: auto
 show_excerpts: false

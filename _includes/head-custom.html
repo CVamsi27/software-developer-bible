@@ -1,2 +1,684 @@
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
 <meta name="theme-color" content="#0b1114">
+
+{% raw %}
+<style>
+  /* ==========================================================================
+     Modern UI/UX Design System for Software Developer Bible
+     Responsive reading layout, polished typography, responsive tables,
+     code block copy buttons, GitHub alerts, reading progress bar & nav footers.
+     ========================================================================== */
+
+  :root {
+    --site-max-width: 1140px;
+    --prose-max-width: 860px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+    
+    /* Light Mode Palette */
+    --theme-bg: #ffffff;
+    --theme-text: #1f2937;
+    --theme-text-muted: #4b5563;
+    --theme-heading: #111827;
+    --theme-border: #e5e7eb;
+    --theme-border-subtle: #f3f4f6;
+    --theme-link: #2563eb;
+    --theme-link-hover: #1d4ed8;
+    --theme-accent: #3b82f6;
+    
+    --header-bg: rgba(255, 255, 255, 0.92);
+    --card-bg: #ffffff;
+    --code-bg: #f8fafc;
+    --code-border: #e2e8f0;
+    --code-text: #0f172a;
+    
+    --table-header-bg: #f8fafc;
+    --table-stripe-bg: #fcfdfe;
+    --table-border: #e2e8f0;
+    --table-hover: rgba(59, 130, 246, 0.04);
+    
+    --nav-pill-bg: #f3f4f6;
+    --nav-pill-hover: #e5e7eb;
+    --nav-pill-text: #374151;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Dark Mode Palette */
+      --theme-bg: #0b1114;
+      --theme-text: #cbd5e1;
+      --theme-text-muted: #94a3b8;
+      --theme-heading: #f8fafc;
+      --theme-border: #1e293b;
+      --theme-border-subtle: #151e28;
+      --theme-link: #60a5fa;
+      --theme-link-hover: #93c5fd;
+      --theme-accent: #3b82f6;
+      
+      --header-bg: rgba(11, 17, 20, 0.92);
+      --card-bg: #10171d;
+      --code-bg: #0e151b;
+      --code-border: #1e293b;
+      --code-text: #e2e8f0;
+      
+      --table-header-bg: #131c23;
+      --table-stripe-bg: #0d1419;
+      --table-border: #1e293b;
+      --table-hover: rgba(59, 130, 246, 0.08);
+      
+      --nav-pill-bg: #151e26;
+      --nav-pill-hover: #22303c;
+      --nav-pill-text: #e2e8f0;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Reading Progress Indicator
+     -------------------------------------------------------------------------- */
+  .reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+    width: 0%;
+    z-index: 99999;
+    transition: width 0.08s ease-out;
+  }
+
+  /* --------------------------------------------------------------------------
+     Layout & Container Width
+     -------------------------------------------------------------------------- */
+  body {
+    font-family: var(--font-sans);
+    color: var(--theme-text);
+    background-color: var(--theme-bg);
+    line-height: 1.68;
+    font-size: 16px;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrapper {
+    max-width: var(--site-max-width);
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      padding-right: 18px;
+      padding-left: 18px;
+    }
+  }
+
+  /* Optimal reading line-length for continuous prose */
+  .post-content > p,
+  .post-content > ul:not(.chips),
+  .post-content > ol {
+    max-width: var(--prose-max-width);
+  }
+
+  /* --------------------------------------------------------------------------
+     Navigation Header
+     -------------------------------------------------------------------------- */
+  .site-header {
+    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: border-color 0.2s ease;
+  }
+
+  .site-title {
+    font-weight: 750 !important;
+    letter-spacing: -0.025em;
+    font-size: 1.25rem;
+    color: var(--theme-heading) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-nav {
+    border: none !important;
+  }
+
+  .site-nav .trigger {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .site-nav .page-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 550;
+    font-size: 0.88rem;
+    color: var(--nav-pill-text) !important;
+    background-color: transparent;
+    text-decoration: none !important;
+    transition: all 0.15s ease;
+  }
+
+  .site-nav .page-link:hover {
+    background-color: var(--nav-pill-hover);
+    color: var(--theme-link) !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     Headings & Section Dividers
+     -------------------------------------------------------------------------- */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-heading);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--theme-border);
+    padding-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--theme-border);
+    padding-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.08rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: var(--theme-border);
+    margin: 2.5rem 0;
+  }
+
+  /* --------------------------------------------------------------------------
+     Links
+     -------------------------------------------------------------------------- */
+  a {
+    color: var(--theme-link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.15s ease;
+  }
+
+  a:hover {
+    color: var(--theme-link-hover);
+  }
+
+  /* --------------------------------------------------------------------------
+     Tables (Crisp, Striped, Sticky Headers, Responsive Scroll Container)
+     -------------------------------------------------------------------------- */
+  .table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.75rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--table-border);
+    background-color: var(--card-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .table-scroll-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    border: none;
+    font-size: 0.91rem;
+    line-height: 1.5;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0;
+    border: 1px solid var(--table-border);
+    border-radius: 8px;
+  }
+
+  th {
+    background-color: var(--table-header-bg);
+    color: var(--theme-heading);
+    font-weight: 650;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--table-border);
+    border-right: 1px solid var(--table-border);
+    white-space: nowrap;
+  }
+
+  th:last-child {
+    border-right: none;
+  }
+
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--table-border);
+    border-right: 1px solid var(--table-border);
+    vertical-align: top;
+  }
+
+  td:last-child {
+    border-right: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:nth-child(even) td {
+    background-color: var(--table-stripe-bg);
+  }
+
+  tr:hover td {
+    background-color: var(--table-hover);
+  }
+
+  /* --------------------------------------------------------------------------
+     Code Fences & Syntax Highlighting
+     -------------------------------------------------------------------------- */
+  code, pre, kbd, samp {
+    font-family: var(--font-mono) !important;
+  }
+
+  /* Inline code snippet */
+  p > code, li > code, td > code, th > code {
+    font-size: 0.88em;
+    padding: 0.15em 0.4em;
+    border-radius: 5px;
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    color: var(--code-text);
+  }
+
+  /* Fenced code blocks */
+  div.highlighter-rouge, figure.highlight, pre.highlight {
+    position: relative;
+    margin: 1.75rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--code-border);
+    background-color: var(--code-bg);
+  }
+
+  pre.highlight {
+    padding: 16px 20px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  div.highlighter-rouge pre {
+    background-color: transparent !important;
+  }
+
+  /* Copy Code Button */
+  .copy-code-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    font-weight: 550;
+    background: rgba(125, 125, 125, 0.12);
+    color: var(--theme-text-muted);
+    border: 1px solid var(--theme-border);
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+
+  div.highlighter-rouge:hover .copy-code-btn,
+  pre.highlight:hover .copy-code-btn {
+    opacity: 1;
+  }
+
+  .copy-code-btn:hover {
+    background: rgba(125, 125, 125, 0.22);
+    color: var(--theme-heading);
+  }
+
+  .copy-code-btn.copied {
+    opacity: 1;
+    background: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+  }
+
+  /* --------------------------------------------------------------------------
+     GitHub Callouts / Alerts (> [!NOTE], > [!TIP], etc.)
+     -------------------------------------------------------------------------- */
+  blockquote {
+    border-left: 4px solid var(--theme-accent);
+    padding: 12px 18px;
+    margin: 1.75rem 0;
+    background-color: var(--table-stripe-bg);
+    border-radius: 0 8px 8px 0;
+    color: var(--theme-text);
+  }
+
+  .markdown-alert {
+    padding: 14px 18px;
+    margin: 1.75rem 0;
+    border-left: 4px solid var(--theme-accent);
+    border-radius: 0 8px 8px 0;
+    background-color: var(--code-bg);
+  }
+
+  .markdown-alert .alert-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 650;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .markdown-alert.alert-note {
+    border-left-color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.08);
+  }
+  .markdown-alert.alert-note .alert-title { color: #2563eb; }
+
+  .markdown-alert.alert-tip {
+    border-left-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.08);
+  }
+  .markdown-alert.alert-tip .alert-title { color: #059669; }
+
+  .markdown-alert.alert-important {
+    border-left-color: #8b5cf6;
+    background-color: rgba(139, 92, 246, 0.08);
+  }
+  .markdown-alert.alert-important .alert-title { color: #7c3aed; }
+
+  .markdown-alert.alert-warning {
+    border-left-color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.08);
+  }
+  .markdown-alert.alert-warning .alert-title { color: #d97706; }
+
+  .markdown-alert.alert-caution {
+    border-left-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.08);
+  }
+  .markdown-alert.alert-caution .alert-title { color: #dc2626; }
+
+  @media (prefers-color-scheme: dark) {
+    .markdown-alert.alert-note { background-color: rgba(59, 130, 246, 0.12); }
+    .markdown-alert.alert-note .alert-title { color: #60a5fa; }
+    .markdown-alert.alert-tip { background-color: rgba(16, 185, 129, 0.12); }
+    .markdown-alert.alert-tip .alert-title { color: #34d399; }
+    .markdown-alert.alert-important { background-color: rgba(139, 92, 246, 0.12); }
+    .markdown-alert.alert-important .alert-title { color: #a78bfa; }
+    .markdown-alert.alert-warning { background-color: rgba(245, 158, 11, 0.12); }
+    .markdown-alert.alert-warning .alert-title { color: #fbbf24; }
+    .markdown-alert.alert-caution { background-color: rgba(239, 68, 68, 0.12); }
+    .markdown-alert.alert-caution .alert-title { color: #f87171; }
+  }
+
+  .markdown-alert p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* --------------------------------------------------------------------------
+     Chapter Navigation Card Footer
+     -------------------------------------------------------------------------- */
+  .chapter-nav-footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    margin-top: 3.5rem !important;
+    margin-bottom: 2rem !important;
+    padding: 16px 20px !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+    max-width: 100% !important;
+  }
+
+  .chapter-nav-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: var(--nav-pill-bg);
+    text-decoration: none !important;
+    font-weight: 550;
+    font-size: 0.88rem;
+    color: var(--nav-pill-text) !important;
+    transition: all 0.15s ease;
+  }
+
+  .chapter-nav-footer a:hover {
+    background: var(--theme-link);
+    color: #ffffff !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     Floating Back-to-Top Button
+     -------------------------------------------------------------------------- */
+  .back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+  }
+
+  .back-to-top.visible {
+    opacity: 0.95;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background-color: var(--nav-pill-hover);
+  }
+
+  /* --------------------------------------------------------------------------
+     Custom Scrollbars
+     -------------------------------------------------------------------------- */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.35);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.55);
+  }
+
+  /* --------------------------------------------------------------------------
+     Print Layout Cleanup
+     -------------------------------------------------------------------------- */
+  @media print {
+    .site-header, .site-footer, .reading-progress-bar, .back-to-top, .copy-code-btn, .chapter-nav-footer {
+      display: none !important;
+    }
+    .wrapper {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+    body {
+      color: #000000 !important;
+      background: #ffffff !important;
+      font-size: 12pt;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Reading progress indicator
+    var progressBar = document.createElement("div");
+    progressBar.className = "reading-progress-bar";
+    document.body.appendChild(progressBar);
+
+    var updateProgress = function() {
+      var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+
+    // 2. Back to top button
+    var btt = document.createElement("button");
+    btt.className = "back-to-top";
+    btt.setAttribute("aria-label", "Back to top");
+    btt.setAttribute("title", "Back to top");
+    btt.innerHTML = "&#8593;";
+    document.body.appendChild(btt);
+
+    window.addEventListener("scroll", function() {
+      var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollPos > 350) {
+        btt.classList.add("visible");
+      } else {
+        btt.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    btt.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 3. Responsive table container wrapper
+    var tables = document.querySelectorAll(".post-content table, .page-content table");
+    tables.forEach(function(table) {
+      if (!table.parentElement.classList.contains("table-scroll-wrapper")) {
+        var wrapper = document.createElement("div");
+        wrapper.className = "table-scroll-wrapper";
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      }
+    });
+
+    // 4. Code block copy buttons
+    var codeContainers = document.querySelectorAll("div.highlighter-rouge, pre.highlight");
+    codeContainers.forEach(function(container) {
+      var pre = container.tagName === "PRE" ? container : container.querySelector("pre");
+      if (!pre || container.querySelector(".copy-code-btn")) return;
+
+      var btn = document.createElement("button");
+      btn.className = "copy-code-btn";
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Copy code");
+      btn.textContent = "Copy";
+
+      btn.addEventListener("click", function() {
+        var code = pre.querySelector("code") || pre;
+        var text = code.innerText || code.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = "✓ Copied";
+            btn.classList.add("copied");
+            setTimeout(function() {
+              btn.textContent = "Copy";
+              btn.classList.remove("copied");
+            }, 2000);
+          }).catch(function() {
+            btn.textContent = "Failed";
+          });
+        }
+      });
+
+      container.appendChild(btn);
+    });
+
+    // 5. GitHub Alert / Callout transform (> [!NOTE], > [!TIP], etc.)
+    var alertMeta = {
+      NOTE: { title: "Note", icon: "ℹ️", cls: "alert-note" },
+      TIP: { title: "Tip", icon: "💡", cls: "alert-tip" },
+      IMPORTANT: { title: "Important", icon: "📌", cls: "alert-important" },
+      WARNING: { title: "Warning", icon: "⚠️", cls: "alert-warning" },
+      CAUTION: { title: "Caution", icon: "🛑", cls: "alert-caution" }
+    };
+
+    var blockquotes = document.querySelectorAll("blockquote");
+    blockquotes.forEach(function(bq) {
+      var firstP = bq.querySelector("p");
+      if (!firstP) return;
+      var rawHtml = firstP.innerHTML.trim();
+      var match = rawHtml.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s*<br\s*\/?>|\s*\n|\s+)?([\s\S]*)$/i);
+      if (match) {
+        var alertType = match[1].toUpperCase();
+        var info = alertMeta[alertType];
+        if (info) {
+          bq.classList.add("markdown-alert", info.cls);
+          var header = document.createElement("div");
+          header.className = "alert-title";
+          header.innerHTML = '<span class="alert-icon">' + info.icon + '</span> ' + info.title;
+          firstP.innerHTML = match[2];
+          bq.insertBefore(header, firstP);
+        }
+      }
+    });
+
+    // 6. Chapter bottom pagination styling
+    var contentParas = document.querySelectorAll(".post-content p, .page-content p");
+    contentParas.forEach(function(p) {
+      var text = p.textContent.trim();
+      if ((text.indexOf("Previous:") !== -1 || text.indexOf("Next:") !== -1) && 
+          (text.indexOf("Index") !== -1 || text.indexOf("Back to Index") !== -1)) {
+        p.classList.add("chapter-nav-footer");
+      }
+    });
+  });
+</script>
+{% endraw %}

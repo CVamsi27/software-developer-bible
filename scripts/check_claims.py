@@ -155,8 +155,9 @@ def scan_files(mode: str) -> list[str]:
             stripped = re.sub(r"(?m)^.*Claims audit \d{4}-\d{2}-\d{2}:.*$", "", stripped)
             if re.search(rule["pattern"], stripped, flags=re.IGNORECASE):
                 rel = path.relative_to(REPO)
+                prefix = "SCAN" if mode == "scan" else "CLAIM-HIT"
                 problems.append(
-                    f"  {mode}: {rel} :: rule {rule['id']}\n"
+                    f"  {prefix}: {rel} :: rule {rule['id']}\n"
                     f"    why: {rule['reason']}\n"
                     f"    fix: {rule['fix']}"
                 )
@@ -172,7 +173,8 @@ def scan_files(mode: str) -> list[str]:
 def main() -> int:
     args = sys.argv[1:]
     scan_mode = "--scan" in args
-    problems = scan_files("SCAN" if scan_mode else "CLAIM-HIT")
+    mode = "scan" if scan_mode else "gate"
+    problems = scan_files(mode)
     if problems and not scan_mode:
         print("Claims gate FAILED:")
         print("\n".join(problems))

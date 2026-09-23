@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "5143772dcfa817aa23308d5bd96cc8f95f40750ba1ce1edcbb38bdb305b629b3",
+ "corpus_digest": "af8ff80779d08f439c42c25731ab3bbdb34fe121323bb1a7e96944d8afcee5b4",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10606
+  "read_minutes": 10619
  },
  "chapters": [
   {
@@ -441,7 +441,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.html",
@@ -471,7 +471,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.html",
@@ -491,7 +491,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.html",
@@ -521,7 +521,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 29
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.html",
@@ -541,7 +541,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.html",
@@ -811,7 +811,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 25
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -831,7 +831,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -861,7 +861,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.html",
@@ -901,7 +901,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.html",
@@ -911,7 +911,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 29
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -921,7 +921,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.html",
@@ -941,7 +941,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 31
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.html",
@@ -971,7 +971,7 @@
    "g": [
     "concept"
    ],
-   "m": 41
+   "m": 42
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.html",

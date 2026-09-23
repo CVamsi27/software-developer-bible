@@ -1,6 +1,6 @@
 # Data & Caching — Next.js
 
-> **Study time:** ≈ 2 h 19 m of reading (6 files, ~23 min average).
+> **Study time:** ≈ 2 h 22 m of reading (6 files, ~24 min average).
 > **6 files.** The hardest part of App Router: data fetching patterns, Server Actions, the four caches, streaming SSR, ISR, and static exports.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -15,9 +15,9 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [Data Fetching Patterns](10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 14 min |
 | 02 | [Server Actions](10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | 28 min |
-| 03 | [Caching](10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 25 min |
-| 04 | [Streaming](10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 28 min |
-| 05 | [Incremental Static Regeneration](10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 26 min |
+| 03 | [Caching](10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 26 min |
+| 04 | [Streaming](10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 29 min |
+| 05 | [Incremental Static Regeneration](10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 27 min |
 | 06 | [Static Exports](10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | 18 min |
 
 ---

@@ -1,6 +1,6 @@
 # Interview Prep — Next.js
 
-> **Study time:** ≈ 41 min of reading (1 files, ~41 min average).
+> **Study time:** ≈ 42 min of reading (1 files, ~42 min average).
 > **1 file.** The self-test bank: 60 curated Next.js questions covering App Router, RSC, Server Actions, caching, and deployment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 41 min |
+| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 42 min |
 
 ---
 

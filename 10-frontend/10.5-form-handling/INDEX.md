@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 36 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 38 m of reading (7 files, ~14 min average).
 > **7 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ Three main form libraries — pick the right one for the job.
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 16 min |
 | 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode since 2024 | Legacy codebases; new projects should use RHF | 14 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 10 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 11 min |
 
 **Decision:**
 
@@ -72,7 +72,7 @@ Long-form resilience: never lose user input again.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 19 min |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 20 min |
 
 ---
 

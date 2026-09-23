@@ -1,6 +1,6 @@
 # I/O & Data - Node.js
 
-> **Study time:** ≈ 1 h 54 m of reading (4 files, ~28 min average).
+> **Study time:** ≈ 1 h 55 m of reading (4 files, ~29 min average).
 > **4 files.** The I/O primitives every backend service uses: streams for piece-by-piece data handling, buffers for binary data, the file system module, and the raw HTTP server that Express/Fastify/NestJS sit on top of.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -12,7 +12,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Streams](20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 45 min |
+| 01 | [Streams](20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 46 min |
 | 02 | [Buffers](20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, `alloc` vs `allocUnsafe`, TypedArray interop, memory pooling | 36 min |
 | 03 | [File System](20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes, always handle errors | 15 min |
 | 04 | [HTTP Module](20.1.2.04-http-module.md) | `createServer`, `IncomingMessage`/`ServerResponse` as streams, routing manually, client requests, reverse proxy, keep-alive | 18 min |

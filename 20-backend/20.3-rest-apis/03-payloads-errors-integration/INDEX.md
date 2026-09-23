@@ -1,6 +1,6 @@
 # Payloads, Errors & Integration - REST APIs
 
-> **Study time:** ≈ 2 h 3 m of reading (7 files, ~18 min average).
+> **Study time:** ≈ 2 h 4 m of reading (7 files, ~18 min average).
 > **7 files.** The contract details clients feel daily: pagination strategies (offset vs cursor vs keyset), RFC 7807 error design, long-running operations (202 Accepted + operation resources), file upload architectures (proxy multipart vs presigned direct-to-S3), webhooks — the "reverse API" — plus the two contracts everyone forgets: **serialization & wire formats** and **transactional email delivery**.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -14,7 +14,7 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | 30 min |
 | 02 | [Error Handling Design](20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors | 12 min |
-| 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation, NestJS sketch | 14 min |
+| 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation, NestJS sketch | 15 min |
 | 04 | [File Upload APIs](20.3.3.04-file-upload-apis.md) | Multipart streaming, presigned S3 direct uploads, resumable (`Content-Range`, tus), virus-scan gates, metadata sidecars, MIME sniffing + size caps | 15 min |
 | 05 | [Webhooks](20.3.3.05-webhooks.md) | At-least-once delivery, HMAC signature verification, replay protection, retry with backoff, ordering + idempotency keys, DLQ | 24 min |
 | 06 | [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.md) | JSON limits (64-bit precision, dates, undefined), protobuf field-number contracts, MessagePack/CBOR/Avro, schema evolution, body limits before parsing, compressed-size comparison | 13 min |

@@ -1,6 +1,6 @@
 # Cheat Sheets — Index
 
-> **Study time:** ≈ 1 h 18 m of reading (7 files, ~11 min average).
+> **Study time:** ≈ 1 h 19 m of reading (7 files, ~11 min average).
 > **7 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -33,7 +33,7 @@ The 7 cheat sheets classify into 5 conceptual categories — pick by interview t
 | 02 | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md) | Types, generics, utility types, decorators, configuration, `satisfies`, `infer` | Frontend interview with TS focus | 9 min |
 | 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | 13 min |
 | 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | 14 min |
-| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | 15 min |
+| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | 16 min |
 | 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | 10 min |
 | 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md) | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 9 min |
 

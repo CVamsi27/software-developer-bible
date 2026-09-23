@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 8 h 4 m of reading (14 files, ~35 min average).
+> **Study time:** ≈ 8 h 6 m of reading (14 files, ~35 min average).
 > **14 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -39,7 +39,7 @@
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | 44 min |
 | 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | 15 min |
-| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 49 min |
+| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 50 min |
 | 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | 11 min |
 
 ---
@@ -64,7 +64,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 | --: | ------ | -------- | ------------- | ----------: |
 | 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 50 min |
 | 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 48 min |
-| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 40 min |
+| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 41 min |
 
 ---
 

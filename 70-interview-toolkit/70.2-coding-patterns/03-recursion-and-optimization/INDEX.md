@@ -1,6 +1,6 @@
 # Recursion & Optimization
 
-> **Study time:** ≈ 42 min of reading (3 files, ~14 min average).
+> **Study time:** ≈ 44 min of reading (3 files, ~15 min average).
 > **3 files.** The exhaustive-search-to-optimal pipeline: backtracking to enumerate, dynamic programming to remember, bit manipulation to compress state.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -14,8 +14,8 @@
 | # | File | When to recognize | Read time |
 | --: | ------ | ------------------- | ----------: |
 | 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | 15 min |
-| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | 13 min |
-| 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "XOR tricks, bitmask subset enumeration, popcount, single number" | 14 min |
+| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | 14 min |
+| 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "XOR tricks, bitmask subset enumeration, popcount, single number" | 15 min |
 
 ---
 

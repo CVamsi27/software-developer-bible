@@ -1,6 +1,6 @@
 # Auth - Security
 
-> **Study time:** ≈ 2 h 37 m of reading (11 files, ~14 min average).
+> **Study time:** ≈ 2 h 39 m of reading (11 files, ~14 min average).
 > **The complete authentication & authorization learning track — all 10 stages.** Read them **in order**, each builds on the previous; finish with the interview drills.
 >
 > Part of [Security](../INDEX.md) · Prerequisite: [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md)

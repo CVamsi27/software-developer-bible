@@ -1,6 +1,6 @@
 # Real-Time Stack
 
-> **Study time:** ≈ 4 h 55 m of reading (11 files, ~27 min average).
+> **Study time:** ≈ 4 h 56 m of reading (11 files, ~27 min average).
 > **WebSockets, SSE, real-time architecture** — optional stack, study when a JD demands it. Shared by both lanes.
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, pub/sub backbones).
@@ -74,7 +74,7 @@ NestJS gateways: read alongside Pass II when wiring production code.
 | Order | File | Topics | Read time |
 | ----: | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | --------: |
 | 8 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | 36 min |
-| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | 12 min |
+| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | 13 min |
 
 ## Testing & Drills
 

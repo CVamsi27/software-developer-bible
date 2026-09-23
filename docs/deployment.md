@@ -309,9 +309,9 @@ the build log names the offending file under `functions/`.
 
 ## See Also
 
-- [Cloudflare Pages](https://developers.cloudflare.com/pages/)
-- [Git integration](https://developers.cloudflare.com/pages/configuration/git-integration/)
-- [Build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/)
-- [Build image (language versions)](https://developers.cloudflare.com/pages/configuration/build-image/)
-- [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
+- [Cloudflare Pages](https://developers.cloudflare.com/pages/) — official platform documentation covering edge delivery, preview builds, and static hosting
+- [Git integration](https://developers.cloudflare.com/pages/configuration/git-integration/) — webhook triggers and automated branch deployments from GitHub repositories
+- [Build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/) — build commands, output directories, and environment variables for the Jekyll pipeline
+- [Build image (language versions)](https://developers.cloudflare.com/pages/configuration/build-image/) — Ruby and Node runtime pins for reproducible build environments
+- [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/) — apex domain mapping, CNAME records, and automated edge SSL certificate provisioning
 {% endraw %}

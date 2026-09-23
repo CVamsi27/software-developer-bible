@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 41 m of reading (6 files, ~17 min average).
+> **Study time:** ≈ 1 h 42 m of reading (6 files, ~17 min average).
 > **6 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -30,10 +30,10 @@ Language Fundamentals → OOP & SOLID → Concurrency → Testing → **Spring B
 
 ## See Also
 
-- [Backend Index](../INDEX.md)
-- [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md)
-- [Testing — Quality](../../50-quality/50.1-testing/INDEX.md)
-- [Coding Patterns — Interview Toolkit](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md)
+- [Backend Index](../INDEX.md) — Node.js and NestJS backend stacks that provide architectural equivalents to JVM services
+- [Design Patterns](../../30-architecture/30.1-design-patterns/INDEX.md) — Gang of Four design patterns whose canonical textbook implementations are in Java
+- [Testing — Quality](../../50-quality/50.1-testing/INDEX.md) — unit, integration, and mocking strategies comparing JUnit/Mockito with Jest/Vitest
+- [Coding Patterns — Interview Toolkit](../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — algorithmic patterns for the data structures coding portion of enterprise Java loops
 
 ---
 

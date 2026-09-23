@@ -393,7 +393,7 @@ Either format is acceptable — choose the one that best suits the content.
 
 Two formats are used depending on content:
 
-**Code-block format** (441 files, measured 2026-09-18) — for detailed textual summaries:
+**Code-block format** (442 files, measured 2026-09-18) — for detailed textual summaries:
 
 ````text
 ## Cheat Sheet

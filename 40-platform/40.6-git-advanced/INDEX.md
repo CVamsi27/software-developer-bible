@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 2 h 12 m of reading (10 files, ~13 min average).
+> **Study time:** ≈ 2 h 13 m of reading (10 files, ~13 min average).
 > **10 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -42,7 +42,7 @@ How your team organizes work.
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
 | 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 9 min |
-| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 9 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 10 min |
 
 **Decision:**
 

@@ -3,32 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Software Developer Bible — master index</title>
+<script>
+  (function() {
+    var savedTheme = localStorage.getItem("sdb-theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  })();
+</script>
 <style>
 :root { color-scheme: light dark; }
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
 body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
        max-width: 1100px; margin: 0 auto; padding: 1rem 1.2rem 4rem;
        line-height: 1.45; }
 h1 { font-size: 1.4rem; margin-bottom: .2rem; }
 .sub { opacity: .7; margin: 0 0 1rem; font-size: .92rem; }
+.nav-back { margin-bottom: .6rem; font-size: .92rem; }
 #q { width: 100%; box-sizing: border-box; font-size: 1rem;
      padding: .55rem .8rem; margin: .4rem 0 1rem;
      border: 1px solid #8886; border-radius: 8px; }
 .chips { display: flex; flex-wrap: wrap; gap: .35rem; margin: .25rem 0; }
 .chips button { font-size: .8rem; padding: .18rem .6rem; border-radius: 999px;
-  border: 1px solid #8886; background: transparent; cursor: pointer; }
+  border: 1px solid #8886; background: transparent; cursor: pointer; color: inherit; }
 .chips button.on { background: #4a7dff; border-color: #4a7dff; color: #fff; }
 #stats { font-size: .9rem; opacity: .75; margin: .8rem 0; }
 table { width: 100%; border-collapse: collapse; font-size: .92rem; }
 th { text-align: left; border-bottom: 2px solid #8886; padding: .3rem .5rem; }
 td { border-bottom: 1px solid #8884; padding: .32rem .5rem; }
 td.m, th.m { text-align: right; white-space: nowrap; }
-a { text-decoration: none; } a:hover { text-decoration: underline; }
+a { text-decoration: none; color: #3b82f6; } a:hover { text-decoration: underline; }
 .tag { opacity: .7; font-size: .8rem; }
 .hidden { display: none; }
 </style>
 </head>
 <body>
+<div class="nav-back"><a href="INDEX.html">← Back to Master Index</a></div>
 <h1>Software Developer Bible — master index</h1>
 <p class="sub">560 chapters · 178 h 12 m of reading · generated from enforced file
 metadata by <code>scripts/gen_master_index.py</code> — do not edit by hand

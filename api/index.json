@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d9c4c7a1d34cc6553bb08bbbf3bbc8519a8b061f22b4f6707e27ca479a1de003",
+ "corpus_digest": "0a3e1ce569c2ee87327522c4d676886c751f75c1fa61580a67e9b6533bb0eb37",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10692
+  "read_minutes": 10693
  },
  "chapters": [
   {
@@ -1509,7 +1509,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.13-java/20.13.01-java-language-fundamentals.html",

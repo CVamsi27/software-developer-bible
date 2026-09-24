@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Characterization tests for scripts/md_fences.py — the single fence owner.
+r"""Characterization tests for scripts/md_fences.py — the single fence owner.
 
 md_fences.walk() replaced ten naive `in_fence = not in_fence` toggles across
 the tooling. Every gate and fixer that classifies markdown lines as inside or

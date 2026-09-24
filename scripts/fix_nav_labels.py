@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Restore navigation-foot labels: canonical casing, and human titles.
+r"""Restore navigation-foot labels: canonical casing, and human titles.
 
 The corpus's `[← Previous: X](...) · [Back to Index](INDEX.md) · [Next: Y](...)`
 footers were minted by a pass that *humanized the target slug* — title-casing

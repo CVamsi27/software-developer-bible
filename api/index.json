@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "0a3e1ce569c2ee87327522c4d676886c751f75c1fa61580a67e9b6533bb0eb37",
+ "corpus_digest": "8df6fe393bc721cfff08e0c98106c19f916ff02f9efb3c799024e1d4cffaf39b",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10693
+  "read_minutes": 10697
  },
  "chapters": [
   {
@@ -971,7 +971,7 @@
    "g": [
     "concept"
    ],
-   "m": 42
+   "m": 45
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.html",
@@ -2238,7 +2238,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 20
+   "m": 21
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",

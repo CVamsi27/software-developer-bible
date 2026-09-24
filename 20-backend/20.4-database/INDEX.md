@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 6 h 46 m of reading (24 files, ~17 min average).
+> **Study time:** ≈ 6 h 47 m of reading (24 files, ~17 min average).
 > **24 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -102,7 +102,7 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 | 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | 22 min |
 | 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | 12 min |
 | 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | 11 min |
-| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | 50+ curated questions with answers | 20 min |
+| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | 50+ curated questions with answers | 21 min |
 
 ---
 

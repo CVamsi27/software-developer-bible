@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 7 h 23 m of reading (17 files, ~26 min average).
+> **Study time:** ≈ 7 h 26 m of reading (17 files, ~26 min average).
 > **17 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -92,7 +92,7 @@ Production concerns.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 42 min |
+| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 60+ curated questions with answers | 45 min |
 
 ---
 

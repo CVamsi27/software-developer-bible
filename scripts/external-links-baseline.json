@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-23",
- "url_count": 2385,
+ "generated": "2026-09-24",
+ "url_count": 2386,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -5016,6 +5016,9 @@
   ],
   "https://mode.com/sql-tutorial/sql-window-functions": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
+  ],
+  "https://modelcontextprotocol.io": [
+   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md"
   ],
   "https://monorepo.tools/": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",

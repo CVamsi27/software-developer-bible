@@ -1,6 +1,15 @@
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
 <meta name="theme-color" content="#0b1114">
 
+<script>
+  (function() {
+    var savedTheme = localStorage.getItem("sdb-theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  })();
+</script>
+
 {% raw %}
 <style>
   /* ==========================================================================
@@ -9,7 +18,8 @@
      code block copy buttons, GitHub alerts, reading progress bar & nav footers.
      ========================================================================== */
 
-  :root {
+  :root,
+  html[data-theme="light"] {
     --site-max-width: 1140px;
     --prose-max-width: 860px;
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -43,7 +53,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
       /* Dark Mode Palette */
       --theme-bg: #0b1114;
       --theme-text: #cbd5e1;
@@ -70,6 +80,33 @@
       --nav-pill-hover: #22303c;
       --nav-pill-text: #e2e8f0;
     }
+  }
+
+  html[data-theme="dark"] {
+    --theme-bg: #0b1114;
+    --theme-text: #cbd5e1;
+    --theme-text-muted: #94a3b8;
+    --theme-heading: #f8fafc;
+    --theme-border: #1e293b;
+    --theme-border-subtle: #151e28;
+    --theme-link: #60a5fa;
+    --theme-link-hover: #93c5fd;
+    --theme-accent: #3b82f6;
+    
+    --header-bg: rgba(11, 17, 20, 0.92);
+    --card-bg: #10171d;
+    --code-bg: #0e151b;
+    --code-border: #1e293b;
+    --code-text: #e2e8f0;
+    
+    --table-header-bg: #131c23;
+    --table-stripe-bg: #0d1419;
+    --table-border: #1e293b;
+    --table-hover: rgba(59, 130, 246, 0.08);
+    
+    --nav-pill-bg: #151e26;
+    --nav-pill-hover: #22303c;
+    --nav-pill-text: #e2e8f0;
   }
 
   /* --------------------------------------------------------------------------
@@ -544,10 +581,43 @@
   }
 
   /* --------------------------------------------------------------------------
+     Theme Toggle Button
+     -------------------------------------------------------------------------- */
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--theme-border);
+    background-color: var(--nav-pill-bg);
+    color: var(--theme-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+  }
+
+  .theme-toggle-btn:hover {
+    background-color: var(--nav-pill-hover);
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+    transform: scale(1.05);
+  }
+
+  .theme-toggle-btn svg {
+    display: block;
+    width: 17px;
+    height: 17px;
+  }
+
+  /* --------------------------------------------------------------------------
      Print Layout Cleanup
      -------------------------------------------------------------------------- */
   @media print {
-    .site-header, .site-footer, .reading-progress-bar, .back-to-top, .copy-code-btn, .chapter-nav-footer {
+    .site-header, .site-footer, .reading-progress-bar, .back-to-top, .copy-code-btn, .theme-toggle-btn, .chapter-nav-footer {
       display: none !important;
     }
     .wrapper {
@@ -564,6 +634,47 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // 0. Theme toggle setup
+    var themeBtn = document.createElement("button");
+    themeBtn.className = "theme-toggle-btn";
+    themeBtn.type = "button";
+    themeBtn.setAttribute("aria-label", "Toggle color theme");
+    themeBtn.setAttribute("title", "Toggle dark/light mode");
+
+    var updateThemeIcon = function(theme) {
+      if (theme === "dark") {
+        themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+      } else {
+        themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      }
+    };
+
+    var getCurrentEffectiveTheme = function() {
+      var explicit = document.documentElement.getAttribute("data-theme");
+      if (explicit) return explicit;
+      return (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+    };
+
+    updateThemeIcon(getCurrentEffectiveTheme());
+
+    themeBtn.addEventListener("click", function() {
+      var current = getCurrentEffectiveTheme();
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("sdb-theme", next);
+      updateThemeIcon(next);
+    });
+
+    var navTrigger = document.querySelector(".site-nav .trigger");
+    if (navTrigger) {
+      navTrigger.appendChild(themeBtn);
+    } else {
+      var headerWrapper = document.querySelector(".site-header .wrapper");
+      if (headerWrapper) {
+        headerWrapper.appendChild(themeBtn);
+      }
+    }
+
     // 1. Reading progress indicator
     var progressBar = document.createElement("div");
     progressBar.className = "reading-progress-bar";

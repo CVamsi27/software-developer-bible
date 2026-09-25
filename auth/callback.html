@@ -24,14 +24,19 @@
       const query = new URLSearchParams(window.location.search);
       const next = query.get("next") || query.get("state") || "/";
       const fragment = new URLSearchParams(window.location.hash.slice(1));
-      const accessToken = fragment.get("access_token");
+      const accessToken = fragment.get("access_token") || query.get("access_token");
       const status = document.getElementById("status");
       const denied = (message) => {
         status.className = "error";
         status.textContent = message;
-        window.setTimeout(() => { window.location.href = "https://personal.buildora.work/?study=access-denied"; }, 900);
+        window.setTimeout(() => { window.location.href = "https://personal.buildora.work/?study=access-denied"; }, 2500);
       };
-      if (!accessToken) {
+      const errorDesc = fragment.get("error_description") || query.get("error_description") || fragment.get("error") || query.get("error");
+      if (errorDesc) {
+        console.error("Auth error:", errorDesc);
+        denied("Google authorization error: " + errorDesc + ". Redirecting.");
+      } else if (!accessToken) {
+        console.error("No access token found in callback URL:", window.location.href);
         denied("No Google session was returned. Redirecting to Personal Buildora.");
       } else {
         fetch("/auth/session?next=" + encodeURIComponent(next), {
@@ -40,9 +45,17 @@
           body: JSON.stringify({ access_token: accessToken })
         }).then(async (response) => {
           const result = await response.json();
-          if (!response.ok || !result.ok) return denied("This Google account is not approved for Study. Redirecting.");
+          if (!response.ok || !result.ok) {
+            console.error("Session exchange refused:", response.status, result);
+            return denied(result && result.reason === "not-allowed"
+              ? "This Google account is not approved for Study. Redirecting."
+              : "Session verification failed (" + (result?.reason || response.status) + "). Redirecting.");
+          }
           window.location.replace(result.next || "/");
-        }).catch(() => denied("The study session could not be secured. Redirecting."));
+        }).catch((err) => {
+          console.error("Network error exchanging session:", err);
+          denied("The study session could not be secured. Redirecting.");
+        });
       }
     </script>
   </body>

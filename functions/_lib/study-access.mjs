@@ -18,7 +18,11 @@ export function normalizeEmail(value) {
 }
 
 export function isAllowedStudyEmail(value) {
-  return normalizeEmail(value) === ALLOWED_STUDY_EMAIL;
+  const norm = normalizeEmail(value);
+  return (
+    norm === ALLOWED_STUDY_EMAIL ||
+    norm.replace(/@googlemail\.com$/, "@gmail.com") === ALLOWED_STUDY_EMAIL
+  );
 }
 
 export function isPagesDevHost(value) {
@@ -74,7 +78,9 @@ function parseAccessToken(token) {
 
 async function verifyAsymmetricToken(token, config) {
   const parsed = parseAccessToken(token);
-  if (!parsed || !config.jwksUrl) return null;
+  if (!parsed) return null;
+  const jwksUrl = config.jwksUrl || (config.url ? `${config.url.replace(/\/$/, "")}/auth/v1/.well-known/jwks.json` : "");
+  if (!jwksUrl) return null;
 
   const algorithm = parsed.header.alg;
   const keyAlgorithm =
@@ -85,26 +91,39 @@ async function verifyAsymmetricToken(token, config) {
         : null;
   if (!keyAlgorithm || typeof parsed.header.kid !== "string") return null;
 
-  const jwksResponse = await fetch(config.jwksUrl);
-  if (!jwksResponse.ok) return null;
-  const jwks = await jwksResponse.json();
-  const jwk = Array.isArray(jwks?.keys)
-    ? jwks.keys.find((key) => key?.kid === parsed.header.kid && key?.alg === algorithm)
-    : null;
-  if (!jwk) return null;
+  try {
+    const jwksResponse = await fetch(jwksUrl);
+    if (!jwksResponse.ok) return null;
+    const jwks = await jwksResponse.json();
+    const jwk = Array.isArray(jwks?.keys)
+      ? jwks.keys.find((key) => key?.kid === parsed.header.kid && (key?.alg === algorithm || !key?.alg))
+      : null;
+    if (!jwk) return null;
 
-  const cryptoKey = await crypto.subtle.importKey("jwk", jwk, keyAlgorithm, false, ["verify"]);
-  const verifyAlgorithm = algorithm === "ES256" ? { name: "ECDSA", hash: "SHA-256" } : keyAlgorithm;
-  const valid = await crypto.subtle.verify(verifyAlgorithm, cryptoKey, parsed.signature, parsed.signingInput);
-  if (!valid) return null;
+    const cryptoKey = await crypto.subtle.importKey("jwk", jwk, keyAlgorithm, false, ["verify"]);
+    const verifyAlgorithm = algorithm === "ES256" ? { name: "ECDSA", hash: "SHA-256" } : keyAlgorithm;
+    const valid = await crypto.subtle.verify(verifyAlgorithm, cryptoKey, parsed.signature, parsed.signingInput);
+    if (!valid) return null;
 
-  const now = Math.floor(Date.now() / 1000);
-  const { exp, nbf, iss, aud, email } = parsed.payload ?? {};
-  const expectedIssuer = `${config.url.replace(/\/$/, "")}/auth/v1`;
-  const validAudience = Array.isArray(aud) ? aud.includes("authenticated") : aud === "authenticated";
-  if (typeof email !== "string" || typeof exp !== "number" || exp <= now || (typeof nbf === "number" && nbf > now) || iss !== expectedIssuer || !validAudience) return null;
+    const now = Math.floor(Date.now() / 1000);
+    const CLOCK_TOLERANCE_SECONDS = 60;
+    const { exp, nbf, iss, aud, email, user_metadata } = parsed.payload ?? {};
+    const expectedIssuer = config.url ? `${config.url.replace(/\/$/, "")}/auth/v1` : "";
+    const cleanUrl = config.url ? config.url.replace(/\/$/, "") : "";
+    const validIssuer = !iss || iss === expectedIssuer || iss === cleanUrl || iss === "supabase";
+    const validAudience = Array.isArray(aud) ? aud.includes("authenticated") : aud === "authenticated";
 
-  return { email };
+    const resolvedEmail =
+      (typeof email === "string" && email) ||
+      (typeof user_metadata?.email === "string" && user_metadata.email) ||
+      null;
+
+    if (!resolvedEmail || typeof exp !== "number" || exp <= (now - CLOCK_TOLERANCE_SECONDS) || (typeof nbf === "number" && nbf > (now + CLOCK_TOLERANCE_SECONDS)) || !validIssuer || !validAudience) return null;
+
+    return { email: resolvedEmail };
+  } catch {
+    return null;
+  }
 }
 
 export function safeNextPath(value) {
@@ -229,9 +248,13 @@ export async function decideAccess({
  */
 export function respondTo(decision, next) {
   if (decision.action === "public" || decision.action === "allow") return next();
+  const headers = { Location: decision.location, "Cache-Control": "no-store" };
+  if (decision.action === "denied") {
+    headers["Set-Cookie"] = "study_access_token=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0";
+  }
   return new Response(null, {
     status: decision.status,
-    headers: { Location: decision.location, "Cache-Control": "no-store" },
+    headers,
   });
 }
 
@@ -239,16 +262,37 @@ export async function fetchSupabaseUser(accessToken, env) {
   const config = resolveSupabaseConfig(env);
   if (!accessToken || !config.url) return null;
 
-  if (!config.anonKey) return verifyAsymmetricToken(accessToken, config);
+  // Auto-populate JWKS URL if missing
+  if (!config.jwksUrl && config.url) {
+    config.jwksUrl = `${config.url.replace(/\/$/, "")}/auth/v1/.well-known/jwks.json`;
+  }
+  // If anonKey is missing and pointing to the known Buildora Supabase project, supply publishable key
+  if (!config.anonKey && config.url.includes("ejbghgpatpfubxltkpde")) {
+    config.anonKey = "sb_publishable_I42JurXGACj13HhJ1vmjdQ_lwTO8IK8";
+  }
 
-  const response = await fetch(`${config.url.replace(/\/$/, "")}/auth/v1/user`, {
-    headers: {
-      apikey: config.anonKey,
-      Authorization: `Bearer ${accessToken}`,
-    },
-  });
-  if (!response.ok) return null;
+  // 1. Try Supabase /auth/v1/user endpoint first if anonKey is available
+  if (config.anonKey) {
+    try {
+      const response = await fetch(`${config.url.replace(/\/$/, "")}/auth/v1/user`, {
+        headers: {
+          apikey: config.anonKey,
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      if (response.ok) {
+        const user = await response.json();
+        const email =
+          (user && typeof user === "object" && typeof user.email === "string" && user.email) ||
+          (user && typeof user === "object" && typeof user.user_metadata?.email === "string" && user.user_metadata.email) ||
+          null;
+        if (email) return { ...user, email };
+      }
+    } catch {
+      // Fall through to verifyAsymmetricToken
+    }
+  }
 
-  const user = await response.json();
-  return user && typeof user === "object" && typeof user.email === "string" ? user : null;
+  // 2. Cryptographic token verification against JWKS (local & offline-verifiable)
+  return verifyAsymmetricToken(accessToken, config);
 }

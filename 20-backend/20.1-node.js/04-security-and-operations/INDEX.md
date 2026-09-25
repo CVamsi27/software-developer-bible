@@ -15,7 +15,7 @@
 | 01 | [Node.js Security](20.1.4.01-node-security.md) | Input validation (Zod, Joi), injection prevention, password hashing (bcrypt/argon2), Helmet.js, rate limiting, prototype pollution, `npm audit`/Snyk | 18 min |
 | 02 | [Debugging & Profiling](20.1.4.02-debugging-profiling-nodejs.md) | `node --inspect` + Chrome DevTools, `--prof` tick logs, heap snapshots + comparison for leaks, Clinic.js doctor/heapprofiler, event-loop lag monitoring, diagnostics reports without restarts | 16 min |
 | 03 | [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md) | Middleware chain model, arity-4 error handlers, mount paths, Fastify hook lifecycle, plugin encapsulation, schema-based serialization, benchmark caveats, migration notes | 19 min |
-| 04 | [Interview Questions](20.1.4.04-interview-questions.md) | 50 curated questions covering event loop, streams, buffers, clustering, child processes, security; focus Senior tier for 5+ YoE | 103 min |
+| 04 | [Interview Questions](20.1.4.04-interview-questions.md) | 40 curated questions covering event loop, streams, buffers, clustering, child processes, security; focus Senior tier for 5+ YoE | 103 min |
 
 ---
 

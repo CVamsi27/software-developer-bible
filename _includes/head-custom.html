@@ -3,6 +3,7 @@
 
 <script>
   (function() {
+    window.__SDB_SEARCH_URL__ = "{{ '/search.html' | relative_url }}";
     var savedTheme = localStorage.getItem("sdb-theme");
     if (savedTheme === "dark" || savedTheme === "light") {
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -614,6 +615,106 @@
   }
 
   /* --------------------------------------------------------------------------
+     Text Selection & Heading Anchors
+     -------------------------------------------------------------------------- */
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.25);
+    color: inherit;
+  }
+
+  .post-content h2,
+  .post-content h3,
+  .post-content h4,
+  .page-content h2,
+  .page-content h3,
+  .page-content h4 {
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+
+  .heading-anchor {
+    position: absolute;
+    left: -1.3em;
+    padding-right: 0.3em;
+    opacity: 0;
+    text-decoration: none !important;
+    color: var(--theme-text-muted) !important;
+    font-size: 0.85em;
+    font-weight: 400;
+    transition: opacity 0.15s ease, color 0.15s ease;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .heading-anchor:hover {
+    color: var(--theme-link) !important;
+  }
+
+  .post-content h2:hover .heading-anchor,
+  .post-content h3:hover .heading-anchor,
+  .post-content h4:hover .heading-anchor,
+  .page-content h2:hover .heading-anchor,
+  .page-content h3:hover .heading-anchor,
+  .page-content h4:hover .heading-anchor {
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading-anchor {
+      position: static;
+      margin-left: 0.35em;
+      opacity: 0.45;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Toast Notification for Copy Actions
+     -------------------------------------------------------------------------- */
+  .sdb-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--card-bg);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 550;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(8px);
+  }
+
+  .sdb-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .search-shortcut-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    padding: 1px 5px;
+    margin-left: 5px;
+    border-radius: 4px;
+    background: var(--theme-border-subtle);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text-muted);
+    vertical-align: middle;
+    line-height: 1.2;
+  }
+
+  /* --------------------------------------------------------------------------
      Print Layout Cleanup
      -------------------------------------------------------------------------- */
   @media print {
@@ -788,6 +889,87 @@
       if ((text.indexOf("Previous:") !== -1 || text.indexOf("Next:") !== -1) && 
           (text.indexOf("Index") !== -1 || text.indexOf("Back to Index") !== -1)) {
         p.classList.add("chapter-nav-footer");
+      }
+    });
+
+    // 7. Toast notification helper
+    var showToast = function(msg) {
+      var toast = document.querySelector(".sdb-toast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.className = "sdb-toast";
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add("show");
+      if (window._toastTimeout) clearTimeout(window._toastTimeout);
+      window._toastTimeout = setTimeout(function() {
+        toast.classList.remove("show");
+      }, 2200);
+    };
+
+    // 8. Heading anchor permalinks (#) with copy on click
+    var headings = document.querySelectorAll(".post-content h2, .post-content h3, .post-content h4, .page-content h2, .page-content h3, .page-content h4");
+    headings.forEach(function(h) {
+      if (!h.id) {
+        h.id = h.textContent.trim().toLowerCase()
+          .replace(/[^\w\s-]/g, "")
+          .replace(/\s+/g, "-");
+      }
+      if (!h.id || h.querySelector(".heading-anchor")) return;
+      var anchor = document.createElement("a");
+      anchor.className = "heading-anchor";
+      anchor.href = "#" + h.id;
+      anchor.setAttribute("aria-label", "Permalink to " + h.textContent);
+      anchor.title = "Copy link to this section";
+      anchor.innerHTML = "#";
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        var url = window.location.origin + window.location.pathname + "#" + h.id;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function() {
+            showToast("✓ Copied section link to clipboard");
+          });
+        }
+        try {
+          history.pushState(null, "", "#" + h.id);
+        } catch (err) {}
+        h.scrollIntoView({ behavior: "smooth" });
+      });
+      h.insertBefore(anchor, h.firstChild);
+    });
+
+    // 9. Search navigation badge & global keyboard shortcut (Cmd+K / Ctrl+K / '/')
+    var searchLinks = document.querySelectorAll('.site-nav a[href*="search"]');
+    searchLinks.forEach(function(link) {
+      if (!link.querySelector(".search-shortcut-badge")) {
+        var badge = document.createElement("span");
+        badge.className = "search-shortcut-badge";
+        badge.textContent = "⌘K";
+        link.appendChild(badge);
+      }
+    });
+
+    document.addEventListener("keydown", function(e) {
+      var target = e.target;
+      var isInput = target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
+      if (isInput) return;
+
+      var isCmdK = (e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K");
+      var isSlash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey;
+      if (isCmdK || isSlash) {
+        e.preventDefault();
+        var currentPath = window.location.pathname;
+        if (currentPath.indexOf("search.html") !== -1) {
+          var searchInput = document.getElementById("q");
+          if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+          }
+        } else {
+          var targetUrl = window.__SDB_SEARCH_URL__ || "/search.html";
+          window.location.href = targetUrl;
+        }
       }
     });
   });

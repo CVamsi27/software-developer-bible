@@ -59,6 +59,7 @@ PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{TITLE} — Master Search Index</title>
 <script>
   (function() {{
     var savedTheme = localStorage.getItem("sdb-theme");
@@ -68,53 +69,425 @@ PAGE = """<!DOCTYPE html>
   }})();
 </script>
 <style>
-:root {{ color-scheme: light dark; }}
-html[data-theme="light"] {{ color-scheme: light; }}
-html[data-theme="dark"] {{ color-scheme: dark; }}
-body {{ font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
-       max-width: 1100px; margin: 0 auto; padding: 1rem 1.2rem 4rem;
-       line-height: 1.45; }}
-h1 {{ font-size: 1.4rem; margin-bottom: .2rem; }}
-.sub {{ opacity: .7; margin: 0 0 1rem; font-size: .92rem; }}
-.nav-back {{ margin-bottom: .6rem; font-size: .92rem; }}
-#q {{ width: 100%; box-sizing: border-box; font-size: 1rem;
-     padding: .55rem .8rem; margin: .4rem 0 1rem;
-     border: 1px solid #8886; border-radius: 8px; }}
-.chips {{ display: flex; flex-wrap: wrap; gap: .35rem; margin: .25rem 0; }}
-.chips button {{ font-size: .8rem; padding: .18rem .6rem; border-radius: 999px;
-  border: 1px solid #8886; background: transparent; cursor: pointer; color: inherit; }}
-.chips button.on {{ background: #4a7dff; border-color: #4a7dff; color: #fff; }}
-#stats {{ font-size: .9rem; opacity: .75; margin: .8rem 0; }}
-table {{ width: 100%; border-collapse: collapse; font-size: .92rem; }}
-th {{ text-align: left; border-bottom: 2px solid #8886; padding: .3rem .5rem; }}
-td {{ border-bottom: 1px solid #8884; padding: .32rem .5rem; }}
-td.m, th.m {{ text-align: right; white-space: nowrap; }}
-a {{ text-decoration: none; color: #3b82f6; }} a:hover {{ text-decoration: underline; }}
-.tag {{ opacity: .7; font-size: .8rem; }}
-.hidden {{ display: none; }}
+  :root, html[data-theme="light"] {{
+    --theme-bg: #ffffff;
+    --theme-text: #1f2937;
+    --theme-text-muted: #64748b;
+    --theme-heading: #0f172a;
+    --theme-border: #e2e8f0;
+    --theme-border-subtle: #f1f5f9;
+    --theme-link: #2563eb;
+    --theme-link-hover: #1d4ed8;
+    --theme-accent: #3b82f6;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --chip-bg: #f1f5f9;
+    --chip-hover: #e2e8f0;
+    --chip-text: #475569;
+    --chip-active-bg: #2563eb;
+    --chip-active-text: #ffffff;
+    --row-hover: rgba(59, 130, 246, 0.05);
+    --row-selected: rgba(59, 130, 246, 0.12);
+    --kbd-bg: #f1f5f9;
+    --kbd-border: #cbd5e1;
+  }}
+
+  @media (prefers-color-scheme: dark) {{
+    :root:not([data-theme="light"]) {{
+      --theme-bg: #0b1114;
+      --theme-text: #cbd5e1;
+      --theme-text-muted: #94a3b8;
+      --theme-heading: #f8fafc;
+      --theme-border: #1e293b;
+      --theme-border-subtle: #151e28;
+      --theme-link: #60a5fa;
+      --theme-link-hover: #93c5fd;
+      --theme-accent: #3b82f6;
+      --card-bg: #10171d;
+      --input-bg: #0e151b;
+      --chip-bg: #151e26;
+      --chip-hover: #22303c;
+      --chip-text: #cbd5e1;
+      --chip-active-bg: #3b82f6;
+      --chip-active-text: #ffffff;
+      --row-hover: rgba(59, 130, 246, 0.08);
+      --row-selected: rgba(59, 130, 246, 0.22);
+      --kbd-bg: #151e26;
+      --kbd-border: #334155;
+    }}
+  }}
+
+  html[data-theme="dark"] {{
+    --theme-bg: #0b1114;
+    --theme-text: #cbd5e1;
+    --theme-text-muted: #94a3b8;
+    --theme-heading: #f8fafc;
+    --theme-border: #1e293b;
+    --theme-border-subtle: #151e28;
+    --theme-link: #60a5fa;
+    --theme-link-hover: #93c5fd;
+    --theme-accent: #3b82f6;
+    --card-bg: #10171d;
+    --input-bg: #0e151b;
+    --chip-bg: #151e26;
+    --chip-hover: #22303c;
+    --chip-text: #cbd5e1;
+    --chip-active-bg: #3b82f6;
+    --chip-active-text: #ffffff;
+    --row-hover: rgba(59, 130, 246, 0.08);
+    --row-selected: rgba(59, 130, 246, 0.22);
+    --kbd-bg: #151e26;
+    --kbd-border: #334155;
+  }}
+
+  ::selection {{
+    background-color: rgba(59, 130, 246, 0.25);
+    color: inherit;
+  }}
+
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+    line-height: 1.5;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    -webkit-font-smoothing: antialiased;
+  }}
+
+  .top-bar {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--theme-border);
+  }}
+
+  .nav-back {{
+    font-size: 0.92rem;
+    font-weight: 550;
+  }}
+
+  .theme-toggle-btn {{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--theme-border);
+    background-color: var(--chip-bg);
+    color: var(--theme-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }}
+
+  .theme-toggle-btn:hover {{
+    background-color: var(--chip-hover);
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+    transform: scale(1.05);
+  }}
+
+  .theme-toggle-btn svg {{
+    display: block;
+    width: 17px;
+    height: 17px;
+  }}
+
+  h1 {{
+    font-size: 1.65rem;
+    font-weight: 750;
+    color: var(--theme-heading);
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.025em;
+  }}
+
+  .sub {{
+    color: var(--theme-text-muted);
+    margin: 0 0 1.25rem;
+    font-size: 0.92rem;
+  }}
+
+  .search-container {{
+    position: relative;
+    margin: 1rem 0;
+  }}
+
+  .search-box-wrapper {{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }}
+
+  .search-icon {{
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    color: var(--theme-text-muted);
+    pointer-events: none;
+  }}
+
+  #q {{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.05rem;
+    padding: 0.75rem 2.5rem 0.75rem 2.6rem;
+    border: 1.5px solid var(--theme-border);
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    color: var(--theme-text);
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }}
+
+  #q:focus {{
+    border-color: var(--theme-accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }}
+
+  .clear-btn {{
+    position: absolute;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--theme-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: none;
+  }}
+
+  .clear-btn:hover {{
+    color: var(--theme-heading);
+  }}
+
+  .keyboard-hints {{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--theme-text-muted);
+  }}
+
+  kbd {{
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    background-color: var(--kbd-bg);
+    border: 1px solid var(--kbd-border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  }}
+
+  .chips-group {{
+    margin: 0.75rem 0;
+  }}
+
+  .chips-label {{
+    font-size: 0.78rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--theme-text-muted);
+    margin-bottom: 0.35rem;
+  }}
+
+  .chips {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }}
+
+  .chips button {{
+    font-size: 0.8rem;
+    padding: 0.24rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--theme-border);
+    background-color: var(--chip-bg);
+    cursor: pointer;
+    color: var(--chip-text);
+    transition: all 0.15s ease;
+  }}
+
+  .chips button:hover {{
+    background-color: var(--chip-hover);
+    border-color: var(--theme-accent);
+  }}
+
+  .chips button.on {{
+    background-color: var(--chip-active-bg);
+    border-color: var(--chip-active-bg);
+    color: var(--chip-active-text);
+    font-weight: 550;
+  }}
+
+  #stats {{
+    font-size: 0.9rem;
+    color: var(--theme-text-muted);
+    margin: 1.25rem 0 0.75rem;
+    font-weight: 550;
+  }}
+
+  .table-wrapper {{
+    overflow-x: auto;
+    border: 1px solid var(--theme-border);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }}
+
+  table {{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.91rem;
+    margin: 0;
+  }}
+
+  th {{
+    text-align: left;
+    background-color: var(--theme-border-subtle);
+    color: var(--theme-heading);
+    font-weight: 650;
+    border-bottom: 2px solid var(--theme-border);
+    padding: 0.6rem 0.85rem;
+    white-space: nowrap;
+  }}
+
+  td {{
+    border-bottom: 1px solid var(--theme-border);
+    padding: 0.55rem 0.85rem;
+    vertical-align: middle;
+  }}
+
+  tr:last-child td {{
+    border-bottom: none;
+  }}
+
+  tr.active-row {{
+    background-color: var(--row-selected) !important;
+  }}
+
+  tr:hover {{
+    background-color: var(--row-hover);
+  }}
+
+  td.m, th.m {{
+    text-align: right;
+    white-space: nowrap;
+  }}
+
+  .chapter-title-link {{
+    font-weight: 600;
+    color: var(--theme-link);
+    text-decoration: none;
+  }}
+
+  .chapter-title-link:hover {{
+    text-decoration: underline;
+    color: var(--theme-link-hover);
+  }}
+
+  a {{
+    text-decoration: none;
+    color: var(--theme-link);
+  }}
+
+  a:hover {{
+    text-decoration: underline;
+  }}
+
+  .tag-badge {{
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 1px 6px;
+    margin: 2px 3px 2px 0;
+    border-radius: 4px;
+    background-color: var(--theme-border-subtle);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text-muted);
+  }}
+
+  .read-badge {{
+    font-size: 0.82rem;
+    font-weight: 550;
+    color: var(--theme-text-muted);
+    font-variant-numeric: tabular-nums;
+  }}
+
+  .hidden {{
+    display: none;
+  }}
 </style>
 </head>
 <body>
-<div class="nav-back"><a href="INDEX.html">← Back to Master Index</a></div>
+<div class="top-bar">
+  <div class="nav-back"><a href="INDEX.html">← Back to Master Index</a></div>
+  <button id="theme-btn" class="theme-toggle-btn" type="button" aria-label="Toggle color theme" title="Toggle dark/light mode"></button>
+</div>
 <h1>{TITLE} — master index</h1>
 <p class="sub">{N} chapters · {TIME} of reading · generated from enforced file
 metadata by <code>scripts/gen_master_index.py</code> — do not edit by hand
 (gate 14 regenerates it; run that script to refresh).</p>
-<input id="q" type="search" placeholder="Filter by title, section, tag…"
-       autocomplete="off" autofocus>
-<div class="chips" id="cats"></div>
-<div class="chips" id="secs"></div>
-<div class="chips" id="tags"></div>
+<div class="search-container">
+  <div class="search-box-wrapper">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input id="q" type="search" placeholder="Search 560 chapters by title, section, category, tags…"
+           autocomplete="off" autofocus>
+    <button id="clear-btn" class="clear-btn" type="button" title="Clear search">✕</button>
+  </div>
+  <div class="keyboard-hints">
+    <span><kbd>Esc</kbd> to clear</span>
+    <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+    <span><kbd>Enter</kbd> to open chapter</span>
+  </div>
+</div>
+<div class="chips-group"><div class="chips-label">Categories</div><div class="chips" id="cats"></div></div>
+<div class="chips-group"><div class="chips-label">Sections</div><div class="chips" id="secs"></div></div>
+<div class="chips-group"><div class="chips-label">Popular Tags</div><div class="chips" id="tags"></div></div>
 <p id="stats"></p>
+<div class="table-wrapper">
 <table>
 <thead><tr><th>Chapter</th><th>Section</th><th>Tags</th><th class="m">Read</th></tr></thead>
 <tbody id="rows"></tbody>
 </table>
+</div>
 <script>
 const DATA = {DATA};
 const TOP_TAGS = {TOP_TAGS};
 const $ = id => document.getElementById(id);
 const state = {{ q: '', cats: new Set(), secs: new Set(), tags: new Set() }};
+let selectedRowIndex = -1;
+let currentFilteredRows = [];
+
+// Theme toggle setup
+const themeBtn = $('theme-btn');
+function updateThemeIcon(theme) {{
+  if (theme === 'dark') {{
+    themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+  }} else {{
+    themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+  }}
+}}
+function getCurrentEffectiveTheme() {{
+  const explicit = document.documentElement.getAttribute('data-theme');
+  if (explicit) return explicit;
+  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+}}
+updateThemeIcon(getCurrentEffectiveTheme());
+themeBtn.onclick = () => {{
+  const cur = getCurrentEffectiveTheme();
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('sdb-theme', next);
+  updateThemeIcon(next);
+}};
 
 function chips(el, values, set) {{
   el.innerHTML = '';
@@ -141,19 +514,76 @@ function match(r) {{
 function fmt(m) {{ const h = Math.floor(m / 60);
   return h ? `${{h}}h ${{m % 60}}m` : `${{m}}m`; }}
 
-function render() {{
-  const rows = DATA.filter(match);
-  const total = rows.reduce((a, r) => a + r.m, 0);
-  $('stats').textContent =
-    `${{rows.length}} / ${{DATA.length}} chapters · ~${{fmt(total)}} of reading`;
-  $('rows').innerHTML = rows.map(r =>
-    `<tr><td><a href="${{r.p}}">${{r.t}}</a></td>` +
-    `<td>${{r.s}}</td>` +
-    `<td class="tag">${{r.g.join(', ')}}</td>` +
-    `<td class="m">${{fmt(r.m)}}</td></tr>`).join('');
+function updateRowSelection() {{
+  const trs = $('rows').querySelectorAll('tr');
+  trs.forEach((tr, i) => {{
+    if (i === selectedRowIndex) {{
+      tr.classList.add('active-row');
+      tr.scrollIntoView({{ block: 'nearest', behavior: 'smooth' }});
+    }} else {{
+      tr.classList.remove('active-row');
+    }}
+  }});
 }}
 
-$('q').oninput = e => {{ state.q = e.target.value.trim().toLowerCase(); render(); syncUrl(); }};
+function render() {{
+  currentFilteredRows = DATA.filter(match);
+  selectedRowIndex = -1;
+  const total = currentFilteredRows.reduce((a, r) => a + r.m, 0);
+  $('stats').textContent =
+    `${{currentFilteredRows.length}} / ${{DATA.length}} chapters · ~${{fmt(total)}} of reading`;
+  $('rows').innerHTML = currentFilteredRows.map((r, i) =>
+    `<tr data-idx="${{i}}"><td><a class="chapter-title-link" href="${{r.p}}">${{r.t}}</a></td>` +
+    `<td>${{r.s}}</td>` +
+    `<td>${{r.g.map(tag => `<span class="tag-badge">${{tag}}</span>`).join('')}}</td>` +
+    `<td class="m"><span class="read-badge">${{fmt(r.m)}}</span></td></tr>`).join('');
+  $('clear-btn').style.display = state.q ? 'block' : 'none';
+}}
+
+$('q').oninput = e => {{
+  state.q = e.target.value.trim().toLowerCase();
+  render();
+  syncUrl();
+}};
+
+$('clear-btn').onclick = () => {{
+  $('q').value = '';
+  state.q = '';
+  render();
+  syncUrl();
+  $('q').focus();
+}};
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {{
+  if (e.key === 'ArrowDown') {{
+    if (currentFilteredRows.length > 0) {{
+      e.preventDefault();
+      selectedRowIndex = Math.min(selectedRowIndex + 1, currentFilteredRows.length - 1);
+      updateRowSelection();
+    }}
+  }} else if (e.key === 'ArrowUp') {{
+    if (currentFilteredRows.length > 0) {{
+      e.preventDefault();
+      selectedRowIndex = Math.max(selectedRowIndex - 1, 0);
+      updateRowSelection();
+    }}
+  }} else if (e.key === 'Enter') {{
+    if (selectedRowIndex >= 0 && selectedRowIndex < currentFilteredRows.length) {{
+      e.preventDefault();
+      window.location.href = currentFilteredRows[selectedRowIndex].p;
+    }}
+  }} else if (e.key === 'Escape') {{
+    if (state.q || $('q').value) {{
+      e.preventDefault();
+      $('q').value = '';
+      state.q = '';
+      render();
+      syncUrl();
+    }}
+  }}
+}});
+
 chips($('cats'), {CATS}, state.cats);
 chips($('secs'), {SECS}, state.secs);
 chips($('tags'), TOP_TAGS, state.tags);

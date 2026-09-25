@@ -8,11 +8,13 @@
 
 The production host is private by design. Cloudflare Pages Functions run the
 access gate before a static file can be served: Google OAuth is brokered by
-Supabase Auth, and only the case-insensitive exact address
-`cvamsik99@gmail.com` receives a short-lived `HttpOnly` session cookie. An
-unauthenticated visitor sees `/auth/login.html`; a signed-in visitor with a
-different address is sent to `https://personal.buildora.work/?study=access-denied`.
-The gate is server-side, so copying a static file URL does not bypass it.
+Supabase Auth, and only the case-insensitive address `cvamsik99@gmail.com`
+(including German/EU `@googlemail.com` aliases) receives a short-lived
+`HttpOnly` session cookie. An unauthenticated visitor sees `/auth/login.html`;
+a signed-in visitor with a different address is sent to
+`https://personal.buildora.work/?study=access-denied` (with stale/invalid cookies
+purged so the browser never enters an access-denied redirect loop). The gate is
+server-side, so copying a static file URL does not bypass it.
 
 |  |  |
 | --------------- | --------------------------------------------------------------------- |
@@ -86,11 +88,13 @@ Every push to `main` triggers two builds of the same command:
    variables for the Pages Functions auth gate: `SUPABASE_URL` and either
    `SUPABASE_ANON_KEY` or `SUPABASE_JWKS_URL`. They are read at request time
    and are intentionally not committed. With asymmetric Supabase signing,
-   `SUPABASE_JWKS_URL` is sufficient: Study verifies the access token locally
-   and derives the project URL from the JWKS endpoint. The implementation also
-   accepts the personal app's public aliases (`NEXT_PUBLIC_SUPABASE_URL` and
-   `SUPABASE_PUBLISHABLE_KEY`). If the project uses symmetric signing, provide
-   the publishable/anon key instead of JWKS.
+   `SUPABASE_JWKS_URL` is automatically derived from `SUPABASE_URL` as
+   `${SUPABASE_URL}/auth/v1/.well-known/jwks.json` if omitted; Study verifies
+   the access token locally with ES256/RS256 asymmetric cryptographic checks
+   and dual-strategy verification (falling back from `/auth/v1/user` to JWKS).
+   The implementation also accepts the personal app's public aliases
+   (`NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`). If the project
+   uses symmetric signing, provide the publishable/anon key instead of JWKS.
    In Supabase Auth → URL Configuration, allow the exact
    redirect URL `https://study.buildora.work/auth/callback.html` (and the
    Pages preview callback URL when testing a preview deployment).

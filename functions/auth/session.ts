@@ -1,4 +1,4 @@
-import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, safeNextPath } from "../_lib/study-access.mjs";
+import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, resolveSupabaseConfig, safeNextPath } from "../_lib/study-access.mjs";
 import type { StudyEnv } from "../_lib/env.ts";
 
 function json(body: unknown, init?: ResponseInit) {
@@ -9,14 +9,37 @@ function json(body: unknown, init?: ResponseInit) {
 }
 
 export const onRequestPost = async ({ request, env }: { request: Request; env: StudyEnv }) => {
-  let payload: { access_token?: unknown };
+  let payload: { access_token?: unknown; code?: unknown };
   try {
-    payload = await request.json() as { access_token?: unknown };
+    payload = await request.json() as { access_token?: unknown; code?: unknown };
   } catch {
     return json({ ok: false, reason: "invalid-request" }, { status: 400 });
   }
 
-  const token = typeof payload.access_token === "string" ? payload.access_token : "";
+  let token = typeof payload.access_token === "string" ? payload.access_token : "";
+  const code = typeof payload.code === "string" ? payload.code : "";
+
+  if (!token && code) {
+    const { url: supabaseUrl, anonKey } = resolveSupabaseConfig(env);
+    if (supabaseUrl && anonKey) {
+      try {
+        const tokenRes = await fetch(`${supabaseUrl}/auth/v1/token?grant_type=pkce`, {
+          method: "POST",
+          headers: { apikey: anonKey, "Content-Type": "application/json" },
+          body: JSON.stringify({ auth_code: code }),
+        });
+        if (tokenRes.ok) {
+          const tokenData = await tokenRes.json() as any;
+          if (typeof tokenData?.access_token === "string") {
+            token = tokenData.access_token;
+          }
+        }
+      } catch {
+        // Fall through
+      }
+    }
+  }
+
   let user: { email?: unknown } | null;
   try {
     user = await fetchSupabaseUser(token, env);

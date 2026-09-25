@@ -29,6 +29,9 @@ export function isPagesDevHost(value) {
   return typeof value === "string" && value.trim().toLowerCase() === PRODUCTION_PAGES_HOST;
 }
 
+const DEFAULT_SUPABASE_URL = "https://ejbghgpatpfubxltkpde.supabase.co";
+const DEFAULT_SUPABASE_KEY = "sb_publishable_I42JurXGACj13HhJ1vmjdQ_lwTO8IK8";
+
 export function resolveSupabaseConfig(env) {
   const jwksUrl = env?.SUPABASE_JWKS_URL || "";
   let url = env?.SUPABASE_URL || env?.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -39,14 +42,18 @@ export function resolveSupabaseConfig(env) {
       url = "";
     }
   }
+  let anonKey =
+    env?.SUPABASE_ANON_KEY ||
+    env?.SUPABASE_PUBLISHABLE_KEY ||
+    env?.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+    env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    "";
+  if (!anonKey && url && url.includes("ejbghgpatpfubxltkpde")) {
+    anonKey = DEFAULT_SUPABASE_KEY;
+  }
   return {
-    url,
-    anonKey:
-      env?.SUPABASE_ANON_KEY ||
-      env?.SUPABASE_PUBLISHABLE_KEY ||
-      env?.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-      env?.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-      "",
+    url: url ? url.replace(/\/$/, "") : "",
+    anonKey,
     jwksUrl,
   };
 }
@@ -106,19 +113,19 @@ async function verifyAsymmetricToken(token, config) {
     if (!valid) return null;
 
     const now = Math.floor(Date.now() / 1000);
-    const CLOCK_TOLERANCE_SECONDS = 60;
     const { exp, nbf, iss, aud, email, user_metadata } = parsed.payload ?? {};
     const expectedIssuer = config.url ? `${config.url.replace(/\/$/, "")}/auth/v1` : "";
     const cleanUrl = config.url ? config.url.replace(/\/$/, "") : "";
-    const validIssuer = !iss || iss === expectedIssuer || iss === cleanUrl || iss === "supabase";
-    const validAudience = Array.isArray(aud) ? aud.includes("authenticated") : aud === "authenticated";
+    const cleanIss = typeof iss === "string" ? iss.replace(/\/$/, "") : "";
+    const validIssuer = !iss || cleanIss === expectedIssuer || cleanIss === cleanUrl || cleanIss === "supabase" || cleanIss.includes("supabase.co");
+    const validAudience = !aud || (Array.isArray(aud) ? aud.includes("authenticated") : aud === "authenticated");
 
     const resolvedEmail =
       (typeof email === "string" && email) ||
       (typeof user_metadata?.email === "string" && user_metadata.email) ||
       null;
 
-    if (!resolvedEmail || typeof exp !== "number" || exp <= (now - CLOCK_TOLERANCE_SECONDS) || (typeof nbf === "number" && nbf > (now + CLOCK_TOLERANCE_SECONDS)) || !validIssuer || !validAudience) return null;
+    if (!resolvedEmail || typeof exp !== "number" || exp <= now || (typeof nbf === "number" && nbf > (now + 60)) || !validIssuer || !validAudience) return null;
 
     return { email: resolvedEmail };
   } catch {

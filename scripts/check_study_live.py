@@ -58,6 +58,9 @@ PROBE_COOKIE = "study_access_token"
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MIDDLEWARE_SOURCE = os.path.join(REPO_ROOT, "functions", "_lib", "study-access.mjs")
 PUBLIC_SET_RE = re.compile(r"PUBLIC_AUTH_PATHS = new Set\(\[(.*?)\]\)", re.S)
+# The adapter that answers the OAuth callback itself, with no file behind it.
+INTERCEPT_SOURCE = os.path.join(REPO_ROOT, "functions", "_middleware.ts")
+INTERCEPT_PATH_RE = re.compile(r'url\.pathname === "([^"]+)"')
 OK, WARN, FAIL = "PASS", "WARN", "FAIL"
 Result = namedtuple("Result", "kind label name detail")
 CHECKS = []
@@ -270,15 +273,35 @@ def public_paths():
         return ()
 
 
-def static_public_pages(paths):
-    """Public paths served by a file, so they must answer 200 rather than redirect.
+def intercepted_public_pages():
+    """The paths `_middleware.ts` answers itself, before the asset layer runs.
 
-    Pages resolves `/auth/login` to `auth/login.html`, so both spellings count.
+    Read from the adapter, like `PUBLIC_AUTH_PATHS` is read from the gate that
+    enforces it: a list restated here could stay green while the intercept
+    moved.
     """
+    try:
+        with open(INTERCEPT_SOURCE, encoding="utf-8") as handle:
+            return tuple(dict.fromkeys(INTERCEPT_PATH_RE.findall(handle.read())))
+    except Exception:
+        return ()
+
+
+def direct_public_pages(paths):
+    """Public paths served without the gate, so they must answer 200.
+
+    Two mechanisms serve one directly: a file on disk (Pages resolves
+    `/auth/login` to `auth/login.html`) and the middleware intercept (the OAuth
+    callback, which has no file — an asset request would 308 to the clean URL
+    and drop the `#access_token` fragment). Both sources are read, so removing
+    a file cannot silently demote a path to "any answer will do".
+    """
+    intercepted = set(intercepted_public_pages())
     served = []
     for path in paths:
         rel = path.lstrip("/")
-        if (os.path.isfile(os.path.join(REPO_ROOT, rel))
+        if (path in intercepted
+                or os.path.isfile(os.path.join(REPO_ROOT, rel))
                 or os.path.isfile(os.path.join(REPO_ROOT, rel + ".html"))):
             served.append(path)
     return tuple(served)
@@ -500,7 +523,7 @@ def public_auth_surface(probe):
                        "functions/_lib/study-access.mjs, so the public surface is "
                        "unverified — check the middleware source is where this probe "
                        "expects it")]
-    static = static_public_pages(paths)
+    direct = direct_public_pages(paths)
     out = []
     for path in paths:
         response = probe.get(probe.study(path))
@@ -513,7 +536,7 @@ def public_auth_surface(probe):
                               f"{response.describe} — the gate is treating a path the "
                               f"middleware lists as public like a protected one, which "
                               f"breaks the flow that path belongs to"))
-        elif path in static:
+        elif path in direct:
             settled = probe.follow_same_host(response)
             detail = (f"{response.describe} -> {settled.describe}"
                       if settled is not response else response.describe)

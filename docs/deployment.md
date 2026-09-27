@@ -97,7 +97,12 @@ Every push to `main` triggers two builds of the same command:
    uses symmetric signing, provide the publishable/anon key instead of JWKS.
    In Supabase Auth → URL Configuration, allow the exact
    redirect URL `https://study.buildora.work/auth/callback.html` (and the
-   Pages preview callback URL when testing a preview deployment).
+   Pages preview callback URL when testing a preview deployment). The page
+   itself lives in `functions/_middleware.ts` and nowhere else: the adapter
+   answers the callback directly because Pages canonicalizes a `.html` asset
+   request with a 308 (`/auth/login.html` → `/auth/login`), which is where the
+   callback's `#access_token` fragment was lost. Do not add a second copy as
+   an asset or a route — each would be shadowed by the intercept and drift.
    **Optional, and the only way to cover the success path:** add
    `STUDY_PROBE_TOKEN` (generate with `openssl rand -hex 32`) as a
    **production** variable here, and the same value as a **repository secret**

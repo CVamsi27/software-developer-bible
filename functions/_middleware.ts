@@ -14,8 +14,14 @@ type PagesContext = {
   next: () => Promise<Response>;
 };
 
-// Raw HTML for the OAuth callback page served directly by middleware
-// to prevent Cloudflare Pages 308 Asset Canonicalization from stripping the #access_token=... hash fragment
+// Raw HTML for the OAuth callback page — the only copy. It used to exist twice
+// more (an asset at `auth/callback.html`, a route at
+// `functions/auth/callback.ts`), the same page duplicated, and both unreachable:
+// this intercept answers first, so neither could ever have run. Do not
+// reintroduce one. It is served here, not as an asset, because Pages
+// canonicalizes a `.html` request with a 308 (`/auth/login.html` ->
+// `/auth/login`), and that redirect is where the #access_token=... fragment
+// was lost.
 const CALLBACK_HTML = `<!doctype html>
 <html lang="en">
   <head>

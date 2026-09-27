@@ -10,6 +10,9 @@ import { onRequest } from "./_middleware.ts";
  * `next()` hand-off, and the Response mapping. That glue had no coverage in
  * this repository at all: a typo in it was invisible until a request hit the
  * deployed edge, because the only thing that exercised it was production.
+ * The callback page is glue too: the adapter must answer it itself, before the
+ * policy and without a redirect, or the `#access_token` fragment never reaches
+ * the session exchange — so that ordering is pinned here.
  *
  * Run with type stripping (Node's built-in, no toolchain):
  *
@@ -39,6 +42,41 @@ test("a public auth path is handed to the asset pipeline", async () => {
   const response = await call("/auth/login");
   assert.equal(response.status, 200);
   assert.equal(await response.text(), "CHAPTER");
+});
+
+test("the OAuth callback is answered directly, fragment intact", async () => {
+  // The one page that must never be canonicalized or gated: Supabase returns
+  // the Google session in the URL fragment, and the `.html` -> clean-URL 308
+  // is where it was lost. Both spellings resolve here, query and all.
+  for (const path of [
+    "/auth/callback.html",
+    "/auth/callback",
+    "/auth/callback?code=abc&state=%2FINDEX.html",
+  ]) {
+    const response = await call(path);
+    assert.equal(response.status, 200, path);
+    assert.equal(response.headers.get("Content-Type"), "text/html; charset=utf-8", path);
+    assert.equal(response.headers.get("Cache-Control"),
+                 "no-store, no-cache, must-revalidate", path);
+    const body = await response.text();
+    // The page's contract with `/auth/session`: read the fragment, post it,
+    // then follow the sanitized `next` the route answers with.
+    assert.match(body, /window\.location\.hash/, path);
+    assert.match(body, /fetch\("\/auth\/session\?next="/, path);
+  }
+});
+
+test("the callback intercept precedes the policy, even for a session that would be allowed", async () => {
+  // On a fall-through this request would reach `next()` and serve the
+  // chapter: the callback has to be the whole response, not a decision.
+  const response = await call("/auth/callback.html?code=x", {
+    cookie: `study_access_token=${PROBE_TOKEN}`,
+    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN },
+  });
+  assert.equal(response.status, 200);
+  const body = await response.text();
+  assert.match(body, /id="status"/);
+  assert.doesNotMatch(body, /CHAPTER/);
 });
 
 test("a visitor with no cookie lands on login with the deep link preserved", async () => {

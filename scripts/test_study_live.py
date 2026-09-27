@@ -54,9 +54,9 @@ import check_study_live as live  # noqa: E402
 SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_study_live.py")
 PROBE_TOKEN = "stub-probe-credential"
 AUTHORIZE = "https://proj.supabase.co/auth/v1/authorize?provider=google"
-# Derived from the middleware, like the probe derives it: a fixture that invents
-# its own public surface could stay green while production's changed.
-PUBLIC_STATIC = live.static_public_pages(live.public_paths())
+# Derived from the edge sources, like the probe derives it: a fixture that
+# invents its own public surface could stay green while production's changed.
+PUBLIC_DIRECT = live.direct_public_pages(live.public_paths())
 SESSION_PATH = "/auth/session"
 DENIAL_PATH = "/personal"
 CLEARED_COOKIE = "study_access_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax"
@@ -109,7 +109,7 @@ class Stub(http.server.BaseHTTPRequestHandler):
             return self.reply(200, body=body)
         if path == DENIAL_PATH:  # the access-denied landing page
             return self.reply(404 if "denial_dead" in self.violations else 200, body="personal")
-        if path in PUBLIC_STATIC:
+        if path in PUBLIC_DIRECT:
             return self.reply(200, body="public")
         if path == SESSION_PATH:
             # The real route is POST-only, so a GET is a 405 — public, but not a

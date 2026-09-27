@@ -7,8 +7,11 @@ cannot drift from the corpus: gate 14 regenerates it in memory and fails
 if the committed file differs.
 
 Output is a static HTML file (no Jekyll front matter -> copied verbatim,
-no Liquid escaping needed) with the corpus embedded as JSON and vanilla
-JS filtering — no dependencies, works offline and from file://.
+no Liquid escaping needed) with the corpus embedded as JSON and vanilla JS
+filtering — no dependencies. The shared theme script is loaded through the
+same `_config.yml` owner (`theme_asset`) the Jekyll include reads, emitted
+document-relative so the committed page also works offline and from file://
+(rule 13 in scripts/check_verify_wiring.py enforces the single owner).
 
 Usage:
   python3 scripts/gen_master_index.py            # write search.html + api/index.json
@@ -28,6 +31,8 @@ from check_template import parse_meta  # noqa: E402
 
 OUT = os.path.join(ROOT, 'search.html')
 API_OUT = os.path.join(ROOT, 'api', 'index.json')
+CONFIG = os.path.join(ROOT, '_config.yml')
+THEME_ASSET_RE = re.compile(r'^theme_asset:\s*(\S+)\s*$', re.M)
 H1 = re.compile(r'^# (?!#)\s*(.+?)\s*$', re.M)
 MAX_TAGS = 24          # chips rendered for the top tags; the rest stay searchable
 MIN_TAG_COUNT = 4      # tags below this are not offered as chips
@@ -60,7 +65,7 @@ PAGE = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{TITLE} — Master Search Index</title>
-<script src="/assets/theme.js"></script>
+<script src="{THEME_SRC}"></script>
 <style>
   :root, html[data-theme="light"] {{
     --theme-bg: #ffffff;
@@ -584,6 +589,26 @@ render();
 """
 
 
+def theme_src():
+    """The theme script's `src`, read from its single owner in `_config.yml`.
+
+    Rule 13 (scripts/check_verify_wiring.py) keeps the path in one place: the
+    Jekyll include resolves `theme_asset` with `relative_url`, and this page
+    gets it document-relative — no leading slash — because an absolute
+    `/assets/...` resolves against the filesystem root under file:// and would
+    silently drop the saved theme and the toggle wiring.
+    """
+    try:
+        with open(CONFIG, encoding='utf-8') as handle:
+            declared = THEME_ASSET_RE.search(handle.read())
+    except OSError:
+        declared = None
+    if declared is None:
+        sys.exit('_config.yml must define theme_asset: <path> '
+                 '(rule 13 owns the theme load path there)')
+    return declared.group(1).lstrip('/')
+
+
 def render(rows):
     from collections import Counter
     cats = sorted({r['c'] for r in rows if r['c']})
@@ -596,6 +621,7 @@ def render(rows):
     page = PAGE.replace('{{', '{').replace('}}', '}')
     return (page
             .replace('{TITLE}', 'Software Developer Bible')
+            .replace('{THEME_SRC}', theme_src())
             .replace('{N}', str(len(rows)))
             .replace('{TIME}', human(total))
             .replace('{DATA}', json.dumps(rows, ensure_ascii=False,

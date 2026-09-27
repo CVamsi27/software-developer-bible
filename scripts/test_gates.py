@@ -260,21 +260,28 @@ _MAP_STALE_COUNT = _REAL_MAP.replace("30-gate", "21-gate")
 # contain the key it plants. (The checker is the one file exempt, because a
 # rule has to name what it looks for.)
 _THEME_KEY = "sdb-" "theme"
+# The old two-owner shape of the theme *load path*: the include's
+# `site.theme_asset` resolved back to a literal. Rule 13's load-path case
+# plants this again.
+_REAL_HEAD = open(os.path.join(ROOT, "_includes", "head-custom.html"),
+                  encoding="utf-8").read()
+_HEAD_HARDCODES = _REAL_HEAD.replace("site.theme_asset", "'/assets/theme.js'")
 
 
 def _owners_sandbox(map_text=None, extra=None):
     """{path: content} for a sandbox whose only defect is in a map/theme claim.
 
-    The tooling, the count claims, the workflows and the shared theme asset are
-    the real ones, so rules 1-11 behave exactly as they do in the repo and a
-    fire is attributable to the one planted map/theme defect. Rule 13 reads the
-    real `assets/theme.js` and the real `scripts/gen_master_index.py`, so both
-    sides exercise the shipped layout rather than a stub.
+    The tooling, the count claims, the workflows and the shared theme files —
+    `_config.yml`, `assets/theme.js` and both consumers — are the real ones, so
+    rules 1-11 behave exactly as they do in the repo and a fire is attributable
+    to the one planted map/theme defect; the sandbox exercises the shipped
+    ownership layout rather than a stub.
     """
     files = {
         rel: open(os.path.join(ROOT, rel), encoding="utf-8").read()
         for rel in ("contributing.md", os.path.join("docs", "verification-gates.md"),
-                    os.path.join("docs", "scripts-map.md"), "assets/theme.js")
+                    os.path.join("docs", "scripts-map.md"), "assets/theme.js",
+                    "_config.yml", os.path.join("_includes", "head-custom.html"))
     }
     wf = os.path.join(ROOT, ".github", "workflows")
     for name in sorted(os.listdir(wf)):
@@ -801,6 +808,20 @@ CASES = [
         "plant": _owners_sandbox(extra={
             "_includes/theme-copy.html":
                 f'var savedTheme = localStorage.getItem("{_THEME_KEY}");\n',
+        }),
+        "clean": _owners_sandbox(),
+    },
+    {
+        # Rule 13's load-path half: the path one consumer loads lives once, in
+        # _config.yml (`theme_asset`). The include resolves it through
+        # relative_url and the generator emits it document-relative; restating
+        # it is the drift that broke the generated page from file://, so the
+        # old literal must fire again.
+        "name": "gate 15 wiring fires when a theme consumer hardcodes the load path",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _owners_sandbox(extra={
+            os.path.join("_includes", "head-custom.html"): _HEAD_HARDCODES,
         }),
         "clean": _owners_sandbox(),
     },

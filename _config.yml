@@ -9,6 +9,13 @@ url: https://study.buildora.work
 # lets jekyll-github-metadata install a lazy baseurl Value that needs the
 # GitHub API to render — see the `github:` block below.
 baseurl: ""
+
+# Single owner of the shared theme script's load path (rule 13,
+# scripts/check_verify_wiring.py). _includes/head-custom.html resolves it
+# through relative_url for Jekyll pages; scripts/gen_master_index.py emits it
+# document-relative so the committed search page also works from file://.
+# Do not restate the path in either consumer.
+theme_asset: /assets/theme.js
 theme: minima
 header_pages:
   - INDEX.md

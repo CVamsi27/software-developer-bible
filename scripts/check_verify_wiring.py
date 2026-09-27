@@ -66,9 +66,11 @@ verify.sh *listened*. So this checks the harness, not the corpus:
   13. **The theme preference has one owner.** `sdb-theme` was implemented
      twice — in `_includes/head-custom.html` for Jekyll pages and in
      `scripts/gen_master_index.py` for the generated search page — so a
-     change to one silently missed the other. It lives in `assets/theme.js`
-     now; both consumers load that file and no other code-bearing file may
-     name the key.
+     change to one silently missed the other. The logic lives in
+     `assets/theme.js` and its load path in `_config.yml` (`theme_asset`):
+     the Jekyll include resolves it with `relative_url`, the generator emits
+     it document-relative (an absolute path breaks the page from `file://`),
+     and no other code-bearing file may name the key.
 
 `--write` restamps 5, 6 and 12 from the same count this check computes, so the
 number has one owner and cannot drift (the `check_counts.py` / `read_time.py`
@@ -89,13 +91,18 @@ CONTRIB = os.path.join(ROOT, 'contributing.md')
 GATEDOC = os.path.join(ROOT, 'docs', 'verification-gates.md')
 MAP = os.path.join(ROOT, 'docs', 'scripts-map.md')
 
-# Rule 13: the one file allowed to define the theme preference, the key it
-# owns, and the consumers that must load it instead of restating it. The scan
-# looks in code-bearing extensions only — the study corpus legitimately quotes
-# `localStorage` examples in prose, and a second *implementation* does not hide
-# in a chapter. `_site/` is build output and is skipped.
+# Rule 13: the one file allowed to define the theme preference, the file that
+# owns its load path, and the consumers that read it instead of restating it.
+# The scan looks in code-bearing extensions only — the study corpus
+# legitimately quotes `localStorage` examples in prose, and a second
+# *implementation* does not hide in a chapter. `_site/` is build output and is
+# skipped.
 THEME_SOURCE = 'assets/theme.js'
 THEME_KEY = 'sdb-theme'
+THEME_ASSET = '/' + THEME_SOURCE   # the load path, owned by CONFIG
+THEME_ASSET_KEY = 'theme_asset'
+CONFIG = '_config.yml'
+THEME_ASSET_RE = re.compile(r'^theme_asset:\s*(\S+)\s*$', re.M)
 THEME_CONSUMERS = ('_includes/head-custom.html', 'scripts/gen_master_index.py')
 THEME_SCAN_EXTS = {'.html', '.htm', '.js', '.mjs', '.cjs', '.ts', '.tsx',
                    '.py', '.yml', '.yaml', '.json', '.toml', '.sh', '.css',
@@ -461,11 +468,32 @@ def check_owners(problems):
             return
         if THEME_KEY not in read(os.path.join(ROOT, THEME_SOURCE)):
             problems.append(f'{THEME_SOURCE} no longer defines {THEME_KEY}')
+        config_path = os.path.join(ROOT, CONFIG)
+        declared = (THEME_ASSET_RE.search(read(config_path))
+                    if os.path.exists(config_path) else None)
+        if declared is None:
+            problems.append(
+                f'{CONFIG} must define {THEME_ASSET_KEY}: {THEME_ASSET} — it '
+                f'is the single owner of the theme script load path'
+            )
+        elif declared.group(1) != THEME_ASSET:
+            problems.append(
+                f'{CONFIG} {THEME_ASSET_KEY} is "{declared.group(1)}", not '
+                f'{THEME_ASSET} — one path, one owner'
+            )
         for rel in consumers:
-            if 'assets/theme.js' not in read(os.path.join(ROOT, rel)):
+            body = read(os.path.join(ROOT, rel))
+            if THEME_ASSET_KEY not in body:
                 problems.append(
-                    f'{rel} no longer loads {THEME_SOURCE} — its pages would '
-                    f'lose the saved theme and the toggle'
+                    f'{rel} no longer reads {THEME_ASSET_KEY} from {CONFIG} — '
+                    f'a restated load path is the drift this rule exists to '
+                    f'stop'
+                )
+            if THEME_SOURCE in body:
+                problems.append(
+                    f'{rel} hardcodes the theme script path — {CONFIG} owns it '
+                    f'({THEME_ASSET_KEY}), and an absolute path would also '
+                    f'break the page from file://'
                 )
         for dirpath, dirnames, filenames in os.walk(ROOT):
             dirnames[:] = sorted(d for d in dirnames if d not in THEME_SCAN_SKIP)

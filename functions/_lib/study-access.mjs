@@ -2,11 +2,18 @@ const ALLOWED_STUDY_EMAIL = "cvamsik99@gmail.com";
 const PERSONAL_ACCESS_DENIED_URL = "https://personal.buildora.work/?study=access-denied";
 const PRODUCTION_PAGES_HOST = "software-developer-bible.pages.dev";
 export const STUDY_CANONICAL_ORIGIN = "https://study.buildora.work";
+// The paths the middleware answers itself, before the asset layer runs: the
+// OAuth callback has no file behind it, and Pages canonicalizes a `.html`
+// request with a 308 that would drop the #access_token fragment. One
+// declaration on purpose: `_middleware.ts` consumes it for the intercept,
+// `PUBLIC_AUTH_PATHS` spreads it, and the live probe resolves it
+// (scripts/check_study_live.py) so the callback URLs cannot silently drop out
+// of the must-answer-200 set.
+export const INTERCEPTED_PATHS = ["/auth/callback.html", "/auth/callback"];
 const PUBLIC_AUTH_PATHS = new Set([
   "/auth/login.html",
   "/auth/login",
-  "/auth/callback.html",
-  "/auth/callback",
+  ...INTERCEPTED_PATHS,
   "/auth/start",
   "/auth/session",
   "/auth/logout",

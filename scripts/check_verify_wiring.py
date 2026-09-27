@@ -56,13 +56,15 @@ verify.sh *listened*. So this checks the harness, not the corpus:
      for a change to what the edge serves. A trigger filter is where a blind
      spot hides — a green build proves the inputs are consistent, not that the
      output was ever looked at — so the filter is checked, not remembered.
-  12. **The scripts map describes the scripts.** `docs/scripts-map.md` opens
-     with "Every script in `scripts/`" and did not name
-     `check_study_live.py` / `test_study_live.py` — the two scripts whose
+  12. **The scripts map describes the scripts, both ways.**
+     `docs/scripts-map.md` opens with "Every script in `scripts/`" and did not
+     name `check_study_live.py` / `test_study_live.py` — the two scripts whose
      subject is the live deployment contract. A doc that promises
      completeness and is not checked for it is the same false green one level
-     out, so the claim is checked against the directory and the map's own gate
-     count is restamped from the count computed here.
+     out, so the claim is checked against the directory in both directions — a
+     script the map omits and a backticked row naming a script that no longer
+     exists — and the map's own gate count is restamped from the count computed
+     here.
   13. **The theme preference has one owner.** `sdb-theme` was implemented
      twice — in `_includes/head-custom.html` for Jekyll pages and in
      `scripts/gen_master_index.py` for the generated search page — so a
@@ -437,15 +439,30 @@ def check_owners(problems):
                             'map every script is supposed to appear in')
         else:
             text = read(MAP)
+            on_disk = set()
             for pattern in (os.path.join(ROOT, 'scripts', '*.py'),
                             os.path.join(ROOT, 'scripts', '*.sh')):
                 for path in sorted(glob.glob(pattern)):
                     name = os.path.basename(path)
+                    on_disk.add(name)
                     if name not in text:
                         problems.append(
                             f'docs/scripts-map.md does not name scripts/{name}, '
                             f'although it opens by claiming to list every script'
                         )
+            # The other direction: a row naming a script that no longer exists
+            # is stale map drift — it sends a reader to a file that is gone and
+            # the forward check above stays green. Only backticked `name.py` /
+            # `name.sh` tokens are claims: badge URLs contain script-looking
+            # strings (`img.shields.io`) that are prose, not map rows.
+            claimed = set(re.findall(
+                r'`(?:scripts/)?([\w.-]+\.(?:py|sh))`', text))
+            for name in sorted(claimed - on_disk):
+                problems.append(
+                    f'docs/scripts-map.md names `{name}`, but scripts/{name} '
+                    f'does not exist — drop the stale row or name the script '
+                    f'that replaced it'
+                )
             for rx, where in ((r'(\d+)-gate\b', 'the intro'),
                               (r'The (\d+) gates, in verify.sh order',
                                'the gate table')):

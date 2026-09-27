@@ -60,7 +60,23 @@ MIDDLEWARE_SOURCE = os.path.join(REPO_ROOT, "functions", "_lib", "study-access.m
 PUBLIC_SET_RE = re.compile(r"PUBLIC_AUTH_PATHS = new Set\(\[(.*?)\]\)", re.S)
 # The adapter that answers the OAuth callback itself, with no file behind it.
 INTERCEPT_SOURCE = os.path.join(REPO_ROOT, "functions", "_middleware.ts")
-INTERCEPT_PATH_RE = re.compile(r'url\.pathname === "([^"]+)"')
+SPREAD_RE = re.compile(r"\.\.\.(\w+)")
+QUOTED_RE = re.compile(r'"([^"]+)"')
+CALLBACK_LITERAL_RE = re.compile(r"""["']/auth/callback""")
+# The adapter must actually consume the shared declaration, not merely mention
+# it (a comment would satisfy a substring test while the intercept was
+# reimplemented inline).
+ADAPTER_CONSUME_RE = re.compile(
+    r"INTERCEPTED_PATHS\s*\.\s*(?:includes|has|some)\s*\(")
+
+
+class SourceError(RuntimeError):
+    """The probe cannot resolve the routing it exists to check.
+
+    Raised, never swallowed into an empty tuple: an empty surface silently
+    demotes the callback paths out of the must-answer-200 set while every
+    probe stays green — the failure mode the 2026-09-27 audit found.
+    """
 OK, WARN, FAIL = "PASS", "WARN", "FAIL"
 Result = namedtuple("Result", "kind label name detail")
 CHECKS = []
@@ -256,35 +272,106 @@ def probe_sample(limit=0):
     return sample[:limit] if limit else sample
 
 
+def _source_text(path):
+    """The text of a routing source, or a loud SourceError."""
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+    except OSError as error:
+        raise SourceError(
+            f"cannot read {os.path.relpath(path, REPO_ROOT)} — the probe "
+            f"cannot resolve the public surface without it ({error})"
+        ) from error
+
+
+def _declared_paths(text, name):
+    """The quoted paths of `export const <name> = [...]`, or a loud failure.
+
+    The declaration has exactly one accepted shape: a refactor the probe
+    cannot read (single quotes, a Set, a predicate) is a deliberate change to
+    this contract, not something to ignore — ignoring it is how the callback
+    paths silently left the must-answer-200 set.
+    """
+    block = re.search(rf"export const {re.escape(name)} = \[(.*?)\];", text,
+                      re.S)
+    if block is None:
+        raise SourceError(
+            f"functions/_lib/study-access.mjs no longer declares {name} = [...] "
+            f"in a form the probe can resolve — update the declaration or this "
+            f"resolver deliberately; the probe will not guess"
+        )
+    paths = tuple(QUOTED_RE.findall(block.group(1)))
+    if not paths:
+        raise SourceError(
+            f"{name} in functions/_lib/study-access.mjs declares no parseable "
+            f"paths — the probe cannot know which public URLs it must see 200"
+        )
+    return paths
+
+
 def public_paths():
-    """The public surface, derived from the middleware that enforces it.
+    """The public surface, read from the one module that declares it.
 
     A second hard-coded list here was the drift this repo gates against
     everywhere else and did not gate here: the probe checked three of the eight
     paths, so a path could lose its public status — or a new one could ship
-    unprobed — with every check green. Read from the gate itself, so the list
-    cannot be right in one place and wrong in the other.
+    unprobed — with every check green. Read from the module the middleware is
+    built from, spreads resolved, so the list cannot be right in one place and
+    wrong in the other; an unreadable surface raises instead of silently
+    unchecking every path.
     """
-    try:
-        with open(MIDDLEWARE_SOURCE, encoding="utf-8") as handle:
-            block = PUBLIC_SET_RE.search(handle.read()).group(1)
-        return tuple(re.findall(r'"([^"]+)"', block))
-    except Exception:
-        return ()
+    text = _source_text(MIDDLEWARE_SOURCE)
+    block = PUBLIC_SET_RE.search(text)
+    if block is None:
+        raise SourceError(
+            "functions/_lib/study-access.mjs no longer declares "
+            "PUBLIC_AUTH_PATHS = new Set([...]) — the public surface is "
+            "unresolvable, so the probe fails instead of probing nothing"
+        )
+    declared = block.group(1)
+    paths = list(QUOTED_RE.findall(declared))
+    for name in SPREAD_RE.findall(declared):
+        if name != "INTERCEPTED_PATHS":
+            raise SourceError(
+                f"PUBLIC_AUTH_PATHS spreads `{name}`, which the probe cannot "
+                f"resolve — extend this resolver deliberately"
+            )
+        paths += list(_declared_paths(text, name))
+    if not paths:
+        raise SourceError(
+            "PUBLIC_AUTH_PATHS declares no paths — the public surface is "
+            "unresolvable, so the probe fails instead of probing nothing"
+        )
+    return tuple(dict.fromkeys(paths))
 
 
 def intercepted_public_pages():
-    """The paths `_middleware.ts` answers itself, before the asset layer runs.
+    """The paths the middleware answers itself, before the asset layer runs.
 
-    Read from the adapter, like `PUBLIC_AUTH_PATHS` is read from the gate that
-    enforces it: a list restated here could stay green while the intercept
-    moved.
+    One source of truth: `INTERCEPTED_PATHS` in the module below is consumed
+    by the adapter's intercept and spread into `PUBLIC_AUTH_PATHS`; this
+    resolver reads that declaration and refuses to run if the adapter no
+    longer consumes it — an inline condition, a Set or a startsWith all
+    detach the probe from the routing it believes it is checking.
     """
-    try:
-        with open(INTERCEPT_SOURCE, encoding="utf-8") as handle:
-            return tuple(dict.fromkeys(INTERCEPT_PATH_RE.findall(handle.read())))
-    except Exception:
-        return ()
+    text = _source_text(MIDDLEWARE_SOURCE)
+    paths = _declared_paths(text, "INTERCEPTED_PATHS")
+    adapter = _source_text(INTERCEPT_SOURCE)
+    if not ADAPTER_CONSUME_RE.search(adapter):
+        raise SourceError(
+            "functions/_middleware.ts no longer consumes INTERCEPTED_PATHS — "
+            "the probe would be checking a routing the adapter does not "
+            "implement (an inline condition, a Set or a startsWith all "
+            "detach it)"
+        )
+    literal = CALLBACK_LITERAL_RE.search(adapter)
+    if literal:
+        raise SourceError(
+            "functions/_middleware.ts restates a callback path "
+            f"({literal.group(0)}) instead of consuming INTERCEPTED_PATHS — "
+            f"the declaration and the intercept can drift, so the probe fails"
+        )
+    return paths
 
 
 def direct_public_pages(paths):
@@ -293,8 +380,9 @@ def direct_public_pages(paths):
     Two mechanisms serve one directly: a file on disk (Pages resolves
     `/auth/login` to `auth/login.html`) and the middleware intercept (the OAuth
     callback, which has no file — an asset request would 308 to the clean URL
-    and drop the `#access_token` fragment). Both sources are read, so removing
-    a file cannot silently demote a path to "any answer will do".
+    and drop the `#access_token` fragment). Both sources are read — loudly, so
+    removing a file or an unresolvable declaration cannot silently demote a
+    path to "any answer will do".
     """
     intercepted = set(intercepted_public_pages())
     served = []
@@ -517,12 +605,6 @@ def invalid_session_goes_to_denial(probe):
        "entry pages with 200, the rest with anything but the gated redirect")
 def public_auth_surface(probe):
     paths = public_paths()
-    if not paths:
-        return [Result(WARN, "Public surface", "public surface source",
-                       "could not read PUBLIC_AUTH_PATHS from "
-                       "functions/_lib/study-access.mjs, so the public surface is "
-                       "unverified — check the middleware source is where this probe "
-                       "expects it")]
     direct = direct_public_pages(paths)
     out = []
     for path in paths:
@@ -617,6 +699,16 @@ def run_checks(argv=None):
                         help="cap the sampled chapters (0 = one per stack) — for a "
                              "quick manual check of a single render class")
     args = parser.parse_args(argv)
+
+    # Resolve the routing declarations in every mode, before any request: a
+    # probe that cannot tell which public paths must answer 200 fails loudly
+    # here rather than demoting them (2026-09-27 audit).
+    try:
+        public_paths()
+        intercepted_public_pages()
+    except SourceError as error:
+        print(f"FAIL — {error}")
+        return 1
 
     if args.print_contract:
         print("\n".join(f"  {c.label}: {c.expectation}" for c in CHECKS))

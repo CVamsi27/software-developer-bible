@@ -255,6 +255,9 @@ def _unwired_suite_sandbox():
 _REAL_MAP = open(os.path.join(ROOT, "docs", "scripts-map.md"), encoding="utf-8").read()
 _MAP_DROPS_SCRIPT = _REAL_MAP.replace("check_study_live.py", "check_live_probe.py")
 _MAP_STALE_COUNT = _REAL_MAP.replace("30-gate", "21-gate")
+_MAP_STALE_ROW = _REAL_MAP + (
+    "\n- `check_ghosts.py` — a stale row planted by the sandbox: it names a "
+    "script that does not exist.\n")
 # The theme key is built from a split literal on purpose: rule 13 scans every
 # code-bearing file — this fixture source included — so it must not itself
 # contain the key it plants. (The checker is the one file exempt, because a
@@ -266,6 +269,26 @@ _THEME_KEY = "sdb-" "theme"
 _REAL_HEAD = open(os.path.join(ROOT, "_includes", "head-custom.html"),
                   encoding="utf-8").read()
 _HEAD_HARDCODES = _REAL_HEAD.replace("site.theme_asset", "'/assets/theme.js'")
+# The live probe's routing sources (scripts/check_study_live.py resolves them
+# before it probes anything). The plants mirror the refactors that used to
+# silently empty the must-answer-200 set: the intercept declaration re-spelled
+# with single quotes, declared as a Set, and the adapter reimplementing the
+# check inline with startsWith.
+_REAL_ACCESS = open(os.path.join(ROOT, "functions", "_lib", "study-access.mjs"),
+                    encoding="utf-8").read()
+_REAL_ADAPTER = open(os.path.join(ROOT, "functions", "_middleware.ts"),
+                     encoding="utf-8").read()
+_ACCESS_SINGLE_QUOTES = _REAL_ACCESS.replace(
+    '["/auth/callback.html", "/auth/callback"]',
+    "['/auth/callback.html', '/auth/callback']")
+_ACCESS_SET = _REAL_ACCESS.replace(
+    'export const INTERCEPTED_PATHS = ["/auth/callback.html", "/auth/callback"];',
+    'export const INTERCEPTED_PATHS = '
+    'new Set(["/auth/callback.html", "/auth/callback"]);')
+_ADAPTER_INLINE = _REAL_ADAPTER.replace(
+    "  INTERCEPTED_PATHS,\n", "").replace(
+    "if (INTERCEPTED_PATHS.includes(url.pathname)) {",
+    "if (url.pathname.startsWith('/auth/callback')) {")
 
 
 def _owners_sandbox(map_text=None, extra=None):
@@ -291,6 +314,22 @@ def _owners_sandbox(map_text=None, extra=None):
         files[os.path.join("docs", "scripts-map.md")] = map_text
     files.update(extra or {})
     return files
+
+
+def _live_source_sandbox(access=None, adapter=None):
+    """{path: content} for a sandbox whose only defect is the routing source.
+
+    `check_study_live.py` resolves these two files before it probes anything,
+    so `--print-contract` exercises the resolution offline: a plant the
+    resolver cannot read must exit non-zero, never print a contract for a
+    surface it could not see.
+    """
+    return {
+        os.path.join("functions", "_lib", "study-access.mjs"):
+            _REAL_ACCESS if access is None else access,
+        os.path.join("functions", "_middleware.ts"):
+            _REAL_ADAPTER if adapter is None else adapter,
+    }
 
 
 _DUP_TOPICS = ("invoice", "shipment", "webhook", "session", "payment", "catalog",
@@ -797,6 +836,17 @@ CASES = [
         "clean": _owners_sandbox(),
     },
     {
+        # Rule 12's other direction: a map row naming a script that no longer
+        # exists sent readers to a file that is gone and stayed green. The
+        # plant appends such a row while every real script is still named —
+        # only the reverse check can fire.
+        "name": "gate 15 wiring fires when the scripts map names a script that does not exist",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _owners_sandbox(map_text=_MAP_STALE_ROW),
+        "clean": _owners_sandbox(),
+    },
+    {
         # Rule 13: the theme preference had two independent implementations
         # before this pass (the Jekyll include and the generator); the plant
         # puts a second one back. The clean side is the shipped single-source
@@ -824,6 +874,38 @@ CASES = [
             os.path.join("_includes", "head-custom.html"): _HEAD_HARDCODES,
         }),
         "clean": _owners_sandbox(),
+    },
+    {
+        # The live probe's routing derivation had zero coverage and fell
+        # silently to an empty tuple, which demoted the callback paths out of
+        # the must-answer-200 set with every gate green. The declaration
+        # re-spelled with single quotes is the first refactor that used to do
+        # it; the clean side is the shipped single declaration, resolved from
+        # the same module the middleware is built from.
+        "name": "study-live resolver fires on a single-quoted interception declaration",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(access=_ACCESS_SINGLE_QUOTES),
+        "clean": _live_source_sandbox(),
+    },
+    {
+        # Declared as a Set instead of an array: a shape the resolver cannot
+        # read must fail loudly, not resolve to nothing.
+        "name": "study-live resolver fires on an interception declaration it cannot read",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(access=_ACCESS_SET),
+        "clean": _live_source_sandbox(),
+    },
+    {
+        # The adapter reimplementing the intercept inline (startsWith, single
+        # quotes, no INTERCEPTED_PATHS): the probe would be checking a routing
+        # the adapter no longer reads, so it must refuse to run.
+        "name": "study-live resolver fires when the adapter reimplements the intercept inline",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(adapter=_ADAPTER_INLINE),
+        "clean": _live_source_sandbox(),
     },
     {
         # Rule 1: the corpus keeps one spelling convention (behavior 845 /

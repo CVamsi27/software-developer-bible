@@ -1,4 +1,5 @@
 import {
+  INTERCEPTED_PATHS,
   decideAccess,
   fetchSupabaseUser,
   probeTokenSession,
@@ -106,8 +107,11 @@ const CALLBACK_HTML = `<!doctype html>
 export const onRequest = async ({ request, env, next }: PagesContext) => {
   const url = new URL(request.url);
 
-  // Directly serve callback HTML to guarantee 0 redirects and preserve #access_token=...
-  if (url.pathname === "/auth/callback.html" || url.pathname === "/auth/callback") {
+  // Directly serve callback HTML to guarantee 0 redirects and preserve
+  // #access_token=... The interception list lives once, in
+  // `_lib/study-access.mjs` (`INTERCEPTED_PATHS`) — the live probe resolves
+  // that declaration, so re-inlining the check here would detach it.
+  if (INTERCEPTED_PATHS.includes(url.pathname)) {
     return new Response(CALLBACK_HTML, {
       status: 200,
       headers: {

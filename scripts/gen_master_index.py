@@ -60,14 +60,7 @@ PAGE = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{TITLE} — Master Search Index</title>
-<script>
-  (function() {{
-    var savedTheme = localStorage.getItem("sdb-theme");
-    if (savedTheme === "dark" || savedTheme === "light") {{
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }}
-  }})();
-</script>
+<script src="/assets/theme.js"></script>
 <style>
   :root, html[data-theme="light"] {{
     --theme-bg: #ffffff;
@@ -438,7 +431,7 @@ metadata by <code>scripts/gen_master_index.py</code> — do not edit by hand
 <div class="search-container">
   <div class="search-box-wrapper">
     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-    <input id="q" type="search" placeholder="Search 560 chapters by title, section, category, tags…"
+    <input id="q" type="search" placeholder="Search {N} chapters by title, section, category, tags…"
            autocomplete="off" autofocus>
     <button id="clear-btn" class="clear-btn" type="button" title="Clear search">✕</button>
   </div>
@@ -465,29 +458,6 @@ const $ = id => document.getElementById(id);
 const state = {{ q: '', cats: new Set(), secs: new Set(), tags: new Set() }};
 let selectedRowIndex = -1;
 let currentFilteredRows = [];
-
-// Theme toggle setup
-const themeBtn = $('theme-btn');
-function updateThemeIcon(theme) {{
-  if (theme === 'dark') {{
-    themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
-  }} else {{
-    themeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-  }}
-}}
-function getCurrentEffectiveTheme() {{
-  const explicit = document.documentElement.getAttribute('data-theme');
-  if (explicit) return explicit;
-  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-}}
-updateThemeIcon(getCurrentEffectiveTheme());
-themeBtn.onclick = () => {{
-  const cur = getCurrentEffectiveTheme();
-  const next = cur === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('sdb-theme', next);
-  updateThemeIcon(next);
-}};
 
 function chips(el, values, set) {{
   el.innerHTML = '';

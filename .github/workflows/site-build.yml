@@ -93,8 +93,12 @@ jobs:
           test ! -e _site/81-lanes-indian-sde-faang/personal
           echo "lane exclusion verified in _site/"
 
-      - name: Assert front page and search rendered
-        run: test -s _site/index.html && test -s _site/search.html
+      - name: Assert front page, search and the shared theme script rendered
+        run: |
+          test -s _site/index.html && test -s _site/search.html
+          # Both consumers load this one file; if Jekyll did not copy it, every
+          # page loses the saved theme before paint and the toggle silently.
+          test -s _site/assets/theme.js
 
       # No deploy job by design: Cloudflare Pages builds straight from git
       # (docs/deployment.md). A red gate beside a green Pages build means

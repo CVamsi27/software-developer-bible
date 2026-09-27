@@ -6,7 +6,7 @@
 
 # Scripts Map — what runs, what owns what, what to reach for
 
-> Every script in `scripts/`, arranged by the job it does inside the 21-gate
+> Every script in `scripts/`, arranged by the job it does inside the 30-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -41,7 +41,7 @@
 
 ## How It Works
 
-### The 20 gates, in verify.sh order
+### The 30 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
 | --- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
@@ -98,6 +98,8 @@ When a gate fails, run the tool it names — never hand-edit a claim it owns:
 | Script | Job |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
+| `check_study_live.py` | Post-deploy contract probe of the private study host — gating, canonicalization, the public surface, sign-in, denial, freshness; run by `study-live.yml`, pinned offline by `test_study_live.py` |
+| `test_study_live.py` | Characterization tests for the live probe against stub hosts (18 cases) — the hermetic job that must pass before the live probe judges a deployment |
 | `fix_depth.py` | Rewrites relative md links after files move deeper/shallower |
 | `fix_fence_labels.py` | Relabels fences mislabeled as `text`/`plain`/`output`/`console` |
 | `fix_section_order.py` | One-off canonical section reorder (normalizer) |

@@ -50,14 +50,27 @@ verify.sh *listened*. So this checks the harness, not the corpus:
      Pages Functions: `_middleware.ts` plus the auth routes) and `auth/` (the
      pages they hand back) are the edge half of the artifact, and neither was
      in the trigger list of the workflow that renders that artifact
-     (`site-build.yml`) or the one that probes it live (`study-live.yml`). So a
+     (     `site-build.yml`) or the one that probes it live (`study-live.yml`). So a
      push that only changed the middleware ran neither: the render backstop,
      the lane-exclusion assertion and the Liquid-warning guard were all skipped
      for a change to what the edge serves. A trigger filter is where a blind
      spot hides — a green build proves the inputs are consistent, not that the
      output was ever looked at — so the filter is checked, not remembered.
+  12. **The scripts map describes the scripts.** `docs/scripts-map.md` opens
+     with "Every script in `scripts/`" and did not name
+     `check_study_live.py` / `test_study_live.py` — the two scripts whose
+     subject is the live deployment contract. A doc that promises
+     completeness and is not checked for it is the same false green one level
+     out, so the claim is checked against the directory and the map's own gate
+     count is restamped from the count computed here.
+  13. **The theme preference has one owner.** `sdb-theme` was implemented
+     twice — in `_includes/head-custom.html` for Jekyll pages and in
+     `scripts/gen_master_index.py` for the generated search page — so a
+     change to one silently missed the other. It lives in `assets/theme.js`
+     now; both consumers load that file and no other code-bearing file may
+     name the key.
 
-`--write` restamps 5 and 6 from the same count this check computes, so the
+`--write` restamps 5, 6 and 12 from the same count this check computes, so the
 number has one owner and cannot drift (the `check_counts.py` / `read_time.py`
 pattern).
 
@@ -74,6 +87,21 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERIFY = os.path.join(ROOT, 'scripts', 'verify.sh')
 CONTRIB = os.path.join(ROOT, 'contributing.md')
 GATEDOC = os.path.join(ROOT, 'docs', 'verification-gates.md')
+MAP = os.path.join(ROOT, 'docs', 'scripts-map.md')
+
+# Rule 13: the one file allowed to define the theme preference, the key it
+# owns, and the consumers that must load it instead of restating it. The scan
+# looks in code-bearing extensions only — the study corpus legitimately quotes
+# `localStorage` examples in prose, and a second *implementation* does not hide
+# in a chapter. `_site/` is build output and is skipped.
+THEME_SOURCE = 'assets/theme.js'
+THEME_KEY = 'sdb-theme'
+THEME_CONSUMERS = ('_includes/head-custom.html', 'scripts/gen_master_index.py')
+THEME_SCAN_EXTS = {'.html', '.htm', '.js', '.mjs', '.cjs', '.ts', '.tsx',
+                   '.py', '.yml', '.yaml', '.json', '.toml', '.sh', '.css',
+                   '.scss', '.rb'}
+THEME_SCAN_SKIP = {'.git', 'node_modules', '_site', 'vendor', '.sass-cache',
+                   '__pycache__', '.archive', '.freebuff', 'api'}
 
 # `echo "6b/17 check_template.py — template compliance (…)"` — the space count
 # after the label varies (some labels are 2 chars, some 4), so allow any run.
@@ -384,6 +412,84 @@ def check_edge_triggers(problems):
             )
 
 
+def check_owners(problems):
+    """Rules 12-13: the surfaces that claim to describe the repo must.
+
+    Both defects are the same shape as the ones this file was built for — a
+    claim that nothing checked. The map promised every script; the theme key
+    had two implementations. Neither is about `verify.sh` itself, which is why
+    they live at the end of this gate rather than in a new one: the harness
+    already owns "does the repo describe itself accurately".
+    """
+    count = len(parse_gates(read(VERIFY)))
+
+    # --- 12. the scripts map, both ways --------------------------------
+    if os.path.isdir(os.path.join(ROOT, 'docs')):
+        if not os.path.exists(MAP):
+            problems.append('docs/scripts-map.md is missing although it is the '
+                            'map every script is supposed to appear in')
+        else:
+            text = read(MAP)
+            for pattern in (os.path.join(ROOT, 'scripts', '*.py'),
+                            os.path.join(ROOT, 'scripts', '*.sh')):
+                for path in sorted(glob.glob(pattern)):
+                    name = os.path.basename(path)
+                    if name not in text:
+                        problems.append(
+                            f'docs/scripts-map.md does not name scripts/{name}, '
+                            f'although it opens by claiming to list every script'
+                        )
+            for rx, where in ((r'(\d+)-gate\b', 'the intro'),
+                              (r'The (\d+) gates, in verify.sh order',
+                               'the gate table')):
+                for num in re.findall(rx, text):
+                    if int(num) != count:
+                        problems.append(
+                            f'docs/scripts-map.md: {where} says "{num}" gates '
+                            f'but {count} run — restamp with --write'
+                        )
+
+    # --- 13. the theme key, one owner ----------------------------------
+    consumers = [rel for rel in THEME_CONSUMERS
+                 if os.path.exists(os.path.join(ROOT, rel))]
+    if consumers:
+        if not os.path.exists(os.path.join(ROOT, THEME_SOURCE)):
+            problems.append(
+                f'{THEME_SOURCE} is missing — both theme consumers load it, so '
+                f'every page would lose the preference with no gate to say so'
+            )
+            return
+        if THEME_KEY not in read(os.path.join(ROOT, THEME_SOURCE)):
+            problems.append(f'{THEME_SOURCE} no longer defines {THEME_KEY}')
+        for rel in consumers:
+            if 'assets/theme.js' not in read(os.path.join(ROOT, rel)):
+                problems.append(
+                    f'{rel} no longer loads {THEME_SOURCE} — its pages would '
+                    f'lose the saved theme and the toggle'
+                )
+        for dirpath, dirnames, filenames in os.walk(ROOT):
+            dirnames[:] = sorted(d for d in dirnames if d not in THEME_SCAN_SKIP)
+            for name in sorted(filenames):
+                rel = os.path.relpath(os.path.join(dirpath, name),
+                                      ROOT).replace(os.sep, '/')
+                # The rule names the key in order to look for it.
+                if rel in (THEME_SOURCE, 'scripts/check_verify_wiring.py'):
+                    continue
+                if os.path.splitext(name)[1].lower() not in THEME_SCAN_EXTS:
+                    continue
+                try:
+                    with open(os.path.join(dirpath, name),
+                              encoding='utf-8') as fh:
+                        body = fh.read()
+                except (OSError, UnicodeDecodeError):
+                    continue
+                if THEME_KEY in body:
+                    problems.append(
+                        f'{rel} re-implements the {THEME_KEY} theme preference — '
+                        f'{THEME_SOURCE} owns it; load that file instead'
+                    )
+
+
 def check_unwired(problems):
     """Rule 10: every check_*/test_* script is invoked by verify.sh or a
     workflow. The check_ prefix claims gate-hood; an unwired checker is
@@ -510,6 +616,16 @@ def write(text):
             with open(path, 'w', encoding='utf-8') as fh:
                 fh.write(new)
             changed.append(rel)
+
+    if os.path.exists(MAP):
+        doc = read(MAP)
+        new = re.sub(r'\d+(-gate)\b', lambda m: f'{count}{m.group(1)}', doc)
+        new = re.sub(r'(The )\d+( gates, in verify.sh order)',
+                     lambda m: f'{m.group(1)}{count}{m.group(2)}', new)
+        if new != doc:
+            with open(MAP, 'w', encoding='utf-8') as fh:
+                fh.write(new)
+            changed.append('docs/scripts-map.md')
     return changed
 
 
@@ -531,6 +647,7 @@ def main() -> int:
     check_ci(problems, sorted({g['script'] for g in gates}))
     check_unwired(problems)
     check_edge_triggers(problems)
+    check_owners(problems)
     if problems:
         print(f'verify.sh wiring: {len(problems)} problem(s)')
         for p in problems:

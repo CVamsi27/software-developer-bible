@@ -19,6 +19,11 @@ That last one is not a nitpick: the repo's own restructure spec
 "badge counts == actual counts" as a completion criterion. It was never
 automated, so it was never true for long.
 
+The homepage hero button (`index.html`, "Search N Chapters") was one more
+surface of the same kind — hard-coded since it shipped, with no writer to
+restamp it when the corpus grew. It is owned here now (Sept 2026), on the
+same chapter count README's search link uses.
+
 Counting rule (one rule, applied per scope)
 -------------------------------------------
   * repo total   — every `.md` in the tree, minus .git/node_modules/.archive
@@ -263,6 +268,9 @@ def scale_edits(live):
         ('80-lanes-abroad-full-stack/INDEX.md',
          r'Covers all (\d+) files', [total]),
         ('README.md', r'search all (\d+) chapters', [live['content']]),
+        # The homepage hero button advertises the same search index README's
+        # link does; both read the one chapter count, so they cannot disagree.
+        ('index.html', r'Search (\d+) Chapters', [live['content']]),
         ('README.md', r'\((\d+) across all stacks\)',
          [live['interview_banks']]),
         ('contributing.md', r'\((\d+) files use this today\)',
@@ -549,7 +557,8 @@ def main():
     ap.add_argument('--quiet', action='store_true')
     args = ap.parse_args()
 
-    # Every INDEX/README plus the navigation docs that quote repo totals.
+    # Every INDEX/README plus the navigation surface that quotes repo totals —
+    # the docs, and the homepage hero button's search-count claim.
     nav = []
     for p in walk_md(ROOT, skip_personal=False):
         rel = os.path.relpath(p, ROOT).replace(os.sep, '/')
@@ -557,8 +566,8 @@ def main():
             continue  # historical design docs quote the numbers of their day
         if os.path.basename(rel) in ('INDEX.md', 'README.md'):
             nav.append(rel)
-    nav += ['contributing.md', 'docs/verification-gates.md', 'lanes/INDEX.md',
-            'ROADMAP.md', 'docs/api-contract.md',
+    nav += ['index.html', 'contributing.md', 'docs/verification-gates.md',
+            'lanes/INDEX.md', 'ROADMAP.md', 'docs/api-contract.md',
             'docs/2026-09-19-corpus-health-report.md']
     texts = load(sorted(set(nav)))
 

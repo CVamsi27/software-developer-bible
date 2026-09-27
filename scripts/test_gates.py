@@ -248,6 +248,83 @@ def _unwired_suite_sandbox():
     return plant
 
 
+# The ownership fixtures (wiring rules 12-13, gate 1's homepage claim, gate
+# 26's ceilings). The map ones plant the exact defects the 2026-09-27 pass
+# removed: the map was missing the two live-probe scripts, its gate counts
+# said 21/20, and the theme key had a second implementation.
+_REAL_MAP = open(os.path.join(ROOT, "docs", "scripts-map.md"), encoding="utf-8").read()
+_MAP_DROPS_SCRIPT = _REAL_MAP.replace("check_study_live.py", "check_live_probe.py")
+_MAP_STALE_COUNT = _REAL_MAP.replace("30-gate", "21-gate")
+# The theme key is built from a split literal on purpose: rule 13 scans every
+# code-bearing file — this fixture source included — so it must not itself
+# contain the key it plants. (The checker is the one file exempt, because a
+# rule has to name what it looks for.)
+_THEME_KEY = "sdb-" "theme"
+
+
+def _owners_sandbox(map_text=None, extra=None):
+    """{path: content} for a sandbox whose only defect is in a map/theme claim.
+
+    The tooling, the count claims, the workflows and the shared theme asset are
+    the real ones, so rules 1-11 behave exactly as they do in the repo and a
+    fire is attributable to the one planted map/theme defect. Rule 13 reads the
+    real `assets/theme.js` and the real `scripts/gen_master_index.py`, so both
+    sides exercise the shipped layout rather than a stub.
+    """
+    files = {
+        rel: open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        for rel in ("contributing.md", os.path.join("docs", "verification-gates.md"),
+                    os.path.join("docs", "scripts-map.md"), "assets/theme.js")
+    }
+    wf = os.path.join(ROOT, ".github", "workflows")
+    for name in sorted(os.listdir(wf)):
+        rel = os.path.join(".github", "workflows", name)
+        files[rel] = open(os.path.join(wf, name), encoding="utf-8").read()
+    if map_text is not None:
+        files[os.path.join("docs", "scripts-map.md")] = map_text
+    files.update(extra or {})
+    return files
+
+
+_DUP_TOPICS = ("invoice", "shipment", "webhook", "session", "payment", "catalog",
+               "ticket", "message", "profile", "analytics", "gateway", "receipt")
+
+
+def _dup_pair_sandbox(pairs, reword=True):
+    """{path: content} holding exactly `pairs` cross-file duplicates.
+
+    One >=10-line fenced example per topic per file. `reword` renames one
+    identifier in the second file's copy, so each pair is near (Jaccard ~0.95)
+    instead of raw-identical; the topics share no vocabulary, so cross-topic
+    pairs stay far below the 0.80 threshold and the measured count is exactly
+    `pairs` — which is what a ceiling case needs to pin a number.
+    """
+    def block(topic, renamed):
+        stem = "aggregate" if renamed else "sum"
+        head = topic.capitalize()
+        return "\n".join([
+            f"export function {topic}Reconcile({topic}Input: {head}Payload) {{",
+            f"  const {topic}Total = {stem}{head}Lines({topic}Input.rows);",
+            f"  if ({topic}Total === 0) return {topic}Retry({topic}Input, 30);",
+            f'  await {topic}Persist({topic}Total, "{topic} ledger entry");',
+            f'  return build{head}Report({topic}Total, "{topic} snapshot detail");',
+            "}",
+            f"export const {topic}TimeoutMs = 45000;",
+            f"export function {topic}Healthy({topic}Total: number): boolean {{",
+            f"  return {topic}Total <= {topic}TimeoutMs;",
+            "}",
+        ])
+
+    def fenced(blocks):
+        return "".join(f"# T{i}\n\n```typescript\n{b}\n```\n\n"
+                       for i, b in enumerate(blocks))
+
+    return {
+        "10-frontend/a.md": fenced(block(t, False) for t in _DUP_TOPICS[:pairs]),
+        "10-frontend/b.md": fenced(block(t, reword) for t in _DUP_TOPICS[:pairs]),
+    }
+
+
 CASES = [
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -310,6 +387,28 @@ CASES = [
         # than on the drifted badge. verify.sh already runs this gate on the
         # real corpus every push; running it here too makes the assertion local.
         "clean_in_repo": True,
+    },
+    {
+        # The homepage hero button's "Search N Chapters" claim had no writer
+        # until the 2026-09-27 pass; this pins that check_counts owns it now:
+        # a drifted number fires, the live number passes. The stack dir is the
+        # scaffold compute_live reads (as in the Files-badge case above), and
+        # the two root chapters make the live count 2 rather than 0 — the clean
+        # side proves a *non-empty* claim passes.
+        "name": "gate 1 counts fires on a drifted homepage search claim",
+        "gate": "check_counts.py",
+        "args": [],
+        "dirs": ["20-backend"],
+        "plant": {
+            "index.html": "<span>Search 5 Chapters</span>\n",
+            "p1.md": "# A\n",
+            "p2.md": "# B\n",
+        },
+        "clean": {
+            "index.html": "<span>Search 2 Chapters</span>\n",
+            "p1.md": "# A\n",
+            "p2.md": "# B\n",
+        },
     },
     {
         "name": "gate 3 structure fires on two H1s",
@@ -669,6 +768,43 @@ CASES = [
         "clean_in_repo": True,
     },
     {
+        # Rule 12's coverage half: the map opens by claiming to list every
+        # script, and the 2026-09-27 pass added the two it was missing. Removing
+        # one name again must fire on that claim — not on a missing map or a
+        # stale count, which have their own case.
+        "name": "gate 15 wiring fires when the scripts map omits a script",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _owners_sandbox(map_text=_MAP_DROPS_SCRIPT),
+        "clean": _owners_sandbox(),
+    },
+    {
+        # Rule 12's count half: 21-gate / the 20-gate table was the stale pair
+        # this pass restamped to 30 through the gate's own --write. The clean
+        # side is the real map, so the case fails if either the check or the
+        # committed count drifts.
+        "name": "gate 15 wiring fires on a stale gate count in the scripts map",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _owners_sandbox(map_text=_MAP_STALE_COUNT),
+        "clean": _owners_sandbox(),
+    },
+    {
+        # Rule 13: the theme preference had two independent implementations
+        # before this pass (the Jekyll include and the generator); the plant
+        # puts a second one back. The clean side is the shipped single-source
+        # layout — assets/theme.js plus both consumers loading it — which is
+        # the property the rule exists to keep.
+        "name": "gate 15 wiring fires on a second implementation of the theme key",
+        "gate": "check_verify_wiring.py",
+        "args": [],
+        "plant": _owners_sandbox(extra={
+            "_includes/theme-copy.html":
+                f'var savedTheme = localStorage.getItem("{_THEME_KEY}");\n',
+        }),
+        "clean": _owners_sandbox(),
+    },
+    {
         # Rule 1: the corpus keeps one spelling convention (behavior 845 /
         # behaviour 26). The clean side is the scope proof — a proper noun that
         # contains the minority form must not be reported, which is the whole
@@ -797,6 +933,30 @@ CASES = [
             "  return `/posts/${slugify(title)}`;\n"
             "}\n"
             "```\n")},
+    },
+    {
+        # The identical half of gate 26's re-baseline after the Docita trim:
+        # the committed ceiling is 1 (the recorded git-rebase keep), so the
+        # plant — the shape the trim removed, two files sharing two raw copies —
+        # fires, and one copy passes at the ceiling. Under the old ceiling of 2
+        # the plant would have passed, which is the regression this pins.
+        "name": "gate 26 code_dup fires when a new identical pair exceeds the re-baselined ceiling",
+        "gate": "check_code_dup.py",
+        "args": [],
+        "plant": _dup_pair_sandbox(2, reword=False),
+        "clean": _dup_pair_sandbox(1, reword=False),
+    },
+    {
+        # The near half of the same re-baseline (16 -> 11): twelve reworded
+        # cross-file pairs are one above the committed ceiling, eleven sit at
+        # it. The generator keeps the pair count exact, so a re-baseline above
+        # 11 stops this case from firing — and the 0/0-overridden case above
+        # deliberately cannot see the committed values at all.
+        "name": "gate 26 code_dup fires when a new near pair exceeds the re-baselined ceiling",
+        "gate": "check_code_dup.py",
+        "args": [],
+        "plant": _dup_pair_sandbox(12),
+        "clean": _dup_pair_sandbox(11),
     },
     {
         # Gate 27 has two rules; the plant fires the baseline-free one (label

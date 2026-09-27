@@ -60,8 +60,11 @@ MIDDLEWARE_SOURCE = os.path.join(REPO_ROOT, "functions", "_lib", "study-access.m
 PUBLIC_SET_RE = re.compile(r"PUBLIC_AUTH_PATHS = new Set\(\[(.*?)\]\)", re.S)
 # The adapter that answers the OAuth callback itself, with no file behind it.
 INTERCEPT_SOURCE = os.path.join(REPO_ROOT, "functions", "_middleware.ts")
-SPREAD_RE = re.compile(r"\.\.\.(\w+)")
-QUOTED_RE = re.compile(r'"([^"]+)"')
+# Entries of a declaration body: a double-quoted path, or a spread of another
+# declared list. Anything else (a single-quoted path, a template literal, a
+# bare identifier) is an entry the probe cannot resolve and must fail loudly.
+LIST_PATH_RE = re.compile(r'^"([^"]*)"$')
+LIST_SPREAD_RE = re.compile(r"^\.\.\.(\w+)$")
 CALLBACK_LITERAL_RE = re.compile(r"""["']/auth/callback""")
 # The adapter must actually consume the shared declaration, not merely mention
 # it (a comment would satisfy a substring test while the intercept was
@@ -284,8 +287,65 @@ def _source_text(path):
         ) from error
 
 
+def _split_items(block):
+    """Top-level comma-separated items of an array body (quote-aware)."""
+    items, current, quote = [], [], None
+    for char in block:
+        if quote is not None:
+            current.append(char)
+            if char == quote:
+                quote = None
+            continue
+        if char in "\"'`":
+            quote = char
+            current.append(char)
+            continue
+        if char == ",":
+            items.append("".join(current).strip())
+            current = []
+            continue
+        current.append(char)
+    tail = "".join(current).strip()
+    if tail:
+        items.append(tail)
+    return [item for item in items if item]
+
+
+def _declared_entries(block, name):
+    """(paths, spreads) from an array body, or a loud partial-parse failure.
+
+    Every top-level item must be a double-quoted path or a spread of a
+    declared list. An item the probe cannot resolve — a single-quoted path, a
+    template literal, a bare identifier — fails the gate instead of being
+    dropped: a partially parsed list used to keep the probe green while a
+    public path disappeared from the surface (2026-09-27 audit).
+    """
+    paths, spreads = [], []
+    for item in _split_items(block):
+        path = LIST_PATH_RE.match(item)
+        if path:
+            paths.append(path.group(1))
+            continue
+        spread = LIST_SPREAD_RE.match(item)
+        if spread:
+            spreads.append(spread.group(1))
+            continue
+        raise SourceError(
+            f"{name} in functions/_lib/study-access.mjs has an entry the probe "
+            f"cannot resolve ({item[:50]!r}); only double-quoted paths and "
+            f"spreads of declared lists are accepted — the probe fails rather "
+            f"than dropping the entry silently"
+        )
+    if not paths and not spreads:
+        raise SourceError(
+            f"{name} in functions/_lib/study-access.mjs declares no entries — "
+            f"the probe cannot know which public URLs it must see 200"
+        )
+    return paths, spreads
+
+
 def _declared_paths(text, name):
-    """The quoted paths of `export const <name> = [...]`, or a loud failure.
+    """The paths of `export const <name> = [...]`, or a loud failure.
 
     The declaration has exactly one accepted shape: a refactor the probe
     cannot read (single quotes, a Set, a predicate) is a deliberate change to
@@ -300,13 +360,13 @@ def _declared_paths(text, name):
             f"in a form the probe can resolve — update the declaration or this "
             f"resolver deliberately; the probe will not guess"
         )
-    paths = tuple(QUOTED_RE.findall(block.group(1)))
-    if not paths:
+    paths, spreads = _declared_entries(block.group(1), name)
+    if spreads:
         raise SourceError(
-            f"{name} in functions/_lib/study-access.mjs declares no parseable "
-            f"paths — the probe cannot know which public URLs it must see 200"
+            f"{name} spreads {', '.join(spreads)} — a spread inside the "
+            f"interception list is not resolvable; inline the paths"
         )
-    return paths
+    return tuple(paths)
 
 
 def public_paths():
@@ -329,8 +389,8 @@ def public_paths():
             "unresolvable, so the probe fails instead of probing nothing"
         )
     declared = block.group(1)
-    paths = list(QUOTED_RE.findall(declared))
-    for name in SPREAD_RE.findall(declared):
+    paths, spreads = _declared_entries(declared, "PUBLIC_AUTH_PATHS")
+    for name in spreads:
         if name != "INTERCEPTED_PATHS":
             raise SourceError(
                 f"PUBLIC_AUTH_PATHS spreads `{name}`, which the probe cannot "

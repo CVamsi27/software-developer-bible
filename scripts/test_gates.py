@@ -281,6 +281,11 @@ _REAL_ADAPTER = open(os.path.join(ROOT, "functions", "_middleware.ts"),
 _ACCESS_SINGLE_QUOTES = _REAL_ACCESS.replace(
     '["/auth/callback.html", "/auth/callback"]',
     "['/auth/callback.html', '/auth/callback']")
+# One single-quoted entry among double-quoted ones: a partially parsed list —
+# the shape that used to drop the entry while the gate stayed green.
+_ACCESS_MIXED_QUOTES = _REAL_ACCESS.replace(
+    '  "/favicon.svg",',
+    "  '/auth/refresh'," + chr(10) + '  "/favicon.svg",')
 _ACCESS_SET = _REAL_ACCESS.replace(
     'export const INTERCEPTED_PATHS = ["/auth/callback.html", "/auth/callback"];',
     'export const INTERCEPTED_PATHS = '
@@ -895,6 +900,17 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_SET),
+        "clean": _live_source_sandbox(),
+    },
+    {
+        # A partially parsed list: one single-quoted entry among double-quoted
+        # ones. It used to be dropped while the probe stayed green — the same
+        # silent-drop class as the empty tuple, one entry wide. Now the entry
+        # the resolver cannot read fails the gate instead of vanishing.
+        "name": "study-live resolver fires on an entry it cannot resolve",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(access=_ACCESS_MIXED_QUOTES),
         "clean": _live_source_sandbox(),
     },
     {

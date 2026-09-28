@@ -286,6 +286,17 @@ _ACCESS_SINGLE_QUOTES = _REAL_ACCESS.replace(
 _ACCESS_MIXED_QUOTES = _REAL_ACCESS.replace(
     '  "/favicon.svg",',
     "  '/auth/refresh'," + chr(10) + '  "/favicon.svg",')
+# Notes around the paths are prose, not entries: they must leave the surface
+# resolvable. The old reader reported the note *and the path after it* as one
+# unresolvable entry, which sent a maintainer to the wrong line (audit).
+_ACCESS_COMMENTED = _REAL_ACCESS.replace(
+    '  "/auth/login",',
+    "  // legacy alias kept for old links" + chr(10)
+    + '  "/auth/login", // trailing note' + chr(10)
+    + "  /* block note */")
+_ACCESS_COMMENTED_UNRESOLVED = _ACCESS_COMMENTED.replace(
+    '  "/auth/logout",',
+    "  // the older alias, still single-quoted" + chr(10) + "  '/auth/logout',")
 _ACCESS_SET = _REAL_ACCESS.replace(
     'export const INTERCEPTED_PATHS = ["/auth/callback.html", "/auth/callback"];',
     'export const INTERCEPTED_PATHS = '
@@ -912,6 +923,18 @@ CASES = [
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_MIXED_QUOTES),
         "clean": _live_source_sandbox(),
+    },
+    {
+        # A comment in the body is prose, not an entry. The clean side carries
+        # notes among its paths, so a reader that treats them as entries again
+        # fails here — that is the wrong-line message the audit found. The
+        # plant keeps a single-quoted entry after a note, so stepping over the
+        # note cannot make the reader blind to what follows it.
+        "name": "study-live resolver steps over a comment in the declaration body",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(access=_ACCESS_COMMENTED_UNRESOLVED),
+        "clean": _live_source_sandbox(access=_ACCESS_COMMENTED),
     },
     {
         # The adapter reimplementing the intercept inline (startsWith, single

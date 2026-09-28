@@ -60,15 +60,26 @@ MIDDLEWARE_SOURCE = os.path.join(REPO_ROOT, "functions", "_lib", "study-access.m
 PUBLIC_SET_RE = re.compile(r"PUBLIC_AUTH_PATHS = new Set\(\[(.*?)\]\)", re.S)
 # The adapter that answers the OAuth callback itself, with no file behind it.
 INTERCEPT_SOURCE = os.path.join(REPO_ROOT, "functions", "_middleware.ts")
-# Entries of a declaration body: a double-quoted path, or a spread of another
+# Comment stripping, once, where a source enters the reader. A note between
+# two paths is prose, not an entry: left in, it merges with the path after it
+# and the refusal names both (the maintainer goes to the wrong place), and a
+# note that merely *mentions* the shared declaration would satisfy the
+# adapter's consumption check. Quoted spans match first and per line, so a
+# `//` inside a URL stays text.
+COMMENT_RE = re.compile(r'("[^"\n]*"|\'[^\'\n]*\')|//[^\n]*|/\*.*?\*/', re.S)
+# Where one item ends and the next begins: a comma that sits outside every
+# quoted span, so a rejected item keeps its commas and the refusal names it
+# whole instead of naming the fragment before its first comma.
+ITEM_SEPARATOR_RE = re.compile(r''',(?=(?:[^"']|"[^"]*"|'[^']*')*$)''')
+# Items of a declaration body: a double-quoted path, or a spread of another
 # declared list. Anything else (a single-quoted path, a template literal, a
 # bare identifier) is an entry the probe cannot resolve and must fail loudly.
 LIST_PATH_RE = re.compile(r'^"([^"]*)"$')
 LIST_SPREAD_RE = re.compile(r"^\.\.\.(\w+)$")
 CALLBACK_LITERAL_RE = re.compile(r"""["']/auth/callback""")
-# The adapter must actually consume the shared declaration, not merely mention
-# it (a comment would satisfy a substring test while the intercept was
-# reimplemented inline).
+# The adapter must call into the shared declaration, not merely mention it: a
+# mention in a note is not a call (comments are already gone here), and an
+# import that decides nothing would leave the callback unmapped.
 ADAPTER_CONSUME_RE = re.compile(
     r"INTERCEPTED_PATHS\s*\.\s*(?:includes|has|some)\s*\(")
 
@@ -275,67 +286,49 @@ def probe_sample(limit=0):
     return sample[:limit] if limit else sample
 
 
-def _source_text(path):
-    """The text of a routing source, or a loud SourceError."""
+def _source_code(path):
+    """The code of a routing source — comments dropped — or a loud failure.
+
+    Comments come out here, once, at the one place source enters the reader:
+    downstream, nothing can mistake a note for a path or for a call.
+    """
     try:
         with open(path, encoding="utf-8") as handle:
-            return handle.read()
+            text = handle.read()
     except OSError as error:
         raise SourceError(
             f"cannot read {os.path.relpath(path, REPO_ROOT)} — the probe "
             f"cannot resolve the public surface without it ({error})"
         ) from error
+    return COMMENT_RE.sub(
+        lambda match: match.group(0) if match.group(0)[0] in "\"'" else " ",
+        text)
 
 
-def _split_items(block):
-    """Top-level comma-separated items of an array body (quote-aware)."""
-    items, current, quote = [], [], None
-    for char in block:
-        if quote is not None:
-            current.append(char)
-            if char == quote:
-                quote = None
-            continue
-        if char in "\"'`":
-            quote = char
-            current.append(char)
-            continue
-        if char == ",":
-            items.append("".join(current).strip())
-            current = []
-            continue
-        current.append(char)
-    tail = "".join(current).strip()
-    if tail:
-        items.append(tail)
-    return [item for item in items if item]
+def _declared_entries(body, name):
+    """(paths, spreads) from a comment-free array body, or a loud failure.
 
-
-def _declared_entries(block, name):
-    """(paths, spreads) from an array body, or a loud partial-parse failure.
-
-    Every top-level item must be a double-quoted path or a spread of a
-    declared list. An item the probe cannot resolve — a single-quoted path, a
-    template literal, a bare identifier — fails the gate instead of being
-    dropped: a partially parsed list used to keep the probe green while a
-    public path disappeared from the surface (2026-09-27 audit).
+    Every item must be a double-quoted path or a spread of a declared list. An
+    item the probe cannot resolve — a single-quoted path, a template literal, a
+    bare identifier — fails the gate instead of being dropped, and the message
+    names that item: a partially parsed list used to keep the probe green while
+    a public path disappeared from the surface (2026-09-27 audit).
     """
     paths, spreads = [], []
-    for item in _split_items(block):
-        path = LIST_PATH_RE.match(item)
-        if path:
+    for item in map(str.strip, ITEM_SEPARATOR_RE.split(body)):
+        if not item:
+            continue
+        if path := LIST_PATH_RE.match(item):
             paths.append(path.group(1))
-            continue
-        spread = LIST_SPREAD_RE.match(item)
-        if spread:
+        elif spread := LIST_SPREAD_RE.match(item):
             spreads.append(spread.group(1))
-            continue
-        raise SourceError(
-            f"{name} in functions/_lib/study-access.mjs has an entry the probe "
-            f"cannot resolve ({item[:50]!r}); only double-quoted paths and "
-            f"spreads of declared lists are accepted — the probe fails rather "
-            f"than dropping the entry silently"
-        )
+        else:
+            raise SourceError(
+                f"{name} in functions/_lib/study-access.mjs has an entry the "
+                f"probe cannot resolve ({item!r}); only double-quoted paths "
+                f"and spreads of declared lists are accepted — the probe fails "
+                f"rather than dropping the entry silently"
+            )
     if not paths and not spreads:
         raise SourceError(
             f"{name} in functions/_lib/study-access.mjs declares no entries — "
@@ -380,7 +373,7 @@ def public_paths():
     wrong in the other; an unreadable surface raises instead of silently
     unchecking every path.
     """
-    text = _source_text(MIDDLEWARE_SOURCE)
+    text = _source_code(MIDDLEWARE_SOURCE)
     block = PUBLIC_SET_RE.search(text)
     if block is None:
         raise SourceError(
@@ -414,9 +407,9 @@ def intercepted_public_pages():
     longer consumes it — an inline condition, a Set or a startsWith all
     detach the probe from the routing it believes it is checking.
     """
-    text = _source_text(MIDDLEWARE_SOURCE)
+    text = _source_code(MIDDLEWARE_SOURCE)
     paths = _declared_paths(text, "INTERCEPTED_PATHS")
-    adapter = _source_text(INTERCEPT_SOURCE)
+    adapter = _source_code(INTERCEPT_SOURCE)
     if not ADAPTER_CONSUME_RE.search(adapter):
         raise SourceError(
             "functions/_middleware.ts no longer consumes INTERCEPTED_PATHS — "

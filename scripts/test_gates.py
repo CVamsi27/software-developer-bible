@@ -34,6 +34,11 @@ plants (bare snippets) do not fire, which is itself a fact worth having
 pinned: these gates are calibrated against real corpus shape.
 
 Exits 0 when every case passes. Run directly: python3 scripts/test_gates.py
+
+A case may declare only the keys the runner reads, and its content assertions
+must carry signal: an unrecognised key, or an empty / bare-string assertion, is
+refused before any gate runs. A dropped assertion still prints "ok", which is
+the silent-pass class this suite exists to catch.
 """
 
 import os
@@ -1189,6 +1194,46 @@ def run_gate(tmp, gate, args):
     )
 
 
+# Every key a case may carry. A key the runner does not read is a dropped
+# assertion: rename `fire_names` to `fire_name` and the refusal-content pin
+# stops executing while the case still prints "ok" on content it must reject
+# (2026-09-29 audit). The set is checked, not assumed.
+CASE_KEYS = frozenset((
+    "name", "gate", "args", "plant", "clean", "dirs", "dirs_clean",
+    "clean_in_repo", "clean_real", "sandbox", "fire_names", "fire_omits",
+))
+
+
+def case_problems(case):
+    """Why this case cannot test what it says it does, or [] if it can.
+
+    Two shapes of assertion that silently stop testing: a key the runner
+    never reads (a typo), and an assertion carrying no signal — empty, or a
+    bare string, which is iterated character by character, so a single
+    character appearing anywhere in the output satisfies it.
+    """
+    problems = []
+    unknown = sorted(set(case) - CASE_KEYS)
+    if unknown:
+        problems.append(
+            f"unknown key(s) {', '.join(map(repr, unknown))} — the runner never "
+            f"reads them, so whatever they were meant to assert never runs")
+    for key in ("fire_names", "fire_omits"):
+        if key not in case:
+            continue
+        value = case[key]
+        if not isinstance(value, (list, tuple)):
+            problems.append(
+                f"{key} must be a tuple of substrings, not "
+                f"{type(value).__name__} — a string is iterated character by "
+                f"character, and any one character in the output passes it")
+        elif not (value and all(isinstance(text, str) and text for text in value)):
+            # `not value` is load-bearing: `all()` over an empty tuple is True,
+            # so an empty assertion would otherwise pass as a valid one.
+            problems.append(f"{key} must name at least one non-empty substring")
+    return problems
+
+
 def refusal_problems(case, output):
     """Substrings the fire side's refusal must carry, and must leave out.
 
@@ -1206,6 +1251,15 @@ def refusal_problems(case, output):
 def main() -> int:
     if not os.path.exists(REAL_CHAPTER):
         print(f"clean-side control chapter missing: {REAL_CHAPTER}")
+        return 1
+    declared = [(case.get("name") or "<unnamed case>", problem)
+                for case in CASES for problem in case_problems(case)]
+    if declared:
+        for name, problem in declared:
+            print(f"FAIL {name}\n  {problem}")
+        print(f"\n{len(declared)} case declaration(s) name something the runner "
+              f"does not read — a dropped assertion is a silent pass, so the "
+              f"suite refuses to run until the case is fixed.")
         return 1
     failures = 0
     for case in CASES:

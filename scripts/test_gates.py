@@ -36,7 +36,8 @@ pinned: these gates are calibrated against real corpus shape.
 Exits 0 when every case passes. Run directly: python3 scripts/test_gates.py
 
 A case may declare only the keys the runner reads, and its content assertions
-must carry signal: an unrecognised key, or an empty / bare-string assertion, is
+must carry signal: an unrecognised key, an empty / bare-string assertion, or an
+element that cannot discriminate (blank, one character, a verdict word) is
 refused before any gate runs. A dropped assertion still prints "ok", which is
 the silent-pass class this suite exists to catch.
 """
@@ -1204,13 +1205,38 @@ CASE_KEYS = frozenset((
 ))
 
 
+# The words this suite announces a verdict with — verify.sh's per-gate PASS /
+# FAIL, the probe's PASS / WARN / FAIL, this harness's own ok / FAIL. An
+# element made of them names no defect: it is present in a refusal whatever the
+# gate found, which is how ("FAIL",) passed on content it had to reject
+# (2026-09-29 audit). Read as whole words, not substrings — `ok` lives inside
+# `lookup`, and a pin on a real phrase has to stay legal.
+VERDICT_WORDS = frozenset(("fail", "pass", "warn", "ok"))
+
+
+def discriminating(text):
+    """Whether an assertion element can tell one refusal from another.
+
+    Two families cannot: an element with nothing in it to match (blank, or a
+    single character, which matches nearly any output), and one whose every
+    word is a verdict word. A longer generic phrase can still be weak, which is
+    the author's judgement to make, not the runner's.
+    """
+    stripped = text.strip()
+    if len(stripped) < 2:
+        return False
+    words = re.findall(r"[a-z]+", stripped.lower())
+    return not (words and all(word in VERDICT_WORDS for word in words))
+
+
 def case_problems(case):
     """Why this case cannot test what it says it does, or [] if it can.
 
-    Two shapes of assertion that silently stop testing: a key the runner
-    never reads (a typo), and an assertion carrying no signal — empty, or a
-    bare string, which is iterated character by character, so a single
-    character appearing anywhere in the output satisfies it.
+    Shapes of assertion that silently stop testing: a key the runner never
+    reads (a typo), an assertion carrying no signal — empty, or a bare string,
+    which is iterated character by character, so a single character appearing
+    anywhere in the output satisfies it — and an element that cannot
+    discriminate one refusal from another.
     """
     problems = []
     unknown = sorted(set(case) - CASE_KEYS)
@@ -1231,6 +1257,16 @@ def case_problems(case):
             # `not value` is load-bearing: `all()` over an empty tuple is True,
             # so an empty assertion would otherwise pass as a valid one.
             problems.append(f"{key} must name at least one non-empty substring")
+        else:
+            weak = sorted({text for text in value if not discriminating(text)})
+            if weak:
+                problems.append(
+                    f"{key} element(s) {', '.join(map(repr, weak))} cannot "
+                    f"discriminate — blank or single-character text matches "
+                    f"almost any output, and text made of the verdict words "
+                    f"({', '.join(sorted(VERDICT_WORDS))}) is printed whatever "
+                    f"the defect, so the case would pass on content it must "
+                    f"reject; pin text the defect alone produces")
     return problems
 
 

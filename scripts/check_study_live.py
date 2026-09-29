@@ -390,11 +390,9 @@ def public_paths():
                 f"resolve — extend this resolver deliberately"
             )
         paths += list(_declared_paths(text, name))
-    if not paths:
-        raise SourceError(
-            "PUBLIC_AUTH_PATHS declares no paths — the public surface is "
-            "unresolvable, so the probe fails instead of probing nothing"
-        )
+    # No emptiness check here: `_declared_entries` refuses an empty body and
+    # `_declared_paths` refuses an empty declaration, so a list that survived
+    # both is never empty — the refusal that stood here was unreachable.
     return tuple(dict.fromkeys(paths))
 
 

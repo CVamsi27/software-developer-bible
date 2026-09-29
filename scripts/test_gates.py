@@ -37,6 +37,7 @@ Exits 0 when every case passes. Run directly: python3 scripts/test_gates.py
 """
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -301,6 +302,11 @@ _ACCESS_SET = _REAL_ACCESS.replace(
     'export const INTERCEPTED_PATHS = ["/auth/callback.html", "/auth/callback"];',
     'export const INTERCEPTED_PATHS = '
     'new Set(["/auth/callback.html", "/auth/callback"]);')
+# The public declaration emptied: the reachable half of the emptied-surface
+# refusal. An empty body is named and refused by the reader, so the loudness a
+# dead check used to claim is pinned where it can actually fire.
+_ACCESS_NO_PUBLIC = re.sub(r"new Set\(\[.*?\]\)", "new Set([])", _REAL_ACCESS,
+                           count=1, flags=re.S)
 _ADAPTER_INLINE = _REAL_ADAPTER.replace(
     "  INTERCEPTED_PATHS,\n", "").replace(
     "if (INTERCEPTED_PATHS.includes(url.pathname)) {",
@@ -902,6 +908,11 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_SINGLE_QUOTES),
+        # The refusal has to name the entry it could not read and the
+        # declaration it sits in — not the second entry, and not the list the
+        # spread feeds, which would point a maintainer at the wrong name.
+        "fire_names": ("INTERCEPTED_PATHS", "'/auth/callback.html'"),
+        "fire_omits": ("PUBLIC_AUTH_PATHS", "'/auth/callback'"),
         "clean": _live_source_sandbox(),
     },
     {
@@ -911,6 +922,10 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_SET),
+        # A shape the reader cannot resolve must be named as the declaration
+        # that is unreadable, not as the surface that spreads it.
+        "fire_names": ("INTERCEPTED_PATHS = [...]",),
+        "fire_omits": ("PUBLIC_AUTH_PATHS",),
         "clean": _live_source_sandbox(),
     },
     {
@@ -922,6 +937,10 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_MIXED_QUOTES),
+        # Naming the entries around the bad one is the wrong-line defect one
+        # entry wide: the refusal must name the entry it refused, and only it.
+        "fire_names": ("PUBLIC_AUTH_PATHS", "'/auth/refresh'"),
+        "fire_omits": ('"/favicon.svg"',),
         "clean": _live_source_sandbox(),
     },
     {
@@ -934,6 +953,12 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(access=_ACCESS_COMMENTED_UNRESOLVED),
+        # The note is prose, so the refusal must name the single-quoted entry
+        # alone — not a note, and not the note-plus-path merge the old reader
+        # reported, which is how this case exited non-zero and passed anyway.
+        "fire_names": ("PUBLIC_AUTH_PATHS", "'/auth/logout'"),
+        "fire_omits": ("legacy alias", '"/auth/login"', "trailing note",
+                       "block note"),
         "clean": _live_source_sandbox(access=_ACCESS_COMMENTED),
     },
     {
@@ -944,7 +969,24 @@ CASES = [
         "gate": "check_study_live.py",
         "args": ["--print-contract"],
         "plant": _live_source_sandbox(adapter=_ADAPTER_INLINE),
+        # The refusal has to name the adapter file and the declaration it
+        # stopped consuming, because that pair is the defect.
+        "fire_names": ("functions/_middleware.ts no longer consumes "
+                       "INTERCEPTED_PATHS",),
         "clean": _live_source_sandbox(),
+    },
+    {
+        # The emptied surface, through the half of it that is still reachable:
+        # an emptied public declaration. The reader refuses the empty body by
+        # name instead of resolving to nothing and demoting every path out of
+        # the must-answer-200 set — the loudness the dead "declares no paths"
+        # check claimed, pinned where it can actually fire.
+        "name": "study-live resolver refuses an emptied public declaration",
+        "gate": "check_study_live.py",
+        "args": ["--print-contract"],
+        "plant": _live_source_sandbox(access=_ACCESS_NO_PUBLIC),
+        "clean": _live_source_sandbox(),
+        "fire_names": ("PUBLIC_AUTH_PATHS", "declares no entries"),
     },
     {
         # Rule 1: the corpus keeps one spelling convention (behavior 845 /
@@ -1147,6 +1189,20 @@ def run_gate(tmp, gate, args):
     )
 
 
+def refusal_problems(case, output):
+    """Substrings the fire side's refusal must carry, and must leave out.
+
+    A gate that exits non-zero while blaming the wrong line satisfies an
+    exit-code check and still sends a maintainer to the wrong place — the
+    merged note-plus-path message the resolver audit found. A case that cares
+    declares what the refusal must name (`fire_names`) and what it must not
+    (`fire_omits`); both are read off the gate's own output.
+    """
+    unnamed = [text for text in case.get("fire_names", ()) if text not in output]
+    blamed = [text for text in case.get("fire_omits", ()) if text in output]
+    return unnamed, blamed
+
+
 def main() -> int:
     if not os.path.exists(REAL_CHAPTER):
         print(f"clean-side control chapter missing: {REAL_CHAPTER}")
@@ -1161,7 +1217,9 @@ def main() -> int:
                 with open(path, "w", encoding="utf-8") as fh:
                     fh.write(content)
             r = run_gate(fire_tmp, case["gate"], case["args"])
+            output = r.stdout + r.stderr
             fire_ok = r.returncode != 0
+            unnamed, blamed = refusal_problems(case, output)
 
             if case.get("clean_in_repo"):
                 # A corpus-scale gate whose live values come from the real
@@ -1182,14 +1240,21 @@ def main() -> int:
                 rc = run_gate(clean_tmp, case["gate"], case["args"])
             clean_ok = rc.returncode == 0
 
-        if fire_ok and clean_ok:
+        if fire_ok and clean_ok and not unnamed and not blamed:
             print(f"ok   {case['name']}")
             continue
         failures += 1
         print(f"FAIL {case['name']}")
         if not fire_ok:
             print(f"  fire side: gate exited 0 on its canonical defect — detection is broken")
-            print("  " + (r.stdout.strip() or r.stderr.strip()).replace("\n", "\n  ")[:500])
+        elif unnamed:
+            print(f"  fire side: the refusal never names {unnamed[0]!r} — it "
+                  f"blames something other than the defect")
+        elif blamed:
+            print(f"  fire side: the refusal also names {blamed[0]!r} — it "
+                  f"points at what is not the defect")
+        if not fire_ok or unnamed or blamed:
+            print("  " + output.strip().replace("\n", "\n  ")[:500])
         if not clean_ok:
             print(f"  clean side: gate exited {rc.returncode} on clean content — it fires on everything")
             print("  " + (rc.stdout.strip() or rc.stderr.strip()).replace("\n", "\n  ")[:500])

@@ -166,6 +166,17 @@ export function readStudyToken(cookieHeader) {
   }
 }
 
+/** The preserved deep link cookie's value, or "" when absent. */
+export function readStudyNextCookie(cookieHeader) {
+  const match = (cookieHeader ?? "").match(/(?:^|;\s*)study_next_url=([^;]+)/);
+  if (!match) return "";
+  try {
+    return decodeURIComponent(match[1]);
+  } catch {
+    return "";
+  }
+}
+
 /**
  * The optional probe credential: a machine-checkable identity for the success
  * path.

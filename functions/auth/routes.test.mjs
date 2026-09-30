@@ -41,11 +41,11 @@ function stubUser(user, { status = 200, throws = false } = {}) {
   };
 }
 
-function post({ body, url = "https://study.buildora.work/auth/session", env = ENV } = {}) {
+function post({ body, url = "https://study.buildora.work/auth/session", env = ENV, headers = {} } = {}) {
   const request = new Request(url, {
     method: "POST",
     body: typeof body === "string" ? body : JSON.stringify(body),
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...headers },
   });
   return session({ request, env });
 }
@@ -154,6 +154,22 @@ test("next is carried only when it is a local path", async () => {
       const response = await post({ body: { access_token: "a.b.c" }, url });
       assert.equal((await response.json()).next, expected, String(raw));
     }
+  } finally {
+    stub.restore();
+  }
+});
+
+test("next is resolved from body or cookie when query parameter is omitted", async () => {
+  const stub = stubUser({ email: ALLOWED });
+  try {
+    const fromBody = await post({ body: { access_token: "good-token", next: "/70-interview-toolkit/foo.html" } });
+    assert.equal((await fromBody.json()).next, "/70-interview-toolkit/foo.html");
+
+    const fromCookie = await post({
+      body: { access_token: "good-token" },
+      headers: { Cookie: "study_next_url=%2F20-backend%2Fbar.html" },
+    });
+    assert.equal((await fromCookie.json()).next, "/20-backend/bar.html");
   } finally {
     stub.restore();
   }

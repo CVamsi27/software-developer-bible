@@ -1,4 +1,4 @@
-import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, resolveSupabaseConfig, safeNextPath } from "../_lib/study-access.mjs";
+import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, readStudyNextCookie, resolveSupabaseConfig, safeNextPath } from "../_lib/study-access.mjs";
 import type { StudyEnv } from "../_lib/env.ts";
 
 function json(body: unknown, init?: ResponseInit) {
@@ -9,9 +9,9 @@ function json(body: unknown, init?: ResponseInit) {
 }
 
 export const onRequestPost = async ({ request, env }: { request: Request; env: StudyEnv }) => {
-  let payload: { access_token?: unknown; code?: unknown };
+  let payload: { access_token?: unknown; code?: unknown; next?: unknown };
   try {
-    payload = await request.json() as { access_token?: unknown; code?: unknown };
+    payload = await request.json() as { access_token?: unknown; code?: unknown; next?: unknown };
   } catch {
     return json({ ok: false, reason: "invalid-request" }, { status: 400 });
   }
@@ -50,7 +50,12 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: S
     return json({ ok: false, reason: "not-allowed", redirect: accessDeniedRedirect() }, { status: 403 });
   }
 
-  const next = safeNextPath(new URL(request.url).searchParams.get("next"));
+  const queryNext = new URL(request.url).searchParams.get("next");
+  const payloadNext = typeof payload?.next === "string" ? payload.next : null;
+  const cookieNext = readStudyNextCookie(request.headers.get("Cookie"));
+  const rawTarget = (queryNext && queryNext !== "/") ? queryNext : (payloadNext || cookieNext || queryNext || "/");
+  const next = safeNextPath(rawTarget);
+
   return json(
     { ok: true, email: user.email, next },
     {

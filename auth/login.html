@@ -30,8 +30,35 @@
     </main>
     <script>
       const params = new URLSearchParams(window.location.search);
-      const next = params.get("next") || "/";
-      document.getElementById("continue").href = "/auth/start?next=" + encodeURIComponent(next);
+      const rawNext = params.get("next") || "";
+      let next = (rawNext.startsWith("/") && !rawNext.startsWith("//") && !rawNext.includes("\\\\")) ? rawNext : "/";
+
+      try {
+        if (!next || next === "/") {
+          const prior = sessionStorage.getItem("study_next_url") || localStorage.getItem("study_next_url");
+          if (prior && prior.startsWith("/") && !prior.startsWith("//")) {
+            next = prior;
+          }
+        } else {
+          sessionStorage.setItem("study_next_url", next);
+          localStorage.setItem("study_next_url", next);
+          document.cookie = "study_next_url=" + encodeURIComponent(next) + "; Path=/; SameSite=Lax; Max-Age=1800";
+        }
+      } catch (e) {}
+
+      const continueBtn = document.getElementById("continue");
+      continueBtn.href = "/auth/start?next=" + encodeURIComponent(next);
+
+      if (window.self !== window.top) {
+        continueBtn.target = "_top";
+        const note = document.createElement("p");
+        note.style.fontSize = "12px";
+        note.style.color = "#c8ff3d";
+        note.style.marginTop = "12px";
+        note.textContent = "Embedded mode: Continue opens in top window to authorize with Google, then returns you to this exact chapter.";
+        continueBtn.parentNode.insertBefore(note, continueBtn.nextSibling);
+      }
+
       if (params.get("error")) {
         const error = document.getElementById("error");
         error.hidden = false;

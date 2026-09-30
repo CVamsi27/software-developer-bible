@@ -54,10 +54,39 @@ const CALLBACK_HTML = `<!doctype html>
     </main>
     <script>
       const query = new URLSearchParams(window.location.search);
-      const next = query.get("next") || query.get("state") || "/";
-      const fragment = new URLSearchParams(window.location.hash.slice(1));
+      const rawHash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : window.location.hash;
+      const fragment = new URLSearchParams(rawHash);
       const accessToken = fragment.get("access_token") || query.get("access_token");
       const code = query.get("code") || fragment.get("code");
+
+      const getCookie = (name) => {
+        const match = (document.cookie || "").match(new RegExp("(?:^|;\\\\s*)" + name + "=([^;]*)"));
+        return match ? decodeURIComponent(match[1]) : "";
+      };
+
+      let storedNext = "";
+      try {
+        storedNext = sessionStorage.getItem("study_next_url") || localStorage.getItem("study_next_url") || "";
+      } catch (e) {}
+
+      const candidateNext =
+        query.get("next") ||
+        fragment.get("next") ||
+        query.get("state") ||
+        fragment.get("state") ||
+        storedNext ||
+        getCookie("study_next_url") ||
+        "/";
+
+      const isValidLocalPath = (val) =>
+        typeof val === "string" && val.startsWith("/") && !val.startsWith("//") && !val.includes("\\\\");
+      const resolvedNext = isValidLocalPath(candidateNext) ? candidateNext : "/";
+
+      try {
+        sessionStorage.removeItem("study_next_url");
+        localStorage.removeItem("study_next_url");
+      } catch (e) {}
+
       const status = document.getElementById("status");
       const actions = document.getElementById("actions");
       const denied = (message, autoRedirect = true) => {
@@ -76,10 +105,10 @@ const CALLBACK_HTML = `<!doctype html>
         console.error("No access token or auth code found in callback URL:", window.location.href);
         denied("No Google session was returned in the callback. Please try signing in again.", false);
       } else {
-        fetch("/auth/session?next=" + encodeURIComponent(next), {
+        fetch("/auth/session?next=" + encodeURIComponent(resolvedNext), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ access_token: accessToken, code: code })
+          body: JSON.stringify({ access_token: accessToken, code: code, next: resolvedNext })
         }).then(async (response) => {
           const result = await response.json().catch(() => ({}));
           if (!response.ok || !result.ok) {
@@ -90,7 +119,7 @@ const CALLBACK_HTML = `<!doctype html>
               : "Session verification failed: " + (result?.error || result?.reason || response.status) + ".";
             return denied(msg, isNotAllowed);
           }
-          window.location.replace(result.next || "/");
+          window.location.replace(result.next || resolvedNext || "/");
         }).catch((err) => {
           console.error("Network error exchanging session:", err);
           denied("The study session could not be secured due to a network error. Please try again.", false);

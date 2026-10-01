@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 11 h 25 m of reading (34 files, ~20 min average).
+> **Study time:** ≈ 11 h 20 m of reading (34 files, ~20 min average).
 > **34 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-34-blue)](../../INDEX.md)
@@ -60,9 +60,9 @@ JavaScript's object model is prototype-based, not class-based. `this` binding is
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | 29 min |
-| 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | 32 min |
-| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these!) | 17 min |
+| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | 26 min |
+| 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | 29 min |
+| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these!) | 19 min |
 
 ---
 
@@ -72,8 +72,8 @@ The most-asked topic in senior JS interviews. JavaScript is single-threaded; und
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame` | 33 min |
-| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | 24 min |
+| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame` | 30 min |
+| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | 23 min |
 | 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | 27 min |
 | 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 18 min |
 | 14 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | 13 min |
@@ -107,11 +107,11 @@ The patterns you'll use daily as a senior engineer.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | 20 min |
+| 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | 21 min |
 | 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | 18 min |
-| 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | 26 min |
-| 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | 10 min |
-| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | 13 min |
+| 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | 24 min |
+| 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | 12 min |
+| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | 15 min |
 
 ---
 
@@ -121,11 +121,11 @@ The newest features + the interview Q&A bank.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------    : |
-| 30 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | 12 min |
+| 30 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | 13 min |
 | 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | 13 min |
 | 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | 17 min |
 | 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | 15 min |
-| 34 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 55+ curated questions with answers | 11 min |
+| 34 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 55+ curated questions with answers | 10 min |
 
 ---
 

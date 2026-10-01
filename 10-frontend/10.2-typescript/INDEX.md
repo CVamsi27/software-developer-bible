@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 5 h 52 m of reading (18 files, ~20 min average).
+> **Study time:** ≈ 5 h 56 m of reading (18 files, ~20 min average).
 > **18 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-18-blue)](../../INDEX.md)
@@ -42,10 +42,10 @@ How TypeScript represents types.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | 15 min |
-| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | 16 min |
+| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | 16 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | 17 min |
 | 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | 19 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | 13 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | 14 min |
 
 ---
 
@@ -56,7 +56,7 @@ Reusable type operations.
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | 17 min |
-| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 13 min |
+| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 14 min |
 | 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | 20 min |
 | 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | 14 min |
 

@@ -127,4 +127,4 @@ Take-home heavy. The bar is **a 5-6 hour take-home, 1-2 mediums in 30 min, 1 sys
 
 ---
 
-*Last updated: September 2026 — 868 files · 366K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*
+*Last updated: September 2026 — 868 files · 365K lines · every topic in one place, 0 broken links. Design Patterns organized by GoF category — all 23 GoF patterns + modern architectural patterns, with detailed INDEX per category.*

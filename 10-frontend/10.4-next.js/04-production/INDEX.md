@@ -1,6 +1,6 @@
 # Production — Next.js
 
-> **Study time:** ≈ 1 h 10 m of reading (3 files, ~23 min average).
+> **Study time:** ≈ 1 h 12 m of reading (3 files, ~24 min average).
 > **3 files.** Shipping concerns: authentication across middleware/server/client boundaries, `next/image` optimization, and deploying — Vercel vs self-hosted Docker, ISR cache handlers, env vars, observability.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#files)
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Authentication](10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 31 min |
+| 01 | [Authentication](10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 32 min |
 | 02 | [Image Optimization](10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 24 min |
-| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 15 min |
+| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 16 min |
 
 ---
 

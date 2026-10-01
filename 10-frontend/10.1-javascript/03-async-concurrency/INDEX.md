@@ -1,6 +1,6 @@
 # Async & Concurrency — JavaScript
 
-> **Study time:** ≈ 2 h 1 m of reading (6 files, ~20 min average).
+> **Study time:** ≈ 2 h 3 m of reading (6 files, ~20 min average).
 > **6 files.** The most-asked topic in senior JS interviews: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -18,7 +18,7 @@
 | 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | 23 min |
 | 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 19 min |
 | 05 | [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | 14 min |
-| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, `p-limit` in production | 12 min |
+| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, `p-limit` in production | 14 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Patterns & Interview Prep — React
 
-> **Study time:** ≈ 1 h 12 m of reading (3 files, ~24 min average).
+> **Study time:** ≈ 1 h 6 m of reading (3 files, ~22 min average).
 > **3 files.** Reusable component composition patterns — portals and compound components — plus the 60+ question interview bank.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 31 min |
+| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 25 min |
 | 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 27 min |
 | 03 | [Interview Questions](10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 14 min |
 

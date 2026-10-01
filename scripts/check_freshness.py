@@ -166,7 +166,22 @@ USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
 COMPOSE_VERSION_KEY = re.compile(
     r'^version: ["\']([23](?:\.\d+){0,2})["\']\s*(?:#.*)?$')
 
+# Two verified frontend API regressions (2026-10-01). The hydration
+# matcher is anchored to the options object of the actual call, so a
+# user-defined onHydrated callback elsewhere remains legitimate.
+HYDRATION_OPTIONS = re.compile(
+    r'\bhydrateRoot\s*\(\s*[^,\n]+,\s*[^,\n]+,\s*\{'
+    r'[^}]*?\bonHydrated\s*:'
+)
+NEXT_GEO = re.compile(r'\b(?:request|req)\.geo\b')
+
 RULES = [
+    ('UNSUPPORTED-HYDRATION-CALLBACK',
+     'hydrateRoot has no onHydrated option; use documented error callbacks '
+     'and a component effect for mount-related work'),
+    ('REMOVED-NEXT-GEO',
+     'NextRequest.geo was removed in Next.js 15; use trusted hosting '
+     'provider headers or an explicit geolocation service'),
     ('FAKE-ARCHIVE-TS',
      'fabricated web.archive.org timestamp (20240701000000); cite the live URL instead'),
     ('RETIRED-OWASP-CHEATSHEET',
@@ -361,9 +376,17 @@ def check(p: Path, rel: str):
     text = p.read_text(encoding='utf-8', errors='replace')
     in_code = False
     lang = ''
+    code_rows = []
     for lineno, line, inf, isf in md_fences.walk(text.splitlines()):
         stripped = line.lstrip()
         if isf:
+            if not inf and code_rows:
+                source = '\n'.join(row for _, row in code_rows)
+                for match in HYDRATION_OPTIONS.finditer(source):
+                    offset = source.count('\n', 0, match.end())
+                    hits.append((code_rows[offset][0], 'UNSUPPORTED-HYDRATION-CALLBACK',
+                                 code_rows[offset][1].strip()[:100]))
+            code_rows = []
             # inf is the state after this fence line: True means it opened.
             in_code = inf
             lang = stripped.lstrip('`~').strip() if inf else ''
@@ -413,6 +436,9 @@ def check(p: Path, rel: str):
             # "// url.parse() is deprecated" don't self-trigger.
             # (?<!:) avoids https://, (?!/) avoids protocol-relative //.
             code_line = re.sub(r'(?<!:)//(?!/).*$', '', line)
+            code_rows.append((lineno, code_line))
+            if rel.startswith('10-frontend/10.4-next.js/') and NEXT_GEO.search(code_line):
+                hits.append((lineno, 'REMOVED-NEXT-GEO', line.strip()[:100]))
             is_next_context = rel.startswith(PAGES_ROUTER_ALLOWED) or bool(
                 NEXT_MARKERS.search(text)
             )

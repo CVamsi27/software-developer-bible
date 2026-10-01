@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "bf2c04b4435763e551262b7497550f49a8b6d45be37f3398b5e5007d732fe3ef",
+ "corpus_digest": "6d7f1da2e78512bb2453b8f41e663e625016e6fd1d5be784c74a36caeceafc15",
  "totals": {
   "chapters": 560,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 10711
+  "read_minutes": 10655
  },
  "chapters": [
   {
@@ -207,7 +207,7 @@
     "concurrency",
     "interview"
    ],
-   "m": 12
+   "m": 14
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.html",
@@ -481,7 +481,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.html",
@@ -501,7 +501,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.html",
@@ -511,7 +511,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 18
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.html",
@@ -521,7 +521,7 @@
    "g": [
     "concept"
    ],
-   "m": 29
+   "m": 28
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.html",
@@ -531,7 +531,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.html",
@@ -551,7 +551,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 21
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.html",
@@ -561,7 +561,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 24
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.html",
@@ -571,7 +571,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 12
   },
   {
    "p": "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.html",
@@ -581,7 +581,7 @@
    "g": [
     "concept"
    ],
-   "m": 44
+   "m": 39
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.html",
@@ -591,7 +591,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 16
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.html",
@@ -601,7 +601,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 25
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.html",
@@ -611,7 +611,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 24
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.html",
@@ -621,7 +621,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 22
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.html",
@@ -631,7 +631,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 26
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.html",
@@ -641,7 +641,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 26
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.html",
@@ -651,7 +651,7 @@
    "g": [
     "concept"
    ],
-   "m": 29
+   "m": 30
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.html",
@@ -661,7 +661,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 24
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.html",
@@ -671,7 +671,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 27
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
@@ -691,7 +691,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 21
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.html",
@@ -701,7 +701,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 22
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.html",
@@ -711,7 +711,7 @@
    "g": [
     "concept"
    ],
-   "m": 45
+   "m": 39
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.html",
@@ -731,7 +731,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.html",
@@ -741,7 +741,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.html",
@@ -761,7 +761,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 12
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.html",
@@ -771,7 +771,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.html",
@@ -781,7 +781,7 @@
    "g": [
     "concept"
    ],
-   "m": 31
+   "m": 25
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.html",
@@ -811,7 +811,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 24
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -821,7 +821,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 23
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.html",
@@ -831,7 +831,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 21
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -841,7 +841,7 @@
    "g": [
     "concept"
    ],
-   "m": 33
+   "m": 31
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.html",
@@ -851,7 +851,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 22
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.html",
@@ -861,7 +861,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 25
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.html",
@@ -871,7 +871,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 25
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.html",
@@ -881,7 +881,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.html",
@@ -891,7 +891,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 29
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -901,7 +901,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.html",
@@ -911,7 +911,7 @@
    "g": [
     "concept"
    ],
-   "m": 29
+   "m": 24
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -921,7 +921,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 24
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.html",
@@ -931,7 +931,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.html",
@@ -941,7 +941,7 @@
    "g": [
     "concept"
    ],
-   "m": 31
+   "m": 32
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.html",
@@ -961,7 +961,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.html",

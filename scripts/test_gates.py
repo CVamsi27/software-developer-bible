@@ -408,6 +408,19 @@ CASES = [
         "clean": {"p.md": "before\n\n| A | B |\n| --- | --- |\n| 1 | 2 |\n"},
     },
     {
+        "name": "gate 4 checks navigation and headings inside whole-chapter raw wrappers",
+        "gate": "check_links.py",
+        "args": [],
+        "plant": {
+            "source.md": "{% raw %}\n# Source\n[Missing](missing.md)\n{% endraw %}\n",
+        },
+        "clean": {
+            "source.md": "{% raw %}\n# Source\n[Details](target.md#details)\n{% endraw %}\n",
+            "target.md": "{% raw %}\n# Target\n## Details\nReal section.\n{% endraw %}\n",
+            "example.md": "# Example\n{% raw %}\n[Example only](not-real.md)\n{% endraw %}\n",
+        },
+    },
+    {
         "name": "gate 4 links fires on broken internal links",
         "gate": "check_links.py",
         "args": [],
@@ -577,6 +590,45 @@ CASES = [
             "10-frontend/10.1-javascript/01-execution-and-scope",
             "20-backend/20.4-database/01-postgresql-foundations",
         ],
+    },
+    {
+        "name": "gate 5 rejects nonexistent hydrateRoot onHydrated options",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["10-frontend/10.3-react/01-react-internals"],
+        "plant": {
+            "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md": (
+                "# Hydration\n\n```tsx\nhydrateRoot(container, <App />, {\n"
+                "  onHydrated: () => console.log('ready'),\n});\n```\n"
+            ),
+        },
+        "clean": {
+            "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md": (
+                "# Hydration\n\n```tsx\nhydrateRoot(container, <App />, {\n"
+                "  onRecoverableError: reportError,\n});\n```\n"
+                "\n```tsx\nconst widget = { onHydrated: () => {} };\n```\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects removed Next request.geo while accepting Worker geo",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["10-frontend/10.4-next.js/02-routing-and-navigation"],
+        "plant": {
+            "10-frontend/10.4-next.js/02-routing-and-navigation/10.4.2.03-middleware.md": (
+                "# Next Middleware\n\n```tsx\nconst country = request.geo?.country;\n```\n"
+            ),
+        },
+        "clean": {
+            "10-frontend/10.4-next.js/02-routing-and-navigation/10.4.2.03-middleware.md": (
+                "# Next Middleware\n\n```tsx\nconst country = request.headers.get('x-vercel-ip-country');\n```\n"
+                "\nLegacy API name: request.geo (removed in Next 15).\n"
+            ),
+            "40-platform/40.7-serverless-edge/40.7.01-workers.md": (
+                "# Worker\n\n```typescript\nconst geo = request.geo;\n```\n"
+            ),
+        },
     },
     {
         "name": "gate 5 freshness fires on a stale signature in a real chapter shape",

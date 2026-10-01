@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 11 h 27 m of reading (34 files, ~20 min average).
+> **Study time:** ≈ 11 h 29 m of reading (34 files, ~20 min average).
 > **34 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-34-blue)](../../INDEX.md)
@@ -88,7 +88,7 @@ Choosing the right collection and avoiding memory leaks.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Worker pools, fail-fast vs collect-all, AbortSignal threading, p-limit | 12 min |
+| 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Worker pools, fail-fast vs collect-all, AbortSignal threading, p-limit | 14 min |
 | 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | 22 min |
 | 17 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what | 16 min |
 | 18 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls | 16 min |

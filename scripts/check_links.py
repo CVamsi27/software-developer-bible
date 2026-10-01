@@ -7,9 +7,10 @@ the repo, and that every in-page anchor (`#fragment`) resolves to a real
 heading slug in its target file. This scripts the footer claims
 ("0 broken links") that previously were asserted by hand.
 
-Fence-aware means links inside code fences (``` / ~~~), {% raw %} blocks,
-and HTML comments are ignored — they are examples, not navigation. External
-links (http/https/mailto/tel), anchor-only links, and relative targets that
+Fence-aware means links inside code fences (``` / ~~~), inline {% raw %}
+examples, and HTML comments are ignored. A whole-document raw wrapper
+protects Liquid interpolation, not Markdown; its navigation/headings are real.
+External links (http/https/mailto/tel), anchor-only links, and relative targets that
 escape the repo root are reported as skipped, never as broken.
 
 It also checks *display text*: a link whose visible label is a relative path
@@ -75,13 +76,24 @@ def gh_slug(text):
 def state_lines(lines):
     """Yield ('heading', lineno, text) / ('prose', lineno, line) for every
     line that is real document content (outside fences, raw blocks, and HTML
-    comments)."""
+    comments). Whole-chapter Liquid wrappers are real Markdown, not samples.
+    """
+    nonblank = [i for i, line in enumerate(lines) if line.strip()]
+    whole_raw = (
+        len(nonblank) >= 3
+        and lines[nonblank[0]].strip() == '{% raw %}'
+        and lines[nonblank[-1]].strip() == '{% endraw %}'
+        and any(re.match(r'^# [^#]', line) for line in lines)
+    )
+    wrapper_edges = {nonblank[0], nonblank[-1]} if whole_raw else set()
     fence_char = None
     fence_len = 0
     in_raw = False
     in_comment = False
     for lineno, line in enumerate(lines, start=1):
         stripped = line.strip()
+        if lineno - 1 in wrapper_edges:
+            continue
 
         if in_comment:
             if HTML_COMMENT_END.search(stripped):

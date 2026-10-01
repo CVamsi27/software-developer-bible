@@ -1,6 +1,6 @@
 # Core Hooks — React
 
-> **Study time:** ≈ 2 h 23 m of reading (5 files, ~29 min average).
+> **Study time:** ≈ 2 h 19 m of reading (5 files, ~28 min average).
 > **5 files.** The five essential hooks — useState, useEffect, useMemo/useCallback, useRef, Context — used in 95% of React code.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [useState](10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 28 min |
-| 02 | [useEffect](10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 29 min |
-| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 26 min |
-| 04 | [useRef](10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 28 min |
+| 01 | [useState](10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 26 min |
+| 02 | [useEffect](10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 30 min |
+| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 24 min |
+| 04 | [useRef](10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 27 min |
 | 05 | [Context API](10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | 32 min |
 
 ---

@@ -1,6 +1,6 @@
 # Advanced Patterns — TypeScript
 
-> **Study time:** ≈ 1 h 39 m of reading (5 files, ~20 min average).
+> **Study time:** ≈ 1 h 42 m of reading (5 files, ~20 min average).
 > **5 files.** The senior toolkit: `satisfies`, branded types, decorators, declaration files, and combined type-level patterns.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | 10 min |
+| 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | 13 min |
 | 02 | [Branded Types](10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | 26 min |
 | 03 | [Decorators](10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | 22 min |
 | 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | 23 min |

@@ -37,9 +37,13 @@ SKIP_FILES = {'INDEX.md', 'README.md', 'AGENTS.md', 'contributing.md', 'ROADMAP.
 EXEMPT_PREFIXES = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang', 'projects')
 
 # Sections that are template scaffolding or navigation: expected to be similar
-# across files, so they are not duplication.
+# across files, so they are not duplication. `Revision Questions` (2026-09-30)
+# joins by the same logic as Summary: its answers deliberately echo the
+# chapter's own facts, so shingling it against other chapters' Q&A would
+# flag retrieval practice as copying.
 TEMPLATE_SECTIONS = {
     'TL;DR', 'First Principles', 'Definition', 'Summary', 'Cheat Sheet',
+    'Revision Questions',
     'See Also', 'References & Learn More', 'Interview Questions',
     'Interview Tips', 'Common Mistakes', 'Best Practices',
     'Performance Considerations', 'Real-World Use Cases', 'Why It Matters',

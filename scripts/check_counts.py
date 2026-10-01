@@ -264,6 +264,10 @@ def scale_edits(live):
         ('contributing.md', r'\("(\d+) files, (\d+)K lines"\)', [total, k]),
         ('docs/verification-gates.md', r'\("(\d+) files, (\d+)K lines"\)',
          [total, k]),
+        # The cheat-sheet format claims (`**Code-block format** (N files` /
+        # `**Table format** (N files`) retired with `## Cheat Sheet` itself
+        # (2026-09-30 template revision) — see the Revision Questions
+        # Format section of contributing.md.
         # Bare repo-file claims that carry no line count.
         ('80-lanes-abroad-full-stack/INDEX.md',
          r'Covers all (\d+) files', [total]),
@@ -275,10 +279,6 @@ def scale_edits(live):
          [live['interview_banks']]),
         ('contributing.md', r'\((\d+) files use this today\)',
          [live['raw_tag']]),
-        ('contributing.md', r'\*\*Code-block format\*\* \((\d+) files',
-         [live['cheat_code']]),
-        ('contributing.md', r'\*\*Table format\*\* \((\d+) files',
-         [live['cheat_table']]),
         # Doc self-description: the gates page states the walker scope size.
         ('docs/verification-gates.md', r"today's (\d+) content files",
          [live['content']]),

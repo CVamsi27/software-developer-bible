@@ -27,7 +27,11 @@ Scope is the corpus proper: numbered stack directories, `personal/` excluded at
 any depth (canonical personal data, not a chapter a reader studies), and
 `docs/`/root meta excluded because the measured baseline was taken there.
 Lists, tables, quotes and fences are excluded — they are enumerations, the same
-reasoning-prose doctrine `prose_scan.py` applies for gate 19.
+reasoning-prose doctrine `prose_scan.py` applies for gate 19. `## Revision
+Questions` bodies (2026-09-30) are excluded too: retrieval practice *by design*
+restates the chapter's own facts one line after the question, so measuring that
+section for restatement would penalise the template itself — the exclusion is
+for the section, not for the answers elsewhere.
 
 Check-only by design: a hit is an editorial problem (merge the two passages or
 cut one), not a mechanical repair, so there is no `--write`.
@@ -67,15 +71,21 @@ def prose_blocks(path):
     """[(block_index, [(lineno, text)])] — heading-delimited prose runs."""
     with open(path, encoding='utf-8') as handle:
         lines = handle.read().split('\n')
-    blocks, current = [], []
+    blocks, current, in_rq = [], [], False
     for i, line, in_fence, is_fence in md_fences.walk(lines):
         if is_fence or in_fence:
             continue
         stripped = line.strip()
-        if re.match(r'^#{2,6}\s', stripped):
+        if m := re.match(r'^(#{2,6})\s+(.*)$', stripped):
             if current:
                 blocks.append(current)
             current = []
+            # Only a level-2 heading enters/leaves the RQ section, so its
+            # optional `###` group labels stay inside the exclusion.
+            if len(m.group(1)) == 2:
+                in_rq = m.group(2).strip() == 'Revision Questions'
+            continue
+        if in_rq:
             continue
         if not stripped or stripped.startswith(('|', '<', '[![', '!', '>', '-',
                                                 '*', '```')):

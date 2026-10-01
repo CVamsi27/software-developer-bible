@@ -97,6 +97,11 @@ def parse_meta(text):
 # The corpus carries two documented Definition orders — Why-first (older
 # stacks) and Definition-first (newer) — both accepted (contributing.md
 # only mandates TL;DR -> Definition).
+# 2026-09-30 template revision (contributing.md): the chapter ends
+# Summary -> Revision Questions -> See Also -> References. `Cheat Sheet`
+# is retired — it duplicated the Summary and cost reading time; the
+# Revision Questions section carries the retrieval-practice role instead
+# (one short Q&A set covering the chapter's sections).
 CANON_A = [
     'TL;DR',
     'First Principles',
@@ -109,7 +114,7 @@ CANON_A = [
     'Best Practices',
     'Performance Considerations',
     'Summary',
-    'Cheat Sheet',
+    'Revision Questions',
     'See Also',
     'References & Learn More',
 ]
@@ -126,7 +131,7 @@ CANON_B = [
     'Best Practices',
     'Performance Considerations',
     'Summary',
-    'Cheat Sheet',
+    'Revision Questions',
     'See Also',
     'References & Learn More',
 ]
@@ -153,7 +158,9 @@ VARIANTS = {
     'how it works': 'How It Works',
     'code examples': 'Code Examples',
     'code examples (javascript)': 'Code Examples',
-    'cheat sheet': 'Cheat Sheet',
+    'revision questions': 'Revision Questions',
+    'revision question': 'Revision Questions',
+    'review questions': 'Revision Questions',
     'see also': 'See Also',
 }
 

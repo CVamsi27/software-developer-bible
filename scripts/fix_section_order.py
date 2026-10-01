@@ -68,8 +68,8 @@ def strip_trailing_rule(body):
 
 def attribute_rules(sections):
     """A `---` sits *between* sections, so attribute it to the section that
-    follows it (contributing.md: the rule goes between Cheat Sheet and See
-    Also). Keeps a pure reorder from shuffling separators around."""
+    follows it (contributing.md: the rule goes between Revision Questions and
+    See Also). Keeps a pure reorder from shuffling separators around."""
     for k, s in enumerate(sections):
         body, trailing = strip_trailing_rule(s['body'])
         s['body'] = body

@@ -306,9 +306,13 @@ Optional section for performance implications, trade-offs, and optimization tips
 
 Concise summary of key takeaways. 3-7 bullet points.
 
-## Cheat Sheet
+## Revision Questions
 
-Either a `text` code block with `═══════` headers and `•` bullets, OR a markdown table with `| Concept | Description |` columns.
+Short retrieval-practice Q&A covering the chapter's sections (≥5 pairs):
+
+**How It Works**
+1. **Q:** What question does this section answer?
+   **A:** One or two sentences — the answer, fresh-worded from the body.
 
 ---
 
@@ -326,12 +330,12 @@ Either a `text` code block with `═══════` headers and `•` bullet
 
 1. **`## TL;DR`** — Optional but standard (most concept files open with it); `## Definition` is required for all concept files and follows `TL;DR` when present.
 2. **`## Summary`** — Required for all content files. Must appear near the end.
-3. **`## Cheat Sheet`** — Present in ~78% of content files (measured 2026-09-03). Either as a **`text` code block** (detailed content) or a **markdown table** (quick reference pairs).
+3. **`## Revision Questions`** — Required for concept and case-study files (retired 2026-09-30: the old `## Cheat Sheet` duplicated the Summary for no study value). The chapter's own revision drill: ≥5 `**Q:**`/`**A:**` pairs drawn from the sections above, answers short and fresh-worded (they must not paste body prose — gate 10 measures restatement).
 4. **`## See Also`** — Required for all content files. Relative links to related sections.
 5. **`## References & Learn More`** — Required for all content files. External resource links.
 6. **`## Code Examples`** — Required for all concept files. Uses `typescript` (or appropriate) language tag.
 7. **`## Interview Questions`** — Optional. Can appear before `## Summary` in concept files that include inline Q&A.
-8. **Separator**: The `---` horizontal rule goes **between** `## Cheat Sheet` and `## See Also`. All content sections (Definition → Cheat Sheet) come before `---`; cross-references and references come after `---`.
+8. **Separator**: The `---` horizontal rule goes **between** `## Revision Questions` and `## See Also`. All content sections (Definition → Revision Questions) come before `---`; cross-references and references come after `---`.
 
 ### Design Case Studies (`NN.N-system-design/NN-case-studies/`)
 
@@ -348,7 +352,7 @@ Case studies follow the **case-study template**, not the concept template. Their
 ## Scaling Strategy / Failure Handling / Monitoring
 ## Trade-offs
 ## Summary
-## Cheat Sheet
+## Revision Questions
 
 ---
 
@@ -389,38 +393,34 @@ Concept files typically use **numbered lists** or **bullet lists** for these sec
 
 Either format is acceptable — choose the one that best suits the content.
 
-## Cheat Sheet Format
+## Revision Questions Format
 
-Two formats are used depending on content:
-
-**Code-block format** (442 files, measured 2026-09-18) — for detailed textual summaries:
+The chapter's revision drill — retrieval practice at the bottom of every
+concept/case-study file. Replaces the retired Cheat Sheet (2026-09-30), which
+restated the Summary inside a box nobody was expected to read twice.
 
 ````text
-## Cheat Sheet
-```text
-TOPIC CHEAT SHEET
-═══════════════════════════════════════
+## Revision Questions
 
-SECTION:
-• Item description
-• Item description
+**Definition**
+1. **Q:** What is X in one sentence?
+   **A:** The definition, in your own words.
 
-BEST PRACTICES:
-• Always do this
-• Never do that
-```
+**How It Works**
+2. **Q:** What mechanism makes Y behave this way?
+   **A:** One or two sentences on the mechanism.
+
+**Common Mistakes**
+3. **Q:** What is the classic foot-gun with Y?
+   **A:** The mistake and the one-line correction.
 ````
 
-**Table format** (90 files, measured 2026-09-18) — for structured concept/definition pairs:
+Rules:
 
-```text
-## Cheat Sheet
-
-| Concept | Description       |
-| ------- | ----------------- |
-| Name    | Short description |
-| Name    | Short description |
-```
+- **≥5 Q&A pairs** (gate 6b floor for concept and case-study files); a chapter with fewer sections asks more than one question per section.
+- **Group labels are the chapter's own section names** (`**How It Works**`, `**Common Mistakes**`, …) so the drill maps to what was just read.
+- **Answers stay short** (one-two sentences) and are **fresh-worded** — never pasted from the body; gate 10 (`check_dilution.py`) measures restatement (the RQ section itself is excluded from that measurement; the rest of the chapter is not).
+- Interview-questions files do NOT get a Revision Questions section — the bank itself is the drill.
 
 ---
 
@@ -667,12 +667,6 @@ A: A closure is...
 
 ## Summary
 
-## Cheat Sheet
-
-```text
-...
-```
-
 ---
 
 ## See Also
@@ -683,7 +677,7 @@ A: A closure is...
 ```
 
 - Uses `## See Also` and `## References & Learn More` like concept files
-- **Bottom section**: Uses `## Cheat Sheet` as the bottom section (standardized project-wide). Both `## Quick Reference` and `### Quick Reference` have been migrated.
+- **Bottom section**: `## Summary` is the bottom content section — the bank is already its own drill, so no Cheat Sheet and no Revision Questions (both retired for this genre)
 - Questions are grouped by difficulty level with H3 headings
 
 ### System Design Case Studies
@@ -831,7 +825,7 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 
 ## Summary
 
-## Cheat Sheet
+## Revision Questions
 ```text
 ...
 ```
@@ -840,7 +834,7 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 - Has a `## Template` section (unique to Coding Pattern files)
 - Uses `## Time/Space Complexity` instead of `## Performance Considerations`
 - Uses `## Interview Problems` with difficulty groups and LeetCode references instead of `## Interview Questions`
-- Follows the standard `## Summary` and `## Cheat Sheet` conventions
+- Follows the standard `## Summary` and `## Revision Questions` conventions
 
 ### SDE Role Guides
 
@@ -872,20 +866,20 @@ After making changes, verify the following:
 ### File-Type-Specific Structure
 
 **Standard concept files** (most sections):
-- [ ] Section order: Definition → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary → Cheat Sheet
+- [ ] Section order: Definition → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary → Revision Questions
 - [ ] `## TL;DR` (when present) or `## Definition` is the first content section after metadata/badges
 - [ ] `## Code Examples` uses `typescript` language tag
-- [ ] If `## Cheat Sheet` is present, the `---` separator goes between it and `## See Also`
+- [ ] `## Revision Questions` holds ≥5 fresh-worded `**Q:**`/`**A:**` pairs; the `---` separator goes between it and `## See Also`
 
 **Coding Pattern files** (`70-interview-toolkit/70.2-coding-patterns/`):
 - [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
 - [ ] Has `## Template` section with code skeleton
-- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary → Cheat Sheet
+- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary → Revision Questions
 - [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
 - [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
 
 **Interview Questions files** (last file in each stack/category, `<stack>.<cat>.<seq>-interview-questions.md`):
-- [ ] Uses `## Cheat Sheet` as the bottom section (standardized project-wide)
+- [ ] No Cheat Sheet and no Revision Questions — `## Summary` is the bottom content section
 - [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
 - [ ] Has `## N Most Asked [Section] Interview Questions` as first section
 

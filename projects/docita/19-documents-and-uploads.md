@@ -120,6 +120,17 @@ The inspected document controller logs patient or clinic list reads; template ac
 
 Test simultaneous consumption, exact expiry boundaries, missing and invalid secrets, type/signature mismatch, size limits and failure between object and database writes. Verify sensitive reads and URL issuance per tenant. Document provider differences and fail closed when durable production storage is unavailable. Observe orphan recovery and access/audit paths with representative objects, keeping secrets and sensitive metadata out of logs.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Storage ports, file signatures, scoped token records and key resolution support multiple providers. |
+| Current limitations | Token consumption is not atomic, provider access semantics differ, and upload/metadata failures can leave orphans. |
+| Recommended design | Atomically claim upload capability, validate bounded bytes, quarantine until metadata is committed, authorize reads before short-lived access, and reconcile owned orphan objects with version-aware cleanup. |
+| Evidence needed | Concurrent use of one capability yields one accepted upload; unsupported files fail; cross-tenant reads are denied; failed metadata persistence leaves recoverable quarantine rather than a published orphan. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 A file workflow needs more than storage and a secret: it must connect authorized capability issuance, atomic ownership, validated bytes, durable object identity and controlled reads. Docita supplies useful components, while its current upload sequence and provider differences limit the guarantees that can accurately be claimed.

@@ -133,6 +133,17 @@ One commit can contain compatible API, UI and schema changes. **Deployment is st
 
 Trace one real operation through its layers before describing the architecture. State which dependency check is enforced, what it permits and whether its current result was measured. Test business decisions separately from persistence concurrency and contract validation. For a rollout, explain what happens when old and new application versions coexist.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Ports, application services and separate worker entry make business capabilities and process responsibilities visible. |
+| Current limitations | Core still imports framework/database types, and allowlisted boundary checks permit known coupling. |
+| Recommended design | Keep business rules independent of adapter types; expose narrow capability ports, enforce dependency direction, and replace allowlists incrementally with tested seams. |
+| Evidence needed | A core package compiles without Nest or Prisma; architecture checks reject a planted forbidden dependency; an adapter contract test exercises both success and failure. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 The useful boundaries are business rules behind contracts, runtime validation at trust boundaries, durable work across process lifecycles and compatible changes across deployments. Docita implements parts of these boundaries; its source does not support absolute claims of zero coupling, zero drift or automatic reliability.

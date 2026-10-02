@@ -136,6 +136,17 @@ Do not put plaintext health information into generic event payloads or error mes
 
 Test the crash boundaries: before commit, after commit, after claim, after the external effect and before completion. Include concurrent duplicate jobs, a long handler crossing the stale timeout, exhausted retries, shutdown and tenant scope. Observe backlog age, active duration, retry/dead-letter rates and recovery behavior. Before replaying a failed item, establish whether its effect already occurred.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | Atomic job claiming, delayed retries and an outbox provide useful building blocks. |
+| Current limitations | Claim ownership, completion fencing, local asynchronous listeners and enqueue transaction boundaries leave failure gaps. |
+| Recommended design | Commit required work with business state; claim with an ownership token, renew bounded leases, fence completion, and make consumer effects idempotent under stable operation keys. |
+| Evidence needed | Fault injection at claim/effect/ack boundaries preserves required work; duplicate delivery produces one business effect; an expired claimant cannot acknowledge a replacement claim. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 PostgreSQL can atomically retain work intent and coordinate claims. Reliable execution additionally needs verified producer transactions, explicit ownership and recovery, effect-level idempotency and meaningful consumer acknowledgments. The inspected implementation has useful building blocks and limitations that must remain visible when describing its guarantees.

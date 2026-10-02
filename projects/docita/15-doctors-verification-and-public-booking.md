@@ -1,214 +1,125 @@
-# 16 — Doctors, Verification & Public Booking
+# 15 — Doctor Verification, Availability and Public Requests
 
-> The outward-facing acquisition loop: doctor credential verification against the NMC registry with a reverification cron, timezone-correct slot generation from weekly schedules, and an anonymous referral-code public booking funnel that re-uses the tenant/RLS machinery instead of inventing its own.
+## Definition
 
----
+Doctor verification records the outcome of a credential check. Availability generation turns weekly schedules into candidate slots. Public booking accepts a patient request in a clinic context. These capabilities cooperate, but none proves the others are complete.
 
-## Context
+A patient may see a candidate time while verification is pending or while another request is being confirmed. The product must state what is actually promised.
 
-Docita sells to clinics, but its **doctors** are the regulated users — Indian law requires verified medical registration before a doctor can practice through the platform. And clinics acquire patients through a **public booking page**: a clinic shares a short referral link, a patient books without an account, and staff confirm.
+## First Principles
 
-Three domains share one story:
+External credential checks can fail, return an uncertain result or become stale. A stored VERIFIED status therefore needs source, checked-at time and a policy for freshness; it is not a timeless guarantee.
 
-- **doctors** — profiles, verification against a provider, availability schedules, slot generation.
-- **doctor-clinics** — doctors who work at multiple clinics (a multi-clinic doctor must be valid at *each* clinic they practice at).
-- **public-booking** — the anonymous, referral-coded funnel that consumes doctors' schedules.
+Weekly hours represent clinic-local calendar time, while appointments use instants. Generation must translate between them and exclude conflicting appointments and time off. A displayed slot is still a read result, not a reservation.
 
-**The problems:** (1) a doctor's registration must be checked against an *external* authority and re-checked periodically — one-time checks rot; (2) slots are weekly schedules reinterpreted per calendar date in the *clinic's* timezone; (3) public booking runs in a **different trust context** — no logged-in user, so RLS's clinic-claiming middleware can't run as it does for staff; (4) abuse: bots, OTP spam, and booking on behalf of someone else's phone number.
+Anonymous requests need tenant resolution and bounded identity proof before they can read or change patient data. An obscure referral code identifies a clinic; it is not patient authentication.
 
----
+## Why Three Domains Share the Workflow
 
-## Decision 1: Doctor Verification as an External Provider + State Machine
+| Domain | Responsibility |
+| -------------- | ---------------------------------------------------------------------- |
+| Doctors | Profile, verification, schedules and availability generation |
+| Doctor-clinics | Association and practice scope across clinics |
+| Public booking | Clinic resolution, patient verification and appointment-request intake |
 
-### What We Chose
+Verification is associated with a doctor identity, while practice permissions and schedules need clinic scope. A join avoids copying the doctor's identity for each clinic, but every relevant query must support that association consistently.
 
-Verification runs against a configurable HTTP provider (NMC-backed), recording a **state** on the doctor: `UNVERIFIED → PENDING → VERIFIED / REJECTED / FAILED`. The flow (`verifyAndPersistDoctorVerification`) is:
+## How Credential Verification Works Today
 
-1. Load the doctor; skip non-doctors.
-2. No `registrationNumber`? → set `UNVERIFIED` with reason "Registration number is required" and stop.
-3. Otherwise set `PENDING`, call the provider with name + registrationNumber + council + state code + license, then persist the outcome (`VERIFIED`/`REJECTED`/`FAILED`) with `verificationSource`, `verificationRef`, `verificationReason`, and the raw provider payload (`verificationData`) for audit.
+The service skips missing/non-doctor users. Without a registration number it records UNVERIFIED. Otherwise it writes PENDING, checks recorded license expiry, then tries configured HPR lookup, a configured HTTP provider, or manual administration.
 
-```typescript
-// apps/api/src/domains/doctors/application/services/doctor-verification.service.ts
-if (!doctor.registrationNumber) {
-  await this.repository.updateVerificationStatus(doctorId, {
-    verificationStatus: DoctorVerificationStatus.UNVERIFIED,
-    verificationSource: 'NMC',
-    verificationReason: 'Registration number is required', ...
-  });
-}
+A past recorded expiry produces REJECTED with LICENSE_CHECK source. HPR configuration is optional; lookup failure or no match falls through. If no general provider URL exists, the service remains PENDING with MANUAL_ADMIN source. It does not always call a live NMC registry.
+
+A successful provider payload can set VERIFIED and retain reference/data. Non-success responses produce FAILED or REJECTED according to the mapped result. These are implemented source mappings; they do not independently establish the authority, completeness or current legal sufficiency of a configured provider.
+
+The HTTP dependency is behind a client seam. Retained payloads support later explanation but also need access, minimization and retention policies. The PENDING write precedes the external call, and no attempt/version predicate protects a later result from overwriting a newer verification request or edited registration fields.
+
+## Reverification Is a Bounded Scan, Not Complete Freshness
+
+The sweep uses a bypassed tenant context and settled promises so one rejected call does not stop others. The repository selects doctor roles with non-null registration numbers and takes up to 500, with no due-time filter, cursor or explicit ordering.
+
+Above that bound, it can repeatedly cover an incomplete cohort; even below it, unbounded provider fan-out can overload the dependency. A configured cron/heartbeat does not establish that all credentials are fresh or that PENDING records will heal.
+
+A stronger queue selects due records with pagination, bounded concurrency, backoff and persisted attempt identity. Measure oldest unchecked age and coverage, not just whether a scheduled method ran. Keep provider unavailability distinct from a negative credential verdict.
+
+## How Weekly Hours Become Candidate Slots
+
+The slot service resolves clinic timezone, normalizes the requested calendar date, derives weekday in that zone, and loads active doctor schedules. It creates the clinic-day interval from local midnight to next local midnight, then loads overlapping time off and appointments through a lookup port.
+
+The fallback chain is doctor schedule → clinic weekly schedule → implicit clinic hours when no weekly schedule exists. The fallback's doctor lookup uses direct user.clinicId membership, so a joined-only doctor may not receive the same fallback behavior. Do not claim all multi-clinic paths behave identically.
+
+Full-day time off can suppress a schedule. Otherwise the helper generates slots and filters conflicts; results carry empty reasons such as NO_WEEKLY_HOURS, DATE_PARSE_ERROR, FULL_DAY_BLOCKED and NO_SLOTS_IN_RANGE.
+
+Implicit opening hours are a product assumption. They can show availability on a day the clinic never intended to open. Prefer explicit approved defaults or an unavailable explanation rather than interpreting missing configuration as confirmed capacity.
+
+## Examples: Anonymous Intake Is a Request
+
+```text
+Referral code → active clinic → tenant context
+                                     ↓
+                    existing phone or new phone
+                                     ↓
+          verify booking token or collect registration/notice
+                                     ↓
+                    validate selected candidate slot
+                                     ↓
+                     create AppointmentRequest
+                                     ↓
+                        staff approval/booking
 ```
 
-The provider call is behind `DoctorVerificationHttpClient` (`doctors/infrastructure/external/doctor-verification-http.client.ts`) so the NMC adapter can be swapped for jurisdiction-specific council APIs.
+Clinic resolution normalizes the code and returns clinic information, including its ID. The code therefore does not eliminate enumeration or make clinic IDs secret. `withBookingTenant` scopes the callback; downstream tenant propagation and actual database roles/policies still need verification.
 
-### Why This Was Chosen
+Submit parses a shared schema and verifies Turnstile. A configuration flag determines whether an unsuccessful check blocks submission. Configuration and incident fallback policy are part of the effective abuse protection.
 
-- **Verification is a workflow, not a boolean** — REJECTED (registry says invalid) and FAILED (provider unreachable) are different: FAILED should be retried; REJECTED needs a human.
-- **Raw provider data is stored** — when a dispute arises, Docita can show exactly what the registry returned, not just a verdict.
-- **Http-client seam** — the NMC integration is a configurable external dependency; tests stub it (`doctor-verification.service.spec.ts`).
+For an existing phone, the service requires a bearer or booking-verification token, then checks clinic ID, patient ID and normalized phone against the resolved record. The token service verifies signature, audience, purpose and a 15-minute expiry.
 
-### Trade-offs
+For a new phone, the service requires date of birth and current-version accepted notice, creates a patient, and records consent. This branch does not require the same existing-patient token. Consent records are implementation evidence, not proof of all legal requirements or ownership of a newly supplied phone.
 
-- **The registry provider is the weak link** — if it's down, verification degrades to FAILED; the domain can't verify offline.
-- **PENDING is stored optimistically before the call** — a crash between the PENDING write and the outcome write leaves a PENDING doctor; the reverification cron heals it (below).
+When a slot is supplied, both endpoints, valid order and doctor ID are required, and the public slot service revalidates it before intake. That check is still not an atomic hold or final appointment creation.
 
----
+Existing-patient intake updates submitted name/email/phone fields after token validation. New patient creation, consent recording and request creation are separate service calls in this orchestration. Partial failure and duplicate submission need stable operation identity and recovery; a successful earlier step does not mean a complete request exists.
 
-## Decision 2: The Reverification Sweep (Cron, Batch, Tenant-Bypassed)
+## Current Assessment and Recommended Design
 
-### What We Chose
+| Assessment | Concrete implication |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strengths | Provider seam and explicit verification states, clinic-zone slot generation, tenant callback and purpose-bound existing-patient tokens make important boundaries visible. |
+| Limitations | Credential results can become stale or overwrite newer facts; sweep coverage is capped; implicit hours can mislead; new-phone identity and intake partial failures need explicit policy. |
+| Recommended design | Version verified credential inputs and attempts, schedule bounded due-time rechecks, and separate trustworthy verdicts from provider/manual-review availability. |
+| Availability | Require approved hours and consistent multi-clinic associations; define DST/nonexistent local-time policy; retain candidate-slot versus reservation wording. |
+| Intake | Enforce deployment-backed abuse limits, scoped identity proof where required, request fingerprints and durable recovery across patient/consent/request creation. |
+| Acceptance evidence | Stale provider results cannot replace a newer credential version; all due doctors receive fair coverage; cross-clinic tokens fail; duplicate intake returns one request; confirmation atomically claims a currently available slot. |
 
-A `@Cron` (`DOCTOR_REVERIFICATION` schedule, heartbeat-tracked, disabled in non-cron processes) sweeps *all* doctors with a registration number — `role IN (DOCTOR, ADMIN_DOCTOR)`, `registrationNumber NOT NULL`, batched `take: 500` — and re-verifies each. The sweep runs under `runWithTenant({ bypassed: true })` and uses `Promise.allSettled` so one provider failure doesn't kill the batch:
+These are recommended improvements, not implemented production guarantees. If the product stays request-based, expose status and a response-time policy. A request avoids promising immediate booking; it does not eliminate concurrency problems when staff later confirm it.
 
-```typescript
-// apps/api/src/domains/doctors/application/services/doctor-verification.service.ts
-await runWithTenant({ bypassed: true }, async () => {
-  const doctors = await this.repository.findDoctorsForReverification();
-  const results = await Promise.allSettled(
-    doctors.map((doctor) => this.verifyAndPersistDoctorVerification(doctor.id)),
-  );
-  // surface failures but don't rethrow — the cron retries the whole batch next tick
-});
-```
+## Mistakes and Best Practices
 
-### Why This Was Chosen
+Do not infer zero phone squatting, lapsed-registration detection, support incidents or complete RLS enforcement from this source. Trace OTP challenge issuance/finalization and rate-limit guard/storage separately, using the patient-portal boundaries as a comparison rather than assuming identical implementation.
 
-- **Credentials expire in reality** — registrations lapse; a doctor verified once stays "VERIFIED" forever unless something re-checks. The sweep converts one-time verification into a periodic guarantee.
-- **`Promise.allSettled` + log-don't-rethrow** keeps a single flaky provider call from failing the entire batch and losing the heartbeat.
-- **`bypassed: true` tenant context is deliberate** — the sweep spans clinics (a doctor may practice at many), so it can't run inside one clinic's RLS scope.
-
-### Trade-offs
-
-- **Batch of 500 with no cursor** — at 10k+ doctors this becomes a thundering sweep; `take: 500` with no pagination offset means the same 500 get re-checked every run. Scale is fine today; needs a cursor or an `X days since last check` filter later.
-- **Provider rate limits** — a sweep hitting an external registry with hundreds of concurrent calls needs a throttle that isn't there yet.
-
----
-
-## Decision 3: Slots = Weekly Schedules × Calendar, in Clinic Timezone, With Fallbacks
-
-### What We Chose
-
-A doctor (or the clinic on their behalf) defines **weekly schedules**: `dayOfWeek`, `startTime`, `endTime`, `slotDuration`, per clinic. Availability for a concrete date is *generated*, never stored: resolve the date's day-of-week **in the clinic's timezone**, find active schedules, generate slot start-times, subtract already-booked appointments (via the `ISlotAppointmentLookup` port), and sort.
-
-The fallback chain matters for clinics that never configured per-doctor schedules:
-
-1. Per-doctor active schedules for that weekday.
-2. Clinic-level weekly rows (`findClinicWeeklyForSlotGeneration`) synthesized into per-doctor slots.
-3. If the clinic has *no* weekly schedule at all, `implicitClinicWeeklyRowsForSlotFallback` fabricates a standard 9–5 set so the booking page never shows a dead-empty day with no explanation.
-
-Empty results carry a `slotListEmptyReason` for patient-facing copy ("this doctor isn't seeing patients that day" vs "no slots left").
-
-### Why This Was Chosen
-
-- **Timezone correctness is the crux** — a schedule row says "Tuesday 10:00" in the clinic's zone. `getDayOfWeekInClinicZone(dateStr, timezone)` decides which weekday a UTC-stored date is *for that clinic*; generating in the clinic zone and converting to UTC instants for storage/booking keeps patient-visible times honest (helpers in `slot-generation-helpers.ts`).
-- **Fallbacks buy adoption** — requiring every doctor to configure schedules before public booking works would kill activation; clinic-level defaults mean the page works on day one and improves as doctors refine.
-- **Appointments are looked up through a port** (`slot-appointment-lookup.port.ts`) so slot generation depends on "what's booked", not on appointments' module internals — the same dependency-direction rule as insurance claims.
-
-### Trade-offs
-
-- **Generation at request time** is fine for one doctor/date, but the "next 7 days for 8 doctors" calendar does 8×7 generations per view; it's cached/lightweight today but will want a materialized availability window when usage grows.
-- **Implicit fallback rows are a magic default** — a clinic that genuinely closes Tuesdays but never configured anything shows Tuesday slots; the empty-reason copy mitigates but doesn't fix it.
-
----
-
-## Decision 4: Public Booking = Referral Code + Tenant Wrapper + Purpose-Bound OTP
-
-### What We Chose
-
-Public booking pages are addressed by a **referral code** (`/public/booking/clinics/:referralCode/...`), never a clinic ID. Every handler wraps its work in `withBookingTenant`, which resolves the code to a clinic and then runs inside the *tenant context* — reusing the exact RLS machinery staff use:
-
-```typescript
-// apps/api/src/domains/public-booking/application/services/public-booking-utils.ts
-export async function withBookingTenant<T>(persistence, referralCode, fn) {
-  const clinic = await resolveClinicByReferralCode(persistence, referralCode);
-  return await runWithTenant({ clinicId: clinic.id }, async () => fn(clinic));
-}
-```
-
-Patient identity on submit uses a **two-tier gate**:
-
-- **New phone** → DPDP notice consent + DOB required, patient created, then an appointment *request* is filed (staff confirm later — the funnel never books directly).
-- **Known phone** → the submit must carry either a Bearer token or a `bookingVerificationToken` signed by `PublicBookingTokenService` (15-minute expiry, `audience: public-booking`, purpose-bound payload of clinicId+patientId+phoneNumber). The phone-check/OTP endpoints issue it after WhatsApp OTP verification (reusing the same login-OTP WhatsApp helper as the patient portal).
-- **Bots** → Cloudflare Turnstile token verified server-side; enforcement is config-flag-controlled (`isTurnstileEnforced`) so the team can relax it during rollout without a deploy.
-
-### Why This Was Chosen
-
-- **Referral code keeps clinic IDs out of the public URL** — no enumeration surface, no need to guess tenant IDs; codes are case-normalized, uppercase, and must match an `active` clinic.
-- **Reusing `runWithTenant` means public reads obey RLS** — the anonymous request still hits every query scoped to one clinic; public-booking defines a persistence port so it can never accidentally query cross-clinic.
-- **"Request, not appointment" is a product decision with engineering teeth** — submit creates an `AppointmentRequest` (`appointment-request-command.service.ts`) which staff approve/reject; Docita never promises a slot the clinic didn't confirm, and slot-locking races disappear.
-- **The purpose-bound short-lived token prevents phone squatting** — you can't submit a booking for someone else's phone number without first passing their OTP; the 15-min expiry and audience bound the token's blast radius.
-
-### Trade-offs
-
-- **The booking funnel has more moving parts** than a logged-in flow — OTP, consent, Turnstile, token — but each maps to a real abuse vector.
-- **Turnstile enforcement behind a config flag** means an insecure default during rollout if the flag is mis-set; the check still runs, it's just non-blocking.
-- **No real-time slot hold** — the slot shown at page load can be taken before staff confirm; the request model absorbs this honestly (staff see the request), at the cost of a less "magical" UX than a true booking.
-
----
-
-## Decision 5: Multi-Clinic Doctors as First-Class (doctor-clinics)
-
-### What We Chose
-
-Doctors belong to a clinic *and* optionally to many clinics via a `doctor-clinics` join. Slot availability and staff validation walk both paths — e.g., `admitPatient`'s clinical-staff check accepts a user whose `doctorClinics` include the clinic; public booking's `doctorBelongsToClinic` checks direct `clinicId` *or* the join (`doctor-clinics.repository`). Verification, however, is **clinic-independent** — the registry check is per doctor, not per doctor-clinic row.
-
-### Why This Was Chosen
-
-- **Reality: doctors float between clinics** in Indian healthcare (morning at one hospital, evening at another). Modeling the join instead of duplicating doctor rows keeps one registration, one verification, one schedule source per doctor.
-- **Verification on the doctor, practice-scope on the join** cleanly separates "is this person a verified doctor?" from "may this doctor practice at *this* clinic?".
-
-### Trade-offs
-
-- **Every "doctor in this clinic?" check has two shapes** (direct or joined) — the codebase handles it with `OR` clauses and helpers, but it's a recurring subtlety that must not regress into a single-clinic assumption.
-
----
-
-## What Worked
-
-- **Public booking reuses the tenant machinery** — the referral-code funnel got RLS, audit, and read-replica behavior for free by wrapping `runWithTenant` instead of building its own authz.
-- **Reverification caught real lapsed registrations** — the sweep converted "verified once" into an ongoing guarantee and its heartbeat made cron failures visible.
-- **The fallback slot chain meant zero-config clinics still had bookable pages** — adoption of public booking didn't wait for schedule hygiene.
-- **Known-phone OTP gating stopped squatting** before it became a support issue.
-
-## What Failed
-
-- **Sweep batch pagination** — the reverification `take: 500` with no offset silently re-checks only the first 500 once the doctor count passes 500; a correctness bug disguised as a working cron (the whole batch runs every tick, so some doctors are never re-checked).
-- **Timezone bugs in early slot generation** — the first implementation derived the weekday from the UTC date, which showed Monday schedules on Sunday evenings for IST clinics; the clinic-zone helper fixed it, and the regression tests (`public-booking-slots.service.spec.ts`, `availability-schedule`) now pin it.
-- **Turnstile initially blocked legitimate elderly patients** on flaky mobile networks — the config-flag enforcement switch (relax during incidents) came directly from that support noise.
-
-## What Could Be Better
-
-- **Cursor or last-checked filter on reverification** and a **rate-limit/throttle** around the external provider call.
-- **Availability window materialization** (next-7-days slots) for the multi-doctor calendar view when usage grows.
-- **Appointment-request SLA visibility** — the funnel creates requests; clinics that confirm slowly strand patients. A "confirm within X hours or auto-nudge" policy on top of the existing WhatsApp staff notifications would close the loop.
-- **Public booking page rate limiting** per IP/phone for the OTP endpoints (the patient portal has attempt-caps; public booking's OTP endpoints should inherit the same rules).
-
----
+Test clinic membership, stale verification results, due-time pagination, provider failures, timezone boundaries, missing hours, time off, expired/wrong-scope tokens, duplicate intake and confirmation races. Cache candidate availability only with clear freshness and invalidation rules; materialize windows when measured load justifies it.
 
 ## Code Evidence
 
-| Claim | File |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Verification workflow | `apps/api/src/domains/doctors/application/services/doctor-verification.service.ts` |
-| External verification HTTP client | `apps/api/src/domains/doctors/infrastructure/external/doctor-verification-http.client.ts` |
-| Reverification cron | `apps/api/src/domains/doctors/doctor-reverification.cron.ts` |
-| Sweep batch query | `apps/api/src/domains/doctors/infrastructure/repositories/prisma-doctor-verification.repository.ts` |
-| Slot generation + fallbacks | `apps/api/src/domains/doctors/application/services/slot-generation.service.ts`, `slot-generation-helpers.ts` |
-| Availability schedules | `apps/api/src/domains/doctors/application/services/availability-schedule.service.ts` |
-| Appointment lookup port | `apps/api/src/domains/doctors/application/ports/slot-appointment-lookup.port.ts` |
-| Booking tenant wrapper + referral resolution | `apps/api/src/domains/public-booking/application/services/public-booking-utils.ts` |
-| Submit funnel (OTP gate, DPDP, request) | `apps/api/src/domains/public-booking/application/services/public-booking-submit.service.ts` |
-| Purpose-bound 15-min booking JWT | `apps/api/src/domains/public-booking/application/services/public-booking-token.service.ts` |
-| Slots endpoint | `apps/api/src/domains/public-booking/application/services/public-booking-slots.service.ts` |
-| Public routes | `apps/api/src/domains/public-booking/presentation/controllers/public-booking.controller.ts` |
-| Doctor-clinics join | `apps/api/src/domains/doctor-clinics/application/services/doctor-clinics.service.ts` |
-| Approval request creation | `apps/api/src/domains/appointments/application/services/appointment-request-command.service.ts` |
+Paths are in the inspected Docita checkout.
 
----
+| Mechanism | Source path |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Provider and manual verification | `apps/api/src/domains/doctors/application/services/doctor-verification.service.ts` |
+| Sweep selection and writes | `apps/api/src/domains/doctors/infrastructure/repositories/prisma-doctor-verification.repository.ts` |
+| Availability and fallbacks | `apps/api/src/domains/doctors/application/services/slot-generation.service.ts` |
+| Clinic resolution/context | `apps/api/src/domains/public-booking/application/services/public-booking-utils.ts` |
+| Token purpose and audience | `apps/api/src/domains/public-booking/application/services/public-booking-token.service.ts` |
+| Intake and partial boundaries | `apps/api/src/domains/public-booking/application/services/public-booking-submit.service.ts` |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "Three domains form the acquisition loop. First, doctor verification: each doctor's registration is checked against an NMC-backed HTTP provider behind a state machine — UNVERIFIED, PENDING, VERIFIED, REJECTED, FAILED — with the raw registry payload stored for audit, and a heartbeat-tracked cron re-verifies the whole cohort periodically so credentials can't rot. Second, slots: availability is generated from weekly schedules for the requested date in the clinic's timezone — the weekday is resolved in the clinic zone, booked appointments are subtracted through a lookup port, and a fallback chain means clinics with no configured schedule still show bookable days. Third, public booking: the page is addressed by referral code, every handler wraps itself in the same tenant context staff use, so RLS applies to anonymous requests. Submitting for a known phone requires a purpose-bound 15-minute JWT issued only after WhatsApp OTP; new phones need DPDP consent. Submits create an appointment *request* that staff confirm — the funnel never promises a slot it can't hold. The honest gap: my reverification sweep batches 500 doctors with no cursor, so past 500 it re-checks the same ones — it needs a last-checked filter."
----
+Describe verification as dated evidence, slots as candidate capacity and anonymous intake as a scoped request. Protect each transition with its own identity, concurrency and recovery policy instead of treating a shared tenant wrapper or token as a universal guarantee.
 
-[← Previous: Analytics And Dashboards](14-analytics-and-dashboards.md) · [ Back to Index](INDEX.md) · [Next: Patient Portal →](16-patient-portal.md)
+## See Also
+
+- [Category revision](REVISION.md) — verification and request questions.
+- [Patient portal](16-patient-portal.md) — OTP and session boundaries.
+- [Clinic workflows](05-clinic-workflows.md) — final scheduling constraints.
+- [Prescription validation](07-prescription-safety.md) — use of verification state.
+- [Case-study index](INDEX.md) — reading order.

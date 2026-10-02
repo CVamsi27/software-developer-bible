@@ -130,6 +130,17 @@ Selective deployment reduces unnecessary changes only when the dependency map in
 
 Keep configuration claims dated and distinguish source, live settings and measured outcomes. Test startup and shutdown under declared limits, exercise representative requests and jobs during version overlap, and verify database compatibility before switching traffic. Observe error rates, latency, queue age and worker heartbeats during rollout. Define what recovery restores and what irreversible effects need reconciliation.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Separate API/worker configurations, proxy helpers and selective build logic make responsibilities explicit. |
+| Current limitations | Disabled workflow triggers and startup-state canaries do not demonstrate active automated deployment or business readiness. |
+| Recommended design | Build once, identify immutable artifacts, run migration compatibility checks, deploy through protected credentials, verify business readiness, and retain a tested rollback path that respects schema compatibility. |
+| Evidence needed | The deployed digest matches the verified artifact; interrupted rollout preserves service; rollback works against the current schema; API and worker probes exercise distinct responsibilities. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Docita's source separates API, worker and SPA lifecycles and defines migration checks, blue-green API rollout and a worker canary protocol. The workflows are currently paused in code. Reliable releases require compatible contracts, meaningful health evidence and recovery beyond reverting an application image.

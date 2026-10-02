@@ -103,6 +103,17 @@ Multi-currency support and tax-filing integration cannot be inferred from adding
 
 Keep calculation policy separate from historical evidence. Test totals and component identities, preserve explicit units, and exercise concurrent financial transitions. Give reports precise date/currency definitions and reconcile them with independent collection evidence. Explain exactly which write path enforces a rule and which correction workflows remain to be verified.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | Minor-unit helpers, context snapshots and explicit invoice states support financial reasoning. |
+| Current limitations | State helpers differ across paths, snapshots can be recalculated, and collection dates/currencies need consistent definitions. |
+| Recommended design | Finalize immutable financial context, use explicit correction documents, gate state changes on verified payments, and report currency-separated collections by the defined payment time. |
+| Evidence needed | Arithmetic identities hold under the rounding policy; finalized context cannot be silently rewritten; late capture appears in the intended period and mixed currencies never form one unlabeled total. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Invoice snapshots retain calculation context; state checks constrain local changes; collection reports support reconciliation. Correct financial behavior also requires reviewed policy, coherent concurrent writes, explicit time/currency definitions and recoverable payment processing.

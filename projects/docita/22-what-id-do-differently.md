@@ -124,6 +124,17 @@ Effort and priority labels should be derived from the actual dependency and roll
 
 Take one invariant through the counterexample, proposed enforcement, test and rollout. Keep the current implementation separate from the proposed change. Recheck source and operational evidence before using a retrospective in an interview, and explain a limitation precisely instead of memorizing a polished success narrative.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | The retrospective connects improvements to concrete source boundaries rather than invented performance claims. |
+| Current limitations | A list of desirable changes still lacks proof that a particular sequence will reduce the most important risk. |
+| Recommended design | Prioritize tenant and financial invariants, then required-work durability, reproducible deployment and measured user experience; give each change an owner, acceptance evidence and rollback boundary. |
+| Evidence needed | Each shipped improvement closes a reproduced failure, passes a targeted regression check, and can be rolled back without violating the invariant it protects. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Prioritize concrete identity, money and concurrent-state gaps, then verify delivery and rollout boundaries. Broader abstractions and tuning are useful when measurements and operational needs justify their cost. The strongest retrospective names both what a change enforces and what it leaves unresolved.

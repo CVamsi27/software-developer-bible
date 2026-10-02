@@ -115,6 +115,17 @@ A bulk-consumption operation can express all-or-nothing issuance. It does not au
 
 Exercise concurrent last-unit decrements, failed movement insertion, duplicate business references, direct quantity edits and cross-tenant diagnostic paths. Reconcile the stored quantity with signed movement history and preserve an audit reason for repairs. Define bulk-operation atomicity, numerical bounds and read freshness before advertising the resulting guarantees.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | Guarded decrement with a transactional movement record prevents overselling through that path. |
+| Current limitations | Direct edits, non-unique references and mixed quantity units can bypass ledger or retry guarantees. |
+| Recommended design | Make all balance mutations go through a ledger-backed transaction; use unique operation keys, explicit stock units and batch-aware expiry allocation; reconcile balance against movements. |
+| Evidence needed | Repeated operations apply once, parallel decrements never exceed stock, direct balance mutation is rejected, and ledger reconstruction agrees with the reported balance. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 The guarded movement path protects its decrement and history in one transaction. Whole-domain correctness additionally requires closing direct-edit bypasses, enforcing business-operation idempotency, respecting units and money ranges, and choosing suitable read freshness.

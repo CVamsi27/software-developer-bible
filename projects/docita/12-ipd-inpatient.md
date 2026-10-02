@@ -1,151 +1,119 @@
-# 13 — IPD (Inpatient)
+# 12 — Inpatient Admissions and Bed Allocation
 
-> Ward, room, and bed management plus the admit / transfer / discharge lifecycle — a small domain where every mutation flips bed state, so all of it happens in transactions with audit events.
+## Definition
 
----
+Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. The resource invariant is that one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
 
-## Context
+The difficult case is concurrent staff activity: two requests can both read AVAILABLE before either occupies the bed.
 
-Docita started as an OPD (outpatient) clinic tool, but several clinics run **IPD** — inpatient wards. IPD introduces a resource Docita had never tracked before: **beds**. A bed is either AVAILABLE or OCCUPIED, and that state must never drift from reality:
+## First Principles
 
-- A patient can have **only one active admission** at a clinic at a time.
-- A **transfer** frees one bed and occupies another, in a single atomic step.
-- A **discharge** frees the bed and timestamps the end of the admission.
-- Every step is clinically sensitive (who admitted, who discharged, which bed) — the audit trail matters more than the CRUD.
+A multi-row transaction makes its writes commit or roll back together. It does not automatically serialize every earlier read or protect the absence of a row. Two transactions can both find no active admission and then create one unless a constraint, lock protocol or retryable isolation policy prevents it.
 
-**The problems:** (1) bed transitions are multi-row operations — occupying a bed must be atomic with creating the admission; (2) stale reads (two staff admitting to the same bed) must be impossible; (3) each action needs an audit log entry tying the actor, the bed, and the patient together.
+Bed status and admission assignment encode related facts. Maintaining both makes reads convenient, but requires all writers to preserve their agreement.
 
----
+## Why the Repository Owns Paired Writes
 
-## Decision 1: Thin Service Facade + Transactional Repository
+The service delegates to a repository and then writes a shared audit action. The repository keeps related admission and bed writes in one Prisma transaction.
 
-### What We Chose
+| Operation | Writes grouped in the transaction |
+| --------- | ------------------------------------------------------------------------------ |
+| Admit | Create admission; mark selected bed OCCUPIED |
+| Transfer | Mark old bed AVAILABLE; target OCCUPIED; replace admission bed and append note |
+| Discharge | Mark admission DISCHARGED with time/notes; mark its bed AVAILABLE |
 
-`IpdService` is deliberately thin — it delegates straight to `IpdRepository` and then writes an audit entry. All real logic lives in the Prisma repository, and every state-changing operation is a `$transaction`.
+Atomic grouping prevents a crash halfway through these writes from committing just one side. It is a useful existing safeguard, with concurrency and audit completion still requiring separate reasoning.
 
-```typescript
-// apps/api/src/domains/ipd/application/services/ipd.service.ts
-async admitPatient(clinicId, input, actorUserId, ipAddress?) {
-  const admission = await this.repository.admitPatient(clinicId, input);
-  await this.auditService.logAction({
-    clinicId, userId: actorUserId,
-    actionType: 'IPD_ADMISSION_CREATED',
-    resourceType: 'Admission', resourceId: admission.id,
-    metadata: { patientId: input.patientId, bedId: input.bedId, admittingDoctorId: input.admittingDoctorId },
-  });
-  return admission;
-}
+## How Admission Validation Works Today
+
+Before opening the admission transaction, the repository loads the bed through bed → room → ward → clinic, loads a non-deleted patient in the clinic, and checks clinical staff membership. DOCTOR, ADMIN_DOCTOR or NURSE can qualify through direct clinic membership or an active doctor-clinic link.
+
+It rejects a missing reference or a bed whose earlier status is not AVAILABLE. Inside the transaction, it looks for an ADMITTED record for the patient through the clinic's ward chain, then creates an admission and unconditionally updates the bed to OCCUPIED.
+
+This read-inside-transaction is not a concurrency lock on the absence of an admission. The inspected schema has ordinary indexes for patient, bed, clinic/status and status, rather than active-admission uniqueness. The repository does not request serializable isolation or lock a stable patient row for this check.
+
+The create data also omits the schema's optional clinicId; queries derive clinic through the bed's ward. That compatibility path should be explicit, especially if RLS or future constraints rely on the direct field.
+
+## Examples: Two Requests for One Bed
+
+```text
+Request A reads bed AVAILABLE     Request B reads bed AVAILABLE
+A checks its patient has no admission
+                                 B checks its patient has no admission
+A creates admission and sets bed OCCUPIED
+                                 B creates admission and sets bed OCCUPIED
 ```
 
-### Why This Was Chosen
+Both sets of writes can be individually atomic while the final allocation is invalid. Updating the same bed to OCCUPIED does not reject the second writer because its write predicate does not require AVAILABLE.
 
-- **One owner of bed-state invariants.** `admitPatient` validates in order: patient exists in this clinic → admitting clinician is clinical staff (DOCTOR / ADMIN_DOCTOR / NURSE of this clinic or a linked doctor-clinic) → bed exists in this clinic → bed is AVAILABLE → patient has no active admission. Only then does the transaction create the admission and flip the bed to OCCUPIED.
-- **Audit as a post-condition, not embedded state.** The service writes a structured audit event (`IPD_ADMISSION_CREATED` / `TRANSFERRED` / `DISCHARGED`) after the domain operation succeeds, reusing the shared AuditModule (same pattern as prescriptions).
-- **Clinic scoping is enforced per query** — every lookup walks `bed → room → ward → clinicId`, so a bed from another clinic can never be addressed (`findAdmissionForClinic` filters through the same chain).
+A conditional bed claim can close that boundary:
 
-### Alternatives Considered
-
-- Business logic in the service + separate repository calls — rejected: each operation is 2–3 row writes; without a transaction a crash between "create admission" and "occupy bed" would strand a patient with an unavailable bed.
-- Stored-procedure style raw SQL — rejected: Prisma transactions + entity checks are readable and testable (`ipd.service.spec.ts`, `prisma-ipd.repository.spec.ts`).
-
-### Trade-offs
-
-- **Service layer is a pass-through** — the facade adds little beyond audit wiring; an alternative would merge audit into the repository, but keeping it in the service makes the audit *dependency* visible at the call site.
-- **Validation reads happen outside the transaction** — `admitPatient` checks bed AVAILABLE before opening the transaction (see `What Could Be Better`).
-
----
-
-## Decision 2: One Active Admission Per Patient — Enforced in the Transaction
-
-### What We Chose
-
-Inside the admit transaction, the repository re-checks for an existing active admission (`status: ADMITTED`) for this patient in this clinic and throws `ConflictException` if one exists:
-
-```typescript
-// apps/api/src/domains/ipd/infrastructure/repositories/prisma-ipd.repository.ts
-const activeAdmission = await tx.admission.findFirst({
-  where: { patientId: input.patientId, status: AdmissionStatus.ADMITTED,
-           bed: { room: { ward: { clinicId } } } },
-});
-if (activeAdmission) throw new ConflictException('Patient already has an active admission');
-const admission = await tx.admission.create({ ... });
-await tx.bed.update({ where: { id: input.bedId }, data: { status: BedStatus.OCCUPIED } });
+```text
+Within the admission transaction:
+UPDATE bed WHERE id = target AND status = AVAILABLE
+Require one affected row; otherwise roll back and return conflict.
+Create the admission only with the successfully claimed bed.
 ```
 
-### Why This Was Chosen
+This is recommended pseudocode, not the current implementation. It protects bed capacity; a separate patient/clinic active-admission constraint or serialization policy is needed when the same patient targets two different beds.
 
-- **The check must be race-free.** Two front-desk staff admitting the same patient concurrently would both pass a pre-transaction check; the in-transaction check serializes them.
-- **Unique constraint on patient would be too broad** — the same patient legitimately has past (DISCHARGED) admissions; only *active* ones conflict.
+## Transfers and Discharges Also Need Current Ownership
 
-### Trade-offs
+Transfer and discharge load the admission before their transactions. They check that the earlier status is ADMITTED. Transfer also checks the target bed's earlier availability and rejects transfer to the same bed.
 
-- Admission is patient-centric but bed transitions are row-level; there's no DB unique constraint enforcing one-active-admission, so the invariant depends on this query inside every write path (there's only one write path today, which is why it holds).
+The subsequent writes use IDs without an expected admission version/status/bed predicate. Concurrent transfer, discharge or another bed claim can therefore invalidate the earlier decision. A stale discharge can free a bed that no longer represents that admission's current allocation; simply adding a transaction around the writes does not establish current ownership.
 
----
+Transfers append a human-readable note using the earlier notes snapshot. Concurrent appends can overwrite each other. Discharge summary and instructions are optional and append in the same way. A stronger history model stores individual allocation and clinical-document events rather than treating a mutable note string as a complete timeline.
 
-## Decision 3: Transfers and Discharges as Paired Bed Flips
+A later admission creates another row; patient continuity across admissions is a separate episode/history policy. Room occupancy must be computed from bed/allocation state, because room grouping and charges are not an independent bed-availability authority.
 
-### What We Chose
+## Audit and Time Boundaries
 
-`transferPatient` and `dischargePatient` both run inside transactions that flip beds in pairs:
+The service awaits audit logging after the repository operation commits. That keeps audit dependencies visible, but does not make audit and allocation one transaction. An audit failure may occur after successful allocation; trace the audit service's own handling before promising a successful response or eventual history completion.
 
-```typescript
-// transfer: old bed → AVAILABLE, new bed → OCCUPIED, admission.bedId updated, note appended
-await tx.bed.update({ where: { id: admission.bedId }, data: { status: BedStatus.AVAILABLE } });
-await tx.bed.update({ where: { id: input.toBedId }, data: { status: BedStatus.OCCUPIED } });
-// discharge: admission → DISCHARGED (+dischargedAt), bed → AVAILABLE
-```
+Admission and discharge dates can come from caller input. Define backfill permission, valid date parsing, admission ≤ discharge, timezone display and immutable event time separately. Legitimate historical entry does not require unrestricted date acceptance.
 
-Transfer also appends a human-readable line to `admission.notes` (`Transferred to bed {n}: {reason}`) so the ward's running clinical note isn't lost when the bed changes. Discharge appends discharge summary + instructions the same way.
+The inspected ward listing returns nested rooms and beds without pagination, and admission listing is also unpaginated. This can become a response-size and query-cost issue; it is not evidence of a measured production slowdown.
 
-### Why This Was Chosen
+## Current Assessment and Recommended Design
 
-- **Atomicity over convenience** — a transfer that frees the old bed but crashes before occupying the new one would leave the patient "in" a bed that shows AVAILABLE. Wrapping both flips in one transaction makes the pair the unit of success.
-- **Appending notes preserves the timeline** — discharge summaries and transfer reasons become part of the admission's note history instead of separate disconnected rows.
-- **State is derived, not duplicated** — the bed's `status` is the single source of truth; the admission row stores *which* bed, and queries filter through the ward chain to stay clinic-scoped.
+| Assessment | Concrete implication |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strengths | Tenant-qualified reference queries and transactional paired writes protect clear ownership and partial-commit boundaries. |
+| Limitations | Availability prechecks, absent-row admission checks and stale transfer/discharge snapshots can race; mutable notes and post-commit audit leave history gaps. |
+| Recommended design | Store canonical tenant ownership; enforce one active bed allocation and patient admission with database constraints; claim availability conditionally and serialize allocation changes against current admission ownership. |
+| History | Record allocation transitions and required audit work transactionally; retain original notes/documents with correction semantics rather than overwriting a single string. |
+| Acceptance evidence | Concurrent claims for one bed produce one winner; one patient cannot acquire two active admissions; transfer/discharge races preserve allocation consistency; audit failure remains recoverable. |
 
-### Trade-offs
+The recommended design is a proposal. Define uniqueness over active records, not every historical admission: patients and beds legitimately recur after discharge. Lock resources in a consistent order and use bounded retry for actual serialization/deadlock failures.
 
-- **Admission history is linear, not branched** — a patient re-admitted after discharge gets a new Admission row; the old row keeps its own bed/timestamps. Cross-admission continuity (same episode?) must be reconstructed by patientId.
-- **No bed-status enum on the *room* level** — rooms are informational groupings (with `charges`); occupancy is tracked only per bed, so a "room fully occupied" query must aggregate beds.
+## Mistakes and Best Practices
 
----
+- Calling an in-transaction absence check race-free: identify the constraint or stable row being locked.
+- Calling bed state derived: it is stored separately from admission state and can drift.
+- Calling a post-commit audit event atomic with allocation: record required work in the same commit boundary.
+- Claiming no stuck beds or perfect dispute history from source: prove invariants with concurrency tests and operational reconciliation.
 
-## What Worked
-
-- **Bed state never drifted in practice.** The paired-flip transactions and the admission-create + occupy in one tx meant no stuck "occupied" beds in production incidents.
-- **Audit trail made IPD disputes trivial to answer** — every admit/transfer/discharge has actor, bed, and metadata, so "who moved this patient at 3am" is one query.
-- **Clinical-staff check reused the doctor-clinic link** — an admitting doctor who works at two clinics is validated through `doctorClinics`, not a fragile single-clinic `clinicId` equality.
-
-## What Failed
-
-- **Ward list performance** — the initial `listWards` fetch nested rooms → beds via Prisma relations without pagination; a large multi-floor ward tree produced a heavy response. It was acceptable at single-clinic scale but had to be revisited as clinics added wards.
-- **Admission date was client-supplied freely** — `admissionDate` could be backdated arbitrarily, which confused discharge-summary reporting. It is still permitted (clinics legitimately backfill), but it taught the team that temporal fields in clinical domains deserve explicit validation policy, not trust.
-
-## What Could Be Better
-
-- **Bed availability is checked outside the transaction** — `admitPatient` reads `bed.status !== AVAILABLE` *before* `$transaction` opens. Two concurrent admits to the same bed could both pass the pre-check; the in-transaction query only guards the patient, not the bed. A conditional `updateMany({ where: { id, status: AVAILABLE } })` (like inventory's stock decrement) would close the race.
-- **No discharge-required fields** — a discharge doesn't require a summary; adding "mandatory summary or explicit override" would harden clinical documentation.
-- **No ward/room-level capacity reporting endpoint** — the domain has the data (beds + statuses) but no aggregate "occupancy by ward" query; dashboards end up counting admissions instead.
-- **Bed history** — `Bed` rows have no status-history table, so "when was bed 7 last free" is unknowable without admission events. Cheap to add, valuable for utilization analysis.
-
----
+Add reconciliation that compares active allocations to bed states, reports conflicts and requires a deliberate repair policy. Do not silently free a bed merely because one read model temporarily lacks an admission.
 
 ## Code Evidence
 
-| Claim | File |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Thin facade + audit wiring | `apps/api/src/domains/ipd/application/services/ipd.service.ts` |
-| Admit/transfer/discharge transactions | `apps/api/src/domains/ipd/infrastructure/repositories/prisma-ipd.repository.ts` |
-| Repository interface | `apps/api/src/domains/ipd/core/repositories/ipd.repository.interface.ts` |
-| HTTP surface (`/ipd/wards`, `/admissions`, `/transfers`, `/discharges`) | `apps/api/src/domains/ipd/presentation/controllers/ipd.controller.ts` |
-| Shared audit service used by IPD | `apps/api/src/shared/modules/audit/audit/audit.service.ts` |
+Paths are from the inspected Docita checkout, not live database or production outcomes.
 
----
+| Mechanism | Source path |
+| ------------------------------------- | ------------------------------------------------------------------------------- |
+| Facade and post-operation audit | `apps/api/src/domains/ipd/application/services/ipd.service.ts` |
+| Validation and transaction boundaries | `apps/api/src/domains/ipd/infrastructure/repositories/prisma-ipd.repository.ts` |
+| Admission fields and indexes | `packages/db/prisma/schema.prisma` — Admission |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "IPD adds a resource we'd never tracked — beds — with a hard invariant: a bed is either available or occupied, and that state must never drift from reality. Every mutation is multi-row — admitting creates the admission *and* occupies the bed; transferring frees one bed and occupies another; discharging closes the admission and frees the bed — so all three are Prisma transactions where the pair of writes is the unit of success. The service layer stays thin and writes a structured audit event after each action — who admitted, which bed, which patient — reusing the shared audit module. Clinic scoping is enforced by walking the bed→room→ward chain in every query. The honest gap I'd fix next: bed availability is read before the transaction opens, so two concurrent admits to the same bed could race — a conditional `updateMany` on status would close it."
----
+Transactional paired writes prevent partial commits, while conditional claims and database invariants prevent concurrent over-allocation. Protect transfer and discharge against stale ownership, and keep required history recoverable alongside the allocation change.
 
-[← Previous: Insurance Claims](11-insurance-claims.md) · [ Back to Index](INDEX.md) · [Next: Inventory →](13-inventory.md)
+## See Also
+
+- [Category revision](REVISION.md) — bed-allocation and transaction questions.
+- [Inventory](13-inventory.md) — guarded resource decrement.
+- [Clinic workflows](05-clinic-workflows.md) — database-backed scheduling invariants.
+- [Async processing](03-async-processing.md) — required post-commit work.
+- [Case-study index](INDEX.md) — reading order.

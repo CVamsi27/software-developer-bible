@@ -107,6 +107,17 @@ Provider abstractions already exist in the current payment ports and adapter fac
 
 Test each merchant boundary with controlled test accounts. Exercise simultaneous duplicates, both event shapes, incorrect scope/amount/currency, out-of-order transitions and crashes around acknowledgment. Record provider identity and local reconciliation status without leaking credentials or payment data. In interviews, explain the local transaction's exact scope and name the recovery boundary that remains.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Provider signatures, local session state and transactional updates establish a useful payment boundary. |
+| Current limitations | Acknowledging handler failure, incomplete contextual validation and duplicate effect handling can leave financial state unreconciled. |
+| Recommended design | Persist verified ingress before acknowledgement; validate merchant, order, amount and currency; apply monotonic transitions and unique business-effect keys; reconcile unsettled operations against provider evidence. |
+| Evidence needed | Duplicate, reordered and wrong-context fixtures cannot double-credit or activate the wrong clinic; a handler crash leaves durable retryable work and a reconcilable ledger. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Payment correctness depends on matching merchant and tenant identity, accepting only valid state transitions, handling repeated delivery and retaining recovery responsibility. Current Docita source shows separate intent tokens, ingress verification and transactional local updates; those mechanisms do not independently prove merchant isolation or end-to-end idempotency.

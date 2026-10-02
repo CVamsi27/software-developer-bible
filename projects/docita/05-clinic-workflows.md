@@ -126,6 +126,17 @@ Reminders connect this intent to [asynchronous delivery](03-async-processing.md)
 
 Start with the business invariant and identify the write that enforces it. Keep appointment, queue and follow-up meanings distinct, reconcile real-time UI state after server outcomes and make conflict errors actionable. Exercise competing operators and calendar boundaries rather than only the happy path. Present source mechanisms and actual measured outcomes separately in interviews.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | Conditional reply transitions and the appointment exclusion constraint protect important paths. |
+| Current limitations | Other preflight checks and token allocation can race; local-time assumptions and unused buffer constants can mislead readers. |
+| Recommended design | Enforce overlapping-slot and token uniqueness in the database, couple related state changes transactionally, and calculate clinic calendar boundaries from explicit timezone policy. |
+| Evidence needed | Concurrent bookings yield one winner, terminal visits reject stale actions, queue tokens remain unique, and timezone/DST fixtures preserve the intended clinic day. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Clinic workflows combine related state models, explicit calendar conversion and concurrent persistence rules. Current source contains a database overlap constraint and transactional consultation writes, alongside limits in token allocation, expected-state checks and timezone handling that must remain visible.

@@ -1,162 +1,115 @@
-# 18 — ABDM Integration (India's Health Stack)
+# 17 — ABDM Ledger, Callback Trust and Data Exchange
 
-> Interoperability with India's Ayushman Bharat Digital Mission — care contexts, consent-based data sharing, and an outbound/inbound transaction ledger where every gateway callback is recorded as a state transition, not trusted blindly.
+## Definition
 
----
+The ABDM integration connects local patient identity and care-context records to external health-information workflows. Its current source includes local care contexts, consent requests, callback recording, a gateway client and an operational inbox. That is not evidence of a complete certified interoperability flow.
 
-## Context
+The concrete question is whether a received callback is authorized to change consent state or trigger an external push—not merely whether it names an existing care context.
 
-ABDM (Ayushman Bharat Digital Mission) is India's national health interoperability layer. A clinic with an ABHA-linked patient can share records with any other ABDM participant — labs, hospitals, insurers — **but only with the patient's explicit, granular consent**. Docita's `abdm` domain implements the provider (HIP) side:
+## First Principles
 
-- **Care contexts** — each sharable clinical resource (a prescription, a record bundle) gets a reference like `DOCITA-{sourceType}-{sourceId}`.
-- **Link requests** — ask ABDM to associate a care context with a patient's ABHA address.
-- **Consent requests** — request the patient's permission to share.
-- **Data pushes** — when consent is granted, push health information to the requesting participant's data-push URL.
-- **Gateway callbacks** — ABDM calls back asynchronously (link granted, consent granted/denied, data-push accepted); Docita must correlate each callback to its originating request.
+Correlation identifies the operation an event claims to describe. Authentication establishes who sent it. Authorization determines whether that sender and operation may perform the requested change. Consent scope and encryption establish additional data-sharing conditions. These checks cannot substitute for one another.
 
-**The problems:** (1) ABDM is an *async, callback-driven* gateway — Docita fires a request, gets nothing synchronously, and must reconcile a callback that may arrive minutes later (or never); (2) callbacks arrive at a **public** endpoint keyed only by clinicId + type — the request must be correlated to a specific consent/care-context without trusting the payload; (3) no gateway config (dev vs prod) must behave safely — the system must record *pending/retryable* state instead of failing loudly; (4) push payloads carry PHI to an external URL — failures must be auditable with full context.
+External calls and database writes are separate commits. An HTTP success, a ledger row and a receiver's valid acceptance each prove different facts. Required recovery needs durable operation identity and state transitions, not just a list of failures.
 
----
+## Why a Ledger Helps
 
-## Decision 1: A Transaction Ledger as the Single Source of Truth
+Transactions retain type, direction, status and available request, transaction and correlation IDs. The inbox queries retryable/failed transactions, pending consent requests and recent external records. This supports diagnosis across process restarts.
 
-### What We Chose
+The ledger uses more than a simple success/failure vocabulary: inbound callback recording uses ACKNOWLEDGED and local context generation uses INTERNAL direction. Fields are not populated identically on every path. A recorded RETRYABLE status does not schedule or complete a retry automatically.
 
-Every interaction with ABDM — care-context creation, link request, share request, consent request, inbound callback, outbound push — writes an **`AbdmTransaction`** row with `type`, `direction` (INBOUND/OUTBOUND), `status` (`SUCCEEDED`/`FAILED`/`RETRYABLE`/`PENDING`), `requestId`, `transactionId`, and `correlationId` (the care-context reference). The ops inbox (`getOpsInbox`) is literally a query over these states:
+Care contexts use stable source-derived references. Creation checks clinic enablement, a verified ABHA patient, and source ownership, then obtains a patient FHIR bundle and stores the context. Source-specific permission and data minimization still matter: creating a context for one record must not imply consent to share the patient's entire available bundle.
 
-```typescript
-// apps/api/src/domains/abdm/application/services/abdm-exchange.service.ts
-listTransactions(clinicId, ['RETRYABLE']),
-listTransactions(clinicId, ['FAILED']),
-listConsentRequests(clinicId),
-listExternalRecords(clinicId),
+## How Link, Share and Consent Requests Differ
+
+The link/share helper creates an outbound ledger transaction and changes local context status to LINK_REQUESTED or SHARE_REQUESTED. It checks the global integration enabled flag, not complete gateway configuration, and the inspected method does not dispatch a link/share HTTP request itself.
+
+Consent creation checks the patient's verified ABHA address, generates a request ID, stores the consent request, and calls the configured gateway consent method when configured. It then records dispatch outcome. Those steps are separate writes/calls, so failures can leave partial operation evidence.
+
+When unconfigured, consent dispatch is recorded RETRYABLE. That is useful visibility, but production misconfiguration needs alerting and a defined retry owner. Local context creation can also fail validation or storage; it does not always succeed just because it avoids a gateway call.
+
+The gateway's older verifyAbha method is explicitly marked as a deprecated path in source. A separate ABHA client contains the newer identity flow. Verify which controller/service path is wired before presenting a legacy method as the complete current integration.
+
+## Examples: Authenticated Callback Is Not Completed Consent Validation
+
+The callback command already invokes a shared webhook verifier with a configured shared-secret header, raw body and optional timestamp. It rejects failed verification and treats replay rejection separately. The old documentation's statement that callback authentication was entirely TODO was incorrect.
+
+This is shared-secret authentication, not proof of verification against published asymmetric gateway keys. Inspect the verifier's replay-store, timestamp and failure policies independently; do not infer them from the parameter names.
+
+```text
+Callback ingress → configured authentication/replay check
+                                      ↓
+                         record inbound transaction
+                                      ↓
+                       optional external-record write
+                                      ↓
+                         consent/link state handling
+                                      ↓
+                       optional outbound data push
 ```
 
-### Why This Was Chosen
+The exchange records a callback before state handling. If patient ID, health-information type and JSON payload exist, it can create a new external-record row. Thus callbacks are not limited to updating known ledger rows, and JSON shape validation is not FHIR or ownership validation.
 
-- **Callback-driven flows need a durable memory** — Docita can't keep an in-flight map in RAM across restarts; the ledger survives crashes and gives the ops inbox its content.
-- **Correlation is explicit** — every outbound request stores the `requestId`/`transactionId`/`correlationId` trio, and every callback handler looks up by those keys instead of trusting payload shape alone.
-- **Status vocabulary matches reality** — `RETRYABLE` (gateway not configured / provider hiccup) is distinct from `FAILED` (a real rejection); the ops inbox surfaces exactly the rows a human or a retry job should act on.
+Consent handling looks up clinic-scoped request/consent identity and maps a small success-word set to GRANTED; other statuses become FAILED. It retains raw artifact data. This loses distinctions such as denied, expired or revoked unless handled elsewhere, and it does not itself validate a complete consent artifact's scope, time window, recipient or permitted data.
 
-### Trade-offs
+Link handling looks up care-context reference within the clinic and marks it linked on a success-looking status. A match is useful correlation, not proof of a valid permitted link.
 
-- **The ledger is a write-amplifier** — one logical flow (link + consent + push) can write 5+ transaction rows; cheap at this volume, but it's a lot of rows for a small clinic.
-- **A retry job over RETRYABLE rows exists only as an inbox** — nothing *automatically* re-drives RETRYABLE transactions yet; it's manual via the inbox (see What Could Be Better).
+## What the Current Push Path Actually Sends
 
----
+Whenever callback dataPushUrl and care-context reference are present, state handling can dispatch a push. That branch is not conditioned on the success-word check or an explicit GRANTED, unexpired, unrevoked consent in this method.
 
-## Decision 2: Gateway-Configurable Degradation (No Config = Safe Recorded State)
+If the context is missing, it records a failed outbound transaction. Otherwise it passes callback payload as encryptionMaterial to the gateway. The gateway requires an object containing encryptedContent, checksum and keyMaterial, then posts those supplied values with context reference and media label.
 
-### What We Chose
+This path does not demonstrate deriving encryption material, encrypting the stored FHIR bundle or verifying that supplied ciphertext represents the authorized local records. The media label does not validate a FHIR document. The source's stored bundle and its outbound supplied-content path must not be described as one proved encrypted transformation.
 
-Before any external call, the code checks `gateway.isConfigured()`. If the ABDM gateway isn't configured (local dev, staging, or a clinic that disabled ABDM), the request still writes its ledger row but marks it `RETRYABLE` instead of throwing:
+The external URL helper requires HTTPS and rejects obvious local/literal-IP destinations. This call supplies no participant-origin allowlist. The helper itself documents that it does not defeat DNS rebinding, and redirect/egress behavior needs separate enforcement. A callback-selected URL is therefore a sensitive trust boundary, not an arbitrary destination to accept merely because it parses.
 
-```typescript
-// abdm-exchange.service.ts — requestCareContextGatewayAction
-await this.repository.createTransaction({ ..., status: gatewayConfigured ? 'PENDING' : 'RETRYABLE', ... });
-```
+A successful HTTP response maps to SUCCEEDED, even if the response body provides no transaction ID. The service then marks context shared and sends a notification, recording each outcome separately. Receiver semantic validation and an end-to-end accepted clinical exchange remain unverified.
 
-Care-context *creation* is purely local (a reference number + `hiType`), so it always succeeds. Only the gateway-touching steps degrade. `assertClinicAbdmEnabled` also guards the whole domain — a clinic that hasn't opted into ABDM gets a clean error before any ledger noise.
+## Current Assessment and Recommended Design
 
-### Why This Was Chosen
+| Assessment | Concrete implication |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strengths | Tenant-qualified source checks, explicit integration enablement, retained operation records, existing callback authentication and failed-context evidence support investigation. |
+| Limitations | Some link/share paths only record intent; callback status normalization is coarse; external record creation and pushes need stronger consent/ownership checks; ciphertext is supplied rather than demonstrated as locally generated. |
+| Recommended trust boundary | Authenticate according to the actual gateway contract, correlate a unique operation, validate tenant/patient/participant and consent artifact scope, then reject expired/revoked or out-of-order transitions. |
+| Recommended exchange | Snapshot only authorized records, validate the required FHIR profile, encrypt that snapshot through the negotiated protocol, and constrain destination/DNS/redirect/egress behavior to trusted participants. |
+| Recommended durability | Use a durable inbound inbox and outbound jobs with operation identity, bounded retries, fencing and evidence of both transport and semantic acceptance. |
+| Acceptance evidence | Wrong-clinic/unknown/replayed callbacks cannot change records; revoked consent prevents new dispatch; supplied URLs cannot reach unauthorized destinations; the receiver decrypts and validates the exact authorized bundle in a sandbox contract test. |
 
-- **Dev/CI never depends on a live national gateway** — the domain is fully testable without network access; specs stub the gateway client (`abdm-exchange.service.spec.ts`).
-- **Failure is recorded, not swallowed** — the RETRYABLE rows are visible in the ops inbox, so "did this ever send?" is answerable even when the gateway was down at request time.
-- **Feature-opt-in per clinic** — ABDM is a capability clinics enable; the domain is off by default and loud when used without enablement.
+These are recommended requirements, not an implemented or certified production claim. Keep provider-side and requester-side responsibilities explicit; a consent request endpoint alone does not establish a complete role implementation.
 
-### Trade-offs
+## Mistakes and Best Practices
 
-- **A misconfigured production gateway silently accumulates RETRYABLE rows** rather than paging someone; the heartbeat/alerting around the ops inbox is the missing piece.
+- Treating correlation as authentication or consent: verify each independently.
+- Treating generic JSON as valid health data: use profile validation and authorized resource scope.
+- Treating encrypted-looking fields as encryption evidence: prove the transformation from approved local data to receiver-decryptable content.
+- Treating an inbox as a retry worker: record owner, due time, attempt and completion evidence.
+- Persisting raw callbacks without minimization: protect retained sensitive payloads and define retention/access policies.
 
----
-
-## Decision 3: Callbacks Are Reconciliations, Not Events
-
-### What We Chose
-
-The public callback endpoint (`POST /abdm/callbacks/:clinicId/:type`) is handled by `AbdmCallbackStateService.applyCallbackState`, which treats every callback as a **state update against a known ledger row**, never as a trigger to trust fresh data:
-
-- Consent callbacks → update the consent request (`GRANTED`/`FAILED`), storing the raw artifact.
-- Link callbacks → find the care context **by reference**, mark it linked only if the callback "looks successful".
-- Data-push callbacks → resolve the care context by reference; if it's missing, record a `FAILED` M2_DATA_PUSH transaction with a descriptive error ("ABDM care context not found for data push") instead of crashing.
-
-```typescript
-// abdm/application/services/abdm-callback-state.service.ts
-if (normalizedType.includes('consent')) {
-  await this.repository.updateConsentFromCallback({ ... status: callbackLooksSuccessful(callback) ? 'GRANTED' : 'FAILED', rawArtifact: ... });
-}
-```
-
-`callbackLooksSuccessful` normalizes the status string (`ok/success/succeeded/granted/linked`) so ABDM's vocabulary variants map to one boolean without per-branch string compares scattered around.
-
-### Why This Was Chosen
-
-- **The ledger row is the source of truth; the callback is evidence** — a malicious or malformed callback can't create state out of thin air because every update keys off an existing requestId/care-context reference.
-- **Failed reconciliations are first-class** — the "care context not found" branch writes an auditable FAILED row rather than an unhandled exception that loses the correlation data.
-- **Raw payloads are persisted** (`rawArtifact`) so a disputed callback can be re-examined later — the same audit instinct as the claims/verification domains.
-
-### Trade-offs
-
-- **Callback → ledger updates are per-type branches** (consent vs link vs push) rather than a generic state machine; a new ABDM callback type (e.g., consent *revocation*) adds a branch. Fine while the surface is small.
-
----
-
-## Decision 4: FHIR + Encrypted Health-Information Push
-
-### What We Chose
-
-Outbound sharing converts Docita records through the shared `FhirService` (`shared/modules/fhir`) and pushes via `gateway.pushHealthInformation` with `dataPushUrl`, `transactionId`, `careContextReference`, `hiType`, and the gateway-provided **encryption material** — ABDM mandates encrypted payloads for data in transit to participants. The `M2_DATA_PUSH` direction is recorded per transaction, and dispatches happen from callbacks via `dispatchDataPushFromCallback` (ABDM sends the data-push URL in the consent callback).
-
-### Why This Was Chosen
-
-- **One FHIR module, many consumers** — the same `FhirService` serves ABDM exports; Docita doesn't hand-roll per-participant formats.
-- **Encryption is the gateway's contract** — the code passes through the encryption material ABDM supplies rather than inventing its own scheme, which is the only way to interoperate.
-
-### Trade-offs
-
-- **FHIR conversion correctness is the silent risk** — a wrong code system or missing field may pass the push but fail downstream validation at the receiving participant; there's no end-to-end test against a real HIU.
-
----
-
-## What Worked
-
-- **Ledger-first design made the async gateway debuggable** — every "did the consent ever come back?" support question is answered by one ops-inbox query over transaction rows.
-- **Config-gated degradation kept CI green** — no test or local run ever depended on the live ABDM gateway, while production got honest RETRYABLE rows.
-- **Correlation-by-reference held** — care-context references (`DOCITA-{type}-{id}`) proved stable across callbacks; the "context not found" defensive branch never fired in anger but exists exactly where a mismatch would surface.
-
-## What Failed
-
-- **First integration assumed synchronous-ish callbacks** — early code polled the gateway for consent status after a fixed delay; real ABDM latency made that wasteful and racy. Replaced with the pure callback-reconciliation model.
-- **Callback auth was initially under-specified** — the endpoint is keyed by clinicId+type in the path; early review flagged that the payload (not the path) must drive correlation, and the reconciliation model (Decision 3) was the response. Gateway-level signature verification remains TODO.
-- **Devices with disabled ABDM generated confusing ops-inbox rows** — before `assertClinicAbdmEnabled`, misconfigured clinics polluted the ledger with RETRYABLE rows that looked like real failures.
-
-## What Could Be Better
-
-- **Automatic retry job** over `RETRYABLE` transactions (with backoff) — the inbox currently requires a human.
-- **Callback signature verification** against ABDM's published keys — the domain correlates safely, but the public endpoint itself should authenticate the gateway.
-- **Consent revocation handling** — a patient revoking consent mid-sharing should cascade to a stored state, not just a callback row.
-- **End-to-end FHIR contract tests** against a sandbox HIU to de-risk silent conversion errors.
-
----
+Test failure between every persistence/dispatch step, duplicate and reordered callbacks, mismatched patient/context, missing configuration, consent expiry/revocation, invalid artifacts, forbidden egress and receiver validation. Source inspection alone cannot support claims of completed certification, successful clinical exchange or production reliability.
 
 ## Code Evidence
 
-| Claim | File |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Care contexts / link / share / consent orchestration | `apps/api/src/domains/abdm/application/services/abdm-exchange.service.ts` |
-| Command facade | `apps/api/src/domains/abdm/application/services/abdm-command.service.ts` |
-| Callback reconciliation | `apps/api/src/domains/abdm/application/services/abdm-callback-state.service.ts` |
-| ABHA client | `apps/api/src/domains/abdm/infrastructure/abdm-abha.client.ts` |
-| Gateway client | `apps/api/src/domains/abdm/infrastructure/abdm-gateway.client.ts` |
-| Ledger repository | `apps/api/src/domains/abdm/infrastructure/repositories/prisma-abdm.repository.ts` |
-| HTTP surface (incl. public callbacks) | `apps/api/src/domains/abdm/presentation/controllers/abdm.controller.ts` |
-| FHIR conversion | `apps/api/src/shared/modules/fhir/fhir.service.ts` |
+Paths are in the inspected Docita checkout.
 
----
+| Mechanism | Source path |
+| ------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Context, request and inbox orchestration | `apps/api/src/domains/abdm/application/services/abdm-exchange.service.ts` |
+| Callback authentication entry | `apps/api/src/domains/abdm/application/services/abdm-callback-command.service.ts` |
+| Callback state and push branch | `apps/api/src/domains/abdm/application/services/abdm-callback-state.service.ts` |
+| Gateway transport and supplied content | `apps/api/src/domains/abdm/infrastructure/abdm-gateway.client.ts` |
+| Consent lookup, callback/external record storage | `apps/api/src/domains/abdm/infrastructure/repositories/prisma-abdm.repository.ts` |
+| URL shape restrictions | `apps/api/src/shared/common/http/safe-external-url.ts` |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "ABDM is an asynchronous, callback-driven national gateway, so I built every interaction on a durable transaction ledger — each care-context creation, link/share/consent request, and callback writes a row with type, direction, status (succeeded/failed/retryable), and a correlation triple. The ops inbox is literally a query over that ledger, so 'did the consent come back?' is a SQL query, not a hunt through logs. Two decisions matter most. First, safe degradation: if the gateway isn't configured, requests still record their ledger row as RETRYABLE instead of throwing, so dev and CI never depend on a live national gateway while production failures stay visible. Second, callbacks are reconciliations, not trusted events: every callback updates an existing ledger row keyed by requestId or care-context reference, raw payloads are stored for audit, and a failed match writes a descriptive FAILED row instead of crashing. The gap I'd close next: automatic retries over RETRYABLE rows and gateway callback signature verification."
----
+The ledger provides operational evidence, while authentication, correlation, consent, authorized data preparation, encryption and receiver validation provide distinct exchange guarantees. Describe implemented branches exactly and prove the full protocol before claiming complete interoperability.
 
-[← Previous: Patient Portal](16-patient-portal.md) · [ Back to Index](INDEX.md) · [Next: Enterprise Contracts →](18-enterprise-contracts.md)
+## See Also
+
+- [Category revision](REVISION.md) — callback trust and exchange questions.
+- [Async processing](03-async-processing.md) — durable ingress and outbound jobs.
+- [Patient portal](16-patient-portal.md) — patient identity boundaries.
+- [Documents and uploads](19-documents-and-uploads.md) — sensitive object access.
+- [Case-study index](INDEX.md) — reading order.

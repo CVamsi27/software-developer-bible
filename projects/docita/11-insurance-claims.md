@@ -1,184 +1,122 @@
-# 12 — Insurance Claims
+# 11 — Insurance Claim State, Concurrency and History
 
-> The claims lifecycle — a state machine with an audit event per move, optimistic concurrency, and a cross-domain readiness gate that reuses billing's ICD/CPT coding instead of duplicating it.
+## Definition
 
----
+An insurance claim is the application's record of a reimbursement or cashless request, its referenced patient/invoice, amounts, status and supporting documents. Local submission state does not by itself mean an insurer has received or accepted it.
 
-## Context
+The concrete engineering problem is two staff tabs editing the same claim: one approves it while another submits an older draft. The application must reject the stale write and preserve the history of the accepted transition.
 
-Indian clinics submit **health insurance claims** to insurers and TPAs (third-party administrators) on behalf of patients. A claim in Docita:
+## First Principles
 
-- **Attaches to an invoice** — reimbursement claims must reference a *final* invoice (`REIMBURSEMENT` type requires `invoiceId`); cashless claims attach at consultation time.
-- **Goes through a regulated lifecycle** — DRAFT → SUBMITTED → APPROVED / PARTIALLY_APPROVED / DENIED / INFO_REQUESTED / APPEALED → SETTLED / CANCELLED. Each move has financial side effects (approved amount, patient responsibility, timestamps).
-- **Must be auditable** — an insurer dispute or a patient complaint requires a perfect history: who moved the claim, from what status to what, with what amount.
-- **Spans two domains** — a claim cannot be submitted until the invoice's *clinical coding* (ICD-10 diagnoses, CPT procedures) is complete, but that knowledge lives in billing, not insurance-claims.
+A status enum lists possible states but does not constrain transitions. A transition rule can reject a move in memory but still lose a race before the database write. A stored history row can also diverge from the status if they commit separately.
 
-**The problems:** (1) an unbounded `PATCH` on a claim would let any status overwrite any other; (2) two staff tabs editing the same claim would silently clobber each other; (3) submission needs a gate the claims domain has no business implementing itself; (4) claims reference patients, appointments, invoices, documents, and parent claims that must all belong to the *same clinic* (RLS boundary).
+The design therefore needs three cooperating mechanisms: transition validation, a conditional write against the version read by the caller, and a transaction containing both the accepted state change and its event.
 
----
+## Why Transition Rules and Version Checks Are Separate
 
-## Decision 1: A Pure State Machine in the Domain Layer
+`ClaimStatusVO` defines the current transition graph. SETTLED and CANCELLED are terminal through this value object. INFO_REQUESTED and APPEALED can return to SUBMITTED; submission is not exclusively a DRAFT edge.
 
-### What We Chose
+| State | Allowed next states |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| DRAFT | SUBMITTED, CANCELLED |
+| SUBMITTED or INFO_REQUESTED | Approval variants, DENIED, CANCELLED; INFO_REQUESTED can also return to SUBMITTED, and SUBMITTED can request information |
+| APPROVED or PARTIALLY_APPROVED | SETTLED, APPEALED, CANCELLED |
+| DENIED | APPEALED, CANCELLED |
+| APPEALED | SUBMITTED, approval variants, DENIED, CANCELLED |
+| SETTLED or CANCELLED | None through this transition method |
 
-A `ClaimStatusVO` value object holds the legal transition table; a domain entity (`InsuranceClaim`) applies transitions and computes side effects (timestamps, defaulted amounts). Both are pure TypeScript — no Prisma — so the entire lifecycle is unit-testable without a database (`insurance-claim.entity.spec.ts`, `claim-status` tests).
+The entity and value object are testable without a database, but import generated database enum/types. That is narrower than a framework-independent domain package with no database dependency.
 
-```typescript
-// apps/api/src/domains/insurance-claims/core/value-objects/claim-status.value-object.ts
-private static readonly VALID_TRANSITIONS: Record<ClaimStatusEnum, ClaimStatusEnum[]> = {
-  [ClaimStatusEnum.DRAFT]: [ClaimStatusEnum.SUBMITTED, ClaimStatusEnum.CANCELLED],
-  [ClaimStatusEnum.SUBMITTED]: [
-    ClaimStatusEnum.INFO_REQUESTED, ClaimStatusEnum.APPROVED,
-    ClaimStatusEnum.PARTIALLY_APPROVED, ClaimStatusEnum.DENIED, ClaimStatusEnum.CANCELLED,
-  ],
-  [ClaimStatusEnum.APPROVED]: [ClaimStatusEnum.SETTLED, ClaimStatusEnum.APPEALED, ClaimStatusEnum.CANCELLED],
-  ...
-  [ClaimStatusEnum.SETTLED]: [],   // terminal
-  [ClaimStatusEnum.CANCELLED]: [], // terminal
-};
+## How a Transition Computes Financial Fields
 
-transitionTo(next: ClaimStatus): ClaimStatusVO {
-  if (!this.canTransitionTo(next)) {
-    throw new InvariantViolationError(`Cannot transition claim from ${this.value} to ${next}`);
-  }
-  return new ClaimStatusVO(next);
-}
+The entity validates the requested move and returns the fields to persist. SUBMITTED stamps submittedAt only when it was previously absent. Approval stamps respondedAt and computes amounts; denial requires a nonblank reason, sets approved amount to zero and assigns the claimed amount as patient responsibility. Settlement stamps settledAt.
+
+For full approval, approved amount must equal claimed amount. Partial approval requires an amount strictly between zero and the claim, and approved amount plus patient responsibility must equal claimed amount. These are implemented application invariants, not proof of insurer settlement or all coverage rules.
+
+The entity advances its internal status before validating some amount-specific conditions. Current commands rebuild the entity per request, which limits reuse of an invalid mutated instance. A stronger pure transition function would return a validated result without changing state before every invariant passes.
+
+## Examples: Two Writers Against One Version
+
+The repository performs a conditional update with claim ID, expected version and ownership scope, then increments the version. For transitions, the event insert and final read are in the same database transaction.
+
+```text
+Tab A reads version 4          Tab B reads version 4
+        ↓                              ↓
+Update where version=4          Update where version=4
+        ↓                              ↓
+One accepted write → version 5; the other matches zero rows
 ```
 
-The entity's `transitionTo(target, { now, approvedAmountCents, ... })` returns a `ClaimTransitionResult` that **only carries the fields a given move is allowed to change** — going SUBMITTED sets `submittedAt` once; APPROVED defaults `approvedAmountCents` to the claimed amount when the insurer approves in full; DENIED records `denialReason`. The command layer then writes exactly those fields.
+A zero count becomes a conflict response. The accepted transition creates an event with from/to status, actor, note and approved amount. If event insertion fails, the transaction rolls the state change back.
 
-### Alternatives Considered
+This is a concrete strength. It does not make history immutable: the schema has a normal event table and claim deletion cascades to its events. Permissions, retention and tamper-evidence policy are separate concerns. Events cover transitions, not necessarily every draft edit, document attachment or external insurer action.
 
-- **Prisma enum + `update` with no guard** — simplest, but nothing stops `DENIED → SETTLED` or a delete-then-recreate. For regulated money flows, correctness had to be structural, not convention.
-- **A workflow library (e.g., `xstate`-style statecharts)** — heavier machinery than a single status column warrants; the transition table is small and readable as data.
-- **Status stored as a string checked in services** — the same logic would scatter across every command method and drift.
+The ordinary update method writes through the primary client and then reads via the repository's read client outside that transaction. When that client is a replica, lag can affect the returned representation. Return the accepted write result from a consistent primary boundary when clients rely on its new version.
 
-### Why This Was Chosen
+## Submission Readiness Belongs to Billing
 
-- **Same pattern as invoices** — file comment: "Mirrors the invoice status value object"; consistency across money domains lowers review cost.
-- **Side effects computed in one place** — the "what does APPROVED mean for amounts and timestamps" logic exists once, not in four command methods.
-- **Terminal states are explicit** — `isTerminal()` and empty transition arrays make "can this claim still change?" a lookup, not a chain of `if`s.
+The command depends on a claim-validation port. Nest composition imports BillingModule and wires billing's ClaimValidationService to that port. This reduces command-layer coupling, but does not mean the entire claims module never imports billing internals.
 
-### Trade-offs
+Before any requested transition to SUBMITTED with a linked invoice, the command calls the readiness gate—including resubmission from INFO_REQUESTED or APPEALED. The previous claim that resubmission was not checked was incorrect.
 
-- **Enum evolution is a migration** — adding `RESUBMITTED` later means touching the table + Prisma enum + Zod schema. Acceptable for a regulated flow that changes slowly.
-- **Entities are re-hydrated per call** — `InsuranceClaimsCommandService.transition` rebuilds the entity from the fetched row each request; fine at clinic scale (a handful of claims/day), wasteful at insurer scale.
+The gate verifies clinic context through the invoice's patient. If the invoice has no appointment, it returns ready without requiring clinical coding. If there is an appointment, it requires at least one diagnosis and procedure and rejects entries missing their ICD or CPT/HCPCS identifier. An absent linked appointment is not ready.
 
----
+Coding presence does not establish coding correctness, insurer compatibility, finalized invoice status, coverage or financial amount agreement. Readiness is checked before the transition transaction and does not lock the invoice's coding version; concurrent changes need a defined snapshot or revalidation policy.
 
-## Decision 2: Versioned Writes + an Audit Event per Transition
+## Reference Ownership, Documents and Retry Identity
 
-### What We Chose
+Create verifies patient membership and appointment, invoice and parent-claim references against patient and clinic. Reimbursement requires an invoice ID, but the inspected shape check does not independently validate that invoice's finalized state. Draft updates reject direct self-parenting; this is not complete multi-record cycle detection.
 
-Every claim row carries a `version` integer. Edits and transitions go through `updateMany({ where: { id, version: expectedVersion, ...ownershipFilter }, data: { ..., version: { increment: 1 } } })` and check `result.count`. A `0` count means a concurrent writer won — the API returns `409 ConflictException` ("modified by another request"). Status *transitions* additionally write an immutable `InsuranceClaimEvent` row inside the same `$transaction`.
+Claim ownership permits an explicit clinicId or a legacy null clinicId with a patient belonging to the clinic. Document attachment uses a patient match, unclaimed document condition, and clinic-or-patient-clinic scope. These are deliberate compatibility paths whose consistency should be tested and eventually normalized where practical.
 
-```typescript
-// apps/api/src/domains/insurance-claims/infrastructure/repositories/prisma.insurance-claim.repository.ts
-async transition(id, clinicId, expectedVersion, data, event) {
-  return this.prisma.$transaction(async (tx) => {
-    const result = await tx.insuranceClaim.updateMany({
-      where: { id, version: expectedVersion, ...this.ownershipFilter(clinicId) },
-      data: { ...data, version: { increment: 1 } },
-    });
-    if (result.count === 0) return null;
-    await tx.insuranceClaimEvent.create({ data: { ...event, claim: { connect: { id } } } });
-    ...
-  });
-}
-```
+Create first looks up an optional idempotency key within ownership scope. The schema's key is globally unique, not a clinic/key composite. Two concurrent creates can both miss the preliminary lookup; the unique constraint prevents duplicate rows, but this create service does not catch the conflict and return the existing response. Shared middleware may add behavior and must be traced separately.
 
-The event carries `fromStatus`, `toStatus`, `actorUserId`, `note`, and `amountCents` — a complete claim history without reading audit middleware.
+Define key scope and request fingerprint: reusing a key for different content should not silently return an unrelated claim. A unique row is a storage guarantee, while a stable retried API response is a separate contract.
 
-### Why This Was Chosen
+## Current Assessment and Recommended Design
 
-- **Optimistic concurrency fits the workload** — clinics have few concurrent editors per claim; a version column is far cheaper than row locks or SELECT FOR UPDATE, and the 409 path tells the client to reload.
-- **The transition + event are atomic** — no state where the status changed but the history didn't (or vice versa), which is exactly what an insurer dispute would probe.
-- **Events are append-only** — history cannot be rewritten by a later edit.
+| Assessment | Concrete implication |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strengths | Version-conditioned writes reject stale edits; accepted transitions and events commit together; reference checks and a readiness port make important rules visible. |
+| Limitations | History is not structurally immutable; create retries can surface uniqueness errors; readiness can race with invoice edits; replica reads and legacy nullable ownership need care. |
+| Recommended design | Normalize tenant ownership, enforce key plus request-fingerprint semantics, validate transition and referenced financial/coding snapshot consistently, and retain versioned audit evidence for all material changes. |
+| External submission | Model insurer dispatch, acknowledgement and reconciliation separately from local SUBMITTED, using durable operation identity if electronic integration is added. |
+| Acceptance evidence | Two stale writers produce one accepted transition/event pair; cross-patient references fail; repeated identical creates return one result; conflicting key content fails; later invoice edits cannot silently change submitted evidence. |
 
-### Trade-offs
+The recommended design is a proposal, not a shipped insurer integration or compliance claim. Add a scoped history endpoint with access controls when staff or patients need that evidence; the inspected claims controller does not expose a dedicated events route.
 
-- **The client owns version plumbing** — DTOs carry `version`, every command must read-modify-write. Slightly more API surface than a bare PATCH.
-- **Event rows duplicate the status column** — storage is cheap; audit certainty is not.
+## Mistakes and Best Practices
 
----
+- Calling a local state transition insurer approval: retain provider/insurer evidence separately.
+- Calling append-only application usage immutable history: verify database permissions, deletion and retention policy.
+- Calling a preliminary key lookup retry safety: inspect the unique constraint and conflict response.
+- Calling any linked invoice final: verify its allowed financial state and currency/amount relationships.
+- Automatically retrying a conflict with a new version: reload and let the user reconsider the changed claim instead of overwriting another decision.
 
-## Decision 3: Cross-Domain Readiness Gate via an Application Port
-
-### What We Chose
-
-Insurance-claims never imports billing's internals. It defines `IClaimValidation` (`assertClaimReady(invoiceId, clinicId)`) in its own `application/ports/`, and the Nest module wires billing's `ClaimValidationService` to that token:
-
-```typescript
-// apps/api/src/domains/insurance-claims/insurance-claims.module.ts
-providers: [ ..., { provide: CLAIM_VALIDATION_PORT, useExisting: ClaimValidationService } ]
-```
-
-On SUBMITTED with a linked invoice, `transition` first calls `assertClaimReady`. Billing's `ClaimValidationService` then checks the invoice's appointment and its **clinical coding completeness** — uncoded diagnoses/procedures block submission (`ClaimReadinessResult.issues`, `requiresClinicalCoding`).
-
-### Why This Was Chosen
-
-- **Single owner of the coding rule** — billing already gates *its own* invoice flows on ICD/CPT completeness (the same `ClaimValidationService` used by the billing claim path — see `apps/api/src/domains/billing/core/services/claim-validation.service.ts`); claims reuse it rather than re-implementing "what counts as coded."
-- **Dependency direction is clean** — claims *depend on* a capability, not on billing's module graph. RLS/PHI reasoning stays in one place.
-- **Testable seam** — a fake `IClaimValidation` tests claims without seeding billing data (`insurance-claims-command.service.spec.ts`).
-
-### Trade-offs
-
-- **A port per cross-domain edge** — more files than a direct import, but this is the project's stated discipline (AGENTS.md AJ4).
-- **Readiness is checked at submit time only** — if an invoice's coding is edited *after* submission, the claim stays SUBMITTED (a deliberate "don't surprise the staff mid-submission" choice).
-
----
-
-## Decision 4: Idempotency Keys and Tenancy-Scoped References
-
-### What We Chose
-
-`create()` accepts an optional `idempotencyKey` and first looks up `findByIdempotencyKey(key, clinicId)` — a retried POST returns the original claim instead of duplicating it. Before any create/update, a repository helper verifies every referenced entity — patient, appointment, invoice, parent claim — belongs to this patient *and* clinic; any mismatch is a 404, not a leak. `attachDocument` only attaches documents whose `patientId` matches and which aren't already claimed, again scoped by `clinicId` or the patient's clinic.
-
-### Why This Was Chosen
-
-- **Mobile/network retries are the norm in clinics** — double-tap submit on a slow link must not mint two claims.
-- **RLS is the last line, not the first** — ownership checks in the repository give deterministic 4xx errors instead of silent empty results, and protect documents that predate per-clinic RLS scope (`OR: [{ clinicId }, { patient: { clinicId } }]`).
-
----
-
-## What Worked
-
-- **The state machine caught real bugs in review** — disallowed transitions (e.g., SETTLED → anything) fail with a domain error before touching the DB; the spec suite documents the intended lifecycle as executable truth.
-- **One audit event per transition** — answering "what happened to claim X?" is a single indexed query, not log archaeology.
-- **The port seam held** — insurance-claims shipped without importing a single billing service; the readiness gate was tested with a stub.
-
-## What Failed
-
-- **Version churn surfaced in UI integration** — staff open a claim, leave the tab open, and submit against a stale version. The first version was a hard 409 with no recovery hint; clinics saw it as "the app lost my work." The fix was reload-and-retry messaging, not weaker concurrency.
-- **Parent-claim self-reference was initially possible** — `parentClaimId === id` was caught only at DB level in an early iteration; an explicit `BadRequestException` now precedes the write (`"A claim cannot be its own parent."`).
-
-## What Could Be Better
-
-- **No TPA/insurer sync** — the system tracks the lifecycle but does not submit electronically to any TPA API; a clinic still prints and posts. An outbound claims feed (or at least a PDF bundle per claim) is the natural next step.
-- **`update()` rejects edits to non-DRAFT claims but allows changing amounts on a DRAFT** with no re-validation against the invoice — a claim inflated after the invoice's coding gate could submit more than the invoice covers. Validate `claimedAmountCents ≤ invoice total` at submit.
-- **Event history has no re-hydration API** — there is no `GET /claims/:id/events` endpoint yet, so the audit trail is queryable only in the DB. Expose it for the patient-facing "claim status" story.
-- **Reverify coding on re-submit after INFO_REQUESTED** — currently the gate only runs on the DRAFT→SUBMITTED edge.
-
----
+Test every transition edge, amount invariant, stale version, failed event insert, tenant reference, concurrent create, document attachment and readiness change. Avoid invented staff incidents or performance comparisons with row locks; measure contention before changing concurrency strategy.
 
 ## Code Evidence
 
-| Claim | File |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| Transition table / VO | `apps/api/src/domains/insurance-claims/core/value-objects/claim-status.value-object.ts` |
-| Entity lifecycle + side effects | `apps/api/src/domains/insurance-claims/core/entities/insurance-claim.entity.ts` |
-| Command service (create/update/transition) | `apps/api/src/domains/insurance-claims/application/services/insurance-claims-command.service.ts` |
-| Readiness port | `apps/api/src/domains/insurance-claims/application/ports/claim-validation.port.ts` |
-| Billing's implementation of the gate | `apps/api/src/domains/billing/core/services/claim-validation.service.ts` |
-| Versioned + evented transition (tx) | `apps/api/src/domains/insurance-claims/infrastructure/repositories/prisma.insurance-claim.repository.ts` |
-| DI wiring of the port | `apps/api/src/domains/insurance-claims/insurance-claims.module.ts` |
-| HTTP surface | `apps/api/src/domains/insurance-claims/presentation/controllers/insurance-claims.controller.ts` |
+Paths are in the inspected Docita checkout, not production outcome evidence.
 
----
+| Mechanism | Source path |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Transition graph | `apps/api/src/domains/insurance-claims/core/value-objects/claim-status.value-object.ts` |
+| Amount and timestamp rules | `apps/api/src/domains/insurance-claims/core/entities/insurance-claim.entity.ts` |
+| Create, update and submit orchestration | `apps/api/src/domains/insurance-claims/application/services/insurance-claims-command.service.ts` |
+| Conditional write, event transaction and references | `apps/api/src/domains/insurance-claims/infrastructure/repositories/prisma.insurance-claim.repository.ts` |
+| Readiness implementation | `apps/api/src/domains/billing/core/services/claim-validation.service.ts` |
+| Composition | `apps/api/src/domains/insurance-claims/insurance-claims.module.ts` |
+| Key uniqueness and event deletion | `packages/db/prisma/schema.prisma` — InsuranceClaim and InsuranceClaimEvent |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "Insurance claims are a regulated lifecycle, so I modeled the status flow as a pure state machine — a `ClaimStatusVO` holding an explicit transition table, and a domain entity that computes each move's side effects (submitted/responded/settled timestamps, approved amounts). Transitions are optimistic-concurrency writes: the row carries a version, the update is conditional, and a miss returns 409. Every transition also writes an immutable claim-event row in the same transaction, so the audit history is atomic with the state change. Submission is gated through an application port — billing owns the ICD/CPT coding completeness rule and exposes it as `assertClaimReady`, which claims depends on without importing billing internals. Everything is scoped to patient-and-clinic, and creates are idempotency-keyed so network retries can't mint duplicate claims."
----
+Combine transition validation, optimistic concurrency and transactional events. Keep local workflow state separate from insurer evidence, and check the exact ownership, retry and history guarantees instead of inferring them from class names.
 
-[← Previous: Deployment Infrastructure](10-deployment-infrastructure.md) · [ Back to Index](INDEX.md) · [Next: IPD Inpatient →](12-ipd-inpatient.md)
+## See Also
+
+- [Category revision](REVISION.md) — claims questions and recall.
+- [Billing and invoicing](08-billing-invoicing.md) — amounts and historical context.
+- [Multi-tenancy and RLS](02-multi-tenancy-rls.md) — legacy ownership and database scope.
+- [Async processing](03-async-processing.md) — durable external effects.
+- [Case-study index](INDEX.md) — reading order.

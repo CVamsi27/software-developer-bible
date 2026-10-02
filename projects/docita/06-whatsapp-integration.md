@@ -116,6 +116,17 @@ Paths are from the inspected Docita checkout, not evidence of production message
 | Stale delivery telemetry | `apps/api/src/domains/whatsapp/application/services/whatsapp-reconciliation.service.ts` |
 | Cron expression | `apps/api/src/shared/schedule/cron-schedules.ts` |
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Current strengths | Sender resolution, structured button mappings and stale-delivery telemetry make communication traceable. |
+| Current limitations | Send-before-save, incomplete processing identity and ambiguous free text leave duplicate and partial-effect risks. |
+| Recommended design | Use a durable outbound operation and inbound inbox with separate receipt/processing state; resolve tenant and conversation context before effects; require confirmation for ambiguous consequential replies. |
+| Evidence needed | Concurrent duplicates and crashes between effects are recoverable; unknown tenant messages cannot change appointments; UI distinguishes accepted, delivered, failed and unresolved. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Trace provider send, local persistence, webhook receipt and business processing as separate steps. Stable identity helps retries but does not close every failure gap. Resolve reply context before acting, and describe the stale-delivery sweep as telemetry rather than status recovery.

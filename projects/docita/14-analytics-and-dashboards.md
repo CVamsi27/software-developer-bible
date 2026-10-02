@@ -128,6 +128,17 @@ Choose whether corrections produce replacement snapshots, append a revised versi
 
 Write metric definitions before query code. Use explicit clinic-local bounds and consistent bucket identities, preserve currency/minor-unit meaning and test denominators. Distinguish valid zero from missing or failed data. Verify cache scope and freshness, and make snapshot date/version/recovery explicit. Use known small datasets to check calculations before performance tuning.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Read repositories, caches and snapshots separate operational views from some expensive queries. |
+| Current limitations | Period boundaries, bucket counts, current catalog prices and missing historical windows can produce misleading metrics. |
+| Recommended design | Define each metric with authoritative facts, currency, timezone and window; use stable period keys and idempotent versioned snapshots; publish freshness and correction semantics. |
+| Evidence needed | Known fixtures reproduce correct totals and weighted averages; cross-month weeks remain distinct; historical reruns use the intended date and do not duplicate contributions. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Analytics requires explicit business, calendar and numerical definitions. Current source has useful family separation and caching, alongside bucket, snapshot and financial-meaning limitations. Accurate reporting depends on correcting and verifying those semantics rather than merely persisting or caching results.

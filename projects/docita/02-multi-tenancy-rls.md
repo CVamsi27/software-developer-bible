@@ -99,6 +99,17 @@ Test as the actual non-owner application role with two tenants: omitted scope, w
 
 For performance claims, measure representative query plans and load. The old universal RLS overhead percentage and tenant-count threshold for moving to distributed PostgreSQL were unsupported.
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Tenant context and database policy provide complementary isolation mechanisms. |
+| Current limitations | Isolation depends on the database role, applied policies, transaction context and every bypass path. |
+| Recommended design | Use a non-owner runtime role, transaction-local tenant context, tenant-scoped constraints and separately authorized cross-tenant jobs; test every public resource operation against another tenant. |
+| Evidence needed | A two-tenant matrix proves denied reads/writes, pooled-connection reuse does not leak context, and privileged jobs leave an attributable audit record. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Tenant isolation depends on trusted identity, resource authorization, transaction routing and database-role behavior working together. The source implements these mechanisms, but its enable switch and overlapping-query routing limitation prevent an unconditional guarantee without further verification.

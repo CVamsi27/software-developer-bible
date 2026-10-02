@@ -122,6 +122,17 @@ Paths below are in the Docita checkout and describe inspected source, not verifi
 | Monthly billing | `apps/api/src/domains/subscriptions/infrastructure/schedulers/overage-billing.scheduler.ts` |
 | Referral orchestration | `apps/api/src/domains/subscriptions/core/services/referral.service.ts` |
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Route metadata, lifecycle policy and usage identity separate key SaaS responsibilities. |
+| Current limitations | Daily increments are not rerun-safe, entitlement caches can lag, and accounting is not hard quota enforcement. |
+| Recommended design | Maintain versioned entitlement snapshots, reserve hard quotas atomically, aggregate with unique period contributions or authoritative totals, and bill once per clinic/period with recoverable provider reconciliation. |
+| Evidence needed | Parallel last-unit consumption has one winner; reruns preserve totals; duplicate renewal events preserve one period effect; plan changes invalidate relevant access snapshots. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Separate caller permission, clinic entitlement, usage accounting and provider payment state. Explain the actual guard and lifecycle paths, then verify retry-safe aggregation and billing independently. Preserve access deliberately during grace; do not infer correctness or retention from the existence of a state machine.

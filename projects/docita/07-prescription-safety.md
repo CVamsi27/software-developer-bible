@@ -122,6 +122,17 @@ Paths are in the inspected Docita checkout; these are implementation observation
 | PDF generation and persistence | `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` |
 | Async job lifecycle | `apps/api/src/shared/modules/queue/pdf-job.service.ts` |
 
+## Current Assessment and Recommended Design
+
+| Assessment | What it means here |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | The command rejects configured critical conditions before persistence and separates PDF orchestration. |
+| Current limitations | String-based rules and live rendering inputs do not establish comprehensive clinical safety or immutable history. |
+| Recommended design | Use trusted structured medication/context data with clinically owned versioned rules; surface uncovered inputs and acknowledgements; snapshot authorized document inputs and version generated artifacts. |
+| Evidence needed | Rule fixtures distinguish rejected, acknowledged and uncovered cases; tenant boundaries hold; regenerated documents can be traced to their input and rule/template versions. |
+
+The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
+
 ## Summary
 
 Explain each validation rule through its inputs, rejection condition and unknowns. Keep clinical record creation separate from PDF generation, storage and delivery. A passed application check or generated document is narrower evidence than a safe prescription or immutable clinical history.

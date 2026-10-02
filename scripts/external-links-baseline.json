@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-02",
- "url_count": 2207,
+ "url_count": 2208,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -400,6 +400,9 @@
   ],
   "https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replacingmergetree": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+  ],
+  "https://clinicaltables.nlm.nih.gov/apidoc/hcpcs/v3/doc.html": [
+   "projects/docita/20-clinical-lab-and-medical-coding.md"
   ],
   "https://cloud.google.com/apis/design/errors": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md"

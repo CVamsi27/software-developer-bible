@@ -1,6 +1,6 @@
 # Docita — Architecture Decision Deep Dives
 
-> Every major decision in Docita, explained with context, alternatives considered, trade-offs, what worked, what failed, and what could be better.
+> Source-backed implementation assessments: what works, where the boundaries fail, and the recommended design with evidence needed to accept it.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
@@ -9,7 +9,7 @@
 
 ## Reading Flow
 
-Start with one operation and trace identity, state and failure boundaries. These cases support explanations of full-stack TypeScript SaaS work; a source path supports a specific implementation claim, while production results require separate dated evidence. Case-study corrections are in progress, so treat unreviewed historical outcomes and numerical claims as requiring verification.
+Start with one operation and trace identity, state and failure boundaries. These cases support explanations of full-stack TypeScript SaaS work; a source path supports a specific implementation claim, while production results require separate dated evidence. All 22 cases now distinguish current behavior from proposed improvements. The inspection used the local Docita working tree on 2 October 2026, with HEAD at c4eec265a and uncommitted changes present; it is not a clean-revision or production audit. Source details can change, so recheck the cited paths before presenting an implementation claim.
 
 ### Stage 1 — Follow an Operation Through the System
 
@@ -42,12 +42,12 @@ Start with one operation and trace identity, state and failure boundaries. These
 2. [Analytics and dashboards](14-analytics-and-dashboards.md) — historical and timezone correctness.
 3. [Doctors, verification and public booking](15-doctors-verification-and-public-booking.md) — anonymous entry points and verification.
 4. [ABDM integration](17-abdm-integration.md) — consent and asynchronous callbacks.
-5. [Long-tail domains](21-long-tail-domains.md) — carry the same invariants into smaller capabilities.
+5. [Smaller domains](21-long-tail-domains.md) — reminder claims, webhook trust, reversible leave and user lifecycle.
 6. [What I'd do differently](22-what-id-do-differently.md) — evaluate improvements after understanding the cases.
 
 ### Revision, Then Interview Practice
 
-Use [category revision](REVISION.md) after the learning cases. Reconstruct a mechanism and its failure boundary before checking an answer. Source-linked groups grow as cases receive their full editorial review.
+Use [category revision](REVISION.md) after the learning cases. Reconstruct a mechanism and its failure boundary before checking an answer. Each case has a source-linked revision group; questions remain outside the learning chapters.
 
 Then use the interview guides below to connect an implementation decision to its evidence and limits. Keep business outcomes, source inspection and executed checks distinct; do not memorize an unsupported incident or metric as personal experience.
 

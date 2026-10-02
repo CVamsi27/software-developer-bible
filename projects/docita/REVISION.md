@@ -396,6 +396,238 @@ Source: [Prescription validation](07-prescription-safety.md).
 
 **A:** The object can exist without a stored prescription reference; retries and cleanup need ownership and version rules.
 
+## Patient Identity and OTP Finalization
+
+Source: [Patient portal](16-patient-portal.md).
+
+**Q:** How many codes does randomInt(100000, 1_000_000) generate?
+
+**A:** 900,000; the upper bound is exclusive and leading-zero codes are excluded.
+
+**Q:** Does atomic attempt counting prove a successful OTP can only be used once?
+
+**A:** No. Success needs a separate conditional finalization that checks unused and still-valid state and returns one winner.
+
+**Q:** Why does a generic request response not eliminate enumeration by itself?
+
+**A:** Timing, exceptional paths and delivery side effects can still differ when an account exists.
+
+**Q:** What should a prescription detail lookup combine with its requested ID?
+
+**A:** The authenticated patient's derived scope and clinic ownership, including nested and file access.
+
+**Q:** Why is endpoint throttle metadata not proof of per-phone protection?
+
+**A:** Effective enforcement depends on the installed guard, tracker key and storage; IP limits and phone cooldowns protect different boundaries.
+
+**Q:** What model supports a guardian safely?
+
+**A:** An explicit revocable delegation with patient scope and audit evidence, rather than accepting arbitrary patient IDs.
+
+## Claim Concurrency and Historical Evidence
+
+Source: [Insurance claims](11-insurance-claims.md).
+
+**Q:** Why do a transition table and version predicate solve different problems?
+
+**A:** The table rejects invalid moves; the predicate rejects stale decisions made against an earlier row version.
+
+**Q:** What does the transition transaction guarantee about its event?
+
+**A:** The accepted state change and event insert commit or roll back together through that path.
+
+**Q:** Why is the claim event table not automatically immutable?
+
+**A:** Database permissions and retention are separate, and the current schema cascades events when their claim is deleted.
+
+**Q:** Is readiness rechecked for resubmission to SUBMITTED?
+
+**A:** Yes, the command checks any requested SUBMITTED transition with a linked invoice, not only the draft edge.
+
+**Q:** What gap remains in preliminary idempotency lookup plus a unique key?
+
+**A:** Concurrent requests can both miss the lookup; uniqueness prevents duplicate rows but conflict handling must still provide the promised API result.
+
+**Q:** Does an invoice ID prove a reimbursement references a finalized invoice?
+
+**A:** No. The inspected shape check requires the ID; finalized-state and amount/currency validation need separate enforcement.
+
+## Bed Allocation and Admission Races
+
+Source: [Inpatient management](12-ipd-inpatient.md).
+
+**Q:** Why can two transactions both create an active admission after finding none?
+
+**A:** A transactional absence read does not itself lock a unique resource; a constraint or serialization protocol must protect that invariant.
+
+**Q:** What does a conditional AVAILABLE bed update protect?
+
+**A:** It gives one transaction the bed claim when one affected row is required, but does not alone enforce one admission per patient across different beds.
+
+**Q:** Why must discharge verify current allocation ownership?
+
+**A:** An earlier bed snapshot can be stale after transfer, so freeing it by ID can release the wrong allocation.
+
+**Q:** Is the current post-operation audit in the allocation transaction?
+
+**A:** No. The service invokes it after repository completion, so required history needs a recoverable commit boundary.
+
+**Q:** Why should active uniqueness exclude discharged history?
+
+**A:** Patients and beds legitimately appear in later admissions; only overlapping active allocation should conflict.
+
+**Q:** Can append-to-notes preserve concurrent history reliably?
+
+**A:** Not when each writer rebuilds from an earlier string; individual versioned events avoid lost appends.
+
+## Enterprise Membership and Issued Terms
+
+Source: [Enterprise contracts](18-enterprise-contracts.md).
+
+**Q:** Does current member removal restore the previous subscription?
+
+**A:** No. The inspected method marks membership removed and records a revision, without restoring subscription fields.
+
+**Q:** Why is a payment/invoice upsert not necessarily immutable issuance?
+
+**A:** Its update branch can change amount, currency and metadata; issued terms need a frozen version and correction policy.
+
+**Q:** Does a random adjustment invoice number deduplicate retries?
+
+**A:** No. Each retry can create another adjustment unless stable operation identity is enforced.
+
+**Q:** Why can current estimates and true-up disagree?
+
+**A:** They use different stocks, events, rollups, membership windows and denominator semantics rather than one identical ledger calculation.
+
+**Q:** What must an enterprise exit snapshot retain?
+
+**A:** The approved prior entitlement state and effective dates, or another explicit policy for the post-contract plan.
+
+**Q:** What makes one alert per contract/period reliable under concurrency?
+
+**A:** A unique period identity and transactional creation with durable notification work, rather than only a prior lookup.
+
+## Credential Freshness and Public Request Boundaries
+
+Source: [Doctors and public booking](15-doctors-verification-and-public-booking.md).
+
+**Q:** What happens when no automated verification provider is configured?
+
+**A:** The inspected service leaves verification pending for manual administration rather than proving registry verification.
+
+**Q:** Why must a provider result identify the credential version it checked?
+
+**A:** A delayed result must not mark newer edited registration facts verified.
+
+**Q:** Does taking 500 records establish periodic verification of every doctor?
+
+**A:** No. Coverage needs a fair due-time selection or cursor and completion evidence.
+
+**Q:** Why are implicit opening hours risky?
+
+**A:** Missing configuration can become apparent availability even when the clinic has not approved those hours.
+
+**Q:** Does an appointment request reserve the displayed slot?
+
+**A:** No. Staff confirmation must revalidate and atomically claim current capacity.
+
+**Q:** What gaps can separate patient creation, consent and request creation leave?
+
+**A:** Partial records and duplicate intake; stable operation identity and recovery must span the required steps.
+
+## Health Exchange Trust and Evidence
+
+Source: [ABDM integration](17-abdm-integration.md).
+
+**Q:** Does an existing care-context reference authenticate its callback?
+
+**A:** No. Correlation and sender authentication are separate, and consent authorization is another requirement.
+
+**Q:** What callback authentication already exists in the inspected source?
+
+**A:** A shared webhook verifier configured for shared-secret-header authentication with replay/timestamp inputs; this is not evidence of asymmetric published-key verification.
+
+**Q:** Does marking a context SHARE_REQUESTED prove an HTTP exchange was dispatched?
+
+**A:** No. The inspected link/share helper records intent and local state without dispatching the external request itself.
+
+**Q:** Why are encryptedContent fields insufficient proof of correct encryption?
+
+**A:** The pipeline must demonstrate that authorized local records were encrypted under the negotiated protocol and can be decrypted and validated by the intended receiver.
+
+**Q:** What must be checked before a callback-selected data push?
+
+**A:** Trusted participant/destination, tenant and patient scope, valid unexpired/unrevoked consent, authorized data and retry identity.
+
+**Q:** Does RETRYABLE in an inbox automatically recover an operation?
+
+**A:** No. A durable worker or explicit operator process must own retry, correlation and completion evidence.
+
+## Lab Release and Catalog Coverage
+
+Source: [Clinical lab and coding](20-clinical-lab-and-medical-coding.md).
+
+**Q:** Why can two releaseIfReady calls both send a result?
+
+**A:** Eligibility is read before sending, and the final update does not atomically claim release ownership.
+
+**Q:** Does a caught WhatsApp failure keep the local order unreleased?
+
+**A:** Not in the inspected path; it can still mark completion, so released, notified and delivered need separate states.
+
+**Q:** Does paidAt prove a provider collected the matching invoice amount?
+
+**A:** No. The current lab verification records a local action and reference; financial reconciliation is separate.
+
+**Q:** What does mapping HCPCS Level II into CptCode lose?
+
+**A:** The distinction between code systems unless source/system/version are retained and displayed explicitly.
+
+**Q:** Why can a resolved sync still be partial?
+
+**A:** The NLM stream catches a fetch failure and returns; the caller can report seen counts without a completion watermark.
+
+**Q:** What must a catalog fallback tell its consumer?
+
+**A:** Active source, system/version, coverage and degraded status rather than pretending interchangeable semantics.
+
+## Smaller Domains: Boundaries and Recovery
+
+Source: [Smaller domains](21-long-tail-domains.md).
+
+**Q:** Why does sent-history lookup not guarantee one reminder send?
+
+**A:** Two runners can read the same absence before either sends or records its result; an atomic intent/claim is required.
+
+**Q:** Does custom-field definition CRUD prove patient values are validated?
+
+**A:** No. Patient writes must explicitly validate values against authorized definitions and their versions.
+
+**Q:** What concrete outbound webhook gaps does the inspected path expose?
+
+**A:** Recipient selection lacks a clinic predicate, tick uses a placeholder signing secret, and markFailed leaves claimed rows IN_FLIGHT without scheduling their next attempt.
+
+**Q:** Does a ten-minute replay claim prove webhook business processing completed?
+
+**A:** No. It records acceptance within a transport window; durable processing state and business idempotency must handle crashes and later retries.
+
+**Q:** Does Role.LAB at login establish every subsequent resource permission?
+
+**A:** No. Worklists, uploads and result reads still need tenant, lab and order authorization.
+
+**Q:** Why is transactional leave approval insufficient to prevent conflicting transitions?
+
+**A:** The re-read does not own the state and the final update lacks a conditional PENDING/version predicate; competing actions can pass their earlier checks.
+
+**Q:** What distinguishes feedback status labels from a workflow?
+
+**A:** Labels constrain possible values; a workflow also constrains transitions from the current state and records authorized decisions.
+
+**Q:** What does account deletion actually change before erasure completes?
+
+**A:** It soft-deletes and disables login, then separately creates a clinic-bound request. Those writes are not proof of session revocation or completed erasure.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

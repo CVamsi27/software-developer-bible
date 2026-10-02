@@ -37,3 +37,7 @@ The user now prioritizes the resume and target senior/founding full-stack TypeSc
 - [ ] Regenerate with `python3 scripts/read_time.py --write`, `python3 scripts/gen_master_index.py`, and `python3 scripts/check_counts.py --write`.
 - [ ] Run the full gates, link checks, example probes and `git diff --check`; resolve every failure before committing.
 - [ ] Review the complete diff and repository scope, then commit and push to the configured origin; verify the remote commit.
+
+## Additional Docita requirement — current behavior and strongest design
+
+For every Docita case study, show source-backed current implementation, concrete strengths, concrete limitations, and the recommended design with acceptance evidence. Proposed behavior must never be represented as shipped. Preserve current mechanisms and authored revision questions. This applies to every case, including cases still awaiting source review.

@@ -1,136 +1,116 @@
-# 17 — Patient Portal
+# 16 — Patient Portal Identity and Access
 
-> Patients get their own read-mostly window into the clinic: OTP login by WhatsApp, scoped PHI read endpoints (records, prescriptions, invoices, clinical timeline, medication adherence), and a UI that can never touch another patient's data because the session itself is patient-bound.
+## Definition
 
----
+The patient portal gives an authenticated patient access to selected records and a medication-dose reporting surface. Its security boundary is the mapping from authenticated user to patient and clinic, followed by ownership checks for each requested resource.
 
-## Context
+The concrete failure to prevent is simple: a patient changes a prescription ID in the URL and receives someone else's record.
 
-Docita's data belongs to clinics, but the *patient* is the subject of it — and Indian law (DPDP Act, 2023) plus product sense both say patients should see their own health data. The patient portal is that surface:
+## First Principles
 
-- **Login without passwords** — patients are not staff; they don't have credentials and won't remember a password. WhatsApp OTP is the natural channel (Docita already talks to patients over WhatsApp).
-- **Read-mostly, but not read-only** — patients view prescriptions, invoices, and a clinical timeline, and *record medication doses / adherence* (the one interactive write).
-- **PHI at stake** — a portal bug that leaks one patient's prescriptions to another is a DPDP breach and a destroyed trust story.
+A phone OTP proves temporary control of a delivery channel, not an immutable patient identity. Shared phones, recycled numbers and guardian access require an explicit account-linking policy.
 
-**The problems:** (1) OTP login is a race against brute force — 6 digits is only 10⁶ space, and the verify path must consume attempts atomically or concurrent requests all pass the "attempts left" check; (2) "the patient" must be derived from the *session*, not from request parameters, or nothing stops a patient from querying another's records by swapping an ID; (3) OTP delivery must not reveal whether a phone number is registered (account enumeration); (4) there is no patient "password" — so session lifecycle and token expiry are the whole auth story.
+A short code also has a small search space. Limiting guesses per challenge helps online attacks; limiting challenge issuance prevents an attacker from continuously obtaining fresh attempts or exhausting messaging capacity. Neither control makes guessing mathematically impossible.
 
----
+## How OTP Request and Verification Work
 
-## Decision 1: Passwordless WhatsApp OTP with Brute-Force-Hardened Verification
+The command normalizes the phone, finds a patient, generates a code using `crypto.randomInt(100000, 1_000_000)`, bcrypt-hashes it at cost 10, invalidates previous unused codes, stores a ten-minute expiry, and invokes the WhatsApp login template helper.
 
-### What We Chose
+The upper bound is exclusive. This range has 900,000 possible codes, not one million: leading-zero codes are excluded. Excluding only 999999 in an earlier range was an off-by-one issue, not evidence of a severe attack or a production incident.
 
-Request flow (`requestOtp`): normalize phone to E164 → if a patient exists for that phone, generate a 6-digit OTP with `crypto.randomInt(100000, 1_000_000)` (inclusive of 999999 — the code comments call out that an earlier `999_999` upper bound silently biased the space), bcrypt-hash it (cost 10), **invalidate prior OTPs for that phone**, store the new one with a 10-minute expiry, and send via the WhatsApp login-OTP template.
+The normal response has the same message whether a patient exists. That reduces response-body enumeration, but the registered path also performs hashing, storage and delivery. Timing, exceptional responses and externally observable side effects must be assessed before claiming enumeration is eliminated.
 
-Verify flow (`verifyOtp`): look up the active OTP → **atomically consume an attempt** via `tryConsumeOtpAttempt` (a single conditional UPDATE that checks-and-increments so concurrent requests can't all observe `attempts < MAX`) → if attempts remain, `bcrypt.compare` the submitted OTP.
+Verification follows these steps:
 
-```typescript
-// apps/api/src/domains/patient-portal/application/services/patient-portal-auth-command.service.ts
-private static readonly MAX_OTP_ATTEMPTS = 3;
-// Max attempts per OTP. Bound chosen so a real user mistyping twice has room to
-// recover, but brute-force against a 6-digit OTP cannot succeed
-// (10^6 / 3 ≈ 333k OTPs needed, each costing an SMS).
+```text
+Find latest unused, unexpired challenge
+                 ↓
+Conditional attempt increment below cap of three
+                 ↓
+Compare supplied code against hash
+                 ↓
+Mark challenge used
+                 ↓
+Resolve/create user → link patient → shared login
 ```
 
-### Why This Was Chosen
+The atomic attempt update prevents concurrent requests from each observing unused attempt capacity and performing unlimited comparisons. However, its predicate checks ID and attempt count only; it does not recheck expiry or usedAt. The successful-use update is a later unconditional write.
 
-- **Enumeration-safe request** — `requestOtp` returns the *same* message whether or not the phone exists ("If a patient account exists for this phone, an OTP has been sent"). The OTP is only sent when a patient exists, but an attacker can't distinguish by response shape.
-- **bcrypt at cost 10** — even if an OTP row leaks (DB read), the stored value isn't reversible quickly; hashing OTPs (not storing plaintext) is the same discipline as passwords.
-- **Per-OTP attempt cap of 3, consumed atomically** — the comment is the threat model: an attacker needs ~333k OTPs and each costs an SMS + a bcrypt compare. Atomic consumption closes the concurrent-request bypass.
-- **Invalidate-on-request** — requesting a new OTP kills old ones, so a leaked earlier OTP can't be replayed after re-request.
+Thus attempt-cap enforcement and single-use success are different properties. Concurrent correct submissions can each consume an available attempt, compare successfully and proceed to login. A code invalidated or expired after the initial read can also pass that later attempt predicate. The source does not justify a universal replay-prevention claim.
 
-### Alternatives Considered
+Invalidation and new challenge creation are separate repository calls. Concurrent resend requests need a defined newest-challenge policy. User creation and patient linking also occur separately, so concurrent first login needs uniqueness and transaction handling rather than reliance on a prior absence check.
 
-- Password + email reset — patients don't manage passwords; support load would drown the clinics.
-- TOTP/authenticator — inappropriate for the demographic (patients range from 20 to 80+; most interact via WhatsApp links).
-- Phone-call OTP — more expensive and slower than WhatsApp.
+## Request Throttling and Session Cookies
 
-### Trade-offs
+Both public auth endpoints carry a Nest throttle configuration of five requests per 60 seconds in the short bucket. This is existing metadata, not proof of active deployment enforcement: guard installation, tracker key, proxy trust and shared rate-limit storage determine its effective scope.
 
-- **WhatsApp delivery is the single point of availability** — if Meta's API is degraded, login is down. The portal can't fall back to SMS without a second provider integration.
-- **10-minute expiry vs convenience** — short enough to be safe, long enough that most patients complete within it; expired OTPs force a re-request.
-- **Attempt cap of 3** can frustrate a patient who mistypes 3 times — they re-request, which invalidates and re-issues; the friction is deliberate.
+Do not call request-side throttling entirely absent. A phone-specific cooldown, distributed abuse controls and delivery-budget limit still need separate verification; an IP-based endpoint limit is not equivalent to those controls.
 
----
+The auth controller sets HTTP-only access and refresh cookies, uses Secure in production and SameSite Strict, and restricts the refresh cookie path to `/api/v1/auth`. It uses shared AUTH_CONSTANTS and the command invokes shared AuthService login. This path does not establish a separate shorter portal token lifetime.
 
-## Decision 2: The Session IS the Patient — Context From the Token, Not Parameters
+Trace token audience, patient role, refresh rotation, logout/revocation and browser-origin behavior through the shared auth system. Cookie flags reduce particular risks; they do not prove every session lifecycle or CSRF boundary is correct.
 
-### What We Chose
+## How Session-derived Context Prevents ID Swapping
 
-After OTP success, the patient receives an app session (via shared `AuthService`). Every portal controller resolves the patient from the **authenticated user**, never from a client-supplied patientId. `PatientPortalContextService.getPatientContext(userId)` looks up the patient by userId and throws `UnauthorizedException` if none exists, returning `{ patient, patientId, clinicId }` for downstream scoping.
+`PatientPortalContextService.getPatientContext(userId)` resolves a patient from the authenticated user and returns patientId plus clinicId. Missing linkage is unauthorized. Controllers declare patient-session metadata, JWT guard and PATIENT role requirements.
 
-Controllers then scope *every* query by that patientId: `patient-portal-records.controller.ts` (`GET prescriptions`, `GET prescriptions/:id`, `GET invoices`), `patient-portal-clinical.controller.ts` (timeline, snapshot, active medications, **doses + adherence**).
+Prescription detail still accepts a resource ID. The service and repository must combine that ID with the derived ownership scope. Deriving a patient ID centrally is a useful design choice, but a new endpoint can still omit or misuse it. Tenant isolation and IDOR resistance require checks on every read, write, file URL and nested relation.
 
-### Why This Was Chosen
+The current mapping treats one user as one patient context. A parent or caregiver managing several patients needs an explicit, revocable delegation relation with scope and audit evidence. Do not weaken patient ownership by allowing an arbitrary request patientId.
 
-- **IDOR is structurally impossible** — a patient asking for `prescriptions/:id` only ever queries with their own derived patientId; there is no endpoint that takes "another patient's id" and returns data.
-- **One resolution point** — the context service is the single place that maps a session to a patient; a new portal endpoint can't forget to scope because it starts from the same resolved context.
-- **ClinicId comes along for free** — portal reads are clinic-scoped like everything else, so RLS still applies beneath the patient scoping.
+## Examples: Dose Reporting Is a Separate Write Boundary
 
-### Trade-offs
+The clinical controller exposes timelines, snapshots, active medications, dose history, adherence summaries and a dose-report POST. It derives patient and clinic before delegating to the medication service.
 
-- **Patient ↔ user identity is a 1:1 assumption** — the portal repository (`findPatientByUserId`) treats a user as *the* patient; if Docita ever needs a guardian/representative portal (a parent managing a child's records), this mapping needs a relation table, not a single patientId.
+The POST body declares status values TAKEN, MISSED and SKIPPED, but the inspected controller does not forward that status to `recordAdHocDose`; it forwards medication ID, time, amount and notes with source PATIENT_REPORTED. A declared body field therefore does not prove that the requested status is applied.
 
----
+Medication ownership, duplicate reports, invalid/future timestamps and dose semantics must be checked by the service and validated input boundary. Treat the report as patient-provided evidence, not independently confirmed medication consumption.
 
-## Decision 3: The Interactive Write Is Bounded to Medication Adherence
+Some clinical and prescription reads call the audit helper. In the inspected controllers, active-medication reads and invoice reads do not use that same helper. Do not describe audit coverage as universal without tracing other middleware and downstream auditing.
 
-### What We Chose
+## Current Assessment and Recommended Design
 
-Of everything a patient could do, the portal allows exactly one class of write: **recording medication doses and adherence** (`POST medications/doses`, `GET medications/adherence`). Everything else — prescriptions, invoices, timeline, active medications — is read-only for the patient.
+| Assessment | Source-backed implication |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strengths | Session-derived context, conditional attempt counting, hashed challenges, declared endpoint throttling and scoped role metadata address concrete risks. |
+| Limitations | Final OTP use is separate from verification, issuance/user linking can race, response timing differs, and shared-session behavior needs tracing. |
+| Recommended design | Validate challenge input, bound issuance by phone/device/network and delivery budget, then atomically finalize a still-valid unused challenge after comparison. Create/link identity transactionally and enforce patient ownership at each repository operation. |
+| Session policy | Use explicit patient token scope and lifecycle, rotate refresh credentials, support revocation, and model guardian delegation rather than overloading one patient link. |
+| Acceptance evidence | Concurrent correct submissions yield one challenge finalization; expired/invalidated challenges cannot finalize; resend races have one active policy; another patient's IDs never return records or accept writes. |
 
-### Why This Was Chosen
+This is the recommended target design, not a claim that it is implemented. Generic responses should be tested for timing and failure differences, and distributed rate limits should be tested through the actual deployed ingress.
 
-- **Adherence is the one thing only the patient knows** — "did you take tonight's dose?" has no other source of truth; capturing it in the portal turns a read-only app into a clinical-data contributor without letting patients edit clinical records.
-- **Read-mostly is a PHI risk decision, not a laziness decision** — every write surface is another place a patient (or a bug) can corrupt the record a doctor relies on. Restricting writes to adherence keeps the clinical write path staff-only and audited.
-- **Dose confirmation is a natural OTP-session interaction** — it fits the "patient taps a link, confirms the dose" pattern the product already uses for confirmations.
+## Mistakes and Best Practices
 
-### Trade-offs
+- Treating three attempts as proof that brute force cannot succeed: state the bounded probability and issuance controls.
+- Treating bcrypt as high entropy: an OTP still has a small candidate space; protect hash access and challenge lifetime.
+- Treating a lookup followed by mark-used as atomic single use: finalize with a conditional write and check its result.
+- Treating role metadata as universal authorization: verify guard wiring and each nested resource lookup.
+- Claiming zero IDOR incidents, effortless adoption or a shorter portal TTL without current evidence: separate design intent from measured outcomes.
 
-- **Adherence data quality depends on patient honesty and memory** — the feature records *reported* adherence; nothing reconciles it against refill data (pharmacy claims could, later).
-- **No patient-initiated corrections** — a patient who spots a wrong phone number or address on their profile can't fix it in the portal; it's read-only, and corrections route to the clinic. Deliberate (avoid PHI edit conflicts), but adds clinic workload.
-
----
-
-## What Worked
-
-- **Zero IDOR incidents** — because the session is the patient and every query derives from context, the classic "change the id in the URL" attack class never surfaced.
-- **OTP login converted effortlessly** — patients who already got WhatsApp messages from the clinic accepted a login link + OTP without training; support load for "I forgot my password" is zero by construction.
-- **Atomic attempt consumption held under load** — a test that fired concurrent verify requests against one OTP confirmed only `MAX` compares could ever run.
-
-## What Failed
-
-- **The first OTP generator biased the space** — `randomInt(100000, 999999)` (exclusive max) silently excluded `999999`; the fix to `1_000_000` is documented in a code comment precisely because the bug was invisible. Lesson: read the `randomInt` upper-bound semantics.
-- **Session expiry confusion** — an early iteration let portal tokens live as long as staff tokens; a shared token TTL meant sessions outlived their usefulness and patients got confusing "please log in again" states mid-flow. Portal sessions now use their own, shorter lifecycle.
-- **WhatsApp template lock** — the login OTP had to ride an approved Meta template (`patient_login_otp`); template rejections blocked rollout until the copy was re-approved.
-
-## What Could Be Better
-
-- **Per-phone request rate limit** — invalidate-on-request prevents replay but not *spam*; a patient who taps "resend" 20 times burns 20 WhatsApp sends. A request-side cooldown (e.g., 30–60s, or N/hour per phone) is missing.
-- **Device/session revocation** — there's no "log out all devices" or per-device session list for patients; a lost phone leaves a live session until natural expiry.
-- **Representative/guardian model** — as noted, parent-manages-child and caretaker access need a proper relation instead of the 1:1 assumption.
-- **Portal read model caching** — timeline + adherence reads hit live tables per request; fine now, but a patient-specific read snapshot would cut primary load as portal usage grows.
-
----
+Test different patients and clinics, shared/recycled phone scenarios, expired challenges, concurrent verification, resend races, distributed throttling, stale sessions, logout and medication-resource ownership.
 
 ## Code Evidence
 
-| Claim | File |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| OTP request/verify + attempt cap | `apps/api/src/domains/patient-portal/application/services/patient-portal-auth-command.service.ts` |
-| Atomic attempt consumption | `apps/api/src/domains/patient-portal/core/repositories/portal-auth.repository.interface.ts` (+ Prisma impl) |
-| Session → patient context | `apps/api/src/domains/patient-portal/application/services/patient-portal-context.service.ts` |
-| Portal auth endpoints | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-auth.controller.ts` |
-| Records endpoints (prescriptions/invoices) | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-records.controller.ts` |
-| Clinical timeline + adherence | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-clinical.controller.ts` |
-| Shared WhatsApp login-OTP helper | `apps/api/src/shared/whatsapp/whatsapp-login-otp.helper.ts` |
-| Shared auth (session issue) | `apps/api/src/shared/modules/auth/auth/auth.service.ts` |
+Paths below are from source inspection, not a completed production security assessment.
 
----
+| Mechanism | Source path |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| OTP orchestration | `apps/api/src/domains/patient-portal/application/services/patient-portal-auth-command.service.ts` |
+| Attempt and used-state writes | `apps/api/src/domains/patient-portal/infrastructure/repositories/prisma-portal-auth.repository.ts` |
+| User → patient context | `apps/api/src/domains/patient-portal/application/services/patient-portal-context.service.ts` |
+| Throttle and cookies | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-auth.controller.ts` |
+| Records surface | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-records.controller.ts` |
+| Clinical reads and dose write | `apps/api/src/domains/patient-portal/presentation/controllers/patient-portal-clinical.controller.ts` |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "The patient portal is passwordless: login is a 6-digit OTP over WhatsApp, bcrypt-hashed at rest, with a 10-minute expiry and a three-attempt cap that's consumed atomically — one conditional update, so concurrent guesses can't all pass the attempts check. The request endpoint is enumeration-safe: it returns the same message whether or not the phone is registered, and requesting a new OTP invalidates old ones. The security property I'm proudest of is that the session *is* the patient: every controller resolves the patient from the authenticated user via one context service, then scopes all queries by that derived patientId — there's no endpoint that accepts another patient's id, so IDOR is structurally impossible rather than merely discouraged. Patients are read-only except for medication adherence, which is the one thing only they know. The gap I'd fix next is request-side OTP rate limiting and per-device session revocation."
----
+Derive patient scope from authenticated identity and enforce it for every resource. Count OTP attempts atomically, but verify final single-use consumption separately. Treat request throttling, channel control, account linking and session revocation as distinct parts of the design.
 
-[← Previous: Doctors Verification And Public Booking](15-doctors-verification-and-public-booking.md) · [ Back to Index](INDEX.md) · [Next: ABDM Integration →](17-abdm-integration.md)
+## See Also
+
+- [Category revision](REVISION.md) — patient identity and OTP questions.
+- [Multi-tenancy and RLS](02-multi-tenancy-rls.md) — context and database boundaries.
+- [WhatsApp integration](06-whatsapp-integration.md) — delivery and processing gaps.
+- [Documents and uploads](19-documents-and-uploads.md) — authorized document access.
+- [Case-study index](INDEX.md) — reading order.

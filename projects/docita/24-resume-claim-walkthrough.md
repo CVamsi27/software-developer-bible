@@ -54,15 +54,17 @@ Verify a payment signature against the exact raw payload and appropriate merchan
 
 Demonstrate a crash after an external effect but before acknowledgment. Explain what authoritative record determines whether replay is safe. Do not call delivery exactly once without an effect-level protocol and evidence.
 
-## Bullet 5: Explain the Executed Synthetic Index Benchmark
+## Bullet 5: Explain a Dashboard With Defined Metrics
 
-**Resume scope:** 78,000 synthetic appointments; 20-row ordered index scan versus a 3,120-row clinic-only control scan followed by sorting.
+**Resume scope:** an internal operational dashboard built from PostgreSQL business records and measured API telemetry, with latency percentiles, server-error rates, sample coverage and validated contracts.
 
-Read the [benchmark evidence](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) and inspect its SQL, environment and source hashes. The index already exists in the inspected Prisma schema. This experiment validates a reduced projection in a separate database; it is not a newly deployed optimization or the full appointment API.
+Read the [actual-record dashboard case](14-analytics-and-dashboards.md#a-dashboard-built-from-actual-records-and-retained-telemetry). Trace the INTERNAL authorization gate, shared Zod contract, repository query, exact UTC window and frontend loading/error states. Explain why appointment start time, invoice creation time, current job status and retained request observations answer different questions.
 
-Explain clinic equality, the descending startTime/ID order, limit-driven early termination and the control's top-N sort. Discuss write/storage costs, projection width, selective filters, skew, cold caches and concurrency. The full repository path additionally counts records and includes patient, doctor and nested records; benchmark timing cannot be substituted for endpoint p95.
+Demonstrate that no samples produces unavailable latency/error rate, a database failure produces an error state, and a valid empty activity count remains zero. Define the percentile population and its coverage before quoting a number. Health checks and persistence gaps prevent the current aggregate from establishing customer-facing API performance or availability.
 
-The recorded timings are real but extremely small under warm-cache conditions, so the resume emphasizes plan behavior rather than a dramatic latency percentage. Reproduce the experiment yourself before discussing personal execution, and compare results honestly when the workload changes.
+The recorded production query contained 158 retained requests with partial coverage, and no appointment/invoice/job activity in its selected window. This supports explaining the measurement implementation; it does not support 25 active clinics or a performance-improvement percentage. Verify the deployed revision before describing the dashboard as live.
+
+The [local appointment-index benchmark](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) remains a separate reproducible SQL exercise. It is no longer a bullet in the current application resume.
 
 ## Bullet 6: Keep AI Assistance Inside Explicit Boundaries
 

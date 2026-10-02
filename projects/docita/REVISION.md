@@ -732,9 +732,9 @@ Source: [Seven-bullet walkthrough](24-resume-claim-walkthrough.md).
 
 **A:** Select actual changes and explain what I designed, implemented, reviewed or operated, with their context and collaborators. Finding a source file or learning its mechanism is not itself authorship evidence.
 
-**Q:** How does the appointment-index benchmark support the current resume?
+**Q:** What can I demonstrate for the operational-dashboard resume bullet?
 
-**A:** It records a real local SQL experiment with 78,000 synthetic rows and explicit control/index plans. It does not prove full endpoint performance or a newly deployed optimization. Reproduce it and keep its fixture, projection and warm-cache scope visible.
+**A:** Trace the authorized API, shared schema, PostgreSQL aggregate and frontend states. Explain the reporting window, sample population and unavailable measurements. The implementation is evidence of engineering work; retained samples alone do not establish customer adoption, availability or improvement against a baseline.
 
 **Q:** What is a practical completion criterion for this preparation?
 

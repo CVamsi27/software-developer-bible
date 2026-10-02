@@ -238,6 +238,38 @@ Source: [Healthtech and geospatial primer](80.34-germany-target-domain-primer.md
 **Q:** Why does combining an intersection test with a thirty-meter proximity test fail to find all nearby alerts?
 **A:** A nearby object can be within thirty meters without directly intersecting the asset. Choose the distance predicate, units and compatible coordinates for the intended corridor, then apply authorization and query bounds. Intersection answers a narrower spatial relationship.
 
+## Full-Stack Resume Route
+
+Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md).
+
+**Q:** Why should two booking requests use different logical request identities in the concurrency exercise?
+
+**A:** Repeating one request tests idempotency, while different users competing for the same capacity test the resource invariant. Passing one does not establish the other.
+
+**Q:** Why does a successful response from the older search request sometimes need to be discarded?
+
+**A:** It may arrive after a newer request and overwrite the latest user intent. Associate state updates with the active query/request identity; cancellation alone is not every provider's completion guarantee.
+
+**Q:** How can a TypeScript DTO still accept invalid runtime data?
+
+**A:** Its type is erased at runtime. Parse untrusted input with the actual schema/input boundary and authorize the resource before relying on the resulting value.
+
+**Q:** What does a mocked locking-query assertion leave unverified?
+
+**A:** It can inspect the intended SQL shape without executing real locks, transaction isolation or competing connections. Database concurrency guarantees need controlled interleavings against the database.
+
+**Q:** What makes a performance-improvement number defendable?
+
+**A:** An explicit workload, environment, statistic, sample period, error rate and comparable before/after result. A configuration constant or faster test runner is not a production-latency improvement.
+
+**Q:** How should Next.js working depth be demonstrated without misrepresenting Docita?
+
+**A:** Explain a separate implementation exercise and its rendering/cache boundaries, then compare with the actual React/Vite SPA. Do not substitute a studied framework for production experience.
+
+**Q:** What is a useful readiness check after reading a topic?
+
+**A:** Implement or trace the mechanism without copying, explain its failure boundary, and handle a changed assumption. Familiarity with an answer does not establish transfer to a new case.
+
 ## Summary
 
 Use a missed answer to identify the assumption or mechanism that needs another example. Larger rehearsals belong in the mock bank; current campaign facts belong in the private workspace.

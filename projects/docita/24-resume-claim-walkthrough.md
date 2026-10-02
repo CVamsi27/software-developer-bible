@@ -6,7 +6,7 @@ A resume walkthrough connects a concise application claim to a product problem, 
 
 Start with one clinic visit: a receptionist books an appointment, a clinician opens the record and writes a prescription, billing records the charge, and background work creates or delivers documents. Explain the user-visible behavior before naming infrastructure.
 
-The current resume contains six Docita bullets. The cases below map to their order. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
+The current resume contains seven Docita bullets. The cases below map to their order. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
 
 ## First Principles
 
@@ -54,7 +54,17 @@ Verify a payment signature against the exact raw payload and appropriate merchan
 
 Demonstrate a crash after an external effect but before acknowledgment. Explain what authoritative record determines whether replay is safe. Do not call delivery exactly once without an effect-level protocol and evidence.
 
-## Bullet 5: Keep AI Assistance Inside Explicit Boundaries
+## Bullet 5: Explain the Executed Synthetic Index Benchmark
+
+**Resume scope:** 78,000 synthetic appointments; 20-row ordered index scan versus a 3,120-row clinic-only control scan followed by sorting.
+
+Read the [benchmark evidence](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) and inspect its SQL, environment and source hashes. The index already exists in the inspected Prisma schema. This experiment validates a reduced projection in a separate database; it is not a newly deployed optimization or the full appointment API.
+
+Explain clinic equality, the descending startTime/ID order, limit-driven early termination and the control's top-N sort. Discuss write/storage costs, projection width, selective filters, skew, cold caches and concurrency. The full repository path additionally counts records and includes patient, doctor and nested records; benchmark timing cannot be substituted for endpoint p95.
+
+The recorded timings are real but extremely small under warm-cache conditions, so the resume emphasizes plan behavior rather than a dramatic latency percentage. Reproduce the experiment yourself before discussing personal execution, and compare results honestly when the workload changes.
+
+## Bullet 6: Keep AI Assistance Inside Explicit Boundaries
 
 **Resume scope:** intake and clinical support with output validation, quotas, timeouts, kill switches and human decisions.
 
@@ -62,7 +72,7 @@ Read [prescription safety](07-prescription-safety.md) and [clinical integrations
 
 Schema validation constrains shape, not clinical truth. Show how the interface keeps a person responsible for the clinical decision. Discuss prompt injection, sensitive data disclosure, hallucinations, quota enforcement, ambiguous timeouts and degraded behavior. Describe proposed evaluation and missing evidence as future work, not a completed safety certification.
 
-## Bullet 6: Explain What a Release Check Actually Establishes
+## Bullet 7: Explain What a Release Check Actually Establishes
 
 **Resume scope:** Jest, Vitest, Playwright, GitHub Actions and delivery infrastructure.
 

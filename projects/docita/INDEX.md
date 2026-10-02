@@ -51,7 +51,7 @@ Read [the hypothetical 25-clinic metrics scenario](23-hypothetical-clinic-metric
 
 ### Stage 6 — Connect the Current Resume to Actual Work
 
-Use [the six-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
+Use [the seven-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
 
 ### Revision, Then Interview Practice
 

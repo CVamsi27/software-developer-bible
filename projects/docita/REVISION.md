@@ -694,7 +694,7 @@ Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.
 
 ## Current Resume Bullet Walkthrough
 
-Source: [Six-bullet walkthrough](24-resume-claim-walkthrough.md).
+Source: [Seven-bullet walkthrough](24-resume-claim-walkthrough.md).
 
 **Q:** What should lead my 90-second Docita overview?
 
@@ -731,6 +731,10 @@ Source: [Six-bullet walkthrough](24-resume-claim-walkthrough.md).
 **Q:** How do I demonstrate personal ownership from a repository?
 
 **A:** Select actual changes and explain what I designed, implemented, reviewed or operated, with their context and collaborators. Finding a source file or learning its mechanism is not itself authorship evidence.
+
+**Q:** How does the appointment-index benchmark support the current resume?
+
+**A:** It records a real local SQL experiment with 78,000 synthetic rows and explicit control/index plans. It does not prove full endpoint performance or a newly deployed optimization. Reproduce it and keep its fixture, projection and warm-cache scope visible.
 
 **Q:** What is a practical completion criterion for this preparation?
 

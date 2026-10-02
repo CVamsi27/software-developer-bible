@@ -740,6 +740,30 @@ Source: [Seven-bullet walkthrough](24-resume-claim-walkthrough.md).
 
 **A:** Explain one operation without notes, demonstrate a failure, justify an alternative and answer changed constraints. Keep production, benchmark, hypothetical and unexecuted evidence labels intact.
 
+## Actual Production Metrics and Their Limits
+
+Source: [Actual-record dashboard](14-analytics-and-dashboards.md#a-dashboard-built-from-actual-records-and-retained-telemetry).
+
+**Q:** Can 158 retained requests with zero recorded server errors establish 100% availability?
+
+**A:** No. The sample set has partial coverage and can omit requests when persistence fails. Availability needs an independently defined observation period, denominator and outage detection.
+
+**Q:** What does the measured 2 ms p95 describe?
+
+**A:** The nonnegative persisted request durations in that specific production sample set. It can include health checks and excludes client/network/render time. I need route-specific, representative traffic before describing user-facing latency.
+
+**Q:** Why does a completed-appointment count use both time and status?
+
+**A:** The time selects appointments scheduled in the window; current status selects those now completed. Without a completion event timestamp, it does not count completions that happened during the window.
+
+**Q:** Why avoid a new table filled with the desired metrics?
+
+**A:** A dashboard should derive its current counts from authoritative operational records. Invented metric rows would break provenance; versioned snapshots are useful only when their real inputs, cutoff and correction policy are preserved.
+
+**Q:** What production result can I currently explain without inventing adoption?
+
+**A:** The dated read-only aggregate returned 158 retained request samples and no appointment, invoice or retained job activity in its selected window. I can explain the query and its limits; it does not substantiate a 25-clinic customer claim.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

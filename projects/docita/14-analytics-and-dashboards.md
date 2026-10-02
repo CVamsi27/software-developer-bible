@@ -104,6 +104,28 @@ A snapshot repair must accept the intended clinic reporting date, stable input w
 
 Choose whether corrections produce replacement snapshots, append a revised version or remain in a separate current-truth report. Neither “frozen forever” nor “recomputed live” is universally correct; consumers need to know which question the report answers.
 
+## A Dashboard Built From Actual Records and Retained Telemetry
+
+The new internal operational dashboard reads the existing `Appointment`, `Invoice`, `QueueJob` and `ApiRequest` tables through one aggregate query. It adds no metric seed rows and requires no schema migration. The route is restricted to INTERNAL operators; the frontend validates the shared Zod response contract.
+
+Every read uses a rolling **30 × 24-hour UTC window**, including the start and excluding the end. A single PostgreSQL statement gives its aggregates one statement snapshot. This differs from a clinic-local calendar month.
+
+| Card | Exact meaning | Boundary |
+| -------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Clinics with appointments | Distinct clinic IDs with appointment start times in the window | Includes cancelled appointments and any demo/test clinic records; not paying customers |
+| Appointments scheduled | Appointment start time in the window | Current records, not appointments created in the window |
+| Completed appointments | Scheduled in the window and currently COMPLETED | Does not establish when completion occurred |
+| Invoices created | Invoice creation time in the window | Not revenue or cash received |
+| Retained jobs / currently failed | Jobs created in the window, with their current status | Cleanup removes history; recovered failures are not counted as currently failed |
+| p50 / p95 latency | Percentiles of nonnegative persisted API request durations in milliseconds | Includes observed routes, potentially health checks; not browser latency or independent availability monitoring |
+| Server error rate | Retained HTTP 5xx samples divided by all retained request samples | Missing persistence is not successful traffic; no samples produces unavailable, not 0% |
+
+The UI displays the exact reporting bounds, sample count and first/last observation timestamps. The request logger buffers observations before persistence and can disable persistence after database authentication or missing-table errors. Monitoring cleanup uses a 30-day retention window. These mechanisms mean the retained sample set can contain gaps. Millisecond-resolution measurements can legitimately report zero; they do not mean requests take no time.
+
+A read-only production check on **2 October 2026**, with a ten-second SQL timeout, returned **158 retained requests, zero recorded 5xx responses, median 0 ms and p95 2 ms**. The samples covered **29 September 18:04:37 UTC through 30 September 04:29:51 UTC**. The same aggregate returned **zero appointments, invoices and retained jobs** in its rolling window. No patient records or credentials were exposed and no production rows were inserted.
+
+That observation establishes a limited sample result. It does not establish 25 active clinics, a 30-day traffic total, production improvement against a baseline, or a useful customer-facing latency distribution. The implementation is locally validated; this observation alone does not establish that the new dashboard has been deployed. Before using it as a résumé outcome, verify deployment and identify real customer activity separately from test/demo data and health-check traffic.
+
 ## Real-World Decisions
 
 | Reporting question | Define explicitly | Verification |
@@ -160,3 +182,7 @@ Docita source inspected on 2 October 2026:
 - `apps/api/src/domains/analytics/core/factories/snapshot-analytics.factory.ts` and `period-bucket.util.ts`
 - `apps/api/src/domains/analytics/infrastructure/repositories/analytics-groupby.helpers.ts` and `analytics-groupby-count.ts`
 - `apps/api/src/domains/dashboards/dashboard/application/services/dashboard.service.ts`
+
+- `apps/api/src/shared/modules/internal/internal-operational-metrics.controller.ts`, `.service.ts`, and `infrastructure/prisma-internal-operational-metrics.repository.ts`
+- `packages/types/src/admin/operational-metrics.ts` and `apps/internal/src/features/performance/pages/performance-page.tsx`
+- `apps/api/src/shared/modules/monitoring/monitoring/services/request-log.service.ts` and `metrics.scheduler.ts`

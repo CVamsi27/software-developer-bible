@@ -692,6 +692,50 @@ Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.
 
 **A:** It cannot be moved as an achievement. Replace it with an actual measurement or documented reasonable estimate, record personal contribution, and preserve whether the result came from production, a pilot or a controlled benchmark.
 
+## Current Resume Bullet Walkthrough
+
+Source: [Six-bullet walkthrough](24-resume-claim-walkthrough.md).
+
+**Q:** What should lead my 90-second Docita overview?
+
+**A:** A user operation and my actual responsibility, then how frontend, API, database and background work connect. Name technologies after establishing the problem; identify source existence separately from personal contribution and production outcomes.
+
+**Q:** Does a monorepo mean one atomic release?
+
+**A:** No. Shared source can coordinate contracts, but migrations and application versions can deploy at different times. Explain compatibility during overlap.
+
+**Q:** What should I trace for the React form bullet?
+
+**A:** Local editing state, runtime validation, authorized mutation, pending/error behavior and the server-cache update. Demonstrate a failure and stale result rather than only the happy path.
+
+**Q:** How do I explain RLS policies without promising universal isolation?
+
+**A:** Describe their intended coverage and the actual enable settings, roles and transaction routing. The inspected staged policies and fallback paths require verification; application authorization and RLS are separate layers.
+
+**Q:** What does the background-work bullet deliberately avoid promising?
+
+**A:** Exactly-once effects or universal atomic enqueue. Producer transactions, claim recovery, duplicate-effect handling and relay acknowledgment have distinct current limitations.
+
+**Q:** Why is a signed payment webhook not sufficient for a correct payment outcome?
+
+**A:** Signature verification establishes a payload/secret relationship. Merchant ownership, business state, duplicate effects, event ordering and reconciliation still need validation.
+
+**Q:** Does schema-valid AI output establish a safe clinical answer?
+
+**A:** No. Shape validation does not establish clinical truth. Keep review with a clinician and explain actual data, quota, timeout and fallback controls on the selected call path.
+
+**Q:** What can I claim from deployment configuration versus a restore drill?
+
+**A:** Configuration shows the intended integration. A timed, integrity-checked restore supplies recovery evidence for its environment and scenario. Neither proves unobserved availability history.
+
+**Q:** How do I demonstrate personal ownership from a repository?
+
+**A:** Select actual changes and explain what I designed, implemented, reviewed or operated, with their context and collaborators. Finding a source file or learning its mechanism is not itself authorship evidence.
+
+**Q:** What is a practical completion criterion for this preparation?
+
+**A:** Explain one operation without notes, demonstrate a failure, justify an alternative and answer changed constraints. Keep production, benchmark, hypothetical and unexecuted evidence labels intact.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

@@ -1,0 +1,96 @@
+# 01 — Reconstruct the Product Engineering Behind the MAQ Resume
+
+## Definition
+
+An experience reconstruction connects a recorded responsibility to a real project, personal actions, technical decisions and available outcomes. This chapter prepares the four MAQ bullets in the current resume without inventing a project, incident, measurement or client.
+
+The available source is the candidate's previously authored CV. No MAQ source repository, ticket history or performance report was supplied. The technical exercises below teach how to discuss the recorded work; they do not independently verify that it happened. Keep confidential employer material private and use approved sanitized examples.
+
+## First Principles
+
+A team outcome and an individual contribution are different. A reusable pattern may improve maintenance without a measured delivery-speed percentage. A tuned query can improve one endpoint without establishing a platform-wide latency claim. Reconstruct the actual operation and contribution before choosing the wording of an outcome.
+
+## Bullet 1: Explain One Recruitment or Internal Workflow
+
+**Resume scope:** TypeScript, React, Node.js, reusable services, input validation and module boundaries.
+
+Choose an actual workflow you worked on and identify its users, initial friction, existing constraints and your responsibility. Trace UI input → runtime validation → authentication/authorization → service rule → persistence → response → UI update. State which layers you changed and who owned adjacent work.
+
+Explain a concrete service boundary: request parsing belongs at an input boundary; business rules must remain enforceable independently of one UI; storage details should not leak into every caller. A reusable helper is valuable when it centralizes a stable rule, not merely because it decreases line count.
+
+For the historical delivery-time percentage, identify whether the denominator was lead time, cycle time or engineering effort; release frequency and ticket complexity are confounders. The current resume omits that unconfirmed figure. Discuss a concrete change and its observed qualitative effect when the original calculation cannot be recovered.
+
+**Practice exercise:** build a synthetic approval workflow with a PENDING-to-approved transition, authorized roles and a conditional version check. Two competing requests must not silently overwrite each other. This demonstrates learning; do not describe it as the implementation of an unnamed MAQ system.
+
+## Bullet 2: Show How You Diagnosed an API Bottleneck
+
+**Resume scope:** profiling, REST APIs, PostgreSQL indexing/pagination, caching and N+1 elimination.
+
+Select an actual endpoint from your recollection. Establish what users experienced, how you localized the bottleneck and what you changed. Distinguish application execution, database time, network delay and downstream dependencies. Name the evidence you truly had; do not supply invented profiler output.
+
+A useful investigation starts with request traces and query counts, then a query plan on a safe representative dataset. N+1 occurs when a parent list triggers additional per-row queries; batching or an appropriate join can reduce round trips but alter payload size and query cost. An index must fit predicates and ordering and incurs write/storage cost.
+
+Offset pagination can degrade at deeper pages; cursor pagination needs stable ordering and a tie-breaker. Caching needs scope, expiry and invalidation. Authorization-sensitive results must not share keys across users or tenants incorrectly. State whether you implemented each technique or are explaining an alternative.
+
+**Practice exercise:** create a synthetic list endpoint and compare N+1 against a batched implementation with identical fixtures. Record query count, request distribution, p50/p95, failures, hardware, cache state and revisions. Use the observed benchmark result, qualified as a benchmark. Do not rename it a recovered MAQ production measurement.
+
+The historical 30% figure lacked a confirmed statistic and original records. It is absent from the current resume. A credible explanation of the investigation does not require that number.
+
+## Bullet 3: Explain Reuse Without Hiding Product Behavior
+
+**Resume scope:** React/TypeScript components, loading/validation/error states, responsive behavior and accessibility.
+
+Pick one component or form you actually changed. Explain its consumers and which contract was stable: props, controlled/uncontrolled state, error presentation, keyboard behavior and semantic markup. Separate reusable behavior from business-specific rules.
+
+Discuss server state versus local form state, stale results, failed submissions and unnecessary rendering. Use an actual accessibility issue if you remember one; otherwise demonstrate the principles in an exercise. Native elements, explicit labels, focus order and useful validation feedback require verification, not just an accessibility prop or library name.
+
+**Practice exercise:** build a reusable form field and a searchable list. Test keyboard-only use, pending/error/empty states, stale search responses and one screen-reader interaction. Measure performance before optimizing; memoization does not automatically improve every component.
+
+The older UI-duplication and load-time percentages are historical authored claims without provided calculations. They are not present in the current application resume. Explain the concrete reuse and user-visible behavior you can substantiate.
+
+## Bullet 4: Describe Delivery and Mentoring With One Example Each
+
+**Resume scope:** GitHub Actions, Jest, release checks, code review, debugging and design discussions.
+
+Draw one actual delivery path: pull request → checks → artifact → deployment → smoke check → recovery. Identify the pipeline steps you authored or maintained and the controls supplied by other teams. A successful unit check cannot prove every integration, migration or release safe.
+
+Explain one valuable assertion, one failure it caught and why a different test layer was needed elsewhere. Coverage reports count executed lines/branches according to their configuration; they do not prove meaningful assertions or customer outcomes. The unconfirmed 85% figure has been removed from the application resume.
+
+For mentoring, select a real review, pairing session or design discussion. Describe the other engineer's problem without personal details, the reasoning you offered, their decision and the outcome you observed. Avoid assigning a sprint-predictability percentage without a definition and records.
+
+**Practice exercise:** review a synthetic API change for missing authorization, error mapping and a migration compatibility hazard. Write a focused review comment and a test that exposes one actual fault. This practices judgment without manufacturing an employer incident.
+
+## Assemble Real Stories Before Memorizing Answers
+
+Prepare four story cards corresponding to the bullets. Each card needs a real project context, approximate period, your task, implementation action, alternative considered, observed outcome and limitation. Exact client names or proprietary artifacts may be unnecessary; state when details are sanitized.
+
+Label each detail as recalled experience, available artifact, reconstructed estimate or practice exercise. Separate “I implemented” from “the team delivered” and “I would propose.” If you cannot recall a technique attributed to you in the current resume, narrow or remove that phrase rather than learning a fictional ownership story.
+
+Add behavioral examples only from real experience: ambiguous requirements, disagreement, a failed approach, deadline trade-offs and helping a teammate. The factual story should stay stable under follow-up questions even as your technical explanation becomes deeper.
+
+## Prepare in an Observable Order
+
+1. Explain one real workflow without notes and identify your contribution.
+2. Implement the synthetic API performance exercise and retain reproducible results.
+3. Demonstrate a React form with failure states and keyboard interaction.
+4. Review a pipeline/migration and identify which checks can detect which faults.
+5. Reconstruct one mentoring example and one technical disagreement.
+6. Answer the [separate revision questions](REVISION.md), then repeat with a changed constraint.
+
+Use the existing [role-focused study route](../../80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md) for fundamentals. Do not expand into the deferred Java or Indian SDE tracks just because an older role involved Java.
+
+## Summary
+
+The MAQ preparation path builds technical depth around recorded work while requiring actual personal examples. Practice supplies understanding and new benchmark evidence; it does not supply missing employer history or historical measurements.
+
+## See Also
+
+- [Category revision](REVISION.md) — follow-ups and answer boundaries.
+- [MAQ learning index](INDEX.md) — reconstruction before practice.
+- [Docita claim walkthrough](../docita/24-resume-claim-walkthrough.md) — source-backed implementation study kept distinct from MAQ.
+- [Private resume source](../../80-lanes-abroad-full-stack/personal/resume/generator/resume_content.py) — exact application wording.
+
+## References
+
+- [Candidate's canonical CV](../../80-lanes-abroad-full-stack/personal/cv.md) — authored experience, not independently verified employer evidence.
+- [Historical metric discussion](../../80-lanes-abroad-full-stack/personal/resume/METRICS.md) — definitions and missing measurement records.

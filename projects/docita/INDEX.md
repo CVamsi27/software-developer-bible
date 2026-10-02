@@ -2,7 +2,7 @@
 
 > Source-backed implementation assessments: what works, where the boundaries fail, and the recommended design with evidence needed to accept it.
 
-[![Files](https://img.shields.io/badge/files-24-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-25-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
@@ -48,6 +48,10 @@ Start with one operation and trace identity, state and failure boundaries. These
 ### Stage 5 — Model Workload and Define Outcome Evidence
 
 Read [the hypothetical 25-clinic metrics scenario](23-hypothetical-clinic-metrics.md). It calculates workload, illustrates business and operational metrics, and maps measurement plans to all 22 implementation cases. Its invented figures are study assumptions, not customer adoption or achieved resume results.
+
+### Stage 6 — Connect the Current Resume to Actual Work
+
+Use [the six-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
 
 ### Revision, Then Interview Practice
 

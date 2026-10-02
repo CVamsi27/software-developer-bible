@@ -2,7 +2,7 @@
 
 > **Project-specific deep-dives and interview preparation.** Each subfolder covers one real project with architecture decisions, code evidence, failure modes, and interview scripts.
 
-[![Files](https://img.shields.io/badge/files-24-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
@@ -21,6 +21,10 @@ For interview preparation, choose one relevant operation and trace its inputs, p
 Source inspection does not prove adoption, throughput, incident counts or production isolation. Bring dated evidence before quoting those results. Current editorial work prioritizes the full-stack TypeScript topics relevant to target abroad roles.
 
 ---
+
+## Reconstruct MAQ Experience
+
+Follow [the MAQ learning stages](maq/INDEX.md) to reconstruct the recorded workflow, API performance, React component and delivery/mentoring claims. Use its separate revision after learning. MAQ has no supplied employer source repository; Docita source must not be substituted for its history.
 
 ## Cross-references
 

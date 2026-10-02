@@ -628,6 +628,70 @@ Source: [Smaller domains](21-long-tail-domains.md).
 
 **A:** It soft-deletes and disables login, then separately creates a clinic-bound request. Those writes are not proof of session revocation or completed erasure.
 
+## Hypothetical 25-Clinic Metrics and Measurement
+
+Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.md). All numerical samples in this group are invented study inputs or calculations, not observed Docita results.
+
+**Q:** How does the scenario obtain 26,000 monthly completed appointments?
+
+**A:** It assumes 25 clinics, 40 completed appointments per clinic-day and 26 operating days: 25 × 40 × 26. It does not count cancellations or prove that real clinics exist.
+
+**Q:** Why does the model's 0.69 requests/second average not demonstrate enough capacity?
+
+**A:** It spreads the assumed 20,000 daily requests over eight hours. Concentrating 30% into 30 minutes gives 3.33 requests/second, and the proposed brief stress burst is 33.3. Handler cost, concurrency, dataset and shared database work still need measurement.
+
+**Q:** Why can the queue's two-second poll setting undermine a fast burst-completion goal?
+
+**A:** One idle job-name lane starts at most roughly one job per two seconds in the idealized model. Starting 1,000 jobs takes about 33 minutes even before execution overhead. Other names and instances change capacity but do not prove safe repeated effects.
+
+**Q:** Is the outbox's 200-row batch every five seconds a measured delivery rate of 40 events/second?
+
+**A:** No. It is a theoretical selection-rate calculation from settings. Dispatch, lock holding, downstream work and asynchronous-listener acknowledgment affect actual outcomes.
+
+**Q:** How would you explain the invented 800-to-350 ms p95 example?
+
+**A:** The absolute decrease is 450 ms and the relative decrease is 56.25% of the 800 ms baseline. I would explicitly call it a synthetic example. An actual claim needs comparable endpoint, load, dataset, cache conditions, deployment and request distributions.
+
+**Q:** Can per-clinic p95 values simply be averaged into a platform p95?
+
+**A:** No. The combined quantile must represent eligible pooled observations or compatible mergeable distributions; averages of quantiles lose the distribution and population weighting.
+
+**Q:** Why cannot a 90-second reduction in median booking time establish 650 saved staff-hours?
+
+**A:** Total labor depends on mean task time and actual task counts. The chapter's 650-hour example separately assumes a 90-second mean saving over 26,000 tasks. Median differences do not justify that total.
+
+**Q:** What does 50,960 out of 52,000 messages mean in the example?
+
+**A:** An invented 98% delivery fraction within 24 hours of each eligible message intent, if those are unique eligible logical messages with provider delivery receipts. Enqueue success and provider acceptance are earlier states, and retries must not inflate the denominator.
+
+**Q:** Can 5,200 estimated payment attempts serve as the denominator for captured-payment reconciliation?
+
+**A:** No. Failed or abandoned attempts need not produce captured payments. The synthetic reconciliation example independently assumes 5,200 eligible captured payments, of which 5,174 are matched within five minutes of capture. Actual provider records must establish that population.
+
+**Q:** What is the time-based budget for a proposed 99.9% availability target over 30 days?
+
+**A:** 43.2 minutes unavailable: 30 × 24 × 60 × 0.001. It is a proposed time-based target, not an observed uptime claim or a substitute for a request-based error budget.
+
+**Q:** What must accompany a PDF-completion p95 under 60 seconds?
+
+**A:** Durable enqueue and artifact-availability timestamps, workload and observation window, plus outstanding work and terminal failure counts. Measuring only completed jobs can hide missing or indefinitely stuck work.
+
+**Q:** Why does zero unauthorized effects in a fixture not mean the product has never leaked data?
+
+**A:** The result covers the exercised matrix of tenants, roles, queries and failure paths. It cannot establish unobserved production history or every possible access path; database privilege and scope wiring remain important.
+
+**Q:** What distinguishes RPO from RTO in the proposed restore exercise?
+
+**A:** RPO bounds the accepted data-loss interval; RTO bounds time to verified restoration. A backup configuration supports neither an executed recovery-time claim nor proof of restored integrity by itself.
+
+**Q:** How should I describe the scenario in a system-design interview?
+
+**A:** “Assuming 25 clinics completing 40 appointments on 26 operating days, I model 26,000 monthly visits, then test bursts, tenant isolation and effect recovery separately.” Keep the assumption explicit rather than presenting adoption as personal operating history.
+
+**Q:** When can an invented improvement be moved into the resume?
+
+**A:** It cannot be moved as an achievement. Replace it with an actual measurement or documented reasonable estimate, record personal contribution, and preserve whether the result came from production, a pilot or a controlled benchmark.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

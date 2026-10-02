@@ -2,14 +2,14 @@
 
 > **Project-specific deep-dives and interview preparation.** Each subfolder covers one real project with architecture decisions, code evidence, failure modes, and interview scripts.
 
-[![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-24-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
 
 ## Read the Operation, Then Defend the Decision
 
-Start with the [Docita learning stages](docita/INDEX.md): architecture and identity, durable work and payments, domain invariants, then deployment and integrations. The category keeps existing chapter IDs and puts [revision](docita/REVISION.md) after learning.
+Start with the [Docita learning stages](docita/INDEX.md): architecture and identity, durable work and payments, domain invariants, then deployment and integrations. Then use the [hypothetical 25-clinic workload model](docita/23-hypothetical-clinic-metrics.md) to practice metric calculations and measurement design. The category keeps existing chapter IDs and puts [revision](docita/REVISION.md) after learning.
 
 For interview preparation, choose one relevant operation and trace its inputs, permissions, state changes and failure boundaries. Then use:
 

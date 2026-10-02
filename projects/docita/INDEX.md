@@ -2,7 +2,7 @@
 
 > Source-backed implementation assessments: what works, where the boundaries fail, and the recommended design with evidence needed to accept it.
 
-[![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-24-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
@@ -44,6 +44,10 @@ Start with one operation and trace identity, state and failure boundaries. These
 4. [ABDM integration](17-abdm-integration.md) — consent and asynchronous callbacks.
 5. [Smaller domains](21-long-tail-domains.md) — reminder claims, webhook trust, reversible leave and user lifecycle.
 6. [What I'd do differently](22-what-id-do-differently.md) — evaluate improvements after understanding the cases.
+
+### Stage 5 — Model Workload and Define Outcome Evidence
+
+Read [the hypothetical 25-clinic metrics scenario](23-hypothetical-clinic-metrics.md). It calculates workload, illustrates business and operational metrics, and maps measurement plans to all 22 implementation cases. Its invented figures are study assumptions, not customer adoption or achieved resume results.
 
 ### Revision, Then Interview Practice
 

@@ -47,9 +47,9 @@ Distinguish a dependency outage from a stuck process and show why the two produc
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — proves liveness for real (on Fly.io, not Kubernetes).
 
 | Topic | Docita evidence |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| Health endpoints | `shared/common/controllers/health-check.controller.ts` + `monitoring/health.service.ts`, `monitoring/health/prisma.health.ts` |
-| Orchestrator probes | Fly `[checks.health]` hits `/api/health/live` every 15s with a 240s deploy grace period (`fly.toml`) |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Health endpoints | `shared/common/controllers/health-check.controller.ts` + `apps/api/src/shared/modules/monitoring/monitoring/health.service.ts`, `apps/api/src/shared/modules/monitoring/monitoring/health/prisma.health.ts` |
+| Orchestrator probes | Fly `[[http_service.checks]]` requests `/api/health/live` every 15s, with a 5s timeout and 30s grace in the inspected `fly.toml` |
 | Liveness vs DB readiness | Live probe kept separate from the Prisma health indicator so a DB blip doesn't kill the machine |
-| Scheduler lifecycle | `ENABLE_SCHEDULERS=false` on the API + `cron-heartbeat.ts` in the worker prevent double-running jobs |
-| Suspend/resume lifecycle | ADR 0011: `auto_stop_machines='suspend'` off-hours, auto-start on request |
+| Scheduler lifecycle | API scheduler disablement separates process roles; heartbeat records runs without preventing concurrent worker execution |
+| Suspend/resume lifecycle | `fly.toml` sets suspend, auto-start and min_machines_running=0; this permits cold/resume latency and does not guarantee a warm API |

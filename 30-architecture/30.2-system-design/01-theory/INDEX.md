@@ -86,12 +86,12 @@ Trace a partition, timeout and retry through a chosen design; state the exact in
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — actually implements this theory.
 
 | Topic | Docita evidence |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Rate limiting | `shared/modules/tenant-rate-limit/*` (guard + service + repository), plus `ip-rate-limit.service.ts`, `user-rate-limit.service.ts`, `rate-limit.interceptor.ts` |
-| Queues & DLQ | `queue/postgres-queue.service.ts` + `dlq-replay.scheduler.ts`/`dlq.controller.ts`; ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
+| Queues & DLQ | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `dlq-replay.scheduler.ts`/`dlq.controller.ts`; ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
 | Distributed locks | `shared/common/utils/postgres-advisory-lock.ts` |
-| Consensus / leader election | `schedule/cron-heartbeat.ts` + advisory locks for single-flight crons; `ENABLE_SCHEDULERS=false` on the API keeps cron in the worker |
-| Backpressure | `extensions/query-budget.extension.ts`; Fly-level concurrency caps (`soft_limit 60 / hard_limit 100`) in `fly.toml` |
+| Consensus / leader election | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` records runs, not ownership; selective advisory-lock callers and API scheduler disablement are separate controls |
+| Backpressure | `apps/api/src/shared/common/extensions/query-budget.extension.ts`; Fly-level concurrency caps (`soft_limit 60 / hard_limit 100`) in `fly.toml` |
 | Failure modes & resilience | `ops-alert.service.ts` + listener; runbooks in `docs/operations/playbooks/*` (razorpay outage, DB exhaustion, queue backlog) |
 
-_Capacity planning and multi-region: no direct docita implementation yet._ The network-stack chapters (TCP/UDP, DNS, TLS) stay conceptual here — nearest real anchors are `fetch-with-timeout.ts` (every outbound call budgeted) and Cloudflare edge termination in front of the API, which is where DNS and TLS actually terminate for docita.
+_Capacity planning and multi-region: no direct docita implementation yet._ The network-stack chapters (TCP/UDP, DNS, TLS) stay conceptual here — nearest real anchors are `fetch-with-timeout.ts` for calls using that helper and the configured Fly/Cloudflare hosting boundaries. Verify actual DNS, TLS and egress paths rather than inferring universal coverage.

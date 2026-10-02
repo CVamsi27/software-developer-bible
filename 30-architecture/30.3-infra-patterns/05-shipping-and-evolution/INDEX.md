@@ -53,9 +53,9 @@ Describe a reversible release, an evidence-backed debt decision and an expiry pa
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — ships and evolves for real.
 
 | Topic | Docita evidence |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `services/feature-flag.service.ts` |
-| Zero-downtime releases | Fly health-gated deploys (`grace_period 240s`), `worker-canary-deploy.sh`, release-evidence docs in `docs/operations/releases/*` |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `apps/api/src/shared/modules/services/feature-flag.service.ts` |
+| Zero-downtime releases | Fly API health check uses a 30s grace period; worker canary startup is not a business-operation probe. Release evidence must establish compatibility and recovery, not merely successful startup |
 | Safe schema evolution | Migration CI workflow + gates: `check-migration-safety.mjs`, `check-migration-reversibility.mjs` |
-| Cost / FinOps | ADR 0011 suspend-to-zero off-hours + scheduled capacity via `scale-api-hours.yml`; single 2GB machine by design |
-| Data retention | `compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md)) |
+| Cost / FinOps | Inspected API configuration uses a 512MB shared VM, suspend/auto-start and zero minimum machines. A workflow file does not prove scheduled capacity changes are currently enabled |
+| Data retention | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md)) |

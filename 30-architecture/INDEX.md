@@ -59,7 +59,8 @@ The Design Patterns section is now organized by the **Gang of Four classificatio
 
 ## Docita Anchor
 
-Every category INDEX in this stack ends with a **Docita Anchor** section mapping its topics to [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo). In short: design patterns are real there (strategy registries, FHIR builders, template-method PDF pipeline, facades, repository + DI, hexagonal ports/adapters, an ACL domain around India's ABDM API); system-design theory is real (tenant rate limiting, Postgres queue with DLQ, advisory-lock leader election, transactional outbox); and the hospital-management case study is not an analogy — it is the product itself. Where docita has no counterpart (event sourcing, saga, capacity planning), the anchors say so plainly instead of pretending.
+Category indexes map concepts to Docita source: strategy registries, builders, facades, repository ports, rate limiting, PostgreSQL queues and outbox delivery. Use the [Docita cases](../projects/docita/INDEX.md) to trace the current implementation and its limitations. Heartbeat telemetry records scheduler activity; it is not leader election. A source anchor locates a mechanism rather than proving deployment, complete enforcement or a business result.
+
 ---
 
 [← Previous: Backend Stack](../20-backend/INDEX.md) · [Next: Platform Stack →](../40-platform/INDEX.md)

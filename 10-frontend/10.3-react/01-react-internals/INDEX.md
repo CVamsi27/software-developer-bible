@@ -32,9 +32,9 @@ Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
 | Topic in this category | Docita evidence |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Hooks lifecycle & effect cleanup | `packages/hooks/src/use-interval.ts` - interval cleared on unmount/dep change; ref keeps latest callback |
-| StrictMode & root mounting | `apps/app/src/main.tsx` - `createRoot` + `<StrictMode>` wrapper (the double-invoke environment) |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Hooks lifecycle & effect cleanup | `packages/hooks/src/use-mounted.ts` — effect schedules a timer and returns clearTimeout cleanup |
+| StrictMode & root mounting | `apps/app/src/main.tsx` — createRoot and StrictMode; extra development checks do not mean every function runs twice in production |
 
 ---
 

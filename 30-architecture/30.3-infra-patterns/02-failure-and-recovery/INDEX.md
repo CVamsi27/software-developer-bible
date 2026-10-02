@@ -60,5 +60,5 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Idempotency keys | Full module: `shared/modules/idempotency/*` (interceptor + service + repository + `@RequiresIdempotency` decorator); CI gate `check-job-idempotency.mjs` |
 | Retries | `shared/common/interceptors/prisma-retry.interceptor.ts` |
 | Circuit breaker | `shared/common/utils/circuit-breaker.registry.ts` + `circuit-breaker.ts` |
-| DLQ & recovery | `queue/dlq-replay.scheduler.ts` + `dlq.controller.ts` behind the Postgres queue |
+| DLQ & recovery | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` + `dlq.controller.ts` behind the Postgres queue |
 | Incident playbooks | `docs/operations/playbooks/*`: razorpay-outage, db-connection-exhaustion, openai-rate-limit, pdf-queue-backlog, cloudflare-upstream-timeout |

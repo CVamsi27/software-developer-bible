@@ -61,15 +61,15 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 
 | Topic | Docita evidence |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - decision matrix: Postgres-as-queue at ~0.4 jobs/sec vs Redis/Kafka ops overhead; the 20.9.01 "when not to add a broker" call, shipped |
-| Transactional enqueue | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` - job enqueued in the same Prisma transaction as the business write |
-| Idempotent enqueue | idempotency-key dedup on submit - recent completed jobs short-circuit duplicates |
-| Bounded retries → DLQ | max 5 attempts with `delayedUntil` backoff → `DEAD_LETTERED` status for manual inspection |
+| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - evaluate PostgreSQL queue tradeoffs from measured workload; no verified jobs/sec result is implied |
+| Transactional enqueue | Ordinary PostgresQueueService.enqueue creates a job in its own operation; atomic business/job intent requires an explicitly shared transaction or an outbox at the actual call site |
+| Idempotent enqueue | name/key lookup for completed jobs within 24 hours; it does not atomically suppress concurrent or still-running submissions |
+| Bounded retries → DLQ | Default maxAttempts=5 can be overridden; delayedUntil backoff and terminal failure preserve local attempt state, not external exactly-once effects |
 | Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - concurrent claims select distinct locked rows; recovery/retry can still duplicate effects, so idempotent execution is required |
-| Stale-worker recovery | jobs stuck `ACTIVE` >10 min re-queued by the recovery pass - the crash-between-claim-and-ack hole, closed |
+| Stale-worker recovery | ACTIVE jobs older than ten minutes are recovered with a delay; an older worker can still finish later, so ownership fencing and effect idempotency remain separate concerns |
 | Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit |
 
-Docita ships **zero Kafka/RabbitMQ - deliberately.** The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). If load ever demands a broker, the outbox relay's publish target changes - the contracts (envelope, idempotency keys, DLQ semantics) do not.
+Docita ships **zero Kafka/RabbitMQ - deliberately.** The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery/replay and consumer contracts; replacing a publish target alone is not enough.
 
 ## Navigation
 

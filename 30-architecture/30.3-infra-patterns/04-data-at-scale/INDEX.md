@@ -51,9 +51,9 @@ Explain which bottleneck each added component removes and how consistency, autho
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — manages data growth for real.
 
 | Topic | Docita evidence |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backups | `shared/modules/database/database-backup.service.ts` (+ spec) |
-| Retention & archival | `compliance/data-retention.scheduler.ts` (+ spec); DPDP compliance docs in `docs/compliance/*` |
+| Retention & archival | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` (+ spec); DPDP compliance docs in `docs/compliance/*` |
 | Query hygiene at scale | `slow-query-logging.service.ts`, `database-index-optimization.service.ts`, connection pooling service |
 | Scaling posture | Deliberate single-region Postgres (ADR 0006) + read-base repositories (`prisma-read-base.ts`) |
-| Sharding / pipelines / replicas | _No direct docita implementation yet._ |
+| Sharding and replicas | No sharding implementation is established here. Read-routing abstractions are not proof of an enabled production replica; verify datasource configuration, lag and read-after-write behavior. |

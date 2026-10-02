@@ -31,7 +31,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 
 | Topic in this category | Docita evidence |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| React Router routes & guards | `apps/app/src/App.tsx` - ~108 `<Route>` declarations across layout groups with protected/public route wrappers and Suspense |
+| React Router routes & guards | `apps/app/src/App.tsx` - route declarations across layout groups with protected/public route wrappers and Suspense |
 | useDeferredValue | `apps/app/src/features/medical-coding/components/CodingQueuePageContent.tsx` - deferred search value over debounced input |
 | Router-agnostic history provider | `packages/hooks/src/create-navigation-history-provider.ts` - factory decoupled from react-router via injected pathname hook |
 

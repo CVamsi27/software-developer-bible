@@ -31,12 +31,12 @@ useState → useEffect → useMemo / useCallback → useRef → Context API.
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
 
-| Topic in this category        | Docita evidence                                                                                       |                                          |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| useState & functional updates | `packages/hooks/src/use-toggle.ts` - `setState(prev => !prev)` tuple-return hook                      |                                          |
-| useEffect sync & cleanup      | `packages/hooks/src/use-local-storage.ts` - state synced both ways with `localStorage` inside effects |                                          |
-| useRef for DOM/mutable values | `packages/hooks/src/use-click-outside.ts` - ref containment check against outside pointer events      |                                          |
-| Context API                   | `apps/app/src/lib/auth/auth-context-inner.ts` - `createContext<AuthContextType \                      | undefined>` split from its provider file |
+| Topic in this category | Docita evidence |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| useState and functional updates | `packages/hooks/src/use-toggle.ts` — updater receives previous state |
+| useEffect synchronization | `packages/hooks/src/use-local-storage.ts` — inspect initialization, persistence and subscription behavior separately |
+| useRef for DOM values | `packages/hooks/src/use-click-outside.ts` — containment check and listener cleanup |
+| Context API | `apps/app/src/lib/auth/auth-context-inner.ts` — context may contain AuthContextType or undefined; the provider and consumer establish its use |
 
 ---
 

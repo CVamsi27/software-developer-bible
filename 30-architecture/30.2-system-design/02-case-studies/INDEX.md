@@ -104,7 +104,7 @@ Where [docita](https://github.com/CVamsi27/docita) meets these case studies — 
 | Topic | Docita evidence |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Hospital Management = the product | `apps/api/src/domains/*`: appointments, patients, prescriptions, billing, inventory, IPD, lab-portal, insurance-claims — this case study is my day job |
-| Notification Service | `messaging/notification-orchestrator.service.ts` + `channels/{email,sms,whatsapp}.channel.ts` + reminders domain |
+| Notification Service | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` + `channels/{email,sms,whatsapp}.channel.ts` + reminders domain |
 | Payment Gateway | Razorpay webhook signature verification helper, `payment.websocket.gateway.ts`, internal billing service, `razorpay-outage.md` playbook |
-| Workflow Engine | `imports/bulk-import-orchestrator.service.ts` + job processor/query services + DLQ replay scheduler |
+| Workflow Engine | `apps/api/src/shared/modules/imports/bulk-import-orchestrator.service.ts` + job processor/query services + DLQ replay scheduler |
 | URL Shortener, Uber, Twitter, Netflix, etc. | _No direct docita implementation yet._ |

@@ -174,9 +174,9 @@ Trace one request or transition across collaborators and identify who owns order
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — collaborates for real.
 
 | Topic | Docita evidence |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Strategy | Import strategies (`imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
-| Template Method | `document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `queue/base-pdf.processor.ts`, `search-strategy.base.ts` |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Strategy | Import strategies (`apps/api/src/shared/modules/imports/strategies/patient-import.strategy.ts`…) and search strategies (`search/strategies/*-search.strategy.ts`) behind registries |
+| Template Method | `apps/api/src/shared/modules/document-generation/pdf/base-pdf.service.ts`, `websockets/base-websocket.gateway.ts`, `apps/api/src/shared/modules/queue/base-pdf.processor.ts`, `search-strategy.base.ts` |
 | Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, ADR 0010) |
 | Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue/follow-up twins); queue jobs as command objects |
 | Chain of Responsibility | Nest guard→interceptor→pipe request pipeline (tenant-context, CSRF, rate-limit) |

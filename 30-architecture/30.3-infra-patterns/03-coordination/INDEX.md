@@ -1,7 +1,7 @@
 # Coordination
 
 > **Study time:** ≈ 8 min of reading (2 files, ~4 min average).
-> **1 file.** Who runs the cron? Who processes the queue? When multiple instances of a service share work, exactly one must lead — and every instance must agree on who. Leader election and consensus answer that question safely.
+> **1 file.** Who runs the cron? Who processes the queue? Multiple workers can share a queue through atomic claims; some tasks instead require a single owner. Learn which invariant needs coordination and how stale owners are rejected.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Coordination-orange)](../INDEX.md)
@@ -44,13 +44,13 @@ Show a paused owner resuming after a successor acquires the lease and explain ex
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — keeps scheduled work single-flight for real.
+The inspected Docita source separates scheduler telemetry, process placement and selective coordination. These are different mechanisms; none proves every cron is single-flight.
 
 | Topic | Docita evidence |
-| ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Distributed locks (Postgres advisory) | `shared/common/utils/postgres-advisory-lock.ts` |
-| Single-cron leader election | `shared/modules/schedule/cron-heartbeat.ts` — heartbeat + advisory locks so exactly one instance runs each cron |
-| Process-level coordination | API ships `ENABLE_SCHEDULERS=false`; crons live in the dedicated worker app |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Distributed locks (Postgres advisory) | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` — a transaction-scoped try-lock for callers using this helper, not a universal scheduler lock |
+| Scheduler telemetry | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` — records success/failure; it does not acquire a lock or elect a leader |
+| Process-level coordination | `fly.toml` disables API schedulers; worker placement does not serialize multiple worker replicas |
 | Transactional outbox | `shared/modules/outbox/outbox-relay.scheduler.ts` + ADR 0010; CI gate `check-event-emit-via-outbox.mjs` |
 
-_Fencing tokens / Raft-style consensus: no direct docita implementation yet._
+The helper holds a PostgreSQL transaction-scoped lock while awaiting its callback; its timeout argument is unused and the callback does not receive the transaction. Inspect actual callers before claiming protected database writes, fencing or bounded execution. See [async processing](../../../projects/docita/03-async-processing.md) for queue/outbox boundaries.

@@ -1,9 +1,9 @@
 # Architecture & Scaling
 
-> **Study time:** ≈ 49 min of reading (2 files, ~24 min average).
-> **2 files.** Real-time system design: pub/sub topologies, presence, state sync — then the concrete scaling patterns (sticky sessions, Redis adapter, sharding) that keep connections alive past one node.
+> **Study time:** ≈ 47 min of reading (3 files, ~16 min average).
+> **3 files.** Real-time system design: pub/sub topologies, presence, state sync — then the concrete scaling patterns (sticky sessions, Redis adapter, sharding) that keep connections alive past one node.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ Transports are solved problems; scale is where real-time systems die. A single N
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 36 min |
-| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 13 min |
+| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 34 min |
+| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 11 min |
 
 ---
 
@@ -60,3 +60,7 @@ Interview favorite: "How do you broadcast to a room whose members are spread acr
 | Connection auth | `ws-jwt-auth.guard.ts` (in `shared/modules/auth/auth/`) + base-gateway handshake verification |
 | Per-connection rate limiting | `base-websocket.gateway.ts` rate-limit map + error envelope |
 | Scaling honesty | `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary documented; **no Redis pub/sub adapter yet** — sticky sessions alone called out as insufficient, adoption deferred until a second replica is real |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

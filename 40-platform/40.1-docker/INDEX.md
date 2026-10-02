@@ -1,9 +1,9 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 31 m of reading (10 files, ~15 min average).
-> **10 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
+> **Study time:** ≈ 2 h 21 m of reading (11 files, ~13 min average).
+> **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -28,8 +28,8 @@ What Docker is and how it runs.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | 13 min |
-| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | 15 min |
+| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | 12 min |
+| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | 14 min |
 
 ---
 
@@ -39,8 +39,8 @@ Production workflows.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | 21 min |
-| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | 13 min |
+| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | 19 min |
+| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | 12 min |
 
 ---
 
@@ -48,11 +48,11 @@ Production workflows.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | 10 min |
+| 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | 9 min |
 | 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | 10 min |
-| 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | 16 min |
-| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | 13 min |
-| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | 13 min |
+| 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | 14 min |
+| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | 12 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | 12 min |
 
 ---
 
@@ -60,7 +60,7 @@ Production workflows.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 10 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 27 min |
+| 10 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | 25 min |
 
 ---
 
@@ -152,3 +152,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Compose for local/e2e | `docker-compose.yml`: API service + `postgres:15-alpine`; E2E tests run against this Postgres (`docita_test`) |
 | Image scanning | `.github/workflows/container-scan.yml` scans the built API image |
 | Rootless/runtimes/signing | Not configured — standard Docker runtime, no cosign/SBOM gates |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

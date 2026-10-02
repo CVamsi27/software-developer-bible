@@ -4,7 +4,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](.)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](../INDEX.md)
-[![Files](https://img.shields.io/badge/files-869-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-985-orange)](../INDEX.md)
 
 ---
 
@@ -12,8 +12,8 @@
 
 | Lane | Folder | For | Style | Files |
 | ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----: |
-| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](../81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India product companies, US H1B/STEM-OPT | LeetCode-heavy, 8-12 week intensive, USD 150-400K+ | 22 |
-| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa sponsorship | 36 |
+| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang/](../81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India product companies, US H1B/STEM-OPT | LeetCode-heavy, 8-12 week intensive, USD 150-400K+ | 23 |
+| **Abroad Full-Stack** | [80-lanes-abroad-full-stack/](../80-lanes-abroad-full-stack/INDEX.md) | EU mid-stage product companies — current cluster: **LiveEO · Snke · MVST**, plus n8n, SumUp, Scalable, Tanso | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa sponsorship | 37 |
 
 **Not sure?** Read the [lane decision matrix in abroad-full-stack](../80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes.
 

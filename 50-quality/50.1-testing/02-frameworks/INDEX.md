@@ -1,9 +1,9 @@
 # Testing Frameworks
 
-> **Study time:** ≈ 2 h of reading (4 files, ~30 min average).
-> **4 files.** The runner-tier tools: Jest, Vitest, React Testing Library, and a head-to-head comparison so you can defend a stack choice in an interview.
+> **Study time:** ≈ 36 min of reading (5 files, ~7 min average).
+> **5 files.** The runner-tier tools: Jest, Vitest, React Testing Library, and a head-to-head comparison so you can defend a stack choice in an interview.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,33 +19,19 @@ Picking a framework is a team-level decision with long tail costs (config, plugi
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects — the default ecosystem | 44 min |
-| 02 | [Vitest](50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads | Vite-based projects; faster runs | 15 min |
-| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 50 min |
-| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | 11 min |
+| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Existing Jest suites; configured Node/DOM tests | 9 min |
+| 02 | [Vitest](50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible API, worker threads | Vite-aligned tooling; verify runtime and measured performance | 9 min |
+| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 11 min |
+| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | 5 min |
 
 ---
 
-## Choosing quickly
+## Reading Passes
 
-```text
-Vite-based app? ────────────→ Vitest (Jest-compatible, faster)
-Legacy CRA / big Jest suite? → stay on Jest (migration cost > benefit)
-Testing React components? ──→ + React Testing Library (always)
-E2E? ───────────────────────→ Playwright (not a *unit* framework — see comparison)
-```
-
-The full decision matrix lives in the [comparison chapter](50.1.2.04-testing-frameworks-comparison.md).
-
----
-
-## Common signals in interviews
-
-- "Why did your team choose Vitest over Jest?" — answer with ESM support, speed, config reuse.
-- "RTL vs Enzyme?" — behavior vs implementation; RTL queries by role/text, Enzyme by internals.
-- "What does snapshot testing catch, and what does it miss?"
-
----
+1. **Understand the runner:** read [Jest](50.1.2.01-jest.md) for discovery, environment, awaited assertions and mock lifecycle. Trace the controlled notification failure before comparing APIs.
+2. **Reuse the toolchain:** read [Vitest](50.1.2.02-vitest.md) for module/runtime choices, a bounded retry trace and migration checks. Measure speed on the actual suite.
+3. **Observe the interface:** use [React Testing Library](50.1.2.03-react-testing-library.md) to test behavior through the rendered DOM. Distinguish an emulator from a real browser.
+4. **Choose by boundary:** read [the comparison](50.1.2.04-testing-frameworks-comparison.md), complete [revision](REVISION.md), then practice interview explanations. Node, HTTP integration and browser journeys can require different tools.
 
 ## Cross-References
 
@@ -68,5 +54,9 @@ The full decision matrix lives in the [comparison chapter](50.1.2.04-testing-fra
 | --------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Shared Vitest runner config | `vitest.shared.config.ts` (workspace-wide base config) |
 | Playwright as E2E runner | `apps/app/playwright.config.ts`, `apps/internal/playwright.config.ts`, `apps/landing/playwright.config.ts` |
-| Component tests (RTL-style) | 27 `*.test.tsx` under `packages/ui` |
+| Component tests (RTL-style) | Component test files under `packages/ui` |
 | Visual regression | `packages/ui/tests/visual/status-badge.spec.ts` |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

@@ -1,9 +1,9 @@
 # Optimization & Comparison
 
-> **Study time:** ≈ 46 min of reading (3 files, ~15 min average).
-> **3 files.** Making builds fast and bundles small, shipping assets (CSS/images/fonts) through a real pipeline — then choosing tools with evidence instead of hype.
+> **Study time:** ≈ 36 min of reading (4 files, ~9 min average).
+> **4 files.** Making builds fast and bundles small, shipping assets (CSS/images/fonts) through a real pipeline — then choosing tools with evidence instead of hype.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Optimization-%2364748b)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,9 +19,9 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 16 min |
-| 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | 18 min |
-| 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each | 12 min |
+| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 14 min |
+| 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | 16 min |
+| 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each | 4 min |
 
 ---
 
@@ -49,3 +49,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Duplication budget | `check:duplication` (jscpd, zero clones) in pre-push and release evidence |
 | Size budgets | `scripts/checks/check-file-size-budget.mjs` and `check-worker-size.mjs` |
 | Tree-shaking / bundle analysis | Not separately configured beyond toolchain defaults |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

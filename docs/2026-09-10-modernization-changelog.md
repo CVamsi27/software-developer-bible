@@ -13,7 +13,6 @@
 
 ---
 
-## TL;DR
 
 One user-flagged stale code sample turned into a repo-wide audit that found and
 fixed three classes of rot: **outdated APIs** (`setTimeout` chunking instead of

@@ -6,7 +6,7 @@
 
 # Gate Design Principles — why the verification suite is shaped the way it is
 
-> **TL;DR:** The [gate inventory](verification-gates.md) records *what* each
+> The [gate inventory](verification-gates.md) records *what* each
 > of the 21 gates enforces; the [scripts map](scripts-map.md) records *how to
 > route* around a failure. This doc records the *why*: six constraints of a
 > hand-maintained corpus, the design each constraint forces, and the method —

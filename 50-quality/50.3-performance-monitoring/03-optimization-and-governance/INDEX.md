@@ -1,9 +1,9 @@
 # Optimization & Governance
 
-> **Study time:** ≈ 25 min of reading (2 files, ~12 min average).
-> **2 files.** Turning measurement into action: bundle analysis to find what to cut, and performance budgets so the wins survive contact with feature development.
+> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
+> **3 files.** Turning measurement into action: bundle analysis to find what to cut, and performance budgets so the wins survive contact with feature development.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ One-off optimization decays: every sprint adds bytes. Budgets convert "the site 
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 11 min |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 14 min |
+| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 10 min |
+| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 12 min |
 
 ---
 
@@ -61,3 +61,7 @@ Budget tiers to remember: initial JS, per-route chunks, total CSS, third-party s
 | Budget enforcement scripts (perf / vitals / a11y) | `check-perf-budget.mjs`, `check-web-vitals-budget.mjs`, `check-a11y-budget.mjs` under `scripts/perf/` |
 | Breach alerting | `apps/api/src/shared/modules/monitoring/monitoring/listeners/ops-alert.listener.ts` + `ops-alert.service.ts` |
 | SLOs written down | `docs/operations/SLOS.md` |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

@@ -1,320 +1,140 @@
-# 11 — What I'd Do Differently
+# 22 — Retrospective: Prioritize Invariants Before New Abstractions
 
-> Honest retrospective — what's not perfect, what's tech debt, and what I'd change with hindsight.
+## Definition
 
----
+A technical retrospective compares intended guarantees with current evidence, then selects improvements that close the most consequential gaps. It should explain the problem, proposed change, cost and verification—not invent a failure story or promise that a tool solves it automatically.
 
-## Context
+For Docita, the useful question is which boundary could permit an incorrect tenant operation, money movement, state transition or repeated side effect. Start there before pursuing another architectural layer or developer convenience feature.
 
-Docita was built by a founding engineer (solo + AI-assisted) under startup pressure. Many decisions were "good enough for now" — not "best practice forever." This file documents what I'd change with hindsight, what's tech debt, and what I'd prioritize next.
+This is an improvement framework informed by case-source review on **2 October 2026**, not a claim that the proposed changes have been implemented or that all project tests and production outcomes have been reverified.
 
----
+## First Principles
 
-## 1. Event-Driven Cross-Domain Communication
+Engineering time is limited, and a correct-looking local operation can fail when requests race, versions overlap or a process crashes. An improvement earns priority when it closes a concrete invariant gap with observable verification.
 
-### Current State
+Prioritize consequence and likelihood, then consider implementation and operational cost. More layers, events, dashboards or caching do not inherently improve correctness.
 
-Cross-domain queries use port interfaces:
+## Why Begin With Identity and Financial Boundaries?
 
-```typescript
-// Billing needs patient data → uses PatientPersistencePort
-@Inject(PATIENT_PERSISTENCE_PORT)
-private readonly patientPort: PatientPersistencePort;
-```
+The reviewed [tenant case](02-multi-tenancy-rls.md) distinguishes policy existence from actual transaction, flag and role enforcement. The [payment case](04-payment-flows.md) distinguishes naming two merchant tokens from resolving different credentials. These boundaries affect what data or money an operation can reach.
 
-### What I'd Do Differently
+Before relying on their guarantees, verify the complete operation with the real database role, flags, query path and merchant identity. A source boundary checker or unit mock cannot substitute for that evidence.
 
-Use domain events for cross-domain communication:
+## How to Turn a Gap Into a Verifiable Improvement
 
-```typescript
-// Instead of billing querying patient directly
-// Patient domain emits: patient.created, patient.updated
-// Billing subscribes and maintains a local read model
-```
+| Step | Output |
+| ------------------------------ | ----------------------------------------------------- |
+| Identify an invariant | One statement of what must remain true |
+| Reconstruct a counterexample | A race, crash or rollout trace that threatens it |
+| Select an enforcing boundary | Constraint, scoped transaction, claim or protocol |
+| Define meaningful verification | Controlled interleaving and real integration checks |
+| Plan compatible rollout | Old/new versions and existing data/work remain usable |
+| Observe and recover | Signals and actions for unresolved outcomes |
 
-**Why:** Ports create implicit coupling — billing "knows" about patient's internal structure. Events decouple domains completely. The trade-off is eventual consistency, but for billing (not real-time), this is fine.
+For example, “one upload session has one concurrent owner” is an invariant. Two callers reading unused state before either updates it is the counterexample. An atomic claim and owner-aware completion are proposed mechanisms. Repeat the controlled race, plus failure after claim, to assess the change; a new guard decorator alone does not close it.
 
-**Priority:** Medium. Current approach works but doesn't scale to 50+ domains.
+## Improvements to Evaluate First
 
----
+### Tenant Isolation and Cross-Tenant Integration Tests
 
-## 2. Event Schema Versioning
+Combine policy tests with application-routing tests. Use a non-owner role without bypass privileges, enable the intended policy settings on the same transaction, seed two tenants and test both allowed and forbidden reads/writes. Include raw queries, pooled connection reuse, concurrent operations, nested transactions and workers.
 
-### Current State
+pgTAP can help express database assertions, but adopting it is optional; the important part is exercising the actual enforcement boundary. The old test that merely set a clinic ID and queried a table did not establish the enable flag, role or transaction required by the current implementation. The same is true of an application test that creates data but never installs trusted tenant scope.
 
-Outbox events don't have version numbers:
+### Merchant Resolution and Payment Recovery
 
-```typescript
-await this.outbox.append(tx, {
-  eventName: 'appointment.created',
-  payload: appointment,  // No version field
-});
-```
+Resolve a patient payment through the clinic's authorized provider configuration and reject inappropriate fallback credentials. Validate expected merchant, amount, currency and business state. Test concurrent duplicate deliveries and equivalent event shapes.
 
-### What I'd Do Differently
+If ingress returns success before local processing finishes, establish durable replay responsibility. Provider abstractions already exist; making them preserve ownership and semantics is more valuable than introducing another interface with generic method names.
 
-Add a `schemaVersion` field to every event:
+### Claim Ownership and Effect Acknowledgments
 
-```typescript
-await this.outbox.append(tx, {
-  eventName: 'appointment.created',
-  schemaVersion: 2,
-  payload: appointment,
-});
-```
+For jobs, uploads and status changes, compare the expected persisted state or claim generation at the write boundary. Distinguish a stale timeout from proof that the original worker stopped.
 
-**Why:** A breaking change in event payload requires coordinated consumer updates. Without versioning, consumers can't handle old and new formats simultaneously. During migration, old events in the outbox would break new consumers.
+For outbox delivery, define what processed means: local dispatch, durable handoff, consumer completion or final provider effect. Test failures after each boundary. A synchronous emitter result is insufficient evidence of async consumer completion; no queue design can promise success after exhausted retries without recovery.
 
-**Priority:** High. This is a ticking time bomb.
+### Event Contract Evolution
 
----
+Version events whose payloads must survive changes, and give consumers explicit handling for supported versions and unsupported events. A version number is only a discriminator: producers, validation, retained-event migration, replay and mixed-version consumers still need compatible behavior.
 
-## 3. Automated RLS Policy Testing
+Keep payloads minimal and tenant-aware. Do not place a full appointment or patient record into an event simply to avoid a lookup. Determine whether the consumer needs current state or the historical facts at emission time.
 
-### Current State
+## Improvements That Need Measurement and Trade-Offs
 
-RLS policies are tested manually. We rely on the 7-layer defense and CI boundary checks.
+### Cross-Domain Events and Read Models
 
-### What I'd Do Differently
+Ports make a synchronous dependency explicit; events introduce dependencies on event contracts and delivery semantics. Events do not completely decouple domains. A local projection can improve independent reads but adds replication lag, repair and consistency rules.
 
-Add `pgTAP` tests that verify RLS policies:
+Use a projection when the reader can tolerate its freshness and replay boundaries. An invoice may require correct current or legally retained identity data; “billing is not real-time” is not sufficient justification. Preserve synchronous queries where their consistency and operational simplicity are useful.
 
-```sql
--- Test: Clinic A cannot see Clinic B's patients
-SELECT set_config('app.current_clinic_id', 'clinic-a', true);
-SELECT * FROM "Patient" WHERE "clinicId" = 'clinic-b';
--- Should return 0 rows
-```
+### Build Caching
 
-**Why:** Manual testing is incomplete. A `pgTAP` test suite would catch policy regressions automatically.
+Turborepo is already configured in the inspected monorepo. The next question is whether tasks declare complete inputs, outputs and relevant environment settings, and whether cached results remain valid. Do not propose a migration already completed or promise a tenfold speedup without measurements.
 
-**Priority:** High. RLS is the last line of defense — it must be tested.
+Measure cold builds, warm builds and representative shared-package changes. A cache hit proves reuse under the configured key, not that omitted inputs could not invalidate its output.
 
----
+### Correlation and Privacy-Aware Observability
 
-## 4. Build Caching with Turborepo
+Trace a request through durable intent, worker attempt and provider outcome. Retain identifiers that connect those operations while distinguishing a new attempt from a new business operation. Verify what the current logger already supplies before claiming correlation is absent.
 
-### Current State
+Do not indiscriminately attach patient data or secrets to every log. Redaction, sampling, retention and access control are part of the tracing decision. Correlation helps diagnose failures but does not prevent them.
 
-Full rebuild takes ~3 minutes. No incremental builds.
+### Connection-Pool Capacity
 
-### What I'd Do Differently
+Inspect the installed Prisma version and driver-adapter configuration rather than copying an older client constructor. Calculate demand across API replicas, workers, deploy overlap and administrative clients, and leave database capacity for other work.
 
-Add Turborepo for build caching and parallelization:
+Measure acquisition wait, query/transaction duration and saturation before choosing a limit. Increasing pool size can overload the database; decreasing it can delay callers. Connection pooling is capacity management, not a universal performance upgrade.
 
-```json
-// turbo.json
-{
-  "pipeline": {
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
-    "test": { "dependsOn": ["build"] }
-  }
-}
-```
+### Health and Business Signals
 
-**Why:** Turborepo caches build outputs. If `packages/types` hasn't changed, apps that depend on it skip the rebuild. Estimated build time reduction: 3 minutes → ~30 seconds.
+Separate process liveness, readiness to accept work and successful business progress. Observe database failures, event-loop pressure, queue age, outbox retries and scheduler heartbeats as appropriate.
 
-**Priority:** Medium. Developer experience improvement, not a product feature.
+Calling every external provider from every health probe can amplify an outage or unnecessarily remove healthy application capacity. Define which dependencies justify readiness failure and which should instead produce alerts or degraded operation. The [deployment case](10-deployment-infrastructure.md) distinguishes worker machine state from successful jobs.
 
----
+### Form Generation From Schemas
 
-## 5. Payment Provider Abstraction
+Shared schemas already provide inferred types; adding a field does not necessarily require maintaining an independent TypeScript interface. Automatic form generation can help repetitive forms, but validation shape does not determine accessible labels, grouping, conditional workflow, widgets or clinical meaning.
 
-### Current State
+Prefer selective generation with explicit UI metadata and overrides. Verify accessibility, errors and user flow; do not replace a understandable form with a schema dump to reduce line count.
 
-Tightly coupled to Razorpay:
+## Real-World Decisions
 
-```typescript
-// Direct Razorpay adapter usage
-@Inject(RAZORPAY_CLIENT)
-private readonly razorpay: RazorpayClient;
-```
+| Improvement | Prioritize when | Evidence before declaring success |
+| ------------------------------------- | ---------------------------------------------- | ------------------------------------------------------- |
+| Tenant-routing and policy enforcement | A query can escape intended scope | Allowed/denied integration matrix with real roles |
+| Merchant resolution and payment state | Identity or duplicate handling is ambiguous | Test merchant evidence and concurrent/crash scenarios |
+| Claim and expected-state checks | Read-then-write races exist | Controlled interleavings and recovery tests |
+| Event evolution and acknowledgement | Existing work must survive version changes | Mixed-version replay and consumer failure checks |
+| Health/correlation | Recovery is slow or failures hard to locate | Detectable injected failure and actionable signals |
+| Pool/cache tuning | Measurements show contention or redundant work | Representative before/after performance and correctness |
+| Read models/form generation | Repeated work warrants added machinery | Consistency, repair or UX evidence |
 
-### What I'd Do Differently
+Effort and priority labels should be derived from the actual dependency and rollout work. A schema column may be easy to add while its safe migration and consumer adoption remain substantial.
 
-Abstract behind a `PaymentProvider` interface:
+## Mistakes
 
-```typescript
-interface PaymentProvider {
-  createOrder(amount, currency): Promise<Order>;
-  capturePayment(orderId): Promise<Payment>;
-  createRefund(paymentId, amount): Promise<Refund>;
-}
-```
+- Repeating zero-coupling, zero-drift, zero-leak or zero-lost-event claims as retrospective evidence.
+- Treating events as a complete replacement for synchronous domain dependencies.
+- Claiming a new version field prevents all migration failures.
+- Proposing tools already present in the repository.
+- Publishing predicted build or operational improvements as measured results.
+- Equating more health checks with better availability.
 
-**Why:** If Razorpay raises fees or has an outage, switching providers requires rewriting every payment call. An abstraction allows swapping providers with minimal code changes.
+## Best Practices
 
-**Priority:** Low. Razorpay is dominant in India. Switching is unlikely in the near term.
+Take one invariant through the counterexample, proposed enforcement, test and rollout. Keep the current implementation separate from the proposed change. Recheck source and operational evidence before using a retrospective in an interview, and explain a limitation precisely instead of memorizing a polished success narrative.
 
----
+## Summary
 
-## 6. Structured Logging with Correlation IDs
+Prioritize concrete identity, money and concurrent-state gaps, then verify delivery and rollout boundaries. Broader abstractions and tuning are useful when measurements and operational needs justify their cost. The strongest retrospective names both what a change enforces and what it leaves unresolved.
 
-### Current State
+## See Also
 
-Logging uses `nestjs-pino` but without consistent correlation IDs:
+- [Category revision](REVISION.md) — reconstruct mechanisms after completing the cases.
+- [Case-study index](INDEX.md) — the learning sequence.
+- [Tenant isolation](02-multi-tenancy-rls.md), [payments](04-payment-flows.md), [workflows](05-clinic-workflows.md) and [uploads](19-documents-and-uploads.md) — reviewed invariants.
+- [Architecture](01-architecture-decisions.md), [async processing](03-async-processing.md) and [deployment](10-deployment-infrastructure.md) — dependencies, acknowledgment and compatibility.
 
-```typescript
-this.logger.log({ action: 'appointment.create', clinicId, patientId });
-```
+## References
 
-### What I'd Do Differently
-
-Add correlation IDs to every log entry:
-
-```typescript
-this.logger.log({
-  action: 'appointment.create',
-  clinicId, patientId,
-  correlationId: getCurrentCorrelationId(),  // From request context
-  traceId: getCurrentTraceId(),              // For distributed tracing
-});
-```
-
-**Why:** When debugging a production issue, you need to trace a request across API → queue → worker → external API. Correlation IDs make this possible.
-
-**Priority:** Medium. Current logging works for single-service debugging but fails for cross-service issues.
-
----
-
-## 7. Frontend Form Generation from Zod Schemas
-
-### Current State
-
-Zod schemas define validation, but form fields are manually written in React:
-
-```tsx
-// Manual form field
-<Input label="First Name" {...register('firstName', { required: true })} />
-```
-
-### What I'd Do Differently
-
-Generate form fields from Zod schemas:
-
-```typescript
-// Given a Zod schema, auto-generate form fields
-const formConfig = zodToForm(createPatientSchema);
-// → [{ name: 'firstName', label: 'First Name', type: 'text', required: true }, ...]
-```
-
-**Why:** Currently, adding a field requires updating 3 places: Zod schema, TypeScript type, and React form. Auto-generation reduces this to 1 place.
-
-**Priority:** Low. Works but verbose.
-
----
-
-## 8. Database Connection Pool Tuning
-
-### Current State
-
-Prisma uses default connection pool settings.
-
-### What I'd Do Differently
-
-Tune the pool based on actual usage:
-
-```typescript
-// packages/db/prisma/index.ts
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: DATABASE_URL,
-      // Tune based on RDS instance type
-    },
-  },
-  // connection_limit: calculated based on RDS max_connections / number of pods
-});
-```
-
-**Why:** Default pool size might be too small (causing connection starvation) or too large (overwhelming RDS). Tuning based on actual usage improves reliability.
-
-**Priority:** Medium. Currently works but might fail under load.
-
----
-
-## 9. Health Check Endpoints
-
-### Current State
-
-Basic health check that returns 200.
-
-### What I'd Do Differently
-
-Comprehensive health checks:
-
-```typescript
-// Check: database connectivity
-// Check: outbox relay lag
-// Check: queue job count
-// Check: external API connectivity (Razorpay, WhatsApp)
-// Check: memory usage
-// Check: event loop lag
-```
-
-**Why:** A 200 response doesn't mean the service is healthy. The database might be down, the outbox might be 10 minutes behind, or memory might be exhausted.
-
-**Priority:** High. Currently, we discover issues from user reports, not monitoring.
-
----
-
-## 10. Comprehensive Integration Test Suite for Multi-Tenancy
-
-### Current State
-
-Multi-tenant isolation is tested manually and via CI boundary checks.
-
-### What I'd Do Differently
-
-Automated test suite that verifies isolation for every model:
-
-```typescript
-// For each Prisma model with clinicId:
-it('Clinic A cannot access Clinic B data via direct query', async () => {
-  const clinicAData = await createTestData('clinic-a');
-  const result = await prisma.$queryRaw`SELECT * FROM "Patient" WHERE "clinicId" = 'clinic-b'`;
-  expect(result).toHaveLength(0);
-});
-```
-
-**Why:** Manual testing catches known scenarios. Automated testing catches regressions from new code.
-
-**Priority:** High. This is the most critical test suite for a multi-tenant healthcare platform.
-
----
-
-## Priority Matrix
-
-| Improvement | Priority | Effort | Impact |
-| ------------------------------- | ---------- | -------- | ------------------------- |
-| Event schema versioning | High | Low | Prevents migration bugs |
-| RLS policy testing (pgTAP) | High | Medium | Prevents data leaks |
-| Health check endpoints | High | Low | Faster incident detection |
-| Multi-tenancy integration tests | High | High | Prevents regressions |
-| Event-driven cross-domain | Medium | High | Better decoupling |
-| Build caching (Turborepo) | Medium | Low | Developer experience |
-| Correlation IDs | Medium | Medium | Better debugging |
-| DB connection pool tuning | Medium | Low | Reliability |
-| Payment provider abstraction | Low | Medium | Future-proofing |
-| Frontend form generation | Low | Medium | Less boilerplate |
-
----
-
-## What I'm Proud Of
-
-Despite the tech debt, certain decisions aged well:
-
-1. **DDD architecture** — 29 domains without coupling. This would be chaos without clear boundaries.
-2. **Zod-first types** — zero type drift. Every other approach would have accumulated drift.
-3. **Postgres-as-queue** — zero infrastructure cost, transactional enqueue. Still the right call at our scale.
-4. **7-layer defense** — zero data leaks in production. The depth was worth the complexity.
-5. **Transactional outbox** — zero lost events. The 2-second lag is a fair trade-off.
-
----
-
-## What I'd Tell My Future Self
-
-> "Ship the MVP fast. Add the schema versioning, RLS tests, and health checks before you hit 50 clinics. The payment abstraction can wait. The event-driven architecture can wait. The Turborepo migration can wait. But the schema versioning is a ticking time bomb — fix it before you have outbox events in production that can't be migrated."
----
-
-[← Previous: Long Tail Domains](21-long-tail-domains.md) · [ Back to Index](INDEX.md) · [Next: Docita Resume Defense →](../../80-lanes-abroad-full-stack/80.16-docita-resume-defense.md)
+Implementation evidence and source paths are retained in the linked case studies. Proposed improvements here have not been applied to the Docita application as part of this documentation review.

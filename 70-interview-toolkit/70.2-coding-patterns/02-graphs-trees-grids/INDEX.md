@@ -1,24 +1,28 @@
 # Graphs, Trees & Grids
 
-> **Study time:** ≈ 1 h 48 m of reading (6 files, ~18 min average).
-> **6 files.** Traversal, connectivity, weighted paths, and grid simulation: DFS/BFS, Dijkstra/Bellman-Ford, union-find, topological sort, tries, and the matrix-index patterns that unlock most grid problems.
+> **Study time:** ≈ 1 h 28 m of reading (7 files, ~13 min average).
+> **7 files.** Traversal, connectivity, weighted paths, and grid simulation: DFS/BFS, Dijkstra/Bellman-Ford, union-find, topological sort, tries, and the matrix-index patterns that unlock most grid problems.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
+## Reading Passes
+
+Begin with frontier order in DFS/BFS. Add weights with shortest paths, then separate connectivity from ordering through DSU and topological sort. Finish with tries and matrix simulation: both encode structure in coordinates or transitions, but answer different questions. For each chapter, decide what a visited, settled, terminal, or processed state actually guarantees.
+
 ## The 6 patterns
 
 | # | File | When to recognize | Read time |
 | --: | ------ | ------------------- | ----------: |
-| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | 18 min |
-| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | 16 min |
-| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | 18 min |
-| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | 19 min |
-| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 22 min |
-| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | 15 min |
+| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | 16 min |
+| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | 14 min |
+| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | 15 min |
+| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | 13 min |
+| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 15 min |
+| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | 13 min |
 
 ---
 
@@ -26,7 +30,7 @@
 
 ```text
 Explore everything?              → DFS/BFS
-Dynamic connectivity queries?    → Union Find
+Connectivity while adding edges?    → Union Find
 Ordering under dependencies?     → Topological Sort (Kahn's or DFS-based)
 Many prefix lookups?             → Trie
 Weighted shortest path (w >= 0)? → Dijkstra + binary heap
@@ -47,3 +51,7 @@ Spiral/rotate/zero-fill?         → Boundary shrinking / transpose+reverse / ma
 ## Navigation
 
 [← Linear Structures](../01-linear-structures/INDEX.md) · [↑ Coding Patterns Home](../INDEX.md) · [Next: Recursion & Optimization →](../03-recursion-and-optimization/INDEX.md)
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

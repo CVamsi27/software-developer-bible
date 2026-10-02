@@ -1,189 +1,158 @@
-# 10 — Deployment & Infrastructure
+# 10 — Deployment: Keep Versions, Schema and Background Work Compatible
 
-> Production reliability at small-team scale — Fly.io, Cloudflare, migrations, and cold starts.
+## Definition
 
----
+Deployment changes running application versions and their configuration. In Docita, the API and worker run as separate Fly applications, while the React SPA and API proxy use Cloudflare Workers with static assets.
 
-## Context
+Consider a release that adds an invoice field and changes a PDF job payload. A successful build is only the start: old API instances, new workers, existing jobs and the database can overlap during rollout. The release must preserve their contracts and provide evidence that the new version works.
 
-Docita runs on:
+This case describes checked-in source inspected on **2 October 2026**. Configuration and workflow code do not establish current deployed settings or successful production releases.
 
-| Component | Technology | Why |
-| ------------------ | ------------------------------------------------- | ------------------------------- |
-| **API + Worker** | Fly.io (sin region) | Simple deployment, auto-scaling |
-| **Frontend** | Cloudflare Workers (Static Assets) | Global CDN, zero server cost |
-| **Proxy** | Cloudflare Hono Worker | SPA routing + API proxy |
-| **Database** | AWS RDS PostgreSQL (ap-south-1) | Managed, HA, Indian region |
-| **Object Storage** | Cloudflare R2 | S3-compatible, no egress fees |
-| **External** | Razorpay, WhatsApp API, ZeptoMail, Sentry, OpenAI |  |
+## First Principles
 
----
+Applications and databases do not switch versions as one atomic unit. Requests and jobs can outlive a process, a healthy process can still perform incorrect work, and routing infrastructure can acknowledge traffic before all application dependencies are ready.
 
-## Decision 1: Fly.io for API + Worker
+A useful release protocol therefore separates build validation, schema compatibility, process readiness, business probes, rollout and recovery. Each stage must state what it actually establishes.
 
-### What We Chose
+## Why Separate API, Worker and Browser Deployment?
+
+| Component | Responsibility | Source evidence |
+| ----------------------------- | -------------------------------------- | ------------------------------------------------ |
+| Fly API application | HTTP requests and application services | Root `fly.toml`, API Dockerfile |
+| Fly worker application | Background processors and schedulers | `apps/worker/fly.toml`, worker entry point |
+| Cloudflare application Worker | API proxy and asset integration | `apps/app/api/index.ts`, shared proxy factory |
+| Static SPA assets | Browser interface and client routing | App Wrangler assets configuration |
+| PostgreSQL and object storage | Durable state and files | Persistence/storage configuration and migrations |
+
+Separating lifecycles permits different capacity and rollout decisions. It also introduces compatibility requirements. A new worker may consume a job produced by an old API; a cached browser bundle may call a newer server.
+
+## How the Current Fly Configuration Handles Idle Traffic
+
+The checked-in API configuration uses:
+
+```toml
+[http_service]
+internal_port = 3001
+force_https = true
+auto_stop_machines = 'suspend'
+auto_start_machines = true
+min_machines_running = 0
+```
+
+It declares Singapore (`sin`) as the primary region and a 512 MB shared-CPU VM. This source does **not** support the earlier claim that one API machine is always kept warm. The worker has its own configuration, declares a 256 MB VM and enables schedulers; it has no HTTP service block in that file.
+
+Fly autostop/autostart manages existing machines. It does not automatically create additional machines, and the minimum-running setting applies to the primary region. Worker lifecycle and capacity must be managed separately when there is no proxy-routed HTTP service. [Fly autostop/autostart documentation](https://docs.fly.io/launch/autostop-autostart).
+
+A warm minimum may reduce idle-start delays, but it cannot guarantee no cold starts or no errors during replacement, failure or regional disruption. Measure startup, readiness and first-request latency under the actual memory limits before selecting the trade-off. The old three-minute bootstrap incident, proxy-timeout and monthly-cost figures were not verified in this review.
+
+## How the SPA and Proxy Form One Browser Origin
+
+The app entry point calls a shared `createCloudflareApiProxy` factory. The configuration supplies an `ASSETS` binding and a single-page-application fallback. The factory handles API and Socket.IO routes and delegates other paths to the assets binding.
+
+A same-origin browser API path simplifies browser routing and cookie handling. It does not remove authentication, CSRF protection, backend authorization or every cross-origin concern. Direct API clients and separately configured socket URLs still need their own protocol review.
+
+### Follow One API Request Across the Proxy
 
 ```text
-fly.toml (API)                    fly.toml (Worker)
-├── http_service                   ├── process = "worker"
-├── min_machines_running = 1      ├── min_machines_running = 1
-├── auto_stop_machines = true     ├── auto_stop_machines = false
-└── auto_start_machines = true    └── memory = "2GB"
+browser: /api/v1/invoices?page=2
+  → Worker route extracts API path segments
+  → helper builds an upstream URL and preserves query parameters
+  → upstream fetch returns status, headers and a response stream
+  → proxy rewrites applicable cookie-domain attributes for the app origin
 ```
 
-### Why Fly.io
+The old example concatenated a backend origin with the complete incoming URL; that produces an invalid target. The inspected source instead uses URL parsing and dedicated helpers.
 
-| Factor | Fly.io | AWS ECS | Railway | Render |
-| -------------------- | --------------- | ------------------- | --------- | -------- |
-| **Setup complexity** | Low | High | Low | Low |
-| **Cost (2GB RAM)** | ~$15/mo | ~$30/mo | ~$20/mo | ~$20/mo |
-| **Indian region** | sin (Singapore) | ap-south-1 (Mumbai) | No | No |
-| **Auto-scaling** | Yes | Yes | Yes | Yes |
-| **Docker support** | Native | Native | Native | Native |
+There are important boundaries in the current helper:
 
-**Why not AWS ECS:** Higher operational complexity for a solo engineer. Fly.io's `fly deploy` is simpler than ECS task definitions, service discovery, and ALB configuration.
+- The `/api/v1/*` path buffers non-GET/HEAD request bodies with `arrayBuffer()`. Large concurrent uploads can consume memory; do not describe that request path as streaming.
+- It returns the upstream response body as a stream and uses manual redirect handling.
+- It filters headers and handles multiple Set-Cookie values. Cookies still require appropriate security attributes and a reviewed host/domain policy.
+- Generic API/socket branches use a different forwarding path. Do not assume identical behavior across all routes.
+- Path normalization and encoded segments require tests, including existing percent escapes, reserved characters and queries.
 
-**Why not Railway/Render:** No Indian-region deployment. Latency matters for real-time clinic operations.
+For large uploads, evaluate bounded bodies or direct, authorized object-storage uploads. Review forwarded-header trust at the backend rather than trusting arbitrary client-provided identity headers. The [Workers best-practices guidance](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/) favors bounded memory use and streaming unknown-size data.
 
-### The Cold Start Problem
+## Why the Current Bundle-Limit Argument Must Change
 
-**What happened:** Fly.io auto-stop shut down the VM after idle. Next request triggered a 3-minute NestJS bootstrap. Fly's HTTP proxy only waits ~10-15s → 502 Bad Gateway.
+The authenticated SPA's rendering needs can justify a Vite client application without an SSR runtime. Compare browser behavior, routing, performance, SEO requirements and operational complexity for the actual product; neither Vite nor Next.js has a universal bundle size.
 
-**Root cause:** Trusted platform defaults without measuring actual bootstrap time.
+The old claim that a 3.5 MB gzip Next.js bundle exceeds the current 3 MB Workers Free limit is stale. On the **2 October 2026** check, Cloudflare's limits page specifies **64 MiB uncompressed** Worker size for both Free and Paid, with **no compressed-size limit**. Worker executable code, static assets and browser JavaScript are different artifacts with different constraints. [Current Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
 
-**Fix:** `min_machines_running = 1` — keep one machine always warm.
+A historical rejection needs its original date and deployment output before it can support a migration story. A modern decision needs current artifact measurements and startup/resource evidence. Static serving also does not establish zero cost for the entire application.
 
-**Cost:** ~$7/mo extra for the always-on machine. Worth it for zero cold starts.
+## How Migrations Fit Into the Release
 
----
+The configured workflow applies safe migrations and then runs `scripts/deploy/verify-db-schema-sync.sh`. The script checks Prisma migration status and compares the configured database to the Prisma schema, failing when verification reports pending migrations or drift.
 
-## Decision 2: Vite SPA + Cloudflare Workers
+This is a **deployment verification step**, not evidence that every application startup refuses to run with pending migrations. No production database was contacted during this documentation review.
 
-### What We Chose
+A compatible sequence is:
 
-```text
-apps/app/ (Vite SPA)
-├── React 19 + React Router v7
-├── TanStack Query for data fetching
-├── Tailwind CSS 4
-└── Deployed to Cloudflare Workers (Static Assets)
+1. Add schema support that existing code can tolerate.
+2. Deploy code able to handle the transition and existing data.
+3. Backfill or transform data with observable progress and recovery.
+4. Remove obsolete fields or behavior only after old consumers are retired.
 
-apps/app/api/index.ts (Hono proxy)
-├── /api/* → proxied to Fly.io API
-└── SPA fallback for client-side routing
-```
+Applying a migration before new code is insufficient if it breaks old instances. Likewise, rolling back an image does not undo data changes or external effects. Document destructive steps and recovery separately from process rollback.
 
-### Why Vite (Not Next.js)
+## What the Deployment Workflow Currently Enables
 
-| Factor | Vite SPA | Next.js SSR |
-| ------------------------- | -------------------------- | -------------------------- |
-| **Bundle size** | ~800KB gzip | ~3.5MB gzip |
-| **Cloudflare Free limit** | ✅ Under 3MB | ❌ Over 3MB |
-| **SEO** | Not needed (auth-gated) | Not needed (auth-gated) |
-| **Dev experience** | Sub-second HMR | Fast, but slower than Vite |
-| **Deployment** | Static assets, zero server | Requires server (OpenNext) |
+The checked-in production deploy and database-migration workflows have their `on:` triggers commented out. They therefore describe a **paused configuration**, not an active automatic deployment pipeline. Comments also mention GitHub-level disabling, but that external setting was not checked here.
 
-**The tipping point:** Next.js 16 + OpenNext bundle was ~3.5 MB gzip, over Cloudflare's 3 MB Free limit. Every feature port increased bundle size with framework overhead rather than app code.
+Within the configured jobs, change detection maps source paths to affected deploy targets, including shared packages and root build/configuration files. API and worker deployment depend on successful migration verification. The API additionally has a startup smoke gate and is configured for **blue-green** deployment.
 
-### Why Hono Proxy (Not Direct API Access)
+The worker script performs a canary deployment, checks that the selected machine remains `started` for a settling window—**90 seconds** in the workflow—then promotes through a rolling deployment. Machine state is a process-liveness signal; it does not prove that jobs, tenant isolation or external effects are correct. The script itself distinguishes this from live worker health and scheduler heartbeat evidence.
 
-**The problem:** SPA is on `docita.work`, API is on `api.fly.io`. Different domains = CORS + separate auth.
+Selective deployment reduces unnecessary changes only when the dependency map includes all affected consumers. Test that map against shared-contract changes; do not reduce it to “only deploy the folder that changed.”
 
-**The solution:** Hono proxy Worker on Cloudflare routes `/api/*` to Fly.io. Same domain, no CORS, same cookie scope.
+## Real-World Decisions
 
-```typescript
-// apps/app/api/index.ts
-const app = new Hono();
-app.all('/api/*', async (c) => {
-  return fetch(`https://api.fly.io${c.req.url}`, {
-    method: c.req.method,
-    headers: c.req.raw.headers,
-    body: c.req.raw.body,
-  });
-});
-```
+| Release concern | Useful evidence | What it does not prove |
+| --------------------------------------- | --------------------------------------------- | ------------------------------------------------- |
+| Container starts within resource limits | Startup smoke and measured memory/startup | Correct business operations |
+| HTTP process responds | Health/readiness endpoint results | Worker progress or database invariant correctness |
+| Worker stays started | Canary state and heartbeat continuity | Correct delivery or duplicate-safe side effects |
+| Database matches schema | Migration status and drift check | Compatibility with every old application version |
+| New application can serve traffic | Targeted business probes and observed rollout | Safe reversal of already-applied data changes |
+| Shared package changes reach consumers | Dependency-map tests | Atomic simultaneous deployment |
 
----
+## Mistakes
 
-## Decision 3: Database Migrations
+- Describing paused workflow definitions as an active CI/CD pipeline.
+- Assuming a warm setting, blue-green rollout or CDN propagation guarantees zero downtime.
+- Confusing compressed Worker code, uncompressed limits, static assets and browser bundles.
+- Treating same-origin proxying as complete authentication or security.
+- Claiming a deployment schema check runs during every application startup.
+- Equating machine liveness with successful background processing.
 
-### What We Chose
+## Best Practices
 
-Prisma Migrate with a verification script:
+Keep configuration claims dated and distinguish source, live settings and measured outcomes. Test startup and shutdown under declared limits, exercise representative requests and jobs during version overlap, and verify database compatibility before switching traffic. Observe error rates, latency, queue age and worker heartbeats during rollout. Define what recovery restores and what irreversible effects need reconciliation.
 
-```text
-1. Developer runs `prisma migrate dev` locally
-2. Migration file committed to git
-3. Deploy: `prisma migrate deploy` runs before API starts
-4. Verification script confirms no pending migrations
-```
+## Summary
 
-### Why Verification Script
+Docita's source separates API, worker and SPA lifecycles and defines migration checks, blue-green API rollout and a worker canary protocol. The workflows are currently paused in code. Reliable releases require compatible contracts, meaningful health evidence and recovery beyond reverting an application image.
 
-**The problem:** A developer merges a migration but forgets to run `prisma migrate deploy` on the staging server. The API starts, tries to query a new column, and crashes.
+## See Also
 
-**The solution:** The verification script checks that the latest migration has been applied. If not, the API refuses to start.
+- [Category revision](REVISION.md) — release and recovery questions after the cases.
+- [Architecture decisions](01-architecture-decisions.md) — monorepo compatibility.
+- [Async processing](03-async-processing.md) — worker ownership and recovery.
+- [Documents and uploads](19-documents-and-uploads.md) — file-transfer boundaries.
+- [Case-study index](INDEX.md) — reading stages.
 
----
+## References
 
-## Decision 4: Selective Deploys
+- [Fly autostop/autostart](https://docs.fly.io/launch/autostop-autostart).
+- [Cloudflare Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
+- [Cloudflare Workers best practices](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/).
 
-### What We Chose
+Docita source inspected on 2 October 2026:
 
-GitHub Actions triggers deploys only for changed apps:
-
-```text
-If apps/api/* changed → deploy API
-If apps/app/* changed → deploy frontend
-If packages/types/* changed → deploy all (shared types)
-```
-
-**Why selective:** Deploying the frontend when only the API changed (and vice versa) wastes time and introduces unnecessary risk.
-
----
-
-## What Worked
-
-- **Zero-downtime deployments** — Fly.io rolling deploys + Cloudflare instant propagation
-- **Cold start fix** — `min_machines_running = 1` eliminated 502 errors
-- **Selective deploys** — average deploy time reduced from 5 minutes to 2 minutes
-
-## What Failed
-
-- **Cloudflare 3MB limit** — discovered after building the Next.js app. Required emergency migration to Vite.
-
-- **Fly.io region latency** — sin (Singapore) has ~50ms latency to Indian users. Not terrible, but not optimal. AWS ap-south-1 (Mumbai) would be better but Fly.io doesn't have a Mumbai region.
-
-- **Migration drift** — a developer applied a migration locally but the production database was behind. The verification script caught it, but the deploy was blocked until manual intervention.
-
-## What Could Be Better
-
-- **Blue-green deployments** — currently rolling deploys. Blue-green would allow instant rollback.
-
-- **Canary deployments** — deploy to 10% of traffic first, monitor for errors, then full rollout.
-
-- **Infrastructure as Code** — Fly.io config is in `fly.toml`. Terraform would provide better reproducibility and drift detection.
-
-- **APM integration** — currently using Sentry for errors. Adding APM (e.g., Fly.io metrics, Datadog) would improve performance visibility.
-
----
-
-## Code Evidence
-
-| Claim | File |
-| ------------------- | -------------------------------- |
-| Fly.io config | `fly.toml` |
-| Dockerfile | `apps/api/Dockerfile` |
-| Hono proxy | `apps/app/api/index.ts` |
-| GitHub Actions | `.github/workflows/` |
-| Prisma migrations | `packages/db/prisma/migrations/` |
-| Verification script | `scripts/verify-migrations.mjs` |
-
----
-
-## Interview Script (60 seconds)
-
-> "Docita deploys on Fly.io for the API/worker and Cloudflare Workers for the frontend. The API uses Docker with a multi-stage build. Frontend is a Vite SPA deployed as Cloudflare Static Assets — we migrated from Next.js because the 3.5MB bundle exceeded Cloudflare's 3MB Free limit. A Hono proxy Worker routes `/api/*` to Fly.io, avoiding CORS. We hit a cold-start outage because Fly's proxy only waits ~10-15s but NestJS bootstrap takes ~3 minutes. Fix: `min_machines_running = 1`. Database migrations use Prisma Migrate with a verification script that blocks deploys if migrations are pending. Selective deploys via GitHub Actions — only changed apps are deployed."
----
-
-[← Previous: Subscription System](09-subscription-system.md) · [ Back to Index](INDEX.md) · [Next: Insurance Claims →](11-insurance-claims.md)
+- `fly.toml`, `apps/worker/fly.toml` and `apps/api/Dockerfile`
+- `apps/app/api/index.ts` and `apps/app/wrangler.toml`
+- `packages/utils/src/http/cloudflare-api-proxy.ts` and `upstream-api-proxy.ts`
+- `.github/workflows/deploy.yml` and `.github/workflows/db-migrations.yml`
+- `scripts/deploy/verify-db-schema-sync.sh` and `worker-canary-deploy.sh`
+- `scripts/workflow/detect-workflow-deploy.mjs` and `detect-workflow-api-base.mjs`

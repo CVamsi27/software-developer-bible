@@ -1,13 +1,13 @@
 # Reverse Proxy — Index
 
-> **Study time:** ≈ 31 min of reading (2 files, ~16 min average).
+> **Study time:** ≈ 29 min of reading (3 files, ~10 min average).
 > **1 file** — Nginx as the production front door: the C10K origin story, the master–worker event-loop model, config context hierarchy, upstream load balancing, TLS termination, buffering, rate limiting, caching, and zero-downtime reloads.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Reverse Proxy:** Almost every real deployment puts a reverse proxy between browsers and app servers — Kubernetes ingress is nginx, Docker tutorials are nginx, and "why is prod slow" often lives in a proxy buffer or rate limit. One chapter covers the internals interviewers actually probe: why event loops beat thread-per-connection, what `proxy_pass` really does, and how SIGHUP gives zero-downtime deploys.
+A proxy separates client-facing HTTP policy from backend request handling. Read this section by tracing where a request waits and which layer owns each decision. NGINX is one implementation; Kubernetes Ingress does not imply NGINX, and the community ingress-nginx controller retired in March 2026.
 
 ---
 
@@ -15,27 +15,16 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | 23 min |
-| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | 18 senior-depth Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | 8 min |
+| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | 20 min |
+| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | Focused Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | 7 min |
 
 ---
 
-## When to read
+## Reading Passes
 
-- **Before any deployment/platform interview** — pairs with [Load Balancing](../../30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md)
-- 26 min read
-- Then reference back when debugging ingress controllers, TLS chains, or rate-limit configs
-
-## Common interview questions
-
-The full bank with model answers: → [40.11.02 Interview Questions](40.11.02-interview-questions.md). The headlines:
-- "What does a reverse proxy do that a load balancer doesn't?" (and vice versa)
-- "How does nginx handle 10K concurrent connections with a handful of workers?"
-- "One worker stalls and thousands of connections freeze — what happened?"
-- "Walk me through a zero-downtime nginx reload."
-- "When would you pick HAProxy or Envoy over nginx?"
-
----
+1. **Follow the request:** identify the master/worker roles and trace a request through location selection, upstream forwarding and response delivery in [the chapter](40.11.01-nginx-reverse-proxy-internals.md).
+2. **Explain a failure:** change one condition — slow client, unavailable upstream, wrong header inheritance or draining WebSocket — and predict which boundary needs configuration or measurement.
+3. **Check recall, then practice:** finish [the separate revision](REVISION.md) before using [the interview bank](40.11.02-interview-questions.md). Use your own incident evidence for behavioral answers.
 
 ## Cross-References
 
@@ -62,3 +51,7 @@ Where [docita](https://github.com/CVamsi27/docita) meets reverse proxies — pla
 | Trusting the proxy layer | `shared/common/http/cloudflare-ips.ts` + `client-ip.ts` recover real client IPs from CF headers; ADR 0014 restricts ingress to CF ranges |
 | Proxy behaviors I still own | Timeouts/budgets at the app edge (`timeout.interceptor.ts`, `fetch-with-timeout.ts`) because the platform proxy's knobs are fixed |
 | nginx/HAProxy/Envoy ops stories | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

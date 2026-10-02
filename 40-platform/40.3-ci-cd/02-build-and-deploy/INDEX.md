@@ -1,9 +1,9 @@
 # Build & Deploy
 
-> **Study time:** ≈ 1 h 8 m of reading (4 files, ~17 min average).
-> **4 files.** The runtime of every pipeline: building and shipping Docker images, the pipeline shapes (stages, gates, strategies) that take a commit to production safely, artifact registries with digest-based promotion, and supply-chain security for the pipeline itself.
+> **Study time:** ≈ 1 h 4 m of reading (5 files, ~13 min average).
+> **5 files.** The runtime of every pipeline: building and shipping Docker images, the pipeline shapes (stages, gates, strategies) that take a commit to production safely, artifact registries with digest-based promotion, and supply-chain security for the pipeline itself.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Build%20%26%20Deploy-green)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,10 +19,10 @@ CI platforms differ in syntax but not in substance: check out, build image, push
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | 17 min |
-| 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | 15 min |
-| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | 19 min |
-| 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | 17 min |
+| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | 16 min |
+| 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | 14 min |
+| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | 17 min |
+| 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | 15 min |
 
 ---
 
@@ -52,3 +52,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Canary deploy | `scripts/deploy/worker-canary-deploy.sh` for the worker app |
 | Supply-chain checks | `osv-scanner.toml`, `pnpm audit --audit-level=high` gate, workflow script-ref checks |
 | Artifact registries / SLSA attestations | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

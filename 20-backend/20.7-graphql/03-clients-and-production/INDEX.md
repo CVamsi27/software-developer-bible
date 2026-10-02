@@ -1,9 +1,9 @@
 # Clients & Production - GraphQL
 
-> **Study time:** ≈ 1 h 25 m of reading (3 files, ~28 min average).
-> **3 files.** The client side (normalized cache, optimistic UI), production defenses (query depth limits, complexity analysis, persisted queries, field-level auth), and schema-driven codegen with CI safety gates.
+> **Study time:** ≈ 1 h 24 m of reading (4 files, ~21 min average).
+> **4 files.** The client side (normalized cache, optimistic UI), production defenses (query depth limits, complexity analysis, persisted queries, field-level auth), and schema-driven codegen with CI safety gates.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Clients%20%26%20Production-%23ff6b35)](../INDEX.md)
 
 ---
@@ -12,9 +12,9 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Apollo Client](20.7.3.01-apollo-client.md) | `InMemoryCache` normalization by `__typename:id`, useQuery/useMutation/useSubscription, optimistic UI; urql/Relay alternatives | 39 min |
-| 02 | [Performance & Security](20.7.3.02-performance-security.md) | N+1, query depth limits, complexity/cost analysis, persisted queries (APQ), per-operation rate limiting, introspection off in prod, field-level auth, CSRF | 33 min |
-| 03 | [Codegen & Schema Safety in CI](20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator setup, TypedDocumentNode, fragment colocation, schema-as-source-of-truth workflow, graphql-inspector breaking-change checks, publishing typed SDKs | 13 min |
+| 01 | [Apollo Client](20.7.3.01-apollo-client.md) | `InMemoryCache` normalization by `__typename:id`, useQuery/useMutation/useSubscription, optimistic UI; urql/Relay alternatives | 38 min |
+| 02 | [Performance & Security](20.7.3.02-performance-security.md) | N+1, query depth limits, complexity/cost analysis, persisted queries (APQ), per-operation rate limiting, introspection off in prod, field-level auth, CSRF | 32 min |
+| 03 | [Codegen & Schema Safety in CI](20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator setup, TypedDocumentNode, fragment colocation, schema-as-source-of-truth workflow, graphql-inspector breaking-change checks, publishing typed SDKs | 12 min |
 
 ---
 
@@ -30,3 +30,7 @@ _No direct docita implementation yet._ REST-first choice — no GraphQL dependen
 ---
 
 [← Previous: Execution](../02-execution/INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

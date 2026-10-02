@@ -15,7 +15,6 @@
 
 ---
 
-## TL;DR
 
 Pass 1 caught stale APIs; this pass caught the *structure* rot that makes the
 bible feel diluted: chapters carrying two competing why-sections, interview

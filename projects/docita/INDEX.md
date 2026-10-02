@@ -2,59 +2,54 @@
 
 > Every major decision in Docita, explained with context, alternatives considered, trade-offs, what worked, what failed, and what could be better.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## How to Read This Section
+## Reading Flow
 
-Each file follows a consistent structure:
+Start with one operation and trace identity, state and failure boundaries. These cases support explanations of full-stack TypeScript SaaS work; a source path supports a specific implementation claim, while production results require separate dated evidence. Case-study corrections are in progress, so treat unreviewed historical outcomes and numerical claims as requiring verification.
 
-| Section | What It Answers |
-| --------------------------- | ------------------------------------------- |
-| **Context** | What problem were we solving? |
-| **Decision** | What did we choose? |
-| **Alternatives Considered** | What else was on the table? |
-| **Why This Was Chosen** | The real reasoning (not just "it's better") |
-| **Trade-offs** | What we gave up |
-| **What Worked** | What exceeded expectations |
-| **What Failed** | What broke in production |
-| **What Could Be Better** | Known tech debt and improvements |
-| **Code Evidence** | Exact file paths proving every claim |
-| **Interview Script** | How to explain it in 60 seconds |
+### Stage 1 — Follow an Operation Through the System
 
-**Reading order:** 01–10 = the foundation and product decisions; 11–21 = the per-domain deep dives (insurance claims → long tail); 22 = the retrospective capstone — read it last, it summarizes the whole series.
+1. [Architecture decisions](01-architecture-decisions.md) — where rules, contracts and execution responsibilities belong.
+2. [Tenant isolation](02-multi-tenancy-rls.md) — carry trusted identity to the actual database operation.
+3. [Clinic workflows](05-clinic-workflows.md) — connect scheduling and product state to those boundaries.
+4. [Patient portal](16-patient-portal.md) — apply identity and authorization to patient-facing access.
 
----
+### Stage 2 — Make Work and Money Survive Failures
 
-## Files
+1. [Async processing](03-async-processing.md) — durable intent, claims, retries and repeated effects.
+2. [Payment flows](04-payment-flows.md) — merchant ownership and local state transitions.
+3. [Billing and invoicing](08-billing-invoicing.md) — financial records and invoice lifecycle.
+4. [Subscription system](09-subscription-system.md) — subscription and entitlement behavior.
+5. [Enterprise contracts](18-enterprise-contracts.md) — group billing and override boundaries.
+6. [WhatsApp integration](06-whatsapp-integration.md) — provider delivery and user-facing communication.
 
-| # | File | Topic | Why It Matters |
-| --- | --------------------------------------------------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------- |
-| 01 | [Architecture Decisions](01-architecture-decisions.md) | DDD, Zod-first, NestJS modules, monorepo | Foundation choices that shaped everything |
-| 02 | [Multi-Tenancy & RLS](02-multi-tenancy-rls.md) | 7-layer defense, AsyncLocalStorage, RLS | The hardest problem — data isolation in healthcare |
-| 03 | [Async Processing](03-async-processing.md) | Postgres queue, transactional outbox, worker | How we process jobs without Redis |
-| 04 | [Payment Flows](04-payment-flows.md) | Three rails, Razorpay, idempotency | Financial compliance — never mix payment flows |
-| 05 | [Clinic Workflows](05-clinic-workflows.md) | Scheduling, queue, follow-ups, OPD | The core product — how clinics actually use Docita |
-| 06 | [WhatsApp Integration](06-whatsapp-integration.md) | Templates, responses, rate limits | WhatsApp-first means it must work perfectly |
-| 07 | [Prescription Safety](07-prescription-safety.md) | Allergy checks, controlled substances, PDFs | Clinical safety — wrong prescriptions harm patients |
-| 08 | [Billing & Invoicing](08-billing-invoicing.md) | GST, tax calculation, invoice lifecycle | Indian healthcare billing complexity |
-| 09 | [Subscription System](09-subscription-system.md) | Tier gating, overage, referrals | SaaS monetization — how clinics pay Docita |
-| 10 | [Deployment & Infrastructure](10-deployment-infrastructure.md) | Fly.io, Cloudflare, migrations, cold starts | Production reliability at small-team scale |
-| 11 | [Insurance Claims](11-insurance-claims.md) | Claim state machine, versioning, readiness gate | Regulated lifecycle — every move audited, no clobbering |
-| 12 | [IPD (Inpatient)](12-ipd-inpatient.md) | Ward/bed management, admit/transfer/discharge | A new resource — beds — whose state must never drift |
-| 13 | [Inventory](13-inventory.md) | Movement ledger, atomic stock decrement | Clinic stock can never go negative or silently diverge |
-| 14 | [Analytics & Dashboards](14-analytics-and-dashboards.md) | Factories, timezone bucketing, snapshots | Reports must be timezone-correct and historically stable |
-| 15 | [Doctors, Verification & Public Booking](15-doctors-verification-and-public-booking.md) | NMC verification, slots, referral funnel | The acquisition loop — regulated doctors, anonymous patients |
-| 16 | [Patient Portal](16-patient-portal.md) | OTP login, patient-scoped reads, adherence | PHI access where the session is the patient |
-| 17 | [ABDM Integration](17-abdm-integration.md) | Care contexts, consent, transaction ledger | India's health stack — async callbacks made auditable |
-| 18 | [Enterprise Contracts](18-enterprise-contracts.md) | True-up, prepay, member overrides, RLS bypass | Group deals — money at risk, surfaced early |
-| 19 | [Documents & Uploads](19-documents-and-uploads.md) | Storage providers, upload sessions, signed URLs | Every file — PHI-safe, provider-swappable, short TTLs |
-| 20 | [Clinical, Lab & Medical Coding](20-clinical-lab-and-medical-coding.md) | Lab order lifecycle, ICD/CPT sync, code search | The second clinical pillar — results gated by payment, codes that feed claims |
-| 21 | [Long Tail: Reminders, Custom Fields, Webhooks & More](21-long-tail-domains.md) | Reminders, custom fields, webhooks, leave, feedback | Small domains, same discipline — dedupe, gating, atomicity at every size |
-| 22 | [What I'd Do Differently](22-what-id-do-differently.md) | Retrospective, tech debt, future improvements | Honest assessment — what's not perfect |
+### Stage 3 — Protect Files, Resources and Domain Transitions
+
+1. [Documents and uploads](19-documents-and-uploads.md) — storage access and file lifecycle.
+2. [Inventory](13-inventory.md) — stock movements and concurrent changes.
+3. [Inpatient workflows](12-ipd-inpatient.md) — admission, transfer and resource allocation.
+4. [Prescription safety](07-prescription-safety.md) — clinical decision boundaries and document output.
+5. [Insurance claims](11-insurance-claims.md) — audited transitions and version checks.
+6. [Clinical, lab and medical coding](20-clinical-lab-and-medical-coding.md) — results, codes and dependencies.
+
+### Stage 4 — Operate the Product and Evaluate Integrations
+
+1. [Deployment and infrastructure](10-deployment-infrastructure.md) — compatible versions, schema, rollout and recovery.
+2. [Analytics and dashboards](14-analytics-and-dashboards.md) — historical and timezone correctness.
+3. [Doctors, verification and public booking](15-doctors-verification-and-public-booking.md) — anonymous entry points and verification.
+4. [ABDM integration](17-abdm-integration.md) — consent and asynchronous callbacks.
+5. [Long-tail domains](21-long-tail-domains.md) — carry the same invariants into smaller capabilities.
+6. [What I'd do differently](22-what-id-do-differently.md) — evaluate improvements after understanding the cases.
+
+### Revision, Then Interview Practice
+
+Use [category revision](REVISION.md) after the learning cases. Reconstruct a mechanism and its failure boundary before checking an answer. Source-linked groups grow as cases receive their full editorial review.
+
+Then use the interview guides below to connect an implementation decision to its evidence and limits. Keep business outcomes, source inspection and executed checks distinct; do not memorize an unsupported incident or metric as personal experience.
 
 ---
 
@@ -68,13 +63,6 @@ Each file follows a consistent structure:
 
 ---
 
-## Key Numbers to Remember
+## Evidence to Bring to an Interview
 
-| Metric | Number |
-| --------------- | ------------------------------------------------------------------------- |
-| Active clinics | 25+ |
-| Workflows/month | 1,000+ |
-| Domain modules | 29 |
-| Prisma models | 149 |
-| ADRs | 14 |
-| Tech stack | TypeScript, React 19, NestJS 11, Prisma 7, PostgreSQL, Fly.io, Cloudflare |
+For one selected case, record the inspected source revision, your own contribution, a representative operation, a meaningful verification result and an unresolved limitation. Obtain workload, adoption, latency and reliability metrics from their dated operational evidence before quoting them. Do not infer those outcomes from framework versions or source-folder counts.

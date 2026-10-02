@@ -1,9 +1,9 @@
 # Bundlers
 
-> **Study time:** ≈ 41 min of reading (4 files, ~10 min average).
-> **4 files.** The four bundlers that matter: Webpack (the incumbent), Vite (the default for new projects), and the Rust challengers Turbopack and Rspack.
+> **Study time:** ≈ 30 min of reading (5 files, ~6 min average).
+> **5 files.** The four bundlers that matter: Webpack (the incumbent), Vite (the default for new projects), and the Rust challengers Turbopack and Rspack.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Bundlers-%2364748b)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -29,10 +29,10 @@ New project?
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | 11 min |
-| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | 11 min |
-| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | 8 min |
-| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | 11 min |
+| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | 9 min |
+| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | 5 min |
+| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | 4 min |
+| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | 10 min |
 
 ---
 
@@ -59,3 +59,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Astro (SSG) | `apps/landing` builds with Astro, deployable to Cloudflare Workers (`build:cloudflare`, wrangler) |
 | Turbopack / Rspack | _No direct docita implementation yet._ |
 | Build orchestration | Turbo task graph wraps every bundle: `build` depends on `^build` + `check-types` + `lint`, outputs `dist/**` for caching |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

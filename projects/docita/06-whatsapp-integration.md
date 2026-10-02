@@ -1,167 +1,133 @@
 # 06 — WhatsApp Integration
 
-> WhatsApp-first means it must work perfectly — because for many clinics, WhatsApp IS the product.
+## Definition
 
----
+WhatsApp integration connects clinic actions to outbound messages and connects incoming provider events to local delivery records or patient responses. A send request and a delivery receipt are separate events.
 
-## Context
+Consider a reminder that the provider accepts but the patient never receives. The application needs to retain the provider message ID, process later status events, and show unresolved delivery honestly.
 
-Docita's core value proposition: a clinic owner in India should be able to run their clinic without opening a browser. WhatsApp is the primary interface for:
+## First Principles
 
-- **Appointment reminders** — sent 24h and 1h before
-- **Prescription delivery** — PDF sent after consultation
-- **Payment confirmations** — receipt sent after payment
-- **Follow-up reminders** — scheduled follow-up notifications
-- **Patient responses** — patients reply "yes", "no", "delay 30 min"
+The provider cannot commit atomically with the clinic database. Sending first can leave a delivered message without a local record if persistence fails; recording first can leave an unsent message if dispatch fails. Retries require stable identity and a defined recovery path.
 
-**The scale:** ~500 WhatsApp messages/day across 25+ clinics.
+Incoming replies introduce another boundary: a phone number and free text do not necessarily identify one patient appointment. Tenant, sender, conversation and reply context must be resolved before changing clinical workflow state.
 
----
+## Why Sender Identity Matters
 
-## Decision 1: Three Sender Modes
+The application supports SHARED, BYO and MANAGED sender modes. These are configuration modes, not guarantees of provider pricing, number ownership or branding.
 
-### What We Chose
+| Mode | Source behavior |
+| ----------------------------- | ------------------------------------------------------------------- |
+| SHARED | Uses the platform's configured Meta phone-number ID and token |
+| BYO or MANAGED | Uses verified clinic sender configuration and its encrypted token |
+| Non-shared sender unavailable | Falls back to shared when verification, number or secret is missing |
 
-| Mode | Description | Cost | Branding |
-| ----------- | ------------------------------------- | ---------------- | --------------- |
-| **SHARED** | Meta's shared business number | Free | "via Docita" |
-| **BYO** | Clinic's own WhatsApp Business number | Clinic pays Meta | Clinic's name |
-| **MANAGED** | Docita-managed number | Docita pays Meta | Docita branding |
+The resolver marks those fallback cases with `fallbackActive`. Decryption failure is not explicitly caught by this resolver. Do not assume every credential failure falls back safely.
 
-**Why three modes:** Indian clinics have different budgets and branding needs. A small clinic might start with SHARED (free) and upgrade to BYO as they grow.
+Shared text is prefixed with the clinic display name. That helps patients recognize the clinic, but it does not grant authorization or prove that a configured number belongs to the clinic. Product policy must decide whether silently changing sender identity is acceptable and whether staff need a visible warning.
 
-### Alternatives Considered
+## How Sending and Status Updates Fit Together
 
-| Option | Pros | Cons |
-| ------------------------ | ------------------------------------ | -------------------------------------------------------- |
-| **Shared only** | Simple, free | No clinic branding, Meta rate limits |
-| **BYO only** | Full branding | Setup complexity, clinic must have Meta Business account |
-| **Three modes (chosen)** | Flexible, caters to all clinic sizes | More code paths, more testing |
+```text
+Clinic operation → entitlement check → sender/template resolution
+                                            ↓
+                                     provider send
+                                            ↓
+                              persist provider ID locally
+                                            ↓
+                                 emit usage/telemetry
 
----
-
-## Decision 2: Patient Response Handling
-
-### What We Chose
-
-A response parser that maps free-text WhatsApp replies to appointment actions.
-
-```typescript
-// apps/api/src/domains/whatsapp/application/services/response-handler.service.ts
-async handlePatientResponseForAppointment(context, responseText, phoneNumber, messageSid) {
-  // 1. Parse response type
-  const responseType = parsePatientResponse(responseText);  // YES, NO, DELAY, UNKNOWN
-  const delayMinutes = extractDelayMinutes(responseText);    // 30, 60, etc.
-
-  // 2. Handle two-step delay flow
-  if (pendingDelayResponse && delayMinutes !== null) {
-    await this.handleDelayMinutesFollowUp(context, pendingDelayResponse.id, responseText, delayMinutes);
-    return;
-  }
-
-  // 3. Persist response
-  await this.persistence.appointmentResponse.create({
-    data: { appointmentId, responseType, patientMessage: responseText, delayMinutes },
-  });
-
-  // 4. Update appointment status
-  await this.updateAppointmentStatus(context, responseType);
-
-  // 5. Detect delay conflicts
-  if (responseType === 'DELAY' && delayMinutes !== null) {
-    const conflict = await this.evaluateDelayConflict(...);
-    // If conflict → notify staff
-  }
-
-  // 6. Send confirmation + staff notification
-  await this.patientConfirmation.sendPatientConfirmation(context, responseType, delayContext, ...);
-  await this.patientStaffNotification.notifyStaff(context, responseType, delayContext, ...);
-}
+Provider status webhook → locate local record → update delivery state
 ```
 
-### The Two-Step Delay Flow
+`SendMessageUseCase` loads clinic context and checks WhatsApp entitlement. It then calls the delivery service before ensuring the conversation and saving a message. Finally, it emits a local message-sent event for usage and telemetry.
 
-**The problem:** Patient replies "delay" → system asks "how many minutes?" → patient says "30" → system must associate the "30" with the pending delay request.
+That order has a failure boundary: provider acceptance followed by database failure can lose local correlation. Retrying the operation can send another message. A provider ID alone does not eliminate the gap; use a durable dispatch operation and an explicit ambiguous-send reconciliation policy.
 
-**The solution:** A `pendingDelayResponse` lookup with a 6-hour follow-up window:
+The delivery service resolves an approved Meta template when production mode and a template ID are present. Other branches can send interactive buttons or text. Their existence does not prove that a fallback is permitted for every recipient at that moment.
 
-```typescript
-const pendingDelayResponse = await this.findPendingDelayResponse(appointmentId);
-if (pendingDelayResponse && delayMinutes !== null && (responseType === 'UNKNOWN' || responseType === 'DELAY')) {
-  await this.handleDelayMinutesFollowUp(context, pendingDelayResponse.id, responseText, delayMinutes);
-  return;
-}
-```
+WhatsApp policy requires approved templates to initiate conversations and outside the 24-hour customer-service window. Free-form replies are permitted within the window, which resets with each user message. Opt-in and opt-out requirements also apply. Validate eligibility before sending a fallback; template rejection is not permission to send unrestricted text. [WhatsApp Business Messaging Policy](https://whatsappbusiness.com/policy/).
 
-### Why Not NLP/AI for Response Parsing
+The inspected ingress maps provider status values to local sent, delivered, read and failed states. It updates legacy logs, domain messages and the support inbox through separate calls. These stores can diverge when a call fails. Legacy status assignment is not protected by a monotonic ordering rule, so delayed events can overwrite newer status; retain event time and define reconciliation across representations.
 
-**The alternative:** Use OpenAI or a custom NLP model to parse patient responses.
+## Examples: A Two-step Delay Reply
 
-**Why rejected:** Patient responses in Indian clinics are simple: "yes", "no", "10 min late", "come tomorrow". A regex-based parser handles 95% of cases. NLP adds latency, cost, and complexity for marginal improvement.
+The parser supports CONFIRM, ON_THE_WAY, DELAY, RESCHEDULE, CANCEL and UNKNOWN. Exact button IDs and normalized words are checked first, followed by ordered substring patterns. Delay minutes are extracted separately and accepted only from 1 to 240.
 
----
+A focused supported trace is:
 
-## Decision 3: WhatsApp Reconciliation
+1. Patient replies `delay`; it maps to DELAY with no minutes.
+2. The handler stores a pending delay response and requests the missing duration.
+3. Patient replies `30`; the duration parser returns 30 and the response parser returns UNKNOWN.
+4. A recent pending DELAY response for that appointment lets the handler interpret this as the requested duration.
+5. The handler updates that response, evaluates a possible scheduling conflict, then sends confirmation and staff notification.
 
-### What We Chose
+The pending lookup uses a six-hour window and the latest DELAY response without minutes. It is scoped to appointment ID; it does not itself prove a reply belongs to that conversational turn. A number can also be a menu choice: exact `1` maps to CONFIRM rather than a delay follow-up. Define how interactive context disambiguates such inputs.
 
-A daily cron job that syncs message delivery status from Meta's API.
+Substring parsing can misread negation: `do not cancel` contains `cancel`. The phrase `delay 30 min` is not equivalent to the exact token `delay`, and the current includes list contains `delayed` rather than `delay`. Extracting 30 minutes does not automatically make the response type DELAY.
 
-```typescript
-// apps/api/src/domains/whatsapp/whatsapp-reconciliation.cron.ts
-@Cron(CRON_SCHEDULES.WHATSAPP_RECONCILIATION)
-async reconcile() {
-  // Fetch messages with status 'SENT' but no delivery confirmation
-  // Query Meta Graph API for actual status
-  // Update local records
-}
-```
+Prefer explicit button IDs for consequential actions, retain UNKNOWN for uncertain text, and test supported languages and negation. Do not claim a parsing accuracy percentage without a labeled evaluation set. Adding an AI parser would still require confirmation, tenant context and safe fallback for ambiguous output.
 
-**Why reconciliation:** Meta's webhook delivery is at-least-once but not guaranteed. Some delivery confirmations are lost. The daily reconciliation catches any discrepancies.
+## Appointment Updates and Delay Warnings
 
----
+For mapped actions, the handler uses `updateMany` with the current database status in an allowed-predecessor set. This conditional write protects against canceling a completed or in-progress visit through that path, even when the earlier appointment snapshot is stale.
 
-## What Worked
+DELAY does not directly reschedule the appointment in this mapping. Its conflict check computes expected arrival and compares it to the next qualifying appointment's start time for the same clinic and doctor. It is a warning heuristic, not the complete overlap check: duration, staff capacity and other visits can matter. A delay request should not promise a newly reserved slot.
 
-- **Response parsing** — regex-based parser handles 95% of patient responses accurately
-- **Two-step delay flow** — patients can delay appointments naturally via WhatsApp
-- **Reconciliation** — daily sync catches any missed webhook deliveries
+The response record, status update, patient confirmation and staff notification occur in separate operations. Partial completion is possible. In particular, the handler can send a confirmation after a status update affected zero rows. Make the response outcome explicit rather than treating parsing success as workflow success.
 
-## What Failed
+## Real-world Decisions: Duplicate Ingress and Missing Receipts
 
-- **Rate limit burst** — a clinic sent 100+ reminders simultaneously. Meta's API rate-limited the batch, causing 30+ messages to fail silently. Fixed with per-clinic rate limiting (configurable, default 30/min) and exponential backoff on 429 responses.
+Incoming ingress prefers interactive button IDs over display text. It records a clinic conversation message, then resolves an appointment and delegates response handling.
 
-- **Template approval delays** — Meta requires template approval before sending. A clinic's template was rejected for "marketing content" (it was a prescription delivery). Fixed by adding template pre-check and fallback to session messages.
+The conversation transaction checks for an existing inbound ID and upserts the message. Sequential duplicates can skip downstream processing, but conversation unread count is incremented before the duplicate check. Two concurrent transactions can also both observe absence before upserting. A check followed by an upsert does not prove exactly-once effects.
 
-- **Message delivery lag** — Meta's API sometimes delays delivery by 5-10 minutes. Patients called the clinic asking "did you get my reply?" Fixed by adding delivery status tracking and staff notifications.
+There is a second gap: if the message is recorded and downstream handling fails, a subsequent delivery can be treated as already processed. Durable ingress needs separate received and processed states, with retryable work and a stable operation key. Provider receipt persistence and business-effect completion are different facts.
 
-## What Could Be Better
+When clinic resolution fails, the recording helper logs a quarantine message and returns true; the caller still proceeds to appointment resolution. Trace that resolver and its tenant/identity rules before claiming unresolved messages cannot reach clinical actions.
 
-- **Rich media support** — currently text-only responses. Supporting image replies (e.g., patient sends a photo of a lab report) would improve clinical workflows.
+The actual reconciliation cron runs hourly at minute 45. Its service groups non-final outbound records older than six hours, logs counts and emits an alert event. It does not poll a provider status endpoint, change those records to FAILED, repair missing receipts or resend them.
 
-- **Multi-language responses** — patients reply in Hindi, Telugu, etc. The parser currently only handles English. Adding multi-language support would improve adoption.
+Expose unresolved delivery separately from confirmed failure. Alerting improves visibility; automatic resend can duplicate a message that was delivered while its receipt was lost.
 
-- **Chatbot flows** — currently linear (yes/no/delay). A decision tree chatbot could handle more complex interactions (e.g., "I need to reschedule to next week").
+## Mistakes and Best Practices
 
----
+- Calling provider acceptance delivery: retain distinct states and the external message ID.
+- Claiming a fixed per-clinic limit or exponential retry without tracing dispatch and client behavior: limits can apply to shared sender capacity as well as tenants.
+- Treating a recorded inbound ID as completed business processing: persist processing state and make recovery explicit.
+- Treating text parsing as patient authorization: resolve tenant, contact and appointment context first.
+- Logging raw patient replies unnecessarily: the current response handler logs reply text, so masking phone numbers elsewhere does not establish privacy-safe logging.
+
+Test concurrent duplicate ingress, failures between each effect, stale appointment status, negated commands, ambiguous numeric replies, sender fallback and out-of-order receipts. Preserve staff escalation when automation cannot safely choose an action.
 
 ## Code Evidence
 
-| Claim | File |
-| ------------------------ | ---------------------------------------------------------------------------------------- |
-| WhatsApp webhook ingress | `apps/api/src/domains/whatsapp/application/services/whatsapp-webhook-ingress.service.ts` |
-| Response handler | `apps/api/src/domains/whatsapp/application/services/response-handler.service.ts` |
-| Response parser | `apps/api/src/domains/whatsapp/application/services/patient-response-parser.helper.ts` |
-| Send message use case | `apps/api/src/domains/whatsapp/application/use-cases/send-message.use-case.ts` |
-| Reconciliation cron | `apps/api/src/domains/whatsapp/whatsapp-reconciliation.cron.ts` |
-| Staff notification | `apps/api/src/domains/whatsapp/application/services/staff-notification.service.ts` |
-| Template resolver | `apps/api/src/domains/whatsapp/core/services/template-resolver.service.ts` |
+Paths are from the inspected Docita checkout, not evidence of production message volume or delivery success.
 
----
+| Mechanism | Source path |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Entitlement and send order | `apps/api/src/domains/whatsapp/application/use-cases/send-message.use-case.ts` |
+| Sender credentials and fallback | `apps/api/src/domains/whatsapp/application/services/whatsapp-sender-resolver.service.ts` |
+| Template and text dispatch | `apps/api/src/domains/whatsapp/application/services/whatsapp-message-delivery.service.ts` |
+| Inbound recording and statuses | `apps/api/src/domains/whatsapp/application/services/whatsapp-webhook-ingress.service.ts` |
+| Reply parsing | `apps/api/src/domains/whatsapp/application/services/patient-response-parser.helper.ts` |
+| Response mappings | `apps/api/src/domains/whatsapp/application/policies/patient-response.policy.ts` |
+| Delay handling and conditional update | `apps/api/src/domains/whatsapp/application/services/response-handler.service.ts` |
+| Stale delivery telemetry | `apps/api/src/domains/whatsapp/application/services/whatsapp-reconciliation.service.ts` |
+| Cron expression | `apps/api/src/shared/schedule/cron-schedules.ts` |
 
-## Interview Script (60 seconds)
+## Summary
 
-> "WhatsApp is Docita's primary patient communication channel. We support three sender modes: shared Meta number (free), bring-your-own (clinic's number), and Docita-managed. The challenge was handling patient responses — they reply with free text like 'yes', 'no', 'delay 30 min'. We built a regex-based parser that maps these to appointment actions, with a two-step flow for delays. We hit Meta's rate limits when a clinic sent 100+ reminders simultaneously — fixed with per-clinic rate limiting and exponential backoff. A daily reconciliation job syncs delivery status from Meta's API to catch any missed webhooks. The key design decision: keep it simple. NLP for response parsing was considered but rejected — Indian clinic patients use simple responses that regex handles accurately."
----
+Trace provider send, local persistence, webhook receipt and business processing as separate steps. Stable identity helps retries but does not close every failure gap. Resolve reply context before acting, and describe the stale-delivery sweep as telemetry rather than status recovery.
 
-[← Previous: Clinic Workflows](05-clinic-workflows.md) · [ Back to Index](INDEX.md) · [Next: Prescription Safety →](07-prescription-safety.md)
+## See Also
+
+- [Category revision](REVISION.md) — messaging questions and recall.
+- [Async processing](03-async-processing.md) — retries and durable effects.
+- [Clinic workflows](05-clinic-workflows.md) — status and scheduling boundaries.
+- [Subscription system](09-subscription-system.md) — entitlement and usage units.
+- [Case-study index](INDEX.md) — reading order.
+
+## References
+
+- [WhatsApp Business Messaging Policy](https://whatsappbusiness.com/policy/) — templates, service window and consent requirements.

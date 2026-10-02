@@ -1,11 +1,11 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 3 h 39 m of reading (17 files, ~13 min average).
-> **17 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
+> **Study time:** ≈ 3 h 13 m of reading (22 files, ~9 min average).
+> **22 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
 
-[![Files](https://img.shields.io/badge/files-17-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
 [![Categories](https://img.shields.io/badge/categories-6-green)](#categories)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -49,18 +49,18 @@ DRILL IT
 | 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | 11 min |
 | 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | 16 min |
 | 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | 11 min |
-| 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery | 12 min |
-| 05 | [Feature Flags & Kill Switches](02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md) | Flag types, targeting rules, kill-switch SLA, flag debt cleanup | 11 min |
-| 06 | [Backup Strategy & Restore Drills](02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md) | Backup taxonomy, 3-2-1(-1-0), RPO/RTO math, restore game days, verification | 11 min |
-| 07 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination | 18 min |
-| 08 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read replicas, partitioning, scaling levers in order | 12 min |
+| 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery | 6 min |
+| 05 | [Feature Flags & Kill Switches](02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md) | Flag types, targeting rules, kill-switch SLA, flag debt cleanup | 10 min |
+| 06 | [Backup Strategy & Restore Drills](02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md) | Backup taxonomy, 3-2-1(-1-0), RPO/RTO math, restore game days, verification | 9 min |
+| 07 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination | 6 min |
+| 08 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read replicas, partitioning, scaling levers in order | 9 min |
 | 09 | [Data Pipelines](04-data-at-scale/30.3.4.02-data-pipelines.md) | ETL vs streaming, Bronze/Silver/Gold framing | 16 min |
 | 10 | [CDN Architecture](04-data-at-scale/30.3.4.03-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) | 12 min |
 | 11 | [Zero-Downtime Deployments](05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations | 15 min |
 | 12 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy | 16 min |
-| 13 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | 11 min |
-| 14 | [Data Retention & Archival](05-shipping-and-evolution/30.3.5.04-data-retention-archival.md) | Retention tiers, hot/warm/cold storage, legal hold, right-to-erasure | 11 min |
-| 15 | [Infra & Ops Patterns Interview Questions](06-interview-prep/30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers, blue-green vs canary, scenario drills | 8 min |
+| 13 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | 10 min |
+| 14 | [Data Retention & Archival](05-shipping-and-evolution/30.3.5.04-data-retention-archival.md) | Retention tiers, hot/warm/cold storage, legal hold, right-to-erasure | 10 min |
+| 15 | [Infra & Ops Patterns Interview Questions](06-interview-prep/30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers, blue-green vs canary, scenario drills | 7 min |
 
 ---
 

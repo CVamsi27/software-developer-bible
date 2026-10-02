@@ -1,38 +1,13 @@
 #!/usr/bin/env python3
-"""Template-compliance gate for concept chapters.
+"""Template-compliance gate for teaching chapters and revision companions.
 
-Contributing.md defines the chapter template; the audits normalized the
-whole corpus to it. This gate keeps it that way:
-
-  - Concept files must carry the required `##` sections (Definition,
-    First Principles, Summary, See Also, References & Learn More) —
-    plus Code Examples for full concept files.
-  - Sections that appear must appear in canonical order (a Why It
-    Matters after Summary reads as damage, not style).
-  - Interview-questions files (per repo convention, last in every
-    category) carry a lighter contract: TL;DR, First Principles,
-    Summary, See Also, References — and must not carry a
-    `## Code Examples` heading (there it is a mislabeled Q&A block).
-  - Design case studies (`NN.N-system-design/NN-case-studies/`) follow
-    the case-study template (Requirements -> Capacity -> API -> data
-    model -> architecture -> trade-offs): a domain-driven shape where a
-    generic Definition would only duplicate the TL;DR. They require the
-    cross-reference contract instead (TL;DR, Summary, See Also,
-    References). Documented in contributing.md.
-
-Known TL;DR styles: the corpus uses both a `## TL;DR` section (328
-files) and an opening `> **TL;DR:** …` blockquote (129 files), so either
-satisfies the requirement.
-
-Known-variant headings (e.g. `## Why It Matters (TL;DR)`) are
-normalized before matching. Files under personal/ and .archive are
-skipped; INDEX.md files have their own conventions, and role-guide files
-(multiple `# Phase`/`# Part` H1 sections) are exempt.
-
-This gate supersedes `check_required_sections.py`, which checked only
-Summary/See Also/References plus the interview Code-Examples rule; that
-subset is enforced here as part of the full template, so the repo has
-exactly one template gate.
+Concepts introduce Definition, then First Principles and mechanisms, and end
+with Summary, See Also and References. TL;DR is retired. Retrieval practice
+lives in the section's separate REVISION.md, not inside a learning chapter.
+Interview banks and domain-shaped case studies retain their lighter contracts.
+Metadata, fence grammar, raw wrappers and interview depth/count rules remain
+part of this gate. INDEX, operational and personal documents have their own
+conventions.
 """
 import os
 import re
@@ -92,21 +67,13 @@ def parse_meta(text):
             fields[k.strip()] = v.strip()
     return fields
 
-# Canonical order (only checked for the sections a file actually has;
-# files may legitimately omit optional sections like How It Works)
-# The corpus carries two documented Definition orders — Why-first (older
-# stacks) and Definition-first (newer) — both accepted (contributing.md
-# only mandates TL;DR -> Definition).
-# 2026-09-30 template revision (contributing.md): the chapter ends
-# Summary -> Revision Questions -> See Also -> References. `Cheat Sheet`
-# is retired — it duplicated the Summary and cost reading time; the
-# Revision Questions section carries the retrieval-practice role instead
-# (one short Q&A set covering the chapter's sections).
+# 2026-10-01 reading-flow revision: define the concept before deriving it,
+# teach each mechanism once, and keep retrieval practice in a companion file.
+# Noncanonical domain headings may intervene without flattening their outline.
 CANON_A = [
-    'TL;DR',
+    'Definition',
     'First Principles',
     'Why It Matters',
-    'Definition',
     'How It Works',
     'Code Examples',
     'Real-World Use Cases',
@@ -114,15 +81,13 @@ CANON_A = [
     'Best Practices',
     'Performance Considerations',
     'Summary',
-    'Revision Questions',
     'See Also',
     'References & Learn More',
 ]
 
 CANON_B = [
-    'TL;DR',
-    'First Principles',
     'Definition',
+    'First Principles',
     'Why It Matters',
     'How It Works',
     'Code Examples',
@@ -131,7 +96,6 @@ CANON_B = [
     'Best Practices',
     'Performance Considerations',
     'Summary',
-    'Revision Questions',
     'See Also',
     'References & Learn More',
 ]
@@ -164,14 +128,12 @@ VARIANTS = {
     'see also': 'See Also',
 }
 
-# TL;DR is the chapter template's *first* section (AGENTS.md): a concept file
-# that never states its main point forces the reader to derive it from the
-# body. Both documented forms (a `## TL;DR` section or an opening
-# `> **TL;DR:** …` blockquote) satisfy it — see normalisation below.
-REQUIRED_CONCEPT = {'TL;DR', 'First Principles', 'Definition', 'Summary', 'See Also', 'References & Learn More'}
-REQUIRED_INTERVIEW = {'TL;DR', 'First Principles', 'Summary', 'See Also', 'References & Learn More'}
+# Required teaching sections. The definition serves as the single opening
+# overview; the final summary is the only recap in the learning chapter.
+REQUIRED_CONCEPT = {'First Principles', 'Definition', 'Summary', 'See Also', 'References & Learn More'}
+REQUIRED_INTERVIEW = {'First Principles', 'Summary', 'See Also', 'References & Learn More'}
 # Design case studies: domain-driven template, cross-reference contract only.
-REQUIRED_CASE_STUDY = {'TL;DR', 'Summary', 'See Also', 'References & Learn More'}
+REQUIRED_CASE_STUDY = {'Summary', 'See Also', 'References & Learn More'}
 
 FENCE = re.compile(r'^\s*(```|~~~)')
 FENCE_FULL = re.compile(r'^\s*(`{3,}|~{3,})(.*)$')
@@ -251,7 +213,34 @@ def is_case_study(path: str) -> bool:
 def is_reference_file(path: str) -> bool:
     """Cheat sheets / trackers / banks: reference genre, not concept chapters."""
     name = os.path.basename(path).lower()
-    return ('cheat' in name) or ('reference' in name) or ('tracker' in name) or ('bank' in name)
+    return ('cheat' in name) or ('reference' in name) or ('tracker' in name) or ('bank' in name) or name == 'revision.md'
+
+
+def check_revision_companion(path: str, text: str):
+    """Practice must cover the actual learning chapters, not just exist."""
+    problems = []
+    rows = [line for _, line, fenced, delimiter in md_fences.walk(text.splitlines())
+            if not fenced and not delimiter]
+    prose = '\n'.join(rows)
+    questions = len(re.findall(r'\*\*Q:\*\*', prose))
+    answers = len(re.findall(r'\*\*A:\*\*', prose))
+    if questions < 5 or answers != questions:
+        problems.append('revision companion needs at least five matched **Q:**/**A:** pairs')
+    parent = os.path.dirname(path)
+    for name in os.listdir(parent):
+        sibling = os.path.join(parent, name)
+        if (not name.endswith('.md') or name in {'INDEX.md', 'README.md', 'REVISION.md'}
+                or is_interview_file(sibling) or is_reference_file(sibling)):
+            continue
+        sibling_text = open(sibling, encoding='utf-8').read()
+        if is_guide_file(sibling_text):
+            continue
+        groups = re.split(r'^## ', prose, flags=re.M)
+        linked_group = [g for g in groups if re.search(
+            r'^Source:\s*\[[^\]]+\]\(' + re.escape(name) + r'(?:#[^)]*)?\)', g, re.M)]
+        if not any('**Q:**' in g and '**A:**' in g for g in linked_group):
+            problems.append(f'revision companion lacks a source-linked question group for {name}')
+    return problems
 
 
 def iter_md():
@@ -268,20 +257,18 @@ def iter_md():
 
 
 def iter_rendered_md():
-    """Everything CI's Jekyll build renders — the wrapper check's scope.
-    Wider than the template contract: docs/, contributing.md and lane
-    INDEXes are all rendered verbatim, and a broken wrapper in any of
-    them fails the build (contributing.md + verification-gates.md carry
-    literal tag mentions in prose, so they are wrapped and checked)."""
+    """Public Markdown grammar, including operational docs and INDEXes.
+
+    The teaching template is narrower; broken fences also damage reference
+    and process documents. Personal data has its own private document format.
+    """
     for root, dirs, files in os.walk(ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         rel = os.path.relpath(root, ROOT)
-        if rel.startswith(EXEMPT_PREFIXES):
-            continue
         if 'personal' in rel.split(os.sep):
             continue
         for f in files:
-            if f.endswith('.md') and f not in ('INDEX.md', 'README.md', 'AGENTS.md', 'ROADMAP.md', 'search.md'):
+            if f.endswith('.md'):
                 yield os.path.join(root, f)
 
 
@@ -442,6 +429,8 @@ def fence_problems(text: str):
             in_fence = True
             open_char, open_len = marker[0], len(marker)
             saw_content = False
+    if in_fence:
+        problems.append('unclosed code fence at end of file; later prose renders as code')
     return problems
 
 
@@ -499,18 +488,33 @@ def check(path: str):
             q_lines.add(line.strip())
 
     has_blockquote_tldr = any(
-        TLDR_BQ.match(l) for l in text.splitlines()
+        TLDR_BQ.match(l) for _, l, fenced, delimiter in md_fences.walk(text.splitlines())
+        if not fenced and not delimiter
     )
     file_heads = set(heads)
     if has_blockquote_tldr:
         file_heads.add('TL;DR')
+
+    if 'TL;DR' in file_heads:
+        problems.append('retired TL;DR opening duplicates the definition; preserve unique facts in the relevant body section')
+    if 'Cheat Sheet' in file_heads and not is_reference_file(path) and not is_interview_file(path):
+        problems.append('retired in-chapter Cheat Sheet repeats the summary; keep one recap and link separate revision practice')
+    if 'Revision Questions' in file_heads and os.path.basename(path) != 'REVISION.md':
+        problems.append('revision questions belong in the separate section REVISION.md companion')
+
+    if os.path.basename(path) == 'REVISION.md':
+        problems += check_revision_companion(path, text)
+    elif (not is_interview_file(path) and not is_reference_file(path)
+          and os.path.exists(os.path.join(os.path.dirname(path), 'INDEX.md'))
+          and not os.path.exists(os.path.join(os.path.dirname(path), 'REVISION.md'))):
+        problems.append('learning section has no separate REVISION.md companion')
 
     if is_interview_file(path):
         req = REQUIRED_INTERVIEW
     elif is_case_study(path):
         req = REQUIRED_CASE_STUDY
     elif is_reference_file(path):
-        # reference genre: TL;DR + Summary + See Also + References, no Definition/FP mandate
+        # reference genre: Summary + See Also + References, no Definition/FP mandate
         req = {'Summary', 'See Also', 'References & Learn More'}
     else:
         req = REQUIRED_CONCEPT
@@ -603,10 +607,11 @@ def main() -> int:
             print(f"{rel}")
             for p in problems:
                 print(f"    - {p}")
-    # Wrapper integrity on EVERY file the site renders (see iter_rendered_md).
+    # Grammar on public Markdown beyond the teaching-template scope.
     for path in iter_rendered_md():
         rel = os.path.relpath(path, ROOT)
-        problems = check_raw_wrapper(open(path, encoding='utf-8').read())
+        text = open(path, encoding='utf-8').read()
+        problems = check_raw_wrapper(text) + fence_problems(text)
         if problems:
             bad += 1
             print(f"{rel}")

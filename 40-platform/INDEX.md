@@ -1,11 +1,11 @@
 # Platform Stack
 
-> **Study time:** ≈ 23 h 6 m of reading (95 files, ~15 min average).
+> **Study time:** ≈ 20 h 28 m of reading (118 files, ~10 min average).
 > **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, CDN, Reverse Proxy, IaC** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 95 files across 12 sub-stacks — the "how it runs" layer of the bible.
+> 118 files across 12 sub-stacks — the "how it runs" layer of the bible.
 
-[![Files](https://img.shields.io/badge/files-95-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-118-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-12-green)](#the-12-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

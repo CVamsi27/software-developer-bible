@@ -1,13 +1,13 @@
 # Caching — Index
 
-> **Study time:** ≈ 59 min of reading (4 files, ~15 min average).
-> **4 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
+> **Study time:** ≈ 48 min of reading (5 files, ~10 min average).
+> **5 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why caching:** A 10ms database query × 1000 RPS = 10 CPU seconds/second. Caching turns that into a 1ms Redis hit × 1000 RPS = 1 CPU second/second. The difference between a junior and senior engineer is often the ability to identify what to cache, how to invalidate it, and how to prevent stampedes.
+**Why caching:** A 10 ms request at 1000 requests/s implies about 10 concurrent requests by Little's law, not 10 CPU seconds/s. Caching can reduce origin work and response latency; measure both rather than equating elapsed time with CPU consumption. The difference between a junior and senior engineer is often the ability to identify what to cache, how to invalidate it, and how to prevent stampedes.
 
 ---
 
@@ -24,9 +24,9 @@
 ## The Decision Table (memorize this)
 
 | Read/write profile | Pattern | Why |
-| ------------------------------ | ---------------------------------- | ---------------------------------------- |
+| ------------------------------ | ---------------------------------- | ------------------------------------------------------------------ |
 | Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Simplest correct default |
-| Read-heavy, needs fresh writes | Write-through | Cache always consistent; write latency ↑ |
+| Read-heavy, needs fresh writes | Write-through | Successful writes warm reads; partial failures and ordering remain |
 | Write-heavy analytics | Write-behind (batch flush) | Throughput ↑; risk window on crash |
 | Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
 | Cross-instance coordination | Redlock (with caveats) / DB lease | Correctness > availability of lock |
@@ -40,13 +40,13 @@ Need to cache data?
 │
 ├─ Read-heavy, eventual consistency OK? ──→ Cache-aside + TTL (default)
 │
-├─ Read must reflect writes immediately? ──→ Write-through (latency cost)
+├─ Read must reflect writes immediately? ──→ authoritative reads or source-coordinated versions
 │
 ├─ Writes are huge, reads are rare? ──→ Write-behind (consistency risk)
 │
 ├─ Cache miss stampede risk? ──→ Single-flight + early refresh
 │
-├─ Multi-instance mutex? ──→ Redlock (with fencing token)
+├─ Multi-instance mutex? ──→ DB invariant or lease + resource-enforced fencing
 │
 └─ Just count / dedupe / queue? ──→ Specialized data structures (HLL, Bloom, Streams)
 ```
@@ -58,9 +58,9 @@ Need to cache data?
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | 10 min |
-| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 22 min |
-| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 15 min |
-| 4 | [Interview Questions](20.8.04-interview-questions.md) | 8 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | 12 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | 16 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | 8 min |
+| 4 | [Interview Questions](20.8.04-interview-questions.md) | 25 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | 12 min |
 
 ---
 
@@ -68,17 +68,9 @@ Need to cache data?
 
 1. **Caching Deep Dive** — must know, the patterns
 2. **Redis Fundamentals** — the most common caching store
-3. **Advanced Redis** — for senior/Distributed-systems roles
-
----
-
-## Interview questions to expect
-
-- "How do you decide what to cache?"
-- "Cache-aside vs write-through vs write-behind — when to use which?"
-- "How do you prevent cache stampedes?"
-- "How do you invalidate a distributed cache?"
-- "Walk me through Redlock. What are the failure modes?"
+3. **Advanced Redis** — use leases, Lua, and Streams only after naming their failure boundary
+4. **Revision** — use the [separate chapter review](REVISION.md) to diagnose gaps; return to its source chapter
+5. **Interview Questions** — practice concise answers after the mechanisms are clear
 
 ---
 
@@ -101,9 +93,9 @@ Need to cache data?
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
 | Topic | Docita evidence |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Global cache module | `apps/api/src/cache/cache.module.ts` - @nestjs/cache-manager registered globally: TTL 300s, max 500 entries |
-| Tag-based invalidation | `apps/api/src/shared/modules/services/tagged-cache.service.ts` - tag→key maps invalidate whole groups atomically |
+| Tag-based invalidation | `apps/api/src/shared/modules/services/tagged-cache.service.ts` - tag→key maps identify groups for invalidation; verify concurrency guarantees in the implementation |
 | LRU primitive | `apps/api/src/shared/common/utils/lru-cache.ts` - capacity+TTL in-process LRU for read-heavy lookups |
 | Response caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET caching through CACHE_MANAGER |
 | Short-TTL flag cache | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - 30s resolved-flag TTLs bound staleness |

@@ -1,9 +1,9 @@
 # Routing & Middleware — Next.js
 
-> **Study time:** ≈ 1 h 12 m of reading (3 files, ~24 min average).
-> **3 files.** The request pipeline: Edge middleware for interception, Route Handlers as the API surface, and the Metadata API for SEO tags.
+> **Study time:** ≈ 1 h 10 m of reading (4 files, ~18 min average).
+> **4 files.** The request pipeline: Edge middleware for interception, Route Handlers as the API surface, and the Metadata API for SEO tags.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](#files)
+[![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Routing_and_Middleware-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Middleware](10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 22 min |
-| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 25 min |
-| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 25 min |
+| 01 | [Middleware](10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 21 min |
+| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 23 min |
+| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 24 min |
 
 ---
 
@@ -32,3 +32,7 @@ _No direct docita implementation yet._ (Docita has no Next.js layer — its rout
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

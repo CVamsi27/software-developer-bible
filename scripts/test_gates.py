@@ -152,7 +152,6 @@ def _bank(claim):
     return (
         f"{_BANK_META}\n# Database Interview Bank\n\n"
         f"> {claim} questions on databases, senior depth.\n\n"
-        f"## TL;DR\n\n{claim} questions.\n\n"
         f"## First Principles\n\nDatabases reward designs that assume failure.\n\n"
         f"## Interview Questions\n\n"
         f"{_BANK_QS}\n\n## Summary\n\n{_BANK_NESTED}Covers databases.\n\n"
@@ -163,10 +162,33 @@ def _bank(claim):
 BANK_OVER_CLAIM = _bank(26)
 BANK_CLEAN = _bank(25)
 
+FLOW_CLEAN = (
+    _BANK_META.replace('category: Interview', 'category: Backend')
+    .replace('category-Interview-orange', 'category-Backend-orange')
+    + '\n# Database Transactions\n\n'
+    '## Definition\n\nA transaction groups changes into one commit decision.\n\n'
+    '## First Principles\n\nPartial failure requires a shared commit boundary.\n\n'
+    '## Code Examples\n\n```sql\nBEGIN;\nCOMMIT;\n```\n\n'
+    '## Summary\n\nChoose isolation for the invariants you need to protect.\n\n'
+    '## See Also\n\nReview the database section.\n\n'
+    '## References & Learn More\n\nConsult the database documentation.\n'
+)
+
 # Rule 4: a Cheat Sheet fence holding fewer than THIN_SHEET_MIN_LINES content
 # lines is a sheet that was added but never populated (the generator-gap
 # family from 2535a0b4). The compliant bank gains a thin sheet; the clean
 # side is the unmodified bank. Isolates the thin-sheet rule from the rest.
+REVISION_CLEAN = (
+    _BANK_META.replace('category: Interview', 'category: Reference')
+    .replace('category-Interview-orange', 'category-Reference-lightgrey')
+    + '\n# Transactions — Revision\n\n'
+    '## Database Transactions\n\nSource: [Database Transactions](p.md)\n\n'
+    + ''.join(f'**Q:** Which invariant does case {i} protect?\n**A:** The stated commit boundary.\n\n' for i in range(5))
+    + '## Summary\n\nExplain the decision before checking the source.\n\n'
+    '## See Also\n\nRead the learning chapter.\n\n'
+    '## References & Learn More\n\nSee the source references.\n'
+)
+
 BANK_THIN_SHEET = BANK_CLEAN.replace(
     "## See Also",
     "## Cheat Sheet\n\n```text\nDATABASE BANK QUICK REFERENCE\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n```\n\n## See Also", 1)
@@ -175,7 +197,7 @@ BANK_THIN_SHEET = BANK_CLEAN.replace(
 # followed by a closer) — the stray-delimiter fingerprint that collapsed 24
 # cheat sheets on 2026-09-21. Isolates fence rule 3 from all other checks.
 BANK_EMPTY_FENCE = BANK_CLEAN.replace(
-    "25 questions.\n", "25 questions.\n\n```\n```\n", 1)
+    "## First Principles", "```\n```\n\n## First Principles", 1)
 
 def _wiring_sandbox():
     """{path: content} for a sandbox whose only defect is a workflow's trigger paths.
@@ -400,6 +422,46 @@ def _dup_pair_sandbox(pairs, reword=True):
 
 
 CASES = [
+    {
+        'name': 'gate 6b checks fence grammar in operational Markdown too',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'p.md': FLOW_CLEAN, 'docs/example.md': '# Example\n\n```text\nUnclosed sample\n'},
+        'clean': {'p.md': FLOW_CLEAN, 'docs/example.md': '# Example\n\n```text\nClosed sample\n```\n'},
+    },
+
+    {
+        'name': 'gate 6b requires a revision companion for indexed learning sections',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'learning/p.md': FLOW_CLEAN, 'learning/INDEX.md': '# Learning Index\n'},
+        'clean': {'learning/p.md': FLOW_CLEAN, 'learning/INDEX.md': '# Learning Index\n', 'learning/REVISION.md': REVISION_CLEAN},
+    },
+    {
+        'name': 'gate 6b rejects revision stubs and missing source coverage',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'p.md': FLOW_CLEAN, 'REVISION.md': REVISION_CLEAN.replace('](p.md)', '](wrong.md)').replace('**Q:**', '**Prompt:**')},
+        'clean': {'p.md': FLOW_CLEAN, 'REVISION.md': REVISION_CLEAN},
+    },
+
+    {
+        'name': 'gate 6b rejects retired TLDR while accepting definition-first flow',
+        'gate': 'check_template.py',
+        'args': [],
+        'plant': {'p.md': FLOW_CLEAN.replace('## Definition', '## TL;DR\n\nDuplicate overview.\n\n## Definition', 1)},
+        'clean': {'p.md': FLOW_CLEAN},
+    },
+    {
+        'name': 'gate 6b rejects a duplicate cheat sheet inside a concept',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'p.md': FLOW_CLEAN.replace('## See Also', '## Cheat Sheet\n\nA duplicate recap of the concept.\n\n## See Also', 1)},
+        'clean': {'p.md': FLOW_CLEAN},
+    },
+    {
+        'name': 'gate 6b keeps revision questions outside learning chapters',
+        'gate': 'check_template.py',
+        'args': [],
+        'plant': {'p.md': FLOW_CLEAN.replace('## See Also', '## Revision Questions\n\n**Q:** What is a transaction?\n**A:** One commit boundary.\n\n## See Also', 1)},
+        'clean': {'p.md': FLOW_CLEAN},
+    },
     {
         "name": "gate 2 alignment fires on unspaced tables",
         "gate": "check_alignment.py",
@@ -627,6 +689,23 @@ CASES = [
             ),
             "40-platform/40.7-serverless-edge/40.7.01-workers.md": (
                 "# Worker\n\n```typescript\nconst geo = request.geo;\n```\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects obsolete MSW rest imports including multiline declarations",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["50-quality/50.1-testing"],
+        "plant": {
+            "50-quality/50.1-testing/50.1.01-mocking.md": (
+                "# Mocking\n\n```typescript\nimport {\n  rest,\n} from 'msw';\n```\n"
+            ),
+        },
+        "clean": {
+            "50-quality/50.1-testing/50.1.01-mocking.md": (
+                "# Mocking\n\n```typescript\nimport { http, HttpResponse } from 'msw';\n```\n"
+                "\nMSW v1 used rest; current code uses http.\n"
             ),
         },
     },

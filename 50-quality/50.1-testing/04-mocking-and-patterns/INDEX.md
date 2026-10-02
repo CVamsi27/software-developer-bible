@@ -1,9 +1,9 @@
 # Mocking & Test Patterns
 
-> **Study time:** ≈ 1 h 36 m of reading (2 files, ~48 min average).
-> **2 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
+> **Study time:** ≈ 1 h of reading (3 files, ~20 min average).
+> **3 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ Isolation without structure produces brittle suites; structure without isolation
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | 47 min |
-| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 49 min |
+| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | 10 min |
+| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 48 min |
 
 ---
 
@@ -68,3 +68,7 @@ Interview trap: "Your test mocks half the system — what are you actually verif
 | Factories / builders | `apps/api/src/test-utils/factories.ts` |
 | Time injection seam (mock at the port, not the call site) | `apps/api/src/shared/common/ports/clock.port.ts` ← `system-clock.service.ts` |
 | Guard-level spec example | `apps/api/src/shared/modules/auth/auth/ws-jwt-auth.guard.spec.ts` |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

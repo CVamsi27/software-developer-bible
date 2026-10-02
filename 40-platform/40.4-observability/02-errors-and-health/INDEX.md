@@ -1,9 +1,9 @@
 # Errors & Health
 
-> **Study time:** ≈ 43 min of reading (2 files, ~22 min average).
-> **2 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
+> **Study time:** ≈ 41 min of reading (3 files, ~14 min average).
+> **3 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Errors%20%26%20Health-%230ea5e9)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ Pillars tell you what the system did; errors and health tell you whether what it
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 22 min |
-| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | 21 min |
+| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | 20 min |
+| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | 19 min |
 
 ---
 
@@ -48,3 +48,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Error service layer | `monitoring/services/error-tracking.service.ts` wraps reporting for the app |
 | Ops alerts | `ops-alert.service.ts` + `listeners/ops-alert.listener.ts` react to domain events |
 | Health checks | `health-check.controller.ts`, `monitoring/health/prisma.health.ts`, `health-check.service.ts`; Fly probes `/api/health/live` |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

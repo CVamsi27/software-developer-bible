@@ -1,9 +1,9 @@
 # HTTP Mechanics - REST APIs
 
-> **Study time:** ≈ 1 h 30 m of reading (4 files, ~22 min average).
-> **4 files.** The transport semantics you cannot fake in an interview: method semantics and idempotency, status code families, CORS, and HTTP caching headers.
+> **Study time:** ≈ 1 h 30 m of reading (5 files, ~18 min average).
+> **5 files.** The transport semantics you cannot fake in an interview: method semantics and idempotency, status code families, CORS, and HTTP caching headers.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-HTTP%20Mechanics-blue)](../INDEX.md)
 
 ---
@@ -14,8 +14,8 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [HTTP Methods](20.3.2.01-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency, safety | 29 min |
 | 02 | [Status Codes](20.3.2.02-status-codes.md) | 2xx/4xx/5xx families, when to use which | 30 min |
-| 03 | [CORS](20.3.2.03-cors.md) | Preflight, headers, credentials | 21 min |
-| 04 | [HTTP Caching](20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation | 10 min |
+| 03 | [CORS](20.3.2.03-cors.md) | Preflight, headers, credentials | 20 min |
+| 04 | [HTTP Caching](20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation | 9 min |
 
 ---
 
@@ -36,3 +36,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ---
 
 [← Previous: Design & Contract](../01-design-and-contract/INDEX.md) · [Next: Payloads, Errors & Integration →](../03-payloads-errors-integration/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

@@ -1,9 +1,9 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 6 h 25 m of reading (23 files, ~17 min average).
-> **23 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
+> **Study time:** ≈ 5 h 36 m of reading (24 files, ~14 min average).
+> **24 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
-[![Files](https://img.shields.io/badge/files-23-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -68,6 +68,12 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 **Cross-references:** [Design Patterns](../../30.1-design-patterns/INDEX.md) | [Microservices](../../../20-backend/20.6-microservices/INDEX.md) | [Database](../../../20-backend/20.4-database/INDEX.md) | [REST APIs](../../../20-backend/20.3-rest-apis/INDEX.md) | [WebSockets](../../../60-realtime/60.1-websockets/INDEX.md)
 
 ---
+
+## Reading Path and Completion Check
+
+Begin with the problem-framing chapter, capacity estimates and network fundamentals. Then build the storage/consistency model before coordination, delivery and resilience mechanisms.
+
+Trace a partition, timeout and retry through a chosen design; state the exact invariant, authority and recovery mechanism. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Navigation
 

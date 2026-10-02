@@ -1,9 +1,9 @@
 # Advanced Telemetry
 
-> **Study time:** ≈ 57 min of reading (3 files, ~19 min average).
-> **3 files.** Beyond the basics: OpenTelemetry as the vendor-neutral instrumentation layer, continuous profiling as the fourth signal, and eBPF for zero-instrumentation kernel-level visibility.
+> **Study time:** ≈ 51 min of reading (4 files, ~13 min average).
+> **4 files.** Beyond the basics: OpenTelemetry as the vendor-neutral instrumentation layer, continuous profiling as the fourth signal, and eBPF for zero-instrumentation kernel-level visibility.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Telemetry-%230ea5e9)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,9 +19,9 @@ Instrumenting once per vendor does not survive the second vendor swap. OpenTelem
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [OpenTelemetry](40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 26 min |
-| 02 | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 15 min |
-| 03 | [eBPF Observability](40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks | 16 min |
+| 01 | [OpenTelemetry](40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 23 min |
+| 02 | [Continuous Profiling](40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing across releases, overhead budgets, span-profile trace integration | 13 min |
+| 03 | [eBPF Observability](40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium service graph, Pixie auto-telemetry, Falco/Tetragon security overlap, overhead and risks | 13 min |
 
 ---
 
@@ -51,3 +51,7 @@ _No direct docita implementation yet_ for OpenTelemetry/eBPF — tracing is Sent
 | Metrics aggregation & cardinality care | `metrics-aggregation.service.ts`, business metrics separated from API-request metrics |
 | RUM telemetry | `web-vitals-metrics.service.ts` + RUM controller |
 | Continuous profiling | Sentry profiling integration exists (`SENTRY_PROFILING`), kept off by default on Alpine |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

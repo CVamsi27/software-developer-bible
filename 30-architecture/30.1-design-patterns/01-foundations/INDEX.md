@@ -1,22 +1,22 @@
 # Foundations — Principles, OOP & UML
 
-> **Study time:** ≈ 1 h 9 m of reading (4 files, ~17 min average).
-> **4 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Without them, the patterns are unmotivated syntax.
+> **Study time:** ≈ 1 h 4 m of reading (5 files, ~13 min average).
+> **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Without them, the patterns are unmotivated syntax.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
 ## Why this folder exists
 
-Every interview question about a design pattern reduces to: "How does this pattern help you follow SOLID?" or "What's the OOP concept at work here?" If you can't answer those, the pattern name is meaningless.
+Many questions about a design pattern examine: "How does this pattern help you follow SOLID?" or "What's the OOP concept at work here?" If you can't answer those, the pattern name is meaningless.
 
-**Read order:** SOLID → OOP → Other principles → UML.
+**Read order:** OOP → SOLID → Other principles → UML.
 
 | Order | File | Time | What it unlocks |
-| ----: | ------------------------------------------------------ | -----: | -------------------------------------------------- |
-| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | The 5 principles every GoF pattern enforces |
+| ----: | ------------------------------------------------------ | -----: | --------------------------------------------------------------- |
+| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries |
 | 2 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review |
 | 3 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships |
 | 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard |
@@ -42,7 +42,7 @@ The "other 6" principles that show up in code reviews and LLD interviews.
 - **DRY** — Don't Repeat Yourself
 - **KISS** — Keep It Simple, Stupid
 - **YAGNI** — You Aren't Gonna Need It
-- **Rule of Three** — duplicate once is fine, twice is a smell, three times → refactor
+- **Rule of Three** — a third case often clarifies variation; not a mandatory threshold
 - **Composition over Inheritance** — favor "has-a" over "is-a"
 - **POLA** — Principle of Least Astonishment
 - **SoC** — Separation of Concerns
@@ -78,6 +78,12 @@ The visual language of software design. LLD interviews expect you to sketch thes
 | **UML** | — | "Draw the class diagram for the parking lot LLD." |
 
 ---
+
+## Reading Path and Completion Check
+
+Read object behavior before design heuristics, then use UML to make one concrete interaction visible. Revisit SOLID and DRY/KISS/YAGNI against that example.
+
+Show one case where applying a principle reduces change cost and one where it adds unnecessary abstraction. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Navigation
 

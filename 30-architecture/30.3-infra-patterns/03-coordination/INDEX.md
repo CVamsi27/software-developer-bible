@@ -1,9 +1,9 @@
 # Coordination
 
-> **Study time:** ≈ 18 min of reading (1 files, ~18 min average).
+> **Study time:** ≈ 8 min of reading (2 files, ~4 min average).
 > **1 file.** Who runs the cron? Who processes the queue? When multiple instances of a service share work, exactly one must lead — and every instance must agree on who. Leader election and consensus answer that question safely.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Coordination-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,9 +19,15 @@ Scale out to 5 replicas and suddenly scheduled jobs run 5 times, background work
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | 18 min |
+| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | 6 min |
 
 ---
+
+## Reading Path and Completion Check
+
+Use the consensus theory link first, then compare production coordination primitives and inspect lease renewal and fencing at the resource.
+
+Show a paused owner resuming after a successor acquires the lease and explain exactly which write the resource rejects. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

@@ -1,9 +1,9 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 2 h 10 m of reading (6 files, ~22 min average).
-> **6 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
+> **Study time:** ≈ 2 h 2 m of reading (7 files, ~17 min average).
+> **7 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](#files)
+[![Files](https://img.shields.io/badge/files-7-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Advanced_Hooks_and_Patterns-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-wip-yellow)](#)
 
@@ -13,12 +13,12 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 21 min |
-| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 22 min |
-| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 39 min |
-| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 18 min |
-| 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 13 min |
-| 06 | [State Management](10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 17 min |
+| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 19 min |
+| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 20 min |
+| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 36 min |
+| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 16 min |
+| 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 9 min |
+| 06 | [State Management](10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 15 min |
 
 ---
 
@@ -44,3 +44,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ## Navigation
 
 [← Back to React](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

@@ -1,9 +1,9 @@
 # Design Patterns — Index
 
-> **Study time:** ≈ 14 h 22 m of reading (38 files, ~23 min average).
-> **38 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Senior LLD/HLD interviews assume fluent recall of these.
+> **Study time:** ≈ 5 h 25 m of reading (43 files, ~8 min average).
+> **43 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Senior LLD/HLD interviews assume fluent recall of these.
 
-[![Files](https://img.shields.io/badge/files-38-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-43-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![GoF Coverage](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](#)
@@ -14,7 +14,7 @@
 
 ## Classification
 
-Design patterns are classified into **3 GoF categories** (creational, structural, behavioral) + **foundations** (principles you need first) + **architectural** (modern patterns for distributed systems) + **interview prep**.
+Design patterns are classified into **3 GoF categories** (creational, structural, behavioral) + **foundations** (principles you need first) + **architectural** (application and cross-boundary design) + **interview prep**.
 
 | Category | Purpose | Subfolder | # Patterns |
 | ------------------ | ---------------------------------------------------------------- | ----------------------------------------------- | --------------: |
@@ -38,7 +38,7 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 ### If you're prepping for an interview
 
 1. Skim the [category overview](01-foundations/INDEX.md) (5 min).
-2. Read **all 5 creational** + **8 structural** + **12 behavioral** at the "TL;DR + When to use" level (1-2 hrs).
+2. Read **all 5 creational** + **8 structural** + **12 behavioral** through each chapter's concrete problem and execution trace.
 3. Deep-dive on 3-4 patterns you don't know cold.
 4. Hit [Interview Questions](06-interview-prep/30.1.6.01-interview-questions.md) for 50+ curated questions.
 
@@ -47,11 +47,11 @@ Design patterns are classified into **3 GoF categories** (creational, structural
 Use this decision cheat sheet (full version in each category INDEX):
 
 | Need | Category | Pick one of |
-| -------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Create objects flexibly | Creational | Factory, Builder, Abstract Factory, Prototype, Singleton |
 | Compose classes into larger structures | Structural | Adapter, Decorator, Facade, Proxy, Composite, Bridge, Module |
 | Manage object interactions | Behavioral | Observer, Strategy, State, Command, Mediator, Chain of Responsibility, Iterator, Visitor, Memento, Template Method, Interpreter, Null Object |
-| Distributed systems | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC/MVP/MVVM |
+| Application boundaries and distributed coordination | Architectural | Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC/MVP/MVVM |
 
 ---
 
@@ -63,7 +63,7 @@ SOLID, OOP concepts, UML diagrams, DRY/KISS/YAGNI. Read these before any pattern
 ### [02 — Creational Patterns](02-creational/INDEX.md) (5 files)
 Object creation. Decouple "how to construct" from "what to do with the constructed thing."
 
-- [Singleton](02-creational/30.1.2.01-singleton.md) — one global instance
+- [Singleton](02-creational/30.1.2.01-singleton.md) — one instance in a defined scope
 - [Factory Method](02-creational/30.1.2.02-factory-method.md) — subclass decides what to instantiate
 - [Builder](02-creational/30.1.2.03-builder.md) — step-by-step construction of complex objects
 - [Abstract Factory](02-creational/30.1.2.04-abstract-factory.md) — families of related objects
@@ -85,7 +85,7 @@ Class/object composition. Combine small pieces into larger structures while keep
 Object collaboration. Manage algorithms, responsibilities, and communication between objects.
 
 - [Strategy](04-behavioral/30.1.4.01-strategy.md) — swap algorithms at runtime
-- [Observer](04-behavioral/30.1.4.02-observer.md) — event-driven, pub/sub
+- [Observer](04-behavioral/30.1.4.02-observer.md) — explicit notification registrations
 - [Chain of Responsibility](04-behavioral/30.1.4.03-chain-of-responsibility.md) — pass request along a chain
 - [State](04-behavioral/30.1.4.04-state.md) — behavior changes with internal state
 - [Template Method](04-behavioral/30.1.4.05-template-method.md) — skeleton + steps
@@ -102,7 +102,7 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 - [Repository](05-architectural/30.1.5.01-repository.md) — data access abstraction
 - [CQRS & DI](05-architectural/30.1.5.02-cqrs-di.md) — command/query separation + dependency injection
-- [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — store events, not state
+- [Event Sourcing](05-architectural/30.1.5.03-event-sourcing.md) — events as the authoritative state history
 - [Saga](05-architectural/30.1.5.04-saga.md) — distributed transactions
 - [DDD Tactical Patterns](05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) — entities, value objects, aggregate boundaries
 - [Anti-Corruption Layer](05-architectural/30.1.5.06-anti-corruption-layer.md) — isolate legacy/external models (facade+adapter+translator)
@@ -114,43 +114,11 @@ Modern, distributed-systems patterns. Cross-cutting; not part of the original Go
 
 ---
 
-## Pattern Map (one-glance cheat sheet)
+## Check the boundary before the label
 
-| Pattern | Category | Intent | Use when | Avoid when |
-| --------------------------- | ------------- | ----------------------------------- | --------------------------------------------------------------- | -------------------------------------------- |
-| **Singleton** | Creational | One global instance | Logger, config, connection pool | Testability matters, multiple envs |
-| **Factory Method** | Creational | Defer instantiation to subclass | Plugin system, multiple impls | Only one type, simple new |
-| **Abstract Factory** | Creational | Families of related objects | Cross-platform UI, theme systems | Few object types, no family concept |
-| **Builder** | Creational | Step-by-step complex object | 5+ optional fields, immutability | Simple objects with 2-3 fields |
-| **Prototype** | Creational | Clone instead of construct | Object creation is expensive | Class hierarchy is simple |
-| **Adapter** | Structural | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | You control both sides |
-| **Facade** | Structural | Simple front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple |
-| **Decorator** | Structural | Add behavior dynamically | Cross-cutting concerns (logging, auth) | Many combinations → combinatorial explosion |
-| **Proxy** | Structural | Controlled access | Lazy loading, caching, auth checks | Direct access is fine |
-| **Module** | Structural | Encapsulation at file level | Always (in modern JS/TS) | N/A (it's a default) |
-| **Composite** | Structural | Part-whole tree | File system, UI tree, org chart | Flat structures, no recursion |
-| **Bridge** | Structural | Decouple abstraction/implementation | Multiple dimensions of variation | One dimension, stable axis |
-| **Flyweight** | Structural | Share state to scale | Many similar objects (chars, particles) | Few objects, no memory pressure |
-| **Strategy** | Behavioral | Swap algorithms at runtime | Multiple ways to do same thing | Only one algorithm ever |
-| **Observer** | Behavioral | Event-driven notification | UI events, pub/sub, reactive streams | Tight coupling is acceptable |
-| **Chain of Responsibility** | Behavioral | Pass request along chain | Middleware, validation pipelines | Single handler always |
-| **State** | Behavioral | Behavior depends on state | State machines, workflow engines | Few states, no transitions |
-| **Template Method** | Behavioral | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed |
-| **Iterator** | Behavioral | Sequential access | Collections, lazy sequences | Trivial arrays |
-| **Mediator** | Behavioral | Central communication hub | Many-to-many object interactions | Few objects, direct refs are fine |
-| **Memento** | Behavioral | Capture/restore state | Undo, snapshots, transactions | No history needed |
-| **Command** | Behavioral | Request as object | Undo/redo, queueing, macro recording | Simple one-shot operations |
-| **Visitor** | Behavioral | Add ops without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable |
-| **Interpreter** | Behavioral | Grammar + interpreter | DSLs, configuration formats | Performance-critical parsing |
-| **Null Object** | Behavioral | No-op default instead of null | Neutral defaults (guest user, no-op logger), branch-free chains | Silence would hide real bugs |
-| **Repository** | Architectural | Data access abstraction | Domain-driven design, testing | Simple CRUD with one model |
-| **CQRS** | Architectural | Separate read/write models | High-read or high-write asymmetry | Simple CRUD, low scale |
-| **Event Sourcing** | Architectural | State from event log | Audit-required domains, temporal queries | State is ephemeral, no audit |
-| **Saga** | Architectural | Distributed transactions | Microservices, multi-step business flow | Single DB transaction works |
-| **DDD Aggregates & VOs** | Architectural | Consistency boundaries + invariants | Complex domains with business rules | CRUD without real invariants |
-| **Anti-Corruption Layer** | Architectural | Isolate foreign models | Legacy/vendor integration, strangler migration | You own both sides |
-| **Service Locator vs DI** | Architectural | Dependency resolution strategy | Wiring/testability discussions (DI wins) | Runtime-keyed plugin registries (locator ok) |
-| **MVC/MVP/MVVM** | Architectural | UI separation patterns | Frontend architecture, framework fluency | Trivial static UIs |
+The category indexes contain focused comparison tables. For a real problem, identify what changes: construction, wrapper behavior, policy, lifecycle, coordination or persistence. Then choose the smallest boundary that keeps its contract visible. A familiar pattern can simplify that decision; adding every pattern only adds obligations.
+
+After each category, use its separate revision companion. Finish with the interview bank's scenarios, where local class shapes must be connected to concurrency, failure and recovery.
 
 ---
 

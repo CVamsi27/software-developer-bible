@@ -1,9 +1,9 @@
 # Compilers
 
-> **Study time:** ≈ 17 min of reading (2 files, ~8 min average).
-> **2 files.** How TS/JSX become browser-compatible JS: Babel (the extensible classic) and the Go/Rust speed tier (ESBuild, SWC).
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
+> **3 files.** How TS/JSX become browser-compatible JS: Babel (the extensible classic) and the Go/Rust speed tier (ESBuild, SWC).
 
-[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Compilers-%2364748b)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 8 min |
-| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | 9 min |
+| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | 6 min |
+| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | 7 min |
 
 ---
 
@@ -47,3 +47,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Type-check as a build gate | Turbo `check-types` task with dependency ordering; Vite builds depend on it passing |
 | Astro check | Landing app type-checks via `astro check` in its own pipeline |
 | Babel / SWC specifics | Not hand-configured — they arrive embedded inside Vite/Astro toolchains |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

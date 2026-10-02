@@ -1,6 +1,6 @@
 # Interview Prep — Kubernetes
 
-> **Study time:** ≈ 21 min of reading (1 files, ~21 min average).
+> **Study time:** ≈ 20 min of reading (1 files, ~20 min average).
 > **1 file, 50+ curated questions with answers.** The drill that converts K8s knowledge into interview performance.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)

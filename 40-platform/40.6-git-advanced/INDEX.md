@@ -1,9 +1,9 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 2 h 13 m of reading (10 files, ~13 min average).
-> **10 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
+> **Study time:** ≈ 1 h 54 m of reading (11 files, ~10 min average).
+> **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -31,7 +31,7 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 | # | File | Topics | When to read | Read time |
 | --: | ------ | -------- | -------------- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 16 min |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 14 min |
 
 ---
 
@@ -41,8 +41,8 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 9 min |
-| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 10 min |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 7 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 8 min |
 
 **Decision:**
 
@@ -60,7 +60,7 @@ What branching model?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 13 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 11 min |
 
 ---
 
@@ -70,8 +70,8 @@ The power tools.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 14 min |
-| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 13 min |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 12 min |
+| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 11 min |
 
 ---
 
@@ -79,7 +79,7 @@ The power tools.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 15 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 12 min |
 
 ---
 
@@ -89,8 +89,8 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 14 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 14 min |
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 12 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 11 min |
 
 ---
 
@@ -98,7 +98,7 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 15 min |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 14 min |
 
 ---
 
@@ -154,3 +154,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Husky pre-push as a gate | `.husky/pre-push` runs ~12 cheap standard gates with `--enforce` (jscpd clones, i18n coverage, zod parity, error-boundary coverage…) so bad pushes die before wasting CI; full `verify:standard` stays the merge gate |
 | Bypass escape hatch | Both hooks documented for `--no-verify` hotfixes — pragmatism over dogma |
 | Workflow hygiene | `workflow-staleness.yml` + `check-workflow-script-refs.mjs` keep CI configs from rotting |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

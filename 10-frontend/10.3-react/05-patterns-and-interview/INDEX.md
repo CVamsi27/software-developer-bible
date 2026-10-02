@@ -1,9 +1,9 @@
 # Patterns & Interview Prep — React
 
-> **Study time:** ≈ 1 h 6 m of reading (3 files, ~22 min average).
-> **3 files.** Reusable component composition patterns — portals and compound components — plus the 60+ question interview bank.
+> **Study time:** ≈ 1 h 5 m of reading (4 files, ~16 min average).
+> **4 files.** Reusable component composition patterns — portals and compound components — plus the 60+ question interview bank.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](#files)
+[![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Patterns_and_Interview-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,8 +13,8 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 25 min |
-| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 27 min |
+| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 23 min |
+| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 26 min |
 | 03 | [Interview Questions](10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 14 min |
 
 ---
@@ -39,3 +39,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ## Navigation
 
 [← Back to React](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

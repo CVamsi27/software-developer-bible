@@ -1,9 +1,9 @@
 # React Internals — React
 
-> **Study time:** ≈ 1 h 53 m of reading (5 files, ~23 min average).
-> **5 files.** How React actually works under the hood: Virtual DOM diffing, the Fiber data structure, reconciliation heuristics, render/commit phases, and lifecycle.
+> **Study time:** ≈ 1 h 49 m of reading (6 files, ~18 min average).
+> **6 files.** How React actually works under the hood: Virtual DOM diffing, the Fiber data structure, reconciliation heuristics, render/commit phases, and lifecycle.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](#files)
+[![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-React_Internals-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,11 +13,11 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | 17 min |
-| 02 | [Fiber](10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | 24 min |
-| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | 24 min |
-| 04 | [Rendering](10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | 22 min |
-| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | 26 min |
+| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | 15 min |
+| 02 | [Fiber](10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | 23 min |
+| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | 22 min |
+| 04 | [Rendering](10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | 21 min |
+| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | 24 min |
 
 ---
 
@@ -41,3 +41,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ## Navigation
 
 [← Back to React](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

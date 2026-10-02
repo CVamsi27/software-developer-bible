@@ -1,9 +1,9 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 31 m of reading (7 files, ~13 min average).
-> **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Every senior full-stack loop now touches this; your Docita AI-kill-switch story lives here.
+> **Study time:** ≈ 1 h 29 m of reading (8 files, ~11 min average).
+> **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Relevant interviews may probe these mechanisms; your Docita AI-kill-switch story lives here.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -11,7 +11,7 @@
 
 ## Topic Categories
 
-The 7 content files classify into 4 conceptual categories + drills — the "GoF classification" of AI engineering.
+The 7 content files classify into 4 conceptual categories + drills — a route through architecture, quality, orchestration, and governance.
 
 | Category | Files | Why it matters |
 | -------------------- | ----: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,9 +33,13 @@ The 7 content files classify into 4 conceptual categories + drills — the "GoF 
 | 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | ReAct plan-act-observe loops; state machines vs graph orchestration; tool-calling (parallel/chained); step/token budgets + circuit breakers; supervisor/debate/handoff topologies; memory tiers; trajectory evals |
 | 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | Decision matrix (cost/latency/residency/control); vLLM PagedAttention + continuous batching; quantization ladder; VRAM math; TTFT/TPOT; provider routing/fallback; EU-GDPR hybrid pattern |
 | 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story |
-| 5 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps |
+| 7 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps |
 
-## The Decision Map (memorize)
+## Choose Your First Pass
+
+For an interactive docs feature, read architecture → prompts/evals → retrieval. For tool-driven workflows, add orchestration. Before any provider egress, read governance and serving policy. Then use the [separate Revision](REVISION.md) to explain mechanisms from memory and the interview bank for spoken trade-off answers.
+
+## The Decision Map
 
 ```text
 Task needs world knowledge you don't have? → RAG (retrieval + grounding)

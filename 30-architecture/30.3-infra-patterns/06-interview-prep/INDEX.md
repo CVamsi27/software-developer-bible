@@ -1,6 +1,6 @@
 # Interview Prep
 
-> **Study time:** ≈ 8 min of reading (1 files, ~8 min average).
+> **Study time:** ≈ 7 min of reading (1 files, ~7 min average).
 > **1 file.** Senior-depth Q&A over the whole stack — lifecycle contracts, retry/idempotency discipline, backup drills, coordination, scaling levers, and zero-downtime shipping — each answer naming the mechanism and the failure mode it guards.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -19,7 +19,7 @@ Every pattern in this stack is a contract, and interviews test whether you can s
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Infra & Ops Patterns Interview Questions](30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers in order, blue-green vs canary, flag debt, erasure pipeline design, on-call levers, scenario drills | 8 min |
+| 01 | [Infra & Ops Patterns Interview Questions](30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers in order, blue-green vs canary, flag debt, erasure pipeline design, on-call levers, scenario drills | 7 min |
 
 ---
 

@@ -1,9 +1,9 @@
 # Edge & Scale - REST APIs
 
-> **Study time:** ≈ 1 h 52 m of reading (4 files, ~28 min average).
-> **4 files.** Surviving traffic and integrating systems: rate limiting algorithms, API gateways, backend-for-frontend, and authentication schemes in the API context.
+> **Study time:** ≈ 1 h 51 m of reading (5 files, ~22 min average).
+> **5 files.** Surviving traffic and integrating systems: rate limiting algorithms, API gateways, backend-for-frontend, and authentication schemes in the API context.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Edge%20%26%20Scale-blue)](../INDEX.md)
 
 ---
@@ -14,8 +14,8 @@
 | --   : | ------ | -------- | ----------: |
 | 01 | [Rate Limiting](20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | 30 min |
 | 02 | [API Gateway](20.3.4.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | 29 min |
-| 03 | [BFF](20.3.4.03-bff.md) | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants | 21 min |
-| 04 | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md) | 32 min |
+| 03 | [BFF](20.3.4.03-bff.md) | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants | 19 min |
+| 04 | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md) | 31 min |
 
 ---
 
@@ -38,3 +38,7 @@ _No API gateway or BFF yet_ — a single Fly.io-deployed API serves all clients 
 ---
 
 [← Previous: Payloads, Errors & Integration](../03-payloads-errors-integration/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

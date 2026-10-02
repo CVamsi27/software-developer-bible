@@ -1,9 +1,9 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 2 h 1 m of reading (10 files, ~12 min average).
-> **10 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
+> **Study time:** ≈ 1 h 37 m of reading (13 files, ~7 min average).
+> **13 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -28,10 +28,10 @@ The main bundlers — pick based on project needs.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | 11 min |
-| 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | 11 min |
-| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 8 min |
-| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 11 min |
+| 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | 9 min |
+| 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | 5 min |
+| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | 4 min |
+| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | 10 min |
 
 **Decision tree:**
 
@@ -51,8 +51,8 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | 8 min |
-| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | 9 min |
+| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | 6 min |
+| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | 7 min |
 
 ---
 
@@ -60,9 +60,9 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 16 min |
-| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 18 min |
-| 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 12 min |
+| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | 14 min |
+| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | 16 min |
+| 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | 4 min |
 
 ---
 
@@ -70,7 +70,7 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 17 min |
+| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | 16 min |
 
 ---
 

@@ -1,9 +1,9 @@
 # Liveness & Lifecycle
 
-> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
+> **Study time:** ≈ 13 min of reading (2 files, ~6 min average).
 > **1 file.** The contract between your application and its orchestrator: prove you are alive, prove you are ready, and die gracefully when asked. Get this wrong and Kubernetes restarts healthy pods — or routes traffic to dying ones.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Lifecycle-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -22,6 +22,12 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 | 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 11 min |
 
 ---
+
+## Reading Path and Completion Check
+
+Read probe semantics before shutdown handling, then follow one request through traffic withdrawal, draining and forced termination.
+
+Distinguish a dependency outage from a stuck process and show why the two produce different probe decisions. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

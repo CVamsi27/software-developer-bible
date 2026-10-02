@@ -1,9 +1,9 @@
 # Observability — Index
 
-> **Study time:** ≈ 3 h 22 m of reading (11 files, ~18 min average).
-> **11 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
+> **Study time:** ≈ 3 h 8 m of reading (15 files, ~13 min average).
+> **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Observability-%230ea5e9)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -31,9 +31,9 @@ Logs, metrics, traces — the foundation of observability.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Logging](01-pillars/40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | 19 min |
-| 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | 20 min |
-| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | 19 min |
+| 01 | [Logging](01-pillars/40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | 16 min |
+| 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | 18 min |
+| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | 18 min |
 
 **When to use what:**
 - **Logs** = discrete events ("user X signed up at time T")
@@ -46,8 +46,8 @@ Logs, metrics, traces — the foundation of observability.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | 22 min |
-| 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | 21 min |
+| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | 20 min |
+| 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | 19 min |
 
 ---
 
@@ -57,8 +57,8 @@ The SRE framework.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 11 min |
-| 07 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 14 min |
+| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | 9 min |
+| 07 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | 13 min |
 
 **Quick distinction:**
 - **SLI** = Service Level Indicator (the metric, e.g., "99.5% of requests succeed")
@@ -73,9 +73,9 @@ The vendor-neutral standard plus the advanced signals.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 26 min |
-| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | 15 min |
-| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | 16 min |
+| 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | 23 min |
+| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | 13 min |
+| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | 13 min |
 
 ---
 
@@ -83,7 +83,7 @@ The vendor-neutral standard plus the advanced signals.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 11 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 19 min |
+| 11 | [Interview Questions](05-interview-prep/40.4.5.01-interview-questions.md) | 50+ curated questions with answers | 18 min |
 
 ---
 

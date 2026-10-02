@@ -1,11 +1,11 @@
 # Backend Stack
 
-> **Study time:** ≈ 49 h 39 m of reading (147 files, ~20 min average).
+> **Study time:** ≈ 43 h of reading (179 files, ~14 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 147 files across 11 sub-stacks, organized by what you need to know in what order.
+> 179 files across 11 sub-stacks, organized by what you need to know in what order.
 
-[![Files](https://img.shields.io/badge/files-147-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-179-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

@@ -1,9 +1,9 @@
 # Scaling
 
-> **Study time:** ≈ 36 min of reading (2 files, ~18 min average).
-> **2 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
+> **Study time:** ≈ 35 min of reading (3 files, ~12 min average).
+> **3 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Scaling-blue)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ Kubernetes' core promise is elastic scale — but HPA does nothing until the met
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | 21 min |
-| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | 15 min |
+| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | 20 min |
+| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | 13 min |
 
 ---
 
@@ -49,3 +49,7 @@ _No direct docita implementation yet_ — no HPA/Karpenter; scaling is deliberat
 | Scheduled scaling | `.github/workflows/scale-api-hours.yml` grows/shrinks machines with IST business hours |
 | Scale-to-zero | ADR 0011: `auto_stop_machines='suspend'`, auto-start on request |
 | Node autoscaling / VPA / Karpenter | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

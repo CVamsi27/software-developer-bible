@@ -1,9 +1,9 @@
 # Patterns - NestJS
 
-> **Study time:** ≈ 41 min of reading (2 files, ~20 min average).
-> **2 files.** The architectural patterns NestJS supports out of the box: CQRS (commands, queries, events, sagas) and microservice transports (TCP, Redis, RabbitMQ, Kafka, gRPC).
+> **Study time:** ≈ 43 min of reading (3 files, ~14 min average).
+> **3 files.** The architectural patterns NestJS supports out of the box: CQRS (commands, queries, events, sagas) and microservice transports (TCP, Redis, RabbitMQ, Kafka, gRPC).
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Patterns-success)](../INDEX.md)
 
 ---
@@ -44,3 +44,7 @@ TCP/Redis/Kafka/gRPC transports not used; would introduce them when a domain ext
 ---
 
 [← Previous: Request Lifecycle](../02-request-lifecycle/INDEX.md) · [Next: Quality & Operations →](../04-quality-and-operations/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

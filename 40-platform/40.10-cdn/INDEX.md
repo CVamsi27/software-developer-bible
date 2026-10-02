@@ -1,11 +1,11 @@
 # CDN & Edge Computing — Index
 
-> **Study time:** ≈ 48 min of reading (4 files, ~12 min average).
+> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
 > **Content delivery networks, edge functions, cache invalidation, multi-CDN steering, media optimization, healthcare PHI considerations.**
 >
 > Three deep chapters, but the *concepts inside them* classify like a pattern catalog. Learn the concept groups below and you can answer any edge question.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -29,8 +29,8 @@
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md) | CDN caching strategies, cache invalidation, edge computing (Cloudflare Workers, Vercel Edge), healthcare PHI considerations, provider comparison | 8 min |
-| 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | Why multi-CDN, DNS/GSLB vs RUM vs edge-orchestrator steering, failover hazards, cross-CDN invalidation, cost arbitration, measurement infrastructure | 13 min |
-| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HLS/DASH ABR ladders, origin shields, signed URLs/hotlink protection, transformation cache keys, cost levers | 15 min |
+| 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | Why multi-CDN, DNS/GSLB vs RUM vs edge-orchestrator steering, failover hazards, cross-CDN invalidation, cost arbitration, measurement infrastructure | 11 min |
+| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HLS/DASH ABR ladders, origin shields, signed URLs/hotlink protection, transformation cache keys, cost levers | 13 min |
 | 04 | [Interview Questions](40.10.04-interview-questions.md) | 7 senior Q&A: cache-key design, purge strategy, origin shields, dynamic edge caching, media delivery, multi-CDN steering | 12 min |
 
 ---
@@ -87,3 +87,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Origin protection | ADR 0014 locks the API to accept only Cloudflare-sourced traffic — no direct-to-origin bypass |
 | Edge-hosted assets | `apps/landing` builds to Cloudflare Workers (`wrangler deploy`, `_worker.js`) behind the `DOCITA_CLOUDFLARE` build flag |
 | Multi-CDN / media transforms | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

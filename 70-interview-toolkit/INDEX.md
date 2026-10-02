@@ -1,32 +1,22 @@
 # Interview Toolkit
 
-> **Study time:** ≈ 9 h 8 m of reading (34 files, ~16 min average).
-> **Behavioral, coding patterns, cheat sheets** — the "last-mile" stack. Use this in the final 1-2 weeks before any interview. Shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Study time:** ≈ 6 h 27 m of reading (41 files, ~9 min average).
+> **Behavioral, coding patterns, cheat sheets** — the "last-mile" stack. Use it to turn studied mechanisms and real work into explanations you can test. Shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 34 files across 3 sub-stacks.
+> 41 files across 3 sub-stacks.
 
-[![Files](https://img.shields.io/badge/files-34-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-41-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-3-green)](#the-3-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Docita Anchor
+## Reading Passes
 
-The toolkit converts knowledge into stories, and [docita](https://github.com/CVamsi27/docita) supplies the raw material: 15 numbered ADRs (including reversals and deferrals) as decision-writing evidence, runbooks and incident playbooks as incident-response narratives, and — honestly — almost no algorithmic hot spots, so coding-pattern claims stay grounded in the one `lru-cache.ts` utility. Sub-stack INDEXes carry their own **Docita Anchor** notes where genuine counterparts exist.
-
----
-
-## Why this stack matters
-
-The toolkit is the **synthesis** layer:
-- All the stacks (10-60) build knowledge
-- The toolkit turns that knowledge into **interview performance**
-- Coding patterns, behavioral answers, and cheat sheets are what you use in the room
-
-If you only have 1 week before an interview, this is where to focus.
-
----
+1. **Explain a real decision.** Read behavioral chapters after the [STAR method](../00-strategy/00.03-star-method.md). Identify the constraint, your action, collaborators, and observed outcome.
+2. **Explain retained state.** Follow the coding-pattern INDEX. Draw one small trace, state why a candidate can be discarded or a state reused, and check boundary cases before optimizing.
+3. **Connect the parts of a system.** Use the reference sheets to follow execution, validation, rendering, a backend operation, and deployment. Return to the linked owner chapter when a component’s role is unclear.
+4. **Test recall separately.** Each category ends with its own REVISION companion. Use it after the reading pass, then revisit the source of any missing explanation.
 
 ## The 3 Sub-Stacks (in study order)
 
@@ -41,46 +31,31 @@ If you only have 1 week before an interview, this is where to focus.
 ## Category Map
 
 | Category | What it covers | When to use |
-| ------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| **Behavioral** | STAR answers, stakeholder/judgment stories, leadership principles, "tell me about a time…" | Every interview has 1-2 rounds of this |
-| **Coding Patterns** | 21 algorithm patterns — sliding window, DP, BFS/DFS, Dijkstra, matrix simulation, etc. | Indian SDE / FAANG heavy; Abroad Full-Stack light (30-40 mediums across 6 patterns) |
-| **Cheat Sheets** | One-page reference for each major stack + DevOps and SQL one-pagers | Last-minute review the morning of |
+| ------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Behavioral** | STAR answers, stakeholder/judgment stories, leadership principles, "tell me about a time…" | Use when the employer asks about past work or judgment |
+| **Coding Patterns** | Algorithm mechanisms — retained windows, traversal state, recurrence, ordered candidates, and numeric contracts | Select practice from the role’s actual coding format and constraints |
+| **Cheat Sheets** | Focused references connecting each component to its purpose | Last-minute review the morning of |
 
 ---
 
-## Suggested Study Order
+## Choose a Route for the Time Available
 
-### Path A — Abroad Full-Stack (1-2 days)
-1. Skim [Coding Patterns](70.2-coding-patterns/INDEX.md) — focus on Sliding Window, Two Pointers, BFS/DFS, Hash Map (the 6-7 most-tested patterns)
-2. Read [Behavioral](70.1-behavioral/INDEX.md) for STAR + leadership stories
-3. Skim relevant [Cheat Sheets](70.3-cheatsheets/INDEX.md) the morning of the interview
+For a planned interview, use the employer’s stated format to choose the relevant category, read its learning flow, and practice explanations from your own work. For an imminent interview, review familiar mechanisms, the results of your own stories, and a small traced example; adding a new topic at the last moment is not a substitute for understanding it.
 
-### Path B — Indian SDE / FAANG (1-2 weeks)
-1. **All 21 [Coding Patterns](70.2-coding-patterns/INDEX.md)** — drill 5-10 problems per pattern
-2. Read [Behavioral](70.1-behavioral/INDEX.md) — Amazon Leadership Principles, Google Googliness
-3. Cheat Sheets as review
-
-### Path C — Interview tomorrow
-- Re-read relevant [Cheat Sheets](70.3-cheatsheets/INDEX.md) (the stack your interview is on)
-- Re-read your top 3 STAR stories
-- Do 1-2 warm-up problems on the 2-3 most-tested patterns
-
----
-
-## Quick reminders
-
-- **STAR** = Situation, Task, Action, Result. Every behavioral answer needs all four.
-- **Coding pattern recognition** — if you can name the pattern in <30 sec, you can solve the problem.
-- **Cheat sheets are for review, not learning.** Use them the day-of, not the day-before.
-
----
+Naming an algorithm pattern is only a starting hypothesis. Confirm its invariant against the input constraints before treating it as a solution.
 
 ## Cross-References
 
 - [00 — Strategy](../00-strategy/INDEX.md) — STAR method, communication, resume (do this first)
-- [Coding Patterns INDEX](70.2-coding-patterns/INDEX.md) — 21 patterns
+- [Coding Patterns INDEX](70.2-coding-patterns/INDEX.md) — learning passes and mechanism owners
 - [Behavioral INDEX](70.1-behavioral/INDEX.md) — STAR + leadership + judgment
 - [Cheat Sheets INDEX](70.3-cheatsheets/INDEX.md) — one-pagers for each stack
+
+---
+
+## Docita Anchor
+
+The toolkit converts knowledge into stories, and [docita](https://github.com/CVamsi27/docita) can supply artifacts to inspect: decision records, including reversals and deferrals, as possible decision-writing evidence, runbooks and playbooks as documented operational procedures, and utilities that may illustrate a particular implementation. Check authorship and execution records before claiming personal experience; an artifact alone does not prove an incident or deployment happened.
 
 ---
 

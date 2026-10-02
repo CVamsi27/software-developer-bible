@@ -2,7 +2,7 @@
 
 > **For senior engineers (5+ YoE) targeting Indian SDE roles AND FAANG / Big Tech positions** — Microsoft, Google, Amazon, Meta, Apple, Adobe, in-country India product companies, and US-based roles with H1B/STEM-OPT sponsorship. **DSA-heavy**, 8-12 week intensive prep, 4-6 hrs/day. The bar is LeetCode mediums to hards on the phone screen.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

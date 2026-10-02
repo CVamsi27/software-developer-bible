@@ -1,9 +1,9 @@
 # Core Architecture - NestJS
 
-> **Study time:** ≈ 1 h 35 m of reading (4 files, ~24 min average).
-> **4 files.** How NestJS apps are structured: modules, controllers, providers, and the dependency-injection container that wires them together. Read these first.
+> **Study time:** ≈ 1 h 34 m of reading (5 files, ~19 min average).
+> **5 files.** How NestJS apps are structured: modules, controllers, providers, and the dependency-injection container that wires them together. Read these first.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core%20Architecture-success)](../INDEX.md)
 
 ---
@@ -12,10 +12,10 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Modules](20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 22 min |
-| 02 | [Controllers](20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 27 min |
+| 01 | [Modules](20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 21 min |
+| 02 | [Controllers](20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 26 min |
 | 03 | [Providers](20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 22 min |
-| 04 | [Dependency Injection](20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 24 min |
+| 04 | [Dependency Injection](20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 23 min |
 
 ---
 
@@ -37,3 +37,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ---
 
 [Next: Request Lifecycle →](../02-request-lifecycle/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

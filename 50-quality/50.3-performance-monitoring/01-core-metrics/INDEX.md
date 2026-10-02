@@ -1,9 +1,9 @@
 # Core Metrics
 
-> **Study time:** ≈ 16 min of reading (1 files, ~16 min average).
+> **Study time:** ≈ 16 min of reading (2 files, ~8 min average).
 > **1 file.** The three Core Web Vitals — LCP, INP, CLS — their thresholds, measurement, and optimization levers. Every senior frontend interview starts here.
 
-[![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,7 +13,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 16 min |
+| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 14 min |
 
 ---
 
@@ -56,3 +56,7 @@ Everything downstream (Performance APIs, profiling, RUM, budgets) exists to move
 | Metrics aggregation | `apps/api/src/shared/modules/monitoring/monitoring/services/metrics-aggregation.service.ts` |
 | Field-data reporting endpoint | `apps/api/src/shared/modules/performance/performance.controller.ts` |
 | Vitals budget check | `scripts/perf/check-web-vitals-budget.mjs` |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

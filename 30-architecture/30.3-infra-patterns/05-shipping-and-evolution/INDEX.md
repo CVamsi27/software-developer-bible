@@ -1,9 +1,9 @@
 # Shipping & Evolution
 
-> **Study time:** ≈ 53 min of reading (4 files, ~13 min average).
-> **4 files.** Change without breakage and grow without waste: deploying new versions with zero downtime, paying down technical debt deliberately, treating cloud spend as an engineering metric (FinOps), and managing data lifecycle from hot storage to legal-hold-compliant deletion.
+> **Study time:** ≈ 53 min of reading (5 files, ~11 min average).
+> **5 files.** Change without breakage and grow without waste: deploying new versions with zero downtime, paying down technical debt deliberately, treating cloud spend as an engineering metric (FinOps), and managing data lifecycle from hot storage to legal-hold-compliant deletion.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Shipping-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -21,10 +21,16 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 | --   : | ------ | -------- | ----------: |
 | 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths | 15 min |
 | 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | 16 min |
-| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | 11 min |
-| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | 11 min |
+| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | 10 min |
+| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | 10 min |
 
 ---
+
+## Reading Path and Completion Check
+
+Start with deployment compatibility and rollback, then prioritize debt by observed cost. Follow resource cost and retention decisions through operational ownership.
+
+Describe a reversible release, an evidence-backed debt decision and an expiry path constrained by retention and holds. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

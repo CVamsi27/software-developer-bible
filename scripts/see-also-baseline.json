@@ -1,3 +1,13 @@
 {
-  "stacks": {}
+  "stacks": {
+    "(root)": 1,
+    "10-frontend": 28,
+    "20-backend": 42,
+    "40-platform": 24,
+    "50-quality": 12,
+    "60-realtime": 3,
+    "70-interview-toolkit": 7,
+    "80-lanes-abroad-full-stack": 12,
+    "81-lanes-indian-sde-faang": 46
+  }
 }

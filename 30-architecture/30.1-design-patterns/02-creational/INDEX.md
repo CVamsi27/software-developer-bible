@@ -1,9 +1,9 @@
 # Creational Patterns
 
-> **Study time:** ≈ 2 h 5 m of reading (5 files, ~25 min average).
-> **5 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
+> **Study time:** ≈ 1 h 6 m of reading (6 files, ~11 min average).
+> **6 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Creational-orange)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -28,7 +28,7 @@ Creational patterns encapsulate knowledge about which concrete classes the syste
 
 | # | Pattern | Intent | Use when | Avoid when |
 | --: | --------- | -------- | ---------- | ------------ |
-| 1 | [Singleton](30.1.2.01-singleton.md) | One global instance | Logger, config, connection pool | Testability matters, multiple environments |
+| 1 | [Singleton](30.1.2.01-singleton.md) | One instance in a defined runtime scope | Logger, config, connection pool | Testability matters, multiple environments |
 | 2 | [Factory Method](30.1.2.02-factory-method.md) | Defer instantiation to subclass | Plugin system, multiple implementations | Only one type, simple `new` works |
 | 3 | [Builder](30.1.2.03-builder.md) | Step-by-step construction | 5+ optional fields, immutable objects | Simple objects with 2-3 fields |
 | 4 | [Abstract Factory](30.1.2.04-abstract-factory.md) | Families of related objects | Cross-platform UI, theme systems, OS-specific bundles | Few object types, no "family" concept |
@@ -60,7 +60,7 @@ Define an interface for creating an object, but let subclasses decide which clas
 - A class wants its subclasses to specify the objects it creates
 - Classes delegate responsibility to one of several helper subclasses
 
-**Real-world examples:** `LoggerFactory.getLogger('http')` returns Winston or Pino based on env, `HttpClientFactory.create()` returns axios or fetch.
+**Real-world examples:** A creator subclass implements the creation operation used by the base workflow. Conditional constructor selectors are simple factories.
 
 ### [Builder](30.1.2.03-builder.md)
 Separate the construction of a complex object from its representation so that the same construction process can create different representations.
@@ -121,21 +121,21 @@ Need to create objects?
 - **Factory Method** creates **one** product; subclasses decide the concrete type.
 - **Abstract Factory** creates a **family** of related products; the factory itself is the abstraction, and concrete factories (e.g., `MacUIFactory`) return a matching set.
 
-If you find yourself with 3+ Factory Methods that get used together, that's an Abstract Factory.
+The signal is a coherent family of related products, not a fixed minimum number of methods.
 
 ### Builder vs Factory
 
 - **Factory** creates an object in **one step** (often eagerly, with no params or a few).
 - **Builder** constructs the object **step-by-step**, with many optional parts, and the build is the final step.
 
-If your constructor takes 5+ params or you have 3+ overloads, that's a Builder.
+Many optional construction steps can justify a Builder; a named options object may be simpler.
 
 ### Prototype vs Factory
 
 - **Factory** creates from a class (re-runs the constructor + init).
 - **Prototype** copies an existing instance (skips constructor + init).
 
-If construction is expensive and most new objects look like existing ones, Prototype wins.
+If construction is expensive and most new objects look like existing ones, Prototype may be appropriate after comparing copy semantics and cost.
 
 ---
 
@@ -148,6 +148,12 @@ If construction is expensive and most new objects look like existing ones, Proto
 - **Prototype** when your classes are simple value objects — just use `new`.
 
 ---
+
+## Reading Path and Completion Check
+
+Compare the creation decision in Factory Method and Abstract Factory. Then study Builder for valid assembly, Prototype for cloning semantics and Singleton for lifecycle scope.
+
+Choose a creation pattern from a concrete variation axis and name the extra coupling or lifecycle cost it introduces. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 
@@ -169,7 +175,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 
 | Topic | Docita evidence |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Factory Method | FHIR resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
+| Factory techniques | FHIR resource factories (`shared/modules/fhir/factories/fhir-patient.factory.ts`…), analytics factories (`domains/analytics/core/factories/*`), compliance factories (`anonymization.factory.ts`, `data-export.factory.ts`) |
 | Factory families | `payments/infrastructure/factories/payment-gateway.factory.ts`, `monitoring/factories/monitoring.factory.ts` |
 | Builder | FHIR observation builders: `fhir/factories/observations/builders/*.builder.ts` (blood pressure, heart rate, SpO₂…) behind a shared port |
 | Singleton (enforced, not accidental) | One OpenAI client guaranteed by a CI gate: `scripts/checks/check-openai-client-singleton.mjs` over `shared/modules/ai/openai.service.ts` |

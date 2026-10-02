@@ -3,25 +3,21 @@
 The shared OpenCode conversation established four linked requirements: correct
 technical inaccuracies, explain missing mechanisms, remove repeated teaching,
 and end concept chapters with Summary → Revision Questions → See Also.
-This continuation resumes that contract against the current checkout and
-finishes the shared conversation's interrupted core frontend wave.
+That initial contract is superseded by the user’s later 2026-10-01 request:
+remove TL;DR, improve the reading flow, and move practice into separate section
+revision companions. The corpus-wide work now follows that newer contract.
+The core frontend wave below was completed before the wider reading-flow pass.
+The active review now covers all Markdown sections, including indexes and companion guides.
 
 ## Scope and remaining work
 
-The current batch covers the outstanding JavaScript bounded-concurrency chapter,
-TypeScript transformation/advanced/interview material, React internals/hooks and
-composition material, and the Next.js stack. The neighboring TypeScript
-inference example also uses a distinct utility name instead of redeclaring the
-built-in `ReturnType`. Previously completed chapters are retained unless this
-audit finds a concrete defect.
+The earlier core wave covered JavaScript bounded concurrency, TypeScript transformation/advanced/interview material, React internals/hooks/composition and Next.js. Its findings and validation below describe that wave’s scope, not a completed corpus audit.
 
-**The corpus-wide audit is still incomplete.** Remaining frontend stacks
-(forms, animation, HTML/CSS, mobile), backend, architecture, platform, quality,
-realtime, strategy and interview-toolkit chapters require their own editorial
-review. Template compliance and a green verification suite do not prove every
-claim is correct; the template gate still permits existing retired cheat sheets
-in the unprocessed corpus. Do not bulk-generate revision answers or mark those
-chapters reviewed merely because their structure passes.
+**The corpus-wide editorial audit is still incomplete.** Reviewers maintain path-level ledgers of actual prose reads, corrections and example probes. Mechanical template migration, generated metadata and a passing structural gate do not establish that every explanation has been reviewed.
+
+The current contract removes TL;DR, keeps one opening definition, and puts questions in one separate `REVISION.md` per category. Category indexes end their learning stages with revision; dedicated interview banks remain their own drills. New terms must be introduced in plain language and connected to their role in the whole before listing variants. The lexical-environment complaint prompted a complete chapter rewrite: a name-lookup trace precedes the explicit “Inside a lexical environment: what the Environment Record stores” section. Its three JavaScript examples were executed successfully.
+
+Remaining work includes unread chapters and indexes across the corpus, revised-companion coverage, technical-source checks and final integration. Do not generate questions from headings or mark files reviewed merely because a format checker passes.
 
 ## Findings addressed
 
@@ -64,5 +60,4 @@ and legitimate alternatives. The rules do not reject unrelated custom callbacks,
 legacy API names in prose, or geolocation code outside the Next.js stack.
 
 Final integration runs the full repository verification suite after regenerating
-reading times, navigation/search data, and measured counts. No commit or push is
-part of this continuation.
+reading times, navigation/search data, and measured counts. The user has authorized a commit and push after the full review and required gates pass. Neither has been performed for the ongoing corpus pass.

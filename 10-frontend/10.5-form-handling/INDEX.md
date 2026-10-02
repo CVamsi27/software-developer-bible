@@ -1,9 +1,9 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 38 m of reading (7 files, ~14 min average).
-> **7 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
+> **Study time:** ≈ 1 h 15 m of reading (8 files, ~9 min average).
+> **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -29,9 +29,9 @@ Three main form libraries — pick the right one for the job.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 16 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled-component + context, Yup-first, maintenance mode since 2024 | Legacy codebases; new projects should use RHF | 14 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 11 min |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 15 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | 13 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 10 min |
 
 **Decision:**
 
@@ -50,7 +50,7 @@ Zod is the standard for runtime validation with TypeScript inference.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | 14 min |
+| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | 12 min |
 
 **The killer feature:** `z.infer<typeof Schema>` gives you the TypeScript type from your Zod schema. One source of truth for both runtime validation and compile-time types.
 
@@ -62,17 +62,17 @@ Modern Next.js form patterns with Server Actions.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 15 min |
+| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | 7 min |
 
 ---
 
 ## Draft Persistence
 
-Long-form resilience: never lose user input again.
+Long-form resilience: recover persisted input and handle storage failures.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 20 min |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | 9 min |
 
 ---
 
@@ -80,7 +80,7 @@ Long-form resilience: never lose user input again.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 8 min |
+| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | 7 min |
 
 ---
 
@@ -96,32 +96,11 @@ Long-form resilience: never lose user input again.
 
 ---
 
-## The Modern Form Stack
+## Reading Path and Completion Check
 
-```typescript
-// 1. Define the schema (Zod)
-const signupSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
-});
+Read Zod first to separate input from parsed output. Build one RHF form, compare Formik and TanStack against its editing needs, then add a server boundary and draft recovery.
 
-// 2. Infer the type
-type SignupInput = z.infer<typeof signupSchema>;
-
-// 3. Use it in React Hook Form
-const { register, handleSubmit, formState: { errors } } = useForm<SignupInput>({
-  resolver: zodResolver(signupSchema),
-});
-
-// 4. Submit to a Next.js Server Action
-async function onSubmit(data: SignupInput) {
-  await signupAction(data);
-}
-```
-
-This is the standard pattern for modern full-stack forms.
-
----
+Trace a failed submit, a repeated submit and a reload with an unsaved draft. Explain which component owns each recovery step. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

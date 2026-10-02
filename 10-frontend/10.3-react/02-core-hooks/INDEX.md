@@ -1,9 +1,9 @@
 # Core Hooks — React
 
-> **Study time:** ≈ 2 h 19 m of reading (5 files, ~28 min average).
-> **5 files.** The five essential hooks — useState, useEffect, useMemo/useCallback, useRef, Context — used in 95% of React code.
+> **Study time:** ≈ 2 h 14 m of reading (6 files, ~22 min average).
+> **6 files.** The five essential hooks — useState, useEffect, useMemo/useCallback, useRef, Context — used in 95% of React code.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](#files)
+[![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Core_Hooks-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,11 +13,11 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [useState](10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 26 min |
-| 02 | [useEffect](10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 30 min |
-| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 24 min |
-| 04 | [useRef](10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 27 min |
-| 05 | [Context API](10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | 32 min |
+| 01 | [useState](10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 24 min |
+| 02 | [useEffect](10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 28 min |
+| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 23 min |
+| 04 | [useRef](10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 25 min |
+| 05 | [Context API](10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | 30 min |
 
 ---
 
@@ -43,3 +43,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ## Navigation
 
 [← Back to React](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

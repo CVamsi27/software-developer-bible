@@ -1,9 +1,9 @@
 # Production — Next.js
 
-> **Study time:** ≈ 1 h 12 m of reading (3 files, ~24 min average).
-> **3 files.** Shipping concerns: authentication across middleware/server/client boundaries, `next/image` optimization, and deploying — Vercel vs self-hosted Docker, ISR cache handlers, env vars, observability.
+> **Study time:** ≈ 1 h 10 m of reading (4 files, ~18 min average).
+> **4 files.** Shipping concerns: authentication across middleware/server/client boundaries, `next/image` optimization, and deploying — Vercel vs self-hosted Docker, ISR cache handlers, env vars, observability.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](#files)
+[![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Production-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-wip-yellow)](#)
 
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Authentication](10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 32 min |
-| 02 | [Image Optimization](10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 24 min |
-| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 16 min |
+| 01 | [Authentication](10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | 30 min |
+| 02 | [Image Optimization](10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | 23 min |
+| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | 15 min |
 
 ---
 
@@ -41,3 +41,7 @@ _No NextAuth/middleware auth or built-in image optimization pipeline in docita y
 ## Navigation
 
 [← Back to Next.js](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

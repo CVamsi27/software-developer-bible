@@ -1,0 +1,375 @@
+<!-- section: JavaScript | category: Reference | tags: revision, retrieval-practice -->
+[![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
+[![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
+
+# Memory & Data — JavaScript — Revision
+
+Complete the learning chapters first, then answer these questions without reopening them. Use each source link to check an uncertain answer.
+
+## Pass by Value vs Pass by Reference
+
+Source: [Pass by Value vs Pass by Reference](10.1.4.01-pass-by-value.md)
+
+**Definition**
+
+1. **Q:** What is the one rule JavaScript follows for every argument it passes?
+   **A:** Everything is copied by value; when the argument is an object, the thing copied is its reference — so two variables can end up addressing one heap object without either one "holding" it.
+
+2. **Q:** Why do objects give the *illusion* of being passed by reference?
+   **A:** The copied pointer reproduces the same address, so property writes through the parameter land in the shared object, while assigning to the parameter only repoints the callee's own slot.
+
+**How It Works**
+
+3. **Q:** Which act changes what the caller sees — mutation or reassignment?
+   **A:** Mutation, because it writes into the object both sides point at. Reassignment replaces only the local binding, so the caller's variable keeps pointing at the original.
+
+4. **Q:** Where does destructuring sit in this story?
+   **A:** It is the copy rule in new syntax: the extracted values land in fresh bindings, so reassigning one of them leaves the source object's property untouched.
+
+**Common Mistakes**
+
+5. **Q:** What goes wrong with `function f(arr) { return arr.sort(cmp); }` when the caller wants its array untouched?
+   **A:** `sort` reorders in place and returns the same array, so the caller's data changes; spread into a new array first if the input must survive.
+
+6. **Q:** Why does `modifyObject(o)` fail when the body is `o = { value: 20 }`?
+   **A:** The parameter is a copied reference. Replacing it allocates a new object and repoints the callee's copy — the caller never observes the new object.
+
+**Best Practices**
+
+7. **Q:** When is `Object.freeze` not enough to make data safe?
+   **A:** Freeze is shallow and only intercepts writes at the top level, so nested objects stay mutable; for deep protection clone first or use an immutable data library.
+
+## Map, Set, WeakMap, WeakSet
+
+Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
+
+**Definition**
+
+1. **Q:** What do `Map`, `Set`, `WeakMap` and `WeakSet` share, and where do they split?
+   **A:** All four are ES2015 hash-based collections with average O(1) membership. The split is ownership: `Map`/`Set` hold strong references and expose `size` plus iteration, while the weak pair hold their keys weakly and refuse to be counted or walked at all.
+
+2. **Q:** Why does using an object as a plain object's key break identity?
+   **A:** Property keys are coerced to strings, so every distinct object collapses onto `"[object Object]"` and overwrites its peers before the lookup ever runs.
+
+**How It Works**
+
+3. **Q:** What actually decides when a `WeakMap` entry goes away?
+   **A:** Reachability from outside the collection. Once no root can reach the key object, the engine discards that entry along with the key — no `delete()` needed, because the collection never kept the key alive.
+
+4. **Q:** What does "insertion order" buy you in a `Map` that a plain object cannot promise?
+   **A:** Every iterator visits entries in first-add order and `size` is maintained in O(1), so `.keys().next()` reliably yields the oldest key — exactly what the LRU example depends on.
+
+**Code Examples**
+
+5. **Q:** What does `[...new Set(list)]` give you over a hand-written dedupe loop?
+   **A:** Uniqueness decided by SameValueZero in one pass with constant-time membership per element, and the result comes back as a ready-to-map array.
+
+**Common Mistakes**
+
+6. **Q:** Why does `for (const x of someWeakMap)` throw a `TypeError`?
+   **A:** The spec makes weak collections non-iterable and non-enumerable on purpose — exposing a key list would surface keys that are already unreachable. Reach for a regular `Map` when you need to walk the contents.
+
+**Best Practices**
+
+7. **Q:** When is a plain object still the better choice than a `Map`?
+   **A:** When the keys are a fixed set of known string names and JSON is the transport — object spreads and `JSON.stringify` work for free, while a `Map` stringifies to `{}`.
+
+## Shallow Copy vs Deep Copy
+
+Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
+
+**Definition**
+
+1. **Q:** State the difference between a shallow copy and a deep copy in one sentence.
+   **A:** A shallow copy allocates a new top level but leaves every nested value as the original reference; a deep copy allocates a fresh object for each node reachable from the root.
+
+**How It Works**
+
+2. **Q:** Why does a deep clone need an identity map (`WeakMap` of original → copy)?
+   **A:** So each node is visited once and so cycles can be re-linked — without it, an object that points back at itself would recurse forever rather than point at its own duplicate.
+
+**Code Examples**
+
+3. **Q:** After `const shallow = { ...original }`, why does `shallow.hobbies.push('cooking')` change `original.hobbies`?
+   **A:** Spread only duplicates the first level. The nested array is the same object in both places, so a mutation through either reference is visible through both.
+
+4. **Q:** What does `JSON.parse(JSON.stringify(x))` silently rewrite, and what does it refuse outright?
+   **A:** Dates become ISO strings, `Map`/`Set`/`RegExp` become `{}`, and `NaN`/`Infinity` become `null`, while functions and `undefined` disappear. Circular structures and `BigInt` values abort with a TypeError.
+
+**Common Mistakes**
+
+5. **Q:** What does `structuredClone` hand back when given a class instance?
+   **A:** A plain object holding the own enumerable data — the prototype and its methods are dropped without any error being thrown, so type checks downstream quietly fail.
+
+**Best Practices**
+
+6. **Q:** Which copy routine should you use when a value is about to cross a worker boundary?
+   **A:** `structuredClone` — it implements the same structured-clone algorithm `postMessage` enforces, so anything it accepts is guaranteed to make the trip.
+
+**Performance Considerations**
+
+7. **Q:** What should decide between a shallow and a deep copy on a hot path?
+   **A:** Whether nested values are treated as immutable. If they are, sharing them keeps the copy proportional to the top-level key count, skips the walk over every reachable node, and avoids breaking identity that other code may rely on.
+
+## Debounce
+
+Source: [Debounce](10.1.4.04-debounce.md)
+
+**Definition**
+
+1. **Q:** What is a debounce function actually waiting for?
+   **A:** A quiet gap of N milliseconds. Every incoming call resets the clock, so the wrapped function runs only once no call has arrived for the whole wait.
+
+**How It Works**
+
+2. **Q:** Why does debounce fail on a scroll handler where throttle succeeds?
+   **A:** Scrolling is a stream that never pauses, so the reset timer never expires and the debounced handler simply never runs. Throttle's fixed-rate gate doesn't need a pause to fire.
+
+3. **Q:** What do the `leading` and `trailing` options choose between?
+   **A:** Whether execution happens at the start of a burst or at its end. `leading` runs on the call that opens the quiet window; `trailing` (the default) runs the last call of the burst when the window closes.
+
+**Code Examples**
+
+4. **Q:** What does `.cancel()` actually destroy?
+   **A:** The pending timer and the saved arguments, so the scheduled invocation is dropped entirely. That is the cleanup you need on unmount, so a stale closure can never run afterwards.
+
+**Real-World Use Cases**
+
+5. **Q:** Why does the resize example pair `removeEventListener` with `handleResize.cancel()`?
+   **A:** Removing the listener stops future events, but a timer already scheduled would still fire — calling `setState` after the component unmounted — unless `cancel()` clears it too.
+
+**Common Mistakes**
+
+6. **Q:** What's wrong with `debounce(fetchResults, 50)` and with `debounce(fetchResults, 2000)`?
+   **A:** 50ms is shorter than the gap between a fast typist's keystrokes, so calls leak through mid-burst; 2000ms makes the interface feel stalled. Tune the wait to human input cadence — about 300ms for typing.
+
+**Best Practices**
+
+7. **Q:** How do you keep one debounced function alive across React re-renders?
+   **A:** Memoize it — `useMemo(() => debounce(fn, wait), [fn, wait])` — so the same wrapper, and any timer it has scheduled, survives instead of being recreated and orphaned each render.
+
+**Summary**
+
+8. **Q:** How do you test debouncing without making the suite slow and flaky?
+   **A:** Install fake timers, advance the clock past the wait, and assert on call counts. Real sleeps introduce both the flakiness and the wall-clock cost that fake timers remove.
+
+## Throttle
+
+Source: [Throttle](10.1.4.05-throttle.md)
+
+**First Principles**
+
+1. **Q:** What single question tells you whether to debounce or throttle?
+   **A:** Does the final value matter? If yes, debounce and wait for the pause; if no — scroll position, animation progress — throttle to a steady rate and let the middle events go.
+
+**Definition**
+
+2. **Q:** What does a throttled function promise its caller?
+   **A:** At most one execution per interval regardless of how often it is invoked, with the surplus calls inside the window discarded rather than queued.
+
+**How It Works**
+
+3. **Q:** When does the trailing invocation fire, and whose arguments does it carry?
+   **A:** If at least one call landed during the window, one final invocation runs as the window closes using the most recent call's arguments — everything older in that window is already gone.
+
+4. **Q:** Why is `requestAnimationFrame` often a better throttle than a timer for scroll-driven work?
+   **A:** It fires once per display frame and is aligned to the browser's own paint cycle, so the work you do is never thrown away by the compositor and never falls between frame boundaries.
+
+**Code Examples**
+
+5. **Q:** Why does the leading/trailing implementation stash `lastArgs` instead of invoking right away?
+   **A:** A call arriving mid-window has to be remembered so exactly one trailing invocation can replay it — that is the difference between a throttle that preserves the last event and a naive gate that loses it.
+
+**Common Mistakes**
+
+6. **Q:** What goes wrong with `throttle(fetchResults, 300)` on a search box?
+   **A:** Intermediate keystrokes are dropped outright instead of merely delayed, so the request that eventually fires may be built from a stale query. Debouncing is the tool that waits for the user to finish.
+
+**Best Practices**
+
+7. **Q:** What limits make sense for the usual event types?
+   **A:** About 16ms for anything tied to animation frames, 50-100ms for mouse and scroll feedback, 250ms for resize, and a full second for click-driven actions that must not double-fire.
+
+8. **Q:** What is the cleanup contract for a throttled event handler?
+   **A:** The code that registers the listener also calls `.cancel()` — which drops any pending trailing invocation — and removes the listener, both in the same unmount effect.
+
+## Memory Leaks
+
+Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
+
+**First Principles**
+
+1. **Q:** Why can't a collector ever *prevent* a memory leak?
+   **A:** It only reclaims unreachable objects, and a leak is by definition something still reachable from a long-lived holder. Knowing that the reference is unwanted is intent, which the engine has no way to observe.
+
+**Definition**
+
+2. **Q:** What is the practical test for "is this a leak?"
+   **A:** Ask who still reaches it and whether that holder should. Reachable-and-wanted is a cache, reachable-and-unwanted is a leak, and unreachable is already gone — only the middle case needs fixing.
+
+**How It Works**
+
+3. **Q:** What are the chapter's five causes, and what is the single move that repairs each?
+   **A:** Detached DOM pinned by a listener, listeners never removed, closures pinning large data, uncleared timers, and implicit globals. Every fix is the same action — break the reference by removing, clearing, or narrowing what the closure captures.
+
+4. **Q:** How do you tell a growing heap apart from a leak while the app is running?
+   **A:** Take a heap snapshot, repeat the suspicious action several times, and diff snapshots: objects whose count climbs with each repetition are retained, while a healthy heap returns to roughly the same size after a forced collection.
+
+**Code Examples**
+
+5. **Q:** Why doesn't the detached-node example leak once its function returns?
+   **A:** The local variable dies with the scope, so the node and its listener both become unreachable. It turns into a leak only when something that outlives the function — a document-level listener or a cache — keeps referencing the node.
+
+6. **Q:** Why does capturing `hugeData.length` instead of reading `hugeData` inside the closure change anything?
+   **A:** The inner function then mentions only a number, so engines leave the array out of the closure's scope entirely and it becomes collectable as soon as the allocating function returns.
+
+**Real-World Use Cases**
+
+7. **Q:** What does `AbortController` give a fetch effect that a boolean flag does not?
+   **A:** One teardown call that rejects the in-flight request, so the `.catch` path runs instead of a `setState` on an unmounted component — the flag would only stop *new* requests, not the one already pending.
+
+**Common Mistakes**
+
+8. **Q:** Why is a plain `Map` the wrong container for object-keyed side data?
+   **A:** The map holds a strong reference to every key, so each object stays alive for the map's whole lifetime regardless of outside reachability. `WeakMap` hands that decision back to the collector.
+
+**Best Practices**
+
+9. **Q:** What makes a cache safe to keep in module scope?
+   **A:** A hard bound — max size with eviction, or a TTL that actually deletes — or weak keys. Unbounded growth in a long-lived container is a leak even though nothing was technically forgotten.
+
+## Garbage Collection
+
+Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
+
+**First Principles**
+
+1. **Q:** Why is reachability the only criterion a collector can actually use?
+   **A:** "Is it needed?" asks for intent, which the program never records, while "is it reachable from a root" is a graph walk with a decidable answer. The engine can always run it — including when the answer wrongly keeps a useless object alive.
+
+2. **Q:** What does reference counting get wrong that mark-and-sweep gets right?
+   **A:** Members of a cycle hold each other's counts above zero forever, so nothing is ever freed; tracing from the roots sees the entire island as unreachable and reclaims it in one pass.
+
+**Definition**
+
+3. **Q:** What does "generational" mean for a garbage collector?
+   **A:** Objects are bucketed by age — a small young generation swept often and cheaply, a large old one swept rarely — based on the empirical observation that most allocations die almost immediately.
+
+**How It Works**
+
+4. **Q:** What happens in a scavenge, and what is promotion?
+   **A:** The young generation is traced and each survivor is copied into a fresh semi-space; after surviving enough collections the object is promoted into the old generation, where it is visited far less frequently.
+
+5. **Q:** How do incremental and concurrent marking reduce jank?
+   **A:** Incremental marking splits the trace into slices so the main thread yields between them, and concurrent marking runs on a helper thread — so the stop-the-world portions shrink to the short begin/end bookkeeping.
+
+**Common Mistakes**
+
+6. **Q:** Why is `data = null` inside a short function pointless, and when does that same line matter?
+   **A:** The local binding dies with the scope either way, so there is no pin to release. It only does something for a binding that outlives its usefulness — module scope, a cache closure, a long-lived object property.
+
+**Best Practices**
+
+7. **Q:** When do you reach for `WeakRef` instead of `WeakMap`?
+   **A:** When you want a non-owning handle to a single object rather than side data attached to a key — with the explicit contract that `deref()` can return `undefined` at any time once nothing else holds the target.
+
+**Performance Considerations**
+
+8. **Q:** What does allocation rate actually control?
+   **A:** How quickly the young generation fills, and therefore how often minor collections run. Allocating inside a hot loop turns an otherwise cheap, frequent scavenge into visible frame drops.
+
+## Hash Tables & HashMaps — Internals, Collision Resolution & V8
+
+Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4.08-hash-tables-internals.md)
+
+**First Principles**
+
+1. **Q:** Why can a hash table never promise worst-case O(1) the way an array does?
+   **A:** An array's address *is* the key, while a hash table must destroy the key to get an index — a many-to-one mapping where some key always loses the collision lottery and pays extra probes, plus an occasional full rehash.
+
+2. **Q:** What does "amortized" buy you that a worst-case claim wouldn't?
+   **A:** Over a sequence of n inserts the rehashes cost 1 + 2 + 4 + … + n ≤ 2n, so the rare O(n) spike averages to a constant per insert — O(1) per op even though one op can still hitch.
+
+**Definition**
+
+3. **Q:** What is the load factor, and why do chaining and open addressing draw the line in different places?
+   **A:** α = entries ÷ slots. Chaining keeps working past α = 1 (chains just lengthen), while open addressing needs an empty slot to insert into, so it must resize early — around 0.5–0.7.
+
+**How Hash Tables Work**
+
+4. **Q:** Two implementations both report "α = 0.5", but one still feels slow. Why?
+   **A:** Because the load factor bounds only *how many* probes, not how they are distributed — a hash that piles keys into a few buckets clusters badly at α = 0.5, exactly as a good hash does near α = 1.
+
+**Collision Resolution**
+
+5. **Q:** Why does linear probing collapse at high load while chaining only degrades gently?
+   **A:** Neighbouring probes form runs that feed on themselves: measured successful lookups go from 1.5 probes at α = 0.5 to 5.4 at α = 0.9, while chaining's ≈ 1 + α/2 rises from 1.25 to 1.45 across the same range.
+
+**V8 Internals**
+
+6. **Q:** How does V8's `Map`/`Set` actually resolve collisions, and how full does it let the table get?
+   **A:** Separate chaining: bucket = `hash & (buckets − 1)`, colliding rows linked by table offsets, allowing 2 entries per bucket before the table doubles — with deletions compacted at the next rehash rather than left as permanent tombstones.
+
+7. **Q:** What hash does V8 use for a key, and why does that choice matter?
+   **A:** Strings get a seeded content hash; objects get a random identity hash generated once and stored on the object. The seed is what stops an attacker from crafting keys that all land in the same bucket.
+
+**Common Mistakes**
+
+8. **Q:** Why is a plain object a poor stand-in for an insertion-ordered map?
+   **A:** Integer-like keys are hoisted first and sorted ascending, then string keys follow in insertion order — so `{2:…, 1:…, b:…}` iterates as `1, 2, b`. Use `Map` when the order must be exact.
+
+## Equality & Type Coercion
+
+Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
+
+**First Principles**
+
+1. **Q:** If `===` exists, why does JavaScript still ship loose equality at all?
+   **A:** Because values arrive with unknown types — query strings, form fields, JSON — and someone has to normalize before comparing. `==` *is* that normalization policy; `===` plus explicit conversion is its stricter replacement.
+
+2. **Q:** How can `[]` be truthy at the same time as `[] == false` being `true`?
+   **A:** They answer different questions with different rule sets: a boolean context declares every object truthy, while `==` with a boolean operand runs ToNumber and lands both sides on `0`.
+
+**Definition**
+
+3. **Q:** What is type coercion, and which JavaScript constructs trigger it?
+   **A:** Automatic conversion of a value into another primitive type, triggered by comparison operators, arithmetic operators, and boolean contexts — each carrying its own conversion rules rather than one shared set.
+
+**How It Works**
+
+4. **Q:** In what order does an object become a primitive?
+   **A:** `Symbol.toPrimitive(hint)` if defined, then `valueOf()` for a number/default hint, then `toString()` — and if none of them yields a primitive the engine throws rather than guessing.
+
+5. **Q:** How does `+` decide between concatenation and addition?
+   **A:** It applies the default ToPrimitive hint to both sides and concatenates when either result is a string; otherwise it converts both to numbers — which is why `1 + '2'` is `"12"` while `'6' - 1` is `5`.
+
+**Code Examples**
+
+6. **Q:** Why does `null == 0` evaluate to `false` while `null >= 0` evaluates to `true`?
+   **A:** `==` carries an explicit carve-out that admits only `undefined` alongside `null`, whereas `>=` has no such exception and converts `null` to `0` — one value, two algorithms, opposite answers.
+
+**Common Mistakes**
+
+7. **Q:** Why does `v || 50` misbehave when `0` is a legitimate value?
+   **A:** `||` treats every falsy value as a trigger — `0`, `''`, `false`, `NaN` — while `??` is limited to `null` and `undefined`, so any default that may legitimately be zero must use `??`.
+
+**Best Practices**
+
+8. **Q:** When is `==` the correct choice rather than a lapse?
+   **A:** Essentially only `x == null` and `x != null`, where collapsing `null` and `undefined` into one check is the intent; elsewhere write `===` and convert on purpose at the boundary.
+
+## Summary
+
+Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
+
+---
+
+## See Also
+
+- [Section reading order](INDEX.md)
+
+## References & Learn More
+
+The source chapters above contain the technical references for these answers.

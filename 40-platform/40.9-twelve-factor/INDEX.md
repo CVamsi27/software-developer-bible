@@ -1,9 +1,9 @@
 # Twelve-Factor App — Index
 
-> **Study time:** ≈ 29 min of reading (2 files, ~14 min average).
+> **Study time:** ≈ 28 min of reading (3 files, ~9 min average).
 > **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Every Kubernetes, Heroku, Fly, Vercel, and Lambda deployment is built around these 12 factors.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -53,8 +53,8 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 21 min |
-| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | 8 min |
+| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 19 min |
+| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | 7 min |
 
 ---
 
@@ -105,3 +105,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | V. Build/release/run | Turbo build → CI deploy workflow → migration gate (`db-migrations.yml`) before rollout |
 | XI. Logs | Pino structured logs to stdout; PHI redaction before emit |
 | X. Dev/prod parity | `docker-compose.yml` Postgres locally mirrors managed prod Postgres |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

@@ -1,9 +1,9 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 1 h 11 m of reading (6 files, ~12 min average).
-> **6 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
+> **Study time:** ≈ 1 h 3 m of reading (7 files, ~9 min average).
+> **7 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -27,7 +27,7 @@
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 14 min |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | 12 min |
 
 ---
 
@@ -37,8 +37,8 @@ The two main build/cache systems for monorepos.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | 13 min |
-| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 12 min |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | 11 min |
+| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | 11 min |
 
 **Decision:**
 
@@ -56,7 +56,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 8 min |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | 7 min |
 
 ---
 
@@ -64,7 +64,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 16 min |
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | 13 min |
 
 ---
 
@@ -72,7 +72,7 @@ Monorepo tool?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 8 min |
+| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | 7 min |
 
 ---
 
@@ -121,3 +121,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config |
 | Dead-code control | Repo-wide `knip.json`; knip-clean enforced in release evidence |
 | Versioning/publishing | Not applicable — private app monorepo, no npm publishing |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

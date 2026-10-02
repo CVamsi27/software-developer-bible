@@ -2,29 +2,23 @@
 
 > **Project-specific deep-dives and interview preparation.** Each subfolder covers one real project with architecture decisions, code evidence, failure modes, and interview scripts.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
-[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Projects
+## Read the Operation, Then Defend the Decision
 
-| # | Folder | Project | Description |
-| --- | -------------------------- | --------- | ------------------------------------------------------------------------------------ |
-| 1 | [docita/](docita/INDEX.md) | Docita | Healthcare SaaS — 25+ clinics, 1,000+ workflows/month, 149 Prisma models, 29 domains |
+Start with the [Docita learning stages](docita/INDEX.md): architecture and identity, durable work and payments, domain invariants, then deployment and integrations. The category keeps existing chapter IDs and puts [revision](docita/REVISION.md) after learning.
 
----
+For interview preparation, choose one relevant operation and trace its inputs, permissions, state changes and failure boundaries. Then use:
 
-## Docita Quick Start
+1. [Interview defense guide](../80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md) — structure the explanation.
+2. [Resume defense](../80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) — qualify claims and contributions.
+3. [Evidence pack](../80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) — connect source, checks and dated outcomes.
+4. [Senior design preparation](../80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) — evaluate changed constraints.
 
-**If you have an interview about Docita, read these in order:**
-
-1. [Complete Interview Defense](../80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md) — the single file to read before any interview
-2. [Architecture Deep Dives](docita/INDEX.md) — 22 files, every decision justified
-3. [Resume Defense](../80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) — 130 fact-bounded questions
-4. [Evidence Pack](../80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) — fast pre-interview refresh
-5. [Google-Level Prep](../80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) — 70+ senior/staff questions
+Source inspection does not prove adoption, throughput, incident counts or production isolation. Bring dated evidence before quoting those results. Current editorial work prioritizes the full-stack TypeScript topics relevant to target abroad roles.
 
 ---
 

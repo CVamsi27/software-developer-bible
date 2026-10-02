@@ -1,9 +1,9 @@
 # Advanced & Interview - NestJS
 
-> **Study time:** ≈ 48 min of reading (2 files, ~24 min average).
-> **2 files.** Senior-level customization with parameter/method decorators and decorator composition, then the curated question bank for final review.
+> **Study time:** ≈ 50 min of reading (3 files, ~17 min average).
+> **3 files.** Senior-level customization with parameter/method decorators and decorator composition, then the curated question bank for final review.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Advanced%20%26%20Interview-success)](../INDEX.md)
 
 ---
@@ -35,3 +35,7 @@ Every interview question about decorators/lifecycle is answerable from these fil
 ---
 
 [← Previous: Quality & Operations](../04-quality-and-operations/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

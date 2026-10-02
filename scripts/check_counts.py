@@ -256,9 +256,6 @@ def scale_edits(live):
     total, k = live['repo_files'], live['repo_k']
     edits = [
         ('INDEX.md', r'(\d+) files, (\d+)K lines', [total, k]),
-        ('README.md', r'(\d+) files · (\d+)K lines', [total, k]),
-        ('80-lanes-abroad-full-stack/INDEX.md',
-         r'(\d+) files, (\d+)K lines', [total, k]),
         ('contributing.md', r'(\d+) `\.md` files / (\d+)K lines',
          [total, k]),
         ('contributing.md', r'\("(\d+) files, (\d+)K lines"\)', [total, k]),
@@ -269,14 +266,10 @@ def scale_edits(live):
         # (2026-09-30 template revision) — see the Revision Questions
         # Format section of contributing.md.
         # Bare repo-file claims that carry no line count.
-        ('80-lanes-abroad-full-stack/INDEX.md',
-         r'Covers all (\d+) files', [total]),
         ('README.md', r'search all (\d+) chapters', [live['content']]),
         # The homepage hero button advertises the same search index README's
         # link does; both read the one chapter count, so they cannot disagree.
         ('index.html', r'Search (\d+) Chapters', [live['content']]),
-        ('README.md', r'\((\d+) across all stacks\)',
-         [live['interview_banks']]),
         ('contributing.md', r'\((\d+) files use this today\)',
          [live['raw_tag']]),
         # Doc self-description: the gates page states the walker scope size.

@@ -21,7 +21,7 @@
    ├─ resume ├─ JS core ├─ Node.js ├─ design ├─ Docker ├─ testing ├─ 18 coding ├─ lane plan
    ├─ STAR ├─ TS deep ├─ NestJS │ patterns ├─ K8s basics ├─ a11y │ patterns ├─ take-home
    ├─ comms ├─ React ├─ API design ├─ SD theory ├─ CI/CD ├─ performance ├─ behavioral ├─ system design
-   └─ HR qs └─ Next.js ├─ databases └─ 31 case ├─ observability└─ production │ + stories └─ company sheets
+   └─ HR qs └─ Next.js ├─ databases └─ 32 case ├─ observability└─ production │ + stories └─ company sheets
                                     ├─ AUTH track ← studies git, serverless engineering
                                     └─ microservices drills
 ```
@@ -116,7 +116,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF applied (Strategy, Repository, Observer, DI…) → CQRS in practice |
 | 3.2 | [SD method](30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) | clarify → estimate → high-level → deep-dive (memorize this skeleton) |
 | 3.3 | [SD theory](30-architecture/30.2-system-design/01-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
-| 3.4 | [Case studies ×31](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
+| 3.4 | [Case studies ×32](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
 
 **Checkpoint 3:** Record yourself doing URL shortener + ticket booking in 45 min each; review against the 4-phase rubric; no silent minutes.
 

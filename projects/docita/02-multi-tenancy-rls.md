@@ -1,231 +1,128 @@
-# 02 — Multi-Tenancy & Row-Level Security
+# 02 — Tenant Isolation: Carry Identity to the Database Operation
 
-> The hardest problem in Docita — provable data isolation between 25+ clinics handling Protected Health Information.
+A request for a patient record must establish both the caller’s identity and permission to access that record. A valid login for one clinic cannot authorize another clinic’s data.
 
----
+This case study describes source inspected on 2 October 2026. Repository configuration and tests are evidence of implementation; they do not prove the deployed connection role, current production traffic, or absence of incidents.
 
-## Context
+## Definition
 
-Docita serves 25+ clinics from a single PostgreSQL database. Each clinic's data must be completely invisible to other clinics. In healthcare, a data leak isn't just a bug — it's a compliance violation under DPDP (India's data protection law) and can result in fines, loss of license, and patient harm.
+Tenant isolation prevents one tenant’s operation from reading or changing another tenant’s protected state. Authentication establishes identity, application authorization evaluates the operation, and database policies can enforce a row boundary under a specified database role and session context.
 
-**The scale of the problem:**
+## First Principles
 
-- 149 Prisma models, most with a `clinicId` field
-- 640 API endpoints across 130 controllers, each needing tenant scoping
-- Multiple developer workflows adding new queries daily
-- Background workers running without HTTP request context
+An identifier supplied in a URL is untrusted. A pooled connection is not permanently associated with one request. Async context carries values but does not establish their authority. Therefore identity, access decisions and database scope must stay connected to the operation at every boundary.
 
-**The question:** How do you guarantee that Clinic A can never see Clinic B's data, even if a developer makes a mistake?
+## Trace a clinic request through the implementation
 
----
-
-## Decision: 7-Layer Defense-in-Depth
-
-### Layer 0: JWT Authentication
-
-**What:** Every request carries a JWT token. The token contains `userId`, `clinicId`, `role`, and `subscription` claims.
-
-**Why it's not enough:** JWTs prove *who you are*, not *what you can access*. A valid token for Clinic A's doctor doesn't prevent them from requesting Clinic B's patient data in the URL.
-
-**Code:** `apps/api/src/shared/modules/auth/guards/jwt.strategy.ts`
-
-### Layer 1: AsyncLocalStorage Tenant Context
-
-**What:** Node.js `AsyncLocalStorage` carries the tenant context (clinicId, userId) through the entire request lifecycle — no parameter threading required.
-
-```typescript
-// apps/api/src/shared/common/middleware/tenant.middleware.ts
-import { AsyncLocalStorage } from 'async_hooks';
-
-interface TenantContext {
-  clinicId?: string;
-  userId?: string;
-  bypassed?: boolean;
-  preTenant?: boolean;  // authenticated but no clinic yet (onboarding)
-}
-
-export const tenantStorage = new AsyncLocalStorage<TenantContext>();
-
-export function getCurrentTenant(): TenantContext | undefined {
-  return tenantStorage.getStore();
-}
-
-export function getClinicIdOrFail(): string {
-  const context = getCurrentTenant();
-  if (!context?.clinicId) throw new Error('No tenant context available');
-  return context.clinicId;
-}
+```text
+verified identity → tenant/role/policy checks → clinic context
+→ scoped database transaction → row policy → result
 ```
 
-**Why AsyncLocalStorage:** The alternative is passing `clinicId` as a parameter to every function. At 29 domains × ~50 repository methods, that's ~1,450 places where a missed parameter = data leak. ALS makes it implicit.
+| Component | Its role in the whole | What it cannot establish alone |
+| ----------------------- | -------------------------------------------------------------- | ------------------------------------------------------------- |
+| JWT authentication | Verify the token and obtain caller claims | Object access or current clinic membership |
+| Tenant and role guards | Reject requests outside the permitted tenant or role | Every resource-specific condition |
+| ABAC policies | Evaluate ownership, assignment and other resource attributes | Database connection scope |
+| AsyncLocalStorage | Carry request-local identity and active transaction references | Permission, trusted identity or a durable job context |
+| Prisma tenant extension | Apply application-level tenant discipline | Every raw query or privileged path |
+| PostgreSQL RLS | Apply row policies for the executing role and context | Correct application role, enabled scope or safe bypass policy |
+| Audit pipeline | Record attributable access and changes | Proof that every possible leak was prevented |
 
-**The risk:** `setTimeout` loses ALS context. A detached promise running after the request finishes has no tenant context. We have a CI check (`check-detached-promises.mjs`) that flags any `setTimeout` or detached `Promise` in the codebase.
+Subscription gating controls feature entitlement. It can coexist with authorization, but a paid plan does not grant access to another clinic’s data.
 
-### Layer 2: RBAC Roles Matrix
+## AsyncLocalStorage carries context; it does not validate it
 
-**What:** Each role (DOCTOR, NURSE, ADMIN_DOCTOR, CLINIC_ADMIN, INTERNAL) has a fixed set of permissions. The `TenantGuard` + role guard verify the user has the right role for the endpoint.
+The current `tenant.middleware.ts` stores clinic identity, user identity, a bypass flag and a pre-tenant flag. `getClinicIdOrFail()` rejects a missing clinic identity.
 
-**Why it's not enough:** RBAC can express "doctors can view patients" but not "doctors can view only *their* assigned patients." Adding more roles to handle this = role explosion.
+Timers and promises created within an async scope can inherit that scope. They do not universally lose it when the HTTP request finishes. The more dangerous distinction is lifetime: a delayed operation can retain a reference to a transaction that has already ended. Independently scheduled workers need a separately validated job context; they cannot rely on a request store being present.
 
-### Layer 3: Subscription/Tier Guard
+Keep context provenance explicit. A clinic ID obtained from verified identity and checked membership is different from a client-supplied clinic ID. A bypass flag is a privileged decision, not a convenience default.
 
-**What:** Feature gating based on clinic subscription tier. Free clinics can't access WhatsApp messaging. Starter clinics can't access insurance claims.
+## Keep the database setting and query on the same transaction
 
-**Why it matters for tenancy:** A clinic on the Free tier trying to access Pro features gets a 403 before any data query runs. This reduces the attack surface.
-
-### Layer 4: ABAC PolicyGuard
-
-**What:** Object-level access control. The `PolicyGuard` is a global NestJS guard that evaluates typed policies for each request.
+The inspected interceptor opens an interactive transaction when RLS is enabled for an authenticated clinic request. `applyRlsScope()` applies transaction-local settings through parameterized calls:
 
 ```typescript
-// packages/authorization/src/policies/patient.policy.ts
-export class PatientPolicy implements IPolicy {
-  evaluate(subject: Subject, resource: Patient, action: Action): PolicyDecision {
-    // Deny-overrides: any deny wins
-    if (subject.clinicId !== resource.clinicId) return { effect: 'DENY', reason: 'cross-tenant' };
-    if (subject.role === Role.DOCTOR && resource.assignedDoctorId !== subject.userId) {
-      return { effect: 'DENY', reason: 'not-assigned' };
-    }
-    return { effect: 'ALLOW' };
-  }
-}
+// Source excerpt: apply-rls-scope.ts; tx is a Prisma transaction client.
+await tx.$executeRaw`SELECT set_config('app.rls_enabled', 'on', true)`;
+await tx.$executeRaw`SELECT set_config('app.current_clinic_id', ${clinicId}, true)`;
 ```
 
-**Why ABAC on top of RBAC:** RBAC handles 90% of access control. ABAC handles the remaining 10% — "doctor can view only their assigned patients," "patient can view only their own data," "admin can view all patients in their clinic."
+The final `true` makes each setting transaction-local. The clinic ID is bound as a value rather than interpolated into SQL text. The helper also validates the expected identifier shape.
 
-**Deny-overrides:** Any policy deny wins over any allow. Unmatched policies default to deny. This is the safest default — if a new policy is added but not wired up, access is denied rather than allowed.
+The active transaction store and routing extension attempt to send model operations through that same transaction client. Setting context on connection A cannot scope a query executed on connection B. Whether the latter query errors, denies rows or sees broader data depends on its role and policy; connection mismatch is not intrinsically an RLS bypass in every design.
 
-### Layer 5: Repository Tenant Scoping
+## Understand the actual policy’s enable switch
 
-**What:** Prisma middleware automatically adds `clinicId` to every query. Even if a developer forgets the filter, the middleware enforces it.
-
-**Why it's not enough:** Prisma middleware is application-level. A SQL injection or a direct `$queryRaw` call bypasses it.
-
-### Layer 6: PostgreSQL Row-Level Security (RLS)
-
-**What:** Database-level policies that filter rows based on the `app.current_clinic_id` session variable. Even if all application layers fail, the database itself enforces isolation.
+The inspected migration enables row policies on tenant tables and contains this condition in both read visibility and write checks:
 
 ```sql
--- Policy example (simplified)
-CREATE POLICY clinic_isolation ON "Patient"
-  USING ("clinicId" = current_setting('app.current_clinic_id')::text);
+-- Excerpt of the inspected policy expression, not a complete migration.
+current_setting('app.rls_enabled', true) IS DISTINCT FROM 'on'
+OR "clinicId" = current_setting('app.current_clinic_id', true)
 ```
 
-**Why RLS is the critical layer:** It's the last line of defense. If a developer writes `prisma.patient.findMany()` without any filter, RLS ensures only the current clinic's rows are returned.
+This is a staged-enforcement switch. When the enable setting is absent or not `on`, the first condition permits rows. When enabled, the clinic comparison determines the row boundary. The `true` argument to `current_setting` returns a missing setting as null instead of raising an error.
 
-**The hard part — connection pooling:**
+Consequently, the guarantee depends on more than the existence of a policy. Confirm the database role, table coverage, scope settings, query route, and intended privileged paths. Table owners and roles with bypass privileges have different behavior; the rollout document requires a non-owner application role and does not enable `FORCE ROW LEVEL SECURITY`.
 
-Prisma uses a connection pool. Each query might run on a different connection. If you `SET LOCAL app.current_clinic_id` on connection A, but the query runs on connection B, RLS silently bypasses.
+## A routing limitation found during this review
 
-**Solution:** Route ALL queries through a single interactive transaction per request:
+The current routing core temporarily sets a shared async-store entry’s `tx` to null while awaiting a forwarded operation. An overlapping sibling operation can observe that null and take the base-client fallback:
 
-```typescript
-// apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts
-intercept<TResponse>(context: ExecutionContext, next: CallHandler<TResponse>): Observable<TResponse> {
-  const request = context.switchToHttp().getRequest();
-  const user = request.user;
-
-  if (user && (user.clinicId || user.role === Role.INTERNAL)) {
-    const tenantContext = { clinicId: user.clinicId, userId: user.id, bypassed: user.role === Role.INTERNAL };
-
-    if (this.config.isRlsEnabled() && tenantContext.clinicId && !tenantContext.bypassed) {
-      // Open a single interactive transaction, set the GUC, run the handler inside it
-      return from(
-        this.prisma.$transaction(async (tx) => {
-          await applyRlsScope(tx, tenantContext.clinicId);
-          return runWithActiveTx(tx, () => tenantStorage.run(tenantContext, () => lastValueFrom(next.handle())));
-        }, getRlsRequestTransactionOptions()),
-      );
-    }
-
-    return from(tenantStorage.run(tenantContext, () => lastValueFrom(next.handle())));
-  }
-
-  return next.handle();
-}
+```text
+first query clears shared tx → first query waits
+→ second query sees no active tx → second uses base client
+→ first query finishes and restores tx
 ```
 
-**The `runUnrestricted` escape hatch:** Background workers (queue processing, cron jobs) run without a request context. They need to access all clinics' data. The `PrismaService.runUnrestricted()` method bypasses RLS for these cases:
+A source-extracted probe with controlled delegates reproduced this branch on 2 October 2026. It did not connect to a database or establish a production exposure. Given the policy’s enable switch, the fallback needs a database-level isolation test before claiming every concurrent query is routed and protected.
 
-```typescript
-// apps/api/src/shared/modules/queue/postgres-queue.service.ts
-// RLS-BYPASS: background queue workers run without per-request clinic session
-const row = await this.prisma.runUnrestricted(async () =>
-  this.prisma.queueJob.create({ data: { name, data, status: 'WAITING', ... } })
-);
-```
+A safer routing design should keep recursion prevention local to the nested async scope, rather than mutate the sibling-visible store across an await. This is a proposed implementation correction, not a claim that the source repository was changed in this documentation pass.
 
-**Why `set_config` instead of `SET LOCAL`:** The function-call form binds the value as a parameter, preventing SQL injection. The regex check (`/^[A-Za-z0-9_-]+$/`) is a second wall.
+## Explain ABAC using the current policy conditions
 
-### Layer 7: Audit Logging
+The inspected patient policy has an INTERNAL bypass, patient ownership checks and clinical-role handling. Assignment is enforced for a plain DOCTOR when the resource marks `requiresAssignment`; it is not an unconditional rule for every doctor operation. The policy relies on resource attributes being populated correctly.
 
-**What:** Every PHI access is logged with user, clinic, action, and timestamp. This provides an audit trail for compliance.
+Avoid calling RBAC “90%” and ABAC “10%” of authorization without measurement. Explain the specific checks and their composition. Internal access, missing attributes and pre-tenant flows deserve explicit tests rather than a blanket “deny-overrides guarantees isolation” statement.
 
-**Why it matters:** Even if all other layers work, you need to *prove* they worked. Audit logs answer: "Who accessed this patient's data, and when?"
+## Workers need explicit scope and narrow privilege
 
----
+A background job can carry its validated clinic identity into a scoped transaction. Being outside HTTP does not inherently require access to all clinics. The inspected `runUnrestricted()` changes application tenant context to `bypassed: true`; that statement alone does not change a PostgreSQL role or automatically disable all database policies.
 
-## Alternatives Considered
+For genuinely cross-tenant work, define the job, credential, permitted operations and audit trail. A generic unrestricted helper is an escape hatch that needs evidence of controlled use.
 
-| Option | Pros | Cons |
-| ----------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------- |
-| **Separate database per clinic** | Maximum isolation | Operational overhead at 25+ clinics, can't do cross-clinic analytics |
-| **Schema-per-tenant** | Good isolation, shared DB | Migration complexity, schema proliferation |
-| **Shared schema + application filtering** | Simple | One missed filter = data leak |
-| **Shared schema + RLS (chosen)** | Database-level guarantee, transparent to app | Connection pool complexity, Prisma integration challenges |
-| **Citus (distributed PostgreSQL)** | Horizontal scaling | Overkill at 25 clinics, adds operational complexity |
+## Verify the boundary before defending the claim
 
-### Why Shared Schema + RLS
+Test as the actual non-owner application role with two tenants: omitted scope, wrong scope, read and write checks, explicit/raw queries, nested transactions, concurrent sibling operations, rollback, connection reuse and worker paths. Test privileged paths separately. A test file’s existence is not a passing result, and a historical pass is not current deployment evidence.
 
-**The math:** At 25 clinics, separate databases means 25 connection pools, 25 migration runs, 25 backup schedules. Schema-per-tenant means 25 schemas with shared connections — still complex. Shared schema with RLS is one database, one pool, one migration — and the database itself enforces isolation.
+For performance claims, measure representative query plans and load. The old universal RLS overhead percentage and tenant-count threshold for moving to distributed PostgreSQL were unsupported.
 
-**The risk we accepted:** RLS adds ~5-10% query overhead (the policy evaluation). At our scale, this is negligible. If we hit 200+ clinics, we might reconsider Citus.
+## Summary
 
----
+Tenant isolation depends on trusted identity, resource authorization, transaction routing and database-role behavior working together. The source implements these mechanisms, but its enable switch and overlapping-query routing limitation prevent an unconditional guarantee without further verification.
 
-## What Worked
+## See Also
 
-- **Zero data leaks in production** — 7 layers caught every attempt
-- **Developer experience** — ALS means developers don't think about tenancy; it's automatic
-- **CI enforcement** — boundary violations caught at build time, not in production
+- [Revision](REVISION.md) — separate questions for the case-study category.
+- [Async processing](03-async-processing.md) — carry scope across durable work.
+- [Resume evidence pack](../../80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) — separate source, tests and operational evidence.
 
-## What Failed
+## Source Evidence
 
-- **RLS silent bypass** — during rollout, connection pool routing caused `SET LOCAL` to apply on a different connection than the query. Fixed by routing all queries through a single interactive transaction.
+Paths below are relative to the Docita source repository inspected on 2 October 2026:
 
-- **Encrypt/decrypt drift** — a new PHI field was added to encrypt but not decrypt. Fixed by CI check (`check:phi-encryption-coverage`).
+| Evidence | Source path |
+| ----------------------------- | ----------------------------------------------------------------------------- |
+| Request context | `apps/api/src/shared/common/middleware/tenant.middleware.ts` |
+| Request transaction | `apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts` |
+| Parameterized scope | `apps/api/src/shared/modules/rls/apply-rls-scope.ts` |
+| Active transaction store | `apps/api/src/shared/modules/rls/active-tx.storage.ts` |
+| Actual routing extension | `apps/api/src/shared/common/extensions/rls-routing.extension.ts` |
+| Tenant and privileged context | `apps/api/src/prisma/prisma.service.ts` |
+| Patient ABAC conditions | `packages/authorization/src/policies/patient.policy.ts` |
+| Gated row policy | `packages/db/prisma/migrations/20260502143500_add_rls_policies/migration.sql` |
+| Operator requirements | `docs/compliance/RLS_ROLLOUT.md` |
 
-- **Worker RLS bypass** — background workers initially tried to use the tenant context. They can't — they run without a request. Had to add `runUnrestricted()` escape hatch with careful documentation.
-
-## What Could Be Better
-
-- **RLS policy testing** — we don't have automated tests that verify RLS policies actually block cross-tenant access. We rely on manual testing and the 7-layer defense. Adding `pgTAP` tests would strengthen this.
-
-- **Dynamic policy generation** — currently each table needs a manually written RLS policy. A Prisma extension that auto-generates policies from the schema would reduce human error.
-
-- **Audit log retention** — we log all PHI access but don't have a retention policy. DPDP requires specific retention periods. This needs to be implemented.
-
----
-
-## Code Evidence
-
-| Claim | File |
-| -------------------------- | ------------------------------------------------------------------------- |
-| Tenant middleware (ALS) | `apps/api/src/shared/common/middleware/tenant.middleware.ts` |
-| Tenant context interceptor | `apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts` |
-| RLS scope application | `apps/api/src/shared/modules/rls/apply-rls-scope.ts` |
-| Active TX storage | `apps/api/src/shared/modules/rls/active-tx.storage.ts` |
-| RLS routing extension | `packages/db/prisma/extensions/rls-routing.ts` |
-| Tenant guard | `apps/api/src/shared/modules/auth/guards/tenant.guard.ts` |
-| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` |
-| RLS rollout docs | `docs/compliance/RLS_ROLLOUT.md` |
-| CI boundary check | `scripts/checks/check-prisma-boundary.mjs` |
-
----
-
-## Interview Script (60 seconds)
-
-> "Multi-tenant data isolation in healthcare required 7 defense layers. The foundation is AsyncLocalStorage carrying the tenant context through every request — no parameter threading. On top of that: RBAC for role-based access, ABAC policies for object-level conditions like 'doctor sees only assigned patients,' Prisma middleware for application-level filtering, and PostgreSQL RLS as the database-level guarantee. The hardest part was RLS — Prisma's connection pool routes queries to different connections, so `SET LOCAL` session variables were silently bypassed. We solved it by routing all queries through a single interactive transaction per request. Background workers use a `runUnrestricted()` escape hatch with careful documentation."
----
-
-[← Previous: Architecture Decisions](01-architecture-decisions.md) · [ Back to Index](INDEX.md) · [Next: Async Processing →](03-async-processing.md)
+[← Previous: Architecture Decisions](01-architecture-decisions.md) · [Back to Index](INDEX.md) · [Next: Async Processing →](03-async-processing.md)

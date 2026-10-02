@@ -1,14 +1,21 @@
 # Coding Patterns — Index
 
-> **Study time:** ≈ 5 h 50 m of reading (22 files, ~16 min average).
-> **22 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
+> **Study time:** ≈ 4 h 59 m of reading (27 files, ~11 min average).
+> **27 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why coding patterns:** Most LeetCode problems reduce to one of ~15-20 patterns. If you can name the pattern in 30 seconds, the rest is implementation. The 12 core patterns cover ~80% of interview problems. The 6 advanced patterns handle the harder FAANG questions.
+A pattern is a candidate explanation, not a guarantee. “Contiguous subarray” suggests a window only when the validity rule supports safe expansion/shrinking; negative values can change that choice. Learn the invariant and input contract alongside the keyword.
 
+## Read in Three Passes
+
+1. **Move through the data:** start with [linear structures](01-linear-structures/INDEX.md), then [graphs and grids](02-graphs-trees-grids/INDEX.md). For each example, draw what remains unprocessed after one step.
+2. **Decide what state must survive:** read [recursion and optimization](03-recursion-and-optimization/INDEX.md). Compare enumeration, repeated subproblems, and compressed state before choosing an algorithm.
+3. **Handle changing priorities and arithmetic bounds:** read [heaps and selection](04-heaps-stacks-selection/INDEX.md), then [number theory](05-math-and-number-theory/INDEX.md). Identify the operation that dominates cost and the intermediate value that can overflow.
+
+Finish each category with its separate revision companion. On a return visit, open the category whose mechanism you could not explain; you do not need to reread every chapter.
 ---
 
 ## The 5 Categories
@@ -23,90 +30,56 @@
 
 ---
 
-## Core Patterns (the 12 that cover ~80% of problems)
+## Start with Common Problem Shapes
 
-Master these first.
+Use these links after choosing a category pass above. The signals narrow the candidates; the constraints settle the choice.
 
 | # | Pattern | Category | When to recognize | Read time |
 | --: | --------- | ---------- | ------------------- | ----------: |
-| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md) | Linear | "Longest/shortest subarray/substring" | 12 min |
-| 02 | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md) | Linear | "Sorted array, find pair/triplet" | 14 min |
-| 03 | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md) | Linear | "Find first/last position", rotated array | 14 min |
-| 04 | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md) | Graphs | "Tree/graph traversal", shortest path, components | 18 min |
-| 05 | [Backtracking](03-recursion-and-optimization/70.2.3.01-backtracking.md) | Recursion | "Generate all permutations/combinations/subsets" | 15 min |
-| 06 | [Dynamic Programming](03-recursion-and-optimization/70.2.3.02-dynamic-programming.md) | Recursion | "Count ways, min/max cost, LCS" | 14 min |
-| 07 | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md) | Selection | "Top K, K-way merge, median of stream" | 20 min |
-| 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md) | Graphs | "Prefix search, autocomplete, word dictionary" | 22 min |
-| 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md) | Graphs | "Connected components, redundant connections" | 18 min |
-| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | Graphs | "Dependency resolution, course schedule" | 19 min |
-| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | 14 min |
-| 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md) | Linear | "Jump game, partition, range sum queries" | 15 min |
+| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md) | Linear | "Longest/shortest subarray/substring" | 11 min |
+| 02 | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md) | Linear | "Sorted array, find pair/triplet" | 12 min |
+| 03 | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md) | Linear | "Find first/last position", rotated array | 11 min |
+| 04 | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md) | Graphs | "Tree/graph traversal", shortest path, components | 16 min |
+| 05 | [Backtracking](03-recursion-and-optimization/70.2.3.01-backtracking.md) | Recursion | "Generate all permutations/combinations/subsets" | 13 min |
+| 06 | [Dynamic Programming](03-recursion-and-optimization/70.2.3.02-dynamic-programming.md) | Recursion | "Count ways, min/max cost, LCS" | 11 min |
+| 07 | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md) | Selection | "Top K, K-way merge, median of stream" | 12 min |
+| 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md) | Graphs | "Prefix search, autocomplete, word dictionary" | 15 min |
+| 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md) | Graphs | "Connected components, redundant connections" | 15 min |
+| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | Graphs | "Dependency resolution, course schedule" | 13 min |
+| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | 11 min |
+| 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md) | Linear | "Jump game, partition, range sum queries" | 12 min |
 
 ---
 
-## Advanced Patterns
+## Extend the Toolkit
 
-For staff/principal FAANG questions.
+Use these when a simpler scan, traversal, or recurrence cannot meet the stated operations and bounds.
 
 | # | Pattern | Category | When to recognize | Read time |
 | --: | --------- | ---------- | ------------------- | ----------: |
-| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | 13 min |
+| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | 12 min |
 | 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md) | Heaps/Stacks | "Range query + point update" | 16 min |
-| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | 15 min |
-| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | 16 min |
-| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | 18 min |
-| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | 19 min |
-| 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md) | Linear | "Reverse/reorder list, cycle entry, O(1)-space surgery" | 17 min |
-| 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs | "Weighted shortest path, K stops, negative edges/arbitrage" | 16 min |
-| 21 | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md) | Graphs | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 15 min |
+| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | 13 min |
+| 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | 15 min |
+| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | 15 min |
+| 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | 16 min |
+| 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md) | Linear | "Reverse/reorder list, cycle entry, O(1)-space surgery" | 14 min |
+| 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs | "Weighted shortest path, K stops, negative edges/arbitrage" | 14 min |
+| 21 | [Matrix Traversal & Simulation](02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md) | Graphs | "Spiral order, rotate in place, set zeroes O(1), diagonals" | 13 min |
 
 ---
 
-## Pattern recognition drill (the first 30 seconds of any problem)
+## Choose a Practice Route
 
-```text
-"Longest substring without repeating chars" → Sliding Window
-"Two sum in sorted array" → Two Pointers
-"Find first/last position" → Binary Search
-"Number of islands" → DFS/BFS
-"Permutations" → Backtracking
-"Coin change" → Dynamic Programming
-"Top K frequent" → Heap
-"Word search" → Trie / Backtracking
-"Redundant connection" → Union Find
-"Course schedule" → Topological Sort
-"Merge intervals" → Intervals
-"Jump game" → Greedy
-"Reverse list between positions m-n" → Linked List Manipulation
-"Cheapest flights within K stops" → Shortest Paths (Bellman-Ford)
-"Spiral order / rotate matrix in place" → Matrix Traversal & Simulation
-```
+For an upcoming full-stack interview, prioritize the structures the employer actually describes and practice explaining contracts and edge cases. For a broader coding loop, complete the category passes and compare two plausible approaches for each problem. With little time left, use the section companions to find one or two specific gaps and rehearse those mechanisms.
 
----
+## Finish the Categories
 
-## Suggested Study Order
-
-### Path A — Abroad Full-Stack (1-2 days)
-Focus on **6 patterns**: Sliding Window, Two Pointers, DFS/BFS, Heap, Binary Search, Backtracking. Do 5-8 problems per pattern.
-
-### Path B — Indian SDE / FAANG (1-2 weeks)
-**All 12 core patterns**, then **all 9 advanced patterns**. 10-15 problems per pattern. Practice timed (45 min per medium).
-
-### Path C — Interview tomorrow
-- Re-read the cheat sheet for the 3-4 most-tested patterns
-- Do 1-2 warm-up problems
-- Memorize the recognition keywords (above)
-
----
-
-## Common interview topics
-
-- "Given X, recognize the pattern in 30 seconds."
-- "Implement X in 30 minutes with O(...) time/space."
-- "What if the input is now a stream?"
-- "What if memory is constrained?"
-
----
+- [Linear structures revision](01-linear-structures/REVISION.md)
+- [Graphs, trees and grids revision](02-graphs-trees-grids/REVISION.md)
+- [Recursion and optimization revision](03-recursion-and-optimization/REVISION.md)
+- [Heaps, stacks and selection revision](04-heaps-stacks-selection/REVISION.md)
+- [Math and number theory revision](05-math-and-number-theory/REVISION.md)
 
 ## Cross-References
 

@@ -175,7 +175,15 @@ HYDRATION_OPTIONS = re.compile(
 )
 NEXT_GEO = re.compile(r'\b(?:request|req)\.geo\b')
 
+# MSW v2 replaced the v1 rest API with http/HttpResponse. Only match
+# executable import declarations, preserving prose about migration.
+MSW_REST_IMPORT = re.compile(
+    r"\bimport\s*\{[^}]*\brest\b[^}]*\}\s*from\s*['\"]msw['\"]"
+)
+
 RULES = [
+    ('OBSOLETE-MSW-REST',
+     'MSW v1 rest import; use current http and HttpResponse APIs'),
     ('UNSUPPORTED-HYDRATION-CALLBACK',
      'hydrateRoot has no onHydrated option; use documented error callbacks '
      'and a component effect for mount-related work'),
@@ -382,6 +390,10 @@ def check(p: Path, rel: str):
         if isf:
             if not inf and code_rows:
                 source = '\n'.join(row for _, row in code_rows)
+                for match in MSW_REST_IMPORT.finditer(source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'OBSOLETE-MSW-REST',
+                                 code_rows[offset][1].strip()[:100]))
                 for match in HYDRATION_OPTIONS.finditer(source):
                     offset = source.count('\n', 0, match.end())
                     hits.append((code_rows[offset][0], 'UNSUPPORTED-HYDRATION-CALLBACK',

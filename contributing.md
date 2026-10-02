@@ -108,7 +108,7 @@ Before contributing, review the existing files in the relevant section to unders
 └── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
-> Repo scale (measured 2026-09-18): **869 `.md` files / 362K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+> Repo scale (measured 2026-09-18): **985 `.md` files / 282K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
@@ -170,7 +170,7 @@ Every content file **must** begin with metadata in two forms:
 - Metadata line goes BEFORE the title (H1)
 - INDEX.md and README.md files do **not** have the HTML comment, but they have badges
 - Badges are clickable — in content files they link to `#`; in INDEX files the Files badge links to the central repo-root `INDEX.md` and Category/Status link to `#`
-- Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment and close with a matching endraw tag at the end of file, so GitHub Pages renders them literally (70 files use this today)
+- Files whose body contains Liquid/Jinja template snippets (`{{ }}`, `{% %}`) open with a `{% raw %}` line *above* the HTML comment and close with a matching endraw tag at the end of file, so GitHub Pages renders them literally (67 files use this today)
 - **Enforced by gate 6b** (`check_template.py`): the comment must sit at the file top (only `{% raw %}` may precede it), category must be one of the 14 canonical values below, all four badges must be present in the header in canonical order (Section → Category → Tags → Read time)
 
 ### Category Values
@@ -255,104 +255,79 @@ There is no separate "type" badge — the Tags badge carries the `tags:` values 
 
 ### Standard Concept Files
 
-Every concept file follows this exact section order. Sections that are not applicable may be omitted, but the order below is the canonical structure:
+A chapter should answer a reader's questions in the order they arise: what is
+this, what forces its design, how does it work, and when does it fail? Introduce
+the topic once. The TL;DR opening is retired (2026-10-01); retain any unique
+fact in the body rather than retaining a second overview.
 
 ```text
 # Title
-
-[badges]
-
-## TL;DR
-
-1-3 sentences distilling the concept.
-
-## First Principles
-
-*Optional but strongly encouraged for concept chapters.* Derive the topic from its unavoidable starting constraints — the facts that force the design to exist — and show how 2–4 surface features follow from them. Rules: (1) axioms, not benefits; (2) must not restate the Definition or TL;DR; (3) reference sibling chapters with `→ NN.N.N.NN` links instead of re-explaining; (4) 3–5 numbered axioms, each with the consequence it explains. See any `10.1.*` chapter for the calibrated example. Coverage is tracked by `python3 scripts/check_first_principles.py`.
+[metadata and badges]
 
 ## Definition
+The concept and its boundaries in plain language.
 
-What is this concept? A clear, concise definition in 1-3 sentences. Follow with an ASCII diagram or bullet list for clarity.
+## First Principles
+The unavoidable constraints and the mechanisms they force.
 
-## Why Do We Need It?
-
-Numbered reasons explaining the importance and use cases.
+## Why It Matters
+A concrete problem or decision the reader needs to solve.
 
 ## How It Works
-
-Detailed explanation with ASCII diagrams inside `text` code blocks. Break down internal mechanics.
+A causal explanation, with one diagram or worked example where useful.
 
 ## Code Examples
-
-Practical TypeScript code examples demonstrating the concept. Use `typescript` language tag.
+A small set of distinct executable examples; explain the output and limits.
 
 ## Real-World Use Cases
-
-3-5 real-world scenarios where this concept is applied. Each with a code example.
+Apply the mechanism to decisions instead of repeating the same implementation.
 
 ## Common Mistakes
-
-4-6 common mistakes with code examples showing the bad and good patterns.
+Explain failure causes and corrections; link to the canonical example.
 
 ## Best Practices
-
-Numbered list of recommended practices.
+Decision criteria and trade-offs that were not already stated above.
 
 ## Performance Considerations
-
-Optional section for performance implications, trade-offs, and optimization tips.
+Include only when this topic has a distinct performance mechanism.
 
 ## Summary
-
-Concise summary of key takeaways. 3-7 bullet points.
-
-## Revision Questions
-
-Short retrieval-practice Q&A covering the chapter's sections (≥5 pairs):
-
-**How It Works**
-1. **Q:** What question does this section answer?
-   **A:** One or two sentences — the answer, fresh-worded from the body.
+One concise final recap of the chapter's decisions and boundaries.
 
 ---
 
 ## See Also
-- [Kubernetes](../40.2-kubernetes/INDEX.md)
-- [Microservices](../../20-backend/20.6-microservices/INDEX.md)
+- [Section revision](REVISION.md) — Practice after completing this section.
+- Related chapters with a reason to read each.
 
 ## References & Learn More
-
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+Primary sources supporting technical and version-sensitive claims.
 ```
 
 ### Section Rules
 
-1. **`## TL;DR`** — Optional but standard (most concept files open with it); `## Definition` is required for all concept files and follows `TL;DR` when present.
-2. **`## Summary`** — Required for all content files. Must appear near the end.
-3. **`## Revision Questions`** — Required for concept and case-study files (retired 2026-09-30: the old `## Cheat Sheet` duplicated the Summary for no study value). The chapter's own revision drill: ≥5 `**Q:**`/`**A:**` pairs drawn from the sections above, answers short and fresh-worded (they must not paste body prose — gate 10 measures restatement).
-4. **`## See Also`** — Required for all content files. Relative links to related sections.
-5. **`## References & Learn More`** — Required for all content files. External resource links.
-6. **`## Code Examples`** — Required for all concept files. Uses `typescript` (or appropriate) language tag.
-7. **`## Interview Questions`** — Optional. Can appear before `## Summary` in concept files that include inline Q&A.
-8. **Separator**: The `---` horizontal rule goes **between** `## Revision Questions` and `## See Also`. All content sections (Definition → Revision Questions) come before `---`; cross-references and references come after `---`.
+1. **Definition first:** a concept's definition is the single opening overview. First Principles follows it, deriving consequences from constraints rather than restating the definition.
+2. **Teach once:** assign each mechanism and full implementation one canonical location. Subsequent sections apply, compare or challenge it; they do not paste it again.
+3. **Preserve the learning story:** use a concrete problem, trace the mechanism, then show a decision or failure. Add domain headings when they clarify that sequence. Introduce unfamiliar terms in plain language and connect each part to the system it belongs to before presenting a taxonomy. Prefer “Inside a lexical environment: what the Environment Record stores” over “Environment Records in Detail”. Do not force every chapter into the same number of examples or mistakes.
+4. **Summary last:** one final Summary ends the teaching content. The separator precedes See Also and References.
+5. **Revision is a separate file:** each category's `REVISION.md` follows the learning chapters in its INDEX; flat stacks place the companion at stack level. Chapters link to it under See Also. Interview banks remain distinct interview practice.
+6. **Required teaching sections:** Definition, First Principles, Code Examples, Summary, See Also and References for concepts. Optional headings appear only when they add a new mechanism or useful decision.
+7. **No retired sections:** learning chapters contain neither TL;DR, Cheat Sheet nor inline Revision Questions. Preserve unique facts in the relevant body section and authored questions in the companion.
 
 ### Design Case Studies (`NN.N-system-design/NN-case-studies/`)
 
-Case studies follow the **case-study template**, not the concept template. Their sections are driven by the system being designed, not by a concept to be defined:
+Case studies keep the system's own design flow:
 
 ```text
-## TL;DR
+## Problem and Requirements
 ## First Principles
-## Requirements            (functional + non-functional)
-## Capacity Estimation     (back-of-envelope math)
+## Capacity Estimation
 ## API Design
-## Database Design         (schema + access patterns)
-## Architecture            (ASCII diagram + component walkthrough)
-## Scaling Strategy / Failure Handling / Monitoring
+## Database Design
+## Architecture
+## Scaling and Failure Handling
 ## Trade-offs
 ## Summary
-## Revision Questions
 
 ---
 
@@ -360,12 +335,11 @@ Case studies follow the **case-study template**, not the concept template. Their
 ## References & Learn More
 ```
 
-Rules:
-
-1. A generic `## Definition` is **not** required — the TL;DR already states what the system is, and a Definition paragraph would duplicate it. What *is* required for every case study: `## TL;DR`, `## Summary`, `## See Also`, `## References & Learn More`.
-2. `## First Principles` derives the system from its load/consistency/latency constraints — the axioms that make the design the shape it is.
-3. Keep the study's own domain headings (`Capacity Estimation`, `API Design`, …) rather than renaming them to concept-template names; the shape is the point.
-4. `python3 scripts/check_template.py` enforces this genre separately from concept files.
+An opening problem statement introduces the system without a generic Definition
+or TL;DR. Requirements precede design decisions; capacity calculations state
+their assumptions. First Principles derives decisions from the actual load,
+consistency and latency constraints. Revision questions live in the category
+companion. Summary and the cross-reference sections remain required.
 
 ### Why and Common Mistakes Variants
 
@@ -395,32 +369,45 @@ Either format is acceptable — choose the one that best suits the content.
 
 ## Revision Questions Format
 
-The chapter's revision drill — retrieval practice at the bottom of every
-concept/case-study file. Replaces the retired Cheat Sheet (2026-09-30), which
-restated the Summary inside a box nobody was expected to read twice.
+Retrieval practice lives in **`REVISION.md`**, separate from the learning
+chapters. Use one companion per numbered category, or one per flat stack.
+The stable companion filename does not change any existing chapter IDs.
 
 ````text
-## Revision Questions
+# Section — Revision
 
-**Definition**
-1. **Q:** What is X in one sentence?
-   **A:** The definition, in your own words.
+Read the section first; answer without reopening it, then check the source.
 
-**How It Works**
-2. **Q:** What mechanism makes Y behave this way?
-   **A:** One or two sentences on the mechanism.
+## Chapter Title
 
-**Common Mistakes**
-3. **Q:** What is the classic foot-gun with Y?
-   **A:** The mistake and the one-line correction.
+Source: [Chapter Title](chapter.md)
+
+**Mechanism**
+1. **Q:** Which constraint forces this design choice?
+   **A:** A short explanation in fresh words.
+
+**Failure and decisions**
+2. **Q:** What changes when the stated assumption fails?
+   **A:** The consequence and an appropriate response.
+
+## Summary
+Review the source for mechanisms or boundaries you could not explain.
+
+---
+
+## See Also
+- [Section reading order](INDEX.md)
+
+## References & Learn More
+The linked source chapters contain the supporting technical references.
 ````
 
-Rules:
-
-- **≥5 Q&A pairs** (gate 6b floor for concept and case-study files); a chapter with fewer sections asks more than one question per section.
-- **Group labels are the chapter's own section names** (`**How It Works**`, `**Common Mistakes**`, …) so the drill maps to what was just read.
-- **Answers stay short** (one-two sentences) and are **fresh-worded** — never pasted from the body; gate 10 (`check_dilution.py`) measures restatement (the RQ section itself is excluded from that measurement; the rest of the chapter is not).
-- Interview-questions files do NOT get a Revision Questions section — the bank itself is the drill.
+- Preserve existing authored question pairs when moving them; correct inaccurate answers alongside the source chapter.
+- Include **at least five Q/A pairs per companion**, and at least one source-linked question group for every concept or case-study chapter in that category. Larger sections need enough questions to cover their distinct mechanisms and failure modes.
+- Keep answers short and fresh-worded. Do not manufacture drills from heading names or paste the Summary as an answer.
+- Use chapter titles and source links to map questions to the reading flow; within a chapter, group by the mechanism or decision being tested.
+- Place the companion after learning chapters and before interview practice in the category INDEX. A chapter's See Also links to the companion.
+- Interview banks remain interview drills and do not gain a second revision section.
 
 ---
 
@@ -636,7 +623,7 @@ EOF
 
 These files (e.g., `10-frontend/10.6-animation/10.6.08-interview-questions.md`) follow a different structure:
 
-```text
+````text
 # Section Interview Questions
 
 [badges]
@@ -674,7 +661,7 @@ A: A closure is...
 
 ## References & Learn More
 - ...
-```
+````
 
 - Uses `## See Also` and `## References & Learn More` like concept files
 - **Bottom section**: `## Summary` is the bottom content section — the bank is already its own drill, so no Cheat Sheet and no Revision Questions (both retired for this genre)
@@ -825,16 +812,14 @@ Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
 
 ## Summary
 
-## Revision Questions
-```text
-...
+A concise recap of the invariant and decision.
 ```
 
 - Uses `## When to Use` instead of `## Why Do We Need It?`
 - Has a `## Template` section (unique to Coding Pattern files)
 - Uses `## Time/Space Complexity` instead of `## Performance Considerations`
 - Uses `## Interview Problems` with difficulty groups and LeetCode references instead of `## Interview Questions`
-- Follows the standard `## Summary` and `## Revision Questions` conventions
+- Ends with the standard `## Summary`; retrieval practice lives in the separate section `REVISION.md`
 
 ### SDE Role Guides
 
@@ -855,7 +840,7 @@ After making changes, verify the following:
 ### Required for All New Files
 
 - [ ] Content file opens with the HTML comment `<!-- section: … | category: … | tags: … -->` (no YAML frontmatter)
-- [ ] Content file carries 3 badges below the comment: Section (blue), Category (per the Category Values table), Tags (lightgrey)
+- [ ] Content file carries 4 badges below the comment: Section (blue), Category (per the Category Values table), Tags (lightgrey), Read time (generated)
 - [ ] INDEX.md files have 3 badges: Files (blue, links to central repo-root `INDEX.md`), Category, Status
 - [ ] All badge URLs follow shields.io conventions
 - [ ] Badge values URL-encoded properly (spaces → `%20`)
@@ -866,15 +851,15 @@ After making changes, verify the following:
 ### File-Type-Specific Structure
 
 **Standard concept files** (most sections):
-- [ ] Section order: Definition → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary → Revision Questions
-- [ ] `## TL;DR` (when present) or `## Definition` is the first content section after metadata/badges
+- [ ] Section order: Definition → First Principles → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary
+- [ ] `## Definition` is the first concept section after metadata/badges; no TL;DR
 - [ ] `## Code Examples` uses `typescript` language tag
-- [ ] `## Revision Questions` holds ≥5 fresh-worded `**Q:**`/`**A:**` pairs; the `---` separator goes between it and `## See Also`
+- [ ] The category `REVISION.md` covers every learning chapter with source links and ≥5 fresh Q/A pairs overall; the chapter separator follows Summary
 
 **Coding Pattern files** (`70-interview-toolkit/70.2-coding-patterns/`):
 - [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
 - [ ] Has `## Template` section with code skeleton
-- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary → Revision Questions
+- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary
 - [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
 - [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
 
@@ -941,21 +926,21 @@ bash scripts/verify.sh
 It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
-| --------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("869 files, 362K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. `--write` restamps them all from disk (idempotent) |
+| --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("985 files, 282K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. `--write` restamps them all from disk (idempotent) |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last — every flat stack must carry at least one `*-interview-questions.md` (category stacks hold the bank in a dedicated final interview category; 70.1/70.3 exempt as interview material themselves) (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36), and **no duplicate H2 section slug within a file** — two identically-named outline entries mean an ambiguous anchor and repeated sub-structures written as siblings instead of nested (80.12 had 13 stories as 65 sibling H2s; 81.05 declared "Segment Tree" twice). Nest repeats as `###` |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped). Also rejects **stale link labels**: a visible label that is a relative path must point at a path that exists, since pre-renumbering relics leave the target correct while the reader sees a folder layout that no longer exists (a target-only check cannot see these — the Sept 2026 audit fixed 10 such lines and ~18 more survived undetected). Spaced labels are humanized titles, not paths; `personal/` reports are exempt because they quote dead paths as documentation |
 | Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs and dead/dated reference URLs in code fences (fake archive timestamps, retired OWASP cheat-sheet URL forms, shuttered domains confirmed dead in the 2026-09 remediation, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
 | Link baseline | `python3 scripts/link_baseline.py` | Gate 6/30 (diff mode): every cited external URL must be in `scripts/external-links-baseline.json` — exit 1 on unverified ADDED urls; probe-verify each, then `--update` and commit the JSON with the doc change. `--probe` GET-probes all baseline URLs (audit mode, runs in the monthly CI workflow) |
 | Claims gate | `python3 scripts/check_claims.py` | Gate 7/30 (since 2026-09-14): campaign-material claims integrity — purged unverifiable claim phrases (Next.js-at-Docita, invented founder bios, unsourceable AI specifics, DEK/KEK envelope encryption, stale n8n reach) must not re-enter active application answers, the playbook, profile, or CV sources. Strips fenced blocks, quoted spans (JD's own words), and the gate's own `Claims audit <date>:` footnotes before matching; historical sent-record reports are frozen. `--scan` for the non-blocking informational view |
-| Template compliance | `python3 scripts/check_template.py` | Blocking gate (zero violations since Sept 2026): every chapter carries its genre's required sections — concept files `TL;DR`/`First Principles`/`Definition`/`Summary`/`See Also`/`References & Learn More`, interview banks `TL;DR`/`First Principles`/xrefs (and no mislabeled `## Code Examples`), design case studies the cross-reference contract — plus canonical section order. `TL;DR` is required in every genre because the chapter template opens with the main point; both documented styles satisfy it (`## TL;DR` or an opening `> **TL;DR:**` blockquote). Note the ordering allowance: `TL;DR` and `First Principles` lead, and then `Why It Matters` may sit either side of `Definition` (older stacks are Why-first, newer ones Definition-first). Interview banks additionally must not **promise more questions than they hold** — claims are read only from the opening blockquote/TL;DR (per-difficulty subtotals are fine), and only overpromises fire. Supersedes `check_required_sections.py` |
+| Template compliance | `python3 scripts/check_template.py` | Enforces the definition-first teaching flow, required sections by genre, metadata, fence/raw-wrapper integrity and interview counts. Rejects retired TL;DR openings and inline revision drills; separate `REVISION.md` companions hold the practice. |
 | Code whitespace | `python3 scripts/check_code_whitespace.py` | Gate 8/30 (since 2026-09-15): code-block indentation hygiene — no trailing whitespace and no whole-block paste-shift base indents (≥4 spaces on every line of a lang-tagged block) inside fenced code. Pass by design: gofmt-style go tabs, Anki TSV data fences, ASCII-diagram alignment in text fences, list-nested fence bases. Bulk-fix with `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` |
 | Box-code indentation | `python3 scripts/fix_box_code_indent.py --check --json --css` | Gate 8b/30: code embedded between ASCII box walls that lost its indentation (every row flat at the box column) renders as visibly broken code. Keyword-anchored JS, JSON and CSS stretches; each mode is strict and a whole-stretch veto protects hand-aligned blocks. Fix with `--fix` |
 | Box width | `python3 scripts/fix_box_width.py --check` | Gate 8c/30: boxes whose right wall is pushed far past their content wrap on laptop screens. Shrinks single-box fences to content width (single-column rows only). Fix with `--fix`, then `check_alignment.py --fix` |
-| First Principles | `python3 scripts/check_first_principles.py --diff` | Gate 9/30: concept chapters must carry a hand-authored `## First Principles` section deriving the topic from unavoidable constraints (sits between TL;DR and Definition — never a restatement of the definition, never a benefit list). The committed baseline locks per-stack counts: removing sections fails the build; growing coverage re-baselines with `--baseline` |
+| First Principles | `python3 scripts/check_first_principles.py --diff` | Gate 9/30: concept chapters must carry a hand-authored `## First Principles` section deriving the topic from unavoidable constraints (follows Definition — never a restatement of the definition, never a benefit list). The committed baseline locks per-stack counts: removing sections fails the build; growing coverage re-baselines with `--baseline` |
 | Cross-references | `python3 scripts/check_cross_refs.py` | Gate 10/30: every inline `→ N.N.N` reference resolves to a real chapter in the live inventory (padding-normalized, fence- and prose-aware, so `→ 401` is not a ref). A renamed chapter can no longer silently orphan the refs pointing at it |
-| Duplication | `python3 scripts/check_duplication.py --strict` | Gate 11/30: no chapter repeats another chapter's prose — fence-aware 5-word shingles over `##` bodies with template sections (TL;DR, Definition, Summary, See Also…) excluded, and a `--min-words` floor so a short paragraph cannot trip it. The chaos-engineering pair grew to ~250 overlapping lines because nothing measured overlap |
+| Duplication | `python3 scripts/check_duplication.py --strict` | Gate 11/30: no chapter repeats another chapter's prose — fence-aware 5-word shingles over `##` bodies with template sections (Definition, Summary, See Also…) excluded, and a `--min-words` floor so a short paragraph cannot trip it. The chaos-engineering pair grew to ~250 overlapping lines because nothing measured overlap |
 | Read time | `python3 scripts/read_time.py --check` | Gate 13/30: the study time declared on every INDEX *and* each chapter's 4th `Read time` badge match the computed estimate. Times are computed — never guessed — from one documented model: prose words ÷ 200 wpm + code lines ÷ 25 + table rows ÷ 40, with reference genres (interview banks, cheat sheets) counted at half prose weight because they are searched, not read linearly. Drift fails the build; `--write` refreshes every INDEX and badge (idempotent — the second run is a no-op) |
 | Topic twins | `python3 scripts/check_topic_twins.py` | Gate 12/30: chapters that teach the same topic must cross-link. A pattern chapter, its framework implementation and its case study are a deliberate parallel treatment — but only if a reader landing on either half is routed to the other. Unlinked twins are how the chaos pair drifted into two copies; fix with `python3 scripts/link_topic_twins.py`, which derives each description from the target chapter's own opening |
 | Harness wiring | `python3 scripts/check_verify_wiring.py` | Gate 15/30 (since 2026-09-18): `verify.sh` audits **itself** — every gate's failure branch must set the same variable the trailing summary reads, no `X=$((X+1))` on an uninitialized variable under `set -u`, every script a gate invokes exists on disk, gate labels are unique/gap-free/monotonic, and the gate count agrees across `verify.sh`, this file, and `docs/verification-gates.md`. It also audits **CI**, where the same false green can hide one level up: a workflow step that runs a gate under `set +e` must propagate its exit status (audit workflows that deliberately turn a non-zero exit into a tracking issue — `job-board-watch.yml`, `link-rot-audit.yml`, `drift-drill.yml` — are exempt by name and reason), every gate must actually be enforced by CI, and every script a workflow references must appear in its `paths:` trigger filter. Born from a false green: gate 10 wrote `FAILURES` instead of `FAIL`, so the unbound-variable abort killed the script before its `exit $FAIL` — a broken cross-reference printed FAIL, skipped gates 11–14, and still exited 0. `--write` restamps the count |

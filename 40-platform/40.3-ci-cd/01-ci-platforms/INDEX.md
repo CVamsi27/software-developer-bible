@@ -1,28 +1,33 @@
 # CI Platforms
 
-> **Study time:** ≈ 54 min of reading (4 files, ~14 min average).
-> **4 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI, Jenkins, and ArgoCD (GitOps). The concepts transfer; learn one deeply, map the others.
+> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
+> **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI, Jenkins, and ArgoCD (GitOps). The concepts transfer; learn one deeply, map the others.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-CI%20Platforms-green)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Why this category exists
+## Follow One Commit Into Production
 
-Every senior engineer owns a pipeline, and the pipeline lives on a platform. Job postings name the tool ("GitHub Actions required", "GitOps with ArgoCD"), but interviews test the concepts: triggers, caching, secrets, matrix builds. Read your company's platform first, then skim the rest so you can translate.
+Start with the platform your project uses, but keep the same questions throughout: what code executes, which checks observe it, which bytes are promoted, and where deployment authority becomes available? A pipeline definition schedules work; the application scripts and cloud/controller configuration supply the actual behavior.
 
----
+## Pass 1 — Separate Verification From Promotion
 
-## File Index
+[GitHub Actions](40.3.1.01-github-actions.md) traces a PR through verification and a trusted main build through identified-artifact promotion. Understand events, jobs/runners, artifacts and permissions before choosing reusable actions, matrices or caches.
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [GitHub Actions](40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets, environments | 21 min |
-| 02 | [GitLab CI/CD](40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, stages, multi-project pipelines, Auto DevOps | 10 min |
-| 03 | [Jenkins CI/CD](40.3.1.03-jenkins.md) | Declarative vs scripted pipelines, shared libraries, plugins, controller/agent model | 11 min |
-| 04 | [ArgoCD (GitOps)](40.3.1.04-argocd.md) | GitOps model, Applications and ApplicationSets, sync policies, drift detection, rollback | 12 min |
+## Pass 2 — Translate the Dependency and Credential Graph
+
+[GitLab CI/CD](40.3.1.02-gitlab-ci.md) expresses ordering through stages and needs. [Jenkins](40.3.1.03-jenkins.md) adds operated controllers, agents and plugins. Read both as translations of the same data/authority boundaries, then check their distinct syntax and lifecycle requirements.
+
+## Pass 3 — Let a Controller Reconcile the Declared State
+
+[ArgoCD](40.3.1.04-argocd.md) continuously compares desired Git state with the cluster. Trace drift and synchronization separately from the build that produced the image, and separate manifest rollback from irreversible database/external effects.
+
+## Finish With Revision, Then Practice
+
+Close the chapters and complete [section revision questions](REVISION.md). Then use the separate [CI/CD interview bank](../04-interview-prep/40.3.4.01-interview-questions.md) to explain a concrete release decision.
 
 ---
 
@@ -39,13 +44,6 @@ Every senior engineer owns a pipeline, and the pipeline lives on a platform. Job
 
 ---
 
-## Docita Anchor
+## Apply the Flow to Your Repository
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — runs CI for real (GitHub Actions).
-
-| Topic | Docita evidence |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GitHub Actions suite | `.github/workflows/ci.yml` + 10 more: `api-e2e`, `db-migrations`, `deploy`, `container-scan`, `frontend-critical-e2e`, `frontend-e2e-weekly`, `synthetic-monitoring`, `scale-api-hours`… |
-| CI hygiene | `workflow-staleness.yml` + `check-workflow-staleness.mjs` keep workflows from rotting |
-| Local pre-CI layer | Husky pre-push runs the cheap subset of standard gates so bad commits die before wasting a CI run |
-| GitLab / Jenkins / ArgoCD | _No direct docita implementation yet._ |
+Inspect current workflow files, build/deploy scripts and environment settings together. Trace a shared-package change and a failed deployment through their actual run evidence. A historical workflow count, file name or badge cannot establish required checks, cloud trust or readiness.

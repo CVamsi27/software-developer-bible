@@ -1,10 +1,10 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 2 h 52 m of reading (11 files, ~16 min average).
-> **11 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
+> **Study time:** ≈ 2 h 37 m of reading (14 files, ~11 min average).
+> **14 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -29,10 +29,10 @@ Pick the one your company uses — the patterns are similar.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 21 min |
+| 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | 12 min |
 | 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | 10 min |
 | 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | 11 min |
-| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 12 min |
+| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | 11 min |
 
 ---
 
@@ -40,10 +40,10 @@ Pick the one your company uses — the patterns are similar.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | 17 min |
-| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | 15 min |
-| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | 19 min |
-| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | 17 min |
+| 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | 16 min |
+| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | 14 min |
+| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | 17 min |
+| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | 15 min |
 
 ---
 
@@ -53,8 +53,8 @@ Senior-level patterns for zero-downtime deploys.
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 20 min |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 18 min |
+| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | 19 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | 15 min |
 
 **Decision:**
 
@@ -72,7 +72,7 @@ Need zero-downtime deployment?
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 12 min |
+| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | 11 min |
 
 ---
 

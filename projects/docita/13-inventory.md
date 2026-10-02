@@ -1,152 +1,139 @@
-# 14 — Inventory
+# 13 — Inventory: Commit the Stock Change and Its Movement Together
 
-> Clinic stock with a movement ledger — every quantity change is an append-only `InventoryMovement`, and decrements are atomic conditional updates that can never drive stock negative.
+## Definition
 
----
+Inventory maintains a current stock quantity and a history explaining how it changed. In Docita, the item holds the live balance while movement records identify receipts, consumption, expiry, waste and other adjustments.
 
-## Context
+Suppose two operators each issue the last unit. Reading quantity 1 and later decrementing without a condition can let both proceed. Separately recording history can also leave a changed balance without its movement when the second write fails.
 
-Clinics stock medicines, consumables, and supplies. Inventory in Docita must answer:
+This case describes source inspected on **2 October 2026**. It explains the guarded mutation path and the other paths that limit a whole-domain guarantee.
 
-- **What do we have?** — items with quantity, unit, SKU, supplier, batch, expiry.
-- **Is anything running low or about to expire?** — the stats bar clinics actually look at: `totalItems`, `totalStock`, `lowStock`, `critical` (quantity 0), `expiringSoon` (30-day window).
-- **Where did stock go?** — a movement ledger: INITIAL, IN (purchase/return), OUT (sale/use), EXPIRED, WASTE.
-- **Can we sell/issue this?** — never allow a decrement that would take quantity below zero.
+## First Principles
 
-**The problems:** (1) quantity on the item row and the movement history must never disagree; (2) two concurrent issues of the last unit must not both succeed; (3) "low stock" must be *derived*, not hand-maintained; (4) prices mix a legacy `Float` column and a newer canonical `*Cents` column that must stay in sync.
+Concurrent readers can observe the same balance. The database must decide which decrement remains valid at the write, and the movement explaining that change must commit with it. A stored balance is a projection: it stays consistent with history only if every mutation follows the same accounting protocol.
 
----
+Atomicity within one path does not protect callers that bypass it or repeated delivery of the same business operation.
 
-## Decision 1: Ledger + Derived Quantity, Updated Atomically
+## Why Store Both a Balance and Movements?
 
-### What We Chose
+A stored quantity supports direct reads and conditional updates. A movement history supports explanations and reconciliation. Computing every balance from the history can simplify the source-of-truth rule but adds aggregation and concurrency-design work; retaining a projection trades that read cost for an obligation to keep it aligned.
 
-The item row carries the live `quantity`. Every mutation goes through `addMovementAndUpdateQuantity`, which inside one `$transaction` does a **conditional increment** and, only on success, appends the movement row:
+The current movement types include INITIAL, IN, OUT, ADJUSTMENT, EXPIRED and WASTE. The command treats OUT/EXPIRED/WASTE as negative deltas and the other types as positive. In particular, ADJUSTMENT currently means a positive movement here, not automatically “set balance to this value.”
 
-```typescript
-// apps/api/src/domains/inventory/infrastructure/repositories/prisma-inventory.repository.ts
-async addMovementAndUpdateQuantity(itemId, clinicId, movementData, quantityDelta) {
-  return this.prisma.$transaction(async (tx) => {
-    const where: Prisma.InventoryItemWhereInput = { id: itemId, clinicId };
-    if (quantityDelta < 0) where.quantity = { gte: Math.abs(quantityDelta) };  // never negative
+## How One Guarded Mutation Works
 
-    const updateResult = await tx.inventoryItem.updateMany({ where, data: { quantity: { increment: quantityDelta } } });
-    if (updateResult.count === 0) {
-      const existing = await tx.inventoryItem.findUnique({ where: { id: itemId }, select: { quantity: true } });
-      if (!existing) throw new NotFoundException(...);
-      throw new BadRequestException(`Insufficient stock: requested ${Math.abs(quantityDelta)} but only ${existing.quantity} available`);
-    }
-    return tx.inventoryMovement.create({ data: { inventoryItem: { connect: { id: itemId } }, clinic: { connect: { id: clinicId } }, ...movementData } });
-  });
-}
+The repository transaction constructs an item/clinic predicate. For a negative delta, it additionally requires quantity to be at least the amount removed. It atomically increments quantity and, on success, inserts the movement through the same transaction client.
+
+```text
+transaction
+  conditional update: quantity >= amount → quantity -= amount
+  if no item matched: reject
+  insert movement explaining the accepted delta
+commit both, or roll back both
 ```
 
-The sign convention is normalized in the command service — `OUT/EXPIRED/WASTE` become negative, everything else positive — and each movement records `createdBy`, `type`, and optional `referenceType`/`referenceId` (e.g., which invoice consumed it).
+The SQL equivalent of the decisive predicate is:
 
-### Why This Was Chosen
-
-- **The ledger and the balance can't drift** — both writes commit or neither does.
-- **Negative stock is structurally impossible** — `updateMany` with `quantity >= |delta|` is a compare-and-swap at the database; a concurrent decrement of the last unit loses the race with `count === 0`, and the error message reports the actual remaining stock.
-- **`OUT`, `EXPIRED`, and `WASTE` are explicit movement types**, so "we wrote off 40 units of expired amoxicillin" is auditable instead of a silent quantity edit.
-
-### Alternatives Considered
-
-- **Event-sourced stock** (quantity = sum of movements, never stored) — heavier read path (every item detail page aggregates history); with thousands of items and a handful of clinics, a stored quantity + append-only ledger is the right cost/benefit.
-- **`update` then `create` without a guard** — rejected: a lost update between two concurrent issues could oversell the last unit.
-
-### Trade-offs
-
-- **Quantity is denormalized** — it can only be corrected by adding a movement; a manual "fix quantity" edit needs its own movement type (see What Could Be Better).
-- **Single movement per call** — there is no bulk "dispense 5 items from one prescription" API yet; each line becomes its own transaction (see What Could Be Better).
-
----
-
-## Decision 2: Low-Stock Is Derived, Not Stored
-
-### What We Chose
-
-`low_stock` is computed at query time by comparing `quantity` against the item's own `minQuantity` column:
-
-```typescript
-if (filters.status === 'low_stock') {
-  where.quantity = { lte: this.prisma.inventoryItem.fields.minQuantity };  // field-to-field comparison
-}
+```sql
+UPDATE "InventoryItem"
+SET quantity = quantity - 1
+WHERE id = $1 AND "clinicId" = $2 AND quantity >= 1
+RETURNING quantity;
 ```
 
-Stats (counts + aggregate + low/critical/expiring-soon) run as **five parallel reads** (`Promise.all`) on the read replica via `getReadClient()`.
+This is a focused illustration of the Prisma conditional update, not the complete transaction. PostgreSQL coordinates concurrent writes to the same row. If the first decrement commits quantity 0, a competing decrement's condition cannot accept another unit from that balance.
 
-### Why This Was Chosen
+| Step | Operator A | Operator B |
+| ------------------ | ----------------------- | ----------------------------------------------- |
+| Starting balance | 1 | 1 |
+| Conditional update | Can accept one unit | Must wait or evaluate after the competing write |
+| After A commits | Balance 0, one movement | Its quantity predicate fails |
 
-- Field-to-field Prisma comparison keeps the threshold per item — a clinic's par level for gloves differs from its par for antibiotics — without a nightly job re-computing flags.
-- Read-replica + parallel queries keep the dashboard off the primary write path.
+If movement insertion fails, the transaction rolls the quantity update back. If the item cannot be updated, the repository attempts a diagnostic read; that read uses item ID without an explicit clinic predicate. Verify its tenant-routing context and avoid reporting another tenant's balance through an error. “No rows matched” does not always mean insufficient stock; it can also mean absent or unauthorized scope.
 
-### Trade-offs
+## Where the Balance and Ledger Can Still Diverge
 
-- **Expiry is a snapshot of "next 30 days from now"** — `expiringSoon` is computed with `now` injected via the clock port, so tests can pin time; there is no background job to *alert* on expiring stock, only the stats view.
+The item edit API and command still accept `quantity`. `updateItem` writes it directly without appending a movement. This bypass exists in current source, so the earlier claim that every quantity change is ledger-backed is inaccurate.
 
----
+Creation uses a nested INITIAL movement when initial quantity is positive. That protects the current create path, not historical data, manual SQL, other bypasses or database immutability. Calling a movement log append-only describes the desired protocol; enforce update/delete restrictions if immutability is required.
 
-## Decision 3: Cents as Canonical, Float Kept for Compatibility
+A repair should route stock corrections through an authorized adjustment protocol that records the difference and reason, or prevent direct quantity edits. Reconciliation should derive signed deltas from movement types because the stored movement quantity is a positive magnitude at the validated HTTP boundary.
 
-### What We Chose
+### Repeated Business Operations Need Their Own Identity
 
-Create/update writes both `purchasePrice`/`sellingPrice` (legacy Float) and the canonical `purchasePriceCents`/`sellingPriceCents`, derived through `toCents`:
+The guard prevents overselling available stock through that path. It does not prevent the same invoice line from consuming stock twice when enough quantity remains. The schema/interface's reference fields explain a movement; their mere presence does not establish a unique idempotency constraint.
 
-```typescript
-// Write both the legacy Float and the canonical cents columns (G3).
-purchasePrice: data.purchasePrice, sellingPrice: data.sellingPrice,
-purchasePriceCents: toCents(data.purchasePrice), sellingPriceCents: toCents(data.sellingPrice),
-```
+Select a business operation key and enforce duplicate handling where the mutation commits. Retrying after an ambiguous response must recognize the existing accepted movement rather than blindly subtracting again.
 
-This is the same money-handling rule the billing/payments domains follow (never store float currency as the source of truth).
+## How Input, Units and Money Affect the Invariant
 
-### Why This Was Chosen
+The controller DTO validates nonnegative integer item quantities and positive integer movement quantities, and limits movement types to an enum. The command normalizes the direction. Verify that internal callers also satisfy those requirements and that values fit database integer and money ranges.
 
-- **Consistency with the repo-wide money policy** — inventory value reports must match billing's cent-based math.
-- **The Float columns remain for legacy callers** while the cents columns become the trustworthy basis for sums.
+An inventory item carries a unit. Summing “quantity” across boxes, tablets and bottles yields a count with mixed units, not a physically meaningful stock volume. Report totals with their interpretation or group by compatible units.
 
-### Trade-offs
+The repository writes legacy floating-point prices and canonical `purchasePriceCents`/`sellingPriceCents` together through `toCents`, including price updates. Integer minor units support consistent calculations, but conversion still needs an agreed currency, scale, rounding and range. The name cents does not itself establish universal two-decimal currency behavior. Bypassing the centralized writer can leave the pairs inconsistent.
 
-- **Dual-write is a migration hazard** — if a caller updates one pair and not the other, columns drift. The repository centralizes both write paths today (create + updateItem both sync cents), so the risk is contained to future bypasses.
+## How Low-Stock and Expiry Views Are Derived
 
----
+The item list's low-stock filter compares quantity to the item's `minQuantity` field. The stats path performs five parallel reads through `getReadClient()`:
 
-## What Worked
+| Metric | Inspected definition |
+| ------------- | --------------------------------------------------------- |
+| Total items | Active item count |
+| Total stock | Sum of active quantities; interpret mixed units carefully |
+| Low stock | Positive quantity at or below the item's minimum |
+| Critical | Quantity exactly zero |
+| Expiring soon | Expiry after now and within 30 × 24 hours |
 
-- **Zero negative-stock incidents** — the conditional decrement held under concurrent use; the descriptive `Insufficient stock: requested X but only Y available` message made UI handling straightforward.
-- **The movement ledger gave clinics real answers** — "where did the paracetamol go" is a filterable list, not a shrug.
-- **Stats stay cheap** — read-replica parallel queries kept the dashboard snappy as item counts grew.
+Zero-stock items can therefore appear in the list filter while being counted separately as critical in stats. Expiring-soon excludes already-expired stock. Its duration window is not the same definition as thirty clinic-calendar days.
 
-## What Failed
+`getReadClient()` permits configured read routing; it does not prove a replica exists in every deployment. Replica lag can delay a just-written balance, and parallel queries do not provide a shared snapshot. Use primary or suitable snapshot semantics when a decision requires current, internally consistent figures. Derived flags reduce stale materialized status fields but do not make all reads current.
 
-- **Item edit allowed direct quantity mutation** — `updateItem` accepts `quantity` in its data shape and writes it without a movement row. A staff member "fixing" a quantity that way silently breaks ledger continuity — the balance no longer equals the sum of movements. It was tolerated as an admin escape hatch, but it violates the domain's own invariant.
-- **The initial `INITIAL` movement type was added late** — early items were created with quantity but no movement, so seed data lacked history. `createItem` now emits `INITIAL` when `quantity > 0`.
+## Real-World Decisions
 
-## What Could Be Better
+| Requirement | Mechanism to evaluate | Remaining boundary |
+| -------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------- |
+| Last unit cannot be issued twice | Guarded row update | Other writers must preserve nonnegative stock |
+| Balance matches movement history | Same-transaction update and movement | Direct edits and historical inconsistencies |
+| Retry cannot consume twice | Unique business-operation identity | Ambiguous response and replay behavior |
+| Multiple prescription lines succeed together | One multi-item transaction with stable lock ordering | Deadlocks, retries and transaction duration |
+| Oldest-expiring batch issued first | Batch-level quantities and expiry policy | Item-level expiry cannot express multiple batches |
+| Low stock alerts are reliable | Defined threshold-crossing event and delivery | Duplicate alerts and notification failures |
 
-- **Remove `quantity` from `updateItem` or route it through a `STOCK_ADJUST` movement** — the single biggest correctness hole in the domain (see What Failed).
-- **Bulk consumption API** — dispensing a 6-line prescription is 6 sequential transactions today; a single `consumeMany` (one transaction, all-or-nothing) would match how clinics actually work and halve lock contention.
-- **Per-batch expiry tracking** — expiry is on the item, not on each received batch; a clinic that buys the same medicine at different expiry dates can't issue oldest-first (FEFO) properly.
-- **Reorder alerts** — `minQuantity` exists but nothing pushes a WhatsApp/notification when stock crosses it; the async queue + WhatsApp templates from other domains are ready to carry it.
+A bulk-consumption operation can express all-or-nothing issuance. It does not automatically halve contention: workload, lock ordering and transaction duration determine the result. Per-batch tracking and threshold alerts add distinct state and operational responsibilities rather than cosmetic UI improvements.
 
----
+## Mistakes
 
-## Code Evidence
+- Presenting one guarded repository method as proof that all stock writers are safe.
+- Calling a movement record immutable without enforced write restrictions.
+- Assuming reference fields alone provide idempotency.
+- Summing incompatible item units as if they represent one stock measure.
+- Treating parallel replica reads as a consistent or immediately current snapshot.
+- Quoting zero incidents or improved dashboard speed without measured evidence.
 
-| Claim | File |
-| -------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Command service (create/update/movement) | `apps/api/src/domains/inventory/application/services/inventory-command.service.ts` |
-| Query service + stats | `apps/api/src/domains/inventory/application/services/inventory-query.service.ts` |
-| Facade | `apps/api/src/domains/inventory/application/services/inventory.service.ts` |
-| Atomic ledger transaction | `apps/api/src/domains/inventory/infrastructure/repositories/prisma-inventory.repository.ts` |
-| Repository interface (types) | `apps/api/src/domains/inventory/core/repositories/inventory.repository.interface.ts` |
-| HTTP surface (`/inventory`, `:id/movements`) | `apps/api/src/domains/inventory/presentation/controllers/inventory.controller.ts` |
+## Best Practices
 
----
+Exercise concurrent last-unit decrements, failed movement insertion, duplicate business references, direct quantity edits and cross-tenant diagnostic paths. Reconcile the stored quantity with signed movement history and preserve an audit reason for repairs. Define bulk-operation atomicity, numerical bounds and read freshness before advertising the resulting guarantees.
 
-## Interview Script (60 seconds)
+## Summary
 
-> "Inventory is a ledger, not a CRUD table. The item row carries a live quantity, but every change flows through one transactional method that does a conditional increment — for decrements the WHERE clause requires `quantity >= amount`, so stock can never go negative and two concurrent issues of the last unit can't both succeed — and only on success appends an immutable movement row recording type, user, and reference. Balance and history are written in the same transaction, so they can't drift. Low stock is derived per item against its own `minQuantity` at query time, stats run as parallel read-replica queries, and prices are dual-written with canonical cent columns matching the billing domain. The gap I'd fix first: `updateItem` can still mutate quantity directly, bypassing the ledger — that should become a `STOCK_ADJUST` movement so the invariant 'balance equals sum of movements' always holds."
----
+The guarded movement path protects its decrement and history in one transaction. Whole-domain correctness additionally requires closing direct-edit bypasses, enforcing business-operation idempotency, respecting units and money ranges, and choosing suitable read freshness.
 
-[← Previous: IPD Inpatient](12-ipd-inpatient.md) · [ Back to Index](INDEX.md) · [Next: Analytics And Dashboards →](14-analytics-and-dashboards.md)
+## See Also
+
+- [Category revision](REVISION.md) — stock and ledger questions after learning.
+- [Clinic workflows](05-clinic-workflows.md) — concurrent state transitions.
+- [Billing](08-billing-invoicing.md) — money and invoice records.
+- [Analytics](14-analytics-and-dashboards.md) — read consistency and aggregation.
+- [Case-study index](INDEX.md) — learning stages.
+
+## References
+
+Docita source inspected on 2 October 2026:
+
+- `apps/api/src/domains/inventory/application/services/inventory-command.service.ts`
+- `apps/api/src/domains/inventory/infrastructure/repositories/prisma-inventory.repository.ts`
+- `apps/api/src/domains/inventory/application/dto/inventory.dto.ts`
+- `apps/api/src/domains/inventory/presentation/controllers/inventory.controller.ts`
+- `packages/db/prisma/schema.prisma` — inventory models.
+- `packages/utils/src/billing/money-cents.ts` — price conversion boundary.

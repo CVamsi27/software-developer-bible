@@ -1,9 +1,9 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 12 h 30 m of reading (31 files, ~24 min average).
-> **31 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
+> **Study time:** ≈ 12 h 3 m of reading (32 files, ~23 min average).
+> **32 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
-[![Files](https://img.shields.io/badge/files-31-blue)](../../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -84,6 +84,12 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 **Cross-references:** [Theory →](../01-theory/INDEX.md) | [Design Patterns](../../30.1-design-patterns/INDEX.md) | [Microservices](../../../20-backend/20.6-microservices/INDEX.md) | [Database](../../../20-backend/20.4-database/INDEX.md) | [WebSockets](../../../60-realtime/60.1-websockets/INDEX.md)
 
 ---
+
+## Reading Path and Completion Check
+
+Choose a compact case first, such as the URL shortener. Move to a scarce-resource case, then a delivery/streaming case and a coordination case. Reuse theory links rather than relearning each mechanism.
+
+For each case, explain one critical invariant, its atomic boundary, the largest scaling pressure and one failure-recovery path. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Navigation
 

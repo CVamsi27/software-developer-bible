@@ -1,9 +1,9 @@
 # IaC & Terraform — Index
 
-> **Study time:** ≈ 16 min of reading (2 files, ~8 min average).
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
 > **Infrastructure as Code fundamentals, Terraform state/plan/apply, modules, drift, backends, CI/CD safety, OpenTofu/Pulumi comparisons.**
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -29,8 +29,8 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | 8 min |
-| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | 8 min |
+| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | 7 min |
+| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | 7 min |
 
 ---
 
@@ -64,3 +64,7 @@ Docita runs on Fly.io + Cloudflare with GitHub Actions deploys — no Terraform 
 ---
 
 [← Previous: Reverse Proxy](../40.11-reverse-proxy/INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

@@ -1,365 +1,162 @@
-# 03 — Async Processing
+# 03 — Background Jobs: Commit Intent, Claim Work and Handle Repeated Effects
 
-> PostgreSQL queue + transactional outbox — how we process jobs without Redis, Kafka, or any extra infrastructure.
+## Definition
 
----
+A **job queue** stores work for a worker to execute. A **transactional outbox** stores an event alongside the business change that caused it, so a crash between database commit and notification does not erase the intent.
 
-## Context
+Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
 
-Docita needs to process background jobs:
+This case describes source inspected on **2 October 2026**, with limitations distinguished from the intended design. Production throughput, latency, cost and delivery outcomes were not measured in this review.
 
-- **PDF generation** — prescriptions, invoices, OPD slips (2-3 seconds each)
-- **WhatsApp messages** — appointment reminders, payment confirmations
-- **Email notifications** — welcome emails, password resets
-- **Analytics** — usage aggregation, overage calculation
-- **Webhooks** — outgoing integrations with lab systems
-- **Reconciliation** — WhatsApp message delivery status sync
+## First Principles
 
-**The constraint:** We're a small team (founding engineer + AI). Adding Redis, Kafka, or SQS means another managed service, another failure mode, another secret to rotate, another dashboard to monitor. At ~0.4 jobs/sec sustained, we need something simpler.
+A database transaction can commit related database writes atomically. It cannot generally include an external provider's side effect in the same atomic commit. A worker can crash after completing the effect but before recording completion, so recovery must allow repeated attempts and consumers must account for duplicates.
 
----
-
-## Decision 1: PostgreSQL as Queue
-
-### What We Chose
-
-A `QueueJob` table in PostgreSQL. Jobs are enqueued in the same transaction as business writes. A worker process polls and executes.
+There are therefore three separate responsibilities:
 
 ```text
-┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Job Enqueue (same transaction)               │
-│                                                               │
-│  prisma.$transaction(async (tx) => {                          │
-│    await tx.appointment.create({ data: {...} });              │
-│    await tx.queueJob.create({                                 │
-│      data: {                                                  │
-│        name: 'prescription.pdf.generate',                     │
-│        data: { prescriptionId: '...', clinicId: '...' },      │
-│        status: 'WAITING',                                     │
-│      },                                                       │
-│    });                                                        │
-│  });                                                          │
-│  // Both succeed or both fail — atomic                        │
-└───────────────────────────────────────────────────────────────┘
-
-┌───────────────────────────────────────────────────────────────┐
-│ Worker Process (separate NestJS process)                      │
-│                                                               │
-│  Polls every 2 seconds:                                       │
-│  SELECT ... FROM "QueueJob"                                   │
-│  WHERE status = 'WAITING' AND name = $1                       │
-│  ORDER BY priority DESC, createdAt ASC                        │
-│  FOR UPDATE SKIP LOCKED                                       │
-│  LIMIT 1                                                      │
-│                                                               │
-│  → Execute handler                                            │
-│  → Mark COMPLETED or DELAYED (retry) or DEAD_LETTERED         │
-└───────────────────────────────────────────────────────────────┘
+producer: commit business state + durable intent
+worker/relay: claim pending intent and attempt delivery
+consumer: apply the effect safely, including repeated attempts
 ```
 
-### Why Postgres (Not Redis)
+## Why Use PostgreSQL for Durable Intent?
 
-| Factor | PostgreSQL | Redis + BullMQ |
-| ------------------------- | -------------------------------- | ------------------------------------------ |
-| **Already paying for** | Yes (AWS RDS HA) | No — extra $50-200/mo |
-| **Transactional enqueue** | Yes — same `prisma.$transaction` | No — separate connection, dual-write risk |
-| **Operational overhead** | Zero — same database | Another service to monitor, rotate secrets |
-| **Durability** | WAL-backed, crash-safe | AOF/RDB — configurable, but separate |
-| **Throughput ceiling** | ~1k jobs/sec | ~10k jobs/sec |
-| **Our actual load** | ~0.4 jobs/sec | Overkill |
+PostgreSQL can store business data and pending work in one transaction without introducing another queue service. That reduces a particular dual-write problem and reuses an existing operational system.
 
-**The real reason:** Transactional enqueue. When a prescription is created, the PDF job must be enqueued in the *same transaction*. With Redis, you'd need: (1) write to Postgres, (2) write to Redis. If step 2 fails, the prescription exists but no PDF is generated. With Postgres, both writes are atomic.
+It still adds database load, indexes, cleanup, recovery and monitoring work. Queue contention can affect interactive queries. A broker can improve specialized routing, buffering or throughput, but a broker alone also does not make a separate database write atomic: an outbox or another coordination protocol may still be required.
 
-### The Queue Service
+Choose from measured workload, acceptable delay, failure recovery and operational capacity. Fixed comparisons such as “Postgres supports 1k jobs/sec” or “Kafka costs $100” are not portable design limits.
 
-```typescript
-// apps/api/src/shared/modules/queue/postgres-queue.service.ts
-@Injectable()
-export class PostgresQueueService implements IQueueProvider, OnModuleDestroy {
-  private readonly handlers = new Map<string, QueueJobHandler>();
-  private readonly pollers = new Map<string, ReturnType<typeof setInterval>>();
-  private readonly activePolls = new Set<string>();
+## How the Queue Claims One Job
 
-  async enqueue<T>(name: string, data: T, options?: QueueJobOptions): Promise<QueueJob<T>> {
-    // Idempotency: skip if recent completed job with same key exists
-    if (options?.idempotencyKey) {
-      const recent = await this.findRecentCompletedByIdempotency(name, options.idempotencyKey);
-      if (recent) return this.rowToJob(recent);
-    }
-    // RLS-BYPASS: workers run without per-request clinic session
-    const row = await this.prisma.runUnrestricted(async () =>
-      this.prisma.queueJob.create({ data: { name, data, status: 'WAITING', ... } })
-    );
-    return this.rowToJob(row);
-  }
+The inspected repository claims a due job and changes its state in **one SQL statement**. This is the source query structure; `${name}` is a bound Prisma tagged-template value, not string concatenation:
 
-  async process<T>(name: string, handler: QueueJobHandler<T>): Promise<void> {
-    this.handlers.set(name, bindQueueJobHandler(handler));
-    if (!this.pollers.has(name)) {
-      const interval = setInterval(() => this.pollIfIdle(name), POLL_INTERVAL_MS);
-      interval.unref?.();  // Don't keep process alive for pollers
-      this.pollers.set(name, interval);
-    }
-  }
-}
+```sql
+UPDATE "QueueJob"
+SET status = 'ACTIVE', "processedAt" = NOW(), "updatedAt" = NOW()
+WHERE id = (
+  SELECT id FROM "QueueJob"
+  WHERE name = ${name}
+    AND status IN ('WAITING', 'DELAYED')
+    AND ("delayedUntil" IS NULL OR "delayedUntil" <= NOW())
+  ORDER BY priority DESC, "createdAt" ASC
+  LIMIT 1
+  FOR UPDATE SKIP LOCKED
+)
+RETURNING *;
 ```
 
-### Key Design Decisions
+The inner query locks a candidate; competing claimers skip locked rows. The outer update records `ACTIVE` before the statement commits. A plain select followed later by an unrelated update would leave a competing-claim window.
 
-**`FOR UPDATE SKIP LOCKED`:** Multiple worker replicas can poll simultaneously. `SKIP LOCKED` ensures each job is claimed by exactly one worker. No double-processing.
+The lock protects the claim while the database transaction holds it. It does not remain held throughout the external work after the claim commits. `SKIP LOCKED` is useful for work distribution, not a promise of exactly-once processing or strict global fairness. High-priority traffic can keep lower-priority work waiting.
 
-**Idempotency key:** External webhooks (Razorpay) can send the same event multiple times. The queue checks for recent completed jobs with the same key before enqueueing.
+### Trace a PDF Job Through Its States
 
-**`interval.unref()`:** Pollers don't keep the Node.js process alive. If all handlers are registered and the process needs to shut down, it can.
+| Step | State or action | Failure boundary |
+| ---- | ---------------------------------------------------------------- | ----------------------------------------------------------- |
+| 1 | Insert `WAITING`, or `DELAYED` with a due time | Intent must be durable before reporting reliable scheduling |
+| 2 | Atomic claim changes a due row to `ACTIVE` | Another normal claimer skips the locked candidate |
+| 3 | Await the registered handler | Provider may succeed even if its response is lost |
+| 4 | Write `COMPLETED` after handler success | A crash between effect and completion permits repetition |
+| 5 | On observed failure, increment attempts and delay or dead-letter | Retry does not undo an already-applied effect |
 
-**`runUnrestricted()`:** Queue workers run without a request context — they need to access all clinics' data. This bypasses RLS with careful documentation.
+The source polls every **2 seconds**, prevents overlapping polls for the same job name within one service instance and claims one job per poll. A slow handler stretches effective processing capacity; a two-second interval is not a guaranteed two-second completion latency.
 
-### Retry with Exponential Backoff
+### The Queue's Duplicate Check Has Limits
 
-```typescript
-const computeBackoffMs = (attempt: number): number => {
-  const exponential = RETRY_BASE_MS * Math.pow(2, attempt - 1);  // 1s, 2s, 4s, 8s, 16s
-  return Math.min(exponential, RETRY_MAX_MS);  // Cap at 60s
-};
+`enqueue` looks for a matching **completed** job from the preceding **24 hours**. A similar check runs after claim. The current `QueueJob` schema has an indexed, nullable idempotency key, without a unique constraint on that key.
 
-// On failure:
-if (nextAttemptsMade < row.maxAttempts) {
-  await this.prisma.queueJob.update({
-    where: { id: row.id },
-    data: {
-      status: 'DELAYED',
-      attemptsMade: nextAttemptsMade,
-      failedReason,
-      delayedUntil: new Date(Date.now() + backoffMs),
-    },
-  });
-} else {
-  await this.prisma.queueJob.update({
-    where: { id: row.id },
-    data: {
-      status: 'DEAD_LETTERED',
-      attemptsMade: nextAttemptsMade,
-      failedReason,
-      deadLetteredAt: this.clock.now(),
-    },
-  });
-}
-```
+Two jobs with the same logical key can both find no completed predecessor and run concurrently. A completed-job lookup also does not protect the crash window before completion is recorded. Scope keys to the business operation and tenant where appropriate, then enforce idempotency at the actual effect boundary—for example, a database uniqueness constraint plus a transaction, or a provider-supported idempotency key with understood retention rules.
 
-**Default max attempts:** 5. After 5 failures, the job moves to dead-letter status for manual inspection.
+## How Retry and Stale Recovery Differ
 
-**Stale job recovery:** If a worker crashes mid-job, the job stays in `ACTIVE` status forever. A recovery mechanism detects jobs stuck in `ACTIVE` for >10 minutes and moves them back to `DELAYED` or `FAILED`.
+The queue defaults to **5 attempts**. Its failure path uses a one-second exponential base with a sixty-second cap. Although the options interface accepts a backoff setting, this inspected failure path uses its own constants; do not assume every supplied delay is honored.
 
----
+Jobs `ACTIVE` for more than **10 minutes** are candidates for recovery. The repository moves eligible rows to `DELAYED`, increments attempts and uses a **30-second** recovery delay; exhausted stale rows become `FAILED`. Ordinary handler failures can instead reach `DEAD_LETTERED`.
 
-## Decision 2: Transactional Outbox
+A long-running worker may still be alive when a timeout expires. Requeuing its job can permit another worker to begin while the first continues. The inspected completion write identifies the job by ID, rather than a claim generation. Heartbeats, leases and fencing or conditional state updates are possible ways to control this risk; a timeout alone does not establish ownership.
 
-### What We Chose
+`interval.unref()` lets a timer stop keeping the Node process alive. It does not cancel running handlers or drain them. The queue's destruction hook clears pollers; safe shutdown additionally needs to stop new claims and decide how to finish or recover in-flight work.
 
-Domain events are written to an `OutboxEvent` table in the same transaction as the business write. A relay scheduler polls and republishes to in-process EventEmitter2.
+## How the Outbox Couples an Event to a Business Write
+
+`OutboxService.append(tx, event)` writes through the caller's transaction client. Its atomicity depends on the business write using that **same** transaction and committing successfully.
 
 ```text
-┌───────────────────────────────────────────────────────────────┐
-│ Business Write + Event Emission (same transaction)            │
-│                                                               │
-│  prisma.$transaction(async (tx) => {                          │
-│    await tx.appointment.create({ data: {...} });              │
-│    await outbox.append(tx, {                                  │
-│      eventName: 'appointment.created',                        │
-│      clinicId: appointment.clinicId,                          │
-│      payload: { appointmentId, patientId, doctorId },         │
-│      idempotencyKey: `apt-created-${appointment.id}`,         │
-│    });                                                        │
-│  });                                                          │
-│  // Both succeed or both fail — atomic                        │
-└───────────────────────────────────────────────────────────────┘
+transaction begins
+  write business change using tx
+  append OutboxEvent using tx
+transaction commits both, or rolls back both
 
-┌───────────────────────────────────────────────────────────────┐
-│ Outbox Relay Scheduler (cron, every 2 seconds)                │
-│                                                               │
-│  WITH claimed AS (                                            │
-│    SELECT id FROM "OutboxEvent"                               │
-│    WHERE "processedAt" IS NULL AND "attempts" < 8             │
-│    ORDER BY "createdAt" ASC                                   │
-│    FOR UPDATE SKIP LOCKED LIMIT 200                           │
-│  )                                                            │
-│  UPDATE "OutboxEvent" SET "attempts" = "attempts" + 1         │
-│  FROM claimed WHERE o.id = claimed.id                         │
-│  RETURNING ...                                                │
-│                                                               │
-│  → EventEmitter2.emit(eventName, payload)                     │
-│  → Mark processedAt                                           │
-└───────────────────────────────────────────────────────────────┘
+later: relay attempts dispatch → records result
 ```
 
-### Why Outbox (Not Direct EventEmitter2)
+The inspected generic queue `enqueue` does not take a transaction client parameter. Likewise, `PdfJobService.enqueue` creates its PDF status row and subsequently calls the queue; those two calls are not explicitly enclosed in one transaction there. Do not claim every producer is transactional merely because the queue uses PostgreSQL. Trace the actual call path and ambient transaction routing when evaluating each producer.
 
-**The problem with direct emission:**
+The outbox schema gives its optional idempotency key a unique constraint. The append service catches a Prisma `P2002` and treats a keyed duplicate as a no-op. That is intended duplicate handling; inside PostgreSQL transactions, a statement failure can leave the transaction aborted. Verify the caller's complete transaction behavior, or use a conflict-safe insert protocol rather than assuming catching the exception restores it.
 
-```typescript
-// BEFORE (broken)
-async createAppointment(command) {
-  const appointment = await this.repository.save(new Appointment(command));
-  this.eventEmitter.emit('appointment.created', appointment);  // ← What if this fails?
-  return appointment;
-}
-```
+## What the Current Relay Actually Acknowledges
 
-If the `emit` fails (or the process crashes after commit), the appointment exists but no reminder is sent, no WhatsApp notification goes out, no analytics event is recorded. The outbox solves this:
+The relay schedule is **every 5 seconds** in `CRON_SCHEDULES.OUTBOX_RELAY`. It selects up to **200** eligible rows, increments attempts and dispatches each through the process-local EventEmitter2. It adds outbox, aggregate and clinic identifiers to the payload, then records `processedAt`.
 
-```typescript
-// AFTER (reliable)
-async createAppointment(command) {
-  return this.prisma.$transaction(async (tx) => {
-    const appointment = await this.repository.save(new Appointment(command), tx);
-    await this.outbox.append(tx, {
-      eventName: 'appointment.created',
-      clinicId: appointment.clinicId,
-      payload: appointment,
-      idempotencyKey: `apt-created-${appointment.id}`,
-    });
-    return appointment;
-  });
-  // If commit succeeds, the event WILL be delivered (eventually)
-}
-```
+A local running flag avoids overlapping drains in one instance. A transaction-scoped PostgreSQL advisory lock coordinates instances that use the same lock convention. The helper holds that lock while awaiting its callback, but passes no transaction client to the callback; the relay uses the Prisma service. Do not assume the advisory lock proves all callback queries use the lock transaction or that external work becomes transactional.
 
-### Why Not Kafka/NATS
+### Dispatch Is Not Consumer Completion
 
-| Factor | Outbox (chosen) | Kafka | NATS |
-| -------------------- | -------------------------- | ---------------- | -------------- |
-| **Infrastructure** | Zero — same Postgres | Extra cluster | Extra server |
-| **Operational cost** | $0 | $100+/mo | $50+/mo |
-| **Latency** | ~2 seconds (poll interval) | ~10ms | ~1ms |
-| **Throughput** | ~100 events/sec | ~100k events/sec | ~1M events/sec |
-| **Our actual load** | ~0.4 events/sec | Overkill | Overkill |
+The relay calls `events.emit`, not an awaited asynchronous-listener acknowledgment. A local probe of the installed **EventEmitter2 6.4.9** showed `emit` returning while an async listener was still waiting. The relay can therefore record `processedAt` before that listener completes.
 
-**The trade-off we accepted:** 2-second relay lag. For appointment reminders, prescription PDFs, and analytics — this is fine. For real-time payment notifications, we use WebSocket directly (not through the outbox).
+This establishes an API behavior and a source-level acknowledgment boundary, not a claim that a particular production listener failed. It means “processed” here cannot be assumed to mean every downstream side effect completed durably. Also, an in-process emitter reaches listeners in that process; an outbox does not automatically broadcast the event to every replica.
 
-### Outbox Relay Details
+On a caught dispatch error, the relay records the error and schedules exponential retry with a **5-second base**, **5-minute cap** and **8-attempt ceiling**. `Promise.allSettled` lets separate row tasks finish independently. None of these mechanisms guarantees eventual success: exhausted rows, absent listeners, asynchronous failures, downtime and operational replay all matter.
 
-```typescript
-// apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts
-@Cron(CRON_SCHEDULES.OUTBOX_RELAY)
-@TrackHeartbeat('outbox.relay')
-async drain(): Promise<void> {
-  if (this.running) return;  // Prevent concurrent drains
-  this.running = true;
+## Real-World Decisions
 
-  try {
-    const acquired = await withAdvisoryLock(this.prisma, 'outbox-relay-drain', async () => {
-      // Advisory lock prevents multiple replicas from draining simultaneously
-      const rows = await this.prisma.$queryRaw`
-        WITH claimed AS (
-          SELECT id FROM "OutboxEvent"
-          WHERE "processedAt" IS NULL AND "attempts" < ${MAX_ATTEMPTS}
-            AND ("nextAttemptAt" IS NULL OR "nextAttemptAt" <= ${now})
-          ORDER BY "createdAt" ASC
-          FOR UPDATE SKIP LOCKED LIMIT ${BATCH_SIZE}
-        )
-        UPDATE "OutboxEvent" o
-        SET "attempts" = o."attempts" + 1, "lastAttemptAt" = ${now}
-        FROM claimed WHERE o.id = claimed.id
-        RETURNING o.id, o."eventName", o."payload", o."aggregateId", o."clinicId"
-      `;
+| Requirement | Mechanism to evaluate | Remaining boundary |
+| ----------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| Business change must retain work intent | Same-transaction enqueue or outbox append | Verify every producer uses the transaction |
+| Multiple workers should claim different rows | Atomic state transition with row locks | Recovery can still repeat work |
+| Repeated provider calls must not charge or send twice | Effect-level idempotency | Provider retention and ambiguous outcomes |
+| Long jobs must survive restarts safely | Lease/heartbeat and claim ownership protocol | An expired worker may still perform an effect |
+| Relay completion must mean consumer completion | Awaited, failure-reporting handoff to a durable consumer | Successful handoff is not necessarily final effect completion |
+| Sensitive events need asynchronous processing | Store minimal identifiers; validate worker scope | IDs and metadata can still be sensitive |
 
-      await Promise.allSettled(rows.map(async (row) => {
-        try {
-          this.events.emit(row.event_name, { ...toPayloadRecord(row.payload), __outboxId: row.id });
-          await this.prisma.outboxEvent.update({
-            where: { id: row.id },
-            data: { processedAt: new Date(), nextAttemptAt: null, lastError: null },
-          });
-        } catch (error) {
-          // Exponential backoff for retries
-          const delay = Math.min(BACKOFF_CAP_MS, BACKOFF_BASE_MS * Math.pow(2, attempts - 1));
-          await this.prisma.outboxEvent.update({
-            where: { id: row.id },
-            data: { lastError: message.slice(0, 1000), nextAttemptAt: new Date(Date.now() + delay) },
-          });
-        }
-      }));
-    });
+Do not put plaintext health information into generic event payloads or error messages. Fetch protected data through authorized, tenant-aware access. The current `runUnrestricted` helper changes application bypass context; as the [tenant-isolation case](02-multi-tenancy-rls.md) explains, it is not itself a database-role change or an automatic RLS disable operation.
 
-    if (acquired === null) {
-      this.logger.warn('[outbox-relay] skipping tick — another replica holds the advisory lock');
-    }
-  } finally {
-    this.running = false;
-  }
-}
-```
+## Mistakes
 
-**Key details:**
+- Equating row-locking with exactly-once external effects.
+- Assuming a completed-job lookup blocks concurrent duplicate jobs.
+- Claiming every PostgreSQL enqueue shares the business transaction.
+- Treating a synchronous emitter return as an async consumer acknowledgment.
+- Describing a polling interval as an end-to-end latency guarantee.
+- Advertising zero operational cost, zero lost events or harmless duplicates without measured evidence.
 
-- **Advisory lock:** Prevents multiple API replicas from draining the same events
-- **`FOR UPDATE SKIP LOCKED`:** Concurrent-safe batch processing
-- **`Promise.allSettled`:** One failed event doesn't block others
-- **Exponential backoff:** Failed events retry with increasing delays (5s → 10s → 20s → ... → 5min cap)
-- **Max 8 attempts:** After 8 failures, the event stays in the table for DLQ alerting
+## Best Practices
 
-### Outbox Schema
+Test the crash boundaries: before commit, after commit, after claim, after the external effect and before completion. Include concurrent duplicate jobs, a long handler crossing the stale timeout, exhausted retries, shutdown and tenant scope. Observe backlog age, active duration, retry/dead-letter rates and recovery behavior. Before replaying a failed item, establish whether its effect already occurred.
 
-```typescript
-// apps/api/src/shared/modules/outbox/outbox.interface.ts
-export interface OutboxAppend {
-  eventName: string;           // e.g., "appointment.created"
-  clinicId: string | null;     // Tenant context for relay
-  aggregateType?: string;      // e.g., "Appointment"
-  aggregateId?: string;        // e.g., appointment.id
-  payload: Prisma.JsonValue;   // Must NOT contain PHI in plaintext
-  idempotencyKey?: string;     // For duplicate-emit detection
-}
-```
+## Summary
 
-**PHI rule:** Outbox payloads must not contain PHI in plaintext. Only IDs and metadata. Consumers fetch full data from the database (through RLS).
+PostgreSQL can atomically retain work intent and coordinate claims. Reliable execution additionally needs verified producer transactions, explicit ownership and recovery, effect-level idempotency and meaningful consumer acknowledgments. The inspected implementation has useful building blocks and limitations that must remain visible when describing its guarantees.
 
----
+## See Also
 
-## What Worked
+- [Category revision](REVISION.md) — source-linked questions after the case studies.
+- [Architecture decisions](01-architecture-decisions.md) — API and worker lifecycles.
+- [Tenant isolation](02-multi-tenancy-rls.md) — scope and database enforcement.
+- [Payment flows](04-payment-flows.md) — duplicate and ambiguous payment outcomes.
+- [Case-study index](INDEX.md) — learning order.
 
-- **Zero lost events** — outbox ensures every domain event is delivered (eventually)
-- **Zero infrastructure cost** — no Redis, no Kafka, no extra services
-- **Idempotent consumers** — duplicate deliveries are harmlessly ignored
-- **Dead letter queue** — failed jobs are inspectable and replayable
+## References
 
-## What Failed
+Source paths refer to the Docita repository inspected on 2 October 2026:
 
-- **Cross-pod event loss (before outbox)** — in-process EventEmitter2 dropped events when considering multi-pod deployment. Fixed by outbox.
-
-- **Poll interval too long** — initially 5-second poll interval. WhatsApp responses felt laggy. Reduced to 2 seconds.
-
-- **Stale job recovery** — a worker crash left jobs in `ACTIVE` status forever. Fixed with 10-minute timeout + recovery mechanism.
-
-## What Could Be Better
-
-- **CDC (Change Data Capture)** — instead of polling, use PostgreSQL logical replication to stream outbox events. Lower latency, less DB load. Debezium would work but adds operational complexity.
-
-- **Event schema versioning** — outbox events don't have version numbers. A breaking change in event payload requires coordinated consumer updates. Adding a `schemaVersion` field would help.
-
-- **Consumer monitoring** — we don't have a dashboard showing outbox event delivery rates, lag, or dead-letter counts. Adding Prometheus metrics would improve observability.
-
----
-
-## Code Evidence
-
-| Claim | File |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| Postgres queue service | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` |
-| Queue job repository | `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts` |
-| Queue interface | `apps/api/src/shared/modules/queue/queue.interface.ts` |
-| Outbox service | `apps/api/src/shared/modules/outbox/outbox.service.ts` |
-| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` |
-| Outbox interface | `apps/api/src/shared/modules/outbox/outbox.interface.ts` |
-| Worker module | `apps/api/src/worker.module.ts` |
-| PDF job service | `apps/api/src/shared/modules/queue/pdf-job.service.ts` |
-| Worker metrics | `apps/api/src/shared/modules/queue/worker-metrics.service.ts` |
-
----
-
-## Interview Script (60 seconds)
-
-> "I built a PostgreSQL-backed job queue using `SELECT ... FOR UPDATE SKIP LOCKED`. The key advantage over Redis: transactional enqueue. A `prisma.$transaction` covers both the business write AND the job emission — no dual-write problem. For domain events, I implemented the transactional outbox pattern. Events are written to an `OutboxEvent` table in the same transaction as the business write. A relay scheduler polls every 2 seconds, republishes to in-process EventEmitter2, and marks events as processed. Failed events retry with exponential backoff up to 8 attempts, then go to a dead-letter queue. The trade-off is 2-second relay lag — acceptable for our scale of ~0.4 jobs/sec. We chose this over Kafka/NATS because we're single-region single-pod and don't need the infrastructure overhead."
----
-
-[← Previous: Multi Tenancy Rls](02-multi-tenancy-rls.md) · [ Back to Index](INDEX.md) · [Next: Payment Flows →](04-payment-flows.md)
+- `apps/api/src/shared/modules/queue/postgres-queue.service.ts`
+- `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts`
+- `apps/api/src/shared/modules/queue/pdf-job.service.ts`
+- `apps/api/src/shared/modules/outbox/outbox.service.ts`
+- `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`
+- `apps/api/src/shared/common/utils/postgres-advisory-lock.ts`
+- `apps/api/src/shared/schedule/cron-schedules.ts`
+- `packages/db/prisma/schema.prisma` — `QueueJob` and `OutboxEvent` models.

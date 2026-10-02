@@ -1,7 +1,7 @@
 {% raw %}
 # Site Deployment — Cloudflare Pages builds straight from git
 
-> **TL;DR:** Cloudflare Pages is connected to this repo and builds +
+> Cloudflare Pages is connected to this repo and builds +
 > publishes on every push to `main`. GitHub Actions runs only the
 > render/safety gate (`site-build.yml`); there is no deploy job, no API
 > token, and no secret to rotate.

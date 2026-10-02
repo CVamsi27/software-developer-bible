@@ -56,7 +56,7 @@ MINUTES_FLOOR = 2
 def style(path):
     """Classify a markdown file so estimates are comparable."""
     name = os.path.basename(path).lower()
-    if 'interview' in name or 'cheat-sheet' in name:
+    if 'interview' in name or 'cheat-sheet' in name or name == 'revision.md':
         return 'reference'          # scanned, not read linearly
     if 'cheat' in name or 'tracker' in name:
         return 'reference'

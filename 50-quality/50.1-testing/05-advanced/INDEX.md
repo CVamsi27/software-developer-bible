@@ -1,9 +1,9 @@
 # Advanced Testing
 
-> **Study time:** ≈ 39 min of reading (2 files, ~20 min average).
-> **2 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — proving the system survives load and failure, not just happy paths.
+> **Study time:** ≈ 37 min of reading (3 files, ~12 min average).
+> **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — proving the system survives load and failure, not just happy paths.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ The pyramid answers "does it work for one user?" Staff/SRE interviews ask "does 
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 19 min |
-| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 20 min |
+| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 18 min |
+| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 17 min |
 
 ---
 
@@ -63,3 +63,7 @@ Both chapters share one principle: measure a **steady-state metric** first (p95 
 | Web Vitals field checks | `scripts/perf/check-web-vitals.mjs` + `check-web-vitals-budget.mjs` |
 | Route-level budgets | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
 | Chaos engineering | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

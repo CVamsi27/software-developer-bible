@@ -25,7 +25,7 @@ BASELINE = Path(__file__).resolve().parent / "first-principles-baseline.json"
 
 SECTION = re.compile(r"^## First Principles\s*$", re.M)
 NUMFILE = re.compile(r"^(?:\d+\.)+\d+-")
-EXCLUDE = re.compile(r"interview|cheat|quick-reference", re.I)
+EXCLUDE = re.compile(r"interview|cheat|quick-reference|^REVISION\.md$", re.I)
 
 
 def stacks():

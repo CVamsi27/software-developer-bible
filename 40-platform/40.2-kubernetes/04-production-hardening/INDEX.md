@@ -1,9 +1,9 @@
 # Production Hardening
 
-> **Study time:** ≈ 1 h 11 m of reading (4 files, ~18 min average).
-> **4 files.** The difference between a demo cluster and a production one: health probes, disruption budgets, RBAC + NetworkPolicies, and resource quotas. Every senior K8s interview drills into at least two of these.
+> **Study time:** ≈ 50 min of reading (5 files, ~10 min average).
+> **5 files.** The difference between a demo cluster and a production one: health probes, disruption budgets, RBAC + NetworkPolicies, and resource quotas. Every senior K8s interview drills into at least two of these.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Production%20Hardening-blue)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,10 +19,10 @@ Out of the box, a Deployment is fragile and insecure: no probes (traffic hits un
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Health Checks](40.2.4.01-health-checks.md) | Liveness, readiness, startup probes; probe configuration; failure modes; probe-induced outages | 18 min |
-| 02 | [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md) | minAvailable/maxUnavailable, voluntary disruptions, node drains, availability during maintenance | 22 min |
-| 03 | [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts; default-deny networking; micro-segmentation | 9 min |
-| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | 22 min |
+| 01 | [Health Checks](40.2.4.01-health-checks.md) | Liveness, readiness, startup probes; probe configuration; failure modes; probe-induced outages | 17 min |
+| 02 | [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md) | minAvailable/maxUnavailable, voluntary disruptions, node drains, availability during maintenance | 5 min |
+| 03 | [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts; default-deny networking; micro-segmentation | 7 min |
+| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | 19 min |
 
 ---
 
@@ -52,3 +52,7 @@ _No direct docita implementation yet_ — no probes/PDBs/RBAC objects; hardening
 | Image/container scanning | `.github/workflows/container-scan.yml` |
 | Tenant isolation (quota analog) | App-level: Postgres RLS (`shared/modules/rls/*`), ABAC authorization, tenant rate limiting — not cluster quotas |
 | PDB / NetworkPolicy equivalents | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

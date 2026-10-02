@@ -1,141 +1,127 @@
-# 08 — Billing & Invoicing
+# 08 — Invoices: Preserve the Calculation and Reconcile Actual Collections
 
-> Indian healthcare billing complexity — GST, tax calculation, and invoice lifecycle.
+## Definition
 
----
+An invoice records a charge and the facts used to calculate it. A payment records collected money. Tax snapshots retain calculation context; a daybook groups collection records for reconciliation. These are connected responsibilities with different state and time boundaries.
 
-## Context
+If a clinic changes its registration or a catalog price after an invoice was created, a historical document should not silently substitute today's facts. If a payment arrives late, a collection report must also say which date determines its period.
 
-Indian healthcare invoicing involves:
-- **GST (Goods and Services Tax)** — 12% or 18% depending on service type
-- **Place of supply rules** — interstate vs intrastate tax calculation
-- **Clinic-specific settings** — each clinic has different tax registration, state code, and currency
-- **Multiple payment methods** — cash, UPI, card, insurance claims
+This case describes source inspected on **2 October 2026**. Tax component names below explain the implementation; they do not establish the legally applicable treatment of a particular healthcare service. The old universal 12%/18% assertions and unverified tax-accuracy outcomes have been removed.
 
-**The complexity:** A clinic in Mumbai (Maharashtra) billing a patient from Karnataka has different tax implications than billing a local patient. The system must calculate this correctly for every invoice.
+## First Principles
 
----
+Settings and prices change, financial calculations involve rounding, and invoice and payment state can diverge when delivery or processing fails. Historical facts must be retained independently of mutable configuration, and collected amounts need a reconcilable identity and period.
 
-## Decision 1: Immutable Tax Snapshots
+A snapshot preserves inputs; it does not prove those inputs were correct. A status transition records a local state change; it does not prove the provider collected money.
 
-### What We Chose
+## Why Preserve Seller, Buyer and Line Calculations?
 
-Tax calculation is frozen at invoice creation time. If clinic tax settings change, existing invoices retain their original calculation.
-
-```typescript
-// apps/api/src/domains/billing/application/services/invoices-command.service.ts
-private buildTaxSnapshots(patient: PatientInvoiceContext) {
-  const taxSettings = parseTaxSettings(patient.clinic.settings);
-  const gstin = taxSettings.registrationId || extractClinicGstin(patient.clinic);
-  const stateCode = taxSettings.stateCode || extractGstinStateCode(gstin);
-
-  const seller = taxRegistrationSnapshotSchema.parse({
-    countryCode: taxSettings.countryCode,
-    regime: taxSettings.regime,
-    registrationId: gstin,
-    legalName: taxSettings.legalName || patient.clinic.name,
-    stateCode,
-    stateName: taxSettings.stateName,
-  });
-
-  const buyer = taxRegistrationSnapshotSchema.parse({
-    countryCode: seller.countryCode,
-    regime: seller.regime,
-    legalName: getPatientFullName(patient).trim(),
-    address: patient.address || undefined,
-  });
-
-  return { taxSettings, seller, buyer };
-}
-```
-
-### Why Immutable Snapshots (Not Recalculated)
-
-**The alternative:** Recalculate tax on every invoice view.
-
-**Why rejected:** If a clinic updates their GSTIN (tax registration number), all historical invoices would show the new GSTIN — incorrect for tax filing. Immutable snapshots ensure the invoice reflects the tax state at creation time.
-
----
-
-## Decision 2: Invoice Status State Machine
-
-### What We Chose
+The invoice command reads the clinic's configured tax settings and builds seller/buyer snapshots. Seller values include registration, legal name, address and state information. The buyer captures identity/address from the patient context. The calculator receives line items, currency and place-of-supply context.
 
 ```text
-DRAFT → ISSUED → PAID / PARTIALLY_PAID / OVERDUE / CANCELLED
+configured context + supplied items
+  → validate and calculate lines/components
+  → persist totals, line items and seller/buyer/tax snapshots
+  → render the historical invoice from those retained facts
 ```
 
-**Key rules:**
+The creation path persists calculated values; allowed edits can recalculate items using existing seller/buyer snapshots. If snapshots are missing, the update path falls back to current context. The implementation therefore does not make every invoice immutable from its first creation onward.
 
-- Can't edit a PAID invoice
-- Can't cancel a PAID invoice (must issue credit note)
-- Status transitions validated by `assertInvoiceStatusTransition()`
+Define when a document becomes final, which corrections create a new document and how missing legacy snapshots are handled. Historical settings changes should not automatically rewrite an already-final document, but preserving an incorrect calculation forever is not a correction policy either.
 
-### Why State Machine
+## How the Inspected Tax Calculator Works
 
-**The alternative:** Free-form status updates.
+The calculator determines line treatment from explicit fields and configured defaults, derives subtotal/discount/tax/grand total and aggregates components by type and rate. Taxable lines require a place-of-supply state in the current implementation. The supplied buyer address is not itself an automatically validated supply-state classification.
 
-**Why rejected:** A clinic accidentally marked an invoice as "PAID" without receiving payment. The patient got a "payment received" WhatsApp. State machines prevent invalid transitions and require proper authorization.
+For configured Indian taxable treatment, the implementation compares normalized seller and supply state codes. Matching codes split the computed tax into CGST and SGST; differing codes produce IGST. The split rounds one component and derives the other from the total, preserving the component sum.
 
----
+This explains code behavior, not a universal tax rule. Applicable exemption, classification, rate, place of supply and document requirements need an independently maintained and reviewed policy. The calculator's defaults, including exempt-healthcare treatment and `eInvoice.required = false`, are implementation choices rather than proof of compliance.
 
-## Decision 3: Daybook for Cash Reconciliation
+### Money Needs Explicit Units and Rounding
 
-### What We Chose
+The command persists calculated totals alongside canonical minor-unit fields for supported writes. A trustworthy calculation also defines line versus invoice rounding, discounts, precision, numeric range and currency scale.
 
-A daybook feature that aggregates all transactions for a given day, helping clinics reconcile cash at end of day.
-
-```typescript
-// apps/api/src/domains/billing/application/services/invoices-query.service.ts
-async getCollectionsByMode(clinicId: string, query: CollectionsByModeQuery) {
-  // Groups payments by mode: cash, UPI, card, insurance
-  // Returns daily totals for reconciliation
-}
+```text
+subtotal − discount + tax = grand total
+sum(component amounts) = tax total
 ```
 
-**Why daybook:** Indian clinics deal heavily in cash. At end of day, the clinic owner counts cash and compares against the system. The daybook provides this reconciliation view.
+Use these identities as consistency checks with representative rounding cases. A field named cents does not establish that all supported currencies use two decimal places. Do not sum incompatible currencies or assume floating-point rounding and integer persistence are interchangeable.
 
----
+## How Current Invoice States Differ From the Old Diagram
 
-## What Worked
+The current transition helper uses **PENDING, PARTIALLY_PAID, PAID, OVERDUE and CANCELLED**, rather than a universal DRAFT → ISSUED sequence.
 
-- **Tax accuracy** — zero tax calculation errors in production
-- **Immutable snapshots** — historical invoices remain accurate after clinic setting changes
-- **Daybook** — clinics report 50% faster end-of-day reconciliation
+| Current state | Helper permits |
+| -------------- | ------------------------------------------ |
+| PENDING | Paid, partially paid, overdue or cancelled |
+| PARTIALLY_PAID | Paid, overdue or cancelled |
+| OVERDUE | Paid, partially paid or cancelled |
+| PAID/CANCELLED | No transition to a different state |
 
-## What Failed
+The helper permits a repeated same-status request. The entity value object's table differs in some cancellation paths, so do not claim every write follows one perfectly unified state machine. The payment capture path also writes invoice status through its own transaction, as described in the [payments case](04-payment-flows.md).
 
-- **GST rate changes** — India changed GST rates on some medical services. Existing invoices with old rates needed manual adjustment. Fix: tax rate is snapshot per invoice, not referenced from settings.
+The command rejects line-item or total edits on paid/cancelled invoices and invokes claim-readiness checks for selected transitions. These are inspected local protections. A preflight read must still be connected to an expected-state or version-aware write if a competing update can intervene. An allowed PAID transition is not evidence of a verified payment amount.
 
-- **Insurance claim complexity** — insurance claims have their own workflow (DRAFT → SUBMITTED → UNDER_REVIEW → APPROVED/REJECTED → SETTLED). This was initially part of billing but was extracted to its own domain.
+Refunds, credit notes and reissued documents need their own authorized financial protocol. The fact that the transition helper disallows changing a paid invoice does not prove a complete correction or refund workflow exists.
 
-## What Could Be Better
+## How the Daybook Groups Collection Records
 
-- **Multi-currency support** — currently INR only. Some clinics serve international patients and need USD/EUR invoicing.
+The collection query converts requested dates into **UTC-midnight** bounds. It fetches clinic-scoped sessions in CAPTURED or PAID state, then groups amounts by the recorded channel, falling back to an online/cash classification when metadata is absent.
 
-- **Automated tax filing** — no integration with India's GST filing system (GSTN). Currently manual.
+The repository range filter uses **session `createdAt`**, not `paidAt`. A session created yesterday and captured today can therefore enter yesterday's report. Whether that is appropriate depends on the report's explicitly chosen definition; it is not automatically a clinic-local cash-received-today view.
 
-- **Credit note automation** — when an invoice is cancelled after payment, a credit note should be auto-generated. Currently manual.
+The aggregator adds all session amounts and returns a currency overwritten by each session. If mixed currencies are possible, labeling the combined amount with the last currency is incorrect. Enforce one report currency or group by currency, and separately reconcile refunds, failed captures and provider settlements according to the desired report.
 
----
+A daybook supports reconciliation with counted cash or external statements. It does not complete that comparison automatically. Cash declared in the application and cash physically present can differ.
 
-## Code Evidence
+## Real-World Decisions
 
-| Claim | File |
-| ----------------- | -------------------------------------------------------------------------------- |
-| Invoice service | `apps/api/src/domains/billing/application/services/invoices.service.ts` |
-| Invoice command | `apps/api/src/domains/billing/application/services/invoices-command.service.ts` |
-| Tax calculator | `apps/api/src/domains/billing/core/services/tax-calculator.service.ts` |
-| Invoice entity | `apps/api/src/domains/billing/core/entities/invoice.entity.ts` |
-| Invoice status VO | `apps/api/src/domains/billing/core/value-objects/invoice-status.value-object.ts` |
-| Invoice PDF | `apps/api/src/domains/billing/application/services/invoice-pdf-document.ts` |
-| Daybook | `apps/api/src/domains/billing/application/services/invoices-query.service.ts` |
+| Concern | Define before implementation | Verification |
+| ----------------------------- | -------------------------------------------------------- | ------------------------------------------- |
+| Historical document integrity | Finalization point and retained calculation context | Change settings/prices after creation |
+| Tax calculation | Reviewed classification and supplied context | Known line/component/rounding fixtures |
+| Concurrent status updates | Allowed persisted transition and expected state | Interleaved capture, edit and cancellation |
+| Partial payment | Amount due, applied amount and remaining balance | Multiple and duplicate payment events |
+| Daybook date | Created, captured, settled or clinic-local reporting day | Late capture and midnight boundaries |
+| Currency | Currency per amount and permitted grouping | Mixed-currency rejection or separate totals |
+| Corrections/refunds | New document or financial reversal protocol | Audit continuity and reconciliation |
 
----
+Multi-currency support and tax-filing integration cannot be inferred from adding a currency field or rendering a tax summary. Verify their complete behavior before describing them as supported or absent.
 
-## Interview Script (60 seconds)
+## Mistakes
 
-> "Indian healthcare billing involves GST with interstate vs intrastate rules. I implemented immutable tax snapshots — tax is calculated and frozen at invoice creation time. If a clinic updates their GSTIN, historical invoices retain their original calculation. Invoices follow a state machine: DRAFT → ISSUED → PAID/OVERDUE/CANCELLED. Invalid transitions are blocked at the entity level. The daybook feature aggregates daily transactions by payment mode (cash, UPI, card, insurance) for end-of-day reconciliation — critical for Indian clinics that deal heavily in cash."
----
+- Publishing one healthcare tax rate as a universal rule.
+- Calling every persisted invoice snapshot immutable despite allowed recalculation paths.
+- Equating PAID status with verified collection.
+- Treating a preflight transition check as concurrent enforcement.
+- Calling UTC created-date grouping a clinic-local payment-date report.
+- Adding mixed-currency amounts and labeling them with one currency.
+- Quoting incident-free tax calculation or faster reconciliation without evidence.
 
-[← Previous: Prescription Safety](07-prescription-safety.md) · [ Back to Index](INDEX.md) · [Next: Subscription System →](09-subscription-system.md)
+## Best Practices
+
+Keep calculation policy separate from historical evidence. Test totals and component identities, preserve explicit units, and exercise concurrent financial transitions. Give reports precise date/currency definitions and reconcile them with independent collection evidence. Explain exactly which write path enforces a rule and which correction workflows remain to be verified.
+
+## Summary
+
+Invoice snapshots retain calculation context; state checks constrain local changes; collection reports support reconciliation. Correct financial behavior also requires reviewed policy, coherent concurrent writes, explicit time/currency definitions and recoverable payment processing.
+
+## See Also
+
+- [Category revision](REVISION.md) — calculation and collection questions.
+- [Payment flows](04-payment-flows.md) — provider identity and capture transactions.
+- [Analytics](14-analytics-and-dashboards.md) — financial metric definitions.
+- [Insurance claims](11-insurance-claims.md) — separate claim lifecycle.
+- [Case-study index](INDEX.md) — learning stages.
+
+## References
+
+Docita source inspected on 2 October 2026:
+
+- `apps/api/src/domains/billing/application/services/invoices-command.service.ts`
+- `apps/api/src/domains/billing/core/services/tax-calculator.service.ts`
+- `apps/api/src/domains/billing/application/services/invoice-status-transition.ts`
+- `apps/api/src/domains/billing/core/value-objects/invoice-status.value-object.ts`
+- `apps/api/src/domains/billing/application/services/invoices-query.service.ts`
+- `apps/api/src/domains/billing/infrastructure/repositories/prisma.payment-session.repository.ts`

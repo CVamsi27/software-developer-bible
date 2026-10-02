@@ -1,9 +1,9 @@
 # Testing Foundations
 
-> **Study time:** ≈ 44 min of reading (2 files, ~22 min average).
-> **2 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
+> **Study time:** ≈ 43 min of reading (3 files, ~14 min average).
+> **3 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -25,8 +25,8 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 29 min |
-| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | 15 min |
+| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 28 min |
+| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | 13 min |
 
 ---
 
@@ -62,3 +62,7 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 | Deterministic time (injected clock port) | `apps/api/src/shared/common/ports/clock.port.ts` + `apps/api/src/shared/modules/time/system-clock.service.ts` |
 | Test data factories | `apps/api/src/test-utils/factories.ts` |
 | E2E layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

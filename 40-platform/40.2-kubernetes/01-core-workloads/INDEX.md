@@ -1,9 +1,9 @@
 # Core Workloads
 
-> **Study time:** ≈ 1 h 3 m of reading (4 files, ~16 min average).
-> **4 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
+> **Study time:** ≈ 1 h 3 m of reading (5 files, ~13 min average).
+> **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Workloads-blue)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,8 +19,8 @@ Every Kubernetes object you will ever touch is either one of these workload type
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | 21 min |
-| 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | 26 min |
+| 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | 20 min |
+| 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | 25 min |
 | 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | 8 min |
 | 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | 8 min |
 
@@ -51,3 +51,7 @@ _No direct docita implementation yet_ — the API runs as long-running Fly.io ma
 | Deployment-like rollout | CI-driven deploys (`.github/workflows/deploy.yml`) against `apps/api/Dockerfile` with health-gated grace period |
 | CronJob analog | Nest `@Cron` schedulers in the worker app, gated by `cron-heartbeat.ts` so only one instance fires |
 | StatefulSet / DaemonSet | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

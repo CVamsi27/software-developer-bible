@@ -1,9 +1,9 @@
 # Fundamentals - GraphQL
 
-> **Study time:** ≈ 2 h 2 m of reading (3 files, ~41 min average).
-> **3 files.** The mental model: GraphQL as a typed query language vs REST, schema-first contract design, and queries/mutations/subscriptions syntax.
+> **Study time:** ≈ 2 h 1 m of reading (4 files, ~30 min average).
+> **4 files.** The mental model: GraphQL as a typed query language vs REST, schema-first contract design, and queries/mutations/subscriptions syntax.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Fundamentals-%23ff6b35)](../INDEX.md)
 
 ---
@@ -12,8 +12,8 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [GraphQL Overview](20.7.1.01-graphql-overview.md) | Typed query language + runtime, client-specified shapes, vs REST (over/under-fetching), when to use GraphQL | 32 min |
-| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | 46 min |
+| 01 | [GraphQL Overview](20.7.1.01-graphql-overview.md) | Typed query language + runtime, client-specified shapes, vs REST (over/under-fetching), when to use GraphQL | 30 min |
+| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | 45 min |
 | 03 | [Queries & Mutations](20.7.1.03-queries-mutations.md) | Selection sets, variables, fragments, directives (`@include`/`@skip`/`@deprecated`), subscriptions, idempotency keys for mutations | 44 min |
 
 ---
@@ -30,3 +30,7 @@ _No direct docita implementation yet._ Docita is deliberately REST-first — URI
 ---
 
 [Next: Execution →](../02-execution/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

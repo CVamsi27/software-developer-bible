@@ -1,20 +1,29 @@
 # ORM & Access - Database
 
-> **Study time:** ≈ 55 min of reading (3 files, ~18 min average).
-> **3 files.** Prisma from first principles to advanced patterns: schema and migrations, then interactive transactions, raw queries, multi-tenancy, and schema patterns — plus the full access-layer landscape (Prisma vs Drizzle vs TypeORM vs Knex vs raw SQL) with a decision tree.
+> **Study time:** ≈ 31 min of reading (4 files, ~8 min average).
+> **4 files.** Prisma from first principles to advanced patterns: schema and migrations, then interactive transactions, raw queries, multi-tenancy, and schema patterns — plus the full access-layer landscape (Prisma vs Drizzle vs TypeORM vs Knex vs raw SQL) with a decision tree.
 
-[![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-ORM%20%26%20Access-8b5cf6)](../INDEX.md)
 
 ---
 
-## Files
+## Reading flow
+
+1. Read [Prisma fundamentals](20.4.4.01-prisma.md) to connect the versioned schema, generated client and migration to one bounded write/read.
+2. Follow competing transfers and stock reservations in [Prisma Advanced](20.4.4.02-prisma-advanced.md). Locate the conditional mutation, transaction connection, outbox failure and tenant policy before choosing APIs.
+3. Use [the access-layer landscape](20.4.4.03-orm-query-builder-landscape.md) to decide who owns query construction, mapping and migrations. Compare equivalent work rather than vendor labels.
+4. Finish with [Revision](REVISION.md), explaining each failure boundary without looking at the implementation.
+
+The executable Prisma examples deliberately target the pinned 6.19.0 legacy contract; current ORM 8 documentation describes a different contract/API. Consult the chapter version boundary before copying code into a different release.
+
+## Chapter map
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Prisma](20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | 28 min |
-| 02 | [Prisma Advanced](20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | 14 min |
-| 03 | [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison, when NOT to use Prisma, team adoption | 13 min |
+| 01 | [Prisma](20.4.4.01-prisma.md) | Schema, migrations, queries, relations, version contract, performance | 11 min |
+| 02 | [Prisma Advanced](20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | 10 min |
+| 03 | [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison, when NOT to use Prisma, team adoption | 8 min |
 
 ---
 
@@ -24,7 +33,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). These paths are inspection pointers; verify the current client versions, extensions and deployment before treating them as behavior evidence:
 
 | Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,7 +42,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Transparent field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` - encrypt/decrypt on patient fields inside the query pipeline |
 | Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - abstract BaseRepository (pagination + where builders) under every repo |
 
-The ORM landscape decision is made: Prisma everywhere; no Drizzle/TypeORM/Knex in the workspace.
+The ORM landscape decision is made: inspect the current dependencies and repository seams rather than assuming another ORM is absent from every module.
 ---
 
 [← Previous: Transactions & Replication](../03-transactions-and-replication/INDEX.md) · [Next: Operations & Scaling →](../05-operations-and-scaling/INDEX.md)

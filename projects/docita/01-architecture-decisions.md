@@ -1,256 +1,158 @@
-# 01 — Architecture Decisions
+# 01 — Architecture: Keep Business Rules, Contracts and Execution Boundaries Clear
 
-> DDD, Zod-first types, NestJS modules, monorepo structure — the foundation choices that shaped everything.
+## Definition
 
----
+Architecture assigns responsibilities and controls dependencies. In Docita, domain modules organize business capabilities; shared schemas define application contracts; separate API and worker entry points divide interactive requests from background work.
 
-## Context
+Consider creating an appointment. An HTTP request needs validation and authorization, scheduling rules, persistence, and possibly later notifications. Putting these responsibilities in one service makes every change harder to test and reason about. Separating them helps only when the boundaries remain visible in the actual imports and execution path.
 
-Docita started as a single NestJS app with everything in one folder. As we added domains (patients, appointments, billing, prescriptions, WhatsApp...), services started importing from each other. A change in billing broke prescriptions. A refactor in appointments required touching 5 other domains. We needed structure.
+This case study describes source inspected on **2 October 2026**. Source structure is evidence of implementation, not proof that every production path or verification gate currently passes. Earlier incident stories, test totals and build-speed claims lacked supporting evidence and are not treated as measured outcomes here.
 
-**The problems we faced:**
+## First Principles
 
-1. **Coupling** — Services importing from each other created a dependency web
-2. **Type drift** — TypeScript interfaces, Prisma models, and NestJS DTOs diverged
-3. **Testability** — Business logic was coupled to Prisma, making unit tests impossible
-4. **Onboarding** — New developers couldn't understand the codebase structure
+Three constraints drive the design:
 
----
+1. Business rules outlive individual HTTP handlers and database adapters.
+2. TypeScript types disappear at runtime, while requests and stored data still cross trust boundaries.
+3. Background work can outlive a request and compete for CPU, connections and deployment resources.
 
-## Decision 1: Domain-Driven Design (DDD)
+The design therefore needs explicit dependency contracts, executable input validation and separate lifecycles. Adding folders alone satisfies none of these constraints.
 
-### What We Chose
+## Why Separate Responsibilities Before Adding More Modules?
 
-Each business domain gets its own module with 4 layers:
+A scheduling rule should be testable without starting an HTTP server. A controller should not need to know how a database query is constructed. A background processor should not assume the request's tenant context or transaction is still available.
+
+These are different boundaries. Domain-driven design supplies a vocabulary for business capabilities and rules. Ports and adapters describe dependency direction. They can be used together; they are not mutually exclusive alternatives.
+
+## How an Appointment Crosses the Domain Layers
 
 ```text
-domains/appointments/
-├── core/                    → entities, value objects, repository interfaces
-│   ├── entities/
-│   │   └── appointment.entity.ts
-│   ├── value-objects/
-│   │   └── appointment-status.value-object.ts
-│   ├── domain-services/
-│   │   └── appointment-scheduling-rules.service.ts
-│   └── repositories/
-│       └── appointment.repository.interface.ts
-├── application/             → use-cases, DTOs, service orchestration
-│   ├── use-cases/
-│   │   ├── create-appointment.use-case.ts
-│   │   └── start-consultation.use-case.ts
-│   ├── services/
-│   │   ├── appointment-command.service.ts
-│   │   └── appointment-query.service.ts
-│   └── dto/
-├── infrastructure/          → Prisma repositories, external API adapters
-│   ├── persistence/
-│   │   ├── prisma-appointment-read.repository.ts
-│   │   └── prisma-appointment-write.repository.ts
-│   └── mappers/
-└── presentation/            → NestJS controllers, guards, interceptors
-    └── controllers/
-        ├── appointments.controller.access.ts
-        └── appointments-schedule.controller.ts
+HTTP presentation
+  → application use case: coordinate one business operation
+    → core rules/entities/ports: express the decision and contracts
+      → infrastructure adapter: perform persistence or external I/O
 ```
 
-### Alternatives Considered
+| Layer | Responsibility | Appointment source example |
+| -------------- | ------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Presentation | Translate HTTP input and apply transport concerns | Domain controllers |
+| Application | Coordinate validation, rules and repository calls | `create-appointment.use-case.ts` |
+| Core | Express scheduling rules, entity behavior and persistence contracts | `appointment-scheduling-rules.service.ts`, repository interface |
+| Infrastructure | Implement persistence through Prisma | `prisma-appointment-read.repository.ts` |
 
-| Option | Pros | Cons |
-| -------------------------------- | ------------------------------- | -------------------------------------- |
-| **Flat folder structure** | Simple, fast to start | Becomes unmaintainable at 29 domains |
-| **Feature-based (by UI route)** | Co-locates related code | Business logic mixed with presentation |
-| **DDD (chosen)** | Clear boundaries, testable core | More boilerplate per domain |
-| **Hexagonal (ports & adapters)** | Maximum testability | Overkill for our team size |
+The inspected create use case rejects a start time at or after the end time, asks scheduling rules to validate overlap, constructs an appointment entity, then saves through a repository. This gives a focused test seam: supply controlled dependencies and inspect the decision and save request.
 
-### Why DDD Was Chosen
+**A pre-save overlap query is not a concurrency guarantee.** Two requests can both observe an available slot before either saves. The final persistence operation needs a suitable constraint, lock or transaction protocol to enforce the scheduling invariant; see the [concurrency case](05-clinic-workflows.md).
 
-**The tipping point:** A developer added a `findAllByClinicId` method to the patient repository. It worked. But it queried across the prescription table too — without going through the prescription domain. When we refactored prescriptions, the patient module broke.
+### The Core Is Not Completely Framework-Free
 
-**The key insight:** Repository interfaces live in `core/`. Only infrastructure implements them. Business logic in `core/` has zero framework imports — no Prisma, no NestJS, no `@Inject`. This means:
+The current scheduling rules service imports NestJS injection and exception APIs and an appointment status from the database package. Some repository contracts also use Prisma types. The accurate claim is that important persistence behavior is accessed through interfaces—not that every core file is independent of frameworks.
 
-- `Appointment` entity can be tested without a database
-- `AppointmentSchedulingRulesService` can be unit-tested with plain objects
-- Repository interfaces are contracts — swap Prisma for anything
+Removing framework dependencies can make a rule easier to reuse and test, but it costs adapter and mapping work. Decide whether that isolation earns its complexity for the rule being maintained.
 
-**Rule enforced by CI:** `check:prisma-boundary` fails the build if any file outside `infrastructure/` imports `PrismaClient`.
+The current `check:prisma-boundary` command invokes `scripts/checks/check-prisma-boundary.js --enforce-prisma-service`. Its rules target particular imports and locations and include legacy exceptions. A configured check is useful enforcement; it does not establish zero coupling or prove that the current checkout passes it. Feature-boundary checks complement it because a domain can become coupled without directly constructing a Prisma client.
 
-### Trade-offs
+## How Shared Zod Schemas Connect Runtime Input and TypeScript
 
-| What We Gained | What We Gave Up |
-| ------------------------------------------ | --------------------------------------------- |
-| Clear module boundaries | More boilerplate (4 files per domain minimum) |
-| Testable business logic | Slightly longer initial development |
-| Safe refactoring within domains | Need discipline to maintain boundaries |
-| Easy onboarding (structure is predictable) | NestJS module wiring is verbose |
+A schema is executable validation. An inferred type describes the schema's output to TypeScript. Sharing that schema can reduce duplicated API/form definitions, provided each boundary actually parses its input.
 
-### What Worked
-
-- **29 domains without coupling** — each domain can be modified independently
-- **Test coverage** — ~5,077 non-e2e test cases repo-wide (measured 2026-09-03), API domain suites the largest share
-- **CI enforcement** — boundary violations caught at build time, not code review
-
-### What Failed
-
-- **NestJS module wiring** — every domain needs a `Module` class that imports all providers. With 29 domains, this is ~500 lines of pure wiring code. We solved it with a `DOMAIN_MODULES` array in `app.module.ts`.
-
-- **Cross-domain queries** — sometimes you genuinely need data from another domain (e.g., invoice generation needs patient data). We use port interfaces (`PatientPersistencePort`) instead of direct imports. But it's still tempting to shortcut.
-
-### What Could Be Better
-
-- **Shared kernel** — a `shared/` domain for cross-cutting concerns (audit, notifications) could reduce duplication
-- **Module generation CLI** — a `nest g domain patients` command would eliminate boilerplate
-- **Event-driven cross-domain communication** — instead of ports, emit events and let other domains subscribe
-
-### Code Evidence
-
-| Claim | File |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| Appointment entity | `apps/api/src/domains/appointments/core/entities/appointment.entity.ts` |
-| Scheduling rules | `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts` |
-| Repository interface | `apps/api/src/domains/appointments/core/repositories/appointment.repository.interface.ts` |
-| Use case | `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts` |
-| Prisma repository | `apps/api/src/domains/appointments/infrastructure/persistence/prisma-appointment-read.repository.ts` |
-| CI boundary check | `scripts/checks/check-prisma-boundary.mjs` |
-
-### Interview Script (60 seconds)
-
-> "I structured Docita using DDD with 4 layers per domain: core (entities, repository interfaces), application (use-cases, DTOs), infrastructure (Prisma adapters), and presentation (controllers). The key rule: only infrastructure imports PrismaClient. This means business logic is testable without a database — we have ~5,077 non-e2e test cases repo-wide (measured 2026-09-03). The trade-off is more boilerplate, but at 29 domains, the boundary enforcement pays for itself. A CI check catches any boundary violations at build time."
-
----
-
-## Decision 2: Zod-First Types
-
-### What We Chose
-
-Zod schemas in `packages/types` are the single source of truth. All other types are inferred:
+The inspected patient contract lives at `packages/types/src/patient/patients.ts`. Its create schema extends the patient schema and makes date of birth required. The following is a **standalone illustration of that relationship**, not a copy of the full patient contract:
 
 ```typescript
-// packages/types/src/patients/create-patient.schema.ts
-export const createPatientSchema = z.object({
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
-  phoneNumber: z.string().regex(/^\+?[1-9]\d{1,14}$/),
-  dateOfBirth: z.string().datetime(),
-  gender: z.enum(['MALE', 'FEMALE', 'OTHER']),
-  // ...
+import { z } from "zod";
+
+const patientSchema = z.object({
+  firstName: z.string().min(1).max(100),
+  dateOfBirth: z.string().optional(),
 });
+const createPatientSchema = patientSchema.extend({
+  dateOfBirth: z.string().min(1),
+});
+type CreatePatientInput = z.infer<typeof createPatientSchema>;
 
-export type CreatePatientInput = z.infer<typeof createPatientSchema>;
+const input: CreatePatientInput = createPatientSchema.parse({
+  firstName: "Ada",
+  dateOfBirth: "1990-01-01",
+});
 ```
 
-**Flow:** `Zod Schema → infer TS types → API contracts → UI forms → DB-safe DTOs`
+The real contract additionally checks that the date parses and lies in the past and contains other fields and transformations. Validation must run before trusted application logic; importing the inferred type alone does not validate a request. If a schema transforms values, distinguish its input type from its output type.
 
-### Alternatives Considered
+### Validation Is Not Database Alignment or Authorization
 
-| Option | Pros | Cons |
-| ------------------------- | -------------------------------------------- | ----------------------------------------------- |
-| **TypeScript interfaces** | Native, no dependency | No runtime validation, can't infer Prisma types |
-| **io-ts** | Functional, composable | Steeper learning curve, less ecosystem |
-| **Zod (chosen)** | Great DX, Prisma integration, error messages | Slightly verbose definitions |
-| **class-validator** | Decorator-based, NestJS native | Tied to class instances, harder to compose |
-| **JSON Schema** | Language-agnostic | Verbose, less TypeScript integration |
+An ordinary Zod object strips unknown keys by default rather than necessarily rejecting them. Select the unknown-key policy deliberately and use the installed version's strict-object API when rejection is required.
 
-### Why Zod Was Chosen
+A valid request can still violate a database uniqueness constraint, reference another tenant, or request an unauthorized operation. Prisma models and Zod contracts remain separate definitions unless a verified generation process connects them. Migrations, contract tests and authorization checks address different risks. Do not present shared inference as eliminating every kind of drift.
 
-**The tipping point:** A field was added to the Prisma schema (`Patient.secondaryPhone`) but not to the TypeScript interface. The API accepted the field silently (Prisma ignored it). The frontend didn't send it. Nobody noticed for 2 weeks.
+## Why the Worker Has Its Own Process and Module
 
-**The key insight:** Zod schemas are *validated at runtime*. If the API receives unexpected data, it fails fast with a clear error message. And `z.infer` generates TypeScript types automatically — no drift possible.
+`apps/worker/src/main.ts` creates a Nest application context using `apps/api/src/worker.module.ts`. That module imports worker-specific domain modules, Prisma worker configuration, schedulers and outbox support. The entry point registers shutdown handling and closes the application context, with a bounded forced-exit fallback.
 
-### Trade-offs
-
-| What We Gained | What We Gave Up |
-| ----------------------------------------------- | --------------------------------------------------- |
-| Zero type drift between Prisma, API, and UI | Slightly verbose schema definitions |
-| Runtime validation with clear error messages | Can't use complex class-based patterns |
-| Single source of truth | Learning curve for team members unfamiliar with Zod |
-| Auto-generated API documentation (from schemas) | Schema files are longer than plain interfaces |
-
-### What Could Be Better
-
-- **Schema composition** — some schemas repeat the same 5 fields (clinicId, patientId, etc.). A `commonFields` base schema would reduce duplication.
-- **Auto-generate Prisma types from Zod** — currently we manually align Zod schemas with Prisma models. A code generator could enforce this.
-- **Frontend form integration** — we manually map Zod schemas to React Hook Form validation. A generator could produce form configs from schemas.
-
-### Code Evidence
-
-| Claim | File |
-| -------------- | ---------------------------------- |
-| Zod schemas | `packages/types/src/` |
-| Prisma models | `packages/db/prisma/schema.prisma` |
-| Type inference | `packages/types/src/patients/` |
-
-### Interview Script (60 seconds)
-
-> "I used Zod schemas as the single source of truth for all types. A Zod schema defines the shape, `z.infer` generates the TypeScript type, and the same schema validates API requests at runtime. This eliminated type drift between Prisma models, API contracts, and UI forms. The trade-off is slightly more verbose definitions, but we caught zero type-related bugs after adopting this pattern. It also gave us runtime validation — if an API receives unexpected data, it fails fast with a clear error message instead of silently ignoring the field."
-
----
-
-## Decision 3: NestJS with Separate API + Worker Processes
-
-### What We Chose
-
-Two NestJS processes sharing the same codebase:
+A separate process provides a separate event loop and lifecycle. CPU-heavy JavaScript in the API process blocks its event loop; awaiting asynchronous I/O does not inherently block it for the entire elapsed duration. Moving work to a worker helps isolate request latency and permits separate scaling, but both processes can still compete for the same database or host resources.
 
 ```text
-apps/api/     → HTTP controllers, WebSocket gateways, authentication
-apps/worker/  → Queue job processing, cron schedulers, PDF generation
+API: validate and authorize → commit durable work intent → return
+Worker: claim work → perform side effect → record result/retry state
 ```
 
-Both import from `apps/api/src/domains/`. The worker has its own `worker.module.ts` that only imports the modules it needs.
+This is the intended responsibility split. The [jobs and outbox case](03-async-processing.md) explains the actual delivery protocol and its failure boundaries. Separate processes alone do not make delivery reliable or effects occur exactly once. Workers need explicit tenant scope, retry rules, idempotency and graceful draining; starting another process supplies none of them automatically.
 
-### Alternatives Considered
+## How the Monorepo Supports Coordinated Changes
 
-| Option | Pros | Cons |
-| ---------------------------------- | ------------------------------ | ------------------------------------- |
-| **Single process** | Simple deployment | Queue processing blocks HTTP requests |
-| **Separate repos** | Independent deployment | Code duplication, sync issues |
-| **Monorepo, shared code (chosen)** | Zero duplication, shared types | Must coordinate deployments |
-| **Serverless functions** | Auto-scaling | Cold starts, stateful operations hard |
+pnpm workspaces organize applications and shared packages. The current root build uses **Turborepo** (`turbo build --concurrency=1`); the earlier claim that build caching had not been introduced was outdated.
 
-### Why Separate Processes Were Chained
+| Shared package | Role | Boundary to retain |
+| --------------- | -------------------------------------------- | ----------------------------------------------------------- |
+| `types` | Application contracts and validation schemas | Parse at runtime; keep persistence and permissions separate |
+| `db` | Prisma models and migrations | Review data changes and compatible rollout order |
+| `ui` | Reusable React components | Avoid assuming every consumer upgrades at once |
+| `data-access` | Client fetching and server-state integration | Keep cache identity and tenant scope explicit |
+| `authorization` | Policy evaluation | Supply trustworthy identity and resource attributes |
 
-**The problem:** PDF generation takes 2-3 seconds. If it runs in the HTTP process, it blocks the event loop. A clinic generating a prescription PDF would slow down all other API requests.
+One commit can contain compatible API, UI and schema changes. **Deployment is still not atomic:** old and new processes can coexist during rollout. Additive contracts and expand–migrate–contract database changes help accommodate that interval. A shared workspace also does not guarantee one dependency version or that a build checks runtime behavior.
 
-**The solution:** The API emits a `prescription.created` event → outbox → worker picks up the job → generates PDF → stores in R2 → notifies via WebSocket.
+## Real-World Decisions
 
-### What Could Be Better
+| Situation | Useful choice | Cost or limitation |
+| ----------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| Small straightforward CRUD feature | Keep a cohesive module with clear responsibilities | Four layers for every trivial action can add ceremony |
+| Business invariant with multiple callers | Put the rule behind explicit dependencies and test it directly | Persistence still has to enforce concurrent correctness |
+| API and forms share a contract | Share a runtime schema and infer types | Database and authorization rules remain separate |
+| Work outlives the request or consumes substantial CPU | Durable background processing with its own lifecycle | Retry, duplicate handling and capacity become explicit work |
+| Related applications change together | Monorepo with dependency-aware tasks | Coordinated source changes still require compatible deployment |
 
-- **Shared health checks** — the API and worker have separate health endpoints. A unified dashboard would be better.
-- **Graceful shutdown coordination** — if the worker is processing a job when the API deploys, the job might fail. We need coordinated drain.
+## Mistakes
 
----
+- Treating folder names as proof of dependency isolation.
+- Claiming framework-free core logic while the actual imports contradict it.
+- Assuming a successful schema parse proves authorization or database consistency.
+- Describing every slow asynchronous operation as event-loop blocking.
+- Equating a shared commit, build or worker process with atomic deployment or reliable delivery.
 
-## Decision 4: Monorepo with pnpm Workspaces
+## Best Practices
 
-### What We Chose
+Trace one real operation through its layers before describing the architecture. State which dependency check is enforced, what it permits and whether its current result was measured. Test business decisions separately from persistence concurrency and contract validation. For a rollout, explain what happens when old and new application versions coexist.
 
-```text
-docita/
-├── apps/
-│   ├── api/          → NestJS API
-│   ├── app/          → Vite SPA (main clinic dashboard)
-│   ├── internal/     → Vite SPA (admin portal)
-│   └── landing/      → Astro (marketing site)
-├── packages/
-│   ├── db/           → Prisma schema + migrations
-│   ├── types/        → Zod schemas
-│   ├── ui/           → Shared React components
-│   ├── data-access/  → React Query hooks + Axios
-│   └── authorization/ → ABAC policy engine
-└── fly.toml
-```
+## Summary
 
-### Why Monorepo
+The useful boundaries are business rules behind contracts, runtime validation at trust boundaries, durable work across process lifecycles and compatible changes across deployments. Docita implements parts of these boundaries; its source does not support absolute claims of zero coupling, zero drift or automatic reliability.
 
-- **Shared types** — `packages/types` is used by both API and frontend
-- **Atomic commits** — a schema change and its API/frontend updates ship together
-- **Single CI pipeline** — one `pnpm build` catches all issues
-- **Dependency deduplication** — React, NestJS, Prisma shared across apps
+## See Also
 
-### What Could Be Better
+- [Category revision](REVISION.md) — recall and decision practice after reading the cases.
+- [Tenant isolation](02-multi-tenancy-rls.md) — identity, transaction routing and database policy.
+- [Jobs and outbox](03-async-processing.md) — durable intent and delivery failures.
+- [Concurrency and slot reservation](05-clinic-workflows.md) — protecting scheduling invariants.
+- [Case-study index](INDEX.md) — learning order.
 
-- **Build caching** — we don't use Turborepo or Nx. Build times are ~3 minutes. Turborepo could cut this to ~30 seconds.
-- **Dependency isolation** — a breaking change in `packages/ui` can break all apps. We need stricter versioning.
----
+## References
 
-[ Back to Index](INDEX.md) · [Next: Multi Tenancy Rls →](02-multi-tenancy-rls.md)
+Source paths below refer to the Docita repository inspected on 2 October 2026:
+
+- `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts`
+- `apps/api/src/domains/appointments/core/domain-services/appointment-scheduling-rules.service.ts`
+- `apps/api/src/domains/appointments/core/repositories/appointment.repository.interface.ts`
+- `apps/api/src/domains/appointments/infrastructure/persistence/prisma-appointment-read.repository.ts`
+- `packages/types/src/patient/patients.ts`
+- `apps/worker/src/main.ts` and `apps/api/src/worker.module.ts`
+- `package.json`, `turbo.json` and `scripts/checks/check-prisma-boundary.js`

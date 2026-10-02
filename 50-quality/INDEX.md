@@ -1,11 +1,11 @@
 # Quality Stack
 
-> **Study time:** ≈ 13 h 27 m of reading (38 files, ~21 min average).
+> **Study time:** ≈ 9 h 37 m of reading (48 files, ~12 min average).
 > **Testing, accessibility, performance monitoring, production engineering** — the "senior judgment" stack. Shared by both lanes.
 >
-> 38 files across 4 sub-stacks.
+> 48 files across 4 sub-stacks.
 
-[![Files](https://img.shields.io/badge/files-38-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-48-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-4-green)](#the-4-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

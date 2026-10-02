@@ -1,11 +1,11 @@
 # Auth - Security
 
-> **Study time:** ≈ 2 h 39 m of reading (11 files, ~14 min average).
+> **Study time:** ≈ 2 h 38 m of reading (12 files, ~13 min average).
 > **The complete authentication & authorization learning track — all 10 stages.** Read them **in order**, each builds on the previous; finish with the interview drills.
 >
 > Part of [Security](../INDEX.md) · Prerequisite: [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md)
 
-[![Files](https://img.shields.io/badge/files-11-blue)](#files-in-this-track)
+[![Files](https://img.shields.io/badge/files-12-blue)](#files-in-this-track)
 [![Category](https://img.shields.io/badge/category-Auth-blue)](../INDEX.md)
 
 ---
@@ -199,3 +199,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | 8 · Authorization (ABAC) | `apps/api/src/shared/modules/authorization/abac-policy.registry.ts` - per-resource policies resolved by PolicyGuard + resource resolvers |
 
 Stages 5-6 (OAuth2/OIDC social login, SAML/SCIM) and WebAuthn passkeys: _no direct docita implementation yet._
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

@@ -1,9 +1,9 @@
 # Type Transformations — TypeScript
 
-> **Study time:** ≈ 1 h 18 m of reading (4 files, ~20 min average).
-> **4 files.** The composable operations that make TS powerful: built-in utility types, conditional types, mapped types, and template literal types.
+> **Study time:** ≈ 1 h 14 m of reading (5 files, ~15 min average).
+> **5 files.** The composable operations that make TS powerful: built-in utility types, conditional types, mapped types, and template literal types.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#files)
+[![Files](https://img.shields.io/badge/files-5-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Type_Transformations-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | 19 min |
-| 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | 13 min |
-| 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | 18 min |
-| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | 28 min |
+| 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | 17 min |
+| 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | 11 min |
+| 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | 16 min |
+| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | 27 min |
 
 ---
 
@@ -41,3 +41,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 ## Navigation
 
 [← Back to TypeScript](../INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

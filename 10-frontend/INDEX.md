@@ -1,27 +1,23 @@
 # Frontend Stack
 
-> **Study time:** ≈ 38 h 52 m of reading (122 files, ~19 min average).
-> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Study time:** ≈ 32 h 3 m of reading (145 files, ~13 min average).
+> **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — the frontend foundation for the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 122 files across 8 sub-stacks, organized by what you need to know in what order.
+> 145 files across 8 sub-stacks, organized by what you need to know in what order.
 
 **Real-world anchor:** every category page below ends with a [Docita Anchor](https://github.com/CVamsi27/docita) table pointing at the matching production code.
 
-[![Files](https://img.shields.io/badge/files-122-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-145-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Why this stack matters
+## Start with one product flow
 
-Every senior full-stack interview tests frontend fundamentals. Even if you specialize in backend, you must be able to:
-- Explain how the JS event loop works
-- Read and write modern React (hooks, Suspense, Server Components)
-- Discuss Next.js App Router architecture
-- Debugg performance issues (Core Web Vitals, bundle size)
+Use a public page and an authenticated edit form as a running example. Explain how JavaScript runs the handler, TypeScript constrains its inputs, React updates the interface, and the server validates and persists the edit. Include loading, rejected input, expired authorization and a slow response; the happy path alone hides the important boundaries.
 
-This stack is the canonical reference. Each sub-stack has its own INDEX with detailed categorization, decision flowcharts, and interview Q&A.
+The category indexes below guide each mechanism in study order. Their source-linked revision companions come after the learning chapters, followed by separate interview practice.
 
 ---
 
@@ -40,56 +36,37 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 
 ---
 
-## Category Map (high-level)
+## Pass 1 — make execution and data boundaries explicit
 
-The frontend stack is large. Here's the topic map so you know what to read in what order.
+Read [JavaScript](10.1-javascript/INDEX.md) for execution/scope, objects, asynchronous work and memory. Follow with [TypeScript](10.2-typescript/INDEX.md) for narrowing, generics and transformations. Trace actual values before constructing advanced types; TypeScript's static guarantees do not validate network data at runtime.
 
-### Fundamentals (read first)
-- **JavaScript** — execution, scope, async, prototypes, `this` — every interview tests these
-- **TypeScript** — generics, conditional types, narrowing — type system fluency
+## Pass 2 — connect React rendering to user behavior
 
-### Frameworks (read second)
-- **React** — internals, hooks, patterns, modern (18/19) APIs
-- **Next.js** — App Router, RSC, caching, streaming, Server Actions
+[React](10.3-react/INDEX.md) explains render/commit, component identity, hooks and server-state coordination. Keep local UI state distinct from cached server state and test the loading/error/race behavior of the running edit form.
 
-### Specialized (read as needed by JD)
-- **Form Handling** — React Hook Form, Zod, Server Actions
-- **Animation** — Framer Motion, GSAP, React Spring, Canvas/SVG
-- **HTML/CSS & PWA** — semantic HTML, responsive, CSS architecture & tokens, PWA
-- **Mobile** — React Native, Expo, deep linking, RN testing
+[HTML/CSS & PWA](10.7-html-css/INDEX.md) supplies semantic controls, keyboard relationships, layout and browser rendering. These remain part of the product when a framework owns the components.
 
----
+## Pass 3 — follow requests through a full-stack framework
 
-## Suggested Study Order
+[Next.js](10.4-next.js/INDEX.md) connects routes, Server Components, client boundaries, data caching and mutations. Explain where authentication and validation execute, which data a cache may share, and how a successful write makes the next read fresh.
 
-### Path A — Full-stack senior prepping for mid-stage (1-2 weeks)
-1. **JavaScript TL;DR + Async & Concurrency** (1.5 hrs) — must know
-2. **TypeScript TL;DR + Generics** (1 hr)
-3. **React TL;DR + Core Hooks + Modern Hooks** (3 hrs) — must know
-4. **Next.js TL;DR + Caching + RSC** (2 hrs) — must know
-5. Skim: Form Handling, Animation, HTML/CSS
+[Form Handling](10.5-form-handling/INDEX.md) completes the edit flow with runtime schemas, field state, submission and durable drafts. Select a library for the form behavior, then exercise retries, reset and recovery.
 
-### Path B — Frontend specialist, deep dive (3-4 weeks)
-1. JavaScript: all 6 categories (6-8 hrs)
-2. TypeScript: all 5 categories (4-5 hrs)
-3. React: all 5 categories (8-10 hrs)
-4. Next.js: all 5 categories (6-8 hrs)
-5. Specialized topics as relevant
+## Pass 4 — add the capabilities the role requires
 
-### Path C — Interview tomorrow
-- Skim all TL;DR boxes
-- JavaScript: re-read Event Loop + Promises + Closures
-- React: re-read Modern Hooks (18/19)
-- Next.js: re-read Caching + Server Components
+[Animation](10.6-animation/INDEX.md) connects visual changes to lifecycle, reduced motion and rendering cost. [Mobile & Cross-Platform](10.8-mobile/INDEX.md) adds native runtime, linking and release boundaries. Use these when the product or role requires them; preserve the same correctness and accessibility standards.
+
+## Before an interview
+
+Use each category's revision companion to recall mechanisms. Then answer its interview bank with a concrete trace, a failure case and a decision boundary. Reopen the canonical chapter for a missed mechanism rather than rereading several overlapping summaries.
 
 ---
 
 ## Cross-References
 
 - [Backend Stack](../20-backend/INDEX.md) — for full-stack interviews
-- [System Design](../INDEX.md) — frontend-side system design (CDN, edge, caching)
-- [Quality Stack](../INDEX.md) — testing, a11y, performance
-- [Coding Patterns](../INDEX.md) — algorithm patterns in JS/TS
+- [System Design](../30-architecture/30.2-system-design/INDEX.md) — frontend-side system design (CDN, edge, caching)
+- [Quality Stack](../50-quality/INDEX.md) — testing, a11y, performance
 
 ---
 

@@ -1,193 +1,151 @@
-# 15 — Analytics & Dashboards
+# 14 — Analytics: Define the Metric, Calendar and Snapshot Before Aggregating
 
-> The read-model layer — per-metric factories, timezone-aware bucketing, 1-hour cache TTLs on the overview, daily persisted snapshots for history, and raw-SQL group-bys for the compliance/revenue breakdowns.
+## Definition
 
----
+Analytics turns business records into metrics for a specified scope and period. A dashboard is a frequently read presentation of selected metrics; a persisted snapshot stores a computed result for later comparison.
 
-## Context
+“Revenue this month” is incomplete until you define clinic identity, paid versus invoiced value, currency, timezone, corrections and the reporting cutoff. A fast query can consistently return the wrong metric if those definitions are missing.
 
-Clinics want to *see* their business: revenue trends, patient growth, appointment fill rates, top diagnoses, uncoded-visits compliance, demographics. The questions look simple but hide real problems:
+This case describes source inspected on **2 October 2026**. Controlled source probes establish specific calculation behavior, not the accuracy of production reports.
 
-- **Money must sum correctly across tax classes, CPT codes, and categories** — a `SUM` in float ruins revenue reports.
-- **"Today", "this month", "last month" are timezone-relative** — a clinic's day starts in *its* timezone (IST for Indian clinics), not UTC; bucketing by UTC date mislabels every report.
-- **Queries touch huge fact tables** (invoices, appointments, patients, prescriptions) and must not hammer the primary database — or the same query twice.
-- **History must survive** — "what was our dashboard on 1 March?" is unanswerable from live tables alone; growth % comparisons need a frozen point-in-time record.
-- **Per-clinic RLS applies to analytics too** — a clinic must never read another clinic's revenue through a shared aggregate.
+## First Principles
 
-**The problems:** (1) naive group-bys of clinical data produce SQL that's slow or wrong across tax/tier boundaries; (2) raw Prisma `groupBy` can't express every breakdown (e.g., revenue by CPT from a joined table); (3) live-only analytics make month-over-month growth drift as data changes.
+Source records change over time, calendars depend on timezone, caches can retain earlier results and independent queries can observe different states. Aggregating current prices can also differ from aggregating historical charged amounts.
 
----
+Metric correctness therefore needs a definition, complete scope, explicit temporal boundaries, numerical units and a known consistency model. Persisting a result preserves what was calculated, including any mistakes or stale inputs.
 
-## Decision 1: Per-Family Factories over One Fat Service
+## Why Split Metric Families?
 
-### What We Chose
+The analytics facade coordinates operational, financial, clinical and snapshot factories. They group different calculations rather than presenting one large service with every query.
 
-Analytics is split into **four factory classes by metric family** behind a thin facade (`AnalyticsService`):
+| Family | Responsibility | Important boundary |
+| ----------- | ------------------------------------------------------- | --------------------------------------------------------------- |
+| Operational | Patient growth, appointments, demographics and overview | Period definitions and denominator meaning |
+| Financial | Revenue trends, CPT/category breakdowns and totals | Charged versus catalog value, currency and money representation |
+| Clinical | Conditions and diagnosis summaries | Sensitive data, coding meaning and completeness |
+| Snapshot | Persist selected computed metrics | Reporting date, input freshness and correction policy |
 
-- `OperationalAnalyticsFactory` — overview, patient growth, appointment stats/metrics, demographics, uncoded visits.
-- `FinancialAnalyticsFactory` — revenue trends, revenue by CPT code, by category, time series, revenue metrics.
-- `ClinicalAnalyticsFactory` — top conditions / diagnoses trends.
-- `SnapshotAnalyticsFactory` — daily persisted snapshots.
+The financial factory uses a base for read-client access, date filtering and common dependencies. The operational factory instead delegates through an analytics repository and its own cache configuration; the snapshot factory has separate dependencies. Not all four simply inherit one universal base or guarantee that every read avoids the primary database.
 
-All factories share `BaseAnalyticsFactory`, which injects the read client (via an `ANALYTICS_PERSISTENCE_PORT`), the config service, and a cache manager.
+Choose this separation to keep definitions and tests coherent. A dedicated warehouse may be useful for heavier workloads or independent reporting, but clinic counts alone do not prove it unnecessary: query plans, historical volume, freshness needs and operational capacity govern the choice.
 
-### Why This Was Chosen
+## How a Calendar Range Differs From a Bucket Key
 
-- **Each family has a different data shape and cadence** — financial metrics cross invoices/tax/CPT; operational metrics cross appointments/patients; clinical crosses prescriptions/diagnoses. Splitting by family keeps each file focused (single-responsibility), and the facade gives controllers one import.
-- **Cache policy is per-factory** — the overview caches 1 hour; expensive time-series can differ.
-- **Consistent base concerns** — read-replica access and date-range filtering live once in the base class (`addDateRangeFilter`), so every factory obeys the same "reads never touch the primary" rule.
+A range chooses which records enter a calculation; a bucket key assigns those records to periods. Both must use the same intended calendar.
 
-### Alternatives Considered
-
-- One `AnalyticsService` with 40 methods and raw queries inline — would have been a ~2k-line file where cache/read-replica/date conventions could drift per method.
-- A dedicated analytics warehouse (ClickHouse/Materialize) — wildly over-provisioned for ~25 clinics; Postgres on a read replica with 1-hour cache TTLs is correct at this scale.
-
-### Trade-offs
-
-- **Five files instead of one** — more imports, but each is independently testable (`clinical-analytics.factory.spec.ts`, `financial-analytics.factory.spec.ts`, `operational-analytics.factory.spec.ts` all exist).
-- **Cache invalidation is TTL-based** — a dashboard can be up to an hour stale after a data change; no write-through invalidation on invoice/appointment creation.
-
----
-
-## Decision 2: Timezone-Aware Ranges + Client-Side Bucketing
-
-### What We Chose
-
-Every analytics call takes a `timezone` (defaulting to India) and computes ranges like `getMonthRange(now, { timezone })` — boundaries in the clinic's zone — before querying. Row bucketing for time series is done **in application code** using a shared `toISODateString(date, { timezone })` util rather than SQL `date_trunc`, because Prisma can't express per-row timezone conversion portably:
-
-```typescript
-// analytics/core/factories/operational-analytics.factory.ts (overview)
-const cacheKey = `dashboard-overview-${clinicId}-${timezone}`;
-...
-const thisMonthRange = getMonthRange(now, { timezone });
-const aggregates = await this.repository.getOverviewAggregates(clinicId, thisMonthRange, lastMonthRange);
+```text
+clinic-local month start/end → corresponding UTC instants → database range
+included record instant → clinic-local calendar period → bucket key
 ```
 
-Week/day bucket keys come from `period-bucket.util.ts` (`toAnalyticsPeriodKey`, `toTimeSeriesBucketKey`) — the same bucketing code tested in `period-bucket.util.spec.ts` and reused across factories so "monthly" means the same thing everywhere.
+For example, an instant just after midnight in Asia/Kolkata can still belong to the previous UTC date. Filtering with clinic-local bounds but grouping by the UTC date produces inconsistent labels. PostgreSQL can perform explicit timezone conversion and aggregation; application bucketing is a choice with memory/network costs, not the only correct option.
 
-### Why This Was Chosen
+### Current Timezone Support Is Uneven
 
-- **Correctness first** — a UTC-midnight bucket would split a clinic's Saturday across two report days. Computing range bounds and date keys in the clinic's timezone is the only correct approach for a product whose customers live in one country (IST) but whose servers run UTC.
-- **Reuse over duplication** — the timezone utils (`toISODateString`, month ranges) live in `@workspace/utils` and are shared with appointments/clinic-calendar code (e.g., `getClinicLocalDayUtcBounds`), so clinic-local "day" logic is consistent product-wide.
+The overview includes clinic and timezone in its cache key and obtains month ranges through shared timezone utilities. Patient-growth bucketing uses a timezone-aware date formatter.
 
-### Trade-offs
+The inspected financial period helper is different: daily keys slice UTC ISO dates, monthly keys use process-local year/month and weekly keys use a hand-rolled formula involving the **day of month**. It accepts no timezone parameter. A timezone-aware financial input range therefore does not prove timezone-aware buckets.
 
-- **Bucketing in JS means fetching rows to bucket** — for a 30-day patient-growth chart the fetch is bounded by a date range, so it's fine; a multi-year daily time series would be slow and should move to SQL `date_trunc` with an explicit `timezone` argument.
-- **The `timezone` param is trust-based** — a caller passing `Asia/Kolkata` vs `IST`-style junk is handled by shared utils, but the API doesn't validate clinic-vs-passed timezone match; a mismatch silently shifts "today".
+A source-extracted probe found **7 January and 7 February 2026 both mapping to `2026-W1`**. Those distinct weeks collide because day-of-month logic is not a year-wide week identity. Select explicit ISO-week or product-specific week semantics and test year/month boundaries, week start, timezone and daylight-saving behavior.
 
----
+The overview also moves to the previous month using `Date.setMonth` on the current date. Month-end overflow deserves a boundary test; deriving prior-period boundaries from a stable local month start avoids relying on an invalid day in the target month.
 
-## Decision 3: Raw SQL Group-Bys for Cross-Table Breakdowns
+## How the Financial Calculation's Meaning Must Stay Visible
 
-### What We Chose
+The inspected revenue-metrics method fetches invoice `total` and `createdAt`, groups the records by a period key and records each bucket's revenue, invoice count and average. It does not show a paid-only filter in that path and reads legacy totals rather than exclusively canonical minor-unit columns.
 
-Breakdowns that cross tables — revenue by CPT code, revenue by category, disease trends — use **targeted raw SQL** (`$queryRaw`) behind repository methods, with defensive row mappers that validate shapes instead of trusting column order:
+The CPT calculation groups procedures by code, fetches current code prices and multiplies price by procedure count. It limits the grouped result to **50 codes** before building categories. This is not the same operation as summing historical invoice-line charges, including discounts, tax and refunds. It can omit codes from the full category total and can change when current catalog prices change.
 
-```typescript
-// analytics/infrastructure/repositories/analytics-groupby.helpers.ts
-export function mapAppointmentStatusGroupRows(rows: unknown[]): Array<{ status: string; count: number }> {
-  return rows.flatMap((row) => {
-    if (!isRecord(row) || typeof row.status !== 'string') return [];
-    return [{ status: row.status, count: readGroupCount(row, 'id') }];
-  });
-}
+These methods need accurate names or corrected semantics. Do not describe all financial analytics as exact cents-based recognized revenue, or all CPT breakdowns as raw-SQL joins: the inspected method uses Prisma groupBy plus a price lookup.
+
+### Raw Results Need a Deliberate Failure Policy
+
+Typed ORM grouping is useful for supported aggregates; explicit SQL may better express joins or timezone-aware grouping. Bind values, scope every participating table appropriately and check numerical ranges when mapping database counts or sums into JavaScript numbers.
+
+The inspected group mappers skip malformed rows and default missing count shapes to zero. That can be a chosen tolerance policy, but it **does not fail loudly**. A renamed or missing field can become an empty result or zero. Decide whether missing data should produce an error, a visible incomplete status or a controlled fallback; silently treating failure as a valid zero can mislead a user.
+
+## How Caching Trades Load for Freshness
+
+The overview cache uses **one hour**; dashboard home stats use **60 seconds**. Other methods use configured or method-specific TTLs. Keys must include every dimension that changes the result: tenant, period/range, timezone, permission-sensitive scope and metric version where applicable.
+
+```text
+first request → compute and cache
+later request before expiry → reuse cached result
+data changes → cached value may remain until invalidation or expiry
 ```
 
-Where Prisma's typed `groupBy` suffices (status counts, gender), it is used (`analytics-groupby-count.ts`, `analytics-gender-groupby.ts`).
+The freshness cost may be noticeable after booking or payment; it is not universally invisible. Replica lag, cached inputs and computation duration can add staleness beyond one simple TTL. Read-client access does not establish that a replica is configured or that different reads form one consistent snapshot.
 
-### Why This Was Chosen
+For critical confirmation views, use suitable current reads or targeted invalidation. For trends, bounded staleness may be acceptable if the UI conveys it. Measure hit rate, query cost and concurrency; a cache miss storm can still overload the database.
 
-- **Prisma `groupBy` can't do joined aggregations** (revenue requires invoice → line items → CPT). Raw SQL is the honest tool; the *results* are re-typed defensively so a schema drift fails loudly in the mapper, not silently in the UI.
-- **Read-only discipline holds** — these run on the read client, never the primary.
+## What the Current Snapshot Actually Preserves
 
-### Trade-offs
+The snapshot method calls financial, appointment, demographics and condition methods, then creates a persisted row. It labels the record daily but supplies neither an explicit historical date range nor a clinic timezone to those calls. In the revenue method, daily selects **bucket granularity**, not a restriction to the current day.
 
-- **Raw SQL escapes Prisma's type safety** — mitigated by small mappers + specs, but a schema change in a joined table needs a matching mapper update.
-- **Each raw query is hand-tuned per Postgres** — portability to another dialect is not a goal.
+A stored row thus does not establish an internally consistent daily report or a historical “dashboard as it was.” Its inputs can cover different ranges and be independently cached. The method catches and logs errors rather than propagating failure; a scheduler caller cannot assume a resolved call created a row.
 
----
+### Trace the Invoice-Count Error
 
-## Decision 4: Daily Persisted Snapshots for History
+Given two revenue buckets:
 
-### What We Chose
+| Bucket | Revenue | Invoice count |
+| -------- | ------- | ------------- |
+| A | 30 | 3 |
+| B | 70 | 7 |
+| Combined | 100 | 10 |
 
-`SnapshotAnalyticsFactory.createAnalyticsSnapshot(clinicId)` computes one day's key numbers (total revenue, invoice count, avg invoice amount, appointment totals/fill rate, new vs active patients, top conditions) by *reusing the same factories* the live endpoints use, then persists a frozen `AnalyticsSnapshot` row and caches it under `snapshot-{clinicId}-{date}`.
+The correct combined average per invoice is `100 / 10 = 10`. The inspected snapshot instead uses the number of buckets for `invoiceCount`, so it stores **2** and an average of **50**. A source-extracted probe with those controlled inputs reproduced both values. That probe does not establish which production reports used them.
 
-### Why This Was Chosen
+The snapshot also stores the appointment fill rate under two fields, then exposes those values with coding-completeness and billing-rate labels in trends. A field alias does not change a metric's meaning. Resolve its numerator/denominator before relying on those labels.
 
-- **Same math, frozen in time** — because the snapshot calls the live factories, "yesterday's dashboard" and "the dashboard when it was yesterday" are computed identically; later data corrections don't rewrite history.
-- **Growth reporting becomes trivial** — month-over-month patient growth compares snapshot rows, not live-vs-live queries that both changed.
-- **An event announces each snapshot** (`ANALYTICS_SNAPSHOT_CREATED`) so other systems can react without polling.
+### Backfill Needs a Historical Cutoff
 
-### Alternatives Considered
+A snapshot repair must accept the intended clinic reporting date, stable input window, version and correction policy. Rerunning the current method today does not reconstruct a missed historical day's state. The current cache key uses a UTC date; that also needs alignment with the intended clinic-day identity.
 
-- Live-only metrics — cheaper, but every "trend" recomputes from full history and month-over-month deltas drift as old data is edited.
-- A full OLAP cube — overkill (see Decision 1).
+Choose whether corrections produce replacement snapshots, append a revised version or remain in a separate current-truth report. Neither “frozen forever” nor “recomputed live” is universally correct; consumers need to know which question the report answers.
 
-### Trade-offs
+## Real-World Decisions
 
-- **Snapshots can go stale if the cron is missed** — a failed daily job leaves a gap that live queries can't backfill automatically (the pipeline reuses factories, so a manual re-run heals it).
-- **`appointmentFillRate` is duplicated into `appointmentRate`** in the snapshot row — the same value under two names is a smell that says the metric taxonomy wasn't settled when the table was designed.
+| Reporting question | Define explicitly | Verification |
+| ----------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------- |
+| Revenue earned or cash received | Invoice status, settlement/refunds, currency and cutoff | Known transactions with expected totals |
+| Procedure value by category | Historical charge or current catalog estimate; truncation policy | Changed prices and more than 50 codes |
+| Clinic-local daily trend | Zone, local bounds and bucket identity | UTC midnight, DST and month/year boundaries |
+| Growth relative to a zero baseline | Undefined/new-growth policy rather than an unexplained zero | Empty and nonzero baseline examples |
+| Historical snapshot | Reporting date, input snapshot and correction version | Late changes and missed-date backfill |
+| Home-screen update after a mutation | Freshness budget and invalidation | Read-after-write behavior under caches/replicas |
 
----
+## Mistakes
 
-## Decision 5: Dashboard = Cached Stats, Analytics = Factories
+- Treating a daily grouping argument as a daily date filter.
+- Averaging grouped revenue by the number of buckets instead of the number of invoices.
+- Calling catalog-price estimates collected revenue.
+- Assuming every mapper rejects malformed results visibly.
+- Claiming a persisted row makes historical calculations correct or backfillable.
+- Advertising a read-client/cache design as measured near-zero cost.
 
-### What We Chose
+## Best Practices
 
-The `dashboards` domain stays deliberately tiny: `DashboardService.getStats(clinicId)` returns a single home-screen payload (total patients, today's appointments, active prescriptions, recent/upcoming activity) with a **60-second cache**, delegating the heavy numbers to `IDashboardRepository` and never duplicating analytics' per-metric endpoints.
+Write metric definitions before query code. Use explicit clinic-local bounds and consistent bucket identities, preserve currency/minor-unit meaning and test denominators. Distinguish valid zero from missing or failed data. Verify cache scope and freshness, and make snapshot date/version/recovery explicit. Use known small datasets to check calculations before performance tuning.
 
-### Why This Was Chosen
+## Summary
 
-- **One round-trip for the landing screen** — the dashboard is the highest-frequency read in the product; a 60s cache keeps it off the database almost entirely.
-- **No metric logic in the dashboard domain** — anything trend/revenue shaped lives in analytics; the dashboard only aggregates "right now" counts, so there's a single owner per number.
+Analytics requires explicit business, calendar and numerical definitions. Current source has useful family separation and caching, alongside bucket, snapshot and financial-meaning limitations. Accurate reporting depends on correcting and verifying those semantics rather than merely persisting or caching results.
 
-### Trade-offs
+## See Also
 
-- **A 60s-stale landing screen** is invisible in practice but technically present — an appointment booked 5 seconds ago may not show for up to a minute.
+- [Category revision](REVISION.md) — metric and consistency questions after learning.
+- [Inventory](13-inventory.md) — mixed units and parallel reads.
+- [Billing](08-billing-invoicing.md) — historical financial records.
+- [Async processing](03-async-processing.md) — scheduler failures and recovery.
+- [Case-study index](INDEX.md) — reading stages.
 
----
+## References
 
-## What Worked
+Docita source inspected on 2 October 2026:
 
-- **Read-replica + 1-hour cache kept analytics nearly free** — the overview is one of the most-hit reads in the product and rarely touches the primary DB.
-- **Snapshot consistency made growth reports trustworthy** — clinic owners could see "you grew 12% this month" computed from frozen rows, not shifting live data.
-- **Defensive mappers caught real schema drift** — a renamed column in a group-by surfaced as an empty array + test failure, not a wrong total on a clinic owner's screen.
-
-## What Failed
-
-- **Compliance and revenue breakdowns live in a second controller** (`analytics-advanced.controller.ts`) alongside the overview controller — both mount on `/analytics`, and the route naming drifted (`/analytics/revenue-metrics` vs `/analytics/revenue/time-series`). Merging the two surfaces under one router with consistent verbs would remove the ambiguity.
-- **Timezone bugs slipped through in week bucketing** — the first `toAnalyticsPeriodKey('weekly')` used a hand-rolled week-start that disagreed with the shared calendar util for clinics whose week starts on Monday (the ISO week) vs Sunday; the shared util is now the single source.
-
-## What Could Be Better
-
-- **Snapshot gap healing** — a "detect missing snapshot dates per clinic and re-run" reconciliation cron would remove the cron-miss failure mode.
-- **Kill the `appointmentRate`/`appointmentFillRate` duplication** — pick one name in the snapshot type and migrate.
-- **Move multi-year time series to SQL `date_trunc` with an explicit timezone argument** once any clinic's history exceeds ~2 years; JS bucketing won't scale there.
-- **Add write-through cache invalidation** on the hot paths that change the overview (invoice finalization, appointment completion) instead of waiting out the TTL — a small event-listener on existing domain events.
-
----
-
-## Code Evidence
-
-| Claim | File |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Facade over four factories | `apps/api/src/domains/analytics/application/services/analytics.service.ts` |
-| Base factory (cache/read/date) | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` |
-| Operational factory (overview) | `apps/api/src/domains/analytics/core/factories/operational-analytics.factory.ts` |
-| Financial factory | `apps/api/src/domains/analytics/core/factories/financial-analytics.factory.ts` |
-| Snapshot factory | `apps/api/src/domains/analytics/core/factories/snapshot-analytics.factory.ts` |
-| Period bucketing utils | `apps/api/src/domains/analytics/core/factories/period-bucket.util.ts` |
-| Raw-SQL row mappers | `apps/api/src/domains/analytics/infrastructure/repositories/analytics-groupby.helpers.ts` |
-| Overview + advanced controllers | `apps/api/src/domains/analytics/presentation/controllers/analytics-overview.controller.ts`, `analytics-advanced.controller.ts` |
-| Dashboard stats + 60s cache | `apps/api/src/domains/dashboards/dashboard/application/services/dashboard.service.ts` |
-| Timezone date utils (shared) | `packages/utils/src/date/iso-date-utils.ts` |
-
----
-
-## Interview Script (60 seconds)
-
-> "Analytics is a read-model split into per-family factories — operational, financial, clinical, and snapshot — all sharing a base that routes to the read replica and a cache manager. The dashboard overview caches for an hour, so one of the most-hit reads barely touches the database. Timezone correctness is handled the hard way: month/day ranges are computed in the clinic's own timezone and rows are bucketed in application code via shared utils, because Prisma can't do per-row timezone conversion — bucketing by UTC would split a clinic's Saturday across two report days. Cross-table breakdowns like revenue-by-CPT use targeted raw SQL with defensive row mappers. History is solved by daily persisted snapshots computed through the same factories the live endpoints use, so growth math never drifts as live data gets corrected. The known gap: snapshot gaps if the daily job is missed — the fix is a reconciliation cron."
----
-
-[← Previous: Inventory](13-inventory.md) · [ Back to Index](INDEX.md) · [Next: Doctors Verification And Public Booking →](15-doctors-verification-and-public-booking.md)
+- `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts`
+- `apps/api/src/domains/analytics/core/factories/financial-analytics.factory.ts` and `operational-analytics.factory.ts`
+- `apps/api/src/domains/analytics/core/factories/snapshot-analytics.factory.ts` and `period-bucket.util.ts`
+- `apps/api/src/domains/analytics/infrastructure/repositories/analytics-groupby.helpers.ts` and `analytics-groupby-count.ts`
+- `apps/api/src/domains/dashboards/dashboard/application/services/dashboard.service.ts`

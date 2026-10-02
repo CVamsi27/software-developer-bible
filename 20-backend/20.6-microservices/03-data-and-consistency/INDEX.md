@@ -1,9 +1,9 @@
 # Data & Consistency - Microservices
 
-> **Study time:** ≈ 2 h 8 m of reading (6 files, ~21 min average).
-> **6 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
+> **Study time:** ≈ 2 h 1 m of reading (7 files, ~17 min average).
+> **7 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data%20%26%20Consistency-blue)](../INDEX.md)
 
 ---
@@ -12,12 +12,12 @@
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [Saga Pattern](20.6.3.01-saga-pattern.md) | Choreography vs orchestration, compensating transactions, idempotent compensations | 27 min |
-| 02 | [Distributed Transactions](20.6.3.02-distributed-transactions.md) | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong | 13 min |
-| 03 | [Event Sourcing](20.6.3.03-event-sourcing.md) | Event store design, rebuilding state by replay, snapshots, projection rebuilds | 32 min |
-| 04 | [CQRS](20.6.3.04-cqrs.md) | Command/query separation, read models, eventual consistency, projection lag | 30 min |
-| 05 | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | 13 min |
-| 06 | [Transactional Outbox](20.6.3.06-transactional-outbox.md) | Dual-write problem, outbox table, polling vs CDC relay, idempotent consumers, DLQ handling, production patterns | 13 min |
+| 01 | [Saga Pattern](20.6.3.01-saga-pattern.md) | Choreography vs orchestration, compensating transactions, idempotent compensations | 25 min |
+| 02 | [Distributed Transactions](20.6.3.02-distributed-transactions.md) | 2PC trade-offs, saga, outbox pattern, idempotent consumers, why distributed locks are usually wrong | 11 min |
+| 03 | [Event Sourcing](20.6.3.03-event-sourcing.md) | Event store design, rebuilding state by replay, snapshots, projection rebuilds | 30 min |
+| 04 | [CQRS](20.6.3.04-cqrs.md) | Command/query separation, read models, eventual consistency, projection lag | 28 min |
+| 05 | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | 12 min |
+| 06 | [Transactional Outbox](20.6.3.06-transactional-outbox.md) | Dual-write problem, outbox table, polling vs CDC relay, idempotent consumers, DLQ handling, production patterns | 12 min |
 
 ---
 
@@ -40,3 +40,7 @@ Saga orchestration and event sourcing not used — cross-module consistency curr
 ---
 
 [← Previous: Communication & Messaging](../02-communication-and-messaging/INDEX.md) · [Next: Resilience →](../04-resilience/INDEX.md)
+
+## Section Revision
+
+After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

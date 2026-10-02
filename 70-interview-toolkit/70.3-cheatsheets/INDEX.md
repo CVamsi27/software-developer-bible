@@ -1,25 +1,32 @@
 # Cheat Sheets — Index
 
-> **Study time:** ≈ 1 h 19 m of reading (7 files, ~11 min average).
-> **7 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
+> **Study time:** ≈ 43 min of reading (8 files, ~5 min average).
+> **8 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why cheat sheets:** These are the morning-of-interview references. Each is a one-pager (or two) that compresses the most-asked questions and answers for a stack. **Don't learn from these — review from them.**
+**Why these references:** Follow a concrete operation, identify each component’s role, and check the contract or version that limits it. Use linked owner chapters for deeper derivations and complete implementations.
 
 ---
 
+## Reading Passes
+
+1. **Follow a value through execution and checking.** JavaScript explains bindings, calls, and scheduling; TypeScript explains which relationships can be checked before runtime and which need validation.
+2. **Follow a user operation through application boundaries.** React/Next.js connects server rendering to browser interaction; the backend sheet follows identity, validation, and a committed operation. System design explains why distribution, caches, and delivery paths are added.
+3. **Follow the artifact and stored rows.** The platform sheet traces build inputs through running workloads. SQL traces row meaning through joins, windows, access paths, and concurrency.
+4. **Close the sheets and explain the contracts.** Finish with [section revision](REVISION.md), then return only to a source whose role or limit remains unclear.
+
 ## Topic Categories
 
-The 7 cheat sheets classify into 5 conceptual categories — pick by interview type, not by order.
+Pick a sheet by the operation you need to explain; the passes above show how the categories connect.
 
 | Category | Files | When to use |
 | -------------------------- | ----: | --------------------------------------------------------------------------------- |
 | **Language** | 2 | JavaScript (any JS role), TypeScript (when the JD names TS) — fundamentals rounds |
 | **Framework & Full-Stack** | 2 | React/Next.js (frontend loops), Backend (Node/NestJS/DB/API loops) |
-| **Architecture** | 1 | System design rounds — every senior loop |
+| **Architecture** | 1 | Architecture or trade-off discussion |
 | **Platform / DevOps** | 1 | Docker/K8s/CI-CD questions; platform-heavy full-stack loops |
 | **Data** | 1 | SQL/data-modeling deep-dives in backend loops |
 
@@ -29,38 +36,19 @@ The 7 cheat sheets classify into 5 conceptual categories — pick by interview t
 
 | # | File | What it covers | When to use | Read time |
 | --: | ------ | ---------------- | ------------- | ----------: |
-| 01 | [JavaScript Cheat Sheet](70.3.01-javascript-cheat-sheet.md) | ES6+, promises, async/await, closures, event loop, prototype chain, this binding | Frontend interview, JS fundamentals round | 8 min |
-| 02 | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md) | Types, generics, utility types, decorators, configuration, `satisfies`, `infer` | Frontend interview with TS focus | 9 min |
-| 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | 13 min |
-| 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | 14 min |
-| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | 16 min |
-| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | 10 min |
-| 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md) | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 9 min |
+| 01 | [JavaScript Cheat Sheet](70.3.01-javascript-cheat-sheet.md) | ES6+, promises, async/await, closures, event loop, prototype chain, this binding | Frontend interview, JS fundamentals round | 4 min |
+| 02 | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md) | Types, generics, utility types, decorators, configuration, `satisfies`, `infer` | Frontend interview with TS focus | 5 min |
+| 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | 10 min |
+| 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | 5 min |
+| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | 4 min |
+| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | 7 min |
+| 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md) | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | 6 min |
 
 ---
 
-## Suggested Study Order
+## Use a Reference Without Losing the Model
 
-**Don't read these until you have studied the underlying stack.** Cheat sheets compress; they don't teach.
-
-1. **Study the relevant stack** (e.g., React — 10.3-react)
-2. **Read the chapter INDEXes** to identify weak areas
-3. **Re-read those chapters** (1-2 hrs)
-4. **Morning of interview** — read the relevant cheat sheet (15 min)
-
----
-
-## Cheat Sheet Format
-
-Each cheat sheet follows the same structure:
-
-- **Most-asked questions** (the top 10-15)
-- **Pattern recognition** (TL;DRs for key patterns)
-- **Code snippets** (the ones you always forget)
-- **Trade-off tables** (when to use X vs Y)
-- **Common interview traps** (the gotchas)
-
----
+Read the opening trace first, then use the role tables to find the relevant component. The short examples illustrate a specific contract rather than a full application. When the implementation needs more context, follow its canonical chapter link instead of copying several overlapping summaries.
 
 ## Cross-References
 
@@ -83,4 +71,8 @@ Each cheat sheet follows the same structure:
 
 ## Docita Anchor
 
-Cheat sheets are print-outs, not anchors — they summarize knowledge rather than map to a codebase. Docita itself lives at [github.com/CVamsi27/docita](https://github.com/CVamsi27/docita).
+These references summarize mechanisms. Use a codebase artifact only after checking how it implements the stated contract. Docita itself lives at [github.com/CVamsi27/docita](https://github.com/CVamsi27/docita).
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

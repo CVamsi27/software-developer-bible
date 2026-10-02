@@ -1,9 +1,9 @@
 # Failure & Recovery
 
-> **Study time:** ≈ 1 h 16 m of reading (6 files, ~13 min average).
-> **6 files.** Surviving transient failure without side effects, containing blast radius on purpose, and recovering state when prevention fails: the resilience pattern landscape, retry discipline, idempotency keys, feature flags with kill switches, backup strategy proven by restore drills, and the complete idempotency-retry chain. Distributed systems fail constantly; these patterns decide whether failure is an incident or a log line.
+> **Study time:** ≈ 1 h 7 m of reading (7 files, ~10 min average).
+> **7 files.** Surviving transient failure without side effects, containing blast radius on purpose, and recovering state when prevention fails: the resilience pattern landscape, retry discipline, idempotency keys, feature flags with kill switches, backup strategy proven by restore drills, and the complete idempotency-retry chain. Distributed systems fail constantly; these patterns decide whether failure is an incident or a log line.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-7-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Resilience-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -21,14 +21,20 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 | --   : | ------ | -------- | ----------: |
 | 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | 16 min |
 | 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | 11 min |
-| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery, key design, dedupe windows, storage strategies | 12 min |
-| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | 11 min |
-| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | 11 min |
-| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Complete reliability chain: API idempotency guard + outbox + consumer dedup + retry budgets + circuit breaker + DLQ | 15 min |
+| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery, key design, dedupe windows, storage strategies | 6 min |
+| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | 10 min |
+| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | 9 min |
+| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Complete reliability chain: API idempotency guard + outbox + consumer dedup + retry budgets + circuit breaker + DLQ | 13 min |
 
 **Read order:** overview → retries → idempotency → flags/kill-switches → backups/drills → deep dive. Retries without idempotency are how you double-charge a customer; backups without restore drills are how you discover corruption mid-outage.
 
 ---
+
+## Reading Path and Completion Check
+
+Start with the resilience overview, then retries and idempotency. Add flags for controlled release and backups for data recovery; use the deep dive to connect the boundaries.
+
+Trace one uncertain mutation and one full restore; explain the retry identity, durable evidence and bounded recovery time. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

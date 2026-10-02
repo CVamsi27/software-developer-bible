@@ -1,9 +1,9 @@
 # SRE Targets
 
-> **Study time:** ≈ 25 min of reading (2 files, ~12 min average).
-> **2 files.** The SRE framework for reliability: define SLIs/SLOs with real error budgets, then alert in a way that pages humans only when it matters.
+> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
+> **3 files.** The SRE framework for reliability: define SLIs/SLOs with real error budgets, then alert in a way that pages humans only when it matters.
 
-[![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-SRE%20Targets-%230ea5e9)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -24,8 +24,8 @@ Quick distinction:
 
 | Order | File | Topics | Read time |
 | --   : | ------ | -------- | ----------: |
-| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 11 min |
-| 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | 14 min |
+| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | 9 min |
+| 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | 13 min |
 
 ---
 
@@ -54,3 +54,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Runbooks for breaches | `docs/operations/playbooks/*` (DB exhaustion, upstream timeouts, queue backlog) |
 | Synthetic probes | `.github/workflows/synthetic-monitoring.yml` |
 | Burn-rate dashboards / PagerDuty | _No direct docita implementation yet._ |
+
+## Finish This Section
+
+After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

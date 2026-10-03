@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 7 h 55 m of reading (27 files, ~18 min average).
+> **Study time:** ≈ 7 h 44 m of reading (27 files, ~17 min average).
 > **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -59,7 +59,7 @@ The 5 essential hooks. Used in 95% of React code.
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 24 min |
-| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 28 min |
+| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 17 min |
 | 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 23 min |
 | 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 25 min |
 | 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | 30 min |

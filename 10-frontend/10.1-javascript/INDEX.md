@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 7 h 19 m of reading (40 files, ~11 min average).
+> **Study time:** ≈ 7 h 20 m of reading (40 files, ~11 min average).
 > **40 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-40-blue)](../../INDEX.md)
@@ -73,7 +73,7 @@ The most-asked topic in senior JS interviews. JavaScript is single-threaded; und
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame` | 6 min |
-| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | 7 min |
+| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | 8 min |
 | 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | 7 min |
 | 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | 17 min |
 | 14 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | 7 min |

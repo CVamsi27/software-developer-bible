@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "135fa422e4c97f94856015c9664f94086c9a4aca22f8f953ac154005a6d50d3c",
+ "corpus_digest": "88ed00fbb4e6f5b84a7dd7f1e5cd8eab6b107afca4012f7224e11edad99513cb",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8562
+  "read_minutes": 8554
  },
  "chapters": [
   {
@@ -773,7 +773,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 14
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.html",
@@ -1099,7 +1099,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.html",
@@ -1202,7 +1202,7 @@
     "concept",
     "reference"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.02-zod.html",

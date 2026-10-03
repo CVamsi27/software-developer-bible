@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 15 m of reading (8 files, ~9 min average).
+> **Study time:** ≈ 1 h 16 m of reading (8 files, ~10 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -29,7 +29,7 @@ Three main form libraries — pick the right one for the job.
 
 | # | File | Topics | When to use | Read time |
 | --: | ------ | -------- | ------------- | ----------: |
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 15 min |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | 16 min |
 | 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | 13 min |
 | 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | 10 min |
 

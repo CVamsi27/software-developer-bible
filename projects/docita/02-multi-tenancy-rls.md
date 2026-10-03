@@ -83,6 +83,8 @@ A safer routing design should keep recursion prevention local to the nested asyn
 
 ## Explain ABAC using the current policy conditions
 
+**RBAC** means role-based access control; **ABAC** means attribute-based access control, which evaluates facts such as resource ownership or assignment. Here `INTERNAL` is the application’s internal-access classification, not a universal database role.
+
 The inspected patient policy has an INTERNAL bypass, patient ownership checks and clinical-role handling. Assignment is enforced for a plain DOCTOR when the resource marks `requiresAssignment`; it is not an unconditional rule for every doctor operation. The policy relies on resource attributes being populated correctly.
 
 Avoid calling RBAC “90%” and ABAC “10%” of authorization without measurement. Explain the specific checks and their composition. Internal access, missing attributes and pre-tenant flows deserve explicit tests rather than a blanket “deny-overrides guarantees isolation” statement.

@@ -11,9 +11,9 @@
 
 ## The file
 
-| # | File | Contents | Time |
-| --: | ------ | ---------- | ------ |
-| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs |
+| # | File | Contents | Time | Role priority | General importance |
+| --: | ------ | ---------- | ------ | --- | --- |
+| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs | Important | Specialized |
 
 ---
 

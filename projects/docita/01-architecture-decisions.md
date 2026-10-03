@@ -1,5 +1,10 @@
 # 01 — Architecture: Keep Business Rules, Contracts and Execution Boundaries Clear
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Architecture assigns responsibilities and controls dependencies. In Docita, domain modules organize business capabilities; shared schemas define application contracts; separate API and worker entry points divide interactive requests from background work.

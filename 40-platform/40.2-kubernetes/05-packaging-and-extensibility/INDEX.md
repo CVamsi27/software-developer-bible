@@ -23,11 +23,11 @@ Packaging composes the objects to submit; controllers reconcile those objects in
 
 ## File Index
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Helm](40.2.5.01-helm.md) | Charts, templates, values overrides, releases, rollback, dependency management, helmfile | 17 min |
-| 02 | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, strategic merge + JSON6902 patches, configMapGenerator hash rollouts, transformers, Helm vs Kustomize decision table, hybrid pipelines, secrets caveat | 12 min |
-| 03 | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops (desired vs observed), operator capability levels, ownerReferences/GC, controller skeletons, when to write an operator, OLM | 13 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Helm](40.2.5.01-helm.md) | Charts, templates, values overrides, releases, rollback, dependency management, helmfile | Optional | Specialized | 17 min |
+| 02 | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Base/overlays, strategic merge + JSON6902 patches, configMapGenerator hash rollouts, transformers, Helm vs Kustomize decision table, hybrid pipelines, secrets caveat | Optional | Specialized | 12 min |
+| 03 | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md) | CRD anatomy, reconcile loops (desired vs observed), operator capability levels, ownerReferences/GC, controller skeletons, when to write an operator, OLM | Optional | Specialized | 13 min |
 
 ---
 

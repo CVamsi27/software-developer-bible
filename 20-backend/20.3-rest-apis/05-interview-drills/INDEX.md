@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | 25 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | Essential | Foundational | 25 min |
 
 ---
 

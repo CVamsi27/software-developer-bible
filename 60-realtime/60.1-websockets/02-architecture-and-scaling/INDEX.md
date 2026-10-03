@@ -1,6 +1,6 @@
 # Architecture & Scaling
 
-> **Study time:** ≈ 47 min of reading (3 files, ~16 min average).
+> **Study time:** ≈ 48 min of reading (3 files, ~16 min average).
 > **3 files.** Real-time system design: pub/sub topologies, presence, state sync — then the concrete scaling patterns (sticky sessions, Redis adapter, sharding) that keep connections alive past one node.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -17,10 +17,10 @@ Transports are solved problems; scale is where real-time systems die. A single N
 
 ## The 2 files
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | 34 min |
-| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 34 min |
+| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 11 min |
 
 ---
 

@@ -1,8 +1,10 @@
-<!-- section: REST APIs | category: Reference | tags: revision -->
+<!-- section: REST APIs | category: Reference | tags: revision| general-importance: foundational| general-importance: foundational | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
 # REST APIs — Payloads Errors Integration Revision
 

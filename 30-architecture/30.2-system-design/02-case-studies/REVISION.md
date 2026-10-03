@@ -1,8 +1,10 @@
-<!-- section: System Design | category: Reference | tags: revision, retrieval-practice -->
+<!-- section: System Design | category: Reference | tags: revision, retrieval-practice| general-importance: important| general-importance: important | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
 # Case Studies — Revision
 

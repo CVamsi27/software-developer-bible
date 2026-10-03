@@ -17,9 +17,9 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 
 ## File Index
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | 11 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | Essential | Important | 11 min |
 
 ---
 

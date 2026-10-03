@@ -1,5 +1,10 @@
 # 03 — Background Jobs: Commit Intent, Claim Work and Handle Repeated Effects
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A **job queue** stores work for a worker to execute. A **transactional outbox** stores an event alongside the business change that caused it, so a crash between database commit and notification does not erase the intent.

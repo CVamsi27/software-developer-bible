@@ -26,13 +26,13 @@ Creational patterns encapsulate knowledge about which concrete classes the syste
 
 ## The 5 patterns
 
-| # | Pattern | Intent | Use when | Avoid when |
-| --: | --------- | -------- | ---------- | ------------ |
-| 1 | [Singleton](30.1.2.01-singleton.md) | One instance in a defined runtime scope | Logger, config, connection pool | Testability matters, multiple environments |
-| 2 | [Factory Method](30.1.2.02-factory-method.md) | Defer instantiation to subclass | Plugin system, multiple implementations | Only one type, simple `new` works |
-| 3 | [Builder](30.1.2.03-builder.md) | Step-by-step construction | 5+ optional fields, immutable objects | Simple objects with 2-3 fields |
-| 4 | [Abstract Factory](30.1.2.04-abstract-factory.md) | Families of related objects | Cross-platform UI, theme systems, OS-specific bundles | Few object types, no "family" concept |
-| 5 | [Prototype](30.1.2.05-prototype.md) | Clone instead of construct | Object creation is expensive, "shape then customize" | Class hierarchy is simple and flat |
+| # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
+| --: | --------- | -------- | ---------- | ------------ | --- | --- |
+| 1 | [Singleton](30.1.2.01-singleton.md) | One instance in a defined runtime scope | Logger, config, connection pool | Testability matters, multiple environments | Important | Specialized |
+| 2 | [Factory Method](30.1.2.02-factory-method.md) | Defer instantiation to subclass | Plugin system, multiple implementations | Only one type, simple `new` works | Important | Foundational |
+| 3 | [Builder](30.1.2.03-builder.md) | Step-by-step construction | 5+ optional fields, immutable objects | Simple objects with 2-3 fields | Important | Specialized |
+| 4 | [Abstract Factory](30.1.2.04-abstract-factory.md) | Families of related objects | Cross-platform UI, theme systems, OS-specific bundles | Few object types, no "family" concept | Important | Specialized |
+| 5 | [Prototype](30.1.2.05-prototype.md) | Clone instead of construct | Object creation is expensive, "shape then customize" | Class hierarchy is simple and flat | Important | Specialized |
 
 ---
 

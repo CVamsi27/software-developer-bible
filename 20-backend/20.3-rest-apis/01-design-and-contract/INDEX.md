@@ -10,13 +10,13 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [API Design Patterns](20.3.1.01-api-design-patterns.md) | REST vs GraphQL vs gRPC selection, resource naming, consistency, evolution | 15 min |
-| 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | 17 min |
-| 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | 26 min |
-| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | 8 min |
-| 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | 9 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [API Design Patterns](20.3.1.01-api-design-patterns.md) | REST vs GraphQL vs gRPC selection, resource naming, consistency, evolution | Essential | Foundational | 15 min |
+| 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational | 17 min |
+| 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | Essential | Foundational | 26 min |
+| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | Important | Important | 8 min |
+| 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | Essential | Foundational | 9 min |
 
 ---
 

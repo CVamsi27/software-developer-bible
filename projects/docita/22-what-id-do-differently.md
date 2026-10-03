@@ -1,5 +1,10 @@
 # 22 — Retrospective: Prioritize Invariants Before New Abstractions
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A technical retrospective compares intended guarantees with current evidence, then selects improvements that close the most consequential gaps. It should explain the problem, proposed change, cost and verification—not invent a failure story or promise that a tool solves it automatically.

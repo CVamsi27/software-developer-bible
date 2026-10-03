@@ -11,9 +11,9 @@
 
 ## The file
 
-| # | File | Contents | Time |
-| --: | ------ | ---------- | ------ |
-| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty, with model answers | 2-3 hrs |
+| # | File | Contents | Time | Role priority | General importance |
+| --: | ------ | ---------- | ------ | --- | --- |
+| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty, with model answers | 2-3 hrs | Essential | Foundational |
 
 ---
 

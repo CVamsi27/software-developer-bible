@@ -1,5 +1,10 @@
 # SDE Preparation — Category Revision
 
+[![Role priority](https://img.shields.io/badge/role--priority-Deferred-lightgrey)](../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../docs/topic-importance.md)
+
+
+
 Complete the learning stages in [the index](INDEX.md), then answer from memory. Check the source when your explanation omits a mechanism or boundary.
 
 ## [Core CS Fundamentals](81.02-core-cs-fundamentals.md)

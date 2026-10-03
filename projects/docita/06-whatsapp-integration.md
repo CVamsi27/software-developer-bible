@@ -1,5 +1,10 @@
 # 06 — WhatsApp Integration
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 WhatsApp integration connects clinic actions to outbound messages and connects incoming provider events to local delivery records or patient responses. A send request and a delivery receipt are separate events.

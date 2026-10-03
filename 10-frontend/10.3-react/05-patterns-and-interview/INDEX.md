@@ -11,11 +11,11 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 23 min |
-| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 26 min |
-| 03 | [Interview Questions](10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 14 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 23 min |
+| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | Important | Specialized | 26 min |
+| 03 | [Interview Questions](10.3.5.03-interview-questions.md) | 60+ curated questions with answers | Important | Specialized | 14 min |
 
 ---
 

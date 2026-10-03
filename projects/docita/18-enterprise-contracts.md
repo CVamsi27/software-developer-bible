@@ -1,5 +1,10 @@
 # 18 — Enterprise Contracts and Group Billing
 
+[![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 An enterprise contract records commercial terms for a group of member clinics. It sits above clinic subscriptions: the contract owns group terms, while each clinic still has its own entitlement and usage records.

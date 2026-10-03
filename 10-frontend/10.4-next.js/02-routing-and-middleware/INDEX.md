@@ -11,11 +11,11 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Middleware](10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | 21 min |
-| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | 23 min |
-| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | 24 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Middleware](10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | Important | Specialized | 21 min |
+| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 23 min |
+| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 24 min |
 
 ---
 

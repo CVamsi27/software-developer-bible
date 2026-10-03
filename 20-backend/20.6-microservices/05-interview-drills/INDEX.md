@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | 67 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Interview Questions](20.6.5.01-interview-questions.md) | Curated senior-level microservices Q&A | Important | Important | 67 min |
 
 ---
 

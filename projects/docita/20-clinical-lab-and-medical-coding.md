@@ -1,5 +1,10 @@
 # 20 — Lab Release and Medical Code Catalogs
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 The clinical domain combines two distinct capabilities: lab-order workflow and medical-code lookup/synchronization. Lab workflow connects results to a local release policy. Coding supplies identifiers used in clinical records and claim-readiness checks.

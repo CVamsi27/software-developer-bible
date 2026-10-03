@@ -28,9 +28,9 @@
 
 The rule book.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [WCAG Overview](50.2.01-wcag-overview.md) | POUR principles (Perceivable, Operable, Understandable, Robust), conformance levels A/AA/AAA, success criteria | 12 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [WCAG Overview](50.2.01-wcag-overview.md) | POUR principles (Perceivable, Operable, Understandable, Robust), conformance levels A/AA/AAA, success criteria | Essential | Foundational | 12 min |
 
 **POUR (memorize):**
 - **P**erceivable — users can perceive the content (alt text, captions, color contrast)
@@ -44,9 +44,9 @@ The rule book.
 
 The foundation — semantic HTML is 90% of accessibility.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 02 | [ARIA](50.2.02-aria.md) | Roles, states, properties, ARIA patterns (combobox, dialog, menu), best practices, when NOT to use | 13 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 02 | [ARIA](50.2.02-aria.md) | Roles, states, properties, ARIA patterns (combobox, dialog, menu), best practices, when NOT to use | Essential | Foundational | 13 min |
 
 **Rule of thumb:** Semantic HTML first, ARIA second. ARIA is for filling gaps, not replacing HTML.
 
@@ -54,18 +54,18 @@ The foundation — semantic HTML is 90% of accessibility.
 
 ## Interaction
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | 17 min |
-| 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | 15 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | Essential | Foundational | 17 min |
+| 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | Essential | Foundational | 15 min |
 
 ---
 
 ## Visual Design
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 04 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 04 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | Essential | Foundational | 11 min |
 
 ---
 
@@ -73,10 +73,10 @@ The foundation — semantic HTML is 90% of accessibility.
 
 Where accessibility scales (or dies): dashboards and shared components.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 06 | [Accessible Charts & Data Viz](50.2.06-accessible-charts-data-viz.md) | SVG chart a11y (`role="img"`, labels), table fallbacks, color independence, sonification, screen-reader testing of dashboards, Recharts/Highcharts gaps | 12 min |
-| 07 | [Accessibility Design Systems](50.2.07-accessibility-design-systems.md) | Radix/React Aria primitives, focus management baked in, contrast tokens, jsx-a11y + CI gates, definition-of-done governance, audit-to-component pipeline | 12 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 06 | [Accessible Charts & Data Viz](50.2.06-accessible-charts-data-viz.md) | SVG chart a11y (`role="img"`, labels), table fallbacks, color independence, sonification, screen-reader testing of dashboards, Recharts/Highcharts gaps | Optional | Specialized | 12 min |
+| 07 | [Accessibility Design Systems](50.2.07-accessibility-design-systems.md) | Radix/React Aria primitives, focus management baked in, contrast tokens, jsx-a11y + CI gates, definition-of-done governance, audit-to-component pipeline | Optional | Specialized | 12 min |
 
 **Rule of thumb:** fix a11y once in the design system — every product inherits it.
 
@@ -84,10 +84,10 @@ Where accessibility scales (or dies): dashboards and shared components.
 
 ## Testing & Interview
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | 13 min |
-| 09 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | 5 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | Essential | Foundational | 13 min |
+| 09 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 5 min |
 
 ---
 

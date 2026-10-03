@@ -10,12 +10,12 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Service Discovery](20.6.1.01-service-discovery.md) | Client vs server-side discovery, Consul, Eureka, DNS-based, registry HA, Kubernetes | 13 min |
-| 02 | [API Gateway](20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; cross-cutting concerns and BFF | 20 min |
-| 03 | [Service Mesh](20.6.1.03-service-mesh.md) | Istio, Linkerd, sidecar proxies, mTLS, retries, traffic shifting, observability without app changes | 5 min |
-| 04 | [Strangler Fig](20.6.1.04-strangler-fig.md) | Legacy migration, facade/router design, parallel run, dual-write consistency, feature-flag cutover | 23 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Service Discovery](20.6.1.01-service-discovery.md) | Client vs server-side discovery, Consul, Eureka, DNS-based, registry HA, Kubernetes | Important | Important | 13 min |
+| 02 | [API Gateway](20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; cross-cutting concerns and BFF | Important | Important | 20 min |
+| 03 | [Service Mesh](20.6.1.03-service-mesh.md) | Istio, Linkerd, sidecar proxies, mTLS, retries, traffic shifting, observability without app changes | Important | Important | 5 min |
+| 04 | [Strangler Fig](20.6.1.04-strangler-fig.md) | Legacy migration, facade/router design, parallel run, dual-write consistency, feature-flag cutover | Important | Important | 23 min |
 
 ---
 

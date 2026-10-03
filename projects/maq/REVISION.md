@@ -1,5 +1,10 @@
 # MAQ — Category Revision
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 Read [the experience reconstruction](01-product-engineering.md) first. Technical answers below describe mechanisms; personal examples must come from your actual work.
 
 ## Workflow Ownership

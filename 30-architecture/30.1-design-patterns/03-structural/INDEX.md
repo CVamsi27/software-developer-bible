@@ -24,16 +24,16 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 
 ## The 8 patterns
 
-| # | Pattern | Intent | Use when | Avoid when |
-| --: | --------- | -------- | ---------- | ------------ |
-| 1 | [Adapter](30.1.3.01-adapter.md) | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | You control both sides |
-| 2 | [Facade](30.1.3.02-facade.md) | Simplified front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple |
-| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Many independent dimensions → explosion |
-| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine |
-| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A |
-| 6 | [Composite](30.1.3.06-composite.md) | Tree structures, treat part-whole uniformly | File system, UI tree, org chart, AST | Flat structures, no recursion |
-| 7 | [Bridge](30.1.3.07-bridge.md) | Decouple abstraction from implementation | Multiple dimensions of variation (shape × color × renderer) | One dimension, stable axis |
-| 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure |
+| # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
+| --: | --------- | -------- | ---------- | ------------ | --- | --- |
+| 1 | [Adapter](30.1.3.01-adapter.md) | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | You control both sides | Important | Foundational |
+| 2 | [Facade](30.1.3.02-facade.md) | Simplified front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
+| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Many independent dimensions → explosion | Important | Specialized |
+| 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
+| 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
+| 6 | [Composite](30.1.3.06-composite.md) | Tree structures, treat part-whole uniformly | File system, UI tree, org chart, AST | Flat structures, no recursion | Important | Specialized |
+| 7 | [Bridge](30.1.3.07-bridge.md) | Decouple abstraction from implementation | Multiple dimensions of variation (shape × color × renderer) | One dimension, stable axis | Important | Specialized |
+| 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure | Important | Specialized |
 
 ---
 

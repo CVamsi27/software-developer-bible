@@ -11,9 +11,9 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](10.2.5.01-interview-questions.md) | 50+ curated questions with answers | 39 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Interview Questions](10.2.5.01-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 39 min |
 
 ---
 

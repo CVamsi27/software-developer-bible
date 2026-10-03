@@ -1,8 +1,10 @@
-<!-- section: Coding Patterns | category: Reference | tags: revision, practice -->
+<!-- section: Coding Patterns | category: Reference | tags: revision, practice| general-importance: important| general-importance: specialized | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Coding%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
 # Math & Number Theory — Section Revision
 

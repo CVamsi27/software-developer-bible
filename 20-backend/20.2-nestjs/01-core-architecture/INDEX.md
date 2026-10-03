@@ -10,12 +10,12 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Modules](20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | 21 min |
-| 02 | [Controllers](20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | 26 min |
-| 03 | [Providers](20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | 22 min |
-| 04 | [Dependency Injection](20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | 23 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Modules](20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | Essential | Important | 21 min |
+| 02 | [Controllers](20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | Essential | Important | 26 min |
+| 03 | [Providers](20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | Essential | Important | 22 min |
+| 04 | [Dependency Injection](20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | Essential | Important | 23 min |
 
 ---
 

@@ -1,5 +1,10 @@
 # 08 — Invoices: Preserve the Calculation and Reconcile Actual Collections
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 An invoice records a charge and the facts used to calculate it. A payment records collected money. Tax snapshots retain calculation context; a daybook groups collection records for reconciliation. These are connected responsibilities with different state and time boundaries.

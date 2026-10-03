@@ -1,5 +1,10 @@
 # 14 — Analytics: Define the Metric, Calendar and Snapshot Before Aggregating
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Analytics turns business records into metrics for a specified scope and period. A dashboard is a frequently read presentation of selected metrics; a persisted snapshot stores a computed result for later comparison.

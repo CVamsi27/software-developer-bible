@@ -1,6 +1,6 @@
 # Animation — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (9 files, ~7 min average).
+> **Study time:** ≈ 1 h 6 m of reading (9 files, ~7 min average).
 > **9 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, Canvas/SVG rendering, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -8,6 +8,8 @@
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 Animation should explain a change: a panel opened, a list reordered, a task is progressing. Start with the browser cost of that change, then choose the control and lifecycle you need.
+
+This stack is **Optional for the current full-stack preparation**. Skip library-specific depth while prioritizing core implementation and system design; keep reduced-motion and accessibility requirements when working with existing motion. See [topic priorities](../../docs/topic-importance.md).
 
 ## Pass 1 — connect visual changes to browser work
 
@@ -17,11 +19,11 @@ Explain why an eligible transform animation can avoid repeated layout/paint, and
 
 ## Pass 2 — choose how the interaction is controlled
 
-| Interaction | Chapter | Mechanism to understand |
-| ----------------------------------------------- | ----------------------------------------- | -------------------------------------------------------------- |
-| React entry, exit, gestures or reordered layout | [Framer Motion](10.6.02-framer-motion.md) | Target interpolation, presence retention and layout projection |
-| Deliberate sequences with overlapping tracks | [GSAP](10.6.03-gsap.md) | Timeline ownership and cleanup |
-| Interruptible spring values | [React Spring](10.6.04-react-spring.md) | A changing target and a continuing physical state |
+| Interaction | Chapter | Mechanism to understand | Role priority | General importance |
+| ----------------------------------------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------- | ------------------ |
+| React entry, exit, gestures or reordered layout | [Framer Motion](10.6.02-framer-motion.md) | Target interpolation, presence retention and layout projection | Optional | Specialized |
+| Deliberate sequences with overlapping tracks | [GSAP](10.6.03-gsap.md) | Timeline ownership and cleanup | Optional | Specialized |
+| Interruptible spring values | [React Spring](10.6.04-react-spring.md) | A changing target and a continuing physical state | Optional | Specialized |
 
 These tools overlap. Build one small interaction and explain why its needed control justifies the tool; a simple hover can remain a CSS transition.
 

@@ -51,10 +51,10 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 ## The File
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | 19 min |
-| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | 7 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | Important | Important | 19 min |
+| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | Important | Important | 7 min |
 
 ---
 

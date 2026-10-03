@@ -14,12 +14,12 @@ Many questions about a design pattern examine: "How does this pattern help you f
 
 **Read order:** OOP → SOLID → Other principles → UML.
 
-| Order | File | Time | What it unlocks |
-| ----: | ------------------------------------------------------ | -----: | --------------------------------------------------------------- |
-| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries |
-| 2 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review |
-| 3 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships |
-| 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard |
+| Order | File | Time | What it unlocks | Role priority | General importance |
+| ----: | ------------------------------------------------------ | -----: | --------------------------------------------------------------- | ------------- | ------------------ |
+| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries | Important | Foundational |
+| 2 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review | Important | Foundational |
+| 3 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships | Important | Specialized |
+| 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard | Important | Specialized |
 
 **Total: ~1.5 hours** to read all 4 once. After that, treat them as a reference.
 

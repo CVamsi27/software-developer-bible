@@ -1,5 +1,10 @@
 # 13 — Inventory: Commit the Stock Change and Its Movement Together
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Inventory maintains a current stock quantity and a history explaining how it changed. In Docita, the item holds the live balance while movement records identify receipts, consumption, expiry, waste and other adjustments.

@@ -1,5 +1,10 @@
 # 12 — Inpatient Admissions and Bed Allocation
 
+[![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. The resource invariant is that one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.

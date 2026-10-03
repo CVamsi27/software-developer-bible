@@ -17,9 +17,9 @@ Every pattern in this stack is a contract, and interviews test whether you can s
 
 ## File Index
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Infra & Ops Patterns Interview Questions](30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers in order, blue-green vs canary, flag debt, erasure pipeline design, on-call levers, scenario drills | 7 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Infra & Ops Patterns Interview Questions](30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers in order, blue-green vs canary, flag debt, erasure pipeline design, on-call levers, scenario drills | Important | Specialized | 7 min |
 
 ---
 

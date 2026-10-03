@@ -1,8 +1,10 @@
-<!-- section: HTML/CSS | category: Reference | tags: revision, retrieval-practice -->
+<!-- section: HTML/CSS | category: Reference | tags: revision, retrieval-practice| general-importance: important| general-importance: foundational | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-HTML/CSS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
 # Html Css — Revision
 

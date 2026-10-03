@@ -1,5 +1,10 @@
 # 15 — Doctor Verification, Availability and Public Requests
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Doctor verification records the outcome of a credential check. Availability generation turns weekly schedules into candidate slots. Public booking accepts a patient request in a clinic context. These capabilities cooperate, but none proves the others are complete.

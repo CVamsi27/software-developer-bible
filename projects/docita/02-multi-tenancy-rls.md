@@ -1,5 +1,10 @@
 # 02 — Tenant Isolation: Carry Identity to the Database Operation
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 A request for a patient record must establish both the caller’s identity and permission to access that record. A valid login for one clinic cannot authorize another clinic’s data.
 
 This case study describes source inspected on 2 October 2026. Repository configuration and tests are evidence of implementation; they do not prove the deployed connection role, current production traffic, or absence of incidents.

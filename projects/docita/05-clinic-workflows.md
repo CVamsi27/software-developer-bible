@@ -1,5 +1,10 @@
 # 05 — Clinic Workflows: Keep Appointment, Queue and Follow-Up State Consistent
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A clinic workflow coordinates a booked time, a patient's arrival, a consultation and any follow-up or payment work. These are related records with different lifecycles; one status field cannot represent all of them.

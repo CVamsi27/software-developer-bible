@@ -15,9 +15,9 @@ Trace Euclid’s invariant before using divisibility formulas. Then connect modu
 
 ## Files
 
-| # | File | When to use | Read time |
-| --: | ------ | ------------------- | ----------: |
-| 01 | [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md) | Primality, GCD, modular exponentiation, counting/probability in competitive problems | 9 min |
+| # | File | When to use | Role priority | General importance | Read time |
+| --: | ------ | ------------------- | --- | --- | ----------: |
+| 01 | [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md) | Primality, GCD, modular exponentiation, counting/probability in competitive problems | Optional | Specialized | 9 min |
 
 ---
 

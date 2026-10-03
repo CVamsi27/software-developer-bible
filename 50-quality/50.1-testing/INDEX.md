@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 4 h 54 m of reading (19 files, ~15 min average).
+> **Study time:** ≈ 4 h 55 m of reading (19 files, ~16 min average).
 > **19 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -26,21 +26,21 @@
 
 ## Foundations
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | 28 min |
-| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | 13 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 28 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 13 min |
 
 ---
 
 ## Frameworks
 
-| # | File | Topics | When to use | Read time |
-| --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | 9 min |
-| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | 9 min |
-| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | 11 min |
-| 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | 5 min |
+| # | File | Topics | When to use | Role priority | General importance | Read time |
+| --: | ------ | -------- | ------------- | --- | --- | ----------: |
+| 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | Essential | Foundational | 9 min |
+| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | Essential | Foundational | 9 min |
+| 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 11 min |
+| 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | Essential | Foundational | 5 min |
 
 ---
 
@@ -60,37 +60,37 @@ The test pyramid in practice.
 
 Aim for **lots of unit tests, some integration, few E2E.**
 
-| # | File | Topics | When to use | Read time |
-| --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | 49 min |
-| 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | 10 min |
-| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | 11 min |
+| # | File | Topics | When to use | Role priority | General importance | Read time |
+| --: | ------ | -------- | ------------- | --- | --- | ----------: |
+| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | Essential | Foundational | 49 min |
+| 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | Essential | Foundational | 10 min |
+| 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | Essential | Foundational | 11 min |
 
 ---
 
 ## Mocking & Patterns
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | 10 min |
-| 02 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 48 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | Essential | Foundational | 10 min |
+| 02 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 48 min |
 
 ---
 
 ## Advanced
 
-| # | File | Topics | When to use | Read time |
-| --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 18 min |
-| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 17 min |
+| # | File | Topics | When to use | Role priority | General importance | Read time |
+| --: | ------ | -------- | ------------- | --- | --- | ----------: |
+| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 18 min |
+| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 17 min |
 
 ---
 
 ## Interview Prep
 
-| # | File | Contents | Time |
-| --: | ------ | ---------- | ------ |
-| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty | 2-3 hrs |
+| # | File | Contents | Time | Role priority | General importance |
+| --: | ------ | ---------- | ------ | --- | --- |
+| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty | 2-3 hrs | Essential | Foundational |
 
 ---
 

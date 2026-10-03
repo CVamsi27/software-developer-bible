@@ -1,6 +1,6 @@
 # Performance Monitoring — Index
 
-> **Study time:** ≈ 1 h 49 m of reading (12 files, ~9 min average).
+> **Study time:** ≈ 1 h 50 m of reading (12 files, ~9 min average).
 > **12 files across 4 categories.** Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, HTTP/2 & HTTP/3 protocol effects, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
@@ -26,9 +26,9 @@
 
 The 3 Core Web Vitals — every senior frontend interview starts here.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Core Web Vitals](01-core-metrics/50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | 14 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Core Web Vitals](01-core-metrics/50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 14 min |
 
 **The 3 metrics (memorize thresholds):**
 - **LCP** (Largest Contentful Paint) — should be **≤ 2.5s**
@@ -41,30 +41,30 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 Lab vs field: APIs, profilers, and Lighthouse are synthetic; RUM is truth from production.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Performance APIs](02-measurement/50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, observers (PerformanceObserver) | 8 min |
-| 02 | [Profiling Tools](02-measurement/50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | 19 min |
-| 03 | [Lighthouse CI](02-measurement/50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | 9 min |
-| 04 | [Real User Monitoring](02-measurement/50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | 13 min |
-| 05 | [HTTP/2 & HTTP/3 Performance Effects](02-measurement/50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, protocol-segmented RUM | 12 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Performance APIs](02-measurement/50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, observers (PerformanceObserver) | Important | Important | 8 min |
+| 02 | [Profiling Tools](02-measurement/50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 19 min |
+| 03 | [Lighthouse CI](02-measurement/50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | Important | Important | 9 min |
+| 04 | [Real User Monitoring](02-measurement/50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | Important | Important | 13 min |
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](02-measurement/50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, protocol-segmented RUM | Important | Important | 12 min |
 
 ---
 
 ## Optimization & Governance
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | 10 min |
-| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | 12 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 10 min |
+| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | Important | Important | 12 min |
 
 ---
 
 ## Interview Prep
 
-| # | File | Contents | Time |
-| --: | ------ | ---------- | ------ |
-| 01 | [Interview Questions](04-interview-prep/50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs |
+| # | File | Contents | Time | Role priority | General importance |
+| --: | ------ | ---------- | ------ | --- | --- |
+| 01 | [Interview Questions](04-interview-prep/50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs | Important | Important |
 
 ---
 

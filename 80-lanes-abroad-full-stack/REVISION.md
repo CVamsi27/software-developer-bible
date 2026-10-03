@@ -1,9 +1,14 @@
-<!-- section: Abroad Full-Stack Lane | category: Revision | tags: revision, recall, decisions -->
+<!-- section: Abroad Full-Stack Lane | category: Revision | tags: revision, recall, decisions| general-importance: important| general-importance: important | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
 [![Category](https://img.shields.io/badge/category-Revision-green)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20recall%20%C2%B7%20decisions-lightgrey)](#)
 
 # Abroad Full-Stack — Section Revision
+
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../docs/topic-importance.md)
+
+
 
 Attempt each answer before checking it. Explain the mechanism and an example; a remembered phrase alone is not the goal. Return to the linked guide for a missed boundary. The [mock bank](80.11-mock-interview-bank.md) provides longer interview rehearsals.
 

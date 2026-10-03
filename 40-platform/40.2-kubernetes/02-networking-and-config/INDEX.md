@@ -23,11 +23,11 @@ A Pod can be reached directly when routing allows, but its address is not a dura
 
 ## File Index
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | 8 min |
-| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | 17 min |
-| 03 | [PodPresets](40.2.2.03-podpresets.md) | Removed API history; supported templates, Helm/Kustomize and admission alternatives | 5 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | Optional | Specialized | 8 min |
+| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | Optional | Specialized | 17 min |
+| 03 | [PodPresets](40.2.2.03-podpresets.md) | Removed API history; supported templates, Helm/Kustomize and admission alternatives | Optional | Specialized | 5 min |
 
 ---
 

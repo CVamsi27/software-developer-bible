@@ -1,8 +1,10 @@
-<!-- section: Git Advanced | category: Reference | tags: revision, practice -->
+<!-- section: Git Advanced | category: Reference | tags: revision, practice| general-importance: foundational| general-importance: foundational | role-priority: important | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
 # Git Advanced — Section Revision
 

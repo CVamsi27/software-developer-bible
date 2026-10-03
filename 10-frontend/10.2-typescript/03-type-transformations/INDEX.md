@@ -1,6 +1,6 @@
 # Type Transformations — TypeScript
 
-> **Study time:** ≈ 1 h 14 m of reading (5 files, ~15 min average).
+> **Study time:** ≈ 1 h 15 m of reading (5 files, ~15 min average).
 > **5 files.** The composable operations that make TS powerful: built-in utility types, conditional types, mapped types, and template literal types.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -11,12 +11,12 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | 17 min |
-| 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | 11 min |
-| 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | 16 min |
-| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | 27 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | 18 min | 17 min |
+| 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | 11 min | 11 min |
+| 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | 16 min | 16 min |
+| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | 27 min | 27 min |
 
 ---
 

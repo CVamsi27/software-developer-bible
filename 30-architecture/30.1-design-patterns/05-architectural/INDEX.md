@@ -23,16 +23,16 @@ These show up heavily in:
 
 ## The 8 patterns
 
-| # | Pattern | Intent | Use when | Avoid when |
-| --: | --------- | -------- | ---------- | ------------ |
-| 1 | [Repository](30.1.5.01-repository.md) | Data access abstraction | DDD, testability, multi-DB support | Simple CRUD with one model |
-| 2 | [CQRS & DI](30.1.5.02-cqrs-di.md) | Read/write separation + explicit dependencies | Complex domains, asymmetric read/write load | Simple CRUD, low scale |
-| 3 | [Event Sourcing](30.1.5.03-event-sourcing.md) | Store events, derive state | Audit-required domains, temporal queries, debugging | State is ephemeral, no audit needed |
-| 4 | [Saga](30.1.5.04-saga.md) | Distributed transactions | Multi-service business flows | Single DB transaction works |
-| 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) | Entities, value objects, aggregate boundaries | Complex domains with invariants to enforce | CRUD apps without business rules |
-| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | You own both sides of the boundary |
-| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved | Understanding hidden deps, choosing a wiring strategy | Fixed dependencies versus runtime-selected capabilities |
-| 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) | Separating UI state, logic, and rendering | Frontend architecture discussions and refactors | Trivial static UIs |
+| # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
+| --: | --------- | -------- | ---------- | ------------ | --- | --- |
+| 1 | [Repository](30.1.5.01-repository.md) | Data access abstraction | DDD, testability, multi-DB support | Simple CRUD with one model | Important | Foundational |
+| 2 | [CQRS & DI](30.1.5.02-cqrs-di.md) | Read/write separation + explicit dependencies | Complex domains, asymmetric read/write load | Simple CRUD, low scale | Important | Specialized |
+| 3 | [Event Sourcing](30.1.5.03-event-sourcing.md) | Store events, derive state | Audit-required domains, temporal queries, debugging | State is ephemeral, no audit needed | Important | Specialized |
+| 4 | [Saga](30.1.5.04-saga.md) | Distributed transactions | Multi-service business flows | Single DB transaction works | Important | Specialized |
+| 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) | Entities, value objects, aggregate boundaries | Complex domains with invariants to enforce | CRUD apps without business rules | Important | Specialized |
+| 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | You own both sides of the boundary | Important | Specialized |
+| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved | Understanding hidden deps, choosing a wiring strategy | Fixed dependencies versus runtime-selected capabilities | Important | Foundational |
+| 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) | Separating UI state, logic, and rendering | Frontend architecture discussions and refactors | Trivial static UIs | Important | Specialized |
 
 ---
 

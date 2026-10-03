@@ -1,6 +1,6 @@
 # Operations & Scaling - Database
 
-> **Study time:** ≈ 1 h 32 m of reading (7 files, ~13 min average).
+> **Study time:** ≈ 1 h 33 m of reading (7 files, ~13 min average).
 > **7 files.** Keeping the database healthy at scale: connection pooling, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale — plus the interview question bank.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -10,14 +10,14 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Connection Pooling](20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | 17 min |
-| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime, blue-green DB | 11 min |
-| 03 | [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | 20 min |
-| 04 | [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, `recovery_target_time` PITR, pgBackRest/WAL-G, RPO/RTO targets, restore drills, retention, cross-region copies | 11 min |
-| 05 | [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox index sync, BM25 relevance tuning, multilingual analysis | 10 min |
-| 06 | [Interview Questions](20.4.5.06-interview-questions.md) | 50+ curated questions with answers | 21 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Connection Pooling](20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | Important | 17 min |
+| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime, blue-green DB | Important | Important | 11 min |
+| 03 | [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 20 min |
+| 04 | [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, `recovery_target_time` PITR, pgBackRest/WAL-G, RPO/RTO targets, restore drills, retention, cross-region copies | Important | Important | 11 min |
+| 05 | [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox index sync, BM25 relevance tuning, multilingual analysis | Essential | Foundational | 10 min |
+| 06 | [Interview Questions](20.4.5.06-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 21 min |
 
 ---
 

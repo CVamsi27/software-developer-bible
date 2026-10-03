@@ -17,10 +17,10 @@ Isolation without structure produces brittle suites; structure without isolation
 
 ## The 2 files
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | 10 min |
-| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | 48 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | Essential | Foundational | 10 min |
+| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 48 min |
 
 ---
 

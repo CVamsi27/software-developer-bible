@@ -1,5 +1,10 @@
 # 10 — Deployment: Keep Versions, Schema and Background Work Compatible
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Deployment changes running application versions and their configuration. In Docita, the API and worker run as separate Fly applications, while the React SPA and API proxy use Cloudflare Workers with static assets.

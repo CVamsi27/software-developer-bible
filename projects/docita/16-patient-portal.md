@@ -1,5 +1,10 @@
 # 16 — Patient Portal Identity and Access
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 The patient portal gives an authenticated patient access to selected records and a medication-dose reporting surface. Its security boundary is the mapping from authenticated user to patient and clinic, followed by ownership checks for each requested resource.

@@ -11,12 +11,12 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Generics](10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | 15 min |
-| 02 | [Infer](10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | 13 min |
-| 03 | [Advanced Generics](10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | 19 min |
-| 04 | [Type Variance](10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | 13 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Generics](10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 15 min |
+| 02 | [Infer](10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 13 min |
+| 03 | [Advanced Generics](10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 19 min |
+| 04 | [Type Variance](10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 13 min |
 
 ---
 

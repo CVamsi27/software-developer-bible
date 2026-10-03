@@ -25,15 +25,15 @@ The 7 content files classify into 4 conceptual categories + drills — a route t
 
 ## Study Order
 
-| # | File | You can defend… |
-| --- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | RAG vs fine-tuning vs prompting; embeddings; streaming; function calling |
-| 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | Prompt structure, context-window budgeting, how to prove quality (evals) |
-| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | Why pure vector fails; hybrid BM25+vector fusion (RRF); rerankers; HNSW/IVF; chunking; recall@k/MRR harness; pgvector hybrid example |
-| 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | ReAct plan-act-observe loops; state machines vs graph orchestration; tool-calling (parallel/chained); step/token budgets + circuit breakers; supervisor/debate/handoff topologies; memory tiers; trajectory evals |
-| 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | Decision matrix (cost/latency/residency/control); vLLM PagedAttention + continuous batching; quantization ladder; VRAM math; TTFT/TPOT; provider routing/fallback; EU-GDPR hybrid pattern |
-| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story |
-| 7 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps |
+| # | File | You can defend… | Role priority | General importance |
+| --- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | RAG vs fine-tuning vs prompting; embeddings; streaming; function calling | Important | Specialized |
+| 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | Prompt structure, context-window budgeting, how to prove quality (evals) | Important | Specialized |
+| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | Why pure vector fails; hybrid BM25+vector fusion (RRF); rerankers; HNSW/IVF; chunking; recall@k/MRR harness; pgvector hybrid example | Important | Specialized |
+| 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | ReAct plan-act-observe loops; state machines vs graph orchestration; tool-calling (parallel/chained); step/token budgets + circuit breakers; supervisor/debate/handoff topologies; memory tiers; trajectory evals | Important | Specialized |
+| 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | Decision matrix (cost/latency/residency/control); vLLM PagedAttention + continuous batching; quantization ladder; VRAM math; TTFT/TPOT; provider routing/fallback; EU-GDPR hybrid pattern | Important | Specialized |
+| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story | Important | Specialized |
+| 7 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps | Important | Specialized |
 
 ## Choose Your First Pass
 

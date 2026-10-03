@@ -10,14 +10,14 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | 11 min |
-| 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | 10 min |
-| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | 22 min |
-| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | 27 min |
-| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | 20 min |
-| 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | 19 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | Important | Important | 11 min |
+| 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | Important | Important | 10 min |
+| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | Important | Important | 22 min |
+| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | Important | Important | 27 min |
+| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | Important | Important | 20 min |
+| 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | Essential | Important | 19 min |
 
 ---
 

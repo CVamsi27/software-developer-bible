@@ -1,5 +1,10 @@
 # 11 — Insurance Claim State, Concurrency and History
 
+[![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 An insurance claim is the application's record of a reimbursement or cashless request, its referenced patient/invoice, amounts, status and supporting documents. Local submission state does not by itself mean an insurer has received or accepted it.

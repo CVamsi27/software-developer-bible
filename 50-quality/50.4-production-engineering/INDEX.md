@@ -13,12 +13,12 @@
 
 ## Topic Categories
 
-| Category | File | Why it matters |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview |
-| [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems |
-| [Proactive Resilience](#proactive-resilience) | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Exercise your redundancy before it is tested for real |
-| [Launch Gates & Humans](#launch-gates--humans) | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md), [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Prevent incidents at launch; keep responders healthy |
+| Category | File | Why it matters | Role priority | General importance |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------- | ------------------ |
+| [Reliability Targets](#reliability-targets) | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | The SRE framework — every staff interview | Important | Important |
+| [Incident Response](#incident-response) | [Incident Response](50.4.01-incident-response.md) | When things break — severity, triage, postmortems | Important | Important |
+| [Proactive Resilience](#proactive-resilience) | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Exercise your redundancy before it is tested for real | Important | Important |
+| [Launch Gates & Humans](#launch-gates--humans) | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md), [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Prevent incidents at launch; keep responders healthy | Important | Important |
 
 ---
 
@@ -26,9 +26,9 @@
 
 The SRE framework.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 02 | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | 8 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 02 | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | Important | Important | 8 min |
 
 **Quick recall:**
 - **SLI** = the metric (e.g., request success rate)
@@ -41,9 +41,9 @@ The SRE framework.
 
 When things break (and they will).
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | Important | Important | 11 min |
 
 **Severity (typical):**
 - **SEV1** — full outage, customers affected, all-hands
@@ -55,9 +55,9 @@ When things break (and they will).
 
 ## Proactive Resilience
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 03 | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Game-day runbook, production injection policy + guardrails, automated chaos in CI/CD, failover drills, resilience metrics (experiment design lives in [50.1.5.02](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md)) | 9 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 03 | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Game-day runbook, production injection policy + guardrails, automated chaos in CI/CD, failover drills, resilience metrics (experiment design lives in [50.1.5.02](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md)) | Important | Important | 9 min |
 
 **Principles:**
 1. Build a hypothesis around steady-state behavior
@@ -72,11 +72,11 @@ When things break (and they will).
 
 Prevention before the incident; sustainability after it.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 04 | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant | 10 min |
-| 05 | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | 11 min |
-| 06 | [Interview Questions](50.4.06-interview-questions.md) | 6 senior Q&A: incident command, postmortem discipline, SLO governance, chaos experiment design, PRR gates, on-call health | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 04 | [Production Readiness Reviews](50.4.04-production-readiness-reviews.md) | PRR as go/no-go launch gate, checklist domains (capacity, alerts, runbooks, rollback, load tests, security), evidence-based review, risk tiers, lightweight variant | Important | Important | 10 min |
+| 05 | [On-Call Without Burnout](50.4.05-on-call-without-burnout.md) | Primary/secondary rotations, follow-the-sun, paging philosophy (page only actionable), alert-fatigue governance, handoff rituals, comp-time policies, on-call health metrics | Important | Important | 11 min |
+| 06 | [Interview Questions](50.4.06-interview-questions.md) | 6 senior Q&A: incident command, postmortem discipline, SLO governance, chaos experiment design, PRR gates, on-call health | Important | Important | 11 min |
 
 **The two rules:**
 - **PRR**: evidence over assertion — a gate that never defers anything is decoration.

@@ -13,14 +13,14 @@
 
 ## Topic Categories
 
-| Category | File | Why it matters |
-| ---------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Language | [Java Language Fundamentals](20.13.01-java-language-fundamentals.md) | Types, control flow, strings, arrays, collections, streams, generics — the core tour |
-| OOP & Design | [OOP Principles, Interfaces & SOLID](20.13.02-java-oop-solid.md) | Encapsulation, inheritance, polymorphism, composition, SOLID |
-| Concurrency | [Concurrency & Multithreading](20.13.03-java-concurrency-multithreading.md) | Threads, synchronization, CompletableFuture, parallel streams, starvation |
-| Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 5, Mockito, test data builders, API/integration testing |
-| Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | DI, starters, MVC, Spring Data JPA, security filter chain, actuator |
-| Interview | [Java Interview Questions](20.13.06-interview-questions.md) | Thirty prompts across language, design, concurrency, testing and Spring |
+| Category | File | Why it matters | Role priority | General importance |
+| ---------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------- | ------------------ |
+| Language | [Java Language Fundamentals](20.13.01-java-language-fundamentals.md) | Types, control flow, strings, arrays, collections, streams, generics — the core tour | Deferred | Important |
+| OOP & Design | [OOP Principles, Interfaces & SOLID](20.13.02-java-oop-solid.md) | Encapsulation, inheritance, polymorphism, composition, SOLID | Deferred | Important |
+| Concurrency | [Concurrency & Multithreading](20.13.03-java-concurrency-multithreading.md) | Threads, synchronization, CompletableFuture, parallel streams, starvation | Deferred | Important |
+| Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 5, Mockito, test data builders, API/integration testing | Deferred | Important |
+| Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | DI, starters, MVC, Spring Data JPA, security filter chain, actuator | Deferred | Important |
+| Interview | [Java Interview Questions](20.13.06-interview-questions.md) | Thirty prompts across language, design, concurrency, testing and Spring | Deferred | Important |
 
 ---
 

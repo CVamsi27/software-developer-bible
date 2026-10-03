@@ -24,12 +24,12 @@ The 4 content files classify into 3 conceptual categories + drills.
 
 ## Study Order
 
-| # | File | You can defend… |
-| - | ---- | --------------- |
-| 1 | [Message Brokers](20.9.01-message-brokers.md) | Why decoupling in time is worth a cluster; Kafka vs RabbitMQ models; at-least-once + idempotency as the default contract; when *not* to add a broker |
-| 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; consumer groups and rebalance storms; lag as the SLI; compaction and replay-as-restart |
-| 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publish; consumer idempotency patterns |
-| 4 | [Interview Questions](20.9.04-interview-questions.md) | 25 Q&A with follow-up traps |
+| # | File | You can defend… | Role priority | General importance |
+| - | ---- | --------------- | --- | --- |
+| 1 | [Message Brokers](20.9.01-message-brokers.md) | Why decoupling in time is worth a cluster; Kafka vs RabbitMQ models; at-least-once + idempotency as the default contract; when *not* to add a broker | Important | Specialized |
+| 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; consumer groups and rebalance storms; lag as the SLI; compaction and replay-as-restart | Important | Specialized |
+| 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publish; consumer idempotency patterns | Important | Specialized |
+| 4 | [Interview Questions](20.9.04-interview-questions.md) | 25 Q&A with follow-up traps | Important | Specialized |
 
 ## The Decision Map (memorize)
 
@@ -59,15 +59,15 @@ After the three chapters, use [Revision](REVISION.md) to explain acknowledgment,
 
 Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
 
-| Topic | Docita evidence |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - evaluate PostgreSQL queue tradeoffs from measured workload; no verified jobs/sec result is implied |
-| Transactional enqueue | Ordinary PostgresQueueService.enqueue creates a job in its own operation; atomic business/job intent requires an explicitly shared transaction or an outbox at the actual call site |
-| Idempotent enqueue | name/key lookup for completed jobs within 24 hours; it does not atomically suppress concurrent or still-running submissions |
-| Bounded retries → DLQ | Default maxAttempts=5 can be overridden; delayedUntil backoff and terminal failure preserve local attempt state, not external exactly-once effects |
-| Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - concurrent claims select distinct locked rows; recovery/retry can still duplicate effects, so idempotent execution is required |
-| Stale-worker recovery | ACTIVE jobs older than ten minutes are recovered with a delay; an older worker can still finish later, so ownership fencing and effect idempotency remain separate concerns |
-| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit |
+| Topic | Docita evidence | Role priority | General importance |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
+| Broker-or-not decision | [Async processing doc](../../projects/docita/03-async-processing.md) - evaluate PostgreSQL queue tradeoffs from measured workload; no verified jobs/sec result is implied | Essential | Important |
+| Transactional enqueue | Ordinary PostgresQueueService.enqueue creates a job in its own operation; atomic business/job intent requires an explicitly shared transaction or an outbox at the actual call site | Varies | Varies |
+| Idempotent enqueue | name/key lookup for completed jobs within 24 hours; it does not atomically suppress concurrent or still-running submissions | Varies | Varies |
+| Bounded retries → DLQ | Default maxAttempts=5 can be overridden; delayedUntil backoff and terminal failure preserve local attempt state, not external exactly-once effects | Varies | Varies |
+| Exactly-one claiming | `FOR UPDATE SKIP LOCKED` polling - concurrent claims select distinct locked rows; recovery/retry can still duplicate effects, so idempotent execution is required | Varies | Varies |
+| Stale-worker recovery | ACTIVE jobs older than ten minutes are recovered with a delay; an older worker can still finish later, so ownership fencing and effect idempotency remain separate concerns | Varies | Varies |
+| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit | Varies | Varies |
 
 Docita ships **zero Kafka/RabbitMQ - deliberately.** The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery/replay and consumer contracts; replacing a publish target alone is not enough.
 

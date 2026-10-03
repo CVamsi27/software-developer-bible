@@ -27,10 +27,10 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 ## The Files
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | 7 min |
-| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | 7 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | Optional | Specialized | 7 min |
+| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | Optional | Specialized | 7 min |
 
 ---
 

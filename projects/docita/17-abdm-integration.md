@@ -1,5 +1,10 @@
 # 17 — ABDM Ledger, Callback Trust and Data Exchange
 
+[![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 The ABDM integration connects local patient identity and care-context records to external health-information workflows. Its current source includes local care contexts, consent requests, callback recording, a gateway client and an operational inbox. That is not evidence of a complete certified interoperability flow.

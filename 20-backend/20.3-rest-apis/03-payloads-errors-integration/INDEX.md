@@ -10,15 +10,15 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | 29 min |
-| 02 | [Error Handling Design](20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors | 11 min |
-| 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation, NestJS sketch | 14 min |
-| 04 | [File Upload APIs](20.3.3.04-file-upload-apis.md) | Multipart streaming, presigned S3 direct uploads, resumable (`Content-Range`, tus), virus-scan gates, metadata sidecars, MIME sniffing + size caps | 15 min |
-| 05 | [Webhooks](20.3.3.05-webhooks.md) | At-least-once delivery, HMAC signature verification, replay protection, retry with backoff, ordering + idempotency keys, DLQ | 22 min |
-| 06 | [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.md) | JSON limits (64-bit precision, dates, undefined), protobuf field-number contracts, MessagePack/CBOR/Avro, schema evolution, body limits before parsing, compressed-size comparison | 11 min |
-| 07 | [Transactional Email & Notification Delivery](20.3.3.07-transactional-email-and-notifications.md) | Outbox → queue → worker pipeline, idempotency keys from business events, SPF/DKIM/DMARC, bounce + complaint webhooks, suppression lists, deliverability metrics | 13 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | Essential | Foundational | 29 min |
+| 02 | [Error Handling Design](20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors | Essential | Foundational | 11 min |
+| 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation, NestJS sketch | Essential | Foundational | 14 min |
+| 04 | [File Upload APIs](20.3.3.04-file-upload-apis.md) | Multipart streaming, presigned S3 direct uploads, resumable (`Content-Range`, tus), virus-scan gates, metadata sidecars, MIME sniffing + size caps | Essential | Foundational | 15 min |
+| 05 | [Webhooks](20.3.3.05-webhooks.md) | At-least-once delivery, HMAC signature verification, replay protection, retry with backoff, ordering + idempotency keys, DLQ | Important | Important | 22 min |
+| 06 | [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.md) | JSON limits (64-bit precision, dates, undefined), protobuf field-number contracts, MessagePack/CBOR/Avro, schema evolution, body limits before parsing, compressed-size comparison | Essential | Foundational | 11 min |
+| 07 | [Transactional Email & Notification Delivery](20.3.3.07-transactional-email-and-notifications.md) | Outbox → queue → worker pipeline, idempotency keys from business events, SPF/DKIM/DMARC, bounce + complaint webhooks, suppression lists, deliverability metrics | Essential | Foundational | 13 min |
 
 ---
 

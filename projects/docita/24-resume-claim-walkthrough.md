@@ -1,5 +1,10 @@
 # 24 — Explain the Product Work Behind Each Docita Resume Bullet
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A resume walkthrough connects a concise application claim to a product problem, implementation path, personal contribution and observed boundary. It is preparation for a technical discussion, not a script that supplies missing experience.

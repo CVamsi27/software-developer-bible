@@ -1,5 +1,10 @@
 # 07 — Prescription Validation and PDF Generation
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 Prescription validation applies application rules before saving a medication order. PDF generation then presents a persisted prescription as a document. These are separate responsibilities: a readable PDF does not establish that the clinical decision was correct.

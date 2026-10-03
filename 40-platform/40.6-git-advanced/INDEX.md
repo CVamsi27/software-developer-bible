@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 54 m of reading (11 files, ~10 min average).
+> **Study time:** ≈ 1 h 55 m of reading (11 files, ~10 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -29,9 +29,9 @@
 
 Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
-| # | File | Topics | When to read | Read time |
-| --: | ------ | -------- | -------------- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | 14 min |
+| # | File | Topics | When to read | Role priority | General importance | Read time |
+| --: | ------ | -------- | -------------- | --- | --- | ----------: |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | Important | Foundational | 14 min |
 
 ---
 
@@ -39,10 +39,10 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 How your team organizes work.
 
-| # | File | Topics | When to use | Read time |
-| --: | ------ | -------- | ------------- | ----------: |
-| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | 7 min |
-| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | 8 min |
+| # | File | Topics | When to use | Role priority | General importance | Read time |
+| --: | ------ | -------- | ------------- | --- | --- | ----------: |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | Important | Foundational | 7 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | Important | Foundational | 8 min |
 
 **Decision:**
 
@@ -58,9 +58,9 @@ What branching model?
 
 ## Automation
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | Important | Foundational | 11 min |
 
 ---
 
@@ -68,18 +68,18 @@ What branching model?
 
 The power tools.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | 12 min |
-| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, `git filter-branch`/`filter-repo` | Important | Foundational | 12 min |
+| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | Important | Foundational | 11 min |
 
 ---
 
 ## Investigation
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | 12 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | Important | Foundational | 12 min |
 
 ---
 
@@ -87,18 +87,18 @@ The power tools.
 
 Keeping large repositories fast and history trustworthy.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | 12 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | 11 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | Important | Foundational | 12 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 11 min |
 
 ---
 
 ## Interview Prep
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | 14 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 50+ curated questions with answers | Important | Foundational | 14 min |
 
 ---
 

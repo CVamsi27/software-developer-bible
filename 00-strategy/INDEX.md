@@ -12,12 +12,12 @@ This section turns work evidence into clear interview explanations. Start here w
 
 ## Build an evidence chain
 
-| Pass | Chapter | Concrete outcome |
-| ---- | --------------------------------------- | ---------------------------------------------------------------- |
-| 1 | [Resume](00.02-resume-tips.md) | A role-relevant claim you can substantiate and explain |
-| 2 | [Communication](00.01-communication.md) | A technical decision with a visible problem, tradeoff and result |
-| 3 | [STAR stories](00.03-star-method.md) | One incident with your own actions and credible evidence |
-| 4 | [HR preparation](00.04-hr-questions.md) | Clear motivations, constraints and offer-comparison questions |
+| Pass | Chapter | Concrete outcome | Role priority | General importance |
+| ---- | --------------------------------------- | ---------------------------------------------------------------- | ------------- | ------------------ |
+| 1 | [Resume](00.02-resume-tips.md) | A role-relevant claim you can substantiate and explain | Essential | Important |
+| 2 | [Communication](00.01-communication.md) | A technical decision with a visible problem, tradeoff and result | Essential | Important |
+| 3 | [STAR stories](00.03-star-method.md) | One incident with your own actions and credible evidence | Essential | Important |
+| 4 | [HR preparation](00.04-hr-questions.md) | Clear motivations, constraints and offer-comparison questions | Essential | Important |
 
 A resume opens an evidence trail; an interview tests that trail through questions. Practice explaining one claim before adding more material. STAR is one useful structure rather than a required format for every behavioral answer.
 

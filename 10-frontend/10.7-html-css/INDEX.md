@@ -1,6 +1,6 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 10 m of reading (10 files, ~7 min average).
+> **Study time:** ≈ 1 h 12 m of reading (10 files, ~7 min average).
 > **10 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -8,6 +8,8 @@
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 A web page starts as meaningful content, receives a layout, turns into pixels, and may retain data across reloads. Read these chapters in that causal order so each API has a job inside the whole page.
+
+For the current full-stack path, complete the HTML/CSS fundamentals first. Browser rendering/storage and working style architecture follow; PWA, SEO and deep theming are optional specialization. See [topic priorities](../../docs/topic-importance.md).
 
 ## Pass 1 — give content meaning and position
 

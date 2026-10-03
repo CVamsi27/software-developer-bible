@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a50a910882e969e0dcb22b7aa6fd73469586db5f8ba9ce27b72272e572abad8c",
+ "corpus_digest": "e262fd34086e489dc7ab95ba80c61479e6ab08aa697f8609aec73fc5b386123e",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8554
+  "read_minutes": 8601
  },
  "chapters": [
   {
@@ -156,7 +156,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.html",
@@ -384,7 +384,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 22
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.html",
@@ -394,7 +394,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.html",
@@ -529,7 +529,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.html",
@@ -590,7 +590,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.html",
@@ -1089,7 +1089,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 28
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -1109,7 +1109,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 23
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -1150,7 +1150,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 31
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.html",
@@ -1357,7 +1357,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.6-animation/10.6.08-interview-questions.html",
@@ -1451,7 +1451,7 @@
     "concept",
     "guide"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.08-browser-storage.html",
@@ -1464,7 +1464,7 @@
     "security",
     "storage"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.09-interview-questions.html",
@@ -1583,7 +1583,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.html",
@@ -1713,7 +1713,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.html",
@@ -1723,7 +1723,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.html",
@@ -1974,7 +1974,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 24
   },
   {
    "p": "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.html",
@@ -2057,7 +2057,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.html",
@@ -2239,7 +2239,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/REVISION.html",
@@ -2423,7 +2423,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
@@ -2672,7 +2672,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.html",
@@ -2782,7 +2782,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.html",
@@ -2885,7 +2885,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.html",
@@ -3190,7 +3190,7 @@
     "concept",
     "overview"
    ],
-   "m": 30
+   "m": 31
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.html",
@@ -3933,7 +3933,7 @@
     "performance",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
@@ -3996,7 +3996,7 @@
     "reliability",
     "theory"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4158,7 +4158,7 @@
     "theory",
     "tls"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/REVISION.html",
@@ -4269,7 +4269,7 @@
    "g": [
     "concept"
    ],
-   "m": 37
+   "m": 38
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.html",
@@ -4369,7 +4369,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.html",
@@ -4399,7 +4399,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html",
@@ -4439,7 +4439,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.html",
@@ -4561,7 +4561,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.html",
@@ -4595,7 +4595,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
@@ -5067,7 +5067,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "40-platform/40.2-kubernetes/03-scaling/REVISION.html",
@@ -5088,7 +5088,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.html",
@@ -5241,7 +5241,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.02-pipeline-patterns.html",
@@ -5345,7 +5345,7 @@
     "concept",
     "reference"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.html",
@@ -5460,7 +5460,7 @@
     "reference",
     "tracing"
    ],
-   "m": 23
+   "m": 24
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.html",
@@ -5486,7 +5486,7 @@
     "kernel",
     "network-observability"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/REVISION.html",
@@ -5544,7 +5544,7 @@
     "reference",
     "tool"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.html",
@@ -5687,7 +5687,7 @@
     "guide",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.html",
@@ -5870,7 +5870,7 @@
     "pattern",
     "reference"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",
@@ -6058,7 +6058,7 @@
     "data",
     "privacy"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/REVISION.html",
@@ -6496,7 +6496,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.01-incident-response.html",
@@ -6641,7 +6641,7 @@
     "guide",
     "reference"
    ],
-   "m": 34
+   "m": 35
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.html",
@@ -6756,7 +6756,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.html",
@@ -6822,7 +6822,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.html",
@@ -6998,7 +6998,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/REVISION.html",
@@ -7151,7 +7151,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",

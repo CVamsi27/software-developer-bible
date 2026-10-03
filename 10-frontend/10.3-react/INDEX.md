@@ -40,13 +40,13 @@ Read categories in numeric order — each builds on the previous:
 
 How React actually works under the hood. The mental model that distinguishes a senior engineer from someone who only knows the API.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | 15 min |
-| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | 23 min |
-| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | 22 min |
-| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | 21 min |
-| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | 24 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 15 min |
+| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 23 min |
+| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 22 min |
+| 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 21 min |
+| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 24 min |
 
 **Read order:** Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
 
@@ -56,13 +56,13 @@ How React actually works under the hood. The mental model that distinguishes a s
 
 The 5 essential hooks. Used in 95% of React code.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | 14 min |
-| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | 17 min |
-| 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | 23 min |
-| 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | 25 min |
-| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | 30 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | Essential | Foundational | 14 min |
+| 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | Essential | Foundational | 17 min |
+| 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | Important | Important | 23 min |
+| 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | Essential | Foundational | 25 min |
+| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 30 min |
 
 ---
 
@@ -70,14 +70,14 @@ The 5 essential hooks. Used in 95% of React code.
 
 The patterns that solve real problems in production code.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | 19 min |
-| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | 20 min |
-| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | 36 min |
-| 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | 16 min |
-| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | 9 min |
-| 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | 15 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 19 min |
+| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 20 min |
+| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 36 min |
+| 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
+| 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 9 min |
+| 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 15 min |
 
 ---
 
@@ -85,11 +85,11 @@ The patterns that solve real problems in production code.
 
 The newest features — what changed in concurrent React and what you need to know for interviews.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 17 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | 15 min |
-| 18 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | 10 min |
-| 19 | [React Router](04-modern-react/10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, defer + Await, protected routes, relative routing, RR vs Next.js | 17 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 17 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 15 min |
+| 18 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 10 min |
+| 19 | [React Router](04-modern-react/10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, defer + Await, protected routes, relative routing, RR vs Next.js | Essential | Foundational | 17 min |
 
 ---
 
@@ -97,11 +97,11 @@ The newest features — what changed in concurrent React and what you need to kn
 
 Reusable component patterns + 60+ interview Qs.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | 23 min |
-| 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | 26 min |
-| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | 14 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 23 min |
+| 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | Important | Specialized | 26 min |
+| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | Important | Specialized | 14 min |
 
 ---
 

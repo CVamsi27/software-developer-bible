@@ -1,5 +1,10 @@
 # 19 — Files: Authorize Uploads, Persist Object Identity and Bound Access
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A file workflow connects permission to upload, durable object storage, database ownership and permission to read. Docita uses a storage-provider abstraction, upload-session secrets and URL resolution to connect those parts.

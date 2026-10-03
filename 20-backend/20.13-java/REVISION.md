@@ -1,8 +1,10 @@
-<!-- section: Java | category: Reference | tags: revision -->
+<!-- section: Java | category: Reference | tags: revision| general-importance: important| general-importance: important | role-priority: deferred | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Java-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Deferred-lightgrey)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
 # Java — Revision
 

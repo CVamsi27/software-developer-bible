@@ -1,5 +1,10 @@
 # 21 — Smaller Domains: Automation, Trust and Reversible State
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 The long tail covers reminders, custom fields, inbound/outbound webhooks, lab login, staff leave, product feedback and user lifecycle. Read each through its boundary: what is authorized, what changes, what can race, and what proves completion.

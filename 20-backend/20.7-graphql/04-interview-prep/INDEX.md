@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [GraphQL Interview Questions](20.7.4.01-interview-questions.md) | Schema design, queries/mutations/subscriptions, resolvers & DataLoader, Apollo plugins/cache, N+1, security limits, federation | 48 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [GraphQL Interview Questions](20.7.4.01-interview-questions.md) | Schema design, queries/mutations/subscriptions, resolvers & DataLoader, Apollo plugins/cache, N+1, security limits, federation | Optional | Specialized | 48 min |
 
 ---
 

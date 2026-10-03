@@ -10,10 +10,10 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | 10 min |
-| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 50+ curated questions with answers | 38 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 10 min |
+| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 50+ curated questions with answers | Essential | Important | 38 min |
 
 ---
 

@@ -10,9 +10,9 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Interview Questions](20.5.4.01-interview-questions.md) | 50+ curated security Q&A with answers | 71 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Interview Questions](20.5.4.01-interview-questions.md) | 50+ curated security Q&A with answers | Essential | Foundational | 71 min |
 
 ---
 

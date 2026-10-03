@@ -1,6 +1,6 @@
 # Bundlers
 
-> **Study time:** ≈ 30 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 31 min of reading (5 files, ~6 min average).
 > **5 files.** The four bundlers that matter: Webpack (the incumbent), Vite (the default for new projects), and the Rust challengers Turbopack and Rspack.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -27,12 +27,12 @@ New project?
 
 ## File Index
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | 9 min |
-| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | 5 min |
-| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | 4 min |
-| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | 10 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Important | Specialized | 9 min |
+| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | Important | Specialized | 5 min |
+| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Important | Specialized | 4 min |
+| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | Important | Specialized | 10 min |
 
 ---
 

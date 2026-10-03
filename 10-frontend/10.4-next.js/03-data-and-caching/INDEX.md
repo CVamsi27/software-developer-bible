@@ -1,6 +1,6 @@
 # Data & Caching — Next.js
 
-> **Study time:** ≈ 2 h 12 m of reading (7 files, ~19 min average).
+> **Study time:** ≈ 2 h 14 m of reading (7 files, ~19 min average).
 > **7 files.** The hardest part of App Router: data fetching patterns, Server Actions, the four caches, streaming SSR, ISR, and static exports.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -11,14 +11,14 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [Data Fetching Patterns](10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | 12 min |
-| 02 | [Server Actions](10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | 27 min |
-| 03 | [Caching](10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | 27 min |
-| 04 | [Streaming](10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | 22 min |
-| 05 | [Incremental Static Regeneration](10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | 23 min |
-| 06 | [Static Exports](10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | 17 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [Data Fetching Patterns](10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | Important | Important | 12 min |
+| 02 | [Server Actions](10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | Important | Important | 27 min |
+| 03 | [Caching](10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | Important | Important | 27 min |
+| 04 | [Streaming](10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 22 min |
+| 05 | [Incremental Static Regeneration](10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | Important | Specialized | 23 min |
+| 06 | [Static Exports](10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | Important | Specialized | 17 min |
 
 ---
 

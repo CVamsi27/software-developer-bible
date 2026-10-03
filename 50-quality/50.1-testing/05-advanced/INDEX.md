@@ -17,10 +17,10 @@ The pyramid answers "does it work for one user?" Staff/SRE interviews ask "does 
 
 ## The 2 files
 
-| # | File | Topics | When to use | Read time |
-| --: | ------ | -------- | ------------- | ----------: |
-| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | 18 min |
-| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | 17 min |
+| # | File | Topics | When to use | Role priority | General importance | Read time |
+| --: | ------ | -------- | ------------- | --- | --- | ----------: |
+| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 18 min |
+| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 17 min |
 
 ---
 

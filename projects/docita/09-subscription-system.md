@@ -1,5 +1,10 @@
 # 09 — Subscription System
 
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A subscription connects a clinic's paid plan and billing period to the features and usage allowances it can access. Payment state, feature entitlement and recorded consumption are related, but each answers a different question.

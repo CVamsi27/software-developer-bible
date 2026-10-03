@@ -1,8 +1,10 @@
-<!-- section: Message Brokers | category: Reference | tags: revision -->
+<!-- section: Message Brokers | category: Reference | tags: revision| general-importance: specialized| general-importance: specialized | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Message%20Brokers-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
 # Message Brokers — Revision
 

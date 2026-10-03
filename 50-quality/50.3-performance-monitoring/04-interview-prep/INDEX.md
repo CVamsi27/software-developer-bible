@@ -1,6 +1,6 @@
 # Performance Interview Prep
 
-> **Study time:** ≈ 6 min of reading (1 files, ~6 min average).
+> **Study time:** ≈ 7 min of reading (1 files, ~7 min average).
 > **1 file.** The curated question bank for web performance rounds — Core Web Vitals mechanics, debugging walkthroughs, lab-vs-field judgment, and budget design.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -11,9 +11,9 @@
 
 ## The file
 
-| # | File | Contents | Time |
-| --: | ------ | ---------- | ------ |
-| 01 | [Interview Questions](50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs |
+| # | File | Contents | Time | Role priority | General importance |
+| --: | ------ | ---------- | ------ | --- | --- |
+| 01 | [Interview Questions](50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs | Important | Important |
 
 ---
 

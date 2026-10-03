@@ -11,12 +11,12 @@
 
 ## Files
 
-| Order | File | Topics | Read time |
-| --   : | ------ | -------- | ----------: |
-| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | 23 min |
-| 02 | [App Router](10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | 21 min |
-| 03 | [Server Components](10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | 20 min |
-| 04 | [Client Components](10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | 30 min |
+| Order | File | Topics | Role priority | General importance | Read time |
+| --   : | ------ | -------- | --- | --- | ----------: |
+| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | Important | Specialized | 23 min |
+| 02 | [App Router](10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | Important | Important | 21 min |
+| 03 | [Server Components](10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | Important | Important | 20 min |
+| 04 | [Client Components](10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | Important | Specialized | 30 min |
 
 ---
 

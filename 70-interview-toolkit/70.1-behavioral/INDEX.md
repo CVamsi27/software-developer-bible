@@ -1,6 +1,6 @@
 # Behavioral — Index
 
-> **Study time:** ≈ 45 min of reading (6 files, ~8 min average).
+> **Study time:** ≈ 46 min of reading (6 files, ~8 min average).
 > **Interview-depth behavioral prep.** The universal basics (STAR framework, HR questions, resume) live in [00-strategy](../../00-strategy/INDEX.md); this folder holds the deeper material you use once the basics are internalized.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -19,13 +19,13 @@
 
 ## Topic Categories
 
-| Category | File | When to use |
-| --------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Stakeholder Management](#stakeholder-management-stories) | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Product partnership rounds — scope pushback, deadline negotiation, trade-off communication |
-| [Leadership](#leadership) | [Leadership Questions](70.1.02-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" |
-| [Judgment & Ambiguity](#judgment-calls--ambiguity) | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Decision-making probes — incomplete data, disagree-and-commit, escalation |
-| [System Design Behavioral](#system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" |
-| [Self-Audit](#behavioral-anti-patterns-checklist) | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Practice phase — find and fix your delivery defects before the loop |
+| Category | File | When to use | Role priority | General importance |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------- | ------------------ |
+| [Stakeholder Management](#stakeholder-management-stories) | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Product partnership rounds — scope pushback, deadline negotiation, trade-off communication | Essential | Important |
+| [Leadership](#leadership) | [Leadership Questions](70.1.02-leadership-questions.md) | Senior roles — "tell me about a time you led without authority" | Essential | Important |
+| [Judgment & Ambiguity](#judgment-calls--ambiguity) | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Decision-making probes — incomplete data, disagree-and-commit, escalation | Essential | Important |
+| [System Design Behavioral](#system-design-behavioral) | [System Design Behavioral](70.1.04-system-design-behavioral.md) | System design rounds — "walk me through a design decision you made" | Essential | Important |
+| [Self-Audit](#behavioral-anti-patterns-checklist) | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Practice phase — find and fix your delivery defects before the loop | Essential | Important |
 
 ---
 
@@ -33,9 +33,9 @@
 
 STAR stories for product partnership: pushing back on scope with evidence, negotiating deadlines with PMs, resolving design conflicts with data, influencing without authority.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, decision ownership and results | 9 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 1 | [Stakeholder Management Stories](70.1.01-stakeholder-management-stories.md) | Scope pushback with evidence, deadline negotiation via options, design-conflict data tests, influence without authority, translating trade-offs to business language, decision ownership and results | Essential | Important | 9 min |
 
 ---
 
@@ -43,9 +43,9 @@ STAR stories for product partnership: pushing back on scope with evidence, negot
 
 Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | 8 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 1 | [Leadership Questions](70.1.02-leadership-questions.md) | Leading without authority, mentoring, conflict resolution, delegation, prioritization, handling failure | Essential | Important | 8 min |
 
 ---
 
@@ -53,9 +53,9 @@ Senior-signal questions about leading, mentoring, conflict, and decision-making.
 
 Deciding under incomplete data: what remains unknown, what is costly to undo, and who should own the decision. The “70%” idea is a heuristic, not a measured confidence requirement.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, essential evidence before acting, reversal triggers, disagree-and-commit stories, escalation judgment, explanation checks | 14 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 1 | [Judgment Calls & Ambiguity](70.1.03-judgment-calls-ambiguity.md) | Reversible vs irreversible decisions, one-way-door examples, essential evidence before acting, reversal triggers, disagree-and-commit stories, escalation judgment, explanation checks | Essential | Important | 14 min |
 
 ---
 
@@ -63,9 +63,9 @@ Deciding under incomplete data: what remains unknown, what is costly to undo, an
 
 How to talk about your past design decisions in interviews.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | 8 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 2 | [System Design Behavioral](70.1.04-system-design-behavioral.md) | Framing architecture stories with trade-offs, the "show your work" pattern, how to discuss past designs | Essential | Important | 8 min |
 
 **The framework:**
 1. **Context** — what was the system, who used it, what was the constraint?
@@ -79,9 +79,9 @@ How to talk about your past design decisions in interviews.
 
 Self-audit instrument: locate where a recorded answer loses its context, ownership, or evidence, then repair that passage before trying a mock.
 
-| # | File | Topics | Read time |
-| --: | ------ | -------- | ----------: |
-| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Excessive setup, unclear ownership, unsupported results, prompt mismatch, honest recovery, recording + listener feedback | 4 min |
+| # | File | Topics | Role priority | General importance | Read time |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 3 | [Behavioral Anti-Patterns Checklist](70.1.05-behavioral-anti-patterns-checklist.md) | Excessive setup, unclear ownership, unsupported results, prompt mismatch, honest recovery, recording + listener feedback | Essential | Important | 4 min |
 
 ---
 

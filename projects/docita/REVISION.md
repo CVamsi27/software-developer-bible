@@ -1,5 +1,10 @@
 # Docita Case Studies — Category Revision
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 Read the relevant case study first. Distinguish inspected source, executable checks and deployment evidence in each answer.
 
 ## [Tenant Isolation](02-multi-tenancy-rls.md)

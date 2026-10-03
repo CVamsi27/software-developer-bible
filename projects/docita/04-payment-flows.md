@@ -1,5 +1,10 @@
 # 04 — Payments: Keep Merchant Identity and Local State Consistent
 
+[![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
+[![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
+
+
+
 ## Definition
 
 A payment integration connects a merchant account, provider-side payment state and local business records. Docita distinguishes clinic-owned payment configuration, patient-to-clinic collection and clinic-to-Docita SaaS billing.

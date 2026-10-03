@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 5 h 36 m of reading (24 files, ~14 min average).
+> **Study time:** ≈ 5 h 39 m of reading (24 files, ~14 min average).
 > **24 files** — The conceptual foundation you need BEFORE doing any case study. Every system design interview question touches at least 3-4 of these.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
@@ -30,36 +30,36 @@ The 21 files classify into 6 conceptual categories — the "GoF classification" 
 
 These 14 are the building blocks. Read in this order — each builds on the previous.
 
-| # | File | Concepts | Why it matters |
-| --- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| 1 | [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md) | Consistency, Availability, Partition tolerance, CP vs AP trade-offs, PACELC extension | The single most important distributed systems concept. Pick CP or AP for every operation. |
-| 2 | [Data Consistency Models](30.2.1.02-consistency-models.md) | Linearizability, eventual, causal, read-your-writes, monotonic reads | Pick per operation, not per system. Most real systems are a mix. |
-| 3 | [Sharding & Replication](30.2.1.03-sharding-and-replication.md) | Hash/range/directory sharding, single-leader/multi-leader/leaderless replication | How to actually scale a database. Both are needed. |
-| 4 | [Load Balancing](30.2.1.04-load-balancing.md) | L4 vs L7, round-robin/least-connections/consistent-hashing/IP-hash, health checks | Traffic distribution. Pick the wrong algorithm and one server melts. |
-| 5 | [Caching Patterns](30.2.1.05-caching-patterns.md) | Cache-aside, read-through, write-through, write-behind, refresh-ahead, write-around + LRU/LFU/TTL eviction | The #1 lever for performance. Know all 6 patterns. |
-| 6 | [Queues & Async](30.2.1.06-queues-and-async.md) | Point-to-point vs pub/sub, at-least-once vs exactly-once, idempotency, DLQ, ordering | Async is the backbone of scalable systems. Know delivery guarantees. |
-| 7 | [Distributed Transactions](30.2.1.07-distributed-transactions.md) | 2PC, 3PC, Saga (choreography + orchestration) | Atomicity across services. Saga is the production answer. |
-| 8 | [Rate Limiting](30.2.1.08-rate-limiting.md) | Fixed/sliding window, token bucket, leaky bucket, Redis-based distributed | Protect from abuse. Token bucket is the default. |
-| 9 | [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md) | Paxos, Raft, Zab, leader election, split brain, distributed locks | How databases agree on who's leader. Raft is the default. |
-| 10 | [Failure Modes](30.2.1.10-failure-modes.md) | Hardware, software, network, human failures, retries, circuit breakers, bulkheads | Everything fails. Plan for it. |
-| 11 | [Architecture Patterns](30.2.1.11-architecture-patterns.md) | Monolith, modular monolith, microservices, event-driven, hexagonal, clean, microkernel | Pick the right architecture for the team and domain. |
-| 12 | [Capacity Planning](30.2.1.12-capacity-planning.md) | QPS, storage, bandwidth, memory, Little's Law | Estimate first, design second. Numbers, not vibes. |
-| 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. |
-| 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. |
+| # | File | Concepts | Why it matters | Role priority | General importance |
+| --- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| 1 | [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md) | Consistency, Availability, Partition tolerance, CP vs AP trade-offs, PACELC extension | The single most important distributed systems concept. Pick CP or AP for every operation. | Essential | Foundational |
+| 2 | [Data Consistency Models](30.2.1.02-consistency-models.md) | Linearizability, eventual, causal, read-your-writes, monotonic reads | Pick per operation, not per system. Most real systems are a mix. | Essential | Foundational |
+| 3 | [Sharding & Replication](30.2.1.03-sharding-and-replication.md) | Hash/range/directory sharding, single-leader/multi-leader/leaderless replication | How to actually scale a database. Both are needed. | Essential | Foundational |
+| 4 | [Load Balancing](30.2.1.04-load-balancing.md) | L4 vs L7, round-robin/least-connections/consistent-hashing/IP-hash, health checks | Traffic distribution. Pick the wrong algorithm and one server melts. | Essential | Foundational |
+| 5 | [Caching Patterns](30.2.1.05-caching-patterns.md) | Cache-aside, read-through, write-through, write-behind, refresh-ahead, write-around + LRU/LFU/TTL eviction | The #1 lever for performance. Know all 6 patterns. | Essential | Foundational |
+| 6 | [Queues & Async](30.2.1.06-queues-and-async.md) | Point-to-point vs pub/sub, at-least-once vs exactly-once, idempotency, DLQ, ordering | Async is the backbone of scalable systems. Know delivery guarantees. | Essential | Foundational |
+| 7 | [Distributed Transactions](30.2.1.07-distributed-transactions.md) | 2PC, 3PC, Saga (choreography + orchestration) | Atomicity across services. Saga is the production answer. | Essential | Foundational |
+| 8 | [Rate Limiting](30.2.1.08-rate-limiting.md) | Fixed/sliding window, token bucket, leaky bucket, Redis-based distributed | Protect from abuse. Token bucket is the default. | Essential | Foundational |
+| 9 | [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md) | Paxos, Raft, Zab, leader election, split brain, distributed locks | How databases agree on who's leader. Raft is the default. | Essential | Foundational |
+| 10 | [Failure Modes](30.2.1.10-failure-modes.md) | Hardware, software, network, human failures, retries, circuit breakers, bulkheads | Everything fails. Plan for it. | Essential | Foundational |
+| 11 | [Architecture Patterns](30.2.1.11-architecture-patterns.md) | Monolith, modular monolith, microservices, event-driven, hexagonal, clean, microkernel | Pick the right architecture for the team and domain. | Essential | Foundational |
+| 12 | [Capacity Planning](30.2.1.12-capacity-planning.md) | QPS, storage, bandwidth, memory, Little's Law | Estimate first, design second. Numbers, not vibes. | Essential | Foundational |
+| 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, dropping, load shedding, circuit breakers | When consumer is slower than producer. Without it, OOM. | Essential | Foundational |
+| 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis Redlock, ZooKeeper, etcd, Postgres advisory, fencing tokens | Mutual exclusion across machines. Know the fencing problem. | Essential | Foundational |
 
 ## Meta guides & network deep-dive (read after the 14)
 
-| # | File | What it covers |
-| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 15 | [How to Approach](30.2.1.15-how-to-approach.md) | 4-phase framework: clarify → estimate → high-level → deep-dive. The structure to use in every interview. |
-| 16 | [Interview Questions](30.2.1.16-interview-questions.md) | 50+ curated system design questions with answers, organized by difficulty. |
-| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch, Cuckoo filter, Merkle tree — fixed-memory, bounded-error answers to "seen?", "how many unique?", "how often?" |
-| 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication |
-| 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit |
-| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO |
-| 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale |
-| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as load balancer (and why failover is minutes), anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps |
-| 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Handshake vs record layer, hybrid crypto (ECDHE + AEAD), certificates and the chain of trust, DV/OV/EV, forward secrecy, resumption and 0-RTT replay risk, revocation/HSTS, termination points and mTLS, ACME automation |
+| # | File | What it covers | Role priority | General importance |
+| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| 15 | [How to Approach](30.2.1.15-how-to-approach.md) | 4-phase framework: clarify → estimate → high-level → deep-dive. The structure to use in every interview. | Essential | Foundational |
+| 16 | [Interview Questions](30.2.1.16-interview-questions.md) | 50+ curated system design questions with answers, organized by difficulty. | Essential | Foundational |
+| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch, Cuckoo filter, Merkle tree — fixed-memory, bounded-error answers to "seen?", "how many unique?", "how often?" | Essential | Foundational |
+| 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication | Essential | Foundational |
+| 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit | Essential | Foundational |
+| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO | Essential | Foundational |
+| 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale | Essential | Foundational |
+| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as load balancer (and why failover is minutes), anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps | Essential | Foundational |
+| 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Handshake vs record layer, hybrid crypto (ECDHE + AEAD), certificates and the chain of trust, DV/OV/EV, forward secrecy, resumption and 0-RTT replay risk, revocation/HSTS, termination points and mTLS, ACME automation | Essential | Foundational |
 
 ---
 

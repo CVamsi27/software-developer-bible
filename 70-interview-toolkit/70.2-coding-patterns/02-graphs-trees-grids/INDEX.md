@@ -15,14 +15,14 @@ Begin with frontier order in DFS/BFS. Add weights with shortest paths, then sepa
 
 ## The 6 patterns
 
-| # | File | When to recognize | Read time |
-| --: | ------ | ------------------- | ----------: |
-| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | 16 min |
-| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | 14 min |
-| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | 15 min |
-| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | 13 min |
-| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | 15 min |
-| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | 13 min |
+| # | File | When to recognize | Role priority | General importance | Read time |
+| --: | ------ | ------------------- | --- | --- | ----------: |
+| 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | Essential | Important | 16 min |
+| 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | Optional | Specialized | 14 min |
+| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | Optional | Specialized | 15 min |
+| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | Essential | Important | 13 min |
+| 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | Essential | Important | 15 min |
+| 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | Essential | Important | 13 min |
 
 ---
 

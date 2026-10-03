@@ -12,9 +12,21 @@ The current resume contains seven Docita bullets. The cases below map to their o
 
 A system crosses different trust and failure boundaries at the UI, API, database, worker and provider. One successful demonstration does not prove every boundary. A convincing explanation follows an operation through those boundaries, describes why a decision was necessary and identifies where the implementation remains limited.
 
-## Bullet 1: Follow the Product Across the Monorepo
+## Bullet 1: Connect Five Workflows to One Clinic Visit
 
-**Resume scope:** end-to-end healthcare workflows in a TypeScript monorepo.
+**Resume scope:** end-to-end ownership across five named healthcare workflows in a TypeScript monorepo. Five is a grouping of product responsibilities, not a customer count, release count or adoption metric.
+
+Use this map to explain what the product does before drawing its architecture:
+
+| Workflow | User action | State that must be correct | Case to study |
+| --------------- | --------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------ |
+| Scheduling | Receptionist books or changes a visit | Clinic, clinician, time and appointment status | [Clinic workflows](05-clinic-workflows.md) |
+| Patient records | Clinician opens the relevant patient's record | Patient identity, clinic access and sensitive fields | [Tenant isolation](02-multi-tenancy-rls.md) |
+| Prescriptions | Clinician records and reviews treatment | Patient/visit association, medication data and document revision | [Prescription safety](07-prescription-safety.md) |
+| Billing | Staff records charges and settlement | Amounts, invoice lifecycle and duplicate payment effects | [Billing](08-billing-invoicing.md) |
+| Inventory | Staff records stock movement | Item, unit, quantity and authoritative stock movement | [Inventory](13-inventory.md) |
+
+Start with scheduling → record → prescription → billing. Inventory is a related stock workflow; it is not automatically a step in every visit. Explain the actual integration before claiming a prescription always decrements stock.
 
 Read [architecture](01-architecture-decisions.md), [clinic workflows](05-clinic-workflows.md), [prescriptions](07-prescription-safety.md), [billing](08-billing-invoicing.md) and [inventory](13-inventory.md). Draw the current API, worker, clinician app, internal app and landing site. Separate deployable applications from shared packages and from independently operated microservices.
 
@@ -85,6 +97,20 @@ Trace a compatible API/worker/frontend release and migration. Explain secret bou
 ## Rehearse One Complete Explanation
 
 Prepare a 90-second product overview, a five-minute operation walkthrough and a deeper discussion of one failure. Use this order: user problem → your responsibility → actual implementation → trade-off → verification → current limitation → next improvement.
+
+### A Five-Minute Appointment Walkthrough
+
+**First minute — the operation.** A receptionist selects a patient, clinician and slot. Identify the exact form and the acceptance behavior you worked on. Explain which parts you owned and which came from existing shared infrastructure.
+
+**Second minute — the request.** Trace form parsing, mutation submission and trusted clinic identity. The browser can suggest a clinic ID, but the server must derive or validate authorized scope. A pending button improves interaction; server-side correctness must survive two requests anyway.
+
+**Third minute — the write.** Locate the availability rule and persistence operation. Describe what happens if two requests inspect the same free slot. A transaction provides an atomic group of writes; preventing a scheduling collision also requires the correct lock, constraint or conditional update. Name the mechanism found in this path and any unresolved gap.
+
+**Fourth minute — the response and failure.** Trace the response contract and query invalidation. If the write succeeds but the response is lost, the UI cannot infer failure from a timeout alone. Explain the current reconciliation or duplicate-submission behavior before proposing an idempotency key. Keep a provider notification failure separate from whether the appointment itself was saved.
+
+**Fifth minute — the evidence and decision.** Show one check of a meaningful invariant, then one trade-off: strict conflict prevention versus booking flexibility, immediate notification versus durable background work, or optimistic display versus confirmed state. End with the strongest observed result you can support and one improvement with an acceptance criterion.
+
+For each story, keep a compact evidence card: **operation, your action, inspected revision, decision, check, observed result, limitation**. If a result is only a local test, say so once and then explain what the test establishes. The story should remain understandable without reciting every framework in the resume.
 
 Build three sanitized evidence cards: tenant scope, booking/resource correctness, and external-effect recovery. Add a frontend card when the role prioritizes UI work. Record actual contributions from Git history or work artifacts, including shared ownership. Keep sensitive patient data and secrets out of interview material.
 

@@ -30,6 +30,21 @@ Select an actual endpoint from your recollection. Establish what users experienc
 
 A useful investigation starts with request traces and query counts, then a query plan on a safe representative dataset. N+1 occurs when a parent list triggers additional per-row queries; batching or an appropriate join can reduce round trips but alter payload size and query cost. An index must fit predicates and ordering and incurs write/storage cost.
 
+### Follow the Cost of One List Request
+
+Consider a **practice scenario**, not a recovered MAQ incident: a recruitment page displays 50 candidate rows and each row needs its latest status. The first implementation fetches the page once, then requests status separately for each candidate. That creates `1 + 50 = 51` database calls. A batch fetch can reduce this to two calls: one for the page and one for the statuses of only those 50 candidates.
+
+The important change is the access pattern. Fifty parallel calls still create 50 queries and pressure the connection pool. Fetching every candidate's status in one huge query avoids round trips but may increase memory and unauthorized data exposure. Scope both queries to the allowed records, project only the required fields, and preserve one latest-status result per candidate.
+
+| Observation | What it suggests | What to inspect next |
+| --------------------------------------------- | --------------------------------------- | ---------------------------------------------------- |
+| Query count grows with page size | Per-row lookup or lazy relation loading | The loop and ORM relation access |
+| Two queries remain slow | Each query may scan/sort too much | Query plans, selectivity and index ordering |
+| Database time is low but request time is high | Another stage dominates | Pool wait, external calls, serialization and network |
+| Fast responses contain wrong/stale rows | Optimization changed correctness | Authorization, cardinality, ordering and cache scope |
+
+Compare equivalent responses before quoting a speedup. Record the same fields, ordering, permissions, dataset and workload, then observe request latency and errors. Fewer queries explain a mechanism; they do not independently establish a latency percentage.
+
 Offset pagination can degrade at deeper pages; cursor pagination needs stable ordering and a tie-breaker. Caching needs scope, expiry and invalidation. Authorization-sensitive results must not share keys across users or tenants incorrectly. State whether you implemented each technique or are explaining an alternative.
 
 **Practice exercise:** create a synthetic list endpoint and compare N+1 against a batched implementation with identical fixtures. Record query count, request distribution, p50/p95, failures, hardware, cache state and revisions. Use the observed benchmark result, qualified as a benchmark. Do not rename it a recovered MAQ production measurement.
@@ -41,6 +56,14 @@ The historical 30% figure lacked a confirmed statistic and original records. It 
 **Resume scope:** React/TypeScript components, loading/validation/error states, responsive behavior and accessibility.
 
 Pick one component or form you actually changed. Explain its consumers and which contract was stable: props, controlled/uncontrolled state, error presentation, keyboard behavior and semantic markup. Separate reusable behavior from business-specific rules.
+
+### Keep Reuse at the Interaction Boundary
+
+A reusable field can own its label, error association, disabled/pending presentation and focus behavior. A recruitment approval rule belongs in the workflow and server, not inside a generic text field. This keeps reuse understandable while preserving the product's rules.
+
+Trace one failed submission: the user enters a value, local parsing identifies a field error, the server may reject an otherwise valid request, and the UI keeps the entered values while explaining the failure. For a slow request, expose pending state without moving focus unexpectedly. For a successful request, update the relevant server-state query; do not blindly copy an entire cached record into independent local state.
+
+Evaluate the change by behavior: can another screen use the contract without copying validation markup, can a keyboard user reach and correct the field, and does a server error stay associated with the right action? A smaller component file alone does not answer these questions.
 
 Discuss server state versus local form state, stale results, failed submissions and unnecessary rendering. Use an actual accessibility issue if you remember one; otherwise demonstrate the principles in an exercise. Native elements, explicit labels, focus order and useful validation feedback require verification, not just an accessibility prop or library name.
 

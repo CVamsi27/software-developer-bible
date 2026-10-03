@@ -26,6 +26,14 @@ Source: [Workflow and service boundaries](01-product-engineering.md#bullet-1-exp
 
 Source: [Bottleneck investigation](01-product-engineering.md#bullet-2-show-how-you-diagnosed-an-api-bottleneck).
 
+**Q:** In the 50-row practice list, why does running all status requests in parallel not remove N+1?
+
+**A:** It changes scheduling but leaves the per-row query pattern: 51 calls still compete for connections and database work. A scoped batch or suitable join changes the access pattern. Verify result cardinality and authorization as well as query count.
+
+**Q:** If batching takes the query count from 51 to two, can I quote a corresponding endpoint speedup?
+
+**A:** No. Those counts belong to the stated practice scenario. End-to-end speed depends on query cost, pool waiting, network and other work. Measure comparable requests and errors before reporting a latency change.
+
 **Q:** How would I distinguish a slow query from a slow endpoint?
 
 **A:** Trace request stages, query counts/timings, external calls and application processing. A fast database query does not exclude serialization, connection waiting or downstream latency.
@@ -53,6 +61,10 @@ Source: [Bottleneck investigation](01-product-engineering.md#bullet-2-show-how-y
 ## React Components and User Behavior
 
 Source: [Reusable interfaces](01-product-engineering.md#bullet-3-explain-reuse-without-hiding-product-behavior).
+
+**Q:** Which rules belong in a reusable field, and which belong in the workflow?
+
+**A:** Label/error associations, focus and interaction states can be shared field behavior. Approval permissions and business transitions belong in the workflow and server. A generic field must not become the only enforcement point for a product rule.
 
 **Q:** Why separate local form state and cached server state?
 

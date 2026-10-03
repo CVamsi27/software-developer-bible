@@ -1,6 +1,6 @@
 # Node.js — Index
 
-> **Study time:** ≈ 2 h 2 m of reading (17 files, ~7 min average).
+> **Study time:** ≈ 2 h 3 m of reading (17 files, ~7 min average).
 > **17 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -49,7 +49,7 @@ The I/O primitives — every backend service uses these. Category INDEX: [I/O & 
 
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
-| 01 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 9 min |
+| 01 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | 10 min |
 | 02 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | 9 min |
 | 03 | [File System](02-io-and-data/20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | 8 min |
 | 04 | [HTTP Module](02-io-and-data/20.1.2.04-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | 9 min |

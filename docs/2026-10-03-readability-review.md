@@ -10,17 +10,17 @@ Fresh-reader review examined headings/openings across the main frontend/backend 
 
 ## What the scan means
 
-334 pages have one or more screening signals. A blank flags cell means no configured signal was detected, **not** that the page is clear or correct. A long worked example can be useful; a brief page can still introduce unexplained terms.
+333 pages have one or more screening signals. A blank flags cell means no configured signal was detected, **not** that the page is clear or correct. A long worked example can be useful; a brief page can still introduce unexplained terms.
 
 The screening measures length over 550 lines, more than 50 box-diagram lines, more than 650 prose words before the first fenced example, paragraphs over 105 words, five or more generic template headings, vague “in detail” headings, and inline revision labels. The first-example measure misses prose examples and is particularly weak for career chapters. These thresholds select candidates rather than judge teaching quality.
 
 | Signal | Pages |
 | ----------------- | ----- |
 | `dense-paragraph` | 32 |
-| `diagram-heavy` | 96 |
+| `diagram-heavy` | 95 |
 | `late-example` | 18 |
 | `long-page` | 121 |
-| `template-heavy` | 245 |
+| `template-heavy` | 244 |
 | `vague-heading` | 8 |
 
 ## Confirmed corrections in this pass
@@ -45,7 +45,7 @@ These are documentation corrections. They do not modify Docita production code o
 
 - [React reconciliation](../10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md): Rebuild around one editable-row identity trace; repeated diagrams still remain.
 - [HTTP methods](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md): Remove duplicate complete-router implementation; teach retry/idempotency once.
-- [Database joins](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md): Teach tiny input/output rows before planner algorithms; repair mismatched diagram predicate.
+- [Database joins](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md): The main-first progression and diagram are repaired in the main-branch pass; the inventory aggregate now excludes unmatched old orders and no longer subtracts sales from current stock. Advanced SQL examples remain for a later full consolidation.
 - [Nest modules](../20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md): Trace provider export/import before advanced variants and reduce repeated benefits.
 - [Broker selection](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md): Lead with retained replay versus routed work; remove competing saga/event-sourcing tutorial scope.
 - [Event-driven architecture](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md): Trace one event and consumer retry before taxonomy; delegate CQRS and event-store implementations.
@@ -53,7 +53,7 @@ These are documentation corrections. They do not modify Docita production code o
 - [SLO pair](../50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md): Separate measurement vocabulary from release policy; repeated taxonomy remains after unit corrections.
 - [Next caching](../10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md): Version/model choice is now explicit; still needs a shorter request-first progression.
 - [RHF and Zod](../10-frontend/10.5-form-handling/10.5.01-react-hook-form.md): Concrete examples repaired; repeated introductory schema/form architecture sections still need consolidation.
-- [Node streams](../20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md): Generally clear; spell out NDJSON and illustrate arbitrary chunk boundaries.
+- [Node streams](../20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md): The NDJSON acronym and split-record example are now added; this targeted clarity item is closed.
 
 ## How to close a page
 

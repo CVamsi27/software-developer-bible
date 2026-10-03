@@ -152,7 +152,7 @@ path,kind,lines,headings,code_lines,diagram_lines,prose_words,words_before_examp
 20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md,teaching/case,161,13,48,0,760,134,
 20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md,teaching/case,199,15,84,2,810,139,
 20-backend/20.1-node.js/01-runtime-and-async/REVISION.md,revision/drill,53,5,0,0,272,272,
-20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md,teaching/case,205,15,83,0,1092,110,
+20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md,teaching/case,207,15,83,0,1149,110,
 20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md,teaching/case,204,15,80,0,975,123,
 20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md,teaching/case,176,15,64,0,901,137,
 20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md,teaching/case,210,13,112,0,776,95,
@@ -238,7 +238,7 @@ path,kind,lines,headings,code_lines,diagram_lines,prose_words,words_before_examp
 20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md,teaching/case,304,21,166,19,603,337,
 20-backend/20.4-database/01-postgresql-foundations/REVISION.md,revision/drill,117,9,0,0,1039,1039,
 20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md,teaching/case,482,25,348,40,396,266,template-heavy
-20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md,teaching/case,541,28,392,61,376,250,diagram-heavy;template-heavy
+20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md,teaching/case,512,27,331,0,554,144,
 20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md,teaching/case,448,25,315,81,366,236,diagram-heavy;template-heavy
 20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md,teaching/case,488,26,323,0,268,37,
 20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md,teaching/case,473,23,320,27,265,38,

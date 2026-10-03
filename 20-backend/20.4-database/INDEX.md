@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 5 h 28 m of reading (29 files, ~11 min average).
+> **Study time:** ≈ 5 h 27 m of reading (29 files, ~11 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -59,7 +59,7 @@ Making queries fast. Category INDEX: [Querying & Optimization](02-querying-and-o
 | # | File | Topics | Read time |
 | --: | ------ | -------- | ----------: |
 | 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | 17 min |
-| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | 18 min |
+| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | 17 min |
 | 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | 15 min |
 | 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | 16 min |
 | 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns | 16 min |

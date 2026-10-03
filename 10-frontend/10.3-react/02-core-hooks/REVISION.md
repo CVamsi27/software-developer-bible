@@ -1,4 +1,4 @@
-<!-- section: React | category: Reference | tags: revision, retrieval-practice| general-importance: foundational| general-importance: foundational | role-priority: essential | general-importance: foundational -->
+<!-- section: React | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

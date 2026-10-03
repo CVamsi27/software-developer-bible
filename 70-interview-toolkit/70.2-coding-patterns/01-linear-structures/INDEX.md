@@ -1,6 +1,6 @@
 # Linear Structures
 
-> **Study time:** ≈ 1 h 29 m of reading (8 files, ~11 min average).
+> **Study time:** ≈ 1 h 28 m of reading (8 files, ~11 min average).
 > **8 files.** Array-, string-, and list-based patterns: sliding window, two pointers, binary search, linked list manipulation, intervals, greedy/prefix sums, and string search — a foundation for sequence-based problems.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)

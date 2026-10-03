@@ -1,6 +1,6 @@
 # Cheat Sheets — Index
 
-> **Study time:** ≈ 44 min of reading (8 files, ~6 min average).
+> **Study time:** ≈ 43 min of reading (8 files, ~5 min average).
 > **8 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)

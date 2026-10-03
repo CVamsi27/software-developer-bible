@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 35 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 34 m of reading (7 files, ~13 min average).
 > **7 files.** How Postgres works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. Every backend interview starts here.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)

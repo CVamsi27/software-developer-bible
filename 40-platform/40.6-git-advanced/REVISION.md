@@ -1,4 +1,4 @@
-<!-- section: Git Advanced | category: Reference | tags: revision, practice| general-importance: foundational| general-importance: foundational | role-priority: important | general-importance: foundational -->
+<!-- section: Git Advanced | category: Reference | tags: revision, practi | role-priority: important | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

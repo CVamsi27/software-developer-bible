@@ -1,4 +1,4 @@
-<!-- section: REST APIs | category: Reference | tags: revision| general-importance: foundational| general-importance: foundational | role-priority: essential | general-importance: foundational -->
+<!-- section: REST APIs | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

@@ -1,6 +1,6 @@
 # Failure & Recovery
 
-> **Study time:** ≈ 1 h 8 m of reading (7 files, ~10 min average).
+> **Study time:** ≈ 1 h 7 m of reading (7 files, ~10 min average).
 > **7 files.** Surviving transient failure without side effects, containing blast radius on purpose, and recovering state when prevention fails: the resilience pattern landscape, retry discipline, idempotency keys, feature flags with kill switches, backup strategy proven by restore drills, and the complete idempotency-retry chain. Distributed systems fail constantly; these patterns decide whether failure is an incident or a log line.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#file-index)

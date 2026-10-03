@@ -1,4 +1,4 @@
-<!-- section: Interview Strategy | category: Reference | tags: revision, retrieval-practice| general-importance: important| general-importance: important | role-priority: essential | general-importance: important -->
+<!-- section: Interview Strategy | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Interview%20Strategy-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

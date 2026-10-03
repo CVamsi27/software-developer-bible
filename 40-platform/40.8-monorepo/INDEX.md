@@ -1,6 +1,6 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 1 h 3 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 4 m of reading (7 files, ~9 min average).
 > **7 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -37,7 +37,7 @@ The two main build/cache systems for monorepos.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | Important | Specialized | 11 min |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | Important | Specialized | 12 min |
 | 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | Important | Specialized | 11 min |
 
 **Decision:**

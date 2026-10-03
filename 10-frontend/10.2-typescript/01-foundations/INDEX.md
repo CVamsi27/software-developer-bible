@@ -1,6 +1,6 @@
 # Foundations — TypeScript
 
-> **Study time:** ≈ 57 min of reading (5 files, ~11 min average).
+> **Study time:** ≈ 56 min of reading (5 files, ~11 min average).
 > **5 files.** Type aliases vs interfaces, `keyof`/`typeof`, control-flow-based narrowing, and the tsconfig compiler options that decide what actually gets checked.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)

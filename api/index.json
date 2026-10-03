@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e262fd34086e489dc7ab95ba80c61479e6ab08aa697f8609aec73fc5b386123e",
+ "corpus_digest": "880ff9779c8130c6cdf8ec75022601473c14c30e087b5771fd77902cb4ef6868",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8601
+  "read_minutes": 8585
  },
  "chapters": [
   {
@@ -19,7 +19,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 4
   },
@@ -30,7 +30,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 4
   },
@@ -41,7 +41,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 3
   },
@@ -52,7 +52,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 4
   },
@@ -62,7 +62,7 @@
    "s": "Interview Strategy",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -73,7 +73,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -83,7 +83,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -93,7 +93,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -103,7 +103,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -113,7 +113,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -123,7 +123,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -133,7 +133,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -144,7 +144,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -154,7 +154,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -164,7 +164,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -174,7 +174,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -185,7 +185,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -195,7 +195,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -205,7 +205,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -215,7 +215,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -225,7 +225,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -238,7 +238,7 @@
     "async",
     "concept",
     "concurrency",
-    "interview"
+    "intervi"
    ],
    "m": 12
   },
@@ -248,7 +248,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 6
@@ -259,7 +259,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -269,7 +269,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -279,7 +279,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -289,7 +289,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -299,7 +299,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -309,7 +309,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -319,7 +319,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -331,7 +331,7 @@
    "g": [
     "concept",
     "data-structures",
-    "interview"
+    "intervi"
    ],
    "m": 27
   },
@@ -341,7 +341,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -351,7 +351,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 9
@@ -362,7 +362,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -372,7 +372,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -382,7 +382,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -392,7 +392,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -402,7 +402,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -412,7 +412,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 6
@@ -424,7 +424,7 @@
    "c": "Core",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 13
   },
@@ -434,7 +434,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -444,7 +444,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -454,7 +454,7 @@
    "s": "JavaScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -465,7 +465,7 @@
    "c": "Core",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -475,7 +475,7 @@
    "s": "JavaScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 5
@@ -486,7 +486,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -496,7 +496,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -506,7 +506,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 18
   },
@@ -516,7 +516,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -526,10 +526,10 @@
    "s": "TypeScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
-   "m": 4
+   "m": 3
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.html",
@@ -537,7 +537,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -547,7 +547,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -557,7 +557,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -567,7 +567,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -577,7 +577,7 @@
    "s": "TypeScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -588,9 +588,9 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 18
+   "m": 17
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.html",
@@ -598,7 +598,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -608,7 +608,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -618,7 +618,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 27
   },
@@ -628,7 +628,7 @@
    "s": "TypeScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -639,7 +639,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -649,7 +649,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 24
   },
@@ -659,7 +659,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -669,7 +669,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -679,7 +679,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -689,7 +689,7 @@
    "s": "TypeScript",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -700,7 +700,7 @@
    "s": "TypeScript",
    "c": "Core",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 39
   },
@@ -710,7 +710,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -720,7 +720,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -730,7 +730,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -740,7 +740,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -750,7 +750,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 24
   },
@@ -760,7 +760,7 @@
    "s": "React",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -771,7 +771,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -781,7 +781,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -791,7 +791,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -801,7 +801,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 25
   },
@@ -811,7 +811,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -821,7 +821,7 @@
    "s": "React",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -832,7 +832,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -842,7 +842,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -852,7 +852,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 36
   },
@@ -862,7 +862,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -872,7 +872,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -882,7 +882,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -892,7 +892,7 @@
    "s": "React",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 7
@@ -903,7 +903,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -913,7 +913,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -923,7 +923,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -933,7 +933,7 @@
    "s": "React",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -944,7 +944,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -954,7 +954,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 26
   },
@@ -964,7 +964,7 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -974,7 +974,7 @@
    "s": "React",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -985,7 +985,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -995,7 +995,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -1005,7 +1005,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -1015,7 +1015,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -1025,7 +1025,7 @@
    "s": "Next.js",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -1036,7 +1036,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -1046,7 +1046,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1056,7 +1056,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 24
   },
@@ -1066,7 +1066,7 @@
    "s": "Next.js",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1077,7 +1077,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -1087,9 +1087,9 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 28
+   "m": 27
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -1097,7 +1097,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 27
   },
@@ -1107,7 +1107,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1117,7 +1117,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1127,9 +1127,9 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/REVISION.html",
@@ -1137,7 +1137,7 @@
    "s": "Next.js",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -1148,7 +1148,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 31
   },
@@ -1158,7 +1158,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1168,7 +1168,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -1178,7 +1178,7 @@
    "s": "Next.js",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1189,7 +1189,7 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 45
   },
@@ -1200,7 +1200,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 16
   },
@@ -1211,7 +1211,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -1222,7 +1222,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 13
   },
@@ -1234,7 +1234,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 10
   },
@@ -1245,7 +1245,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 7
   },
@@ -1256,7 +1256,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 9
   },
@@ -1267,7 +1267,7 @@
    "c": "Frontend",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 7
   },
@@ -1277,7 +1277,7 @@
    "s": "Form Handling",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1289,7 +1289,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -1300,7 +1300,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 6
   },
@@ -1311,7 +1311,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 11
   },
@@ -1322,7 +1322,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 5
   },
@@ -1333,7 +1333,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -1344,7 +1344,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -1355,7 +1355,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -1366,7 +1366,7 @@
    "c": "Frontend",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 6
   },
@@ -1376,7 +1376,7 @@
    "s": "Animation",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1387,7 +1387,7 @@
    "s": "HTML/CSS",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -1397,7 +1397,7 @@
    "s": "HTML/CSS",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1407,7 +1407,7 @@
    "s": "HTML/CSS",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -1417,7 +1417,7 @@
    "s": "HTML/CSS",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -1427,7 +1427,7 @@
    "s": "HTML/CSS",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 18
   },
@@ -1438,7 +1438,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 5
   },
@@ -1449,7 +1449,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 7
   },
@@ -1462,9 +1462,9 @@
     "browser",
     "concept",
     "security",
-    "storage"
+    "stora"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.09-interview-questions.html",
@@ -1473,7 +1473,7 @@
    "c": "Frontend",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 6
   },
@@ -1483,7 +1483,7 @@
    "s": "HTML/CSS",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1494,7 +1494,7 @@
    "s": "Frontend",
    "c": "Frontend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1505,7 +1505,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 11
   },
@@ -1516,7 +1516,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 11
   },
@@ -1527,7 +1527,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 8
   },
@@ -1538,7 +1538,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 8
   },
@@ -1549,7 +1549,7 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "guide"
+    "gui"
    ],
    "m": 8
   },
@@ -1560,7 +1560,7 @@
    "c": "Frontend",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 7
   },
@@ -1570,7 +1570,7 @@
    "s": "Frontend",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -1581,7 +1581,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -1591,7 +1591,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -1601,7 +1601,7 @@
    "s": "Node.js",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1611,7 +1611,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1621,7 +1621,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1631,7 +1631,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -1641,7 +1641,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1651,7 +1651,7 @@
    "s": "Node.js",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1661,7 +1661,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1671,7 +1671,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1681,7 +1681,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1691,7 +1691,7 @@
    "s": "Node.js",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1701,7 +1701,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -1711,7 +1711,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1721,7 +1721,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -1731,7 +1731,7 @@
    "s": "Node.js",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1741,7 +1741,7 @@
    "s": "Node.js",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1751,7 +1751,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1761,7 +1761,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -1771,7 +1771,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -1781,7 +1781,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1791,7 +1791,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -1801,7 +1801,7 @@
    "s": "AI Engineering",
    "c": "Backend",
    "g": [
-    "production"
+    "producti"
    ],
    "m": 9
   },
@@ -1811,7 +1811,7 @@
    "s": "AI Engineering",
    "c": "Interview",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 7
   },
@@ -1821,7 +1821,7 @@
    "s": "AI Engineering",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1831,7 +1831,7 @@
    "s": "Java",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 33
   },
@@ -1841,7 +1841,7 @@
    "s": "Java",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -1851,7 +1851,7 @@
    "s": "Java",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -1861,7 +1861,7 @@
    "s": "Java",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -1871,7 +1871,7 @@
    "s": "Java",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -1882,7 +1882,7 @@
    "c": "Backend",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 6
   },
@@ -1892,7 +1892,7 @@
    "s": "Java",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1902,7 +1902,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 21
   },
@@ -1912,7 +1912,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 26
   },
@@ -1922,7 +1922,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -1932,7 +1932,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1942,7 +1942,7 @@
    "s": "NestJS",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -1952,7 +1952,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -1962,7 +1962,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -1972,7 +1972,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 24
   },
@@ -1982,7 +1982,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -1992,7 +1992,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -2004,7 +2004,7 @@
    "g": [
     "async-local-storage",
     "concept",
-    "cross-cutting",
+    "cross-cutti",
     "request-context"
    ],
    "m": 13
@@ -2015,7 +2015,7 @@
    "s": "NestJS",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2025,7 +2025,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -2035,7 +2035,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -2045,7 +2045,7 @@
    "s": "NestJS",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2055,7 +2055,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2065,7 +2065,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2075,7 +2075,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -2085,7 +2085,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 18
   },
@@ -2095,7 +2095,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -2105,7 +2105,7 @@
    "s": "NestJS",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2115,7 +2115,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -2125,7 +2125,7 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 38
   },
@@ -2135,7 +2135,7 @@
    "s": "NestJS",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2147,7 +2147,7 @@
    "g": [
     "api-design",
     "concept",
-    "theory"
+    "theo"
    ],
    "m": 15
   },
@@ -2157,7 +2157,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -2167,7 +2167,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 26
   },
@@ -2177,7 +2177,7 @@
    "s": "REST APIs",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -2187,7 +2187,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -2197,7 +2197,7 @@
    "s": "REST APIs",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2207,7 +2207,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 29
   },
@@ -2217,7 +2217,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -2227,7 +2227,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -2237,7 +2237,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -2247,7 +2247,7 @@
    "s": "REST APIs",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2257,7 +2257,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 29
   },
@@ -2267,7 +2267,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2277,7 +2277,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -2287,7 +2287,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -2299,7 +2299,7 @@
    "g": [
     "async",
     "concept",
-    "integration",
+    "integrati",
     "webhooks"
    ],
    "m": 22
@@ -2312,7 +2312,7 @@
    "g": [
     "concept",
     "json",
-    "performance",
+    "performan",
     "protobuf",
     "serialization"
    ],
@@ -2324,7 +2324,7 @@
    "s": "REST APIs",
    "c": "API",
    "g": [
-    "async",
+    "asy",
     "concept",
     "deliverability",
     "email",
@@ -2338,7 +2338,7 @@
    "s": "REST APIs",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 3
   },
@@ -2348,7 +2348,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -2358,7 +2358,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 29
   },
@@ -2371,7 +2371,7 @@
     "api-design",
     "bff",
     "concept",
-    "pattern"
+    "patte"
    ],
    "m": 19
   },
@@ -2381,7 +2381,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 31
   },
@@ -2391,7 +2391,7 @@
    "s": "REST APIs",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2401,7 +2401,7 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 25
   },
@@ -2411,7 +2411,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -2421,9 +2421,9 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 20
+   "m": 19
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
@@ -2431,7 +2431,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -2441,7 +2441,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -2451,7 +2451,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2463,7 +2463,7 @@
    "g": [
     "concept",
     "postgresql",
-    "security"
+    "securi"
    ],
    "m": 11
   },
@@ -2473,7 +2473,7 @@
    "s": "Database",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 3
   },
@@ -2483,7 +2483,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -2493,7 +2493,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -2503,7 +2503,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -2514,7 +2514,7 @@
    "c": "Data",
    "g": [
     "concept",
-    "sql"
+    "s"
    ],
    "m": 16
   },
@@ -2525,7 +2525,7 @@
    "c": "Data",
    "g": [
     "concept",
-    "nosql",
+    "nos",
     "sql"
    ],
    "m": 16
@@ -2536,7 +2536,7 @@
    "s": "Database",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2546,7 +2546,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -2556,7 +2556,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -2566,7 +2566,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -2576,7 +2576,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -2586,7 +2586,7 @@
    "s": "Database",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2596,7 +2596,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2606,7 +2606,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -2616,7 +2616,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -2626,7 +2626,7 @@
    "s": "Database",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2636,7 +2636,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -2646,7 +2646,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2657,7 +2657,7 @@
    "c": "Data",
    "g": [
     "concept",
-    "data-modeling",
+    "data-modeli",
     "gdpr",
     "soft-delete",
     "tombstone"
@@ -2670,7 +2670,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2680,7 +2680,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -2690,7 +2690,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 21
   },
@@ -2700,7 +2700,7 @@
    "s": "Database",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2710,7 +2710,7 @@
    "s": "Security/Auth",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -2720,7 +2720,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -2730,7 +2730,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -2740,7 +2740,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -2750,7 +2750,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2760,7 +2760,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -2770,7 +2770,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -2780,9 +2780,9 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 18
+   "m": 17
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.html",
@@ -2790,7 +2790,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -2803,7 +2803,7 @@
     "abac",
     "authorization",
     "concept",
-    "policies"
+    "polici"
    ],
    "m": 14
   },
@@ -2813,7 +2813,7 @@
    "s": "Security/Auth",
    "c": "Interview",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 8
   },
@@ -2823,7 +2823,7 @@
    "s": "Security",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 4
   },
@@ -2833,7 +2833,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2843,7 +2843,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -2853,7 +2853,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -2863,7 +2863,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2873,7 +2873,7 @@
    "s": "Security",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2883,7 +2883,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -2893,7 +2893,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -2903,7 +2903,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -2913,7 +2913,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -2923,9 +2923,9 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/REVISION.html",
@@ -2933,7 +2933,7 @@
    "s": "Security",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -2943,7 +2943,7 @@
    "s": "Security",
    "c": "Architecture",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 71
   },
@@ -2953,7 +2953,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -2963,7 +2963,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -2973,7 +2973,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -2983,7 +2983,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 23
   },
@@ -2993,7 +2993,7 @@
    "s": "Microservices",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3003,7 +3003,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -3013,7 +3013,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -3023,7 +3023,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 22
   },
@@ -3033,7 +3033,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 27
   },
@@ -3044,7 +3044,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "messaging"
+    "messagi"
    ],
    "m": 20
   },
@@ -3054,7 +3054,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -3064,7 +3064,7 @@
    "s": "Microservices",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3074,7 +3074,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 25
   },
@@ -3084,7 +3084,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -3094,7 +3094,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -3104,7 +3104,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 28
   },
@@ -3114,7 +3114,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -3127,7 +3127,7 @@
     "cdc",
     "concept",
     "outbox",
-    "reliability"
+    "reliabili"
    ],
    "m": 12
   },
@@ -3137,7 +3137,7 @@
    "s": "Microservices",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 3
   },
@@ -3147,7 +3147,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 24
   },
@@ -3157,7 +3157,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -3167,7 +3167,7 @@
    "s": "Microservices",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3177,7 +3177,7 @@
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 67
   },
@@ -3188,7 +3188,7 @@
    "c": "API",
    "g": [
     "concept",
-    "overview"
+    "overvi"
    ],
    "m": 31
   },
@@ -3198,7 +3198,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 45
   },
@@ -3208,7 +3208,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 44
   },
@@ -3218,7 +3218,7 @@
    "s": "GraphQL",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3228,7 +3228,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 34
   },
@@ -3239,7 +3239,7 @@
    "c": "API",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 32
   },
@@ -3249,7 +3249,7 @@
    "s": "GraphQL",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3260,7 +3260,7 @@
    "c": "API",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 38
   },
@@ -3270,7 +3270,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 32
   },
@@ -3280,7 +3280,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -3290,7 +3290,7 @@
    "s": "GraphQL",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3300,7 +3300,7 @@
    "s": "GraphQL",
    "c": "API",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 48
   },
@@ -3310,7 +3310,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -3320,7 +3320,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "caching",
+    "cachi",
     "concept"
    ],
    "m": 16
@@ -3331,7 +3331,7 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -3342,7 +3342,7 @@
    "c": "Data",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -3352,7 +3352,7 @@
    "s": "Caching",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3362,7 +3362,7 @@
    "s": "Message Brokers",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -3372,7 +3372,7 @@
    "s": "Message Brokers",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -3382,7 +3382,7 @@
    "s": "Message Brokers",
    "c": "Backend",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -3392,7 +3392,7 @@
    "s": "Message Brokers",
    "c": "Interview",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 6
   },
@@ -3402,7 +3402,7 @@
    "s": "Message Brokers",
    "c": "Reference",
    "g": [
-    "revision"
+    "revisi"
    ],
    "m": 2
   },
@@ -3415,7 +3415,7 @@
     "concept",
     "lld",
     "principles",
-    "theory"
+    "theo"
    ],
    "m": 15
   },
@@ -3428,7 +3428,7 @@
     "concept",
     "lld",
     "principles",
-    "theory"
+    "theo"
    ],
    "m": 16
   },
@@ -3441,7 +3441,7 @@
     "concept",
     "lld",
     "oop",
-    "theory"
+    "theo"
    ],
    "m": 16
   },
@@ -3453,7 +3453,7 @@
    "g": [
     "concept",
     "lld",
-    "theory",
+    "theo",
     "uml"
    ],
    "m": 15
@@ -3464,7 +3464,7 @@
    "s": "Design Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -3475,7 +3475,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -3485,7 +3485,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -3495,7 +3495,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -3506,7 +3506,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 14
   },
@@ -3517,7 +3517,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 14
   },
@@ -3527,7 +3527,7 @@
    "s": "Design Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -3538,7 +3538,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -3548,7 +3548,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -3558,7 +3558,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -3568,7 +3568,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -3578,7 +3578,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -3589,7 +3589,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 15
   },
@@ -3600,7 +3600,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 13
   },
@@ -3611,7 +3611,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 14
   },
@@ -3621,7 +3621,7 @@
    "s": "Design Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -3632,7 +3632,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -3642,7 +3642,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -3652,7 +3652,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -3662,7 +3662,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -3673,7 +3673,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3684,7 +3684,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3695,7 +3695,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3706,7 +3706,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3717,7 +3717,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3728,7 +3728,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3739,7 +3739,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 5
   },
@@ -3750,7 +3750,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "gof"
+    "g"
    ],
    "m": 4
   },
@@ -3760,7 +3760,7 @@
    "s": "Design Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -3771,7 +3771,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 4
   },
@@ -3781,7 +3781,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -3793,7 +3793,7 @@
    "g": [
     "advanced",
     "concept",
-    "ddd"
+    "d"
    ],
    "m": 5
   },
@@ -3806,7 +3806,7 @@
     "advanced",
     "concept",
     "ddd",
-    "microservices"
+    "microservic"
    ],
    "m": 4
   },
@@ -3817,7 +3817,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "ddd"
+    "d"
    ],
    "m": 5
   },
@@ -3828,7 +3828,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "ddd"
+    "d"
    ],
    "m": 5
   },
@@ -3838,8 +3838,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept",
-    "di"
+    "concept"
    ],
    "m": 4
   },
@@ -3849,7 +3848,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -3859,7 +3858,7 @@
    "s": "Design Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -3870,7 +3869,7 @@
    "s": "Design Patterns",
    "c": "Architecture",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 7
   },
@@ -3882,9 +3881,9 @@
    "g": [
     "concept",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
-   "m": 9
+   "m": 5
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
@@ -3894,7 +3893,7 @@
    "g": [
     "concept",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
    "m": 10
   },
@@ -3907,7 +3906,7 @@
     "concept",
     "distributed-systems",
     "scaling",
-    "theory"
+    "theo"
    ],
    "m": 14
   },
@@ -3919,7 +3918,7 @@
    "g": [
     "concept",
     "scaling",
-    "theory"
+    "theo"
    ],
    "m": 9
   },
@@ -3931,7 +3930,7 @@
    "g": [
     "concept",
     "performance",
-    "theory"
+    "theo"
    ],
    "m": 13
   },
@@ -3944,7 +3943,7 @@
     "async",
     "concept",
     "messaging",
-    "theory"
+    "theo"
    ],
    "m": 11
   },
@@ -3955,7 +3954,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "theory",
+    "theo",
     "transactions"
    ],
    "m": 5
@@ -3969,7 +3968,7 @@
     "concept",
     "protection",
     "scaling",
-    "theory"
+    "theo"
    ],
    "m": 10
   },
@@ -3981,7 +3980,7 @@
    "g": [
     "concept",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
    "m": 11
   },
@@ -3994,9 +3993,9 @@
     "concept",
     "distributed-systems",
     "reliability",
-    "theory"
+    "theo"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4007,7 +4006,7 @@
     "architecture",
     "concept",
     "patterns",
-    "theory"
+    "theo"
    ],
    "m": 16
   },
@@ -4019,7 +4018,7 @@
    "g": [
     "concept",
     "scaling",
-    "theory"
+    "theo"
    ],
    "m": 11
   },
@@ -4032,7 +4031,7 @@
     "async",
     "concept",
     "scaling",
-    "theory"
+    "theo"
    ],
    "m": 14
   },
@@ -4045,7 +4044,7 @@
     "concept",
     "coordination",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
    "m": 14
   },
@@ -4055,7 +4054,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "guide"
+    "gui"
    ],
    "m": 8
   },
@@ -4065,7 +4064,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 28
   },
@@ -4078,7 +4077,7 @@
     "concept",
     "data-structures",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
    "m": 28
   },
@@ -4091,7 +4090,7 @@
     "concept",
     "data-consistency",
     "distributed-systems",
-    "theory"
+    "theo"
    ],
    "m": 19
   },
@@ -4104,7 +4103,7 @@
     "concept",
     "distributed-systems",
     "resilience",
-    "theory"
+    "theo"
    ],
    "m": 23
   },
@@ -4117,7 +4116,7 @@
     "concept",
     "distributed-systems",
     "global-scale",
-    "theory"
+    "theo"
    ],
    "m": 19
   },
@@ -4129,7 +4128,7 @@
    "g": [
     "concept",
     "networking",
-    "theory"
+    "theo"
    ],
    "m": 16
   },
@@ -4142,7 +4141,7 @@
     "concept",
     "dns",
     "networking",
-    "theory"
+    "theo"
    ],
    "m": 16
   },
@@ -4155,7 +4154,7 @@
     "concept",
     "networking",
     "security",
-    "theory",
+    "theo",
     "tls"
    ],
    "m": 20
@@ -4166,7 +4165,7 @@
    "s": "System Design",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 3
@@ -4177,7 +4176,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 18
   },
@@ -4187,7 +4186,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 28
   },
@@ -4197,7 +4196,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 35
   },
@@ -4207,7 +4206,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 32
   },
@@ -4217,7 +4216,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 37
   },
@@ -4227,7 +4226,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 39
   },
@@ -4237,7 +4236,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 35
   },
@@ -4247,7 +4246,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 36
   },
@@ -4257,7 +4256,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 43
   },
@@ -4267,7 +4266,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 38
   },
@@ -4277,7 +4276,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 39
   },
@@ -4287,7 +4286,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 30
   },
@@ -4297,7 +4296,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 32
   },
@@ -4307,7 +4306,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 41
   },
@@ -4317,7 +4316,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 42
   },
@@ -4327,7 +4326,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4337,7 +4336,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4347,7 +4346,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -4357,7 +4356,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -4367,9 +4366,9 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.html",
@@ -4377,7 +4376,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -4387,7 +4386,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -4397,9 +4396,9 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html",
@@ -4407,7 +4406,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -4417,7 +4416,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -4427,7 +4426,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -4437,7 +4436,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -4447,7 +4446,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -4457,7 +4456,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -4467,7 +4466,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -4477,7 +4476,7 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -4487,7 +4486,7 @@
    "s": "System Design",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 4
@@ -4498,7 +4497,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -4508,7 +4507,7 @@
    "s": "Infra Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -4519,7 +4518,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -4529,7 +4528,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -4539,7 +4538,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 6
   },
@@ -4549,7 +4548,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -4559,9 +4558,9 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.html",
@@ -4571,7 +4570,7 @@
    "g": [
     "concept",
     "idempotency",
-    "resilience",
+    "resilien",
     "retry"
    ],
    "m": 13
@@ -4582,7 +4581,7 @@
    "s": "Architecture",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -4593,7 +4592,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -4603,7 +4602,7 @@
    "s": "Infra Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -4614,7 +4613,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -4624,7 +4623,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -4634,7 +4633,7 @@
    "s": "Architecture",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4645,7 +4644,7 @@
    "c": "Architecture",
    "g": [
     "concept",
-    "multi-tenancy",
+    "multi-tenan",
     "saas"
    ],
    "m": 6
@@ -4656,7 +4655,7 @@
    "s": "Architecture",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -4667,7 +4666,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 15
   },
@@ -4677,7 +4676,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 16
   },
@@ -4687,7 +4686,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -4697,7 +4696,7 @@
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -4707,7 +4706,7 @@
    "s": "Infra Patterns",
    "c": "Reference",
    "g": [
-    "retrieval-practice",
+    "retrieval-practi",
     "revision"
    ],
    "m": 2
@@ -4719,7 +4718,7 @@
    "c": "Architecture",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -4729,7 +4728,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4739,7 +4738,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -4749,7 +4748,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -4759,7 +4758,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4769,7 +4768,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -4779,7 +4778,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -4789,7 +4788,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -4799,7 +4798,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4809,7 +4808,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -4819,7 +4818,7 @@
    "s": "Docker",
    "c": "DevOps",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 25
   },
@@ -4829,7 +4828,7 @@
    "s": "Docker",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -4840,7 +4839,7 @@
    "s": "CDN & Edge Computing",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -4850,7 +4849,7 @@
    "s": "CDN & Edge Computing",
    "c": "DevOps",
    "g": [
-    "architecture",
+    "architectu",
     "concept",
     "reference"
    ],
@@ -4863,7 +4862,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "performance",
+    "performan",
     "reference"
    ],
    "m": 13
@@ -4875,7 +4874,7 @@
    "c": "DevOps",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -4885,7 +4884,7 @@
    "s": "CDN & Edge Computing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -4897,7 +4896,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "nginx",
     "reverse-proxy"
    ],
@@ -4910,7 +4909,7 @@
    "c": "DevOps",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -4920,7 +4919,7 @@
    "s": "Platform",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -4931,7 +4930,7 @@
    "s": "IaC",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -4942,7 +4941,7 @@
    "c": "DevOps",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -4952,7 +4951,7 @@
    "s": "IaC",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -4963,7 +4962,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -4973,7 +4972,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 25
   },
@@ -4983,7 +4982,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -4993,7 +4992,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -5003,7 +5002,7 @@
    "s": "Kubernetes",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5014,7 +5013,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -5024,7 +5023,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -5034,7 +5033,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -5044,7 +5043,7 @@
    "s": "Kubernetes",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5055,7 +5054,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 20
   },
@@ -5065,9 +5064,9 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "40-platform/40.2-kubernetes/03-scaling/REVISION.html",
@@ -5075,7 +5074,7 @@
    "s": "Kubernetes",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5086,7 +5085,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 18
   },
@@ -5096,7 +5095,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -5106,7 +5105,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 7
   },
@@ -5116,7 +5115,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -5126,7 +5125,7 @@
    "s": "Kubernetes",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5137,7 +5136,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -5147,7 +5146,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -5157,7 +5156,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 13
   },
@@ -5167,7 +5166,7 @@
    "s": "Kubernetes",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5178,7 +5177,7 @@
    "s": "Kubernetes",
    "c": "DevOps",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 20
   },
@@ -5188,7 +5187,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 12
   },
@@ -5198,7 +5197,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -5208,7 +5207,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -5218,7 +5217,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -5228,7 +5227,7 @@
    "s": "CI/CD",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5239,7 +5238,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 17
   },
@@ -5249,7 +5248,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 14
   },
@@ -5260,7 +5259,7 @@
    "c": "DevOps",
    "g": [
     "artifacts",
-    "changelog",
+    "changel",
     "concept",
     "promotion",
     "registries"
@@ -5273,7 +5272,6 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "ci",
     "concept",
     "security",
     "slsa",
@@ -5287,7 +5285,7 @@
    "s": "CI/CD",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5298,7 +5296,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 19
   },
@@ -5309,7 +5307,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "delivery-performance",
+    "delivery-performan",
     "dora",
     "metrics"
    ],
@@ -5321,7 +5319,7 @@
    "s": "CI/CD",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5332,7 +5330,7 @@
    "s": "CI/CD",
    "c": "DevOps",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 11
   },
@@ -5343,7 +5341,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 17
   },
@@ -5354,7 +5352,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 18
   },
@@ -5365,7 +5363,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 18
   },
@@ -5375,7 +5373,7 @@
    "s": "Observability",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5387,7 +5385,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 20
   },
@@ -5398,7 +5396,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 19
   },
@@ -5408,7 +5406,7 @@
    "s": "Observability",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5420,7 +5418,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 9
@@ -5432,7 +5430,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 13
@@ -5443,7 +5441,7 @@
    "s": "Observability",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5457,7 +5455,7 @@
     "concept",
     "metrics",
     "opentelemetry",
-    "reference",
+    "referen",
     "tracing"
    ],
    "m": 24
@@ -5469,7 +5467,7 @@
    "c": "Observability",
    "g": [
     "concept",
-    "performance",
+    "performan",
     "profiling",
     "pyroscope"
    ],
@@ -5484,9 +5482,9 @@
     "concept",
     "ebpf",
     "kernel",
-    "network-observability"
+    "network-observabili"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/REVISION.html",
@@ -5494,7 +5492,7 @@
    "s": "Observability",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5506,7 +5504,7 @@
    "c": "Observability",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 18
   },
@@ -5518,7 +5516,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 9
   },
@@ -5530,7 +5528,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 5
   },
@@ -5542,7 +5540,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 5
   },
@@ -5554,7 +5552,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 10
   },
@@ -5564,7 +5562,7 @@
    "s": "Build Tools",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5577,7 +5575,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 6
   },
@@ -5589,7 +5587,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 7
   },
@@ -5599,7 +5597,7 @@
    "s": "Build Tools",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5612,7 +5610,7 @@
    "g": [
     "concept",
     "guide",
-    "reference"
+    "referen"
    ],
    "m": 14
   },
@@ -5627,7 +5625,7 @@
     "fonts",
     "guide",
     "images",
-    "pipeline"
+    "pipeli"
    ],
    "m": 16
   },
@@ -5639,7 +5637,7 @@
    "g": [
     "concept",
     "guide",
-    "reference"
+    "referen"
    ],
    "m": 4
   },
@@ -5649,7 +5647,7 @@
    "s": "Build Tools",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5661,7 +5659,7 @@
    "c": "Tooling",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 16
   },
@@ -5672,7 +5670,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 14
@@ -5684,7 +5682,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 8
@@ -5696,7 +5694,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 8
   },
@@ -5708,7 +5706,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 11
   },
@@ -5719,7 +5717,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -5730,7 +5728,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 11
@@ -5742,7 +5740,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 12
@@ -5754,7 +5752,7 @@
    "c": "Tooling",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 12
@@ -5767,7 +5765,7 @@
    "g": [
     "concept",
     "reference",
-    "security"
+    "securi"
    ],
    "m": 11
   },
@@ -5778,7 +5776,7 @@
    "c": "Tooling",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 14
   },
@@ -5788,7 +5786,7 @@
    "s": "Git Advanced",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5800,7 +5798,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "overview"
+    "overvi"
    ],
    "m": 10
   },
@@ -5811,7 +5809,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 9
   },
@@ -5822,7 +5820,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -5833,7 +5831,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -5844,7 +5842,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 13
   },
@@ -5856,7 +5854,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 11
   },
@@ -5867,7 +5865,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "pattern",
+    "patte",
     "reference"
    ],
    "m": 14
@@ -5879,7 +5877,7 @@
    "c": "DevOps",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 7
   },
@@ -5890,7 +5888,7 @@
    "c": "DevOps",
    "g": [
     "concept",
-    "containers",
+    "containe",
     "deployment",
     "flyio"
    ],
@@ -5904,7 +5902,7 @@
    "g": [
     "cloudflare",
     "concept",
-    "deployment",
+    "deployme",
     "spa",
     "vite"
    ],
@@ -5916,7 +5914,7 @@
    "s": "Serverless & Edge",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -5928,7 +5926,7 @@
    "c": "Reference",
    "g": [
     "concept",
-    "overview"
+    "overvi"
    ],
    "m": 12
   },
@@ -5939,10 +5937,10 @@
    "c": "Reference",
    "g": [
     "concept",
-    "reference",
+    "referen",
     "tool"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.03-nx.html",
@@ -5951,7 +5949,7 @@
    "c": "Reference",
    "g": [
     "concept",
-    "reference",
+    "referen",
     "tool"
    ],
    "m": 11
@@ -5964,7 +5962,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 7
   },
@@ -5976,7 +5974,7 @@
    "g": [
     "concept",
     "reference",
-    "release"
+    "relea"
    ],
    "m": 13
   },
@@ -5987,7 +5985,7 @@
    "c": "Reference",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 7
   },
@@ -5997,7 +5995,7 @@
    "s": "Monorepo",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6011,7 +6009,7 @@
     "cloud-native",
     "devops",
     "methodology",
-    "reference"
+    "referen"
    ],
    "m": 19
   },
@@ -6022,7 +6020,7 @@
    "c": "Architecture",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 7
   },
@@ -6032,7 +6030,7 @@
    "s": "Platform",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6044,7 +6042,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "overview"
+    "overvi"
    ],
    "m": 28
   },
@@ -6056,7 +6054,7 @@
    "g": [
     "concept",
     "data",
-    "privacy"
+    "priva"
    ],
    "m": 14
   },
@@ -6066,7 +6064,7 @@
    "s": "Testing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6078,7 +6076,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 9
   },
@@ -6089,7 +6087,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 9
   },
@@ -6100,7 +6098,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 11
   },
@@ -6110,7 +6108,7 @@
    "s": "Testing",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 5
   },
@@ -6120,7 +6118,7 @@
    "s": "Testing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6131,7 +6129,7 @@
    "s": "Testing",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 49
   },
@@ -6141,7 +6139,7 @@
    "s": "Testing",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 10
   },
@@ -6151,7 +6149,7 @@
    "s": "Testing",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -6161,7 +6159,7 @@
    "s": "Testing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6173,7 +6171,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -6184,7 +6182,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 48
   },
@@ -6194,7 +6192,7 @@
    "s": "Testing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6206,7 +6204,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 18
   },
@@ -6218,7 +6216,7 @@
    "g": [
     "chaos-engineering",
     "concept",
-    "game-day",
+    "game-d",
     "resilience"
    ],
    "m": 17
@@ -6229,7 +6227,7 @@
    "s": "Testing",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6240,7 +6238,7 @@
    "s": "Testing",
    "c": "Quality",
    "g": [
-    "interview-questions"
+    "interview-questio"
    ],
    "m": 46
   },
@@ -6251,7 +6249,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 12
   },
@@ -6262,7 +6260,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 13
   },
@@ -6273,7 +6271,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 17
   },
@@ -6284,7 +6282,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 11
@@ -6296,7 +6294,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 15
@@ -6309,7 +6307,7 @@
    "g": [
     "charts",
     "concept",
-    "data-visualization"
+    "data-visualizati"
    ],
    "m": 12
   },
@@ -6321,7 +6319,7 @@
    "g": [
     "concept",
     "design-systems",
-    "governance"
+    "governan"
    ],
    "m": 12
   },
@@ -6333,7 +6331,7 @@
    "g": [
     "concept",
     "guide",
-    "reference"
+    "referen"
    ],
    "m": 13
   },
@@ -6344,7 +6342,7 @@
    "c": "Quality",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 5
   },
@@ -6354,7 +6352,7 @@
    "s": "Accessibility",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6366,7 +6364,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 14
   },
@@ -6376,7 +6374,7 @@
    "s": "Performance Monitoring",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6388,7 +6386,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 8
   },
@@ -6400,7 +6398,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 19
   },
@@ -6411,7 +6409,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "tool"
    ],
    "m": 9
@@ -6423,7 +6421,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 13
@@ -6435,8 +6433,8 @@
    "c": "Quality",
    "g": [
     "concept",
+    "htt",
     "http2",
-    "http3",
     "network"
    ],
    "m": 12
@@ -6447,7 +6445,7 @@
    "s": "Performance Monitoring",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6459,7 +6457,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "tool"
    ],
    "m": 10
@@ -6471,7 +6469,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "guide",
+    "gui",
     "reference"
    ],
    "m": 12
@@ -6482,7 +6480,7 @@
    "s": "Performance Monitoring",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6494,9 +6492,9 @@
    "c": "Quality",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.01-incident-response.html",
@@ -6504,7 +6502,7 @@
    "s": "Production Engineering",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 11
   },
@@ -6514,7 +6512,7 @@
    "s": "Production Engineering",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 8
   },
@@ -6524,7 +6522,7 @@
    "s": "Production Engineering",
    "c": "Quality",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -6535,7 +6533,7 @@
    "c": "Quality",
    "g": [
     "concept",
-    "launch",
+    "laun",
     "reliability"
    ],
    "m": 10
@@ -6549,7 +6547,7 @@
     "concept",
     "on-call",
     "sre",
-    "wellbeing"
+    "wellbei"
    ],
    "m": 11
   },
@@ -6560,7 +6558,7 @@
    "c": "Quality",
    "g": [
     "interview-questions",
-    "reference"
+    "referen"
    ],
    "m": 11
   },
@@ -6570,7 +6568,7 @@
    "s": "Production Engineering",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6582,7 +6580,7 @@
    "c": "Real-Time",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 30
   },
@@ -6593,7 +6591,7 @@
    "c": "Real-Time",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 35
   },
@@ -6605,7 +6603,7 @@
    "g": [
     "concept",
     "reference",
-    "tool"
+    "to"
    ],
    "m": 39
   },
@@ -6616,7 +6614,7 @@
    "c": "Real-Time",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -6626,7 +6624,7 @@
    "s": "WebSockets",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6639,7 +6637,7 @@
    "g": [
     "concept",
     "guide",
-    "reference"
+    "referen"
    ],
    "m": 35
   },
@@ -6651,7 +6649,7 @@
    "g": [
     "concept",
     "guide",
-    "reference"
+    "referen"
    ],
    "m": 11
   },
@@ -6661,7 +6659,7 @@
    "s": "WebSockets",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6673,7 +6671,7 @@
    "c": "Real-Time",
    "g": [
     "concept",
-    "reference"
+    "referen"
    ],
    "m": 31
   },
@@ -6685,7 +6683,7 @@
    "g": [
     "concept",
     "graphql",
-    "subscriptions"
+    "subscriptio"
    ],
    "m": 14
   },
@@ -6696,7 +6694,7 @@
    "c": "Real-Time",
    "g": [
     "concept",
-    "p2p",
+    "p",
     "webrtc"
    ],
    "m": 12
@@ -6707,7 +6705,7 @@
    "s": "WebSockets",
    "c": "Real-Time",
    "g": [
-    "chaos",
+    "cha",
     "concept",
     "load",
     "testing"
@@ -6720,7 +6718,7 @@
    "s": "WebSockets",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6732,7 +6730,7 @@
    "c": "Real-Time",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 46
   },
@@ -6742,7 +6740,7 @@
    "s": "Behavioral",
    "c": "Interview",
    "g": [
-    "stakeholder-management",
+    "stakeholder-manageme",
     "star-stories"
    ],
    "m": 9
@@ -6754,7 +6752,7 @@
    "c": "Interview",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 9
   },
@@ -6764,7 +6762,7 @@
    "s": "Behavioral",
    "c": "Interview",
    "g": [
-    "decision-making",
+    "decision-maki",
     "judgment"
    ],
    "m": 14
@@ -6776,7 +6774,7 @@
    "c": "Interview",
    "g": [
     "interview-questions",
-    "practice"
+    "practi"
    ],
    "m": 8
   },
@@ -6786,7 +6784,7 @@
    "s": "Behavioral",
    "c": "Interview",
    "g": [
-    "practice",
+    "practi",
     "self-audit"
    ],
    "m": 4
@@ -6797,7 +6795,7 @@
    "s": "Behavioral",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6809,7 +6807,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 11
   },
@@ -6820,9 +6818,9 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.html",
@@ -6831,7 +6829,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 11
   },
@@ -6842,7 +6840,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 14
   },
@@ -6853,7 +6851,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 11
   },
@@ -6864,7 +6862,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 12
   },
@@ -6875,7 +6873,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 15
   },
@@ -6885,7 +6883,7 @@
    "s": "Coding Patterns",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6897,7 +6895,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 16
   },
@@ -6908,7 +6906,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 14
   },
@@ -6919,7 +6917,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 15
   },
@@ -6930,7 +6928,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 13
   },
@@ -6941,7 +6939,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 15
   },
@@ -6952,7 +6950,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 13
   },
@@ -6962,7 +6960,7 @@
    "s": "Coding Patterns",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -6974,7 +6972,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 13
   },
@@ -6985,7 +6983,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 11
   },
@@ -6996,7 +6994,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 14
   },
@@ -7006,7 +7004,7 @@
    "s": "Coding Patterns",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -7018,7 +7016,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 12
   },
@@ -7029,7 +7027,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 12
   },
@@ -7040,7 +7038,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 16
   },
@@ -7051,7 +7049,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 16
   },
@@ -7062,7 +7060,7 @@
    "c": "Interview",
    "g": [
     "concept",
-    "practice"
+    "practi"
    ],
    "m": 15
   },
@@ -7072,7 +7070,7 @@
    "s": "Coding Patterns",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -7083,7 +7081,7 @@
    "s": "Coding Patterns",
    "c": "Interview",
    "g": [
-    "concept"
+    "conce"
    ],
    "m": 9
   },
@@ -7093,7 +7091,7 @@
    "s": "Coding Patterns",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2
@@ -7105,7 +7103,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "reference"
+    "referen"
    ],
    "m": 4
   },
@@ -7116,7 +7114,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "reference"
+    "referen"
    ],
    "m": 5
   },
@@ -7127,7 +7125,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "reference"
+    "referen"
    ],
    "m": 10
   },
@@ -7138,7 +7136,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "reference"
+    "referen"
    ],
    "m": 5
   },
@@ -7149,9 +7147,9 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "reference"
+    "referen"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
@@ -7160,7 +7158,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "devops"
+    "devo"
    ],
    "m": 7
   },
@@ -7171,7 +7169,7 @@
    "c": "Reference",
    "g": [
     "cheat-sheet",
-    "data-modeling",
+    "data-modeli",
     "sql"
    ],
    "m": 6
@@ -7182,7 +7180,7 @@
    "s": "Cheat Sheets",
    "c": "Reference",
    "g": [
-    "practice",
+    "practi",
     "revision"
    ],
    "m": 2

@@ -1,4 +1,4 @@
-<!-- section: GraphQL | category: Reference | tags: revision| general-importance: specialized| general-importance: specialized | role-priority: optional | general-importance: specialized -->
+<!-- section: GraphQL | category: Reference | tags: revisi | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

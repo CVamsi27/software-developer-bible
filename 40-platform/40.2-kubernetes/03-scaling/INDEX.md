@@ -1,6 +1,6 @@
 # Scaling
 
-> **Study time:** ≈ 36 min of reading (3 files, ~12 min average).
+> **Study time:** ≈ 35 min of reading (3 files, ~12 min average).
 > **3 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)

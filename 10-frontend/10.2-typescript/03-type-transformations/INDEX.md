@@ -1,6 +1,6 @@
 # Type Transformations — TypeScript
 
-> **Study time:** ≈ 1 h 15 m of reading (5 files, ~15 min average).
+> **Study time:** ≈ 1 h 14 m of reading (5 files, ~15 min average).
 > **5 files.** The composable operations that make TS powerful: built-in utility types, conditional types, mapped types, and template literal types.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)

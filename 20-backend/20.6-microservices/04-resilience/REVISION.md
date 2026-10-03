@@ -1,4 +1,4 @@
-<!-- section: Microservices | category: Reference | tags: revision| general-importance: important| general-importance: important | role-priority: essential | general-importance: important -->
+<!-- section: Microservices | category: Reference | tags: revisi | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

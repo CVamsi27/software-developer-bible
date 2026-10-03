@@ -1,4 +1,4 @@
-<!-- section: Next.js | category: Reference | tags: revision, retrieval-practice| general-importance: specialized| general-importance: important | role-priority: important | general-importance: important -->
+<!-- section: Next.js | category: Reference | tags: revision, retrieval-practi | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

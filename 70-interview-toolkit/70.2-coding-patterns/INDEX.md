@@ -1,6 +1,6 @@
 # Coding Patterns — Index
 
-> **Study time:** ≈ 5 h 1 m of reading (27 files, ~11 min average).
+> **Study time:** ≈ 5 h of reading (27 files, ~11 min average).
 > **27 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -59,7 +59,7 @@ Use these when a simpler scan, traversal, or recurrence cannot meet the stated o
 | --: | --------- | ---------- | ------------------- | --- | --- | ----------: |
 | 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | Essential | 12 min | 12 min |
 | 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md) | Heaps/Stacks | "Range query + point update" | Optional | 16 min | 16 min |
-| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | Optional | 14 min | 13 min |
+| 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | Optional | 14 min | 14 min |
 | 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | Optional | 15 min | 15 min |
 | 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | Essential | 15 min | 15 min |
 | 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | Essential | 16 min | 16 min |

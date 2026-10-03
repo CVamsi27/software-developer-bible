@@ -1,4 +1,4 @@
-<!-- section: Behavioral | category: Reference | tags: revision, practice| general-importance: important| general-importance: important | role-priority: essential | general-importance: important -->
+<!-- section: Behavioral | category: Reference | tags: revision, practi | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Behavioral-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

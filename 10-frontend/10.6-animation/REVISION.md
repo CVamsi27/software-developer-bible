@@ -1,4 +1,4 @@
-<!-- section: Animation | category: Reference | tags: revision, retrieval-practice| general-importance: specialized| general-importance: specialized | role-priority: optional | general-importance: specialized -->
+<!-- section: Animation | category: Reference | tags: revision, retrieval-practi | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

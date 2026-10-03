@@ -1,4 +1,4 @@
-<!-- section: Serverless & Edge | category: Reference | tags: revision, practice| general-importance: specialized| general-importance: specialized | role-priority: important | general-importance: specialized -->
+<!-- section: Serverless & Edge | category: Reference | tags: revision, practi | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

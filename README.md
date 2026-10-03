@@ -80,7 +80,7 @@ Questions and answers live in one separate `REVISION.md` per category, linked as
 
 Use the [two-axis topic importance guide](docs/topic-importance.md) to choose what to study: prioritize core full-stack engineering and system design, keep HTML/CSS basics, and defer animation specialization.
 
-The [personal-site sync contract](docs/personal-site-sync.md) explains how to refresh the roadmap snapshot and preserve planner evidence when this corpus changes.
+The [personal-site sync contract](docs/planner-site-sync.md) explains how to refresh the roadmap snapshot and preserve planner evidence when this corpus changes.
 
 Automated gates check defined structural, link, metadata and regression rules. Passing them does not prove every technical claim or teaching explanation correct. The [corpus readability review and per-page inventory](docs/2026-10-03-readability-review.md) distinguish automated screening, close reading and remaining rewrites. Dated [health reports](docs/2026-09-19-corpus-health-report.md) describe the snapshot they measured; rerun the gates for current evidence.
 

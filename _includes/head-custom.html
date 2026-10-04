@@ -1,5 +1,5 @@
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-<meta name="theme-color" content="#0b1114">
+<meta name="theme-color" content="#111820">
 
 <script>
   window.__SDB_SEARCH_URL__ = "{{ '/search.html' | relative_url }}";
@@ -53,57 +53,57 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       /* Dark Mode Palette */
-      --theme-bg: #0b1114;
-      --theme-text: #cbd5e1;
-      --theme-text-muted: #94a3b8;
+      --theme-bg: #111820;
+      --theme-text: #d5deea;
+      --theme-text-muted: #a4b3c5;
       --theme-heading: #f8fafc;
-      --theme-border: #1e293b;
-      --theme-border-subtle: #151e28;
+      --theme-border: #2c3b4d;
+      --theme-border-subtle: #1b2835;
       --theme-link: #60a5fa;
       --theme-link-hover: #93c5fd;
       --theme-accent: #3b82f6;
       
-      --header-bg: rgba(11, 17, 20, 0.92);
-      --card-bg: #10171d;
-      --code-bg: #0e151b;
-      --code-border: #1e293b;
+      --header-bg: rgba(17, 24, 32, 0.96);
+      --card-bg: #18222d;
+      --code-bg: #151f2b;
+      --code-border: #2c3b4d;
       --code-text: #e2e8f0;
       
-      --table-header-bg: #131c23;
-      --table-stripe-bg: #0d1419;
-      --table-border: #1e293b;
+      --table-header-bg: #1d2b39;
+      --table-stripe-bg: #15202b;
+      --table-border: #2c3b4d;
       --table-hover: rgba(59, 130, 246, 0.08);
       
-      --nav-pill-bg: #151e26;
-      --nav-pill-hover: #22303c;
+      --nav-pill-bg: #1e2b39;
+      --nav-pill-hover: #2c3e50;
       --nav-pill-text: #e2e8f0;
     }
   }
 
   html[data-theme="dark"] {
-    --theme-bg: #0b1114;
-    --theme-text: #cbd5e1;
-    --theme-text-muted: #94a3b8;
+    --theme-bg: #111820;
+    --theme-text: #d5deea;
+    --theme-text-muted: #a4b3c5;
     --theme-heading: #f8fafc;
-    --theme-border: #1e293b;
-    --theme-border-subtle: #151e28;
+    --theme-border: #2c3b4d;
+    --theme-border-subtle: #1b2835;
     --theme-link: #60a5fa;
     --theme-link-hover: #93c5fd;
     --theme-accent: #3b82f6;
     
-    --header-bg: rgba(11, 17, 20, 0.92);
-    --card-bg: #10171d;
-    --code-bg: #0e151b;
-    --code-border: #1e293b;
+    --header-bg: rgba(17, 24, 32, 0.96);
+    --card-bg: #18222d;
+    --code-bg: #151f2b;
+    --code-border: #2c3b4d;
     --code-text: #e2e8f0;
     
-    --table-header-bg: #131c23;
-    --table-stripe-bg: #0d1419;
-    --table-border: #1e293b;
+    --table-header-bg: #1d2b39;
+    --table-stripe-bg: #15202b;
+    --table-border: #2c3b4d;
     --table-hover: rgba(59, 130, 246, 0.08);
     
-    --nav-pill-bg: #151e26;
-    --nav-pill-hover: #22303c;
+    --nav-pill-bg: #1e2b39;
+    --nav-pill-hover: #2c3e50;
     --nav-pill-text: #e2e8f0;
   }
 
@@ -931,3 +931,6 @@
   });
 </script>
 {% endraw %}
+
+<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}">
+<script src="{{ '/assets/reading-ui.js' | relative_url }}" defer></script>

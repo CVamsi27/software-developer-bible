@@ -57,7 +57,7 @@
   }
   function extractChapter(content) {
     var copy = content.cloneNode(true);
-    copy.querySelectorAll('pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .heading-anchor, .chapter-nav-footer').forEach(function (node) { node.remove(); });
+    copy.querySelectorAll('pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer').forEach(function (node) { node.remove(); });
     var walker = content.ownerDocument.createTreeWalker(copy, 4);
     var groups = [], previous = null, text = '';
     while (walker.nextNode()) {

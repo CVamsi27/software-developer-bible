@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 12 h 6 m of reading (32 files, ~23 min average).
+> **Study time:** ≈ 12 h 7 m of reading (32 files, ~23 min average).
 > **32 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)

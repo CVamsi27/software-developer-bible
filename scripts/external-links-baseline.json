@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-04",
- "url_count": 2200,
+ "generated": "2026-10-05",
+ "url_count": 2201,
  "urls": {
   "http://antirez.com/news/101": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -1468,6 +1468,9 @@
   ],
   "https://docs.cilium.io/en/stable/observability/hubble/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
+  ],
+  "https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.cloud.google.com/spanner/docs/true-time-external-consistency": [
    "81-lanes-indian-sde-faang/81.17-google-interview-guide.md"

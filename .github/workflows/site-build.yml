@@ -20,6 +20,7 @@ on:
       - "**.md"
       - "_config.yml"
       - "_includes/**"
+      - "assets/**"
       - "search.html"
       - "api/**"
       # The edge half of the artifact. Cloudflare's Git integration builds on
@@ -99,6 +100,9 @@ jobs:
           # Both consumers load this one file; if Jekyll did not copy it, every
           # page loses the saved theme before paint and the toggle silently.
           test -s _site/assets/theme.js
+          test -s _site/assets/read-aloud.js
+          test -s _site/assets/read-aloud.css
+          grep -q '/assets/read-aloud.js' _site/10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html
 
       # No deploy job by design: Cloudflare Pages builds straight from git
       # (docs/deployment.md). A red gate beside a green Pages build means

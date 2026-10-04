@@ -1,0 +1,27 @@
+.read-aloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  margin: 0 0 24px;
+  border: 1px solid var(--theme-border, #d1d5db);
+  border-radius: 8px;
+  background: var(--card-bg, #fff);
+  color: var(--theme-text, #1f2937);
+  font: 14px/1.5 var(--font-sans, sans-serif);
+}
+.read-aloud button, .read-aloud select {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--theme-border, #d1d5db);
+  border-radius: 6px;
+  background: var(--nav-pill-bg, #f3f4f6);
+  color: inherit;
+  font: inherit;
+}
+.read-aloud button { cursor: pointer; }
+.read-aloud button:disabled { opacity: 0.55; cursor: default; }
+.read-aloud button:focus-visible, .read-aloud select:focus-visible { outline: 3px solid var(--theme-link, #2563eb); outline-offset: 2px; }
+.read-aloud [role="status"] { flex-basis: 100%; color: var(--theme-text-muted, #4b5563); }
+@media print { .read-aloud { display: none; } }

@@ -16,6 +16,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
+      - name: Read-aloud playback tests
+        run: node --test assets/read-aloud.test.cjs
+
       - name: Study access policy tests
         run: node --test functions/_lib/study-access.test.mjs
 

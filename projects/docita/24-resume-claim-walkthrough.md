@@ -71,13 +71,7 @@ Verify a payment signature against the exact raw payload and appropriate merchan
 
 Demonstrate a crash after an external effect but before acknowledgment. Explain what authoritative record determines whether replay is safe. Do not call delivery exactly once without an effect-level protocol and evidence.
 
-## Bullet 5: Explain the Controlled Appointment Index Benchmark
-
-**Resume scope:** 78,000 generated records across 25 simulated clinics; an existing ordered composite index returned 20 rows without sorting versus a clinic-only control reading 3,120 rows and sorting.
-
-Read the [dated benchmark evidence](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md). Explain the clinic filter, descending start-time/ID ordering and 20-row limit. The existing index supplies that ordering, allowing the scan to stop early. The experiment validates an existing index; it does not establish a newly deployed optimization, actual clinic adoption or full API latency. Timings exclude ORM, authorization, RLS, network, total-count queries and related records. Report the three trials and their variability rather than a selected percentage.
-
-## Bullet 6: Explain a Dashboard With Defined Metrics
+## Bullet 5: Explain a Dashboard With Defined Metrics
 
 **Resume scope:** an internal operational dashboard built from PostgreSQL business records and measured API telemetry, with latency percentiles, server-error rates, sample coverage and validated contracts.
 
@@ -87,9 +81,9 @@ Demonstrate that no samples produces unavailable latency/error rate, a database 
 
 The recorded production query contained 158 retained requests with partial coverage, and no appointment/invoice/job activity in its selected window. This supports explaining the measurement implementation; it does not support 25 active clinics or a performance-improvement percentage. Verify the deployed revision before describing the dashboard as live.
 
-The [local appointment-index benchmark](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) remains a separate reproducible SQL exercise. It now supports the explicitly labeled local benchmark bullet in the application resume.
+The [local appointment-index benchmark](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) remains a separate reproducible SQL exercise. It is separate technical practice evidence and is omitted from the application resume.
 
-## Bullet 6 Continued: Explain What a Release Check Actually Establishes
+## Bullet 5 Continued: Explain What a Release Check Actually Establishes
 
 **Resume scope:** Jest, Vitest, Playwright, GitHub Actions and delivery infrastructure.
 
